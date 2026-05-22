@@ -1,0 +1,732 @@
+<html lang="ko">
+<head>
+
+
+<title>성경적 재정관 — 하나님 나라의 눈으로 돈을 보다</title>
+
+
+
+
+
+
+
+<style>
+  :root {
+    --bg: #FAFAF7;
+    --surface: #FFFFFF;
+    --text: #1A1A1A;
+    --text-secondary: #4A4A4A;
+    --accent: #8B6914;
+    --accent-light: #C4A035;
+    --accent-bg: #F5F0E0;
+    --border: #E0DBD0;
+    --border-light: #EDE8DC;
+    --pullquote: #6B4F10;
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+    --card-shadow-hover: 0 2px 8px rgba(0,0,0,0.08), 0 8px 24px rgba(0,0,0,0.06);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { font-size: 17px; scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Serif KR', 'Nanum Myeongjo', Georgia, 'Times New Roman', serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    background: linear-gradient(165deg, #2C2410 0%, #4A3A1E 40%, #6B5228 100%);
+    color: #F5F0E0;
+    padding: 5rem 1.5rem 4.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255,255,255,0.012) 2px,
+      rgba(255,255,255,0.012) 4px
+    );
+    pointer-events: none;
+  }
+  .hero-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-label {
+    display: inline-block;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    border: 1px solid rgba(196,160,53,0.4);
+    padding: 0.3em 1em;
+    border-radius: 2px;
+    margin-bottom: 2rem;
+  }
+  .hero h1 {
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.02em;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--accent-light);
+  }
+  .hero-subtitle {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: rgba(245,240,224,0.75);
+    max-width: 560px;
+    margin: 0 auto 2rem;
+  }
+  .hero-meta {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.75rem;
+    color: rgba(245,240,224,0.45);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── Abstract ── */
+  .abstract-section {
+    max-width: 780px;
+    margin: -2rem auto 0;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 2;
+  }
+  .abstract-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2.2rem 2.5rem;
+    box-shadow: var(--card-shadow);
+  }
+  .abstract-card h2 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .abstract-card p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.85;
+  }
+
+  /* ── Key Findings ── */
+  .findings {
+    max-width: 780px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+  }
+  .findings-title {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.2rem;
+    text-align: center;
+  }
+  .findings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+  .finding-card {
+    background: var(--surface);
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    padding: 1.4rem 1.5rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+  .finding-num {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+  .finding-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    line-height: 1.4;
+  }
+  .finding-card p {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  /* ── Article body ── */
+  .article-body {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .article-body h2 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    margin: 3.5rem 0 0.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border);
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+  }
+  .article-body h2:first-of-type { border-top: none; padding-top: 0; margin-top: 2rem; }
+
+  .article-body h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 2.2rem 0 0.6rem;
+    color: var(--text);
+    line-height: 1.4;
+  }
+  .article-body h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 1.8rem 0 0.5rem;
+    color: var(--text-secondary);
+  }
+
+  .article-body p {
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+    line-height: 1.9;
+  }
+
+  .article-body strong { font-weight: 700; color: var(--text); }
+
+  /* ── Pull quote ── */
+  .pullquote {
+    margin: 2.5rem -1rem;
+    padding: 1.8rem 2rem 1.8rem 2.2rem;
+    border-left: 3px solid var(--accent);
+    background: var(--accent-bg);
+    border-radius: 0 6px 6px 0;
+    font-size: 1.08rem;
+    line-height: 1.75;
+    color: var(--pullquote);
+    font-style: italic;
+  }
+  .pullquote cite {
+    display: block;
+    font-style: normal;
+    font-size: 0.8rem;
+    color: var(--accent);
+    margin-top: 0.7rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 600;
+  }
+
+  /* ── Inline blockquote ── */
+  .article-body blockquote {
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    border-left: 2px solid var(--border);
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    background: rgba(0,0,0,0.015);
+    border-radius: 0 4px 4px 0;
+  }
+
+  /* ── Tables ── */
+  .table-wrap {
+    margin: 1.8rem 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  thead { background: #F5F2EB; }
+  th {
+    font-weight: 700;
+    text-align: left;
+    padding: 0.7rem 1rem;
+    border-bottom: 2px solid var(--border);
+    color: var(--text);
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  td {
+    padding: 0.65rem 1rem;
+    border-bottom: 1px solid var(--border-light);
+    vertical-align: top;
+    line-height: 1.55;
+  }
+  tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: rgba(0,0,0,0.015); }
+  .highlight-row { background: var(--accent-bg) !important; font-weight: 600; }
+
+  /* ── Numbered list card ── */
+  .guideline-list {
+    list-style: none;
+    margin: 1.5rem 0;
+    padding: 0;
+    counter-reset: guideline;
+  }
+  .guideline-list li {
+    counter-increment: guideline;
+    padding: 0.9rem 1.2rem 0.9rem 3.2rem;
+    margin-bottom: 0.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border-light);
+    border-radius: 5px;
+    position: relative;
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+  .guideline-list li::before {
+    content: counter(guideline);
+    position: absolute;
+    left: 1rem;
+    top: 0.85rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 50%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+
+  /* ── Divider ── */
+  .section-divider {
+    text-align: center;
+    margin: 3rem 0;
+    color: var(--border);
+    font-size: 1.2rem;
+    letter-spacing: 0.5em;
+  }
+
+  /* ── Takeaway box ── */
+  .takeaway-box {
+    background: linear-gradient(135deg, #2C2410 0%, #4A3A1E 100%);
+    color: #F5F0E0;
+    border-radius: 8px;
+    padding: 2rem 2.2rem;
+    margin: 2.5rem 0;
+  }
+  .takeaway-box h3 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin: 0 0 1rem 0;
+  }
+  .takeaway-box p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: rgba(245,240,224,0.88);
+    margin-bottom: 0.8rem;
+  }
+  .takeaway-box p:last-child { margin-bottom: 0; }
+  .takeaway-box strong { color: #F5F0E0; }
+
+  /* ── Sources ── */
+  .sources {
+    margin: 3rem 0 0;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+  .sources h2 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    border: none;
+    padding: 0;
+  }
+  .sources ul {
+    list-style: none;
+    padding: 0;
+  }
+  .sources li {
+    padding: 0.4rem 0;
+    font-size: 0.84rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    padding-left: 1rem;
+    position: relative;
+  }
+  .sources li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  /* ── Footer ── */
+  .article-footer {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+    text-align: center;
+  }
+  .article-footer p {
+    font-size: 0.78rem;
+    color: rgba(0,0,0,0.3);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 640px) {
+    html { font-size: 16px; }
+    .hero { padding: 3.5rem 1.2rem 3rem; }
+    .abstract-card { padding: 1.5rem 1.3rem; }
+    .pullquote { margin: 2rem -0.5rem; padding: 1.3rem 1.2rem 1.3rem 1.5rem; font-size: 1rem; }
+    .article-body h2 { font-size: 1.35rem; }
+    .findings-grid { grid-template-columns: 1fr; }
+    .takeaway-box { padding: 1.5rem 1.3rem; }
+  }
+
+  @media print {
+    .hero { background: #333; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { font-size: 11pt; }
+  }
+</style>
+<meta property="og:type" content="article">
+<meta property="og:title" content="성경적 재정관 — 하나님 나라의 눈으로 돈을 보다">
+<meta property="og:description" content="멘토링 Q&amp;A 종합 정리. 후배 기독의료인·그리스도인의 재정 질문에 대한 성경적 답변. 출처: raw/lectures/my강의안/강의안/ &quot;돈은 중요하다&quot; 시리즈 + 조성표 교수 강의 + 윤명숙·문대원·권성수 설교 시리즈 ▶ 1부: 개요 주요 자료 위치 | 유형    | 경로                          ">
+<meta property="og:url" content="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/s/yevxv/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="성경적 재정관 — 하나님 나라의 눈으로 돈을 보다">
+<meta name="twitter:description" content="멘토링 Q&amp;A 종합 정리. 후배 기독의료인·그리스도인의 재정 질문에 대한 성경적 답변. 출처: raw/lectures/my강의안/강의안/ &quot;돈은 중요하다&quot; 시리즈 + 조성표 교수 강의 + 윤명숙·문대원·권성수 설교 시리즈 ▶ 1부: 개요 주요 자료 위치 | 유형    | 경로                          ">
+<link rel="canonical" href="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/s/yevxv/">
+</head>
+<body>
+
+<!-- ════ HERO ════ -->
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-label">Research Report · 신학 &amp; 재정</span>
+    <h1>성경적 재정관<br><em>하나님 나라의 눈으로 돈을 보다</em></h1>
+    <p class="hero-subtitle">청지기직, 십일조, 쯔다카, 자족 — 성경 700구절이 그리는 돈의 신학을 멘토링 Q&amp;A와 학자·목회자 강의를 종합하여 재구성하다.</p>
+    <p class="hero-meta">2026년 5월 21일 · 종합 정리</p>
+  </div>
+</header>
+
+<!-- ════ ABSTRACT ════ -->
+<section class="abstract-section">
+  <div class="abstract-card">
+    <h2>Abstract</h2>
+    <p>성경에서 돈에 관한 구절은 700개 이상이며, 예수님 비유의 2/3가 물질적 삶을 다룬다. 그럼에도 많은 그리스도인은 재정 영역에서 성경적 훈련을 받지 못한 채 살아간다. 본 보고서는 조성표 교수의 재정 강의, 문대원·권성수·윤명숙 목회자의 설교 시리즈, 폴 스티븐스·마이클 샌델·막스 베버 등 학자들의 이론을 교차 분석하여, <strong>청지기직(Stewardship)</strong>, <strong>십일조와 9/10의 윤리</strong>, <strong>쯔다카(צְדָקָה)와 성경적 정의</strong>, <strong>자족(Contentment)의 신학</strong>, <strong>자본주의와 하나님 나라의 긴장</strong>이라는 다섯 축으로 성경적 재정관을 종합 정리한다.</p>
+  </div>
+</section>
+
+<!-- ════ KEY FINDINGS ════ -->
+<section class="findings">
+  <p class="findings-title">핵심 발견 5가지</p>
+  <div class="findings-grid">
+    <div class="finding-card">
+      <p class="finding-num">01</p>
+      <h3>청지기직</h3>
+      <p>oikonomos(경제)의 어원은 '하나님의 자원을 하나님의 뜻대로 관리하는 것'. 소유자가 아니라 관리자라는 인식이 출발점이다.</p>
+    </div>
+    <div class="finding-card">
+      <p class="finding-num">02</p>
+      <h3>1/10과 9/10</h3>
+      <p>십일조 논쟁보다 중요한 것은 나머지 9/10의 거듭남이다. 삭개오의 직업적 회심처럼 재정 전체가 변화되어야 한다.</p>
+    </div>
+    <div class="finding-card">
+      <p class="finding-num">03</p>
+      <h3>쯔다카와 정의</h3>
+      <p>구제는 자선이 아니라 정의다. 마이모니데스의 최고 단계는 '자립할 수 있도록 돕는 것'이다.</p>
+    </div>
+    <div class="finding-card">
+      <p class="finding-num">04</p>
+      <h3>자족은 훈련이다</h3>
+      <p>만족은 소유에서 오지 않는다. 바울은 "자족하기를 배웠다"고 고백했다. 행복 = 소비 ÷ 욕망.</p>
+    </div>
+    <div class="finding-card">
+      <p class="finding-num">05</p>
+      <h3>자본주의의 양면</h3>
+      <p>놀라운 생산력과 도덕 없을 때의 치명적 한계를 동시에 인식해야 한다. 불의의 재물로도 하나님 나라에 기여할 수 있다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════ ARTICLE BODY ════ -->
+<article class="article-body">
+
+  <h2>서론: 왜 지금 우리는 돈을 이야기해야 하는가</h2>
+
+  <p>성경에서 돈에 관한 구절은 무려 700개에 달한다. 예수님께서 말씀하신 비유의 3분의 2 이상이 돈과 재물, 물질적 삶에 관한 것이다. 그럼에도 불구하고 오늘날 많은 그리스도인들은 교회에서 돈에 관한 이야기를 꺼리거나, 영적 삶과는 무관한 세속적 영역으로 여기는 경향이 있다.</p>
+
+  <p>경북대학교 경영학부 교수이자 성덕교회 장로인 조성표 교수는 이 현상을 날카롭게 지적한다. 그는 <strong>"교회에서는 십일조만 가르쳤지, 나머지 9/10에 대해서는 아무것도 가르치지 않았다"</strong>고 말한다. 십일조를 드리면 재정적 의무를 다한 것처럼 생각하는 태도, 주식투자의 성경적 기준을 물으면 아무도 대답하지 못하는 현실—우리가 재정 영역에서 얼마나 성경적 훈련을 받지 못했는지가 분명해진다.</p>
+
+  <div class="pullquote">
+    당신의 돈지갑이 회개하기까지 당신의 회개를 믿지 않겠다.
+    <cite>— 마르틴 루터</cite>
+  </div>
+
+  <p>얼핏 가혹하게 들리지만, 이 말은 거듭남의 가장 구체적인 증거가 어디에 드러나는가를 정직하게 짚어준다. 신앙의 변화는 추상적 내면에 머물지 않는다. 그것은 반드시 가장 일상적인 재정 영역까지 파급된다. <em>"네 보물이 있는 그 곳에는 네 마음도 있느니라"</em>(마 6:21). 우리가 돈을 어떻게 벌고, 쓰고, 나누는가는 마음이 어디를 향하는지를 가장 선명하게 드러내는 지표다.</p>
+
+  <p>리처드 포스터는 <em>『돈, 섹스, 권력』</em>에서 이 세 가지가 끝까지 인간을 유혹하는 핵심 욕망이라고 분석하면서도, 이것들을 단순히 악으로 규정하지 않는다. 오히려 본래 하나님의 선물이며, 문제는 성경적으로 해석하고 사용하는 데 있다고 말한다. 돈을 많이 번다고 해서 돈 문제가 해결되지 않는다. 복권 당첨자들이 오히려 더 비참해지는 경우가 많다는 사실은 이미 잘 알려져 있다. 재물에 대한 바른 태도, 즉 성경적 재정관을 갖출 때 비로소 이 문제는 근본적으로 해결된다.</p>
+
+  <div class="section-divider">· · ·</div>
+
+  <h2>1장. 돈의 신학 — 돈은 가치중립적이지 않다</h2>
+
+  <h3>돈은 영적이다</h3>
+
+  <p>많은 사람들이 돈을 단순한 교환 매개체, 가치중립적 도구로 이해한다. 그러나 폴 스티븐스와 클라이브 림은 이러한 이해를 근본적으로 반박한다. 고대 문명에서 돈은 신전 회계 관리를 통해 공동체 안의 <strong>분배적 정의</strong>를 보장하기 위해 개발된 도구였다. 돈은 처음부터 공동체적이고 신학적인 목적 안에 존재했으며, 시간이 흐르면서 영적·사회적 역할이 희석되어 시장경제 안으로 흡수된 것이다.</p>
+
+  <p>예수님이 말씀하신 <strong>'맘몬'(ממון)</strong>은 흔히 '돈'으로 번역되지만, 어원적 의미는 <strong>'위탁된 것'</strong>이다. 내가 소유한 것처럼 보이는 재물이 실은 하나님으로부터 위탁받은 것이라는 뜻을 품고 있다. 그런데 이 위탁된 것이 어느 순간 우리의 주인이 된다. 윤명숙 전도사는 이렇게 말한다. "돈은 신적인 힘이 있어서, 우리가 다스리지 않으면 우리가 그것을 섬기게 된다." 하나님과 맘몬을 겸하여 섬길 수 없다는 예수님의 말씀(마 6:24)은 이런 맥락에서 이해해야 한다.</p>
+
+  <h3>돈에 대한 세 가지 성경적 관점</h3>
+
+  <p>성경은 돈과 부를 바라보는 다양한 관점을 제시한다. 한쪽에서는 "예수 믿으면 무조건 잘된다"는 번영신학이 유혹하고, 다른 한쪽에서는 "진정한 그리스도인은 가난해야 한다"는 청빈주의가 압박한다. 성경은 이 두 극단을 모두 거부하며, 훨씬 더 풍성한 이해를 제시한다.</p>
+
+  <p><strong>첫째, 부는 순종에 대한 합당한 보상일 수 있다.</strong> 신명기 28장은 하나님의 말씀을 듣고 명령을 지켜 행하면 복을 받으리라 약속한다. 잠언 22:4는 "겸손과 여호와를 경외함의 보상은 재물과 영광과 생명이니라"고 말한다. 그러나 이것이 모든 부자가 순종했기 때문에 부자가 된 것이라는 의미는 아니다. 문대원 목사의 경고처럼, <strong>"건강과 재물의 복을 강조하는 목회자를 조심해야 한다. 번영을 약속하는 선지자는 거짓선지자일 때가 많았다."</strong></p>
+
+  <p><strong>둘째, 부는 하나님의 선물이다.</strong> 전도서 5:19은 선언한다. "어떤 사람에게든지 하나님이 재물과 부요를 그에게 주사 능히 누리게 하시며… 하나님의 선물이라." 이 관점은 부를 소유했을 때 자만하지 않게 하고, 소유하지 못했을 때 낙심하지 않게 한다.</p>
+
+  <p><strong>셋째, 부는 하나님의 은사이며 달란트다.</strong> 달란트 비유(마 25:14–30)에서처럼, 하나님께서는 어떤 사람에게 돈을 잘 버는 능력을 은사로 주신다. 신명기 8:18—"네 하나님 여호와를 기억하라 그가 재물 얻을 능력을 네게 주셨음이라." 돈을 버는 능력이 은사라면, 그 은사는 더 큰 하나님 나라의 목적을 향해 사용되어야 한다.</p>
+
+  <div class="section-divider">· · ·</div>
+
+  <h2>2장. 동기 점검 — 왜 성경적 재정관을 배우는가</h2>
+
+  <p>성경적 재정관을 배우는 목적이 더 효율적으로 돈을 관리하거나 더 많이 벌기 위한 것이라면, 출발점부터 잘못된 것이다. 디모데전서 6:9–10은 경고한다. <em>"부하려 하는 자들은 시험과 올무와 여러 가지 어리석고 해로운 욕심에 떨어지나니."</em> 주목할 것은, 경고의 대상이 <strong>'부자'가 아니라 '부하려 하는 자'</strong>라는 점이다. 부자가 되는 것 자체를 목표로 삼는 사람이 시험에 드는 것이다.</p>
+
+  <div class="pullquote">
+    진리를 알지니 진리가 너희를 자유롭게 하리라.
+    <cite>— 요한복음 8:32</cite>
+  </div>
+
+  <p>성경적 재정관을 배우는 이유는 역설적으로 <strong>돈으로부터 자유로워지기 위해서</strong>다. 빌립보서 4:11–12에서 바울은 고백한다. "나는 자족하기를 배웠노니… 배부름과 배고픔과 풍부와 궁핍에도 처할 줄 아는 일체의 비결을 배웠노라." 바울에게 자족은 타고난 기질이 아니라 훈련을 통해 얻은 것이었다. 돈에 대한 집착을 내려놓기 위해 배우는 것—이 역설이 성경적 재정관의 출발점이다.</p>
+
+  <div class="section-divider">· · ·</div>
+
+  <h2>3장. 청지기직 — 소유권과 관리권의 근본적 차이</h2>
+
+  <h3>오이코노모스 — 경제의 신학적 기원</h3>
+
+  <p>헬라어 '오이코노모스'(oikonomos)는 '집'(oikos)과 '법'(nomos)의 결합으로, 주인의 집을 관리하는 사람을 가리킨다. 현대 영어 'economy'가 바로 여기서 유래했다. 경제라는 개념은 어원에서부터 <strong>하나님의 관점에서 자원을 관리하는 행위</strong>와 연결되어 있었다.</p>
+
+  <p>소유권자는 자기 마음대로 사용할 수 있다. 하지만 청지기는 주인의 뜻에 따라 사용해야 한다. 조성표 교수는 이 구분을 날카롭게 발전시킨다. <strong>"소유권은 내 맘대로 쓸 수 있다. 청지기는 주인의 뜻에 따라 쓰는 것이다. 그리고 청지기에게는 회계의 날, 결산의 날이 있다."</strong> 회개(悔改)와 회계(會計), 우리말로 발음이 동일한 두 단어 속에 깊은 진리가 담겨 있다.</p>
+
+  <h3>권성수 목사의 4가지 점검 질문</h3>
+
+  <ol class="guideline-list">
+    <li>지금 나는 <strong>주인 행세</strong>를 하고 있는가, <strong>청지기 행세</strong>를 하고 있는가?</li>
+    <li>이 재정 결정에 <strong>성경적 근거</strong>가 있는가?</li>
+    <li>이것이 주님께 드리는 <strong>제물</strong>이 되는가?</li>
+    <li>의인들의 부활 때 주님께서 이것을 기억하고 <strong>갚아주실 것</strong>인가?</li>
+  </ol>
+
+  <h3>청지기는 시한부 관리자다</h3>
+
+  <p>누가복음 16장의 슬기로운 청지기 비유에서, 청지기는 주인이 언제든 계정을 청산하라고 부를 수 있는 시한부 관리자다. '불의의 재물로 친구를 사귀라'는 예수님 말씀에서 '불의의 재물'은 '돈이 더러워졌다'는 의미를 품고 있다. 자본주의 체제 안에서 유통되는 돈은 착취적 구조와 불평등한 교환을 통해 순환하기에 어떤 의미에서 모두 오염되어 있다. 그러나 이 더러워진 돈도 선하게 사용될 수 있다. <strong>돈도 구속(救贖)받을 수 있다.</strong> 이것이 폴 스티븐스가 말하는 '돈의 구속 가능성'이다.</p>
+
+  <div class="section-divider">· · ·</div>
+
+  <h2>4장. 십일조와 헌금 — 1/10의 신학과 9/10의 윤리</h2>
+
+  <h3>십일조 논쟁을 넘어서</h3>
+
+  <p>세전인가 세후인가, 신약에도 유효한가—십일조 논쟁은 진지하게 다룰 가치가 있지만, 더 본질적인 질문을 가리는 연막이 될 위험도 있다. 말라기 3:8–10의 말씀에서 십일조는 수학적 계산이 아니라 <strong>소유권의 문제</strong>다. "이 모든 것이 당신의 것입니다"라는 고백이며, 하나님의 소유권을 매달, 매주 확인하는 의식적 행위다.</p>
+
+  <blockquote>온전한 십일조는 숫자 개념만이 아니라 소유 개념을 마음으로 확실히 하는 것이다. — 윤명숙 전도사</blockquote>
+
+  <p>로널드 사이어는 소득이 많을수록 더 높은 비율을 드리는 <strong>'누진 십일조'</strong>를 제안한다. 마이모니데스는 구약 이스라엘이 실질적으로 '십이조'에 가까운 구조였음을 지적하며, 10%에 만족하지 말고 더 도전적인 헌신을 생각해봐야 한다고 말한다. 그러나 어떤 숫자든, 가장 중요한 것은 <strong>즐겁게 드리는 마음</strong>이다(고후 9:7).</p>
+
+  <h3>9/10의 거듭남</h3>
+
+  <p>더 중요한 문제는 나머지 9/10다. 교회는 오랫동안 1/10에 대해서만 가르쳤고, 그 결과 많은 그리스도인이 십일조 후에는 세상의 방식대로 돈을 사용한다. 삭개오는 직업을 바꾸지 않았지만 재정적 삶은 완전히 바뀌었다. "내 소유의 절반을 가난한 자들에게 주겠사오며"(눅 19:8)—이것이 돈 사용의 거듭남이다. 9/10을 사용하는 방식 전체가 하나님 나라의 가치를 반영하도록 변화되어야 한다.</p>
+
+  <div class="section-divider">· · ·</div>
+
+  <h2>5장. 투자와 투기 — 자본 활용의 윤리</h2>
+
+  <p>명확한 기준 하나: <strong>투기는 내가 얻으면 남이 잃는 구조</strong>이고, <strong>투자는 나도 좋고 상대방도 좋은 구조</strong>다. 로또, 레버리지 선물 거래, 단기 투기적 매매는 전자에 속하고, 건전한 기업에 대한 장기 투자는 후자에 속한다.</p>
+
+  <p>문대원 목사는 현대 경제 윤리의 가장 큰 문제점으로 <strong>"일하지 않고 돈 벌려는 욕망"</strong>을 꼽는다. 코인, 주식 단타, 부동산 갭 투자—이것들이 나쁜 것은 위험하기 때문만이 아니라, '노동 없이 이익을 취하겠다'는 마음이 깔려 있기 때문이다. 창세기 2:15에서 하나님께서 아담에게 에덴동산을 '경작하며 지키라' 하신 명령의 히브리어 '아바드'와 '사마르'는 제사장적 직분을 가리키는 단어들이다. 일은 저주가 아니라 거룩한 소명이다.</p>
+
+  <p>차입투자에 대해 조성표 교수는 단호하다. 잠언 22:7—<em>"빚진 자는 채주의 종이 되느니라."</em> 빚은 영적 굴레다. 빚이 많으면 하나님의 부르심에 자유롭게 응답할 수 없다. <strong>재정적 자유는 부자가 되는 것이 아니라 빚에서 자유로워지는 것으로부터 시작된다.</strong></p>
+
+  <div class="section-divider">· · ·</div>
+
+  <h2>6장. 자본주의와 하나님 나라</h2>
+
+  <h3>생산력과 한계의 동시 인식</h3>
+
+  <p>폴 스티븐스와 클라이브 림은 자본주의를 악으로 규정하거나 하나님의 체제로 찬양하는 양 극단을 모두 거부한다. 자본주의는 유례없는 생산력을 발휘해왔지만, 동시에 빈부격차 심화, 아동 착취, 환경 파괴라는 치명적 한계를 드러냈다. <strong>시장 논리는 도덕 논리 없이는 완전하지 않다.</strong></p>
+
+  <h3>막스 베버의 비극적 역설</h3>
+
+  <p>초기 프로테스탄트들은 소명을 거룩히 여기고, 검소함으로 부를 축적하되 자신을 위해 소비하지 않고 재투자했다. 이것이 자본주의 성장의 원동력이었다. 그러나 자본주의가 성숙해지면서 그것을 탄생시킨 종교적 토대는 사라졌다. 부르주아 경제 윤리가 기독교 윤리를 대체하면서, <strong>선한 양심 없이 돈만 남았다.</strong></p>
+
+  <h3>소비주의 — 포스트모던 시대의 우상</h3>
+
+  <div class="pullquote">
+    나는 소비한다, 고로 나는 존재한다.
+    <cite>— 문대원 목사의 포스트모더니즘 분석 (데카르트 패러디)</cite>
+  </div>
+
+  <p>존재의 증명이 사유에서 소비로 이동했다. 어떤 브랜드를 입는가, 어떤 차를 모는가—이것이 정체성 증명 수단이 된다. 골로새서 3:5는 "탐심은 우상숭배니라"고 선언한다. 마이클 샌델은 돈으로 모든 것을 사려 할 때 두 가지 문제가 생긴다고 분석한다: ①<strong>불평등과 부패</strong>, ②<strong>가치의 훼손</strong>. 사랑, 우정, 신뢰는 돈으로 사려는 순간 본질이 파괴된다.</p>
+
+  <div class="section-divider">· · ·</div>
+
+  <h2>7장. 지공주의와 토지 — 경제적 정의의 성경적 토대</h2>
+
+  <p>헨리 조지는 <em>『진보와 빈곤』</em>에서 토지 공개념을 주장했다. 토지는 아무도 만들지 않았으므로 사유재산이 될 수 없다는 것이다. 놀랍게도 레위기 25장이 그 성경적 토대를 제공한다. 50년마다 모든 토지가 원래 소유자에게 돌아가는 희년(Jubilee)—<em>"토지는 다 내 것임이니라 너희는 거류민이요 동거하는 자로서 나와 함께 있느니라"</em>(레 25:23).</p>
+
+  <p>이사야 5:8은 강하게 경고한다. <em>"가옥에 가옥을 이으며 전토에 전토를 더하여 빈 틈이 없도록 하고 이 땅 가운데에서 홀로 거주하려 하는 자들은 화 있을진저."</em> 건강한 임대업—청년을 위한 셰어하우스, 주거취약계층을 위한 공간—은 가능하지만, 가격 상승만을 노리는 투기적 다주택 보유는 성경이 명백히 경계하는 영역이다.</p>
+
+  <div class="section-divider">· · ·</div>
+
+  <h2>8장. 쯔다카(צְדָקָה) — 구제를 넘어 정의로</h2>
+
+  <p>'쯔다카'는 일반적으로 '자선'이나 '구제'로 번역되지만, 깊은 의미는 <strong>'정의'(righteousness)</strong>다. 가진 자가 없는 자를 돕지 않는 것은 인색한 것이 아니라 <strong>불의한 것</strong>이다.</p>
+
+  <p>레위기 19장의 <strong>'페아트 싸데'(밭 모퉁이 남기기)</strong>—추수할 때 전부 거두지 말고 남겨두라는 명령—는 자선이 아니라 정의다. 농부가 직접 가져다주는 것이 아니라 밭에 남겨두어 스스로 거두어가게 한다. 이것은 가난한 사람의 자존심을 살리는 방식이다. <strong>"나의 수입에 남의 몫이 있다"</strong>—이것이 성경적 경제 정의의 핵심이다.</p>
+
+  <h3>마이모니데스의 쯔다카 8단계</h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>단계</th><th>실천 방식</th><th>핵심 원리</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>8 (최하)</td><td>무뚝뚝하고 인색한 태도로 돕기</td><td>마지못한 의무</td></tr>
+        <tr><td>7</td><td>기쁜 마음으로 적은 양 돕기</td><td>마음의 태도 전환</td></tr>
+        <tr><td>6</td><td>요청받고 직접 돕기</td><td>수동적 응답</td></tr>
+        <tr><td>5</td><td>요청 없이 직접 돕기</td><td>능동적 관심</td></tr>
+        <tr><td>4</td><td>받는 자는 알지만 주는 자는 모름</td><td>겸손한 나눔</td></tr>
+        <tr><td>3</td><td>주는 자는 알지만 받는 자는 모름</td><td>자존심 보호</td></tr>
+        <tr><td>2</td><td>상호 익명의 나눔</td><td>오른손이 하는 것을 왼손이 모르게</td></tr>
+        <tr class="highlight-row"><td>1 (최고)</td><td>자립할 수 있도록 돕기</td><td>근본적 회복과 자유</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>최고 단계는 물질을 나누는 것을 넘어, 그 사람이 <strong>더 이상 도움이 필요 없는 상태</strong>가 되도록 돕는 것이다. 직업 기술을 가르치고, 자본을 제공하여 자영업을 시작하게 하고, 교육을 통해 가난에서 벗어나게 하는 것—이것이 쯔다카의 정점이다.</p>
+
+  <div class="section-divider">· · ·</div>
+
+  <h2>9장. 자족의 신학 — 훈련으로 얻는 평안</h2>
+
+  <p>빌립보서 4:11에서 바울이 사용한 '배웠노니'(ἔμαθον)는 경험과 훈련을 통해 체득한 것을 의미한다. 자족은 타고난 기질이 아니라 가난과 풍요를 모두 겪으며 어떤 상황에서도 흔들리지 않는 평안을 찾는 훈련이다.</p>
+
+  <div class="pullquote">
+    만족은 소유가 아니라 훈련에서 온다.
+    <cite>— 문대원 목사</cite>
+  </div>
+
+  <p>조성표 교수는 경제학의 행복 공식을 제시한다: <strong>행복 = 소비 ÷ 욕망</strong>. 행복을 높이려면 분자(소비)를 키우거나 분모(욕망)를 줄여야 한다. 세상은 소비를 키우라 가르치고, 성경은 욕망을 낮추라 가르친다. 디모데전서 6:8—"먹을 것과 입을 것이 있은 즉 족한 줄로 알 것이니라"—은 욕망의 기준점을 근본적으로 낮추는 선언이다.</p>
+
+  <p>마태복음 6:22에서 '성한 눈'의 헬라어 'haplous'는 '단순한', '하나에 집중된'을 의미한다. 돈에 대한 집착이 사라진 눈은 오직 하나님 나라만을 바라본다. 그때 "먼저 그의 나라와 의를 구하라"는 명령이 비로소 실제로 가능해진다. <strong>자족은 절약이 아니라 더 큰 자유로 향하는 길이다.</strong></p>
+
+  <div class="section-divider">· · ·</div>
+
+  <h2>10장. 관대함의 신학 — 나눔의 기쁨</h2>
+
+  <p>타인을 위해 돈을 쓸 때 자신을 위해 쓸 때보다 더 큰 행복감을 경험한다는 연구 결과는 예수님의 말씀과 공명한다. <em>"주는 것이 받는 것보다 복이 있다"</em>(행 20:35). 마게도니아 교회는 환난과 극심한 가난 가운데서도 넘치는 기쁨으로 풍성하게 연보했다. 비결은 <strong>"먼저 자신을 주께 드린 것"</strong>이었다(고후 8:5).</p>
+
+  <div class="pullquote">
+    사랑은 하나님을 향한 넘치는 기쁨으로 이웃의 필요를 채우는 것이다.
+    <cite>— 존 파이퍼</cite>
+  </div>
+
+  <h3>존 웨슬리의 재정 원칙</h3>
+
+  <p>웨슬리는 세 가지 원칙을 세웠다: <strong>"최대한 많이 벌라. 최대한 저축하라. 최대한 주라."</strong> 그 자신은 연 수입이 30파운드이든 120파운드이든 항상 28파운드만 생활비로 쓰고 나머지는 하나님 나라와 이웃을 위해 사용했다. 수입이 늘어도 생활 수준을 높이지 않은 것—이것이 삶으로 보여준 성경적 재정관이다.</p>
+
+  <div class="section-divider">· · ·</div>
+
+  <h2>11장. 실천적 지침 — 구체적 걸음</h2>
+
+  <ol class="guideline-list">
+    <li><strong>필요(needs)와 욕망(desires)을 구분하라.</strong> 구매 전 "이것이 없으면 안 되는가? 한 달을 기다려도 괜찮은가?" 묻는 습관을 기르라. 단, 무조건 짜게 살자는 것도 또 다른 굴레다.</li>
+    <li><strong>부채에서 자유로운 삶을 추구하라.</strong> 신용불량자의 69%가 신용카드 때문에 무너졌다. 재정의 첫 번째 목표는 돈을 많이 버는 것이 아니라 안정성을 유지하는 것이다.</li>
+    <li><strong>기록하고 측정하라.</strong> "가계부를 3년 쓰면 삶이 바뀐다." 통장 쪼개기—생활비, 비상금, 저축, 헌금·구제 통장을 분리하라.</li>
+    <li><strong>투기를 금하라.</strong> 한탕주의는 도박 심리다. "내가 얻으면 남이 잃는" 구조를 피하라.</li>
+    <li><strong>자녀에게 재정 습관을 가르치라.</strong> 노동과 보상의 원리, 목적 있는 저축, 나눔의 경험을 일찍부터 훈련시키라. 무엇보다 부모가 먼저 모범을 보여라.</li>
+    <li><strong>관리 + 자족 + 하나님 의존(Radical Dependence)</strong>—이 세 요소의 균형을 유지하라.</li>
+  </ol>
+
+  <div class="section-divider">· · ·</div>
+
+  <h2>에필로그: 인생의 십일조</h2>
+
+  <p>십일조의 신학적 의미는 수입의 1/10을 드리는 것이 아니라 <strong>"이 모든 것이 주님이 주신 것이다"</strong>라는 고백이다. 이 고백이 삶 전체로 확장될 때, "내 인생이 주님의 것이다"라는 고백이 된다. 오병이어의 기적처럼—작은 것을 내어 놓았는데 희생보다 더 큰 풍성함을 얻는다. 이것이 인생의 십일조가 가져다주는 역설이다.</p>
+
+  <p>퓨 리서치 조사에 따르면, 17개국 중 한국만이 '물질적 풍요'를 인생의 의미 1위로 꼽는다. 다른 모든 나라의 1위는 가족이다.</p>
+
+  <div class="pullquote">
+    돈은 당신의 인생에 의미를 더할 수는 있지만, 인생의 의미가 될 수는 없다.
+    <cite>— 앤디 스탠리</cite>
+  </div>
+
+  <div class="takeaway-box">
+    <h3>핵심 결론</h3>
+    <p>성경적 재정관은 재정 관리 기술이 아니라 <strong>신학</strong>이다. 하나님이 누구신지, 나는 누구인지, 이 세상의 자원은 무엇이며 어떻게 사용되어야 하는지에 대한 근본적인 세계관이다.</p>
+    <p>"자기를 위하여 재물을 쌓아두고 하나님께 대하여 부요하지 못한 자가 이와 같으니라"(눅 12:21). <strong>하나님께 대하여 부요한 자가 되는 것</strong>—그것이 성경적 재정관의 궁극적 목표다.</p>
+    <p>케빈 드영의 말처럼, "온전히 인간다운 삶은 소유의 종살이에서 벗어난 자유로운 삶이다." 자유로운 삶은 많이 가지는 것이 아니라, 가진 것과 갖지 못한 것에 흔들리지 않는 것이다.</p>
+  </div>
+
+  <!-- ── Sources ── -->
+  <div class="sources">
+    <h2>참고 자료 및 출처</h2>
+    <ul>
+      <li>조성표, 『알수록 행복해지는 돈의 비밀』 (CUP, 2008)</li>
+      <li>폴 스티븐스·클라이브 림, 『돈은 중요하다』</li>
+      <li>조성표 교수 강의, "돈 걱정 없는 가정, 그 비결은?"</li>
+      <li>문대원 목사, 권성수 목사, 윤명숙 전도사 설교 시리즈</li>
+      <li>리처드 포스터, 『돈, 섹스, 권력』</li>
+      <li>마이클 샌델, 『돈으로 살 수 없는 것들』</li>
+      <li>헨리 조지, 『진보와 빈곤』 (Progress and Poverty)</li>
+      <li>막스 베버, 『프로테스탄트 윤리와 자본주의 정신』</li>
+      <li>로널드 사이어, 『부유한 기독교인들이 굶주린 세상에서 사는 법』</li>
+      <li>마이모니데스, 쯔다카 8단계 (Mishneh Torah, Hilkhot Matanot Aniyim)</li>
+    </ul>
+  </div>
+
+</article>
+
+<footer class="article-footer">
+  <p>성경적 재정관 종합 연구 보고서 · 멘토링 Q&amp;A 시리즈 정리 · 2026</p>
+</footer>
+
+</body>
+</html>
