@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+
+<title>정체성(Identity) — 존재의 뿌리를 다시 묻다</title>
+
+
+
+
+
+
+
+
+<style>
+  :root {
+    --clr-bg: #FAF8F5;
+    --clr-surface: #FFFFFF;
+    --clr-accent: #6B4226;
+    --clr-accent-light: #A67C52;
+    --clr-accent-bg: #F3EDE4;
+    --clr-text: #2C2C2C;
+    --clr-text-secondary: #5A5A5A;
+    --clr-text-muted: #8A8A8A;
+    --clr-border: #E4DDD4;
+    --clr-highlight: #D4A76A;
+    --clr-pull: #4A3520;
+    --clr-card-shadow: rgba(107, 66, 38, 0.06);
+    --font-serif: 'Noto Serif KR', 'Batang', Georgia, 'Times New Roman', serif;
+    --font-sans: 'Pretendard', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --max-w: 760px;
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.75rem;
+    --space-lg: 3rem;
+    --space-xl: 5rem;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { font-size: 17px; scroll-behavior: smooth; }
+
+  body {
+    background: var(--clr-bg);
+    color: var(--clr-text);
+    font-family: var(--font-sans);
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── Hero ─── */
+  .hero {
+    background: linear-gradient(165deg, #3B2313 0%, #5C3A1E 40%, #7A5030 100%);
+    color: #F5EDE3;
+    padding: var(--space-xl) var(--space-md) var(--space-lg);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, var(--clr-bg));
+  }
+  .hero__kicker {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--clr-highlight);
+    margin-bottom: var(--space-sm);
+    font-weight: 600;
+  }
+  .hero__title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 5.5vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: var(--space-sm);
+    letter-spacing: -0.02em;
+  }
+  .hero__subtitle {
+    font-family: var(--font-serif);
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    font-weight: 400;
+    color: #C9B89D;
+    max-width: 560px;
+    margin: 0 auto var(--space-md);
+    line-height: 1.6;
+  }
+  .hero__meta {
+    font-size: 0.78rem;
+    color: #A89880;
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  /* ─── Layout ─── */
+  .container {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+  }
+
+  /* ─── Abstract ─── */
+  .abstract {
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    border-radius: 12px;
+    padding: var(--space-md) var(--space-md);
+    margin: calc(-1 * var(--space-md)) auto var(--space-lg);
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 24px var(--clr-card-shadow);
+  }
+  .abstract__label {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--clr-accent);
+    margin-bottom: var(--space-xs);
+  }
+  .abstract p {
+    font-family: var(--font-serif);
+    font-size: 0.98rem;
+    color: var(--clr-text-secondary);
+    line-height: 1.9;
+  }
+
+  /* ─── Key Findings ─── */
+  .findings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+  }
+  .finding-card {
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    border-radius: 10px;
+    padding: var(--space-sm) var(--space-sm);
+    position: relative;
+    overflow: hidden;
+  }
+  .finding-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--clr-accent), var(--clr-highlight));
+  }
+  .finding-card__num {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--clr-accent-light);
+    opacity: 0.35;
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  .finding-card__text {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--clr-text);
+    line-height: 1.55;
+  }
+
+  /* ─── Sections ─── */
+  .section { margin-bottom: var(--space-lg); }
+
+  .section__number {
+    font-family: var(--font-serif);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--clr-accent-light);
+    letter-spacing: 0.08em;
+    margin-bottom: 0.25rem;
+  }
+
+  h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(1.35rem, 3vw, 1.65rem);
+    font-weight: 700;
+    color: var(--clr-accent);
+    line-height: 1.3;
+    margin-bottom: var(--space-sm);
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    font-family: var(--font-sans);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--clr-text);
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-xs);
+  }
+
+  p {
+    margin-bottom: var(--space-sm);
+    font-size: 0.96rem;
+  }
+
+  /* ─── Divider ─── */
+  .divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--clr-border), transparent);
+    margin: var(--space-lg) 0;
+  }
+
+  /* ─── Pull Quote ─── */
+  .pull-quote {
+    border-left: 3px solid var(--clr-highlight);
+    padding: var(--space-sm) var(--space-md);
+    margin: var(--space-md) 0;
+    background: var(--clr-accent-bg);
+    border-radius: 0 8px 8px 0;
+  }
+  .pull-quote p {
+    font-family: var(--font-serif);
+    font-size: 1.08rem;
+    font-weight: 500;
+    color: var(--clr-pull);
+    line-height: 1.75;
+    margin-bottom: 0;
+    font-style: italic;
+  }
+  .pull-quote .pq-attr {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-style: normal;
+    color: var(--clr-text-muted);
+    margin-top: 0.4rem;
+  }
+
+  /* ─── Blockquote (scripture) ─── */
+  blockquote {
+    border-left: 2px solid var(--clr-accent-light);
+    padding: var(--space-xs) var(--space-sm);
+    margin: var(--space-sm) 0;
+    color: var(--clr-text-secondary);
+    font-family: var(--font-serif);
+    font-size: 0.92rem;
+    line-height: 1.8;
+  }
+
+  /* ─── Tables ─── */
+  .table-wrap {
+    overflow-x: auto;
+    margin: var(--space-sm) 0 var(--space-md);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  thead {
+    background: var(--clr-accent);
+    color: #fff;
+  }
+  th {
+    padding: 0.6rem 0.9rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 0.03em;
+  }
+  td {
+    padding: 0.6rem 0.9rem;
+    border-bottom: 1px solid var(--clr-border);
+    vertical-align: top;
+  }
+  tbody tr:nth-child(even) { background: var(--clr-accent-bg); }
+
+  /* ─── Comparison Card ─── */
+  .comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+    margin: var(--space-md) 0;
+  }
+  @media (max-width: 520px) {
+    .comparison { grid-template-columns: 1fr; }
+  }
+  .comparison__card {
+    padding: var(--space-sm);
+    border-radius: 10px;
+    border: 1px solid var(--clr-border);
+  }
+  .comparison__card--world {
+    background: #F8F0E8;
+  }
+  .comparison__card--bible {
+    background: #EAF0E8;
+    border-color: #B8CDAF;
+  }
+  .comparison__card h4 {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.5rem;
+  }
+  .comparison__card--world h4 { color: #8A6340; }
+  .comparison__card--bible h4 { color: #4A6B3A; }
+  .comparison__card ul {
+    list-style: none;
+    padding: 0;
+  }
+  .comparison__card li {
+    font-size: 0.88rem;
+    padding: 0.25rem 0;
+    padding-left: 1.1rem;
+    position: relative;
+    line-height: 1.6;
+  }
+  .comparison__card li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+  }
+
+  /* ─── Info Box ─── */
+  .info-box {
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    border-radius: 10px;
+    padding: var(--space-sm) var(--space-sm);
+    margin: var(--space-md) 0;
+    box-shadow: 0 2px 12px var(--clr-card-shadow);
+  }
+  .info-box__label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--clr-accent);
+    margin-bottom: 0.4rem;
+  }
+  .info-box p, .info-box li {
+    font-size: 0.9rem;
+    line-height: 1.75;
+  }
+
+  /* ─── Diagram ─── */
+  .diagram {
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    border-radius: 12px;
+    padding: var(--space-md);
+    margin: var(--space-md) 0;
+    text-align: center;
+    box-shadow: 0 2px 16px var(--clr-card-shadow);
+  }
+  .diagram__title {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--clr-accent);
+    margin-bottom: var(--space-sm);
+  }
+  .diagram__flow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .diagram__node {
+    background: var(--clr-accent-bg);
+    border: 1px solid var(--clr-border);
+    border-radius: 8px;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--clr-accent);
+    min-width: 180px;
+  }
+  .diagram__node--top {
+    background: linear-gradient(135deg, #5C3A1E, #7A5030);
+    color: #F5EDE3;
+    border: none;
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
+  }
+  .diagram__node--wide {
+    min-width: 240px;
+    background: #EAF0E8;
+    border-color: #B8CDAF;
+    color: #3A5A2D;
+  }
+  .diagram__arrow {
+    color: var(--clr-accent-light);
+    font-size: 1.1rem;
+    line-height: 1;
+  }
+  .diagram__branches {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0.3rem;
+  }
+  .diagram__branches .diagram__node {
+    min-width: 140px;
+    font-size: 0.82rem;
+  }
+
+  /* ─── Ordered List ─── */
+  .steps {
+    counter-reset: step;
+    list-style: none;
+    padding: 0;
+    margin: var(--space-sm) 0;
+  }
+  .steps li {
+    counter-increment: step;
+    padding: 0.5rem 0 0.5rem 2.4rem;
+    position: relative;
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+  .steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0; top: 0.45rem;
+    width: 1.6rem; height: 1.6rem;
+    background: var(--clr-accent);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ─── Unordered list ─── */
+  ul { padding-left: 1.2rem; margin-bottom: var(--space-sm); }
+  li { margin-bottom: 0.25rem; font-size: 0.92rem; }
+
+  /* ─── Highlight Box ─── */
+  .highlight-box {
+    background: linear-gradient(135deg, #3B2313, #5C3A1E);
+    color: #F5EDE3;
+    border-radius: 12px;
+    padding: var(--space-md);
+    margin: var(--space-md) 0;
+    text-align: center;
+  }
+  .highlight-box p {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    line-height: 1.75;
+    margin-bottom: 0;
+  }
+
+  /* ─── Takeaway ─── */
+  .takeaway {
+    background: var(--clr-accent-bg);
+    border-radius: 12px;
+    padding: var(--space-md);
+    margin: var(--space-lg) 0;
+  }
+  .takeaway__label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--clr-accent);
+    margin-bottom: var(--space-xs);
+  }
+  .takeaway ul { padding-left: 1.2rem; }
+  .takeaway li {
+    font-size: 0.92rem;
+    line-height: 1.75;
+    margin-bottom: 0.4rem;
+  }
+
+  /* ─── Sources ─── */
+  .sources {
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    border-radius: 10px;
+    padding: var(--space-sm) var(--space-sm);
+    margin: var(--space-md) 0;
+  }
+  .sources__label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--clr-accent);
+    margin-bottom: var(--space-xs);
+  }
+  .sources ul {
+    list-style: none;
+    padding: 0;
+    columns: 2;
+    column-gap: var(--space-md);
+  }
+  @media (max-width: 520px) {
+    .sources ul { columns: 1; }
+  }
+  .sources li {
+    font-size: 0.82rem;
+    color: var(--clr-text-secondary);
+    padding: 0.2rem 0;
+    break-inside: avoid;
+  }
+  .sources li strong {
+    color: var(--clr-text);
+  }
+
+  /* ─── Footer ─── */
+  .footer {
+    text-align: center;
+    padding: var(--space-lg) var(--space-md);
+    color: var(--clr-text-muted);
+    font-size: 0.78rem;
+    border-top: 1px solid var(--clr-border);
+    margin-top: var(--space-xl);
+  }
+  .footer p { margin-bottom: 0.3rem; }
+
+  /* ─── Responsive ─── */
+  @media (max-width: 600px) {
+    html { font-size: 15.5px; }
+    .hero { padding: var(--space-lg) var(--space-sm) var(--space-md); }
+    .container { padding: 0 var(--space-sm); }
+  }
+</style>
+<meta property="og:type" content="article">
+<meta property="og:title" content="정체성 (Identity)">
+<meta property="og:description" content="1. 핵심 질문 &quot;내가 누구인지에 대한 확신이 없으면 다른 사람의 평가에 휩쓸린다.&quot; — [[people/문대원]], ReShape(1) 정체성은 신앙의 문제이기 전에 존재의 문제다. &quot;나는 누구인가&quot;에 대한 답이 흔들리면, 무엇을 해야 하는지도, 어떻게 살아야 하는지도 불안해진다. 성경은 정체성의 근원을 성취나 관계나 ">
+<meta property="og:url" content="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/s/1br6k5j/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="정체성 (Identity)">
+<meta name="twitter:description" content="1. 핵심 질문 &quot;내가 누구인지에 대한 확신이 없으면 다른 사람의 평가에 휩쓸린다.&quot; — [[people/문대원]], ReShape(1) 정체성은 신앙의 문제이기 전에 존재의 문제다. &quot;나는 누구인가&quot;에 대한 답이 흔들리면, 무엇을 해야 하는지도, 어떻게 살아야 하는지도 불안해진다. 성경은 정체성의 근원을 성취나 관계나 ">
+<link rel="canonical" href="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/s/1br6k5j/">
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<header class="hero">
+  <div class="hero__kicker">Theological Research Note</div>
+  <h1 class="hero__title">정체성(Identity)<br>존재의 뿌리를 다시 묻다</h1>
+  <p class="hero__subtitle">성경은 "나는 누구인가"라는 질문에 어떻게 답하는가 — 거듭남에서 선교적 교회까지, 정체성 재형성의 신학적 여정</p>
+  <div class="hero__meta">
+    <span>동신교회 신학 연구 노트</span>
+    <span>2026. 06. 03 업데이트</span>
+    <span>읽기 약 15분</span>
+  </div>
+</header>
+
+<!-- ═══ ABSTRACT ═══ -->
+<div class="container">
+  <div class="abstract">
+    <div class="abstract__label">Abstract</div>
+    <p>
+      정체성은 신앙 이전에 존재의 문제다. "나는 누구인가"에 대한 답이 흔들리면 삶의 모든 결정이 불안해진다.
+      본 노트는 문대원 목사의 ReShape 시리즈, 폴 리쾨르의 이중 정체성 이론, 헨리 나우웬의 "사랑받는 자" 신학,
+      그리고 요한복음 3장·민수기 13장·로마서 5장의 본문 분석을 교차시키며
+      성경적 정체성이 어떻게 형성되고 왜곡되며 재형성되는지를 추적한다.
+      나아가 우상숭배·선교적 교회·기독 의료인·번아웃·한국적 수치 문화라는 다섯 가지 적용 영역으로 확장하여,
+      정체성이 개인의 내면에 머물지 않고 공동체와 구조의 문제로 나아가야 함을 논증한다.
+    </p>
+  </div>
+
+  <!-- ═══ KEY FINDINGS ═══ -->
+  <div class="findings">
+    <div class="finding-card">
+      <div class="finding-card__num">01</div>
+      <div class="finding-card__text">정체성은 증명하는 것이 아니라 <strong>이미 증명된 것</strong>을 믿는 것이다 (롬 5:8)</div>
+    </div>
+    <div class="finding-card">
+      <div class="finding-card__num">02</div>
+      <div class="finding-card__text">거듭남은 종교적 회심이 아니라 <strong>정체성의 기초 교체</strong>다</div>
+    </div>
+    <div class="finding-card">
+      <div class="finding-card__num">03</div>
+      <div class="finding-card__text">좋은 것을 궁극적인 것으로 삼는 순간 <strong>우상이자 잘못된 정체성의 뿌리</strong>가 된다</div>
+    </div>
+    <div class="finding-card">
+      <div class="finding-card__num">04</div>
+      <div class="finding-card__text">정체성은 혼자 발견하는 것이 아니라 <strong>공동체 안에서 형성되고 검증</strong>된다</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ═══ SECTION 1 ═══ -->
+  <section class="section">
+    <div class="section__number">Section 01</div>
+    <h2>핵심 질문 — "나는 누구인가"</h2>
+
+    <div class="pull-quote">
+      <p>"내가 누구인지에 대한 확신이 없으면 다른 사람의 평가에 휩쓸린다."</p>
+      <div class="pq-attr">— 문대원, ReShape(1)</div>
+    </div>
+
+    <p>
+      정체성은 신앙의 문제이기 전에 <strong>존재의 문제</strong>다.
+      "나는 누구인가"에 대한 답이 흔들리면, 무엇을 해야 하는지도, 어떻게 살아야 하는지도 불안해진다.
+      성경은 정체성의 근원을 성취나 관계나 역할이 아닌, <em>하나님과의 관계</em>에서 찾는다.
+    </p>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ═══ SECTION 2 ═══ -->
+  <section class="section">
+    <div class="section__number">Section 02</div>
+    <h2>두 가지 정체성 형성 방식</h2>
+
+    <div class="comparison">
+      <div class="comparison__card comparison__card--world">
+        <h4>세상의 방식</h4>
+        <ul>
+          <li>"너의 가치를 증명하라"</li>
+          <li>스펙·연봉·성공으로 증명</li>
+          <li>타인의 판단이 내 정체성을 결정</li>
+          <li>인간의 사랑은 완벽하지 않으므로 온전한 정체성 불가</li>
+        </ul>
+      </div>
+      <div class="comparison__card comparison__card--bible">
+        <h4>성경의 방식</h4>
+        <ul>
+          <li>"너의 가치는 이미 증명되었다"</li>
+          <li>롬 5:8 — 죄인 되었을 때 그리스도께서 죽으심</li>
+          <li>"내가 너를 위해서 죽을 만큼 너는 귀한 존재"</li>
+          <li>예수님 때문에 살아가는 삶</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>
+      영화 <em>라이언 일병 구하기</em>의 질문이 여기에 닿는다 — 나를 살리기 위해 여섯 명이 죽었다면, 나는 어떻게 살 것인가.
+      복음은 바로 그 질문을 우리 앞에 놓는다.
+    </p>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ═══ SECTION 3 ═══ -->
+  <section class="section">
+    <div class="section__number">Section 03</div>
+    <h2>정체성의 구조 — 리쾨르의 두 차원</h2>
+
+    <p>폴 리쾨르(Paul Ricœur)는 정체성을 두 층위로 구분한다.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>구분</th><th>내용</th><th>예시</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>동일성<br>(Idem-identity)</strong></td>
+            <td>변하지 않는 고정된 특성 — "무엇인가"</td>
+            <td>이름, 유전자, 과거 이력</td>
+          </tr>
+          <tr>
+            <td><strong>자기성<br>(Ipse-identity)</strong></td>
+            <td>관계와 서사 속에서 형성되는 — "누구인가"</td>
+            <td>약속, 책임, 사랑받는 자</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      복음은 동일성(과거의 나)을 지우지 않고, <strong>자기성(새로운 서사 속의 나)을 근본적으로 재정의</strong>한다.
+    </p>
+
+    <div class="info-box">
+      <div class="info-box__label">Case Study</div>
+      <p>
+        <strong>베드로 vs. 윤치호</strong> — 동일한 실패 상황에서도 <em>자기성</em>의 차이(예수님과의 관계)가
+        돌아옴과 돌아오지 않음을 결정했다. 제자도는 관점·가치·신념이 변화되는 과정,
+        곧 자기성의 재형성이다.
+      </p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ═══ SECTION 4 ═══ -->
+  <section class="section">
+    <div class="section__number">Section 04</div>
+    <h2>거듭남 — 정체성 변화의 기초</h2>
+
+    <p>
+      거듭남은 단순한 종교적 회심이 아니라 <strong>정체성의 기초 교체</strong>다.
+      새로운 아버지에게서 새로운 DNA를 받는 것이다.
+    </p>
+
+    <blockquote>
+      "사람이 위로부터 나지 아니하면 하나님의 나라를 볼 수 없느니라" — 요 3:3
+    </blockquote>
+
+    <p>
+      아무리 좋은 환경(모태신앙, 신학교육)도 거듭남 없이는 정체성의 뿌리가 바뀌지 않는다.
+      베드로전서 1장의 "흩어진 나그네"는 세상에서의 외국인 신분이 굴욕이 아니라
+      <em>하늘 시민의 증거</em>임을 선포한다. 거듭남으로 얻은 "산 소망"이 나그네 정체성의 핵심이다.
+    </p>
+
+    <h3>학습된 무력감 — 메뚜기 콤플렉스</h3>
+
+    <p>
+      마틴 셀리그먼(펜실베이니아대)의 연구에 따르면, 실패가 반복되면
+      노력해도 결과를 바꿀 수 없다고 믿게 된다. 코끼리를 길들이는 방식과 같다 —
+      나중에는 가느다란 줄로도 도망치지 못한다.
+    </p>
+
+    <p>
+      민수기 13장 정탐꾼 사건이 바로 이 모습이다.
+      각 지파의 최고 인물들이 스스로를 메뚜기로 여겼다.
+      그러나 여호수아와 갈렙은 다른 언어를 사용했다 — "여호와께서 우리를 기뻐하시면."
+    </p>
+
+    <div class="highlight-box">
+      <p>하나님을 주어로 말하는 사람 = 하나님을 경외하는 사람<br>= 정체성이 하나님께 닿은 사람</p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ═══ SECTION 5 ═══ -->
+  <section class="section">
+    <div class="section__number">Section 05</div>
+    <h2>우상숭배 — 정체성의 잘못된 뿌리</h2>
+
+    <p>
+      팀 켈러의 통찰에 따르면, 우상숭배는 단순히 나쁜 것을 섬기는 게 아니라
+      <strong>좋은 것을 궁극적인 것으로 삼는 것</strong>이다.
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>정체성의 근거</th><th>우상이 되는 것</th><th>결과</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>성취</td><td>성공</td><td>실패 시 존재 위기</td></tr>
+          <tr><td>사람의 인정</td><td>관계</td><td>거절 시 자아 붕괴</td></tr>
+          <tr><td>사역</td><td>사역 자체</td><td>사역 상실 시 정체성 상실</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pull-quote">
+      <p>"하나님이 아닌 것이 내 정체성의 근거가 되는 순간, 그것은 이미 우상이다."</p>
+    </div>
+
+    <p>
+      진정한 정체성의 뿌리는 "내가 무엇을 했는가"가 아니라
+      "하나님이 나를 어떻게 보시는가"여야 한다.
+    </p>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ═══ SECTION 6 ═══ -->
+  <section class="section">
+    <div class="section__number">Section 06</div>
+    <h2>하나님의 사랑받는 자 — 헨리 나우웬</h2>
+
+    <div class="pull-quote">
+      <p>"당신은 하나님의 사랑받는 자(The Beloved)다. 이것이 당신의 가장 깊은 정체성이다."</p>
+      <div class="pq-attr">— Henri Nouwen</div>
+    </div>
+
+    <p>나우웬의 정체성 신학은 세 가지 키워드로 요약된다.</p>
+
+    <ul>
+      <li><strong>아래로의 이동(Downward Mobility)</strong> — 성공·성취가 아닌 섬김과 취약성으로 향하는 삶</li>
+      <li><strong>상처 입은 치유자(Wounded Healer)</strong> — 자신의 연약함이 타인을 치유하는 통로가 됨</li>
+      <li><strong>내면의 발견</strong> — 정체성은 밖에서 찾는 것이 아니라 하나님의 시선 안에서 발견하는 것</li>
+    </ul>
+
+    <blockquote>
+      "영성훈련은 내면의 영적인 공간을 침묵으로 만드는 것, 하나님이 자유롭게 역사하시고 말씀하실 수 있는 공간을 만드는 것이다."
+      <br>— 김성규, 《인비저블 처치》
+    </blockquote>
+
+    <p>침묵의 실천은 결국 "내가 누구인지"를 하나님 앞에서 재발견하는 시간이다.</p>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ═══ SECTION 7 ═══ -->
+  <section class="section">
+    <div class="section__number">Section 07</div>
+    <h2>ReShape — 정체성에서 삶 전체로</h2>
+
+    <p>문대원 목사님의 ReShape 시리즈는 삶의 리모델링을 다섯 단계로 구조화한다.</p>
+
+    <div class="diagram">
+      <div class="diagram__title">ReShape 프레임워크</div>
+      <div class="diagram__flow">
+        <div class="diagram__node diagram__node--top">정체성 (Identity)</div>
+        <div class="diagram__arrow">↓</div>
+        <div class="diagram__node">관점 (Perspective)</div>
+        <div class="diagram__arrow">↓</div>
+        <div class="diagram__node">가치 (Value)</div>
+        <div class="diagram__arrow">↓</div>
+        <div class="diagram__node">신념 (Belief)</div>
+        <div class="diagram__arrow">↓</div>
+        <div class="diagram__node diagram__node--wide">삶 전체 — 통합된 제자의 삶</div>
+      </div>
+    </div>
+
+    <p>
+      정체성이 바뀌면 관점이 바뀌고, 관점이 바뀌면 가치가 바뀌고, 가치가 바뀌면 삶이 바뀐다.
+      ReShape는 "더 나은 나"를 만드는 자기계발이 아니라,
+      <strong>뿌리부터 다시 심는 정체성 재형성</strong>이다.
+    </p>
+
+    <p>
+      달라스 윌라드는 인간의 내면을 '중앙살림부'라 불렀다 — 한 사람의 진정한 모습이 결정되는 곳.
+      제자훈련은 바로 이 중앙살림부를 그리스도의 형상으로 변화시키는 과정이다.
+    </p>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ═══ SECTION 8 ═══ -->
+  <section class="section">
+    <div class="section__number">Section 08</div>
+    <h2>Integrity — 정체성과 선교적 교회</h2>
+
+    <div class="pull-quote">
+      <p>"메신저와 메시지는 분리될 수 없다."<br>"언제 어디서나 동일한 모습으로 사는 것"이 선교적 교회의 핵심이다.</p>
+    </div>
+
+    <p>
+      다윗(시 78:72)은 양을 돌보는 일이든 왕이 되든 동일한 마음이었다.
+      이것은 결국 정체성의 문제다.
+      정체성이 흔들리면 상황마다 다른 모습을 보이게 된다.
+      반대로 정체성이 확고하면, 직장에서든 교회에서든 가정에서든 동일한 사람으로 존재할 수 있다.
+    </p>
+
+    <p>
+      《인비저블 처치》의 통찰 — "성령의 위치는 그 시간에, 소명받은 공간에, 나라는 인간에게 부어주신 충만."
+      도심 속에서 보이지 않게 녹아드는 삶이 가능한 이유는 정체성이 장소에 좌우되지 않기 때문이다.
+    </p>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ═══ SECTION 9 ═══ -->
+  <section class="section">
+    <div class="section__number">Section 09</div>
+    <h2>기독 의료인의 정체성</h2>
+
+    <p>의료인은 정체성의 왜곡에 특히 취약한 직군이다.</p>
+
+    <ul>
+      <li>성과(치료 성공률, 논문, 전공의 합격)에 정체성을 두는 유혹</li>
+      <li>환자의 인정과 감사에 정체성을 두는 유혹</li>
+      <li>직업적 정체성("나는 의사다")과 신앙적 정체성("나는 하나님의 자녀다")의 분리</li>
+    </ul>
+
+    <div class="info-box">
+      <div class="info-box__label">CMF/KCMF의 지향</div>
+      <p>
+        의료 행위 자체가 선교 — <strong>일상 속에서 정체성이 통합된 삶</strong>.<br>
+        환자 옆에 있는 것 자체가 하나님의 임재를 대리하는 것이다.<br>
+        선교적 교회의 Integrity = 진료실에서도 신앙 공동체에서도 동일한 사람.
+      </p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ═══ SECTION 10 ═══ -->
+  <section class="section">
+    <div class="section__number">Section 10</div>
+    <h2>공동체적 정체성 훈련</h2>
+
+    <p>
+      정체성은 혼자 발견하는 것이 아니라 <strong>관계 속에서 형성되고 검증</strong>된다.
+      리쾨르의 자기성(ipse-identity)은 서사와 관계 없이는 형성되지 않는다.
+      개인 영성 훈련의 한계는 자기 확인이 자기 착각으로 흐를 수 있다는 점이다.
+    </p>
+
+    <h3>실천의 3층위</h3>
+
+    <ol class="steps">
+      <li>
+        <strong>선포하는 공동체</strong> — 서로에게 "너는 하나님의 사랑받는 자다"를 말해주는 구조.
+        웨슬리 속회(Class Meeting)가 역사적 원형.
+      </li>
+      <li>
+        <strong>몸의 훈련 공동체</strong> — 함께 먹고, 걷고, 읽는 것.
+        정체성은 말이 아닌 삶의 질감으로 전달된다.
+      </li>
+      <li>
+        <strong>리미널리티 공동체</strong> — 경계선에 함께 들어갈 때 커뮤니타스가 형성되고
+        정체성이 시험받고 재확인된다.
+      </li>
+    </ol>
+
+    <div class="pull-quote">
+      <p>"너는 귀한 사람이야" — 이 말이 하나님의 음성으로 들리려면, 먼저 사람의 입에서 신뢰할 수 있게 들려야 한다.</p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ═══ SECTION 11 ═══ -->
+  <section class="section">
+    <div class="section__number">Section 11</div>
+    <h2>번아웃 — 정체성 문제인가, 구조 문제인가</h2>
+
+    <p><strong>결론: 둘 다다.</strong> 어느 쪽으로 진단하느냐에 따라 처방이 달라진다.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>오진</th><th>처방</th><th>오류</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>"정체성 문제만"</td>
+            <td>"더 기도해라"</td>
+            <td>구조 문제를 개인화·영성화</td>
+          </tr>
+          <tr>
+            <td>"구조 문제만"</td>
+            <td>"시스템 개혁만"</td>
+            <td>지금 고통받는 사람을 지금 돕지 못함</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      달라스 윌라드의 중앙살림부가 직업으로 채워진 사람에게 직업적 위기는 곧 존재적 위기다.
+      동시에, 한국 의료의 3분 진료·수가 구조·야간 당직은 아무리 강한 정체성도 소진시킨다.
+    </p>
+
+    <p>
+      올바른 처방은 레벨에 따라: <strong>개인</strong>(정체성 재확인) →
+      <strong>공동체</strong>(함께 짊어짐) → <strong>시스템</strong>(예언자적 목소리).
+    </p>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ═══ SECTION 12 ═══ -->
+  <section class="section">
+    <div class="section__number">Section 12</div>
+    <h2>"사랑받는 자" × 한국적 수치 문화</h2>
+
+    <p>
+      나우웬의 처방은 서구 개인주의 맥락에서 나왔다.
+      한국은 수치 문화(shame culture)권이다.
+      수치는 "내가 나쁜 일을 했다"(죄책감)가 아니라
+      <strong>"나는 나쁜 사람이다"</strong> — 존재 자체의 문제다.
+    </p>
+
+    <h3>신학적 번역의 3방향</h3>
+
+    <ol class="steps">
+      <li>
+        <strong>수치를 직접 다루는 복음</strong> — 히 12:2에서 예수님도 십자가의 수치(shame)를 경멸하셨다.
+        복음은 죄를 용서할 뿐 아니라 수치를 덮는다.
+      </li>
+      <li>
+        <strong>관계적 지위로 재해석</strong> — "사랑받는 자"를 내면의 개인 선언이 아닌
+        "당신은 하나님의 가족 안에 속한 사람이다"로 번역.
+      </li>
+      <li>
+        <strong>공동체가 수치를 함께 짊어짐</strong> — 나우웬이 라르쉬에서 경험한 것은 사실 매우 관계적이었다.
+        수치 문화권에서는 그 관계적 차원이 전면에 나와야 한다.
+      </li>
+    </ol>
+
+    <div class="info-box">
+      <div class="info-box__label">핵심 역설</div>
+      <p>나우웬의 처방은 겉으로 개인주의적이지만, 실제 경험은 매우 관계적이었다.</p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ═══ DIAGRAM ═══ -->
+  <section class="section">
+    <div class="section__number">Synthesis</div>
+    <h2>정체성 연결 지도</h2>
+
+    <div class="diagram">
+      <div class="diagram__title">Identity Connection Map</div>
+      <div class="diagram__flow">
+        <div class="diagram__node diagram__node--top">하나님</div>
+        <div class="diagram__arrow">↓</div>
+        <div class="diagram__node">사랑받는 자 (나우웬)</div>
+        <div class="diagram__arrow">↓</div>
+        <div class="diagram__branches">
+          <div class="diagram__node">거듭남<br><small>요 3 · 벧전 1</small></div>
+          <div class="diagram__node">침묵의 영성<br><small>인비저블 처치</small></div>
+          <div class="diagram__node">말씀<br><small>민 13</small></div>
+        </div>
+        <div class="diagram__arrow">↓</div>
+        <div class="diagram__node">ReShape 과정<br><small>정체성 → 관점 → 가치 → 신념 → 삶</small></div>
+        <div class="diagram__arrow">↓</div>
+        <div class="diagram__branches">
+          <div class="diagram__node diagram__node--wide">Integrity<br><small>선교적 교회 — 언제 어디서나 동일한 모습</small></div>
+          <div class="diagram__node diagram__node--wide">기독 의료인<br><small>일상 통합 — 진료실 안의 하나님 나라</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TAKEAWAYS ═══ -->
+  <div class="takeaway">
+    <div class="takeaway__label">Implications &amp; Takeaways</div>
+    <ul>
+      <li><strong>정체성은 증명이 아니라 수신이다.</strong> 롬 5:8의 복음은 "증명하라"가 아니라 "이미 증명되었다"고 선포한다.</li>
+      <li><strong>거듭남은 정체성의 운영체제를 교체하는 것이다.</strong> 앱(행동) 수준의 변화가 아니라 OS(존재) 수준의 변화.</li>
+      <li><strong>우상은 나쁜 것이 아니라 절대화된 좋은 것이다.</strong> 성취·관계·사역 어떤 것이든 정체성의 근거가 되는 순간 우상이 된다.</li>
+      <li><strong>정체성은 공동체 안에서 형성된다.</strong> 개인 묵상만으로는 자기 확인이 자기 착각으로 흐를 수 있다.</li>
+      <li><strong>번아웃 대응은 다층적이어야 한다.</strong> 개인(정체성 재확인) → 공동체(함께 짊어짐) → 시스템(예언자적 목소리).</li>
+      <li><strong>나우웬의 "사랑받는 자"는 한국적 번역이 필요하다.</strong> 수치 문화에서는 개인 선언보다 관계적 지위가 먼저 와야 한다.</li>
+    </ul>
+  </div>
+
+  <!-- ═══ SOURCES ═══ -->
+  <div class="sources">
+    <div class="sources__label">Source Notes &amp; References</div>
+    <ul>
+      <li><strong>성경 본문</strong> — 요 3장, 민 13장, 롬 5장, 벧전 1장, 히 12:2</li>
+      <li><strong>문대원</strong> — ReShape 시리즈 (2021, 동신교회)</li>
+      <li><strong>Henri Nouwen</strong> — <em>Life of the Beloved</em></li>
+      <li><strong>Dallas Willard</strong> — <em>Renovation of the Heart</em></li>
+      <li><strong>Paul Ricœur</strong> — <em>Oneself as Another</em> (idem/ipse)</li>
+      <li><strong>Tim Keller</strong> — <em>Counterfeit Gods</em></li>
+      <li><strong>김성규</strong> — 《인비저블 처치》</li>
+      <li><strong>Martin Seligman</strong> — Learned Helplessness 연구</li>
+      <li><strong>동신교회</strong> — 선교적 교회 시리즈 (2023)</li>
+      <li><strong>CMF/KCMF</strong> — 기독 의료인 정체성 자료</li>
+    </ul>
+  </div>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <p>본 문서는 동신교회 설교 및 신학 연구 노트를 정리한 것입니다.</p>
+    <p>최종 업데이트: 2026년 6월 3일</p>
+  </footer>
+
+</div>
+</body>
+</html>
