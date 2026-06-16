@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+
+<title>하나님의 선교, 세상을 바꾸다 — 크리스토퍼 라이트 독서 노트</title>
+
+
+
+
+
+
+
+<style>
+  :root {
+    --color-bg: #FAFAF7;
+    --color-surface: #FFFFFF;
+    --color-text: #1A1A1A;
+    --color-text-secondary: #4A4A4A;
+    --color-text-muted: #7A7A7A;
+    --color-accent: #8B4513;
+    --color-accent-light: #A0522D;
+    --color-accent-bg: #FDF5ED;
+    --color-accent-bg-deep: #F5E6D3;
+    --color-border: #E8E0D6;
+    --color-border-light: #F0EBE4;
+    --color-highlight: #FFF8DC;
+    --color-table-header: #3E2723;
+    --color-table-row-alt: #FAF6F1;
+    --color-link: #6B3A2A;
+    --color-tag-bg: #EDEDED;
+    --color-tag-text: #555;
+    --font-serif: 'Noto Serif KR', 'Batang', Georgia, 'Times New Roman', serif;
+    --font-sans: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    --max-width: 760px;
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2.5rem;
+    --space-xl: 4rem;
+    --space-2xl: 6rem;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { font-size: 17px; scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-serif);
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    background: linear-gradient(165deg, #2C1810 0%, #4A2C1A 40%, #6B3A2A 100%);
+    color: #FFF;
+    padding: var(--space-2xl) var(--space-md);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.06) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 80%, rgba(255,255,255,0.04) 0%, transparent 50%);
+  }
+  .hero-inner {
+    position: relative;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .hero-label {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: var(--space-sm);
+  }
+  .hero h1 {
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: var(--space-sm);
+    letter-spacing: -0.02em;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: #F4D9A0;
+  }
+  .hero-subtitle {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+    max-width: 540px;
+    margin: 0 auto var(--space-md);
+  }
+  .hero-meta {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.45);
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .hero-meta span::before {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    background: rgba(255,255,255,0.35);
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 0.5em;
+  }
+  .hero-meta span:first-child::before { display: none; }
+
+  /* ── Layout ── */
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+  }
+
+  article {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-2xl);
+  }
+
+  /* ── Abstract Card ── */
+  .abstract {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
+  .abstract-label {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: var(--space-sm);
+  }
+  .abstract p {
+    font-size: 0.98rem;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+  }
+  .abstract p + p { margin-top: 0.8em; }
+
+  /* ── Key Findings ── */
+  .key-findings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xl);
+  }
+  .finding-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-light);
+    border-radius: 10px;
+    padding: var(--space-md);
+    transition: box-shadow 0.2s;
+  }
+  .finding-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  }
+  .finding-number {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--color-accent);
+    margin-bottom: 0.4em;
+  }
+  .finding-card h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 0.4em;
+  }
+  .finding-card p {
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  /* ── Section Headers ── */
+  .section-break {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin: var(--space-xl) 0 var(--space-lg);
+  }
+  .section-break::before,
+  .section-break::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--color-border);
+  }
+  .section-number {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--color-accent);
+    background: var(--color-accent-bg);
+    padding: 0.3em 1em;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  h2 {
+    font-size: clamp(1.35rem, 3.5vw, 1.65rem);
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: var(--space-md);
+    letter-spacing: -0.015em;
+    color: var(--color-text);
+  }
+  h2 .en { font-style: italic; font-weight: 400; color: var(--color-text-secondary); }
+
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+    color: var(--color-text);
+  }
+
+  p { margin-bottom: 1.1em; }
+
+  strong { font-weight: 700; }
+
+  /* ── Pull Quotes ── */
+  .pullquote {
+    position: relative;
+    margin: var(--space-lg) 0;
+    padding: var(--space-md) var(--space-md) var(--space-md) var(--space-lg);
+    border-left: 3px solid var(--color-accent);
+    background: var(--color-accent-bg);
+    border-radius: 0 8px 8px 0;
+    font-size: 1.02rem;
+    line-height: 1.75;
+    color: var(--color-text-secondary);
+  }
+  .pullquote p { margin-bottom: 0.6em; }
+  .pullquote p:last-child { margin-bottom: 0; }
+  .pullquote cite {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-style: normal;
+    color: var(--color-text-muted);
+    margin-top: 0.6em;
+  }
+
+  .pullquote-featured {
+    text-align: center;
+    border-left: none;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    border-radius: 12px;
+    padding: var(--space-lg);
+    margin: var(--space-xl) 0;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.03);
+  }
+  .pullquote-featured::before {
+    content: '\201C';
+    display: block;
+    font-size: 3rem;
+    line-height: 1;
+    color: var(--color-accent);
+    opacity: 0.35;
+    margin-bottom: 0.2em;
+  }
+  .pullquote-featured p {
+    font-size: 1.15rem;
+    font-weight: 500;
+    line-height: 1.7;
+    color: var(--color-text);
+  }
+
+  /* ── Highlight box ── */
+  .highlight-box {
+    background: var(--color-highlight);
+    border: 1px solid #EDE5C5;
+    border-radius: 8px;
+    padding: var(--space-md);
+    margin: var(--space-md) 0;
+    font-size: 0.92rem;
+  }
+  .highlight-box .label {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--color-accent);
+    margin-bottom: 0.5em;
+  }
+
+  /* ── Tables ── */
+  .table-wrapper {
+    overflow-x: auto;
+    margin: var(--space-md) 0;
+    border-radius: 10px;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+  thead {
+    background: var(--color-table-header);
+    color: #FFF;
+  }
+  th {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    padding: 0.8em 1em;
+    text-align: left;
+  }
+  td {
+    padding: 0.75em 1em;
+    border-top: 1px solid var(--color-border-light);
+    vertical-align: top;
+  }
+  tbody tr:nth-child(even) { background: var(--color-table-row-alt); }
+
+  /* ── Evidence Block ── */
+  .evidence {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-light);
+    border-radius: 10px;
+    padding: var(--space-md);
+    margin: var(--space-md) 0;
+  }
+  .evidence-label {
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 0.6em;
+  }
+  .evidence p {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+  }
+
+  /* ── Handwritten note ── */
+  .handnote {
+    display: inline-block;
+    background: #FFFDE7;
+    border: 1px dashed #D4C98A;
+    border-radius: 4px;
+    padding: 0.15em 0.5em;
+    font-size: 0.88rem;
+    color: #5D4E37;
+    font-style: italic;
+  }
+
+  /* ── Ordered list in body ── */
+  ol.body-list, ul.body-list {
+    padding-left: 1.3em;
+    margin-bottom: 1.1em;
+  }
+  ol.body-list li, ul.body-list li {
+    margin-bottom: 0.5em;
+    padding-left: 0.3em;
+  }
+
+  /* ── Divider ── */
+  hr {
+    border: none;
+    height: 1px;
+    background: var(--color-border);
+    margin: var(--space-xl) 0;
+  }
+
+  /* ── Tag pills ── */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4em;
+    margin-bottom: var(--space-md);
+  }
+  .tag {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    background: var(--color-tag-bg);
+    color: var(--color-tag-text);
+    padding: 0.25em 0.7em;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  /* ── TOC ── */
+  .toc {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-light);
+    border-radius: 10px;
+    padding: var(--space-md);
+    margin-bottom: var(--space-xl);
+  }
+  .toc-title {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 0.8em;
+  }
+  .toc ol {
+    list-style: none;
+    counter-reset: toc-counter;
+    padding: 0;
+  }
+  .toc li {
+    counter-increment: toc-counter;
+    padding: 0.35em 0;
+    border-bottom: 1px solid var(--color-border-light);
+  }
+  .toc li:last-child { border-bottom: none; }
+  .toc li::before {
+    content: counter(toc-counter, decimal-leading-zero);
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-right: 0.7em;
+  }
+  .toc a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.15s;
+  }
+  .toc a:hover { color: var(--color-accent); }
+
+  /* ── Source note ── */
+  .source-note {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-light);
+    border-radius: 8px;
+    padding: var(--space-sm) var(--space-md);
+    margin: var(--space-lg) 0;
+    line-height: 1.65;
+  }
+  .source-note strong { color: var(--color-text-secondary); }
+
+  /* ── Footer ── */
+  .article-footer {
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-lg);
+    margin-top: var(--space-xl);
+  }
+  .article-footer p {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  /* ── Implications Card ── */
+  .implications {
+    background: linear-gradient(135deg, #2C1810, #4A2C1A);
+    color: #FFF;
+    border-radius: 12px;
+    padding: var(--space-lg);
+    margin: var(--space-xl) 0;
+  }
+  .implications h3 {
+    color: #F4D9A0;
+    margin-top: 0;
+    font-size: 1.05rem;
+  }
+  .implications p {
+    color: rgba(255,255,255,0.85);
+    font-size: 0.95rem;
+  }
+  .implications ul {
+    list-style: none;
+    padding: 0;
+  }
+  .implications li {
+    padding: 0.4em 0 0.4em 1.4em;
+    position: relative;
+    color: rgba(255,255,255,0.85);
+    font-size: 0.92rem;
+  }
+  .implications li::before {
+    content: '\2192';
+    position: absolute;
+    left: 0;
+    color: #F4D9A0;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    html { font-size: 15.5px; }
+    .hero { padding: var(--space-xl) var(--space-sm); }
+    .abstract, .toc, .evidence, .implications { padding: var(--space-sm); }
+    .pullquote-featured { padding: var(--space-md); }
+    .key-findings { grid-template-columns: 1fr; }
+    th, td { padding: 0.6em 0.7em; font-size: 0.82rem; }
+  }
+</style>
+<meta property="og:type" content="article">
+<meta property="og:title" content="하나님의 선교, 세상을 바꾸다 — 크리스토퍼 라이트 (Christopher J. H. Wright)">
+<meta property="og:description" content="📷 직접 표시한 부분(밑줄·동그라미·형광펜·📝여백 손글씨)을 페이지 사진에서 원문 그대로 전사한 독서 노트. 〈요약〉이 앞에, 줄이지 않은 〈전사〉 원문이 뒤에 배치되어 있다. 요약 — 장별 상세 정리 서론: &#39;선교&#39;라는 단어와 선교적 성경 해석학 (1장) &#39;선교(mission)&#39;는 성경에 등장하지 않는 단어이지만, ">
+<meta property="og:url" content="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/s/byi04p/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="하나님의 선교, 세상을 바꾸다 — 크리스토퍼 라이트 (Christopher J. H. Wright)">
+<meta name="twitter:description" content="📷 직접 표시한 부분(밑줄·동그라미·형광펜·📝여백 손글씨)을 페이지 사진에서 원문 그대로 전사한 독서 노트. 〈요약〉이 앞에, 줄이지 않은 〈전사〉 원문이 뒤에 배치되어 있다. 요약 — 장별 상세 정리 서론: &#39;선교&#39;라는 단어와 선교적 성경 해석학 (1장) &#39;선교(mission)&#39;는 성경에 등장하지 않는 단어이지만, ">
+<link rel="canonical" href="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/s/byi04p/">
+</head>
+<body>
+
+<!-- ━━ Hero ━━ -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-label">Book Study &middot; Missional Hermeneutics</div>
+    <h1><em>하나님의 선교,</em><br>세상을 바꾸다</h1>
+    <p class="hero-subtitle">크리스토퍼 라이트(Christopher J. H. Wright)의 통전적 선교 신학을<br>7막 드라마 &middot; 선교의 다섯 표지 &middot; 창조 세계 돌봄으로 읽다</p>
+    <div class="hero-meta">
+      <span>독서 노트</span>
+      <span>174장 페이지 사진 전사</span>
+      <span>2026-06-15 정리</span>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+<article>
+
+  <!-- ━━ Source Note ━━ -->
+  <div class="source-note">
+    <strong>전사 출처:</strong> 직접 표시한 부분(밑줄 &middot; 동그라미 &middot; 형광펜 &middot; 여백 손글씨)을 책 페이지 사진 174장에서 원문 그대로 전사한 독서 노트입니다. 앞부분에 <strong>장별 요약</strong>을, 뒷부분에 줄이지 않은 <strong>원문 전사</strong>를 배치했습니다.
+  </div>
+
+  <!-- ━━ Tags ━━ -->
+  <div class="tags">
+    <span class="tag">선교</span>
+    <span class="tag">선교적 해석학</span>
+    <span class="tag">하나님의 선교</span>
+    <span class="tag">대위임령</span>
+    <span class="tag">창조 신학</span>
+    <span class="tag">통전적 선교</span>
+    <span class="tag">선교의 다섯 표지</span>
+    <span class="tag">7막 드라마</span>
+    <span class="tag">믿음의 순종</span>
+  </div>
+
+  <!-- ━━ Abstract ━━ -->
+  <div class="abstract">
+    <div class="abstract-label">Abstract</div>
+    <p>
+      크리스토퍼 라이트는 '선교'를 특정 활동이나 위원회의 의제가 아니라, <strong>성경 전체가 증언하는 하나님의 단일한 목적</strong>으로 재정의한다. 성경을 창조에서 새 창조로 이어지는 7막 드라마로 읽는 <strong>선교적 성경 해석학</strong>을 제시하며, 대위임령이 복음 전도만이 아닌 가르침&middot;긍휼&middot;정의&middot;창조 세계 돌봄을 모두 포괄하는 <strong>통전적(holistic) 선교</strong>임을 논증한다.
+    </p>
+    <p>
+      이 독서 노트는 라이트의 핵심 논지를 네 개의 축&mdash;선교적 해석학, 7막 드라마, 선교의 다섯 표지, 창조 세계 돌봄&mdash;으로 정리하고, 174장의 페이지 사진에서 전사한 원문을 근거 자료로 병치한다.
+    </p>
+  </div>
+
+  <!-- ━━ Key Findings ━━ -->
+  <div class="key-findings">
+    <div class="finding-card">
+      <div class="finding-number">FINDING 01</div>
+      <h3>선교적 해석학</h3>
+      <p>성경은 하나님의 선교의 기록이자 산물이자 도구다. 성경을 연구 '대상'이 아닌, 살아가는 '이야기'로 읽어야 한다.</p>
+    </div>
+    <div class="finding-card">
+      <div class="finding-number">FINDING 02</div>
+      <h3>7막 드라마</h3>
+      <p>창조&rarr;타락&rarr;약속&rarr;그리스도&rarr;선교&rarr;심판&rarr;새 창조. 우리는 시간상 5막에 살지만 전체 이야기 안에 거주한다.</p>
+    </div>
+    <div class="finding-card">
+      <div class="finding-number">FINDING 03</div>
+      <h3>통전적 선교</h3>
+      <p>복음은 바퀴의 중심축. 복음 전도&middot;가르침&middot;긍휼&middot;정의&middot;돌봄이 하나로 통합된 것이 '총체적 선교'다.</p>
+    </div>
+    <div class="finding-card">
+      <div class="finding-number">FINDING 04</div>
+      <h3>모든 삶이 선교</h3>
+      <p>"매주 1,500명의 선교 협력자를 보내고 있습니다." 모든 구성원의 삶 전체가 선교적 존재 양식이다.</p>
+    </div>
+  </div>
+
+  <!-- ━━ TOC ━━ -->
+  <nav class="toc">
+    <div class="toc-title">목차</div>
+    <ol>
+      <li><a href="#s1">서론: '선교'라는 단어와 선교적 성경 해석학</a></li>
+      <li><a href="#s2">성경 전체를 하나의 이야기로 &mdash; 7막 드라마</a></li>
+      <li><a href="#s3">이야기 안에 거주하기 &mdash; 세계관, 교리, 선교의 재형성</a></li>
+      <li><a href="#s4">대위임령과 선교의 다섯 표지</a></li>
+      <li><a href="#s5">교회 세우기 &mdash; 복음 전도와 가르침</a></li>
+      <li><a href="#s6">사회 섬기기 &mdash; 긍휼과 정의</a></li>
+      <li><a href="#s7">창조 세계 돌보기 &mdash; 왕과 제사장의 직분</a></li>
+      <li><a href="#s8">결론: 온 교회를 위한 온전한 선교</a></li>
+      <li><a href="#s9">원문 전사 (p.16 ~ p.224)</a></li>
+    </ol>
+  </nav>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       PART I — 장별 요약
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+
+  <!-- ── Section 1 ── -->
+  <div class="section-break" id="s1"><span class="section-number">01 &mdash; 서론</span></div>
+  <h2>'선교'라는 단어와 <span class="en">Missional Hermeneutics</span></h2>
+
+  <p>
+    '선교(mission)'는 성경에 등장하지 않는 단어이지만, '삼위일체'가 그렇듯 성경 전체가 가리키는 실재를 담는 그릇이다. 라이트는 이 단어가 <strong>넓은 의미</strong>(하나님의 전체 목적)와 <strong>좁은 의미</strong>(구체적 선교 활동)를 모두 가지며, 영국이 2차 대전에서 하나의 사명(mission)을 위해 다양한 사명들(missions)을 수행한 것과 같다고 설명한다(p.18).
+  </p>
+
+  <p><strong>선교적 성경 해석학(missional hermeneutics)</strong>은 성경을 하나님의 선교 이야기로 읽는 세 관점을 통합한다:</p>
+
+  <ol class="body-list">
+    <li><strong>선교의 기록</strong>: 창조(태초)에서 새 창조로 이어지는 하나의 지배적 서사</li>
+    <li><strong>선교의 산물</strong>: 성경 문서 자체가 하나님의 선교적 행동의 결과로 기록됨</li>
+    <li><strong>선교의 도구</strong>: 하나님 백성을 형성하고, 도전하고, 준비시키기 위해 쓰임</li>
+  </ol>
+
+  <div class="highlight-box">
+    <div class="label">여백 손글씨 (p.23)</div>
+    <span class="handnote">창조 &rarr; 십자가 &rarr; 새창조 / 만물회복</span>
+  </div>
+
+  <p>
+    조지 훈스버거가 정리한 추가 요소로 <strong>독자의 선교적 위치</strong>와 <strong>문화와의 선교적 관계</strong>가 있으며, 예레미야서를 읽을 때 예루살렘에서 <em>들었던</em> 이들과 바빌론에서 <em>읽은</em> 이들의 위치를 모두 고려해야 한다(p.31-32). 이는 '상황화'가 서구 선교사의 발명이 아니라 <strong>성경 자체에 내재된 특성</strong>임을 보여준다.
+  </p>
+
+  <div class="evidence">
+    <div class="evidence-label">핵심 근거 &mdash; 하워드 마샬 (p.29)</div>
+    <p>"신약 신학은 본질적으로 선교 신학이다." 신약 문서들은 교회가 선교를 위해 어떻게 형성되어야 하는지를 보여 주고 선교의 확장에 방해가 되는 문제들을 다룬다.</p>
+  </div>
+
+
+  <!-- ── Section 2 ── -->
+  <div class="section-break" id="s2"><span class="section-number">02 &mdash; 7막 드라마</span></div>
+  <h2>성경 전체를 하나의 이야기로</h2>
+
+  <p>
+    라이트는 성경이 약속&middot;교리&middot;규칙의 모음이 아니라 <strong>하나의 전체적이고 일관성 있는 서사</strong>라고 주장한다. "나무를 보느라 숲을 보지 못하는 것"을 경계하며(p.37), 성경을 7막 드라마로 제시한다.
+  </p>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr><th>막</th><th>내용</th><th>핵심</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>1막</strong></td><td>창조</td><td>하나님&middot;땅&middot;인간의 "위대한 창조의 삼각형"(p.42). 하나님 형상, 왕&middot;제사장 직분, 문화 명령</td></tr>
+        <tr><td><strong>2막</strong></td><td>타락/반역</td><td>인간의 <em>결정</em>에 의한 반역. 악의 '기원'이 아닌 '침입' 이야기(p.45). 죄는 관계적이며 개인&rarr;세대&rarr;사회&rarr;국가로 증식</td></tr>
+        <tr><td><strong>3막</strong></td><td>약속(이스라엘)</td><td>아브라함에게 세 약속: 후손&middot;땅&middot;모든 족속의 복. "하나님은 <em>세상</em>을 너무도 사랑하셔서 아브라함을 선택하고 <em>이스라엘</em>을 창조하셨다"(p.53)</td></tr>
+        <tr><td><strong>4막</strong></td><td>그리스도(절정)</td><td>성육신&middot;하나님 나라&middot;십자가&middot;부활. 숨겨진 방식으로 통치가 임하고 확장된다</td></tr>
+        <tr><td><strong>5막</strong></td><td>선교(교회)</td><td>하나님과 "함께 일하는 자"(고후 6:1)로서의 교회. 시간상 5막에 살지만 전체 이야기 안에 거주</td></tr>
+        <tr><td><strong>6막</strong></td><td>심판</td><td>모든 것을 <em>바로잡으시는</em> 하나님. 부정적이 아닌 교정적 심판 &mdash; "소망을 준다"(p.64)</td></tr>
+        <tr><td><strong>7막</strong></td><td>새 창조</td><td>"보라, 내가 만물을 새롭게 하노라!" 탈출이 아닌 해방된 창조 세계의 향유(p.200)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    특별히 강조되는 것은 <strong>1막(창조)의 중요성</strong>이다. "끔찍할 정도로 창조 신학이 부재한 데" 많은 복음주의 그리스도인의 약점이 있으며(p.44), 이 지구를 "우주적으로 소각되어 버릴 운명"으로 보는 시각을 비판한다.
+  </p>
+
+  <p>
+    <strong>7막(새 창조)</strong>은 "하나님의 장막이 사람들과 <em>함께</em> 있으매" &mdash; <strong>임마누엘의 궁극적 성취</strong>, 하나님이 이곳으로 내려오시는 장면이다(p.65, 208). 성전이 없는 새 창조(계 21:22)는 하나님의 직접적 임재가 만물에 충만함을 의미한다.
+  </p>
+
+  <div class="pullquote-featured">
+    <p>우리 모두가 하늘로 올라가는 것이 아니라<br><strong>하나님이 이곳으로 내려오시는 장면</strong>이다.</p>
+    <cite>&mdash; p.208</cite>
+  </div>
+
+
+  <!-- ── Section 3 ── -->
+  <div class="section-break" id="s3"><span class="section-number">03 &mdash; 이야기 안에 거주하기</span></div>
+  <h2>세계관, 교리, 선교의 재형성</h2>
+
+  <p>
+    이 장의 핵심 전환은 성경이 <strong>연구 대상(object)</strong>에서 <strong>살아가는 삶의 주체(subject)</strong>가 되는 것이다(p.38).
+  </p>
+
+  <div class="pullquote">
+    <p>"성경에 <strong>대해</strong> 생각하기보다 성경과 <strong>함께</strong> 생각한다. 즉, 성경 이야기 안으로 들어가 그곳에서 살아간다."</p>
+  </div>
+
+  <h3>1) 세계관 재형성</h3>
+  <p>"삶과 우주와 모든 것에 대해 생각하는 방식에 필연적으로 변화가 일어난다"(p.87-88). 모든 인간의 세계관은 <strong>어떤 서사의 결과물</strong>이며, 성경 서사를 자신의 이야기로 받아들이면 세계관이 근본적으로 재형성된다.</p>
+
+  <h3>2) 교리 재형성</h3>
+  <p>교리는 성경 서사에서 <strong>파생적인 것</strong>이다(p.91). 복음주의 신앙 진술은 머리(인지)에 집중해 왔지만, 성경적 믿음은 <strong>머리 + 가슴 + 손</strong>을 모두 요구한다(p.96-97).</p>
+
+  <div class="highlight-box">
+    <div class="label">여백 손글씨 (p.98)</div>
+    <span class="handnote">믿음과 순종이 아니라 / 믿음의 순종</span>
+    <p>바울이 말한 'obedience of faith'&mdash;<strong>믿음의 순종</strong>이 핵심이다.</p>
+  </div>
+
+  <h3>3) 선교적 파송</h3>
+  <p>"우리의 선교는 '하나님의 동역자'로서 하나님의 선교에 동참하는 일이다"(p.99). 이것은 겸손을 가져온다 &mdash; "우리는 세상을 구원할 선교의 슈퍼히어로가 아니다"(p.113).</p>
+
+  <div class="evidence">
+    <div class="evidence-label">골로새서 1장 기도의 세 차원 (p.84-86)</div>
+    <p><strong>알기를</strong>(머리) &rarr; 하나님의 이야기를 아는 것<br>
+    <strong>살기를</strong>(가슴+손) &rarr; 하나님의 기준에 따라 사는 것<br>
+    <strong>드러내기를</strong> &rarr; 하나님의 힘을 나타내는 것</p>
+  </div>
+
+
+  <!-- ── Section 4 ── -->
+  <div class="section-break" id="s4"><span class="section-number">04 &mdash; 대위임령의 재이해</span></div>
+  <h2>선교의 다섯 표지와 세 초점</h2>
+
+  <p>
+    '대위임령(Great Commission)'이라는 용어는 19세기 후반 <strong>허드슨 테일러</strong>에 의해 대중화된 것에 불과하며(p.100), 그 의미를 온전히 이해하려면 <strong>구약성경이 필요하다</strong>(p.103).
+  </p>
+
+  <p>라이트는 대위임령의 두 가지 오용을 경계한다:</p>
+  <ul class="body-list">
+    <li><strong>우리 중심주의</strong>: "하나님을 우리의 응답에 의존하시는 분으로, 세상과 동떨어져 소극적으로 계시는 분으로 상상"하는 것(p.105)</li>
+    <li><strong>시계 비유</strong>: 대위임령은 "끝 날을 향해 재깍거리며 돌아가는 시계가 아니라, 계속해서 확장되는 자기 복제적 과업"이다(p.105)</li>
+  </ul>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr><th>선교의 다섯 표지</th><th>하나님의 성품 근거</th><th>세 초점</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1. 복음 선포</td><td>하나님은 복음 전도자이시다</td><td rowspan="2">교회 세우기</td></tr>
+        <tr><td>2. 가르침/양육</td><td>하나님은 선생이시다</td></tr>
+        <tr><td>3. 긍휼/필요 응답</td><td>하나님은 긍휼의 하나님이시다</td><td rowspan="2">사회 섬기기</td></tr>
+        <tr><td>4. 정의/평화 추구</td><td>정의가 하나님 보좌의 기초이다</td></tr>
+        <tr><td>5. 창조 세계 돌봄</td><td>하나님은 창조 세계를 다스리고 돌보신다</td><td>창조 세계 돌보기</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pullquote">
+    <p><strong>총체적 선교(holistic mission)</strong>란 복음 전도를 <em>제외한</em> 나머지가 아니라, 복음을 <strong>중심축(hub)</strong>으로 모든 차원이 통합된 선교 전체를 뜻한다.</p>
+    <cite>&mdash; p.127-129</cite>
+  </div>
+
+  <p>
+    "바퀴의 중심축은 바퀴의 존재와 그것이 수행하는 모든 것을 통합시키는 중심이다"(p.129).
+  </p>
+
+
+  <!-- ── Section 5 ── -->
+  <div class="section-break" id="s5"><span class="section-number">05 &mdash; 교회 세우기</span></div>
+  <h2>복음 전도와 가르침</h2>
+
+  <p>
+    <strong>복음(유앙겔리온/바사르)</strong>은 <em>이미 일어난 어떤 일</em>을 좋은 소식으로 알리는 것이다(p.122). 복음은 하나님<strong>으로부터의</strong> 좋은 소식이자 하나님<strong>에 대한</strong> 좋은 소식이다.
+  </p>
+
+  <p>
+    <strong>가르침은 선교의 본질적 부분이다.</strong> 앤드루 월스 교수는 구약성경을 "가장 오래되고 가장 긴 신학 교육 프로그램"이라 불렀다(p.131). 바울은 고린도에서 18개월, 에베소에서 3년을 머물며 가르쳤다(p.132).
+  </p>
+
+  <div class="evidence">
+    <div class="evidence-label">아볼로 &mdash; 국제적 선교사-교사 (p.133)</div>
+    <p>아프리카(알렉산드리아) 출신으로 아시아(에베소)에서 훈련받고 유럽(고린도)으로 건너간 진정한 국제적 선교사-교사. 기독교 변증, 구약 해석학, 기독론을 다루고 있었다.</p>
+  </div>
+
+  <div class="pullquote">
+    <p>"나는 심었고 [복음 전도를 통해] 아볼로는 물을 주었으되 [가르침을 통해] 오직 하나님께서 자라나게 하셨나니" &mdash; 심는 것과 물 주는 것이 <strong>하나의 선교</strong>이다.</p>
+    <cite>&mdash; 고전 3:6, p.134</cite>
+  </div>
+
+  <p>
+    따라서 "신학 교육은 교회를 개척하는 '진짜 선교'가 이루어진 후 부수적으로 따라오는 일이 아니다"(p.135).
+  </p>
+
+
+  <!-- ── Section 6 ── -->
+  <div class="section-break" id="s6"><span class="section-number">06 &mdash; 사회 섬기기</span></div>
+  <h2>긍휼과 정의 &mdash; 대위임령 안에 내장된 사회적 차원</h2>
+
+  <p>
+    <strong>"내가 너희에게 분부한 모든 것을 가르쳐 지키게 하라"</strong> &mdash; 이 명령은 '가르쳐 순종하게 하라'는 뜻이며, <strong>신명기를 의도적으로 상기</strong>시킨다(p.147). 신명기의 '주님의 길로 행하는 것'은 나그네를 사랑하고, 가족이 없는 이를 보호하고, 땅이 없는 이를 돌보는 것이다.
+  </p>
+
+  <p>
+    예수님의 가르침에서 <strong>정의(디카이오시네)</strong>는 핵심 주제다: "정의에 굶주리고 목마른 자는 복이 있다"(마 5:6), "먼저 그의 나라와 그의 의를 구하라"(마 6:33), "정의와 긍휼과 믿음"(마 23:23).
+  </p>
+
+  <div class="pullquote">
+    <p>"너희의 위대한 설교를 듣고'가 아니라, '너희의 <strong>착한 행실</strong>을 보고'"</p>
+    <cite>&mdash; p.151</cite>
+  </div>
+
+  <p>
+    긍휼과 정의의 행동은 사람들의 마음을 끌어당기는 <strong>선교적 자력</strong>을 만들어 낸다(p.152).
+  </p>
+
+  <h3>초대교회의 실천</h3>
+  <p>
+    최초의 제자 공동체는 경제적 나눔을 통해 영적 연합을 이루려 했다 &mdash; "각 사람의 필요를 따라 나눠"(행 2장)는 신명기 15:4의 거의 직역이었다(p.153). 바울에게 가난한 자를 실제적으로 돕는 일은 설교&middot;가르침과 함께 선교 사역의 <strong>필수적인 부분</strong>이었다(p.156).
+  </p>
+
+  <div class="evidence">
+    <div class="evidence-label">디도서의 증거 (p.159-161)</div>
+    <p>바울에게 크레타 선교의 핵심 방법은 <strong>가르치고, 가르치고, 또 가르치는 일</strong>이었다. 그 가르침의 내용은 공적으로 눈에 보이는 선한 일을 포함하는 경건한 삶이며, 구원하는 은혜는 즉각적으로 선한 일을 열망하도록 가르친다.</p>
+  </div>
+
+  <div class="pullquote-featured">
+    <p>대위임령이 복음 전도와 가르침만을 유일하게 타당한 교회의 선교 과업이라고 좁게 규정한다는 생각은<br><strong>해석상으로 비논리적이다.</strong></p>
+    <cite>&mdash; p.163</cite>
+  </div>
+
+  <p>
+    복음 전도와 사회 정의라는 이분법으로 시작하기보다, 예수 그리스도 안에 있는 하나님의 <strong>단일한 특성(사랑)</strong>으로 시작해야 한다. 하나님의 선교를 <em>함께 춤추는 두 사람의 파트너</em>(복음 전도와 사회 정의)로 이해할 수 있다(p.164).
+  </p>
+
+
+  <!-- ── Section 7 ── -->
+  <div class="section-break" id="s7"><span class="section-number">07 &mdash; 창조 세계 돌보기</span></div>
+  <h2>왕과 제사장의 직분</h2>
+
+  <p>
+    대위임령의 "<strong>하늘과 땅</strong>의 모든 권세"는 <strong>창조 세계 전체</strong>를 지칭하는 유대적 표현이다(p.166). 예수님은 하늘과 땅의 주인, 온 창조 세계의 주인이시다(p.167).
+  </p>
+
+  <h3>창조 세계의 신학적 위치</h3>
+  <ul class="body-list">
+    <li>하나님과 관련해서 창조 세계는 <strong>선하다</strong> &mdash; 하나님이 가치 있게 여기시고 목적에 맞게 창조하셨다(p.171-172)</li>
+    <li>"땅과 거기에 충만한 것은 다 여호와의 것" &mdash; 하나님은 <strong>최고의 지주</strong>이시고 우리는 임차인이다(p.173)</li>
+    <li>성막과 성전은 하늘과 땅의 우주적 연합을 보여 주는 모형이었다(p.174)</li>
+    <li>하나님의 영광은 창조 세계의 충만함을 통해 나타난다 &mdash; "우리는 영광으로 가득 찬 땅 위에 살고 있다"(p.189)</li>
+  </ul>
+
+  <h3>인간의 이중 직분 &mdash; 왕과 제사장</h3>
+  <p>
+    <strong>왕:</strong> 하나님의 형상으로 창조되어 다스리는 권한을 받음(창 1:26-28). 그러나 이 '다스림'은 하나님의 성품에 근거한 왕권이지, 타락한 인간의 폭압이 아니다(p.178-179).
+  </p>
+  <p>
+    <strong>제사장:</strong> "여호와 하나님이 그 사람을 에덴동산에 두어 <em>그것을 섬기며 지키게</em> 하셨다"(창 2:15). 창조 세계<strong>에 대한</strong> 다스림(창 1장)은 창조 세계<strong>를 위한</strong> 종으로 섬김(창 2장)을 통해 시행된다(p.180).
+  </p>
+  <p>
+    우리는 <strong>아다마</strong>('adamah', 땅)에서 나온 <strong>아담</strong>('adam', 인간)이다(p.177).
+  </p>
+
+  <h3>창조 세계 돌봄의 선교적 근거 세 가지</h3>
+  <ol class="body-list">
+    <li><strong>긍휼의 반영:</strong> 감사나 보답을 할 수 없는 피조물에게 행사되는 사랑의 이타적 형태(p.189). "의인은 자기의 <em>가축의</em> 생명을 돌본다"(잠 12:10, p.190)</li>
+    <li><strong>정의의 반영:</strong> "우리가 땅을 대하는 방식은 땅의 창조주를 대하는 방식을 반영한다"(p.192)</li>
+    <li><strong>성경적 원리의 확장:</strong> 우리가 다른 사람에게 무엇을 하든 그것은 하나님께 하는 것이듯, 창조 세계에 대한 태도도 마찬가지다(p.191)</li>
+  </ol>
+
+  <div class="pullquote">
+    <p>"자신이 그리스도인이라고 주장하면서도 창조 세계에 아무런 관심이 없는 사람은 <strong>성경적 복음을 부인하는 사람</strong>이다."</p>
+    <cite>&mdash; p.207</cite>
+  </div>
+
+  <h3>그리스도의 우주적 화해 (골 1장)</h3>
+  <p>
+    바울은 온 창조 세계에 대한 그리스도의 우주적 주되심에서 시작해, 교회를 거쳐, <strong>"만물"</strong>을 십자가의 피로 화해시키는 방향으로 이동한다(p.204-206).
+  </p>
+
+  <h3>종말론적 차원</h3>
+  <p>
+    우리의 미래는 파멸할 운명에 놓인 창조 세계로부터 <strong>탈출</strong>하는 것이 아니라, <strong>해방된 창조 세계를 누리는 것</strong>이다(p.200). 지금 수행하는 생태적 행동은 <strong>창조적 책임</strong>(성경의 시작)인 동시에 <strong>종말론적 표현</strong>(성경의 결말)이다(p.209).
+  </p>
+
+
+  <!-- ── Section 8 ── -->
+  <div class="section-break" id="s8"><span class="section-number">08 &mdash; 결론</span></div>
+  <h2>온 교회를 위한 온전한 선교</h2>
+
+  <div class="pullquote-featured">
+    <p>하나님이 교회를 위해 선교하시는 것이 아니라,<br><strong>그분의 선교를 위해 교회를 세우신 것이다.</strong></p>
+    <cite>&mdash; p.213</cite>
+  </div>
+
+  <p>
+    처음부터 이 땅 위의 하나님 백성의 <strong>존재</strong>는 열방을 향한 하나님의 <strong>선교</strong>와 긴밀하게 연결되어 있다(p.212). <strong>전체</strong> 교회는 선교적이다 &mdash; 모든 지역 교회는 선교적 교회이며, 그렇지 않다면 그것은 교회로 존재하는 것이 아니다(p.214).
+  </p>
+
+  <h3>일반적 부르심 vs 특별한 부르심</h3>
+  <ul class="body-list">
+    <li><strong>일반적 부르심:</strong> 모든 그리스도인이 공유하는 증언&middot;가르침&middot;긍휼&middot;정의&middot;돌봄</li>
+    <li><strong>특별한 부르심:</strong> 하나님이 각 사람에게 다르게 수여하는 은사 &mdash; 복음 전도자, 교사, 정치인, 환경생물학자, 주부(p.219-220)</li>
+  </ul>
+
+  <div class="pullquote">
+    <p>"우리 교회는 매주 <strong>1,500명의 선교 협력자</strong>를 보내고 있습니다. 그중 몇몇은 해외에서 섬기고 있습니다."</p>
+    <cite>&mdash; p.218</cite>
+  </div>
+
+  <p>
+    하나님이 부르신다면 선교사가 되는 것은 놀라운 특권이지만, <strong>하나님이 부르신다면</strong> 그리스도인 법률가, 기업가, 정치인, 주부가 되는 것도 <strong>동일하게 놀라운 일</strong>이다(p.222). "우리는 이런 위계를 거부하고 피라미드를 부수어야 한다"(p.223).
+  </p>
+
+  <div class="implications">
+    <h3>핵심 시사점 &mdash; Implications</h3>
+    <ul>
+      <li>선교는 전문 위원회의 의제가 아니라 <strong>모든 구성원의 삶 전체를 규정하는 존재 양식</strong>이다</li>
+      <li>성경 전체가 선교의 근거이지, 대위임령 한 본문이 아니다</li>
+      <li>복음 전도와 사회 정의는 이분법이 아니라 <strong>하나님의 사랑에서 흘러나오는 하나의 춤</strong>이다</li>
+      <li>창조 세계 돌봄은 부가적 관심사가 아닌 <strong>그리스도의 우주적 주되심에서 흘러나오는 선교의 본질</strong>이다</li>
+      <li>직장&middot;병원&middot;가정이 곧 파송지: 예수님은 일터와 가정의 주님이시다</li>
+    </ul>
+  </div>
+
+  <div class="pullquote-featured">
+    <p>선교는 하나님의 온전한 교회를 이루는<br><strong>모든 구성원들의 삶 전체를 규정하는 존재 양식</strong>이다.</p>
+    <cite>&mdash; p.224, 최종 선언</cite>
+  </div>
+
+  <hr>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       PART II — 원문 전사
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+
+  <div class="section-break" id="s9"><span class="section-number">부록 &mdash; 원문 전사</span></div>
+  <h2>표시한 부분 원문 전사 <span class="en">p.16 ~ p.224</span></h2>
+
+  <div class="source-note">
+    아래는 밑줄&middot;동그라미&middot;형광펜&middot;여백 손글씨로 표시한 부분을 페이지 사진에서 <strong>원문 그대로 전사</strong>한 것입니다. 여백 손글씨는 <span class="handnote">이 서식</span>으로 표기했으며, 판독 불가 글자는 <code>(?)</code>로 남겼습니다. 표시가 없거나 식별되지 않는 페이지(p.92, p.142, p.145-146, p.162, p.181-185, p.199, p.202-203 등)는 생략했습니다.
+  </div>
+
+
+  <h3>p.16</h3>
+  <div class="pullquote">
+    <p><strong>선교</strong>라는 말이 등장하지 않는다</p>
+    <p><strong>민음, 구원, 공의</strong> 같은 위대한 성경의 단어가 아니다</p>
+    <p><strong>삼위일체</strong>도 성경에 나오지 않는 말이다</p>
+    <p>성경은 신적 목적과 궁극적 운명을 향해 우주의 이야기 전체를 끌고 나가시는 하나</p>
+  </div>
+
+  <h3>p.17</h3>
+  <div class="pullquote">
+    <p><strong>선교</strong>라는 단어를 사용하는 방식이 될 것이고, 또한 계속해서 이 단어를 사용하는 이유이기도 하다</p>
+    <p><strong>선교</strong>가 논쟁적인 단어가 되어 버렸기 때문이다</p>
+    <p>우선 이 단어가 교회 역사 초기에는 신자들 사이에서 사용되지 않았다</p>
+    <p>또한 우리는 이후 기독교 선교 활동의 어두운 측면 때문에 이 단어에 부정적 응어리가 남아 있다는 사실을 인정해야 한다</p>
+    <p><strong>선교적</strong>(missional)이라는 형용사가 너무나 다양한 방식으로 쓰여 일종의 유행어가 되었고</p>
+  </div>
+
+  <h3>p.18</h3>
+  <div class="pullquote">
+    <p>모든 문제점을 충분히 인정하면서도 굳이 의미하지 않고 <strong>선교</strong>라는 단어가</p>
+    <p>선교(mission, 사명)라는 단어는 <strong>넓은 의미</strong>와 <strong>좁은 의미</strong>를 모두 가지고 있다</p>
+    <p>영국 정부와 연합국이 (나치즘을 격퇴하기 위해) 선언한 사명은 다양한 종류의 사명들을 수행할 국민의 동원과 참여를 필요로 했다</p>
+    <p>성경은 전 창조 세계에서 악을 제거하고 자신을 위해 모든 족속과 나라에서 구속된 백성을 창조해</p>
+  </div>
+
+  <h3>p.19</h3>
+  <div class="pullquote">
+    <p>는 <strong>선교</strong>의 의미다</p>
+    <p><strong>우리</strong>의 정체성과 사명은 무엇인가? 하나님의 백성인 <strong>우리</strong>는 누구이고</p>
+    <p><strong>선교적 성경 해석학</strong>의 의미를 우선 다루어야 할 것이다</p>
+    <p>이것은 성경이 근본적으로 하나님의 계획과 목적에 관한 <strong>하나의 지배적인 이야기</strong>, 혹은 바울이 '하나님의 전체적인 뜻'이라 부른 것을 제시하는 책이라고 보는 관점이다</p>
+  </div>
+
+  <h3>p.20</h3>
+  <div class="pullquote">
+    <p>4장에서는 이렇게 하나님의 선교를 '<strong>성경 전체를 통해</strong>' 이해하는 방식이 이른바 대위임령에 어떤 성경적 반향을 일으키고…</p>
+    <p>선교의 이른바 다섯 가지 표지를 확인하고, 그것을 <strong>교회</strong> 세우기, <strong>사회</strong> 섬기기, <strong>창조 세계 관리</strong>라는 세 가지 광범위한 과제로 단순화하는 것이다</p>
+  </div>
+
+  <h3>p.23</h3>
+  <div class="pullquote">
+    <p>그것을 하나님의 선교의 <strong>기록</strong>, 산물, 도구로 보는 세 관점이 있다</p>
+    <p><strong>전체</strong> 성경 이야기의 틀과 방향에 집중하는 접근 방식이다</p>
+    <p>이 전체 이야기의 <strong>절정을</strong> 이루는 중심 사건인 메시아 예수의 십자가와 부활을 통해서다</p>
+    <p>새 <strong>창조</strong>는 이야기의 처음부터 끝까지 지속적으로 흐르고 있었던 하나님의 구속적 목적과 행동의 궁극적 성취가 될 것이다</p>
+  </div>
+  <div class="highlight-box">
+    <div class="label">여백 손글씨</div>
+    <span class="handnote">창조 &rarr; 십자가 &rarr; 새창조 / 만물회복</span>
+  </div>
+
+  <h3>p.27</h3>
+  <div class="pullquote">
+    <p>한 장소에서 모든 장소로, 하나의 중심에서 여러 주변부로, <strong>예루살렘에서 땅끝까지</strong> 흘러간다</p>
+    <p>성경 문서들의 선교적 기원에 집중하는 접근 방식이다</p>
+  </div>
+
+  <h3>p.29</h3>
+  <div class="pullquote">
+    <p>신약 신학은 본질적으로 선교 신학이다</p>
+    <p>그 나라의 시작을 알리고 그에 응답하도록 백성을 부르기 위해 보냄받은 예수님의 선교</p>
+    <p>이 문서들은 교회가 선교를 위해 어떻게 형성되어야 하는지를 보여 주고 선교의 확장에 방해가 되는 문제들을 다룬다</p>
+  </div>
+
+  <h3>p.31-32</h3>
+  <div class="pullquote">
+    <p>조지 훈스버거가 정리한 선교적 해석학의 다른 두 요소 &mdash; <strong>독자의</strong> 선교적 <strong>위치</strong>와 문화와의 <strong>선교적 관계</strong></p>
+    <p>예루살렘에서 예레미야라는 사람의 말을 <strong>들었던</strong> 이들의 위치와, 바빌론에서 예레미야의 책을 <strong>읽은</strong> 사람들의 위치</p>
+    <p>선교적 과업을 지닌 하나님 백성을 형성하고, <strong>도전하고</strong>, <strong>준비시키기 위한 의도</strong>로 쓰였다</p>
+  </div>
+
+  <h3>p.34</h3>
+  <div class="pullquote">
+    <p>하나님의 "<strong>제사장</strong>"과 "<strong>거룩한</strong>" 백성(출 19:4-6)이 되려면</p>
+    <p>율법의 '사명'은 그 과업을 성취할 수 있도록 이스라엘을 형성하는 것이었다</p>
+  </div>
+
+  <h3>p.37-38</h3>
+  <div class="pullquote">
+    <p>나무를 보느라 숲을 보지 못하는 것이다</p>
+    <p>성경을 <strong>하나</strong>의 전체적이고 <strong>일관성</strong> 있는 <strong>서사</strong>로 파악하고…</p>
+    <p>성경은 더 이상 내가 인식하고 연구하는 <strong>객체</strong>(object)가 아닌, 내가 살아가는 삶의 <strong>주체</strong>(subject)가 되었다</p>
+    <p>성경에 <strong>대해</strong> 생각하기보다 성경과 <strong>함께</strong> 생각한다</p>
+    <p>성경은 온 우주에 대한 <strong>진짜 이야기</strong>다</p>
+  </div>
+
+  <h3>p.39</h3>
+  <div class="pullquote">
+    <p>성경은 우리가 누구이고 이 땅의 하나님 백성으로서 왜 여기 있는지를 말해 주는 이야기, 우리의 정체성과 선교를 생성하는 이야기다</p>
+    <p>성경은 우리에게 궁극적 미래를 향한 소망을 주고 사명을 부여해, 타락했지만 그리스도 안에서 구속된 세상 속으로 우리를 보내는 이야기다</p>
+  </div>
+
+  <h3>p.42</h3>
+  <div class="pullquote">
+    <p>이것은 하나님, 땅, 인류를 연결하는 위대한 창조의 <strong>삼각형</strong>이라 할 수 있다</p>
+    <p>창조주의 형상을 가진 인간은 땅 위의 다른 피조물을 다스릴 권한을 갖고(창 1:26-28) 그것을 섬기고 돌보도록 위임받았다(창 2:15).</p>
+  </div>
+
+  <h3>p.44</h3>
+  <div class="pullquote">
+    <p>'선교'에 곧장 돌입하는 일부 교회와 복음주의 그리스도인들이 약점과 편협함을 드러내는 한 가지 이유는, 끔찍할 정도로 창조 신학이 부재한 데 있다.</p>
+    <p>이 지구는 우주적으로 소각되어 버릴 운명이기 때문이다.</p>
+  </div>
+
+  <h3>p.45</h3>
+  <div class="pullquote">
+    <p>우리 인간은 하나님의 선하심을 불신하기로, 하나님의 말씀을 의심하기로, 하나님의 명령에 불순종하기로 <strong>결정했다.</strong> 따라서 <strong>반역</strong>(rebellion)이 더 적절한 표현이다.</p>
+    <p>이것은 악의 <strong>기원</strong> 자체를 다루는 이야기가 아니라</p>
+  </div>
+
+  <h3>p.48</h3>
+  <div class="pullquote">
+    <p>창세기 4-11장은 죄가 개인과 관계적 삶을 잠식하는 데서 더 나아가 <strong>세대</strong>와 <strong>역사</strong>를 통해 증식되고 확대되어 <strong>사회</strong>와 <strong>국가</strong>적 차원까지 확산되는 모습을 보여 준다.</p>
+    <p>복음은 죄와 악이 가져온 결과의 모든 측면을 다룬다.</p>
+  </div>
+
+  <h3>p.49-50</h3>
+  <div class="pullquote">
+    <p>하나님은 아브라함과 사라에게 <strong>세</strong> 가지 중요한 내용을 <strong>약속</strong>하신다.</p>
+    <p>하나님은 "아브라함을 통해[혹은 아브라함 안에서] <strong>땅의 모든 족속/민족이 복을 발견할 것</strong>"이라고 말씀하셨다.</p>
+  </div>
+
+  <h3>p.53</h3>
+  <div class="pullquote">
+    <p>하나님은 <strong>세상</strong>을 너무도 사랑하셔서 아브라함을 선택하고 <strong>이스라엘</strong>을 창조하셨다.</p>
+  </div>
+
+  <h3>p.57</h3>
+  <div class="pullquote">
+    <p><strong>하나님 나라</strong>: 예수님은 구약성경이 묘사하고 고대했던 하나님의 <strong>통치</strong>가 도래했음을 선언하신다.</p>
+    <p>하나님의 통치는 숨겨진 방식으로 임하고 <strong>확장된다.</strong></p>
+  </div>
+
+  <h3>p.63-65</h3>
+  <div class="pullquote">
+    <p>하나님이 <strong>재판관</strong>으로서 행동하신다는 사실은 그분이 상황을 <strong>바로잡는다는 뜻</strong>이다.</p>
+    <p>이것은 위대한 성경적 <strong>소망</strong>이다.</p>
+    <p>"보라! 하나님의 장막이 사람들과 <strong>함께</strong> 있으매, 하나님이 그들과 <strong>함께</strong> 계시리니"(계 21:3). 이것은 '임마누엘'의 궁극적 성취. <strong>우리와 함께하시는 하나님.</strong></p>
+  </div>
+
+  <h3>p.72</h3>
+  <div class="pullquote">
+    <p>선교적 해석학은 전체 성경 이야기 안에 '<strong>거주</strong>'하도록 도전한다</p>
+    <p>우리는 전체 이야기 안에 거주하고 있다. 비록 시간상으로는 5막 안에서 살아가며 섬기고 있지만 말이다.</p>
+  </div>
+
+  <h3>p.81-82</h3>
+  <div class="pullquote">
+    <p>성경 전체를 하나님의 이야기로 읽으며 우리가 실제로 그 이야기의 구성원이 되어 하나님의 이야기 속으로 들어가게 된다.</p>
+    <p>우리는 성경 드라마의 5막에 출연하는 '<strong>배우</strong>'다.</p>
+    <p>우리는 하나님과 '<strong>함께 일하는 자</strong>'(고후 6:1), 하나님의 동역자다.</p>
+  </div>
+
+  <h3>p.86</h3>
+  <div class="pullquote">
+    <p>그것은 이생에서의 고통과 박해와 불확실한 미래를 받아들이기로 동의하는 서명과 같았다.</p>
+  </div>
+
+  <h3>p.87-88</h3>
+  <div class="pullquote">
+    <p>'<strong>삶과 우주와 모든 것</strong>'에 대해 생각하는 방식에 필연적으로 변화가 일어난다.</p>
+    <p>모든 인간의 세계관은 <strong>어떤</strong> 서사의 결과물이다.</p>
+  </div>
+
+  <h3>p.91-93</h3>
+  <div class="pullquote">
+    <p>이 모든 것은 본질적으로 <strong>파생적인 것</strong>이다.</p>
+    <p>전체 성경과 기독교 신앙의 핵심을 차지하는 <strong>속죄 교리</strong></p>
+  </div>
+
+  <h3>p.96-98</h3>
+  <div class="pullquote">
+    <p><strong>복음주의적</strong> 신앙 진술은 그동안 우리가 머리로 믿는 내용…에 집중해 왔다. 사실상 성경적 믿음은 단순히 우리의 <strong>머리뿐</strong> 아니라 <strong>가슴</strong>과 <strong>손</strong>도 요구한다.</p>
+    <p>그의 평생의 사명은 "모든 민족이 <strong>믿음의 순종</strong>을 하도록 하는 것"이었다.</p>
+  </div>
+  <div class="highlight-box">
+    <div class="label">여백 손글씨 (p.98)</div>
+    <span class="handnote">믿음과 순종이 아니라 / 믿음의 순종.</span>
+  </div>
+
+  <h3>p.99-105</h3>
+  <div class="pullquote">
+    <p>우리의 선교는 '<strong>하나님의 동역자</strong>'로서 하나님의 선교에 동참하는 일이다.</p>
+    <p>이 용어가 대중화된 것은 <strong>19세기 후반 허드슨 테일러</strong>에 의해</p>
+    <p>하나님을 우리의 응답에 의존하시는 분으로, 세상과 동떨어져 소극적으로 계시는 분으로 상상할 때 발생한다.</p>
+    <p>대위임령은 끝 날을 향해 재깍거리며 돌아가는 시계가 아니라, 계속해서 확장되는 자기 복제적 과업이다.</p>
+  </div>
+
+  <h3>p.111-112</h3>
+  <div class="pullquote">
+    <p>교회의 선교는 그리스도의 선교이며, 다음과 같은 내용을 목표로 한다:</p>
+    <p>1. 하나님 나라의 복음을 <strong>선포</strong>한다.</p>
+    <p>2. 가르치고, 세례를 주고, 새 신자를 양육한다.</p>
+    <p>3. 사랑의 수고를 통해 인간의 <strong>필요</strong>에 <strong>응답</strong>한다.</p>
+    <p>4. 불의한 사회 구조를 <strong>변혁</strong>하고…<strong>평화와 화해</strong>를 추구한다.</p>
+    <p>5. <strong>창조 세계</strong>를 온전하게 <strong>보호</strong>하고 땅의 생명체들을 지속시키며 새롭게 하기 위해 분투한다.</p>
+  </div>
+  <div class="highlight-box">
+    <div class="label">여백 손글씨 (p.111)</div>
+    <span class="handnote">복음, 전도 / 가르침 / 정화 &nbsp; 긍휼 &nbsp; 정의 &nbsp; 돌봄</span>
+  </div>
+
+  <h3>p.113</h3>
+  <div class="pullquote">
+    <p>우리를 <strong>겸손하게</strong> 한다. <strong>우리는</strong> 세상을 구원할 선교의 슈퍼히어로가 아니다.</p>
+    <p>우리의 임무는 '<strong>하나님을 위해</strong> 일을 완수하는 것'이 아니라 '<strong>하나님의 선교 사역에 합류하는 것</strong>'이다.</p>
+  </div>
+
+  <h3>p.122-123</h3>
+  <div class="pullquote">
+    <p>그것은 <strong>이미 일어난 어떤 일</strong>…을 좋은 소식으로 알리는 것을 말한다.</p>
+    <p>하나님으로부터의 좋은 소식 / 하나님에 대한 좋은 소식</p>
+    <p><strong>통전적 선교</strong>라는 말을 그리스도인이 복음 <strong>전도를 제외하고</strong> 행하는 모든 일을 설명하는 용어로 사용하는 것이 얼마나 잘못된 것인지를 보여 준다.</p>
+  </div>
+
+  <h3>p.127-129</h3>
+  <div class="pullquote">
+    <p><strong>총체적 선교</strong>는, 복음 전도를 포함해 우리가 행하는 모든 선교 활동이 복음…을 중심으로 통합되어야 함을 강조함으로써 이런 이분법을 극복하려는 시도</p>
+    <p>복음은 마치 바퀴의 <strong>중심축</strong>처럼 모든 것의 중심이 된다.</p>
+    <p>바퀴의 <strong>중심축</strong>은 바퀴의 존재와 그것이 수행하는 모든 것을 <strong>통합시키는 중심</strong>이다.</p>
+  </div>
+
+  <h3>p.131-135</h3>
+  <div class="pullquote">
+    <p>앤드루 월스 교수는 구약성경을 "가장 오래되고 가장 긴 신학 교육 프로그램"이라고 말했다.</p>
+    <p>나는 심었고 아볼로는 물을 주었으되 오직 하나님께서 자라나게 하셨나니</p>
+    <p>신학 교육은 교회를 개척하는 '진짜 선교'가 이루어진 후 부수적으로 따라오는 일이 아니다.</p>
+  </div>
+
+  <h3>p.137-140</h3>
+  <div class="pullquote">
+    <p><strong>내가 너희에게 분부한 모든 것을 가르쳐 지키게 하라</strong></p>
+    <p>그리스도를 닮은 순종이 수반되지 않는 선교는 결코 온전할 수 없다.</p>
+    <p>복음 자체가 순종을 <strong>요구</strong>하고 대위임령이 순종을 <strong>가르칠</strong> 것을 명령한다면…선교는 결코 메시지를 전하고 신앙을 가르치는 일에만 머무를 수 없다.</p>
+  </div>
+
+  <h3>p.143-144</h3>
+  <div class="pullquote">
+    <p>"<strong>정의</strong>에 굶주리고 목마른 자는 복이 있다"(마 5:6)</p>
+    <p>"먼저 그의 나라와 그의 의[혹은 정의]를 구하라"(마 6:33)</p>
+    <p>"<strong>정의</strong>와 긍휼과 믿음"(마 23:23)</p>
+    <p>그분은 긍휼을 <strong>가르치는</strong> 데 그치지 않고…<strong>순종하셨다.</strong></p>
+  </div>
+
+  <h3>p.147-148</h3>
+  <div class="pullquote">
+    <p>"너희에게 분부한 모든 것을 지키게 하라." 이 구절은 거의 분명하게 신명기를 의도적으로 상기시킨다.</p>
+    <p><strong>너희는</strong> 나그네를 <strong>사랑하라.</strong></p>
+    <p><strong>하나님을 닮기를</strong> 바라신다</p>
+  </div>
+
+  <h3>p.151-152</h3>
+  <div class="pullquote">
+    <p>"너희의 위대한 설교를 듣고'가 아니라, "너희의 착한 행실을 보고"다.</p>
+    <p>선교의 세 번째와 네 번째 표지는 일종의 <strong>선교적 자력</strong>을 만들어 낸다.</p>
+  </div>
+
+  <h3>p.153-159</h3>
+  <div class="pullquote">
+    <p>"각 사람의 필요를 따라 나눠" 주는 일 &mdash; 신명기 15:4를 거의 직역</p>
+    <p>바울에게 가난한 자를 실제적으로 돕는 일은, 설교와 가르침과 함께 선교 사역의 필수적인 부분이었다.</p>
+    <p>"기회 있는 대로 <strong>모든</strong> 이에게 착한 일을 하되 <strong>더욱</strong> 믿음의 가정들에게 할지니라"(갈 6:10) &mdash; 배타적으로가 아니라, 특별히 더욱 그렇게 하는 것이다.</p>
+  </div>
+
+  <h3>p.160-163</h3>
+  <div class="pullquote">
+    <p>구원하는 은혜는 또한 즉각적으로 선한 일을 열망하고 헌신하는 '경건한' 삶을 살도록 <strong>가르친다</strong></p>
+    <p>가르치고, 가르치고, 또 <strong>가르치는</strong> 일이다.</p>
+    <p>대위임령이 복음 전도와 가르침만을 <strong>유일하게</strong> 타당한 교회의 선교 과업이라고 좁게 규정한다는 생각은 해석상으로 비논리적이다</p>
+  </div>
+
+  <h3>p.164</h3>
+  <div class="pullquote">
+    <p>이분법으로 시작하기보다, 예수 그리스도 안에 있는 하나님의 단일한 특성(사랑)으로 시작해야 한다.</p>
+    <p>하나님의 선교를 함께 춤추는 두 사람의 파트너(복음 전도와 사회 정의)</p>
+  </div>
+
+  <h3>p.166-167</h3>
+  <div class="pullquote">
+    <p>"하늘과 땅의 모든 권세를 내게 주셨으니." &mdash; 창조 세계 전체를 지칭하는 전형적인 유대적 표현 방식</p>
+    <p>예수님은 하늘과 땅의 주인, 온 창조 세계의 주인이시다.</p>
+  </div>
+
+  <h3>p.171-177</h3>
+  <div class="pullquote">
+    <p>하나님과 관련해서 창조 세계는 <strong>선하다</strong>. 하나님이 그것을 가치 있게 여기시고 '목적에 맞게' 창조하셨다.</p>
+    <p>"땅과 거기에 충만한 것…은 다 여호와의 것이로다"(시 24:1). 하나님은 최고의 지주이시고 우리는 <strong>임차인</strong>이다.</p>
+    <p>우리는 <strong>아다마</strong>('adamah', 땅)에서 나온 <strong>아담</strong>('adam', 인간)이다.</p>
+  </div>
+
+  <h3>p.178-180</h3>
+  <div class="pullquote">
+    <p>여기서 '다스림'은 <strong>왕이</strong> 행사하는 지배를 의미한다.</p>
+    <p>이것들은 하나님의 성품과 행동에 근거한 <strong>왕권</strong>과 전혀 상관없는, 타락한 인간의 오만함을 드러내는 <strong>폭압</strong>의 표지다.</p>
+    <p>창조 세계<strong>에 대한 다스림</strong>(창 1장)은 창조 세계<strong>를 위한</strong> 종으로 섬김으로써(창 2장) 시행된다.</p>
+  </div>
+
+  <h3>p.186-192</h3>
+  <div class="pullquote">
+    <p>하나님의 영광은 창조 세계의 <strong>충만함을</strong> 통해 나타난다</p>
+    <p>우리는 영광으로 가득 찬 땅 위에 살고 있다.</p>
+    <p>"의인은 자기의 <strong>가축의</strong> 생명을 돌[본다]"</p>
+    <p>우리가 땅을 대하는 방식은 땅의 창조주를, 또한 우리의 창조주를 대하는 방식을 반영한다.</p>
+  </div>
+
+  <h3>p.200</h3>
+  <div class="pullquote">
+    <p>우리의 미래는 파멸할 운명에 놓인 창조 세계로부터 <strong>탈출</strong>하는 것이 아니라, 해방된 창조 세계를 누리는 것이다.</p>
+  </div>
+
+  <h3>p.204-208</h3>
+  <div class="pullquote">
+    <p><strong>만물이</strong> 그에게서 창조되되…그의 십자가의 피로 화평을 이루사 <strong>만물 곧</strong> 땅에 있는 것들이나…</p>
+    <p>자신이 그리스도인이라고 주장하면서도 창조 세계에 아무런 관심이 없는 사람은 <strong>성경적 복음을 부인하는 사람</strong>이다.</p>
+    <p>요한이 본 것은, <strong>우리 모두가 하늘로 올라가는 것이 아니라 하나님이 이곳으로 내려오시는 장면이다.</strong></p>
+    <p>"사람들과 <strong>함께</strong>…그들과 <strong>함께</strong>…그들과 <strong>함께</strong>"</p>
+  </div>
+
+  <h3>p.209</h3>
+  <div class="pullquote">
+    <p>지금 수행하는 생태적 행동은 성경의 시작 부분에서 주어진 <strong>창조적 책임</strong>인 동시에, 성경의 결말 부분에 대한 <strong>종말론적 표현</strong>이다.</p>
+  </div>
+
+  <h3>p.212-215</h3>
+  <div class="pullquote">
+    <p>처음부터 이 땅 위의 하나님 백성의 <strong>존재</strong>는 열방을 향한 하나님의 <strong>선교</strong>와 긴밀하게 연결되어 있다.</p>
+    <p>하나님이 교회를 위해 선교하시는 것이 아니라, 그분의 선교를 위해 교회를 세우신 것이다.</p>
+    <p><strong>전체</strong> 교회는 선교적이다. 모든 지역 교회는 선교적 교회이며, 그렇지 않다면 그것은 교회로 존재하는 것이 아니다.</p>
+  </div>
+  <div class="highlight-box">
+    <div class="label">각주 7 메모 (p.214)</div>
+    <span class="handnote">그리스도인의 삶과 교회가 하는 일의 모든 측면이 사역(즉 하나님을 섬기는 일)의 한 형태</span>
+  </div>
+
+  <h3>p.216-220</h3>
+  <div class="pullquote">
+    <p><strong>하지만 모든 사람이 모든 것을 할 수는 없다!</strong></p>
+    <p>"우리 교회는 매주 1,500명의 선교 협력자를 보내고 있습니다." "그중 몇몇은 해외에서 섬기고 있습니다."</p>
+    <p>모든 교회 구성원은…세상 속에서 헌신된 그리스도인으로 살아가는 일상적이고 보편적인 삶을 통해 자신의 <strong>선교적</strong> 부르심에 참여한다.</p>
+  </div>
+
+  <h3>p.222-224</h3>
+  <div class="pullquote">
+    <p><strong>하나님이 부르신다면</strong> 그리스도인 법률가, 기업가, 정치인, 경영자, 사회복지사, 방송 작가, 기자, 주부가 되는 것도 동일하게 놀라운 일이다.</p>
+    <p>"우리는 이런 위계를 거부하고 피라미드를 부수어야 한다."</p>
+    <p>예수님은 일터와 가정의 주님, 길거리와 하늘의 주님, 학교와 빈민가의 주님, 병원과 집의 주님이시다.</p>
+    <p><strong>선교는</strong> 특별한 전문 위원회에 맡겨진 의제가 아니다. 대행사가 처리하는 프로젝트가 아니다. '나머지 사람들을 대신해' 파송되는 특별한 사람들을 위해 마련된 이국적 소명이 아니다.</p>
+    <p><strong>선교는 하나님의 온전한 교회를 이루는 모든 구성원들의 삶 전체를 규정하는 존재 양식이다.</strong></p>
+  </div>
+
+  <hr>
+
+  <!-- ━━ Footer ━━ -->
+  <div class="article-footer">
+    <p>
+      <strong>전사 메모:</strong> p.92, p.142, p.145-146, p.162, p.181-185, p.199, p.202-203 등 일부 페이지는 사진상 표시가 없거나 식별되지 않아 생략. 여백 손글씨는 판독 가능한 범위에서만 옮겼고 불확실한 글자는 (?)로 표기.
+    </p>
+    <p>
+      <strong>출처:</strong> 크리스토퍼 라이트, <em>하나님의 선교, 세상을 바꾸다</em> (Christopher J. H. Wright). 페이지 사진 174장에서 직접 표시한 부분을 전사.
+    </p>
+  </div>
+
+</article>
+</div>
+
+</body>
+</html>
