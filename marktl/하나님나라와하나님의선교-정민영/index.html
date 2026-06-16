@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+
+<title>하나님 나라와 하나님의 선교 — 정민영 | 독서 노트</title>
+
+
+
+
+
+
+
+<style>
+  :root {
+    --bg: #FAFAF7;
+    --surface: #FFFFFF;
+    --text: #1A1A1A;
+    --text-secondary: #4A4A4A;
+    --text-muted: #7A7A7A;
+    --accent: #8B4513;
+    --accent-light: #D2691E;
+    --accent-bg: #FDF6EE;
+    --border: #E8E0D4;
+    --border-light: #F0EBE3;
+    --gold: #B8860B;
+    --gold-light: #FFF8DC;
+    --section-divider: #D4C5A9;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.10);
+    --radius: 12px;
+    --radius-sm: 8px;
+    --max-width: 760px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    font-size: 17px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Noto Serif KR', 'Nanum Myeongjo', Georgia, 'Times New Roman', serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.85;
+    letter-spacing: -0.01em;
+  }
+
+  /* ── Hero Section ── */
+  .hero {
+    background: linear-gradient(165deg, #2C1810 0%, #4A2C1A 40%, #5D3A1A 100%);
+    color: #FFF;
+    padding: 5rem 1.5rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at 30% 20%, rgba(184,134,11,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 80%, rgba(139,69,19,0.12) 0%, transparent 50%);
+  }
+
+  .hero-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-label {
+    display: inline-block;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(184,134,11,0.4);
+    padding: 0.3em 0.9em;
+    border-radius: 3px;
+    margin-bottom: 1.8rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.7);
+    font-style: italic;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .hero-meta {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.5);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1.2rem;
+  }
+
+  .hero-meta span { white-space: nowrap; }
+
+  /* ── Main Content ── */
+  .content-wrapper {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* ── Abstract Card ── */
+  .abstract {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2.2rem 2rem;
+    margin: -2rem auto 3rem;
+    position: relative;
+    z-index: 2;
+    box-shadow: var(--shadow-md);
+    max-width: var(--max-width);
+  }
+
+  .abstract-label {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.8rem;
+  }
+
+  .abstract p {
+    font-size: 1.02rem;
+    color: var(--text-secondary);
+    line-height: 1.9;
+  }
+
+  .abstract .key-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 1.2rem;
+  }
+
+  .abstract .tag {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.68rem;
+    background: var(--accent-bg);
+    color: var(--accent);
+    padding: 0.25em 0.7em;
+    border-radius: 3px;
+    font-weight: 500;
+  }
+
+  /* ── TOC ── */
+  .toc {
+    background: var(--gold-light);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 1.5rem 1.8rem;
+    margin-bottom: 3rem;
+  }
+
+  .toc-title {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+  }
+
+  .toc ol {
+    list-style: none;
+    counter-reset: toc;
+    padding: 0;
+  }
+
+  .toc li {
+    counter-increment: toc;
+    margin-bottom: 0.35rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .toc li::before {
+    content: counter(toc) ".";
+    color: var(--gold);
+    font-weight: 600;
+    margin-right: 0.5em;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.82rem;
+  }
+
+  .toc a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+
+  .toc a:hover {
+    border-bottom-color: var(--gold);
+  }
+
+  /* ── Section Styling ── */
+  .section {
+    margin-bottom: 3.5rem;
+  }
+
+  .section-number {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+
+  h2 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 1.2rem;
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+    color: var(--text);
+  }
+
+  p {
+    margin-bottom: 1.2rem;
+  }
+
+  strong {
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  /* ── Pullquote ── */
+  .pullquote {
+    border-top: 2px solid var(--section-divider);
+    border-bottom: 2px solid var(--section-divider);
+    padding: 1.8rem 0;
+    margin: 2.2rem 0;
+    text-align: center;
+  }
+
+  .pullquote p {
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--accent);
+    line-height: 1.7;
+    margin-bottom: 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .pullquote .attribution {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.75rem;
+    font-style: normal;
+    color: var(--text-muted);
+    margin-top: 0.6rem;
+    display: block;
+  }
+
+  /* ── Blockquote (inline) ── */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    padding: 0.8rem 1.2rem;
+    margin: 1.5rem 0;
+    background: var(--accent-bg);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+  }
+
+  blockquote p:last-child { margin-bottom: 0; }
+
+  /* ── Finding Cards ── */
+  .finding-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem 1.6rem;
+    margin: 1.5rem 0;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .finding-card .finding-label {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .finding-card h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    color: var(--text);
+  }
+
+  .finding-card p {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    margin-bottom: 0;
+  }
+
+  /* ── Table ── */
+  .table-wrapper {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+
+  thead {
+    background: var(--accent-bg);
+  }
+
+  th {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding: 0.8rem 1rem;
+    text-align: left;
+    border-bottom: 2px solid var(--border);
+  }
+
+  td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--text-secondary);
+    line-height: 1.6;
+    vertical-align: top;
+  }
+
+  tr:last-child td { border-bottom: none; }
+
+  /* ── Quote Collection ── */
+  .quote-collection {
+    background: linear-gradient(135deg, #FDF8F0 0%, #FAF5EB 100%);
+    border-radius: var(--radius);
+    padding: 2rem;
+    margin: 2rem 0;
+  }
+
+  .quote-collection-title {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.2rem;
+  }
+
+  .quote-item {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(139,69,19,0.1);
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    line-height: 1.7;
+  }
+
+  .quote-item:last-child { border-bottom: none; }
+
+  .quote-item .q-source {
+    font-style: normal;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    display: block;
+    margin-top: 0.2rem;
+  }
+
+  /* ── Diagram: Structure ── */
+  .diagram {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    margin: 2rem 0;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .diagram-title {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.2rem;
+  }
+
+  .flow-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .flow-node {
+    background: var(--accent-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    min-width: 80px;
+  }
+
+  .flow-node.highlight {
+    background: var(--accent);
+    color: #FFF;
+    border-color: var(--accent);
+  }
+
+  .flow-arrow {
+    color: var(--section-divider);
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+
+  /* ── Takeaway Box ── */
+  .takeaway {
+    background: linear-gradient(135deg, #2C1810 0%, #4A2C1A 100%);
+    color: #FFF;
+    border-radius: var(--radius);
+    padding: 2.5rem 2rem;
+    margin: 3rem 0;
+  }
+
+  .takeaway-label {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .takeaway h3 {
+    color: #FFF;
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .takeaway p {
+    color: rgba(255,255,255,0.85);
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .takeaway ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .takeaway li {
+    padding: 0.5rem 0 0.5rem 1.4rem;
+    position: relative;
+    color: rgba(255,255,255,0.85);
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+
+  .takeaway li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  /* ── Divider ── */
+  .section-divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--section-divider) 30%, var(--section-divider) 70%, transparent 100%);
+    margin: 3rem 0;
+  }
+
+  /* ── Footer ── */
+  .article-footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem 0 4rem;
+    margin-top: 3rem;
+  }
+
+  .source-note {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 1.2rem 1.4rem;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  .source-note strong {
+    color: var(--text-secondary);
+  }
+
+  .related-topics {
+    margin-top: 1.5rem;
+  }
+
+  .related-topics-title {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.6rem;
+  }
+
+  .related-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    list-style: none;
+    padding: 0;
+  }
+
+  .related-list li {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.75rem;
+    background: var(--border-light);
+    color: var(--text-secondary);
+    padding: 0.3em 0.8em;
+    border-radius: 4px;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 640px) {
+    html { font-size: 16px; }
+    .hero { padding: 3.5rem 1.2rem 3rem; }
+    .abstract { padding: 1.5rem; margin: -1.5rem 1rem 2rem; }
+    .content-wrapper { padding: 0 1.2rem; }
+    .pullquote p { font-size: 1.1rem; }
+    .quote-collection { padding: 1.2rem; }
+    .takeaway { padding: 1.8rem 1.4rem; }
+    .flow-node { font-size: 0.78rem; padding: 0.4rem 0.7rem; min-width: auto; }
+    .hero-meta { gap: 0.8rem; }
+    .toc { padding: 1.2rem 1.4rem; }
+  }
+
+  @media print {
+    .hero { background: #FFF; color: #000; }
+    .hero-label, .hero-meta { color: #666; }
+    .abstract, .finding-card, .takeaway { box-shadow: none; border: 1px solid #CCC; }
+    .takeaway { background: #F5F5F5; color: #000; }
+    .takeaway h3, .takeaway p, .takeaway li { color: #000; }
+  }
+</style>
+<meta property="og:type" content="article">
+<meta property="og:title" content="하나님 나라와 하나님의 선교 — 정민영 (IVP, 2024)">
+<meta property="og:description" content="부제: 교회와 선교의 방향을 묻는 이들에게. 정민영 선교사의 선교학 개론(2022년 한 지역 교회 선교 강좌 기초). 📷 표시(밑줄·동그라미·형광펜·📝손글씨)를 페이지 사진에서 원문 그대로 전사한 독서 노트. 요약을 먼저, 그 아래 전사 전문(줄이지 않음)을 둔다. 요약 — 장별 상세 정리 선교학 개론서. 선교를 인간">
+<meta property="og:url" content="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/s/a9tr6k/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="하나님 나라와 하나님의 선교 — 정민영 (IVP, 2024)">
+<meta name="twitter:description" content="부제: 교회와 선교의 방향을 묻는 이들에게. 정민영 선교사의 선교학 개론(2022년 한 지역 교회 선교 강좌 기초). 📷 표시(밑줄·동그라미·형광펜·📝손글씨)를 페이지 사진에서 원문 그대로 전사한 독서 노트. 요약을 먼저, 그 아래 전사 전문(줄이지 않음)을 둔다. 요약 — 장별 상세 정리 선교학 개론서. 선교를 인간">
+<link rel="canonical" href="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/s/a9tr6k/">
+</head>
+<body>
+
+<!-- ════════ HERO ════════ -->
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-label">독서 노트 &middot; 선교신학</span>
+    <h1>하나님 나라와 하나님의 선교</h1>
+    <p class="hero-subtitle">교회와 선교의 방향을 묻는 이들에게 — 정민영 (IVP, 2024)</p>
+    <div class="hero-meta">
+      <span>저자: 정민영</span>
+      <span>출판: IVP, 2024</span>
+      <span>페이지 사진 121장 전사</span>
+      <span>정리: 2026-06-16</span>
+    </div>
+  </div>
+</header>
+
+<!-- ════════ ABSTRACT ════════ -->
+<div class="content-wrapper">
+  <div class="abstract">
+    <div class="abstract-label">Abstract</div>
+    <p>
+      선교를 인간의 활동이 아니라 <strong>삼위 하나님의 일(missio Dei)</strong>로 재정의하는 선교학 개론서. 선교의 출발점·원천·목적을 모두 하나님께 돌리는 <strong>신본주의(theocentrism)</strong> 관점을 일관되게 전개하며, 존재(being)가 사역(doing)에 선행한다는 성육신적 선교론, 그리고 <strong>수동성에 기반한 능동성</strong>이라는 미래 선교의 핵심 원리를 제시한다. 1970년대 한국 선교 1세대의 시행착오에서 정제된 성찰이 담겨 있다.
+    </p>
+    <div class="key-tags">
+      <span class="tag">Missio Dei</span>
+      <span class="tag">신본주의</span>
+      <span class="tag">하나님 나라</span>
+      <span class="tag">Being 선교</span>
+      <span class="tag">성육신</span>
+      <span class="tag">회심</span>
+      <span class="tag">통전성</span>
+      <span class="tag">수동성</span>
+      <span class="tag">봉투구조</span>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ TOC ════════ -->
+<div class="content-wrapper">
+  <nav class="toc">
+    <div class="toc-title">목차</div>
+    <ol>
+      <li><a href="#prologue">서론 — 선교의 상수를 회복하라</a></li>
+      <li><a href="#ch1">선교의 출발점과 목적 — 신본주의</a></li>
+      <li><a href="#ch23">구원과 하나님 나라 — 왕권과 회심</a></li>
+      <li><a href="#ch4">선교는 하나님의 일 — 의존과 기다림</a></li>
+      <li><a href="#ch5">성경의 선교적 해석 — 누가복음 24장 준거틀</a></li>
+      <li><a href="#ch6">존재(Being) → 사역(Doing) — 성육신적 증인</a></li>
+      <li><a href="#conclusion">결론 — 수동성에 기반한 능동성</a></li>
+      <li><a href="#takeaways">핵심 발견과 함의</a></li>
+    </ol>
+  </nav>
+
+  <!-- ════════ SECTIONS ════════ -->
+
+  <!-- ── 서론 ── -->
+  <section class="section" id="prologue">
+    <span class="section-number">서론</span>
+    <h2>선교의 상수를 회복하라</h2>
+
+    <p>
+      1970년대 한국 선교 운동의 첫 물결에 몸을 던진 저자의 <strong>긴 시행착오의 여정</strong>에서 형성된 선교적 틀을 정리한 책이다. 핵심 전제는 분명하다.
+    </p>
+
+    <blockquote>
+      <p>"변수가 상수를 대체해서는 안 되고, 상수에 기반한 변수라야 바람직하다."</p>
+    </blockquote>
+
+    <p>
+      부정적 모습에 실망해 <strong>선교 자체를 해체(deconstruction)하는 것</strong>을 경계하며, 진리에 기반한 <strong>재구성(reconstruction)</strong>을 촉구한다. "역사적 교회와 단절된 불연속적 변화는 다양한 이단 운동의 특징"이라는 경고와 함께 '오직 성경으로(Sola Scriptura)'라는 상수 회복을 강조한다.
+    </p>
+
+    <p>
+      그릇된 지식을 비워내고(<strong>unlearn</strong>) 바른 내용으로 채우는(<strong>relearn</strong>) 학습은 "긴 호흡과 일관성을 요구"하며, 바울이 다메섹 도상 이후 <strong>십여 년간</strong> 광야와 고향에 묻혀 과거의 그릇된 성경 이해를 교정한 후 비로소 사역에 임한 사실이 이를 증명한다.
+    </p>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── 1장 ── -->
+  <section class="section" id="ch1">
+    <span class="section-number">제1장</span>
+    <h2>선교의 출발점과 목적 — 신본주의</h2>
+
+    <div class="finding-card">
+      <span class="finding-label">핵심 발견</span>
+      <h4>선교의 원천은 하나님이시다</h4>
+      <p>"선교는 우선적으로 교회론이나 구원론에 기반하기보다 <strong>신론</strong>, 즉 삼위 하나님의 속성에서 나오는 것이다." 교회를 '그리스도의 몸으로' 부르시고 삼위 하나님의 선교에 동참하도록 초청하신 것이다.</p>
+    </div>
+
+    <h3>선교의 궁극 목적 = 하나님 영광의 회복</h3>
+    <p>
+      "선교의 동기가 단순히 멸망할 불쌍한 사람들을 긍휼히 여겨 구원하는 차원에 머물기보다… <strong>하나님의 영광이 회복되고 완성되는 데</strong> 초점이 맞춰져야 한다." 인본주의 무당 종교와 구별되는 기독교의 특성은 바로 이 <strong>신본주의</strong>이다. 종교개혁의 다섯 솔라 중 'Soli Deo Gloria(오직 하나님께 영광)'가 전체를 아우르는 지향성이다.
+    </p>
+
+    <h3>관계 신학 vs 해답 신학</h3>
+    <p>
+      코수케 코야마의 '물소 신학'을 인용하며, 신앙의 본질은 인생 문제의 해답이 아니라 <strong>사랑의 관계</strong>라고 정의한다. C. S. 루이스가 말한 '주시는 것(the gifts)'이 아니라 '주시는 분(the Giver)'에게 시선을 고정하는 것이다.
+    </p>
+
+    <blockquote>
+      <p>"나는 네 방패요 너의 <strong>지극히 큰 상급</strong>이니라" (창 15:1) — 상급은 '무엇'이 아니라 하나님 자신이시다.</p>
+    </blockquote>
+
+    <p>
+      아우구스티누스: "당신께서는 당신 자신을 위해 우리를 만드셨습니다. 우리의 마음은 당신 안에서 안식하기 전까지는 편히 쉴 수 없습니다."
+    </p>
+
+    <h3>확증 편향의 경고</h3>
+    <p>
+      루터가 아우구스티누스를 인용한 <strong>"자기 자신을 향해 구부러진 자(homo incurvatus in se)"</strong> — 성경을 자기중심적으로 뒤트는 경향이 모든 그리스도인에게 있다. "건강한 성경적 기초를 다지지 않는 제도 교회나 선교 외형의 확장은 하나님 나라에 득보다 실이 된다."
+    </p>
+
+    <div class="pullquote">
+      <p>"선교는 하나님을 하나님 되게 하는 일이다.<br>선교라는 도구 자체보다 그 목적인 예배가 핵심이다."</p>
+      <span class="attribution">— p.57</span>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── 2-3장 ── -->
+  <section class="section" id="ch23">
+    <span class="section-number">제2–3장</span>
+    <h2>구원과 하나님 나라 — 왕권과 회심</h2>
+
+    <h3>구원의 재정의</h3>
+    <p>
+      "'무엇으로부터(from what)' 구원받았는지 묻는 데 그치지 말고, 하나님이 <strong>'무엇을 위해(for what)'</strong> 그 엄청난 대가를 지불하시고 우리를 구원하셨는지 물어야 한다." 구원을 인간중심적 특혜로 정의하는 것을 경계한다.
+    </p>
+
+    <blockquote>
+      <p>"빠르고 쉽게 복음을 전하려는 조급한 마음에 자의적으로 복음을 재단해서 '예수 천당, 불신 지옥'으로 함부로 환원하는 것이 도리어 하나님의 뜻을 거스를 수 있다."</p>
+    </blockquote>
+
+    <h3>하나님 나라의 핵심 = 왕권(Kingship)</h3>
+    <p>
+      왕국(Kingdom)의 핵심 개념은 영토가 아니라 <strong>통치권</strong>이다. 부활 후 40일간 예수님이 거듭 가르치신 유일한 주제는 하나님 나라였다. 복음은 욕망 충족의 약속이 아니라 "<strong>하나님의 통치</strong>가 임했기 때문"에 기뻐해야 할 좋은 소식이다.
+    </p>
+
+    <div class="finding-card">
+      <span class="finding-label">통계적 발견</span>
+      <h4>Kyrios vs Soter — 신약의 언어적 증거</h4>
+      <p>신약에서 구원자를 의미하는 '소테르(soter)'가 <strong>24회</strong>인 반면, 주님을 뜻하는 '<strong>퀴리오스(kyrios)</strong>'는 <strong>747회</strong> 사용된다. 신약이 강조하는 것은 구원의 혜택이 아니라 주권적 통치이다.</p>
+    </div>
+
+    <h3>복음의 선교적 본질</h3>
+    <p>
+      "선교적 이해 없이 자신의 구원과 축복에만 초점을 맞추는 것은 사실상 <strong>보혈의 가치에 대한 모독 행위</strong>에 해당한다." 아브라함은 원래 메소포타미아의 이방인(히브리 = '요단강 건너편에서 온 도래인')이었으며, 이스라엘의 특혜는 <strong>선교적 복음을 위탁받은 사실</strong>에 있다.
+    </p>
+
+    <h3>회심(Metanoia) = 관점의 변혁</h3>
+    <p>
+      헬라어 메타노이아는 '생각(noia)이 바뀌었다'는 의미로, "자기중심적 죄성을 벗어나 창조주 하나님의 통치로 돌아섬"이다. "<strong>선교의 진정한 목표는 개종이 아니라 회심</strong>이다." 회개의 열매는 "존재를 <strong>증명</strong>하는 것이지 존재를 <strong>만드는 공로</strong>가 아니다."
+    </p>
+
+    <!-- 하나님 나라 삼중 성취 테이블 -->
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>성취 단계</th>
+            <th>시점</th>
+            <th>의미</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>즉각적 성취</strong></td>
+            <td>초림</td>
+            <td>하나님 나라가 예수 그리스도 안에서 돌입</td>
+          </tr>
+          <tr>
+            <td><strong>중간적 성취</strong></td>
+            <td>선교 시대</td>
+            <td>교회를 통한 하나님 나라의 확장</td>
+          </tr>
+          <tr>
+            <td><strong>궁극적 성취</strong></td>
+            <td>재림</td>
+            <td>하나님 나라의 완전한 실현</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      존 스토트의 이 삼중 구조에 따라, "선교는 제도 종교의 확장이 아니라 <strong>하나님 나라의 확장</strong>을 추구한다."
+    </p>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── 4장 ── -->
+  <section class="section" id="ch4">
+    <span class="section-number">제4장</span>
+    <h2>선교는 하나님의 일 — 의존과 기다림</h2>
+
+    <h3>대위임령의 '봉투 구조(Inclusio)'</h3>
+
+    <div class="diagram">
+      <div class="diagram-title">마태복음 28:18-20 봉투 구조</div>
+      <div class="flow-row">
+        <div class="flow-node highlight">18절 — 모든 권세</div>
+        <div class="flow-arrow">&#8594;</div>
+        <div class="flow-node">19-20a절 — 위임령</div>
+        <div class="flow-arrow">&#8594;</div>
+        <div class="flow-node highlight">20b절 — 항상 함께</div>
+      </div>
+      <p>
+        그리스도의 권위로 열고(18절), 신적 보증으로 닫는다(20b절)<br>
+        — 선교가 전적으로 하나님의 일임을 구조 자체가 드러낸다
+      </p>
+    </div>
+
+    <h3>삼위일체적 동행</h3>
+    <p>
+      "공동체이신 삼위 하나님이 선교 공동체인 교회의 여정에 친히 동행하시고 이끄신다는 보증 때문에 우리가 선교적 과업에 뛰어들 엄두를 감히 낼 수 있다." 성자의 보내심 = 성부의 동행 언약(사 7:14), 성령의 강림 = 성자의 동행 언약(요 14:16-18).
+    </p>
+
+    <div class="finding-card">
+      <span class="finding-label">신학적 통찰</span>
+      <h4>믿음 = 의존의 선언</h4>
+      <p>"죄가 인간의 자유 선언인 반면, 믿음은 <strong>의존의 선언</strong>이다." 중요한 것은 믿음의 크기가 아니라 진실성 — "큰 믿음이 아니라 참된 믿음으로 구원에 이른다. 구원은 믿음에 달려 있는 게 아니라 그리스도께 달려 있고, 믿음은 그분께 기대는 것이다."</p>
+    </div>
+
+    <h3>기다림의 영성</h3>
+    <p>
+      누가는 부활하신 그리스도가 "서둘러 뛰어나가 열심히 일하지 않고 성령의 강림과 인도를 <strong>기다리라</strong>고 명하신 말씀으로 그의 복음서를 마감한다."
+    </p>
+
+    <div class="pullquote">
+      <p>"성령의 인도를 받는 하나님의 자녀는<br>가려는 만큼 기다릴 줄 알아야 하고,<br>말하려는 만큼 침묵할 줄 알아야 한다."</p>
+      <span class="attribution">— p.109</span>
+    </div>
+
+    <p>
+      기도는 "매사를 하나님의 주권에 맡기는 <strong>의존</strong>"이다. "교회는 어느 편에도 야합해서는 안 되고, 도리어 <strong>양쪽으로부터 돌을 맞는 게 정상</strong>이다." 십자군 갑질이 아닌 십자가의 도를 선택하셨다.
+    </p>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── 5장 ── -->
+  <section class="section" id="ch5">
+    <span class="section-number">제5장</span>
+    <h2>성경의 선교적 해석 — 누가복음 24장 준거틀</h2>
+
+    <p>
+      크리스토퍼 라이트를 인용하며 "성경에 선교라는 주제가 여기저기 숨겨져 있다는 보물찾기식 접근이 아니라, <strong>성경 자체가 하나님의 선교의 산물</strong>이라는 관점"을 취한다.
+    </p>
+
+    <h3>누가복음 24:44-48 — 성경이 가리키는 세 핵심</h3>
+    <p>
+      "완벽하신 그리스도가 성경을 요약하시는 누가복음 24장"을 해석의 핵심 틀로 삼는다. 성경 전체가 가리키는 것:
+    </p>
+
+    <div class="diagram">
+      <div class="diagram-title">성경 전체의 세 초점</div>
+      <div class="flow-row">
+        <div class="flow-node">그리스도의 십자가</div>
+        <div class="flow-arrow">+</div>
+        <div class="flow-node">그리스도의 부활</div>
+        <div class="flow-arrow">+</div>
+        <div class="flow-node highlight">그리스도의 선교</div>
+      </div>
+      <p>
+        역사적 교회는 메시아적 관점(십자가와 부활)으로는 잘 해석했지만<br>
+        <strong>선교적 관점의 접근은 취약</strong>했다
+      </p>
+    </div>
+
+    <h3>불연속성과 연속성</h3>
+    <p>
+      그리스도와 교회의 관계를 이 쌍으로 설명한다:
+    </p>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>차원</th>
+            <th>그리스도</th>
+            <th>교회</th>
+            <th>선교적 의미</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>불연속성</strong></td>
+            <td>독생자(唯一)</td>
+            <td>—</td>
+            <td>구원은 그리스도께서 홀로 완수하신 신적 은혜의 사역</td>
+          </tr>
+          <tr>
+            <td><strong>연속성</strong></td>
+            <td>맏아들(首長)</td>
+            <td>몸(상속자)</td>
+            <td>선교는 그리스도께서 교회를 통해 지속하시는 사역</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      '교회(ekklesia)'의 어원 자체가 '부르심(klesis)'이다. "교회가 교회 자체를 위해 존재할 수 없다… <strong>'목적'과 '선교'는 동의어</strong>이다." 교회가 선교 때문에 존재하는 것이지, 선교가 교회 때문에 존재하는 게 아니다. 성만찬도 "주의 죽으심을 <strong>그가 오실 때까지 전하는</strong>" 선교적 동참이다.
+    </p>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── 6장 ── -->
+  <section class="section" id="ch6">
+    <span class="section-number">제6장</span>
+    <h2>존재(Being) → 사역(Doing) — 성육신적 증인</h2>
+
+    <div class="finding-card">
+      <span class="finding-label">핵심 명제</span>
+      <h4>존재론이 먼저다</h4>
+      <p>"방법론(doing) 자체에 초점을 맞추기보다, 그것을 가능하게 하는 <strong>존재론(being)</strong>을 먼저 고찰해야 한다." 존재를 무시하고 열매에만 집착하면, 시장에서 열매를 사서 자기 몸에 못질하여 존재를 증명하려는 무리수를 두게 된다.</p>
+    </div>
+
+    <h3>성육신의 두 원리</h3>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>원리</th>
+            <th>내용</th>
+            <th>실천적 의미</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>동일화</strong></td>
+            <td>복음을 소통하려는 대상의 눈높이에 맞추기</td>
+            <td>앤드루 월스: 성육신은 하나님의 영원한 사랑을 인간이 감지하게 하기 위한 삼위 하나님의 '번역 방식'이었다. 소통은 일방통행이 아닌 쌍방통행.</td>
+          </tr>
+          <tr>
+            <td><strong>통전성</strong></td>
+            <td>말과 행실, 존재와 사역의 일치</td>
+            <td>"성품은 보고 따르는 것이지 듣고 분석하는 게 아니다." 수직적 전승(자녀 세대에 복음을 유산으로 넘겨주는 일)에 실패하는 원인은 부모 세대의 존재와 삶이 자녀에게 노출되어 있기 때문이다.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>증인의 자질</h3>
+    <p>
+      "성경은 증거 행위 이전에 증인의 <strong>자질</strong>에 초점을 맞춘다." 요 1:7-8에서 세례 요한은 동사(증거 행위)가 아닌 <strong>명사(증인)</strong>로 소개된다. "현대 교회가 전도와 선교를 <strong>언어 차원으로 환원</strong>하는 것은 성육신이 가르치는 두 원리를 모두 부정하는 오류이다."
+    </p>
+
+    <h3>탈종교 시대와 통전성</h3>
+    <p>
+      "동원의 시대(19세기~20세기 중반)는 이미 지나갔고, 그 주장의 신빙성을 뒷받침할 <strong>진정성(authenticity)</strong>을 요구하는 시대가 되었다." 그러나 이것은 위기가 아니라 <strong>기회</strong> — "통전적 복음으로 진검 승부를 한다면 과거 동원의 시대보다 훨씬 승산이 있는 시대정신"이다.
+    </p>
+
+    <!-- ── 핵심 인용 모음 ── -->
+    <div class="quote-collection">
+      <div class="quote-collection-title">이 장의 핵심 인용들</div>
+
+      <div class="quote-item">
+        "결국 세상이 어두운 게 문제가 아니라, <strong>우리가 빛이 아닌 게 문제</strong>다."
+        <span class="q-source">p.192</span>
+      </div>
+
+      <div class="quote-item">
+        "백 명 중 한 명쯤은 성경을 펴겠지만, 아흔아홉 명은 <strong>그리스도인들을 본다</strong>."
+        <span class="q-source">p.192</span>
+      </div>
+
+      <div class="quote-item">
+        "그리스도인은 <strong>제5복음서</strong>다."
+        <span class="q-source">p.192</span>
+      </div>
+
+      <div class="quote-item">
+        "모든 그리스도인의 의무는 이웃에게 <strong>그리스도가 되는 것</strong>이다."
+        <span class="q-source">p.193</span>
+      </div>
+
+      <div class="quote-item">
+        "장미는 향기를 선전할 필요가 없다."
+        <span class="q-source">p.162</span>
+      </div>
+
+      <div class="quote-item">
+        무디: "등대는 나팔을 불지 않는다. 다만 빛을 비출 뿐이다."
+        <span class="q-source">p.194</span>
+      </div>
+
+      <div class="quote-item">
+        "초대교회는 전도에 힘쓰지 않았는데도 <strong>전도가 된 것이다!</strong>"
+        <span class="q-source">p.194</span>
+      </div>
+
+      <div class="quote-item">
+        "제자 삼지 않는 복음 전도나 그리스도의 명령에 대한 급진적 순종이 없는 부흥은 그저 조금 부족한 것이 아니라 <strong>위험한</strong> 것이다."
+        <span class="q-source">p.190</span>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── 결론 ── -->
+  <section class="section" id="conclusion">
+    <span class="section-number">결론</span>
+    <h2>수동성에 기반한 능동성 — 미래 선교의 원리</h2>
+
+    <p>
+      "건강한 선교 운동의 미래를 향한 한 가지 핵심 원리를 꼽아 본다면, 건강한 <strong>수동성</strong>과 <strong>능동성</strong>이다." 하나님이 먼저 사랑하셨기에(은혜의 수동성) 사랑으로 반응한다(능동성). "그리스도의 사랑이 우리를 강권하신다."
+    </p>
+
+    <div class="finding-card">
+      <span class="finding-label">언어적 발견</span>
+      <h4>열정(Passion)의 재정의</h4>
+      <p>원래 라틴어 '파시오(passio)'에서 나온 <strong>수동성(passivity)</strong>을 일컫는 말이다. "하나님이 요구하시지 않은 열심과 주관적 확신을 하나님의 뜻인 양 우기는 <strong>능동적 광기</strong>는 사라져야 한다." '불타는 열정'이나 '흔들리지 않는 확신'이 중요한 게 아니라, 하나님의 말씀에 기대는 <strong>두렵고 떨리는 수동성</strong>이 먼저 회복되어야 한다.</p>
+    </div>
+
+    <p>
+      바람직한 선교의 특징은 "혈기 등등했던 다메섹 도상의 바울이나 십자군 전쟁을 선동한 종교 지도자들의 광기를 닮기보다 <strong>온유와 겸손과 건강한 두려움</strong>"이다.
+    </p>
+
+    <div class="pullquote">
+      <p>"신앙 공동체를 통해 종교가 아닌 그리스도께서 드러나시고,<br>그리스도의 몸인 교회를 통해<br>선교의 하나님이 그분의 선교를 '거침없이' 펼쳐 가시는 미래를 꿈꿔 본다."</p>
+      <span class="attribution">— p.205</span>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ════════ TAKEAWAYS ════════ -->
+  <section id="takeaways">
+    <div class="takeaway">
+      <div class="takeaway-label">Key Findings &amp; Implications</div>
+      <h3>이 책이 제시하는 선교 패러다임의 전환</h3>
+      <ul>
+        <li><strong>인본주의 → 신본주의:</strong> 선교의 원천·목적·동력이 모두 삼위 하나님께 있다. 선교는 '하나님을 하나님 되게 하는 일'이며, 궁극 목적은 예배이다.</li>
+        <li><strong>Doing → Being:</strong> 방법론 이전에 존재론이 선행한다. 그리스도인은 제5복음서이며, 증거 행위 이전에 증인의 자질이 핵심이다.</li>
+        <li><strong>능동성 → 수동성 기반 능동성:</strong> 열정(passion)의 어원이 수동(passio)이듯, 하나님의 은혜에 먼저 붙잡힌 자만이 건강한 선교적 능동성을 발휘할 수 있다.</li>
+        <li><strong>개종 → 회심(Metanoia):</strong> 선교의 목표는 종교 변경이 아니라 생각의 전환, 자기중심에서 하나님 통치로의 돌아섬이다.</li>
+        <li><strong>교회 확장 → 하나님 나라 확장:</strong> 교회가 선교 때문에 존재하는 것이지, 선교가 교회 때문에 존재하는 것이 아니다.</li>
+        <li><strong>봉투 구조의 재발견:</strong> 대위임령(마 28:18-20)은 그리스도의 권위로 열고 신적 보증으로 닫는 구조 — 선교의 주체가 하나님이심을 구조 자체로 선언한다.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ════════ FOOTER ════════ -->
+  <footer class="article-footer">
+    <div class="source-note">
+      <strong>출처 정보:</strong> 이 글은 정민영, 《하나님 나라와 하나님의 선교》(IVP, 2024)의 독서 노트입니다. 책 페이지 사진 121장에서 밑줄·동그라미·형광펜·여백 손글씨로 표시된 부분을 원문 그대로 전사하고 장별로 재구성한 것입니다. 2022년 한 지역 교회 선교 강좌를 기초로 집필된 선교학 개론서로, 크리스토퍼 라이트의 선교적 성경 해석학과 미씨오데이(Missio Dei) 신학을 한국 교회 맥락에서 풀어냅니다.
+    </div>
+
+    <div class="related-topics">
+      <div class="related-topics-title">관련 주제</div>
+      <ul class="related-list">
+        <li>선교신학</li>
+        <li>미씨오데이</li>
+        <li>대사명</li>
+        <li>선교적 교회</li>
+        <li>기독교세계관</li>
+        <li>크리스토퍼 라이트</li>
+        <li>하백선 시리즈</li>
+        <li>Being 선교론</li>
+        <li>성육신</li>
+        <li>통전성</li>
+      </ul>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
