@@ -1,0 +1,835 @@
+<html lang="ko">
+<head>
+
+
+<title>5무교회가 온다 — 형식을 내려놓을 때 복음은 더 깊어진다</title>
+
+
+
+
+
+<style>
+  :root {
+    --color-bg: #FAFAF7;
+    --color-surface: #FFFFFF;
+    --color-text: #1A1A1A;
+    --color-text-secondary: #5A5A5A;
+    --color-accent: #2C5F2D;
+    --color-accent-light: #E8F0E8;
+    --color-accent-warm: #8B6914;
+    --color-border: #E0DDD5;
+    --color-highlight: #FFF8E7;
+    --color-pull-bg: #F5F3ED;
+    --font-serif: 'Noto Serif KR', 'Batang', Georgia, serif;
+    --font-sans: 'Pretendard', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    --max-width: 720px;
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.75rem;
+    --space-lg: 3rem;
+    --space-xl: 5rem;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { font-size: 17px; scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    background: linear-gradient(165deg, #1B3A1C 0%, #2C5F2D 40%, #3A7D44 100%);
+    color: #fff;
+    padding: var(--space-xl) var(--space-md) var(--space-lg);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0; right: 0;
+    height: 60px;
+    background: var(--color-bg);
+    clip-path: ellipse(55% 100% at 50% 100%);
+  }
+  .hero-label {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.15);
+    padding: 0.3em 1em;
+    border-radius: 100px;
+    margin-bottom: var(--space-md);
+    font-family: var(--font-sans);
+  }
+  .hero h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 0.4em;
+    letter-spacing: -0.02em;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: #A8D8A8;
+  }
+  .hero-subtitle {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.8);
+    max-width: 540px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+  .hero-meta {
+    margin-top: var(--space-md);
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.55);
+    display: flex;
+    gap: 1.5em;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ── Layout ── */
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+  }
+
+  article {
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-xl);
+  }
+
+  /* ── Abstract / Excerpt ── */
+  .abstract {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: var(--space-md) var(--space-md);
+    margin-bottom: var(--space-lg);
+    position: relative;
+  }
+  .abstract::before {
+    content: 'Abstract';
+    position: absolute;
+    top: -0.65em;
+    left: 1.5em;
+    background: var(--color-surface);
+    padding: 0 0.6em;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+  .abstract p {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.85;
+  }
+
+  /* ── Section headings ── */
+  .section-label {
+    display: inline-block;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    font-weight: 700;
+    margin-bottom: 0.3em;
+  }
+  h2 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: var(--space-sm);
+    color: var(--color-text);
+    letter-spacing: -0.01em;
+  }
+  h3 {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-xs);
+    color: var(--color-text);
+  }
+
+  .section-divider {
+    border: none;
+    height: 1px;
+    background: var(--color-border);
+    margin: var(--space-lg) 0;
+  }
+
+  p { margin-bottom: var(--space-sm); }
+  p + p { margin-top: 0; }
+
+  /* ── Pull quotes ── */
+  .pullquote {
+    background: var(--color-pull-bg);
+    border-left: 4px solid var(--color-accent);
+    padding: var(--space-md) var(--space-md);
+    margin: var(--space-md) calc(-1 * var(--space-sm));
+    border-radius: 0 8px 8px 0;
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--color-text);
+    font-style: italic;
+  }
+  .pullquote cite {
+    display: block;
+    margin-top: 0.6em;
+    font-size: 0.8rem;
+    font-style: normal;
+    color: var(--color-text-secondary);
+    font-family: var(--font-sans);
+  }
+
+  /* ── Highlight box ── */
+  .highlight-box {
+    background: var(--color-highlight);
+    border: 1px solid #E8DFC0;
+    border-radius: 10px;
+    padding: var(--space-md);
+    margin: var(--space-md) 0;
+  }
+  .highlight-box h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-accent-warm);
+    margin-bottom: 0.6em;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── Tables ── */
+  .table-wrap {
+    overflow-x: auto;
+    margin: var(--space-sm) 0 var(--space-md);
+    border-radius: 10px;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  thead { background: var(--color-accent-light); }
+  th {
+    text-align: left;
+    padding: 0.7em 1em;
+    font-weight: 600;
+    color: var(--color-accent);
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--color-accent);
+  }
+  td {
+    padding: 0.65em 1em;
+    border-bottom: 1px solid var(--color-border);
+    vertical-align: top;
+  }
+  tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: #FDFCF8; }
+
+  /* ── Insight cards ── */
+  .insight-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+    margin: var(--space-md) 0;
+  }
+  @media (min-width: 520px) {
+    .insight-grid { grid-template-columns: 1fr 1fr; }
+  }
+  .insight-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 1.2em;
+    transition: box-shadow 0.2s;
+  }
+  .insight-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  }
+  .insight-card .num {
+    display: inline-block;
+    width: 1.6em;
+    height: 1.6em;
+    line-height: 1.6em;
+    text-align: center;
+    background: var(--color-accent);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+  }
+  .insight-card p {
+    font-size: 0.88rem;
+    margin: 0;
+    line-height: 1.65;
+  }
+  .insight-card strong {
+    color: var(--color-accent);
+  }
+
+  /* ── Flow diagram (CSS-only) ── */
+  .flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+    margin: var(--space-md) 0;
+    font-size: 0.82rem;
+  }
+  .flow-step {
+    background: var(--color-accent);
+    color: #fff;
+    padding: 0.45em 0.9em;
+    border-radius: 6px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .flow-arrow {
+    color: var(--color-accent);
+    font-size: 1.1rem;
+    padding: 0 0.3em;
+    font-weight: 700;
+  }
+
+  /* ── Lists ── */
+  ul, ol {
+    margin: var(--space-xs) 0 var(--space-sm) 1.3em;
+  }
+  li {
+    margin-bottom: 0.35em;
+    font-size: 0.95rem;
+  }
+  li::marker {
+    color: var(--color-accent);
+  }
+
+  /* ── Emphasis badge ── */
+  .badge {
+    display: inline-block;
+    background: var(--color-accent-light);
+    color: var(--color-accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.2em 0.6em;
+    border-radius: 4px;
+    letter-spacing: 0.04em;
+    vertical-align: middle;
+    margin-right: 0.3em;
+  }
+
+  /* ── Comparison section ── */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: var(--space-md) 0;
+    font-size: 0.88rem;
+  }
+  .compare-col {
+    padding: 1.2em;
+  }
+  .compare-col:first-child {
+    background: #F5F0E8;
+    border-right: 1px solid var(--color-border);
+  }
+  .compare-col:last-child {
+    background: var(--color-accent-light);
+  }
+  .compare-col h4 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.8em;
+    font-weight: 700;
+  }
+  .compare-col:first-child h4 { color: #8B6914; }
+  .compare-col:last-child h4 { color: var(--color-accent); }
+  .compare-col ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .compare-col li {
+    padding: 0.3em 0;
+    font-size: 0.85rem;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .compare-col li:last-child { border-bottom: none; }
+
+  @media (max-width: 480px) {
+    .compare { grid-template-columns: 1fr; }
+    .compare-col:first-child { border-right: none; border-bottom: 1px solid var(--color-border); }
+  }
+
+  /* ── Footer ── */
+  .article-footer {
+    background: #1B3A1C;
+    color: rgba(255,255,255,0.7);
+    padding: var(--space-lg) var(--space-md);
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: 1.8;
+  }
+  .article-footer strong { color: #fff; }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    html { font-size: 15.5px; }
+    .hero { padding: var(--space-lg) var(--space-sm) var(--space-md); }
+    .pullquote { margin-left: 0; margin-right: 0; }
+    .flow { font-size: 0.72rem; }
+    .flow-step { padding: 0.35em 0.6em; }
+  }
+
+  /* ── Print ── */
+  @media print {
+    .hero { background: #fff; color: #000; }
+    .hero::after { display: none; }
+    body { font-size: 11pt; }
+  }
+</style>
+<meta property="og:type" content="article">
+<meta property="og:title" content="5무교회가 온다 — 황인권">
+<meta property="og:description" content="책 개요 | 항목 | 내용 | ||| | 저자 | 황인권 | | 핵심 주장 | 시대적 맥락이 변함에 따라 복음의 본질을 담아내는 &#39;그릇&#39;을 기민하게 재조정해야 한다 | | 구조 | 4부 · 10키워드 · 1결론 | 5무(無)란? | 없는 것 | 의미 | ||| | 로고에 [[topics/십자가]] 없음 | 복음의 본질은 ">
+<meta property="og:url" content="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/s/2jurb0/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="5무교회가 온다 — 황인권">
+<meta name="twitter:description" content="책 개요 | 항목 | 내용 | ||| | 저자 | 황인권 | | 핵심 주장 | 시대적 맥락이 변함에 따라 복음의 본질을 담아내는 &#39;그릇&#39;을 기민하게 재조정해야 한다 | | 구조 | 4부 · 10키워드 · 1결론 | 5무(無)란? | 없는 것 | 의미 | ||| | 로고에 [[topics/십자가]] 없음 | 복음의 본질은 ">
+<link rel="canonical" href="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/s/2jurb0/">
+</head>
+<body>
+
+<!-- ════════════════════ HERO ════════════════════ -->
+<header class="hero">
+  <div class="hero-label">Book Review &middot; Research Report</div>
+  <h1>5무교회가 온다<br><em>형식을 내려놓을 때, 복음은 더 깊어진다</em></h1>
+  <p class="hero-subtitle">
+    십자가도, 새벽기도도, 구역도 없는 교회.<br>
+    그런데 오히려 복음은 더 선명해졌다.<br>
+    황인권의 화제작이 던지는 질문과 그 답을 정리했습니다.
+  </p>
+  <div class="hero-meta">
+    <span>저자: 황인권</span>
+    <span>리뷰 작성: 2026-05-02</span>
+    <span>교회론 · 선교학 · MZ세대</span>
+  </div>
+</header>
+
+<!-- ════════════════════ ARTICLE ════════════════════ -->
+<article>
+<div class="container">
+
+  <!-- Abstract -->
+  <div class="abstract">
+    <p>
+      한국교회 출석 인구는 꾸준히 줄고 있다. 떠나는 이들은 복음에 지친 것이 아니라 <strong>형식에 지친 것</strong>이다.
+      황인권은 이 현상을 '5무(五無)'라는 프레임으로 포착하고, 영국 Fresh Expressions 모델과 MZ세대의 라이프스타일 분석을 결합해
+      <strong>"그릇을 바꿔야 내용물이 살아난다"</strong>는 핵심 명제를 제시한다.
+      본 리포트는 책의 4부 10키워드 구조를 재편하고, 디처치드 현상·리추얼의 재발견·선교적 교회 형성론과의 교차점을 분석하며,
+      CMF 공동체 적용 시사점까지 도출한다.
+    </p>
+  </div>
+
+  <!-- ──── KEY FINDINGS ──── -->
+  <div class="section-label">Key Findings</div>
+  <h2>핵심 발견 6가지</h2>
+
+  <div class="insight-grid">
+    <div class="insight-card">
+      <div class="num">1</div>
+      <p><strong>그릇과 내용물의 구분</strong> — 형식을 바꾸는 것이 본질을 버리는 게 아니다. 십자가는 더 깊은 곳에서 더 강력하게 이야기된다.</p>
+    </div>
+    <div class="insight-card">
+      <div class="num">2</div>
+      <p><strong>이동이 본질</strong> — 모바일 혁명은 기술 변화가 아니라 인간 존재 방식의 변화다. 교회도 'Go and be'로 전환해야 한다.</p>
+    </div>
+    <div class="insight-card">
+      <div class="num">3</div>
+      <p><strong>리추얼은 죽지 않았다</strong> — 타로·러닝크루·저널링 모두 "나는 누구인가?"라는 질문의 다른 표현이다.</p>
+    </div>
+    <div class="insight-card">
+      <div class="num">4</div>
+      <p><strong>디처치드 ≠ 영적 포기</strong> — 그들은 복음을 떠난 것이 아니라 제도적 형식에 지친 것이다.</p>
+    </div>
+    <div class="insight-card">
+      <div class="num">5</div>
+      <p><strong>경청이 먼저</strong> — Fresh Expressions의 첫 단계는 프로그램이 아니라 Listening이다.</p>
+    </div>
+    <div class="insight-card">
+      <div class="num">6</div>
+      <p><strong>K가 선두</strong> — 이 변화의 최전선은 서구가 아니라 한국이다. 쇼츠 소비량 세계 1위, 디지털 노마드 선도국.</p>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ──── 5무 정의 ──── -->
+  <div class="section-label">Part 0 &middot; Definition</div>
+  <h2>'5무(五無)'란 무엇인가</h2>
+
+  <p>
+    저자가 관찰한 새로운 교회에는 다섯 가지가 '없다'. 그러나 이 부재는 결핍이 아니라 <strong>의도적 선택</strong>이다.
+    각각의 '무'는 대응하는 '업(UP)' — 더 본질적인 대안 — 으로 전환된다.
+  </p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>없는 것 (無)</th><th>의미</th><th>전환 (UP)</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>로고에 십자가 없음</td>
+          <td>형식적 상징을 내려놓고 본질을 더 깊이</td>
+          <td>인스타그램 + 교회 공간 자체로</td>
+        </tr>
+        <tr>
+          <td>새벽예배 없음</td>
+          <td>일상과 연결된 영성으로 전환</td>
+          <td>온오프라인 더 연결 (일상으로)</td>
+        </tr>
+        <tr>
+          <td>전통적 성경공부 없음</td>
+          <td>취향 기반 인격적 소그룹으로 대체</td>
+          <td>성도 중심 소그룹</td>
+        </tr>
+        <tr>
+          <td>구역(셀) 제도 없음</td>
+          <td>자발적 공동체 형성</td>
+          <td>성도 중심 소그룹</td>
+        </tr>
+        <tr>
+          <td>장로 직분 없음 (아직)</td>
+          <td>수평적 팀 리더십</td>
+          <td>어디선가 자연스럽게 세워짐</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ──── 1부 배경 ──── -->
+  <div class="section-label">Part 1 &middot; Background</div>
+  <h2>모바일 혁명과 Me Generation</h2>
+
+  <p>
+    농업 → 산업 → 인쇄 → 전기 → 디지털 → 모바일. 인쇄 혁명이 <strong>지식의 민주화</strong>였다면,
+    모바일 혁명은 <strong>관계와 감각의 민주화</strong>다. 일상과 관계를 실시간으로 재구성한 최초의 변화이며,
+    쇼츠·릴스 소비량이 미국의 2배인 한국은 이 혁명의 최전선에 있다.
+  </p>
+
+  <h3>MZ세대 = Me Generation</h3>
+  <p>
+    이미 노동인구의 50%를 차지하는 기성세대. 도덕 규범이 약화된 것이 아니라
+    <strong>개인의 선택과 자유가 우선</strong>되는 가치관으로 전환된 것이다.
+    순차적 인생 모형(학교 → 취업 → 결혼 → 은퇴)은 더 이상 유효하지 않다.
+    한달살기, 디지털 노마드, 워케이션 — 삶 자체가 이동(Mobile)이 되었다.
+  </p>
+
+  <div class="highlight-box">
+    <h4>K가 선두주자</h4>
+    <p>
+      책은 올드파워, 모바일은 뉴파워. 미네르바 스쿨(7개 도시를 한 학기씩 이동)처럼
+      '이동하는 교육'도 이미 현실이다. "아직도 서구의 이야기인가? 오히려 K의 이야기다."
+    </p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ──── 2부 현상 ──── -->
+  <div class="section-label">Part 2 &middot; Phenomenon</div>
+  <h2>세 가지 현상: 라이프스타일 · 리추얼 · 로컬</h2>
+
+  <h3>페르소나 공간</h3>
+  <p>
+    청년들은 <strong>페르소나 공간에만</strong> 간다. 모바일 혁명이 무한한 온라인 공간을 열었기 때문에,
+    오프라인은 더욱 특별해야 한다. 여의도 더현대는 9가지 페르소나를 품은 MZ세대의 놀이터가 되었다.
+  </p>
+  <p>
+    팬데믹 이전의 교회는 구약 성전 모델 — <strong>낯설고 두려운 공간</strong>이었다.
+    그러나 성전 휘장이 찢어졌다(마 27:51). 교회는 두려운 공간이 아니어야 한다.
+  </p>
+
+  <h3>리추얼의 재발견</h3>
+
+  <div class="pullquote">
+    "종교에 관심이 없는 것인가, 아니면 제도화된 종교 형태에 관심이 없는 것인가?"<br>
+    답은 후자다. 현대인들은 의미 추구를 멈추지 않았다. 표현 방식이 달라졌을 뿐이다.
+  </div>
+
+  <p>
+    사주·타로·MBTI는 모두 <strong>"나는 누구인가?"</strong>라는 질문의 다른 표현이다.
+    러닝크루, 드라이 제뉴어리, 오운완, 저속노화는 자기돌봄이 의식(ritual)으로 자리잡은 현상이다.
+    BBC는 영국 파크런(Park Run)을 두고 "이것이 새로운 교회인가?"라고 보도했다.
+  </p>
+  <p>
+    필사·저널·묵상은 앱 기반 '초원'으로, 느슨한 공동체를 형성하고 있다.
+    교회가 오래 다뤄온 질문인데, 지금은 다른 언어로 표현되고 있을 뿐이다.
+  </p>
+
+  <h3>동네(Local)의 가능성</h3>
+  <p>
+    경주 황리단길, 전주 행궁동, 구미라면축제, 김천김밥, 농부시장마르쉐.
+    로컬이 콘텐츠가 되는 시대. 교회 뒷산도 변할 수 있지 않을까?
+  </p>
+
+  <hr class="section-divider">
+
+  <!-- ──── 디처치드 ──── -->
+  <div class="section-label">Part 2.5 &middot; Evidence</div>
+  <h2>디처치드(Dechurched) — 왜 떠나는가</h2>
+
+  <p>
+    '가나안 성도'('안나가'의 역순)는 한국적 표현이지만 다소 가볍게 들린다.
+    <strong>디처치드(Dechurched)</strong>가 더 정확하다 — 교회에 속했다가 <strong>의도적으로 이탈한</strong> 사람.
+    영적 포기가 아니라 형식에 대한 거부다.
+  </p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>#</th><th>이탈 사유</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>교회의 정치화 및 사회적 보수성에 대한 실망</td></tr>
+        <tr><td>2</td><td>교회 내 관계의 상처와 위선, 권위주의에 대한 불만</td></tr>
+        <tr><td>3</td><td>현실 삶과 교회 설교 사이의 간극에 대한 피로감</td></tr>
+        <tr><td>4</td><td>신학적 질문과 지적 고민에 교회가 무관심 · 소통 부족</td></tr>
+        <tr><td>5</td><td>팬데믹 이후 온라인 예배 경험 → 출석 필요성을 못 느낌</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pullquote">
+    "그들은 복음을 떠난 것이 아니다. 교회라는 제도적 형식에 지친 것이다."
+    <cite>— 황인권, 『5무교회가 온다』</cite>
+  </div>
+
+  <h3>'첫째 아들' 문제</h3>
+  <p>
+    누가복음 15장의 탕자 비유에서 <strong>첫째 아들</strong>은 교회에 남아 있는 순종적 신자,
+    <strong>둘째 아들</strong>은 교회를 떠난 디처치드다.
+    교회가 첫째 아들에게 최적화될수록, 둘째 아들은 <strong>돌아올 자리가 없어진다.</strong>
+  </p>
+
+  <hr class="section-divider">
+
+  <!-- ──── 3부 적응 ──── -->
+  <div class="section-label">Part 3 &middot; Adaptation</div>
+  <h2>Fresh Expressions — 경청에서 시작하는 교회</h2>
+
+  <p>
+    영국 성공회와 감리교의 선교적 교회 운동 <strong>Fresh Expressions</strong>는 네 가지 특성을 갖는다:
+    Missional(보내심을 받은 공동체), Contextual(맥락에 맞는 형성),
+    Ecclesial(교회적 특성 유지), Formational(제자를 형성하는 공동체).
+  </p>
+
+  <h3>6단계 순환 구조</h3>
+  <div class="flow">
+    <span class="flow-step">경청</span><span class="flow-arrow">→</span>
+    <span class="flow-step">섬김</span><span class="flow-arrow">→</span>
+    <span class="flow-step">공동체</span><span class="flow-arrow">→</span>
+    <span class="flow-step">제자도</span><span class="flow-arrow">→</span>
+    <span class="flow-step">교회</span><span class="flow-arrow">→</span>
+    <span class="flow-step">재생산</span>
+  </div>
+  <p>
+    핵심은 <strong>경청이 먼저</strong>라는 것이다. 프로그램부터 만들지 않는다.
+    왜 떠났는지 묻기 전에, 그들의 삶에 먼저 들어간다.
+  </p>
+
+  <h3>Contextual vs. Traditional</h3>
+  <div class="compare">
+    <div class="compare-col">
+      <h4>전통적 접근</h4>
+      <ul>
+        <li>구조 먼저, 사람을 끼워 맞춤</li>
+        <li>"Come and see" (교회로 오라)</li>
+        <li>프로그램 중심</li>
+        <li>깔때기(Funnel) 모델</li>
+        <li>첫째 아들에게 최적화</li>
+      </ul>
+    </div>
+    <div class="compare-col">
+      <h4>선교적 · 상황화 접근</h4>
+      <ul>
+        <li>사람과 맥락 먼저, 구조는 나중</li>
+        <li>"Go and be" (삶 속으로)</li>
+        <li>관계 중심</li>
+        <li>여정(Journey) 모델</li>
+        <li>둘째 아들도 돌아올 수 있는</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>수평적 리더십과 Popup 교회</h3>
+  <p>
+    MZ세대에게 <strong>수평적 리더십을 이양하지 않는 교회는 성장하지 못할 것</strong>이다.
+    아트 디렉터가 있는 교회(포드 교회, 원유경 목사)처럼 문턱을 낮추되,
+    영적 여정에 대한 관심은 오히려 높다.
+  </p>
+  <p>
+    <strong>Popup 교회</strong>는 낯설고 새로운 공간에서 높은 밀도의 경험을 만들어낸다.
+    스토리텔링, 환대(Hospitality), 미션과 참여가 그 문법이다.
+  </p>
+
+  <hr class="section-divider">
+
+  <!-- ──── 4부 여정 ──── -->
+  <div class="section-label">Part 4 &middot; Journey</div>
+  <h2>퍼널이 아닌 여정</h2>
+
+  <p>
+    구매 전환 중심의 퍼널(깔때기)이 아니라 <strong>경험·감정·관계 중심의 여정</strong>이 본질이다.
+    포토덤프는 인스타 1장과 다르다 — 블로그이자 일상의 여정이며 아카이빙이다.
+    성경 자체가 '떠남'으로 시작한다. 여정이 본질인 것이다.
+  </p>
+
+  <div class="pullquote">
+    둘째 아들이 다닐 수 있는 교회, 돌아올 수 있는 교회.
+    <cite>— 책의 결론적 비전</cite>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ──── VPM 연결 ──── -->
+  <div class="section-label">Cross-Reference</div>
+  <h2>CMF · VPM 철학과의 교차점</h2>
+
+  <p>
+    CMF 공동체의 핵심 철학인 <strong>VPM(Value → People → Ministry)</strong>은
+    Fresh Expressions의 순서와 정확히 일치한다.
+    경청(Listening)은 가치를 먼저 공유하는 과정이며, CMF의 학사학원사역이
+    'Contextual Formation'의 역할을 해야 한다.
+  </p>
+
+  <div class="highlight-box">
+    <h4>CMF에서도 나타나는 디처치드 현상</h4>
+    <p>
+      학생 때 임원 1년 하고 안 나오는 현상 = 디처치드의 CMF 버전이다.
+      가치보다 사람을 따라온 공동체는, 그 사람이 나가면 같이 나간다.
+      해결책은 구조에 사람을 맞추지 않는 것 — Contextual Formation.
+    </p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ──── Implications ──── -->
+  <div class="section-label">Implications</div>
+  <h2>실천 적용 — 5가지 전환 포인트</h2>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>#</th><th>기존</th><th>전환 방향</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>구역 · 정기모임 중심</td>
+          <td><strong>'저부담 고연결'</strong> 유연한 소모임 (Fluid Network)</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>권위주의적 소통</td>
+          <td>수평적 팀 사역 + 공감의 소통</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>형식적 예배</td>
+          <td>일상의 리추얼 + 멘탈 헬스 케어</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>오프라인 단방향 소통</td>
+          <td>소통 채널 일원화 + 숏폼 미디어</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>구조에 사람 맞추기</td>
+          <td>Contextual Formation — 사람과 맥락에 따라 형성</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ──── Closing ──── -->
+  <div class="section-label">Closing Note</div>
+  <h2>이 책이 남기는 질문</h2>
+
+  <div class="pullquote">
+    CMF는 첫째 아들이 다니기 좋은 공동체인가,<br>
+    아니면 둘째 아들도 돌아올 수 있는 공동체인가?
+  </div>
+
+  <p>
+    그릇을 바꾸는 것은 내용물을 버리는 것이 아니다. 오히려 내용물을 살리기 위해 그릇을 바꾸는 것이다.
+    십자가가 로고에서 사라진 것이 아니라, 삶의 더 깊은 곳에서 더 강력하게 이야기되고 있다.
+  </p>
+  <p>
+    리추얼은 죽지 않았다. 러닝크루에서 달리고, 저널에 써내려가고,
+    타로 카드 앞에서 "나는 누구인가"를 묻는 현대인에게
+    교회가 해야 할 일은 <strong>"교회로 오라"</strong>가 아니다.
+    <strong>"당신의 삶 속으로 가겠습니다"</strong>다.
+  </p>
+  <p>
+    경청이 먼저다. 항상.
+  </p>
+
+  <hr class="section-divider">
+
+  <!-- ──── Source Notes ──── -->
+  <div class="section-label">Source Notes</div>
+  <h2>참고 자료</h2>
+  <ul>
+    <li>황인권, 『5무교회가 온다』 — 본 리포트의 1차 자료</li>
+    <li>Fresh Expressions (영국 성공회 · 감리교 선교적 교회 운동)</li>
+    <li>이상훈, 『처치시프트』 — 관련 도서</li>
+    <li>마우로 기옌 — 순차적 인생 모형의 해체에 관한 연구</li>
+    <li>조지프 헨릭, 『위어드(WEIRD)』 — WEIRD 사회의 공동체 특성</li>
+    <li>마틴 헹엘, 『십자가 처형』 — 고대 십자가형의 의미</li>
+    <li>송인규 — 가나안성도 세속화 단계 (행위 → 생활방식 → 신념)</li>
+  </ul>
+
+</div>
+</article>
+
+<!-- ════════════════════ FOOTER ════════════════════ -->
+<footer class="article-footer">
+  <strong>5무교회가 온다</strong> — 황인권 저<br>
+  태그: 교회론 · 선교학 · MZ세대 · 탈교회 · 공동체<br>
+  <span>Research report generated from Obsidian vault notes</span>
+</footer>
+
+</body>
+</html>
