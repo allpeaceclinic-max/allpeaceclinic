@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+
+<title>가장 친밀한 관계, 부부의 성 — 사전 읽기 자료</title>
+<style>
+  :root {
+    --clr-bg: #FDFBF7;
+    --clr-surface: #FFFFFF;
+    --clr-surface-alt: #F6F2EB;
+    --clr-border: #E4DDD2;
+    --clr-border-light: #EDE8E0;
+    --clr-text: #2C2824;
+    --clr-text-secondary: #6B6157;
+    --clr-text-muted: #9B9187;
+    --clr-accent: #7B6B4A;
+    --clr-accent-light: #A89878;
+    --clr-accent-bg: #F0EBE0;
+    --clr-highlight: #E8DCC8;
+    --clr-scripture: #5C7A5A;
+    --clr-scripture-bg: #F0F5EF;
+    --clr-scripture-border: #C4D5C2;
+    --clr-table-header: #F5F0E6;
+    --radius: 10px;
+    --shadow-sm: 0 1px 3px rgba(44,40,36,.06);
+    --shadow-md: 0 4px 16px rgba(44,40,36,.08);
+    --font-body: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Noto Sans KR', sans-serif;
+    --font-serif: 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--clr-bg);
+    color: var(--clr-text);
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav.toc {
+    position: fixed; top: 0; left: 0;
+    width: 260px; height: 100vh; overflow-y: auto;
+    background: var(--clr-surface);
+    border-right: 1px solid var(--clr-border-light);
+    padding: 2rem 1.25rem 2rem 1.5rem;
+    z-index: 100;
+    scrollbar-width: thin; scrollbar-color: var(--clr-border) transparent;
+  }
+  nav.toc::-webkit-scrollbar { width: 4px; }
+  nav.toc::-webkit-scrollbar-thumb { background: var(--clr-border); border-radius: 2px; }
+  nav.toc .nav-label {
+    font-size: .7rem; font-weight: 700; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--clr-text-muted); margin-bottom: .75rem;
+  }
+  nav.toc ul { list-style: none; }
+  nav.toc li { margin-bottom: .15rem; }
+  nav.toc a {
+    display: block; padding: .35rem .6rem; font-size: .82rem;
+    color: var(--clr-text-secondary); text-decoration: none;
+    border-radius: 6px; line-height: 1.45; transition: background .15s, color .15s;
+  }
+  nav.toc a:hover { background: var(--clr-accent-bg); color: var(--clr-accent); }
+  nav.toc li.depth-2 a { padding-left: 1.4rem; font-size: .78rem; color: var(--clr-text-muted); }
+  .nav-meta {
+    margin-top: 1.5rem; padding-top: 1rem;
+    border-top: 1px solid var(--clr-border-light);
+    font-size: .72rem; color: var(--clr-text-muted); line-height: 1.7;
+  }
+  .nav-meta strong { color: var(--clr-text-secondary); font-weight: 600; }
+
+  /* ── MAIN ── */
+  main { margin-left: 260px; max-width: 760px; padding: 3rem 2.5rem 6rem; }
+
+  /* ── HERO ── */
+  .hero { margin-bottom: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--clr-border-light); }
+  .hero h1 {
+    font-family: var(--font-serif); font-size: 2rem; font-weight: 700;
+    line-height: 1.35; color: var(--clr-text); margin-bottom: .75rem;
+    letter-spacing: -.02em; word-break: keep-all;
+  }
+  .hero .subtitle {
+    font-size: 1.05rem; color: var(--clr-text-secondary); line-height: 1.7; margin-bottom: 1.25rem;
+  }
+  .hero .meta-chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+  .chip {
+    display: inline-block; padding: .25rem .7rem; font-size: .72rem; font-weight: 500;
+    background: var(--clr-accent-bg); color: var(--clr-accent); border-radius: 20px;
+  }
+
+  /* ── HEADINGS ── */
+  h2 {
+    font-family: var(--font-serif); font-size: 1.45rem; font-weight: 700;
+    color: var(--clr-text); margin: 3rem 0 1rem; padding-bottom: .5rem;
+    border-bottom: 2px solid var(--clr-accent-bg); word-break: keep-all;
+  }
+  h3 { font-size: 1.12rem; font-weight: 700; color: var(--clr-accent); margin: 2rem 0 .6rem; word-break: keep-all; }
+
+  /* ── BODY TEXT ── */
+  p { margin-bottom: 1rem; word-break: keep-all; }
+  strong { font-weight: 700; color: var(--clr-text); }
+
+  /* ── SCRIPTURE BLOCKQUOTES ── */
+  blockquote {
+    margin: 1.25rem 0; padding: 1rem 1.25rem;
+    background: var(--clr-scripture-bg); border-left: 4px solid var(--clr-scripture-border);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    color: var(--clr-scripture); font-family: var(--font-serif); font-size: .95rem; line-height: 1.8;
+  }
+  blockquote p { margin-bottom: .5rem; }
+  blockquote p:last-child { margin-bottom: 0; }
+
+  /* ── CALLOUT ── */
+  .callout {
+    margin: 1.25rem 0; padding: 1.15rem 1.3rem;
+    background: var(--clr-accent-bg); border-left: 4px solid var(--clr-accent-light);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: .93rem; color: var(--clr-text); line-height: 1.75;
+  }
+  .callout strong { color: var(--clr-accent); }
+
+  /* ── INSIGHT CARD ── */
+  .insight-card {
+    margin: 2rem 0; padding: 1.75rem 1.5rem;
+    background: linear-gradient(135deg, #F7F3EB 0%, #FFFDF8 100%);
+    border: 1px solid var(--clr-border); border-radius: var(--radius); box-shadow: var(--shadow-md);
+  }
+  .insight-card .label {
+    font-size: .7rem; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--clr-accent); margin-bottom: .6rem;
+  }
+
+  /* ── TABLE ── */
+  .table-wrap {
+    margin: 1.5rem 0; overflow-x: auto; border-radius: var(--radius);
+    border: 1px solid var(--clr-border); box-shadow: var(--shadow-sm);
+  }
+  table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+  thead th {
+    background: var(--clr-table-header); font-weight: 700; text-align: left;
+    padding: .75rem 1rem; border-bottom: 2px solid var(--clr-border);
+    color: var(--clr-accent); font-size: .82rem;
+  }
+  tbody td { padding: .7rem 1rem; border-bottom: 1px solid var(--clr-border-light); vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: var(--clr-surface-alt); }
+
+  /* ── BENEFITS GRID ── */
+  .benefits-grid { display: grid; grid-template-columns: 1fr; gap: .75rem; margin: 1.25rem 0; }
+  .benefit-item {
+    padding: .85rem 1rem; background: var(--clr-surface);
+    border: 1px solid var(--clr-border-light); border-radius: 8px; font-size: .9rem; line-height: 1.65;
+  }
+  .benefit-item .benefit-label { font-weight: 700; color: var(--clr-accent); margin-right: .25rem; }
+
+  /* ── MYTH CARDS ── */
+  .myth-card {
+    margin: 1rem 0; padding: 1.15rem 1.3rem; background: var(--clr-surface);
+    border: 1px solid var(--clr-border); border-radius: var(--radius); box-shadow: var(--shadow-sm);
+  }
+  .myth-card .myth-title { font-weight: 700; color: var(--clr-text); margin-bottom: .4rem; font-size: .95rem; }
+  .myth-card .myth-body { color: var(--clr-text-secondary); font-size: .9rem; line-height: 1.7; }
+
+  /* ── CTA ── */
+  .cta-section {
+    margin: 2rem 0; padding: 1.5rem; background: var(--clr-surface);
+    border: 1px solid var(--clr-border); border-radius: var(--radius); box-shadow: var(--shadow-md);
+  }
+  .cta-section h3 { margin-top: 0; }
+  .discussion-q {
+    margin: .75rem 0; padding: .75rem 1rem; background: var(--clr-surface-alt);
+    border-radius: 8px; font-size: .93rem; line-height: 1.7;
+  }
+
+  /* ── SURVEY ── */
+  .survey-section {
+    margin: 2rem 0; padding: 1.5rem;
+    background: linear-gradient(135deg, var(--clr-scripture-bg) 0%, #F8FAF7 100%);
+    border: 1px solid var(--clr-scripture-border); border-radius: var(--radius); text-align: center;
+  }
+  .survey-section a {
+    display: inline-block; padding: .65rem 1.6rem; background: var(--clr-scripture);
+    color: #fff; text-decoration: none; border-radius: 8px;
+    font-weight: 600; font-size: .9rem; margin: .75rem 0; transition: opacity .15s;
+  }
+  .survey-section a:hover { opacity: .85; }
+  .survey-section .qr-url { font-size: .78rem; color: var(--clr-text-muted); word-break: break-all; margin-top: .25rem; }
+  .survey-section img {
+    display: block; margin: 1rem auto 0; max-width: 180px; border-radius: 8px;
+    border: 1px solid var(--clr-border-light);
+  }
+
+  /* ── CLOSING ── */
+  .closing {
+    margin-top: 3rem; padding: 1.5rem; background: var(--clr-accent-bg);
+    border-radius: var(--radius); text-align: center; font-size: 1rem; line-height: 1.8;
+  }
+  .closing .contact { font-size: .82rem; color: var(--clr-text-muted); margin-top: .5rem; }
+
+  hr { border: none; border-top: 1px solid var(--clr-border-light); margin: 2.5rem 0; }
+  .back-top {
+    display: inline-block; margin-top: 2rem; font-size: .78rem;
+    color: var(--clr-text-muted); text-decoration: none;
+  }
+  .back-top:hover { color: var(--clr-accent); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav.toc {
+      position: static; width: 100%; height: auto;
+      border-right: none; border-bottom: 1px solid var(--clr-border-light); padding: 1.25rem 1.5rem;
+    }
+    nav.toc ul { columns: 2; column-gap: 1rem; }
+    .nav-meta { display: flex; flex-wrap: wrap; gap: .25rem .75rem; }
+    main { margin-left: 0; padding: 2rem 1.25rem 4rem; max-width: 100%; }
+    .hero h1 { font-size: 1.6rem; }
+    h2 { font-size: 1.25rem; }
+  }
+  @media (max-width: 520px) {
+    nav.toc ul { columns: 1; }
+    .hero h1 { font-size: 1.4rem; }
+    h2 { font-size: 1.15rem; margin-top: 2.25rem; }
+    blockquote, .callout, .insight-card, .cta-section, .survey-section, .myth-card { padding: 1rem; }
+  }
+  @media print {
+    nav.toc { display: none; }
+    main { margin-left: 0; max-width: 100%; padding: 1rem; }
+    body { font-size: 11pt; line-height: 1.6; }
+  }
+</style>
+<meta property="og:type" content="article">
+<meta property="og:title" content="가장 친밀한 관계, 부부의 성 — 사전 읽기 자료">
+<meta property="og:description" content="강의 전, 부부가 함께 읽어오세요. 본강의 시작 전 이 자료를 미리 읽으시면 훨씬 풍성한 나눔이 가능합니다. 대상: 에젤가정사역공동체 신혼부부 · 읽는 시간 약 1518분 들어가며 솔직히 말씀드리면, 우리 대부분은 결혼 전까지 성(性)에 대해 제대로 배운 적이 없습니다. 학교에서도, 교회에서도, 부모님께도요. 그래서 많은">
+<meta property="og:url" content="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/s/zpdfn5/">
+<meta property="og:image" content="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/s/zpdfn5/assets/신혼부부성강의-사전설문-qr코드.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="가장 친밀한 관계, 부부의 성 — 사전 읽기 자료">
+<meta name="twitter:description" content="강의 전, 부부가 함께 읽어오세요. 본강의 시작 전 이 자료를 미리 읽으시면 훨씬 풍성한 나눔이 가능합니다. 대상: 에젤가정사역공동체 신혼부부 · 읽는 시간 약 1518분 들어가며 솔직히 말씀드리면, 우리 대부분은 결혼 전까지 성(性)에 대해 제대로 배운 적이 없습니다. 학교에서도, 교회에서도, 부모님께도요. 그래서 많은">
+<meta name="twitter:image" content="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/s/zpdfn5/assets/신혼부부성강의-사전설문-qr코드.png">
+<link rel="canonical" href="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/s/zpdfn5/">
+</head>
+<body>
+
+<nav class="toc" id="top">
+  <div class="nav-label">목차</div>
+  <ul>
+    <li><a href="#intro">들어가며</a></li>
+    <li><a href="#part1">1부 — 신혼에는 '때'가 있습니다</a></li>
+    <li><a href="#part2">2부 — 하나님이 성을 주신 4가지 목적</a></li>
+    <li class="depth-2"><a href="#purpose1">① 생육과 번성</a></li>
+    <li class="depth-2"><a href="#purpose2">② 즐거움</a></li>
+    <li class="depth-2"><a href="#purpose3">③ 음행 방지</a></li>
+    <li class="depth-2"><a href="#purpose4">④ 치유</a></li>
+    <li><a href="#paradigm">★ 세상의 성 vs 그리스도인의 성</a></li>
+    <li><a href="#part3">3부 — 결혼의 4대 원리</a></li>
+    <li><a href="#part4">4부 — 의학 이야기</a></li>
+    <li><a href="#part5">5부 — 세 가지 오해</a></li>
+    <li><a href="#action">강의 전 부탁</a></li>
+    <li class="depth-2"><a href="#discussion">부부 나눔</a></li>
+    <li class="depth-2"><a href="#survey">사전 설문</a></li>
+  </ul>
+  <div class="nav-meta">
+    <div><strong>대상</strong> 에젤가정사역공동체 신혼부부</div>
+    <div><strong>강의일</strong> 2026-06-21</div>
+    <div><strong>읽는 시간</strong> 약 15~18분</div>
+    <div><strong>강사</strong> 이상협</div>
+  </div>
+</nav>
+
+<main>
+
+  <header class="hero" id="hero">
+    <h1>가장 친밀한 관계, 부부의 성<br><span>— 사전 읽기 자료</span></h1>
+    <p class="subtitle">강의 전, 부부가 함께 읽어오세요.<br>본강의 시작 전 이 자료를 미리 읽으시면 훨씬 풍성한 나눔이 가능합니다.</p>
+    <div class="meta-chips">
+      <span class="chip">에젤가정사역공동체</span>
+      <span class="chip">신혼부부 30~40대</span>
+      <span class="chip">2026-06-21 강의</span>
+      <span class="chip">15~18분 읽기</span>
+    </div>
+  </header>
+
+  <section id="intro">
+    <h2>들어가며</h2>
+    <p>솔직히 말씀드리면, 우리 대부분은 결혼 전까지 성(性)에 대해 제대로 배운 적이 없습니다. 학교에서도, 교회에서도, 부모님께도요.</p>
+    <p>그래서 많은 부부가 결혼 첫날밤을 "잘 모르는 채로" 맞이합니다. 기대와 불안이 섞인 채로요. 그리고 시간이 지나도 이 주제는 여전히 어렵습니다. 사랑하는 사람인데도, 막상 성에 대해 솔직하게 이야기하려면 입이 잘 떨어지지 않죠.</p>
+    <p>그런데 성경은 이 주제를 생각보다 훨씬 솔직하게, 그리고 아름답게 말합니다. 성은 부끄러운 것이 아닙니다. 하나님이 직접 설계하셨고, 하나님이 기뻐하시는 <strong>선물</strong>입니다.</p>
+    <p>이 자료는 강의에서 깊이 다루기 어려운 <strong>신학적 토대</strong>를 미리 드리는 글입니다. 읽으면서 "아, 성경이 이런 말을 하는구나" 하는 느낌이 오면 충분합니다. 더 솔직하고 실제적인 이야기는 강의 현장에서, 닫힌 자리에서 나누겠습니다.</p>
+  </section>
+
+  <hr>
+
+  <section id="part1">
+    <h2>1부 — 신혼에는 '때'가 있습니다</h2>
+    <p>전도서는 말합니다.</p>
+    <blockquote>
+      <p>"범사에 기한이 있고 천하만사가 다 때가 있나니 날 때가 있고 죽을 때가 있으며 심을 때가 있고 심은 것을 뽑을 때가 있으며" <em>(전도서 3:1-2)</em></p>
+    </blockquote>
+    <p>모든 것에는 때가 있습니다. 슬픔의 때와 기쁨의 때, 침묵의 때와 말할 때, 심을 때와 거둘 때.</p>
+    <p>그리고 <strong>신혼의 때</strong>가 있습니다. 이 때는 다시 오지 않습니다. 처음으로 함께 잠드는 때, 처음으로 서로의 몸을 알아가는 때, 처음으로 '우리 부부만의 문화'를 만드는 때입니다. 지금 만들어지는 습관과 분위기가, 5년 후 10년 후 우리 부부의 모습을 결정합니다.</p>
+    <p>하나님은 이 때를 얼마나 귀하게 여기셨는지, 법으로까지 보호하셨습니다.</p>
+    <blockquote>
+      <p>"사람이 새로 아내를 맞이하였으면 그를 군대로 내보내지 말 것이요 아무 직무도 그에게 맡기지 말 것이며 그는 일 년 동안 집에 한가하게 있으면서 그가 맞이한 아내를 즐겁게 할지니라" <em>(신명기 24:5)</em></p>
+    </blockquote>
+    <p>군대도 면제, 직무도 면제. 왜 하필 1년일까요? 본문 안에 답이 있습니다. "아내를 <strong>즐겁게 할지니라</strong>." 1년이 필요할 만큼 — 즐거움은 저절로 되는 게 아니라 <strong>배우는 것</strong>입니다.</p>
+    <p>생각해보면 우리는 운전도 배우고, 일도 배우고, 요리도 배웁니다. 그런데 정작 평생을 함께할 부부의 성은 아무도 가르쳐주지 않아서 '알아서 잘 되겠지' 하고 넘어가요. 하나님은 그렇게 두지 않으셨습니다. 1년을 떼어주시며 "배우라"고 하셨어요. 신혼의 이 때를 잘 쓰라는 하나님의 따뜻한 초대입니다.</p>
+  </section>
+
+  <hr>
+
+  <section id="part2">
+    <h2>2부 — 하나님이 성을 주신 4가지 목적</h2>
+    <p>하나님은 왜 부부에게 성을 주셨을까요? 성경에서 찾은 네 가지 목적입니다.</p>
+
+    <h3 id="purpose1">① 생육과 번성 — 창조의 협력자</h3>
+    <blockquote>
+      <p>"하나님이 그들에게 복을 주시며 하나님이 그들에게 이르시되 생육하고 번성하여 땅에 충만하라" <em>(창세기 1:28)</em></p>
+    </blockquote>
+    <p>성은 새 생명을 만드는 창조 행위입니다. 자녀를 낳는 것은 하나님의 창조 사역에 부부가 함께 참여하는 일이에요.</p>
+    <p>다만 성경은 숫자만 말하지 않습니다. 하나님은 단순한 번성이 아니라 <strong>경건한 백성</strong> — 의와 공도를 행하는 자녀를 원하십니다(말라기 2:15 참조). 그리고 성경은 자녀를 '여호와의 기업이요 상급'(시편 127:3)이라고 부릅니다. 우리는 자녀를 정말 그렇게 '상급'으로 여기고 있을까요? 이 질문은 신혼부부가 한 번쯤 함께 나눠볼 만한 주제입니다.</p>
+
+    <h3 id="purpose2">② 즐거움 — 선물 그 자체</h3>
+    <blockquote>
+      <p>"네 샘으로 복되게 하라 네가 젊어서 취한 아내를 즐거워하라 그는 사랑스러운 암사슴 같고 아름다운 암노루 같으니 너는 그의 품을 항상 족하게 여기며 그의 사랑을 항상 연모하라" <em>(잠언 5:18-19)</em></p>
+    </blockquote>
+    <p>성경은 성의 즐거움을 조금도 숨기지 않습니다. '네 샘'은 결혼한 아내를 가리킵니다. 물 부족 국가였던 이스라엘에서 '샘'은 풍요와 생명의 근원이었어요. "연모하라"는 원어로 <em>captivate</em> — 마음을 확 사로잡으라는 뜻입니다.</p>
+    <p>부부의 성이 즐거우면 어떻게 될까요? 남편은 일찍 집에 가고 싶어지고, 부부는 더 깊은 교제와 강한 연대감을 누리게 됩니다. 즐거움을 위한 성은 결코 음란한 것이 아니라, <strong>하나님이 설계하신 거룩한 기쁨</strong>입니다. 아가서 한 권 전체가 부부의 뜨거운 사랑을 신학적으로 찬양하는 시라는 사실이, 이것을 증명합니다.</p>
+
+    <h3 id="purpose3">③ 음행 방지 — 보호막이자 '섬김'</h3>
+    <blockquote>
+      <p>"음행을 피하기 위하여 남자마다 자기 아내를 두고 여자마다 자기 남편을 두라 ... 서로 분방하지 말라 ... 사탄이 너희를 시험하지 못하게 하려 함이라" <em>(고린도전서 7:2,5)</em></p>
+    </blockquote>
+    <blockquote>
+      <p>"아내는 자기 몸을 주장하지 못하고 오직 그 남편이 하며 남편도 그와 같이 자기 몸을 주장하지 못하고 오직 그 아내가 하나니" <em>(고린도전서 7:4)</em></p>
+    </blockquote>
+    <p>여기서 정말 중요한 단어가 나옵니다. "자기 몸을 <strong>주장하지 못한다</strong>." 내 몸이지만 내 마음대로 하지 않고, 배우자에게 내어준다는 뜻이에요. 곧 배우자의 필요를 <strong>섬긴다</strong>는 것입니다.</p>
+    <p>성을 '내 욕구를 채우는 도구'로 보는 게 아니라, 상대를 신실하게 사랑하고 섬기는 구체적인 방식으로 보라는 것 — 이것이 성경이 말하는 성의 핵심입니다. 그래서 성경은 부부가 함부로 분방하지 말라고 해요. 사소한 이유로 생긴 작은 틈이 큰 균열이 되고, 사탄이 바로 그 틈을 노린다고 경고하죠. 특히 아이를 낳은 후 "애 때문에" 분방이 길어지는 경우가 많은데, 조심해야 할 일입니다.</p>
+
+    <h3 id="purpose4">④ 치유 — 아픔을 안는 곳</h3>
+    <blockquote>
+      <p>"다윗이 그의 아내 밧세바를 위로하고 그에게 들어가 그와 동침하였더니" <em>(사무엘하 12:24, 아들을 잃은 후)</em></p>
+    </blockquote>
+    <blockquote>
+      <p>"이삭이 리브가를 ... 아내로 삼고 그를 사랑하였으니 이삭이 그의 어머니를 장례한 후에 위로를 얻었더라" <em>(창세기 24:67)</em></p>
+    </blockquote>
+    <p>성은 상실 후의 위로이고, 슬픔 중의 피난처입니다. 다윗도, 이삭도 인생의 가장 힘든 순간에 배우자와의 친밀함을 통해 위로를 얻었습니다. 기쁨의 날뿐 아니라 힘든 날에도 서로를 안아주는 것 — 그것이 성입니다.</p>
+  </section>
+
+  <hr>
+
+  <section id="paradigm">
+    <h2>★ 가장 중요한 전환: 세상의 성 vs 그리스도인의 성</h2>
+    <div class="callout">
+      위의 네 가지 목적을 관통하는, <strong>오늘 강의에서 가장 기억해야 할 한 가지</strong>가 있습니다.
+    </div>
+    <p>세상이 추구하는 성과 그리스도인의 성은, 출발점부터 정반대입니다.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th></th><th>세상이 말하는 성</th><th>그리스도인의 성</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>우선순위</strong></td><td>내 욕구 충족이 먼저</td><td>배우자를 섬기는 것이 먼저</td></tr>
+          <tr><td><strong>질문</strong></td><td>"나는 무엇을 얻는가?"</td><td>"나는 무엇을 줄 수 있는가?"</td></tr>
+          <tr><td><strong>방향</strong></td><td>받는 것</td><td>내어주는 것</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>세상은 "성은 나의 권리이고, 내 만족이 우선"이라고 말합니다. 그러나 성경은 정반대로 말해요. "네 몸은 네 것이 아니다. 배우자를 섬기라."</p>
+
+    <div class="insight-card">
+      <div class="label">핵심 역설</div>
+      <p><strong>섬기려고 들어갈 때, 두 사람 다 더 깊은 기쁨을 얻습니다.</strong> 내 만족만 좇으면 둘 다 외로워지지만, 서로를 섬기기 시작하면 그 즐거움이 배가 됩니다. 아내가 즐거워하면 남편이 진짜 행복해지고, 남편이 섬기면 아내의 마음이 열리죠.</p>
+      <p>그래서 그리스도인 부부의 침실은, 세상과 똑같아 보여도 그 안의 원리가 완전히 다릅니다. <strong>'받는 성'에서 '주는 성'으로</strong> — 이 한 번의 패러다임 전환이, 우리 부부의 성을 완전히 바꿔놓습니다.</p>
+      <p>강의에서 배울 모든 실제적인 방법들은, 사실 전부 이 한 가지에서 흘러나옵니다. <strong>어떻게 하면 내 배우자를 더 잘 섬길 수 있을까.</strong> 그것이 전부입니다.</p>
+    </div>
+  </section>
+
+  <hr>
+
+  <section id="part3">
+    <h2>3부 — 결혼의 4대 원리</h2>
+    <p>창세기 한 구절에 결혼의 설계도가 통째로 담겨 있습니다.</p>
+    <blockquote>
+      <p>"이러므로 남자가 부모를 떠나 그의 아내와 합하여 둘이 한 몸을 이룰지로다 아담과 그의 아내 두 사람이 벌거벗었으나 부끄러워하지 아니하니라" <em>(창세기 2:24-25)</em></p>
+    </blockquote>
+    <p>여기서 네 가지 원리가 순서대로 나옵니다.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>원리</th><th>내용</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>① 떠남</strong></td>
+            <td>결혼은 부모를 떠나는 것에서 시작됩니다. 물리적으로만이 아니라 <strong>정서적으로도</strong> 떠나야 해요. 유교 문화에서 자란 우리는 종종 부모 자식 관계를 부부 관계보다 앞에 두는데, 여기서 많은 문제가 생깁니다. 이제 배우자가 첫 번째 사람입니다. 결혼 후에도 중요한 결정마다 "엄마한테 물어보고"가 습관이라면, 아직 진짜로 떠나지 않은 것일 수 있습니다.</td>
+          </tr>
+          <tr>
+            <td><strong>② 영속성</strong><br><span>(다바크)</span></td>
+            <td>히브리어 '다바크'는 "착 달라붙다, 고착되다"는 뜻입니다. 결혼은 잠깐의 계약이 아니라 끊어지지 않는 언약이에요. 생각해보면 이혼할 가장 '합당한' 이유를 가졌던 사람은 아담과 하와였을지도 모릅니다. 900년을 함께 살았고, 서로 책임을 떠넘기기까지 했으니까요. 그럼에도 — 하나님이 하나 되게 하신 것을 인간이 나눌 수 없습니다. 좋을 때만 함께하는 것은 계약이고, 힘들 때도 함께하는 것이 언약입니다.</td>
+          </tr>
+          <tr>
+            <td><strong>③ 하나됨</strong><br><span>(에하드)</span></td>
+            <td>두 사람이 일심동체로 <strong>되어져 가는</strong> 것입니다. 중요한 건 이게 '요구'할 수 있는 게 아니라는 점이에요. "왜 네 마음이 내 마음과 다르냐"고 따지는 순간 하나됨은 멀어집니다. 이심이체에서 일심동체로, 시간을 들여 천천히 빚어지는 과정입니다.</td>
+          </tr>
+          <tr>
+            <td><strong>④ 친밀성</strong></td>
+            <td>나의 약한 부분이 드러나도 안전한 관계입니다. 에덴의 부부는 벌거벗었으나 부끄럽지 않았어요. 이것이 친밀성의 이상(理想)입니다 — <strong>숨기지 않아도 되는 관계</strong>. 몸도, 감정도, 약함도, 부끄러운 기억까지도 안전하게 내놓을 수 있는 사람, 그가 배우자입니다. 친밀성에는 정서적 친밀감과 성적 친밀감이 둘 다 있는데, <strong>강의에서는 특히 성적 친밀감</strong>을 깊이 다룰 거예요.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <hr>
+
+  <section id="part4">
+    <h2>4부 — 성은 몸과 마음에도 좋습니다 <span>(의학 이야기)</span></h2>
+    <p>그리스도인들은 예배·봉사는 거룩하게 느끼면서, 성은 왠지 덜 거룩하게 느끼는 경향이 있어요. 그런데 의사로서 말씀드리면, 부부의 규칙적인 성생활은 <strong>건강에 분명한 유익</strong>이 있습니다.</p>
+
+    <div class="benefits-grid">
+      <div class="benefit-item"><span class="benefit-label">혈액순환·심혈관</span> — 신진대사가 촉진되고 좋은 콜레스테롤(HDL)이 올라갑니다. 한 영국 연구에서는 주 3회 이상 성생활을 한 남성의 심근경색·뇌졸중 발생률이 절반 이하로 줄었습니다.</div>
+      <div class="benefit-item"><span class="benefit-label">통증 완화</span> — 성관계 시 분비되는 엔돌핀이 두통·요통·근육통 등을 줄여줍니다. 마사지와 비슷한 이완 효과가 있어요.</div>
+      <div class="benefit-item"><span class="benefit-label">면역력</span> — 면역 글로불린A 분비가 늘어 감기·독감에 덜 걸린다는 보고가 있습니다.</div>
+      <div class="benefit-item"><span class="benefit-label">노화 방지</span> — 한 연구에서 주 3회 이상 부부가 평균 약 10년은 더 젊어 보인다고 평가됐습니다. 뇌를 자극해 인지기능 저하도 늦춥니다.</div>
+      <div class="benefit-item"><span class="benefit-label">남성</span> — 전립선 질환 예방, 테스토스테론 분비로 근력 유지에 도움.</div>
+      <div class="benefit-item"><span class="benefit-label">여성</span> — 에스트로겐 활성화로 피부·뼈 건강(골다공증 예방), 폐경 후 질 건강 유지.</div>
+      <div class="benefit-item"><span class="benefit-label">정신건강</span> — 따뜻한 사랑을 주고받는다는 감정이 자긍심을 높이고, 우울·무기력·의욕저하를 완화합니다.</div>
+    </div>
+
+    <div class="callout">
+      그래서 이건 젊은 사람만의 이야기가 아닙니다. 100세 시대에 중년·노년까지 이 친밀함을 끝까지 누리는 게 중요하고, <strong>그 토대는 바로 지금, 신혼 때 만들어집니다.</strong> 지금 잘 배워두면 평생 갑니다.
+    </div>
+  </section>
+
+  <hr>
+
+  <section id="part5">
+    <h2>5부 — 미리 깨고 가면 좋은 세 가지 오해</h2>
+    <p>강의에 오시기 전에, 흔한 오해 세 가지만 짚어둘게요.</p>
+
+    <div class="myth-card">
+      <div class="myth-title">오해 1. "성은 영적인 것보다 덜 거룩하다."</div>
+      <div class="myth-body">아닙니다. 아가서가 성경 안에 있습니다. 한 몸이 되어 친밀함을 누리는 것은, 영적인 것만큼이나 거룩하고 중요한 일입니다.</div>
+    </div>
+    <div class="myth-card">
+      <div class="myth-title">오해 2. "성은 자녀를 낳기 위한 것이다."</div>
+      <div class="myth-body">그것도 목적 중 하나일 뿐입니다. 위에서 봤듯 하나님은 즐거움·하나됨·치유를 위해서도 성을 주셨어요. 자녀 계획과 별개로, 성 자체가 부부에게 주신 선물입니다.</div>
+    </div>
+    <div class="myth-card">
+      <div class="myth-title">오해 3. "성에 대해 솔직히 말하면 밝히는 사람처럼 보인다."</div>
+      <div class="myth-body">이 오해 때문에 평생 서로 모르고 사는 부부가 많습니다. 배우자는 독심술사가 아니에요. 솔직한 대화는 부끄러운 게 아니라 건강한 것입니다. 이 '대화하는 법'을 강의에서 구체적으로 배울 거예요.</div>
+    </div>
+  </section>
+
+  <hr>
+
+  <section id="action">
+    <h2>강의 전, 두 가지를 부탁드려요</h2>
+
+    <div class="cta-section" id="discussion">
+      <h3>① 부부 나눔 <span>(5분)</span></h3>
+      <p>강의 오시기 전에 배우자와 단 둘이 이야기해 보세요. 정답이 없는 질문입니다. 판단 없이 들어주세요.</p>
+      <div class="discussion-q"><strong>1.</strong> "우리 결혼에서 성(性)은 어떤 자리를 차지하고 있나요? 솔직하게 한 가지씩 말해볼까요?"</div>
+      <div class="discussion-q"><strong>2.</strong> "오늘 읽은 4가지 목적(생육·즐거움·음행방지·치유) 중, 우리 부부에게 가장 와닿는 것과 가장 낯선 것은?"</div>
+    </div>
+
+    <div class="survey-section" id="survey">
+      <h3>② 사전 설문 <span>(익명, 2분)</span></h3>
+      <p>아래 링크로 익명 설문에 답해주세요. 여러분의 솔직한 고민과 질문을 미리 보고, <strong>꼭 필요한 이야기에 시간을 더 쓰기 위한</strong> 것입니다. 누가 썼는지 전혀 알 수 없으니 편하게 답해주세요.</p>
+      <a>사전 설문 참여하기</a>
+      <div class="qr-url">https://forms.gle/deHyR3z46Efcpc9SA</div>
+      <img src="assets/%EC%8B%A0%ED%98%BC%EB%B6%80%EB%B6%80%EC%84%B1%EA%B0%95%EC%9D%98-%EC%82%AC%EC%A0%84%EC%84%A4%EB%AC%B8-qr%EC%BD%94%EB%93%9C.png" alt="사전설문 QR코드" loading="lazy">
+    </div>
+  </section>
+
+  <hr>
+
+  <div class="closing">
+    주일 강의에서 만나요. 그날 뵐게요~
+    <div class="contact">문의: 이상협 (allpeaceclinic@gmail.com)</div>
+  </div>
+
+  <a href="#top" class="back-top">맨 위로 돌아가기 &uarr;</a>
+
+</main>
+
+</body>
+</html>
