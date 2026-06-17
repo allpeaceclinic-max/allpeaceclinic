@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+
+<title>존재만으로 특별한 다문화 교회 — 신치헌 | 연구 독서 노트</title>
+
+
+
+
+
+
+
+<style>
+  :root {
+    --color-bg: #FAFAF7;
+    --color-surface: #FFFFFF;
+    --color-text: #1A1A1A;
+    --color-text-secondary: #555555;
+    --color-accent: #B8860B;
+    --color-accent-light: #F5ECD7;
+    --color-accent-dark: #8B6508;
+    --color-border: #E8E4DC;
+    --color-quote-bg: #FDF8EE;
+    --color-quote-border: #D4A843;
+    --color-card-bg: #FEFDFB;
+    --color-tag: #6B5B3E;
+    --color-highlight: #FFF3CD;
+    --color-section-alt: #F7F5F0;
+    --font-serif: 'Noto Serif KR', 'Batang', Georgia, 'Times New Roman', serif;
+    --font-sans: 'Pretendard', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --max-width: 760px;
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.75rem;
+    --space-lg: 3rem;
+    --space-xl: 5rem;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 17px; scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-serif);
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .hero {
+    background: linear-gradient(165deg, #2C2416 0%, #3D3226 40%, #4A3C2E 100%);
+    color: #F5F0E8;
+    padding: var(--space-xl) var(--space-md) var(--space-lg);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at 30% 20%, rgba(184,134,11,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 80%, rgba(184,134,11,0.08) 0%, transparent 50%);
+  }
+  .hero-inner { position: relative; max-width: 680px; margin: 0 auto; }
+  .hero-label {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    background: rgba(184,134,11,0.15);
+    padding: 0.35em 1em;
+    border-radius: 2px;
+    margin-bottom: var(--space-md);
+  }
+  .hero h1 {
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: var(--space-sm);
+    letter-spacing: -0.01em;
+  }
+  .hero h1 em { font-style: normal; color: var(--color-accent); }
+  .hero-subtitle {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #C4BAA8;
+    max-width: 580px;
+    margin: 0 auto var(--space-md);
+  }
+  .hero-meta {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    color: #9A9080;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.5rem;
+  }
+  .hero-meta span { white-space: nowrap; }
+  .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-top: var(--space-sm);
+  }
+  .tag {
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    background: rgba(184,134,11,0.12);
+    padding: 0.25em 0.7em;
+    border-radius: 2px;
+    letter-spacing: 0.02em;
+  }
+  .toc-bar {
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-sm) var(--space-md);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .toc-bar-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+  }
+  .toc-bar a {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    padding: 0.4em 0.7em;
+    border-radius: 3px;
+    transition: background 0.2s, color 0.2s;
+    flex-shrink: 0;
+  }
+  .toc-bar a:hover { background: var(--color-accent-light); color: var(--color-accent-dark); }
+  .toc-sep { color: var(--color-border); font-size: 0.65rem; flex-shrink: 0; }
+  .content-wrap {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--space-lg) var(--space-md);
+  }
+  .abstract {
+    background: var(--color-quote-bg);
+    border-left: 4px solid var(--color-quote-border);
+    padding: var(--space-md);
+    margin-bottom: var(--space-lg);
+    border-radius: 0 6px 6px 0;
+    font-size: 0.98rem;
+    line-height: 1.85;
+    color: var(--color-text-secondary);
+  }
+  .abstract strong { color: var(--color-text); }
+  .abstract-label {
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent-dark);
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+  .section { margin-bottom: var(--space-xl); }
+  .section-number {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+  h2 {
+    font-size: clamp(1.35rem, 3vw, 1.65rem);
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: var(--space-sm);
+    color: var(--color-text);
+    letter-spacing: -0.01em;
+  }
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-xs);
+    color: var(--color-text);
+  }
+  h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: var(--space-sm);
+    margin-bottom: var(--space-xs);
+    color: var(--color-accent-dark);
+  }
+  p { margin-bottom: var(--space-sm); }
+  p + p { margin-top: 0; }
+  strong { font-weight: 700; }
+  blockquote {
+    background: var(--color-quote-bg);
+    border-left: 3px solid var(--color-quote-border);
+    padding: var(--space-sm) var(--space-md);
+    margin: var(--space-md) 0;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.95rem;
+    color: #4A4035;
+    line-height: 1.8;
+  }
+  blockquote p { margin-bottom: 0.5rem; }
+  blockquote p:last-child { margin-bottom: 0; }
+  blockquote cite {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--color-text-secondary);
+    margin-top: 0.5rem;
+    font-style: normal;
+  }
+  .pull-quote {
+    background: transparent;
+    border-left: none;
+    border-top: 2px solid var(--color-accent);
+    border-bottom: 2px solid var(--color-accent);
+    padding: var(--space-md) 0;
+    margin: var(--space-lg) 0;
+    text-align: center;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--color-text);
+    line-height: 1.7;
+  }
+  .pull-quote em { font-style: normal; color: var(--color-accent-dark); font-weight: 700; }
+  ul, ol { margin: var(--space-sm) 0; padding-left: 1.5rem; }
+  li { margin-bottom: 0.5rem; line-height: 1.75; }
+  li::marker { color: var(--color-accent); }
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+    margin: var(--space-md) 0;
+  }
+  @media (min-width: 540px) {
+    .card-grid--3 { grid-template-columns: repeat(3, 1fr); }
+    .card-grid--2 { grid-template-columns: repeat(2, 1fr); }
+  }
+  .card {
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: var(--space-sm);
+    transition: box-shadow 0.2s;
+  }
+  .card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .card-icon { font-size: 1.5rem; margin-bottom: 0.4rem; display: block; }
+  .card h4 {
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    font-weight: 700;
+    margin: 0 0 0.3rem;
+    color: var(--color-accent-dark);
+  }
+  .card p { font-size: 0.85rem; line-height: 1.65; color: var(--color-text-secondary); margin: 0; }
+  .highlight-box {
+    background: var(--color-highlight);
+    border-radius: 8px;
+    padding: var(--space-sm) var(--space-md);
+    margin: var(--space-md) 0;
+    border: 1px solid #EDE0A8;
+  }
+  .highlight-box p { font-size: 0.92rem; margin-bottom: 0.4rem; }
+  .highlight-box p:last-child { margin-bottom: 0; }
+  .diagram {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: var(--space-md);
+    margin: var(--space-md) 0;
+    overflow-x: auto;
+  }
+  .diagram-title {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-accent-dark);
+    margin-bottom: var(--space-sm);
+  }
+  .scale {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+  }
+  .scale-row {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: 0.8rem;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--color-border);
+    align-items: center;
+  }
+  .scale-row:last-child { border-bottom: none; }
+  .scale-num { font-weight: 700; text-align: right; color: var(--color-text-secondary); }
+  .scale-label { color: var(--color-text); }
+  .scale-divider {
+    text-align: center;
+    padding: 0.6rem 0;
+    font-weight: 700;
+    color: var(--color-accent-dark);
+    background: var(--color-accent-light);
+    border-radius: 4px;
+    margin: 0.3rem 0;
+    letter-spacing: 0.05em;
+  }
+  table { width: 100%; border-collapse: collapse; margin: var(--space-md) 0; font-size: 0.88rem; }
+  thead th {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-accent-dark);
+    background: var(--color-accent-light);
+    padding: 0.7rem 1rem;
+    text-align: left;
+    border-bottom: 2px solid var(--color-quote-border);
+  }
+  tbody td {
+    padding: 0.65rem 1rem;
+    border-bottom: 1px solid var(--color-border);
+    vertical-align: top;
+    line-height: 1.6;
+  }
+  tbody tr:hover { background: var(--color-section-alt); }
+  .margin-note {
+    background: var(--color-section-alt);
+    border-radius: 6px;
+    padding: var(--space-sm);
+    margin: var(--space-md) 0;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    border-left: 3px solid var(--color-border);
+  }
+  .margin-note-label {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-tag);
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+  .section-sep { border: none; height: 1px; background: var(--color-border); margin: var(--space-lg) 0; }
+  .article-footer {
+    background: #2C2416;
+    color: #C4BAA8;
+    padding: var(--space-lg) var(--space-md);
+    text-align: center;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    line-height: 1.7;
+  }
+  .article-footer strong { color: #F5F0E8; }
+  .article-footer .closing {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    color: var(--color-accent);
+    margin-bottom: var(--space-sm);
+    font-weight: 500;
+  }
+  .checklist { list-style: none; padding-left: 0; margin: var(--space-sm) 0; }
+  .checklist li { position: relative; padding-left: 1.6rem; margin-bottom: 0.6rem; font-size: 0.92rem; }
+  .checklist li::before { content: '\25B8'; position: absolute; left: 0; color: var(--color-accent); font-weight: 700; }
+  @media (max-width: 600px) {
+    html { font-size: 15.5px; }
+    .hero { padding: var(--space-lg) var(--space-sm) var(--space-md); }
+    .content-wrap { padding: var(--space-md) var(--space-sm); }
+    .toc-bar { padding: var(--space-xs) var(--space-sm); }
+    blockquote { padding: var(--space-sm); margin-left: 0; margin-right: 0; }
+    .card-grid--3 { grid-template-columns: 1fr; }
+    thead th, tbody td { padding: 0.5rem 0.6rem; }
+  }
+  @media print {
+    .toc-bar { display: none; }
+    .hero { background: #333; -webkit-print-color-adjust: exact; }
+    body { font-size: 11pt; }
+  }
+</style>
+<meta property="og:type" content="article">
+<meta property="og:title" content="존재만으로 특별한 다문화 교회 — 신치헌 (이레서원, 2025)">
+<meta property="og:description" content="부제: 복음 위에 세워진 환대와 용납의 공동체. 울산 시티센터교회 담임 [[people/신치헌|신치헌]] 목사가 [[people/팀켈러|팀 켈러]] 『[[books/센터처치팀켈러|센터처치]]』의 신학적 비전을 한국 다문화·이주민 선교에 적용한 사역 보고서. 📷 표시(밑줄·동그라미·형광펜·📝손글씨)를 페이지 사진에서 원">
+<meta property="og:url" content="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/s/fby2qf/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="존재만으로 특별한 다문화 교회 — 신치헌 (이레서원, 2025)">
+<meta name="twitter:description" content="부제: 복음 위에 세워진 환대와 용납의 공동체. 울산 시티센터교회 담임 [[people/신치헌|신치헌]] 목사가 [[people/팀켈러|팀 켈러]] 『[[books/센터처치팀켈러|센터처치]]』의 신학적 비전을 한국 다문화·이주민 선교에 적용한 사역 보고서. 📷 표시(밑줄·동그라미·형광펜·📝손글씨)를 페이지 사진에서 원">
+<link rel="canonical" href="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/s/fby2qf/">
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-label">Research Book Review</span>
+    <h1>존재만으로 특별한<br><em>다문화 교회</em></h1>
+    <p class="hero-subtitle">
+      복음 위에 세워진 환대와 용납의 공동체 &mdash; 팀 켈러 &laquo;센터처치&raquo;의 신학적 비전을 한국 다문화&middot;이주민 선교에 적용한 사역 보고서
+    </p>
+    <div class="hero-meta">
+      <span>저자: 신치헌</span>
+      <span>이레서원, 2025</span>
+      <span>울산 시티센터교회</span>
+    </div>
+    <div class="tag-row">
+      <span class="tag">선교학</span>
+      <span class="tag">이주민선교</span>
+      <span class="tag">도시선교</span>
+      <span class="tag">환대</span>
+      <span class="tag">다문화</span>
+      <span class="tag">공동체</span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc-bar" aria-label="목차">
+  <div class="toc-bar-inner">
+    <a href="#abstract">요약</a>
+    <span class="toc-sep">/</span>
+    <a href="#paradigm">패러다임 전환</a>
+    <span class="toc-sep">/</span>
+    <a href="#3b">3B 비전</a>
+    <span class="toc-sep">/</span>
+    <a href="#multicultural">다문화 교회</a>
+    <span class="toc-sep">/</span>
+    <a href="#relationship">관계의 본질</a>
+    <span class="toc-sep">/</span>
+    <a href="#tck">TCK</a>
+    <span class="toc-sep">/</span>
+    <a href="#gospel">복음과 차별</a>
+    <span class="toc-sep">/</span>
+    <a href="#hospitality">환대와 전도</a>
+    <span class="toc-sep">/</span>
+    <a href="#engel">엥겔 척도</a>
+    <span class="toc-sep">/</span>
+    <a href="#journey">사역 여정</a>
+    <span class="toc-sep">/</span>
+    <a href="#application">적용</a>
+  </div>
+</nav>
+
+<main class="content-wrap">
+
+  <section class="abstract" id="abstract">
+    <span class="abstract-label">Abstract</span>
+    <p>
+      한 교회의 영어 예배부였던 작은 부서가 <strong>다문화 교회(시티센터교회)</strong>로 세워지기까지의 과정과, 이주민과 <strong>'함께하는' 선교</strong>(mission <em>with</em> the migrants)의 신학&middot;실천을 담은 사역 보고서다. 핵심 주장은 명확하다: <strong>&ldquo;복음만이 우리 안의 교만&middot;우월감&middot;차별을 뿌리뽑는다.&rdquo;</strong>
+    </p>
+    <p>
+      저자 신치헌 목사는 팀 켈러의 &laquo;센터처치&raquo;를 신학적 토대로 삼아 <strong>3B 비전(Belonging &rarr; Believing &rarr; Blessing)</strong>, 이주민 선교의 <strong>for/by/with/as 4모델</strong>, <strong>엥겔 척도</strong>를 통한 관계 전도, 그리고 <strong>비빔밥 모델</strong>의 문화 연합을 제시한다.
+    </p>
+  </section>
+
+  <section class="section">
+    <span class="section-number">Key Findings</span>
+    <h2>핵심 발견 6가지</h2>
+    <div class="card-grid card-grid--3">
+      <div class="card">
+        <span class="card-icon">&#x21C4;</span>
+        <h4>With 선교</h4>
+        <p>이주민을 위한(for) 선교가 아닌, 함께하는(with) 선교. 한국인과 이주민이 동등한 주체이자 대상.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">&#x2764;</span>
+        <h4>소속이 먼저</h4>
+        <p>Belonging before Believing. 먼저 소속시키고, 소속 안에서 믿음이 자라게 한다.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">&#x25B2;</span>
+        <h4>한 단계 위로</h4>
+        <p>단번 회심이 아닌, 엥겔 척도에서 '한 단계 위로' 이동시키는 것이 전도의 목표.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">&#x1F35A;</span>
+        <h4>비빔밥 모델</h4>
+        <p>멜팅팟(동화)이 아닌, 각자의 정체성이 보존되는 비빔밥/샐러드볼 공동체.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">&#x2694;</span>
+        <h4>복음만이 해법</h4>
+        <p>문화적&middot;도덕적&middot;영적 우월감을 뿌리뽑는 것은 오직 복음의 능력.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">&#x1F30D;</span>
+        <h4>제3의 정체성</h4>
+        <p>유대인도 헬라인도 아닌 '그리스도인'이라는 대안적 정체성에서 연합을 찾는다.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-sep">
+
+  <section class="section" id="paradigm">
+    <span class="section-number">Section 01</span>
+    <h2>선교 패러다임의 전환 &mdash; 이주민과 '함께하는' 선교</h2>
+    <p>저자는 이주민 선교의 네 가지 모델을 구분한다:</p>
+    <table>
+      <thead>
+        <tr><th>모델</th><th>관계 구조</th><th>핵심 한계 / 특징</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>위한(for)</strong></td>
+          <td>한국인 주도, 이주민은 대상(guest)</td>
+          <td>&ldquo;한국인 사역자와 한국인 봉사자들이 주도하는 한국인 중심의 선교&rdquo;(p.159)</td>
+        </tr>
+        <tr>
+          <td><strong>의한(by)</strong></td>
+          <td>디아스포라 이주민이 주체</td>
+          <td>동등한 파트너십 없이 '위한' 모델과 본질적으로 유사(p.160)</td>
+        </tr>
+        <tr>
+          <td><strong>함께하는(with)</strong></td>
+          <td>한국인과 이주민이 공동 주체이자 공동 대상</td>
+          <td>&ldquo;동등한 위치에서 서로를 도시 선교를 위한 파트너로 인정&rdquo;(p.184)</td>
+        </tr>
+        <tr>
+          <td><strong>으로서의(as)</strong></td>
+          <td>영적 이주민으로서의 정체성</td>
+          <td>&ldquo;낯선 땅에서 친히 이주민이 되신 예수 그리스도 안에서 자신의 정체성을 발견&rdquo;(p.184-185)</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="margin-note">
+      <span class="margin-note-label">여백 손글씨 메모</span>
+      &ldquo;선교의 공동 <strong>주체</strong> &rarr; host / 선교의 <strong>대상</strong> &rarr; guest&rdquo;(p.161)
+    </div>
+    <h3>성경적 원형: 룻과 보아스의 헤세드 미션</h3>
+    <p>&ldquo;보아스와 룻이 하나 되어 연합할 때, 하나님의 헤세드가 이 땅에 이루어졌다&rdquo;(p.164). 다윗은 보아스와 룻(국제결혼)의 4세대 다문화 가정 후손이다.</p>
+    <blockquote>
+      <p>&ldquo;만일 그녀가 외국에 나가지 않았더라면, 거기에 조금이라도 소망이 남아 있었더라면 &hellip; 결코 일어나지 않았을 일이다. 그녀의 아픔과 실패를 사용하면서까지 하나님 자신의 플랜 A를 이루었던 것이다.&rdquo;</p>
+      <cite>&mdash; p.152-153</cite>
+    </blockquote>
+  </section>
+
+  <hr class="section-sep">
+
+  <section class="section" id="3b">
+    <span class="section-number">Section 02</span>
+    <h2>3B 비전 &mdash; Belonging &middot; Believing &middot; Blessing</h2>
+    <p>시티센터교회의 비전 체계(p.31): <strong>소속되기 &rarr; 신앙 갖기 &rarr; 축복하기</strong>.</p>
+    <div class="card-grid card-grid--3">
+      <div class="card">
+        <h4>Belonging</h4>
+        <p>인종&middot;국적&middot;언어&middot;문화&middot;직업과 무관하게 누구나 소속되는 공동체. 교회는 집&middot;가족을 떠난 이들에게 &ldquo;또 다른 집이며 또 다른 가족&rdquo;(p.34).</p>
+      </div>
+      <div class="card">
+        <h4>Believing</h4>
+        <p>모든 관계&middot;사역에서 예수 그리스도의 복음이 중심(p.31).</p>
+      </div>
+      <div class="card">
+        <h4>Blessing</h4>
+        <p>도시와 열방에 복이 되는 공동체(p.31).</p>
+      </div>
+    </div>
+    <h3>핵심 인사이트: 소속이 먼저다</h3>
+    <p>3B 비전에서 가장 중요한 통찰은 <strong>순서</strong>다. &ldquo;신앙을 갖기 전에 공동체에 소속되는 것(belonging)이 먼저&rdquo;(추천사). 이것은 전통적 한국 교회의 접근 &mdash; 먼저 믿게 하고, 그 다음 공동체에 편입시키는 순서 &mdash; 을 뒤집는다.</p>
+    <blockquote>
+      <p>&ldquo;사람에게는 상반된 이중 갈망이 있다. 한편으로는 누구에게도 간섭받지 않는 독립과 자유를 갈망한다. 동시에, 다른 한편으로는 관계를 맺고 공동체에 소속되기를 갈망한다.&rdquo;</p>
+      <cite>&mdash; p.32</cite>
+    </blockquote>
+    <div class="highlight-box">
+      <p><strong>청년 사역에의 함의:</strong> 믿음이 없는 청년들이 오히려 공동체 소속감을 갈망하기 때문에 교회를 찾아온다. 흔한 실수는 그들에게 아직 믿음이 없다고 판단하여 공동체 밖으로 내보내려 하는 것이다. 3B 비전은 말한다 &mdash; <strong>먼저 소속시키고, 소속 안에서 믿음이 자라게 하라.</strong> 게스트(guest)에서 호스트(host)로의 전환이 핵심 역학이다(p.33).</p>
+    </div>
+    <p>엥겔 척도(&rarr; Section 08)의 관점에서, 공동체 소속(Belonging)은 영적 여정의 <strong>출발점</strong>이 되어 -7에서 -6으로, -3에서 -2로 한 단계씩 이동하게 하는 환경을 제공한다. Believing을 전제 조건으로 두면 이 여정 자체가 시작되지 않는다.</p>
+  </section>
+
+  <hr class="section-sep">
+
+  <section class="section" id="multicultural">
+    <span class="section-number">Section 03</span>
+    <h2>다문화 교회란 무엇인가 &mdash; 비빔밥&middot;제3의 정체성&middot;대안문화</h2>
+    <h3>정의</h3>
+    <p>&ldquo;'다문화 교회'라고 할 때, 보통은 하나의 인종, 민족, 국적, 언어, 문화가 지배적이지 않은 교회, 하나의 민족이 그 교회 구성원의 90%를 넘지 않는 교회를 뜻합니다&rdquo;(p.47). '다문화'는 특정 그룹이 아니라 <strong>표현 방식</strong>을 가리키며, &ldquo;한국 사람도 다문화에 포함&rdquo;된다.</p>
+    <h3>멜팅팟의 실패와 비빔밥 모델</h3>
+    <div class="card-grid card-grid--2">
+      <div class="card">
+        <h4>멜팅팟 (Melting Pot) &#x2717;</h4>
+        <p>모든 문화를 하나로 녹여 동질적 문화를 만드는 모델. 사실상 지배 문화로의 동화를 의미하며, &ldquo;그리스도인이 아닌 나와 같은 한국인이 되라고 강요한 것&rdquo;(p.132)이 된다.</p>
+      </div>
+      <div class="card">
+        <h4>비빔밥 / 샐러드볼 &#x2713;</h4>
+        <p>&ldquo;각 재료의 고유한 맛, 색, 향, 모양, 그리고 질감이 그대로 살아서 다채로운 맛과 멋을 만들어 내는 공동체&rdquo;(p.48). 요한계시록 7장의 최종 비전에서도 각자의 정체성이 보존된다.</p>
+      </div>
+    </div>
+    <div class="pull-quote">
+      하나님 나라의 완성은 문화적 차이의 소멸이 아니라<br><em>차이 속의 연합</em>이다.
+    </div>
+    <h3>제3의 정체성</h3>
+    <p>초대교회 성도가 '유대인'(제1)도 '헬라인'(제2)도 아닌 <strong>'그리스도인'(제3)</strong>에서 자신을 발견했듯(p.96), 다문화 교회는 cross-cultural을 넘어 <strong>대항문화적(counter-cultural)&middot;대안문화적(alternative-cultural)</strong> 교회다.</p>
+    <blockquote>
+      <p>&ldquo;우리 교회에서는 한국 사람과 필리핀 사람이 다수를 차지하지만, 그들에게만 익숙하고 편한 한국 문화나 필리핀 문화가 예배, 교제, 교육, 봉사, 선교 등에 있어서 지배적인 방식으로 채택되지는 않는다.&rdquo;</p>
+      <cite>&mdash; p.95</cite>
+    </blockquote>
+    <h3>교회는 처음부터 다문화였다</h3>
+    <p>오순절 성령강림은 바벨탑(창 11)의 <strong>역전</strong>이다. &ldquo;이번에도 언어가 나뉘었지만, 그 나뉜 언어를 통해 진정한 소통이 가능하게 되었다&rdquo;(p.127). 따라서 동일집단원리에 안주하지 말고, <strong>&ldquo;불편하더라도, 예배 시간이 길어지더라도 함께 예배드려야 한다&rdquo;</strong>(p.129).</p>
+  </section>
+
+  <hr class="section-sep">
+
+  <section class="section" id="relationship">
+    <span class="section-number">Section 04</span>
+    <h2>관계가 본질 &mdash; 이주민 사역의 핵심</h2>
+    <div class="pull-quote">
+      이주민 사역의 핵심은 첫째도 <em>관계</em>, 둘째도 관계, 셋째도 관계였다.<br>일이나 사역을 하기에 앞서서, 신뢰 관계가 먼저 형성되어야 했다.
+      <br><span>&mdash; p.57</span>
+    </div>
+    <p>이주민에게는 설교보다 <strong>관계 형성이 먼저</strong>이고, 신뢰가 쌓인 후에야 마음을 연다(p.55). 예배는 일이 아니라 <strong>하나님&middot;형제자매와의 관계를 누리는 시간</strong>이다(p.124).</p>
+    <p>저자는 한국 교회가 소비주의&middot;물질주의의 영향으로 '사역'을 관계보다 중시하고, &ldquo;영혼 구원과 전도라는 대의(?)를 위해 때로는 비인간적이고 비인격적인 방식도 서슴지 않게 되었다&rdquo;고 비판한다(p.114).</p>
+    <div class="margin-note">
+      <span class="margin-note-label">여백 손글씨</span>
+      &ldquo;대의&rdquo; 뒤에 (?) &mdash; 저자 스스로도 이 단어에 의문을 품는다.
+    </div>
+    <p>이주민 돌봄은 시간이 흐르면서 &ldquo;요람에서 무덤까지&rdquo;로 확장되었다 &mdash; 임금 체불, 산업 재해, 차별, 폭력, 이직과 퇴직금 문제(p.62)에서 결혼&middot;출산&middot;교육&middot;노후까지. 교회 공간도 결혼식, 돌잔치, 베이비 샤워 등 다양한 필요를 위한 <strong>공유 공간</strong>이 된다(p.54).</p>
+  </section>
+
+  <hr class="section-sep">
+
+  <section class="section" id="tck">
+    <span class="section-number">Section 05</span>
+    <h2>TCK &mdash; 제3문화 아이들과 정체성 교육</h2>
+    <p><strong>TCK(Third Culture Kids)</strong>: &ldquo;부모님의 출신 문화(제1문화)도, 현재 살고 있는 외국 문화(제2문화)도 아닌, 제3문화에서 자신의 소속감과 정체성을 발견하는 아이들&rdquo;(p.104). 시티센터교회 아이들은 대부분 국제결혼 가정 자녀로 한국 국적&middot;한국어 모국어를 가진다(p.106).</p>
+    <div class="card-grid card-grid--2">
+      <div class="card">
+        <h4>TCK의 어려움</h4>
+        <p>&ldquo;더 많은 외로움, 상처, 상실감, 소외감, 정체성의 혼란 등의 문제와 평생 씨름한다.&rdquo;(p.111)</p>
+      </div>
+      <div class="card">
+        <h4>TCK의 가능성</h4>
+        <p>&ldquo;최소 두 개 이상의 언어를 사용할 수 있고, 다양한 문화권에 잘 적응하는 글로벌 리더가 될 수 있다.&rdquo;(p.111)</p>
+      </div>
+    </div>
+    <p>신앙 교육의 핵심은 <strong>정체성 교육</strong>이다. 두 축은 <strong>Gospel Kids</strong>(복음 안에서 내가 누구인지)와 <strong>Global Kids</strong>(p.107).</p>
+    <blockquote>
+      <p>&ldquo;부모님의 출신 국가나 문화, 자신의 외모, 성적, 재능, 실력, 친구 관계, 소유와 재산 등이 자신의 첫 번째 정체성이 아니라, 복음 안에서 자신이 누구인지를 우선적으로 발견하도록 돕는 것.&rdquo;</p>
+      <cite>&mdash; p.107</cite>
+    </blockquote>
+    <div class="pull-quote">
+      &ldquo;무엇보다 우리의 구원자 되시는 <em>예수님이 TCK셨다.</em>&rdquo;<br>
+      <span>&mdash; p.111</span>
+    </div>
+  </section>
+
+  <hr class="section-sep">
+
+  <section class="section" id="gospel">
+    <span class="section-number">Section 06</span>
+    <h2>문화 우월주의와 복음 &mdash; 차별의 뿌리를 뽑는 유일한 힘</h2>
+    <h3>가장 큰 장애물: 자기 의와 문화적 교만</h3>
+    <p>다문화 사역의 가장 큰 어려움은 외부의 반대가 아니라 <strong>내부의 교만</strong>이다:</p>
+    <blockquote>
+      <p>&ldquo;자기 의(self-righteousness)와 교만이다. 이는 '내 문화 방식이 더 뛰어나다, 내가 옳다, 내가 더 낫다'고 하는 문화적, 도덕적, 영적 우월감이며, 인종적, 문화적 차별 의식이다.&rdquo;</p>
+      <cite>&mdash; p.132</cite>
+    </blockquote>
+    <p>문화 우월주의는 세 겹으로 작동한다:</p>
+    <table>
+      <thead><tr><th>층위</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td><strong>문화적 우월감</strong></td><td>내 문화 방식이 더 우월하다는 무의식적 전제</td></tr>
+        <tr><td><strong>도덕적 우월감</strong></td><td>내가 더 옳다는 판단 &mdash; &ldquo;그 판단 기준은 성경이나 우리 교회의 비전, 문화가 아니었다&rdquo;(p.134)</td></tr>
+        <tr><td><strong>영적 우월감</strong></td><td>내가 영적으로 더 성숙하다는 착각</td></tr>
+      </tbody>
+    </table>
+    <h3>무의식적 차별이 더 위험하다</h3>
+    <blockquote>
+      <p>&ldquo;대놓고 차별하는 사람보다, 자기도 모르게 무의식적으로, 은근히 차별하는 사람이 더 위험하다.&rdquo;</p>
+      <cite>&mdash; p.141</cite>
+    </blockquote>
+    <p>예를 들어, &ldquo;이주민들을 '당연히' 도움과 섬김의 대상, 구제와 선교의 대상으로 대하는 것&rdquo;(p.142)이 바로 무의식적 차별이다. <strong>&ldquo;미국에서 가장 인종 차별이 심한 시간은 바로 주일 오전 11시다&rdquo;</strong>(p.143)라는 경고처럼, 이주민을 교회 본당이 아닌 별도 공간에서 예배하게 하는 것도 차별이 될 수 있다.</p>
+    <blockquote>
+      <p>&ldquo;그들 중 상당수는 본당에 들어가 한국인들과 함께 예배드리지 못하는 것에 아쉬움과 박탈감을 느낀다. '우리는 하나님 나라의 2등 시민인가?'라는 생각이 들고&rdquo;</p>
+      <cite>&mdash; p.143</cite>
+    </blockquote>
+    <h3>해법은 오직 복음</h3>
+    <div class="pull-quote">
+      &ldquo;복음만이 우리 안에 있는 교만과 인종적, 문화적, 도덕적, 영적 우월감,<br>인종 차별, 열등감과 자기 비하, 자기 연민과 자기혐오를 <em>뿌리뽑을 수 있다.</em>&rdquo;
+      <br><span>&mdash; p.137</span>
+    </div>
+    <p>&ldquo;복음만이 내가 하나님께 소중하고 가치 있는 만큼 다른 사람도 그분께 소중하고 가치 있는 존재로 여길 수 있게 만든다&rdquo;(p.137). 설교자가 <strong>먼저 스스로에게 복음을 선포</strong>해야 한다(p.138).</p>
+    <div class="highlight-box">
+      <p><strong>목표:</strong> &ldquo;복음이 중심이 되는 우리 교회로 인해, 울산에서 인종 차별이 가장 덜한 시간이 바로 <strong>주일 오전 11시</strong>&rdquo;(p.147)가 되는 것.</p>
+      <p>&ldquo;그리스도를 사이에 두고 맺은 연합은, 같은 인종이나 민족 구성원들 간의 관계보다 강력하고 견고하다&rdquo;(p.147, 엡 2:19-22).</p>
+    </div>
+  </section>
+
+  <hr class="section-sep">
+
+  <section class="section" id="hospitality">
+    <span class="section-number">Section 07</span>
+    <h2>환대와 전도 전략 &mdash; 친구 되기, 문화 분류, 대긍휼</h2>
+    <h3>The Great Compassion &mdash; 대긍휼</h3>
+    <p>&ldquo;우리는 그분의 무조건적인 환대로, 곧 향한 환대로, 대긍휼한 환대로써 그리스도인이 되었다&rdquo;(p.213). 환대의 시작점은 <strong>우리가 먼저 환대 받은 자</strong>라는 인식이다.</p>
+    <h3>친구 되기 전략</h3>
+    <p>&ldquo;모든 사람에게 통하기 적용되는 절대적인 전도 전략은 없다&rdquo;(p.202). 핵심은 우정을 통한 관계 전도, 즉 진정한 친구가 되는 것이다. 집단주의 문화(아시아&middot;아프리카&middot;중동) 출신에게는 1:1을 넘어 <strong>'가족 되기'</strong>가 중요하다(p.215).</p>
+    <h3>문화 3분류</h3>
+    <table>
+      <thead><tr><th>문화 유형</th><th>핵심 축</th><th>대표 문화권</th></tr></thead>
+      <tbody>
+        <tr><td><strong>죄책-결백</strong></td><td>Guilt &ndash; Innocence</td><td>서구 개인주의 문화</td></tr>
+        <tr><td><strong>명예-수치</strong></td><td>Honor &ndash; Shame</td><td>아시아&middot;중동 집단주의 문화</td></tr>
+        <tr><td><strong>권능-공포</strong></td><td>Power &ndash; Fear</td><td>아프리카&middot;토착 문화</td></tr>
+      </tbody>
+    </table>
+    <div class="margin-note">
+      <span class="margin-note-label">문화적 환대의 예</span>
+      줄루어 인사 <strong>'싸우보나(sawubona)'</strong>는 '나는 당신을 봅니다'라는 뜻(p.226) &mdash; <strong>상대가 찾는 방식</strong>을 따라야 한다. 포틀럭(potluck) 파티도 환대의 실천이다(p.99).
+    </div>
+  </section>
+
+  <hr class="section-sep">
+
+  <section class="section" id="engel">
+    <span class="section-number">Section 08</span>
+    <h2>엥겔 척도 &mdash; 한 단계 위로의 전도</h2>
+    <p>저자는 <strong>제임스 엥겔의 척도(Engel's Scale)</strong>를 이주민 전도의 핵심 프레임으로 제시한다(p.203-204). 영적 여정을 <strong>-7</strong>(하나님 인식 없음)에서 <strong>0</strong>(회심)을 거쳐 <strong>+1</strong>(제자도)까지의 연속 스펙트럼으로 본다.</p>
+    <div class="diagram">
+      <div class="diagram-title">Engel's Scale &mdash; 영적 여정 스펙트럼</div>
+      <div class="scale">
+        <div class="scale-row"><span class="scale-num">-7</span><span class="scale-label">하나님에 대한 인식 없음</span></div>
+        <div class="scale-row"><span class="scale-num">-6</span><span class="scale-label">하나님 인식 시작</span></div>
+        <div class="scale-row"><span class="scale-num">-5</span><span class="scale-label">복음에 대한 초기 관심</span></div>
+        <div class="scale-row"><span class="scale-num">-4</span><span class="scale-label">복음의 기본 사실 이해</span></div>
+        <div class="scale-row"><span class="scale-num">-3</span><span class="scale-label">복음의 의미 이해</span></div>
+        <div class="scale-row"><span class="scale-num">-2</span><span class="scale-label">개인적 연관성 인식</span></div>
+        <div class="scale-row"><span class="scale-num">-1</span><span class="scale-label">회심 결심 단계</span></div>
+        <div class="scale-divider">&#x2500;&#x2500; 0 &middot; 회심 (Conversion) &#x2500;&#x2500;</div>
+        <div class="scale-row"><span class="scale-num">+1</span><span class="scale-label">제자도 시작 (Discipleship)</span></div>
+      </div>
+    </div>
+    <h3>핵심 원리: 단번에 회심이 아니라, 한 단계 위로</h3>
+    <blockquote>
+      <p>&ldquo;우리가 가져야 할 전도의 목표는 전도자를 단계 0(회심)의 단계까지 이동시키는 것이 아니다. 그가 처한 단계 -7의 위치든, -3에 있는 사람은 -2로, 지금 있는 위치에서 <strong>한 단계 위로</strong> 상향 조정시키는 것이다.&rdquo;</p>
+      <cite>&mdash; p.204</cite>
+    </blockquote>
+    <div class="highlight-box">
+      <p><strong>3B 비전과의 연결:</strong></p>
+      <p>&#x2022; -7에서 -5로 이동하는 사람에게 필요한 것은 교리 교육이 아니라 <strong>소속감(Belonging)</strong></p>
+      <p>&#x2022; 공동체 안에서 관계를 경험하면서 자연스럽게 이동</p>
+      <p>&#x2022; 회심(0)은 이 여정의 결과이지, 전제 조건이 아니다</p>
+      <p>&#x2022; Believing을 Belonging의 전제 조건으로 두는 것은 엥겔 척도의 논리와 정면으로 충돌</p>
+    </div>
+    <blockquote>
+      <p>&ldquo;나는 심었고 아볼로는 물을 주었으되 오직 하나님께서 자라나게 하셨나니&rdquo;</p>
+      <cite>&mdash; 고전 3:6 (p.203)</cite>
+    </blockquote>
+  </section>
+
+  <hr class="section-sep">
+
+  <section class="section" id="journey">
+    <span class="section-number">Section 09</span>
+    <h2>저자의 사역 여정 &mdash; 실패가 아니라 하나님의 플랜 A</h2>
+    <p>신치헌 목사의 사역 여정은 연이은 '실패'의 기록이자, 그 실패들이 모두 하나님의 플랜 A였음을 고백하는 간증이다(p.153-158):</p>
+    <ul>
+      <li><strong>수전증으로 병역특례</strong> &rarr; 공장에서 외국인 근로자들과 일하게 됨 &rarr; 만 20세에 영어 예배 사역 개척의 계기(p.153)</li>
+      <li><strong>영국 비자 거절</strong> &rarr; 대안으로 아프리카 카메룬 TCK 선교 &rarr; &ldquo;내 계획이 틀어진 덕분&rdquo;(p.154)</li>
+      <li><strong>해외 선교사 꿈 좌절</strong> &rarr; 아내의 두려움으로 국내 잔류 &rarr; 이주민 선교와 도시 선교(p.154)</li>
+      <li><strong>코로나 기간 육종암 판정&middot;수술</strong>(p.155)</li>
+      <li><strong>교역자&middot;리더들과의 갈등과 이별</strong>(p.155)</li>
+    </ul>
+    <div class="pull-quote">
+      &ldquo;'그런 일들에도 불구하고'가 아니라,<br><em>'그런 일들 때문에'</em> 지금 나와 우리 교회의 모습에 이른 것이다.&rdquo;
+      <br><span>&mdash; p.155</span>
+    </div>
+    <blockquote>
+      <p>&ldquo;큰 교회에서 부교역자로 계속 사역하고 있었다면 '다 내 실력과 노력 덕분'이라고 착각하며 나 잘난 맛에 살았으리라. 그러나 교회를 개척한 뒤로 수많은 실패와 좌절의 경험을 통해 모든 것이 하나님의 은혜임을 철저히 깨달았다.&rdquo;</p>
+      <cite>&mdash; p.157</cite>
+    </blockquote>
+    <p>성경적 근거: 요셉의 고백 &mdash; &ldquo;하나님이 생명을 구원하시려고 나를 당신들보다 먼저 보내셨나이다&rdquo;(창 50, p.156). &ldquo;모든 것이 합력하여 선을 이루느니라&rdquo;(롬 8:28, p.156).</p>
+    <div class="highlight-box">
+      <p><strong>평가 기준 = 열매 맺음:</strong> 성공이나 충성보다 더 성경적인 기준은 <strong>'열매 맺음'</strong>이다(p.266). 다문화 교회는 &ldquo;수영장으로 들어가기 위한 다이빙 도약대가 아니라 수영장 그 자체&rdquo;이며, &ldquo;우리가 그리스도 안에서 자라 가는 방법일 뿐 아니라 그리스도 안으로 자라 가는 방법&rdquo;이다(p.272).</p>
+    </div>
+  </section>
+
+  <hr class="section-sep">
+
+  <section class="section" id="application">
+    <span class="section-number">Implications &amp; Open Questions</span>
+    <h2>적용점과 미해결 질문</h2>
+    <h3>실천 적용</h3>
+    <ul class="checklist">
+      <li><strong>Belonging &rarr; Believing 순서:</strong> 청년 사역, 새가족 정착에서 '먼저 소속시키기'를 실천 원리로 삼을 것</li>
+      <li><strong>무의식적 차별 점검:</strong> 이주민을 '도움의 대상'으로만 보고 있지 않은지, 동등한 파트너로 대하고 있는지</li>
+      <li><strong>엥겔 척도 적용:</strong> 전도 대상의 현재 위치를 파악하고, 단번 회심이 아닌 '한 단계 위로'를 목표로</li>
+      <li><strong>비빔밥 모델:</strong> 다양성 속에서 각자의 정체성을 보존하면서 연합하는 공동체 비전</li>
+    </ul>
+    <h3>미해결 질문</h3>
+    <ul>
+      <li>한국 지역교회에서 동일집단원리(HUP)의 편안함을 넘어 다문화 예배를 시도할 때, 어떤 실질적 단계를 밟을 수 있는가?</li>
+      <li>이주민과 '함께하는(with)' 선교에서 '으로서의(as)' 선교로 전환되는 구체적 기점은 무엇인가?</li>
+      <li>TCK 정체성 교육이 한국 MK(선교사 자녀) 케어에 어떻게 적용될 수 있는가?</li>
+    </ul>
+  </section>
+
+  <hr class="section-sep">
+
+  <section class="section">
+    <span class="section-number">Source Notes</span>
+    <h2>출처 및 참고</h2>
+    <table>
+      <thead><tr><th>자료</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td>신치헌, &laquo;존재만으로 특별한 다문화 교회&raquo; (이레서원, 2025)</td><td>1차 자료. 책 페이지 사진 114장에서 밑줄&middot;동그라미&middot;형광펜&middot;여백 손글씨 표시 전사.</td></tr>
+        <tr><td>팀 켈러, &laquo;센터처치&raquo;</td><td>저자의 핵심 신학적 비전 원천. 복음의 능력, 교만&middot;자기 의 경고.</td></tr>
+        <tr><td>제임스 엥겔 척도 (Engel's Scale)</td><td>영적 여정 -7 ~ +1 스펙트럼. 이주민 전도의 핵심 프레임.</td></tr>
+        <tr><td>동일집단원리 (Homogeneous Unit Principle)</td><td>Donald McGavran. 저자가 비판적으로 검토.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<footer class="article-footer">
+  <p class="closing">&ldquo;Good bye!&rdquo;가 아니라, 언제나 <strong>&ldquo;See you later!&rdquo;</strong></p>
+  <p>
+    <strong>존재만으로 특별한 다문화 교회</strong> &mdash; 신치헌 (이레서원, 2025)<br>
+    연구 독서 노트 &middot; 2026-06-17
+  </p>
+</footer>
+
+</body>
+</html>
