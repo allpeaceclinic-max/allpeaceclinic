@@ -1,25 +1,335 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ko">
 <head>
 
 
-<title>CMF는 어떤 친구인가? (CMF 스피릿 강의)</title>
+<title>CMF는 어떤 친구인가? — CMF 스피릿 강의</title>
+
+
+
+
+
+
+
 <style>
-      body { margin: 0; font-family: Georgia, "Times New Roman", serif; color: #202124; background: #faf7f2; }
-      main { max-width: 900px; margin: 0 auto; padding: 56px 36px 80px; box-sizing: border-box; }
-      article { background: #fffdf8; border: 1px solid #e6ddcf; padding: 44px; }
-      h1 { font-size: 44px; line-height: 1.05; margin-top: 0; }
-      h2 { margin-top: 42px; border-top: 1px solid #dfd5c8; padding-top: 24px; }
-      p, li { font-size: 18px; line-height: 1.75; }
-      a { color: #8b3a2b; }
-      pre { overflow: auto; padding: 18px; background: #25211d; color: #f7efe4; border-radius: 6px; }
-      table { width: 100%; border-collapse: collapse; margin: 22px 0; background: #fff; }
-      th, td { border-bottom: 1px solid #e6ddcf; padding: 10px 12px; }
-      img { max-width: 100%; height: auto; display: block; margin: 24px auto; }
-      .frontmatter { white-space: pre-wrap; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background: #f1eadf; padding: 14px; color: #5f574f; }
-      .callout { border: 1px solid #d8b98c; background: #fff6e5; padding: 16px 18px; margin: 24px 0; }
-      .callout-title { font-family: ui-sans-serif, system-ui, sans-serif; font-weight: 800; text-transform: uppercase; font-size: 12px; letter-spacing: .08em; }
-    </style>
+  :root {
+    --color-bg: #FAFAF8;
+    --color-surface: #FFFFFF;
+    --color-text: #1A1A1A;
+    --color-text-secondary: #555555;
+    --color-accent: #2C5F8A;
+    --color-accent-light: #E8F0F8;
+    --color-accent-warm: #8A4C2C;
+    --color-accent-warm-light: #FDF6F0;
+    --color-border: #E0DDD8;
+    --color-border-light: #F0EDE8;
+    --color-scripture-bg: #F7F5F0;
+    --font-body: 'Noto Serif KR', 'Nanum Myeongjo', Georgia, serif;
+    --font-heading: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    --max-width: 720px;
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2.5rem;
+    --space-xl: 4rem;
+    --space-2xl: 6rem;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 17px; scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background: var(--color-bg);
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .hero {
+    background: linear-gradient(160deg, #1B3A54 0%, #2C5F8A 40%, #3A7CB8 100%);
+    color: #FFFFFF;
+    padding: var(--space-2xl) var(--space-md);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60%; right: -20%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero-inner {
+    position: relative; z-index: 1;
+    max-width: var(--max-width); margin: 0 auto;
+  }
+  .hero-label {
+    font-family: var(--font-heading);
+    font-size: 0.75rem; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(255,255,255,0.65); margin-bottom: var(--space-sm);
+  }
+  .hero h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 800; line-height: 1.25;
+    margin-bottom: var(--space-md); letter-spacing: -0.02em;
+  }
+  .hero-subtitle {
+    font-size: 1.05rem; line-height: 1.7;
+    color: rgba(255,255,255,0.8);
+    max-width: 540px; margin: 0 auto var(--space-lg);
+  }
+  .hero-meta {
+    font-family: var(--font-heading);
+    font-size: 0.8rem; color: rgba(255,255,255,0.5);
+    display: flex; justify-content: center;
+    gap: var(--space-md); flex-wrap: wrap;
+  }
+  .article-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--space-xl) var(--space-md) var(--space-2xl);
+  }
+  .key-findings {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
+  .key-findings-title {
+    font-family: var(--font-heading);
+    font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-xs);
+    border-bottom: 2px solid var(--color-accent);
+    display: inline-block;
+  }
+  .key-findings ol {
+    list-style: none; counter-reset: findings; padding: 0;
+  }
+  .key-findings li {
+    counter-increment: findings;
+    padding: 0.6rem 0 0.6rem 2.2rem;
+    position: relative; font-size: 0.95rem; line-height: 1.65;
+    border-bottom: 1px solid var(--color-border-light);
+  }
+  .key-findings li:last-child { border-bottom: none; }
+  .key-findings li::before {
+    content: counter(findings);
+    position: absolute; left: 0; top: 0.6rem;
+    width: 1.5rem; height: 1.5rem;
+    background: var(--color-accent-light);
+    color: var(--color-accent); border-radius: 50%;
+    font-family: var(--font-heading);
+    font-size: 0.75rem; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .section-number {
+    font-family: var(--font-heading);
+    font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--color-accent); display: block;
+    margin-bottom: 0.3rem;
+  }
+  h2 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem; font-weight: 800; line-height: 1.3;
+    color: var(--color-text);
+    margin: var(--space-xl) 0 var(--space-md);
+    letter-spacing: -0.01em;
+  }
+  h2:first-of-type { margin-top: 0; }
+  h3 {
+    font-family: var(--font-heading);
+    font-size: 1.15rem; font-weight: 700;
+    color: var(--color-text);
+    margin: var(--space-lg) 0 var(--space-sm);
+  }
+  p { margin-bottom: var(--space-sm); font-size: 1rem; }
+  .section-divider {
+    border: none; height: 1px;
+    background: linear-gradient(to right, transparent, var(--color-border), transparent);
+    margin: var(--space-xl) 0;
+  }
+  .pull-quote {
+    margin: var(--space-lg) calc(-1 * var(--space-md));
+    padding: var(--space-lg); position: relative; text-align: center;
+  }
+  .pull-quote::before {
+    content: '';
+    position: absolute; top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 40px; height: 3px;
+    background: var(--color-accent); border-radius: 2px;
+  }
+  .pull-quote p {
+    font-family: var(--font-heading);
+    font-size: 1.25rem; font-weight: 700;
+    line-height: 1.6; color: var(--color-accent); margin: 0;
+  }
+  .scripture {
+    background: var(--color-scripture-bg);
+    border-left: 3px solid var(--color-accent-warm);
+    padding: var(--space-sm) var(--space-md);
+    margin: var(--space-md) 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.92rem; line-height: 1.75;
+    color: var(--color-text-secondary);
+  }
+  .scripture .ref {
+    display: block; font-family: var(--font-heading);
+    font-size: 0.75rem; font-weight: 600;
+    color: var(--color-accent-warm); margin-top: 0.3rem;
+  }
+  .identity-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px; padding: var(--space-lg);
+    margin: var(--space-lg) 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
+  .identity-card-label {
+    font-family: var(--font-heading);
+    font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--color-accent);
+    display: inline-block; background: var(--color-accent-light);
+    padding: 0.2rem 0.6rem; border-radius: 4px;
+    margin-bottom: var(--space-sm);
+  }
+  .identity-card p { font-size: 1.05rem; line-height: 1.8; }
+  .core-value {
+    margin: var(--space-lg) 0; padding: var(--space-lg);
+    background: var(--color-surface); border-radius: 12px;
+    border: 1px solid var(--color-border-light);
+    box-shadow: 0 1px 8px rgba(0,0,0,0.03);
+  }
+  .core-value-number {
+    font-family: var(--font-heading);
+    font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.1em; color: #FFFFFF;
+    background: var(--color-accent);
+    display: inline-block; padding: 0.15rem 0.55rem;
+    border-radius: 4px; margin-bottom: var(--space-xs);
+  }
+  .core-value h3 { margin-top: var(--space-xs); font-size: 1.2rem; }
+  .core-value-principles {
+    background: var(--color-accent-light);
+    border-radius: 8px; padding: var(--space-sm) var(--space-md);
+    margin: var(--space-sm) 0; font-size: 0.9rem; line-height: 1.7;
+  }
+  .core-value-principles li {
+    margin-bottom: 0.3rem; list-style: none;
+    padding-left: 1.2rem; position: relative;
+  }
+  .core-value-principles li::before {
+    content: '\2014'; position: absolute; left: 0;
+    color: var(--color-accent); font-weight: 700;
+  }
+  .case-study {
+    margin: var(--space-md) 0;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: 8px; font-size: 0.92rem; line-height: 1.75;
+  }
+  .case-study.success { background: #F0F8F0; border-left: 3px solid #4A8A4A; }
+  .case-study.failure { background: #FDF5F5; border-left: 3px solid #8A4A4A; }
+  .case-study-label {
+    font-family: var(--font-heading);
+    font-weight: 700; font-size: 0.8rem;
+    letter-spacing: 0.05em; margin-bottom: 0.3rem; display: block;
+  }
+  .case-study.success .case-study-label { color: #4A8A4A; }
+  .case-study.failure .case-study-label { color: #8A4A4A; }
+  .vpm-table {
+    width: 100%; border-collapse: separate; border-spacing: 0;
+    margin: var(--space-lg) 0; border-radius: 10px;
+    overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    font-family: var(--font-heading); font-size: 0.88rem;
+  }
+  .vpm-table th {
+    background: var(--color-accent); color: #FFFFFF;
+    padding: 0.8rem 1rem; text-align: left;
+    font-weight: 700; font-size: 0.75rem;
+    letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .vpm-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--color-border-light);
+    background: var(--color-surface); vertical-align: top; line-height: 1.55;
+  }
+  .vpm-table tr:last-child td { border-bottom: none; }
+  .priority-badge {
+    display: inline-block; font-size: 0.7rem; font-weight: 700;
+    padding: 0.1rem 0.45rem; border-radius: 3px; letter-spacing: 0.05em;
+  }
+  .priority-1 { background: #E8F0F8; color: var(--color-accent); }
+  .priority-2 { background: #FDF6F0; color: var(--color-accent-warm); }
+  .priority-3 { background: #F0F8F0; color: #4A8A4A; }
+  .highlight-box {
+    background: var(--color-accent-warm-light);
+    border: 1px solid #E8D8C8; border-radius: 10px;
+    padding: var(--space-md) var(--space-lg);
+    margin: var(--space-lg) 0; font-size: 0.95rem; line-height: 1.75;
+  }
+  .highlight-box strong { color: var(--color-accent-warm); }
+  .conclusion {
+    background: linear-gradient(160deg, #1B3A54 0%, #2C5F8A 100%);
+    color: #FFFFFF; border-radius: 16px;
+    padding: var(--space-xl) var(--space-lg);
+    margin: var(--space-xl) 0 0; text-align: center;
+  }
+  .conclusion h2 { color: #FFFFFF; margin: 0 0 var(--space-md); font-size: 1.5rem; }
+  .conclusion p {
+    color: rgba(255,255,255,0.85); font-size: 1.05rem;
+    max-width: 560px; margin: 0 auto var(--space-sm);
+  }
+  .conclusion .final-line {
+    font-family: var(--font-heading);
+    font-weight: 700; font-size: 1.15rem;
+    color: #FFFFFF; margin-top: var(--space-md);
+  }
+  .conclusion .scripture-dark {
+    background: rgba(255,255,255,0.1);
+    border-left: 3px solid rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.85);
+    padding: var(--space-sm) var(--space-md);
+    margin: 1.5rem auto; border-radius: 0 6px 6px 0;
+    font-size: 0.92rem; line-height: 1.75;
+    max-width: 520px; text-align: left;
+  }
+  .conclusion .scripture-dark .ref {
+    display: block; font-family: var(--font-heading);
+    font-size: 0.75rem; font-weight: 600;
+    color: rgba(255,255,255,0.6); margin-top: 0.3rem;
+  }
+  .article-footer {
+    max-width: var(--max-width); margin: 0 auto;
+    padding: var(--space-lg) var(--space-md) var(--space-xl);
+    text-align: center; font-family: var(--font-heading);
+    font-size: 0.78rem; color: var(--color-text-secondary);
+    border-top: 1px solid var(--color-border-light);
+  }
+  .article-footer .source-note {
+    font-size: 0.72rem; color: #999; margin-top: var(--space-xs);
+  }
+  strong { font-weight: 700; color: var(--color-text); }
+  @media (max-width: 600px) {
+    html { font-size: 15.5px; }
+    .hero { padding: var(--space-xl) var(--space-sm); }
+    .article-container { padding: var(--space-lg) var(--space-sm) var(--space-xl); }
+    .pull-quote { margin: var(--space-md) 0; padding: var(--space-md); }
+    .pull-quote p { font-size: 1.1rem; }
+    .core-value, .identity-card, .key-findings { padding: var(--space-md); }
+    .conclusion { padding: var(--space-lg) var(--space-md); }
+    .vpm-table { font-size: 0.82rem; }
+    .vpm-table th, .vpm-table td { padding: 0.6rem 0.7rem; }
+  }
+</style>
 <meta property="og:type" content="article">
 <meta property="og:title" content="CMF는 어떤 친구인가? (CMF 스피릿 강의)">
 <meta property="og:description" content="전북CMF 징검다리 수련회 | 2026.5.23 | 강사: 이상협누가 I. 어떤 친구가 오래 가나? 어떤 친구가 오래 가나? 학교 때 친했던 친구들 있잖아. 졸업하고 나면 어떻게 되나? 다들 경험해봤겠지만, 그렇게 친하던 친구들이 시간이 지나면 연락이 뚝 끊기기도 하고, 어색해지기도 한다. 그런데 또 오래오래 가는 친구들">
@@ -30,126 +340,294 @@
 <link rel="canonical" href="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/s/kv451v/">
 </head>
 <body>
-<main data-template="editorial">
-<article>
-<pre class="frontmatter">tags: [강의, CMF, 스피릿, 공동체, 정체성]
-related: [[../../wiki/projects/CMF스피릿강의_전북수련회]], [[../../wiki/topics/CMF_VPM철학]]
-status: 최종안
-date: 2026-04-30</pre>
-<h1>CMF는 어떤 친구인가? (CMF 스피릿 강의)</h1>
-<p>전북CMF 징검다리 수련회 | 2026.5.23 | 강사: 이상협누가</p>
-<p>---</p>
-<h2>I. 어떤 친구가 오래 가나?</h2>
-<p>어떤 친구가 오래 가나?</p>
-<p>학교 때 친했던 친구들 있잖아. 졸업하고 나면 어떻게 되나? 다들 경험해봤겠지만, 그렇게 친하던 친구들이 시간이 지나면 연락이 뚝 끊기기도 하고, 어색해지기도 한다. 그런데 또 오래오래 가는 친구들이 있다. 왜 어떤 친구는 오래 가고, 어떤 친구는 안 갈까?</p>
-<p>직능이 같아서? 맞다. 같은 일을 하면 이해의 폭이 넓어지고, 공감대가 생긴다. 여기 의치한간이 모여 있는데, 서로 직능이 같으니까 통하는 부분이 있을 거다. 그런데 직능이 같아도 헤어지는 친구들이 있다.</p>
-<p>코드가 맞아서? 말이 통하고, 취향이 비슷하고, 같이 있으면 편하니까. 그런데 그것만으로는 부족하더라.</p>
-<p>재밌어서? 함께하는 시간이 즐거운 친구가 좋다. 그런데 재미는 변한다.</p>
-<p>결국, 정말 오래가는 친구는 <strong>가치가 같은 친구</strong>다. 같은 방향을 보고, 같은 것을 소중히 여기는 친구. 시간이 지나고, 상황이 바뀌고, 멀리 떨어져 있어도 그 친구와는 다시 만나도 어제 본 것처럼 자연스럽다. 왜냐하면 본질적으로 같은 것을 바라보고 있기 때문이다.</p>
-<p>성경에서도 이것을 이야기한다.</p>
-<p>예수님이 제자들에게 말씀하셨다. &quot;너희는 내 친구라&quot; (요 15:12-15). 처음에는 제자였다. 그다음엔 종이었다. 그런데 예수님은 그들을 친구라고 부르셨다. 친구는 주인이 하는 것을 다 알게 된다고 하셨다. 같은 마음, 같은 방향을 보는 관계. 그것이 친구다.</p>
-<p>다윗과 요나단의 이야기도 그렇다. &quot;요나단의 마음이 다윗의 마음과 하나가 되어&quot; (삼상 18:1-3). 영혼이 한 영혼에 연결되는 관계. 왕자와 목동 출신이라는 신분 차이도, 아버지 사울의 반대도 그 우정을 끊지 못했다. 가치가 같았기 때문이다.</p>
-<p>잠언 17장 17절이 이렇게 말한다. &quot;친구는 모든 때에 사랑하며 형제는 위급한 때를 위하여 났느니라.&quot; 어려울 때 곁에 있는 친구가 진짜 친구다.</p>
-<p>그렇다면 CMF는 여러분에게 어떤 친구인가? CMF와는 오래가는 친구가 될 수 있을까?</p>
-<p>---</p>
-<p>딸에게 항상 이야기한다. &quot;좋은 친구가 되어 주어라. 예수님이 좋은 친구셨어.&quot;</p>
-<p>우리 딸이 어릴 때, 친구들이 자주 집에 와서 놀고 간다. 그럴 때마다 내가 딸의 친구들에게 &quot;우리 딸이랑 놀아줘서 고마워&quot;라고 인사한다. 그런데 친구들이 돌아가고 나면 딸이 항상 이렇게 말한다.</p>
-<p>&quot;아빠 아니야 내가 놀아주는 거야. 애들이 다 나랑 놀고 싶어해.&quot;</p>
-<p>맞다. 우리 딸이 매력이 있다. 그래서 늘 주변에 친구들이 있다.</p>
-<p>CMF는 어떤 매력이 있는가? CMF랑 놀아줘서 고마워, 라고 해야 하나? 아니면 CMF가 너무 매력 있어서 애들이 다 오고 싶어서 오는 건가?</p>
-<p>솔직히 물어보자. <strong>여러분은 왜 CMF에 왔나?</strong></p>
-<p>내가 없으면 CMF가 망할까봐 왔나? 의무감으로? 아니면 CMF가 너무 좋고 매력 있어서 왔나?</p>
-<p>CMF는 어떤 친구인가? 알고 만나나? 만나다 보니 알게 되나? 사람마다 다르다. 어떤 사람(아주 소수는)은 CMF의 정체성과 가치를 먼저 알고 들어온다. 어떤 사람은 관계 속에서 만나다 보니 알게 된다. 둘 다 괜찮다. 그런데 저마다 자신이 생각하는 CMF가 있다. 자신의 생각과 맞지 않으면 그만하거나, 굳이 열심히 하지 않아도 된다. 그렇지만 그렇게 하다 보면 언젠가 CMF라는 친구는 여러분이 원하는 대로 안 돼서 실망하고 떠나게 될 것이다.</p>
-<p>들어온 동기는 다양하다. 나는 중2 때 처음 교회에 나갔는데, 계기가 뭔지 아나? 내 짝이 장로님 아들이었다. 찬양 인도도 하고 예쁘장하게 생긴 친구였는데, 그 집에 놀러 갔더니 편지가 한 박스가 있는 거다. 수백 통인데, 이름이 다 달랐다. 어디서 받았냐고 했더니 교회에서 받았다고 하더라. 그래서 나를 교회에 데려가라 했다. 솔직히 예쁜 여자 보러 간 거다. 그런데 다행히도 고1 때 거기서 예수님을 만났다. 동기는 달랐지만, 교회에서 예수님을 만난 것이다.</p>
-<p>우리도 다양한 기대와 동기로 공동체에 들어온다. 그런데 자신이 기대한 것과 실제가 다르면 결국 실망하고 떠나게 될 수 있다. 중요한 것은 그 공동체 안에서 무엇을 만나느냐다. 핵심 가치를 알아가는 것이 중요하다.</p>
-<p>매력은 어디서 나올까?</p>
-<p>우리 시대(꼰대)에 흔히 이런 말을 많이 했다. &quot;요즘 시대에 CMF 스피릿이 너무 좋다. 매력적이다. 그래서 난 CMF에 나온다.&quot; 좋은 말이다. 그런데 내가 항상 궁금한 게 있다.</p>
-<p>그 스피릿의 실체가 무엇인가? 실제로 물어보면 딱히 잘 대답해주는 사람이 없다. &quot;뭔가 좋아요. 분위기가 좋아요. 사람들이 좋아요.&quot; 그런데 그게 전부인가?</p>
-<p>스피릿이란 느낌이 아니다. 목표, 방향, 가치를 포함한 것이다. 사명선언문, 핵심가치, 행동강령. 이것이 스피릿의 실체다. 그것을 오늘 같이 한번 들여다보자.</p>
-<p>---</p>
-<h2>II. Value, People, Ministry</h2>
-<p>본질적으로 가치가 중요하다. 가치, 사람, 사역. 이 순서가 중요하다고 생각한다. 동의하나?</p>
-<h3>Value — 가치가 먼저다</h3>
-<p>&quot;사람이 더 중요하지, 어떻게 가치가 중요해요?&quot; 라고 생각하는 사람도 있을 것이다.</p>
-<p>맞다. 사람도 중요하다. 그런데 왜 가치가 먼저냐?</p>
-<p>생각해봐라. 왜 순교하나? 왜 나라를 지키기 위해 전쟁에서 죽나? 가치에 목숨을 거는 거다. 기독 순교자들은 신앙이라는 가치 때문에 목숨을 걸었다. 나라를 지킨 사람들은 자유와 정의라는 가치 때문에 목숨을 걸었다. 공통점이 뭔가? 가치가 생명(사람)보다 우선이었다는 것이다.</p>
-<p>성경이 말한다. &quot;우리가 살아도 주를 위하여 살고 죽어도 주를 위하여 죽나니&quot; (롬 14:8). 삶과 죽음의 기준이 주님이라는 것이다. 그것이 가치다. 사도들도 &quot;사람보다 하나님께 순종하는 것이 마땅하니라&quot; (행 5:29)고 했다. 심지어 예수님은 &quot;온 천하를 얻고도 영혼을 잃으면 무엇이 유익하리요&quot; (막 8:34-37)라고 하셨다. 가치가 모든 것보다 우선이라는 것이다.</p>
-<p>가치가 없으면 어떻게 될까? 교회에서 사람 때문에 상처 받으면 안 간다. 교회의 본질은 예수님을 만나는 것인데, 사람 때문에 오히려 손해를 보게 된다. CMF에서 어떤 사람이 싫으면 떠난다. 공동체의 가치를 놓치는 것이다. <strong>가치가 없으면, 사람 때문에 들어오거 나간다.</strong> 우리는 가치에 동의하는 사람들이 모인 공동체다.</p>
-<p>개인적인 이야기를 하나 하자면, 나는 고1 때 교회에서 연애를 했다. 그런데 나중에 헤어졌다. 만약 신앙이라는 가치가 없었다면, 그 사람 때문에 상처받고 교회를 떠났을 수 있었다. 그러면 본질인 예수님을 놓치는 것이다. 가치가 사람보다 먼저라는 것이 이런 의미다.</p>
-<h3>People — 사람은 사역보다 소중하다</h3>
-<p>&quot;그럼 사역이 중요하지 않냐&quot;고 할 수 있다. 맞다. 사역도 중요하다. 그런데 사람이 더 소중하다.</p>
-<p>사역을 하다 보면 현타 올 때가 있다. &quot;이거 왜 하지? 이렇게 하는 게 의미가 있나?&quot; 사역이 사람보다 앞서면 일하다 싸운다. 사람들을 잃게 된다. 일은 잘 돌아갔는데, 사람은 없다. 왜 학생 때 CMF임원 1년 하고 나면 안 나올까? 일 중심, 사역 중심이 위험할 수 있다.</p>
-<p><strong>✅ 성공 사례</strong> — 나는 보스 타입이다. 동원을 잘 한다. 섬에도 혼자 안 갔다(&#39;인생의 십일조 운동&#39;이라는 이름으로 공미사, 공보의에 미래를 건 사람들 모임을 만들어 12명의 동기들이 함께 섬으로 갔다). 같이 죽자는 마인드였다. CMF의 가치 — 약한 자를 섬기고 복음을 증거한다 — 가 동기였기에, 그 경험은 흩어진 후에도 각자의 삶 속에 의미로 남았다.</p>
-<p><strong>❌ 실패 사례</strong> — 교회 일을 하면서 어떤 후배들이 나를 따랐다. 내가 보스 타입이다. 동원을 잘한다. 가치 때문이 아니라, 사람인 나 때문에. 그런데 내가 스트레스를 받아서, 관계가 어려워져서 어쩔 수 없이 공동체를 떠났다. 그러자 나를 따라오던 후배들도 공동체를 같이 떠났다. 나는 반대 했지만, 그들이 나 때문에 공동체를 했기 때문에 남아 있어야 할 이유를 발견하지 못했다. 나는 미안했다.</p>
-<p>핵심 깨달음이 이것이다. <strong>가치 때문에 공동체를 하게 했어야 했는데, 나라는 사람만 따라오게 했다.</strong> 그것이 아쉬움으로 남는다.</p>
-<p>여러분, 험난한 제도권 병원에 들어가면 다 똑같이 변한다고 하지만, 우리는 도덕적이고 창의적으로 사람을 살리며 일하겠다고 결단해야 합니다.</p>
-<p>물론, 가치를 모르고 일할 수도 있고, 사람 때문에 일할 수도 있다. 그렇게 일하다 배우게 된다. 배우면 된다. &quot;또 네가 많은 증인 앞에서 내게 들은 것을 신실한 사람들에게 부탁하라&quot; (딤후 2:2). 세대를 이어 배워가는 것이다.</p>
-<p>자리가 사람을 만든다는 말을 별로 좋아하진 않지만, 그런 측면이 있다. 그 자리에서 일하다 보면 그 일에 적합한 사람이 되기도 한다. 이 말을 별로 좋아하지 않는 이유는, 왜 그 자리에 가면 다 똑같아지냐는 것이다. 국회의원들 보면 그렇지 않나, 혹시 병원에서도 그런가? 좋은 사람이라고 생각했는데, 왜 그 자리에 가면 그렇게 하시나? 개인적으로 도덕적인 사람도, 비도덕적인 사회(제도) 안에서 비도덕적으로 행동할 수 있다.(도덕적 인간과 비도덕적 사회, 나인홀드 리버) 나는 그 자리에 가면 그렇게 일 안 하고 싶다. 도덕적이고 더 창의적으로 일하고 싶다. 그런데 나 역시 조심해야 한다.</p>
-<p>성경은 말한다. &quot;네 이웃을 네 자신같이 사랑하라&quot; (마 22:37-40). 사람이 사역보다 우선인 이유다. &quot;우는 자와 함께 울고 웃는 자와 함께 웃으라&quot; (롬 12:15). &quot;너희가 그리스도의 법을 이루려거든 짐을 서로 지라&quot; (갈 6:2). 사람을 돕는 것이 곧 사역이다.</p>
-<h3>Ministry — 사역은 성령께서 이루신다</h3>
-<p>가치와 사람이 있으면, 사역은 성령의 일이 된다.</p>
-<p>어떤 가치에 동의하는 사람들, 그 공동체가 함께 일하면 성령께서 일을 이루신다. &quot;여러 은사가 있으나 같은 성령이시고... 성령을 나타내심은 각 사람에게 유익하게 하려 함이라&quot; (고전 12:4-11). 의치한간+간사 각자가 가진 은사가 다 다르지만, 같은 성령이 역사하신다는 것이다.</p>
-<p>그래서 나는 늘 공동체 안에 공유된 가치가 있는가, 질문하려 한다. CMF 스피릿이라고 하는 실체 없는 것 같이 보이는 그 가치가 우리 안에 공유되어 있는가? 아직은 모를 수 있다. 모르고 CMF왔을 수 있다. 여러분들은 학생이기 때문에 당연히 모를 수 있다. 하지만 하나님은 의도가 있으시다.</p>
-<p>---</p>
-<h2>III. 같은 마음을 품으라</h2>
-<p>가치는 사람과 사역에 우선합니다. 사람은 사역보다 소중합니다. 사역은 성령께서 이끄십니다. 어떤 가치에 동의하는 사람들, 공동체가 함께 일하면서 성령께서 일을 이루신다.</p>
-<p>그렇다면 이 공동체가 어떻게 같은 마음을 품을 수 있을까?</p>
-<p>고린도전서 1장 10절이 말한다. &quot;형제들아 내가 우리 주 예수 그리스도의 이름으로 너희를 권하노니 모두가 같은 말을 하고 너희 가운데 분쟁이 없이 같은 마음과 같은 뜻으로 온전히 합하라.&quot; 빌립보서 4장 2절도 말한다. &quot;주 안에서 같은 마음을 품으라.&quot;</p>
-<p>제일 어렵다. 솔직히.</p>
-<p>부부관계를 생각해봐라. 결혼할 때 일심동체라고 생각했다. 그런데 살아보면 아니다. <strong>이심이체</strong>다. 서로 다른 마음을 가지고 있다는 것, 이것이 현실이다. 우리가 일심동체인 줄 알았다가 실망하는 경우가 너무 많다. CMF 공동체도 마찬가지다. 세대가 다르고, 직능이 다르고, 사는 지역도 다르고, 자라온 환경도 다르다. 당연히 생각이 다르다. 원래 이심이체가 맞다.</p>
-<p>중요한 인식의 전환이 여기 있다.</p>
-<p><strong>일심동체를 요구할 수는 없다. 우리의 목표는 일심동체 되어져 가는 것이다.</strong> 완성이 아니라 함께 걸어가는 여정이다.</p>
-<p>이심이체라고 생각하지 않으면 안 된다. 아내와 내가 다른 마음이기 때문에 아내의 마음을 알고 싶다. 안 그러면 내 마음을 아내에게 요구하게 된다. &quot;왜 내 마음대로 하지 않냐고!!&quot; 그럼 아내 마음이 진리인가? 그것도 아니다. 그래서 우리는 예수 그리스도 안에서 같은 마음을 품어야 한다. 예수 그리스도 없이 같은 마음을 품는 것은 불가능하다. 물론 가능은 하겠지만 진리가 아니다. 한 사람이 로봇이 되는 것이다. 부부관계는 같은 마음이 되어져 가는 것이다. 어떻게 그럴 수 있나? 예수 그리스도의 마음을 함께 공부하면서, 주 안에서 같은 마음이 되어져 가는 것이다.</p>
-<p>&quot;너희 안에 이 마음을 품으라 곧 그리스도 예수의 마음이니&quot; (빌 2:5). &quot;한 몸과 한 성령이시고... 한 주, 한 믿음, 한 세례&quot; (엡 4:4-6). 다양성 속에서 하나가 되어가는 것이다.</p>
-<p>주님이 우리에게, 우리 CMF에게 주신 마음, 그것이 우리 공동체의 존재 이유이고, 우리가 모이는 이유이다. 우리는 그것을 배우고, 나누고, 공유해야 한다. 그것이 CMF 스피릿이다.</p>
-<p>---</p>
-<h2>IV. Christian Medical Fellowship</h2>
-<h3>정체성 (Identity)</h3>
-<p>한국누가회(Christian Medical Fellowship Korea)는 의료사회에서 예수 그리스도의 주되심을 인정하는 기독 의료인과 예비의료인으로 구성된 기독 공동체로서, 하나님 나라를 위해 일하는 복음적인 초교파적 신앙운동체이다.</p>
-<p>주되심을 인정한다는 것이 뭘까? 공부해야 한다. 그것도 교회에서가 아니라 의료사회에서다. &quot;예수를 주로 시인하고... 구원을 얻으리라&quot; (롬 10:9). &quot;모든 혀가 예수 그리스도를 주라 고백하여&quot; (빌 2:10-11). 의료 현장도 예외가 아니다. 그 고백이 진짜라면 우리가 의료인으로 사는 방식이 달라져야 한다. 나는 이것을 직업적 거듭남이라고 표현하고 싶다. 우리가 영적으로 거듭났다면, 이제 직업적 거듭남을 통해 의료사회에서 그리스도의 주 되심을 인정하고 실천해야 한다.</p>
-<p>하나님 나라를 위해 일하는 신앙운동체라고 한다. 하나님 나라는 뭘까? &quot;먼저 그의 나라와 그의 의를 구하라&quot; (마 6:33). 예수님은 온 갈릴리를 다니시며 나라의 복음을 전파하시며 모든 병과 약한 것을 고치셨다 (마 4:23). 의료와 복음이 함께였다. 그것이 하나님 나라다. 하나님 나라의 총체성, 이것도 우리가 배워야 한다.</p>
-<p>왜 운동체라고 했을까? 단순한 모임이 아니라 운동이다. 이것이 구체적으로 무엇인지 질문해야 한다.</p>
-<h3>사명선언문 (Mission Statement)</h3>
-<p>한국누가회(Christian Medical Fellowship Korea)는 회원들의 전인적 신앙성장을 돕고, 하나님의 뜻에 따라 의료사회를 변화시키며, 의료를 통해 이웃과 사회와 세상을 섬기고, 하나님의 나라를 위해 일하는 것을 목적으로 한다.</p>
-<p>멋있지 않나? 내가 성장되고, 의료사회를 변화시킨다고 한다. 그리고 의료를 통해 이웃사랑을 실천함으로 하나님 나라, 하나님의 영광을 위해 일한다고 말한다. 나는 이런 사명이 있어서 CMF가 좋다.</p>
-<p>갑자기 내가 생각하는 것과 너무 다른가? 나가고 싶은가? 모르고 들어올 수 있다. 사람이 좋아서, 일이 좋아서, 사역이 좋아서 왔을 수 있다. 그런데 가치를 배우기 바란다. 그렇지 않으면 언젠간 CMF라는 친구는 여러분이 원하는 대로 안 돼서 실망하고 떠나게 될 것이다.</p>
-<p>떠나도 된다. 주님만 안 떠나면 되지 뭐. 맞다. CMF 안 해도 된다. IVF, CCC 뭐든 좋다. 그런데 내가 항상 질문해본다. 의료사회를 기독교적으로 변화시킬 대안 공동체가 있는가? CMF 말고 더 좋은 공동체가 있다면 그리 가도 된다고 본다. 적어도 나는 여기가 아직은 희망이라고 생각해서 붙어 있다.</p>
-<p>---</p>
-<h2>V. 핵심가치 및 행동강령 (Core Values)</h2>
-<h3>1. 복음을 증거한다</h3>
-<p>일상적 삶의 터전에서 복음의 일꾼으로 살아간다. 통전적 신앙의 실천으로 환자와 동료에게 선한 모범이 되도록 노력한다. 의료 선교사 양성 및 파송과 지원에 동참한다.</p>
-<p>정말 이렇게 살고 싶다. 하지만 잘 안 되는 부분이다.</p>
-<p>어떻게 복음을 증거하나? 강압적으로 하는 것이 아니다. 먼저 의료인으로서 신뢰를 얻는 것이다. 삶으로 증거하고, 기회가 될 때 말로도 나눌 수 있다. 예수님이 말씀하셨다. &quot;너희 빛이 사람 앞에 비치게 하여 그들로 너희 착한 행실을 보고 하늘의 아버지께 영광을 돌리게 하라&quot; (마 5:16). 우리 안에 있는 소망에 관한 이유를 묻는 사람에게 대답할 준비를 하라고도 하셨다 (벧전 3:15). 예수님은 &quot;포로 된 자에게 자유를, 눈 먼 자에게 다시 보게 함을&quot; (눅 4:18) 전파하셨다. 의료와 영혼 돌봄이 함께였다. 대위임령이 있다. &quot;모든 민족에게 가르쳐 지키게 하라&quot; (마 28:19-20). 의료 현장이 그 터전이다.</p>
-<p>학생들에게 부탁한다. 환자에게, 동료에게 선한 모범이 되는 의료인이 되기를 바란다. 그러기 위해서는 CMF 공동체를 통해서 배워야 한다.</p>
-<h3>2. 하나님의 사람을 세운다</h3>
-<p>회원 개인마다 그리스도의 제자로 양육받고 전인적으로 성장할 수 있도록 돕는다. 성숙한 신앙과 인품을 지닌 리더의 지속적인 양성을 위해 힘쓴다. 새내기 누가, 수련의, 군의공보관 등 힘든 상황 속에 있는 회원들을 격려한다.</p>
-<p>나도 잘 못 서는데, 누굴 세워... 라고 생각했다. 그런데 세운다기 보다는 세워지는 것 같다. 그러니까 먼저 나부터 세워져야 한다.</p>
-<p>&quot;또 네가 많은 증인 앞에서 내게 들은 것을 신실한 사람들에게 부탁하라&quot; (딤후 2:2). 세대를 이어가는 양육이다. &quot;모이기를 폐하는 어떤 사람들의 습관과 같이 하지 말고 서로 권하여&quot; (히 10:24-25). CMF 모임이 그 역할을 한다. &quot;그러므로 서로 위로하고 서로 덕을 세우라&quot; (살전 5:11). 새내기 누가, 수련의, 군의공보의, 힘든 상황 속에 있는 회원들이 있다. 그들을 격려하고 세워가는 것이 우리의 역할이다.</p>
-<h3>3. 공동체로 살아간다</h3>
-<p>세대별, 직능별, 지역별 특성에 따른 가치관의 다양성을 존중한다. 지역누가회, 사역부서, 동기공동체 활동에 적극적으로 참여한다. 전국 수련회의 참여를 통해 공동체성의 회복과 유지를 위해 노력한다.</p>
-<p>사람은 공동체에서 세워진다. 그리고 나와 다른 사람이 연합한다는 것, 이것이 정말 중요하다.</p>
-<p>의치한간, 의치한간간이라고 하는데, 간사도 포함해서, 다른 직능과 함께 한다는 것. 누가회 아니면 가능할까? 세상에서는 직능 간 대립이 너무 심하고 심각하다. 의사 따로, 치과의사 따로, 한의사 따로, 간호사 따로, 각자의 이익을 위해 싸우기 바쁘다. 그런데 CMF에서는 그 다른 직능들이 함께 모인다.</p>
-<p>우리가 이런 공동체의 모습을 보일 때 믿지 않는 사람들이 하나님 나라를 보게 될 것이다. &quot;내가 너희를 사랑한 것처럼 너희도 서로 사랑하라... 그러므로 그들이 너희가 내 제자임을 알리라&quot; (요 13:34-35). 공동체의 사랑이 증거다. &quot;몸은 하나인데 많은 지체가 있고&quot; (고전 12:12-27). 각자가 다른 지체이지만 한 몸이다.</p>
-<h3>4. 약한자를 섬긴다</h3>
-<p>사회적 약자 및 소외된 이웃들을 우선적으로 섬긴다. 이웃 섬김에 대한 구체적 실천을 위해 노력한다. 제도적으로 평등한 의료가 실현될 수 있도록 노력한다.</p>
-<p>의료의 본질에 대한 이야기다. 왜 의료인이 되려고 하는가? 어떤 의료인으로 살아가길 원하나? 돈 잘 버는 직업이라 여기 왔나? 언젠간 공허할 것이다. 의료를 통해 하나님 사랑, 이웃 사랑을 실천하는 것을 우리는 배워야 한다.</p>
-<p>예수님이 말씀하셨다. &quot;이 지극히 작은 자 하나에게 한 것이 곧 내게 한 것이니라&quot; (마 25:31-46). 선한 사마리아인 이야기도 있다. &quot;가서 너도 이와 같이 하라&quot; (눅 10:25-37). 의료 선교의 모델이다. &quot;소경이 보며 절뚝거리는 자가 다니며 나병환자가 깨끗함을 받으며 귀먹은 자가 들으며 가난한 자에게 복음이 전파된다&quot; (눅 7:22).</p>
-<p>돈에 대한 이야기도 피할 수 없다. &quot;돈을 사랑함이 모든 악의 근원이 되나니&quot; (딤전 6:10). 의료인으로서의 경제윤리를 생각해야 한다. &quot;너희가 자유를 위하여 부르심을 받았으되 자유로 육체의 기욕을 삼지 말고 오직 사랑으로 서로 종노릇 하라&quot; (갈 5:13-14). 자유를 얻었다는 것이 내 마음대로 한다는 것이 아니라, 사랑으로 섬기는 데 쓴다는 것이다.</p>
-<h3>5. 생명을 존중한다</h3>
-<p>우리는 어떤 상황에서도 생명을 살리고 지키는 일을 우선시한다. 성경적 생명윤리를 연구하며 보편화 및 제도화에 힘쓴다. 생태환경 보호에 적극적으로 동참한다.</p>
-<p>우리는 생명을 다루는 직업이다. 우리가 하는 일에 성경적인 윤리관이 없다면 믿지 않는 사람과 다르지 않은 의료인이 되는 것이다. 우리는 성경적인 생명의료윤리를 배우고 실천해야 한다.</p>
-<p>&quot;하나님이 자기 형상 곧 하나님의 형상대로 인간을 창조하시되&quot; (창 1:27). 인간은 하나님의 형상이다. &quot;내가 모태에서 너를 지었고&quot; (렘 1:5). &quot;내가 두렵고 신기하게 지음을 받았사오니&quot; (시 139:13-14). 생명의 신비로움을 알아야 한다.</p>
-<p>낙태, 존엄사, 유전자 검사, 생식윤리. 이 시대 의료인이 직면하는 생명윤리의 문제들이 있다. &quot;공의를 행하며 인자를 사랑하며 겸손하게 네 하나님과 함께 행하는 것&quot; (미 6:8). 그리고 &quot;내가 온 것은 양들로 생명을 얻게 하고 더 풍성하게 하려는 것이라&quot; (요 10:10). 풍성한 생명. 그것이 우리가 추구하는 것이다.</p>
-<p>---</p>
-<h2>VI. 결론: 이것이 CMF 스피릿이다</h2>
-<p>이런 핵심가치와 행동강령을 실천하기 위해 먼저는 배우고, 그다음 실천하는 공동체가 되어야 한다. &quot;말씀을 행하는 자가 되라 행하는 자는 그 행하는 일에 복을 얻으리라&quot; (약 1:22-25).</p>
-<p>우리 안에는 학사학원사역부, 선교부, 사회부, 크게 세 개의 사역부서들이 있다. 학사학원사역부를 통해 배우고, 양육받고, 공동체로 성장하게 된다. 의료인이 되면서, 예비의료인 때부터, 선교부와 사회부 여러 모임에서 자신의 비전을 잘 찾고 공동체로 살아가게 된다.</p>
-<p>이런 스피릿... <strong>이것이 CMF 스피릿이다.</strong></p>
-<p>정해진 목표, 방향, 공유된 가치 위에서 다양한 사람들이 함께 일할 때 성령께서 역사하신다는 믿음. 그 믿음으로 살아가는 운동체. &quot;하나님이 너희 안에서 행하시는 것은 자기 기쁜 뜻을 위하여 원하는 것과 행하는 것을 모두 이루심이니라&quot; (빌 2:12-13). 우리가 하는 것이 아니라 하나님이 이루신다는 것이다.</p>
-<p>어찌 좀 매력이 있어 보이나?</p>
-<p>CMF가 이런 친구였다. 이런 친구와 좋은 친구 되는 여러분들이 되길 소망하고 기도한다. 예수님 되신 좋은 친구처럼.</p>
-</article>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-label">CMF Spirit Lecture</div>
+    <h1>CMF는 어떤 친구인가?</h1>
+    <p class="hero-subtitle">오래가는 친구의 비밀은 '같은 가치'에 있다.<br>CMF 스피릿의 실체를 묻고, 답하고, 함께 걸어가는 이야기.</p>
+    <div class="hero-meta">
+      <span>전북CMF 징검다리 수련회</span>
+      <span>2026. 5. 23</span>
+      <span>강사: 이상협누가</span>
+    </div>
+  </div>
+</header>
+
+<main class="article-container">
+
+  <div class="key-findings">
+    <div class="key-findings-title">Key Findings</div>
+    <ol>
+      <li><strong>오래가는 관계의 핵심은 '같은 가치'다.</strong> 직능이 같아서도, 재미있어서도 아닌, 본질적으로 같은 것을 바라보는 관계가 오래간다.</li>
+      <li><strong>Value &rarr; People &rarr; Ministry.</strong> 가치가 먼저이고, 사람이 사역보다 소중하며, 사역은 성령께서 이루신다.</li>
+      <li><strong>'같은 마음'은 완성이 아니라 여정이다.</strong> 일심동체를 요구할 수 없다. 예수 그리스도 안에서 같은 마음이 되어져 가는 것이다.</li>
+      <li><strong>CMF 스피릿은 느낌이 아니라 가치 체계다.</strong> 사명선언문, 5대 핵심가치, 행동강령 &mdash; 이것이 스피릿의 실체다.</li>
+      <li><strong>가치를 모르면 실망하고 떠난다.</strong> 사람이나 일 때문에 왔어도 괜찮지만, 가치를 배워야 오래 함께할 수 있다.</li>
+    </ol>
+  </div>
+
+  <span class="section-number">Section I</span>
+  <h2>어떤 친구가 오래 가나?</h2>
+
+  <p>학교 때 친했던 친구들이 있다. 졸업하면 어떻게 되나? 그렇게 친하던 친구들이 시간이 지나면 연락이 뚝 끊기기도 하고, 어색해지기도 한다. 그런데 또 오래오래 가는 친구들이 있다. 왜 어떤 친구는 오래 가고, 어떤 친구는 안 갈까?</p>
+
+  <p>직능이 같아서? 같은 일을 하면 이해의 폭이 넓어지고 공감대가 생긴다. 코드가 맞아서? 말이 통하고 취향이 비슷한 친구. 재밌어서? 함께하는 시간이 즐거운 친구. 그런데 그것만으로는 부족하다.</p>
+
+  <div class="pull-quote">
+    <p>정말 오래가는 친구는 가치가 같은 친구다.<br>같은 방향을 보고, 같은 것을 소중히 여기는 친구.</p>
+  </div>
+
+  <p>시간이 지나고, 상황이 바뀌고, 멀리 떨어져 있어도 그 친구와는 다시 만나면 어제 본 것처럼 자연스럽다. 본질적으로 같은 것을 바라보고 있기 때문이다.</p>
+
+  <div class="scripture">
+    "너희는 내 친구라." 처음에는 제자였고, 그다음엔 종이었다. 그런데 예수님은 그들을 친구라고 부르셨다. 친구는 주인이 하는 것을 다 알게 된다. 같은 마음, 같은 방향을 보는 관계. 그것이 친구다.
+    <span class="ref">&mdash; 요한복음 15:12&ndash;15</span>
+  </div>
+
+  <div class="scripture">
+    "요나단의 마음이 다윗의 마음과 하나가 되어" &mdash; 영혼이 한 영혼에 연결되는 관계. 왕자와 목동이라는 신분 차이도, 아버지 사울의 반대도 그 우정을 끊지 못했다.
+    <span class="ref">&mdash; 사무엘상 18:1&ndash;3</span>
+  </div>
+
+  <p>그렇다면 CMF는 여러분에게 어떤 친구인가? CMF와는 오래가는 친구가 될 수 있을까?</p>
+
+  <hr class="section-divider">
+
+  <p>딸에게 항상 이야기한다. <em>"좋은 친구가 되어 주어라. 예수님이 좋은 친구셨어."</em></p>
+
+  <p>딸의 친구들이 자주 집에 와서 놀고 간다. 그럴 때마다 "우리 딸이랑 놀아줘서 고마워"라고 인사한다. 그런데 친구들이 돌아가면 딸이 말한다. <em>"아빠 아니야, 내가 놀아주는 거야. 애들이 다 나랑 놀고 싶어해."</em></p>
+
+  <p>CMF는 어떤 매력이 있는가? CMF랑 놀아줘서 고마워, 라고 해야 하나? 아니면 CMF가 너무 매력 있어서 다 오고 싶어서 오는 건가?</p>
+
+  <div class="highlight-box">
+    <strong>솔직히 물어보자.</strong> 여러분은 왜 CMF에 왔나? 의무감으로 왔나, CMF가 좋아서 왔나? CMF의 정체성과 가치를 먼저 알고 들어온 사람도 있고, 관계 속에서 만나다 보니 알게 되는 사람도 있다. 둘 다 괜찮다. 그런데 가치를 배우지 않으면, 언젠가 CMF라는 친구가 내 기대대로 안 돼서 실망하고 떠나게 될 것이다.
+  </div>
+
+  <p>나는 중2 때 처음 교회에 나갔다. 짝이 장로님 아들이었는데, 그 집에 놀러 갔더니 편지가 한 박스 있었다. 수백 통인데 이름이 다 달랐다. 교회에서 받았다 해서, 솔직히 예쁜 여자 보러 갔다. 그런데 다행히 고1 때 거기서 예수님을 만났다. 동기는 달랐지만, 교회에서 예수님을 만난 것이다.</p>
+
+  <p>중요한 것은 공동체 안에서 무엇을 만나느냐다. 핵심 가치를 알아가는 것, 그것이 핵심이다.</p>
+
+  <div class="pull-quote">
+    <p>스피릿이란 느낌이 아니다.<br>목표, 방향, 가치를 포함한 것이다.</p>
+  </div>
+
+  <p>"뭔가 좋아요. 분위기가 좋아요. 사람들이 좋아요." 그런데 그게 전부인가? 사명선언문, 핵심가치, 행동강령 &mdash; 이것이 스피릿의 실체다.</p>
+
+  <hr class="section-divider">
+
+  <span class="section-number">Section II</span>
+  <h2>Value, People, Ministry</h2>
+
+  <p>본질적으로 가치가 중요하다. <strong>가치, 사람, 사역.</strong> 이 순서가 중요하다.</p>
+
+  <table class="vpm-table">
+    <thead>
+      <tr><th>순서</th><th>원리</th><th>근거</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="priority-badge priority-1">1st</span> Value</td>
+        <td><strong>가치가 먼저다.</strong> 가치가 없으면 사람 때문에 들어오고 사람 때문에 나간다.</td>
+        <td>"우리가 살아도 주를 위하여 살고 죽어도 주를 위하여 죽나니" (롬 14:8)</td>
+      </tr>
+      <tr>
+        <td><span class="priority-badge priority-2">2nd</span> People</td>
+        <td><strong>사람은 사역보다 소중하다.</strong> 사역이 사람보다 앞서면 일하다 싸우고, 사람을 잃는다.</td>
+        <td>"네 이웃을 네 자신같이 사랑하라" (마 22:37&ndash;40)</td>
+      </tr>
+      <tr>
+        <td><span class="priority-badge priority-3">3rd</span> Ministry</td>
+        <td><strong>사역은 성령께서 이루신다.</strong> 가치에 동의하는 사람들이 함께 일하면 성령께서 역사하신다.</td>
+        <td>"여러 은사가 있으나 같은 성령이시고" (고전 12:4&ndash;11)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Value &mdash; 가치가 먼저다</h3>
+
+  <p>"사람이 더 중요하지, 어떻게 가치가 중요해요?"라고 생각할 수 있다. 그런데 왜 순교하나? 왜 나라를 지키기 위해 전쟁에서 죽나? 기독 순교자들은 신앙이라는 가치에 목숨을 걸었고, 나라를 지킨 사람들은 자유와 정의라는 가치에 목숨을 걸었다. 가치가 생명보다 우선이었다.</p>
+
+  <div class="scripture">
+    "온 천하를 얻고도 영혼을 잃으면 무엇이 유익하리요."
+    <span class="ref">&mdash; 마가복음 8:34&ndash;37</span>
+  </div>
+
+  <div class="pull-quote">
+    <p>가치가 없으면,<br>사람 때문에 들어오고 사람 때문에 나간다.</p>
+  </div>
+
+  <p>고1 때 교회에서 연애를 했는데 나중에 헤어졌다. 만약 신앙이라는 가치가 없었다면, 그 사람 때문에 상처받고 교회를 떠났을 수 있다. 그러면 본질인 예수님을 놓치는 것이다.</p>
+
+  <h3>People &mdash; 사람은 사역보다 소중하다</h3>
+
+  <p>사역이 사람보다 앞서면 일하다 싸운다. 사람들을 잃게 된다. 일은 잘 돌아갔는데 사람은 없다. 왜 학생 때 CMF 임원 1년 하고 나면 안 나올까? 일 중심, 사역 중심이 위험할 수 있다.</p>
+
+  <div class="case-study success">
+    <span class="case-study-label">성공 사례</span>
+    '인생의 십일조 운동'이라는 이름으로 공미사, 공보의에 미래를 건 사람들 모임을 만들어 12명의 동기들과 함께 섬으로 갔다. CMF의 가치 &mdash; 약한 자를 섬기고 복음을 증거한다 &mdash; 가 동기였기에, 그 경험은 흩어진 후에도 각자의 삶 속에 의미로 남았다.
+  </div>
+
+  <div class="case-study failure">
+    <span class="case-study-label">실패 사례</span>
+    어떤 후배들이 나를 따랐다. 가치 때문이 아니라 나라는 사람 때문에. 그런데 내가 공동체를 떠나자 나를 따라오던 후배들도 함께 떠났다. <strong>가치 때문에 공동체를 하게 했어야 했는데, 나라는 사람만 따라오게 했다.</strong> 그것이 아쉬움으로 남는다.
+  </div>
+
+  <h3>Ministry &mdash; 사역은 성령께서 이루신다</h3>
+
+  <p>가치와 사람이 있으면, 사역은 성령의 일이 된다. 의치한간+간사, 각자가 가진 은사가 다 다르지만 같은 성령이 역사하신다.</p>
+
+  <hr class="section-divider">
+
+  <span class="section-number">Section III</span>
+  <h2>같은 마음을 품으라</h2>
+
+  <div class="scripture">
+    "형제들아 내가 우리 주 예수 그리스도의 이름으로 너희를 권하노니 모두가 같은 말을 하고 너희 가운데 분쟁이 없이 같은 마음과 같은 뜻으로 온전히 합하라."
+    <span class="ref">&mdash; 고린도전서 1:10</span>
+  </div>
+
+  <p>제일 어렵다, 솔직히. 부부관계를 생각해봐라. 결혼할 때 일심동체라고 생각했다. 그런데 살아보면 아니다. <strong>이심이체</strong>다. 서로 다른 마음을 가지고 있다는 것, 이것이 현실이다. CMF 공동체도 마찬가지다. 세대가 다르고, 직능이 다르고, 사는 지역도 다르고, 자라온 환경도 다르다.</p>
+
+  <div class="pull-quote">
+    <p>일심동체를 요구할 수는 없다.<br>우리의 목표는 일심동체 되어져 가는 것이다.</p>
+  </div>
+
+  <p>이심이체라고 인식하지 않으면, 내 마음을 상대에게 요구하게 된다. "왜 내 마음대로 하지 않냐!"고. 그래서 우리는 예수 그리스도 안에서 같은 마음을 품어야 한다. 예수 그리스도 없이 같은 마음을 품는 것은 불가능하다.</p>
+
+  <div class="scripture">
+    "너희 안에 이 마음을 품으라 곧 그리스도 예수의 마음이니."
+    <span class="ref">&mdash; 빌립보서 2:5</span>
+  </div>
+
+  <p>주님이 우리에게, 우리 CMF에게 주신 마음 &mdash; 그것이 공동체의 존재 이유이고, 우리가 모이는 이유다. 우리는 그것을 배우고, 나누고, 공유해야 한다. <strong>그것이 CMF 스피릿이다.</strong></p>
+
+  <hr class="section-divider">
+
+  <span class="section-number">Section IV</span>
+  <h2>Christian Medical Fellowship</h2>
+
+  <h3>정체성 (Identity)</h3>
+
+  <div class="identity-card">
+    <div class="identity-card-label">CMF Korea 정체성</div>
+    <p>한국누가회(Christian Medical Fellowship Korea)는 의료사회에서 예수 그리스도의 주되심을 인정하는 기독 의료인과 예비의료인으로 구성된 기독 공동체로서, 하나님 나라를 위해 일하는 복음적인 초교파적 신앙운동체이다.</p>
+  </div>
+
+  <p>주되심을 인정한다는 것이 뭘까? 그것도 교회에서가 아니라 <strong>의료사회에서</strong>다. 그 고백이 진짜라면 의료인으로 사는 방식이 달라져야 한다. 나는 이것을 <strong>직업적 거듭남</strong>이라고 표현하고 싶다. 영적으로 거듭났다면, 이제 직업적 거듭남을 통해 의료사회에서 그리스도의 주 되심을 인정하고 실천해야 한다.</p>
+
+  <p>하나님 나라는 뭘까? 예수님은 온 갈릴리를 다니시며 나라의 복음을 전파하시며 모든 병과 약한 것을 고치셨다(마 4:23). 의료와 복음이 함께였다. 하나님 나라의 총체성, 이것도 우리가 배워야 한다.</p>
+
+  <h3>사명선언문 (Mission Statement)</h3>
+
+  <div class="identity-card">
+    <div class="identity-card-label">Mission Statement</div>
+    <p>한국누가회는 회원들의 <strong>전인적 신앙성장</strong>을 돕고, 하나님의 뜻에 따라 <strong>의료사회를 변화</strong>시키며, 의료를 통해 <strong>이웃과 사회와 세상을 섬기고</strong>, <strong>하나님의 나라</strong>를 위해 일하는 것을 목적으로 한다.</p>
+  </div>
+
+  <p>내가 성장되고, 의료사회를 변화시키고, 이웃사랑을 실천함으로 하나님의 영광을 위해 일한다. 나는 이런 사명이 있어서 CMF가 좋다.</p>
+
+  <p>떠나도 된다. 주님만 안 떠나면 된다. CMF 안 해도 된다. 그런데 항상 질문해본다. <strong>의료사회를 기독교적으로 변화시킬 대안 공동체가 있는가?</strong> 적어도 나는 여기가 아직은 희망이라고 생각해서 붙어 있다.</p>
+
+  <hr class="section-divider">
+
+  <span class="section-number">Section V</span>
+  <h2>5대 핵심가치</h2>
+
+  <div class="core-value">
+    <span class="core-value-number">01</span>
+    <h3>복음을 증거한다</h3>
+    <ul class="core-value-principles">
+      <li>일상적 삶의 터전에서 복음의 일꾼으로 살아간다.</li>
+      <li>통전적 신앙의 실천으로 환자와 동료에게 선한 모범이 된다.</li>
+      <li>의료 선교사 양성 및 파송과 지원에 동참한다.</li>
+    </ul>
+    <p>어떻게 복음을 증거하나? 강압적으로가 아니다. 먼저 의료인으로서 신뢰를 얻는 것이다. 삶으로 증거하고, 기회가 될 때 말로도 나눈다.</p>
+    <div class="scripture">
+      "너희 빛이 사람 앞에 비치게 하여 그들로 너희 착한 행실을 보고 하늘의 아버지께 영광을 돌리게 하라."
+      <span class="ref">&mdash; 마태복음 5:16</span>
+    </div>
+  </div>
+
+  <div class="core-value">
+    <span class="core-value-number">02</span>
+    <h3>하나님의 사람을 세운다</h3>
+    <ul class="core-value-principles">
+      <li>회원 개인마다 그리스도의 제자로 양육받고 전인적으로 성장한다.</li>
+      <li>성숙한 신앙과 인품을 지닌 리더를 지속적으로 양성한다.</li>
+      <li>새내기 누가, 수련의, 군의공보관 등 힘든 상황의 회원들을 격려한다.</li>
+    </ul>
+    <p>세운다기보다는 세워지는 것이다. 먼저 나부터 세워져야 한다.</p>
+    <div class="scripture">
+      "또 네가 많은 증인 앞에서 내게 들은 것을 신실한 사람들에게 부탁하라." 세대를 이어가는 양육이다.
+      <span class="ref">&mdash; 디모데후서 2:2</span>
+    </div>
+  </div>
+
+  <div class="core-value">
+    <span class="core-value-number">03</span>
+    <h3>공동체로 살아간다</h3>
+    <ul class="core-value-principles">
+      <li>세대별, 직능별, 지역별 다양성을 존중한다.</li>
+      <li>지역누가회, 사역부서, 동기공동체 활동에 적극 참여한다.</li>
+      <li>전국 수련회를 통해 공동체성을 회복하고 유지한다.</li>
+    </ul>
+    <p>의치한간, 그리고 간사까지 &mdash; 다른 직능이 함께 한다는 것. 세상에서는 직능 간 대립이 심각하다. 각자의 이익을 위해 싸우기 바쁘다. 그런데 CMF에서는 그 다른 직능들이 함께 모인다.</p>
+    <div class="scripture">
+      "내가 너희를 사랑한 것처럼 너희도 서로 사랑하라... 그러므로 그들이 너희가 내 제자임을 알리라."
+      <span class="ref">&mdash; 요한복음 13:34&ndash;35</span>
+    </div>
+  </div>
+
+  <div class="core-value">
+    <span class="core-value-number">04</span>
+    <h3>약한 자를 섬긴다</h3>
+    <ul class="core-value-principles">
+      <li>사회적 약자 및 소외된 이웃들을 우선적으로 섬긴다.</li>
+      <li>이웃 섬김에 대한 구체적 실천을 위해 노력한다.</li>
+      <li>제도적으로 평등한 의료가 실현될 수 있도록 노력한다.</li>
+    </ul>
+    <p>왜 의료인이 되려 하는가? 돈 잘 버는 직업이라 여기 왔나? 언젠간 공허할 것이다. 의료를 통해 하나님 사랑, 이웃 사랑을 실천하는 것을 배워야 한다.</p>
+    <div class="scripture">
+      "이 지극히 작은 자 하나에게 한 것이 곧 내게 한 것이니라."
+      <span class="ref">&mdash; 마태복음 25:40</span>
+    </div>
+  </div>
+
+  <div class="core-value">
+    <span class="core-value-number">05</span>
+    <h3>생명을 존중한다</h3>
+    <ul class="core-value-principles">
+      <li>어떤 상황에서도 생명을 살리고 지키는 일을 우선시한다.</li>
+      <li>성경적 생명윤리를 연구하며 보편화 및 제도화에 힘쓴다.</li>
+      <li>생태환경 보호에 적극적으로 동참한다.</li>
+    </ul>
+    <p>우리는 생명을 다루는 직업이다. 성경적인 윤리관이 없다면 믿지 않는 사람과 다르지 않은 의료인이 된다. 낙태, 존엄사, 유전자 검사, 생식윤리 &mdash; 이 시대 의료인이 직면하는 생명윤리의 문제들이 있다.</p>
+    <div class="scripture">
+      "내가 온 것은 양들로 생명을 얻게 하고 더 풍성하게 하려는 것이라."
+      <span class="ref">&mdash; 요한복음 10:10</span>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <div class="conclusion">
+    <h2>이것이 CMF 스피릿이다</h2>
+    <p>정해진 목표, 방향, 공유된 가치 위에서 다양한 사람들이 함께 일할 때 성령께서 역사하신다는 믿음. 그 믿음으로 살아가는 운동체.</p>
+    <div class="scripture-dark">
+      "하나님이 너희 안에서 행하시는 것은 자기 기쁜 뜻을 위하여 원하는 것과 행하는 것을 모두 이루심이니라."
+      <span class="ref">&mdash; 빌립보서 2:12&ndash;13</span>
+    </div>
+    <p>우리가 하는 것이 아니라 하나님이 이루신다.</p>
+    <p class="final-line">CMF가 이런 친구였다.<br>이런 친구와 좋은 친구 되는 여러분이 되길 소망하고 기도한다.<br>예수님 되신 좋은 친구처럼.</p>
+  </div>
+
 </main>
+
+<footer class="article-footer">
+  <p>전북CMF 징검다리 수련회 강의록 &middot; 2026. 5. 23 &middot; 강사: 이상협누가</p>
+  <p class="source-note">본 글은 강의 원고를 바탕으로 편집&middot;재구성한 것입니다.</p>
+</footer>
 
 </body>
 </html>
