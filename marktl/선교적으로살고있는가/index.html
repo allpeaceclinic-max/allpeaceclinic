@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나는 지금 선교적으로 살고 있는가? — 의료인 후배들이 가장 자주 던지는 질문에 대하여</title>
+<meta name="description" content="모든 것이 선교라면, 복음 선포 없는 지금 내 일상도 선교인가요? 로잔운동 60년의 흐름과 서울선언문을 통해 이 질문에 답한다.">
+<meta property="og:title" content="나는 지금 선교적으로 살고 있는가?">
+<meta property="og:description" content="의료인 후배들이 가장 자주 던지는 질문 — 복음 선포 없는 일상도 선교인가요? 로잔운동의 흐름과 서울선언문이 제시하는 답.">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="나는 지금 선교적으로 살고 있는가?">
+<meta name="twitter:description" content="모든 것이 선교라면, 복음 선포 없는 지금 내 일상도 선교인가요? 로잔운동 60년의 흐름 속에서 찾는 답.">
+<style>
+  :root {
+    --color-bg: #FAFAF7;
+    --color-surface: #FFFFFF;
+    --color-text: #1A1A1A;
+    --color-text-secondary: #555555;
+    --color-accent: #2C5F2D;
+    --color-accent-light: #E8F0E8;
+    --color-accent-warm: #8B6914;
+    --color-border: #E0DDD5;
+    --color-pullquote-bg: #F5F3EE;
+    --color-highlight: #FFF8E1;
+    --font-serif: 'Noto Serif KR', 'Batang', Georgia, 'Times New Roman', serif;
+    --font-sans: 'Pretendard', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    --max-width: 740px;
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.75rem;
+    --space-lg: 3rem;
+    --space-xl: 5rem;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html {
+    font-size: 17px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-serif);
+    line-height: 1.85;
+    padding: 0;
+    min-height: 100vh;
+  }
+  .hero {
+    background: linear-gradient(175deg, #1B3A1B 0%, #2C5F2D 40%, #3A7D3E 100%);
+    color: #fff;
+    padding: var(--space-xl) var(--space-md) var(--space-lg);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0; right: 0;
+    height: 60px;
+    background: var(--color-bg);
+    clip-path: ellipse(55% 100% at 50% 100%);
+  }
+  .hero-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-kicker {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: var(--space-sm);
+    font-weight: 500;
+  }
+  .hero h1 {
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: var(--space-sm);
+    letter-spacing: -0.02em;
+    word-break: keep-all;
+  }
+  .hero-subtitle {
+    font-size: 1.05rem;
+    opacity: 0.85;
+    font-style: italic;
+    max-width: 540px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+  .hero-meta {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    opacity: 0.55;
+    margin-top: var(--space-md);
+    letter-spacing: 0.05em;
+  }
+  .toc-wrapper {
+    max-width: var(--max-width);
+    margin: var(--space-lg) auto var(--space-md);
+    padding: 0 var(--space-md);
+  }
+  .toc {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: var(--space-md) var(--space-md) var(--space-sm);
+  }
+  .toc-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    padding: 0;
+    font-family: var(--font-sans);
+  }
+  .toc-toggle h2 {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin: 0;
+  }
+  .toc-arrow {
+    font-size: 0.9rem;
+    color: var(--color-accent);
+    transition: transform 0.3s ease;
+  }
+  .toc-arrow.collapsed { transform: rotate(-90deg); }
+  .toc-list {
+    list-style: none;
+    margin-top: var(--space-sm);
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+  }
+  .toc-list.collapsed { max-height: 0; opacity: 0; margin-top: 0; }
+  .toc-list li { margin-bottom: 0.4rem; }
+  .toc-list a {
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    padding: 0.3rem 0;
+    transition: color 0.2s;
+  }
+  .toc-list a:hover { color: var(--color-accent); }
+  .toc-num {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    min-width: 1.4em;
+    opacity: 0.6;
+  }
+  .article {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--space-md) var(--space-xl);
+  }
+  .article section { margin-bottom: var(--space-lg); }
+  .article h2 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+    line-height: 1.4;
+    word-break: keep-all;
+    border-top: 2px solid var(--color-accent-light);
+    padding-top: var(--space-md);
+  }
+  .article h2:first-of-type { border-top: none; }
+  .article h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-xs);
+  }
+  .article p {
+    margin-bottom: var(--space-sm);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+  .article strong { font-weight: 700; color: var(--color-text); }
+  .voice {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: var(--space-sm) var(--space-md);
+    margin: var(--space-sm) 0 var(--space-md);
+    font-style: italic;
+    color: var(--color-text-secondary);
+    position: relative;
+  }
+  .voice::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 24px;
+    width: 16px;
+    height: 16px;
+    background: var(--color-surface);
+    border-left: 1px solid var(--color-border);
+    border-top: 1px solid var(--color-border);
+    transform: rotate(45deg);
+  }
+  .pullquote {
+    background: var(--color-pullquote-bg);
+    border-radius: 12px;
+    padding: var(--space-md);
+    margin: var(--space-md) calc(-1 * var(--space-sm));
+    position: relative;
+  }
+  .pullquote::before {
+    content: '\201C';
+    font-size: 4rem;
+    color: var(--color-accent);
+    opacity: 0.2;
+    position: absolute;
+    top: -0.1em;
+    left: 0.15em;
+    line-height: 1;
+    font-family: Georgia, serif;
+  }
+  .pullquote p {
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.7;
+    color: var(--color-text);
+    margin: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .pullquote .attribution {
+    font-size: 0.82rem;
+    font-family: var(--font-sans);
+    color: var(--color-text-secondary);
+    margin-top: var(--space-xs);
+    font-weight: 400;
+  }
+  .inline-quote {
+    background: var(--color-highlight);
+    border-left: 3px solid var(--color-accent-warm);
+    padding: var(--space-sm);
+    margin: var(--space-sm) 0;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+  }
+  .inline-quote p { margin: 0; }
+  .emphasis-box {
+    background: var(--color-accent);
+    color: #fff;
+    border-radius: 12px;
+    padding: var(--space-md);
+    margin: var(--space-md) 0;
+    text-align: center;
+  }
+  .emphasis-box p {
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.7;
+    margin: 0;
+  }
+  .three-pillars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-sm);
+    margin: var(--space-md) 0;
+  }
+  .pillar-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: var(--space-sm);
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .pillar-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  }
+  .pillar-icon { font-size: 2rem; margin-bottom: 0.4rem; }
+  .pillar-card h4 {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 0.3rem;
+  }
+  .pillar-card .pillar-en {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    color: var(--color-text-secondary);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+  .pillar-card p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+  .table-wrapper {
+    overflow-x: auto;
+    margin: var(--space-md) 0;
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+  }
+  .table-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+  .table-wrapper thead { background: var(--color-accent); color: #fff; }
+  .table-wrapper th {
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    text-align: left;
+    white-space: nowrap;
+  }
+  .table-wrapper td {
+    padding: 0.7rem 1rem;
+    border-top: 1px solid var(--color-border);
+    vertical-align: top;
+  }
+  .table-wrapper tbody tr:hover { background: var(--color-accent-light); }
+  .highlight-cell { font-weight: 700; color: var(--color-accent); }
+  .key-findings {
+    background: linear-gradient(135deg, var(--color-accent-light), #F5F3EE);
+    border-radius: 16px;
+    padding: var(--space-md);
+    margin: var(--space-md) 0;
+  }
+  .key-findings h3 {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin: 0 0 var(--space-sm);
+  }
+  .key-findings ul { list-style: none; margin: 0; padding: 0; }
+  .key-findings li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(44,95,45,0.1);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+  }
+  .key-findings li:last-child { border-bottom: none; }
+  .key-findings .bullet {
+    width: 6px; height: 6px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 0.55em;
+  }
+  .section-break {
+    text-align: center;
+    margin: var(--space-lg) 0 var(--space-md);
+    color: var(--color-accent);
+    opacity: 0.3;
+    font-size: 1.2rem;
+    letter-spacing: 0.5em;
+  }
+  .source-notes {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--space-lg) var(--space-md) var(--space-md);
+    border-top: 2px solid var(--color-border);
+  }
+  .source-notes h3 {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-sm);
+  }
+  .source-notes ul { list-style: none; padding: 0; }
+  .source-notes li {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.4rem;
+    padding-left: 1rem;
+    position: relative;
+  }
+  .source-notes li::before {
+    content: '\2014';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+  }
+  .tags {
+    max-width: var(--max-width);
+    margin: 0 auto var(--space-lg);
+    padding: 0 var(--space-md);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .tag {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    background: var(--color-accent-light);
+    color: var(--color-accent);
+    padding: 0.25rem 0.7rem;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: var(--space-lg) var(--space-md);
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    color: var(--color-text-secondary);
+    opacity: 0.6;
+    border-top: 1px solid var(--color-border);
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+  .progress-bar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 3px;
+    background: var(--color-accent);
+    z-index: 1000;
+    transition: width 0.1s linear;
+    width: 0%;
+  }
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (max-width: 600px) {
+    html { font-size: 15.5px; }
+    .hero { padding: var(--space-lg) var(--space-sm) var(--space-md); }
+    .article { padding: 0 var(--space-sm) var(--space-lg); }
+    .pullquote { margin: var(--space-sm) 0; }
+    .three-pillars { grid-template-columns: 1fr; }
+  }
+</style>
+<meta property="og:type" content="article">
+<meta property="og:title" content="나는 지금 선교적으로 살고 있는가?">
+<meta property="og:description" content="— 의료인 후배들이 가장 자주 던지는 질문에 대하여 질문 기독 의료인 모임에서, 수련 후 나누는 자리에서, 때로는 카카오톡 한 줄로 — 의료인 후배들에게 반복해서 받는 질문이 있다. &quot;선생님, 저도 선교적으로 살고 싶은데요. 솔직히 직장에서 복음을 &#39;선포&#39;하고 있지는 않거든요. 환자를 잘 보려고 노력하고, 직원들에게 선하">
+<meta property="og:url" content="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/s/1kplymc/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="나는 지금 선교적으로 살고 있는가?">
+<meta name="twitter:description" content="— 의료인 후배들이 가장 자주 던지는 질문에 대하여 질문 기독 의료인 모임에서, 수련 후 나누는 자리에서, 때로는 카카오톡 한 줄로 — 의료인 후배들에게 반복해서 받는 질문이 있다. &quot;선생님, 저도 선교적으로 살고 싶은데요. 솔직히 직장에서 복음을 &#39;선포&#39;하고 있지는 않거든요. 환자를 잘 보려고 노력하고, 직원들에게 선하">
+<link rel="canonical" href="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/s/1kplymc/">
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="hero-kicker">선교신학 &middot; 제자도 &middot; 멘토링</p>
+    <h1>나는 지금<br>선교적으로 살고 있는가?</h1>
+    <p class="hero-subtitle">의료인 후배들이 가장 자주 던지는 질문에 대하여</p>
+    <p class="hero-meta">2026. 6. 18. &middot; 로잔운동 &middot; 서울선언문 &middot; Missio Dei</p>
+  </div>
+</header>
+
+<nav class="toc-wrapper">
+  <div class="toc">
+    <button class="toc-toggle" id="tocToggle" aria-expanded="true" aria-controls="tocList">
+      <h2>목차</h2>
+      <span class="toc-arrow" id="tocArrow">&#9662;</span>
+    </button>
+    <ol class="toc-list" id="tocList">
+      <li><a href="#question"><span class="toc-num">1</span> 질문 &mdash; 반복해서 받는 그 질문</a></li>
+      <li><a href="#proclamation"><span class="toc-num">2</span> "복음 선포"가 뭔지부터 다시 짚자</a></li>
+      <li><a href="#fifth-gospel"><span class="toc-num">3</span> 당신은 이미 다섯 번째 복음서를 쓰고 있다</a></li>
+      <li><a href="#intention"><span class="toc-num">4</span> 차원만 있고 의도가 없다면</a></li>
+      <li><a href="#someday"><span class="toc-num">5</span> '언젠가'가 숨기고 있는 것</a></li>
+      <li><a href="#missions"><span class="toc-num">6</span> 나의 미션스(missions)는 무엇인가</a></li>
+      <li><a href="#reframe"><span class="toc-num">7</span> 질문을 바꿔보자</a></li>
+    </ol>
+  </div>
+</nav>
+
+<article class="article">
+
+  <div class="key-findings fade-in">
+    <h3>핵심 요약</h3>
+    <ul>
+      <li><span class="bullet"></span><span>로잔운동 60년은 복음 선포의 <strong>우선성</strong>을 유지하되, 선포 개념을 <strong>임재&middot;선포&middot;실천</strong>의 삼중 구조로 확장해왔다.</span></li>
+      <li><span class="bullet"></span><span>서울선언문(2024)의 핵심: 우선성(primacy)은 유일성(exclusivity)이 아니다. 세 차원은 <strong>분리 불가</strong>다.</span></li>
+      <li><span class="bullet"></span><span>선교적 <strong>차원(dimension)</strong>은 존재론적이지만, 선교적 <strong>의도(intention)</strong>는 의지적이다. 둘 다 있어야 한다.</span></li>
+      <li><span class="bullet"></span><span>"언젠가 선교지에"라는 꿈이 <strong>지금 보내진 자리의 미션스</strong>를 가리고 있지 않은지 점검해야 한다.</span></li>
+    </ul>
+  </div>
+
+  <section id="question" class="fade-in">
+    <h2>반복해서 받는 그 질문</h2>
+    <p>기독 의료인 모임에서, 수련 후 나누는 자리에서, 때로는 카카오톡 한 줄로 &mdash; 의료인 후배들에게 반복해서 받는 질문이 있다.</p>
+    <div class="voice">
+      <p>"선생님, 저도 선교적으로 살고 싶은데요. 솔직히 직장에서 복음을 '선포'하고 있지는 않거든요. 환자를 잘 보려고 노력하고, 직원들에게 선하게 대하려고 하고... 그게 선교인가요? 아니면 복음 선포가 없으면 선교가 아닌 건가요?"</p>
+    </div>
+    <p>이 질문 뒤에는 대개 이런 고민이 따라온다: <em>"언젠가 기회가 되면 선교지에 가고 싶기도 한데, 그러면 지금은 뭔가요? 준비 기간인가요?"</em></p>
+    <p>결국 하나의 질문으로 모아진다.</p>
+    <div class="emphasis-box">
+      <p>"모든 것이 선교라면, 복음 선포 없는<br>지금 내 일상도 선교인가요?"</p>
+    </div>
+  </section>
+
+  <section id="proclamation" class="fade-in">
+    <h2>먼저, "복음 선포"가 뭔지부터 다시 짚자</h2>
+    <p>이 질문에 답하려면 "복음 선포"라는 말 자체를 정확히 이해해야 한다. 로잔운동이 60년에 걸쳐 이 개념을 어떻게 정리해왔는지 보면 놀라울 만큼 많이 움직였다.</p>
+
+    <h3>1차 로잔 (1974, 로잔 언약) &mdash; 존 스토트: 우선성(Primacy)</h3>
+    <p>존 스토트는 복음 전도(evangelism)와 사회적 책임(social responsibility)이 모두 그리스도인의 의무라고 선언하면서도, 복음 전도에 <strong>"우선성(primacy)"</strong>을 부여했다. "모든 교회가 온전한 복음을 전 세계에." 이 우선성 때문에 많은 사람들이 "결국 선포가 먼저"라고 이해했고, 그 이해가 틀린 것은 아니다. 여기서 복음 선포는 주로 <strong>잃어버린 자에게 구원의 메시지를 전달하는 행위</strong>를 뜻했다.</p>
+
+    <h3>2차 로잔 (1989, 마닐라 선언) &mdash; 전략적 협력 강조</h3>
+    <p>마닐라 선언은 1차의 복음 전도 우선성을 유지하면서, 세계 복음화를 위한 <strong>전략적 협력(strategic partnership)</strong>을 강조했다. 복음 선포 개념 자체의 큰 변화보다는, 어떻게 함께 할 것인가에 초점을 맞춘 대회였다. 그러나 이미 복음 전도와 사회적 책임의 관계에 대한 긴장은 커지고 있었다.</p>
+
+    <h3>3차 로잔 (2010, 케이프타운) &mdash; 크리스토퍼 라이트: 통합, 분리 불가</h3>
+    <p>크리스토퍼 라이트는 한 걸음 더 나아간다. 선교는 복음 선포와 사회적 책임을 <strong>분리할 수 없는(inseparable)</strong> 하나의 총체적 사명으로 보아야 한다고 했다. 우선성이냐 아니냐의 이분법 자체를 넘어서, 하나님의 선교(Missio Dei) 안에서 둘은 통합되어 있다는 것이다. "모든 것이 선교다"라는 방향이 여기서 힘을 얻었다.</p>
+
+    <h3>4차 로잔 (2024, 서울) &mdash; 서울선언문: 다시 우선성, 그러나 유일성은 아니다</h3>
+    <p>4차 로잔 서울선언문은 다시 복음 선포의 <strong>우선성</strong>을 강조했다. "복음 선포가 없다면 선교가 아니다"라고 이해하는 근거가 여기에 있다. 그런데 핵심을 놓치면 안 된다 &mdash; 우선성(primacy)은 <strong>유일성(exclusivity)이 아니다.</strong></p>
+    <p>서울선언문이 특별히 넓힌 것은 <strong>"선포" 개념 자체</strong>다. 교회의 증거 방식을 세 가지로 정리했다:</p>
+
+    <div class="three-pillars">
+      <div class="pillar-card">
+        <div class="pillar-icon">&#x2727;</div>
+        <h4>임재</h4>
+        <p class="pillar-en">Christ-filled Presence</p>
+        <p>소금과 빛으로서의 존재 자체. "구원받는 사람들에게 그리스도의 향기"(고후 2:15)</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon">&#x2741;</div>
+        <h4>선포</h4>
+        <p class="pillar-en">Christ-centred Proclamation</p>
+        <p>복음 메시지의 신실한 전달. "믿음은 들음에서 나며"(롬 10:17)</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon">&#x2740;</div>
+        <h4>실천</h4>
+        <p class="pillar-en">Christlike Practice</p>
+        <p>사랑, 정의, 돌봄. "믿음에는 항상 행함이 수반"</p>
+      </div>
+    </div>
+
+    <p>그리고 이 세 가지는 <strong>분리 불가</strong>라고 못 박았다. 서울선언문 제V장의 핵심 명제가 이것이다:</p>
+
+    <div class="pullquote">
+      <p>"좋은 소식을 전하지 않고서 제자 삼을 수 없으며, 깨어진 세상에 깊이 관여하지 않고서 제자가 될 수 없다."</p>
+      <p class="attribution">서울선언문 제V장</p>
+    </div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr><th>로잔</th><th>핵심 인물</th><th>복음 선포의 개념</th><th>선교와의 관계</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1차 (1974)</td><td>존 스토트</td><td>구원 메시지 전달</td><td class="highlight-cell">우선성</td></tr>
+          <tr><td>2차 (1989)</td><td>마닐라 선언</td><td>동일</td><td class="highlight-cell">전략적 협력 강조</td></tr>
+          <tr><td>3차 (2010)</td><td>크리스토퍼 라이트</td><td>총체적 사명의 일부</td><td class="highlight-cell">통합, 분리 불가</td></tr>
+          <tr><td>4차 (2024)</td><td>서울선언문</td><td>임재 + 선포 + 실천</td><td class="highlight-cell">다시 우선성, 유일성 아님</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>그러니까 "복음 선포가 없으면 선교가 아니다"는 4차 로잔의 결론이 <strong>아니다.</strong> 정확하게는 "복음 선포 없는 선교는 불완전하다, 그러나 복음 선포만이 선교는 아니다"에 가깝다. 그리고 "복음 선포"에는 입으로 전하는 것뿐 아니라 <strong>임재와 실천</strong>도 포함된다.</p>
+  </section>
+
+  <div class="section-break">&middot; &middot; &middot;</div>
+
+  <section id="fifth-gospel" class="fade-in">
+    <h2>당신은 이미 다섯 번째 복음서를 쓰고 있다</h2>
+    <p>"복음 선포"를 입으로 복음을 전하는 행위로만 이해하면 시야가 너무 좁아진다. 특히 지금 시대에는 더욱 그렇다.</p>
+    <p>사람들은 마태&middot;마가&middot;누가&middot;요한, 이 네 복음서만 읽는 것이 아니다. 그들은 <strong>다섯 번째 복음서를 읽고 있다 &mdash; 바로 그리스도인의 삶이다.</strong> 당신이 환자를 대하는 태도, 직원을 존중하는 방식, 위기 앞에서 보여주는 평안 &mdash; 이 모든 것이 복음의 메시지로 <strong>읽혀지고</strong> 있다.</p>
+
+    <div class="pullquote">
+      <p>"복음의 메시지가 아닌 메신저 때문에 사람들이 걸려 넘어지고 있다."</p>
+      <p class="attribution">마이클 오, 4차 로잔 개회사</p>
+    </div>
+
+    <p>솔직히 말하면, 지금 시대에 이 다섯 번째 복음서가 그 어느 때보다 중요하다. 한국 사회에서 기독교의 신뢰가 바닥을 치고 있다. 사람들은 교회의 말을 듣기 전에 <strong>그리스도인의 삶을 먼저 본다.</strong> 말로 전하는 복음이 힘을 잃은 시대에, <strong>보여지는 복음, 읽혀지는 복음</strong>이 오히려 더 강력한 선포가 된다.</p>
+    <p>크리스토퍼 라이트는 이렇게 말했다: "메신저와 메시지는 분리될 수 없다." 진료실에서 환자를 한 사람의 인격체로 대하고, 야근에 지친 간호사에게 먼저 안부를 묻고, 실수한 후배에게 질책이 아닌 배움의 기회를 주는 것 &mdash; 이런 순간들이 모여 사람들이 "저 사람은 뭔가 다르다"고 느끼게 할 때, 그것이 바로 다섯 번째 복음서의 한 페이지가 되는 것이다.</p>
+    <p>"저는 직장에서 복음 선포를 하고 있지 않습니다"라고 했다. 정말 그런가? 입으로 예수 이름을 말하지 않았을 뿐, 진료와 태도를 통해 이미 무언가를 선포하고 있는 것은 아닌가? 서울선언문이 말하는 <strong>임재(presence)</strong>가 바로 이것이다. 그리고 이 시대에는 이 임재의 증거가 말의 증거보다 먼저 사람의 마음 문을 연다.</p>
+  </section>
+
+  <div class="section-break">&middot; &middot; &middot;</div>
+
+  <section id="intention" class="fade-in">
+    <h2>그런데 &mdash; 차원만 있고 의도가 없다면</h2>
+    <p>여기서 끝나면 위험하다. "내가 선하게 살면 그것이 곧 선교다"라고 안주할 수 있기 때문이다. 바로 이 지점에서 스테판 닐의 경고가 의미를 가진다.</p>
+
+    <div class="pullquote">
+      <p>"모든 것이 선교라면 아무것도 선교가 아니다."</p>
+      <p class="attribution">스테판 닐(Stephen Neill)</p>
+    </div>
+
+    <p>이 말은 "복음 선포 없이는 선교가 아니다"가 아니다. <strong>의도 없이 모든 것을 선교라 부르면 선교 고유의 긴박함이 사라진다</strong>는 경고다.</p>
+    <p>마이클 고힌이 이것을 정확하게 구분한다:</p>
+
+    <div class="inline-quote">
+      <p>"교회가 하는 모든 일에 선교적 <strong>차원(dimension)</strong>이 있다. 그러나 교회가 하는 모든 일에 선교적 <strong>의도(intention)</strong>가 있지는 않다."</p>
+    </div>
+
+    <p>차원은 존재론적이다 &mdash; 그리스도인이기에 우리가 하는 모든 일에 선교적 차원이 이미 있다. 그런데 의도는 의지적이다 &mdash; 이 순간, 이 사람에게, 의식적으로 다가가는 것이다.</p>
+    <p>예수님이 사마리아 여인을 만나신 것은 우연이 아니었다. "사마리아로 통과하여야 하겠는지라"(요 4:4) &mdash; '하겠는지라'(&#948;&#949;&#8150;)는 신학적 필연의 언어다. 삭개오에게도 마찬가지다. "오늘 네 집에 유하여야 하겠다"(눅 19:5). 철저히 <strong>의도적</strong>이었다.</p>
+    <p>"환자를 잘 보려고 노력하고, 직원들에게 선하게 대하려고 하고" &mdash; 좋은 출발이다. 그런데 그 안에 <strong>의도</strong>가 있는가? 오늘 만나는 이 환자를, 이 직원을 향한 구체적인 선교적 의도가 있는가? 아니면 그냥 "착하게 살자"의 연장선인가?</p>
+  </section>
+
+  <div class="section-break">&middot; &middot; &middot;</div>
+
+  <section id="someday" class="fade-in">
+    <h2>'언젠가'가 숨기고 있는 것</h2>
+    <p>"언젠가 기회가 되면 선교지에 가고 싶다."</p>
+    <p>이 문장 안에 전제가 하나 숨어 있다 &mdash; <strong>지금은 선교지가 아니다</strong>는 전제.</p>
+    <p>나도 똑같은 생각을 했었다. LAMs(Life As Mission School) 훈련을 하기 전에는 내 기도에 항상 "하나님, 쓰임받게 해주세요. 저를 보내주세요"라는 내용이 있었다. 그런데 LAMs를 하고 나서 깨달았다 &mdash; <strong>나는 이미 보내져 있었다.</strong> 의료사회라는 선교지에, 만촌동이라는 필드에.</p>
+    <p>과거에 우리는 선교와 나의 삶이 따로 있었다. 조금 성숙해지면 Life <strong>For</strong> Mission &mdash; "내가 좀 잘 되면 선교를 돕겠다"고 생각했다. '언젠가' 선교사로 가겠다는 것도 같은 구조다. 그런데 이제는 Life <strong>As</strong> Mission이 되어야 한다. 지금 당신이 서 있는 자리, 진료실, 가정, 직장 &mdash; 그 자리가 이미 선교지다.</p>
+  </section>
+
+  <div class="section-break">&middot; &middot; &middot;</div>
+
+  <section id="missions" class="fade-in">
+    <h2>그러면 나의 미션스(missions)는 무엇인가?</h2>
+    <p>레슬리 뉴비긴이 "s를 떼지 말라"고 했다. 하나님의 대문자 선교(Mission)가 있고, 우리 각자의 소문자 선교들(missions)이 있다. 모두가 바울은 아니다. 롬 16장에는 36명의 바울의 동역자 이름이 있다 &mdash; 남자와 여자, 청년과 노인, 싱글과 부부, 귀족과 노예, 사업가와 공무원. 각자의 역할과 미션스가 있었다.</p>
+    <p>그렇다면 <strong>나의 미션스는 무엇인가?</strong> 이것은 내가 만들어내는 것이 아니라, 발견하는 것이다. 더 정확히는, <strong>주시는 것을 분별하는 것</strong>이다. 내 관심사는 무엇인가? 달란트는 무엇인가? 보내진 자리에서 마주하는 필요는 무엇인가? 이것을 나누고 논의하고 학습할 때, 하나님이 나에게 주신 구체적인 미션스가 보이기 시작한다.</p>
+
+    <div class="pullquote">
+      <p>"언젠가 선교사로"라는 꿈이 나쁜 것이 아니다. 다만 그 꿈이 지금 보내진 자리에서의 미션스를 가리고 있다면, 그것은 꿈이 아니라 회피가 된다.</p>
+    </div>
+  </section>
+
+  <div class="section-break">&middot; &middot; &middot;</div>
+
+  <section id="reframe" class="fade-in">
+    <h2>질문을 바꿔보자</h2>
+    <p>"모든 것이 선교라면, 복음 선포 없는 지금 내 일상도 선교인가요?"</p>
+    <p>이 질문을 이렇게 바꿔보면 어떨까:</p>
+
+    <div class="emphasis-box">
+      <p>"지금 내가 서 있는 자리에서,<br>나의 선교적 의도는 무엇인가?"</p>
+    </div>
+
+    <p>서울선언문은 임재와 선포와 실천이 분리될 수 없다고 했다. 당신의 임재는 이미 시작되었다. 당신의 실천도 진행 중이다. 남은 것은 그 안에 <strong>의도</strong>를 넣는 것이다.</p>
+    <p>생존 모드가 아닌 미션 모드로. 하나님의 선교에 참여하는 각자의 미션스를 발견하고 감당하는 것 &mdash; 그것이 지금 우리가 할 일이다.</p>
+  </section>
+</article>
+
+<aside class="source-notes">
+  <h3>참고 자료</h3>
+  <ul>
+    <li>로잔 언약 (The Lausanne Covenant, 1974)</li>
+    <li>마닐라 선언 (The Manila Manifesto, 1989)</li>
+    <li>케이프타운 서약 (The Cape Town Commitment, 2010)</li>
+    <li>서울선언문 (The Seoul Statement, 2024) &mdash; 특히 제V장</li>
+    <li>크리스토퍼 라이트, <em>The Mission of God's People</em></li>
+    <li>마이클 고힌, <em>A Light to the Nations</em></li>
+    <li>레슬리 뉴비긴, <em>The Open Secret</em></li>
+    <li>스테판 닐, <em>Creative Tension</em></li>
+    <li>LAMs (Life As Mission School) 선교 훈련 과정</li>
+  </ul>
+</aside>
+
+<div class="tags">
+  <span class="tag">선교신학</span>
+  <span class="tag">로잔운동</span>
+  <span class="tag">서울선언문</span>
+  <span class="tag">총체적선교</span>
+  <span class="tag">Missio Dei</span>
+  <span class="tag">제자도</span>
+  <span class="tag">멘토링</span>
+</div>
+
+<footer class="footer">
+  <p>&copy; 2026 &middot; 선교신학 노트</p>
+</footer>
+
+<script>
+(function() {
+  var bar = document.getElementById('progressBar');
+  window.addEventListener('scroll', function() {
+    var h = document.documentElement;
+    var pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+    bar.style.width = Math.min(pct, 100) + '%';
+  }, { passive: true });
+
+  var toggle = document.getElementById('tocToggle');
+  var list = document.getElementById('tocList');
+  var arrow = document.getElementById('tocArrow');
+  toggle.addEventListener('click', function() {
+    var collapsed = list.classList.toggle('collapsed');
+    arrow.classList.toggle('collapsed', collapsed);
+    toggle.setAttribute('aria-expanded', String(!collapsed));
+  });
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
+})();
+</script>
+<section class="marktl-reader-feedback" aria-label="Reader feedback">
+<style>
+.marktl-reader-feedback { margin: 40px auto 0; padding: 0; }
+.marktl-reader-feedback h2 { margin: 0 0 8px; font: 800 22px/1.25 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.marktl-reader-feedback p { margin: 0 0 14px; color: #526173; font: 500 14px/1.5 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.marktl-reader-feedback .giscus, .marktl-reader-feedback .giscus-frame { width: 100%; }
+</style>
+<h2>Reader feedback</h2>
+<p>Leave a public GitHub comment or reaction below.</p>
+<script src="https://giscus.app/client.js"
+        data-repo="allpeaceclinic-max/allpeaceclinic"
+        data-repo-id="R_kgDOSEGibA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOSEGibM4C9mVG"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="ko"
+        crossorigin="anonymous"
+        async>
+</script>
+</section>
+</body>
+</html>
