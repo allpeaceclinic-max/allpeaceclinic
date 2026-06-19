@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>선교에 대한 네 가지 견해 · 1부 — 구원론적 선교 (조너선 리먼)</title>
+<meta name="description" content="『선교에 대한 네 가지 견해』 제1장 분석: 조너선 리먼의 구원론적 선교론. 왕과 제사장의 두 권한 프레임워크, 종말론적 주름 논증, 그리고 세 저자의 비판을 정리한다.">
+<meta property="og:title" content="선교에 대한 네 가지 견해 · 1부 — 구원론적 선교">
+<meta property="og:description" content="조너선 리먼의 구원론적 선교론: 왕과 제사장의 두 권한, 종말론적 주름, 그리고 세 저자의 비판">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="선교에 대한 네 가지 견해 · 1부 — 구원론적 선교">
+<meta name="twitter:description" content="조너선 리먼의 구원론적 선교론: 왕과 제사장의 두 권한, 종말론적 주름, 그리고 세 저자의 비판">
+<style>
+:root {
+  --bg: #FAFAF7;
+  --surface: #FFFFFF;
+  --text: #1A1A1A;
+  --text-secondary: #555;
+  --accent: #8B4513;
+  --accent-light: #D2A679;
+  --accent-bg: #F5EDE3;
+  --border: #E5DDD3;
+  --border-light: #F0EBE3;
+  --pull-bg: #FDF8F2;
+  --tag-bg: #EDE7DD;
+  --critic-a: #2C5F2D;
+  --critic-b: #4A3080;
+  --critic-c: #8B3A3A;
+  --shadow: 0 1px 3px rgba(0,0,0,.06), 0 4px 12px rgba(0,0,0,.04);
+  --shadow-lg: 0 4px 20px rgba(0,0,0,.08);
+  --radius: 10px;
+  --font-body: 'Noto Serif KR', 'Nanum Myeongjo', Georgia, serif;
+  --font-heading: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+  --max-w: 740px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+}
+.hero {
+  background: linear-gradient(160deg, #2B1810 0%, #4A2C1A 40%, #6B3D22 100%);
+  color: #F5EDE3;
+  padding: 5rem 1.5rem 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 30% 20%, rgba(210,166,121,.12) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 80%, rgba(210,166,121,.08) 0%, transparent 50%);
+}
+.hero-inner { position: relative; max-width: var(--max-w); margin: 0 auto; }
+.hero-series {
+  font-family: var(--font-heading);
+  font-size: .8rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  margin-bottom: 1.2rem;
+}
+.hero h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: .6rem;
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--accent-light);
+  display: block;
+  font-size: .65em;
+  font-weight: 500;
+  margin-top: .4rem;
+}
+.hero-meta {
+  font-family: var(--font-heading);
+  font-size: .85rem;
+  color: rgba(245,237,227,.6);
+  margin-top: 1.6rem;
+}
+.hero-meta span + span::before { content: '·'; margin: 0 .5rem; }
+.hero-excerpt {
+  max-width: 600px;
+  margin: 1.8rem auto 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(245,237,227,.85);
+}
+.toc-wrapper {
+  max-width: var(--max-w);
+  margin: -2rem auto 2.5rem;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+.toc {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+.toc-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background: none;
+  border: none;
+  font-family: var(--font-heading);
+  font-size: .9rem;
+  font-weight: 700;
+  color: var(--text);
+  cursor: pointer;
+  letter-spacing: .03em;
+}
+.toc-toggle .arrow {
+  transition: transform .25s;
+  font-size: .75rem;
+  color: var(--text-secondary);
+}
+.toc-toggle[aria-expanded="true"] .arrow { transform: rotate(180deg); }
+.toc-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .35s ease;
+}
+.toc-body.open { max-height: 600px; }
+.toc-list {
+  list-style: none;
+  padding: 0 1.5rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+}
+.toc-list li a {
+  font-family: var(--font-heading);
+  font-size: .85rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: .25rem 0;
+  display: block;
+  transition: color .15s;
+}
+.toc-list li a:hover { color: var(--accent); }
+.toc-list li.indent { padding-left: 1rem; }
+.content { max-width: var(--max-w); margin: 0 auto; padding: 0 1.5rem 4rem; }
+.content h2 {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text);
+  margin: 3rem 0 1rem;
+  padding-bottom: .5rem;
+  border-bottom: 2px solid var(--accent-light);
+}
+.content h3 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 2.2rem 0 .8rem;
+}
+.content p { margin-bottom: 1.2rem; }
+.content ul, .content ol { margin: .6rem 0 1.4rem 1.4rem; }
+.content li { margin-bottom: .4rem; }
+.pull-quote {
+  background: var(--pull-bg);
+  border-left: 4px solid var(--accent);
+  margin: 2rem -1rem;
+  padding: 1.4rem 1.6rem;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text);
+  position: relative;
+}
+.pull-quote::before {
+  content: '\201C';
+  position: absolute;
+  top: .3rem;
+  left: .6rem;
+  font-size: 2.5rem;
+  color: var(--accent-light);
+  font-family: Georgia, serif;
+  line-height: 1;
+  opacity: .5;
+}
+.pull-quote p { margin: 0; padding-left: .5rem; }
+.pull-quote cite {
+  display: block;
+  margin-top: .6rem;
+  padding-left: .5rem;
+  font-size: .82rem;
+  color: var(--text-secondary);
+  font-style: normal;
+}
+.framework-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin: 2rem 0;
+  overflow: hidden;
+}
+.framework-card .card-header {
+  background: var(--accent-bg);
+  padding: .8rem 1.2rem;
+  font-family: var(--font-heading);
+  font-size: .9rem;
+  font-weight: 700;
+  color: var(--accent);
+  border-bottom: 1px solid var(--border);
+}
+.framework-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .88rem;
+}
+.framework-table th, .framework-table td {
+  padding: .7rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-light);
+  vertical-align: top;
+}
+.framework-table th {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-size: .8rem;
+  letter-spacing: .03em;
+  white-space: nowrap;
+}
+.framework-table td:first-child {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: .82rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  width: 90px;
+}
+.book-structure {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+.book-structure table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .88rem;
+}
+.book-structure th {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  background: #2B1810;
+  color: #F5EDE3;
+  padding: .6rem 1rem;
+  text-align: left;
+  font-size: .78rem;
+  letter-spacing: .04em;
+}
+.book-structure td {
+  padding: .6rem 1rem;
+  border-bottom: 1px solid var(--border-light);
+}
+.book-structure tr.current { background: var(--accent-bg); font-weight: 600; }
+.critics-grid {
+  display: grid;
+  gap: 1.2rem;
+  margin: 1.5rem 0;
+}
+.critic-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.critic-header {
+  padding: .8rem 1.2rem;
+  font-family: var(--font-heading);
+  font-size: .85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  border-bottom: 1px solid var(--border-light);
+}
+.critic-header .dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.critic-a .critic-header { color: var(--critic-a); }
+.critic-a .dot { background: var(--critic-a); }
+.critic-b .critic-header { color: var(--critic-b); }
+.critic-b .dot { background: var(--critic-b); }
+.critic-c .critic-header { color: var(--critic-c); }
+.critic-c .dot { background: var(--critic-c); }
+.critic-body {
+  padding: 1rem 1.2rem;
+  font-size: .92rem;
+}
+.critic-body ul {
+  margin: .4rem 0 0 1.2rem;
+  list-style: disc;
+}
+.critic-body li { margin-bottom: .5rem; }
+.questions-section {
+  background: linear-gradient(135deg, #FDF8F2 0%, #F5EDE3 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  margin: 2rem 0;
+}
+.questions-section h3 {
+  margin-top: 0;
+  color: var(--accent);
+}
+.question-item {
+  margin-bottom: 1.2rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--accent-light);
+}
+.question-item:last-child { margin-bottom: 0; }
+.question-label {
+  font-family: var(--font-heading);
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  margin-bottom: .2rem;
+}
+.takeaway {
+  background: #2B1810;
+  color: #F5EDE3;
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  margin: 2.5rem 0;
+}
+.takeaway h3 {
+  color: var(--accent-light);
+  margin-top: 0;
+  font-size: 1.05rem;
+}
+.takeaway ul {
+  margin: .8rem 0 0 1.2rem;
+  list-style: none;
+}
+.takeaway li {
+  margin-bottom: .6rem;
+  position: relative;
+  padding-left: .2rem;
+}
+.takeaway li::before {
+  content: '\2192';
+  position: absolute;
+  left: -1.2rem;
+  color: var(--accent-light);
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin: 1rem 0;
+}
+.tag {
+  font-family: var(--font-heading);
+  font-size: .72rem;
+  background: var(--tag-bg);
+  color: var(--text-secondary);
+  padding: .2rem .6rem;
+  border-radius: 20px;
+  letter-spacing: .02em;
+}
+.section-divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  margin: 2.5rem 0;
+}
+.article-footer {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: .8rem;
+  color: var(--text-secondary);
+}
+.article-footer .book-ref {
+  font-weight: 600;
+  color: var(--text);
+}
+@media (max-width: 640px) {
+  html { font-size: 15.5px; }
+  .hero { padding: 3.5rem 1.2rem 3rem; }
+  .pull-quote { margin: 1.5rem -.5rem; padding: 1rem 1.2rem; }
+  .framework-table td, .framework-table th { padding: .5rem .6rem; font-size: .82rem; }
+}
+@media print {
+  .hero { background: #fff; color: #000; padding: 2rem 0; }
+  .toc-wrapper { display: none; }
+  .pull-quote { border-left-color: #999; background: #f5f5f5; }
+}
+.progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  background: var(--accent-light);
+  z-index: 100;
+  width: 0%;
+  transition: width .1s linear;
+}
+</style>
+<meta property="og:type" content="article">
+<meta property="og:title" content="선교에 대한 네 가지 견해 · 1부 — 구원론적 선교 (조너선 리먼)">
+<meta property="og:description" content="『선교에 대한 네 가지 견해』 제1장. [[people/조너선리먼|조너선 리먼]]의 견해 = 구원론적 선교(Soteriological Mission) — &quot;구속이라는 사명에 초점 맞추기&quot;(p.27). 9Marks 중심, 드영·길버트 노선에 가장 가깝다(섹스턴, p.21). 📌 분량이 많아 4부작 md로 분리 정리. → ">
+<meta property="og:url" content="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/s/163i2xw/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="선교에 대한 네 가지 견해 · 1부 — 구원론적 선교 (조너선 리먼)">
+<meta name="twitter:description" content="『선교에 대한 네 가지 견해』 제1장. [[people/조너선리먼|조너선 리먼]]의 견해 = 구원론적 선교(Soteriological Mission) — &quot;구속이라는 사명에 초점 맞추기&quot;(p.27). 9Marks 중심, 드영·길버트 노선에 가장 가깝다(섹스턴, p.21). 📌 분량이 많아 4부작 md로 분리 정리. → ">
+<link rel="canonical" href="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/s/163i2xw/">
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-series">선교에 대한 네 가지 견해 &mdash; 4부작 중 1부</div>
+    <h1>
+      구원론적 선교
+      <em>Soteriological Mission &mdash; 조너선 리먼</em>
+    </h1>
+    <p class="hero-excerpt">
+      교회는 무엇을 위해 존재하는가? 리먼은 '왕의 권한'과 '제사장의 권한'이라는 프레임으로 답한다. 넓은 선교와 좁은 선교 모두를 긍정하되, 종말론적 주름 속에서 왜 좁은 선교가 우선인지를 논증한다. 세 저자는 이 이분법이 과도하다고 비판한다.
+    </p>
+    <div class="hero-meta">
+      <span>조너선 리먼 저</span>
+      <span>제이슨 섹스턴 편</span>
+      <span>pp. 27&ndash;102</span>
+    </div>
+  </div>
+</header>
+
+<div class="toc-wrapper">
+  <nav class="toc">
+    <button class="toc-toggle" id="tocToggle" aria-expanded="false" aria-controls="tocBody">
+      목차 <span class="arrow">&#9660;</span>
+    </button>
+    <div class="toc-body" id="tocBody">
+      <ol class="toc-list">
+        <li><a href="#book-structure">책 전체 구조</a></li>
+        <li><a href="#foreword">서문 &mdash; 복음주의 교회론의 부재</a></li>
+        <li><a href="#thesis">핵심 논지: 넓은 관점과 좁은 관점</a></li>
+        <li><a href="#framework">두 권한 프레임워크 &mdash; 왕과 제사장</a></li>
+        <li><a href="#salvation-scope">구원의 범위</a></li>
+        <li><a href="#eschatological-fold">종말론적 주름 &mdash; 왜 좁은 관점이 우선인가</a></li>
+        <li><a href="#keys">천국 열쇠 &mdash; 제사장적 권한의 제도적 근거</a></li>
+        <li><a href="#practice">실천적 결론 &mdash; 9가지 제안</a></li>
+        <li><a href="#critics">세 저자의 비판</a></li>
+        <li class="indent"><a href="#critic-wright">라이트: 이분법이 과잉</a></li>
+        <li class="indent"><a href="#critic-franke">프랭키: 좁은 사명이 넓은 사명을 제한</a></li>
+        <li class="indent"><a href="#critic-leithart">라잇하르트: 성례전적 양념이 필요</a></li>
+        <li><a href="#questions">미해결 질문과 적용</a></li>
+        <li><a href="#takeaway">핵심 시사점</a></li>
+      </ol>
+    </div>
+  </nav>
+</div>
+
+<main class="content">
+
+  <div class="tags">
+    <span class="tag">선교신학</span>
+    <span class="tag">교회론</span>
+    <span class="tag">구원론</span>
+    <span class="tag">종말론</span>
+    <span class="tag">교회의 사명</span>
+    <span class="tag">총체적 선교</span>
+  </div>
+
+  <h2 id="book-structure">책 전체 구조</h2>
+  <div class="book-structure">
+    <table>
+      <thead>
+        <tr><th>장</th><th>견해</th><th>저자</th><th>시작</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>서문</td><td>교회의 사명 재조정하기</td><td>제이슨 섹스턴</td><td>p.11</td></tr>
+        <tr class="current"><td><strong>제1장</strong></td><td><strong>구원론적 선교</strong> &mdash; 구속이라는 사명에 초점</td><td><strong>조너선 리먼</strong></td><td><strong>p.27</strong></td></tr>
+        <tr><td>제2장</td><td>참여 선교 &mdash; 하나님 백성의 사명</td><td>크리스토퍼 라이트</td><td>p.105</td></tr>
+        <tr><td>제3장</td><td>상황 중심 선교 &mdash; 땅끝까지 증언하기</td><td>존 프랭키</td><td>p.177</td></tr>
+        <tr><td>제4장</td><td>성례전적 선교 &mdash; 에큐메니컬하고 정치적인 선교론</td><td>피터 라잇하르트</td><td>p.249</td></tr>
+        <tr><td>결론</td><td>사명을 위해 교회를 재조정하기</td><td>제이슨 섹스턴</td><td>p.317</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>각 장마다 본문 뒤에 나머지 세 저자의 <strong>논평</strong>이 붙는다. 제1장의 경우 라이트(p.78), 프랭키(p.88), 라잇하르트(p.96).</p>
+
+  <hr class="section-divider">
+
+  <h2 id="foreword">서문 &mdash; 복음주의 교회론의 부재</h2>
+  <h3>섹스턴 (pp. 11&ndash;25)</h3>
+
+  <p>편집자 섹스턴은 복음주의의 근본 문제로 <strong>정교한 교회론의 부재</strong>를 짚는다. 복음주의자들이 광범위한 운동에 참여하면서 어떤 교회론도 강하고 견고하게 발전하지 못했으며, '선교'라는 말 자체가 "교회의 방향 설정에 대한 비유적 표현으로 의미가 축소되었다"(p.12).</p>
+
+  <div class="pull-quote">
+    <p>사명이 교회의 존재 자체에, 그리고 성령에 의해 역동적으로 그리스도의 몸, 즉 교회가 된 사람들로서 교회의 본질과 연결되어 있다.</p>
+    <cite>&mdash; 제이슨 섹스턴, p.18</cite>
+  </div>
+
+  <p>대럴 구더의 '선교적 대화'(p.19), <em>missio Dei</em> 회복, 크리스토퍼 라이트의 연구가 "한 세대의 복음주의자들을 고무"(p.20)했고, 반대편에서는 드영&middot;길버트의 좁은 선교론이 반발했다(p.20). 이 양쪽 사이에서 네 명의 저자가 각기 다른 견해를 펼친다.</p>
+
+  <hr class="section-divider">
+
+  <h2 id="thesis">핵심 논지: 넓은 관점과 좁은 관점, 둘 다</h2>
+  <h3>리먼의 출발점 (pp. 30&ndash;32)</h3>
+
+  <p>교회의 사명을 논하는 목소리는 두 축으로 갈린다.</p>
+  <ul>
+    <li><strong>넓은 관점</strong> &mdash; 성경이 명령하는 모든 것(청지기 직분, 납세, 배우자 사랑까지). "제자 되기(being disciples)"를 포함.</li>
+    <li><strong>좁은 관점</strong> &mdash; 개별 그리스도인과 교회를 구별; 교회의 사명 = 성경 명령의 부분집합. "제자 삼기(disciple-making)"에 초점.</li>
+  </ul>
+
+  <p>리먼의 입장: <strong>둘 다 지지한다.</strong> 다만 자신을 "구원론적인 자로 분류하는 게 타당"하다고 인정한다(p.32). 그가 던지는 핵심 질문 두 가지:</p>
+
+  <div class="pull-quote">
+    <p>인류는 지금 무엇으로부터 구원받아야 하는가? 그리고 하나님은 누구에게 무슨 일을 할 권한을 주셨는가?</p>
+    <cite>&mdash; 조너선 리먼, pp. 33, 60</cite>
+  </div>
+
+  <hr class="section-divider">
+
+  <h2 id="framework">두 권한 프레임워크 &mdash; 왕과 제사장</h2>
+  <h3>리먼의 핵심 분석틀 (pp. 33&ndash;49)</h3>
+
+  <p>하나님이 교회에 주신 <strong>두 가지 권한(authority)</strong>이 넓은 선교와 좁은 선교를 결정한다는 것이 리먼의 핵심 프레임이다.</p>
+
+  <div class="framework-card">
+    <div class="card-header">왕의 권한 vs. 제사장의 권한</div>
+    <table class="framework-table">
+      <thead>
+        <tr><th>구분</th><th>왕의 권한 (넓은 선교)</th><th>제사장의 권한 (좁은 선교)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>수여 대상</td><td>교회의 <strong>각 회원</strong></td><td><strong>조직화된 공동체</strong>로서의 교회</td></tr>
+        <tr><td>내용</td><td>하나님의 형상 회복, 창조 세계 다스림</td><td>하나님의 심판 중재, 복음 선포</td></tr>
+        <tr><td>성경적 근거</td><td>아담&middot;하와의 위임(창 1), 갈 3</td><td>레위 제사장직, 마 16&middot;18 천국 열쇠</td></tr>
+        <tr><td>실천</td><td>모든 영역에서 성&middot;속 구분 없이</td><td>복음 선포, 세례&middot;성찬, 가르침, 치리</td></tr>
+        <tr><td>비유</td><td><strong>대사</strong>(ambassador)가 되는 것</td><td><strong>대사관</strong>(embassy)이 되는 것</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p><strong>왕의 권한.</strong> 아담과 하와는 하나님의 형상을 나타내고 창조 세계를 다스리는 아들이자 왕이었으나, 타락으로 형상을 왜곡시켰다(p.40). 그리스도 안에서 회복된 교회는 "하나님이 다스리는 것처럼 다스리"는 아들들이 된다(p.43).</p>
+
+  <div class="pull-quote">
+    <p>그리스도의 주재권을 인정하는 그리스도인에게는 모든 것이 신성하다. 이들에게는 속된 것이 없다.</p>
+    <cite>&mdash; 조너선 리먼, p.38</cite>
+  </div>
+
+  <p>따라서 넓은 선교 비판자들이 "온갖 단체가 정의를 위해 일하므로 우리는 제자 삼는 일에 집중해야 한다"고 주장하는 것은 <strong>"옳지 않다"</strong>(p.44).</p>
+
+  <p><strong>제사장의 권한.</strong> 인간의 가장 긴박한 문제는 죽음 자체가 아니라 "타락이 낳은 관계적 결과로 하나님과 분리"된 것(p.46). 제사장은 제사 이행, 의례적 정결 보호, 정결/부정 구분, 율법 교육을 통해 하나님의 심판을 <strong>중재한다</strong>(p.47). 예수는 대제사장이자 유월절 어린양으로 오셨다 &mdash; "이 왕은 제사장이자 어린양이 되심으로써 왕으로 다스리신다"(p.47).</p>
+
+  <hr class="section-divider">
+
+  <h2 id="salvation-scope">구원의 범위 &mdash; 무엇으로부터 구원받아야 하는가?</h2>
+  <h3>넓은 구원론에 대한 동의와 한계 (pp. 37&ndash;44)</h3>
+
+  <p>넓은 선교론의 전형적 논증은 이렇다: "하나님이 영혼 구원에 만족하지 않고 몸 또한 구원하기를 바라시고, 마찬가지로 경제 체계와 사회 구조도 구원하시고자 하기 때문이다"(p.37). 리먼은 이에 <strong>동의하면서도</strong> 결정적 질문을 던진다:</p>
+
+  <div class="pull-quote">
+    <p>진짜 복음은 어떤 것은 지금 약속하고 또 어떤 것은 훗날을 기약한다. 교회의 현재 할 일 목록이 이 사실을 반영해야 하지 않겠는가? 즉, 교회가 지금 어떤 일은 할 수 있지만 어떤 일은 할 수 없지 않은가?</p>
+    <cite>&mdash; 조너선 리먼, p.33</cite>
+  </div>
+
+  <p>이 질문이 바로 다음 절에서 다루는 '종말론적 주름' 논증의 씨앗이다.</p>
+
+  <hr class="section-divider">
+
+  <h2 id="eschatological-fold">종말론적 주름 &mdash; 왜 좁은 관점이 우선인가</h2>
+  <h3>리먼의 결정적 논증 (pp. 50&ndash;59)</h3>
+
+  <p>우리는 <strong>"창조 시대와 새 창조 시대라는 두 시대가 겹치는 영역"</strong>(종말론적 주름)에 산다(p.50). 예수는 초림 때 <strong>제사장직을 전면에 내세우셨고</strong>, 저주를 없애고 칼을 휘두르는 왕의 일은 재림 때로 미루셨다. 따라서 가장 긴박한 문제는 제사장이 해결할 죄 사함이다(p.51).</p>
+
+  <p>리먼이 강조하는 핵심 구별:</p>
+
+  <div class="pull-quote">
+    <p>영혼 대 몸의 문제가 아니라, 영원 대 현세의 문제다. 성숙해진다는 것은 점점 더 멀리 보는 안목을 키우는 것이다. 지혜란 결국 어떤 일을 끝까지 따르는 것이다. 그렇다면 성도는 언제나 영원으로써 현재를 가늠해야 하지 않겠는가?</p>
+    <cite>&mdash; 조너선 리먼, pp. 52&ndash;53</cite>
+  </div>
+
+  <p>그러나 리먼은 왕의 일을 <strong>부정하지 않는다.</strong> 그의 비유는 정교하다:</p>
+
+  <div class="pull-quote">
+    <p>두 종류의 일, 즉 수직적인 일과 수평적인 일, 제사장의 일과 왕의 일 모두 중요하다. 거듭난 왕으로서 일하는 사람이 없으면 엘리베이터 일을 하는 사람들이 제시할 모범이 없다. 엘리베이터 일을 하는 사람들이 없으면 아무도 위층으로 올라가지 못한다.</p>
+    <cite>&mdash; 조너선 리먼, p.57</cite>
+  </div>
+
+  <p>역사적 증거도 제시한다. 우드베리(Woodberry)의 연구에 따르면, <strong>"회심을 중시하는 개신교도"</strong>는 신앙의 자유, 대중 교육, 대규모 인쇄, 자원봉사 기관, 식민지 개혁의 <strong>"결정적 촉매"</strong>였다(p.55). 좁은 선교의 열매가 결국 넓은 변혁을 낳았다는 것이다.</p>
+
+  <div class="pull-quote">
+    <p>성경의 구원 이야기는 넓은 관점과 좁은 관점의 사명 모두를 요구한다. 하지만 종말론적 주름은 좁은 관점의 사명이 특별히 주목을 받을 만하다는 점을 암시한다.</p>
+    <cite>&mdash; 조너선 리먼, p.59</cite>
+  </div>
+
+  <hr class="section-divider">
+
+  <h2 id="keys">천국 열쇠 &mdash; 제사장적 권한의 제도적 근거</h2>
+  <h3>교회에게만 주어진 고유 권한 (pp. 60&ndash;66)</h3>
+
+  <p>하나님은 "개인 개인에게 주시지 않은 권한을 <strong>조직화된 공동체로서의 교회</strong>에게 주심으로써 교회의 좁은 관점의 사명을 특별히 강조하신다"(p.60). 천국 열쇠(마 16&middot;18)로 "누가 올바른 신앙고백자인지를 매거나 푸는" 권한이 교회에 주어진다(p.62).</p>
+
+  <p>교회는 복음을 <em>만들</em> 권한은 없지만, "이것이 복음입니다"라고 <strong>판결(재판관처럼)</strong>할 권한이 있다(p.62, 64). "성찬은 누가 하나님의 백성인지를 보여 준다"(p.66).</p>
+
+  <p>이 제도적 권한의 핵심은 <strong>경계 형성</strong>이다. 교회 공동으로 판결하는 일은 "성도를 식별하고, 성도를 온전하게 하고, 지역교회의 존재를 유지하고, <strong>교회와 세상 사이의 경계를 유지</strong>하는 데 중요하다"(p.72).</p>
+
+  <hr class="section-divider">
+
+  <h2 id="practice">실천적 결론 &mdash; 9가지 제안에서</h2>
+  <h3>리먼의 구체적 권고 (pp. 76&ndash;77)</h3>
+
+  <ol>
+    <li>그리스도인 삶의 첫 단계는 <strong>세례를 받고 한 지역교회의 회원</strong>이 되는 것</li>
+    <li>지역교회로서 <strong>설교&middot;규례&middot;치리를 통한 제자 삼기를 우선순위</strong>로 삼을 것</li>
+    <li>교회 회원 <strong>받아들임과 치리를 세심히</strong> 실천할 것</li>
+    <li>"그리스도인은 <strong>주일뿐만 아니라 모든 날을</strong> 교회로서 함께 살아야 한다"(행 2:42-46)</li>
+    <li>교회에 필요한 것은 사명만이 아니라 "<strong>경계를 넘나드는 선교사</strong>"가 필요하다</li>
+  </ol>
+
+  <hr class="section-divider">
+
+  <h2 id="critics">세 저자의 비판</h2>
+
+  <div class="critics-grid">
+
+    <div class="critic-card critic-a" id="critic-wright">
+      <div class="critic-header"><span class="dot"></span>크리스토퍼 라이트 (pp. 78&ndash;87) &mdash; "이분법이 과잉"</div>
+      <div class="critic-body">
+        <p>라이트는 리먼의 강력한 교회론과 왕/제사장 논의를 높이 평가하면서도 세 가지 핵심 비판을 제기한다.</p>
+        <ul>
+          <li><strong>이분법 과잉.</strong> 대위임령에서 "분부한 모든 것을 가르쳐 지키게" 하는데, 제자 되기와 삼기를 분리하는 것은 "다소 비논리적"(p.79-80). 왕의 역할을 흩어진 교회에, 제사장 역할을 조직 교회에 배정한 것은 "너무 멀리 나간 것"(p.83). <strong>벧전 2:9-12에서 두 역할은 결합</strong>돼 있으며, 'you'는 모두 복수인 '너희'다(p.84).</li>
+          <li><strong>'이미/아직'의 붕괴.</strong> "지금은 일부, 나중에 더 많이"가 복음을 위축시킬 수 있음. 왕의 사명이 "여전히 헛되다"는 비관론을 거부 &mdash; <strong>"그리스도의 부활 덕분에 우리 수고가 헛되지 않다"</strong>(고전 15:58, p.85). "부활과 새 창조의 복음은 모든 것이 궁극적으로 헛되다는 그 그리스 신화를 정확히 전복한다."</li>
+          <li><strong>복음 전도의 근거 확장.</strong> 긴급성의 근거를 진노&middot;멸망만이 아니라 "현재와 미래에 하나님이 행하시고 약속하시는 모든 일에 대한 좋은 소식"으로 넓혀야 한다(p.87).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="critic-card critic-b" id="critic-franke">
+      <div class="critic-header"><span class="dot"></span>존 프랭키 (pp. 88&ndash;95) &mdash; "좁은 사명이 넓은 사명을 제한"</div>
+      <div class="critic-body">
+        <p>프랭키는 리먼의 통합 시도를 인정하면서도 다음의 핵심 우려를 제기한다.</p>
+        <ul>
+          <li><strong>우선순위의 함정.</strong> "좁은 관점의 사명을 우선시하느라 더 넓은 범위의 사명 실천을 온당치 않게 제한하는 것은 아닐까"(p.91, 95). "성경 본문에서 영적인 관심이 현세의 관심보다 우선되지 않는다"(p.90).</li>
+          <li><strong>서구 신학의 패권.</strong> 보편적&middot;시대초월 신학은 허상이며 "서구 신학의 패권적 식민주의의 한 형태"(p.91-92). 아프리카 그리스도인의 목소리: "우리는 서구의 조직신학으로 우리의 작업을 하고 싶지 않고 그럴 필요도 없습니다."</li>
+          <li><strong>종말론적 입장 차이.</strong> 프랭키는 영원한 형벌 대신 조건부 불멸설/영혼멸절설을 지지(p.93). 기독교 밖 사람들의 구원 가능성도 열어두는 포용적&middot;다원적 입장(p.94).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="critic-card critic-c" id="critic-leithart">
+      <div class="critic-header"><span class="dot"></span>피터 라잇하르트 (pp. 96&ndash;102) &mdash; "성례전적 양념이 필요"</div>
+      <div class="critic-body">
+        <p>라잇하르트는 리먼의 선교론에 "예전과 성례라는 양념으로 맛을 돋울 필요가 있다"(p.98)고 주장한다.</p>
+        <ul>
+          <li><strong>왕의 측면에 대한 침묵.</strong> 회집한 교회에 왕의 측면이 있다는 것을 명시적으로 말하지 않는다 &mdash; "처음에는 당혹스럽고, 다음에는 불안하며, 그다음으로는 불완전한 예전 신학을 연상케 한다"(p.98). <strong>"모여서 드리는 예배는 정치 행위, 왕 중의 왕을 인정하는 정치 행위"</strong>(p.99).</li>
+          <li><strong>멜기세덱의 제사장-왕.</strong> 시편 110편의 제사장은 "보좌에 앉은 제사장"이며 "십자가는 왕의 영광의 현현"(p.100-101). 제사장과 왕을 분리하는 것은 성경 자체의 통합성을 놓친다.</li>
+          <li><strong>'이미'의 과소평가.</strong> "리먼은 이미(already)의 영향력을 과소평가한다"(p.101). 더 강력하고 확장성 있는 성례전적 신학이 있어야 약점을 해결할 수 있다(p.102).</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <p style="font-size:.92rem; color:var(--text-secondary); text-align:center; margin-top:1rem;">세 논평의 공통 비판: 리먼의 왕/제사장 <strong>이분법이 과도</strong>하며, <strong>'이미'의 영향력을 과소평가</strong>한다.</p>
+
+  <hr class="section-divider">
+
+  <div class="questions-section" id="questions">
+    <h3>미해결 질문과 적용</h3>
+
+    <div class="question-item">
+      <div class="question-label">미해결 질문 1</div>
+      <p>리먼의 '종말론적 주름' 논증은 설득력 있으나, 라이트의 고전 15:58 반론("수고가 헛되지 않다")과 어떻게 조화시킬 수 있는가? 좁은 선교의 <strong>우선순위</strong>와 넓은 선교의 <strong>동시성</strong> 사이 긴장.</p>
+    </div>
+
+    <div class="question-item">
+      <div class="question-label">미해결 질문 2</div>
+      <p>프랭키의 "보편적 신학은 허상" 비판은 리먼(그리고 서구 복음주의 전반)의 신학 방법론에 도전한다. 상황화와 정통성의 경계는?</p>
+    </div>
+
+    <div class="question-item">
+      <div class="question-label">미해결 질문 3</div>
+      <p>라잇하르트가 지적한 '예배의 정치성' &mdash; 모여서 드리는 예배가 "왕 중의 왕을 인정하는 정치 행위"라면, 좁은 선교(제사장적 예배)와 넓은 선교(왕적 정치 참여)는 <strong>이미 예배 안에서 결합</strong>되어 있지 않은가?</p>
+    </div>
+
+    <div class="question-item">
+      <div class="question-label">사역 적용</div>
+      <p>리먼의 '대사관/대사' 비유는 지역교회의 정체성 질문에 직결된다 &mdash; 교회는 먼저 '대사관'(조직적 복음 선포&middot;제자 훈련)이 되어야 '대사'(사회 참여&middot;문화 변혁)를 보낼 수 있다.</p>
+    </div>
+  </div>
+
+  <div class="takeaway" id="takeaway">
+    <h3>핵심 시사점</h3>
+    <ul>
+      <li>리먼은 넓은 선교와 좁은 선교 <strong>모두를 긍정</strong>한다. 단순한 환원주의자가 아니다.</li>
+      <li><strong>종말론적 주름</strong> &mdash; '이미'와 '아직' 사이에서 제사장적(좁은) 사명이 우선적 긴급성을 갖는다.</li>
+      <li><strong>왕/제사장 프레임</strong>: 개인의 모든 영역 참여(왕) + 교회 공동체의 복음 선포&middot;경계 유지(제사장).</li>
+      <li>세 비판자 <strong>모두</strong> 이분법이 과도하다고 지적 &mdash; 성경 자체에서 왕과 제사장은 통합돼 있다(벧전 2:9-12, 시 110).</li>
+      <li>우드베리 연구: 좁은 선교의 역사적 열매가 넓은 사회 변혁을 낳았다 &mdash; <strong>순서가 중요하다</strong>는 경험적 근거.</li>
+      <li>'대사관이 먼저, 대사는 그 다음' &mdash; 지역교회의 정체성과 사명의 우선순위에 대한 실천적 함의.</li>
+    </ul>
+  </div>
+
+<section class="marktl-reader-feedback" aria-label="Reader feedback">
+<style>
+.marktl-reader-feedback { margin: 40px auto 0; padding: 0; }
+.marktl-reader-feedback h2 { margin: 0 0 8px; font: 800 22px/1.25 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.marktl-reader-feedback p { margin: 0 0 14px; color: #526173; font: 500 14px/1.5 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.marktl-reader-feedback .giscus, .marktl-reader-feedback .giscus-frame { width: 100%; }
+</style>
+<h2>Reader feedback</h2>
+<p>Leave a public GitHub comment or reaction below.</p>
+<script src="https://giscus.app/client.js"
+        data-repo="allpeaceclinic-max/allpeaceclinic"
+        data-repo-id="R_kgDOSEGibA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOSEGibM4C9mVG"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="ko"
+        crossorigin="anonymous"
+        async>
+</script>
+</section>
+</main>
+
+<footer class="article-footer">
+  <p class="book-ref">
+    『선교에 대한 네 가지 견해』<br>
+    조너선 리먼 &middot; 크리스토퍼 라이트 &middot; 존 프랭키 &middot; 피터 라잇하르트 저, 제이슨 섹스턴 편
+  </p>
+  <p style="margin-top:.6rem;">4부작 중 1부 &mdash; 구원론적 선교 (제1장, pp. 27&ndash;102)</p>
+</footer>
+
+<script>
+const tocToggle = document.getElementById('tocToggle');
+const tocBody = document.getElementById('tocBody');
+tocToggle.addEventListener('click', () => {
+  const expanded = tocToggle.getAttribute('aria-expanded') === 'true';
+  tocToggle.setAttribute('aria-expanded', !expanded);
+  tocBody.classList.toggle('open');
+});
+
+const progressBar = document.getElementById('progressBar');
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  if (docHeight > 0) {
+    progressBar.style.width = (scrollTop / docHeight * 100) + '%';
+  }
+}, { passive: true });
+
+document.querySelectorAll('.toc-list a').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (window.innerWidth < 640) {
+        tocToggle.setAttribute('aria-expanded', 'false');
+        tocBody.classList.remove('open');
+      }
+    }
+  });
+});
+</script>
+</body>
+</html>
