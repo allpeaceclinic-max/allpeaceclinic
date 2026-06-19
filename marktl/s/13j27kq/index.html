@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>참여 선교: 크리스토퍼 라이트의 선교적 성경 해석학 — 선교에 대한 네 가지 견해 2부</title>
+<meta name="description" content="크리스토퍼 라이트의 참여 선교(Participatory Mission) 견해를 분석한다. 교회는 하나님의 선교를 위해 존재하며, 그 사명은 성경 전체 이야기에 '참여'하는 것이다. 리먼·프랭키·라잇하르트의 논평과 함께.">
+<meta property="og:title" content="참여 선교: 크리스토퍼 라이트의 선교적 성경 해석학">
+<meta property="og:description" content="교회는 하나님의 선교를 위해 존재하며, 그 사명은 성경 전체 이야기에 '참여'하는 것이다 — 『선교에 대한 네 가지 견해』 제2장 심층 분석.">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="참여 선교: 크리스토퍼 라이트의 선교적 성경 해석학">
+<meta name="twitter:description" content="교회는 하나님의 선교를 위해 존재하며, 그 사명은 성경 전체 이야기에 '참여'하는 것이다.">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --ink-light: #3d3d5c;
+    --ink-muted: #6b6b8d;
+    --bg: #faf9f7;
+    --bg-warm: #f5f0ea;
+    --bg-card: #ffffff;
+    --accent: #8b4513;
+    --accent-light: #a0522d;
+    --accent-pale: #f5ebe0;
+    --accent-gold: #b8860b;
+    --border: #e0dcd4;
+    --border-light: #ece8e1;
+    --shadow: rgba(26, 26, 46, 0.06);
+    --shadow-md: rgba(26, 26, 46, 0.1);
+    --font-serif: 'Noto Serif KR', 'Nanum Myeongjo', Georgia, 'Times New Roman', serif;
+    --font-sans: 'Pretendard', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --max-w: 720px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    font-size: 17px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    font-family: var(--font-serif);
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.85;
+    letter-spacing: -0.01em;
+  }
+
+  .progress-bar {
+    position: fixed; top: 0; left: 0;
+    width: 0%; height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-gold));
+    z-index: 1000;
+    transition: width 0.1s linear;
+  }
+
+  .hero {
+    background: linear-gradient(165deg, #1a1a2e 0%, #2d1b3d 40%, #3d2b1a 100%);
+    color: #fff;
+    padding: 5rem 1.5rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 30% 20%, rgba(184, 134, 11, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 80%, rgba(139, 69, 19, 0.1) 0%, transparent 60%);
+  }
+  .hero-inner { position: relative; z-index: 1; max-width: var(--max-w); margin: 0 auto; }
+  .hero .series-badge {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    border: 1px solid rgba(184, 134, 11, 0.4);
+    padding: 0.35rem 1rem;
+    border-radius: 2rem;
+    margin-bottom: 1.8rem;
+  }
+  .hero h1 {
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.02em;
+  }
+  .hero .subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: rgba(255,255,255,0.75);
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  .hero .meta-line {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.03em;
+  }
+  .hero .meta-line span { margin: 0 0.5rem; }
+
+  .toc-container {
+    max-width: var(--max-w);
+    margin: -2rem auto 3rem;
+    padding: 0 1.5rem;
+    position: relative; z-index: 2;
+  }
+  .toc {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.8rem 2rem;
+    box-shadow: 0 4px 24px var(--shadow);
+  }
+  .toc-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+  }
+  .toc-title {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+  .toc-toggle {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    color: var(--accent);
+    background: none; border: none; cursor: pointer;
+    font-weight: 600;
+  }
+  .toc-list {
+    list-style: none;
+    margin-top: 1rem;
+    display: grid;
+    gap: 0.4rem;
+    transition: max-height 0.35s ease, opacity 0.25s ease;
+    overflow: hidden;
+  }
+  .toc-list.collapsed { max-height: 0; opacity: 0; margin-top: 0; }
+  .toc-list li a {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--ink-light);
+    text-decoration: none;
+    padding: 0.3rem 0;
+    display: block;
+    border-bottom: 1px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .toc-list li a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent-pale);
+  }
+  .toc-list li a .toc-num {
+    display: inline-block;
+    width: 1.8rem;
+    color: var(--accent-gold);
+    font-weight: 600;
+    font-size: 0.75rem;
+  }
+
+  .abstract-wrap {
+    max-width: var(--max-w);
+    margin: 0 auto 3rem;
+    padding: 0 1.5rem;
+  }
+  .abstract {
+    background: var(--accent-pale);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+    padding: 1.8rem 2rem;
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: var(--ink-light);
+  }
+  .abstract strong { color: var(--ink); }
+  .abstract-label {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+    display: block;
+  }
+
+  .content {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem;
+  }
+
+  .content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 3.5rem 0 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border);
+    line-height: 1.4;
+    letter-spacing: -0.015em;
+  }
+  .content h2:first-child { margin-top: 0; }
+
+  .content h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 2.5rem 0 0.8rem;
+    line-height: 1.45;
+  }
+
+  .content p {
+    margin-bottom: 1.2rem;
+    text-align: justify;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  .pull-quote {
+    margin: 2.5rem -1rem;
+    padding: 2rem 2.2rem;
+    background: linear-gradient(135deg, var(--bg-warm) 0%, #f8f4ee 100%);
+    border-left: 4px solid var(--accent-gold);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--ink-light);
+    line-height: 1.9;
+    position: relative;
+  }
+  .pull-quote::before {
+    content: '\201C';
+    font-size: 4rem;
+    color: var(--accent-gold);
+    opacity: 0.25;
+    position: absolute;
+    top: -0.3rem;
+    left: 0.8rem;
+    line-height: 1;
+    font-family: Georgia, serif;
+  }
+  .pull-quote .pq-source {
+    display: block;
+    margin-top: 0.8rem;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+  }
+
+  .insight-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.8rem 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 2px 12px var(--shadow);
+    position: relative;
+    overflow: hidden;
+  }
+  .insight-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-gold));
+  }
+  .insight-label {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    margin: 1.5rem -0.5rem;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    box-shadow: 0 2px 8px var(--shadow);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+  }
+  thead {
+    background: var(--ink);
+    color: #fff;
+  }
+  th {
+    padding: 0.9rem 1.2rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  td {
+    padding: 0.8rem 1.2rem;
+    border-top: 1px solid var(--border-light);
+    vertical-align: top;
+    line-height: 1.6;
+  }
+  tbody tr:hover { background: var(--accent-pale); }
+
+  .commentary-section {
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    border-top: 3px double var(--border);
+  }
+
+  .critic-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.8rem 2rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 2px 12px var(--shadow);
+    position: relative;
+  }
+  .critic-card .critic-name {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+  }
+  .critic-card .critic-angle {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+  .critic-card p { text-align: left; }
+
+  .application-section {
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    border-top: 3px double var(--border);
+  }
+
+  .question-item {
+    background: var(--bg-warm);
+    border-radius: 10px;
+    padding: 1.4rem 1.6rem;
+    margin: 1rem 0;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+    user-select: none;
+  }
+  .question-item:hover { box-shadow: 0 2px 12px var(--shadow-md); }
+  .question-item .q-head {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .question-item .q-head .q-chevron {
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+    transition: transform 0.2s;
+  }
+  .question-item.open .q-head .q-chevron { transform: rotate(180deg); }
+  .question-item .q-body {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    font-size: 0.9rem;
+    color: var(--ink-light);
+    line-height: 1.8;
+  }
+  .question-item.open .q-body {
+    max-height: 500px;
+    padding-top: 0.8rem;
+  }
+
+  .wheel-diagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+    padding: 2rem;
+    background: var(--bg-card);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 12px var(--shadow);
+  }
+  .wheel-svg { max-width: 320px; width: 100%; }
+
+  .article-footer {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+    text-align: center;
+  }
+  .article-footer .divider {
+    width: 60px; height: 2px;
+    background: var(--border);
+    margin: 0 auto 1.5rem;
+  }
+  .article-footer p {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+    line-height: 1.7;
+  }
+  .article-footer .source-note {
+    font-size: 0.75rem;
+    color: var(--ink-muted);
+    margin-top: 1rem;
+    font-style: italic;
+  }
+
+  .copy-btn {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-pale);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    margin-top: 0.5rem;
+  }
+  .copy-btn:hover { background: #ecdcc9; }
+  .copy-btn:active { transform: scale(0.97); }
+
+  .section-num {
+    font-family: var(--font-sans);
+    font-weight: 800;
+    font-size: 0.7rem;
+    color: var(--accent-gold);
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+
+  @media (max-width: 640px) {
+    html { font-size: 15.5px; }
+    .hero { padding: 3.5rem 1.2rem 3rem; }
+    .toc, .abstract, .insight-card, .critic-card { padding: 1.4rem 1.3rem; }
+    .pull-quote { margin: 2rem -0.3rem; padding: 1.5rem 1.4rem; }
+    .content h2 { font-size: 1.3rem; }
+    .table-wrap { margin: 1.2rem -0.3rem; }
+    th, td { padding: 0.6rem 0.8rem; }
+  }
+
+  .fade-in {
+    opacity: 0; transform: translateY(16px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
+<meta property="og:type" content="article">
+<meta property="og:title" content="선교에 대한 네 가지 견해 · 2부 — 참여 선교 (크리스토퍼 라이트)">
+<meta property="og:description" content="『선교에 대한 네 가지 견해』(Four Views on the Church&#39;s Mission) 제2장. [[people/크리스토퍼라이트|크리스토퍼 라이트]]의 견해 = 참여 선교(Participatory Mission) — &quot;성경 이야기에 드러난 하나님 백성의 사명&quot;(p.105). 본문 뒤에 [[people/조너선리먼|리">
+<meta property="og:url" content="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/s/13j27kq/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="선교에 대한 네 가지 견해 · 2부 — 참여 선교 (크리스토퍼 라이트)">
+<meta name="twitter:description" content="『선교에 대한 네 가지 견해』(Four Views on the Church&#39;s Mission) 제2장. [[people/크리스토퍼라이트|크리스토퍼 라이트]]의 견해 = 참여 선교(Participatory Mission) — &quot;성경 이야기에 드러난 하나님 백성의 사명&quot;(p.105). 본문 뒤에 [[people/조너선리먼|리">
+<link rel="canonical" href="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/s/13j27kq/">
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="series-badge">선교에 대한 네 가지 견해 &middot; 4부작 중 2부</span>
+    <h1>참여 선교<br><span style="font-weight:300; font-size:0.65em; opacity:0.85;">크리스토퍼 라이트의 선교적 성경 해석학</span></h1>
+    <p class="subtitle">"교회는 하나님의 선교를 위해 존재한다"&thinsp;&mdash;&thinsp;성경 전체 이야기에 '참여'하는 교회의 사명</p>
+    <p class="meta-line">
+      크리스토퍼 라이트 저 <span>&bull;</span> 제이슨 섹스턴 편
+      <span>&bull;</span> <em>Four Views on the Church's Mission</em> 제2장
+    </p>
+  </div>
+</header>
+
+<nav class="toc-container">
+  <div class="toc">
+    <div class="toc-header" onclick="toggleToc()">
+      <span class="toc-title">목차</span>
+      <button class="toc-toggle" id="tocToggle">접기</button>
+    </div>
+    <ol class="toc-list" id="tocList">
+      <li><a href="#abstract"><span class="toc-num">00</span>요약 &mdash; 핵심 명제</a></li>
+      <li><a href="#s1"><span class="toc-num">01</span>사명 = 교회가 '무엇을 위해' 존재하는가</a></li>
+      <li><a href="#s2"><span class="toc-num">02</span>성경 6막 드라마 &mdash; 교회는 5막에 위치</a></li>
+      <li><a href="#s3"><span class="toc-num">03</span>이스라엘의 사명: '가라'가 아니라 '존재하라'</a></li>
+      <li><a href="#s4"><span class="toc-num">04</span>십자가 신학 &mdash; 사명의 범위를 규정</a></li>
+      <li><a href="#s5"><span class="toc-num">05</span>대위임령 = 아브라함 약속의 절정</a></li>
+      <li><a href="#s6"><span class="toc-num">06</span>사명의 다섯 표지 &rarr; 세 영역</a></li>
+      <li><a href="#s7"><span class="toc-num">07</span>복음의 '우선성'이 아니라 '중심성'</a></li>
+      <li><a href="#s8"><span class="toc-num">08</span>빛의 윤리적 의미와 초대교회</a></li>
+      <li><a href="#s9"><span class="toc-num">09</span>가르침 = 선교의 본질, 그리고 missio Dei</a></li>
+      <li><a href="#commentary"><span class="toc-num">10</span>세 논평자의 비판</a></li>
+      <li><a href="#application"><span class="toc-num">11</span>적용과 미해결 질문</a></li>
+    </ol>
+  </div>
+</nav>
+
+<section class="abstract-wrap" id="abstract">
+  <div class="abstract fade-in">
+    <span class="abstract-label">Abstract</span>
+    크리스토퍼 라이트는 <em>『하나님의 선교』</em>에서 전개한 <strong>선교적 성경 해석학</strong>을 토론서 형식으로 압축한다.
+    핵심 명제: <strong>교회는 하나님의 선교를 위해 존재하며, 그 사명은 성경 전체 이야기에 '참여'하는 것이다.</strong>
+    구약 이스라엘은 '가라(go)'가 아니라 '존재하라(be)'는 구심적 증언으로 열방을 끌어들였고,
+    신약 교회는 그 연속선상에서 아브라함 약속의 절정인 대위임령을 통해 원심적 사명을 위임받았다.
+    복음 전도, 사회 참여, 창조 세계 돌봄 &mdash; 이 세 영역은 분리 불가능한 <strong>통합적(integral) 사명</strong>이며,
+    복음은 '우선순위'가 아니라 모든 것을 움직이는 '중심'이다.
+    <br><br>
+    <button class="copy-btn" onclick="copySummary()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+      요약 복사
+    </button>
+  </div>
+</section>
+
+<article class="content">
+
+  <section id="s1" class="fade-in">
+    <span class="section-num">SECTION 01</span>
+    <h2>사명 = 교회가 '무엇을 위해' 존재하는가</h2>
+    <p>
+      라이트의 출발점은 단순하다. "'사명'(mission)은 성경적 단어가 아니라고 흔히들 지적하지만,
+      그래도 '삼위일체'와 마찬가지로 성경의 핵심적이고 필수적인 가르침을 요약하는 데 꼭 필요한 단어다"(p.107).
+      <strong>사명이란 교회의 정체성을 그 목적으로부터 정의한다.</strong>
+    </p>
+    <p>
+      그는 <strong>벧전 2:9-12</strong>를 출발점으로 삼는다. 베드로는 출 19:6, 사 43:21, 호 1:9를 엮어
+      교회의 정체성과 사명을 결합하고, 신약 교회를 구약 이스라엘과 통합한다.
+      "이방인 중에서 행실을 선하게 가[지라]"는 명령은 예수의 말씀(마 5:16)의 반복이자,
+      이스라엘에게 가장 먼저 기대된 일이었다 &mdash;
+      "하나님의 백성이 주변 민족들과 아주 확연하게 달라서 이 민족들이 이를 알아차리리라"(신 4:6-8, p.108).
+    </p>
+    <div class="pull-quote">
+      우리를 불러 하나님의 백성으로 만드심은, 우리가 하나님이 누구이시고 어떤 일을 이루셨는지에 관한
+      놀라운 진리('아름다운 덕')를 <strong>증언하는</strong> 것, 그리고 우리가 사는 모습을 보고
+      열방이 우리 하나님께 영광을 돌리는 것이다.
+      <span class="pq-source">&mdash; 크리스토퍼 라이트, p.109 &nbsp;|&nbsp; 표시: "① 증언 ② 행위" 2단계</span>
+    </div>
+  </section>
+
+  <section id="s2" class="fade-in">
+    <span class="section-num">SECTION 02</span>
+    <h2>성경 6막 드라마 &mdash; 교회는 5막에 위치</h2>
+    <p>
+      라이트는 바르톨로뮤&middot;고힌의 <strong>성경 드라마 6막</strong> 구조를 채택한다.
+      교회는 "그리스도 안에 있기 때문에 아브라함 안에도 있는 사람으로서"(p.110) 구약 백성과 <strong>연속선상</strong>에 있다.
+    </p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>막</th><th>내용</th><th>위치</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1막</td><td>창조</td><td></td></tr>
+          <tr><td>2막</td><td>타락</td><td></td></tr>
+          <tr><td>3막</td><td>구속의 시작 (구약 이스라엘)</td><td></td></tr>
+          <tr><td>4막</td><td>구속의 성취 (그리스도의 삶&middot;죽음&middot;부활&middot;승천)</td><td></td></tr>
+          <tr style="background: var(--accent-pale); font-weight: 600;"><td>5막</td><td>교회의 사명 (오순절 ~ 재림/파루시아)</td><td style="color: var(--accent);">우리가 사는 곳</td></tr>
+          <tr><td>6막</td><td>구속의 완성 (새 창조)</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      "사명이란 단순히 하나님의 명령에 순종하는 문제가 아니라, 우리가 참여한 이야기를 알고 그에 따라 살아가며
+      하나님의 능하신 행적을 증언하는 문제다"(p.129). 리먼(1부)이 강조한 '종말론적 주름'과 같은 5막을 다루되,
+      <strong>라이트는 연속성</strong>을, <strong>리먼은 불연속성&middot;우선순위</strong>를 강조한다는 점이 핵심 분기점이다.
+    </p>
+  </section>
+
+  <section id="s3" class="fade-in">
+    <span class="section-num">SECTION 03</span>
+    <h2>이스라엘의 사명: '가라(go)'가 아니라 '존재하라(be)'</h2>
+
+    <div class="insight-card">
+      <span class="insight-label">핵심 인사이트</span>
+      <p style="margin-bottom:0;">
+        구약 이스라엘에게는 "다른 문화권으로 가서 메시지를 선포하라"는 현대적 의미의 <strong>'선교사 파송 명령'이 없었다</strong>(p.115).
+        대신 이스라엘의 사명은 <strong>구심적(centripetal)</strong> &mdash; 주변 나라와 <strong>대조되는 삶으로 야웨를 증언</strong>하여
+        열방을 끌어들이는 것이다.
+      </p>
+    </div>
+
+    <p>
+      성경적 근거는 <strong>창세기 18:18-19</strong>이다.
+      "내가 그로 그 자식과 권속에게 명하여 여호와의 도를 지켜 <strong>의와 공도를 행</strong>하[게]…"
+      여기서 "여호와의 도를 지켜 의와 공도를 행"하는 것은
+      <strong>선택(19절상)과 사명(19절하) 사이에 놓인 윤리적 의제</strong>다(p.117).
+    </p>
+
+    <h3>율법의 선교적 차원</h3>
+    <p>
+      율법조차 "문제를 해결하기 위해서가 아니라 백성을 빚어 가기 위해" 주어졌다(p.121).
+      "희생제사뿐만 아니라 율법 전체가…하나님의 백성이 구속의 은혜에 부응하여
+      <strong>주변 나라들과 대조되는 삶으로 하나님을 증언하는 온전한 공동체</strong>가 되게 하려는 것이었다"(p.122).
+      솔로몬의 성전 봉헌식(왕상 8:60-61)에서도 율법 순종이 열방에 야웨의 이름을 퍼뜨릴 것을 내다본다.
+    </p>
+    <p>
+      이스라엘은 실패했으나 "하나님은 이스라엘의 실패를 이스라엘을 비롯한
+      <strong>모든 민족을 위한 구속 계획 안에 포함</strong>시키셨다"(p.124).
+    </p>
+  </section>
+
+  <section id="s4" class="fade-in">
+    <span class="section-num">SECTION 04</span>
+    <h2>십자가 신학 &mdash; 사명의 범위를 규정</h2>
+    <p>
+      라이트는 <strong>두 방향의 십자가 신학</strong>이 모두 필요하다고 본다(p.125):
+    </p>
+    <ul style="list-style: none; padding: 0; margin: 0.5rem 0 1.5rem;">
+      <li style="padding: 0.4rem 0; padding-left: 1.2rem; border-left: 2px solid var(--accent-gold);">하나님의 선교 중심의 십자가 신학 (God's-mission-centered theology of the cross)</li>
+      <li style="padding: 0.4rem 0; padding-left: 1.2rem; border-left: 2px solid var(--accent); margin-top: 0.5rem;">십자가 중심의 우리의 사명 신학 (cross-centered theology of our mission)</li>
+    </ul>
+
+    <div class="insight-card">
+      <span class="insight-label">십자가의 다섯 차원</span>
+      <ol style="list-style: none; padding: 0;">
+        <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-light); display: flex; align-items: baseline; gap: 0.8rem;">
+          <span style="font-family: var(--font-sans); font-weight: 800; color: var(--accent-gold); font-size: 0.8rem; min-width: 1.5rem;">01</span>
+          죄가 벌을 받고 죄인들이 용서받는 것 (벧전 2:24)
+        </li>
+        <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-light); display: flex; align-items: baseline; gap: 0.8rem;">
+          <span style="font-family: var(--font-sans); font-weight: 800; color: var(--accent-gold); font-size: 0.8rem; min-width: 1.5rem;">02</span>
+          악이 패퇴하고 인간이 해방되는 것 (골 2:15)
+        </li>
+        <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-light); display: flex; align-items: baseline; gap: 0.8rem;">
+          <span style="font-family: var(--font-sans); font-weight: 800; color: var(--accent-gold); font-size: 0.8rem; min-width: 1.5rem;">03</span>
+          죽음을 소멸하고 생명과 불멸을 드러내는 것 (히 2:14)
+        </li>
+        <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-light); display: flex; align-items: baseline; gap: 0.8rem;">
+          <span style="font-family: var(--font-sans); font-weight: 800; color: var(--accent-gold); font-size: 0.8rem; min-width: 1.5rem;">04</span>
+          원수들이 서로 화해하고 하나님과 화해하는 것 (엡 2:14-16)
+        </li>
+        <li style="padding: 0.5rem 0; display: flex; align-items: baseline; gap: 0.8rem;">
+          <span style="font-family: var(--font-sans); font-weight: 800; color: var(--accent-gold); font-size: 0.8rem; min-width: 1.5rem;">05</span>
+          창조 세계 자체가 회복되고 창조주와 화해하는 것 (골 1:20)
+        </li>
+      </ol>
+    </div>
+    <div class="pull-quote">
+      이 모든 것이 함께 하나님의 선교를 구성한다. 그리고 이 모든 것이 그리스도의 십자가와 부활로 귀결되었다.
+      &hellip;십자가가 사명의 근원이자 능력, 사명의 범위를 규정한다.
+      <span class="pq-source">&mdash; 크리스토퍼 라이트, p.126</span>
+    </div>
+  </section>
+
+  <section id="s5" class="fade-in">
+    <span class="section-num">SECTION 05</span>
+    <h2>대위임령 = 아브라함 약속의 절정</h2>
+    <p>
+      5막에서 사명이 위임된다. 대위임령은 "원칙적으로 새롭거나 전례 없는 것이 아니"라
+      "하나님이 이스라엘과 함께하신 성경 이야기의 논리적 결론"이되,
+      <strong>범위와 방향(원심적 송출)에서 근본적으로 새롭다</strong>(p.130).
+    </p>
+    <p>
+      바울의 사명 정의 &mdash; "그의 이름을 위하여 모든 민족 중에서 <strong>믿음의 순종</strong>이 일어나게 하는 것"(롬 1:5) &mdash; 은
+      '모든 민족'과 '믿음+순종'의 결합에서 철저히 <strong>아브라함적</strong>이다(p.131).
+      "믿음으로 아브라함은…순종하여"(히 11:8). <strong>믿음과 순종</strong>은 바울의 선교론에서와
+      대위임령에서 모두 "빠뜨릴 수 없는 구성요소"(p.132).
+    </p>
+  </section>
+
+  <section id="s6" class="fade-in">
+    <span class="section-num">SECTION 06</span>
+    <h2>사명의 다섯 가지 표지 &rarr; 세 영역</h2>
+    <p>
+      1988년 람베스 주교회의가 채택한 <strong>Five Marks of Mission</strong>을 라이트는 세 영역으로 재구성한다.
+    </p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>다섯 표지</th><th>그리스도와의 관계</th><th>세 영역</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>① 복음 전도</td><td>주&middot;왕&middot;구주 선포</td><td rowspan="2" style="vertical-align: middle; font-weight:600; color: var(--accent);">교회 세우기</td></tr>
+          <tr><td>② 가르침</td><td>제자의 길로 인도</td></tr>
+          <tr><td>③ 긍휼</td><td>"두루 다니시며 선한 일을 행하[신]" 모범</td><td rowspan="2" style="vertical-align: middle; font-weight:600; color: var(--accent);">사회 참여</td></tr>
+          <tr><td>④ 정의</td><td>온 땅의 재판장</td></tr>
+          <tr><td>⑤ 창조 세계 돌봄</td><td>창조&middot;구속의 권리로 소유하신 것</td><td style="font-weight:600; color: var(--accent);">창조 세계 돌보기</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="s7" class="fade-in">
+    <span class="section-num">SECTION 07</span>
+    <h2>복음의 '우선성'이 아니라 '중심성'</h2>
+
+    <div class="insight-card">
+      <span class="insight-label">핵심 인사이트 &mdash; 바퀴 비유</span>
+      <p>
+        라이트는 전통적 복음주의의 '<strong>복음 전도의 우선성</strong>(priority)' 대신
+        <strong>복음의 중심성</strong>(centrality)을 말한다.
+        <strong>통합적(integral) 사명</strong>: "개인과 사회와 창조 세계 셋 모두 죄 때문에 망가져서 고통당하고 있다.
+        셋 모두 하나님의 구속하시는 사랑과 사명에 포함된다.
+        셋 모두 하나님 백성의 포괄적 사명의 일부가 되어야 한다"(p.136).
+      </p>
+    </div>
+
+    <div class="wheel-diagram">
+      <svg class="wheel-svg" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="160" cy="160" r="140" fill="none" stroke="#e0dcd4" stroke-width="28" />
+        <circle cx="160" cy="160" r="140" fill="none" stroke="var(--accent-pale)" stroke-width="24" />
+        <circle cx="160" cy="160" r="55" fill="var(--accent)" />
+        <circle cx="160" cy="160" r="48" fill="none" stroke="var(--accent-gold)" stroke-width="2" stroke-dasharray="4,3"/>
+        <circle cx="160" cy="160" r="28" fill="var(--accent-gold)" />
+        <text x="160" y="155" text-anchor="middle" font-family="var(--font-sans)" font-size="9" fill="#fff" font-weight="700">엔진</text>
+        <text x="160" y="167" text-anchor="middle" font-family="var(--font-sans)" font-size="7.5" fill="rgba(255,255,255,0.8)">복음</text>
+        <text x="160" y="195" text-anchor="middle" font-family="var(--font-sans)" font-size="7.5" fill="rgba(255,255,255,0.9)" font-weight="600">바퀴통(hub)</text>
+        <text x="160" y="205" text-anchor="middle" font-family="var(--font-sans)" font-size="6.5" fill="rgba(255,255,255,0.7)">좋은 소식을 나누는 전도</text>
+        <text x="160" y="40" text-anchor="middle" font-family="var(--font-sans)" font-size="8" fill="var(--ink-muted)" font-weight="600">외륜 / 타이어</text>
+        <text x="160" y="52" text-anchor="middle" font-family="var(--font-sans)" font-size="7" fill="var(--ink-muted)">삶과 활동으로 세상에 복음을 구체화</text>
+        <line x1="160" y1="105" x2="160" y2="78" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+        <line x1="112" y1="132" x2="90" y2="110" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+        <line x1="208" y1="132" x2="230" y2="110" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+        <line x1="112" y1="188" x2="90" y2="210" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+        <line x1="208" y1="188" x2="230" y2="210" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+        <text x="160" y="72" text-anchor="middle" font-family="var(--font-sans)" font-size="7" fill="var(--accent)" font-weight="600">복음 전도</text>
+        <text x="72" y="100" text-anchor="middle" font-family="var(--font-sans)" font-size="7" fill="var(--accent)" font-weight="600">정의</text>
+        <text x="248" y="100" text-anchor="middle" font-family="var(--font-sans)" font-size="7" fill="var(--accent)" font-weight="600">긍휼</text>
+        <text x="72" y="228" text-anchor="middle" font-family="var(--font-sans)" font-size="7" fill="var(--accent)" font-weight="600">창조 돌봄</text>
+        <text x="248" y="228" text-anchor="middle" font-family="var(--font-sans)" font-size="7" fill="var(--accent)" font-weight="600">가르침</text>
+      </svg>
+      <p style="font-family: var(--font-sans); font-size: 0.75rem; color: var(--ink-muted); margin-top: 0.8rem; text-align: center;">
+        라이트의 '바퀴 비유'(p.138) &mdash; 복음은 우선순위가 아니라 모든 것을 움직이는 <strong>엔진</strong>이다.
+      </p>
+    </div>
+  </section>
+
+  <section id="s8" class="fade-in">
+    <span class="section-num">SECTION 08</span>
+    <h2>빛의 윤리적 의미와 초대교회의 실천</h2>
+    <div class="pull-quote">
+      빛에는 강력한 윤리적&middot;사회적 의미가 있었으며, 이사야서에서는 '빛'이 '의로움'과 결합한다(사 58:6-8).
+      빛은 긍휼과 정의에 몰두하는 사람들에게서 반짝인다. &hellip;그런 빛은 백성 가운데서
+      <strong>하나님 자신의 임재와 영광의 빛을 반사</strong>하기 때문에 뭇 나라를 끌어들인다.
+      <span class="pq-source">&mdash; 크리스토퍼 라이트, p.143</span>
+    </div>
+    <p>
+      초대교회는 이를 실천했다 &mdash; "경제적으로 상호 의존하는 관계를 통해 자신들의 영적 하나 됨이
+      실제적으로 드러나게 하려 했다"(행 2:44-45, p.144).
+      특히 "사도행전 4:34은 <strong>신명기 15:4</strong>의 그리스어 역본과 단어 하나하나까지 똑같다"(p.144) &mdash;
+      초대교회가 의식적으로 율법의 사회적 비전을 이행한 것이다.
+    </p>
+  </section>
+
+  <section id="s9" class="fade-in">
+    <span class="section-num">SECTION 09</span>
+    <h2>가르침 = 선교의 본질, 그리고 <em>missio Dei</em></h2>
+    <p>
+      가르침(신학 교육 포함)은 "단순히 '실제 사명'에 부수되는 일이 아니"라
+      "대위임령에 대한 우리의 순종에 없어서는 안 되는 부분"이다(p.140).
+      심는 자(전도자)와 물 주는 자(교사)는 '한 가지 목적, 단일한 사명'(고전 3:5-9, p.140).
+    </p>
+    <div class="pull-quote">
+      교회를 위해 하나님의 선교가 있기보다는, 하나님의 선교를 위해 교회가 있다.
+      <span class="pq-source">&mdash; 크리스토퍼 라이트, p.150</span>
+    </div>
+    <p>
+      레슬리 뉴비긴의 구별을 빌려, 교회 생활의 <strong>선교적 차원(dimension)</strong>과
+      <strong>선교적 의도(intention)</strong>를 나눈다(p.150-151).
+      최종 명제: "(교회 생활과 교회가 하는 일의 모든 차원과 의도라는 관점에서) <strong>모든 일이 선교다</strong>"(p.152).
+    </p>
+  </section>
+
+  <div class="commentary-section" id="commentary">
+    <span class="section-num">SECTION 10</span>
+    <h2>세 논평자의 비판</h2>
+    <p style="margin-bottom: 1.5rem; color: var(--ink-muted); font-size: 0.9rem;">
+      리먼&middot;프랭키&middot;라잇하르트는 각자 자기 견해의 씨앗을 논평에 심는다.
+    </p>
+
+    <div class="critic-card fade-in">
+      <p class="critic-name">조너선 리먼 (p.153-162)</p>
+      <span class="critic-angle">"절박함이 빠졌다"</span>
+      <p>
+        라이트가 성경 전체 줄거리로 사명을 분별하는 것은 옳으나,
+        "죄인이 하나님의 진노와 영원한 어둠에서 구원받는 문제에 별 관심을 보이지 않는다"(p.154).
+        구속사의 '이미/아직' 불연속성을 덮어 변혁주의(transformationalism)를 경계하지 않는다 &mdash;
+        "오른쪽 근본주의자와 싸우느라 <strong>왼쪽의 변혁주의적 유토피아주의</strong> 경계를 잊었다"(p.159).
+      </p>
+      <p>
+        바퀴 비유는 <strong>프로그램(지역교회, 좁은 제자 삼기)</strong>으로 구체화돼야 멋지게 작동한다(p.161-162).
+      </p>
+      <div class="pull-quote" style="margin: 1rem 0 0;">
+        집 안에 있는 그 사람에게 지금 당장 가장 절박한 것은 <strong>밖으로 나가는 문이 어디인지</strong> 알려 주는 소식이다.
+        <span class="pq-source">&mdash; 조너선 리먼, p.160 (불타는 집 비유)</span>
+      </div>
+    </div>
+
+    <div class="critic-card fade-in">
+      <p class="critic-name">존 프랭키 (p.163-170)</p>
+      <span class="critic-angle">"단일 서사가 가능한가"</span>
+      <p>
+        총체성&middot;창조 세계 돌봄 강조에 감사하나 신학&middot;인식론에서 갈린다.
+        프랭키의 선교적 신학 3특징: ① 타자에게 개방&middot;헌신 ② 토대주의(foundationalism) 초월 ③ 총체성 거부(p.165).
+      </p>
+      <p>
+        "어떤 특정한 신학과 복음 선포 형식을 절대화하면 그것에 영향을 주는 문화적 틀 또한 절대화하게 된다&hellip;
+        이런 일이 일어나게 허용하면, <strong>선교는 곧 식민지를 건설하는 일이 되고 만다</strong>"(p.167).
+        라이트의 6막 직선 서사에 의문 &mdash; 무엇보다 <strong>가나안 족속 학살</strong>을
+        하나님의 선교의 일부로 볼 것인가를 묻는다(p.170).
+      </p>
+    </div>
+
+    <div class="critic-card fade-in">
+      <p class="critic-name">피터 라잇하르트 (p.171-176)</p>
+      <span class="critic-angle">"성례전&middot;예전이 없다"</span>
+      <p>
+        "라이트가 하는 말이 아니라 하지 못한 말"이 핵심(p.171) &mdash;
+        그는 "교회의 삶과 사명에서 <strong>성례전과 예전 차원을 완전히 무시</strong>한다"(p.171).
+        세례가 사라졌다: 대위임령의 '가르치는 일' 대목에서 세례 항목이 빠졌다(p.172).
+      </p>
+      <p>
+        가르침을 강조하며 세례를 경시하면 "<strong>펠라기우스적 선교론</strong>의 위험"을 무릅쓴다(p.175).
+      </p>
+      <div class="pull-quote" style="margin: 1rem 0 0;">
+        교회는 하나의 <strong>목적</strong>이지, 단순히 목적을 향해 가는 수단이 아니다 &mdash;
+        교회는 하나님의 선교를 위해 존재하지만 <strong>하나님의 선교는 교회를 위해 존재한다</strong>.
+        <span class="pq-source">&mdash; 피터 라잇하르트, p.176</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="application-section" id="application">
+    <span class="section-num">SECTION 11</span>
+    <h2>적용과 미해결 질문</h2>
+
+    <div class="insight-card" style="margin-bottom: 1.5rem;">
+      <span class="insight-label">사역 적용</span>
+      <p style="margin-bottom:0;">
+        라이트의 'be 중심' 구심적 증언론은 다문화&middot;이주민 사역의 "존재만으로 특별한" 공동체 논리와 직결된다 &mdash;
+        주변과 대조되는 삶 자체가 증언이다.
+        '빛의 윤리적 의미'(사 58:6-8)는 <strong>의료 사역&middot;긍휼 사역의 성경적 근거</strong>가 된다.
+      </p>
+    </div>
+
+    <div class="question-item" onclick="toggleQ(this)">
+      <div class="q-head">
+        <span>미해결 질문 1 &mdash; 불타는 집 vs 바퀴</span>
+        <span class="q-chevron">&#9660;</span>
+      </div>
+      <div class="q-body">
+        리먼(절박함&middot;우선순위) vs 라이트(통합&middot;중심성)의 긴장 &mdash;
+        목회 현장에서 둘을 어떻게 배분할 것인가?
+        리먼의 "불타는 집 비유"(p.160)와 라이트의 "바퀴 비유"(p.138)가 정면 충돌하는 지점이다.
+      </div>
+    </div>
+
+    <div class="question-item" onclick="toggleQ(this)">
+      <div class="q-head">
+        <span>미해결 질문 2 &mdash; 단일 서사의 한계</span>
+        <span class="q-chevron">&#9660;</span>
+      </div>
+      <div class="q-body">
+        프랭키의 '단일 서사 의문'(가나안 학살)과 라잇하르트의 '예전 부재' 비판 &mdash;
+        라이트의 선교적 해석학이 답할 수 있는가? 3&middot;4부에서 두 사람 본인의 견해로 확인 예정.
+      </div>
+    </div>
+
+    <div class="question-item" onclick="toggleQ(this)">
+      <div class="q-head">
+        <span>미해결 질문 3 &mdash; 교회 = 목적인가 수단인가</span>
+        <span class="q-chevron">&#9660;</span>
+      </div>
+      <div class="q-body">
+        라잇하르트의 "missio Dei는 교회를 위해 존재한다"(p.176) 반론은
+        라이트의 "교회는 missio Dei를 위해 존재한다"와 정면 대립한다.
+        이 둘은 양자택일인가, 상보적인가? 교회론과 missio Dei의 핵심 쟁점이다.
+      </div>
+    </div>
+
+    <div class="insight-card" style="margin-top: 1.5rem;">
+      <span class="insight-label">4견해 비교</span>
+      <p style="margin-bottom:0;">
+        라이트의 통합적 사명론은 4견해 중 가장 <strong>포괄적</strong>이다 &mdash;
+        리먼의 좁은 선교, 프랭키의 상황 중심, 라잇하르트의 성례전적 선교 모두를
+        자기 프레임워크 안에 수용할 수 있다고 주장한다.
+        그러나 그 포괄성 자체가 "구체적 프로그램 부재"(리먼)와
+        "인식론적 겸손 부재"(프랭키)라는 양면 비판을 받는다.
+      </p>
+    </div>
+  </div>
+
+</article>
+
+<footer class="article-footer">
+  <div class="divider"></div>
+  <p>
+    <strong>선교에 대한 네 가지 견해</strong> &middot; 4부작 중 2부<br>
+    1부: 리먼의 구원론적 선교 &nbsp;&bull;&nbsp;
+    3부: 프랭키의 상황 중심 선교 &nbsp;&bull;&nbsp;
+    4부: 라잇하르트의 성례전적 선교
+  </p>
+  <p class="source-note">
+    원서: Jason Sexton (ed.), <em>Four Views on the Church's Mission</em> &mdash; 제2장 크리스토퍼 라이트, "참여 선교"<br>
+    페이지 참조: pp.105-176 &middot; 책 페이지 사진 64장 기반 표시 전사
+  </p>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  document.getElementById('progressBar').style.width = pct + '%';
+});
+
+function toggleToc() {
+  const list = document.getElementById('tocList');
+  const btn = document.getElementById('tocToggle');
+  list.classList.toggle('collapsed');
+  btn.textContent = list.classList.contains('collapsed') ? '펼치기' : '접기';
+}
+
+function toggleQ(el) {
+  el.classList.toggle('open');
+}
+
+function copySummary() {
+  const text = '크리스토퍼 라이트의 참여 선교(Participatory Mission): 교회는 하나님의 선교를 위해 존재하며, 그 사명은 성경 전체 이야기에 \'참여\'하는 것이다. 구약 이스라엘은 \'가라(go)\'가 아니라 \'존재하라(be)\'는 구심적 증언으로 열방을 끌어들였고, 신약 교회는 아브라함 약속의 절정인 대위임령을 통해 원심적 사명을 위임받았다. 복음 전도, 사회 참여, 창조 세계 돌봄은 분리 불가능한 통합적(integral) 사명이며, 복음은 \'우선순위\'가 아니라 모든 것을 움직이는 \'중심\'이다.';
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = event.target.closest('.copy-btn');
+    const orig = btn.innerHTML;
+    btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> 복사됨';
+    setTimeout(() => btn.innerHTML = orig, 1500);
+  });
+}
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+<section class="marktl-reader-feedback" aria-label="Reader feedback">
+<style>
+.marktl-reader-feedback { margin: 40px auto 0; padding: 0; }
+.marktl-reader-feedback h2 { margin: 0 0 8px; font: 800 22px/1.25 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.marktl-reader-feedback p { margin: 0 0 14px; color: #526173; font: 500 14px/1.5 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.marktl-reader-feedback .giscus, .marktl-reader-feedback .giscus-frame { width: 100%; }
+</style>
+<h2>Reader feedback</h2>
+<p>Leave a public GitHub comment or reaction below.</p>
+<script src="https://giscus.app/client.js"
+        data-repo="allpeaceclinic-max/allpeaceclinic"
+        data-repo-id="R_kgDOSEGibA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOSEGibM4C9mVG"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="ko"
+        crossorigin="anonymous"
+        async>
+</script>
+</section>
+</body>
+</html>
