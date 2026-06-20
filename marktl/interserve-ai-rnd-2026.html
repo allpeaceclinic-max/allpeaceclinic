@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>내가 AI와 일하는 방식 · 인터서브 R&D 제안 — 이상협</title>
+<style>
+  :root{
+    --bg:#faf8f4; --ink:#23201b; --soft:#6b6359; --line:#e7e0d4;
+    --card:#ffffff; --gold:#b8893b; --gold-d:#8a6526; --teal:#2f6f6a;
+    --blue:#3a5a8c; --rose:#a8527a; --green:#4f7a3f; --shadow:0 2px 14px rgba(60,45,20,.07);
+    --max:880px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif;
+    line-height:1.72; font-size:16.5px; letter-spacing:-.01em;
+  }
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 22px}
+
+  /* Cover */
+  .cover{padding:64px 22px 40px; text-align:center; border-bottom:1px solid var(--line)}
+  .kicker{font-size:13px; letter-spacing:.16em; color:var(--gold-d); font-weight:700; text-transform:uppercase}
+  .cover h1{font-size:33px; line-height:1.3; margin:14px 0 10px; font-weight:800; letter-spacing:-.02em}
+  .cover .sub{font-size:17px; color:var(--soft); max-width:620px; margin:0 auto}
+  .meta{margin-top:22px; font-size:13.5px; color:var(--soft)}
+  .meta b{color:var(--ink)}
+
+  /* Stat row */
+  .stats{display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin:30px auto 0; max-width:760px}
+  .stat{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 18px; min-width:130px; box-shadow:var(--shadow)}
+  .stat .n{font-size:24px; font-weight:800; color:var(--gold-d); line-height:1.1}
+  .stat .l{font-size:12.5px; color:var(--soft); margin-top:3px}
+
+  /* Sections */
+  section{padding:40px 0 8px; border-bottom:1px solid var(--line)}
+  .secnum{display:inline-block; font-size:12.5px; font-weight:800; color:#fff; background:var(--gold);
+    width:26px; height:26px; line-height:26px; text-align:center; border-radius:8px; margin-right:10px}
+  h2{font-size:23px; font-weight:800; margin:0 0 6px; letter-spacing:-.02em; display:flex; align-items:center}
+  .lead{color:var(--soft); margin:2px 0 20px; font-size:15.5px}
+
+  /* Cards */
+  .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin:12px 0; box-shadow:var(--shadow)}
+  .card h3{margin:0 0 6px; font-size:17px; font-weight:800}
+  .card p{margin:6px 0; font-size:15px}
+  .tag{display:inline-block; font-size:12px; font-weight:700; padding:2px 9px; border-radius:20px; margin-right:6px}
+  .t-blue{background:#eaf0f8; color:var(--blue)} .t-teal{background:#e6f1f0; color:var(--teal)}
+  .t-gold{background:#f6edda; color:var(--gold-d)} .t-rose{background:#f7e9f0; color:var(--rose)}
+  .t-green{background:#eaf2e4; color:var(--green)}
+
+  ul{margin:8px 0; padding-left:20px} li{margin:5px 0; font-size:15px}
+  .muted{color:var(--soft)}
+  .fill{background:#fff7e8; border:1px dashed var(--gold); border-radius:8px; padding:3px 8px; font-size:13px; color:var(--gold-d); font-weight:600}
+
+  /* Layer grid */
+  .layers{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+  .layer{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 18px; box-shadow:var(--shadow); position:relative}
+  .layer .ln{position:absolute; top:14px; right:16px; font-size:30px; font-weight:800; color:#efe7d6}
+  .layer h3{margin:0 0 4px; font-size:16px}
+  .layer p{margin:4px 0; font-size:13.8px; color:var(--soft)}
+
+  /* Agent org */
+  .org{margin:14px 0}
+  .boss{background:linear-gradient(135deg,#fff,#fdf6e8); border:1.5px solid var(--gold); border-radius:14px; padding:16px 20px; text-align:center; box-shadow:var(--shadow)}
+  .boss h3{margin:0; font-size:18px; color:var(--gold-d)}
+  .boss p{margin:4px 0 0; font-size:13.5px; color:var(--soft)}
+  .stem{height:18px; width:2px; background:var(--line); margin:0 auto}
+  .agents{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:0}
+  .ag{background:var(--card); border:1px solid var(--line); border-top:3px solid var(--teal); border-radius:12px; padding:12px; text-align:center; box-shadow:var(--shadow)}
+  .ag.b2{border-top-color:var(--blue)} .ag.b3{border-top-color:var(--rose)} .ag.b4{border-top-color:var(--green)}
+  .ag b{font-size:14.5px} .ag span{display:block; font-size:11.8px; color:var(--soft); margin-top:3px}
+
+  /* Points */
+  .points{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+  .pt{display:flex; gap:10px; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:13px 15px; box-shadow:var(--shadow)}
+  .pt .pn{font-weight:800; color:var(--gold); font-size:18px; flex:none}
+  .pt b{font-size:14.5px} .pt p{margin:2px 0 0; font-size:13px; color:var(--soft)}
+
+  /* Steps */
+  .steps{counter-reset:s; margin-top:8px}
+  .step{display:flex; gap:14px; padding:12px 0; border-bottom:1px dashed var(--line)}
+  .step:last-child{border-bottom:none}
+  .step .sc{counter-increment:s; flex:none; width:30px; height:30px; border-radius:50%; background:var(--teal); color:#fff; font-weight:800; text-align:center; line-height:30px; font-size:14px}
+  .step .sc::before{content:counter(s)}
+  .step b{font-size:15px}
+
+  /* Callout */
+  .callout{background:#fbf3e3; border-left:4px solid var(--gold); border-radius:0 12px 12px 0; padding:16px 20px; margin:14px 0}
+  .callout b{color:var(--gold-d)}
+  .q{font-style:italic; color:var(--soft); font-size:15px}
+
+  .answer{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:6px 20px 14px; box-shadow:var(--shadow); margin-top:12px}
+  .answer .row{display:flex; gap:12px; padding:12px 0; border-bottom:1px solid var(--line)}
+  .answer .row:last-child{border-bottom:none}
+  .answer .x{flex:none; font-weight:800; color:var(--rose)} .answer .o{flex:none; font-weight:800; color:var(--green)}
+
+  .archive{display:flex; align-items:center; gap:14px; text-decoration:none; color:inherit;
+    background:linear-gradient(135deg,#fff,#eef4f3); border:1.5px solid var(--teal); border-radius:14px;
+    padding:14px 18px; margin:12px 0; box-shadow:var(--shadow); transition:transform .12s,box-shadow .12s}
+  .archive:hover{transform:translateY(-2px); box-shadow:0 6px 20px rgba(47,111,106,.18)}
+  .archive .ar-ico{font-size:24px; flex:none}
+  .archive b{display:block; font-size:15.5px; color:var(--teal)}
+  .archive span{display:block; font-size:13.5px; color:var(--soft); margin-top:3px}
+  .archive .ar-go{flex:none; font-weight:800; color:var(--teal); font-size:14px; white-space:nowrap}
+
+  footer{padding:30px 22px 50px; text-align:center; color:var(--soft); font-size:13px}
+
+  @media(max-width:680px){
+    .layers,.points,.org .agents{grid-template-columns:1fr 1fr}
+    .cover h1{font-size:26px}
+  }
+  @media print{
+    body{background:#fff} .card,.layer,.ag,.boss,.pt,.answer,.stat{box-shadow:none}
+    section{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="kicker">InterServe Partners &amp; Fellows · Mentoring</div>
+  <h1>내가 AI와 일하는 방식,<br>그리고 인터서브 공동체 R&amp;D 제안</h1>
+  <p class="sub">한 명의 비서가 아니라, 사역을 아는 <b>내가 직접 만든 AI 팀</b>으로 일합니다.<br>이미 돌아가고 있는 것들과, 공동체가 함께 갈 길에 대한 제안.</p>
+  <div class="meta"><b>이상협</b> (Dr. Sanghyeob Lee) · 의사 · 인터서브 이사 · YoungDoctor HQ &nbsp;|&nbsp; 2026-06-20</div>
+  <div class="stats">
+    <div class="stat"><div class="n">4,331</div><div class="l">지식 노트 (Obsidian)</div></div>
+    <div class="stat"><div class="n">5</div><div class="l">사역별 AI 에이전트</div></div>
+    <div class="stat"><div class="n">13</div><div class="l">재사용 스킬(도구)</div></div>
+    <div class="stat"><div class="n">19</div><div class="l">웹 공개 문서</div></div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- 1 -->
+<section id="s1">
+  <h2><span class="secnum">1</span>한 장면으로 보는 사례</h2>
+  <p class="lead">추상적인 이론 대신, <b>지금 실제로 돌아가는 것</b> 세 가지부터.</p>
+  <div class="card">
+    <span class="tag t-blue">이사회</span>
+    <h3>이사회 준비를 AI가 대신 정리</h3>
+    <p>단톡방 메시지 · 공유 파일 · 구글드라이브 문서를 모아 → <b>'이상협 이사 관점'의 쟁점 브리핑과 발언안</b>까지 자동 생성. (인터서브·누가회 이사회용 스킬 각각 보유)</p>
+  </div>
+  <div class="card">
+    <span class="tag t-teal">회의록</span>
+    <h3>줌 회의가 끝나면 요약이 와 있다</h3>
+    <p>맥미니에 상시 가동되는 <b>'베드로 줌봇'</b>이 회의를 전사 → 요약 → 폴더에 자동 저장. 사람이 받아적지 않습니다.</p>
+  </div>
+  <div class="card">
+    <span class="tag t-gold">강의</span>
+    <h3>강의 1건이 한 파이프라인으로</h3>
+    <p>초안 텍스트 → <b>강의안 4종 → 슬라이드 → 팟캐스트 · 사전읽기 자료 · 피드백 설문</b>까지 한 번에. 준비 시간이 며칠에서 몇 시간으로.</p>
+  </div>
+  <div class="callout"><b>한 줄 메시지 —</b> AI는 '비서 한 명'이 아니라 <b>나를 복제·분업한 팀</b>입니다. 외주가 아니라 내가 직접 만들고, 만든 것을 공동체가 같이 씁니다.</div>
+</section>
+
+<!-- 2 -->
+<section id="s2">
+  <h2><span class="secnum">2</span>무엇을 구축했나 — 4개 층위</h2>
+  <p class="lead">아래에서 위로 쌓입니다. <b>정리(데이터)</b>가 바닥, <b>공유(결과물)</b>가 꼭대기.</p>
+  <div class="layers">
+    <div class="layer"><span class="ln">1</span>
+      <h3>🧠 세컨드 브레인 / 온톨로지</h3>
+      <p>Obsidian 노트 <b>4,331개</b>. 공식 온톨로지(엔티티 10종: 인물 119·성경 408·주제 127·책 103·강의 82)로 지식이 <b>그래프</b>가 됨. "단일 진실원".</p>
+    </div>
+    <div class="layer"><span class="ln">2</span>
+      <h3>🤝 명명된 에이전트 + 스킬</h3>
+      <p>사역별 AI 페르소나 5종 + <b>재사용 스킬 13종</b>. 한 번 만든 업무는 매번 다시 안 만들고 호출만.</p>
+    </div>
+    <div class="layer"><span class="ln">3</span>
+      <h3>⚙️ 자동화 인프라</h3>
+      <p>베드로 줌봇 · n8n+Tailscale · 카카오 알림 · 유튜브 업로드. 사람이 안 깨어 있어도 도는 부분.</p>
+    </div>
+    <div class="layer"><span class="ln">4</span>
+      <h3>🌐 만들어 나누는 결과물</h3>
+      <p><b>실사용 웹앱</b> + 강의·자료 <b>HTML 웹 공개 19건</b> + <b>GitHub 지속 공유</b>. 내 노트와 도구가 곧 공동체 공개 자산.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="tag t-rose">실사용 웹앱</span>
+    <h3>대화로 만든 도구가 실제 사역에서 돈다</h3>
+    <ul>
+      <li><b>ICMDA 자원봉사(자봉) 앱</b> — 자원봉사 모집·관리 웹앱. <span class="muted">youngdoctor.kr / icmda-vol</span>로 운영.</li>
+      <li><b>ICMDA 홍보 전략 자료</b> — 캠페인 홍보 기획·콘텐츠를 AI로 설계·산출.</li>
+      <li><b>CMF 회원관리 앱</b> — 회원 데이터·소통 관리 앱, <b>현재 구성·진행 중.</b></li>
+    </ul>
+    <p class="muted">→ 코딩 전공이 아니어도, <b>사역을 아는 내가 직접</b> AI와 만들어 현장에 올렸다는 점이 핵심.</p>
+  </div>
+
+  <a class="archive" href="https://wiki.youngdoctor.kr/marktl/" target="_blank" rel="noopener">
+    <div class="ar-ico">🔗</div>
+    <div>
+      <b>공개 위키 아카이브 — wiki.youngdoctor.kr/marktl</b>
+      <span>세컨드 브레인(노트 4,331개)을 실제로 공개한 곳. 강의·연구·사역 노트가 누구나 볼 수 있는 <b>공동체 자산</b>으로 나간다.</span>
+    </div>
+    <div class="ar-go">열기 →</div>
+  </a>
+</section>
+
+<!-- 3 SUBAGENT -->
+<section id="s3">
+  <h2><span class="secnum">3</span>서브에이전트 — 'AI 팀'으로 일한다</h2>
+  <p class="lead">핵심 차별점. 하나의 챗봇이 아니라, <b>총괄(오케스트레이터)이 역할별 전문가에게 위임</b>하는 구조입니다.</p>
+
+  <div class="org">
+    <div class="boss">
+      <h3>🪨 베드로 (Peter) — 오케스트레이터</h3>
+      <p>전체를 지휘하고, 일을 분해해 각 사역 에이전트에게 위임한다</p>
+    </div>
+    <div class="stem"></div>
+    <div class="agents">
+      <div class="ag"><b>바울</b><span>인터서브 선교</span></div>
+      <div class="ag b2"><b>누가</b><span>클리닉·의료</span></div>
+      <div class="ag b3"><b>스데반</b><span>교회 사역</span></div>
+      <div class="ag b4"><b>베살렐</b><span>소식지·창작</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>왜 '팀'이 비서보다 강한가</h3>
+    <ul>
+      <li><b>역할 분리 = 맥락 보존</b> — 각 에이전트는 자기 규칙(<span class="muted">paul_rule.md, luke_rule.md …</span>)과 스킬을 가져, 사역별 말투·우선순위·보안 경계를 지킨다.</li>
+      <li><b>복잡한 일은 분해·병렬</b> — 3개 이상 파일·다단계 작업은 OMC <span class="muted">/team · /autopilot</span> 멀티 에이전트가 나눠 동시 처리.</li>
+      <li><b>검증 루프</b> — 결과를 다른 에이전트가 교차 검증(<span class="muted">/ralph</span>), 자기개선 세션(ouroboros)으로 도구가 스스로 나아진다.</li>
+    </ul>
+  </div>
+
+  <div class="callout">
+    <b>🕊️ "거듭난 베드로" 모드 —</b> 평소엔 친절한 비서지만, 호출하면 <b>독한 전략가</b>로 변신: ① 소크라테스식 반론(기획의 맹점 3가지) ② 사전 사후분석(실패 시나리오) ③ 제1원리 검증. <span class="muted">→ 의사결정 전, AI를 '예스맨'이 아니라 '반대 심문관'으로 쓰는 장치.</span>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="s4">
+  <h2><span class="secnum">4</span>핵심 포인트 6가지 (=교육 콘텐츠의 씨앗)</h2>
+  <p class="lead">내가 부딪혀가며 배운 원칙들. 그대로 펠로우 커리큘럼이 됩니다.</p>
+  <div class="points">
+    <div class="pt"><div class="pn">1</div><div><b>AI보다 정리가 먼저</b><p>입력(온톨로지)이 구조화돼야 출력이 좋다.</p></div></div>
+    <div class="pt"><div class="pn">2</div><div><b>외주가 아닌 내재화(Ax)</b><p>사역을 아는 내부자가 만들어야 맥락이 산다.</p></div></div>
+    <div class="pt"><div class="pn">3</div><div><b>반복은 스킬로 자산화</b><p>1회성 대화 → 재사용 가능한 도구.</p></div></div>
+    <div class="pt"><div class="pn">4</div><div><b>보안은 설계로 푼다</b><p>인증정보는 저장소 밖, 민감 데이터는 로컬에.</p></div></div>
+    <div class="pt"><div class="pn">5</div><div><b>작게·싸게 시작</b><p>큰 인프라가 아니라 구독료+학습시간이 진짜 비용.</p></div></div>
+    <div class="pt"><div class="pn">6</div><div><b>만든 것은 공개·공유</b><p>GitHub/웹으로 공동체 자산화 → 신뢰·협업·교육의 토대.</p></div></div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section id="s5">
+  <h2><span class="secnum">5</span>인터서브 공동체 R&amp;D 제안</h2>
+  <p class="lead">외부 도움엔 한계가 있다 — 선교 현장의 <b>보안 · 신뢰 · 맥락</b>은 외부 벤더가 채울 수 없다. 본질은 <b>내부자 역량 구축</b>.</p>
+  <div class="card">
+    <h3>3단계 모델</h3>
+    <div class="steps">
+      <div class="step"><div class="sc"></div><div><b>스터디 모임</b> — 월 1회, 펠로우 대상. 사례 공유 + 손으로 만드는 실습.</div></div>
+      <div class="step"><div class="sc"></div><div><b>펠로우 내 전문가 컨설팅</b> — 역량 있는 펠로우가 1:1 / 소그룹 코칭. 외부가 아닌 내부 멘토.</div></div>
+      <div class="step"><div class="sc"></div><div><b>공용 스킬·도구 라이브러리 = GitHub로 운영</b> — 이사회·회의록·강의 같은 공통 업무부터 오픈소스 자산화. 누구나 가져다 쓰고 개선.</div></div>
+    </div>
+    <p class="muted" style="margin-top:10px">첫 적용 지점: <b>교육·교수 사역</b> / <b>학교시스템 행정</b> — 이미 2케이스 경험으로 효과가 가장 빨리 나는 영역.</p>
+  </div>
+  <div class="callout">
+    <b>💰 사람이 핵심이지만, 그래서 재정이 더 중요하다 —</b> 도구를 만드는 건 싸다. 그러나 이 모델은 <b>한 명이 아니라 여러 명의 펠로우를 키워야</b> 작동한다. 강사·멘토의 시간, 실습 환경, 구독료, 모임 운영비는 <b>실제 비용</b>이다. "사람 투자 = 무료"가 아니라 <b>사람을 키우는 데 지속적 재정이 든다</b>는 점을 분명히 하고, R&amp;D 예산을 <b>사람·교육 라인</b>에 배정해야 한다.
+  </div>
+</section>
+
+<!-- 6 -->
+<section id="s6">
+  <h2><span class="secnum">6</span>정00 파트너 질문에 답함</h2>
+  <p class="q">"AI 시대가 왔는데, 인프라 구축에 000원 책정 — 과연 괜찮을까?"</p>
+  <div class="answer">
+    <div class="row"><div class="x">✗ 프레임</div><div>AI를 <b>큰 장비·인프라(capex) 프로젝트</b>로 보는 것 → 돈은 쓰고 역량은 안 남는 함정.</div></div>
+    <div class="row"><div class="o">✓ 비용의 이동</div><div>돈이 <b>덜 드는 게 아니라 옮겨간다.</b> 하드웨어(capex)에서 <b>사람·교육·운영(opex)</b>으로. 줄어드는 비용이 아니라 <b>성격이 바뀌는 비용</b>이다.</div></div>
+    <div class="row"><div class="o">✓ 그래서 재정</div><div><b>사람을 여러 명 키워야</b> 하기에 오히려 재정이 더 중요하다. 강사·멘토 사례비, 실습·구독, 모임 운영 — 이건 실비. <b>R&amp;D 예산은 '사람 키우는 예산'</b>으로 잡아야 한다.</div></div>
+    <div class="row"><div class="o">✓ 000원은?</div><div>장비 시드로는 충분. 다만 <b>그 옆에 '사람·교육' 예산 라인이 반드시 같이</b> 서야 한다. 장비만 사고 사람을 안 키우면 역량은 안 남는다.</div></div>
+    <div class="row"><div class="o">✓ 미래조직</div><div><b>작은 R&amp;D 펠로우십</b>(사람+학습+소액 운영비)을 지속 재정으로 받친다. <b>GitHub 공용 자산화</b>로 중복 투자 없이 한 번의 개발을 공동체 전체가 공유 → 재정을 '도구'가 아니라 '사람'에 집중시키는 구조.</div></div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section id="s7">
+  <h2><span class="secnum">7</span>교육·훈련 &amp; 이번 주 멘토링 파일럿</h2>
+  <p class="lead">이번 주 파트너(선교사) 2명 멘토링 = <b>이 R&amp;D 모델의 첫 파일럿</b>. 반복 가능한 멘토링 템플릿으로 정형화.</p>
+  <div class="card">
+    <div class="steps">
+      <div class="step"><div class="sc"></div><div><b>시연</b> — 내 사례 1~2개 라이브(이사회 준비 또는 줌봇).</div></div>
+      <div class="step"><div class="sc"></div><div><b>진단</b> — 각자 "가장 반복되는 업무 1개" 찾기.</div></div>
+      <div class="step"><div class="sc"></div><div><b>공동제작</b> — 그 업무를 작게 자동화 1건 함께 만들기.</div></div>
+      <div class="step"><div class="sc"></div><div><b>공유</b> — 결과물을 공용 GitHub/볼트에 올려 다음 펠로우가 재사용.</div></div>
+      <div class="step"><div class="sc"></div><div><b>후속</b> — 월 1회 스터디 모임으로 연결 (멘토링 → 정기 R&amp;D).</div></div>
+    </div>
+  </div>
+  <p class="muted" style="text-align:center; margin-top:18px">
+    🔧 <span class="fill">채울 항목</span> &nbsp; 공개 GitHub 저장소 주소 — 확정되면 §5 공용 라이브러리에 구체 링크로 삽입.
+  </p>
+</section>
+
+</div>
+
+<footer>
+  이상협 (인터서브 이사) · YoungDoctor HQ &nbsp;|&nbsp; 인터서브 파트너·펠로우 멘토링 자료 &nbsp;|&nbsp; 2026-06-20<br>
+  <span style="font-size:12px">브라우저에서 ⌘P → 'PDF로 저장'으로 배포본을 만들 수 있습니다.</span>
+</footer>
+
+</body>
+</html>
