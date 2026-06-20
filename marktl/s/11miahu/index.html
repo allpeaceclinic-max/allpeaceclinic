@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>내가 AI와 일하는 방식, 그리고 인터서브 공동체 R&D 제안</title>
+<meta name="description" content="한 명의 비서가 아니라, 사역을 아는 내가 직접 만든 AI 팀으로 일합니다. 이미 돌아가고 있는 것들과, 인터서브 공동체가 함께 갈 길에 대한 제안.">
+<meta property="og:title" content="내가 AI와 일하는 방식, 그리고 인터서브 공동체 R&D 제안">
+<meta property="og:description" content="AI는 비서 한 명이 아니라 나를 복제·분업한 팀이다. 외주가 아니라 내가 직접 만들고, 만든 것을 공동체가 같이 쓴다.">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="내가 AI와 일하는 방식, 그리고 인터서브 공동체 R&D 제안">
+<meta name="twitter:description" content="AI는 비서 한 명이 아니라 나를 복제·분업한 팀이다. 지식 노트 4,331개 · AI 에이전트 5종 · 재사용 스킬 13종으로 구축한 시스템과 공동체 R&D 제안.">
+<meta name="author" content="이상협 (인터서브 이사)">
+<meta name="article:published_time" content="2026-06-20">
+<style>
+  :root {
+    --color-bg: #faf9f7;
+    --color-surface: #ffffff;
+    --color-text: #1a1a1a;
+    --color-text-secondary: #555;
+    --color-text-muted: #888;
+    --color-accent: #2563eb;
+    --color-accent-soft: #dbeafe;
+    --color-accent-dark: #1d4ed8;
+    --color-border: #e5e5e5;
+    --color-highlight: #fef3c7;
+    --color-card-bg: #f8fafc;
+    --color-pullquote: #1e3a5f;
+    --color-callout-bg: #f0f7ff;
+    --color-callout-border: #93c5fd;
+    --color-warm-bg: #fffbeb;
+    --color-warm-border: #fbbf24;
+    --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', monospace;
+    --max-width: 720px;
+  }
+
+  @font-face {
+    font-family: 'Pretendard';
+    src: local('Pretendard'), local('Apple SD Gothic Neo');
+    font-display: swap;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { font-size: 17px; scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .article-header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #1e40af 100%);
+    color: #fff;
+    padding: 5rem 1.5rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .article-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at 30% 20%, rgba(59,130,246,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 80%, rgba(147,197,253,0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .header-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header-label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #93c5fd;
+    margin-bottom: 1.25rem;
+    border: 1px solid rgba(147,197,253,0.3);
+    padding: 0.25rem 0.75rem;
+    border-radius: 2rem;
+  }
+
+  .article-header h1 {
+    font-family: var(--font-sans);
+    font-size: clamp(1.75rem, 4.5vw, 2.5rem);
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .header-excerpt {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #cbd5e1;
+    max-width: 600px;
+  }
+
+  .header-meta {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    font-size: 0.85rem;
+    color: #94a3b8;
+  }
+
+  .header-meta span { display: flex; align-items: center; gap: 0.4rem; }
+
+  .stats-bar {
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    padding: 1.25rem 1.5rem;
+  }
+
+  .stats-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .stat-item .stat-number {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    display: block;
+    line-height: 1.2;
+  }
+
+  .stat-item .stat-label {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .toc-wrapper {
+    max-width: var(--max-width);
+    margin: 2.5rem auto 0;
+    padding: 0 1.5rem;
+  }
+
+  .toc {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+  }
+
+  .toc-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .toc-header h2 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  .toc-toggle {
+    font-size: 0.8rem;
+    color: var(--color-accent);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  .toc-toggle:hover { background: var(--color-accent-soft); }
+
+  .toc-list {
+    list-style: none;
+    margin-top: 1rem;
+    display: grid;
+    gap: 0.3rem;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
+  }
+
+  .toc-list.collapsed { max-height: 0; opacity: 0; margin-top: 0; }
+
+  .toc-list a {
+    display: block;
+    padding: 0.45rem 0.75rem;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.2s;
+  }
+
+  .toc-list a:hover {
+    background: var(--color-accent-soft);
+    color: var(--color-accent-dark);
+  }
+
+  .toc-list .toc-num {
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-right: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .article-body {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+  }
+
+  .section {
+    margin-bottom: 4rem;
+    animation: fadeInUp 0.5s ease both;
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-number {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  h2.section-title {
+    font-family: var(--font-sans);
+    font-size: 1.6rem;
+    font-weight: 800;
+    line-height: 1.35;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--color-accent-soft);
+  }
+
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 2rem 0 0.75rem;
+    color: var(--color-text);
+  }
+
+  p { margin-bottom: 1.25rem; }
+  strong { font-weight: 700; }
+
+  a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-decoration-color: rgba(37,99,235,0.3);
+    text-underline-offset: 2px;
+    transition: text-decoration-color 0.2s;
+  }
+  a:hover { text-decoration-color: var(--color-accent); }
+
+  .pullquote {
+    position: relative;
+    margin: 2.5rem 0;
+    padding: 1.75rem 2rem 1.75rem 2.5rem;
+    background: linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 100%);
+    border-left: 4px solid var(--color-accent);
+    border-radius: 0 12px 12px 0;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--color-pullquote);
+    font-weight: 500;
+  }
+
+  .pullquote::before {
+    content: '\201C';
+    position: absolute;
+    top: -0.3rem;
+    left: 0.75rem;
+    font-size: 3.5rem;
+    font-family: Georgia, serif;
+    color: var(--color-accent);
+    opacity: 0.2;
+    line-height: 1;
+  }
+
+  .key-message {
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+    color: #fff;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    font-size: 1rem;
+    line-height: 1.7;
+    font-weight: 500;
+    box-shadow: 0 4px 16px rgba(37,99,235,0.15);
+  }
+
+  .key-message strong { color: #fef3c7; }
+
+  .callout {
+    background: var(--color-callout-bg);
+    border: 1px solid var(--color-callout-border);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+  }
+
+  .callout-warm {
+    background: var(--color-warm-bg);
+    border-color: var(--color-warm-border);
+  }
+
+  .callout-title {
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .layer-list {
+    list-style: none;
+    counter-reset: layer;
+    margin: 1.5rem 0;
+  }
+
+  .layer-list li {
+    counter-increment: layer;
+    position: relative;
+    padding: 1.25rem 1.5rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    margin-bottom: 0.75rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .layer-list li:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transform: translateY(-1px);
+  }
+
+  .layer-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+
+  .layer-title {
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .layer-desc {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  .case-grid {
+    display: grid;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .case-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .case-card:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    transform: translateY(-2px);
+  }
+
+  .case-card-title {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .case-card-body {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.65;
+  }
+
+  .diagram-box {
+    background: #0f172a;
+    color: #e2e8f0;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    line-height: 1.7;
+    overflow-x: auto;
+    white-space: pre;
+  }
+
+  .diagram-box .d-highlight { color: #60a5fa; font-weight: 700; }
+  .diagram-box .d-sub { color: #a5b4fc; }
+  .diagram-box .d-label { color: #94a3b8; font-size: 0.75rem; }
+
+  .points-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .point-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    transition: box-shadow 0.2s;
+  }
+
+  .point-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+
+  .point-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .point-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .point-desc {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  .table-wrapper {
+    margin: 1.5rem 0;
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+
+  th {
+    background: #f1f5f9;
+    font-weight: 700;
+    text-align: left;
+    padding: 0.85rem 1.25rem;
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    border-bottom: 2px solid var(--color-border);
+    white-space: nowrap;
+  }
+
+  td {
+    padding: 0.85rem 1.25rem;
+    border-bottom: 1px solid #f1f5f9;
+    line-height: 1.6;
+    vertical-align: top;
+  }
+
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #fafbfd; }
+  td:first-child { font-weight: 600; white-space: nowrap; min-width: 110px; }
+
+  .badge-wrong {
+    display: inline-block;
+    background: #fef2f2;
+    color: #dc2626;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+  }
+
+  .badge-right {
+    display: inline-block;
+    background: #f0fdf4;
+    color: #16a34a;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+  }
+
+  .steps-list {
+    list-style: none;
+    margin: 1.5rem 0;
+    position: relative;
+    padding-left: 2.5rem;
+  }
+
+  .steps-list::before {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    background: var(--color-accent-soft);
+  }
+
+  .steps-list li {
+    position: relative;
+    margin-bottom: 1.25rem;
+    padding: 0.1rem 0;
+  }
+
+  .steps-list li::before {
+    content: '';
+    position: absolute;
+    left: -2.5rem;
+    top: 0.45rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    border: 3px solid var(--color-bg);
+    box-shadow: 0 0 0 2px var(--color-accent-soft);
+  }
+
+  .step-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .step-desc {
+    font-size: 0.88rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  .phase-cards {
+    display: grid;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .phase-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .phase-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--color-accent);
+  }
+
+  .phase-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 0.3rem;
+  }
+
+  .phase-title {
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .phase-body {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.65;
+  }
+
+  .article-footer {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem;
+  }
+
+  .footer-card {
+    background: linear-gradient(135deg, #f8fafc 0%, #f0f4ff 100%);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 2.5rem;
+    text-align: center;
+  }
+
+  .footer-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+
+  .footer-author {
+    font-weight: 700;
+    color: var(--color-text);
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .footer-date {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .divider {
+    width: 40px;
+    height: 3px;
+    background: var(--color-accent);
+    border-radius: 2px;
+    margin: 1.5rem auto;
+  }
+
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent), #60a5fa);
+    z-index: 1000;
+    transition: width 0.1s linear;
+  }
+
+  .copy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 1rem;
+  }
+
+  .copy-btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    background: var(--color-accent-soft);
+  }
+
+  .copy-btn.copied {
+    border-color: #16a34a;
+    color: #16a34a;
+    background: #f0fdf4;
+  }
+
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 640px) {
+    html { font-size: 15px; }
+    .article-header { padding: 3.5rem 1.25rem 3rem; }
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .points-grid { grid-template-columns: 1fr; }
+    .toc { padding: 1.25rem 1.5rem; }
+    .diagram-box { font-size: 0.7rem; padding: 1.25rem; }
+  }
+</style>
+<meta property="og:type" content="article">
+<meta property="og:title" content="내가 AI와 일하는 방식, 그리고 인터서브 공동체 R&amp;D 제안">
+<meta property="og:description" content="한 명의 비서가 아니라, 사역을 아는 내가 직접 만든 AI 팀으로 일합니다. 이미 돌아가고 있는 것들과, 인터서브 공동체가 함께 갈 길에 대한 제안입니다. — 이상협(인터서브 이사) · YoungDoctor HQ · 20260620 한눈에 보는 규모 — 지식 노트 4,331개(Obsidian) · 사역별 AI 에이전트 5">
+<meta property="og:url" content="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/s/11miahu/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="내가 AI와 일하는 방식, 그리고 인터서브 공동체 R&amp;D 제안">
+<meta name="twitter:description" content="한 명의 비서가 아니라, 사역을 아는 내가 직접 만든 AI 팀으로 일합니다. 이미 돌아가고 있는 것들과, 인터서브 공동체가 함께 갈 길에 대한 제안입니다. — 이상협(인터서브 이사) · YoungDoctor HQ · 20260620 한눈에 보는 규모 — 지식 노트 4,331개(Obsidian) · 사역별 AI 에이전트 5">
+<link rel="canonical" href="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/s/11miahu/">
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="article-header">
+  <div class="header-inner">
+    <span class="header-label">Research &amp; Proposal</span>
+    <h1>내가 AI와 일하는 방식,<br>그리고 인터서브 공동체 R&D 제안</h1>
+    <p class="header-excerpt">
+      한 명의 비서가 아니라, 사역을 아는 <strong>내가 직접 만든 AI 팀</strong>으로 일합니다.<br>
+      이미 돌아가고 있는 것들과, 인터서브 공동체가 함께 갈 길에 대한 제안입니다.
+    </p>
+    <div class="header-meta">
+      <span>이상협 &middot; 인터서브 이사</span>
+      <span>YoungDoctor HQ</span>
+      <span>2026-06-20</span>
+    </div>
+  </div>
+</header>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-number">4,331</span>
+      <span class="stat-label">지식 노트</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">5</span>
+      <span class="stat-label">AI 에이전트</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">13</span>
+      <span class="stat-label">재사용 스킬</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">19</span>
+      <span class="stat-label">공개 문서</span>
+    </div>
+  </div>
+</div>
+
+<div class="toc-wrapper">
+  <nav class="toc">
+    <div class="toc-header" id="tocHeader">
+      <h2>목차</h2>
+      <button class="toc-toggle" id="tocToggle">접기</button>
+    </div>
+    <ol class="toc-list" id="tocList">
+      <li><a href="#sec1"><span class="toc-num">01</span>한 장면으로 보는 사례</a></li>
+      <li><a href="#sec2"><span class="toc-num">02</span>무엇을 구축했나 — 4개 층위</a></li>
+      <li><a href="#sec3"><span class="toc-num">03</span>서브에이전트 — 'AI 팀'으로 일한다</a></li>
+      <li><a href="#sec4"><span class="toc-num">04</span>핵심 포인트 6가지</a></li>
+      <li><a href="#sec5"><span class="toc-num">05</span>인터서브 공동체 R&D 제안</a></li>
+      <li><a href="#sec6"><span class="toc-num">06</span>"AI 시대, 인프라 예산" 질문에 답함</a></li>
+      <li><a href="#sec7"><span class="toc-num">07</span>교육·훈련 &amp; 멘토링 파일럿</a></li>
+    </ol>
+  </nav>
+</div>
+
+<main class="article-body">
+
+  <section class="section reveal" id="sec1">
+    <span class="section-number">Section 01</span>
+    <h2 class="section-title">한 장면으로 보는 사례</h2>
+    <p>추상적인 이론 대신, 지금 <strong>실제로 돌아가는 것</strong> 세 가지부터.</p>
+
+    <div class="case-grid">
+      <div class="case-card">
+        <div class="case-card-title">이사회 준비</div>
+        <div class="case-card-body">단톡방 메시지·공유 파일·구글드라이브 문서를 모아 &rarr; '이상협 이사 관점'의 쟁점 브리핑과 발언안까지 자동 생성. 인터서브·누가회 이사회용 도구 각각 보유.</div>
+      </div>
+      <div class="case-card">
+        <div class="case-card-title">회의록</div>
+        <div class="case-card-body">맥미니에 상시 가동되는 '베드로 줌봇'이 회의를 전사 &rarr; 요약 &rarr; 폴더에 자동 저장. 사람이 받아적지 않는다.</div>
+      </div>
+      <div class="case-card">
+        <div class="case-card-title">강의 1건</div>
+        <div class="case-card-body">초안 텍스트 &rarr; 강의안 4종 &rarr; 슬라이드 &rarr; 팟캐스트·사전읽기 자료·피드백 설문까지 한 파이프라인. 준비가 며칠에서 몇 시간으로.</div>
+      </div>
+    </div>
+
+    <div class="key-message">
+      AI는 '<strong>비서 한 명</strong>'이 아니라 <strong>나를 복제·분업한 팀</strong>이다. 외주가 아니라 내가 직접 만들고, 만든 것을 공동체가 같이 쓴다.
+    </div>
+  </section>
+
+  <section class="section reveal" id="sec2">
+    <span class="section-number">Section 02</span>
+    <h2 class="section-title">무엇을 구축했나 — 4개 층위</h2>
+    <p>아래에서 위로 쌓인다. <strong>정리(데이터)</strong>가 바닥, <strong>공유(결과물)</strong>가 꼭대기.</p>
+
+    <ul class="layer-list">
+      <li>
+        <span class="layer-label">Layer 1 &mdash; 기반</span>
+        <div class="layer-title">세컨드 브레인 / 온톨로지 (Obsidian)</div>
+        <div class="layer-desc">노트 4,331개. 공식 온톨로지(엔티티 10종: 인물 119·성경 408·주제 127·책 103·강의 82)로 지식이 <strong>그래프</strong>가 됨. "단일 진실원(single source of truth)".</div>
+      </li>
+      <li>
+        <span class="layer-label">Layer 2 &mdash; 에이전트</span>
+        <div class="layer-title">명명된 에이전트 + 스킬 (Claude Code)</div>
+        <div class="layer-desc">사역별 AI 페르소나 5종 + 재사용 스킬 13종. 한 번 만든 업무는 매번 다시 만들지 않고 호출만.</div>
+      </li>
+      <li>
+        <span class="layer-label">Layer 3 &mdash; 자동화</span>
+        <div class="layer-title">자동화 인프라</div>
+        <div class="layer-desc">베드로 줌봇·n8n+Tailscale·카카오 알림·유튜브 업로드. 사람이 안 깨어 있어도 도는 부분.</div>
+      </li>
+      <li>
+        <span class="layer-label">Layer 4 &mdash; 공유</span>
+        <div class="layer-title">만들어 나누는 결과물</div>
+        <div class="layer-desc">실사용 웹앱 + 강의·자료 HTML 웹 공개 19건 + GitHub 지속 공유. 내 노트와 도구가 곧 공동체 공개 자산.</div>
+      </li>
+    </ul>
+
+    <h3>실사용 웹앱 &mdash; 대화로 만든 도구가 실제 사역에서 돈다</h3>
+
+    <div class="case-grid">
+      <div class="case-card">
+        <div class="case-card-title">ICMDA 자원봉사 앱</div>
+        <div class="case-card-body">자원봉사 모집·관리 웹앱. <code>youngdoctor.kr/icmda-vol</code>로 운영 중.</div>
+      </div>
+      <div class="case-card">
+        <div class="case-card-title">ICMDA 홍보 전략 자료</div>
+        <div class="case-card-body">캠페인 홍보 기획·콘텐츠를 AI로 설계·산출.</div>
+      </div>
+      <div class="case-card">
+        <div class="case-card-title">CMF 회원관리 앱</div>
+        <div class="case-card-body">회원 데이터·소통 관리 앱, 현재 구성·진행 중.</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-title">핵심</div>
+      코딩 전공이 아니어도, <strong>사역을 아는 내가 직접</strong> AI와 만들어 현장에 올렸다는 점이 핵심.
+    </div>
+
+    <p>
+      <strong>공개 위키 아카이브</strong> &mdash;
+      <a href="https://wiki.youngdoctor.kr/marktl/" target="_blank" rel="noopener">wiki.youngdoctor.kr/marktl</a> :
+      세컨드 브레인(노트 4,331개)을 실제로 공개한 곳. 강의·연구·사역 노트가 누구나 볼 수 있는 <strong>공동체 자산</strong>으로 나간다.
+    </p>
+  </section>
+
+  <section class="section reveal" id="sec3">
+    <span class="section-number">Section 03</span>
+    <h2 class="section-title">서브에이전트 — 'AI 팀'으로 일한다</h2>
+    <p>핵심 차별점. 하나의 챗봇이 아니라, <strong>총괄(오케스트레이터)이 역할별 전문가에게 위임</strong>하는 구조다.</p>
+
+    <div class="diagram-box"><span class="d-highlight">              🪨 베드로 (Peter) — 오케스트레이터</span>
+<span class="d-label">        전체를 지휘하고, 일을 분해해 각 에이전트에 위임</span>
+        ┌──────────┬──────────┬──────────┬──────────┐
+       <span class="d-sub">바울</span>        <span class="d-sub">누가</span>        <span class="d-sub">스데반</span>       <span class="d-sub">베살렐</span>
+   <span class="d-label">인터서브 선교</span>   <span class="d-label">클리닉·의료</span>   <span class="d-label">교회 사역</span>   <span class="d-label">소식지·창작</span></div>
+
+    <h3>왜 '팀'이 비서보다 강한가</h3>
+
+    <div class="case-grid">
+      <div class="case-card">
+        <div class="case-card-title">역할 분리 = 맥락 보존</div>
+        <div class="case-card-body">각 에이전트는 자기 규칙(<code>paul_rule.md</code>, <code>luke_rule.md</code> 등)과 스킬을 가져, 사역별 말투·우선순위·보안 경계를 지킨다.</div>
+      </div>
+      <div class="case-card">
+        <div class="case-card-title">복잡한 일은 분해·병렬</div>
+        <div class="case-card-body">3개 이상 파일·다단계 작업은 멀티 에이전트가 나눠 동시 처리.</div>
+      </div>
+      <div class="case-card">
+        <div class="case-card-title">검증 루프</div>
+        <div class="case-card-body">결과를 다른 에이전트가 교차 검증, 자기개선 세션으로 도구가 스스로 나아진다.</div>
+      </div>
+    </div>
+
+    <div class="callout callout-warm">
+      <div class="callout-title">"거듭난 베드로" 모드</div>
+      평소엔 친절한 비서지만, 호출하면 <strong>독한 전략가</strong>로 변신: ① 소크라테스식 반론(기획의 맹점 3가지) ② 사전 사후분석(실패 시나리오) ③ 제1원리 검증. AI를 '예스맨'이 아니라 <strong>'반대 심문관'</strong>으로 쓰는 장치.
+    </div>
+  </section>
+
+  <section class="section reveal" id="sec4">
+    <span class="section-number">Section 04</span>
+    <h2 class="section-title">핵심 포인트 6가지</h2>
+    <p>교육 콘텐츠의 씨앗이 되는 원칙들.</p>
+
+    <div class="points-grid">
+      <div class="point-card">
+        <div class="point-num">1</div>
+        <div class="point-title">AI보다 정리가 먼저</div>
+        <div class="point-desc">입력(온톨로지)이 구조화돼야 출력이 좋다.</div>
+      </div>
+      <div class="point-card">
+        <div class="point-num">2</div>
+        <div class="point-title">외주가 아닌 내재화</div>
+        <div class="point-desc">사역을 아는 내부자가 만들어야 맥락이 산다.</div>
+      </div>
+      <div class="point-card">
+        <div class="point-num">3</div>
+        <div class="point-title">반복은 스킬로 자산화</div>
+        <div class="point-desc">1회성 대화 &rarr; 재사용 가능한 도구.</div>
+      </div>
+      <div class="point-card">
+        <div class="point-num">4</div>
+        <div class="point-title">보안은 설계로 푼다</div>
+        <div class="point-desc">인증정보는 저장소 밖, 민감 데이터는 로컬에.</div>
+      </div>
+      <div class="point-card">
+        <div class="point-num">5</div>
+        <div class="point-title">작게·싸게 시작</div>
+        <div class="point-desc">큰 인프라가 아니라 구독료+학습시간이 진짜 비용.</div>
+      </div>
+      <div class="point-card">
+        <div class="point-num">6</div>
+        <div class="point-title">만든 것은 공개·공유</div>
+        <div class="point-desc">GitHub/웹으로 공동체 자산화 &rarr; 신뢰·협업·교육의 토대.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="sec5">
+    <span class="section-number">Section 05</span>
+    <h2 class="section-title">인터서브 공동체 R&D 제안</h2>
+    <p>외부 도움엔 한계가 있다 &mdash; 선교 현장의 <strong>보안·신뢰·맥락</strong>은 외부 벤더가 채울 수 없다. 본질은 <strong>내부자 역량 구축</strong>이다.</p>
+
+    <h3>3단계 모델</h3>
+
+    <div class="phase-cards">
+      <div class="phase-card">
+        <div class="phase-label">Phase 1</div>
+        <div class="phase-title">스터디 모임</div>
+        <div class="phase-body">월 1회, 펠로우 대상. 사례 공유 + 손으로 만드는 실습.</div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-label">Phase 2</div>
+        <div class="phase-title">펠로우 내 전문가 컨설팅</div>
+        <div class="phase-body">역량 있는 펠로우가 1:1 / 소그룹 코칭. 외부가 아닌 내부 멘토.</div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-label">Phase 3</div>
+        <div class="phase-title">공용 스킬·도구 라이브러리</div>
+        <div class="phase-body">GitHub로 운영. 이사회·회의록·강의 같은 공통 업무부터 오픈소스 자산화. 누구나 가져다 쓰고 개선.</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-title">첫 적용 지점</div>
+      <strong>교육·교수 사역</strong> / <strong>학교시스템 행정</strong> &mdash; 이미 2케이스 경험으로 효과가 가장 빨리 나는 영역.
+    </div>
+
+    <div class="pullquote">
+      도구를 만드는 건 싸다. 그러나 이 모델은 <strong>한 명이 아니라 여러 명의 펠로우를 키워야</strong> 작동한다. 강사·멘토의 시간, 실습 환경, 구독료, 모임 운영비는 <strong>실제 비용</strong>이다. "사람 투자 = 무료"가 아니라 <strong>사람을 키우는 데 지속적 재정이 든다</strong>는 점을 분명히 하고, R&D 예산을 <strong>사람·교육 라인</strong>에 배정해야 한다.
+    </div>
+  </section>
+
+  <section class="section reveal" id="sec6">
+    <span class="section-number">Section 06</span>
+    <h2 class="section-title">"AI 시대, 인프라 예산" 질문에 답함</h2>
+
+    <div class="pullquote">
+      "AI 시대가 왔는데, 인프라 구축에 000원 책정 &mdash; 과연 괜찮을까?"
+      <br><span style="font-size: 0.85rem; color: #64748b; font-weight: 400;">&mdash; 정OO 파트너, 총회 중 질문</span>
+    </div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>구분</th>
+            <th>핵심</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="badge-wrong">잘못된 프레임</span></td>
+            <td>AI를 <strong>큰 장비·인프라(capex) 프로젝트</strong>로 보는 것 &rarr; 돈은 쓰고 역량은 안 남는 함정.</td>
+          </tr>
+          <tr>
+            <td><span class="badge-right">비용의 이동</span></td>
+            <td>돈이 <strong>덜 드는 게 아니라 옮겨간다.</strong> 하드웨어(capex)에서 <strong>사람·교육·운영(opex)</strong>으로. 줄어드는 비용이 아니라 <strong>성격이 바뀌는 비용</strong>이다.</td>
+          </tr>
+          <tr>
+            <td><span class="badge-right">그래서 재정</span></td>
+            <td><strong>사람을 여러 명 키워야</strong> 하기에 오히려 재정이 더 중요하다. 강사·멘토 사례비, 실습·구독, 모임 운영 &mdash; 이건 실비. <strong>R&D 예산은 '사람 키우는 예산'</strong>으로 잡아야 한다.</td>
+          </tr>
+          <tr>
+            <td><span class="badge-right">그 예산은?</span></td>
+            <td>장비 시드로는 충분. 다만 <strong>그 옆에 '사람·교육' 예산 라인이 반드시 같이</strong> 서야 한다. 장비만 사고 사람을 안 키우면 역량은 안 남는다.</td>
+          </tr>
+          <tr>
+            <td><span class="badge-right">미래조직</span></td>
+            <td><strong>작은 R&D 펠로우십</strong>(사람+학습+소액 운영비)을 지속 재정으로 받친다. <strong>GitHub 공용 자산화</strong>로 중복 투자 없이 한 번의 개발을 공동체 전체가 공유 &rarr; 재정을 '도구'가 아니라 '사람'에 집중시키는 구조.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section reveal" id="sec7">
+    <span class="section-number">Section 07</span>
+    <h2 class="section-title">교육·훈련 &amp; 멘토링 파일럿</h2>
+    <p>이번 주 파트너(선교사) 2명 멘토링 = <strong>이 R&D 모델의 첫 파일럿</strong>. 반복 가능한 멘토링 템플릿으로 정형화한다.</p>
+
+    <ol class="steps-list">
+      <li>
+        <div class="step-title">시연</div>
+        <div class="step-desc">내 사례 1~2개 라이브(이사회 준비 또는 줌봇).</div>
+      </li>
+      <li>
+        <div class="step-title">진단</div>
+        <div class="step-desc">각자 "가장 반복되는 업무 1개" 찾기.</div>
+      </li>
+      <li>
+        <div class="step-title">공동제작</div>
+        <div class="step-desc">그 업무를 작게 자동화 1건 함께 만들기.</div>
+      </li>
+      <li>
+        <div class="step-title">공유</div>
+        <div class="step-desc">결과물을 공용 GitHub/볼트에 올려 다음 펠로우가 재사용.</div>
+      </li>
+      <li>
+        <div class="step-title">후속</div>
+        <div class="step-desc">월 1회 스터디 모임으로 연결 (멘토링 &rarr; 정기 R&D).</div>
+      </li>
+    </ol>
+  </section>
+
+  <div style="text-align: center; margin-top: 2rem;">
+    <button class="copy-btn" id="copySummary" title="핵심 요약을 클립보드에 복사">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      핵심 요약 복사
+    </button>
+  </div>
+
+<section class="marktl-reader-feedback" aria-label="Reader feedback">
+<style>
+.marktl-reader-feedback { margin: 40px auto 0; padding: 0; }
+.marktl-reader-feedback h2 { margin: 0 0 8px; font: 800 22px/1.25 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.marktl-reader-feedback p { margin: 0 0 14px; color: #526173; font: 500 14px/1.5 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.marktl-reader-feedback .giscus, .marktl-reader-feedback .giscus-frame { width: 100%; }
+</style>
+<h2>Reader feedback</h2>
+<p>Leave a public GitHub comment or reaction below.</p>
+<script src="https://giscus.app/client.js"
+        data-repo="allpeaceclinic-max/allpeaceclinic"
+        data-repo-id="R_kgDOSEGibA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOSEGibM4C9mVG"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="ko"
+        crossorigin="anonymous"
+        async>
+</script>
+</section>
+</main>
+
+<footer class="article-footer">
+  <div class="footer-card">
+    <div class="footer-author">이상협</div>
+    <p>인터서브 이사 &middot; YoungDoctor HQ</p>
+    <div class="divider"></div>
+    <p>인터서브 파트너·펠로우 멘토링 자료</p>
+    <p class="footer-date">2026-06-20</p>
+  </div>
+</footer>
+
+<script>
+(function() {
+  var progressBar = document.getElementById('progressBar');
+  window.addEventListener('scroll', function() {
+    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    var scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    progressBar.style.width = (scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0) + '%';
+  }, { passive: true });
+
+  var tocHeader = document.getElementById('tocHeader');
+  var tocList = document.getElementById('tocList');
+  var tocToggle = document.getElementById('tocToggle');
+  tocHeader.addEventListener('click', function() {
+    var collapsed = tocList.classList.toggle('collapsed');
+    tocToggle.textContent = collapsed ? '펼치기' : '접기';
+  });
+
+  var revealElements = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    revealElements.forEach(function(el) { observer.observe(el); });
+  } else {
+    revealElements.forEach(function(el) { el.classList.add('visible'); });
+  }
+
+  var summaryText = [
+    '내가 AI와 일하는 방식, 그리고 인터서브 공동체 R&D 제안',
+    '',
+    '핵심: AI는 비서 한 명이 아니라 나를 복제·분업한 AI 팀이다.',
+    '',
+    '구축 현황: 지식 노트 4,331개 · AI 에이전트 5종 · 재사용 스킬 13종 · 웹 공개 문서 19건',
+    '',
+    '6가지 원칙:',
+    '1. AI보다 정리가 먼저',
+    '2. 외주가 아닌 내재화',
+    '3. 반복은 스킬로 자산화',
+    '4. 보안은 설계로 푼다',
+    '5. 작게·싸게 시작',
+    '6. 만든 것은 공개·공유',
+    '',
+    'R&D 제안 3단계: 스터디 모임 → 펠로우 내 전문가 컨설팅 → 공용 스킬·도구 라이브러리(GitHub)',
+    '',
+    '예산 핵심: 비용이 하드웨어(capex)에서 사람·교육(opex)으로 이동. R&D 예산은 사람 키우는 예산으로 잡아야 한다.',
+    '',
+    '— 이상협 (인터서브 이사) · 2026-06-20'
+  ].join('\n');
+
+  document.getElementById('copySummary').addEventListener('click', function() {
+    var btn = this;
+    navigator.clipboard.writeText(summaryText).then(function() {
+      btn.classList.add('copied');
+      btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> 복사됨!';
+      setTimeout(function() {
+        btn.classList.remove('copied');
+        btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> 핵심 요약 복사';
+      }, 2000);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
