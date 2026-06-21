@@ -3,17 +3,19 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>에베소서 선교적 읽기 — 한종석</title>
 <meta name="description" content="파키스탄 불가촉천민의 후손들 사이에서 살았던 한 선교사가 에베소서를 다시 읽기 시작했다. 그의 발견은 단순하지만 급진적이다 — 선교는 하는 것이 아니라 되는 것이며, 메시지와 메신저는 분리될 수 없다. 이 책은 그 경험에서 출발해, 에베소서 전체를 '보냄받은 공동체의 정체성'이라는 하나의 렌즈로 읽어낸다.">
+<meta property="og:title" content="에베소서 선교적 읽기 — 한종석"><meta property="og:type" content="article">
+<meta property="og:url" content="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/s/46230y/">
 <link rel="canonical" href="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/s/46230y/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg:#faf8fa;--surface:#fff;--text:#1a1a1a;--text2:#5a4050;
-    --accent:#8b3c5a;--al:#c97c9a;--abg:#f5eef2;
-    --bd:#e0cdda;--bdl:#ecdde6;--pq:#4d1a2d;
-    --tbg:#f0e4ec;--ttx:#5a2d40;
-    --hero-start:#4d1a2d;--hero-mid:#6a2d3d;--hero-end:#8c4a5a;--hero-fg:#fff5f8;
+    --bg:#f8faf8;--surface:#fff;--text:#1a1a1a;--text2:#4a5a4a;
+    --accent:#2d6a4f;--al:#6aab97;--abg:#eef5f0;
+    --bd:#cde0d4;--bdl:#deeee6;--pq:#1a4d2e;
+    --tbg:#e4f0e9;--ttx:#2d5a3d;
+    --hero-start:#1a4d2e;--hero-mid:#2d6254;--hero-end:#3d7a7a;--hero-fg:#f4faf6;
     --serif:'Noto Serif KR','Batang',Georgia,serif;
     --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     --max:720px;
@@ -38,39 +40,70 @@
   .back-link:hover{opacity:1}
   .footer{max-width:var(--max);margin:4rem auto 0;padding:1.75rem;text-align:center;font-family:var(--sans);font-size:.75rem;color:var(--text2);opacity:.55}
 
-  body{font-size:18px;line-height:2.0}
-  .read-header{border-bottom:3px solid var(--accent);padding:3rem 1.75rem 2rem;max-width:var(--max);margin:0 auto}
-  .read-label{font-family:var(--sans);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--al);margin-bottom:.75rem}
-  .read-header h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:700;line-height:1.3;word-break:keep-all;margin-bottom:.5rem}
-  .read-sub{font-family:var(--sans);font-size:.88rem;color:var(--text2);margin-bottom:1rem}
-  .read-excerpt{font-size:1rem;font-style:italic;color:var(--text2);line-height:1.8;word-break:keep-all}
-  .article{max-width:var(--max);margin:0 auto;padding:2rem 1.75rem}
-  .chapter-label{font-family:var(--sans);font-size:.9rem;font-weight:700;color:var(--accent);
-    text-transform:uppercase;letter-spacing:.05em;margin:3.5rem 0 1.5rem;padding-bottom:.5rem;
-    border-bottom:1px solid var(--bdl)}
-  .section-divider{margin:3rem 0 1.5rem;display:flex;align-items:center;gap:.75rem}
-  .section-number{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.12em;
-    text-transform:uppercase;color:var(--al);white-space:nowrap}
-  .section-divider hr{flex:1;border:none;border-top:1px solid var(--bdl)}
-  .key-section{padding-left:.75rem;border-left:3px solid var(--accent)}
-  .key-label{color:var(--accent)!important;font-size:.66rem}
-  h2{font-size:1.3rem;font-weight:700;line-height:1.4;margin-bottom:1.5rem;word-break:keep-all}
+  .hero{background:linear-gradient(170deg,var(--hero-start) 0%,var(--hero-mid) 45%,var(--hero-end) 100%);
+    color:var(--hero-fg);padding:4.5rem 1.75rem 3.5rem;text-align:center;position:relative;overflow:hidden}
+  .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:60px;
+    background:linear-gradient(to bottom,transparent,var(--bg))}
+  .hero-label{font-family:var(--sans);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;opacity:.7;margin-bottom:1rem}
+  .hero h1{font-size:clamp(1.6rem,4.5vw,2.4rem);font-weight:700;line-height:1.35;max-width:640px;margin:0 auto 1rem;word-break:keep-all}
+  .hero-sub{font-size:.88rem;opacity:.75;font-family:var(--sans);margin-bottom:1.25rem}
+  .hero-excerpt{font-size:1rem;line-height:1.75;max-width:540px;margin:0 auto;opacity:.9;word-break:keep-all;font-style:italic}
+  .toc-wrap{max-width:var(--max);margin:2.5rem auto 1.75rem;padding:0 1.75rem}
+  .toc{background:var(--surface);border:1px solid var(--bdl);border-radius:10px;padding:1.75rem 2.5rem}
+  .toc-btn{display:flex;align-items:center;justify-content:space-between;cursor:pointer;border:none;background:none;
+    width:100%;font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--accent);padding:0}
+  .arr{transition:transform .3s;font-size:.7rem}
+  .toc-btn.collapsed .arr{transform:rotate(-90deg)}
+  .toc-list{list-style:none;margin-top:1rem;padding:0;overflow:hidden;transition:max-height .4s,opacity .3s}
+  .toc-list.hidden{max-height:0;opacity:0;margin-top:0}
+  .toc-list li{padding:6px 0;border-bottom:1px solid var(--bdl)}
+  .toc-list li:last-child{border-bottom:none}
+  .toc-list a{font-family:var(--sans);font-size:.88rem;color:var(--text);text-decoration:none}
+  .toc-list a:hover{color:var(--accent)}
+  .sn{color:var(--al);font-weight:600;margin-right:.5em}
+  .article{max-width:var(--max);margin:0 auto;padding:0 1.75rem}
+  .chapter-label{font-size:1.05rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin:4rem 0 1.75rem}
+  .section-divider{display:flex;align-items:center;gap:1rem;margin:4rem 0 1.75rem}
+  .section-number{font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);white-space:nowrap}
+  .section-divider hr{flex:1;border:none;border-top:1px solid var(--bd)}
+  .key-section{border-left:3px solid var(--accent);padding-left:1rem}
+  .key-label{color:var(--accent)!important;background:var(--abg);padding:3px 10px;border-radius:20px;font-size:.68rem}
+  h2{font-size:1.35rem;font-weight:700;line-height:1.4;margin-bottom:1.75rem;word-break:keep-all}
   .article p{margin-bottom:1.75rem;word-break:keep-all}
-  .pullquote{border-left:4px solid var(--accent);padding:.75rem 0 .75rem 1.5rem;margin:2.5rem 0;background:none}
-  .pullquote p{font-size:1.1rem;font-weight:600;color:var(--pq);line-height:1.7;word-break:keep-all;text-align:left}
-  .scripture{background:var(--surface);border-left:3px solid var(--al);
-    padding:1rem 1.5rem;margin:1.75rem 0;border-radius:0 6px 6px 0}
-  .scripture p{font-style:italic;color:var(--text2);font-size:.95rem;line-height:1.85;margin-bottom:0}
-  .sn{display:none}
-  @media(max-width:600px){.article,.read-header{padding-left:1rem;padding-right:1rem}}
+  .pullquote{border-top:2px solid var(--al);border-bottom:2px solid var(--al);padding:1.75rem 0;margin:2.5rem 0;text-align:center}
+  .pullquote p{font-size:1.12rem;font-weight:600;color:var(--pq);line-height:1.7;max-width:560px;margin:0 auto;word-break:keep-all}
+  .scripture{background:var(--surface);border:1px solid var(--bdl);border-radius:8px;padding:1.75rem 2.5rem;margin:1.75rem 0;position:relative}
+  .scripture::before{content:'\201C';font-size:3rem;color:var(--al);position:absolute;top:8px;left:16px;line-height:1;opacity:.4}
+  .scripture p{font-style:italic;color:var(--text2);font-size:.95rem;line-height:1.8;padding-left:1.5rem;margin-bottom:0}
+  .fi{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+  .fi.v{opacity:1;transform:none}
+  @media(max-width:600px){html{font-size:15.5px}.hero{padding:3rem 1rem 2.5rem}.article,.toc-wrap{padding:0 1rem}}
 </style></head><body>
-<header class="read-header">
-  <div class="read-label">Book Summary · 선교신학 / 선교적 성경읽기</div>
+<header class="hero">
+  <div class="hero-label">Book Summary · 선교신학 / 선교적 성경읽기</div>
   <h1>에베소서 선교적 읽기 — 한종석</h1>
-  <p class="read-sub">한종석 (전 파키스탄 선교사) · 한국해외선교회출판부 · 부제: 바울이 꿈꾸던 선교와 공동체</p>
-  <p class="read-excerpt">파키스탄 불가촉천민의 후손들 사이에서 살았던 한 선교사가 에베소서를 다시 읽기 시작했다. 그의 발견은 단순하지만 급진적이다 — 선교는 하는 것이 아니라 되는 것이며, 메시지와 메신저는 분리될 수 없다. 이 책은 그 경험에서 출발해, 에베소서 전체를 '보냄받은 공동체의 정체성'이라는 하나의 렌즈로 읽어낸다.</p>
+  <p class="hero-sub">한종석 (전 파키스탄 선교사) · 한국해외선교회출판부 · 부제: 바울이 꿈꾸던 선교와 공동체</p>
+  <p class="hero-excerpt">파키스탄 불가촉천민의 후손들 사이에서 살았던 한 선교사가 에베소서를 다시 읽기 시작했다. 그의 발견은 단순하지만 급진적이다 — 선교는 하는 것이 아니라 되는 것이며, 메시지와 메신저는 분리될 수 없다. 이 책은 그 경험에서 출발해, 에베소서 전체를 '보냄받은 공동체의 정체성'이라는 하나의 렌즈로 읽어낸다.</p>
 </header>
-<article class="article"><div class="pullquote"><p>부제: 바울이 꿈꾸던 선교와 공동체. 한종석(전 파키스탄 선교사)이 에베소서를 <strong>선교적 성경읽기</strong>(missional hermeneutics)로 주해한 책. 📷 표시(밑줄·<strong>동그라미</strong>·형광펜·📝손글씨)를 페이지 사진에서 원문 그대로 전사한 독서 노트.</p></div>
+<nav class="toc-wrap"><div class="toc">
+  <button class="toc-btn" id="tocBtn" aria-expanded="true">
+    <span>목차</span><span class="arr">&#9660;</span>
+  </button>
+  <ol class="toc-list" id="tocList">      <li><a href="#section-01"><span class="sn">01</span>방법론: 선교적 성경읽기</a></li>
+      <li><a href="#section-02"><span class="sn">02</span>★ 핵심 인사이트: 삼위일체적 하나님의 선교</a></li>
+      <li><a href="#section-03"><span class="sn">03</span>★ 핵심 인사이트: 전신갑주 = 그리스도</a></li>
+      <li><a href="#section-04"><span class="sn">04</span>하나님의 선교의 범위: 개인 → 모든 창조물</a></li>
+      <li><a href="#section-05"><span class="sn">05</span>구약과의 연속성 — 이방인은 종말론적 성전</a></li>
+      <li><a href="#section-06"><span class="sn">06</span>★ 핵심 인사이트: 정체성 = 부르심–공동체적 기념–보내심</a></li>
+      <li><a href="#section-07"><span class="sn">07</span>★ 핵심 인사이트: 메신저 = 메시지</a></li>
+      <li><a href="#section-08"><span class="sn">08</span>하나님의 선교의 네 움직임</a></li>
+      <li><a href="#section-09"><span class="sn">09</span>선교적 공동체 — 모든 성도가 선교적</a></li>
+      <li><a href="#section-10"><span class="sn">10</span>빛의 사역 — 드러냄과 초대</a></li>
+      <li><a href="#section-11"><span class="sn">11</span>윤리·가정 규범의 선교적 의미</a></li>
+      <li><a href="#section-12"><span class="sn">12</span>저자의 최종 요약 — 선교적 참여의 7가지 요소</a></li></ol>
+</div></nav>
+<article class="article fi"><div class="pullquote"><p>부제: 바울이 꿈꾸던 선교와 공동체. 한종석(전 파키스탄 선교사)이 에베소서를 <strong>선교적 성경읽기</strong>(missional hermeneutics)로 주해한 책. 📷 표시(밑줄·<strong>동그라미</strong>·형광펜·📝손글씨)를 페이지 사진에서 원문 그대로 전사한 독서 노트.</p></div>
 <h2 class="chapter-label">요약 — 주제별 상세 정리</h2>
 <p>저자는 파키스탄 선교사로 '불가촉천민의 후손'인 펀자비(Punjabi) 기독교인들과 살면서, 그들이 가진 세 겹의 정체성 — &quot;기독교 종족으로서의 정체성, 사회적으로 하부 계층을 이루고 있는 사회·경제적인 정체성, 그리스도를 구주로 고백하는 영적인 정체성&quot;(p.12) — 사이의 긴장을 목격했다. &quot;기독교인의 정체성이란 무엇이고 교회란 무엇인가&quot;(p.12)를 다시 묻게 된 그 경험이 이 책의 출발점이다. 그 답으로 에베소서를 <strong>&quot;태초 이전에 시작된 하나님의 선교의 파노라마와 그 안에서 에베소 교인들의 정체성과 소명을 이야기하는 선교적 문서&quot;</strong>(p.17)로 읽는다.</p>
 <div class="section-divider" id="section-01"><span class="section-number">SECTION 01</span><hr></div>
@@ -172,5 +205,10 @@
   <span class="tag">#domain/선교적교회</span>
   <span class="tag">#scripture/엡</span></div></article>
 <a class="back-link" href="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/">← 영닥터 아카이브로 돌아가기</a>
-<footer class="footer">youngdoctor.kr · 2026-06-21 · palette: rose</footer>
-</body></html>
+<footer class="footer">youngdoctor.kr · 2026-06-21 · palette: forest+teal</footer>
+<script>
+const btn=document.getElementById('tocBtn'),list=document.getElementById('tocList');
+btn.addEventListener('click',()=>{const c=list.classList.toggle('hidden');btn.classList.toggle('collapsed',c);btn.setAttribute('aria-expanded',String(!c))});
+new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')})
+,{threshold:.05}).observe(document.querySelector('.fi'));
+</script></body></html>
