@@ -38,165 +38,112 @@
   .back-link:hover{opacity:1}
   .footer{max-width:var(--max);margin:4rem auto 0;padding:1.75rem;text-align:center;font-family:var(--sans);font-size:.75rem;color:var(--text2);opacity:.55}
 
-  .layout{display:grid;grid-template-columns:260px 1fr;gap:2rem;max-width:1060px;margin:2rem auto;padding:0 1.5rem;align-items:start}
-  .sidebar{position:sticky;top:1.5rem;background:var(--surface);border:1px solid var(--bdl);border-radius:10px;padding:1.25rem 1.5rem}
-  .sidebar-title{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem}
-  .sidebar ol{list-style:none;padding:0;margin:0}
-  .sidebar li{padding:5px 0;border-bottom:1px solid var(--bdl)}
-  .sidebar li:last-child{border-bottom:none}
-  .sidebar a{font-family:var(--sans);font-size:.83rem;color:var(--text);text-decoration:none;display:block}
-  .sidebar a:hover{color:var(--accent)}
-  .sn{color:var(--al);font-weight:600;margin-right:.4em;font-size:.75rem}
-  .topbar{background:linear-gradient(135deg,var(--hero-start),var(--hero-mid));color:var(--hero-fg);
-    padding:2.5rem 1.5rem 2rem;text-align:center}
-  .topbar h1{font-size:clamp(1.4rem,3.5vw,2rem);font-weight:700;word-break:keep-all;margin-bottom:.5rem}
-  .topbar-label{font-family:var(--sans);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;opacity:.7;margin-bottom:.75rem}
-  .topbar-sub{font-family:var(--sans);font-size:.85rem;opacity:.75;margin-bottom:.5rem}
-  .topbar-excerpt{font-size:.92rem;font-style:italic;opacity:.85;max-width:560px;margin:0 auto;line-height:1.7;word-break:keep-all}
-  details{margin-bottom:1.5rem;background:var(--surface);border:1px solid var(--bdl);border-radius:10px;overflow:hidden}
-  summary.sec-summary{cursor:pointer;list-style:none;padding:1rem 1.25rem;position:relative;display:flex;align-items:flex-start;gap:.75rem}
-  summary.sec-summary::-webkit-details-marker{display:none}
-  summary.sec-summary::before{content:'▸';color:var(--al);font-size:.8rem;flex-shrink:0;margin-top:.15rem;transition:transform .2s}
-  details[open] summary.sec-summary::before{content:'▾'}
-  .sec-summary .section-divider{margin:0;border:none;flex:1}
-  .sec-summary .section-divider hr{display:none}
-  .sec-summary h2{font-size:1.05rem;margin-bottom:0}
-  .sec-body{padding:.25rem 1.25rem 1.25rem}
-  .sec-body p{margin-bottom:1.25rem;word-break:keep-all}
-  .copy-btn{font-family:var(--sans);font-size:.7rem;background:var(--abg);color:var(--accent);
-    border:1px solid var(--bd);border-radius:20px;padding:3px 10px;cursor:pointer;flex-shrink:0;margin-top:.1rem;
-    opacity:0;transition:opacity .2s}
-  details:hover .copy-btn{opacity:1}
-  .chapter-label{font-size:.95rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin:2rem 0 1rem;padding:0 1.25rem}
-  .pullquote{border-top:2px solid var(--al);border-bottom:2px solid var(--al);padding:1.25rem 0;margin:1.75rem 0;text-align:center}
-  .pullquote p{font-size:1.05rem;font-weight:600;color:var(--pq);line-height:1.7;max-width:520px;margin:0 auto;word-break:keep-all}
-  .scripture{background:var(--bg);border:1px solid var(--bdl);border-radius:8px;padding:1.25rem 1.75rem;margin:1.25rem 0;position:relative}
-  .scripture::before{content:'\201C';font-size:2.5rem;color:var(--al);position:absolute;top:6px;left:12px;line-height:1;opacity:.4}
-  .scripture p{font-style:italic;color:var(--text2);font-size:.92rem;line-height:1.75;padding-left:1.25rem;margin-bottom:0}
-  .key-section .section-number,.key-label{background:var(--abg);padding:2px 8px;border-radius:16px;font-size:.66rem}
-  @media(max-width:780px){.layout{grid-template-columns:1fr;padding:0 1rem}.sidebar{position:static}.topbar{padding:2rem 1rem 1.5rem}}
+  body{font-size:18px;line-height:2.0}
+  .read-header{border-bottom:3px solid var(--accent);padding:3rem 1.75rem 2rem;max-width:var(--max);margin:0 auto}
+  .read-label{font-family:var(--sans);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--al);margin-bottom:.75rem}
+  .read-header h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:700;line-height:1.3;word-break:keep-all;margin-bottom:.5rem}
+  .read-sub{font-family:var(--sans);font-size:.88rem;color:var(--text2);margin-bottom:1rem}
+  .read-excerpt{font-size:1rem;font-style:italic;color:var(--text2);line-height:1.8;word-break:keep-all}
+  .article{max-width:var(--max);margin:0 auto;padding:2rem 1.75rem}
+  .chapter-label{font-family:var(--sans);font-size:.9rem;font-weight:700;color:var(--accent);
+    text-transform:uppercase;letter-spacing:.05em;margin:3.5rem 0 1.5rem;padding-bottom:.5rem;
+    border-bottom:1px solid var(--bdl)}
+  .section-divider{margin:3rem 0 1.5rem;display:flex;align-items:center;gap:.75rem}
+  .section-number{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--al);white-space:nowrap}
+  .section-divider hr{flex:1;border:none;border-top:1px solid var(--bdl)}
+  .key-section{padding-left:.75rem;border-left:3px solid var(--accent)}
+  .key-label{color:var(--accent)!important;font-size:.66rem}
+  h2{font-size:1.3rem;font-weight:700;line-height:1.4;margin-bottom:1.5rem;word-break:keep-all}
+  .article p{margin-bottom:1.75rem;word-break:keep-all}
+  .pullquote{border-left:4px solid var(--accent);padding:.75rem 0 .75rem 1.5rem;margin:2.5rem 0;background:none}
+  .pullquote p{font-size:1.1rem;font-weight:600;color:var(--pq);line-height:1.7;word-break:keep-all;text-align:left}
+  .scripture{background:var(--surface);border-left:3px solid var(--al);
+    padding:1rem 1.5rem;margin:1.75rem 0;border-radius:0 6px 6px 0}
+  .scripture p{font-style:italic;color:var(--text2);font-size:.95rem;line-height:1.85;margin-bottom:0}
+  .sn{display:none}
+  @media(max-width:600px){.article,.read-header{padding-left:1rem;padding-right:1rem}}
 </style></head><body>
-<div class="topbar">
-  <div class="topbar-label">Book Summary · 선교신학 / 선교적 성경읽기</div>
+<header class="read-header">
+  <div class="read-label">Book Summary · 선교신학 / 선교적 성경읽기</div>
   <h1>에베소서 선교적 읽기 — 한종석</h1>
-  <p class="topbar-sub">한종석 (전 파키스탄 선교사) · 한국해외선교회출판부 · 부제: 바울이 꿈꾸던 선교와 공동체</p>
-  <p class="topbar-excerpt">파키스탄 불가촉천민의 후손들 사이에서 살았던 한 선교사가 에베소서를 다시 읽기 시작했다. 그의 발견은 단순하지만 급진적이다 — 선교는 하는 것이 아니라 되는 것이며, 메시지와 메신저는 분리될 수 없다. 이 책은 그 경험에서 출발해, 에베소서 전체를 '보냄받은 공동체의 정체성'이라는 하나의 렌즈로 읽어낸다.</p>
-</div>
-<div class="layout">
-  <aside class="sidebar">
-    <div class="sidebar-title">목차</div>
-    <ol>      <li><a href="#section-01"><span class="sn">01</span>방법론: 선교적 성경읽기</a></li>
-      <li><a href="#section-02"><span class="sn">02</span>★ 핵심 인사이트: 삼위일체적 하나님의 선교</a></li>
-      <li><a href="#section-03"><span class="sn">03</span>★ 핵심 인사이트: 전신갑주 = 그리스도</a></li>
-      <li><a href="#section-04"><span class="sn">04</span>하나님의 선교의 범위: 개인 → 모든 창조물</a></li>
-      <li><a href="#section-05"><span class="sn">05</span>구약과의 연속성 — 이방인은 종말론적 성전</a></li>
-      <li><a href="#section-06"><span class="sn">06</span>★ 핵심 인사이트: 정체성 = 부르심–공동체적 기념–보내심</a></li>
-      <li><a href="#section-07"><span class="sn">07</span>★ 핵심 인사이트: 메신저 = 메시지</a></li>
-      <li><a href="#section-08"><span class="sn">08</span>하나님의 선교의 네 움직임</a></li>
-      <li><a href="#section-09"><span class="sn">09</span>선교적 공동체 — 모든 성도가 선교적</a></li>
-      <li><a href="#section-10"><span class="sn">10</span>빛의 사역 — 드러냄과 초대</a></li>
-      <li><a href="#section-11"><span class="sn">11</span>윤리·가정 규범의 선교적 의미</a></li>
-      <li><a href="#section-12"><span class="sn">12</span>저자의 최종 요약 — 선교적 참여의 7가지 요소</a></li></ol>
-  </aside>
-  <main>
-    <div class="pullquote"><p>부제: 바울이 꿈꾸던 선교와 공동체. 한종석(전 파키스탄 선교사)이 에베소서를 <strong>선교적 성경읽기</strong>(missional hermeneutics)로 주해한 책. 📷 표시(밑줄·<strong>동그라미</strong>·형광펜·📝손글씨)를 페이지 사진에서 원문 그대로 전사한 독서 노트.</p></div>
+  <p class="read-sub">한종석 (전 파키스탄 선교사) · 한국해외선교회출판부 · 부제: 바울이 꿈꾸던 선교와 공동체</p>
+  <p class="read-excerpt">파키스탄 불가촉천민의 후손들 사이에서 살았던 한 선교사가 에베소서를 다시 읽기 시작했다. 그의 발견은 단순하지만 급진적이다 — 선교는 하는 것이 아니라 되는 것이며, 메시지와 메신저는 분리될 수 없다. 이 책은 그 경험에서 출발해, 에베소서 전체를 '보냄받은 공동체의 정체성'이라는 하나의 렌즈로 읽어낸다.</p>
+</header>
+<article class="article"><div class="pullquote"><p>부제: 바울이 꿈꾸던 선교와 공동체. 한종석(전 파키스탄 선교사)이 에베소서를 <strong>선교적 성경읽기</strong>(missional hermeneutics)로 주해한 책. 📷 표시(밑줄·<strong>동그라미</strong>·형광펜·📝손글씨)를 페이지 사진에서 원문 그대로 전사한 독서 노트.</p></div>
 <h2 class="chapter-label">요약 — 주제별 상세 정리</h2>
 <p>저자는 파키스탄 선교사로 '불가촉천민의 후손'인 펀자비(Punjabi) 기독교인들과 살면서, 그들이 가진 세 겹의 정체성 — &quot;기독교 종족으로서의 정체성, 사회적으로 하부 계층을 이루고 있는 사회·경제적인 정체성, 그리스도를 구주로 고백하는 영적인 정체성&quot;(p.12) — 사이의 긴장을 목격했다. &quot;기독교인의 정체성이란 무엇이고 교회란 무엇인가&quot;(p.12)를 다시 묻게 된 그 경험이 이 책의 출발점이다. 그 답으로 에베소서를 <strong>&quot;태초 이전에 시작된 하나님의 선교의 파노라마와 그 안에서 에베소 교인들의 정체성과 소명을 이야기하는 선교적 문서&quot;</strong>(p.17)로 읽는다.</p>
-<details open id="section-01-wrap">
-<summary class="sec-summary"><div class="section-divider" id="section-01"><span class="section-number">SECTION 01</span><hr></div>
-<h2>방법론: 선교적 성경읽기</h2><span class="copy-btn" onclick="copySec('section-01-wrap',event)">copy</span></summary>
-<div class="sec-body">
+<div class="section-divider" id="section-01"><span class="section-number">SECTION 01</span><hr></div>
+<h2>방법론: 선교적 성경읽기</h2>
 <p>다양한 해석학적 접근 — 독자반응비평, 해방신학, 여성신학, 달릿신학, 민중신학(p.19) — 가운데, &quot;성경 전체를 아우르는 주제가 하나님의 선교이고 '성경 전체가 선교적'이라는 새로운 관점에서 성경을 읽어야 한다&quot;(p.20)는 이해가 대두되었다. 크리스토퍼 라이트를 따라, 선교적 성경읽기는 &quot;다문화적 성경읽기, 상황화 신학, 포스트모던적 해석학의 단점들을 극복&quot;하며(p.20), &quot;하나님의 선교에 참여하는 것이 본질인 교회의 모든 구성원의 상황과 관심을 반영&quot;한다(p.21). → 『하나님의 선교』의 선교적 해석학을 에베소서 한 권에 적용.</p>
 <div class="scripture"><p>&quot;에베소서는 하나님의 선교 안에서 교회의 역할에 대한 바울의 심오한 이해의 표현인 것이다&quot;(p.22).</p></div>
 <p>에베소서의 핵심 명제: <strong>&quot;기독교의 궁극적 목표가 개인의 구원이 아니고 하나님의 영광을 위한 부르심에 대한 공동체적 응답&quot;</strong>(p.22). 저자는 이 서신이 보여주는 것을 두 축으로 정리한다 — (1) 하나님의 선교의 <strong>결과물</strong>: 삼위일체적 본성, 선교의 범위, 구약 백성과의 연속성, 특수→보편의 선교적 운동, (2) 하나님의 백성을 선교의 <strong>참여자</strong>로 빚어 나가는 가르침: 하나된 공동체, 개인 성도의 삶, 삼위일체 하나님의 역할(p.23).</p>
 <p class="marginalia">📝 ('조감도를 제공함' 동그라미, p.23) — 에베소서가 하나님 선교의 '조감도'를 제공한다는 점에 주목.</p>
-</div></details><details open id="section-02-wrap">
-<summary class="sec-summary"><div class="section-divider key-section" id="section-02"><span class="section-number key-label">★ KEY INSIGHT</span><hr></div>
-<h2>핵심 인사이트: 삼위일체적 하나님의 선교</h2><span class="copy-btn" onclick="copySec('section-02-wrap',event)">copy</span></summary>
-<div class="sec-body">
+<div class="section-divider key-section" id="section-02"><span class="section-number key-label">★ KEY INSIGHT</span><hr></div>
+<h2>핵심 인사이트: 삼위일체적 하나님의 선교</h2>
 <p>에베소서 전체가 <strong>삼위일체적</strong>이며, 수미상관 구조로 삼위 주제로 시작·마무리한다(p.39-40). &quot;선교의 삼위일체적 본성에 대한 이해는 그리스도 중심의 선교 이해를 <strong>보충하는 것이 아니라</strong> 바울과 이방인 신자들에게 <strong>꼭 필요한 것</strong>&quot;(p.39)이다.</p>
 <div class="table-wrap"><table><thead><tr><th>위격</th><th>선교에서의 역할</th><th>핵심 근거</th></tr></thead><tbody><tr><td><strong>성부</strong></td><td>선교의 <strong>주관자/주도자</strong> — 계획·인치심·주도권. 성자를 보내시고, 성령을 통해 인치시며, 백성을 선한 일에 미리 준비시키심</td><td>p.41-43</td></tr><tr><td><strong>성자</strong></td><td>선교의 <strong>실행자</strong> — 하나님의 선교가 이루어지는 <strong>장소이자 수단</strong>. &quot;성자께서는 자신이 사역의 지배자와 주관자가 되고자 하는 모든 유혹을 거부하신다&quot;(p.47)</td><td>p.46-47</td></tr><tr><td><strong>성령</strong></td><td>선교의 <strong>지탱자</strong> — 단순히 생명 보전이 아니라 &quot;하나님께서 주신 자신들의 의무를 다하도록 돕는 분&quot;(p.55). 지혜·계시의 영으로 선교적 삶을 인도</td><td>p.54-56</td></tr></tbody></table></div>
 <div class="pullquote"><p>&quot;삼위 하나님은 서로를 높이는 <strong>겸손한 하나님</strong>이시다 — 각 위격이 서로 안에서, 서로를 통해 신비롭게 일하심으로 자신의 선교를 겸손함으로 하신다&quot;(p.57).</p></div>
 <p>특기할 점 — 바울은 &quot;성령에 <strong>의해서</strong> 인침을 받은 것&quot;이 아니라 &quot;성령<strong>으로</strong> 인치심을 받았다&quot;라고 쓴다. 인치시는 분은 성부이고, 성령은 자신을 성부께 내어주신다(p.43). 삼위 내의 겸손한 자기-내어줌이 선교의 원형이다.</p>
 <p>또한 이방인에게 중요한 점: 예수 그리스도는 &quot;그들의 오래된 신들을 대체하는 분이 아니고 다른 모든 신들을 초월하시는 유일하신 분이신 여호와 하나님에 의해서 높임을 받으신 분&quot;(p.40)이다.</p>
-</div></details><details open id="section-03-wrap">
-<summary class="sec-summary"><div class="section-divider key-section" id="section-03"><span class="section-number key-label">★ KEY INSIGHT</span><hr></div>
-<h2>핵심 인사이트: 전신갑주 = 그리스도</h2><span class="copy-btn" onclick="copySec('section-03-wrap',event)">copy</span></summary>
-<div class="sec-body">
+<div class="section-divider key-section" id="section-03"><span class="section-number key-label">★ KEY INSIGHT</span><hr></div>
+<h2>핵심 인사이트: 전신갑주 = 그리스도</h2>
 <p>저자의 독창적 읽기 — 에베소서 6장의 <strong>전신갑주가 곧 예수 그리스도</strong>다. &quot;하나님 아버지께서는 자신의 백성에게 전신갑주를 제공하여 <strong>성자 하나님 안에서</strong> 강해지게 하신다&quot;(p.44). <strong>전신갑주 입기 = 새 사람 입기</strong>(p.44).</p>
 <p>여섯 무기와 그 그리스도론적 의미:</p>
 <div class="table-wrap"><table><thead><tr><th>무기</th><th>의미</th><th>선교적 함의</th></tr></thead><tbody><tr><td><strong>진리의 허리띠</strong></td><td>&quot;내가 곧 길이요 진리요 생명이니&quot;(요 14:6)</td><td>진리이신 그리스도를 입음</td></tr><tr><td><strong>의의 호심경</strong></td><td>&quot;선물로 주어진 그리스도의 신적인 '의'&quot;(p.49)</td><td>구별된 삶으로 인도</td></tr><tr><td><strong>평안의 복음 신발</strong></td><td>평화의 복음</td><td><strong>&quot;적대하는 이웃은 원수가 아니라 악한 세력의 희생자&quot;</strong>(p.50)</td></tr><tr><td><strong>믿음의 방패</strong></td><td>하나님에 대한 확신과 신뢰</td><td>&quot;결코 성도들로부터 나온 것이 아니며 하나님의 보호 없이는 지속될 수 없다&quot;(p.51)</td></tr><tr><td><strong>구원의 투구</strong></td><td>성부만이 구원의 유일한 근원</td><td>&quot;모든 신들 가운데&quot;(p.52) — 다신 환경의 선교적 선언</td></tr><tr><td><strong>성령의 검 곧 말씀</strong></td><td>레마(ῥῆμα) — 신약 전체에 <strong>8번만</strong> 사용(p.53)</td><td>그리스도를 가리키는 성경 지식으로 무장</td></tr></tbody></table></div>
 <div class="pullquote"><p><strong>&quot;성자 하나님께서 바로 하나님의 전신갑주이시다&quot;</strong>(p.53).</p></div>
 <p>&quot;평안의 복음 신발&quot;에 대한 저자의 선교적 재해석이 특히 주목할 만하다 — 우리를 적대하는 이웃은 믿는 사람들의 <strong>원수가 아니라</strong> 악한 세력의 <strong>희생자</strong>들이다(p.50). 영적 전투의 대상은 사람이 아니라 &quot;하늘에 있는 악의 영들&quot;이며, 그래서 이 전투는 반드시 <strong>공동체적</strong>으로(&quot;서로를 위한 기도&quot;, 6:18) 수행해야 한다(p.111). 그 목적: &quot;<strong>복음의 비밀을 담대히 알리기 위함</strong>&quot;(6:19, p.111).</p>
-</div></details><details open id="section-04-wrap">
-<summary class="sec-summary"><div class="section-divider" id="section-04"><span class="section-number">SECTION 04</span><hr></div>
-<h2>하나님의 선교의 범위: 개인 → 모든 창조물</h2><span class="copy-btn" onclick="copySec('section-04-wrap',event)">copy</span></summary>
-<div class="sec-body">
+<div class="section-divider" id="section-04"><span class="section-number">SECTION 04</span><hr></div>
+<h2>하나님의 선교의 범위: 개인 → 모든 창조물</h2>
 <p>찬송시(1:3-14)의 반복 후렴(&quot;그의 영광을 찬송하게 하려…&quot;, p.58)은 <strong>&quot;하나님의 선교의 궁극적 목적이 인간의 구원을 넘어서 하나님 자신의 영광임&quot;</strong>을 드러낸다(p.58). 이 찬송은 구약의 찬송시 전통 — 멜기세덱(창 14:20), 솔로몬 성전 봉헌기도(왕상 8:15,56), 시편 마무리 형식(시 41:13; 72:18-19 등) — 을 바울이 <strong>&quot;재해석하여 창조적으로 사용&quot;</strong>(p.28)한 것이며, 구약과 가장 구별되는 점은 <strong>예수 그리스도가 찬양의 대상</strong>이 된 것이다(p.28).</p>
 <p>하나님의 영광은 &quot;구원받은 인간에게 주어진 <strong>윤리적이고 창조적인 책임</strong>을 통해&quot; 이루어진다(p.59). 구약에서도 &quot;이방을 하나님께 불러 모으기 위해, 이스라엘은 윤리적으로 구별되어야 했고 하나님의 임재를 다른 민족들이 볼 수 있도록 살아야 했다&quot;(p.59) — 베드로 역시 &quot;하나님이 택하신 족속이요, 왕 같은 제사장이요, 거룩한 나라로 삼으신 것은 하나님의 아름다운 덕을 선포하여 이방인들도 와서 하나님께 영광을 돌리도록 하기 위한 것&quot;이라 말한다(벧전 2:9, p.60).</p>
 <p class="marginalia">📝 (p.59 여백) &quot;어떤 사명이 있는가 / 매력 있으므로&quot; — 구별된 삶의 '매력'(attractiveness)과 '사명'을 연결하는 메모.</p>
 <p>&quot;바울은 하나님의 선교의 장을 인간의 구원에서 <strong>모든 창조물로 확장</strong>시킨다&quot;(p.60, 엡 1:10). &quot;선한 일&quot;(2:10)은 &quot;윤리적인 삶이나 성령의 열매보다 더 광범위한 의미를 지닌다. 그것은 <strong>창조의 원래 질서를 회복하는 하나님의 선교에 참여하는 일</strong>&quot;(p.61)이다 — 인간이 &quot;자연의 왕&quot;이 되는 것은 &quot;착취와 복종을 요구하는 것이 아니고 하나님 자신이 다스리시는 방식을 따라 모든 창조물을 <strong>사랑, 정의, 자비, 진리</strong>로 다스리는 것&quot;(p.62)이다.</p>
-</div></details><details open id="section-05-wrap">
-<summary class="sec-summary"><div class="section-divider" id="section-05"><span class="section-number">SECTION 05</span><hr></div>
-<h2>구약과의 연속성 — 이방인은 종말론적 성전</h2><span class="copy-btn" onclick="copySec('section-05-wrap',event)">copy</span></summary>
-<div class="sec-body">
+<div class="section-divider" id="section-05"><span class="section-number">SECTION 05</span><hr></div>
+<h2>구약과의 연속성 — 이방인은 종말론적 성전</h2>
 <p>&quot;에베소서만큼 '우리'(유대인)와 '너희'(이방인) 언어로 구별을 확실히 하는 서신서는 없다&quot;(p.30). 그러나 이 구별은 분리가 아니라 <strong>합류를 향한 구별</strong>이다 — 두 대명사는 &quot;새로운 '우리'(그리스도 안에서 새로운 피조물로서 모든 그리스도인들)&quot;로 합쳐진다(p.30).</p>
 <p>유대인의 우선성은 배타적 특권이 아니다: &quot;이사야서는 같은 구절에서 모든 열방에 대한 구원의 가능성도 내비치고 있다…택함은 이스라엘만을 위한 것이 아니고 <strong>모든 열방을 위한 것</strong>&quot;(p.32-33). &quot;유대인의 일시적인 우선성은 그리스도 안에 있는 <strong>하나님의 영원한 우선성을 반영</strong>한다&quot;(p.33).</p>
 <p>이방인 신자들은 &quot;유대인들과 함께 하나님이 거하시는 <strong>종말론적 성전</strong>이 되어간다&quot;(p.34, 엡 2:21-22). &quot;이방인의 선교는 우연이 아니라 이미 구약에서 예언되고 계획된 하나님의 약속의 성취&quot;(p.36). &quot;성경은 시작과 끝이 있는 <strong>거대서사</strong>&quot;이며(p.74), 에베소 교인은 그 연속선상의 하나님 백성이다.</p>
-</div></details><details open id="section-06-wrap">
-<summary class="sec-summary"><div class="section-divider key-section" id="section-06"><span class="section-number key-label">★ KEY INSIGHT</span><hr></div>
-<h2>핵심 인사이트: 정체성 = 부르심–공동체적 기념–보내심</h2><span class="copy-btn" onclick="copySec('section-06-wrap',event)">copy</span></summary>
-<div class="sec-body">
+<div class="section-divider key-section" id="section-06"><span class="section-number key-label">★ KEY INSIGHT</span><hr></div>
+<h2>핵심 인사이트: 정체성 = 부르심–공동체적 기념–보내심</h2>
 <p>선교의 출발점은 활동이 아니라 <strong>정체성</strong>이다(p.22, 67). 그리스도인의 정체성은 세 축으로 정의된다:</p>
 <pre><code>부르심(calling) → 공동체적 기념(communal remembrance) → 보내심(sending)</code></pre>
 <p>&quot;이 정체성을 깨닫는 것이 <strong>'행함'과 '선포' 이전에 선행되어야 하는 선교의 출발점</strong>&quot;(p.67). 바울의 자기 정체성 역시 &quot;포로 생활로부터 부름을 받고, 하나님이 자신들을 위해 하신 일을 공동체적으로 기념하고, 열방에게로 보냄을 받은 <strong>구약 이스라엘의 정체성</strong>에 기초&quot;(p.65)한다.</p>
 <p>에베소서 구조도 이를 반영 — <strong>1-3장 = 부르심(정체성), 4-6장 = 보내심(삶)</strong>(p.68). &quot;교회(에클레시아)는 '불러낸 자들'이라는 뜻인데, 부르심받은 자는 모두 보내심받은 자이므로 <strong>부르신 공동체(교회)가 곧 보냄받은 공동체(선교)</strong>&quot;(p.73). &quot;부르심과 이에 대한 반응은 <strong>존재론적이면서도 윤리적</strong>&quot;(p.70)이다 — 존재론적 정체성(1:6)에서도, 구별된 공동체의 윤리적 행동(1:4)에서도 모두 선교적이다(p.70).</p>
 <p>&quot;에베소서는 기억과 축하의 편지&quot;(p.72). 그 본질은 &quot;<strong>생각하라</strong>&quot;(2:11)에 담겨 있다. 구약에서도 &quot;너희는 애굽 곧 종 되었던 집에서 나온 그 날을 <strong>기념</strong>하여&quot;(출 13:3, p.71) — 공동체 전체가 함께 모여 하나님의 행위를 기억하는 것이 정체성 형성의 기초다.</p>
 <p class="marginalia">📝 (p.67) &quot;정체성·부르심-보내심·공동체적 기념&quot;을 동그라미/네모로 표시 — 이 삼중 구조가 책의 핵심 프레임.</p>
-</div></details><details open id="section-07-wrap">
-<summary class="sec-summary"><div class="section-divider key-section" id="section-07"><span class="section-number key-label">★ KEY INSIGHT</span><hr></div>
-<h2>핵심 인사이트: 메신저 = 메시지</h2><span class="copy-btn" onclick="copySec('section-07-wrap',event)">copy</span></summary>
-<div class="sec-body">
+<div class="section-divider key-section" id="section-07"><span class="section-number key-label">★ KEY INSIGHT</span><hr></div>
+<h2>핵심 인사이트: 메신저 = 메시지</h2>
 <p>저자가 인용하는 강력한 명제 — <strong>&quot;메시지와 그 메시지를 전달하는 메신저가 분리될 수 없다&quot;</strong>(p.66). 즉:</p>
 <div class="pullquote"><p>&quot;아직 예수를 모르는 사람들에게는 <strong>예수의 메시지를 전하는 우리가 바로 예수</strong>다&quot;(p.66).</p></div>
 <p>이를 뒷받침하는 본문: &quot;너희가 전에는 <strong>어둠이더니</strong> 이제는 주 안에서 <strong>빛이라</strong> 빛의 자녀들처럼 행하라&quot;(엡 5:8, p.66). 바울은 성도를 &quot;빛<strong>을 가진</strong> 자&quot;가 아니라 &quot;빛<strong>인</strong> 자&quot;로 부른다. 벧전 2:9도 같은 구조: &quot;너희를 어두운 데서 불러 내어 그의 기이한 빛에 들어가게 하신 이의 아름다운 덕을 <strong>선포</strong>하게 하려 하심&quot;(p.66).</p>
 <p>이 명제는 파키스탄 불가촉천민 기독교인의 정체성 문제(p.12)와 직결된다 — 그들의 <strong>존재 자체</strong>가 메시지다. 행함 이전에 정체성, 선포 이전에 삶의 방식이 복음이 된다.</p>
-</div></details><details open id="section-08-wrap">
-<summary class="sec-summary"><div class="section-divider" id="section-08"><span class="section-number">SECTION 08</span><hr></div>
-<h2>하나님의 선교의 네 움직임</h2><span class="copy-btn" onclick="copySec('section-08-wrap',event)">copy</span></summary>
-<div class="sec-body">
+<div class="section-divider" id="section-08"><span class="section-number">SECTION 08</span><hr></div>
+<h2>하나님의 선교의 네 움직임</h2>
 <p>에베소 교회는 &quot;하나님의 선교의 열매라는 정체성&quot;(p.74)을 가지며, 그 열매는 네 움직임의 결과다:</p>
 <div class="table-wrap"><table><thead><tr><th>움직임</th><th>내용</th><th>핵심 인용</th></tr></thead><tbody><tr><td><strong>시간적</strong></td><td>특정 과거→보편 미래를 넘어, <strong>영원에서 영원으로</strong></td><td>&quot;이방인들이 하나님의 가족에 포함되는 것은 하나님의 영원한 계획의 열매&quot;(p.76)</td></tr><tr><td><strong>공간적</strong></td><td>예루살렘→땅끝 + <strong>구심적 성전→원심적 그리스도 중심</strong></td><td>&quot;구약에서 성전 중심이었던 구심적 특징이 원심적 신약 선교에 의해 새로운 성전의 중심이 되신 그리스도 안에서 실현&quot;(p.78)</td></tr><tr><td><strong>사회적</strong> 📝</td><td>두 민족을 하나로, 사회 계층·집단 간 벽을 허묾(2:14)</td><td>&quot;사회의 모든 사람들이 차별과 적대감 없이 서로 사랑하고 순종함으로써 하나님의 가족이 되어야&quot;(p.80)</td></tr><tr><td><strong>내적</strong></td><td>경계를 넘는 확장만이 아니라 <strong>개인의 전인적 성품 변화</strong></td><td>&quot;전인적 성품의 변화는 건강한 선교 공동체의 가늠자임과 동시에 선교적 정체성의 기초&quot;(p.83)</td></tr></tbody></table></div>
 <p>공간적 움직임에서 주목할 점: 구약의 <strong>구심적</strong>(centripetal) 선교 — 이방인이 성전으로 모여듦 — 가 신약에서 <strong>원심적</strong>(centrifugal) 선교로 전환되는데, 이 둘은 단절이 아니라 <strong>그리스도 안에서의 실현</strong>이다. 에베소 교인들은 &quot;전 세계적인 그리스도인 공동체의 일부로 지어져 가고 있다&quot;(p.78).</p>
-</div></details><details open id="section-09-wrap">
-<summary class="sec-summary"><div class="section-divider" id="section-09"><span class="section-number">SECTION 09</span><hr></div>
-<h2>선교적 공동체 — 모든 성도가 선교적</h2><span class="copy-btn" onclick="copySec('section-09-wrap',event)">copy</span></summary>
-<div class="sec-body">
+<div class="section-divider" id="section-09"><span class="section-number">SECTION 09</span><hr></div>
+<h2>선교적 공동체 — 모든 성도가 선교적</h2>
 <p>교회의 <strong>하나됨(연합)</strong>은 수단이자 목적 — &quot;주변 사람들에게 믿는 자들의 구별됨을 보여줌으로…분열, 소외, 배척의 증상을 매일 겪고 있는 사람들에게 새로운 공동체의 가능성을 제시&quot;한다(p.88). 예수님도 &quot;그들을 통해 그리스도를 믿게 될 사람들을 위한 것&quot;이라 말씀하신다(요 17:20, p.88).</p>
 <p>다섯 사역(사도·선지자·복음전하는 자·목사·교사, 4:11)의 성격: &quot;<strong>사도와</strong> 전도자의 사역은 교회 내에서의 사역이 아니라 교회 밖의 세상과 연결되어 그리스도의 복음을 전하는 일과 관련이 있으므로 <strong>외적인 본성</strong>이 있다&quot;(p.90). 라이트는 '봉사의 일'(4:12)을 &quot;교회를 포함한 <strong>사회 전체</strong>의 모든 봉사&quot;로 보며(p.91):</p>
 <div class="pullquote"><p>&quot;성도들이 목사의 사역을 지원하기 위해 주일에 교회에 가는 것이 아니다. <strong>목사가 성도들의 사역을 지원하기 위해 주일에 교회에 간다.</strong> 성도의 사역, 즉 진정한 선교는 교회 벽을 넘어선 밖, 세상에서 소금과 빛이 되는 것이다&quot;(Wright 2010, p.91).</p></div>
 <p>성도들의 세 가지 목표: (1) 하나님의 아들을 믿는 것과 아는 일에 <strong>하나가 되는 것</strong>, (2) <strong>온전한 사람</strong>을 이루는 것, (3) 그리스도의 장성한 분량이 <strong>충만한 데까지</strong> 이르는 것(p.92). 핵심: <strong>&quot;그리스도의 몸은 몸의 일부인 각 성도들이 선교적일 때에만 선교적일 수 있다&quot;</strong>(p.92). 개인이 건강한 지체가 되고, 지체들이 &quot;역할을 잘 수행하고 서로 적절하게 연결되고 결합&quot;(p.93)될 때 몸 전체가 선교적이다. <strong>내적 하나됨과 외적 성장은 서로 없어서는 안 된다</strong>(p.95).</p>
-</div></details><details open id="section-10-wrap">
-<summary class="sec-summary"><div class="section-divider" id="section-10"><span class="section-number">SECTION 10</span><hr></div>
-<h2>빛의 사역 — 드러냄과 초대</h2><span class="copy-btn" onclick="copySec('section-10-wrap',event)">copy</span></summary>
-<div class="sec-body">
+<div class="section-divider" id="section-10"><span class="section-number">SECTION 10</span><hr></div>
+<h2>빛의 사역 — 드러냄과 초대</h2>
 <p>바울은 성도를 &quot;빛<strong>인</strong> 자&quot;로 부른 뒤(5:8), 빛의 본질을 두 가지로 정의한다:</p>
 <div class="pullquote"><p>&quot;<strong>빛의 사역은 모든 것을 드러내는 것</strong>이고(5:13) <strong>빛의 본질은 비추는 것</strong>이다(5:14). 믿지 않는 이웃들은 어두움 가운데 있다. 그러므로 주님 안에서 빛인 믿는 자들은 자신들의 삶에서 믿지 않는 이웃을 비추고 <strong>그들을 빛으로 초대</strong>해야 한다&quot;(p.102).</p></div>
 <p>빛의 사역의 이중 구조: <strong>exposure</strong>(진실을 드러냄) + <strong>invitation</strong>(빛으로 초대). 이는 윤리적 삶이 단순한 도덕이 아니라 선교 행위임을 보여준다.</p>
-</div></details><details open id="section-11-wrap">
-<summary class="sec-summary"><div class="section-divider" id="section-11"><span class="section-number">SECTION 11</span><hr></div>
-<h2>윤리·가정 규범의 선교적 의미</h2><span class="copy-btn" onclick="copySec('section-11-wrap',event)">copy</span></summary>
-<div class="sec-body">
+<div class="section-divider" id="section-11"><span class="section-number">SECTION 11</span><hr></div>
+<h2>윤리·가정 규범의 선교적 의미</h2>
 <p>새 사람 입기(4:22-24)는 &quot;거짓된 욕망으로 인해 생겼던 이전의 삶의 방식과의 <strong>완전한 단절</strong>&quot;(p.97). 바울은 두 가지 길을 제시한다 — &quot;그리스도의 길인 진리의 길(4:21)과 이방인의 길인 유혹의 욕심을 따라 썩어져 가는 길(4:22)&quot;(p.96). 이는 신명기의 &quot;하나님의 길을 걷고 그를 두려워하라&quot;(신 8:6, p.96)의 반향이다.</p>
 <p>바울의 윤리(미덕·악덕)는 상황적이지 않고 &quot;<strong>하나님으로부터 나왔고 하나님의 영광을 위해 존재</strong>&quot;한다(p.101). 핵심 논리: &quot;바울의 의도가 이방인들 사이에 선교적 공동체를 건설하는 것이라면, 그가 독자들에게 촉구하는 도덕적 행동 역시 <strong>선교적이어야 한다</strong>&quot;(p.99).</p>
 <p>가정 규범(5:21-6:9)은 로마사회 규범과 형식은 같으나 <strong>동기</strong>가 다르다 — &quot;그리스도 안에서의 새로운 정체성&quot;(p.105). 아내·자녀·종의 순종은 사회적 관습이 아니라 &quot;그리스도의 종으로서&quot;의 자발적 선택이며, &quot;이 새로운 동기와 정체성은 그들을 더 나은 아내/자녀/종으로 만들고 <strong>궁극적으로 사람들을 하나님께로 이끌 것</strong>&quot;(p.107)이다.</p>
 <p>가장 주목할 점 — <strong>가장 큰 변화를 요구받는 것은 힘을 가진 가부장</strong>이다(p.108, &quot;아내를 그리스도처럼 사랑하라&quot;). 이 요구는 &quot;단순히 윤리적으로 더 나은 인간이 되는 것을 넘어서 당시 사회에서는 불가능하게 여겨지는 <strong>사회적 불가능성을 극복</strong>하고 새로운 기준을 세우는 <strong>거듭난 사람이 되라는 명령</strong>&quot;(p.109)이다.</p>
 <div class="pullquote"><p>따라서 새 가정 규범은 &quot;어그러진 가족관계를 회복시키는 면에서 <strong>치유적</strong>이고, 믿지 않는 자들에게 새로운 빛을 비추는 면에서 <strong>선교적</strong>&quot;(p.109-110)이다.</p></div>
 <div class="pullquote"><p>🔗 『선교적 공동체 세우기』도 같은 가정 규범을 다룬다 — 순종의 <strong>동기</strong>(그리스도 안의 정체성)와 <strong>선교적 효과</strong>(불신 이웃에게 빛 비춤)에서 두 책이 수렴한다.</p></div>
-</div></details><details open id="section-12-wrap">
-<summary class="sec-summary"><div class="section-divider" id="section-12"><span class="section-number">SECTION 12</span><hr></div>
-<h2>저자의 최종 요약 — 선교적 참여의 7가지 요소</h2><span class="copy-btn" onclick="copySec('section-12-wrap',event)">copy</span></summary>
-<div class="sec-body">
+<div class="section-divider" id="section-12"><span class="section-number">SECTION 12</span><hr></div>
+<h2>저자의 최종 요약 — 선교적 참여의 7가지 요소</h2>
 <div class="pullquote"><p>&quot;세상에 보내심을 받은 공동체는 세상과 구별되는 하나님의 선교의 참여자이다. 그리고 이 참여는 <strong>선교적 연합, 은사, 성숙, 성장, 단절, 윤리, 그리고 사회학적 불가능성을 넘어섬</strong>으로 실현된다&quot;(p.112).</p></div>
 <p>이 일곱 요소는 에베소서 전체의 실천적 요약이다:</p>
 <ol>
@@ -218,27 +165,12 @@
 <li><strong>미해결 질문</strong>: 교회의 '하나됨'이 부르심 수행의 <strong>수단</strong>인가 <strong>궁극 목적</strong>인가(p.88, 저자도 &quot;의문의 여지가 있다&quot;)? → 라이트의 통합적 사명, 라잇하르트의 '교회=목적' 논쟁과 연결.</li>
 <li><strong>한국교회 도전(저자 결론)</strong>: &quot;한국교회는 과연 선교적 공동체로서…하나님의 선교에 충실히 참여하고 있는가?&quot;(p.112).</li>
 </ul>
-<div class="scripture"><p>📖 전사 원문(줄이지 않은 표시 구절 전체): 에베소서선교적읽기 한종석 전사</p></div></div></details>
-    <div class="tags-block">  <span class="tag">#discipline/선교학</span>
+<div class="scripture"><p>📖 전사 원문(줄이지 않은 표시 구절 전체): 에베소서선교적읽기 한종석 전사</p></div>
+<div class="tags-block">  <span class="tag">#discipline/선교학</span>
   <span class="tag">#discipline/신약신학</span>
   <span class="tag">#domain/선교신학</span>
   <span class="tag">#domain/선교적교회</span>
-  <span class="tag">#scripture/엡</span></div>
-    <a class="back-link" href="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/">← 영닥터 아카이브</a>
-  </main>
-</div>
+  <span class="tag">#scripture/엡</span></div></article>
+<a class="back-link" href="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/">← 영닥터 아카이브로 돌아가기</a>
 <footer class="footer">youngdoctor.kr · 2026-06-21 · palette: rose</footer>
-<script>
-function copySec(id,e){e.stopPropagation();const el=document.getElementById(id);
-  const txt=el.querySelector('.sec-body')?.innerText||'';
-  navigator.clipboard.writeText(txt).then(()=>{const b=e.target;b.textContent='✓';setTimeout(()=>b.textContent='copy',1500)})}
-// Highlight active section on scroll
-const heads=document.querySelectorAll('details[id]');
-const links=document.querySelectorAll('.sidebar a');
-const obs=new IntersectionObserver(es=>{
-  es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('active'));
-    const a=document.querySelector(`.sidebar a[href="#${e.target.id.replace('-wrap','')}"]`);
-    if(a)a.style.color='var(--accent)';
-  }});},{threshold:.3});
-heads.forEach(h=>obs.observe(h));
-</script></body></html>
+</body></html>
