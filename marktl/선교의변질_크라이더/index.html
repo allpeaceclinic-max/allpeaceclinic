@@ -211,6 +211,7 @@
 <script>
 const btn=document.getElementById('tocBtn'),list=document.getElementById('tocList');
 btn.addEventListener('click',()=>{const c=list.classList.toggle('hidden');btn.classList.toggle('collapsed',c);btn.setAttribute('aria-expanded',String(!c))});
-new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')})
-,{threshold:.05}).observe(document.querySelector('.fi'));
+const fi=document.querySelector('.fi');
+if(fi){try{const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');io.disconnect()}})
+,{threshold:.05});io.observe(fi);setTimeout(()=>fi.classList.add('v'),800)}catch(_){fi.classList.add('v')}}
 </script></body></html>
