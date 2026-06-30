@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CMF Korea — Christian Medical Fellowship</title>
+<style>
+  :root {
+    --teal: #1a8f8f;
+    --teal-light: #e8f5f5;
+    --orange: #e87722;
+    --navy: #1a3a6b;
+    --navy-light: #eef1f7;
+    --gray: #555;
+    --bg: #f7fafa;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--bg); color: #222; font-size: 15px; }
+
+  /* HEADER */
+  .site-header {
+    background: var(--navy);
+    color: white;
+    text-align: center;
+    padding: 20px 16px 16px;
+  }
+  .logo-row { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 6px; }
+  .logo-cross {
+    width: 42px; height: 42px; background: var(--teal); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center; font-size: 22px; color: white;
+    position: relative;
+  }
+  .logo-dot {
+    width: 14px; height: 14px; background: var(--orange); border-radius: 50%;
+    position: absolute; top: -5px; right: -5px;
+  }
+  .logo-text h1 { font-size: 22px; font-weight: 800; letter-spacing: 1px; }
+  .logo-text p { font-size: 11px; letter-spacing: 2px; color: #adc; text-transform: uppercase; }
+  .site-tagline { font-size: 13px; color: #cde; margin-top: 4px; }
+
+  /* TAB NAV */
+  .tab-nav {
+    background: white;
+    border-bottom: 2px solid #e0eaea;
+    overflow-x: auto;
+    display: flex;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .tab-nav button {
+    flex-shrink: 0;
+    border: none; background: none; cursor: pointer;
+    padding: 12px 14px; font-size: 13px; font-weight: 600;
+    color: var(--gray); border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+  }
+  .tab-nav button.active { color: var(--teal); border-bottom-color: var(--teal); background: var(--teal-light); }
+  .tab-nav button:hover { color: var(--teal); }
+
+  /* SECTIONS */
+  .section { display: none; padding: 0 0 40px; }
+  .section.active { display: block; }
+
+  /* HERO BAND */
+  .hero-band {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%);
+    color: white; padding: 28px 20px; text-align: center;
+  }
+  .hero-band .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #adf; margin-bottom: 6px; }
+  .hero-band h2 { font-size: 26px; font-weight: 800; line-height: 1.2; }
+  .hero-band p { font-size: 14px; color: #cef; margin-top: 8px; }
+
+  /* CARDS */
+  .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 16px; }
+  .card {
+    background: white; border-radius: 12px; padding: 16px 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06); text-align: center;
+  }
+  .card .icon { font-size: 28px; margin-bottom: 8px; }
+  .card .num { font-size: 28px; font-weight: 800; color: var(--teal); }
+  .card h3 { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+  .card p { font-size: 12px; color: var(--gray); line-height: 1.5; }
+
+  /* LIST ITEMS */
+  .list-section { padding: 16px; }
+  .list-item {
+    background: white; border-radius: 12px; padding: 14px 16px;
+    margin-bottom: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .list-item .badge {
+    width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+    background: var(--teal); color: white; font-weight: 700; font-size: 14px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .list-item .badge.orange { background: var(--orange); }
+  .list-item .badge.navy { background: var(--navy); }
+  .list-item h3 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
+  .list-item p { font-size: 13px; color: var(--gray); line-height: 1.5; }
+
+  /* TIMELINE */
+  .timeline { padding: 16px; }
+  .tl-group { margin-bottom: 20px; }
+  .tl-label {
+    background: var(--navy); color: white; display: inline-block;
+    padding: 4px 14px; border-radius: 20px; font-size: 13px; font-weight: 700; margin-bottom: 10px;
+  }
+  .tl-label.orange { background: var(--orange); }
+  .tl-item { display: flex; gap: 12px; margin-bottom: 8px; }
+  .tl-year {
+    width: 48px; flex-shrink: 0; font-weight: 800; color: var(--teal); font-size: 14px; padding-top: 2px;
+  }
+  .tl-content { background: white; border-radius: 10px; padding: 10px 14px; flex: 1; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+  .tl-content h4 { font-size: 13px; font-weight: 700; color: var(--navy); }
+  .tl-content p { font-size: 12px; color: var(--gray); margin-top: 2px; }
+
+  /* HIGHLIGHT BOX */
+  .highlight-box {
+    background: var(--teal); color: white; border-radius: 12px;
+    padding: 16px; margin: 0 16px 16px; text-align: center;
+  }
+  .highlight-box h3 { font-size: 17px; font-weight: 800; margin-bottom: 4px; }
+  .highlight-box p { font-size: 13px; opacity: 0.9; }
+
+  .orange-box { background: var(--orange); }
+
+  /* STATS ROW */
+  .stats-row { display: flex; justify-content: space-around; padding: 16px; gap: 8px; }
+  .stat { text-align: center; background: white; border-radius: 10px; padding: 12px 8px; flex: 1; box-shadow: 0 2px 6px rgba(0,0,0,0.06); }
+  .stat .num { font-size: 22px; font-weight: 800; color: var(--teal); }
+  .stat .icon { font-size: 18px; margin-bottom: 4px; }
+  .stat p { font-size: 11px; color: var(--gray); margin-top: 2px; }
+
+  /* QUOTE */
+  .quote-box {
+    background: var(--navy-light); border-left: 4px solid var(--teal);
+    padding: 14px 16px; margin: 0 16px 16px; border-radius: 0 8px 8px 0;
+  }
+  .quote-box p { font-style: italic; font-size: 14px; color: var(--navy); line-height: 1.6; }
+  .quote-box span { font-size: 12px; color: var(--gray); display: block; margin-top: 6px; }
+
+  /* SECTION TITLE */
+  .section-title {
+    text-align: center; padding: 20px 16px 8px;
+    font-size: 16px; font-weight: 800; color: var(--navy);
+    text-transform: uppercase; letter-spacing: 1px;
+  }
+  .section-title::after {
+    content: ''; display: block; width: 40px; height: 3px;
+    background: var(--teal); margin: 8px auto 0;
+  }
+
+  /* CONTACT */
+  .contact-row {
+    background: var(--navy); color: white; padding: 20px;
+    text-align: center; margin-top: 10px;
+  }
+  .contact-row a { color: #adf; }
+  .contact-row p { font-size: 13px; line-height: 2; }
+
+  /* TAG CHIPS */
+  .chip-row { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 16px 16px; justify-content: center; }
+  .chip {
+    background: var(--teal-light); color: var(--teal);
+    border: 1.5px solid var(--teal); border-radius: 20px;
+    padding: 5px 14px; font-size: 12px; font-weight: 700;
+  }
+  .chip.orange { background: #fff3eb; color: var(--orange); border-color: var(--orange); }
+  .chip.navy { background: var(--navy-light); color: var(--navy); border-color: var(--navy); }
+
+  /* FOOTER */
+  .site-footer { background: #111; color: #888; text-align: center; padding: 16px; font-size: 12px; }
+  .site-footer a { color: #adf; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="logo-row">
+    <div class="logo-cross">✝<div class="logo-dot"></div></div>
+    <div class="logo-text">
+      <h1>CMF Korea</h1>
+      <p>Christian Medical Fellowship</p>
+    </div>
+  </div>
+  <p class="site-tagline">From the Medical Campus to the World, We Proclaim Jesus Christ as Lord</p>
+</header>
+
+<!-- TAB NAV -->
+<nav class="tab-nav">
+  <button class="active" onclick="showTab('identity')">🏠 Identity</button>
+  <button onclick="showTab('values')">⭐ Values</button>
+  <button onclick="showTab('history')">📅 History</button>
+  <button onclick="showTab('campus')">🎓 Campus</button>
+  <button onclick="showTab('mission')">🌍 Mission</button>
+  <button onclick="showTab('social')">🤝 Social</button>
+</nav>
+
+<!-- ========== TAB 1: IDENTITY ========== -->
+<section id="identity" class="section active">
+  <div class="hero-band">
+    <div class="eyebrow">Who We Are</div>
+    <h2>OUR IDENTITY</h2>
+    <p>A Christian Community Growing into a Kingdom Movement</p>
+  </div>
+
+  <div style="padding: 16px;">
+    <p style="font-size: 14px; line-height: 1.8; color: #333;">
+      Christian Medical Fellowship Korea is a <strong style="color: var(--teal);">community of Christian healthcare professionals and future healthcare professionals</strong> who <strong style="color: var(--orange);">acknowledge the Lordship of Jesus Christ in the medical community.</strong>
+    </p>
+    <br>
+    <p style="font-size: 14px; line-height: 1.8; color: #333;">
+      We are an <strong>evangelical, interdenominational</strong> Christian movement committed to advancing the Kingdom of God through healthcare.
+    </p>
+  </div>
+
+  <div class="section-title">OUR MISSION</div>
+
+  <div class="quote-box" style="margin: 0 16px 16px; text-align:center;">
+    <p style="font-size: 15px; font-style:italic; color: var(--navy);">"You are the Messiah, the Son of the living God."</p>
+    <span style="text-align:center; display:block;">— Matthew 16:16</span>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="icon">🌱</div>
+      <div class="num">1</div>
+      <h3>Spiritual Growth</h3>
+      <p>We foster the holistic spiritual growth of our members.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🏥</div>
+      <div class="num">2</div>
+      <h3>Transform Medicine</h3>
+      <p>We seek to transform the medical community according to God's will.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🤲</div>
+      <div class="num">3</div>
+      <h3>Serve Neighbors</h3>
+      <p>We serve our neighbors, society, and the world through healthcare.</p>
+    </div>
+    <div class="card">
+      <div class="icon">👑</div>
+      <div class="num">4</div>
+      <h3>Kingdom Advancement</h3>
+      <p>We work for the advancement of the Kingdom of God.</p>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <h3>Together in Joy</h3>
+    <p>Bringing Healing and Restoration to the Whole Person</p>
+    <p style="margin-top:6px; font-size:12px; opacity:0.8;">Luke 4:18–19</p>
+  </div>
+</section>
+
+<!-- ========== TAB 2: VALUES ========== -->
+<section id="values" class="section">
+  <div class="hero-band">
+    <div class="eyebrow">What We Believe</div>
+    <h2>CORE VALUES & MINISTRIES</h2>
+    <p>Five values. Five ministry pillars.</p>
+  </div>
+
+  <div class="section-title">OUR CORE VALUES</div>
+
+  <div class="list-section" style="padding-top: 4px;">
+    <div class="list-item">
+      <div class="badge">1</div>
+      <div>
+        <h3>MISSION</h3>
+        <p>Living as faithful witnesses of the Gospel.</p>
+      </div>
+    </div>
+    <div class="list-item">
+      <div class="badge">2</div>
+      <div>
+        <h3>DISCIPLESHIP</h3>
+        <p>Raising Christlike disciples and leaders.</p>
+      </div>
+    </div>
+    <div class="list-item">
+      <div class="badge">3</div>
+      <div>
+        <h3>COMMUNITY</h3>
+        <p>Growing together in unity and fellowship.</p>
+      </div>
+    </div>
+    <div class="list-item">
+      <div class="badge orange">4</div>
+      <div>
+        <h3>SERVICE</h3>
+        <p>Serving the vulnerable with Christlike compassion.</p>
+      </div>
+    </div>
+    <div class="list-item">
+      <div class="badge orange">5</div>
+      <div>
+        <h3>RESPECT FOR LIFE</h3>
+        <p>Upholding the dignity and sanctity of life.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">OUR MINISTRIES</div>
+
+  <div class="list-section" style="padding-top: 4px;">
+    <div class="list-item">
+      <div class="badge navy">✝</div>
+      <div>
+        <h3>GOSPEL MOVEMENT IN MEDICINE</h3>
+        <p>Evangelism, discipleship, and fellowship among healthcare students and professionals.</p>
+      </div>
+    </div>
+    <div class="list-item">
+      <div class="badge navy">🌍</div>
+      <div>
+        <h3>MISSION MINISTRY</h3>
+        <p>Medical missions, missionary support, and community outreach.</p>
+      </div>
+    </div>
+    <div class="list-item">
+      <div class="badge navy">🤝</div>
+      <div>
+        <h3>CHRISTIAN SOCIAL ACTION</h3>
+        <p>Serving vulnerable communities and advocating Christian values.</p>
+      </div>
+    </div>
+    <div class="list-item">
+      <div class="badge navy">📚</div>
+      <div>
+        <h3>PROFESSIONAL & ACADEMIC MINISTRY</h3>
+        <p>Publications, research, medical ethics, and academic engagement.</p>
+      </div>
+    </div>
+    <div class="list-item">
+      <div class="badge navy">🔗</div>
+      <div>
+        <h3>NETWORKING & COLLABORATION</h3>
+        <p>Partnerships and cooperation for holistic Kingdom impact.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">CAMPUS REACH</div>
+  <div class="stats-row">
+    <div class="stat">
+      <div class="icon">🩺</div>
+      <div class="num">40</div>
+      <p>Medical Schools</p>
+    </div>
+    <div class="stat">
+      <div class="icon">🦷</div>
+      <div class="num">11</div>
+      <p>Dental Schools</p>
+    </div>
+    <div class="stat">
+      <div class="icon">🌿</div>
+      <div class="num">12</div>
+      <p>Korean Medicine</p>
+    </div>
+    <div class="stat">
+      <div class="icon">💊</div>
+      <div class="num">31</div>
+      <p>Nursing Schools</p>
+    </div>
+  </div>
+
+  <div class="contact-row" style="margin-top: 20px;">
+    <p>📍 3rd Fl., Geumsan Bldg., 7, Hangang-daero 104pa-gil, Yongsan-gu, Seoul, 04336, South Korea</p>
+    <p>📞 +82-2-2655-0930 &nbsp;|&nbsp; Fax: +82-505-329-0569</p>
+    <p>🌐 <a href="https://www.kcmf.org">www.kcmf.org</a></p>
+  </div>
+</section>
+
+<!-- ========== TAB 3: HISTORY ========== -->
+<section id="history" class="section">
+  <div class="hero-band">
+    <div class="eyebrow">Since 1980</div>
+    <h2>HISTORY OF CMF KOREA</h2>
+    <p>The Foundation &amp; Expansion → Growing into a Kingdom Movement</p>
+  </div>
+
+  <div class="timeline">
+    <div class="tl-group">
+      <div class="tl-label">PART 1 — 1980–2008: The Foundation &amp; Expansion</div>
+
+      <div class="tl-item">
+        <div class="tl-year">1980</div>
+        <div class="tl-content">
+          <h4>Official Founding of CMF Korea</h4>
+          <p>First National Student Retreat</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1985</div>
+        <div class="tl-content">
+          <h4>Leadership Development Begins</h4>
+          <p>First LTC and House of Luke established</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1988</div>
+        <div class="tl-content">
+          <h4>Nationwide Expansion</h4>
+          <p>Regional Luke Fellowships established</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1990</div>
+        <div class="tl-content">
+          <h4>Global Mission Begins</h4>
+          <p>First overseas medical mission and Mission Department established</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1993</div>
+        <div class="tl-content">
+          <h4>Academic Engagement</h4>
+          <p>First seminar on faith and medicine</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1997</div>
+        <div class="tl-content">
+          <h4>Serving the Vulnerable</h4>
+          <p>Jubilee Clinic, GLOBAL CARE, and leadership reform</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2000</div>
+        <div class="tl-content">
+          <h4>Celebrating 20 Years</h4>
+          <p>National gathering of students, faculty, and alumni</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2006</div>
+        <div class="tl-content">
+          <h4>Strengthening the Organization</h4>
+          <p>Regional finance and membership systems established</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2008</div>
+        <div class="tl-content">
+          <h4>A Growing Movement</h4>
+          <p>Expanded to 8 Regional Fellowships and 3 Professional Ministries</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-group">
+      <div class="tl-label orange">PART 2 — 2009–2026: Growing into a Kingdom Movement</div>
+
+      <div class="tl-item">
+        <div class="tl-year">2009</div>
+        <div class="tl-content">
+          <h4>Official Missionary-Sending Organization of KCMF</h4>
+          <p>CMF Korea became an official missionary-sending organization</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2010</div>
+        <div class="tl-content">
+          <h4>30th Anniversary</h4>
+          <p>Joint Student &amp; Graduate Retreat</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2011–12</div>
+        <div class="tl-content">
+          <h4>Research &amp; Scholarship</h4>
+          <p>Luke Research Institute and Scholarship Foundation established</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2013–16</div>
+        <div class="tl-content">
+          <h4>Family Ministry</h4>
+          <p>Family Ministry Committee and Glamping Fellowship launched</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2018–19</div>
+        <div class="tl-content">
+          <h4>Equipping Future Leaders</h4>
+          <p>Luke Training Institute and expanded global partnerships</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2020</div>
+        <div class="tl-content">
+          <h4>Ministry During the Pandemic</h4>
+          <p>Online ministry and National Student Retreat</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2022–26</div>
+        <div class="tl-content">
+          <h4>Preparing for the Future</h4>
+          <p>• 40-Year History of CMF Korea published<br>• Bioethics initiatives launched<br>• Basic theology and mission training courses launched<br>• <strong>Hosting the 18th ICMDA World Congress, Jeju 2026</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quote-box">
+    <p>"Together in Joy, Bringing Healing and Restoration to the Whole Person"</p>
+    <span>— Luke 4:18–19</span>
+  </div>
+</section>
+
+<!-- ========== TAB 4: CAMPUS ========== -->
+<section id="campus" class="section">
+  <div class="hero-band">
+    <div class="eyebrow">Campus &amp; Graduate Ministry</div>
+    <h2>Joyfully Journeying<br>with CMF</h2>
+    <p>Following Christ, growing together in faith, and serving the world through medicine.</p>
+  </div>
+
+  <div style="padding: 16px;">
+    <p style="font-size: 14px; line-height: 1.8; color: #444; text-align: center;">
+      <em>Called to Heal. Sent to Serve.</em><br>
+      <span style="font-size: 12px; color: var(--gray);">Medical · Dental · Oriental Medicine · Nursing<br>Campus Ministry | Graduate Ministry | Medical Mission</span>
+    </p>
+  </div>
+
+  <div class="section-title">WHAT WE DO</div>
+
+  <div class="list-section" style="padding-top: 4px;">
+    <div class="list-item">
+      <div class="badge" style="font-size:18px; width:42px; height:42px;">🙏</div>
+      <div>
+        <h3>Weekly Worship &amp; Fellowship</h3>
+        <p>Worship, Bible study, mentoring, and caring relationships every week.</p>
+      </div>
+    </div>
+    <div class="list-item">
+      <div class="badge" style="font-size:18px; width:42px; height:42px;">⛺</div>
+      <div>
+        <h3>Nationwide Retreats</h3>
+        <p>Worship, training, friendship, and deep fellowship across the country.</p>
+      </div>
+    </div>
+    <div class="list-item">
+      <div class="badge" style="font-size:18px; width:42px; height:42px;">👫</div>
+      <div>
+        <h3>David &amp; Jonathan Network</h3>
+        <p>A national peer-year network for lifelong friendship among students.</p>
+      </div>
+    </div>
+    <div class="list-item">
+      <div class="badge orange" style="font-size:18px; width:42px; height:42px;">✈️</div>
+      <div>
+        <h3>Short-Term Medical Mission Trips</h3>
+        <p>Serving together in Asia and beyond during school breaks.</p>
+      </div>
+    </div>
+    <div class="list-item">
+      <div class="badge orange" style="font-size:18px; width:42px; height:42px;">🔬</div>
+      <div>
+        <h3>Specialized Departments &amp; Small Groups</h3>
+        <p>Mission, ethics, bioethics, mental health, and more — choose your focus.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">WHY CMF?</div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="icon">✝️</div>
+      <div class="num" style="font-size:20px; color: var(--navy);">1</div>
+      <h3>Grow in Faith</h3>
+      <p>Be rooted in the Gospel.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🩺</div>
+      <div class="num" style="font-size:20px; color: var(--navy);">2</div>
+      <h3>Discover God's Calling</h3>
+      <p>Live as a Christian healthcare professional.</p>
+    </div>
+    <div class="card">
+      <div class="icon">👥</div>
+      <div class="num" style="font-size:20px; color: var(--navy);">3</div>
+      <h3>Belong to Community</h3>
+      <p>Walk with friends, mentors, alumni, and staff.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🌏</div>
+      <div class="num" style="font-size:20px; color: var(--navy);">4</div>
+      <h3>Serve the World</h3>
+      <p>Share Christ's love through medicine and mission.</p>
+    </div>
+  </div>
+
+  <div class="highlight-box" style="margin-top: 8px;">
+    <h3>Together for His Kingdom</h3>
+    <p>94 campuses across Korea — medical, dental, Korean medicine, nursing</p>
+  </div>
+</section>
+
+<!-- ========== TAB 5: MISSION ========== -->
+<section id="mission" class="section">
+  <div class="hero-band" style="background: linear-gradient(135deg, #1a5c1a 0%, var(--teal) 100%);">
+    <div class="eyebrow">Missional CMF — Vision 2030</div>
+    <h2>"A closely connected<br>missionary community"</h2>
+    <p>Praying, equipping, and sending missionaries to the world</p>
+  </div>
+
+  <div class="chip-row" style="padding-top: 16px;">
+    <span class="chip">Short-term Mission</span>
+    <span class="chip">Worship</span>
+    <span class="chip">Prayer Service</span>
+    <span class="chip">Missionary Dispatch</span>
+    <span class="chip">Missionary Training</span>
+    <span class="chip">Training Center</span>
+  </div>
+
+  <div class="section-title">OUR MISSION JOURNEY</div>
+
+  <div class="list-section" style="padding-top: 4px;">
+    <div class="list-item">
+      <div class="badge navy" style="font-size:16px; width:42px; height:42px;">📅</div>
+      <div>
+        <h3>1990 — Mission Department Founded</h3>
+        <p>CMF Mission Department was established and the first missionaries were sent out.</p>
+      </div>
+    </div>
+    <div class="list-item">
+      <div class="badge navy" style="font-size:16px; width:42px; height:42px;">✅</div>
+      <div>
+        <h3>2009 — Official Sending Organization</h3>
+        <p>CMF Korea officially recognized as a mission-sending organization.</p>
+      </div>
+    </div>
+    <div class="list-item">
+      <div class="badge orange" style="font-size:16px; width:42px; height:42px;">🌍</div>
+      <div>
+        <h3>Today — 67 Missionaries to 20 Countries</h3>
+        <p>34 families sent. Most are co-sent with other mission organizations; 3 families sent independently by CMF Korea.</p>
+      </div>
+    </div>
+    <div class="list-item">
+      <div class="badge" style="font-size:16px; width:42px; height:42px;">🙏</div>
+      <div>
+        <h3>Monthly Worship &amp; Prayer Meetings</h3>
+        <p>Gathering once a month for worship and holding prayer meetings for missionaries across the nation.</p>
+      </div>
+    </div>
+    <div class="list-item">
+      <div class="badge" style="font-size:16px; width:42px; height:42px;">📖</div>
+      <div>
+        <h3>2026 — CMTC Launched</h3>
+        <p>CMF Korea Missionary Training Center established. Basic Training Course now available from 2026.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-row" style="flex-wrap: wrap;">
+    <div class="stat" style="min-width: 80px;">
+      <div class="icon">👨‍⚕️</div>
+      <div class="num">67</div>
+      <p>Missionaries</p>
+    </div>
+    <div class="stat" style="min-width: 80px;">
+      <div class="icon">👨‍👩‍👧</div>
+      <div class="num">34</div>
+      <p>Families</p>
+    </div>
+    <div class="stat" style="min-width: 80px;">
+      <div class="icon">🌏</div>
+      <div class="num">20</div>
+      <p>Countries</p>
+    </div>
+  </div>
+
+  <div class="section-title">CMTC — Basic Training Course</div>
+
+  <div class="list-section" style="padding-top: 4px;">
+    <div class="list-item" style="align-items:center;">
+      <span style="font-size:20px;">✅</span>
+      <p>Biblical Foundation for Mission</p>
+    </div>
+    <div class="list-item" style="align-items:center;">
+      <span style="font-size:20px;">✅</span>
+      <p>Missionary Life and Character</p>
+    </div>
+    <div class="list-item" style="align-items:center;">
+      <span style="font-size:20px;">✅</span>
+      <p>Cross-Cultural Understanding</p>
+    </div>
+    <div class="list-item" style="align-items:center;">
+      <span style="font-size:20px;">✅</span>
+      <p>Ministry Skills and Practical Training</p>
+    </div>
+    <div class="list-item" style="align-items:center;">
+      <span style="font-size:20px;">✅</span>
+      <p>Discipleship and Spiritual Formation</p>
+    </div>
+  </div>
+
+  <div class="chip-row">
+    <span class="chip navy">Deep Listening</span>
+    <span class="chip">Joyful Everyday</span>
+    <span class="chip orange">Endless Walking</span>
+  </div>
+
+  <div class="highlight-box orange">
+    <h3>Let us unite</h3>
+    <p>as a closely connected missionary community to fulfill God's mission together!</p>
+  </div>
+</section>
+
+<!-- ========== TAB 6: SOCIAL ========== -->
+<section id="social" class="section">
+  <div class="hero-band" style="background: linear-gradient(135deg, #5a1a6b 0%, #2b5ea7 100%);">
+    <div class="eyebrow">CMF Korea</div>
+    <h2>Social Department</h2>
+    <p>Walking alongside our neighbors in need through the lens of life and love.</p>
+  </div>
+
+  <div class="quote-box" style="margin: 16px;">
+    <p>"Which of these three do you think was a neighbor to the man who fell into the hands of robbers?"</p>
+    <span>— Luke 10:25–37</span>
+  </div>
+
+  <div style="padding: 0 16px 8px; font-size: 14px; line-height: 1.7; color: #444; text-align: center;">
+    We are currently active in <strong style="color: var(--teal);">9 fellowship groups</strong>, serving in diverse places with compassion and hope.
+  </div>
+
+  <div class="section-title">9 FELLOWSHIP GROUPS</div>
+
+  <div class="list-section" style="padding-top: 4px;">
+    <div class="list-item">
+      <div class="badge" style="font-size:18px; width:42px; height:42px;">🏘️</div>
+      <div>
+        <h3>1. Community Health Fellowship</h3>
+        <p>Sharing love with neighbors around health and poverty in our daily communities.</p>
+      </div>
+    </div>
+    <div class="list-item">
+      <div class="badge" style="font-size:18px; width:42px; height:42px;">🌐</div>
+      <div>
+        <h3>2. Migrant Workers Health Fellowship</h3>
+        <p>Building a world where migrant workers can live with dignity and good health.</p>
+      </div>
+    </div>
+    <div class="list-item">
+      <div class="badge" style="font-size:18px; width:42px; height:42px;">🧠</div>
+      <div>
+        <h3>3. Mental Health Fellowship</h3>
+        <p>Restoring wholeness of mind and life.</p>
+      </div>
+    </div>
+    <div class="list-item">
+      <div class="badge orange" style="font-size:18px; width:42px; height:42px;">♿</div>
+      <div>
+        <h3>4. Disability Health Fellowship</h3>
+        <p>Walking together for the lives and health of people with disabilities.</p>
+      </div>
+    </div>
+    <div class="list-item">
+      <div class="badge orange" style="font-size:18px; width:42px; height:42px;">🇰🇷</div>
+      <div>
+        <h3>5. North Korea Love Fellowship</h3>
+        <p>For true reconciliation and unity of the people of North and South Korea.</p>
+      </div>
+    </div>
+    <div class="list-item">
+      <div class="badge orange" style="font-size:18px; width:42px; height:42px;">🌱</div>
+      <div>
+        <h3>6. Bioethics Fellowship</h3>
+        <p>Comprehensive love for vulnerable and fragile life.</p>
+      </div>
+    </div>
+    <div class="list-item">
+      <div class="badge navy" style="font-size:18px; width:42px; height:42px;">🌿</div>
+      <div>
+        <h3>7. Eco-Medical Fellowship</h3>
+        <p>Pursuing complete health for people and all creation.</p>
+      </div>
+    </div>
+    <div class="list-item">
+      <div class="badge navy" style="font-size:18px; width:42px; height:42px;">🌍</div>
+      <div>
+        <h3>8. CMF Global Health Fellowship</h3>
+        <p>Responding to God's heart for a suffering world.</p>
+      </div>
+    </div>
+    <div class="list-item">
+      <div class="badge navy" style="font-size:18px; width:42px; height:42px;">🎓</div>
+      <div>
+        <h3>9. CMF Alumni Fellowship</h3>
+        <p>A fellowship of graduates of the Social Department.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box" style="background: var(--navy);">
+    <h3>"Let us not love with words or speech,<br>but with actions and in truth."</h3>
+    <p style="margin-top:6px; font-size:12px; opacity:0.8;">— 1 John 3:18</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <p>🌐 <a href="https://www.kcmf.org">www.kcmf.org</a> &nbsp;|&nbsp; CMF Korea / 한국누가회</p>
+  <p style="margin-top:6px;">Hosting the <strong>18th ICMDA World Congress — Jeju 2026</strong></p>
+</footer>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
