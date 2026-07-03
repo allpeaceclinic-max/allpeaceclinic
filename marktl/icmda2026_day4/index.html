@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ICMDA 2026 Day 4 — 깨어진 세상 안으로 들어가다</title>
+<meta name="description" content="">
+<link rel="canonical" href="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/s/b31kir8/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#f8f9fb;--surface:#fff;--text:#1a1a1a;--text2:#4a5060;
+    --accent:#2d4a6a;--al:#6a8aab;--abg:#eef2f5;
+    --bd:#cdd4e0;--bdl:#dee4ec;--pq:#1a2d4d;
+    --tbg:#e4eaf0;--ttx:#2d3a5a;
+    --hero-start:#1a2d4d;--hero-mid:#2d4a6a;--hero-end:#4a6a8c;--hero-fg:#f4f7fa;
+    --serif:'Noto Serif KR','Batang',Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --max:720px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{font-size:17px;scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+  body{background:var(--bg);color:var(--text);font-family:var(--serif);line-height:1.85;padding-bottom:4rem}
+  strong{font-weight:700} em{font-style:italic}
+  ul,ol{padding-left:1.5rem;margin-bottom:1.75rem}
+  li{margin-bottom:.4rem;line-height:1.75;word-break:keep-all}
+  .table-wrap{overflow-x:auto;margin:1.75rem 0}
+  table{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:.88rem}
+  th{background:var(--abg);color:var(--accent);font-weight:700;text-align:left;padding:10px 14px;border-bottom:2px solid var(--bd);word-break:keep-all}
+  td{padding:9px 14px;border-bottom:1px solid var(--bdl);color:var(--text2);line-height:1.6;word-break:keep-all;vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  pre{background:#f0f5f1;border:1px solid var(--bd);border-radius:8px;padding:1.5rem;margin:1.75rem 0;overflow-x:auto}
+  pre code{font-family:'Menlo','Monaco',monospace;font-size:.85rem;line-height:1.6}
+  .marginalia{font-family:var(--sans);font-size:.82rem;color:var(--accent);background:var(--abg);border-radius:6px;padding:6px 12px;margin:.5rem 0;display:inline-block}
+  .tags-block{display:flex;flex-wrap:wrap;gap:8px;margin-top:2.5rem;padding-top:1.75rem;border-top:1px solid var(--bdl)}
+  .tag{font-family:var(--sans);font-size:.72rem;background:var(--tbg);color:var(--ttx);padding:4px 12px;border-radius:20px}
+  .back-link{display:block;text-align:center;margin-top:2.5rem;font-family:var(--sans);font-size:.8rem;color:var(--accent);text-decoration:none;opacity:.7}
+  .back-link:hover{opacity:1}
+  .footer{max-width:var(--max);margin:4rem auto 0;padding:1.75rem;text-align:center;font-family:var(--sans);font-size:.75rem;color:var(--text2);opacity:.55}
+
+  .layout{display:grid;grid-template-columns:260px 1fr;gap:2rem;max-width:1060px;margin:2rem auto;padding:0 1.5rem;align-items:start}
+  .sidebar{position:sticky;top:1.5rem;background:var(--surface);border:1px solid var(--bdl);border-radius:10px;padding:1.25rem 1.5rem}
+  .sidebar-title{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem}
+  .sidebar ol{list-style:none;padding:0;margin:0}
+  .sidebar li{padding:5px 0;border-bottom:1px solid var(--bdl)}
+  .sidebar li:last-child{border-bottom:none}
+  .sidebar a{font-family:var(--sans);font-size:.83rem;color:var(--text);text-decoration:none;display:block}
+  .sidebar a:hover{color:var(--accent)}
+  .sn{color:var(--al);font-weight:600;margin-right:.4em;font-size:.75rem}
+  .topbar{background:linear-gradient(135deg,var(--hero-start),var(--hero-mid));color:var(--hero-fg);
+    padding:2.5rem 1.5rem 2rem;text-align:center}
+  .topbar h1{font-size:clamp(1.4rem,3.5vw,2rem);font-weight:700;word-break:keep-all;margin-bottom:.5rem}
+  .topbar-label{font-family:var(--sans);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;opacity:.7;margin-bottom:.75rem}
+  .topbar-sub{font-family:var(--sans);font-size:.85rem;opacity:.75;margin-bottom:.5rem}
+  .topbar-excerpt{font-size:.92rem;font-style:italic;opacity:.85;max-width:560px;margin:0 auto;line-height:1.7;word-break:keep-all}
+  .topbar-author{font-size:.75rem;opacity:.55;font-family:var(--sans);margin-top:1rem;letter-spacing:.04em}
+  details{margin-bottom:1.5rem;background:var(--surface);border:1px solid var(--bdl);border-radius:10px;overflow:hidden}
+  summary.sec-summary{cursor:pointer;list-style:none;padding:1rem 1.25rem;position:relative;display:flex;align-items:flex-start;gap:.75rem}
+  summary.sec-summary::-webkit-details-marker{display:none}
+  summary.sec-summary::before{content:'▸';color:var(--al);font-size:.8rem;flex-shrink:0;margin-top:.15rem;transition:transform .2s}
+  details[open] summary.sec-summary::before{content:'▾'}
+  .sec-summary .section-divider{margin:0;border:none;flex:1}
+  .sec-summary .section-divider hr{display:none}
+  .sec-summary h2{font-size:1.05rem;margin-bottom:0}
+  .sec-body{padding:.25rem 1.25rem 1.25rem}
+  .sec-body p{margin-bottom:1.25rem;word-break:keep-all}
+  .copy-btn{font-family:var(--sans);font-size:.7rem;background:var(--abg);color:var(--accent);
+    border:1px solid var(--bd);border-radius:20px;padding:3px 10px;cursor:pointer;flex-shrink:0;margin-top:.1rem;
+    opacity:0;transition:opacity .2s}
+  details:hover .copy-btn{opacity:1}
+  .chapter-label{font-size:.95rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin:2rem 0 1rem;padding:0 1.25rem}
+  .pullquote{border-top:2px solid var(--al);border-bottom:2px solid var(--al);padding:1.25rem 0;margin:1.75rem 0;text-align:center}
+  .pullquote p{font-size:1.05rem;font-weight:600;color:var(--pq);line-height:1.7;max-width:520px;margin:0 auto;word-break:keep-all}
+  .scripture{background:var(--bg);border:1px solid var(--bdl);border-radius:8px;padding:1.25rem 1.75rem;margin:1.25rem 0;position:relative}
+  .scripture::before{content:'\201C';font-size:2.5rem;color:var(--al);position:absolute;top:6px;left:12px;line-height:1;opacity:.4}
+  .scripture p{font-style:italic;color:var(--text2);font-size:.92rem;line-height:1.75;padding-left:1.25rem;margin-bottom:0}
+  .key-section .section-number,.key-label{background:var(--abg);padding:2px 8px;border-radius:16px;font-size:.66rem}
+  @media(max-width:780px){.layout{grid-template-columns:1fr;padding:0 1rem}.sidebar{position:static}.topbar{padding:2rem 1rem 1.5rem}}
+</style></head><body>
+<div class="topbar">
+  <div class="topbar-label">Wiki</div>
+  <h1>ICMDA 2026 Day 4 — 깨어진 세상 안으로 들어가다</h1>
+  <p class="topbar-sub"></p>
+  <p class="topbar-excerpt"></p>
+  <p class="topbar-author">글쓴이: 이상협 (M.D., M.Div.)</p>
+</div>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-title">목차</div>
+    <ol>      <li><a href="#section-01"><span class="sn">01</span>성육신의 다리 — 하나님과 세상 사이에 서다</a></li>
+      <li><a href="#section-02"><span class="sn">02</span>선교 패러다임의 전환 — 파송에서 협력으로</a></li>
+      <li><a href="#section-03"><span class="sn">03</span>완화의료 — 고통을 안고 돌보는 의학</a></li>
+      <li><a href="#section-04"><span class="sn">04</span>리더십과 코칭 — 다음 세대를 세우다</a></li>
+      <li><a href="#section-05"><span class="sn">05</span>리더십 5C (존 피어스)</a></li>
+      <li><a href="#section-06"><span class="sn">06</span>코칭 — 내면의 답을 찾도록 돕기</a></li>
+      <li><a href="#section-07"><span class="sn">07</span>유혹과 자살 — 내면의 전쟁</a></li>
+      <li><a href="#section-08"><span class="sn">08</span>유혹의 4D — 욕망에서 불순종까지</a></li>
+      <li><a href="#section-09"><span class="sn">09</span>자살 — 신학적 재조명</a></li>
+      <li><a href="#section-10"><span class="sn">10</span>생활의학과 팬데믹 — 예방이 치료다</a></li>
+      <li><a href="#section-11"><span class="sn">11</span>생활의학 6기둥</a></li>
+      <li><a href="#section-12"><span class="sn">12</span>팬데믹과 기독교인 — 거짓 정보가 생명을 빼앗는다</a></li></ol>
+  </aside>
+  <main>
+    <p><strong>2026년 7월 3일 | 제주</strong></p>
+<p><em>참가자 세션 노트 종합 정리</em></p>
+<p>Day 4는 가장 실제적인 날이었다. 고통 앞에 무릎 꿇는 완화의료, 자살과 유혹과 팬데믹의 현실, 선교 패러다임의 전환, 리더십과 코칭, 생활의학까지.</p>
+<p>모든 세션의 공통 물음은 하나였다:</p>
+<p><strong>우리는 어떻게 깨어진 세상 안으로 실제로 들어가는가.</strong></p>
+<h2 class="chapter-label">오늘의 공통 뼈대</h2>
+<p><strong>이사야 58:12 | 성육신으로 들어가다</strong></p>
+<p>이대영 선교사는 오늘의 신학적 기초를 놓았다.</p>
+<div class="scripture"><p><em>&quot;주님은 나사렛 예수라는 인물 안에서 완전한 인간이 되셨다.&quot;</em></p></div>
+<p>케노시스(Kenosis) — 자기 비움. 가이사보다 능력 있으신 분이 자발적으로 노예의 신분을 택하셨다. 그것이 우리가 부름 받은 자리다.</p>
+<details open id="section-01-wrap">
+<summary class="sec-summary"><div class="section-divider" id="section-01"><span class="section-number">SECTION 01</span><hr></div>
+<h2>성육신의 다리 — 하나님과 세상 사이에 서다</h2><span class="copy-btn" onclick="copySec('section-01-wrap',event)">copy</span></summary>
+<div class="sec-body">
+<p><strong>이대영 선교사</strong>는 레바논 6년 의료 사역의 경험에서 출발했다.</p>
+<p><strong>다리(Bridge)가 된다는 것의 의미:</strong></p>
+<ul>
+<li>성육신은 기독교에만 있는 독특한 개념이다 — 하나님이 먼저 경계를 넘으셨다</li>
+<li>의료인은 건강한 세계와 고통받는 세계 사이의 다리다</li>
+<li>다리는 두 발을 현재의 고통에 딛으면서, 한 팔로는 미래의 소망을 향해 뻗는다</li>
+</ul>
+<p><strong>고통에 대한 신학:</strong></p>
+<ul>
+<li>모든 질병이 개인의 죄의 결과가 아니다 — 성경은 이를 경고한다</li>
+<li>HIV/AIDS를 심판의 표시로 보는 것은 신학적 근거가 없다</li>
+<li>우리의 역할은 <strong>해석자가 아니라 위로자</strong>다</li>
+</ul>
+<p><strong>파라클레시스(Paraklesis) — 곁에서 부름 받다:</strong></p>
+<p><em>Para(곁에) + Klesis(부름받다)</em> — &quot;위로&quot;란 고통받는 사람의 <strong>곁으로 가는 것</strong>이다. 성령(파라클레토스)이 우리 곁으로 오신 것처럼, 우리도 고통받는 자 곁으로 간다.</p>
+<p><strong>마태복음 5:4</strong> — &quot;애통하는 자는 복이 있나니&quot;: 타인의 고통에 동참하는 슬픔이 먼저다.</p>
+<div class="scripture"><p><em>&quot;레바논에서 우리는 절망에 마비되었다. 공감은 선물이지만, 지혜롭게 사용하지 않으면 독이 된다.&quot;</em></p></div>
+<p>자신의 신체적·감정적·영적 건강을 돌보는 것은 이기심이 아니라 — 장기적 사역의 조건이다.</p>
+</div></details><details open id="section-02-wrap">
+<summary class="sec-summary"><div class="section-divider" id="section-02"><span class="section-number">SECTION 02</span><hr></div>
+<h2>선교 패러다임의 전환 — 파송에서 협력으로</h2><span class="copy-btn" onclick="copySec('section-02-wrap',event)">copy</span></summary>
+<div class="sec-body">
+<p><strong>폴 밴더 사뮤엘</strong>은 InterServe에서 40년을 섬겼다.</p>
+<p><strong>지배적 패러다임(19-20세기)의 네 기둥:</strong></p>
+<div class="table-wrap"><table><thead><tr><th>기둥</th><th>내용</th></tr></thead><tbody><tr><td>지리적 이동</td><td>기독교 지역 → 비기독교 지역</td></tr><tr><td>엘리트 소수</td><td>특별한 &quot;선교사&quot;만 참여</td></tr><tr><td>교회의 책임</td><td>교회가 조직을 만들어 파송</td></tr><tr><td>교회 설립</td><td>현지 문화와 무관한 교단 형태 이식</td></tr></tbody></table></div>
+<p><strong>이 패러다임이 더 이상 작동하지 않는 이유:</strong></p>
+<ol>
+<li><strong>글로벌 교회</strong> — 과거 미전도 국가에 이제 모두 교회가 있다</li>
+<li><strong>현지인 중심</strong> — 교회 성장은 언제나 외부인이 아닌 현지인에 의해 이루어졌다</li>
+<li><strong>이주(Migration)</strong> — 영국 이주민의 50%가 기독교인; 가나 한 교회가 198개국에 교회를 가지고 있다</li>
+</ol>
+<p><strong>새로운 패러다임의 두 핵심:</strong></p>
+<ul>
+<li><strong>지역 공동체 중심</strong>: 파송된 개인이 아닌 현지 신앙 공동체가 주체</li>
+<li><strong>협력(Collaboration)</strong>: 구원주의(Saviourism)가 아닌 연대(Solidarity)</li>
+</ul>
+<div class="scripture"><p><em>&quot;우리는 사람들의 길 위에서 함께 걷는 이들이다 — people of the way.&quot;</em></p></div>
+<p>복음서의 20%가 예수님의 치유 사역에 할애되어 있다. 의료는 선교의 혁명이 아니다 — 예수님부터 오늘까지 계속되어온 일이다.</p>
+</div></details><details open id="section-03-wrap">
+<summary class="sec-summary"><div class="section-divider" id="section-03"><span class="section-number">SECTION 03</span><hr></div>
+<h2>완화의료 — 고통을 안고 돌보는 의학</h2><span class="copy-btn" onclick="copySec('section-03-wrap',event)">copy</span></summary>
+<div class="sec-body">
+<p>취약한 의료 시스템과 전쟁·재난이 겹치는 곳에서 완화의료는 사치가 아니라 <strong>가장 기본적인 의학</strong>이다.</p>
+<p><strong>환자 분류(Triage)와 완화의료:</strong></p>
+<ul>
+<li>파란색(생존 가능성 낮음)으로 분류된 환자도 치료에서 제외되어선 안 된다</li>
+<li>통증 완화, 존엄한 돌봄, 심리적 지지, 가족과의 연결 — 이것이 완화의료다</li>
+<li>약장이 비어도 의료진의 마음은 비어있지 않을 수 있다</li>
+</ul>
+<p><strong>전쟁 속 의대생의 증언:</strong></p>
+<div class="scripture"><p><em>&quot;약은 없었지만, 따뜻한 말 한마디, 안정된 손길이 환자의 존재감을 회복시켰다. 완화의료는 사람을 통계가 아닌 한 사람으로 바라보는 것이다.&quot;</em></p></div>
+<p><strong>의료에 대한 공격과 정의:</strong></p>
+<ul>
+<li>의료진, 병원, 환자가 공격받는 상황(가자지구 등)에서 침묵은 선택이 아니다</li>
+<li>살해당한 한 신장내과 의사의 말: <em>&quot;내 사람들이 고통받는데 내가 어떻게 떠나겠는가?&quot;</em></li>
+<li>선한 사마리아인은 상황에 따라 다른 모습으로 나타난다 — 때로는 그냥 <strong>곁에 남는 것</strong>이 사랑이다</li>
+</ul>
+<p><strong>의료는 평화의 가교가 될 수 있다:</strong> 진정한 화해에는 진실 규명이 먼저다. 고통스러운 현실을 덮어두고 화해를 말할 수 없다.</p>
+</div></details><details open id="section-04-wrap">
+<summary class="sec-summary"><div class="section-divider" id="section-04"><span class="section-number">SECTION 04</span><hr></div>
+<h2>리더십과 코칭 — 다음 세대를 세우다</h2><span class="copy-btn" onclick="copySec('section-04-wrap',event)">copy</span></summary>
+<div class="sec-body">
+</div></details><details open id="section-05-wrap">
+<summary class="sec-summary"><div class="section-divider" id="section-05"><span class="section-number">SECTION 05</span><hr></div>
+<h2>리더십 5C (존 피어스)</h2><span class="copy-btn" onclick="copySec('section-05-wrap',event)">copy</span></summary>
+<div class="sec-body">
+<p>알버트 몰러의 정의:</p>
+<div class="scripture"><p><em>&quot;미래를 위해 사람, 조직, 그리고 문화를 형성하는 깊이 간직한 신념의 의도적인 전달.&quot;</em></p></div>
+<div class="table-wrap"><table><thead><tr><th>원칙</th><th>내용</th></tr></thead><tbody><tr><td><strong>신념(Conviction)</strong></td><td>타협할 수 없는 성경적 진리에 뿌리를 두고 이끌기 (느헤미야처럼)</td></tr><tr><td><strong>성품(Character)</strong></td><td>칭의 후 성화의 과정 — 거룩함의 추구</td></tr><tr><td><strong>소통(Communication)</strong></td><td>명확히 가르치고, 진솔한 스토리텔링으로 마음을 움직이기</td></tr><tr><td><strong>역량(Competence)</strong></td><td>끊임없이 사고하고 독서하며 올바른 결정을 내리기</td></tr><tr><td><strong>유산(Legacy)</strong></td><td>일상의 모든 접점에서 예수님을 닮은 선한 영향력 남기기</td></tr></tbody></table></div>
+<p><strong>유산은 거창한 직책이 아니다</strong>: 진료실을 나서는 모든 환자가 &quot;나는 사랑받았다&quot;고 느끼게 하는 것.</p>
+<p><strong>레지던트에게 주는 조언:</strong></p>
+<ol>
+<li>아침 첫 시간을 하나님과 교제에 쓸 것</li>
+<li>전공 외의 책을 꾸준히 읽을 것</li>
+<li>직언해줄 멘토를 적극적으로 찾을 것</li>
+</ol>
+</div></details><details open id="section-06-wrap">
+<summary class="sec-summary"><div class="section-divider" id="section-06"><span class="section-number">SECTION 06</span><hr></div>
+<h2>코칭 — 내면의 답을 찾도록 돕기</h2><span class="copy-btn" onclick="copySec('section-06-wrap',event)">copy</span></summary>
+<div class="sec-body">
+<p><strong>성장 마인드셋(Carol Dweck):</strong></p>
+<ul>
+<li>고정 마인드셋: &quot;나는 원래 이런 사람이야&quot;</li>
+<li>성장 마인드셋: &quot;나는 배우고 성장할 수 있다&quot; — 코칭은 이 전환을 돕는다</li>
+</ul>
+<p><strong>코칭의 핵심 원칙:</strong></p>
+<ul>
+<li>코치는 답을 주는 사람이 아니다 — 내담자 스스로 답을 찾도록 공간을 만든다</li>
+<li>경청이 가장 중요한 기술: 말을 끊지 말고, 판단하지 말고, 서두르지 말 것</li>
+<li>GROW 모델: 목표(Goal) → 현실(Reality) → 선택지(Options) → 실행(Will)</li>
+</ul>
+<p><strong>기독교 코칭의 특징:</strong> 코치와 내담자가 함께 성령의 인도를 구할 수 있다. 단, &quot;&quot;성령이 이렇게 말씀하셨다&quot;&quot;며 자신의 생각을 강요하지 않는다 — 성령의 말씀은 종종 &quot;조용히 들어라&quot;이다.</p>
+</div></details><details open id="section-07-wrap">
+<summary class="sec-summary"><div class="section-divider" id="section-07"><span class="section-number">SECTION 07</span><hr></div>
+<h2>유혹과 자살 — 내면의 전쟁</h2><span class="copy-btn" onclick="copySec('section-07-wrap',event)">copy</span></summary>
+<div class="sec-body">
+</div></details><details open id="section-08-wrap">
+<summary class="sec-summary"><div class="section-divider" id="section-08"><span class="section-number">SECTION 08</span><hr></div>
+<h2>유혹의 4D — 욕망에서 불순종까지</h2><span class="copy-btn" onclick="copySec('section-08-wrap',event)">copy</span></summary>
+<div class="sec-body">
+<pre><code>욕망(Desire) → 의심(Doubt) → 기만(Deception) → 불순종(Disobedience)</code></pre>
+<div class="scripture"><p><em>&quot;생각이 감정을 만들고, 감정이 행동을 만들며, 행동이 삶을 형성한다.&quot;</em> (로마서 12:2)</p></div>
+<p><strong>유혹 극복의 7R:</strong></p>
+<ol>
+<li><strong>거절(Refuse)</strong> — 단호히 삭제·차단</li>
+<li><strong>재집중(Refocus)</strong> — 좋은 것, 건설적인 것에 주의를 돌리기</li>
+<li><strong>인식(Recognize)</strong> — 자신의 유혹 패턴 파악</li>
+<li><strong>공개(Reveal)</strong> — 신뢰하는 사람에게 투쟁을 드러내기</li>
+<li><strong>간구(Request)</strong> — 하나님의 도움을 구하기</li>
+<li><strong>저항(Resist)</strong> — 저항할수록 더 강해진다</li>
+<li><strong>영향 이해(Realize Impact)</strong> — 극복했을 때의 자유를 기억하기</li>
+</ol>
+<p>취약한 순간: 슬플 때, 피곤할 때, 혼자 있을 때, 자만에 빠질 때, 여행할 때.</p>
+</div></details><details open id="section-09-wrap">
+<summary class="sec-summary"><div class="section-divider" id="section-09"><span class="section-number">SECTION 09</span><hr></div>
+<h2>자살 — 신학적 재조명</h2><span class="copy-btn" onclick="copySec('section-09-wrap',event)">copy</span></summary>
+<div class="sec-body">
+<p><strong>성경 속 자살 충동 인물들:</strong></p>
+<div class="table-wrap"><table><thead><tr><th>인물</th><th>상황</th><th>하나님의 응답</th></tr></thead><tbody><tr><td>엘리야</td><td>이세벨의 위협 후 광야에서</td><td>음식·물·휴식 먼저, 그 후 대화</td></tr><tr><td>욥</td><td>모든 것을 잃은 고통</td><td>오래 침묵하신 후 자비로운 질문</td></tr><tr><td>모세</td><td>혼자 이스라엘을 이끄는 부담</td><td>지도자들을 함께 세워주심</td></tr><tr><td>요나</td><td>분노와 자존심 상처</td><td>신체적 돌봄 + 자비로운 질문</td></tr></tbody></table></div>
+<p><strong>핵심 신학:</strong></p>
+<ul>
+<li>&quot;&quot;자살한 사람은 자동으로 지옥에 간다&quot;&quot;는 성경적 근거가 없다</li>
+<li>자살 충동은 신앙 부족의 증거가 아니다 — 엘리야도 경험했다</li>
+<li>자살 충동을 가진 사람이 원하는 것은 죽음이 아니라 <strong>현재 고통에서의 출구</strong>다</li>
+<li>&quot;&quot;자살에 대해 이야기하면 씨앗을 심는다&quot;&quot;는 것은 오해 — 안전한 대화가 오히려 도움이 된다</li>
+</ul>
+<p><strong>기독교 공동체의 역할:</strong> 하나님의 응답 방식을 따르라 — 판단 대신 자비, 즉각적 답변 대신 경청, 말 대신 함께함.</p>
+</div></details><details open id="section-10-wrap">
+<summary class="sec-summary"><div class="section-divider" id="section-10"><span class="section-number">SECTION 10</span><hr></div>
+<h2>생활의학과 팬데믹 — 예방이 치료다</h2><span class="copy-btn" onclick="copySec('section-10-wrap',event)">copy</span></summary>
+<div class="sec-body">
+</div></details><details open id="section-11-wrap">
+<summary class="sec-summary"><div class="section-divider" id="section-11"><span class="section-number">SECTION 11</span><hr></div>
+<h2>생활의학 6기둥</h2><span class="copy-btn" onclick="copySec('section-11-wrap',event)">copy</span></summary>
+<div class="sec-body">
+<p>현대 의료는 진단·치료에 강하지만, 만성질환의 근본 원인인 <strong>생활습관</strong>을 다루는 데 한계가 있다.</p>
+<div class="table-wrap"><table><thead><tr><th>기둥</th><th>핵심</th></tr></thead><tbody><tr><td>영양</td><td>초가공식품 줄이고, 식물성 식품 중심</td></tr><tr><td>신체활동</td><td>걷기부터, 앉아있는 시간 줄이기</td></tr><tr><td>수면</td><td>면역·대사·호르몬 모두 수면과 연결</td></tr><tr><td>스트레스 관리</td><td>없애는 것이 아니라 관리하는 법</td></tr><tr><td>위험 행동 회피</td><td>흡연·과음의 근본 원인 이해하기</td></tr><tr><td>사회적 연결</td><td>외로움도 질병을 일으킨다</td></tr></tbody></table></div>
+<p>생활습관 변화는 &quot;&quot;좋은 조언&quot;&quot;이 아니라 <strong>처방 가능한 치료 개입</strong>이다.</p>
+</div></details><details open id="section-12-wrap">
+<summary class="sec-summary"><div class="section-divider" id="section-12"><span class="section-number">SECTION 12</span><hr></div>
+<h2>팬데믹과 기독교인 — 거짓 정보가 생명을 빼앗는다</h2><span class="copy-btn" onclick="copySec('section-12-wrap',event)">copy</span></summary>
+<div class="sec-body">
+<p>기독교인이 음모론에 특히 취약한 이유:</p>
+<ul>
+<li>권위에 대한 건전한 의심이 극단화될 때</li>
+<li>종말론적 두려움 — 모든 사건을 마지막 때의 신호로 해석</li>
+<li>소셜 미디어 알고리즘의 분극화</li>
+</ul>
+<p><strong>역사 속 백신 개발자들의 신앙:</strong> Edward Jenner, Louis Pasteur, David Livingstone — 모두 헌신적인 기독교인이었다.</p>
+<p><strong>예방의 성경적 원칙:</strong></p>
+<ul>
+<li>신명기 22:8: 옥상에 난간을 세우라 (추락 예방)</li>
+<li>레위기: 격리, 검역, 위생 규제</li>
+<li><strong>하나님은 치유만이 아니라 예방을 매우 중시하신다</strong></li>
+</ul>
+<p><strong>마틴 루터의 원칙:</strong> &quot;마스크를 쓰면서 하나님의 보호를 구하라. 하나님을 시험하지 말라.&quot;</p>
+<h2 class="chapter-label">오늘의 흐름 한 줄로</h2>
+<pre><code>고통받는 자의 곁으로 들어간다 (성육신)
+    ↓
+파송이 아니라 협력으로 함께 걷는다 (선교 패러다임)
+    ↓
+약이 없어도 인간의 존엄은 지킨다 (완화의료)
+    ↓
+신념-성품-소통-역량-유산으로 이끈다 (리더십)
+    ↓
+내면의 전쟁 앞에서 판단 대신 곁에 선다 (유혹·자살)
+    ↓
+예방이 치료다, 생활이 의학이다 (생활의학·팬데믹)</code></pre>
+<p><em>세션 노트 제보: [ICMDA 2026 세션 노트 공유 폼](https://docs.google.com/forms/d/1ybHo8PT4ejoKsP9LH421vNmpjBuRh4ryv0_3Bbng-xQ/viewform)</em></p>
+<p><em>전체 모음: [ICMDA 2026 Knowledge Sharing](https://wiki.youngdoctor.kr/marktl/icmda2026/)</em></p>
+<p><em>Day 3 리뷰: [두 세계를 잇는 다리](https://wiki.youngdoctor.kr/marktl/icmda2026_day3/)</em></p></div></details>
+    <div class="tags-block"></div>
+    <a class="back-link" href="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/">← 영닥터 아카이브</a>
+  </main>
+</div>
+<footer class="footer">youngdoctor.kr · 2026-07-04 · palette: navy</footer>
+<script>
+function copySec(id,e){e.stopPropagation();const el=document.getElementById(id);
+  const txt=el.querySelector('.sec-body')?.innerText||'';
+  navigator.clipboard.writeText(txt).then(()=>{const b=e.target;b.textContent='✓';setTimeout(()=>b.textContent='copy',1500)})}
+// Highlight active section on scroll
+const heads=document.querySelectorAll('details[id]');
+const links=document.querySelectorAll('.sidebar a');
+const obs=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('active'));
+    const a=document.querySelector(`.sidebar a[href="#${e.target.id.replace('-wrap','')}"]`);
+    if(a)a.style.color='var(--accent)';
+  }});},{threshold:.3});
+heads.forEach(h=>obs.observe(h));
+</script></body></html>
