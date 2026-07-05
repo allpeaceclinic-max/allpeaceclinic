@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ICMDA 2026 Day 5 — 리더십과 경계, AI와 의료</title>
+<meta name="description" content="">
+<link rel="canonical" href="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/s/7skrav/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#f8f9fb;--surface:#fff;--text:#1a1a1a;--text2:#4a5060;
+    --accent:#2d4a6a;--al:#6a8aab;--abg:#eef2f5;
+    --bd:#cdd4e0;--bdl:#dee4ec;--pq:#1a2d4d;
+    --tbg:#e4eaf0;--ttx:#2d3a5a;
+    --hero-start:#1a2d4d;--hero-mid:#2d4a6a;--hero-end:#4a6a8c;--hero-fg:#f4f7fa;
+    --serif:'Noto Serif KR','Batang',Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --max:720px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{font-size:17px;scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+  body{background:var(--bg);color:var(--text);font-family:var(--serif);line-height:1.85;padding-bottom:4rem}
+  strong{font-weight:700} em{font-style:italic}
+  ul,ol{padding-left:1.5rem;margin-bottom:1.75rem}
+  li{margin-bottom:.4rem;line-height:1.75;word-break:keep-all}
+  .table-wrap{overflow-x:auto;margin:1.75rem 0}
+  table{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:.88rem}
+  th{background:var(--abg);color:var(--accent);font-weight:700;text-align:left;padding:10px 14px;border-bottom:2px solid var(--bd);word-break:keep-all}
+  td{padding:9px 14px;border-bottom:1px solid var(--bdl);color:var(--text2);line-height:1.6;word-break:keep-all;vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  pre{background:#f0f5f1;border:1px solid var(--bd);border-radius:8px;padding:1.5rem;margin:1.75rem 0;overflow-x:auto}
+  pre code{font-family:'Menlo','Monaco',monospace;font-size:.85rem;line-height:1.6}
+  .marginalia{font-family:var(--sans);font-size:.82rem;color:var(--accent);background:var(--abg);border-radius:6px;padding:6px 12px;margin:.5rem 0;display:inline-block}
+  .tags-block{display:flex;flex-wrap:wrap;gap:8px;margin-top:2.5rem;padding-top:1.75rem;border-top:1px solid var(--bdl)}
+  .tag{font-family:var(--sans);font-size:.72rem;background:var(--tbg);color:var(--ttx);padding:4px 12px;border-radius:20px}
+  .back-link{display:block;text-align:center;margin-top:2.5rem;font-family:var(--sans);font-size:.8rem;color:var(--accent);text-decoration:none;opacity:.7}
+  .back-link:hover{opacity:1}
+  .footer{max-width:var(--max);margin:4rem auto 0;padding:1.75rem;text-align:center;font-family:var(--sans);font-size:.75rem;color:var(--text2);opacity:.55}
+
+  .layout{display:grid;grid-template-columns:260px 1fr;gap:2rem;max-width:1060px;margin:2rem auto;padding:0 1.5rem;align-items:start}
+  .sidebar{position:sticky;top:1.5rem;background:var(--surface);border:1px solid var(--bdl);border-radius:10px;padding:1.25rem 1.5rem}
+  .sidebar-title{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem}
+  .sidebar ol{list-style:none;padding:0;margin:0}
+  .sidebar li{padding:5px 0;border-bottom:1px solid var(--bdl)}
+  .sidebar li:last-child{border-bottom:none}
+  .sidebar a{font-family:var(--sans);font-size:.83rem;color:var(--text);text-decoration:none;display:block}
+  .sidebar a:hover{color:var(--accent)}
+  .sn{color:var(--al);font-weight:600;margin-right:.4em;font-size:.75rem}
+  .topbar{background:linear-gradient(135deg,var(--hero-start),var(--hero-mid));color:var(--hero-fg);
+    padding:2.5rem 1.5rem 2rem;text-align:center}
+  .topbar h1{font-size:clamp(1.4rem,3.5vw,2rem);font-weight:700;word-break:keep-all;margin-bottom:.5rem}
+  .topbar-label{font-family:var(--sans);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;opacity:.7;margin-bottom:.75rem}
+  .topbar-sub{font-family:var(--sans);font-size:.85rem;opacity:.75;margin-bottom:.5rem}
+  .topbar-excerpt{font-size:.92rem;font-style:italic;opacity:.85;max-width:560px;margin:0 auto;line-height:1.7;word-break:keep-all}
+  .topbar-author{font-size:.75rem;opacity:.55;font-family:var(--sans);margin-top:1rem;letter-spacing:.04em}
+  details{margin-bottom:1.5rem;background:var(--surface);border:1px solid var(--bdl);border-radius:10px;overflow:hidden}
+  summary.sec-summary{cursor:pointer;list-style:none;padding:1rem 1.25rem;position:relative;display:flex;align-items:flex-start;gap:.75rem}
+  summary.sec-summary::-webkit-details-marker{display:none}
+  summary.sec-summary::before{content:'▸';color:var(--al);font-size:.8rem;flex-shrink:0;margin-top:.15rem;transition:transform .2s}
+  details[open] summary.sec-summary::before{content:'▾'}
+  .sec-summary .section-divider{margin:0;border:none;flex:1}
+  .sec-summary .section-divider hr{display:none}
+  .sec-summary h2{font-size:1.05rem;margin-bottom:0}
+  .sec-body{padding:.25rem 1.25rem 1.25rem}
+  .sec-body p{margin-bottom:1.25rem;word-break:keep-all}
+  .copy-btn{font-family:var(--sans);font-size:.7rem;background:var(--abg);color:var(--accent);
+    border:1px solid var(--bd);border-radius:20px;padding:3px 10px;cursor:pointer;flex-shrink:0;margin-top:.1rem;
+    opacity:0;transition:opacity .2s}
+  details:hover .copy-btn{opacity:1}
+  .chapter-label{font-size:.95rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin:2rem 0 1rem;padding:0 1.25rem}
+  .pullquote{border-top:2px solid var(--al);border-bottom:2px solid var(--al);padding:1.25rem 0;margin:1.75rem 0;text-align:center}
+  .pullquote p{font-size:1.05rem;font-weight:600;color:var(--pq);line-height:1.7;max-width:520px;margin:0 auto;word-break:keep-all}
+  .scripture{background:var(--bg);border:1px solid var(--bdl);border-radius:8px;padding:1.25rem 1.75rem;margin:1.25rem 0;position:relative}
+  .scripture::before{content:'\201C';font-size:2.5rem;color:var(--al);position:absolute;top:6px;left:12px;line-height:1;opacity:.4}
+  .scripture p{font-style:italic;color:var(--text2);font-size:.92rem;line-height:1.75;padding-left:1.25rem;margin-bottom:0}
+  .key-section .section-number,.key-label{background:var(--abg);padding:2px 8px;border-radius:16px;font-size:.66rem}
+  @media(max-width:780px){.layout{grid-template-columns:1fr;padding:0 1rem}.sidebar{position:static}.topbar{padding:2rem 1rem 1.5rem}}
+</style></head><body>
+<div class="topbar">
+  <div class="topbar-label">Event</div>
+  <h1>ICMDA 2026 Day 5 — 리더십과 경계, AI와 의료</h1>
+  <p class="topbar-sub"></p>
+  <p class="topbar-excerpt"></p>
+  <p class="topbar-author">글쓴이: 이상협 (M.D., M.Div.)</p>
+</div>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-title">목차</div>
+    <ol>      <li><a href="#section-01"><span class="sn">01</span>리더십과 감정 지능(EQ) — 오래 서 있는 리더</a></li>
+      <li><a href="#section-02"><span class="sn">02</span>왜 EQ인가</a></li>
+      <li><a href="#section-03"><span class="sn">03</span>자기 인식 — 내 경계를 아는 것</a></li>
+      <li><a href="#section-04"><span class="sn">04</span>자기 조절 — 반응이 아닌 응답</a></li>
+      <li><a href="#section-05"><span class="sn">05</span>공감과 팀 지능</a></li>
+      <li><a href="#section-06"><span class="sn">06</span>리더십 피로와 지속 가능성</a></li>
+      <li><a href="#section-07"><span class="sn">07</span>텐트메이킹 선교 — 장벽과 패러다임 전환</a></li>
+      <li><a href="#section-08"><span class="sn">08</span>세 가지 현실적 장벽</a></li>
+      <li><a href="#section-09"><span class="sn">09</span>선교 패러다임 전환</a></li>
+      <li><a href="#section-10"><span class="sn">10</span>접근 불가 지역에서의 실천 원칙</a></li>
+      <li><a href="#section-11"><span class="sn">11</span>AI와 의료 — 도구인가, 파트너인가</a></li>
+      <li><a href="#section-12"><span class="sn">12</span>AI 의료 플래너리 개요</a></li>
+      <li><a href="#section-13"><span class="sn">13</span>AI가 바꾸는 의료 지형</a></li>
+      <li><a href="#section-14"><span class="sn">14</span>의료인이 던져야 할 질문</a></li>
+      <li><a href="#section-15"><span class="sn">15</span>기독의료인의 관점</a></li>
+      <li><a href="#section-16"><span class="sn">16</span>이대영 — 클로징 메시지</a></li></ol>
+  </aside>
+  <main>
+    <p><strong>2026년 7월 4일 | 제주</strong></p>
+<p><em>Day 5 본회의 — 라이브 통역 스크립트 종합 정리</em></p>
+<p>대회 후반부로 접어드는 날이었다. 전반부가 &quot;깨어진 세상으로 들어가라&quot;는 부르심이었다면, Day 5는 그 현장에 오래 서 있기 위한 내면의 준비를 물었다.</p>
+<p>리더십의 감정 지능(EQ), 텐트메이킹 선교의 현실적 장벽, 그리고 의료 현장에 밀려오는 AI — 각각 다른 주제처럼 보이지만 하나의 질문으로 수렴한다:</p>
+<p><strong>우리는 지속 가능한 방식으로 부르심을 살아낼 준비가 되어 있는가?</strong></p>
+<details open id="section-01-wrap">
+<summary class="sec-summary"><div class="section-divider" id="section-01"><span class="section-number">SECTION 01</span><hr></div>
+<h2>리더십과 감정 지능(EQ) — 오래 서 있는 리더</h2><span class="copy-btn" onclick="copySec('section-01-wrap',event)">copy</span></summary>
+<div class="sec-body">
+</div></details><details open id="section-02-wrap">
+<summary class="sec-summary"><div class="section-divider" id="section-02"><span class="section-number">SECTION 02</span><hr></div>
+<h2>왜 EQ인가</h2><span class="copy-btn" onclick="copySec('section-02-wrap',event)">copy</span></summary>
+<div class="sec-body">
+<p>의료 현장의 리더십은 지식으로 결정되지 않는다. 수련의는 지식이 부족해서가 아니라, 감정 조절과 관계 역량이 무너져서 번아웃한다. 선교지 팀이 해체되는 가장 흔한 이유 역시 신학적 이견이 아니라 관계의 붕괴다.</p>
+<p>EQ(Emotional Intelligence)는 자신의 감정을 인식·조절하고, 타인의 감정을 감지·반응하는 역량이다. IQ가 &quot;할 수 있는 능력&quot;이라면, EQ는 &quot;함께 할 수 있는 능력&quot;이다.</p>
+</div></details><details open id="section-03-wrap">
+<summary class="sec-summary"><div class="section-divider" id="section-03"><span class="section-number">SECTION 03</span><hr></div>
+<h2>자기 인식 — 내 경계를 아는 것</h2><span class="copy-btn" onclick="copySec('section-03-wrap',event)">copy</span></summary>
+<div class="sec-body">
+<p>자기 인식(Self-Awareness)은 EQ의 토대다. 자신이 어떤 상황에서 감정적으로 반응하는지, 어떤 유형의 갈등이 자신을 닫히게 만드는지 아는 것. 이 인식 없이는 조절도, 공감도 불가능하다.</p>
+<p>리더가 자신을 모를 때 조직에 미치는 비용은 크다:</p>
+<ul>
+<li>분노가 결정으로 포장된다</li>
+<li>불안이 통제로 위장된다</li>
+<li>상처가 원칙이 된다</li>
+</ul>
+<p>의료 선교지에서 &quot;나는 어떤 사람인가&quot;를 묻지 않는 리더는, 팀 내에서 가장 큰 위험 요소가 된다.</p>
+</div></details><details open id="section-04-wrap">
+<summary class="sec-summary"><div class="section-divider" id="section-04"><span class="section-number">SECTION 04</span><hr></div>
+<h2>자기 조절 — 반응이 아닌 응답</h2><span class="copy-btn" onclick="copySec('section-04-wrap',event)">copy</span></summary>
+<div class="sec-body">
+<p>자극과 반응 사이에 공간이 있다. EQ가 높은 리더는 그 공간을 활용할 줄 안다.</p>
+<p>실천 도구들:</p>
+<ul>
+<li><strong>일시 정지(Pause)</strong>: 자동 반응 전 3초 멈추기</li>
+<li><strong>명명(Labeling)</strong>: &quot;나는 지금 화가 나 있다&quot;고 내면에서 말하는 것 자체가 편도체 반응을 줄인다</li>
+<li><strong>재구성(Reframing)</strong>: &quot;이 상황은 나를 공격하는 것이 아니라, 내가 성장해야 할 영역을 드러낸다&quot;</li>
+</ul>
+<p>빌립보서 4:11 — &quot;내가 어떤 형편에 있든지 자족하기를 배웠노라.&quot; 배웠다(learned)는 과거 완료가 아니라 과정이다. 바울도 도달한 상태가 아니라 훈련 중이었다.</p>
+</div></details><details open id="section-05-wrap">
+<summary class="sec-summary"><div class="section-divider" id="section-05"><span class="section-number">SECTION 05</span><hr></div>
+<h2>공감과 팀 지능</h2><span class="copy-btn" onclick="copySec('section-05-wrap',event)">copy</span></summary>
+<div class="sec-body">
+<p>공감(Empathy)은 감정 이입이 아니라 <strong>감정의 인식</strong>이다. 상대의 감정에 동화되는 것이 아니라, 상대가 무엇을 경험하고 있는지 이해하는 것.</p>
+<p>다문화 팀에서 공감은 더 복잡해진다:</p>
+<ul>
+<li>감정 표현 방식이 문화마다 다르다</li>
+<li>&quot;침묵&quot;이 동의인지 거부인지, 문화마다 반대다</li>
+<li>직접 말하는 것이 존중인 문화와, 간접 표현이 예의인 문화가 공존한다</li>
+</ul>
+<p>고린도전서 13장의 사랑은 감정이 아니라 능력 목록이다. &quot;오래 참고, 온유하며, 자기 것을 구하지 않는다&quot; — 이것은 EQ의 행동적 정의에 가깝다.</p>
+</div></details><details open id="section-06-wrap">
+<summary class="sec-summary"><div class="section-divider" id="section-06"><span class="section-number">SECTION 06</span><hr></div>
+<h2>리더십 피로와 지속 가능성</h2><span class="copy-btn" onclick="copySec('section-06-wrap',event)">copy</span></summary>
+<div class="sec-body">
+<p>의료 선교 리더의 번아웃은 사명감의 부재가 아니라 <strong>회복 자원의 부재</strong>에서 온다. 줄 것이 없는 사람은 줄 수 없다.</p>
+<ul>
+<li>정기적 고독과 침묵의 시간</li>
+<li>진실을 말할 수 있는 안전한 관계 1~2명</li>
+<li>실패와 약함을 허용하는 공동체 문화</li>
+<li>자신의 한계를 명예로운 것으로 수용하기</li>
+</ul>
+<p>리더는 강해서 섬기는 것이 아니라, 은혜를 받아 섬기는 것이다.</p>
+</div></details><details open id="section-07-wrap">
+<summary class="sec-summary"><div class="section-divider" id="section-07"><span class="section-number">SECTION 07</span><hr></div>
+<h2>텐트메이킹 선교 — 장벽과 패러다임 전환</h2><span class="copy-btn" onclick="copySec('section-07-wrap',event)">copy</span></summary>
+<div class="sec-body">
+</div></details><details open id="section-08-wrap">
+<summary class="sec-summary"><div class="section-divider" id="section-08"><span class="section-number">SECTION 08</span><hr></div>
+<h2>세 가지 현실적 장벽</h2><span class="copy-btn" onclick="copySec('section-08-wrap',event)">copy</span></summary>
+<div class="sec-body">
+<p>슬라이드 발표에서 텐트메이킹(Tentmaking) 선교의 장벽 세 가지가 제시되었다:</p>
+<div class="table-wrap"><table><thead><tr><th>장벽</th><th>내용</th></tr></thead><tbody><tr><td><strong>비자 장벽</strong></td><td>선교사 비자 발급이 불가능한 국가에서, 전문 직업을 통한 입국이 유일한 통로</td></tr><tr><td><strong>신뢰 장벽</strong></td><td>&quot;돈 받고 선교하는 사람&quot;에 대한 현지인의 경계심 — 직업인으로서의 삶 자체가 신뢰를 만든다</td></tr><tr><td><strong>지속성 장벽</strong></td><td>단기 선교의 반복보다, 현지 깊이 뿌리내린 장기 사역이 더 큰 열매를 맺는다</td></tr></tbody></table></div>
+<p>텐트메이커는 직업이 선교의 &quot;수단&quot;이 아니라 &quot;현장&quot; 자체다. 진료실이 곧 선교지이고, 환자와의 만남이 곧 사역이다.</p>
+</div></details><details open id="section-09-wrap">
+<summary class="sec-summary"><div class="section-divider" id="section-09"><span class="section-number">SECTION 09</span><hr></div>
+<h2>선교 패러다임 전환</h2><span class="copy-btn" onclick="copySec('section-09-wrap',event)">copy</span></summary>
+<div class="sec-body">
+<p>기존 패러다임: <strong>보냄 받은 자(Sent)</strong> 가 <strong>목표 지역(Target)</strong> 에 가서 <strong>복음을 전한다</strong> 전환된 패러다임: <strong>파견된 전문인(Deployed Professional)</strong> 이 <strong>삶의 현장(Context)</strong> 에서 <strong>증인으로 산다</strong></p>
+<p>차이는 미묘하지만 결정적이다. &quot;전도&quot;가 목표가 아니라 &quot;존재&quot;가 목표일 때, 관계는 달라진다. 현지인이 보는 것은 메시지가 아니라 삶이다.</p>
+<p>의료인 텐트메이커의 강점:</p>
+<ul>
+<li>의료 접근성이 낮은 지역에서 즉각적 필요 충족</li>
+<li>병원·클리닉이 공동체 신뢰의 거점이 된다</li>
+<li>질병과 죽음의 현장에서 가장 깊은 대화가 가능하다</li>
+</ul>
+<p>창세기 1:28 — 문화 명령(Cultural Mandate): 다스리고 지키는 것, 곧 전문성으로 세상을 섬기는 것이 선교의 일부다.</p>
+</div></details><details open id="section-10-wrap">
+<summary class="sec-summary"><div class="section-divider" id="section-10"><span class="section-number">SECTION 10</span><hr></div>
+<h2>접근 불가 지역에서의 실천 원칙</h2><span class="copy-btn" onclick="copySec('section-10-wrap',event)">copy</span></summary>
+<div class="sec-body">
+<p>&quot;뱀같이 지혜롭고 비둘기같이 순결하게&quot; (마 10:16).</p>
+<ul>
+<li>공개적 종교 활동이 제한된 지역에서는 삶의 방식이 유일한 증거다</li>
+<li>현지 법과 문화를 존중하되, 양심의 자유를 포기하지 않는다</li>
+<li>현지 그리스도인과의 연대가 선교의 기반이다</li>
+<li>장기적 관계망 구축이 단기 성과보다 우선이다</li>
+</ul>
+</div></details><details open id="section-11-wrap">
+<summary class="sec-summary"><div class="section-divider" id="section-11"><span class="section-number">SECTION 11</span><hr></div>
+<h2>AI와 의료 — 도구인가, 파트너인가</h2><span class="copy-btn" onclick="copySec('section-11-wrap',event)">copy</span></summary>
+<div class="sec-body">
+</div></details><details open id="section-12-wrap">
+<summary class="sec-summary"><div class="section-divider" id="section-12"><span class="section-number">SECTION 12</span><hr></div>
+<h2>AI 의료 플래너리 개요</h2><span class="copy-btn" onclick="copySec('section-12-wrap',event)">copy</span></summary>
+<div class="sec-body">
+<p>오후 플래너리 세션은 의료 현장에서의 AI 활용과 윤리를 다루었다. 기술 발전 속도보다 윤리 논의가 뒤처지고 있다는 우려로 시작했다.</p>
+</div></details><details open id="section-13-wrap">
+<summary class="sec-summary"><div class="section-divider" id="section-13"><span class="section-number">SECTION 13</span><hr></div>
+<h2>AI가 바꾸는 의료 지형</h2><span class="copy-btn" onclick="copySec('section-13-wrap',event)">copy</span></summary>
+<div class="sec-body">
+<p>현재 AI가 실질적으로 영향을 미치는 영역:</p>
+<div class="table-wrap"><table><thead><tr><th>영역</th><th>AI의 역할</th></tr></thead><tbody><tr><td>진단 보조</td><td>영상 분석(방사선·병리), 패턴 인식 — 특정 질환에서 전문의 수준 또는 초과</td></tr><tr><td>행정 자동화</td><td>문서 작성, 코딩, 예약 관리 — 의사의 시간을 환자에게 돌려준다</td></tr><tr><td>예측 모델링</td><td>입원 위험도, 패혈증 조기 경고, 재입원 예측</td></tr><tr><td>접근성 확대</td><td>의료 인력이 부족한 지역에서 1차 선별·원격 진료 지원</td></tr></tbody></table></div>
+<p>저소득 국가에서의 가능성이 특히 강조되었다: 전문의 없는 지역 병원의 영상 판독을 AI가 지원할 때, 진단받지 못했던 환자들이 치료를 받을 수 있다.</p>
+</div></details><details open id="section-14-wrap">
+<summary class="sec-summary"><div class="section-divider" id="section-14"><span class="section-number">SECTION 14</span><hr></div>
+<h2>의료인이 던져야 할 질문</h2><span class="copy-btn" onclick="copySec('section-14-wrap',event)">copy</span></summary>
+<div class="sec-body">
+<p>기술 자체보다 중요한 것은 사용 원칙이다.</p>
+<p><strong>책임의 질문</strong>: AI가 틀렸을 때 누가 책임지는가? 도구인가 사용자인가?</p>
+<p><strong>편향의 질문</strong>: 훈련 데이터가 편향되어 있으면, AI의 판단도 편향된다. 누구의 데이터로 만들어졌는가?</p>
+<p><strong>인간성의 질문</strong>: 의사-환자 관계에서 AI는 어디까지 개입할 수 있는가? 공감과 돌봄은 알고리즘화되지 않는다.</p>
+<p><strong>접근성의 질문</strong>: 첨단 AI 의료가 부유한 나라에만 집중된다면, 격차는 줄어드는가 커지는가?</p>
+</div></details><details open id="section-15-wrap">
+<summary class="sec-summary"><div class="section-divider" id="section-15"><span class="section-number">SECTION 15</span><hr></div>
+<h2>기독의료인의 관점</h2><span class="copy-btn" onclick="copySec('section-15-wrap',event)">copy</span></summary>
+<div class="sec-body">
+<p>의료 AI는 도구다 — 칼이 수술 도구이듯, 망치가 건축 도구이듯. 창세기 1장의 문화 명령은 도구를 만들고 활용하는 것을 허용한다. 그러나 그 도구가 <strong>인간 존엄성을 보호하는 방향</strong>으로 사용되는지는 우리가 결정한다.</p>
+<div class="scripture"><p><em>&quot;AI는 더 많은 환자를 볼 수 있게 해줄지 모른다. 그러나 각 환자 앞에 온전히 현재할 수 있는 것은 여전히 우리의 몫이다.&quot;</em></p></div>
+<p>딤전 6:6 — &quot;자족하는 마음이 있으면 경건은 큰 이익이 되느니라.&quot; 기술이 주는 효율을 누리되, 효율 자체가 목적이 되지 않도록.</p>
+</div></details><details open id="section-16-wrap">
+<summary class="sec-summary"><div class="section-divider" id="section-16"><span class="section-number">SECTION 16</span><hr></div>
+<h2>이대영 — 클로징 메시지</h2><span class="copy-btn" onclick="copySec('section-16-wrap',event)">copy</span></summary>
+<div class="sec-body">
+<p>이대영 목사님의 클로징은 대회 전체의 흐름을 묶었다.</p>
+<p>깨어진 세상에서 사역하는 것이 소명이라면, 그 소명은 먼 미래가 아니라 <strong>지금 여기</strong>에서 시작된다.</p>
+<div class="scripture"><p><em>&quot;당신이 돌아가는 그 진료실이 선교지입니다. 내일 만날 그 환자가 당신의 이웃입니다. 제주에서 받은 것을 — 거기서 사세요.&quot;</em></p></div>
+<p>이사야 58:12 — 대회 전체 주제 구절이 다시 한번 울렸다. 무너진 데를 보수하는 자는 멀리 있지 않다. 진료실에서, 수술실에서, 병동 복도에서 — 오늘도 서 있는 우리가 그 자리다.</p>
+<h2 class="chapter-label">오늘의 흐름 한 줄로</h2>
+<pre><code>내면이 준비된 자만이 오래 선교 현장에 서 있을 수 있다 (EQ·리더십)
+    ↓
+직업과 삶이 곧 증거다 (텐트메이킹)
+    ↓
+도구를 지혜롭게 쓰되, 인간 존엄성을 지키는 자가 되라 (AI·의료)
+    ↓
+받은 것을 가지고 — 각자의 자리로 돌아가라 (클로징)</code></pre>
+<p><em>정리 출처: 플리토 라이브 통역 스크립트 + 슬라이드 요약 (일부 세션은 통역 미제공으로 핵심 요약 기준 정리)</em></p>
+<p><em>세션 노트 제보: [ICMDA 2026 세션 노트 공유 폼](https://docs.google.com/forms/d/1ybHo8PT4ejoKsP9LH421vNmpjBuRh4ryv0_3Bbng-xQ/viewform)</em></p>
+<p><em>전체 모음: [ICMDA 2026 Knowledge Sharing](https://wiki.youngdoctor.kr/marktl/icmda2026/)</em></p>
+<p><em>Day 4 리뷰: [깨어진 세상 안으로 들어가다](https://wiki.youngdoctor.kr/marktl/icmda2026_day4/)</em></p>
+<p><em>Day 6 리뷰: [화평케 하는 자로 세상에 서다](https://wiki.youngdoctor.kr/marktl/icmda2026_day6/)</em></p></div></details>
+    <div class="tags-block">  <span class="tag">#ICMDA</span>
+  <span class="tag">#의료선교</span>
+  <span class="tag">#리더십</span>
+  <span class="tag">#EQ</span>
+  <span class="tag">#텐트메이킹</span>
+  <span class="tag">#AI의료</span>
+  <span class="tag">#domain/선교</span>
+  <span class="tag">#domain/의료</span></div>
+    <a class="back-link" href="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/">← 영닥터 아카이브</a>
+  </main>
+</div>
+<footer class="footer">youngdoctor.kr · 2026-07-05 · palette: navy</footer>
+<script>
+function copySec(id,e){e.stopPropagation();const el=document.getElementById(id);
+  const txt=el.querySelector('.sec-body')?.innerText||'';
+  navigator.clipboard.writeText(txt).then(()=>{const b=e.target;b.textContent='✓';setTimeout(()=>b.textContent='copy',1500)})}
+// Highlight active section on scroll
+const heads=document.querySelectorAll('details[id]');
+const links=document.querySelectorAll('.sidebar a');
+const obs=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('active'));
+    const a=document.querySelector(`.sidebar a[href="#${e.target.id.replace('-wrap','')}"]`);
+    if(a)a.style.color='var(--accent)';
+  }});},{threshold:.3});
+heads.forEach(h=>obs.observe(h));
+</script></body></html>
