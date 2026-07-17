@@ -5,50 +5,50 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
 :root{
-  --bg:#f5ead8; --surface:#faf3e6; --surface2:#ebddc5;
-  --ink:#201e1d; --muted:#5c574f; --meta:#8a8478;
-  --line:color-mix(in srgb,#201e1d 16%,transparent);
-  --line-soft:color-mix(in srgb,#201e1d 9%,transparent);
-  --accent:#c67139; --accent-deep:#8f4e22; --accent-tint:#f3ddc9; --accent-ink:#faf3e6;
-  --sage:#7a8a5e; --sage-deep:#4d5a38; --sage-tint:#e4e8d9;
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
   --font-display:"Caprasimo",system-ui,sans-serif;
   --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
   --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
   --r-sm:8px; --r-md:16px; --r-lg:28px;
-  --shadow:0 1px 2px color-mix(in srgb,#2e2b25 14%,transparent);
-  --shadow-md:0 3px 10px color-mix(in srgb,#2e2b25 16%,transparent);
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
 }
 @media (prefers-color-scheme:dark){:root{
-  --bg:#262320; --surface:#2d2a26; --surface2:#33302b;
-  --ink:#f5ead8; --muted:color-mix(in srgb,#f5ead8 75%,transparent);
-  --meta:color-mix(in srgb,#f5ead8 48%,transparent);
-  --line:color-mix(in srgb,#f5ead8 14%,transparent);
-  --line-soft:color-mix(in srgb,#f5ead8 8%,transparent);
-  --accent:#e0a375; --accent-deep:#e0a375;
-  --accent-tint:color-mix(in srgb,#c67139 24%,transparent); --accent-ink:#262320;
-  --sage-deep:#b8c49c; --sage-tint:color-mix(in srgb,#7a8a5e 20%,transparent);
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
   --shadow:none; --shadow-md:none;
 }}
 :root[data-theme="dark"]{
-  --bg:#262320; --surface:#2d2a26; --surface2:#33302b;
-  --ink:#f5ead8; --muted:color-mix(in srgb,#f5ead8 75%,transparent);
-  --meta:color-mix(in srgb,#f5ead8 48%,transparent);
-  --line:color-mix(in srgb,#f5ead8 14%,transparent);
-  --line-soft:color-mix(in srgb,#f5ead8 8%,transparent);
-  --accent:#e0a375; --accent-deep:#e0a375;
-  --accent-tint:color-mix(in srgb,#c67139 24%,transparent); --accent-ink:#262320;
-  --sage-deep:#b8c49c; --sage-tint:color-mix(in srgb,#7a8a5e 20%,transparent);
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
   --shadow:none; --shadow-md:none;
 }
 :root[data-theme="light"]{
-  --bg:#f5ead8; --surface:#faf3e6; --surface2:#ebddc5;
-  --ink:#201e1d; --muted:#5c574f; --meta:#8a8478;
-  --line:color-mix(in srgb,#201e1d 16%,transparent);
-  --line-soft:color-mix(in srgb,#201e1d 9%,transparent);
-  --accent:#c67139; --accent-deep:#8f4e22; --accent-tint:#f3ddc9; --accent-ink:#faf3e6;
-  --sage-deep:#4d5a38; --sage-tint:#e4e8d9;
-  --shadow:0 1px 2px color-mix(in srgb,#2e2b25 14%,transparent);
-  --shadow-md:0 3px 10px color-mix(in srgb,#2e2b25 16%,transparent);
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
@@ -59,7 +59,7 @@ a:hover{color:var(--accent)}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
 .chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
-.chip.cat-t{color:var(--sage-deep);background:var(--sage-tint)}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
 .chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
 
 main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
@@ -81,9 +81,9 @@ article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px
 article.note p{margin:0 0 16px;text-wrap:pretty}
 article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
 article.note li{margin:4px 0}
-article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--sage);
-  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--sage-tint);
-  font-size:14.5px;line-height:1.85;color:var(--sage-deep)}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
 article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
 article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
   font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
@@ -96,7 +96,7 @@ article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
 article.note img{max-width:100%;border-radius:var(--r-sm)}
 a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
 a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
-span.wl-dead{color:var(--sage-deep);border-bottom:1.5px dotted var(--sage);padding-bottom:1px;cursor:default}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
 .footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
   font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
 .footnote hr{display:none}
@@ -111,38 +111,83 @@ footer a{font-weight:700}
     <a href="../../">← 주제·북노트 탐색</a>
     <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
   </div>
-  <div class="meta-row"><span class="chip cat-t">성경·해석</span><span class="date">2026-07-02</span></div>
+  <div class="meta-row"><span class="chip cat-t">성경·해석</span><span class="date">2026-07-18</span></div>
   <h1 class="note-title">가나안 정복</h1>
   
 </header>
 <article class="note">
 <h2>정의</h2>
-<p>가나안 정복은 여호수아·사사기에 기록된, 이스라엘이 약속의 땅 가나안에 들어가 그 원주민을 몰아내거나 진멸(헤렘)한 사건군을 가리킨다. <span class="wl-dead" title="위키 내부 링크">06주_여호수아와사사기</span>는 이 정복 기사를 표면적 승리 서사로 읽지 않고, 명령의 실행 여부·예외·신학적 시점이라는 세 축으로 해체해 살핀다.</p>
-<h2>1. 문자적으로 실행된 정복</h2>
-<p>여리고(<span class="wl-dead" title="위키 내부 링크">수6</span>:21)와 아이성(수8:25-26, 1만2천 명), 하솔(<span class="wl-dead" title="위키 내부 링크">수11</span>:11)은 <a class="wl" href="../../t/%ED%97%A4%EB%A0%98/">헤렘</a> 명령이 실제로 문자대로 이행된 사례다. 강의는 이 본문들의 실행 기록을 부정하지 않는다 — 헤렘이 실제 전쟁에서 집행된 근거는 분명히 있다.</p>
-<h2>2. 실행되지 않은 정복</h2>
-<p>그러나 <span class="wl-dead" title="위키 내부 링크">수15</span>와 수16장은 정반대 그림을 보여준다. 유다 지파를 비롯한 여러 지파가 가나안 족속을 완전히 쫓아내지 못하고, 오히려 노예로 삼아 함께 거주하게 된 정황이 기록된다. 강의는 이 병존을 "혼동"이 아니라 헤렘 명령이 처음부터 조건부·제한적이었다는 증거로 읽는다.</p>
-<h2>3. 헤렘에서 벗어나는 길</h2>
-<p>라합(<span class="wl-dead" title="위키 내부 링크">수6</span>:17)과 기브온 족속(<span class="wl-dead" title="위키 내부 링크">수9</span>:3-24)은 항복·신앙고백을 통해 헤렘을 면제받은 사례다. 특히 기브온 족속은 속임수를 썼음에도 9:24에서 스스로 헤렘 대상임을 알고 있었다고 고백한다. <span class="wl-dead" title="위키 내부 링크">신20</span>:10-16은 이 예외를 절차화한 규정으로, 먼저 평화를 선언하고 화답하면 받아들이되 거절할 때에만 심판을 명한다.</p>
-<h2>4. 신학적 축 — 죄악의 관영</h2>
-<p>가나안 정복 신학의 핵심 축은 <span class="wl-dead" title="위키 내부 링크">창15</span>:13-16(아브라함 언약, "아모리 족속의 죄악이 아직 관영치 아니함이니라")이다. 하나님은 400년을 참으신 뒤, 죄가 가득 찰 때에야 심판(헤렘)을 명하신다. 강의는 <span class="wl-dead" title="위키 내부 링크">창18</span>:20-32(소돔과 고모라, 의인 10명 협상)을 같은 논리의 반복으로 짚으며, "헤렘을 명하시게 되고 실제로 실행하는 경우는 적다. 원래 의도는 헤렘이 아니다"라고 정리한다.</p>
-<h2>5. 현대·전통 해석의 갈래</h2>
-<p>가나안 정복을 둘러싼 해석은 크게 세 갈래로 나뉜다. <span class="wl-dead" title="위키 내부 링크">존파이퍼</span>는 하나님이 생명을 살리고 죽일 절대 권한을 가지신다는 점에서 헤렘을 정당한 심판으로 본다. <span class="wl-dead" title="위키 내부 링크">윌리엄레인크레이그</span>는 하나님이 헤렘을 원하지 않으셨다고 보며, 항복하면 면제하되 연합군을 형성해 끝까지 대적할 때(예: 하솔의 연합군)만 헤렘이 작동한다고 설명한다. 유대 랍비 전통은 헤렘법을 신21:18 불순종하는 아들 처형법과 같은 논리로 읽는데, 후자가 절차적 제약(13세 이후 성인, 부모 양쪽 동의, 23명 재판관 등)으로 사실상 사문화된 법이었듯, 헤렘 역시 실제 적용은 제한적이었다는 해석이다.</p>
+<p>가나안 정복은 여호수아·사사기에 기록된, 이스라엘이 약속의 땅에 들어가 원주민을 몰아내거나 진멸(헤렘)한 사건군을 가리킨다. 이 페이지는 그 사건을 구약 윤리의 가장 무거운 난제로서 정면으로 다룬다. "그들을 진멸하라"(신 7:2)는 명령을 어떻게 신앙 안에서, 그러나 정직하게 마주할 것인가. 진멸 명령 자체의 신학적 이중성(고대 근동 관용어이면서 문자적 실행)과 사울·에스더로 이어지는 왕정신학적 전개는 <a class="wl" href="../../t/%ED%97%A4%EB%A0%98/">헤렘</a>이 상세히 다루고, 악과 하나님의 선하심이라는 신정론 일반은 <a class="wl" href="../../t/%EB%B3%80%EC%8B%A0%EB%A1%A0/">변신론</a>이 전담한다. 이 글이 붙드는 것은 하나다 — 정복 기사를 회피하지 않으면서 답을 강요하지도 않는, 정직한 마주함의 자리다.</p>
+<h2>1. 헤렘의 문제 제기 — 회피하지 않고</h2>
+<p>먼저 문제를 정직하게 세워야 한다. 여리고에서 이스라엘은 "남녀노소와 소와 양과 나귀를 칼날로 멸하니라"(수 6:21). 아이성에서 만이천 명이(수 8:25), 하솔에서 성읍 전체가(수 11:11) 진멸되었다. 현대 독자에게 이 기사는 강한 윤리적 부담을 안긴다. <span class="wl-dead" title="위키 내부 링크">전성민</span>의 출발점은 이 부담을 눅이지 않는 데 있다 — "100% 이해하지 못하지만 궁극적인 선하심을 신뢰한다"는 태도는 정당하되, "믿음으로 퉁치기에는 아쉬움이 있다." 신뢰를 유지하면서도 본문을 더 정직하게 읽어야 한다는 것이다.</p>
+<p>이 정직성은 두 방향의 게으름을 함께 거부한다. 하나는 "하나님이 하신 일이니 옳다"며 질문을 봉쇄하는 것이고, 다른 하나는 "구약의 잔혹한 신"이라며 본문을 폐기하는 것이다. 둘 다 본문을 진지하게 읽지 않는다는 점에서 같다. 정직한 마주함은 질문을 끝까지 붙들되, 성급한 결론으로 봉합하지 않는다.</p>
+<h2>2. 해석 옵션의 스펙트럼 ⚖️</h2>
+<p>가나안 정복을 이해하려는 시도는 여러 갈래로 나뉜다. 각 입장은 무언가를 지키려 하고, 그 대가로 무언가를 내어 준다. 어느 하나를 피고석에 세우지 않고 공정하게 늘어놓는 것이 이 스펙트럼의 목적이다.</p>
+<table>
+<thead>
+<tr>
+<th>입장</th>
+<th>핵심 주장</th>
+<th>지키려는 것</th>
+<th>치르는 대가</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>문자적 심판</td>
+<td>헤렘은 죄악이 관영한 족속에 대한 하나님의 정당한 심판</td>
+<td>본문의 문자적 진실성, 하나님의 공의</td>
+<td>무고한 아이의 죽음이라는 물음이 남음</td>
+</tr>
+<tr>
+<td>고대 근동 과장법</td>
+<td>"진멸"은 전쟁 승리를 과장하는 고대 수사 관습</td>
+<td>실제 학살 규모의 완화</td>
+<td>그래도 죽은 이들의 폭력은 남음</td>
+</tr>
+<tr>
+<td>공평성 논거</td>
+<td>이스라엘도 같은 기준 아래 놓여 그 땅에서 쫓겨남</td>
+<td>인종적 편애가 아님</td>
+<td>"왜 하필 진멸이었나"에 답 못함</td>
+</tr>
+<tr>
+<td>점진적 계시</td>
+<td>하나님이 그 시대의 한계 안에서 단계적으로 일하심(신적 수용)</td>
+<td>궁극적 이상(갈 3:28)과의 거리 설명</td>
+<td>어디까지가 수용이고 규범인지 모호</td>
+</tr>
+</tbody>
+</table>
+<p><span class="wl-dead" title="위키 내부 링크">존파이퍼</span>는 하나님이 생명을 살리고 죽일 절대 권한을 가지시며 죄인을 살려 두시는 것 자체가 은혜이므로 헤렘은 정당한 심판이라 본다. <span class="wl-dead" title="위키 내부 링크">윌리엄레인크레이그</span>는 반대로 하나님이 헤렘을 원하지 않으셨으며, 항복하면 면제하되 끝까지 대적할 때만(하솔 연합군처럼) 심판이 작동한다고 본다. <span class="wl-dead" title="위키 내부 링크">전성민</span>은 공평성 논거(이스라엘도 그 땅에서 쫓겨남, 신 7-8장)와 과장법 논거(진멸 기록 후에도 그 민족이 재등장함)를 함께 제시하되, <span class="wl-dead" title="위키 내부 링크">크리스토퍼 라이트</span>의 『성경의 핵심난제에 답하다』를 참고문헌으로 남긴다. 어느 논거도 물음을 완전히 해소하지 못한다는 것이 이 스펙트럼의 정직한 결론이다.</p>
+<h2>3. 언약 심판의 맥락 — 관영한 죄악과 열린 예외</h2>
+<p>정복 기사를 읽는 결정적 열쇠는 그것이 자의적 폭력이 아니라 언약 심판의 맥락에 놓여 있다는 사실이다. 그 축이 창세기 15장 16절이다 — "아모리 족속의 죄악이 아직 가득 차지 아니함이니라." 하나님은 아브라함에게 땅을 약속하시고도 400년을 기다리신다. 죄가 관영하기 전에는 심판하지 않으신다는 것이다. 정복의 시점은 "이스라엘이 강해서"가 아니라 "가나안 족속의 죄악이 가득 차서"에 매인다. 소돔을 두고 의인 열 명을 놓고 협상하신 창세기 18장이 같은 논리를 보여준다 — 하나님은 심판을 서두르지 않으신다.</p>
+<p>더 결정적인 것은 헤렘이 처음부터 예외를 향해 열려 있었다는 사실이다. 기생 라합은 신앙고백을 통해(수 6:17), 기브온 족속은 속임수를 썼음에도 스스로 헤렘 대상임을 고백하며(수 9:24) 살아남았다. 신명기 20장 10-16절은 이 예외를 절차화한다 — 먼저 평화를 선언하고, 화답하면 받아들이고, 거절할 때에만 심판. 진멸이 무조건적 명령이 아니라 항복과 신앙고백 앞에서 면제되는 체계였음을 이 예외들이 증언한다(헤렘 명령의 조건부성 상세는 <a class="wl" href="../../t/%ED%97%A4%EB%A0%98/">헤렘</a>에 위임).</p>
+<h2>4. 여호수아서 자체의 결 — 수렴하지 않는 서술</h2>
+<p>흥미로운 것은 여호수아서 자신이 "완전 정복"을 주장하지 않는다는 점이다. 여리고·아이성·하솔의 문자적 진멸 기사가 있는가 하면, 같은 책 안에 유다 지파를 비롯한 여러 지파가 가나안 족속을 완전히 쫓아내지 못하고 오히려 함께 거주하게 된 정황(수 15-16장)이 나란히 기록된다. 강의는 이 병존을 "혼동"이 아니라, 헤렘이 처음부터 조건부·제한적이었다는 증거로 읽는다. 실제 실행은 부분적이었고, 본문은 그 부분성을 감추지 않는다.</p>
+<p>이 결은 성경의 심판 서사가 진멸을 향해 단선적으로 달려가지 않음을 보여준다. 요나서에서 하나님이 니느웨의 회개를 받으시고 심판을 거두신 것이 같은 하나님의 다른 얼굴이다. 진멸을 명하신 하나님과 니느웨를 아끼신 하나님이 다르지 않다면, 헤렘은 하나님의 본심이 아니라 죄악이 극에 달했을 때의 최후 수단으로 읽어야 한다. 여호수아서 강의의 결론대로 "원래 의도는 헤렘이 아니다."</p>
+<h2>5. 신앙과 정직한 질문 — 답을 강요하지 않는 마무리</h2>
+<p>그러나 이 모든 맥락과 논거를 다 받아들여도 물음은 남는다. 왜 하필 진멸이라는 방법이었는가. 과장법으로 읽어도 실제로 죽은 사람들의 폭력은 어떻게 다룰 것인가. <span class="wl-dead" title="위키 내부 링크">전성민</span>은 이 물음을 해소하지 않고 신뢰의 영역으로 남겨 두며, 이 볼트도 그 열린 상태를 존중한다. 정직한 신앙은 모든 것을 설명해 내는 데 있지 않고, 설명되지 않는 것 앞에서도 하나님의 선하심을 신뢰하되 질문을 지우지 않는 데 있다.</p>
+<p>이것은 <a class="wl" href="../../t/%EB%B3%80%EC%8B%A0%EB%A1%A0/">변신론</a>이 도달한 결론과 만난다 — 성경 자신은 악에 대한 이론적 변호를 거의 하지 않으며, 욥기에서 하나님은 설명 대신 임재를 주신다. 가나안 정복 앞에서도 마찬가지다. 이 페이지가 늘어놓은 스펙트럼은 강의실의 언어이고, 무고한 죽음 앞의 탄식은 병상의 언어다. <a class="wl" href="../../t/%EA%B5%AC%EC%95%BD%EC%9C%A4%EB%A6%AC/">구약윤리</a>가 가르치듯 세계관의 건강함은 명제의 완벽함이 아니라 그것이 낳는 사랑과 겸손으로 판별된다면, 가나안 정복을 다루는 성숙함도 답의 완결이 아니라 질문을 정직하게 견디는 태도에 있다. 답을 강요하지 않는 것 — 그것이 이 난제 앞에서 신앙이 취할 수 있는 가장 정직한 자리다.</p>
 <h2>핵심 인사이트</h2>
 <ul>
-<li>여리고·아이성·하솔의 문자적 실행 기사와 수15장·16장의 미완의 정복 기사가 같은 책 안에 병존한다는 사실 자체가, 헤렘을 무조건적 명령 하나로 단순화할 수 없게 만든다.</li>
-<li>라합·기브온이라는 두 개의 "예외 사례"는 헤렘이 애초에 항복·신앙고백 앞에서 열려 있는 체계였음을 보여준다.</li>
-<li>헤렘의 시점은 "이스라엘이 강해서"가 아니라 "가나안 족속의 죄악이 관영해서"라는 신학적 축(창15:16)에 매인다.</li>
+<li>가나안 정복은 회피할 수 없는 구약 윤리의 난제다. "믿음으로 퉁치는" 봉쇄도, "잔혹한 신"이라는 폐기도 본문을 진지하게 읽지 않기는 마찬가지다.</li>
+<li>해석 옵션은 스펙트럼이다 ⚖️ — 문자적 심판·과장법·공평성·점진적 계시. 각 입장은 무언가를 지키고 무언가를 대가로 치르며, 어느 하나도 물음을 완전히 해소하지 못한다.</li>
+<li>정복은 자의적 폭력이 아니라 언약 심판의 맥락에 있다 — 창15:16의 400년 유예, 라합·기브온의 예외. 헤렘은 항복 앞에서 열려 있었다.</li>
+<li>여호수아서 자신이 "완전 정복"을 주장하지 않는다. 진멸 기사와 미완의 정복이 한 책에 병존하며, "원래 의도는 헤렘이 아니다."</li>
+<li>성숙함은 답의 완결이 아니라 질문을 정직하게 견디는 데 있다 — 성경도 욥기에서 설명 대신 임재를 준다. 답을 강요하지 않는 마무리.</li>
 </ul>
 <h2>미해결 질문</h2>
 <ul>
-<li>헤렘이 조건부·제한적이었다는 랍비 전통의 해석과, 문자적으로 실행된 기사(수6·수8·수11) 사이의 긴장을 어떻게 풀어야 하는가 — 이것이 본문 저작 당시의 의도인지, 후대의 윤리적 재해석인지는 별도로 다뤄볼 여지가 있다.</li>
-<li>존 파이퍼(주권적 심판론)와 윌리엄 레인 크레이그(하나님은 원하지 않으셨다)의 입장 차이가 실제로 얼마나 다른 결론에 이르는지는 강의에서 명확히 정리되지 않았다.</li>
+<li>문자적으로 실행된 진멸 기사(수6·8·11)와 과장법·조건부 해석 사이의 긴장은 본문 저작 당시의 의도인가, 후대의 윤리적 재해석인가.</li>
+<li>존 파이퍼(주권적 심판)와 윌리엄 레인 크레이그(하나님은 원하지 않으셨다)의 입장 차이는 실제로 얼마나 다른 결론에 이르는가.</li>
+<li>과장법으로 읽어도 남는 실제 폭력 — "왜 하필 그 방법이었나"는 어디까지 신뢰의 영역이고 어디서부터 해석의 과제인가.</li>
 </ul>
 <h2>교차 참조</h2>
 <ul>
-<li><a class="wl" href="../../t/%ED%97%A4%EB%A0%98/">헤렘</a> — 진멸 명령 자체의 신학적 이중성을 다루는 상위 주제</li>
-<li><span class="wl-dead" title="위키 내부 링크">06주_여호수아와사사기</span> — 이 노트의 근거가 된 강의</li>
+<li><a class="wl" href="../../t/%ED%97%A4%EB%A0%98/">헤렘</a> — 진멸 명령 자체의 이중성(고대 근동 관용어·문자적 실행), 조건부성, 사울·에스더의 왕정신학(총론, 위임).</li>
+<li><a class="wl" href="../../t/%EB%B3%80%EC%8B%A0%EB%A1%A0/">변신론</a> — 악과 하나님의 선하심이라는 신정론 일반. 강의실의 언어와 병상의 언어(위임).</li>
+<li><a class="wl" href="../../t/%EA%B5%AC%EC%95%BD%EC%9C%A4%EB%A6%AC/">구약윤리</a> — 전성민의 공평성·과장법 논거, 신적 수용, "모른다"의 정직성과 사랑·겸손의 기준.</li>
 </ul>
 <h2>출처 자료</h2>
 <table>
@@ -157,12 +202,27 @@ footer a{font-weight:700}
 <tr>
 <td><span class="wl-dead" title="위키 내부 링크">06주_여호수아와사사기</span></td>
 <td>강의</td>
-<td>헤렘의 실행·예외·신학적 시점, 현대·전통 해석 세 갈래</td>
+<td>헤렘의 실행·예외·신학적 시점, "원래 의도는 헤렘이 아니다"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">전성민_구약의대학살</span></td>
+<td>강의(전성민)</td>
+<td>공평성 논거·과장법 논거, "믿음으로 퉁치기엔 아쉽다"의 정직성</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">존파이퍼</span> · <span class="wl-dead" title="위키 내부 링크">윌리엄레인크레이그</span></td>
+<td>인물</td>
+<td>주권적 심판론 vs "하나님은 원하지 않으셨다"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">크리스토퍼라이트</span></td>
+<td>인물</td>
+<td>『성경의 핵심난제에 답하다』 — 정복 난제의 참고문헌</td>
 </tr>
 </tbody>
 </table>
 </article>
-<div class="tagrow"><span>#domain/신학</span><span>#discipline/구약학</span><span>#topic/헤렘</span><span>#topic/여호수아</span><span>#topic/사사기</span></div>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/구약학</span><span>#헤렘</span><span>#여호수아</span><span>#구약윤리난제</span></div>
 <footer>
   <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
   <a href="../../">주제·북노트 탐색 →</a>

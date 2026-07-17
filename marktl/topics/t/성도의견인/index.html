@@ -5,50 +5,50 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
 :root{
-  --bg:#f5ead8; --surface:#faf3e6; --surface2:#ebddc5;
-  --ink:#201e1d; --muted:#5c574f; --meta:#8a8478;
-  --line:color-mix(in srgb,#201e1d 16%,transparent);
-  --line-soft:color-mix(in srgb,#201e1d 9%,transparent);
-  --accent:#c67139; --accent-deep:#8f4e22; --accent-tint:#f3ddc9; --accent-ink:#faf3e6;
-  --sage:#7a8a5e; --sage-deep:#4d5a38; --sage-tint:#e4e8d9;
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
   --font-display:"Caprasimo",system-ui,sans-serif;
   --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
   --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
   --r-sm:8px; --r-md:16px; --r-lg:28px;
-  --shadow:0 1px 2px color-mix(in srgb,#2e2b25 14%,transparent);
-  --shadow-md:0 3px 10px color-mix(in srgb,#2e2b25 16%,transparent);
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
 }
 @media (prefers-color-scheme:dark){:root{
-  --bg:#262320; --surface:#2d2a26; --surface2:#33302b;
-  --ink:#f5ead8; --muted:color-mix(in srgb,#f5ead8 75%,transparent);
-  --meta:color-mix(in srgb,#f5ead8 48%,transparent);
-  --line:color-mix(in srgb,#f5ead8 14%,transparent);
-  --line-soft:color-mix(in srgb,#f5ead8 8%,transparent);
-  --accent:#e0a375; --accent-deep:#e0a375;
-  --accent-tint:color-mix(in srgb,#c67139 24%,transparent); --accent-ink:#262320;
-  --sage-deep:#b8c49c; --sage-tint:color-mix(in srgb,#7a8a5e 20%,transparent);
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
   --shadow:none; --shadow-md:none;
 }}
 :root[data-theme="dark"]{
-  --bg:#262320; --surface:#2d2a26; --surface2:#33302b;
-  --ink:#f5ead8; --muted:color-mix(in srgb,#f5ead8 75%,transparent);
-  --meta:color-mix(in srgb,#f5ead8 48%,transparent);
-  --line:color-mix(in srgb,#f5ead8 14%,transparent);
-  --line-soft:color-mix(in srgb,#f5ead8 8%,transparent);
-  --accent:#e0a375; --accent-deep:#e0a375;
-  --accent-tint:color-mix(in srgb,#c67139 24%,transparent); --accent-ink:#262320;
-  --sage-deep:#b8c49c; --sage-tint:color-mix(in srgb,#7a8a5e 20%,transparent);
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
   --shadow:none; --shadow-md:none;
 }
 :root[data-theme="light"]{
-  --bg:#f5ead8; --surface:#faf3e6; --surface2:#ebddc5;
-  --ink:#201e1d; --muted:#5c574f; --meta:#8a8478;
-  --line:color-mix(in srgb,#201e1d 16%,transparent);
-  --line-soft:color-mix(in srgb,#201e1d 9%,transparent);
-  --accent:#c67139; --accent-deep:#8f4e22; --accent-tint:#f3ddc9; --accent-ink:#faf3e6;
-  --sage-deep:#4d5a38; --sage-tint:#e4e8d9;
-  --shadow:0 1px 2px color-mix(in srgb,#2e2b25 14%,transparent);
-  --shadow-md:0 3px 10px color-mix(in srgb,#2e2b25 16%,transparent);
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
@@ -59,7 +59,7 @@ a:hover{color:var(--accent)}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
 .chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
-.chip.cat-t{color:var(--sage-deep);background:var(--sage-tint)}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
 .chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
 
 main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
@@ -81,9 +81,9 @@ article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px
 article.note p{margin:0 0 16px;text-wrap:pretty}
 article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
 article.note li{margin:4px 0}
-article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--sage);
-  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--sage-tint);
-  font-size:14.5px;line-height:1.85;color:var(--sage-deep)}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
 article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
 article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
   font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
@@ -96,7 +96,7 @@ article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
 article.note img{max-width:100%;border-radius:var(--r-sm)}
 a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
 a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
-span.wl-dead{color:var(--sage-deep);border-bottom:1.5px dotted var(--sage);padding-bottom:1px;cursor:default}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
 .footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
   font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
 .footnote hr{display:none}
@@ -111,38 +111,82 @@ footer a{font-weight:700}
     <a href="../../">← 주제·북노트 탐색</a>
     <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
   </div>
-  <div class="meta-row"><span class="chip cat-t">조직신학·교리</span><span class="date">2026-07-03</span></div>
+  <div class="meta-row"><span class="chip cat-t">조직신학·교리</span><span class="date">2026-07-18</span></div>
   <h1 class="note-title">성도의 견인</h1>
   
 </header>
 <article class="note">
 <h2>정의</h2>
-<p>성도의 견인은 하나님께 중생하고 유효하게 부르심을 받은 자가 때로 죄에 빠질지언정 그 신분에서 완전히 타락하여 구원을 상실하는 일은 없다는 교리다. <span class="wl-dead" title="위키 내부 링크">04주토론_성도의견인</span>에서 이상협은 이를 "신자를 나태하게 만드는 안일한 확신이 아니라 오히려 지속적인 경계와 열심을 자극하는 실천적 원리"로 규정한다.</p>
-<h2>1. 믿음을 통한 보호</h2>
-<p>성경에는 견인을 뒷받침하는 두 종류의 말씀이 함께 있다 — 참으로 중생한 자들이 끝까지 견인해서 영생을 얻는다는 말씀과, 평생 계속 믿어야 한다는 말씀이다. 이 둘은 모순이 아니라 하나로 묶인다. 하나님은 신자를 보호하시되 믿음을 떠나서 보호하시는 것이 아니라 <strong>믿음을 통해서</strong> 보호하신다. 그리스도를 계속 믿는 자들이 하나님께서 그들 속에서 일하시고 보호하신다는 확신을 얻는 구조다.</p>
-<h2>2. 히브리서 3:14의 해석</h2>
-<p><span class="wl-dead" title="위키 내부 링크">히3</span>:14은 확신한 것을 끝까지 견고하게 잡으면 그리스도와 함께 영생에 동참한다고 말한다. 여기서 주의할 지점이 있다 — 끝까지 견디는 것을 "보아야" 확신을 얻을 수 있다고 말해서는 안 되며, 죽을 때까지 가봐야 영생을 확신할 수 있는 것도 아니다. 히브리서 저자는 믿음에서 떠나서는 안 된다는 것을 경고한 것이지, 지금 믿는 자에게 미래의 배교 가능성을 걱정하게 만들려는 의도가 아니다. 끝까지 믿는 것이 참된 믿음의 증거라는 이 말씀은, 그리스도로부터 멀어지려는 자들이나 이미 멀어진 자들에게 근심과 두려움을 갖게 하려는 경고로 기능한다.</p>
-<h2>3. 알미니안과 칼빈주의의 해석 차이</h2>
-<p>참된 그리스도인들이 떨어져 나갈 가능성을 말한 것이 아니라, 그들이 떨어져 나간다면 그들은 본래 참된 그리스도인들이 아니었다는 것이 견인 교리의 핵심 논리다. 이 지점에서 알미니안과 <a class="wl" href="../../t/%EC%B9%BC%EB%B9%88%EC%A3%BC%EC%9D%98/">칼빈주의</a>의 해석이 갈린다. 알미니안이 볼 때 기독교를 떠난 사람은 한때 그리스도인이었으나 이제는 그리스도인이 아닌 자이지만, 칼빈주의자가 볼 때 그는 결코 참된 그리스도인이었던 적이 없다. 두 관점 모두 이런 자에게 경고하며 구원을 받으라고 권면해야 한다는 실천적 결론은 같다.</p>
-<h2>4. 방종이라는 반론에 대한 응답</h2>
-<p>견인 교리가 태만·방종·부도덕을 초래할 것이라는 반론은 그릇된 주장이다. 성경은 신자가 하나님의 은혜에 의해 보호받는다고 말하지만, 이 교리가 지속적인 경계와 열심, 기도 없이 지내도록 방임한다는 사상을 전개하지는 않는다. 신자에게 <a class="wl" href="../../t/%EA%B1%B0%EB%A3%A9/">거룩</a>함으로 견인을 확신시키는 교리가 죄의 동기가 될 수는 없다. 오히려 성화를 위한 능동적인 노력이 성공하리라는 확신은 그 노력을 경주하는 데 최고의 자극이 된다. 호비(Hovey)는 이 교리를 "큰 위로와 능력의 근원, 즉 감사에 대한 자극, 자기 헌신의 동기, 위험시에는 불기둥이 될 수 있다"고 표현했다.</p>
+<p>성도의 견인(perseverance of the saints)은 하나님께 중생하고 유효하게 부르심을 받은 자가 때로 죄에 빠질지언정 그 신분에서 완전히 타락하여 구원을 상실하는 일은 없다는 교리다. 조직신학II 토론에서 이상협은 이를 "신자를 나태하게 만드는 안일한 확신이 아니라 오히려 지속적인 경계와 열심을 자극하는 실천적 원리"로 규정한다.</p>
+<p>이 교리의 이름은 하나의 이중성을 품고 있다 — 견인(堅忍)은 하나님이 성도를 붙드시는 보전(preservation)이면서 동시에 성도가 끝까지 견디는 인내(perseverance)다. 하나님이 견인하시기에 성도가 인내하고, 성도의 인내가 하나님의 견인을 증거한다. 이 교리는 <a class="wl" href="../../t/%EC%B9%BC%EB%B9%88%EC%A3%BC%EC%9D%98/">칼빈주의</a> TULIP의 마지막 항(P)이며, 구원의 서정 전체와 구원 서정 각 정거장(칭의·성화)의 상세는 <a class="wl" href="../../t/%EA%B5%AC%EC%9B%90%EB%A1%A0/">구원론</a>과 <a class="wl" href="../../t/%EC%B9%AD%EC%9D%98%EB%A1%A0/">칭의론</a>에 위임한다. 이 글이 붙드는 것은 견인 교리 자체 — 그 성경적 근거, 반론 본문에 대한 응답, 오해의 교정, 그리고 목회적 함의다.</p>
+<h2>1. 견인하시는 하나님, 인내하는 성도 — 믿음을 통한 보호</h2>
+<p>성경에는 견인을 뒷받침하는 두 종류의 말씀이 함께 있다 — 참으로 중생한 자들이 끝까지 견인하여 영생을 얻는다는 말씀과, 평생 계속 믿어야 한다는 말씀이다. 이 둘은 모순이 아니라 하나로 묶인다. 하나님은 신자를 보호하시되 믿음을 떠나서 보호하시는 것이 아니라 <strong>믿음을 통해서</strong> 보호하신다. 그리스도를 계속 믿는 자들이, 하나님께서 그들 속에서 일하시고 보호하신다는 확신을 얻는 구조다.</p>
+<p>이 구조가 견인 교리를 운명론이나 자동 구원과 구별한다. 견인은 "한 번 구원받았으니 무엇을 하든 상관없다"는 정적인 보증이 아니라, 믿음이라는 살아 있는 관계를 통해 작동하는 역동적 보호다. <a class="wl" href="../../t/%EC%B9%BC%EB%B9%88%EC%A3%BC%EC%9D%98/">칼빈주의</a>가 정리하듯 이 교리는 하나님의 주권적 은혜의 확실성을 지키려는 것이며, 구원이 조금이라도 인간의 결단에 걸려 있다면 그 구원은 흔들리는 토대 위에 서게 된다는 확신에서 나온다.</p>
+<h2>2. 성경적 근거 — 아무도 빼앗을 수 없다</h2>
+<p>견인의 성경적 뿌리는 하나님의 손이 붙든 자를 아무도 빼앗을 수 없다는 선언에 있다. 예수님은 요한복음에서 못 박으신다 — "내가 그들에게 영생을 주노니 영원히 멸망하지 아니할 것이요 또 그들을 내 손에서 빼앗을 자가 없느니라 … 아무도 아버지 손에서 빼앗을 수 없느니라"(요 10:28-29). 구원의 확실성이 신자의 붙듦이 아니라 아버지의 붙드심에 근거한다는 것이다.</p>
+<p>바울은 같은 확신을 우주적 규모로 노래한다.</p>
+<blockquote>
+<p>"사망이나 생명이나 … 다른 어떤 피조물이라도 우리를 우리 주 그리스도 예수 안에 있는 하나님의 사랑에서 끊을 수 없으리라." (롬 8:38-39)</p>
+</blockquote>
+<p>그리고 시작하신 이가 완성하신다는 약속이 이를 떠받친다 — "너희 안에서 착한 일을 시작하신 이가 그리스도 예수의 날까지 이루실 줄을 우리는 확신하노라"(빌 1:6). 견인의 주어는 언제나 하나님이다. 구원을 시작하신 분이 끝까지 책임지신다는 이 약속이 견인 교리의 심장이다.</p>
+<h2>3. 반론 본문과 응답 ⚖️ — 배교 경고를 어떻게 읽는가</h2>
+<p>그러나 성경에는 정반대로 들리는 본문들이 있다. 히브리서의 두 경고가 대표적이다 — "한 번 빛을 받고 … 타락한 자들은 다시 새롭게 하여 회개하게 할 수 없나니"(히 6:4-6), "우리가 진리를 아는 지식을 받은 후 짐짓 죄를 범한즉 다시 속죄하는 제사가 없고"(히 10:26). 참으로 믿던 자도 떨어져 나갈 수 있다는 읽기가 여기서 나온다.</p>
+<p>공정하게 말하면, 아르미니우스 전통은 이 본문들을 액면 그대로 받아 신자도 구원을 잃을 수 있다고 본다. 이 읽기는 배교 경고의 무게를 진지하게 존중한다는 강점이 있다. 견인 교리는 이 경고를 회피하지 않되 다르게 읽는다. 핵심 논리는 이것이다 — 참된 그리스도인이 떨어져 나갈 가능성을 말한 것이 아니라, 그들이 떨어져 나간다면 본래 참된 그리스도인이 아니었다는 것이다(요일 2:19, "그들이 우리에게서 나갔으나 우리에게 속하지 아니하였나니").</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>아르미니우스 전통</th>
+<th>견인 교리(칼빈주의)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>배교자란</td>
+<td>한때 참신자였으나 이제 아니다</td>
+<td>본래 참신자였던 적이 없다</td>
+</tr>
+<tr>
+<td>경고 본문의 기능</td>
+<td>구원 상실의 실제 가능성</td>
+<td>배교를 막는 수단적 경고</td>
+</tr>
+<tr>
+<td>실천적 결론</td>
+<td>돌아와 구원받으라 권면</td>
+<td>돌아와 구원받으라 권면</td>
+</tr>
+</tbody>
+</table>
+<p>주목할 것은 경고의 수단적 기능이다. 히브리서의 경고는 지금 믿는 자에게 미래의 배교를 걱정시키려는 것이 아니라, 그리스도로부터 멀어지려는 자들을 향해 두려움을 일으켜 실제로 떨어져 나가지 않도록 붙드는 하나님의 방편이다. 경고 자체가 견인의 도구인 셈이다. 그리고 두 전통 모두 이런 자에게 경고하며 구원을 받으라 권면해야 한다는 실천적 결론은 동일하다.</p>
+<h2>4. 오해 교정 — "한 번 구원, 영원한 방종"이 아니다</h2>
+<p>견인 교리에 대한 가장 흔한 오해는 그것을 "한 번 구원받으면 어떻게 살든 천국"이라는 방종의 면허로 읽는 것이다. 견인 교리는 이 오해를 정면으로 거부한다. 성경은 신자가 하나님의 은혜로 보호받는다고 말하지만, 이 교리가 지속적인 경계와 열심과 기도 없이 지내도 된다는 사상을 전개하지는 않는다.</p>
+<p>오해의 뿌리는 견인의 증거를 놓치는 데 있다. 끝까지 견디는 것은 구원의 조건이 아니라 참된 믿음의 증거다. 여기서 두 방향의 오독을 모두 경계해야 한다. 한쪽은 방종이다 — 견인을 방종의 면허로 뒤집는 것. 다른 쪽은 그 반대의 자기 검열이다 — "끝까지 견뎌 봐야 구원을 확신할 수 있다"며 견인을 시험으로 만드는 것. <a class="wl" href="../../t/%EC%B9%BC%EB%B9%88%EC%A3%BC%EC%9D%98/">칼빈주의</a>가 짚듯 위로로 주어진 교리가 도리어 불안의 근원이 되는 이 역설을 피해야 한다. 견인의 바른 이해는 그 사이에 있다 — 견인의 확신이 방종이 아니라 성화를 향한 자극이 되는 것이다. 오히려 성화를 위한 능동적 노력이 성공하리라는 확신이야말로 그 노력을 경주하는 데 최고의 자극이 된다. 호비(Hovey)의 표현대로 이 교리는 "큰 위로와 능력의 근원, 즉 감사에 대한 자극, 자기 헌신의 동기, 위험시에는 불기둥"이 된다(<a class="wl" href="../../t/%EA%B1%B0%EB%A3%A9/">거룩</a>을 향한 능동적 성화의 상세는 해당 페이지에 위임).</p>
+<h2>5. 목회적 함의 — 확신을 잃은 이에게</h2>
+<p>견인 교리의 참된 시험장은 논쟁이 아니라 목회 현장이다. 자기 죄와 연약함 앞에서 "나는 정말 구원받았는가"를 의심하며 확신을 잃은 신자에게, 이 교리는 무엇을 말하는가.</p>
+<p>먼저 확신의 근거를 바로 세워 준다. 구원의 확신은 자기 믿음의 완벽함에 근거하지 않는다. 확신의 토대는 나를 붙드시는 하나님의 손이지, 하나님을 붙드는 나의 손의 힘이 아니다. 넘어짐이 곧 떨어져 나감은 아니며, 다윗도 베드로도 깊이 넘어졌으나 은혜가 그들을 다시 일으켰다. 그러므로 견인 교리가 확신을 잃은 이에게 건네는 것은 "네 믿음을 더 굳게 붙들라"는 부담이 아니라 "너를 붙드시는 분이 끝까지 이루신다"(빌 1:6)는 위로다.</p>
+<p>동시에 이 교리는 확신을 방향의 문제로 재규정한다. 구원의 확신은 무결함의 증명이 아니라 삶의 방향의 문제다. 죄에 넘어졌으되 그리스도를 향해 돌이키는 방향이 유지된다면, 그 돌이킴 자체가 견인의 증거다. 반대로 자기 죄를 근심하며 하나님께 가까이 나아가려는 그 마음이야말로 성령께서 붙들고 계신다는 표지다. 확신이 흔들리는 자리에서 이 교리는 다그치지 않고 붙든다 — 완벽이 아니라 방향을, 나의 힘이 아니라 하나님의 신실하심을 가리키며.</p>
 <h2>핵심 인사이트</h2>
 <ul>
-<li>견인은 믿음을 떠난 보호가 아니라 <strong>믿음을 통한 보호</strong>다.</li>
-<li>끝까지 견디는 모습은 확신의 조건이 아니라 참된 믿음의 <strong>증거</strong>다.</li>
-<li>알미니안과 칼빈주의는 배교자를 다르게 정의하지만("한때 그리스도인" vs "결코 참된 그리스도인이었던 적 없음"), 경고와 권면의 실천은 동일하다.</li>
-<li>견인의 확신은 방종이 아니라 성화를 향한 자극과 위로의 근원이다.</li>
+<li>견인은 이중적이다 — 하나님의 보전(preservation)이자 성도의 인내(perseverance). 하나님이 견인하시기에 성도가 인내하고, 성도의 인내가 견인을 증거한다.</li>
+<li>견인은 믿음을 떠난 보호가 아니라 <strong>믿음을 통한 보호</strong>다. 확신의 근거는 나의 붙듦이 아니라 아버지의 붙드심이다(요 10:28-29; 롬 8:38-39; 빌 1:6).</li>
+<li>배교 경고 본문(히 6:4-6; 히 10:26)에 대해 아르미니우스 전통과 견인 교리는 배교자를 다르게 정의하지만 ⚖️, "돌아와 구원받으라"는 권면은 동일하다. 경고는 배교를 막는 수단적 기능을 한다.</li>
+<li>견인은 "한 번 구원, 영원한 방종"이 아니다. 끝까지 견딤은 구원의 조건이 아니라 참 믿음의 증거이며, 견인의 확신은 방종이 아니라 성화의 최고 자극이 된다.</li>
+<li>목회적으로 견인은 확신을 잃은 이에게 위로다 — 확신은 무결함의 증명이 아니라 삶의 방향의 문제이며, 그리스도를 향한 돌이킴 자체가 견인의 증거다.</li>
 </ul>
 <h2>미해결 질문</h2>
 <ul>
-<li>견인 교리와 <a class="wl" href="../../t/%EC%9C%A0%ED%9A%A8%EC%A0%81%EC%86%8C%EB%AA%85/">유효적소명</a>·중생의 논리적 순서가 실천적으로 어떻게 맞물리는지 — <span class="wl-dead" title="위키 내부 링크">02주토론_복음적소명과유효적소명</span>과의 연결이 더 다뤄질 수 있다.</li>
-<li>배교의 현상학(교회를 떠난 자를 어떻게 목양적으로 대할 것인가)에 대한 구체적 지침은 아직 볼트에 없다.</li>
+<li>견인 교리와 <a class="wl" href="../../t/%EC%9C%A0%ED%9A%A8%EC%A0%81%EC%86%8C%EB%AA%85/">유효적소명</a>·중생의 논리적 순서가 목회 현장에서 실천적으로 어떻게 맞물리는가.</li>
+<li>배교의 현상학 — 교회를 떠난 자를 목양적으로 어떻게 대할 것인가에 대한 구체적 지침.</li>
+<li>견인의 확신과 성화의 요청을 함께 설교할 때, 방종과 자기 검열이라는 두 오독을 어떻게 동시에 막는가.</li>
 </ul>
 <h2>교차 참조</h2>
 <ul>
-<li><a class="wl" href="../../t/%EA%B5%AC%EC%9B%90%EB%A1%A0/">구원론</a> — 견인이 속한 구원론 체계 전체.</li>
-<li><a class="wl" href="../../t/%EC%B9%BC%EB%B9%88%EC%A3%BC%EC%9D%98/">칼빈주의</a> — 견인 교리의 해석 틀 중 하나.</li>
-<li><a class="wl" href="../../t/%EC%9C%A0%ED%9A%A8%EC%A0%81%EC%86%8C%EB%AA%85/">유효적소명</a> — 견인의 전제가 되는 부르심 교리.</li>
+<li><a class="wl" href="../../t/%EC%B9%BC%EB%B9%88%EC%A3%BC%EC%9D%98/">칼빈주의</a> — 견인이 속한 TULIP의 P, 아르미니우스와의 해석 차이, 확신의 자기 검열이라는 그늘(총론).</li>
+<li><a class="wl" href="../../t/%EA%B5%AC%EC%9B%90%EB%A1%A0/">구원론</a> — 견인이 놓이는 구원의 서정(소명→중생→회심→칭의→성화→견인→영화) 전체(위임).</li>
+<li><a class="wl" href="../../t/%EC%B9%AD%EC%9D%98%EB%A1%A0/">칭의론</a> — 칭의의 비상실성과 견인의 관계. 법정적 무정죄는 성화의 죄로 취소되지 않는다(위임).</li>
+<li><a class="wl" href="../../t/%EC%9C%A0%ED%9A%A8%EC%A0%81%EC%86%8C%EB%AA%85/">유효적소명</a> — 견인의 전제가 되는 효력 있는 부르심.</li>
+<li><a class="wl" href="../../t/%EA%B1%B0%EB%A3%A9/">거룩</a> — 견인의 확신이 자극하는 능동적 성화.</li>
 </ul>
 <h2>출처 자료</h2>
 <table>
@@ -157,17 +201,22 @@ footer a{font-weight:700}
 <tr>
 <td><span class="wl-dead" title="위키 내부 링크">04주토론_성도의견인</span></td>
 <td>토론(교리 정리)</td>
-<td>견인 교리의 정의·성경적 근거·알미니안 대비·반론 응답 전체 논지</td>
+<td>견인의 정의·성경적 근거·알미니안 대비·방종 반론 응답, 호비 인용</td>
 </tr>
 <tr>
 <td><span class="wl-dead" title="위키 내부 링크">02주토론_복음적소명과유효적소명</span></td>
 <td>토론(교리 정리)</td>
 <td>견인의 전제인 유효적 소명 교리와의 연결</td>
 </tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">칼빈</span> · <span class="wl-dead" title="위키 내부 링크">아르미니우스</span></td>
+<td>인물</td>
+<td>견인 교리의 두 해석 전통의 원류</td>
+</tr>
 </tbody>
 </table>
 </article>
-<div class="tagrow"><span>#domain/신학</span><span>#discipline/조직신학</span><span>#topic/구원론</span><span>#topic/칼빈주의</span></div>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/조직신학</span><span>#TULIP</span><span>#견인</span><span>#배교</span><span>#구원의확신</span></div>
 <footer>
   <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
   <a href="../../">주제·북노트 탐색 →</a>

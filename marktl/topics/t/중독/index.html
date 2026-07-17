@@ -5,50 +5,50 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
 :root{
-  --bg:#f5ead8; --surface:#faf3e6; --surface2:#ebddc5;
-  --ink:#201e1d; --muted:#5c574f; --meta:#8a8478;
-  --line:color-mix(in srgb,#201e1d 16%,transparent);
-  --line-soft:color-mix(in srgb,#201e1d 9%,transparent);
-  --accent:#c67139; --accent-deep:#8f4e22; --accent-tint:#f3ddc9; --accent-ink:#faf3e6;
-  --sage:#7a8a5e; --sage-deep:#4d5a38; --sage-tint:#e4e8d9;
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
   --font-display:"Caprasimo",system-ui,sans-serif;
   --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
   --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
   --r-sm:8px; --r-md:16px; --r-lg:28px;
-  --shadow:0 1px 2px color-mix(in srgb,#2e2b25 14%,transparent);
-  --shadow-md:0 3px 10px color-mix(in srgb,#2e2b25 16%,transparent);
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
 }
 @media (prefers-color-scheme:dark){:root{
-  --bg:#262320; --surface:#2d2a26; --surface2:#33302b;
-  --ink:#f5ead8; --muted:color-mix(in srgb,#f5ead8 75%,transparent);
-  --meta:color-mix(in srgb,#f5ead8 48%,transparent);
-  --line:color-mix(in srgb,#f5ead8 14%,transparent);
-  --line-soft:color-mix(in srgb,#f5ead8 8%,transparent);
-  --accent:#e0a375; --accent-deep:#e0a375;
-  --accent-tint:color-mix(in srgb,#c67139 24%,transparent); --accent-ink:#262320;
-  --sage-deep:#b8c49c; --sage-tint:color-mix(in srgb,#7a8a5e 20%,transparent);
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
   --shadow:none; --shadow-md:none;
 }}
 :root[data-theme="dark"]{
-  --bg:#262320; --surface:#2d2a26; --surface2:#33302b;
-  --ink:#f5ead8; --muted:color-mix(in srgb,#f5ead8 75%,transparent);
-  --meta:color-mix(in srgb,#f5ead8 48%,transparent);
-  --line:color-mix(in srgb,#f5ead8 14%,transparent);
-  --line-soft:color-mix(in srgb,#f5ead8 8%,transparent);
-  --accent:#e0a375; --accent-deep:#e0a375;
-  --accent-tint:color-mix(in srgb,#c67139 24%,transparent); --accent-ink:#262320;
-  --sage-deep:#b8c49c; --sage-tint:color-mix(in srgb,#7a8a5e 20%,transparent);
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
   --shadow:none; --shadow-md:none;
 }
 :root[data-theme="light"]{
-  --bg:#f5ead8; --surface:#faf3e6; --surface2:#ebddc5;
-  --ink:#201e1d; --muted:#5c574f; --meta:#8a8478;
-  --line:color-mix(in srgb,#201e1d 16%,transparent);
-  --line-soft:color-mix(in srgb,#201e1d 9%,transparent);
-  --accent:#c67139; --accent-deep:#8f4e22; --accent-tint:#f3ddc9; --accent-ink:#faf3e6;
-  --sage-deep:#4d5a38; --sage-tint:#e4e8d9;
-  --shadow:0 1px 2px color-mix(in srgb,#2e2b25 14%,transparent);
-  --shadow-md:0 3px 10px color-mix(in srgb,#2e2b25 16%,transparent);
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
@@ -59,7 +59,7 @@ a:hover{color:var(--accent)}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
 .chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
-.chip.cat-t{color:var(--sage-deep);background:var(--sage-tint)}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
 .chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
 
 main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
@@ -81,9 +81,9 @@ article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px
 article.note p{margin:0 0 16px;text-wrap:pretty}
 article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
 article.note li{margin:4px 0}
-article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--sage);
-  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--sage-tint);
-  font-size:14.5px;line-height:1.85;color:var(--sage-deep)}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
 article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
 article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
   font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
@@ -96,7 +96,7 @@ article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
 article.note img{max-width:100%;border-radius:var(--r-sm)}
 a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
 a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
-span.wl-dead{color:var(--sage-deep);border-bottom:1.5px dotted var(--sage);padding-bottom:1px;cursor:default}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
 .footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
   font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
 .footnote hr{display:none}
@@ -111,48 +111,113 @@ footer a{font-weight:700}
     <a href="../../">← 주제·북노트 탐색</a>
     <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
   </div>
-  <div class="meta-row"><span class="chip cat-t">상담·가정</span><span class="date">2026-06-28</span></div>
+  <div class="meta-row"><span class="chip cat-t">상담·가정</span><span class="date">2026-07-18</span></div>
   <h1 class="note-title">중독</h1>
   
 </header>
 <article class="note">
 <h2>정의</h2>
-<p>중독은 강박과 갈망이 동기가 되어 부정적 결과에도 불구하고 특정 행동이나 물질 사용을 지속하는 상태다. 하워드 쉐퍼(Howard Shaffer)의 정의에 따르면 중독은 만성질환(chronic condition)으로, 일회성 의지 결핍이 아니라 뇌 회로의 구조적 변화를 동반하는 장기적 상태다. 김재환은 이 정의를 청소년 게임 중독·행동 중독에 적용하며, 중독을 도덕적 실패가 아니라 치료 가능한 임상 현실로 다룬다.</p>
-<h2>1. 스트레스-보상 함수</h2>
-<p>중독의 핵심 메커니즘은 스트레스-보상 함수다. 스트레스(긴장, 좌절, 불안)가 축적될 때 뇌는 즉각적 보상(게임 승리, 쾌락 자극)을 통해 긴장을 해소하려 한다. 반복될수록 이 회로가 강화되어, 동일한 보상을 얻기 위해 더 강한 자극이 필요해진다(내성). 청소년 게임 중독은 이 회로가 게임 환경에 특화되어 굳어진 상태다.</p>
-<h2>2. 자기결정성이론 — 결핍이 중독을 부른다</h2>
-<p>김재환은 자기결정성이론(Self-Determination Theory, Deci &amp; Ryan)을 중독 예방의 핵심 틀로 사용한다. 인간은 세 가지 기본 심리 욕구를 갖는다: <strong>자율성</strong>(스스로 선택하는 경험), <strong>유능성</strong>(할 수 있다는 효능감), <strong>관계성</strong>(진정한 연결). 이 세 욕구가 현실에서 충족되지 않을 때 가상 환경(게임, 도박, SNS)에서 대리 충족을 찾게 된다. 따라서 중독 예방의 본질은 세 욕구를 현실 안에서 채워주는 것이다.</p>
-<h2>3. 충분히 좋은 부모 — 건강한 Self</h2>
-<p>김재환은 도널드 위니캇(D. W. Winnicott)의 "충분히 좋은 부모(good enough parent)" 개념을 중독 예방과 연결한다. 완벽한 부모가 아니라 충분히 좋은 부모가 아이 안에 충분히 좋은 자기(Self)를 형성한다. 건강한 Self는 중독의 대안이다. 반대로, 재접근기(4-5세, 독립과 의존 사이를 오가는 발달 단계)에 적절한 부모 반응이 없으면 경계선·자기애적 성격 병리가 자리를 잡고, 이것이 중독 취약성의 기반이 된다.</p>
-<h2>4. 감정 조절 — 중독 치료의 핵심</h2>
-<p>중독 행동의 직접적 기능은 감정 조절이다. 견디기 어려운 감정(수치심, 분노, 공허함)을 중독 행동이 일시적으로 마비시키거나 대체한다. 따라서 치료의 핵심은 감정을 다루는 능력(감정 조절)을 키우는 것이며, 중독 행동 자체를 막는 것보다 선행한다.</p>
-<h2>5. 부모 변화가 선행 조건</h2>
-<p>김재환은 청소년 중독 치료에서 부모 변화가 자녀 변화보다 먼저라는 원칙을 강조한다. 자녀의 중독은 종종 가족 체계의 역기능을 반영하며, 부모가 먼저 변하지 않으면 치료 효과가 지속되지 않는다. 고린도전서 13장(사랑의 장)이 치료 관계의 신학적 근거로 제시된다. 가트만(Gottman)의 5:1 비율 — 긍정적 상호작용이 부정적의 5배 이상 — 은 부모-자녀 관계 회복의 실천 기준이다.</p>
-<h2>6. 현대 사회 — 중독의 바다</h2>
-<p>김재환은 현대 사회 자체를 "중독의 바다"로 정의한다. 스마트폰, SNS, 게임, 소비주의 모두 보상 회로를 겨냥해 설계된 환경이다. 개인의 의지력만으로는 이 환경을 거스르기 어렵다. 이것이 공동체적·구조적 예방의 필요성을 뒷받침한다.</p>
+<p>중독은 강박과 갈망이 동기가 되어, 부정적 결과에도 불구하고 특정 행동이나 물질 사용을 지속하는 상태다. 하워드 쉐퍼(Howard Shaffer)의 정의에 따르면 중독은 만성질환(chronic condition)으로, 일회성 의지 결핍이 아니라 뇌 회로의 구조적 변화를 동반하는 장기적 상태다. 김재환은 이 정의를 청소년 게임 중독·행동 중독에 적용하며 중독을 도덕적 실패가 아니라 치료 가능한 임상 현실로 다룬다.</p>
+<p>이 페이지는 중독을 세 언어로 함께 읽는다 — 뇌의 언어(기전), 신학의 언어(죄와 우상), 회복의 언어(공동체와 치료). 세 언어가 필요한 것은 중독이 그중 어느 하나로 환원되지 않기 때문이다. 정신질환 총론과 마음-몸의 생리는 <a class="wl" href="../../t/%EB%A7%88%EC%9D%8C%EC%9D%98%EA%B1%B4%EA%B0%95/">마음의건강</a>이, 상담의 방법론은 <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%83%81%EB%8B%B4/">기독교상담</a>이, 부패한 본성으로서의 죄성 각론은 <a class="wl" href="../../t/%EC%A3%84%EC%84%B1/">죄성</a>이 맡는다. 이 글이 붙드는 것은 중독 그 자체 — 그것이 어떻게 작동하고, 죄와 질병 사이 어디에 놓이며, 왜 우상숭배이고, 어떻게 회복되는가다.</p>
+<h2>1. 중독의 기전 — 보상 회로와 습관 고리</h2>
+<p>중독의 핵심 메커니즘을 김재환은 스트레스-보상 함수로 설명한다. 스트레스(긴장·좌절·불안)가 축적될 때 뇌는 즉각적 보상(게임 승리·쾌락 자극)으로 긴장을 해소하려 하고, 반복될수록 이 회로가 강화되어 동일한 보상을 얻기 위해 더 강한 자극이 필요해진다(내성). 신경학적으로 이것은 도파민 보상 회로의 재편이며, '신호 → 반복 행동 → 보상'이라는 습관 고리(habit loop)가 굳어지는 과정이다. 의사의 눈에 중독은 의지의 문제이기 전에 배선의 문제로 보인다.</p>
+<p>이 기전이 중요한 것은 중독을 다루는 방식을 결정하기 때문이다. 회로가 굳은 사람에게 "의지를 내라"는 훈계는 대개 무력하다. 보상 회로가 납치된 상태에서 절제의 힘 자체가 소진되기 때문이다. 그래서 중독 치료는 도덕적 각성이 아니라 회로의 재형성, 곧 갈망의 재배치에서 시작된다. 다만 배선의 언어가 인간을 단순한 기계로 환원하는 순간, 책임이라는 또 다른 진실이 사라진다. 여기서 두 번째 언어가 필요하다.</p>
+<h2>2. 죄와 질병 사이 ⚖️</h2>
+<p>중독은 죄인가 질병인가. 이 물음이 중독 이해의 가장 예민한 갈림길이다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>도덕 모델</th>
+<th>질병 모델</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>중독을 보는 눈</td>
+<td>의지의 실패, 죄</td>
+<td>뇌의 만성질환</td>
+</tr>
+<tr>
+<td>강조하는 진실</td>
+<td>책임</td>
+<td>연약함·치료 필요</td>
+</tr>
+<tr>
+<td>단독으로 갈 때의 위험</td>
+<td>수치심 강화 → 중독 악화</td>
+<td>책임 소거 → 무력한 방임</td>
+</tr>
+</tbody>
+</table>
+<p>두 모델은 각각 절반의 진실을 쥐고 있다. 도덕 모델만 밀면 중독자를 정죄해 수치심을 키우고, 수치심은 다시 중독을 강화한다. 질병 모델만 밀면 "뇌 탓이니 어쩔 수 없다"는 결정론으로 흘러 회복의 책임 주체를 지워 버린다. <a class="wl" href="../../t/%EC%A3%84%EC%84%B1/">죄성</a>이 이 스펙트럼을 정확히 짚는다 — 발달의 미완성이든 병리적 중독이든, "할 수 없다"는 사실이 곧 "면죄부"가 되지는 않으며, 동시에 그 연약함은 정죄가 아니라 긍휼로 살펴야 한다는 것이다. 티머시 제닝스가 『뇌, 하나님의 설계』에서 관찰하듯 책임은 흑백이 아니라 스펙트럼이다 — 건강한 성인은 온전한 책임을, 보상 회로가 납치된 중독자는 감경되나 소멸하지 않는 책임을 진다.</p>
+<p>의료인의 자리는 두 오류를 함께 피하는 데 있다. 모든 것을 뇌 탓으로 돌리는 신경 결정론과, 중독을 순전한 의지박약으로 몰아 정죄하는 도덕주의 — 둘 다 환자를 잃는다. 인간은 자발적 주체이되 손상될 수 있는 주체이며, 회복은 정죄나 정보가 아니라 갈망의 재형성에서 온다(죄와 연약의 이중 진실의 신학적 상세는 <a class="wl" href="../../t/%EC%A3%84%EC%84%B1/">죄성</a>에 위임).</p>
+<h2>3. 우상숭배로서의 중독 — 궁극 갈망의 오배치</h2>
+<p>신학의 언어로 옮기면 중독의 핵심에는 갈망의 오배치가 있다. 인간은 무언가를 궁극으로 삼고 그것에 마음을 매다는 존재인데, 중독은 그 궁극의 자리에 하나님이 아닌 대체물을 앉힌 상태다. <a class="wl" href="../../t/%EC%9A%B0%EC%83%81%EC%88%AD%EB%B0%B0/">우상숭배</a>가 정의하듯 우상이란 "궁극적 안전을 위해 마음이 매달리고 의지하는 것"이며, 그 자리를 게임·술·도박·음란·인정이 차지할 때 중독이 된다. 중독은 화학적 현상이기 이전에 예배의 방향이 빗나간 사건이다.</p>
+<p>이 진단은 두 가지를 밝혀 준다. 첫째, 중독의 대상은 대개 악이 아니라 선의 왜곡이다. 쉼·즐거움·연결·성취는 모두 좋은 것이며, 중독의 문제는 그 좋은 것을 궁극의 자리에 둔 순서의 뒤바뀜에 있다. 둘째, 우상은 반드시 그 정체를 드러낸다. 우상숭배가 그리는 헤벨(연기·비누방울)의 허무성처럼, 중독의 대상은 잡으려 할수록 사라지고 더 큰 갈증을 남긴다. 그래서 아우구스티누스적 진단이 여기서도 유효하다 — 하나님을 향해 지어진 갈망은 하나님 아닌 무엇으로도 채워지지 않는다. 중독의 목마름은 잘못된 우물에서 물을 긷는 목마름이며(렘 2:13의 터진 웅덩이), 회복은 그 갈망을 참된 근원으로 되돌리는 일이다.</p>
+<h2>4. 회복의 길 — 결핍의 충족과 공동체</h2>
+<p>중독이 갈망의 오배치라면 회복은 갈망의 재배치다. 김재환은 자기결정성이론(Deci &amp; Ryan)을 회복의 틀로 삼는다 — 인간에게는 자율성(스스로 선택함)·유능성(할 수 있다는 효능감)·관계성(진정한 연결)이라는 세 기본 욕구가 있고, 이것이 현실에서 채워지지 않을 때 가상 환경에서 대리 충족을 찾는다. 따라서 회복의 본질은 세 욕구를 현실 안에서 채워 주는 것이며, 중독 행동을 억지로 막는 것보다 그것이 대신하던 결핍을 채우는 것이 선행한다. 도널드 위니캇의 "충분히 좋은 부모"가 건강한 자기(Self)를 형성하듯, 건강한 Self가 중독의 대안이 된다.</p>
+<p>같은 통찰을 회복 운동의 역사가 확인한다. 익명의 알코올 중독자 모임(AA)의 12단계는 첫 단계에서 "나는 무력하다"는 고백으로 시작한다 — 자력으로 끊을 수 있다는 환상을 내려놓고 자기보다 큰 힘에 의탁하는 이 구조는, 은혜로 절제한다는 복음의 문법과 깊이 공명한다. <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%83%81%EB%8B%B4/">기독교상담</a>이 인용하는 에드워드 웰치의 정의처럼 "절제의 원리는 은혜"이며, 그 은혜는 성경·성령·경건한 공동체·결과 인식이라는 통로로 임한다. 회복의 세 기둥은 이렇게 모인다 — 결핍의 충족, 지지하는 공동체, 그리고 필요할 때의 전문 치료. 이 셋은 경쟁하지 않는다. 약물 의존이나 중증 중독에는 전문 의학 치료가 반드시 병행되어야 하며, "기도하면 낫는다"며 치료를 미루는 것은 신앙이 아니라 방임이다.</p>
+<p>무엇보다 회복은 낙인을 걷어내는 데서 시작된다. 중독자를 "의지 약한 죄인"으로 낙인찍는 순간 그는 수치심에 숨고, 숨은 중독은 깊어진다. 감정을 마비시키려 중독 행동에 의존하는 이에게 필요한 것은 정죄가 아니라, 견디기 어려운 감정을 함께 다뤄 줄 안전한 관계다(감정 조절은 중독 치료의 실질적 핵심이다).</p>
+<h2>5. 목회·의료 현장 — 정죄도 방임도 아닌 동행</h2>
+<p>현장에서 중독을 다루는 태도는 두 극단 사이의 좁은 능선을 걷는다. 한쪽은 정죄다 — 중독을 도덕적 타락으로만 보아 수치를 안기는 것. 다른 쪽은 방임이다 — 질병이라는 이름으로 책임과 회복의 요청을 지워 버리는 것. 참된 동행은 그 사이에 있다. 죄의 책임을 정직하게 부르되 정죄하지 않고, 연약함을 긍휼히 여기되 방임하지 않는다.</p>
+<p>김재환이 청소년 중독 치료에서 강조하는 원칙이 이 동행의 성격을 잘 보여준다 — 부모 변화가 자녀 변화보다 먼저다. 자녀의 중독은 종종 가족 체계의 역기능을 반영하며, 환경이 바뀌지 않으면 치료 효과가 지속되지 않는다. 현대 사회 자체가 스마트폰·SNS·소비주의로 보상 회로를 겨냥해 설계된 "중독의 바다"이므로, 개인의 의지만으로 이 환경을 거스르기는 어렵다. 그래서 회복은 개인의 결단을 넘어 공동체와 환경의 변화를 요구하는 구조적 과제가 된다. 의료 현장에서 중독을 다루는 의사의 자리는, 처방하는 눈과 마음의 뿌리를 보는 눈을 함께 뜨고, 환자 곁에 오래 머무는 동행의 자리다.</p>
 <h2>핵심 인사이트</h2>
 <ul>
-<li>중독은 의지의 문제가 아니라 뇌 회로와 심리 욕구 결핍의 문제다. 도덕주의적 접근은 수치심을 강화해 중독을 악화시킨다.</li>
-<li>예방의 핵심은 자율성·유능성·관계성을 현실 안에서 채워주는 것이다.</li>
-<li>부모 변화 없이 자녀 중독 치료는 한계가 있다.</li>
-<li>현대 디지털 환경은 중독을 유발하도록 설계되어 있다. 개인 책임만 강조하는 것은 구조적 현실을 외면한다.</li>
-<li>감정 조절 능력 훈련이 중독 예방과 치료의 실질적 핵심이다.</li>
+<li>중독은 의지의 문제이기 전에 뇌 회로의 문제다 — 스트레스-보상 함수와 습관 고리가 굳으면 절제의 힘 자체가 소진된다. 회복은 도덕적 각성이 아니라 갈망의 재형성에서 온다.</li>
+<li>죄와 질병은 각각 절반의 진실이다 ⚖️ — 도덕 모델만 밀면 수치심이 중독을 키우고, 질병 모델만 밀면 책임이 사라진다. "할 수 없다"가 면죄부는 아니되, 연약함은 긍휼로 살핀다.</li>
+<li>중독은 우상숭배다 — 궁극의 자리에 하나님 아닌 대체물을 앉힌 갈망의 오배치. 그 대상은 헤벨처럼 잡을수록 사라지고 더 큰 갈증을 남긴다.</li>
+<li>회복은 결핍의 충족(자율성·유능성·관계성)·공동체·전문 치료의 세 기둥으로 이뤄진다. "나는 무력하다"는 12단계의 고백은 은혜로 절제하는 복음과 공명한다.</li>
+<li>현장의 태도는 정죄도 방임도 아닌 동행이다 — 부모 변화가 먼저이고, "중독의 바다"인 사회는 회복을 구조적 과제로 만든다. 낙인은 중독을 숨기고 깊게 한다.</li>
 </ul>
 <h2>미해결 질문</h2>
 <ul>
-<li>중독을 만성질환으로 볼 때, 기독교 죄론(罪論)과의 관계는 어떻게 정립되어야 하는가?</li>
-<li>디지털 환경에서 자율성·유능성·관계성을 건강하게 채우는 구체적 대안은 무엇인가?</li>
-<li>경계선·자기애적 성격 병리가 있는 청소년에게 중독 치료는 어떻게 달라져야 하는가?</li>
+<li>중독을 만성질환으로 볼 때, 기독교 죄론(罪論)과의 관계는 실제 상담·목회에서 어떻게 정립되는가.</li>
+<li>디지털 환경에서 자율성·유능성·관계성을 건강하게 채우는 구체적 대안은 무엇인가.</li>
+<li>12단계의 "더 큰 힘"과 복음의 은혜는 어디까지 공명하고 어디서 갈라지는가 — 일반 은총의 통찰을 특별 은총 아래 어떻게 배치하는가.</li>
 </ul>
 <h2>교차 참조</h2>
 <ul>
-<li><a class="wl" href="../../t/%EC%B2%AD%EC%86%8C%EB%85%84%EC%82%AC%EC%97%AD/">청소년사역</a> — 청소년 게임 중독은 청소년 사역의 주요 현장 과제</li>
-<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%83%81%EB%8B%B4/">기독교상담</a> — 중독 치료의 상담학적 접근</li>
-<li><a class="wl" href="../../t/%EC%9E%90%EC%A1%B4%EA%B0%90/">자존감</a> — 건강한 Self 형성과 자존감은 중독 예방의 공통 기반</li>
-<li><a class="wl" href="../../t/%EC%A3%84%EC%84%B1/">죄성</a> — 중독과 죄성의 신학적 관계 질문</li>
+<li><a class="wl" href="../../t/%EC%A3%84%EC%84%B1/">죄성</a> — 죄와 질병, 기질·중독 앞의 책임 스펙트럼("면죄부가 되는가"). 부패한 본성의 각론(위임).</li>
+<li><a class="wl" href="../../t/%EC%9A%B0%EC%83%81%EC%88%AD%EB%B0%B0/">우상숭배</a> — 궁극 갈망의 오배치, 헤벨의 허무성. 중독이 예배의 방향 문제인 이유.</li>
+<li><a class="wl" href="../../t/%EB%A7%88%EC%9D%8C%EC%9D%98%EA%B1%B4%EA%B0%95/">마음의건강</a> — 정신질환은 실재하는 뇌의 질병이며 약물 치료를 요한다(정신건강 총론, 위임).</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%83%81%EB%8B%B4/">기독교상담</a> — 웰치의 "절제=은혜", 은혜의 통로, 상담 방법론(위임).</li>
+<li><a class="wl" href="../../t/%EC%B2%AD%EC%86%8C%EB%85%84%EC%82%AC%EC%97%AD/">청소년사역</a> · <a class="wl" href="../../t/%EC%9E%90%EC%A1%B4%EA%B0%90/">자존감</a> · <a class="wl" href="../../t/%EC%82%AC%EC%B6%98%EA%B8%B0/">사춘기</a> — 청소년 게임 중독의 현장과 건강한 Self 형성.</li>
 </ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2019_김재환_청소년_게임중독_예방과치료</span></td>
+<td>강의(김재환)</td>
+<td>스트레스-보상 함수, 자기결정성이론, 위니캇, 감정 조절, "중독의 바다"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">김재환_청소년중독</span></td>
+<td>강의(김재환)</td>
+<td>쉐퍼의 만성질환 정의, 부모 변화 우선 원칙</td>
+</tr>
+<tr>
+<td>티머시 제닝스, 『뇌, 하나님의 설계』</td>
+<td>책</td>
+<td>중독의 책임 스펙트럼(감경되나 소멸하지 않음)</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%A3%84%EC%84%B1/">죄성</a> · <a class="wl" href="../../t/%EC%9A%B0%EC%83%81%EC%88%AD%EB%B0%B0/">우상숭배</a></td>
+<td>위키</td>
+<td>책임과 연약의 이중 진실, 갈망의 오배치</td>
+</tr>
+</tbody>
+</table>
 </article>
-<div class="tagrow"><span>#domain/상담</span><span>#discipline/기독교상담</span><span>#discipline/발달심리</span><span>#topic/중독</span><span>#topic/청소년사역</span><span>#topic/기독교상담</span><span>#topic/자존감</span></div>
+<div class="tagrow"><span>#domain/의학</span><span>#discipline/기독교상담</span><span>#중독</span><span>#보상회로</span><span>#우상숭배</span><span>#회복</span></div>
 <footer>
   <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
   <a href="../../">주제·북노트 탐색 →</a>

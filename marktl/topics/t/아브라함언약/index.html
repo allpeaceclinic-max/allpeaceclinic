@@ -5,50 +5,50 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
 :root{
-  --bg:#f5ead8; --surface:#faf3e6; --surface2:#ebddc5;
-  --ink:#201e1d; --muted:#5c574f; --meta:#8a8478;
-  --line:color-mix(in srgb,#201e1d 16%,transparent);
-  --line-soft:color-mix(in srgb,#201e1d 9%,transparent);
-  --accent:#c67139; --accent-deep:#8f4e22; --accent-tint:#f3ddc9; --accent-ink:#faf3e6;
-  --sage:#7a8a5e; --sage-deep:#4d5a38; --sage-tint:#e4e8d9;
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
   --font-display:"Caprasimo",system-ui,sans-serif;
   --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
   --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
   --r-sm:8px; --r-md:16px; --r-lg:28px;
-  --shadow:0 1px 2px color-mix(in srgb,#2e2b25 14%,transparent);
-  --shadow-md:0 3px 10px color-mix(in srgb,#2e2b25 16%,transparent);
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
 }
 @media (prefers-color-scheme:dark){:root{
-  --bg:#262320; --surface:#2d2a26; --surface2:#33302b;
-  --ink:#f5ead8; --muted:color-mix(in srgb,#f5ead8 75%,transparent);
-  --meta:color-mix(in srgb,#f5ead8 48%,transparent);
-  --line:color-mix(in srgb,#f5ead8 14%,transparent);
-  --line-soft:color-mix(in srgb,#f5ead8 8%,transparent);
-  --accent:#e0a375; --accent-deep:#e0a375;
-  --accent-tint:color-mix(in srgb,#c67139 24%,transparent); --accent-ink:#262320;
-  --sage-deep:#b8c49c; --sage-tint:color-mix(in srgb,#7a8a5e 20%,transparent);
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
   --shadow:none; --shadow-md:none;
 }}
 :root[data-theme="dark"]{
-  --bg:#262320; --surface:#2d2a26; --surface2:#33302b;
-  --ink:#f5ead8; --muted:color-mix(in srgb,#f5ead8 75%,transparent);
-  --meta:color-mix(in srgb,#f5ead8 48%,transparent);
-  --line:color-mix(in srgb,#f5ead8 14%,transparent);
-  --line-soft:color-mix(in srgb,#f5ead8 8%,transparent);
-  --accent:#e0a375; --accent-deep:#e0a375;
-  --accent-tint:color-mix(in srgb,#c67139 24%,transparent); --accent-ink:#262320;
-  --sage-deep:#b8c49c; --sage-tint:color-mix(in srgb,#7a8a5e 20%,transparent);
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
   --shadow:none; --shadow-md:none;
 }
 :root[data-theme="light"]{
-  --bg:#f5ead8; --surface:#faf3e6; --surface2:#ebddc5;
-  --ink:#201e1d; --muted:#5c574f; --meta:#8a8478;
-  --line:color-mix(in srgb,#201e1d 16%,transparent);
-  --line-soft:color-mix(in srgb,#201e1d 9%,transparent);
-  --accent:#c67139; --accent-deep:#8f4e22; --accent-tint:#f3ddc9; --accent-ink:#faf3e6;
-  --sage-deep:#4d5a38; --sage-tint:#e4e8d9;
-  --shadow:0 1px 2px color-mix(in srgb,#2e2b25 14%,transparent);
-  --shadow-md:0 3px 10px color-mix(in srgb,#2e2b25 16%,transparent);
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
@@ -59,7 +59,7 @@ a:hover{color:var(--accent)}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
 .chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
-.chip.cat-t{color:var(--sage-deep);background:var(--sage-tint)}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
 .chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
 
 main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
@@ -81,9 +81,9 @@ article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px
 article.note p{margin:0 0 16px;text-wrap:pretty}
 article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
 article.note li{margin:4px 0}
-article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--sage);
-  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--sage-tint);
-  font-size:14.5px;line-height:1.85;color:var(--sage-deep)}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
 article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
 article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
   font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
@@ -96,7 +96,7 @@ article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
 article.note img{max-width:100%;border-radius:var(--r-sm)}
 a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
 a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
-span.wl-dead{color:var(--sage-deep);border-bottom:1.5px dotted var(--sage);padding-bottom:1px;cursor:default}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
 .footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
   font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
 .footnote hr{display:none}
@@ -111,75 +111,127 @@ footer a{font-weight:700}
     <a href="../../">← 주제·북노트 탐색</a>
     <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
   </div>
-  <div class="meta-row"><span class="chip cat-t">성경·해석</span><span class="date">2026-06-28</span></div>
+  <div class="meta-row"><span class="chip cat-t">성경·해석</span><span class="date">2026-07-18</span></div>
   <h1 class="note-title">아브라함 언약</h1>
   
 </header>
 <article class="note">
 <h2>정의</h2>
-<p>아브라함 언약은 창세기 12·15·17장에서 하나님이 아브라함과 맺으신 언약으로, 구약개론I 리서치페이퍼("아브라함 언약과 시내산 언약 비교 분석")는 이를 성경 전체를 관통하는 "언약의 역사" 틀 안에서 시내산 언약과 짝지어 이해한다. 언약은 하나님과 인간이 관계를 맺고, 화해하고, 그 관계를 갱신하는 원리다(『구약신학』 333-336).</p>
-<h2>1. 성격 — 무조건적 은혜 언약</h2>
-<p>아브라함 언약은 무조건적·일방적 언약으로, 하나님의 전능하심에 전적으로 의존한다. 페이퍼는 이를 시내산 언약(조건적·의무적 언약, 제왕-봉신 조약 형식)과 대비시키는 표를 통해 정리한다. 근거 구절은 창12:2(복과 이름의 약속)이며, 이는 "약속 언약"(선물의 성격)으로 분류된다.</p>
+<p>아브라함 언약은 창세기 12·15·17장에서 하나님이 아브라함과 맺으신 언약으로, 성경 전체를 관통하는 은혜 언약의 원형이다. 🔴 이 페이지는 <strong>각론</strong>이다. 언약이라는 개념 자체(베리트 어원·종주봉신 조약·쪼갠 짐승의 체결 의식·다섯 언약의 지형)는 <a class="wl" href="../../t/%EC%96%B8%EC%95%BD/">언약</a>이, 그 언약들을 하나의 조직신학 체계로 읽는 전통은 <a class="wl" href="../../t/%EC%96%B8%EC%95%BD%EC%8B%A0%ED%95%99/">언약신학</a>이, 짝을 이루는 조건적 언약은 <a class="wl" href="../../t/%EC%8B%9C%EB%82%B4%EC%82%B0%EC%96%B8%EC%95%BD/">시내산언약</a>이 맡는다. 여기서는 오직 아브라함 언약 자체 — 창세기 세 본문에서 무엇이 약속되고 어떻게 맹세되며, 그 폭이 어디까지 미치고, 신약에서 어떻게 성취되는가 — 를 따라간다.</p>
+<p>이 각론의 성경적 무게는 구조에서 온다. <span class="wl-dead" title="위키 내부 링크">유진메릴</span>이 짚듯 창세기 1~11장이 전 인류(우주적)에 초점을 맞추다가 12장에서 한 개인(아브라함)과 그 후손으로 급격히 좁혀지는데, 이 초점 전환이 "택함을 통한 우주적 구속"이라는 구약신학의 핵심 패턴을 연다(유진 메릴 318-319). 한 사람을 부르신 것은 한 사람을 위해서가 아니라 "땅의 모든 족속"을 위해서였다.</p>
+<h2>1. 삼중 본문 — 창12 부르심, 창15 횃불, 창17 할례</h2>
+<p>아브라함 언약은 한 번에 완결되지 않고 세 장면에 걸쳐 펼쳐진다. 각 장면이 언약의 다른 국면을 드러낸다.</p>
+<p><strong>창세기 12장 — 부르심.</strong> "너는 너의 고향과 친척과 아버지의 집을 떠나 내가 네게 보여 줄 땅으로 가라"(창 12:1). 언약은 명령이 아니라 초청으로, 떠남과 약속으로 시작된다. 근거 구절 창 12:2("복과 이름의 약속")은 이 언약을 '약속 언약'(선물의 성격)으로 규정한다.</p>
+<p><strong>창세기 15장 — 횃불 언약.</strong> 여기서 언약이 피의 맹세로 체결된다. 하나님은 짐승을 쪼개게 하시고, 해가 진 뒤 타는 횃불이 그 쪼갠 고기 사이로 홀로 지나가신다. 고대 언약 체결은 쌍방이 쪼갠 짐승 사이를 지나가며 "약속을 어기면 이 짐승처럼 되겠다"는 자기 저주를 맹세하는 의식이었는데, 창세기 15장에서는 지나간 것이 횃불 하나뿐이었다. 하나님 홀로 지나가심으로써 언약 위반의 저주를 양쪽 모두가 아니라 하나님이 혼자 짊어지신 것이다. 이 <strong>편무성(片務性)</strong>이 아브라함 언약을 무조건적 은혜 언약으로 만든다(체결 의식의 상세는 <a class="wl" href="../../t/%EC%96%B8%EC%95%BD/">언약</a>에 위임).</p>
+<p><strong>창세기 17장 — 할례.</strong> 언약은 눈에 보이는 표징을 남긴다. 할례(창 17:10)는 볼 때마다 언약을 기억하게 하는 몸에 새긴 표다. 다만 이 표징에는 함정이 있다 — 육신의 할례만 강조하고 마음의 할례를 놓치면(롬 2:28-29) 표징이 언약을 대체해 버리는 죽은 전통이 된다.</p>
+<h2>2. 삼중 약속 — 땅·자손·복</h2>
+<p>세 본문을 관통하는 약속의 내용은 셋으로 수렴한다. 이 세 약속이 아브라함 언약의 골격이다.</p>
 <table>
 <thead>
 <tr>
-<th>축</th>
-<th>아브라함 언약(창12·15·17)</th>
-<th>시내산 언약(출19-24)</th>
+<th>약속</th>
+<th>핵심 본문</th>
+<th>일차 성취</th>
+<th>궁극적 지평</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>성격</td>
-<td>은혜 언약</td>
-<td>행위 언약(은혜에 기초한 규정)</td>
+<td>땅</td>
+<td>창 12:1; 15:18</td>
+<td>가나안 정착</td>
+<td>새 하늘과 새 땅</td>
 </tr>
 <tr>
-<td>조건</td>
-<td>무조건적·일방적</td>
-<td>조건적(십계명·언약서 준수)</td>
+<td>자손</td>
+<td>창 15:5; 17:6</td>
+<td>이스라엘 민족</td>
+<td>그리스도와 믿음의 후손</td>
 </tr>
 <tr>
-<td>유형</td>
-<td>약속 언약(선물)</td>
-<td>의무 언약</td>
-</tr>
-<tr>
-<td>시간</td>
-<td>미래적·일반적</td>
-<td>현재적·특정적(이스라엘 민족)</td>
-</tr>
-<tr>
-<td>근거 구절</td>
-<td>창12:2</td>
-<td>출19:5</td>
+<td>복</td>
+<td>창 12:2-3</td>
+<td>이스라엘의 번영</td>
+<td>만민을 향한 구원의 복</td>
 </tr>
 </tbody>
 </table>
-<h2>2. 시내산 언약과의 관계 — 행위 언약은 은혜 언약을 수종든다</h2>
-<p>페이퍼의 중심 논지는 시내산의 율법이 신-인 관계의 기초가 아니라, 이미 은혜로 맺어진 관계를 유지하는 지침이라는 것이다. 십계명은 "나는 너를 애굽에서 인도한 여호와라"는 은혜 선언(역사적 서언) 뒤에 주어졌다 — 율법을 지켜야 백성이 되는 것이 아니라, 이미 구원받은 백성이기에 율법을 받는다(트렘퍼 롱맨 100; 김지찬 54; 유진 메릴 353-354). 벌코프는 두 언약이 기원에서 모두 일방적이며 하나님이 우선권을 쥔 "하나의 복음적 긍휼의 언약의 두 양상"이라 본다(513·515). 따라서 현세적·한시적 시내산 언약은 영원한 은혜 언약과 동떨어진 것이 아니라 그것을 믿고 의지하도록 수종드는 것이다(갈3:16-24).</p>
-<h2>3. 구조적 위치 — 창11에서 창12로의 초점 전환</h2>
-<p>창1-11장이 전 인류(우주적)에 초점을 맞추다가 창12장에서 갑자기 한 개인(아브라함)과 그 후손으로 급격히 좁혀진다. 이 전환은 택함과 언약의 중요성을 부각하며, 우주적 구속이 "일부를 택하심"으로 이루어짐을 보여준다(유진 메릴 318-319). 아브라함의 백성에서 시내산의 이스라엘 나라로의 전환은 "온 세상에 하나님을 드러낼 사명"으로 이어진다(328).</p>
-<h2>4. 성취 — 그리스도까지 유효한 약속</h2>
-<p>아브라함 언약의 약속들은 그리스도를 통해 성취될 때까지 유효하게 남았다(롬4; 갈3; 웨인 그루뎀 788). 이는 시내산의 조건적 규정이 지나가도, 아브라함에게 주어진 무조건적 약속의 지평은 신약까지 이어진다는 뜻이다.</p>
+<p>세 약속은 서로 맞물린다 — 자손이 있어야 민족이 되고, 민족이 살 땅이 있어야 하며, 그 땅의 백성을 통해 복이 흘러나간다. 그러나 앞의 둘(땅·자손)이 이스라엘이라는 특정 백성에 초점을 맞춘다면, 셋째 약속인 '복'은 처음부터 울타리 밖을 향해 열려 있었다.</p>
+<h2>3. 언약의 폭 — "땅의 모든 족속이 복을 얻으리라"</h2>
+<p>아브라함 언약의 가장 놀라운 대목은 그 폭이다. "땅의 모든 족속이 너로 말미암아 복을 얻을 것이라"(창 12:3). 한 사람을 택하신 목적이 그 한 사람의 번영이 아니라 온 세상의 복이라는 것 — 여기에 선교의 뿌리가 있다. <span class="wl-dead" title="위키 내부 링크">문대원</span> 목사가 정리하듯 아브라함·모세·다윗 언약이 한 점에서 만나는 방향은 한결같이 선교적이며, 하나님의 사랑과 구원이 모든 나라로 번져 나가는 것이 언약 지형 전체의 벡터다(<a class="wl" href="../../t/%EB%8C%80%EC%9C%84%EC%9E%84%EB%A0%B9/">대위임령</a>이 그 파송의 신학을 상술한다).</p>
+<p>이 선교적 폭을 신약이 명시적으로 읽어낸다. 바울은 갈라디아서에서 창세기 12:3을 "미리 전한 복음"이라 부른다.</p>
+<blockquote>
+<p>"또 하나님이 이방을 믿음으로 말미암아 의로 정하실 것을 성경이 미리 알고 먼저 아브라함에게 복음을 전하되 모든 이방인이 너로 말미암아 복을 받으리라 하였느니라." (갈 3:8)</p>
+</blockquote>
+<p>곧 아브라함에게 주어진 '복의 약속' 안에 이미 이방인의 구원이라는 복음이 씨앗으로 들어 있었다는 것이다. 아브라함 언약은 유대 민족주의의 헌장이 아니라 만민 구원의 첫 선포였다.</p>
+<h2>4. 신약의 성취 — 그리스도와 믿음의 조상</h2>
+<p>아브라함 언약의 약속들은 시내산의 조건적 규정이 지나가도 폐기되지 않고 그리스도까지 유효하게 남았다(롬 4; 갈 3; <span class="wl-dead" title="위키 내부 링크">웨인 그루뎀</span> 788). 신약은 삼중 약속을 그리스도 안에서 성취된 것으로 다시 읽는다.</p>
+<p><strong>자손 약속의 성취 — 갈라디아서 3장.</strong> 바울은 창세기의 "네 자손"(단수 형태)을 붙들어, 그 궁극의 자손이 그리스도 한 분이라고 논증한다(갈 3:16). 그리고 그리스도께 속한 자는 누구나 "아브라함의 자손이요 약속대로 유업을 이을 자"(갈 3:29)가 된다. 혈통이 아니라 믿음이 아브라함의 후손됨의 자격이 된 것이다.</p>
+<p><strong>복 약속의 성취 — 로마서 4장.</strong> 아브라함이 "믿으매 이것을 그에게 의로 여기셨다"(창 15:6; 롬 4:3)는 사실에서 바울은 이신칭의의 원형을 본다. 아브라함은 할례 이전에, 율법 이전에 믿음으로 의롭다 하심을 받았으므로 "무할례자로서 믿는 모든 자의 조상"(롬 4:11)이다 — 믿음의 조상.</p>
+<p>이렇게 아브라함 언약은 신약에서 폐기되는 것이 아니라 만개한다. 갈라디아서 3장이 못 박듯 430년 뒤에 온 율법이 앞선 언약을 폐하지 못하며(갈 3:17), 그리스도 안에서 아브라함의 복이 이방인에게 미친다.</p>
+<h2>5. 오늘의 함의</h2>
+<p>아브라함 언약은 오늘의 신자에게 두 가지를 말한다. 첫째, 구원의 문법이 처음부터 은혜였다는 것이다. 창세기 15장에서 하나님 홀로 쪼갠 짐승 사이를 지나가셨듯, 언약의 성취도 인간의 공로가 아니라 하나님의 신실하심에 달려 있다. 둘째, 택함은 언제나 파송을 향한다는 것이다. "복을 받아 복이 되라"는 창세기 12장의 구조는, 은혜받은 자가 그 은혜의 통로가 되어야 함을 말한다. 개인의 구원조차 자기 안에 갇히지 않고 "땅의 모든 족속"을 향해 흘러가야 한다는 것 — 이것이 아브라함 언약이 선교의 뿌리인 이유다.</p>
 <h2>핵심 인사이트</h2>
 <ul>
-<li>아브라함 언약과 시내산 언약은 대립하지 않는다 — 후자는 전자를 수종드는 관계다.</li>
-<li>창11→12의 초점 전환은 "택함을 통한 우주적 구속"이라는 구약신학의 핵심 패턴을 보여준다.</li>
-<li>십계명의 서두("나는 너를 애굽에서 인도한 여호와라")는 율법에 앞선 은혜 선언이며, 이 순서가 언약 신학 전체의 해석 열쇠다.</li>
+<li>아브라함 언약은 세 장면에 걸쳐 펼쳐진다 — 창12(부르심), 창15(횃불 언약의 편무성), 창17(할례의 표징). 하나님 홀로 쪼갠 짐승 사이를 지나가심이 이 언약을 무조건적 은혜 언약으로 만든다.</li>
+<li>삼중 약속(땅·자손·복)은 서로 맞물리되, '복'의 약속은 처음부터 이스라엘의 울타리 밖 "땅의 모든 족속"을 향해 열려 있었다.</li>
+<li>창세기 12:3은 바울이 "미리 전한 복음"(갈 3:8)이라 부른 선교의 뿌리다 — 아브라함 언약은 만민 구원의 첫 선포다.</li>
+<li>신약은 삼중 약속을 그리스도 안에서 성취된 것으로 읽는다. 자손 약속은 그리스도와 믿음의 후손(갈 3)으로, 복 약속은 믿음의 조상(롬 4)으로.</li>
+<li>택함은 언제나 파송을 향한다 — "복을 받아 복이 되라"는 구조가 아브라함 언약의 오늘의 함의다.</li>
 </ul>
 <h2>미해결 질문</h2>
 <ul>
-<li>아브라함 언약의 "무조건성"과 시내산 언약의 "조건성"이 실제 이스라엘 역사(포로기 등)에서 어떻게 상호작용했는지는 페이퍼에서 더 다뤄지지 않았다.</li>
-<li>갈라디아서 3장의 "언약은 폐하지 못한다"는 논증이 오늘날 은혜와 율법의 관계를 설교·목회 현장에 어떻게 적용될 수 있는지는 후속 탐구가 필요하다.</li>
+<li>아브라함 언약의 '땅' 약속이 갖는 오늘의 의미 — 문자적 영토인가, 새 창조의 예표인가, 아니면 둘 다인가.</li>
+<li>무조건적 은혜 언약과 창세기 17장·22장이 요구하는 순종(할례·이삭을 바침)의 관계는 어떻게 조율되는가.</li>
+<li>갈라디아서의 "언약은 폐하지 못한다"는 논증이 은혜와 율법의 관계를 오늘의 설교·목회에 어떻게 적용되는가.</li>
 </ul>
 <h2>교차 참조</h2>
 <ul>
-<li><a class="wl" href="../../t/%EC%8B%9C%EB%82%B4%EC%82%B0%EC%96%B8%EC%95%BD/">시내산언약</a> — 아브라함 언약과 짝을 이루는 조건적 언약.</li>
-<li><span class="wl-dead" title="위키 내부 링크">_paper_아브라함언약과시내산언약비교</span> — 본 페이지의 1차 근거 자료(이상협 본인 리서치페이퍼).</li>
+<li><a class="wl" href="../../t/%EC%96%B8%EC%95%BD/">언약</a> — 베리트 어원·종주봉신 조약·쪼갠 짐승 체결 의식·다섯 언약 지형(총론, 위임).</li>
+<li><a class="wl" href="../../t/%EC%96%B8%EC%95%BD%EC%8B%A0%ED%95%99/">언약신학</a> — 언약들을 하나의 조직신학 체계로 읽는 개혁주의 전통.</li>
+<li><a class="wl" href="../../t/%EC%8B%9C%EB%82%B4%EC%82%B0%EC%96%B8%EC%95%BD/">시내산언약</a> — 짝을 이루는 조건적 의무 언약. "이미 백성이므로 율법을 받는다"는 순서.</li>
+<li><a class="wl" href="../../t/%EB%8C%80%EC%9C%84%EC%9E%84%EB%A0%B9/">대위임령</a> — "땅의 모든 족속"의 복이 흘러가는 파송의 신학.</li>
+<li><a class="wl" href="../../t/%EA%B5%AC%EC%95%BD%EC%8B%A0%ED%95%99/">구약신학</a> — 택함을 통한 우주적 구속이라는 구약신학의 핵심 패턴.</li>
 </ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">_paper_아브라함언약과시내산언약비교</span></td>
+<td>리서치페이퍼(이상협)</td>
+<td>무조건적·조건적 언약 대조, 은혜 언약의 성격, 벌코프·롱맨·메릴 인용</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">04주_아브라함과시내산언약</span></td>
+<td>MBTS 강의</td>
+<td>수여 계약(무조건적)으로서의 아브라함 언약, 창11→12 초점 전환</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">유진메릴</span> · <span class="wl-dead" title="위키 내부 링크">웨인그루뎀</span></td>
+<td>인용 학자</td>
+<td>창11→12 전환(택함을 통한 우주적 구속), 그리스도까지 유효한 약속</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">트렘퍼롱맨</span> · <span class="wl-dead" title="위키 내부 링크">김지찬</span> · <span class="wl-dead" title="위키 내부 링크">벌코프</span></td>
+<td>인용 학자</td>
+<td>은혜-율법 순서, 두 언약의 통합적 이해</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">문대원</span></td>
+<td>인물</td>
+<td>아브라함→모세→다윗의 선교적 수렴, "만민이 기도하는 집"</td>
+</tr>
+</tbody>
+</table>
 </article>
-<div class="tagrow"><span>#domain/신학</span><span>#discipline/구약학</span><span>#topic/언약</span><span>#topic/은혜</span><span>#topic/구원론</span></div>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/구약학</span><span>#아브라함언약</span><span>#삼중약속</span><span>#할례</span><span>#선교</span></div>
 <footer>
   <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
   <a href="../../">주제·북노트 탐색 →</a>

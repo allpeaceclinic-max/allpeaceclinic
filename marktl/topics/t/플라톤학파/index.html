@@ -5,50 +5,50 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
 :root{
-  --bg:#f5ead8; --surface:#faf3e6; --surface2:#ebddc5;
-  --ink:#201e1d; --muted:#5c574f; --meta:#8a8478;
-  --line:color-mix(in srgb,#201e1d 16%,transparent);
-  --line-soft:color-mix(in srgb,#201e1d 9%,transparent);
-  --accent:#c67139; --accent-deep:#8f4e22; --accent-tint:#f3ddc9; --accent-ink:#faf3e6;
-  --sage:#7a8a5e; --sage-deep:#4d5a38; --sage-tint:#e4e8d9;
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
   --font-display:"Caprasimo",system-ui,sans-serif;
   --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
   --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
   --r-sm:8px; --r-md:16px; --r-lg:28px;
-  --shadow:0 1px 2px color-mix(in srgb,#2e2b25 14%,transparent);
-  --shadow-md:0 3px 10px color-mix(in srgb,#2e2b25 16%,transparent);
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
 }
 @media (prefers-color-scheme:dark){:root{
-  --bg:#262320; --surface:#2d2a26; --surface2:#33302b;
-  --ink:#f5ead8; --muted:color-mix(in srgb,#f5ead8 75%,transparent);
-  --meta:color-mix(in srgb,#f5ead8 48%,transparent);
-  --line:color-mix(in srgb,#f5ead8 14%,transparent);
-  --line-soft:color-mix(in srgb,#f5ead8 8%,transparent);
-  --accent:#e0a375; --accent-deep:#e0a375;
-  --accent-tint:color-mix(in srgb,#c67139 24%,transparent); --accent-ink:#262320;
-  --sage-deep:#b8c49c; --sage-tint:color-mix(in srgb,#7a8a5e 20%,transparent);
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
   --shadow:none; --shadow-md:none;
 }}
 :root[data-theme="dark"]{
-  --bg:#262320; --surface:#2d2a26; --surface2:#33302b;
-  --ink:#f5ead8; --muted:color-mix(in srgb,#f5ead8 75%,transparent);
-  --meta:color-mix(in srgb,#f5ead8 48%,transparent);
-  --line:color-mix(in srgb,#f5ead8 14%,transparent);
-  --line-soft:color-mix(in srgb,#f5ead8 8%,transparent);
-  --accent:#e0a375; --accent-deep:#e0a375;
-  --accent-tint:color-mix(in srgb,#c67139 24%,transparent); --accent-ink:#262320;
-  --sage-deep:#b8c49c; --sage-tint:color-mix(in srgb,#7a8a5e 20%,transparent);
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
   --shadow:none; --shadow-md:none;
 }
 :root[data-theme="light"]{
-  --bg:#f5ead8; --surface:#faf3e6; --surface2:#ebddc5;
-  --ink:#201e1d; --muted:#5c574f; --meta:#8a8478;
-  --line:color-mix(in srgb,#201e1d 16%,transparent);
-  --line-soft:color-mix(in srgb,#201e1d 9%,transparent);
-  --accent:#c67139; --accent-deep:#8f4e22; --accent-tint:#f3ddc9; --accent-ink:#faf3e6;
-  --sage-deep:#4d5a38; --sage-tint:#e4e8d9;
-  --shadow:0 1px 2px color-mix(in srgb,#2e2b25 14%,transparent);
-  --shadow-md:0 3px 10px color-mix(in srgb,#2e2b25 16%,transparent);
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
@@ -59,7 +59,7 @@ a:hover{color:var(--accent)}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
 .chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
-.chip.cat-t{color:var(--sage-deep);background:var(--sage-tint)}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
 .chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
 
 main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
@@ -81,9 +81,9 @@ article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px
 article.note p{margin:0 0 16px;text-wrap:pretty}
 article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
 article.note li{margin:4px 0}
-article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--sage);
-  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--sage-tint);
-  font-size:14.5px;line-height:1.85;color:var(--sage-deep)}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
 article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
 article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
   font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
@@ -96,7 +96,7 @@ article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
 article.note img{max-width:100%;border-radius:var(--r-sm)}
 a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
 a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
-span.wl-dead{color:var(--sage-deep);border-bottom:1.5px dotted var(--sage);padding-bottom:1px;cursor:default}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
 .footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
   font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
 .footnote hr{display:none}
@@ -111,48 +111,143 @@ footer a{font-weight:700}
     <a href="../../">← 주제·북노트 탐색</a>
     <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
   </div>
-  <div class="meta-row"><span class="chip cat-t">성경·해석</span><span class="date">2026-06-28</span></div>
+  <div class="meta-row"><span class="chip cat-t">교회사</span><span class="date">2026-07-18</span></div>
   <h1 class="note-title">플라톤학파 (Platonism)</h1>
   
 </header>
 <article class="note">
 <h2>정의</h2>
-<p>플라톤학파(Platonism)는 고대 그리스 철학자 플라톤(기원전 428/427–348/347)의 사상에 기반한 철학 전통이다. 핵심은 가시적 현실과 비가시적 이념 세계의 이원론, 즉 우리가 감각으로 경험하는 세계는 일시적이고 불완전한 반면, 비가시적 천상의 이데아 세계가 영원하고 참된 실재라는 형이상학적 입장이다.</p>
-<h2>1. 신약 세계 속 플라톤학파</h2>
-<p>신약개론I 2주 강의(신약성경의 세계)는 플라톤학파를 신약 시대 그리스-로마 철학의 주요 네 학파(플라톤·스토아·견유·에피쿠로스) 중 하나로 소개한다. 강의는 1세기 신약 배경을 이해하려면 이 철학 학파들이 당시 지식인 세계에 어떤 영향을 미쳤는지 파악해야 한다고 전제한다.</p>
-<p>강의가 플라톤학파의 핵심 주장으로 제시하는 내용은 다음과 같다.</p>
+<p>플라톤학파(Platonism)는 아테네의 <span class="wl-dead" title="위키 내부 링크">플라톤</span>(주전 428~348)에서 발원해 고대 후기까지 이어진 철학 전통으로, 그 심장에는 하나의 확신이 있다 — 우리가 감각으로 만나는 이 세계는 그림자일 뿐이고, 참된 실재는 감각 너머 비가시적 이데아(idea)의 세계에 있다는 것이다. <a class="wl" href="../../t/%EC%8A%A4%ED%86%A0%EC%95%84%ED%95%99%ED%8C%8C/">스토아학파</a>가 우주에 스민 로고스와 자연법과 아파테이아로 신약 시대의 지성을 채웠다면, 플라톤주의는 그 짝으로서 초월과 상승의 언어를 공급했다. 신약개론I 2주 강의는 플라톤학파를 신약 세계의 네 학파(플라톤·스토아·<a class="wl" href="../../t/%EA%B2%AC%EC%9C%A0%ED%95%99%ED%8C%8C/">견유</a>·<a class="wl" href="../../t/%EC%97%90%ED%94%BC%EC%BF%A0%EB%A1%9C%EC%8A%A4%ED%95%99%ED%8C%8C/">에피쿠로스</a>) 가운데 하나로 세우며, "가지적 현실은 일시적이고 비가시적 천상이 영원하다"는 그 명제가 헬라화 과정에서 디아스포라 유대 사상에 깊이 스몄다고 짚는다.</p>
+<p>이 페이지가 플라톤주의를 다루는 각도는 철학사 개관이 아니라 기독교 신학과의 만남이다. 초대교회의 가장 큰 지적 대화 상대이자 가장 위험한 유혹이 플라톤주의였기 때문이다. 그것은 복음에 초월의 문법을 빌려주었고(<span class="wl-dead" title="위키 내부 링크">아우구스티누스</span>의 회심), 동시에 몸과 물질을 경시하는 이원론의 씨앗을 뿌려 <a class="wl" href="../../t/%EC%98%81%EC%A7%80%EC%A3%BC%EC%9D%98/">영지주의</a>라는 이단으로 자라났다. 이 글은 플라톤 철학의 구조를 스케치한 뒤, 그것이 신약 세계와 만나고(§2) 아우구스티누스에게서 수용되고 결별하며(§3), 무엇을 남겼는가(§4~5)를 따라간다. 신앙과 이성의 관계 지형 전체는 <a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EA%B3%BC%EC%9D%B4%EC%84%B1/">신앙과이성</a>이 전담한다.</p>
+<h2>1. 플라톤주의의 구조 — 이데아·영혼·동굴</h2>
+<p>플라톤 사상의 세 기둥은 하나의 상승 운동으로 맞물린다.</p>
+<ul>
+<li><strong>이데아론</strong> — 감각계의 개별 사물은 생멸하는 모상(模像)이고, 그 원형인 이데아만이 영원불변의 참실재다. 개별 아름다운 것들 위에 '아름다움 자체'가 있고, 그 정점에 선(善)의 이데아가 태양처럼 놓인다.</li>
+<li><strong>영혼불멸</strong> — 영혼은 본래 이데아계에 속한 불멸의 존재이나 육체라는 감옥에 갇혀 있다. "몸은 영혼의 무덤"(soma sema)이라는 직관이 여기 흐른다. 죽음은 영혼이 육체를 벗고 본향으로 돌아가는 해방이다.</li>
+<li><strong>동굴의 비유</strong> — 사람은 동굴에 묶여 벽에 비친 그림자를 실재로 착각하는 죄수와 같다. 철학은 그 결박을 풀고 몸을 돌려 동굴 밖 태양(선의 이데아)을 향해 오르는 여정이다.</li>
+</ul>
+<p>세 기둥이 겨냥하는 것은 하나다 — 감각에서 예지로, 그림자에서 실재로, 아래에서 위로의 상승. 바로 이 상승의 구조가 뒤에서 볼 기독교와의 접점이자 갈등의 뿌리가 된다.</p>
+<h2>2. 신약 시대의 플라톤주의 — 중기 플라톤주의와 필론</h2>
+<p>신약이 기록된 주후 1세기는 플라톤 사상이 중기 플라톤주의(Middle Platonism)라는 형태로 재편되던 시기였다. 순수한 이데아론이 종교적 열망과 결합해, 초월적 최고신과 세계 사이를 매개하는 중간 존재들 — 로고스·누스·세계영혼 — 을 상상하는 방향으로 흘렀다. 이 매개의 신학이 신약 배경에서 중요한 것은, 그것이 유대교와 만나 폭발적 융합을 일으켰기 때문이다.</p>
+<p>그 만남의 대표자가 알렉산드리아의 <span class="wl-dead" title="위키 내부 링크">필론</span>이다. 그는 플라톤의 로고스 개념을 유대 성경의 지혜 전통과 결합해, 하나님과 세계를 잇는 로고스를 신학의 중심에 세웠다. 필론의 로고스는 훗날 요한복음 서론("말씀이 육신이 되어", 요 1:14)의 배경으로 자주 논의되지만, 신약개론I 강의는 필론의 글이 알렉산드리아 밖에서도 유통되었음을 들어 그 직접 영향설에 유보를 둔다. 요한의 로고스가 필론에게서 왔는가, 아니면 독립된 유대-구약 전통에서 왔는가는 이 볼트가 열어 둔 물음이다.</p>
+<p>플라톤 철학을 성경 해석에 본격 적용한 것은 <a class="wl" href="../../t/%EC%95%8C%EB%A0%89%EC%82%B0%EB%93%9C%EB%A6%AC%EC%95%84%ED%95%99%ED%8C%8C/">알렉산드리아학파</a>다. 신약개론I 해석사 개관이 짚듯, 3세기 알렉산드리아 학파는 "플라톤 철학 + 알레고리 해석"을 취해 본문의 문자 아래 숨은 영적 의미를 캐냈다. 히브리서의 "그림자/실체" 언어(히 8:5; 10:1)가 플라톤적 이원론의 흔적인지 구약 성막 신학의 독립적 발전인지도 같은 지형의 물음으로 남는다.</p>
+<h2>3. 기독교와의 만남 — 아우구스티누스의 수용과 결별</h2>
+<p>플라톤주의가 기독교 신학에 남긴 가장 깊은 지문은 <span class="wl-dead" title="위키 내부 링크">아우구스티누스</span>(354~430)에게 찍혀 있다. 그의 회심 준비를 이끈 것이 신플라톤주의(플로티노스 계열)였고, 그는 그것을 버리지 않고 세례 주어 복음 안으로 끌어들였다. 창조적 수용은 세 겹이다.</p>
+<p>첫째, <strong>악의 이해</strong>다. 선악 이원론(빛과 어둠이 대등한 두 실체)에 시달리던 그는 신플라톤주의에서 결정적 열쇠를 얻는다 — 악은 독립된 실체가 아니라 <strong>선의 결핍(privatio boni)</strong>이라는 것이다. 어둠이 빛의 없음이듯 악은 존재의 부족이며, 그러므로 "하나님이 악을 창조하셨다"는 명제는 성립하지 않는다(<a class="wl" href="../../t/%EB%B3%80%EC%8B%A0%EB%A1%A0/">변신론</a>이 이 결핍 개념을 상술한다). 둘째, <strong>내면으로의 전회</strong>다. 참실재가 감각 밖 위에 있다는 플라톤의 상승은, 아우구스티누스에게 "밖으로 나가지 말고 네 안으로 돌아가라, 진리는 내면에 거한다"는 내향의 영성으로 번역된다. 셋째, <strong>앎의 질서</strong>다. 그의 명제 "나는 알기 위해서 믿는다"(<a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EA%B3%BC%EC%9D%B4%EC%84%B1/">신앙과이성</a>)는, 지성으로 상승하기 전에 믿음이라는 출발점이 있어야 한다는 플라톤적 상승의 기독교적 재배치다.</p>
+<p>그러나 수용은 곧 결별로 이어진다. 세 지점에서 복음은 플라톤주의를 뒤집는다.</p>
 <blockquote>
-<p>"정의란 받을 만한 것을 주는 것이고, 경건이란 신들에게 마땅히 해야 하는 것 — 유대 사고에 영향을 준 헬라 문화의 근간이 됨."</p>
+<p>플라톤은 영혼이 육체를 벗고 위로 오르는 것을 구원이라 했으나, 복음은 말씀이 육체를 입고 아래로 내려오신 것을 구원이라 한다.</p>
 </blockquote>
-<p>이 규정에서 드러나듯, 플라톤 철학은 덕(德)과 정의의 개념을 통해 유대 사상과 접촉했다. 특히 <strong>가지적 현실은 일시적이고 비가시적 천상이 영원하다</strong>는 이원론, <strong>부당한 고난이 더 고귀하다</strong>는 역설적 윤리가 디아스포라 유대 사상에 깊은 영향을 주었다.</p>
-<h2>2. 플라톤학파와 디아스포라 유대 사상</h2>
-<p>플라톤학파가 신약 배경에서 갖는 가장 중요한 의미는 디아스포라 유대 사상과의 융합이다. 알렉산드리아의 <span class="wl-dead" title="위키 내부 링크">필론</span>은 플라톤 철학의 로고스(Logos) 개념을 유대 성경의 지혜 전통과 결합한 대표적 인물이다. 필론의 로고스 개념은 훗날 요한복음 서론(<span class="wl-dead" title="위키 내부 링크">요1</span> "말씀이 육신이 되어")의 신학적 배경으로 종종 논의된다. 신약개론I 8주 강의(요한복음)도 필론의 사상과 요한복음 사이의 유사성이 알렉산드리아설의 근거로 제시되는 점을 언급하지만, 필론의 글이 알렉산드리아 밖에서도 유통되었음을 감안해 그 설명력에 유보를 둔다.</p>
-<p><a class="wl" href="../../t/%EC%95%8C%EB%A0%89%EC%82%B0%EB%93%9C%EB%A6%AC%EC%95%84%ED%95%99%ED%8C%8C/">알렉산드리아학파</a>는 플라톤 철학의 알레고리 해석 방식을 성경 해석에 적용한 대표 학파다. 신약개론I 1주 강의의 해석사 개관에서도 3세기 알렉산드리아 학파가 "플라톤 철학+알레고리 해석"을 취했음이 명시된다.</p>
-<h2>3. 신약과의 관련성</h2>
-<p>플라톤 철학의 천상/지상 이원론, 가시적 세계의 임시성, 영혼의 불멸은 신약의 언어와 부분적으로 공명한다. 그러나 신약 신학은 플라톤적 이원론과 결정적으로 다르다. 플라톤학파에서 물질 세계는 열등한 실재지만, 신약은 창조의 선함과 육체의 부활(<span class="wl-dead" title="위키 내부 링크">요20</span>)을 긍정한다. 성육신(<a class="wl" href="../../t/%EC%84%B1%EC%9C%A1%EC%8B%A0/">성육신</a>)은 비가시적 영원이 가시적 물질로 내려온 사건이라는 점에서, 플라톤적 천상/지상 위계를 오히려 전복한다.</p>
-<p>신약개론I 2주 강의는 플라톤학파 이해를 "신약성경의 세계" 이해를 위한 배경 지식으로 자리매김하되, 이 철학을 신약 신학과 동일시하지 않는 방향을 취한다.</p>
+<p>첫째는 <strong>창조</strong>다. 플라톤의 데미우르고스는 이미 있던 질료를 빚는 장인이지만, 성경의 하나님은 무로부터 창조하시고(creatio ex nihilo) "보시기에 심히 좋았더라" 선언하신다 — 물질은 열등한 그림자가 아니라 선한 피조물이다. 둘째는 <a class="wl" href="../../t/%EC%84%B1%EC%9C%A1%EC%8B%A0/">성육신</a>이다. "말씀이 육신이 되어"(요 1:14)는 영혼이 육체를 탈출하는 플라톤적 상승의 정반대 방향, 곧 하강이다. 셋째는 <strong>부활</strong>이다. 기독교의 소망은 영혼불멸(육체를 벗은 영혼의 존속)이 아니라 몸의 부활 — 벗어야 할 감옥이던 몸이 도리어 회복되고 영화롭게 되는 것이다.</p>
+<h2>4. 유익과 위험 ⚖️</h2>
+<p>플라톤주의는 기독교에 순은과 독을 함께 건넸다. 유익과 위험이 같은 뿌리에서 나온다는 사실이, 겉모습의 유사가 실체의 동일을 뜻하지 않음을 보여준다.</p>
+<table>
+<thead>
+<tr>
+<th>축</th>
+<th>유익</th>
+<th>위험</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>초월</td>
+<td>감각계 너머 영원한 실재를 향한 지향</td>
+<td>지금 여기의 창조 세계를 폄하</td>
+</tr>
+<tr>
+<td>지성</td>
+<td>진리를 향한 관조와 학문의 전통</td>
+<td>구원을 지식·관조로 오해(→그노시스)</td>
+</tr>
+<tr>
+<td>영혼</td>
+<td>인간 안의 불멸적·영적 차원 긍정</td>
+<td>영혼-육체 이원론, 몸을 감옥으로</td>
+</tr>
+<tr>
+<td>물질</td>
+<td>(없음)</td>
+<td>몸·성·노동·일상의 경시, 금욕주의</td>
+</tr>
+</tbody>
+</table>
+<p>위험이 극단으로 치달은 자리가 <a class="wl" href="../../t/%EC%98%81%EC%A7%80%EC%A3%BC%EC%9D%98/">영지주의</a>다. 물질을 악으로 본 이원론은 창조주를 열등한 데미우르고스로 격하하고, 그리스도가 실제 몸을 입으셨음을 부정하는 가현설로 귀결했다. 초대교회가 성육신("육체로 오신 것을 시인하라", 요일 4:2)과 몸의 부활을 신조에 못 박은 것은, 플라톤주의가 복음 안쪽에서 몸을 지우려 할 때 그은 방어선이었다. 판별의 시금석은 언제나 성육신이다 — 하나님이 친히 살을 입고 오셨다면, 몸은 벗어야 할 감옥이 아니다.</p>
+<h2>5. 유산 — 기독교 플라톤주의</h2>
+<p>그럼에도 플라톤주의는 이단으로만 남지 않았다. 성육신의 방어선 안쪽에서 정제된 플라톤주의는 기독교 지성사의 큰 물줄기가 되었다. <a class="wl" href="../../t/%EC%95%8C%EB%A0%89%EC%82%B0%EB%93%9C%EB%A6%AC%EC%95%84%ED%95%99%ED%8C%8C/">알렉산드리아학파</a>의 알레고리 해석, 아우구스티누스의 조명설과 내면성의 영성, 그리고 그를 통해 서방 신학 전체에 스민 초월의 감각이 그 유산이다. 감각 너머의 실재를 사모하는 플라톤적 지향은 "위의 것을 찾으라"(골 3:1)는 사도의 권면과 만나 순례자의 영성으로 익었다.</p>
+<p>이 유산은 오늘 다시 물음이 된다. 초월을 잃고 감각계만 실재로 여기는 현대의 납작한 세계관 앞에서, 플라톤 전통이 지켜 온 '보이지 않는 것이 더 실재한다'는 직관은 재평가의 여지가 있다. 다만 그 초월이 몸과 창조를 버리는 탈출이 되지 않으려면, 유산은 언제나 성육신의 검문을 통과해야 한다. 플라톤은 위를 가리켰고, 복음은 그 위에서 아래로 내려오신 분을 가리킨다.</p>
 <h2>핵심 인사이트</h2>
 <ul>
-<li>플라톤학파는 헬라화 과정에서 디아스포라 유대 사상과 융합하여 신약 시대 지성사의 중요한 배경을 이루었다.</li>
-<li>필론의 로고스 개념은 플라톤-유대 융합의 대표 사례이며, 요한복음의 로고스 신학과 비교 탐구할 가치가 있다.</li>
-<li>그러나 신약은 플라톤적 이원론을 수용하지 않는다 — 성육신·부활은 물질 세계의 회복이지 탈출이 아니다.</li>
-<li>알렉산드리아 학파의 알레고리 해석은 플라톤 철학의 산물이며, 후대 성경 해석 역사에 깊은 흔적을 남겼다.</li>
+<li>플라톤주의의 세 기둥(이데아론·영혼불멸·동굴의 비유)은 하나의 상승 운동으로 맞물린다 — 감각에서 예지로, 그림자에서 실재로, 아래에서 위로.</li>
+<li>신약 시대의 중기 플라톤주의는 매개적 로고스 신학으로 재편되었고, 필론에게서 유대교와 융합해 요한복음 로고스 배경 논쟁의 재료가 되었다.</li>
+<li>아우구스티누스는 신플라톤주의를 창조적으로 수용했다 — 악=선의 결핍, 내면으로의 전회, "알기 위해 믿는다". 마니교 이원론을 넘어서는 열쇠였다.</li>
+<li>그러나 복음은 세 지점에서 플라톤주의를 뒤집는다 ⚖️ — 무로부터의 창조(물질의 선함), 성육신(하강), 몸의 부활(영혼불멸이 아니라). 플라톤은 상승을, 복음은 하강을 말한다.</li>
+<li>유익(초월·지성)과 위험(몸 경시·이원론)은 같은 뿌리에서 나오며, 위험의 극단이 영지주의다. 판별의 시금석은 성육신이다.</li>
 </ul>
 <h2>미해결 질문</h2>
 <ul>
-<li>요한복음의 로고스 개념이 필론의 로고스에서 영향받았는가, 아니면 독립적인 유대-구약 전통에서 온 것인가?</li>
-<li>히브리서의 "그림자/실체" 언어(히 8:5; 10:1)는 플라톤적 이원론의 흔적인가, 아니면 구약 성막 신학의 독립적 발전인가?</li>
-<li>플라톤학파와 영지주의(<a class="wl" href="../../t/%EC%98%81%EC%A7%80%EC%A3%BC%EC%9D%98/">영지주의</a>) 사이의 연속성과 불연속성은 어떻게 정리할 수 있는가?</li>
+<li>요한복음의 로고스는 필론의 플라톤적 로고스에서 왔는가, 독립된 유대-구약 전통에서 왔는가.</li>
+<li>히브리서의 "그림자/실체" 언어(히 8:5; 10:1)는 플라톤적 이원론의 흔적인가, 구약 성막 신학의 독립적 발전인가.</li>
+<li>아우구스티누스가 신플라톤주의에서 취한 '내면으로의 전회'는 복음적 영성인가, 아니면 관조에 갇힐 위험을 품은 유산인가.</li>
 </ul>
 <h2>교차 참조</h2>
 <ul>
-<li><a class="wl" href="../../t/%EC%8A%A4%ED%86%A0%EC%95%84%ED%95%99%ED%8C%8C/">스토아학파</a> — 같은 시기 경쟁한 그리스-로마 철학 학파</li>
-<li><a class="wl" href="../../t/%EC%95%8C%EB%A0%89%EC%82%B0%EB%93%9C%EB%A6%AC%EC%95%84%ED%95%99%ED%8C%8C/">알렉산드리아학파</a> — 플라톤 철학을 성경 해석에 적용한 학파</li>
-<li><a class="wl" href="../../t/%EC%98%81%EC%A7%80%EC%A3%BC%EC%9D%98/">영지주의</a> — 플라톤 이원론의 영향을 받은 초기 기독교 이단 운동</li>
-<li><span class="wl-dead" title="위키 내부 링크">필론</span> — 플라톤-유대 사상 융합의 대표 인물</li>
+<li><a class="wl" href="../../t/%EC%8A%A4%ED%86%A0%EC%95%84%ED%95%99%ED%8C%8C/">스토아학파</a> — 신약 시대 함께 통용된 철학의 짝. 로고스·자연법의 스토아, 이데아·초월의 플라톤.</li>
+<li><a class="wl" href="../../t/%EC%98%81%EC%A7%80%EC%A3%BC%EC%9D%98/">영지주의</a> — 플라톤 이원론이 극단으로 치달은 초기 기독교 이단. 가현설과 몸의 폄하.</li>
+<li><a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EA%B3%BC%EC%9D%B4%EC%84%B1/">신앙과이성</a> — "알기 위해 믿는다"(어거스틴·안셀무스)가 놓이는 인식론의 지형.</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EC%9C%A1%EC%8B%A0/">성육신</a> — "말씀이 육신이 되어", 플라톤적 상승을 뒤집는 하강의 신학.</li>
+<li><a class="wl" href="../../t/%EC%95%8C%EB%A0%89%EC%82%B0%EB%93%9C%EB%A6%AC%EC%95%84%ED%95%99%ED%8C%8C/">알렉산드리아학파</a> — 플라톤 철학+알레고리 해석의 전통.</li>
+<li><span class="wl-dead" title="위키 내부 링크">필론</span> — 플라톤 로고스와 유대 지혜의 융합.</li>
 </ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">02주_신약성경의세계</span></td>
+<td>강의</td>
+<td>네 학파 배경, 가지계/가시계 이원론, 유대사상에 준 영향</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">필론</span></td>
+<td>인물</td>
+<td>플라톤 로고스와 유대 지혜의 융합, 요한복음 배경 논쟁</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%95%8C%EB%A0%89%EC%82%B0%EB%93%9C%EB%A6%AC%EC%95%84%ED%95%99%ED%8C%8C/">알렉산드리아학파</a></td>
+<td>위키</td>
+<td>플라톤 철학+알레고리 해석</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EB%B3%80%EC%8B%A0%EB%A1%A0/">변신론</a></td>
+<td>위키</td>
+<td>아우구스티누스의 악=선의 결핍(privatio boni)</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EA%B3%BC%EC%9D%B4%EC%84%B1/">신앙과이성</a></td>
+<td>위키</td>
+<td>"나는 알기 위해서 믿는다", 이해를 추구하는 신앙</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%98%81%EC%A7%80%EC%A3%BC%EC%9D%98/">영지주의</a></td>
+<td>위키</td>
+<td>이원론의 극단, 가현설, 성육신의 방어선</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%84%B1%EC%9C%A1%EC%8B%A0/">성육신</a> · <a class="wl" href="../../t/%EC%8A%A4%ED%86%A0%EC%95%84%ED%95%99%ED%8C%8C/">스토아학파</a></td>
+<td>위키</td>
+<td>몸의 긍정(하강), 신약 시대 네 학파의 짝</td>
+</tr>
+</tbody>
+</table>
 </article>
-<div class="tagrow"><span>#domain/신학</span><span>#discipline/신약학</span><span>#topic/헬레니즘</span><span>#topic/그리스로마철학</span><span>#topic/신약배경</span><span>#topic/이원론</span></div>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/역사신학</span><span>#헬레니즘</span><span>#신플라톤주의</span><span>#이원론</span><span>#이데아론</span></div>
 <footer>
   <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
   <a href="../../">주제·북노트 탐색 →</a>
