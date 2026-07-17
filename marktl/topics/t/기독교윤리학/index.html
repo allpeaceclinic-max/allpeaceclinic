@@ -1,0 +1,415 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>기독교윤리학 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:300">윤리·공공</span><span class="date">2026-07-14</span></div>
+  <h1 class="note-title">기독교윤리학</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>기독교윤리학(Christian ethics)은 하나님의 계시된 뜻에 비추어 인간의 성품과 행동과 태도가 어떠해야 하는가를 다루는 신학의 한 분과다. 그러나 이 볼트의 중심 코퍼스 — 존 프레임의 교재를 따라간 MBTS 기독교윤리학 강의 연작 — 가 첫 시간에 못박는 전제는, 윤리학이 신학의 곁가지가 아니라 신학 자체의 한 방편이라는 것이다. "윤리학은 신학이다." 신학이 "무엇을 믿어야 하는가"에 답한다면 윤리학은 "그 <a class="wl" href="../../t/%EB%AF%BF%EC%9D%8C/">믿음</a>의 의무는 무엇인가"에 답하며, 따라서 신학적 질문을 던지는 순간 우리는 이미 윤리적 질문을 던지고 있다. 강의의 정의를 그대로 옮기면, 윤리학은 "사람의 인격과 행동과 태도가 어떠할 때 하나님의 복의 대상이 되며 또한 그것이 어떠할 때 그 복에서 제외되는지를 가늠하는 방편"이다.</p>
+<p>이 정의는 기독교윤리학을 세속 윤리학과 나란히 놓인 또 하나의 규범 이론으로 축소하지 않는다. 학문 분과로서 기독교윤리학은 세속 도덕 철학이 축적한 세 갈래의 규범 윤리 — <a class="wl" href="../../t/%EB%AA%A9%EC%A0%81%EB%A1%A0/">목적론</a>·결과주의, <a class="wl" href="../../t/%EC%9D%98%EB%AC%B4%EB%A1%A0/">의무론</a>, <a class="wl" href="../../t/%EB%8D%95%EC%9C%A4%EB%A6%AC/">덕윤리</a> — 를 정직하게 검토하되, 그 각각이 붙든 통찰을 인정하면서 동시에 그것이 절대화될 때 어떻게 무너지는지를 드러내고, 결국 세 갈래 모두를 <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%A3%BC%EA%B6%8C/">하나님의 주권</a> 아래에서 하나로 통합하는 작업이다. 이 글은 그 지형을 분과의 정체성에서 시작해 세 이론과 그 통합 틀로, 다시 토대와 방법으로, 마지막으로 쟁점의 지도로 따라간다. 구약의 윤리는 <a class="wl" href="../../t/%EA%B5%AC%EC%95%BD%EC%9C%A4%EB%A6%AC/">구약윤리</a>가, 공리주의의 상세는 <a class="wl" href="../../t/%EA%B3%B5%EB%A6%AC%EC%A3%BC%EC%9D%98/">공리주의</a>가, 칸트 의무론의 계보는 <a class="wl" href="../../t/%EC%9D%98%EB%AC%B4%EB%A1%A0/">의무론</a>이, 생명·의료윤리 각론은 <a class="wl" href="../../t/%EC%83%9D%EB%AA%85%EC%9C%A4%EB%A6%AC/">생명윤리</a>가 맡으므로, 이 페이지는 "기독교윤리학이라는 분과의 지형·이론·방법"에 집중한다.</p>
+<h2>1. 윤리학은 신학이다 — 분과의 정체성과 경계선</h2>
+<p>기독교윤리학이 신학이라는 명제는 곧 그 최고선(summum bonum)이 인간이 아니라 하나님에게 있다는 뜻이다. 세속 윤리학이 행복이나 쾌락이나 자율적 이성을 최고선의 자리에 놓는 반면, 강의는 성경이 규정한 최고의 선을 "하나님의 영광"(고전 10:31)과 "하나님의 나라"(마 6:33)로 고정한다. 윤리적 행동 하나하나에 목적(telos)과 목표가 부여되되, 그 목적이 인본주의가 아니라 신본주의(theocentric)에 뿌리내린다는 것이다. 이 신본주의적 정향이 기독교윤리학을 여느 규범 이론과 구별하는 첫 경계선이다.</p>
+<p>두 번째 경계선은 이 분과가 스스로를 어떤 이념적 프레임에도 가두지 않는다는 데 있다. 강의는 윤리적 전제의 스펙트럼을 자유주의(율법주의를 지양하고 개인의 자유·자기결정을 강조 — 유대교의 힐렐 학파, 가톨릭의 예수회)와 보수주의(성경의 엄격함과 타협 없는 훈련을 강조 — 샴마이 학파, 얀센파)라는 양극으로 제시한 뒤, "기독교 윤리학의 논점은 자유주의나 보수주의 어느 한쪽에 우리의 입장을 최대한 근접시키는 데에 있지 않다"고 못박는다. 근거는 예수께서 보수적 바리새인과 자유주의적 사두개인을 함께 책망하시고, <span class="wl-dead" title="위키 내부 링크">바울</span>이 율법주의자와 방종주의자를 함께 책망한 데 있다. 요지는 하나다 — "프레임에 갇히지 말고, 프레임을 판단하는 위치에 있어야 한다."</p>
+<p>이 상위 관점이 가능한 것은 기독교윤리학이 <a class="wl" href="../../t/%EB%A9%94%ED%83%80%EC%9C%A4%EB%A6%AC%ED%95%99/">메타윤리학</a>마저 성경의 가르침 안에서 수행하기 때문이다. 무엇이 선이고 무엇이 옳음이며 무엇이 의무인가라는 윤리학 자체의 본질에 대한 물음까지도, 이 분과는 인간 이성의 자율적 사변이 아니라 계시된 하나님의 성품에서 답을 길어 올린다. 그렇다면 그 답은 규범 윤리의 세 갈래와 어떻게 만나는가.</p>
+<h2>2. 세 갈래의 규범 윤리 — 목적론·의무론·덕윤리</h2>
+<p>서양 규범 윤리학은 크게 세 전통으로 갈린다. 행동의 옳고 그름을 그것이 낳는 결과와 목적으로 판단하는 목적론·결과주의, 결과와 무관하게 의무와 규칙에의 부합으로 판단하는 의무론, 그리고 행위 규칙이 아니라 행위자의 내적 성품에 초점을 두는 덕윤리다. 기독교윤리학은 이 셋을 외부의 경쟁자로 밀어내지 않고, 각각이 붙든 진짜 통찰과 그것이 절대화될 때의 왜곡을 함께 짚는다.</p>
+<table>
+<thead>
+<tr>
+<th>전통</th>
+<th>판단 기준</th>
+<th>대표자</th>
+<th>붙든 통찰</th>
+<th>절대화의 함정</th>
+<th>기독교적 수용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>목적론·결과주의</td>
+<td>결과·행복의 극대화</td>
+<td>에피쿠로스, 벤담·밀(<a class="wl" href="../../t/%EA%B3%B5%EB%A6%AC%EC%A3%BC%EC%9D%98/">공리주의</a>)</td>
+<td>행동의 결과를 숙고하라</td>
+<td>행복 총량 계산은 신적 전지를 요구; 수단이 정당화됨</td>
+<td>목적을 "하나님의 영광"으로 재정의</td>
+</tr>
+<tr>
+<td>의무론</td>
+<td>의무·보편 규칙에의 부합</td>
+<td>칸트의 정언명령</td>
+<td>사람을 수단이 아닌 목적으로</td>
+<td>규범을 정하는 주체가 인간; 내용 없는 형식</td>
+<td>규범의 근거를 하나님의 권위·계명에 둠</td>
+</tr>
+<tr>
+<td>덕윤리</td>
+<td>행위자의 성품·덕</td>
+<td>아리스토텔레스, <span class="wl-dead" title="위키 내부 링크">매킨타이어</span>, <span class="wl-dead" title="위키 내부 링크">하우어워스</span></td>
+<td>무엇을 하느냐보다 어떤 사람이 되느냐</td>
+<td>무엇이 덕인지, 덕을 어떻게 얻는지 답 못함</td>
+<td>성령의 임재를 통한 성품 형성으로 완성</td>
+</tr>
+</tbody>
+</table>
+<p>강의가 목적론에 던지는 핵심 비판은 인식론적이다. "최대다수의 최대행복"을 계산하려면 행동이 낳을 행복과 고통의 총량, 나아가 인과의 전 과정을 측정해야 하는데, 이는 "신적 전지가 없이는 절대로 불가능"하다. 공리주의는 역설적으로 오직 하나님만이 온전한 목적론적 판단자가 되실 수 있음을 보여주는 셈이다(상세는 <a class="wl" href="../../t/%EA%B3%B5%EB%A6%AC%EC%A3%BC%EC%9D%98/">공리주의</a>). 의무론에 대해서는, 칸트의 정언명령이 "사람을 언제나 목적으로 대하고 절대 수단으로 다루지 않으라"는 옳은 원리를 제시하지만 그 보편 규범을 정하는 주체가 인간 이성이라는 점에서 "플라톤의 선(의 형상)만큼이나 허무하다"고 평가한다 — 적실한 윤리 규범은 절대적 인격으로부터만 유래할 수 있기 때문이다(상세는 <a class="wl" href="../../t/%EC%9D%98%EB%AC%B4%EB%A1%A0/">의무론</a>).</p>
+<p>덕윤리에 대한 평가는 가장 미묘하다. 아리스토텔레스를 비롯한 철학자들이 성품·덕·내적 동기의 중요성을 강조한 것은 정당하지만, 강의는 그들이 "무엇이 덕인지, 그 덕을 어떻게 마음에 얻을 수 있는지"를 끝내 보여주지 못했다고 본다. 현대에 매킨타이어가 덕윤리를 부흥시키고 하우어워스가 이를 교회라는 내러티브 공동체 안에 위치시켰지만, 기독교윤리학이 여기에 더하는 것은 성품 형성의 동력이 인간의 의지가 아니라 하나님의 임재와 성령의 열매라는 통찰이다. 세 전통의 통찰(결과·규범·성품)은 그 자체로 참되되, 하나님 없이는 서로 충돌한다. 바로 그 충돌을 하나의 관점으로 묶는 틀이 삼중관점이다.</p>
+<h2>3. 삼중관점 — 세 이론이 하나님 안에서 만나는 자리</h2>
+<p><span class="wl-dead" title="위키 내부 링크">코넬리우스 반틸</span>이 제안하고 <span class="wl-dead" title="위키 내부 링크">존 프레임</span>이 발전시킨 삼중관점(triperspectivalism)은 목적·기준·동기라는 세 요소에 관한 통찰이며, 이 볼트 기독교윤리학의 척추다. 프레임은 하나님의 주권을 세 속성 — 통제·권위·임재 — 으로 분해한 뒤, 이를 세 가지 윤리적 원칙과 세 관점에 정확히 대응시킨다. 목적론적 원칙은 자연과 역사를 주관하시는 하나님의 통제에, 의무론적 원칙은 규범을 계시하시는 권위에, 실존적 원칙은 성품을 빚으시는 임재에 상응한다.</p>
+<table>
+<thead>
+<tr>
+<th>원칙</th>
+<th>삼중관점</th>
+<th>하나님의 주권적 속성</th>
+<th>세속 대응</th>
+<th>기독교와의 차이</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>목적론적</td>
+<td>상황적 관점</td>
+<td>통제(자연·역사 주관)</td>
+<td>에피쿠로스, 밀</td>
+<td>목적이 "하나님의 영광"으로 고정</td>
+</tr>
+<tr>
+<td>의무론적</td>
+<td>규범적 관점</td>
+<td>권위</td>
+<td>칸트 정언명령</td>
+<td>하나님이 규범을 정하시므로 시공간에 불변</td>
+</tr>
+<tr>
+<td>실존적</td>
+<td>실존적 관점</td>
+<td>임재</td>
+<td>아리스토텔레스 덕윤리</td>
+<td>하나님의 임재를 통한 성품 형성(새사람)</td>
+</tr>
+</tbody>
+</table>
+<p>세 관점은 서로를 배제하지 않고 포함한다. 상황을 올바로 이해하려면 성경의 교훈과 자기 이해가 그 상황의 구성 요소로 들어와야 하고, 규범을 안다는 것은 그 진리가 상황과 자신에게 적용됨을 깨닫는 것이며, 내적 경험 역시 상황과 계시의 말씀을 모두 품는다. 프레임은 이를 "삼각형의 세 꼭짓점은 각각 다른 강조점을 가진 출입구이지만, 최종 목표는 언제나 삼각형 전체"라는 비유로 요약한다. 세속 윤리학의 비극은 세 관점 중 하나를 절대화해 나머지를 잠식한다는 데 있다 — 실존적 관점을 절대화하면 인간의 내면적 주관성이 동기·목적·기준의 세 역할을 홀로 떠맡아 소피스트에서 사르트르, 포스트모더니즘에 이르는 상대주의로 흐르고, 상황적 관점을 절대화하면 결과 계산이 규범을 삼켜 <a class="wl" href="../../t/%EC%83%81%ED%99%A9%EC%9C%A4%EB%A6%AC/">상황윤리</a>가 된다.</p>
+<blockquote>
+<p>"우리 행동의 결과를 주관하시는 동일한 하나님이 우리의 의무를 선언하시며 또한 우리의 내면에 새로운 실존적 삶을 주신다."</p>
+</blockquote>
+<p>바로 이 문장이 삼중관점의 핵심이다. 세 원칙이 서로 배치되는 것은 그것들을 지탱하는 하나님이 전제되지 않을 때이며, 목적·규범·성품의 원천이 한 분 하나님으로 수렴할 때 비로소 세 관점은 하나로 통일된다. 여기서 <a class="wl" href="../../t/%EC%83%81%ED%99%A9%EC%9C%A4%EB%A6%AC/">상황윤리</a>에 대한 비판이 자연히 도출된다. 조셉 플레처류의 상황윤리는 고정된 규범 대신 구체적 상황에서의 사랑(agape)을 유일한 규범으로 삼는데, 이는 사랑이라는 이름으로 상황적 관점을 절대화하여 규범적 관점을 폐기하는 것이다. 기독교윤리학은 사랑을 최고의 계명으로 인정하되, 그 사랑이 하나님의 계시된 규범과 대립하는 것이 아니라 그 규범 안에서 구체화된다고 본다.</p>
+<h2>4. 토대 — 최고선이신 하나님과 주권의 세 속성</h2>
+<p>삼중관점이 방법의 틀이라면, 그 틀을 지탱하는 토대는 하나님의 성품 자체다. 기독교윤리학에서 최고선은 어떤 추상적 가치나 상태가 아니라 하나님이라는 인격이다. 기말종합보고서가 정리하듯, "하나님의 선과 하나님의 존재는 하나"이며, 하나님은 자신에게 무엇을 해야 할지 말해 줄 이가 필요 없으시고 선을 행하는 것이 그분의 성품이자 가장 깊은 바람이기에 선을 행하신다. 그러므로 "너희는 거룩하라"(레 19:2)는 명령은 단순한 모방의 요구가 아니라 하나님을 닮으라는 관계적 부름이며, 윤리의 근거는 규칙집이 아니라 성품에 있다.</p>
+<p>이 성품이 우리를 향해 작동하는 방식이 주권의 세 속성이다. 지배는 이스라엘과의 관계 안에서 모든 창조를 다스리는 능력이고, 권위는 그 능력이 아니라 그분의 권리에 관한 것이며, 언약적 임재는 우리 가운데 충만히 함께하심이다. 이 셋은 각각 선행의 세 필요충분조건 — 바른 목적(하나님의 영광)·바른 기준(하나님의 말씀)·바른 동기(믿음으로 정결해진 마음) — 으로 번역된다. 강의는 이를 웨스트민스터 신앙고백 16.7에서 끌어오는데, 중생하지 못한 이의 행실이 그 자체로 유익하더라도 이 세 조건을 갖추지 못하면 하나님을 기쁘시게 할 수 없다는 것이다. 이로써 기독교윤리학은 "선한 불신자"의 세속적 의(civil righteousness)를 부정하지 않으면서도, 그 선행과 구원에 이르는 선을 신학적으로 구별한다.</p>
+<p>토대의 나머지 두 기둥은 창조와 구속, 그리고 <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EB%82%98%EB%9D%BC/">하나님 나라</a>다. 창조 질서는 윤리에 불변하는 구조를 부여하고("하나님의 창조질서는 달라지지 않는다"), 타락은 그 질서를 훼손하되 완전히 지우지 못하며(양심은 손상된 채 남는다), 구속은 그리스도의 형상 안에서 새사람을 창조하고, 하나님 나라는 그 완성을 종말론적으로 앞당긴다. 이 창조-타락-구속-완성의 서사가 기독교윤리학의 형이상학적 배경이며, 개별 계명은 이 서사 안에서만 제자리를 얻는다. 그렇다면 이 서사 밖에 선 세속 윤리는 하나님의 뜻과 전혀 무관한가.</p>
+<h2>5. 세속 윤리와의 관계 — 일반계시·자연법과 그 한계</h2>
+<p>기독교윤리학은 세속 윤리를 전면 부정하지 않는다. 강의가 세속 윤리 연구에서 인정하는 유익은 두 가지다. 하나는 하나님의 <a class="wl" href="../../t/%EC%9D%BC%EB%B0%98%EA%B3%84%EC%8B%9C/">일반계시</a> 덕분에 세속 윤리에도 하나님의 계명에 대한 지식이 발견된다는 것이고(롬 1:32, 2:14-15), 다른 하나는 윤리적 판단의 복잡함에 대해 세속 윤리 연구가 때로 그리스도인보다 민첩한 반응을 보였다는 것이다. 언약을 받은 적 없는 이방 민족조차 "인간이라면 해서는 안 되는 짓"으로 심판받는다는 <a class="wl" href="../../t/%EA%B5%AC%EC%95%BD%EC%9C%A4%EB%A6%AC/">구약</a> 열방신탁의 논리(<span class="wl-dead" title="위키 내부 링크">전성민</span>)가 <a class="wl" href="../../t/%EC%9E%90%EC%97%B0%EB%B2%95/">자연법</a>의 성경적 토대이며, 상식은 신앙의 적이 아니라 하나님이 <a class="wl" href="../../t/%EC%96%91%EC%8B%AC/">양심</a>에 새기신 자원이다.</p>
+<p>그러나 세속 윤리가 스스로의 힘으로 완결된 윤리 체계에 이르지는 못한다는 것이 강의의 결론이다. 4주차 강의는 세계 종교와 세속 철학이 취해 온 윤리적 근거를 네 유형으로 분류하고 각각의 파탄 지점을 짚는다.</p>
+<table>
+<thead>
+<tr>
+<th>유형</th>
+<th>대표 체계</th>
+<th>실패 지점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>운명에 근거한 윤리</td>
+<td>이집트 마아트, 바벨론 메, 유교 天</td>
+<td>비인격적 운명은 "is에서 ought"를 도출 못함(자연주의적 오류)</td>
+</tr>
+<tr>
+<td>자기 성찰의 윤리</td>
+<td>힌두교·불교·도교·영지주의</td>
+<td>윤리가 깨달음의 방편으로 전락, 목적을 상실</td>
+</tr>
+<tr>
+<td>복음 없는 규율</td>
+<td>유대교·이슬람·이신론</td>
+<td>관계성(삼위) 없는 신 개념은 윤리의 인격적 근거가 못 됨</td>
+</tr>
+<tr>
+<td>무신론·비인격 체계</td>
+<td>실존주의·포스트모더니즘</td>
+<td>자율적 이성·의지·감정의 절대화 → 상대주의</td>
+</tr>
+</tbody>
+</table>
+<p>이 분석의 축은 흄과 무어가 정식화한 <a class="wl" href="../../t/%EC%9E%90%EC%97%B0%EC%A3%BC%EC%9D%98%EC%A0%81%EC%98%A4%EB%A5%98/">자연주의적 오류</a> — 현상(is)에서 당위(ought)를 직접 도출할 수 없다는 논증 — 다. 강의의 정교한 대비는, "하나님이 도둑질은 악하다고 말씀하신다"는 전제가 자연주의적 오류를 범하지 않는다는 데 있다. 하나님의 말씀은 중립적 사실 선언이 아니라 이미 그 자체로 주권의 속성(지배·권위·임재)을 동반한 도덕적 사실이기 때문이다. 반면 자연법은 두 얼굴을 갖는다 — 하나님이 양심에 새기신 보편 도덕이면서, 동시에 권력자가 자기 입장을 "이것이 자연"이라 선언하는 순간 이데올로기의 도구로 변질된다. 그래서 전성민은 세계관의 우열을 명제의 완벽함이 아니라 "얼마나 더 사랑하게, 겸손하게 만드느냐"로 판별한다. 세속 윤리와의 대화는 이 겸손 위에서만 안전하다.</p>
+<h2>6. 성경과 윤리 — 율법·예언자·예수·바울, 그리고 성경을 쓰는 법</h2>
+<p>기독교윤리학의 일차 자료는 성경이다. 그러나 "1세기에 쓰인 성경이 21세기에 어떻게 적용되는가"는 <span class="wl-dead" title="위키 내부 링크">리처드 헤이스</span>가 못박듯 근본적으로 해석의 문제다. 성경의 윤리적 증언은 단일하지 않다 — 율법은 언약 공동체의 삶의 질서를, 예언자는 공의(미쉬파트)와 정의(쯔다카)의 회복을(<a class="wl" href="../../t/%EA%B3%B5%EC%9D%98/">공의</a>), 예수의 산상수훈(<a class="wl" href="../../t/%EC%82%B0%EC%83%81%EC%88%98%ED%9B%88/">산상수훈</a>)은 마음의 의와 원수 사랑이라는 급진적 요구를, 바울은 그리스도의 십자가에 근거한 새 공동체의 윤리를 증언한다. 이 다양성을 하나로 꿰는 통일성을 헤이스는 세 초점 이미지 — 공동체·십자가·새 창조 — 로 정리하며, 바울 윤리의 근본 규범을 "그리스도를 형상화하는 삶"으로 압축한다(상세는 <a class="wl" href="../../b/%EC%8B%A0%EC%95%BD%EC%9D%98%EC%9C%A4%EB%A6%AC%EC%A0%81%EB%B9%84%EC%A0%84_%ED%97%A4%EC%9D%B4%EC%8A%A4/">신약의윤리적비전_헤이스</a>).</p>
+<p>성경을 윤리에 사용하는 방식도 하나가 아니다. 헤이스는 네 양식을 구분한다.</p>
+<table>
+<thead>
+<tr>
+<th>양식</th>
+<th>성격</th>
+<th>예시</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>규정(Rules)</td>
+<td>직접 명령</td>
+<td>살인하지 말라, 이혼하지 말라</td>
+</tr>
+<tr>
+<td>원리(Principles)</td>
+<td>행동의 일반 근거</td>
+<td>하나님·이웃 사랑</td>
+</tr>
+<tr>
+<td>패러다임(Paradigms)</td>
+<td>모범적 행실의 모형</td>
+<td>선한 사마리아인</td>
+</tr>
+<tr>
+<td>상징세계(Symbolic World)</td>
+<td>세계 이해의 틀</td>
+<td>타락한 인간 상황, 하나님의 성품</td>
+</tr>
+</tbody>
+</table>
+<p>네 양식 모두 필요하되, 신약 성경 대부분이 내러티브이므로 패러다임 양식이 우선권을 갖는다는 것이 헤이스의 결론이다. 구약윤리 쪽에서 전성민이 패러다임적·종말론적·예표적 독법을 제시한 것과 같은 방향이다 — 성경 윤리는 조문의 이식이 아니라 본보기의 번역으로 오늘에 도달한다. 성경 밖의 권위인 전통·이성·경험도 쓰이되, 어디까지나 성경을 "규범을 만드는 규범"(norma normans)으로 두고 그 아래에서 상호 균형적으로만 사용된다. 전통은 개혁의 대상이 될 수 있고, 이성만으로는 계몽주의의 함정에 빠지며, 개인의 경험은 "모호한 인도자"여서 공동체 전체의 체험만이 신학적 권위를 갖는다. 성경·전통·이성·경험이라는 네 원천의 위계가 이렇게 정리될 때, 방법론은 상황윤리처럼 사랑 하나에 모든 것을 거는 환원도, 근본주의처럼 규정 하나만 읽는 경직도 피한다.</p>
+<h2>7. 그리스도를 본받음 — 세 전통의 통합과 존재의 윤리</h2>
+<p>기독교윤리학의 세 전통이 하나님 안에서 통합된다는 명제는, 이 볼트에서 한 인격 — 그리스도 — 안에서의 통합으로 구체화된다. 기말종합보고서(이상협 본인 저작)는 "내가 그리스도를 본받는 자가 된 것 같이 너희는 나를 본받는 자가 되라"(고전 11:1)를 축으로, 그리스도를 본받는 삶(imitatio Christi)이 목적론·의무론·실존의 세 원칙을 분리하지 않고 한 인격 안에서 만나게 한다고 논증한다. 목적론적으로 그리스도를 본받음은 삶의 목적(하나님의 영광)이 되고, 의무론적으로 그것은 십자가에서 자기를 내어주신 순종에 근거를 두며, 실존적으로 그것은 그리스도의 성품을 닮아가는 존재의 변화가 된다. 세속윤리학의 세 전통이 각각 하나의 원칙을 절대화해 충돌하는 반면, 그리스도를 본받는 삶은 세 원칙이 한 인격 안에서 만나기에 통합될 수 있다.</p>
+<p>이 통합의 무게 중심은 행위가 아니라 존재에 있다. <span class="wl-dead" title="위키 내부 링크">스탠리 그렌츠</span>가 지적하듯 기독교 윤리학은 지난 100년간 '행위'에서 '존재'로 뚜렷하게 이동했다 — 윤리에 대한 지식을 더 갖는 것이 아니라 존재 자체가 더 윤리적이 되는 것이 관건이다. 소크라테스의 지행합일론("악덕은 무지")이 사탄과 다윗의 사례 앞에서 무너지는 이유가 여기 있다. 앎이 곧 존재를 바꾸지는 못한다. <span class="wl-dead" title="위키 내부 링크">조나단 에드워즈</span>의 문장이 이 전환을 못박는다.</p>
+<blockquote>
+<p>"거룩한 행동이 있기 전에 먼저 거룩함의 원리가 있어야 한다." — 조나단 에드워즈</p>
+</blockquote>
+<p>존재(Being)가 바뀌면 행함(Doing)이 선하게 된다. 그리고 그 존재의 변화는 인간의 의지력이 아니라 성령의 근원적 역사, 곧 관계 안에서 일어난다. 여기서 덕윤리와 <a class="wl" href="../../t/%EB%82%B4%EB%9F%AC%ED%8B%B0%EB%B8%8C%EC%9C%A4%EB%A6%AC%ED%95%99/">내러티브 윤리</a>가 제자리를 얻는다 — 계명(명령윤리)이 규정할 수 없는 것, 즉 도덕적 진리에 실존적 힘을 부여하는 일을 이야기가 감당하며, <span class="wl-dead" title="위키 내부 링크">하우어워스</span>가 강조하듯 성품은 교회라는 공동체 안에서 빚어진다. 기독교윤리학의 최종 질문은 "무엇을 알아야 하는가"나 "무엇을 느껴야 하는가"가 아니라 "무엇이 되어가는가"이며, 그 되어감은 그리스도를 본받는 삶 안에서만 일어난다.</p>
+<h2>8. 쟁점의 지도 — 생명·성·정의·전쟁·경제, 그리고 진료실</h2>
+<p>분과로서 기독교윤리학이 다루는 응용 영역은 넓다. 이 볼트는 각 영역에 대한 자료를 축적하고 있으며, 이 페이지는 그 지도만 그린다.</p>
+<table>
+<thead>
+<tr>
+<th>영역</th>
+<th>핵심 질문</th>
+<th>볼트의 자리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>생명</td>
+<td>존엄성은 어디서 오는가 — 기능인가 형상인가</td>
+<td><a class="wl" href="../../t/%EC%83%9D%EB%AA%85%EC%9C%A4%EB%A6%AC/">생명윤리</a>(Imago Dei), ICMDA Bioethics</td>
+</tr>
+<tr>
+<td>성·가정</td>
+<td>이혼·재혼·동성애를 공동체는 어떻게 품는가</td>
+<td>신적 수용론(<a class="wl" href="../../t/%EA%B5%AC%EC%95%BD%EC%9C%A4%EB%A6%AC/">구약윤리</a>), 헤이스의 대안 공동체</td>
+</tr>
+<tr>
+<td>정의</td>
+<td>정의의 근원은 계약인가 하나님인가</td>
+<td><a class="wl" href="../../t/%EA%B3%B5%EC%9D%98/">공의</a>, <span class="wl-dead" title="위키 내부 링크">권성수</span>의 트롤리·구명선</td>
+</tr>
+<tr>
+<td>전쟁·폭력</td>
+<td>폭력에 대한 그리스도인의 응답은</td>
+<td>십자가 패러다임(요더), 헤렘 난제(<a class="wl" href="../../t/%EA%B5%AC%EC%95%BD%EC%9C%A4%EB%A6%AC/">구약윤리</a>)</td>
+</tr>
+<tr>
+<td>경제</td>
+<td>자본은 무한히 증식해도 되는가</td>
+<td>희년의 "자본의 생명 한계"(<a class="wl" href="../../t/%EA%B5%AC%EC%95%BD%EC%9C%A4%EB%A6%AC/">구약윤리</a>)</td>
+</tr>
+</tbody>
+</table>
+<p>이 지도에서 사용자에게 가장 가까운 접점은 의료윤리다. 의료사회 회복 담론의 "선택의 윤리학"은 수련병원·전공과 선택에서 자원 배분까지 의료인의 선택을 지배하는 두 세속 윤리 — 동기 중심의 의무론과 결과 중심의 공리주의 — 를 대비시키고, 그 위에 "하나님 자체"를 선으로 삼는 기독교의 규범·상황·실존 삼중 구조를 놓는다. 병상 배정, 치료 중단, 진실 고지처럼 결과 계산의 유혹이 가장 강한 자리에서, 칸트의 "사람을 수단으로 다루지 말라"와 <a class="wl" href="../../t/%EC%83%9D%EB%AA%85%EC%9C%A4%EB%A6%AC/">생명윤리</a>의 "동일한 하나님의 형상"은 인간을 셈의 단위로 만드는 공리주의적 계산을 멈춰 세운다. 기독교윤리학이 진료실에서 묻는 세 질문 — 이 기술이 사람을 섬기는가 이용하는가, 누가 혜택을 받고 누가 제외되는가, 이것이 나를 더 사랑 많은 의사로 만드는가 효율적인 기술자로만 만드는가 — 은 이 분과 전체가 한 임상의의 손끝에서 시험받는 지점이다(<a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a>).</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>기독교윤리학은 신학의 곁가지가 아니라 신학 자체의 한 방편이다 — "윤리학은 신학이다." 그 최고선은 인간의 행복이 아니라 하나님의 영광(고전 10:31)이며, 이 신본주의적 정향이 세속 규범 이론과의 첫 경계선이다.</li>
+<li>규범 윤리의 세 갈래(목적론·의무론·덕윤리)는 각각 참된 통찰(결과·규범·성품)을 붙들되, 하나를 절대화하면 서로 충돌한다. 기독교윤리학은 이 셋을 폐기하지 않고 회수한다.</li>
+<li>존 프레임의 삼중관점은 세 원칙을 하나님 주권의 세 속성(통제·권위·임재)에 대응시켜, 목적·규범·성품의 원천이 한 분 하나님으로 수렴할 때에만 세 관점이 통일된다고 본다.</li>
+<li>세속 윤리는 일반계시·자연법을 통해 하나님의 계명을 어렴풋이 알지만, 인격적이면서 절대적인 근거를 갖지 못해 완결된 체계에 이르지 못한다. 자연법은 권력의 언어가 될 때 이데올로기로 변질된다.</li>
+<li>성경 윤리는 조문의 이식이 아니라 본보기의 번역으로 오늘에 도달한다 — 헤이스의 네 양식 중 패러다임이 우선권을 가지며, 전통·이성·경험은 성경(norma normans) 아래에서만 쓰인다.</li>
+<li>상황윤리 비판의 핵심은 사랑(agape)을 상황적 관점의 절대화로 삼아 규범적 관점을 폐기한다는 데 있다 — 사랑은 규범과 대립하지 않고 규범 안에서 구체화된다.</li>
+<li>기독교윤리학의 무게 중심은 행위가 아니라 존재에 있다 — "거룩한 행동 이전에 거룩함의 원리"(에드워즈). 세 전통은 그리스도를 본받는 삶(imitatio Christi) 안에서 한 인격으로 통합된다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>삼중관점이 세 관점을 "하나님 안에서" 통합한다고 할 때, 실제 도덕 갈등에서 세 관점이 서로 다른 답을 낼 경우 어느 관점을 우선할지 결정하는 상위 기준은 무엇인가?</li>
+<li>"하나님이 규범을 정하신다"는 답변 자체가 인식론적으로 어떻게 확증되는가 — 계시에 대한 신앙적 전제 없이 그 절대성을 세속 대화 상대에게 변증할 수 있는가?</li>
+<li>세속 윤리에 발견되는 일반계시의 지식과 그 윤리의 근본적 불완전성 사이의 경계는 어디인가 — 자연법을 신학적 자원으로 쓰는 것과 이데올로기로 전유하는 것을 실천에서 어떻게 구별하는가?</li>
+<li>성경의 네 양식(규정·원리·패러다임·상징세계)이 한 사안에서 충돌할 때(예: 규정은 금하나 패러다임은 허용) 무엇이 우선하는가? 패러다임 우선권은 규정의 구속력을 얼마나 상대화하는가?</li>
+<li>의료 현장처럼 집합적·잠정적 결정이 불가피한 자리에서, 공리주의의 전지 불가능성 비판은 결과 예측 자체의 포기를 뜻하는가, 아니면 겸손한 계산과 규범의 병행을 뜻하는가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EA%B3%B5%EB%A6%AC%EC%A3%BC%EC%9D%98/">공리주의</a> — 목적론·결과주의의 정점. 인식론적 비판(신적 전지)과 강단·의료 현장의 적용 (위임)</li>
+<li><a class="wl" href="../../t/%EC%9D%98%EB%AC%B4%EB%A1%A0/">의무론</a> — 칸트를 축으로 한 규범 윤리 전통의 계보 (위임)</li>
+<li><a class="wl" href="../../t/%EB%8D%95%EC%9C%A4%EB%A6%AC/">덕윤리</a> · <a class="wl" href="../../t/%EB%82%B4%EB%9F%AC%ED%8B%B0%EB%B8%8C%EC%9C%A4%EB%A6%AC%ED%95%99/">내러티브윤리학</a> · <a class="wl" href="../../t/%EB%AA%85%EB%A0%B9%EC%9C%A4%EB%A6%AC%ED%95%99/">명령윤리학</a> — 성품·이야기·규칙에 초점을 둔 세 접근</li>
+<li><a class="wl" href="../../t/%EA%B5%AC%EC%95%BD%EC%9C%A4%EB%A6%AC/">구약윤리</a> — 율법·희년·자연법·헤렘 등 구약 윤리의 지형 (위임)</li>
+<li><a class="wl" href="../../t/%EC%83%9D%EB%AA%85%EC%9C%A4%EB%A6%AC/">생명윤리</a> — 생명의 시작과 끝, 의료윤리 각론 (위임)</li>
+<li><a class="wl" href="../../t/%EC%82%BC%EC%A4%91%EA%B4%80%EC%A0%90/">삼중관점</a> — 규범적·상황적·실존적 관점의 상위 프레임</li>
+<li><a class="wl" href="../../t/%EC%83%81%ED%99%A9%EC%9C%A4%EB%A6%AC/">상황윤리</a> — 상황적 관점의 극단화로 비판받는 입장</li>
+<li><a class="wl" href="../../t/%EC%9E%90%EC%97%B0%EB%B2%95/">자연법</a> · <a class="wl" href="../../t/%EC%9D%BC%EB%B0%98%EA%B3%84%EC%8B%9C/">일반계시</a> · <a class="wl" href="../../t/%EC%96%91%EC%8B%AC/">양심</a> — 세속 윤리와의 접점과 그 한계</li>
+<li><a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%A3%BC%EA%B6%8C/">하나님의주권</a> — 통제·권위·임재의 세 속성, 윤리의 신학적 뿌리</li>
+<li><a class="wl" href="../../t/%EA%B3%B5%EC%9D%98/">공의</a> · <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EB%82%98%EB%9D%BC/">하나님나라</a> — 정의와 종말론적 완성이라는 쟁점 축</li>
+<li><a class="wl" href="../../b/%EC%8B%A0%EC%95%BD%EC%9D%98%EC%9C%A4%EB%A6%AC%EC%A0%81%EB%B9%84%EC%A0%84_%ED%97%A4%EC%9D%B4%EC%8A%A4/">신약의윤리적비전_헤이스</a> — 신약 윤리의 네 양식, 세 초점 이미지, 방법론</li>
+<li><span class="wl-dead" title="위키 내부 링크">존프레임</span> · <span class="wl-dead" title="위키 내부 링크">스탠리하우어워스</span> · <span class="wl-dead" title="위키 내부 링크">리처드헤이스</span> — 삼중관점·내러티브 공동체·신약 윤리의 대표 학자</li>
+<li><span class="wl-dead" title="위키 내부 링크">기독교윤리학</span> — 이 페이지의 중심 코퍼스인 강의 연작</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">기독교윤리학</span> 1주(서론)</td>
+<td>강의(존 프레임 교재)</td>
+<td>"윤리학은 신학이다", 최고선, 자유주의/보수주의, 덕·명령·내러티브 삼분</td>
+</tr>
+<tr>
+<td>〃 2주(윤리와 하나님의 주권)</td>
+<td>강의</td>
+<td>주권의 세 속성(지배·권위·임재), 선행의 세 조건(WCF 16.7), 삼중관점</td>
+</tr>
+<tr>
+<td>〃 3주(주권과 세속 윤리학)</td>
+<td>강의</td>
+<td>삼중관점-세속 3학파 대응표, 세 원칙의 통일성</td>
+</tr>
+<tr>
+<td>〃 4주(윤리학과 세계의 종교)</td>
+<td>강의</td>
+<td>세속 윤리 4유형, 자연주의적 오류, 인격적·절대적 근거</td>
+</tr>
+<tr>
+<td>〃 5주(실존적 전통)</td>
+<td>강의</td>
+<td>실존적 관점 절대화의 계보(소피스트~사르트르~포스트모더니즘)</td>
+</tr>
+<tr>
+<td>〃 6주(목적론적 전통)</td>
+<td>강의</td>
+<td>쾌락주의 계보, 공리주의 인식론 비판(신적 전지)</td>
+</tr>
+<tr>
+<td>〃 7주(의무론적 전통)</td>
+<td>강의</td>
+<td>칸트 정언명령 세 정식, "규범은 절대적 인격으로부터만"</td>
+</tr>
+<tr>
+<td>〃 기말종합보고서</td>
+<td>본인 저작(이상협)</td>
+<td>그리스도를 본받음의 세 전통 통합, Being이 Doing에 선행</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%8B%A0%EC%95%BD%EC%9D%98%EC%9C%A4%EB%A6%AC%EC%A0%81%EB%B9%84%EC%A0%84_%ED%97%A4%EC%9D%B4%EC%8A%A4/">신약의윤리적비전_헤이스</a></td>
+<td>책노트</td>
+<td>네 양식(규정·원리·패러다임·상징세계), 공동체·십자가·새 창조, 성경 외 권위</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EA%B5%AC%EC%95%BD%EC%9C%A4%EB%A6%AC/">구약윤리</a>(<span class="wl-dead" title="위키 내부 링크">전성민</span>)</td>
+<td>위임 페이지</td>
+<td>자연법·열방신탁, 패러다임적 해석, 사랑·겸손의 세계관 기준</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EA%B3%B5%EB%A6%AC%EC%A3%BC%EC%9D%98/">공리주의</a></td>
+<td>위임 페이지</td>
+<td>목적론 비판과 <span class="wl-dead" title="위키 내부 링크">권성수</span> 트롤리·구명선, 의료 선택 윤리</td>
+</tr>
+<tr>
+<td>의료사회 회복 프로젝트 「선택의 윤리학」</td>
+<td>프로젝트 발제</td>
+<td>의무론·공리주의·기독교의 선 삼중 구조, 진료실의 세 질문</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">스탠리그렌츠</span> · <span class="wl-dead" title="위키 내부 링크">조나단에드워즈</span> · <span class="wl-dead" title="위키 내부 링크">알래스데어매킨타이어</span></td>
+<td>인용 학자</td>
+<td>'행위에서 존재로', 거룩함의 원리 선행, 덕윤리 부흥</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/기독교윤리</span><span>#topic/규범윤리</span><span>#topic/삼중관점</span><span>#topic/덕윤리</span><span>#topic/그리스도를본받음</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

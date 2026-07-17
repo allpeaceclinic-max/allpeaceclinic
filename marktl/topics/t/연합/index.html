@@ -1,0 +1,217 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>연합 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:226">조직신학·교리</span><span class="date">2026-07-17</span></div>
+  <h1 class="note-title">연합</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>연합(union)은 이 볼트에서 두 층위로 논의된다. 첫째는 <strong>그리스도와의 연합(union with Christ, unio cum Christo)</strong> — 신자가 그리스도 안에서 그분과 하나 되는 존재론적·영적 결합이다. 둘째는 <strong>교회의 연합</strong> — 서로 다른 교단·단체·민족의 그리스도인들이 하나님 나라를 위해 함께 서는 협력이다. 이 페이지는 전자, 곧 그리스도와의 연합을 중심축으로 다룬다.</p>
+<p>후자, 곧 교회 간 연합의 신학(삼위일체적 하나됨, 예루살렘 공의회의 분별, 모달리티와 소달리티, 복음주의와 에큐메니컬의 긴장)은 <a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EC%97%B0%ED%95%A9/">교회연합</a>에 본격적으로 전개되어 있으므로, 여기서는 두 연합의 관계만 짚고 넘긴다. 두 층위는 무관하지 않다. 그리스도와의 연합이 깊어질수록 그리스도 안에서 형제자매인 이들과의 연합이 자연스러워지며, 역으로 교회 현장의 연합 실패는 종종 그리스도와의 연합의 얕음을 드러내는 지표가 된다. 뿌리가 그리스도와의 연합이라면, 교회의 연합은 그 뿌리에서 자라는 열매다.</p>
+<h2>1. 두 개의 연합 — 지형과 분업</h2>
+<p>연합이라는 한 단어가 두 실재를 가리키기에 먼저 지형을 정리해 둔다.</p>
+<table>
+<thead>
+<tr>
+<th>층위</th>
+<th>핵심 본문</th>
+<th>주요 물음</th>
+<th>위키 자리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>그리스도와의 연합</td>
+<td>갈 2:20, 요 15</td>
+<td>나는 누구 안에 있는가</td>
+<td>이 페이지 (unio cum Christo)</td>
+</tr>
+<tr>
+<td>교회의 연합</td>
+<td>요 17, 엡 4, 시 133</td>
+<td>우리는 어떻게 하나 되는가</td>
+<td><a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EC%97%B0%ED%95%A9/">교회연합</a></td>
+</tr>
+</tbody>
+</table>
+<p>이 분업의 신학적 근거는 순서에 있다. 그리스도와의 연합이 먼저고 교회의 연합이 그다음이다. 신자가 각자 그리스도와 연합할 때, 같은 머리에 붙은 지체들로서 서로 연합하는 것이기 때문이다. 김정한 선교사가 21세기 선교에서 교회 간 연합을 "빼놓을 수 없는 주제"로 규정하며 "이슬람은 초교파적으로 연합하는데 기독교는 연합이 안 된다"고 자기진단하는 대목은 교회 연합의 절박함을 보여주지만, 그 연합의 동력 또한 결국 각 지체가 그리스도와 얼마나 깊이 연합해 있는가에 달려 있다. 그래서 이 페이지는 뿌리로 내려간다.</p>
+<h2>2. 갈라디아서 2:20 — doing에서 being으로</h2>
+<p>박경남 선교사의 강의는 갈라디아서 2:20을 연합 신학의 정점 본문으로 삼는다. "내가 그리스도와 함께 십자가에 못 박혔나니 그런즉 이제는 내가 사는 것이 아니요 오직 내 안에 그리스도께서 사시는 것이라." 이 한 구절이 신앙의 축을 근본적으로 옮긴다.</p>
+<p>핵심 대비는 doing(행함)과 being(존재)이다. 자기의존적 신앙은 "내가 무엇을 한다"는 행함의 축에 서며, 성취로 자신을 평가하고 실패로 자신을 정죄한다. 그리스도와의 연합은 이 축을 존재로 옮긴다 — 무엇을 하느냐 이전에 누구 안에 있느냐가 먼저다. 거룩은 노력으로 획득하는 성취가 아니라, 포도나무에 붙은 가지가 애쓰지 않아도 열매를 맺듯 연합이 주는 역동성에서 "흘러 들어오는 것"이다. 박경남이 인용하는 스튜어트 딘넨의 표현대로, 거룩함은 쥐어짜 내는 것이 아니라 흘러드는 것이다. 이 전환의 실천적 함의는 크다. 신앙생활의 근본 물음이 "나는 무엇을 더 해야 하는가"에서 "나는 지금 누구 안에 머물러 있는가"로 바뀌기 때문이다.</p>
+<h2>3. 연합의 세 단계</h2>
+<p>박경남은 골로새서 3:1-3과 고린도후서 4장을 교차하며 연합이 심화되는 세 단계를 제시한다. 이 단계들은 엄격한 연대순이 아니라, 성장하며 더 깊이 들어가고 때로 다시 나오기를 반복하는 역동적 과정이다.</p>
+<ul>
+<li><strong>자아의존에서 벗어남.</strong> 자신의 부족함을 인식하고 십자가 원리를 받아들여 자기의존을 종결한다. "십자가에서 나도 죽었다"가 연합의 시초다.</li>
+<li><strong>부활생명으로 진입.</strong> 죽었을 뿐 아니라 다시 살았다. 새로운 피조물이자 거룩한 존재로 사는 것이 두 번째 단계다. "거룩하려고 노력하는 것이 아니라, 연합하고 있는 한 거룩한 존재다."</li>
+<li><strong>하나님 나라 사역에서 승리 확보.</strong> 하나님 우편에 계신 그리스도가 주시는 권세로 사역한다.</li>
+</ul>
+<p>이 세 단계의 논리적 순서가 중요하다. 사역(셋째)이 존재(둘째)에서 나오고, 존재가 죽음(첫째)에서 나온다. 십자가에서의 죽음 없이 부활생명이 없고, 부활생명 없이 참된 사역이 없다. 연합의 역동성은 언제나 이 순서를 따른다.</p>
+<h2>4. 십자가의 세 의미 — 연합의 실천적 지도</h2>
+<p>박경남은 고린도전서의 세 부류 인간(자연인·육신에 속한 자·신령한 자)에 십자가의 세 의미를 대응시킨다. 같은 십자가가 신앙의 성숙에 따라 다른 깊이로 내면화된다는 것이다.</p>
+<table>
+<thead>
+<tr>
+<th>의미</th>
+<th>대상</th>
+<th>핵심</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>속죄</td>
+<td>자연인</td>
+<td>죄에 대한 희생 — 구원의 입문</td>
+</tr>
+<tr>
+<td>원리</td>
+<td>육신에 속한 자</td>
+<td>독립적 생활방식의 종결 — 갈 2:20a</td>
+</tr>
+<tr>
+<td>패턴</td>
+<td>신령한 자</td>
+<td>자아의 매일 죽음 — 빌 3:10</td>
+</tr>
+</tbody>
+</table>
+<p>십자가가 속죄에서 원리로, 다시 매일의 삶의 패턴으로 내면화될 때, 그리스도와의 연합은 신학 명제에서 일상 영성이 된다. <span class="wl-dead" title="위키 내부 링크">프랭크루박</span>의 '하나님의 임재 연습'처럼 순간순간 그리스도를 의식하며 사는 동행의 일상화가 이 세 번째 층위에 해당한다. 연합은 한 번의 결단이 아니라 매일 갱신되는 죽음과 부활의 리듬이다.</p>
+<h2>5. "그리스도 안에서" — 바울신학의 심장과 연합의 열매</h2>
+<p>그리스도와의 연합은 박경남의 한 강의에 머무는 주제가 아니라 바울 서신 전체를 관통하는 심장이다. <a class="wl" href="../../t/%EB%B0%94%EC%9A%B8%EC%8B%A0%ED%95%99/">바울신학</a>이 정리하듯 "그리스도 안에서(엔 크리스토, ἐν Χριστῷ)"라는 표현은 바울이 신자의 실존 전체를 규정하는 근본 좌표다. 신자는 그리스도 안에서 택함받고, 의롭다 하심을 받고, 죽고, 다시 살고, 앉혀진다. 칭의도 성화도 이 연합의 두 얼굴이다 — 그리스도 안에 있기에 그분의 의가 나의 의로 여겨지고(칭의), 그리스도 안에 있기에 그분의 생명이 나를 변화시킨다(성화). 그래서 <a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a>는 연합의 열매이지 연합과 별개의 프로젝트가 아니다.</p>
+<p>이 뿌리에서 마지막 열매가 자란다. 그리스도와의 연합이 깊어지면 그리스도 안에서 한 몸 된 지체들과의 연합, 곧 교회의 연합이 자연스러워진다. 처음의 물음으로 돌아가면 — 김정한이 지적한 기독교의 연합 실패는 방법의 문제이기 전에 뿌리의 문제일 수 있다. 각 지체가 같은 머리에 깊이 붙어 있다면, 지체들 사이의 연합은 억지가 아니라 흘러넘침이 된다. 그러므로 이 페이지는 <a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EC%97%B0%ED%95%A9/">교회연합</a>에게 바통을 넘긴다. 그리스도와의 연합(뿌리)에서 교회의 연합(열매)으로, 존재에서 관계로 — 연합의 신학은 이렇게 한 나무를 이룬다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>그리스도와의 연합은 doing이 아닌 being의 전환이다. 근본 물음이 "무엇을 더 해야 하는가"에서 "누구 안에 머물러 있는가"로 바뀐다.</li>
+<li>거룩함은 노력으로 쥐어짜는 성취가 아니라 연합에서 흘러 들어오는 것이다(스튜어트 딘넨). 성화는 연합의 열매이지 별개의 프로젝트가 아니다.</li>
+<li>연합은 자아의존 종결 → 부활생명 → 사역 승리의 역동적 순서를 따르며, 사역은 존재에서, 존재는 십자가의 죽음에서 나온다.</li>
+<li>십자가는 속죄(입문) → 원리(전환) → 패턴(일상)의 세 층위로 심화되며, 세 번째 층위에서 연합은 신학 명제에서 일상 영성이 된다.</li>
+<li>"그리스도 안에서"는 바울신학의 심장이며, 그리스도와의 연합(뿌리)이 교회의 연합(열매)의 동력이다. 교회 연합의 실패는 방법 이전에 뿌리의 얕음일 수 있다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>"연합하고 있는 한 거룩한 존재"라면, 여전히 죄를 짓는 현실 경험을 어떻게 목회적으로 다룰 것인가.</li>
+<li>"거룩하려 노력하지 말라"는 표현이 윤리적 수동성(quietism)으로 오해될 위험을 어떻게 방지할 것인가.</li>
+<li>개인의 그리스도와의 연합과 공동체의 교회 연합 사이의 관계를 어떻게 신학적으로 정합하게 기술할 것인가 — 뿌리와 열매의 비유는 어디까지 유효한가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EB%B0%94%EC%9A%B8%EC%8B%A0%ED%95%99/">바울신학</a> — "그리스도 안에서(엔 크리스토)"의 신학. 연합이 서 있는 바울 서신의 심장.</li>
+<li><a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a> — 연합의 열매로서의 거룩. "흘러 들어오는" 거룩의 원천.</li>
+<li><a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EC%97%B0%ED%95%A9/">교회연합</a> — 교회 간 연합의 본격 신학. 그리스도와의 연합(뿌리)에서 자라는 열매.</li>
+<li><a class="wl" href="../../t/%EC%98%81%EC%84%B1/">영성</a> — 연합의 영성 전통과 임재 연습.</li>
+<li><a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%ED%9B%88%EB%A0%A8/">제자훈련</a> — 연합을 전제한 제자도.</li>
+<li><span class="wl-dead" title="위키 내부 링크">프랭크루박</span> — 순간순간 그리스도를 의식하는 동행의 일상화 모델.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2016_박경남선교사_그리스도와의연합과능력있는삶</span></td>
+<td>강의(2016)</td>
+<td>갈 2:20 doing/being, 연합의 세 단계, 십자가의 세 의미(속죄·원리·패턴), 스튜어트 딘넨 "흘러 들어옴"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2017_김정한선교사_세계선교의_상황과_전망</span></td>
+<td>강의(2017)</td>
+<td>교회 연합의 절박성("기독교는 연합이 안 된다"), 뿌리(그리스도와의 연합)와 열매(교회 연합)의 관계 시사</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EB%B0%94%EC%9A%B8%EC%8B%A0%ED%95%99/">바울신학</a> · <a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EC%97%B0%ED%95%A9/">교회연합</a></td>
+<td>위키 교차</td>
+<td>"엔 크리스토"의 조직신학적 자리, 교회 간 연합으로의 위임</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#그리스도와의연합</span><span>#성화</span><span>#바울신학</span><span>#discipline/조직신학</span><span>#domain/신학</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

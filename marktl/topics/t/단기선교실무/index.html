@@ -1,0 +1,304 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>단기선교 실무 가이드 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="date">2026-05-11</span></div>
+  <h1 class="note-title">단기선교 실무 가이드</h1>
+  
+</header>
+<article class="note">
+<p><em>raw: <code>raw/lectures/keynote/선교/2. 단기선교 실무 가이드.md</code></em></p>
+<blockquote>
+<p>"성공적인 단기선교는 비행기를 타고 떠나는 며칠간의 일회성 이벤트가 아니라, 체계적인 3단계 프로세스를 거치는 완성된 과정이다"</p>
+</blockquote>
+<hr />
+<h2>단기선교 3가지 핵심 목표</h2>
+<ol>
+<li><strong>복음 제시</strong> — 현지인에게 하나님의 사랑을 전하는 것</li>
+<li><strong>격려와 도전</strong> — 영적 최전방 장기 선교사의 사역·삶을 위로하고 실제 필요를 돕는 것</li>
+<li><strong>사명 고취</strong> — 참가자·파송 교회가 하나님의 뜻을 발견하고 선교 중심 삶으로 헌신하게 하는 것</li>
+</ol>
+<blockquote>
+<p>이 세 가지 목표가 모든 실무 계획과 행동의 절대적 기준</p>
+</blockquote>
+<hr />
+<h2>3단계 핵심 프로세스</h2>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>장소</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1단계: 철저한 준비</strong></td>
+<td>한국</td>
+<td>전략 수립, 팀 구성, 영적·실무적 훈련</td>
+</tr>
+<tr>
+<td><strong>2단계: 신중한 실행</strong></td>
+<td>현지</td>
+<td>겸손한 태도, 현지 중심 사역, 긴급상황 대처</td>
+</tr>
+<tr>
+<td><strong>3단계: 지속적인 연결</strong></td>
+<td>귀국 후</td>
+<td>결과 보고·평가·후속 관리 → 장기적 헌신으로 전환</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>1단계: 준비</h2>
+<h3>리더십과 선교지 선택</h3>
+<p><strong>듀얼(Dual) 리더십 체제</strong>
+- <strong>목회자</strong>: 영적 지도력
+- <strong>평신도 리더</strong>: 실무 전문성
+- 두 역할의 시너지가 팀 안정성을 극대화</p>
+<p><strong>선교지 선택 3가지 요소</strong></p>
+<table>
+<thead>
+<tr>
+<th>요소</th>
+<th>확인 사항</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>전략적</strong></td>
+<td>파송 선교사 지역인가, 장기적 관계 가능한가</td>
+</tr>
+<tr>
+<td><strong>관계적</strong></td>
+<td>현지 선교사의 필요 제기와 협력 동의 여부</td>
+</tr>
+<tr>
+<td><strong>실무적</strong></td>
+<td>사용 언어, 지역 안전성, 비자 등</td>
+</tr>
+</tbody>
+</table>
+<h3>현장 중심 파트너십 — 파송요청서 + 협력동의서</h3>
+<blockquote>
+<p>"우리의 계획이 아닌, 현장의 실제적인 필요에서 사역이 시작되어야 한다"</p>
+</blockquote>
+<ol>
+<li><strong>파송요청서</strong>: 현지 선교사가 먼저 사역 내용·필요 인원·기술·재정을 작성 → 교회에 요청</li>
+<li><strong>협력동의서</strong>: 교회-선교사 간 상호 존중·책임 파트너십 공식화</li>
+</ol>
+<h3>사역 유형 4가지</h3>
+<table>
+<thead>
+<tr>
+<th>유형</th>
+<th>예시</th>
+<th>핵심</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>전도/예배</strong></td>
+<td>노방전도, 예배 인도</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>교육/훈련</strong></td>
+<td>성경학교, 지도자 훈련</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>봉사/구호</strong></td>
+<td>의료, 시설 보수</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>기도/조사</strong></td>
+<td>땅밟기, 현지 조사</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>→ 모든 유형이 단순 초기 호감(Pre-faith)에 머물지 않고 <strong>복음 경험의 통로</strong>가 되도록 설계</p>
+<h3>팀 역할 배분</h3>
+<table>
+<thead>
+<tr>
+<th>담당</th>
+<th>세부 역할</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>영적/예배</strong></td>
+<td>큐티 인도, 중보기도</td>
+</tr>
+<tr>
+<td><strong>행정/운영</strong></td>
+<td>재정, 항공, 일정</td>
+</tr>
+<tr>
+<td><strong>실무/사역</strong></td>
+<td>의료, 식사, 사진 촬영</td>
+</tr>
+</tbody>
+</table>
+<p>→ 짐꾼부터 회계까지 누구 하나 소외됨 없이 역할 배분 → 팀 효율성·책임감 극대화</p>
+<h3>파송 수련회 (1박 2일)</h3>
+<ul>
+<li><strong>영적 준비</strong>: 집중 기도, 선교적 QT</li>
+<li><strong>문화적 이해</strong>: 현지 언어·역사</li>
+<li><strong>사역 준비</strong>: 복음 제시 방법 연습</li>
+<li><strong>팀 빌딩</strong>: 팀 정체성 확립</li>
+</ul>
+<p>수련회 이후 출발 전까지 정기 기도회로 선교 열기 유지</p>
+<hr />
+<h2>2단계: 현지 실행</h2>
+<h3>현지 마인드 5가지</h3>
+<ol>
+<li><strong>정체성</strong> — 이것은 여행이 아니라 하나님의 사역</li>
+<li><strong>존중</strong> — 한국과 비교하지 말고 현지 문화를 철저히 존중</li>
+<li><strong>소통</strong> — 문제 발생 시 현지 선교사·리더와 반드시 대화로 해결</li>
+<li><strong>유연성</strong> — 계획대로 되지 않아도 유연하게 대처</li>
+<li><strong>관계</strong> — 우리끼리 뭉치지 말고 현지인에게 다가가기</li>
+</ol>
+<h3>안전·건강 수칙</h3>
+<p><strong>안전</strong>
+- 현지 선교사 지시에 절대 복종
+- 팀장 허락 없는 개인행동·구제 활동 금지
+- 야간 이동 시 반드시 2인 이상</p>
+<p><strong>건강</strong>
+- 물: 끓인 물 또는 병에 든 생수만
+- 날음식 피하기
+- 야외 활동 시 긴 옷으로 해충 차단
+- 무리한 일정보다 충분한 휴식</p>
+<hr />
+<h2>3단계: 귀국 후</h2>
+<h3>재정 핵심 원칙</h3>
+<ul>
+<li>교회·개인 비용 부담 비율 사전에 명확히 설정</li>
+<li>모든 후원금은 공적 계좌로 투명하게 관리</li>
+<li>바자회 등 공동 모금 지향 (개인 무리한 모금 자제)</li>
+<li><strong>현지인·현지 교회 지원금은 반드시 현지 장기 선교사를 통해 전달</strong> (현지 영적 질서 보호)</li>
+<li>모든 지출 영수증 첨부, 투명한 재정 결산 보고서 제출</li>
+</ul>
+<h3>자체 평가회</h3>
+<ul>
+<li>클로즈드 형태, 리더의 자기 반성 먼저 → 진짜 피드백 가능</li>
+<li>무엇이 잘되었고 무엇을 개선해야 할지 냉철하게 도출</li>
+</ul>
+<h3>선교 보고회 5가지 팁</h3>
+<p><strong>해야 할 것</strong>
+1. 시각 자료 활용
+2. 짧고 명료하게 핵심에 집중
+3. <strong>삶의 변화 중심 간증</strong> (프로그램 나열 ✗)
+4. 파송 성도들께 진심으로 감사 표현
+5. 믿음의 눈으로 본 것 — 잃어버린 영혼, 하나님의 역사</p>
+<p><strong>피해야 할 것</strong>
+- 미편집 긴 영상
+- 청중 배려 없는 팀 내부 이야기
+- 현지 문화 비판
+- 구체적 헌신 없이 말만 넘쳐나는 보고</p>
+<h3>단기선교 자료집</h3>
+<blockquote>
+<p>"기록보다 위대한 기억력은 없다"</p>
+</blockquote>
+<ul>
+<li>간증·기도 제목 담아 발간 → 다음 준비팀의 자산이자 역사적 기록</li>
+</ul>
+<h3>귀국 후 연결</h3>
+<ul>
+<li>팀원 애프터 모임 → 지속적 기도</li>
+<li>선교지 장기 선교사를 위한 중보기도 유지</li>
+<li>각자의 자리에서 <strong>보내는 선교사(Sender)</strong> 로 헌신</li>
+</ul>
+<blockquote>
+<p>"단기선교는 일회성 이벤트가 아니라 새로운 삶의 방식이 되어야 한다"</p>
+</blockquote>
+<hr />
+<p>→ <a class="wl" href="../../t/%EB%8B%A8%EA%B8%B0%EC%84%A0%EA%B5%90/">단기선교</a>, <a class="wl" href="../../t/%EC%84%BC%EB%8D%94%EC%9D%98%EC%82%B6/">센더의삶</a>, <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a></p>
+</article>
+<div class="tagrow"><span>#단기선교</span><span>#실무가이드</span><span>#파송</span><span>#선교</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

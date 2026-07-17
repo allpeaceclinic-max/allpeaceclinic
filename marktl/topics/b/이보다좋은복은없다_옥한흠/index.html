@@ -1,0 +1,167 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>이보다 좋은 복은 없다 — 옥한흠 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:345">영성·제자도</span><span class="author">옥한흠</span><span class="date">2026-05-06</span></div>
+  <h1 class="note-title">이보다 좋은 복은 없다 — 옥한흠</h1>
+  
+</header>
+<article class="note">
+<blockquote>
+<p><em>2013.5.23 목요제자반 독후감 — 이상협 집사</em></p>
+<p><strong>때를 따라 돕는 은혜, 마음과 생각을 지키시는 하나님의 평강 —
+이것이 이 땅에서 행복자로 살아갈 힘이다.</strong></p>
+</blockquote>
+<p>에베소서 1장을 중심으로 한 구원의 복 묵상.</p>
+<p><em>→ 같은 날 제출: <a class="wl" href="../../b/%EC%98%88%EC%88%98%EA%B0%80%EC%84%A0%ED%83%9D%ED%95%9C%EC%8B%AD%EC%9E%90%EA%B0%80_%EB%A7%A5%EC%8A%A4%EB%A3%A8%EC%BC%80%EC%9D%B4%EB%8F%84/">예수가선택한십자가_맥스루케이도</a> (맥스 루케이도)</em>
+<em>루케이도 = 십자가에 담긴 사랑 묵상 / 옥한흠 = 하늘의 복을 누리는 행복자</em></p>
+<hr />
+<h2>구원의 4중 복 (엡 1장)</h2>
+<h3>1. 예정과 선택 — 창세전의 계획</h3>
+<blockquote>
+<p>"내 형질이 이루어지기 전에 주께서 하신 일"</p>
+</blockquote>
+<ul>
+<li>내가 조금 잘해서 택하신 것이 아니다</li>
+<li>하나님의 완벽한 계획 속에서, 기뻐하시며 계획하셨다</li>
+<li>"나의 무엇이 좋으셨나요?" — 감히 여쭙지 않겠다는 고백</li>
+</ul>
+<h3>2. 예수님의 보증 — 나의 어떠함은 문제 없다</h3>
+<blockquote>
+<p><strong>예수님께서 보증하셨기에 나의 어떠함이 전혀 문제 되지 않는다.</strong></p>
+</blockquote>
+<ul>
+<li>연약함·의심·걱정이 여전히 있지만 — 보증자가 계신다</li>
+</ul>
+<h3>3. 성령의 인치심 — 이보다 더 큰 약속은 없다</h3>
+<ul>
+<li>예정(성부) + 보증(성자) + 인치심(성령) = 삼위일체의 구원 보장</li>
+</ul>
+<h3>4. 영광스러운 기업 — 상속자의 위치</h3>
+<ul>
+<li>영원한 기업·상급·영화 → 믿음의 느보산에서 바라보기</li>
+</ul>
+<hr />
+<h2>★ 점진적 변화 + 상호협력의 원칙</h2>
+<blockquote>
+<p>성화는 나의 역할·책임에만 의존하는 것이 아니라,
+<strong>상호협력의 원칙을 통해 성령님께서 내 안에 이루어 가시는 일이다.</strong></p>
+</blockquote>
+<ul>
+<li>연약함으로 인한 의심·걱정을 아시는 하나님</li>
+<li>점진적 변화 → 성령님의 사역 + 나의 책임의 시너지</li>
+</ul>
+<hr />
+<h2>자리바꿈 — 의인 되기의 근거</h2>
+<blockquote>
+<p>예수님의 자리바꿈 →
+나를 의인으로, 하나님의 의가 되게 하셨다.</p>
+</blockquote>
+<ul>
+<li>이 자리바꿈에 대한 정당한 반응 = <strong>늘 감사</strong></li>
+</ul>
+<hr />
+<h2>★ 핵심 통찰 (이상협, 2013)</h2>
+<blockquote>
+<p><strong>하늘의 복 = 이 땅의 행복의 기초.</strong>
+세상의 기준이 아닌 하나님의 기준으로 살 때 진정한 은혜와 평강이 있다.</p>
+</blockquote>
+<ul>
+<li>바울은 감옥에서 에베소서를 썼다
+  → 하늘의 복을 아는 자는 상황이 행복을 결정하지 않는다</li>
+<li>그리스도인으로서의 <strong>자의식</strong> — "나는 성도이며 신실한 자"</li>
+<li>하나님의 사랑에 <strong>사로잡히는 것</strong> = 삶의 목표</li>
+</ul>
+<hr />
+<h2>연결된 페이지</h2>
+<ul>
+<li><a class="wl" href="../../t/%EA%B5%AC%EC%9B%90%EB%A1%A0/">구원론</a> — 예정·선택·칭의·성화</li>
+<li><a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a> — 점진적 변화, 상호협력 원칙</li>
+<li><a class="wl" href="../../b/%EC%98%88%EC%88%98%EA%B0%80%EC%84%A0%ED%83%9D%ED%95%9C%EC%8B%AD%EC%9E%90%EA%B0%80_%EB%A7%A5%EC%8A%A4%EB%A3%A8%EC%BC%80%EC%9D%B4%EB%8F%84/">예수가선택한십자가_맥스루케이도</a> — 같은 날, 사랑 묵상의 쌍</li>
+<li><span class="wl-dead" title="위키 내부 링크">옥한흠</span> — 제자훈련 사역, 에베소서 해설</li>
+</ul>
+</article>
+<div class="tagrow"><span>#구원론</span><span>#선택</span><span>#예정</span><span>#성화</span><span>#행복</span><span>#영성</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

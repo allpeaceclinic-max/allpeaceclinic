@@ -1,0 +1,329 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>새언약 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:174">성경·해석</span><span class="date">2026-07-14</span></div>
+  <h1 class="note-title">새언약</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>새 언약(New Covenant)은 예레미야 31:31-34에 예언되고 예수 그리스도의 피로 체결된, 하나님과 그의 백성 사이의 결정적 언약이다. 놀랍게도 "새 언약"이라는 바로 그 표현은 히브리 성경 전체에서 예레미야 31:31 단 한 곳에만 나온다. 그리고 그 단 한 번의 약속이 주어진 자리는 승리의 절정이 아니라 패망의 문턱이었다 — 예루살렘이 바벨론에게 무너지기 직전, 옛 언약이 이미 산산조각 난 폐허 위에서다.</p>
+<p>이 약속은 네 개의 마디로 이루어진다. 하나님이 자신의 법을 백성의 마음에 새기시고, "나는 그들의 하나님, 그들은 내 백성"이라는 언약 공식을 완성하시며, 작은 자로부터 큰 자까지 모두가 그를 직접 알게 하시고, 그들의 죄악을 사하여 다시는 기억하지 않으신다. 히브리서는 이 예언을 그리스도께 적용하여 그를 "새 언약의 중보자"(히 8:6; 9:15)로 선포한다.</p>
+<p>이 글은 새 언약 그 자체 — 예레미야가 예언한 본문과 그 성취 — 에 집중한다. 성경의 다섯 언약이 이루는 지형 전체는 <a class="wl" href="../../t/%EC%96%B8%EC%95%BD/">언약</a>이, 그 언약들을 하나의 체계로 읽는 개혁주의 전통은 <a class="wl" href="../../t/%EC%96%B8%EC%95%BD%EC%8B%A0%ED%95%99/">언약신학</a>이, 새 언약의 식탁이 된 성찬 예식의 상세는 <a class="wl" href="../../t/%EC%84%B1%EC%B0%AC/">성찬</a>이, 마음에 새김을 실현하는 성령론은 <a class="wl" href="../../t/%EC%84%B1%EB%A0%B9/">성령</a>이 맡는다. 이 글은 옛 언약(<a class="wl" href="../../t/%EC%8B%9C%EB%82%B4%EC%82%B0%EC%96%B8%EC%95%BD/">시내산언약</a>)이 낡아진 자리에서 무엇이 새로워졌는가라는 물음 하나에 머문다.</p>
+<h2>1. 본문 — 폐허 위에서 주어진 단 하나의 "새 언약"</h2>
+<p>예레미야 31장을 제대로 읽으려면 먼저 그 배경의 어둠을 보아야 한다. 예레미야는 유다의 마지막 시대, 주전 6세기 초의 선지자다. 그는 예루살렘의 멸망을 눈앞에서 예언하고 또 목격했다. "눈물의 선지자"라는 별명이 말해 주듯, 그의 사역은 대부분 심판의 선포였다. 그런데 바로 그 심판의 선지자에게, 옛 언약이 백성의 배신으로 완전히 파산한 그 자리에서, 하나님은 전혀 새로운 것을 약속하신다. 예레미야 30-33장이 예레미야서 안에서 유독 "위로의 책"이라 불리는 이유가 여기 있다 — 무너짐의 한복판에 심긴 회복의 약속이다.</p>
+<p>이 역설은 예레미야서의 첫 장에서 이미 예고된다. 구약개론II 예레미야 강의(<span class="wl-dead" title="위키 내부 링크">06주_예레미야_에스겔_소선지서</span>)는 예레미야 1장의 언어유희를 짚는다. 하나님이 살구나무(샤케드, 아몬드나무) 가지를 보이시며 "내가 내 말을 지켜 그대로 이루려 함이라"(렘 1:12) 하시는데, 지켜본다는 뜻의 쇼케드와 살구나무 샤케드가 같은 자음을 공유한다. 봄에 가장 먼저 피는 아몬드 꽃처럼, 하나님은 자신의 언약 메시지를 반드시 지켜 이루신다는 것이다. 심판을 선포하는 그 입이 동시에 성취를 보증하는 입이다. 새 언약의 약속은 이 "반드시 이루심"의 절정에 놓인다.</p>
+<blockquote>
+<p>"보라 날이 이르리니 내가 이스라엘 집과 유다 집에 새 언약을 맺으리라 … 내가 나의 법을 그들의 속에 두며 그들의 마음에 기록하여 나는 그들의 하나님이 되고 그들은 내 백성이 될 것이라 … 작은 자로부터 큰 자까지 다 나를 앎이라 내가 그들의 죄악을 사하고 다시는 그 죄를 기억하지 아니하리라." (렘 31:31-34, 발췌)</p>
+</blockquote>
+<h2>2. 네 가지 약속</h2>
+<p>새 언약의 내용은 예레미야 31:33-34 안에 네 겹으로 접혀 있다. 이 넷은 각각 옛 언약의 어떤 결핍을 정확히 겨눈다.</p>
+<p>첫째, <strong>법을 마음에 새기심</strong>이다. 옛 언약에서 법은 돌판에 새겨져 백성 바깥에 서 있었다. 새 언약에서는 그 법이 "그들의 속에" 들어가 "마음에 기록"된다. 명령의 위치가 밖에서 안으로 옮겨지는 것이다. 이것은 법의 내용이 바뀌는 것이 아니라 법이 놓이는 자리가 바뀌는 사건이다. 같은 토라가 석판에서 심장으로 이사한다.</p>
+<p>둘째, <strong>언약 공식의 완성</strong>이다. "나는 그들의 하나님이 되고 그들은 내 백성이 될 것이라"는 문장은 새 발명이 아니라 옛 언약 내내 하나님이 반복하신 언약의 정형구다(출 6:7 등). 그러나 옛 언약에서 이 공식이 백성의 배신으로 늘 위태로웠다면, 새 언약에서는 마음에 새겨진 법과 결정적 용서 위에서 마침내 흔들림 없이 성립한다.</p>
+<p>셋째, <strong>앎의 민주화</strong>다. "각기 이웃과 형제를 가리켜 이르기를 너는 여호와를 알라 하지 아니하리니 이는 작은 자로부터 큰 자까지 다 나를 앎이라." 옛 언약에서 하나님을 아는 지식은 제사장과 선지자라는 중개자 계층을 통해 흘렀다. 새 언약은 그 계층을 상대화한다. 지위 고하를 막론하고 각자가 직접 하나님을 안다.</p>
+<p>넷째, <strong>결정적 용서</strong>다. "내가 그들의 죄악을 사하고 다시는 그 죄를 기억하지 아니하리라." 이것이 앞의 세 약속을 가능케 하는 토대다. 죄가 처리되지 않으면 법도 관계도 지식도 세워질 수 없기 때문이다.</p>
+<table>
+<thead>
+<tr>
+<th>약속</th>
+<th>예레미야 본문</th>
+<th>옛 언약의 결핍</th>
+<th>새 언약의 새로움</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>① 마음에 새긴 법</td>
+<td>렘 31:33</td>
+<td>돌판에 새겨진 외적 규정</td>
+<td>속에 두어 마음에 각인</td>
+</tr>
+<tr>
+<td>② 언약 공식 완성</td>
+<td>렘 31:33</td>
+<td>배신으로 늘 위태로운 관계</td>
+<td>흔들림 없이 성립하는 "내 백성"</td>
+</tr>
+<tr>
+<td>③ 앎의 민주화</td>
+<td>렘 31:34a</td>
+<td>중개자 계층을 통한 지식</td>
+<td>작은 자~큰 자까지 직접 앎</td>
+</tr>
+<tr>
+<td>④ 결정적 용서</td>
+<td>렘 31:34b</td>
+<td>반복되는 제사, 간과된 죄</td>
+<td>죄를 사하고 다시 기억지 않음</td>
+</tr>
+</tbody>
+</table>
+<h2>3. 옛 언약과의 관계 — "같지 않을 것"</h2>
+<p>예레미야 31:32는 새 언약을 옛 언약과 정면으로 견준다. 이 언약은 "그들의 조상들의 손을 잡고 애굽 땅에서 인도하여 내던 날에 맺은 것과 같지 아니할 것"이라 한다. 곧 새 언약은 <a class="wl" href="../../t/%EC%8B%9C%EB%82%B4%EC%82%B0%EC%96%B8%EC%95%BD/">시내산언약</a>과의 대조 위에서 정의된다. 그러나 "같지 않다"는 말이 "무관하다"는 뜻은 아니다. 무엇이 이어지고 무엇이 끊어지는지를 가려야 한다.</p>
+<p>이어지는 것은 언약의 핵심 삼각형이다. 하나님은 같은 하나님이시고, 백성은 같은 백성이며, 법의 내용 또한 같은 토라다. 새 언약은 다른 신을 소개하지도, 다른 백성을 세우지도, 다른 도덕을 반포하지도 않는다. 앞서 보았듯 마음에 새겨지는 것은 바로 그 법이다. 이 연속성 때문에 새 언약은 옛 언약의 폐기가 아니라 그 목표의 도달이 된다.</p>
+<p>끊어지는 것은 세 가지 방식이다. 첫째, 법이 기록되는 위치가 돌판에서 마음으로 옮겨진다. 둘째, 순종을 가능케 하는 힘이 외적 요구에서 내주하시는 성령으로 바뀐다. 셋째, 용서의 근거가 반복되는 짐승의 피에서 그리스도의 단번의 피로 바뀐다. <span class="wl-dead" title="위키 내부 링크">문대원</span> 목사는 이 대조를 한 문장으로 압축한다 — "옛 언약은 돌판에 기초, 새 언약은 성령에 기초." 같은 법이되 그것을 새기는 매체와 지키게 하는 능력과 그 아래 깔린 용서가 전부 새로워진 것이다.</p>
+<table>
+<thead>
+<tr>
+<th>축</th>
+<th>옛 언약(시내산)</th>
+<th>새 언약(예레미야)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>법의 내용</td>
+<td>토라</td>
+<td><strong>같은 토라</strong> (연속)</td>
+</tr>
+<tr>
+<td>언약의 하나님·백성</td>
+<td>여호와 ↔ 이스라엘</td>
+<td><strong>같은 하나님·백성</strong> (연속)</td>
+</tr>
+<tr>
+<td>법의 기록 위치</td>
+<td>돌판 — 백성 바깥</td>
+<td>마음 — 백성 안 (불연속)</td>
+</tr>
+<tr>
+<td>순종의 동력</td>
+<td>외적 요구·의지</td>
+<td>내주하시는 성령 (불연속)</td>
+</tr>
+<tr>
+<td>용서의 근거</td>
+<td>반복되는 짐승의 제사</td>
+<td>그리스도의 단번의 피 (불연속)</td>
+</tr>
+<tr>
+<td>하나님을 아는 길</td>
+<td>제사장·선지자 중개</td>
+<td>각자의 직접적 앎 (불연속)</td>
+</tr>
+</tbody>
+</table>
+<p>이 대조에서 놓치지 말아야 할 것은, 옛 언약의 법 자체가 버려지는 것이 아니라 자리를 옮긴다는 점이다. 토라가 '규정집'에서 '가르침'으로 회복되어 마음에 살아나는 이 사건의 의미는 <a class="wl" href="../../t/%ED%86%A0%EB%9D%BC/">토라</a>가 이어받는다.</p>
+<h2>4. 성취 — 최후의 만찬, 십자가에서 체결된 언약</h2>
+<p>예언된 새 언약이 언제 실제로 맺어졌는가. 성경의 대답은 명확하다. 예수께서 십자가를 앞둔 마지막 밤, 잔을 드시며 하신 말씀이다 — "이 잔은 내 피로 세우는 새 언약이니"(눅 22:20; 고전 11:25). 예레미야가 예언한 그 "새 언약"이라는 이름이 여기서 예수의 입에 오른다. 마태복음은 같은 잔을 "죄 사함을 얻게 하려고 많은 사람을 위하여 흘리는 나의 피 곧 언약의 피"(마 26:28)라 기록한다. 예레미야 31:34의 죄 용서가 이 피에 걸려 있음을 예수 자신이 밝히신 것이다. 새 언약은 십자가에서, 그리스도의 피로 체결되었다.</p>
+<p><span class="wl-dead" title="위키 내부 링크">권성수</span> 목사는 성찬을 "새 언약의 회식"으로 정의하며 이 성취의 구조를 유월절에서 읽어낸다. 옛 언약에서 유월절 어린양의 피가 문 인방과 설주에 발려 심판을 넘어가게 했다면, 새 언약에서는 "하나님의 어린양"이신 그리스도께서 "단번의 죽음으로 영원한 속죄"를 이루셨다. 짐승의 피가 해마다 반복되어야 했던 자리를, 단 한 번의 피가 영원히 대신한다. 그러므로 성찬은 이 언약을 눈에 보이게 하는 예식이 된다 — 세례가 그리스도인의 삶의 시작을 알린다면, 성찬은 그 삶의 계속을 알리는 새 언약의 식탁이다. 화체설·공재설·영적 임재설을 둘러싼 예식의 상세는 <a class="wl" href="../../t/%EC%84%B1%EC%B0%AC/">성찬</a>의 몫이다.</p>
+<h2>5. 성령과 새 마음 — 에스겔 36장과 오순절</h2>
+<p>"마음에 새긴다"는 약속은 어떻게 실현되는가. 예레미야와 같은 포로기의 선지자 에스겔이 그 방법을 병행 본문으로 보완한다. 에스겔 36:26-27은 이렇게 말한다 — "새 영을 너희 속에 두고 새 마음을 너희에게 주되 너희 육신에서 굳은 마음을 제거하고 부드러운 마음을 줄 것이며 … 내 영을 너희 속에 두어 너희로 내 율례를 행하게 하리라." 예레미야가 법이 마음에 새겨진다고 했다면, 에스겔은 그 마음 자체가 성령으로 교체된다고 말한다. 돌 같은 마음을 들어내고 살 같은 마음을 심는 심장 이식이다.</p>
+<p><span class="wl-dead" title="위키 내부 링크">문대원</span> 목사는 예수와 니고데모의 대화(요 3장)를 정확히 이 지점에 놓는다. 예수께서 "물과 성령으로 나지 아니하면" 하나님 나라에 들어갈 수 없다 하실 때, 구약을 가르치던 니고데모가 떠올렸어야 할 본문이 바로 에스겔 36장의 "맑은 물"과 "새 영"이라는 것이다. "돌판이 아니라 마음에, 그렇게 하기 위해 물과 성령으로" — 새 언약의 약속이 곧 거듭남(<a class="wl" href="../../t/%EA%B1%B0%EB%93%AD%EB%82%A8/">거듭남</a>)의 약속이다. 그리고 이 약속은 오순절에 성령이 교회 위에 부어지면서 역사가 된다. 마음에 법을 새기시는 분이 곧 마음에 내주하시는 성령이시다. 제임스 패커의 말대로 새 언약에서 성령의 역할은 그리스도를 비추는 "투광조명"이며, 그 성령론의 전개는 <a class="wl" href="../../t/%EC%84%B1%EB%A0%B9/">성령</a>이 이어받는다.</p>
+<h2>6. 히브리서의 논증 — 낡아진 옛 것, 단번의 제사</h2>
+<p>신약에서 새 언약을 가장 길게 붙든 책은 히브리서다. 히브리서 8장은 예레미야 31:31-34 전문을 그대로 인용하는데, 이는 구약 본문이 신약에 인용된 가장 긴 사례다. 저자의 결론은 날카롭다 — "새 언약이라 말씀하셨으매 첫 것을 낡아지게 하신 것이니 낡아지고 쇠하는 것은 없어져 가느니라"(히 8:13). 새것의 등장 자체가 옛것의 노화를 선언한다.</p>
+<p><span class="wl-dead" title="위키 내부 링크">권성수</span> 목사의 히브리서 강해는 이 논증을 제사장 직분에서 읽어낸다. 예수는 "더 좋은 언약의 보증"(히 7:22)이시며, 아론 계열의 제사장들이 죽음으로 끊임없이 교체된 것과 달리 영원한 대제사장이시다. 무엇보다 그는 옛 대제사장들이 "날마다" 드려야 했던 제사를 "단번에 자기를 드려" 이루셨다(히 7:27). 옛 언약이 그림자였다면 새 언약은 실체이며, "율법은 아무것도 온전하게 못"하지만(히 7:19) 그리스도는 하나님께 나아가는 길을 온전히 여신다.</p>
+<p>그렇다면 옛 언약은 실패작이었는가. 아니다. 권 목사가 든 러시아 보초 이야기가 그 답을 비춘다 — 장미 화단을 지키라고 세운 보초가, 화단이 사라진 뒤에도 빈 자리를 지키고 서 있다. 옛 언약의 제사는 실체이신 그리스도를 가리키는 그림자였고, 실체가 왔으면 그림자는 소임을 다한 것이다. 문제는 그림자가 나빴다는 데 있지 않고, 실체가 온 뒤에도 그림자를 붙드는 데 있다. 옛 언약은 실패해서 폐기된 것이 아니라 역할을 완수하여 낡아진 것이다. 히브리서의 제사론 상세는 <a class="wl" href="../../t/%EA%B5%AC%EC%86%8D%EC%8B%A0%ED%95%99/">구속신학</a>과 <a class="wl" href="../../t/%EC%9C%A8%EB%B2%95%EA%B3%BC%EB%B3%B5%EC%9D%8C/">율법과복음</a>이 잇는다.</p>
+<h2>7. ⚖️ 새 언약과 이스라엘 — 교회는 어떻게 참여하는가</h2>
+<p>한 가지 사실이 이 페이지 전체에 긴장을 남긴다. 예레미야 31:31의 수신자는 "이스라엘 집과 유다 집"이지 이방인 교회가 아니라는 점이다. 그렇다면 대부분 이방인으로 이루어진 오늘의 교회는 어떤 자격으로 이 언약에 참여하는가. 볼트의 자료를 공정하게 정리하면 세 갈래의 대답이 가능하다.</p>
+<table>
+<thead>
+<tr>
+<th>견해</th>
+<th>이스라엘과 교회의 관계</th>
+<th>새 언약 참여 방식</th>
+<th>볼트의 좌표</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>대체(replacement)</strong></td>
+<td>교회가 이스라엘을 대신함</td>
+<td>불신 이스라엘의 자리를 교회가 물려받음</td>
+<td>볼트에 명시적 옹호 자료 없음(주의 요망)</td>
+</tr>
+<tr>
+<td><strong>확장(참감람나무)</strong></td>
+<td>교회가 이스라엘에 접붙여져 하나의 언약 백성으로 연속</td>
+<td>이방인이 언약 백성으로 편입됨(롬 11장)</td>
+<td><a class="wl" href="../../t/%EC%96%B8%EC%95%BD%EC%8B%A0%ED%95%99/">언약신학</a>의 은혜언약 단일성</td>
+</tr>
+<tr>
+<td><strong>병행(두 프로그램)</strong></td>
+<td>이스라엘과 교회를 항구적으로 구별</td>
+<td>이스라엘 약속의 문자적 성취를 유보</td>
+<td>세대주의(볼트에선 비판·분석 대상)</td>
+</tr>
+</tbody>
+</table>
+<p><a class="wl" href="../../t/%EC%96%B8%EC%95%BD%EC%8B%A0%ED%95%99/">언약신학</a>은 확장의 논리를 택한다. 하나의 은혜언약이 구약과 신약을 관통하므로, 이방인 신자는 이스라엘이라는 참감람나무에 접붙여져 같은 언약 백성이 된다는 것이다. 반대편의 세대주의는 이스라엘과 교회를 하나님의 두 구별된 프로그램으로 보아 예언의 문자적 성취를 미래로 유보한다. 한편 이 볼트가 속한 침례교 전통은 새 언약의 성격 자체에서 논거를 끌어온다 — 예레미야 31장이 예언한 새 언약이 마음에 법이 새겨지고 모두가 하나님을 아는 언약이라면, 새 언약 공동체는 혈통이 아니라 중생으로, 곧 신앙을 고백한 신자들로 구성되어야 한다는 것이다.</p>
+<p>여기서 볼트의 한계를 정직하게 밝혀야 한다. 이 볼트는 대체신학이나 세대주의를 지지자의 언어로 서술한 1차 자료를 갖고 있지 않다. 세 견해의 신학적 판정은 이 페이지가 감당할 몫이 아니며, 그 논쟁의 지형은 <a class="wl" href="../../t/%EC%96%B8%EC%95%BD%EC%8B%A0%ED%95%99/">언약신학</a>이 세대주의 대조와 함께 상세히 다룬다.</p>
+<h2>8. 새 언약 백성으로 산다는 것</h2>
+<p>새 언약의 네 약속은 교리로 끝나지 않고 일상의 질감을 바꾼다.</p>
+<p>내면화된 법은 의무를 기쁨으로 바꾼다. <span class="wl-dead" title="위키 내부 링크">문대원</span> 목사가 거듭남을 설명하며 짚듯, 예전에는 계명을 지키는 일이 힘들었으나 새로 태어난 자에게는 그것이 기쁨이 된다 — "그의 계명들은 무거운 것이 아니로다"(요일 5:3). <span class="wl-dead" title="위키 내부 링크">권성수</span> 목사는 신명기 10장의 "마음의 할례"(신 10:16)를 새 언약과 잇대어, 하나님이 법을 "돌판이 아니라 우리 마음에 새겨 놓으"셨고 성령께서 능력을 주셔서 지키게 하신다고 본다. 법이 밖에서 나를 명령하는 것이 아니라 안에서 나를 이끈다.</p>
+<p>직접적 앎은 신앙의 무게중심을 옮긴다. 작은 자로부터 큰 자까지 각자가 하나님을 아는 새 언약에서, 신앙은 더 이상 중개자의 전유물이 아니다. 물론 이것이 가르침의 폐지를 뜻하지는 않는다 — 새 언약 백성도 여전히 배우고 자란다. 다만 그 앎이 남의 것을 전해 받는 데 그치지 않고 각자 안에 뿌리내린다는 점이 다르다.</p>
+<p>확정된 용서는 정죄의 공포를 걷어낸다. 문대원 목사는 옛 언약과 새 언약의 차이를 죄의 "간과"와 "용서"로 구분한다. 옛 언약 시대에 하나님은 유월절처럼 심판을 넘어가시되 죄를 완전히 처리하지는 않으셨다 — 이는 은행이 대출 상환을 연장해 준 것에 가깝다. 그러나 새 언약에서 예수께서 십자가에서 값을 치르심으로 그 빚은 대신 상환되었다. 간과가 아니라 용서다. "다시는 그 죄를 기억하지 아니하리라"는 약속이 여기서 성취된다. 새 언약 백성은 심판의 유예 위가 아니라 확정된 용서 위에 선다. 그 용서의 신학은 <a class="wl" href="../../t/%EC%9A%A9%EC%84%9C/">용서</a>가 이어받는다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>"새 언약"이라는 표현은 히브리 성경에서 예레미야 31:31 단 한 곳에만 나오며, 그것도 승리가 아니라 예루살렘 멸망 직전의 폐허 위에서 주어졌다. 옛 언약이 파산한 자리가 새 언약이 심긴 자리다.</li>
+<li>새 언약의 네 약속(마음에 새긴 법·언약 공식 완성·앎의 민주화·결정적 용서)에서 넷째인 죄 용서가 앞의 셋을 떠받치는 토대다. 죄가 처리되어야 법도 관계도 지식도 세워진다.</li>
+<li>"같지 않을 것"(렘 31:32)의 핵심은 법의 폐기가 아니라 위치 이동이다. 같은 토라가 돌판에서 마음으로 옮겨지고, 그것을 지키게 하는 힘이 외적 요구에서 내주하는 성령으로 바뀐다 — "옛 언약은 돌판, 새 언약은 성령"(문대원).</li>
+<li>새 언약은 최후의 만찬에서 명명되고 십자가에서 체결되었다. "이 잔은 내 피로 세우는 새 언약"(눅 22:20)이라는 예수의 선언이 예레미야의 예언과 성찬을 하나로 묶는다.</li>
+<li>에스겔 36장이 예레미야의 "마음에 새김"을 "새 영·새 마음"으로 보완하며, 그 실현은 오순절 성령 강림이다. 새 언약과 거듭남은 같은 약속의 두 이름이다.</li>
+<li>히브리서는 옛 언약을 실패가 아니라 "낡아짐"(히 8:13)으로 규정한다. 그림자는 실체를 가리키는 소임을 다했고, 문제는 실체가 온 뒤에도 그림자를 붙드는 데 있다.</li>
+<li>새 언약의 수신자가 "이스라엘 집과 유다 집"이라는 사실은 교회의 참여 방식(대체·확장·병행)에 대한 미결의 물음을 남기며, 볼트는 어느 한쪽을 지지자의 언어로 판정하지 않는다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>렘 31:34의 "다 나를 앎"이 완전한 직접성을 약속한다면, 새 언약 백성에게 여전히 설교와 가르침의 사역이 필요한 현실을 어떻게 설명할 것인가 — 이 앎의 '이미'와 '아직' 사이의 긴장은 볼트에서 정리되지 않았다.</li>
+<li>법이 마음에 새겨지고 굳은 마음이 제거되었다면, 새 언약 백성이 여전히 죄를 짓는 현실은 이 약속의 부분적 성취를 뜻하는가, 아니면 성화의 점진성으로 설명되는가(<a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a>와 공유).</li>
+<li>새 언약의 수신자 문제(이스라엘 집과 유다 집)를 대체·확장·병행 중 무엇으로 읽을지 볼트는 판정하지 않으며, 세대주의·대체신학의 1차 자료가 부재하여 이 지도는 한쪽만 표시된 지도로 남는다.</li>
+<li>"죄를 다시 기억하지 아니하리라"는 결정적 용서와, 새 언약 백성이 여전히 회개하고 자기를 살피는 실천(성찬 전의 통회 등)은 어떻게 양립하는가.</li>
+<li>옛 언약이 "낡아졌다"면 구약 율법의 현재적 규범성은 어디까지 유효한가 — 마음에 새겨지는 '그 법'의 범위를 정하는 기준은 무엇인가(<a class="wl" href="../../t/%ED%86%A0%EB%9D%BC/">토라</a>·<a class="wl" href="../../t/%EC%9C%A8%EB%B2%95%EA%B3%BC%EB%B3%B5%EC%9D%8C/">율법과복음</a>과 공유).</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%96%B8%EC%95%BD/">언약</a> — 노아에서 새 언약까지 다섯 언약이 이루는 성경의 언약 지형. 이 글이 위임받은 자리의 상위 조망.</li>
+<li><a class="wl" href="../../t/%EC%8B%9C%EB%82%B4%EC%82%B0%EC%96%B8%EC%95%BD/">시내산언약</a> — 새 언약이 "같지 않을 것"이라 선언한 옛 언약. 돌판·조건성의 짝.</li>
+<li><a class="wl" href="../../t/%EC%96%B8%EC%95%BD%EC%8B%A0%ED%95%99/">언약신학</a> — 새 언약을 은혜언약 단일성의 종착점으로 읽는 체계, 그리고 이스라엘/교회·세대주의 논쟁의 상세.</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EC%B0%AC/">성찬</a> — 새 언약의 식탁. 임재 논쟁을 포함한 예식의 상세.</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EB%A0%B9/">성령</a> — "마음에 새김"을 실현하는 내주하시는 성령. 에스겔 36장과 오순절.</li>
+<li><a class="wl" href="../../t/%EA%B1%B0%EB%93%AD%EB%82%A8/">거듭남</a> — 새 영·새 마음으로의 심장 이식. 새 언약의 개인적 적용.</li>
+<li><a class="wl" href="../../t/%EA%B5%AC%EC%86%8D%EC%8B%A0%ED%95%99/">구속신학</a> — 단번의 제사와 그리스도의 피로 이룬 속죄의 구속사적 흐름.</li>
+<li><a class="wl" href="../../t/%EC%9A%A9%EC%84%9C/">용서</a> — 간과가 아닌 결정적 용서, 죄를 다시 기억하지 않으심.</li>
+<li><a class="wl" href="../../t/%ED%86%A0%EB%9D%BC/">토라</a> — 돌판에서 마음으로 옮겨진 '그 법', 규정에서 가르침으로의 회복.</li>
+<li><a class="wl" href="../../t/%EB%A9%94%EC%8B%9C%EC%95%84%EC%98%88%EC%96%B8/">메시아예언</a> — 예레미야의 예언이 그리스도 안에서 성취되는 예언-성취 구조.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>문대원 「세 가지 약속의 성취」(롬 3:19-26)</td>
+<td>설교</td>
+<td>세 언약 구조 속 새 언약, 렘 31:31·33 인용, "옛 언약은 돌판·새 언약은 성령", 죄의 간과(대출 연장) vs 용서(대신 상환), 그리스도의 행하신·당하신 순종</td>
+</tr>
+<tr>
+<td>문대원 「인생 리셋」(요 3:3-8)</td>
+<td>설교</td>
+<td>겔 36:25-27 새 영·새 마음·굳은 마음 제거, "돌판이 아니라 마음에, 물과 성령으로", 포로기 새 언약 예언, 거듭남과의 연결</td>
+</tr>
+<tr>
+<td>권성수 「생명의 회식」(고전 11:23-29, 하나님체험 9)</td>
+<td>설교</td>
+<td>성찬 = 새 언약의 회식, 유월절 어린양 → 하나님의 어린양의 단번의 속죄, 세례(시작)·성찬(계속)의 구분</td>
+</tr>
+<tr>
+<td>권성수 「완벽한 구원 보장」(히 7:20-28)</td>
+<td>설교</td>
+<td>예수 = 더 좋은 언약의 보증(히 7:22), 옛 언약=그림자·새 언약=실체, 영원하고 완벽한 대제사장, 단회+영속(once for all)의 제사</td>
+</tr>
+<tr>
+<td>권성수 「하나님께 나가는 더 나은 제사장」(히 7:11-19)</td>
+<td>설교</td>
+<td>율법은 아무것도 온전케 못함(히 7:19), 전에 있던 계명의 폐함, 러시아 보초 일화(실체가 온 뒤에도 그림자를 붙듦)</td>
+</tr>
+<tr>
+<td>권성수 「행복 십계명」(신 10:12-22)</td>
+<td>설교</td>
+<td>마음의 할례(신 10:16), "새 언약 = 돌판이 아니라 마음에 새김, 성령이 능력을 주심", 두 돌판·언약궤·레위지파 도우미</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">08주_기억과회개와용서</span></td>
+<td>MBTS 강의</td>
+<td>렘 31:34 "죄악을 사하고 기억지 아니하리라", 자코르·샤카크·슈브·카파르의 사이클, 용서는 심판을 동반함(자코비치), 회개(슈브)가 용서의 징검다리</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">06주_예레미야_에스겔_소선지서</span></td>
+<td>MBTS 강의</td>
+<td>예레미야 1장 샤케드/쇼케드 언어유희("반드시 지켜 이루심"), 에스겔 16장의 "두 번째 카드"로서의 영원한 언약</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%96%B8%EC%95%BD%EC%8B%A0%ED%95%99/">언약신학</a> · <a class="wl" href="../../t/%EC%8B%9C%EB%82%B4%EC%82%B0%EC%96%B8%EC%95%BD/">시내산언약</a></td>
+<td>위키 페이지</td>
+<td>은혜언약 단일성과 침례교의 새 언약 논거, 옛 언약(시내산)의 돌판·조건성 대조</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/성경신학</span><span>#discipline/구약학</span><span>#topic/언약</span><span>#topic/성취</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

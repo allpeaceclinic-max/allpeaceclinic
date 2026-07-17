@@ -1,0 +1,246 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>선교사 은퇴 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="date">2026-05-08</span></div>
+  <h1 class="note-title">선교사 은퇴</h1>
+  
+</header>
+<article class="note">
+<p><em>(대구 함선네 세미나 — 은퇴 주제 토론 기록)</em></p>
+<h2>핵심 프레임</h2>
+<blockquote>
+<p><strong>"함께 준비하는 은퇴. 전적으로 책임지는 은퇴가 아니다. 나도 은퇴, 선교사도 은퇴 준비, 모두가 은퇴 준비."</strong></p>
+</blockquote>
+<p>교회 혼자 74명의 파송선교사 은퇴를 감당하겠다는 접근은 지속 불가. 교회·선교단체·선교사 3자가 함께 준비해야 한다.</p>
+<hr />
+<h2>교회별 현황 (함선네 토론)</h2>
+<table>
+<thead>
+<tr>
+<th>교회</th>
+<th>현황 및 고민</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>성부중부교회</strong></td>
+<td>다양한 나라 선교사, 연장 여부 결정 어려움</td>
+</tr>
+<tr>
+<td><strong>구일교회</strong></td>
+<td>1/10 은퇴 적립 운영, 학자금 요청 케이스 발생, 총회 은퇴자금 활용, 어디까지 감당해야 하나</td>
+</tr>
+<tr>
+<td><strong>참조은교회</strong></td>
+<td>국민연금 50% + 적립금 + 임대주택부금 10년; 계속하겠다 하면 언제까지 후원? — 담임목사 부담으로 결정 미룸</td>
+</tr>
+<tr>
+<td><strong>동부교회</strong></td>
+<td>은퇴 6개월 전 통보 원칙; 주후원 선교사 중심</td>
+</tr>
+<tr>
+<td><strong>침산교회</strong></td>
+<td>박종욱 선교사(마다가스카르), 최근 순교자 2명; 통합측 강제적 연금; 캄보디아 선교 고민 — "그만 보내야겠다" — 재배치·선택과 집중</td>
+</tr>
+<tr>
+<td><strong>예수그이름교회</strong></td>
+<td>14년, 파송 1가정 3년차; "집을 팔지 말라" 원칙; 10% 연금 적립; 2호 파송 준비; 이주민 선교 2년 전 시작 — 국내 타문화를 선교로 대우 안 하는 문제</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>은퇴 정책 원칙</h2>
+<h3>기본 구조</h3>
+<ul>
+<li><strong>65세 은퇴</strong> → 연장 신청 → 최종 <strong>70세</strong></li>
+<li>은퇴 5년 전부터 준비 착수: 레터 → 미팅 → 연장 개념 논의</li>
+</ul>
+<h3>회칙화의 필요성</h3>
+<ul>
+<li>회칙 없으면 선교사-교회 동상이몽</li>
+<li>선교사 기대: 소천까지 재정 지원 (사모님 포함)</li>
+<li>교회 기대: 은퇴 후 자립</li>
+<li>사례: 김활영 선교사(GMS) — 70세 이후에도 의지 강해 갈등 발생, 원로선교사 개념으로 80만원/월 지원(소천까지)</li>
+<li><strong>대원칙</strong>: "미래를 위한 현재의 희생은 없다 — 소급은 없다."</li>
+<li>낮은 수준으로 시작 → 올리는 것은 쉽다</li>
+</ul>
+<h3>데이터 기반 문서화</h3>
+<ul>
+<li><strong>당회 보고서: 2024~2040년, 매년 엑셀</strong>로 정리</li>
+<li>막연한 두려움 → 데이터가 생기면 "감당할 수 있겠다"는 확신</li>
+<li>구두가 아닌 팀에서 문서 만들어 선교회 보고</li>
+</ul>
+<hr />
+<h2>상호책무성 (Mutual Accountability)</h2>
+<table>
+<thead>
+<tr>
+<th>주체</th>
+<th>책무</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>선교사</strong></td>
+<td>기도편지, 연말 재정보고, 사역지 이동 승인</td>
+</tr>
+<tr>
+<td><strong>성도(교회)</strong></td>
+<td>기도의 의무, 선교헌금, 실행위 참여</td>
+</tr>
+</tbody>
+</table>
+<p>→ 상호책무성 = <strong>함께 하는 선교</strong>의 기반</p>
+<hr />
+<h2>은퇴 지원 4가지 파트</h2>
+<table>
+<thead>
+<tr>
+<th>파트</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>① 국민연금</strong></td>
+<td>교회 15만원 + 본인 부담 15만원 납부</td>
+</tr>
+<tr>
+<td><strong>② 은퇴자금</strong></td>
+<td>2,000만원 (귀국 정착 시 일시금)</td>
+</tr>
+<tr>
+<td><strong>③ 주택</strong></td>
+<td>영구임대주택 연계; 5년차 남았을 때 논의·지원; 접근성 중요 (외곽 빌라는 안 감)</td>
+</tr>
+<tr>
+<td><strong>④ 의료</strong></td>
+<td>70% 지원; 의료선교회에서 커버; 세브란스 협약 50% 지원</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>국가적 재원(국민연금·임대주택)을 적극 혼용</li>
+<li>구청 집사 통해 맞춤형 상담 가능</li>
+</ul>
+<hr />
+<h2>재산권과 은퇴의 연계</h2>
+<ul>
+<li>사역지 <strong>5년 남았을 때</strong> → 재산권 문제·후임자 동시 논의</li>
+<li>후임자를 교회가 보낼 형편이 안 되면 → 정착 지원금 확대로 재산권 문제 연결</li>
+<li><span class="wl-dead" title="위키 내부 링크">선교지재산권거버넌스</span> 참조</li>
+</ul>
+<hr />
+<h2>파트너 인 트랜짓 → 소프트랜딩</h2>
+<ul>
+<li>은퇴 선교사: 교회·선교단체·선교사 3자 협력 모델</li>
+<li>HOPE(호프) 사례: 추방·은퇴 → 글로벌 팀으로 1/5 이동</li>
+<li><strong>파트너 인 트랜짓</strong>: 사역지 이동·귀국 과도기의 선교사를 안전하게 착지시키는 구조</li>
+<li>환율 보정 (1,200→1,300→1,400원) 현실 반영 필요</li>
+</ul>
+<hr />
+<h2>함선네 연합 대응 방향</h2>
+<ul>
+<li><strong>3개 교회 연합</strong> 위기대응 포럼 제안</li>
+<li>정책이 반영 안 되더라도 "공유만 해도 좋다"</li>
+<li>다음 모임 안건:
+  1. 선교지 재산권 가이드라인 — 지역교회·선교단체 협력
+  2. 3개 교회 연합 및 함선네 지역 연합 필요성
+  3. 지역교회 선교 훈련 기획 및 어레인지</li>
+<li><strong>Bottom-up vs Top-down</strong>: 집사들이 바텀업으로 올라온 안건이 더 실질적</li>
+</ul>
+<hr />
+<h2>관련 링크</h2>
+<ul>
+<li><span class="wl-dead" title="위키 내부 링크">함선네</span> — 함선네 세미나 전체</li>
+<li><span class="wl-dead" title="위키 내부 링크">선교지재산권거버넌스</span> — 은퇴·이양과 연계되는 재산권 정책</li>
+<li><a class="wl" href="../../t/%EB%A9%A4%EB%B2%84%EC%BC%80%EC%96%B4/">멤버케어</a> — 선교사 생애 순환, 5층 케어 구조</li>
+<li><span class="wl-dead" title="위키 내부 링크">함선네</span> — 함선네 단체 개요</li>
+<li><span class="wl-dead" title="위키 내부 링크">함선네</span> — 함선네 코디 모임 기록</li>
+</ul>
+</article>
+<div class="tagrow"><span>#선교사은퇴</span><span>#멤버케어</span><span>#지역교회선교</span><span>#함선네</span><span>#은퇴정책</span><span>#재산권</span><span>#상호책무</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

@@ -1,0 +1,177 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>시내산 언약 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:174">성경·해석</span><span class="date">2026-07-02</span></div>
+  <h1 class="note-title">시내산 언약</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>시내산 언약(출19-24)은 이스라엘이 애굽에서 나온 뒤 시내산에서 하나님과 맺은 언약으로, 십계명과 언약서(출20-23)를 중심으로 한다. <a class="wl" href="../../t/%EC%95%84%EB%B8%8C%EB%9D%BC%ED%95%A8%EC%96%B8%EC%95%BD/">아브라함언약</a>과 짝을 이루는 구약의 대표 언약이지만, 성격은 정반대에 가깝다 — 아브라함 언약이 무조건적·일방적 은혜 언약(약속 언약)이라면, 시내산 언약은 조건적 의무 언약(제왕-봉신 조약 형식)으로 분류된다.</p>
+<h2>1. 두 언약의 대조 구조</h2>
+<p>이상협의 리서치페이퍼(<span class="wl-dead" title="위키 내부 링크">_paper_아브라함언약과시내산언약비교</span>)는 두 언약을 다음과 같이 대조한다.</p>
+<table>
+<thead>
+<tr>
+<th>축</th>
+<th>아브라함 언약(창12·15·17)</th>
+<th>시내산 언약(출19-24)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>성격</td>
+<td>은혜 언약</td>
+<td>행위 언약(은혜에 기초한 규정)</td>
+</tr>
+<tr>
+<td>조건</td>
+<td>무조건적·일방적(하나님 전능에 의존)</td>
+<td>조건적(십계명·언약서 준수)</td>
+</tr>
+<tr>
+<td>유형</td>
+<td>약속 언약(선물)</td>
+<td>의무 언약(제왕-봉신 조약 형식)</td>
+</tr>
+<tr>
+<td>시간</td>
+<td>미래적·일반적(범위 광범위)</td>
+<td>현재적·특정적(이스라엘 민족)</td>
+</tr>
+<tr>
+<td>근거 구절</td>
+<td>창12:2(복·이름)</td>
+<td>출19:5(제사장 나라·<a class="wl" href="../../t/%EA%B1%B0%EB%A3%A9/">거룩</a>한 나라)</td>
+</tr>
+</tbody>
+</table>
+<h2>2. 은혜가 먼저, 율법은 그다음</h2>
+<p>시내산 언약을 "행위 언약"으로 분류한다고 해서 은혜와 무관한 것은 아니다. 페이퍼의 핵심 논지는 율법(시내산)이 신-인 관계의 기초가 아니라 <strong>이미 은혜로 맺어진 관계를 유지하는 지침</strong>이라는 것이다. 십계명은 "나는 너를 애굽에서 인도한 여호와라"는 은혜 선언(역사적 서언) 뒤에 주어진다 — 율법을 지켜야 백성이 되는 것이 아니라, 이미 구원받은 백성이기에 율법을 받는다(트렘퍼 롱맨 100; 김지찬 54; 유진 메릴 353-354). 벌코프는 두 언약이 기원에서 모두 일방적이며 하나님이 우선권을 쥔 "하나의 복음적 긍휼의 언약의 두 양상"이라 본다(513·515). 현세적·한시적 행위 언약은 영원한 은혜 언약과 동떨어진 것이 아니라 그것을 믿고 의지하도록 수종든다(갈3:16-24).</p>
+<p>같은 관계적 순서는 신명기에서도 반복된다. <span class="wl-dead" title="위키 내부 링크">_paper_아브라함언약과시내산언약비교</span>와 별개로 신명기 강의(<span class="wl-dead" title="위키 내부 링크">05주_출애굽기와신명기</span>)는 신6장 쉐마의 구조("법이 무슨 뜻인가 묻거든… 역사를 먼저 가르치라")를 "복음이 먼저, 그리고 삶의 행위를 가르친다"는 동일한 원리로 요약한다.</p>
+<h2>3. 창11→12의 초점 전환과 구조적 연관성</h2>
+<p>창1-11장이 전 인류(우주적)에 초점을 맞추다가 창12장에서 갑자기 한 개인(아브라함)과 그 후손으로 급격히 좁혀진다. 이 전환은 택함과 언약의 중요성을 부각하며, 우주적 구속이 "일부를 택하심"으로 이루어짐을 보여준다(유진 메릴 318-319). 아브라함의 백성에서 시내산의 이스라엘 나라로의 전환은 "온 세상에 하나님을 드러낼 사명"으로 이어진다(328). 아브라함 언약의 약속들은 그리스도를 통해 성취될 때까지 유효하게 남았다(롬4; 갈3; 웨인 그루뎀 788).</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>시내산 언약(행위 언약)은 아브라함 언약(은혜 언약)의 대체가 아니라 그 유지 장치다.</li>
+<li>"율법을 지켜야 백성이 된다"가 아니라 "이미 백성이므로 율법을 받는다"는 순서가 두 언약을 잇는 핵심 논리다.</li>
+<li>창11에서 창12로의 초점 전환(우주적 → 개인적 택함)은 두 언약을 하나의 구속사적 흐름으로 통합한다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>두 언약을 "은혜 언약 vs 행위 언약"으로 대비하는 전통적 구도와, 벌코프처럼 "하나의 복음적 긍휼의 언약의 두 양상"으로 통합하는 관점 사이의 긴장은 어떻게 조율되는가?</li>
+<li>시내산 언약의 "조건성"이 실제 이스라엘 역사(가나안 정복, 왕정, 포로기)에서 어떻게 구체적으로 작동했는지는 별도로 추적할 필요가 있다.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%95%84%EB%B8%8C%EB%9D%BC%ED%95%A8%EC%96%B8%EC%95%BD/">아브라함언약</a> — 시내산 언약과 짝을 이루는 무조건적 은혜 언약.</li>
+<li><span class="wl-dead" title="위키 내부 링크">05주_출애굽기와신명기</span> — 시내산 언약의 실제 본문(출19-31장)과 성막·신명기까지 이어지는 강의.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">_paper_아브라함언약과시내산언약비교</span></td>
+<td>리서치페이퍼(이상협 본인 작성)</td>
+<td>두 언약 대조표, 은혜-행위 언약 관계 논증</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">05주_출애굽기와신명기</span></td>
+<td>MBTS 강의</td>
+<td>시내산 언약 본문(출19-31)의 구조와 신명기 쉐마의 은혜-율법 순서</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/구약학</span><span>#topic/언약</span><span>#topic/아브라함언약</span><span>#topic/율법</span><span>#topic/은혜</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

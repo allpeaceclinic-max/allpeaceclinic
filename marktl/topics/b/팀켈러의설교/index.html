@@ -1,0 +1,136 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>팀켈러의 설교 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:140">교회·공동체</span><span class="date">2026-06-28</span></div>
+  <h1 class="note-title">팀켈러의 설교</h1>
+  
+</header>
+<article class="note">
+<h2>책 개요</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>저자</td>
+<td>팀 켈러 (Timothy Keller)</td>
+</tr>
+<tr>
+<td>원제</td>
+<td><em>Preaching: Communicating Faith in an Age of Skepticism</em></td>
+</tr>
+<tr>
+<td>핵심 질문</td>
+<td>회의주의 시대에 어떻게 성경을 신뢰할 수 있게 전달할 것인가?</td>
+</tr>
+<tr>
+<td>주요 개념</td>
+<td>이미지 설교, 청중의 상상력, 어거스틴 설교론, 그리스도 중심 설교</td>
+</tr>
+</tbody>
+</table>
+<h2>핵심 주장</h2>
+<p>MBTS 강해설교 강의들에서 이 책은 두 차례에 걸쳐 직접 인용·참조된다.</p>
+<p><strong>이미지 설교(Image-Driven Preaching)</strong>
+강해설교전달실습 강의에서는 팀켈러의 설교론을 "이미지설교 4단계"로 정리한다. 이는 추상적 개념을 청중의 감각과 상상력에 연결하는 설교 방법론이다. 현대의 회의적 청중에게 명제 중심 설교만으로는 닿기 어렵다는 진단 위에, 이미지·이야기·은유가 설교의 핵심 전달 도구로 등장한다.</p>
+<p><strong>어거스틴의 설교론 계승</strong>
+강해설교준비실습 강의에서 팀켈러는 어거스틴(Augustine of Hippo)의 설교론을 계승하는 것으로 소개된다. 어거스틴은 수사학적 설득보다 청중의 마음(will)과 사랑(love)에 도달하는 것을 설교의 목표로 삼았다. 팀켈러는 이 전통을 현대 문화 속에서 재구현한다.</p>
+<p><strong>설교자의 이미지</strong>
+강해설교준비실습 강의에서 제시되는 설교자 7가지 이미지(예언자, 제사장, 증인 등)는 팀켈러의 설교 이해와 연결되어 있다. 설교는 정보 전달이 아니라 하나님과 청중 사이를 매개하는 행위라는 관점이다.</p>
+<p><strong>설교 준비와 전달의 통합</strong>
+팀켈러의 설교론은 준비(exegesis, 구조화)와 전달(전달 방식, 이미지 선택)을 분리하지 않는다. 강해설교준비실습의 설교 준비 5단계와 팀켈러의 접근법은 본문에서 시작해 청중의 문화와 상상력에 착지하는 공통 방향을 갖는다.</p>
+<h2>등장 강의</h2>
+<ul>
+<li><span class="wl-dead" title="위키 내부 링크">강해설교전달실습</span> — 이미지설교 4단계 직접 인용, 전달 방식론과 연결</li>
+<li><span class="wl-dead" title="위키 내부 링크">강해설교준비실습</span> — 어거스틴 설교론, 설교자 7가지 이미지, 준비 5단계 맥락에서 참조</li>
+</ul>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/설교학</span><span>#topic/강해설교</span><span>#topic/설교신학</span><span>#topic/설교전달</span><span>#topic/성경해석학</span><span>#topic/이미지설교</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

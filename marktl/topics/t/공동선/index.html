@@ -1,0 +1,551 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>공동선 (Common Good) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:300">윤리·공공</span><span class="date">2026-06-27</span></div>
+  <h1 class="note-title">공동선 (Common Good)</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/%EA%B3%B5%EB%8F%99%EC%84%A0/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>공동선은 "모두에게 좋은 것"이라는 상식적 정의를 넘어서는 개념이다. 공익(public good)이 '너와 우리'라는 수평적 2자 관계에서 다수의 이익을 극대화하려 한다면, 공동선은 거기에 하나님이라는 수직 차원을 더한 3자 관계 속에서 선을 묻는다<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. 이 차이는 단순한 신학적 장식이 아니다. 2자 관계의 공익은 전체를 위해 소수를 희생할 수 있는 논리를 허용하지만, 3자 관계의 공동선은 잃어버린 한 마리도 포기하지 않는다. 공익의 질문이 "가장 많은 사람에게 가장 큰 이익을 주는 것이 무엇인가"라면, 공동선의 질문은 "하나님이 보시기에 좋은 것은 무엇인가"이다<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>공익 (Public Good)</th>
+<th>공동선 (Common Good)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>관계 구조</td>
+<td>너 + 우리 (2자, 수평)</td>
+<td>하나님 + 나 + 이웃 (3자, 수직+수평)</td>
+</tr>
+<tr>
+<td>근거</td>
+<td>일반은총 (철학·정치·경제)</td>
+<td>일반은총 + 특별은총 (성경·신학)</td>
+</tr>
+<tr>
+<td>위험</td>
+<td>전체주의 — 99를 위해 1을 희생</td>
+<td>공익과 혼동될 때 고유성 상실</td>
+</tr>
+<tr>
+<td>비유</td>
+<td>파이를 효율적으로 나누기</td>
+<td>한 마리도 포기하지 않는 목자</td>
+</tr>
+</tbody>
+</table>
+<p>칼뱅은 성경을 안경에 비유했다. 육안으로 보면 세상만 보이지만 교정된 눈으로 보면 세상과 더불어 하나님 나라가 함께 보인다. 공동선은 바로 그 안경을 쓰고 공공의 영역을 바라보는 것 — 개인과 전체, 미시와 거시를 동시에 응시하는 다초점 렌즈다<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</p>
+<hr />
+<h2>1. 역사적 계보 — 플라톤에서 칼뱅까지</h2>
+<p>공동선이라는 개념은 기독교의 전유물이 아니다. 그 뿌리는 고대 그리스까지 거슬러 올라간다.</p>
+<table>
+<thead>
+<tr>
+<th>사상가</th>
+<th>비유</th>
+<th>강조점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>플라톤</td>
+<td>루비</td>
+<td>공동체 전체의 덕성, 개인보다 도시가 우선</td>
+</tr>
+<tr>
+<td>아리스토텔레스</td>
+<td>사파이어</td>
+<td>개인적 측면 보완, 플라톤과의 중용</td>
+</tr>
+<tr>
+<td>아퀴나스</td>
+<td>황금</td>
+<td>자연법·도덕법, 목적 실현으로서의 선</td>
+</tr>
+<tr>
+<td><strong>칼뱅</strong></td>
+<td><strong>다이아몬드</strong></td>
+<td>영적 공동선 + 사회적 공동선의 통합</td>
+</tr>
+</tbody>
+</table>
+<p>플라톤이 공동체 전체의 덕성을 강조한 데 비해, 아리스토텔레스는 개인의 행복도 전체의 선에 포함되어야 한다고 보았다. 아퀴나스는 이 전통을 자연법 안에서 재해석하여 인간의 궁극 목적을 하나님께 두었다. 그러나 공동선의 수직 차원과 수평 차원을 가장 명확하게 통합한 것은 칼뱅이다. 칼뱅에게 영적 공동선(교회 안에서의 하나님과의 관계)과 사회적 공동선(시민 사회에서의 정의와 질서)은 분리될 수 없는 하나의 렌즈였다<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>.</p>
+<p>이 계보가 중요한 이유는, 공동선을 단지 '기독교적 이상'으로 치부하는 비판에 대한 응답이 되기 때문이다. 공동선에 대한 갈망은 인류 문명의 오래된 본능이며, 기독교 신학은 그 본능에 수직 차원이라는 결정적 축을 더한 것이다.</p>
+<hr />
+<h2>2. 스미스와 마르크스의 한계 — 좌우가 아니라 위를</h2>
+<p>근대의 두 거인은 공동선에 각각 반쪽짜리 해법을 제시했다.</p>
+<table>
+<thead>
+<tr>
+<th>사상가</th>
+<th>주장</th>
+<th>한계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>애덤 스미스</td>
+<td>파이를 키워야 공동선에 이른다</td>
+<td>은혜 없는 자유 → 자본주의 탐욕</td>
+</tr>
+<tr>
+<td>카를 마르크스</td>
+<td>파이를 나눠야 공동선에 이른다</td>
+<td>선물 없는 평등 → 사회주의 수용소</td>
+</tr>
+</tbody>
+</table>
+<p>송용원은 이 한계를 "사람이 파이만으로 살 것이 아니요"라는 한 문장으로 요약한다<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>. 스미스에게 없는 것은 은혜이고, 마르크스에게 없는 것은 선물이다. 둘 다 수직 차원 — 하나님과의 관계 — 이 부재하기에 자유는 탐욕으로, 평등은 억압으로 귀결되었다.</p>
+<p>라비 재커라이어스는 이 교착 상태에 대해 "왼쪽도 오른쪽도 아닌 위를 올려다보라"고 말한다<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup>. 공동선의 위치는 이념 지도 위의 고정된 좌표가 아니다. 무정부 ↔ 전체주의, 개인주의 ↔ 집단주의 사이에서 성령의 안내를 받으며 찾아가는 역동적 위치다. 그것은 밭에 감추인 보화처럼 발견되기를 기다리는 것이지, 한 번 확정되면 영원히 지킬 수 있는 이념적 진지가 아니다<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup>.</p>
+<p>짐 월리스는 교회가 이 역동적 위치를 찾지 못하는 이유를 진단한다. 보수 교회는 복음을 속죄로 제한하고, 진보 교회는 복음을 교훈으로 제한했다<sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup>. 공동선은 속죄와 교훈을 모두 포함하면서 양쪽을 넘어서는 자리에 있다.</p>
+<hr />
+<h2>3. 창조-타락-구속 프레임 안에서의 공동선</h2>
+<p>공동선을 이해하는 가장 포괄적인 신학적 틀은 창조-타락-구속의 서사다.</p>
+<p><strong>창조</strong>: 하나님이 세계를 만드셨을 때, 일과 관계와 제도는 모두 선하게 창조되었다. 팀 켈러가 강조하듯, 타락 이전에 일이 주어졌다 — 일은 저주가 아니라 하나님의 형상을 반영하는 행위다. 켄 맨 웡과 스콧 래는 이 창조적 위임을 네 가지 히브리어 동사로 펼쳐 보인다<sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup>:</p>
+<table>
+<thead>
+<tr>
+<th>히브리어</th>
+<th>번역</th>
+<th>공동선과의 연결</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>카바쉬</strong> (כָּבַשׁ)</td>
+<td>정복</td>
+<td>문화·기술·시장을 하나님 나라의 방향으로</td>
+</tr>
+<tr>
+<td><strong>라다</strong> (רָדָה)</td>
+<td>다스림</td>
+<td>착취가 아닌 청지기적 통치</td>
+</tr>
+<tr>
+<td><strong>아바드</strong> (עָבַד)</td>
+<td>섬김·경작</td>
+<td>일 자체가 예배이자 봉사</td>
+</tr>
+<tr>
+<td><strong>샤마르</strong> (שָׁמַר)</td>
+<td>보호·지킴</td>
+<td>피조 세계와 공동체를 보전</td>
+</tr>
+</tbody>
+</table>
+<p><strong>타락</strong>: 구조 자체가 악해진 것이 아니라 구조의 <strong>방향</strong>이 뒤틀렸다. 의료·정치·경제라는 제도는 여전히 선한 창조의 잔영을 품고 있으나, 그 방향이 하나님을 향하지 않을 때 공익의 이름으로 약자를 배제하는 도구가 된다<sup id="fnref:10"><a class="footnote-ref" href="#fn:10">10</a></sup>.</p>
+<p><strong>구속</strong>: 공동선을 추구한다는 것은 타락한 구조를 폐기하는 것이 아니라 방향을 바로잡는 것이다. 이것이 구속의 과제다. 이레나이우스의 통찰은 여기서 빛을 발한다. 처음 세상이 완전해서 좋았던 것이 아니라, 궁극적 목적을 향해 출발할 수 있도록 잘 설정되어서 좋았다. 악의 존재를 허락하지 않는 것이 아니라 악으로부터 선을 끌어내는 것이 더 큰 선이다<sup id="fnref:11"><a class="footnote-ref" href="#fn:11">11</a></sup>.</p>
+<hr />
+<h2>4. 생명과 사랑 — 공동선의 두 기둥</h2>
+<p>송용원은 공동선의 내용을 생명(개체의 선)과 사랑(관계의 선)이라는 두 기둥으로 구체화한다<sup id="fnref:12"><a class="footnote-ref" href="#fn:12">12</a></sup>. 이 구분은 추상적 원리가 아니라 교회의 과제를 명확히 한다 — 생명의 문화와 사랑의 문화를 수립하는 것이 교회의 공동선 실천이다.</p>
+<p>교회 공동선에서 인류 공동선으로의 확장은 동심원적으로 이루어진다. 김수환 추기경의 "너희와 모든 이를 위하여"는 이 동심원의 방향을 정확히 표현한다. 그러나 한국교회의 현실은 "나와 우리 교회를 위하여"에 머물러 있다는 것이 송용원의 진단이다<sup id="fnref:13"><a class="footnote-ref" href="#fn:13">13</a></sup>.</p>
+<p>본회퍼는 이 확장이 가능하려면 정신적 사랑만으로는 부족하고 영적 사랑이 반드시 전제되어야 한다고 말한다. 영적 공동선이 사회적 공동선으로 확대 반영되는 통로는 성령의 역사이지, 인간적 노력의 누적이 아니다<sup id="fnref:14"><a class="footnote-ref" href="#fn:14">14</a></sup>. 아우구스티누스의 두 도성 개념도 같은 맥락에서 읽힌다. 세속 도시와 하나님의 도성은 중첩된다. 교회와 그리스도인은 양 도시에 걸쳐 살아가며, 구분하되 분리하지 않고 혼합하지도 않는 것이 종교개혁의 원칙이다<sup id="fnref:15"><a class="footnote-ref" href="#fn:15">15</a></sup>.</p>
+<hr />
+<h2>5. 율법 3용법과 공동선의 동력</h2>
+<p>공동선이 단순한 이상에 머물지 않으려면 그것을 작동시키는 동력이 필요하다. 송용원은 율법의 세 가지 용법에서 그 답을 찾는다<sup id="fnref:16"><a class="footnote-ref" href="#fn:16">16</a></sup>.</p>
+<table>
+<thead>
+<tr>
+<th>용법</th>
+<th>내용</th>
+<th>공동선과의 관계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제1용법 (도덕법)</td>
+<td>죄를 드러내는 거울</td>
+<td>정죄만 남음 — 동력이 될 수 없다</td>
+</tr>
+<tr>
+<td>제2용법 (규칙)</td>
+<td>사회 질서 유지</td>
+<td>외적 강제에 그침 — 지속 불가능</td>
+</tr>
+<tr>
+<td><strong>제3용법 (성령·새언약)</strong></td>
+<td>성령 안에서 새창조</td>
+<td><strong>공동선의 진정한 동력</strong></td>
+</tr>
+</tbody>
+</table>
+<p>제1용법과 제2용법만으로는 어림없다. 도덕적 당위나 법적 강제로는 한 마리도 포기하지 않는 목자의 마음을 만들어낼 수 없다. 제3용법 — 성령에 의해 율법이 마음에 새겨지는 새언약의 경험 — 만이 공동선을 향한 내적 동력을 제공한다.</p>
+<p>에덴동산의 선악과 금지령이 좋은 비유가 된다. 그것은 억압이 아니라 에덴을 즐기기 위한 규칙이었다. 규칙을 존중해야 테니스 경기가 즐겁듯, 하나님의 법을 기꺼이 받아들이는 것은 속박이 아니라 자유의 조건이다<sup id="fnref:17"><a class="footnote-ref" href="#fn:17">17</a></sup>. 공동선을 향한 삶도 마찬가지다 — 그것은 내적 자기부정과 외적 십자가 지기의 반복이며, 이 반복 자체가 성화의 과정이다.</p>
+<hr />
+<h2>6. 쯔다카 — 공동선의 히브리어적 기반</h2>
+<p>공동선은 추상적 원리에 머물 때 공허해진다. 히브리 성경은 이것을 <strong>쯔다카</strong>(צְדָקָה, 정의)라는 제도적 실천으로 구체화했다. 레위기 19:9-10의 뻬아트 사데(밭 모퉁이 남겨두기)는 그 대표적 사례다<sup id="fnref:18"><a class="footnote-ref" href="#fn:18">18</a></sup>.</p>
+<blockquote>
+<p>"너희가 너희의 땅에서 곡식을 거둘 때에 밭 모퉁이까지 다 거두지 말며 떨어진 이삭도 줍지 말라. 가난한 자와 거류민을 위하여 버려두라" (레 19:9-10)</p>
+</blockquote>
+<p>이 명령의 핵심은 "내 수입 안에 이미 타인의 몫이 있다"는 원칙이다. 이것은 자선이 아니라 구조적 의무로서의 나눔이다. 밭의 주인이 생산한 것 중 모퉁이의 곡식은 처음부터 가난한 자의 것이었다. 주인이 "베푸는" 것이 아니라 "돌려주는" 것이다.</p>
+<p>이 원칙은 현대의 의료 현장에서 5% 운동으로 구체화된다<sup id="fnref:19"><a class="footnote-ref" href="#fn:19">19</a></sup>. 의료인의 수입 안에도 의료 약자를 위한 몫이 이미 포함되어 있다는 인식 — 이것이 쯔다카의 의료적 번역이다.</p>
+<hr />
+<h2>7. 비즈니스와 일터에서의 공동선</h2>
+<p>공동선은 교회 안의 담론에 머물러서는 안 된다. 켄 맨 웡과 스콧 래는 비즈니스의 목적 자체를 공동선 추구로 재정의한다. 비즈니스는 '돈 버는 것'이 아니라 카바쉬·라다·아바드·샤마르의 소명을 시장과 일터에서 수행하는 것이다<sup id="fnref:20"><a class="footnote-ref" href="#fn:20">20</a></sup>.</p>
+<p>이들이 제시하는 세 가지 일의 관점은 공동선에 대한 개인의 태도를 선명하게 드러낸다:</p>
+<table>
+<thead>
+<tr>
+<th>관점</th>
+<th>설명</th>
+<th>공동선과의 관계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>일거리 (Job)</td>
+<td>생계 수단</td>
+<td>공동선에 무관심</td>
+</tr>
+<tr>
+<td>경력 (Career)</td>
+<td>자기 발전</td>
+<td>공동선을 수단으로 이용</td>
+</tr>
+<tr>
+<td><strong>소명 (Calling)</strong></td>
+<td>하나님과 이웃 섬김</td>
+<td>공동선을 향한 내적 동기</td>
+</tr>
+</tbody>
+</table>
+<p>"마진이 없으면 사명도 없다"는 현실 인식을 포기하지 않되, 이윤을 목적이 아닌 수단으로 위치시키는 것이 공동선 비즈니스의 핵심이다<sup id="fnref:21"><a class="footnote-ref" href="#fn:21">21</a></sup>. 기독교적 성공의 두 기준 — 탁월함과 신실함 — 도 같은 맥락에서 읽힌다. 탁월함은 "하나님이 보시기에 매우 좋았더라"에서, 신실함은 "착하고 신실한 종"에서 온다. 부·지위·명성은 이 두 가지를 추구하는 삶의 부산물이지 목표가 아니다<sup id="fnref:22"><a class="footnote-ref" href="#fn:22">22</a></sup>.</p>
+<hr />
+<h2>8. 의료 현장에서의 공동선</h2>
+<p>의료는 공동선의 두 기둥 — 생명과 사랑 — 이 가장 직접적으로 교차하는 현장이다. 그러나 한국 의료 시스템은 구조적으로 공익의 논리에 지배되어 있다.</p>
+<p>1977년에 시작된 <strong>77 패러다임</strong>(저부담·저수가·저보장)은 전 국민에게 의료 접근권을 열었지만, 동시에 비급여를 허용하여 의료의 방향을 비틀었다<sup id="fnref:23"><a class="footnote-ref" href="#fn:23">23</a></sup>. 흥미로운 것은 한국 전국민의료보험의 씨앗이 기독교 공동체에서 나왔다는 사실이다. 장기려가 세운 청십자 의료보험(1968)은 교회 공동선이 사회 제도로 확장된 역사적 모델이다. 그것은 1989년 전국민의료보험으로, 1998년 통합 건강보험으로 발전했다<sup id="fnref:24"><a class="footnote-ref" href="#fn:24">24</a></sup>.</p>
+<p>진료실은 아바드(섬김)와 샤마르(보호)의 구체적 공간이다. 의사의 일이 소명인지 경력인지 일거리인지에 따라 같은 진료 행위도 전혀 다른 의미를 갖는다<sup id="fnref:25"><a class="footnote-ref" href="#fn:25">25</a></sup>. 공동선의 관점에서 의료인의 세 가지 의무는 다음과 같이 정리된다:</p>
+<p><code>1. 필요를 채움 (의술의 기본)
+2. 공동체의 번영 = 공익
+3. 하나님의 목적에 부합 = 공동선 — 고용주는 하나님</code></p>
+<p>레위기의 뻬아트 사데를 의료에 적용하면, 의료적 약자 — 접근 불가 환자, 소외 계층 — 를 위한 몫이 의료인의 역량과 시간 안에 이미 포함되어 있다는 인식이 된다<sup id="fnref:26"><a class="footnote-ref" href="#fn:26">26</a></sup>.</p>
+<hr />
+<h2>9. 공공신학으로서의 공동선 — 교회가 사회에 서는 방식</h2>
+<p>공동선이 사회적 담론이 되려면 교회가 어떤 방식으로 공공 영역에 서는지가 결정적이다.</p>
+<p>윌리엄 템플은 교회의 사회 참여에 명확한 한계선을 그었다. 교회가 해야 할 것은 원리·원칙의 선포이고, 해서는 안 될 것은 특정 정책이나 정당에 대한 지지이다<sup id="fnref:27"><a class="footnote-ref" href="#fn:27">27</a></sup>. 교회는 피스메이커 — 이해 당사자들을 사고와 감성의 차원으로 끌어올려 문제가 소멸되게 하는 역할 — 이어야 한다.</p>
+<p>미로슬라브 볼프는 더 나아가, 그리스도인이 공공선의 비전을 강요하는 것이 아니라 선한 삶을 실현하시는 그리스도에 대한 증인이 되는 것이 공동선 실현의 방식이라고 말한다<sup id="fnref:28"><a class="footnote-ref" href="#fn:28">28</a></sup>. 볼프의 번영 개념에서 이 구분은 더욱 선명해진다:</p>
+<table>
+<thead>
+<tr>
+<th>개념</th>
+<th>내용</th>
+<th>위험</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Prosperity</strong></td>
+<td>성공·풍요, 소유의 충만</td>
+<td>번영신학 함정</td>
+</tr>
+<tr>
+<td><strong>Flourishing</strong></td>
+<td>존재의 충만, 인간됨의 완성</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>어느 정도의 prosperity는 필요하다. 그러나 인간됨을 충만케 하는 flourishing이 바탕이 되지 않으면 prosperity는 공허하다. 볼프의 창조 이해에서 빛과 어둠의 분리 자체가 이미 연합이듯, 개체의 선과 전체의 선은 경쟁이 아니라 상호호혜 — 삼위일체의 반영이다<sup id="fnref:29"><a class="footnote-ref" href="#fn:29">29</a></sup>.</p>
+<p>공공신학의 구체적 방법론은 <strong>번역을 통한 사회 참여</strong>다. 교회의 언어를 시민 사회가 이해할 수 있는 언어로 번역하되, 그 과정에서 고유한 차별성을 잃지 않는 <strong>온건한 차별성(soft difference)</strong>이 핵심이다<sup id="fnref:30"><a class="footnote-ref" href="#fn:30">30</a></sup>.</p>
+<hr />
+<h2>10. 공동선을 이루는 삶의 방식 — 아브라함의 세 자세</h2>
+<p>공동선은 결국 개인의 삶의 방식으로 구현되어야 한다. 송용원은 아브라함에게서 공동선을 추구하는 사람의 세 가지 자세를 읽어낸다<sup id="fnref:31"><a class="footnote-ref" href="#fn:31">31</a></sup>:</p>
+<ol>
+<li><strong>약하게 되어라</strong> — 힘의 포기. 롯과의 공동우물 사건에서 아브라함은 효율이 아닌 관계를 선택했다.</li>
+<li><strong>착하게 살아라</strong> — 생명의 실천. 일상의 구체적 선행.</li>
+<li><strong>변두리로 가라</strong> — 관계 우선. 중심이 아닌 주변에서 섬기는 위치.</li>
+</ol>
+<p>이 세 자세의 공통점은 자기 비움이다. 공동선은 내적 자기부정과 외적 십자가 지기의 반복을 통해 성화의 과정 안에서 실현된다. 그래서 공동선은 밭에 감추인 보화이자 그리스도의 남은 고난에 참여하는 것이다<sup id="fnref:32"><a class="footnote-ref" href="#fn:32">32</a></sup>.</p>
+<hr />
+<h2>핵심 인사이트</h2>
+<ul>
+<li>공익과 공동선의 차이는 관계 구조의 차원 수(2자 vs 3자)에 있으며, 이 차이가 약자 배제 여부를 결정한다</li>
+<li>공동선의 위치는 이념 지도 위의 고정 좌표가 아니라 성령의 안내를 받으며 찾아가는 역동적 위치다</li>
+<li>창조-타락-구속 프레임에서 공동선은 구조의 폐기가 아니라 방향의 교정이다</li>
+<li>율법 제3용법(성령·새언약)만이 공동선의 지속 가능한 동력을 제공한다</li>
+<li>쯔다카의 핵심 — "내 수입 안에 이미 타인의 몫이 있다" — 은 공동선을 자선이 아닌 구조적 의무로 전환한다</li>
+<li>장기려의 청십자 의료보험은 교회 공동선이 사회 제도로 확장된 한국적 모델이다</li>
+<li>공동선 실현의 방법은 비전의 강요가 아니라 증인으로서의 삶이다 (볼프)</li>
+</ul>
+<hr />
+<h2>미해결 질문</h2>
+<ul>
+<li>진료 현장에서 공익(효율)이 지배하는 의료 시스템 안에 있으면서 한 명도 포기하지 않는 공동선의 원칙을 어떻게 유지하는가?</li>
+<li>공동선이 단순한 내적 동기에 머물지 않고 구조와 제도(77 패러다임 등)를 실제로 바꾸는 힘이 되려면 무엇이 필요한가?</li>
+<li>prosperity를 완전히 부정하지 않고 flourishing으로 나아가는 균형선을 어디에 그어야 하는가?</li>
+<li>"나와 우리 교회를 위하여"에서 "너희와 모든 이를 위하여"로의 전환을 가로막는 구조적 장벽은 무엇인가?</li>
+<li>비그리스도인과의 공동선 협력에서 기독교적 정체성과 시민사회 번역 사이의 긴장을 어떻게 다루는가?</li>
+</ul>
+<hr />
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EA%B3%B5%EC%9D%98/">공의</a> — 쯔다카·뻬아트 사데·구조적 정의; 공동선의 히브리어적 기반</li>
+<li><a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EC%99%80%EC%82%AC%ED%9A%8C%EC%B0%B8%EC%97%AC/">교회와사회참여</a> — 9권의 책을 종합한 교회 사회 참여론; 공동선 추구 = 번역을 통한 참여</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a> — 진료실 = 아바드+샤마르의 공간; 공익 vs 공동선 표</li>
+<li><a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%8B%A0%ED%95%99/">직업신학</a> — 소명으로서의 직업; 영적 공동선이 일터에서 실현되는 방식</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%84%B8%EA%B3%84%EA%B4%80/">기독교세계관</a> — 칼뱅의 안경, 창조-타락-구속, 다초점 렌즈</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a> — 공동선을 추구하는 교회의 사회적 존재 방식</li>
+<li><a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EA%B3%B5%EB%8F%99%EC%84%A0_%EC%86%A1%EC%9A%A9%EC%9B%90/">하나님의공동선_송용원</a> — 공동선의 신학적 계보와 핵심 프레임</li>
+<li><a class="wl" href="../../b/%EA%B3%B5%EB%8F%99%EC%84%A0%EC%9D%84%EC%B6%94%EA%B5%AC%ED%95%98%EB%8A%94%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4/">공동선을추구하는비즈니스</a> — 일의 내재적 가치와 소명 비즈니스</li>
+<li><a class="wl" href="../../b/%EB%8B%88%EA%B3%A0%EB%8D%B0%EB%AA%A8%EC%9D%98%EC%95%88%EA%B2%BD/">니고데모의안경</a> — 2자→3자 관계, 창조-타락-구속 프레임</li>
+<li><span class="wl-dead" title="위키 내부 링크">광장에선기독교_미로슬라브볼프</span> — prosperity vs flourishing, 증인으로서의 공동선</li>
+<li><span class="wl-dead" title="위키 내부 링크">의료사회회복프로젝트</span> — 공동선 신학의 의료 적용, 77 패러다임, 장기려</li>
+<li><span class="wl-dead" title="위키 내부 링크">놀면뭐하니</span> — 쯔다카의 의료적 번역, 5% 운동</li>
+</ul>
+<hr />
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EA%B3%B5%EB%8F%99%EC%84%A0_%EC%86%A1%EC%9A%A9%EC%9B%90/">하나님의공동선_송용원</a></td>
+<td>북노트</td>
+<td>공익/공동선 구분, 역사적 계보, 생명+사랑 두 기둥, 율법 3용법, 스미스/마르크스 비판</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EA%B3%B5%EB%8F%99%EC%84%A0%EC%9D%84%EC%B6%94%EA%B5%AC%ED%95%98%EB%8A%94%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4/">공동선을추구하는비즈니스</a></td>
+<td>북노트</td>
+<td>일의 내재적 가치(4동사), 소명 비즈니스, 기독교적 성공 기준</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EB%8B%88%EA%B3%A0%EB%8D%B0%EB%AA%A8%EC%9D%98%EC%95%88%EA%B2%BD/">니고데모의안경</a></td>
+<td>북노트</td>
+<td>2자/3자 관계, 창조-타락-구속 프레임, 구조 vs 방향</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%ED%83%9C%EA%B7%B9%EA%B8%B0%EB%A5%BC%ED%9D%94%EB%93%9C%EB%8A%94%EA%B7%B8%EB%A6%AC%EC%8A%A4%EB%8F%84%EC%9D%B8/">태극기를흔드는그리스도인</a></td>
+<td>북노트</td>
+<td>공공신학 = 번역을 통한 참여, 온건한 차별성</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">광장에선기독교_미로슬라브볼프</span></td>
+<td>북노트</td>
+<td>prosperity vs flourishing, 증인으로서의 공동선 실현</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">의료사회회복프로젝트</span></td>
+<td>프로젝트</td>
+<td>공동선 신학의 의료 적용, 77 패러다임, 장기려, 쯔다카</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">놀면뭐하니</span></td>
+<td>프로젝트</td>
+<td>뻬아트 사데의 의료적 번역, 5% 운동</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EA%B3%B5%EC%9D%98/">공의</a></td>
+<td>토픽</td>
+<td>쯔다카, 뻬아트 사데, 공동선의 히브리어적 기반</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EC%99%80%EC%82%AC%ED%9A%8C%EC%B0%B8%EC%97%AC/">교회와사회참여</a></td>
+<td>토픽</td>
+<td>템플의 참여 한계선, 본회퍼 3단계, 공동선 추구 = 공공신학</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a></td>
+<td>토픽</td>
+<td>의료인의 세 의무(필요·공익·공동선), 데로우 밀러</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>인용·출처</h2>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>송용원, 『하나님의 공동선』 — "공동선은 하나님, 나, 이웃이 하나로 이어진 전망을 드러낸다" (월터 브루그만 인용). <a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EA%B3%B5%EB%8F%99%EC%84%A0_%EC%86%A1%EC%9A%A9%EC%9B%90/">하나님의공동선_송용원</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>같은 책 — 공익(다수에게 좋은 것) vs 공동선(하나님이 좋아하시는 것) 구분. <a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EA%B3%B5%EB%8F%99%EC%84%A0_%EC%86%A1%EC%9A%A9%EC%9B%90/">하나님의공동선_송용원</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>같은 책 — 칼뱅의 안경 비유, 다초점 렌즈. <a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EA%B3%B5%EB%8F%99%EC%84%A0_%EC%86%A1%EC%9A%A9%EC%9B%90/">하나님의공동선_송용원</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>같은 책 — 공동선의 역사적 계보(플라톤→아리스토텔레스→아퀴나스→칼뱅), 보석 비유. <a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EA%B3%B5%EB%8F%99%EC%84%A0_%EC%86%A1%EC%9A%A9%EC%9B%90/">하나님의공동선_송용원</a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>같은 책 — "사람이 파이만으로 살 것이 아니요", 스미스(은혜 없는 자유)와 마르크스(선물 없는 평등). <a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EA%B3%B5%EB%8F%99%EC%84%A0_%EC%86%A1%EC%9A%A9%EC%9B%90/">하나님의공동선_송용원</a>&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p>같은 책에서 재인용 — 라비 재커라이어스, "위를 올려다보라". <a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EA%B3%B5%EB%8F%99%EC%84%A0_%EC%86%A1%EC%9A%A9%EC%9B%90/">하나님의공동선_송용원</a>&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p>의료사회회복프로젝트 3강 — "공동선 = 밭에 감추인 보화 = 십자가". <span class="wl-dead" title="위키 내부 링크">의료사회회복프로젝트</span>&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:8">
+<p>송용원, 『하나님의 공동선』 — 짐 월리스의 진단(보수=속죄로 제한, 진보=교훈으로 제한). <a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EA%B3%B5%EB%8F%99%EC%84%A0_%EC%86%A1%EC%9A%A9%EC%9B%90/">하나님의공동선_송용원</a>&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:9">
+<p>켄 맨 웡·스콧 래, 『공동선을 추구하는 비즈니스』 — 카바쉬·라다·아바드·샤마르, 크리스토퍼 라이트 프레임 확장. <a class="wl" href="../../b/%EA%B3%B5%EB%8F%99%EC%84%A0%EC%9D%84%EC%B6%94%EA%B5%AC%ED%95%98%EB%8A%94%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4/">공동선을추구하는비즈니스</a>&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:10">
+<p>『니고데모의 안경』 — 창조-타락-구속 프레임, 구조(Structure) vs 방향(Direction). <a class="wl" href="../../b/%EB%8B%88%EA%B3%A0%EB%8D%B0%EB%AA%A8%EC%9D%98%EC%95%88%EA%B2%BD/">니고데모의안경</a>&#160;<a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:11">
+<p>송용원, 『하나님의 공동선』 — 이레나이우스, "아기지만 좋다", 악으로부터 선을 끌어냄. <a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EA%B3%B5%EB%8F%99%EC%84%A0_%EC%86%A1%EC%9A%A9%EC%9B%90/">하나님의공동선_송용원</a>&#160;<a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn:12">
+<p>같은 책 — 생명(개체의 선) + 사랑(관계의 선) = 공동선의 두 기둥. <a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EA%B3%B5%EB%8F%99%EC%84%A0_%EC%86%A1%EC%9A%A9%EC%9B%90/">하나님의공동선_송용원</a>&#160;<a class="footnote-backref" href="#fnref:12" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+<li id="fn:13">
+<p>같은 책 — 김수환 추기경 "너희와 모든 이를 위하여" vs 한국교회 "나와 우리 교회를 위하여". <a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EA%B3%B5%EB%8F%99%EC%84%A0_%EC%86%A1%EC%9A%A9%EC%9B%90/">하나님의공동선_송용원</a>&#160;<a class="footnote-backref" href="#fnref:13" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+</li>
+<li id="fn:14">
+<p>같은 책 — 본회퍼, 영적 사랑이 전제되어야 사회적 공동선 확대. <a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EA%B3%B5%EB%8F%99%EC%84%A0_%EC%86%A1%EC%9A%A9%EC%9B%90/">하나님의공동선_송용원</a>&#160;<a class="footnote-backref" href="#fnref:14" title="Jump back to footnote 14 in the text">&#8617;</a></p>
+</li>
+<li id="fn:15">
+<p>같은 책 — 아우구스티누스 두 도성, 구분(O)/분리(X)/혼합(X). <a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EA%B3%B5%EB%8F%99%EC%84%A0_%EC%86%A1%EC%9A%A9%EC%9B%90/">하나님의공동선_송용원</a>&#160;<a class="footnote-backref" href="#fnref:15" title="Jump back to footnote 15 in the text">&#8617;</a></p>
+</li>
+<li id="fn:16">
+<p>같은 책 — 율법 3용법과 공동선의 동력. <a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EA%B3%B5%EB%8F%99%EC%84%A0_%EC%86%A1%EC%9A%A9%EC%9B%90/">하나님의공동선_송용원</a>&#160;<a class="footnote-backref" href="#fnref:16" title="Jump back to footnote 16 in the text">&#8617;</a></p>
+</li>
+<li id="fn:17">
+<p>같은 책 — 선악과 금지령 = 에덴을 즐기기 위한 규칙, 테니스 비유. <a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EA%B3%B5%EB%8F%99%EC%84%A0_%EC%86%A1%EC%9A%A9%EC%9B%90/">하나님의공동선_송용원</a>&#160;<a class="footnote-backref" href="#fnref:17" title="Jump back to footnote 17 in the text">&#8617;</a></p>
+</li>
+<li id="fn:18">
+<p>의료사회회복프로젝트 발제 3 — 레 19:9-10 뻬아트 사데, "나의 수입에 남의 것이 포함". <span class="wl-dead" title="위키 내부 링크">의료사회회복프로젝트</span>&#160;<a class="footnote-backref" href="#fnref:18" title="Jump back to footnote 18 in the text">&#8617;</a></p>
+</li>
+<li id="fn:19">
+<p>놀면뭐하니 4탄 — 성문·쯔다카·5% 운동. <span class="wl-dead" title="위키 내부 링크">놀면뭐하니</span>&#160;<a class="footnote-backref" href="#fnref:19" title="Jump back to footnote 19 in the text">&#8617;</a></p>
+</li>
+<li id="fn:20">
+<p>켄 맨 웡·스콧 래, 『공동선을 추구하는 비즈니스』 — 비즈니스 = 네 가지 소명의 시장 수행. <a class="wl" href="../../b/%EA%B3%B5%EB%8F%99%EC%84%A0%EC%9D%84%EC%B6%94%EA%B5%AC%ED%95%98%EB%8A%94%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4/">공동선을추구하는비즈니스</a>&#160;<a class="footnote-backref" href="#fnref:20" title="Jump back to footnote 20 in the text">&#8617;</a></p>
+</li>
+<li id="fn:21">
+<p>같은 책 — "마진이 없으면 사명도 없다", 이윤은 수단. <a class="wl" href="../../b/%EA%B3%B5%EB%8F%99%EC%84%A0%EC%9D%84%EC%B6%94%EA%B5%AC%ED%95%98%EB%8A%94%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4/">공동선을추구하는비즈니스</a>&#160;<a class="footnote-backref" href="#fnref:21" title="Jump back to footnote 21 in the text">&#8617;</a></p>
+</li>
+<li id="fn:22">
+<p>같은 책 — 기독교적 성공의 두 기준: 탁월함("매우 좋았더라") + 신실함("착하고 신실한 종"). <a class="wl" href="../../b/%EA%B3%B5%EB%8F%99%EC%84%A0%EC%9D%84%EC%B6%94%EA%B5%AC%ED%95%98%EB%8A%94%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4/">공동선을추구하는비즈니스</a>&#160;<a class="footnote-backref" href="#fnref:22" title="Jump back to footnote 22 in the text">&#8617;</a></p>
+</li>
+<li id="fn:23">
+<p>의료사회회복프로젝트 발제 3 — 77 패러다임(1977 저부담·저수가·저보장), 비급여 허용. <span class="wl-dead" title="위키 내부 링크">의료사회회복프로젝트</span>&#160;<a class="footnote-backref" href="#fnref:23" title="Jump back to footnote 23 in the text">&#8617;</a></p>
+</li>
+<li id="fn:24">
+<p>같은 발제 — 장기려 → 청십자 의료보험(1968) → 전국민의료보험(1989) → 통합(1998). <span class="wl-dead" title="위키 내부 링크">의료사회회복프로젝트</span>&#160;<a class="footnote-backref" href="#fnref:24" title="Jump back to footnote 24 in the text">&#8617;</a></p>
+</li>
+<li id="fn:25">
+<p>켄 맨 웡·스콧 래, 『공동선을 추구하는 비즈니스』 — 일의 세 관점(Job/Career/Calling), 의료 연결. <a class="wl" href="../../b/%EA%B3%B5%EB%8F%99%EC%84%A0%EC%9D%84%EC%B6%94%EA%B5%AC%ED%95%98%EB%8A%94%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4/">공동선을추구하는비즈니스</a>&#160;<a class="footnote-backref" href="#fnref:25" title="Jump back to footnote 25 in the text">&#8617;</a></p>
+</li>
+<li id="fn:26">
+<p>의료사회회복프로젝트 발제 3 — 뻬아트 사데의 의료 적용, 의료적 약자를 위한 몫. <span class="wl-dead" title="위키 내부 링크">의료사회회복프로젝트</span>&#160;<a class="footnote-backref" href="#fnref:26" title="Jump back to footnote 26 in the text">&#8617;</a></p>
+</li>
+<li id="fn:27">
+<p>윌리엄 템플, 『기독 시민의 사회적 책임』 — 교회 참여의 한계선(원리 선포 O, 정책 지지 X). <a class="wl" href="../../b/%EA%B8%B0%EB%8F%85%EC%8B%9C%EB%AF%BC%EC%9D%98%EC%82%AC%ED%9A%8C%EC%A0%81%EC%B1%85%EC%9E%84_%EC%9C%8C%EB%A6%AC%EC%97%84%ED%85%9C%ED%94%8C/">기독시민의사회적책임_윌리엄템플</a>&#160;<a class="footnote-backref" href="#fnref:27" title="Jump back to footnote 27 in the text">&#8617;</a></p>
+</li>
+<li id="fn:28">
+<p>미로슬라브 볼프, 『광장에 선 기독교』 — 비전 강요가 아닌 증인으로서의 공동선 실현. <span class="wl-dead" title="위키 내부 링크">광장에선기독교_미로슬라브볼프</span>&#160;<a class="footnote-backref" href="#fnref:28" title="Jump back to footnote 28 in the text">&#8617;</a></p>
+</li>
+<li id="fn:29">
+<p>같은 책 — prosperity vs flourishing, 창조적 분리와 연합, 삼위일체 반영. <span class="wl-dead" title="위키 내부 링크">광장에선기독교_미로슬라브볼프</span>&#160;<a class="footnote-backref" href="#fnref:29" title="Jump back to footnote 29 in the text">&#8617;</a></p>
+</li>
+<li id="fn:30">
+<p>『태극기를 흔드는 그리스도인』 — 공공신학 = 번역을 통한 사회 참여, 온건한 차별성(soft difference). <a class="wl" href="../../b/%ED%83%9C%EA%B7%B9%EA%B8%B0%EB%A5%BC%ED%9D%94%EB%93%9C%EB%8A%94%EA%B7%B8%EB%A6%AC%EC%8A%A4%EB%8F%84%EC%9D%B8/">태극기를흔드는그리스도인</a>&#160;<a class="footnote-backref" href="#fnref:30" title="Jump back to footnote 30 in the text">&#8617;</a></p>
+</li>
+<li id="fn:31">
+<p>송용원, 『하나님의 공동선』 — 아브라함의 3가지 자세(약하게·착하게·변두리로). <a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EA%B3%B5%EB%8F%99%EC%84%A0_%EC%86%A1%EC%9A%A9%EC%9B%90/">하나님의공동선_송용원</a>&#160;<a class="footnote-backref" href="#fnref:31" title="Jump back to footnote 31 in the text">&#8617;</a></p>
+</li>
+<li id="fn:32">
+<p>같은 책 — 공동선 = 밭에 감추인 보화 = 그리스도의 남은 고난 참여, 내적 자기부정 + 외적 십자가. <a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EA%B3%B5%EB%8F%99%EC%84%A0_%EC%86%A1%EC%9A%A9%EC%9B%90/">하나님의공동선_송용원</a>&#160;<a class="footnote-backref" href="#fnref:32" title="Jump back to footnote 32 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+</article>
+<div class="tagrow"><span>#discipline/사회윤리</span><span>#discipline/공공신학</span><span>#domain/공동선</span><span>#domain/의료</span><span>#domain/기독교세계관</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

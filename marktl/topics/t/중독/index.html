@@ -1,0 +1,129 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>중독 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:25">상담·가정</span><span class="date">2026-06-28</span></div>
+  <h1 class="note-title">중독</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>중독은 강박과 갈망이 동기가 되어 부정적 결과에도 불구하고 특정 행동이나 물질 사용을 지속하는 상태다. 하워드 쉐퍼(Howard Shaffer)의 정의에 따르면 중독은 만성질환(chronic condition)으로, 일회성 의지 결핍이 아니라 뇌 회로의 구조적 변화를 동반하는 장기적 상태다. 김재환은 이 정의를 청소년 게임 중독·행동 중독에 적용하며, 중독을 도덕적 실패가 아니라 치료 가능한 임상 현실로 다룬다.</p>
+<h2>1. 스트레스-보상 함수</h2>
+<p>중독의 핵심 메커니즘은 스트레스-보상 함수다. 스트레스(긴장, 좌절, 불안)가 축적될 때 뇌는 즉각적 보상(게임 승리, 쾌락 자극)을 통해 긴장을 해소하려 한다. 반복될수록 이 회로가 강화되어, 동일한 보상을 얻기 위해 더 강한 자극이 필요해진다(내성). 청소년 게임 중독은 이 회로가 게임 환경에 특화되어 굳어진 상태다.</p>
+<h2>2. 자기결정성이론 — 결핍이 중독을 부른다</h2>
+<p>김재환은 자기결정성이론(Self-Determination Theory, Deci &amp; Ryan)을 중독 예방의 핵심 틀로 사용한다. 인간은 세 가지 기본 심리 욕구를 갖는다: <strong>자율성</strong>(스스로 선택하는 경험), <strong>유능성</strong>(할 수 있다는 효능감), <strong>관계성</strong>(진정한 연결). 이 세 욕구가 현실에서 충족되지 않을 때 가상 환경(게임, 도박, SNS)에서 대리 충족을 찾게 된다. 따라서 중독 예방의 본질은 세 욕구를 현실 안에서 채워주는 것이다.</p>
+<h2>3. 충분히 좋은 부모 — 건강한 Self</h2>
+<p>김재환은 도널드 위니캇(D. W. Winnicott)의 "충분히 좋은 부모(good enough parent)" 개념을 중독 예방과 연결한다. 완벽한 부모가 아니라 충분히 좋은 부모가 아이 안에 충분히 좋은 자기(Self)를 형성한다. 건강한 Self는 중독의 대안이다. 반대로, 재접근기(4-5세, 독립과 의존 사이를 오가는 발달 단계)에 적절한 부모 반응이 없으면 경계선·자기애적 성격 병리가 자리를 잡고, 이것이 중독 취약성의 기반이 된다.</p>
+<h2>4. 감정 조절 — 중독 치료의 핵심</h2>
+<p>중독 행동의 직접적 기능은 감정 조절이다. 견디기 어려운 감정(수치심, 분노, 공허함)을 중독 행동이 일시적으로 마비시키거나 대체한다. 따라서 치료의 핵심은 감정을 다루는 능력(감정 조절)을 키우는 것이며, 중독 행동 자체를 막는 것보다 선행한다.</p>
+<h2>5. 부모 변화가 선행 조건</h2>
+<p>김재환은 청소년 중독 치료에서 부모 변화가 자녀 변화보다 먼저라는 원칙을 강조한다. 자녀의 중독은 종종 가족 체계의 역기능을 반영하며, 부모가 먼저 변하지 않으면 치료 효과가 지속되지 않는다. 고린도전서 13장(사랑의 장)이 치료 관계의 신학적 근거로 제시된다. 가트만(Gottman)의 5:1 비율 — 긍정적 상호작용이 부정적의 5배 이상 — 은 부모-자녀 관계 회복의 실천 기준이다.</p>
+<h2>6. 현대 사회 — 중독의 바다</h2>
+<p>김재환은 현대 사회 자체를 "중독의 바다"로 정의한다. 스마트폰, SNS, 게임, 소비주의 모두 보상 회로를 겨냥해 설계된 환경이다. 개인의 의지력만으로는 이 환경을 거스르기 어렵다. 이것이 공동체적·구조적 예방의 필요성을 뒷받침한다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>중독은 의지의 문제가 아니라 뇌 회로와 심리 욕구 결핍의 문제다. 도덕주의적 접근은 수치심을 강화해 중독을 악화시킨다.</li>
+<li>예방의 핵심은 자율성·유능성·관계성을 현실 안에서 채워주는 것이다.</li>
+<li>부모 변화 없이 자녀 중독 치료는 한계가 있다.</li>
+<li>현대 디지털 환경은 중독을 유발하도록 설계되어 있다. 개인 책임만 강조하는 것은 구조적 현실을 외면한다.</li>
+<li>감정 조절 능력 훈련이 중독 예방과 치료의 실질적 핵심이다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>중독을 만성질환으로 볼 때, 기독교 죄론(罪論)과의 관계는 어떻게 정립되어야 하는가?</li>
+<li>디지털 환경에서 자율성·유능성·관계성을 건강하게 채우는 구체적 대안은 무엇인가?</li>
+<li>경계선·자기애적 성격 병리가 있는 청소년에게 중독 치료는 어떻게 달라져야 하는가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%B2%AD%EC%86%8C%EB%85%84%EC%82%AC%EC%97%AD/">청소년사역</a> — 청소년 게임 중독은 청소년 사역의 주요 현장 과제</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%83%81%EB%8B%B4/">기독교상담</a> — 중독 치료의 상담학적 접근</li>
+<li><a class="wl" href="../../t/%EC%9E%90%EC%A1%B4%EA%B0%90/">자존감</a> — 건강한 Self 형성과 자존감은 중독 예방의 공통 기반</li>
+<li><a class="wl" href="../../t/%EC%A3%84%EC%84%B1/">죄성</a> — 중독과 죄성의 신학적 관계 질문</li>
+</ul>
+</article>
+<div class="tagrow"><span>#domain/상담</span><span>#discipline/기독교상담</span><span>#discipline/발달심리</span><span>#topic/중독</span><span>#topic/청소년사역</span><span>#topic/기독교상담</span><span>#topic/자존감</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

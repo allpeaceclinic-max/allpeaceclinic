@@ -1,0 +1,329 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>변신론 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:206">변증·철학</span><span class="date">2026-07-17</span></div>
+  <h1 class="note-title">변신론</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>변신론(辯神論, theodicy)은 악의 실재 앞에서 하나님의 선하심과 전능하심을 이성적으로 변호하려는 신학적·철학적 기획이다. 말 자체가 신(theos)과 정의(dikē)의 결합이니, 문자 그대로는 '하나님을 정당화함' — 악이라는 고발장 앞에서 하나님을 피고석에서 변론하는 일이다. 무고한 자의 고통과 무의미해 보이는 재난이 실제로 존재하는데도 전능하고 전선하신 하나님을 믿는 것이 어떻게 합리적인가. 이 물음에 이론으로 답하려는 모든 시도가 변신론의 이름 아래 모인다.</p>
+<p>여기서 하나의 전략적 구별이 처음부터 필요하다. MBTS 변증학 4주차 강의(양정모)는 더글러스 그로타이스의 『기독교 변증학』을 따라 변신론(theodicy)과 <a class="wl" href="../../t/%EB%B3%80%EC%A6%9D%ED%95%99/">변론</a>(defense)을 나눈다. 변신론은 "하나님은 왜 악을 허용하시는가"라는 기원과 이유를 설명하려 하고, 변론은 "하나님과 악이 어떻게 공존할 수 있는가"라는 논리적 가능성만 보여주려 한다. 강의는 후자가 더 현실적인 길이라고 본다. 이 페이지는 넓은 의미의 변신론 — 악 앞에서 하나님을 변호하는 이론들의 지형 전체 — 를 다루되, 그 안에서 변론과 변신론이 어떻게 갈라지는지를 함께 그린다.</p>
+<p>이 페이지는 <strong>이론적 응답의 지형</strong>이다. 악의 실존적 무게, 탄식의 회복, 병상에서의 목회는 <a class="wl" href="../../t/%EA%B3%A0%EB%82%9C/">고난</a>이 이미 깊이 다룬다. 변신론은 강의실의 언어이고 고난은 병상의 언어다 — 이 분업 자체가 §7에서 다시 이 페이지의 주제로 돌아온다.</p>
+<h2>1. 두 층위의 문제 — 논리적 악의 문제와 증거적 악의 문제</h2>
+<p>악의 문제는 하나가 아니라 둘이다. 이 구분을 놓치면 응답 전략 전체가 어긋난다.</p>
+<p>첫째는 <strong>논리적(연역적) 악의 문제</strong>다. <span class="wl-dead" title="위키 내부 링크">에피쿠로스</span>의 고전적 정식이 그 날을 세운다 — 신은 악을 없애길 원하지만 할 수 없거나, 할 수 있지만 원하지 않거나, 둘 다이거나, 둘 다 아니다. 오직 마지막 칸(원하면서 할 수 있음)만이 하나님께 어울리는데, 그렇다면 왜 악을 제거하지 않는가. 이 정식을 20세기 무신론(맥키 계열)은 연역 논증으로 벼렸다. 전능·전지, 전선, 객관적 악의 존재 — 이 세 진술이 논리적으로 양립 불가능하며 그 안에 모순이 내포되어 있다는 주장이다. 악이 존재하므로 전능하고 전선한 신은 존재할 수 없다는 결론이 여기서 나온다. (에피쿠로스 정식의 2×2 손익표 전개는 <a class="wl" href="../../t/%EB%AC%B4%EC%8B%A0%EB%A1%A0/">무신론</a> §5가 전담한다.)</p>
+<p>둘째는 <strong>증거적 악의 문제</strong>다. 이것은 논리적 모순을 주장하지 않는다. 대신 이만큼의, 이토록 무의미해 보이는 악의 양이 신의 부재를 개연적으로 시사한다고 본다. 강의가 다루는 "부당한 악(gratuitous evil)" 논증이 바로 이 층위다 — 하나님이 존재한다면 쓸모없고 헛된 악은 없어야 하는데, 실제로는 아무 목적도 읽히지 않는 악이 넘친다는 것이다. 논리적 문제가 "악이 있다는 사실"을 겨눈다면, 증거적 문제는 "악의 양과 무의미함"을 겨눈다.</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>논리적 악의 문제</th>
+<th>증거적 악의 문제</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>형식</td>
+<td>연역 — 전제가 참이면 결론이 필연</td>
+<td>귀납·개연 — 악이 신 존재를 개연적으로 반증</td>
+</tr>
+<tr>
+<td>주장</td>
+<td>전능·전선·악은 논리적으로 양립 불가</td>
+<td>이만큼의, 무의미해 보이는 악은 신 없음을 시사</td>
+</tr>
+<tr>
+<td>초점</td>
+<td>악의 존재 그 자체</td>
+<td>악의 양과 무의미함(부당한 악)</td>
+</tr>
+<tr>
+<td>요구되는 응답</td>
+<td>변론(defense) — 논리적 양립 가능성 하나면 충분</td>
+<td>신정론·신뢰 — 개연성의 저울을 되돌려야</td>
+</tr>
+<tr>
+<td>볼트의 응답</td>
+<td>자유의지 변론, 네 번째 전제의 추가</td>
+<td>불가해함(inscrutable)≠부당함(gratuitous), 십자가·부활</td>
+</tr>
+</tbody>
+</table>
+<p>두 층위를 분리해야 하는 이유는 분명하다. 논리적 문제는 단 하나의 논리적 가능성만 제시해도 무너지지만(그래서 변론으로 충분하다), 증거적 문제는 가능성이 아니라 저울의 무게를 다투기 때문에 다른 응답을 요구한다.</p>
+<h2>2. 한 단어의 야심 — théodicée라는 기획과 그 위험</h2>
+<p>'변신론'이라는 말 자체는 <span class="wl-dead" title="위키 내부 링크">라이프니츠</span>가 1710년 『신정론(Théodicée)』에서 주조했다. 그는 이 세계가 신이 선택할 수 있었던 무한한 세계들 가운데 "가능한 최선의 세계(the best of all possible worlds)"라고 논증했다 — 악이 있는 것처럼 보여도, 전체를 놓고 보면 지금의 세계가 최대의 선을 담고 있다는 낙관의 형이상학이다. (이 볼트의 라이프니츠 자료는 그의 충족이유율과 우주론적 논증에 집중되어 있고, 최선의 세계 논변 자체는 사상사적 배경으로만 여기 놓인다.)</p>
+<p>그리고 곧바로 반격이 왔다. 1755년 만성절, 리스본을 삼킨 대지진이 예배당에 모인 수만 명을 매몰시켰을 때, 볼테르는 낙관주의 신정론을 정면으로 조롱했다. 그의 시와 소설 『캉디드』는 "모든 것이 최선을 위해 존재한다"는 명제가 폐허 위에서 얼마나 잔인하게 공허한지를 폭로했다. 이 충돌은 변신론이라는 기획의 야심과 위험을 동시에 드러낸다. 야심은 인간 이성으로 하나님의 섭리 전체를 회계 장부처럼 결산하려는 데 있고, 위험은 바로 그 결산이 고통받는 자의 폐허를 이론의 대차대조표로 환원해 버리는 데 있다. 리스본의 잔해 위에서 "이것도 최선"이라 말하는 순간, 변신론은 변호를 넘어 모독이 된다. 이 위험은 이 페이지가 §6·§7에서 반드시 되돌아와야 할 지점을 미리 예고한다.</p>
+<h2>3. 변신론과 변론 — 무엇을 목표로 삼는가</h2>
+<p>강의가 제시하는 해법의 핵심은 목표를 낮추는 데 있다. 논리적 악의 문제를 무너뜨리기 위해 하나님이 악을 허용하시는 <strong>이유를 다 밝힐 필요는 없다.</strong> 하나님과 악이 논리적으로 공존할 수 있는 <strong>가능성 하나만 제시하면</strong> 충분하다. 이것이 변론(defense)이다.</p>
+<p>그 방법은 연역 논증에 네 번째 전제를 더하는 것이다. "하나님이 허용하는 어떤 악이든, 그것을 허용할 충분한 도덕적 이유를 가지며, 어떤 경우에는 그 이유가 무엇인지 우리가 알지 못하더라도 그렇다." 이 전제가 참일 논리적 가능성이 있는 한, 전능·전선·악의 세 진술은 더 이상 모순이 아니다. 신과 악은 논리적으로 양립한다. 무신론의 연역 논증은 여기서 힘을 잃는다.</p>
+<p>그 토대에 <span class="wl-dead" title="위키 내부 링크">어거스틴</span>의 결핍 개념이 놓인다. 악은 하나님이 창조한 독립된 실체가 아니라 선의 결핍(privatio boni)이다 — 어둠이 빛의 없음이고 차가움이 뜨거움의 없음이듯. 그러므로 "하나님이 악을 창조하셨다"는 명제 자체가 성립하지 않으며, 악의 기원은 철저히 <a class="wl" href="../../t/%EC%9E%90%EC%9C%A0%EC%9D%98%EC%A7%80/">자유의지</a>에서 찾아야지 결코 하나님께 돌려서는 안 된다. 이것이 강의가 반복해 못박는 전제다. 이때 자유의지 논증이 흥미로운 이중성을 갖는다. 그것이 단지 "악이 가능한 자유가 논리적으로 생각될 수 있다"를 보이면 논리적 문제를 해소하는 <strong>변론</strong>이 되고, "하나님이 자유를 위해 악을 허용하신다"고 이유를 설명하면 <strong>변신론</strong>이 된다. 같은 재료가 목표에 따라 두 얼굴을 갖는다.</p>
+<h2>4. 주요 응답들 — 네 갈래의 신정론</h2>
+<p>역사가 내놓은 변신론의 큰 갈래는 넷이다. 각각 고유한 힘과 고유한 한계를 지닌다.</p>
+<p><strong>① 자유의지 변론.</strong> <span class="wl-dead" title="위키 내부 링크">어거스틴</span>에서 시작해 <span class="wl-dead" title="위키 내부 링크">CS루이스</span>·<span class="wl-dead" title="위키 내부 링크">알빈플랜팅가</span>·<span class="wl-dead" title="위키 내부 링크">리처드스윈번</span>으로 이어지는 흐름이다. 진정으로 자유로운 도덕적 행위자는 그 선택에서 실수할 수 있어야 하며, 강요된 선은 선이 아니다. 그러므로 악의 가능성은 자유의 대가이고, 그 책임은 인간에게 있다. 플란팅가의 자유의지 변론은 논리적 악의 문제를 사실상 해소한 것으로 널리 인정받는다. 다만 이 볼트 안에서 자유의지 논증은 곧장 논쟁으로 이어진다 — 자유주의(libertarian)와 양립가능론(compatibilism)의 대립이다. 그로타이스와 카슨은 오히려 양립가능론을 지지하며, 결정론과 자유의지를 양극으로 밀지 말고 중심으로 끌어와야 건전한 신학이 된다고 본다. 이 긴장의 상세한 전개는 <a class="wl" href="../../t/%EC%9E%90%EC%9C%A0%EC%9D%98%EC%A7%80/">자유의지</a>와 <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%A3%BC%EA%B6%8C/">하나님의주권</a>이 맡는다.</p>
+<p><strong>② 영혼 형성 신정론.</strong> 고난은 영혼을 빚는 조건이라는 관점이다. 초기 교부 <span class="wl-dead" title="위키 내부 링크">이레네우스</span>가 제안하고 오리겐·어거스틴을 거쳐 <span class="wl-dead" title="위키 내부 링크">존힉</span>이 현대적으로 계승했다. 오리겐의 말처럼 "검증되지 않은 선행은 선행이 아니며", 저항 없이 덕은 단련되지 않는다. CS루이스는 『고통의 문제』에서 이를 사랑의 여러 양태 — 예술가가 작품에게, 아버지가 아들에게 갖는 사랑 — 로 풀어내며, 하나님의 사랑이 "소멸하는 불"처럼 가차없이 피조물을 다듬는다고 묘사했다. 이 전통의 목회적·성화론적 전개는 <a class="wl" href="../../t/%EA%B3%A0%EB%82%9C/">고난</a> §7이 전담한다.</p>
+<p><strong>③ 더 큰 선을 위한 변론.</strong> 어떤 선은 특정한 악에 반응함으로써만 가능하다는 논리다. 윌리엄 웨인라이트의 정식에 따르면, 이 변론은 (가) 악이 어떤 선을 위해 논리적으로 필요하고, (나) 그 선이 악을 능가하며, (다) 악 없이 그 선에 도달할 대안이 없음을 보이려 한다. 악은 하나님의 섭리 안에서 도구적 선의 자리를 얻는다. 이 논변의 힘은 악에 방향을 부여하는 데 있으나, 위험은 악을 미화하는 데 있다 — 강의도 "악 자체를 도덕적이라 칭찬해서는 안 된다"(사 5:20)고 선을 긋는다. 섭리가 악을 미화하지 않는다는 이 문법은 <a class="wl" href="../../t/%EC%84%AD%EB%A6%AC/">섭리</a> §6이 이어받는다.</p>
+<p><strong>④ 십자가 신정론.</strong> 앞의 셋이 이론이라면, 넷째는 이론이 아니라 사건이다. 몰트만·본회퍼·비노스 라마찬드라의 계보는 하나님이 악을 <strong>설명하는 대신 친히 짊어지신다</strong>고 본다. 본회퍼의 옥중 문구 — "오직 고통당하는 하나님만이 우리를 도우실 수 있다" — 가 이 신정론의 중심축이다. 십자가는 역사상 최대의 악(신적 존재의 죽음)이 최고의 선(인류의 구원)으로 전환된 유일무이한 사건이며, 하나님이 부재하시는 것처럼 보이는 바로 그 자리에 임재하신다. 다만 이 신정론이 신론을 어떻게 고쳐 쓰는지(고난받는 하나님, 취약한 능력)의 깊은 전개는 <a class="wl" href="../../t/%EC%8B%AD%EC%9E%90%EA%B0%80%EC%8B%A0%ED%95%99/">십자가신학</a> §5와 <a class="wl" href="../../t/%EA%B3%A0%EB%82%9C/">고난</a> §6이 전담한다. 여기서는 그것을 하나의 변신론 유형으로 자리매김하는 데 그친다.</p>
+<table>
+<thead>
+<tr>
+<th>응답</th>
+<th>대표자</th>
+<th>핵심 논리</th>
+<th>힘</th>
+<th>한계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>자유의지 변론</td>
+<td>어거스틴·CS루이스·플란팅가·스윈번</td>
+<td>진정한 자유엔 악의 가능성이 따른다; 악의 기원은 인간</td>
+<td>논리적 악의 문제를 해소(플란팅가)</td>
+<td>자연적 악을 설명 못함; 자유의 형이상학 논쟁 미해결</td>
+</tr>
+<tr>
+<td>영혼 형성 신정론</td>
+<td>이레네우스·오리겐·존힉</td>
+<td>고난은 영혼을 성숙시키는 조건</td>
+<td>고난에 의미의 방향을 부여; 성화 언어와 접속</td>
+<td>과도·무의미한 악(유아의 죽음)을 정당화 못함; 타인에게 적용 시 욥의 친구가 됨</td>
+</tr>
+<tr>
+<td>더 큰 선을 위한 변론</td>
+<td>웨인라이트·어거스틴</td>
+<td>악은 그것을 능가하는 더 큰 선에 논리적으로 필요</td>
+<td>악의 도구적 자리를 설명; 섭리론과 접속</td>
+<td>악을 미화할 위험; "그 큰 선이 무엇이냐"에 답 못함</td>
+</tr>
+<tr>
+<td>십자가 신정론</td>
+<td>몰트만·본회퍼·라마찬드라</td>
+<td>하나님은 악을 설명하지 않고 친히 짊어지신다</td>
+<td>이론이 아니라 임재 — 병상에서 남는 언어</td>
+<td>이론적 '설명'을 포기; 하나님을 희생자로 축소하면 위로자가 사라짐</td>
+</tr>
+</tbody>
+</table>
+<p>증거적 문제에 대한 응답은 이 표 바깥에서 한 번 더 정련된다. 부당한 악(gratuitous) 논증에 강의는 두 방향으로 맞선다. 하나는 논증을 역전시키는 것 — "하나님이 존재한다"는 명제가 "부당한 악이 존재한다"는 명제보다 더 많은 이성적 지지를 받으므로, 후건부정 대신 전건긍정이 더 합리적이라는 것이다. 다른 하나는 인간 이해의 유한성이다. 욥이 폭풍 가운데 질문받았듯(욥 38-42장), 실로암 망대의 죽음을 예수께서 인과응보로 읽지 않으셨듯(눅 13:2-5), 어떤 악의 이유는 우리에게 <strong>불가해할(inscrutable)</strong> 수 있다. 그러나 불가해한 것이 곧 <strong>부당한(gratuitous)</strong> 것은 아니다. "불가해한 악은 있어도 부당한 악은 없다" — 이 정식이 증거적 문제에 대한 볼트의 압축된 대답이다.</p>
+<h2>5. 레녹스의 응답 — 팬데믹 앞에서의 정직한 변론</h2>
+<p><span class="wl-dead" title="위키 내부 링크">존레녹스</span>의 『코로나 바이러스 세상, 하나님은 어디에 계실까』는 변신론이 강의실을 나와 실제 재난과 만나는 현장을 보여준다. 옥스퍼드의 수학자이자 변증가인 레녹스는 팬데믹 초기에 이 짧은 변증서를 썼다.</p>
+<p>그의 첫 수는 역사적 겸손이다. 안토니우스 역병부터 흑사병과 스페인 독감까지, 인류는 늘 역병과 함께 살았다 — 우리가 예측 가능하고 안정된 세계에 익숙했을 뿐이다. 그다음 그는 고통을 자연적 악(역병·지진)과 도덕적 악(폭력·학대)으로 나누되 둘의 연결(탐욕→벌목→기후변화→재해)도 짚는다. 신학적 핵심은 두 개의 뜻을 구별하는 데 있다 — 악이 가능한 우주를 창조하신 <strong>허용적 뜻</strong>과 하나님이 실제로 행하시는 <strong>법령적 뜻</strong>. 악은 가능하지만 하나님이 만들거나 의도하지 않으셨고, 심지어 그 악을 통해서도 선을 이루신다.</p>
+<p>레녹스가 무신론을 향해 던지는 한 문장이 이 변론의 칼끝이다.</p>
+<blockquote>
+<p>하나님을 방정식에서 제거한다고 고통이 제거되지 않는다. 고통은 그대로 남는다 — 그러나 희망이 사라진다.</p>
+</blockquote>
+<p>도킨스식 무신론은 고통을 해결하지 못한 채 희망마저 지운다. 반대로 기독교의 대답은 문제를 다 설명하는 데 있지 않고, 삶과 미래를 걸고 신뢰할 수 있는 하나님이 계시다는 증거 — 성육신·십자가·부활 — 를 제시하는 데 있다. 레녹스의 두 왕관(Corona) 이미지가 이 전환을 포착한다. 바이러스의 왕관은 인간이 통제할 수 없는 죽음의 상징이고, 예수의 가시 면류관은 창조주와 피조물 사이의 단절을 친히 짊어지신 사랑의 상징이다. 여기서 변론은 이론에서 임재로 넘어간다 — 답을 다 주지 않으면서도 신뢰할 근거를 주는, 정직한 변론이다.</p>
+<h2>6. 성경은 변신론을 하는가 — 설명 대신 임재</h2>
+<p>변신론이 정교해질수록 한 가지 불편한 질문이 남는다. 성경 자신은 이런 이론적 변호를 하는가.</p>
+<p>대답은 놀랍게도 '아니다'에 가깝다. 성경의 대표적인 고난 텍스트인 욥기는 변신론을 <strong>하지 않는다.</strong> 하나님은 욥의 질문에 논리적 설명으로 답하지 않으시고, 폭풍 가운데 현현하여 우주와 피조물을 보여주신다(욥 38-41장). 욥에게 주어진 것은 이유가 아니라 만남이다. 더 결정적으로, 하나님은 욥의 고통을 인과응보로 '설명'하려 했던 친구들을 향해 "너희가 나를 가리켜 말한 것이 옳지 못하다"고 판결하신다(욥 42:7). 변신론을 시도한 자들이 정죄받고, 설명을 거부한 채 하나님께 따진 자가 옳다 인정받는다. (욥기의 이 역설 — '경건'이 아니라 '온전함' — 은 <a class="wl" href="../../t/%EA%B3%A0%EB%82%9C/">고난</a> §3이 깊이 다룬다.)</p>
+<p>시편의 3분의 1 이상이 탄식이고, 사도 바울조차 피조물이 함께 신음한다고 말할 뿐(롬 8:22) 신음의 이유를 회계하지 않는다. 성경의 응답은 이론이 아니라 <strong>관계</strong>다. 이것이 변신론이라는 기획에 던지는 성경적 교정이다 — 변신론이 필요한 자리가 있으되, 성경은 궁극적으로 설명이 아니라 임재를 준다. 탄식의 회복과 그 실존적 신학의 전모는 <a class="wl" href="../../t/%EA%B3%A0%EB%82%9C/">고난</a>과 <a class="wl" href="../../t/%EA%B3%A0%EB%82%9C%EA%B3%BC%ED%9A%8C%EB%B3%B5/">고난과회복</a>에 위임한다.</p>
+<h2>7. ⚖️ 변신론의 윤리 — 강의실의 자리와 병상의 자리</h2>
+<p>여기서 이 페이지의 가장 중요한 매듭에 이른다. 변신론은 참일 수 있지만, <strong>말해지는 자리를 틀리면 거짓이 된다.</strong></p>
+<p>욥의 친구들이 그 반면교사다. 그들이 늘어놓은 인과응보 신학은 신학 교과서로 보면 부분적으로 옳은 명제들이었다. 문제는 내용이 아니라 자리였다. 잿더미에 앉은 자 앞에서 "네 고통엔 이유가 있다"고 이론을 들이대는 순간, 옳은 명제도 신성모독이 된다. 라마찬드라가 이것을 날카롭게 벼른다 — 추상적으로 신학화하는 경박한 방식이야말로 진정한 신성모독이며, 하나님을 정당화하려다 오히려 무고한 사람들을 정죄한다는 것이다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>강의실의 자리</th>
+<th>병상의 자리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>물음</td>
+<td>왜 악이 존재하는가</td>
+<td>지금 이 고통을 어떻게 견디는가</td>
+</tr>
+<tr>
+<td>언어</td>
+<td>변신론 — 논증·구별·정식</td>
+<td>침묵·탄식·함께 있음</td>
+</tr>
+<tr>
+<td>목표</td>
+<td>신앙의 합리성 변호</td>
+<td>고통받는 자와의 연대</td>
+</tr>
+<tr>
+<td>오용</td>
+<td>무기력한 회의(변호 없는 신앙)</td>
+<td>욥의 친구(고통 앞의 설교)</td>
+</tr>
+<tr>
+<td>담당</td>
+<td>이 페이지 · <a class="wl" href="../../t/%EB%B3%80%EC%A6%9D%ED%95%99/">변증학</a></td>
+<td><a class="wl" href="../../t/%EA%B3%A0%EB%82%9C/">고난</a> · 목회 현장</td>
+</tr>
+</tbody>
+</table>
+<p>이 구별은 의료 현장에서 특히 절박하다. 진료실과 임종의 자리에서, 변신론은 대개 침묵해야 한다. 통제의 상실을 패배가 아니라 인간 존엄의 일부로 받아들이는 언어 — 완화의료와 임종 돌봄이 요구하는 그 언어는 논증이 아니라 함께 있음에서 온다(<a class="wl" href="../../t/%EA%B3%A0%EB%82%9C/">고난</a> §6이 이 노화와 죽음의 신학을 상술한다). 변신론자의 성숙은 자기 이론의 힘을 아는 데 있지 않고, 그 이론이 침묵해야 할 자리를 아는 데 있다. 강의실에서 벼린 논증이 병상에서 흉기가 되지 않도록 하는 것 — 이것이 변신론의 윤리다.</p>
+<h2>8. 반(反)신정론 — "변호 자체가 불경하다"</h2>
+<p>마지막으로, 변신론이라는 기획 전체를 거부하는 입장을 공정히 세워야 한다. 반신정론(anti-theodicy)은 20세기, 특히 홀로코스트 이후 강력하게 대두했다. 그 핵심 주장은 이렇다 — 악을 이론적으로 <strong>정당화하려는 시도 자체가</strong> 악을 길들이고, 희생자의 고통을 이론의 재료로 삼으며, 결국 악과 은밀히 화해해 버린다. 아우슈비츠를 "더 큰 선을 위한 필요악"으로 설명하는 순간, 그 설명은 변호가 아니라 공범이 된다는 것이다.</p>
+<p>이 볼트 안에서도 반신정론의 음색은 뚜렷하다. 라마찬드라가 "하나님을 정당화하려다 무고한 사람들을 정죄한다"고 말할 때, 그는 §7의 윤리적 경계를 넘어 변신론이라는 기획 자체의 위험을 겨눈다. 톰 라이트가 팬데믹을 성급히 신학화하는 것을 경계하며 "탄식이 먼저"라고 말할 때도 같은 저항이 흐른다. 성경이 변신론 대신 임재를 준다는 §6의 통찰은, 반신정론에 상당한 성경적 근거를 실어준다.</p>
+<p>그러나 반신정론이 전부일 수는 없다. 변호를 전면 포기하면 신앙의 합리성을 묻는 정직한 질문자 — 고통 때문에 믿음을 잃어가는 회의자 — 앞에서 <a class="wl" href="../../t/%EB%B3%80%EC%A6%9D%ED%95%99/">변증학</a>은 할 말을 잃는다. 무신론이 악을 무기로 신앙을 비합리로 몰 때, 침묵만으로는 응답이 되지 못한다(<a class="wl" href="../../t/%EB%AC%B4%EC%8B%A0%EB%A1%A0/">무신론</a> §5). 그러므로 반신정론의 통찰은 변신론을 폐기하는 것이 아니라 그 자리를 정확히 아는 데 있다. 변신론은 강의실에서 필요하고 병상에서 침묵해야 한다. 그 자리를 아는 것이야말로 변신론의 완성이며, §7의 윤리가 §8의 급진적 거부를 끌어안는 방식이다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>악의 문제는 <strong>하나가 아니라 둘</strong>이다. 논리적 문제(악의 존재)는 변론 하나로 무너지지만, 증거적 문제(악의 양과 무의미함)는 논리적 가능성이 아니라 개연성의 저울을 다투므로 다른 응답을 요구한다.</li>
+<li><strong>변신론(왜 허용?)과 변론(공존 가능?)의 구별</strong>이 전략의 핵심이다. 논리적 문제를 해소하는 데는 하나님의 이유를 다 밝힐 필요 없이, "충분한 도덕적 이유가 있을 논리적 가능성" 하나면 충분하다.</li>
+<li>자유의지 변론(플란팅가)은 논리적 문제를 해소하지만 <strong>자연적 악을 설명하지 못하고</strong>, 십자가 신정론은 병상의 언어를 주지만 <strong>이론적 설명을 포기한다</strong> — 어떤 단일 응답도 모든 층위를 감당하지 못한다.</li>
+<li>"<strong>불가해한(inscrutable) 악은 있어도 부당한(gratuitous) 악은 없다</strong>"가 증거적 문제에 대한 볼트의 압축된 대답이다.</li>
+<li>성경 자신은 변신론을 거의 하지 않는다. 욥기에서 하나님은 <strong>설명 대신 임재</strong>를 주시고, 변신론을 시도한 친구들을 정죄하신다(욥 42:7).</li>
+<li>변신론의 참·거짓은 내용만이 아니라 <strong>말해지는 자리</strong>로 결정된다. 옳은 명제도 병상에서는 욥의 친구가 된다 — 변신론의 윤리는 그 침묵해야 할 자리를 아는 데 있다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>허용과 방치의 경계는 어디인가. 하나님이 악을 '허용'하셨다는 말과 '방치'하셨다는 말을 구별하는 신학적 기준은 무엇인가.</li>
+<li>자연적 악(지진·역병·포식)은 자유의지 변론으로 설명되지 않는다. 이것을 '타락의 결과'로 볼 것인가, 라마찬드라처럼 생명의 창조 방식으로 볼 것인가 — 볼트 자료는 하나로 수렴하지 않는다.</li>
+<li>라마찬드라의 '취약한 능력'(주권의 재정의)과 카슨의 '양립가능론'(전통적 주권의 유지)은 같은 물음에 대한 다른 응답이다. 이 긴장은 해소 가능한가, 아니면 견뎌야 하는가.</li>
+<li>반신정론이 옳다면, 변증학 강의실에서 악의 문제를 가르치는 일 자체는 정당한가. 강의실의 변신론과 병상의 침묵 사이의 이행은 어떻게 훈련되는가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EA%B3%A0%EB%82%9C/">고난</a> — <strong>분업의 짝</strong>. 이 페이지가 악에 대한 이론적 응답(변신론의 지형)을 다룬다면, 고난은 그 실존적·목회적 무게 — 탄식의 회복, 욥의 반항적 신앙, 십자가의 임재, 영혼을 빚는 도구, 자연적 악의 목회 — 를 전담한다. 강의실의 언어와 병상의 언어.</li>
+<li><a class="wl" href="../../t/%EB%B3%80%EC%A6%9D%ED%95%99/">변증학</a> §7 — 악의 문제를 변증의 한 전선으로 짧게 스케치하고, 그 상세한 전개(다섯 부족한 대답·영혼 만들기·십자가 응답)를 이 페이지에 위임한다.</li>
+<li><a class="wl" href="../../t/%EB%AC%B4%EC%8B%A0%EB%A1%A0/">무신론</a> §5 — 악의 논증을 무신론이 드는 첫 번째 카드로 세우고(에피쿠로스 2×2 손익표), 그 신학적 응답을 이 페이지와 고난에 넘긴다.</li>
+<li><a class="wl" href="../../t/%EC%84%AD%EB%A6%AC/">섭리</a> · <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%A3%BC%EA%B6%8C/">하나님의주권</a> — 악을 선으로 바꾸시는 섭리와 주권, 그리고 그 양립가능론적 문법. "악을 미화하지 않는" 섭리의 문법은 섭리 §6.</li>
+<li><a class="wl" href="../../t/%EC%8B%AD%EC%9E%90%EA%B0%80%EC%8B%A0%ED%95%99/">십자가신학</a> §5 — 십자가 신정론이 신론을 고쳐 쓰는 지점(고난받는 하나님·취약한 능력)의 깊은 전개.</li>
+<li><a class="wl" href="../../t/%EC%9E%90%EC%9C%A0%EC%9D%98%EC%A7%80/">자유의지</a> · <a class="wl" href="../../t/%EC%96%91%EB%A6%BD%EA%B0%80%EB%8A%A5%EB%A1%A0/">양립가능론</a> — 자유의지 변론의 형이상학적 토대와 자유주의·양립가능론 논쟁.</li>
+<li><a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EA%B3%BC%EC%9D%B4%EC%84%B1/">신앙과이성</a> — 변신론이 이성의 한계와 신뢰의 도약 사이에서 작동하는 인식론적 자리.</li>
+<li><a class="wl" href="../../b/%EC%BD%94%EB%A1%9C%EB%82%98%EB%B0%94%EC%9D%B4%EB%9F%AC%EC%8A%A4%EC%84%B8%EC%83%81%ED%95%98%EB%82%98%EB%8B%98%EC%9D%80%EC%96%B4%EB%94%94%EC%97%90_%EC%A1%B4%EB%A0%88%EB%85%B9%EC%8A%A4/">코로나바이러스세상하나님은어디에_존레녹스</a> · <a class="wl" href="../../b/%EC%98%A4%EC%A7%81%EA%B3%A0%ED%86%B5%EB%8B%B9%ED%95%98%EB%8A%94%ED%95%98%EB%82%98%EB%8B%98%EB%A7%8C%EC%9D%B4_%EB%B9%84%EB%85%B8%EC%8A%A4%EB%9D%BC%EB%A7%88%EC%B0%AC%EB%93%9C%EB%9D%BC/">오직고통당하는하나님만이_비노스라마찬드라</a> · <a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EA%B3%BC%ED%8C%90%EB%8D%B0%EB%AF%B9/">하나님과판데믹</a> — 팬데믹 변론, 십자가 신정론, 탄식 우선의 세 목소리.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBTS 변증학 4주 「하나님의 섭리 문제」(양정모)</td>
+<td>강의</td>
+<td>에피쿠로스 정식화, 변신론/변론 구별, 연역적 악의 문제와 네 번째 전제, 자유의지 변론, 영혼 만들기, 더 큰 선, gratuitous/inscrutable, 십자가 응답 — 이 페이지의 척추</td>
+</tr>
+<tr>
+<td>더글러스 그로타이스 『기독교 변증학』(25장 악의 문제)</td>
+<td>교재</td>
+<td>강의의 저본. 변론 전략과 십자가·부활의 최종 응답</td>
+</tr>
+<tr>
+<td>존 레녹스 『코로나 바이러스 세상, 하나님은 어디에 계실까』</td>
+<td>책</td>
+<td>팬데믹 변론, 허용적/법령적 뜻, 자연적·도덕적 악, 두 왕관(Corona), 무신론의 자기반박</td>
+</tr>
+<tr>
+<td>비노스 라마찬드라 『오직 고통당하는 하나님만이』</td>
+<td>책</td>
+<td>십자가 신정론, 추상적 신학화 비판(반신정론), 취약한 능력, 욥의 온전함</td>
+</tr>
+<tr>
+<td>톰 라이트 『하나님과 팬데믹』</td>
+<td>책</td>
+<td>탄식 우선, 성급한 신학화 경계 — 반신정론적 음색</td>
+</tr>
+<tr>
+<td>MBTS 변증학 4주 독서록 『신이 내 마음에 노크할 때』</td>
+<td>독서록</td>
+<td>자유의지·고통·사랑의 목적에 대한 본인의 성찰</td>
+</tr>
+<tr>
+<td>MBTS 변증학 기말종합보고서</td>
+<td>페이퍼</td>
+<td>선택 교리와 하나님의 공평성 — 변신론적 반론의 한 사례</td>
+</tr>
+<tr>
+<td>라이프니츠 『신정론』(1710) · 볼테르 리스본 비판</td>
+<td>사상사(배경)</td>
+<td>'변신론'이라는 용어의 기원과 최선의 세계 논변, 그에 대한 실존적 반격</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#변증학</span><span>#신정론</span><span>#악의문제</span><span>#자유의지변론</span><span>#영혼형성신정론</span><span>#반신정론</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

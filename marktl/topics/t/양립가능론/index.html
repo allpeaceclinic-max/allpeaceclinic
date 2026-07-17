@@ -1,0 +1,203 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>양립가능론 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:206">변증·철학</span><span class="date">2026-07-18</span></div>
+  <h1 class="note-title">양립가능론</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>양립가능론(compatibilism)은 신적 결정론(하나님의 절대 주권과 작정)과 인간의 자유의지·도덕적 책임이 동시에 참일 수 있다고 보는 입장이다. 얼핏 모순처럼 들리는 이 주장의 열쇠는 자유의 재정의에 있다 — 자유의 반대말은 '결정됨'이 아니라 '강요됨'이다. 강요 없이 자기가 가장 원하는 바를 따라 행하는 자발성이 곧 자유라면, 그 선택이 무언가에 의해(궁극적으로는 하나님의 섭리에 의해) 결정되더라도 여전히 자유일 수 있다. MBTS 변증학 4주차 강의(더글러스 그로타이스 강독)는 <a class="wl" href="../../t/%EB%B3%80%EC%8B%A0%EB%A1%A0/">악의 문제</a>를 다루는 과정에서 이 개념을 자유의지 논쟁의 해법으로 끌어온다.</p>
+<p>이 페이지는 양립 논증 자체의 각론이다. 자유의 두 정의, 성경의 이중 증언, 어거스틴의 네 상태, 은혜와 의지의 관계 같은 자유의지 총론은 <a class="wl" href="../../t/%EC%9E%90%EC%9C%A0%EC%9D%98%EC%A7%80/">자유의지</a>가 이미 다뤘고, 주권과 책임의 실존적 긴장은 <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%A3%BC%EA%B6%8C/">하나님의주권</a>이, 악의 기원을 자유에서 찾는 변론은 <a class="wl" href="../../t/%EB%B3%80%EC%8B%A0%EB%A1%A0/">변신론</a>이 전담한다. 여기서 좇는 것은 하나다 — 결정과 자발성이 어떻게 한 선택 안에서 양립하며, 그 논증이 성경과 목회에서 어떻게 착지하는가.</p>
+<h2>1. 자유의 재정의 — 강요 없는 자발성</h2>
+<p>양립가능론의 출발점은 두 자유 개념의 구별이다. <strong>무차별의 자유</strong>(liberty of indifference)는 동일한 조건에서 A를 할 수도 하지 않을 수도 있는 "반대 선택의 능력"이다. <strong>자발성의 자유</strong>(freedom of spontaneity)는 외부의 강제 없이 자기가 가장 원하는 바를 따라 행하는 능력이다. 자유주의(libertarian)는 앞엣것을 자유의 본질로 보고, 양립가능론은 뒤엣것을 본질로 본다.</p>
+<p>이 선택이 논쟁의 절반을 결정한다. 무차별의 자유를 자유의 본질로 삼으면, 하나님이 어떤 식으로든 인간의 선택을 규정하시는 순간 자유는 사라진다 — 결정론과 자유는 결코 양립할 수 없다(양립불가능주의). 그러나 자발성의 자유를 본질로 삼으면, 선택이 무언가에 의해 결정되더라도 그것이 자기 욕구에서 나온 자발적 행위인 한 자유일 수 있다. 강의가 정리하듯, 양립가능론은 "유한한 행위자가 절대적 발생 능력을 갖지 않아도, 외부 요인에 의해 행동이 결정되는 것과 진정한 행위주체성이 양립할 수 있다"고 본다. 자유의 반대는 필연이 아니라 폭력이라는 것이다. (두 자유 정의의 전체 지형은 <a class="wl" href="../../t/%EC%9E%90%EC%9C%A0%EC%9D%98%EC%A7%80/">자유의지</a>에 위임한다.)</p>
+<h2>2. 에드워즈의 정식화 — 최강 동기에 따른 선택</h2>
+<p>자발성의 자유를 가장 정밀하게 벼려 놓은 것은 조나단 에드워즈다. 그의 정식은 이렇다 — "의지는 항상 가장 큰 동기에 의해서 결정된다. 의지와 욕구는 본질적으로 동일하다." 사람은 결코 자기 욕구에 상반되는 것을 원하지 못한다. 매 순간 인간은 그 순간 자기에게 가장 강하게 다가오는 동기(최강 동기)를 따라 선택하며, 바로 그 선택이 자발적이기에 자유롭고, 그 자발적 선택이기에 책임이 성립한다.</p>
+<p>여기서 결정과 자유의 화해가 일어난다. 에드워즈의 도식에서 의지는 자기 원인적 진공이 아니라 성품·동기·욕구의 산물이다. 그러나 그것이 강요가 아니라 자기 욕구의 표현인 한, "결정되었으나 자유롭다"는 진술은 모순이 아니다. <span class="wl-dead" title="위키 내부 링크">조나단에드워즈</span>의 이 통찰은 문대원 목사의 설교에서도 반향한다 — 벧전 2장을 강해하며 그는 알코올 중독자가 "술 취하지 않을 자유가 없다. 엄밀히 말해 술의 노예"라 짚는다. 자유는 아무 방향으로나 열린 백지가 아니라 회복된 갈망을 따라 선을 택하는 자발성이며, 그 갈망 자체가 이미 무언가에 의해 형성되어 있다. 결정과 자유는 서로를 배제하지 않는다.</p>
+<h2>3. 성경적 사례 — 이중 행위주체성</h2>
+<p>양립가능론이 사변이 아닌 이유는 성경이 하나님의 작정과 인간의 책임을 한자리에서 동시에 긍정하기 때문이다. D.A. 카슨(<span class="wl-dead" title="위키 내부 링크">카슨</span>)은 이를 두 명제로 정식화한다. 첫째, 하나님의 절대 주권은 인간의 책임을 결코 축소하지 않는다(시 115:3, 잠 16:9, 엡 1:11). 둘째, 인간은 도덕적으로 책임 있는 피조물이며 그 책임이 하나님을 우연적 존재로 만들지 않는다(수 24:15, 롬 10:9). 성경은 이 둘을 함께 참으로 가르친다. 그리고 그 이중성은 몇 개의 결정적 본문에서 하나의 사건으로 겹쳐진다.</p>
+<table>
+<thead>
+<tr>
+<th>사건</th>
+<th>인간의 행위와 의도</th>
+<th>하나님의 작정</th>
+<th>본문</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>요셉이 애굽으로 팔림</td>
+<td>형들이 악한 의도로 노예로 팖</td>
+<td>생명을 구원하려 먼저 보내심</td>
+<td>창 50:20</td>
+</tr>
+<tr>
+<td>그리스도의 십자가</td>
+<td>법 없는 자들의 손으로 못 박아 죽임</td>
+<td>정하신 뜻과 미리 아신 대로 내주심</td>
+<td>행 2:23</td>
+</tr>
+<tr>
+<td>앗수르의 침공</td>
+<td>교만한 정복욕으로 열방을 짓밟음</td>
+<td>진노의 막대기로 유다를 징계하심</td>
+<td>사 10:5-15</td>
+</tr>
+</tbody>
+</table>
+<p>문대원 목사의 요셉 강해가 이 이중 행위주체성을 명료하게 짚는다. 창 50:20 — "당신들은 나를 해하려 하였으나 하나님은 그것을 선으로 바꾸사" — 을 그는 이렇게 푼다: "악한 의도를 가지고 팔았지만, 그 모든 상황을 사용하셔서 그분의 선한 뜻을 이루셨다. 우연이 아니라 하나님의 뜻이다." 요셉은 형들의 죄를 얼버무리지 않고 "당신들은 나를 해하려 하였으나"라고 그대로 말하면서도, 같은 사건을 하나님이 "생명을 구원하시려고 나를 당신들보다 먼저 보내셨"(창 45:5)다고 고백한다. 한 사건, 두 행위자, 두 의도 — 형들은 온전히 책임지고 하나님은 온전히 주관하신다. 잠 19:21의 "사람의 마음에는 많은 계획이 있어도 오직 여호와의 뜻만이 완전히 서리라"가 그 문법이다.</p>
+<p>십자가는 그 결정판이다. 베드로의 오순절 설교는 예수께서 "하나님께서 정하신 뜻과 미리 아신 대로 내준 바 되었거늘 너희가 법 없는 자들의 손을 빌려 못 박아 죽였으나"(행 2:23)라고 선언한다 — 한 문장 안에 하나님의 작정("정하신 뜻")과 인간의 책임("못 박아 죽였으나")이 접속사 하나로 묶인다. 카슨의 말대로 "양립론을 시종일관 부인하는 기독교인도 십자가를 생각하는 순간 양립론자가 될 수밖에 없다." 앗수르 신탁(사 10)은 이 원리의 예언서 원형이다 — 앗수르는 하나님의 손에 들린 "진노의 막대기"이면서, 정작 "마음에는 이렇게 생각지 아니하고" 제 교만으로 행했기에 심판받는다. 도구로 쓰임이 책임을 면제하지 않는다. 웨스트민스터 신앙고백 3장이 이 균형을 명문화한다 — 하나님이 모든 일을 예정하시되 "죄의 원작자도 아니며 제2원인들의 자유가 제거되지 않고 오히려 확립된다."</p>
+<h2>4. 리버테리언 반론과 응답 ⚖️</h2>
+<p>양립가능론은 도전 없이 서 있는 입장이 아니다. 자유주의(libertarian) 진영 — <span class="wl-dead" title="위키 내부 링크">CS루이스</span>·<span class="wl-dead" title="위키 내부 링크">알빈플랜팅가</span>·리처드 스윈번 — 은 진지한 반론을 제기한다. 그 핵심은 "그것이 진짜 자유인가"이다. 만약 나의 모든 선택이 최강 동기와 선행 조건에 의해 결정된다면, 나는 "달리 할 수 없었던" 것이고, 달리 할 수 없었던 자를 책망하는 것은 부당하지 않은가. 반대 선택의 능력(무차별의 자유)이 없으면 진정한 도덕적 행위자도, 책임도 성립하지 않는다는 것이다. CS루이스는 『고통의 문제』에서 철저히 이 입장을 취해 양립가능론을 아예 고려하지 않는다. 이 반론은 가볍지 않다 — 강요된 선이 선이 아니듯, 결정된 선택이 정말 나의 것인가라는 물음은 정당하다.</p>
+<p>자유주의의 대안 전략도 공정하게 보아야 한다. <span class="wl-dead" title="위키 내부 링크">윌리엄레인크레이그</span>와 플랜팅가는 <a class="wl" href="../../t/%EC%A4%91%EA%B0%84%EC%A7%80%EC%8B%9D/">중간지식</a>(middle knowledge)을 동원해 하나님의 예지와 인간의 리버테리언 자유를 조화시키려 한다 — 하나님이 "이 사람이 이 상황에서 자유롭게 무엇을 택할지"를 아신다는 것이다. 이 <a class="wl" href="../../t/%EB%AA%B0%EB%A6%AC%EB%8B%88%EC%A6%98/">몰리니즘</a>은 하나님의 주권을 지키면서도 무차별의 자유를 살리려는 정교한 시도다.</p>
+<p>양립가능론의 응답은 §1에서 세운 구별에 있다. 책임의 근거는 무차별의 자유(달리 선택할 수 있었음)가 아니라 자발성의 자유(자기가 원해서 했음)라는 것이다. 카슨의 명제가 이를 못박는다 — "인간의 의지에 반해서 하나님에 의해 강요되었다는 근거로 인간의 악이 결코 면제되지 않는다." 십자가가 그 증거다. 예수를 넘긴 자들은 "정하신 뜻" 안에서 행했으나 그 책임이 조금도 줄지 않았다. 중독자가 자기 욕구를 따라 술을 마셨다면 "달리 할 수 없었다"는 사실이 그를 면책하지 않는다 — 그것이 그가 원한 바였기 때문이다. 그로타이스가 최종적으로 개혁주의 노선(양립가능론)을 지지하는 이유가 여기 있고, 중간지식·몰리니즘이 개혁신학과 갈라서는 지점도 정확히 이 자유 개념의 차이다. (양립가능론이 자유주의를 미리 결론지어 놓고 논박한다는 비판, 곧 자유주의 논증이 그 자체 논리로 충분히 방어되는지는 열린 물음으로 남는다.)</p>
+<h2>5. 목회적 함의 — 기도와 전도가 무의미해지지 않는 이유</h2>
+<p>양립가능론이 강단으로 내려올 때 가장 흔한 오해는 숙명론이다 — 모든 것이 이미 정해졌다면 기도한들, 전도한들 무슨 소용인가. 그러나 이 오해는 결정론과 숙명론을 혼동한 데서 온다. 숙명론은 목적이 수단과 무관하게 도달한다고 보지만, 성경적 결정론은 하나님이 목적을 <em>수단을 통해</em> 이루신다고 본다. 그리고 기도와 전도가 바로 그 수단이다.</p>
+<p>강의의 실천적 결론이 두 극단을 경계한다 — "결정론만 강조하면 하나님이 악의 원인이 되는 문제[선악과 문제]를 해결할 수 없고, 자유의지만 강조하면 인간의 공로가 구원에 끼어드는 신인협력설의 위험이 생긴다." 양립가능론은 이 두 극단의 가운데다. 하나님이 요셉의 구원을 작정하셨기에 요셉의 지혜로운 행정이 무의미해지는 것이 아니라 오히려 의미를 얻고, 하나님이 택자를 정하셨기에 전도가 헛되어지는 것이 아니라 그 전도가 택함의 통로가 된다. 조직신학 토론의 표현으로 하나님은 "인간의 자유의지를 침범하지 않으시면서 작정대로 이끄시는" 분이다. 그러므로 신자의 자리는 두 손을 함께 붙드는 것이다 — 하나님의 주권을 신뢰하기에 담대히 기도하고, 인간의 책임을 알기에 부지런히 전도한다. 결정되었기에 무기력한 것이 아니라, 결정되었기에 나의 수고가 헛되지 않다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>양립가능론의 열쇠는 자유의 재정의다 — 자유의 반대는 필연이 아니라 강요이며, 강요 없는 자발성이 곧 자유다.</li>
+<li>에드워즈의 정식("의지는 최강 동기에 의해 결정된다, 의지=욕구")이 결정과 자유를 화해시킨다. 자기 욕구를 따른 선택은 결정되었어도 자유롭고, 자유롭기에 책임진다.</li>
+<li>성경은 하나님의 작정과 인간의 책임을 한 사건에서 동시에 긍정한다 — 요셉(창 50:20), 십자가(행 2:23), 앗수르(사 10)의 이중 행위주체성.</li>
+<li>리버테리언 반론("결정된 선택이 진짜 자유인가")은 진지하며, 중간지식·몰리니즘은 그 정교한 대안이다. 양립가능론의 응답은 책임의 근거를 무차별이 아니라 자발성에 두는 것이다.</li>
+<li>결정론은 숙명론이 아니다. 하나님은 목적을 수단을 통해 이루시며, 기도와 전도가 바로 그 수단이기에 무의미해지지 않는다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>자발성의 자유가 책임을 지우기에 충분한가 — 방향이 왜곡된 의지의 자발성은 온전한 책임의 근거로 무언가 부족하지 않은가.</li>
+<li>중간지식(몰리니즘)과 개혁주의 양립가능론은 하나님의 섭리와 인간 책임의 관계에서 실제로 어떻게 다른 결론에 이르는가.</li>
+<li>십자가는 유일무이한 구속 사건인데, 거기서 도출한 양립 원리를 일상의 모든 선택에 그대로 적용해도 되는가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%9E%90%EC%9C%A0%EC%9D%98%EC%A7%80/">자유의지</a> — 자유의 두 정의, 성경의 이중 증언, 어거스틴의 네 상태 등 자유의지 총론. 이 페이지가 딛고 선 본진.</li>
+<li><a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%A3%BC%EA%B6%8C/">하나님의주권</a> — 주권과 책임의 실존적 긴장, "누가 다스리는가"의 물음.</li>
+<li><a class="wl" href="../../t/%EB%B3%80%EC%8B%A0%EB%A1%A0/">변신론</a> — 악의 기원을 자유의지에서 찾는 변론의 전체 지형.</li>
+<li><a class="wl" href="../../t/%EC%B9%BC%EB%B9%88%EC%A3%BC%EC%9D%98/">칼빈주의</a> — 전적 타락·불가항력적 은혜와 양립가능론의 신학적 짝.</li>
+<li><a class="wl" href="../../t/%EC%A4%91%EA%B0%84%EC%A7%80%EC%8B%9D/">중간지식</a> · <a class="wl" href="../../t/%EB%AA%B0%EB%A6%AC%EB%8B%88%EC%A6%98/">몰리니즘</a> — 자유주의 진영의 예지-자유 조화 전략.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBTS 변증학 4주 「하나님의 섭리 문제」(그로타이스 강독)</td>
+<td>강의</td>
+<td>자유주의·양립가능론의 지형, 반대 선택의 능력, 카슨의 두 명제, 웨스트민스터 3장, 중간지식, 양극단의 난관</td>
+</tr>
+<tr>
+<td>문대원, 「과거로부터의 해방」(창 50:15-21)</td>
+<td>설교</td>
+<td>요셉의 이중 행위주체성 — "악한 의도로 팔았으나 하나님의 뜻", 창 45:5·잠 19:21</td>
+</tr>
+<tr>
+<td>문대원, 「불붙은 논리로 선포된 복음」(행 2:22-36)</td>
+<td>설교</td>
+<td>행 2:23 — "정하신 뜻과 미리 아신 대로 … 못 박아 죽였으나"</td>
+</tr>
+<tr>
+<td>문대원, 「자유 의지로 무엇을 하겠습니까」(벧전 2:11-17)</td>
+<td>설교</td>
+<td>에드워즈("의지=욕구"), 자발성의 자유, 술의 노예</td>
+</tr>
+<tr>
+<td>D.A. 카슨, 양립론의 두 명제</td>
+<td>참고 신학</td>
+<td>주권↔책임 동시 긍정, "십자가를 생각하는 순간 양립론자"</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#discipline/변증학</span><span>#discipline/조직신학</span><span>#결정론</span><span>#자발성의자유</span><span>#이중행위주체성</span><span>#칼빈주의</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

@@ -1,0 +1,200 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>자존감 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:25">상담·가정</span><span class="date">2026-07-17</span></div>
+  <h1 class="note-title">자존감</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>자존감(自尊感, self-esteem)은 자기 자신을 가치 있다고 느끼는 심리적 상태를 가리키는 현대 심리학 개념이다. 1960~80년대 미국 심리학자 나다니엘 브랜든(Nathaniel Branden)을 중심으로 자아 존중감 운동이 확산되면서, "먼저 나를 사랑해야 이웃을 사랑할 수 있다"는 명제가 대중 심리학과 교육의 표준 언어가 되었다. <span class="wl-dead" title="위키 내부 링크">황규명</span> 교수의 두 강의는 이 담론을 신학적으로 비판적으로 검토하며, 문제의 초점을 자존감에서 <strong>정체성(하나님의 자녀 됨)</strong>으로 옮긴다.</p>
+<p>이 볼트가 붙드는 핵심 구별은 근거의 문제다. 세속 자존감 담론이 자기 가치를 <strong>성취·비교</strong> 위에 세운다면, 기독교적 자존감은 그것을 <strong>하나님께 사랑받음</strong> 위에 세운다. 자기를 사랑하는 것 자체를 부정하는 것이 아니라, 자기 사랑을 근본으로 삼는 심리학적 인간관을 교정하는 것이다. <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%82%AC%EB%9E%91/">하나님의사랑</a>이 정리하듯 "성취가 정체성을 만드는 것이 아니라, 사랑이 정체성을 만들고 성취는 그 열매로 따라온다."</p>
+<h2>1. 세속 자존감 담론과 그 신학적 반론</h2>
+<p>황규명 강의(청소년 신앙 및 정체성 확립)는 세 학자를 호명하며 자존감 운동을 비판한다. 폴 비츠(Paul Vitz)는 심리학이 자기 숭배의 이단이 되었다고 지적하며 "자존감과 성취도는 관계가 없다"는 연구를 제시하고, 나다니엘 브랜든의 자아 존중감 운동은 이기주의의 심리학적 정당화로 평가되며, 진 트웬지(Jean Twenge)는 "먼저 자기를 사랑해야 이웃을 사랑할 수 있다"는 명제를 반박하며 자기애 세대(Generation Me)의 역설을 분석한다.</p>
+<p>같은 맥락의 반론이 성경 해석에서도 나온다. "이웃을 네 몸과 같이 사랑하라"는 계명은 이미 자신을 사랑하고 있음을 <strong>전제한</strong> 명령이다. 곧 성경은 자기 사랑을 계발해야 할 덕목으로 명령하지 않으며, 자기 사랑은 추가로 길러야 할 것이 아니라 인간의 기본 상태다. 문제는 자기 사랑 능력의 결핍이 아니라 자기 사랑이 절대화될 때의 왜곡이다. 이 왜곡의 위험은 디모데후서 3장 1-5절에서 확인된다 — "말세에 고통하는 때가 이르리니 사람들이 자기를 사랑하며"라는 경고에서 자기 사랑의 절대화는 말세적 증상으로 분류된다.</p>
+<h2>2. 자존감의 실제 메커니즘 — 비교</h2>
+<p>황규명 강의(청소년)는 임상적 관찰을 통해 자존감 문제의 실제 원인을 해부한다. 자존감이 상처받는 것은 낮은 역량이나 실패 자체 때문이 아니라 <strong>비교</strong> 때문이다. 초등 동창이 벤츠를 타고 나타날 때 자존감이 흔들리지만, 김연아·손흥민처럼 압도적 격차가 있는 경우에는 오히려 자존감이 상하지 않는다. 비슷한 수준의 상대와 견줄 때 자존감이 가장 취약해진다.</p>
+<p>이 관찰은 해법의 방향을 바꾼다. 문제가 비교라면, 해법은 "자신을 더 사랑하는 법"을 배우는 것이 아니다. 비교의 준거점이 자신이나 타인에게 있는 한, 자존감은 외부 조건에 종속된 불안정한 상태에 머문다. 자기를 더 높이 평가하려는 모든 노력은 다시 비교의 무대로 돌아갈 뿐이다. 준거점 자체가 옮겨져야 한다.</p>
+<h2>3. 성취 기반이 아니라 사랑받음 기반</h2>
+<p>세속 자존감과 기독교적 자존감을 가르는 결정적 축이 여기 있다. 세속 담론은 자기 가치를 성과로 증명하려 하지만, 성경의 자존감은 성취 이전의 사랑에 뿌리를 둔다. <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%82%AC%EB%9E%91/">하나님의사랑</a>이 짚듯 세상은 외모와 성과와 능력으로 사람을 평가하지만 하나님은 "있는 모습 그대로" 사랑하시며, "우리가 아직 죄인 되었을 때에"(롬 5:8) 그 사랑이 이미 부어졌다. 성취가 사랑을 끌어낸 것이 아니라 사랑이 먼저 있었다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>세속 자존감</th>
+<th>기독교적 자존감</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>가치의 근거</td>
+<td>성취 · 비교 · 타인의 시선</td>
+<td>하나님께 사랑받음</td>
+</tr>
+<tr>
+<td>발동 조건</td>
+<td>자격을 갖출 때</td>
+<td>죄인 되었을 때에도(롬 5:8)</td>
+</tr>
+<tr>
+<td>안정성</td>
+<td>외부 조건에 종속, 불안정</td>
+<td>조건에 흔들리지 않음</td>
+</tr>
+<tr>
+<td>방향</td>
+<td>자기를 증명해 올라감</td>
+<td>사랑을 받아 흘려보냄</td>
+</tr>
+</tbody>
+</table>
+<p>황규명 강의(청소년)가 든 구약의 세 반례가 이 구별을 예증한다. 아낙 자손 앞에서 자신을 "메뚜기 같이" 본 열 정탐꾼은 자존감이 극도로 낮았지만, 여호수아와 갈렙이 "우리가 이긴다"고 한 것은 자존감이 높아서가 아니라 <strong>하나님께 관심을 두었기</strong> 때문이다. 자존감이 높았다면 "나는 사자를 맨손으로 잡은 사람이다"라고 했을 것이다. 다윗도 "나는 만군의 여호와의 이름으로 가노라"(삼상 17:45)라며 자기 능력이 아니라 하나님의 이름에 근거했고, 엘리 사건의 원리도 "나를 존중하는 자를 존중하겠다"(삼상 2:30) — 자기 존중이 아니라 하나님을 존중하는 것이 존귀함의 근거였다. 세 사례의 공통점은 자존감이 높은 영웅이 아니라 시선을 자기에게서 하나님께로 옮긴 사람들이라는 것이다.</p>
+<h2>4. 정체성으로의 재정의</h2>
+<p>황규명의 결론적 명제는 명확하다. "자존감의 문제는 정체성의 문제이다. 하나님의 자녀라는 것을 믿으면 자존감의 문제와는 끝이다." 자존감은 자기 평가(self-evaluation)에 관한 것이고, 정체성은 자기 존재 근거(foundation of being)에 관한 것이다. 자기 평가는 성취·비교·타인의 시선에 종속되지만, 정체성은 하나님의 선택과 부르심에 근거하므로 외부 조건에 흔들리지 않는다.</p>
+<p>이 재정의가 실천에서 갖는 함의는 크다. 청소년 신앙 형성에서 자존감 향상 프로그램보다 하나님의 자녀 됨이라는 정체성을 심는 것이 더 근본적인 처방이 된다. 자기 평가를 끌어올리는 일은 밑 빠진 독에 물을 붓는 것과 같지만, 존재 근거가 바뀌면 자기 평가의 요동 자체가 힘을 잃는다. 이 정체성의 신학적 뿌리는 <a class="wl" href="../../t/%EC%A0%95%EC%B2%B4%EC%84%B1/">정체성</a>과 <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%82%AC%EB%9E%91/">하나님의사랑</a>이 상술하는 "사랑받는 자로 사는 것"이다.</p>
+<h2>5. 겸손과 자존감 — 증명하지 않아도 되는 자유</h2>
+<p>기독교적 자존감은 겸손과 대립하지 않고 오히려 같은 뿌리에서 자란다. <a class="wl" href="../../t/%EA%B2%B8%EC%86%90/">겸손</a>이 심리학자 샌디 호치키스를 빌려 드러낸 역설이 이를 보여준다 — 자기 자랑을 많이 하는 사람은 실은 자존감이 낮은 사람이다. 부족함이 드러날까 두려워 오만과 우월감으로 자신을 방어하는 것이다. 곧 과시와 나르시시즘은 강한 자아의 표현이 아니라 약한 자아의 위장이며, 참 겸손은 오히려 튼튼한 자기 인식 위에서만 가능하다.</p>
+<p>이 튼튼함은 예수님 안에서의 완전한 용납에서 온다. 성취와 무관하게 있는 모습 그대로 받아들여졌다는 확신(롬 5:8)이 "나를 증명하지 않아도 되는 자유"를 낳는다. 자기를 증명할 필요가 없는 사람만이 자기를 잊을 수 있고, 그래서 참 겸손은 자기 비하(거짓 겸손)가 아니라 자기를 잊음이다. 여기서 자존감 담론의 또 다른 위조가 갈린다 — 위축되고 굽신거리는 낮은 자존감은 겸손이 아니라 여전히 시선이 자기에게 붙들린 상태다.</p>
+<p>그래서 자기를 진정으로 사랑하는 길은 역설적으로 이웃을 사랑하는 데 있다. 황규명 강의(새가정을 세우는 부모역할)는 이를 부부 관계에서 확인한다. 현대 심리학의 "먼저 자기를 사랑하라"와 달리, 성경의 역설은 "주는 것이 받는 것보다 복되다"는 것이다. 배우자를 사랑하고 섬기는 것이 자기를 진정으로 사랑하는 방식이며, 부부관계는 제로섬이 아니라 윈윈이다. 사랑받는 자로서 자기를 증명할 필요가 없는 자리에서라야, 이웃 사랑은 손해가 아니라 자기 사랑의 완성이 된다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>세속 자존감과 기독교적 자존감을 가르는 축은 근거다 — 성취·비교 기반이 아니라 하나님께 <strong>사랑받음</strong> 기반이다. 성취가 정체성을 만드는 것이 아니라 사랑이 정체성을 만들고 성취는 열매로 따라온다.</li>
+<li>자존감 문제의 실제 원인은 비교이며, 해법은 자기 사랑 계발이 아니라 비교의 준거점 이동이다.</li>
+<li>성경의 영웅들(여호수아·갈렙·다윗)은 자존감이 높은 사람이 아니라 시선을 하나님께 둔 사람들이다.</li>
+<li>정체성(하나님의 자녀 됨)이 확립되면 자존감 문제는 구조적으로 해소된다 — 자기 평가의 요동보다 존재 근거의 전환이 근본 처방이다.</li>
+<li>과시와 나르시시즘은 강한 자아가 아니라 낮은 자존감의 위장이며, 참 겸손과 건강한 자존감은 "증명하지 않아도 되는 자유"라는 같은 뿌리에서 자란다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>정체성이 확립된 신자에게도 남는 정서적 자기 평가 문제(우울·수치심)는 어떻게 다루어야 하는가.</li>
+<li>자존감 담론을 신학적으로 교정할 때, 임상 상담 현장에서 생기는 실용적 공백은 무엇으로 채우는가.</li>
+<li>"하나님의 자녀 됨"의 확신이 아직 없는 신앙 입문자에게 정체성 기반 접근은 어떻게 적용되는가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%A0%95%EC%B2%B4%EC%84%B1/">정체성</a> — 자존감을 대체하는 성경적 범주, "사랑받는 자로 사는 것"의 뿌리.</li>
+<li><a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%82%AC%EB%9E%91/">하나님의사랑</a> — 성취 vs 사랑받음의 축, "있는 모습 그대로"의 무조건적 사랑(8절).</li>
+<li><a class="wl" href="../../t/%EA%B2%B8%EC%86%90/">겸손</a> — 과시=약한 자아의 위장, "증명하지 않아도 되는 자유", 거짓 겸손과 참 겸손.</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%83%81%EB%8B%B4/">기독교상담</a> — 자존감 담론의 상담학적 맥락.</li>
+<li><a class="wl" href="../../t/%EC%9A%B0%EC%83%81%EC%88%AD%EB%B0%B0/">우상숭배</a> — 자기 사랑의 절대화와 우상의 연결.</li>
+<li><a class="wl" href="../../t/%EC%B2%AD%EC%86%8C%EB%85%84%EC%82%AC%EC%97%AD/">청소년사역</a> — 청소년 정체성 형성의 과제.</li>
+<li><a class="wl" href="../../t/%EB%B6%80%EB%B6%80%EA%B4%80%EA%B3%84/">부부관계</a> — 이웃 사랑이 자기 사랑을 완성하는 역설.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">황규명_청소년신앙및정체성확립</span></td>
+<td>강의(황규명)</td>
+<td>비츠·브랜든·트웬지 비판, 비교 메커니즘(벤츠 동창 vs 김연아), 구약 세 반례, "자존감=정체성 문제"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2016_황규명교수_새가정을세우는부모역할</span></td>
+<td>강의(황규명)</td>
+<td>"이웃을 네 몸같이"=자기 사랑 전제, 주는 것이 복됨, 부부관계의 윈윈</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%82%AC%EB%9E%91/">하나님의사랑</a></td>
+<td>주제 페이지</td>
+<td>성취 vs 사랑받음, "있는 모습 그대로", 성취는 사랑의 열매</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EA%B2%B8%EC%86%90/">겸손</a></td>
+<td>주제 페이지</td>
+<td>자기 자랑=낮은 자존감의 위장(호치키스), "증명하지 않아도 되는 자유", 거짓/참 겸손</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/가정</span><span>#discipline/기독교상담</span><span>#discipline/실천신학</span><span>#자존감</span><span>#정체성</span><span>#자기사랑</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

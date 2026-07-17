@@ -1,0 +1,244 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>친밀감 (Intimacy) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:25">상담·치유·가정</span><span class="author">헨리 나우웬</span><span class="date">2026-05-04</span></div>
+  <h1 class="note-title">친밀감 (Intimacy)</h1>
+  
+</header>
+<article class="note">
+<p><strong>저자</strong>: 헨리 나우웬 (Henri J.M. Nouwen)<br />
+<strong>분류</strong>: 심리학 / 영성 / 종교적 성장</p>
+<hr />
+<h2>핵심 주제</h2>
+<blockquote>
+<p>종교적 성장은 발달 단계마다 다른 위기를 통과하며 이루어진다.<br />
+성숙한 신앙의 핵심은 <strong>억압이나 저항이 아닌 통합(integration)</strong>이다.</p>
+</blockquote>
+<hr />
+<h2>5단계 종교적 발달</h2>
+<h3>1. 유아기 (출생–5세)</h3>
+<p><strong>① 출생–생후 18개월</strong>: 객관적 실체 발견
+- 종교적 차원: 하나님을 자신의 일부로 생각</p>
+<p><strong>② 18개월–만 3세</strong>: 언어 습득
+- 종교적 차원: <a class="wl" href="../../t/%EA%B8%B0%EB%8F%84/">기도</a>, 감탄, 암송
+- 위험: 기도가 대화의 통로가 아닌 <strong>하나님을 지배하는 방편</strong>이 될 수 있음</p>
+<p><strong>③ 만 4–5세</strong>: 양심의 형성 (외부 → 내면화)
+- 아빠의 권위 → 내면의 가치 기준으로 전환
+- 아빠의 한계 인식 → 절대적 존재 필요 → <strong>'하나님'으로의 진정한 전환</strong>이 일어나야</p>
+<blockquote>
+<p>프로이트 비판 ("환각의 미래"): 종교란 유아기 생활의 연장, 하나님은 은신처에 대한 갈망의 투사<br />
+→ 여기서 멈추면 신앙은 <strong>라이너스의 담요</strong> — 위안의 도구에 불과</p>
+</blockquote>
+<hr />
+<h3>2. 유년기 (5–12세)</h3>
+<ul>
+<li>가정에서 배운 것이 강화·수정·확장·붕괴되는 시기</li>
+<li>학교와 종교가 분리되기 쉬운 시기 ↔ <strong>성숙한 종교는 본질상 통합적</strong></li>
+<li>종교적 내면 갈등 없이 이 시기에 고착되는 경우 많음 → 위안만 남음</li>
+</ul>
+<blockquote>
+<p>Allport의 성숙 정의: 성장하는 지능과 관련 경험이 서로 보조를 맞추려는 갈망으로 활성화될 때 일어남</p>
+</blockquote>
+<hr />
+<h3>3. 사춘기 (12–18세)</h3>
+<ul>
+<li>외부 세계뿐 아니라 <strong>자기 내면의 깊고 낯선 감정</strong>을 만나는 시기</li>
+<li>종교적 발달의 <strong>중대 고비</strong>: 내면의 갈등을 이해하고 수용할 수 있는가?</li>
+</ul>
+<p><strong>세 가지 반응</strong>:
+1. 외면 (억압)
+2. 부정 — 어두운 욕망을 통제하려 함
+3. <strong>통합</strong> ← 성숙한 방향</p>
+<blockquote>
+<p>"알곡을 거두려면 가라지도 함께 두어야 한다"<br />
+그리스도는 <strong>두 강도 사이에서</strong> <a class="wl" href="../../t/%EC%8B%AD%EC%9E%90%EA%B0%80/">십자가</a>를 지셨다<br />
+갈등의 해답은 저항도 억압도 아닌 <strong>통합</strong>이다</p>
+</blockquote>
+<hr />
+<h3>4. 청년기 (대학)</h3>
+<ul>
+<li>부모의 가정을 떠났지만 새 가정을 이루지 않은, <strong>가장 자유로운 시기</strong></li>
+<li>간접적인 것 → 직접적인 것으로의 전환 (실험·모험을 통해)</li>
+<li><strong>신뢰</strong> — 구도적 종교를 가능케 하는 토대</li>
+</ul>
+<hr />
+<h3>5. 성인기</h3>
+<ul>
+<li><strong>권태 = 단절된 경험</strong> — 말, 개념, 생각, 행동이 서로 연결되지 않는 상태</li>
+<li><strong>새로운 시각 = <a class="wl" href="../../t/%EB%AF%BF%EC%9D%8C/">믿음</a>으로 통합</strong> — 단절을 연결로 바꾸는 힘</li>
+</ul>
+<hr />
+<h2>핵심 통찰</h2>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>위기</th>
+<th>성숙한 통과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>유아기</td>
+<td>하나님 = 위안 도구로 고착</td>
+<td>진정한 절대자로 전환</td>
+</tr>
+<tr>
+<td>유년기</td>
+<td>종교와 삶의 분리</td>
+<td>통합적 신앙 형성</td>
+</tr>
+<tr>
+<td>사춘기</td>
+<td>내면 갈등을 억압/부정</td>
+<td>자기수용 + 통합</td>
+</tr>
+<tr>
+<td>청년기</td>
+<td>간접 신앙에 머묾</td>
+<td>직접적 신뢰·실험</td>
+</tr>
+<tr>
+<td>성인기</td>
+<td>권태 (단절)</td>
+<td>믿음으로 통합</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>윤명숙 전도사님 설교와의 연결</h2>
+<p>나우웬의 발달 단계론은 윤명숙 전도사님 설교에서 반복적으로 구현된다.</p>
+<table>
+<thead>
+<tr>
+<th>나우웬</th>
+<th>윤명숙 설교</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5단계 종교 발달</td>
+<td><strong>청소년 이해와 의사소통 (눅 2:52)</strong> — "태아기→유아기→학령기→청소년기→청년기→성인기, 인간의 일생을 통한 하나님 형상 회복"</td>
+</tr>
+<tr>
+<td>라이너스 담요 — 신앙이 위안 도구로 고착될 위험</td>
+<td><strong>고전 13:11 어린아이의 모습</strong> — "성인아이"는 신앙을 인정·위안의 수단으로만 쓴다</td>
+</tr>
+<tr>
+<td>사춘기: 통합 vs. 억압</td>
+<td><strong>요 8:32 내면세계</strong> — "외면과 내면을 성경적 관점으로 건강하게 일치시키는 것" = 통합</td>
+</tr>
+<tr>
+<td>내재과거아 고착</td>
+<td><strong>고전 13:11</strong> — "성인아이, 내재과거아, 키워서 내보내야 한다" (미실다인과 동일 개념)</td>
+</tr>
+<tr>
+<td>성인기: 권태 = 단절 → 믿음으로 통합</td>
+<td><strong>렘 2:13,19 내면세계를 들여다 보는 방법</strong> — 생수의 근원을 버리고 터진 웅덩이를 파는 것 = 단절</td>
+</tr>
+<tr>
+<td>프로이트 비판: 종교 = 투사</td>
+<td><strong>요 8:32</strong> — "예수 그리스도 없는 상담은 어느 정도는 가능하지만 근본적으로 어렵다"</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>핵심 공명: 나우웬이 심리학으로 진단한 "종교 발달의 고착"을 윤명숙 전도사님은 "성인아이"라는 목회 언어로 동일하게 다룬다. 두 사람 모두 심리학적 통찰을 신학적 변화의 출발점으로 삼는다.</p>
+</blockquote>
+<hr />
+<h2>교차 참조</h2>
+<ul>
+<li><span class="wl-dead" title="위키 내부 링크">헨리나우웬</span></li>
+<li><a class="wl" href="../../t/%EB%82%B4%EB%A9%B4%EC%B9%98%EC%9C%A0/">내면치유</a> — 어린 시절 형성이 성인 신앙 패턴 결정</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%84/">기도</a> — 기도가 실체인가 대용품인가</li>
+<li><a class="wl" href="../../t/%EB%AF%BF%EC%9D%8C/">믿음</a> — 성인기 통합의 수단</li>
+<li><a class="wl" href="../../t/%EC%8B%AD%EC%9E%90%EA%B0%80/">십자가</a> — 내면 갈등의 해답</li>
+<li><span class="wl-dead" title="위키 내부 링크">윤명숙</span> — 청소년이해, 어린아이의 모습, 내면세계</li>
+<li><a class="wl" href="../../b/%EB%AA%B8%EC%97%90%EB%B0%B4%EC%96%B4%EB%A6%B0%EC%8B%9C%EC%A0%88_%EB%AF%B8%EC%8B%A4%EB%8B%A4%EC%9D%B8/">몸에밴어린시절_미실다인</a> — 내재과거아 개념 공유</li>
+</ul>
+</article>
+<div class="tagrow"><span>#심리학</span><span>#종교발달</span><span>#내면치유</span><span>#성숙</span><span>#나우웬</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

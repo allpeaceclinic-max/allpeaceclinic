@@ -1,0 +1,238 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>자연법 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:300">윤리·공공</span><span class="date">2026-07-17</span></div>
+  <h1 class="note-title">자연법</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>자연법(natural law)은 실정법이나 특별 계시 없이도 이성과 창조 질서를 통해 인간이 인식할 수 있는 도덕 원리의 체계다. 기독교 전통에서 자연법은 하나님이 창조 질서 안에 심어 두신 도덕 구조로, 믿지 않는 사람도 <a class="wl" href="../../t/%EC%96%91%EC%8B%AC/">양심</a>을 통해 부분적으로 접근할 수 있는 것으로 이해된다. 로마서 2장이 그 성경적 닻이다 — 율법 없는 이방인이 "본성으로 율법의 일을 행할 때" 그들에게 "율법의 행위가 마음에 새겨져 있음"이 드러난다(롬 2:14-15).</p>
+<p>이 글은 그 하나의 전통이 어떻게 형성되고 어떻게 시험받았는지를 따라간다. 다만 자리를 분명히 해 둔다. 자연법을 윤리 방법론 전체 안에 위치시키는 일은 <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%9C%A4%EB%A6%AC%ED%95%99/">기독교윤리학</a>이, 도덕 감각에서 하나님의 존재로 나아가는 도덕 논증은 <a class="wl" href="../../t/%EC%8B%A0%EC%A1%B4%EC%9E%AC%EC%A6%9D%EB%AA%85/">신존재증명</a>이, 자연법에서 신학 자체를 세울 수 있는가라는 자연신학 논쟁은 <a class="wl" href="../../t/%EC%9D%BC%EB%B0%98%EA%B3%84%EC%8B%9C/">일반계시</a>가 이미 정본으로 다루었다. 이 페이지가 붙드는 것은 자연법이라는 도덕 질서 전통 그 자체 — 그 고전적 정식(아퀴나스), 종교개혁의 수용과 유보, 문화를 가로지르는 보편성(루이스), 그리고 그 약점과 공적 광장에서의 쓰임이다.</p>
+<h2>1. 양심과 창조 질서 — 자연법의 두 축</h2>
+<p>전성민 교수는 자연법을 두 의미로 나누어 쓴다. 첫째는 <strong>양심</strong>으로서의 자연법이다 — 모든 사람 안에 새겨진 도덕 감각으로, 롬 2:14-15의 "마음에 새긴 법"이 그것이다. 둘째는 <strong>창조 질서</strong>로서의 자연법이다 — 세상의 구조 안에 새겨진 규범적 패턴으로, 가족·노동·안식·약자 보호가 특정 계시 없이도 일정한 형태로 반복되는 이유를 설명한다. 전성민은 이 둘을 묶어 "상식(common sense)"의 신학적 토대로 본다.</p>
+<p>그의 핵심 논증은 아모스 1-2장의 열방 신탁이다. 아모스는 시내산 언약을 받지 못한 이방 국가들 — 다마스쿠스, 가사, 두로, 에돔, 암몬, 모압 — 을 향해 심판을 선언하는데, 그 근거는 임산부 학살이나 시체 모독 같은 반인륜적 범죄다. 토라가 없어도 물을 수 있는 도덕적 책임이 있다는 것, 곧 인류 공통의 도덕 인식이 실재한다는 것이 이 본문의 전제다. 지혜문학(잠언·전도서·욥기) 역시 이스라엘의 특수 역사가 아니라 창조 질서와 인간 경험의 관찰에서 도덕 원리를 길어 올리며, 전성민의 표현으로 "이스라엘 신학과 보편적 인간 이성 사이의 다리" 역할을 한다. 자연법은 그러니까 철학이 발명한 개념이 아니라 성경 자체가 전제하는 도덕 질서다.</p>
+<h2>2. 아퀴나스의 법 위계 — 영원법에서 인정법으로</h2>
+<p>자연법을 하나의 정교한 체계로 벼려낸 것은 토마스 아퀴나스다. 그의 고전적 도식은 법을 위계로 배열한다 — 하나님의 지혜 안에 있는 <strong>영원법</strong>(lex aeterna)이 있고, 그것이 이성적 피조물의 본성에 반영된 것이 <strong>자연법</strong>(lex naturalis)이며, 자연법을 구체적 상황에 적용해 인간이 제정한 것이 <strong>인정법</strong>(lex humana, 실정법)이다.</p>
+<table>
+<thead>
+<tr>
+<th>법</th>
+<th>자리</th>
+<th>인식 통로</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>영원법</td>
+<td>하나님의 지혜</td>
+<td>하나님만이 온전히 아심</td>
+</tr>
+<tr>
+<td>자연법</td>
+<td>인간 본성에 반영된 영원법</td>
+<td>이성·양심</td>
+</tr>
+<tr>
+<td>인정법</td>
+<td>인간이 제정한 실정법</td>
+<td>입법·관습</td>
+</tr>
+</tbody>
+</table>
+<p>이 위계의 요점은 실정법이 자연법에 뿌리내릴 때에만 정당하다는 것이다 — 자연법에 어긋나는 인정법은 "법의 왜곡"이지 참된 법이 아니다. 아퀴나스에게 자연 이성은 신앙의 적이 아니라 서곡이었고, <a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%84%A0/">공동선</a> 페이지가 그를 "자연법 안에서 인간의 궁극 목적을 하나님께 둔" 사상가로 정리하는 것도 이 목적론적 구조 때문이다. 이성은 자연법을 읽어 인간을 최고선인 하나님께로 향하게 한다. 다만 아퀴나스에게 자연법은 결코 계시를 대체하지 않는다 — 그것은 은혜가 완성할 자연의 층위이며, 자연 이성이 신 존재까지 오를 수 있다는 그의 낙관은 <a class="wl" href="../../t/%EC%9D%BC%EB%B0%98%EA%B3%84%EC%8B%9C/">일반계시</a>가 다루는 토마스주의 전통의 출발점이 된다.</p>
+<h2>3. 종교개혁의 수용과 유보 ⚖️</h2>
+<p>종교개혁은 자연법을 버리지 않았으나 아퀴나스만큼 낙관하지도 않았다. 이 자리는 좌우가 갈리므로 어느 쪽도 피고석에 세우지 않고 대칭으로 읽어야 한다. 한쪽 끝에는 <strong>제한적 수용</strong>이 있다. 칼뱅은 인간이 타락 후에도 "자연에 새겨진" 도덕 감각을 지녔음을 인정했다 — 그래서 이교도의 법과 정치에도 하나님의 일반 은혜가 작동한다고 보았다. <a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%84%A0/">공동선</a> 페이지가 칼뱅을 자연법 전통 안에서 "영적 공동선과 사회적 공동선을 통합한" 사상가로 세우는 것이 이 수용의 결과다. 그러나 칼뱅의 수용은 조건부였다 — 죄가 이성을 흐렸기에, 양심에 새겨진 법은 여전히 있으나 인간이 그것을 온전히 읽어내지는 못한다.</p>
+<p>반대편 끝에는 <strong>경계</strong>가 있다. 칼 바르트는 20세기에 자연신학을 향해 단호한 "Nein!"을 외쳤다. 타락한 이성이 자연에서 하나님과 그분의 뜻을 읽어낸다는 기획은, 그가 보기에 하나님을 인간 형상대로 빚는 우상 제조에 가까웠다. 바르트의 경계는 자연신학을 겨눈 것이지만 자연법 윤리에도 그늘을 드리운다 — "자연에서 읽은 도덕"이라는 것이 결국 인간이 자기 문화를 하나님의 뜻으로 승격시키는 통로가 아니냐는 의심이다. 이 세 입장 — 토마스주의의 낙관, 칼뱅의 제한적 수용, 바르트의 경계 — 을 자연신학의 인식론 차원에서 저울질하는 일은 <a class="wl" href="../../t/%EC%9D%BC%EB%B0%98%EA%B3%84%EC%8B%9C/">일반계시</a>에 맡긴다. 여기서 붙들 것은 하나다. 개혁주의 전통은 자연법의 존재는 인정하되 죄가 그 독법을 왜곡한다고 보았으며, 이 유보가 §5의 약점 논의로 곧장 이어진다.</p>
+<h2>4. C.S. 루이스의 도(道) — 문화를 가로지르는 도덕법</h2>
+<p>자연법이 정말로 보편적이라면, 그것은 성경 밖 문화들에서도 같은 얼굴로 나타나야 한다. C.S. 루이스가 이 검증을 정면으로 시도한 사람이다. 그는 여러 문명 — 고대 이집트, 바빌론, 중국, 그리스, 히브리 — 의 도덕 전통이 놀랄 만큼 공통된 핵심을 공유한다고 보고, 그 보편 도덕법을 중국 사상의 용어를 빌려 <strong>도(道, Tao)</strong>라 불렀다. 정직·약자 보호·약속 이행 같은 원리는 어느 문화도 근본적으로 뒤집지 못하며, 새로운 도덕을 "발명"하려는 시도조차 결국 그 도의 조각을 재배열할 뿐이라는 것이다.</p>
+<p>이 통찰은 볼트가 이미 지닌 두 자료와 만난다. 하나는 루이스의 도덕 논증이다 — <span class="wl-dead" title="위키 내부 링크">CS루이스</span>와 <a class="wl" href="../../t/%EC%8B%A0%EC%A1%B4%EC%9E%AC%EC%A6%9D%EB%AA%85/">신존재증명</a>이 정리하듯, 루이스는 『순전한 기독교』에서 "옳고 그름은 우주의 의미를 푸는 단서"라 보아 보편적 도덕 감각을 하나님을 가리키는 표지로 읽었다(그 논증의 인식론적 무게는 신존재증명 §4가 다룬다). 다른 하나는 전성민의 아모스 신탁이다. 언약 밖 열방조차 "인간이라면 해서는 안 되는 짓"으로 심판받는다는 성경의 전제는, 루이스의 도가 성경 안에서 이미 작동하고 있었음을 보여준다. 문화가 아무리 달라도 무너뜨릴 수 없는 도덕의 바닥이 있다는 것 — 이것이 자연법의 경험적 발판이다. 다만 정직하게 표시해 둘 것이 있다. 볼트는 루이스의 도덕 논증을 인용하되 『인간 폐지』의 도(道) 논의 자체를 원자료로 담고 있지는 않으므로, 이 절의 상세는 원전 확보 후 보강할 과제로 남는다(→ 미해결 질문).</p>
+<h2>5. 자연법의 약점과 공적 광장 ⚖️</h2>
+<p>자연법의 가장 큰 위험은 "무엇이 자연적인가"를 결정하는 권력이 늘 누군가의 손에 있다는 것이다. 전성민 교수는 자연법의 약점을 네 갈래로 정직하게 짚는다.</p>
+<table>
+<thead>
+<tr>
+<th>약점</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>부족 도덕감</td>
+<td>내 집단에는 관대하고 외부자에게는 가혹한 편향</td>
+</tr>
+<tr>
+<td>권력의 합리화</td>
+<td>노예제·식민 지배가 "자연 질서"로 정당화됨</td>
+</tr>
+<tr>
+<td>창조 신학의 보수화</td>
+<td>브루그만 — 창조 질서 호소가 현상을 신성화</td>
+</tr>
+<tr>
+<td>가부장제·인종주의</td>
+<td>여성 종속과 민족 우열이 "자연"으로 둔갑</td>
+</tr>
+</tbody>
+</table>
+<p>핵심은 "자연스럽다"는 느낌이 종종 권력자의 관점이라는 데 있다. <span class="wl-dead" title="위키 내부 링크">월터브루그만</span>의 분석대로, 창조 신학은 기존 질서를 해체하는 예언자적 얼굴과 그것을 영속화하는 왕정적 얼굴을 함께 갖는다. 그래서 전성민이 제시하는 해독제는 자연법의 폐기가 아니라 그 사용을 정화하는 두 기준 — <strong>사랑과 겸손</strong>이다. 자연법적 판단이 약자를 보호하는 방향으로 작동하는가(사랑), 그리고 내 문화적 선입견이 "자연 질서"로 둔갑하지 않도록 끊임없이 자기 비판하는가(겸손). 이 기준이 없으면 자연법은 이데올로기의 알리바이가 되고, <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%9C%A4%EB%A6%AC%ED%95%99/">기독교윤리학</a>이 정리하듯 "하나님이 양심에 새기신 자원"이 "권력의 언어"로 변질된다.</p>
+<p>바로 여기서 자연법의 가장 실천적인 쓰임이 열린다. 다원주의 사회에서 그리스도인은 신앙을 공유하지 않는 이웃과 어떻게 도덕을 논하는가. 자연법은 "성경이 그렇게 말한다"는 계시 언어 대신, 신앙을 전제하지 않고도 호소할 수 있는 공통 지반을 제공한다 — 사도 바울이 아테네에서 이방 시인을 인용해 다리를 놓았듯이. 그러나 이 공적 광장의 논증이 권력화되지 않으려면 앞의 사랑·겸손이 반드시 동반되어야 한다. 그 논증이 지향하는 목표(공익이 아닌 공동선)와 그것이 서는 제도적 토대(정교분리)는 <a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%84%A0/">공동선</a>과 <a class="wl" href="../../t/%EC%A0%95%EA%B5%90%EB%B6%84%EB%A6%AC/">정교분리</a>가 이어받는다. 자연법은 광장으로 나가는 다리이되, 강요가 아니라 설득의 다리여야 한다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>자연법은 철학의 발명품이 아니라 성경이 전제하는 도덕 질서다 — 아모스의 열방 신탁(전성민)은 언약 밖 민족조차 보편 도덕으로 심판받음을 보여준다. 그 두 축은 양심(롬 2)과 창조 질서다.</li>
+<li>아퀴나스의 위계(영원법 → 자연법 → 인정법)는 실정법이 자연법에 뿌리내릴 때에만 정당함을 밝힌다. 자연 이성은 신앙의 적이 아니라 서곡이되, 계시를 대체하지 않는다.</li>
+<li>종교개혁은 자연법을 버리지 않았으나 낙관하지도 않았다 — 칼뱅의 제한적 수용과 바르트의 경계 사이에서, 개혁주의는 "자연법은 있으나 죄가 그 독법을 왜곡한다"는 유보를 지킨다.</li>
+<li>C.S. 루이스의 도(道)는 문화를 가로지르는 보편 도덕법을 가리키며, 그의 도덕 논증과 아모스 신탁이 이 보편성을 뒷받침한다 — 문화가 달라도 무너뜨릴 수 없는 도덕의 바닥이 있다.</li>
+<li>자연법의 치명적 약점은 "자연스럽다"는 느낌이 권력자의 관점일 수 있다는 것이다. 해독제는 폐기가 아니라 사랑과 겸손이라는 정화 기준(전성민)이다.</li>
+<li>자연법은 다원주의 광장에서 신앙을 전제하지 않고 도덕을 논할 다리를 제공하되, 그 다리는 강요가 아니라 설득이어야 한다(공동선·정교분리 위임).</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>브루그만의 비판(창조 신학은 보수적이다)에 맞서, 창조 신학이 혁명적 해방의 근거가 되는 방식은 무엇인가 — 예언자적 창조 신학과 왕정적 창조 신학을 실천에서 어떻게 가르는가.</li>
+<li>다원주의 사회에서 자연법 언어가 계시 언어보다 더 효과적인가, 아니면 신앙을 감춘 우회로에 그치는가.</li>
+<li>C.S. 루이스의 도(道)와 『인간 폐지』의 원자료가 볼트에 없다 — 보편 도덕법 논증의 실제 전개는 원전 확보 후 보강할 과제다.</li>
+<li>한국 사회의 유교적 도덕 질서와 자연법 개념은 어떻게 대화할 수 있는가 — 공통 지반인가, 또 하나의 "왕정 신학"인가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%96%91%EC%8B%AC/">양심</a> — 자연법의 내면적 통로. 이 페이지가 도덕 질서 자체를 다룬다면 저 페이지는 그것을 읽는 기관을 다룬다.</li>
+<li><a class="wl" href="../../t/%EC%9D%BC%EB%B0%98%EA%B3%84%EC%8B%9C/">일반계시</a> — 자연법에서 신학을 세울 수 있는가라는 자연신학 논쟁(토마스주의·개혁주의 중도·바르트).</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%9C%A4%EB%A6%AC%ED%95%99/">기독교윤리학</a> — 자연법이 놓이는 윤리 방법론 전체와 "자연법의 두 얼굴".</li>
+<li><a class="wl" href="../../t/%EC%8B%A0%EC%A1%B4%EC%9E%AC%EC%A6%9D%EB%AA%85/">신존재증명</a> — 도덕 감각에서 하나님으로 나아가는 도덕 논증(루이스).</li>
+<li><a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%84%A0/">공동선</a> — 자연법 계보(플라톤·아리스토텔레스·아퀴나스·칼뱅)와 공적 광장의 목표.</li>
+<li><a class="wl" href="../../t/%EC%A0%95%EA%B5%90%EB%B6%84%EB%A6%AC/">정교분리</a> — 공적 광장의 자연법 논증이 서는 제도적 토대.</li>
+<li><a class="wl" href="../../t/%EA%B5%AC%EC%95%BD%EC%9C%A4%EB%A6%AC/">구약윤리</a> · <a class="wl" href="../../t/%EC%B0%BD%EC%A1%B0%EC%8B%A0%ED%95%99/">창조신학</a> · <a class="wl" href="../../t/%EC%9C%A8%EB%B2%95/">율법</a> — 열방 신탁, 창조 질서, 특별 계시로서의 토라와 자연법의 관계.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">전성민_구약에드러난자연법</span></td>
+<td>강의</td>
+<td>양심+창조질서=상식, 아모스 열방 신탁, 지혜문학의 다리 역할</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">전성민_자연법의약점</span></td>
+<td>강의</td>
+<td>네 가지 약점, 브루그만 창조 신학 비판, 사랑·겸손 기준</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%9D%BC%EB%B0%98%EA%B3%84%EC%8B%9C/">일반계시</a></td>
+<td>위키 교차</td>
+<td>토마스주의·바르트의 "Nein!"·개혁주의 중도의 자연신학 지형</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%84%A0/">공동선</a></td>
+<td>위키 교차</td>
+<td>아퀴나스(황금)·칼뱅(다이아몬드)의 자연법 계보, 공적 광장</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%9C%A4%EB%A6%AC%ED%95%99/">기독교윤리학</a></td>
+<td>위키 교차</td>
+<td>자연법의 두 얼굴, 자연주의적 오류, 세속 윤리와의 접점</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">CS루이스</span> · <a class="wl" href="../../t/%EC%8B%A0%EC%A1%B4%EC%9E%AC%EC%A6%9D%EB%AA%85/">신존재증명</a></td>
+<td>위키 교차</td>
+<td>도덕 논증, 보편 도덕 감각으로서의 도(道)</td>
+</tr>
+<tr>
+<td>성경(롬 2:14-15, 암 1-2장, 행 17장)</td>
+<td>성경</td>
+<td>마음에 새긴 법, 언약 밖 심판의 근거, 아테네의 접촉점</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/기독교윤리</span><span>#discipline/변증학</span><span>#자연법</span><span>#도덕법</span><span>#공적신학</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

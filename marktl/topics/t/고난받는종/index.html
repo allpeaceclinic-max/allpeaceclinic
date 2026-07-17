@@ -1,0 +1,282 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>고난받는 종 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:174">성경·해석</span><span class="date">2026-07-10</span></div>
+  <h1 class="note-title">고난받는 종</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>이사야서에는 메시아적 종·구원자·왕적 자손의 이미지가 흐르다가, <span class="wl-dead" title="위키 내부 링크">사 52:13-53:12</span>에 이르러 갑자기 찔리고 상하며 채찍에 맞는 종의 모습이 등장한다. 이른바 "여호와의 종의 노래" 네 편(사 42:1-9 / 49:1-13 / 50:4-9 / 52:13-53:12)의 절정이다. 이 종이 누구인가를 둘러싼 논쟁은 구약학의 오래된 전장이지만, 이 볼트의 자료들이 보여주는 것은 그 논쟁 너머의 지형이다. 고난받는 종은 정체 논쟁의 대상이면서 동시에 대속의 근거이고, 예수 자신의 자기 이해였으며, 신화적 희생양 메커니즘을 전복하는 반(反)신화이고, 마침내 교회가 따라 써야 할 견본이자 선교적 소명의 원형이다. 이 글은 그 여섯 겹의 층위를 차례로 따라간다.</p>
+<h2>1. 네 개의 종의 노래 — 본문의 지형</h2>
+<p>종의 노래는 이사야서 후반부에 네 번 등장하며, 각 노래는 종의 초상을 한 겹씩 더해 간다.</p>
+<table>
+<thead>
+<tr>
+<th>노래</th>
+<th>본문</th>
+<th>종의 초상</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>첫째</td>
+<td>사 42:1-9</td>
+<td>성령을 받아 이방에 정의(미쉬파트)를 베풀되, 외치지 않고 상한 갈대를 꺾지 않는 종</td>
+</tr>
+<tr>
+<td>둘째</td>
+<td>사 49:1-13</td>
+<td>이스라엘 회복을 넘어 "이방의 빛"으로 땅 끝까지 구원을 이르게 하는 종</td>
+</tr>
+<tr>
+<td>셋째</td>
+<td>사 50:4-9</td>
+<td>학자의 혀를 받아 곤고한 자를 돕고, 수염을 뽑히고 침 뱉음을 당하면서도 물러서지 않는 종</td>
+</tr>
+<tr>
+<td>넷째</td>
+<td>사 52:13-53:12</td>
+<td>우리의 허물 때문에 찔리고, 채찍에 맞음으로 우리를 낫게 하는 대속의 종</td>
+</tr>
+</tbody>
+</table>
+<p>문대원 목사는 이 연작을 한 문장으로 요약한다 — "1차적으로 여호와의 종은 예수님이시며, 그리고 우리를 포함하는 개념"이라는 것이다. 종의 노래가 그리스도에게서 성취되면서도 그를 따르는 이들에게 열려 있다는 이 이중성은, 아래에서 보듯 이 주제 전체를 관통하는 축이 된다. 한편 사 61:1-3("여호와께서 내게 기름을 부으사")은 형식상 네 노래에 들지 않지만, 예수께서 나사렛 회당에서 자신의 사명 선언문으로 읽으신 본문(<span class="wl-dead" title="위키 내부 링크">눅 4:18-21</span>)이라는 점에서 종의 노래의 연장선에서 함께 읽힌다.</p>
+<h2>2. 종은 누구인가 — 정체 논쟁의 지형</h2>
+<p>이 종이 3인칭으로 그려지는 만큼, 그 정체를 둘러싼 학설은 크게 여섯 갈래로 나뉜다. 이사님의 구약개론II 리서치페이퍼가 정리한 지형은 다음과 같다.</p>
+<table>
+<thead>
+<tr>
+<th>학설</th>
+<th>종의 정체</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>개인설</td>
+<td>이사야 자신 / 모세·여호야긴·웃시야·스룹바벨 등 역사적 인물</td>
+</tr>
+<tr>
+<td>단체설</td>
+<td>이방의 채찍에 수난받는 이스라엘 전 민족</td>
+</tr>
+<tr>
+<td>제의설</td>
+<td>신년축제 대속일 제사에 바탕을 둔 제의적 인물</td>
+</tr>
+<tr>
+<td>군주설</td>
+<td>백성의 죄를 대신 지고 고난받는 왕</td>
+</tr>
+<tr>
+<td>유동설</td>
+<td>위 여러 지시 대상 사이를 본문이 의도적으로 오감</td>
+</tr>
+<tr>
+<td>메시아설</td>
+<td>메시아 곧 예수 그리스도</td>
+</tr>
+</tbody>
+</table>
+<p>유대인들은 전통적으로 이 종을 이스라엘 자체로 간주하며(곽철호), 문맥상 석의로 보면 종을 최소한 이스라엘로 보는 것은 의심의 여지가 없다는 것이 트렘퍼 롱맨의 판단이다. 권성수 목사는 설교 현장에서 이 논쟁의 실존적 무게를 짚는다. 유대인의 해석은 "이스라엘의 의로운 남은 자" — 소수의 의로움이 다수를 살린다는 독법인데, 기독교 이름으로 자행된 박해의 역사 때문에 유대인들이 이사야 53장을 아예 빼고 읽을 정도로 그리스도 해석에 반감을 갖게 되었다는 것이다. 학설의 다양성 자체가 사53이 단일한 역사적 지시 대상으로 환원되지 않는 텍스트임을 보여주며, 이 볼트의 자료들은 "이스라엘이냐 그리스도냐"의 양자택일 대신 <a class="wl" href="../../t/%EB%A9%94%EC%8B%9C%EC%95%84%EC%98%88%EC%96%B8/">메시아예언</a>이 정리한 이중성취의 구조 — 당대의 지시 대상을 먼저 확정한 뒤 그리스도에게서의 궁극적 재성취를 논증하는 — 로 이 긴장을 다룬다.</p>
+<h2>3. 징벌의 고통에서 구원의 고통으로</h2>
+<p>정체 논쟁보다 더 깊은 곳에 고난의 의미 전환이 있다. 리서치페이퍼가 주목하는 핵심 통찰은 징벌로서의 고통과 구원으로서의 고통의 구별이다. 징벌의 고통은 인간에게 책임이 있지만, 구원의 고통은 하나님에게 책임이 있다. 이스라엘을 종으로 선택하시고 "남을 위한 고통"이라는 사명을 지우신 분이 하나님이시므로, 이스라엘이 받는 고통의 의미는 "인간의 영역에서 하나님의 영역으로, 순간에서 영원으로" 자리를 옮긴다(『예언자들』). 고난받는 종 본문이 단순한 민족 수난사가 아니라 신학적 진술로 읽혀야 하는 이유가 여기 있다. 고난이 죄의 대가가 아니라 소명일 수 있다는 이 전환은, 넷째 노래의 대속 구조로 곧장 이어진다.</p>
+<h2>4. 대속 — "그가 채찍에 맞으므로 우리는 나음을 받았도다"</h2>
+<p>넷째 노래의 문법적 특징은 '그'와 '우리'의 집요한 교차다. 권성수 목사는 사 53:5 강해에서 반복되는 "그가… 그가…"에 주목한다 — 나음의 출처가 '우리'가 아니라 '그'라는 것이다. 사람이 죄를 지었는데 짐승이 대신 피 흘리던 구약 <a class="wl" href="../../t/%ED%9D%AC%EC%83%9D%EC%A0%9C%EC%82%AC/">희생제사</a>의 예표가 이 종에게서 인격적으로 성취되고, 신약은 이를 그대로 받아 "그가 채찍에 맞음으로 너희는 나음을 얻었나니"(<span class="wl-dead" title="위키 내부 링크">벧전 2:24</span>)라고 선언한다. 권 목사는 여기서 나음(라파, רָפָא)을 단순한 신체 회복이 아니라 죄로 깨진 전인(全人)의 회복으로 읽고, '웰빙에서 힐링으로' 옮겨간 시대의 갈망 앞에 자기치유의 한계를 맞세운다.</p>
+<blockquote>
+<p>"인간의 근본 문제는 죄의 문제이다. 이것을 해결할 길이 없다. 완벽한 전인치료, 예수님 외에는 길이 없다." — 권성수, 「속죄의 치료」</p>
+</blockquote>
+<p>비움과 내려놓음의 자기치유가 증상을 얕게 만질 뿐 뿌리에 닿지 못한다면, 고난받는 종의 대속은 치료자 자신이 먼저 찔리고 상함으로써 이루어지는 수직적 치유다. "상한 갈대가 상한 갈대를 치료하지 못한다"는 그의 명제는 이 구별을 한 문장으로 못박는다.</p>
+<h2>5. 종이면서 왕 — 요란하지 않은 메시아</h2>
+<p>첫째 노래로 돌아가면 종의 또 다른 역설이 드러난다. 마태는 안식일 치유 후 "자기를 나타내지 말라" 하신 예수의 침묵을 사 42:1-4의 성취로 읽는다(마 12:14-21). 권성수 목사는 이 본문에서 종이면서 동시에 왕이라는 역설을 끌어낸다. 병을 고치고 자연을 통제하며 죽은 자를 살리는 우주의 대왕이 "다투지도 들레지도" 않으신다. 요란한 선전은 정치적 메시아라는 오해를 낳아 십자가의 길을 무너뜨리기 때문이다. 메시아의 방식은 권세의 과시가 아니라 자기 비움이며, "나는 섬기는 자로 너희 중에 있노라"(눅 22:27)가 그 통치의 문법이다.</p>
+<p>같은 본문의 "상한 갈대를 꺾지 아니하며 꺼져가는 심지를 끄지 아니하기를"은 종의 사역 대상을 보여준다. 갈대는 이미 꺾여 있고 심지는 이미 연기가 난다 — 곧 자기 눈에 끝난 것 같은 자를 이 종은 끝까지 붙든다. 고난받는 종은 고난당하는 자들을 위한 종이다.</p>
+<h2>6. 신화의 전복 — 희생염소가 아니라 어린 양</h2>
+<p>정일권 박사의 르네 지라르 강의는 고난받는 종을 인류학의 지평에 올려놓는다. 지라르에 따르면 고대 신화와 제의는 무죄한 희생양을 죄인으로 몰아 살해함으로써 공동체의 질서를 회복하는 '희생양 메커니즘'을 은폐하는 장치였다. 그런데 성경은 가인과 아벨에서 욥과 이사야의 종의 노래를 거쳐 십자가에 이르기까지, 일관되게 살해자가 아니라 희생자의 편에 서서 그 메커니즘의 비열함을 폭로한다. 결정적 차이는 어휘에 있다 — 신화의 희생양은 살해당할 이유가 있다고 간주되는 유죄한 희생염소(scapegoat)지만, 종의 노래가 그리는 이는 "도수장으로 끌려가는 어린 양"(사 53:7), 곧 무죄한 존재다.</p>
+<blockquote>
+<p>"양과 염소의 차이를 이해하는 것이 복음서와 신화의 차이를 이해하는 결정적 지점이다." — 정일권, 「르네 지라르 — 희생양 이론」</p>
+</blockquote>
+<p>이 독법에서 고난받는 종의 노래는 십자가에서 완성될 반(反)신화의 예고편이다. 무죄한 자의 고난을 은폐하지 않고 정면으로 서술하는 이 본문 자체가, 만장일치적 망각 위에 선 신화의 세계에서는 나올 수 없는 텍스트라는 것이다. <a class="wl" href="../../t/%EC%86%8D%EC%A3%84%EB%A1%A0/">속죄론</a>과 <a class="wl" href="../../t/%EC%8B%AD%EC%9E%90%EA%B0%80%EC%8B%A0%ED%95%99/">십자가신학</a>이 이 지점에서 고난받는 종과 만난다.</p>
+<h2>7. 예수 자신의 자기 이해 — 나사렛 회당에서 엠마오까지</h2>
+<p>고난받는 종이 그리스도론의 중심이 된 것은 후대 교회의 소급 해석이기 이전에 예수 자신의 자기 이해였다는 것이 누가의 증언이다. 공생애의 시작에서 예수는 나사렛 회당에서 사 61장을 읽으시며 "이 글이 오늘 너희 귀에 응하였느니라"(눅 4:21)고 선언하신다. 문대원 목사가 짚듯, 이때 예수가 받아들이신 것은 영광의 왕이 아니라 도살장에 끌려가는 양으로서의 사명이었다. 그리고 부활 후 제자들에게 "율법과 선지자의 글과 시편에 나를 가리켜 기록된 모든 것이 이루어져야 하리라"(<span class="wl-dead" title="위키 내부 링크">눅 24:44</span>)고 여신 성경 강해에서, 모세보다 큰 선지자 예언(신 18:15)과 나란히 고난받는 종의 예언(사 53:5)이 성취의 증거로 선다. 기름 부음(마샤흐)에서 파생된 메시아라는 칭호 자체가, 이 종의 노래를 통과하면서 '권력의 수여'가 아니라 '고난의 위임'으로 재정의되는 셈이다.</p>
+<h2>8. 따라 쓰는 견본 — 고난받는 종의 윤리</h2>
+<p>신약에서 고난받는 종은 교리로 머물지 않고 윤리가 된다. 베드로전서 2:18-25는 넷째 노래를 촘촘히 인용하면서 부당한 고난 앞에 선 성도에게 그리스도의 고난을 본(本)으로 제시한다. 문대원 목사는 여기서 두 원어를 짚는다. "본을 끼쳐"의 휘포그라모스(ὑπογραμμός)는 아이가 글씨를 배울 때 덧대어 따라 쓰는 견본 글씨다 — 성도의 고난은 그리스도의 고난을 흉내 내는 것이 아니라 이미 그어진 선 위를 덧그리는 것이다. 그리고 "공의로 심판하시는 이에게 부탁하시며"의 부탁(파라디도미)은 '넘겨주다'인데, 유대인이 예수를 빌라도에게 넘겨준 바로 그 동사로 예수는 자신을 하나님께 넘겨드리셨다. 욕을 당하시되 맞대어 욕하지 않으신(사 53:7의 침묵) 종의 인내는 자기 변호의 포기가 아니라 최종 판단을 하나님께 넘기는 적극적 신뢰이며, 부활은 그 무죄에 대한 하나님의 최종 판결이다. 고난받는 종은 이렇게 나그네 된 성도가 한 획씩 따라 쓰는 삶의 견본이 된다.</p>
+<h2>9. 이스라엘의 소명에서 교회의 선교로</h2>
+<p>마지막 층위는 선교다. 김지찬은 고난의 종이 선지자처럼 하나님의 의를 선포하고 제사장처럼 자기 고난으로 중보하듯, 이스라엘도 고난의 종의 뒤를 따라 선교적 고난의 길을 가야 한다고 정리한다. 이 소명의 계보는 신약에서 그대로 이어진다. 둘째 노래의 "이방의 빛"(<span class="wl-dead" title="위키 내부 링크">사 49:6</span>)을 바울과 바나바는 자신들의 이방 선교의 근거로 직접 인용하고(행 13:47), 문대원 목사는 첫째 노래 강해에서 이를 그리스도 → 교회 → 개별 신자로 이어지는 선교적 정체성의 본문으로 읽는다 — 빛은 교회를 비추는 빛이 아니라 이방을 비추는 빛이며, 선교는 파송이 아니라 보냄받은 자로 사는 삶이라는 것이다. 크리스토퍼 라이트가 말한 "선교 중심의 십자가 신학"도 같은 자리에 선다. 그가 인간의 죄책을 다루는 십자가의 첫 근거로 드는 본문이 바로 벧전 2:24와 사 53:6이다(<a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EC%97%90%EB%8C%80%ED%95%9C%EB%84%A4%EA%B0%80%EC%A7%80%EA%B2%AC%ED%95%B4_2%EB%B6%80_%EB%9D%BC%EC%9D%B4%ED%8A%B8_%EC%B0%B8%EC%97%AC%EC%84%A0%EA%B5%90/">『선교에 대한 네 가지 견해』</a>). 고난받는 종은 이스라엘의 소명에서 그리스도의 성취를 거쳐 교회의 선교로 흐르는, <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적 교회론</a>의 구약적 원천이다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>종의 노래 네 편은 성령 받은 종(42) → 이방의 빛(49) → 수모당하는 순종(50) → 대속의 죽음(53)으로 초상을 심화하며, 사 61과 함께 예수의 자기 이해의 본문이 되었다.</li>
+<li>정체 논쟁(개인설·단체설·제의설·군주설·유동설·메시아설)의 다양성 자체가 사53이 단일 지시 대상으로 환원되지 않음을 보여주며, 이 볼트는 이를 이중성취 구조로 다룬다.</li>
+<li>징벌의 고통(인간 책임)과 구원의 고통(하나님 책임)의 구별이 종의 고난을 읽는 신학적 열쇠다 — 고난이 대가가 아니라 소명일 수 있다.</li>
+<li>대속적 치유의 문법은 '그'와 '우리'의 교차다. 치료자 자신이 찔리고 상함으로 이루어지는 치유이며, "상한 갈대가 상한 갈대를 치료하지 못한다."</li>
+<li>종은 동시에 왕이다 — 요란한 선전 없이 섬김으로 통치하며, 이미 꺾인 갈대와 이미 연기 나는 심지를 끝까지 붙든다.</li>
+<li>지라르의 렌즈로 보면 종의 노래는 유죄한 희생염소가 아니라 무죄한 어린 양을 그림으로써 신화의 희생양 메커니즘을 전복하는 반신화다.</li>
+<li>고난받는 종은 교리에서 윤리로(벧전 2장의 휘포그라모스), 윤리에서 선교로(이방의 빛) 확장된다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>종을 이스라엘로 보는 문맥적 석의와 그리스도로 보는 신학적 읽기가 논리적으로 어떻게 통합되는가 — 이중성취의 판별 절차는 여전히 열려 있다(<a class="wl" href="../../t/%EB%A9%94%EC%8B%9C%EC%95%84%EC%98%88%EC%96%B8/">메시아예언</a>과 공유되는 질문).</li>
+<li>지라르식 '반-희생 제사' 독법과 히브리서의 명시적 제사 언어(제물·대제사장)는 어떻게 양립하는가.</li>
+<li>사 53:5의 "나음을 받았도다"(완료형)는 신체적 치유를 현세에 어디까지 포함하는가 — 이미와 아직의 긴장.</li>
+<li>"선을 행함으로 받는 고난"(벧전 2:20)과 죄로 인한 고난의 이분법은 명료하나, 실제 고난의 회색지대에서 종의 길을 어떻게 분별하는가.</li>
+<li>종의 선교적 고난(김지찬)과 미쉬파트의 선포(문대원) 사이에서, 고난 자체가 선교의 방식이 되는 지점은 어디인가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EB%A9%94%EC%8B%9C%EC%95%84%EC%98%88%EC%96%B8/">메시아예언</a> — 이중성취 구조와 고난받는 종 논쟁의 해석 방법론.</li>
+<li><a class="wl" href="../../t/%ED%9D%AC%EC%83%9D%EC%A0%9C%EC%82%AC/">희생제사</a> — 대리(substitution) 원리의 제의적 배경과 사53의 위치.</li>
+<li><a class="wl" href="../../t/%EC%86%8D%EC%A3%84%EB%A1%A0/">속죄론</a> · <a class="wl" href="../../t/%EC%8B%AD%EC%9E%90%EA%B0%80%EC%8B%A0%ED%95%99/">십자가신학</a> — 형벌 대속과 반-희생 제사 독법이 만나는 자리.</li>
+<li><a class="wl" href="../../t/%EA%B3%A0%EB%82%9C/">고난</a> · <span class="wl-dead" title="위키 내부 링크">고난과시련</span> — 성도의 고난 일반과의 연결.</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a> — "이방의 빛" 소명의 교회론적 전개.</li>
+<li><span class="wl-dead" title="위키 내부 링크">사53</span> · <span class="wl-dead" title="위키 내부 링크">사42</span> · <span class="wl-dead" title="위키 내부 링크">사49</span> · <span class="wl-dead" title="위키 내부 링크">사61</span> — 종의 노래 본문 허브.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">_paper_이사야53장고난받는종논쟁</span></td>
+<td>리서치페이퍼(이상협)</td>
+<td>정체 학설 지형, 징벌·구원 고통의 구별, 이스라엘 소명과 메시아 예언의 이중 독법</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2014_속죄의치료</span></td>
+<td>설교(권성수)</td>
+<td>사 53:5 대속과 전인치유, 유대인 해석과의 변증, 자기치유 비판</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2021_상한갈대꺼져가는심지</span></td>
+<td>설교(권성수)</td>
+<td>사 42/마 12 — 종이면서 왕, 메시아 비밀, 상한 갈대의 위로</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2024_이방을비추는빛</span></td>
+<td>설교(문대원)</td>
+<td>첫째 종의 노래, 미쉬파트, 그리스도→교회→신자의 선교적 이중 적용</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2025_지금보다더나은사람</span></td>
+<td>설교(문대원)</td>
+<td>사 61과 눅 4 — 고난받는 종으로서의 메시아 자기 선언</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2025_나그네영성5_본성을거스르는일</span></td>
+<td>설교(문대원)</td>
+<td>벧전 2장 — 휘포그라모스·파라디도미, 고난받는 종의 윤리</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2024_신실하신하나님신실한증인</span></td>
+<td>설교(문대원)</td>
+<td>눅 24 — 고난받는 종 예언의 성취와 하나님의 신실하심</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2020_정일권_르네지라르_희생양이론</span></td>
+<td>강의(정일권)</td>
+<td>희생염소 vs 어린 양, 종의 노래의 반신화적 위치</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EC%97%90%EB%8C%80%ED%95%9C%EB%84%A4%EA%B0%80%EC%A7%80%EA%B2%AC%ED%95%B4_2%EB%B6%80_%EB%9D%BC%EC%9D%B4%ED%8A%B8_%EC%B0%B8%EC%97%AC%EC%84%A0%EA%B5%90/">선교에대한네가지견해_2부_라이트_참여선교</a></td>
+<td>책(라이트)</td>
+<td>선교 중심의 십자가 신학 — 사 53:6·벧전 2:24</td>
+</tr>
+<tr>
+<td>트렘퍼 롱맨 · 김지찬 · 곽철호 · 헤셸(『예언자들』)</td>
+<td>인용 학자</td>
+<td>문맥적 석의, 선교적 고난, 유대인 해석, 고통의 의미 전환</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>📖 원본: <span class="wl-dead" title="위키 내부 링크">리서치 페이퍼(5-7페이지)</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/구약학</span><span>#discipline/기독론</span><span>#topic/메시아예언</span><span>#topic/이사야</span><span>#topic/십자가</span><span>#topic/선교</span><span>#topic/고난</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

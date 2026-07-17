@@ -1,0 +1,254 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>의학과 치유 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:25">상담·치유·가정</span><span class="author">마틴 로이드 존스</span><span class="date">2026-05-05</span></div>
+  <h1 class="note-title">의학과 치유</h1>
+  
+</header>
+<article class="note">
+<p><strong>저자</strong>: 마틴 로이드 존스 (Martyn Lloyd-Jones, 1899–1981)<br />
+<strong>분류</strong>: 기독의료윤리 / 소명론 / 제도신학</p>
+<hr />
+<h2>저자 소개 — 의사에서 목사로</h2>
+<p>마틴 로이드 존스는 <strong>의사 출신 목사</strong>다. 런던 바솔로뮤 병원에서 수련받고 실제 임상의로 일하다가 복음 사역으로 전환했다. 그래서 이 책은 신학자가 의학을 논하는 것이 아니라 <strong>의사가 신학으로 의학을 해석한</strong> 것이다. 그 간격이 이 책의 무게를 만든다.</p>
+<hr />
+<h2>1. 기독교인과 국가 — 두 제도 신학</h2>
+<blockquote>
+<p>하나님이 가정이라는 사회 제도를 설정하셨듯, <strong>국가도 하나님이 정하신 제도다</strong> (경계를 정하신 이가 하나님)</p>
+</blockquote>
+<p><strong>국가의 기능과 목적</strong>:
+- 악을 방지 (롬13)
+- 질서 보존 — 단, 개인의 생각이나 마음을 침해할 권한은 없다</p>
+<p><strong>교회와 국가의 관계</strong>:
+- 가톨릭: 교회가 국가보다 위 (교권 우선)
+- 로이드 존스: <strong>서로 병행 — 동맹관계가 아닌 동등한 신적 기원</strong>
+- 칼빈·녹스: 교회와 국가 모두 신적 기원을 가진다</p>
+<p><strong>국가 협력의 한계 — 3가지</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>한계</th>
+<th>근거</th>
+<th>성경 사례</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>전제정치·독재에 저항</td>
+<td>절대적 권력은 국가에 없다</td>
+<td>칼 바르트, 2차 세계대전</td>
+</tr>
+<tr>
+<td>하나님께 불순종 요구 시 거부</td>
+<td>종교의 자유</td>
+<td>다니엘과 세 친구(단3), 사도들(행4)</td>
+</tr>
+<tr>
+<td>국가 신격화 불가</td>
+<td>계13 짐승 = 세속 권세의 극단</td>
+<td>나치주의</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>2. ★ 핵심 인사이트: 제도가 바뀌어도 소명은 바뀌지 않는다</h2>
+<blockquote>
+<p><strong>"국가정책이 바뀌어도 '주께 하듯' 하는 그리스도인의 태도는 바뀔 수 없어야 한다."</strong><br />
+골3:22-23 — "무슨 일을 하든지 마음을 다하여 주께 하듯 하고"</p>
+</blockquote>
+<h3>의사-환자 관계의 변화와 위기</h3>
+<blockquote>
+<p>의사와 환자 관계가 달라진 것은 무엇 때문인가?</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>이전</th>
+<th>이후</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>자영업</strong> — 환자가 고객, 관계적 책임</td>
+<td><strong>공직</strong> — 시스템 속 피고용인, 책임 분산</td>
+</tr>
+<tr>
+<td>친절</td>
+<td>불친절 ("월급은 나오니")</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>영국 국민보건서비스(NHS) 도입이 이 변화의 배경</li>
+<li><strong>제도가 바뀌면 동기가 바뀐다</strong> — 소명의식이 없으면 친절의 기반이 무너진다</li>
+</ul>
+<h3>그리스도인의 답</h3>
+<p><code>외적 환경: 국가정책 변화 (자영업 → 공직 → 국가의료)
+                ↓
+내적 기반: '주께 하듯' (골3:22) = 소명의식
+                ↓
+결론: 제도가 바뀌어도 소명은 바뀌지 않는다</code></p>
+<ul>
+<li>고전10:31 — "무슨 일이라도 하나님께 영광으로"</li>
+<li>국가의료화 안에서도 → <strong>소명이 있는 의사는 '주께 하듯' 진료한다</strong></li>
+</ul>
+<hr />
+<h2>3. 기독교인과 파업 — 집단 이익과 소명의 긴장</h2>
+<ul>
+<li>고용주-피고용인 관계 → 노동조합이 제3자로 등장 → 조합이 고용 조건 결정</li>
+<li>조합·단체에 가입할 수 있다 — 단, <strong>그 단체가 훌륭하게 되도록 영향을 미쳐야</strong></li>
+<li><strong>저항의 근거는 반드시 기독교적·영적이어야</strong> 한다 — 단순 상업적 동기면 안 된다</li>
+</ul>
+<hr />
+<h2>4. 제도 신학의 구조 — 통합 명제</h2>
+<p><code>하나님
+  ├── 가정 제도 설정
+  ├── 국가 제도 설정
+  └── 의료 제도 (국가 안에 위치)
+            ↓
+기독의료인 = 하나님이 정하신 제도 안에 있는 소명자
+            → 제도가 바뀌어도 소명은 바뀌지 않는다</code></p>
+<hr />
+<h2>연결 고리</h2>
+<h3><a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a>과의 연결</h3>
+<ul>
+<li>오스 기니스 소명론: "1차 소명(하나님께) → 2차 소명(구체적 일)" = 로이드 존스의 '주께 하듯'</li>
+<li>엘륄(<a class="wl" href="../../b/%EC%9A%94%EB%82%98%EC%9D%98%EC%8B%AC%ED%8C%90%EA%B3%BC%EA%B5%AC%EC%9B%90_%EC%9E%90%EB%81%84%EC%97%98%EB%A5%84/">요나의심판과구원_자끄엘륄</a>): "소명을 위한 선택만이 있다" — 요나도 국가(앗시리아)라는 제도적 틀 안에서 소명을 실현함</li>
+<li><strong>핵심 명제</strong>: 소명은 제도적 환경에 근거하지 않는다 → 소명은 하나님께 근거한다</li>
+</ul>
+<h3><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a>과의 연결</h3>
+<table>
+<thead>
+<tr>
+<th>로이드 존스</th>
+<th>기독의료인 정체성</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"자영업→공직"의 위기</td>
+<td>의료 변질: 비즈니스화·효율성 추구</td>
+</tr>
+<tr>
+<td>'주께 하듯' (골3:22)</td>
+<td>예수님의 마음으로 진료</td>
+</tr>
+<tr>
+<td>소명의식 = 국가정책 초월</td>
+<td>소명이 의료 정체성의 닻</td>
+</tr>
+</tbody>
+</table>
+<h3>뉴비긴(<a class="wl" href="../../b/%EC%98%A4%ED%94%88%EC%8B%9C%ED%81%AC%EB%A6%BF_%EB%A0%88%EC%8A%AC%EB%A6%AC%EB%89%B4%EB%B9%84%EA%B8%B4/">오픈시크릿_레슬리뉴비긴</a>)과의 연결</h3>
+<ul>
+<li>뉴비긴: "국가(교회)는 선교에 절대 주권이 없다"</li>
+<li>로이드 존스: "국가는 절대 권력이 없다"</li>
+<li>동일한 제도 신학 → <strong>제도는 하나님의 주권 아래 있다</strong></li>
+</ul>
+<h3>이상협 강의·사역과의 연결</h3>
+<ul>
+<li><strong>KCMF/누가회</strong> — 국가의료 체계(건강보험) 안에서 소명 있는 진료 = 이 책의 핵심 적용</li>
+<li><strong>올피스클리닉</strong> — 자영업 개원의로서 소명의식을 유지하는 것: 제도적 독립이 아니라 소명의 문제</li>
+</ul>
+<hr />
+<h2>탐구 중인 질문</h2>
+<ul>
+<li><strong>Q. 건강보험 수가 체계가 바뀌어도 진료 방식·태도는 바뀌지 않아야 한다 — 어떻게 가능한가?</strong></li>
+<li><strong>Q. 로이드 존스가 의사에서 목사로 전환한 것은 소명의 포기인가, 더 깊은 소명의 발견인가?</strong></li>
+</ul>
+<hr />
+<h2>교차 참조</h2>
+<ul>
+<li><span class="wl-dead" title="위키 내부 링크">마틴로이드존스</span></li>
+<li><a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a> — 제도가 바뀌어도 소명은 바뀌지 않는다</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a></li>
+<li><a class="wl" href="../../b/%EC%98%A4%ED%94%88%EC%8B%9C%ED%81%AC%EB%A6%BF_%EB%A0%88%EC%8A%AC%EB%A6%AC%EB%89%B4%EB%B9%84%EA%B8%B4/">오픈시크릿_레슬리뉴비긴</a> — 제도 신학 비교</li>
+<li><a class="wl" href="../../b/%EC%9A%94%EB%82%98%EC%9D%98%EC%8B%AC%ED%8C%90%EA%B3%BC%EA%B5%AC%EC%9B%90_%EC%9E%90%EB%81%84%EC%97%98%EB%A5%84/">요나의심판과구원_자끄엘륄</a> — 소명을 위한 선택</li>
+<li><span class="wl-dead" title="위키 내부 링크">골3</span> — 주께 하듯 (22-23절)</li>
+</ul>
+</article>
+<div class="tagrow"><span>#의료소명</span><span>#기독의료인</span><span>#제도신학</span><span>#국가</span><span>#소명</span><span>#마틴로이드존스</span><span>#의사목사</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

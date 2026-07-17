@@ -1,0 +1,234 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>안식 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:345">영성·제자도</span><span class="date">2026-07-17</span></div>
+  <h1 class="note-title">안식</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>이 볼트에서 안식은 일을 손에서 놓는 단순한 휴식이 아니라, 일의 주인이 내가 아니라 하나님이심을 고백하며 유한한 존재로 돌아가는 회복이다. 안식은 하나님 자신에게서 시작한다 — 창세기 2장에서 하나님이 창조를 마치고 일곱째 날에 쉬셨다는 진술이 그 원천이다. 이 하나님의 쉼이 계명으로 인간에게 명령되고(출애굽기 20장·신명기 5장), 예수 그리스도 안에서 실체가 되며(마태복음 11장), 히브리서 4장에서 아직 남아 있는 종말론적 안식으로 열린다. 곧 안식은 창조에서 시작되어 구원을 거쳐 완성으로 향하는 하나의 구속사적 리듬이다.</p>
+<p>이 볼트의 설교자들이 한목소리로 부정하는 것은 안식을 "더 열심히 일하기 위한 재충전"으로 축소하는 시각이다. 문대원 목사가 신명기 5장을 강해하며 못 박듯 안식은 "물질주의 문화에 대한 저항"이며, 효율과 생산성을 최고 가치로 삼는 사회 한복판에서 인간이 유한한 피조물임을, 인생의 주관자가 하나님임을 몸으로 고백하는 행위다. 그래서 안식은 번아웃에 내몰린 현대인 — 특히 의사와 사역자 — 에게 회복의 처방이자 <a class="wl" href="../../t/%EB%A7%88%EC%9D%8C%EC%9D%98%EA%B1%B4%EA%B0%95/">마음의건강</a>과 맞물리는 자리에 선다.</p>
+<h2>1. 창조의 완성으로서의 쉼</h2>
+<p>안식의 첫 근거는 하나님이 지치셨기 때문이 아니다. 권성수 목사가 히브리서 4장을 강해하며 짚듯 "6일 창조가 힘들어서 쉰 것이 아니다. 결코 지치지 않는 분이 하나님이시다." 그렇다면 왜 쉬셨는가. 완전한 창조에서 오는 만족이 안식으로 표현되었다는 것이다. 일곱째 날의 쉼은 노동의 중단이 아니라 창조라는 작품 앞에서의 흡족함, 곧 "만족의 안식"이다. 창세기의 서사에서 안식일이 창조의 면류관에 놓이는 이유가 여기 있다.</p>
+<p>이 지점에서 성경은 의미심장한 단어 하나를 처음 사용한다. '거룩'이라는 말이 성경에서 최초로 등장하는 자리가 바로 일곱째 날이다 — "하나님이 그 일곱째 날을 복되게 하사 거룩하게 하셨으니"(창 2:3). 권성수 목사는 이 거룩이 "다른 날은 타락한 날이라는 뜻이 아니라 특별하게 구별하여 지정하셨다는 것"이라고 풀이한다. 거룩의 본뜻은 특별한 목적을 위한 구별이며, 하나님은 시간 자체에 그 구별을 새겨 넣으셨다. 창조의 안식은 또한 방치가 아니다 — 하나님은 창조를 마치신 뒤에도 세계를 버려두지 않고 다스리신다("아버지께서 이제까지 일하시니 나도 일한다", 요 5:17). 완성의 안식과 지속되는 섭리가 모순 없이 공존하는 것이 성경의 하나님이다.</p>
+<h2>2. 두 개의 근거 — 창조와 해방</h2>
+<p>십계명은 안식일 계명을 두 번, 서로 다른 근거로 명령한다. 이 두 판본의 차이가 안식 신학의 폭을 결정한다.</p>
+<table>
+<thead>
+<tr>
+<th>판본</th>
+<th>근거</th>
+<th>핵심 동사</th>
+<th>강조점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>출애굽기 20:8-11</td>
+<td><strong>창조</strong> — "엿새 동안에 천지를 만들고 일곱째 날에 쉬었음이라"</td>
+<td>기억하여(자카르) 거룩하게 지키라</td>
+<td>하나님의 주권 · 피조성의 인정</td>
+</tr>
+<tr>
+<td>신명기 5:12-15</td>
+<td><strong>해방</strong> — "네가 애굽 땅에서 종이 되었더니 … 인도하여 내었나니"</td>
+<td>지켜(샤마르) 거룩하게 하라</td>
+<td>구원의 기념 · 종살이로부터의 자유</td>
+</tr>
+</tbody>
+</table>
+<p>출애굽기가 안식을 창조 질서에 뿌리내린다면, 신명기는 안식을 구원의 기억에 뿌리내린다. 문대원 목사의 강해가 이 해방의 결을 살린다 — 고대 사회의 종에게는 자유도 쉼도 없었고, 근로자의 인권을 보호하는 역사는 얼마 되지 않았다. "쉼이 없는 곳, 안식이 없는 곳, 그곳에서 하나님이 구원하셨다." 그러므로 안식일에 쉬는 것은 자유 없이 고통받던 애굽을 기억하고 구원을 기념하는 예전이다.</p>
+<p>이 해방의 논리는 안식을 나 혼자의 휴식을 넘어 정의의 문제로 확장한다. 신명기 5:14은 안식을 "네 아들이나 네 딸이나 네 남종이나 네 여종이나 네 소나 네 나귀나 … 네 문 안에 유하는 객"에게까지 명령한다. 인권 개념도 신분제 철폐도 없던 3400년 전에 종과 나그네와 가축의 쉼까지 규정한 이 율법을, 문대원 목사는 "하나님의 자비와 사랑이 담긴" 법으로 읽는다. 밭 모퉁이를 남겨 가난한 자와 거류민이 먹게 하라는 페아(레 23:22)의 긍휼과 같은 뿌리다. 안식은 강자의 여가가 아니라 약자에게까지 흘러가는 쉼이며, 이 사회적 차원은 <a class="wl" href="../../t/%EA%B3%A0%EB%82%9C%EA%B3%BC%ED%9A%8C%EB%B3%B5/">고난과회복</a>·<a class="wl" href="../../t/%EA%B8%8D%ED%9C%BC/">긍휼</a>의 담론과 만난다.</p>
+<h2>3. "안식일이 사람을 위하여" — 예수와 안식 ⚖️</h2>
+<p>예수는 안식일을 폐하지 않고 그 본래 방향을 회복시킨다. 안식일의 주인으로서 그는 안식일이 사람을 억누르는 멍에가 아니라 사람을 위한 선물임을 선언한다. 문대원 목사의 표현대로 "안식일이 사람을 위해 있다. 건강과 유익을 위해 선물로 주셨다." 그리고 그 안식일은 부활의 주가 다스리는 주일로 이어져 예배와 안식에 동참하는 날이 되었다.</p>
+<p>박성훈 목사는 마태복음 11:28-30("수고하고 무거운 짐 진 자들아 다 내게로 오라 내가 너희를 쉬게 하리라")을 한병철의 『피로사회』와 연결해, 성과와 경쟁에 스스로를 착취하다 막혀버리는 '영혼 경색'의 처방으로 안식을 제시한다. 그는 28-29절의 병행 구조를 해부해 '내게로 옴 = 멍에를 멤 = 제자가 됨'과 '쉼 = 영혼의 안식'을 동의적으로 묶고, 안식을 세 시제로 펼친다 — 과거 이스라엘의 육체의 안식, 현재 신자의 마음의 안식, 미래 제자의 영혼의 안식. 여기서 예수의 멍에는 안식과 <a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%ED%9B%88%EB%A0%A8/">제자훈련</a>이 하나로 엮이는 자리다. 쉼은 일의 포기가 아니라 그리스도와 함께 메는 가벼운 멍에다.</p>
+<p>여기서 균형이 필요하다. ⚖️ 안식일·주일을 둘러싼 오랜 논쟁은 두 극단으로 무너진다. 하나는 안식을 규칙의 목록으로 만들어 "무엇을 하면 안 되는가"만 따지는 율법주의이고, 다른 하나는 "이제 다 자유"라며 구별된 날 자체를 흩어버리는 방종이다. 이 볼트의 강조점은 그 사이에 있다. 문대원 목사가 캘빈 밀러를 인용하듯 "자신의 리듬보다 우월한 리듬에 순종하는 자만이 자유롭다" — 안식은 억지로 지키는 금기도, 마음대로 흩는 자유도 아니라, 옳은 것을 의도적으로 선택하는 성숙한 자유다. 안식일 준수의 핵심은 규칙의 개수가 아니라 하나님을 하나님 되시게 하는 마음의 방향이다.</p>
+<h2>4. 아직 남아 있는 안식 — 히브리서 4장의 종말론</h2>
+<p>히브리서 4장은 안식에 종말론적 깊이를 준다. 저자는 "안식할 때가 하나님의 백성에게 남아 있도다"(히 4:9)라고 말하는데, 권성수 목사는 이 '남아 있음'을 세 층위의 안식으로 풀어낸다. 구약의 안식 — 여호수아가 인도한 가나안 안식 — 은 종살이로부터의 회복이었으나 지리적으로 가나안에, 시간적으로 한때에 제한된 "그림자 안식"이었다. 이스라엘이 마음을 완고하게 하여 누리지 못했기에, 안식은 여전히 남아 있는 약속으로 미래를 향해 열려 있다.</p>
+<table>
+<thead>
+<tr>
+<th>층위</th>
+<th>안식</th>
+<th>성격</th>
+<th>본문</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>그림자 안식</td>
+<td>가나안 안식 (여호수아)</td>
+<td>지리적·시간적으로 제한된 예표</td>
+<td>히 4:8</td>
+</tr>
+<tr>
+<td>실체 안식</td>
+<td>그리스도 안의 안식</td>
+<td>환경에 지배받지 않는 현재의 안식</td>
+<td>히 4:3, 빌 4:12-13</td>
+</tr>
+<tr>
+<td>천국 안식</td>
+<td>영원한 안식</td>
+<td>새 하늘과 새 땅의 완성된 안식</td>
+<td>히 4:10</td>
+</tr>
+</tbody>
+</table>
+<p>실체 안식의 특징은 환경으로부터의 자유다. 권성수 목사는 이를 "질병과 재난, 사고, 죽음이 있어도 누리는 안식"이라 부르며 빌립보서 4장의 일체의 비결("비천에 처할 줄도 알고 풍부에 처할 줄도 알아")과 로마서 8장("사망이나 생명이나 … 우리를 끊을 수 없으리라")으로 뒷받침한다. 사망조차 안식의 끝이 아니라 "병동에서 왕궁으로 가는 통과 과정"이다. 그러나 이 안식은 값싸게 오지 않는다. 히브리서의 역설은 "그러므로 우리가 저 안식에 들어가기를 힘쓸지니"(히 4:11)라는 명령이다 — 안식은 애쓰지 않아 얻는 것이 아니라 믿음의 순종으로 들어가는 것이다. 권성수 목사가 정리한 안식의 성숙 단계(머리 지식 → 가슴 지식 → 생활 지식 → 송영 지식)는, 안식이 관념이 아니라 묵상과 순종을 통해 삶으로 체현되는 과정임을 보여준다.</p>
+<h2>5. 현대인의 쉼과 번아웃 — 의사·사역자의 자리</h2>
+<p>안식 신학이 가장 첨예하게 시험받는 곳은 쉬지 못하는 현대인의 삶이다. 문대원 목사는 한국인의 수면 시간이 OECD 하위권(6시간 6분)이며 그 결과가 면역 저하·짜증·우울이라는 데서 강해를 시작한다. 마르바 던을 인용하며 그는 "성경이 말하는 진정한 쉼은 하나님의 주권을 받아들이는 것"이라 말한다. 안식은 결국 유한성의 고백이다 — "우리 모두는 다 연약한, 유한한 존재이다. 이것을 인정하고 받아들이는 것이 안식이다." 히브리인의 하루가 저녁에 시작해 아침으로 이어지듯, 하나님이 먼저 일하시는 밤이 있고 아침에 그 일에 초대받는 것이 인간의 자리다. 안식은 내가 없어도 세계가 돌아간다는 사실 앞에서의 겸손이다.</p>
+<p>이 겸손이 강제로 주어질 때도 있다. 박종원 선교사는 20년 중국 사역 끝에 추방당한 직후 "아무것도 하지 말고 보고, 듣고 쉬라"는 권면과 예상치 못한 공급을 받았다 — 성과를 찾던 '하는 자'에게 '쉬는 자'가 되라는 정체성의 재조정이자, 강제된 멈춤이 <a class="wl" href="../../t/%EB%A9%A4%EB%B2%84%EC%BC%80%EC%96%B4/">멤버케어</a>의 안식으로 전환되는 장면이다. 그 회복은 고이지 않는다. 박경남 선교사는 쉼을 "영적 자유함이 충만한 상태"로 정의하며(요 8:31-32) 이 자유함이 흘러넘쳐 전파된다고 보아, 안식을 쉼 → 멍에(동행의 제자도) → 파송의 세 동심원으로 확장한다.</p>
+<p>의사와 사역자에게 이 신학은 추상이 아니다. 끊임없이 타인의 고통을 감당하는 직업일수록 번아웃은 직업병에 가깝고, 쉼 없는 헌신을 미덕으로 오해하기 쉽다. 그러나 안식의 논리는 정반대를 말한다 — 유한한 존재가 무한히 감당하려는 시도 자체가 하나님의 자리를 침범하는 교만일 수 있다. 몸에 새겨진 두려움과 소진이 어떻게 마음을 마르게 하는지는 <a class="wl" href="../../t/%EB%A7%88%EC%9D%8C%EC%9D%98%EA%B1%B4%EA%B0%95/">마음의건강</a>가 생리학적으로 다루며, 안식은 그 마름에 대한 신학적 처방이다. "아무것도 하지 않을 자유"는 게으름의 변명이 아니라, 일의 주인이 내가 아님을 몸으로 고백하는 예배다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>안식은 하나님 자신에게서 시작한다. 창세기 2장의 쉼은 지침이 아니라 완전한 창조에서 오는 만족의 표현이며, '거룩'이라는 단어가 성경에서 처음 새겨진 자리다.</li>
+<li>십계명은 안식을 두 근거로 명령한다 — 출애굽기는 창조 질서(주권)에, 신명기는 해방의 기억(구원)에 뿌리내린다. 두 판본이 함께 안식의 수직·수평 차원을 이룬다.</li>
+<li>안식의 사회적 차원은 종·나그네·가축에게까지 미친다. 안식은 강자의 여가가 아니라 약자에게 흘러가는 쉼이며 정의의 문제다.</li>
+<li>예수는 안식일의 주인으로서 그것을 사람을 위한 선물로 회복시킨다. 안식일 논쟁은 율법주의와 방종의 두 극단 사이에서, 규칙의 개수가 아니라 마음의 방향으로 판별된다. ⚖️</li>
+<li>히브리서 4장은 안식을 그림자(가나안)·실체(그리스도)·완성(천국)의 세 층위로 펼친다. 실체 안식은 환경에 지배받지 않되, "들어가기를 힘쓰라"는 믿음의 순종을 요구한다.</li>
+<li>현대인에게 안식은 유한성의 고백이자 물질주의에 대한 저항이다. 의사·사역자에게 번아웃은 쉼 없는 헌신을 미덕으로 오해한 결과이며, 안식은 그 소진에 대한 신학적 처방이다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>안식이 다시 "잘 쉬어야 한다"는 또 하나의 성과 압박이 되지 않으려면 무엇이 필요한가 — 쉼의 방법론화가 안식의 은혜를 다시 노동으로 되돌리는 역설.</li>
+<li>주일성수의 구체적 실천에서 율법주의와 방종을 가르는 실제 기준을, 이 볼트의 설교들은 원리로만 제시하고 세부 지침은 남겨 둔다.</li>
+<li>히브리서 4장의 "들어가기를 힘쓰라"는 명령과 마태복음 11장의 "쉬게 하리라"는 선물 사이의 긴장 — 안식은 받는 것인가 애써 들어가는 것인가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EB%A7%88%EC%9D%8C%EC%9D%98%EA%B1%B4%EA%B0%95/">마음의건강</a> — 두려움·소진이 몸과 마음을 마르게 하는 생리학. 안식은 그 마름에 대한 신학적 처방으로 맞물린다.</li>
+<li><a class="wl" href="../../t/%EC%A2%85%EB%A7%90%EB%A1%A0/">종말론</a> — 히브리서 4장의 아직 남아 있는 안식, 일곱째 날로 읽는 안식의 미래적 지평.</li>
+<li><a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%ED%9B%88%EB%A0%A8/">제자훈련</a> — 마태복음 11장 '멍에를 멤 = 제자가 됨'으로, 안식과 제자도가 한 멍에로 묶인다.</li>
+<li><a class="wl" href="../../t/%EA%B3%A0%EB%82%9C%EA%B3%BC%ED%9A%8C%EB%B3%B5/">고난과회복</a> — 추방·위기 한가운데 주어지는 멈춤이 회복의 통로가 되는 자리.</li>
+<li><a class="wl" href="../../t/%EB%A9%A4%EB%B2%84%EC%BC%80%EC%96%B4/">멤버케어</a> — 소진하고 귀환한 사역자에게 안식과 공급을 제공하는 돌봄의 신학.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2023_아무것도하지않을자유</span></td>
+<td>설교</td>
+<td>신 5:12-15 해방 근거, 마르바 던·캘빈 밀러, 종·나그네·가축의 쉼, 물질주의 저항, 유한성의 고백</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">십계명_08_제4계명</span></td>
+<td>설교</td>
+<td>출 20:8-11 창조 근거, 창 2:3 거룩의 첫 사용, 안식일 = 하나님의 주권 인정</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2017_안식의비결</span></td>
+<td>설교</td>
+<td>히 4:1-11 그림자·실체·천국 안식의 세 층위, "들어가기를 힘쓰라", 안식의 성숙 단계</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2020_박성훈_영혼경색의_특급비책</span></td>
+<td>설교</td>
+<td>마 11:28-30 병행 구조, 한병철 『피로사회』, 안식의 세 시제</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2021_박경남_내게로_오라</span></td>
+<td>설교</td>
+<td>쉼 = 영적 자유함(요 8:31-32), 쉼 → 멍에 → 파송의 확장</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2019_박종원_중국_또다른_훈련의_여정</span></td>
+<td>간증</td>
+<td>추방 이후 강제된 멈춤을 광야·회복의 안식으로 받음</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#안식</span><span>#안식일</span><span>#쉼</span><span>#번아웃</span><span>#domain/신학</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

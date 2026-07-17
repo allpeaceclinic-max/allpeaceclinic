@@ -1,0 +1,329 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>타문화선교 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="date">2026-07-17</span></div>
+  <h1 class="note-title">타문화선교</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>타문화선교는 선교사가 자신의 문화권을 떠나 언어·가치·세계관이 다른 환경으로 들어가, 그 안에서 복음을 증거하고 교회를 세우는 사역이다. 그러나 이 페이지가 다루려는 것은 그 일의 <strong>이론</strong>이 아니라 <strong>실천</strong>이다. 복음과 문화의 관계, 번역가능성과 혼합주의의 경계는 <a class="wl" href="../../t/%EC%83%81%ED%99%A9%ED%99%94/">상황화</a>가, 선교 역사의 구조와 미전도종족 전략은 <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%ED%95%99/">선교학</a>이 이미 다룬다. 국내로 찾아온 나그네를 맞이하는 방향은 <a class="wl" href="../../t/%EC%9D%B4%EC%A3%BC%EB%AF%BC%EC%84%A0%EA%B5%90/">이주민선교</a>의 몫이고, 직업이라는 신분으로 진입하는 문제는 <a class="wl" href="../../t/%EC%A0%84%EB%AC%B8%EC%9D%B8%EC%84%A0%EA%B5%90/">전문인선교</a>에 있다. 여기서 묻는 것은 더 낮고 더 몸에 붙은 질문이다 — <strong>한 사람이 문화의 경계를 실제로 어떻게 넘는가.</strong></p>
+<p><a class="wl" href="../../t/%EC%9D%B4%EC%A3%BC%EB%AF%BC%EC%84%A0%EA%B5%90/">이주민선교</a>가 이 셋을 방향으로 갈라놓았듯, 타문화선교는 '건너감'의 선교다. 우리가 그들에게 간다. 그런데 건너간다는 말은 지도 위의 선을 넘는 일이 아니라, 물을 바꾸는 일이다. 물고기가 다른 물로 옮겨지듯, 선교사는 자기를 형성해 온 공기 전체를 벗고 낯선 공기 속에서 다시 숨 쉬는 법을 배워야 한다. <span class="wl-dead" title="위키 내부 링크">손창남</span>의 표현을 빌리면, "가장 타문화를 잘 이해하는 사람"이 가장 잘 건너간다. 이 글은 그 건너감의 해부학이다 — 문화라는 물을 읽고(1), 충격을 통과하고(2), 언어로 낮아지고(3), 관계를 짓고(4), 이방인의 정체성을 살고(5), 가정과 팀을 지키고(6), 실패에서 배우는(7) 일련의 실천.</p>
+<h2>1. 문화라는 바다 — 물을 바꾸는 물고기</h2>
+<p>물고기는 물을 보지 못한다. 자기를 둘러싼 것이 너무 당연해서 그것이 '하나의 환경'임을 자각하지 못한다. 자문화 중심주의(ethnocentrism)는 결함이 아니라 인간의 기본값이다. 손창남이 즐겨 드는 아침 식탁 예화가 이 기본값을 그대로 보여준다. 인도네시아의 한 식탁에서 한국·미국·영국 청년이 함께 아침을 먹는데, 한국 청년은 팔 긴 미국 청년이 자꾸 잼을 달라는 것이 불쾌하고, 미국 청년은 허락 없이 잼을 가져가는 한국 청년이 불쾌하며, 영국 청년은 자기에게 한 번도 잼을 권하지 않는 두 사람이 불쾌하다. 세 사람 모두 옳다. 각자 자기 문화의 룰로 판단하기 때문이다.</p>
+<p>그래서 손창남은 문화를 "게임의 룰"에 빗댄다. 같은 축구라도 동네 축구엔 오프사이드가 없고, 같은 윷놀이라도 어떤 동네엔 '빽도'가 있다. 동네 축구장에서 오프사이드를 고집하는 사람은 FIFA로 보내야 한다. 선교지도 마찬가지다 — 그곳의 룰을 무시하고 자기 방식을 고집하는 선교사는 결국 아웃당해 더 이상 게임에 참여할 수 없게 된다. 문화를 읽는다는 것은 먼저 그곳에 나와 다른 룰이 있음을, 그리고 그 룰이 틀린 게 아니라 다른 것임을 인정하는 데서 출발한다.</p>
+<p>문화가 왜 그렇게 완강한지는 그 층위를 들여다보면 드러난다. 로이드 콰스트가 제시한 문화의 4층 구조를 손창남이 선교 훈련에서 자주 인용하는데, 문화는 눈에 보이는 얇은 표층 아래로 점점 깊고 종교적인 지층이 쌓인 빙산과 같다.</p>
+<p><code>표층 │ 행동 (Behavior)   무엇을 하는가  ← 눈에 보임 · 오해하기 가장 쉬움
+       │ ─────────────────
+       │ 가치 (Value)      무엇이 최선인가
+       │ ─────────────────
+       │ 믿음 (Belief)     무엇이 참인가
+       │ ─────────────────
+  심층 │ 세계관 (Worldview) 무엇이 실재인가  ← 종교와 결합 · 거의 변하지 않음</code></p>
+<p>문제는 선교사가 보는 것이 언제나 맨 위 행동층뿐이라는 데 있다. 표면 행동만 보고 판단하면 반드시 오해가 생긴다. 손창남이 드는 중동의 사례가 전형적이다. 한 현지 외과의사가 멀리서 손님이 왔다는 전화를 받고 예약된 수술을 다음 날로 미룬다. 서구·한국의 눈에는 자격을 박탈해야 할 무책임이지만, 손님 접대를 천사의 방문처럼 여기는 그 사회에서는 환자를 핑계로 접대를 거절하는 편이 오히려 지탄받을 일이다. 같은 행동의 밑바닥에 정반대의 가치와 세계관이 깔려 있다. 행동층에서 정죄하기 전에 세계관층까지 내려가 읽어야 하는 이유다.</p>
+<p>이 내려감은 결국 문화의 우열을 판단할 수 없다는 자리로 데려간다. 손창남은 화장실 뒤처리 방식이나 수저 사용 습관을 예로 들며, '더럽다'는 기준이 실은 "생각 속에" 있을 뿐임을 짚는다. 손으로 뒤처리하는 문화가 오히려 수인성 질병과 치질이 적다는 역설 앞에서, 어느 쪽이 우월한지 묻는 질문 자체가 무너진다. 셔우드 링겐펠터의 말대로 문화는 결코 가치중립적이지 않지만, 그렇다고 특정 문화가 다른 문화보다 거룩한 것도 아니다. 오히려 링겐펠터는 문화를 '감옥'이라 불렀다 — 손창남은 여기에 창덕궁의 왕을 겹쳐 놓는다. 가장 화려한 궁에 살면서도 지위와 관습 때문에 담장 밖 세상을 끝내 경험하지 못한 그 왕처럼, 우리의 편안한 문화적 담장 역시 타 민족에게 나아가지 못하게 하는 감옥이 될 수 있다. 그래서 에드워드 홀의 통찰이 이 모든 것을 꿰뚫는다 — 다른 사람의 문화를 진지하게 받아들이는 일은 결국 자기 문화를 이해하는 가장 효과적인 방법이다. 타문화를 배우러 갔다가 자기 얼굴을 처음 보고 돌아오는 것, 그것이 건너감의 첫 열매다.</p>
+<h2>2. 문화 충격과 적응 곡선 — 통과의례로서의 위기</h2>
+<p>문화의 차이가 사소한 불쾌를 넘어 삶을 흔들 때 그것을 문화 충격(culture shock)이라 부른다. 손창남은 이를 실감시키려 훈련생들에게 4명씩 짝지어 10분간 반말로만 대화하게 한다. 곧 말수가 줄고 기분이 상한다. 익숙한 언어의 결 하나가 무너졌을 뿐인데도 그렇다. 하물며 언어·음식·시간관념·인간관계의 모든 룰이 한꺼번에 바뀌는 현장에서 받는 충격의 크기는 짐작하기 어렵다.</p>
+<p>그 크기를 손창남은 마이클 그리피스의 『늑대와 함께 춤추는 어린양』에서 끌어온 수치로 제시한다.</p>
+<blockquote>
+<p>배우자의 죽음이 주는 스트레스를 100으로 놓으면, 선교사가 타문화 현장에서 겪는 스트레스 요인은 거의 300에 이른다.</p>
+</blockquote>
+<p>배우자의 죽음 세 배에 달하는 압력이 일상적으로 가해지는 것이다. 그런데 손창남은 이 문화 충격의 곡선이 "부부생활 그래프와 정말 똑같다"고 말한다. 설렘으로 시작해 환멸을 지나 조정과 안정에 이르는 결혼의 궤적처럼, 문화 적응도 예측 가능한 U자 곡선을 그린다.</p>
+<p><code>만족 │ 허니문
+      │  ●╲                       ┌─● 적응(안정)
+      │    ╲                    ╱
+      │     ╲      조정 ────●─╱
+      │      ╲    ╱
+      │       ●─╱  ← 문화 충격(위기·환멸)
+      └──────────────────────────────  시간
+        도착   3~6개월      1년~</code></p>
+<p>이 곡선의 신학적 의미는 분명하다. <strong>충격은 실패가 아니라 통과의례다.</strong> 곡선의 밑바닥에 이르렀다는 것은 선교사가 무너졌다는 뜻이 아니라, 표면의 신기함이 걷히고 이제 진짜 문화의 심층과 대면하기 시작했다는 신호다. 밑바닥을 위기로만 해석해 서둘러 귀국하는 이가 있는가 하면, 그것을 조정의 입구로 받아들여 통과하는 이가 있다. 후자만이 곡선의 오른쪽 끝, 적응에 도달한다.</p>
+<p>곡선은 한 번으로 끝나지 않는다. 손창남이 특히 강조하는 것은 귀국 후에 찾아오는 역문화 충격(reverse culture shock)이다. 안식년에 귀국한 선교사가 연중 삼모작으로 쌀이 흔한 나라에서 살다 와, 고급 음식점이 누룽지를 별미로 내놓는 광경에 당황한다. 떠나 있는 동안 모국이 변했고, 자신도 변했기 때문이다. 이 충격은 선교사 자녀(MK)에게 더 가혹하다. 현지에서 나고 자란 아이에게 '모국'은 또 하나의 낯선 타문화다. 그래서 손창남은 자녀를 위한 역문화 충격 오리엔테이션이 반드시 필요하며, 부모가 3~6개월은 곁에 있어 주어야 한다고 못박는다. 적응 곡선은 나가는 길에 한 번, 돌아오는 길에 한 번, 이렇게 두 번 W자를 그린다.</p>
+<h2>3. 언어 습득의 신학 — 말 배우는 굴욕</h2>
+<p>문화의 경계를 넘는 가장 구체적인 관문은 언어다. 그리고 여기서 타문화선교는 언어를 단순한 도구로 보는 관점과 갈라선다. 언어를 배운다는 것은 정보 전달 수단을 하나 장착하는 일이 아니라, 다 큰 어른이 다시 어린아이가 되어 더듬거리고 틀리고 웃음거리가 되는 일이다. 앞의 반말 실험에서 말수가 줄고 기분이 상하듯, 언어를 잃은 자는 무력해진다. 바로 그 무력이 핵심이다. 성육신(<a class="wl" href="../../t/%EC%84%B1%EC%9C%A1%EC%8B%A0/">성육신</a>)이 하나님이 사람의 말과 육신을 입고 낮아지신 사건이라면, 선교사가 현지어 앞에서 겪는 굴욕은 그 낮아짐의 축소판이다. 말 배우는 굴욕은 곧 <a class="wl" href="../../t/%EA%B2%B8%EC%86%90/">겸손</a>의 학교다.</p>
+<p>손창남이 타문화 사역자 준비에서 거듭 말하는 것도 이 지점이다. 오늘의 선교지에는 압도적 전문성을 갖춘 사람이거나 철저히 낮아져 성육신적 삶을 사는 사람이 필요하며, 가장 위험한 것은 그 어느 쪽도 아닌 채 "어정쩡한 중간 영역"에서 낭만만 즐기는 상태다. 언어 습득은 그 성육신적 낮아짐이 매일 시험받는 첫 자리다. 바울이 "여러 사람에게 여러 모습이 된" 것(고전 9:22)은 은유가 아니라 실제로 그들의 말과 논리를 배우는 수고였다. 상황화의 언어적 성취 — 초대교회가 '갓피어러', '카리스(은혜)', '쿠리오스(주)' 같은 헬라의 낱말을 복음의 그릇으로 빼앗아 온 앤드루 월스의 '상징 빼앗기' — 도 결국 그 언어를 뼛속까지 배운 사람만이 해낼 수 있는 일이다. 언어를 얕게 아는 사람은 남의 상징을 빼앗기는커녕 자기 상징을 오해받는다.</p>
+<p>여기서 한 가지 통념을 저울에 올려야 한다. 선교계에는 "말은 안 통해도 선교는 통한다"는 오래된 격언이 있다. ⚖️ 이 말은 절반의 진실이다. 사랑과 섬김은 문법이 무너진 자리에서도 전달되며, 언어가 미숙한 초기에도 삶으로 증거되는 복음은 분명히 있다 — 비언어적 현시(demonstration)의 힘을 부정할 수 없다. 그러나 이 격언은 언어 습득을 게을리할 핑계가 되는 순간 독이 된다. 말이 안 통해도 통하는 무언가가 있다는 사실이, 말을 배우지 않아도 된다는 허가로 뒤집히면 성육신은 중단된다. 하나님은 인류의 언어를 '대충' 입지 않으셨다. 말이 통하지 않아도 사랑은 시작될 수 있지만, 사랑이 깊어지려면 끝내 그 사람의 말로 그를 불러야 한다. 언어 습득의 신학은 이 둘을 동시에 붙든다 — 처음엔 말 없이도 사랑하되, 끝까지 말을 배워 사랑하라.</p>
+<h2>4. 관계의 기술 — 시간과 파트너십</h2>
+<p>타문화 사역의 열매는 프로젝트가 아니라 관계에서 맺힌다. 그리고 관계에는 지름길이 없다. 신뢰는 시간의 함수이며, 외부인이 공동체의 안쪽으로 들어가는 데는 문화가 정한 만큼의 시간이 반드시 든다. 조급함은 관계를 얻는 대신 의심을 산다. <span class="wl-dead" title="위키 내부 링크">박태훈</span>이 단기선교를 "관계를 위한 여정"으로 재정의한 것도 이 원리에서 나온다. 현지 교회가 성장하고 이동성이 커진 21세기에는, 외부 자원을 투입하는 것보다 관계를 형성하는 것이 훨씬 값진 기여가 되었다는 것이다.</p>
+<p>관계의 가장 미묘한 함정은 후원자-수혜자 구도다. 자원을 가진 쪽이 주고 없는 쪽이 받는 구조는 편리하지만, 그 편리함이 현지 교회를 영원한 수혜자로 고착시킨다. 손창남은 이 위험을 두 종류의 배로 대비한다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>파워보트 모델</th>
+<th>세일보트 모델</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>동력</strong></td>
+<td>사람의 힘·자원 (엔진)</td>
+<td>성령의 바람</td>
+</tr>
+<tr>
+<td><strong>현지 교회</strong></td>
+<td>선교의 대상</td>
+<td>대등한 동반자</td>
+</tr>
+<tr>
+<td><strong>하나됨과 과업</strong></td>
+<td>과업에 하나됨이 종속</td>
+<td>하나됨에 과업이 종속</td>
+</tr>
+<tr>
+<td><strong>출구</strong></td>
+<td>선교사가 계속 중심</td>
+<td>처음부터 현지 교회로 이양</td>
+</tr>
+</tbody>
+</table>
+<p>파워보트는 빠르지만 연료가 떨어지면 멈추고, 무엇보다 현지인을 승객으로 남긴다. 세일보트는 느리지만 바람에 의존하며 현지 교회를 함께 노 젓는 선원으로 세운다. 그래서 조샘(<span class="wl-dead" title="위키 내부 링크">조샘</span>)이 <span class="wl-dead" title="위키 내부 링크">인터서브</span> 사역에서 강조하는 순서가 결정적이다 — 가치(Value)·사람(People)·사역(Ministry)의 순서. 사역의 효율보다 사람이 먼저이고, 사람은 공유된 가치에서 자란다. 인터서브가 말하는 Y-Culture, 곧 경계를 가로질러 다른 문화의 사람들과 '함께' 일하는 자세도 여기서 나온다.</p>
+<p>이 원리는 후원 관계에도 똑같이 적용된다. 손창남은 후원 모집을 단순한 모금(fundraising)이 아니라 동역자를 세우는 일(friendraising)로 다시 정의한다. 돈을 받아 오는 것이 아니라 평생의 기도 파트너를 얻는 것이다. 그리고 현지 교회와의 관계에서 주도권을 언제 어떻게 넘길지는 선교사가 도착하는 날부터 품어야 할 질문이다. 사도행전 15장의 예루살렘 공의회가 이방인의 상황을 청취하고 현지의 분별을 존중한 것처럼, 건강한 타문화 사역은 결정권을 독점하지 않고 현지 성도 역시 성령의 인도를 받고 있음을 신뢰한다. 관계의 기술은 결국 떠날 준비를 하며 머무는 기술이다.</p>
+<h2>5. 타문화 사역자의 정체성 — 영원한 손님으로 사는 법</h2>
+<p>문화의 경계에 오래 서 있는 사람은 독특한 정체성의 문제를 안는다. 그는 본국에서도 온전한 내부자가 아니고, 현지에서도 끝내 완전한 내부자가 되지 못한다. 손창남은 이 이중적 자리를 '거류민과 나그네'의 소명으로 읽는다. 나그네의 삶이란 자유인으로 살면서 동시에 인간이 세운 모든 제도에 순복하는 역설이며, 두 문화 사이에 다리를 놓는 자원자의 자리다. 그는 어디에도 완전히 속하지 않기에 어디에서나 손님이다.</p>
+<p>이 '영원한 손님(게스트)'의 영성은 상실처럼 느껴지지만 실은 은사다. 어느 문화도 절대화하지 않는 눈, 양쪽을 동시에 볼 수 있는 경계인의 시야가 거기서 열린다. 손창남이 자기인식(self-awareness)이 높은 사람일수록 타문화 민감성이 높고 사역 기술 습득도 빠르다고 관찰한 것은 이 때문이다. 자기가 어떤 물속의 물고기인지 아는 사람만이 다른 물의 결을 읽는다.</p>
+<p>이 정체성은 정적인 상태가 아니라 변형의 과정이다. 손창남은 로마서 12장 2절의 "변화를 받으라"를 생물학의 변태(metamorphosis)로 풀어낸다 — 애벌레가 누에고치를 거쳐 나방이 되듯, 한 생명이 그 정체성을 잃지 않으면서 전혀 다른 존재로 바뀌는 것. 타문화 사역자는 자기 문화의 애벌레로 남지도 않고 현지 문화에 완전히 흡수되어 사라지지도 않은 채, 두 세계를 품은 제3의 존재로 빚어진다. 게스트로 사는 법을 배우는 것은 곧 이 변태를 견디는 법을 배우는 것이다.</p>
+<h2>6. 가정과 팀 — 중도 탈락의 진짜 이유</h2>
+<p>타문화선교의 가장 아픈 통계는 선교사가 왜 현장을 떠나는가에 관한 것이다. 손창남은 조기 귀환의 원인을 분석하며, 그 주된 이유가 '지식의 부족'이 아니라는 사실을 분명히 한다.</p>
+<table>
+<thead>
+<tr>
+<th>중도 탈락의 3대 원인</th>
+<th>뿌리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>① 검증되지 않은 헌신 — 영성의 결핍</td>
+<td>존재(Being)의 문제</td>
+</tr>
+<tr>
+<td>② 타인과 어울리지 못함 — 관계성의 결핍</td>
+<td>관계의 문제</td>
+</tr>
+<tr>
+<td>③ 총체적 사전 훈련의 부재</td>
+<td>준비의 문제</td>
+</tr>
+</tbody>
+</table>
+<p>세 가지 모두 신학 지식이나 사역 기술(Doing)이 아니라 인격과 관계(Being)의 문제다. 다시 말해 선교사를 무너뜨리는 것은 대개 이슬람 신학의 난해함이 아니라 부부 갈등, 자녀 문제, 팀 내부의 불화다. 문화 충격의 300에 달하는 스트레스는 개인에게만 오는 것이 아니라 가정과 팀이라는 관계망 전체에 실린다.</p>
+<p>그래서 손창남은 선교사 자녀 교육을 선교의 "아킬레스건"이라 부르며 정면 돌파를 주문한다. 한국인이자 그리스도인이라는 정체성을 심어 주되, 초등학교 졸업 전까지는 부모 시간의 절반을 과감히 자녀에게 할애하라는 것이다. MK가 무너지면 사역도 무너진다. 팀 역시 마찬가지다 — 선교사를 빚는 일곱 형성 궤도(가정·일터·지역 교회·정규 학교·선교 기관·현지 교회·대인 관계) 가운데 가장 근본은 가정이고, 가장 일상적인 거울은 대인 관계다.</p>
+<p>이 현실이 멤버 케어(member care)를 사치가 아니라 생존의 조건으로 만든다. 손창남은 장기 사역을 지탱해 줄 영적·사역적 멘토를 반드시 미리 확보하라고 조언하고, 전인적 건강관리 — 대사성 질환 검진과 예방접종 같은 신체 돌봄만이 아니라 영적 고갈과 우울증을 막는 정신 건강 돌봄 — 를 훈련의 필수 항목으로 못박는다. 특히 신체적·정서적 이상을 공동체에 숨기는 것은 절대 금물이다. 홀로 견디다 무너지는 것이 타문화 현장의 가장 흔한 비극이기 때문이다. 관계가 사역을 지탱한다는 원리는 밖으로는 현지인과의 파트너십으로, 안으로는 가정과 팀의 돌봄으로 똑같이 작동한다.</p>
+<h2>7. 실패에서 배우기 — 문화적 실수의 해부</h2>
+<p>문화의 경계를 넘는 일에 실수는 예외가 아니라 상수다. 중요한 것은 실수를 피하는 것이 아니라 — 피할 수 없다 — 실수를 읽고 회복하는 법을 아는 것이다. 실수는 대체로 몇 가지 유형으로 나뉜다.</p>
+<table>
+<thead>
+<tr>
+<th>실수 유형</th>
+<th>정체</th>
+<th>회복의 방향</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>표면 행동 정죄</strong></td>
+<td>행동층만 보고 세계관층을 못 읽음</td>
+<td>정죄 전에 "무엇을 하는지"부터 안다</td>
+</tr>
+<tr>
+<td><strong>자문화 우월 판단</strong></td>
+<td>'더럽다·미개하다'는 기준을 절대화</td>
+<td>우열 판단을 내려놓고 다름으로 본다</td>
+</tr>
+<tr>
+<td><strong>로컬 룰 무시</strong></td>
+<td>그곳의 게임 룰을 어겨 '아웃'당함</td>
+<td>관찰과 질문으로 룰을 먼저 배운다</td>
+</tr>
+<tr>
+<td><strong>성급한 상황화</strong></td>
+<td>형식만 옮겨 의미가 왜곡됨(혼합주의)</td>
+<td>현지 신자와 함께 비판적으로 분별한다</td>
+</tr>
+</tbody>
+</table>
+<p>가장 뼈아픈 실패는 복음 자체가 오독되는 경우다. 이 볼트가 간직한 대표적 사례를 <span class="wl-dead" title="위키 내부 링크">조샘</span>·손창남 계열이 아니라 상황화 연구에서 김연수 선교사가 이리안자야 현장에서 확인했다.</p>
+<blockquote>
+<p>요한계시록 3장 20절의 문 밖에 서서 두드리는 예수는, 밤에 문을 두드리는 자가 도둑인 문화에서 초청이 아니라 침입으로 수신된다. 양과 염소가 없는 곳에서 어린 양 비유는 허공을 친다.</p>
+</blockquote>
+<p>선교사가 아무리 정확한 복음을 전해도, 수신자의 문화 코드를 읽지 못하면 메시지는 정반대로 도착한다. 이 실패의 신학은 <a class="wl" href="../../t/%EC%83%81%ED%99%A9%ED%99%94/">상황화</a>에서 '수신자 중심 커뮤니케이션'과 혼합주의의 문제로 깊이 다루어지므로 여기서는 그 실천적 교훈만 취한다 — <strong>복음의 실패는 대개 복음의 내용이 아니라 문화의 문법에서 온다.</strong></p>
+<p>회복의 첫걸음은 성급한 정죄를 멈추는 것이다. 현지의 낯선 관습 앞에서 선교사가 가장 먼저 할 일은 판단이 아니라 이해다. 손창남이 교회 컨설팅에서 '두잉(doing)'보다 '비잉(being)', 곧 무엇을 하느냐보다 어떤 체질인가를 먼저 물은 것과 같은 이치로, 타문화 사역자의 성숙도 실수의 횟수가 아니라 실수를 다루는 태도에서 드러난다. 실수를 숨기는 사람은 고립되고, 실수를 배움으로 바꾸는 사람은 곡선의 밑바닥을 통과해 적응에 이른다. 실패는 건너감의 실패가 아니라, 건너감이 실제로 일어나고 있다는 증거일 때가 많다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>타문화선교의 핵심 난관은 신학이 아니라 인격이다. 선교사를 무너뜨리는 것은 대개 교리의 난해함이 아니라 문화 충격·부부 갈등·자녀 문제·팀 불화이며, 중도 탈락의 3대 원인(영성·관계성·사전 훈련의 결핍) 모두가 'Doing'이 아니라 'Being'의 영역에 있다.</li>
+<li>문화 충격은 병이 아니라 통과의례다. 배우자의 죽음 세 배에 달하는 스트레스 곡선의 밑바닥은 실패의 신호가 아니라, 표면의 신기함이 걷히고 진짜 문화와 대면하기 시작했다는 신호다.</li>
+<li>문화의 우열은 판단할 수 없다. '더럽다'는 기준조차 생각 속에 있을 뿐이며, 표면 행동층에서 정죄하기 전에 세계관층까지 내려가 읽어야 오해가 풀린다.</li>
+<li>언어 습득은 성육신의 축소판이다. 말 배우는 굴욕이 곧 낮아짐의 학교이며, "말은 안 통해도 선교는 통한다"는 격언은 사랑의 시작을 말할 뿐 언어 게으름의 허가가 아니다.</li>
+<li>관계에는 지름길이 없고, 건강한 사역은 떠날 준비를 하며 머문다. 파워보트(현지인=승객)가 아니라 세일보트(현지 교회=선원)를 택하고, 후원조차 모금이 아니라 동역자를 세우는 일로 다시 정의된다.</li>
+<li>복음의 실패는 대개 내용이 아니라 문화의 문법에서 온다. 정확한 메시지도 수신자의 코드를 놓치면 초청이 침입으로 도착한다.</li>
+<li>타문화 사역자는 '영원한 손님'이다. 어디에도 완전히 속하지 못하는 경계인의 자리가 상실이 아니라, 어느 문화도 절대화하지 않는 눈을 얻는 은사가 된다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>문화 충격의 U자 곡선을 아는 것과 통과하는 것은 다르다. 곡선의 밑바닥에서 '이것은 통과의례'라는 인식이 실제로 위기를 견디게 하는가, 아니면 개인의 영성과 공동체의 돌봄이라는 별개의 자원이 있어야만 하는가?</li>
+<li>"말은 안 통해도 선교는 통한다"와 "끝까지 언어를 배우라" 사이의 균형점은 누가, 어떤 기준으로 정하는가? 은퇴가 가까운 사역자나 단기 사역자에게도 같은 언어 기준을 요구하는 것이 성육신적인가?</li>
+<li>주도권을 현지 교회로 이양하는 '출구 전략'은 언제가 적기인가? 너무 이르면 미성숙한 교회를 방치하고, 너무 늦으면 의존을 고착시킨다 — 이 시점을 분별하는 기준은 무엇인가?</li>
+<li>한국 교회의 타문화선교는 여전히 파워보트 모델(자원 투입·선교사 중심)을 세일보트의 언어로 포장하고 있지 않은가? 재정 규모가 곧 영향력이 되는 구조에서 진정한 파트너십은 가능한가?</li>
+<li>선교사 자녀(MK)에게 모국이 또 하나의 타문화라면, '어느 문화에도 온전히 속하지 못하는' 경계인의 정체성은 물려줄 은사인가, 짊어지울 짐인가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%83%81%ED%99%A9%ED%99%94/">상황화</a> — 복음-문화 이론, 수신자 중심 커뮤니케이션, 혼합주의의 경계 (이 페이지의 이론적 짝)</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%ED%95%99/">선교학</a> — 선교 역사의 구조(modality/sodality), 미전도종족, 패러다임 전환</li>
+<li><a class="wl" href="../../t/%EC%9D%B4%EC%A3%BC%EB%AF%BC%EC%84%A0%EA%B5%90/">이주민선교</a> — 방향이 뒤집힌 선교, 우리 곁으로 찾아온 나그네</li>
+<li><a class="wl" href="../../t/%EB%94%94%EC%95%84%EC%8A%A4%ED%8F%AC%EB%9D%BC%EC%84%A0%EA%B5%90/">디아스포라선교</a> — 흩어짐을 통한 타문화 접촉</li>
+<li><a class="wl" href="../../t/%EC%A0%84%EB%AC%B8%EC%9D%B8%EC%84%A0%EA%B5%90/">전문인선교</a> — 직업이라는 신분으로 문화 경계를 넘는 진입 전략</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EC%9C%A1%EC%8B%A0/">성육신</a> — 낮아짐으로서의 언어 습득과 문화 적응의 신학적 뿌리</li>
+<li><a class="wl" href="../../t/%EA%B2%B8%EC%86%90/">겸손</a> — 말 배우는 굴욕이 여는 성육신적 자세</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EC%82%B6/">선교적삶</a> — 현장 진입 이전, 일상에서 시작되는 선교적 체질</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EB%8F%99%EC%9B%90/">선교동원</a> — 동원 중심에서 참여·파트너십 모델로의 전환</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">손창남</span> 「선교와 문화」 (LMTC 훈련, 2014)</td>
+<td>강의</td>
+<td>문화=게임의 룰, 콰스트 4층 구조, 아침식탁 예화, 우열 판단 불가, 문화 충격 지수(그리피스), 부부생활 그래프, 역문화 충격·MK 오리엔테이션, 변태(롬 12:2), 에드워드 홀</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">손창남</span> 「타문화 선교」 (2019)</td>
+<td>강의</td>
+<td>타문화 사역자의 준비, 초대교회 상황화(갓피어러·카리스·쿠리오스), 앤드루 월스 '상징 빼앗기'</td>
+</tr>
+<tr>
+<td>「멘토링1 타문화 선교사가 되기 위한 준비」 (동신 미션&amp;톡)</td>
+<td>강의</td>
+<td>Being·Knowing·Doing 세 기둥, 중도 탈락 3대 원인, 일곱 형성 궤도, 파워보트/세일보트, 어정쩡한 중간 영역의 위험</td>
+</tr>
+<tr>
+<td>「멘토링3 문화와 단기선교」 (동신 미션&amp;톡)</td>
+<td>강의</td>
+<td>로이드 콰스트 4층 구조, 셔우드 링겐펠터 '문화의 감옥', 창덕궁 왕, 거류민과 나그네, 단기선교 6원칙, Friendraising, MK=아킬레스건, 건강관리</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">손창남</span> 「선교 컨설팅」 (선교실행위)</td>
+<td>회의</td>
+<td>Doing mission vs Being missional, 체질 개선의 우선성</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EA%B5%90%ED%9A%8C%EC%99%80%EC%84%A0%EA%B5%90_%EC%86%90%EC%B0%BD%EB%82%A8/">교회와선교_손창남</a></td>
+<td>책</td>
+<td>게임의 룰 → 수신자 중심 → 상황화 → 혼합주의 경계의 문화적 관점</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%83%81%ED%99%A9%ED%99%94/">상황화</a> (김연수 이리안자야 사례 등)</td>
+<td>위키</td>
+<td>계 3:20 문 두드림=침입, 어린 양 비유의 허공—복음 오독의 실패 사례</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">조샘</span> 「가치-사람-사역」 (<span class="wl-dead" title="위키 내부 링크">인터서브</span>)</td>
+<td>강의</td>
+<td>Value-People-Ministry 순서, Y-Culture, 파트너십의 신학</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">박태훈</span> 「목적 있는 단기선교」</td>
+<td>강의</td>
+<td>단기선교를 '관계를 위한 여정'으로 재정의, Pre/On/Post-field</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2018_권게바선교사_몽골선교사역현황과제자양육</span></td>
+<td>강의</td>
+<td>몽골 현장의 타문화 도전, 기복신앙과 제자 양육, 교각사역</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#선교</span><span>#타문화적응</span><span>#문화충격</span><span>#성육신적선교</span><span>#현지인동역</span><span>#멤버케어</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

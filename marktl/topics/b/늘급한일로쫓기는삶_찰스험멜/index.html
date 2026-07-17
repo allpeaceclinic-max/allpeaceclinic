@@ -1,0 +1,168 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>늘 급한 일로 쫓기는 삶 (Tyranny of the Urgent) — 찰스 험멜 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:345">영성·제자도</span><span class="author">찰스험멜</span><span class="date">2026-05-06</span></div>
+  <h1 class="note-title">늘 급한 일로 쫓기는 삶 (Tyranny of the Urgent) — 찰스 험멜</h1>
+  
+</header>
+<article class="note">
+<blockquote>
+<p><em>2013.2.28 목요제자반 독후감 — 이상협 집사</em></p>
+<p>"내 삶의 가장 중요한 일은 하나님과 time spending 하는 것이다."</p>
+</blockquote>
+<hr />
+<h2>핵심 개념</h2>
+<h3>긴급한 일의 횡포</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>긴급한 일</th>
+<th>중요한 일</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>특성</td>
+<td>즉각 반응을 요구</td>
+<td>장기적 가치를 가짐</td>
+</tr>
+<tr>
+<td>함정</td>
+<td>소리가 커서 중요한 일처럼 느껴짐</td>
+<td>소리가 없어서 밀려남</td>
+</tr>
+<tr>
+<td>결과</td>
+<td>삶을 점령함</td>
+<td>삶에서 사라짐</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>긴급한 일의 필요성 자체가 부르심은 아니다.</strong></p>
+</blockquote>
+<hr />
+<h2>★ 예수님의 모델 — 짧은 공생애의 역설</h2>
+<blockquote>
+<p>예수님도 식사할 겨를이 없을 정도로 바쁘셨다.
+그러나 짧은 공생애로 모든 것을 다 이루셨다.</p>
+</blockquote>
+<ul>
+<li>오래 사는 것 / 많은 일을 하는 것 = 인생의 목적이 아니다</li>
+<li>성공적인 삶의 기준: <strong>자신의 뜻이 아닌 하나님의 뜻을 이루는 것</strong></li>
+<li>예수님의 방식 = 하나님의 뜻을 분별하고 그대로 사는 것</li>
+</ul>
+<hr />
+<h2>두 가지 압력에서 벗어나기</h2>
+<ul>
+<li><strong>내적 강박관념(강압)</strong> — 내 안에서 나를 몰아붙이는 힘</li>
+<li><strong>외적 중압감</strong> — 밖에서 요구하는 긴급함</li>
+</ul>
+<p>→ 둘 다 <strong>옛사람의 모습</strong>. 처방은 time spending을 통한 뜻 분별.</p>
+<hr />
+<h2>★ 개인 적용 (이상협, 2013)</h2>
+<p><strong>강은이 이야기:</strong></p>
+<blockquote>
+<p>레지던트 시절 집에 자주 들어가지 못했을 때,
+큰 딸이 아빠를 옆집 아저씨 보듯 했다.</p>
+<p>→ <strong>아버지와 시간을 보내지 않으면 아버지의 사랑과 뜻을 알 수 없다.</strong>
+→ 하나님과의 관계도 같다.</p>
+</blockquote>
+<p><strong>세 가지 다짐:</strong>
+1. 하루의 삶 가운데 <strong>QT를 통해 하나님의 뜻을 알고 그대로 살기</strong>
+2. 시간 사용에 있어 <strong>청지기 역할</strong>을 다하기
+3. 가장 중요한 일(하나님과의 time spending)을 <strong>긴급한 일과 전화의 횡포에서 지켜내기</strong></p>
+<hr />
+<h2>연결된 페이지</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a> — 긴급함이 부르심은 아니다</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%84/">기도</a> — QT, 하나님과의 time spending</li>
+<li><a class="wl" href="../../t/%EC%B2%AD%EC%A7%80%EA%B8%B0/">청지기</a> — 시간의 청지기</li>
+</ul>
+</article>
+<div class="tagrow"><span>#영성</span><span>#시간관리</span><span>#소명</span><span>#기도</span><span>#QT</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

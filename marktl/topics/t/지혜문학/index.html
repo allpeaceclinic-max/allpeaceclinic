@@ -1,0 +1,119 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>지혜문학 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:174">성경·해석</span><span class="date">2026-06-28</span></div>
+  <h1 class="note-title">지혜문학</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>지혜문학(Wisdom Literature)은 구약 정경의 토라-느비임-<strong>케투빔</strong>(성문서) 삼분 구조 중 케투빔에 속하는 문학군으로, 잠언·욥기·전도서를 중심으로 하며 넓게는 아가서·일부 시편을 포함한다. 율법서·예언서와 달리 언약(베리트)이나 "여호와께서 말씀하시기를"(코 아마르 아도나이) 같은 계시 선언 어법이 거의 없이, <strong>삶의 원리와 인과응보의 틀</strong> 안에서 창조 질서를 관찰하고 지혜를 제공한다(<span class="wl-dead" title="위키 내부 링크">01주_지혜문학과아가서</span>).</p>
+<h2>1. 소극적 정의 — 어휘의 공백</h2>
+<p>지혜문학의 정체성은 무엇이 <em>없는가</em>로도 규정된다. "언약"은 창세기에만 27번 나오지만 욥기에 3번·잠언에 1번뿐이고, 예언 정형구 "코 아마르 아도나이"는 아예 등장하지 않는다. 이 공백이 예언서(심판·회복 선포)와 지혜문학(삶의 관찰)의 프레임 차이를 드러낸다.</p>
+<h2>2. 호크마 — 발견으로서의 지혜</h2>
+<p>지혜(호크마)는 지식적 성격이 강하나, 고대의 지식은 현대의 "진보"가 아니라 <strong>이미 존재하는 창조 질서의 발견</strong>이다. 무지한 자는 이미 있는 것을 발견하지 못할 뿐이다(시 92:5-6).</p>
+<h2>3. 잠언–전도서–애가의 삼중 응답</h2>
+<p>같은 인과응보 틀을 세 목소리가 다르게 다룬다: <strong>잠언</strong>은 원리를 제시하고(평행법의 이미지-설명 구조, 제임스 쿠겔), <strong>전도서</strong>(코헬렛)는 원리와 현실의 간극을 회의하며(헛되다→그럼에도 심판하신다), <strong>애가</strong>는 그 간극이 극단에 이른 자리에서 침묵하시는 하나님께 질문을 던진다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>지혜문학은 "계시 선언" 없이 삶의 관찰만으로 지혜를 전달한다.</li>
+<li>인과응보는 하나의 스펙트럼 — 원리(잠언)·회의(전도서)·침묵 속 임재(애가)로 확장된다.</li>
+<li>고대적 지식 = 진보가 아니라 창조 질서의 발견.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>계시 정형구의 부재가 지혜문학을 "계시성 약한 문학"으로 격하하는 오독을 낳지 않으려면?</li>
+<li>고통 앞에서 인과응보적 설명과 애가적 침묵 중 무엇이 언제 필요한가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><span class="wl-dead" title="위키 내부 링크">01주_지혜문학과아가서</span> — 본 주제의 일차 출처</li>
+<li><a class="wl" href="../../t/%EC%A0%84%EB%8F%84/">전도</a> · <a class="wl" href="../../t/%EC%8B%9C%ED%8E%B8/">시편</a> — 지혜·기도 문학</li>
+<li><span class="wl-dead" title="위키 내부 링크">제임스쿠겔</span> — 평행법 시학</li>
+</ul>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/구약학</span><span>#topic/지혜문학</span><span>#topic/인과응보</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

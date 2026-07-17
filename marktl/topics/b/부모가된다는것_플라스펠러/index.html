@@ -1,0 +1,217 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>부모가 된다는 것 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:25">상담·치유·가정</span><span class="author">스베냐 플라스펠러</span><span class="date">2026-05-03</span></div>
+  <h1 class="note-title">부모가 된다는 것</h1>
+  
+</header>
+<article class="note">
+<p><strong>저자</strong>: 스베냐 플라스펠러(Svenja Flaßpöhler) 외<br />
+<strong>분류</strong>: 자녀양육 / 철학 / 기독교 가정</p>
+<blockquote>
+<p>부모가 되는 과정을 철학적 모험으로 풀어낸다.
+부부 관계와 시간 인식의 변화 등을 다룬다.</p>
+</blockquote>
+<hr />
+<h2>1. 핵심 전제: 하나님의 권위 구조</h2>
+<ul>
+<li>모든 자녀의 생명은 하나님의 창조 — 하나님은 모든 만물에 계획과 목적을 두셨다</li>
+<li><strong>권위의 원리</strong>: 인간을 향한 하나님의 계획이 질서 있게 수행되도록 하나님이 고안한 것</li>
+<li>부모 = <strong>하나님 권위의 상징이자 대표자</strong></li>
+<li>부모의 권위는 모든 제도 중 가장 광범위 — 자녀에게 순종을 요구할 권리 포함</li>
+<li>부모들은 자신의 통치권에 대해 <strong>오직 하나님께만</strong> 책임이 있다</li>
+</ul>
+<hr />
+<h2>2. 자녀의 본성 — 두 가지 문제</h2>
+<h3>독립 의지 (자율 추구)</h3>
+<ul>
+<li>모든 아이는 <strong>자율을 추구하는 독립 의지</strong>를 갖고 태어난다</li>
+<li>자기 욕망에 따라 자기 자신을 다스리길 원함</li>
+</ul>
+<h3>죄성 (sinful nature)</h3>
+<ul>
+<li>모든 아이는 <strong>전적으로 자기 중심적</strong>이 되게 하는 죄성을 소유 (시51:5, 시58:3)</li>
+<li>관심·힘·자기 만족에 대한 욕망 = 육신의 소욕</li>
+<li>이 죄성은 억제되어야 한다 — 부모의 책임</li>
+</ul>
+<hr />
+<h2>3. 부모-자녀 갈등의 구조</h2>
+<p><code>부모의 권위 (다스릴 권리)
+        ↕ 갈등
+자녀의 의지 + 죄성</code></p>
+<ul>
+<li>부모가 자녀를 지시·통제할 때 → 자녀의 의지와 충돌</li>
+<li>부모가 자녀의 욕망을 제한할 때 → 자녀의 죄된 본성과 갈등</li>
+<li>이 갈등은 피할 수 없다 — <strong>반항</strong>으로 표출됨</li>
+</ul>
+<hr />
+<h2>4. 반항의 두 가지 형태</h2>
+<h3>적극적 반항</h3>
+<p>듣지 않기 · 논쟁하기 · 말대답 · 대답하지 않기 · 도망가기 ·
+때리기 · 성질부리기 · 말로 거절하기 · 직접적 불순종</p>
+<h3>소극적 반항</h3>
+<p>명령을 계속 잊기 · 복종할 준비가 될 때까지 기다리기 ·
+올바른 방식으로 순종하지 않기 · 속으로는 화가 나면서 겉으로만 순종</p>
+<h3>반항을 해결할 수 없는 방법들</h3>
+<ul>
+<li>논리적 설득 · 뇌물 · 관심 방향 전환 · 감정 자극 · 조작
+→ 이 방법들은 근본 문제를 해결하지 못한다</li>
+</ul>
+<hr />
+<h2>5. 훈련의 원리: 권위 재확립</h2>
+<ul>
+<li>반항은 <strong>타협하지 말고, 다스려야</strong> 한다</li>
+<li>반항을 다스린다 = <strong>부모의 권위를 재확립</strong>하는 것</li>
+<li>부모의 뜻대로 행하도록 강력한 지배력 사용</li>
+</ul>
+<p><strong>부모의 책임 3가지</strong>:
+1. 규칙을 만들고 자녀가 따르도록 명령할 권리
+2. 불순종을 처벌할 권리
+3. 명령을 따르는 데 상을 줄 권리</p>
+<hr />
+<h2>6. 순종과 공경 — 성경적 근거</h2>
+<blockquote>
+<p>엡6:2 "네 아버지와 어머니를 공경하라"<br />
+엡6:4 "주의 교훈과 훈계로 양육하라"<br />
+잠22:6 "마땅히 행할 길을 아이에게 가르치라"</p>
+</blockquote>
+<h3>순종의 결과 — 축복과 저주</h3>
+<table>
+<thead>
+<tr>
+<th>축복 (순종)</th>
+<th>저주 (불순종)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>잠10:1a — 지혜로운 아들은 아비를 기쁘게</td>
+<td>잠10:1b — 미련한 아들은 어미의 근심</td>
+</tr>
+<tr>
+<td>잠23:24-25 — 의인의 아비는 크게 즐거움</td>
+<td>잠17:21 — 미련한 자를 낳은 자의 근심</td>
+</tr>
+<tr>
+<td>잠29:17 — 네 아들을 징계하라, 안식을 얻으리라</td>
+<td>잠29:15b — 방임하면 어미를 욕되게 함</td>
+</tr>
+<tr>
+<td>잠31:28 — 자녀들이 일어나 복되다 함</td>
+<td>삼상3:13 — 엘리의 실패</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>7. 발달단계별 훈련</h2>
+<ul>
+<li>아이들은 <strong>다양한 발달단계</strong>에 따라 설명됨 (성경적 근거)</li>
+<li>각 단계마다 개별적 특성 → 단계에 맞는 훈련 방식이 필요</li>
+</ul>
+<hr />
+<h2>탐구 중인 질문</h2>
+<p><strong>Q1. 권위 중심 양육과 관계 중심 양육은 어떻게 통합되는가?</strong>
+- 이 책: 권위와 훈련 강조
+- <span class="wl-dead" title="위키 내부 링크">부모교육시리즈</span> (윤명숙) — 관계·공감·내면치유 강조
+- 부분 답변: <a class="wl" href="../../t/%EB%91%90%EB%A0%A4%EC%9B%80/">두려움</a> — 종의 영 vs 양자의 영, 두려움 기반 순종의 한계
+- 여전히 열린 질문: 권위를 세우되 관계를 잃지 않는 균형은 무엇인가?</p>
+<p><strong>Q2. 죄성 억제와 은혜의 관계는?</strong>
+- 이 책: 부모가 죄성을 억제할 책임
+- 부분 답변: <a class="wl" href="../../b/%EB%B3%80%ED%99%94%EC%97%90%EB%8C%80%ED%95%9C%EB%AC%B5%EC%83%81%EB%B0%8F%EC%B1%85%EC%A0%95%EB%A6%AC/">변화에대한묵상및책정리</a> — 마음(카르디아) 수준의 변화
+- 여전히 열린 질문: 훈련(discipline)과 복음(grace)은 어떤 비율로 함께 작동해야 하는가?</p>
+<hr />
+<h2>관련 페이지</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%9E%90%EB%85%80%EC%96%91%EC%9C%A1/">자녀양육</a> — 자녀 양육 신학과 실천</li>
+<li><a class="wl" href="../../t/%EA%B0%80%EC%A0%95%EC%82%AC%EC%97%AD/">가정사역</a> — 부부관계, 가정의 선교적 의미</li>
+<li><a class="wl" href="../../t/%EB%B6%80%EB%AA%A8%EA%B5%90%EC%9C%A1/">부모교육</a> — 기독 부모교육 이론 체계</li>
+<li><span class="wl-dead" title="위키 내부 링크">부모교육시리즈</span> — 윤명숙 전도사, 기독 부모교육 7강</li>
+<li><a class="wl" href="../../t/%EB%91%90%EB%A0%A4%EC%9B%80/">두려움</a> — 종의 영 vs 양자의 영</li>
+<li><a class="wl" href="../../b/%EB%B3%80%ED%99%94%EC%97%90%EB%8C%80%ED%95%9C%EB%AC%B5%EC%83%81%EB%B0%8F%EC%B1%85%EC%A0%95%EB%A6%AC/">변화에대한묵상및책정리</a> — 마음 수준의 변화</li>
+</ul>
+</article>
+<div class="tagrow"><span>#자녀양육</span><span>#부모교육</span><span>#권위</span><span>#훈련</span><span>#가정사역</span><span>#철학</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

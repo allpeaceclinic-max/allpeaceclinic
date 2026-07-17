@@ -1,0 +1,393 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>선교적 가정 — 송기태 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:25">상담·치유·가정</span><span class="author">송기태</span><span class="date">2026-05-06</span></div>
+  <h1 class="note-title">선교적 가정 — 송기태</h1>
+  
+</header>
+<article class="note">
+<blockquote>
+<p>"가정은 생존을 위해서 존재하지 않는다. 행복 자체를 위해서도 존재하지 않는다.<br />
+가정은 오직 하나님의 영광과 하나님 나라를 위해서 존재한다." — <span class="wl-dead" title="위키 내부 링크">송기태</span></p>
+</blockquote>
+<hr />
+<h2>개요</h2>
+<p><span class="wl-dead" title="위키 내부 링크">송기태</span> 선교사(인터서브 코리아)의 LAMs 과정 교재 시리즈.<br />
+<strong>아담 → 노아 → 아브라함</strong> 가정을 성경적 선교 단위로 재발견하고,<br />
+오늘날 기독 가정의 정체성과 사명을 정립한다.</p>
+<table>
+<thead>
+<tr>
+<th>과</th>
+<th>제목</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제1과</td>
+<td>아담의 가정 I — 가정의 목적</td>
+</tr>
+<tr>
+<td>제2과</td>
+<td>아담의 가정 II — 가정의 영적 전투</td>
+</tr>
+<tr>
+<td>제3과</td>
+<td>아담의 가정 III — 자녀 양육과 제자도</td>
+</tr>
+<tr>
+<td>제4과</td>
+<td>노아의 가정 — 미셔널 패밀리</td>
+</tr>
+<tr>
+<td>제6과</td>
+<td>아브라함 가정 II — 두려움에 직면한 가장들</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>제1과 — 가정의 목적 (아담의 가정 I)</h2>
+<h3>핵심 명제</h3>
+<ul>
+<li>가정의 목적을 고민하지 않으면 결과는 반드시 빗나간다</li>
+<li>결혼 = 하나님의 영광을 위해 하나님께서 시작하신 제도</li>
+<li>인간 창조: 완벽한 계획, 하나님의 성품 투영, 신의 성품에 참여하는 특권 (벧후 1:3-4)</li>
+</ul>
+<h3>문화명령 = 대위임령</h3>
+<ul>
+<li>하나님이 아담 <strong>개인</strong>이 아니라 <strong>아담과 하와의 가정</strong>에 주신 명령</li>
+<li>문화명령(창 1:28) = 예수 그리스도와 교회 공동체가 이루어야 할 대위임령(마 28:19)</li>
+<li><strong>가정 = 하나님 나라의 기초 단위 + 교회의 모형</strong></li>
+<li>부부의 하나됨 = 삼위 하나님의 하나되심을 나타내는 계시적 존재</li>
+<li>이 명령은 노아의 가정에도 동일하게 위임됨 (창 9)</li>
+</ul>
+<h3>복 — 얻는 것인가, 되는 것인가?</h3>
+<p>성경에서 복이 처음 등장하는 창세기 — 하나님이 먼저 복을 <strong>주셨다</strong> (창 1:21-28).<br />
+복은 인간의 노력이 있기 이전부터 하나님께서 주신 것.</p>
+<p>복에 대해 알게 되는 것:
+1. 복은 전적으로 하나님께 속한 것 (우리가 만들어낼 수 없다)
+2. 복은 어떤 것(something)이 아니라 올바른 <strong>관계</strong>에 관한 것
+3. 복은 <strong>마음</strong>에 관한 것 — 하나님의 성품에 합당한 마음 (팔복, 마 5:3-12)</p>
+<blockquote>
+<p><strong>행복(幸福) ≠ 복.</strong> 행복은 감정적·주관적이다. 하나님의 복은 관계적이고 성품에 관한 것이다.</p>
+</blockquote>
+<p>아브라함의 부르심 (창 12:2): "너는 복이 될지라" — <strong>복을 받는 것</strong>이 아니라 <strong>복이 되는 것</strong>.</p>
+<hr />
+<h2>제2과 — 가정의 영적 전투 (아담의 가정 II)</h2>
+<h3>가정은 사탄의 핵심 공격 목표</h3>
+<ul>
+<li>하나님이 전권을 아담과 하와에게 주셨기 때문에 가정이 일차 공격 대상</li>
+<li>"사람의 원수가 자기 집안의 식구니라" (미 7:6)</li>
+<li>아나니아와 삽비라 사건 = 교회를 파괴하려는 가정 단위 공격의 대표 사례</li>
+<li>부부 사이가 좋다고 사탄의 공격에서 안전한 것이 아니다 — 사탄은 그것을 역이용</li>
+</ul>
+<h3>가장의 책임</h3>
+<ul>
+<li>사탄이 하와를 먼저 공격한 것: 최종 목표는 아담, 부부의 대표성 공략</li>
+<li>아담의 책임 회피 (전가) = <strong>두려움</strong>에서 비롯된 것</li>
+<li>하나님은 아담에게 책임을 물으셨다 → 아내를 보호하고 책임지는 남편</li>
+<li><strong>두려움</strong> = 남자들이 직면해야 할 가장 중요한 적</li>
+<li>남자들이 가장 죄에 빠지기 쉬운 것: 성·돈·명예</li>
+</ul>
+<h3>죄로 인한 변화와 구속</h3>
+<ul>
+<li>노동의 의미: 저주 → 구속 (하나님의 목적은 변하지 않았다, 환경만 변했다)</li>
+<li>일 = 인간의 가치를 세상에 나타내는 도구 (구속의 대상)</li>
+<li>동물의 가죽 옷 = 예수 그리스도의 피를 상징하는 하나님의 적극적 개입</li>
+<li>현대 가정의 온전한 회복 = 예수 그리스도의 복음에만 희망이 있다</li>
+</ul>
+<hr />
+<h2>제3과 — 자녀 양육과 제자도 (아담의 가정 III)</h2>
+<h3>자녀 양육의 본질</h3>
+<blockquote>
+<p>"자녀 양육은 자아와의 싸움, 이전에 부모가 제자가 되는 일이 선행된다."<br />
+"자녀를 훈련시키는 것(discipline)이 핵심이라면, 자녀 양육은 제자도(discipleship)와 밀접하다."</p>
+</blockquote>
+<ul>
+<li><strong>부부 관계 → 자녀 관계</strong>: 자녀 양육은 부부 관계의 열매 (좋은 나무가 좋은 열매)</li>
+<li>자녀 양육을 잘 하려면 먼저 부부관계가 친밀해야 한다 (엡 6, 골 3에서 자녀 양육 전에 부부 관계 먼저 언급)</li>
+<li>야곱의 경우: 장자 축복 공모 → 자녀들 20년 원수 관계</li>
+<li><strong>자녀는 부부 사랑의 열매이지, 결코 목적이 될 수 없다</strong></li>
+</ul>
+<h3>자녀 집착의 위험</h3>
+<ul>
+<li>가인: 성을 쌓고 아들의 이름으로 명명 → 가족 이기주의, 우상 숭배</li>
+<li>"자식들은 여호와의 기업" (시 127:3) — 소유가 아니라 하나님의 것</li>
+<li>자녀가 우상이 되면 축복의 통로가 될 수 없다</li>
+<li>자녀를 하나님께 드리는 연습을 지속적으로 해야 한다</li>
+</ul>
+<h3>가인과 아벨 — 죄의 전염성</h3>
+<ul>
+<li>형제 갈등의 근원 = <strong>예배의 문제</strong> (삶의 행위에서 비롯)</li>
+<li>아이들은 죄 가운데 태어난다 — 부모가 죄의 문제를 냉철하게 다루어야</li>
+<li>방치의 모델: 엘리 제사장, 다윗 ("네가 어찌하여 그리 하였느냐고 한 번도 섭섭하게 한 일이 없었더라" — 왕상 1:6)</li>
+</ul>
+<hr />
+<h2>제4과 — 노아의 가정 (미셔널 패밀리)</h2>
+<h3>새로운 가족을 통한 재창조</h3>
+<ul>
+<li>아담 이후 타락이 극에 달할 때 하나님은 가정을 통해 새 역사를 시작하셨다</li>
+<li>노아에게 주신 미션 = 총 8명 (노아 부부 + 아들 3명 부부) — <strong>가족 전체에 미션 공유</strong></li>
+<li>문화명령을 노아 가정에 다시 위임 (창 9:1 — "생육하고 번성하여 땅에 충만하라")</li>
+</ul>
+<h3>결혼의 타락</h3>
+<ul>
+<li>경건한 후손들(셋의 자손)이 외적 아름다움만 보고 아내를 삼음 → 죄악이 관영함</li>
+<li>아브라함(하갈), 야곱(네 아내), 기드온(아들 70명) — 결혼 제도의 반복된 왜곡</li>
+</ul>
+<h3>노아 가정의 미션과 하나됨</h3>
+<ul>
+<li>120년 방주 만들기, 방주 안에서 1년 함께 — 며느리들도 남편·시아버지의 운명을 같이 한 하나된 가정</li>
+<li>함의 저주 = 가장의 한 순간의 실수가 가져온 큰 결과 (경건한 가장 vs. 허술한 가장)</li>
+<li>셈·함·야벳 각자의 미션 → "가정마다 하나님이 주신 분명한 미션이 있다"</li>
+</ul>
+<blockquote>
+<p>"하나님께서는 모든 가정들이 행복하기를 바라신다. 그 행복을 주시기 위한 통로가 바로 미션이다. 미션은 하나님의 창조의 역사에 참여하는 일이다."</p>
+</blockquote>
+<hr />
+<h2>제6과 — 두려움에 직면한 가장들 (아브라함 가정 II)</h2>
+<h3>두려움의 정체</h3>
+<ul>
+<li>인생의 기근(자녀, 부부관계, 경제 등) → <strong>두려움</strong></li>
+<li>두려움은 큰 그림을 보지 못하게 만든다</li>
+<li>아브라함의 두려움: "하나님이 나를 보호하신다"는 확신의 부재 → 아내를 이용</li>
+<li>남편의 두려움 = 아내에 대한 책임감 결여로 연결</li>
+</ul>
+<blockquote>
+<p>"마땅히 두려워해야 할 하나님을 두려워하지 않을 경우, 헛된 두려움에 시달린다."<br />
+"부부들이 자주 다투는 주제가 무엇인가? 그것이 두려움의 실체이다."</p>
+</blockquote>
+<p><code>마 10:28 — "오직 몸과 영혼을 능히 지옥에 멸하실 수 있는 이를 두려워하라"
+더 큰 두려움에 직면하면 작은 두려움은 작아진다 (자극 치료 원리)</code></p>
+<h3>이스마엘 — 두려움이 낳은 아들</h3>
+<ul>
+<li>후손에 대한 열망 + 생존의 두려움 → 하갈을 취함</li>
+<li>편법이 낳은 엄청난 재앙 (가정 해체 위기)</li>
+<li>하나님의 약속의 때까지 기다리지 못하는 실수</li>
+</ul>
+<h3>하나님의 대안</h3>
+<table>
+<thead>
+<tr>
+<th>두려움</th>
+<th>하나님의 응답</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>후손이 없는 두려움</td>
+<td>할례 프로젝트 — 의와 공도 (창 18:17-19)</td>
+</tr>
+<tr>
+<td>소유를 잃는 두려움</td>
+<td>이삭을 바쳐라 — 두려움 정리 프로젝트</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>이삭을 바치라는 명령 → 모리아 행: 아내와 상의 없이 단호한 결단, 다음날 바로 출발 (즉각 순종)</li>
+<li><strong>이삭을 드리는 것 = 자녀를 소유가 아닌 하나님의 것으로 인정하는 행위</strong></li>
+</ul>
+<hr />
+<h2>아브라함/사라 가정의 선교적 모델 (강의 종합)</h2>
+<h3>부르심의 구조</h3>
+<p><code>창 12:1-3 — 떠나라 + "너는 복이 될지라"
+      ↓
+창 18:18-19 — 의와 공도를 행하게 하려고 택하였나니
+      ↓
+창 22 — 이삭을 바쳐라 (소유가 아닌 사명)</code></p>
+<h3>복이 되기 위해 떠나야 할 것들</h3>
+<ol>
+<li><strong>문화적 떠남</strong> — 익숙한 문화의 가치관·세계관에서 이탈</li>
+<li><strong>지리적 떠남</strong> — 하나님이 지시하신 새 거주지에서 여호와의 길로 삶</li>
+<li><strong>자기 부인</strong> — "자기를 부인하고 날마다 제 십자가를 지고 나를 좇을 것이니라" (마 10:21)</li>
+</ol>
+<h3>가나안에서의 영향력</h3>
+<table>
+<thead>
+<tr>
+<th>사건</th>
+<th>내용</th>
+<th>선교적 의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>애굽 방문</td>
+<td>하나님이 바로 왕실에 재앙</td>
+<td>미숙한 아브람을 통해서도 하나님이 역사</td>
+</tr>
+<tr>
+<td>롯 구출</td>
+<td>318명으로 연합군 승리</td>
+<td>고대 근동에 여호와 하나님 증거</td>
+</tr>
+<tr>
+<td>그랄 체류</td>
+<td>아비멜렉 가정의 불임 치유</td>
+<td>아브람이 기도로 치유의 통로</td>
+</tr>
+<tr>
+<td>사라의 장사</td>
+<td>헷 족속이 "하나님이 세우신 지도자"</td>
+<td>나그네 가정이 공동체의 지도자로 존경받음</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"아브라함 가정의 선교적 삶은 가나안 주민들과 구별된 전혀 새로운 삶의 윤리를 살아내는 것을 의미했다." — 창 18:19</p>
+</blockquote>
+<hr />
+<h2>가정의 두 형태</h2>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>생존형 가정</th>
+<th>사명형(선교적) 가정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>중심 동기</td>
+<td>두려움</td>
+<td>보내심</td>
+</tr>
+<tr>
+<td>복의 개념</td>
+<td>얻는 것 (getting)</td>
+<td>되는 것 (being)</td>
+</tr>
+<tr>
+<td>자녀관</td>
+<td>소유</td>
+<td>하나님의 기업</td>
+</tr>
+<tr>
+<td>선교 참여</td>
+<td>가정 보호가 선행</td>
+<td>가정 자체가 선교 단위</td>
+</tr>
+<tr>
+<td>결과</td>
+<td>폐쇄적 공동체</td>
+<td>열방에 빛과 소금</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>핵심 인용</h2>
+<blockquote>
+<p>"티칭을 적게, 본(모델)을 많이. 자녀는 아버지의 어깨 너머로 배운다."</p>
+<p>"아빠가 우주다. 아버지의 본이 자녀의 정체성을 형성한다."</p>
+<p>"선교지에서 많은 일을 하려 하기보다 행복한 가정을 만드는 일에 힘쓰라.<br />
+그것이 복음 중의 복음이다."</p>
+<p>"먼저 그의 나라와 그의 의를 구하라" (마 6:33)</p>
+</blockquote>
+<hr />
+<h2>연결</h2>
+<ul>
+<li><span class="wl-dead" title="위키 내부 링크">송기태</span> — 저자</li>
+<li><a class="wl" href="../../t/%EA%B0%80%EC%A0%95%EC%82%AC%EC%97%AD/">가정사역</a> — 가정 사역 종합 주제 페이지</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> — 선교적 가정의 신학적 기반</li>
+<li><a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%ED%9B%88%EB%A0%A8/">제자훈련</a> — 가정이 제자도의 기본 단위</li>
+<li><span class="wl-dead" title="위키 내부 링크">인터서브</span> — 저자 소속 선교단체</li>
+<li><a class="wl" href="../../b/%EC%9C%84%EA%B8%B0%EC%9D%98%EC%8B%AD%EB%8C%80%EA%B8%B0%ED%9A%8C%EC%9D%98%EC%8B%AD%EB%8C%80_%ED%8F%B4%ED%8A%B8%EB%A6%BD/">위기의십대기회의십대_폴트립</a> — 자녀 통제 우상론과 공명</li>
+<li><span class="wl-dead" title="위키 내부 링크">창12</span> — 아브라함의 부르심</li>
+<li><span class="wl-dead" title="위키 내부 링크">창18</span> — 의와 공도</li>
+<li><span class="wl-dead" title="위키 내부 링크">창22</span> — 이삭을 바침</li>
+<li><span class="wl-dead" title="위키 내부 링크">마6:33</span> — 먼저 그의 나라와 의를</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>선교지(고난·결핍)에서 선교적 가정을 지속하는 것이 왜 그렇게 어려운가?</li>
+<li>한국 교회 가정에서 '생존형'이 지배적인 문화적·신학적 원인은 무엇인가?</li>
+<li>자녀를 '하나님의 기업'으로 양육한다는 것이 일상에서 구체적으로 어떤 모습인가?</li>
+<li>경건한 가정만 사용하시는가? (제4과 답: 아니다. 하나님의 선택이 먼저 있고 우리의 순종이 따른다)</li>
+</ul>
+</article>
+<div class="tagrow"><span>#가정</span><span>#선교적가정</span><span>#송기태</span><span>#아브라함</span><span>#문화명령</span><span>#제자도</span><span>#자녀양육</span><span>#미셔널패밀리</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

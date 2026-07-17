@@ -1,0 +1,288 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>죄 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:345">영성·제자도</span><span class="date">2026-07-17</span></div>
+  <h1 class="note-title">죄</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>죄를 무엇이라 부를 것인가. 이 볼트가 죄를 다루는 방식에서 가장 먼저 거절하는 것은, 죄를 낱개의 잘못 — 거짓말 한 번, 미움 한 조각 — 으로 세는 셈법이다. 강재명 선교사는 이 셈법을 단칼에 뒤집는다. "살인이나 간음은 죄의 열매이다. 뿌리는 아니다." 열매를 아무리 따내도 뿌리가 살아 있으면 죄는 이듬해 다시 열린다. 그렇다면 뿌리는 무엇인가. "하나님과 같이 되려고 하는 것"(창 3:5), 곧 "하나님의 자리에 자신을 앉히는 것"이다. 쾌락을 추구하든 자아를 추구하든 권력을 추구하든 돈을 추구하든, 그 밑바닥에 흐르는 한 문장은 동일하다 — "내가 하나님이 되는 것이다."</p>
+<p>이 페이지는 죄가 무엇이며 어떻게 작동하는가, 곧 죄의 본질과 실존적 해부를 다룬다. 죄를 교리 체계로 정돈하는 일 — 원죄와 전가, 전적 타락, 적극적 죄(Commission)와 소극적 죄(Omission)의 구분 — 은 <a class="wl" href="../../t/%EC%A3%84%EB%A1%A0/">죄론</a>이 맡고, 타락 이후 인간이 지니게 된 본성적 성향으로서의 죄는 <a class="wl" href="../../t/%EC%A3%84%EC%84%B1/">죄성</a>이 감당한다. 이 글이 따라가는 것은 살아 움직이는 죄 그 자체다. 죄의 뿌리가 무엇이며(§1), 그것이 어느 방향으로 뻗는지(§2), 어떤 사슬을 따라 자라며(§3), 어떻게 스스로를 감추는지(§4), 마음의 어느 자리에서 발원하는지(§5), 무엇이 그것과 싸우는 힘인지(§6), 그리고 죄를 직시하는 일과 정죄에 짓눌리는 일이 어디서 갈라지는지(§7)를 볼트의 설교들을 따라 짚어간다.</p>
+<table>
+<thead>
+<tr>
+<th>궤적</th>
+<th>물음</th>
+<th>핵심 본문</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>뿌리와 열매</td>
+<td>죄의 본질은 무엇인가</td>
+<td>창 3:5</td>
+</tr>
+<tr>
+<td>죄의 삼중 방향</td>
+<td>죄는 무엇을 훼손하는가</td>
+<td>마 4:1-11</td>
+</tr>
+<tr>
+<td>죄의 작동 방식</td>
+<td>죄는 어떻게 자라는가</td>
+<td>약 1:14-15, 창 4:7</td>
+</tr>
+<tr>
+<td>숨김과 합리화</td>
+<td>죄는 어떻게 자신을 감추는가</td>
+<td>창 3:8-13, 시 32</td>
+</tr>
+<tr>
+<td>입과 마음</td>
+<td>죄는 어디서 나오는가</td>
+<td>시 19:14, 마 15:19</td>
+</tr>
+<tr>
+<td>거룩이 힘이다</td>
+<td>무엇이 죄를 이기는가</td>
+<td>롬 8:13</td>
+</tr>
+<tr>
+<td>무게와 정죄 사이</td>
+<td>죄를 어떻게 직시할 것인가</td>
+<td>롬 8:1</td>
+</tr>
+</tbody>
+</table>
+<h2>1. 뿌리와 열매 — 자기 신격화라는 심장</h2>
+<p>죄를 열매의 목록으로 다루면 싸움은 처음부터 진다. 강재명 선교사가 든 산불 진화의 비유가 이 실패를 정확히 그린다. 불이 났을 때 불길 바로 앞에서 삽질을 하면 불과 함께 타 죽는다. 바람의 방향을 읽어 저만치 앞에 방어선을 그어야 불이 잡힌다. 죄도 그렇다. "나는 야동을 보지 않겠다"고 열매 앞에 버티고 서는 방식으로는 "3일 아니면 한 달"이면 무너진다. 심리학의 오래된 실험이 말하듯, "코끼리를 생각하지 말라"고 하면 온통 코끼리만 떠오른다. 음란·탐심·거짓말·미워하는 마음을 정면으로 노려보며 억누르는 힘겨루기는 죄에게 유리한 싸움터다.</p>
+<p>그러므로 관건은 열매가 아니라 뿌리다. 강재명 선교사의 진단에서 그 뿌리는 언제나 하나 — 자기를 신격화하는 마음이다. 그는 예수님이 광야에서 받으신 세 시험을 이 한 뿌리의 세 변주로 읽는다. 돌을 떡으로 바꾸라는 시험은 "내 배부터", 곧 욕구 충족을 하나님보다 앞세우라는 유혹이고, 성전 꼭대기에서 뛰어내리라는 시험은 하나님이 주신 능력을 그분의 영광이 아니라 자기 과시에 쓰라는 유혹이며, 만국을 줄 테니 경배하라는 시험은 사명을 잊고 자기를 위해 살라는 유혹이다. 떡·자기과시·지배 — 표면은 셋이지만 뿌리는 하나, "내가 하나님이 된다"이다. 이 진단이 죄를 <a class="wl" href="../../t/%EC%9A%B0%EC%83%81%EC%88%AD%EB%B0%B0/">우상숭배</a>와 한 몸으로 묶는다. 마음이 자기를 제단 위에 올리는 순간, 자아는 가장 은밀하고 가장 완강한 우상이 된다. 자기를 신으로 삼는 죄의 문법과 그 문화적 변주(진화론·<a class="wl" href="../../t/%EB%AC%B4%EC%8B%A0%EB%A1%A0/">무신론</a>·포스트모더니즘·바알 신앙)를 더 넓게 해부하는 일은 <a class="wl" href="../../t/%EC%9A%B0%EC%83%81%EC%88%AD%EB%B0%B0/">우상숭배</a>에 맡기고, 여기서는 그 뿌리가 모든 열매의 발원지라는 사실만 못 박는다.</p>
+<p><code>열매 (보이는 죄)
+   살인 · 간음 · 거짓말 · 탐심 · 미움
+     ╲       │       │       ╱
+      ╲──────┼───────┼──────╱
+             │  하나의 뿌리
+     "내가 하나님이 된다" (창 3:5)
+      ├ 쾌락 추구   ├ 권력 추구
+      └ 자아 추구   └ 돈  추구</code></p>
+<h2>2. 죄의 삼중 방향 — 언제나 관계의 훼손</h2>
+<p>자기를 신격화한 마음은 반드시 밖으로 뻗는다. 죄는 고립된 내면의 얼룩이 아니라 방향을 가진 힘이며, 그 방향은 언제나 관계를 향한다. 볼트의 설교들을 겹쳐 놓으면 죄는 세 방향으로 동시에 작동한다.</p>
+<p>하나님을 향해 죄는 반역이자 찬탈이다. 그분의 자리에 나를 앉히는 일이므로, 모든 죄의 일차 피해자는 하나님이다. 이웃을 향해 죄는 침해이자 이용이다. 자기가 신이 된 사람에게 타인은 목적이 아니라 수단이 되고, 인격은 효율을 위한 도구로 전락한다 — 자아의 확장을 위해 남을 소비하는 것이다. 그리고 자기를 향해 죄는 파괴이자 황폐다. 한영웅 목사의 표현으로 "죄는 영혼을 찌른다." 죄가 영혼을 얼마나 황폐하게 하는지를 진실로 안다면 사람은 죄에서 떠날 수밖에 없다. 자기를 높이려던 죄가 결국 자기를 무너뜨린다는 것 — 이것이 죄의 자기모순이다.</p>
+<table>
+<thead>
+<tr>
+<th>방향</th>
+<th>죄의 얼굴</th>
+<th>무엇이 훼손되는가</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>하나님을 향해</td>
+<td>반역·찬탈</td>
+<td>그분의 주권 — 창조주와 피조물의 자리가 뒤바뀐다</td>
+</tr>
+<tr>
+<td>이웃을 향해</td>
+<td>침해·이용</td>
+<td>인격 — 사람이 목적에서 수단으로 떨어진다</td>
+</tr>
+<tr>
+<td>자기를 향해</td>
+<td>파괴·황폐</td>
+<td>영혼 — 높이려던 자아가 도리어 찔린다</td>
+</tr>
+</tbody>
+</table>
+<p>세 방향은 따로 놀지 않는다. 하나님과의 수직 관계가 무너지면 이웃과의 수평 관계가 무너지고, 그 파열이 마침내 자기 영혼으로 되돌아온다. 그래서 죄의 자각은 늘 관계의 언어로 표현된다 — 한영웅 목사가 "죽는다"는 말을 형벌의 목록이 아니라 "하나님과의 관계 단절"로 풀어낸 것처럼.</p>
+<h2>3. 죄의 작동 방식 — 사슬과 인격화</h2>
+<p>죄는 사건이 아니라 과정이다. 야고보서가 그 과정을 네 마디의 사슬로 그린다. "각 사람이 시험을 받는 것은 자기 욕심에 끌려 미혹됨이니 욕심이 잉태한즉 죄를 낳고 죄가 장성한즉 사망을 낳느니라"(약 1:14-15). 욕심 → 잉태 → 죄 → 사망. 죄는 완성된 형태로 뛰어드는 것이 아니라 잉태되고 자라서 태어난다. 한영웅 목사가 인용하는 칼빈의 '죄의 잉태 4단계'는 이 사슬을 더 촘촘히 나눈다.</p>
+<p><code>약 1:14-15   욕심 ──잉태──▶ 죄 ──장성──▶ 사망
+  칼빈 4단계   생각 ──▶ 정서 ──▶ 의지 ──▶ 행동
+               (허탄한   (죄로   (정욕에   (밖으로
+                생각)    기욺)   굴복)     출산)</code></p>
+<p>이 도식의 실천적 함의는 분명하다. 죄와의 싸움은 마지막 칸(행동)이 아니라 첫 칸(생각)에서 결판난다는 것. 강재명 선교사가 열매 아닌 뿌리를, 불길 앞이 아닌 방어선을 말한 이유가 여기서 다시 확인된다. 유혹이 욕심으로 잉태되기 전에 승부가 나야 한다 — 유혹의 역학 그 자체는 <a class="wl" href="../../t/%EC%8B%9C%ED%97%98%EA%B3%BC%EC%9C%A0%ED%98%B9/">시험과유혹</a>이 더 깊이 다룬다.</p>
+<p>성경은 이 과정을 인격화된 짐승으로도 묘사한다. 가인에게 주신 경고 — "죄가 문에 엎드려 있느니라 죄가 너를 원하나 너는 죄를 다스릴지니라"(창 4:7) — 에서 죄는 문 앞에 웅크린 맹수처럼 그려진다. 죄는 수동적 실수가 아니라 나를 노리고 삼키려는 능동적 세력이다. 한영웅 목사가 로마서 7장에서 읽어낸 것도 같다. 바울은 "선을 행하기 원하는 나에게 악이 함께 있는 것"(롬 7:21)을 발견하는데, 이 악은 내 안에서 "법처럼 자리잡고" 강제력을 가지고 나를 끌고 다닌다. 죄는 내가 저지르는 무엇이기 이전에, 나를 다스리려 드는 무엇이다. 문 앞의 짐승을 다스릴 것인가, 그에게 다스림을 당할 것인가 — 창세기 4장의 이 물음이 죄의 실존을 통째로 압축한다.</p>
+<h2>4. 숨김과 합리화 — 죄가 죄를 감추는 기술</h2>
+<p>죄가 저지른 다음 하는 첫 번째 일은 자기를 감추는 것이다. 창세기 3장은 이 은폐의 원형을 세 동작으로 보여준다. 먼저 <strong>숨음</strong> — 하나님의 소리를 듣고 아담과 하와는 나무 사이에 숨는다. 다음은 <strong>핑계와 전가</strong> — "하나님이 주셔서 나와 함께 있게 하신 여자 그가 그 나무 열매를 내게 주므로 내가 먹었나이다"(창 3:12). 아담은 여자에게, 여자는 뱀에게 책임을 넘긴다. 죄는 저지르는 순간 곧바로 변명을 생산한다. 정확히 말하면, 자기를 은폐하는 기술이야말로 죄의 본체에 속한다. 죄성이 결혼과 가정 관계에서 드러내는 이 전가의 구조는 <a class="wl" href="../../t/%EC%A3%84%EC%84%B1/">죄성</a>이 아담의 침묵이라는 각도로 다루므로, 여기서는 그것이 죄 일반의 자기은폐 문법임을 짚는다.</p>
+<p>이 은폐는 밖으로만 향하지 않고 안으로도 향한다. 가장 무서운 숨김은 자기 자신에게 죄를 감추는 것이다. 전승욱 목사가 시편 19편에서 짚어낸 "숨은 허물"(시 19:12)이 그것이다 — 자신도 의식하지 못하는 죄. 은폐가 완성되면 죄인은 자기가 죄인인 줄조차 모른다. 시편 32편은 이 자기은폐의 대가와 그 반대편의 해방을 나란히 보여준다. 침묵할 때 — 죄를 덮고 인정하지 않을 때 — 다윗의 뼈는 쇠하고 진액이 마른다. 그러나 "내 죄를 아뢰고 내 죄악을 숨기지 아니하였더니 주께서 내 죄악을 사하셨나이다"(시 32:5). 죄를 감추면 죄가 나를 먹고, 죄를 드러내면 은혜가 죄를 덮는다. 숨김을 그치고 <a class="wl" href="../../t/%ED%9A%8C%EA%B0%9C/">회개</a>로 돌아서는 이 전환의 해부는 <a class="wl" href="../../t/%ED%9A%8C%EA%B0%9C/">회개</a>가 맡는다.</p>
+<h2>5. 입과 마음 — 죄는 행위 이전에 방향이다</h2>
+<p>죄를 행위의 목록으로 환원할 수 없는 결정적 이유는, 죄가 행위 이전에 마음의 방향이기 때문이다. 전승욱 목사의 시편 19편 강해가 이 진실로 내려가는 계단을 보여준다. 다윗은 세 단계로 하강한다. 먼저 하늘을 우러러 자연이 선포하는 하나님의 영광을 보고(일반계시, 1-6절), 다음으로 완전하고 정결한 율법을 사모하며(특별계시, 7-11절), 마침내 그 두 빛에 비추어 자기 내면을 들여다본다(마음 조명, 12-14절). 바깥의 두 계시가 밝을수록 안의 어둠이 선명해진다. "자연과 율법을 바라보니, 마음을 들여다보니 숨은 허물과 고의적 죄가 있다"는 것이다.</p>
+<p><code>자연 (일반계시, 시 19:1-6)
+        │  하나님의 영광
+        ▼
+   율법 (특별계시, 시 19:7-11)
+        │  눈을 밝히는 계명
+        ▼
+   마음 (내면 조명, 시 19:12-14)
+        └─▶ 숨은 허물 · 고의적 죄의 발견</code></p>
+<p>계단의 맨 밑에서 다윗이 만나는 것은 예레미야의 진단이다. "만물보다 거짓되고 심히 부패한 것은 마음이라"(렘 17:9). 그래서 다윗의 마지막 기도가 "내 입의 말과 마음의 묵상이 주님 앞에 열납되기를"(시 19:14)인 것은 우연이 아니다. 입의 말과 마음의 묵상 — 죄와 거룩이 갈리는 자리는 손의 행위 이전, 입과 마음이다. 예수님도 같은 곳을 가리키셨다. "마음에서 나오는 것은 악한 생각과 살인과 간음"(마 15:19)이니, 사람을 더럽히는 것은 밖에서 들어가는 것이 아니라 마음에서 나오는 것이다. 강재명 선교사가 살인·간음을 열매라 부른 그 통찰(§1)이 여기서 본문의 뒷받침을 얻는다 — 열매는 손에서 맺히지만 뿌리는 마음에 있다. 그러므로 죄를 다루는 일은 언제나 마음을 다루는 일이며, 이 내면의 지형은 <a class="wl" href="../../t/%EB%82%B4%EB%A9%B4%EC%B9%98%EC%9C%A0/">내면치유</a>와 <a class="wl" href="../../t/%EB%A7%88%EC%9D%8C%EC%9D%98%EA%B1%B4%EA%B0%95/">마음의건강</a>이 각각 상담과 몸-마음의 각도에서 잇는다.</p>
+<h2>6. 거룩이 힘이다 — 의지가 아니라 임재로</h2>
+<p>죄의 뿌리가 마음이고 죄가 나를 다스리려는 세력이라면, 죄와의 싸움은 의지력의 문제일 수 없다. 이것이 한영웅 목사의 "우리의 힘은 거룩입니다"가 세우는 핵심 명제다. 죄를 이기는 힘은 이를 악문 결단이 아니라 거룩 — 하나님의 임재 안에 거하는 것 — 에서 온다. "거룩은 죄와 싸울 때 나타난다. 수행한다고 거룩이 되는 것이 아니다." 거룩은 죄를 이긴 결과로 주어지는 상이 아니라, 죄와 싸우는 과정에서 발생하는 힘 그 자체다.</p>
+<p>이 싸움에서 죄를 죽이는 주체는 인간이 아니라 성령이다. 로마서 8장 13절 — "영으로써 몸의 행실을 죽이면 살리니" — 을 존 오웬의 『죄 죽임의 교리』를 따라 풀면서, 한영웅 목사는 "성령이 충만하면 죄를 지을 마음이 사라진다"고 말한다. 다만 성령의 죽이심은 인간을 건너뛰지 않는다.</p>
+<blockquote>
+<p>"성령은 우리 안에서 우리와 함께 역사하시며, 우리 없이 우리를 거슬러 역사하지 않는다." — 존 오웬</p>
+</blockquote>
+<p>그래서 이 싸움에는 인간의 순종이 참여한다. 그 순종의 구체적 수단이 기도다. 청교도 존 라일의 경구대로 "기도는 죄를 죽이고 죄는 기도를 죽인다" — 죄와 기도는 서로를 밀어내므로, 기도가 식어가는 4단계(기도의 민첩성이 떨어지고, 기도가 싫어지고, 기도의 능력을 잃고, 마침내 기도를 그치는)를 죄의 진격 신호로 읽어야 한다. 한영웅 목사가 죄를 죽이는 또 하나의 실천으로 든 것은 다니엘의 "뜻을 정하여"(단 1:8)다. 무너질 것이 뻔하다며 아예 뜻조차 세우지 않는 패배의식을 넘어, 끊어야 할 죄를 구체적으로 적고 그것을 지키기 위해 먼저 기도하는 것 — 죄에게 선수를 치는 것이다.</p>
+<p>여기서 강재명 선교사와 한영웅 목사가 한 지점에서 만난다. 강재명 선교사는 "절대로 맞서 싸워 죄를 이길 수 없다"고 잘라 말하고 그 대안으로 "주님과 친밀해지면 죄는 멀어진다"를 제시한다. 코끼리를 생각하지 않으려 애쓰는 대신 다른 것에 마음을 빼앗기는 것 — 죄를 금지로 이기는 것이 아니라 더 큰 사랑으로 밀어내는 구조다. 그 힘의 원천을 한영웅 목사는 <a class="wl" href="../../t/%EC%8B%AD%EC%9E%90%EA%B0%80/">십자가</a>에 둔다. "십자가의 사랑으로 예수님을 의존하면 할수록 죄는 미워진다." 죄와 싸울 힘은 죄를 노려보는 데서가 아니라 그리스도를 바라보는 데서 나온다. 이 힘이 평생에 걸쳐 죄를 조금씩 죽여가는 과정, 곧 <a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a>는 그 페이지가 잇고, 죄를 이기는 적극적 능력으로서의 <a class="wl" href="../../t/%EA%B1%B0%EB%A3%A9/">거룩</a>은 그 페이지가 감당한다.</p>
+<h2>7. 죄의 무게를 아는 것과 정죄 사이</h2>
+<p>죄를 바로 다루는 일은 두 낭떠러지 사이의 좁은 능선을 걷는 일이다. 한쪽 낭떠러지는 둔감이다. 죄를 가볍게 여기고 은혜를 값싸게 만드는 것 — 회개가 필요 없다고 가르치며 성화의 교리를 지워버리는 구원파의 오류가 그 극단이다. 다른 쪽 낭떠러지는 과민이다. 죄에 짓눌려 정죄와 율법주의로 자기를 몰아세우는 것. 한영웅 목사가 "육신대로 사는 것"의 두 얼굴로 정욕과 나란히 <strong>자기 의</strong>(自己義)를 지목한 것은 이 지점에서 날카롭다. "다른 사람은 틀리고 자기는 옳다"고 여기는 도덕적 정욕 — 눅 18장에서 자기를 의롭다 믿고 감사 기도를 드린 바리새인의 죄 — 도 엄연히 육신대로 사는 것이다. 죄에 대한 과민 자체가 또 하나의 죄일 수 있다는 역설이다.</p>
+<p><code>둔감 ◀─────────── 직시 ───────────▶ 과민
+ (값싼 은혜)      (롬 8:1의 자리)     (정죄·율법주의)
+  죄를 가볍게       정죄 없이 죄를        죄에 짓눌려
+  성화 지움         있는 그대로 봄        자기를 몰아세움</code></p>
+<p>두 낭떠러지 사이의 능선은 로마서 8장 1절이 낸다. "그리스도 예수 안에 있는 자에게는 결코 정죄함이 없나니." 전승욱 목사가 시편 19편의 곤고함을 풀어가는 방식이 이 균형의 모범이다. 자기 내면의 "숨은 허물과 고의적 죄"를 직시한 다윗은 바울의 곤고한 탄식("오호라 나는 곤고한 사람이로다", 롬 7:24)과 같은 자리에 서지만, 거기 머물지 않는다. 곧바로 "결코 정죄함이 없나니"(롬 8:1)와 "생명의 성령의 법이 죄와 사망의 법에서 너를 해방하였음이라"(롬 8:2)로 넘어간다. 죄를 가장 정직하게 응시하는 자리가 동시에 가장 정죄 없는 자리라는 것 — 이것이 복음의 역설이다. 정죄가 없기 때문에 비로소 죄를 숨기지 않고 직시할 수 있고, 직시하기 때문에 성령을 따라 거룩으로 나아갈 수 있다. 죄를 무겁게 여기되 나를 정죄하지 않는 것, 나를 정죄하지 않되 죄를 가볍게 여기지 않는 것 — 이 이중의 균형 위에서만 죄는 바르게 다뤄진다. 죄를 덮는 값싼 위로도, 죄로 나를 치는 율법의 채찍도 아닌 <a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a>의 자리에서.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>죄의 본질은 행위가 아니라 뿌리다. 살인·간음은 열매이고 뿌리는 "내가 하나님이 되려는" 자기 신격화다. 열매를 따는 싸움은 지고, 뿌리를 겨누는 싸움이 이긴다.</li>
+<li>죄는 방향을 가진 힘이다. 하나님께는 반역으로, 이웃에게는 침해로, 자기에게는 파괴로 — 언제나 세 방향으로 동시에 관계를 훼손한다.</li>
+<li>죄는 사건이 아니라 과정이다. 욕심→잉태→죄→사망의 사슬을 따라 자라므로, 승부는 마지막 행동이 아니라 첫 생각에서 난다.</li>
+<li>죄의 본체에는 자기은폐의 기술이 포함된다. 숨고 핑계하고 전가하며, 가장 깊은 은폐는 자기 자신에게 죄를 감추는 "숨은 허물"이다.</li>
+<li>죄와 거룩이 갈리는 자리는 손의 행위 이전, 입과 마음이다. 죄를 다루는 일은 언제나 마음의 방향을 다루는 일이다.</li>
+<li>죄를 이기는 힘은 의지가 아니라 거룩이다. 죄를 금지로 억누르는 것이 아니라 그리스도를 향한 더 큰 사랑으로 밀어내는 구조이며, 그 주체는 성령이다.</li>
+<li>죄를 바로 보는 자리는 둔감과 과민 사이, "정죄함이 없는" 롬 8:1의 능선이다. 죄를 무겁게 여기되 나를 정죄하지 않는 이중의 균형이 관건이다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>죄의 뿌리를 자기 신격화로 규정할 때, 건강한 자기 존중·자기 돌봄과 죄로서의 자아 우상화는 실제 삶에서 어떻게 구별되는가? 자아 추구와 <a class="wl" href="../../t/%EC%9E%90%EC%A1%B4%EA%B0%90/">자존감</a> 사이의 경계는 어디인가.</li>
+<li>"주님과 친밀해지면 죄는 멀어진다"는 처방과 "뜻을 정하여" 구체적으로 죄와 싸우라는 처방은 어떻게 한 사람 안에서 통합되는가? 임재 지향과 훈련 지향은 언제 어떤 비율로 만나는가.</li>
+<li>죄를 직시하되 정죄에 빠지지 않는 롬 8:1의 균형을, 이미 수치심과 자기 정죄에 시달리는 사람에게는 어떻게 적용해야 하는가? 목회적으로 둔감한 사람과 과민한 사람에게 같은 본문을 다르게 전해야 하는가.</li>
+<li>죄의 삼중 방향(하나님·이웃·자기) 가운데 현대인이 가장 둔감한 것은 하나님을 향한 차원이다. 이웃 침해로서의 죄(윤리)는 예민하되 하나님께 대한 반역으로서의 죄(수직 차원)에는 무감각한 시대에, 죄의 수직성을 어떻게 회복시킬 것인가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%A3%84%EB%A1%A0/">죄론</a> — <strong>분업의 짝 페이지</strong>. 죄를 교리 체계로 정돈한다(원죄·전가·전적 타락, 적극적 죄 Commission·소극적 죄 Omission, 죄의 공동체적 결과). 이 페이지가 "죄가 무엇이며 어떻게 작동하는가"라면, 죄론은 "죄를 어떻게 교리로 규정하는가"를 맡는다.</li>
+<li><a class="wl" href="../../t/%EC%A3%84%EC%84%B1/">죄성</a> — 타락 이후 인간의 본성적 성향으로서의 죄. 결혼·가정·청소년 발달 현장에서 죄성이 드러나는 방식(아담의 침묵과 전가)을 다룬다.</li>
+<li><a class="wl" href="../../t/%EC%9A%B0%EC%83%81%EC%88%AD%EB%B0%B0/">우상숭배</a> — 자기 신격화의 확장. 자아를 포함한 모든 우상의 문법과 그 문화적 변주를 해부한다(§1의 뿌리와 직결).</li>
+<li><a class="wl" href="../../t/%ED%9A%8C%EA%B0%9C/">회개</a> — 죄의 자각이 정직한 돌이킴으로 이어지는 자리. §4의 숨김을 그치고 죄를 아뢰는 전환의 해부.</li>
+<li><a class="wl" href="../../t/%EC%8B%9C%ED%97%98%EA%B3%BC%EC%9C%A0%ED%98%B9/">시험과유혹</a> — §3의 사슬(욕심→죄→사망)이 유혹의 역학으로 작동하는 구조를 상세히 다룬다.</li>
+<li><a class="wl" href="../../t/%EA%B1%B0%EB%A3%A9/">거룩</a> · <a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a> — 죄를 이기는 적극적 힘(거룩)과 평생에 걸친 죄 죽임의 과정(성화). §6이 여는 문.</li>
+<li><a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a> — 죄를 직시하되 정죄하지 않는 롬 8:1의 자리. §7이 도달하는 곳.</li>
+<li><a class="wl" href="../../t/%EB%82%B4%EB%A9%B4%EC%B9%98%EC%9C%A0/">내면치유</a> · <a class="wl" href="../../t/%EB%A7%88%EC%9D%8C%EC%9D%98%EA%B1%B4%EA%B0%95/">마음의건강</a> — §5의 마음이라는 지형을 상담과 몸-마음의 각도에서 잇는다.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>강재명, 당신의 비전 누가 함께 하는가(첫째·둘째)</td>
+<td>설교</td>
+<td>죄의 뿌리=자기 신격화, 열매↔뿌리, 세 시험의 한 뿌리, "친밀함이 죄를 밀어낸다"</td>
+</tr>
+<tr>
+<td>한영웅, 우리의 힘은 거룩입니다(롬 8:13)</td>
+<td>설교</td>
+<td>육신대로 삶(정욕·자기 의), 죄 죽임의 주체=성령, 거룩=싸움에서 나오는 힘, 존 오웬·존 라일</td>
+</tr>
+<tr>
+<td>한영웅, 죄를 죽이는 기도생활(롬 6:14)</td>
+<td>설교</td>
+<td>거듭남과 죄의 자각, 오염된 성향의 잔존, "뜻을 정하여" 죄에 선수 치기</td>
+</tr>
+<tr>
+<td>전승욱, 내 입의 말과 마음의 묵상(시 19편)</td>
+<td>설교</td>
+<td>계시의 삼중 하강(자연·율법·마음), 숨은 허물·고의적 죄, 입과 마음, 롬 8:1로의 전환</td>
+</tr>
+<tr>
+<td>```</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>작성을 완료했습니다. 아래가 최종 초안입니다.</p>
+<p>```markdown</p>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/영성신학</span><span>#자기신격화</span><span>#죄의뿌리와열매</span><span>#죄죽임</span><span>#마음</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

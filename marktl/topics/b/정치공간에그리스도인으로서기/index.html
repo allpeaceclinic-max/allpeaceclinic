@@ -1,0 +1,448 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>정치 공간에 그리스도인으로 서기 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:140">교회·공동체</span><span class="date">2026-05-05</span></div>
+  <h1 class="note-title">정치 공간에 그리스도인으로 서기</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/%EC%A0%95%EC%B9%98%EA%B3%B5%EA%B0%84%EC%97%90%EA%B7%B8%EB%A6%AC%EC%8A%A4%EB%8F%84%EC%9D%B8%EC%9C%BC%EB%A1%9C%EC%84%9C%EA%B8%B0/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<p><strong>분류</strong>: 정치신학 / 기독교 사회윤리 / 청년 신앙 실천</p>
+<hr />
+<h2>★ 핵심 명제</h2>
+<blockquote>
+<p><strong>"그리스도인의 가장 큰 문제는 '정치 참여'가 아니라,<br />
+정치의 공간에만 들어가면 세상 사람과 똑같아진다는 것이다."</strong></p>
+</blockquote>
+<p>왜 그렇게 되는가?<br />
+<strong>말씀보다 이데올로기를 더 신뢰하기 때문이다.</strong></p>
+<blockquote>
+<p>"불가피하게 어느 진영에 서게 되더라도,<br />
+자신이 누구인지를 잊지는 말라."</p>
+</blockquote>
+<hr />
+<h2>1. 두 가지 극단과 그 함정</h2>
+<table>
+<thead>
+<tr>
+<th>극단</th>
+<th>내용</th>
+<th>문제</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>정치 무관심</strong></td>
+<td>"나는 정치에 관심 없다"</td>
+<td>무관심도 정치적 견해다</td>
+</tr>
+<tr>
+<td><strong>정치 과잉</strong></td>
+<td>이데올로기로 세상을 구원</td>
+<td>이데올로기 = 현대판 우상숭배</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>이데올로기가 우리 사회를 구원하리라는 믿음 때문에 극단화된다.</p>
+</blockquote>
+<p>→ <a class="wl" href="../../t/%EC%9A%B0%EC%83%81%EC%88%AD%EB%B0%B0/">우상숭배</a>: 현대판 우상 = 이데올로기, 돈(자본주의), 사회주의</p>
+<hr />
+<h2>2. 기준 — 기독교 세계관 (창타구완)</h2>
+<p>좌도 우도 아닌 기준이 필요하다. 그 기준은 <strong>율법(수1:8)</strong>이다.</p>
+<blockquote>
+<p>수1:7 — "우로나 좌로나 치우치지 말라"<br />
+치우치지 않으려면 <strong>기준을 아는 것 + 용기</strong>가 필요하다.</p>
+</blockquote>
+<h3>창조-타락-구속-완성의 틀</h3>
+<p><strong>창조</strong>: 모든 것이 하나님의 것 → 소유권을 내려놓을 수 있음 / 인간의 한계 설정<br />
+공의·정의·남을 대접하라(마7:12) / 기본 가치: 존엄성·자유·창조적 본능</p>
+<p><strong>타락</strong>: 항상 하나님과 다른 시각이 존재<br />
+죄의 본질 = 하나님을 삶의 기준으로 거부하는 것 + 이웃에 대한 공감 부재 = 자기중심성<br />
+현대판 우상: <strong>이데올로기, 돈(애덤 스미스의 보이지 않는 손), 사회주의</strong></p>
+<p><strong>구속·완성</strong>: 자본주의도 사회주의도 타락 — 이데올로기는 구원하지 못한다<br />
+시장의 조절 기능은 인정하되 시장을 이상화하지 않음 → <strong>양비론이 아닌 분별</strong></p>
+<hr />
+<h2>3. 이데올로기가 우상이 되는 과정</h2>
+<p><code>이데올로기 → 전쟁 → 생존의 문제 → 도덕성 실종
+자극할수록 지지층 결집 → 프레임 전술 → 내로남불</code></p>
+<ul>
+<li><strong>좌편</strong>: 인권·공평·정의를 외치면서도 정의를 가지고 장사</li>
+<li><strong>우편</strong>: 경제 성장·자유·자유무역 외치면서 기득권만 챙김</li>
+<li>프레임 정치, 그걸로 밥 먹고 사는 사람들이 극단화를 부른다</li>
+</ul>
+<h3>예수님 당시 진영들</h3>
+<table>
+<thead>
+<tr>
+<th>진영</th>
+<th>현대 유비</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>바리새파</td>
+<td>종교 보수 우파</td>
+</tr>
+<tr>
+<td>사두개파</td>
+<td>기득권 친로마</td>
+</tr>
+<tr>
+<td>열심당</td>
+<td>급진 민족주의</td>
+</tr>
+<tr>
+<td><strong>예수님</strong></td>
+<td>나귀 타심 — 군사적 메시아 거부</td>
+</tr>
+</tbody>
+</table>
+<p>→ 예수님은 고아·과부·이방인·나그네 편 → 사회주의와 비슷해 보이나,<br />
+탓하며 계급투쟁하는 것이 아니라 <strong>사랑의 강권</strong>(고후5:14)으로 행하셨다</p>
+<hr />
+<h2>4. ★ 다름(거룩)이 전략 — 롬12:1-2</h2>
+<blockquote>
+<p><strong>다름 = 거룩, 이것이 정치 공간에서의 유일한 전략이다.</strong></p>
+</blockquote>
+<p><strong>수1:1-9</strong>: 가나안과 전혀 다른 사회를 만들라 → 가나안의 이데올로기와 다름<br />
+<strong>롬12:1-2</strong>: "이 세대를 본받지 말라" — 쉬르케마티조(σχηματίζω) = 세상의 패턴에 자신을 맞추는 것</p>
+<blockquote>
+<p>마음을 새롭게 하는 <strong>하나님의 은혜</strong> + 이 세대를 본받지 않으려는 <strong>우리의 노력</strong><br />
+= 선하고 온전하신 뜻을 분별할 수 있게 된다</p>
+</blockquote>
+<p><strong>레위기의 구조</strong>:
+- 레1-16장: 제사 문제 (하나님과의 관계)
+- 레17-27장: 공동체 내의 관계 — 공의와 정의
+- → 교사면 어떤 교사, 재판관이면 어떤 재판관, 좌파면 어떤 좌파, 우파면 어떤 우파</p>
+<hr />
+<h2>5. ★ 안식일 정신 = 희년 정신 = 모든 이데올로기가 수렴해야 할 기준</h2>
+<blockquote>
+<p><strong>안식일 정신 = 희년 정신 = 모든 이데올로기가 수렴해야 할 기준</strong></p>
+</blockquote>
+<p>안식일의 의미:
+- 모든 것이 하나님의 선물임을 기억하는 날 (창조 질서)
+- 출애굽 사건 기억 — 바로의 우상(강제 노동 = 물질주의)에서 해방
+- 안식 없는 사람을 쉬게 해주는 것 — 객·소·나귀도</p>
+<p>희년의 함의:
+- 당대가 책임지는 것을 전제로 하되, 구제·희년·복원 프로그램
+- <strong>젖과 꿀 = 공의와 정의 = 샬롬</strong> (레26:3-7)
+- 레26:14-17: 지키지 않으면 경제·국방·외교 모두 불안정</p>
+<p>→ 자본주의도, 사회주의도 이 기준 앞에서 정죄된다<br />
+→ <a class="wl" href="../../t/%EA%B3%B5%EC%9D%98/">공의</a>: 쯔다카(정의)와 미쉬파트(공평)의 연결</p>
+<hr />
+<h2>6. 교회 = 대안 공동체, 하나님 나라의 모델하우스</h2>
+<blockquote>
+<p><strong>겔37 — 마른 뼈가 군대로 살아나다</strong></p>
+</blockquote>
+<p>교회는 싸워야 할 싸움이 있다. <strong>다름이 전략</strong>이다.</p>
+<ul>
+<li>교회 = 하나님 나라의 모델하우스</li>
+<li>국가 체제에 전면 적용을 요구하기보다, <strong>먼저 교회 공동체에 우선 적용</strong></li>
+<li>"그래도 가난한 사람은 존재한다" — 종말론적 한계를 인정하되 포기하지 않음</li>
+</ul>
+<blockquote>
+<p>세상에서는 작은 차이도 배제·차별·갈등의 이유가 된다.<br />
+교회에서는 크고 다양한 차이에도 불구하고 하나가 될 때,<br />
+세상은 <strong>그것이 가능한 이유</strong>를 묻게 된다. (벧전3:15)</p>
+</blockquote>
+<p>→ <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a>: 소금과 빛, 공동체 선행</p>
+<hr />
+<h2>7. 역사적 모델들</h2>
+<table>
+<thead>
+<tr>
+<th>인물</th>
+<th>방식</th>
+<th>기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>윌리엄 윌버포스</strong></td>
+<td>입법운동</td>
+<td>노예무역 폐지</td>
+</tr>
+<tr>
+<td><strong>마틴 루터 킹</strong></td>
+<td>평화적 대중운동</td>
+<td>인종차별 철폐</td>
+</tr>
+<tr>
+<td><strong>우리는?</strong></td>
+<td>광장에 서 있다</td>
+<td>공공성에 대한 관심 = 그리스도인의 책임</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>8. ★ 라이홀드 니버 — 도덕적 인간과 비도덕적 사회</h2>
+<p><strong>Reinhold Niebuhr, <em>Moral Man and Immoral Society</em> (1932)</strong></p>
+<blockquote>
+<p><strong>"아무리 도덕적인 개인이라도 공동체의 '입장'에 서게 되면,<br />
+제도의 한계로 인해 비도덕적으로 행동할 위험이 존재한다."</strong><br />
+<em>(이상협 거버넌스 강의에서 인용)</em></p>
+</blockquote>
+<p>니버의 핵심 테제:
+- <strong>개인의 도덕성 ≠ 집단의 도덕성</strong>
+- 집단(국가, 계급, 진영)은 개인보다 구조적으로 더 비도덕적으로 작동한다
+- 자기 이익과 권력이 집단 행동을 지배한다 — 개인이 아무리 선해도</p>
+<h3>이 책과의 정확한 연결</h3>
+<table>
+<thead>
+<tr>
+<th>니버의 테제</th>
+<th>이 책의 명제</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>도덕적 개인 → 집단 안에서 비도덕적 행동</td>
+<td>"정치 공간에 들어가면 세상 사람과 똑같아진다"</td>
+</tr>
+<tr>
+<td>집단은 자기이익을 정의로 포장한다</td>
+<td>"좌편은 정의로 장사, 우편은 자유로 기득권 챙김"</td>
+</tr>
+<tr>
+<td>구조적 악 — 개인 교체로 해결 안 됨</td>
+<td>"이데올로기 전쟁 → 도덕성 실종"</td>
+</tr>
+<tr>
+<td>집단 내 긴장 유지의 중요성</td>
+<td>"진영에 완전히 속하지 말라"</td>
+</tr>
+</tbody>
+</table>
+<p>→ <strong>이 책의 핵심 명제는 니버의 테제를 신앙적 언어로 번역한 것이다</strong></p>
+<h3>거버넌스 강의와의 삼각 연결</h3>
+<p><span class="wl-dead" title="위키 내부 링크">거버넌스강의</span> — 이상협이 같은 니버 인용을 거버넌스 맥락에서 사용:</p>
+<blockquote>
+<p>"개인적으로 만나면 괜찮은데, 꼭 그 자리에 가시면 달라질 수 있다"<br />
+→ 거버넌스 구조가 건강해야 하는 이유</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>맥락</th>
+<th>니버 적용</th>
+<th>처방</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>정치 공간</td>
+<td>진영에 들어가면 정체성 상실</td>
+<td>다름(거룩)이 전략</td>
+</tr>
+<tr>
+<td>이사회·단체</td>
+<td>자리에 앉으면 비도덕적 행동</td>
+<td>건강한 거버넌스 구조</td>
+</tr>
+</tbody>
+</table>
+<p>→ <strong>니버는 문제를 진단하고, 이 책과 거버넌스 신학은 처방을 제시한다</strong></p>
+<hr />
+<h2>9. ★ 공적광장의 선교 — 오스 기니스와의 통합</h2>
+<p><a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a> — 오스 기니스 『소명』이 진단한 <strong>신앙의 3가지 함정</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>함정</th>
+<th>내용</th>
+<th>문제</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>사유화</strong></td>
+<td>신앙을 사적 영역으로 밀어넣음</td>
+<td>총체성 결여 — 공적 삶은 세상 방식으로</td>
+</tr>
+<tr>
+<td><strong>정치화</strong></td>
+<td>사유화에 대한 반작용으로 과잉 개입</td>
+<td>긴장 결여 — <strong>그리스도인의 차별성 상실</strong></td>
+</tr>
+<tr>
+<td><strong>기둥화</strong></td>
+<td>신앙 공동체의 기관화로 해결 시도</td>
+<td>변혁성 약화</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"현대 그리스도인들의 문제점은 그들이 마땅히 있어야 할 곳에 있지 않은 것이 아니고,<br />
+<strong>그들이 처한 곳에서 마땅히 보여야 할 모습을 갖고 있지 않다</strong>는 것이다." — 오스 기니스</p>
+</blockquote>
+<p>→ 이 책의 핵심 명제("정치 공간에 들어가면 세상 사람과 똑같아진다")<br />
+= 오스 기니스의 <strong>"정치화 함정 = 긴장 결여"</strong>의 한국적 구체화</p>
+<p><strong>소명이 이 함정들에 저항하는 방식</strong>:
+- 사유화에 저항 → 신앙의 총체성 (모든 사람, 모든 곳, 모든 것)
+- 정치화에 저항 → <strong>긴장을 유지하라</strong> (그리스도께 충성 vs 정당 노선 — 항상 긴장 관계)
+- 기둥화에 저항 → 사회 속 계속적 관여와 변혁</p>
+<h3>이상협 강의 — 공적광장에 보내진 의료인</h3>
+<blockquote>
+<p>"부르시고 보내시는 하나님 — 의료사회라는 공적광장으로"<br />
+(하백선 13장, <span class="wl-dead" title="위키 내부 링크">하백선시리즈</span>)</p>
+</blockquote>
+<p><strong>공적광장에서의 역할 (선교적 대결)</strong>:
+1. <strong>다르게 살도록</strong> — 빛과 소금, 거룩, 구별 (창18:19 의와 공도)
+2. <strong>우상숭배에 저항</strong> — 의료 자본주의·국가주의 우상에 맞섬
+3. <strong>그리스도의 고난에 참여</strong> — 의료사회에서 주 되심을 선포</p>
+<p>→ 의료사회 = 정치 공간과 동일한 구조 — <strong>공적광장에서 다름을 보이는 의료인</strong></p>
+<hr />
+<h2>10. 청년들을 위한 실천 지침</h2>
+<h3>신 앞의 단독자 vs. 연예인</h3>
+<blockquote>
+<p>정치 공간에서 "좋아요"를 받으려는 순간, 연예인이 된다.<br />
+<strong>신 앞의 단독자</strong>로 서야 한다.</p>
+</blockquote>
+<h3>4가지 실천 원칙</h3>
+<ol>
+<li><strong>기준을 세워라</strong> — 이데올로기가 아닌 말씀(창타구완)</li>
+<li><strong>진영에 완전히 속하지 말라</strong> — 집단에 속하되 삼켜지지 않는다</li>
+<li><strong>다름을 보여라</strong> — 거룩이 증언이다 (벧전3:15)</li>
+<li><strong>분별하라</strong> — 공의와 정의의 문제 + 회색지대에서의 상황 속 텍스트 적용</li>
+</ol>
+<blockquote>
+<p>하나님의 생각에 가깝게 수렴하는 것이 목표다.<br />
+부동산 문제에 관한 내 생각이 하나님 생각과 다를 수 있다.<br />
+<strong>하나님 생각에 가깝게 수렴해가는 과정 자체가 신앙이다.</strong></p>
+</blockquote>
+<hr />
+<h2>윌리엄 템플 · 오스 기니스 · 이 책 비교</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>템플</th>
+<th>오스 기니스</th>
+<th>이 책</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>초점</strong></td>
+<td>교회의 역할 경계</td>
+<td>개인 소명과 공적 삶</td>
+<td>개인 정체성 기준</td>
+</tr>
+<tr>
+<td><strong>핵심 질문</strong></td>
+<td>교회가 어디까지 개입할 수 있나?</td>
+<td>신앙의 총체성을 어떻게 지키나?</td>
+<td>정치 공간에서 왜 똑같아지는가?</td>
+</tr>
+<tr>
+<td><strong>처방</strong></td>
+<td>원리 선포, 3단계 참여 기준</td>
+<td>사유화·정치화에 저항하는 소명</td>
+<td>다름(거룩)이 전략</td>
+</tr>
+</tbody>
+</table>
+<p>→ 템플이 <strong>교회의 역할 경계</strong>를 그었다면,<br />
+오스 기니스가 <strong>공적 삶의 신학적 틀</strong>을 세웠다면,<br />
+이 책은 <strong>개인 그리스도인의 정체성 기준</strong>을 제시한다</p>
+<hr />
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EC%99%80%EC%82%AC%ED%9A%8C%EC%B0%B8%EC%97%AC/">교회와사회참여</a> — 템플의 3단계 + 이 책으로 심화</li>
+<li><a class="wl" href="../../t/%EC%9A%B0%EC%83%81%EC%88%AD%EB%B0%B0/">우상숭배</a> — 이데올로기 = 현대판 우상</li>
+<li><a class="wl" href="../../t/%EA%B1%B0%EB%A3%A9/">거룩</a> — 다름 = 거룩 = 정치적 전략</li>
+<li><a class="wl" href="../../t/%EA%B3%B5%EC%9D%98/">공의</a> — 안식일·희년·젖과 꿀·샬롬</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%84%B8%EA%B3%84%EA%B4%80/">기독교세계관</a> — 창타구완 판단 기준</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a> — 교회 = 대안 공동체, 모델하우스</li>
+<li><a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a> — 오스 기니스의 사유화·정치화·기둥화 함정</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%9C%A4%EB%A6%AC%ED%95%99/">기독교윤리학</a> — 회색지대, 상황 속 분별</li>
+<li><a class="wl" href="../../b/%EA%B8%B0%EB%8F%85%EC%8B%9C%EB%AF%BC%EC%9D%98%EC%82%AC%ED%9A%8C%EC%A0%81%EC%B1%85%EC%9E%84_%EC%9C%8C%EB%A6%AC%EC%97%84%ED%85%9C%ED%94%8C/">기독시민의사회적책임_윌리엄템플</a> — 템플과의 비교</li>
+<li><span class="wl-dead" title="위키 내부 링크">라이홀드니버</span> — 도덕적 인간과 비도덕적 사회</li>
+<li><a class="wl" href="../../b/%EC%9E%A5%EB%A1%9C%EC%A7%81%EC%9D%84%EB%8B%A4%EC%8B%9C%EC%83%9D%EA%B0%81%ED%95%98%EB%8B%A4/">장로직을다시생각하다</a> — 거버넌스 니버 연결</li>
+</ul>
+</article>
+<div class="tagrow"><span>#정치신학</span><span>#사회윤리</span><span>#이데올로기</span><span>#거룩</span><span>#우상숭배</span><span>#기독교세계관</span><span>#청년</span><span>#교회와사회</span><span>#공적광장</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

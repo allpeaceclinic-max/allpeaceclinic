@@ -1,0 +1,270 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>디아스포라 선교 (Diaspora Mission) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="date">2026-07-17</span></div>
+  <h1 class="note-title">디아스포라 선교 (Diaspora Mission)</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>디아스포라 선교는 흩어진 백성을 <strong>통한</strong>, 그리고 흩어진 백성을 <strong>향한</strong> 선교의 전략과 실천을 가리킨다. <a class="wl" href="../../t/%EB%94%94%EC%95%84%EC%8A%A4%ED%8F%AC%EB%9D%BC/">디아스포라</a> 페이지가 흩어짐을 하나님이 어떻게 읽으시는가 하는 성경신학을 다룬다면, 이 페이지는 그 신학이 현장에서 어떻게 방법이 되는가를 다룬다. 흩어짐이 신학이라면 여기서는 그것이 실천이다.</p>
+<p>세 페이지의 분업을 먼저 밝혀 둔다. <a class="wl" href="../../t/%EB%94%94%EC%95%84%EC%8A%A4%ED%8F%AC%EB%9D%BC/">디아스포라</a>는 흩어짐이라는 현상과 그 성경신학을, 이 페이지는 흩어진 자를 선교의 주자로 세우는 전략을, <a class="wl" href="../../t/%EC%9D%B4%EC%A3%BC%EB%AF%BC%EC%84%A0%EA%B5%90/">이주민선교</a>는 우리 곁으로 찾아온 나그네를 맞이하는 국내 사역을 각각 맡는다. 앤드류 월스의 명제가 이 전략 전체의 출발점이다 — "모든 이주(migration)는 복음의 이동이다." 사람이 움직이는 곳마다 복음이 움직일 자리가 열린다면, 인류 역사상 유례없는 대이주의 시대는 곧 유례없는 선교의 시대이기도 하다.</p>
+<h2>1. 신학에서 전략으로 — 흩어짐을 어떻게 선교로 바꾸는가</h2>
+<p>흩어짐이 저절로 선교가 되지는 않는다. 바벨론 포로도, 사도행전 8장의 박해도 그 자체로는 재난이었으나 하나님의 손 안에서 선교의 기반이 되었다. 전략의 과제는 이 전환을 우연이 아니라 의도로 만드는 것이다. 성경은 이 전환의 원형을 이미 품고 있다. 월스가 나눈 두 유형 — 아브라함식 자발적 이주와 아담식 비자발적 이주 — 은 계기가 정반대지만 같은 방향을 가리킨다.</p>
+<table>
+<thead>
+<tr>
+<th>이주 형태</th>
+<th>성경 인물</th>
+<th>선교적 의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>자발적 (고향 떠남)</td>
+<td>아브라함</td>
+<td>이방 세계에 복을 흘리는 첫 디아스포라</td>
+</tr>
+<tr>
+<td>비자발적 (노예)</td>
+<td>요셉</td>
+<td>흩어진 자리에서 애굽의 구원자가 됨</td>
+</tr>
+<tr>
+<td>피난·이중문화</td>
+<td>모세·예수</td>
+<td>두 문화의 경계인으로 훈련됨</td>
+</tr>
+<tr>
+<td>핍박으로 흩어짐</td>
+<td>초대교회(행 8:1)</td>
+<td>"흩어짐이 곧 선교의 모략"</td>
+</tr>
+</tbody>
+</table>
+<p>주목할 것은 메시아의 족보 자체가 다문화·이주민 가정의 계보라는 사실이다. 가나안 기생 라합, 모압 여인 룻, 헷 사람의 아내 밧세바, 애굽 여인 아스낫 — 하나님은 이방 여인들의 다문화 가정을 지키신 정도가 아니라 그 가정을 메시아의 집안으로 삼으셨다. 흩어짐과 섞임이 저주가 아니라 구원의 통로라는 것, 이것이 디아스포라 선교 전략의 신학적 담보다.</p>
+<h2>2. 유동선교 — 선교 패러다임의 네 번째 물결</h2>
+<p>노규석 목사는 21세기 선교를 '유동선교(Mobility Mission)'로 규정한다. 세계 선교의 역사가 사람의 움직임을 따라 네 물결로 흘러왔다는 것이다.</p>
+<table>
+<thead>
+<tr>
+<th>물결</th>
+<th>시대</th>
+<th>대표 인물</th>
+<th>초점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>해안선 선교</td>
+<td>18–19세기</td>
+<td>윌리엄 캐리</td>
+<td>항구·해안 거점</td>
+</tr>
+<tr>
+<td>내지 선교</td>
+<td>19–20세기</td>
+<td>허드슨 테일러</td>
+<td>대륙 내지 진입</td>
+</tr>
+<tr>
+<td>미전도 종족 선교</td>
+<td>20세기</td>
+<td>도날드 맥가브란·카메론 타운젠트</td>
+<td>종족 단위 입양</td>
+</tr>
+<tr>
+<td>유동선교</td>
+<td>21세기</td>
+<td>(냉전 이후)</td>
+<td>움직이는 사람을 따라가는 선교</td>
+</tr>
+</tbody>
+</table>
+<p>이 전환의 핵심 통찰은 지리의 역전이다. 노규석은 "미전도 종족을 가장 많이 만나는 곳은 인천공항·뉴욕공항·두바이공항, 그리고 대도시"라고 말한다. 선교사가 땅끝으로 가는 대신, 하나님이 땅끝을 옆집으로 이사 오게 하셨다는 것이다. 이 관점에서 디아스포라·이주민·난민은 선교의 부담이 아니라 하나님이 보내신 선교의 기회다. "모든 곳에서 모든 곳으로(from everywhere to everywhere)" — 유동선교는 선교의 방향을 일방(서구→비서구)에서 다중심으로 재편한다.</p>
+<h2>3. 대상에서 주체로 — 에녹 완의 네 단계와 역파송</h2>
+<p>디아스포라 선교의 전략적 심장은 흩어진 자를 수혜자에서 주체로 전환하는 데 있다. 에녹 완(Enoch Wan)의 네 단계 모델이 이 전환의 경로를 그린다.</p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>방향</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1단계</td>
+<td>FOR (긍휼)</td>
+<td>이주민에게 쉼터·의료 등 실제 필요를 채운다</td>
+</tr>
+<tr>
+<td>2단계</td>
+<td>TO (전도)</td>
+<td>언어별 예배부서를 세워 모국어로 복음을 전한다</td>
+</tr>
+<tr>
+<td>3단계</td>
+<td>THROUGH (재생산)</td>
+<td>복음 받은 이주민이 훈련받아 동족을 전도한다</td>
+</tr>
+<tr>
+<td>4단계</td>
+<td>BY/BEYOND (역파송)</td>
+<td>귀환 후 모국에 교회를 개척하거나 제3세계로 역파송된다</td>
+</tr>
+</tbody>
+</table>
+<p>앞의 두 단계(FOR·TO)에 머물면 이주민은 영원히 대상으로 남는다. 전략의 무게중심은 뒤의 두 단계(THROUGH·BY)에 있다. 복음을 받은 이주민이 훈련을 거쳐 자기 민족의 선교사가 되고, 몇 년 뒤 본국으로 돌아가 그곳에 교회를 세우는 '역파송(reverse mission)' — 이것이 유동선교의 궁극 비전이다. 노규석의 8M 프레임워크가 이 여정을 한 줄로 요약한다. 이주민은 처음에 Money(돈) 때문에 온 Migrants(이주자)이지만, Mercy(긍휼)와 Messiah(그리스도)를 만나 Mission(선교)의 주체가 되고 마침내 Mobilization, 곧 선교사가 되어 자기 나라로 돌아간다. 잠재적 테러리스트가 될 수도 있던 청년이 복음을 만나 동역자가 된다는 노규석의 증언 — 5년간 무슬림 18명을 포함해 200명에게 세례를 준 현장 — 이 이 전환이 관념이 아님을 보여준다.</p>
+<h2>4. 디아스포라 교회의 이중 사명 — 정착지 선교와 모국 연결</h2>
+<p>흩어진 한인 교회 자신도 이 전략의 주체다. 재외 한인은 약 740만 명에 이르고, 여기에 중국 동포 70~80만, 고려인 10만, 탈북 동포 3만 5천을 더하면 한국 DNA를 가진 디아스포라가 100만 명에 육박한다. 이 흩어진 한인 공동체에는 두 겹의 사명이 주어진다.</p>
+<p><strong>첫째, 정착지 선교.</strong> 이주한 땅에서 현지인과 다른 이주민에게 복음을 전하는 것이다. 흩어진 백성은 그 자리에서 이미 선교사다 — 스가랴의 환상처럼 "말이 다른 이방 백성 열 명이 유다 사람 하나의 옷자락을 잡는"(슥 8:23) 일이 흩어진 자의 곁에서 일어난다.</p>
+<p><strong>둘째, 모국 연결.</strong> 정착지와 고향을 잇는 다리가 되는 것이다. 노규석은 이 연결의 현대적 통로를 예리하게 포착한다 — 한류, SNS, 페이스북. 한국에서 일한 이주민이 돌아가 한국 물건을 써 주고, 한국 친구가 있다는 것을 자랑삼으며, 고향의 가족에게 복음을 실어 나른다. 여기에 '상호주의'의 원리가 작동한다. 베트남인 15만 명이 한국에 있고 한국인 20만 명이 베트남에 있다면, 우리가 이주민을 대접하는 방식이 곧 해외의 한인이 대접받는 방식이 된다. 그래서 유동선교는 세 겹으로 확장된다 — 아시아를 품는 세계선교, 100만 한민족 디아스포라를 준비시키는 통일선교, 그리고 이주민을 미래의 파트너로 세우는 미래선교. 타문화 선교와 사회 선교가 만나는 이 지점을 노규석은 '융합선교'라 부른다.</p>
+<h2>5. 자생과 정의의 원리, 그리고 현장</h2>
+<p>전략에는 윤리가 따른다. 디아스포라 선교가 일방적 시혜로 흐르면 이주민을 무기력한 수혜자로 고착시킨다. 성경의 자생 원리가 이를 막는다. 레위기 19장의 페아(פֵּאָה) 규례 — 밭 모퉁이를 다 거두지 말고 나그네가 스스로 이삭을 줍게 남겨 두라 — 는 내 소득의 일부가 이미 나그네의 몫임을 인정하되, 일방적으로 주어 무기력하게 만들지 않고 자립하도록 배려한다. 억압받는 이주민의 부르짖음(제아카, צְעָקָה)에 하나님은 교회를 통한 정의(체다카, צְדָקָה)로 응답하시며, 나그네를 돕는 것은 단순 구제가 아니라 하나님의 정의 실현이다("나그네를 사랑하라", 신 10:19).</p>
+<p>이 원리가 착지하는 곳은 구체적 현장이다. 영남대·경북대의 유학생, 대구 산업단지의 아프리카·중앙아시아·베트남·우즈베키스탄 근로자 — "스스로 비행기 삯을 내고 우리의 문턱까지 찾아온 소중한 하나님의 선교 대상"이다. 솔로몬의 성전 봉헌 기도(왕상 8:41-43)는 이 현장의 신학적 지평을 연다. "먼 지방에서 온 이방인"의 부르짖음에 응답해 달라는 이 기도처럼, 지역 교회는 "만민이 기도하는 집"(막 11:17)으로 확장되어야 한다. 우리 자신도 한때 이방인이자 나그네였고, 예수님조차 애굽으로 피신한 난민이셨기 때문이다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li><strong>흩어짐은 저절로 선교가 되지 않는다.</strong> 전략의 과제는 재난(포로·박해)이 선교의 기반이 되는 전환을 우연에서 의도로 바꾸는 것이다. 메시아의 다문화 족보가 그 신학적 담보다.</li>
+<li><strong>지리가 역전되었다.</strong> 미전도 종족을 가장 많이 만나는 곳이 공항과 대도시라면, 하나님이 땅끝을 옆집으로 이사 오게 하신 것이다. 유동선교는 "모든 곳에서 모든 곳으로."</li>
+<li><strong>전략의 심장은 대상에서 주체로의 전환이다.</strong> 에녹 완의 네 단계에서 무게중심은 FOR·TO가 아니라 THROUGH·BY에 있으며, 역파송이 궁극 비전이다.</li>
+<li><strong>디아스포라 교회는 이중 사명을 진다.</strong> 정착지 선교(현지 복음화)와 모국 연결(한류·SNS·상호주의)의 두 겹이며, 이는 통일선교·미래선교로 확장된다.</li>
+<li><strong>자생과 정의가 전략의 윤리다.</strong> 페아 규례처럼 일방적 시혜가 아니라 자립을 돕는 배려, 제아카에 응답하는 체다카가 흩어진 자를 수혜자가 아닌 동역자로 세운다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>역파송이 이상으로 남지 않으려면, 이주민을 선교사로 세우는 훈련의 실제 커리큘럼과 파송 구조는 어떻게 설계되어야 하는가.</li>
+<li>한인 디아스포라의 '모국 연결'이 복음의 통로가 아니라 문화적 향수나 상업적 네트워크에 머물 위험을 어떻게 분별할 것인가.</li>
+<li>정착지 선교와 모국 연결이라는 이중 사명 사이에서 흩어진 교회가 힘을 어떻게 배분해야 하는가 — 둘은 언제 상승하고 언제 충돌하는가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EB%94%94%EC%95%84%EC%8A%A4%ED%8F%AC%EB%9D%BC/">디아스포라</a> — 흩어짐의 성경신학(창 11–계 22, 심판에서 선교로). 이 페이지가 실천이라면 그것은 신학.</li>
+<li><a class="wl" href="../../t/%EC%9D%B4%EC%A3%BC%EB%AF%BC%EC%84%A0%EA%B5%90/">이주민선교</a> — 흩어짐의 거울상: 우리 곁으로 찾아온 나그네를 국내에서 맞이하는 사역, 환대, 다음세대(TCK).</li>
+<li><a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A0%EA%B5%90/">하나님의선교</a> — 흩으심과 치유하심 사이를 메우는 미씨오 데이의 큰 틀.</li>
+<li><a class="wl" href="../../t/%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90/">세계기독교</a> — 디아스포라가 만든 결과: 기독교 무게중심의 다중심 이동.</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> — 유동선교·역파송이 서 있는 선교론의 지형.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>노규석, "유동선교 2강 — 동역적 관점(Global Christians &amp; Mobility Mission)"</td>
+<td>강의</td>
+<td>유동선교 네 물결, 공항=미전도종족 접점, 8M 프레임워크, 역파송·통일·미래·융합선교, 상호주의</td>
+</tr>
+<tr>
+<td>노규석, "우리의 이웃, 열방에서 온 이주민들"</td>
+<td>강의</td>
+<td>재외 한인 740만, 슥 8:23 옷자락, 만민이 기도하는 집</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">앤드류월스</span>, 유동선교 역사적·문화적 관점</td>
+<td>강의</td>
+<td>"모든 이주는 복음의 이동", 자발/비자발 이주, 메시아 다문화 족보, 이중문화 리더십</td>
+</tr>
+<tr>
+<td>The Diaspora Mission (선교 키노트)</td>
+<td>강의</td>
+<td>에녹 완 4단계(FOR/TO/THROUGH/BY), 제아카·체다카·페아, IOM 통계, 지역교회 연결</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">박주용</span>, "땅끝이 다가오는 시대의 부르심, 이주선교"</td>
+<td>강의</td>
+<td>Spreading by scattering, 흩어진 인물들의 이주</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#이주민선교</span><span>#유동선교</span><span>#역파송</span><span>#discipline/선교학</span><span>#domain/선교</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

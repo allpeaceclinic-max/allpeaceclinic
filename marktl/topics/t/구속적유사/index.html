@@ -1,0 +1,254 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>구속적 유사 (Redemptive Analogy) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="date">2026-07-10</span></div>
+  <h1 class="note-title">구속적 유사 (Redemptive Analogy)</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>복음을 처음 듣는 문화권 사람들에게 복음은 대개 외래 종교로 들린다. 구속적 유사는 이 벽을 안쪽에서 허문다. 모든 문화 안에는 하나님이 심어 놓으신 구속 이야기의 메아리 — 용서와 화해와 희생의 의식·관습·서사 — 가 이미 들어와 있으며, 이것을 발굴하여 복음과 연결하면 복음이 남의 이야기가 아니라 자신의 것으로 들린다는 선교 커뮤니케이션의 원리다. 인도네시아 이리안자야에서 17년을 사역한 <span class="wl-dead" title="위키 내부 링크">GBT</span> 성경번역선교사 <span class="wl-dead" title="위키 내부 링크">김연수</span>의 정의가 이 볼트의 출발점이다.</p>
+<blockquote>
+<p>"어느 문화권이나 구속적 이야기가 유사하게 들어와 있다. 이것을 발견하면 그들이 '이것 우리 꺼구나' 하는 생각이 들게 한다." — 김연수, 「그들은 어떻게 들을 것인가」</p>
+</blockquote>
+<p>개념 자체는 사위족 선교사 돈 리처드슨(Don Richardson)의 『평화의 아이(Peace Child)』 사역에서 유래했고, 이 볼트에는 세 경로로 들어와 있다. 김연수의 2018 LMTC-PSP 강의, <span class="wl-dead" title="위키 내부 링크">손창남</span>의 2014 선교와 문화 강의, 그리고 권성수 목사의 두 설교가 그것이다. 명칭은 화자마다 조금씩 다르다 — 김연수는 '구속적 유사'와 함께 '구속적 유추·문화적 유추'라는 역어를 병기하고, 권성수는 '구원의 유비'라 부르며, 리처드슨의 책도 볼트 안에서 『화해의 아이』, 『평화의 아이』, '평화의 아들'로 표기가 오간다. 이 글은 표제어를 '구속적 유사'로 통일하되, 그 표기의 흔들림 자체가 아직 정착 중인 개념의 나이테임을 기억해 둔다.</p>
+<h2>1. 모형론을 수평으로 눕히다</h2>
+<p>김연수는 이 개념을 성경해석학의 익숙한 도식에서 출발시킨다. 성경 안에는 모형(type)과 원형(archetype)이 있다 — 구약의 제사·인물·사건은 그림자이고, 예수 그리스도는 실체다. 이 그림자-실체의 구조가 구약에서 신약으로 흐르는 시간축 위에 놓이면 <a class="wl" href="../../t/%EC%98%88%ED%91%9C%EB%A1%A0/">모형론(예표론)</a>이 되고, "이것을 수평으로 놓으면 구속적 유사가 된다"는 것이 그의 정리다. 예표론 페이지도 같은 도식을 정식화해 두었다 — 예표론은 시간축(구약 → 신약) 위의 연결이고, 구속적 유사는 문화 간 수평 연결이라는 것이다.</p>
+<p>이 수평 전환의 함의는 작지 않다. 구약의 희생제사가 <a class="wl" href="../../t/%EC%8B%AD%EC%9E%90%EA%B0%80/">십자가</a>의 그림자였듯, 한 부족의 화해 의식도 복음의 그림자일 수 있다는 말이기 때문이다. 다만 결정적인 차이가 하나 있다. 성경의 예표는 하나님이 구속사 안에서 의도적으로 설계하신 계시의 장치임이 본문 자체로 보증되지만, 문화 속 유사물에는 그런 보증이 없다. 그렇다면 문화 안의 그림자는 어디에서 왔는가 — 이 질문이 개념의 신학적 기초로 이어진다.</p>
+<h2>2. 왜 모든 문화에 구속의 그림자가 있는가</h2>
+<p>시드가 된 김연수의 답은 일반 은혜다. 하나님이 온 인류를 창조하셨고 사람의 심령에 영원을 사모하는 마음을 두셨기에(<span class="wl-dead" title="위키 내부 링크">전 3:11</span>), 어느 문화에도 구속의 흔적이 남아 있다는 것이다. 손창남은 같은 확신을 <a class="wl" href="../../t/%EC%84%B1%EC%9C%A1%EC%8B%A0/">성육신</a>의 언어로 표현한다. 하나님이 사람의 언어와 육신을 입으셨듯 복음은 어느 문화로도 번역될 수 있다는 번역가능성(translatability)이 그의 전제인데, 이를 뒤집으면 어느 문화에나 복음을 실어 나를 그릇이 이미 준비되어 있다는 말이 된다. 그가 든 사과나무의 교훈이 이 방향을 잘 보여준다. 경산의 달콤한 사과나무는 토종처럼 보이지만 선교사가 심은 외래종이었다 — 익숙함과 기원은 별개이며, 복음 전달의 실마리는 밖에서 들여오는 것이 아니라 현지 문화 안에서 찾아야 한다는 것이다.</p>
+<p>이 논리는 이 볼트의 <a class="wl" href="../../t/%EC%9D%BC%EB%B0%98%EA%B3%84%EC%8B%9C/">일반계시</a> 담론과 자연스럽게 만난다. <span class="wl-dead" title="위키 내부 링크">전성민</span>이 논증하듯 아모스의 열방 신탁은 시내산 언약 바깥의 민족들에게도 알고 지켜야 할 도덕적 요구가 있었음을 보여주고, 욥은 토라 없이 하나님을 알았던 비이스라엘 신앙인의 사례다. 일반계시가 도덕과 신 인식의 보편적 지평을 연다면, 구속적 유사는 그 지평 위에서 한 걸음 더 나아가 구속 서사의 흔적을 찾는 작업이라 할 수 있다. 다만 일반계시 페이지의 미해결 질문 — 일반계시가 구원 지식까지 제공하는가, 아니면 죄를 깨닫게 하는 데까지만 이르는가 — 은 여기서도 그대로 유효하다. 그림자는 사람을 실체 앞까지 데려갈 뿐, 그 자체가 실체는 아니다.</p>
+<h2>3. 세 개의 현장 — 끄웨르바, 사위, 아쿠라우</h2>
+<p>이 개념이 볼트에 추상으로 머물지 않는 것은 <span class="wl-dead" title="위키 내부 링크">2018 LMTC-PSP</span>에서 김연수가 전한 현장들 때문이다. 부족법으로만 통치되는 끄웨르바(Kwerba) 족은 부족 간 분쟁을 종결할 때 화살로 양쪽 허벅지를 뚫어 피를 흘린다.</p>
+<blockquote>
+<p>"피를 흘렸다는 것은 용서, 다시는 언급하면 안 된다." — 김연수, 끄웨르바 족 화해 의식</p>
+</blockquote>
+<p>"피 흘림이 없은즉 사함이 없느니라"(히 9:22)는 <a class="wl" href="../../t/%ED%9D%AC%EC%83%9D%EC%A0%9C%EC%82%AC/">희생제사</a>의 원리가, 성경이 도착하기 전에 이미 그들의 몸의 언어로 말해지고 있었던 셈이다. 사위(Sawi) 족의 경우는 더 극적이다. 1962년 리처드슨이 만난 이 부족은 배신이 미덕이고 가룟 유다가 영웅으로 존경받는 문화였다 — 복음 서사가 정반대로 수신될 문화다. 그런데 그 문화 안에 자기 아이를 상대 부족에게 넘겨줌으로써 평화를 보증하는 '평화의 아이' 관습이 있었고, 하나님이 화평을 위해 아들을 내어주신 사건이 이 관습의 언어로 번역되자 복음이 들어갔다. 권성수 목사의 증언대로 "복음이 들어가니 싸우는 사람의 전쟁이 그치고 평화가 임했다."</p>
+<table>
+<thead>
+<tr>
+<th>사례</th>
+<th>문화 안의 관습</th>
+<th>구속 서사와의 접점</th>
+<th>경로</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>끄웨르바 족 (이리안자야)</td>
+<td>화살로 양쪽 허벅지를 뚫어 피 흘림 = 용서, 재언급 금지</td>
+<td>피 흘림과 사함 (히 9:22)</td>
+<td>김연수 직접 사역</td>
+</tr>
+<tr>
+<td>사위 족 (이리안자야, 1962)</td>
+<td>'평화의 아이' — 자기 아이를 넘겨 평화를 보증</td>
+<td>하나님이 아들을 보내심</td>
+<td>돈 리처드슨, 『평화의 아이』</td>
+</tr>
+<tr>
+<td>아쿠라우</td>
+<td>'화해의 나무' — 화해·속죄의 상징물</td>
+<td>(강의 노트에 이름만 남음)</td>
+<td>김연수 강의 언급</td>
+</tr>
+</tbody>
+</table>
+<p>한 가지 흥미로운 흔적이 있다. 김연수의 노트는 Redemptive analogy 아래 '구속적 유추'와 '문화적 유추'라는 두 역어를 나란히 적은 뒤, 끄웨르바 사례에는 앞의 것을, 리처드슨의 화해의 아이에는 뒤의 것을 붙였다. 성경의 구속 원리(피-사함)와 직접 겹치는 경우와, 문화 서사가 복음 서사와 평행할 뿐인 경우를 구별하려는 층위 의식으로 읽을 수 있으나, 노트가 압축적이어서 구분 기준까지는 남아 있지 않다.</p>
+<h2>4. 상황화의 가장 깊은 층</h2>
+<p>구속적 유사가 선교 방법론의 지도 어디에 놓이는지는 손창남의 강의가 가장 선명하게 보여준다. 그는 복음을 수신자의 문화 코드로 옮기는 <a class="wl" href="../../t/%EC%83%81%ED%99%A9%ED%99%94/">상황화</a>의 도구를 사실상 세 층위로 제시한다. 낱말 수준에서는 bread를 떡으로 옮기는 역동적 등가가, 상징 수준에서는 조선인에게 익숙한 '하나님'과 '기도'라는 단어를 차용해 기독교적 의미로 채우는 상징 빼앗기가 작동한다("알라가 잘못된 것이 아니라 이슬람이 잘못된 것이다"라는 그의 명제도 이 층위다). 구속적 유사는 그다음 층, 곧 낱말과 상징을 넘어 문화의 서사와 의식 전체를 복음의 접촉점으로 삼는 층위다.</p>
+<table>
+<thead>
+<tr>
+<th>층위</th>
+<th>도구</th>
+<th>예</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>낱말</td>
+<td>역동적 등가 (dynamic equivalence)</td>
+<td>bread → 떡</td>
+</tr>
+<tr>
+<td>상징</td>
+<td>상징 빼앗기 (symbol theft)</td>
+<td>'하나님'·'기도'의 차용</td>
+</tr>
+<tr>
+<td>서사·의식</td>
+<td>구속적 유사 (redemptive analogy)</td>
+<td>평화의 아이, 끄웨르바 피흘림</td>
+</tr>
+</tbody>
+</table>
+<p>그래서 상황화 페이지는 구속적 유사를 "가장 깊은 수준의 상황화"로, <a class="wl" href="../../t/%EC%84%B8%EA%B3%84%EA%B4%80/">세계관</a> 페이지는 "세계관 안에 이미 심겨진 구속의 씨앗을 발굴하는 것"으로 자리매김한다. 깊이의 방향이 중요하다. 상황화 실패 사례들 — 문 두드리는 예수(<span class="wl-dead" title="위키 내부 링크">계 3:20</span>)가 이리안자야에서 도둑으로 수신되고, 양과 염소가 없는 문화에서 어린 양 비유가 허공을 치는 — 은 발신자 코드의 직역이 낳는 왜곡을 보여준다. 구속적 유사는 정반대로 수신자의 세계관 심층에서 출발한다. 김연수의 강의 제목 "그들은 어떻게 들을 것인가" 자체가 이 방향 전환의 선언이다. 발굴의 실제는 시드가 정리한 네 단계로 요약된다. 해당 문화의 의식·신화·금기를 깊이 이해하고, 용서·화해·희생·속죄와 관련된 요소를 찾고, 성경의 구속 서사와 연결점을 탐색하고, "이것이 우리 이야기구나"가 될 때까지 다듬는 것이다. 손창남의 표현으로 구속적 유사는 "복음 전달의 실마리"이며, 그 실마리를 잡는 첫 질문은 "이 비유가 누구에게 적절한가"이다.</p>
+<h2>5. 한국 강단의 수용 — 방법론에서 복음의 예증으로</h2>
+<p>이 개념은 선교훈련장(LMTC)에만 머물지 않고 한국 교회의 주일 강단에도 들어와 있는데, 그 용법의 변화가 흥미롭다. 권성수 목사는 2014년 「선교스타 천국스타」에서 <span class="wl-dead" title="위키 내부 링크">고전 9:19-23</span>의 "여러 사람에게 여러 모습"을 맥락화(contextualization)의 본문으로 강해하면서 리처드슨의 평화의 아이를 "구원의 유비"로 소개한다. 여기서 구속적 유사는 성도가 남의 문화 속으로 들어가는 종이 되는 선교적 삶의 모델, 곧 훈련장에서와 같은 방법론의 사례다.</p>
+<p>그런데 한 해 앞선 2013년 십계명 제6계명(2) 설교에서는 용법이 다르다. 살인과 전쟁이라는 무거운 주제 아래 정당전쟁론을 전개한 끝에, 그는 "전쟁도 끝이 아니다"의 증거로 사위족을 부른다 — 배신이 미덕인 식인 문화조차 복음이 들어가면 전쟁이 그친다는 것이다. 여기서 구속적 유사는 전달 기법이 아니라 복음의 평화 능력의 서사로 기능한다. 같은 사례가 훈련장에서는 방법론으로, 강단에서는 복음 능력의 예증으로 쓰이는 이 이중 용법은, 구속적 유사가 기술이기 이전에 하나의 확신 — 복음은 어떤 문화에서도 길을 낸다는 — 의 표현임을 보여준다.</p>
+<h2>6. 다리이지 복음이 아니다</h2>
+<p>마지막으로 경계선이다. 시드의 결론은 그대로 유효하다 — 구속적 유사는 복음 자체를 대체하지 않으며, 문화 안의 그림자를 통해 복음의 실체로 나아가는 다리다. 다리가 무너지는 방향은 둘이다. 하나는 접촉점을 무시하는 직역주의로, 계 3:20의 도둑 오해처럼 복음 자체를 왜곡된 형태로 수신시킨다. 다른 하나는 접촉점을 과신하는 혼합주의다. 손창남은 상황화 강의의 끝을 굳이 이 경고에 할애했다.</p>
+<blockquote>
+<p>"속이 중요하다. 겉은 기독교 같은데 안에는 다른 종교이다." — 손창남, 혼합주의 경고</p>
+</blockquote>
+<p>금기 생선 똥꼴에 물을 부어 "이건 뜽기리입니다"라며 이름만 바꿔 먹던 일화는 이름의 개종과 삶의 변혁(transformation)이 다르다는 것을 풍자한다. <a class="wl" href="../../t/%ED%83%80%EB%AC%B8%ED%99%94%EC%84%A0%EA%B5%90/">타문화선교</a> 페이지가 정리한 경계선도 같다 — 상황화와 혼합주의를 가르는 것은 복음의 핵심(그리스도의 십자가·부활·주권)의 보존 여부다. 끄웨르바의 피흘림 의식이 히 9:22와 아무리 겹쳐도 그 의식 자체가 사함을 주는 것은 아니며, 그것이 가리키는 실체는 십자가뿐이다. 문화의 그림자는 발견되는 순간 실체 앞에서 상대화된다. 그림자의 소명은 실체를 가리키고 물러나는 것이다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>구속적 유사는 예표론의 수평 전환이다 — 그림자-실체 구조를 시간축(구약→신약)에서 수평축(문화→복음)으로 옮긴 것. 단 성경의 예표와 달리 문화 속 유사물에는 계시적 보증이 없다.</li>
+<li>신학적 기초는 일반 은혜(전 3:11)이며, 손창남의 성육신적 번역가능성 논리와 전성민의 일반계시 담론(아모스 열방 신탁, 욥)이 같은 지평에서 이를 떠받친다.</li>
+<li>세 현장 사례(끄웨르바의 피흘림, 사위족의 평화의 아이, 아쿠라우의 화해의 나무)는 공통적으로 화해·용서의 문화 의식이 성경 구속 서사와 평행함을 보여준다.</li>
+<li>상황화 스펙트럼에서 구속적 유사는 최심층이다 — 낱말(역동적 등가), 상징(상징 빼앗기)을 지나 서사·의식 전체를 접촉점으로 삼는다.</li>
+<li>한국 강단에서 이 개념은 이중 용법을 갖는다 — 훈련장의 전달 방법론이자, 강단에서는 복음의 평화 능력을 증언하는 서사.</li>
+<li>구속적 유사는 다리이지 복음이 아니다. 직역주의와 혼합주의 사이에서, 판별 기준은 복음의 핵심 보존과 삶의 변혁이다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>김연수 노트의 '구속적 유추'와 '문화적 유추' 병기는 두 층위의 구분인가, 같은 개념의 역어 병렬인가 — 구분이라면 판별 기준(성경 구속 원리와의 직접 일치 여부?)은 무엇인가.</li>
+<li><a class="wl" href="../../t/%EA%B5%AC%EC%86%8D%EC%8B%A0%ED%95%99/">구속신학</a> 페이지가 명시적으로 요청한 과제 — 구속적 유사와 구속신학의 관계 정립. 문화 속 유사물은 창조→타락→구속→완성의 구속사 어디에 위치하는가.</li>
+<li>일반계시가 구원 지식에까지 이르는가라는 질문(<a class="wl" href="../../t/%EC%9D%BC%EB%B0%98%EA%B3%84%EC%8B%9C/">일반계시</a>와 공유)이 여기에도 걸린다 — 유사물의 발견은 회심 이전의 사람을 어디까지 데려가는가.</li>
+<li>한국 문화의 구속적 유사는 무엇인가. 손창남의 상징 빼앗기('하나님'·'기도' 차용)는 낱말·상징 수준인데, 서사 수준의 한국형 사례를 볼트는 아직 갖고 있지 않다.</li>
+<li>리처드슨의 『평화의 아이』 원저가 볼트에 없다 — 사위족 서사의 실제 전개(관습의 작동 방식, 회심 이후 교회 형성)는 원자료 확보 후 보강할 과제다.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%83%81%ED%99%A9%ED%99%94/">상황화</a> — 형식-내용 구분, 성육신적 근거 등 상황화 이론 일반은 이 페이지에 위임. 구속적 유사는 그 최심층.</li>
+<li><a class="wl" href="../../t/%EC%98%88%ED%91%9C%EB%A1%A0/">예표론</a> — 시간축 모형론. 구속적 유사의 수직 대응 개념.</li>
+<li><a class="wl" href="../../t/%ED%9D%AC%EC%83%9D%EC%A0%9C%EC%82%AC/">희생제사</a> — 피흘림-사함 원리(히 9:22)의 성경신학적 전개는 이 페이지에 위임.</li>
+<li><a class="wl" href="../../t/%EC%84%B8%EA%B3%84%EA%B4%80/">세계관</a> — 로이드 퀘스트 모델. 유사 발굴이 겨냥하는 문화의 심층.</li>
+<li><a class="wl" href="../../t/%ED%83%80%EB%AC%B8%ED%99%94%EC%84%A0%EA%B5%90/">타문화선교</a> — 손창남 선교론의 전체 지형과 혼합주의 경계선.</li>
+<li><a class="wl" href="../../t/%EC%9D%BC%EB%B0%98%EA%B3%84%EC%8B%9C/">일반계시</a> — 문화 속 구속 그림자의 계시론적 기초.</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EC%9C%A1%EC%8B%A0/">성육신</a> — 번역가능성(translatability)의 신학적 원천.</li>
+<li><span class="wl-dead" title="위키 내부 링크">고전9</span> — "여러 사람에게 여러 모습", 맥락화의 본문.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">김연수</span> · <span class="wl-dead" title="위키 내부 링크">2018LMTC-PSP</span> 10과 「그들은 어떻게 들을 것인가」</td>
+<td>강의(2018)</td>
+<td>정의, 모형론 수평화 도식, 끄웨르바·사위·아쿠라우 사례, 구속적/문화적 유추 역어</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2014_손창남_선교와문화_LMTC훈련</span></td>
+<td>강의(2014)</td>
+<td>상황화 스펙트럼(역동적 등가·상징 빼앗기), "복음 전달의 실마리", 사과나무 교훈, 번역가능성, 혼합주의 경고</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2014_선교스타천국스타</span></td>
+<td>설교(2014)</td>
+<td>"구원의 유비" 명명, 고전 9장 맥락화와의 연결, 선교적 삶의 모델</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">십계명_12_제6계명2</span></td>
+<td>설교(2013)</td>
+<td>사위족 1962 상세(배신이 미덕, 가룟 유다 영웅), 복음의 평화 능력 예증</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">전성민_왜이스라엘만선택하셨는가</span></td>
+<td>강의(전성민)</td>
+<td>일반계시·보편 섭리 — 문화 속 구속 그림자의 계시론적 배경</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%98%88%ED%91%9C%EB%A1%A0/">예표론</a> · <a class="wl" href="../../t/%ED%9D%AC%EC%83%9D%EC%A0%9C%EC%82%AC/">희생제사</a> · <a class="wl" href="../../t/%EC%83%81%ED%99%A9%ED%99%94/">상황화</a> · <a class="wl" href="../../t/%EC%84%B8%EA%B3%84%EA%B4%80/">세계관</a> · <a class="wl" href="../../t/%ED%83%80%EB%AC%B8%ED%99%94%EC%84%A0%EA%B5%90/">타문화선교</a></td>
+<td>위키 교차</td>
+<td>개념의 신학적·방법론적 자리매김</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>📖 원본: <span class="wl-dead" title="위키 내부 링크">10과 그들은 어떻게 들을 것인가 김연수선교사</span> · <span class="wl-dead" title="위키 내부 링크">선교와 문화, LMTC훈련, 손창남 선교사</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#domain/선교</span><span>#discipline/선교학</span><span>#topic/상황화</span><span>#topic/타문화선교</span><span>#topic/예표론</span><span>#topic/일반계시</span><span>#topic/선교커뮤니케이션</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

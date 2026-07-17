@@ -1,0 +1,175 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>기적 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:345">영성·제자도</span><span class="date">2026-05-03</span></div>
+  <h1 class="note-title">기적</h1>
+  
+</header>
+<article class="note">
+<h2>개념 정의</h2>
+<p>하나님이 자연 질서에 직접 개입하시는 초자연적 사건.
+성경은 기적을 표적(σημεῖον), 이적(τέρας), 능력(δύναμις) 등으로 표현한다.</p>
+<hr />
+<h2>핵심 인사이트</h2>
+<h3>기적은 믿음이 강한 자가 아니라 약한 자를 위한 것</h3>
+<p><em>(티머시 제닝스, 《뇌, 하나님의 설계》)</em></p>
+<blockquote>
+<p>"기적은 믿음이 강한 자들을 위해서가 아니라 믿음이 약한 자들을 위한 것이 아닐까?"</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>사례</th>
+<th>수혜자</th>
+<th>의도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>기드온의 양털</td>
+<td>믿음이 약한 기드온</td>
+<td>격려가 필요한 자를 위해</td>
+</tr>
+<tr>
+<td>갈멜산의 불</td>
+<td>방황하는 이스라엘 백성</td>
+<td>흔들리는 믿음을 붙잡기 위해</td>
+</tr>
+<tr>
+<td>풀무불 기적</td>
+<td>느부갓네살</td>
+<td>믿지 않는 자를 깨우치기 위해</td>
+</tr>
+<tr>
+<td>욥기의 회복</td>
+<td>하나님의 증인으로 채택된 욥</td>
+<td>숨은 의도 — 욥을 증인 삼으심</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"그렇게 하지 아니하실지라도... 절하지 아니할 줄 아옵소서" (단 3:18)
+→ <strong>기적이 없어도 확신하는 것 = 성숙한 믿음</strong></p>
+</blockquote>
+<h3>확신의 근거: 기적이 아니라 하나님의 성품</h3>
+<blockquote>
+<p>"우리가 하나님을 확신하는 근거는 기적이 아니라 그분 자신의 성품에 있다.
+기적은 가짜일 수 있지만, 예수께서 계시해 주신 진리는 가짜일 수 없다."</p>
+</blockquote>
+<ul>
+<li>기적에 근거한 믿음 = 기적이 없으면 흔들릴 수 있다</li>
+<li>성품에 근거한 믿음 = 기적이 없어도, 고난 속에서도 흔들리지 않는다</li>
+<li>문제: 하나님이 기적적으로 개입하지 않으셔도 확신이 흔들리지 않을 만큼 그분을 잘 알고 있는가?</li>
+</ul>
+<hr />
+<h2>미해결 질문</h2>
+<ul>
+<li>현대에도 기적이 일어나는가? 기적의 목적이 소멸되었는가?</li>
+<li>기적을 간구하는 기도와 성품을 신뢰하는 믿음은 어떻게 균형을 이루는가?</li>
+<li>기적을 경험한 사람과 경험하지 못한 사람 사이의 신앙 격차를 어떻게 이해할 것인가?</li>
+<li>번영신학의 기적 이해 — <a class="wl" href="../../t/%EB%B2%88%EC%98%81%EC%8B%A0%ED%95%99/">번영신학</a>과 어떻게 다른가?</li>
+</ul>
+<hr />
+<h2>관련 본문</h2>
+<ul>
+<li>단 3:16-18 — "그렇게 하지 아니하실지라도"</li>
+<li>욥 42:7-8 — 욥을 증인으로 채택하신 하나님</li>
+<li>막 6:5 — 고향에서 아무 능력도 행하실 수 없으셨다 (불신의 문제)</li>
+<li>요 20:29 — "보지 못하고 믿는 자들은 복되도다"</li>
+<li>고전 1:22 — "유대인은 표적을 구하고"</li>
+</ul>
+<hr />
+<h2>연결된 페이지</h2>
+<ul>
+<li><a class="wl" href="../../t/%EB%AF%BF%EC%9D%8C/">믿음</a> — 기적 없이도 확신하는 믿음</li>
+<li><a class="wl" href="../../t/%EA%B3%A0%EB%82%9C/">고난</a> — 기적이 없는 고난의 현실</li>
+<li><a class="wl" href="../../t/%EC%8B%A0%EB%A1%A0/">신론</a> — 하나님의 성품이 확신의 근거</li>
+<li><a class="wl" href="../../t/%EB%B2%88%EC%98%81%EC%8B%A0%ED%95%99/">번영신학</a> — 기적·축복 중심 신앙의 위험</li>
+<li><a class="wl" href="../../b/%EB%87%8C%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A4%EA%B3%84_%ED%8B%B0%EB%A8%B8%EC%8B%9C%EC%A0%9C%EB%8B%9D%EC%8A%A4/">뇌하나님의설계_티머시제닝스</a> — 핵심 출처</li>
+</ul>
+</article>
+<div class="tagrow"><span>#기적</span><span>#표적</span><span>#믿음</span><span>#신론</span><span>#섭리</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

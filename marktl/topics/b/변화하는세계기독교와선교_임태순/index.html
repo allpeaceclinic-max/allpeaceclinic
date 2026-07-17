@@ -1,0 +1,430 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>변화하는 세계 기독교와 선교 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="author">임태순</span><span class="date">2026-05-03</span></div>
+  <h1 class="note-title">변화하는 세계 기독교와 선교</h1>
+  
+</header>
+<article class="note">
+<p><strong>저자</strong>: 임태순 — 태국 선교사(1996–2013), GMP 대표, 現 아신대 연구교수<br />
+<strong>분류</strong>: 선교신학 / 세계 기독교 / 21세기 선교 패러다임</p>
+<blockquote>
+<p>이 책은 20세기 선교학의 뜨거운 화두 3개(미씨오 데이 · 번역 가능한 복음 · 세계 기독교)와 선교단체 재편 문제를 엮어 21세기 복음주의 선교학의 최신 지형을 그린다.</p>
+</blockquote>
+<hr />
+<h2>1. 책의 3가지 기둥</h2>
+<blockquote>
+<p><strong>삼위일체 하나님의 선교</strong> + <strong>번역 가능한 복음</strong> + <strong>세계 기독교 현상</strong>
+(+ 여전히 필요한 돌파: 미전도지역)</p>
+</blockquote>
+<p>사무엘 에스코바(1999년, 이과수)가 21세기 선교학의 핵심 화두로 제시한 것을 임태순이 하나의 그림으로 연결:
+- <strong>하나님의 선교</strong> = 태양 (근원)
+- <strong>번역 가능한 복음</strong> = 대지 (토양)
+- <strong>세계 기독교</strong> = 대지에서 자라나는 나무 (현상)</p>
+<hr />
+<h2>2. 2000년 동안 3번의 변화 (앤드류 월스)</h2>
+<p><strong>앤드류 월스(Andrew Walls)</strong>: 기독교는 처음부터 세계적이었다.
+1. 알 수 없는 그리스도인(풀뿌리) → 안디옥, "주 예수를 전파"
+2. 유럽 크리스텐돔(서구) 중심
+3. <strong>비서구 중심 세계 기독교 시대</strong> (현재)</p>
+<p>히포리투스의 "사도적 전통": 초기 기독교는 처음부터 다문화·다양성 안의 통일성 → 크리스텐돔으로 일원화 → 21세기 다시 신약 시대 다문화 모델로 회귀</p>
+<hr />
+<h2>3. 선교 패러다임의 역사적 전환</h2>
+<p><strong>선교의 목적이 어떻게 이동했는가:</strong>
+<code>영혼구원 → 교회개척 및 기독교 확산 → 피조세계 전반(오이쿠메네)의 회복을 위한 하나님의 선교</code></p>
+<p><strong>크리스텐돔의 실패</strong>: 1·2차 세계대전(종교개혁의 중심 독일이 전쟁, 홀로코스트) → 반동형성, 사회참여·해방 강화 → 에큐메니컬 → 또 반동형성 → 복음주의 선교(로잔)</p>
+<p><strong>데이나 로버트</strong>: "<strong>실패한 비전과 성취된 꿈</strong>"(failed vision &amp; accomplished dream)<br />
+→ 크리스텐돔의 확장은 실패했지만, 세계화된 기독교는 성공</p>
+<hr />
+<h2>4. 미씨오 데이 (Missio Dei)</h2>
+<h3>빌링겐 대회 (IMC, 1952)</h3>
+<ul>
+<li><strong>칼 하르텐슈타인</strong>: 하나님의 선교 개념 제안</li>
+<li><strong>칼 바르트</strong>: 삼위일체 하나님 → 선교의 근거</li>
+<li><strong>호켄다이크</strong>: "선교의 궁극적 지향점은 교회 확장이 아니라 하나님의 피조세계(오이쿠메네) 회복이다"</li>
+</ul>
+<h3>미씨오 데이의 긴장과 위험</h3>
+<ul>
+<li>장점: 코페르니쿠스적 전환 — 서구 확장 선교에서 해방, 동서양이 함께</li>
+<li>위험: 회심과 영적 차원 약화, 교회개척 부정적, 미전도지역 관심 약화</li>
+</ul>
+<h3>복음주의의 응답과 21세기 통합</h3>
+<ul>
+<li><strong>맥가브란</strong>: "웁살라는 20억 영혼을 버릴 것인가?"</li>
+<li><strong>1974년 로잔</strong>: 전도의 우선성 + 사회책임</li>
+<li><strong>레슬리 뉴비긴의 핵심 기여</strong>:<blockquote>
+<p><strong>선교적 차원(missionary dimension)</strong> + <strong>선교적 의도(missionary intention)</strong> — "S를 떼지 말라"(missions)
+미씨오 데이만 있으면 의도가 없어진다. 의도가 있어야 미전도 종족으로 들어간다.</p>
+</blockquote>
+</li>
+<li><strong>퍼난도의 제안</strong>: 삼위일체 거울로서의 교회 — 해결책</li>
+</ul>
+<hr />
+<h2>5. 번역 가능한 복음 (Translatable Gospel)</h2>
+<p><strong>라민 사네(Lamin Sanneh, 1989)</strong>: 세계 기독교 개념을 가능케 한 핵심 개념<br />
+선교를 식민주의의 결과라는 편견으로부터 해방</p>
+<h3>번역의 3가지 근거</h3>
+<ol>
+<li><strong>성육신</strong>: 하나님 → 인간, 유대 문화, 아람어 (의도적 종속)</li>
+<li><strong>오순절</strong>: 성령의 번역 — 각자의 방언으로 들음</li>
+<li><strong>복음서</strong>: 아람어 말씀 → 헬라어 기록 (막2:4 vs 눅5:19 — 마가는 유대 지붕, 누가는 이방 지붕)</li>
+</ol>
+<h3>번역 개념의 확장</h3>
+<table>
+<thead>
+<tr>
+<th>개념</th>
+<th>방향성</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>토착화</td>
+<td>나는 안 바뀜</td>
+</tr>
+<tr>
+<td>상황화</td>
+<td>나는 안 바뀜</td>
+</tr>
+<tr>
+<td><strong>번역</strong></td>
+<td><strong>나도 바뀜</strong> — 내 형태도 변형·확장</td>
+</tr>
+<tr>
+<td>자신학화</td>
+<td>전하는 자의 개념이 양보됨</td>
+</tr>
+</tbody>
+</table>
+<p><strong>폴 히버트의 자신학화</strong>: 비판적 실재론(critical realism) — 상대주의 위험 경계<br />
+객관적 기준 3가지: ① 성경 ② 성령 ③ 하나님 백성의 공동체<br />
+→ 성경 &gt; 초문화 신학 &gt; 지역 신학</p>
+<hr />
+<h2>6. 세계 기독교 (World Christianity)</h2>
+<h3>무게 중심의 이동</h3>
+<table>
+<thead>
+<tr>
+<th>연도</th>
+<th>서구</th>
+<th>비서구</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2020</td>
+<td>33%</td>
+<td>67%</td>
+</tr>
+<tr>
+<td>2050</td>
+<td>23%</td>
+<td>77%</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>필립 젠킨스</strong>: 무게 중심 → 남쪽, 동쪽</li>
+<li>아프리카 학자들 급증 — 4-5개 문화 속에서 성장</li>
+<li>영국 실제 기독교인 4%</li>
+</ul>
+<h3>다중심적 구조 (Polycentric)</h3>
+<ul>
+<li><strong>월버트 쉥크</strong>: 다중심적(polycentric)</li>
+<li>위클리프글로벌연대(WGA): 중앙집권식 → 다중심적 구조로 전환 (2011년, 커크 프랭클린)</li>
+<li><span class="wl-dead" title="위키 내부 링크">인터서브</span>: 원래 이런 구조 (임태순의 직접 평가)</li>
+</ul>
+<hr />
+<h2>7. 20세기 선교학의 성찰</h2>
+<h3>경영학적·관리적 선교의 쇠퇴</h3>
+<ul>
+<li><strong>맥가브란의 《더 브릿지 오브 갓》(1955)</strong>: 사회적 관계 통한 교회 성장</li>
+<li>문제: 성령의 역할·십자가 정신 약화, 선교사 = 강자 구조</li>
+<li>결과: 교회가 생겼지만 사회적 변화 없음 → 신학교에서 더 이상 안 가르침</li>
+<li><strong>데이비드 보쉬</strong>: "선교는 약함이란 그릇에 담겨 있다. 거지가 어디 가면 먹을 것이 있는지 알려주는 것"</li>
+</ul>
+<h3>미전도종족 선교운동의 한계 (알란 존슨)</h3>
+<ol>
+<li>개념 정의의 논쟁 — 비성경적 근거</li>
+<li>복음화 기준 불분명</li>
+<li>상황 변화: 선교사 주도 시대 종료</li>
+<li>AD2000 종말론적 실망감</li>
+<li>AAP(입양)운동 — 현지인 배제, 나 중심적
+→ 여전히 미전도 포커스는 두어야 함</li>
+</ol>
+<h3>에스코바의 3가지 선교학 유형 → 21세기 통합</h3>
+<ol>
+<li>영국·유럽의 후기 제국주의적 선교학</li>
+<li>미국의 관리적(경영학적) 선교학</li>
+<li><strong>주변부에서 나온 비판적 선교학</strong> (남미, 스리랑카 등)</li>
+</ol>
+<hr />
+<h2>8. 마이클 고힌의 4가지 전환</h2>
+<ol>
+<li><strong>모든 곳에서 모든 곳으로</strong> — 다중심적, 일방향 선교 종료</li>
+<li><strong>창조세계 구속</strong> — 교회개척 → 피조세계 회복 참여</li>
+<li><strong>확장 → 소통 패러다임</strong> — 정복이 아닌 소통</li>
+<li><strong>총체적 복음 지향</strong> — holistic &amp; integral</li>
+</ol>
+<hr />
+<h2>9. 오늘날 선교의 5가지 도전</h2>
+<ol>
+<li><strong>Global in the local</strong> — 글로컬</li>
+<li><strong>From geography to generation</strong> — 지역에서 세대로</li>
+<li><strong>Mission from the margin</strong> — 변두리로부터의 선교</li>
+<li><strong>타문화에서 교차문화로</strong></li>
+<li><strong>선교와 환경 돌봄</strong></li>
+</ol>
+<hr />
+<h2>10. 선교단체의 미래</h2>
+<h3>재편되어야 한다는 근거 (폴 벤더 사무엘, 4가지)</h3>
+<ol>
+<li>가난한 비서구 교회가 감당하기 벅찬 재정 구조</li>
+<li>지역교회와 분리된 선교단체 중심 사역</li>
+<li>비자·정치적 장벽</li>
+<li>단기 사역 확대 + 장기 헌신 감소</li>
+</ol>
+<h3>지속되어야 하는 근거</h3>
+<ul>
+<li>미전도지역 22억(30%) 돌파 → 전문 파송 단체의 역할</li>
+<li>뉴비긴의 선교적 의도(missionary intention)</li>
+<li>"미전도지역이 존재하는 한 '따로 세워라'" (<span class="wl-dead" title="위키 내부 링크">행13:2</span>)</li>
+</ul>
+<h3>방향: 다중심적 재편</h3>
+<ul>
+<li>위클리프글로벌연대(WGA): 국제본부 폐지 → 전세계 번역단체가 함께 결정</li>
+<li><strong>인터서브</strong>: 원래 다중심적 구조 → 이 방향의 선구자</li>
+</ul>
+<hr />
+<h2>⭐ 내 강의와의 연결 — 독립적 재발견</h2>
+<blockquote>
+<p><strong>중요한 맥락</strong>: 아래 강의들은 이 책을 읽기 <strong>이전에</strong> 작성된 강의안들이다.
+임태순이 학문적으로 체계화한 것을 현장 실천에서 먼저 독립적으로 도달했다는 뜻이며,
+책을 읽으며 역방향으로 검증된 셈이다.</p>
+</blockquote>
+<h3>강의 1: "선교적 차원과 의도" (인터서브 이사회)</h3>
+<p><strong>연결 개념</strong>: 뉴비긴의 missionary dimension vs intention</p>
+<p>임태순 책의 핵심 개념을 <strong>삭개오(눅19)</strong>로 현장 적용한 강의.
+- 예수님의 의도성: 여리고로 "들어가 지나가시더라" → 삭개오 이름 부르심 → "네 집에 유하여야"
+- 삭개오의 의도성: "보고자", "달려가서", "올라가"
+- 핵심 인사이트: 의도성을 가진 자(삭개오)를 찾아 나도 의도적으로 만나야 함
+- 진료실 적용: "하나님이 계속 보내시는 사람" = 선교적 의도의 대상</p>
+<blockquote>
+<p>"교회가 하는 모든 일에 선교적 차원이 있지만, 모든 일에 선교적 의도가 있는 것은 아니다" — 마이클 고힌 (강의에서 직접 인용)</p>
+</blockquote>
+<h3>강의 2: "선교의 청사진" (울산 GMP 1강)</h3>
+<p><strong>연결 개념</strong>: 미씨오 데이, 모달리티-소달리티, 선교단체 재편</p>
+<table>
+<thead>
+<tr>
+<th>임태순 책</th>
+<th>내 강의</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>미씨오 데이</td>
+<td>Slide 2: 삼위일체 하나님의 선교, 미씨오 데이 직접 설명</td>
+</tr>
+<tr>
+<td>모달리티-소달리티 (랄프 윈터)</td>
+<td>Slide 5: 두 구조의 역사적 공존</td>
+</tr>
+<tr>
+<td>선교단체 재편 필요</td>
+<td>Slide 4: "사명을 잃어버린 교회"</td>
+</tr>
+<tr>
+<td>선교적 차원+의도</td>
+<td>Slide 15: 뉴비긴 동일 인용</td>
+</tr>
+<tr>
+<td>사도적 기능 회복</td>
+<td>Slide 6: 엡4:11, 교회-선교단체 협력</td>
+</tr>
+</tbody>
+</table>
+<h3>강의 3: "나와 우리의 선교" (울산 GMP 2강)</h3>
+<p><strong>연결 개념</strong>: 마이클 고힌의 4가지 전환, Global in the local, 번역 가능한 복음</p>
+<table>
+<thead>
+<tr>
+<th>임태순 책</th>
+<th>내 강의</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"모든 곳에서 모든 곳으로"</td>
+<td>Slide 3: 디아스포라 흩어진 선교</td>
+</tr>
+<tr>
+<td>Global in the local</td>
+<td>Slide 11: "250만 체류 외국인, 땅끝이 내 곁으로"</td>
+</tr>
+<tr>
+<td>번역 가능한 복음</td>
+<td>Slide 7-8: 환대, 더크 윌렘스, 포옹(Embrace)</td>
+</tr>
+<tr>
+<td>약함의 선교 (보쉬)</td>
+<td>Slide 5-6: BCC, 삶으로 질문 유발하는 삶</td>
+</tr>
+</tbody>
+</table>
+<h3>강의 4: "인터서브와의 동역" (인터서브 강의)</h3>
+<p><strong>연결 개념</strong>: 선교단체 다중심적 재편, 데이나 로버트, 실천 모델</p>
+<p>임태순이 이론으로 진단한 것을 이사님이 <strong>이미 실천으로 구현</strong>한 강의.</p>
+<table>
+<thead>
+<tr>
+<th>임태순 책</th>
+<th>내 강의</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"from everywhere to everywhere" (고힌)</td>
+<td>직접 인용 + 그림 삽입</td>
+</tr>
+<tr>
+<td>선교단체 다중심적 재편</td>
+<td>인터서브 파트너+펠로우 구조 혁명 직접 평가</td>
+</tr>
+<tr>
+<td>데이나 로버트 — 지역화, 우정</td>
+<td>"섬김보다 우정" 데이나 로버트 직접 인용</td>
+</tr>
+<tr>
+<td>미전도 종족 개념 변화</td>
+<td>"대학생 = 미전도 종족"</td>
+</tr>
+</tbody>
+</table>
+<p><strong>현장 실천 모델들</strong> — 임태순이 "재편되어야 한다"고 진단한 구조를 직접 실험:
+- <strong>LAMs → HAMs</strong> (Life As Mission → Hospital As Mission): 의료인 버전 자체 개발
+- <strong>SNS</strong> (Senders and Sents): 지역교회+인터서브 연합 청년선교 공동체
+- <strong>선교장로모임</strong>: 함선네+인터서브+지역교회 경계를 넘는 협력</p>
+<blockquote>
+<p>"가끔은 내가 인터서브 내부인인지 외부인인지, 이것이 인터서브의 일인지, 교회의 일인지 구분이 안될 때가 있다" — 숲의 경계가 없는 다중심적 선교 생태계를 이미 살고 있었음</p>
+</blockquote>
+<h3>강의 5: "GMP 지부사역 어떻게"</h3>
+<p><strong>연결 개념</strong>: 선교단체 재편, 지역화(탈중앙화)</p>
+<blockquote>
+<p>"현대 선교의 미래는? 모든 사람의 선교, 지역화(탈중앙화), 전문화" — 임태순의 5가지 도전과 일치</p>
+</blockquote>
+<hr />
+<h2>탐구 중인 질문</h2>
+<p><strong>Q1. 선교적 차원(dimension)과 의도(intention)를 의료 현장에서 어떻게 구체화할 것인가?</strong>
+- 내 강의: 진료실에서 "하나님이 계속 보내시는 사람"을 알아보는 것
+- 부분 답변: <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> — 성육신적 선교, 총체적 선교
+- 여전히 열린 질문: 하루 100명 보는 의사에게 선교적 의도는 어디서 어떻게 작동하는가?</p>
+<p><strong>Q2. 번역할 때 "나도 바뀐다"는 것을 이미 경험한 적이 있는가?</strong>
+- 임태순: 번역은 전하는 자의 변형·확장 요구 — "이제는 배워서, 예수님처럼 30년 살다가 사역해야 될 수도"
+- 내 실천: HAMs, SNS — "상호배움" 구조 이미 실천
+- 여전히 열린 질문: 내가 이주민 환자를 통해 역으로 "번역"된 경험은 무엇인가?</p>
+<p><strong>Q3. 2050년 비서구 77% 시대에 대구라는 로컬에서 YoungDoctor HQ의 역할은?</strong>
+- 임태순: "한국 선교 역사, '확장했다'고 가르치는 것 바뀌어야"
+- 내 강의: 로컬에서 이루어지는 선교적 생태계 (LAMs, SNS, 선교장로모임)
+- 부분 답변: <span class="wl-dead" title="위키 내부 링크">인터서브</span> — 다중심적 구조 모델
+- 여전히 열린 질문: YoungDoctor HQ가 지향하는 선교 생태계는 어떤 모습인가?</p>
+<hr />
+<h2>관련 페이지</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> — 미씨오 데이, 성육신적 선교, 총체적 선교</li>
+<li><a class="wl" href="../../t/%EB%AF%B8%EC%94%A8%EC%98%A4%EB%8D%B0%EC%9D%B4/">미씨오데이</a> — 빌링겐 대회, 오이쿠메네 회복</li>
+<li><span class="wl-dead" title="위키 내부 링크">임태순</span> — 저자 인물 페이지</li>
+<li><span class="wl-dead" title="위키 내부 링크">데이비드보쉬</span> — "선교는 약함의 그릇"</li>
+<li><span class="wl-dead" title="위키 내부 링크">레슬리뉴비긴</span> — 선교적 차원 vs 선교적 의도</li>
+<li><span class="wl-dead" title="위키 내부 링크">인터서브</span> — 다중심적 선교단체, 파트너+펠로우 구조</li>
+<li><a class="wl" href="../../b/%EC%98%A4%ED%94%88%EC%8B%9C%ED%81%AC%EB%A6%BF/">오픈시크릿</a> — 뉴비긴의 선교론</li>
+<li><span class="wl-dead" title="위키 내부 링크">2024L4로잔</span> — 세계 기독교 무게 중심 이동 체험</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a> — 의료선교의 신학적 근거</li>
+<li><a class="wl" href="../../b/%EA%B5%90%ED%9A%8C%EC%99%80%EC%84%A0%EA%B5%90_%EC%86%90%EC%B0%BD%EB%82%A8/">교회와선교_손창남</a> — 소달리티-모달리티 연결</li>
+</ul>
+</article>
+<div class="tagrow"><span>#세계기독교</span><span>#선교신학</span><span>#선교패러다임</span><span>#미씨오데이</span><span>#번역</span><span>#선교학</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

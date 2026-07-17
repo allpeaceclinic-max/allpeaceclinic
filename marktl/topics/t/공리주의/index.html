@@ -1,0 +1,233 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>공리주의 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:300">윤리·공공</span><span class="date">2026-07-10</span></div>
+  <h1 class="note-title">공리주의</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>공리주의(utilitarianism)는 "최대다수의 최대행복"(the greatest happiness of the greatest number)을 도덕 판단의 기준으로 삼는 <a class="wl" href="../../t/%EA%B2%B0%EA%B3%BC%EC%A3%BC%EC%9D%98/">결과주의</a> 윤리다. 윤리의 목적을 개인의 쾌락에 국한하지 않고 공동체 전체의 행복으로 확장한다는 "공리의 원리"(principle of utility)가 그 이름의 유래이며, <span class="wl-dead" title="위키 내부 링크">제레미 벤담</span>과 <span class="wl-dead" title="위키 내부 링크">존 스튜어트 밀</span>이 대표자다. 이 볼트에서 공리주의는 단순한 철학사의 한 항목이 아니다. MBTS 기독교윤리학 강의가 세속 <a class="wl" href="../../t/%EB%AA%A9%EC%A0%81%EB%A1%A0/">목적론</a>의 정점이자 가장 정밀한 비판 대상으로 다루는 이론이고, 권성수 목사의 강단에서는 트롤리 딜레마를 입구 삼아 도덕의 근원을 하나님께로 끌어올리는 변증의 대화 상대이며, 의료사회 회복 담론에서는 임상 현장의 선택을 지배하는 실질적 사고방식으로 등장한다. 이 글은 그 세 겹 — 계보, 비판, 대화 — 을 차례로 따라간다.</p>
+<h2>1. 쾌락에서 공리로 — 목적론 계보 속의 위치</h2>
+<p>공리주의는 홀로 서 있는 이론이 아니라 <a class="wl" href="../../t/%EB%AA%A9%EC%A0%81%EB%A1%A0/">목적론적 전통</a>의 근대적 발전 형태다. <span class="wl-dead" title="위키 내부 링크">MBTS 기독교윤리학 6주차 강의</span>는 이 계보를 <span class="wl-dead" title="위키 내부 링크">아리스티포스</span>의 키레네 학파에서 시작한다. 쾌락주의자들에게 "최고의 선이란 최대한의 쾌락이자 최소한의 고통"이었고, <span class="wl-dead" title="위키 내부 링크">에피쿠로스</span>는 이를 장기적·정신적·정적 쾌락과 아타락시아(ataraxia)의 체계로 다듬었으며, <span class="wl-dead" title="위키 내부 링크">아리스토텔레스</span>는 행복(eudaimonia)을 "복된 삶의 완벽한 실현"으로 격상시켰다. 공리주의는 이 <a class="wl" href="../../t/%EC%BE%8C%EB%9D%BD%EC%A3%BC%EC%9D%98/">쾌락주의</a>의 흐름을 이어받되 결정적인 한 걸음을 내딛는다 — 윤리의 목적을 개인의 쾌락에서 "최대다수의 최대행복"으로 확장한 것이다.</p>
+<p>같은 확장을 두고 두 창시자의 근거는 갈라진다. 벤담은 이처럼 광범위한 목적의 설정을 개인의 이기심의 결과로 본 반면, 밀은 "모든 인류에게 공통된 사회적 본능에 기초"했다. 또한 공리의 원리를 무엇에 적용하느냐에 따라 개인 행동 단위로 평가하는 행위공리주의(act utilitarianism)와, 행동을 규정하는 규범 단위로 평가하는 규칙공리주의(rule utilitarianism)로 나뉜다 — 강의는 이 양분 자체가 개별 행동의 결과 측정이 어렵다는 방법론적 곤경의 산물이라고 읽는다. 계보의 종착점에는 <span class="wl-dead" title="위키 내부 링크">존 듀이</span>가 있다. 듀이는 공리주의의 목적-수단 모델은 수용하되 행복을 "여러 가지 목적들 중 하나일 뿐"으로 상대화했는데, 강의는 이 목적 다원화가 오히려 하나의 귀류법으로 작용하여 목적론적 윤리 전체의 설명력을 무너뜨렸다고 평가한다. 공리주의의 계승자가 공리주의의 반박자가 된 셈이다.</p>
+<h2>2. 여덟 가지 평가 — 전지를 요구하는 윤리</h2>
+<p>그렇다면 이 이론은 어디서 무너지는가. 6주차 강의는 공리주의에 대해 여덟 가지 평가를 제시하는데, 그 핵심은 세 갈래로 묶인다. 첫째는 <strong>전제의 문제</strong>다. 벤담과 밀 모두 "사람들이 예외 없이 쾌락을 추구하지만 고통은 회피한다"는 심리적 전제를 당연시하며, 반대에 부딪히면 쾌락의 정의를 자기희생·권력 사용까지 확장하려 한다 — 그러나 개념을 그렇게 넓히는 순간 쾌락이라는 개념 자체의 의미가 소실된다. 둘째는 <strong>논리의 문제</strong>다. 사람들이 실제로 쾌락을 추구한다는 사실에서 "그래야 한다"는 당위로 건너뛰는 것은 논리적 비약이며, 강의는 목적론적 윤리가 다른 접근법보다 <a class="wl" href="../../t/%EC%9E%90%EC%97%B0%EC%A3%BC%EC%9D%98%EC%A0%81%EC%98%A4%EB%A5%98/">자연주의적 오류</a>를 더 두드러지게 범한다고 지적한다. 개인의 쾌락(이기심)에서 출발한 접근이 집단의 행복으로 확장되려면 별도의 정당화가 필요하다는 지적도 여기에 속한다.</p>
+<p>셋째가 가장 신학적인 <strong>인식론의 문제</strong>다. 하나의 행동이 행복과 고통을 동시에 낳을 때 그 수치를 측정하는 일, 나아가 행동의 인과관계 전체를 계산하는 일은 "신적 전지가 없이는 절대로 불가능"하다.</p>
+<blockquote>
+<p>"이 측정을 요구할 수 있는 권한과 능력은 오직 하나님께만 있다." — MBTS 기독교윤리학 6주차 강의</p>
+</blockquote>
+<p>최대다수의 최대행복을 계산하겠다는 기획은 인간에게 허락되지 않은 전지(全知)를 요구하는 것이므로, 공리주의는 역설적으로 하나님만이 온전한 목적론적 판단자가 되실 수 있음을 보여준다. 강의노트의 여백은 여기에 실천적 경고를 덧붙인다 — 공리주의에서는 수단이 문제가 되지 않기에 "목적을 위한 수단의 정당화"로 흐르며, "현대 사상은 공리주의의 변질이다"라는 촌평이 그것이다. 결과 계산이 윤리의 전부가 될 때 수단의 악은 계산서에서 사라진다.</p>
+<h2>3. 의무론 쪽에서의 협공 — 칸트와 무어</h2>
+<p>이 비판은 기독교 윤리학만의 것이 아니다. 세속 윤리학 내부에서도 공리주의는 <a class="wl" href="../../t/%EC%9D%98%EB%AC%B4%EB%A1%A0/">의무론</a> 전통의 집중 공격을 받았다. <span class="wl-dead" title="위키 내부 링크">7주차 강의</span>는 벤담과 밀을 "가장 영향력 있는 목적론 옹호자"로, <span class="wl-dead" title="위키 내부 링크">칸트</span>를 "가장 영향력 있는 의무론 옹호자"로 규정하여 두 사람을 세속 윤리학사의 양대 축으로 맞세운다. 칸트에게 도덕은 행복 계산이 아니라 조건 없는 정언명령이며, 특히 "사람을 언제나 목적으로 대하고 절대 수단으로 다루지 않는" 제3정식은 다수의 행복을 위해 소수를 수단화하는 공리주의적 계산과 정면으로 충돌한다.</p>
+<p>20세기에는 <span class="wl-dead" title="위키 내부 링크">무어(G. E. Moore)</span>가 공리주의에 맞서 자연주의적 오류를 정식화했다. "좋음"을 쾌락 같은 자연적 속성으로 환원해 정의하려는 모든 시도는 "그런데 그것이 정말 좋은가?"라는 열린 질문(open question argument)을 여전히 남긴다는 것이다. 다만 강의는 무어가 그 대안으로 내놓은 <a class="wl" href="../../t/%EC%A7%81%EA%B4%80%EC%A3%BC%EC%9D%98/">직관주의</a> 역시 "무지의 수용소"로 귀결되었다고 평가한다 — 공리주의를 무너뜨린 논증이 무너뜨린 자리에 세울 것을 갖지 못했다는 점에서, 세속 윤리학 내부의 협공은 승자 없는 싸움이었다.</p>
+<h2>4. 주권 아래서 다시 읽기 — 삼중관점과 목적의 재정의</h2>
+<p>기독교 윤리학의 응답은 공리주의를 기각하는 데서 멈추지 않고, 그것이 붙잡은 통찰을 회수하는 데로 나아간다. <span class="wl-dead" title="위키 내부 링크">3주차 강의</span>는 <span class="wl-dead" title="위키 내부 링크">존 프레임</span>의 <a class="wl" href="../../t/%EC%82%BC%EC%A4%91%EA%B4%80%EC%A0%90/">삼중관점</a>을 따라 목적론적 원칙을 <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%A3%BC%EA%B6%8C/">하나님 주권</a>의 "통제" 속성에 대응시킨다. 결과와 행복을 고려하라는 요구 자체는 정당하다 — 성경도 선택이 불러올 결과에 대한 숙고를 명하고(<span class="wl-dead" title="위키 내부 링크">눅 13:3,5</span>), 이웃 사랑의 극대화를 긍정한다(<span class="wl-dead" title="위키 내부 링크">눅 10:27</span>). 문제는 목적의 내용이다. 세속 목적론은 행복의 내용을 매번 다시 규정해야 하지만, 기독교 윤리의 최고선(summum bonum)은 하나님의 영광(<span class="wl-dead" title="위키 내부 링크">고전 10:31</span>)으로 고정되어 있다. 강의노트 여백의 표현을 빌리면, 삶의 관점을 "행복에서 <a class="wl" href="../../t/%EA%B1%B0%EB%A3%A9/">거룩</a>으로" 바꾸는 것이다.</p>
+<p>같은 강의는 하나님을 배제한 세계관이 결국 공리주의적 행복 추구로 흘러가고, 그 왜곡이 님비 현상·지역차별·인종차별로 나타난다고 진단한다. 그리고 <span class="wl-dead" title="위키 내부 링크">기말종합보고서</span>는 이 구도를 한 문장으로 완성한다 — 세속 목적론(공리주의 등)이 행복이나 결과의 극대화를 궁극 목적으로 삼는 것과 달리, 기독교 윤리는 목적 자체를 하나님 중심으로 재정의하며, 목적론(하나님의 영광)·의무론(십자가에 대한 순종)·실존론(그리스도의 성품)은 그리스도라는 하나의 인격 안에서만 통합된다. 공리주의는 폐기되는 것이 아니라, 그것이 절대화한 하나의 관점이 제자리를 찾는 것이다.</p>
+<h2>5. 강단의 공리주의 — 트롤리와 구명선</h2>
+<p>이 신학적 구도는 설교 현장에서 구체적 딜레마의 언어로 번역된다. <span class="wl-dead" title="위키 내부 링크">권성수 목사의 정의 시리즈</span>는 <span class="wl-dead" title="위키 내부 링크">마이클 샌델</span>의 트롤리 딜레마 — 앞으로 가면 5명, 옆으로 가면 1명 — 를 도입으로 삼아, 5명 대신 1명을 희생하는 "최대다수의 최대행복"(결과론)과 "치어 죽이는 것 자체가 잘못"이라는 칸트의 절대론을 맞세운다. 주목할 것은 권 목사가 공리주의를 적으로 세우지 않는다는 점이다. 그는 샌델·칸트·공리주의를 "정의에 대한 보편 갈망의 증거"로 활용하고, 결과론이든 절대론이든 도덕적 추리를 끝까지 추궁하면 "제1원인으로 가야 한다. 하나님이 나오지 않으면 원천이 없다"는 자리에 이른다고 논증한다. 율법이 이방인에게도 <a class="wl" href="../../t/%EC%96%91%EC%8B%AC/">양심</a>으로 새겨졌다는 롬 2:14-15가 그 성경적 근거다.</p>
+<p>그러나 대화가 계산의 수용을 뜻하지는 않는다. <span class="wl-dead" title="위키 내부 링크">같은 시리즈의 아모스 편</span>에서 대서양 구명선의 고아 소년 딜레마는 "동일한 <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%ED%98%95%EC%83%81/">하나님의 형상</a>이므로 식용으로 삼을 수 없다"로 회수되어, 다수 생존을 위한 공리주의적 희생 계산을 정면으로 거부한다. MBTS 강의의 라이브 토론에서도 같은 결론이 나온다 — 트롤리 문제는 "결국 공리주의로 흐르는" 문제이고, "공리주의 선택하면 편리하긴 하다. 그러나 위험하다"는 것, 따라서 차등적 절대주의의 관점으로 더 높은 가치를 선택해야 한다는 것이다. 강단과 강의실이 각각 도달한 지점은 동일하다. 공리주의는 변증의 훌륭한 입구이되, 인간을 셈의 단위로 만드는 순간 하나님의 형상 앞에서 멈춰야 한다.</p>
+<h2>6. 행복의 전유 — 기쁨을 버리지 않는 비판</h2>
+<p>여기서 한 가지 물음이 남는다. 공리주의를 비판한다는 것이 행복 자체를 버리는 일인가. 볼트의 설교 자료는 정반대의 길을 보여준다. <span class="wl-dead" title="위키 내부 링크">문대원 목사의 고후 8장 설교</span>는 사랑의 보상을 묻는 공리주의적 질문 구조를 회피하지 않고 오히려 전유한다 — 진정한 사랑에는 진정한 보상이 있되, 그 보상은 외적 이익의 극대화가 아니라 "부요하시나 우리를 위해 가난해지신" 예수님을 닮아가는 존재의 변화라는 것이다. <span class="wl-dead" title="위키 내부 링크">존 파이퍼</span>의 기독교 희락주의(Christian Hedonism)를 배경으로 "주님을 향한 헌신의 깊이는 주님으로 인한 기쁨의 깊이에 비례한다"고 선언하는 이 설교에서, <span class="wl-dead" title="위키 내부 링크">조나단 에드워즈</span>의 문장은 공리주의가 도달하려다 실패한 지점을 정확히 대체한다.</p>
+<blockquote>
+<p>"세상에서 가장 자비롭고 너그러운 사람은 타인을 위해 선을 행하는 데서 자기 행복을 추구하는 사람이다. … 타인이 행복할 때 자신도 행복해한다." — 조나단 에드워즈 (문대원 설교 재인용)</p>
+</blockquote>
+<p>최대다수의 행복을 계산하는 대신, 타인의 행복이 나의 행복이 되도록 존재가 변화되는 것 — 6주차 강의 여백의 "행복에서 거룩으로"라는 명제는 행복의 부정이 아니라 행복의 재정위(再定位)였음이 여기서 드러난다. 기독교 윤리는 공리주의보다 행복을 덜 말하는 것이 아니라, 행복의 근원과 방향을 다르게 말한다.</p>
+<h2>7. 의료 현장에서 — 선택의 윤리학</h2>
+<p>마지막으로 공리주의는 이 볼트에서 이론이 아니라 현장의 문제로 등장한다. <span class="wl-dead" title="위키 내부 링크">의료사회 회복 프로젝트</span>의 발제 "선택의 윤리학"은 수련병원·전공과 선택에서 의료 자원 배분까지 의료인의 선택을 지배하는 두 세속 윤리를 이렇게 대비시킨다.</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>판단 기준</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="wl" href="../../t/%EC%9D%98%EB%AC%B4%EB%A1%A0/">의무론</a></td>
+<td>동기 중심 / 이성 / 의무</td>
+</tr>
+<tr>
+<td>공리주의</td>
+<td>결과 중심 / 경험 / 행복</td>
+</tr>
+<tr>
+<td>기독교의 선</td>
+<td>하나님 자체 — 하나님의 성품·율법</td>
+</tr>
+</tbody>
+</table>
+<p>선의의 거짓말 같은 임상적 딜레마는 이 두 축이 충돌하는 전형적 지점이며, 6주차 강의의 실천 적용이 경고한 "결과 중심의 자원 배분" 논리도 같은 자리에 있다. 발제는 기독교의 선을 규범(율법)·상황(현장)·실존(선택하는 주체)의 삼중 구조로 풀어내는데, 이는 3주차 강의의 삼중관점이 의료 현장의 언어로 번역된 것이다. 공리주의 비판이 관념에 머물지 않으려면, 결과 계산의 유혹이 가장 강한 곳 — 병상 배정, 치료 중단, 진실 고지의 순간 — 에서 시험받아야 한다는 것을 이 프로젝트는 보여준다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>공리주의는 쾌락주의(아리스티포스·에피쿠로스)를 "최대다수의 최대행복"으로 확장한 목적론의 정점이며, 벤담(이기심 기반)과 밀(사회적 본능 기반)의 근거 차이, 행위/규칙공리주의의 양분을 내포한다.</li>
+<li>MBTS 강의의 핵심 비판은 인식론적이다 — 행복의 총량 계산은 신적 전지를 요구하며, "이 측정을 요구할 수 있는 권한과 능력은 오직 하나님께만 있다."</li>
+<li>공리주의는 세속 윤리 내부에서도 협공당했다 — 칸트의 정언명령(사람을 수단화하지 말라)과 무어의 자연주의적 오류·열린 질문 논증. 그러나 그 대안들(의무론·직관주의)도 스스로 서지 못했다.</li>
+<li>기독교 윤리는 공리주의의 통찰(결과에 대한 숙고, 이웃 행복의 극대화)을 회수하되 최고선을 하나님의 영광으로 고정한다 — "행복에서 거룩으로"는 행복의 폐기가 아니라 재정위다.</li>
+<li>강단의 실천적 결론: 트롤리·구명선 딜레마 앞에서 공리주의는 변증의 입구가 되지만, 인간을 셈의 단위로 만드는 계산은 "동일한 하나님의 형상" 앞에서 거부된다.</li>
+<li>듀이의 목적 다원화는 공리주의를 계승하면서 목적론 전체를 무너뜨리는 귀류법이 되었고, 강의 여백은 "현대 사상은 공리주의의 변질"이라는 진단을 남겼다.</li>
+<li>의료 현장은 공리주의 비판의 시험대다 — 자원 배분·선의의 거짓말 등 결과 계산의 유혹이 가장 강한 자리에서 규범·상황·실존의 삼중관점이 요구된다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>결과에 대한 숙고를 성경이 명한다면(눅 13:3,5; 눅 10:27), 정당한 목적론적 사고와 공리주의적 계산의 경계는 정확히 어디인가 — 6주차 강의 스스로 "지나치면 상황윤리?"라는 견제 질문을 남겼다(<a class="wl" href="../../t/%EB%AA%A9%EC%A0%81%EB%A1%A0/">목적론</a>과 공유되는 질문).</li>
+<li>라이브 토론이 제시한 "차등적 절대주의"(더 높은 가치의 선택)는 실질적으로 가치의 서열 계산을 포함하는데, 이것이 공리주의적 계산과 구조적으로 어떻게 다른지는 더 정밀한 논증이 필요하다.</li>
+<li>기독교 희락주의의 "하나님 안에서의 행복 추구"는 공리주의의 심리적 전제(인간은 행복을 추구한다)를 사실상 수용하는 셈인데, 자연주의적 오류 비판은 이 경우 왜 적용되지 않는가.</li>
+<li>공공 정책·의료 자원 배분처럼 집합적 결정이 불가피한 영역에서, 전지 불가능성 비판은 결과 예측 자체의 포기를 뜻하는가, 아니면 겸손한 잠정적 계산과 규범의 병행을 뜻하는가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EB%AA%A9%EC%A0%81%EB%A1%A0/">목적론</a> — 공리주의가 속한 상위 전통. 계보 전체(쾌락주의~듀이)와 기독교적 재해석.</li>
+<li><a class="wl" href="../../t/%EA%B2%B0%EA%B3%BC%EC%A3%BC%EC%9D%98/">결과주의</a> · <a class="wl" href="../../t/%EC%BE%8C%EB%9D%BD%EC%A3%BC%EC%9D%98/">쾌락주의</a> — 공리주의의 구조적 골격과 역사적 원류.</li>
+<li><a class="wl" href="../../t/%EC%9D%98%EB%AC%B4%EB%A1%A0/">의무론</a> — 칸트를 축으로 한 대항 전통. 벤담·밀 vs 칸트의 구도.</li>
+<li><a class="wl" href="../../t/%EC%A7%81%EA%B4%80%EC%A3%BC%EC%9D%98/">직관주의</a> · <a class="wl" href="../../t/%EC%9E%90%EC%97%B0%EC%A3%BC%EC%9D%98%EC%A0%81%EC%98%A4%EB%A5%98/">자연주의적오류</a> — 무어의 공리주의 비판과 그 한계.</li>
+<li><a class="wl" href="../../t/%EC%82%BC%EC%A4%91%EA%B4%80%EC%A0%90/">삼중관점</a> · <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%A3%BC%EA%B6%8C/">하나님의주권</a> — 공리주의의 통찰이 회수되는 신학적 틀.</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%9C%A4%EB%A6%AC%ED%95%99/">기독교윤리학</a> — 3대 윤리 전통 개관 속 공리주의의 자리.</li>
+<li><span class="wl-dead" title="위키 내부 링크">권성수_정의시리즈</span> — 샌델·트롤리·구명선을 매개로 한 강단의 공리주의 변증.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">06주_목적론적전통</span></td>
+<td>강의노트</td>
+<td>공리의 원리, 벤담/밀 구분, 행위/규칙공리주의, 8가지 평가, 듀이의 귀류법, 여백 비판</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">07주_의무론적전통</span></td>
+<td>강의노트</td>
+<td>벤담·밀 vs 칸트 구도, 무어의 자연주의적 오류·열린 질문 논증</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">03주_주권과세속윤리학</span></td>
+<td>강의노트</td>
+<td>목적론적 원칙과 주권의 통제 속성, 하나님 배제 세계관 → 공리주의 진단</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">_paper_기말종합보고서</span></td>
+<td>기말보고서(이상협)</td>
+<td>세 전통의 그리스도 안에서의 통합, 목적의 하나님 중심 재정의</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">정의_마이클샌델과성경</span></td>
+<td>설교(권성수)</td>
+<td>트롤리 딜레마, 결과론 vs 절대론, 도덕의 제1원인 변증</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">정의_정의의강이흐르게하라</span></td>
+<td>설교(권성수)</td>
+<td>구명선 딜레마 — 하나님의 형상에 의한 공리주의적 계산 거부</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2026_당신이행복해서나도행복합니다</span></td>
+<td>설교(문대원)</td>
+<td>보상 논리의 복음적 전유, 기독교 희락주의, 에드워즈 인용</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">의료사회회복프로젝트</span></td>
+<td>프로젝트 노트</td>
+<td>의무론·공리주의·기독교의 선 비교표, 의료 현장의 선택 윤리</td>
+</tr>
+<tr>
+<td>라이브 토론 (MBTS 기독교윤리학)</td>
+<td>토론 기록</td>
+<td>트롤리 문제 → "편리하나 위험" → 차등적 절대주의</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>📖 근거: <span class="wl-dead" title="위키 내부 링크">06주_목적론적전통</span>, <span class="wl-dead" title="위키 내부 링크">07주_의무론적전통</span>, <span class="wl-dead" title="위키 내부 링크">03주_주권과세속윤리학</span>, <span class="wl-dead" title="위키 내부 링크">라이브 토론</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#domain/철학</span><span>#discipline/기독교윤리</span><span>#topic/규범윤리</span><span>#topic/결과주의</span><span>#topic/목적론</span><span>#topic/쾌락주의</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

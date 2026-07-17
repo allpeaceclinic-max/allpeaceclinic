@@ -1,0 +1,167 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>겅호 (Gung Ho!) — 켄 블랜차드·셀든 보울즈 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:226">리더십·일·경영</span><span class="author">켄블랜차드</span><span class="date">2026-05-06</span></div>
+  <h1 class="note-title">겅호 (Gung Ho!) — 켄 블랜차드·셀든 보울즈</h1>
+  
+</header>
+<article class="note">
+<blockquote>
+<p><em>2013.7.4 목요제자반 독후감 — 이상협 집사</em></p>
+<p>"겅호는 성경의 내용은 아니지만,
+성경적인 공동체를 바라보는 지혜를 얻게 한다."</p>
+</blockquote>
+<p>자연에서 배우는 공동체의 원리. 세 동물의 생존 방식이 성경적 공동체의 세 층위를 드러낸다.</p>
+<hr />
+<h2>세 가지 원리</h2>
+<h3>1. 다람쥐의 정신 — 가치가 리더다</h3>
+<blockquote>
+<p><strong>목표는 변할 수 있다. 가치는 변해서는 안 된다.</strong></p>
+</blockquote>
+<ul>
+<li>내가 하는 일이 얼마나 중요한지 아는 것 = 일의 가장 기본 동력</li>
+<li>계획과 행동은 가치로 결정된다 → 가치가 바로 리더가 된다</li>
+<li>가치 = <strong>바위 같은 존재</strong> — 절대 변함없어야 한다</li>
+<li>권위를 세우는 것보다 <strong>신뢰를 쌓는 것</strong>이 더 중요</li>
+<li>공동의 가치를 지킬 때 신뢰가 쌓인다</li>
+</ul>
+<p><strong>신앙 적용:</strong></p>
+<blockquote>
+<p>우리의 가치는 하나님의 말씀이다.
+결코 변함없고, 우리를 실망시키지 않는 가치 = 성경</p>
+</blockquote>
+<hr />
+<h3>2. 비버의 방식 — 지체의식이 효율을 만든다</h3>
+<blockquote>
+<p><strong>목표와 가치가 경기장의 사이드라인이라면,
+그 안에서 어떻게 할지는 스스로 결정하게 하라.</strong></p>
+</blockquote>
+<ul>
+<li>목표 달성에 필요한 일을 <strong>스스로 결정</strong>하게 한다</li>
+<li>임무와 역할을 명확히, 달란트에 맞게</li>
+<li>생각·느낌·욕구·꿈을 <strong>경청하고 존중</strong>하며, 그에 따라 행동하게 한다</li>
+</ul>
+<p><strong>신앙 적용:</strong></p>
+<blockquote>
+<p>그리스도 안에서 몸된 우리는 지체의식으로 살아갈 때 가장 효율적이다.
+→ <a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%A1%A0/">교회론</a> 지체 개념의 실천적 구조화</p>
+</blockquote>
+<hr />
+<h3>3. 기러기의 선물 — 격려가 공동체를 살린다</h3>
+<blockquote>
+<p><strong>금전 보상과 격려 둘 다 중요하지만, 금전이 먼저다.
+가장 큰 격려는 맡겨주는 것이다.</strong></p>
+</blockquote>
+<p>격려의 4가지 조건:
+- 시기적절하고 <strong>즉각적</strong>
+- <strong>무조건적</strong>
+- <strong>열성적</strong>
+- 결과뿐 아니라 <strong>진행 과정에서도</strong></p>
+<p><strong>신앙 적용:</strong></p>
+<blockquote>
+<p>하나님이 우리를 격려하시는 방식 → 우리가 동료를 격려하는 모델
+지체를 통해 감사하는 것이 격려의 실천이다</p>
+</blockquote>
+<hr />
+<h2>★ 핵심 통찰 (이상협, 2013)</h2>
+<blockquote>
+<p><strong>하나님께서 만드신 만물에 하나님의 영광이 드러나듯,
+성경의 원리가 자연 속에 숨겨져 있다.</strong></p>
+</blockquote>
+<ul>
+<li>세 원리의 우선순위: 다람쥐(가치) → 비버(자율) → 기러기(격려)</li>
+<li>고객보다 팀원이 먼저 — 나와 함께하는 동료가 가치의 우선</li>
+<li>공동체의 지체의식 = 서로를 존중하며 일을 이뤄나가는 원동력</li>
+</ul>
+<hr />
+<h2>연결된 페이지</h2>
+<ul>
+<li><a class="wl" href="../../t/%EB%A6%AC%EB%8D%94%EC%8B%AD/">리더십</a> — 가치 기반 리더십, 자율 위임</li>
+<li><a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%A1%A0/">교회론</a> — 지체의식의 실천적 구조</li>
+</ul>
+</article>
+<div class="tagrow"><span>#리더십</span><span>#공동체</span><span>#조직론</span><span>#제자훈련</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

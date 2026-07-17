@@ -1,0 +1,116 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>전제주의 (Presuppositionalism) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:206">변증·철학</span><span class="date">2026-06-28</span></div>
+  <h1 class="note-title">전제주의 (Presuppositionalism)</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>전제주의는 변증의 출발점을 중립적 이성이나 공통 증거가 아니라 <strong>하나님의 존재와 성경의 권위라는 전제(presupposition)</strong>에 두는 변증 방법론이다. 코넬리우스 반틸(<span class="wl-dead" title="위키 내부 링크">코넬리우스반틸</span>)이 대표하며, 불신자와 신자가 공유하는 "중립 지대"란 없다고 본다 — 모든 사고는 이미 어떤 궁극적 전제 위에 서 있기 때문이다(<span class="wl-dead" title="위키 내부 링크">07주_신앙과이성의문제</span>).</p>
+<h2>1. 중립적 이성의 부정</h2>
+<p>증거주의가 공통의 이성·사실에서 출발해 하나님께로 논증해 올라간다면, 전제주의는 그 "중립적 이성" 자체가 신화라고 본다. 인간은 죄로 인해 이성을 하나님을 대적하는 데 쓰므로, 전제 없는 사실 해석은 불가능하다.</p>
+<h2>2. 초월론적 논증</h2>
+<p>전제주의의 핵심 전략은 초월론적 논증(transcendental argument)이다 — 논리·도덕·과학적 지식이 성립하려면 그 전제 조건으로 기독교 하나님이 요청된다는 것("불가능성의 불가능성"). 곧 기독교 세계관만이 지성적 삶을 가능케 하는 유일한 토대라고 주장한다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>변증의 싸움은 사실이 아니라 <strong>전제(세계관)의 싸움</strong>이다.</li>
+<li>중립을 가장하는 것보다 전제를 드러내고 세계관 전체를 비교하는 것이 정직하다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>전제주의가 순환논증(성경으로 성경을 변증)에 빠지지 않으려면 초월론적 논증은 얼마나 설득력을 갖는가?</li>
+<li>공통은총에 근거한 접촉점(증거주의)과 전제주의는 실제 전도 현장에서 어떻게 병행될 수 있는가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EA%B3%BC%EC%9D%B4%EC%84%B1/">신앙과이성</a> · <a class="wl" href="../../t/%EB%B3%80%EC%A6%9D%ED%95%99/">변증학</a> — 변증 방법론의 지형</li>
+<li><span class="wl-dead" title="위키 내부 링크">코넬리우스반틸</span> — 전제주의의 대표자</li>
+<li><span class="wl-dead" title="위키 내부 링크">07주_신앙과이성의문제</span> — 본 개념의 출처</li>
+</ul>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/변증학</span><span>#topic/변증방법론</span><span>#topic/신앙과이성</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

@@ -1,0 +1,242 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>신앙주의 (Fideism) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:206">변증·철학</span><span class="date">2026-07-18</span></div>
+  <h1 class="note-title">신앙주의 (Fideism)</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>신앙주의는 진리 인식에서 이성이 아니라 신앙이 우선하며, 나아가 신앙은 이성과 근본적으로 이질적이거나 상충한다고 보는 태도다. "불합리하지만 믿는다"(credo quia absurdum)가 그 표어이며, 이성으로는 어떠한 참된 신앙도 정당하게 세울 수 없다는 배타성이 핵심이다. MBTS 변증학 7주 강의는 신앙과 이성의 관계를 네 유형으로 나누면서, 신앙주의를 <a class="wl" href="../../t/%EC%A6%9D%EA%B1%B0%EC%A3%BC%EC%9D%98/">증거주의</a>("불충분한 증거로 믿는 것은 언제나 잘못이다", 클리포드)와 정확히 대극에 놓인 "이성을 배제한 신앙" 유형으로 다룬다.</p>
+<p>이 페이지는 신앙과 이성 지형 전체가 아니라 그 한 극단의 각론이다. 네 유형의 전체 배치, 어거스틴·아퀴나스의 순서 논쟁, 계몽주의의 이성 자립사(史)는 <a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EA%B3%BC%EC%9D%B4%EC%84%B1/">신앙과이성</a>이 전담하고(완료), 자연신학을 둘러싼 세 전통의 논쟁은 <a class="wl" href="../../t/%EC%9E%90%EC%97%B0%EC%8B%A0%ED%95%99/">자연신학</a>이 맡는다(완성). 이 글이 붙드는 것은 신앙주의 그 자체다 — 그 안에도 결이 다른 스펙트럼이 있고, 지키려는 통찰과 치르는 대가가 있으며, 겉보기에 닮았으나 결정적으로 다른 이웃(개혁주의 인식론)이 있고, 진료실과 강단에서 부딪히는 목회적 함의가 있다.</p>
+<h2>1. 신앙주의의 스펙트럼 — 같은 이름, 다른 뉘앙스</h2>
+<p>"신앙주의"는 하나의 입장이 아니라 결이 다른 여러 태도의 묶음이다. 이성에 대한 거리를 재는 각도가 저마다 달라, 하나로 뭉뚱그리면 각 입장의 힘을 놓친다.</p>
+<table>
+<thead>
+<tr>
+<th>인물</th>
+<th>표어·핵심</th>
+<th>이성에 대한 태도</th>
+<th>뉘앙스</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">터툴리안</span></td>
+<td>"아테네와 예루살렘이 무슨 상관인가" / "모순되기에 믿는다"</td>
+<td>철학은 이단의 어머니 — 적대</td>
+<td>신앙의 역설성·모순성을 강조하는 원형</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">루터</span></td>
+<td>이성은 "일종의 창녀"</td>
+<td>하나님께 오르는 사다리로서의 이성 거부</td>
+<td>실은 이성 일반이 아니라 "영광의 신학" 겨냥(단서 필요)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">키에르케고르</span></td>
+<td>이성이 끝나는 곳에서 신앙이 시작 — 역설·비약</td>
+<td>질적 도약으로 이성을 넘어섬</td>
+<td>배제가 아니라 초월 — 가장 정교한 판본</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">비트겐슈타인</span></td>
+<td>신앙은 별도의 언어게임·삶의 형식</td>
+<td>증명의 범주 자체를 신앙에 부적절한 것으로 봄</td>
+<td>반이성이 아니라 범주 구별</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">칼바르트</span></td>
+<td>자연신학에 대한 "Nein!"</td>
+<td>이성의 선행을 거부, 오직 계시로부터</td>
+<td>신학적 근거를 가진 계시 우선주의</td>
+</tr>
+</tbody>
+</table>
+<p>이 스펙트럼의 두 끝은 성격이 다르다. 터툴리안이 신앙과 이성의 적대를 말한다면, 키르케고르와 비트겐슈타인은 신앙이 이성과 다른 층위에 있다고 말한다 — 전자는 대결이고 후자는 범주 구별이다. 루터를 이 목록에 넣을 때는 단서가 필요하다. <a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EA%B3%BC%EC%9D%B4%EC%84%B1/">신앙과이성</a>이 짚듯 그가 겨눈 것은 이성 일반이 아니라 "이성으로 하나님께 오르려는 영광의 신학"이었고, 세속 통치와 자연 질서에서는 이성을 긍정했기에 순수한 신앙주의로 분류하기엔 결이 다르다. 신앙주의를 정직하게 다루려면 이 뉘앙스의 폭을 먼저 인정해야 한다.</p>
+<h2>2. 신앙주의가 지키려는 것 — 실재하는 통찰</h2>
+<p>신앙주의를 허수아비로 세우면 아무것도 배우지 못한다. 그것이 지키려는 것은 실재하는 통찰이기 때문이다. 세 증언이 그 통찰을 요약한다. <span class="wl-dead" title="위키 내부 링크">비트겐슈타인</span>은 하나님 존재 '증명'의 핵심에 깊은 의심을 품었고, 논증을 통해 하나님을 믿게 된 사람을 만나지 못했다고 했다. <span class="wl-dead" title="위키 내부 링크">조나단에드워즈</span>는 합리적 증거에 동의하는 것과 진정한 회심을 구별했다 — 하나님이 존재한다고 믿는 것(notitia)과 그 하나님을 신뢰하는 것(fiducia)은 다르다. <span class="wl-dead" title="위키 내부 링크">CS루이스</span>가 그 차이를 한 문장에 담았다.</p>
+<blockquote>
+<p>우리가 마주하는 대상은 우리의 동의를 요구하는 논증이 아니라 우리의 신뢰를 요구하는 인격체다. — C.S. 루이스</p>
+</blockquote>
+<p>여기에 신앙주의의 정당한 급소가 있다. 그리스도인에게 믿음은 명제에 대한 인식("이것이 참이라고 믿는다")이 아니라 관계와 실존의 문제("나는 이 인격을 신뢰한다")라는 것이다. 하나님은 실험 조건에 놓이는 대상이 아니며, 이것은 이성으로부터의 후퇴가 아니라 범주에 대한 정확한 주장이다. 사랑하는 사람의 신실을 실험으로 증명하려는 자가 이미 관계를 오해한 것처럼, 하나님을 논증의 결론으로만 붙들려는 태도는 신앙의 본성을 놓친다. 신앙주의는 바로 이 자리 — 신앙의 고유성과 인격성 — 를 지키려 한다.</p>
+<h2>3. 신앙주의의 대가 ⚖️ — 검증을 잃은 믿음</h2>
+<p>그러나 지키려는 것에는 대가가 따른다. 변증학 강의는 신앙주의를 변증학의 대척점으로 규정하며 그 역설을 짚는다 — "가장 차원 높은 믿음이 증거와 논리에서는 가장 얄팍한 토대"라는 것이다. 이성의 공격에서 믿음을 지적 격리로 보호하는 순간, 그 믿음은 안전해지는 동시에 검증 불가능해진다. 그리고 검증할 수 없는 믿음은 참된 신앙과 맹신을 구별할 방법을 잃는다.</p>
+<p>문제는 두 겹이다 ⚖️. 첫째는 진리 주장의 포기다. 신앙이 이성과 무관한 도약이라면, "예수는 주님이시다"라는 고백이 실제로 참인가라는 물음에 답할 길이 사라진다 — 그것은 나에게 참인 느낌일 뿐, 세계에 대한 주장이기를 그친다. 둘째는 상대주의의 문이다. 이성 없는 도약이 신앙을 정당화한다면, 정반대를 믿는 다른 종교의 도약도 똑같이 정당화된다. 배타적 진리 주장으로 출발한 신앙주의가 역설적으로 모든 믿음을 등가로 만드는 상대주의에 문을 여는 것이다. 인지과학은 이 위험을 반증 가능성으로 벼린다 — "어떤 사실이 나오면 그 생각이 틀렸다고 인정하겠는가"라는 물음에 끝내 답이 없다면, 그것은 진리의 표지가 아니라 잘 복제되는 밈의 표지일 수 있다. 위험한 것은 도약 자체가 아니다 — 도약이 검증의 면제로 쓰일 때다. 다만 공정하게 덧붙이면, 이 반증 가능성의 시약은 대극의 증거주의에도 똑같이 적용되어야 한다("불충분한 증거로 믿는 것은 언제나 잘못"이라는 명제 자체는 무슨 증거로 뒷받침되는가). 시약은 한쪽만 겨누는 잣대가 아니다.</p>
+<h2>4. 개혁주의 인식론과의 구분 — "적절히 기초적인 믿음"은 신앙주의가 아니다</h2>
+<p>신앙주의와 가장 자주 혼동되는 이웃이 <span class="wl-dead" title="위키 내부 링크">알빈플랜팅가</span>의 <a class="wl" href="../../t/%EA%B0%9C%ED%98%81%EC%A3%BC%EC%9D%98%EC%9D%B8%EC%8B%9D%EB%A1%A0/">개혁주의인식론</a>이다. 둘 다 하나님 믿음이 논증의 결론이 아니라고 보기 때문이다. 그러나 이 둘은 결정적으로 다르며, 그 차이를 놓치면 개혁주의 인식론이 세련된 신앙주의로 오해된다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>신앙주의</th>
+<th>개혁주의 인식론</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>이성과의 관계</td>
+<td>이성과 이질·상충 — 이성을 배제</td>
+<td>이성과 상충하지 않음 — 다른 방식으로 정당</td>
+</tr>
+<tr>
+<td>믿음의 지위</td>
+<td>이성으로 정당화 불가한 도약</td>
+<td>정당하게 기초적(properly basic)인 믿음</td>
+</tr>
+<tr>
+<td>근거</td>
+<td>없음 — 비약 자체가 근거</td>
+<td>보증(warrant) — 제대로 기능하는 인지 능력 + 적절한 환경</td>
+</tr>
+<tr>
+<td>유비</td>
+<td>(유비 거부 — 신앙은 고유)</td>
+<td>"타인의 마음"에 대한 믿음처럼 합리적</td>
+</tr>
+</tbody>
+</table>
+<p>플랜팅가의 핵심은 하나님 믿음이 증거의 결론이 아니라 감각 경험처럼 기초적일 수 있다는 것이다. 우리가 타인에게 마음이 있음을 증명 없이도 합리적으로 믿듯이, 하나님 존재도 논증에 앞서 정당하게 기초적일 수 있다. 여기서 결정적인 것은 이 믿음이 이성에 반하지 않는다는 점이다 — 그것은 이성을 배제하는 도약이 아니라, 정당화(justification)와 구별되는 보증(warrant) 위에 선 합리적 믿음이다. 신앙주의가 "이성으로는 안 되니 뛰어넘는다"고 말한다면, 개혁주의 인식론은 "이 믿음은 애초에 논증을 거쳐야만 정당한 것이 아니다"라고 말한다. 전자는 이성의 실패를 전제하고, 후자는 이성의 관할을 재규정한다. 그래서 개혁주의 인식론은 신앙주의의 지적 격리와 달리, 방어에 강하되 비합리를 주장하지 않는다(그 기술적 상세와 다신교 반론 같은 미해결 항목은 <a class="wl" href="../../t/%EA%B0%9C%ED%98%81%EC%A3%BC%EC%9D%98%EC%9D%B8%EC%8B%9D%EB%A1%A0/">개혁주의인식론</a>이 스스로 다룬다).</p>
+<h2>5. 목회적 함의 — "의심하지 말고 믿어라"의 문제</h2>
+<p>신앙주의는 강단과 진료실에서 하나의 관행으로 내려온다 — "따지지 말고 믿어라", "의심은 믿음의 부족이다"라는 요구다. 이 요구는 2절의 정당한 통찰(신앙은 인격적 신뢰)을 왜곡한 형태다. 하나님이 실험 대상이 아니라는 것과, 신자가 어떤 물음도 던져서는 안 된다는 것은 전혀 다른 명제다.</p>
+<p>맹목적 믿음을 미덕으로 요구할 때 두 가지가 무너진다. 첫째, 정직한 의심이 갈 곳을 잃는다. 고난과 회의를 통과하는 신자에게 "믿음이 부족하다"는 낙인은 병에 더해 죄책을 얹는다. 그러나 <a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EA%B3%BC%EC%9D%B4%EC%84%B1/">신앙과이성</a>이 짚듯 위험한 것은 의심을 통과한 확신이 아니라 한 번도 의심해 본 적 없는 확신이며, 후자는 자기가 신앙인지 편향인지조차 모른다. 둘째, 검증을 면제받은 믿음은 조작에 취약해진다 — "따지지 말라"는 명령은 건강한 신앙을 지키는 울타리가 아니라 이단과 영적 학대가 파고드는 통로가 되기 쉽다. 그래서 강단의 바른 태도는 도약의 요구가 아니라 <span class="wl-dead" title="위키 내부 링크">오스틴파러</span>의 균형이다(그 정식은 <a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EA%B3%BC%EC%9D%B4%EC%84%B1/">신앙과이성</a>에 있다) — "논증이 확신을 낳지는 않는다. 그러나 논증이 없으면 신앙이 무너진다." 신앙은 이성이 전부가 아니라고 선언하되, 이성과 모순되는 것이 아니라 이성을 초월한다. 신뢰를 요구하되 물음을 금하지 않는 것 — 이것이 신앙주의의 통찰을 취하면서 그 대가를 피하는 목회의 길이다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>신앙주의는 하나의 입장이 아니라 스펙트럼이다 — 터툴리안의 적대(대결)와 키르케고르·비트겐슈타인의 초월·범주 구별은 성격이 다르며, 루터는 이성 일반이 아니라 "영광의 신학"을 겨눴기에 순수 신앙주의로 분류하기 어렵다.</li>
+<li>신앙주의가 지키려는 통찰은 실재한다 — 믿음은 명제 동의(notitia)가 아니라 인격적 신뢰(fiducia)이며(에드워즈), 하나님은 실험 대상이 아니라는 것(루이스)은 후퇴가 아니라 범주에 대한 정확한 주장이다.</li>
+<li>대가는 두 겹이다 ⚖️ — 검증 불가능해진 믿음은 진리 주장을 포기하고 상대주의에 문을 연다. 반증 가능성의 시약은 위험하지만, 그 시약은 대극의 증거주의에도 똑같이 적용된다.</li>
+<li>개혁주의 인식론은 신앙주의가 아니다 — 플랜팅가의 "적절히 기초적인 믿음"은 이성을 배제하는 도약이 아니라 보증(warrant) 위에 선 합리적 믿음이다. 신앙주의가 이성의 실패를 전제한다면, 개혁주의 인식론은 이성의 관할을 재규정한다.</li>
+<li>목회적으로 "의심하지 말고 믿어라"는 왜곡이다 — 신앙은 신뢰를 요구하되 물음을 금하지 않으며, 검증을 면제받은 믿음은 영적 학대와 이단에 취약해진다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>키르케고르의 "질적 도약"은 검증의 면제인가, 아니면 이성이 다한 곳에서의 정당한 초월인가 — 도약과 맹신을 가르는 기준은 도약 이후의 삶(열매)에 있는가, 도약 이전의 근거에 있는가.</li>
+<li>신앙이 "인격적 신뢰"라는 결론은 인식론적 물음을 해결하는가 회피하는가 — 신뢰할 그 인격이 실재하는가는 여전히 인식의 물음으로 남는다(<a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EA%B3%BC%EC%9D%B4%EC%84%B1/">신앙과이성</a>과 공유).</li>
+<li>목회 현장에서 "정직한 의심의 자리"를 열어 주는 것과 신앙 공동체의 확신을 지키는 것은 어떻게 동시에 가능한가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EA%B3%BC%EC%9D%B4%EC%84%B1/">신앙과이성</a> — 신앙과 이성의 네 유형·역사 전체(완료). 신앙주의가 놓이는 지형 전체의 위임처.</li>
+<li><a class="wl" href="../../t/%EC%A6%9D%EA%B1%B0%EC%A3%BC%EC%9D%98/">증거주의</a> — 신앙주의의 대극(클리포드). 반증 가능성 시약이 함께 겨누는 입장.</li>
+<li><a class="wl" href="../../t/%EA%B0%9C%ED%98%81%EC%A3%BC%EC%9D%98%EC%9D%B8%EC%8B%9D%EB%A1%A0/">개혁주의인식론</a> — 신앙주의와 혼동되나 다른 이웃. "적절히 기초적인 믿음"의 기술적 상세.</li>
+<li><a class="wl" href="../../t/%EC%9E%90%EC%97%B0%EC%8B%A0%ED%95%99/">자연신학</a> — 바르트의 "Nein!"이 자연신학을 배격하는 자리(완성).</li>
+<li><a class="wl" href="../../t/%EB%B3%80%EC%A6%9D%ED%95%99/">변증학</a> — 신앙주의가 대척점을 이루는 변증 활동 전체.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">07주_신앙과이성의문제</span></td>
+<td>강의(양정모)</td>
+<td>신앙주의를 네 유형 중 "이성 배제한 신앙"으로 정의, 대표자(터툴리안·루터·키르케고르·바르트), 증거주의와의 대극, "가장 얄팍한 토대"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">01주_변증학의문제</span></td>
+<td>강의(양정모)</td>
+<td>플랜팅가의 보증(warrant) 개념, 개혁주의 인식론과 신앙주의의 구별</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EA%B3%BC%EC%9D%B4%EC%84%B1/">신앙과이성</a></td>
+<td>위키</td>
+<td>스펙트럼의 뉘앙스(루터 단서·비트겐슈타인·키르케고르), 반증 가능성 시약의 대칭 적용, 파러의 균형 정식</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EA%B0%9C%ED%98%81%EC%A3%BC%EC%9D%98%EC%9D%B8%EC%8B%9D%EB%A1%A0/">개혁주의인식론</a> · <a class="wl" href="../../t/%EC%A6%9D%EA%B1%B0%EC%A3%BC%EC%9D%98/">증거주의</a></td>
+<td>위키 교차</td>
+<td>"적절히 기초적인 믿음", 노티티아/피두치아, 대극의 증거주의</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/변증학</span><span>#discipline/인식론</span><span>#신앙과이성</span><span>#비합리주의</span><span>#도약</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

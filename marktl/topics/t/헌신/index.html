@@ -1,0 +1,291 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>헌신 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:345">영성·제자도</span><span class="date">2026-07-14</span></div>
+  <h1 class="note-title">헌신</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>헌신은 <strong>소유권을 이전하는 행위</strong>다. 순종이 명령에 응하는 일이고 섬김이 남을 향해 낮아지는 일이며 성화가 성품이 바뀌어 가는 과정이라면, 헌신은 그 모든 것에 앞서 나의 몸·시간·소유의 주인이 내가 아니라 하나님이심을 인정하고 그분께 넘겨드리는 단 하나의 동작이다. 이 볼트의 설교들은 이 드림을 의지의 분발로 다루지 않는다. <span class="wl-dead" title="위키 내부 링크">박경남</span> 선교사는 요한복음 14:23-24를 강해하며 보람되고 후회 없는 인생은 "무엇에 헌신하는가"가 아니라 "예수 그분을 매일 추구하는가"에 달려 있다고 못 박고, "너희가 나를 사랑하면 계명을 지키리라"는 조건절을 율법적 명령이 아니라 연애의 비유로 풀어 헌신을 사랑의 자연스러운 표현으로 재정의한다. 헌신의 출발점은 힘이 아니라 갈라디아서 2:20의 "그리스도와 함께 십자가에 못 박혀 죽은" 자아라는 <a class="wl" href="../../t/%EC%8B%AD%EC%9E%90%EA%B0%80/">십자가</a> 신학이다.</p>
+<p>이 사랑의 응답은 구체적인 자기 드림으로 육화된다. 공베드로 선교사는 요한복음 12:24의 한 알의 밀 비유를 "잊히기 위해 산 사람"으로 구체화하면서, 자기 명성·안전·소유를 땅에 묻을 때 비로소 많은 열매가 맺힌다는 <a class="wl" href="../../t/%ED%9D%AC%EC%83%9D%EC%A0%9C%EC%82%AC/">자기 드림</a>을 헌신의 본질로 제시한다. 최원일 선교사의 유언 — "예수 닮아가는 것보다 중요한 것은 없고, 삶을 드리는 것보다 중요한 것은 없다" — 은 이 볼트가 말하는 헌신의 두 절대 가치를 압축한다. 그러나 드림은 감정의 분출이 아니라 결단의 무게를 지닌다. <span class="wl-dead" title="위키 내부 링크">배준현</span> 목사는 사도행전 18장 바울의 나실인 서원을 통해 헌신이 위기의 자리를 회피가 아니라 더 깊은 구별의 자리로 바꾸는 결단임을 보이며 "많은 사람이 재능의 부족보다 결심의 부족으로 실패한다"고 도전한다. 곧 헌신은 사랑에서 비롯되어(동기), 자기를 드리는 죽음으로 표현되며(본질), 적절한 때의 결단으로 실행된다(행동).</p>
+<p>이 글은 그 세 층위를 관통하는 <strong>소유권 이전으로서의 헌신</strong>을 다루는 허브다. 이웃한 개념들과 겹치는 대목은 각자의 확정판에 위임한다.</p>
+<table>
+<thead>
+<tr>
+<th>개념</th>
+<th>핵심 동작</th>
+<th>방향</th>
+<th>위임</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>헌신</strong></td>
+<td>자기를 드림 — 소유권 이전</td>
+<td>나 → 하나님</td>
+<td>(이 글)</td>
+</tr>
+<tr>
+<td>순종</td>
+<td>명령에 응함 — 아래서 들음</td>
+<td>권위 → 나 → 응답</td>
+<td><a class="wl" href="../../t/%EC%88%9C%EC%A2%85/">순종</a></td>
+</tr>
+<tr>
+<td>섬김</td>
+<td>낮아져 필요를 채움</td>
+<td>나 → 타인</td>
+<td><a class="wl" href="../../t/%EC%84%AC%EA%B9%80/">섬김</a></td>
+</tr>
+<tr>
+<td>성화</td>
+<td>그리스도의 형상으로 변화</td>
+<td>성령 ↔ 나 (과정)</td>
+<td><a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a></td>
+</tr>
+</tbody>
+</table>
+<h2>1. 롬 12:1이라는 심장 — 살아 있는 제물의 역설</h2>
+<p>헌신의 모든 신학은 한 구절로 수렴한다.</p>
+<blockquote>
+<p>그러므로 형제들아 내가 하나님의 모든 자비하심으로 너희를 권하노니 너희 몸을 하나님이 기뻐하시는 거룩한 산 제물로 드리라 이는 너희가 드릴 영적 예배니라 (롬 12:1)</p>
+</blockquote>
+<p><span class="wl-dead" title="위키 내부 링크">문대원</span> 목사는 「새로운 예배」(ReShape 3)에서 이 명령의 두 겹을 짚는다. 구약 시대에는 짐승을 잡아 제단에 드렸으나 신약 시대에는 우리 몸으로 드린다. 그리고 그 제물은 "산" 제물이다. 여기에 헌신의 근본 역설이 있다. 제물이란 본래 죽어 불태워지는 것인데, 산 제물은 살아 있다. 죽은 제물은 제단 위에 머물지만, 살아 있는 제물은 자꾸 제단에서 기어 내려온다. 그래서 헌신은 한 번 올려놓고 끝나는 사건이 아니라, 날마다 자기를 다시 제단에 얹는 반복이 된다.</p>
+<p>문대원 목사는 이 몸의 드림을 로마서 6:13의 "너희 지체를 의의 무기로 하나님께 드리라"와 포개어, 영적 예배란 관념이 아니라 "우리의 육체를 사용해서 하나님이 기뻐하시는 뜻을 행하는 것"이라고 정의한다. 요한계시록 4장에서 이십사 장로가 자기의 관을 보좌 앞에 드리며 경배하듯, 헌신은 가장 높이 쳐든 것을 도로 그분 발 앞에 내려놓는 몸짓이다. 결정적으로 하나님은 "예배가 아니라 예배자를 찾으신다" — 찬양과 헌금 자체가 아니라 그 안에 담긴 드림의 마음을 보신다. 헌신은 이렇게 예배의 본체를 이룬다. 다만 경배(프로스퀴네시스)와 봉헌(라트레이아)이라는 예배의 두 계열, 공예배와 삶의 예배의 신학은 <a class="wl" href="../../t/%EC%98%88%EB%B0%B0/">예배</a>가 상술하므로, 여기서는 헌신이 곧 산 제물로 자기를 얹는 예배임을 확인하는 데 그친다.</p>
+<h2>2. "그러므로" — 은혜가 먼저 놓인다</h2>
+<p>롬 12:1은 명령이지만 명령으로 시작하지 않는다. 그 첫 단어는 "그러므로"이고, 곧바로 "하나님의 모든 자비하심으로"가 따른다. <span class="wl-dead" title="위키 내부 링크">권성수</span> 목사는 「마음을 새롭게」에서 이 접속사에 헌신의 순서 전체가 걸려 있음을 본다. 로마서 1~11장이 쏟아부은 자비하심 — 죄인을 값없이 의롭다 하신 은혜 — 이 먼저 놓이고, 헌신은 그 은혜에 대한 응답으로 비로소 요청된다. 이 순서가 뒤집히면 헌신은 즉시 율법주의로 굳는다. 드림으로 은혜를 사려 하고, 바친 만큼 인정을 계산하는 공로의 종교가 되는 것이다.</p>
+<p>문대원 목사는 이 원리를 마르다와 마리아의 이야기(「헌신된 사람은 너그러울 수 없을까」)로 밀고 들어간다. 마리아가 값비싼 향유를 아낌없이 부을 수 있었던 것은, 그가 먼저 주의 발치에 앉아 말씀을 듣고 사랑을 받았기 때문이다.</p>
+<blockquote>
+<p>그분의 사랑을 먼저 받을 줄 알아야 한다. 드리기 전에, 하기 전에 은혜를 받아야 한다. 왜냐하면 받은 것만 줄 수 있기 때문이다. (문대원, 「헌신된 사람은 너그러울 수 없을까」)</p>
+</blockquote>
+<p>받지 않은 것을 드릴 수는 없다. 내 힘과 의지로 짜내는 헌신은 오래가지 못하고 불평과 원망으로 변질되거나 자기 의로 굳는다. 그러므로 헌신의 동력은 언제나 앞서 받은 은혜다. 이 은혜론의 전개는 <a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a>에 위임한다.</p>
+<h2>3. 드림의 성경 문법 — 번제, 서원, 그리고 값비싼 향유</h2>
+<p>성경은 "드림"을 위한 고유한 문법을 가지고 있다. 구약의 번제(온전한 번제, 칼릴)는 제물 전체를 남김없이 태워 올려 아무것도 자기 몫으로 남기지 않는 드림이었고, 첫 열매와 첫 소산을 먼저 떼어 드리는 관습은 나머지 전부도 그분의 것이라는 고백이었다. 배준현 목사는 「결단할 타이밍」에서 여기에 서원의 무게를 더한다. 서원은 "주시면 드리겠다"는 약속을 전제로 드리는 기도이며, 그 원형이 한나다 — "주의 여종에게 아들을 주시면… 내가 그의 평생에 그를 여호와께 드리고"(삼상 1:11), 그리고 응답받은 뒤 "나도 그를 여호와께 드리되 그의 평생을 여호와께 드리나이다"(삼상 1:28). 서원한 드림은 반드시 갚아야 한다("서원하거든 갚기를 더디하지 말라", 신 23:21). 야곱이 십일조를 서원하고도 이행하지 않아 삶이 어그러졌다는 대목은, 드림의 문법에 값이 따른다는 경고다.</p>
+<table>
+<thead>
+<tr>
+<th>드림의 형태</th>
+<th>성경 본문</th>
+<th>드림의 문법</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>온전한 번제</td>
+<td>레위기 제사 규례</td>
+<td>남김없이 태워 자기 몫을 남기지 않음</td>
+</tr>
+<tr>
+<td>첫 열매·첫 소산</td>
+<td>출·신명기 절기</td>
+<td>먼저 떼어 드림 = 전부가 그분 것이라는 고백</td>
+</tr>
+<tr>
+<td>서원</td>
+<td>삼상 1(한나), 창 28(야곱), 민 6(나실인)</td>
+<td>"주시면 드리겠다" — 반드시 갚음</td>
+</tr>
+<tr>
+<td>향유</td>
+<td>요 12·막 14(마리아)</td>
+<td>계산 없이, 가장 좋은 것을, 힘을 다하여</td>
+</tr>
+</tbody>
+</table>
+<p>이 문법의 신약적 정점이 마리아의 향유다. 문대원 목사가 짚듯 순전한 나드 한 근은 사실상 그의 전 재산이었고, 마리아는 그것을 아까워하지 않고 예수의 발에 부었다(요 12:3; 막 14장은 "힘을 다하여"라고 적는다). 이것이 "정말로 기뻐하시는 진정한 헌신"이며 "받은 것을 다시 그분께 드리는 것, 계산하고 따지지 않고 드리는 것"이다. 드림의 문법은 언제나 같은 방향을 가리킨다 — 가장 좋은 것을, 아까워하지 않고, 남김없이.</p>
+<h2>4. 전부인가, 부분인가 — 아나니아의 거짓과 헌신 강요의 그늘</h2>
+<p>여기서 오래된 오해 하나를 바로잡아야 한다. 아나니아와 삽비라(행 5장)가 죽은 것은 소유의 일부만 드렸기 때문이 아니다. 문대원 목사는 「딱 한 번의 죄는 없다」에서 베드로의 말을 정확히 읽는다 — "땅이 그대로 있을 때에는 네 땅이 아니며 판 후에도 네 마음대로 할 수가 없더냐"(행 5:4). 부분을 남기는 것 자체는 죄가 아니었다. 죄는 전부 드린 척 감추고(노스피조마이, νοσφίζομαι) 성령을 속인 <strong>거짓</strong>이었다. 여호수아 7장 아간이 "온전히 바친 물건"을 감춘 죄와 같은 뿌리다. 그러므로 헌신의 시금석은 "얼마를 드렸는가"의 양이 아니라 "정직한가"의 진실이다.</p>
+<p>그렇다면 "전부를 드리라"는 수사는 조심스럽게 다뤄야 한다. ⚖️ 헌신을 양으로 환산해 압박하는 문화는 성경이 요구하는 것이 아니며, 오히려 소진과 실족을 낳는다. 문대원 목사의 설교 제목 자체가 경고다 — 「헌신된 사람은 너그러울 수 없을까」. 누구보다 주님께 헌신되었으나 너그럽지 못한 마음이야말로 비극이며, 내 힘으로 이룬 헌신은 자기 의가 되어 교만하게 하고 금방 소진과 무기력에 부딪힌다. 베드로가 "목숨을 바치겠습니다" 장담하고도 세 번 부인한 데서 보듯 "헌신은 언제든지 변할 수 있다." 이 볼트의 「인생의 십일조」 강의는 이 압박을 정직하게 마주한 목회적 지혜를 보여준다.</p>
+<blockquote>
+<p>우리 인생을 전부 하나님께 드리는 것은 부담이었고… 그래서 친구들에게 "의사의 삶의 십일조를 하나님께 드리자"고 했습니다. (「인생의 십일조」)</p>
+</blockquote>
+<p>의사로 30~40년을 살 텐데 적어도 그 십분의 일인 3년을 하나님 나라를 위해 살자는 제안이었다. 전부의 무게를 한시적·공동체적 드림으로 번역한 것이다. 헌신은 자기 착취가 아니다. 소진 없는 드림이 어떻게 지속되는가라는 물음은 <a class="wl" href="../../t/%EC%84%AC%EA%B9%80/">섬김</a>과 멤버케어가 함께 짊어진다.</p>
+<h2>5. 결단과 지속 — 수련회의 불이 월요일에 꺼지는 이유</h2>
+<p>헌신의 가장 흔한 실패는 부족한 결단이 아니라 지속되지 못하는 결단이다. 수련회의 뜨거운 눈물이 월요일 아침을 넘기지 못한다. 배준현 목사는 「결단할 타이밍」에서 이 취약함을 두 방향에서 짚는다. 한편으로 결단에는 때가 있어서 — 서서히 데워지는 물속에서 삶아 죽는 개구리처럼 — 타이밍을 놓치면 결단 자체가 불가능해진다. 무디를 회심으로 이끈 킴벌의 결단처럼 "많은 사람이 재능의 부족보다 결심의 부족으로 실패한다." 예수님조차 예루살렘을 향해 "올라가기로 굳게 결심하시고"(눅 9:51) 순간순간 결단하셨다.</p>
+<p>다른 한편, 결단은 반복되어야 한다. 나실인 서원은 도중에 부정을 타면 "지나간 기간은 무효"가 되어 처음부터 다시 시작해야 했다(민 6:12) — 헌신은 한 번의 성취가 아니라 매번 새로 세우는 것임을 제의가 이미 가르친 셈이다. 그래서 예수는 "날마다 제 십자가를 지고"(눅 9:23) 따르라 하신다. 일회의 결단을 매일의 갱신으로 잇는 데는 장치가 필요하다. 문대원 목사가 예배를 두고 "혼자서 살아갈 수 없고 반드시 몸 안에 붙어 있어야 영양분을 얻는다"고 했듯, 헌신을 지탱하는 것은 공동체와 습관이다. 「인생의 십일조」의 3년 사역이 한 사람의 결심으로 끝나지 않고 12명이 함께, 다시 후배의 후배로 10년간 이어진 것이 그 증거다. 매일의 순종을 몸에 새기는 훈련의 기제는 <a class="wl" href="../../t/%EC%88%9C%EC%A2%85/">순종</a>이 상술한다.</p>
+<h2>6. 헌신의 대상 착오 — 하나님인가, 제단인가</h2>
+<p>헌신에는 은밀한 오작동이 있다. 대상이 미끄러지는 것이다. 하나님께 드린다고 하면서 실제로는 사역·성과·교회·지도자에게 헌신할 때, 그 드림은 소진과 실족의 뿌리가 된다. 문대원 목사가 반주를 예배로 착각하고 "그것을 하면 다 했다고 생각했다"고 고백하듯, 행위에 헌신하면서 정작 예배자가 되지는 못하는 분열이 일어난다. 마르다의 분주함이 그 전형이다 — 그는 주님을 위한 많은 일에 헌신했으나, 정작 주님과의 관계와 말씀을 놓쳤다. 예수께서 마리아의 "더 좋은 편"을 칭찬하신 것은 일이 나빠서가 아니라, 드림에 앞서 받는 자리가 먼저이기 때문이다.</p>
+<p>대상 착오의 극단은 맘몬이다. 문대원 목사는 아나니아와 가룟 유다의 공통점을 돈을 사랑한 데서 찾는다 — "너희는 하나님과 재물을 겸하여 섬길 수 없느니라"(눅 16:13). 헌신의 대상이 하나님 아닌 무엇이 되는 순간, 그 드림은 곧 우상숭배로 기운다. 헌신과 우상숭배를 가르는 이 경계선은 <a class="wl" href="../../t/%EC%9A%B0%EC%83%81%EC%88%AD%EB%B0%B0/">우상숭배</a>가 상술하고, 일 자체에 소명을 두지 않고 하나님께 시선을 두는 1차 소명의 문법은 <a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a>이 다룬다. 헌신이 건강하려면 드림의 화살 끝이 언제나 제단이 아니라 제단 너머 하나님을 향해 있어야 한다.</p>
+<h2>7. 삶의 영역으로 내려온 헌신 — 시간·재정·몸·경력</h2>
+<p>헌신은 추상이 아니라 시간표와 통장과 몸에서 검증된다. 권성수 목사는 「마음을 새롭게」에서 "시간, 재능, 물질, 자신을 제물로 드려야" 한다고 못 박으며, 낡은 우산을 빌려 쓰고 돌려준 뒤 그가 메리 여왕이었음을 뒤늦게 안 사람의 예화를 든다 — 여왕인 줄 알았다면 최선의 것을 드렸을 것이다. 지극히 작은 한 사람에게 한 것이 곧 그분께 한 것이니, 드림은 "최선의 것"을 향한다.</p>
+<p>영역별로 헌신은 구체적 얼굴을 갖는다. <strong>몸</strong>은 롬 12:1의 문자 그대로 "너희 몸을" 드리는 것이며, 지체를 의의 무기로 내어드리는 일이다(롬 6:13). <strong>재정</strong>의 십일조는 액수 이전에 "나에게 허락된 모든 것의 주인은 하나님"이라는 신앙고백이다(「인생의 십일조」). 나아가 <strong>시간과 경력</strong> 전체가 드림의 대상이 된다. 「인생의 십일조」 강의는 의사의 삶 30~40년 중 3년을 의료 오지의 섬에 드린 이야기를 통해, "내 인생이 주님의 것"이라는 고백이 어떻게 시간의 헌신으로 육화되는지를 보여준다. 그리고 그 드림의 결말이 역설이다 — "우리 입장에서 헌신이었지만, 3년의 시간은 여호와 이레의 시간이었다." 드리는 자리가 곧 받는 자리였다. 직업(의사·이사)을 통째로 드린다는 것은 기독교 세계관으로 그 일을 감당하는 것이며, 그 직업신학과 진로의 분별은 <a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a>이, 맡은 자원을 관리하는 청지기의 신학은 <a class="wl" href="../../t/%EC%B2%AD%EC%A7%80%EA%B8%B0/">청지기</a>가 이어받는다. 결국 헌신은 주일의 감격이 아니라 월요일의 시간·재정·몸·경력에서 판명된다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>헌신은 <strong>소유권 이전</strong>이다 — 순종(명령에 응함)·섬김(남을 향함)·성화(과정)와 달리, 내 몸·시간·소유의 주인이 하나님이심을 인정하고 넘겨드리는 단 하나의 동작.</li>
+<li>롬 12:1의 "산 제물"은 역설이다 — 죽어 불태워질 제물이 살아서 자꾸 제단을 기어 내려온다. 그래서 헌신은 사건이 아니라 날마다 자기를 다시 얹는 반복이며, 예배의 본체다.</li>
+<li>롬 12:1은 "그러므로"로 시작한다 — 은혜(롬 1~11)가 먼저 놓이고 헌신이 그 응답이다. 순서가 뒤집히면 드림으로 은혜를 사려는 율법주의가 된다. 받은 것만 줄 수 있다.</li>
+<li>아나니아의 죄는 부분 헌신이 아니라 <strong>거짓</strong>이었다(행 5:4) — 헌신의 시금석은 양이 아니라 정직이다. "전부 드리라"는 수사가 만드는 압박·소진은 성경이 요구하는 바가 아니다.</li>
+<li>일회 결단은 취약하다 — 수련회의 불은 매일의 갱신("날마다", 눅 9:23)과 공동체·습관의 유지 장치 없이는 월요일에 꺼진다. 서원조차 무효가 되면 처음부터 다시 시작해야 했다.</li>
+<li>헌신의 대상이 하나님이 아니라 사역·성과·재물이 되는 순간 우상이 되고 소진의 뿌리가 된다 — 하나님은 예배가 아니라 예배자를 찾으신다.</li>
+<li>헌신은 주일의 감격이 아니라 월요일의 시간·재정·몸·경력에서 검증된다 — "삶의 십일조"는 전부의 압박을 한시적·공동체적 드림으로 번역한 목회적 지혜다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>"전부 드림"의 절대성과 유한한 인간의 지속 가능성은 어떻게 화해되는가 — 소진 없는 전적 헌신이 가능한가, 아니면 헌신은 본래 한시적 갱신의 연속인가.</li>
+<li>헌신과 자기 착취의 경계는 실제 사역 현장에서 어떻게 판별되는가 — 건강한 경계(boundary)를 세우는 것이 헌신의 후퇴인가 성숙인가(<a class="wl" href="../../t/%EC%84%AC%EA%B9%80/">섬김</a>과 공유되는 질문).</li>
+<li>은혜가 먼저라면, 서원의 "반드시 갚으라"(신 23:21)는 요구는 은혜의 자유와 어떻게 양립하는가 — 갚아야 할 드림은 어느 지점에서 다시 공로가 되는가.</li>
+<li>헌신의 대상이 미묘하게 사역·공동체로 옮겨가는 것을 당사자가 자각하기 어렵다면, 무엇이 그 착오를 비추는 거울이 되는가.</li>
+<li>직업(의사·이사)을 통째로 드리는 것과 그 전문성·보상을 정당하게 누리는 것은 어떻게 동시에 성립하는가(<a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a>·<a class="wl" href="../../t/%EC%B2%AD%EC%A7%80%EA%B8%B0/">청지기</a>와 공유되는 질문).</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%98%88%EB%B0%B0/">예배</a> — 헌신이 그 본체를 이루는 예배의 신학(경배·봉헌의 원어, 공예배와 삶의 예배).</li>
+<li><a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a> — 헌신 앞에 놓인 "그러므로"의 근거. 받은 것만 드릴 수 있다.</li>
+<li><a class="wl" href="../../t/%EC%88%9C%EC%A2%85/">순종</a> — 헌신을 지탱하는 매일의 훈련과 명령에 대한 응답의 기제.</li>
+<li><a class="wl" href="../../t/%EC%84%AC%EA%B9%80/">섬김</a> — 자기를 드림이 타인을 향해 흐르는 하강 곡선, 번아웃 없는 섬김의 물음.</li>
+<li><a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a> — 일 자체가 아니라 하나님께 시선을 두는 1차 소명, 직업·진로의 분별.</li>
+<li><a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a> — 드려진 삶이 그리스도의 형상으로 변화되어 가는 과정.</li>
+<li><a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%ED%9B%88%EB%A0%A8/">제자훈련</a> — 자기를 드리는 죽음이 제자의 존재 방식으로 훈련되는 체계.</li>
+<li><a class="wl" href="../../t/%EC%9A%B0%EC%83%81%EC%88%AD%EB%B0%B0/">우상숭배</a> — 헌신의 대상이 하나님 아닌 것이 될 때 넘는 경계.</li>
+<li><a class="wl" href="../../t/%EC%B2%AD%EC%A7%80%EA%B8%B0/">청지기</a> — 시간·재정·몸을 맡은 자로서 드리는 청지기적 헌신.</li>
+<li><a class="wl" href="../../t/%ED%9D%AC%EC%83%9D%EC%A0%9C%EC%82%AC/">희생제사</a> · <a class="wl" href="../../t/%EC%8B%AD%EC%9E%90%EA%B0%80/">십자가</a> — 산 제물의 구약 문법과 갈 2:20의 못 박힌 자아.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2021_ReShape3_새로운예배</span></td>
+<td>설교(문대원)</td>
+<td>롬 12:1 산 제물=영적 예배, 롬 6:13 지체를 의의 무기로, 계 4:10 관을 드림, "예배가 아니라 예배자를 찾으신다"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2013_마음을새롭게</span></td>
+<td>설교(권성수)</td>
+<td>롬 12:1 "모든 자비하심으로(그러므로)"=은혜가 먼저, 시간·재능·물질·자신을 제물로, 메리 여왕 낡은 우산 예화</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2022_헌신된사람은너그러울수없을까</span></td>
+<td>설교(문대원)</td>
+<td>눅 10 마르다·마리아, "받은 것만 줄 수 있다", 내 힘의 헌신의 한계·자기 의·소진, 마리아의 향유</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2019_배준현_결단할_타이밍</span></td>
+<td>설교(배준현)</td>
+<td>나실인 서원(민 6)·한나의 드림(삼상 1)·신 23:21, 서원 무효(민 6:12), "결심의 부족으로 실패", 눅 9:51</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2024_딱한번의죄는없다</span></td>
+<td>설교(문대원)</td>
+<td>행 5 아나니아·삽비라 — 죄는 부분 헌신이 아니라 거짓(행 5:4), 수 7 아간, 맘몬(눅 16:13)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2020_배준현_힘을_다하여_수고하노라</span></td>
+<td>설교(배준현)</td>
+<td>골 1:29 "힘을 다하여", 매임(감옥)조차 복음의 진전 — 기뻐하기로 한 결단과 지속의 동력</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">인생의_십일조</span></td>
+<td>강의(이상협)</td>
+<td>"인생의 십일조"=내 인생이 주님의 것, 의사 30~40년 중 3년 드림, 전부의 압박을 한시·공동체적 드림으로, 여호와 이레</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2014_박경남_제자로 살아가기</span></td>
+<td>설교(박경남)</td>
+<td>헌신은 예수 그분과의 사랑의 응답(요 14:23), 갈 2:20 못 박힌 자아</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2019_공베드로_한알의밀_OMF패밀리데이</span></td>
+<td>설교(공베드로)</td>
+<td>요 12:24 한 알의 밀, 자기 명성·안전·소유를 땅에 묻음(최원일 유언)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2025_이만휘_아무도_나서지_않을_때</span></td>
+<td>설교(이만휘)</td>
+<td>느헤미야 1장, "아무도 나서지 않을 때 나서는" 믿음의 헌신</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/제자도</span><span>#산제물</span><span>#자기드림</span><span>#서원</span><span>#결단</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

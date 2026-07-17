@@ -1,0 +1,343 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>하나님나라 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="date">2026-07-14</span></div>
+  <h1 class="note-title">하나님나라</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>하나님나라(the Kingdom of God)에서 '나라'는 우선적으로 장소가 아니라 다스림이다. 헬라어 바실레이아(βασιλεία)는 지도 위의 영토가 아니라 왕이 실제로 행사하는 왕권·통치를 뜻하며, 정민영 선교사가 『하나님 나라와 하나님의 선교』에서 못박듯 "왕국(Kingdom)의 핵심 개념은 영토가 아니라 통치권"이다(p.64). 그래서 이 단어가 던지는 첫 질문은 "그 나라가 어디 있는가"가 아니라 "누가, 지금, 다스리는가"이다. 헨델의 『메시아』가 단 한 문장 "전능한 주가 다스리신다, 할렐루야!"로 압축되고, 신약이 구원자를 뜻하는 소테르(soter)를 24회 쓰는 동안 주님을 뜻하는 퀴리오스(kyrios)를 747회 쓴다는 사실이, 성경의 무게중심이 '구원의 혜택'이 아니라 '왕의 통치'에 있음을 드러낸다.</p>
+<p>이 통치는 멀리 있는 관념이 아니라 한 인물에게서 현실이 되었다. 예수의 공생애 첫 선포가 "때가 찼고 하나님의 나라가 가까이 왔으니 회개하고 복음을 믿으라"(막 1:15)였고, 부활 후 사십 일 동안 그가 거듭 가르치신 메시지의 주제도 오로지 하나님 나라였다(정민영, p.68). 그러므로 하나님나라는 예수의 곁가지 주제가 아니라 그의 선포 전체를 꿰는 중심이며, 복음은 "하나님의 통치가 임했기 때문에" 기뻐해야 할 좋은 소식이다(같은 책, p.67-68). 이 페이지가 붙드는 축은 바로 이것이다 — <strong>하나님이 다스리신다는 사실, 그 통치가 예수 안에서 임했다는 사건, 그리고 그것이 낳는 함의.</strong></p>
+<p>이 주제는 인접한 여러 페이지와 맞닿기에, 무엇이 어느 페이지의 몫인지를 먼저 갈라 두면 이 글의 경계가 분명해진다. 본 페이지는 '통치' 개념 자체와 그 임함을 담당하고, 인접 페이지들이 그 통치의 특정 국면을 맡는다.</p>
+<table>
+<thead>
+<tr>
+<th>층위</th>
+<th>묻는 질문</th>
+<th>담당 페이지</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>통치 개념과 그 임함 (본 페이지)</strong></td>
+<td>하나님이 다스리신다는 것은 무엇이며, 어떻게 임했는가</td>
+<td><a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EB%82%98%EB%9D%BC/">하나님나라</a></td>
+</tr>
+<tr>
+<td>창조·섭리 전반의 왕적 주권</td>
+<td>누가 다스리는가 — 일상·직업의 실존적 싸움</td>
+<td><a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%A3%BC%EA%B6%8C/">하나님의주권</a></td>
+</tr>
+<tr>
+<td>이미-아직의 시제·재림·천년왕국</td>
+<td>그 통치는 언제 완성되는가</td>
+<td><a class="wl" href="../../t/%EC%A2%85%EB%A7%90%EB%A1%A0/">종말론</a></td>
+</tr>
+<tr>
+<td>'하나님나라 복음'의 복음론 (유앙겔리온·즉위식·케리그마)</td>
+<td>그 통치가 어떻게 좋은 소식이 되는가</td>
+<td><a class="wl" href="../../t/%EB%B3%B5%EC%9D%8C/">복음</a></td>
+</tr>
+<tr>
+<td>나라 윤리의 본문 상세 (팔복·주기도문·좁은 문)</td>
+<td>그 통치 아래 구체적으로 어떻게 사는가</td>
+<td><a class="wl" href="../../t/%EC%82%B0%EC%83%81%EC%88%98%ED%9B%88/">산상수훈</a></td>
+</tr>
+</tbody>
+</table>
+<p><a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%A3%BC%EA%B6%8C/">하나님의주권</a>이 "누가 주인인가"를 둘러싼 창조·섭리 전반의 싸움(바로의 완악함, 요셉의 보내심, 소유권)을 다룬다면, 이 페이지는 그 왕적 통치가 예수 안에서 구속사적으로 결정적으로 침투해 우리가 들어가고 선포하는 나라를 다룬다. 둘은 같은 왕을 말하되, 하나는 '늘·모든 곳의 다스림'을, 하나는 '이제·여기 임한 다스림'을 본다.</p>
+<h2>1. 바실레이아 — 영토가 아니라 다스림</h2>
+<p>먼저 단어 자체를 붙들어야 오해가 걷힌다. 하나님나라를 장소로 읽는 순간, 그것은 흔히 "죽어서 가는 저 너머의 천국"으로 축소되고, 통치의 현재성은 증발한다. 정민영은 이 축소를 정면으로 겨눈다 — 하나님나라는 왕권의 문제이지 부동산의 문제가 아니며, 복음이 종종 짐이 되는 이유는 왕이 오셨다는 사건을 "이렇게 살면 좋다"는 처세의 권유로 바꿔 팔기 때문이다. 하백선 11강이 같은 오해를 한 문장으로 교정한다.</p>
+<blockquote>
+<p>하나님 나라는 죽어서 천국에 간다는 축소된 개념이 아니라, 지금 여기에서 시작된 하나님의 주권적 다스림이며 그 결과 어둠이 물러가고 치유와 샬롬이 임하는 실제적 능력이다. — 하백선 11강 「그리스도의 복음을 선포하는 백성」</p>
+</blockquote>
+<p>여기서 '다스림'이라는 동사가 살아난다. 나라는 왕이 계신 곳에 임하고, 왕이 다스리는 만큼 현실이 된다. 그래서 하나님나라는 지도에 표시할 수 없되 삶에 침투하는 통치이며, 그 통치가 인격적으로 임한 이가 예수다. 이 통치 개념이 '어떻게 좋은 소식이 되는가'(유앙겔리온의 어원, 십자가·부활이라는 즉위식)의 복음론적 전개는 <a class="wl" href="../../t/%EB%B3%B5%EC%9D%8C/">복음</a>이 전담하므로, 여기서는 통치라는 뼈대만 세워 둔다. 그런데 이 뼈대는 신약의 발명이 아니라 구약에 이미 놓여 있었다.</p>
+<h2>2. 왕이신 하나님 — 구약의 통치와 메시아 대망</h2>
+<p>이스라엘의 신앙은 처음부터 왕이신 하나님을 전제했다. 그 통치의 가장 선명한 선포가 이사야 52:7이다 — "좋은 소식을 전하며 평화를 공포하며… 네 하나님이 통치하신다(Your God reigns) 하는 자." 하백선 11강이 짚듯, 이 구절은 바벨론 포로기의 흑암 한복판에서 여호와가 시온의 왕으로 다시 좌정하신다는 해방의 선언이었다. 구약에서 좋은 소식의 알맹이는 언제나 "네 하나님이 통치하신다"였고, 신약의 하나님나라 선포는 이 통치 선언의 완성판이다.</p>
+<p>이 통치는 역사의 제국들 위에 군림하는 통치이기도 하다. 권오국 목사는 다니엘 2장의 느부갓네살의 꿈을 이 축에서 읽는다. 금(바벨론)·은(페르시아)·동(헬라)·철(로마)로 이어지는 신상은 인간 제국의 계보이고, 사람의 손으로 하지 않고 "뜨인 돌"이 그 신상을 부수어 온 땅에 가득한 산이 되는 장면이야말로 하나님 나라의 도래다. 그의 결론은 단호하다 — "하나님의 나라는 역사 안에서 절대 소멸되지 않는다. 하나님의 통치를 실현할 것이다." 그러므로 이스라엘의 회복 소망은 정치적 복권이 아니라 왕의 귀환을 향한 대망이었고, 문대원 목사가 사 61장 강해에서 정리하듯 "이스라엘의 회복은 하나님의 통치와 언약에" 달려 있었다. 메시아가 오시면 열방을 통치하시고 치유와 회복이 임하리라는 이 기대가, 다음 장면에서 한 사람의 입술로 성취를 선언받는다.</p>
+<h2>3. "때가 찼고" — 예수의 중심 선포</h2>
+<p>예수의 등장은 새 종교의 창시가 아니라 대망하던 통치의 개시로 선포된다. 광야의 시험에서 세상 왕국의 제안을 거부하신 직후(마 4장), 그는 "천국이 가까이 왔느니라"(마 4:17)로 공개 사역을 여시고, 마가는 이를 "때가 찼고 하나님의 나라가 가까이 왔으니"(막 1:15)로 기록한다. '가까이 왔다'는 단순한 근접이 아니라 왕이 이미 문지방을 넘었다는 임박이며, 그렇기에 유일하게 합당한 반응은 회개와 믿음이다.</p>
+<p>이 개시 선언이 가장 또렷하게 울린 자리가 나사렛 회당이다. 예수는 사 61장을 펴 "가난한 자에게 복음을, 포로된 자에게 자유를, 눈먼 자에게 다시 보게 함을" 읽으신 뒤 두루마리를 덮고 앉으신다.</p>
+<blockquote>
+<p>이에 예수께서 그들에게 말씀하시되 이 글이 오늘 너희 귀에 응하였느니라 하시니 (눅 4:21)</p>
+</blockquote>
+<p>문대원 목사가 짚듯, 이 선언에서 예수가 받아들이신 것은 전쟁에서 승리하는 영광의 메시아가 아니라 도살장에 끌려가는 양으로서의 사명이었다(→ <a class="wl" href="../../t/%EA%B3%A0%EB%82%9C%EB%B0%9B%EB%8A%94%EC%A2%85/">고난받는종</a>). 그러나 바로 그 낮은 방식으로, 사 61장이 약속한 '은혜의 해'가 그의 인격 안에서 개시된다. 부활 후 사십 일 동안에도 그의 강의 주제는 오직 하나님 나라였으니(정민영), 나라는 예수의 처음이자 마지막 선포이며, 그의 몸과 사역이 곧 그 나라가 임한 장소였다.</p>
+<h2>4. 이미, 그러나 아직 — 나라의 두 시제</h2>
+<p>나라가 예수 안에서 이미 임했다면, 세상은 왜 여전히 이 모양인가. 이 물음이 하나님나라의 시제를 규정한다. 나라는 <strong>이미</strong> 시작되었으나 <strong>아직</strong> 완성되지 않았다. 예수의 나라 비유들이 이 두 시제를 동시에 붙든다. 윤명숙 전도사는 누룩 비유(마 13:33)에서 나라의 현재성을 읽는다 — "하나님의 나라는 하나님의 통치하심을 받는 백성이며, 누룩처럼 발효성을 가지고" 지금 반죽 속에 스며들어 "잘못된 것을 변화시키는 능력"으로 작동한다. 나라는 요란한 정복이 아니라 조용한 발효로, 통치받는 백성의 내면과 외면을 함께 바꾸며 번진다.</p>
+<p>동시에 나라는 아직 다 오지 않았다. 같은 설교자가 감추인 보화와 진주 비유(마 13:44-46)에서 짚듯, 천국은 "마지막 날에 갈 곳"이면서 이 땅에서 "가정과 교회"를 통해 미리 누리는 곳이라는 이중성을 지닌다. 존 스토트는 이 긴장을 성취의 삼중 단계로 풀어낸다 — 그리스도의 초림에서의 즉각적 성취, 선교 시대인 현재의 중간적 성취, 재림에서의 궁극적 성취(정민영, p.97).</p>
+<p><code>초림 (이미)  ────────  선교 시대 (중간)  ────────  재림 (아직·완성)
+ 누룩이 반죽에        나라 백성이 통치 아래         나라가 만유에 충만
+ 스며들기 시작        발효하는 시간(겨자씨→나무)     (만물을 새롭게 하심)
+   막 1:15             마 13:33                     계 21:5
+        └── 시제·재림·천년왕국·새 창조의 상세 → &lt;a class="wl" href="../../t/%EC%A2%85%EB%A7%90%EB%A1%A0/"&gt;종말론&lt;/a&gt;</code></p>
+<p>이 '이미-아직'의 종말론적 시제, 재림과 천년왕국의 배열, 새 창조의 상세는 <a class="wl" href="../../t/%EC%A2%85%EB%A7%90%EB%A1%A0/">종말론</a>이 전담한다. 이 페이지가 붙드는 것은 그 신학적 도식이 아니라, 두 시제가 함께 낳는 실천적 자세다 — 이미 임한 통치이기에 지금 순종하고, 아직 완성되지 않은 통치이기에 소망 중에 기다린다. 나라가 이미 왔다는 증거를, 예수는 말이 아니라 표징으로 보이셨다.</p>
+<h2>5. 나라의 표징 — 통치가 임한 증거</h2>
+<p>왕이 문지방을 넘으면 흔적이 남는다. 마가복음은 예수의 사역을 "가르침, 치유, 축귀를 통해 나타난 예수님의 권세"(막 1:16-45)로 요약하며, 이 권세가 곧 나라의 도래를 입증한다고 본다. 예수 스스로 "내가 하나님의 성령을 힘입어 귀신을 쫓아내는 것이면 하나님의 나라가 이미 너희에게 임하였느니라"(마 12:28)고 못박으셨으니, 마귀의 권세가 물러가는 그 자리가 곧 왕의 통치가 침투한 자리다.</p>
+<p>표징 가운데 가장 스캔들이었던 것은 병 고침보다 밥상이었다. 권성수 목사는 마태를 부르시는 장면(마 9:9-13)에서 이를 짚는다. 세리는 로마의 앞잡이요 매국노의 상징이었고, 그런 세리·죄인들과 한 상에서 잡수시는 예수를 두고 바리새인들은 "어찌하여 세리와 죄인들과 함께 잡수시느냐" 힐난했다 — 당대엔 부정을 타는 "엄청난 스캔들"이었다. 예수의 응답이 나라의 문법을 드러낸다.</p>
+<blockquote>
+<p>건강한 자에게는 의사가 쓸 데 없고 병든 자에게라야 쓸 데 있느니라… 나는 의인을 부르러 온 것이 아니요 죄인을 부르러 왔노라 (마 9:12-13)</p>
+</blockquote>
+<p>권 목사의 정리대로, 예수는 "죄인을 불러 천국 백성을 만드"신다. 나라의 식탁은 자격 있는 자를 포상하는 자리가 아니라 배제된 자를 불러들이는 자리다. 여기에 나사렛 선언의 "가난한 자에게 복음"(눅 4:18)이 겹쳐지면, 나라의 표징은 하나의 방향을 가리킨다 — 통치는 강한 자를 굳히는 대신 약한 자를 일으킨다.</p>
+<table>
+<thead>
+<tr>
+<th>표징</th>
+<th>본문</th>
+<th>통치가 임했다는 의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>치유·축귀</td>
+<td>막 1장, 마 12:28</td>
+<td>마귀의 권세가 물러가고 왕의 다스림이 침투함</td>
+</tr>
+<tr>
+<td>죄인과의 식탁</td>
+<td>마 9:9-13</td>
+<td>배제된 자를 불러 나라 백성 삼음 — "죄인을 부르러 왔노라"</td>
+</tr>
+<tr>
+<td>가난한 자에게 복음</td>
+<td>눅 4:18 (사 61)</td>
+<td>포로·눌린 자에게 자유 — '은혜의 해'의 개시</td>
+</tr>
+<tr>
+<td>자연 통제·죽은 자 살림</td>
+<td>막 4-5장</td>
+<td>창조 전체에 대한 왕의 주권 회복</td>
+</tr>
+</tbody>
+</table>
+<p>하백선 11강의 표현으로, 예수는 하나님 나라를 "말씀하시고 동시에 치유와 기적으로 그 나라를 입증"하셨다. 표징 없는 선포는 공허하고, 선포 없는 표징은 모호하다. 그리고 이 표징들이 공통으로 드러내는 것은, 나라의 힘이 세상 권세와 정반대 방향으로 흐른다는 사실이다.</p>
+<h2>6. 뒤집힌 통치 — 섬김으로 다스리는 나라</h2>
+<p>하나님나라의 통치는 세상 권세를 더 세게 반복하는 것이 아니라 그 방향을 뒤집는다. 권오국 목사는 헤롯의 최후(행 12장)를 이 대비로 읽는다. 은실로 짠 왕복을 입고 단상에서 연설하는 헤롯에게 백성은 "이것은 신의 소리요 사람의 소리가 아니라" 외치고, 헤롯은 두려움과 화려함과 양식 통제로 사람을 사육하며 군림한다. 같은 시간, 같은 무대의 반대편에는 먼지 나는 길을 묵묵히 걷는 바나바와 바울의 디아코니아(섬김·구제)가 있다. 그의 통찰은 힘의 방향에 있다.</p>
+<blockquote>
+<p>이 세상의 허상을 알아야 한다. 하나님 나라의 실상을 살아내라. — 권오국, 「세상 권세와 하나님의 승리」</p>
+</blockquote>
+<p>세상 권세는 자원을 위로 끌어올려 지배하고, 하나님 나라는 자원을 아래로 흘려보내며 섬긴다. 헤롯은 사람이면서 신이 되려다(자기 신격화) 벌레에 먹혀 소리 없이 사라지고, 예수는 하나님이면서 종이 되어(자기 비움) 자신을 내어주심으로 사람을 자유케 하신다. 누가가 그 장면 끝에 "하나님의 말씀은 흥왕하여 더하더라"를 미완료 시제로 붙인 것은, 소멸하는 것은 권력자의 화려함이지 나라의 통치가 아님을 못박기 위해서다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>세상 권세 (헤롯)</th>
+<th>하나님 나라 (바나바·바울)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>힘의 방향</td>
+<td>자원을 위로 끌어올려 지배(사육)</td>
+<td>자원을 아래로 흘려보내 섬김(구제)</td>
+</tr>
+<tr>
+<td>통치 방식</td>
+<td>두려움·화려함·양식 통제</td>
+<td>디아코니아·자기 내어줌</td>
+</tr>
+<tr>
+<td>운동</td>
+<td>사람 → 신 (자기 신격화)</td>
+<td>하나님 → 종 (자기 비움)</td>
+</tr>
+<tr>
+<td>결말</td>
+<td>벌레에 먹혀 사라짐</td>
+<td>말씀은 흥왕하여 더함</td>
+</tr>
+</tbody>
+</table>
+<p>이 역설은 창조의 설계에까지 뿌리를 둔다. 이상협은 창조 명령의 네 동사를 짚는다 — 카바쉬(정복)와 라다(다스리다)는 왕권의 행사지만, 아바드(경작·섬김)와 샤마르(지키다)가 그 왕권을 규정한다. 곧 하나님의 형상은 "왕이지만 동시에 종이며, 다스리되 섬기는 다스림"을 위임받았다. 마가복음이 스스로를 "십자가의 변증"으로 세우며 세상과 다른 영광을 가르치는 것도 같은 자리다. 이태석 신부가 남수단 톤즈에서 아이들의 손에서 총을 내려놓게 한 '아래로 흐르는 삶'이 이 통치의 현대적 번역이다. 그렇다면 이런 나라의 백성으로 산다는 것은 무엇인가.</p>
+<h2>7. 나라의 윤리와 회심 — 통치 아래 사는 백성</h2>
+<p>나라에 들어가는 문은 회심이다. 정민영은 회개(메타노이아)를 도덕적 개선이 아니라 관점의 변혁으로 정의한다 — "자기중심적 죄성을 벗어나 창조주 하나님의 통치로 돌아섬"(p.78). 회개는 죄 목록을 지우는 일이기 전에 왕을 바꾸는 일이며, 내 통치에서 하나님의 통치로 주권을 이양하는 방향 전환이다(→ <a class="wl" href="../../t/%ED%9A%8C%EC%8B%AC/">회심</a>).</p>
+<p>그 통치 아래 빚어지는 백성의 인격이 팔복이다. 산상수훈은 "심령이 가난한 자"에서 시작해 "핍박받는 자"에 이르는 여덟 복을 나라 백성의 초상으로 그리고, 그 삶의 우선순위를 "너희는 먼저 그의 나라와 그의 의를 구하라"(마 6:33)로 요약한다. 주기도문의 "나라이 임하옵시며"는 바로 이 통치의 확대를 구하는 기도다. 앞서 본 누룩처럼, 나라 백성의 삶은 내면과 외면을 함께 바꾸며 세상 속으로 번진다. 다만 팔복·좁은 문·원수 사랑 등 나라 윤리의 본문 상세는 <a class="wl" href="../../t/%EC%82%B0%EC%83%81%EC%88%98%ED%9B%88/">산상수훈</a>이 전담하므로, 이 페이지는 그 윤리가 '통치의 논리적 귀결'임을 확인하는 데 그친다 — 왕이 바뀌면 삶의 문법이 바뀐다. 그리고 이 바뀐 삶은 홀로 살아지지 않고 한 공동체 안에서 살아진다.</p>
+<h2>8. 나라와 교회와 선교 — 모델하우스에서 온 세상으로</h2>
+<p>여기서 흔한 혼동 하나를 걷어야 한다. 교회는 하나님나라가 아니다. 교회는 나라의 표지이자 도구이며, 정민영의 표현을 빌리면 "부르심(klesis)"을 받아 세워진 공동체다. 그가 못박듯 "교회가 선교 때문에 존재하는 것이지 선교가 교회 때문에 존재하는 게 아니"며(p.150), 교회의 목적과 선교는 동의어다. <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a>가 정리하듯 교회는 "하나님 나라의 종말적 완성을 지향하고 소망하면서 그 성취를 위해 존재하는 선교적 공동체", 곧 아직 완공되지 않은 나라의 모델하우스다. 나라가 교회보다 크고, 교회는 그 나라를 선포하고 삶으로 현존시키기 위해 부름받았다.</p>
+<p>그러므로 선교는 교회 세력의 확장이 아니라 나라의 확장이다. 스토트가 잘라 말하듯 "선교는 제도 종교의 확장이 아니라 하나님 나라의 확장을 추구한다"(정민영, p.97). 카이퍼의 영역 주권이 그 지평을 온 세상으로 넓힌다.</p>
+<blockquote>
+<p>인간이 존재하는 모든 영역에서 만유의 주재이신 그리스도께서 "내 것이다!"라고 외치지 않으시는 곳은 하나도 없다. — 아브라함 카이퍼 (정민영, p.123 재인용)</p>
+</blockquote>
+<p>이상협이 『하나님 백성의 선교』 강의에서 펼치는 창조-타락-구속-새창조의 4막 드라마가 이 확장의 지도다. 이야기는 창조에서 시작해 새창조로 완성되며(계 21:5 "만물을 새롭게 하노라"), 우리는 지금 3막의 끝에서 4막을 향해 살아가는 백성이다. 그가 대문자 Mission(하나님의 전체 선교)과 소문자 missions(내가 맡은 구체적 사명들)를 구별하는 것도 이 때문이다 — 나의 직업과 일상은 창조 명령(라다·아바드)의 연속으로서 나라를 드러내는 자리이며(→ <a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%8B%A0%ED%95%99/">직업신학</a>), 골로새서 1:20이 "만물"의 화목을 말하듯 나라의 복음은 영혼 구원을 넘어 사회와 창조세계까지 품는다(→ <a class="wl" href="../../t/%EC%B4%9D%EC%B2%B4%EC%A0%81%EC%84%A0%EA%B5%90/">총체적선교</a>). 그가 강조하는 쯔다카(레 19:9-10, 밭 모퉁이를 남겨 가난한 자가 스스로 줍게 하는 규정)는 "내 수입에 남의 몫이 있다"는 나라의 정의(→ <a class="wl" href="../../t/%EA%B3%B5%EC%9D%98/">공의</a>)를 일상에 새긴다. 이 나라 확장의 복음론적 전개는 <a class="wl" href="../../t/%EB%B3%B5%EC%9D%8C/">복음</a>이, 선교론적 상술은 <a class="wl" href="../../t/%EC%84%A0%EA%B5%90/">선교</a>·<a class="wl" href="../../t/%EB%AF%B8%EC%94%A8%EC%98%A4%EB%8D%B0%EC%9D%B4/">미씨오데이</a>가 전담한다. 이 페이지가 남기는 한 문장은 이것이다 — 하나님이 다스리신다는 좋은 소식을, 왕이 다스리시는 방식(섬김)으로, 온 세상에.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>하나님나라의 '나라'는 영토가 아니라 왕권(바실레이아, βασιλεία)이다. 첫 질문은 "어디 있는가"가 아니라 "누가 지금 다스리는가"이며, 소테르 24회 대 퀴리오스 747회가 그 무게중심을 방증한다.</li>
+<li>나라를 장소로("죽어서 가는 천국") 읽으면 통치의 현재성이 증발한다. 하나님 나라는 "지금 여기에서 시작된 하나님의 주권적 다스림이며 그 결과 어둠이 물러가고 치유와 샬롬이 임하는 실제적 능력"이다(하백선 11강).</li>
+<li>나라는 예수의 곁가지가 아니라 중심 선포다(막 1:15). 나사렛 선언(눅 4:18/사 61)에서 그는 영광의 왕이 아니라 고난받는 종의 방식으로 '은혜의 해'를 개시하셨다.</li>
+<li>나라의 시제는 이미-아직이다 — 누룩처럼 이미 발효하되(마 13:33), 보화처럼 아직 완성을 기다린다(마 13:44). 그 종말론적 상세는 <a class="wl" href="../../t/%EC%A2%85%EB%A7%90%EB%A1%A0/">종말론</a>에 위임한다.</li>
+<li>나라의 표징(치유·축귀·죄인과의 식탁·가난한 자에게 복음)은 한 방향을 가리킨다 — 통치는 강자를 굳히지 않고 약자를 일으키며, "의인이 아니라 죄인을 부르러" 온다(마 9:13).</li>
+<li>나라의 통치는 세상 권세를 뒤집는다 — 자원을 위로 끌어올려 지배(사육)하는 헤롯과, 아래로 흘려보내며 섬기는(구제) 바나바·바울. 창조 명령의 라다는 언제나 아바드(섬김)로 규정된다.</li>
+<li>교회는 나라가 아니라 나라의 모델하우스·도구다. 나라가 교회보다 크며, 선교는 "제도 종교의 확장이 아니라 하나님 나라의 확장"(스토트)이다 — 다스리시는 방식(섬김)으로 온 세상에.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>나라의 '이미'(현재적 통치·표징)와 '아직'(미완성)의 긴장 안에서, 승리주의(과잉 실현)와 도피주의(현재 소거) 어느 쪽으로도 미끄러지지 않는 실천의 균형점은 어디인가(<a class="wl" href="../../t/%EC%A2%85%EB%A7%90%EB%A1%A0/">종말론</a>과 공유).</li>
+<li>나라의 표징이 약자를 향한다면, 오늘의 교회에서 '죄인과의 식탁'은 복음의 진리를 양보하지 않으면서 어디까지 넓혀져야 하는가 — 환영과 분별의 경계는 어떻게 긋는가.</li>
+<li>'섬김으로 다스리는' 나라의 논리를 실제 제도·권력·재정 구조에 적용할 때, 그것이 무력한 낭만주의가 아니라 실효적 통치가 되는 지점은 어디인가.</li>
+<li>교회≠나라라는 구별을 견지하면서도 교회가 나라의 '표지'로서 감당해야 할 가시적 책임(정의·창조세계 돌봄·사회 참여)은 어디까지인가(<a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EC%99%80%EC%82%AC%ED%9A%8C%EC%B0%B8%EC%97%AC/">교회와사회참여</a>·<a class="wl" href="../../t/%EC%B4%9D%EC%B2%B4%EC%A0%81%EC%84%A0%EA%B5%90/">총체적선교</a>와 공유).</li>
+<li>나라 확장으로서의 선교가 문화 변혁(카이퍼)과 복음 선포의 우선성 사이에서 어떻게 균형을 잡는가 — 이 볼트의 의료·선교 맥락에서 '탁월함을 통한 선교'와 명시적 복음 증거는 어떻게 한 손에 쥐어지는가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%A2%85%EB%A7%90%EB%A1%A0/">종말론</a> — 이미-아직의 시제·재림·천년왕국·새 창조. 나라의 '아직'을 전담하는 허브.</li>
+<li><a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%A3%BC%EA%B6%8C/">하나님의주권</a> — "누가 다스리는가"의 실존적·섭리적 통치. 나라의 왕권 축을 일상·직업에서 상술.</li>
+<li><a class="wl" href="../../t/%EB%B3%B5%EC%9D%8C/">복음</a> — 하나님나라 복음의 복음론(유앙겔리온·십자가·부활=즉위식·케리그마). 통치가 좋은 소식이 되는 자리.</li>
+<li><a class="wl" href="../../t/%EC%82%B0%EC%83%81%EC%88%98%ED%9B%88/">산상수훈</a> — 나라 윤리의 본문 상세(팔복·주기도문·좁은 문·원수 사랑).</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a> — 교회=나라의 모델하우스. 교회론적 전개.</li>
+<li><a class="wl" href="../../t/%EB%AF%B8%EC%94%A8%EC%98%A4%EB%8D%B0%EC%9D%B4/">미씨오데이</a> · <a class="wl" href="../../t/%EC%B4%9D%EC%B2%B4%EC%A0%81%EC%84%A0%EA%B5%90/">총체적선교</a> · <a class="wl" href="../../t/%EC%84%A0%EA%B5%90/">선교</a> — 나라의 복음을 온 세상에. 선교론적 전개.</li>
+<li><a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%8B%A0%ED%95%99/">직업신학</a> — 일상·직업에서의 나라 구현(창조 명령·라다·아바드).</li>
+<li><a class="wl" href="../../t/%ED%9A%8C%EC%8B%AC/">회심</a> — 자기 통치에서 하나님 통치로 돌아섬(메타노이아).</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EB%82%98%EB%9D%BC%EC%99%80%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A0%EA%B5%90_%EC%A0%95%EB%AF%BC%EC%98%81/">하나님나라와하나님의선교_정민영</a></td>
+<td>책(정민영)</td>
+<td>왕권(Kingship) 중심 정의, 소테르/퀴리오스, 헨델 메시아, 부활 후 40일, 회심=창조주 통치로 돌아섬, 스토트 삼중 성취, 카이퍼, 교회=선교</td>
+</tr>
+<tr>
+<td>이상협 「하나님 백성의 선교」 2·3장 강의(이리신광교회)</td>
+<td>강의(이상협)</td>
+<td>창조-새창조 4막 드라마, 창조 명령 4동사(왕이면서 종), Mission/missions, 골 1:20, 쯔다카</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">하백선11장_복음적정체성과나라선교</span></td>
+<td>강의(이상협)</td>
+<td>사 52:7 통치 선언, 십자가·부활=즉위식, "지금 여기 다스림·치유·샬롬", 말과 행동의 통합</td>
+</tr>
+<tr>
+<td>권오국 「세상 권세와 하나님의 승리」(행 12)</td>
+<td>설교(권오국)</td>
+<td>헤롯 vs 바나바·바울, 힘의 방향(위/아래), 다니엘 2장 뜨인 돌, 사람→신 vs 하나님→종</td>
+</tr>
+<tr>
+<td>권성수 「죄인을 부르러」(마 9)</td>
+<td>설교(권성수)</td>
+<td>죄인과의 식탁=나라의 표징, 예수=의사, "죄인을 불러 천국 백성"</td>
+</tr>
+<tr>
+<td>문대원 「지금보다 더 나은 사람」(사 61/눅 4)</td>
+<td>설교(문대원)</td>
+<td>나사렛 선언, 가난한 자에게 복음, 이스라엘 회복=하나님의 통치와 언약</td>
+</tr>
+<tr>
+<td>윤명숙 천국 비유 설교(마 13)</td>
+<td>설교(윤명숙)</td>
+<td>누룩=통치받는 백성의 발효, 감추인 보화·진주=나라의 현재·미래 이중성</td>
+</tr>
+<tr>
+<td>MBTS 신약개론 마가복음 강의</td>
+<td>강의노트(이상협)</td>
+<td>가르침·치유·축귀로 나타난 예수의 권세, "십자가의 변증"으로서의 마가복음</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A0%EA%B5%90%EC%84%B8%EC%83%81%EC%9D%84%EB%B0%94%EA%BE%B8%EB%8B%A4_%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%86%A0%ED%8D%BC%EB%9D%BC%EC%9D%B4%ED%8A%B8/">하나님의선교세상을바꾸다_크리스토퍼라이트</a></td>
+<td>책(라이트)</td>
+<td>창조-새창조 서사, 총체적 복음/선교, 만물의 화목</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EB%9E%80%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80_%EC%8A%A4%ED%86%A0%ED%8A%B8%EB%9D%BC%EC%9D%B4%ED%8A%B8/">선교란무엇인가_스토트라이트</a></td>
+<td>책(<span class="wl-dead" title="위키 내부 링크">존스토트</span>·라이트)</td>
+<td>성취의 삼중 단계, 나라의 선포·현존·선행</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%A2%85%EB%A7%90%EB%A1%A0/">종말론</a> · <a class="wl" href="../../t/%EB%B3%B5%EC%9D%8C/">복음</a> · <a class="wl" href="../../t/%EC%82%B0%EC%83%81%EC%88%98%ED%9B%88/">산상수훈</a> · <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%A3%BC%EA%B6%8C/">하나님의주권</a></td>
+<td>주제 페이지</td>
+<td>시제·재림, 하나님나라 복음, 나라 윤리, 왕적 주권의 위임 경계</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/하나님나라</span><span>#topic/통치</span><span>#topic/바실레이아</span><span>#discipline/선교신학</span><span>#topic/이미와아직</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

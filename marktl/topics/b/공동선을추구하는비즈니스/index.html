@@ -1,0 +1,330 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>공동선을 추구하는 비즈니스 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:226">리더십·일·경영</span><span class="date">2026-05-02</span></div>
+  <h1 class="note-title">공동선을 추구하는 비즈니스</h1>
+  
+</header>
+<article class="note">
+<h1>Business for the Common Good — 켄 맨 웡 · 스콧 래</h1>
+<h2>책 개요</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>저자</td>
+<td>켄 맨 웡 (Kenman L. Wong) · 스콧 래 (Scott B. Rae)</td>
+</tr>
+<tr>
+<td>핵심 주장</td>
+<td>비즈니스의 목적은 부의 창출이나 신앙의 플랫폼이 아니라, <strong>일 자체의 내재적 가치</strong> + <strong>변혁적 섬김</strong></td>
+</tr>
+<tr>
+<td>연결 주제</td>
+<td>직업신학, 소명, 일터영성, 창조신학, 하나님 백성의 선교</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>핵심 프레임</h2>
+<h3>일의 세 가지 동기 (성경시대)</h3>
+<ul>
+<li>생계를 위해 (살후 3:6-8)</li>
+<li>약자를 돕기 위해 — 이삭줍기 제도 (레 19:9-10)</li>
+<li>교회 사역 지원 (고전 9:1-15)</li>
+<li>→ 단, 이것들보다 더 근본적인 것: <strong>일의 내재적 가치</strong></li>
+</ul>
+<h3>일의 내재적 가치</h3>
+<ul>
+<li>타락 이전에 일이 창조됨 — 일은 저주가 아니다</li>
+<li><strong>통치권</strong>: "다스리라"는 명령의 수행 (창 1:28)</li>
+<li><strong>하나님의 형상</strong>: 일하시는 하나님을 반영</li>
+</ul>
+<p>→ <span class="wl-dead" title="위키 내부 링크">하나님 백성의 선교</span> (크리스토퍼 라이트)의 프레임으로 확장:</p>
+<table>
+<thead>
+<tr>
+<th>히브리어</th>
+<th>번역</th>
+<th>일터에서의 의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>카바쉬</strong> (כָּבַשׁ)</td>
+<td>정복</td>
+<td>문화·기술·시장을 하나님 나라의 방향으로</td>
+</tr>
+<tr>
+<td><strong>라다</strong> (רָדָה)</td>
+<td>다스림</td>
+<td>책임 있는 통치, 착취가 아닌 청지기</td>
+</tr>
+<tr>
+<td><strong>아바드</strong> (עָבַד)</td>
+<td>섬김·경작</td>
+<td>일 자체가 예배, 봉사의 행위 (창 2:15)</td>
+</tr>
+<tr>
+<td><strong>샤마르</strong> (שָׁמַר)</td>
+<td>보호·지킴</td>
+<td>피조 세계와 공동체를 보전하는 책임</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>비즈니스는 '돈 버는 것'이 아니라 이 네 가지 소명을 <strong>시장과 일터라는 공간에서</strong> 수행하는 것이다.</p>
+</blockquote>
+<hr />
+<h2>비즈니스의 기독교적 비전</h2>
+<p>하나님은 인간이 세 가지를 누리기를 원하신다:
+1. <strong>하나님과의 관계를 통한 번성</strong> (신 6:4-6, 요 15:4)
+2. <strong>물리적 풍요</strong> (출 3:8, 딤전 6:17) — 물질 자체는 악이 아니다
+3. <strong>다른 사람 및 땅과의 조화</strong> (요 13:35, 골 3:12-15)</p>
+<p>3번에 대해:
+→ <span class="wl-dead" title="위키 내부 링크">하나님 백성의 선교 3장</span>: 땅(land)은 단순한 자원이 아니라
+하나님과 이스라엘, 피조 세계의 <strong>관계적 공간</strong>이다.
+- 땅은 하나님의 것 (레 25:23)
+- 인간은 청지기 — 착취가 아닌 <strong>샤마르(보호)</strong>
+- Creation care = 선교적 행위</p>
+<blockquote>
+<p>비즈니스에서 환경·노동·공동체를 다루는 방식은
+단순한 ESG가 아니라 <strong>하나님 백성의 선교적 증언</strong>이다.</p>
+</blockquote>
+<hr />
+<h2>변혁적 섬김으로서의 비즈니스</h2>
+<table>
+<thead>
+<tr>
+<th>차원</th>
+<th>전통적 목표</th>
+<th>기독교적 재설정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>개인</td>
+<td>생계·경력·자아실현</td>
+<td>하나님과 이웃을 섬기는 맥락 안에 둠</td>
+</tr>
+<tr>
+<td>기관</td>
+<td>이윤 극대화</td>
+<td>핵심 사명 수행 + 이윤은 수단</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"마진이 없으면 사명도 없다" — 이윤 자체를 부정하지 않되, 목적이 아닌 <strong>수단</strong>으로 위치시킴</p>
+</blockquote>
+<hr />
+<h2>일을 보는 세 가지 관점</h2>
+<table>
+<thead>
+<tr>
+<th>관점</th>
+<th>설명</th>
+<th>위험</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>일거리 (Job)</td>
+<td>생계 수단</td>
+<td>의미 없음</td>
+</tr>
+<tr>
+<td>경력 (Career)</td>
+<td>자기 발전</td>
+<td>자기중심성</td>
+</tr>
+<tr>
+<td><strong>소명 (Calling)</strong></td>
+<td>하나님과 이웃 섬김</td>
+<td><strong>일중독</strong></td>
+</tr>
+</tbody>
+</table>
+<p>소명으로 보는 것이 만족도가 가장 높지만, 일=소명으로만 보면 일중독 위험 → 3가지 균형 장치:
+1. <strong>안식일을 기억</strong> — "노예처럼 살지 말라", 소득을 하나님께 신뢰
+2. <strong>세월을 아끼라</strong> (엡 5:15-16) — 크로노스가 아닌 <strong>카이로스</strong>: 자녀·직원·이웃과의 시간
+3. <strong>올바른 관점 유지</strong> — 전 2:18-26: 우리가 쌓은 것을 누가 물려받을지 모른다</p>
+<hr />
+<h2>일터에서 형성되는 영성</h2>
+<p>교회 → 일터 / 일터 → 교회: <strong>양방향</strong> 영성 형성</p>
+<p>비즈니스를 통해 형성되는 덕목:
+- 섬김의 미덕
+- 신용·신뢰성·공정성 → 상호신뢰 (팀워크)
+- 주도권과 인내 → 역경을 다루는 능력
+- 부지런함과 절제</p>
+<hr />
+<h2>성경적 리더십</h2>
+<h3>세 가지 리더십 유형</h3>
+<table>
+<thead>
+<tr>
+<th>유형</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>거래 중심 (Transactional)</td>
+<td>관리자형, 결과 교환</td>
+</tr>
+<tr>
+<td>변혁적 (Transformational)</td>
+<td>카리스마·동기부여, 체제 변혁</td>
+</tr>
+<tr>
+<td><strong>섬김 (Servant)</strong></td>
+<td>자기보다 섬김 강조, 경청, 신뢰 형성</td>
+</tr>
+</tbody>
+</table>
+<h3>성경 인물들의 공통점</h3>
+<p>노아·아브라함·요셉·모세·드보라·에스더·다니엘 —</p>
+<blockquote>
+<p>"그 이야기들의 영웅은 특정한 지도자가 아니라 바로 <strong>하나님</strong>이다"
+— 리더십을 열망해서가 아니라, 하나님께 쓰임받은 것</p>
+</blockquote>
+<p>딤전 3:1-10 장로/감독의 자격 → 모두 <strong>성품</strong>에 관한 것,
+특히 돈과 가정을 다루는 방식</p>
+<h3>섬김 리더십과 겸손</h3>
+<p>마 20:26-28 — 크고자 하는 자는 섬기는 자가 되어야</p>
+<blockquote>
+<p>겸손은 "조직 학습과 조직 탄력성을 촉진하여 회사의 경쟁력을 높이는 데 기여한다"
+— 카리스마적 리더의 한계: 비판에 민감, 경청 부족, 공감 결핍</p>
+</blockquote>
+<hr />
+<h2>기독교적 성공의 두 기준</h2>
+<ol>
+<li><strong>탁월함</strong> — 하나님이 모델 ("매우 좋았더라")</li>
+<li><strong>신실함</strong> — "착하고 신실한 종" (마 25:21, 눅 19:17, 고전 4:2)</li>
+</ol>
+<blockquote>
+<p>"기독교적 성공은 한 사람이 이루는 업적보다 <strong>그가 어떤 사람인가</strong>와 더 관계가 있다"</p>
+</blockquote>
+<p>부·지위·명성은 본질적으로 문제없으나, 탁월함을 신실하게 추구하는 삶의 <strong>부산물</strong>이다.</p>
+<hr />
+<h2>통합 흐름</h2>
+<p><code>창 1:28 다스리라
+    ↓ 라이트 3장으로 해석
+카바쉬·라다·아바드·샤마르
+    ↓ 비즈니스에 적용
+공동선을 추구하는 변혁적 섬김
+    ↓ 의료 선교에 적용
+진료실 = 아바드+샤마르의 공간</code></p>
+<hr />
+<h2>의료 선교 연결</h2>
+<p><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a>과의 접점:
+- 진료실 = 일터, 아바드(섬김)와 샤마르(보호)의 구체적 공간
+- 의사의 일도 소명·경력·일거리 세 관점 중 선택의 문제
+- "마진이 없으면 사명도 없다" → 클리닉 지속가능성과 선교의 관계
+- 번아웃 의료인 = 소명을 일=소명 공식으로만 본 결과?</p>
+<p><a class="wl" href="../../t/%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4%EC%84%A0%EA%B5%90/">비즈니스선교</a> (BAM)과의 접점:
+- ISI 가치(정직·나눔·자립)와 변혁적 섬김은 같은 지향
+- 일터 영성 형성 → 선교지에서의 자립적 사역 모델</p>
+<hr />
+<h2>연결된 페이지</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%8B%A0%ED%95%99/">직업신학</a> — 소명으로서의 직업, 일의 신학</li>
+<li><a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a> — 오스 기니스의 소명론과 비교</li>
+<li><a class="wl" href="../../t/%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4%EC%84%A0%EA%B5%90/">비즈니스선교</a> — BAM, ISI 가치</li>
+<li><a class="wl" href="../../t/%EB%A6%AC%EB%8D%94%EC%8B%AD/">리더십</a> — 섬김의 리더십</li>
+<li><a class="wl" href="../../t/%EC%84%AC%EA%B9%80/">섬김</a> — 디아코니아</li>
+<li><a class="wl" href="../../t/CMF_VPM%EC%B2%A0%ED%95%99/">CMF_VPM철학</a> — 사역의 목적과 수단</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a> — 의료인의 일터 영성</li>
+<li><span class="wl-dead" title="위키 내부 링크">하백선시리즈</span> — 카바쉬·라다·아바드·샤마르, 땅 신학</li>
+</ul>
+</article>
+<div class="tagrow"><span>#직업신학</span><span>#비즈니스선교</span><span>#소명</span><span>#리더십</span><span>#일터영성</span><span>#창조신학</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

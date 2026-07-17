@@ -1,0 +1,205 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>일터신학 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:345">영성·제자도</span><span class="date">2026-07-17</span></div>
+  <h1 class="note-title">일터신학</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>일터신학은 '일이란 무엇인가'를 묻지 않는다. 그 물음은 창조·타락·구속·완성 속의 노동을 다루는 <a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%8B%A0%ED%95%99/">직업신학</a>의 자리다. 누가 나를 부르셨는가는 <a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a>이, 이 직업으로의 부르심인가는 <a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%86%8C%EB%AA%85/">직업소명</a>이, 사업 자체를 선교로 삼는 모델은 <a class="wl" href="../../t/%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4%EC%84%A0%EA%B5%90/">비즈니스선교</a>가 맡는다. 일터신학이 서는 곳은 그 신학들이 착지하는 지점, 곧 월요일 아침의 사무실과 병원과 공장이다. 일이 창조 질서이자 소명임을 이미 아는 그리스도인이, 그 앎을 실제 일터의 관계와 처세와 갈등 속에서 어떻게 살아내는가 — 이것이 일터신학의 물음이다.</p>
+<p>그래서 이 페이지의 렌즈는 실천이다. 성속 이원론이 신학적으로 왜 틀렸는지는 직업신학이 논증했으므로, 여기서는 그 이원론이 평범한 직장인의 삶에서 어떤 증상으로 나타나고 어떻게 극복되는지를 본다. 핵심 자료는 세 갈래다 — 전동주 선교사의 전문인 선교 강의, 인터서브의 '미셔널' 동원 시리즈, 그리고 윤명숙·송기태가 짚는 일터 현장의 영성이다. 이들이 공통으로 겨냥하는 것은 하나다. faith at work, 곧 주일의 신앙과 평일의 노동을 하나로 잇는 삶이다.</p>
+<h2>1. 월요일 문제 — 주일과 평일의 분리</h2>
+<p>일터신학이 마주하는 가장 흔한 증상은 '월요일 문제'다. 주일 예배에서 배운 것이 월요일 일터와 아무 상관이 없는 상태, 신앙과 직업이 각각 다른 방에 사는 이중생활이다. 이 분리는 감정으로 먼저 드러난다. 송기태는 LG 마케팅 시절 "회사 가면 파김치가 되던" 자신을 이 이원론의 증상으로 진단한다. 회사 일은 하나님의 일이 아니라고 믿는 사람에게 주중의 아홉 시간은 견뎌내야 할 공백일 뿐이기 때문이다.</p>
+<p>전동주 선교사는 이 분리를 통계로 뒤집는다. "교회 일의 90%는 교회 밖에 있는데, 교회 일은 안에서 하고 있다." 신자가 깨어 있는 시간의 대부분은 일터에서 흐르는데, 신앙은 그 시간을 비워 둔 채 교회 안의 몇 시간에만 작동한다는 것이다. 인터서브의 '미셔널' 시리즈는 이 문제의 해법을 선교 개념의 이동으로 제시한다.</p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>선교의 자리</th>
+<th>신자의 위치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>미션 (Mission)</td>
+<td>단발적 활동·행사</td>
+<td>후원자·참여자</td>
+</tr>
+<tr>
+<td>미션스 (Missions)</td>
+<td>여러 사역 프로그램</td>
+<td>자원봉사자</td>
+</tr>
+<tr>
+<td>미셔널 (Missional)</td>
+<td>삶 전체·일터</td>
+<td>삶으로 증거하는 자</td>
+</tr>
+</tbody>
+</table>
+<p>"미션 → 미션스 → 미셔널"이라는 이 3단계는 선교지(geography) 중심에서 선교적 삶(lifestyle) 중심으로의 전환이며, 그 도착점에서 일터는 신앙이 비워 둔 공백이 아니라 신앙이 살아지는 현장이 된다. 김기현의 나눔이 이 전환을 압축한다 — "일상, 삶이 선교." 의료인에게는 진료실과 병원이 곧 그 자리다. 월요일 문제의 해답은 주일을 늘리는 것이 아니라, 평일을 성역으로 되찾는 것이다.</p>
+<h2>2. 일터 제자도 — 탁월성과 성품이라는 증언</h2>
+<p>주일과 평일이 이어졌다면, 그 일터에서 신앙은 무엇으로 드러나는가. 일터신학의 첫 대답은 말이 아니라 탁월성과 성품이다. 그러나 여기에는 전동주 선교사가 던지는 날카로운 반문이 붙는다 — "열심히 정직하게 사는 것이 복음인가? 아니다, 착각이다."</p>
+<p>이 도발은 두 방향을 동시에 겨눈다. 한편으로 그것은 '증언 없는 성실'을 친다. 정직하고 성실하게만 살면 저절로 전도가 된다는 믿음은 순진하다는 것이다. "진료는 믿지 않는 의사도 한다. 그런 사람도 하나님의 일을 했는가?" 탁월함 그 자체는 신자와 불신자를 가르지 못한다. 다른 한편 그것은 '탁월함 없는 증언'도 친다. 성품과 실력이 뒷받침되지 않는 말은 공허하기 때문이다. 그래서 일터 제자도는 탁월성과 의도적 관계를 함께 요구한다. 전동주의 처방은 구체적이다 — 진료에 더해진 무언가, 곧 "환자에게 보내는 편지 한 장, 의도적 관심"이 있어야 하며, 목표는 결단(decision)을 받아내는 것이 아니라 관계를 통해 제자를 삼는 것(making a disciple)이다.</p>
+<p>이 성품의 증언을 <a class="wl" href="../../t/%EC%98%81%EC%84%B1/">영성</a>은 요셉에게서 읽는다. 윤명숙 전도사님의 디도서 2장 강해에 따르면, 요셉은 "가는 곳마다 하나님이 계신다는 것을 드러냈다." 직장에서 그리스도가 드러나는 통로는 결국 정직과 성실이다 — "직장에서 일을 적당하게 하고 돈을 많이 받으면 훔친 것이다"(딛 2:9-10). 탁월함은 세속적 성공을 위한 것이 아니라 섬김을 향한 것이며, 그 방향이 신자의 노동을 증언으로 만든다. 다만 여기에는 경계선이 필요하다 ⚖️. 직업의 탁월함이 전도의 도구로만 환원되면 일 자체의 소명적 가치가 훼손된다. 편지 한 장은 진료를 전도의 미끼로 쓰기 위함이 아니라, 진료 자체가 이미 사랑의 행위이기 때문에 자연스럽게 흘러나오는 것이어야 한다.</p>
+<h2>3. 일터의 갈등 — 순종·정직·문화의 시험대</h2>
+<p>일터신학이 가장 정직하게 시험받는 자리는 갈등이다. 탁월성과 성품의 이상은 불합리한 상사, 부정직을 요구하는 관행, 접대와 야근의 문화 앞에서 실제로 검증된다.</p>
+<p>첫째는 불합리한 권위에 대한 순종의 문제다. 윤명숙 전도사님은 디도서 2장 강해에서 이를 정면으로 다룬다 — "이상한 오너에게 순종하라, 가능한가? 불가능하다. 우리 구주 하나님께 하는 것이라 생각하면 가능하다." 순종의 근거가 상사의 자격이 아니라 하나님을 향한 섬김으로 옮겨질 때, 부당한 상황조차 증언의 자리가 된다. 그러나 이 순종은 무한하지 않다. 비윤리적 지시와 부당 대우 앞에서 요셉·다니엘이 보인 수용과 거부의 분별 기준은 여전히 열린 물음이며(<a class="wl" href="../../t/%EC%98%81%EC%84%B1/">영성</a>의 미해결 질문과 공유), 순종의 언어가 구조적 부조리를 미화하는 알리바이가 되어서는 안 된다.</p>
+<p>둘째는 정직과 관행의 충돌이다. 접대 문화, 리베이트, 관행적 편법 앞에서 신자의 정직은 곧바로 손해로 돌아온다. <a class="wl" href="../../t/%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4%EC%84%A0%EA%B5%90/">비즈니스선교</a>가 정직을 "나만 알고 있는 것을 상대방의 입장에서 드러내는 것"으로 정의하듯, 일터의 정직은 추상적 덕목이 아니라 정보 비대칭을 상대에게 유리하게 푸는 구체적 행동이며, 그 대가를 감수하는 결단이다.</p>
+<p>셋째는 일과 쉼의 왜곡이다. 야근을 미덕으로, 과로를 헌신으로 포장하는 문화는 일을 우상으로 만든다. 여기서 일터신학은 <a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%8B%A0%ED%95%99/">직업신학</a>이 세운 원리 — 일 중독과 나태는 반대 증상이지만 '왜 일하는가'를 잊은 같은 병 — 를 현장에 적용한다. 야근 문화에 맞서는 것은 게으름이 아니라, 일에서 자기를 증명하려는 우상숭배를 끊고 일과 안식의 창조 리듬을 회복하는 일이다(<a class="wl" href="../../t/%EC%95%88%EC%8B%9D/">안식</a>).</p>
+<h2>4. 일터 교회 — 흩어진 신자들의 미셔널 생태계</h2>
+<p>개인의 일터 제자도가 고립되지 않으려면 공동체가 필요하다. 일터신학의 마지막 지평은 '일터 교회', 곧 일터에서 살아가는 신자들이 서로를 세우는 생태계다. 인터서브의 미셔널 시리즈는 이를 "일터신학 팀", "월간 홀리스틱"(청년 대상 일터 선교) 같은 소그룹으로 구현한다. 여기서 주목할 것은 이 공동체의 대상이 전임 사역자나 BAM 창업가가 아니라 평범한 일반 직장인이라는 점이다.</p>
+<p>이 흩어진 신자들의 신학적 뿌리는 사도행전에 있다. 스데반의 순교 후 흩어진 자들이 두루 다니며 복음을 전하고, 구브로·구레네 사람들이 안디옥에서 헬라인에게 전파해 안디옥 교회가 세워졌다(행 8·11장). 사도가 아니라 흩어진 평신도가 일상의 이동 속에서 복음을 전한 이 패턴이 일터 교회의 원형이다. <a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a>의 신학을 <span class="wl-dead" title="위키 내부 링크">루터</span>가 모든 노동으로 확장했다면, 일터신학은 그 확장된 소명을 사는 신자들이 서로의 증인이 되는 공동체를 지향한다.</p>
+<p>그러나 이 생태계는 두 방향의 표류를 경계해야 한다 ⚖️. 하나는 일터를 사내 종교 활동의 무대로 오해하는 것이다. <a class="wl" href="../../t/%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4%EC%84%A0%EA%B5%90/">비즈니스선교</a>가 짚듯, 상사가 직원에게 직접 전도하거나 직장 예배를 여는 것은 권력의 비대칭 속에서 이해충돌과 혼란을 낳기 쉽다. 일터 교회는 회사 안에 교회를 세우는 것이 아니라, 일터를 살아가는 신자들이 회사 밖에서 서로를 지지하는 망이다. 다른 하나는 미셔널이라는 이름 아래 모든 것을 선교로 부르다 초점을 잃는 것이다. 인터서브 시리즈 자신이 남긴 물음 — "선교사와 비선교사의 구분은 되지만 다양하게 함께할 수 있다" — 처럼, 만인의 선교적 삶과 파송된 선교사의 소명은 구별되면서 협력하는 관계로 남는다. 일터신학이 지키는 균형은 이것이다. 모든 일터가 선교의 자리이되, 그 자리에서 신자를 지탱하는 것은 홀로 선 열심이 아니라 함께 흩어진 공동체다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>일터신학은 '일이란 무엇인가'가 아니라 '일터에서 어떻게 살 것인가'를 묻는다. 일 자체의 신학은 직업신학이, 부르심은 소명이, 사업 선교는 비즈니스선교가 맡고, 이 페이지는 현장의 실천에 선다.</li>
+<li>'월요일 문제'는 성속 이원론의 실제 증상이다. 해답은 주일을 늘리는 것이 아니라 평일을 성역으로 되찾는 것이며, 그 전환이 '미션 → 미션스 → 미셔널'이다.</li>
+<li>일터의 증언은 탁월성과 성품이되, "정직하게 사는 것만으로 복음이 된다"는 믿음은 착각이다(전동주). 탁월함과 의도적 관계가 함께 가야 하며, 그 방향은 성공이 아니라 섬김이다 ⚖️.</li>
+<li>갈등이 일터신학의 시험대다. 불합리한 상사에 대한 순종은 하나님을 향한 섬김에 근거하되 무한하지 않고, 정직은 손해를 감수하는 행동이며, 야근 문화 저항은 일의 우상화를 끊는 일이다.</li>
+<li>일터 교회는 흩어진 일반 직장인의 생태계다(행 8·11장). 사내 종교 활동의 무대도, 초점 잃은 만능 선교도 아닌, 일터를 사는 신자들이 서로를 세우는 공동체다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>불합리한 상사에 대한 순종(딛 2:9-10)은 어디까지이며, 비윤리적 지시 앞에서 요셉·다니엘의 수용과 거부를 가르는 실무 기준은 무엇인가?</li>
+<li>직업의 탁월함이 전도의 도구로 환원되지 않으면서도 증언이 되게 하는 경계는 어떻게 지켜지는가 — 일의 소명적 가치와 전도적 의도는 언제 충돌하는가?</li>
+<li>접대·리베이트가 사실상 사업의 전제인 환경에서 정직의 비타협은 어디까지 가능하며, 어디부터가 분별의 문제인가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%8B%A0%ED%95%99/">직업신학</a> — '일이란 무엇인가'(창조·타락·구속·완성). 일터신학이 딛고 서는 노동 신학의 토대.</li>
+<li><a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a> · <a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%86%8C%EB%AA%85/">직업소명</a> — 부르심의 신학과 특정 직업 소명의 분별. 일터신학은 그 부르심을 사는 현장.</li>
+<li><a class="wl" href="../../t/%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4%EC%84%A0%EA%B5%90/">비즈니스선교</a> — 사업 자체를 선교로 삼는 모델(BAM). 일터신학의 한 특수 형태.</li>
+<li><a class="wl" href="../../t/%EC%A0%84%EB%AC%B8%EC%9D%B8%EC%84%A0%EA%B5%90/">전문인선교</a> — 전문직 신분으로 진입하는 선교. 전동주 강의의 본령.</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EC%82%B6/">선교적삶</a> — 미셔널 패러다임의 일상적 확장.</li>
+<li><a class="wl" href="../../t/%EC%B2%AD%EC%A7%80%EA%B8%B0/">청지기</a> · <a class="wl" href="../../t/%EC%95%88%EC%8B%9D/">안식</a> — 일의 우상화를 끊는 청지기직과 창조의 리듬.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2016_전동주_선교의_새로운_패러다임</span></td>
+<td>강의(2016)</td>
+<td>"정직만으론 착각", 관계·제자삼기, 편지 한 장, 교회 일 90%는 밖에, 자존심 내려놓기</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2023_미상_인터서브로의_초대_5주차</span></td>
+<td>강의(2023)</td>
+<td>미션→미션스→미셔널, 일터신학 팀, 일상=선교, 진료실이 선교 현장</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2020_신주호_선교와비즈니스</span></td>
+<td>강의(2020)</td>
+<td>창 2:15 노동의 원형, 루터 소명론, 흩어진 자(행 8·11)의 선교</td>
+</tr>
+<tr>
+<td>윤명숙, 「딛 2:9-10 직장에서 영성」</td>
+<td>설교</td>
+<td>요셉 모델, 불합리한 상사에 대한 순종, 정직과 성실</td>
+</tr>
+<tr>
+<td>송기태, 「좋아하는 일 vs 잘하는 일」 등</td>
+<td>강의(2019)</td>
+<td>Job vs Vocation, "회사 가면 파김치" — 이원론의 증상</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%8B%A0%ED%95%99/">직업신학</a> · <a class="wl" href="../../t/%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4%EC%84%A0%EA%B5%90/">비즈니스선교</a> · <a class="wl" href="../../t/%EC%98%81%EC%84%B1/">영성</a></td>
+<td>위키 교차</td>
+<td>일의 신학·BAM 윤리·직장 영성의 위임 지점</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/선교</span><span>#discipline/일터신학</span><span>#faith-at-work</span><span>#일터제자도</span><span>#미셔널</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

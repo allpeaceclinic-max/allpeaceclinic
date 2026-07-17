@@ -1,0 +1,173 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>영지주의 (Gnosticism) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:38">교회사</span><span class="date">2026-07-18</span></div>
+  <h1 class="note-title">영지주의 (Gnosticism)</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>영지주의는 2세기 지중해 세계를 휩쓴 혼합주의 운동이자, 초대교회가 맞선 가장 크고 위험한 이단이었다. 이름은 헬라어 그노시스(γνῶσις, 앎)에서 왔고, 이 운동의 심장에 놓인 확신이 곧 그 이름이다 — 구원은 믿음이나 은혜가 아니라 비밀스러운 영적 지식을 통해 온다는 것이다. 그리스 이원론(정신/물질)을 배경으로, 영지주의자들은 물질 세계를 열등하거나 악한 것으로 보았고, 최고의 신과 세상을 지은 창조주(데미우르고스)를 갈라놓았으며, 예수께서 실제 육체를 입으셨다는 사실을 부정하거나(가현설, Docetism) 그리스도와 인간 예수를 나누었다.</p>
+<p>영지주의가 위험했던 것은 그것이 기독교 바깥의 낯선 종교가 아니라, 기독교·유대교·신플라톤주의·신비종교의 언어를 뒤섞어 복음 안쪽에서 복음을 다른 것으로 바꾸려 했기 때문이다. MBTS 교회사I 강의가 짚듯 이것은 "성장이 곧 위기"였던 시대의 산물이다 — 여러 문화권 신자가 뒤섞이며 혼합주의의 위험이 커졌고, 그 위험의 정점에 영지주의가 있었다. 이 글은 그 운동의 지도를 그린다. 다만 그리스도의 신성과 인성을 둘러싼 기독론 교리 자체는 <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EB%A1%A0/">기독론</a>이, 말씀이 육신이 되신 성육신의 신학은 <a class="wl" href="../../t/%EC%84%B1%EC%9C%A1%EC%8B%A0/">성육신</a>이 이미 상세히 다루므로, 여기서는 영지주의가 무엇을 주장했고 교회가 그것에 어떻게 응전했는가에 집중한다.</p>
+<h2>1. 그노시스 — 앎이 구원한다</h2>
+<p>영지주의의 심장은 구원론이다. 여기서 인간을 건지는 것은 은혜도 믿음도 아니라 앎이다. 사람의 참 자아는 물질의 세계에 잘못 떨어져 육체에 갇힌 신적 불꽃이며, 구원이란 그 갇힌 영이 자신의 기원과 귀향의 길을 "아는" 데서 온다. 그 앎은 누구에게나 열린 지식이 아니라 신비적 조명, 곧 입회한 자에게만 전수되는 비밀이다. MBTS 교회사I 강의의 정리대로 "육체에 갇힌 영을 해방하는 것이 구원이며, 이를 위해 영지(신비적 조명)가 필요하다"는 것이다.</p>
+<p>이 구원론은 곧바로 인간을 세 등급으로 나눈다. 영지주의는 인간을 영적(프뉴마티코이)·혼적(프쉬키코이)·물질적(휠리코이) 존재로 삼분했고, 오직 영적 인간만이 앎에 이를 수 있다고 보았다. 발렌티누스는 심연에서 유출된 서른 개의 아이온(aeon) 체계를 세웠고, 바실리데스는 356층의 하늘을 상상했으며, 이런 우주론적 사변의 계단 꼭대기에 오를 수 있는 자는 소수의 입회자뿐이었다. 사도행전 8장의 시몬 마구스가 그 근원으로 지목되고, 케린투스가 복음을 재해석하려 한 첫 영지주의자로 꼽힌다.</p>
+<p>바로 이 지점에서 영지주의는 복음과 정면으로 갈린다. 복음은 만민에게 값없이 선포되는 열린 소식이지만, 영지주의의 구원은 비밀에 입회한 엘리트의 특권이다. 복음이 "누구든지"라면 영지주의는 "아는 자만"이다. 지식이 은혜를 밀어내고 소수가 다수를 이류로 만드는 이 구조가, 영지주의를 기독교로 위장한 다른 종교로 만든 첫 번째 표지다.</p>
+<h2>2. 물질은 악이다 — 이원론과 가현설</h2>
+<p>두 번째 축은 이원론이다. 영지주의는 정신과 물질, 영과 육을 선과 악으로 갈라 세운다. 물질 세계가 악하다면 그것을 지은 창조주도 최고의 신일 수 없다. 그래서 영지주의는 세상을 지은 열등한 조물주 데미우르고스를, 예수 안에 계시된 사랑과 은혜의 최고 신과 구별했다. 창조는 최고 신의 작품이 아니라 열등한 신의 실수이거나 타락의 산물이 된다. 창세기가 "보시기에 심히 좋았더라"라고 선언한 물질 세계가, 영지주의에서는 벗어나야 할 감옥으로 뒤집힌다.</p>
+<p>이 이원론이 기독론에 이르면 가현설(Docetism)이 된다. 거룩한 신이 더럽고 깨어지기 쉬운 살덩이를 실제로 입었을 리 없으므로, 그리스도는 몸을 입은 "것처럼 보였을" 뿐(그리스어 dokeō, "~인 것처럼 보이다")이라는 것이다. 육체의 탄생도, 십자가의 고난도, 무덤의 죽음도 가상이 된다. MBTS 교회사I 강의가 정리하듯 "영적인 그리스도는 물질적 육신을 입을 수 없으므로 입은 것처럼 보였을 뿐"이라는 이 주장은, 성육신과 십자가와 부활의 실재성을 한꺼번에 무너뜨린다. 그리고 그리스도가 참으로 죽지 않았다면 대속도 없다 — 가현설은 구원 자체를 허공에 띄운다. 이단이 언제나 기독론에서 갈라지는 이유가 여기 있다.</p>
+<h2>3. 신약의 반박 — "육체로 오신 것을 시인하라"</h2>
+<p>교회는 이 도전에 성경으로 맞섰고, 그 반박의 언어는 놀랍도록 직접적이다. 요한일서는 아예 가현설을 시금석으로 세운다 — "예수 그리스도께서 육체로 오신 것을 시인하는 영마다 하나님께 속한 것이요, 예수를 시인하지 아니하는 영마다 하나님께 속한 것이 아니니 이것이 곧 적그리스도의 영이니라"(요일 4:2-3). 육체로 오심을 부정하는 것이 곧 적그리스도의 표지로 규정된 것이다. 요한복음 서두의 "말씀이 육신(사륵스)이 되어"(요 1:14) 역시, 신적인 빛남이 아니라 가장 낮고 깨어지기 쉬운 살을 가리키는 단어를 골라 가현설을 정면으로 차단한다. MBTS 신약개론I 강의가 카슨-무를 따라 요한 서신의 배경을 초기 영지주의와의 논쟁으로 읽는 것도 이 맥락이다.</p>
+<p>골로새서는 이원론의 뿌리를 잘라 낸다. 만물이 그리스도 안에서, 그로 말미암아 창조되었으므로(골 1:16) 물질 세계는 열등한 데미우르고스의 실수가 아니라 그리스도의 작품이며, "그 안에는 신성의 모든 충만이 육체로 거하신다"(골 2:9)는 선언은 신성이 살을 입었다는 사실을 못박아 가현설을 봉쇄한다. 창조의 선함과 성육신의 실재는 이렇게 한 묶음으로 지켜진다. 이 반박이 어떻게 온전한 성육신·기독론 교리로 벼려졌는지는 <a class="wl" href="../../t/%EC%84%B1%EC%9C%A1%EC%8B%A0/">성육신</a>과 <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EB%A1%A0/">기독론</a>이 이어받으며, 여기서는 신약이 영지주의의 두 급소 — 비밀 지식의 구원론과 물질을 악으로 보는 가현설 — 를 정확히 겨냥했다는 사실을 확인하는 것으로 충분하다.</p>
+<h2>4. 교회의 응전 — 신조와 정경이 벼려지다</h2>
+<p>영지주의의 가장 역설적인 공헌은, 그것이 파괴하려던 교회의 자기 정의를 오히려 촉진했다는 데 있다. MBTS 교회사I 강의가 짚듯 이단의 도전에 맞서 교회는 신조·정경·감독제라는 세 "권위적 기둥"을 세웠고, 그 각 기둥에는 영지주의 반박의 지문이 찍혀 있다. 2세기 중엽의 고대로마신조(뒤에 사도신경으로 발전)를 보면 이 사실이 선명하다. "전능하신 아버지 창조주"라는 고백은 창조주를 열등한 데미우르고스로 격하한 영지주의와 마르시온을 반박하고, "육체의 부활"이라는 조항은 몸을 감옥으로 본 가현설을 정면으로 뒤집는다. 신조의 각 문장이 이단 논쟁의 직접적 산물이었던 것이다.</p>
+<p>인물로는 리옹의 감독 <span class="wl-dead" title="위키 내부 링크">이레네우스</span>가 그 응전의 중심에 선다. 그는 서머나에서 <span class="wl-dead" title="위키 내부 링크">폴리캅</span>을 직접 만나 사도 요한의 전승을 전해 들은 간접 증인이었고, 『이단 반박』(Adversus Haereses)으로 영지주의를 체계적으로 논박하며 요한복음을 핵심 무기로 삼았다. 안디옥의 <span class="wl-dead" title="위키 내부 링크">이그나티우스</span> 역시 로마로 압송되는 길에 쓴 편지들에서 성례적 언어(실제 떡과 포도주)를 강조하며 이미 가현설과 맞서고 있었다. 여기에 <span class="wl-dead" title="위키 내부 링크">마르시온</span>의 축소된 성경 목록이 "무엇이 정경인가"를 스스로 확정하도록 교회를 압박하면서, 무라토리 정경을 거쳐 신약 27권의 경계가 명문화되어 간다. 곧 영지주의라는 원심력이 정경과 신조라는 구심력을 불러낸 셈이다. 이 정경 형성의 전개사는 <a class="wl" href="../../t/%EC%A0%95%EA%B2%BD%ED%99%94/">정경화</a>가 이어받는다.</p>
+<h2>5. 오늘의 영지주의적 그림자 ⚖️</h2>
+<p>영지주의는 2세기의 화석이 아니다. 그 두 급소는 형태를 바꿔 오늘의 신앙 안에서도 되살아난다. 첫째는 몸과 물질을 경시하는 영성이다. 영혼만 참되고 몸·노동·창조세계·일상은 열등하다고 여기는 태도는, 성육신이 애써 긍정한 몸을 다시 부정하는 옛 이원론의 후예다. 둘째는 비밀 지식의 엘리트주의다. 특별한 체험, 감춰진 계시, 내부자만의 "깊은 진리"를 앞세워 평범한 신자를 이류로 만드는 태도는, 만민에게 열린 복음을 소수의 앎으로 대체하려 했던 영지주의의 반복이다.</p>
+<p>다만 여기서 공정해야 한다 ⚖️. 신비적 체험이나 깊은 묵상, 지적인 신학 탐구 자체가 영지주의는 아니다. 몸의 절제를 강조하는 경건이 곧 이원론인 것도 아니다. 경계선은 다른 데 있다 — 그 앎이 값없이 열린 복음을 대체하는가, 그 영성이 몸과 물질을 악으로 미는가, 그 깊음이 공동체를 등급으로 가르는가. 판별의 시금석은 언제나 성육신이다. 하나님이 친히 살을 입고 오셨다면, 몸은 벗어야 할 감옥이 아니고 복음은 소수의 비밀이 아니다. 영지주의의 그림자를 분별하는 일은 결국 "말씀이 육신이 되어"를 얼마나 진지하게 붙드느냐의 문제로 돌아온다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>영지주의의 심장은 구원론이다 — 구원은 은혜가 아니라 비밀 지식(그노시스)에서 오며, 이 앎은 소수 입회자의 특권이다. 만민에게 열린 복음과 갈리는 첫 지점이 여기다.</li>
+<li>물질을 악으로 보는 이원론이 창조주를 열등한 데미우르고스로 격하하고, 기독론에서는 가현설(그리스도가 몸으로 오심을 부정)로 귀결한다. 가현설은 성육신·십자가·대속을 한꺼번에 허문다.</li>
+<li>신약의 반박은 정확히 이 두 급소를 겨눈다 — 요일 4:2의 "육체로 오신 것을 시인", 요 1:14의 사륵스, 골로새서의 만물 창조와 신성의 육체적 충만.</li>
+<li>영지주의는 파괴하려다 교회의 자기 정의를 촉진했다. 고대로마신조("전능하신 창조주"·"육체의 부활")와 이레네우스의 『이단 반박』, 정경의 확정이 모두 이 응전의 열매다.</li>
+<li>오늘의 영지주의적 경향(몸·물질 경시, 비밀 지식 엘리트주의)을 가르는 시금석은 성육신이다 ⚖️ — 신비 체험이나 절제 자체가 아니라, 그것이 열린 복음을 대체하고 몸을 악으로 미는지가 경계선이다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>요한 서신이 논박한 "초기 영지주의"의 구체적 형태(케린투스파인가, 가현설인가, 더 넓은 혼합주의인가)는 무엇이며, 2세기의 성숙한 영지주의(발렌티누스파·바실리데스파)와 어떻게 이어지는가.</li>
+<li>발렌티누스·바실리데스·세트파 등 서로 다른 체계를 "영지주의"라는 단일 범주로 묶는 것이 초대교회사 이해에 어떤 한계를 낳는가.</li>
+<li>몸을 긍정하는 성육신 신학과 몸의 절제를 강조하는 경건(금식·독신·수도) 사이에서, 건강한 절제와 이원론적 몸 경시를 실천적으로 무엇으로 가르는가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%84%B1%EC%9C%A1%EC%8B%A0/">성육신</a> — "말씀이 육신이 되어"의 신학, 가현설에 맞선 몸·물질의 긍정. 영지주의 반박의 신학적 완성.</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EB%A1%A0/">기독론</a> — 그리스도의 신성과 인성, 위격적 연합. 가현설이 무너뜨리려 한 교리의 정식.</li>
+<li><a class="wl" href="../../t/%EC%A0%95%EA%B2%BD%ED%99%94/">정경화</a> — 마르시온의 도전이 촉발한 정경 경계의 확정 과정.</li>
+<li><a class="wl" href="../../t/%EC%9D%B4%EB%8B%A8%EB%85%BC%EC%9F%81/">이단논쟁</a> · <a class="wl" href="../../t/%EC%B4%88%EB%8C%80%EA%B5%90%ED%9A%8C/">초대교회</a> — 영지주의·마르시온·몬타누스가 놓인 2세기 이단 도전의 전체 지형.</li>
+<li><a class="wl" href="../../t/%EC%9D%B4%EC%9B%90%EB%A1%A0/">이원론</a> — 정신/물질 이원론의 철학적 계보.</li>
+<li><span class="wl-dead" title="위키 내부 링크">이레네우스</span> · <span class="wl-dead" title="위키 내부 링크">이그나티우스</span> — 가현설에 맞서 성육신 신앙을 증언·논박한 교부.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">02주_초대교회의신앙정립</span></td>
+<td>강의</td>
+<td>영지주의 4축(이원론·인간 삼분·데미우르고스·영지 구원론), 가현설, 시몬 마구스·케린투스·바실리데스·발렌티누스, 신조가 반박한 이단, 이레네우스 응전</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">08주_요한복음</span></td>
+<td>강의</td>
+<td>카슨-무의 요한 서신 반영지주의 논쟁 배경, 요 1:14 성육신, 이그나티우스·이레네우스의 정경적 권위</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">이레네우스</span></td>
+<td>인물</td>
+<td>폴리캅→요한 증인 체인, 『이단 반박』으로 영지주의 논박</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%84%B1%EC%9C%A1%EC%8B%A0/">성육신</a> · <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EB%A1%A0/">기독론</a></td>
+<td>위키</td>
+<td>사륵스·가현설 차단·위격적 연합 — 영지주의 반박의 신학적 전개 위임처</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%A0%95%EA%B2%BD%ED%99%94/">정경화</a></td>
+<td>위키</td>
+<td>마르시온 도전과 정경 경계 확정</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/교회사</span><span>#discipline/신약학</span><span>#가현설</span><span>#이원론</span><span>#이단논쟁</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

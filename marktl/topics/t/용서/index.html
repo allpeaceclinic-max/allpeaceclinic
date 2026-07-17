@@ -1,0 +1,250 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>용서 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:226">조직신학·교리</span><span class="date">2026-07-11</span></div>
+  <h1 class="note-title">용서</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>용서는 이 볼트의 설교와 강의가 복음을 가장 자주 시험대에 올리는 자리다. 죄를 갚아야 할 빚으로 그린 <span class="wl-dead" title="위키 내부 링크">마태복음 18장</span>의 문법을 빌리면, 용서란 채권자가 손에 쥔 차용증을 놓아 버리는 행위다. 신약이 이 놓음을 부르는 두 단어가 방향을 이미 정해 준다. 하나는 아피에미(ἀφίημι) — "놓아보내다, 손을 떼다"로, 붙들고 있던 것을 풀어 주는 몸짓이다. 다른 하나는 엡 4:32의 카리조마이(χαρίζομαι) — 은혜(χάρις)를 값없이 거저 준다는 어근을 가진 말로, 상대가 자격을 갖추어서가 아니라 받은 은혜를 흘려보내는 행위를 가리킨다. 구약이 같은 일을 부르는 이름 카파르(כפר)는 하나님이 죄악을 "기억하지 아니하리라"(<span class="wl-dead" title="위키 내부 링크">렘 31:34</span>)고 선언하시는 의도적 잊음으로 나타난다. 세 단어가 한 방향을 가리킨다 — 붙든 것을 놓고, 값없이 주고, 장부에서 지운다.</p>
+<p>그런데 이 볼트가 한목소리로 붙드는 것은 용서의 방향성이다. 수평의 용서(사람이 사람을 용서함)는 수직의 용서(하나님이 먼저 나를 용서하심)에서 흘러나온다. "우리가 우리에게 죄 지은 자를 사하여 준 것 같이 우리 죄를 사하여 주옵시고"(<span class="wl-dead" title="위키 내부 링크">마 6:12</span>)라는 기도가 두 방향을 한 문장에 묶어 놓았듯, 용서는 위에서 받은 것을 옆으로 흘려보내는 일이다.</p>
+<p>이 글은 용서 자체의 내적 동학을 일곱 겹으로 따라간다. 용서를 관계 안에 놓는 절차 — 책망·회개·용서의 순서, 화해의 직분, 공의와의 긴장, 만물의 화목 — 은 이미 <a class="wl" href="../../t/%EA%B4%80%EA%B3%84%ED%9A%8C%EB%B3%B5/">관계회복</a> 확정판 에세이가 허브로 다루며, 그 글은 "용서의 상세한 동학과 칭의·성화 구조는 <a class="wl" href="../../t/%EC%9A%A9%EC%84%9C/">용서</a>에 맡긴다"고 명시적으로 이 페이지에 위임했다. 그러므로 여기서는 화해의 절차가 아니라 용서라는 한 매듭의 안쪽 — 무엇을 근거로, 어떤 조건에서, 기억·복수·자기 자신을 어떻게 처리하며 그 매듭이 풀리는가 — 를 들여다본다.</p>
+<h2>1. 용서의 근거 — 받은 탕감이 먼저다</h2>
+<p>용서를 명령이 아니라 논리로 만드는 것은 순서다. <span class="wl-dead" title="위키 내부 링크">윤명숙</span> 전도사는 <span class="wl-dead" title="위키 내부 링크">마 18:21-35</span>의 일만 달란트 비유를 강해하며 이 순서를 못박는다. 일만 달란트는 한 사람이 평생 갚을 수 없는 천문학적 빚(한 달란트 = 6천 데나리온, 20년 품삯)이고, 동료가 진 백 데나리온은 백 일치 품삯이다. 약 6만 배의 이 비대칭이 비유의 신학적 엔진이다. 내가 도저히 갚을 수 없는 빚을 거저 탕감받았다면, 남의 작은 빚을 놓아 주는 것은 시혜가 아니라 마땅한 반응이 된다.</p>
+<p>주인이 종을 놓아준 결정적 이유는 33절의 "불쌍히 여김"이었다. 윤 전도사는 이것을 용서의 비결로 짚는다.</p>
+<blockquote>
+<p>"불쌍히 여겼다는 것이 탕감의 비결이다. … 무한한 죄, 빚을 탕감받은 마음, 그것으로 타인을 봐야 한다." — 윤명숙, 「용서의 원리」</p>
+</blockquote>
+<p>곧 용서는 의지로 쥐어짜는 윤리적 당위("용서해야 한다")가 아니라 받은 긍휼이 자연스럽게 흘러넘치는 은혜의 논리("탕감받았으니 마땅하다")다. 받은 자만이 흘려보낼 수 있고, 받은 긍휼을 자기 안에 가둔 그릇이 바로 비유 속 "악한 종"이다. 불쌍히 여김이 어떻게 탕감의 동력이 되는가라는 긍휼 자체의 결은 <a class="wl" href="../../t/%EA%B8%8D%ED%9C%BC/">긍휼</a>이 본격적으로 다루므로, 여기서는 그 결론만 빌린다 — 용서의 뿌리는 시혜가 아니라 먼저 받은 자비다.</p>
+<h2>2. 두 층위의 용서 — 무조건적 용서와 조건적 용서</h2>
+<p>용서를 둘러싼 가장 끈질긴 혼란은 두 성경 명령이 표면적으로 충돌하는 데서 온다. 예수님은 십자가에서 사과하지 않은 이들을 위해 "아버지 저들을 사하여 주옵소서"(<span class="wl-dead" title="위키 내부 링크">눅 23:34</span>)라고 먼저 기도하셨는데, 정작 제자들에게는 "형제가 회개하거든 용서하라"(<span class="wl-dead" title="위키 내부 링크">눅 17:3</span>)고 조건을 다신다. 사과 이전에 용서하라는 것인가, 회개를 조건으로 용서하라는 것인가.</p>
+<p><span class="wl-dead" title="위키 내부 링크">권성수</span> 목사는 이 긴장을 용서의 두 층위로 풀어낸다. 무조건적 용서는 상대가 사과하기 전에, 오기도 전에 내 마음에서 먼저 풀어 주는 것이다. 십자가의 "저들을 사하여 주옵소서"가 그 원형이며, 이것은 상대를 위해서가 아니라 내 영혼의 안전을 위해 한다. 조건적 용서는 상대가 "회개하노라" 할 때 "그만하면 됐다"라고 선언하여 관계를 회복하는 것이다. 마음의 용서는 무조건이되, 관계의 회복은 상대의 회개를 조건으로 한다.</p>
+<p>권 목사는 「저주를 축복으로 바꾸는 전환 비결」에서 이 구분을 조직신학의 두 지평 위에 세운다. 무조건적 용서는 칭의의 지평에 속한다 — 이미 일만 달란트를 무조건 탕감받은 자에게 용서는 법정적 사건이며, 따라서 상대의 회개 여부와 무관한 의무다. 조건적 용서는 <a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a>의 지평에 속한다 — 입양된 아이의 몸에 묻은 때를 씻는 과정처럼 "우리 속에서" 점진적으로 이루어지며, 회개를 조건으로 삼는다(<span class="wl-dead" title="위키 내부 링크">눅 17:3</span> "회개하거든"). 이 두 지평을 나누면 두 명령이 각기 다른 층위에서 동시에 참이 된다.</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>무조건적 용서</th>
+<th>조건적 용서</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>지평</td>
+<td>칭의(법정적·단번에 선언됨)</td>
+<td><a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a>(내적·점진적 과정)</td>
+</tr>
+<tr>
+<td>대상·목적</td>
+<td>내 영혼의 안전</td>
+<td>관계의 회복</td>
+</tr>
+<tr>
+<td>시점</td>
+<td>사과 이전, 마음에서 먼저</td>
+<td>사과("회개하노라") 이후</td>
+</tr>
+<tr>
+<td>원형 본문</td>
+<td>눅 23:34, 엡 4:32</td>
+<td>눅 17:3, 마 6:12</td>
+</tr>
+</tbody>
+</table>
+<p>여기서 카리조마이의 어근이 다시 울린다. 용서가 은혜를 값없이 거저 주는 것이라면, 그것은 "안 되는" 일이 아니라 "안 하는" 일이 된다. 권 목사의 표현으로 "용서가 안 되는 것이 아니라 용서를 안 하는 것이다. 본능 때문에 어렵다고 핑계 대면 안 된다." 무조건적 용서가 마음에서 먼저 일어난 뒤 상대의 회개 위에서 관계 회복이 선언되는 이 순서 — 책망·회개를 거쳐 용서에 이르는 관계의 절차 전체 — 는 <a class="wl" href="../../t/%EA%B4%80%EA%B3%84%ED%9A%8C%EB%B3%B5/">관계회복</a>이 실무 지침으로 다룬다. 이 페이지가 붙드는 것은 그 절차의 마지막 매듭인 용서가 안쪽에서 어떻게 두 겹으로 작동하는가이다.</p>
+<h2>3. 무한대의 용서 — 장부를 닫는 일</h2>
+<p>용서가 마음에서 먼저 일어나는 사건이라면, 그것은 횟수로 관리되지 않는다. 베드로가 당시 유대 관행(3회)을 넘어 후하게 "일곱 번"을 제시했을 때 예수님은 "일흔 번씩 일곱 번"(490회)으로 답하셨다(<span class="wl-dead" title="위키 내부 링크">마 18:22</span>). 윤명숙 전도사는 이것을 산술적 한계가 아니라 무한히 용서하라는 하나님의 의도로 읽는다. 횟수를 세는 순간 그 사람은 여전히 채권자의 자리에 앉아 있는 것이며, 진정한 용서는 장부를 세는 일이 아니라 장부를 닫는 일이다.</p>
+<p>같은 무한성이 <span class="wl-dead" title="위키 내부 링크">눅 17:4</span>에서는 "하루 일곱 번 죄를 짓고 일곱 번 돌아와 회개하노라 하거든 용서하라"로 나타난다. 권성수 목사는 여기서 사과의 진정성을 따지지 말고 말에 근거해 용서하라고 권한다 — 진정성 판단은 하나님께 맡기고, 상대가 "회개하노라" 하면 그 말에 근거해 풀어 준다. 형식적 사과가 반복될 때의 분별은 열린 문제로 남지만(§미해결 질문), 적어도 용서하는 자의 몫은 상대의 속을 저울질하는 것이 아니라 자기 손의 차용증을 놓는 것이다.</p>
+<h2>4. 잊음과 용서 — 기억은 지워지지 않아도 앙심은 남지 않는다</h2>
+<p>용서를 망각과 혼동하면 새로운 죄책이 생긴다. 상처가 다시 떠오를 때마다 "나는 아직 용서하지 못했다"고 자책하게 되기 때문이다. 구약의 카파르 신학이 이 지점을 밝힌다. MBTS 구약개론II 강의는 <span class="wl-dead" title="위키 내부 링크">렘 31:34</span>("내가 그들의 죄악을 사하고 다시는 그 죄를 기억하지 아니하리라")와 시 79:8, 사 65:17을 나란히 놓고, 전지하신 하나님이 "기억하지 않는다"고 하실 때 그것이 곧 용서의 언어임을 짚는다. 강의는 동시에 "잊겠다는 것, 사실 불가능한 일"이라고 인정한다 — 잊음은 하나님의 주권적 용서 선언이지 인간이 기억을 삭제하는 능력이 아니다.</p>
+<p>그렇다면 기억을 지울 수 없는 인간에게 용서란 무엇인가. 권성수 목사는 루이스 스미디스를 빌려 용서의 심리적 난점을 정확히 포착한다 — 가해자의 악행을 떠올릴 때마다 "예전에 당했던 고통이 재상영된다." 용서는 일회적 결단이 아니라 반복되는 기억과의 싸움이다. 그러나 그는 기억과 앙심을 갈라놓는다.</p>
+<blockquote>
+<p>"기억은 지울 수 없어도 앙심은 남아 있으면 안 된다." — 권성수, 「저주를 축복으로 바꾸는 전환 비결」</p>
+</blockquote>
+<p>윤명숙 전도사의 정의도 같은 자리에 선다 — 용서는 "더 이상 문제 삼지 않는 것"이며, 생각은 날 수 있으되 그 생각을 붙들어 죄악의 본성으로 끌고 가려는 것에 브레이크를 거는 의지적 훈련이다. 기억의 재상영은 막을 수 없어도, 그 기억에 앙심을 실어 다시 채권자의 자리로 돌아가는 것은 막을 수 있다.</p>
+<h2>5. 용서와 복수 — 정의를 하나님께 이관함</h2>
+<p>용서를 가장 강하게 막아서는 것은 복수의 본능이다. 권성수 목사는 이 본능을 죄로 단죄하고 억압하라 말하는 대신, 그 집행권을 하나님께 넘기라고 안내한다. 복수는 인간의 죄악된 본성에 깊이 박혀 있어 상처를 기억할 때마다 다시 불붙지만, 복수는 정의를 세우는 것이 아니라 불의를 증폭시킨다. 성경의 해법은 억압이 아니라 이관이다 — "원수 갚는 것이 내게 있으니 내가 갚으리라"(<span class="wl-dead" title="위키 내부 링크">롬 12:19</span>). 하나님의 손은 정의의 손이므로, 현세에서 부분적으로 그리고 최후 심판에서 완전히 갚으신다. 정의에 대한 갈망을 부정하지 않으면서 그 처리를 하나님께 맡기는 이 방식이, 심리적으로 더 정직하고 신학적으로 더 견고하다.</p>
+<p>그렇다고 용서가 죄의 결과까지 지우는 것은 아니다. 권 목사는 징벌과 징계를 구별한다 — 징벌은 정의의 영역으로 판사가 집행하지만, 징계는 사랑의 영역으로 아버지가 시행한다. 다윗은 밧세바 사건에서 분명히 용서받았으나 아들의 죽음과 집안의 비극을 감당했고, 광야의 이스라엘도 용서받았으나 사십 년을 방황했다. 죄를 짓고 용서받을 수 있지만 아픔은 따라온다. 이것을 놓치면 값싼 은혜에 안주하게 된다. 한편 이 볼트의 구약 강의는 더 근원적인 원리를 보탠다 — "용서는 반드시 심판을 동반한다"(<span class="wl-dead" title="위키 내부 링크">야르자코비치</span>). 황금송아지 사건에서 골고다까지, 성경의 용서는 심판을 우회하지 않고 통과한다. 십자가는 죄를 눈감아 준 것이 아니라 죄가 온전히 심판받은 자리에서 죄인이 놓임받은 사건이다.</p>
+<p>이 구도에서 용서는 정의를 폐기하지 않고 전제한다. 용서가 국가·법·제도의 공적 정의를 무효화하는 것이 아니라는 것, 곧 개인적 앙심의 포기와 공적 정의의 추구가 서로 다른 층위에서 동시에 성립한다는 것 — 이 균형과 화해 절차 안에서의 자리매김은 <a class="wl" href="../../t/%EA%B4%80%EA%B3%84%ED%9A%8C%EB%B3%B5/">관계회복</a>이 볼프의 『배제와 포용』과 함께 상세히 다룬다. 여기서 기억할 것은 용서 안쪽의 동학이다: 복수는 억압되는 것이 아니라 하나님께 이양되고, 그때 비로소 손이 자유로워진다.</p>
+<h2>6. 자기를 위한 용서, 그리고 자기 자신에 대한 용서</h2>
+<p>용서의 방향은 흔히 오해된다. 우리는 용서를 가해자에게 베푸는 시혜로 여기지만, 이 볼트의 가정사역은 그 방향을 뒤집는다. 윤명숙 전도사는 "상대를 위해 용서하는 것보다 더 큰 것이 자신을 위해서 용서하라는 메시지"라고 말한다. 앙갚음을 계속해도 상대는 개의치 않고 살아가며, 분노를 품은 손해는 결국 그것을 쥔 내가 본다. 더 깊게는 수직 관계가 걸려 있다 — "마음으로부터 형제를 용서하지 아니하면"(<span class="wl-dead" title="위키 내부 링크">마 18:35</span>) 하나님과의 관계 자체가 막힌다. 받은 사랑을 가둔 그릇은 새 사랑을 담지 못하기에, 미해결된 원망은 하나님의 사랑이 드나드는 통로를 막는다. 이 점에서 용서는 <a class="wl" href="../../t/%EB%82%B4%EB%A9%B4%EC%B9%98%EC%9C%A0/">내면치유</a>의 원리이기도 하다. 부부 싸움 뒤의 오랜 침묵(냉전)을 윤 전도사가 신앙의 진정성을 점검할 지표로 삼는 것은, 용서하지 못함이 곧 자기 자신을 가두는 일임을 드러낸다.</p>
+<p>용서의 방향이 자기에게로 향하는 또 하나의 국면이 자기 자신을 용서하는 문제다. 이 볼트는 이 주제를 깊이 전개하지는 않지만 한 자리에서 짚는다 — 죄를 지으면 자신을 용서하기 힘들지만, 신자는 하나님이 용서하심을 안다(권성수, 시 51편의 다윗과 요일 1:9). 자기 용서의 근거는 자기 안의 관용이 아니라 밖에서 온 사죄의 선언이다. 내가 나를 놓아줄 수 있는 것은 하나님이 먼저 나를 놓아주셨기 때문이다.</p>
+<p>이 모든 것을 권성수 목사는 하나의 이미지로 닫는다. 앙심을 내려놓고 은혜의 시선으로 다시 볼 때, 같은 사건이 다른 사진이 된다.</p>
+<blockquote>
+<p>"은혜의 렌즈로 보고 용서해야 한다. 저주의 사진이 축복의 사진으로, 저주의 파문이 축복의 파문으로 바뀐다." — 권성수, 「저주를 축복으로 바꾸는 전환 비결」</p>
+</blockquote>
+<h2>7. 용서에서 화해로 — 매듭 하나 너머</h2>
+<p>용서는 관계의 종착점이 아니라 한 매듭이다. <span class="wl-dead" title="위키 내부 링크">최원규</span> 선교사는 구원의 동력학을 "새 창조 → 용서 → 전가 → 화해"로 풀어내며, 가장 곤란한 지점을 정면으로 짚는다 — "용서까지는 가능하지만 전가는 부담스럽다." 용서가 상대의 빚을 놓아 주는 것이라면, 전가는 그 빚을 내가 대신 뒤집어쓰는 것이다. "남편이 아내의 잘못을 뒤집어쓸 수 있어야 한다"는 그의 말처럼, 화해는 용서에서 한 걸음 더 나아가 누군가 누명을 감당하는 비용을 요구한다.</p>
+<p>여기서 용서와 화해의 경계가 분명해진다. 용서는 내 마음에서 시작되어(무조건적) 상대의 회개 위에서 관계 회복으로 완성되지만(조건적), 그 완성된 관계 회복 — 전가, 화해의 직분, 만물의 화목까지 이어지는 여정 — 은 이 페이지의 몫이 아니라 <a class="wl" href="../../t/%EA%B4%80%EA%B3%84%ED%9A%8C%EB%B3%B5/">관계회복</a>과 <a class="wl" href="../../t/%ED%99%94%ED%95%B4/">화해</a>의 몫이다. 갈등을 덮지 않고 성장의 필드로 삼는 공동체 안의 "덮는 사랑" 또한 <a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%B2%B4/">공동체</a>가 이어받는다. 용서는 그 큰 흐름의 첫 매듭이자, 손에 쥔 차용증을 놓는 가장 개인적인 순간이다. 이 매듭이 풀리지 않으면 화해의 여정 자체가 시작되지 못한다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>용서의 세 원어가 한 방향을 가리킨다 — 아피에미(놓아보냄), 카리조마이(은혜를 값없이 거저 줌), 카파르(의도적 잊음). 용서는 붙든 것을 놓고, 값없이 주고, 장부를 닫는 일이다.</li>
+<li>용서의 근거는 시혜가 아니라 먼저 받은 탕감이다. 일만 달란트와 백 데나리온의 6만 배 비대칭이 "마땅하지 아니하냐"의 논리를 세운다 — 받은 자만이 흘려보낸다.</li>
+<li>무조건적 용서(칭의 지평, 내 영혼을 위해 마음에서 먼저)와 조건적 용서(성화 지평, 회개에 근거한 관계 회복)를 나누면, 눅 23:34와 눅 17:3의 표면적 충돌이 해소된다. 용서는 "안 되는 것"이 아니라 "안 하는 것"이다.</li>
+<li>용서는 횟수를 세는 일이 아니라 장부를 닫는 일이다(490회). 횟수를 세는 순간 여전히 채권자의 자리다.</li>
+<li>용서는 망각이 아니다. 기억은 지워지지 않아도 앙심은 남지 않는다 — 기억의 재상영과의 반복된 싸움이지 기억의 삭제가 아니다.</li>
+<li>복수는 억압되는 것이 아니라 하나님께 이관된다(롬 12:19). 용서는 정의를 폐기하지 않고 전제하며, 용서받음이 죄의 결과(징계)까지 지우지는 않는다.</li>
+<li>용서는 일차적으로 자기를 위한 것이다 — 미해결된 원망은 하나님의 사랑이 드나드는 통로를 막는다. 자기 자신에 대한 용서조차 자기 관용이 아니라 밖에서 온 사죄에 근거한다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>무조건적 용서(마음에서 먼저 풂)와 지속적·구조적 가해(학대) 앞에서의 자기 보호·경계 설정은 어떻게 병행되는가. 마음의 용서가 곧 법적·관계적 책임 면제가 아님을 어떻게 실천적으로 못박는가.</li>
+<li>"진정성은 하나님께 맡기고 말에 근거해 용서하라"는 원칙과, 형식적 사과를 반복하며 행동이 바뀌지 않는 경우의 분별은 어떻게 양립하는가.</li>
+<li>고통의 한복판에 있는 당사자가 자신이 겪는 아픔을 사랑의 징계로 볼지 죄의 자연적 결과로 볼지를 실시간으로 분별할 기준은 무엇인가.</li>
+<li>자기 자신에 대한 용서는 이 볼트에서 거의 전개되지 않았다 — 죄책과 거짓 죄책, 자기 용서와 값싼 자기 면죄를 가르는 신학적 기준은 무엇인가.</li>
+<li>개인적 앙심의 포기(용서)와 공적 정의의 추구(고발·제도적 책임)가 한 사람 안에서 어떻게 동시에 성립하는가 — <a class="wl" href="../../t/%EA%B3%B5%EC%9D%98/">공의</a>와 공유되는 질문.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EA%B4%80%EA%B3%84%ED%9A%8C%EB%B3%B5/">관계회복</a> — 용서를 관계 안에 놓는 절차(책망·회개·용서의 순서), 화해의 직분, 공의와의 긴장, 만물의 화목. 용서의 내적 동학을 이 페이지에 위임한 허브.</li>
+<li><a class="wl" href="../../t/%EA%B8%8D%ED%9C%BC/">긍휼</a> — "불쌍히 여김"이 탕감의 동력이 되는 긍휼 자체의 결. 이 페이지는 그 결론만 빌린다.</li>
+<li><a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%B2%B4/">공동체</a> — 갈등을 덮지 않고 성장의 필드로 삼는 "덮는 사랑"과 공동체 안 용서의 차원.</li>
+<li><a class="wl" href="../../t/%ED%99%94%ED%95%B4/">화해</a> · <a class="wl" href="../../t/%ED%9A%8C%EA%B0%9C/">회개</a> — 용서가 흘러드는 관계 회복의 지평과, 조건적 용서의 전제가 되는 돌이킴.</li>
+<li><a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a> · <a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a> — 조건적 용서가 자리하는 점진적 과정과, 용서의 어근인 값없는 은혜.</li>
+<li><a class="wl" href="../../t/%EB%82%B4%EB%A9%B4%EC%B9%98%EC%9C%A0/">내면치유</a> · <a class="wl" href="../../t/%EB%B6%80%EB%B6%80%EA%B4%80%EA%B3%84/">부부관계</a> — 용서가 자기 자유와 통로 회복으로 작동하는 일차 현장.</li>
+<li><span class="wl-dead" title="위키 내부 링크">마18</span> · <span class="wl-dead" title="위키 내부 링크">눅17</span> · <span class="wl-dead" title="위키 내부 링크">엡4</span> · <span class="wl-dead" title="위키 내부 링크">렘31</span> — 용서 본문 허브.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2017_용서의원리</span></td>
+<td>설교(윤명숙)</td>
+<td>일만 달란트 비유, 불쌍히 여김=탕감의 비결, "마땅하지 아니하냐", 자기를 위한 용서, 장부 닫기</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2021_저주축복전환비결</span></td>
+<td>설교(권성수)</td>
+<td>칭의/성화 이중구조, 아피에미·카리조마이 어근, "안 되는 게 아니라 안 하는 것", 징벌/징계 구분, 복수의 이관(롬 12:19), 기억과 앙심, 은혜의 렌즈</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2018_맺힌것을푸세요</span></td>
+<td>설교(권성수)</td>
+<td>무조건적/조건적 용서의 두 층위(눅 23:34/눅 17:3), 진정성은 하나님께·말에 근거한 용서, 정의를 전제한 용서</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">08주_기억과회개와용서</span></td>
+<td>강의(MBTS)</td>
+<td>카파르(용서)·샤카크(잊음)·슈브(회개)의 원어 신학, 잊음과 용서의 역설(렘 31:34), "용서는 심판을 동반한다"(야르자코비치)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2024_최원규_화해의_제자도</span></td>
+<td>설교(최원규)</td>
+<td>새 창조→용서→전가→화해의 동력학, "용서까지는 가능하나 전가는 부담"이라는 용서/화해의 경계</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2025_최원규_화해와_회복의_제자도</span></td>
+<td>설교(최원규)</td>
+<td>새 정체성(카이노스)에서 흘러나오는 용서, 용서 너머 화해로의 확장</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2014_화해의대사</span></td>
+<td>설교(권성수)</td>
+<td>죄를 돌리지 않으심(용서)의 하나님 주도성 — 화해 축은 관계회복에 위임</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">로마서8장_02_종의영</span></td>
+<td>설교(권성수)</td>
+<td>자기 자신에 대한 용서의 근거 — 하나님의 사죄를 앎(시 51편 다윗, 요일 1:9)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2015_천국선교사</span></td>
+<td>설교(권성수)</td>
+<td>사죄(ἄφεσις/ἀφίημι) 원어 — 용서 권한의 위임</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/구원론</span><span>#discipline/기독교윤리학</span><span>#topic/용서</span><span>#topic/회개</span><span>#topic/긍휼</span><span>#topic/관계회복</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

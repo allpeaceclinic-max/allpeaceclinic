@@ -1,0 +1,204 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>일신론 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:226">조직신학·교리</span><span class="date">2026-07-17</span></div>
+  <h1 class="note-title">일신론</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>일신론(monotheism)은 신이 오직 하나이며, 그 신만이 예배와 충성의 대상이 된다는 신앙 체계다. 기독교 일신론은 단순히 "신이 하나"라는 수적 주장이 아니라, 이 한 분 하나님이 창조주·구속주·심판주로서 모든 권위를 가진다는 신학적 고백이다. 그 심장에 이스라엘의 신앙 고백 쉐마가 있다 — "이스라엘아 들으라 우리 하나님 여호와는 오직 유일한 여호와시니"(신 6:4).</p>
+<p>이 페이지는 유일신 신앙의 지형을 다룬다. 곧 쉐마가 세운 유일신 신앙의 뿌리(1절), 유대교·기독교·이슬람 세 유일신 종교의 비교(2절), 그리고 "삼위일체를 고백하는 기독교는 여전히 일신론인가"라는 물음(3절)과, 선교 현장에서 일신론이 갖는 실천적 함의(4·5절)다. 유의할 구별이 하나 있다. 이 볼트에서 <a class="wl" href="../../t/%EC%9C%A0%EC%9D%BC%EC%8B%A0%EB%A1%A0/">유일신론</a>(Theism)은 초월과 내재를 함께 견지하는 신관의 형이상학적 구조 — 무신론·범신론·이신론과 대비되는 개방 체계 — 를 다루는 별개의 페이지다. 이 글의 '일신론'은 그 형이상학이 아니라 "한 분만을 예배한다"는 신앙의 배타성과 그 실천에 초점을 둔다.</p>
+<h2>1. 쉐마 — 유일신 신앙의 심장</h2>
+<p>유일신 신앙의 원천은 신명기 6장의 쉐마다. "이스라엘아 들으라(쉐마), 우리 하나님 여호와는 오직 유일한 여호와시니 너는 마음을 다하고 뜻을 다하고 힘을 다하여 네 하나님 여호와를 사랑하라"(신 6:4-5). 여기서 유일신 신앙은 두 축을 갖는다. 하나님이 오직 한 분이라는 고백(4절)과, 그 한 분을 전 존재로 사랑하라는 명령(5절)이다. 곧 일신론은 냉정한 숫자 세기가 아니라 전적 헌신을 요구하는 관계의 고백이다.</p>
+<p>권성수 목사는 「다시 쉐마」 설교에서 신명기 6장을 구약의 교육 대헌장으로 읽으며, 유일신 신앙의 실천적 핵심을 "하나님과 올바른 관계 형성"과 "유일한 참 하나님 사랑"으로 정리한다. 하나님과의 관계가 바로 서면 사람과의 관계도 바로 서고 만물을 섬기지 않게 된다는 것이다. 이 고백은 십계명의 첫 두 계명과 맞물린다 — "나 외에는 다른 신들을 네게 두지 말라"(제1계명, 예배의 배타성)와 "우상을 만들지 말라"(제2계명, 형상의 금지)가 쉐마의 유일신 신앙을 계명으로 명문화한다.</p>
+<h2>2. 세 유일신 종교의 지형 — 유대교·기독교·이슬람 ⚖️</h2>
+<p>유일신론은 기독교만의 것이 아니다. 아브라함에게서 갈라져 나온 세 종교 — 유대교·기독교·이슬람 — 가 모두 한 분 하나님을 고백하는 유일신 종교다. 그러나 그 한 분을 이해하는 방식은 갈린다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>유대교</th>
+<th>기독교</th>
+<th>이슬람</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>핵심 고백</td>
+<td>쉐마 (신 6:4)</td>
+<td>삼위일체 — 한 본질, 세 위격</td>
+<td>타우히드 (하나님의 절대적 단일성)</td>
+</tr>
+<tr>
+<td>하나님의 하나됨</td>
+<td>엄격한 단일성</td>
+<td>연합 안의 하나됨(에하드)</td>
+<td>절대적·불가분의 단일성</td>
+</tr>
+<tr>
+<td>예수의 위치</td>
+<td>하나님이 아닌 인간</td>
+<td>성육신하신 하나님의 아들</td>
+<td>존경받는 예언자, 신성은 부정</td>
+</tr>
+<tr>
+<td>삼위일체</td>
+<td>유일신 위배로 봄</td>
+<td>유일신론의 재해석</td>
+<td>다신론(쉬르크)으로 봄</td>
+</tr>
+</tbody>
+</table>
+<p>이 표는 어느 종교를 폄하하기 위한 것이 아니라 유일신 신앙 안의 실제 차이를 정직하게 드러내기 위한 것이다. 유대교와 이슬람은 하나님의 단일성을 엄격히 붙들며, 바로 그 진지함 때문에 한 인간을 하나님으로 고백하는 기독교의 주장을 유일신 신앙에 대한 위협으로 받아들인다. 이슬람이 삼위일체를 쉬르크(신에게 동반자를 두는 죄)로, 유대교가 신성모독으로 여기는 것은 무지가 아니라 그들 유일신 신앙의 논리적 귀결이다. 그렇기에 세 종교의 대화는 "누가 더 유일신을 믿는가"의 경쟁이 아니라, "한 분 하나님을 어떻게 이해하는가"의 차이를 마주하는 자리가 되어야 한다.</p>
+<h2>3. 기독교는 일신론인가 — 삼위일체와의 관계</h2>
+<p>세 종교의 비교가 던지는 가장 날카로운 물음은 기독교 자신을 향한다. 삼위일체를 고백하는 기독교는 여전히 일신론인가? <span class="wl-dead" title="위키 내부 링크">전성민</span> 교수의 「유일신론의 문제」 강의가 이 긴장을 정면으로 다룬다. 강의의 출발점은 역설이다 — 구약 율법을 가장 진지하게 지키려 했던 유대인들이 바로 그 유일신 신앙 때문에 예수를 하나님으로 받아들이기 어려웠다는 것이다. "우상을 만들지 말라"는 계명과 "오직 한 분 하나님"이라는 고백을 강하게 붙들수록, 한 인간을 하나님으로 고백하는 일은 신성모독에 가깝게 들린다.</p>
+<p>그렇다면 이 장벽을 무엇이 돌파했는가. 강의의 답은 교리가 아니라 사건, 곧 <strong>부활</strong>이다. "기독교가 생긴 것은 부활 사건이다." 유일신 신앙이 그토록 강했던 유대인들이 예수를 하나님으로 고백하게 된 것은, 부활이라는 압도적 경험이 기존의 신학적 틀을 다시 쓰게 했기 때문이다. 교리가 경험을 만든 것이 아니라 경험이 신학을 재구성했다는 순서가 중요하다. 그러므로 기독교의 삼위일체론은 유일신론을 포기한 것이 아니라, 부활 경험에 의해 <strong>재해석된 유일신론</strong>이다.</p>
+<p>기독교가 이 재해석을 어떻게 정식화했는지 — 한 본질 세 위격, 니케아의 호모우시오스, 양태론과 삼신론을 피하는 균형 — 는 <a class="wl" href="../../t/%EC%82%BC%EC%9C%84%EC%9D%BC%EC%B2%B4/">삼위일체</a>가 전담하고, 삼위일체가 신론 전체에서 갖는 위치는 <a class="wl" href="../../t/%EC%8B%A0%EB%A1%A0/">신론</a>이 다룬다. 여기서 붙들 것은 하나다. 기독교는 유일신 신앙을 버리고 삼신론으로 간 것이 아니라, 한 분 하나님이 성부·성자·성령으로 계신다는 고백으로 유일신론을 새롭게 이해했다는 것. 이것이 유대교·이슬람과 갈리는 지점이자, 기독교가 여전히 자신을 일신론으로 이해하는 근거다.</p>
+<h2>4. 선교 현장의 일신론 — 우상숭배 대 유일신론</h2>
+<p>일신론은 이론적 명제이기 전에 선교 현장의 실천적 도전이다. <span class="wl-dead" title="위키 내부 링크">송기태</span>의 강의는 이를 "영적 전투"의 관점에서 다룬다. 타 종교·문화권의 신앙은 단순한 오류가 아니라 실재하는 영적 세력과 연결된 현실로 진지하게 다루어야 한다는 것이다. 그가 선교의 원형으로 읽는 것은 <strong>출애굽 사건</strong>이다. 출애굽은 단순한 민족 해방이 아니라, 이집트의 신들(바로를 포함한)에 대한 야훼의 전쟁 선언이었다. 이 원형 위에서 선교는 곧 <a class="wl" href="../../t/%EC%9A%B0%EC%83%81%EC%88%AD%EB%B0%B0/">우상숭배</a>(세력의 지배)에서 유일신 신앙(하나님의 주권)으로의 이전을 촉구하는 일이 된다.</p>
+<p>이는 다원주의적 접근 — 모든 신을 동등하게 존중 — 과는 구별된다. 그러나 이 배타성이 타 종교에 대한 경멸을 뜻하지는 않는다. 앞의 2절에서 세 종교를 공정하게 마주해야 한다고 한 것과 여기서 유일신 신앙의 배타성을 말하는 것은 모순이 아니다. 일신론적 선교는 타 종교인을 논박 대상으로 세우는 것이 아니라, 하나님의 유일한 주권을 향한 초대다. 전성민 교수가 짚듯, 유대인의 예수 거부를 무지나 완고함이 아니라 "진지한 율법 신앙의 논리적 귀결"로 이해하는 존중의 시선이 그 초대의 전제가 된다.</p>
+<h2>5. 기복신앙 — 기능적 다신론</h2>
+<p>일신론의 가장 은밀한 도전은 타 종교가 아니라 교회 안에 있다. <a class="wl" href="../../t/%EA%B8%B0%EB%B3%B5%EC%8B%A0%EC%95%99/">기복신앙</a>이 그것이다. 송기태의 강의에서 기복신앙은 일신론의 실천적 도전으로 등장한다. 복·건강·성공을 위해 하나님을 도구로 삼는 신앙은, 겉으로는 한 분 하나님을 부르지만 실제로는 하나님을 많은 신들 중 가장 효과적인 신으로 대하는 다신론적 심리 구조를 가질 수 있다. <a class="wl" href="../../t/%EC%8B%A0%EB%A1%A0/">신론</a>이 이를 "기능적 다신론"이라 부른다 — 형식은 유일신 신앙이되 마음은 여러 유익의 공급자 중 하나를 고르는 다신론이라는 것이다.</p>
+<p>참된 일신론은 하나님을 유익의 제공자가 아니라 삶 전체의 주권자로 고백한다. 이것이 쉐마의 "마음을 다하고 뜻을 다하고 힘을 다하여" 사랑하라는 명령과 정확히 맞물린다. 하나님을 수단으로 삼는 순간 그분은 여러 신 중 하나로 격하되고, 하나님을 목적으로 삼는 순간 비로소 유일하신 분이 된다. 그러므로 일신론은 타 종교 앞에서만이 아니라 내 기도의 동기 앞에서 매일 시험받는다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>유일신 신앙의 심장은 쉐마(신 6:4-5)다 — 하나님이 한 분이라는 고백과 전 존재로 사랑하라는 명령이 한 몸이다. 일신론은 숫자 세기가 아니라 전적 헌신의 관계다.</li>
+<li>유대교·기독교·이슬람은 모두 유일신 종교이나 그 한 분을 이해하는 방식이 갈린다 — 유대교·이슬람의 엄격한 단일성과 기독교의 삼위일체적 하나됨. 삼위일체를 이단시하는 것은 그들 유일신 신앙의 진지한 귀결이다.</li>
+<li>기독교의 삼위일체론은 유일신론의 포기가 아니라 부활 경험에 의해 재해석된 유일신론이다(전성민). 교리가 경험을 만든 것이 아니라 경험이 신학을 재구성했다.</li>
+<li>선교는 출애굽을 원형으로 삼아 우상숭배(세력 지배)에서 유일신 신앙(하나님 주권)으로의 이전을 촉구하되, 다원주의와 구별되면서도 경멸이 아닌 초대의 자세를 취한다.</li>
+<li>기복신앙은 기능적 다신론일 수 있다 — 하나님을 도구로 삼으면 여러 신 중 하나로 격하되고, 목적으로 삼아야 비로소 유일하신 분이 된다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>삼위일체적 일신론과 유대교·이슬람의 단일신론 사이의 대화는, 서로의 유일신 신앙을 존중하면서 어떻게 진리 주장을 유지할 수 있는가?</li>
+<li>부활 경험이 유일신 고백과 충돌하지 않고 삼위일체적 신 이해로 발전한 신학적 경로는 무엇인가(전성민 강의의 미해결 지점)?</li>
+<li>기복신앙 비판은 번영신학에만 적용되는가, 아니면 일반 한국 교회의 신앙 동기에도 적용되는가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%8B%A0%EB%A1%A0/">신론</a> — 한 분 하나님의 이름·속성·삼위일체의 큰 그림, "기능적 다신론"으로서의 기복신앙.</li>
+<li><a class="wl" href="../../t/%EC%9C%A0%EC%9D%BC%EC%8B%A0%EB%A1%A0/">유일신론</a> — 초월+내재의 개방 체계(Theism)로서의 신관 분류. 이 페이지의 형이상학적 짝.</li>
+<li><a class="wl" href="../../t/%EC%82%BC%EC%9C%84%EC%9D%BC%EC%B2%B4/">삼위일체</a> — 한 본질 세 위격, 니케아의 정식화, 유일신론의 재해석 상세.</li>
+<li><a class="wl" href="../../t/%EC%9A%B0%EC%83%81%EC%88%AD%EB%B0%B0/">우상숭배</a> — 유일신 신앙이 맞서는 세력 지배의 현실.</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%B3%B5%EC%8B%A0%EC%95%99/">기복신앙</a> — 일신론의 실천적 도전, 기능적 다신론.</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90/">선교</a> — 출애굽을 원형으로 한 일신론적 선교의 함의.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>권성수 「다시 쉐마」(신 6:1-9)</td>
+<td>설교</td>
+<td>쉐마=구약 교육 대헌장, 유일한 참 하나님 사랑, 하나님과 올바른 관계</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">전성민_유일신론의문제</span></td>
+<td>강의(전성민)</td>
+<td>유일신론과 기독론의 긴장, 부활에 의한 돌파, 재해석된 유일신론, 유대인 거부의 존중적 해석</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2019_송기태_선교적_영적전투</span></td>
+<td>강의(송기태)</td>
+<td>출애굽=신들과의 전쟁, 우상숭배→유일신 신앙 이전, 기복신앙=기능적 다신론</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%82%BC%EC%9C%84%EC%9D%BC%EC%B2%B4/">삼위일체</a> · <a class="wl" href="../../t/%EC%8B%A0%EB%A1%A0/">신론</a></td>
+<td>주제 페이지</td>
+<td>삼위일체 정식화와 유일신론 재해석의 신학적 상세(위임)</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/조직신학</span><span>#discipline/선교학</span><span>#일신론</span><span>#쉐마</span><span>#삼위일체적일신론</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

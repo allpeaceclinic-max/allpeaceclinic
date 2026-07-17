@@ -1,0 +1,167 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>영혼돌봄의 목회 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:25">상담·치유·가정</span><span class="date">2026-05-04</span></div>
+  <h1 class="note-title">영혼돌봄의 목회</h1>
+  
+</header>
+<article class="note">
+<p><strong>분류</strong>: 목회상담 / 영혼돌봄<br />
+<strong>원본 상태</strong>: 4장(한계와 상실과 슬픔)만 기록됨<br />
+<strong>인용</strong>: 애티히(Thomas Attig) — 애도 이론</p>
+<hr />
+<h2>4장. 한계와 상실과 슬픔</h2>
+<h3>애도 = 세상을 다시 배우는 것</h3>
+<blockquote>
+<p>애도의 과정에서 세상을 다시 배우는 것은 상실과는 다르게,<br />
+세상 속에서 <strong>존재하고 행하는 방법</strong>을 새로 배우는 것이다.</p>
+</blockquote>
+<ul>
+<li>애티히(Attig): 애도의 핵심은 <strong>망자에 대한 관계를 다시 배우는 것</strong></li>
+<li>죽은 사람과의 관계는 끝나는 것이 아니라 <strong>새로운 형태로 재정립</strong>된다</li>
+<li>망자의 이야기를 살리는 방법: 친구·동료들의 편지와 이야기를 모으기</li>
+</ul>
+<hr />
+<h3>침묵의 사역 — 현존(Presence)</h3>
+<blockquote>
+<p>마리아가 예수님께 울면서 말할 때,<br />
+예수님은 <strong>단 한 마디의 말씀도 하지 않으셨으나 영으로 신음하셨다</strong> (요 11장)</p>
+</blockquote>
+<ul>
+<li>슬픔의 한가운데서 많은 사람이 원하는 것은 기도가 아니라 <strong>함께 있어주는 것</strong></li>
+<li><strong>현존(presence)</strong> — 단순히 거기에 함께 있는 것, 하나님과 신앙공동체를 대표하는 것</li>
+<li>급성 슬픔의 초기 국면: 사역자는 함께 하되 <strong>대개는 침묵</strong>하는 것이 필요</li>
+</ul>
+<hr />
+<h3>위로의 역설</h3>
+<blockquote>
+<p><strong>고통과 절망 앞에서 위로하려는 시도는 결코 위로가 아니다</strong></p>
+</blockquote>
+<ul>
+<li>"괜찮아질 거야", "하나님의 뜻이 있어" — 이런 교정적 위로는 고통을 축소한다</li>
+<li>돌보는 자의 임무: <strong>고뇌가 들려져야</strong> 한다 — 거부하거나 축소하지 않고</li>
+<li>사역자의 자리: 시편 23편 <strong>사망의 가장 음침한 골짜기에서 함께 걷는 것</strong> (<span class="wl-dead" title="위키 내부 링크">시23</span>)</li>
+<li>침묵과 함께함 속에서 오히려 <strong>말씀이 필요할 때 위로와 통찰을 더 잘 제공</strong>할 수 있다</li>
+</ul>
+<hr />
+<h3>인도(Guidance)의 원칙</h3>
+<blockquote>
+<p>인도는 사람의 삶을 <strong>지도하는 것이 아니라</strong>,<br />
+그 사람에게 자신의 삶의 일부였던 <strong>잊혀진 자원들을 일깨워주는 것</strong>이다</p>
+</blockquote>
+<ul>
+<li>새 자원을 주입하는 것이 아닌 <strong>옛 자원을 회복</strong>하는 데 초점</li>
+<li>하나님의 약속: 그 생명과 <strong>분리되지 않는다</strong>는 약속을 함께 숙고하도록 돕는다</li>
+</ul>
+<hr />
+<h2>연결 고리</h2>
+<h3>목회상담과의 연결</h3>
+<ul>
+<li><a class="wl" href="../../t/%EB%AA%A9%ED%9A%8C%EC%83%81%EB%8B%B4/">목회상담</a> — 위기상담(상실/애도)의 실천적 원칙</li>
+<li><span class="wl-dead" title="위키 내부 링크">목회학개론</span> — "상실의 위기" 단원과 직접 연결</li>
+</ul>
+<h3>성경 본문</h3>
+<ul>
+<li><strong>요 11장</strong> (<span class="wl-dead" title="위키 내부 링크">요11</span>) — 나사로의 죽음 앞에서 침묵하신 예수님; 현존 사역의 원형</li>
+<li><strong>시편 23편</strong> (<span class="wl-dead" title="위키 내부 링크">시23</span>) — 음침한 골짜기를 함께 걷는 목자 = 목회자의 모델</li>
+</ul>
+<h3>윤명숙 전도사님과의 연결</h3>
+<ul>
+<li><strong>마 9:36 긍휼히 여기는 마음</strong> — 현존과 침묵의 사역은 긍휼의 실천 형태</li>
+<li><a class="wl" href="../../t/%EA%B8%8D%ED%9C%BC/">긍휼</a> — "아무도 알아주지 않는 곳에서의 섬김이 영성"과 공명</li>
+</ul>
+<hr />
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EB%AA%A9%ED%9A%8C%EC%83%81%EB%8B%B4/">목회상담</a></li>
+<li><a class="wl" href="../../t/%EA%B8%8D%ED%9C%BC/">긍휼</a></li>
+<li><span class="wl-dead" title="위키 내부 링크">요11</span></li>
+<li><span class="wl-dead" title="위키 내부 링크">시23</span></li>
+<li><span class="wl-dead" title="위키 내부 링크">목회학개론</span></li>
+</ul>
+</article>
+<div class="tagrow"><span>#목회상담</span><span>#애도</span><span>#상실</span><span>#슬픔</span><span>#영혼돌봄</span><span>#현존</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

@@ -1,0 +1,182 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>AI와 신앙 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:345">영성·제자도</span><span class="date">2026-05-18</span></div>
+  <h1 class="note-title">AI와 신앙</h1>
+  
+</header>
+<article class="note">
+<blockquote>
+<p>AI 시대에 기독교 신앙과 멘토링은 어떻게 재정립되어야 하는가?</p>
+</blockquote>
+<hr />
+<h2>1. AI의 역사적 맥락</h2>
+<p>1956년 다트머스 학술대회:</p>
+<blockquote>
+<p>"기계가 언어를 사용하고 추상화와 개념을 형성하면 현재 인간의 몫으로 남겨진 문제를 해결하고, 스스로를 개선하도록 만드는 방법을 찾기 위한 시도가 이루어질 것이다."</p>
+</blockquote>
+<p>AI는 갑자기 등장한 것이 아니다. 전기와 같다 — 상용화되면 생활·산업 구조에 혁명적 변화.</p>
+<p><strong>두려움 vs 패러다임 전환</strong>:
+- 세탁기·냉장고를 두려워할 필요 없듯 AI도 두려움의 대상이 아니다
+- 다만 패러다임은 반드시 변화해야 한다
+- 작동 원리 이해 + 한계 이해 + 함께 살아가는 능력이 필요</p>
+<hr />
+<h2>2. AI 시대의 역설 — 더 인간적인 인간이 필요하다</h2>
+<h3>"선교사가 용병을 이긴다" (샘 올트먼)</h3>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>동기</th>
+<th>AI 대체 가능성</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>용병(Mercenary)</td>
+<td>보상 중심</td>
+<td>✅ 대체 가능</td>
+</tr>
+<tr>
+<td>선교사(Missionary)</td>
+<td>사명 중심</td>
+<td>❌ 대체 불가</td>
+</tr>
+</tbody>
+</table>
+<p>부룬디 선교사 예화: 1000달러로 가족을 데리고 간 선교사 — 돈이 아닌 하나님을 위해 일하기 때문에 보상 기반 동기와 질적으로 다른 영향력.</p>
+<p>세스 고딘이 말하는 AI 시대가 요구하는 인간:
+- 더 인간적이고 더 다양한 인간관계를 맺는 사람
+- 열정과 활력이 있는 사람
+- 성향을 있는 그대로 볼 수 있는 사람
+- 우선순위를 협상할 줄 아는 사람
+- 불안에 떨지 않고 유용한 판단을 내리는 사람</p>
+<p>→ <a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%8B%A0%ED%95%99/">직업신학</a>, <a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a></p>
+<hr />
+<h2>3. AI 시대의 질문 능력</h2>
+<blockquote>
+<p>"질문의 수준이 그 사람의 능력을 보여주는 시대가 되었다."</p>
+</blockquote>
+<p>모든 질문에는 의도·목적·지식수준이 포함되어 있다. AI에게 올바른 질문을 하려면 올바른 전제가 필요하다.</p>
+<p><strong>부자 청년의 오류</strong>: "무슨 선한 일을 해야 영생을 얻습니까?"
+- 잘못된 전제 1: 공로주의 — 선한 일로 구원받는다
+- 잘못된 전제 2: 성선설 — 내 힘으로 선한 일을 할 수 있다
+→ 잘못된 전제가 잘못된 질문을 낳고, 잘못된 질문은 엉뚱한 답을 얻는다</p>
+<p>AI 시대 적용: AI에게 최대한 답을 얻을 수 있지만, 질문의 전제가 옳지 않으면 AI도 틀린 방향으로 인도한다.</p>
+<p>→ <span class="wl-dead" title="위키 내부 링크">마19</span></p>
+<hr />
+<h2>4. AI가 절대 할 수 없는 것: 침묵과 임재</h2>
+<blockquote>
+<p>"모든 것에 답이 필요한 것이 아니라 아무 말 않고 있어줄 사람이 필요하다. 이것은 인격적인 존재만 할 수 있다." — 문대원 목사</p>
+</blockquote>
+<p>AI는 항상 대답하려 한다. 그러나 진정한 멘토링은:
+1. <strong>침묵(Silence)</strong> — 답이 없는 공간을 함께 견디는 것
+2. <strong>임재(Presence)</strong> — 그 자리에 있어주는 것</p>
+<p>항공기 고어라운드 예화: 강풍 속 조종사의 판단은 오랜 경험과 직관에서 나온다. 기계가 대체할 수 없다.</p>
+<p>몽테뉴의 지혜론:</p>
+<blockquote>
+<p>"다른 사람의 지식으로 지식인이 될 수 있지만 다른 사람의 지혜로 지혜자가 될 수는 없다."</p>
+</blockquote>
+<p>지식(Knowledge) ≠ 지혜(Wisdom). AI는 지식의 총합을 줄 수 있지만, 지혜는 삶의 경험과 인격적 관계를 통해서만 형성된다.</p>
+<p>→ <a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a>, <a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%ED%9B%88%EB%A0%A8/">제자훈련</a></p>
+<hr />
+<h2>5. AI 시대 멘토링의 신학적 근거</h2>
+<p>온전함(마 5:48, 엡 4:13)은 전인격적 앎을 통해 이루어진다.
+- 십계명 암송·준수로 오는 것이 아니다
+- 지속적인 인격적 관계 안에 거할 때 온전함을 이룬다</p>
+<p>AI는 정답을 줄 수 있지만, "나를 따르라"는 예수님의 초청은 정보 전달이 아닌 관계다.</p>
+<p>→ <span class="wl-dead" title="위키 내부 링크">성숙과제자도</span> (AI시대멘토링, 문대원, 2026-05-18)
+→ <span class="wl-dead" title="위키 내부 링크">마19</span>, <span class="wl-dead" title="위키 내부 링크">마5</span>, <span class="wl-dead" title="위키 내부 링크">엡4</span></p>
+<hr />
+<h2>미해결 질문</h2>
+<ul>
+<li>AI가 발전할수록 인간이 돌봐야 할 고유한 영역은 무엇인가?</li>
+<li>디지털 네이티브 세대에게 "인격적 관계"를 어떻게 가르칠 것인가?</li>
+<li>교회는 AI 시대의 침묵·임재 영성을 어떻게 훈련할 것인가?</li>
+</ul>
+</article>
+<div class="tagrow"><span>#AI</span><span>#기술신학</span><span>#멘토링</span><span>#인공지능</span><span>#소명</span><span>#온전함</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

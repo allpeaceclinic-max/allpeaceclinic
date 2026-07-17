@@ -1,0 +1,365 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>창조, 타락, 구속 (알버트 월터스) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="author">알버트 월터스</span><span class="date">2026-05-05</span></div>
+  <h1 class="note-title">창조, 타락, 구속 (알버트 월터스)</h1>
+  
+</header>
+<article class="note">
+<h2>개요</h2>
+<ul>
+<li><strong>저자</strong>: 알버트 월터스 (Albert Wolters)</li>
+<li><strong>위치</strong>: 기독교 세계관 클래식 입문서</li>
+<li><strong>배경</strong>: 도예베르트·볼렌호벤의 개혁주의 철학 입문서로 집필</li>
+</ul>
+<h2>★ 핵심 명제</h2>
+<blockquote>
+<p><strong>구조(創造 질서)와 방향(죄/구속)을 구분하라.<br />
+세상의 어떤 것도 구조 자체가 악하지 않다 —<br />
+악은 방향의 문제다. 구속은 구조를 새롭게 하는 것이지, 버리는 것이 아니다.</strong></p>
+</blockquote>
+<h2>1. 세계관이란</h2>
+<blockquote>
+<p>'한 사람이 사물들에 대해 가지는 근본적 신념들의 포괄적인 틀'</p>
+</blockquote>
+<ul>
+<li>세계관은 삶을 인도하는 나침반·약도</li>
+<li>철학: 사물의 <strong>구조</strong>에 초점 / 신학: 사물들의 <strong>방향</strong>에 초점</li>
+<li>세계관은 구조와 방향 모두에 관심</li>
+</ul>
+<h2>2. 창조</h2>
+<p>하나님의 법이 세계를 지배하는 방식 2가지:
+- <strong>자연법칙</strong>: 비인간 영역 — 직접적·강제적
+- <strong>규범</strong>: 문화·사회 영역 — 매개적, 인간이 하나님의 동역자</p>
+<p>창조의 발전:
+- 창조는 완성된 상태가 아니라 <strong>성장과 개발의 과정</strong>
+- 인간을 통해 창조가 발전됨 (경작하며 지키라 — 창 2)
+- 모든 문명·문화는 창조의 발전에 속한다</p>
+<p>창조의 선함:
+- 인본주의: 법 = 자유의 부정
+- 성경: 법 = <strong>자유의 조건</strong></p>
+<h2>3. 핵심 개념 — 구조와 방향</h2>
+<table>
+<thead>
+<tr>
+<th>구조 (Structure)</th>
+<th>방향 (Direction)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>창조의 질서 — 사물을 사물 되게 하는 것</td>
+<td>죄와 구속의 질서 — 이중적 방향</td>
+</tr>
+<tr>
+<td>불변적 창조 구조</td>
+<td>하나님을 향함(구속) / 등짐(타락)</td>
+</tr>
+<tr>
+<td>일반은총으로 보존됨</td>
+<td>변화·갱신의 대상</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>구조를 방향과 혼동하는 것이 영지주의와 이원론의 오류다.</strong><br />
+악은 구조 안에 있지 않다 — 악은 방향의 문제다.</p>
+</blockquote>
+<h2>4. 타락의 범위</h2>
+<ul>
+<li>롬 8:22 — 피조물이 함께 탄식함</li>
+<li>타락은 <strong>지상적 창조 세계 전체</strong>에 영향</li>
+<li>단 구조 자체가 소멸되지는 않음 (일반은총)</li>
+</ul>
+<h2>5. 구속 = 회복</h2>
+<blockquote>
+<p><strong>구속은 창조에 무언가를 첨가하는 것이 아니라,<br />
+손상되지 않은 창조 세계의 선한 상태로 돌아가는 것.</strong></p>
+</blockquote>
+<ul>
+<li>구속의 범위: 창조 세계의 어떤 영역에 국한되지 않음 — <strong>삶 전체</strong></li>
+<li>경건주의 오류: "하나님 나라 = 내 안에" → 교회와 세상 이분법 생성</li>
+<li>세대주의 오류: "하나님 나라 = 미래 사건" → 현재의 책임 회피</li>
+<li>자유주의 오류: "하나님 나라 = 인도적 진보" → 마르크스주의·해방신학</li>
+</ul>
+<h2>6. 개혁의 의미</h2>
+<blockquote>
+<p><strong>성별(consecration)이 아니라 성화(sanctification)<br />
+구별이 아니라 갱신 — 내부로부터의 변화 (누룩)</strong></p>
+</blockquote>
+<p>개혁 = Reformation:
+- <strong>혁명에 반대</strong>: 전면적 파괴 불가 (구조는 창조적으로 선함)
+- <strong>현상유지에 반대</strong>: 방향이 왜곡되었으므로 치열한 사회 개혁을 추진
+- <strong>Status quo는 그리스도인에게 결코 옳은 말이 아니다</strong></p>
+<table>
+<thead>
+<tr>
+<th>강조점</th>
+<th>입장</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>구조 강조 →</td>
+<td>혁명에 동조 불가</td>
+</tr>
+<tr>
+<td>방향 강조 →</td>
+<td>무사안일 보수주의에 반대</td>
+</tr>
+</tbody>
+</table>
+<h2>7. 세계관의 역할 — 후기</h2>
+<blockquote>
+<p><strong>세계관은 복음이 아니다.<br />
+세계관은 복음의 상황화 작업을 돕는 중재자다.</strong></p>
+</blockquote>
+<ul>
+<li>복음: 구원에 이르게 하는 하나님의 능력</li>
+<li>세계관: 교회가 선교 사역을 잘 감당하도록 복음의 구조적 특징을 설명하는 인간적 시도</li>
+<li><strong>세계관 정립 = 복음과 하나님 백성의 선교적 소명 사이의 중재</strong></li>
+</ul>
+<h2>8. 세계관 운동에 대한 비판과 응답</h2>
+<h3>비판 1 — 지성주의 함정 (James K.A. Smith)</h3>
+<blockquote>
+<p>"세계관을 바꾸면 삶이 바뀐다"는 전제가 지나치게 지성주의적이다.</p>
+</blockquote>
+<p><strong>비판</strong>: 인간은 먼저 <em>생각하는 존재</em>가 아니라 <em>욕망하고 예배하는 존재</em>다.
+세계관 교육이 명제적 정보 전달에 그치면 습관과 욕망은 바뀌지 않는다.</p>
+<p><strong>월터스 자신의 인정</strong>:</p>
+<blockquote>
+<p>"세계관은 복음이 아니다. 복음은 구원에 이르게 하는 능력인데 비해
+세계관은 인간적 시도일 뿐이다." (후기)</p>
+</blockquote>
+<p><strong>답이 있는 곳</strong>:
+- <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%84%B8%EA%B3%84%EA%B4%80/">기독교세계관</a> — "세계관 교육은 정보 전달이 아니라 상상력의 형성" (James Smith)
+- 이상협 세계관 강의 1강: "일보다 관계가 더 중요" — Being &gt; Doing
+- → <strong>결론: 세계관은 교육이 아니라 제자도의 문제다</strong></p>
+<hr />
+<h3>비판 2 — 내러티브 환원 위험 (월터스 스스로)</h3>
+<blockquote>
+<p>"창조-타락-구속으로 환원하는 시도 자체가 성경의 내러티브 구조를 손상시킬 수 있다." (p.189)</p>
+</blockquote>
+<p>N.T. 라이트 계열: 세계관은 이야기에서 추출된 2차 파생물이다.
+이야기 자체가 더 근본적이며, 명제적 틀로 환원하면 생명력이 죽는다.</p>
+<p><strong>답이 있는 곳</strong>:
+- 월터스 후기에서 이미 자기 비판적으로 인정: "성경 이야기 자체가 궁극적 세계관 범주"
+- 문대원 목사 세계관 시리즈: "창타구 이야기" — 명제가 아닌 이야기로 가르침
+- 이상협 강의: "전체 이야기 창타구완" — 내러티브 구조 유지
+- → <strong>해결 방향: 창타구를 '명제 체계'가 아닌 '이야기로 들어가는 문'으로 쓸 것</strong></p>
+<hr />
+<h3>비판 3 — 정치화·이데올로기화 위험 (오스 기니스)</h3>
+<blockquote>
+<p>세계관이 정치적 이데올로기로 변질될 수 있다.
+기독교 세계관이 특정 정치 진영의 언어가 되는 순간 복음이 아닌 이데올로기가 된다.</p>
+</blockquote>
+<p><strong>답이 있는 곳</strong>:
+- <a class="wl" href="../../b/%EC%A0%95%EC%B9%98%EA%B3%B5%EA%B0%84%EC%97%90%EA%B7%B8%EB%A6%AC%EC%8A%A4%EB%8F%84%EC%9D%B8%EC%9C%BC%EB%A1%9C%EC%84%9C%EA%B8%B0/">정치공간에그리스도인으로서기</a> — 이데올로기 우상: 좌편은 정의로, 우편은 자유로 기득권을 포장
+- <span class="wl-dead" title="위키 내부 링크">라이홀드니버</span> — 집단 안에서 개인 도덕성 실종
+- 이상협 강의 3강: "좌파의 정의 vs 우파의 정의 vs 성경의 정의(쩨다카)"
+  → 성경의 쩨다카는 기존 이데올로기 어느 쪽도 아니다
+- → <strong>해결: 세계관이 정치 진영이 아닌 '이야기'에 뿌리내릴 때 이데올로기 함정을 피한다</strong></p>
+<hr />
+<h3>비판 4 — 문화 제국주의 위험</h3>
+<blockquote>
+<p>서구 개혁주의 전통에서 나온 "기독교 세계관"을 비서구권에 적용하는 것이
+또 다른 문화 패권이 될 수 있다.</p>
+</blockquote>
+<p><strong>답이 있는 곳</strong>:
+- <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> — 앤드류 월스: "성경책 번역이 아닌 그리스도를 번역하는 것"
+- <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> — 성육신적 선교: 복음 ≠ 문화, 그러나 복음은 문화를 통해 전해짐
+- 이상협 강의 3강: "그들이 차려 놓은 것을 먹는다" — 참여의 영성
+- → <strong>부분적으로 답이 있음. 비서구 신학자들의 세계관 재해석은 여전히 필요</strong></p>
+<hr />
+<h3>★ 미해결 과제</h3>
+<ol>
+<li>
+<p><strong>세계관 교육의 체화(embodiment) 문제</strong>:
+   "창타구완"을 알아도 일상이 바뀌지 않는다.
+   어떤 실천·공동체·습관이 세계관을 몸에 새기는가?
+   → James Smith의 답: 예전적 실천(liturgy) / 이상협의 힌트: 솔리타리+커뮤니티 라이프</p>
+</li>
+<li>
+<p><strong>고통과 세계관</strong>:
+   창타구 프레임이 "왜 선한 창조에 이토록 많은 고통이?"에 얼마나 답하는가?
+   → <a class="wl" href="../../b/%EC%A0%84%EB%8F%84%EC%84%9C_%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%86%A0%ED%8D%BC%EB%9D%BC%EC%9D%B4%ED%8A%B8/">전도서_크리스토퍼라이트</a> 헤벨·질문하는 믿음 연결
+   → <a class="wl" href="../../t/%EC%9D%98%EC%8B%AC/">의심</a> §5 질문하는 믿음</p>
+</li>
+<li>
+<p><strong>비서구권 세계관</strong>:
+   한국·아시아 맥락에서 창타구완을 어떻게 재해석할 것인가?
+   → 현재 vault에 미답변 상태</p>
+</li>
+</ol>
+<h2>이상협 강의와의 연결</h2>
+<p>이상협 세계관 강의 1·2·3강 (청년부)</p>
+<p>이상협 강의의 뼈대가 월터스의 프레임 위에 세워져 있다:</p>
+<table>
+<thead>
+<tr>
+<th>월터스</th>
+<th>이상협 강의</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>창조-타락-구속의 전체 이야기</td>
+<td>"전체이야기 창타구완" — 강의 반복 핵심</td>
+</tr>
+<tr>
+<td>구조와 방향의 구분</td>
+<td>"교회와 교회 너머, 성전과 성문앞"</td>
+</tr>
+<tr>
+<td>구속 = 회복</td>
+<td>"하나님의 선교에 참여 = 보내심"</td>
+</tr>
+<tr>
+<td>개혁 = 내부로부터 갱신 (누룩)</td>
+<td>"세상에 동화되지 않고 변화시키는 그리스도인"</td>
+</tr>
+<tr>
+<td>쩨다카·미쉬파트</td>
+<td>레19장 페아트 싸데 — 체다카가 정의 (3강)</td>
+</tr>
+<tr>
+<td>세계관 = 선교적 소명의 중재</td>
+<td>"내러티브 싸움이다. 성경적 세계관은 먹힌다."</td>
+</tr>
+</tbody>
+</table>
+<p>이상협 강의 3강의 핵심 흐름:
+<code>보내심 → 들어감 → 참여의 영성 → 샬롬 추구 → 쩨다카 실천 → Life as Mission</code>
+= 월터스의 <strong>구속/회복 → 방향 전환 → 사회 갱신</strong> 구조를 선교 언어로 번역한 것</p>
+<h2>선교신학과의 연결</h2>
+<p><span class="wl-dead" title="위키 내부 링크">LAMs</span> — 하나님 백성의 선교 (크리스토퍼 라이트)</p>
+<table>
+<thead>
+<tr>
+<th>월터스</th>
+<th>LAMs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>창조-타락-구속</td>
+<td>4막 드라마 (창조-타락-구속-새창조)</td>
+</tr>
+<tr>
+<td>구조는 선함 → 회복 가능</td>
+<td>3과: 창조 세계 돌보는 백성</td>
+</tr>
+<tr>
+<td>구속의 범위 = 삶 전체</td>
+<td>"온 교회, 온 복음, 온 세계" (로잔)</td>
+</tr>
+<tr>
+<td>이원론 거부</td>
+<td>이원론(성직/세속) 극복</td>
+</tr>
+<tr>
+<td>세계관 = 선교 중재</td>
+<td>"삶 자체가 선교"</td>
+</tr>
+</tbody>
+</table>
+<p><a class="wl" href="../../b/%EC%A7%81%EC%9E%A5%EC%9D%B8%EC%9D%B4%EB%9D%BC%EB%A9%B4%EB%8B%A4%EB%8B%88%EC%97%98%EC%B2%98%EB%9F%BC/">직장인이라면다니엘처럼</a> 연결:
+- 다니엘의 수용(개명·학문) vs 거부(음식) = <strong>구조와 방향의 분별</strong>
+- 회식 사역 = 구조(문화)는 참여하되, 방향(정체성)은 지킴</p>
+<h2>관련 연결</h2>
+<ul>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%84%B8%EA%B3%84%EA%B4%80/">기독교세계관</a> — 개념 허브</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> — 세계관과 선교의 연결</li>
+<li><a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%8B%A0%ED%95%99/">직업신학</a> — 모든 직업이 선교 영역</li>
+<li><a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a> — 부르심과 보내심</li>
+<li><span class="wl-dead" title="위키 내부 링크">LAMs</span> — 삶의 선교 훈련</li>
+<li><a class="wl" href="../../b/%EC%A7%81%EC%9E%A5%EC%9D%B8%EC%9D%B4%EB%9D%BC%EB%A9%B4%EB%8B%A4%EB%8B%88%EC%97%98%EC%B2%98%EB%9F%BC/">직장인이라면다니엘처럼</a> — 구조/방향 분별의 실천 예</li>
+<li><a class="wl" href="../../b/%EC%A0%95%EC%B9%98%EA%B3%B5%EA%B0%84%EC%97%90%EA%B7%B8%EB%A6%AC%EC%8A%A4%EB%8F%84%EC%9D%B8%EC%9C%BC%EB%A1%9C%EC%84%9C%EA%B8%B0/">정치공간에그리스도인으로서기</a> — 이데올로기화 위험</li>
+<li><span class="wl-dead" title="위키 내부 링크">라이홀드니버</span> — 집단 안에서의 방향 왜곡</li>
+</ul>
+</article>
+<div class="tagrow"><span>#기독교세계관</span><span>#창조타락구속</span><span>#개혁주의</span><span>#문화변혁</span><span>#선교신학</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

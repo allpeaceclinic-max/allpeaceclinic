@@ -1,0 +1,214 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>세계기독교 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="date">2026-07-18</span></div>
+  <h1 class="note-title">세계기독교</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>세계기독교(World Christianity)는 기독교가 서구의 특정 문화·제도 형태에 귀속된 종교가 아니라, 세계 각 지역의 언어·문화·역사 안에서 다양하게 구현되는 다중심적(polycentric) 신앙 운동임을 강조하는 학문적·선교학적 개념이다. 서구가 기독교의 중심이고 비서구는 선교 대상이라는 20세기 중반까지의 도식을 해체하며, 기독교 무게중심의 남반구 이동이 이 개념의 핵심 지표다. 임태순 선교사가 앤드류 월스를 빌려 정의하듯, 세계기독교는 "다양성 위에서 그려지는 통합"을 설명하기 위해 새롭게 벼려진 개념이다.</p>
+<p>이 페이지는 세계기독교라는 <em>현상과 기술(記述)</em>을 다룬다. 그 현상이 선교 전략과 구조를 어떻게 재편하는가 — 이분법 언어의 극복, 선교단체의 다중심적 재편, "어디서나 어디로나"의 전략 — 는 <a class="wl" href="../../t/%EB%8B%A4%EC%A4%91%EC%8B%AC%EC%A0%81%EC%84%A0%EA%B5%90/">다중심적선교</a>가 전담하고, 번역가능성의 실천은 <a class="wl" href="../../t/%EC%83%81%ED%99%A9%ED%99%94/">상황화</a>가 맡는다. 여기서 좇는 것은 기독교의 지형 자체가 어떻게 바뀌었으며, 그 새로운 지형이 어떤 얼굴을 하고 있는가이다.</p>
+<h2>1. 무게중심의 남반구 이동</h2>
+<p>세계기독교를 규정하는 첫째 사실은 인구통계다. 20세기 초에는 세계 기독교 인구의 80% 이상이 유럽과 북미에 집중되어 있었으나, 한 세기 만에 무게중심이 남반구로 넘어갔다.</p>
+<table>
+<thead>
+<tr>
+<th>연도</th>
+<th>서구(유럽·북미)</th>
+<th>비서구(아프리카·아시아·라틴아메리카)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1900</td>
+<td>82%</td>
+<td>18%</td>
+</tr>
+<tr>
+<td>2020</td>
+<td>33%</td>
+<td>67%</td>
+</tr>
+<tr>
+<td>2050(예상)</td>
+<td>23%</td>
+<td>77%</td>
+</tr>
+</tbody>
+</table>
+<p>이 역전은 단순한 통계가 아니다. 티모시 텐넨트가 그린 상징이 그 실감을 준다 — 전형적인 그리스도인은 이제 "런던의 백인"이 아니라 "나이지리아의 흑인"이다. 오늘의 대표적 신자는 나이지리아 시골의 한 여인이다. 반대로 크리스텐덤의 심장이던 영국은 명목상 기독교 국가이나 실제 예배 참석률은 4% 실상이며, 대다수가 "속해 있지만 믿지 않는 사람들"이다. 데이나 로버트가 이를 "실패한 비전과 성취된 꿈"으로 요약한다 — 크리스텐덤의 확장(서구 기독교 세계를 온 땅에 심으려던 비전)은 실패했으나, 세계화된 기독교(각 문화에 뿌리내린 다양한 교회)라는 꿈은 성취되었다. (재정·신학 교육의 불균형 등 이 이동의 구조적 상세는 <a class="wl" href="../../t/%EB%8B%A4%EC%A4%91%EC%8B%AC%EC%A0%81%EC%84%A0%EA%B5%90/">다중심적선교</a>에 위임한다.)</p>
+<h2>2. 다중심(polycentric) 기독교 — 서구는 여러 중심 중 하나</h2>
+<p>무게중심의 이동은 더 근본적인 재인식으로 이어진다. 기독교에는 이제 하나의 중심이 없다. 서구는 세계 기독교의 중심이 아니라 여러 중심 가운데 하나다. 이것이 월버트 쉥크가 명명한 다중심적(polycentric) 기독교이며, 앤드류 월스는 이 다중심성이 21세기의 새로운 현상이 아니라 기독교의 본래 모습이라고 논증한다.</p>
+<p>월스의 통찰은 역사로 거슬러 올라간다. 히포리투스가 쓴 「사도적 전통」의 엄청난 사본들이 증언하듯, 초기 기독교는 처음부터 다문화였고 "다양성 안의 통일성"으로 존재했다. 이 다문화 기독교가 크리스텐덤 아래에서 서구 일원(一元)으로 압축되었다가, 21세기에 이르러 신약 시대 교회의 다문화 모델로 회귀하고 있다는 것이다. 월스의 표현으로 복음은 "문화의 포로이자 해방자"다 — 어느 문화에도 매이지 않기에 모든 문화로 번역될 수 있다. 사무엘 에스코바가 이 다중심성의 신학적 결론을 못박는다 — "모든 문화를 상대화하며, '성스러운' 문화나 언어는 없다." 서구 기독교조차 하나의 지역적 표현일 뿐, 규범적 원본이 아니다. 그래서 세계기독교 시대의 과제는 "다수의 기독교에서 신학도 나와야 한다"는 것이다 — 신학이 아직도 서구 중심이라는 현실이 바로 아직 도달하지 못한 지점이다.</p>
+<h2>3. 남반구 기독교의 특징 ⚖️</h2>
+<p>남반구 기독교는 서구 기독교의 축소판이 아니라 다른 얼굴을 하고 있다. 마이클 고힌의 관찰이 그 특징을 압축한다 — "남반구 교회는 신학적으로 보수적이고, 은사주의적이며, 초자연적인 것이 강하다." 필립 젠킨스가 『신의 미래』에서 그린 남반구 기독교의 초상도 같은 방향이다. 그 특징을 정리하면 성령운동·은사주의의 활력, 초자연적 실재에 대한 예민한 감각, 구술·서사 중심의 신앙 전수, 그리고 부족·확대가족의 공동체성이다. 사하라 이남 아프리카의 기독교는 세계 최고의 성장률과 예배 참석률을 보이며, 아프리카 독립교회(African Independent Churches)는 수억 명에 이른다.</p>
+<p>여기서 균형이 필요하다. 서구의 관점에서 남반구 기독교의 보수성과 초자연주의를 신학적 미성숙이나 퇴보로 읽으려는 유혹이 있다. 고힌 자신이 이 유혹을 정직하게 드러낸다 — "퇴보인가? 어쩌면 이것이 비서구 중심이라서 그럴 수도 있다." 판단을 서구 잣대에 고정하면 차이는 곧 열등이 된다. 그러나 세계기독교의 시각은 이를 우열이 아니라 차이로 본다. 남반구 기독교는 전통적 서구 신학이 답하지 못했던 질문들 — 조상 숭배, 가난, 부족 공동체, 영적 세력 — 에 응답하는 방식으로 오히려 기독교를 풍요롭게 하고 있다. 동시에 낭만화도 경계해야 한다. 르완다에서 인구의 95%가 기독교인이었으나 후투족이 투치족을 학살한 사례가 보여주듯, 남반구 교회의 활력이 곧 성숙의 보증은 아니다. 균형은 두 방향으로 걷는다 — 서구의 잣대로 남반구를 재단하지 않으면서, 어느 지역 기독교도 무비판적으로 이상화하지 않는 것.</p>
+<h2>4. "모든 곳에서 모든 곳으로"의 선교</h2>
+<p>세계기독교는 선교의 방향 자체를 재정의한다. "서구에서 나머지로(From the West to the Rest)"라는 단방향 도식은 해체되고, 마이클 고힌이 첫 번째 전환으로 꼽은 "모든 곳에서 모든 곳으로(From everywhere to everywhere)"의 다중심적 선교가 부상한다. 선교는 더 이상 중심(서구)에서 주변(비서구)으로 흐르는 일방통행이 아니라, 모든 교회가 파송하고 모든 교회가 배우는 상호 순환이다.</p>
+<p>이 다중심 선교의 가장 구체적인 통로가 <a class="wl" href="../../t/%EB%94%94%EC%95%84%EC%8A%A4%ED%8F%AC%EB%9D%BC%EC%84%A0%EA%B5%90/">디아스포라</a>다. 앤드류 월스의 명제 — "모든 이주(migration)는 복음의 이동이다" — 처럼, 유례없는 대이주의 시대는 무게중심 이동의 원인이자 결과다. 흩어진 아프리카·아시아 그리스도인이 유럽과 북미로 이주해 그곳에 교회를 세우고(역파송), 서구가 다시 비서구로부터 복음을 받는 역전이 실제로 일어난다. 세계기독교는 이 흐름의 지형도이고, 디아스포라 선교는 그 지형 위의 전략이다. 다만 번역가능성과 자신학화(폴 히버트의 세 객관 기준 — 성경·성령·하나님 백성의 공동체)를 통한 각 지역의 자기 신학 형성, 그리고 선교 구조의 재편이라는 실천적 전개는 <a class="wl" href="../../t/%EB%8B%A4%EC%A4%91%EC%8B%AC%EC%A0%81%EC%84%A0%EA%B5%90/">다중심적선교</a>에 위임한다.</p>
+<h2>5. 한국 교회의 위치 — 받는 교회에서 동반자로</h2>
+<p>한국 교회는 이 전환의 중간 세대에 서 있다. 그 여정은 세 단계로 그려진다.</p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>한국 교회의 자리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>받는 교회</td>
+<td>19–20세기 서구 선교의 수혜국</td>
+</tr>
+<tr>
+<td>보내는 교회</td>
+<td>20세기 후반 세계 최대급 파송 대국</td>
+</tr>
+<tr>
+<td>동반자</td>
+<td>21세기 다중심 협력의 대등한 참여자</td>
+</tr>
+</tbody>
+</table>
+<p>한국 교회의 위험은 두 번째 단계에 안주하는 것이다. 파송 대국의 위상을 서구 선교 모델의 복제로 유지하려는 태도다. 임태순 선교사의 지적이 날카롭다 — "한국 교회는 선교 역사를 가르칠 때 '확장했다'고 가르친다. 이것이 바뀌어야 한다." 확장(expansion)의 언어는 크리스텐덤의 정복 패러다임에 속하며, 세계기독교 시대에는 소통과 동반의 언어로 옮겨져야 한다. 김정민의 강의는 한국 교회의 선교 태도를 세 유형으로 진단한다 — 서구 모델을 그대로 복제하는 태도, 변화에 무관심한 태도, 그리고 변화하는 세계를 읽고 새로운 역할을 찾는 태도. 세계기독교 이해는 한국 교회가 세 번째 태도, 곧 다중심 협력의 동반자로 이행하는 데 필수적인 인식론적 자원이다. 로잔4 대회에서 "이제 서양 사람은 조용히 하라"는 목소리가 나오는 시대에, 한국 교회의 자리는 앞장서는 지도자가 아니라 "다름의 공존, 그리고 협력"의 겸손한 동반자다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>세계기독교는 통계적 사실이자 신학적 도전이다 — 무게중심이 한 세기 만에 서구 82%에서 비서구 67%(2020)로 역전되었다.</li>
+<li>다중심(polycentric) 기독교는 21세기의 새 현상이 아니라 기독교의 본래 모습이다. 서구는 여러 중심 중 하나이며 규범적 원본이 아니다.</li>
+<li>남반구 기독교(은사주의·초자연·공동체성·보수성)는 서구 잣대로 재단할 퇴보가 아니라 차이다 — 다만 낭만화도 경계해야 한다(르완다의 역설).</li>
+<li>"모든 곳에서 모든 곳으로"의 다중심 선교가 단방향 도식을 대체하며, 디아스포라가 그 가장 구체적인 통로다.</li>
+<li>한국 교회는 받는 교회→보내는 교회→동반자의 세 번째 단계로 이행 중이며, "확장"의 언어를 "소통·동반"의 언어로 바꾸는 것이 과제다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>세계기독교의 다양성과 신학적 정통성의 긴장은 어떻게 다루어야 하는가 — 어디까지가 풍요로운 차이이고 어디부터가 혼합주의인가.</li>
+<li>남반구 기독교를 "차이로 존중"하는 것과 그 안의 실제 문제(르완다·번영신학)를 비판하는 것은 어떻게 양립하는가.</li>
+<li>한국 교회가 다중심 협력 안에서 차지할 독자적 기여는 무엇이며, 파송 대국의 관성을 어떻게 내려놓는가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EB%8B%A4%EC%A4%91%EC%8B%AC%EC%A0%81%EC%84%A0%EA%B5%90/">다중심적선교</a> — "어디서나 어디로나"의 선교 전략, 이분법 극복, 선교단체 재편. 세계기독교 현상의 전략적 함의.</li>
+<li><a class="wl" href="../../t/%EB%94%94%EC%95%84%EC%8A%A4%ED%8F%AC%EB%9D%BC%EC%84%A0%EA%B5%90/">디아스포라선교</a> — 무게중심 이동의 통로이자 결과. "모든 이주는 복음의 이동."</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%ED%8C%A8%EB%9F%AC%EB%8B%A4%EC%9E%84/">선교패러다임</a> — 패러다임 시프트의 역사적 흐름.</li>
+<li><a class="wl" href="../../t/%EC%83%81%ED%99%A9%ED%99%94/">상황화</a> — 번역가능성의 실천적 표현.</li>
+<li><span class="wl-dead" title="위키 내부 링크">앤드류월스</span> — 세계기독교론의 핵심 이론가. "복음은 문화의 포로이자 해방자."</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>임태순, 「변화하는 세계 기독교와 선교」</td>
+<td>강의·책</td>
+<td>무게중심 통계(2020 33/67, 2050 23/77), 월스의 다중심성, 데이나 로버트("실패한 비전과 성취된 꿈"), 텐넨트, 영국 4% 실상, 고힌의 남반구 특징, 젠킨스</td>
+</tr>
+<tr>
+<td>김정민, 「선교 동향 — 선교를 보다」</td>
+<td>강의</td>
+<td>한국 교회의 세 태도 진단, 세계기독교 시대의 인식론적 전환</td>
+</tr>
+<tr>
+<td>장창수, 「새 시대, 새로운 선교 패러다임」</td>
+<td>강의</td>
+<td>세계기독교를 새 선교 패러다임의 출발점으로 정의, 비서구 교회의 역할 재정립</td>
+</tr>
+<tr>
+<td>마이클 고힌 / 필립 젠킨스</td>
+<td>참고 신학</td>
+<td>남반구 교회의 특징(은사주의·초자연·보수), 무게중심의 남·동 이동</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/선교</span><span>#discipline/선교신학</span><span>#남반구기독교</span><span>#다중심성</span><span>#세계기독교운동</span><span>#무게중심이동</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

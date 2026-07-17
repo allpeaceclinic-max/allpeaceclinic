@@ -1,0 +1,138 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>문서선지자 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:174">성경·해석</span><span class="date">2026-07-03</span></div>
+  <h1 class="note-title">문서선지자</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>문서선지자는 자신의 이름으로 된 기록을 남긴 <a class="wl" href="../../t/%EC%84%A0%EC%A7%80%EC%84%9C/">선지서</a> 저자군을 가리키는 범주다. MBTS 구약개론II 4주차 강의("선지서란?")는 이 범주를 구체적인 시간 폭으로 못박는다 — 시작은 주전 760년경 아모스, 끝은 주전 5세기(444년경) 느헤미야의 성벽재건·에스라의 율법책 낭독(느8:1)으로 <a class="wl" href="../../t/%ED%86%A0%EB%9D%BC/">토라</a>가 정경으로 확정되는 시점이다. 이 300여 년 동안 15명의 문서선지자가 활약했다고 강의는 정리한다.</p>
+<h2>1. 시작점 — 앗수르 발흥기의 아모스</h2>
+<p>문서선지자 시대는 주전 760년경 아모스로 열린다. 배경은 앗수르의 등극과 주변국(암몬·모압·에돔·블레셋)과의 전쟁이다. 강의는 왕하15:9("심판의 도구"), 사7:18, 사10:5·12("앗수르의 교만 → 결국 앗수르도 멸망")를 근거로 제시하며, 이 시기가 이스라엘 역사에서 열강의 흥망과 선지자의 등장이 맞물리는 시점이었음을 보여준다.</p>
+<h2>2. 끝점 — 토라 정경화와 선지자 시대의 종결</h2>
+<p>강의가 제시하는 핵심 논지는, 문서선지자 시대가 도덕적 타락이나 신학적 이유가 아니라 하나의 사건으로 끝난다는 것이다. 주전 5세기 444년경, 느헤미야의 성벽재건 시기에 학사 에스라가 모세의 율법책을 낭독하며(느8:1) 이 책이 정경으로 자리잡는다. 강사는 이 전환을 한 문장으로 요약한다 — "굳이 선지자를 찾지 않아도, <a class="wl" href="../../t/%ED%86%A0%EB%9D%BC/">토라</a>를 읽으면 메시지를 들을 수 있다." 즉 살아있는 대언자를 통한 계시가 기록된 정경으로 대체되는 순간이 곧 문서선지자 시대의 종결점이다.</p>
+<h2>3. 메시지의 실질 — 사회정의</h2>
+<p>문서선지자들의 메시지는 미래 예언집이 아니라 "현실의 사람에게 하나님의 메시지를 전하는" 문헌이며, 그 비중은 회개 촉구와 <a class="wl" href="../../t/%EC%82%AC%ED%9A%8C%EC%A0%95%EC%9D%98/">사회정의</a> 요구에 있다는 것이 강의의 핵심 명제다. 사2장(열방이 토라의 학생이 되는 평화)에서 레19장(이삭줍기·이웃사랑)을 거쳐 암8장·암6:4(사회적 학대에 대한 심판), 사1:11-14(형식적 제사 비판)로 이어지는 본문 사슬이 이를 뒷받침하며, <span class="wl-dead" title="위키 내부 링크">렘9</span>:23-24("지혜·힘·부보다 인애·공의·정의를 아는 것을 자랑하라")가 이 메시지의 결론적 요약으로 제시된다.</p>
+<h2>4. 대언자와 중보자 — 쌍방향 소통</h2>
+<p>강의는 문서선지자의 역할을 대언(하나님→백성)에 국한하지 않고, 중보(백성→하나님)까지 포함한 쌍방향 소통으로 규정한다. 창18장(아브라함의 소돔을 위한 간구), 출32~34장(모세의 중보), 민14장(정탐 사건 후 간구)이 중보자 전통의 예로 제시되며, <span class="wl-dead" title="위키 내부 링크">모세</span>가 신18:15("나와 같은 선지자")에서 이후 모든 문서선지자의 원형으로 자리매김한다. 다만 <span class="wl-dead" title="위키 내부 링크">예레미야</span>에게는 "기도하지 말라"(렘11:14)는 예외적 명령이 내려져, 중보에도 한계가 있음을 보여주는 대조 사례로 다뤄진다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>문서선지자 시대는 신학적 쇠퇴가 아니라 정경화라는 명확한 사건으로 종결된다 — "굳이 선지자를 찾지 않아도 토라를 읽으면 된다"는 논리다.</li>
+<li>선지서의 실질 메시지는 미래 예측이 아니라 회개 촉구와 사회정의 실천 요구다.</li>
+<li>대언(하나님→백성)과 중보(백성→하나님)라는 쌍방향 역할이 <span class="wl-dead" title="위키 내부 링크">모세</span>로부터 <span class="wl-dead" title="위키 내부 링크">예레미야</span>까지 이어지되, 예레미야에게는 그 한계가 명시적으로 드러난다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>대소선지서 구분이 "길이"라는 형식적 기준 외에 신학적으로 어떤 의미를 갖는지는 이 강의에서 다뤄지지 않았다.</li>
+<li>포로기 이후 학개·스가랴·말라기가 문서선지자 범주 안에 있는지, 별도 범주로 다뤄야 하는지는 좀 더 명확히 할 필요가 있다.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%84%A0%EC%A7%80%EC%84%9C/">선지서</a> — 문서선지자가 속한 상위 장르 범주.</li>
+<li><a class="wl" href="../../t/%EC%82%AC%ED%9A%8C%EC%A0%95%EC%9D%98/">사회정의</a> — 문서선지자 메시지의 실질적 내용.</li>
+<li><span class="wl-dead" title="위키 내부 링크">04주_선지서개론</span> — 본 페이지의 1차 근거 강의.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">04주_선지서개론</span></td>
+<td>MBTS 강의</td>
+<td>문서선지자 시대의 시작점(아모스)·끝점(토라 정경화)·메시지의 실질(사회정의)·대언자·중보자 역할 전체 논지</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/구약학</span><span>#topic/선지서</span><span>#topic/사회정의</span><span>#topic/토라</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

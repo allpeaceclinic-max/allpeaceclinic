@@ -1,0 +1,391 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>자녀교육 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:25">상담·가정</span><span class="date">2026-07-17</span></div>
+  <h1 class="note-title">자녀교육</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>자녀교육은 자녀에게 무엇을 물려줄 것인가를 묻는 일이다. 이 볼트에서 이 주제는 진학이나 성적이나 인성 같은 세속적 양육 과제가 아니라, 한 세대의 믿음을 다음 세대에게 새겨 넣는 일 — 곧 <strong>가르침으로서의 신앙 전수(catechesis)</strong> 로 일관되게 다뤄진다. 부모를 어떻게 세울 것인가는 <a class="wl" href="../../t/%EB%B6%80%EB%AA%A8%EA%B5%90%EC%9C%A1/">부모교육</a>이 맡고, 그 신앙이 세대를 넘어 이어지는 신학은 <a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EC%A0%84%EC%88%98/">신앙전수</a>와 <a class="wl" href="../../t/%EC%84%B8%EB%8C%80%EC%A0%84%EC%88%98/">세대전수</a>가 맡는다. 이 페이지가 붙드는 것은 그 사이의 한 지점이다 — 부모가 자녀 앞에 서서 <strong>실제로 무엇을 가르치는가</strong>, 그 가르침의 내용(the content of catechesis)이다.</p>
+<p>네 편의 설교·강의가 서로 다른 본문에서 출발하지만 한 점으로 모인다. 권창규 목사는 에젤 가정사역 수련회에서 교육의 뿌리를 "교과학습이나 인격연마가 아니라 하나님을 경외하는 것"으로 못박고, 그 경외를 지식으로 아는 헬라식이 아니라 체험으로 아는 히브리식 '야다'로 규정한다. <span class="wl-dead" title="위키 내부 링크">김효진</span> 목사는 시편 1편에서 세상이 말하는 형통(무병·합격·승진)이 아니라 하나님과의 동행이라는 다른 기준을 자녀에게 물려주는 것이 교육의 목표라 증언하고, 잠언 20장에서는 그 목표가 재능이 아니라 성품에 있음을 짚는다. <span class="wl-dead" title="위키 내부 링크">김지찬</span> 교수는 같은 물음을 한국 사회의 성취 압력으로 번역하여, 신앙 없이 들어간 풍요의 땅이 도리어 자녀를 삼킬 수 있다고 경고한다.</p>
+<p>그러므로 이 글은 자녀교육을 방법론이 아니라 <strong>내용의 우선순위</strong> 문제로 읽는다. 목표를 성공에서 경건으로 돌리는 데서 출발해, 무엇을 먼저 가르칠 것인가(말씀·기도·성품), 어떤 환경에서 분별할 것인가, 연령의 결을 어떻게 따를 것인가, 어떤 방식으로 가르칠 것인가를 지나, 마침내 아무리 가르쳐도 끝내 가르칠 수 없는 것 앞에서 부모가 서는 자리에 이른다.</p>
+<h2>1. 성공이 아니라 경건 — 교육 목표의 전환</h2>
+<p>자녀교육의 첫 문장은 방법이 아니라 목표에 관한 것이다. 무엇을 위해 기르는가. 김효진 목사는 시편 1편의 "복 있는 사람"을 풀며 이 물음을 정면으로 세운다. 우리는 아프지 않기를, 시험을 잘 보기를, 승진하기를 바라며 그것을 만사형통이라 부르지만, 성경이 말하는 형통은 다른 곳을 가리킨다. 시냇가에 심긴 나무의 형통은 환경의 순조로움이 아니라 뿌리로 영양을 공급받아 철을 따라 열매 맺는 삶, 곧 "하나님과 동행, 예수님과 동행"이다. 그는 이것을 12년 불임과 26주 쌍둥이 조산 사별이라는 자신의 상실 위에서 증언한다. 죽고 싶은 심정에서도 끝내 "주의 지팡이와 막대기가 나를 안위하신다"는 고백에 이른 사람만이, 무병과 합격이 형통의 전부가 아님을 자녀에게 물려줄 수 있다.</p>
+<p>이 목표 전환은 곧 세속 교육 목표와의 정면 대조로 이어진다. 김효진 목사는 다른 설교에서 이를 한 문장으로 압축한다 — "이 세상에서 살아남기 위해 자녀를 기르지 말라." 생존과 경쟁의 논리로 자녀를 빚는 대신, 복음으로 무장시켜 세우는 것이 부모에게 위탁된 사명이라는 것이다. 여기서 그가 경계하는 것은 부모가 자녀를 자기 욕심(학벌·체면·대리만족)을 이루는 도구로 삼는 일이다. 자녀는 부모의 소유가 아니라 하나님이 맡기신 그릇이므로, 부모는 주인이 아니라 청지기로 서야 한다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>세상의 형통 (성공)</th>
+<th>하나님의 형통 (경건)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>기준</td>
+<td>무병·합격·승진, 환경의 순조로움</td>
+<td>하나님과의 동행</td>
+</tr>
+<tr>
+<td>은유</td>
+<td>바람에 나는 겨 — 잠시 뒤 흩어짐</td>
+<td>시냇가에 심긴 나무 — 철을 따라 열매</td>
+</tr>
+<tr>
+<td>고난 앞에서</td>
+<td>형통의 붕괴로 읽힘</td>
+<td>고난 중에도 누리는 형통(다윗)</td>
+</tr>
+<tr>
+<td>교육의 동기</td>
+<td>살아남기 위해</td>
+<td>복음으로 살리고 세우기 위해</td>
+</tr>
+</tbody>
+</table>
+<p>목표가 이렇게 바뀌면 교육의 통로도 달라진다. 김효진 목사가 실제로 제시하는 것은 거창한 프로그램이 아니라 말씀 암송과 큐티다. 형통의 기준을 세상에서 하나님께로 옮기려면 말씀을 묵상하고 가르쳐야 하며, 그 가르침의 궁극적 주체는 부모조차 아니다.</p>
+<blockquote>
+<p>"세상형통의 기준을 버리고, 하나님의 형통의 기준을 만들기 위해 말씀을 묵상하고 가르쳐야 한다. 우리가 없을 때 결국 말씀이 아이들을 가르친다." — 김효진, 시편 1편 「살맛나는 인생」</p>
+</blockquote>
+<h2>2. 사랑의 방향을 형성하는 일 — 가르칠 내용의 우선순위</h2>
+<p>목표가 경건이라면, 그 경건은 무엇으로 채워지는가. 권창규 목사는 신명기 6장의 쉐마를 히브리어 동사의 연쇄로 풀어 이 우선순위를 제시한다. 핵심은 순서에 있다. 본문은 먼저 "네 마음을 다하여… 여호와를 사랑하라"(신 6:5)고 명하고, 그 사랑을 "마음에 새기고"(신 6:6) 난 다음에야 "네 자녀에게 부지런히 가르치라"(신 6:7)고 이어간다. 곧 사랑이 첫째이고 가르침은 그 사랑에서 흘러나온다. 부모가 먼저 하나님을 사랑하여 말씀으로 존재를 채운(하야) 뒤라야, 자녀의 마음에 그것을 콕 찔러 새길(샤난) 수 있다. catechesis는 정보를 옮기는 일이 아니라 사랑의 방향을 빚는 일이다.</p>
+<p>이 순서를 놓치면 가르침은 지식 전달로 전락한다. 권창규 목사가 히브리식 '야다'(체험적 앎)와 헬라식 지식을 가르는 이유가 여기 있다. 기도해야 하는 줄 알면서 하지 않는 것은 기도를 모르는 것이며, 믿음이란 결국 "내 삶을 거는 것"이다. 아는 것과 사는 것이 갈라지지 않는 앎, 그것이 가르침의 목표다. 그래서 그는 교육의 비중 자체를 뒤집어 놓는다. 세속 교육이 지성에 거의 전부를 쏟는다면, 성경적 교육의 무게중심은 경외에 있다.</p>
+<table>
+<thead>
+<tr>
+<th>교육의 영역</th>
+<th>히브리식 비중</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>하나님 경외(영성)</td>
+<td>약 40%</td>
+<td>말씀·기도·예배 — 모든 교육의 뿌리</td>
+</tr>
+<tr>
+<td>인성(성품)</td>
+<td>약 20%</td>
+<td>순종·절제·정직</td>
+</tr>
+<tr>
+<td>지성(학습)</td>
+<td>약 20%</td>
+<td>지식·기술</td>
+</tr>
+</tbody>
+</table>
+<p>이 우선순위 안에서 가르칠 내용의 첫 자리는 언제나 말씀이다. 권창규 목사는 "묵상이 되려면 암송이 되어야 한다"며 채움을 앞세우고, <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EA%B5%90%EC%9C%A1/">기독교교육</a>의 학습론은 여기에 결정적 단서를 붙인다 — "말씀 아니고서는 사고는 계발될지 몰라도 성품은 계발되지 않는다." 지식은 다른 재료로도 채울 수 있으나 성품과 경건은 말씀이라야 형성된다는 것이다. 말씀·기도·예배·성품이라는 catechesis의 내용은 서로 경쟁하지 않고 한 뿌리에서 자란다. 다만 그 채우는 방법의 각론(암송 실천·다중지능·유대인 학습론)은 <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EA%B5%90%EC%9C%A1/">기독교교육</a>이, 밥상머리와 가정예배라는 자리는 <a class="wl" href="../../t/%EA%B0%80%EC%A0%95/">가정</a>이 상술하므로, 여기서는 그것들이 모두 '사랑의 방향 형성'이라는 한 목표를 향한다는 사실만 붙든다.</p>
+<h2>3. 재능보다 성품 — 살아낸 것이 드러난다</h2>
+<p>경외 다음으로 catechesis가 겨누는 것은 성품이다. 그런데 성품은 지식처럼 밖에서 새겨 넣을 수 있는 것이 아니다. 김효진 목사는 잠언 20장 11절 — "비록 아이라도 자기의 동작으로 자기 품행이 청결한 여부와 정직한 여부를 나타내느니라" — 한 절에서 이 역설을 길어 올린다. 본문이 성품의 시금석으로 삼는 것은 '말'이 아니라 '동작'이다. 히브리어 <em>maʿălāl</em>은 우발적 몸짓이 아니라 누적된 삶의 결, 곧 습관이 된 소행을 뜻한다. 성품은 다짐이나 훈계로 새겨지는 것이 아니라, 살아낸 것이 행함으로 새어 나오는 것이다.</p>
+<p>여기서 이 설교의 날카로움이 드러난다. "비록 아이라도"가 겨누는 거울은 결국 부모를 먼저 비춘다. 자녀의 동작이 그 심령을 누설한다면, 그 자녀를 빚은 것은 부모가 살아낸 성품이기 때문이다. 자녀는 들은 대로가 아니라 본 대로 자란다. 그래서 성품 교육은 자녀를 향한 훈계이기 전에 부모의 자기 성화(<a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a>)로 닫힌다. 본문이 특정하는 두 미덕도 균형이 있다 — 청결(<em>zak</em>)은 하나님 앞의 순전함이요, 정직(<em>yāshār</em>)은 사람 앞의 올곧음이다. 경건만 강조하다 정직을 놓치거나, 사회적 정직만 키우다 내면의 순전함을 놓치는 불균형을 이 짝이 막는다.</p>
+<p>그렇다면 살아낸 것이 드러날 뿐인 성품을, 부모는 어떻게 형성하는가. 볼트의 자료를 가로지르면 세 갈래의 길이 보인다.</p>
+<table>
+<thead>
+<tr>
+<th>성품이 형성되는 길</th>
+<th>원리</th>
+<th>볼트 근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>모방</strong></td>
+<td>자녀는 부모가 살아낸 것을 비춘다 — 이중 거울</td>
+<td>김효진(잠 20:11), "본 대로 자란다"</td>
+</tr>
+<tr>
+<td><strong>훈련</strong></td>
+<td>반복된 몸짓이 습관이 되고 습관이 성품이 됨</td>
+<td>권창규 "경건에 이르기를 연습", 암송의 반복</td>
+</tr>
+<tr>
+<td><strong>은혜</strong></td>
+<td>성품은 말씀과 성령을 통해서만 자란다</td>
+<td>기독교교육 "말씀 없이는 성품이 계발되지 않는다"</td>
+</tr>
+</tbody>
+</table>
+<p>세 길은 분리되지 않는다. 부모의 삶을 모방하며(모방) 일상의 반복 속에서 몸에 익히되(훈련), 그 형성의 궁극적 힘은 말씀이 심어주는 은혜에 있다. 재능은 타고나거나 계발되지만, 성품은 이렇게 살아낸 것과 물려받은 것 사이에서 빚어진다.</p>
+<h2>4. 약속의 땅인가, 자녀를 삼키는 땅인가 — 환경과 분별</h2>
+<p>catechesis는 진공에서 이뤄지지 않는다. 자녀가 자라는 환경 자체가 하나의 교사이며, 때로 부모의 가르침을 압도한다. 김지찬 교수는 여호수아 4장의 열두 기념돌 — 후일 자손이 "이 돌들은 무슨 뜻이니이까" 물을 때 부모가 신앙을 증언하도록 세운 세대 전수의 기념물 — 에서 출발해, 같은 가나안 땅의 두 얼굴을 대비시킨다. 믿음으로 들어가면 약속의 땅이지만, 신앙 없이 들어가면 민수기 13장 정탐꾼들이 본 "거주민을 삼키는 땅"이 된다. 문제는 땅이 아니라 그 땅에 들어가는 방식이다.</p>
+<p>그의 통찰의 심장은 이 진단을 한국 사회로 번역하는 데 있다. 서울 강남·대구 수성구 같은 '빗장도시', 취업 7종 세트, 고등학생이 이미 봉사활동과 논문 게재와 방송 출연으로 스펙을 쌓는 현실 — 이것이 오늘의 가나안이며, 적지 않은 그리스도인이 여기에 빗장을 치고 자녀 교육에 올인한다. 신앙 교육보다 세속 교육에 힘을 쏟은 결과, 중직자의 자녀들이 교회를 떠나고 "입시나 학벌보다 센 것이 없다"고 믿게 된다. 미국 1세대 이민자들이 자녀 교육을 위해 건너가 명문대에 보냈으나 그중 8~90%가 교회를 떠난 것과 같은 역설이다. 풍요가 신앙을 삼킨 것이다.</p>
+<blockquote>
+<p>"세속교육만큼 신앙교육하지 않으면, 세속이 자녀들을 삼킬 것이다." — 김지찬, 「약속의 땅인가, 자녀를 삼키는 땅인가」</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>약속의 땅</th>
+<th>자녀를 삼키는 땅</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>같은 땅</td>
+<td>가나안 / 오늘의 한국</td>
+<td>가나안 / 오늘의 한국</td>
+</tr>
+<tr>
+<td>들어가는 방식</td>
+<td>믿음의 순종, 신앙 교육</td>
+<td>스펙 경쟁, 세속 교육 올인</td>
+</tr>
+<tr>
+<td>무기</td>
+<td>십계명·이웃 사랑의 비전</td>
+<td>종자돈·영끌·아빠 찬스</td>
+</tr>
+<tr>
+<td>결과</td>
+<td>온유한 자가 땅을 기업으로(마 5:5)</td>
+<td>풍요가 자녀의 신앙을 삼킴</td>
+</tr>
+</tbody>
+</table>
+<p>그렇다면 분별은 무엇으로 하는가. 김지찬 교수의 처방은 통제의 강화가 아니라 그 반대다. 자녀와 함께 요단을 건너는 일 — 주일에 학원 대신 예배로, 수련회로 자녀를 보내는 일 — 은 두렵지만, "우리가 할 수 있는 것을 다하는 것은 하나님을 의지하는 것이 아니다." 부모는 오히려 "하나님이 하실 공간을 만들어 드려야" 하며, 자녀를 교회 공동체에 맡길 줄 알아야 한다. 신명기 8장이 경고하듯 풍족한 땅에서 하나님을 잊기 쉽기에, 분별은 더 움켜쥐는 것이 아니라 탐욕의 흐름을 잠시 멈추고 손을 펴는 데 있다.</p>
+<h2>5. 연령의 결을 따라 — 발달과 catechesis</h2>
+<p>가르칠 내용은 자녀의 나이에 따라 다른 얼굴로 온다. 권창규 목사는 유대 교육의 리듬을 빌려 이 결을 "순종하는 3살, 복종하는 7살, 효도하는 10대, 토브(선)한 세상을 만드는 20대"로 요약한다. 그가 특히 강조하는 것은 결정적 시기다. 신앙 훈련은 13세 이전에 대부분 완성되고 그 이후는 반복이며, 초기에 하야(암송)와 샤난(새김)에 집중할 때 인성과 학습이 함께 자란다는 것이다. 뇌 발달이 3~6세에 대부분 완성된다는 관찰과 겹쳐, 그는 사랑과 말씀의 각인이 이르면 이를수록 깊다고 본다.</p>
+<p>이 대목에서 그의 관점은 논쟁적이다. 그는 사춘기의 반항을 성경적 현상으로 보지 않는다. '사춘기'라는 개념 자체가 심리학적으로 100년이 안 된 발명이며, 다윗이 17세에 골리앗과 싸우고 다니엘이 10대에 뜻을 정한 것을 보면 순종이야말로 이 시기의 정상적 특징이라는 것이다. 이 주장은 발달의 진통을 과소평가할 위험을 안고 있으나(→ 미해결 질문), 겨누는 과녁은 분명하다 — 고집(자기 맘대로 하려는 마음)을 발달로 정당화하지 말라는 것이다. 다만 이 각론, 곧 연령별 통제에서 교훈으로의 이양과 훈육의 강도 조절은 <a class="wl" href="../../t/%EB%B6%80%EB%AA%A8%EA%B5%90%EC%9C%A1/">부모교육</a>과 <a class="wl" href="../../t/%EC%9E%90%EB%85%80%EC%96%91%EC%9C%A1/">자녀양육</a>이 상술하므로, 여기서는 각 연령에 '무엇을 채우는가'만 정리한다.</p>
+<table>
+<thead>
+<tr>
+<th>시기</th>
+<th>마음의 과업</th>
+<th>채울 내용 (catechesis)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>유아 (~7세)</td>
+<td>순종·습관의 형성</td>
+<td>이야기와 반복 — 말씀 암송의 첫 씨앗, 밥상머리 습관</td>
+</tr>
+<tr>
+<td>아동 (초등)</td>
+<td>규칙과 질문</td>
+<td>본격 암송과 성경의 뼈대, "왜?"에 답을 주기 시작</td>
+</tr>
+<tr>
+<td>청소년 (10대)</td>
+<td>이유를 묻는 시기</td>
+<td>"왜 믿는가"에 답하기, 의심을 반항이 아니라 발달로 동반</td>
+</tr>
+<tr>
+<td>청년 (20대)</td>
+<td>세상으로 나감</td>
+<td>스스로 선 신앙, 세상을 선(토브)하게 만드는 소명</td>
+</tr>
+</tbody>
+</table>
+<p>주목할 것은 청소년기의 "왜?"를 어떻게 읽는가이다. 권창규 목사가 이 시기의 순종을 강조한다면, 볼트의 다른 자료들은 이유를 묻기 시작하는 것을 발달의 신호로 읽는다. 아이가 "교회 왜 가느냐"고 물을 때 그것이 반항이 아니라 질문이라면, 부모는 답할 준비가 되어 있어야 한다. catechesis의 내용은 어릴 때는 이야기와 습관으로, 자랄수록 이유와 변증으로 옷을 갈아입되, 그 핵심(사랑과 말씀)은 변하지 않는다.</p>
+<h2>6. 채운 뒤에 묻는다 — 가르치는 방식</h2>
+<p>내용이 정해지면 방식이 따라온다. 볼트가 반복해서 돌아오는 방법은 암송과 하브루타이며, 그 순서가 중요하다. 권창규 목사와 <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EA%B5%90%EC%9C%A1/">기독교교육</a>의 학습론이 한목소리로 강조하는 것은 <strong>암송이 먼저이고 토론이 나중</strong>이라는 것이다. 마음을 말씀으로 채운(하야) 다음에야 그것을 놓고 짝을 지어 묻고 따지는 하브루타가 가능하다. 빈 그릇으로는 토론할 수 없다. 유대 아이가 창세기를 외울 때 10장을 넘어서면 세 번만 읽어줘도 외운다는 관찰처럼, 채움에는 임계점이 있고 그 임계점을 넘으면 암송이 곧 주야의 묵상(<a class="wl" href="../../t/%EB%A7%90%EC%94%80%EB%AC%B5%EC%83%81/">말씀묵상</a>)으로 이어진다.</p>
+<p>하브루타의 신학적 뿌리를 권창규 목사는 잠언 1장에서 찾는다 — "아비의 훈계(무싸르)를 들으며 어미의 법(토라)을 떠나지 말라." 아버지의 훈계는 감시하고 점검하며 상벌로 기준을 세우는 일이고, 어머니의 법은 삶의 토라를 몸으로 물려주는 일이다. 아버지는 자녀 앞에서 하나님을 대신해 윤리와 도덕의 기준을 세우는 존재이므로, "친구 같은 아빠"(프렌들리 대디)의 다정함만으로는 이 자리를 감당할 수 없다. 토라(암송할 본문)와 탈무드(그 본문을 두고 묻고 답하는 대화)가 짝을 이루듯, catechesis는 채움과 물음의 두 박자로 움직인다.</p>
+<p>이 방식들이 실제로 벌어지는 자리는 가정예배와 밥상머리이지만, 그 예전의 대본과 실패 유형은 <a class="wl" href="../../t/%EA%B0%80%EC%A0%95/">가정</a>이 이미 상세히 다룬다. 여기서 덧붙일 것은 이야기의 힘이다. 김지찬 교수가 붙든 열두 기념돌의 논리가 바로 이것이다 — 돌은 아이가 "이 돌들은 무슨 뜻이니이까" 묻도록 일부러 세워졌고, 그 물음의 순간에 부모는 교사가 된다. 집이 가르치는 방식은 강의가 아니라 낯섦이며, 설명되지 않은 것이 눈앞에 놓일 때 아이는 묻고 이야기는 전수된다. 절기와 기념물과 밥상 위의 낯선 사물은 모두 이 물음을 낳기 위한 장치다.</p>
+<h2>7. 끝내 가르칠 수 없는 것 — 교육의 한계와 기도의 자리</h2>
+<p>지금까지의 모든 내용과 방법은 하나의 냉정한 인정 위에 서 있다. 믿음 자체는 가르쳐지지 않는다는 것이다. 권창규 목사는 이를 한 문장으로 못박는다 — "키우라고 주신 것이지 키워 주시지는 않는다." 부모는 밭을 갈고 씨를 뿌리고 물을 댈 수 있으나, 싹이 트게 하는 것은 부모의 몫이 아니다. 그가 성령의 선물 이전에 부모가 할 일을 세례 요한의 역할("마음을 준비시키는 일")로 규정하는 것도 같은 맥락이다. 디모데가 이미 어려서부터 모세오경을 알고 있었기에 성령이 임했을 때 곧바로 일꾼이 되었듯, 부모는 마음의 밭을 준비할 뿐 믿음을 심으시는 분은 따로 계시다.</p>
+<p>그러니 catechesis의 가장 큰 유혹은 교육 만능주의다. 좋은 커리큘럼과 충분한 암송과 완벽한 가정예배가 자녀의 믿음을 보장하리라는 기대는, 사실은 하나님의 자리를 부모가 찬탈하는 것이다. 김효진 목사가 "자녀들의 그릇을 부모가 들고 있으면 안 된다, 하나님 손에 맡겨 드려야 한다"고 말하고, 김지찬 교수가 "부모가 다 가르칠 수 없다"며 자녀를 교회와 하나님께 맡기라 권하는 것은 방임의 권유가 아니다. 부모가 할 수 있는 것을 다 한 뒤, 나머지를 하나님이 하실 공간으로 비워두는 신앙의 행위다. 이 한계의 인정이 부모의 유한 책임이라는 자리인데, 그 신학은 <a class="wl" href="../../t/%EB%B6%80%EB%AA%A8%EA%B5%90%EC%9C%A1/">부모교육</a>이 상술한다.</p>
+<p>그래서 자녀교육의 마지막 자리는 교실이 아니라 기도다. 아무리 채우고 물어도 끝내 가르칠 수 없는 것 앞에서, 부모는 자녀를 하나님께 올려드리는 자리로 물러선다. 이것은 교육의 실패가 아니라 교육의 완성이다. catechesis가 겨눈 목표 — 성공이 아니라 경건 — 는 애초에 부모가 만들어낼 수 있는 것이 아니었기 때문이다. 부모는 다만 형통의 기준을 바꾸고, 사랑의 방향을 형성하고, 성품을 빚고, 환경을 분별하고, 연령의 결을 따라 채우고 물을 뿐이다. 그 위에 믿음이라는 선물이 임하는 것은 다른 손의 일이다. 말씀을 전하는 일과 말씀을 전수하는 일이 다르듯, 가르치는 일과 믿게 하는 일도 다르다. 부모의 몫은 전자이며, 그 전자를 다한 자리에서 후자를 기다리는 것이 자녀교육의 끝이다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li><strong>자녀교육의 첫 물음은 방법이 아니라 목표다.</strong> 성공(무병·합격·승진)과 경건(하나님과의 동행)은 다른 곳을 향한다. 목표가 바뀌지 않으면 아무리 좋은 방법도 세속 교육의 연장일 뿐이다.</li>
+<li><strong>쉐마의 순서가 내용의 순서다.</strong> 사랑(신 6:5)이 먼저이고 가르침(신 6:7)이 나중이다. catechesis는 지식을 주입하는 일이 아니라 사랑의 방향을 형성하는 일이며, 부모가 먼저 사랑하여 새긴 것만 자녀에게 새길 수 있다.</li>
+<li><strong>성품은 가르쳐 새기는 것이 아니라 살아낸 것이 드러나는 것이다.</strong> 재능보다 성품이며, 자녀의 동작은 부모를 먼저 비추는 거울이다. 성품은 모방·훈련·은혜의 세 길에서 빚어진다.</li>
+<li><strong>풍요가 자녀를 삼킬 수 있다.</strong> 약속의 땅과 삼키는 땅은 같은 땅이며, 무엇이 그 땅을 삼키는 땅으로 바꾸는가는 신앙 교육의 유무다. 분별은 더 움켜쥠이 아니라 하나님이 하실 공간을 비우는 데 있다.</li>
+<li><strong>catechesis에는 결정적 시기와 변하는 형식이 있다.</strong> 사랑과 말씀의 각인은 이를수록 깊되(13세 이전), 어릴 때 이야기와 습관이던 내용은 자랄수록 "왜?"에 답하는 변증으로 옷을 갈아입는다. 핵심은 변하지 않는다.</li>
+<li><strong>채운 뒤에 묻는다.</strong> 암송이 먼저이고 하브루타가 나중이다. 빈 그릇으로는 토론할 수 없으며, 말씀 없이는 사고는 몰라도 성품은 계발되지 않는다.</li>
+<li><strong>믿음 자체는 가르칠 수 없다.</strong> "키우라고 주신 것이지 키워 주시지는 않는다." 교육 만능주의를 경계하며, 부모가 다한 자리에서 하나님이 하실 공간을 비워두는 기도가 자녀교육의 끝이다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>13세 이전의 각인을 강조하는 catechesis와, 사춘기 이후·성인기의 회심 가능성은 어떻게 양립하는가 — 놓친 조기교육은 어디까지 만회되며, "결정적 시기"의 강조가 늦된 자녀의 부모에게 절망이 되지 않으려면 어떻게 말해야 하는가.</li>
+<li>"성공이 아니라 경건"이라는 목표 전환이 세속 교육의 성실성(학업·직업 준비)을 방기하는 이원론으로 흐르지 않으려면, 신앙 교육과 세속 교육이 만나는 접점은 어디인가.</li>
+<li>권창규의 "분리 교육"(카도쉬=구별·분리)과 자녀를 세상 속 빛으로 파송하는 소명은 실제 가정에서 어떻게 균형 잡는가 — 게토화와 파송 사이의 경계선.</li>
+<li>사춘기를 "심리학적 발명"으로 보는 관점은 자아 형성의 정당한 진통을 부인할 위험이 없는가 — 순종의 훈련과 건강한 개별화(individuation)를 무엇으로 분별하는가.</li>
+<li>"믿음은 하나님의 선물"이라는 고백이 부모의 태만("어차피 하나님이 하신다")에 대한 알리바이로 오용되지 않으려면, 유한 책임과 방임의 경계는 어디에 그어지는가.</li>
+</ul>
+<h2>교차 참조</h2>
+<p>이 페이지는 가정교육 클러스터에서 <strong>자녀에게 무엇을 가르칠 것인가(catechesis의 내용)</strong> 를 맡는다. 인접 페이지와의 분업은 다음과 같다.</p>
+<table>
+<thead>
+<tr>
+<th>페이지</th>
+<th>맡는 몫</th>
+<th>이 페이지와의 경계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="wl" href="../../t/%EB%B6%80%EB%AA%A8%EA%B5%90%EC%9C%A1/">부모교육</a></td>
+<td><strong>부모를 세움</strong> — 부모의 소명·권위, 훈육과 사랑의 균형, 부모 영성, 놓아줌</td>
+<td>가르치는 '주체'(부모) ↔ 이 글은 가르칠 '내용'</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%9E%90%EB%85%80%EC%96%91%EC%9C%A1/">자녀양육</a></td>
+<td><strong>양육 실천 각론</strong> — 저자별(윤명숙·폴 트립·이기복·게리 스몰리·휴게이트) 방법론</td>
+<td>'어떻게 기르는가'의 각론 ↔ 이 글은 '무엇을 가르치는가'</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EC%A0%84%EC%88%98/">신앙전수</a></td>
+<td><strong>전수의 신학</strong> — 세대를 넘어 믿음이 계승되는 원리(쉐마·언약)</td>
+<td>'어떻게 이어지는가' ↔ 이 글은 이어질 '내용'</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%84%B8%EB%8C%80%EC%A0%84%EC%88%98/">세대전수</a></td>
+<td><strong>유산으로서의 믿음</strong> — 준비하고 축복하며 떠나는 세대 계승</td>
+<td>세대 간 유산 ↔ 이 글은 한 세대 안의 가르침</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EA%B5%90%EC%9C%A1/">기독교교육</a></td>
+<td><strong>교육 이론</strong> — 다중지능·유대인 학습론·암송 실천법</td>
+<td>학습의 '방법론' ↔ 이 글은 가르칠 '우선순위'</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EB%8B%A4%EC%9D%8C%EC%84%B8%EB%8C%80/">다음세대</a></td>
+<td><strong>교회 차원</strong> — 탈교회·세대통합·청년 사역론</td>
+<td>가정 밖 공동체 ↔ 이 글은 가정 안 가르침</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EA%B0%80%EC%A0%95/">가정</a></td>
+<td><strong>삶의 자리로서 집</strong> — 밥상머리·가정예배 예전·문 여는 집</td>
+<td>가르침이 벌어지는 '자리' ↔ 이 글은 그 '내용'</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a class="wl" href="../../t/%EB%A7%90%EC%94%80%EB%AC%B5%EC%83%81/">말씀묵상</a> — 암송이 임계점을 넘어 주야의 묵상이 되는 자리. catechesis의 첫 내용인 말씀이 자녀 안에서 뿌리내리는 통로.</li>
+<li><a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a> — 자녀의 성품 교육이 부모 자신의 자기 성화로 닫히는 이중 거울. 가르치는 자가 먼저 살아내야 하는 자리.</li>
+<li><a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EA%B5%90%EC%9C%A1/">신앙교육</a> — 신앙을 가르치는 일 전반. 이 글은 그중 '가정에서 자녀에게 무엇을'에 초점을 좁힌다.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>김효진, 「시편 1편 — 살맛나는 인생」 (2017, 시 1:1-6)</td>
+<td>설교</td>
+<td>형통의 기준 전환(무병·합격·승진 vs 하나님과 동행), 12년 불임·조산 사별 간증, "우리가 없을 때 결국 말씀이 아이들을 가르친다", 어와나·큐티</td>
+</tr>
+<tr>
+<td>김효진, 「맡기심 — 사명으로서의 자녀양육」 (2017, 행 9:15-16)</td>
+<td>설교</td>
+<td>"살아남기 위해 자녀를 기르지 말라", 세상 가치관 교육 거부, 청지기로서의 부모, "그릇을 하나님 손에"</td>
+</tr>
+<tr>
+<td>김효진, 「자녀의 성품」 (2018, 잠 20:11)</td>
+<td>설교</td>
+<td>성품은 살아낸 것이 행함으로 드러남(<em>maʿălāl</em>), 청결(<em>zak</em>)과 정직(<em>yāshār</em>)의 균형, 자녀 행실=부모를 비추는 이중 거울</td>
+</tr>
+<tr>
+<td>김지찬, 「약속의 땅인가, 자녀를 삼키는 땅인가」 (2023, 수 4:19-24)</td>
+<td>설교</td>
+<td>같은 가나안의 두 얼굴, "세속교육만큼 신앙교육 안 하면 세속이 자녀를 삼킨다", 빗장도시·스펙 경쟁, "하나님이 하실 공간 만들기", 교회에 맡김</td>
+</tr>
+<tr>
+<td>권창규, 「에젤 수련회 1·2·4」 (신 6:4-9 쉐마 등)</td>
+<td>강의</td>
+<td>교육의 뿌리=하나님 경외(야다), 쉐마의 동사 연쇄(사랑→하야→시하흐→샤난), 경외 40%·인성 20%·지성 20%, 아비의 훈계와 어미의 법, 13세 이전 각인, "키우라고 주신 것이지 키워 주시지 않는다", "말씀 전수 없는 말씀 전파는 재앙"</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EA%B5%90%EC%9C%A1/">기독교교육</a> 볼트 자료</td>
+<td>강의·위키</td>
+<td>암송의 임계점(10장 이후 가속), "말씀 없이는 성품이 계발되지 않는다", 암송→하브루타 순서, 언어지능=통로지능, 9지능(영적 지능)=나침반</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#신앙교육</span><span>#성품교육</span><span>#경건교육</span><span>#말씀암송</span><span>#쉐마</span><span>#가정사역</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

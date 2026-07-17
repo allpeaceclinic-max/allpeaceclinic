@@ -1,0 +1,846 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>선교신학 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="date">2026-06-07</span></div>
+  <h1 class="note-title">선교신학</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>하나님의 선교(Missio Dei)에 교회가 참여하는 방식과 신학적 근거를 탐구하는 학문. 성경적 선교의 본질, 방법론, 문화적 상황화를 다룬다.</p>
+<h2>핵심 개념: 미씨오 데이 (Missio Dei)</h2>
+<p>"하나님이 하시는 선교"
+- 선교의 주체는 교회가 아닌 삼위일체 하나님
+- 교회는 하나님의 선교에 동참하는 도구
+- <a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a> 중심 → 하나님 중심으로의 선교 패러다임 전환
+- 선교의 정당성: 삼위일체 하나님의 선교에 참여</p>
+<h2>선교의 성경적 근거</h2>
+<h3>구약에서의 선교</h3>
+<ul>
+<li>아브라함 언약: "땅의 모든 족속이 복을 받을 것이다" (창 12:3)</li>
+<li>이스라엘의 제사장 나라 사명 (출 19:6)</li>
+<li>예언서의 열방 선교 비전</li>
+</ul>
+<h3>신약에서의 선교</h3>
+<ul>
+<li>대사명 (마 28:18-20): 모든 민족을 제자로 삼으라</li>
+<li>행 1:8: 예루살렘→유대→사마리아→땅끝</li>
+<li>바울의 이방인 선교 (롬 15)</li>
+</ul>
+<h3>바울의 프론티어 정신 (롬 15) — 멘토링0</h3>
+<blockquote>
+<p>"편만하게(plēroō) = 교두보를 세우는 것"</p>
+</blockquote>
+<p><strong>롬 15:19-24 해석:</strong></p>
+<table>
+<thead>
+<tr>
+<th>구절</th>
+<th>표면적 의미</th>
+<th>바울의 실제 의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"이 지방에 일할 곳이 없고"</td>
+<td>의아함 — 불신자 더 많음</td>
+<td>작더라도 교회(교두보)가 세워졌기 때문</td>
+</tr>
+<tr>
+<td>"편만하게"</td>
+<td>지역 전체 복음화</td>
+<td>주요 거점마다 교두보 확보 = fulfilled</td>
+</tr>
+<tr>
+<td>"로마도 건너뛰어 서바나로"</td>
+<td>—</td>
+<td>아직 교두보 없는 최전방으로</td>
+</tr>
+<tr>
+<td>"보내줌을 바란다" (24절)</td>
+<td>—</td>
+<td>센딩 요청 — 보내는 사람이 필요하다</td>
+</tr>
+</tbody>
+</table>
+<p><strong>선교사 마인드 vs 목회자 마인드:</strong></p>
+<ul>
+<li>목회자: 목양지를 든든히 세우는 것</li>
+<li><strong>선교사</strong>: 부르지 않는 곳, 터가 없는 곳을 향하는 것</li>
+<li>"선교는 초청받아 가는 곳이 아니다 — 환영받는 곳은 선교지가 아니다"</li>
+</ul>
+<blockquote>
+<p>"모든 사람이 바울처럼 부름 받지는 않지만, 이런 부르심이 있는 사람들의 힘을 빼면 안 된다."</p>
+</blockquote>
+<p>→ 동신 멘토링0 — "바울과 같은 마인드가 있는 사람들이 가도록 돕고 싶다"</p>
+<h2>선교사와 교회의 관계</h2>
+<h3>랄프 윈터의 소달리티/<a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">모달리티</a> 이론</h3>
+<ul>
+<li><strong>모달리티(Modality)</strong>: 지역 교회 중심 구조</li>
+<li><strong>소달리티(Sodality)</strong>: 선교 단체 중심 구조</li>
+<li>개신교는 수도원 운동 폐지로 소달리티 약화 → 선교단체 필요성</li>
+</ul>
+<h2>현대 선교의 도전</h2>
+<ul>
+<li>종교다원주의 환경에서의 선교 정당성</li>
+<li>이슬람 선교의 특수성</li>
+<li>문화적 상황화와 복음의 순수성 유지</li>
+</ul>
+<h2>보내는 선교 (센더스쿨)</h2>
+<p>동신 센더스쿨(2016-2018)을 통해 발전된 개념:
+- 가는 선교와 보내는 선교는 동일한 부르심의 다른 표현
+- 삼위일체 하나님 안에 보내는 자와 가는 자가 함께 있다
+- 센더의 역할: 중보<a class="wl" href="../../t/%EA%B8%B0%EB%8F%84/">기도</a>, 재정, 정서적 지지, 국내 외국인 사역</p>
+<h2>성육신적 선교 (Incarnational Mission)</h2>
+<p><em>(문대원, 고후 4:5-12, 2026-05-03)</em></p>
+<blockquote>
+<p>메신저와 메시지는 분리될 수 없다 — 로잔언약</p>
+</blockquote>
+<h3>핵심 원리</h3>
+<ul>
+<li>선교는 그리스도를 전파하는 것 — 자신·교회·문화를 전파하는 것이 아니다</li>
+<li>예수의 죽음을 몸에 짊어져야 예수의 생명이 나타난다 (고후 4:10)</li>
+<li>예수님을 닮지 않으면서 예수님을 전할 수 없다</li>
+</ul>
+<h3>질그릇과 보배 (고후 4:7)</h3>
+<ul>
+<li>우리는 평범하고 깨어지기 쉬운 질그릇이다</li>
+<li>예수님을 나타내기 위해 완벽할 필요 없다 — 약함 속에서 그리스도의 능력이 나타난다</li>
+<li>고후 12:9 — "내 능력이 약한 데서 온전하여짐이라"</li>
+</ul>
+<h3>복음과 문화의 구별</h3>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>특성</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>복음</strong></td>
+<td>본질, 영원, 모든 문화를 초월</td>
+</tr>
+<tr>
+<td><strong>문화</strong></td>
+<td>비본질, 복음을 담는 옷 — 예수님(유대), 바울(헬라)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>복음과 함께 문화가 무의식적으로 전파된다</li>
+<li>선교사 자신이 어디까지 복음이고 문화인지 인식해야 한다</li>
+</ul>
+<h3>타문화 인식 (Cross-cultural Intelligence)</h3>
+<ul>
+<li>자기 문화가 당연하다는 착각을 깨야 한다</li>
+<li>모든 문화 안에 진리와 거짓이 공존한다</li>
+<li>현지 문화를 존중하며 그 상황에 맞추어 섬기는 것이 선교사의 기본 자세</li>
+</ul>
+<h3>문화의 4층 구조 (손창남)</h3>
+<p><em>raw: <code>raw/lectures/keynote/선교/선교와 문화.md</code></em></p>
+<blockquote>
+<p>"문화는 게임의 룰이다 — 그 룰을 따르지 않으면 게임에서 아웃된다"</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>층위</th>
+<th>특성</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>행동양식</strong></td>
+<td>일상의 모든 행위 (인사·식사·위생 방식) — 눈에 보인다</td>
+</tr>
+<tr>
+<td><strong>가치</strong></td>
+<td>행동양식을 결정하는 요소 — 파악이 어렵다 (예: 한국의 나이·서열)</td>
+</tr>
+<tr>
+<td><strong>믿음</strong></td>
+<td>가치에 지대한 영향, 쉽게 변하지 않음</td>
+</tr>
+<tr>
+<td><strong>세계관</strong></td>
+<td>사회를 구성하는 기본 틀 — 대부분 종교와 연결</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>타문화의 행동양식만 보지 말고, 그 이면의 <strong>가치·믿음·세계관을 해석</strong>해야 한다</p>
+</blockquote>
+<p><strong>현장 사례 — 중동 의사의 손님 접대:</strong></p>
+<blockquote>
+<p>수술 예약 중인 외과의사가 멀리서 온 손님 때문에 수술을 하루 미뤘다.<br />
+한국인 선교사는 자격 박탈감을 느꼈지만,<br />
+중동 문화에서는 환자보다 손님 접대를 우선하지 않으면 오히려 도덕적으로 지탄받는다.<br />
+→ 같은 행동이 문화에 따라 정반대로 해석된다.</p>
+</blockquote>
+<h3>문화의 감옥과 초문화 사역 (링겐펠터)</h3>
+<p><em>raw: <code>raw/lectures/keynote/선교/멘토링3 문화와 단기선교, 교육과 후원모집(New).md</code></em></p>
+<p><strong>셔우드 링겐펠터</strong>: 문화는 가치 중립적이지 않으며, 인간에 의해 창조되고 오염된 '불순종의 울타리'</p>
+<blockquote>
+<p>복음의 힘은 기독교 체제를 다른 문화에 단순히 '이식(Transferring)'하는 것이 아니라,<br />
+현지 문화를 내부로부터 재정의하고 재통합하는 것이다.</p>
+</blockquote>
+<p><strong>잼 테이블 예시</strong> — 문화 충돌의 현장:</p>
+<table>
+<thead>
+<tr>
+<th>국적</th>
+<th>행동</th>
+<th>문화 룰</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>한국 청년</td>
+<td>허락 없이 잼을 가져감</td>
+<td>"필요한 것은 바로 취한다"</td>
+</tr>
+<tr>
+<td>미국 청년</td>
+<td>잼을 달라고 요청</td>
+<td>"필요한 것은 말로 요청한다"</td>
+</tr>
+<tr>
+<td>영국 청년</td>
+<td>아무도 잼을 권하지 않아 불쾌</td>
+<td>"주인은 손님에게 먼저 권한다"</td>
+</tr>
+</tbody>
+</table>
+<p>→ 타문화 사역 원칙: 표면 행동만 정죄하지 말고 그 기저의 세계관을 꿰뚫어 보라</p>
+<h3>앤드류 월스의 통찰</h3>
+<blockquote>
+<p>"당신의 사명은 성경책을 번역해 주는 데 국한되지 않고, 성경이 계시하는 그리스도를 번역해 주는 일입니다."</p>
+</blockquote>
+<hr />
+<h2>영적 사역 vs 제도적 사역</h2>
+<p><em>(문대원, 고후 4:5-12, 2026-05-03)</em></p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>정의</th>
+<th>위험</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>영적 사역</strong></td>
+<td>하나님과의 관계를 목표로 하는 사역</td>
+<td>겉으로 드러나지 않아 간과되기 쉬움</td>
+</tr>
+<tr>
+<td><strong>제도적 사역</strong></td>
+<td>수치와 통계를 목표로 하는 사역</td>
+<td>본질을 잃고 프로그램·성과에 집착</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>교회 개척, BAM, 창의적 접근 지역 사역 모두 제도화의 위험에 노출</li>
+<li>영성이 메마르면 사역 효율이 올라가도 사람이 망가진다</li>
+<li>수치를 무시하는 것이 아니라, 수치를 궁극적 목표로 삼지 않는 것</li>
+</ul>
+<blockquote>
+<p><span class="wl-dead" title="위키 내부 링크">헨리나우웬</span></p>
+</blockquote>
+<h2>오픈 시크릿 — 뉴비긴의 통합적 선교 틀</h2>
+<p><em>(레슬리 뉴비긴, 오픈 시크릿, 2026-05-05)</em></p>
+<ul>
+<li><strong>삼위일체 선교</strong>: 성부(행동하는 믿음) · 성자(행동하는 사랑) · 성령(행동하는 소망)</li>
+<li><strong>베드로·고넬료</strong>: 선교는 교회도 변화시킨다 — 성령은 교회보다 앞서 가신다</li>
+<li><strong>회심의 윤리적 차원</strong>: 전인의 방향 전환 — 영적·직업적·사회적 거듭남은 하나의 사건</li>
+<li><strong>복음과 문화 삼각관계</strong>: 지역문화 + 선교사 기독교 + 성경 — "고넬료가 필요하다"</li>
+<li><strong>타종교 대화</strong>: 신앙고백형 — 쌍방이 성령 앞에 노출됨</li>
+</ul>
+<p>→ <a class="wl" href="../../b/%EC%98%A4%ED%94%88%EC%8B%9C%ED%81%AC%EB%A6%BF_%EB%A0%88%EC%8A%AC%EB%A6%AC%EB%89%B4%EB%B9%84%EA%B8%B4/">오픈시크릿_레슬리뉴비긴</a></p>
+<p>: "예수님은 사역을 성취하는 수단으로서 아버지와의 관계를 유지하지 않았다."</p>
+<h3>선교적 차원 vs 선교적 의도</h3>
+<p><em>raw: <code>raw/lectures/keynote/선교/선교적 '차원'과 '의도'.md</code> + <code>선교의 총체성과 의도성 (Gemping).md</code></em></p>
+<p><strong>레슬리 뉴비긴</strong> 구분:
+- <strong>차원(Dimension)</strong>: 전도 활동에 사회적 차원이, 사회적 책임에 전도적 차원이 이미 내포됨
+- <strong>의도(Intention)</strong>: 그 차원을 의식적 목적으로 추구하는 것</p>
+<p><strong>마이클 고힌</strong>:</p>
+<blockquote>
+<p>"교회가 하는 모든 일에 선교적 차원이 있다.<br />
+그러나 교회가 하는 모든 일에 선교적 의도가 있지는 않다."</p>
+</blockquote>
+<p><strong>삭개오 — 선교적 의도성의 모델</strong> (눅 19:1-10):</p>
+<table>
+<thead>
+<tr>
+<th>주체</th>
+<th>의도적 행동</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>예수님</strong></td>
+<td>여리고 의도 진입 → 삭개오 이름 공개 호명 → "집에 유하여야" 공개 선언</td>
+</tr>
+<tr>
+<td><strong>삭개오</strong></td>
+<td>보고자(3절) → 앞으로 달려가 나무에 올라감(4절)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>총체적 회심</strong>: 직업적 회심("속인 것 4배 갚겠다") + 영적 구원("구원이 임했다") — 분리 불가</li>
+</ul>
+<blockquote>
+<p>"의도성을 살피고 그들에게 다가가 집에 유하여야 — 아주 개인적이고 깊숙한 관계성을 만들어가야 한다"</p>
+</blockquote>
+<hr />
+<h2>알렌 크라이더 — 아비투스와 이민 선교</h2>
+<p><a class="wl" href="../../b/%EC%B4%88%EA%B8%B0%EA%B8%B0%EB%8F%85%EA%B5%90%EC%9D%98%EC%98%88%EB%B0%B0%EC%99%80%EB%B3%B5%EC%9D%8C%EC%A0%84%EB%8F%84_%ED%81%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/">초기기독교의예배와복음전도_크라이더</a></p>
+<h3>아비투스 (Habitus)</h3>
+<blockquote>
+<p><strong>초대교회는 전략 없이 성장했다. 성장 동력은 아비투스 — 몸에 밴 삶이었다.</strong></p>
+</blockquote>
+<ul>
+<li>아비투스 = 인내에 뿌리를 둔 습관적 행위 (개인·집단)</li>
+<li>외부인들이 접한 것은 예배가 아니라 아비투스였다</li>
+<li>형성 경로: 3년 신앙문답교육 + 참여하는 예배 → 아비투스 → 발효</li>
+</ul>
+<h3>이민 선교 (Migration Mission)</h3>
+<blockquote>
+<p><strong>선교사가 아닌 이주민, 평범한 그리스도인의 이동이 선교였다</strong></p>
+</blockquote>
+<ul>
+<li>의도하지 않은 선교 — 삶의 이주가 복음 확산</li>
+<li>앤드류 월스의 두 원리:</li>
+<li>토속화 원리: 어느 문화에도 낯설지 않다</li>
+<li>순례자 원리: 어느 문화에도 완전히 동화되지 않는다</li>
+<li>→ 긴장 = <strong>거주민이자 나그네</strong></li>
+</ul>
+<h3>크리스텐덤 비판</h3>
+<p>매력 → 유리 → 강제의 변질:
+- Pre-christendom: 변화된 삶이 선교
+- Christendom: 강제·제도·권력이 선교
+- Post-christendom: 소수 공동체로 돌아갈 때 선교가 회복된다</p>
+<hr />
+<h2>로잔 운동 (Lausanne Movement)</h2>
+<p><a class="wl" href="../../t/%EB%B3%B5%EC%9D%8C%EC%A3%BC%EC%9D%98/">복음주의</a> 및 <span class="wl-dead" title="위키 내부 링크">2024L4로잔</span> 참조.</p>
+<ul>
+<li>정의: <strong>복음주의 교회들의 세계 복음화 운동</strong> (교단 연합이나 학문 운동이 아님)</li>
+<li>에딘버러(1910) 선교 정신 계승 + WCC의 선교 인간화에 저항하면서 사회적 책임 수용</li>
+<li>조직보다 <strong>네트워킹</strong>에 강점 — 전 교회를 대상으로 한 구속력은 부족하지만 총체적 선교 진영에는 권위 있는 문서</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>대회</th>
+<th>연도·장소</th>
+<th>핵심 유산</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1차 로잔언약</td>
+<td>1974 스위스</td>
+<td>미전도종족운동 씨앗</td>
+</tr>
+<tr>
+<td>2차 마닐라 선언</td>
+<td>1989 마닐라</td>
+<td>전략적 협력 강조</td>
+</tr>
+<tr>
+<td>3차 케이프타운 서약</td>
+<td>2010 케이프타운</td>
+<td>총체적 선교 강조</td>
+</tr>
+<tr>
+<td>4차 서울 선언문</td>
+<td>2024 서울</td>
+<td><a class="wl" href="../../b/%EB%8C%80%EC%9C%84%EC%9E%84%EB%A0%B9%ED%98%84%ED%99%A9%EB%B3%B4%EA%B3%A0%EC%84%9C/">대위임령현황보고서</a>, 다중심적 선교, 협력</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 긴장</strong>: 전도 우선성 ↔ 총체적 선교 그룹 간 대립<br />
+→ <span class="wl-dead" title="위키 내부 링크">이재훈</span> 목사가 L4 서울 한국준비위원장으로 주도</p>
+<hr />
+<h2>총체적 선교 (Holistic Mission)</h2>
+<p>로잔운동과 인터서브에서 강조:
+- 온전한 복음 + 온 교회 + 온 세상
+- 영혼 구원만이 아닌 창조세계 전체의 회복
+- 사회 개발·의료·교육 등 전 분야가 선교 영역</p>
+<h2>미셔널 처치 (Missional Church)</h2>
+<ul>
+<li>교회가 본질적으로 선교적이다 (not just doing mission)</li>
+<li>칼 바르트 → 레슬리 뉴비긴 계보</li>
+<li>Church Engagement: 선교단체가 지역교회를 미셔널하게 임파워먼트</li>
+</ul>
+<p>→ 상세 내용: <a class="wl" href="../../t/%EB%AF%B8%EC%85%94%EB%84%90%EC%B2%98%EC%B9%98%EC%99%80%EC%A7%80%EC%97%AD%EA%B5%90%ED%9A%8C%ED%98%91%EB%A0%A5/">미셔널처치와지역교회협력</a> — 교회 위기 진단, 협력 3단계 모델, WEC-동신센더스쿨 사례, 선교단체별 비교, 멤버십 전략</p>
+<h2>대위임령 재해석 (L4 서울, 2024)</h2>
+<ul>
+<li>핵심 명령: "제자 삼으라"(마테튜오)</li>
+<li>선교 = 제자도</li>
+<li>미<a class="wl" href="../../t/%EC%A0%84%EB%8F%84/">전도</a>종족 17,453개 (랄프 윈터의 유산)</li>
+<li>다중심적 선교(Polycentric Mission): 더 이상 서양 중심이 아님</li>
+</ul>
+<h2>등장 과목 / 이벤트</h2>
+<ul>
+<li><span class="wl-dead" title="위키 내부 링크">선교학</span> — 중심 과목</li>
+<li><span class="wl-dead" title="위키 내부 링크">전도와제자도</span> — 전도와 선교의 연계</li>
+<li><span class="wl-dead" title="위키 내부 링크">조직신학II</span> — 선교적 교회론</li>
+<li><span class="wl-dead" title="위키 내부 링크">2016년동신센더스쿨</span> — 센더의 성경적 근거</li>
+<li><span class="wl-dead" title="위키 내부 링크">LAMs</span> — 하나님 백성의 선교 (크리스토퍼 라이트)</li>
+<li><span class="wl-dead" title="위키 내부 링크">2024L4로잔</span> — 다중심적 선교, 대위임령 재해석</li>
+<li><span class="wl-dead" title="위키 내부 링크">church-engagement</span> — 미셔널 처치 실제</li>
+</ul>
+<h2>강의 목록</h2>
+<ul>
+<li><span class="wl-dead" title="위키 내부 링크">선교강의목록</span> — 선교 키노트 강의 전체 목록 (83개)</li>
+</ul>
+<h2>BAM / 비즈니스 선교</h2>
+<ul>
+<li><a class="wl" href="../../t/%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4%EC%84%A0%EA%B5%90/">비즈니스선교</a> — BAM 개념 허브</li>
+<li><a class="wl" href="../../b/%EC%84%A0%ED%95%9C%EC%98%81%ED%96%A5%EB%A0%A5-%EA%B9%80%EC%A7%84%EC%88%98/">선한영향력-김진수</a> — ISI(정직·나눔·자립), 소유권 이전, 재산권</li>
+<li><span class="wl-dead" title="위키 내부 링크">김진수</span> — 비즈니스 선교 실천가</li>
+</ul>
+<h2>도널드 맥가브란 — 족속운동과 교회 성장학</h2>
+<p><a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A0%EA%B5%90%EC%A0%84%EB%9E%B5_%EB%8F%84%EB%84%90%EB%93%9C%EB%A7%A5%EA%B0%80%EB%B8%8C%EB%9E%80/">하나님의선교전략_도널드맥가브란</a> (<span class="wl-dead" title="위키 내부 링크">도널드맥가브란</span>)</p>
+<blockquote>
+<p>"복음을 선교 기지 안에 가두어 역동성을 꺾는 것이 아니라,<br />
+<strong>다리를 놓고</strong> 복음이 건너가면 자생할 수 있도록 돌보아야 한다."</p>
+</blockquote>
+<p><strong>기여</strong>: 선교 기지 중심주의 탈피, 족속 단위 복음화의 성경적 근거, 자립 교회 비전<br />
+<strong>비판</strong>: 동질집단원리(HUP) → 분리 교회 정당화 위험, 제자화-완전화 분리 → 명목 기독교, 사회 사역 도구화</p>
+<p><strong>맥가브란 vs 크라이더 — 선교 속도와 깊이의 긴장:</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>맥가브란</th>
+<th>크라이더</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>성장 동력</td>
+<td>족속 관계망 + 집단 개종</td>
+<td>아비투스 — 몸에 밴 삶</td>
+</tr>
+<tr>
+<td>속도</td>
+<td>빠른 수확</td>
+<td>3년 신앙문답 후 세례</td>
+</tr>
+<tr>
+<td>위험</td>
+<td>명목 기독교·혼합주의</td>
+<td>지나친 느림·폐쇄성</td>
+</tr>
+</tbody>
+</table>
+<p>→ 두 접근은 대립이 아니라 긴장 안에서 함께 붙들어야 한다.</p>
+<hr />
+<h2>글로벌 교회 패러다임 — 포스트팬데믹 선교 전환</h2>
+<p><a class="wl" href="../../b/HasAnythingChanged_%ED%8C%AC%EB%8D%B0%EB%AF%B9%EC%9D%B4%ED%9B%84%EC%84%A0%EA%B5%90%EC%B0%B8%EC%97%AC/">HasAnythingChanged_팬데믹이후선교참여</a></p>
+<p>코비드는 <strong>'파송으로서의 선교(Mission-as-sending)'</strong> 패러다임에 근본적으로 도전했다.
+데이빗 보쉬의 에큐메니컬 패러다임을 이어받아 <strong>글로벌 교회 패러다임</strong>으로 재명명.</p>
+<p><strong>크리스텐덤 패러다임의 4가지 특징 → 한계:</strong>
+1. 선교 = 기독교 지역 → 비기독교 지역
+2. 선교사 = 소수 특별 계층
+3. 선교 = 전문 기관의 과업
+4. 목표 = 회심·교회 개척</p>
+<p><strong>7가지 패러다임 수정:</strong>
+- 영토 → 종족 / 서구 중심 → 모든 곳에서 모든 곳으로
+- 서구 = 파송지 → <strong>서구 = 선교 수신지</strong> (역방향 선교)
+- 장기 헌신 → 단기 급증 / 지역교회 직접 파송 병행
+- 목표 확장: 총체적·통합적 선교</p>
+<p><strong>★ 세 가지 초청:</strong></p>
+<table>
+<thead>
+<tr>
+<th>초청</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>겸손과 의존</td>
+<td>하나님의 선교 중심으로 선교학 재정립</td>
+</tr>
+<tr>
+<td><strong>'가라' → '오라'</strong></td>
+<td>막3:13-15 — 먼저 함께 있게 하시고, 그 다음 보내셨다</td>
+</tr>
+<tr>
+<td>단일 → 다면적 접근</td>
+<td>VUCA 맥락의 다양한 참여 방식</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>선교의 성경적 증거는 완수(completion)를 지향하지 않는다.
+모든 인간, 모든 피조물의 참된 번영을 지향한다.</strong></p>
+</blockquote>
+<p>제이 마탕가: "선교의 미래는 토착인에게 있다" — 타문화 선교사의 역할 전환: 주도 → 동반</p>
+<hr />
+<h2>MISSION vs missions — 어원과 3단계 패러다임</h2>
+<p><em>raw: <code>raw/lectures/keynote/선교/(NEW)선교에서 선교적 삶으로.md</code> (CMF 수련회 사전영상)</em></p>
+<h3>어원</h3>
+<ul>
+<li>히브리어 <strong>실로아흐</strong>(שלח) → 헬라어 <strong>아포스톨로</strong>(ἀπόστολος) → 라틴어 <strong>미씨오(missio)</strong> → Mission</li>
+<li>'선교(Mission)'라는 단어는 성경에 없지만, 하나님은 구약부터 신약까지 끊임없이 누군가를 <strong>보내셨다</strong></li>
+<li>'삼위일체'가 성경에 없듯, 선교도 단어는 없지만 하나님의 행동 전체가 선교 스토리</li>
+</ul>
+<h3>MISSION vs missions 구분</h3>
+<table>
+<thead>
+<tr>
+<th>용어</th>
+<th>의미</th>
+<th>주체</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MISSION (대문자)</strong></td>
+<td>하나님이 주도하시는 모든 일 (God's Work)</td>
+<td>삼위일체 하나님</td>
+</tr>
+<tr>
+<td><strong>missions (소문자)</strong></td>
+<td>보냄받은 자들이 응답하는 모든 사역 (Our Work)</td>
+<td>그리스도인</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"모세가 자기 임의로 행하지 않고 여호와께서 보내사 일했던 것처럼,<br />
+우리의 모든 일의 근거는 나의 임의가 아닌 하나님의 MISSION에 동참하는 missions이어야 한다"</p>
+</blockquote>
+<h3>Life AS Mission — 3단계 패러다임</h3>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>형태</th>
+<th>특성</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Life // Mission</strong></td>
+<td>직업 생활 ≠ 선교</td>
+<td>완전히 분리된 과거</td>
+</tr>
+<tr>
+<td><strong>Life FOR Mission</strong></td>
+<td>직업 생활 → 선교 후원</td>
+<td>선교사를 위한 헌신 (이전 세대)</td>
+</tr>
+<tr>
+<td><strong>Life AS Mission</strong></td>
+<td>직업 생활 = 선교 그 자체</td>
+<td>21세기 미셔널 라이프</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>21세기: 소수 선교사(Missionary) → <strong>모든 그리스도인이 미셔너(Missioner)</strong></li>
+<li>선교의 방식은 변해도 하나님의 사랑(본질)은 변하지 않는다<br />
+  → "부모가 자녀 나이에 맞게 사랑 방식을 바꾸듯, 하나님도 시대·문화에 맞게 선교 방식을 입히신다"</li>
+</ul>
+<h3>선교적 삶의 3가지 태도 (의료인 적용)</h3>
+<ol>
+<li><strong>롤모델 대신 레퍼런스</strong> — 완벽한 롤모델 복제 말고, 다양한 선배 궤적을 레퍼런스 삼아 나만의 그림을 그려라</li>
+<li><strong>드론 줌 아웃</strong> — 개인·공동체에 줌인하는 것을 넘어 하나님 나라 거시적 관점으로 조망하라</li>
+<li><strong>새 부대의 창의성</strong> — 엘리야가 "나만 남았다"고 할 때 하나님은 7천 명을 준비하셨다</li>
+</ol>
+<hr />
+<h2>타문화 선교사 준비 — 존재·지식·사역의 3기둥</h2>
+<p><em>raw: <code>raw/lectures/keynote/선교/멘토링1 타문화 선교사가 되기 위한 준비(New).md</code></em><br />
+<em>raw: <code>raw/lectures/keynote/선교/멘토링4 선교 패러다임의 구조적 전환(New).md</code></em></p>
+<h3>세계화 = 히드라 (선교지는 백지가 아니다)</h3>
+<blockquote>
+<p>"세계화는 마치 많은 얼굴을 가진 히드라처럼 경제·문화·기술·미디어 등 모든 영역에서<br />
+거대한 방해자로 작용한다. 그리스도인은 이런 도전을 회피하지 않고 씨름해야 한다."</p>
+</blockquote>
+<h3>선교사의 3기둥 (Being · Knowing · Doing)</h3>
+<table>
+<thead>
+<tr>
+<th>기둥</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Being (존재)</strong></td>
+<td>하나님과의 개인적 동행, 가족의 온전함, 종의 자세·적응력</td>
+</tr>
+<tr>
+<td><strong>Knowing (지식)</strong></td>
+<td>성경적 진리, 문화·건강 이해, 세계 협력 관계망</td>
+</tr>
+<tr>
+<td><strong>Doing (사역)</strong></td>
+<td>대인 관계, 전도, 커뮤니케이션, 직업적 전문성</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"타문화 사역은 이 세 가지 면이 유기적으로 통합된 '관계적인 일'이다"</p>
+</blockquote>
+<h3>선교사 탈락 원인 — 뼈아픈 현실</h3>
+<p>선교사 중도 탈락의 주원인은 <strong>지식의 부족이 아니다</strong>:
+1. 영성의 부족
+2. 타인과 어울리는 <strong>관계성의 결핍</strong>
+3. 정규(Formal)·비정규(Nonformal)·비공식(Informal) 세 학습이 결합된 <strong>사전 통합 훈련의 부재</strong></p>
+<h3>5가지 사역 정체성 유형</h3>
+<table>
+<thead>
+<tr>
+<th>유형</th>
+<th>정체성</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1타입</td>
+<td>전통적 선교사 (타문화 장기 파송)</td>
+</tr>
+<tr>
+<td>2타입</td>
+<td>직업을 가진 선교사 (텐트메이커)</td>
+</tr>
+<tr>
+<td>3타입</td>
+<td>선교사가 된 직업인 (BAM)</td>
+</tr>
+<tr>
+<td>4타입</td>
+<td>해외에 있는 직업인 (주재원·유학생)</td>
+</tr>
+<tr>
+<td>5타입</td>
+<td>국내에 있는 직업인 (Life AS Mission)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"직업은 곧 거룩한 사명이 되고, 일상이 가장 강력한 타문화 선교의 현장으로 변화된다"</p>
+</blockquote>
+<h3>소명 검증 3개 톱니바퀴</h3>
+<ol>
+<li><strong>내면</strong>: 성경적 확신 → 두려움 요인 제거</li>
+<li><strong>외면</strong>: 나의 은사와 현장의 필요가 교차하는 신호 발견</li>
+<li><strong>현실</strong>: 비자·재정 장벽 인지 + 파송 주체 신뢰 → 신발 끈 묶기</li>
+</ol>
+<h3>선교사의 이중적 편견</h3>
+<table>
+<thead>
+<tr>
+<th>현장</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>국내</strong></td>
+<td>가족·사회의 오해, 결혼·재정 문제</td>
+</tr>
+<tr>
+<td><strong>선교지</strong></td>
+<td>이방인으로서의 고립감, 교제권 제한, 현지인의 편견</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"파송 교회와 후원자들이 이 심리적 전투를 깊이 공감하고 동역해 주어야 한다"</p>
+</blockquote>
+<hr />
+<h2>코로나 시대 선교적 패러다임 전환</h2>
+<p><em>raw: <code>raw/lectures/keynote/기타/코로나시대 패러다임 전환.md</code></em><br />
+<em>(CMF 학사학원사역부 강의)</em></p>
+<h3>선교 = 내러티브(거대 서사) 싸움</h3>
+<ul>
+<li>세상의 지배 내러티브: 고대 그리스·로마 → 중세 기독교 → 계몽주의 → 마르크스주의 → 지구적 자본주의(신자유주의) — 모두 언젠가 무너짐</li>
+<li>코로나 = 세계화(신자유주의) 내러티브 붕괴를 가속화한 사건</li>
+<li><strong>기독교의 거대 내러티브</strong>: 창조 → 타락 → 구속 → 새창조 (앞뒤를 잘라먹으면 안 됨)</li>
+<li>선교 = 이 무너지지 않는 내러티브를 <strong>선포(말) + 현시(삶)</strong> 하는 것</li>
+</ul>
+<h3>복음을 전하면 교회가 먼저 변한다 (행 10, 15장)</h3>
+<ul>
+<li>베드로·고넬료 사건(행 10): 억지로 복음을 전했는데 역사가 일어남 → <strong>고넬료의 회심만이 아닌 베드로의 회심</strong>(편견 박살)</li>
+<li>예루살렘 공의회(행 15): 베드로의 증언 → 교회의 혁명적 변화(할례 논쟁 해결 → 복음이 월드와이드)</li>
+<li>"선교는 세상을 변화시킬 뿐 아니라 교회의 혁명적 변화를 가져온다"</li>
+<li>하나님이 '특수성'(한 사람·한 나라)을 통해 일하시는 이유: 그 과정에서 우리 자신이 성장하기 때문</li>
+</ul>
+<h3>패러다임 전환의 메커니즘</h3>
+<p><strong>토마스 쿤</strong>: 과학은 점진적이 아닌 혁명적으로 변한다 (천동설→지동설→뉴턴→아인슈타인)
+- 전환기에는 항상 팬데믹 같은 혼돈이 있었다
+- "원자들을 부수는 것보다 편견들을 부수는 것이 더 어렵다" (아인슈타인)</p>
+<p><strong>앨빈 토플러</strong>: Learn → <strong>Unlearn → Relearn</strong>
+- 새로운 지식은 기존 것을 버려야(Unlearn) 들어온다
+- 베드로에게 성령님이 하신 것이 바로 Relearn이다
+- 코로나 시대: 선교·복음·예배 모두 Relearn 필요</p>
+<h3>세일보트 모델 (Sail Boat)</h3>
+<table>
+<thead>
+<tr>
+<th>비교</th>
+<th>파워보트</th>
+<th>세일보트</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>동력</td>
+<td>자체 엔진 = 내 힘·기획</td>
+<td>바람 = 성령</td>
+</tr>
+<tr>
+<td>선교 방식</td>
+<td>나의 선교</td>
+<td>하나님의 선교 (Missio Dei)</td>
+</tr>
+<tr>
+<td>문제</td>
+<td>"I am something"이 되려 함</td>
+<td>"I am nothing" — 바람 스케줄을 따름</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"돛을 올리지 않으면 바람이 어디서 와서 어디로 가는지 모른다" — Catch the Wind</p>
+</blockquote>
+<h3>코로나 시대 선교 3축</h3>
+<table>
+<thead>
+<tr>
+<th>축</th>
+<th>핵심 질문</th>
+<th>성경 모델</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>직업</strong></td>
+<td>내 일이 선교인가? 창조명령+대위임령 통합. 직업적 거듭남이 있어야</td>
+<td>요셉·다니엘 — 원치 않는 자리에서 성실+윤리 경계선</td>
+</tr>
+<tr>
+<td><strong>윤리</strong></td>
+<td>의와 공도(쯔다카+미쉬파트)를 행하는가?</td>
+<td>아브라함 — 선교의 방법론은 정의의 실천</td>
+</tr>
+<tr>
+<td><strong>가정</strong></td>
+<td>선교의 기본 단위로서 부부가 하나인가?</td>
+<td>아브라함·사라 — 배우자가 첫 번째 선교지</td>
+</tr>
+</tbody>
+</table>
+<h3>예배·학업·공동체 적용</h3>
+<ul>
+<li><strong>예배</strong>: 예배가 선교의 연료. 예배 → 하나님의 마음 앎 → 하나님의 일 참여</li>
+<li><strong>학업</strong>: 경쟁이 아닌 절대평가 마인드. "내 때문에 다른 사람이 복을 받으면 된다" — 족보·야마 나누기</li>
+<li><strong>공동체</strong>: 식사가 선교. 아브라함이 손님을 대접한 식탁에서 소명이 왔다 → "밥을 먹자"</li>
+</ul>
+<p>→ <a class="wl" href="../../t/%EC%B0%BD%EC%A1%B0%EC%84%B8%EA%B3%84%EB%8F%8C%EB%B4%84/">창조세계돌봄</a>, <a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a>, <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a></p>
+<hr />
+<h2>관련 서적</h2>
+<ul>
+<li><a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EB%82%98%EB%9D%BC%EC%99%80%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A0%EA%B5%90_%EC%A0%95%EB%AF%BC%EC%98%81/">하나님나라와하나님의선교_정민영</a> — 신본주의 선교론, 회심(metanoia) vs 개종, 봉투구조(inclusio), 수동성에 기반한 능동성, Being→Doing 성육신적 증인</li>
+<li><a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A0%EA%B5%90%EC%84%B8%EC%83%81%EC%9D%84%EB%B0%94%EA%BE%B8%EB%8B%A4_%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%86%A0%ED%8D%BC%EB%9D%BC%EC%9D%B4%ED%8A%B8/">하나님의선교세상을바꾸다_크리스토퍼라이트</a> — 선교적 성경 해석학, 7막 드라마, 선교의 다섯 표지(복음전도·가르침·긍휼·정의·창조세계돌봄)와 세 초점(교회·사회·창조세계)</li>
+<li><span class="wl-dead" title="위키 내부 링크">북썸머리목록</span> — 전체 독서 목록</li>
+<li><a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99%EC%9D%98%EB%8F%84%EC%A0%84-%ED%81%AC%EB%A0%88%EC%9D%B4%EA%B7%B8%EC%98%A4%ED%8A%B8/">선교신학의도전-크레이그오트</a> — 선교신학의 도전 (크레이그 오트)</li>
+<li><a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A0%EA%B5%90%EC%A0%84%EB%9E%B5_%EB%8F%84%EB%84%90%EB%93%9C%EB%A7%A5%EA%B0%80%EB%B8%8C%EB%9E%80/">하나님의선교전략_도널드맥가브란</a> — 족속운동, HUP, 선교 기지 비판</li>
+<li><a class="wl" href="../../b/HasAnythingChanged_%ED%8C%AC%EB%8D%B0%EB%AF%B9%EC%9D%B4%ED%9B%84%EC%84%A0%EA%B5%90%EC%B0%B8%EC%97%AC/">HasAnythingChanged_팬데믹이후선교참여</a> — 글로벌 교회 패러다임, 팬데믹 이후 선교 전환</li>
+</ul>
+</article>
+<div class="tagrow"><span>#선교학</span><span>#선교신학</span><span>#미씨오데이</span><span>#세계선교</span><span>#족속운동</span><span>#교회성장</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

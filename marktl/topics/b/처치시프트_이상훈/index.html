@@ -1,0 +1,231 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>처치 시프트 (이상훈) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="author">이상훈</span><span class="date">2026-05-05</span></div>
+  <h1 class="note-title">처치 시프트 (이상훈)</h1>
+  
+</header>
+<article class="note">
+<h2>개요</h2>
+<ul>
+<li><strong>저자</strong>: 이상훈</li>
+<li><strong>부제</strong>: 선교적 교회 사역 패러다임</li>
+<li><strong>위치</strong>: 한국 맥락에서 선교적 교회운동을 교회론 차원으로 재정립한 책</li>
+</ul>
+<h2>★ 핵심 명제</h2>
+<blockquote>
+<p><strong>종교의 재부흥이 교회의 부흥과는 관련이 없다.<br />
+이전 교회 갱신 운동들은 형식과 형태를 바꾸는 데 집중했지만,<br />
+선교적 교회운동은 교회론(ecclesiology) 자체를 고민한다.</strong></p>
+</blockquote>
+<h2>1. 진단 — 시프트가 필요한 이유</h2>
+<h3>종교의 재부흥 ≠ 교회의 부흥</h3>
+<p>포스트모던 시대에 종교적 관심은 높아졌다:
+- 개인의 영적 신비와 체험 강조
+- "어떤 신이 진짜인가?" — 종교 다원주의 확산</p>
+<p>그러나 교회는 무기력하다. 왜?
+→ <strong>교회가 존재론적 질문을 잃어버렸기 때문</strong></p>
+<h3>이전 운동들의 한계</h3>
+<table>
+<thead>
+<tr>
+<th>운동 유형</th>
+<th>초점</th>
+<th>한계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>예배 갱신 운동</td>
+<td>예배 형식·스타일 변화</td>
+<td>껍데기만 바꿈</td>
+</tr>
+<tr>
+<td>셀·소그룹 운동</td>
+<td>구조와 형태 변화</td>
+<td>시스템만 바꿈</td>
+</tr>
+<tr>
+<td>구도자 중심 운동</td>
+<td>프로그램·접근성 개선</td>
+<td>문화 적응만</td>
+</tr>
+<tr>
+<td><strong>선교적 교회운동</strong></td>
+<td><strong>교회론 자체</strong></td>
+<td>존재 이유를 묻는다</td>
+</tr>
+</tbody>
+</table>
+<h2>2. 교회 시프트 — 무엇이 바뀌어야 하는가</h2>
+<h3>패러다임 전환 구조</h3>
+<table>
+<thead>
+<tr>
+<th>기존 교회론</th>
+<th>시프트 후</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>교회가 선교를 한다 (doing mission)</td>
+<td>교회가 선교적이다 (being missional)</td>
+</tr>
+<tr>
+<td>선교 = 특별한 사람들의 일</td>
+<td>선교 = 교회의 존재 방식</td>
+</tr>
+<tr>
+<td>사람들을 교회로 오게 하라 (attractional)</td>
+<td>교회가 세상으로 나아간다 (incarnational)</td>
+</tr>
+<tr>
+<td>건물·프로그램 중심</td>
+<td>공동체·삶 중심</td>
+</tr>
+<tr>
+<td>교회 성장 = 수치 성장</td>
+<td>교회 성장 = 선교적 성숙</td>
+</tr>
+</tbody>
+</table>
+<h3>존재론적 성찰</h3>
+<blockquote>
+<p><strong>교회의 원초적 질문:<br />
+우리는 왜 존재하는가? 무엇을 위해 모이는가?</strong></p>
+</blockquote>
+<p>→ 교회는 세상을 위해 위탁된 선교 공동체<br />
+→ 이 자기 인식의 변화 없이는 형식을 아무리 바꿔도 무기력하다</p>
+<h2>3. 선교적 교회의 정체성</h2>
+<blockquote>
+<p><strong>교회 = 하나님의 선교(Missio Dei)에 동참하도록 보냄받은 공동체</strong></p>
+</blockquote>
+<ul>
+<li>선교는 교회의 프로그램이 아니라 <strong>교회의 본질</strong></li>
+<li>교회의 존재 목적이 선교이므로, 선교를 위해 교회가 변해야 한다</li>
+<li>"위탁된 사명" — 소유권은 하나님께 있다</li>
+</ul>
+<h2>4. vault 내 연결 — 같은 문제를 다루는 자료들</h2>
+<h3>앨런 허쉬 <a class="wl" href="../../b/%EC%9E%8A%ED%98%80%EC%A7%84%EA%B5%90%ED%9A%8C%EC%9D%98%EA%B8%B8_%EC%95%A8%EB%9F%B0%ED%97%88%EC%89%AC/">잊혀진교회의길_앨런허쉬</a></h3>
+<blockquote>
+<p><strong>기독론 → 선교학 → 교회론</strong><br />
+교회의 형태는 선교적 사명에서 파생된다 — 허쉬와 이상훈이 같은 방향을 말한다</p>
+</blockquote>
+<h3>레슬리 뉴비긴 <a class="wl" href="../../b/%EC%98%A4%ED%94%88%EC%8B%9C%ED%81%AC%EB%A6%BF_%EB%A0%88%EC%8A%AC%EB%A6%AC%EB%89%B4%EB%B9%84%EA%B8%B4/">오픈시크릿_레슬리뉴비긴</a></h3>
+<blockquote>
+<p>"교회와 선교회는 서로 다른 공동체가 아니다"<br />
+교회 자체가 선교적 공동체여야 함 — 이상훈의 핵심 시프트와 일치</p>
+</blockquote>
+<h3>문대원 선교적교회 시리즈 <span class="wl-dead" title="위키 내부 링크">선교적교회시리즈</span></h3>
+<ul>
+<li>대안 공동체 / 소금과 빛 / 정직성(Integrity)</li>
+<li>"메신저와 메시지는 분리될 수 없다" — 이상훈의 '교회의 존재론적 정체성'과 연결</li>
+</ul>
+<h3>APEST — 앨런 허쉬 <a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%A1%A0/">교회론</a> §6</h3>
+<ul>
+<li>APE(사도·선지자·전도자)가 추방된 결과 = 선교를 잃은 교회</li>
+<li>처치 시프트 = APE를 되찾는 것</li>
+</ul>
+<h2>5. ★ 미해결 질문</h2>
+<ol>
+<li><strong>"어떻게 시프트하는가?"</strong>: 패러다임 전환의 실제 방법론은 무엇인가?
+   → 허쉬: mDNA 회복 / 이상협: 창타구완 이야기로 상상력 형성</li>
+<li><strong>한국 교회 맥락</strong>: 한국의 대형 교회 구조에서 시프트가 가능한가?
+   → <a class="wl" href="../../b/%EC%9E%A5%EB%A1%9C%EC%A7%81%EC%9D%84%EB%8B%A4%EC%8B%9C%EC%83%9D%EA%B0%81%ED%95%98%EB%8B%A4/">장로직을다시생각하다</a>: 제도가 목적을 대체하면 운동이 죽는다</li>
+<li><strong>성장과 선교의 관계</strong>: 선교적 교회는 작아야 하는가?</li>
+</ol>
+<h2>관련 연결</h2>
+<ul>
+<li><a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%A1%A0/">교회론</a> — 개념 허브, §5 선교적 교회론</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a> — 선교적 교회의 특징</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> — 미씨오 데이 신학 기초</li>
+<li><a class="wl" href="../../b/%EC%9E%8A%ED%98%80%EC%A7%84%EA%B5%90%ED%9A%8C%EC%9D%98%EA%B8%B8_%EC%95%A8%EB%9F%B0%ED%97%88%EC%89%AC/">잊혀진교회의길_앨런허쉬</a> — 같은 문제의 서구 진단</li>
+<li><a class="wl" href="../../b/%EC%98%A4%ED%94%88%EC%8B%9C%ED%81%AC%EB%A6%BF_%EB%A0%88%EC%8A%AC%EB%A6%AC%EB%89%B4%EB%B9%84%EA%B8%B4/">오픈시크릿_레슬리뉴비긴</a> — 선교적 교회의 삼위일체 기초</li>
+<li><span class="wl-dead" title="위키 내부 링크">이상훈</span> — 저자 페이지</li>
+</ul>
+</article>
+<div class="tagrow"><span>#교회론</span><span>#선교적교회</span><span>#패러다임전환</span><span>#교회갱신</span><span>#한국교회</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

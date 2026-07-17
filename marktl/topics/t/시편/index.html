@@ -1,0 +1,198 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>시편 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:174">성경·해석</span><span class="date">2026-07-03</span></div>
+  <h1 class="note-title">시편</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>시편(세페르 티힐림, "찬양의 책")은 다윗 한 사람의 저작이 아니라 저자·공동체·민족의 다양한 목소리가 시대를 가로질러 모여 이루어진 책이다. <span class="wl-dead" title="위키 내부 링크">구약개론II 2주 강의</span>는 시편을 "흙먼지의 인생이 창조자를 만나서" 내는 찬양·탄식·갈망의 목소리 모음으로 규정하면서, "다윗의 시"라는 표제가 붙어 있음에도 실제로는 다윗 혼자 다 쓴 것이 아니라는 점을 강조한다. 시편은 오늘날까지도 예루살렘 통곡의 벽에서 낭송되고 병자를 위한 기도에 암송되는, 시간을 초월해 살아 있는 기도의 언어다.</p>
+<h2>1. 어떻게 살아남았는가 — 정경화의 물리적 조건</h2>
+<p>시편이 정경으로 남을 수 있었던 배경에는 문헌 보존의 절박한 어려움이 있다. 강의는 알렉산더 대제 시절 헬라어 번역(70인역)이나 로마 시대에 출간된 수많은 비극·희극 가운데 오늘날 남은 것이 극소수라는 사실을 대조점으로 제시한다. 이스라엘은 이 어려움을 양피지 사본을 원판과 함께 마련하는 방식으로 대비했는데, 이는 랜드브릿지 위치에 놓인 피정복 민족으로서 다른 나라보다 문학 작품 보존이 훨씬 어려운 처지(문화·종교의 침략, 히브리어에서 아람어로의 언어 전환)에 있었기에 더욱 의미 있는 선택이었다.</p>
+<p>이 보존을 사회적으로 뒷받침한 것이 찬양대 조직의 연속성이다. <span class="wl-dead" title="위키 내부 링크">나훔사르나</span>(Nahum Sarna)는 다윗 당시 조직된 찬양대가 솔로몬 시대를 지나 2차 성전기까지 존재했다고 주장하며, 그 근거로 에스라 2:41·느헤미야 7:44("노래하는 자들은 아삽 자손이…")를 든다 — 다윗 시대로부터 약 500년이 지난 시점에도 찬양대 조직이 이어지고 있었다는 것이다. 강의는 이를 세 갈래로 정리한다. 첫째, 다윗 당시 찬양대가 2차 성전기까지 대를 이어 유지되었다. 둘째, 에스라·느헤미야·다니엘·에스더 시대의 사람들이 타국에 끌려가서도 종교적 열심을 유지했다. 셋째, 가버나움과 같은 회당을 중심으로 예배 공동체가 형성되어 하나님 말씀을 읽고 묵상했다. 유대 회당의 기원은 바벨론 포로기로 거슬러 올라가며, 다니엘이 예루살렘을 향해 창문을 열어놓고 하루 세 번 기도한 사례가 이 전통과 함께 언급된다.</p>
+<h2>2. 5권 구조 — 모세오경을 본뜬 배열</h2>
+<p>시편은 1권(1-41편)부터 5권(107-150편)까지 다섯 권으로 나뉘며, 각 권은 송영 어구로 매듭지어진다 — 1권은 41:13("이스라엘의 하나님 여호와를 영원부터 영원까지 송축할지로다 아멘 아멘"), 2권은 72:19-20, 3권은 89:52, 4권은 106:48, 5권은 150:6이다. 제2마카비서에도 시편이 5권으로 분류된 기록이 남아 있어, 이 구분이 후대의 편의적 분류가 아니라 정경 형성 과정에 뿌리를 둔 것임을 보여준다.</p>
+<p>강의는 "굳이 5권으로 분류할 필요가 있는가"라는 질문을 던지고, 모세오경이 다섯 권인 것에 착안해 "모세가 5권, 다윗도 5권의 찬양"이라는 대응 구조로 답한다. 이 대응은 우연한 형식적 유사성이 아니라, 시편이 <a class="wl" href="../../t/%ED%86%A0%EB%9D%BC/">토라</a>와 나란히 세워진 이스라엘의 응답이라는 신학적 함의를 지닌다.</p>
+<h2>3. 시1-2편 — 서문으로서의 기능</h2>
+<p>시편은 별도의 서문 없이 곧바로 시작하는 다른 성경 내러티브(예: 창세기 22장 아케다 사건이 "그 일 후에…"로 곧바로 시작하는 방식)와 달리, 1-2편이라는 서문을 통해 시편 전체를 읽는 독자에게 목적·의도·방향을 미리 알려준다.</p>
+<p>1편은 지혜의 시로, 잠언 2:12-15의 "악인과 복인의 등장"이라는 구도의 영향을 받았으며 <a class="wl" href="../../t/%ED%86%A0%EB%9D%BC/">토라</a> 연구의 시로 읽힌다. 2편은 다윗의 왕권과 여호와의 왕권이 함께 강조되는 <a class="wl" href="../../t/%EC%99%95%EA%B6%8C%EC%8B%A0%ED%95%99/">왕권시</a>다. 두 시를 하나로 묶어 읽을 수 있는 근거로 강의는 다음을 든다 — 둘 다 개인이나 공동체의 감사·탄원이 아니라는 공통점, 악인·죄인·오만한 자와 복 있는 자를 대조하는 구조, 민족과 세상의 군왕이 하나님을 대적하려는 열망과 그 좌절이라는 공통된 결말. "복 있는 사람"(아쉬레이)이 1편과 2편 끝(2:12)을 하나로 묶는 수미상관 역할을 하며, 1:2의 "묵상"(예히게)과 2:1의 "음모를 꾸미다"(예히구)가 같은 어근(하가)에서 나온다는 언어유희도 지적된다. 다만 강의는 이를 "음모를 꾸미다"로 곧바로 연결하는 해석은 좋은 해석이 아니라고 선을 긋고, 대신 시77:11-12("묵상하리이다… 옛적 기사를 되새기며")를 근거로 "하가"(묵상하다)는 공부하지 않으면 알 수 없는 역사를 연구하고 그 연구를 행위로 드러내는 것을 뜻한다고 풀이한다. 나무 이미지(시1:3 "시냇가에 심은 나무", 시2:8 "네 소유가 땅끝까지 이르리로다")도 왕을 상징하는 상응 구조로 짝을 이룬다.</p>
+<p>이 서문의 신학적 무게는 신명기 17장과의 연결에서 확인된다. 왕에게 말(군마)·은금·아내를 많이 두지 말라는 금지 명령과 함께 율법서를 등사해 두고 주야로 연구하라는 명령이 주어지는 신17:14 이하는, 시2:2("기름 받은 자")·2:7("너는 내 아들" — 고대 근동 종주가 봉신을 부를 때 쓰던 표현)과 직접 대응한다. 결론적으로 시1-2편은 왕에게 주는 토라 연구의 명령이자 절대 충성의 명령이며, 시편 전체를 읽는 독자에게 그 순종을 요구하는 서문의 메시지를 던진다.</p>
+<h2>4. 탄원시 — 비중과 유형</h2>
+<p>시편의 약 3분의 1을 <a class="wl" href="../../t/%ED%83%84%EC%9B%90%EC%8B%9C/">탄원시</a>가 차지한다. <span class="wl-dead" title="위키 내부 링크">시22</span>:1 "어찌 나를 버리셨나이까"는 예수의 십자가 상 칠언과 직결되는 본문으로 소개되며, 대다수 탄원시는 당황스러운 상황에서 터져 나온다. <span class="wl-dead" title="위키 내부 링크">시58</span>:6 "입에서 이를 꺾으소서"처럼 저주가 담긴 표현도 등장해 해석·적용의 문제를 제기한다.</p>
+<p>탄원시는 세 유형으로 나뉜다 — 개인적인 탄원(<span class="wl-dead" title="위키 내부 링크">시42</span> 5-6절 "내 영혼아 어찌하여 낙망하는가"), 타인의 악한 행동으로 인한 호소(시42:3), 하나님의 침묵으로 인한 호소(시42:9 "어찌하여 나를 잊으셨나이까"). 저주의 대상은 이스라엘을 침략하는 외적이거나 법적 다툼에서 공의의 심판을 구하는 상대라는 두 갈래로 제시되는데, 흥미롭게도 본문은 원수가 누구인지 분명히 밝히지 않는다. 강의는 이를 독자가 다양한 상황에 적용할 수 있도록 의도적으로 모호하게 표현한 장치로 해석한다.</p>
+<h2>5. 탄원시의 7요소 — 구조화된 기도의 문법</h2>
+<p>탄원시는 정형화된 일곱 요소를 지닌다.</p>
+<table>
+<thead>
+<tr>
+<th>순서</th>
+<th>요소</th>
+<th>대표 본문</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>탄원·간청</td>
+<td><span class="wl-dead" title="위키 내부 링크">시12</span>:1, 시17:1 "내 기도에 귀를 기울이소서"</td>
+</tr>
+<tr>
+<td>2</td>
+<td>하나님의 도우심을 간구함</td>
+<td>—</td>
+</tr>
+<tr>
+<td>3</td>
+<td>불평의 호소</td>
+<td><span class="wl-dead" title="위키 내부 링크">시22</span>:6 "나는 벌레, 조롱거리, 비웃음거리"</td>
+</tr>
+<tr>
+<td>4</td>
+<td>죄의 고백 또는 무죄함의 호소</td>
+<td>—</td>
+</tr>
+<tr>
+<td>5</td>
+<td>적들에 대한 저주</td>
+<td><span class="wl-dead" title="위키 내부 링크">시109</span>:8 "빨리 죽으라"</td>
+</tr>
+<tr>
+<td>6</td>
+<td>하나님이 응답하실 것에 대한 확신</td>
+<td>—</td>
+</tr>
+<tr>
+<td>7</td>
+<td>찬양과 감사</td>
+<td><span class="wl-dead" title="위키 내부 링크">시26</span>:12</td>
+</tr>
+</tbody>
+</table>
+<p>이 구조에서 특히 다섯 번째 요소(저주)가 신학적 물음을 낳는다. <span class="wl-dead" title="위키 내부 링크">월터브루그만</span>은 큰아이와 작은아이의 다툼 비유로 이를 설명한다 — 동생이 다쳐서 "형이 나쁜 놈이야"라고 호소할 때, 엄마는 "형한테 그러면 안 돼, 너도 혼난다"라고 반응하는 대신 "알았어, 내가 해결할게"라고 답해야 한다는 것이다. 즉 자신을 스스로 갚지 않고 하나님께 맡기는 것이 탄원시의 논리다. 이 원리는 <span class="wl-dead" title="위키 내부 링크">삼상26</span>장(사울을 죽일 두 번의 기회가 있었으나 다윗이 하나님께 맡긴 사건)에서 실례로 확인되며, 동시에 다윗 자신이 시편에서 저주의 언어를 쓴다는 점도 지적된다 — 결국 "여호와께서 하신다"는 것이 탄원시가 도달하는 결론이다. 마지막 요소가 찬양과 감사인 것은 우연이 아니다. 탄원시는 결국 감사로 끝난다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>시편은 다윗 개인의 저작이 아니라 저자·공동체·민족·오늘 우리의 목소리가 겹겹이 쌓인 책이며, "누가 썼는가"보다 "지금 이 본문이 내 기도가 될 수 있는가"를 먼저 묻게 한다.</li>
+<li>5권 구조는 모세오경(토라)에 대응하는 형식으로, 시편이 이스라엘의 응답으로서 토라와 나란히 서 있다는 함의를 지닌다.</li>
+<li>시1-2편의 서문 기능은 시편 전체를 감정적 위안이 아니라 토라 연구와 절대 충성을 요구하는 말씀으로 읽게 만든다.</li>
+<li>탄원시의 저주 언어는 보복의 도구가 아니라 심판을 하나님께 맡기는 신앙적 장치이며, 반드시 찬양과 감사로 귀결된다.</li>
+<li>정경화는 진공 속에서 일어나지 않았다 — 피정복 민족의 문헌 보존 위기 속에서 찬양대·회당이라는 사회적 기반이 시편의 생존을 뒷받침했다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>시1:2와 시2:1이 공유하는 어근 "하가"가 두 시를 하나로 묶는 근거인지, 오히려 대조의 장치인지는 강의에서도 유보된 채로 남는다.</li>
+<li>나훔 사르나의 찬양대 지속론(다윗~2차 성전기 약 500년)을 뒷받침하는 사료가 에스라 2:41·느 7:44 외에 더 있는지는 확인이 필요하다.</li>
+<li>저주 시편(시109편 등)을 오늘의 언어로 기도하는 것이 감정의 정직함 문제인지, 심판을 하나님께 맡기는 신뢰의 문제인지에 대한 목회적 다룸은 더 전개될 여지가 있다.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%ED%83%84%EC%9B%90%EC%8B%9C/">탄원시</a> — 시편의 약 1/3을 차지하는 장르, 7요소 구조를 별도로 다룸</li>
+<li><a class="wl" href="../../t/%EC%B0%AC%EC%96%91%EC%8B%9C/">찬양시</a> — 시92편 등 찬양시 장르</li>
+<li><a class="wl" href="../../t/%ED%86%A0%EB%9D%BC/">토라</a> — 시1-2편이 요구하는 토라 연구·절대 충성의 대상</li>
+<li><a class="wl" href="../../t/%EC%99%95%EA%B6%8C%EC%8B%A0%ED%95%99/">왕권신학</a> — 시2편의 왕권 모티프와 신명기 17장 왕법의 연결</li>
+<li><span class="wl-dead" title="위키 내부 링크">나훔사르나</span> — 찬양대 조직 지속론</li>
+<li><span class="wl-dead" title="위키 내부 링크">월터브루그만</span> — 탄원시의 신학적 기능(심판을 하나님께 맡김)</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">02주_시편</span></td>
+<td>MBTS 강의</td>
+<td>시편의 정경화·5권 구조·서문 기능·탄원시 7요소 전체 논지</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/구약학</span><span>#topic/탄원시</span><span>#topic/찬양시</span><span>#topic/정경화</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

@@ -1,0 +1,207 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>말은 안 통해도 선교는 통한다 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="author">김영애</span><span class="date">2026-05-03</span></div>
+  <h1 class="note-title">말은 안 통해도 선교는 통한다</h1>
+  
+</header>
+<article class="note">
+<p><strong>저자</strong>: 김영애 (GMS 선교사, 암미선교회 대표)<br />
+<strong>분류</strong>: 이주민 선교 / 다문화 목회 / 한국 디아스포라 선교</p>
+<hr />
+<h2>저자 소개</h2>
+<ul>
+<li>사랑의교회 전도사 출신, 다문화목회학 박사</li>
+<li>터키 방문 후 선교에 도전 → ACTS에서 선교학 수학</li>
+<li>1995년 남양주 공장지대에서 이주민 사역 시작</li>
+<li><strong>1998년 2월 ~ 2007년 1월</strong> GMS 선교사 (교단 최초 이주민선교사)</li>
+<li>현재: 암미선교회 대표</li>
+</ul>
+<blockquote>
+<p>40대 후반에 이주민 선교를 시작한 계기:<br />
+싱글 선교사에게 필리핀 남성의 구애 → 젊은 청년들이 전적으로 헌신할 수 없는 현장에서 자신이 필요하다는 부르심</p>
+</blockquote>
+<hr />
+<h2>한국 이주민 선교의 역사적 배경</h2>
+<table>
+<thead>
+<tr>
+<th>연도</th>
+<th>사건</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1991년</td>
+<td>해외투자연수제도 도입</td>
+</tr>
+<tr>
+<td>1993년</td>
+<td>산업기술연수제 시행</td>
+</tr>
+<tr>
+<td>1995년</td>
+<td>수도권 공장지대 이주민 급증</td>
+</tr>
+<tr>
+<td>2000년대</td>
+<td>국제결혼 증가 → 결혼이주여성 + 유학생 급증</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>다문화 선교의 성경적 근거</h2>
+<h3>바벨탑 이후 — 다양성은 하나님의 계획</h3>
+<ul>
+<li>
+<p><strong>반게메렌</strong> (The Progress of Redemption):<br />
+  하나님은 태초부터 지리적·언어적 다양성을 의도하셨다 (창 1:28).<br />
+  이주·인구 분산·문명의 탄생 = 하나님의 축복의 자연스러운 표출</p>
+</li>
+<li>
+<p><strong>로스</strong> (Creation and Blessing):<br />
+  인류는 근본이 같았으나 언어·영역·정치로 다양하게 갈라짐 — 이는 인류를 축복하시려는 하나님의 계획의 일부</p>
+</li>
+</ul>
+<blockquote>
+<p>창 11장 바벨탑 사건은 심판이 아니라 다양성을 향한 하나님의 섭리로 읽혀야 한다</p>
+</blockquote>
+<h3>이주민 보호의 명령</h3>
+<blockquote>
+<p>"곤궁하고 빈한한 품꾼은 너희 형제든지 네 땅 성문 안에 우거하는 객이든지 그를 학대하지 말며,<br />
+그 품삯을 당일에 주고 해 진 후까지 미루지 말라"<br />
+— 신 24:14-15</p>
+</blockquote>
+<ul>
+<li>이주민 보호는 구약 율법의 핵심 가치</li>
+<li>"품삯을 미루면 죄" — 이주민 착취는 신학적으로 죄다</li>
+</ul>
+<hr />
+<h2>한국 교회에 대한 도전</h2>
+<h3>한국의 낮은 관용도</h3>
+<ul>
+<li>2013년 워싱턴 포스트, 81개국 인종차별 실태 조사:<br />
+  소득·교육 수준이 높은 국가 중 <strong>예외적으로 관용도가 낮은 나라</strong> = 한국</li>
+<li>원인: 단일민족 국가 <a class="wl" href="../../t/%EC%A0%95%EC%B2%B4%EC%84%B1/">정체성</a>의 부산물</li>
+</ul>
+<h3>다국적 선교의 강점</h3>
+<ul>
+<li>2004년 수도권 조사: 초교파 70개 교회·선교단체 분석</li>
+<li>단일국적 선교 vs 다국적 선교 비교 → <strong>다국적 선교가 오히려 장점이 많다</strong></li>
+<li>설·추석 명절 수련회 등 다양한 접촉점 활용</li>
+</ul>
+<h3>한국 교회의 새로운 사명</h3>
+<blockquote>
+<p>"비성경적인 문화를 식별하는 일, 나아가 새로운 기독교 문화를 창출해 나가는 일은<br />
+이제 현지 선교사만의 일이 아니고, 이 시대 한국 교회에게 주어진 사명이 되었다."</p>
+</blockquote>
+<ul>
+<li>선교지는 이제 해외가 아니라 <strong>우리 곁에 와 있다</strong></li>
+<li>이주민 = 하나님이 보내신 선교의 기회</li>
+</ul>
+<hr />
+<h2>핵심 메시지</h2>
+<blockquote>
+<p>"말은 안 통해도 선교는 통한다" —<br />
+언어가 아니라 <strong>사랑과 섬김</strong>이 복음의 언어다</p>
+</blockquote>
+<hr />
+<h2>미해결 질문</h2>
+<ul>
+<li>한국 교회의 단일민족 <a class="wl" href="../../t/%EC%A0%95%EC%B2%B4%EC%84%B1/">정체성</a>을 어떻게 복음적으로 재구성할 것인가?</li>
+<li>이주민 선교와 사회적 정의(품삯·노동권)를 어떻게 통합적으로 접근할 것인가?</li>
+</ul>
+<hr />
+<h2>관련 페이지</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> — 디아스포라 선교, 성육신적 원리</li>
+<li><a class="wl" href="../../t/%EC%84%AC%EA%B9%80/">섬김</a> — 이주민 섬김의 신학적 근거</li>
+<li><a class="wl" href="../../t/%EC%A0%95%EC%B2%B4%EC%84%B1/">정체성</a> — 단일민족 정체성의 한계와 재구성</li>
+<li><span class="wl-dead" title="위키 내부 링크">GMS</span> — GMS 이주민선교 사역</li>
+</ul>
+</article>
+<div class="tagrow"><span>#이주민선교</span><span>#다문화</span><span>#선교신학</span><span>#디아스포라</span><span>#한국선교</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

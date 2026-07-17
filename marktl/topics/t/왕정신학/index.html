@@ -1,0 +1,125 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>왕정신학 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:174">성경·해석</span><span class="date">2026-06-28</span></div>
+  <h1 class="note-title">왕정신학</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>왕정신학은 이스라엘이 사사시대에서 왕정 체제로 전환하는 과정에서 드러나는, 왕권과 하나님의 주권 사이의 신학적 긴장을 다룬다. 핵심은 "능력이 아니라 청종이 지도자의 자격"이라는 원리이며, 사울과 다윗의 대비를 통해 이 원리가 구체화된다.</p>
+<h2>1. 사사시대 말기 리더십 위기와 왕정의 등장</h2>
+<p>사사시대 말기는 종교(엘리의 영적 쇠퇴)·정치(홉니·비느하스의 타락)·전쟁(법궤 탈취, <span class="wl-dead" title="위키 내부 링크">삼상4</span> 패전)이라는 세 영역 모두에서 <a class="wl" href="../../t/%EB%A6%AC%EB%8D%94%EC%8B%AD/">리더십</a> 부재의 위기였다. <span class="wl-dead" title="위키 내부 링크">사무엘</span>은 종교개혁(우상숭배 타파·언약관계 회복)으로 이 위기를 해결한 전환점적 인물이었으나, 그의 두 아들 역시 엘리 제사장의 아들들과 비슷한 타락 패턴을 반복하자 백성들은 왕을 요구한다(삼상8:5). 왕정은 이렇게 리더십 실패의 반복 속에서 요청된 제도로 등장한다.</p>
+<h2>2. 사울의 등극과 초기 전공</h2>
+<p>베냐민 지파 사울은 준수한 외모(당대 평균 키 대비 큰 키)로 기름부음을 받고, 여호와의 신이 임하는 사사들의 패턴을 그대로 이어받는다. 암몬과의 전쟁(삼상11장)에서 신이 크게 임해 승리하면서 비로소 왕권이 백성들에게 실질적으로 인정받는다. 이 승리는 사사기 21장(길르앗 야베스 학살과 베냐민 지파 존속)과 삼상31장(사울의 죽음 후 길르앗 야베스 사람들이 시신을 거두어 장사)을 잇는 하나의 서사 고리로 연결된다.</p>
+<h2>3. 사울이 버림받은 이유 — 청종하지 않음</h2>
+<p>왕정신학의 핵심 논지는 <span class="wl-dead" title="위키 내부 링크">삼상15</span> 아말렉 헤렘(진멸) 명령에 대한 사울의 불순종에서 드러난다. 사울은 아각 왕과 가축 일부를 남겨 명령을 온전히 이행하지 않았고, 추궁받자 "백성 때문에"라며 책임을 전가한다. 사무엘은 "순종이 제사보다 낫다"(22절)며 목소리에 대한 순종이 제사 행위보다 본질적임을 선언한다. 사울은 회개("내가 범죄하였습니다")하면서도 곧바로 "그럴지라도 나를 백성 앞에서 높여 달라"(30절)며 자기 자리를 구하는 모습을 보인다. 이는 인간이 스스로 자기 자리를 높이려 한 바벨탑적 패턴으로 읽히며, 모세·예레미야·기드온처럼 "능력이 아니라 청종"이 지도자의 자격이라는 구약의 반복 패턴과 대비되어 사울의 결정적 실패로 지목된다.</p>
+<h2>4. 왕이 아닌 하나님이 종주</h2>
+<p>왕정신학의 근저에는 시내산 언약이 고대 근동의 종주-봉신 계약 형식을 따르되 종주의 자리에 왕이 아닌 하나님이 있다는 구조가 놓여 있다. 이스라엘에서 왕들의 무덤이 발견되지 않는다는 사실(다윗의 무덤조차 화려하지 않았고 평민과 구분되지 않았다)은 이스라엘에서 유일한 왕은 하나님이시며 왕정이 인간 영웅을 만들지 않는다는 것을 뒷받침하는 고고학적 근거로 제시된다. 신명기 17:16이 왕에게 "애굽으로 백성을 돌려보내지 말라"고 명하는 것도 같은 맥락 — 왕조차 언약의 조항 아래 있으며 옛 노예 생활로 회귀할 권한이 없다.</p>
+<h2>5. 사울과 다윗의 대비, 그리고 아히도벨의 배신</h2>
+<p>"사울은 사람, 다윗은 하나님에 귀 기울인다"는 대비가 왕정신학의 결론을 이룬다. 그러나 다윗의 왕정 역시 완전하지 않다 — 다윗의 밧세바 사건(삼하11장)은 아히도벨의 배신으로 되돌아온다. 아히도벨은 밧세바의 조부(아히도벨-엘리암-밧세바, 삼하11:3·23:34)로, 그의 압살롬 반란 가담은 정치적 야심이 아니라 다윗이 자신의 가족을 파괴한 데 대한 복수로 해석된다. 리더의 사적 실패가 국가적 반란으로 되돌아온다는 이 서사는, 왕정 제도 안에서도 리더 개인의 순종·불순종이 공동체 전체에 파장을 미친다는 왕정신학의 실천적 결론을 이룬다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>왕정신학의 핵심은 "능력이 아니라 청종"이 지도자 자격이라는 원리다.</li>
+<li>이스라엘에 왕의 무덤이 없다는 사실은 하나님이 유일한 왕이라는 신학을 뒷받침하는 고고학적 근거로 제시된다.</li>
+<li>회개와 자기 자리 고수는 다르다 — 사울은 죄를 고백했으나 곧바로 지위 보전을 요구했다.</li>
+<li>리더의 사적 실패는 결코 사적으로 끝나지 않는다(다윗-아히도벨 사례).</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>사울의 첫 번째 실패(삼상13장, 사무엘을 기다리지 못하고 직접 제사 드린 사건)와 결정적 실패(삼상15장)의 관계는 어떻게 통합되는가?</li>
+<li>수여 계약(아브라함·다윗, 무조건적)과 종주-봉신 계약(시내산, 조건적)이 공존하는 이스라엘 언약 구조에서, 범죄한 왕조에 대해 다윗 언약이 어떻게 지속되는가?</li>
+<li>"순종이 제사보다 낫다"는 원리는 이후 다윗의 삶에서 어떻게 반복·변주되는가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EB%A6%AC%EB%8D%94%EC%8B%AD/">리더십</a> — 왕정신학이 구체화하는 상위 리더십 원리.</li>
+<li><span class="wl-dead" title="위키 내부 링크">삼상15</span> — 사울이 버림받은 결정적 근거 본문.</li>
+<li><span class="wl-dead" title="위키 내부 링크">신17</span> — 왕의 자격과 한계를 규정하는 신명기 조항.</li>
+</ul>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/구약학</span><span>#topic/리더십</span><span>#topic/순종</span><span>#topic/사사시대</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

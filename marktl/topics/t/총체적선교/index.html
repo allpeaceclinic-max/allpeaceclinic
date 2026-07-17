@@ -1,0 +1,441 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>총체적 선교 (Holistic/Integral Mission) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="date">2026-06-07</span></div>
+  <h1 class="note-title">총체적 선교 (Holistic/Integral Mission)</h1>
+  
+</header>
+<article class="note">
+<blockquote>
+<p><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> 참조 (미씨오데이·로잔 기초 내용). 이 페이지는 함선네 강의를 중심으로 한 선교 패러다임 변화와 총체적 선교의 실천적 함의에 집중한다.</p>
+</blockquote>
+<h2>선교 패러다임의 역사적 변화</h2>
+<h3>랄프 윈터 — 선교의 400년 단위 시대 구분</h3>
+<table>
+<thead>
+<tr>
+<th>시대</th>
+<th>기점</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>해안선 선교</td>
+<td>윌리엄 캐리 (1792~)</td>
+<td>서구→ 나머지, 해안선 도시 중심</td>
+</tr>
+<tr>
+<td>내지 선교</td>
+<td>허드슨 테일러</td>
+<td>해안선 넘어 내지로 (2차 산업혁명 인프라 활용)</td>
+</tr>
+<tr>
+<td>미전도종족 선교</td>
+<td>랄프 윈터 (1974~)</td>
+<td>종족·언어 단위 복음화</td>
+</tr>
+<tr>
+<td>문화적/숨겨진 영역</td>
+<td>현재</td>
+<td>지리적→ 종족적+언어적→ 문화적 영역</td>
+</tr>
+</tbody>
+</table>
+<p><strong>4차 산업혁명과 선교</strong>: 자율주행·AI·플랫폼 시대 → 초연결, 메타버스·SNS = 새로운 신대륙</p>
+<h3>숨겨진 영역 (Hidden Frontier)</h3>
+<p>랄프 윈터 개념: 암(癌)처럼 눈에 보이지 않는 영역 — "당신의 암을 낭비하지 마세요" (존 파이퍼)
+- 총체적 접근 없이는 발견 어려움
+- 개인의 관심과 달란트가 진입점</p>
+<h3>선교 지형 변화 (글로벌 흐름)</h3>
+<table>
+<thead>
+<tr>
+<th>흐름</th>
+<th>대표자</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>서구→나머지</td>
+<td>윌리엄 캐리</td>
+<td>1차 개신교 선교 물결</td>
+</tr>
+<tr>
+<td>모라토리엄 선언</td>
+<td>존 가투(케냐, 1971)</td>
+<td>"미셔너리 고 홈" — 서구선교의 종언</td>
+</tr>
+<tr>
+<td>모든 곳에서 모든 곳으로</td>
+<td>사무엘 에스코바</td>
+<td>비서구 교회의 선교 참여</td>
+</tr>
+<tr>
+<td>지역중심화</td>
+<td>제이 마탕가·폴 벤더 사무엘</td>
+<td>도시선교·세계화 (코비드로 가속)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>코비드19는 '파송으로서의 선교(Mission-as-sending)' 패러다임에 근본 도전</p>
+</blockquote>
+<h2>총체적 선교의 정의</h2>
+<p><strong>로잔 운동 정의</strong>: 온전한 복음 + 온 교회 + 온 세상
+- 영혼 구원만이 아닌 창조세계 전체의 회복
+- 사회 개발·의료·교육·정의 등 전 분야가 선교 영역</p>
+<p><strong>WCC vs 로잔 차이</strong>:
+- WCC: 선교 = 인간화, 사회 변혁 중심
+- 로잔: 복음전도 우선성 + 사회적 책임 통합 (긴장 속 유지)</p>
+<h2>선교적 삶: Being vs Doing</h2>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Being (존재적 선교)</strong></td>
+<td>하나님의 하나님 되심이 우리를 통해 흘러가는 것</td>
+</tr>
+<tr>
+<td><strong>Doing (기능적 선교)</strong></td>
+<td>가시적·빠른·경쟁 중심의 결과물 생산</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"존재적 선교를 기억해야 한다. 우리는 없고 하나님만 존재하게 되는 것이 선교다."
+"하나님의 선교를 하려면 존재적 준비에 8~90% 에너지를 써야 한다."</p>
+</blockquote>
+<p><strong>단기선교 오류</strong>: 존재적 준비에 시간 쓰지 않고 동선·율동·물품 구매에 에너지 집중</p>
+<h2>선교사 역할 변화</h2>
+<table>
+<thead>
+<tr>
+<th>과거 4P</th>
+<th>현재 방향</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pioneer (개척)</td>
+<td>퍼실리테이터</td>
+</tr>
+<tr>
+<td>Parent (부모)</td>
+<td>촉매자</td>
+</tr>
+<tr>
+<td>Partnership (협력)</td>
+<td>게스트·조력자</td>
+</tr>
+<tr>
+<td>Participant (참여)</td>
+<td>현지인이 액팅하도록 지원</td>
+</tr>
+</tbody>
+</table>
+<h2>동원에서 참여로 (정민영·송기태)</h2>
+<ul>
+<li><strong>동원(Mobilization)</strong>: 군사적 발상, 상명하달</li>
+<li><strong>참여(Participation)</strong>: 하나님의 선교에, 교회에 위임된 선교에 주체적으로 동참</li>
+</ul>
+<blockquote>
+<p>"그들의 선교도 아닌 나의 선교도 아닌 우리의 선교" (브루스 캠프)</p>
+</blockquote>
+<h2>Unlearn → Relearn (토마스 쿤)</h2>
+<p>앨빈 토플러:</p>
+<blockquote>
+<p>"Evolution attitude: learn, unlearn, relearn. 변화를 주도하는 유일한 방법은 새로운 지식을 얻는 것. 새로운 지식을 얻는 유일한 방법은 다시 배우는 것."</p>
+</blockquote>
+<ul>
+<li>패러다임 쉬프트: 배운 것을 비우지 않으면 새로운 것을 배울 수 없다</li>
+<li>코로나가 스탑 기회였으나 — 다시 똑같은 패턴으로 돌아가려는 경향</li>
+<li><strong>언런 → 리런</strong>: 하나님의 선교, 미씨오 데이로부터 다시 시작</li>
+</ul>
+<h2>로잔4 서울 2024 — 핵심 주제</h2>
+<table>
+<thead>
+<tr>
+<th>주제</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>대위임령 재해석</td>
+<td>"제자 삼으라"(마테튜오) — 1%사역자→99%에게 위임</td>
+</tr>
+<tr>
+<td>협력</td>
+<td>개인→공동체, 단체→교회, 서구→글로벌 사우스</td>
+</tr>
+<tr>
+<td>GenZ 선교</td>
+<td>진정성·투명성·개별화·지역화·관계적 방식 요구</td>
+</tr>
+<tr>
+<td>공공 이슈</td>
+<td>젠더·정의·창조세계·이슬람·난민</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"왜 성과가 적을까? 위임을 하지 않았다. I don't need you했다. 1%사역자 → 99%에게 위임." (마이클 오, 로잔 총재)</p>
+</blockquote>
+<h2>학습공동체 → 전략공동체</h2>
+<p>선교 생태계(Missional Ecology) 변화 속에서:
+- <strong>CPM(교회개척운동) + T4T(훈련자 훈련)</strong> 전략과 함께 협력
+- 당분간 학습공동체로 → 변화에 대응 후 전략공동체로</p>
+<h2>21세기 선교 5가지 방향</h2>
+<ol>
+<li><strong>도시화</strong>: 하루 14만명 도시 유입, 2050년 72% 도시 거주</li>
+<li><strong>이주민 선교</strong>: 선교지가 우리에게 왔다 — 다문화·다민족</li>
+<li><strong>SNS 플랫폼</strong>: 40억명, 하루 평균 2시간 29분 접속 — 새로운 신대륙</li>
+<li><strong>MZ세대</strong>: 스낵컬쳐·유튜브·멀티 — 전혀 다른 선교 방식 필요</li>
+<li><strong>탈육신 시대 대응</strong>: 역사성·공공성 회복 (마이클 프로스트)</li>
+</ol>
+<h2>"그들의 언어로" — 상징 빼앗기</h2>
+<blockquote>
+<p>"선교해야 합니다" → 갭 느낌(선교사가 하는 것) / "당신 가정의 미션이 있나?" → 즉시 관심 생김</p>
+</blockquote>
+<ul>
+<li><strong>상징 빼앗기</strong>: 그들에게 익숙한 언어(미션·비전·임팩트)로 선교를 재표현하는 전략</li>
+<li>사례 1: "당신 가정의 미션" — 선교라는 단어 없이 미션을 얘기했더니 관심을 가짐</li>
+<li>사례 2: "생명사역 국제화" = 선교 (동신교회) → 교인 입에서 쉽게 나오고 선교헌금 1억 증가</li>
+<li>행 11:20: 흩어진 사람들이 안디옥의 헬라인들에게 <strong>그들의 언어로</strong> 주 예수를 전함</li>
+<li>원리: 그들의 언어, 그들에게 중요한 단어로 들어가야 관심이 생긴다</li>
+</ul>
+<h2>읽기의 균형 — Text vs Context</h2>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>내용</th>
+<th>위험</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reading text (성경읽기)</td>
+<td>말씀을 깊이 연구</td>
+<td>환경 무관심 → 사회적 영향력 없음</td>
+</tr>
+<tr>
+<td>Reading context (환경읽기)</td>
+<td>시대와 사회를 관찰</td>
+<td>인본주의화, 말씀 없는 행동주의</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"선교는 발명이 아닌 발견이다 — 믿음이 들음에서 나듯, 선교도 들음에서 난다"</p>
+</blockquote>
+<ul>
+<li>균형: 성경읽기 + 환경읽기가 함께 되어야 선교적 방향을 발견할 수 있다</li>
+</ul>
+<h2>실행역량 vs 개념설계역량 (『축적의 길』)</h2>
+<ul>
+<li><strong>실행역량</strong>: 설계도를 따라 빠르고 정확하게 만드는 능력 → 고도성장기·안정적 환경에 최적</li>
+<li><strong>개념설계역량</strong>: 원리와 환경을 읽어 설계도 자체를 만드는 능력 → <strong>변화의 시대에 필수</strong></li>
+<li>환경이 급변할 때 실행역량만 있는 사람의 두 반응:
+  1. 어디로 가야 할지 몰라 <strong>멈춤</strong>
+  2. 주변과 상관없이 <strong>하던 것을 고집스럽게 반복</strong></li>
+<li>선교 적용: 미전도종족 시대까지는 "어떻게든 안 가는 곳에 가는" 실행역량으로 충분했으나, 현재는 말씀의 원리와 환경을 읽고 방향을 재설정하는 개념설계역량이 필요</li>
+</ul>
+<h2>하백선 시리즈 — 의료인 총체적 선교 적용</h2>
+<p>→ 상세: <span class="wl-dead" title="위키 내부 링크">하백선시리즈</span></p>
+<p><strong>선택의 논리 (4장 — Healing for the Nations)</strong>
+- 아브라함 선택 = 열방이 복을 받기 위한 선택 (창 18:18)
+- 복을 받았다 = 사명을 받았다 — 분리 불가
+- 의료인의 전문성 = 신탁 자산 → 열방을 위한 수로가 되어야 함</p>
+<p><strong>출애굽 구속의 4중 총체성 (6장 — Redemptive Living)</strong>
+- 정치적 + 사회적 + 경제적 + 종교적 해방
+- "출애굽 형태의 구속은 출애굽 형태의 선교를 요구한다"
+- 의료 선교 = 총체적 해방의 현장</p>
+<p><strong>창조세계 돌봄 (3장 — Missional Creation Care)</strong>
+- 의료폐기물·기후건강 = 선교적 책임
+- 골 1:20 화목의 범위 = 창조세계 전체
+- 의료인의 생태적 책임 = 총체적 선교의 한 차원</p>
+<p><strong>복음의 우주적 범위 (11장 — Gospel Identity)</strong>
+- 복음 = News(왕의 즉위 선포), not Advice
+- 골 1:15-20 만물의 화해 = 개인 영혼 + 사회 + 생태 전체
+- 의료선교 = 우주적 복음의 부분적 현장 실현</p>
+<h2>6대 핵심 사역 영역과 패러다임 전환 (멘토링5)</h2>
+<p><em>raw: <code>raw/lectures/keynote/선교/멘토링5 교회 및 선교기관 관계 맺기 &amp; 사역 역할과 과제 찾기.md</code></em></p>
+<blockquote>
+<p>"전문 기술은 깨어진 세상을 회복시키는 하나님의 강력한 무대다"</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>영역</th>
+<th>선교적 의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>경제/비즈니스</strong></td>
+<td>빈곤 구제, 무너진 경제 질서 회복</td>
+</tr>
+<tr>
+<td><strong>보건/의료</strong></td>
+<td>신체적 전인 치유</td>
+</tr>
+<tr>
+<td><strong>창조세계·환경</strong></td>
+<td>환경 관리, 기후 정의</td>
+</tr>
+<tr>
+<td><strong>예술·커뮤니케이션</strong></td>
+<td>문화 변혁, 이야기를 통한 복음</td>
+</tr>
+<tr>
+<td><strong>교육</strong></td>
+<td>지식 전수, 인재 양성</td>
+</tr>
+<tr>
+<td><strong>법률·정부·복지</strong></td>
+<td>정의 실현, 취약층 보호</td>
+</tr>
+</tbody>
+</table>
+<h3>사역 패러다임 변화표</h3>
+<table>
+<thead>
+<tr>
+<th>영역</th>
+<th>과거</th>
+<th>현재</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>구제·개발</strong></td>
+<td>부유한 자가 가난한 자를 일방적으로 동정</td>
+<td>낮은 자리에서 현지인 안에서 일하시는 하나님을 발견하는 <strong>겸손한 섬김</strong></td>
+</tr>
+<tr>
+<td><strong>BAM</strong></td>
+<td>비즈니스를 선교의 도구로 이용</td>
+<td>정직하게 임하는 <strong>비즈니스 전 과정 자체가 선교</strong></td>
+</tr>
+<tr>
+<td><strong>의료 선교</strong></td>
+<td>일방적 환자 진료 중심</td>
+<td>의료 지식 전수 + <strong>제자 훈련 병행</strong></td>
+</tr>
+</tbody>
+</table>
+<h3>십자가 모델 — 장기 선교 사역의 본질</h3>
+<blockquote>
+<p>"가시적 성과나 업적 중심, 열정 위주의 조급한 사역을 내려놓으라"</p>
+</blockquote>
+<ul>
+<li>고난과 가난 속에서 하나님의 임재를 온전히 경험</li>
+<li><strong>기다림의 훈련</strong>: Divine Appointment와 내면의 영적 평안이 임할 때까지 인내</li>
+<li>사회적·정서적 성숙 자체가 사역의 열매</li>
+</ul>
+<hr />
+<h2>관련 링크</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> — 미씨오 데이, 로잔 기초, 크라이더, 뉴비긴</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a> — 미셔널 처치, Fresh Expressions</li>
+<li><a class="wl" href="../../t/%EB%B3%B5%EC%9D%8C%EC%A3%BC%EC%9D%98/">복음주의</a> — 저항+적용의 역사적 흐름</li>
+<li><span class="wl-dead" title="위키 내부 링크">2024L4로잔</span> — 로잔4 서울 전체 보고</li>
+<li><span class="wl-dead" title="위키 내부 링크">선교위원회컨설팅</span> — 총체적 선교 실천 적용</li>
+<li><span class="wl-dead" title="위키 내부 링크">함선네</span> — 함선네 세미나 강의</li>
+<li><a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EB%9E%80%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80_%EC%8A%A4%ED%86%A0%ED%8A%B8%EB%9D%BC%EC%9D%B4%ED%8A%B8/">선교란무엇인가_스토트라이트</a> — 로잔 4대회 흐름</li>
+<li><a class="wl" href="../../b/%EB%8C%80%EC%9C%84%EC%9E%84%EB%A0%B9%ED%98%84%ED%99%A9%EB%B3%B4%EA%B3%A0%EC%84%9C/">대위임령현황보고서</a> — 2024 L4 총체적 선교 현황 데이터 (미전도 34억, EPI, AI, 디지털, 노예, 부패 등 전 영역 수치)</li>
+</ul>
+</article>
+<div class="tagrow"><span>#총체적선교</span><span>#로잔</span><span>#복음주의</span><span>#선교신학</span><span>#미셔널</span><span>#랄프윈터</span><span>#패러다임</span><span>#함선네</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

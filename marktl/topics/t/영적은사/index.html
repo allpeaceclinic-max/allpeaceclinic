@@ -1,0 +1,347 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>영적은사 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:226">조직신학·교리</span><span class="date">2026-07-14</span></div>
+  <h1 class="note-title">영적은사</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>영적 은사는 성령이 각 신자에게 나누어 주신 능력이다. 신약은 이를 카리스마타(χαρίσματα)라 부르는데, 이 말은 은혜를 뜻하는 카리스(χάρις)에서 파생한 것으로 — 은혜가 구체적 능력으로 개별화된 형태다. 신약은 이 은사들을 로마서 12장, 고린도전서 12장, 에베소서 4장, 베드로전서 4장 네 곳에서 목록으로 제시하지만, 네 목록은 서로 완전히 겹치지 않는다. 이 어긋남 자체가 은사가 닫힌 항목표가 아니라 열린 예시임을 시사한다.</p>
+<p>이 볼트에서 영적 은사는 무엇보다 <span class="wl-dead" title="위키 내부 링크">권성수</span> 목사의 은사 강해 연작 — 생명사역 시리즈와 은사봉사 시리즈 — 를 통해 다뤄지며, 거기서 은사는 일관되게 봉사의 도구로 규정된다. 은사는 영적 성숙의 훈장도, 지위의 표지도 아니라 그리스도의 몸을 세우라고 맡겨진 청지기적 선물이다. 이 규정이 글 전체를 관통하는 축이다. 성령의 인격과 사역 전반은 <a class="wl" href="../../t/%EC%84%B1%EB%A0%B9%EB%A1%A0/">성령론</a>이, 충만의 경험은 <a class="wl" href="../../t/%EC%84%B1%EB%A0%B9%EC%B6%A9%EB%A7%8C/">성령충만</a>이, 봉사 은사의 현장 실천은 <a class="wl" href="../../t/%EC%84%AC%EA%B9%80/">섬김</a>이 다루므로, 이 글은 은사 자체의 신학 — 그 어원과 목록, 목적과 질서, 중지 논쟁과 사랑과의 관계 — 에 집중한다. 그 층위들을 차례로 따라간다.</p>
+<h2>1. 카리스마 — 은혜에서 흘러나온 선물</h2>
+<p>은사를 이해하는 출발점은 그것이 은혜에서 흘러나온다는 사실이다. 권성수 목사는 벧전 4:10 강해에서 은혜와 은사를 두 개의 원으로 그린다. 은혜는 큰 원으로, 자격 없는 사람에게 무상으로 베풀어 주시는 것 — 구원이 곧 은혜다. 은사는 작은 원으로, 봉사할 수 있도록 각자에게 나누어 주신 재능이다. 둘은 분리되지 않는다. 은혜도 은사도 예수 안에서 주어졌고, 청지기는 그 둘을 함께 맡았다.</p>
+<p>이 관계는 부흥의 현상(고전 13장) 강해에서 더 날카로운 이미지로 다시 나타난다. 은혜가 보물 자체라면 은사는 그 보물을 담는 그릇이다. 권 목사의 표현대로 "은사는 무엇을 하기 위한 수단이며, 보물 그릇보다 보물 자체가 귀하다." 은사를 은혜로부터 떼어내 그 자체로 떠받드는 순간 그릇을 내용물로 착각하는 전도(顚倒)가 일어난다 — 이 전도야말로 아래에서 볼 고린도 교회의 병이었다.</p>
+<p>은혜에서 나온다는 말은 은사가 초자연적 기적에만 국한되지 않는다는 뜻이기도 하다. 권 목사는 「7가지 은사」서두에서 영화 『불의 전차』의 에릭 리델을 든다. 빨리 달리는 재능조차 하나님이 주신 것이며, "하나님이 주신 재능을 하나님이 주신 은사로 보고 잘 활용하는 것"이 관건이라는 것이다. 자연적 재능(교육·행정·자선)과 비상한 은사(예언·신유·영 분별)를 가르는 선은 생각보다 흐리다. 은사의 스펙트럼은 넓고, 그 전체가 은혜라는 한 뿌리에서 갈라져 나온다.</p>
+<h2>2. 네 개의 목록 — 은사 본문의 지형</h2>
+<p>신약의 은사 목록은 네 곳에 흩어져 있고, 각 본문은 은사를 서로 다른 각도에서 조명한다.</p>
+<table>
+<thead>
+<tr>
+<th>본문</th>
+<th>은사</th>
+<th>초점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>롬 12:6-8</td>
+<td>예언·섬김·가르침·위로·구제·다스림·긍휼 (7종)</td>
+<td>실천적 봉사, "믿음의 분수대로"</td>
+</tr>
+<tr>
+<td>고전 12:8-10</td>
+<td>지혜·지식·믿음·병 고침·능력 행함·예언·영 분별·방언·통역 (9종)</td>
+<td>성령의 주권적 분배, 몸의 비유</td>
+</tr>
+<tr>
+<td>엡 4:11</td>
+<td>사도·선지자·복음 전하는 자·목사 겸 교사</td>
+<td>은사받은 사람(직분), 성도를 온전케 함</td>
+</tr>
+<tr>
+<td>벧전 4:10-11</td>
+<td>말씀 은사 / 봉사 은사 (두 범주)</td>
+<td>은혜의 청지기직</td>
+</tr>
+</tbody>
+</table>
+<p>로마서 12장은 가장 실천적인 목록으로 "믿음의 분수대로" 쓰는 일곱 은사를 나열하고, 고린도전서 12장은 성령이 "그 뜻대로 각 사람에게 나누어 주시는"(12:11) 주권적 분배를 강조하며 몸의 비유로 이어진다. 에베소서 4장은 은사 자체보다 은사받은 사람에 초점을 맞춰 이들을 그리스도께서 교회에 주신 선물로 보고, 베드로전서 4장은 모든 은사를 말씀 은사와 봉사 은사 두 범주로 압축한다. 권 목사는 로마서의 일곱 은사를 다시 이 두 범주로 나누어 원어로 풀어낸다.</p>
+<table>
+<thead>
+<tr>
+<th>범주</th>
+<th>은사</th>
+<th>헬라어</th>
+<th>핵심 의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>말씀 은사</td>
+<td>예언</td>
+<td>프로페테이아</td>
+<td>하나님의 뜻을 깨달아 전달</td>
+</tr>
+<tr>
+<td></td>
+<td>가르침</td>
+<td>디다스칼리아</td>
+<td>체계적 교육으로 깨닫게 함</td>
+</tr>
+<tr>
+<td></td>
+<td>위로·권면</td>
+<td>파라칼레오</td>
+<td>아는 자를 행하게 함</td>
+</tr>
+<tr>
+<td></td>
+<td>다스림</td>
+<td>프로히스테미</td>
+<td>"앞에 서서" 이끎</td>
+</tr>
+<tr>
+<td>봉사 은사</td>
+<td>섬김</td>
+<td>디아코니아</td>
+<td>종의 마음으로 달려가 섬김</td>
+</tr>
+<tr>
+<td></td>
+<td>구제</td>
+<td>메타디도미</td>
+<td>나누어 줌 — 소유의 통로</td>
+</tr>
+<tr>
+<td></td>
+<td>긍휼</td>
+<td>엘레에오</td>
+<td>불쌍히 여겨 도움</td>
+</tr>
+</tbody>
+</table>
+<p>이 분류에서 눈여겨볼 것은 목록의 개방성이다. 권 목사는 "큰 것만 생각해서 은사가 없다고 하는 사람이 많다"고 지적한다. 가르침·섬김·권면·위로가 모두 은사이며, 각각 다 받았고 안 받은 사람은 없다. 네 본문의 목록이 서로 어긋나는 것도 같은 이유다 — 성경은 은사를 빠짐없이 열거하려는 것이 아니라, 성령이 몸의 필요를 따라 얼마든지 다양하게 나누어 주심을 예시할 뿐이다. 봉사 은사 세 가지의 상세한 신학은 <a class="wl" href="../../t/%EC%84%AC%EA%B9%80/">섬김</a>과 <a class="wl" href="../../t/%EA%B8%8D%ED%9C%BC/">긍휼</a>이 이어받는다.</p>
+<h2>3. 공동선을 위하여 — 은사의 목적</h2>
+<p>은사가 왜 주어지는가에 대해 성경은 한 구절로 못박는다. "각 사람에게 성령을 나타내심은 유익하게 하려 하심이라"(고전 12:7). 여기서 유익은 자기 유익이 아니라 공동의 유익이다. 권 목사는 벧전 4장 강해에서 은사를 웨이터에 빗댄다. 웨이터는 자기가 음식을 만들지 않는다. 받은 것을 필요한 사람에게 전달하는 통로일 뿐이다. 은사도 마찬가지여서 "자기 유익만을 위해 주신 것이 아니고, 자랑하라고 준 것도 아니다 — 받았거늘 어찌 자랑하느냐."</p>
+<p>목적이 공동선이라면 은사들 사이에 가치의 서열이 생긴다 — 교회를 더 세우는 은사가 더 큰 은사다. 이것이 고린도전서 14장에서 예언이 방언보다 높이 평가되는 이유다. "방언을 말하는 자는 자기의 덕을 세우고 예언하는 자는 교회의 덕을 세운다"(14:4). 권 목사는 여기서 예언을 곧 설교로 읽는다 — 현재의 하나님의 은혜를 깨달아 전달하는 일이다. 자기 덕과 교회 덕을 가르는 이 저울이 은사를 사사화(私事化)하려는 모든 시도를 견제한다. 은사는 그리스도의 몸을 세우기 위한 것이며(엡 4:12), 몸을 세우지 못하는 은사 사용은 목적을 잃은 것이다.</p>
+<h2>4. 한 몸의 여러 지체 — 다양성 속의 일치</h2>
+<p>은사가 공동체를 위한 것이라면, 은사의 다양성은 곧 몸의 구조가 된다. 권 목사는 고전 12:12-20 강해에서 한 몸과 여러 지체의 긴장을 다양성과 통일성의 변증으로 읽는다. 한 몸은 통일성이요 지체는 다양성인데, "다양성 없는 통일성은 획일성이고, 통일성 없는 다양성은 배가 산으로 간다." 은사 공동체는 이 두 극단 — 모두를 같은 틀에 맞추는 획일성과 각자 제멋대로 가는 분열 — 사이의 좁은 길을 걷는다.</p>
+<p>이 몸의 통일성은 인위적 조직이 아니라 성령 세례에 근거한다. "우리가 다 한 성령으로 세례를 받아 한 몸이 되었다"(고전 12:13). 그래서 은사의 차이는 우열이 아니라 상호 의존이다. 권 목사는 몸의 비유에서 두 가지 병을 진단한다. 발이 손을 부러워하여 "나는 손이 아니니 몸에 속하지 않았다" 하는 열등의식과, 눈이 손에게 "너는 쓸 데 없다" 하는 우등의식이다. 둘 다 "하나님이 그 원하시는 대로 지체를 두신"(12:18) 질서를 거스른다. 그가 드는 장작불의 그림 — 타는 장작 하나를 빼면 불이 꺼지고 다시 넣으면 활활 탄다 — 은 은사 공동체의 상호 의존을 압축한다. 한 지체가 아프면 온 몸이 아프다.</p>
+<h2>5. 성숙의 지표가 아니다 — 청지기의 은사</h2>
+<p>은사에 관한 가장 끈질긴 오해는 은사를 영적 성숙의 척도로 삼는 것이다. 이 볼트의 자료는 이 오해를 반복해서 깨뜨린다. 은사의 청지기(벧전 4:10-11) 강해에서 권 목사는 단호하다.</p>
+<blockquote>
+<p>"은사는 자기 성숙의 지표가 아니다. 은사 있다고 성숙한 것이 아니다. 성숙은 성령의 열매를 맺으면 성숙한 것이다. 사랑이 넘치면 성숙한 것이다. 은사 받은 사람들 중에 괴팍한 사람이 많다."</p>
+</blockquote>
+<p>성숙의 척도는 은사가 아니라 성령의 열매, 곧 사랑이다. 은사는 오히려 맡겨진 것이다 — 청지기(οἰκονόμος, 여기서 '이코노미'가 나왔다)는 주인의 재산을 관리해 집안의 필요에 따라 나누는 종이며, 은사를 받았다는 것은 상급이 아니라 책임을 받았다는 뜻이다.</p>
+<p>청지기라는 규정은 은사를 두 방향으로 연다. 하나는 파악이다. 권 목사는 자기 은사를 찾는 세 질문을 제시한다 — 무엇을 하고 싶은가, 무엇을 잘하는가, 무엇이 공동체에 유익한가. 다른 하나는 계발이다. "해 보면 은사는 커진다. 근육과 같다." 은사는 고정된 재고가 아니라 사용할수록 자라는 것이다. 그리고 은사는 삶의 시련과 맞물린다 — 다양한 시련에 다양한 은사를 주셔서, 어떤 시련이라도 감당하고 그 경험으로 남을 섬기게 하신다. 말씀 은사(교사·순장·상담·리더십)든 행위 은사(섬김·찬양·구제·병 고침)든, 그 끝은 자기 과시가 아니라 청지기적 나눔이다. 고린도 교회가 바로 반증(反證)이었다 — 은사는 넘쳤으나 분쟁과 교만이 넘쳤으니, 은사의 풍성함과 영적 성숙은 결코 같은 말이 아니다.</p>
+<h2>6. 중지냐 지속이냐 — "온전한 것"이 올 때까지</h2>
+<p>여기서 은사론의 오랜 전장이 열린다. 방언·예언·신유 같은 비상한 은사가 오늘날도 지속되는가. 권 목사는 「신약의 예언」강해에서 세 입장을 정리한다.</p>
+<table>
+<thead>
+<tr>
+<th>입장</th>
+<th>대표</th>
+<th>은사의 지속</th>
+<th>핵심 근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>중지론 (cessationism)</td>
+<td>크리소스톰, 종교개혁 후 정통</td>
+<td>방언·예언·기적은 사도 시대로 종료</td>
+<td>엡 2:20(사도·선지자가 터), 계시 완성</td>
+</tr>
+<tr>
+<td>지속론 (continuationism)</td>
+<td>오순절·은사주의, 빈야드 운동</td>
+<td>모든 은사가 지금도 지속</td>
+<td>고전 14:1 "예언을 하려고 하라"</td>
+</tr>
+<tr>
+<td>중간 입장</td>
+<td>그루뎀·포이트레스·파이퍼·권성수</td>
+<td>지속하되 성경과 동등한 계시는 아님</td>
+<td>"온전한 것"=재림; 분별을 조건으로</td>
+</tr>
+</tbody>
+</table>
+<p>중지론은 방언·기적·예언이 성경 계시가 완성되고 교회의 터를 놓은 사도들의 시대와 함께 종료되었다고 본다. 근거는 에베소서 2:20 — 교회가 "사도들과 선지자들의 터 위에" 세워졌으니 터를 놓는 창설 사역은 이미 지나갔다는 것이다. 지속론은 반대로 고전 14:1("예언을 하려고 하라")을 들어 은사의 현재적 지속을 주장한다. 그 사이에 <span class="wl-dead" title="위키 내부 링크">웨인그루뎀</span>의 중간 입장이 있다. 그의 『신약성경과 오늘날의 예언 은사』는 성경 수준의 예언은 아니지만 성령께서 마음에 떠오르게 하시는 예언은 있다고 본다 — 다만 그것을 "주님이 주신 말씀"이라 하여 성경과 동급으로 착각해선 안 된다.</p>
+<p>권 목사 자신의 결론은 이 논쟁의 열쇠 구절인 고전 13:10의 "온전한 것"을 어떻게 읽느냐에 달려 있다. 그는 세 해석을 저울질한다. 정경 완성 때인가 — 그렇다면 바울이 지금 우리보다 더 몰랐다는 말이 되니 틀렸다. 교회 성숙 때인가 — 성숙한 교회는 은사가 필요 없다는 말이 되니 틀렸다. 남는 것은 그리스도의 재림이다. "온전한 것"이 재림이라면 은사는 재림까지 지속된다. 그의 최종 정식은 지속론에 가깝되 분별을 조건으로 단다 — "기적 은사는 지금도 있지만 성경으로 분별해야 한다. 그렇지 않으면 속는다." <span class="wl-dead" title="위키 내부 링크">존파이퍼</span>의 균형도 같은 자리에 선다. 은사 운동에 교리·감정·재정의 오용이 많으나, 그렇다고 성령의 기름 부으심의 역사를 부정할 것은 아니라는 것이다.</p>
+<p>이 분별의 요구는 신사도 운동(NAR) 평가에서 실전이 된다. 권 목사는 오늘날 열두 사도급 사도직의 부활을 주장하는 신사도 운동을 경계한다. 요한계시록 21:14가 열두 기초석에 열두 사도의 이름만 새기듯 창설자로서의 사도직은 지나갔지만, 목사·교사·예언은 계속된다는 것이다. 관건은 "성경의 테두리 안에서 성령의 능력을 체험하되 이단으로 가지 않도록 경계"하는 것이다. 은사의 지속을 인정하는 일과 무분별한 은사주의를 경계하는 일은, 그에게 하나의 동전이다.</p>
+<h2>7. 분별과 질서 — 사랑을 따라 신령한 것을 사모하되</h2>
+<p>지속을 인정하는 순간 분별이 필수가 된다. 고린도전서 14장은 은사의 현장 규범을 제시하는 장으로, 그 요체는 사랑과 질서다. 바울은 "사랑을 추구하며 신령한 것들(πνευματικά)을 사모하되 특별히 예언을 하려고 하라"(14:1)고 명하고, 예언조차 "둘이나 셋이 말하고 다른 이들은 분별할 것이며"(14:29), 모든 것을 "품위 있게 하고 질서 있게 하라"(14:40)고 규정한다. 은사는 통제받지 않는 영감의 분출이 아니라 회중의 검증과 질서 아래 놓인다.</p>
+<p>무엇으로 분별하는가. 권 목사는 부흥의 현상 강해에서 <span class="wl-dead" title="위키 내부 링크">조나단에드워즈</span>의 다섯 가지 기준(요한일서 4장)을 든다 — 예수 그리스도를 높이는가, 사탄의 왕국을 꺾는가, 성경을 더 중시하게 하는가, 죄를 미워하고 건전한 교리로 이끄는가, 하나님과 사람을 사랑하도록 감동하는가. 다섯 기준의 무게 중심은 명백히 그리스도와 성경과 사랑이지 현상의 강렬함이 아니다. 예언을 정의할 때도 같은 절제가 작동한다. 그루뎀을 따라 권 목사는 예언을 "성경과 동등하지 않은, 성령께서 마음에 떠오르게 하시는 어떤 것"으로 규정하고, 말할 때는 "주님의 뜻인 것 같습니다" 정도로 하되 결코 "주님이 말씀하셨다"고 하여 성경으로 만들지 말라고 한다. 은사는 목회자의 지도와 회중의 분별이라는 두 울타리 안에서만 건강하게 작동한다.</p>
+<h2>8. 가장 좋은 길 — 은사와 사랑</h2>
+<p>분별의 궁극적 기준을 한 단어로 줄이면 사랑이다. 바울은 은사장(고전 12장과 14장) 한복판에 사랑장(13장)을 끼워 넣었고, 그 사이를 "너희는 더욱 큰 은사를 사모하라 내가 또한 가장 좋은 길을 너희에게 보이리라"(12:31)는 문장으로 잇는다. 권 목사가 반복해 강조하는 핵심은 사랑의 신학적 위상이다 — "사랑은 은사가 아니라 은혜다. 사랑이 은사를 활용하는 길이다." 사랑은 여러 은사 중 하나가 아니라, 모든 은사가 그것을 통해서만 제대로 작동하는 통로다.</p>
+<p>그래서 사랑은 은사보다 오래 남는다. "사랑은 언제까지나 떨어지지 아니하되 예언도 폐하고 방언도 그치고 지식도 폐하리라"(13:8). 은사가 보물 그릇이라면, 사랑은 부분적으로 아는 지금이 지나 온전히 알게 될 그때까지 남는 보물 자체다. 은사 없는 사랑은 여전히 사랑이지만, 사랑 없는 은사는 울리는 꽹과리다. 예수의 경고가 바로 이 지점을 찌른다 — 주의 이름으로 선지자 노릇 하고 귀신을 쫓고 권능을 행한 자들에게 그분은 "내가 너희를 도무지 알지 못하니 불법을 행하는 자들아 내게서 떠나가라"(마 7:23)고 하신다. 은사의 화려함과 구원은 별개다.</p>
+<p>이 모든 논의가 한 문장의 고백으로 수렴한다. 권 목사가 「7가지 은사」를 맺으며 남긴 말이다.</p>
+<blockquote>
+<p>"한때는 은사가 좋았지만 지금은 주님이 좋다. 은사보다 주님, 선물보다 주님, 복보다 주님, 건강보다 주님이 최고다."</p>
+</blockquote>
+<p>은사의 신학은 결국 은사를 주신 분에게로 돌아간다. 선물이 선물 주신 이를 가리키지 못하면 그것은 우상이 된다. <a class="wl" href="../../t/%EC%82%AC%EB%9E%91/">사랑</a>이 "가장 좋은 길"인 이유가 여기 있다.</p>
+<h2>9. 은사자와 몸 — 직분·소명·APEST</h2>
+<p>마지막 층위는 은사와 직분·소명의 관계다. 에베소서 4:11은 은사를 은사자로 인격화한다 — 그리스도께서 어떤 사람은 사도로, 어떤 사람은 선지자로, 복음 전하는 자로, 목사 겸 교사로 "삼으셨다." 이들의 임무는 스스로 사역을 독점하는 것이 아니라 "성도를 온전하게 하여 봉사의 일을 하게" 하는 것(4:12), 곧 훈련(equipping)이다. 권 목사는 이를 옛 모델과 새 모델의 대비로 읽는다. 목회자 혼자 목회하는 것이 옛 모델이라면, 목회자가 평신도를 훈련시켜 함께 목회하는 것이 새 모델이며 — 이것이 <a class="wl" href="../../t/%EC%83%9D%EB%AA%85%EC%82%AC%EC%97%AD/">생명사역</a>과 <a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%ED%9B%88%EB%A0%A8/">제자훈련</a>의 은사론적 기초다.</p>
+<p>이 구조는 만인 제사장(벧전 2:9)과 맞물린다. 권 목사의 정식은 정교하다 — "차별은 없지만 구분은 있다." 가치·권한·인권에는 차이가 없되 직분과 직임에는 구분이 있다는 것이다. 구분을 차별로 오해하면 교권주의가 되고, 구분마저 없애면 질서가 무너진다. 모든 성도가 은사를 받은 사역자이면서 동시에 은사에 따라 직임이 나뉘는 이 긴장이 은사 공동체의 실제 모습이다.</p>
+<p>같은 본문을 <span class="wl-dead" title="위키 내부 링크">앨런허쉬</span>는 APEST로 확장한다. 엡 4:11의 다섯 직분 — 사도(Apostle)·선지자(Prophet)·전도자(Evangelist)·목사(Shepherd)·교사(Teacher) — 를 교회가 갖춰야 할 다섯 사역 은사로 읽고, 서구 교회가 목사-교사(ST)만 남기고 사도·선지자·전도자(APE)를 잃어버린 것이 그 쇠락의 원인이라 진단한다. 이 진단은 은사론을 <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a>와 <a class="wl" href="../../t/%EB%A6%AC%EB%8D%94%EC%8B%AD/">리더십</a> 논의로 잇는다 — 은사 공동체란 한 사람의 리더가 아니라 다양한 은사를 지닌 지체들이 협력하는 다중 리더십의 몸이다. 다만 유교적 수직 문화 속에서 이 다중성을 어떻게 실현하느냐는, 이 볼트가 여전히 열어 둔 물음이다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>카리스마타는 은혜(카리스)가 개별화된 형태다 — 은혜가 보물 자체라면 은사는 그것을 담는 그릇이며, 그릇을 내용물로 착각하는 순간 은사는 우상이 된다.</li>
+<li>네 은사 목록(롬 12·고전 12·엡 4·벧전 4)이 서로 겹치지 않는다는 사실 자체가, 은사가 닫힌 항목표가 아니라 성령의 자유로운 분배를 예시하는 열린 목록임을 보여준다.</li>
+<li>은사의 목적은 공동선(고전 12:7)이므로, 교회를 세우는 예언이 자기 덕을 세우는 방언보다 "더 큰 은사"다 — 목적이 은사의 서열을 정한다.</li>
+<li>은사는 성숙의 지표가 아니다. 고린도 교회는 은사가 넘쳤으나 분쟁했고, 성숙의 척도는 은사가 아니라 성령의 열매인 사랑이다.</li>
+<li>"온전한 것"(고전 13:10)을 재림으로 읽으면 은사는 지금도 지속되지만, 그 지속은 무분별이 아니라 성경과 사랑에 의한 분별을 조건으로 한다 — 지속의 인정과 은사주의 경계는 한 동전이다.</li>
+<li>사랑은 은사가 아니라 은혜다. 은사를 활용하는 통로이자 은사가 폐한 뒤에도 남는 영원한 것이며, 그래서 결론은 "은사보다 주님"이다.</li>
+<li>은사의 다양성은 만인 제사장의 "차별 없는 구분"으로 실현된다 — 모든 성도가 사역자이되 직임은 나뉘고, 그 협력이 몸을 세운다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>"온전한 것"을 재림으로 확정해 은사의 지속을 인정하더라도, 오늘의 특정 방언·예언·신유를 성경적으로 분별하는 실제 절차는 사례마다 여전히 열려 있다.</li>
+<li>그루뎀식 "성경과 동등하지 않은 예언"은 신학적으로 정교하나, 강단의 설교와 개인의 "주님이 주신 마음" 사이의 경계를 회중이 실천에서 어떻게 지킬 것인가.</li>
+<li>은사가 "근육처럼 커진다"는 계발 가능성과, 성령이 "그 뜻대로 나누어 주신다"(고전 12:11)는 주권적 분배는 어떻게 조화되는가.</li>
+<li>자연적 재능(에릭 리델의 달음질)과 성령의 은사를 잇는 신학적 다리는 무엇이며, 둘을 가르는 선은 어디인가.</li>
+<li>APEST의 다섯 사역 은사를 한국 교회의 유교적 수직 문화와 담임목사 중심 거버넌스에 어떻게 이식할 것인가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%84%B1%EB%A0%B9%EB%A1%A0/">성령론</a> — 은사를 주시는 성령의 인격과 사역, 은사론이 속한 상위 교리.</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EB%A0%B9%EC%B6%A9%EB%A7%8C/">성령충만</a> — 은사의 원천인 성령의 매일의 채움.</li>
+<li><a class="wl" href="../../t/%EC%84%AC%EA%B9%80/">섬김</a> — 봉사 은사(디아코니아·구제·긍휼)의 현장 실천과 "은사보다 주님".</li>
+<li><a class="wl" href="../../t/%EC%82%AC%EB%9E%91/">사랑</a> — "가장 좋은 길", 은사를 활용하고 능가하는 은혜.</li>
+<li><a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a> — 카리스마타의 뿌리인 카리스(χάρις).</li>
+<li><a class="wl" href="../../t/%EC%83%9D%EB%AA%85%EC%82%AC%EC%97%AD/">생명사역</a> — 모든 성도가 사역자라는 은사론적 기초.</li>
+<li><a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%ED%9B%88%EB%A0%A8/">제자훈련</a> — 성도를 온전케 하는 훈련(equipping)으로서의 목사직.</li>
+<li><a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%A1%A0/">교회론</a> — 그리스도의 몸으로서의 은사 공동체.</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a> — APEST와 잃어버린 사도적 은사.</li>
+<li><a class="wl" href="../../t/%EB%A6%AC%EB%8D%94%EC%8B%AD/">리더십</a> — 은사 공동체의 다중 리더십.</li>
+<li><a class="wl" href="../../t/%EA%B8%8D%ED%9C%BC/">긍휼</a> — 봉사 은사 엘레에오의 신학.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>권성수 「7가지 은사」(롬 12:6-8)</td>
+<td>설교</td>
+<td>말씀 은사 4·봉사 은사 3 분류, 자연 재능과 은사, "은사보다 주님"</td>
+</tr>
+<tr>
+<td>권성수 「은사의 청지기」(벧전 4:10-11)</td>
+<td>설교(생명사역13)</td>
+<td>은혜/은사 두 원, 청지기(οἰκονόμος), "은사는 성숙의 지표 아님", 말씀/행위 은사</td>
+</tr>
+<tr>
+<td>권성수 「모든 성도의 사역」(엡 4:11-16)</td>
+<td>설교(생명사역8)</td>
+<td>은사자 5직분, 훈련(equipping), 만인 제사장 "차별X 구분O"</td>
+</tr>
+<tr>
+<td>권성수 「신약의 예언」(롬 12:6-8)</td>
+<td>설교</td>
+<td>중지론·지속론·중간(그루뎀), 엡 2:20 논쟁, 교회사, 예언 분별</td>
+</tr>
+<tr>
+<td>권성수 「나눔의 교제」(고전 12:12-20)</td>
+<td>설교</td>
+<td>한 몸 여러 지체, 통일성/다양성, 열등·우등의식 치료</td>
+</tr>
+<tr>
+<td>권성수 「부흥의 현상」(고전 13:8-13)</td>
+<td>설교</td>
+<td>은사장 속 사랑장, "사랑은 은사 아닌 은혜", "온전한 것"=재림, 에드워즈 5기준</td>
+</tr>
+<tr>
+<td>권성수 「신사도 운동 평가」(엡 4:11-13)</td>
+<td>설교</td>
+<td>NAR 비판, 사도직 종료·직분 지속, "성경 테두리 안 성령 체험"</td>
+</tr>
+<tr>
+<td>웨인 그루뎀 『신약성경과 오늘날의 예언 은사』</td>
+<td>인용서</td>
+<td>성경과 동등하지 않은 예언의 가능성(중간 입장)</td>
+</tr>
+<tr>
+<td>앨런 허쉬 (APEST)</td>
+<td>강의·이론</td>
+<td>엡 4:11 5중 사역 은사, ST 잔존·APE 상실 진단</td>
+</tr>
+<tr>
+<td>존 파이퍼 · 조나단 에드워즈 · 번 포이트레스</td>
+<td>인용</td>
+<td>기름 부으심의 사모, 분별 5기준, 사도적 은사와 유사한 현대 은사</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/성령론</span><span>#topic/은사</span><span>#topic/카리스마타</span><span>#topic/교회론</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

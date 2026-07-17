@@ -1,0 +1,336 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>의무론 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:300">윤리·공공</span><span class="date">2026-07-17</span></div>
+  <h1 class="note-title">의무론</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>의무론(deontology)은 행위의 옳고 그름을 그것이 낳는 결과가 아니라 <strong>행위 자체가 의무·규칙·법칙에 부합하는가</strong>로 판단하는 규범윤리 전통이다. 이름의 뿌리부터가 이 성격을 드러낸다. MBTS 기독교윤리학 7주차 강의는 의무론이라는 말이 헬라어 데오(<em>deo</em>), 곧 "빚을 지다·해야만 한다·~할 의무가 있다"에서 비롯되었다고 짚는다. 의무론자는 무엇보다 윤리의 규범적 관점에 관심을 두며, 쾌락이나 행복을 얻기 위해 선을 행하는 <a class="wl" href="../../t/%EB%AA%A9%EC%A0%81%EB%A1%A0/">목적론</a>적 접근도, 자신의 내적 성향을 드러내는 실존적 접근도 좋아하지 않는다. 그가 찾는 것은 오직 하나 — 보편적이고 필연적이면서도 구속력을 갖춘 윤리적 규범이다.</p>
+<p>이 볼트에서 의무론은 <a class="wl" href="../../t/%EA%B3%B5%EB%A6%AC%EC%A3%BC%EC%9D%98/">공리주의</a>의 대칭 자리에 선다. 목적론의 정점이 공리주의라면, 그 정면의 축이 의무론이며, <span class="wl-dead" title="위키 내부 링크">칸트</span>가 그 대표자다. MBTS 강의 연작이 6주차에서 벤담·밀의 목적론을 다루고 7주차에서 칸트의 의무론을 다루어 두 사람을 세속 윤리학사의 양대 축으로 맞세운 것도 이 대칭 때문이다. 규범 윤리 3대 전통의 비교 지형은 <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%9C%A4%EB%A6%AC%ED%95%99/">기독교윤리학</a>이, 목적론·결과주의의 상세는 <a class="wl" href="../../t/%EA%B3%B5%EB%A6%AC%EC%A3%BC%EC%9D%98/">공리주의</a>가, 계명 없는 이방인의 도덕은 <a class="wl" href="../../t/%EC%9E%90%EC%97%B0%EB%B2%95/">자연법</a>과 <a class="wl" href="../../t/%EC%96%91%EC%8B%AC/">양심</a>이 맡으므로, 이 글은 "의무론이라는 이론 자체와 그에 대한 기독교적 평가"에 집중한다. 계보(칸트)에서 강점과 난점으로, 다시 "기독교는 의무론인가"라는 물음과 거짓말 논쟁의 시험대로, 마지막으로 진료실로 따라간다.</p>
+<h2>1. 결과가 아니라 행위 자체 — 공리주의와의 정면 대조</h2>
+<p>의무론과 공리주의의 거리는 같은 행위를 놓고 정반대 판정을 내리는 데서 가장 선명하게 드러난다. <span class="wl-dead" title="위키 내부 링크">권성수 목사</span>가 <a class="wl" href="../../t/%EA%B3%B5%EB%A6%AC%EC%A3%BC%EC%9D%98/">공리주의</a> 변증에서 즐겨 쓰는 트롤리 딜레마를 보자 — 선로 위로 그대로 가면 다섯 사람이 죽고, 방향을 틀면 한 사람이 죽는다. 공리주의는 망설임 없이 답한다. 한 사람을 희생해 다섯을 구하라, 그것이 최대다수의 최대행복이다. 의무론은 정반대로 답한다. 한 사람을 치어 죽이는 그 행위 자체가 잘못이며, 다섯을 살린다는 결과가 그 잘못을 씻어 주지 못한다. 결과의 저울과 행위의 규칙 — 두 이론은 같은 선로 앞에서 갈라선다.</p>
+<p>이 갈라짐은 취향의 문제가 아니라 무엇을 도덕의 자리로 보느냐의 문제다. 의무론자는 흄과 무어를 따라, 보편적 구속력을 갖춘 규범은 경험(목적론의 주장)으로도 내적 성찰(실존주의의 주장)으로도 길어 올릴 수 없다고 본다. 경험은 "무엇이다"(is)를 말할 뿐 "무엇이어야 한다"(ought)를 낳지 못하기 때문이다. 그래서 의무론자의 당면 과제는 결과나 감정이 아닌 다른 원천에서 윤리적 지식을 발굴하는 일이 된다. 흥미롭게도 성경 역시 이 결에 부분적으로 공명한다. 자기 부인의 미덕을 장려하고(마 16:24-26) 쾌락에 빠지지 말 것을 경계하는(딤후 3:4) 대목은, 행복 계산을 도덕의 근거로 삼기를 거부하는 의무론의 감각과 겹친다.</p>
+<table>
+<thead>
+<tr>
+<th>물음</th>
+<th>공리주의(목적론)</th>
+<th>의무론</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>무엇으로 판단하는가</td>
+<td>행위가 낳는 <strong>결과</strong></td>
+<td>행위 <strong>자체</strong>의 옳고 그름</td>
+</tr>
+<tr>
+<td>무엇을 보는가</td>
+<td>결과·경험·행복</td>
+<td>동기·이성·의무</td>
+</tr>
+<tr>
+<td>시금석</td>
+<td>최대다수의 최대행복</td>
+<td>보편화 가능한 규칙·의무</td>
+</tr>
+<tr>
+<td>트롤리에서</td>
+<td>하나를 희생해 다섯을 구하라</td>
+<td>사람을 죽이는 것 자체가 그르다</td>
+</tr>
+<tr>
+<td>인간은</td>
+<td>행복 총량의 한 단위</td>
+<td>목적 그 자체</td>
+</tr>
+<tr>
+<td>대표적 약점</td>
+<td>소수 희생 정당화·전지(全知) 요구</td>
+<td>의무 충돌·경직성·빈 형식</td>
+</tr>
+</tbody>
+</table>
+<h2>2. 칸트의 정언명령 — 두 정식의 힘</h2>
+<p>칸트가 평생 매달린 물음은 "인격에 기대지 않고도 무조건적 구속력을 갖는 도덕법을 어디서 찾을 것인가"였다. 그의 출발점은 선의지(good will)다. 세상에서 무조건 선하다 할 수 있는 것은 재능도 결과도 아닌 오직 선한 의지뿐이며, 그 의지가 선을 행하는 이유는 쾌락(목적론)이나 성향(실존주의) 때문이 아니라 다만 그것이 의무이기 때문이다. 칸트는 이 의무를 담은 명령을 둘로 나눈다. "행복을 원한다면 살인을 피하라" 같은 가언명령(hypothetical imperative)은 조건이 붙어 있어 윤리의 근간이 못 된다. 윤리의 근간은 어떤 조건이나 상황에도 좌우되지 않고 예외 없이 구속하는 정언명령(categorical imperative)이다.</p>
+<p>강의노트는 칸트의 정언명령을 세 정식 — 보편 원리, 자연 법칙, 인간을 목적으로 대함 — 으로 열거하는데, 앞의 둘은 하나의 축(보편화 가능성)으로 묶이고 셋째가 또 하나의 축(인간성)을 이룬다. 이 두 축이 정언명령의 실제 힘이 나오는 자리다.</p>
+<table>
+<thead>
+<tr>
+<th>정식</th>
+<th>정언명령</th>
+<th>핵심 물음</th>
+<th>힘이 나오는 곳</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>보편법칙 정식</strong></td>
+<td>"네 준칙이 보편 법칙이 되게 하라"</td>
+<td>모두가 이렇게 행해도 되는가</td>
+<td>자기모순 테스트 — 거짓 약속은 보편화하는 순간 약속이라는 제도 자체를 무너뜨려 스스로를 파괴한다</td>
+</tr>
+<tr>
+<td><strong>인간성 정식</strong></td>
+<td>"인간을 한낱 수단으로만 대하지 말고 언제나 목적으로 대하라"</td>
+<td>이 사람을 도구로 쓰고 있는가</td>
+<td>인간 존엄의 방어 — 다수의 유익을 위해 한 사람을 수단화하는 계산을 원천에서 차단한다</td>
+</tr>
+</tbody>
+</table>
+<p>보편법칙 정식은 규범의 형식적 시금석이다. 어떤 준칙이 도덕적이려면 예외를 두는 특권 없이 모두에게 적용될 수 있어야 하며, 그러지 못하는 준칙(거짓말·약속 파기)은 보편화하는 순간 논리적으로 붕괴한다. 인간성 정식은 그 내용적 무게중심이다. 강의노트의 표현대로 이것은 "사람이 언제나 목적으로 인정되는 세계에 살고 싶어 하는 칸트의 바람"이며, 바로 이 정식이 트롤리와 구명선에서 소수를 셈의 대상으로 만드는 공리주의적 계산과 정면으로 충돌한다.</p>
+<h2>3. 의무론의 강점 — 존엄·예측 가능성·동기</h2>
+<p>의무론이 오래 살아남은 데에는 그럴 만한 힘이 있다. 첫째는 <strong>인간 존엄의 확고한 방어</strong>다. 인간성 정식은 어떤 사람도 다른 사람(들)의 행복을 위한 수단으로 전락시킬 수 없다고 못박는다. 다수를 살린다는 명분으로 한 사람을 도구로 쓰는 일이 처음부터 금지되므로, 의무론은 결과의 저울이 늘 위협하는 "소수 희생의 정당화"를 구조적으로 막는다. 둘째는 <strong>규칙의 예측 가능성</strong>이다. 매 상황마다 결과를 계산해야 하는 목적론과 달리, 의무론의 규칙은 상황 이전에 이미 주어져 있어 도덕적 삶에 안정된 지반을 제공한다. 셋째는 <strong>동기의 중시</strong>다. 선의지 개념은 겉으로 드러난 결과가 아니라 그 행위를 낳은 내면의 방향을 도덕의 심장에 놓는다.</p>
+<p>이 세 강점은 기독교 윤리와 여러 지점에서 공명한다. 십계명은 결과를 계산하라는 권고가 아니라 "하지 말라"·"하라"는 규칙의 형태로 주어져 있고, 살인·간음·도둑질·거짓 증거의 금지는 상황에 따라 흥정되지 않는 무조건성을 지닌다. 무엇보다 인간성 정식이 지키려는 것 — 사람은 결코 수단이 아니라는 확신 — 은 모든 인간이 <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%ED%98%95%EC%83%81/">하나님의 형상</a>으로 지음받았다는 성경의 선언과 놀랍도록 가깝다. 권성수 목사가 대서양 구명선의 고아 소년 딜레마를 "동일한 하나님의 형상이므로 식용으로 삼을 수 없다"로 회수할 때, 그는 사실상 칸트의 인간성 정식이 도달하려던 자리를 신학적으로 더 깊이 근거 짓고 있는 셈이다.</p>
+<h2>4. 의무론의 난점 — 의무 충돌과 빈 형식 ⚖️</h2>
+<p>그러나 의무론에는 두 얼굴이 있다. 규칙의 무조건성은 강점인 동시에 가장 아픈 급소다. 서로 다른 두 의무가 충돌할 때, 예외를 허용하지 않는 규칙은 잔인해진다. 고전적 사례가 칸트 자신의 "살인자 문답"이다 — 살인자가 문 앞에서 당신이 숨긴 친구의 행방을 물을 때, 칸트는 그래도 거짓말해서는 안 된다고 답한다. 거짓말 금지는 정언명령이므로 친구의 생명이라는 결과조차 예외가 될 수 없다는 것이다. 생명을 구하는 거짓말마저 금하는 이 대답은 의무론의 경직성과 결과 무시의 대가를 한눈에 드러낸다.</p>
+<p>강의노트가 겨누는 비판은 더 근본적이다. 세속 의무론, 특히 칸트의 것은 "형식적 의무론"(formal deontology) — 구체적 내용을 담은 규범을 제시하지 못하고 순전히 형식적·논리적 틀만 내놓는다. 보편성 논증은 "거짓말하지 말라"가 보편화 가능하다는 것까지는 말해 주지만, 무수한 구체적 규범 가운데 어느 하나에도 실질적 정당성을 부여하지는 못한다. 게다가 그 규범을 정하는 주체가 결국 인간 이성이라는 데 치명적 문제가 있다. 강의의 결론은 신랄하다.</p>
+<blockquote>
+<p>"결과적으로 칸트의 윤리적 규범은 플라톤의 선(의 형상)만큼이나 허무하다. 어떠한 행동이든 그것이 윤리적인 의무가 되어야 할 타당함을 증명하지 못한다." — MBTS 기독교윤리학 7주차 강의</p>
+</blockquote>
+<p><span class="wl-dead" title="위키 내부 링크">매킨타이어</span>가 지적하듯 칸트의 접근은 누군가에게 윤리적 제한을 가할 구속력조차 갖지 못하며, 인격적 근거를 잃은 의무론은 "궁극적 규범은 없거나, 부적절하거나, 내용 없는 절대 규범"이라는 세 막다른 길로 흘러 결국 자율적 실존주의로 치환되고 만다. 다만 여기서 공정을 기해야 한다 ⚖️. 이 파산은 <strong>의무론 자체의 파산이 아니라, 인격적 근거를 뺀 의무론의 파산</strong>이다. 강의가 거듭 말하듯 "적실한 윤리의 규범은 절대적 인격으로부터만 유래할 수 있다." 문제는 의무의 무조건성이 아니라, 그 무조건성을 떠받칠 절대 인격을 세속 의무론이 스스로 지워 버렸다는 데 있다.</p>
+<h2>5. 기독교는 의무론인가 — 계명과 언약</h2>
+<p>그렇다면 계명과 규칙으로 가득한 기독교 윤리는 결국 의무론의 한 종류인가. 표면은 그렇게 보인다. 십계명이라는 규칙, 무조건적 금지, 동기의 중시 — 모두 의무론의 표지다. 그러나 뿌리는 전혀 다르다. 7주차 토론이 정리하는 구분이 이 차이를 정확히 짚는다. 칸트의 형식적 의무론과 달리, 구체적 내용을 가진 규범을 제시하는 <strong>실체적 의무론</strong>(material deontology)이 있으며, 그 대표가 <strong>신명론</strong>(Divine Command Theory)이다. 신명론의 핵심 논증은 "어떤 행동이 선한 것은 하나님이 명령하셨기 때문이요, 악한 것은 하나님이 금하셨기 때문"이라는 것이다. 규범의 근거가 인간의 자율적 이성이 아니라 계시하시는 하나님의 인격이라는 점에서, 이것은 칸트가 끝내 채우지 못한 "빈 형식"에 내용과 권위를 동시에 부여한다.</p>
+<p>신명론이 넘어야 할 고전적 반론이 유티프로 딜레마다 — "경건한 행위는 그 자체가 경건하기 때문에 신이 기뻐하는가, 아니면 신이 기뻐하기 때문에 경건한가?" 전자를 택하면 하나님보다 앞선 선의 기준이 따로 있게 되고(자율 윤리), 후자를 택하면 하나님이 악을 명해도 악이 선이 되며 순종은 "노예적 맹종"이 될 위험이 있다. 신명론의 해법은 딜레마의 두 뿔 사이가 아니라 그 아래에 있다. 하나님은 본성이 절대적으로 선하신 분이므로, 그분의 의지에서 나오는 명령은 자의적 변덕이 아니라 그 선한 성품의 표현이다. 그러므로 계명에 대한 순종은 폭군에 대한 굴종이 아니라, 야고보의 표현처럼 "자유롭게 하는 온전한 율법"(약 1:25)에 대한 마음에서 우러난 결단이다.</p>
+<p>이 지점에서 기독교 윤리와 세속 의무론의 결정적 차이가 드러난다. 십계명은 규칙집의 첫 조항으로 시작하지 않는다. 그 앞에 서언이 있다 — "나는 너를 애굽 땅, 종 되었던 집에서 인도하여 낸 네 하나님 여호와니라"(출 20:2). 계명(20:3 이하)은 이미 이루어진 구원의 은혜 위에 세워지며, 규칙이 관계를 만드는 것이 아니라 관계가 규칙을 낳는다. 계명은 은혜의 문법 안에 있는 것이다. 그리고 그 문법의 완성은 사랑이다 — "사랑은 이웃에게 악을 행하지 아니하나니 그러므로 사랑은 율법의 완성이니라"(롬 13:10). 규범과 사랑을 대립시켜 사랑으로 규범을 대체하는 <a class="wl" href="../../t/%EC%83%81%ED%99%A9%EC%9C%A4%EB%A6%AC/">상황윤리</a>와 달리, 기독교 윤리에서 사랑은 율법 밖이 아니라 율법 안에서 그것을 완성한다. 7주차 토론이 세 관점을 하나로 꿴 문장이 이 통합을 요약한다.</p>
+<blockquote>
+<p>"성경의 하나님은 윤리의 법을 선포하시고(의무론적 관점), 그 법에 순종하면서 행복을 추구하도록 인류를 창조하셨으며(목적론적 관점), 우리가 선의 정점에 이르렀을 때 그 율법이야말로 우리의 가장 으뜸된 기쁨임을 발견하게 하셨다(실존적 관점)."</p>
+</blockquote>
+<p>기독교는 의무론"인" 것이 아니라, 의무론이 붙든 참된 통찰(규범의 무조건성)을 <a class="wl" href="../../t/%EC%82%BC%EC%A4%91%EA%B4%80%EC%A0%90/">삼중관점</a> 안에서 회수하되 그 근거를 자율적 이성이 아닌 하나님의 성품과 언약에 둔다. 이것이 <span class="wl-dead" title="위키 내부 링크">존 프레임</span>의 삼중관점이 의무론적 원칙을 하나님 주권의 "권위" 속성에 대응시킨 이유다.</p>
+<h2>6. 거짓말 논쟁 — 라합과 히브리 산파 vs 칸트적 절대주의 ⚖️</h2>
+<p>의무론이 가장 날카롭게 시험받는 자리가 거짓말 논쟁이다. 칸트적 절대주의는 살인자 앞에서도 거짓말을 금하지만, 성경 내러티브는 그보다 훨씬 복잡한 그림을 그린다. 여리고의 라합은 정탐꾼을 넘길 것이냐 거짓말할 것이냐의 딜레마에서 거짓말로 그들을 숨겼고(수 2장), 히브리 산파들은 남아를 죽이라는 바로의 명령 앞에서 거짓으로 답해 아기들을 살렸다(출 1:19). 그런데 성경은 이 거짓말들을 정죄하기는커녕 칭찬한다 — 라합은 믿음의 명예의 전당(히 11:31)과 야고보서(약 2:25)에서, 산파들은 하나님이 그들에게 은혜를 베푸셨다는 기록(출 1:20)에서. 규칙의 무조건성만 붙들면 설명할 수 없는 대목이다.</p>
+<p>볼트의 강단은 이 긴장을 성급히 봉합하지 않고 정밀하게 분별한다. <span class="wl-dead" title="위키 내부 링크">문대원 목사</span>는 결정적 단서를 제시한다 — 성경이 칭찬한 것은 <strong>거짓말이라는 행위 자체가 아니라 그 행위를 낳은 믿음의 방향</strong>이다. 라합과 산파는 인간적 연민이 아니라 "바로 왕보다 높으신 하나님"을 신뢰하는 믿음으로 결단했고, 히브리서의 "믿음으로"(히 11:31)는 거짓말이 아니라 하나님 편에 선 그 믿음을 가리킨다. 권성수 목사는 한 걸음 더 나아가 라합 문제를 세 범주로 갈라낸다. ① <strong>정상 참작</strong> — 라합은 율법이 없던 이방인이었기에 그의 거짓말은 우리의 모델이 될 수 없다(믿음은 칭찬받되 거짓말이 칭찬받은 것은 아니다). ② <strong>전투 윤리</strong> — 매복·기만작전은 합법적 적대 관계 안의 전술이지 제9계명의 거짓 증거가 아니다. ③ <strong>상황 윤리</strong> — 사랑을 유일 기준 삼아 계명을 유보하는 조셉 플레처식 윤리는 거부된다. 사랑의 이름으로도 도둑질·간음·거짓은 정당화될 수 없다. 그가 내놓는 실천적 출구는 거짓의 발설이 아니라 "침묵과 동문서답, 그리고 결과는 하나님께"다 — 진실을 말할 의무가 모든 정보를 공개할 의무는 아니라는 합법적 공간의 활용이다.</p>
+<p>의무 충돌 자체를 정면으로 다루는 틀은 라이브 토론에 등장하는 <strong>차등적(등급적) 절대주의</strong>다. 아브라함의 이삭 사건이든 트롤리든, 두 절대적 의무가 충돌할 때 더 높은 가치를 택하고 낮은 가치는 유보하되 그 유보에 대해 책임(용서를 구함)을 지는 입장이다. 강의 토론이 "공리주의를 선택하면 편리하나 위험하다, 차등적 절대주의의 관점으로 높은 가치를 선택하는 것이 맞다"고 정리한 것이 그것이다. 세 입장을 나란히 놓으면 성경 내러티브가 단순 의무론과 얼마나 다른지 보인다.</p>
+<table>
+<thead>
+<tr>
+<th>입장</th>
+<th>생명을 구하는 거짓말</th>
+<th>핵심 논리</th>
+<th>볼트의 자리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>무조건적 절대주의</strong>(칸트)</td>
+<td>그르다, 예외 없음</td>
+<td>정언명령엔 상황·결과의 예외가 없다</td>
+<td>강의가 비판하는 형식적 의무론</td>
+</tr>
+<tr>
+<td><strong>차등적 절대주의</strong></td>
+<td>상위 의무(생명)를 지키고 하위(진실 발설)는 유보</td>
+<td>의무가 충돌하면 더 높은 가치를 택한다</td>
+<td>라이브 토론의 해법</td>
+</tr>
+<tr>
+<td><strong>상황윤리</strong>(플레처)</td>
+<td>사랑이면 정당</td>
+<td>아가페가 유일 규범, 규칙은 상황에 종속</td>
+<td>권성수·문대원이 함께 거부</td>
+</tr>
+</tbody>
+</table>
+<p>관건은 성경이 거짓말을 규칙으로 승인한 것이 아니라는 점이다. 라합은 정상 참작의 사례이지 규범의 근거가 아니며, 산파는 믿음의 방향으로 칭찬받았다. 성경 내러티브는 칸트적 절대주의의 경직성도, 상황윤리의 방종도 아닌 제3의 자리 — 규칙을 진지하게 붙들되 그 규칙의 주인이신 인격 앞에서 의무의 서열을 분별하는 자리 — 를 가리킨다.</p>
+<h2>7. 의료 윤리와 의무론 — 진료실의 존엄</h2>
+<p>의무론이 관념에 머물지 않고 가장 실질적인 유산을 남긴 현장이 의료다. 오늘날 임상윤리의 기둥들 — 환자의 존엄, 충분한 설명에 근거한 동의(informed consent), 비밀 유지, 진실 고지 — 은 사실상 칸트의 인간성 정식이 진료실의 언어로 번역된 것이다. 환자를 연구나 효율이나 다수의 유익을 위한 수단으로 삼지 말고 언제나 목적으로 대하라는 요구가 그 밑바탕에 흐른다. 의료사회 회복 프로젝트의 발제 「선택의 윤리학」은 의료인의 선택을 지배하는 두 세속 윤리를 이렇게 대비시킨다.</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>판단 기준</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>의무론</td>
+<td>동기 중심 / 이성 / 의무</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EA%B3%B5%EB%A6%AC%EC%A3%BC%EC%9D%98/">공리주의</a></td>
+<td>결과 중심 / 경험 / 행복</td>
+</tr>
+<tr>
+<td>기독교의 선</td>
+<td>하나님 자체 — 하나님의 성품·율법</td>
+</tr>
+</tbody>
+</table>
+<p>이 두 축이 가장 격렬하게 충돌하는 자리가 자원 배분이다. 병상 배정, 치료 중단, 인공호흡기의 배정 같은 결정에서 공리주의는 "최대다수의 최대 생존"을 계산하려 하고, 의무론은 각 환자를 셈할 수 없는 목적으로 지키려 한다. 결과 계산의 유혹이 가장 강한 바로 그 자리에서, <a class="wl" href="../../t/%EC%83%9D%EB%AA%85%EC%9C%A4%EB%A6%AC/">생명윤리</a>의 "동일한 하나님의 형상"은 인간을 셈의 단위로 만드는 논리를 멈춰 세운다. <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%9C%A4%EB%A6%AC%ED%95%99/">기독교윤리학</a>이 진료실에서 던지는 세 질문 — 이 기술이 사람을 섬기는가 이용하는가, 누가 혜택을 받고 누가 제외되는가, 이것이 나를 더 사랑 많은 의사로 만드는가 효율적인 기술자로만 만드는가 — 은 의무론의 존엄 방어를 임상의 손끝에서 시험하는 물음이다.</p>
+<p>앞 절의 거짓말 논쟁도 진료실에서 다시 살아난다. <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인</a>의 "거룩한 최소 경계선"을 어떤 이는 "환자에게 거짓말하지 않겠다"로 세우는데, 이는 나쁜 예후를 어떻게 전할 것인가라는 진실 고지의 딜레마와 곧장 맞닿는다. 칸트적 절대주의라면 잔인한 사실을 그대로 통보하겠지만, 앞서 본 성경적 분별 — 거짓은 발설하지 않되 침묵과 지혜로운 처신의 합법적 공간을 활용하고 전달의 시기와 방식을 조율하는 것 — 은 진실을 배반하지 않으면서도 환자를 목적으로 대하는 길을 연다. 의무론이 의료에 준 존엄의 문법은, 그 근거를 자율적 이성이 아니라 하나님의 형상에 둘 때 비로소 경직되지 않고 완성된다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>의무론은 행위의 옳고 그름을 결과가 아니라 의무·규칙에의 부합으로 판단한다(데오, "해야만 한다"). 트롤리 앞에서 공리주의가 "다섯을 위해 하나를"이라 답한다면, 의무론은 "죽이는 행위 자체가 그르다"고 답한다.</li>
+<li>칸트의 두 정식 — 보편법칙(준칙의 보편화 = 자기모순 테스트)과 인간성(수단화 금지 = 존엄 방어). 인간성 정식은 다수의 유익으로 소수를 희생하는 계산을 원천에서 차단하며, 이는 "동일한 하나님의 형상"과 놀랍도록 가깝다.</li>
+<li>강의의 근본 비판: 세속 의무론(칸트)은 보편성 논증만으로는 구체적 규범 하나도 정당화하지 못하는 "형식적 의무론"이며, 규범을 정하는 주체가 인간 이성이라 "플라톤의 선의 형상만큼 허무"하고 결국 자율적 실존주의로 치환된다.</li>
+<li>그러나 이 파산은 의무론 자체가 아니라 인격적 근거를 뺀 의무론의 파산이다 — "적실한 윤리 규범은 절대적 인격으로부터만 유래할 수 있다."</li>
+<li>기독교는 의무론처럼 계명을 지키되 뿌리가 다르다. 형식적 의무론이 아니라 실체적 의무론(신명론)이며, 유티프로 딜레마의 답은 하나님의 선한 성품이다. 계명은 은혜의 서언(출 20:2) 안에 있고, 사랑은 율법의 완성(롬 13:10)으로 규범과 통합된다.</li>
+<li>거짓말 논쟁은 성경 내러티브가 단순 절대주의보다 복잡함을 드러낸다 — 라합·산파는 거짓말 자체가 아니라 믿음의 방향으로 칭찬받았고(문대원), 권성수는 정상참작·전투윤리·상황윤리를 구분하며, 라이브 토론은 차등적 절대주의로 상위 가치를 택한다.</li>
+<li>의료 현장은 의무론의 최대 수혜지이자 시험대다 — 존엄·동의·비밀 유지·진실 고지는 인간성 정식의 임상적 번역이며, 공리주의적 자원 배분과 충돌하는 자리에서 하나님의 형상이 셈의 단위화를 멈춰 세운다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>차등적(등급적) 절대주의가 "더 높은 가치를 택한다"고 할 때, 그 가치 서열을 매기는 것은 결국 일종의 결과 비교가 아닌가 — 이것이 공리주의적 계산과 구조적으로 어떻게 다른지는 더 정밀한 논증이 필요하다(<a class="wl" href="../../t/%EA%B3%B5%EB%A6%AC%EC%A3%BC%EC%9D%98/">공리주의</a>와 공유되는 물음).</li>
+<li>라합과 히브리 산파의 거짓말이 "믿음"으로 칭찬받았다면, 거짓말은 규범 충돌 상황에서 정당화되는가, 아니면 정당화 없이 "용서받은 차선"으로 남는가 — 문대원 설교도 이 선을 명확히 긋지 않는다.</li>
+<li>신명론이 유티프로 딜레마를 "하나님의 선한 본성"으로 푼다면, 그 선한 본성을 계명과 독립적으로 어떻게 인식하는가 — 순환 논증을 피할 수 있는가.</li>
+<li>칸트의 인간성 정식(수단화 금지)과 기독교의 하나님의 형상은 실천적 결론이 크게 겹치는데, 세속적 근거(자율적 이성)와 신학적 근거(창조·언약)의 차이가 임상적 판단에서 실제로 다른 결정을 낳는 지점은 어디인가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EA%B3%B5%EB%A6%AC%EC%A3%BC%EC%9D%98/">공리주의</a> — 목적론 쪽의 대칭 전통. 트롤리·구명선과 결과 계산에 대한 인식론적 비판</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%9C%A4%EB%A6%AC%ED%95%99/">기독교윤리학</a> — 규범 윤리 3대 이론의 지형과 삼중관점 통합. 이 페이지의 위임 모체</li>
+<li><a class="wl" href="../../t/%EB%AA%A9%EC%A0%81%EB%A1%A0/">목적론</a> · <a class="wl" href="../../t/%EA%B2%B0%EA%B3%BC%EC%A3%BC%EC%9D%98/">결과주의</a> — 의무론이 맞선 상대 전통</li>
+<li><a class="wl" href="../../t/%EC%9C%A8%EB%B2%95/">율법</a> — 십계명·계명과 신율(theonomy), 은혜의 문법</li>
+<li><a class="wl" href="../../t/%EC%83%81%ED%99%A9%EC%9C%A4%EB%A6%AC/">상황윤리</a> — 규범을 사랑으로 대체하는 반대 극단</li>
+<li><a class="wl" href="../../t/%EC%9E%90%EC%97%B0%EB%B2%95/">자연법</a> · <a class="wl" href="../../t/%EC%96%91%EC%8B%AC/">양심</a> — 계명 없는 이방인에게도 작동하는 도덕(롬 2)</li>
+<li><a class="wl" href="../../t/%EC%83%9D%EB%AA%85%EC%9C%A4%EB%A6%AC/">생명윤리</a> · <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a> — 의료 현장의 존엄·동의·진실 고지</li>
+<li><a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%ED%98%95%EC%83%81/">하나님의형상</a> — 인간성 정식의 신학적 대응</li>
+<li><a class="wl" href="../../t/%EC%82%BC%EC%A4%91%EA%B4%80%EC%A0%90/">삼중관점</a> — 의무론적(규범적) 관점의 상위 프레임</li>
+<li><a class="wl" href="../../t/%EC%82%AC%EB%9E%91/">사랑</a> — 율법의 완성으로서 규범과 사랑의 통합</li>
+<li><span class="wl-dead" title="위키 내부 링크">임마누엘칸트</span> — 의무론의 대표자</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">07주_의무론적전통</span></td>
+<td>강의노트</td>
+<td>데오 어원, 플라톤~칸트~무어 계보, 선의지, 가언/정언명령, 세 정식, "규범은 절대적 인격으로부터만", 형식적 의무론 비판</td>
+</tr>
+<tr>
+<td>MBTS 기독교윤리학 7주 토론</td>
+<td>본인 답안(이상협)</td>
+<td>형식적/실체적 의무론, 신명론, 유티프로 딜레마, 규칙/행동 의무론, 세 관점 통합</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">06주_목적론적전통</span></td>
+<td>강의노트</td>
+<td>벤담·밀 vs 칸트 구도, 공리주의와의 대비</td>
+</tr>
+<tr>
+<td>MBTS 기독교윤리학 라이브 토론</td>
+<td>토론 기록</td>
+<td>트롤리 → "편리하나 위험" → 차등적 절대주의, 아브라함 사례</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">_paper_기말종합보고서</span></td>
+<td>본인 저작(이상협)</td>
+<td>목적론(영광)·의무론(십자가)·실존(성품)의 그리스도 안 통합</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수</span> 「제9계명 — 거짓 증거하지 말라」</td>
+<td>설교</td>
+<td>거짓말의 정의, 라합의 정상참작·전투윤리·상황윤리 구분, 침묵+동문서답</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">문대원</span> 「크리스천의 윤리 (3) 상황이 나쁘다는 변명」</td>
+<td>설교</td>
+<td>라합·히브리 산파, "칭찬은 거짓말이 아니라 믿음의 방향", 상황윤리 반박</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">의료사회회복프로젝트</span> 「선택의 윤리학」</td>
+<td>프로젝트 발제</td>
+<td>의무론·공리주의·기독교의 선 비교, 진료실의 선택</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EA%B3%B5%EB%A6%AC%EC%A3%BC%EC%9D%98/">공리주의</a> · <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%9C%A4%EB%A6%AC%ED%95%99/">기독교윤리학</a></td>
+<td>위임 페이지</td>
+<td>목적론 대칭·3대 이론 지형·의료 현장 적용</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#domain/철학</span><span>#discipline/기독교윤리</span><span>#규범윤리</span><span>#정언명령</span><span>#신명론</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

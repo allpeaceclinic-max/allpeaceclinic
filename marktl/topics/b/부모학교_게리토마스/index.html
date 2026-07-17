@@ -1,0 +1,273 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>부모학교 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:25">상담·치유·가정</span><span class="author">게리 토마스</span><span class="date">2026-05-03</span></div>
+  <h1 class="note-title">부모학교</h1>
+  
+</header>
+<article class="note">
+<p><strong>저자</strong>: 게리 토마스 (Gary Thomas)<br />
+<strong>분류</strong>: 자녀양육 / 영성훈련 / 기독교 가정</p>
+<blockquote>
+<p>"우리가 깨지는 곳도 가정이고, 우리가 치유되는 곳도 가정이다." — 칼 위태커</p>
+</blockquote>
+<hr />
+<h2>1. 핵심 명제: 자녀가 부모의 스승</h2>
+<ul>
+<li>양육 과정 = 부모를 위한 <strong>영성 훈련의 과정</strong> (복된 여정)</li>
+<li>자녀는 부모에게 영적 성장의 기회를 제공하는 스승</li>
+<li>아이들의 미숙함(네피오스) — 예수님이 이들을 따라야 할 본으로 제시하심</li>
+<li>생육하고 번성하는 것 = <strong>내 일이 아니라 하나님의 일</strong></li>
+</ul>
+<hr />
+<h2>2. 자녀를 기르는 동기 — 부모 자신의 거룩</h2>
+<blockquote>
+<p>고후7:1 "하나님을 두려워하는 가운데서 거룩함을 온전히 이루어"</p>
+</blockquote>
+<ul>
+<li>바울의 강조: <strong>자녀보다 부모 자신을 먼저 깨끗하게</strong></li>
+<li><strong>산소마스크 비유</strong>: 부모 먼저 쓰고 자녀에게 씌운다 — 자녀를 위해 부모가 먼저 영적으로 건강해야</li>
+<li>자녀 양육 = 부모의 <strong>죄성과 약점을 드러내는</strong> 과정</li>
+<li>양육의 방향: "결과를 위해" → "거룩함을 온전히 이루는 과정으로"</li>
+</ul>
+<hr />
+<h2>3. 결과를 보장할 수 없다 — 사무엘 신드롬 vs 아하스 신드롬</h2>
+<table>
+<thead>
+<tr>
+<th>사례</th>
+<th>부모</th>
+<th>자녀</th>
+<th>함의</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>사무엘 신드롬</td>
+<td>충실한 종 사무엘</td>
+<td>반역한 아들 둘</td>
+<td>부모의 신실함이 결과를 보장하지 않는다</td>
+</tr>
+<tr>
+<td>아하스 신드롬</td>
+<td>악한 왕 아하스</td>
+<td>훌륭한 아들 히스기야</td>
+<td>나쁜 부모가 결과를 결정하지 않는다</td>
+</tr>
+<tr>
+<td>다윗–압살롬</td>
+<td>섭섭하게 한 적 없는 다윗</td>
+<td>반역한 압살롬</td>
+<td>다윗의 잘못이 명시됨 (왕상1:6)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>죄책감 → 유익으로</strong>: 실패가 드러날 때 하나님 바라보게, 더 잘하려는 동기, 자비를 사랑하도록</li>
+</ul>
+<hr />
+<h2>4. 과잉보호의 위험</h2>
+<blockquote>
+<p>민14:31-33 — 이스라엘 부모들이 자식의 안전을 걱정했기 때문에<br />
+오히려 자녀들이 부모의 수하에서 고생함</p>
+</blockquote>
+<ul>
+<li>역경 없이 자란 아이들: 중독·비만·자살·무기력에 빠질 소지 높음</li>
+<li>하나님이 아들에게 고난을 허용하셨다면 — 더 큰 유익을 위해 지켜봐야 할 때가 있음</li>
+<li><strong>비겁함의 함정</strong>: 자식을 보호한다는 미명 하에 오히려 해를 입힘</li>
+</ul>
+<hr />
+<h2>5. 분노 조절 — 모세의 실패</h2>
+<ul>
+<li>모세의 분노: 감정 자체는 옳았으나 <strong>동기가 틀렸다</strong> — 하나님의 의로운 불쾌감이 아니라 자신의 화풀이</li>
+<li>"나는 이제 <strong>죄 없는 삶을 추구하지 않는다</strong>. 대신 성숙을 추구한다."</li>
+<li>분노가 표출되는 순간: 인정하되, 어서 나올 궁리부터</li>
+<li>내 자녀의 실수에는 발끈하면서 — 내 자신의 실수에는 똑같이 괴로워하는가?</li>
+</ul>
+<hr />
+<h2>6. 자녀를 즐거워하라</h2>
+<blockquote>
+<p>요삼4 "내 자녀들이 진리 안에서 행한다 함을 듣는 것보다 더 기쁜 일이 없도다"</p>
+</blockquote>
+<ul>
+<li>신약 70번 — <strong>기뻐하라</strong></li>
+<li>부모가 자녀에게 줄 수 있는 최고의 선물: 그들을 즐거워하는 것</li>
+<li>자녀를 "참고 견뎌야 할 짐"으로 보는 부모 → 알고 보면 희생이 가장 적은 부모</li>
+</ul>
+<hr />
+<h2>7. 경청 — 하나님을 듣는 훈련</h2>
+<ul>
+<li>자녀의 말을 들어주는 기술 = <strong>하나님을 향한 영적 감수성을 다듬는 기술</strong></li>
+<li>아이들은 세상을 다른 눈으로 본다 — 낮잠을 성스런 순간으로, 개미 약 뿌리기를 신나는 일로</li>
+<li>첫째도 듣는 것, 둘째도 듣는 것, 셋째도 듣는 것</li>
+</ul>
+<hr />
+<h2>8. 떠나 보내기 — 믿음의 자세</h2>
+<blockquote>
+<p>"결국 믿음이란 내가 원하는 것을 얻어내는 힘이 아니라 하나님이 주시는 것을 받아들이는 자세다."</p>
+</blockquote>
+<ul>
+<li>예수님의 모델: 충분히 준비되지 않은 제자들을 놓아 보내심</li>
+<li>성령이 확증해 주실 것을 믿으심 (떠나고 성령이 오는 것이 유익)</li>
+<li>부모의 과제: <strong>통제</strong>에서 <strong>믿음</strong>으로 이행</li>
+<li>독립적인 존재가 되도록 — 영적 교훈과 함께 내어 보냄</li>
+</ul>
+<hr />
+<h2>9. 세계관의 전환</h2>
+<ul>
+<li>자아 → 타인: "호감을 주고 관계에서 내가 원하는 것을 얻으려 했던" 차원에서 다른 사람들을 돌아보는 차원으로</li>
+<li>이는 세계관을 바꾸는 <strong>매우 중요한 이행</strong> — 남녀 모두 반드시 통과해야 할 여정</li>
+<li>자녀 양육이 이 전환을 강제한다</li>
+</ul>
+<hr />
+<h2>⭐ 윤명숙 전도사님 연결</h2>
+<table>
+<thead>
+<tr>
+<th>게리 토마스</th>
+<th>윤명숙 전도사님 (<span class="wl-dead" title="위키 내부 링크">부모교육시리즈</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>부모 = 하나님께 나아가는 통로</td>
+<td>부모 = 하나님의 대리자 (창4:1)</td>
+</tr>
+<tr>
+<td>생육·번성 = 하나님의 일</td>
+<td>자녀는 하나님이 부부를 통해 주신 선물</td>
+</tr>
+<tr>
+<td>양육 = 영성훈련 (부모의 거룩)</td>
+<td>부모가 먼저 치유되어야 한다</td>
+</tr>
+<tr>
+<td>산소마스크 비유 (부모 먼저)</td>
+<td>역기능 가정의 패턴은 대물림된다</td>
+</tr>
+<tr>
+<td>사무엘 신드롬 — 결과를 보장 못함</td>
+<td>부모의 유한 책임 (왕상1:5-6)</td>
+</tr>
+<tr>
+<td>과잉보호 — 자녀에게 해가 됨</td>
+<td>독수리와 타조 부모 (신32:11-12)</td>
+</tr>
+<tr>
+<td>분노 조절 — 성숙 추구</td>
+<td>성품훈련의 목적과 원리 (딤후3:15-17)</td>
+</tr>
+<tr>
+<td>자녀를 즐거워하라</td>
+<td>자녀를 선물로 인식하는 부모의 자세 (6강)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>탐구 중인 질문</h2>
+<p><strong>Q1. "자녀를 즐거워한다"는 것을 어떻게 실천하는가?</strong>
+- 부분 답변: <span class="wl-dead" title="위키 내부 링크">부모교육시리즈</span> — 6강, 자녀를 선물로 인식하는 부모의 자세
+- 부분 답변: 요삼4 기쁨 — 진리 안에서 행하는 것을 듣는 기쁨
+- 여전히 열린 질문: 자녀의 실망스러운 선택 앞에서도 즐거워할 수 있는가?</p>
+<p><strong>Q2. "떠나 보내기"(자녀 독립)와 부모의 역할 포기는 어떻게 다른가?</strong>
+- 부분 답변: <span class="wl-dead" title="위키 내부 링크">부모교육시리즈</span> — 부모의 유한 책임 (왕상1:5-6), 사무엘 신드롬
+- 부분 답변: <a class="wl" href="../../t/%EB%AF%BF%EC%9D%8C/">믿음</a> — 믿음=하나님이 주시는 것 받아들이기 (예수님의 제자 파송 모델)
+- 여전히 열린 질문: 자녀가 다른 길을 선택할 때, 부모는 어떤 자세로 동행하는가?</p>
+<hr />
+<h2>관련 페이지</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%9E%90%EB%85%80%EC%96%91%EC%9C%A1/">자녀양육</a> — 자녀 양육 신학과 실천</li>
+<li><a class="wl" href="../../t/%EA%B0%80%EC%A0%95%EC%82%AC%EC%97%AD/">가정사역</a> — 부부관계, 가정의 선교적 의미</li>
+<li><a class="wl" href="../../t/%EB%B6%80%EB%AA%A8%EA%B5%90%EC%9C%A1/">부모교육</a> — 기독 부모교육 이론 체계</li>
+<li><a class="wl" href="../../t/%EA%B1%B0%EB%A3%A9/">거룩</a> — 부모의 거룩, 고후7:1</li>
+<li><a class="wl" href="../../t/%EB%AF%BF%EC%9D%8C/">믿음</a> — 떠나 보내기, 믿음의 자세</li>
+<li><span class="wl-dead" title="위키 내부 링크">부모교육시리즈</span> — 윤명숙 전도사, 기독 부모교육 7강</li>
+<li><a class="wl" href="../../b/%EB%B6%80%EB%AA%A8%EA%B0%80%EB%90%9C%EB%8B%A4%EB%8A%94%EA%B2%83_%ED%94%8C%EB%9D%BC%EC%8A%A4%ED%8E%A0%EB%9F%AC/">부모가된다는것_플라스펠러</a> — 권위와 훈련 중심 양육</li>
+<li><a class="wl" href="../../b/%EB%B3%80%ED%99%94%EC%97%90%EB%8C%80%ED%95%9C%EB%AC%B5%EC%83%81%EB%B0%8F%EC%B1%85%EC%A0%95%EB%A6%AC/">변화에대한묵상및책정리</a> — 마음 수준의 변화</li>
+</ul>
+</article>
+<div class="tagrow"><span>#자녀양육</span><span>#부모교육</span><span>#영성훈련</span><span>#가정사역</span><span>#분노</span><span>#떠나보내기</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

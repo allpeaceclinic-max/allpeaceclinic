@@ -1,0 +1,363 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>성경론 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:226">조직신학·교리</span><span class="date">2026-07-14</span></div>
+  <h1 class="note-title">성경론</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p><span class="wl-dead" title="위키 내부 링크">웨인 그루뎀</span>의 <a class="wl" href="../../b/%EC%A1%B0%EC%A7%81%EC%8B%A0%ED%95%99-%EC%9B%A8%EC%9D%B8%EA%B7%B8%EB%A3%A8%EB%8E%80/">조직신학</a>이 성경 전체가 가르치는 교리를 일곱 범주로 묶을 때, 맨 앞에 놓이는 것이 성경론(Bibliology)이다. 이 순서는 우연이 아니라 고백이다. <a class="wl" href="../../t/%EC%8B%A0%EB%A1%A0/">신론</a>·<a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EB%A1%A0/">기독론</a>·구원론이 저마다 "하나님은 누구신가", "그리스도는 무엇을 하셨는가"를 말하기 전에, 성경론은 그 모든 진술이 딛고 설 앞선 물음에 답한다 — 우리는 대체 무엇을 근거로 이것을 말하는가. 하나님이 먼저 말씀하셨기에(성경론) 비로소 우리는 하나님이 누구신지 말할 수 있다(신론). 그래서 성경론은 조직신학의 서론(prolegomena)이자, 나머지 여섯 교리 전체가 그 위에 세워지는 인식의 토대다.</p>
+<p>성경론은 성경을 <em>어떻게 읽을 것인가</em>를 다루지 않는다. 그 해석의 이론과 방법은 <a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D%ED%95%99/">성경해석학</a>이, 실천은 <a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D/">성경해석</a>이 맡는다. 이 글이 붙드는 것은 그보다 한 걸음 앞, 성경이라는 책 <em>자체</em>에 관한 교리다. 이 책은 어디서 왔으며(계시·영감), 무슨 권위를 지니며(권위·무오), 어떻게 지금의 예순여섯 권이 되었고(정경), 무엇을 할 수 있는 책인가(명료성·필요성·충족성), 그리고 이 모든 것이 결국 누구를 가리키는가(성경과 그리스도). 하나님이 말씀하셨다는 사실에서 출발해(1) 그 말씀이 책이 된 방식(2), 그 책이 지닌 권위(3)와 그 권위가 오류 문제와 만나는 자리(4), 예순여섯 권이라는 경계의 형성(5), 그 책의 네 속성(6), 그리고 그 모든 것이 수렴하는 그리스도(7)를 지나, 어떤 성경관이 어떤 신앙을 빚는가(8)로 나아간다.</p>
+<h2>1. 하나님이 말씀하셨다 — 계시 위에 놓인 성경</h2>
+<p>성경론은 홀로 서지 못한다. 그것은 더 큰 진리, 곧 하나님이 침묵하지 않으시고 말씀하시는 분이라는 계시론 위에 얹혀 있다. <span class="wl-dead" title="위키 내부 링크">문대원</span> 목사는 히브리서 1장 설교에서 이 출발점을 "하나님의 언어"라 부른다. 궁극적 본질을 물질로 보는 세계관은 인간의 인격과 언어를 끝내 설명하지 못하지만, 성경은 태초부터 말씀하시는 인격을 전제한다 — 하나님이 인격이시기에 계시가 가능하고, 계시가 있기에 성경이 있다.</p>
+<p>이 계시는 두 갈래로 온다. 문대원 목사의 표현으로 하나는 "아래로부터의 지식", 다른 하나는 "위로부터의 지식"이다. 일반계시는 창조 세계를 통해 아래로부터 올라온다 — 하늘이 하나님의 영광을 선포하고(시 19:1), 만드신 만물에 그의 영원한 능력과 신성이 분명히 보여 사람이 핑계하지 못한다(롬 1:20). 그러나 타락한 인간은 일반계시로 하나님의 존재는 알아도 구원의 길은 알지 못한다. 그래서 위로부터의 지식, 곧 성경을 통한 특별계시가 필요하다. 일반계시의 각론은 <a class="wl" href="../../t/%EC%9D%BC%EB%B0%98%EA%B3%84%EC%8B%9C/">일반계시</a>가, 계시 인식론의 세부는 <a class="wl" href="../../t/%EA%B3%84%EC%8B%9C/">계시</a>가 맡으므로 여기서는 그 결론만 붙든다. 성경은 특별계시가 문자로 굳어진 형태다.</p>
+<p>그루뎀은 이 "성경"의 자리를 하나님의 말씀의 여러 형태 안에서 정확히 짚는다.</p>
+<table>
+<thead>
+<tr>
+<th>형태</th>
+<th>내용</th>
+<th>지금 우리에게</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>위격이신 말씀</td>
+<td>예수 그리스도, 로고스(요 1:1)</td>
+<td>직접 대면할 수 없음</td>
+</tr>
+<tr>
+<td>법령으로서의 말씀</td>
+<td>창조 시 발하신 명령("빛이 있으라")</td>
+<td>사건으로 지나감</td>
+</tr>
+<tr>
+<td>개인적 말씀</td>
+<td>선지자·개인에게 직접 하신 말씀</td>
+<td>대개 기록으로만 남음</td>
+</tr>
+<tr>
+<td>인간의 입술을 통한 말씀</td>
+<td>예언·선포로 전해진 말씀</td>
+<td>당대에 소멸</td>
+</tr>
+<tr>
+<td>성문화된 말씀</td>
+<td>인간의 언어로 기록된 성경</td>
+<td><strong>지금 우리가 가진 것</strong></td>
+</tr>
+</tbody>
+</table>
+<p>이사님 본인의 조직신학I 토론이 정리하듯, 성자 하나님을 지금 직접 만날 수 없고 법령과 개인적 말씀은 사건으로 지나갔으므로, 우리에게 남아 조직신학의 연구 대상이 되는 것은 마지막 형태 — 성문화된 하나님의 말씀이다. 말씀을 기록으로 남기는 데는 분명한 유익이 있다. 후대를 위해 더 정확히 보존되고, 거듭 살피고 연구할 수 있으며, 더 많은 사람이 접근할 수 있다. 그리고 이 기록된 말씀을 연구하는 것은 우리의 선택이 아니라 성경 자신의 명령이다 — 주야로 묵상하라(시 1:2; 수 1:8), 자녀에게 가르치라(신 31:12-13). 성경론은 바로 이 명령에 대한 응답으로 시작된다.</p>
+<h2>2. 하나님이 숨을 내쉬셨다 — 영감(inspiration)</h2>
+<p>성경이 특별계시의 기록이라면, 그 기록은 어떻게 하나님의 말씀이 되는가. 이 물음에 답하는 교리가 영감(inspiration)이다. 결정적 본문은 디모데후서 3장 16절이다 — "모든 성경은 하나님의 감동으로 된 것으로 교훈과 책망과 바르게 함과 의로 교육하기에 유익하니." 여기서 "하나님의 감동"으로 번역된 헬라어 테오프뉴스토스(θεόπνευστος)는 문자 그대로 "하나님이 숨을 내쉬신"(God-breathed)이라는 뜻이다. 성경이 영감되었다는 것은 인간 저자가 신적 영감을 <em>받아들였다</em>기보다, 그 결과물 자체가 하나님의 입에서 나온 숨이라는 선언이다.</p>
+<p>동신교회의 한 딤후 3장 강해는 이 호흡의 은유를 생명의 언어로 풀어낸다. 인공지능이 아무리 뛰어나도 사람의 영혼을 자라게 하지 못하는데, 말씀에는 "하나님의 생기가 들어가 있어" 사람을 살리고 키우고 고친다는 것이다. 3500년 전 모세의 글이 4차 산업혁명 시대에 여전히 사람을 개조하는 까닭이 여기 있다 — 성경은 정보가 아니라 하나님이 내쉬신 생기이기 때문이다. 베드로가 같은 진리를 저자의 편에서 말한다. "예언은 언제든지 사람의 뜻으로 낸 것이 아니요 오직 성령의 감동하심을 받은 사람들이 하나님께 받아 말한 것"(벧후 1:21)이다.</p>
+<p>문제는 이 "감동"이 어떻게 작동하느냐다. 교회사는 몇 갈래의 대답을 남겼다.</p>
+<table>
+<thead>
+<tr>
+<th>영감 이론</th>
+<th>핵심 주장</th>
+<th>평가</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>기계적 받아쓰기(dictation)</td>
+<td>저자는 수동적 필기구, 성령이 단어를 불러줌</td>
+<td>저자마다 문체·어휘·관점이 뚜렷이 다른 성경 자체와 맞지 않음</td>
+</tr>
+<tr>
+<td>부분·역동적 영감</td>
+<td>사상은 영감되나 표현·단어는 인간의 것</td>
+<td>어디까지가 하나님 것이고 어디부터 인간 것인지 경계가 무너짐</td>
+</tr>
+<tr>
+<td>축자완전영감(verbal plenary)</td>
+<td>단어까지(verbal) 성경 전체가(plenary) 영감됨</td>
+<td>개혁주의 표준 — 다만 유기적으로 이해해야 함</td>
+</tr>
+<tr>
+<td>유기적 영감(organic)</td>
+<td>성령이 각 저자의 인격·상황·문체를 그대로 쓰시되, 그 결과가 오류 없는 하나님 말씀</td>
+<td>신적 저자성과 인간 저자성을 함께 붙듦</td>
+</tr>
+</tbody>
+</table>
+<p>시드 페이지가 이미 못박듯, 개혁주의가 붙드는 것은 축자완전영감을 유기적으로 이해하는 길이다. 성령은 누가의 의사다운 정밀함도, 바울의 논쟁적 격정도, 아모스의 목자다운 거침도 지우지 않으셨다. 인간 저자의 개성을 온전히 살리시되 그 결과가 조금도 오류 없는 하나님의 말씀이 되게 하신 것 — 이것이 기계적 받아쓰기와도, 사상만 영감되었다는 축소론과도 구별되는 유기적 영감이다. 신적 저자성이 인간 저자성을 삼키지 않고, 인간 저자성이 신적 권위를 희석하지 않는 이 균형 위에서만 "모든 성경"이 동시에 "하나님의 감동"일 수 있다.</p>
+<h2>3. 성경이 최종 권위다 — sola scriptura의 정확한 뜻</h2>
+<p>영감이 성경의 기원을 말한다면, 권위는 그 기원이 낳는 결과를 말한다. 이사님의 조직신학I 2주 토론이 정의하듯, 성경의 권위란 "성경에 있는 모든 말씀이 하나님의 말씀으로서, 그 어느 한 말씀에 불순종하거나 불신하는 것이 곧 하나님을 불신하고 불순종하는 것"이라는 의미다. 권위의 무게는 종이나 잉크가 아니라 그 배후의 화자에게서 온다. 하나님이 말씀하신 것이므로, 성경에 대한 태도가 곧 하나님에 대한 태도가 된다.</p>
+<p>그렇다면 이 권위는 어디서 인증받는가. 개신교의 대답은 단호하다 — 성경은 스스로를 인증한다. <span class="wl-dead" title="위키 내부 링크">쏜웰</span>의 말이 이 자기입증(self-authentication)을 압축한다.</p>
+<blockquote>
+<p>성경의 진리는 성경 자체의 빛으로 스스로 신성을 입증하는 것이다.</p>
+</blockquote>
+<p>그러므로 교회는 성경을 성경으로 <em>인정할</em> 수 있고 또 인정해야 하지만, 그 어떤 의미에서도 성경을 성경으로 <em>만들</em> 수는 없다. 로마 교회는 "교회가 성경을 필요로 한다기보다 성경이 교회를 필요로 한다"고 말하지만, 순서는 정반대다. 교회가 성경 위에 서서 그 권위를 수여하는 것이 아니라, 성경이 교회 위에 서서 교회를 낳고 다스린다.</p>
+<p>여기서 <a class="wl" href="../../t/%EC%A2%85%EA%B5%90%EA%B0%9C%ED%98%81/">종교개혁</a>의 sola scriptura(오직 성경)를 정확히 읽어야 한다. 이 표어는 성경이 그리스도인이 듣는 <em>유일한</em> 목소리라는 뜻이 아니다. 개혁자들도 신조와 교부와 전통과 이성을 사용했다. sola scriptura가 뜻하는 바는 성경이 <em>최종</em> 권위, 곧 다른 모든 권위(전통·교회 회의·이성·경험)를 심판하되 그 무엇에게도 심판받지 않는 최고 법정이라는 것이다. 이사님의 토론이 정리하듯, 개혁자들은 "기독교적 전승을 인정하긴 했으나 성경에 기초하고 성경에서 나온 것만을 인정하였고, 권위에 있어서 성경과 같거나 능가하는 것은 인정하지 않았다." 전통을 폐기하는 것이 아니라 전통을 성경 아래 두는 것 — 유일 권위가 아니라 최종 권위라는 이 구별이 sola scriptura의 정확한 뜻이다.</p>
+<h2>4. 오류 없는 말씀 — 무오와 무류, 그리고 논쟁의 지형</h2>
+<p>최종 권위라는 고백은 곧장 한 물음을 부른다. 그 권위 있는 말씀은 과연 틀리지 않는가. 여기서 두 개념을 구별해야 한다. 무오(inerrancy)는 성경이 원본에 있어 그것이 단언하는 <em>모든</em> 사항 — 역사·지리·우주까지 포함해 — 에서 오류가 없다는 더 넓은 주장이고, 무류(infallibility)는 성경이 적어도 신앙과 삶에 관한 사항에서는 우리를 그르치지 않는다는 더 좁은 주장이다. 무오는 무류를 포함하지만, 무류를 주장하면서 무오는 유보하는 입장도 가능하다 — 20세기 성경론 논쟁의 상당 부분이 바로 이 틈에서 벌어졌다.</p>
+<table>
+<thead>
+<tr>
+<th>개념</th>
+<th>범위</th>
+<th>주장의 강도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>무류(infallibility)</td>
+<td>신앙과 생활에 관한 사항</td>
+<td>성경은 구원의 문제에서 우리를 속이지 않는다</td>
+</tr>
+<tr>
+<td>무오(inerrancy)</td>
+<td>원본이 단언하는 모든 사항</td>
+<td>성경은 그것이 긍정하는 어떤 것에서도 틀리지 않는다</td>
+</tr>
+</tbody>
+</table>
+<p>이 구별을 공적 문서로 정식화한 것이 1978년의 시카고 성경무오 선언(Chicago Statement on Biblical Inerrancy)이다. 선언은 무오를 원본(autographa)에 한정하고, 현상적 언어·어림수·비연대기적 서술 같은 고대 문헌의 관습을 오류로 간주하지 않는다는 단서를 달아, 무오 교리가 성경을 현대의 과학 논문처럼 읽으라는 요구가 아님을 분명히 했다.</p>
+<p>무오 논증이 실제로 어떻게 전개되는지 — 특히 그것이 사본학이나 정경론 같은 외적 증거 이전에 "진리란 무엇인가"라는 진리대응론의 인식론적 토대 위에 서야 한다는 논지 — 는 <a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%EB%AC%B4%EC%98%A4/">성경무오</a>가 상세히 다룬다. 여기서는 그 자리만 표시한다. 무오와 무류는 성경론의 곁가지가 아니라, 최종 권위라는 고백이 지적 정직성 앞에서 시험받는 지점이다.</p>
+<h2>5. 어떻게 예순여섯 권인가 — 정경의 형성</h2>
+<p>권위 있고 오류 없는 말씀이라면, 그 말씀의 경계는 어디까지인가. 왜 하필 예순여섯 권이며, 한 권 더도 덜도 아닌가. 이것이 정경(canon) 문제다. 정경이란 "성경에 속하는 모든 책들의 목록"이며, 그 범위를 정하는 일이 중요한 까닭은 성경 말씀이 영적 생명의 양식이기에 거기 무엇을 더하거나 빼는 것이 곧 온전한 순종을 무너뜨리기 때문이다.</p>
+<p>개신교 정경론의 심장에는 한 문장이 있다 — 교회는 정경을 <em>만든</em> 것이 아니라 <em>인정한</em> 것이다. 어떤 회의도 투표로 책에 권위를 부여하지 않았다. 하나님이 영감으로 이미 권위를 주신 책을, 교회가 시간을 두고 알아본 것뿐이다. 그루뎀 강의가 정리하는 역사적 문헌 증거가 이 신학적 원칙을 뒷받침한다.</p>
+<table>
+<thead>
+<tr>
+<th>시점</th>
+<th>사건</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BC 435 이후</td>
+<td>구약에 더 이상 첨가 없음(마카비1서·요세푸스가 방증)</td>
+<td>구약 정경의 사실상 완결</td>
+</tr>
+<tr>
+<td>AD 367</td>
+<td>아타나시우스의 유월절 서신</td>
+<td>신약 27권 목록을 그대로 담음(구약도 에스더만 빼면 현재와 일치)</td>
+</tr>
+<tr>
+<td>AD 397</td>
+<td>카르타고 종교회의</td>
+<td>27권을 공식 인정 — 새로 정한 것이 아니라 이미 쓰이던 것을 확인</td>
+</tr>
+<tr>
+<td>AD 1546</td>
+<td>트렌트 종교회의</td>
+<td>로마 가톨릭이 외경을 정경에 포함 — 개신교 개혁에 맞선 반작용의 맥락</td>
+</tr>
+</tbody>
+</table>
+<p>외경(Apocrypha) 문제가 이 구도를 선명히 한다. 제롬조차 벌게이트에 외경을 넣으면서 "교회의 책이지 정경의 책은 아니"라고 선을 그었고, 멜리토 같은 초대교회 감독의 목록에도 외경은 없었다. 로마 가톨릭이 외경을 정경으로 확정한 것은 무려 1546년, 그것도 종교개혁에 대한 반작용으로 교회의 권위를 세우려는 정치적·논쟁적 맥락에서였다. 즉 외경의 정경화는 신학적 필연이 아니라 역사적 대응이었다는 것이 개신교의 진단이다. 정경 형성의 더 상세한 과정과 기준(사도성·정통성·보편적 수용)은 <a class="wl" href="../../t/%EC%A0%95%EA%B2%BD%ED%99%94/">정경화</a>가 이어받는다. 핵심은 남는다 — 정경의 경계는 교회의 창작이 아니라 교회의 인식이다.</p>
+<h2>6. 성경의 네 속성 — 권위·명료성·필요성·충족성</h2>
+<p>그루뎀은 성경 자체의 교리를 네 속성으로 집약한다. 이 넷은 따로 노는 항목이 아니라, 한 책이 지닌 네 얼굴이다.</p>
+<table>
+<thead>
+<tr>
+<th>속성</th>
+<th>뜻</th>
+<th>반대 오류</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>권위(authority)</td>
+<td>성경의 모든 말씀이 하나님의 말씀이다</td>
+<td>성경을 인간 종교 경험의 기록으로 격하</td>
+</tr>
+<tr>
+<td>명료성(clarity)</td>
+<td>구원에 필요한 것은 성경 전체를 통해 명료하다</td>
+<td>평신도는 못 읽고 교권만 해석한다는 우민화</td>
+</tr>
+<tr>
+<td>필요성(necessity)</td>
+<td>구원과 경건에 성경이 반드시 있어야 한다</td>
+<td>일반계시나 이성만으로 충분하다는 낙관</td>
+</tr>
+<tr>
+<td>충족성(sufficiency)</td>
+<td>구원과 삶에 필요한 모든 것이 성경에 있다</td>
+<td>성경에 전통·새 계시를 보충해야 한다는 요구</td>
+</tr>
+</tbody>
+</table>
+<p>권위는 이미 3장에서 다루었으니 나머지 셋을 짚는다. <strong>명료성</strong>(perspicuity)은 성경을 아무나 다 이해한다는 뜻이 아니다. 이사님의 토론이 인정하듯 성경에는 삼위일체·성육신처럼 인간 이성을 초월하는 신비가 있고, 베드로도 어떤 부분은 이해하기 어렵다고 했으며, 수 세기의 해석사도 완전한 통일에 이르지 못했다. 그럼에도 성경은 명료하다 — 구원에 필요한 지식만큼은 성경 전체를 통해 단순하고 포괄적인 형태로 전달되어, 진지하게 구원을 찾는 이는 성령의 인도 아래 스스로 그것을 얻을 수 있기 때문이다. 명료성은 모든 구절의 투명함이 아니라 구원 메시지의 접근 가능성이다.</p>
+<p><strong>필요성</strong>은 왜 성경이 없어서는 안 되는가를 묻는다. 하나님이 일반계시 같은 다른 길로 구원의 지식을 주지 않으셨기에, 교회에게 성경은 있으면 좋은 것이 아니라 절대적으로 필요한 것이다. <strong>충족성</strong>은 그 필요가 어디서 멈추는가를 말한다. 성경이 사도의 전승 같은 보충물을 요구한다는 입장에 맞서 개혁자들은 성경만으로 충분하다고 선언했다 — 그리스도가 신적 계시의 절정이자 최종 계시이므로, 구원의 길을 알기 위해 우리는 오직 그리스도와 사도들의 말씀인 성경만을 찾으면 된다(요 17:20; 요일 1:3).</p>
+<p>이 충족성이 실천에서 갖는 무게는 크다. 그것은 신앙 상담과 제자훈련에서 늘 "성경 본문 자체로 돌아가라"고 이끄는 근거가 되며, 별도의 권위나 새로운 계시를 좇는 모든 열망에 제동을 건다. 충족성을 믿는 사람은 위기 앞에서 성경 밖의 표적을 구하지 않고 이미 주어진 말씀 위에 선다 — 이 결이 <a class="wl" href="../../t/%EB%A7%90%EC%94%80/">말씀</a>과 <a class="wl" href="../../t/%EB%A7%90%EC%94%80%EB%AC%B5%EC%83%81/">말씀묵상</a>에서 더 구체적으로 펼쳐진다.</p>
+<h2>7. 이 성경이 곧 내게 대하여 증언한다 — 성경의 중심</h2>
+<p>네 속성을 다 갖춘 이 책은 결국 무엇을 향하는가. 성경론의 마지막 질문은 성경의 내용이 아니라 성경의 <em>중심</em>을 묻는다. 예수께서 친히 답을 주셨다 — "너희가 성경에서 영생을 얻는 줄 생각하고 성경을 연구하거니와 이 성경이 곧 내게 대하여 증언하는 것이니라"(요 5:39). 성경을 성경 되게 하는 것은 그것이 그리스도를 증언한다는 사실이다.</p>
+<p><span class="wl-dead" title="위키 내부 링크">권성수</span> 목사의 요한복음 5장 강해는 여기에 날카로운 아이러니를 얹는다. 예수님은 자신의 신성을 세례 요한·행하신 표적·아버지 하나님·성경이라는 네 겹의 증인으로 입증하시는데, 그 넷째 증인이 바로 구약 성경이다. 그런데 성경을 누구보다 열심히 연구한 이들이 정작 "영생을 얻기 위해 예수께 오기를 원하지 않았다"(요 5:40). 성경을 손에 쥐고도 성경이 가리키는 분을 놓친 것이다. 이것이 성경 연구가 빠질 수 있는 가장 깊은 함정 — 본문에 통달하면서 본문의 주인을 지나치는 것이다.</p>
+<p>문대원 목사의 히브리서 강해가 이 중심을 구속사의 언어로 완성한다. 구약은 아브라함과 모세를 거친 약속과 예언이었으나 결말이 없는 이야기였고, 이스라엘에게 필요한 것은 "또 다른 책이 아니라 그들이 가진 책의 마지막"이었다. 그 마지막 말씀이 육신을 입고 오셨다(히 1:2). 그러므로 그리스도는 성경의 한 주제가 아니라 성경 전체가 수렴하는 텔로스이며, "하나님께서 말씀하시는 언어는 예수님"이시다. 성경론이 <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EB%A1%A0/">기독론</a>으로 흘러넘치는 지점이 여기다 — 최고의 성경관은 성경을 최종 목적으로 삼지 않고, 성경이 증언하는 그리스도께로 사람을 넘긴다.</p>
+<h2>8. 어떤 성경관이 어떤 신앙을 만드는가</h2>
+<p>성경론은 서재의 교리가 아니다. 성경을 무엇으로 여기느냐가 신앙의 골격을 통째로 결정한다. 성경을 인간의 종교적 경험을 모아 놓은 고전으로 보는 사람은, 삶이 흔들릴 때 그 문장들도 함께 흔들리는 것을 본다. 반대로 성경을 하나님이 숨을 내쉬신 최종 권위로 붙드는 사람은, 확실성이 사라진 자리에서도 딛고 설 바닥을 갖는다.</p>
+<p>이사님의 토론이 의료 현장에서 이 차이를 증언한다. 성경이 애매한 부분과 신비를 품으면서도 구원에 필요한 지식만큼은 명료하다는 논지는, 임상에서 "모든 것을 다 알 수는 없지만 핵심 판단만큼은 흔들림 없이 붙들어야 한다"는 태도로 번역된다. 확실성 없이 행동해야 하는 순간에도 생명·존엄·돌봄의 원칙은 흔들리지 않는데, 그 흔들리지 않음의 뿌리가 성경의 권위와 충족성에 대한 확신이다.</p>
+<p>동신교회의 딤후 3장 강해가 같은 진리를 시대의 언어로 던진다. 인공지능이 인간의 지식을 압도하는 시대에 3500년 전 고전이 무슨 소용이냐는 물음에, 설교자는 성경이 정보가 아니라 "하나님의 생기"가 담긴 말씀이기에 사람을 살리고 자라게 하고 개조한다고 답한다. 인공지능은 영혼을 성장시키지 못한다. 결국 낮은 성경관은 성경을 참고 자료로 만들고, 높은 성경관은 성경을 생명의 양식으로 만든다 — 그리고 어느 쪽을 택했는지가 사람이 무엇으로 사는지를 드러낸다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>성경론은 조직신학의 서론이다 — 신론·기독론이 무엇을 말하기 전에, 우리가 무엇을 근거로 말하는가에 답하는 인식의 토대다.</li>
+<li>테오프뉴스토스(딤후 3:16)는 성경이 영감을 "받았다"기보다 그 자체가 하나님이 내쉬신 숨임을 뜻한다. 유기적 영감은 인간 저자의 개성을 지우지 않으면서 그 결과를 오류 없는 하나님 말씀으로 붙든다.</li>
+<li>sola scriptura는 성경이 <em>유일한</em> 권위라는 뜻이 아니라 <em>최종</em> 권위라는 뜻이다 — 전통·이성·경험을 심판하되 그 무엇에게도 심판받지 않는 최고 법정.</li>
+<li>교회는 정경을 만든 것이 아니라 인정했다. 정경의 경계는 교회의 창작이 아니라, 하나님이 주신 것에 대한 교회의 인식이다.</li>
+<li>성경의 네 속성(권위·명료성·필요성·충족성)은 별개 항목이 아니라 한 책의 네 얼굴이며, 특히 충족성은 "성경 본문 자체로 돌아가라"는 모든 실천의 근거다.</li>
+<li>성경을 성경 되게 하는 것은 그것이 그리스도를 증언한다는 사실이다(요 5:39). 최고의 성경관은 성경에 머물지 않고 성경이 가리키는 그리스도께로 사람을 넘긴다.</li>
+<li>어떤 성경관을 갖느냐가 어떤 신앙을 빚는가를 결정한다 — 낮은 성경관은 참고 자료를, 높은 성경관은 생명의 양식을 만든다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>무오를 원본(autographa)에 한정한다면, 원본이 남아 있지 않은 상황에서 사본과 번역본의 권위는 어떻게 확보되는가?</li>
+<li>유기적 영감이 인간 저자의 개성을 온전히 살린다면, 저자의 문화적 한계(고대 우주관 등)와 본문의 무오성은 어디서 만나고 어디서 갈라지는가?</li>
+<li>성경의 명료성(구원 지식은 명료하다)과 수 세기에 걸친 해석의 불일치는 어떻게 함께 서는가 — 명료성은 어느 범위까지의 주장인가?</li>
+<li>충족성이 새로운 계시를 배제한다면, 오늘날 "성령의 인도"나 예언적 은사에 대한 주장은 성경론과 어떻게 조화되는가?</li>
+<li>정경을 교회가 "인정"했다면 그 인정의 신뢰성은 무엇이 보증하는가 — 정경 목록 자체는 영감된 것인가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EA%B3%84%EC%8B%9C/">계시</a> · <a class="wl" href="../../t/%EC%9D%BC%EB%B0%98%EA%B3%84%EC%8B%9C/">일반계시</a> — 성경론이 얹혀 있는 계시론의 각론(일반/특별계시, 인식 가능성)</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%EB%AC%B4%EC%98%A4/">성경무오</a> — 무오 논증의 인식론적 토대(진리대응론)와 논쟁의 지형</li>
+<li><a class="wl" href="../../t/%EC%A0%95%EA%B2%BD%ED%99%94/">정경화</a> — 정경 형성의 상세 과정과 기준(사도성·정통성·보편적 수용)</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D%ED%95%99/">성경해석학</a> · <a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D/">성경해석</a> · <a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D%EC%9D%98%EC%97%AD%EC%82%AC/">성경해석의역사</a> — 성경을 어떻게 읽을 것인가의 이론·실천·역사(이 글의 위임 대상)</li>
+<li><a class="wl" href="../../t/%EB%A7%90%EC%94%80/">말씀</a> · <a class="wl" href="../../t/%EB%A7%90%EC%94%80%EB%AC%B5%EC%83%81/">말씀묵상</a> — 충족한 말씀을 품고 반응하는 실천의 결</li>
+<li><a class="wl" href="../../t/%EC%A2%85%EA%B5%90%EA%B0%9C%ED%98%81/">종교개혁</a> — sola scriptura의 역사적 맥락</li>
+<li><a class="wl" href="../../t/%EC%84%A4%EA%B5%90%EC%8B%A0%ED%95%99/">설교신학</a> — 성경의 권위가 설교의 권위를 부여하는 지점</li>
+<li><a class="wl" href="../../t/%EC%8B%A0%EB%A1%A0/">신론</a> · <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EB%A1%A0/">기독론</a> — 성경론이 떠받치는 다음 교리, 그리고 성경이 증언하는 중심</li>
+<li><a class="wl" href="../../b/%EC%A1%B0%EC%A7%81%EC%8B%A0%ED%95%99-%EC%9B%A8%EC%9D%B8%EA%B7%B8%EB%A3%A8%EB%8E%80/">조직신학-웨인그루뎀</a> — 이 글의 조직신학적 저본</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>조직신학I 2주 토론 「성경의 권위」(이상협)</td>
+<td>토론(본인 저작)</td>
+<td>권위·필요성·명료성·충족성 네 속성, 쏜웰의 자기입증, sola scriptura의 최종 권위</td>
+</tr>
+<tr>
+<td>조직신학I 1주 강의(황성철 · 그루뎀 교재)</td>
+<td>lecture</td>
+<td>하나님 말씀의 여러 형태, 정경 형성의 역사적 증거, "교회는 인정할 뿐 만들 수 없다"</td>
+</tr>
+<tr>
+<td>조직신학I 1주 토론 「조직신학과 성경」(이상협)</td>
+<td>토론(본인 저작)</td>
+<td>성문화된 말씀으로서의 성경, 기록의 유익, 연구 명령(신 31·시 1·수 1·딤후 3)</td>
+</tr>
+<tr>
+<td>문대원 「하나님의 언어」(히 1:1-3)</td>
+<td>sermon</td>
+<td>아래로부터/위로부터의 지식, 계시의 3단계, 마지막 말씀이신 그리스도</td>
+</tr>
+<tr>
+<td>권성수 「진리의 증거」(요 5:30-40)</td>
+<td>sermon</td>
+<td>네 겹의 증인 중 성경, 요 5:39-40의 아이러니</td>
+</tr>
+<tr>
+<td>동신교회 주일예배 「성경 12보석」(딤후 3:16-17)</td>
+<td>sermon</td>
+<td>테오프뉴스토스=하나님의 생기, AI 시대 성경의 생명력</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%EB%AC%B4%EC%98%A4/">성경무오</a></td>
+<td>topic</td>
+<td>무오 논증의 진리대응론적 토대(위임)</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/조직신학</span><span>#discipline/성경론</span><span>#topic/영감</span><span>#topic/정경</span><span>#topic/성경의권위</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

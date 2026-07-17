@@ -1,0 +1,380 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>설교신학 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:140">목회·실천</span><span class="date">2026-07-17</span></div>
+  <h1 class="note-title">설교신학</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>설교신학은 설교를 '어떻게 하는가'가 아니라 '왜 하는가'와 '무슨 일이 일어나는가'를 묻는 신학이다. 준비와 석의의 방법론은 <a class="wl" href="../../t/%EA%B0%95%ED%95%B4%EC%84%A4%EA%B5%90/">강해설교</a>에, 전달의 기법은 <a class="wl" href="../../t/%EC%84%A4%EA%B5%90%EC%A0%84%EB%8B%AC/">설교전달</a>에, 적용의 이론은 <a class="wl" href="../../t/%EC%84%A4%EA%B5%90%EC%A0%81%EC%9A%A9/">설교적용</a>에 맡기고, 이 페이지는 그 모든 방법론이 딛고 선 전제 하나를 다룬다 — 설교란 하나님이 지금, 사람의 입을 통해, 말씀하시는 사건이라는 주장이다.</p>
+<p>이 주장은 설교를 강연이나 교육이나 종교 에세이와 종적으로 갈라놓는다. 제2스위스신앙고백은 이것을 가장 대담하게 압축했다. "하나님 말씀의 설교는 하나님의 말씀이다"(Praedicatio verbi Dei est verbum Dei). 칼 바르트는 이 명제를 20세기에 다시 세워, 계시와 성경과 설교를 하나님 말씀의 세 형태로 묶었다. 곧 설교는 성경에 기록된 말씀이 오늘의 회중에게 현재화(actualization)되는 통로이며, 그 순간 강단에서 울리는 것은 설교자의 견해가 아니라 하나님 자신의 음성이라는 것이다. <a class="wl" href="../../t/%EB%A7%90%EC%94%80/">말씀</a> 페이지가 말씀 그 자체의 능력을 다룬다면, 이 페이지는 그 능력이 설교라는 행위 속에서 작동하는 구조를 다룬다.</p>
+<p>이 글은 설교가 선포(케뤼그마)라는 것(1)에서 출발해, 왜 하필 설교인가(2), 설교의 삼위일체적 구조(3), 설교자의 정체성(4), 설교와 성령(5), 강단의 위기와 회복(6), 그리고 설교는 회중의 일이기도 하다는 듣는 신학(7)의 일곱 층위를 따라간다. 근거는 이 볼트의 MBTS 설교학 수업노트와 여기 쌓인 설교들에서 직접 길어 올리되, 남의 백과사전이 아니라 이 강단에서 실제로 오간 목소리를 따른다.</p>
+<h2>1. 하나님이 지금 말씀하신다 — 선포로서의 설교</h2>
+<p>설교와 강연을 가르는 것은 길이도, 성경 인용의 유무도, 심지어 경건함의 농도도 아니다. 그것은 시제(時制)다. 강연은 과거의 진리를 오늘 설명하지만, 설교는 하나님이 지금 이 자리에서 말씀하신다고 주장한다. <a class="wl" href="../../t/%EB%A7%90%EC%94%80/">말씀</a> 페이지에서 문대원 목사가 짚었듯, 살아 계신 하나님은 "살아 있고, 항상 계시기 때문에 항상 말씀하신다." 죽은 정보는 아무리 방대해도 대화 상대가 되지 못하지만, 살아 계신 분은 오늘도 발화하신다. 설교는 그 현재적 발화가 인간의 입을 빌려 들리는 자리다.</p>
+<p>그래서 설교의 고유한 양식은 '설명'이 아니라 '선포'다. 신약이 복음 전파를 케뤼그마(κήρυγμα)라 부른 것은 우연이 아니다. 케뤼그마는 전령이 왕의 명령을 광장에서 외치는 행위이지, 학자가 명제를 논증하는 행위가 아니다. 마운스는 이 사자(使者)의 직무를 "선포와 호소"의 결합으로 풀었다 — 제대로 된 복음의 선포 없는 호소는 감정적 자극일 뿐이고, 받아들이도록 설득하지 않는 가르침만으로는 불충분하다. 선포가 빠지면 설교는 종교 강좌가 되고, 호소가 빠지면 성경 해설이 된다. 둘이 함께 있을 때에야 그것은 케뤼그마가 된다.</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>강연·교육·에세이</th>
+<th>설교(선포)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>시제</td>
+<td>과거의 진리를 오늘 설명</td>
+<td>하나님이 지금 말씀하시는 사건</td>
+</tr>
+<tr>
+<td>말하는 주체</td>
+<td>화자 자신</td>
+<td>화자를 통해 말씀하시는 하나님</td>
+</tr>
+<tr>
+<td>권위의 근거</td>
+<td>화자의 지식과 논리</td>
+<td>본문 — 하나님의 말씀</td>
+</tr>
+<tr>
+<td>목적</td>
+<td>정보 전달·설득·감동</td>
+<td>만남과 변화, 그리고 구원</td>
+</tr>
+<tr>
+<td>성패의 최종 기준</td>
+<td>이해되었는가</td>
+<td>그분을 만났는가</td>
+</tr>
+</tbody>
+</table>
+<p>이 표의 오른쪽 열이 무너지면 남는 것은 왼쪽 열이다. 김세광은 이 위험을 정확히 겨누어 설교를 정의한다. 설교란 "교회로부터 위임받은 설교자가 청중과 함께 <a class="wl" href="../../t/%EC%98%88%EB%B0%B0/">예배</a> 가운데 행하는 복음선포의 시도"다. 여기에는 세 가지가 박혀 있다 — 위임받았다는 것(권위는 빌린 것이다), 예배 가운데 있다는 것(설교는 강의실이 아니라 하나님을 만나는 자리에서 일어난다), 그리고 선포라는 것(양식은 외침이다). 설교가 무엇인지 흔들릴 때마다 이 세 못이 제자리를 잡아 준다.</p>
+<h2>2. 왜 하필 설교인가 — 어리석어 보이는 방식</h2>
+<p>한 가지 물음이 남는다. 하나님은 왜 하필 설교라는, 이토록 연약하고 비효율적인 방식을 택하셨는가. 한 사람이 서서 말하고 여럿이 앉아 듣는 이 고대의 형식은, 정보 전달의 관점에서 보면 시대착오에 가깝다. 그러나 바울은 바로 그 어리석음이 하나님의 선택이라고 못박는다. "하나님의 지혜에 있어서는 이 세상이 자기 지혜로 하나님을 알지 못하므로 하나님께서 전도의 미련한 것으로 믿는 자들을 구원하시기를 기뻐하셨도다"(고전 1:21). 전도(케뤼그마)의 '미련함'은 결함이 아니라 방법이다. 하나님은 인간의 설득력이 아니라 자신의 능력이 드러나도록, 일부러 약한 그릇을 고르셨다.</p>
+<p>이 선택의 신학적 뿌리는 성육신에 있다. MBTS 「설교자로 헌신하기」 노트는 이를 분명히 한다. 하늘의 메시지를 이 땅에 전하시기 위해 하나님 자신이 인간의 몸을 입고, 인간의 언어와 방법으로, 그 시대의 문화 속에서 하늘의 뜻을 해석해 들려주셨다. 기독교의 설교는 바로 그 "하늘의 메시지가 이 땅에 구현되는 성육신적인 사건"이다. 하나님이 육신을 통해 말씀하기로 하셨기에, 설교자라는 육신의 입술도 그 방식의 연장선에 놓인다. 설교의 연약함은 성육신의 연약함을 닮았다.</p>
+<p>그렇다면 설교에서 실제로 일어나는 일은 정보의 이동이 아니라 만남이다. 폴 틸리히의 경고대로 "전달되지 않는 메시지는 메시지가 아니"지만, 여기서 '전달'은 데이터의 복사가 아니다. 데이비드 알렌은 "하나님께서는 모든 사람이 복음을 듣는 가장 중요한 통로로 설교를 정하셨다"고 말하고, 포사이스는 더 나아가 "교회는 말씀과 함께 살고 말씀과 함께 죽는다"고 단언한다. 설교가 살아 있는 말씀-사건이 될 때 교회가 살고, 그것이 정보 전달로 쪼그라들 때 교회가 죽는다. 왜 하필 설교인가에 대한 대답은 결국 하나다 — 하나님이 그렇게 하기로 하셨고, 그 방식은 그분이 세상에 오신 방식과 같기 때문이다.</p>
+<h2>3. 삼위일체의 종 — 설교의 삼중 구조</h2>
+<p>설교에서 말씀하시는 분이 하나님이라면, 그 하나님은 삼위일체이시다. 그래서 설교는 한 분 하나님의 세 위격이 각각 일하시는 자리이며, 설교자는 그 셋 사이에 선 종이다. 이 구조를 놓치면 설교는 곧 어느 한쪽으로 기운다.</p>
+<p>성부는 말씀하시는 분이다. 오늘의 강단에서 울리는 말씀의 궁극적 발신자는 설교자가 아니라 지금도 말씀하시는 아버지다. 설교자는 그 말씀을 위탁받았을 뿐, 지어내지 않는다. 성자는 증언되는 분이다. <a class="wl" href="../../t/%EB%A7%90%EC%94%80/">말씀</a> 페이지가 요한복음 5장 39절로 짚었듯 모든 성경의 심장은 그리스도이며, 그리스도를 빼면 "심장을 빼는 것과 같다." 팀 켈러가 「설교의 목적」에서 "매번 그리스도를 설교하라 … 성경의 모든 장, 부분, 인물, 이미지에서"라고 다그친 것은 이 때문이다. 브라이언 채플의 경고는 더 날카롭다 — "본문에서 증거하는 그리스도를 드러내지 않은 채 성경적 행동만을 가르친다면 그것은 사람들에게 상처만 입히는 것이다." 성령은 적용하시는 분이다. 해돈 로빈슨의 저 유명한 강해설교 정의가 성령의 자리를 정확히 지목한다.</p>
+<blockquote>
+<p>"강해설교란 … 성경적 개념, 즉 하나님의 생각을 전달하는 것으로서, 성령께서 그 개념을 우선 설교자의 인격과 경험에 적용하시며 설교자를 통하여 다시 회중들에게 적용하시는 것이다." — 해돈 로빈슨</p>
+</blockquote>
+<p>성령은 같은 말씀을 두 번 적용하신다. 먼저 설교자에게, 그다음 설교자를 통해 회중에게. 이 이중 적용이 설교를 강의와 갈라놓는 결정적 지점이다.</p>
+<table>
+<thead>
+<tr>
+<th>위격</th>
+<th>설교에서의 역할</th>
+<th>설교자의 자리</th>
+<th>놓칠 때의 병</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>성부</td>
+<td>말씀하시는 분 — 지금도 발화하신다</td>
+<td>위탁받은 종</td>
+<td>자기 생각을 하나님 말씀으로 사칭</td>
+</tr>
+<tr>
+<td>성자</td>
+<td>증언되는 분 — 모든 본문의 심장</td>
+<td>그리스도를 가리키는 손가락</td>
+<td>그리스도 없는 도덕적 훈화</td>
+</tr>
+<tr>
+<td>성령</td>
+<td>적용하시는 분 — 설교자와 회중에게 이중으로</td>
+<td>성령께 의존하는 도구</td>
+<td>준비만 있고 능력은 없는 강해</td>
+</tr>
+</tbody>
+</table>
+<p>설교자가 이 셋 사이의 '종'이라는 자각을 잃는 순간, 그는 어느 한 위격의 자리를 가로챈다. 성부의 자리를 가로채면 독재가 되고, 성자를 지우면 윤리 강좌가 되며, 성령을 잊으면 잘 준비된 시체가 된다.</p>
+<h2>4. 설교자는 누구인가 — 네 개의 은유와 "말씀 아래"</h2>
+<p>설교신학의 인간론은 설교자의 정체성 물음으로 압축된다. MBTS 「설교자로 헌신하기」 노트는 먼저 설교자가 무엇이 아닌지부터 정리한다. 설교자는 하나님 말씀을 직접 대언하는 선지자가 아니고(그의 권위는 간접적이다), 특사로 임명된 사도도 아니며, 본문과 무관하게 자기 말을 파는 거짓선지자나, 남의 사상을 끌어모아 유통하는 말쟁이(행 17:18)나, 쇼맨십으로 감정을 조작하는 강단꾼도 아니다. 마틴 로이드 존스가 경고했듯 강단꾼이 미친 악영향은 "내용보다 형식이 중요해졌고, 설교는 결국 오락의 한 형태로 전락"한 것이다.</p>
+<p>그렇다면 설교자는 무엇인가. 전통적으로 일곱 은유(종·청지기·사자·스토리텔러·목자·아버지·증인)가 제시되어 왔고, 각 은유가 텍스트와 컨텍스트를 어떤 비율로 출발점 삼는가에 대한 상세한 방법론적 분석은 <a class="wl" href="../../t/%EA%B0%95%ED%95%B4%EC%84%A4%EA%B5%90/">강해설교</a> 페이지에 정리되어 있다. 이 페이지가 묻는 것은 다르다 — 각 은유는 어떤 신학적 진리를 지키기 위해 존재하며, 그 은유 하나만 과속하면 무엇이 무너지는가.</p>
+<table>
+<thead>
+<tr>
+<th>은유</th>
+<th>지키는 진리</th>
+<th>과속하면(타락)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>전령(herald)·사자</td>
+<td>메시지는 내 것이 아니다 — 나는 왕의 명령을 옮길 뿐</td>
+<td>청중의 필요를 무시한 일방적 통고</td>
+</tr>
+<tr>
+<td>증인</td>
+<td>나는 이 말씀을 실제로 겪었다 — 남의 얘기가 아니다</td>
+<td>증언이 설교자 개인 경험담으로 축소</td>
+</tr>
+<tr>
+<td>청지기</td>
+<td>맡겨진 것을 신실히 나눈다 — 더도 덜도 없이</td>
+<td>관리자의 권위를 소유자의 권위로 착각</td>
+</tr>
+<tr>
+<td>목자</td>
+<td>회중의 상처와 필요를 돌본다</td>
+<td>강단이 청중의 입맛에 끌려감</td>
+</tr>
+</tbody>
+</table>
+<p>네 은유는 경쟁하지 않고 서로를 견제한다. 전령의 담대함은 목자의 따뜻함이 없으면 폭력이 되고, 목자의 공감은 전령의 권위가 없으면 아첨이 된다. 증인의 생생함은 청지기의 신실함이 없으면 자기과시가 되고, 청지기의 정확함은 증인의 체험이 없으면 냉랭한 강해가 된다. 건강한 설교자는 이 넷을 한 몸에 지닌다.</p>
+<p>이 모든 은유를 관통하는 한 문장이 있다. 설교자는 본문 위가 아니라 말씀 아래 선다. MBTS 노트의 표현대로 "설교자로 서기 위해서 자신이 먼저 말씀 앞에 서야 한다." 스티븐 스미스가 설교자를 "자신이 죽어서 하나님의 말씀이 살아나게 하는 자"로 정의하고, 다니엘 도리아니가 "아기를 낳는 자가 아니라 하나님이 말씀을 통해 영적 생명을 만들어 내시는 것을 돕는" 산파에 비긴 것은 같은 진실의 다른 얼굴이다. 설교자가 본문 위에 올라서서 본문을 자기 목적의 도구로 부리는 순간, 존 파이퍼의 말대로 "설교자의 단 하나의 권위"인 "하나님의 말씀을 신실하게 전달하는" 그 권위 자체가 증발한다. 설교자의 타락은 언제나 말씀 위로 올라서는 데서 시작된다.</p>
+<h2>5. 준비를 다하고 전부 의존하기 — 설교와 성령</h2>
+<p>조명 없는 설교는 무력하다. 아무리 정교하게 준비된 강해도, 성령이 그 말씀을 청중의 마음에 적용하지 않으시면 정보로 끝난다. MBTS 「이미지 설교 방법론」 노트는 성령의 사역을 설교의 세 국면에 걸쳐 배치한다 — 준비 단계의 조명, 선포 단계의 능력, 설교 후 청중에게 임하는 역사. 연을 날리는 은유가 이를 잘 담는다. 청중이라는 '연'을 설교자가 '줄'로 날리지만, 연을 실제로 띄우는 것은 사람이 통제할 수 없는 '바람'이다. 그 바람이 성령이다.</p>
+<table>
+<thead>
+<tr>
+<th>국면</th>
+<th>성령의 사역</th>
+<th>설교자가 하는 일</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>준비</td>
+<td>조명 — 설교자에게 본문을 밝히 여심</td>
+<td>본문 앞에 오래 머문다</td>
+</tr>
+<tr>
+<td>선포</td>
+<td>능력 — 말이 사건이 되게 하심</td>
+<td>담대히 외친다</td>
+</tr>
+<tr>
+<td>청중</td>
+<td>역사 — 들은 말씀을 삶에 적용하심</td>
+<td>결과를 하나님께 맡긴다</td>
+</tr>
+</tbody>
+</table>
+<p>여기서 설교신학의 가장 미묘한 긴장이 태어난다. 성령을 의존한다는 것이 준비를 게을리해도 된다는 뜻은 결코 아니다. 오히려 반대다. 윌리엄 바클레이의 진단은 이 역설을 서늘하게 드러낸다.</p>
+<blockquote>
+<p>"사람이 게으르고 나태하고 완고해질수록, 성령님께서는 그에게 말씀하실 것이 없어지신다. 사랑에 가득 찬 심정과 규칙에 잘 훈련된 마음이 성령의 뜻에 따라 움직일 때, 비로소 진정한 설교는 나올 수 있는 것이다." — 윌리엄 바클레이</p>
+</blockquote>
+<p>성령은 게으름을 덮어 주는 요행이 아니라, 잘 훈련된 마음을 통해 일하시는 분이다. 그래서 설교자의 자세는 '준비를 다하고, 전부 의존하기'라는 두 동작을 동시에 요구한다. 준비를 다하지 않으면 성령을 시험하는 것이고, 준비에만 의존하면 성령을 밀어내는 것이다. '기름부음'이라는 낡은 표현의 실체가 바로 여기 있다 — 그것은 준비의 부재를 메우는 마법이 아니라, 성실히 준비된 말씀 위에 임하여 그것을 사건으로 바꾸는 하나님의 능력이다. 이 볼트의 <a class="wl" href="../../t/%EC%84%B1%EB%A0%B9/">성령</a> 페이지가 다루는 조명과 능력의 신학이 설교의 자리에서 가장 실천적으로 시험받는 곳이 여기다.</p>
+<h2>6. 강단의 위기와 회복 — 무용론과 소비주의</h2>
+<p>설교는 늘 위기를 안고 산다. 헬무트 틸리케는 "오늘날의 설교는 이제 임종의 단계에 왔을 정도로 쇠하고 붕괴되었다"고 진단했고, 워런 위어스비는 그 풍경을 잊히지 않는 이미지로 그렸다.</p>
+<blockquote>
+<p>"강단에서 춤추는 해골, 회중석에 너부러져 있는 송장들." — 워런 위어스비</p>
+</blockquote>
+<p>미디어의 홍수와 짧아진 집중력의 시대에 '한 사람이 오래 말하고 여럿이 듣는' 형식은 낡아 보인다. 여기에 설교 무용론이 자란다. 그러나 이 진단은 설교라는 형식의 죽음이 아니라 설교라는 사건의 실종을 가리킨다. 데이비드 쉬라퍼의 말처럼 오늘의 청중은 "전혀 식욕이 없어서 느끼는 배고픔"을 앓고 있다. 문제는 사람들이 더 이상 말씀을 필요로 하지 않게 된 것이 아니라, 강단이 말씀-사건이기를 멈추고 종교 정보의 배급처가 된 것이다. 마이클 퀵의 말대로 "설교가 병들면 지역 교회가 병들게 된다." 회복의 길은 형식을 버리는 데 있지 않고, 강단이 다시 하나님이 말씀하시는 자리가 되는 데 있다.</p>
+<p>⚖️ 그러나 위기의 책임을 강단에만 물을 수는 없다. 반대편에는 설교 소비주의가 있다. 청중이 설교를 '쇼핑'하는 시대 — 더 재미있고, 더 위로가 되고, 더 내 취향에 맞는 설교를 찾아 채널을 돌리듯 강단을 고르는 태도다. 팀 켈러가 「설교의 목적」에서 설교자의 '서브텍스트'(숨은 동기)로 자기과시와 내부 결속을 경계한 것은 강단 쪽의 병이지만, 그 병을 키우는 것은 종종 소비자로 앉은 회중이다. 설교자가 청중의 입맛을 좇아 복음의 불편한 진실을 삭제하기 시작하면 — 앞서 본 '거짓선지자'의 자리로 미끄러지면 — 그것은 강단과 회중이 함께 만드는 타락이다. 강단의 회복은 설교자의 갱신과 회중의 갱신을 동시에 요구한다. 이 두 번째 축이 다음 섹션의 주제, 곧 듣는 신학으로 이어진다.</p>
+<h2>7. 듣는 신학 — 설교는 회중의 일이기도 하다</h2>
+<p>설교신학의 마지막이자 가장 자주 잊히는 조항은 이것이다 — 설교는 설교자 혼자의 일이 아니다. 김세광의 정의가 이미 예고했듯, 설교는 "설교자 개인의 행위가 아니라 교회로부터 위임된 교회의 행위 즉 신앙공동체의 행위"다. 청중은 수동적 수신자가 아니라 "말씀 여정의 동반자"이며, 설교자의 말씀 바통을 이어받아 삶의 현장으로 달려가는 "다음 주자"다. 설교는 강단에서 끝나지 않고 회중의 바통터치에서 완성된다.</p>
+<p>포스딕은 현대 설교의 위기를 바로 이 지점에서 보았다 — "청중과의 만남 없이 설교자가 일방적으로 행하는 상투적 설교." 그는 청중을 '동역자'로 불렀고, 바바라 테일러는 설교 작성의 초기 단계부터 청중을 참여시키자고 제안한다. 이것이 야고보서가 말하는 들음의 신학과 맞닿는다. "사람마다 듣기는 속히 하고"(약 1:19), 그러나 "말씀을 행하는 자가 되고 듣기만 하여 자신을 속이는 자가 되지 말라"(약 1:22). 듣는다는 것은 수동적 청취가 아니라 거울 앞에 서는 능동적 사건이다. '아멘'은 예의상의 추임새가 아니라 "그 말씀이 참되며 나를 향한다"는 회중의 신학적 응답이다.</p>
+<p>그렇다면 잘 듣는 것도 훈련이다. MBTS 노트가 정리한 청중의 세 물음 — 하나님이 무엇을 말씀하시는가(자기발견), 무엇을 바꾸기 원하시는가(자기갱신), 이제 나는 어떻게 살 것인가(결단) — 은 설교자만의 점검표가 아니라 듣는 자의 훈련표이기도 하다. 들은 말씀을 붙들고, 곱씹고, 삶으로 옮기는 이 훈련의 가장 구체적인 형태 하나가 설교를 기록하는 일이다. 이 볼트 자체가 그 증거다. 수백 편의 설교 노트가 raw 폴더에 쌓이고 <a class="wl" href="../../t/%EB%A7%90%EC%94%80/">말씀</a>과 여러 주제로 합성되는 이 작업은, 설교가 강단에서 끝나지 않고 듣는 자의 손에서 계속 자란다는 듣는 신학의 실천적 증명이다. 설교신학은 결국 좋은 설교자를 기르는 것으로 끝나지 않는다. 그것은 좋은 청중을, 곧 말씀을 사건으로 받아 사는 공동체를 함께 기르는 데서 완성된다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li><strong>시제가 갈라놓는다.</strong> 설교와 강연을 나누는 것은 형식이 아니라 시제다. 강연은 과거의 진리를 설명하고, 설교는 하나님이 '지금' 말씀하신다고 주장한다. 이 현재성을 잃으면 아무리 성경적인 강해도 종교 강좌로 내려앉는다.</li>
+<li><strong>연약함은 결함이 아니라 방법이다.</strong> 하나님은 "전도의 미련한 것"(고전 1:21)을 일부러 택하셨다. 설교의 비효율은 성육신의 연약함을 닮았으며, 인간의 설득력이 아니라 하나님의 능력이 드러나게 하는 장치다.</li>
+<li><strong>설교자는 삼위일체의 종이다.</strong> 성부(말씀하시는 분)·성자(증언되는 분)·성령(적용하시는 분) 사이에 선 종이라는 자각을 잃으면, 설교자는 어느 한 위격의 자리를 가로채 독재·윤리강좌·잘 준비된 시체 중 하나로 미끄러진다.</li>
+<li><strong>타락은 언제나 말씀 위로 올라서는 데서 시작된다.</strong> 설교자의 네 은유(전령·증인·청지기·목자)가 지키는 공통의 진리는 하나 — 설교자는 본문 위가 아니라 말씀 아래 선다.</li>
+<li><strong>준비를 다하고 전부 의존하기.</strong> 성령 의존은 준비의 면제가 아니다. 바클레이의 경고대로 성령은 게으름을 덮는 요행이 아니라 잘 훈련된 마음을 통해 일하신다. '기름부음'의 실체는 성실히 준비된 말씀 위에 임하는 능력이다.</li>
+<li><strong>위기의 책임은 양쪽에 있다.</strong> 강단의 병(무용론·자기과시)과 회중의 병(설교 소비주의·설교 쇼핑)은 서로를 키운다. 회복은 설교자의 갱신과 청중의 갱신을 동시에 요구한다.</li>
+<li><strong>설교는 바통터치에서 완성된다.</strong> 청중은 수신자가 아니라 말씀 여정의 다음 주자다. 잘 듣는 것도 훈련이며, 설교를 기록하고 곱씹는 이 볼트의 작업 자체가 듣는 신학의 실천이다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>포스트모던 청중에게 '하나님이 지금 말씀하신다'는 설교의 권위 주장은 어떻게 설득력 있게 제시될 수 있는가 — 권위를 세우되 권위주의로 미끄러지지 않으려면?</li>
+<li>설교의 현재성(하나님이 지금 말씀하신다)과 본문의 역사성(과거에 기록되었다) 사이의 긴장을, <a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D%ED%95%99/">성경해석학</a>의 두 지평 문제와 어떻게 통합할 것인가?</li>
+<li>미디어 시대에 설교의 '형식'(한 사람의 긴 육성)은 어디까지가 신학적 본질이고 어디까지가 문화적 관습인가 — 형식을 바꾸면 사건도 사라지는가?</li>
+<li>회중을 '동역자'로 세우는 듣는 신학이 실제 예배 현장에서 청중 영합이나 설교 소비주의로 변질되지 않으려면 어떤 장치가 필요한가?</li>
+<li>성령의 '기름부음'을 준비의 성실성과 구별하면서도 신비주의로 흐르지 않게 언어화할 방법은 무엇인가?</li>
+</ul>
+<h2>교차 참조</h2>
+<p>설교 클러스터는 역할을 나누어 맡는다. 이 페이지(설교신학)는 '왜·무엇이·누가'라는 설교 행위의 신학을 담당하고, 방법론과 기법은 아래 페이지들에 위임한다.</p>
+<table>
+<thead>
+<tr>
+<th>페이지</th>
+<th>담당 영역</th>
+<th>이 페이지와의 관계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>설교신학</strong>(본 페이지)</td>
+<td>설교라는 행위의 신학</td>
+<td>왜 설교인가·무슨 일이 일어나는가·설교자는 누구인가</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EA%B0%95%ED%95%B4%EC%84%A4%EA%B5%90/">강해설교</a></td>
+<td>준비·본문 석의 방법론 (설교자 7이미지 상세표 포함)</td>
+<td>'어떻게 만드는가'의 방법론</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%84%A4%EA%B5%90%EC%A0%84%EB%8B%AC/">설교전달</a></td>
+<td>전달 기법·커뮤니케이션</td>
+<td>'어떻게 전하는가'의 기술</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%84%A4%EA%B5%90%EC%A0%81%EC%9A%A9/">설교적용</a></td>
+<td>적용 이론·삶의 연결</td>
+<td>'어떻게 삶에 닿는가'의 이론</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%84%A4%EA%B5%90%ED%95%99/">설교학</a></td>
+<td>실천신학 분과 지도</td>
+<td>설교학 전체 지형의 개요</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EB%A7%90%EC%94%80/">말씀</a></td>
+<td>말씀 그 자체의 능력과 작용</td>
+<td>'무엇이 일하는가' — 설교의 동력</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a class="wl" href="../../t/%EC%84%B1%EB%A0%B9/">성령</a> — 조명·능력의 신학. 설교의 성령론이 가장 실천적으로 시험받는 자리(5장).</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D%ED%95%99/">성경해석학</a> — 두 지평(본문과 청중)의 만남. 바른 해석은 바른 설교의 전제이며, 설교의 현재성 문제와 직결된다.</li>
+<li><a class="wl" href="../../t/%EC%98%88%EB%B0%B0/">예배</a> — 설교의 자리. 설교는 강의실이 아니라 하나님을 만나는 예배 가운데서 일어난다.</li>
+<li><a class="wl" href="../../t/%EB%B6%80%ED%9D%A5/">부흥</a> — 말씀-사건이 공동체 차원에서 터질 때. 강단의 회복과 부흥의 관계.</li>
+<li><a class="wl" href="../../t/%EB%A7%90%EC%94%80%EB%AC%B5%EC%83%81/">말씀묵상</a> — 듣는 신학의 개인적 실천. 들은 말씀을 곱씹어 삶으로 옮기는 훈련.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBTS 「강해설교준비실습」 1강 — 설교자로 헌신하기</td>
+<td>수업노트</td>
+<td>설교자 정의(스미스·도리아니·어거스틴·스펄전), 설교자가 아닌 것(선지자·사도·거짓선지자·말쟁이·강단꾼), 성육신적 설교, 7은유</td>
+</tr>
+<tr>
+<td>MBTS 「강해설교준비실습」 2강 — 설교 정의하기</td>
+<td>수업노트</td>
+<td>강해설교 정의들, 해돈 로빈슨의 정의(성령의 이중 적용), 강단의 위기(퀵·김덕수·다간)</td>
+</tr>
+<tr>
+<td>MBTS 「강해설교준비실습」 5주 — 설교의 목적</td>
+<td>수업노트</td>
+<td>팀 켈러 '매번 그리스도를', 브라이언 채플, 설교자의 서브텍스트, 청중의 세 물음</td>
+</tr>
+<tr>
+<td>MBTS 「강해설교전달실습」 1주 — 이미지 설교 방법론</td>
+<td>수업노트</td>
+<td>성령의 조명·능력·역사(삼중 사역), 연날리기 은유, 삶을 변화시키는 설교</td>
+</tr>
+<tr>
+<td>MBTS 「강해설교전달실습」 7주 — 들려지는 설교</td>
+<td>수업노트</td>
+<td>김세광의 설교 정의, 포스딕의 동역자론, 청중=다음 주자(바통터치), 틸리케·위어스비·쉬라퍼의 위기 진단, 설교의 언어</td>
+</tr>
+<tr>
+<td>MBTS 「강해설교준비실습」 2주·3주 토론</td>
+<td>수업노트</td>
+<td>윌리엄 바클레이(성령과 준비의 역설), 윌리엄 퀘일, 두 지평의 만남, "말씀 앞에 먼저 서야"</td>
+</tr>
+<tr>
+<td>권성수·문대원 설교 (경유: <a class="wl" href="../../t/%EB%A7%90%EC%94%80/">말씀</a>)</td>
+<td>설교</td>
+<td>하나님은 지금도 말씀하신다, 말씀=인격, 성경의 심장은 그리스도(요 5:39)</td>
+</tr>
+<tr>
+<td>제2스위스신앙고백 · 칼 바르트</td>
+<td>신학 전통</td>
+<td>"설교는 하나님의 말씀이다" — 말씀의 세 형태와 설교의 현재화(정의의 정초 텍스트)</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/설교학</span><span>#케리그마</span><span>#선포</span><span>#말씀사건</span><span>#성령의조명</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

@@ -1,0 +1,240 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>내 영혼은 이런 대화를 원한다 — 래리 크랩 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:25">상담·치유·가정</span><span class="author">래리크랩</span><span class="date">2026-05-03</span></div>
+  <h1 class="note-title">내 영혼은 이런 대화를 원한다 — 래리 크랩</h1>
+  
+</header>
+<article class="note">
+<h2>책 개요</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>저자</td>
+<td>래리 크랩 (Larry Crabb) — 기독교 심리학자·상담가</td>
+</tr>
+<tr>
+<td>핵심 주제</td>
+<td>영혼의 대화 = 하나님을 향한 갈망이 흘러나오는 말</td>
+</tr>
+<tr>
+<td>핵심 개념</td>
+<td>왼손의 능력, 첫째 소욕 vs 둘째 소욕, 5단계 경청</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>1. 왼손의 능력 (루터)</h2>
+<blockquote>
+<p>마르틴 루터는 두 가지 능력을 말했다
+- <strong>오른손의 능력</strong>: 사람들 위에 특별하게 나타나는 능력
+- <strong>왼손의 능력</strong>: 사람들 안에 있는 조용한 능력 —
+  인생에 어떤 일이 일어나더라도 <strong>하나님을 향한 갈망을 버리지 않는 능력</strong></p>
+<p>"영혼의 대화는 왼손의 능력이다"
+"우리의 마음이 하나님을 향한 열망으로 다스려질 때 입에서 나오는 모든 말은 영혼의 대화이다"</p>
+</blockquote>
+<hr />
+<h2>2. 첫째 소욕 vs 둘째 소욕</h2>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>첫째 소욕</strong></td>
+<td>하나님을 향한 갈망 — 그분의 임재를 즐거워하는 것</td>
+</tr>
+<tr>
+<td><strong>둘째 소욕</strong></td>
+<td>그 외 모든 욕구 — 이 세상의 축복, 문제 해결, 인정</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>두 소욕이 <strong>우선순위대로 바르게 자리를 잡을 때</strong>
+우리는 종교적이 아니라 <strong>영적인 사람</strong>이 된다</p>
+</blockquote>
+<ul>
+<li>종교: 하나님을 아는 것이 아니라, 앎으로써 생기는 <strong>열매</strong>에 몰두</li>
+<li>영성: 열매보다 <strong>임재</strong> 자체를 더 원하는 것</li>
+<li>심지어 하나님의 임재를 경험하지 못할 때조차도 임재에 더 큰 가치를 두는 것 = <strong>믿음</strong></li>
+</ul>
+<hr />
+<h2>3. 인간 본성의 타락한 구조 (래리 크랩의 건물 비유)</h2>
+<p>필요를 충족받지 못할 때 내면에서 일어나는 흐름:</p>
+<p><code>필요하다 (욕구)
+  → 미워한다 (충족 안 될 때 분노)
+    → 내가 싫다 (자책, 자기비하)
+      → 살아남으려 한다 (통제, 조종)
+        → 하나님을 의심한다 (믿음의 붕괴)</code></p>
+<blockquote>
+<p>"이것을 래리 크랩은 <strong>인간 본성의 타락한 구조</strong>라고 말한다"
+→ 근원에는 하나님이 통제하신다는 신뢰의 부재</p>
+</blockquote>
+<hr />
+<h2>4. 영혼의 대화 — 5단계 경청</h2>
+<p>사랑하는 사람이 자신의 인생 이야기를 할 때:</p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>무엇을 생각할 것인가</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. <strong>내면을 생각하라</strong></td>
+<td>외식과 신앙 사이의 전투 — 그는 무엇에 더 관심이 있는가? 축복인가, 하나님인가?</td>
+</tr>
+<tr>
+<td>2. <strong>비전을 생각하라</strong></td>
+<td>하나님을 더 원한다면 어떻게 달라질 것인가? 그의 인생이 낭비되지 않으려면?</td>
+</tr>
+<tr>
+<td>3. <strong>열정을 생각하라</strong></td>
+<td>지금 나는 얼마나 자기집착에 빠져 있는가? 고백하고, 진실로 사랑하기를 바라라</td>
+</tr>
+<tr>
+<td>4. <strong>영혼의 이야기를 생각하라</strong></td>
+<td>두려움과 수치의 숨은 이야기, 하나님으로부터 멀어졌던 과거를 경청하라. 질문하되 충고하려는 유혹에 빠지지 말라</td>
+</tr>
+<tr>
+<td>5. <strong>성령의 역사를 생각하라</strong></td>
+<td>깨어짐을 향한 성령의 역사에 주의를 기울이라. 회개·격려·신뢰·하나님께 대한 확신을 말로 표현하라</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"무슨 말을 해야 하나?"는 가장 자연스럽지만
+동시에 <strong>도움도 되지 않으며, 위험한 질문</strong>이다
+→ "나는 성령의 선한 인도하심을 따르고 있는가?"로 바뀌어야 한다</p>
+</blockquote>
+<hr />
+<h2>5. 성령의 역할</h2>
+<ul>
+<li>성령께서는 <strong>고통보다는 죄를 깨닫기를</strong> 촉구하신다</li>
+<li>깨어짐을 향한 성령의 역사에 주의를 기울이는 것이 영혼의 대화의 핵심</li>
+<li>문제 해결보다 <strong>하나님과의 만남</strong>이 먼저</li>
+</ul>
+<hr />
+<h2>강의 연결</h2>
+<h3>예배와 치유 (대경누가회 예배학교)</h3>
+<p><code>raw/lectures/keynote/CMF누가회/예배와 치유 (대경누가회예배학교).md</code></p>
+<p>래리 크랩의 개념을 의료 현장 고통 반응에 적용:
+- 타락한 구조: 필요→미움→자책→통제→하나님 의심
+- "악한 열망이 커 보이는 것은 선한 열망이 약하기 때문"
+- 예배를 통한 치유 = 둘째 소욕이 아닌 첫째 소욕으로 돌아오는 것</p>
+<hr />
+<h2>CMF·의료 선교 연결</h2>
+<p><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a>:
+- 환자와의 대화에서 "무슨 말을 해야 하나?" → "성령의 인도하심을 따르고 있는가?"
+- 첫째 소욕의 회복 없이는 의료 현장의 탈진을 근본적으로 해결하기 어렵다
+- 영혼의 대화 5단계 = 기독 의료인이 환자(또는 동료)와 나눌 수 있는 대화의 구조</p>
+<p><a class="wl" href="../../t/%EB%AA%A9%ED%9A%8C%EC%83%81%EB%8B%B4/">목회상담</a>:
+- 충고하려는 유혹 vs 경청하는 자세
+- 성령의 역사를 따라가는 비지시적 상담</p>
+<hr />
+<h2>연결된 페이지</h2>
+<ul>
+<li><a class="wl" href="../../t/%EB%82%B4%EB%A9%B4%EC%B9%98%EC%9C%A0/">내면치유</a> — 타락한 구조, 숨은 이야기, 두려움과 수치</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%84/">기도</a> — 첫째 소욕으로서의 기도, 욕구를 기도할 수 있다</li>
+<li><a class="wl" href="../../t/%EC%98%88%EB%B0%B0/">예배</a> — 임재를 즐거워함, 예배를 통한 치유</li>
+<li><a class="wl" href="../../t/%EA%B3%A0%EB%82%9C/">고난</a> — 고통에 대한 반응, 왼손의 능력</li>
+<li><a class="wl" href="../../t/%EB%AA%A9%ED%9A%8C%EC%83%81%EB%8B%B4/">목회상담</a> — 영혼의 대화, 경청과 충고의 차이</li>
+<li><a class="wl" href="../../t/%EC%A0%95%EC%B2%B4%EC%84%B1/">정체성</a> — 종교적 vs 영적, 소욕의 우선순위</li>
+</ul>
+</article>
+<div class="tagrow"><span>#영성</span><span>#상담</span><span>#대화</span><span>#공동체</span><span>#내면치유</span><span>#기도</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

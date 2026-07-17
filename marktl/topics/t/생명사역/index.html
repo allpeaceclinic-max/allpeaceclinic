@@ -1,0 +1,376 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>생명사역 (Life Ministry) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:226">조직신학·교리</span><span class="date">2026-07-11</span></div>
+  <h1 class="note-title">생명사역 (Life Ministry)</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>생명사역은 <span class="wl-dead" title="위키 내부 링크">동신교회</span>가 75년의 정체성을 한 문장으로 압축한 사역 체계다. 그 문장은 "복음으로 사람을 살리고 키우고 고치는" 것이며, 근거 본문은 예수께서 모든 도시와 마을을 다니시며 "가르치시고(διδάσκων)·전파하시며(κηρύσσων)·고치신"(<span class="wl-dead" title="위키 내부 링크">마 9:35</span>) 삼중 사역이다. 권성수 목사는 이 한 절에 목회 인생을 걸었다고 고백하고, 문대원 목사는 "새 담임목사의 새 프로그램이 아니라 예수님 자신의 사역"이라고 그 정체성의 불변성을 못 박는다. 곧 생명사역은 한 교회의 슬로건이기 이전에, 예수의 사역을 교회가 이어받는다는 선언이다.</p>
+<p>이 페이지가 다루는 것은 개별 신학 주제들의 합이 아니라 그것들을 하나로 꿰는 <strong>체계</strong>다. 생명사역을 구성하는 낱개의 개념 — 긍휼(스플랑크니조마이), 영생의 추수, 영과 진리의 예배, 코이노니아 교제, 부름·동행·파송의 제자훈련 — 은 각각 독립된 확정판 위키 페이지에서 깊이 전개된다. 여기서는 그 조각들이 어떻게 "살림·키움·고침"이라는 한 목회 청사진으로 배열되고, 어떻게 "모든 성도가 사역자"라는 만인 사역론 위에서 작동하며, 어떻게 두 목회자(권성수 → 문대원)의 손에서 계승·재점화되었는지를 따라간다. 개별 주제로 들어가는 문(門)이자, 그 문들을 연결하는 복도가 이 글의 자리다.</p>
+<p>세 번째로 기억할 것은 이 사역이 <strong>두 세대에 걸친 하나의 아치</strong>라는 점이다. 권성수 목사는 옥한흠의 제자훈련 위에 "미션 → 비전 → 전략 → 측정"의 목회 청사진으로 생명사역을 정립했고(<span class="wl-dead" title="위키 내부 링크">생명사역(제자훈련) 시리즈</span>), 문대원 목사는 코로나 이후의 리더십 전환기에 이를 선교적 교회론으로 재해석해 "다시" 불을 붙였다(<span class="wl-dead" title="위키 내부 링크">다시 생명사역 시리즈</span>). 정체성의 불변에서 출발해 영원한 지평으로 귀결되는 이 아치가 생명사역이라는 체계의 골격이다.</p>
+<h2>1. 한 절에 건 목회 철학 — 살리고·키우고·고치고</h2>
+<p>생명사역의 출발점은 개념이 아니라 한 본문이다. 권성수 목사는 마 9:35이 정말 예수님 사역의 요약인지 오래 고심하다, 마 4:23에서 동일한 세 동사가 반복되는 것을 발견하고 "마태가 확신을 가지고 요약한 예수님 사역의 본질"임을 확인했다고 말한다. "분명하지 않은 것은 오랫동안 고심한다. 확신을 가질 때 인생을 건다"는 그의 태도가 생명사역이라는 브랜드의 뿌리다. 이 귀납적 확신 위에서 예수님의 세 동사는 하나의 생명 순환으로 재배열된다.</p>
+<table>
+<thead>
+<tr>
+<th>마 9:35의 동사</th>
+<th>생명사역의 축</th>
+<th>대응 사역</th>
+<th>신학적 위치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>전파하시며(κηρύσσων)</td>
+<td><strong>살림</strong></td>
+<td>전도·선교</td>
+<td>죽은 영혼을 중생시킴</td>
+</tr>
+<tr>
+<td>가르치시며(διδάσκων)</td>
+<td><strong>키움</strong></td>
+<td>교육·훈련</td>
+<td>살린 생명을 성화로 자라게 함</td>
+</tr>
+<tr>
+<td>고치시니라(θεραπεύων)</td>
+<td><strong>고침</strong></td>
+<td>회복·치유</td>
+<td>고장 난 인생을 온전케 함</td>
+</tr>
+</tbody>
+</table>
+<p>"천국 복음으로 죽은 영혼을 살리고, 살린 뒤에는 재능을 낭비하지 않도록 키우며, 살다가 고장 나면 고친다" — 이 순환이 생명사역의 최소 정의다. 권성수 목사는 이를 "복음으로 사람을 살리고 키우고 고치는 것밖에 없다"는 복음의 유일성 변증으로까지 밀고 간다. 정치는 일자리를, 교육은 정보를, 상담은 행동을 건드릴 뿐 마음을 근본적으로 바꾸지 못하며, 오직 "예수 그리스도의 생명의 복음만이 마음을 근본적으로 변화시킬 수 있다"는 것이다. 문대원 목사 역시 같은 본문에서 케루소(κηρύσσω, 전파하다)와 케룩스(κῆρυξ, 전령)를 짚어, 생명사역이 사역자의 창안이 아니라 "보내신 분의 권위로 받은 말씀을 그대로 대언"하는 일임을 강조한다. 살림·키움·고침은 우리가 고안한 프로그램이 아니라 왕에게서 받은 전언이다.</p>
+<h2>2. 비전이 아니라 미션 — 정체성의 불변성</h2>
+<p>생명사역을 이해하는 가장 날카로운 구분은 "미션과 비전은 다르다"는 것이다. 권성수 목사는 윌 만치니의 『독특한 교회(Church Unique)』 틀을 빌려 미션(나는 무엇 하는 사람인가, 정체성)과 비전(언제 어디까지 갈 것인가, 산정상과 이정표)을 가른 뒤, 생명사역을 전략이 바뀌면 폐기되는 비전이 아니라 교회의 존재 이유 자체인 미션으로 규정한다.</p>
+<blockquote>
+<p>"복음으로 사람을 살리고 키우고 고치는, 이것이 생명사역이고 이것이 우리의 미션이다."
+— 권성수, 「생명사역의 미션」</p>
+</blockquote>
+<p>이 구분의 무게는 리더십 전환기에 드러난다. 문대원 목사는 부임 첫 시리즈에서 "생명사역은 예수님의 사역이므로 담임목사가 바뀌어도 변하지 않는다"고 선언하며, 5년 전 청빙 인터뷰 때부터 "생명사역을 하기 위해" 동신교회에 지원했다고 고백한다. 미션이 분명하기에 리더 교체가 불안이 아니라 연속이 되는 것이다. 그는 여기에 교회론적 날을 더한다 — 교회를 성도수·예산·건물이라는 영리기관의 척도로 평가하는 것을 거부하고, 교회는 "교회에 속하지 않는 사람을 위해 존재"하며 "교회가 하나님 나라를 위해 존재하지, 하나님 나라가 교회를 위해 존재하지 않는다"고 못 박는다. 미션으로서의 생명사역은 그래서 흥정 대상이 아니다. 시리즈의 마지막 편은 이 불변성을 종말론적으로 봉인한다 — 생명사역은 승패와 종료점이 있는 "유한게임이 아니라 무한게임"이며, "수치화된 목표는 죽음 앞에서 무의미하지만 가치 중심의 목표는 영원히 계속된다"(<span class="wl-dead" title="위키 내부 링크">멈추지 않는 열정</span>).</p>
+<h2>3. 사역의 심장 — 긍휼과 "내가 죽는 사역"</h2>
+<p>체계 이전에 심장이 있다. 마 9:36의 예수님은 목자 없는 양 같은 무리를 보시고 "불쌍히 여기셨다" — 스플랑크니조마이(σπλαγχνίζομαι), 곧 내장(스플랑크나, σπλάγχνα)이 뒤틀릴 만큼의 긍휼이다. 권성수 목사는 이 원어에서 사역의 전제를 길어 올린다. "마음이 없으면 생명사역 못 한다. … 미워하면 생명사역을 내려놓아야 한다." 방법론이나 프로그램이 아니라 예수의 창자가 움직인 그 긍휼의 전이(轉移)가 모든 사역의 발원지라는 것이다. 그리고 그 긍휼의 대가는 자기 부인이다 — "생명사역은 내가 죽는 사역이다"라는 명제가 한 알의 밀(요 12:24)과 십자가의 신학을 압축한다.</p>
+<p>이 심장이 없으면 살림·키움·고침의 체계 전체가 기능적 노동으로 전락한다. 그래서 생명사역은 사역자에게 먼저 "문제를 보지 말고 추수를 보라"는 시선의 전환을 요구한다 — 같은 무리를 예수님은 "목자 없는 양"(문제)이면서 동시에 "추수할 것이 많다"(기회)로 보셨고, 시스템의 붕괴(system failure)를 큰 추수(great harvest)의 자리로 읽으셨다. 스플랑크니조마이의 긍휼신학 전체 — 그 지속성 문제, 번아웃과의 관계, 느낄 때와 못 느낄 때의 순종 — 는 <a class="wl" href="../../t/%EA%B8%8D%ED%9C%BC/">긍휼</a> 확정판에서 전개되며, 이 허브는 그것을 생명사역의 "태도적 전제"로 자리매김하는 데 그친다.</p>
+<h2>4. 대전제 — 사람은 변할 수 있다</h2>
+<p>살림·키움·고침이 성립하려면 하나의 인간론적 대전제가 필요하다. 사람이 복음으로 변할 수 있다는 믿음이다. 문대원 목사는 이를 생명사역의 토대로 명시한다 — "사람으로는 할 수 없으나 하나님으로서는 다 하실 수 있다"(마 19:26). 이 믿음이 없으면 사역 자체가 성립하지 않는다. 그는 캐롤 드웩의 성장형 사고방식(변화가 가능하다고 믿어 역경을 배움의 기회로 봄)을 차용하되, 그것을 심리 기술이 아니라 부활·중생의 신학적 확신으로 끌어올린다. 죄인의 대명사 삭개오에게 "아브라함의 자손"을 선포하신 것이 곧 변화 가능성의 성경적 보증이다.</p>
+<p>권성수 목사는 같은 대전제를 두 각도에서 정초한다. 첫째는 태도다 — 지그 지글러의 두운을 빌린 "능력(Aptitude)이 아니라 태도(Attitude)가 인생의 고도(Altitude)를 결정한다"는 명제 위에서, 참된 태도는 자력의 긍정(자기 채찍질)이 아니라 믿음의 긍정(하나님이 다스리심)에서 나온다고 본다(<span class="wl-dead" title="위키 내부 링크">태도가 고도를 결정한다</span>). 둘째는 생각의 틀이다 — "인생을 결정하는 것은 행동이 아니라 마음의 생각의 틀"이며, 이단이 9개월 만에 사람의 틀을 바꾸는데 정통 교회가 실패하는 이유를 체계적 말씀 교육의 부재로 진단한다. 문대원 목사는 여기에 "성령의 불" 체험을 더해, 변화가 인지적 교육(생각의 틀)과 성령의 역사(가슴 지식)가 함께 지·정·의 전인격에 이를 때 일어난다고 본다. "태도가 고도를 결정한다"는 두 목회자를 잇는 공통 표어이며, 문대원 목사가 이를 시리즈 첫 편의 결론으로 다시 인용하는 것은 우연이 아니다.</p>
+<h2>5. 모든 성도가 사역자다 — 만인 사역론</h2>
+<p>생명사역의 주체는 누구인가. 답은 목회자가 아니라 전 성도다. 권성수 목사는 엡 4:11-16을 "누가 사역의 주체인가"라는 한 질문으로 꿰뚫으며, 목사의 임무를 봉사의 독점이 아니라 성도를 "온전케 하는 것" — 카타르티스모스(καταρτισμός, 어긋난 뼈를 맞추고 도구를 제 기능에 맞게 준비시킴, equipping) — 으로 규정한다. 본문의 문법 자체가 "은사자 → 성도를 온전케 함 → 성도의 봉사 → 몸의 세워짐"으로 흐르기에, 사역의 주체가 전 성도임은 신학이 아니라 구문의 요구다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>옛 모델</th>
+<th>새 모델</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>사역 주체</td>
+<td>목회자 혼자</td>
+<td>목회자 + 훈련된 평신도</td>
+</tr>
+<tr>
+<td>평신도의 자리</td>
+<td>구경꾼</td>
+<td>동역자</td>
+</tr>
+<tr>
+<td>신학적 근거</td>
+<td>(직분 왜곡)</td>
+<td>만인 제사장(벧전 2:9)</td>
+</tr>
+<tr>
+<td>병목</td>
+<td>목회자에게 집중</td>
+<td>전 성도로 분산</td>
+</tr>
+</tbody>
+</table>
+<p>이 만인 사역론의 균형점이 "차별은 없으나 구분은 있다"는 명제다. 왕 같은 제사장으로서 가치·권한·인권에는 차별이 없으나 직분·직임에는 구분이 있으며, 그 구분을 지우는 것(무질서한 평등주의)도 성직주의도 모두 오류라는 것이다. 나아가 직분의 차이는 권력의 크기가 아니라 책임의 무게로 재정의된다("목사의 책임이 더 크다"). 문대원 목사는 이 만인 사역을 피택자 교육에서 "생명은 만들어내는 것이 아니라 흘려보내는 것"이라는 청지기론으로 이어받아, 직분이 지위가 아니라 "포도나무에 붙은 가지로 생명력을 흘려보내는" 자리임을 못 박는다. 은사를 "맡겨진 것"으로 보는 오이코노모스(οἰκονόμος, 청지기) 신학은 <a class="wl" href="../../t/%EC%B2%AD%EC%A7%80%EA%B8%B0/">청지기</a>에서 더 전개된다.</p>
+<h2>6. 다섯 분야의 청사진 — 살림·키움·고침의 사역 지도</h2>
+<p>살림·키움·고침이라는 세 축은 현장에서 다섯 분야로 펼쳐진다. 이 다섯 분야가 생명사역이라는 체계의 실제 지도이며, 각 칸은 이 볼트의 개별 확정판 페이지로 이어지는 문이다. 이 허브는 지도 전체를 조망하고, 깊은 신학은 각 페이지에 위임한다.</p>
+<table>
+<thead>
+<tr>
+<th>분야</th>
+<th>대표 본문</th>
+<th>핵심 원어·개념</th>
+<th>한 줄 요지</th>
+<th>위임 확정판</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>선교·전도 (살림)</td>
+<td>요 4:32-38</td>
+<td>추수(θερισμός)</td>
+<td>안 믿는 사람을 믿게 하는 "영생의 추수"가 예수님의 양식이다</td>
+<td><a class="wl" href="../../t/%EC%A0%84%EB%8F%84/">전도</a></td>
+</tr>
+<tr>
+<td>예배</td>
+<td>요 4:19-26</td>
+<td>영과 진리</td>
+<td>참예배는 장소·형식이 아니라 대상(하나님)과 방식(영+진리)에 있다</td>
+<td><a class="wl" href="../../t/%EC%98%88%EB%B0%B0/">예배</a></td>
+</tr>
+<tr>
+<td>교제</td>
+<td>행 2:42-47</td>
+<td>코이노니아(κοινωνία)·프로스칼테오(προσκαρτερέω)</td>
+<td>그리스도를 중심축으로 삶을 나눔; 고립은 넘버원 킬러, 교제는 넘버원 힐러</td>
+<td><a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%B2%B4/">공동체</a></td>
+</tr>
+<tr>
+<td>교육·훈련 (키움)</td>
+<td>마 28:18-20</td>
+<td>마테테우사테(μαθητεύσατε)</td>
+<td>대위임령의 주동사는 "제자 삼으라"; 앎이 아니라 "지키도록"(순종) 가르침</td>
+<td><a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%ED%9B%88%EB%A0%A8/">제자훈련</a> · <a class="wl" href="../../t/%EB%8C%80%EC%9C%84%EC%9E%84%EB%A0%B9/">대위임령</a></td>
+</tr>
+<tr>
+<td>봉사·사역</td>
+<td>벧전 4:10-11</td>
+<td>오이코노모스(οἰκονόμος)</td>
+<td>은사는 소유가 아니라 맡겨진 것; 공동의 유익을 위해 섬기고 영광은 하나님께</td>
+<td><a class="wl" href="../../t/%EC%B2%AD%EC%A7%80%EA%B8%B0/">청지기</a></td>
+</tr>
+</tbody>
+</table>
+<p>몇 가지 위임 경계를 분명히 해 둔다. <strong>전도</strong>의 "영생의 추수" — 사마리아 여인 같은 뜻밖의 대상, 뿌림과 거둠의 연대, 사역이 곧 양식이라는 통찰 — 는 <a class="wl" href="../../t/%EC%A0%84%EB%8F%84/">전도</a>가 확정판으로 다룬다. <strong>교제</strong>의 코이노니아, 프로스칼테오(들러붙는 헌신)의 강도, 자전거 바퀴살로 형상화된 그리스도 중심성, 그리고 소수 공동체의 상호 확인("소수라야 확인할 수 있다")은 <a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%B2%B4/">공동체</a>에 위임한다. <strong>예배</strong>의 영과 진리 신학은 <a class="wl" href="../../t/%EC%98%88%EB%B0%B0/">예배</a> 확정판의 몫이다. 이 허브가 하는 일은 이 다섯 분야가 흩어진 프로그램이 아니라 "밖에서 안으로 들어오는" 하나의 동선 — 전도로 데려와, 예배로 하나님과 잇고, 교제로 묶고, 교육으로 키우고, 봉사로 파송하는 — 임을 보이는 것이다.</p>
+<h2>7. 방법론 — 제자훈련, 부름·동행·파송</h2>
+<p>다섯 분야를 관통하는 방법이 제자훈련이다. 생명사역 시리즈의 부제가 "(제자훈련)"인 것은 우연이 아니다. 권성수 목사는 막 3:14-15의 목적절 구조에서 삼중 구조를 직접 길어 올린다 — "열둘을 세우셨으니(부름) + 자기와 함께 있게 하시고(동행) + 보내사(파송)."</p>
+<ul>
+<li><strong>부름(Calling)</strong>: 성격도 정치색도 다양한 "보통 사람, 흔한 사람"을 세상에서 불러내 구별하심.</li>
+<li><strong>동행(Togetherness)</strong>: 메노(μένω)·"함께 있게(μετ' αὐτοῦ)" — 커리큘럼 이수가 아니라 예수와의 동행에서 생명이 전이된다. "거만함은 예수의 생명이 올라오지 않고 머리만 커진 것"이라는 진단이 지식주의의 함정을 겨눈다.</li>
+<li><strong>파송(Sending)</strong>: 아포스텔로(ἀποστέλλω)에서 사도(보냄받은 자)가 파생하듯, 제자됨의 종착점은 머무름이 아니라 보냄이다. "소금은 소금병에서 나와야 짜게 할 수 있다."</li>
+</ul>
+<p>문대원 목사는 이 동행을 요 15장의 거함(메노)으로 심화한다 — "나를 떠나서는 너희가 아무것도 할 수 없다." 변화는 내 안의 잠재 자원이 아니라 포도나무와의 연결에서만 흐르며, "인격적 관계란 관계 자체가 목적인 것"이라는 정의가 무언가를 얻으려는 도구적 신앙과 거함을 날카롭게 가른다. 다만 이 허브는 제자훈련의 <strong>구조</strong>를 소개하는 데 그친다. 부름·동행·파송의 구체적 훈련 방법론 — 소그룹 운영, 커리큘럼 설계, "교육은 정보 전달·훈련은 확인"이라는 이중 구조의 제도화 — 는 <a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%ED%9B%88%EB%A0%A8/">제자훈련</a> 확정판이 향후 본격적으로 다룰 몫으로 남겨둔다.</p>
+<h2>8. 말씀과 성령, 그리고 무한게임 — 재점화와 선교적 지평</h2>
+<p>문대원 목사의 "다시 생명사역"은 계승이면서 재해석이다. 그는 생명사역을 "말씀 중심의 사역 + 성령의 역동적 사역의 결합 = 성령의 능력을 힘입은 사람들이 감당하는 사역"으로 재정의한다. 파라클레토스(παράκλητος, 곁으로 부름받은 변호자)이신 또 다른 보혜사 성령의 능력 없이는 살림·키움·고침이 불가능하다는 것이다. 그는 요 14:12의 "더 큰 일"을 더 화려한 기적이 아니라 "구속사 완성 이후의 더 온전한 복음 이해와 선포"로 읽으며, 뜨거운 열정을 곧 성령 충만으로 착각하는 오류(베드로의 자리)를 경계한다. 권성수의 "생각의 틀"과 문대원의 "성령의 불"이 만나는 지점이 여기다.</p>
+<p>재해석의 두 번째 축은 선교적 교회론이다. 선교사 출신 담임답게 그는 생명사역을 "모이는 교회 ↔ 흩어지는 교회"의 호흡으로 재구성한다. 안디옥 교회가 부흥 가운데 가장 중요한 리더를 자발적으로 "따로 세워(ἀφορίζω, 아포리조)" 파송했듯, 교회를 향한 하나님의 뜻은 모임에 머무는 것이 아니라 세상 속으로 흩어지는 것이다 — "안정이 목표가 되면 역동성이 사라지고 제도화된다"(<span class="wl-dead" title="위키 내부 링크">복음을 위해 흩어지는 교회</span>). 그리고 이 모든 열정의 지속 가능성은 결국 우리에게서가 아니라 언약의 하나님께 접속될 때 확보된다. 열정이 식는 이유는 그것이 우리 자신에게서 나오기 때문이며, 멈추지 않는 열정은 "지금도 쉬지 않고 일하시는 하나님의 열심"(사 9:7; 요 5:17)에서 길어 올려야 한다. 생명사역은 그렇게 정체성의 불변(1편)에서 출발해 무한게임의 영원한 지평(10편)으로 닫히는 하나의 아치다. 흩어지는 교회론의 전개는 <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a>가 이어받는다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>생명사역은 개념이 아니라 <strong>한 본문</strong>(마 9:35)에서 귀납된 목회 철학이다. "살리고·키우고·고치고"는 예수님 사역의 세 동사를 생명 순환으로 재배열한 것이며, 확신이 본문에 있기에 "인생을 건다"는 헌신이 가능해진다.</li>
+<li>생명사역은 <strong>비전이 아니라 미션</strong>이다. 전략이 바뀌면 폐기되는 목표가 아니라 교회의 존재 이유 자체이므로, 담임목사가 바뀌어도 변하지 않고 흥정의 대상이 되지 않는다.</li>
+<li>체계 이전에 <strong>심장</strong>(스플랑크니조마이의 긍휼)이 있고, 그 대가는 "내가 죽는 사역"이라는 자기 부인이다. 긍휼이 없으면 살림·키움·고침은 기능적 노동으로 전락한다.</li>
+<li>생명사역의 인간론적 대전제는 <strong>"사람은 복음으로 변할 수 있다"</strong>이며, 이는 태도(믿음의 긍정)·생각의 틀·성령의 불이 함께 전인격을 바꿀 때 실현된다.</li>
+<li>사역의 주체는 목회자가 아니라 <strong>전 성도</strong>다. 목사의 임무는 봉사의 독점이 아니라 성도를 온전케 하는 것(equipping)이며, "차별은 없으나 구분은 있다"가 만인 사역론의 균형점이다.</li>
+<li>살림·키움·고침은 현장에서 <strong>다섯 분야</strong>(전도·예배·교제·교육·봉사)로 펼쳐지고, 그 관통 방법은 <strong>부름·동행·파송</strong>의 제자훈련이다. 동행(거함) 없는 지식은 "머리만 커진 것"이다.</li>
+<li>권성수(생각의 틀·제자훈련)에서 문대원(성령의 불·선교적 흩어짐)으로의 계승은, 정체성의 불변에서 무한게임의 영원으로 이어지는 하나의 <strong>신학적 아치</strong>를 이룬다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>살림·키움·고침의 세 축은 실제 교회에서 균형을 이루는가, 아니면 특정 축(대개 살림·키움)에 자원이 쏠리고 고침(회복·치유)이 상대적으로 취약해지는가?</li>
+<li>"미워하면 생명사역을 내려놓아야 한다"는 긍휼의 전제와, 긍휼이 식은 번아웃 상태의 사역자가 무엇을 의지해야 하는가의 문제는 어떻게 화해하는가(<a class="wl" href="../../t/%EA%B8%8D%ED%9C%BC/">긍휼</a>과 공유되는 질문).</li>
+<li>"내가 죽는 사역"(자기 부인)과 사역자의 지속 가능성(건강한 경계·안식)은 이 체계 안에서 어떻게 양립하는가 — 죽음의 신학과 안식의 신학의 관계.</li>
+<li>"차별은 없으나 구분은 있다"에서 그 구분이 실제 의사결정 구조(당회의 권한, 평신도의 결정권)에는 어디까지 적용되는가? 책임의 비대칭과 동역의 정신은 어떻게 조화되는가.</li>
+<li>생명사역을 "무한게임"으로 규정할 때 측정 가능한 열매(교회 성장·선교사 파송)의 자리는 어디인가 — 수치 목표를 상대화하면 사역의 책무성과 분별 기준은 무엇이 되는가.</li>
+<li>권성수의 "생각의 틀 교체"(교육)와 문대원의 "성령의 불"(체험)은 변화의 동력을 각각 어디에 두는가 — 인간의 교육적 노력과 성령의 주권적 중생은 어떤 비율로 작동하는가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%ED%9B%88%EB%A0%A8/">제자훈련</a> — 부름·동행·파송의 구조와 "지키도록 가르치라"의 순종 지향. 생명사역의 관통 방법론이자, 훈련 방법론의 상세는 이 페이지가 다룰 몫.</li>
+<li><a class="wl" href="../../t/%EA%B8%8D%ED%9C%BC/">긍휼</a> — 스플랑크니조마이 신학의 확정판. 생명사역의 "심장"에 해당하는 태도적 전제.</li>
+<li><a class="wl" href="../../t/%EC%A0%84%EB%8F%84/">전도</a> — "영생의 추수"(요 4)의 확정판. 다섯 분야 중 "살림"의 신학적 전개.</li>
+<li><a class="wl" href="../../t/%EC%98%88%EB%B0%B0/">예배</a> — "영과 진리"(요 4:19-26)의 확정판. 다섯 분야 중 예배의 몫.</li>
+<li><a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%B2%B4/">공동체</a> — 코이노니아·프로스칼테오·소수 상호확인의 확정판. 다섯 분야 중 교제의 몫.</li>
+<li><a class="wl" href="../../t/%EC%B2%AD%EC%A7%80%EA%B8%B0/">청지기</a> — 오이코노모스 은사론. 다섯 분야 중 봉사·사역, 그리고 피택자 청지기론.</li>
+<li><a class="wl" href="../../t/%EB%8C%80%EC%9C%84%EC%9E%84%EB%A0%B9/">대위임령</a> — 마 28:18-20의 "제자 삼으라" 주동사와 교육 분야의 근거.</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a> — "모이는 교회 ↔ 흩어지는 교회"; 문대원의 재점화가 흘러가는 자리.</li>
+<li><span class="wl-dead" title="위키 내부 링크">동신교회</span> — 생명사역을 75년 정체성으로 삼는 지역 교회.</li>
+<li><span class="wl-dead" title="위키 내부 링크">권성수</span> · <span class="wl-dead" title="위키 내부 링크">문대원</span> — 생명사역을 정립·재점화한 두 목회자.</li>
+<li><span class="wl-dead" title="위키 내부 링크">옥한흠</span> — 두 목회자가 계승한 평신도 제자훈련 모델의 원천.</li>
+<li><span class="wl-dead" title="위키 내부 링크">권성수_생명사역시리즈</span> · <span class="wl-dead" title="위키 내부 링크">문대원_다시생명사역시리즈</span> — 이 허브의 두 축을 이루는 설교 시리즈.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2014_생명사역의보람</span></td>
+<td>설교(권성수)</td>
+<td>마 9:35에 인생을 건 목회 철학, 살림·키움·고침, 위기=추수(system failure + great harvest)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2015_왜생명사역인가</span></td>
+<td>설교(권성수)</td>
+<td>복음의 유일성 변증, 스플랑크나의 긍휼, 생각의 틀(누스)·"설사가 아니라 조각"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">생명사역_01_태도가고도를결정한다</span></td>
+<td>설교(권성수)</td>
+<td>Aptitude/Attitude/Altitude, 자력의 긍정 vs 믿음의 긍정, 예수 중독</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">생명사역_02_생명사역의미션</span></td>
+<td>설교(권성수)</td>
+<td>미션 vs 비전, 스플랑크니조마이, "내가 죽는 사역", 문제→추수의 시각 전환</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">생명사역_03_제자훈련</span></td>
+<td>설교(권성수)</td>
+<td>부름·동행·파송, 동행(메노) 중심, 소금병 예화, 옥한흠 계승</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">생명사역_08_모든성도의사역</span></td>
+<td>설교(권성수)</td>
+<td>equipping(카타르티스모스), 만인 제사장, "차별은 없으나 구분은 있다", 옛/새 모델</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">생명사역_09_영생의추수</span></td>
+<td>설교(권성수)</td>
+<td>영생 추수의 대상·과정·양식, 뿌림과 거둠의 연대 (전도 분야)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">생명사역_11_교제</span></td>
+<td>설교(권성수)</td>
+<td>코이노니아·프로스칼테오, 자전거 바퀴살, 고립=넘버원 킬러 (교제 분야)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">생명사역_12_지키도록가르치라</span></td>
+<td>설교(권성수)</td>
+<td>대위임령 주동사 "제자 삼으라", 교육 vs 훈련, 천국 사고틀 (교육 분야)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">생명사역_13_은사의청지기</span></td>
+<td>설교(권성수)</td>
+<td>오이코노모스, 은사≠성숙, 말씀은사/행위은사 (봉사 분야)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2022_다시생명사역</span></td>
+<td>설교(문대원)</td>
+<td>케루소/케룩스, 포괄적 하나님 나라, 순례하는 교회, 영광 내려놓기</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2022_생명사역피택자교육</span></td>
+<td>설교(문대원)</td>
+<td>거함(메노)의 청지기론, 옥한흠+카이퍼(영역주권), 생각의 틀+성령의 불</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2025_다시생명사역1_마음이뜨거운사람들</span></td>
+<td>설교(문대원)</td>
+<td>정체성의 불변성, 성장형 사고방식, 열매의 타자 지향, 순종으로서의 사랑</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2025_다시생명사역2_성령의힘입은사람들</span></td>
+<td>설교(문대원)</td>
+<td>말씀+성령의 결합, 파라클레토스, "더 큰 일"의 재해석, 성령의 인격성</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2025_다시생명사역5_관계중심의리더십</span></td>
+<td>설교(문대원)</td>
+<td>코이노니아=목적을 가진 연합, 케노시스의 겸손, Accountability</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2025_다시생명사역9_복음을위해흩어지는교회</span></td>
+<td>설교(문대원)</td>
+<td>아포리조, 흩어짐→모임→흩어짐, 제도와 운동, 자발적 파송</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2025_다시생명사역10_멈추지않는열정</span></td>
+<td>설교(문대원)</td>
+<td>언약의 하나님의 열심, 새 정체성, 유한게임 vs 무한게임</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수_생명사역시리즈</span> · <span class="wl-dead" title="위키 내부 링크">문대원_다시생명사역시리즈</span></td>
+<td>시리즈 허브</td>
+<td>두 시리즈의 전체 구성·관통 메시지·신학적 위치</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/사역</span><span>#discipline/교회론</span><span>#생명사역</span><span>#동신교회</span><span>#제자훈련</span><span>#평신도사역</span><span>#선교적교회</span><span>#목회철학</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

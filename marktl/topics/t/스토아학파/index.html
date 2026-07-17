@@ -1,0 +1,244 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>스토아학파 (Stoicism) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:174">성경·해석</span><span class="date">2026-07-18</span></div>
+  <h1 class="note-title">스토아학파 (Stoicism)</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>스토아학파는 주전 3세기 키티온의 제논이 아테네의 채색 주랑(스토아 포이킬레)에서 창시한 그리스-로마 철학 전통으로, <strong>우주를 관통하는 이성(로고스)에 순응하는 삶, 자연법에 따른 덕(virtue)의 추구, 그리고 정념으로부터의 자유(아파테이아)</strong>를 핵심으로 삼는다. 신약개론I 2주 강의는 스토아학파를 신약 시대 1세기 지중해 세계에 광범위하게 통용된 철학으로 소개하며, 갈릴리에도 스토아 철학자가 거주했을 만큼 그 영향이 팔레스타인에까지 미쳤다고 언급한다.</p>
+<p>이 페이지가 스토아학파를 다루는 각도는 철학사 개관이 아니라 성경과의 대화다. 사도행전 17장에서 바울이 아레오바고에서 만난 대화 상대가 바로 스토아 철학자였고, 이후 기독교는 스토아의 자연법·섭리·자족 개념과 오랫동안 접점과 긴장을 함께 유지해 왔다. 신앙과 이성의 관계 지형 전체는 <a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EA%B3%BC%EC%9D%B4%EC%84%B1/">신앙과이성</a>이, 하나님의 통치가 운명과 어떻게 갈라지는가는 <a class="wl" href="../../t/%EC%84%AD%EB%A6%AC/">섭리</a>가 전담하므로, 이 글은 스토아 철학의 구조를 스케치한 뒤 그것이 복음과 어디서 만나고 어디서 갈라지는가에 집중한다.</p>
+<h2>1. 스토아 철학의 구조 — 로고스·자연법·아파테이아·운명</h2>
+<p>스토아 사상의 네 기둥은 서로 맞물려 하나의 세계상을 이룬다.</p>
+<ul>
+<li><strong>로고스(logos)</strong> — 우주에는 모든 것을 관통하는 합리적 원리, 곧 신적 이성이 스며 있다. 이 로고스는 만물에 내재한 불(pneuma)로 상상되며, 세계 자체가 이 이성의 몸이다. 인간의 이성은 그 우주적 로고스의 불씨다.</li>
+<li><strong>자연법(natural law)</strong> — 로고스가 세계를 질서 짓기에, 자연에는 인간이 따라야 할 이치가 새겨져 있다. "자연에 따라 살라"(secundum naturam vivere)가 스토아 윤리의 정언이다. 이 자연법 개념은 스토아 철학의 가장 큰 기여로, 이후 로마 법학과 기독교 자연법 전통 모두에 흘러들었다(<a class="wl" href="../../t/%EC%9E%90%EC%97%B0%EB%B2%95/">자연법</a>).</li>
+<li><strong>아파테이아(apatheia)</strong> — 덕은 외부 환경이 아니라 이성적 판단에 있으므로, 재물·명예·건강·고통 같은 '내 힘 밖의 것'에 마음이 휘둘리지 않는 상태가 성숙이다. 정념(pathos)의 제거가 곧 자유다.</li>
+<li><strong>운명 순응(amor fati)</strong> — 로고스가 만물을 필연으로 엮으므로, 일어나는 모든 일은 이미 정해진 섭리(pronoia)의 결과다. 지혜자는 이 필연에 저항하지 않고 자발적으로 동의한다. 개에게 묶인 수레의 비유가 유명하다 — 수레는 어차피 굴러가니, 개는 따라 걷든 끌려가든 둘 중 하나다.</li>
+</ul>
+<p>이 구조에서 자족(autarkeia)이 나온다. 덕만이 참된 선이고 그 덕은 오로지 내 이성 안에 있으므로, 지혜자는 어떤 상황에서도 스스로 충족하다. 외부 환경으로부터 독립적인 이 행복관에서 스토아는 <a class="wl" href="../../t/%EA%B2%AC%EC%9C%A0%ED%95%99%ED%8C%8C/">견유학파</a>와 방향을 같이한다.</p>
+<h2>2. 신약 시대의 지적 맥락 — 네 학파의 세계</h2>
+<p>신약성경이 탄생한 제2성전 시대 말기(주후 1세기)는 그리스-로마 철학이 지중해 전역에 뿌리내린 시기였다. 알렉산더의 동방 원정(주전 334년) 이후 헬라화(Hellenization)가 진행되면서 팔레스타인을 포함한 넓은 세계에 헬라 문화·언어·철학이 공존하게 되었다. 신약개론I 강의는 이 배경을 "헬라화는 문화 말살이 아닌 공존·융합"이라는 명제로 정리한다. 스토아학파는 이 맥락에서 디아스포라 유대인과 이방인 청중 모두에게 친숙한 사상 체계였다. 강의가 나란히 소개하는 네 학파의 자리를 비교하면 스토아의 위치가 드러난다.</p>
+<table>
+<thead>
+<tr>
+<th>학파</th>
+<th>핵심</th>
+<th>신약과의 접점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="wl" href="../../t/%ED%94%8C%EB%9D%BC%ED%86%A4%ED%95%99%ED%8C%8C/">플라톤학파</a></td>
+<td>가시적 현실=일시적, 비가시적 천상=영원</td>
+<td>디아스포라 유대 사상에 깊은 영향</td>
+</tr>
+<tr>
+<td><strong>스토아학파</strong></td>
+<td>로고스·자연법·아파테이아·운명 순응</td>
+<td>자연법 확산, 행 17 아레오바고, 빌 4:11 자족</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EA%B2%AC%EC%9C%A0%ED%95%99%ED%8C%8C/">견유학파</a></td>
+<td>인생의 간결함, 덕이 행복의 전제</td>
+<td>외부 환경으로부터 독립적 행복</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%97%90%ED%94%BC%EC%BF%A0%EB%A1%9C%EC%8A%A4%ED%95%99%ED%8C%8C/">에피쿠로스학파</a></td>
+<td>실재는 물질적, 우정이 최고 쾌락</td>
+<td>사후세계 부정, 초대 교회 공동체와 외형적 유사</td>
+</tr>
+</tbody>
+</table>
+<p>문대원 목사는 행 17장 설교에서 이 대비를 압축한다 — 에피쿠로스는 물질주의 철학으로 눈에 보이는 것만 믿고 사후세계를 부정한 채 현실을 즐겼고, 스토아는 합리주의 철학으로 영적 원리가 우주를 주관한다고 보아 이성으로 각자의 의무를 다하면 된다고 여겼다. 두 학파는 정반대 방향에서 복음과 마주쳤다.</p>
+<h2>3. 바울과 스토아 — 아레오바고의 접점과 결별</h2>
+<p>바울과 스토아가 정면으로 만난 자리가 사도행전 17장 아레오바고다. "어떤 에피쿠로스와 스토아 철학자들도 바울과 쟁론"했고(행 17:18), 바울은 고대 아테네의 최고 법정인 아레오바고에서 그들의 언어로 복음을 변증했다. 이 설교의 방법이 곧 접점의 전략이다. 문대원 목사가 짚듯 "복음은 수신자 중심"이어서, 율법과 선지서를 모르는 헬라인에게는 유대인에게 전하듯 해서는 안 되며 그들의 종교성을 연결점으로 삼아야 한다. 바울은 정확히 그렇게 했다 — 스토아 시인의 시구를 직접 인용한 것이다.</p>
+<blockquote>
+<p>"우리가 그를 힘입어 살며 기동하며 존재하느니라 너희 시인 중 어떤 사람들의 말과 같이 우리가 그의 소생이라 하니." (행 17:28)</p>
+</blockquote>
+<p>"우리가 그의 소생이라"는 스토아 시인 아라토스의 구절이고, "그를 힘입어 살며 기동하며 존재한다"는 표현도 스토아적 범재신론의 언어와 겹친다. 바울은 이 접점을 발판으로 삼는다 — 만물에 신적 로고스가 스며 있다는 스토아의 직관을, 만물을 지으시고 만민에게 생명과 호흡을 주시는 창조주(행 17:24-25)에 대한 증언으로 옮긴 것이다.</p>
+<p>그러나 접점은 곧 결별로 이어진다. 문대원 목사의 정리가 그 결별선을 명료하게 긋는다 — 바울은 스토아를 향해 "세상을 주관하는 것이 비인격적인 원리가 아니라 인격적인 하나님임을" 설명하고, 그 하나님을 향해 회개하라고 촉구했다. 스토아의 로고스는 우주에 스며 있는 몰인격적 이성이지만, 바울의 하나님은 "인류의 모든 족속을 한 혈통으로" 지으시고 사람이 "더듬어 찾아 발견하게" 하시는 인격적 창조주다(행 17:26-27). 결정적 갈라짐은 부활이다 — 바울이 "죽은 자 가운데서 다시 살리신 것"(행 17:31)을 전하자 스토아의 순환적 우주론은 더 이상 따라올 수 없었다. 접점은 대화를 열지만, 복음의 핵심(창조·인격·부활·심판)에서 두 세계는 갈라선다.</p>
+<h2>4. 유사와 차이 ⚖️ — 겹치는 어휘, 다른 뿌리</h2>
+<p>스토아와 기독교는 여러 어휘를 공유하지만 그 뿌리가 다르다. 겉모습의 유사가 실체의 동일을 뜻하지 않는다는 것을 네 지점이 보여준다.</p>
+<table>
+<thead>
+<tr>
+<th>주제</th>
+<th>스토아</th>
+<th>기독교</th>
+<th>갈라짐의 핵심</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>우주의 통치</td>
+<td>섭리(pronoia)=비인격적 필연·운명</td>
+<td><a class="wl" href="../../t/%EC%84%AD%EB%A6%AC/">섭리</a>=인격적 하나님의 보존·협력·통치</td>
+<td>운명에 순응 vs 아버지를 신뢰</td>
+</tr>
+<tr>
+<td>마음의 평정</td>
+<td>아파테이아 — 정념의 제거, 자력 초연</td>
+<td>성령의 평강(빌 4:7) — 정념의 성화, 은혜의 선물</td>
+<td>감정을 없앰 vs 감정을 하나님 앞에 내어놓음</td>
+</tr>
+<tr>
+<td>자족</td>
+<td>자족(autarkeia) — 내 이성 안의 자기 충족</td>
+<td>"자족하기를 배웠노니"(빌 4:11) — 능력 주시는 이 안의 의존적 자족</td>
+<td>자기 안의 충족 vs 그리스도 안의 충족</td>
+</tr>
+<tr>
+<td>신적 이성</td>
+<td>로고스 — 만물에 내재한 몰인격적 불</td>
+<td>로고스(요 1:1) — 육신이 되신 인격적 말씀</td>
+<td>세계의 원리 vs 성육신하신 인격</td>
+</tr>
+</tbody>
+</table>
+<p>빌립보서 4장이 이 대비의 축소판이다. 바울의 "어떠한 형편에든지 자족하기를 배웠노니"(빌 4:11)는 스토아의 자족과 문면이 거의 같지만, 바로 다음 절이 그 뿌리를 뒤집는다 — "내게 능력 주시는 자 안에서 내가 모든 것을 할 수 있느니라"(빌 4:13). 스토아의 자족이 내 이성의 자기 충족이라면, 바울의 자족은 그리스도께 붙어 있는 의존적 자족이다. 평정도 마찬가지다. 아파테이아가 정념을 제거해 도달하는 초연이라면, "모든 지각에 뛰어난 하나님의 평강"(빌 4:7)은 정념을 없애는 것이 아니라 염려를 기도로 바꿀 때 마음을 지키시는 하나님의 선물이다(<a class="wl" href="../../t/%EC%84%AD%EB%A6%AC/">섭리</a>가 운명과 섭리의 갈라짐을 상술한다). 성경은 감정을 박멸하라 하지 않고 하나님 앞에 내어놓으라 한다 — 이 차이가 스토아와 복음을 가른다.</p>
+<h2>5. 현대 스토이시즘의 부흥 ⚖️ — 배울 것과 넘어설 것</h2>
+<p>스토아 철학은 죽은 고대 사상이 아니라 오늘 다시 유행하는 실천 철학이다. 마르쿠스 아우렐리우스의 『명상록』과 에픽테토스가 자기계발서로 재발견되고, "통제할 수 있는 것과 없는 것을 구분하라"는 스토아의 이분법이 불안의 시대를 사는 처방으로 소비된다. 그리스도인은 이 부흥 앞에서 무엇을 배우고 무엇을 넘어서야 하는가.</p>
+<p>배울 것이 있다. 스토아의 자기 통제와 절제, '내 힘 밖의 것'에 휘둘리지 않는 초연함은 소비와 자극에 중독된 시대를 향한 정직한 교정이다. 통제할 수 없는 것을 놓아주라는 지혜는, 염려를 기도로 바꾸라는 바울의 권면과 표면적으로 만난다. 인지행동치료(CBT)가 스토아의 '판단이 감정을 만든다'는 통찰에 빚지고 있는 것도 우연이 아니다.</p>
+<p>그러나 넘어서야 할 지점이 더 근본적이다. 첫째, 스토아의 초연은 자력이다 — 이성의 훈련으로 스스로 도달하는 평정이다. 반면 복음의 평강은 은혜다. 둘째, 스토아의 운명 순응은 인격 없는 필연 앞의 체념이지만, 기독교의 섭리 신뢰는 나를 사랑하시는 아버지 앞의 신뢰다. 셋째, 그리고 가장 깊은 차이는 스토아가 정념을 억눌러 없애려는 데 반해 복음은 정념을 정직하게 하나님께 쏟아내는 시편의 길을 연다는 점이다. 아파테이아가 눈물을 마르게 한다면, 성경은 "나사로의 무덤에서 눈물 흘리신"(요 11:35) 하나님을 증언한다. C.S. 루이스가 『스크루테이프의 편지』에서 마귀의 전략을 "감각적 경험의 흐름에 시선을 붙들어 두는 것"이라 했듯, 현대 스토이시즘도 자기 내면의 평정에 시선을 가둘 위험이 있다. 스토아는 자기 안에서 흔들리지 않는 성(城)을 쌓지만, 복음은 자기 밖 — 십자가와 이웃을 향해 나가라 한다. 배울 것은 절제이되, 넘어설 것은 자기 충족이다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>스토아의 네 기둥(로고스·자연법·아파테이아·운명 순응)은 하나의 세계상을 이루며, 그 귀결이 외부 환경으로부터 독립적인 자족(autarkeia)이다.</li>
+<li>스토아는 신약 시대의 지배적 철학이었고, 사도행전 17장에서 바울이 아레오바고에서 만난 대화 상대였다 — 갈릴리에도 스토아 철학자가 거주했다.</li>
+<li>바울은 스토아 시인의 시구("우리가 그의 소생이라", 행 17:28)를 접점으로 삼되, 비인격적 원리를 인격적 창조주로, 순환 우주론을 부활과 심판으로 뒤집으며 결별한다.</li>
+<li>겹치는 어휘가 같은 실체를 뜻하지 않는다 ⚖️ — 섭리↔운명, 아파테이아↔성령의 평강, 빌 4:11 자족↔의존적 자족, 로고스↔성육신하신 말씀. 갈라짐의 축은 인격성과 은혜다.</li>
+<li>현대 스토이시즘에서 배울 것은 절제와 초연이되, 넘어설 것은 자력의 평정과 자기 충족이다 ⚖️ — 스토아는 자기 안에 성을 쌓고, 복음은 자기 밖(십자가와 이웃)을 향한다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>스토아의 로고스 개념과 요한복음 서언의 로고스(요 1:1)는 어디까지 연속적이고 어디서 결정적으로 갈라지는가 — 필론의 매개를 어떻게 평가할 것인가.</li>
+<li>바울이 아레오바고에서 스토아를 "긍정적으로 활용"한 것과 골로새서 2:8이 "헛된 철학"을 경계한 것은 어떻게 일관되게 읽히는가 — 접점의 전략과 혼합주의의 경계는 어디인가.</li>
+<li>현대 스토이시즘의 실천적 지혜(통제 이분법·CBT)를 그리스도인이 취할 때, 그 자력적 뿌리를 제거하고 은혜의 문법으로 재배치하는 일은 실제로 가능한가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EA%B3%BC%EC%9D%B4%EC%84%B1/">신앙과이성</a> — 이신론·자연법·계몽주의로 이어지는 이성의 자립 지형. 스토아의 로고스가 놓이는 더 큰 틀.</li>
+<li><a class="wl" href="../../t/%EC%84%AD%EB%A6%AC/">섭리</a> — 운명(비인격적 필연)과 섭리(인격적 통치)가 갈라지는 자리. 이 페이지 4절의 상술 위임처.</li>
+<li><a class="wl" href="../../t/%EC%9E%90%EC%97%B0%EB%B2%95/">자연법</a> — 스토아가 기독교 전통에 물려준 가장 큰 유산.</li>
+<li><a class="wl" href="../../t/%EA%B2%AC%EC%9C%A0%ED%95%99%ED%8C%8C/">견유학파</a> · <a class="wl" href="../../t/%ED%94%8C%EB%9D%BC%ED%86%A4%ED%95%99%ED%8C%8C/">플라톤학파</a> · <a class="wl" href="../../t/%EC%97%90%ED%94%BC%EC%BF%A0%EB%A1%9C%EC%8A%A4%ED%95%99%ED%8C%8C/">에피쿠로스학파</a> — 신약 시대 함께 통용된 네 학파.</li>
+<li><a class="wl" href="../../t/%EC%84%B8%EA%B3%84%EA%B4%80/">세계관</a> · <a class="wl" href="../../t/%EC%9D%BC%EB%B0%98%EA%B3%84%EC%8B%9C/">일반계시</a> — 문화 속 진리의 그림자와 그 한계.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">02주_신약성경의세계</span></td>
+<td>강의</td>
+<td>스토아의 정의(로고스·자연법·덕), 헬레니즘 배경, 갈릴리 거주, 네 학파 비교</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2024_새로운질문새로운성찰</span></td>
+<td>설교(문대원)</td>
+<td>행 17 아레오바고, 에피쿠로스/스토아 대비, "비인격적 원리→인격적 하나님", 골 2:8, 루이스의 스크루테이프</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2025_세계관이야기1_의미가필요한존재</span></td>
+<td>설교(문대원)</td>
+<td>행 17:24-31의 창조주 변증, 세계관과 의미의 물음</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%84%AD%EB%A6%AC/">섭리</a> · <a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EA%B3%BC%EC%9D%B4%EC%84%B1/">신앙과이성</a></td>
+<td>위키 교차</td>
+<td>운명↔섭리, 성령의 평강↔아파테이아, 자연법의 신학적 자리</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/철학</span><span>#discipline/신약학</span><span>#헬레니즘</span><span>#자연법</span><span>#아파테이아</span><span>#그리스로마문화</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

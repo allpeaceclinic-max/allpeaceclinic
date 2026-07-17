@@ -1,0 +1,312 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>포스트모더니즘 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:206">변증·철학</span><span class="date">2026-07-17</span></div>
+  <h1 class="note-title">포스트모더니즘</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>포스트모더니즘은 사조이기 전에 정서다. 그 정서의 이름은 환멸이다. 근대(모던)가 내걸었던 약속 — 이성이 우리를 보편적 진리로 이끌고, 그 진리가 역사를 진보로 밀어올리리라는 약속 — 이 지켜지지 않았다는 감각, 바로 그 감각이 포스트모더니즘의 밑바닥에 깔려 있다. <span class="wl-dead" title="위키 내부 링크">양정모</span> 교수가 침례신학대학원 변증학 강의에서 내리는 정의가 이 성격을 압축한다. 포스트모더니즘은 "이성중심주의에 대해 근본적인 회의를 내포하고 있는 사상적 경향의 총칭"이며, "이성중심주의와 보편주의 형이상학 전통에 대한 반성이며 반작용"이다. 그 귀결은 "염세주의와 상대주의", "중심성의 상실, 표준의 해체"다.</p>
+<p>이 페이지는 그 사조와 정서 자체 — 무엇에 환멸했으며, 무엇을 주장하고, 오늘 어떤 공기로 우리 곁에 있으며, 기독교는 그 앞에서 무엇을 배우고 무엇을 물어야 하는가 — 를 다룬다. 그래서 인접한 지도들과는 역할을 나눈다. 세계관들을 나란히 세워 저울에 다는 비교의 지도는 <a class="wl" href="../../t/%EC%84%B8%EA%B3%84%EA%B4%80/">세계관</a>이, "신은 죽었다"에서 시작된 무신론의 계보는 <a class="wl" href="../../t/%EB%AC%B4%EC%8B%A0%EB%A1%A0/">무신론</a>이, 상대주의를 논박하는 진리론의 논리는 <a class="wl" href="../../t/%EC%A7%84%EB%A6%AC%EB%8C%80%EC%9D%91%EB%A1%A0/">진리대응론</a>이, 변증의 방법론 전환은 <a class="wl" href="../../t/%EB%B3%80%EC%A6%9D%ED%95%99/">변증학</a>이, 관심의 무게중심이 옮겨가는 세속화 과정은 <a class="wl" href="../../t/%EC%84%B8%EC%86%8D%ED%99%94/">세속화</a>가, 종교 다원주의라는 사회 조건은 <a class="wl" href="../../t/%EB%8B%A4%EC%9B%90%EC%A3%BC%EC%9D%98/">다원주의</a>가 맡는다. 이 글은 그 아래에 흐르는 하나의 정서와 그것이 낳은 사고방식을 그린다.</p>
+<h2>1. 무엇이 끝났는가 — 환멸이라는 출발점</h2>
+<p>포스트모더니즘을 이해하려면 먼저 그것이 무엇에 대한 반작용인지를 보아야 한다. 양정모 교수의 서구 정신사 도식에서 모던(현대)은 "르네상스, 계몽, 1·2차 세계대전"에 걸친 시대이며, 인간의 지성을 기준점으로 삼은 시대다 — 활자와 범선과 신대륙, 증기기관과 산업혁명과 휴머니즘이 그 자신감의 목록이다. 근대는 하늘에 있던 절대 기준을 인간의 머리로 끌어내리면서, 이성이 미신과 억압을 걷어내고 인류를 진보의 직선 위에 올려놓으리라 믿었다.</p>
+<p>그 자신감이 깨졌다. 두 차례의 세계대전은 바로 그 이성이 진보의 기계이자 파국의 기계이기도 했음을 드러냈고, 계몽의 기획은 자신이 약속한 해방을 다 갚지 못했다. 볼트 안에서 이 파산의 장면은 <span class="wl-dead" title="위키 내부 링크">문대원</span> 목사의 설교가 생생히 붙든다. 계몽주의 철학은 "예수님의 기적을 다 가위로 잘라냈"고 "이성적인 도덕적 교훈만 따르겠다"고 했지만, 그 인본주의의 기획이 다다른 곳은 도리어 허무주의와 비관주의였다는 것이다. 포스트모더니즘은 이 환멸에 붙인 이름이다. 그것은 새로운 확신을 세우는 대신, 근대가 세운 확신들을 하나씩 의심의 대상으로 되돌린다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>모던의 약속</th>
+<th>포스트모던의 환멸</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>이성</strong></td>
+<td>보편적 진리에 이르는 길</td>
+<td>권력을 감추는 가면</td>
+</tr>
+<tr>
+<td><strong>역사</strong></td>
+<td>진보의 직선</td>
+<td>끝나버린 거대 서사</td>
+</tr>
+<tr>
+<td><strong>자아</strong></td>
+<td>확신하는 주체</td>
+<td>아이러니한 관찰자</td>
+</tr>
+<tr>
+<td><strong>태도</strong></td>
+<td>깊이·진지함</td>
+<td>표면·유희</td>
+</tr>
+</tbody>
+</table>
+<p>이 정서적 전환은 사변이 아니라 일상의 취향에서 먼저 드러난다. 문대원 목사가 관찰하듯 포스트모던의 공기 속에서 사람들은 "심각한 것을 싫어하고 깊이 사색하는 것을 싫어"하며, 진지한 다큐멘터리보다 예능과 먹방이 화면을 채우고, "허무주의·비관주의·탈형식주의"가 시대의 분위기가 된다. 근대의 무거운 확신이 끝난 자리에 남은 것은 가벼움과 아이러니다.</p>
+<h2>2. 네 개의 목소리 — 포스트모더니즘의 핵심 명제들</h2>
+<p>환멸이 사조로 정식화될 때, 그것은 대개 네 사람의 이름으로 이야기된다. 볼트는 이들을 백과사전식으로 소개하지 않지만, 변증학 강의와 문대원 목사의 설교가 그 핵심 명제들과 만나는 지점을 남겨 둔다. 각 목소리를 그 범위 안에서 공정하게, 간명하게 짚어 둔다.</p>
+<table>
+<thead>
+<tr>
+<th>목소리</th>
+<th>핵심 명제</th>
+<th>볼트에 비친 자리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>리오타르</strong></td>
+<td>"메타내러티브에 대한 불신" — 인류 전체를 꿰는 거대 서사(진보·해방·구원사)는 더 이상 믿기지 않는다</td>
+<td>양정모 강의의 "거대담론 거부" — 아담부터 이어지는 연속적 구원사와 정면으로 부딪힌다</td>
+</tr>
+<tr>
+<td><strong>푸코</strong></td>
+<td>진리는 권력이 생산한다 — 무엇이 참으로 통하는가는 지식과 권력의 배치가 정한다</td>
+<td>"의심의 해석학", "권력 있는 자들의 기득권"; 해체주의 계보(푸코·데리다·로티)로 거명된다</td>
+</tr>
+<tr>
+<td><strong>데리다</strong></td>
+<td>해체 — 텍스트의 의미는 저자에 고정되지 않고 끝없이 미끄러진다</td>
+<td>"저자는 죽었기에 텍스트에 아무 권한이 없고 뜻은 공동체가 결정한다"; 문대원 "독자가 다양한 해석"</td>
+</tr>
+<tr>
+<td><strong>보드리야르</strong></td>
+<td>소비사회 — 실재보다 이미지가 앞서고, 우리는 사물이 아니라 기호를 소비한다</td>
+<td>"나는 소비한다 고로 존재한다"; "코카콜라는 음료가 아니라 젊음을 판다"</td>
+</tr>
+</tbody>
+</table>
+<p>네 목소리는 저마다 다른 자리에서 근대의 기둥 하나씩을 흔든다. 리오타르는 보편 서사를, 푸코는 중립적 진리를, 데리다는 고정된 의미를, 보드리야르는 실재의 우위를 무너뜨린다. 그러나 이들을 단순히 파괴자로만 읽는 것은 볼트의 태도가 아니다. 양정모 교수는 포스트모더니즘을 두고 "100% 나쁜 것이냐"고 되물으며 그 반작용이 낳은 정당한 통찰들을 인정하고, 6주차 강의는 한 걸음 더 나아가 "거대담론에 대한 포스트모던주의자의 의심은 일리가 있다"고까지 말한다. 이 인정이 뒤의 4장으로 이어진다.</p>
+<h2>3. 공기가 된 포스트모더니즘 — 철학이 아니라 정서</h2>
+<p>오늘의 <a class="wl" href="../../t/%EC%A0%84%EB%8F%84/">전도</a>와 목회가 실제로 만나는 것은 리오타르나 푸코를 읽은 사람이 아니다. 그것은 이 사상들이 대기 중에 녹아들어 아무도 그 출처를 의식하지 않게 된 형태 — 공기가 된 포스트모더니즘이다. 그 공기는 몇 가지 익숙한 표정으로 나타난다.</p>
+<p>가장 흔한 것은 "너에게는 진리, 나에게는 아니고"라는 상대주의의 일상판이다. 양정모 교수가 지적하듯 이 사고 안에서 진리는 "상황에 따라 달라질 수 있"으며, 문대원 목사의 표현으로는 "정답과 오답이 분명하지 않"고 흑백논리는 촌스러운 것으로 밀려난다. 여기에 관용의 절대화가 겹친다. 이해와 관용이 최고의 사회적 덕목이 되어 "관용을 베풀지 않는 사람은 시대에 뒤떨어진 사람"으로 비판받는다. 시간 감각도 바뀐다. 미래를 위한 인내보다 오늘의 즉각적 보상이 앞서고, "소확행·욜로 안에 숨어 있는 비관주의"가 목적과 의미에 대한 물음을 지운다.</p>
+<p>그리고 이 모든 것의 중심에 자아가 있다. 근대가 "생각하는 나"를 세웠다면, 포스트모던의 자아는 소비하고 표현하는 나다.</p>
+<blockquote>
+<p>모더니즘: 나는 생각한다, 고로 나는 존재한다.
+포스트모더니즘: 나는 소비한다, 고로 나는 존재한다. — 문대원 「포스트모던 시대의 그리스도인」</p>
+</blockquote>
+<p>이 소비하는 자아의 종교가 진정성(authenticity) 숭배다. 문대원 목사는 최근 설교에서 나르시시즘을 "현대사회의 특징을 나타내는 단어"로 짚으며, "미디어는 책임감을 가르치지 않는다, 당신이 원하는 것을 다 가지라고 말한다"고 진단한다. 여기서 진정성은 자기 감정과 욕망에 충실한 것을 최고 가치로 세우는데, 양정모 교수가 포스트모던 시대를 "감정을 절대적 기준으로 삼는 시대", "타인의 감정보다 자신의 감정이 중요"한 시대로 규정한 것과 정확히 만난다. 문제는 그 자아가 불안정하다는 데 있다 — "내가 원하는 것은 자주 바뀐다." 그리고 소셜미디어가 파는 것은 본질이 아니라 껍데기, 곧 보드리야르가 말한 이미지다. 취향이 절대화되고 거대 담론이 냉소의 대상이 되는 이 공기 속에서, 복음은 "더 이상 좋은 소식으로 들리지 않는" 배경음에 묻힌다. 이 배경음의 사회학적 조건은 <a class="wl" href="../../t/%EB%8B%A4%EC%9B%90%EC%A3%BC%EC%9D%98/">다원주의</a>가, 관심의 이동으로서의 세속화는 <a class="wl" href="../../t/%EC%84%B8%EC%86%8D%ED%99%94/">세속화</a>가 이어받는다.</p>
+<h2>4. ⚖️ 기독교가 배울 것 — 정당한 표적으로서의 근대주의적 기독교</h2>
+<p>포스트모더니즘을 적으로만 그리는 것은 정직하지 않다. 그 비판의 화살이 정당하게 꽂히는 표적 가운데 하나가 다름 아닌 근대와 결탁했던 기독교이기 때문이다. 포스트모던이 거대담론과 권력을 의심할 때, 교회는 자기가 그 의심의 대상이 아니라고 말할 수 있는가.</p>
+<p>세 가지 자리에서 그렇지 못하다. 첫째는 합리주의 변증의 교만이다. 신앙을 명제 증명의 게임으로 축소하고 논리적 승리를 회심으로 착각했던 태도는, 포스트모던이 폭로한 "이성이라는 가면" 아래 그 자신도 서 있었음을 인정해야 한다. 둘째는 제도의 교만이며, 셋째는 권력·문명과 뒤섞인 선교의 그늘이다. 6주차 강의가 "거대담론에 대한 포스트모던주의자의 의심은 일리가 있다 — 의심의 해석학, 권력 있는 자들의 기득권"이라고 말할 때, 그 칼끝은 교회 자신을 향할 수도 있다.</p>
+<p>그래서 포스트모더니즘은 역설적으로 교회가 잃었던 것을 되돌려준다. 하나는 겸손이다. <a class="wl" href="../../t/%EB%B3%80%EC%A6%9D%ED%95%99/">변증학</a>이 강조하듯 겸손은 변증가의 으뜸 덕목이며, "논리적으로 완벽해도 삶이 뒷받침되지 않으면 변증은 실패한다." 다른 하나는 이야기와 공동체의 재발견이다. 볼트의 설교전달 자료가 그리는 전환 — 논증 중심 설교에서 이미지·이야기·체험 중심 설교로 — 이 바로 그 회복이다. <span class="wl-dead" title="위키 내부 링크">레너드스윗</span>은 "예수 그리스도는 하나님의 이미지이며, 예수님은 하나님 나라를 이미지로 그릴 수 있는 언어로 전달하셨다"고 말한다. 흥미롭게도 6주차 강의는 포스트모던 복음주의가 명제적 논증 대신 "기독교 공동체의 의미성(언어·상징·의식·전통·교제)에 호소"하는 것을 대응론의 포기라 비판하는데, 그 비판을 접어 두고 보면 공동체와 이야기로의 귀환 자체는 포스트모던이 교회에 되돌려준 선물이다.</p>
+<table>
+<thead>
+<tr>
+<th>⚖️ 기독교가 <strong>배울 것</strong></th>
+<th>기독교가 <strong>물을 것</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>거대담론에 대한 의심은 일리가 있다 — 교회도 권력과 결탁해 왔다</td>
+<td>그러나 억압을 "악"이라 부르려면, 상대주의가 부정한 객관적 도덕이 필요하다</td>
+</tr>
+<tr>
+<td>명제 증명 게임으로 축소된 합리주의 변증의 교만</td>
+<td>"절대 진리는 없다"는 선언 자체가 하나의 절대 명제다</td>
+</tr>
+<tr>
+<td>이야기·공동체·삶으로의 귀환 (교회가 잃었던 것)</td>
+<td>관용을 절대화하면 비관용에 불관용해야 하니, 그 순간 상대주의가 아니다</td>
+</tr>
+</tbody>
+</table>
+<h2>5. 기독교가 물을 것 — 상대주의의 자기 논박</h2>
+<p>배울 것을 배운 뒤에야 물을 것을 물을 수 있다. 그리고 포스트모더니즘은 자기 자신을 향한 물음 앞에서 흔들린다.</p>
+<p>첫 번째 물음은 자기 논박이다. "객관적 진리는 없다"는 선언은 그 자체로 실재 전체에 적용되는 하나의 객관적·절대적 진리 주장이다. 6주차 강의의 표현으로, 포스트모더니스트의 선언들은 "그들 고유의 언어 게임에만 국한시키지 않고 실재 자체에 적용 가능한 선언으로 주장한다는 점에서 자기모순적"이다 — 상대성을 절대로 내세우는 순간 스스로 무너진다. 이는 <a class="wl" href="../../t/%EB%AC%B4%EC%8B%A0%EB%A1%A0/">무신론</a> 페이지가 짚는 허무주의의 내적 긴장과 같은 구조다. 자신의 생각을 신뢰하는 순간 일관성 없는 허무주의자가 되듯, 자신의 명제를 참이라 믿는 순간 일관성 없는 상대주의자가 된다.</p>
+<p>두 번째 물음은 정의(正義)의 근거다. 만약 모든 진리가 권력의 구성물이라면, 무엇을 근거로 억압을 규탄할 수 있는가. 인종차별과 여성 성기절제와 강간과 아동학대를 "객관적인 악"이라 부르는 순간, 비판자는 자신의 이론이 부정한 도덕실재론을 몰래 빌려 쓰고 있다. 진리 없이 억압을 비판하는 일은 발밑의 사다리를 걷어차면서 그 위에 서 있으려는 시도와 같다. 세 번째 물음은 관용의 역설이다. 관용을 절대적 미덕으로 세우면 비관용에는 관용을 베풀 수 없고, 그 배제의 순간 상대주의는 이미 하나의 절대 기준을 세운 셈이 된다. 6주차 강의가 D.A.카슨을 빌려 "관용의 비관용"이라 부른 것이 이것이다. 이 세 물음의 논리적 전개는 <a class="wl" href="../../t/%EC%A7%84%EB%A6%AC%EB%8C%80%EC%9D%91%EB%A1%A0/">진리대응론</a>과 <a class="wl" href="../../t/%EB%B3%80%EC%A6%9D%ED%95%99/">변증학</a>이 상세히 전담하므로, 여기서는 그것이 포스트모더니즘이라는 사조의 급소라는 점만 확인해 둔다.</p>
+<h2>6. 포스트모던 시대의 복음 증언 — 명제에서 이야기와 삶으로</h2>
+<p>그렇다면 이 시대에 복음은 어떻게 증언되는가. 논박이 상대주의의 급소를 찌를 수는 있어도, 그것이 곧 회심을 만들지는 못한다. 포스트모던 청중은 우월한 위치에서 쏟아지는 명제를 더는 수동적으로 받지 않는다. 볼트의 설교전달 자료가 그리는 전환이 바로 이 청중론 위에 서 있다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>전통적 설교 (모던)</th>
+<th>들려지는 설교 (포스트모던 청중)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>청중</strong></td>
+<td>수동적 수용자</td>
+<td>말씀 여정의 동반자·참여자</td>
+</tr>
+<tr>
+<td><strong>언어</strong></td>
+<td>논리·논증·명령·분석</td>
+<td>이야기·메타포·상상력·이미지</td>
+</tr>
+<tr>
+<td><strong>초점</strong></td>
+<td>무엇을 전할 것인가</td>
+<td>어떻게 들려지고 체험되는가</td>
+</tr>
+</tbody>
+</table>
+<p>이 전환의 신학적 뿌리는 성육신이다. "말씀이 육신이 되어 우리에게 오시지 않았다면, 부활하신 예수님이 손과 옆구리를 만져 보게 하시지 않았다면, 우리는 예수님을 제대로 이해하지 못했을 것이다." 명제의 전달만으로는 닿지 않는 자리에, 이미지와 이야기와 몸으로 산 증언이 다리를 놓는다. <a class="wl" href="../../t/%EC%84%A4%EA%B5%90%EC%A0%84%EB%8B%AC/">설교전달</a>이 이 방법론 자체를 전담한다.</p>
+<p>진정성 세대와의 접점도 여기서 열린다. 화려한 이미지를 좇으면서도 정작 목말라하는 것이 본질임을, 문대원 목사는 "빈 껍데기를 자랑하는" 허영과 "본질을 가진 사람"을 대조하며 짚는다. 이 세대가 반응하는 것은 논쟁의 승리가 아니라 살아 낸 삶이다. 그래서 문대원 목사가 포스트모던 시대의 신자에게 준 세 가지 당부는 정확히 이 지점을 겨눈다 — 목적을 상실한 시대에 인생의 의미를 말하고, 익명성의 시대에 진실과 정직(integrity)의 힘을 보이며, 공동체를 상실한 시대에 사랑과 용납의 공동체를 세우는 것이다. 명제 이전에 의미, 논증 이전에 정직, 설득 이전에 <a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%B2%B4/">공동체</a> — 이것이 포스트모던 시대의 증언 문법이다. 이 문법을 상황에 맞게 번역하는 작업은 <a class="wl" href="../../t/%EC%83%81%ED%99%A9%ED%99%94/">상황화</a>가 이어받고, 변증의 방법론 전체는 <a class="wl" href="../../t/%EB%B3%80%EC%A6%9D%ED%95%99/">변증학</a>에 위임한다.</p>
+<h2>7. 포스트-포스트모던? — 감정 너머, 재성화의 조짐</h2>
+<p>포스트모더니즘도 종착점은 아니다. 양정모 교수의 기준점 하강 도식은 이미 그 다음을 가리킨다 — 절대 기준이 하늘에서 인간의 지성으로, 다시 감정으로 내려왔다면, 그 감정마저 절대화된 시대 다음에는 본능까지 내려간다는 것이다. 그가 "포스트-포스트모던"이라 부른 이 국면은 감정 너머 동물적 본능이 선악의 기준이 되는 자리다. 이 하강 도식의 상세는 <a class="wl" href="../../t/%EC%84%B8%EA%B3%84%EA%B4%80/">세계관</a>이 전담한다.</p>
+<p>그러나 같은 환멸이 이제 포스트모던의 아이러니 자체를 향하기도 한다. 근대의 확신을 해체했던 그 정서가, 무한한 해체와 냉소 끝에 남은 공허 앞에서 다시 의미와 본질을 갈망하기 시작한 것이다. 볼트는 이 재성화(re-enchantment)의 조짐을 이론화하지는 않지만, 그 갈망의 흔적은 곳곳에 있다 — 목적과 의미를 알고 싶어 하는 소원, "화려함"이 아니라 "본질을 가진 사람"에 대한 동경, 혼밥·혼술의 개인주의 너머 "내 사정을 아는 사람이 나를 위해 기도해 주는" 공동체에 대한 목마름이 그것이다. 다음 지형이 무엇으로 불리든, 그 지형이 다시 묻기 시작한 물음 — 의미는 어디에 있으며 나는 무엇으로 존재하는가 — 앞에서 복음은 여전히 대답할 것을 가지고 있다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>포스트모더니즘은 사조이기 전에 정서다 — 이성·진보·보편이라는 근대의 약속이 파산한 자리에서 태어난 환멸이며, 새 확신을 세우기보다 옛 확신을 의심으로 되돌린다.</li>
+<li>네 목소리(리오타르의 메타내러티브 불신, 푸코의 지식-권력, 데리다의 해체, 보드리야르의 소비사회)는 각자의 자리에서 보편·중심·의미·실재라는 근대의 기둥을 흔든다.</li>
+<li>오늘의 목회가 만나는 것은 철학이 아니라 공기다 — "너에게는 진리, 나에게는 아니고", 관용의 절대화, 즉각성, 그리고 소비하고 표현하는 자아의 진정성 숭배.</li>
+<li>포스트모던 비판의 화살은 근대와 결탁한 기독교(합리주의 변증의 교만·제도의 교만·권력과 뒤섞인 선교)에 정당하게 꽂히며, 그 대가로 교회는 겸손과 이야기·공동체를 되돌려받는다.</li>
+<li>그럼에도 상대주의는 자기 논박에서 벗어나지 못한다 — "절대 진리는 없다"는 절대 명제이고, 억압 비판은 부정한 도덕실재론을 몰래 빌리며, 절대화된 관용은 비관용에 불관용함으로써 스스로 무너진다.</li>
+<li>포스트모던 시대의 증언은 명제에서 이야기·공동체·삶으로 옮겨간다 — 의미·정직·공동체가 논증·설득에 앞선다.</li>
+<li>무한한 냉소 끝의 공허가 다시 의미와 본질을 갈망하기 시작한 조짐(재성화)은, 다음 지형에서도 복음이 대답할 물음이 살아 있음을 시사한다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>볼트는 포스트모던 복음주의가 "공동체의 의미성에 호소"하는 것을 진리대응론 포기라 비판하는 동시에, 이야기·공동체로의 귀환을 회복으로 권한다 — 이 둘의 경계, 곧 "대응론을 지키면서 이야기로 증언하기"는 실제로 어디에서 그어지는가.</li>
+<li>진정성 세대가 목말라하는 "본질"과 포스트모던이 절대화한 "자기 감정"은 겉으로 닮았다 — 자기표현의 진정성을 부정하지 않으면서 그것을 하나님을 향한 갈망으로 재해석하는 접점은 어떻게 만들어지는가.</li>
+<li>포스트모던 비판이 근대주의적 기독교를 정당하게 겨눈다면, 오늘의 교회가 여전히 걸치고 있는 "근대의 옷"(성공주의·규모 자랑·명제주의)은 구체적으로 무엇이며 어떻게 벗는가.</li>
+<li>"재성화·메타모더니즘"은 볼트가 이론화하지 않은 채 조짐만 남겨 둔 지형이다 — 이 갈망이 복음으로 이어질 통로인지, 아니면 또 다른 소비 가능한 영성으로 흡수될 위험인지는 무엇이 가르는가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%84%B8%EA%B3%84%EA%B4%80/">세계관</a> — 프리모던·모던·포스트모던 3단계 도식과 기준점 하강, 세계관 비교의 상위 지도.</li>
+<li><a class="wl" href="../../t/%EB%AC%B4%EC%8B%A0%EB%A1%A0/">무신론</a> — "신은 죽었다"에서 시작된 계보이자 허무주의의 자기붕괴 논리, 현대 변증의 또 다른 전선.</li>
+<li><a class="wl" href="../../t/%EC%A7%84%EB%A6%AC%EB%8C%80%EC%9D%91%EB%A1%A0/">진리대응론</a> — 포스트모던 상대주의가 정면으로 부정하는 진리 이론과 4대 반박의 논리.</li>
+<li><a class="wl" href="../../t/%EB%B3%80%EC%A6%9D%ED%95%99/">변증학</a> — 포스트모던 청중 앞에서의 변증 방법론 전환과 겸손·삶의 태도.</li>
+<li><a class="wl" href="../../t/%EC%84%B8%EC%86%8D%ED%99%94/">세속화</a> — 관심의 무게중심 이동으로서의 세속화, 포스트모던 정서의 사회학적 짝.</li>
+<li><a class="wl" href="../../t/%EB%8B%A4%EC%9B%90%EC%A3%BC%EC%9D%98/">다원주의</a> — 복음이 "좋은 소식으로 들리지 않는" 사회 조건과 그 대응.</li>
+<li><a class="wl" href="../../t/%EC%84%A4%EA%B5%90%EC%A0%84%EB%8B%AC/">설교전달</a> — 명제에서 이미지·이야기·체험으로의 설교 전환(포스트모던 청중론의 실천).</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">02주_기독교세계관과세계관의문제</span></td>
+<td>강의(양정모)</td>
+<td>포스트모더니즘 정의(이성중심주의에 대한 회의), 해체주의 계보(푸코·데리다·로티), 거대담론·무중심·상대주의·다원주의의 4중 충돌, 기준점 하강 도식</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">06주_성경의문제</span></td>
+<td>강의(양정모)</td>
+<td>진리의 사회적 구성 테제, 맥라렌·포스트모던 복음주의 비판, "거대담론 의심은 일리 있다", 관용의 비관용(D.A.카슨)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">01주_이미지설교방법론1</span></td>
+<td>강의노트</td>
+<td>이미지 설교(<span class="wl-dead" title="위키 내부 링크">레너드스윗</span>), 개념→이미지→체험, "코카콜라는 젊음을 판다"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">07주_설교커뮤니케이션</span></td>
+<td>강의노트</td>
+<td>들려지는 설교, 청중=수동적 수용자에서 말씀 여정의 동반자·참여자로</td>
+</tr>
+<tr>
+<td>설교 「포스트모던 시대의 그리스도인」(골 2:6-10)</td>
+<td>설교(<span class="wl-dead" title="위키 내부 링크">문대원</span>)</td>
+<td>"나는 소비한다 고로 존재한다", 관용·현재주의·표면성 진단, 의미·정직·공동체 3중 응답</td>
+</tr>
+<tr>
+<td>설교 「자기를 사랑하는 사람」(딤후 3:1-9 / 갈 5:24-26)</td>
+<td>설교(<span class="wl-dead" title="위키 내부 링크">문대원</span>)</td>
+<td>나르시시즘=현대의 징조, 헛된 영광(이미지) vs 본질, 불안정한 욕망의 자아</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">프란시스쉐퍼</span></td>
+<td>인용(변증학 강의 경유)</td>
+<td>"객관적·인식 가능한 실재로부터 분리된 새로운 진리관"이라는 현대 진단</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/변증학</span><span>#상대주의</span><span>#해체주의</span><span>#소비사회</span><span>#진정성</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

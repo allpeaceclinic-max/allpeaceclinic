@@ -1,0 +1,375 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>교회와 선교 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="author">손창남</span><span class="date">2026-05-02</span></div>
+  <h1 class="note-title">교회와 선교</h1>
+  
+</header>
+<article class="note">
+<h1>건강한 선교를 고민하는 교회들을 위한 가이드북 — 손창남</h1>
+<h2>책 개요</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>저자</td>
+<td>손창남 선교사 (인터서브)</td>
+</tr>
+<tr>
+<td>핵심 주장</td>
+<td>선교는 소달리티-모달리티의 건강한 협력으로, 책무 구조 위에서 이루어진다</td>
+</tr>
+<tr>
+<td>실용 목적</td>
+<td>선교위원회 운영 매뉴얼 + 선교적 교회 로드맵</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>핵심 인사이트</h2>
+<h3>★ 개신교가 잃어버린 소달리티</h3>
+<blockquote>
+<p>"개신교는 종교개혁 과정에서 수도회에 해당하는 소달리티 구조를 가져오지 않았다."</p>
+</blockquote>
+<ul>
+<li>가톨릭: 교구(모달리티) + 수도회(소달리티) → 두 구조의 협력으로 선교</li>
+<li>개신교: 종교개혁 때 수도회를 해체 → 소달리티 없이 300년</li>
+<li><strong>18세기 말이 되어서야</strong> 자발적 선교 구조가 등장:</li>
+<li>윌리엄 캐리 → 해안 선교</li>
+<li>허드슨 테일러 → 내지 선교</li>
+<li>카메룬 타운젠드 → 종족 선교 (위클리프)</li>
+</ul>
+<blockquote>
+<p>한국 교회가 선교를 '교회가 직접 하는 것'으로만 보는 경향도<br />
+이 소달리티 부재의 역사적 맥락에서 이해할 수 있다.</p>
+</blockquote>
+<hr />
+<h2>1. 선교사의 두 가지 책무</h2>
+<blockquote>
+<p>"타문화 사역을 하는 사람으로서 <strong>사역적·재정적 책무</strong>를 이행하는 사람"</p>
+</blockquote>
+<h3>사역적 책무</h3>
+<ul>
+<li>필드 사역 4년 + 본국 사역(Home Assignment) 1년</li>
+<li>"안식년(furlough)"은 군대 용어 → 더 이상 맞지 않는 표현</li>
+<li>첫 달: 아무 사역 없이 쉼 / 귀임 전 한 달: 준비</li>
+<li>선교사 자신이 사역지를 결정하지 않음 → 필드 리더의 전략에 따라 배치</li>
+</ul>
+<h3>재정적 책무</h3>
+<ul>
+<li>개인 통장 후원 금지 → 전부 선교 본부 경유</li>
+<li>강사료·직업 소득도 보고 대상</li>
+</ul>
+<blockquote>
+<p>"요리사와 요리하는 사람" — 책임의 소재가 다르다</p>
+</blockquote>
+<hr />
+<h2>2. 소달리티(Sodality)와 모달리티(Modality)</h2>
+<h3>안디옥 교회의 두 모델 (행 11-13장)</h3>
+<table>
+<thead>
+<tr>
+<th>구조</th>
+<th>설명</th>
+<th>현대</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>모달리티</strong></td>
+<td>목양 중심, 지역 교회</td>
+<td>파송 교회</td>
+</tr>
+<tr>
+<td><strong>소달리티</strong></td>
+<td>복음 확산 중심, 선교 구조</td>
+<td>선교 단체</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>행 11:20 — 흩어진 사람들: 자발적 증인 (모달리티적 흩어짐)</li>
+<li>행 13장 — 바나바·바울 파송: 조직적 구조 (소달리티)</li>
+<li>바나바 — 구브로 출신 해외 동포 / 바울 — 다소 출신 디아스포라</li>
+</ul>
+<blockquote>
+<p>2000년 교회 역사에서 소달리티-모달리티가 시너지를 낼 때 선교가 가장 활발했다</p>
+</blockquote>
+<h3>3자 관계의 건강한 구조</h3>
+<p><code>불완전: 파송교회 ← 선교단체(홈/필드) ← 선교사 → 현지교회
+건강한: 파송교회 ← 선교단체(홈/필드 ∪ 선교사) → 현지교회</code></p>
+<h3>협력 관계 4분면</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>건강한 교회</th>
+<th>건강하지 않은 교회</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>건강한 단체</strong></td>
+<td>이상적 파트너십</td>
+<td>갈등적 파트너십</td>
+</tr>
+<tr>
+<td><strong>건강하지 않은 단체</strong></td>
+<td>피해의식 파트너십</td>
+<td>없어야 할 파트너십</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>3. 필드 구조</h2>
+<ul>
+<li>인사·행정 / 언어·문화 / 사역 코디네이터 / MK 코디네이터 / <strong>메디컬 어드바이저</strong></li>
+<li>처음부터 <strong>출구 전략</strong>을 계획</li>
+<li>감독과 돌봄의 구조 없이 필드 사역 시작 금지</li>
+</ul>
+<h3>LAMP 언어 레벨 (SIL)</h3>
+<table>
+<thead>
+<tr>
+<th>레벨</th>
+<th>수준</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>관광객</td>
+</tr>
+<tr>
+<td>1</td>
+<td>생존 (초단기 요구)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>직장 생활 가능 (단기 요구)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>전문 지식 전달 — 장기 4년 후 목표</td>
+</tr>
+<tr>
+<td>4</td>
+<td>토론 가능</td>
+</tr>
+<tr>
+<td>5</td>
+<td>원어민 동일</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>4. 신임 선교사 허입 4단계</h2>
+<ol>
+<li><strong>홈 클리어런스</strong> — 됨됨이·소명 확인, 추천서, 지역 교회 역할</li>
+<li><strong>필드 웰컴</strong> — 필드의 요청(매치메이킹)이 있어야 파송</li>
+<li><strong>재정 확인</strong> — 예산 85% 확보 시 파송 준비 완료</li>
+<li><strong>의료 확인</strong> — 정신건강 포함</li>
+</ol>
+<blockquote>
+<p>"선교사 허입 과정은 하나님의 뜻을 알아가는 과정이다"</p>
+</blockquote>
+<hr />
+<h2>5. 선교적 교회 로드맵</h2>
+<h3>Doing Missions → Being Missional</h3>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>문제 인식</strong></td>
+<td>통합적 선교 이해 부족, 이원론, 개교회주의, 삶과 선교의 괴리</td>
+</tr>
+<tr>
+<td><strong>결정적 성공 요소</strong></td>
+<td>리더 그룹의 선교 자각, 이원론 극복, 디아스포라 인식, 파트너십</td>
+</tr>
+<tr>
+<td><strong>주요 결과 영역</strong></td>
+<td>설교가 선교적으로 / 직업 속 증거 / 균형 잡힌 재정 / 타민족 교회 협력</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"무엇을 줄일 것인지, 무엇을 그만둘 것인지,
+무엇을 새롭게 할 것인지, 무엇을 더 할 것인지"</p>
+</blockquote>
+<h3>선교위원회 운영 우선순위 (워크숍 점수)</h3>
+<table>
+<thead>
+<tr>
+<th>영역</th>
+<th>점수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>본국 사역 선교사 관리</td>
+<td>9점</td>
+</tr>
+<tr>
+<td>선교 동원</td>
+<td>8점</td>
+</tr>
+<tr>
+<td>기도와 돌봄</td>
+<td>6점</td>
+</tr>
+<tr>
+<td>선교사 선발</td>
+<td>3점</td>
+</tr>
+<tr>
+<td>선교사 훈련</td>
+<td>2점</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>6. 관점의 변화</h2>
+<ul>
+<li><strong>성경적</strong>: 시 67편, 출 19:5-6 — 온 세계가 하나님께 속함</li>
+<li><strong>역사적</strong>: 헬라어 신약·로마 도로망·유대인 디아스포라 → 모라비안 → 개신교 200년</li>
+<li><strong>문화적</strong>: 자문화 중심주의 → 수신자 중심 커뮤니케이션 → 상황화</li>
+<li><strong>전략적</strong>: 2차 대전 이후 비자 제한 → 총체적 복음 → 교회 개척 운동</li>
+</ul>
+<h3>종족 무지</h3>
+<blockquote>
+<p>"동방박사들이 서쪽으로 온 것은 유대인들이 동쪽으로 가지 않았기 때문이다"</p>
+</blockquote>
+<ul>
+<li>대구 근처 인도네시아인 300명 — 내 눈 앞에 펼쳐진 추수할 밭</li>
+<li>하나님은 타문화 사람들을 우리 이웃으로 허락하셨다</li>
+</ul>
+<hr />
+<h2>핵심 결론</h2>
+<ol>
+<li>개신교가 종교개혁에서 소달리티를 잃었고, 선교 회복에 300년이 걸렸다</li>
+<li>소달리티-모달리티 협력이 역사적으로 선교를 가장 활성화시킴</li>
+<li>선교사의 책무 구조(사역·재정)가 건강한 선교의 기초</li>
+<li>선교적 교회는 Doing → Being의 전환을 요구한다</li>
+<li>종족 무지를 깨야 한다 — 먼 곳이 아니라 지금 이웃</li>
+<li><strong>"선교적 삶이란 불편하게 사는 삶이지만 가장 즐거운 삶이다"</strong></li>
+</ol>
+<hr />
+<h2>CMF·의료 선교 연결</h2>
+<p><strong><a class="wl" href="../../t/CMF_VPM%EC%B2%A0%ED%95%99/">CMF_VPM철학</a> — CMF = 의료계 안의 소달리티:</strong>
+- CMF는 지역 교회(모달리티)가 하지 못하는 의료인 특화 선교 구조
+- VPM의 책무 구조(사역·재정 책무)와 소달리티 구조는 같은 원리
+- CMF가 건강하려면 지역 교회와 건강한 4분면 파트너십을 맺어야 한다</p>
+<p><strong><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a>:</strong>
+- 필드 구조의 <strong>메디컬 어드바이저</strong> — CMF 의료인이 역할을 맡을 수 있는 자리
+- 허입 의료 확인(정신건강 포함) → CMF 멘탈 헬스 사역과 연결
+- 의사 자신도 선교사 정체성 5타입 중 하나에 속한다</p>
+<hr />
+<h2>연결된 페이지</h2>
+<ul>
+<li><span class="wl-dead" title="위키 내부 링크">손창남</span> — 저자, 인터서브 선교사</li>
+<li><span class="wl-dead" title="위키 내부 링크">인터서브</span> — 소달리티 구조의 실제 모델</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> — 미씨오 데이, 소달리티-모달리티</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a> — 로드맵, Doing → Being</li>
+<li><a class="wl" href="../../t/%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4%EC%84%A0%EA%B5%90/">비즈니스선교</a> — 선교사 정체성 4·5타입</li>
+<li><a class="wl" href="../../t/CMF_VPM%EC%B2%A0%ED%95%99/">CMF_VPM철학</a> — 책무 구조, CMF = 의료계 소달리티</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a> — 메디컬 어드바이저, 허입 의료 확인</li>
+<li><span class="wl-dead" title="위키 내부 링크">church-engagement</span> — 교회-선교단체 협력</li>
+<li><span class="wl-dead" title="위키 내부 링크">인터서브</span> — 인터서브 이사회 회의록</li>
+</ul>
+</article>
+<div class="tagrow"><span>#선교학</span><span>#선교적교회</span><span>#교회론</span><span>#선교단체</span><span>#파트너십</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

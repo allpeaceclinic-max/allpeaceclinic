@@ -1,0 +1,341 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>전도서 — 크리스토퍼 라이트 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:300">신학·사회</span><span class="author">크리스토퍼 라이트</span><span class="date">2026-05-05</span></div>
+  <h1 class="note-title">전도서 — 크리스토퍼 라이트</h1>
+  
+</header>
+<article class="note">
+<p><strong>저자</strong>: 크리스토퍼 라이트 (Christopher J. H. Wright)<br />
+<strong>분류</strong>: 구약 지혜문학 주석 / 신앙과 이성의 통합</p>
+<hr />
+<h2>★ 핵심 명제</h2>
+<blockquote>
+<p><strong>"전도자가 옳았다. 삶은 헤벨이다. 하지만 믿음은 이긴다."</strong></p>
+</blockquote>
+<p>전도서는 절망의 책이 아니다.<br />
+<strong>질문하는 믿음(Questioning Faith)</strong> — 허무주의의 심연을 직시하면서도
+신앙인으로 남아, 결국 믿음이 승리하는 이야기다.</p>
+<blockquote>
+<p>믿음이 있다고 해서 질문이 없다는 의미가 아니다.<br />
+마찬가지로 믿음이 있다고 해서 이 질문에 쉽고 깔끔한 대답이 있다는 의미도 아니다.</p>
+</blockquote>
+<p>→ 같은 계보: 예레미야, 하박국 — <a class="wl" href="../../b/%ED%95%98%EB%B0%95%EA%B5%AD_%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%86%A0%ED%8D%BC%EB%9D%BC%EC%9D%B4%ED%8A%B8/">하박국_크리스토퍼라이트</a></p>
+<hr />
+<h2>1. 문학적 구조</h2>
+<ul>
+<li><strong>코헬렛(전도자)</strong>: 직함 또는 직책 (익명, 솔로몬의 입장에서 기술)</li>
+<li><strong>이인극 구조</strong>: 내러이터(시작·마무리) + 나(전도자, 자전적 핵심)</li>
+<li>후기 히브리어 → 바벨론 포로기 이후 저작</li>
+<li><strong>반어법·역설·모순</strong> — 독자로 하여금 생각하라고 촉구</li>
+</ul>
+<h3>지혜자 vs 선지자 (렘18:18)</h3>
+<table>
+<thead>
+<tr>
+<th>유형</th>
+<th>인식 방법</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>지혜자(전도자)</strong></td>
+<td>경험과 합리적 추론에서 얻은 통찰</td>
+</tr>
+<tr>
+<td><strong>선지자(예언자)</strong></td>
+<td>하나님께 받은 직접적 계시</td>
+</tr>
+</tbody>
+</table>
+<p>→ 전도서는 지혜자의 방법(관찰·이성)의 한계를 통해 선지자적 계시의 필요성을 드러낸다</p>
+<hr />
+<h2>2. 헤벨(הֶבֶל) — 핵심 개념</h2>
+<p><strong>수증기·호흡·연기·흘러가는 구름·빙빙 도는 증기</strong><br />
+→ 공허한 / 일시적인 / 기만적인 / 실망스러운 / 불합리한 / 당혹스러운</p>
+<p>핵심 질문 (전1:3): <strong>"해 아래에서 수고하는 모든 수고가 사람에게 무엇이 유익한가?"</strong></p>
+<p>전도자는 눈과 귀로만 관찰 → 헤벨이라는 결과, 순환적 역사관<br />
+→ 순환적 역사관 = 목적의식 X, 종말의식 X</p>
+<hr />
+<h2>3. 삶의 의미를 찾는 4가지 시도 (전1-2장)</h2>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>본문</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>학문 연구</td>
+<td>전1:16-18</td>
+<td>지혜가 많으면 번뇌 — "모르는 게 약이다"</td>
+</tr>
+<tr>
+<td>쾌락주의</td>
+<td>전2:1-2</td>
+<td>낙을 누리라 → 헤벨</td>
+</tr>
+<tr>
+<td>통제된 어리석음</td>
+<td>전2:3</td>
+<td>적당한 음모론 추구 → 헤벨</td>
+</tr>
+<tr>
+<td>생산적 노동</td>
+<td>전2:4-11</td>
+<td>결국 헤벨, 삶을 미워하다</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>"하나님이 계신데 결국 헤벨이다. 이것이 문제다."</strong><br />
+신앙인도 이 질문을 피할 수 없다.</p>
+</blockquote>
+<hr />
+<h2>4. 전도자의 이중 인식</h2>
+<p>전도서 전체를 관통하는 두 층위:</p>
+<table>
+<thead>
+<tr>
+<th>층위</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>관찰로 본 것</strong></td>
+<td>삶은 헤벨 — 불공평, 불합리, 죽음으로 끝남</td>
+</tr>
+<tr>
+<td><strong>믿음으로 아는 것</strong></td>
+<td>삶은 하나님의 선물 — 선하시고 심판하시는 하나님</td>
+</tr>
+</tbody>
+</table>
+<p>이 긴장이 해소되지 않은 채 유지된다. 그것이 전도서의 정직함이다.</p>
+<hr />
+<h2>5. 자율적 인식론의 한계 (전7:23-29)</h2>
+<blockquote>
+<p><strong>"합리성(지혜)은 하나님의 선물이지만,<br />
+이것으로 삶과 우주의 모든 것을 발견할 수 없다."</strong></p>
+</blockquote>
+<ul>
+<li>원인은 밝혀낼 수 있으나, <strong>목적은 분별할 수 없었다</strong></li>
+<li>전7:29 — "하나님은 사람을 정직하게 만드셨으나, 인간이 타락하여 많은 꾀를 냄"</li>
+<li>하나님의 계시를 떠나 진리를 찾으려는 것 = <strong>자기 능력 숭배</strong></li>
+</ul>
+<p>→ <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%84%B8%EA%B3%84%EA%B4%80/">기독교세계관</a>: 관찰+이성(일반계시)의 한계, 특별계시의 필요성</p>
+<hr />
+<h2>6. 일·정치·예배·부의 신학 (전4-6장)</h2>
+<p><strong>일</strong>: 창1-2의 선한 것, 그러나 창3 이후 경쟁(시기)·게으름·외로움이 침투<br />
+→ 일은 선한 것이지만 광적 경쟁심에 사로잡힐 위험 / 쉼이 필요하나 게으르면 안 됨</p>
+<p><strong>정치</strong>: 변덕스러운 영웅주의(전4:13-16) + 관료주의적 계층화(5:8-9)<br />
+→ "낙수효과보다 모세관 상승효과" — 제도가 불의를 구조화할 수 있다</p>
+<p><strong>예배</strong>: 말하는 것과 행동하는 것의 차이를 살펴라 (전5:1-7)<br />
+→ "순종이 제사보다" — 경청하지 않으면 예배도 위험하다</p>
+<h3>★ 부(富)의 신학 — 성경적 재정관 (전5:10-6:12)</h3>
+<blockquote>
+<p><strong>부는 신뢰할 수 없다. 그러나 부는 하나님의 선물이다.</strong><br />
+이 긴장이 성경적 재정관의 핵심이다.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>관찰로 본 것</th>
+<th>믿음으로 아는 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>부는 모든 것을 잃을 수 있다 (전5:10-17)</td>
+<td>부는 하나님의 선물, 누리도록 허락하심 (전5:18-20)</td>
+</tr>
+<tr>
+<td>부가 있어도 누리지 못할 수 있다 (전6:1-12)</td>
+<td>청지기: 받은 것을 관리하는 자</td>
+</tr>
+</tbody>
+</table>
+<p><strong>성경적 재정관과의 연결</strong>:
+- <strong>소유 vs 청지기직</strong>: 부는 내 것이 아니라 하나님께 위탁받은 것 (시24:1)
+- <strong>누림의 허락</strong>: 하나님이 주신 부를 감사함으로 누리는 것은 옳다 (딤전6:17)
+- <strong>약탈로 쌓은 부에 화 있을진저</strong>: 불의한 수단으로 축적된 부는 심판 아래 있다<br />
+  → <a class="wl" href="../../b/%ED%95%98%EB%B0%95%EA%B5%AD_%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%86%A0%ED%8D%BC%EB%9D%BC%EC%9D%B4%ED%8A%B8/">하박국_크리스토퍼라이트</a> 합2:6-8과 직결</p>
+<p>→ <a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%8B%A0%ED%95%99/">직업신학</a> — 일의 신학, 창조 명령과 부의 관계</p>
+<hr />
+<h2>7. 의심과 전도서 — 질문하는 믿음의 성경적 근거</h2>
+<p><a class="wl" href="../../t/%EC%9D%98%EC%8B%AC/">의심</a> 페이지의 핵심 구도가 전도서에서 가장 정직하게 드러난다.</p>
+<blockquote>
+<p><strong>전도자 = 믿음 위에서 작동하는 의심의 모범</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>의심의 종류</th>
+<th>전도서에서</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>파괴적 의심</strong></td>
+<td>헤벨 → 허무주의 → 삶을 미워하다 (관찰의 함정)</td>
+</tr>
+<tr>
+<td><strong>건설적 의심</strong></td>
+<td>헤벨을 직시하면서도 하나님의 선물을 신뢰 (믿음이 이긴다)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>전도자는 허무주의의 심연에 맴돌지만 신앙인으로 남는다</li>
+<li>"믿음이 질문을 던지도록 허용한다" — 예레미야·하박국과 같은 계보</li>
+<li>자율적 이성(관찰)의 한계를 인정하는 것 자체가 건설적 의심의 출발점</li>
+</ul>
+<p>→ 뉴비긴의 틀: "믿음이 일차적, 의심은 부차적" — 전도자도 이 순서를 따른다</p>
+<hr />
+<h2>8. 삶의 긍정 — 기뻐하고 기억하라 (전9:17-12:14)</h2>
+<h3>건강한 기회주의</h3>
+<blockquote>
+<p>"만사를 성취하시는 분은 하나님이시니, 무슨 일이 일어날지 모르니 — <strong>뭐라도 해보라</strong>"<br />
+허무주의가 아니라, 불확실성 속에서도 행동하는 신앙</p>
+</blockquote>
+<h3>두 가지 생활 방식</h3>
+<ol>
+<li><strong>기뻐하라</strong> (전11:9-10) — 청년의 때, 책임있게 삶을 즐기라<br />
+   단, 하나님이 최종 심판자라는 진리 위에서</li>
+<li><strong>기억하라</strong> (전12:1-7) — 청년의 때, 창조주를 기억하라<br />
+   하나님에서 시작해(12:1) 하나님께로 돌아감(12:7)</li>
+</ol>
+<blockquote>
+<p>이 탐구 여정의 종착점이 하나님께 돌아가는 것 자체가 놀라운 전환점이다.</p>
+</blockquote>
+<hr />
+<h2>9. ★ 크리스토퍼 라이트의 기여 — 전도서 읽기 틀</h2>
+<table>
+<thead>
+<tr>
+<th>전통적 읽기</th>
+<th>크리스토퍼 라이트 읽기</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>전도서 = 절망의 책</td>
+<td>전도서 = 질문하는 믿음의 책</td>
+</tr>
+<tr>
+<td>헤벨 = 허무주의</td>
+<td>헤벨 = 관찰된 진실 + 믿음이 이긴다</td>
+</tr>
+<tr>
+<td>전도자 = 회의주의자</td>
+<td>전도자 = 이성의 한계를 직시하는 신앙인</td>
+</tr>
+<tr>
+<td>모순 = 해결해야 할 문제</td>
+<td>모순 = 생각하도록 돕는 장치</td>
+</tr>
+</tbody>
+</table>
+<p><strong>전도서와 우리의 위치</strong>: 전도자가 알 수 없었으나 우리는 알고 있는 것 —<br />
+<strong>성육신, 십자가와 부활, 약속된 새창조</strong></p>
+<hr />
+<h2>교차 참조</h2>
+<ul>
+<li><span class="wl-dead" title="위키 내부 링크">크리스토퍼라이트</span></li>
+<li><a class="wl" href="../../b/%ED%95%98%EB%B0%95%EA%B5%AD_%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%86%A0%ED%8D%BC%EB%9D%BC%EC%9D%B4%ED%8A%B8/">하박국_크리스토퍼라이트</a> — 질문하는 믿음 계보 + 부의 심판(합2:6-8)</li>
+<li><a class="wl" href="../../t/%EC%9D%98%EC%8B%AC/">의심</a> — 질문하는 믿음, 건설적 의심의 성경적 모범</li>
+<li><a class="wl" href="../../t/%EA%B3%A0%EB%82%9C/">고난</a> — 삶의 불공평함, 헤벨</li>
+<li><a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%8B%A0%ED%95%99/">직업신학</a> — 일의 신학, 부의 신학</li>
+<li><a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a> — 지혜 = 지금이 어떤 때인지 아는 것</li>
+<li><a class="wl" href="../../t/%EC%B0%BD%EC%A1%B0%EC%8B%A0%ED%95%99/">창조신학</a> — 창1-3과 전도서의 연결</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%84%B8%EA%B3%84%EA%B4%80/">기독교세계관</a> — 자율적 인식론의 한계</li>
+</ul>
+</article>
+<div class="tagrow"><span>#구약신학</span><span>#지혜문학</span><span>#전도서</span><span>#헤벨</span><span>#믿음</span><span>#고난</span><span>#크리스토퍼라이트</span><span>#인식론</span><span>#의심</span><span>#재정</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

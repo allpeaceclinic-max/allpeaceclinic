@@ -1,0 +1,271 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>성화 — 사람은 어떻게 변화되는가 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:226">조직신학·교리</span><span class="date">2026-07-11</span></div>
+  <h1 class="note-title">성화 — 사람은 어떻게 변화되는가</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>성화(聖化, sanctification)의 헬라어 하기아스모스(ἁγιασμός)는 "구별됨·거룩하게 됨"을 뜻한다. 같은 어근에서 동사 하기아조(ἁγιάζω, 거룩하게 하다)와 형용사 하기오스(ἅγιος, 거룩한)가 나온다. 칭의가 천국 법정에서 단번에 내려지는 의(義)의 선언이라면, 성화는 그 선언을 받은 사람이 평생에 걸쳐 실제로 그리스도를 닮아 가는 변화다. 지위의 문제가 아니라 성품의 문제이며, 선고가 아니라 과정이다.</p>
+<p>이 볼트에서 성화는 홀로 서지 않는다. 구원의 서정(ordo salutis)에서 성화가 놓이는 자리와 칭의와의 법정적 구분("분리되지 않으나 구분되는")은 <a class="wl" href="../../t/%EA%B5%AC%EC%9B%90%EB%A1%A0/">구원론</a>이 이미 표로 상술했고, 은혜와 노력이 한 행위 안에서 동시에 100%로 작동한다는 신학적 정식은 <a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a>가, 거룩(카도쉬)이라는 목표 개념 자체와 그 의료 현장 적용은 <a class="wl" href="../../t/%EA%B1%B0%EB%A3%A9/">거룩</a>이 다룬다. 그런데 이 세 페이지가 공히 한 질문을 이 페이지로 넘긴다 — 지위는 단번에 주어졌고 정식은 200%로 세워졌는데, <strong>그렇다면 사람은 실제로 어떻게 변화되는가.</strong> 변화의 내적 역학, 그 수단, 그리고 그 목표가 이 글의 고유한 몫이다.</p>
+<p>이 글은 하기아스모스의 두 층위(지위적·점진적)에서 출발해, 변화가 더딘 이유(마음과 무의식), 변화의 기제(성령과 인간의 연합 작전), 그 안의 싸움(죄 죽임), 그 통로(말씀·기도·고난·공동체), 그것이 가장 뜨겁게 작동하는 실험실(관계), 그것이 빚어 가는 목표(그리스도의 형상)를 거쳐, 이 과정을 앞당겨 완성하려는 유혹(완전주의)의 경계까지 내려간다.</p>
+<h2>1. 하기아스모스의 두 층위 — 지위적 성화와 점진적 성화</h2>
+<p>성화라는 한 단어는 서로 다른 두 사건을 가리킨다. 권성수 목사는 로마서 8장 강해에서 이를 <strong>결정적·위치적 성화</strong>와 <strong>점진적 성화</strong>로 나눈다. 전자는 중생과 동시에 일어나는 신분의 변화 — 죄인이 하나님의 소유로 단번에 구별되어 "성도(하기오이)"가 되는 자리이고, 후자는 그 새 지위 위에서 평생에 걸쳐 새 성품이 형성되는 과정이다. <a class="wl" href="../../t/%EA%B1%B0%EB%A3%A9/">거룩</a>이 정리한 위치적 거룩(칭의로 이미 주어진 것)과 실존적 성화(성령의 사역으로 진행되는 것)의 구분이 바로 이 두 층위와 포개진다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>지위적(결정적) 성화</th>
+<th>점진적 성화</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>시점</td>
+<td>중생과 동시 — 단번</td>
+<td>중생 이후 — 평생</td>
+</tr>
+<tr>
+<td>내용</td>
+<td>하나님의 소유로 구별됨(새 지위)</td>
+<td>그리스도의 형상으로 변화됨(새 성품)</td>
+</tr>
+<tr>
+<td>주도</td>
+<td>하나님 단독</td>
+<td>성령의 주도 + 인간의 순종</td>
+</tr>
+<tr>
+<td>성경 언어</td>
+<td>"성도가 되었다"(고전 1:2)</td>
+<td>"거룩함을 이루라"(고후 7:1)</td>
+</tr>
+</tbody>
+</table>
+<p>이 두 층위를 시제로 접으면 구원 전체가 세 겹이 된다. 백일성 누가는 대경누가회 강단에서 구원을 과거적 구원(중생·칭의 — 이미 얻음), 현재적 구원(성화 — 지금 이루어 감), 미래적 구원(영화 — 앞으로 완성됨)으로 정리하고, "성화는 우리 구원의 과정이자 목적"이라고 못박는다. 곧 점진적 성화는 "이미"와 "아직" 사이에 놓인 <strong>현재적 구원</strong>의 자리다. 지위는 이미 완결되었으므로 성화는 그 지위를 획득하려는 몸부림이 아니라, 이미 주어진 지위대로 살아 내려는 몸부림이다 — 이 순서가 뒤집히면 성화는 곧장 율법주의로 굴러떨어진다(그 법정적 구분의 전모는 <a class="wl" href="../../t/%EA%B5%AC%EC%9B%90%EB%A1%A0/">구원론</a>이 다룬다). 그런데 지위가 단번에 주어졌다면, 성품의 변화는 왜 이토록 더딘가.</p>
+<h2>2. 마음이라는 전쟁터 — 왜 변화는 더딘가</h2>
+<p>변화가 더딘 것은 변화의 무대가 표면이 아니라 마음이기 때문이다. 구약이 700회 넘게 부르는 마음 레브(לֵב)·레바브(לֵבָב)는 이성·감성·의지를 통칭하는 심장이고, 헬라어 누스(νοῦς)가 이에 대응한다. 티모시 레인과 폴 트립은 『<a class="wl" href="../../b/%EC%82%AC%EB%9E%8C%EC%9D%80%EC%96%B4%EB%96%BB%EA%B2%8C%EB%B3%80%ED%99%94%EB%90%98%EB%8A%94%EA%B0%80_%EB%A0%88%EC%9D%B8%ED%8A%B8%EB%A6%BD/">사람은 어떻게 변화되는가</a>』에서 인간을 텅 빈 존재가 아니라 이미 무언가로 <strong>채워진 존재</strong> 코일리아(κοιλία)로 규정한다(골 2:8). 마음의 내용물이 삶을 지배하므로, 그 내용물을 건드리지 않는 모든 변화는 가짜다.</p>
+<p>그래서 두 사람이 경계하는 것이 "외면주의"다 — 형식주의·율법주의·신비주의·실천주의·성경주의·심리주의·관계주의라는 일곱 변종은 하나같이 마음을 그대로 둔 채 겉을 바꾸며, "우리 밖의 죄가 우리 안의 죄보다 더 위험하다"는 착각으로 스스로를 도움이 필요 없는 독립적 존재로 여기게 만든다. 여기에 이 볼트의 강의는 무의식의 지배라는 진단을 더한다. 사람은 90%가 무의식의 지배를 받는 존재여서, 이성이 먼저 작동한다고 믿지만 실제로는 이전 경험에서 형성된 무의식이 먼저 반응하고 이성은 그 반응을 사후에 합리화할 뿐이다.</p>
+<blockquote>
+<p>경험 → 무의식에 저장 → 무의식적 반응 → 패턴 → 즉각적 반응 → 이성적 합리화(변명)</p>
+</blockquote>
+<p>예레미야 17장의 두 나무 비유가 이 진단을 그림으로 보여 준다. 마음이 여호와에게서 떠난 사람은 사막의 떨기나무처럼 나쁜 열매를 맺고, 마음이 여호와께 있는 사람은 물가에 심어진 나무처럼 좋은 열매를 맺는데, 그 마음의 상태는 더위(시험)가 와야 열매로 드러난다. "하나님은 마음을 아시지만, 나 자신은 시험을 쳐 봐야 안다." 그러므로 성화의 청사진은 바깥이 아니라 안이다 — 엡 4:22-24는 옛 사람을 <strong>벗어 버리고</strong>, 심령(누스)이 <strong>새롭게 되어</strong>, 새 사람을 <strong>입으라</strong> 하고, 롬 12:2는 "마음을 새롭게 함으로 변화를 받으라" 한다. 문제는 무의식은 의지의 명령을 듣지 않는다는 데 있다. 그렇다면 이 무의식을 무엇이 바꾸는가.</p>
+<h2>3. 연합 작전 — 성령과 인간 협력의 기제</h2>
+<p>성화의 심장부가 여기다. 은혜와 노력이 어떻게 한 행위에서 동시에 100%일 수 있는지의 신학적 정식(빌 2:12-13, monergism/synergism)은 <a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a> §4와 <a class="wl" href="../../t/%EA%B5%AC%EC%9B%90%EB%A1%A0/">구원론</a> §6이 다루므로, 이 페이지는 결론이 아니라 <strong>작동 방식</strong>을 맡는다 — 은혜와 노력은 실제로 마음 어디서 만나는가. 권성수 목사가 먼저 잘못된 출구 하나를 막는다. "하나님이 하게 하셔라" 식의 수동주의는 성화가 아니다. 점진적 성화에서 믿음은 ①능동적으로 그리스도와의 연합을 계속 붙잡고 ②죄의 지배에서 벗어나며 ③성령의 능력으로 죄를 극복하고 ④성령의 열매를 맺는 네 가지 능동적 역할을 한다.</p>
+<p>그 협력의 접점을 레인·트립과 이 볼트의 강의는 누스와 프로네마 사이로 특정한다. 의식(누스)에는 배운 말씀·지식이 저장되고, 무의식(프로네마, φρόνημα)에는 습관화된 옛 패턴이 자동으로 작동하는데, 이 둘 사이의 간격을 <strong>성령이 조명하실 때</strong> 인사이트(깨달음)가 터진다.</p>
+<blockquote>
+<p>누스(말씀 저장) → [성령의 조명] → 프로네마(무의식 신념) → 인사이트 → 신념 변화 → 행동 변화</p>
+</blockquote>
+<p>성령은 여기서 두 이름으로 일하신다 — 상황 속에서 말씀을 적용하게 하시는 지혜의 영(엡 1:17)이자, "내가 너희에게 말한 모든 것을 생각나게 하시는" 기억의 영(요 14:26)이다. 베드로가 세 번 부인한 무의식의 반응을, 성령이 주님의 말씀을 "생각나게" 하심으로 회개로 돌이키신 것이 그 전형이다. 다만 결정적 조건이 있다 — <strong>누스에 말씀이 먼저 저장되어 있어야 성령이 그것을 조명하신다.</strong> 그래서 인간의 몫은 단순한 성경 읽기가 아니라 묵상·반추·고찰이며, 이것이 은혜를 깎는 노력이 아니라 은혜가 붙이는 불이 옮겨붙는 심지다. 변화는 이 순환의 반복으로 마음(레브)에 새겨진다.</p>
+<p><code>더위(시험) → 멈춤 &amp; 고찰 → 성령의 드러내심 → 회개 &amp; 감사
+    → 좋은 열매 → 반복 → 레브(마음)에 새겨짐 → 새 사람</code></p>
+<p>한 번의 깨달음(런)으로 끝나지 않고 옛 패턴을 벗고(언런) 새 패턴을 다시 배우는(리런) 지속적 실천이 여기 붙을 때, 시험(더위)조차 즐거워하는 자리에 이른다 — "환난은 인내를, 인내는 연단을, 연단은 소망을 이룬다"(롬 5:3-4). 그런데 이 연합 작전은 저항 없는 성장이 아니다. 그것은 처음부터 끝까지 하나의 싸움이다.</p>
+<h2>4. 죄와의 싸움 — 육체와 성령의 방송 전쟁</h2>
+<p>성화의 다른 이름은 죄 죽임(mortification)이다. 바울은 "영으로써 몸의 행실을 죽이면 살리니"(롬 8:13)라고 명령형으로 말한다. <a class="wl" href="../../t/%EA%B1%B0%EB%A3%A9/">거룩</a>이 존 라일을 빌려 정리하듯 "기도는 죄를 죽이고, 죄는 기도를 죽인다" — 성화는 수행의 축적이 아니라 죄와의 교전에서 드러난다. 권성수 목사는 이 교전을 "방송 전쟁"으로 그린다. 육체는 죄를 부추기는 사탄의 방송을 내보내고 성령은 사랑의 방송을 내보내는데, 두 주파수가 같은 마음 안에서 끊임없이 겹쳐 들려온다. 성화는 매 순간 어느 방송을 듣고 순종하느냐의 문제이며, 갈라디아서 5장이 육체의 "일들"(에르가, 복수 — 분열·파편)과 성령의 "열매"(카르포스, καρπός, 단수 — 하나의 사랑이 아홉 측면으로 발현된 통일된 인격)를 대조한 것이 이 전선의 지도다.</p>
+<p>이 싸움에서 반복되는 실패는 불가피하지만, 실패의 반복 자체가 성장은 아니다. "개가 그 토한 것을 도로 먹는 것 같이 미련한 자는 그 미련한 것을 거듭 행하느니라"(잠 26:11). 경험이 곧 성장이 아니라, 경험을 고찰·묵상하여 인사이트로 바꾸고 그것을 습관화하는 것만이 성장이다. 죄를 지었을 때 신자가 해야 할 일은 자기 신분을 의심하는 것이 아니라 회개하는 것인데, 이때 법정적 죄책감(칭의로 이미 해결됨)과 관계적 죄책감(자녀로서 회개할 대상)을 가르는 분별은 <a class="wl" href="../../t/%EA%B5%AC%EC%9B%90%EB%A1%A0/">구원론</a>이 상술한다. 성화의 싸움에 필요한 것은 신령한 근심(고후 7:10) — 절망으로 몰아가는 사탄의 참소가 아니라 하나님께 가까이 가게 하는 건강한 죄의식이다. 그러나 신자는 이 싸움을 맨손으로 하지 않는다. 하나님은 은혜의 방편을 손에 쥐여 주셨다.</p>
+<h2>5. 성화의 수단 — 말씀·기도·고난·공동체</h2>
+<p>성화는 진공에서 일어나지 않고 구체적 통로를 통해 받아 누리는 은혜다. 백일성 누가는 성화의 수단을 은혜의 방편으로 열거하되 특히 섭리론에 무게를 싣는다. 섭리(providence)는 보존하심과 통치하심이며, 그것을 사는 자세는 세 방향 — <strong>하나님 뒤에서(고난), 앞에서(기도), 아래에서(섬김)</strong> 사는 삶이다. (세례·성찬·권징·구제·전도까지 아우르는 은혜의 수단 전체 목록은 <a class="wl" href="../../t/%EC%9D%80%ED%98%9C%EC%9D%98%EC%88%98%EB%8B%A8/">은혜의수단</a>이 다루므로, 여기서는 성화의 내적 역학에 직결되는 네 가지만 짚는다.)</p>
+<ul>
+<li><strong>말씀</strong> — §3에서 보았듯 단순히 읽는 것이 아니라 묵상·반추·고찰하여 누스에 저장하는 것. 성령의 조명은 저장된 말씀 위에서만 불을 켠다.</li>
+<li><strong>기도</strong> — 코람데오(Coram Deo), 곧 하나님 앞에서 사는 삶이다. 백일성 누가는 기도의 오해를 정밀하게 차단한다.</li>
+</ul>
+<blockquote>
+<p>"기도는 능력이 아니라 도구이다. 능력은 하나님으로부터 온다."</p>
+</blockquote>
+<ul>
+<li><strong>고난</strong> — 고난은 본질상 선이 아니지만 하나님이 종종 성화의 도구로 쓰신다. 연단의 수단이자 신자를 "상처 입은 치유자(wounded healer)"로 빚는 과정이며, "하나님은 위로보다 우리의 인격에 더 큰 관심을 가지고 계신다." 환난이 인내를 거쳐 소망에 이르는 롬 5:3-4의 사슬이 여기서 완성된다.</li>
+<li><strong>공동체</strong> — 성화는 결코 혼자 이루는 프로젝트가 아니다. 레인·트립은 성장을 솔리터리(개인)·커뮤니티·미니스트리 세 겹의 동시 작업으로 보고, <a class="wl" href="../../t/%EA%B1%B0%EB%A3%A9/">거룩</a>은 "혼자서는 결코 광야에서 거룩을 지킬 수 없다"고 못박는다. 서로의 못남을 인정하고 붙들어 주는 공동체가 마음의 무의식을 비추는 거울이 된다.</li>
+</ul>
+<p>그리고 이 네 수단 중 공동체가 가장 뜨겁게, 가장 아프게 작동하는 실험실이 있다 — 가까운 관계다.</p>
+<h2>6. 관계라는 거울 — 성화의 실험실</h2>
+<p>조성봉 교수는 결혼을 "행복의 계약"이 아니라 "성화(sanctification)의 연단 장소"로 재정의한다. 부부 갈등의 뿌리는 차이(difference)인데, 연애 시절 매력으로 보이던 특성이 결혼 후 불만의 씨앗이 되는 것은 상대가 변한 것이 아니라 투사(콩깍지)가 걷힌 것이다. 차이는 결함이 아니라 결혼의 조건이며 평생 사라지지 않는다. 그러므로 해법은 상대를 바꾸는 데 있지 않다.</p>
+<blockquote>
+<p>"돌아볼 수 있는 것은 나이다. 내가 부족한 존재라는 것, 깨어지지 않은 존재라는 것, 그것이다."</p>
+</blockquote>
+<p>이것이 관계가 성화의 실험실인 이유다. 레인·트립의 C 여인 사례가 그 기제를 보여 준다 — 비인격적인 시어머니와의 갈등을 본인은 "시어머니가 문제, 의논 없는 남편이 문제"로 진단했지만, 하나님의 진단은 달랐다. 시어머니가 유별난 것이 아니라, 그 관계가 <strong>내 마음의 취약점(안정감·자기존중감의 결핍)을 드러내신 것</strong>이다. 관계는 문제를 드러내고, 직면하게 하고, 내면 변화를 시작시킨다 — 회피하면 그 자리에서 고착된다. "회피하면 안 된다. 하나님이 예수 믿고 해결되기를 바라며 디자인하신 사건이다." 은혜가 겨누는 첫 과녁이 자기중심성의 해체라는 것(<a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a> §5의 윤명숙·"주 중심"의 논의)이 바로 이 관계의 거울 앞에서 실현된다. "혼자의 성화도 어려운데 둘이, 자녀까지 더해지면 더 어렵다"는 조성봉의 관찰은 좌절이 아니라 지형도다 — 가장 어려운 자리가 가장 큰 연단의 자리다. 그렇게 관계의 용광로가 녹여 빚어 가는 최종 형상은 무엇인가.</p>
+<h2>7. 성화의 목표 — 그리스도의 형상</h2>
+<p>성화의 과녁은 도덕적 향상 일반이 아니라 한 인격, 곧 그리스도다. "우리가 다 하나님의 아들을 믿는 것과 아는 일에 하나가 되어 온전한 사람을 이루어 그리스도의 장성한 분량이 충만한 데까지 이르리니"(엡 4:13). 하나님이 미리 정하신 목적이 "그 아들의 형상을 본받게 하는 것"(롬 8:29)이므로, 성화는 창조 때 훼손된 하나님의 형상이 그리스도를 표준으로 회복되는 과정이다.</p>
+<p>이 회복의 능력은 자기 개선이 아니라 그리스도와의 연합에서 온다. 레인·트립은 "창세 전에 그리스도 안에서 우리를 택하사 거룩하고 흠이 없게 하시려는"(엡 1:4) 이 연합이 원수 되었던 자를 의롭게·지혜롭게·능력 있게 만든다고 본다. 신자는 "신의 성품에 참예하는 자"(벧후 1:4)로 부름받았고, 그 완성의 청사진은 이미 그려져 있다 — "그가 나타나시면 우리가 그와 같을 줄을 아는 것은 그의 계신 그대로 볼 것이기 때문이니"(요일 3:2). 이것이 변화의 세 시제 중 미래, 곧 소망이다.</p>
+<blockquote>
+<p>"긍정적인 삶의 변화는 나 자신의 변화의 꿈이 하나님의 변화의 목표와 일치할 때 일어난다."</p>
+</blockquote>
+<p>바로 여기서 위임의 경계가 분명해진다. 이 목표가 곧 거룩이며, 거룩(카도쉬)의 개념 자체와 그것이 의료 현장에서 "긍휼의 순종"으로 번역되는 국면은 <a class="wl" href="../../t/%EA%B1%B0%EB%A3%A9/">거룩</a>이, 성화가 완성되어 "죄도 없고 짓지도 않는" 영화(glorification)의 자리는 <a class="wl" href="../../t/%EA%B5%AC%EC%9B%90%EB%A1%A0/">구원론</a>이 다룬다. 이 페이지의 몫은 그 목표를 향해 지금 여기서 사람이 실제로 빚어지는 과정이다. 그런데 이 목표를 미래에서 현재로 끌어당겨 지금 완성하려는 유혹이 성화의 역사에 늘 따라다녔다.</p>
+<h2>8. 완전주의라는 신기루 — 성화의 두 극단</h2>
+<p>성화를 단번에 완성하려는 시도는 신기루다. 권성수 목사가 인용하는 앤디 나젤리의 책 제목이 이 진실을 압축한다 — 『죄를 끊는 왕도는 없다(No Quick Fix)』.</p>
+<blockquote>
+<p>"성화에 갑자기, 완전하게 변화하는 것은 아니다. … 죄를 반복한다고 포기하면 안 된다. 은혜를 인정하고 하나님을 신뢰하면서 노력을 해야 한다."</p>
+</blockquote>
+<p>백일성 누가는 성화론의 지형을 다섯 견해(루터주의·개혁주의·웨슬리주의·오순절주의·신비주의)로 펼치면서, 웨슬리주의의 즉각적 완전주의(perfectionism)를 그 지형의 한 극단으로 위치시킨다. 그리고 성화가 빠지기 쉬운 두 개의 낭떠러지를 함께 경계한다 — 한쪽은 은혜를 핑계 삼은 방종(반율법주의)이고, 다른 쪽은 행위를 구원의 조건으로 되돌리는 율법화(신율법주의)다. 완전주의는 이 둘 중 후자의 세련된 형태다. 변화 앞에 선 인간의 반응 유형도 같은 경계를 비춘다. 레인·트립과 제프 아이오그가 나눈 세 유형 가운데, 마태형은 예수의 초청에 즉각 순종하며 결과를 그분께 맡기지만, 바리새인형은 변화가 너무 빨리 온다며 저항하고, 세례요한 제자형은 변화가 너무 더디다며 절망한다 — 완전주의는 세례요한 제자형의 조급함이 교리로 굳은 것이다.</p>
+<p>성화는 죽을 때까지 계속되는 평생의 길이며, 그 더딤은 실패가 아니라 정상이다. 그렇다고 이 더딤이 방종의 면허가 되지는 않는데, 견인의 확신 — 성화의 노력이 반드시 열매 맺으리라는 보증 — 이야말로 그 노력을 경주하게 하는 최고의 자극이기 때문이다(이 논리는 <a class="wl" href="../../t/%EC%84%B1%EB%8F%84%EC%9D%98%EA%B2%AC%EC%9D%B8/">성도의견인</a>이 상술한다). 왕도는 없으나, 붙드시는 은혜 안에서 오늘도 한 걸음, 다시 한 걸음이다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>성화(하기아스모스)는 두 층위다 — 중생과 동시에 주어지는 지위적 성화(새 지위)와 평생에 걸친 점진적 성화(새 성품). 지위가 먼저 완결되므로, 성화는 지위를 얻으려는 몸부림이 아니라 이미 얻은 지위대로 살려는 몸부림이다.</li>
+<li>변화가 더딘 것은 무대가 표면이 아니라 마음(레브·코일리아)이기 때문이다 — 겉만 바꾸는 외면주의 일곱 변종과 90%의 무의식이 변화를 저지하며, 마음의 상태는 시험(더위)이 와야 열매로 드러난다.</li>
+<li>변화의 기제는 연합 작전이다 — 성령이 누스와 프로네마 사이를 조명해 인사이트를 주시고(지혜의 영·기억의 영), 인간은 말씀을 묵상·반추하여 누스에 저장한다. 성령은 저장된 말씀 위에서만 불을 켜신다.</li>
+<li>성화는 죄 죽임의 싸움(롬 8:13)이며 육체와 성령의 방송 전쟁이다 — 실패의 반복 자체는 성장이 아니고, 고찰을 거쳐 습관화된 것만이 레브에 새겨진다.</li>
+<li>성화의 수단은 말씀·기도(코람데오·"능력이 아니라 도구")·고난(상처 입은 치유자)·공동체이며, 그중 가까운 관계가 마음의 취약점을 드러내는 가장 뜨거운 거울이다("돌아볼 수 있는 것은 나이다").</li>
+<li>성화의 목표는 도덕적 향상 일반이 아니라 그리스도의 형상(엡 4:13·롬 8:29)이며, 그 능력은 자기 개선이 아니라 그리스도와의 연합에서 온다.</li>
+<li>완전주의는 신기루다 — 성화는 왕도 없는 평생의 길이고, 그 더딤은 실패가 아니라 정상이며, 견인의 확신이 방종이 아니라 노력의 최고 자극이 된다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>성령의 조명(누스→프로네마)이 인사이트로 터지는 순간을 신자는 어떻게 촉진하고, 상담·목양 현장에서 프로네마의 실제 변화를 무엇으로 확인하는가 — 내적 역학의 관찰 가능성 문제(<a class="wl" href="../../t/%EB%82%B4%EB%A9%B4%EC%B9%98%EC%9C%A0/">내면치유</a>와 공유).</li>
+<li>"은혜 100% + 노력 100%"의 작동에서 성령의 주도와 인간 의지의 관계를 철학적으로 어떻게 정리하는가 — 양립가능론의 과제(<a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a>·<a class="wl" href="../../t/%EA%B5%AC%EC%9B%90%EB%A1%A0/">구원론</a>과 공유).</li>
+<li>지위적 성화(단번의 구별됨)와 점진적 성화(평생의 변화) 사이에서, 열매가 전혀 없는 신앙을 어떻게 진단하되 그 진단이 새로운 정죄를 낳지 않게 하는가(<a class="wl" href="../../t/%EC%84%B1%EB%8F%84%EC%9D%98%EA%B2%AC%EC%9D%B8/">성도의견인</a>·율법폐기론 경계와의 균형).</li>
+<li>"성화의 연단"이라는 프레임이 학대적·일방적 관계까지 무비판적으로 견디게 하는 신앙적 합리화로 오용될 위험은 어떻게 차단하는가(조성봉 강의가 남긴 질문).</li>
+<li>고난이 성화의 수단이라는 독법이 고난 자체의 무게와 항의(욥의 자리)를 축소할 위험은 어떻게 피하는가(<a class="wl" href="../../t/%EA%B3%A0%EB%82%9C/">고난</a>과 공유).</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EA%B5%AC%EC%9B%90%EB%A1%A0/">구원론</a> — 구원의 서정에서 성화의 위치, 칭의와 성화의 법정적 구분(§6 표), 영화로의 완성. 이 페이지가 다루는 "내적 역학"의 상위 지도.</li>
+<li><a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a> — 은혜 100% + 노력 100%의 신학적 정식(§4), 자기중심성을 녹이는 은혜의 방향(§5). 성화의 "왜"를 담당.</li>
+<li><a class="wl" href="../../t/%EA%B1%B0%EB%A3%A9/">거룩</a> — 카도쉬 개념, 위치적/실존적 거룩, 죄 죽임과 의료 현장의 긍휼의 순종. 성화의 "목표 개념"을 담당.</li>
+<li><a class="wl" href="../../t/%EC%B9%AD%EC%9D%98%EB%A1%A0/">칭의론</a> — 전가된 의와 법정적 선언. 성화가 그 결과이지 원인이 아님을 확정하는 짝.</li>
+<li><a class="wl" href="../../t/%EC%9D%80%ED%98%9C%EC%9D%98%EC%88%98%EB%8B%A8/">은혜의수단</a> — 말씀·성례·기도·권징·구제·전도 등 은혜가 전달되는 통로의 전체 목록.</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EB%8F%84%EC%9D%98%EA%B2%AC%EC%9D%B8/">성도의견인</a> — 붙드시는 은혜와, 견인의 확신이 성화의 자극이 되는 논리.</li>
+<li><a class="wl" href="../../t/%EB%82%B4%EB%A9%B4%EC%B9%98%EC%9C%A0/">내면치유</a> · <a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%ED%9B%88%EB%A0%A8/">제자훈련</a> · <a class="wl" href="../../t/%EC%A0%95%EC%B2%B4%EC%84%B1/">정체성</a> — 마음의 싸움, "형성되어지는 정체성", 변화의 근거로서의 그리스도 안 정체성.</li>
+<li><a class="wl" href="../../t/%ED%9A%8C%EA%B0%9C/">회개</a> · <a class="wl" href="../../t/%EC%88%9C%EC%A2%85/">순종</a> · <a class="wl" href="../../t/%EC%8B%9C%ED%97%98%EA%B3%BC%EC%9C%A0%ED%98%B9/">시험과유혹</a> — 성화의 싸움을 구성하는 인접 실천.</li>
+<li><span class="wl-dead" title="위키 내부 링크">롬8</span> · <span class="wl-dead" title="위키 내부 링크">롬6</span> · <span class="wl-dead" title="위키 내부 링크">엡4</span> · <span class="wl-dead" title="위키 내부 링크">갈5</span> · <span class="wl-dead" title="위키 내부 링크">롬12</span> · <span class="wl-dead" title="위키 내부 링크">렘17</span> — 성화의 핵심 본문 허브.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">로마서8장_01_무정죄가성화가되는과정</span></td>
+<td>설교(권성수)</td>
+<td>하기아스모스, 결정적·위치적 성화 vs 점진적 성화, 성화에서 믿음의 4역할, 수동주의 경계</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">태도고도_07_열매은혜냐노력이냐</span></td>
+<td>설교(권성수)</td>
+<td>카르포스(단수), 육체 vs 성령 방송 전쟁, 마음(장기)/태도(당장), 나젤리 『죄를 끊는 왕도는 없다』</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2015_백일성_성화-구원의-목적</span></td>
+<td>설교(백일성, CMF)</td>
+<td>구원의 세 시제, 성화 5견해와 두 극단, 섭리론 수단(고난·기도·섬김), 코람데오·기도론</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2018_조성봉교수_관계의기술_결혼과성화</span></td>
+<td>강의(조성봉, CMF)</td>
+<td>가정=성화의 연단 장소, 차이를 통한 성화, 변화의 대상은 나, 결혼의 목적론적 전환</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%82%AC%EB%9E%8C%EC%9D%80%EC%96%B4%EB%96%BB%EA%B2%8C%EB%B3%80%ED%99%94%EB%90%98%EB%8A%94%EA%B0%80_%EB%A0%88%EC%9D%B8%ED%8A%B8%EB%A6%BD/">사람은어떻게변화되는가_레인트립</a></td>
+<td>책(레인·트립)</td>
+<td>코일리아·외면주의 7형태·복음적 공백, 누스→프로네마 성령의 조명, C 여인 케이스, 연합작전</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EB%B3%80%ED%99%94%EC%97%90%EB%8C%80%ED%95%9C%EB%AC%B5%EC%83%81%EB%B0%8F%EC%B1%85%EC%A0%95%EB%A6%AC/">변화에대한묵상및책정리</a></td>
+<td>책(아이오그·레인·트립)</td>
+<td>변화에 반응하는 3유형(마태형·바리새인형·세례요한 제자형), 변화의 4차원</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">로마서8장_02_종의영</span></td>
+<td>설교(권성수)</td>
+<td>율법과 성령의 협력(시내산→시온산), 말씀에 대한 반응이라는 영적 생사의 시금석</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EA%B5%AC%EC%9B%90%EB%A1%A0/">구원론</a> · <a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a> · <a class="wl" href="../../t/%EA%B1%B0%EB%A3%A9/">거룩</a></td>
+<td>확정판 허브</td>
+<td>서정·법정적 구분 / 은혜100%노력100% 정식 / 거룩 개념·의료 적용의 위임 출처</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>📖 기존 노트 계승: <span class="wl-dead" title="위키 내부 링크">사람은 어떻게 변화되는가?(New)</span> · <span class="wl-dead" title="위키 내부 링크">마음의건강강의</span> (누스→성령→카르디아 구조)</p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/조직신학</span><span>#discipline/구원론</span><span>#topic/성화</span><span>#topic/성령</span><span>#topic/변화</span><span>#topic/제자도</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

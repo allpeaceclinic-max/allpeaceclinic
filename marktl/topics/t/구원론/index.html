@@ -1,0 +1,396 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>구원론 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:226">조직신학·교리</span><span class="date">2026-07-10</span></div>
+  <h1 class="note-title">구원론</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>구원론(Soteriology)은 죄인이 어떻게 구원에 이르는가를 다루는 <a class="wl" href="../../t/%EC%A1%B0%EC%A7%81%EC%8B%A0%ED%95%99/">조직신학</a>의 분야다. 이 물음은 둘로 갈라진다. 그리스도께서 십자가와 부활로 무엇을 성취하셨는가(구원의 근거), 그리고 <a class="wl" href="../../t/%EC%84%B1%EB%A0%B9/">성령</a>께서 그 성취를 한 사람의 생애에 어떻게 적용하시는가(구원의 적용). 전자는 <a class="wl" href="../../t/%EC%86%8D%EC%A3%84%EB%A1%A0/">속죄론</a>·<a class="wl" href="../../t/%EC%8B%AD%EC%9E%90%EA%B0%80%EC%8B%A0%ED%95%99/">십자가신학</a>·<a class="wl" href="../../t/%EA%B5%AC%EC%86%8D%EC%8B%A0%ED%95%99/">구속신학</a>이 맡고(<a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EB%A1%A0/">기독론</a>이 그 존재론적 토대다), 이 페이지는 후자 — 구원의 서정(ordo salutis), 곧 부르심에서 영화까지 이어지는 적용의 순서와 구조 — 를 묶는 허브로 선다. 이 볼트에서 구원론의 골격은 이사님의 MBTS 조직신학II 토론 답안(소명·중생과 회심·견인)이 세우고, 그 뼈대에 살을 입히는 것은 권성수 목사의 로마서·야고보서·요한복음 강해이며, 백일성 누가의 CMF 강단은 이 교리를 의료인의 일상으로 착지시킨다. 권성수 목사가 진리 시리즈에서 짚듯 종교들이 결정적으로 갈리는 자리는 "구원자가 누구이고, 구원이 무엇이고, 어떻게 받는가"이며, 기독교의 독특성은 그 세 물음의 답이 처음부터 끝까지 <a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a>라는 데 있다. 구원론은 그 은혜의 해부도다.</p>
+<h2>1. 구원의 서정 — 순서가 있는 은혜</h2>
+<p>구원의 서정(ordo salutis)은 하나의 구원이 한 사람 안에서 펼쳐지는 논리적 순서다. 영원 전 하나님의 예정(<a class="wl" href="../../t/%EC%B9%BC%EB%B9%88%EC%A3%BC%EC%9D%98/">칼빈주의</a>·<a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%A3%BC%EA%B6%8C/">하나님의주권</a>)에서 출발해, 시간 속에서는 부르심으로 시작되어 영화로 완성된다. 이 볼트가 그리는 지도는 다음과 같다.</p>
+<table>
+<thead>
+<tr>
+<th>서정</th>
+<th>성격</th>
+<th>핵심 물음</th>
+<th>상세 페이지</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>소명(부르심)</td>
+<td>보편적 초청과 효력 있는 부르심</td>
+<td>누가 부르시는가</td>
+<td><a class="wl" href="../../t/%EC%9C%A0%ED%9A%A8%EC%A0%81%EC%86%8C%EB%AA%85/">유효적소명</a></td>
+</tr>
+<tr>
+<td>중생</td>
+<td>위로부터의 출생 — 순간적·단독적</td>
+<td>생명이 어떻게 시작되는가</td>
+<td><a class="wl" href="../../t/%EC%A4%91%EC%83%9D/">중생</a> · <a class="wl" href="../../t/%EA%B1%B0%EB%93%AD%EB%82%A8/">거듭남</a></td>
+</tr>
+<tr>
+<td>회심</td>
+<td>회개와 믿음의 돌이킴</td>
+<td>사람은 어떻게 응답하는가</td>
+<td><a class="wl" href="../../t/%ED%9A%8C%EC%8B%AC/">회심</a> · <a class="wl" href="../../t/%EB%AF%BF%EC%9D%8C/">믿음</a> · <a class="wl" href="../../t/%ED%9A%8C%EA%B0%9C/">회개</a></td>
+</tr>
+<tr>
+<td>칭의</td>
+<td>법정적 의의 선언 — 단번</td>
+<td>무엇을 근거로 의로운가</td>
+<td><a class="wl" href="../../t/%EC%B9%AD%EC%9D%98%EB%A1%A0/">칭의론</a> · <a class="wl" href="../../t/%EC%B9%AD%EC%9D%98%EB%A1%A0/">이신칭의</a></td>
+</tr>
+<tr>
+<td>양자</td>
+<td>자녀 삼으심 — 관계적 신분</td>
+<td>나는 누구의 것인가</td>
+<td>(본 페이지 4절)</td>
+</tr>
+<tr>
+<td>성화</td>
+<td>점진적 변화 — 평생</td>
+<td>어떻게 자라는가</td>
+<td><a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a> · <a class="wl" href="../../t/%EA%B1%B0%EB%A3%A9/">거룩</a></td>
+</tr>
+<tr>
+<td>견인</td>
+<td>끝까지 보호하시는 은혜</td>
+<td>구원을 잃을 수 있는가</td>
+<td><a class="wl" href="../../t/%EC%84%B1%EB%8F%84%EC%9D%98%EA%B2%AC%EC%9D%B8/">성도의견인</a></td>
+</tr>
+<tr>
+<td>영화</td>
+<td>완성 — 죄도 없고 짓지도 않음</td>
+<td>구원은 어디서 끝나는가</td>
+<td>(본 페이지 9절)</td>
+</tr>
+</tbody>
+</table>
+<p>같은 지도를 시제로 접으면 세 겹이 된다. 백일성 누가는 대경누가회 강단에서 구원을 과거적 구원(중생·칭의 — 이미 얻음), 현재적 구원(성화 — 지금 이루어 감), 미래적 구원(영화 — 앞으로 완성됨)으로 정리하고, "성화는 우리 구원의 과정이자 목적"이라고 못박는다. 구원은 한 점의 사건이 아니라 세 시제를 사는 동적 과정이라는 것이다.</p>
+<p>다만 이 순서를 다룰 때 볼트가 반복해서 켜는 경고등이 있다. 이사님의 조직신학II 3주 토론이 정리하듯, 서정의 선후는 <strong>논리적 순서이지 모든 사람에게 동일하게 적용되는 시간적 순서가 아니다</strong>. 새 생명은 유아가 복음의 부르심을 듣기도 전에 씨앗으로 심겨질 수 있고, 성인 회심자에게는 중생·유효적 부르심·회심이 사실상 동시에 일어난다. 서정은 시간표가 아니라 은혜의 문법이다. 그렇다면 그 문법의 첫 문장은 무엇인가 — 부르심이다.</p>
+<h2>2. 부르심 — 보편적 초청과 효력 있는 부르심</h2>
+<p>조직신학II 2주 토론은 부르심을 두 겹으로 나눈다. 복음적 소명(외적 부르심)은 구원에 관한 사실과 초청을 담아 <strong>모든 사람에게</strong> — 받아들이지 않는 자를 포함해 — 주어지는 보편적 초청이고, <a class="wl" href="../../t/%EC%9C%A0%ED%9A%A8%EC%A0%81%EC%86%8C%EB%AA%85/">유효적소명</a>(내적 부르심)은 하나님이 택하신 자에게 성령으로 임하는 효력 있는 부르심이다. 전자는 일반적·외적이며 종종 거부당하지만, 후자는 특별하고 내적이며 언제나 유효하여 죄와 비참을 깨닫게 하고 마음을 밝혀 그리스도를 알게 하며 의지를 새롭게 해 믿음에 이르게 한다.</p>
+<p>중요한 것은 둘의 관계다. 유효적 소명은 인간적인 복음 전파를 통해 임하므로, 복음적 소명은 "하나님께서 복음을 유효적으로 만들기 위해 택하신 수단"이며 그 중요성이 축소되어서는 안 된다. 복음의 부르심 없이는 아무도 응답할 수 없고, 유효적 소명 없이는 아무도 실제로 구원에 이르지 못한다 — 하나님의 주권적 선택 교리가 전도를 무력화하는 것이 아니라 도리어 전도를 그 선택의 수단으로 세운다는 것이, 이 두 겹 구조의 실천적 함의다. 그런데 유효적 부르심에 구원에 이르는 믿음으로 응답하려면, 응답할 수 있는 생명이 먼저 있어야 한다. 그래서 서정의 다음 자리는 중생이다.</p>
+<h2>3. 중생 — 위로부터의 출생</h2>
+<p><span class="wl-dead" title="위키 내부 링크">요한복음 3장</span>에서 예수님은 바리새인 중의 지도자요 산헤드린 위원인 니고데모에게 "거듭나지 아니하면 하나님의 나라를 볼 수 없다"고 선언하신다. 권성수 목사는 이 장면에서 중생 교리의 날을 세운다. 종교와 도덕의 정점에 선 VIP도 거듭남 앞에서는 예외가 없다 — 거듭남은 인간 자질의 연장선 위에 있지 않다. 여기 쓰인 헬라어 아노텐(ἄνωθεν)은 "다시"와 "위로부터"의 이중 의미를 갖는데, 니고데모는 "다시"(모태에 두 번 들어가는 것)로만 알아들었고 예수님의 강조점은 "위로부터"(하나님으로부터)에 있었다. 5절의 "물과 성령"을 권 목사는 <span class="wl-dead" title="위키 내부 링크">에스겔 36:25-26</span> — 맑은 물로 죄를 씻고 새 영과 새 마음을 주시는 약속 — 의 성취로 읽는다.</p>
+<blockquote>
+<p>"예수님의 심장을 이식해 주시는 것이 중생이다." — 권성수, 「중생했나요 어떻게 아나요」</p>
+</blockquote>
+<p>중생은 도덕적 개량(self-improvement)이 아니라 생명의 교체(transplantation)라는 것이다. 아기가 제 힘으로 태어나지 못하듯 사람은 스스로 거듭날 수 없으므로, 중생에서 인간은 수동적 수혜자다(단독사역, monergism). 조직신학II 3주 토론은 이를 서정의 언어로 확정한다 — 유효적 소명에 믿음으로 응답하려면 중생이 먼저 있어야 하므로, <strong>중생은 믿음에 논리적으로 선행하는, 하나님이 주시는 순간적 영적 생명의 주입</strong>이다. 그러나 그 순간을 본인이 짚어내지 못할 수 있다. 바람이 어디서 와서 어디로 가는지 몰라도 부는 것은 알듯이(요 3:8), 중생의 시점은 신비에 가려 있어도 중생의 사실은 변화로 확인된다. 옥스퍼드 홀리클럽의 금식과 성경 연구로도 채워지지 않던 웨슬리가 알더스게이트에서 "마음이 이상하게 따뜻해졌다"고 고백한 것, <span class="wl-dead" title="위키 내부 링크">어거스틴</span>이 "집어 들고 읽으라"는 음성에 로마서를 펴고 확신의 빛을 만난 것이 그 표지다. 야고보서 강해에서 권 목사는 여기에 우주적 지평을 더한다 — "진리의 말씀으로 우리를 낳으신"(약 1:18) 하나님은 중생자를 "피조물의 첫 열매"로 세우셨으니, 한 사람의 거듭남은 장차 이루어질 만물 갱신의 첫 수확이라는 것이다. 이 씨앗이 자라 밖으로 드러나는 자리가 회심이다.</p>
+<h2>4. 회심 — 종의 영을 지나 양자의 영으로</h2>
+<p>중생이 하나님 쪽에서 일어나는 은밀한 출생이라면, 회심은 사람 쪽에서 경험되는 돌이킴 — <a class="wl" href="../../t/%ED%9A%8C%EA%B0%9C/">회개</a>(메타노이아, μετάνοια)와 <a class="wl" href="../../t/%EB%AF%BF%EC%9D%8C/">믿음</a>의 결합이다. 권성수 목사의 <span class="wl-dead" title="위키 내부 링크">로마서 8:15</span> 강해는 이 이행의 내면 풍경을 정밀하게 그린다. "다시 무서워하는 종의 영을 받지 아니하고"의 <strong>종의 영</strong>은 불신자의 막연한 공포가 아니라, 성령께서 율법으로 죄인을 찔러 중생 직전에 겪게 하시는 회심의 공포다. 허물과 죄로 죽은 사람은 스스로 안전하다고 착각하므로 지옥의 공포조차 성령의 역사 없이는 오지 않는다. "시내산을 거치지 않고 시온산에 가는 길은 없다" — 율법의 음성을 통과해야 은혜의 산에 이른다.</p>
+<p>그 공포의 끝에서 신자는 <strong>양자의 영</strong>(휘오데시아, πνεῦμα υἱοθεσίας)을 받아 "아빠 아버지"라 부르짖는다. 양자됨은 칭의·중생과 구별되는 구원의 국면으로, 죄인을 단지 용서받은 자가 아니라 하나님의 가족이자 상속자로 받아들이는 법적·관계적 신분 변화다. 서정의 문법으로 말하면, 법정에서 무죄를 선고받은 자(칭의)가 판사의 집으로 입양되는(양자) 셈이다. 한편 대경누가회 강단은 회심에 또 하나의 각도를 더한다 — 회심은 마음의 순간적 변화로 끝나지 않고 직업을 포함한 삶의 전 영역이 다시 정렬되는 과정이라는 것이다(<a class="wl" href="../../t/%ED%9A%8C%EC%8B%AC/">회심</a>). 그렇다면 이 모든 변화의 법적 근거는 무엇인가. 서정의 심장부, 칭의다.</p>
+<h2>5. 칭의 — 요구가 아니라 선물인 의</h2>
+<p>16세기 수도사 <span class="wl-dead" title="위키 내부 링크">루터</span>는 로마의 성당 돌계단을 무릎으로 기어올라도 평안이 없었다. 그가 <span class="wl-dead" title="위키 내부 링크">로마서 1:17</span>의 "하나님의 의"(디카이오쉬네 데우, δικαιοσύνη θεοῦ)에서 발견한 것은 속격의 전환이었다 — 하나님이 <strong>요구하시는</strong> 의가 아니라 하나님이 <strong>주시는</strong> 의. 이사님의 교회사II 정리가 짚듯, 루터가 속했던 아우구스티누스 수도회 신학은 의가 인간 안에 분여(imparted)된다고 보았으나 루터는 이를 전가(imputed)로 바꾸었다. 의는 인간 안에 주입되는 실체가 아니라 하나님이 법률적으로 "의롭다고 여겨 주시는" 선언이라는 것이며, 여기서 <a class="wl" href="../../t/%EC%A2%85%EA%B5%90%EA%B0%9C%ED%98%81/">종교개혁</a>의 이신칭의(sola gratia·sola fide)가 태어났다.</p>
+<p>권성수 목사의 「은혜의 복음」은 이 교리를 회중의 언어로 옮긴 볼트의 대표 본문이다. 칭의(디카이오시스, δικαίωσις)는 "의롭게 만드는" 것이 아니라 "의롭다고 선언하는" 천국 법정의 단번의 행위다. 우리의 죄가 그리스도께 "구좌이체"되어 십자가에서 말소되고 그리스도의 의가 우리에게 넘어오는 이중 전가(<span class="wl-dead" title="위키 내부 링크">고후 5:21</span>)이며, 우리 편에서는 값없이 받지만 예수님은 엄청난 값을 지불하신 선물이다(<span class="wl-dead" title="위키 내부 링크">롬 3:24</span>).</p>
+<blockquote>
+<p>"복음은 요구가 아니라 선물이다. 하나님이 다 이루어 놓고 주시는 의다. … 만약에 상실할 수 있다면 은혜가 아니다." — 권성수, 「은혜의 복음」</p>
+</blockquote>
+<p>그래서 칭의는 상실되지 않는다. 믿는 순간 과거·현재·미래의 죄가 말소되고, 롬 8:1의 "결코 정죄함이 없나니"(우덴 카타크리마, οὐδὲν κατάκριμα)가 신자의 영구한 신분이 된다. "사는 것 보니 호적에서 빼낸다"고 할 수 없고, "죽어봐야 안다"는 가르침은 복된 소식이 아니다. 칭의의 법정적 성격과 전가의 논리는 <a class="wl" href="../../t/%EC%B9%AD%EC%9D%98%EB%A1%A0/">칭의론</a>이, 바울신학 안에서의 위치는 <a class="wl" href="../../t/%EC%B9%AD%EC%9D%98%EB%A1%A0/">이신칭의</a>가 깊이 다룬다. 그런데 바로 이 지점에서 신자의 실존적 물음이 터져 나온다 — 의롭다고 선언받았는데 나는 왜 여전히 죄를 짓는가.</p>
+<h2>6. 칭의와 성화 — 구분되나 분리되지 않는</h2>
+<p>권성수 목사의 로마서 8장 강해 첫 편이 "정교한 수술"이라 부르는 문제가 이것이다. 롬 8:1은 무정죄를 선언하는데 <span class="wl-dead" title="위키 내부 링크">요한일서 1:8</span>은 죄가 없다고 말하면 스스로 속이는 것이라 한다. 두 본문은 모순이 아니라 한 신자의 두 차원이다 — 무정죄는 칭의에 속한 법정의 선언이고, 죄는 성화 과정의 현실이다. 칭의와 성화는 눈과 코처럼 <strong>분리할 수 없으나 구분할 수 있다</strong>.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>칭의</th>
+<th>성화</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>시점</td>
+<td>순간적·단번 (과거)</td>
+<td>점진적·평생 (현재)</td>
+</tr>
+<tr>
+<td>성격</td>
+<td>법정적 선언 — 새 지위</td>
+<td>실제적 변화 — 새 성품</td>
+</tr>
+<tr>
+<td>받는 방식</td>
+<td>수동적 믿음 (오직 은혜)</td>
+<td>능동적 믿음 + 노력</td>
+</tr>
+<tr>
+<td>주체</td>
+<td>하나님 단독사역 (monergism)</td>
+<td>하나님 주권 100% + 인간 노력 100% (synergism)</td>
+</tr>
+</tbody>
+</table>
+<p>이 구분에서 목회적 무기가 나온다. 법정적 죄책감과 관계적 죄책감의 구분이다. 지옥 형벌을 받을 법정적 죄책은 믿는 순간 사라졌으나, 자녀로서 짓는 죄는 아버지와의 관계에 그늘을 드리우므로 회개를 요구한다. 사탄의 참소("너의 죄를 보라, 너는 그리스도인이 아니다")는 칭의 자체를 뒤흔들어 절망으로 몰지만, 신령한 근심(고후 7:10)은 하나님께 가까이 가게 한다.</p>
+<blockquote>
+<p>"칭의의 무정죄는 성화의 죄로 취소되지 않는다. 법정적 무정죄를 필사적으로 붙잡아야 한다." — 권성수, 「무정죄가 성화가 되는 과정」</p>
+</blockquote>
+<p>성화 쪽의 문법은 야고보서·갈라디아서 강해가 채운다. 열매는 은혜 100%이면서 노력 100%다 — 포도나무의 수액이 흘러드는 것은 전적 은혜이지만 "거하라"는 명령형은 순종을 요구한다. 용서의 세계에도 같은 문법이 흐른다. 다윗은 분명히 용서받았으나(칭의) 징계의 아픔은 통과했다(성화의 관계적 질서). 백일성 누가는 이 신인동역의 역설을 빌립보서 2:12-13("두렵고 떨림으로 너희 구원을 이루라 … 행하시는 이는 하나님이시니")으로 봉합하면서, 성화론이 빠지기 쉬운 두 극단 — 은혜를 핑계 삼은 방종(반율법주의)과 행위를 구원 조건으로 되돌리는 율법화(신율법주의) — 을 함께 경계한다. 요컨대 성화는 칭의의 결과이지 원인이 아니다. 우리는 의롭게 되었기 때문에 거룩해지려 몸부림치는 것이지, 몸부림쳐서 의롭게 되는 것이 아니다. 변화의 내적 역학은 <a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a>가, 그 목표는 <a class="wl" href="../../t/%EA%B1%B0%EB%A3%A9/">거룩</a>이, 통로는 <a class="wl" href="../../t/%EC%9D%80%ED%98%9C%EC%9D%98%EC%88%98%EB%8B%A8/">은혜의수단</a>이 다룬다. 그런데 성경 자체가 이 정리에 시비를 거는 듯한 본문을 품고 있다 — "행함으로 의롭다 하심을 받고 믿음으로만은 아니니라."</p>
+<h2>7. 행함이 있어야 — 야고보와 바울의 화해</h2>
+<p><span class="wl-dead" title="위키 내부 링크">야고보서 2:24</span>와 <span class="wl-dead" title="위키 내부 링크">로마서 3:28</span>은 정면충돌처럼 보인다. 권성수 목사의 야고보서 강해 「행함이 있어야 생생신앙」은 이 충돌을 같은 동사의 다른 초점으로 푼다. 두 사도가 쓴 디카이오오(δικαιόω)는 같은 단어지만 가리키는 자리가 다르다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>바울 (롬 3:28)</th>
+<th>야고보 (약 2:24)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>시점</td>
+<td>믿는 순간</td>
+<td>믿는 생활</td>
+</tr>
+<tr>
+<td>국면</td>
+<td>칭의</td>
+<td>성화</td>
+</tr>
+<tr>
+<td>법정</td>
+<td>하나님 앞</td>
+<td>사람들 앞</td>
+</tr>
+<tr>
+<td>초점</td>
+<td>그리스도인이 되는 것</td>
+<td>그리스도인으로 사는 것</td>
+</tr>
+<tr>
+<td>아브라함의 증거</td>
+<td>창 15장 — 별을 보고 믿음</td>
+<td>창 22장 — 이삭을 바치는 행위</td>
+</tr>
+</tbody>
+</table>
+<p>야고보가 겨냥한 것은 행위 구원이 아니라 죽은 믿음이다. 입술로만 믿는 신앙은 적거나 설익은 믿음이 아니라 시체 같은 믿음이고, 지식으로만 아는 신앙은 귀신들도 가진 신앙이다 — 귀신도 하나님이 한 분인 줄 알고 떤다. 열매가 전혀 없는 것은 열매의 문제가 아니라 나무와 뿌리의 문제다.</p>
+<blockquote>
+<p>"우리는 선을 행하기 위해서 구원을 받는 것이다. 구원을 위해서 선을 행하는 것이 아니다. Saved not by works, but for works!" — 권성수, 「카톨릭 어떻게 볼 것인가」</p>
+</blockquote>
+<p>행위는 구원의 원인이 아니라 목적이자 증거라는 이 공식이, 바울의 이신칭의와 야고보의 생생신앙을 한 손에 쥐게 한다. 그리고 바로 이 "믿음과 행위의 자리"야말로, 교회사에서 칭의 논쟁이 갈라져 온 단층선이다.</p>
+<h2>8. 칭의를 둘러싼 대화 — 가톨릭, 새관점, 삼중 칭의</h2>
+<p>칭의 논쟁을 볼트 자료로 정리하면 쟁점은 결국 하나로 수렴한다 — <strong>확신의 시제</strong>, 곧 "나는 지금 의롭다고 확신할 수 있는가, 아니면 끝까지 가봐야 아는가"이다.</p>
+<p>가톨릭과 개신교의 차이가 첫 단층이다. 권성수 목사는 2014년 교황 방한 정국에서 두 전통을 다섯 쟁점(성경관·구원관·교황권·마리아·연옥)으로 대비하며, 구원관의 핵심을 내재적 의(inherent righteousness — 믿음과 성례·선행으로 인간 안에 형성되는 의)와 전가된 의(imputed righteousness — 그리스도의 의가 법정적으로 돌려지는 것)의 대비로 요약한다. 볼트의 강단은 분명하게 종교개혁 편에 서지만, 정죄의 자리는 피한다. 같은 설교가 "가톨릭 안에도 구원받은 신자가 있다. 반대로 개신교 안에도 이단과 오류가 있다"고 양방향으로 말하고, 야고보서 강해에서는 가난한 자를 돌보고 권력과 야합하지 않는 가톨릭의 실천을 "개신교 지도자들이 부끄러울 만큼" 존경할 만하다고 인정한다. 두 전통이 지키려는 관심도 다르게 읽을 수 있다 — 개신교가 확신의 근거(전가)를 지키려 한다면, 가톨릭의 관심은 실제 성결이며, 개신교는 그 정당한 관심을 성화론으로 끌어안아야 한다는 과제가 남는다.</p>
+<p>두 번째 단층은 20세기의 새관점(New Perspective)이다. 샌더스의 언약적 율법주의에서 던·라이트로 이어진 이 흐름은 칭의를 "어떻게 들어가는가"(구원론)에서 "누가 들어가 있는가"(<a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%A1%A0/">교회론</a>)의 문제로 옮겼다. 권 목사는 이를 단순 정죄하지 않고 검토한 뒤, 칭의의 믿음을 수동적 의의 전가가 아니라 능동적 언약 신실성으로 바꾸면 결국 행위가 칭의에 개입한다는 점을 비판한다. <span class="wl-dead" title="위키 내부 링크">김세윤</span>의 삼중 칭의(과거·현재·미래의 칭의)에 대해서도 같은 결이다 — 로마서("믿음으로", <span class="wl-dead" title="위키 내부 링크">롬 5:1</span>)와 야고보서("행함으로")를 통합한 것은 장점이나, 최후 심판 때에야 칭의가 확인된다면 지금의 구원의 확신이 흔들린다는 것이다. "무정죄가 미래로 미뤄지면 현재의 확신은 불가능해진다" — 볼트의 칭의 변증은 학설 대결이기 전에 목회적 사활의 문제로 전개된다. 그렇다면 그 확신은 끝까지 유지되는가. 서정의 마지막 두 정거장이 답한다.</p>
+<h2>9. 견인과 영화 — 붙드시는 은혜, 완성될 구원</h2>
+<p><a class="wl" href="../../t/%EC%84%B1%EB%8F%84%EC%9D%98%EA%B2%AC%EC%9D%B8/">성도의견인</a>은 중생하고 유효하게 부르심을 받은 자가 때로 죄에 빠질지언정 그 신분에서 완전히 타락해 구원을 상실하는 일은 없다는 교리다. 조직신학II 4주 토론이 정리하는 핵심 논리는 두 가지다. 첫째, 견인은 믿음을 떠난 보호가 아니라 <strong>믿음을 통한 보호</strong>다 — "끝까지 견인한다"는 말씀과 "평생 계속 믿으라"는 말씀은 모순이 아니라 한 묶음이다. 둘째, <span class="wl-dead" title="위키 내부 링크">히브리서 3:14</span>의 "끝까지 견고히 잡으라"는 지금 믿는 자에게 미래의 배교를 걱정시키려는 것이 아니라 떠나는 자들을 향한 경고이며, 끝까지 견디는 것은 확신의 조건이 아니라 참된 믿음의 <strong>증거</strong>다. 떠난 자를 두고 알미니안은 "한때 그리스도인이었으나 이제 아니다"라고 읽고 칼빈주의는 "본래 참된 그리스도인이 아니었다"고 읽지만(<span class="wl-dead" title="위키 내부 링크">요일 2:19</span>의 "우리에게서 나갔으나 우리에게 속하지 아니하였나니"), 그런 자에게 돌아와 구원을 받으라고 권면해야 한다는 실천적 결론은 같다. 권성수 목사는 요한일서 강해에서 이 경계선을 "사망에 이르는 죄", 곧 배교로 확정한다 — 진짜 믿는 사람은 배교할 수 없으나, 가짜로 믿은 사람은 배교할 수 있다.</p>
+<p>견인 교리가 방종을 낳으리라는 반론에 대한 답도 준비되어 있다. 성화의 노력이 성공하리라는 확신이야말로 그 노력을 경주하게 하는 최고의 자극이라는 것이다.</p>
+<blockquote>
+<p>이 교리는 "큰 위로와 능력의 근원, 즉 감사에 대한 자극, 자기 헌신의 동기, 위험시에는 불기둥"이다. — 호비(Hovey), 조직신학II 4주 토론에서 재인용</p>
+</blockquote>
+<p>서정의 종착역은 영화(glorification)다. 권성수 목사의 정의로는 "죄도 없고 짓지도 않는 상태", 곧 성화가 완성되고 몸의 <a class="wl" href="../../t/%EB%B6%80%ED%99%9C/">부활</a>로 전 존재가 그리스도의 형상에 이르는 미래적 구원이다. 그 보증은 이미 주어져 있다 — 중생자가 "피조물의 첫 열매"(약 1:18)라면, 첫 열매는 뒤따를 추수, 곧 새 하늘과 새 땅의 만물 갱신을 보장하기 때문이다. 영화는 신자의 <a class="wl" href="../../t/%EC%A2%85%EB%A7%90%EB%A1%A0/">종말론</a>적 소망의 근거이며, 서정의 처음(부르심)과 끝(영화)이 모두 하나님의 손에 있다는 사실이 이 여정 전체를 은혜로 만든다. 로마서 8장 강해의 결구가 구원론 전체의 결구가 되는 이유다 — "결코 정죄함이 없나니, 확신, 또 확신, 또 확신."</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>구원의 서정은 시간표가 아니라 은혜의 문법이다 — 논리적 순서(소명→중생→회심→칭의→양자→성화·견인→영화)를 획일적 시간 순서로 못박으면, 유아기의 은밀한 중생과 성인의 동시적 회심을 설명할 수 없다.</li>
+<li>구원은 세 시제를 산다 — 이미(중생·칭의), 지금(성화), 아직(영화). 성화는 구원의 과정이자 목적이다.</li>
+<li>칭의는 단독사역(monergism), 성화는 은혜 100% + 노력 100%의 동역(synergism) — 이 구분이 무너지면 방종(반율법주의)이나 율법화(신율법주의)로 기운다.</li>
+<li>법정적 죄책과 관계적 죄책의 구분이 확신의 열쇠다 — 칭의의 무정죄는 성화의 죄로 취소되지 않으며, 사탄의 참소와 신령한 근심은 그 열매(절망인가 회개인가)로 구별된다.</li>
+<li>행위는 구원의 원인이 아니라 목적이자 증거다(saved not by works, but for works) — 바울과 야고보는 같은 디카이오오를 다른 법정(하나님 앞/사람 앞)에서 말한다.</li>
+<li>볼트의 칭의 변증(가톨릭·새관점·삼중 칭의)을 관통하는 쟁점은 확신의 시제다 — 무정죄가 미래로 미뤄지면 현재의 확신이 무너진다.</li>
+<li>견인은 믿음을 통한 보호이며, 끝까지 견딤은 확신의 조건이 아니라 참 믿음의 증거다 — 그래서 견인의 확신은 방종이 아니라 성화의 최고 자극이 된다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>칭의와 성화의 "분리 불가·구분 가능"의 인식론 — 열매가 전혀 없는 믿음을 "가짜이거나 중병"이라 진단할 때, 그 판별 기준은 무엇이며 이 진단이 새로운 불안을 낳지 않으려면 어떻게 설교해야 하는가(율법폐기론 경계와 확신의 균형).</li>
+<li>칭의의 영구성과 종말론적 차원의 통합 — 최종 심판에서 성화의 열매가 "확인"된다는 읽기를 배제하면서, 성경의 미래적 칭의 언어를 어떻게 소화할 것인가.</li>
+<li>가톨릭의 정당한 관심(실제 성결)을 개신교 칭의론은 성화론으로 충분히 끌어안고 있는가 — 전가와 내재적 변화의 관계, 나아가 그리스도와의 연합 안에서의 통합 가능성.</li>
+<li>중생이 믿음에 논리적으로 선행한다는 교리와, 회심 현장에서 "믿으라"고 호소하는 설교의 언어는 어떻게 정합적으로 만나는가.</li>
+<li>유아세례와 침례의 차이는 유아기 "중생의 씨앗" 이해와 맞물려 구원 이해에 어떤 영향을 미치는가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%9C%A0%ED%9A%A8%EC%A0%81%EC%86%8C%EB%AA%85/">유효적소명</a> · <a class="wl" href="../../t/%EC%A4%91%EC%83%9D/">중생</a> · <a class="wl" href="../../t/%EA%B1%B0%EB%93%AD%EB%82%A8/">거듭남</a> · <a class="wl" href="../../t/%ED%9A%8C%EC%8B%AC/">회심</a> · <a class="wl" href="../../t/%EC%B9%AD%EC%9D%98%EB%A1%A0/">칭의론</a> · <a class="wl" href="../../t/%EC%B9%AD%EC%9D%98%EB%A1%A0/">이신칭의</a> · <a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a> · <a class="wl" href="../../t/%EC%84%B1%EB%8F%84%EC%9D%98%EA%B2%AC%EC%9D%B8/">성도의견인</a> — 서정 각 정거장의 상세 페이지.</li>
+<li><a class="wl" href="../../t/%EC%86%8D%EC%A3%84%EB%A1%A0/">속죄론</a> · <a class="wl" href="../../t/%EC%8B%AD%EC%9E%90%EA%B0%80%EC%8B%A0%ED%95%99/">십자가신학</a> · <a class="wl" href="../../t/%EA%B5%AC%EC%86%8D%EC%8B%A0%ED%95%99/">구속신학</a> · <a class="wl" href="../../t/%EC%86%8D%EC%A3%84/">속죄</a> — 구원의 근거(그리스도의 성취). 적용(본 페이지)과 짝을 이룬다.</li>
+<li><a class="wl" href="../../t/%EC%B9%BC%EB%B9%88%EC%A3%BC%EC%9D%98/">칼빈주의</a> · <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%A3%BC%EA%B6%8C/">하나님의주권</a> — 예정과 불가항력적 은혜, 견인의 신학적 토대.</li>
+<li><a class="wl" href="../../t/%EA%B1%B0%EB%A3%A9/">거룩</a> · <a class="wl" href="../../t/%EC%9D%80%ED%98%9C%EC%9D%98%EC%88%98%EB%8B%A8/">은혜의수단</a> — 성화의 목표와 통로.</li>
+<li><a class="wl" href="../../t/%EC%A2%85%EA%B5%90%EA%B0%9C%ED%98%81/">종교개혁</a> · <a class="wl" href="../../t/%EB%B0%94%EC%9A%B8%EC%8B%A0%ED%95%99/">바울신학</a> · <a class="wl" href="../../t/%EB%B3%B5%EC%9D%8C/">복음</a> — 이신칭의의 역사적·석의적 뿌리.</li>
+<li><a class="wl" href="../../t/%EC%A2%85%EB%A7%90%EB%A1%A0/">종말론</a> · <a class="wl" href="../../t/%EB%B6%80%ED%99%9C/">부활</a> — 영화와 구원의 완성.</li>
+<li><span class="wl-dead" title="위키 내부 링크">롬8</span> · <span class="wl-dead" title="위키 내부 링크">요3</span> · <span class="wl-dead" title="위키 내부 링크">약2</span> — 핵심 본문 허브.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">02주토론_복음적소명과유효적소명</span></td>
+<td>토론 답안(이상협)</td>
+<td>복음적 소명과 유효적 소명의 두 겹 구조</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">03주토론_중생과회심</span></td>
+<td>토론 답안(이상협)</td>
+<td>중생의 논리적 선행, 논리적 순서 vs 시간적 순서</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">04주토론_성도의견인</span></td>
+<td>토론 답안(이상협)</td>
+<td>믿음을 통한 보호, 히 3:14 해석, 방종 반론</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">로마서8장_01_무정죄가성화가되는과정</span></td>
+<td>설교(권성수)</td>
+<td>칭의·성화·영화 구분, 법정적/관계적 죄책, 새관점·김세윤 비판</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">로마서8장_02_종의영</span></td>
+<td>설교(권성수)</td>
+<td>종의 영과 양자의 영 — 회심의 내면 풍경, 양자됨</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2015_은혜의복음</span></td>
+<td>설교(권성수)</td>
+<td>선물로서의 의, 이중 전가, 칭의의 상실 불가</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2014_카톨릭어떻게볼것인가</span></td>
+<td>설교(권성수)</td>
+<td>내재적 의 vs 전가된 의, 가톨릭·개신교 5쟁점, 양방향 균형</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2021_중생했나요어떻게아나요</span></td>
+<td>설교(권성수)</td>
+<td>아노텐, 물과 성령(겔 36), 심장 이식, 바람 비유</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">생생신앙_08_행함이있어야생생신앙</span></td>
+<td>설교(권성수)</td>
+<td>야고보·바울의 디카이오오 화해, 죽은 믿음·귀신의 신앙</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">생생신앙_05_피조물의첫열매</span></td>
+<td>설교(권성수)</td>
+<td>약 1:18 중생, 첫 열매와 만물 갱신(영화의 보증)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">태도고도_07_열매은혜냐노력이냐</span></td>
+<td>설교(권성수)</td>
+<td>칭의 단독사역 vs 성화 신인동역, 은혜 100%+노력 100%</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">교제_12_신자의확신</span></td>
+<td>설교(권성수)</td>
+<td>영생의 확신, 사망에 이르는 죄=배교</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2021_저주축복전환비결</span></td>
+<td>설교(권성수)</td>
+<td>용서의 이중 구조 — 칭의의 무조건성과 성화의 징계</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">진리_구원진리같아달라</span></td>
+<td>설교(권성수)</td>
+<td>구원자·구원·구원 방법 — 기독교 구원의 독특성은 은혜</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2015_백일성_성화-구원의-목적</span></td>
+<td>설교(백일성, CMF)</td>
+<td>구원의 세 시제, 성화 5견해와 두 극단, 빌 2:12-13</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">01주_종교개혁의배경과루터</span></td>
+<td>강의 노트(MBTS)</td>
+<td>분여에서 전가로 — 루터의 이신칭의 발견사</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수_로마서8장강해</span></td>
+<td>시리즈 페이지</td>
+<td>구원의 확신이라는 관통 주제, 시리즈 신학 좌표</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/조직신학</span><span>#discipline/구원론</span><span>#topic/구원의서정</span><span>#topic/칭의</span><span>#topic/성화</span><span>#topic/중생</span><span>#topic/성도의견인</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

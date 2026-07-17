@@ -1,0 +1,221 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>은혜의 수단 (Means of Grace) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:226">조직신학·교리</span><span class="date">2026-07-18</span></div>
+  <h1 class="note-title">은혜의 수단 (Means of Grace)</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>은혜의 수단은 하나님이 그 <a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a>를 성도에게 전달하기 위해 통상적으로 사용하시는 정해진 통로다. 성령은 죄인의 영혼에 직접 역사하실 수도 있지만, 대개는 특정한 방편을 통해 일하기로 하셨다 — 말씀과 성례와 기도가 그 고전적 세 통로이며, 교회는 그 자체로 이 통로들이 작동하는 은혜의 자리다. 이 교리의 핵심 문법은 "수단"이라는 단어에 있다. 은혜의 수단은 은혜를 만들어내는 공장이 아니라 은혜가 흘러오는 관(管)이며, 은혜의 원천은 언제나 하나님이시다.</p>
+<p>이 페이지는 은혜의 수단이라는 범주 전체의 지도를 그린다. 은혜 자체의 문법(값없음·선행성·비상실성)은 <a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a>가, 성찬의 임재론과 성례 신학은 <a class="wl" href="../../t/%EC%84%B1%EC%B0%AC/">성찬</a>과 <a class="wl" href="../../t/%EC%84%B8%EB%A1%80/">세례</a>가, 말씀 묵상의 실천은 <a class="wl" href="../../t/%EB%A7%90%EC%94%80%EB%AC%B5%EC%83%81/">말씀묵상</a>이, 기도의 신학은 <a class="wl" href="../../t/%EA%B8%B0%EB%8F%84/">기도</a>가 상술한다. 여기서는 이 수단들이 어떻게 하나의 범주로 묶이고(1~2), 전통적 목록이 왜 확장되며(3), 그것이 왜 자판기가 아니고(4), 일상의 어디까지 뻗는지(5)를 다룬다. MBTS 조직신학II 6주 토론이 이 글의 일차 자료다.</p>
+<h2>1. 교회, 그 자체가 은혜의 수단이다</h2>
+<p>은혜의 수단을 낱개의 행위로 세기 전에, 조직신학II 6주 토론은 먼저 그 모든 수단이 놓이는 자리를 정한다 — 교회다. 성령을 통해 역사하시는 그리스도께서 <a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%A1%A0/">교회</a>라는 수단으로 택한 자들을 모으시고, 성도를 교화하시며, 자신의 영적인 몸을 세우신다. 그러므로 은혜의 수단은 교회 밖 개인이 홀로 조작하는 장치가 아니라, 그리스도의 몸 안에서 작동하는 그분의 통로다.</p>
+<p>이 전제가 왜 중요한가. 은혜의 수단을 개인 경건의 도구 목록으로만 읽으면, 그것은 곧 "내가 은혜를 끌어내는 기술"로 오해된다. 그러나 수단의 주어는 언제나 그리스도이시고 그 무대는 언제나 공동체다. 말씀이 선포되는 곳, 성례가 베풀어지는 곳, 성도가 함께 기도하는 곳 — 곧 교회가 은혜가 배달되는 우편함이다.</p>
+<h2>2. 개혁주의 3대 수단 — 말씀·성례·기도</h2>
+<p>개혁주의 전통은 은혜의 통상 수단을 크게 셋으로 정리해 왔다. 말씀 선포와 성례(세례·성찬)와 기도다. 이 셋은 서로 겹치며 하나의 흐름을 이룬다 — 말씀이 믿음을 세우고, 성례가 그 믿음을 눈에 보이게 확증하며, 기도가 그 믿음으로 하나님과 교제한다.</p>
+<table>
+<thead>
+<tr>
+<th>수단</th>
+<th>하는 일</th>
+<th>상세 페이지</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>말씀</strong> — 선포와 묵상</td>
+<td>첫 번째 은혜의 수단. 성도를 든든히 세우고 믿음을 낳는다</td>
+<td><a class="wl" href="../../t/%EB%A7%90%EC%94%80%EC%84%A0%ED%8F%AC/">말씀선포</a> · <a class="wl" href="../../t/%EB%A7%90%EC%94%80%EB%AC%B5%EC%83%81/">말씀묵상</a></td>
+</tr>
+<tr>
+<td><strong>성례</strong> — 세례</td>
+<td>그리스도와의 연합을 확신하게 하는 입문의 표지</td>
+<td><a class="wl" href="../../t/%EC%84%B8%EB%A1%80/">세례</a></td>
+</tr>
+<tr>
+<td><strong>성례</strong> — 성찬</td>
+<td>그리스도와의 교제와 성도 상호 연합을 함께 경험하게 함</td>
+<td><a class="wl" href="../../t/%EC%84%B1%EC%B0%AC/">성찬</a></td>
+</tr>
+<tr>
+<td><strong>기도</strong> — 개인·합심</td>
+<td>성령과의 교제, 성령의 역사와 능력을 체험하게 함</td>
+<td><a class="wl" href="../../t/%EA%B8%B0%EB%8F%84/">기도</a></td>
+</tr>
+</tbody>
+</table>
+<p>이 세 수단이 "은혜의 수단"이라 불리는 이유는 분명하다 — 각각이 그리스도의 은혜를 실어 나르기 때문이다. 말씀은 첫 번째 수단으로 믿음의 토대를 놓고, 그 위에 세례가 놓여 연합을 확증하며, 성찬은 그리스도의 식탁에서 교제와 연합을 함께 경험하게 한다. 개신교가 로마 가톨릭의 일곱 성례와 달리 세례와 성찬 둘만을 성례로 인정하는 이유, 그리고 성찬의 임재를 둘러싼 네 견해는 <a class="wl" href="../../t/%EC%84%B1%EC%B0%AC/">성찬</a>이 상술한다.</p>
+<h2>3. 전통적 삼요소를 넘어서 — 확장되는 목록</h2>
+<p>교회사에는 은혜의 수단을 말씀·세례·성찬 셋으로 제한하고 나머지를 그 2차적 열매로 보는 학자들이 있었다. 그러나 6주 토론은 그렇게 좁힐 필요가 없다고 분명히 선을 긋는다. 교인 전체가 드리는 집단 <a class="wl" href="../../t/%EA%B8%B0%EB%8F%84/">기도</a>와 중보기도는 성령의 역사와 능력을 체험하게 하고, 영으로 드리는 참된 <a class="wl" href="../../t/%EC%98%88%EB%B0%B0/">예배</a>는 하나님의 임재와 영적 통찰을 준다. <a class="wl" href="../../t/%EA%B6%8C%EC%A7%95/">교회 권징</a>은 성도를 순결하게 하며 화해와 순종의 삶으로 이끄는 방식으로 은혜를 매개하고, <a class="wl" href="../../t/%EA%B5%AC%EC%A0%9C/">구제</a>는 받는 이의 필요를 채우는 동시에 베푸는 이에게 감사와 믿음을 갖게 한다. 교회 안에서 사용되는 <a class="wl" href="../../t/%EC%98%81%EC%A0%81%EC%9D%80%EC%82%AC/">영적은사</a>와 성도의 <a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%B2%B4/">교제</a>를 통해 사랑이 체험되고, <a class="wl" href="../../t/%EC%A0%84%EB%8F%84/">전도</a>는 구원의 은혜를 불신자에게 전하면서 전하는 자에게도 성령의 임재를 체험하게 하는 이중의 통로가 된다.</p>
+<p>이 확장은 개혁주의에만 있는 것이 아니다. <a class="wl" href="../../t/%EA%B0%90%EB%A6%AC%EA%B5%90/">웨슬리 전통</a>은 은혜의 수단을 더 넓게 열어, 이를 '경건의 행위(works of piety)'와 '자비의 행위(works of mercy)'로 나누어 이해했다. 기도·성경·성찬·금식·신자의 교제 같은 경건의 행위뿐 아니라, 굶주린 자를 먹이고 병든 자를 돌보고 갇힌 자를 찾는 자비의 행위 자체가 하나님의 은혜를 경험하는 수단이라는 것이다. 개혁주의의 확장 목록(구제·전도)과 웨슬리의 자비의 행위가 같은 방향을 가리킨다 — 은혜의 수단은 예배당 안에만 갇히지 않는다.</p>
+<h2>4. 수단이지 자판기가 아니다 ⚖️</h2>
+<p>은혜의 수단 교리는 양쪽 벼랑 사이의 좁은 길을 걷는다. 6주 토론의 결론이 그 길을 못박는다 — 이 모든 수단은 "믿음과 순종으로 행해져야 하며, 성령께서 그것을 행하는 사람들을 도우신다는 증거를 간절히 추구해야 한다." 은혜의 수단은 형식을 갖춘다고 저절로 작동하는 기계적 절차가 아니다.</p>
+<table>
+<thead>
+<tr>
+<th>벼랑</th>
+<th>오류</th>
+<th>무엇을 잃는가</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>의식주의</td>
+<td>수단을 행하기만 하면 은혜가 자동으로 주입된다(ex opere operato)</td>
+<td>믿음과 순종이라는 인격적 응답이 사라지고, 수단이 주술이 된다</td>
+</tr>
+<tr>
+<td>수단 경시</td>
+<td>성령이 직접 역사하시니 수단은 불필요하다</td>
+<td>하나님이 정하신 통상 통로를 무시하고, 은혜를 사사화한다</td>
+</tr>
+</tbody>
+</table>
+<p>한쪽 벼랑은 의식주의다 — 성례에 참여하고 예배에 출석하기만 하면 은혜가 자동으로 채워진다고 여기는 것이다. <a class="wl" href="../../t/%EC%84%B1%EC%B0%AC/">성찬</a> 페이지가 "합당하지 않게 먹음"을 자격 심사가 아니라 분별의 문제로 읽어낸 것이 이 오류를 겨눈다. 다른 쪽 벼랑은 수단 경시다 — 성령이 직접 마음에 역사하시니 정해진 통로 따위는 부차적이라고 여기는 것이다. 6주 토론이 "성령이 직접 역사하실 수도 있지만" 통상적으로는 수단을 통해 일하신다고 균형을 잡는 이유가 여기 있다. 두 벼랑 사이의 좁은 길은 <a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a> 자체의 문법과 정확히 겹친다 — 은혜는 값없이 주어지되 값싸지 않으며, 수단은 은혜를 받는 통로이되 은혜를 사는 값이 아니다. 물이 수도관을 통해 오지만 수도관이 물을 만들지 않듯, 은혜는 수단을 통해 오지만 수단이 은혜를 만들지 않는다.</p>
+<h2>5. 일상의 은혜의 수단 — 공동체와 고난도 통로인가</h2>
+<p>은혜의 수단 목록이 예배·구제·전도로 확장된다면, 그 경계는 어디까지인가. 6주 토론이 드러낸 한 가지 구조가 그 답의 방향을 준다 — 각 수단은 종종 받는 자만이 아니라 베푸는 자에게도 은혜를 되돌려주는 이중 구조를 갖는다. 구제는 받는 이의 필요를 채우면서 주는 이에게 감사를 낳고, 전도는 듣는 이에게 복음을 전하면서 전하는 이에게 성령의 임재를 체험하게 한다. 은혜의 수단은 일방향의 배급이 아니라 순환하는 흐름이다.</p>
+<p>이 구조가 열어 두는 물음이 있다. <a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%B2%B4/">성도의 교제</a>가 은혜의 수단이라면, 함께 견디는 공동체의 삶 전체가 통로일 수 있다. 나아가 고난은 은혜의 수단인가. <a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a> 페이지가 "위기 속에 숨은 은혜"를 말하듯, 하나님이 최악의 상황 속에서도 막아 주시고 남겨 주신 것을 은혜라 부른다면, 고난 역시 하나님을 만나는 통로일 수 있다. 다만 볼트는 이 확장을 신중하게 다룬다 — 고난 자체가 은혜를 자동으로 배달하는 것이 아니라, 믿음과 순종으로 통과할 때 비로소 통로가 된다는 4절의 원리가 여기서도 유효하기 때문이다. 일상의 은혜의 수단은 목록의 문제가 아니라 시선의 문제다. 말씀·성례·기도라는 정해진 통로를 성실히 지나는 사람에게, 공동체와 노동과 고난까지 은혜의 관으로 보이기 시작한다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>은혜의 수단은 은혜를 만드는 공장이 아니라 은혜가 흘러오는 관이다 — 원천은 언제나 하나님이시고, 수단은 통로일 뿐이다.</li>
+<li>모든 수단은 교회 안에서 작동한다 — 낱개의 개인 기술이 아니라 그리스도의 몸 안에서 그분이 사용하시는 통로다. 교회 자체가 은혜의 우편함이다.</li>
+<li>전통적 삼요소(말씀·세례·성찬)로 좁히는 관점을 볼트는 명시적으로 거부하고, 기도·예배·권징·구제·영적 은사·성도의 교제·전도로 확장한다. 웨슬리 전통은 이를 경건의 행위와 자비의 행위로 넓힌다.</li>
+<li>은혜의 수단은 자판기가 아니다 ⚖️ — 의식주의(자동 주입)와 수단 경시(통로 무시)의 두 벼랑 사이에서, 믿음과 순종이라는 인격적 응답 위에서만 성령이 사용하신다.</li>
+<li>각 수단은 이중 구조를 갖는다 — 구제·전도처럼 받는 자만이 아니라 베푸는 자에게도 은혜가 되돌아온다. 은혜의 수단은 배급이 아니라 순환하는 흐름이다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>전통적 삼요소(말씀·세례·성찬)만 인정하는 입장과 폭넓게 인정하는 입장 사이의 신학사적 논쟁은 구체적으로 어떤 교단·학자 간의 차이인가.</li>
+<li>개인 차원의 은혜의 수단(개인 경건)과 교회 공동체 차원의 은혜의 수단은 어떻게 구분되고 연결되는가.</li>
+<li>고난·노동·공동체의 삶을 은혜의 수단이라 부를 때, 그 확장이 정해진 통로(말씀·성례·기도)의 우선성을 흐리지 않으려면 어떤 경계가 필요한가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a> — 은혜 자체의 문법(값없음·선행성·비상실성)과 "은혜의 통로" 축. 이 페이지의 상위 개념.</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EC%B0%AC/">성찬</a> · <a class="wl" href="../../t/%EC%84%B8%EB%A1%80/">세례</a> — 성례의 신학. 임재론과 성례의 표지.</li>
+<li><a class="wl" href="../../t/%EB%A7%90%EC%94%80%EC%84%A0%ED%8F%AC/">말씀선포</a> · <a class="wl" href="../../t/%EB%A7%90%EC%94%80%EB%AC%B5%EC%83%81/">말씀묵상</a> — 첫 번째 은혜의 수단, 선포와 되씹음.</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%84/">기도</a> — 성령과의 교제로서의 은혜의 수단.</li>
+<li><a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%A1%A0/">교회론</a> — 은혜의 수단이 작동하는 공동체적 틀.</li>
+<li><a class="wl" href="../../t/%EA%B6%8C%EC%A7%95/">권징</a> · <a class="wl" href="../../t/%EA%B5%AC%EC%A0%9C/">구제</a> · <a class="wl" href="../../t/%EC%98%81%EC%A0%81%EC%9D%80%EC%82%AC/">영적은사</a> · <a class="wl" href="../../t/%EC%A0%84%EB%8F%84/">전도</a> · <a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%B2%B4/">공동체</a> — 확장된 은혜의 수단 목록.</li>
+<li><a class="wl" href="../../t/%EA%B0%90%EB%A6%AC%EA%B5%90/">감리교</a> — 웨슬리 전통의 경건의 행위·자비의 행위 확장.</li>
+<li><a class="wl" href="../../t/%EC%98%88%EB%B0%B0/">예배</a> — 하나님의 임재를 경험하게 하는 수단.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">06주토론_은혜의수단</span></td>
+<td>대학원 토론 답안</td>
+<td>은혜의 수단 정의, 교회 자체가 수단, 전통적 삼요소 확장 논지, 믿음과 순종의 조건, 이중 구조</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%84%B1%EC%B0%AC/">성찬</a></td>
+<td>위키</td>
+<td>성례의 임재론, "합당하지 않게 먹음"=분별의 문제, 개신교의 두 성례</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a></td>
+<td>위키</td>
+<td>은혜의 문법(값없되 값싸지 않음), 은혜의 통로 축, 위기 속 숨은 은혜</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수</span> · <a class="wl" href="../../t/%EA%B0%90%EB%A6%AC%EA%B5%90/">감리교</a></td>
+<td>인물·위키</td>
+<td>성례론, 웨슬리 전통의 경건의 행위·자비의 행위 확장</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/조직신학</span><span>#성례</span><span>#경건의행위</span><span>#자비의행위</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

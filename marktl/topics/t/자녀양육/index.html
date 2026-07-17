@@ -1,0 +1,414 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>자녀양육 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:25">상담·가정</span><span class="date">2026-04-17</span></div>
+  <h1 class="note-title">자녀양육</h1>
+  
+</header>
+<article class="note">
+<h2>개념 정의</h2>
+<p>하나님이 부모에게 위탁하신 자녀를 말씀 안에서 양육하는 사역.
+단순한 교육이 아닌 영적 형성(spiritual formation)과 관계적 돌봄을 포함한다.
+"마땅히 행할 길을 아이에게 가르치라 그리하면 늙어도 그것을 떠나지 아니하리라" (잠 22:6).</p>
+<h2>이 위키에서의 등장</h2>
+<ul>
+<li><span class="wl-dead" title="위키 내부 링크">부모와자녀</span> — 부모·자녀 주제 설교 클러스터 (40편)</li>
+<li><a class="wl" href="../../t/%EB%B6%80%EB%AA%A8%EA%B5%90%EC%9C%A1/">부모교육</a> — 기독 부모교육 이론 체계 (윤명숙)</li>
+<li><a class="wl" href="../../t/%EA%B0%80%EC%A0%95%EC%82%AC%EC%97%AD/">가정사역</a> — 부부·가정 전반의 사역</li>
+</ul>
+<h3>2024년 자녀양육 시리즈</h3>
+<ul>
+<li><code>자녀양육 2주차</code> — 순종의 본질·선택권·부부 일관성 나눔</li>
+<li><code>자녀양육 3주차</code> — 경청·감정 반영·긍정강화·자연적 결과 나눔</li>
+<li><code>자녀양육 5주차</code> — 책임감 기르기·첫 이벤트·선택권·부부 가치관 차이 나눔</li>
+<li><code>자녀양육 6주차</code> — 규칙 진술·타임아웃·문제 소유 나눔</li>
+<li><code>자녀양육 7주차</code> — 형제자매·비교·양보의 전제·절대적 시간 나눔</li>
+<li><code>자녀양육 8주차</code> — 아이의 분노·부모의 분노·힘겨루기·자녀의 목적 파악 나눔</li>
+<li><code>자녀양육 9주차</code> — 칭찬과 격려·완벽주의 악순환·존재 칭찬·정체성 나눔</li>
+<li><code>자녀양육 10주차</code> — 마무리·부부 관계·가정예배·소그룹 가치·멘토 부재 나눔</li>
+<li><code>자녀양육 APT훈련 1주차</code> — 성경적 양육 4단계·쉐마 교육·부부 일관성·Q&amp;A 13개 · <code>자녀양육 6주차</code> · <code>자녀양육 7주차</code> · <code>자녀양육 8주차</code></li>
+</ul>
+<h3>관련 성경 본문</h3>
+<ul>
+<li><span class="wl-dead" title="위키 내부 링크">잠1</span> — 지혜의 시작, 자녀에게 줄 것</li>
+<li><span class="wl-dead" title="위키 내부 링크">잠4</span> — 아들아 내 말을 들으라</li>
+<li><span class="wl-dead" title="위키 내부 링크">신6</span> — 쉐마: 네 자녀에게 부지런히 가르치라</li>
+<li><span class="wl-dead" title="위키 내부 링크">창17</span> — 언약 공동체와 자녀</li>
+</ul>
+<h2>달란트 발견 — 부모의 욕심과 자녀의 달란트</h2>
+<p><em>(이상협, 인생의 십일조 강의)</em></p>
+<blockquote>
+<p>"부모가 욕심을 내려놓아야 자녀의 달란트가 보인다."</p>
+</blockquote>
+<ul>
+<li>이것도 저것도 가르치다 보면 → 아이가 자기 달란트를 모르는 상황이 됨</li>
+<li>진로 원칙: 잘하는 일(달란트) + 하나님 사랑/이웃 사랑의 관점에 맞는 것</li>
+<li>비전이 없어도 정상 — 아브라함도 갈 바를 알지 못하고 나아갔다 (히 11:8)</li>
+<li>선한 일을 시작하시고 이루시는 분은 하나님이심 (빌 1:6, 딤후 3:16-17)</li>
+</ul>
+<hr />
+<h2>폴 트립 — 십대 양육의 핵심 (위기의 십대 기회의 십대)</h2>
+<ul>
+<li><strong>가정 = 하나님이 주신 우선적 배움의 장</strong> (신6) — 교실은 삶을 재현하지만, 가정은 그 자체가 삶이다</li>
+<li>십대의 3가지 특성(불안감·반항심·세계 확장성) = <strong>하나님이 주신 기회의 문</strong></li>
+<li><strong>부모의 5가지 우상</strong>: 안락함·존경·보답·성공·통제 → 우리의 우상이 기회를 고통으로 보게 만든다</li>
+<li><strong>목표: 행동 규제 X → 마음 변화 O</strong> (눅6:43-45)</li>
+<li>5가지 양육 질문(나단 모델): 상황·감정·행동·동기·결과</li>
+<li>→ <a class="wl" href="../../b/%EC%9C%84%EA%B8%B0%EC%9D%98%EC%8B%AD%EB%8C%80%EA%B8%B0%ED%9A%8C%EC%9D%98%EC%8B%AD%EB%8C%80_%ED%8F%B4%ED%8A%B8%EB%A6%BD/">위기의십대기회의십대_폴트립</a></li>
+</ul>
+<h2>송기태 선교사 — 선교적 가정과 자녀 양육</h2>
+<ul>
+<li>가정 = 보내심 받은 가정 → 의와 공도 행하는 공동체 (창18:19)</li>
+<li>자녀 양육 원리: "티칭을 적게, 본을 많이" — 자녀는 아버지의 어깨 너머로 배운다</li>
+<li>→ <span class="wl-dead" title="위키 내부 링크">송기태</span></li>
+</ul>
+<h2>윤명숙 전도사님 — 청소년 부모 역할</h2>
+<ul>
+<li>부모 유형: 전제형(독재자) / 자유방임형(심부름꾼) / <strong>민주형(한계 안에서의 자유)</strong></li>
+<li>사춘기 = 그동안 부모가 심은 것이 표면적으로 드러나는 시기</li>
+<li>1차: 이해·공감 → 2차: 행동 교정 (순서가 중요)</li>
+<li>선택권 → 자존감 연결; 부모의 눈물의 기도가 자녀에게 가장 큰 자산</li>
+</ul>
+<h2>게리 스몰리 — 자녀의 마음을 여는 열쇠</h2>
+<ul>
+<li><strong>핵심 전제</strong>: 영혼의 열림과 닫힘 — 훈계 기술보다 관계적 연결이 먼저</li>
+<li>부모와의 관계가 자녀의 신념을 지키는 힘</li>
+<li>영혼 닫힘의 징후: 반항·부모 싫어함·방으로 들어감·나쁜 친구</li>
+<li><strong>부모 유형 4가지</strong>: 지배형 / 무관심형 / 관용형 / <strong>사랑과 신념형</strong> (= 윤명숙의 민주형)</li>
+<li>경청은 저절로 되지 않는다 — 훈련된 기술</li>
+<li>→ <a class="wl" href="../../b/%EC%9E%90%EB%85%80%EC%9D%98%EB%A7%88%EC%9D%8C%EC%9D%84%EC%97%AC%EB%8A%94%EC%97%B4%EC%87%A0_%EA%B2%8C%EB%A6%AC%EC%8A%A4%EB%AA%B0%EB%A6%AC/">자녀의마음을여는열쇠_게리스몰리</a></li>
+</ul>
+<h2>이기복 교수 — 자녀 훈련 18계명 (성경적 부모교실)</h2>
+<ul>
+<li><strong>훈계의 목적</strong>: 외적 통제 X → <strong>자기 훈련(self-discipline)</strong> O</li>
+<li>사랑의 기초 먼저: 조건 없는 사랑이 전달된 후에야 훈계가 효력을 가진다 (요일4:18)</li>
+<li>부부 한뜻 + 일관성: 모든 양육자 간에 동일한 메시지</li>
+<li><strong>문제 행동 이면의 4가지 동기</strong>: 사랑·관심 끌기 / 힘겨루기 / 분노 / 능력 부족</li>
+<li>훈계의 가장 강력한 도구 = <strong>부모의 삶</strong> (모델링)</li>
+<li>→ <a class="wl" href="../../b/%EC%9E%90%EB%85%80%ED%9B%88%EB%A0%A818%EA%B3%84%EB%AA%85_%EC%9D%B4%EA%B8%B0%EB%B3%B5/">자녀훈련18계명_이기복</a></li>
+</ul>
+<h2>휴게이트 — 발달 단계별 자립 로드맵 (제멋대로인 요즘아이)</h2>
+<ul>
+<li><strong>핵심 구분</strong>: 훈련(통제) vs 가르침 — 단계가 다르다</li>
+<li>발달 단계 로드맵:</li>
+<li>유아기: 즉각적 경계 ("안돼!!")</li>
+<li>아동기: 이유 + 명령 병행</li>
+<li>청소년기: 자발적 순종으로 전환</li>
+<li>성인기: 자립 (독립 X)</li>
+<li><strong>잘못된 목표</strong>: 독립적 자녀 (자기중심·불안·방어적)</li>
+<li><strong>바른 목표</strong>: 자립적 자녀 (책임·안정감·도덕적 성품)</li>
+<li>→ <a class="wl" href="../../b/%EC%A0%9C%EB%A9%8B%EB%8C%80%EB%A1%9C%EC%9D%B8%EC%9A%94%EC%A6%98%EC%95%84%EC%9D%B4%EB%A7%90%EC%94%80%EC%9C%BC%EB%A1%9C%EC%96%91%EC%9C%A1%ED%95%98%EB%9D%BC_%ED%9C%B4%EA%B2%8C%EC%9D%B4%ED%8A%B8/">제멋대로인요즘아이말씀으로양육하라_휴게이트</a></li>
+</ul>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>부모는 자녀의 소유자가 아닌 청지기 — 하나님께 위탁받은 존재</li>
+<li>훈육(discipline)은 처벌이 아닌 제자 삼기(discipleship)의 연장</li>
+<li>부모 자신의 내면 치유가 건강한 양육의 전제조건 (윤명숙)</li>
+</ul>
+<h3>★ 5저자 통합 명제</h3>
+<blockquote>
+<p><strong>관계(영혼 열림) → 공감·경청 → 마음 변화 → 자기 훈련 → 자립</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>저자</th>
+<th>핵심 개념</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>관계 기반</td>
+<td>게리 스몰리</td>
+<td>영혼의 열림 — 모든 훈계의 전제</td>
+</tr>
+<tr>
+<td>경청·공감</td>
+<td>윤명숙 전도사님</td>
+<td>1차 이해 → 2차 행동 교정</td>
+</tr>
+<tr>
+<td>마음 변화</td>
+<td>폴 트립</td>
+<td>행동 규제 X → 마음 변화 O</td>
+</tr>
+<tr>
+<td>자기 훈련</td>
+<td>이기복</td>
+<td>훈계의 목표 = self-discipline</td>
+</tr>
+<tr>
+<td><strong>발달 단계 로드맵</strong></td>
+<td><strong>휴게이트</strong></td>
+<td><strong>연령별 통제 이양 → 자립</strong></td>
+</tr>
+</tbody>
+</table>
+<p>휴게이트가 추가하는 것: 다른 4저자가 "무엇을·왜"를 말한다면,<br />
+휴게이트는 <strong>"언제·어떤 단계에"</strong> 라는 시간적 차원을 추가한다.</p>
+<h2>문대원 목사 — 순종 훈련과 정의로운 성품 (엡 6:1-4, 2026-05-10)</h2>
+<p><strong>핵심 명제</strong>: 가정은 하나님이 설계하신 권위의 첫 번째 학교. 부모 공경을 통해 순종을 훈련받은 자만이 형통한다.</p>
+<p><strong>부모 공경의 신학적 근거</strong>
+- 십계명 구조: 1~4계명(하나님 관계) → 5계명부터 사람 관계, 그 첫 번째가 부모 공경
+- 신 5:16 — 명령 + 약속의 구조. "그리하면 네 생명이 길고 복을 누리리라"
+- 엡 6:1의 "이것이 옳으니라"는 현실적 이익 때문이 아닌 규범적 명령 — 하나님의 설계에 응답하는 행위</p>
+<p><strong>공경 → 형통의 경로</strong>
+- 성공한 사람들의 공통점: 절제와 자기 훈련
+- 지그 지글러: "훈련은 변화를 바라는 것과 변화를 살아가는 것의 다리"
+- 플라톤: "현명한 마부는 욕망과 복종이라는 두 마리 말을 균형 있게 다룰 줄 안다"
+- 더 큰 권위에 순종함으로써 절제를 배운다. 욕망에 지배 당하지 않게 된다
+- 규범의 두 목적: ①타인에게 피해를 주지 않음(억제) ②정의로운 성품을 함양함(내면화)
+- 천종오 판사: "공동체의 규범(외적)이 개인의 성품(내적)으로 연결될 때 진정한 자유"
+- 딤후 3:2의 말세 현상(불효·불감사·자기애)은 어릴 때 순종 훈련 부재의 결과
+- "세살 버릇 여든까지" = 어릴 때 순종 훈련이 평생의 성품을 결정한다</p>
+<p><strong>부모가 먼저 본이 되어야 한다</strong>
+- 자녀는 말이 아니라 부모의 행동을 보고 따라간다 (잠 22:6)
+- 십일조·감사헌금을 실천하는 부모를 본 자녀는 돈에서 자유해진다 — 신앙 전수는 삶으로 이뤄진다
+- 에드 디너 (145개국 36만명): 신앙인의 기쁨 지수가 더 높음 — 감사할 대상이 있기 때문
+- 자녀에게 올바른 신앙을 전수하는 것이 인생의 목표가 되어야 한다</p>
+<p><strong>훈육 3원칙 (엡 6:4)</strong>
+1. <strong>노엽게 하지 말라</strong> (Goad — 찌르다, 못살게 굴다): 감정을 자녀에게 쏟아내는 것은 위임받은 권위의 남용
+2. <strong>잘못에 비례하라</strong>: 비례를 벗어난 훈육은 억울함을 낳고, 그것이 쌓이면 쓴 마음(bitterness)이 된다. 사랑과 공감 없는 훈육은 쓴 마음을 심는다
+3. <strong>기쁜 순종을 만드는 것은 강요가 아닌 관계</strong>: 사랑하기 때문에, 사랑받았기 때문에, 신뢰하기 때문에, 유익하기 때문에 기쁨으로 순종할 수 있다 (골 3:20)</p>
+<p>하버드 행복 프로젝트 70년 (조지 베일런트): 불행한 유년기 → ①정신질환 위험 증가 ②건전한 여가를 즐기기 어려움 ③자기·세상을 신뢰하지 못함 ④오래된 친구 없이 외로움</p>
+<p><strong>그리스도인의 효도</strong>
+- 유산이 없어도 효도해야 한다 — 세상과 구별되는 거룩함
+- 부모님 건강하실 때 식사 한 끼, 여행 한 번 — 돈 계산 없는 무조건적 사랑
+- 그리스도인은 효도에서도 세상 사람보다 나아야 한다 (잠 23:22)</p>
+<p>→ <span class="wl-dead" title="위키 내부 링크">문대원</span> (2026-05-10 가정의달 시리즈 ②)</p>
+<h2>아이가 자라며 — 영육 통합 양육론</h2>
+<p><em>(이상협, 침산제일교회 강의)</em></p>
+<p><strong>핵심 본문</strong>: 눅 2:52 — "예수는 지혜와 키가 자라가며 하나님과 사람에게 더욱 사랑스러워 가시더라"</p>
+<h3>4차원 성장 모델</h3>
+<table>
+<thead>
+<tr>
+<th>차원</th>
+<th>본문 표현</th>
+<th>현대적 의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>육체</strong></td>
+<td>키가 자라가며</td>
+<td>신체 건강·면역력</td>
+</tr>
+<tr>
+<td><strong>정신</strong></td>
+<td>지혜</td>
+<td>인지·정서·학습</td>
+</tr>
+<tr>
+<td><strong>영적</strong></td>
+<td>하나님에게 사랑스러워</td>
+<td>경건의 습관·기도</td>
+</tr>
+<tr>
+<td><strong>사회적</strong></td>
+<td>사람에게 사랑스러워</td>
+<td>관계·인간친화</td>
+</tr>
+</tbody>
+</table>
+<p>→ WHO의 건강 정의(신체·정신·사회적·영적)와 일치</p>
+<hr />
+<h3>영적 성장 — 경건의 습관 전수</h3>
+<p><strong>말 2:15</strong> — 하나님이 경건한 자손을 원하신다. 신앙의 유산 = 경건의 습관 전수.</p>
+<p><strong>유대인 3가지 기도</strong> (하루의 리듬)</p>
+<table>
+<thead>
+<tr>
+<th>기도</th>
+<th>시간</th>
+<th>족장</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>샤카릿</strong></td>
+<td>아침</td>
+<td>아브라함</td>
+<td>조상을 사랑하신 하나님 찬양</td>
+</tr>
+<tr>
+<td><strong>민카</strong></td>
+<td>오후</td>
+<td>이삭</td>
+<td>자기성찰</td>
+</tr>
+<tr>
+<td><strong>마아리브</strong></td>
+<td>밤</td>
+<td>야곱</td>
+<td>미래를 위한 기도</td>
+</tr>
+</tbody>
+</table>
+<p><strong>아론의 축복기도</strong> (민 6:24-26) — 자기 전에 아버지가 자녀에게 손 얹고 기도하는 전통.</p>
+<p><strong>기도를 심는 원리</strong> (젖 먹이는 과정의 유비)
+- 과잉공급 → 기도 안 함 (모든 것이 충족되어 필요를 모름)
+- 방치 → 기도하나 믿음 없음 (응답 경험이 없음)
+- <strong>때를 따라 돕는 은혜 경험</strong> → 간구하고 도움 요청하는 기도가 자연스럽게 심김</p>
+<hr />
+<h3>육체적 성장 — 면역력과 실천 습관</h3>
+<p><strong>면역 발달 원리</strong>
+- 모성면역: IgG(태반, 3개월까지) → IgA(모유, 6개월까지) → 자체 면역 형성
+- 삼칠일(21일) 문화 = 면역 과학적 근거 (IgG 23일 후 본격 작용)
+- 0~4세: 림프구 우세 시기 = 면역 훈련 기간 (→ 아토피의 과학적 배경)
+- <strong>무균 환경의 역설</strong>: 너무 깨끗한 환경이 오히려 면역 형성을 방해함. 밖에서 노는 것이 가장 중요한 면역 훈련.</p>
+<p><strong>면역 강화 4가지 습관</strong>
+1. <strong>코로 숨쉬기</strong> — 구강 호흡 차단
+2. <strong>잠자기</strong> — 9시 취침 목표. 시 127:2 "하나님이 사랑하는 자에게 잠을 주심" → 두려움 없는 안정감이 숙면의 기반
+3. <strong>먹기</strong> — 잘 씹기, <strong>밥상머리 예배</strong> (식사 자체를 예배로)
+4. <strong>웃음</strong> — 감마인터페론 200배 증가, NK세포 활성화</p>
+<p><strong>잔소리의 의학적 해악</strong>: 10대에게 반복적 잔소리 → 전두엽 발달 저해 → 인내심·책임감 저하.</p>
+<p><strong>"30% 에너지를 남겨라"</strong>: 직장·사역에서 100% 소진하지 말고 퇴근 후 아내·자녀를 위한 에너지를 보존해야 한다.</p>
+<p>→ <a class="wl" href="../../t/%EB%A7%88%EC%9D%8C%EC%9D%98%EA%B1%B4%EA%B0%95/">마음의건강</a> — 면역·수면·웃음의 의학적 근거
+→ <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EA%B5%90%EC%9C%A1/">기독교교육</a> — 언어지능과 암송 훈련의 병행</p>
+<hr />
+<h2>이상협 — 자녀의 변화? 부모의 변화! (청소년 부모학교 5강)</h2>
+<p><em>raw: <code>raw/lectures/keynote/부모교육/5강 자녀의 변화? 부모의 변화! 프린트.md</code></em></p>
+<h3>나아르(נַעַר) — "마땅히 행할 길"의 대상</h3>
+<p>잠 22:6의 '아이'(나아르)는 갓난아기(모세 3개월)부터 혼기 찬 청년(창 34장)까지 포함한다.
+→ 부모 슬하에, 권위 아래 있는 젊은이 전체가 양육의 대상이다.</p>
+<h3>변화가 일어나는 조건 — 소년원의 역설</h3>
+<ul>
+<li>정신과 병원: 돈 받고 치료 / 부모에게 끌려온 아이 → 변화 없음</li>
+<li>소년원 봉사: 아이가 자발적으로 상담 신청 / 돈 없이 들어줌 → 변화함</li>
+<li><strong>결론</strong>: 변화는 강요가 아닌 관계와 자발성에서 시작된다</li>
+<li>문제 청소년은 변한다. 그러나 <strong>부모의 의식이 굳어있어 변하기 어렵다</strong> — 하나님의 은혜가 부모를 먼저 변화시켜야 가정이 바뀐다</li>
+</ul>
+<h3>양육 태도 구체화</h3>
+<table>
+<thead>
+<tr>
+<th>태도</th>
+<th>특성</th>
+<th>영적 형성의 영향</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>과잉보호</strong></td>
+<td>욕구 생기기 전에 미리 채워줌. 결정 경험 없음</td>
+<td>기도하지 않음 — 필요를 모름</td>
+</tr>
+<tr>
+<td><strong>유약</strong></td>
+<td>때 쓰면 들어줌 (과잉보호와의 차이: 요구 후 공급)</td>
+<td>보상만 바라며 삶에 권태·불평</td>
+</tr>
+<tr>
+<td><strong>방치</strong></td>
+<td>울음에 반응하지 않음</td>
+<td>기도하나 믿음 없음 — 응답 경험 없어 40일 금식 후에도 "안 들어주실 것" 확신</td>
+</tr>
+<tr>
+<td><strong>강압</strong></td>
+<td>명령·지시 외 방법을 모름</td>
+<td>소극적·적극적 반항 — 지금 반항이 있다면 강압의 증거</td>
+</tr>
+</tbody>
+</table>
+<h3>한나의 헌신 — 떠나보내기의 원형 (삼상 1-2장)</h3>
+<ul>
+<li>아들 달라고 기도하다 → 하나님의 심정 통함 → "드리겠다" (상식 밖의 헌신)</li>
+<li>젖 뗀 후 드림 → 이후 2남 2녀 추가로 낳음</li>
+<li><strong>핵심 원리</strong>: 하나님이 우리 아이에게 원하시는 것이 있다 — 부모가 원하는 것과 다를 수 있다</li>
+<li>"화살을 쏘면 끝이다" — 방향을 설정하되 쏘고 나면 부모가 통제하지 않는다</li>
+</ul>
+<hr />
+<h2>미해결 질문</h2>
+<ul>
+<li>디지털 시대에 자녀의 정체성을 어떻게 형성할 것인가?</li>
+<li>신앙 전수와 자녀의 자율적 신앙 결정 사이의 균형은?</li>
+</ul>
+</article>
+<div class="tagrow"><span>#자녀양육</span><span>#부모</span><span>#훈육</span><span>#발달</span><span>#가정사역</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

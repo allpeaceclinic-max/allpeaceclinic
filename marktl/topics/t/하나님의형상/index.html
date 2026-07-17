@@ -1,0 +1,304 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>하나님의형상 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:226">조직신학·교리</span><span class="date">2026-07-14</span></div>
+  <h1 class="note-title">하나님의형상</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>하나님의 형상(imago Dei)은 성경이 인간을 정의하는 첫 단어다. 창세기의 창조 기사가 여섯째 날에 이르러 리듬을 바꾸는 지점에서 이 단어가 등장한다 — "하나님이 이르시되 우리의 형상을 따라 우리의 모양대로 우리가 사람을 만들고 … 하나님이 자기 형상 곧 하나님의 형상대로 사람을 창조하시되 남자와 여자를 창조하시고"(창 1:26-27). 다른 피조물이 "그 종류대로" 지어질 때, 오직 사람만이 하나님을 기준으로 지어졌다. 인간은 하나님의 전능성이나 자존성을 공유하지 않지만, 그분의 인격적 특질—갈망하고, 사고하며, 선택하고, 느끼는—을 부여받은 존재다. 제임스 패커의 표현으로 하나님은 "원본을 복제"하셨다.</p>
+<p>그러나 이 한 구절은 정의(定義) 이상이다. 그것은 인간의 존엄과 평등과 인권이 서 있는 신학적 지반이고, 인간이 세상에서 감당할 소명의 근거이며, 타락으로 훼손되었다가 그리스도 안에서 회복되는 구원의 문법이기도 하다. 이 볼트에서 하나님의 형상은 창조신학과 인간론이 만나는 접점에 놓이되, 그 두 페이지가 각각 다루는 창조 질서 전반과 인간 존재의 구조(죄·몸·영혼)는 <a class="wl" href="../../t/%EC%B0%BD%EC%A1%B0%EC%8B%A0%ED%95%99/">창조신학</a>과 <a class="wl" href="../../t/%EC%9D%B8%EA%B0%84%EB%A1%A0/">인간론</a>에 위임하고, 이 글은 "하나님의 형상이라는 교리와 그 함의"에 집중한다.</p>
+<p>이 글은 그 함의를 일곱 겹으로 따라간다. 본문의 두 단어(첼렘·데무트)에서 출발해, 형상을 어떻게 이해할 것인가를 둘러싼 세 견해, 왕의 형상에서 만인의 형상으로 뒤집힌 고대 근동 배경, 타락에 의한 손상과 그리스도 안에서의 회복, 형상이 낳는 인간 존엄과 그 의료적 착지, 형상에서 흘러나오는 소명, 그리고 형상이 완성되는 관계와 공동체의 자리로 내려간다.</p>
+<h2>1. 첼렘과 데무트 — 본문이 고른 두 단어</h2>
+<p>형상 교리의 출발점은 사변이 아니라 본문이다. 창 1:26의 "우리의 형상을 따라 우리의 모양대로"에서 히브리어는 두 단어를 나란히 쓴다 — 첼렘(צֶלֶם, 형상)과 데무트(דְּמוּת, 모양)다. 첼렘은 본래 조각상이나 왕의 상(像)을 가리키는 구체적 단어이고, 데무트는 닮음·유사성을 뜻하는 좀 더 추상적인 말이다. 교회사의 한 갈래(이레나이우스 이래)는 이 둘을 자연적 형상과 초자연적 모양으로 나누어 읽으려 했지만, 히브리 시의 평행법과 창 1:27이 "형상"만 반복한다는 사실은 두 단어가 사실상 하나의 실재를 두 각도에서 부르는 것임을 보여준다. 인간은 하나님을 닮은 그분의 살아 있는 상(像)이다.</p>
+<p>무엇을 닮았는가. <a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%EC%A0%81%EC%9D%B8%EA%B0%84%EC%9D%B4%ED%95%B4/">성경적인간이해</a>가 정리하듯, 패커는 하나님이 인간에게 전능성·자존성 같은 공유 불가능한 속성은 주지 않으셨으나 인격적 특질은 그대로 주셨다고 본다 — 내면의 만족을 향한 깊은 갈망, 세계를 사고하고 평가하는 능력, 목표를 정하고 행동을 선택하는 의지, 그리고 감정이다. 특히 감정은 억압의 대상이 아니라 하나님이 심으신 신호다. 나사로의 무덤에서 우신 슬픔, 성전 장사꾼 앞의 분노, 사역의 기쁨이 모두 형상의 흔적이라면, 인간의 정서 또한 해석되고 반응되어야 할 하나님의 언어다.</p>
+<p>이 닮음은 인간에게만 허락되었다. <a class="wl" href="../../t/%EC%9D%B8%EA%B0%84%EB%A1%A0/">인간론</a>이 이 볼트의 조직신학 토론을 빌려 정리하듯, 하나님이 지으신 모든 피조물 중 오직 사람만이 하나님의 형상대로 지음받아 "하나님을 닮았고 하나님을 대변한다." 형상은 인간을 다른 피조물과 구별하는 표지이자, 하나님을 향해 열려 있고 하나님을 대리하도록 세워진 존재의 방향성이다.</p>
+<h2>2. 형상을 어떻게 이해할 것인가 — 세 견해</h2>
+<p>그렇다면 형상은 인간의 어디에 있는가. <a class="wl" href="../../t/%EC%9D%B8%EA%B0%84%EB%A1%A0/">인간론</a>이 미해결로 남겨둔 이 물음—"하나님의 형상이 구체적으로 인간의 어떤 능력·특질을 가리키는가"—에 신학 전통은 크게 세 방향으로 답해 왔다. 이 볼트의 자료들은 세 답을 각기 다른 자리에서 예시한다.</p>
+<table>
+<thead>
+<tr>
+<th>견해</th>
+<th>형상의 소재</th>
+<th>이 볼트의 근거</th>
+<th>강조점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>구조적(structural)</td>
+<td>이성·의지·감정 등 인간에게 내재한 능력</td>
+<td>패커의 네 인격적 특질(<a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%EC%A0%81%EC%9D%B8%EA%B0%84%EC%9D%B4%ED%95%B4/">성경적인간이해</a>)</td>
+<td>인간 본성 자체의 존엄</td>
+</tr>
+<tr>
+<td>기능적(functional)</td>
+<td>하나님의 통치를 대리하는 역할·직무</td>
+<td>라이트의 왕·제사장 직분(<a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A0%EA%B5%90%EC%84%B8%EC%83%81%EC%9D%84%EB%B0%94%EA%BE%B8%EB%8B%A4_%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%86%A0%ED%8D%BC%EB%9D%BC%EC%9D%B4%ED%8A%B8/">하나님의선교세상을바꾸다_크리스토퍼라이트</a>)</td>
+<td>소명과 <a class="wl" href="../../t/%EC%B2%AD%EC%A7%80%EA%B8%B0/">청지기</a>직</td>
+</tr>
+<tr>
+<td>관계적(relational)</td>
+<td>하나님·타자와 관계 안에 서 있음</td>
+<td>남자와 여자(창 1:27), 삼위일체적 관계성</td>
+<td>공동체와 사랑</td>
+</tr>
+</tbody>
+</table>
+<p>구조적 견해는 형상을 인간이 '가진' 무엇으로 본다. 이성과 자유의지, 갈망과 감정 같은 내적 능력이 하나님을 닮은 지점이라는 것이다. 기능적 견해는 형상을 인간이 '하는' 무엇으로 읽는다 — 크리스토퍼 라이트가 창 1:26-28을 주해하며 강조하듯, 하나님은 인간이 다른 피조물을 다스리는 "기능을 수행하는 능력을 갖출 수 있도록" 형상으로 지으셨고, 그러므로 형상은 곧 위임된 통치의 자격이다. 관계적 견해는 형상을 인간이 '서 있는' 자리로 본다. "남자와 여자를 창조하시고"(창 1:27)라는 선언이 형상을 단수의 개인이 아니라 관계 속의 존재로 규정하며, 이는 홀로 계시지 않고 세 위격의 사랑으로 존재하시는 <a class="wl" href="../../t/%EC%82%BC%EC%9C%84%EC%9D%BC%EC%B2%B4/">삼위일체</a> 하나님을 반영한다.</p>
+<p>이 볼트가 취하는 입장은 셋 중 하나의 배타적 선택이 아니라 상호 보완이다. 형상은 인간이 가진 능력이자(구조), 그 능력으로 감당하는 직무이며(기능), 그 직무를 관계 안에서 수행하는 방식(관계)이다. 세 견해는 형상이라는 하나의 실재가 드리우는 세 그림자이며, 아래의 섹션들은 각각 이 셋을 차례로 따라 내려간다.</p>
+<h2>3. 왕의 형상에서 만인의 형상으로 — 고대 근동 배경</h2>
+<p>기능적 견해를 역사의 지평에 놓으면 성경의 혁명성이 드러난다. 고대 근동에서 "신의 형상"은 특권적 칭호였다. 왕과 파라오만이 신의 형상, 곧 신의 지상 대리자로 불렸고, 나머지 인간은 그 위계의 아래에 놓였다. 인간 창조에 대한 신화들의 서술도 이와 짝을 이룬다. 한영웅 목사가 창 1:26-28 강해에서 아트라하시스 서사시와 창세기를 나란히 세우며 짚듯, 근동 신화에서 인간은 신들의 고된 노역을 대신 떠맡을 노예로 지어졌다 — "세상의 문화에서 일은 하기 싫은 일이고 다른 사람에게 맡기고 싶은 것"이라는 통념의 뿌리가 여기에 있다.</p>
+<p>성경은 이 구도를 정면으로 뒤집는다. 형상은 왕 한 사람의 특권이 아니라 남자와 여자 모두에게, 곧 만인에게 주어진 신분이 되고, 인간 창조의 목적은 신들의 노예가 아니라 하나님의 통치 파트너가 되는 것으로 재정의된다. 한영웅 목사의 표현으로 하나님은 "다스리는 권한을 우리에게 위임"하시고 인간을 "통치의 파트너로 불러" 주셨다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>고대 근동 신화</th>
+<th>창세기 1장</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>형상의 주체</td>
+<td>왕·파라오만 신의 형상</td>
+<td>남자와 여자, 곧 만인</td>
+</tr>
+<tr>
+<td>인간 창조의 목적</td>
+<td>신들의 노역을 대신할 노예</td>
+<td>통치의 파트너, 왕이자 제사장</td>
+</tr>
+<tr>
+<td>존엄의 구조</td>
+<td>계급적(왕 &gt; 노예)</td>
+<td>보편적·평등</td>
+</tr>
+</tbody>
+</table>
+<p>이 전복에서 인간 존엄과 평등의 신학적 근거가 태어난다. 라이트가 창세기 1-2장을 "하나님·땅·인류를 연결하는 위대한 창조의 삼각형"으로 읽으며 도출하는 결론이 바로 그것이다 — "모든 인간이 하나님 형상으로 창조되었다는 사실이 인간의 고결한 삶, 다양한 문화 속에서 모든 인간이 가지는 존엄성 및 평등함"의 토대다. 왕에게만 있던 존엄이 모든 사람에게 확장되는 순간, 형상 교리는 인권의 가장 오래된 원천이 된다. 이 함의가 다음 섹션들에서 손상과 회복, 그리고 진료실로 이어진다.</p>
+<h2>4. 손상과 회복 — 보이지 않는 하나님의 형상이신 그리스도</h2>
+<p>형상이 인간의 영광이라면, 타락은 그 영광의 훼손이다. 죄는 형상을 지우지 못했으나 일그러뜨렸다. 인간은 여전히 하나님의 형상이지만—그래서 살인이 여전히 중죄이고 모든 사람이 여전히 존엄하지만—그 형상은 왜곡되어 하나님을 대리하는 대신 하나님의 자리를 찬탈하려 한다. 다만 이 볼트의 자료들은 손상의 정도를 둘러싼 "전적 부패"와 "형상의 잔존" 사이의 신학적 긴장을 명시적으로 해소하지는 않는다. 확실한 것은 손상이 마지막 말이 아니라는 점이다.</p>
+<p>회복은 한 인격에게서 일어난다. 골로새서 찬가는 그리스도를 "보이지 아니하는 하나님의 형상이시요 모든 피조물보다 먼저 나신 이"(골 1:15)로 선포한다. 인간이 일그러진 형상이라면, 그리스도는 손상되지 않은 참 형상, 곧 형상의 원형이시다. <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EB%A1%A0/">기독론</a>이 정리하듯 이 우주적 그리스도는 개인 구원의 울타리를 넘어 창조 세계 전체를 화목케 하시지만, 형상 교리의 관점에서 그 핵심은 구원이 곧 형상의 회복이라는 등식이다. 정민영은 이를 한 문장으로 못박는다.</p>
+<blockquote>
+<p>"구원은 죄와 타락으로 망가진 하나님의 형상이 회복되는 개념인데, 그리스도의 성육신은 원래 하나님이 창조하신 완전한 인간의 모습을 구체적으로 보여 주시는 모델이다." — 정민영, 『하나님 나라와 하나님의 선교』</p>
+</blockquote>
+<p>이 등식은 구원을 법정적 사면 이상의 것으로 확장한다. 죄 용서가 회복의 시작이라면, 그 목적지는 인간이 그리스도의 형상을 닮아 창조의 본래 모습을 되찾는 것이다. <a class="wl" href="../../t/%EC%84%B1%EC%9C%A1%EC%8B%A0/">성육신</a>이 이어받는 동일화(identification)와 통전성(integrity)의 원리도 여기서 나온다 — 참 형상이신 분이 우리 자리로 내려오심으로써, 일그러진 형상들이 원형을 회복할 길이 열렸다.</p>
+<p><code>창조: 온전한 형상        타락: 손상·왜곡(잔존)        그리스도: 참 형상(골 1:15)        구원: 형상의 회복 → 종말: 완성
+   ┃                        ┃                              ┃                                ┃
+   높음 ────────────────────┓                        ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 완성
+                            ┗━━━━━━ 낮음(그러나 소멸 아님) ━━━━┛</code></p>
+<h2>5. 형상과 인간 존엄 — 진료실이라는 성소</h2>
+<p>여기서 이 페이지의 고유한 착지점이 열린다. 형상이 만인의 존엄과 평등의 근거라면, 그 존엄이 가장 첨예하게 시험받는 자리 중 하나가 의료 현장이다. 질병과 고통은 인간을 무력하고 의존적인 상태로 몰아넣고, 효율과 수익을 앞세운 현대 의료는 그 무력한 인간을 손쉽게 "케이스"나 처리해야 할 태스크(task)로 환원한다. 형상 신학은 바로 이 환원에 저항한다.</p>
+<p>「의료인으로 산다는 것은?」 강의는 이 저항이 홀로는 불가능하다고 말한다. 지친 의료인이 환자를 물건처럼 대할 때, 곁에서 "저 환자도 하나님의 형상이야"라고 나직이 일깨워 줄 멘토와 공동체가 필요하다는 것이다. 환자를 케이스로 보는 생명 감수성의 상실이 <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a>이 진단하는 현대 의료 위기의 핵심 증상이라면, 그 처방의 뿌리에는 모든 환자가 훼손될 수 없는 하나님의 형상이라는 고백이 있다. 진료실은 그래서 "하나님의 형상이 만나는 성소"가 된다.</p>
+<p>이 존엄은 평등을 함축한다. <a class="wl" href="../../t/%EA%B3%B5%EC%9D%98/">공의</a>가 정리하듯, 권성수 목사가 신분에 따라 형벌을 차등한 함무라비 법전과 성경의 정의를 정면으로 대비시키는 근거가 바로 형상이다 — 가난한 자도 강자도 똑같이 하나님의 형상이므로 공의 앞에서 동등하다. 문대원 목사가 교회의 구제를 NGO의 구제와 구별하는 근거도 같은 자리에 선다. 모든 사람이 하나님의 형상이므로 돕는 자와 받는 자가 동등하며(잠 14:31), 시혜자-수혜자의 위계는 형상 앞에서 해체된다.</p>
+<table>
+<thead>
+<tr>
+<th>형상 신학의 명제</th>
+<th>진료실의 함의</th>
+<th>형상을 침식하는 함정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>모든 환자가 하나님의 형상</td>
+<td>신분·질병과 무관한 동등한 존중</td>
+<td>환자를 케이스·태스크로 환원</td>
+</tr>
+<tr>
+<td>형상은 훼손될 수 없는 존엄</td>
+<td>생명 존중 — 낙태·안락사 배격</td>
+<td>효율·수익 논리의 지배</td>
+</tr>
+<tr>
+<td>돕는 자와 받는 자가 동등(잠 14:31)</td>
+<td>시혜적 우월감 없는 환대</td>
+<td>위계적 비인격화</td>
+</tr>
+</tbody>
+</table>
+<p>그렇기에 형상은 생명 존중 윤리의 성경적 지반이 된다. 같은 강의가 의료의 목표를 "전인적 고통 완화"로 규정하면서도 낙태나 안락사처럼 "성경의 객관적 가치 기준을 어기는 비성경적 수단은 철저하게 배격"한다고 못박는 이유가 여기 있다. 고통을 없앤다는 명목으로 형상 자체를 지우는 것은, 형상을 돌보는 의료의 본질과 충돌하기 때문이다.</p>
+<h2>6. 형상과 소명 — 통치와 문화명령</h2>
+<p>형상은 존엄일 뿐 아니라 소명이다. 창 1:28은 형상으로 지어진 인간에게 곧바로 임무를 맡긴다 — "생육하고 번성하여 땅에 충만하라, 땅을 정복하라, … 모든 생물을 다스리라." 이른바 문화명령이다. 여기서 "다스림"은 라이트가 강조하듯 "왕이 행사하는 지배"를 의미하되, 성경의 왕권은 착취가 아니라 섬김이다. 라이트가 창 1장과 창 2:15("그것을 섬기며 지키게")을 겹쳐 읽으며 도출하는 결론은 이것이다 — 인간은 "하나님의 형상을 지니고 왕으로서 다스리기 위해 창조되었을 뿐 아니라, 창조 세계를 위한 '제사장'으로 섬기기 위해" 존재한다. 왕권과 제사장직이 한 몸에 있는 이 이중 직분이 형상의 소명적 형태다.</p>
+<p><a class="wl" href="../../t/%EC%9D%B8%EA%B0%84%EB%A1%A0/">인간론</a>과 <a class="wl" href="../../t/%EC%B0%BD%EC%A1%B0%EC%8B%A0%ED%95%99/">창조신학</a>이 각각 정리하듯, 이 다스림은 임의로 주어진 권력이 아니라 형상이라는 정체성에서 파생되는 <a class="wl" href="../../t/%EC%B2%AD%EC%A7%80%EA%B8%B0/">청지기</a>적 책임이며, 창 1:28의 '정복하라(radah)'와 창 2:15의 '경작하고 지키다'는 자연 착취가 아니라 위탁받은 돌봄으로 읽혀야 한다. 형상은 세상을 소유하라는 면허가 아니라 하나님을 대신해 세상을 돌보라는 위임이다.</p>
+<p>이 소명은 노동의 자리에서 구체화된다. 한영웅 목사는 일을 "하나님의 형상을 드러내는 한 방편"으로 읽는다 — "형상을 따라 만들었다는 것은 하나님의 일하시는 방식으로 우리가 일하도록 만드셨다는 것"이고, 따라서 "일하는 모습을 통해서 하나님의 형상이 드러난다." 여기서 날카로운 경고가 따라온다. "자신의 이익을 위해 일하는 사람은 하나님의 형상을 담지 못한다." 형상대로 일한다는 것은 하나님이 좋아서 위임하신 그 마음으로, 귀천을 따지지 않고 노동의 존엄을 지키며 일하는 것이다. 의료인에게 이것은 진료라는 노동 자체가 형상을 드러내거나 가리는 자리임을 뜻한다.</p>
+<h2>7. 형상과 관계 — 남자와 여자, 그리고 공동체</h2>
+<p>마지막 층위는 관계다. 창 1:27은 형상을 선언하는 바로 그 문장에서 "남자와 여자를 창조하시고"라고 덧붙인다. 형상은 처음부터 복수(複數)의 얼굴을 하고 있다. 남자와 여자가 동등하게 형상을 부여받았다는 이 선언은 두 방향을 가리킨다. 하나는 성(性)을 가로지르는 평등이고, 다른 하나는 형상이 홀로 있는 개인이 아니라 관계 안에서 온전히 드러난다는 사실이다.</p>
+<p>이것은 하나님 자신의 존재 방식을 반영한다. "우리의 형상을 따라"(창 1:26)의 복수형이 암시하듯, 형상의 원본이신 하나님은 홀로 계시지 않고 세 위격의 사랑의 교제로 존재하시는 <a class="wl" href="../../t/%EC%82%BC%EC%9C%84%EC%9D%BC%EC%B2%B4/">삼위일체</a> 하나님이시다. 그러므로 그분을 닮은 인간도 고립된 자아로서가 아니라 사랑의 관계 안에서 형상을 실현한다. 정민영이 복음을 관계의 언어로 정의하는 것도 같은 통찰 위에 선다 — "하나님의 형상으로 창조된 인간이 그 사랑의 관계로 돌아설 때 하나님의 하나님 되심, 곧 그분의 영광이 회복"된다. 형상의 회복은 개인의 내면에서만 일어나는 사건이 아니라 깨어진 관계가 사랑으로 돌아서는 사건이다.</p>
+<p>이 관계적 형상은 공동체를 지향한다. 삼위일체 하나님이 혼자 일하지 않으시듯 형상을 담은 인간의 소명 또한 공동체적이며, 왕·제사장 직분은 홀로가 아니라 함께 감당하도록 주어졌다. 라이트의 선교적 읽기에서 창조된 인간이 받은 형상은 타락으로 왜곡되었으나 그리스도 안에서 회복되어, 교회라는 공동체가 그 회복된 형상을 세상 앞에 담아내는 자리가 된다. 진료실에서, 노동에서, 가정과 교회에서 형상은 언제나 타자를 향해 열린 관계 속에서 비로소 온전해진다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>형상(첼렘)과 모양(데무트)은 두 종류의 형상이 아니라 하나의 실재를 두 각도에서 부르는 히브리 평행법이며, 인간은 하나님을 닮은 그분의 살아 있는 상(像)이다.</li>
+<li>형상 해석의 세 견해—구조적(가진 능력)·기능적(맡은 직무)·관계적(선 자리)—는 배타적 선택지가 아니라 하나의 형상이 드리우는 세 그림자로, 상호 보완적으로 읽어야 한다.</li>
+<li>고대 근동에서 왕만의 특권이던 "신의 형상"을 성경은 만인에게 확장했다. 이 전복이 인간 존엄과 평등의 가장 오래된 신학적 원천이며, 근동 신화의 '노예 인간'을 '통치의 파트너'로 뒤집는다.</li>
+<li>구원은 곧 형상의 회복이다. 그리스도는 손상되지 않은 참 형상(골 1:15)이시며, 구원은 법정적 사면을 넘어 일그러진 형상이 원형을 되찾는 사건이다.</li>
+<li>형상은 진료실에서 가장 첨예하게 시험받는다. "저 환자도 하나님의 형상이야"라는 고백이 환자를 케이스로 환원하는 비인격화에 저항하며, 낙태·안락사 배격과 동등한 환대의 지반이 된다.</li>
+<li>형상은 존엄이자 소명이다. 문화명령의 '다스림'은 왕권이되 섬김이며, 일하는 방식 자체가 형상을 드러내거나 가린다 — "자신의 이익을 위해 일하는 사람은 하나님의 형상을 담지 못한다."</li>
+<li>형상은 처음부터 복수의 얼굴(남자와 여자)을 하고 있으며, 삼위일체 하나님을 반영해 관계와 공동체 안에서 온전해진다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>타락 이후 형상은 어느 정도 손상되었는가? "전적 부패"와 "형상의 잔존" 사이의 신학적 긴장을 이 볼트의 자료들이 명시적으로 해소하지 않는다.</li>
+<li>세 견해(구조적·기능적·관계적)를 "상호 보완"으로 종합한다면, 셋 중 무엇이 형상의 일차적 소재인가—능력을 잃은 인간(중증 인지장애·식물상태 환자)도 온전한 형상인가라는 물음이 특히 의료 현장에서 첨예하다.</li>
+<li>하나님의 형상은 신체적 차원을 포함하는가? 전인적 존재로서의 몸, 몸의 부활, 환자의 신체 돌봄과 형상의 연결이 더 필요하다.</li>
+<li>형상의 회복(구원)과 형상의 소명(문화명령)은 어떻게 통합되는가—구원받은 형상이 감당하는 통치·노동의 구체적 윤리는 무엇인가.</li>
+<li>생명 존중을 형상에 근거해 절대화할 때, "전인적 고통 완화"라는 목표와 생명 연장 사이에서 발생하는 실제 임상의 회색지대(연명의료 중단 등)를 형상 신학은 어떻게 분별하는가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%9D%B8%EA%B0%84%EB%A1%A0/">인간론</a> — 인간 존재의 구조(몸·영혼·죄), 다스리는 권세의 청지기적 성격. 이 페이지의 상위 맥락.</li>
+<li><a class="wl" href="../../t/%EC%B0%BD%EC%A1%B0%EC%8B%A0%ED%95%99/">창조신학</a> — 창조 질서 전반, radah(다스림)와 창조 보전의 신학. 문화명령의 배경.</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EB%A1%A0/">기독론</a> — 골 1:15의 우주적 그리스도, 참 형상이신 분의 인격과 직분.</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EC%9C%A1%EC%8B%A0/">성육신</a> — 형상의 회복자로서 그리스도, 동일화와 통전성 원리.</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%EC%A0%81%EC%9D%B8%EA%B0%84%EC%9D%B4%ED%95%B4/">성경적인간이해</a> — 이마고 데이의 네 인격적 특질(패커) 상세.</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a> — 형상 신학의 의료 현장 적용, 비인격화 저항.</li>
+<li><a class="wl" href="../../t/%EA%B3%B5%EC%9D%98/">공의</a> — 형상에 근거한 평등(함무라비 대비), 시혜자-수혜자 위계의 해체.</li>
+<li><a class="wl" href="../../t/%EC%B2%AD%EC%A7%80%EA%B8%B0/">청지기</a> — 형상에서 파생되는 다스림의 책임.</li>
+<li><a class="wl" href="../../t/%EC%83%9D%EB%AA%85%EC%82%AC%EC%97%AD/">생명사역</a> — 형상 존엄과 생명 존중 윤리의 실천.</li>
+<li><a class="wl" href="../../t/%EC%82%BC%EC%9C%84%EC%9D%BC%EC%B2%B4/">삼위일체</a> · <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EB%82%98%EB%9D%BC/">하나님나라</a> — 관계적 형상의 원본, 회복된 형상 공동체의 지향.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A0%EA%B5%90%EC%84%B8%EC%83%81%EC%9D%84%EB%B0%94%EA%BE%B8%EB%8B%A4_%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%86%A0%ED%8D%BC%EB%9D%BC%EC%9D%B4%ED%8A%B8/">하나님의선교세상을바꾸다_크리스토퍼라이트</a></td>
+<td>책(라이트)</td>
+<td>창조의 삼각형, 왕·제사장 이중 직분, 아다마/아담, 만인의 존엄·평등, 종말론적 형상</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EB%82%98%EB%9D%BC%EC%99%80%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A0%EA%B5%90_%EC%A0%95%EB%AF%BC%EC%98%81/">하나님나라와하나님의선교_정민영</a></td>
+<td>책(정민영)</td>
+<td>구원=형상의 회복, 성육신=완전한 인간의 모델, 사랑의 관계로서의 형상 회복</td>
+</tr>
+<tr>
+<td>제임스 패커, 『하나님을 아는 지식』</td>
+<td>책(경유: <a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%EC%A0%81%EC%9D%B8%EA%B0%84%EC%9D%B4%ED%95%B4/">성경적인간이해</a>)</td>
+<td>"원본을 복제", 형상의 네 인격적 특질(갈망·사고·의지·감정)</td>
+</tr>
+<tr>
+<td>한영웅, 「창 1:26-28 일에 대한 성경의 관점」</td>
+<td>설교</td>
+<td>위임된 통치 파트너, 아트라하시스 대비, 일을 통해 드러나는 형상, 노동의 존엄</td>
+</tr>
+<tr>
+<td>「의료인으로 산다는 것은?」</td>
+<td>강의</td>
+<td>"저 환자도 하나님의 형상이야", 비인격화 극복, 전인적 고통 완화와 낙태·안락사 배격</td>
+</tr>
+<tr>
+<td>권성수, 정의 시리즈(경유: <a class="wl" href="../../t/%EA%B3%B5%EC%9D%98/">공의</a>)</td>
+<td>설교</td>
+<td>함무라비 법전 대비 — 형상에 근거한 만인의 동등함</td>
+</tr>
+<tr>
+<td>문대원, 「고아와 과부의 하나님」(경유: <a class="wl" href="../../t/%EA%B3%B5%EC%9D%98/">공의</a>)</td>
+<td>설교</td>
+<td>이마고 데이 → 미씨오 데이, 돕는 자와 받는 자의 동등(잠 14:31)</td>
+</tr>
+<tr>
+<td>윤명숙, 「인간성장이해」</td>
+<td>강의</td>
+<td>인간의 전 생애를 관통하는 목적으로서의 하나님의 형상 회복</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%9D%B8%EA%B0%84%EB%A1%A0/">인간론</a> / MBTS 조직신학I 7주차 토론</td>
+<td>위키·토론(이상협)</td>
+<td>오직 인간에게만 주어진 형상, 다스림과 청지기직의 파생 관계</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/조직신학</span><span>#discipline/인간론</span><span>#topic/이마고데이</span><span>#topic/인간존엄</span><span>#topic/생명윤리</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

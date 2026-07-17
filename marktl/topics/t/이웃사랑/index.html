@@ -1,0 +1,167 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>이웃사랑 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:300">윤리·공공</span><span class="date">2026-07-18</span></div>
+  <h1 class="note-title">이웃사랑</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>이웃사랑은 대계명의 둘째 축이다. 예수께서 "온 율법과 선지자의 강령"을 두 계명으로 압축하실 때(마 22:37-40), 첫째는 마음과 목숨과 뜻을 다한 하나님 사랑이고, 둘째가 "네 이웃을 네 자신 같이 사랑하라"(레 19:18)이다. 이웃사랑은 감정이나 태도이기 전에 명령이며, 그 명령은 구약의 이삭줍기 제도에서 신약의 선한 사마리아인 비유를 거쳐 원수 사랑의 극한까지 뻗는다.</p>
+<p>이 페이지는 사랑론의 허브가 아니라 그 둘째 계명의 각론이다. 사랑의 원어 지형·고린도전서 13장·의지의 결단·사랑의 학교는 <a class="wl" href="../../t/%EC%82%AC%EB%9E%91/">사랑</a>이 허브로 다루고, 하나님 편에서의 사랑 자체는 <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%82%AC%EB%9E%91/">하나님의사랑</a>이 맡는다. 원수 사랑의 전면적 전개(마 5:43-48, 이원론 해체)도 <a class="wl" href="../../t/%EC%82%AC%EB%9E%91/">사랑</a>이 상술한다. 이 글이 붙드는 것은 대계명 둘째의 세 물음이다 — 이웃사랑은 하나님 사랑과 어떻게 묶이는가, 이웃은 누구인가, 그리고 그 사랑은 어떤 실천으로 육화되는가.</p>
+<h2>1. 첫째와 둘째 — 분리할 수 없는 두 계명</h2>
+<p>예수께서 두 계명을 나란히 세우실 때 결정적인 것은 둘의 결합 방식이다. "둘째도 그와 같으니 네 이웃을 네 자신 같이 사랑하라"(마 22:39). "그와 같으니"(호모이아)는 둘째가 첫째보다 못한 부록이 아니라 같은 본질의 다른 방향임을 뜻한다. 요한일서가 이 결합을 시금석으로 벼린다 — "보는 바 그 형제를 사랑하지 아니하는 자가 보지 못하는 바 하나님을 사랑할 수 없느니라"(요일 4:20). 하나님 사랑은 이웃사랑에서 검증되고, 이웃사랑은 하나님 사랑에 뿌리내린다. 둘은 한 사랑의 수직축과 수평축이다.</p>
+<p>이 분리 불가능성이 이웃사랑을 단순한 인도주의와 갈라놓는다. 이웃사랑의 동력은 이웃의 사랑스러움이 아니라 먼저 받은 하나님의 사랑이다(<a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%82%AC%EB%9E%91/">하나님의사랑</a>). 우리가 사랑함은 그가 먼저 우리를 사랑하셨기 때문이고(요일 4:19), 그래서 이웃사랑은 내 안에서 생산하는 미덕이 아니라 받은 사랑이 흘러가는 통로다. 수직축이 마르면 수평축도 마른다 — 이것이 이웃사랑을 자기 힘으로 밀어붙이다 지치는 이유이며, 처방이 "더 노력하라"가 아니라 "원천으로 가라"인 이유다.</p>
+<h2>2. 이웃은 누구인가 — 선한 사마리아인의 역전</h2>
+<p>"내 이웃이 누구니이까"(눅 10:29). 한 율법사가 자기를 옳게 보이려고 던진 이 물음이 선한 사마리아인 비유를 낳았다. 물음의 의도는 이웃의 범위를 좁히는 데 있었다 — 누구까지가 내가 사랑할 의무가 있는 이웃이고 누구부터는 아닌가. 예수의 대답은 그 물음의 문법 자체를 뒤집는다. 강도 만난 사람을 지나친 것은 제사장과 레위인 — 종교적 자격을 갖춘 자들이었고, 멈춰 선 것은 유대인이 상종하지 않던 사마리아인이었다. 그리고 비유 끝에서 예수는 물음을 되돌려 던지신다 — "누가 강도 만난 자의 이웃이 되겠느냐"(눅 10:36).</p>
+<p>여기서 역전이 일어난다. 질문이 "누가 내 이웃인가"(사랑의 대상을 규정하는 물음)에서 "나는 누구의 이웃이 되겠는가"(사랑의 주체가 되라는 요청)로 바뀐 것이다. 이웃은 발견되는 범주가 아니라 내가 되어 주는 자리다. 윤명숙 전도사는 이 비유를 오늘의 자리로 끌어온다 — 우리는 "계산 하면서 다가간다. 너는 어쩌면 그럴 수가 있나, 나는 할 만큼 했다"며 온갖 변명으로 상대의 입을 막지만, 사마리아인은 자기가 가진 것을 털어 모든 비용을 들여 도왔다. "그리스도의 사랑으로 덮었다"는 것이다. 그가 던지는 진단은 날카롭다 — "제사장, 레위인은 아무리 많아도 영향력이 없다." 이웃사랑은 자격이나 숫자의 문제가 아니라, 계산을 멈추고 멈춰 서는 한 사람의 문제다.</p>
+<h2>3. 이삭줍기 — 이웃사랑의 제도적 몸</h2>
+<p>이웃사랑은 감정에 머물지 않고 제도로 굳는다. 그 구약적 얼굴이 이삭줍기다. MBTS 구약개론II 4주 강의는 사 2:1-5(전쟁 종식·열방이 시온에서 토라를 배움)에서 시작해 레 19:9-18(이삭줍기로 타국인·가난한 자를 돌봄)로 이어지는 본문 사슬을 제시한다. 이삭줍기 규정은 추상적 계명이 아니라, 수확 때 밭 가장자리와 떨어진 이삭을 의도적으로 남겨 두어 가난한 자와 타국인이 스스로 생계를 이을 수 있게 하는 구체적 장치다. 시혜가 아니라 존엄을 지키는 구조 — 받는 자가 직접 거두게 함으로써 구걸이 아니라 노동이 되게 한 것이다.</p>
+<p>강의는 이를 암 8:1-4(부정직한 상거래를 향한 심판)·암 6:4(궁궐의 호의호식 비판)·사 1:11-16(형식적 제사 비판)과 하나의 흐름으로 엮고, 렘 9:23-24("인애·공의·정의를 아는 것을 자랑하라")를 그 결론으로 세운다. 여기서 반복되는 논지가 있다 — 절기·예배·헌신의 "열심"이 아무리 뜨거워도 이웃(약자·타국인)을 돌보지 않으면 하나님이 받지 않으신다. 강사의 요약대로 "누가 좋은 그리스도인인가? 사회정의, 약자 보호, 악에 저항." 종교적 형식과 이웃사랑의 실천은 분리될 수 없으며, 그 분리는 곧 선지자들의 심판 대상이 된다(<a class="wl" href="../../t/%EC%82%AC%ED%9A%8C%EC%A0%95%EC%9D%98/">사회정의</a>가 이 축을 상술한다). 이웃사랑은 마음의 온기가 아니라 밭 가장자리를 남기는 손이다.</p>
+<h2>4. 원수까지 — 이웃 개념의 극한 ⚖️</h2>
+<p>레위기 19:18은 "네 이웃을 사랑하라"고 명하지만, 당대의 통념은 여기에 "네 원수를 미워하라"를 몰래 덧붙였다. 예수는 산상수훈에서 이 덧붙임을 잘라 내신다 — "너희 원수를 사랑하며 너희를 박해하는 자를 위하여 기도하라"(마 5:44). 이것은 이웃 개념의 파기가 아니라 극한까지의 확장이다. 이웃의 범위를 "누가 내 이웃인가"로 좁히려는 모든 시도를, 원수마저 이웃의 자리로 끌어들임으로써 무너뜨리는 것이다.</p>
+<p>여기서 이웃사랑은 감정으로 감당할 수 없는 지점에 이른다. 원수를 감정으로 사랑할 수는 없으므로, 이 명령의 존재 자체가 사랑이 감정이 아니라 의지의 결단임을 증언한다(그 논증과 원수 사랑의 전면적 전개는 <a class="wl" href="../../t/%EC%82%AC%EB%9E%91/">사랑</a>에 위임한다). 이웃사랑의 극한이 원수 사랑이라는 사실은 두 방향의 미끄러짐을 경계한다 ⚖️. 한쪽은 이웃을 내 편으로 좁히는 편애다 — "너희를 사랑하는 자를 사랑하면 무슨 상이 있으리요"(마 5:46), 끼리끼리의 사랑은 세리와 다를 바 없다. 다른 쪽은 원수 사랑을 불의에 대한 무저항으로 오해하는 것이다 — 원수를 위해 기도하라는 명령은 불의를 눈감으라는 뜻이 아니라(3절의 약자 보호·악에 저항과 함께 읽어야 한다), 미움이라는 독을 스스로 마시기를 거부하라는 뜻이다. 이웃사랑은 편애로도 무저항으로도 기울지 않는 좁은 길이며, 그 길이 겨냥하는 것은 "하늘에 계신 너희 아버지의 온전하심"(마 5:48)을 닮는 정체성이다.</p>
+<h2>5. 이웃사랑의 실제 — 구제·환대·의료, 그리고 다가온 이웃</h2>
+<p>이웃사랑은 마지막으로 구체적 삶의 자리로 내려온다. 그 첫 자리가 구제와 환대다. 요한일서의 검증 기준이 가장 낮은 문턱을 제시한다 — "누가 이 세상의 재물을 가지고 형제의 궁핍함을 보고도 도와줄 마음을 막으면 하나님의 사랑이 어찌 그 속에 거하겠느냐"(요일 3:17). 사랑은 "말과 혀로만" 하지 않고 "행함과 진실함으로" 하는 것이며(요일 3:18), 그 구체적 실천의 신학은 <a class="wl" href="../../t/%EA%B5%AC%EC%A0%9C/">구제</a>가 잇는다.</p>
+<p>둘째 자리가 다가온 이웃, 곧 이주민이다. 땅끝이 이주의 물결을 타고 곁으로 다가온 시대에, 이웃사랑은 대위임령("가라")과 만난다. <a class="wl" href="../../t/%EB%8C%80%EC%9C%84%EC%9E%84%EB%A0%B9/">대위임령</a>이 정리하듯 박주용 목사는 두 명령을 "네 이웃의 이주민을 사랑하라"는 한 문장으로 재주조한다 — 선한 사마리아인이 인종과 적대를 넘어 멈춰 섰듯, 오늘의 이웃사랑은 낯선 이주민 앞에서 계산을 멈추는 일이 된다(<a class="wl" href="../../t/%EC%9D%B4%EC%A3%BC%EB%AF%BC%EC%84%A0%EA%B5%90/">이주민선교</a>). 셋째 자리가 의료 현장이다. 강도 만난 자의 상처를 싸매고 기름과 포도주를 붓고 비용을 감당한 사마리아인의 몸짓은 그대로 진료의 원형이다 — 몸의 고통 곁에 멈춰 서서 자기 것을 들여 돌보는 자리. 이웃사랑이 대위임령과 만나는 지점에서 균형이 요구된다. 봉사 없는 전도는 이웃의 몸을 외면하고, 전도 없는 봉사는 이웃의 영혼을 외면한다. 선한 사마리아인은 그 사이에서 먼저 몸을 싸맸고, 이웃사랑은 그렇게 말보다 먼저 손으로 시작된다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>이웃사랑은 대계명 둘째이며 첫째와 분리될 수 없다 — "그와 같으니"(마 22:39), 하나님 사랑은 이웃사랑에서 검증되고 이웃사랑은 먼저 받은 하나님 사랑에 뿌리내린다(요일 4:19-20).</li>
+<li>선한 사마리아인 비유는 물음을 역전시킨다 — "누가 내 이웃인가"(대상을 좁히는 물음)에서 "나는 누구의 이웃이 되겠는가"(주체가 되라는 요청)로. 이웃은 발견되는 범주가 아니라 내가 되어 주는 자리다.</li>
+<li>이웃사랑은 감정이 아니라 제도로 굳는다 — 이삭줍기(레 19:9-18)는 존엄을 지키는 구조이며, 종교적 열심과 분리된 이웃사랑은 선지자들의 심판 대상이다.</li>
+<li>원수 사랑(마 5:44)은 이웃 개념의 극한이다 ⚖️ — 이웃을 내 편으로 좁히는 편애와, 원수 사랑을 불의에 대한 무저항으로 오해하는 것 사이의 좁은 길이다.</li>
+<li>이웃사랑은 손으로 시작된다 — 구제·환대·의료·이주민을 향한 실천이며, "네 이웃의 이주민을 사랑하라"에서 대위임령과 만나 봉사와 전도의 균형을 요구한다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>이삭줍기라는 고대 농경 사회의 장치가 오늘날 어떤 구체적 실천으로 번역되는가 — 존엄을 지키는 구제(스스로 거두게 함)의 원리는 현대 복지·의료 현장에서 어떻게 구현되는가.</li>
+<li>이웃의 범위가 원수까지 확장될 때, 한정된 시간과 자원을 가진 개인은 "누구의 이웃이 될 것인가"를 어떻게 분별하는가 — 무한한 요청과 유한한 손 사이의 지혜.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%82%AC%EB%9E%91/">사랑</a> — 사랑론의 허브(원어·고린도전서 13장·의지의 결단·원수 사랑의 전면적 전개). 이 페이지는 대계명 둘째의 각론.</li>
+<li><a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%82%AC%EB%9E%91/">하나님의사랑</a> — 이웃사랑이 뿌리내리는 먼저 받은 사랑.</li>
+<li><a class="wl" href="../../t/%EA%B8%8D%ED%9C%BC/">긍휼</a> — 멈춰 서게 하는 창자의 긍휼(스플랑크니조마이).</li>
+<li><a class="wl" href="../../t/%EA%B5%AC%EC%A0%9C/">구제</a> — 행함과 진실함으로의 이웃사랑, 재물의 문턱.</li>
+<li><a class="wl" href="../../t/%EC%9D%B4%EC%A3%BC%EB%AF%BC%EC%84%A0%EA%B5%90/">이주민선교</a> — 다가온 이웃, "네 이웃의 이주민을 사랑하라".</li>
+<li><a class="wl" href="../../t/%EB%8C%80%EC%9C%84%EC%9E%84%EB%A0%B9/">대위임령</a> — 대계명과 대위임령의 균형, 봉사와 전도.</li>
+<li><a class="wl" href="../../t/%EC%82%AC%ED%9A%8C%EC%A0%95%EC%9D%98/">사회정의</a> · <a class="wl" href="../../t/%EC%84%A0%EC%A7%80%EC%84%9C/">선지서</a> — 이삭줍기·약자 보호가 속한 선지자적 정의.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">04주_선지서개론</span></td>
+<td>MBTS 강의</td>
+<td>이삭줍기(레 19장)를 이웃사랑의 제도로 제시, 형식적 신앙과 실천의 대비, 렘 9:23-24</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2016_사마리아인필요한시대</span></td>
+<td>설교(윤명숙)</td>
+<td>선한 사마리아인(눅 10), 계산 없이 덮는 사랑, "제사장·레위인은 많아도 영향력 없다"</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%82%AC%EB%9E%91/">사랑</a> · <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%82%AC%EB%9E%91/">하나님의사랑</a></td>
+<td>위키 교차</td>
+<td>원수 사랑의 전면적 전개, 먼저 받은 사랑의 원천</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EB%8C%80%EC%9C%84%EC%9E%84%EB%A0%B9/">대위임령</a></td>
+<td>위키 교차</td>
+<td>"네 이웃의 이주민을 사랑하라", 대계명과 대위임령의 균형</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/기독교윤리</span><span>#대계명</span><span>#선한사마리아인</span><span>#환대</span><span>#사회정의</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

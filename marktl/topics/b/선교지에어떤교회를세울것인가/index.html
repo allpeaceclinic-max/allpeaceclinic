@@ -1,0 +1,406 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>선교지에 어떤 교회를 세울 것인가 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:226">리더십·일·경영</span><span class="date">2026-05-08</span></div>
+  <h1 class="note-title">선교지에 어떤 교회를 세울 것인가</h1>
+  
+</header>
+<article class="note">
+<p><strong>분류</strong>: 선교 재정 정책 / 교회 개척 전략 / 선교지 재산권<br />
+<strong>연결 강의</strong>: <code>raw/lectures/my강의안/필드 재산권 관리 정책 공청회.md</code></p>
+<blockquote>
+<p>"선교사가 시작할 때 재정 문제, 선교사 생애주기 끝에 재산권 문제 — 처음과 끝이 돈 문제다." — 헤셀 그레이브</p>
+</blockquote>
+<hr />
+<h2>1. 한국 선교 역사와 재정 정책의 변화</h2>
+<h3>6시기 한국 선교 역사</h3>
+<ul>
+<li>역사적 시기 분류 요소 4가지 → 6시기로 구분</li>
+<li>흐름: <strong>협력 → 독자적 사역으로 전환</strong></li>
+<li>그 속에서 <strong>선교지 예배당 건축</strong> 급증 → 독자적·비협력적·물량주의</li>
+</ul>
+<h3>현지인의 평가</h3>
+<ul>
+<li>예배당 건축은 반기면서도 간섭은 싫어함</li>
+<li>→ 의존성 조장 + 선교사 군림의 구조</li>
+</ul>
+<h3>미래 과제</h3>
+<ul>
+<li>은퇴 선교사 문제 (한국 선교 1주기 마감 → 은퇴자 급증)</li>
+<li>선교 자원 발굴 문제 (누구를 보낼 것인가?)</li>
+<li>BAM을 통한 정직(integrity) — 수단이자 목적</li>
+<li><strong>선교 방향 전환 필요</strong>: 예배당 건축 → 선교 자원 발굴·은퇴 준비</li>
+</ul>
+<hr />
+<h2>2. 재산권 문제의 핵심 — 동상이몽</h2>
+<p>재산권 논쟁의 뿌리는 <strong>3자의 서로 다른 인식</strong>에 있다:</p>
+<table>
+<thead>
+<tr>
+<th>주체</th>
+<th>인식</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>선교단체 본부</strong></td>
+<td>파송 단체에 귀속된 재산</td>
+</tr>
+<tr>
+<td><strong>파송(후원)교회</strong></td>
+<td>후원교회의 자산</td>
+</tr>
+<tr>
+<td><strong>선교사</strong></td>
+<td>남다른 애정과 소유 의식 내포</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"겉으로는 하나님의 것이라고 말하지만 동상이몽이다." — 김종성</p>
+</blockquote>
+<p>→ <strong>3자간 창조적 긴장</strong>: 책무(accountability)를 정립할 때 긴장이 완화됨 (마25:14-30)</p>
+<hr />
+<h2>3. 원칙의 역사 — 헨리 벤에서 홀러까지</h2>
+<table>
+<thead>
+<tr>
+<th>원칙</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>헨리 벤 3자 원칙</strong></td>
+<td>자치(self-governing)·자급(self-supporting)·자전(self-propagating) — "선교의 안락사"</td>
+</tr>
+<tr>
+<td><strong>네비우스 정책</strong></td>
+<td>한국 교회에 적용된 3자 원칙의 변형</td>
+</tr>
+<tr>
+<td><strong>홀러의 4P 원리</strong></td>
+<td>Pioneer → Parent → Partner → Participant (우산이론)</td>
+</tr>
+</tbody>
+</table>
+<p>이 주제는 <strong>항상 불편함을 유발</strong> — 어떤 선교사는 모욕적으로 받아들이기도 함.<br />
+그러나 더 좋은 선교를 위해 반드시 짚어야 할 주제.</p>
+<hr />
+<h2>4. 선교지 재산권 — 개념 정의</h2>
+<p><strong>선교지 재산</strong>: 선교사가 재임 중에 취득한 유·무형의 모든 권리와 재산</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>유형 재산</td>
+<td>동산 + 부동산 (토지·건물)</td>
+</tr>
+<tr>
+<td>무형 재산</td>
+<td>지적 재산권, 소유권, 이권</td>
+</tr>
+</tbody>
+</table>
+<p><strong>청지기 의식</strong>: 재산의 <strong>소유권은 없고 사용권만 있다</strong>는 신분 의식<br />
+현실적 형태: 개인 명의 / 법인 명의 / 장기 임대(50-99년 사용권)</p>
+<hr />
+<h2>5. 선교단체별 정책 비교</h2>
+<table>
+<thead>
+<tr>
+<th>단체</th>
+<th>핵심 원칙</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PCK(총회 선교회)</strong></td>
+<td>법인체 명의 / 불가능시 자제 / 부득이 개인이면 각서 제출 / 필리핀 교회와 재산권 포기 협약</td>
+</tr>
+<tr>
+<td><strong>GMS</strong></td>
+<td>현지 선교부가 주체 / 현지 법인체 / 본부가 최종 정책 입안자</td>
+</tr>
+<tr>
+<td><strong>성결교 해외선교</strong></td>
+<td>외국인 불가능 → 현지인 명의 or 공동 명의 or 법인체(현지인 51% 이상)</td>
+</tr>
+<tr>
+<td><strong>SIM</strong></td>
+<td>14개 원칙 / 해당 국가 등록 선교부 명의 / 5만불 이상 국제 총재 승인 / 아프리카 99년 임대</td>
+</tr>
+<tr>
+<td><strong>인터서브</strong></td>
+<td>국제본부 가이드라인 없음 → NO(국가 사무소) 자체 정책 권고</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>6. 부정 사례 — 방콕 선교 포럼 보고</h2>
+<ol>
+<li>사역 보고와 현지 사역의 차이 → 목사 제명</li>
+<li>현지인 명의 주택 가격 상승 → 현지인이 대금 일부 가로챔</li>
+<li>부동산 사유화</li>
+<li>목적 헌금 개인 사용</li>
+<li>파송 교회와 관계 악화 → 선교사가 관계 단절</li>
+<li>재산권이 현지인 이사들 손에 넘어감</li>
+</ol>
+<p><strong>부정행위 주체</strong>: 선교사 / 파송단체 리더 / 지역교회 목회자 / 선교 브로커</p>
+<hr />
+<h2>7. 정직(Integrity)과 선교의 통합</h2>
+<blockquote>
+<p>"비자 문제 = 정직의 문제 (인디언 선교의 실패 사례)"</p>
+</blockquote>
+<ul>
+<li><strong>BAM(Business as Mission)</strong>: 정직을 수단이자 목적으로</li>
+<li>정직(정의·윤리) = 선교 그 자체 — 총체적 관점으로 봐야</li>
+<li><a class="wl" href="../../b/%EC%84%A0%ED%95%9C%EC%98%81%ED%96%A5%EB%A0%A5-%EA%B9%80%EC%A7%84%EC%88%98/">선한영향력-김진수</a> — ISI(정직·나눔·자립), 소유권 이전이 자립의 핵심</li>
+</ul>
+<p><strong>재산권 관리 정책의 핵심 가치:</strong></p>
+<blockquote>
+<p>명확·단순 / 투명 / 융통성(초문화권 적용) / 효율성</p>
+</blockquote>
+<p><code>청지기 의식의 실천:
+사유화 예방 → 공적 선교 실천 → 공공성 유지 → 효율성 극대화</code></p>
+<hr />
+<h2>8. 건강한 출구 전략 — 이양(Transfer)</h2>
+<blockquote>
+<p>"현지의 의존 문제, 이양의 시점, 사역의 지속성 확보 — 이것이 핵심이다"</p>
+</blockquote>
+<ul>
+<li>현지인 동역자 <strong>역량 강화(capacity building)</strong> 없이는 이양 불가</li>
+<li><strong>자발적·의도적 이양</strong>: 172년간 자산을 현지에 이양한 SIM 사례</li>
+<li>이양 이후 재산 싸움이 사라짐 — DNA로 정착</li>
+<li>이양 후 사유화 문제도 존재 → 역량 강화가 선행되어야</li>
+</ul>
+<hr />
+<h2>⭐ vault 내 연결 지점</h2>
+<table>
+<thead>
+<tr>
+<th>이 책의 개념</th>
+<th>연결 자료</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>소유권 이전·자립</td>
+<td><a class="wl" href="../../b/%EC%84%A0%ED%95%9C%EC%98%81%ED%96%A5%EB%A0%A5-%EA%B9%80%EC%A7%84%EC%88%98/">선한영향력-김진수</a> — ISI, 소유권 이전이 자립의 핵심</td>
+</tr>
+<tr>
+<td>소달리티-모달리티 / 파송 구조</td>
+<td><a class="wl" href="../../b/%EA%B5%90%ED%9A%8C%EC%99%80%EC%84%A0%EA%B5%90_%EC%86%90%EC%B0%BD%EB%82%A8/">교회와선교_손창남</a> — 교회-선교사-단체 3자 관계</td>
+</tr>
+<tr>
+<td>BAM·정직=선교</td>
+<td><a class="wl" href="../../t/%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4%EC%84%A0%EA%B5%90/">비즈니스선교</a> — BAM, ISI 가치</td>
+</tr>
+<tr>
+<td>청지기 의식</td>
+<td><a class="wl" href="../../b/%EA%B3%B5%EB%8F%99%EC%84%A0%EC%9D%84%EC%B6%94%EA%B5%AC%ED%95%98%EB%8A%94%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4/">공동선을추구하는비즈니스</a> — 라다·샤마르</td>
+</tr>
+<tr>
+<td>선교사 잘 마치기</td>
+<td><a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81/">글로벌미션핸드북</a> — 잘 마치는 리더 6특징</td>
+</tr>
+<tr>
+<td>인터서브 재산권 정책</td>
+<td><span class="wl-dead" title="위키 내부 링크">인터서브</span> — 인터서브 내부 공청회·위원회</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>탐구 중인 질문</h2>
+<p><strong>Q1. 인터서브 코리아의 필드 재산권 정책은 어떻게 수립되어야 하는가?</strong>
+- 부분 답변: NO 자체 정책 권고(국제본부 방침) — 핵심 가치: 청지기·투명성·공공성
+- 부분 답변: SIM 14개 원칙 참고 / PCK 필리핀 교회와의 협약 모델
+- 여전히 열린 질문: 인터서브 코리아의 단계별 이양 로드맵은?</p>
+<p><strong>Q2. "선교 재정 정책 교육"은 선교사 생애주기 어느 시점에서 반복되어야 하는가?</strong>
+- 부분 답변: 훈련 시에 배우지만 현장에서 잊어버림 → <strong>정기적 외부 입력 교육 필요</strong>
+- 부분 답변: <a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EC%A0%81%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98%EC%96%91%EC%84%B1/">선교적리더십의양성</a> — 콜브 순환으로 재정 교육 설계
+- 여전히 열린 질문: 인터서브 연례 모임에 재정 책무 교육을 어떻게 통합할 것인가?</p>
+<hr />
+<hr />
+<h2>9. 함선네 세미나 — 교회론 적용과 실천 토론 (2025)</h2>
+<blockquote>
+<p>발제자: <span class="wl-dead" title="위키 내부 링크">김한성</span> | 2025년 대구 함선네 세미나</p>
+</blockquote>
+<h3>실천의 신학 체계</h3>
+<p><strong>성경 → 신학 → 선교학 → 전략 → 실천</strong></p>
+<ul>
+<li>예배당 건축·교회 개척은 <strong>실천</strong> 영역</li>
+<li>생각과 실천이 일치하는가가 핵심 질문</li>
+</ul>
+<h3>교회론의 역사적 변화</h3>
+<table>
+<thead>
+<tr>
+<th>시대</th>
+<th>핵심</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>313년 공인 이후</td>
+<td>예배당 건축 — 왕·성주가 지음</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%A2%85%EA%B5%90%EA%B0%9C%ED%98%81/">종교개혁</a></td>
+<td>참된 교회 추구, 설교+성례전 강조</td>
+</tr>
+<tr>
+<td>아나뱁티스트(재세례파)</td>
+<td>자유교회 운동, 믿는 자들의 공동체</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">칼빈</span>-웨슬리-밀라드 에릭슨</td>
+<td>믿는 사람 강조, 현실은 여전히 교회=건물</td>
+</tr>
+</tbody>
+</table>
+<p>→ <strong>현실</strong>: <a class="wl" href="../../t/%EC%A0%84%EB%8F%84/">전도</a> = 예수님 전하는 것보다 교회 구성원 만들기로 축소</p>
+<h3>한국교회 압축성장의 문제</h3>
+<ul>
+<li>압축 성장 경험을 <strong>무비판적으로 선교지에 적용</strong></li>
+<li><strong>온정주의</strong>: 사랑이지만 의존성 조장</li>
+<li><strong>자문화우월주의</strong>: "다른 나라도 가난해서 못 짓는다?" — 이중 잣대</li>
+<li>통계: <strong>한국 장로교 1500개 교회 중 선교부 도움 받은 교회 20개 미만</strong> — 스스로 건축</li>
+</ul>
+<h3>세미나 Q&amp;A — 핵심 쟁점</h3>
+<table>
+<thead>
+<tr>
+<th>질문</th>
+<th>핵심 인사이트</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>재정보고의 목적</td>
+<td>성실하게 하면 지역교회가 도전받는다 — 보고는 통제가 아닌 동역</td>
+</tr>
+<tr>
+<td>선교사 일탈</td>
+<td>사역 1~20% / 생활비+학비+주거비 80% — 예산 내 사역 구조 필요</td>
+</tr>
+<tr>
+<td>충성교회 MOU</td>
+<td>3년 약정·재계약, 독립군 개념, 입문 시 MOU로 상호 책무 명시</td>
+</tr>
+<tr>
+<td>은퇴 출구 전략</td>
+<td>은퇴계획서 5년 전 먼저 작성 → 국민연금·임대주택·재정착 지원</td>
+</tr>
+<tr>
+<td>PIT(파트너 인 트랜짓)</td>
+<td>비자 문제·비자발적 철수 시 2년 트랜짓 사역 → <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%82%AC%EC%9D%80%ED%87%B4/">선교사은퇴</a> 연계</td>
+</tr>
+<tr>
+<td>재산권 사유화</td>
+<td>부동산 가격 상승→구매 압력 → 법인체·3자 협의 필요 → <span class="wl-dead" title="위키 내부 링크">선교지재산권거버넌스</span></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>관련 페이지</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> — 선교지 재산권, 3자 원칙</li>
+<li><a class="wl" href="../../t/%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4%EC%84%A0%EA%B5%90/">비즈니스선교</a> — BAM, 정직·자립, 소유권 이전</li>
+<li><a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%A1%A0/">교회론</a> — 어떤 교회를 세울 것인가</li>
+<li><a class="wl" href="../../b/%EC%84%A0%ED%95%9C%EC%98%81%ED%96%A5%EB%A0%A5-%EA%B9%80%EC%A7%84%EC%88%98/">선한영향력-김진수</a> — ISI, 소유권 이전</li>
+<li><a class="wl" href="../../b/%EA%B5%90%ED%9A%8C%EC%99%80%EC%84%A0%EA%B5%90_%EC%86%90%EC%B0%BD%EB%82%A8/">교회와선교_손창남</a> — 소달리티·모달리티, 책무 구조</li>
+<li><a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81/">글로벌미션핸드북</a> — 선교사 마무리</li>
+<li><span class="wl-dead" title="위키 내부 링크">인터서브</span> — 재산권 위원회, 공청회</li>
+</ul>
+</article>
+<div class="tagrow"><span>#선교신학</span><span>#재산권</span><span>#선교재정</span><span>#교회개척</span><span>#청지기</span><span>#책무</span><span>#한국선교</span><span>#BAM</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

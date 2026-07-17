@@ -1,0 +1,130 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>내러티브 신학 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:174">성경·해석</span><span class="date">2026-06-28</span></div>
+  <h1 class="note-title">내러티브 신학</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>내러티브 신학(Narrative Theology)은 성경을 단편적 교리 명제들의 집합이 아니라 하나의 통일된 이야기(메타내러티브)로 읽는 해석 접근이다. 성경 전체가 창조–타락–구속–새 창조라는 하나의 큰 이야기 안에 있고, 각 개별 본문은 그 이야기의 특정 장면으로 기능한다는 전제에서 출발한다. 성경의 규범적 권위는 명제 목록이 아니라 이야기 전체의 방향성과 목적에서 나온다고 본다.</p>
+<h2>1. 내러티브 해석의 신학적 배경</h2>
+<p>내러티브 신학은 20세기 중반 이후 역사비평의 원자화(각 본문을 독립 단편으로 분석)에 대한 반작용으로 부상했다. 한스 프라이(Hans Frei)는 역사비평 이전 교회처럼 본문 자체의 서사 세계 안에 깊이 빠져들어야 한다고 주장했다. 이 흐름은 성경을 단일한 메타내러티브로 읽는 방향으로 발전했고, <span class="wl-dead" title="위키 내부 링크">리처드보컴</span>과 <span class="wl-dead" title="위키 내부 링크">크리스토퍼라이트</span>가 그 대표 학자로 등장한다.</p>
+<h2>2. 리처드 보컴 — "특수성을 통한 보편성"</h2>
+<p><span class="wl-dead" title="위키 내부 링크">리처드보컴</span>은 성경 이야기의 보편적 메시지가 특수한 역사적 사건들을 통해 전달된다고 본다. 이스라엘이라는 특수한 민족, 나사렛 예수라는 특수한 인물, 팔레스타인이라는 특수한 공간을 통해 모든 인류를 향한 하나님의 보편적 목적이 드러난다는 것이다. 이 "특수성을 통한 보편성" 원리는 내러티브 해석이 상대주의로 흐르지 않을 수 있는 근거를 제공한다.</p>
+<h2>3. 크리스토퍼 라이트 — 미씨오 데이와 선교적 해석학</h2>
+<p><span class="wl-dead" title="위키 내부 링크">크리스토퍼라이트</span>는 내러티브 신학을 선교적 해석학(<a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%ED%95%B4%EC%84%9D%ED%95%99/">선교적해석학</a>)과 결합한다. 그에게 성경은 "스스로의 목적을 성취해 가시는 창조주의 이야기"(미씨오 데이, <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A0%EA%B5%90/">하나님의선교</a>)다. 누가복음 24장에서 부활하신 예수님이 히브리 정경 전체를 메시아적·선교적으로 읽어 주신 방식이 모델이 된다: "그리스도께로 이끄는 이야기(메시아적 해석)"와 "그리스도로부터 나오는 이야기(선교적 해석)"가 성경 읽기의 두 방향이다.</p>
+<h2>4. 니제이 굽타와 이상협의 리서치페이퍼 — '일관성의 해석학'</h2>
+<p>MBTS 신약개론I 리서치페이퍼(<span class="wl-dead" title="위키 내부 링크">_paper_성경의적용과사용_니제이굽타</span>)는 내러티브 해석을 다원주의·상대주의로부터 지키는 좌표로 크리스토퍼 라이트의 "일관성의 해석학"을 채택한다. <span class="wl-dead" title="위키 내부 링크">니제이굽타</span>의 분류에서 내러티브(메타내러티브) 해석은 네 가지 방법 중 가장 포괄적이고 신학적으로 풍부한 접근으로 제시된다.</p>
+<p>내러티브 해석의 결정적 존재론적 효과가 핵심 논거다: 규범적 해석이 행동을 통제하는 데 반해, 내러티브 해석은 우리의 존재(being)를 변화시킨다. 우리의 모든 행위는 존재로부터 나오므로, 메타내러티브 해석은 다양성(포스트모던)을 환영하면서도 하나님의 목적(새 창조)이라는 해석의 동기와 방향을 확보한다.</p>
+<h2>5. 내러티브 해석의 한계와 긴장</h2>
+<p>내러티브 신학의 위험은 다원주의·상대주의로의 미끄러짐이다. 어느 이야기가 "참된 메타내러티브"인가를 다투는 자리에서, 기독교 메타내러티브의 배타적 진리 주장은 포스트모던 청중과 갈등을 일으킨다. 또한 성경 이야기 내부의 다양한 장르(시·묵시·율법·지혜·서신)를 단일 내러티브 틀로 통합할 때 개별 장르의 고유한 목소리가 희석될 위험이 있다. <span class="wl-dead" title="위키 내부 링크">리처드헤이스</span>가 지적한 "그리스도인들 가운데 만연된 불일치"는, 동일한 내러티브 틀을 공유하면서도 윤리적 결론이 달라지는 현실을 보여준다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>내러티브 신학은 성경을 명제 목록이 아닌 살아있는 이야기로 읽게 함으로써, 독자를 이야기의 참여자로 위치시킨다.</li>
+<li>"특수성을 통한 보편성"(보컴) 원리는 내러티브 해석이 문화적 상대주의로 흐르지 않을 근거를 제공한다.</li>
+<li>내러티브 해석의 존재론적 효과(행동 통제 → 존재 변화)는 규범적 접근과 구별되는 핵심 강점이다.</li>
+<li>라이트의 미씨오 데이 틀은 내러티브 해석을 선교 실천과 연결하는 다리다.</li>
+<li>해석의 불일치 문제(헤이스)는 내러티브 틀만으로 해결되지 않으며, 공동체적 해석 실천이 함께 필요하다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>내러티브 해석이 "하나님 나라"라는 목적을 전제할 때, 이 목적 자체를 누가 어떻게 규정하는가? 다원적 신학 전통들 사이의 판정 기준은?</li>
+<li>묵시문학·율법 코드·잠언 같은 비내러티브 장르를 내러티브 틀 안에 통합할 때 어떤 해석학적 원칙이 필요한가?</li>
+<li>내러티브 해석은 포스트콜로니얼 신학과 어떻게 대화하는가? "누구의 이야기가 메타내러티브인가"라는 권력 질문에 어떻게 답하는가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D/">성경해석</a> — 내러티브 신학이 속하는 더 넓은 해석학 범주</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%ED%95%B4%EC%84%9D%ED%95%99/">선교적해석학</a> — 라이트의 미씨오 데이와 연결되는 실천적 적용</li>
+<li><a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A0%EA%B5%90/">하나님의선교</a> — 내러티브 신학의 선교적 지향점</li>
+<li><span class="wl-dead" title="위키 내부 링크">크리스토퍼라이트</span> — 일관성의 해석학·미씨오 데이 제안자</li>
+<li><span class="wl-dead" title="위키 내부 링크">리처드보컴</span> — 특수성을 통한 보편성 원리</li>
+<li><span class="wl-dead" title="위키 내부 링크">니제이굽타</span> — 네 가지 해석 방법 분류 체계</li>
+</ul>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/해석학</span><span>#topic/성경해석</span><span>#topic/선교적해석학</span><span>#topic/성경신학</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

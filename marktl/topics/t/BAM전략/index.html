@@ -1,0 +1,264 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>BAM 전략 프레임워크 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="date">2026-05-10</span></div>
+  <h1 class="note-title">BAM 전략 프레임워크</h1>
+  
+</header>
+<article class="note">
+<p>raw:
+- <code>raw/lectures/keynote/기타/BAM_Strategic_Blueprint.md</code> (40슬라이드 강의안)
+- <code>raw/lectures/keynote/기타/Modern_Business_as_Mission.md</code> (동일 구조 버전 2)</p>
+<p>대상: 지역교회 선교위원회 · 청년 · 선교 헌신자</p>
+<hr />
+<h2>정의</h2>
+<ul>
+<li><strong>BAM(Business As Mission)</strong>: 비즈니스를 선교의 수단이 아니라 선교 그 자체로 보는 패러다임</li>
+<li>출발점: 성속 이원론("비즈니스=세속, 선교=거룩") 극복</li>
+</ul>
+<blockquote>
+<p>"깨어지고 파괴된 세상의 한복판에 들어가, 땀 흘려 가치를 창출하고 빈자를 먹이며 십자가 복음을 전하는 가장 치열하고 통합적인 제자도의 길"</p>
+</blockquote>
+<p>→ BAM 기본 정의, ISI 원칙 (김진수): <a class="wl" href="../../t/%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4%EC%84%A0%EA%B5%90/">비즈니스선교</a></p>
+<hr />
+<h2>신학적 기초</h2>
+<h3>웨인 그루뎀 — 비즈니스와 하나님의 영광</h3>
+<p>비즈니스 각 요소가 하나님의 속성을 반영한다:</p>
+<table>
+<thead>
+<tr>
+<th>비즈니스 요소</th>
+<th>하나님의 속성</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>소유권</td>
+<td>주권적 통치, 청지기 정신</td>
+</tr>
+<tr>
+<td>생산성</td>
+<td>창조의 능력 (무에서 유)</td>
+</tr>
+<tr>
+<td>이윤</td>
+<td>자원 가치를 높인 정당한 보상 + 나눔의 재원</td>
+</tr>
+<tr>
+<td>고용</td>
+<td>인간 존엄성 회복, 공동체 형성</td>
+</tr>
+<tr>
+<td>상거래</td>
+<td>신뢰와 공의의 실현</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"사업 자체가 곧 거룩한 사역이다"</p>
+</blockquote>
+<h3>폴 스티븐스 — 일터 영성</h3>
+<ul>
+<li>일터 = 목회자 전유물이 아닌 모든 그리스도인의 <strong>전임 사역</strong> 현장</li>
+<li>세속화된 자본주의 경제를 하나님의 통치가 임하는 곳으로 회복시키는 사명</li>
+</ul>
+<hr />
+<h2>사중 바텀라인 (C. 닐 존슨)</h2>
+<p>BAM 기업은 4가지 성과를 동시에 추구한다:</p>
+<table>
+<thead>
+<tr>
+<th>바텀라인</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>경제적 변혁</strong></td>
+<td>합법적·지속가능한 수익 창출 → 지역사회 자립</td>
+</tr>
+<tr>
+<td><strong>사회적 변혁</strong></td>
+<td>단순 자선이 아닌 양질의 일자리 창출, 부패 척결 → 존엄한 사회 기반</td>
+</tr>
+<tr>
+<td><strong>환경적 변혁</strong></td>
+<td>창조 세계의 청지기로서 지속가능한 자원 활용</td>
+</tr>
+<tr>
+<td><strong>영적 변혁</strong></td>
+<td>비즈니스의 모든 상호작용 속에서 복음 증거, 제자 양육</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>모델 비교</h2>
+<table>
+<thead>
+<tr>
+<th>모델</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>텐트메이킹</strong></td>
+<td>비자·생계를 위한 플랫폼 — 비즈니스가 선교의 수단</td>
+</tr>
+<tr>
+<td><strong>B4M</strong> (Business for Mission)</td>
+<td>비즈니스로 벌어 선교단체에 기부</td>
+</tr>
+<tr>
+<td><strong>BAM</strong></td>
+<td>비즈니스의 탁월함과 운영 자체가 하나님의 성품을 드러내는 본질적 사역</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>GCC — 지상대명령 기업 (스티브 런들·톰 스테판)</h2>
+<p>선교사 비자가 거부되는 제한 지역(이슬람권 등)에서 합법적으로 이윤을 창출하는 모델.</p>
+<p><strong>4역량:</strong>
+1. <strong>탁월함</strong> — 시장에서 살아남을 비즈니스 능력
+2. <strong>의도적 복음 전파</strong> — 직장 내 자연스러운 증거
+3. <strong>경제 발전</strong> — 현지 일자리 창출
+4. <strong>투명한 경영</strong> — 세금 정직 납부, 부패 거부</p>
+<blockquote>
+<p>"합법성이 담보될 때 타문화권에서 빛과 소금의 역할이 극대화된다"</p>
+</blockquote>
+<hr />
+<h2>현장 사례 (마츠 투네학·게아 고르트)</h2>
+<ul>
+<li><strong>태국·동유럽</strong>: 인신매매 생존자를 위한 가방·의류 BAM 기업 → 자립 + 영적 회복</li>
+<li><strong>모잠비크</strong>: 캐슈넛 가공 공장 → 마을 전체 경제 생태계 변화</li>
+<li><strong>유럽 도시</strong>: 크리스천이 운영하는 카페·양조장 → 지역 공동체 회복, 청년 소통</li>
+</ul>
+<hr />
+<h2>실패 요인 (패트릭 라이·토비 마일즈)</h2>
+<blockquote>
+<p><strong>"사업이 망하면 사역도 망합니다"</strong> — 패트릭 라이 (450개 이상 비즈니스 연구)</p>
+</blockquote>
+<p><strong>4대 실패 원인 (토비 마일즈):</strong>
+1. <strong>경영 능력 부족</strong> — 재무제표를 볼 줄 모름
+2. <strong>잘못된 우선순위</strong> — 전통적 사역(전도·성경공부)에만 집중, 사업 방치
+3. <strong>초기 자본 부족 + 불안정한 수익 구조</strong> — 시장조사 없이 진입
+4. <strong>현지 비즈니스 문화·법률 무지</strong> — 현지 전문가와 파트너십 필수</p>
+<hr />
+<h2>흩어짐(Scatter) 운동 (앤드류 스콧)</h2>
+<p>"당신의 직업을 가지고 선교지로 가십시오!"</p>
+<ul>
+<li>의사·엔지니어·교사·유튜버 등 전문 평신도가 전통적 후원 모금 없이 직업으로 선교지로</li>
+<li>전통 선교사 → <strong>선교적 전문인</strong>(Missionary Professional) 패러다임 전환</li>
+<li>래리 샤프: 청년들의 비즈니스·전문성 = "하나님의 미션을 위한 강력한 엔진"</li>
+</ul>
+<hr />
+<h2>지역교회의 역할</h2>
+<p><strong>선교위원회 변화 과제:</strong>
+- 허입 기준: 영적 열정 + <strong>비즈니스 계획서 타당성</strong> 동시 검증
+- 보고 양식: 영혼 숫자만 → 사중 바텀라인 종합 평가로 전환
+- 시니어 사업가(장로·전문직 성도) ↔ 청년 창업가 멘토링 매칭 풀 구성
+- <strong>킹덤 투자</strong>: 헌금 소비가 아닌 초기 자본 대여·투자 (영리법인 분리 원칙 + MOU 필수)
+- 파송 청년 기업을 교회가 "영적으로 입양" — 매주 재무·현지 상황을 위해 기도</p>
+<hr />
+<h2>한국 교회와 BAM</h2>
+<ul>
+<li><strong>IBA(국제비즈니스선교연합)</strong> — 한국 BAM 연합 네트워크, 조샘·송동호 대표</li>
+<li>지역교회 독자 파송 → IBA 등 기존 생태계와 협력 필수</li>
+<li>한국 기업의 추진력 + 역동성 + 복음 = 폭발적 BAM 잠재력 (김정부 목사)</li>
+<li>10/40 창 미전도 국가들도 비즈니스 투자자에게는 문을 열어줌</li>
+</ul>
+<hr />
+<h2>연결 주제</h2>
+<ul>
+<li><a class="wl" href="../../t/%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4%EC%84%A0%EA%B5%90/">비즈니스선교</a> — BAM 기본 정의, ISI 가치 (김진수)</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> — 미씨오 데이, 총체적 선교</li>
+<li><a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a> — 선교적 전문인, 일터 부르심</li>
+<li><a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%8B%A0%ED%95%99/">직업신학</a> — 일터 영성, 폴 스티븐스</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%84%B8%EA%B3%84%EA%B4%80/">기독교세계관</a> — 창타구완, 문화명령, Life as Mission</li>
+</ul>
+</article>
+<div class="tagrow"><span>#BAM</span><span>#비즈니스선교</span><span>#사중바텀라인</span><span>#GCC</span><span>#선교전략</span><span>#일터신학</span><span>#선교적전문인</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

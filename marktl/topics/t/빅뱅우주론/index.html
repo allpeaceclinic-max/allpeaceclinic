@@ -1,0 +1,136 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>빅뱅우주론 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:206">변증·철학</span><span class="date">2026-07-03</span></div>
+  <h1 class="note-title">빅뱅우주론</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>빅뱅우주론은 우주가 유한한 과거의 한 시점에 시작되었다는 현대 물리학의 표준 우주론이다. MBTS 변증학 8주차 강의는 이를 철학적 논증(칼람 우주론적 논증)이 아니라 <strong>과학적 확증</strong>으로서 "우주에 시작점이 있다"는 명제를 뒷받침하는 결정적 자료로 다룬다.</p>
+<h2>1. 칼람 논증의 과학적 매듭</h2>
+<p><a class="wl" href="../../t/%EC%B9%BC%EB%9E%8C%EC%9A%B0%EC%A3%BC%EB%A1%A0%EC%A0%81%EB%85%BC%EC%A6%9D/">칼람우주론적논증</a>의 둘째 전제("우주는 존재하기 시작했다")는 본래 실제적 무한의 (불)가능성이라는 철학적 논변으로 방어된다. 강의는 여기에 빅뱅 우주론을 더해, 철학적 경로가 아니라 <strong>과학으로 창조론의 매듭을 짓는다</strong>고 정리한다 — 원인이 없는 하나님과 원인이 있는 우주, 유한한 시간에 우주가 시작되었다는 것이다. <span class="wl-dead" title="위키 내부 링크">더글러스그로타이스</span>는 빅뱅이 우주에 시작점이 있음을 강조하는 과학적 확증이라고 평가한다.</p>
+<h2>2. 우주론적 논증의 하나님으로</h2>
+<p>강의는 이 시작점으로부터 원인이 되는 존재의 속성을 추론한다 — 설명의 복잡성이 달리 보증되지 않는 한 단일 원인(단순성)이 선호되며, 무에서의 창조를 초래한 존재는 능력에 있어 무제한적일 가능성이 높다는 것이다. 이는 <a class="wl" href="../../t/%EB%AC%B4%EC%8B%A0%EB%A1%A0/">무신론</a>(우주가 영원하지도 무에서 갑자기 존재하지도 않았다면 논박됨)과 <a class="wl" href="../../t/%EB%B2%94%EC%8B%A0%EB%A1%A0/">범신론</a>(우주의 영원한 순환 긍정과 충돌)을 함께 논박하는 근거로 이어진다.</p>
+<h2>3. 낙관과 유보</h2>
+<p>강의는 "21세기 우주론이 한 세기 전보다 기독교 신앙에 훨씬 더 호의적"이라며, <a class="wl" href="../../t/%EB%AF%B8%EC%84%B8%EC%A1%B0%EC%A0%95/">미세조정</a>(fine-tuning) — 자연의 기본 상수들이 생명체가 태동하도록 선택된 듯한 값을 갖는다는 인식 — 과 더불어 "과학이 발전할수록 오히려 하나님을 더 증명하게 된다"는 결론으로 나아간다. 다만 이 결부는 특정 시점의 우주론에 변증을 강하게 묶는 위험을 안고 있다 — 향후 우주론이 다시 변경된다면(예: 순환우주론의 재부상) 부메랑이 될 수 있다는 유보도 함께 다뤄진다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>빅뱅우주론은 칼람 논증의 둘째 전제를 철학이 아니라 과학으로 뒷받침하는 확증 자료로 기능한다.</li>
+<li>"우주에 시작이 있다"는 명제는 오늘날 과학자 다수가 사실상 받아들이는 소전제로, 창1:1·요1:1의 무로부터의 창조 교리와 대화 가능한 언어를 제공한다.</li>
+<li>특정 우주론에 변증을 결부시키는 전략은 설득력과 동시에 리스크를 안는다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>순환우주론 등 대안 우주론이 재부상할 경우, 칼람 논증과 빅뱅 확증의 결합이 어떻게 재조정되어야 하는가.</li>
+<li>폴 데이비스류의 "제로 에너지 상태로부터의 창조" 반론에 대한 "무·유 혼동" 비판이, 현대 양자 우주론(무경계 가설 등)의 더 정교한 반론까지 감당할 수 있는가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%9A%B0%EC%A3%BC%EB%A1%A0%EC%A0%81%EB%85%BC%EC%A6%9D/">우주론적논증</a> — 빅뱅우주론이 과학적으로 뒷받침하는 상위 논증.</li>
+<li><a class="wl" href="../../t/%EC%B9%BC%EB%9E%8C%EC%9A%B0%EC%A3%BC%EB%A1%A0%EC%A0%81%EB%85%BC%EC%A6%9D/">칼람우주론적논증</a> — 둘째 전제("우주는 존재하기 시작했다")의 과학적 확증 지점.</li>
+<li><a class="wl" href="../../t/%EB%AF%B8%EC%84%B8%EC%A1%B0%EC%A0%95/">미세조정</a> — 빅뱅 이후 우주 상수의 정교함을 다루는 병행 논증.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">08주_신앙과과학의문제</span></td>
+<td>MBTS 강의노트(양정모 교수)</td>
+<td>칼람 논증과 빅뱅의 결합, 미세조정 논증, 낙관과 유보 전체 출처</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/변증학</span><span>#topic/우주론적논증</span><span>#topic/칼람우주론적논증</span><span>#topic/미세조정</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

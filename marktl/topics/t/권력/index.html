@@ -1,0 +1,324 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>권력 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:140">목회·실천</span><span class="date">2026-07-10</span></div>
+  <h1 class="note-title">권력</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>권력(權力, power)은 <a class="wl" href="../../t/%EC%98%81%ED%96%A5%EB%A0%A5/">영향력</a>의 동력이다. 매클러랜드의 동기 이론에서 권력 동기(nPow)는 조직 리더십에서 가장 효과적인 동기로 꼽힌다(<span class="wl-dead" title="위키 내부 링크">맥클러랜드</span>). 그러나 권력은 그 자체로 선하지도 악하지도 않으며, <strong>어디에 쓰이는가</strong>가 그 성격을 가른다.</p>
+<p>성경은 이 도구적 중립성 위에 이중의 렌즈를 얹는다. 권성수 목사는 다니엘서 강해에서 권력을 "하나님께서 선을 권장하고 악을 징치하도록 주신 것"이라 말하면서, 동시에 같은 권력이 인간의 손에서 "본질적으로 맹수처럼 변한다"고 진단한다. 선물이면서 야수 — 이 긴장이 이 볼트의 권력 논의 전체를 관통한다. 이 페이지는 그 긴장을 차례로 따라간다 — 권력의 이중 위상에서 출발해, 인간은 왜 권력을 원하는가(동기·권력의지), 어떻게 장악하는가(문법), 권력과 권위는 무엇이 다른가(정통성), 찬탈한 권력은 어떻게 되는가(몰락), 그리스도는 힘을 어느 방향으로 흘리시는가(역전), 공동체는 무엇을 해야 하는가(견제)를 묻는다. 섬기는 리더십의 실천론은 <a class="wl" href="../../t/%EB%A6%AC%EB%8D%94%EC%8B%AD/">리더십</a>이, 권력 견제의 제도 설계는 <a class="wl" href="../../t/%EA%B1%B0%EB%B2%84%EB%84%8C%EC%8A%A4/">거버넌스</a>가 맡는다.</p>
+<h2>1. 선물이면서 야수 — 권력의 이중 위상</h2>
+<p>권력의 신학적 자리매김은 한쪽 극단에서 시작할 수 없다. 권성수 목사에 따르면 권력은 본래 창조주의 선물이다 — 선을 권장하고 악을 징치하도록 위임된 질서의 도구다. 그런데 같은 다니엘서가 인류사의 제국들을 사자·곰·표범·이름 없는 넷째 짐승으로 그린다(<span class="wl-dead" title="위키 내부 링크">단7</span>). 왜 하필 짐승인가. 권성수 목사의 답은 볼트의 권력론에서 가장 날카로운 명제다.</p>
+<blockquote>
+<p>"권력은 본질적으로 맹수처럼 변한다."</p>
+</blockquote>
+<p>견제받지 않는 권력은 사자·곰·표범처럼 삼키고 부수는 폭력 기계가 된다는 것이다. 다니엘 7장의 이미지 체계는 이 점에서 정교하다. 짐승은 땅에서 올라와 폭력으로 나라를 <strong>빼앗지만</strong>, 인자(바르 에나쉬, בַּר אֱנָשׁ)는 하늘 구름을 타고 와 옛적부터 항상 계신 이에게서 권세를 <strong>받는다</strong>. 쟁취와 수여 — 힘을 얻는 두 방식이 처음부터 갈라져 있다. 로마서 13장이 권세를 하나님이 세우신 것으로 말하고 요한계시록 13장이 국가 권력을 짐승으로 그리는 신약의 긴장은, 권성수 목사가 짚듯 이미 다니엘서에 배태되어 있다.</p>
+<p>이 이중성은 개인이 쥔 힘의 차원에 머물지 않는다. MBTS 교회행정학 강의는 "통치자들과 권세들"(<span class="wl-dead" title="위키 내부 링크">엡6</span>)을 사회구조로 보는 관점과 영적 존재로 보는 관점을 비교한 뒤 절충적 관점(조직 계통적인 악)으로 이동하고, 권세를 선한 권세 / 타락하고 식민지화된 권세 / 권세에 압도된 권세로 삼분한다. 권력이 제도와 체제로 실체화되면 개인의 선의만으로는 다룰 수 없는 층이 생긴다는 것이다. 이 우주적·구조적 차원의 씨름은 <a class="wl" href="../../t/%EC%98%81%EC%A0%81%EC%A0%84%EC%9F%81/">영적전쟁</a>이 이어받는다. 그렇다면 이 양날의 힘을, 인간은 왜 그토록 붙잡으려 하는가.</p>
+<h2>2. 권력 동기의 세 지향 — 사유화, 공적, 하나님나라</h2>
+<p>조직행동학은 권력 욕구를 죄악시하지 않는 데서 출발한다. 매클러랜드와 번햄은 인간의 동기를 성취(nAch)·권력(nPow)·관계(nAff) 셋으로 나누고, 영리·비영리 조직을 조사한 결과 조직의 성장과 번영에 가장 효과적인 리더는 권력 동기가 강한 사람이라는 결론에 이르렀다. 윤리적 분기점은 동기의 유무가 아니라 방향이다. 같은 권력 동기라도 개인의 이기심을 채우는 데 쓰면 사유화된 권력(personalized power), 공동의 목표를 이루는 데 쓰면 공적 권력(socialized power)이 되며, 두 동기는 누구 안에나 섞여 있으나 후자가 강한 사람이 더 효과적인 리더가 된다.</p>
+<p><span class="wl-dead" title="위키 내부 링크">조샘</span>은 이 세속 이론을 부정하지 않고 그 위에 신학의 층을 쌓는다(<span class="wl-dead" title="위키 내부 링크">2025_조샘_크리스챤_리더십_하나님나라의_영향력</span>). 공적 권력 추구가 사적 권력보다 탁월하지만, 둘은 종종 하나가 된다 — "자신이 속한 공동체의 성장과 성공을 자신의 성공과 명예로 하고 싶어하는 것"이다. 통상의 '섬기는 리더십' 담론이 멈추는 지점에서 한 걸음 더 들어간 진단이다. 그래서 그는 셋째 지향점을 제안한다. 예수께서 추구하신 권력은 나를 낮추고 사라지게 하며, 내가 속한 공동체조차 사라지게 하면서 온전히 <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EB%82%98%EB%9D%BC/">하나님나라</a>를 향한다. "나는 쇠하고 그 왕국은 서리라"(<span class="wl-dead" title="위키 내부 링크">요3</span> 3:30)가 그 전형이다.</p>
+<table>
+<thead>
+<tr>
+<th>지향</th>
+<th>힘을 쓰는 곳</th>
+<th>리더의 자리</th>
+<th>함정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>사유화된 권력 (personalized)</td>
+<td>개인의 이기심·과시</td>
+<td>정점에 군림</td>
+<td>공동체를 소모시킴</td>
+</tr>
+<tr>
+<td>공적 권력 (socialized)</td>
+<td>공동체의 목표</td>
+<td>공동체의 대표</td>
+<td>공동체의 성공이 자기 명예와 결합</td>
+</tr>
+<tr>
+<td>하나님나라의 권력</td>
+<td>하나님나라</td>
+<td>쇠하여 사라짐 (요 3:30)</td>
+<td>가시적 공동체를 세울 책임과의 긴장</td>
+</tr>
+</tbody>
+</table>
+<p>그러나 동기의 분류는 진단의 출발일 뿐이다. 성경은 권력 욕구의 뿌리를 성격 유형보다 훨씬 깊은 곳, 죄의 본질에서 찾는다.</p>
+<h2>3. 권력의지 — 하나님과 같아지려는 마음</h2>
+<p>문대원 목사는 우상 시리즈 다섯째 설교에서 <span class="wl-dead" title="위키 내부 링크">니체</span>의 "권력의지(der Wille zur Macht)"를 출발점으로 삼는다. 동물은 생존 본능에 머물지만 인간은 자기를 확장하고 지배하려 한다는 관찰이다. 니체는 이 의지를 상승의 원동력으로 긍정했고, 파스칼은 정반대로 경고했다.</p>
+<blockquote>
+<p>"인간은 천사와 같아지려다가 오히려 짐승과 같아진다." (파스칼)</p>
+</blockquote>
+<p>문대원 목사는 이 세속 인간론의 언어를 성경의 죄론으로 되받아친다. 높이 올라가 다스리려는 욕구는 타락한 천사(<span class="wl-dead" title="위키 내부 링크">사14</span> 14:13-14)와 첫 인간(<span class="wl-dead" title="위키 내부 링크">창3</span> 3:5, "하나님과 같이 되어")이 받은 동일한 유혹이며, 우상은 형상의 문제가 아니라 "내가 주권자가 되려는 마음"이다(<a class="wl" href="../../t/%EC%9A%B0%EC%83%81%EC%88%AD%EB%B0%B0/">우상숭배</a>). 그렇기에 권력의지는 정치인의 전유물이 아니라 가정·직장·교회의 수직 구조 어디에서나 작동한다. 느부갓네살이 다니엘 4장 30절에서 '나'를 네 번 반복하며 바벨론을 자기 공로로 자랑한 화법은(<span class="wl-dead" title="위키 내부 링크">단4</span>), 환경과 재능이라는 통제 불가능한 <a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a>를 망각한 자기 과시이고, 문대원 목사는 그것이 부·학벌·성취를 전시하는 오늘의 자기 과시 문화에서 그대로 반복된다고 본다.</p>
+<p>이 진단의 가장 깊은 층은 불안이다. 문대원 목사는 라인홀드 니버를 빌려 권력의지의 이면에 "유한성에서 오는 불안"이 있다고 말한다. 통제 욕구는 유한함을 견디지 못하는 방어기제이며, 그래서 사탄은 조종하지만 하나님은 인간만은 자유의지로 존중하시는 "모험"을 감수하신다 — 통제는 사랑의 반대다. 한편 볼트 안에서 니체는 다른 각도로도 등장한다. MBTS 기독교윤리학 강의는 니체에게 전통 윤리란 타인을 억압하는 "권력에의 의지"를 대변하는 매개에 불과했다고 정리한다(<a class="wl" href="../../t/%EC%8B%A4%EC%A1%B4%EC%A0%81%EC%A0%84%ED%86%B5/">실존적전통</a>). 니체가 도덕의 배후에서 권력을 폭로했다면, 설교는 권력의 배후에서 불안과 우상을 폭로하는 셈이다. 그리고 마음속 권력의지는 오래 숨어 있지 않는다. 밖으로 나오는 순간, 그것은 식별 가능한 장악의 문법이 된다.</p>
+<h2>4. 장악의 문법 — 아비멜렉, 아도니야, 헤롯</h2>
+<p>성경의 서사는 권력 장악의 기술을 놀랍도록 구체적으로 기록한다. 사사기 9장의 아비멜렉은 이름부터 "나의 아버지는 왕(멜렉)"이다(<span class="wl-dead" title="위키 내부 링크">삿9</span>). 권성수 목사의 강해에 따르면 그의 길은 배신감과 미움에서 출발해 혈연 동원, 거짓 선동("혼자 다스리는 게 낫겠냐, 70명이 다스리는 게 낫겠냐"), 혁명자금, 형제 70인 도륙을 거쳐 옹립에 이른다. 열왕기상 1장의 아도니야는 다른 조건에서 같은 문법을 쓴다(<span class="wl-dead" title="위키 내부 링크">왕상1</span>). 다윗의 노쇠가 만든 권력 공백 — "힘이 없으면 당한다. 권력의 공백이 오면 권력투쟁이 생긴다"(권성수) — 을 틈타 스스로 왕을 선언하고, 병거와 호위병 50명으로 위세를 연출하며, 초청 명단에서 사독·브나야·나단을 계산적으로 배제한다. 사도행전 12장의 헤롯 아그립바는 이 문법의 완성형이다(<span class="wl-dead" title="위키 내부 링크">행12</span>). 권오국 목사의 분석으로는 그는 양식으로 묶고(트레포 τρέφω, '먹이다'가 곧 '사육하다'), 은실로 짠 왕복의 화려함으로 현혹하고, "신의 소리요 사람의 소리가 아니라"는 신격화로 정점을 찍는다. 먹이는 자가 곧 다스리는 자다 — 그리고 권오국 목사는 feed라는 단어가 '사육하다'를 뜻함을 들어, 알고리즘 피드에 길들여지는 오늘의 미디어 환경에서 같은 통제의 문법이 반복된다고 진단한다.</p>
+<table>
+<thead>
+<tr>
+<th>인물</th>
+<th>기회</th>
+<th>수단</th>
+<th>연출</th>
+<th>결말</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>아비멜렉 (삿 9)</td>
+<td>사사 시대의 무질서</td>
+<td>혈연·선동·자금·살육</td>
+<td>"너희 골육" 혈연 호소</td>
+<td>요담의 우화대로 파멸</td>
+</tr>
+<tr>
+<td>아도니야 (왕상 1)</td>
+<td>다윗 노쇠, 권력 공백</td>
+<td>자기 선언·세력 포섭·배제</td>
+<td>병거와 호위병 50명</td>
+<td>기름부음 받은 솔로몬 앞에 무산</td>
+</tr>
+<tr>
+<td>헤롯 아그립바 (행 12)</td>
+<td>양식 공급의 독점</td>
+<td>식량 통제·박해</td>
+<td>은빛 왕복, "신의 소리"</td>
+<td>벌레에게 먹혀 죽음</td>
+</tr>
+</tbody>
+</table>
+<p>이 문법의 미시적 뿌리를 권성수 목사는 야고보서에서 찾는다. "욕심(에피튀미아 ἐπιθυμία)이 잉태한즉 죄를 낳고 죄가 장성한즉 사망을 낳느니라"(<span class="wl-dead" title="위키 내부 링크">약1</span> 1:15). 그는 70인 도륙이라는 극단을 명절에 반갑다가도 섭섭함이 올라오는 형제 갈등이라는 보편 경험에 잇는다. 아비멜렉의 씨앗은 누구에게나 있으며, 미움을 초기에 <a class="wl" href="../../t/%ED%9A%8C%EA%B0%9C/">회개</a>로 끊지 않으면 자란다는 것이다. 같은 강해는 이 문법이 신앙 공동체 내부에서도 반복됨을 경고한다 — 명분을 앞세워 교묘히 권력을 잡는 아비멜렉형과, 유익을 바라며 앞에서 동조하고 뒤에서 비판하는 세겜 사람형은 교회 안에도 있다. 명분의 언어조차 장악의 도구가 될 수 있다. 전성민 교수가 경고하듯, 권력을 가진 사람이 자기 입장을 "자연법·보편"이라 선언할 때 그것은 합리화가 되고 폭력적으로 사용될 수 있다(<span class="wl-dead" title="위키 내부 링크">전성민_자연법의약점</span>). 그렇다면 장악의 반대편에는 무엇이 있는가. 성경이 권력과 권위를 구별하는 지점이 여기다.</p>
+<h2>5. 권력과 권위 — 엑수시아, 위임받은 힘</h2>
+<p>신약이 권위를 말할 때 쓰는 엑수시아(ἐξουσία)는 단순한 힘(뒤나미스 δύναμις)과 다르다. 유승용 간사는 마가복음 11장의 권위 논쟁(<span class="wl-dead" title="위키 내부 링크">막11</span>)을 강해하며 이 단어가 <strong>정당하게 위임된 권한</strong>을 함의한다고 짚는다. 권위는 본래 하나님의 것이며(시 93:1 "스스로 권위를 입으셨도다"), 위임되는 것이다(눅 9:1 "능력과 권위를 주시고"). 예수님께 권위가 있는 이유도 세 겹이다 — 하나님으로부터 왔고, 말씀하신 대로 그대로 이루어졌고, 궁극적으로 죽음을 이기셨기 때문이다. 부활하신 주님의 "하늘과 땅의 모든 권세를 내게 주셨으니"(<span class="wl-dead" title="위키 내부 링크">마28</span> 28:18)에서도 권세(엑수시아)는 여전히 <strong>받은</strong> 것으로 선언된다(권성수, 선교의 야성).</p>
+<p>이 위임의 논리가 서사로 펼쳐진 것이 솔로몬의 대관식이다. 권성수 목사의 강해에서 아도니야는 스스로를 높였고(자기 즉위), 솔로몬은 기혼 샘에서 기름부음(마샤흐 מָשַׁח)을 받았다(타자에 의한 위임). 왕권의 정통성은 자기 선언이 아니라 하나님의 위임에서 오며 — "하나님이 세우신 왕세자가 아닌데 요압이 줄을 잘못 섰다" — 그 기름부음(마샤흐)은 곧 기름부음 받은 자, 메시아(마시아흐)이신 그리스도를 가리킨다. 권력(잡는 것)과 권위(받는 것)의 구별은 결국 기독론에서 완성되는 셈이다.</p>
+<p>이 구별은 리더십 현장의 언어로도 번역되어 있다. 문대원 목사는 피택자 교육에서 "영향력 ← 권위 ← 존경심 ← 인격"의 사슬을 제시하며, 직위에서 권한이 나온다는 통념의 엑수시아를 뒤집는다 — 교회의 권위는 자리가 아니라 인격에서 자란다(<span class="wl-dead" title="위키 내부 링크">2022_리더십피택자교육</span>). 그에게 권위는 억압 장치가 아니라 창조주가 피조세계와 인간의 성숙을 위해 세우신 질서이기도 하다(<span class="wl-dead" title="위키 내부 링크">2025_권위는하나님의계획이다</span>). 권위에 대한 순종과 공동체 질서의 윤리는 <a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%B2%B4/">공동체</a>가 이어받는다. 그리고 위임 없이 찬탈한 힘의 끝을, 본문들은 무섭도록 일관되게 증언한다.</p>
+<h2>6. "도와 줄 자가 없으리라" — 몰락과 하나님의 주권</h2>
+<p>찬탈한 권력의 결말은 요담의 우화에서 이미 예고된다. 감람나무·무화과나무·포도나무가 사양한 왕좌에 결국 가시나무가 앉는다는 우화(마샬 māšāl)는 직접 비난보다 오래 기억되는 간접 화법으로 아비멜렉의 파멸을 예언했고, 그대로 성취되었다. 다니엘 11장은 그 결말을 가장 압축적으로 보여준다. 스스로를 "현현한 신"(에피파네스 Ἐπιφανής)이라 칭한 안티오커스 4세 — 당대 유대인들은 그를 "에피마네스(미친 자)"라 조롱했다 — 의 정점과 몰락이 한 절 안에 나란히 놓인다(<span class="wl-dead" title="위키 내부 링크">단11</span>).</p>
+<blockquote>
+<p>"그가 장막 궁전을 바다와 영화롭고 거룩한 산 사이에 세울 것이나 그의 종말이 이르리니 도와 줄 자가 없으리라" (단 11:45)</p>
+</blockquote>
+<p>사도행전 12장도 같은 대조를 문법의 층위에서 만든다. 은빛 왕복의 헤롯이 벌레에게 먹혀 소리 없이 사라진 바로 다음 절에서, 누가는 미완료 시제 두 동사로 "하나님의 말씀은 흥왕하여 더하더라"(ηὔξανεν καὶ ἐπληθύνετο)라고 쓴다 — 권력자의 정지와 말씀의 전진. 다니엘 4장의 느부갓네살은 이 서사의 예외이자 완성이다. 일곱 때를 짐승처럼 살던 그는 "하늘을 우러러보았을 때" 총명을 회복한다. 본문에 세 번 반복되는 후렴 — "지극히 높으신 이가 사람의 나라를 다스리시며 자기의 뜻대로 그것을 누구에게든지 주신다"(단 4:17·25·32) — 이 다니엘서 권력 신학의 중심이며, 곧 <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%A3%BC%EA%B6%8C/">하나님의주권</a>의 선언이다. 권성수 목사가 다니엘 7장 9절의 보좌를 두고 "우리 눈에 보이지 않지만 인류를 다스리는 보좌에 하나님이 앉아 계신다. 이것을 놓치면 신앙이 없다"고 말한 것도 같은 자리다.</p>
+<p>주의할 것은 이 몰락 서사들이 권력 무상론이나 냉소를 가르치지 않는다는 점이다. 목적은 시선의 이동이다 — 보이는 짐승 너머 보이지 않는 보좌로. 그리고 보좌를 본 사람에게 권력은 더 이상 잡는 것이 아니라 흘려보내는 것이 된다.</p>
+<h2>7. 방향의 역전 — 내려가는 힘</h2>
+<p>아비멜렉의 반대 모델은 예수님이다. 권성수 목사는 권력 본문의 안티테제로 마가복음 10장 45절을 배치한다(<span class="wl-dead" title="위키 내부 링크">막10</span>) — "인자가 온 것은 섬김을 받으려 함이 아니라 도리어 섬기려 하고 자기 목숨을 많은 사람의 대속물로 주려 함이니라." 위대함의 정의가 바뀐다. "밑으로 내려가는 사람이 위대한 사람이다."</p>
+<p>권오국 목사는 이 역전을 힘의 방향이라는 도식으로 그린다. 세상 권력은 자원을 아래에서 위로 빨아올려 지배하고(사육), 하나님 나라는 위에서 아래로 흘려보내며 섬긴다(디아코니아 διακονία — 행 12:25, 부조의 일을 마치고 돌아가는 바나바와 사울). 헤롯은 사람에서 신으로 올라가 양식으로 사람을 묶었고, 그리스도는 하나님에서 종으로 내려와 자신을 내어주어 사람을 자유케 하셨다(<a class="wl" href="../../t/%EC%84%B1%EC%9C%A1%EC%8B%A0/">성육신</a>의 역방향 운동). 은빛 단상 위의 연설과 먼지 나는 길 위의 부조가 같은 시공간에서 교차하는 이 장면이, 두 나라의 문법 차이를 한눈에 보여준다.</p>
+<p>다니엘 7장의 인자도 같은 방향에 서 있다. 짐승은 빼앗지만 인자는 받으며, 그 나라는 폭력이 아니라 수여로 선다. 그래서 권성수 목사의 결론적 권면은 도피도 매몰도 아니다 — "짐승 왕국에 살면서 인자 왕국의 영향을 끼쳐야 한다." 내려가는 힘이 리더십의 형태로 구체화되는 실천론(종-리더십, 인격의 사슬, 팀 사역)은 <a class="wl" href="../../t/%EB%A6%AC%EB%8D%94%EC%8B%AD/">리더십</a>과 <a class="wl" href="../../t/%EC%84%AC%EA%B9%80/">섬김</a>이 다룬다. 다만 방향의 역전을 개인의 겸손에만 맡길 수는 없다. 권력은 구조 속에 살기 때문이다.</p>
+<h2>8. 맹수화의 견제 — 기도, 공론, 구조</h2>
+<p>권성수 목사는 네 짐승 강해의 적용에서 견제를 신앙의 공적 책임으로 명시한다. 권력이 맹수로 변하는 것을 막는 일 — 기도, 여론 형성, 공론의 장 — 은 사적 경건에 갇히지 않는 성도의 자리다. 다만 그 설교 분석이 스스로 남긴 질문처럼, 견제 활동 자체가 또 다른 짐승적 권력 다툼으로 변질될 위험(견제하는 자가 짐승이 되는 역설)은 남는다. 견제자에게도 동기의 분별(§2)과 불안의 진단(§3)이 똑같이 적용되어야 하는 이유다.</p>
+<p>기독 공동체 내부라고 예외가 아니다. 누가회 거버넌스 정책 제안은 선교단체의 위기 논의가 재정·성 문제의 프레임에 머무는 것을 넘어, 권력 자체의 구조 문제로 초점을 옮긴다. 리처드 포스터의 통찰 — 파워 자체가 영적 성숙의 시험대라는 — 을 근거로 삼되, "누가 권력을 독점하는가"라는 질문과 "누가 테이블에 앉고 누가 배제되는가, 심판이 동시에 선수인가"라는 질문을 구별한다. 같은 '권력 문제'라도 조직마다 병목이 다르므로 처방도 달라야 한다는 것이다(<span class="wl-dead" title="위키 내부 링크">누가회_거버넌스_정책_제안</span>). 이사회의 기능, 위탁으로서의 거버넌스 같은 구체적 제도 설계는 <a class="wl" href="../../t/%EA%B1%B0%EB%B2%84%EB%84%8C%EC%8A%A4/">거버넌스</a>가 맡는다.</p>
+<p>결국 권력 앞에서 신앙의 자리는 둘 다 아니다. 두려워 내버리는 것도 아니고(맡겨진 선물의 방기), 탐하여 움켜쥐는 것도 아니다(맹수화). 위임받은 종으로서 받아, 아래로 흘려보내는 것이다. 그 힘의 최종 소유권이 보이지 않는 보좌에 있음을 아는 한에서만, 권력은 선물로 남는다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>권력은 도구다. 선악은 사용처(사유화/공적/하나님나라)가 결정한다.</li>
+<li>공적 권력조차 자기 영광과 결합할 수 있다 — 통상의 '섬기는 리더십' 담론보다 한 걸음 더 깊은 진단.</li>
+<li>권력은 하나님의 선물이지만 견제받지 않으면 맹수화한다. 다니엘서의 짐승 이미지는 종말 예언이면서 동시에 권력 비판의 정치신학이다.</li>
+<li>권력의지는 정치인의 전유물이 아니라 모든 인간 안의 죄의 본질이다. 우상은 형상이 아니라 "내가 주권자가 되려는 마음"이며, 그 이면에는 유한성의 불안이 있다.</li>
+<li>권력(잡는 것, 뒤나미스의 축적)과 권위(받는 것, 엑수시아의 위임)는 다르다. 자기 옹립(아도니야)과 기름부음(솔로몬)의 차이가 정통성을 가른다.</li>
+<li>장악의 문법 — 선동, 양식으로 묶기, 화려함, 신격화 — 은 시대를 관통하며, 알고리즘 피드의 사육 구조에서도 반복된다.</li>
+<li>하나님 나라의 힘은 방향이 반대다. 위로 빨아올리는 사육이 아니라 아래로 흘려보내는 섬김이며, 그 원형이 막 10:45의 대속이다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>가시적 공동체(교회·선교단체)를 세우는 책임과 "공동체조차 사라지게 한다"는 자기 비움은 어떻게 양립하는가?</li>
+<li>권력의 방향(동기)을 리더 자신과 공동체는 어떻게 분별·검증하는가?</li>
+<li>정당하게 위임받은 권위와 찬탈된 권력을 구별하는 신학적 기준은 무엇인가? 신자의 소명적 야망과 죄가 되는 권력의지는 어디서 갈라지는가?</li>
+<li>성도는 현실 권력에 어떤 태도를 취해야 하는가 — 참여(롬 13장)와 저항(계 13장) 사이의 실천적 기준은?</li>
+<li>맹수화를 견제하는 활동 자체가 짐승이 되는 역설을 무엇이 막는가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%98%81%ED%96%A5%EB%A0%A5/">영향력</a> — 권력은 영향력의 동력. 세 지향점(사유화/공적/하나님나라) 논의를 공유</li>
+<li><a class="wl" href="../../t/%EB%A6%AC%EB%8D%94%EC%8B%AD/">리더십</a> — 서번트 리더십의 실천론과 리더 형성</li>
+<li><a class="wl" href="../../t/%EA%B1%B0%EB%B2%84%EB%84%8C%EC%8A%A4/">거버넌스</a> — 권력 견제의 제도 설계 (이사회 기능, 심판과 선수의 분리)</li>
+<li><a class="wl" href="../../t/%EC%9A%B0%EC%83%81%EC%88%AD%EB%B0%B0/">우상숭배</a> — 권력의지는 형상 없는 현대적 우상</li>
+<li><a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%A3%BC%EA%B6%8C/">하나님의주권</a> — 몰락 서사를 지탱하는 신학적 기초</li>
+<li><a class="wl" href="../../t/%EC%98%81%EC%A0%81%EC%A0%84%EC%9F%81/">영적전쟁</a> — 정사와 권세, 구조적 악과의 씨름</li>
+<li><a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%B2%B4/">공동체</a> — 권위에 대한 순종과 상호 복종의 윤리</li>
+<li><a class="wl" href="../../t/%EC%84%AC%EA%B9%80/">섬김</a> — 내려가는 힘의 실천</li>
+<li><span class="wl-dead" title="위키 내부 링크">맥클러랜드</span> — 권력 동기론의 출처</li>
+<li><a class="wl" href="../../t/%EC%8B%A4%EC%A1%B4%EC%A0%81%EC%A0%84%ED%86%B5/">실존적전통</a> — 니체 "권력에의 의지"의 윤리학사적 맥락</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2014_권력잡기만하면성공인가</span></td>
+<td>설교 (권성수, 2014)</td>
+<td>아비멜렉의 장악 문법, 욕심의 발생론(약 1:15), 섬김의 반대 모델(막 10:45)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">다니엘서_06_네짐승과인자</span></td>
+<td>설교 (권성수)</td>
+<td>권력의 맹수화, 보이지 않는 보좌, 인자 왕국과 견제의 책임</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2019_야수적권력투쟁과하나님</span></td>
+<td>설교 (권성수, 2019)</td>
+<td>야수적 권력투쟁, 안티오커스와 "도와 줄 자가 없으리라", 롬 13/계 13의 긴장</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">솔로몬_01_솔로몬의대관식</span></td>
+<td>설교 (권성수)</td>
+<td>권력 공백, 자기 옹립 대 기름부음(마샤흐), 위기의 지혜</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2026_우리가사랑한우상들5_권력의지</span></td>
+<td>설교 (문대원, 2026)</td>
+<td>니체·파스칼·니버, 권력의지=우상, 불안과 통제, 느부갓네살의 회복</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2026_권오국_세상권세와_하나님의승리</span></td>
+<td>설교 (권오국, 2026)</td>
+<td>양식으로 묶기(트레포), 힘의 방향(위/아래), 피드 문화 진단</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2023_유승용_그리스도_예수의_권위</span></td>
+<td>설교 (유승용, 2023)</td>
+<td>엑수시아 — 위임된 권한으로서의 권위, 예수 권위의 세 근거</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2025_권위는하나님의계획이다</span></td>
+<td>설교 (문대원, 2025)</td>
+<td>권위 = 창조 질서</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2022_리더십피택자교육</span></td>
+<td>설교·교육 (문대원, 2022)</td>
+<td>"영향력 ← 권위 ← 존경심 ← 인격" 사슬</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2017_선교의야성</span></td>
+<td>설교 (권성수, 2017)</td>
+<td>마 28:18 엑수시아의 정의 (위임받은 정당한 통치권)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2025_조샘_크리스챤_리더십_하나님나라의_영향력</span></td>
+<td>강의 에세이 (조샘, 2025)</td>
+<td>매클러랜드 수용과 하나님나라 지향(요 3:30)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">맥클러랜드</span></td>
+<td>인물</td>
+<td>권력 동기론 (McClelland &amp; Burnham, HBR 1976)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">누가회_거버넌스_정책_제안</span></td>
+<td>강의 기획 (이상협)</td>
+<td>스캔들 프레임을 넘어 권력 구조 문제로, 리처드 포스터의 파워 통찰</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">08주_저항_권세를상대로한씨름</span></td>
+<td>대학원 강의 노트</td>
+<td>권세의 세 겹 정의와 세 분류 (구조적 악)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">05주_실존적전통</span></td>
+<td>대학원 강의 노트</td>
+<td>니체 "권력에의 의지"의 윤리 비판 맥락</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">전성민_자연법의약점</span></td>
+<td>강의 (전성민)</td>
+<td>권력의 보편(자연법) 참칭 = 합리화 비판</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/리더십론</span><span>#topic/권력</span><span>#topic/권위</span><span>#topic/영향력</span><span>#topic/하나님나라</span><span>#topic/우상숭배</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

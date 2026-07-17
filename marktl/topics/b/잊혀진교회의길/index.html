@@ -1,0 +1,129 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>잊혀진 교회의 길 (The Forgotten Ways) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="author">[[people/앨런허쉬]]</span><span class="date">2026-04-17</span></div>
+  <h1 class="note-title">잊혀진 교회의 길 (The Forgotten Ways)</h1>
+  
+</header>
+<article class="note">
+<p><strong>저자</strong>: <span class="wl-dead" title="위키 내부 링크">앨런허쉬</span> (Alan Hirsch)<br />
+<strong>원본</strong>: <code>raw/5. book summary/book/잊혀진 교회의 길, 앨런허쉬.md</code></p>
+<h2>핵심 주장</h2>
+<p>초대교회와 현대 중국 지하교회가 폭발적으로 성장한 이유는 <strong>mDNA(선교적 DNA)</strong>를 갖고 있었기 때문. 서구 교회는 이 사도적 특성을 잃어버렸다 — 회복이 필요하다.</p>
+<blockquote>
+<p>"선교는 교회가 속해 있는 하나님의 속성이다." — 칼 바르트</p>
+</blockquote>
+<h2>mDNA 6가지 요소</h2>
+<ol>
+<li><strong>Jesus is Lord</strong> — 예수 중심의 유일신론, 만물의 주권</li>
+<li><strong>Disciple Making</strong> — 제자도가 유일한 전략. 교회 문턱은 낮추고 제자 문턱은 높이자</li>
+<li><strong>Missional-Incarnational Impulse</strong> — 선교적(밖으로) + 성육신적(뿌리내리기)
+   - Presence / Proximity / Prevenience / Powerlessness / Passion / Proclamation</li>
+<li><strong>Apostolic Environment</strong> — 사도적 환경</li>
+<li><strong>Organic Systems</strong> — 증식하는 유기적 조직</li>
+<li><strong>Liminality &amp; Communitas</strong> — 경계성 + 커뮤니타스. 안전지대 밖에서 진정한 공동체 형성</li>
+</ol>
+<h2>APEST (5중 사역)</h2>
+<ul>
+<li><strong>A</strong>postolic(사도적) · <strong>P</strong>rophetic(선지자적) · <strong>E</strong>vangelistic(복음전도적) · <strong>S</strong>hepherding(목자적) · <strong>T</strong>eaching(교사적)</li>
+<li>서구 교회는 ST(목사-교사)만 남기고 APE를 잃어버렸다</li>
+<li>사도적 리더십이 가장 필요하다</li>
+</ul>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>구조는 필요하지만 제도주의(institutionalism)는 병이다 — 시간이 지나면 구조가 목적을 대체한다</li>
+<li>복음은 끊임없이 주소를 바꿔야 한다 (헬무트 틸리케) — 수신자가 바뀌기 때문</li>
+<li>중산층 + 소비주의 = 안락함 → 커뮤니타스 불가능</li>
+</ul>
+<h2>관련 연결</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a></li>
+<li><a class="wl" href="../../t/%EB%8C%80%EC%82%AC%EB%AA%85/">대사명</a></li>
+<li><span class="wl-dead" title="위키 내부 링크">APEST문화</span> — 동저자의 후속작</li>
+</ul>
+</article>
+<div class="tagrow"><span>#독서</span><span>#선교적교회</span><span>#mDNA</span><span>#앨런허쉬</span><span>#APEST</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

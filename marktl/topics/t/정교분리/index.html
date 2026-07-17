@@ -1,0 +1,374 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>정교분리 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:38">교회사</span><span class="date">2026-07-14</span></div>
+  <h1 class="note-title">정교분리</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>정교분리(separation of church and state)는 국가와 교회가 서로의 영역을 지배하지 않는다는 <strong>제도의 원리</strong>다. 그 뜻은 두 문장으로 요약된다 — 국가는 어떤 신앙도 강제하거나 금지할 수 없고(종교 강제 금지), 어떤 종교도 국가의 공식 종교가 될 수 없다(국교 금지). 정교분리는 국가와 교회라는 두 제도가 각자의 소관을 넘어 상대를 도구로 삼는 것을 막는 담장이며, 그 담장의 목적은 강제 없는 자발적 신앙을 보호하는 데 있다.</p>
+<p>그런데 이 원리는 거의 언제나 한 가지 오해와 함께 등장한다 — 정교분리가 곧 신앙의 사사화(私事化), 즉 "믿음은 개인의 마음속 일이니 공적 광장에서는 입을 다물라"는 요구라는 오해다. 이 글의 첫 과제는 그 오해를 교정하는 것이다. 정교분리는 <strong>제도의 분리</strong>이지 <strong>신앙의 침묵</strong>이 아니다. 국가와 교회의 책상은 분리되지만, 신앙인의 공적 발언권은 분리의 대상이 아니라 오히려 분리가 지켜주는 것이다.</p>
+<p>이 페이지가 서 있는 자리를 분명히 해두는 것이 좋겠다. 그리스도인이 사회에 참여하는 방식과 스펙트럼, 그 한계선과 태도는 이미 <a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EC%99%80%EC%82%AC%ED%9A%8C%EC%B0%B8%EC%97%AC/">교회와사회참여</a>가 상세히 다루었다. 이 글은 그 앞단, 곧 국가와 교회의 <strong>제도적 관계</strong> 자체를 다룬다 — 무엇이 정교분리이고 무엇이 아닌가(§1), 그 뿌리(§2), 이 원리를 역사에 새겨 넣은 침례교의 계보(§3, 이 글의 심장), 분리가 지켜주는 두 방향의 보호(§4), 한국적 맥락의 두 얼굴(§5), 분리가 왜 침묵이 아닌가(§6), 그리고 다원주의 사회에서의 재협상(§7)까지. 침례신학의 1차 사료가 이 주제 위에 유난히 두껍게 쌓여 있는 것은 우연이 아니다. 정교분리는 침례교가 세계 교회사에 남긴 가장 뚜렷한 유산이기 때문이다.</p>
+<h2>1. 무엇이고 무엇이 아닌가 — 제도의 분리이지 신앙의 사사화가 아니다</h2>
+<p>먼저 경계를 그어야 한다. 정교분리가 <strong>뜻하는 것</strong>과 <strong>뜻하지 않는 것</strong>은 자주 뒤섞인다.</p>
+<table>
+<thead>
+<tr>
+<th>정교분리가 뜻하는 것 (제도의 분리)</th>
+<th>정교분리가 뜻하지 <strong>않는</strong> 것 (신앙의 사사화)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>국가가 특정 신앙을 강제·금지할 수 없다</td>
+<td>신앙인이 공적 사안에 발언하면 안 된다</td>
+</tr>
+<tr>
+<td>어떤 종교도 국교가 될 수 없다</td>
+<td>종교는 사적 취미이니 광장에서 감추라</td>
+</tr>
+<tr>
+<td>교회가 국가 권력을 자기 도구로 삼을 수 없다</td>
+<td>교회가 사회에 아무 영향도 주면 안 된다</td>
+</tr>
+<tr>
+<td>신앙은 강제가 아니라 자발적 동의의 문제다</td>
+<td>신앙은 이성·공론과 무관한 감정의 영역이다</td>
+</tr>
+</tbody>
+</table>
+<p>왼쪽은 제도의 언어이고, 오른쪽은 신앙의 존재 방식에 대한 잘못된 결론이다. 둘을 혼동하는 순간 정교분리는 신앙을 광장 밖으로 밀어내는 도구로 전락한다. 스탠리 하우어워스가 "종교의 자유는 왜 교묘한 유혹인가"라고 물은 지점이 바로 여기다. MBTS 교회사 노트가 정리하듯, 하우어워스는 종교의 자유가 오히려 종교를 "사적(private)이라고 불리는 새롭게 창조된 공간으로" 사회적·정치적으로 추방했다고 지적한다. 법에 의한 국교는 19세기에 끝났고 문화적 지배력에 의한 국교는 20세기에 끝났지만, 그 자유의 대가로 신앙이 공적 광장에서 발언할 언어를 잃었다면 그것은 승리가 아니라 또 다른 형태의 포획이라는 것이다. 종교의 자유는 "그리스도인인 우리로 하여금 법적 메커니즘이 우리를 안전하게 지켜준다고 믿도록" 유혹한다.</p>
+<p>같은 경계를 짐 월리스는 한 문장으로 못박는다 — "하나님은 개인적이지만 사적이지는 않다." 성경이 보여주는 하나님은 골방의 신이 아니라 성문과 광장에서 정의를 요구하시는 매우 공적인 하나님이시다. 그러므로 정교분리가 지키려는 것은 신앙의 침묵이 아니라 신앙의 자발성이다. 국가가 손대지 못하도록 담장을 두르는 이유는 그 안의 신앙이 위축되라고가 아니라, 강제되지 않은 진짜 신앙으로 살아 있으라고다. 이 구별을 붙들고 나면, 다음 질문은 자연스럽게 이어진다 — 이 담장은 대체 어디서 왔는가.</p>
+<h2>2. 뿌리 — 가이사의 것, 초대교회, 그리고 콘스탄티누스의 그림자</h2>
+<p>담장의 첫 벽돌은 예수의 한 문장이다. "가이사의 것은 가이사에게, 하나님의 것은 하나님께"(마 22:21). 이 말씀은 흔히 정치 도피의 근거로 오독되지만, 실은 영역 구분의 원리다 — 교회가 가이사의 영역을 다 차지하려 해서도 안 되고, 가이사가 하나님의 영역을 침범해서도 안 된다. 국가에는 국가의 소관이, 신앙에는 국가가 손댈 수 없는 소관이 있다는 이 이중의 경계가 정교분리의 신학적 씨앗이다.</p>
+<p>초대교회는 이 경계를 목숨으로 지켰다. 그들이 박해받은 핵심 이유는 반사회적이어서가 아니라, 황제 숭배라는 <strong>국가 종교</strong>를 거부했기 때문이다. 가이사를 주(Lord)라 부르기를 거부하고 오직 그리스도만을 주로 고백한 것 — 그것이 로마가 용납할 수 없는 정치적 불복종으로 읽혔다. 신앙의 궁극적 충성이 국가에 양도될 수 없다는 이 고백이, 훗날 정교분리가 지키려는 바로 그것이다.</p>
+<p>역설은 박해가 끝난 자리에서 시작됐다. <span class="wl-dead" title="위키 내부 링크">콘스탄티누스</span>가 313년 밀라노 칙령으로 기독교를 공인하고 325년 니케아 공의회를 소집하면서, 교회는 박해받던 소수에서 제국의 종교로 올라섰다. 그러나 이 동맹은 축복이자 덫이었다. <a class="wl" href="../../t/%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%85%90%EB%8D%A4/">크리스텐덤</a> — 기독교가 국가·사회·문화를 지배하는 체제 — 는 복음의 확산을 도운 동시에, 교회와 국가의 유착이 낳는 모든 병폐(신앙의 강제, 권력을 위한 종교, 종교를 위한 권력)를 천 년 넘게 배양했다. 정교분리는 바로 이 크리스텐덤의 그림자를 향한 반성에서 자라났다. 종교개혁 급진파인 재세례파가 크리스텐덤을 정면으로 거부하고 "완전 분리"를 택한 것, 그리고 그 흐름이 자유교회(free church) 전통으로 이어진 것이 그 첫 결실이다.</p>
+<p>MBTS 교회사 노트는 교회와 국가의 관계를 다섯 유형으로 지도화한다. 이 지형도 위에서 정교분리의 자리가 선명해진다.</p>
+<table>
+<thead>
+<tr>
+<th>유형</th>
+<th>관계 구조</th>
+<th>대표</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>교회가 국가를 지배</td>
+<td>교회 우위의 신정</td>
+<td>중세 로마가톨릭(바티칸)</td>
+</tr>
+<tr>
+<td>국가가 교회를 지배</td>
+<td>에라스티어니즘(Erastianism)</td>
+<td>영국 국교회(성공회)</td>
+</tr>
+<tr>
+<td>교회와 국가의 완전 분리</td>
+<td>상호 절연</td>
+<td>16세기 재세례파</td>
+</tr>
+<tr>
+<td>상호 독자·상호 불간섭</td>
+<td>두 왕국의 병존</td>
+<td>루터파</td>
+</tr>
+<tr>
+<td>상호 독자 + 양 영역에 하나님 주권</td>
+<td>영역 주권</td>
+<td>개혁파</td>
+</tr>
+</tbody>
+</table>
+<p>주목할 것은 칼뱅의 분리조차 근대 미국적 이해인 "교회와 국가 사이의 높고 단단한 철벽"과는 달랐다는 점이다. 존 위티 주니어의 정리처럼, 칼뱅은 종교와 정치가 절대적으로 분리된 세속 사회를 염두에 둔 것이 아니라 "교회의 자유와 질서를 재구성"하려 했을 뿐이다. 완전한 철벽을 향해 끝까지 밀고 간 것은 재세례파였고, 그 급진적 유산을 신학적으로 정련하고 헌법에 새겨 넣은 것이 침례교였다.</p>
+<h2>3. 침례교 계보 — 양심의 자유라는 심장</h2>
+<p>정교분리를 하나의 사상이 아니라 한 공동체의 <strong>정체성</strong>으로 살아낸 것이 침례교다. 침례교의 기원을 두고는 세 학설이 경합한다. 신약 시대부터 침례교회가 끊이지 않고 이어졌다는 계승설(제임스 그레이브스의 지계석주의, J. M. 캐롤의 소책자 『피 흘린 발자취』), 16~17세기 네덜란드 재세례파(메노파)의 영향을 강조하는 아나뱁티스트 영향설, 그리고 오늘날 주요 역사가 다수가 지지하는 영국 분리주의 후계설이다. 세 번째 견해의 핵심 통찰은 겸손하다 — 침례교인은 양심의 자유와 정교분리를 <strong>창안한</strong> 것이 아니라, 신약 교회의 가르침을 새 시대에 <strong>재발견하고</strong> 분명하게 표현했을 뿐이라는 것이다. 이 겸손이 중요하다. 정교분리는 한 교단의 발명품이 아니라 성경으로의 복귀로 이해될 때에만 그 보편적 권위를 갖는다.</p>
+<p>여기서 침례교와 재세례파의 결정적 차이를 짚어야 한다. 둘 다 유아세례를 거부하고 정교분리를 추구했지만, 재세례파가 세상으로부터의 물러남·극단적 평화주의·재화 공유로 기울었다면, 침례교는 시민권과 자유의 보호를 위해 세속 정부에 참여하는 것을 인정했다. 이 차이가 이 페이지 전체의 열쇠다 — <strong>침례교의 정교분리는 세상 도피가 아니다.</strong> 분리는 광장을 떠나기 위한 것이 아니라, 강제 없는 신앙으로 광장에 서기 위한 것이다.</p>
+<p>계보는 이렇게 흐른다.</p>
+<table>
+<thead>
+<tr>
+<th>시기</th>
+<th>인물·사건</th>
+<th>정교분리에의 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>17세기 초</td>
+<td><span class="wl-dead" title="위키 내부 링크">존스마이스</span> (암스테르담)</td>
+<td>역사상 최초의 침례교도. 그의 최후 신앙고백서는 양심의 자유와 정교분리를 담은 최초의 신앙고백</td>
+</tr>
+<tr>
+<td>1612년경</td>
+<td><span class="wl-dead" title="위키 내부 링크">토마스헬위스</span> (스피털필드)</td>
+<td>영국 땅 최초의 침례교회. 제임스 1세에게 만인의 종교자유를 청원 → 뉴게이트 옥사</td>
+</tr>
+<tr>
+<td>1610~20년대</td>
+<td>레오나르드 부셔·존 머튼</td>
+<td>강압적 종교행위를 "영적 성폭행"으로 고발; "참이든 거짓이든 종교로 핍박받아선 안 된다"</td>
+</tr>
+<tr>
+<td>1636·1644년</td>
+<td><span class="wl-dead" title="위키 내부 링크">로저윌리엄스</span> (프로비던스/로드아일랜드)</td>
+<td>"양심의 자유"; 저서 『피 흘리는 교의』 — 시민 위정자는 오직 시민사에만 권한을 갖는다</td>
+</tr>
+<tr>
+<td>1770년대</td>
+<td><span class="wl-dead" title="위키 내부 링크">아이작배커스</span> (워렌지방회)</td>
+<td>"참 종교는 하나님에 대한 자발적 복종"; 국가는 종교를 내버려 두라</td>
+</tr>
+<tr>
+<td>1789~91년</td>
+<td><span class="wl-dead" title="위키 내부 링크">존릴랜드</span> → 제임스 매디슨</td>
+<td>"종교는 하나님과 개인 사이의 문제" → 수정헌법 제1조</td>
+</tr>
+</tbody>
+</table>
+<p>이 계보의 문법은 처음부터 일관된다 — <strong>강제된 신앙은 신앙이 아니다.</strong> 헬위스는 국왕 앞에서 모든 사람(이단과 타종교인까지 포함한)의 종교자유를 주장하다 감옥에서 죽었고, 부셔는 강요된 예배를 영혼에 대한 성폭행이라 불렀으며, 머튼은 그 종교가 참인지 거짓인지조차 국가가 판단할 자격이 없다고 못박았다. 이 급진성은 로저 윌리엄스에서 절정에 이른다. 뉴잉글랜드의 비분리주의 청교도들이 순결한 기독교 국가를 세우기 위해 교회와 국가의 긴밀한 협력을 필수로 여겼을 때, 윌리엄스는 정교일치 사회 자체를 부정했다 — 국가는 세속의 일을, 교회는 영적인 일을 하는 것이므로 시민은 누구나 종교 문제에서 다른 견해를 가질 자유가 있다는 것, 그것이 그가 말한 "양심의 자유(liberty of conscience)"다. 그는 이 신념 때문에 매사추세츠에서 추방되어 인디언에게서 땅을 사 프로비던스를 세우고, 민주주의·종교의 자유·정교분리를 천명하는 공동체 협정을 맺었다. 1644년의 『피 흘리는 교의』 12개 조항은 개인의 구원이란 결코 강제될 수 없는 신자 개인의 문제이기에 시민 위정자는 오직 시민적 사안에만 권한을 갖는다고 논증했다.</p>
+<p>이 신념이 헌법이 되기까지 한 세대 더 걸렸다. 아이작 배커스는 워렌지방회의 "고충처리위원회"를 이끌며 침례교인 박해 사례를 입증해 법정과 의회에 시정을 요구했고, 참 종교란 하나님에 대한 자발적 복종이므로 목회자는 강요된 세금이 아니라 자발적 헌금으로만 지원받아야 한다고 주장했다. 남부의 대변인 존 릴런드는 여기에 가장 날카로운 정식을 더했다.</p>
+<blockquote>
+<p>"인간의 종교적 견해는 시민 정부의 대상이 아니며, 어떤 방식으로든 그 통제 하에 있지 않다. 종교는 하나님과 개인들 사이의 문제다." — 존 릴랜드, 『양도할 수 없는 양심의 권리』</p>
+</blockquote>
+<p>릴런드는 법으로 설립된 종교는 언제나 종교를 해치며, 국가종교 설립의 진짜 동기는 종교에 유익을 주려는 것이 아니라 통치자의 권력을 보강하고 교직자의 지갑을 키우려는 것이라고 폭로했다. 그리고 그는 제임스 매디슨과 타협해 헌법 개정을 이끌어냈다. 1791년 수정헌법 제1조 — "의회는 국교를 제정하거나 자유로운 종교 활동을 금지하는 법을 만들 수 없다" — 가 그 결실이다. 조셉 도슨의 유명한 관찰처럼, 미국 종교자유에 누가 가장 크게 공헌했느냐고 매디슨 자신에게 물었다면 그는 "존 릴런드와 침례교도"라고 답했을 것이다. 토머스 제퍼슨이 훗날 댄버리 침례교회에 보낸 편지에서 쓴 "분리의 담장(wall of separation)"이라는 표현이 침례교인들을 수신자로 삼은 것도 우연이 아니다.</p>
+<p>그리하여 <strong>양심의 자유(soul liberty)는 침례교 정체성의 핵심</strong>이 되었다(<a class="wl" href="../../t/%EC%B9%A8%EB%A1%80%EA%B5%90%EC%8B%A0%ED%95%99/">침례교신학</a>·<a class="wl" href="../../t/%EC%B9%A8%EB%A1%80%EA%B5%90%ED%9A%8C/">침례교회</a>). 신자의 침례, 회중 정치와 나란히 선 이 세 번째 기둥은 단순한 정치 강령이 아니라 신학적 확신이다 — 하나님은 강제된 예배를 원하지 않으시고, 신앙은 성령의 조명 아래 각 사람이 직접 응답해야 할 자발적 헌신이기 때문이다. 존 위티 주니어가 정리하듯, 칼뱅주의 전통에서 발원한 이 "종교의 권리"는 결국 집회·표현·출판·교육의 자유로 확장되며 "다른 많은 인권의 어머니 역할"을 했고 근대 초기 헌법들의 산파가 되었다. 인권이 계몽주의의 세속적 발명품이라는 통념과 달리, 그 뿌리의 상당 부분은 강제될 수 없는 양심을 지키려던 신앙의 투쟁에 있었다.</p>
+<h2>4. 두 방향의 보호 — 국가로부터 교회를, 교회로부터 국가를</h2>
+<p>정교분리를 오해하는 가장 흔한 방식은 그것을 한 방향으로만 읽는 것이다. 이 담장은 두 방향으로 작동한다.</p>
+<p>```
+        [ 정교분리의 담장 ]
+   국가  ──✕──▶  교회      ① 국가로부터 교회를 보호
+   (신앙을 강제·금지 못함 / 국교 못 세움)</p>
+<p>교회  ──✕──▶  국가      ② 교회로부터 국가를 보호
+   (국가 권력을 신앙의 도구로 삼지 못함 / 신정 방지)
+```</p>
+<p>첫째 방향은 대개 잘 이야기된다 — 국가는 신앙을 강제하거나 박해할 수 없고, 특정 종교를 국교로 세워 다른 양심을 억압할 수 없다. 헬위스가 옥사하고 윌리엄스가 추방되며 지킨 것이 이 벽이다. 그러나 둘째 방향을 빠뜨리면 정교분리는 절반만 남아 왜곡된다 — 교회 역시 국가 권력을 자기 신앙의 집행 도구로 삼아서는 안 된다. 이것이 신정(神政)의 방지다. 윌리엄스가 뉴잉글랜드 청교도의 신정체제를 떠난 것은 국가가 교회를 억압해서가 아니라, 오히려 교회가 국가를 통해 신앙을 강제하는 체제를 거부해서였다. 릴런드의 폭로 — 국가종교의 진짜 수혜자는 통치자의 권력과 교직자의 지갑이라는 — 는 정교분리가 국가의 건강성까지 지켜준다는 통찰이다. 종교와 손잡은 권력은 자신의 야심을 신의 뜻으로 포장하기 때문이다(<a class="wl" href="../../t/%EA%B6%8C%EB%A0%A5/">권력</a>에서 상세히 다룬다).</p>
+<p>두 방향을 함께 붙들면, 정교분리가 지키려는 단 하나의 핵심이 드러난다 — <strong>신앙의 자발성</strong>이다. 국가로부터 교회를 보호하는 이유도, 교회로부터 국가를 보호하는 이유도 같다. 강제된 신앙은 신앙이 아니기 때문이다. 배커스가 "참 종교는 자발적 복종"이라 정의했을 때, 그 한 문장이 담장의 양쪽을 동시에 정당화한다. 어느 한 방향만 강조하는 정교분리론 — 국가의 위협만 말하거나, 교회의 과욕만 말하는 — 은 반드시 특정 진영의 무기로 전락한다. 온전한 정교분리는 두 방향을 동시에 지킨다.</p>
+<h2>5. 한국적 맥락 — 두 얼굴의 정교분리</h2>
+<p>⚖️ 한국에서 정교분리는 유난히 다루기 조심스러운 주제다. 좌와 우가 정면으로 갈리는 자리이기 때문이다. 그러나 볼트의 자료를 정직하게 읽으면, 한국사에서 정교분리라는 말 자체가 <strong>두 얼굴로 오용된</strong> 역사가 드러난다. 이 대칭을 놓치면 논의는 곧바로 한쪽의 무기가 된다.</p>
+<p>『태극기를 흔드는 그리스도인』의 저널리스트 김지방은 이 두 얼굴을 한 문장에 담는다 — "과거 군사독재 정권 때의 정교분리 논란은 교회를 정치 현실에 눈감도록 했지만, 지금은 교회가 보수 정치의 자장에 끌려가는 상황…에서 벗어나기 위해 정교분리를 긍정적으로 재평가할 필요가 있다." 곧 정교분리는 한때는 교회를 <strong>침묵시키는</strong> 명분으로(독재기 불의에 눈감게 하는), 지금은 교회를 특정 진영에서 <strong>떼어내는</strong> 명분으로 소환된다. 같은 원리가 정반대 방향으로 쓰인 것이다.</p>
+<p>이 두 얼굴은 그대로 좌우의 두 우려에 대응한다. 어느 쪽도 피고석에 세우지 않고 거울로 읽어야 한다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>교회의 권력화에 대한 우려</th>
+<th>신앙의 공적 배제에 대한 우려</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>붙든 통찰</td>
+<td>교회가 정치 권력과 동일시되면 예언자성을 잃는다</td>
+<td>신앙이 사적 영역에 갇히면 공적 책임을 잃는다</td>
+</tr>
+<tr>
+<td>겨냥하는 위험</td>
+<td>교회가 특정 진영의 동원 기구가 됨(당파화)</td>
+<td>광장에서 하나님을 진지하게 언급조차 못 함(사사화)</td>
+</tr>
+<tr>
+<td>볼트의 목소리</td>
+<td>최경환·김지방(『태극기…』): 공론장의 집단이익화, 정치 교회의 흥망</td>
+<td>하우어워스·짐 월리스: 종교의 자유가 신앙을 사적으로 추방</td>
+</tr>
+<tr>
+<td>무너지는 방식</td>
+<td>"우리 편 = 하나님 편"의 신정적 유혹</td>
+<td>"믿음은 골방에서만"의 실천적 무신론</td>
+</tr>
+</tbody>
+</table>
+<p>두 우려는 문법이 같다. 한쪽은 정교분리를 어겨서(교회가 국가를 도구화), 다른 쪽은 정교분리를 오해해서(신앙을 사사화) 신앙의 공적 진정성을 잃는다. 짐 월리스가 표를 얻으려 하나님을 끌어들인 보수 진영과 정교분리에 갇혀 "하나님의 정치"에서 스스로 멀어진 자유 진영을 <strong>함께</strong> 비판한 것이 정확히 이 대칭이다. 볼트의 자료가 태극기 현상(우파의 당파화)을 더 길게 진단하는 것은 사실이지만, 그 책조차 정재영의 경고 — "좌파 정권이 들어설 때만 유독 정치 관련 설교나 정권 비난이 많다는 사실은 균형을 잃었다" — 를 자기 진영을 향한 거울로 내장하고 있다. 어느 방향이든 특정 정권 때만 목소리를 내는 선택적 예언은 예언이 아니라 정파성이다.</p>
+<p>구체적 쟁점들 — 매년 열리는 국가조찬기도회, "국교를 인정하지 않는 세속 공화국임에도 신정국가처럼 느껴질 때가 있다"는 관찰, 주일 예배 후 광장으로 향하는 회중을 앞에 둔 목회자의 딜레마 — 은 모두 이 두 얼굴이 실제로 부딪히는 접점이다. 김지방이 관찰한 광화문 집회 참가 그리스도인들이 "자신의 신앙 때문이 아니라 정치적 입장 때문에 집회에 나갔다"고 답했다는 사실은, 신앙이 정치를 인도하는 것이 아니라 정치가 신앙을 삼킨 전도(顚倒)를 보여준다. 정교분리의 한국적 재평가가 향하는 지점은 그래서 진영 교체가 아니라 방향 전환이다 — "정치적 이념이 다른 이에 대해서도 복음적 용서와 포용의 팔을 내뻗어야" 한다는 것. 이 두 우려의 목록은 상대 진영을 정죄할 무기가 아니라 각자 자기 진영을 비출 거울로 주어졌다.</p>
+<h2>6. 분리는 침묵이 아니다 — 예언자적 발언의 정당한 자리</h2>
+<p>여기서 §1의 경계로 되돌아온다. 제도의 분리가 신앙의 침묵을 뜻하지 않는다는 명제는, 침례교 계보 자체가 가장 강력하게 증명한다. 헬위스와 윌리엄스는 광장을 떠나 침묵한 사람들이 아니다. 그들은 국왕과 총독 앞에서 담대히 발언하다 감옥에 갇히고 추방당했다. 정교분리라는 원리 자체가 국가를 향한 예언자적 발언의 산물이었다. 그러니 분리를 내세워 신앙의 공적 발언을 봉쇄하는 것은 이 유산에 대한 배반이다.</p>
+<p>제도적으로 분리되어 있다는 것은 교회가 국가 권력을 손에 쥐지 않는다는 뜻이지, 국가의 불의 앞에서 눈을 감는다는 뜻이 아니다. 오히려 권력을 쥐지 않았기에 교회는 어떤 정권에도 빚지지 않고 원리를 선포할 자유를 얻는다. 정교분리는 예언자적 목소리를 <strong>없애는</strong> 것이 아니라 <strong>정파성으로부터 해방시키는</strong> 조건이다. 권성수의 정식대로, 교회는 정치적이되(political) 정파적이지 않아야(not partisan) 한다 — 정의로운 질서를 위해 원리를 선포하되, 특정 정당·정파의 이권을 대변하지 않는 것이다.</p>
+<p>다만 그 발언을 <strong>어떻게, 어디까지</strong> 할 것인가 — 원리 선포와 정책 개입의 경계, 참여의 스펙트럼과 태도, 본회퍼의 저항 계단과 템플의 절제 계단 — 는 이 페이지의 소관이 아니다. 그 모든 논의는 <a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EC%99%80%EC%82%AC%ED%9A%8C%EC%B0%B8%EC%97%AC/">교회와사회참여</a>가 상세히 전개했고, 권력의 작동 원리는 <a class="wl" href="../../t/%EA%B6%8C%EB%A0%A5/">권력</a>이, 공동선의 지평은 <a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%84%A0/">공동선</a>이 이어받는다. 이 페이지는 다만 그 참여가 서 있는 <strong>제도적 토대</strong> — 교회가 국가와 유착하지도 종속되지도 않은 채 자유롭게 발언할 수 있는 자리 — 를 확보하는 데서 멈춘다.</p>
+<h2>7. 현대적 시험대 — 다원주의 사회에서의 재협상</h2>
+<p>정교분리의 고전적 문법은 기독교가 사실상의 다수 종교이던 사회를 배경으로 형성됐다. MBTS 노트가 정리하는 미국 종교의 세 단계 — 개신교가 13개 식민지의 제도권 교회로 자리 잡던 시기, 헌법 조항에도 불구하고 개신교가 사실상 국교로 기능하던 시기, 그리고 다원주의적 후기 개신교(포스트크리스텐덤) 국가에 이른 현재 — 는 이 배경이 이미 무너졌음을 보여준다. 한국 역시 유사한 경로를 밟고 있다. 오늘의 시험대는 클락 코크란이 정식화한 물음으로 압축된다.</p>
+<blockquote>
+<p>"가장 심각한 어려움은 종교의 자유를 보장하고 국교를 금지하는 헌법을 지닌 채, 점점 더 다원화된 국가에서 그리스도인이 어떻게 하면 신실한 그리스도인이자 책임감 있는 시민으로 살 수 있는지를 배우는 것이다." — 『교회, 국가, 공적 정의 논쟁』(MBTS 리서치 페이퍼 재인용)</p>
+</blockquote>
+<p>다원주의는 정교분리에 두 방향의 압력을 동시에 가한다. 한편으로는 신앙을 완전히 사적 영역으로 밀어내려는 세속주의의 압력이 있고(§1의 사사화), 다른 한편으로는 텅 빈 공론장을 다시 종교적 정체성으로 채우려는 반작용(최경환이 말한 "반세속화")이 있다. 그래서 오늘의 질문은 종교의 <strong>탈사사화(de-privatization)</strong>, 곧 신앙이 사적 골방에서 공적 광장으로 다시 나오는 것이 어떻게 정파적 동원이 아닌 방식으로 가능한가이다. 리처드 니버가 『그리스도와 문화』에서 제시한 네 유형 — 문화와 종합하는 그리스도, 문화를 변혁하는 그리스도, 문화에 대항하는 그리스도, 문화와 긴장하는 그리스도 — 은 이 재협상에 정답이 하나가 아님을 일러준다. 각 유형은 부분적 통찰과 부득이한 위험을 함께 지닌다.</p>
+<p>결국 정교분리의 현대적 과제는 담장을 허무는 것도, 담장을 신앙의 감옥으로 만드는 것도 아니다. 강제 없는 자발적 신앙이 다원 사회의 광장에서 <strong>권력이 아니라 설득으로</strong>, <strong>동원이 아니라 증언으로</strong> 서게 하는 것 — 미로슬라브 볼프가 "온건한 차별성(soft difference)"이라 부른 자세, 곧 자신의 하나님 안에서 안정을 찾은 사람이 두려움 없이 다름을 안고 살며 타인을 복종시키지 않는 그 태도가 정교분리 시대의 신앙 형식이다. 담장은 신앙을 가두기 위해서가 아니라, 그 신앙이 진짜이도록 지키기 위해 서 있다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>정교분리는 <strong>제도의 분리</strong>이지 <strong>신앙의 사사화</strong>가 아니다. 국가와 교회의 책상은 나뉘지만, 신앙인의 공적 발언권은 분리의 대상이 아니라 분리가 지켜주는 것이다.</li>
+<li>담장은 두 방향으로 작동한다 — 국가로부터 교회를 보호하고(신앙 강제 금지), 교회로부터 국가를 보호한다(신정 방지). 어느 한 방향만 말하면 반드시 특정 진영의 무기가 된다.</li>
+<li>정교분리가 지키려는 단 하나의 핵심은 <strong>신앙의 자발성</strong>이다. "참 종교는 자발적 복종"(배커스)이며, 강제된 신앙은 신앙이 아니다.</li>
+<li>양심의 자유(soul liberty)는 침례교 정체성의 심장이다. 스마이스·헬위스·윌리엄스·배커스·릴런드의 계보가 수정헌법 제1조에 이르렀고, "종교의 권리"는 "다른 많은 인권의 어머니"가 되었다.</li>
+<li>침례교의 정교분리는 세상 도피가 아니다. 재세례파와 달리 침례교는 세속 정부 참여를 인정했다 — 분리는 광장을 떠나기 위해서가 아니라 강제 없는 신앙으로 광장에 서기 위해서다.</li>
+<li>한국에서 정교분리는 두 얼굴로 오용됐다 — 독재기엔 교회를 침묵시키는 명분으로, 지금은 당파화에서 떼어내는 명분으로. 교회의 권력화(사사화의 반대)와 신앙의 공적 배제(사사화)는 문법이 같은 두 실패이며, 두 우려는 서로를 칠 무기가 아니라 자기 진영의 거울이다.</li>
+<li>다원주의 사회의 과제는 담장을 허무는 것도 신앙의 감옥으로 만드는 것도 아니라, 신앙이 권력이 아니라 설득으로, 동원이 아니라 증언으로 광장에 서게 하는 것이다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>정교분리가 "제도의 분리"라면, 국가조찬기도회·공직자의 종교 행위·공교육의 종교 다원성 같은 회색지대에서 제도적 유착과 정당한 공적 신앙 표현을 가르는 실제 기준은 무엇인가.</li>
+<li>"두 방향의 보호"에서, 국가가 하나님의 원리를 정면으로 위반하는 예외 상황(본회퍼의 3단계 저항)은 교회가 국가 권력에 개입하는 순간인가, 아니면 그조차 정교분리 안에 있는 예언자적 발언인가. 저항과 유착의 경계는 누가 판정하는가.</li>
+<li>침례교의 양심의 자유는 "모든 사람"(이단·타종교 포함)의 자유를 주장했다. 그렇다면 다원주의 사회에서 그리스도인은 자신의 신앙적 확신과 타 신앙의 동등한 자유를 어떻게 동시에 붙드는가 — 관용은 진리 주장의 포기를 요구하는가.</li>
+<li>종교의 탈사사화(de-privatization)가 필요하다면, 그 재공영화가 최경환이 경계한 "집단 이익과 정체성의 광장 점령"으로 변질되지 않을 안전장치는 무엇인가.</li>
+<li>정교분리를 "긍정적으로 재평가"하자는 제안(김지방)은 교회를 특정 진영에서 빼내는 데 유효하지만, 그것이 다시 "믿음은 골방에서만"이라는 실천적 무신론으로 미끄러지지 않으려면 어떤 신학적 제동이 필요한가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EC%99%80%EC%82%AC%ED%9A%8C%EC%B0%B8%EC%97%AC/">교회와사회참여</a> — 자매 페이지. 이 글이 국가-교회의 <strong>제도적 관계</strong>(분리의 원리)를 다룬다면, 저 글은 그 위에서의 <strong>참여 방식·한계·태도</strong>(어디까지·어떻게)를 맡는다.</li>
+<li><a class="wl" href="../../t/%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%85%90%EB%8D%A4/">크리스텐덤</a> — 콘스탄티누스 이후 교회-국가 유착 체제. 정교분리가 반성하는 역사적 배경.</li>
+<li><a class="wl" href="../../t/%EC%B9%A8%EB%A1%80%EA%B5%90%ED%9A%8C/">침례교회</a> · <a class="wl" href="../../t/%EC%B9%A8%EB%A1%80%EA%B5%90%EC%8B%A0%ED%95%99/">침례교신학</a> — 양심의 자유를 정체성의 세 기둥 중 하나로 세운 전통.</li>
+<li><a class="wl" href="../../t/%EA%B6%8C%EB%A0%A5/">권력</a> — 종교와 손잡은 권력의 자기 신성화. "교회로부터 국가를 보호"하는 방향의 신학적 근거.</li>
+<li><a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%84%A0/">공동선</a> — 정교분리 시대의 공적 신앙이 지향하는 목표(공익 아닌 공동선).</li>
+<li><a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EC%82%AC/">교회사</a> — 교회-국가 관계 다섯 유형, 초대교회의 국가 종교 거부, 크리스텐덤사.</li>
+<li><a class="wl" href="../../t/%EC%A2%85%EA%B5%90%EA%B0%9C%ED%98%81/">종교개혁</a> — 재세례파 자유교회 전통과 급진 종교개혁의 분리 원리.</li>
+<li><span class="wl-dead" title="위키 내부 링크">로저윌리엄스</span> · <span class="wl-dead" title="위키 내부 링크">토마스헬위스</span> · <span class="wl-dead" title="위키 내부 링크">존스마이스</span> · <span class="wl-dead" title="위키 내부 링크">아이작배커스</span> · <span class="wl-dead" title="위키 내부 링크">존릴랜드</span> — 정교분리 계보의 핵심 인물들.</li>
+<li><span class="wl-dead" title="위키 내부 링크">존위티주니어</span> — 칼뱅주의 권리 전통과 "인권의 어머니로서의 종교의 권리".</li>
+<li><span class="wl-dead" title="위키 내부 링크">콘스탄티누스</span> — 크리스텐덤의 초석과 정교 유착의 원형.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">_paper_종교의자유와정교분리원칙의역사적의미</span></td>
+<td>리서치 페이퍼</td>
+<td>칼뱅·밀턴·로크·청교도 언약·침례교 계보 종합; 하우어워스·월리스·위티·코크란·니버 인용; 미국 종교 3단계</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">02주토론_영국일반침례교초기지도자들</span></td>
+<td>강의 토론</td>
+<td>스마이스(최초 침례교도·최초 정교분리 신앙고백)·헬위스(만인의 종교자유)·부셔("영적 성폭행")·머튼</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">04주토론_로저윌리엄스와정교분리</span></td>
+<td>강의 토론</td>
+<td>윌리엄스 vs 비분리주의 청교도, 프로비던스, 양심의 자유, 『피 흘리는 교의』 12개 조항</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">06주토론_미국독립과종교자유확립</span></td>
+<td>강의 토론</td>
+<td>배커스(자발적 복종·워렌지방회)·릴런드(종교=하나님과 개인 사이)→매디슨→수정헌법 1조</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">01주토론_침례교기원논쟁</span></td>
+<td>강의 토론</td>
+<td>계승설·아나뱁티스트 영향설·분리주의 후계설; "창안이 아니라 재발견"; 침례교 vs 재세례파 차이</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">교회사I</span></td>
+<td>강의</td>
+<td>교회-국가 다섯 관계 유형(가톨릭·에라스티어니즘·재세례파·루터파·개혁파), 콘스탄티누스·밀라노 칙령</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">교회사II</span></td>
+<td>강의</td>
+<td>칼뱅주의를 종교자유의 뿌리로; 종교의 권리=인권의 어머니; 하우어워스의 "교묘한 유혹"</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%ED%83%9C%EA%B7%B9%EA%B8%B0%EB%A5%BC%ED%9D%94%EB%93%9C%EB%8A%94%EA%B7%B8%EB%A6%AC%EC%8A%A4%EB%8F%84%EC%9D%B8/">태극기를흔드는그리스도인</a></td>
+<td>책(6인 공저)</td>
+<td>한국 정치 교회의 흥망, 정교분리 재평가(김지방), 공론장 보수화(최경환), 국가조찬기도회·"신정국가처럼"</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%A0%95%EC%B9%98%EA%B3%B5%EA%B0%84%EC%97%90%EA%B7%B8%EB%A6%AC%EC%8A%A4%EB%8F%84%EC%9D%B8%EC%9C%BC%EB%A1%9C%EC%84%9C%EA%B8%B0/">정치공간에그리스도인으로서기</a></td>
+<td>책</td>
+<td>이데올로기=우상, 정치 공간에서 세상과 같아지는 위험(§5·§7 위임 배경)</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%ED%95%9C%EA%B5%AD%EA%B0%9C%EC%8B%A0%EA%B5%90%EA%B7%BC%EB%B3%B8%EC%A3%BC%EC%9D%98_%EB%B0%B0%EB%8D%95%EB%A7%8C/">한국개신교근본주의_배덕만</a></td>
+<td>책</td>
+<td>신학적 근본주의→정치적 극단주의, 두려움이 연료가 된 이원론(한국 맥락 배경)</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/교회사</span><span>#discipline/공공신학</span><span>#종교자유</span><span>#양심의자유</span><span>#국가와교회</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

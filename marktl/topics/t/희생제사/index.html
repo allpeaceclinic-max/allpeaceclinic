@@ -1,0 +1,216 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>희생제사 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:174">성경·해석</span><span class="date">2026-07-17</span></div>
+  <h1 class="note-title">희생제사</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>희생제사(犧牲祭祀)는 구약 이스라엘이 하나님께 짐승이나 곡물을 드려 죄의 문제를 다루고 관계를 회복하는 제의 제도다. 단순한 종교 의식이 아니라 죄를 처리하고 하나님과의 교제를 잇는 구속사적 장치이며, 볼트의 자료들은 이를 두 방향으로 일관되게 읽는다 — 그 자체로 속죄와 화해의 수단이었고, 동시에 그리스도의 십자가를 미리 형상화하는 예표(type)였다.</p>
+<p>이 글은 그 제의 체계 자체를 다룬다. 십자가가 죄를 <em>어떻게</em> 처리하는가라는 속죄론의 메커니즘 논쟁(형벌 대속·크리스투스 빅토르·만족설 등)은 <a class="wl" href="../../t/%EC%86%8D%EC%A3%84%EB%A1%A0/">속죄론</a>이, 위격적 연합에 근거한 속죄의 존재론은 <a class="wl" href="../../t/%EC%86%8D%EC%A3%84/">속죄</a>가 이미 정본으로 다루었다. <a class="wl" href="../../t/%EC%86%8D%EC%A3%84%EB%A1%A0/">속죄론</a>은 여러 은유의 무대 가운데 성전 무대의 본산을 이 페이지에 명시적으로 위임했다. 그러니 여기서 붙들 것은 제사 제도의 구조와 논리다 — 레위기의 다섯 제사는 무엇이었고(§1), 그 밑바닥의 논리는 무엇이며(§2), 선지자들은 왜 그 제사를 비판했고(§3), 그리스도 안에서 그것이 어떻게 완성·종결되었으며(§4), 마침내 무엇으로 전환되었는가(§5).</p>
+<h2>1. 레위기의 다섯 제사</h2>
+<p>레위기 1-7장은 이스라엘의 제사를 다섯 종류로 규정한다. 각 제사는 목적과 제물과 의미가 달랐고, 함께 하나님과 교제하는 삶의 문법을 이루었다.</p>
+<table>
+<thead>
+<tr>
+<th>제사</th>
+<th>목적</th>
+<th>제물</th>
+<th>핵심 의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>번제(올라)</td>
+<td>온전한 헌신</td>
+<td>흠 없는 수컷, 전부 태움</td>
+<td>자기 전체를 드림</td>
+</tr>
+<tr>
+<td>소제(민하)</td>
+<td>감사·봉헌</td>
+<td>고운 가루·기름·유향</td>
+<td>노동의 열매를 드림</td>
+</tr>
+<tr>
+<td>화목제(쉘라밈)</td>
+<td>교제·감사·서원</td>
+<td>소·양, 함께 나눠 먹음</td>
+<td>하나님과의 친교 식탁</td>
+</tr>
+<tr>
+<td>속죄제(하타트)</td>
+<td>죄 사함(부지중의 죄)</td>
+<td>지위별 제물, 피를 뿌림</td>
+<td>죄책과 오염의 제거</td>
+</tr>
+<tr>
+<td>속건제(아샴)</td>
+<td>배상 있는 죄</td>
+<td>숫양 + 오분의 일 배상</td>
+<td>잘못의 회복·변상</td>
+</tr>
+</tbody>
+</table>
+<p>이 목록에는 리듬이 있다. 번제와 소제와 화목제가 하나님께 나아가 헌신하고 감사하며 교제하는 제사라면, 속죄제와 속건제는 그 교제를 가로막는 죄와 오염을 제거하는 제사다. 곧 이스라엘의 예배는 헌신과 정결이 함께 짜인 구조였다 — 죄가 처리되지 않으면 교제의 식탁에 앉을 수 없고, 교제가 없으면 헌신은 공허하다. 특히 번제가 제물을 남김없이 태우는 데서 온전한 자기 드림을, 화목제가 제물을 함께 나눠 먹는 데서 하나님과 인간의 친교를 상징한다는 점이 중요하다. 제사는 죄 처리 기계가 아니라 관계의 언어였다.</p>
+<h2>2. 제사의 논리 — 피의 대속과 전가</h2>
+<p>다섯 제사를 관통하는 하나의 원리가 있다 — 피 흘림이다. 레위기 17:11이 그 신학적 근거를 명시한다. "육체의 생명은 피에 있음이라. 내가 이 피를 너희에게 주어 제단에 뿌려 너희의 생명을 위하여 속죄하게 하였나니, 생명이 피에 있으므로 피가 죄를 속하느니라." 히브리서가 이를 한 문장으로 요약한다 — "피 흘림이 없은즉 사함이 없느니라"(히 9:22). 이 원리는 어찌나 근원적인지, <a class="wl" href="../../t/%EA%B5%AC%EC%86%8D%EC%A0%81%EC%9C%A0%EC%82%AC/">구속적유사</a>가 정리하듯 성경이 도착하기도 전에 여러 문화의 화해 의식(김연수 선교사가 전한 끄웨르바 족의 피 흘림 관습 등) 안에 이미 구속의 그림자로 새겨져 있었다.</p>
+<p>피의 대속을 작동시키는 몸짓이 <strong>안수와 전가</strong>다. 제사드리는 자가 제물의 머리에 손을 얹을 때, 그의 죄가 상징적으로 제물에게 전가되고 제물이 대신 죽는다 — 죄 없는 것이 죄 있는 자를 대신하는 대리(substitution)의 구조다. 레위기 16장 속죄일의 두 염소가 이 논리를 가장 선명하게 보여준다. 한 염소는 피를 흘려 성소를 정결케 하고, 다른 염소(아사셀의 염소)는 백성의 죄악을 지고 광야로 내보내진다. 여기서 성기문 교수가 <a class="wl" href="../../t/%EC%86%8D%EC%A3%84%EB%A1%A0/">속죄론</a>에서 짚은 층위 하나가 더해진다 — 구약에서 죄(罪)와 부정(不淨)은 구별되며, 제사는 죄책의 처리만이 아니라 오염의 제거까지 다룬다는 것이다. 법정에서 무죄를 선고받은 사람이 여전히 "만질 수 없는 몸"일 수 있다면, 제사는 그 두 문제를 함께 다룬다. 그리고 이 대속 제물의 원형이 창세기 22장이다 — 이삭을 대신해 죽은 숫양(<a class="wl" href="../../t/%EC%98%88%ED%91%9C%EB%A1%A0/">예표론</a>)이 "아들 대신 드려진 번제"라는 구조를 처음으로 온전히 드러낸다.</p>
+<h2>3. 선지자들의 제사 비판 — 마음 없는 제의를 고발하다</h2>
+<p>그런데 구약 자체가 제사에 대한 가장 날카로운 비판을 담고 있다. 사무엘상 15:22이 그 정점이다 — "순종이 제사보다 낫고 듣는 것이 숫양의 기름보다 나으니." 사울은 아말렉의 좋은 짐승을 "여호와께 제사하려고" 남겼다고 변명하지만, 사무엘은 그 종교적 명분 뒤에 숨은 불순종을 폭로한다. 문대원 목사가 「성품은 말보다 더 크게 말한다」에서 짚듯, 본문의 '청종하다'는 히브리어 샤마(듣고 순종함)이며, 사울은 바로 그 샤마에 실패했다. 제사라는 종교적 행위가 하나님의 명령에 대한 불순종을 덮을 수 없다는 것 — "거역하는 것은 점치는 죄와 같고 완고한 것은 우상숭배와 같다"(삼상 15:23). 권성수 목사가 같은 본문을 "자기 기념비 하나님 기념비"로 강해하며 사울의 교만을 겨눈 것도 같은 맥락이다.</p>
+<p>여기서 오해를 걷어내야 한다. 선지자들의 제사 비판은 제사 <strong>제도의 폐기</strong>가 아니라 마음 없는 <strong>제의의 고발</strong>이다. 이사야가 "너희의 무수한 제물이 내게 무엇이 유익하뇨"(사 1:11)라 하고, 호세아가 "나는 인애를 원하고 제사를 원하지 아니하며"(호 6:6)라 하며, 미가가 "번제물을 가지고 나아갈까"라 물은 뒤 "정의를 행하며 인자를 사랑하며 겸손히 하나님과 함께 행하는 것"(미 6:8)을 답으로 내놓은 것은, 제사 자체를 없애자는 것이 아니라 순종과 정의 없는 제사가 하나님께 가증하다는 것이다. 제사의 참뜻은 언제나 드리는 자의 마음이었다. 이 비판이 §1의 통찰을 다시 확인한다 — 제사는 관계의 언어이지 거래의 도구가 아니며, 마음이 빠진 제의는 언어가 아니라 소음이다.</p>
+<h2>4. 그리스도의 단번 제사 — 완성이자 종결</h2>
+<p>선지자들이 가리킨 방향, 곧 제도 너머의 실체가 신약에서 드러난다. 히브리서는 레위 제사 제도 전체를 그리스도를 예표하는 모형으로 읽는다. 아론 계열의 제사장직은 불완전하고 일시적이었다 — 제사장 자신도 죄인이었고, 제물을 반복해서 드려야 했으며(히 7:27), 그 반복 자체가 불완전함의 표시였다. 이에 반해 멜기세덱 계열의 그리스도는 "항상 살아 계셔서" 완전한 구원을 이루신다(<a class="wl" href="../../t/%EC%98%88%ED%91%9C%EB%A1%A0/">예표론</a>가 정리한 히 7장의 예표론적 논증).</p>
+<p>결정적 대비는 반복과 단번에 있다. 히브리서 10:10-14이 이를 못 박는다 — "예수 그리스도의 몸을 단번에 드리심으로 말미암아 우리가 거룩함을 얻었노라 … 그가 거룩하게 된 자들을 한 번의 제사로 영원히 온전하게 하셨느니라." 매년 반복되던 속죄일의 제사가, 단 한 번의 자기 드림으로 종결된 것이다. 권성수 목사가 붙드는 히 7:27의 "단번에"(에파팍스)가 위로의 근거인 이유가 여기 있다 — 반복되지 않는다는 것, 더 보탤 것이 없다는 것. 여기서 제사의 방향마저 뒤집힌다. 이교의 제사가 인간이 신에게 올리는 뇌물이라면, 십자가는 하나님이 스스로 마련해 스스로 받으신 제물이다("하나님이 준비하신 완벽한 제물"). 이 단번의 제사가 어떤 메커니즘으로 죄를 처리하는가 — 형벌인가 만족인가 승리인가 — 는 <a class="wl" href="../../t/%EC%86%8D%EC%A3%84%EB%A1%A0/">속죄론</a>의 몫이므로 여기서는 넘긴다. 이 페이지가 붙드는 것은 구약 제사와 십자가가 하나의 예표 구조로 묶인다는 사실이다. 제사는 폐기된 것이 아니라 성취되어 종결되었다.</p>
+<h2>5. 산 제사로의 전환 — 제단에서 삶으로</h2>
+<p>그리스도의 단번 제사가 제의를 종결시켰다면, 신자에게 남은 제사는 무엇인가. 로마서 12:1이 그 전환을 선언한다 — "너희 몸을 하나님이 기뻐하시는 거룩한 산 제물로 드리라. 이는 너희가 드릴 영적 예배니라." 구약의 제사가 짐승을 제단 위에서 죽여 드리는 것이었다면, 신약의 제사는 신자가 자기 몸을 산 채로, 살아 있는 순종으로 드리는 것이다. 죽은 제물이 아니라 산 제물 — 제단이 성전에서 삶 전체로 옮겨졌다.</p>
+<p>이 전환에는 두 가지 함의가 있다. 첫째, §1의 번제가 상징하던 "온전한 자기 드림"이 이제 신자의 일상이 된다. 제물을 남김없이 태우던 번제처럼, 산 제사는 삶의 일부가 아니라 전부를 드리는 것이다. 둘째, §3의 선지자적 비판이 여기서 완성된다 — 마음 없는 제의를 고발하던 목소리가, 이제 몸으로 드리는 순종의 예배로 응답받는다. <a class="wl" href="../../t/%EC%98%88%EB%B0%B0/">예배</a>가 롬 12:1을 예배의 핵심으로 다루는 이유가 이것이며, 제물을 드리는 행위가 성전 의식에서 삶 전체로 확장된다. 그래서 희생제사의 이야기는 폐기로 끝나지 않는다. 그것은 짐승의 피에서 그리스도의 피로, 다시 신자의 산 순종으로 흐르는 하나의 궤적이다. 구약의 다섯 제사가 가리키던 헌신과 정결과 교제가, 십자가에서 성취되고 신자의 삶에서 재연된다. 제단은 사라지지 않았다. 그것이 우리 자신이 되었을 뿐이다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>레위기의 다섯 제사(번제·소제·화목제·속죄제·속건제)는 헌신·감사·교제의 제사와 정결의 제사가 함께 짜인 구조다 — 제사는 죄 처리 기계가 아니라 하나님과의 관계의 언어였다.</li>
+<li>제사의 논리는 피의 대속(레 17:11, 히 9:22)과 안수를 통한 전가다. 속죄일의 두 염소는 죄책의 처리와 오염의 제거를 함께 다루며(성기문의 죄/부정 구별), 그 원형은 창 22장의 대속 숫양이다.</li>
+<li>선지자들의 제사 비판(삼상 15:22, 사 1:11, 호 6:6, 미 6:8)은 제도의 폐기가 아니라 마음 없는 제의의 고발이다 — "순종이 제사보다 낫다." 제사의 참뜻은 언제나 드리는 자의 마음이었다.</li>
+<li>그리스도의 제사는 반복되는 구약 제사와 달리 "단번에"(에파팍스, 히 10:10-14) 드려져 제사 제도를 성취하고 종결시켰다. 방향도 뒤집혔다 — 인간이 신께 올리는 뇌물이 아니라, 하나님이 스스로 마련해 받으신 제물이다.</li>
+<li>산 제사(롬 12:1)로의 전환은 제단을 성전에서 삶으로 옮긴다 — 번제의 "온전한 자기 드림"이 신자의 일상 순종이 되고, 선지자적 비판이 몸으로 드리는 예배로 완성된다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>히브리서가 레위 제사의 "완성(성취)"을 주장할 때, 구약 제사의 어떤 측면이 그리스도 안에서 지속되고 어떤 측면이 폐기되는가.</li>
+<li>출애굽 유월절과 레위기 속죄일(욤 키푸르) 사이의 신학적 차이와 연속성이 볼트에서 아직 충분히 다뤄지지 않았다.</li>
+<li>롬 12:1의 "산 제물" 언어가 갖는 선교적 함의는 무엇인가 — 신자의 삶이 제물이 된다는 것과 예배·선교의 연결(<a class="wl" href="../../t/%EC%98%88%EB%B0%B0/">예배</a>와 공유).</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%86%8D%EC%A3%84%EB%A1%A0/">속죄론</a> — 이 페이지에 성전 무대의 본산을 위임한 쪽. 십자가가 죄를 <em>어떻게</em> 처리하는가(모델의 경합)를 다룬다.</li>
+<li><a class="wl" href="../../t/%EC%86%8D%EC%A3%84/">속죄</a> — 위격적 연합에 근거한 속죄의 존재론과 본질(순종·고난).</li>
+<li><a class="wl" href="../../t/%EC%98%88%ED%91%9C%EB%A1%A0/">예표론</a> — 창 22·히 7의 예표 구조. 제의적 예표 체계를 이 페이지에 명시적으로 넘긴 쪽.</li>
+<li><a class="wl" href="../../t/%EA%B5%AC%EC%86%8D%EC%8B%A0%ED%95%99/">구속신학</a> — 구속의 수단으로서 제사와 십자가, 출애굽의 총체적 원형.</li>
+<li><a class="wl" href="../../t/%EC%8B%AD%EC%9E%90%EA%B0%80/">십자가</a> · <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EB%A1%A0/">기독론</a> — 단번의 제사의 신학적 완성과 영원한 대제사장직.</li>
+<li><a class="wl" href="../../t/%EC%96%B8%EC%95%BD%EC%8B%A0%ED%95%99/">언약신학</a> — 제사장직과 언약의 연결.</li>
+<li><a class="wl" href="../../t/%EC%98%88%EB%B0%B0/">예배</a> — 롬 12:1의 산 제물, 제단에서 삶으로의 전환.</li>
+<li><a class="wl" href="../../t/%EA%B5%AC%EC%86%8D%EC%A0%81%EC%9C%A0%EC%82%AC/">구속적유사</a> — "피 흘림이 없은즉 사함이 없느니라"가 문화 안에 남긴 구속의 그림자.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2021_성품은말보다더크게말한다</span></td>
+<td>설교(문대원)</td>
+<td>삼상 15:22 "순종이 제사보다", 샤마(듣고 순종), 종교 행위가 불순종을 덮지 못함</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">각성_자기기념비하나님기념비</span></td>
+<td>설교(권성수)</td>
+<td>삼상 15장 사울의 교만, 자기 기념비 대 하나님 기념비</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">특강_성기문_제의부정과복음서해석</span></td>
+<td>특강(성기문)</td>
+<td>죄 ≠ 부정, 성전 무대가 죄책만이 아니라 오염을 다룸, 레 16 아사셀의 염소</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%98%88%ED%91%9C%EB%A1%A0/">예표론</a> · <a class="wl" href="../../t/%EC%86%8D%EC%A3%84%EB%A1%A0/">속죄론</a></td>
+<td>위키 교차</td>
+<td>창 22·히 7의 예표 구조, 단번의 제사, 성전 무대</td>
+</tr>
+<tr>
+<td>성경(레 1-7장, 레 16-17장, 창 22장, 삼상 15장, 사 1·호 6·미 6, 히 7·9·10장, 롬 12:1)</td>
+<td>성경</td>
+<td>다섯 제사, 피의 대속, 선지자적 비판, 단번의 제사, 산 제물</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/성경신학</span><span>#제사제도</span><span>#레위기</span><span>#대속</span><span>#예표론</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

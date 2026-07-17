@@ -1,0 +1,495 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>소명 (Calling / Vocation) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:345">영성·제자도</span><span class="date">2026-05-10</span></div>
+  <h1 class="note-title">소명 (Calling / Vocation)</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>"하나님이 우리를 너무나 결정적으로 부르셨기에, 그분의 소환과 <a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a>에 응답하여 우리의 모든 존재, 우리의 모든 행위, 우리의 모든 소유가 헌신적이고 역동적으로 그분을 섬기는 데 투자된다는 진리다." (오스 기니스, 『소명』 21p)</p>
+<h2>소명의 구조</h2>
+<h3>1차 소명과 2차 소명</h3>
+<ul>
+<li><strong>1차 소명</strong>: 하나님 자신에게로의 부르심 (주님께 시선을 두는 것)</li>
+<li><strong>2차 소명</strong>: 구체적인 일과 역할 (모든 일을 주께 하듯)</li>
+<li>핵심: 일 자체에 소명을 두지 않고 하나님께 시선을 두는 것</li>
+<li><strong>왜곡 패턴</strong> → <a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%ED%9B%88%EB%A0%A8/">제자훈련</a> 개인제자도실습 6주 토론:  </li>
+<li>가톨릭적 왜곡: 1차 소명만 격상 → 영적인 것 vs 세속적인 것 이원화  </li>
+<li>개신교적 왜곡: 2차 소명만 격상 → 일상이 영적인 것을 밀어냄</li>
+</ul>
+<h3>AI 시대 소명의 재확인</h3>
+<p>부자 청년의 오류는 2차 소명(선한 일)을 1차 소명(하나님과의 관계)보다 앞세운 것이다.
+- 예수님의 답: "선한 이는 오직 한 분이시니라" → 1차 소명(선하신 하나님과의 관계)이 먼저
+- "나를 따르라" = 2차 소명(의료·사역)은 1차 소명의 결과로 나온다</p>
+<p>AI 시대 적용: AI가 2차 소명(기술·업무)을 대체할수록 1차 소명(하나님과의 인격적 관계)이 더욱 중요해진다.</p>
+<p>→ <a class="wl" href="../../t/AI%EC%99%80%EC%8B%A0%EC%95%99/">AI와신앙</a>, <span class="wl-dead" title="위키 내부 링크">마19</span>, <span class="wl-dead" title="위키 내부 링크">성숙과제자도</span></p>
+<h3>소명의 4가지 성경적 요소</h3>
+<ol>
+<li>부르는 것 (calling)</li>
+<li>이름을 불러 주는 것 (naming)</li>
+<li>선택 (selection)</li>
+<li>어느 곳으로든 발령 (assignment)</li>
+</ol>
+<h3>mission과 missions의 구분</h3>
+<p>raw: <code>raw/lectures/keynote/기타/소명에 관한 정리.md</code></p>
+<ul>
+<li><strong>mission</strong> (단수) = 하나님이 하시는 일 (미씨오 데이)</li>
+<li><strong>missions</strong> (복수) = 우리 각자의 사명들</li>
+<li>→ 우리 각자의 사명들(missions)이 모여 하나님의 미션(mission)을 수행한다</li>
+</ul>
+<h3>생존모드 vs 미션모드</h3>
+<ul>
+<li><strong>생존모드</strong>: 2차 부르심(일)을 하나님께 대한 헌신이 아닌, 나와 가족을 위한 수단으로 봄</li>
+<li><strong>미션모드</strong>: 1차 부르심(하나님께)이 2차 부르심(일)을 지탱함 — 일 자체가 하나님께 헌신</li>
+</ul>
+<blockquote>
+<p>1차 부르심 없이 2차 부르심만 있으면 일 중독이 된다. 허무한 일이 된다.</p>
+</blockquote>
+<hr />
+<h2>소명과 진로의 관계</h2>
+<ul>
+<li><strong>진로</strong>: 인생의 길. 맡겨진 일을 찾아 수행하는 과정</li>
+<li><strong>소명</strong>: 창조자의 부르심</li>
+<li><strong>일</strong>: 소명을 이루는 방법</li>
+<li>소명에 따라 진로를 정하는 것이 하나님 백성의 방식</li>
+</ul>
+<h2>궁극적 존재이유</h2>
+<p>"우리는 하나님께서 창조하신 각자의 독특하고 지극히 선한 목적을 지니고 있다"
+→ 창조주의 부르심에 응답하는 것이 삶의 궁극적 존재이유</p>
+<h2>소명과 <a class="wl" href="../../t/%EB%B2%88%EC%98%81%EC%8B%A0%ED%95%99/">번영신학</a> 비판</h2>
+<ul>
+<li>번영신학: 성공과 물질적 풍요를 소명의 증거로 봄</li>
+<li>성경적 소명: 평범한 일상에서도 소명 실현</li>
+<li>자만심, 질투는 소명을 왜곡</li>
+</ul>
+<h2>제도가 바뀌어도 소명은 바뀌지 않는다 — 로이드 존스</h2>
+<blockquote>
+<p>"국가정책이 바뀌어도 '주께 하듯' 하는 그리스도인의 태도는 바뀔 수 없어야 한다."<br />
+골3:22-23 — "무슨 일을 하든지 마음을 다하여 주께 하듯 하고"</p>
+</blockquote>
+<ul>
+<li>→ <a class="wl" href="../../b/%EC%9D%98%ED%95%99%EA%B3%BC%EC%B9%98%EC%9C%A0_%EB%A7%88%ED%8B%B4%EB%A1%9C%EC%9D%B4%EB%93%9C%EC%A1%B4%EC%8A%A4/">의학과치유_마틴로이드존스</a></li>
+</ul>
+<p><span class="wl-dead" title="위키 내부 링크">마틴로이드존스</span>는 영국 국민보건서비스(NHS) 도입으로 의사-환자 관계가 <strong>자영업(관계적 책임) → 공직(시스템 피고용인)</strong>으로 바뀌는 것을 목격했다. 제도가 바뀌자 의사들의 동기와 태도도 바뀌었다.</p>
+<p>하지만 그리스도인의 답은 명확하다:</p>
+<p><code>외적 환경: 국가정책 변화 (자영업 → 공직 → 국가의료)
+                ↓
+내적 기반: '주께 하듯' (골3:22) = 소명의식
+                ↓
+결론: 제도가 바뀌어도 소명은 바뀌지 않는다</code></p>
+<p><strong>소명의 닻은 제도가 아닌 하나님이다.</strong><br />
+오스 기니스의 1차 소명(하나님께) = 로이드 존스의 '주께 하듯'<br />
+자끄 엘륄의 "소명을 위한 선택" (→ <a class="wl" href="../../b/%EC%9A%94%EB%82%98%EC%9D%98%EC%8B%AC%ED%8C%90%EA%B3%BC%EA%B5%AC%EC%9B%90_%EC%9E%90%EB%81%84%EC%97%98%EB%A5%84/">요나의심판과구원_자끄엘륄</a>)과 동일한 맥락 — 어떤 제도적 환경에서도 소명은 하나님께 근거한다.</p>
+<p><strong>기독의료인 적용</strong> (→ <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a>):<br />
+건강보험 수가 체계가 바뀌어도, 병원 경영 모델이 바뀌어도, 진료 태도는 바뀌지 않는다 — 소명이 있다면.</p>
+<h2>선교 소명의 4가지 길 (멘토링2)</h2>
+<p><em>(오스 기니스의 1·2차 소명과 연결 — 부르심의 방식은 다양하다)</em></p>
+<table>
+<thead>
+<tr>
+<th>유형</th>
+<th>특징</th>
+<th>성경 사례</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mysterious Call</strong></td>
+<td>환상·특별 계시</td>
+<td>바울(행 9), 요나</td>
+</tr>
+<tr>
+<td><strong>Commissioned Call</strong></td>
+<td>공동체의 파송·위임</td>
+<td>안디옥 교회 → 바울·바나바 (행 13)</td>
+</tr>
+<tr>
+<td><strong>Common-Sense Call</strong></td>
+<td>필요를 보고 순종</td>
+<td>빌립 (행 8)</td>
+</tr>
+<tr>
+<td><strong>Natural Call</strong></td>
+<td>상황·관계 속에서 자연스러운 흐름</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>결정적인 것은 부르심의 방식이 아니라 <strong>내적 확신(Inner Conviction)</strong> — 나를 부르신 분이 확고한 주체임을 인식할 때 외부의 장벽을 넘어선다.</p>
+</blockquote>
+<hr />
+<h2>코일리아(Koilia) — 내면의 갈망</h2>
+<ul>
+<li>헬라어 <strong>코일리아(κοιλία)</strong> = 배, 텅 빈 공간 → 내면 깊은 갈망의 자리</li>
+<li>세상의 채움: 돈·성공·인정으로 채우려다 "자기 배만 섬기는" 헛된 시도</li>
+<li>하나님의 채움: 요 7:37-38 "내게 오는 자는... 그 배에서 생수의 강이 흘러나오리라"</li>
+<li><strong>생수로 채워진 배</strong> → 자발적으로 세상을 향해 흘러감 = 사역 소명의 출발점</li>
+</ul>
+<blockquote>
+<p>"예수 잘 믿는 것이 목표이다 보니 자연스럽게 선교를 하게 되는" (안성하 집사 고백)</p>
+</blockquote>
+<hr />
+<h2>선교사·전문인의 5가지 유형 (소명과 진로 강의)</h2>
+<p>raw: <code>raw/lectures/keynote/기타/소명과 진로.md</code></p>
+<table>
+<thead>
+<tr>
+<th>유형</th>
+<th>특징</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>① 목사형 선교사</strong></td>
+<td>설교·사역 전문 — "할 수 있는 게 이것밖에 없다"</td>
+<td>전통적 선교사</td>
+</tr>
+<tr>
+<td><strong>② 직업비자 선교사</strong></td>
+<td>선교사 비자 불가 → 직업비자로 입국</td>
+<td>바울에 가장 가까움</td>
+</tr>
+<tr>
+<td><strong>③ 전문인 선교사 (BAM)</strong></td>
+<td>교수·의사 등 전문성으로 파송</td>
+<td>전문성이 사역 자체</td>
+</tr>
+<tr>
+<td><strong>④ 전문인 협력자 (BAM)</strong></td>
+<td>해외 거주 직업인이 현지에서 선교 협력</td>
+<td>uncommitted·unfocused 오해받기도</td>
+</tr>
+<tr>
+<td><strong>⑤ 전문인 후원자</strong></td>
+<td>국내 직업인이 재정·네트워크로 지원</td>
+<td>센더</td>
+</tr>
+</tbody>
+</table>
+<p>유형 간 갈등:
+- ①②는 ④⑤를 "헌신 없음·목적 불분명·열정 없다"고 볼 수 있고
+- ④⑤는 ①②를 "전문성 없음·진실성 없음"이라 볼 수 있다</p>
+<blockquote>
+<p>소명의식은 주변의 환경과 타 유형의 시선으로부터 흔들린다.<br />
+<strong>하늘 보고 살아야 한다. 바울처럼.</strong></p>
+</blockquote>
+<hr />
+<h2>번성(Flourishing) — 생존을 넘어</h2>
+<p><em>(이상협, 동신교회 Mission &amp; Talk 멘토링2)</em></p>
+<p>요 10:10 "내가 온 것은 양으로 생명을 얻게 하고 <strong>더 풍성히(perissos)</strong> 얻게 하려는 것이라"</p>
+<ul>
+<li><strong>생존(Surviving)</strong>: 고갈되고 외로운 상태 — 무려 70%의 목회자·선교사가 자신의 정체성을 명확히 모른 채 사역</li>
+<li><strong>번성(Flourishing)</strong>: 내면의 생수의 강이 흘러넘쳐 지체들과 연결되는 상태</li>
+</ul>
+<h3>번성을 위한 4대 지원 시스템</h3>
+<p>장기 사역을 지탱하는 다리 기둥:</p>
+<table>
+<thead>
+<tr>
+<th>시스템</th>
+<th>인원</th>
+<th>역할</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>중보기도자 그룹</td>
+<td>5~15명</td>
+<td>영적 방패</td>
+</tr>
+<tr>
+<td>재정 지원자</td>
+<td>50~150명</td>
+<td>경제적 기반</td>
+</tr>
+<tr>
+<td>개인적 친구</td>
+<td>소수</td>
+<td>함께 놀고 쉬며 회복</td>
+</tr>
+<tr>
+<td>멘토</td>
+<td>상위 멘토 + 동료 멘토</td>
+<td>방향성</td>
+</tr>
+</tbody>
+</table>
+<h3>Friend-raising vs Fund-raising</h3>
+<ul>
+<li>후원은 단순히 돈을 모으는 <strong>Fund-raising</strong>이 아니다</li>
+<li>동역자를 세우는 <strong>Friend-raising</strong>이다</li>
+</ul>
+<h3>사역 정체성 — 교집합에서 발견된다</h3>
+<blockquote>
+<p>사역 정체성 = <strong>지역 교회 + 나 자신 + 선교 단체</strong>의 교집합</p>
+</blockquote>
+<ul>
+<li>개인의 성품과 영적 은사를 혼동하지 말 것</li>
+<li><strong>Body Life Design</strong>: 그리스도의 몸 안에서 은사가 발견됨</li>
+<li>Relational: 공동체의 피드백을 받을 것</li>
+<li>Organic: 다양한 사역에 자원하며 맞지 않는 것은 가지치기</li>
+<li>Reciprocal: 상호 헌신</li>
+<li>지역 교회 = 은사를 검증·성장시키는 인큐베이터</li>
+</ul>
+<p>파송 생태계 3요소: 선교위원회(행정) + 청년 공동체(파송의 열매) + 선교 헌신자(촉매)</p>
+<p>→ <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a>, <span class="wl-dead" title="위키 내부 링크">송기태</span></p>
+<hr />
+<h2>이해할 수 없는 보내심</h2>
+<p><em>raw: <code>raw/lectures/keynote/기타/요셉의 안경 (니고데모의 안경 후속).md</code></em></p>
+<blockquote>
+<p>요셉은 39세까지 자신이 "팔렸다"고 생각했다. 하나님은 "보내셨다"고 하셨다.</p>
+</blockquote>
+<p>이해할 수 없는 이동도 하나님의 보내심 방식이다:
+- 바벨론 포로: "너희는 내가 사로잡혀 가게 한 그 성읍의…" (렘29:7) — 포로를 보내신 분도 하나님
+- 스데반 순교 이후 박해로 흩어짐 (행8:1) → "흩어진 사람들이 복음을 전했다" (행8:4)</p>
+<p>짤리고, 옮겨지고, 막혀도 — 하나님의 보내심의 방식이다.</p>
+<p>→ <a class="wl" href="../../t/%EB%B0%94%EC%9A%B8%EC%9D%98%EC%95%88%EA%B2%BD/">바울의안경</a> — 행16 막힌 길도 같은 패턴</p>
+<hr />
+<h2>정직(Integrity) — 모를 때의 자세</h2>
+<p>소명이 명확하지 않을 때 할 수 있는 것은 <strong>정직(Integrity)</strong>이다.</p>
+<blockquote>
+<p>요셉: "내 주인이 이 집을 위탁했다. 그의 믿음을 배반하면 하나님께도 죄를 범하는 것이다."</p>
+</blockquote>
+<p>정직은 2차원이다:
+- <strong>수평적</strong>: 사람 앞에서의 책무와 청렴함
+- <strong>수직적</strong>: 하나님 앞에서의 책무와 청렴함</p>
+<p>성실함·열심은 세상 사람도 한다. 그리스도인을 다르게 하는 것은 정직과 인테그리티다.</p>
+<hr />
+<h2>인생의 십일조 (Life Tithe)</h2>
+<p><em>(이상협, 인생의 십일조 강의 — 태국 코랏팀)</em></p>
+<ul>
+<li>십일조 = "모든 것의 주인은 하나님이시다"는 신앙 고백</li>
+<li><strong>인생의 십일조</strong> = "내 인생이 주님의 것이다"는 고백</li>
+<li>의사로서 3~40년 중 3년을 하나님께 → 공미사 운동 (→ <a class="wl" href="../../t/%EC%84%BC%EB%8D%94%EC%9D%98%EC%82%B6/">센더의삶</a>)</li>
+</ul>
+<blockquote>
+<p>"온전한 십일조가 물질의 축복을 경험하게 하듯,<br />
+인생의 십일조가 삶을 풍성하게 만든다"</p>
+</blockquote>
+<hr />
+<h2>비전(Vision) — 라아(רָאָה), 하나님이 보여주시는 땅</h2>
+<p><em>(이상협, 인생의 십일조 강의)</em></p>
+<p>히브리어 <strong>라아(רָאָה)</strong> = 보다 + 보여지다 (능동+수동 양방향)</p>
+<blockquote>
+<p>"비전 = 하나님이 보여주시는 땅" — 창 12장 "보여줄 땅으로 가라"가 원형</p>
+</blockquote>
+<ul>
+<li>아브라함도 어디로 갈지 몰랐다 — "갈 바를 알지 못하고" 나아가는 것이 믿음 (히 11:8)</li>
+<li>비전이 없어도 정상; 꿈이 계속 바뀌어도 정상</li>
+</ul>
+<h3>믿음으로 본다는 것</h3>
+<p>같은 것을 봐도 다르게 보는 것:
+- 열두 정탐꾼 — 같은 땅을 보고 다르게 보고함 (민 13)
+- 밭이 아닌 감추인 보화(마 13:44), 흑암 속 보화(사 45:3)를 보는 것</p>
+<h3>믿음의 내려놓음 → 여호와 이레</h3>
+<table>
+<thead>
+<tr>
+<th>인물</th>
+<th>내려놓은 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>아브라함</td>
+<td>갈대아 우르</td>
+</tr>
+<tr>
+<td>모세</td>
+<td>바로의 공주 아들이라는 칭호</td>
+</tr>
+<tr>
+<td>제자들</td>
+<td>배와 부친</td>
+</tr>
+<tr>
+<td>예수님</td>
+<td>목숨</td>
+</tr>
+</tbody>
+</table>
+<p>→ 믿음의 헌신 → <strong>여호와 이레</strong> (하나님이 나타나심, 창 22:14)</p>
+<hr />
+<h2>인생 2막 — As Me School (ASME)</h2>
+<p><strong>As Me School (ASME)</strong>: 자신의 선교(Mission)에 대해 스스로 배우는 프로그램.
+갈렙 모델(38세 출애굽 → 40세 정탐 → 79세 가나안 입성)과 요셉 모델(30세 총리, 39세 인생의 의미 발견)처럼, 인생 후반부의 소명은 전반부의 연장이 아닌 <strong>새로운 도전의 장</strong>이다.</p>
+<p>ASME가 지향하는 삶의 4가지 특질:</p>
+<table>
+<thead>
+<tr>
+<th>약자</th>
+<th>의미</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A</strong></td>
+<td>Authentic (진정성)</td>
+<td>자신의 진짜 모습을 발견하고 기뻐하며 충실하게 살기</td>
+</tr>
+<tr>
+<td><strong>S</strong></td>
+<td>Sustainable (지속가능)</td>
+<td>삶의 고단함을 기쁨으로 여기고 피하지 않으며 헌신. stopover가 아닌 지속가능한 방향 + 갈 바를 알지 못하고도 떠나는 도전</td>
+</tr>
+<tr>
+<td><strong>M</strong></td>
+<td>Meaningful (의미)</td>
+<td>삶 속에서 선한 목적을 발견하고 실천하기</td>
+</tr>
+<tr>
+<td><strong>E</strong></td>
+<td>Empowering (힘을 줌)</td>
+<td>약한 이들과 동행하고, 혼란 속에 있는 이들을 돕는 삶</td>
+</tr>
+</tbody>
+</table>
+<p>→ 선교+가정사역, 의학+선교학 융합이 인생 2막의 방향으로 탐색 중</p>
+<hr />
+<h2>선교 포트폴리오 3 교집합 + 5단계 나침반 (멘토링5)</h2>
+<p><em>raw: <code>raw/lectures/keynote/선교/멘토링5 교회 및 선교기관 관계 맺기 &amp; 사역 역할과 과제 찾기.md</code></em></p>
+<h3>선교 포트폴리오 3 교집합 — 파송 전 자기 점검</h3>
+<table>
+<thead>
+<tr>
+<th>교집합</th>
+<th>핵심 질문</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>동기 점검</strong></td>
+<td>왜 선교사로 헌신하려 하는가?</td>
+<td>영적 시험 대비, 내면의 진정성 확인</td>
+</tr>
+<tr>
+<td><strong>역량 파악</strong></td>
+<td>나의 훈련·은사·관심사는 무엇인가?</td>
+<td>기술, 교육 배경, 영적 은사 목록화</td>
+</tr>
+<tr>
+<td><strong>비전 정렬</strong></td>
+<td>나의 관심사가 파송교회 비전과 일치하는가?</td>
+<td>교회·단체·개인 3방향 정렬</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"이 세 가지 교집합에 정직하게 답한 것이 곧 여러분의 선교 포트폴리오다"</p>
+</blockquote>
+<h3>5단계 나침반 (5-Step Alignment Compass) — 중대한 사역 결단 분별</h3>
+<ol>
+<li><strong>상식</strong> — 현실적 가능성과 지혜로운 판단</li>
+<li><strong>멘토의 영적 조언</strong> — 신뢰하는 선배 선교사·목사의 조언 청취</li>
+<li><strong>성경 말씀과 기도</strong> — 본문에서 오는 확인과 기도 중의 응답</li>
+<li><strong>내면의 거룩한 소망</strong> — 강요가 아닌 내면 깊은 곳의 열망</li>
+<li><strong>절대적 신뢰</strong> — "모든 것이 합력하여 선을 이룬다" (롬 8:28)</li>
+</ol>
+<blockquote>
+<p>"불필요한 염려와 두려움을 버리고, 하나님이 주시는 평안함 속에서 결단하며 믿음으로 순종하라"</p>
+</blockquote>
+<hr />
+<h2>역사적 사례</h2>
+<ul>
+<li><strong>윌버포스</strong>: 노예법 폐지 — 그리스도를 더 중대하게 생각했기 때문</li>
+<li><strong>베드로</strong>: 양을 양육하기 — 주님 <a class="wl" href="../../t/%EC%82%AC%EB%9E%91/">사랑</a>에서 비롯</li>
+<li><strong>로이드 존스</strong>: 의사 → 목사 전환 — 소명의 포기가 아닌 더 깊은 소명의 발견</li>
+</ul>
+<h2>등장 과목</h2>
+<ul>
+<li><span class="wl-dead" title="위키 내부 링크">진로상담</span> — 중심 과목</li>
+<li><span class="wl-dead" title="위키 내부 링크">개인제자도실습</span> — 제자도와 소명의 연결<br />
+  핵심 인사이트: "진정한 가치변화는 직장과 가정, 삶의 현장에서 일어난다" (눅5 베드로)<br />
+  → 소명의 자리가 곧 제자훈련의 자리</li>
+</ul>
+</article>
+<div class="tagrow"><span>#소명</span><span>#직업신학</span><span>#진로</span><span>#사명</span><span>#제도신학</span><span>#기독의료인</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

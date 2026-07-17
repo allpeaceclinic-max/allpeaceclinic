@@ -1,0 +1,176 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>예배와 선교 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="date">2026-07-18</span></div>
+  <h1 class="note-title">예배와 선교</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>예배와 선교는 흔히 경쟁 관계로 오해된다. 예배에 힘쓰면 선교가 약해지고, 선교에 매달리면 예배가 형식이 된다는 것이다. 이 페이지는 그 오해를 정면으로 뒤집는다. 예배와 선교는 대립이 아니라 연료와 목표의 관계다—예배는 선교를 밀고 가는 동력이자 선교가 도달하려는 종착지다. 예배 자체의 신학(경배의 인간론, 원어, 영과 진리, 산 제물)은 <a class="wl" href="../../t/%EC%98%88%EB%B0%B0/">예배</a>가, 선교 전반의 신학(보냄, 아브라함 언약, 열방)은 <a class="wl" href="../../t/%EC%84%A0%EA%B5%90/">선교</a>가 맡는다. 이 페이지가 서는 곳은 그 둘이 맞물리는 접면, 곧 예배가 어떻게 선교를 낳고 선교가 어떻게 예배로 귀결되는가라는 관계 그 자체다.</p>
+<p>이 관계의 정본 텍스트는 존 파이퍼의 명제이며, 이 볼트에서는 크리스토퍼 라이트의 《하나님 백성의 선교》를 다룬 <span class="wl-dead" title="위키 내부 링크">하백선시리즈</span> 14장(황혜진 정리)이 그것을 의료 현장의 언어로 풀어낸다. 예배와 선교의 관계를 붙드는 것은 사변이 아니라 실천의 문제다—예배 없는 선교는 연료 없는 엔진이 되고, 선교 없는 예배는 목적지 없는 여행이 되기 때문이다.</p>
+<h2>1. 파이퍼의 명제 — 선교가 있는 것은 예배가 없기 때문</h2>
+<p>예배와 선교의 관계를 가장 날카롭게 정식화한 것은 존 파이퍼의 한 문장이다.</p>
+<blockquote>
+<p>"교회의 궁극적 목표는 선교가 아니다. 예배가 궁극적 목표다. 선교는 예배가 존재하지 않기 때문에 존재하는, 일시적인 것이다." — 존 파이퍼</p>
+</blockquote>
+<p>이 명제의 급진성은 선교를 목표의 자리에서 끌어내린다는 데 있다. 선교는 그 자체로 궁극이 아니라 예배라는 궁극을 향한 수단이다. 하백선 14장이 파이퍼를 인용해 풀듯, 선교가 존재하는 이유는 아직 하나님을 예배하지 않는 자리가 있기 때문이며, 모든 족속이 하나님을 예배하게 되는 날 선교는 그 소임을 다하고 그친다. 선교는 영원하지 않지만 예배는 영원하다.</p>
+<p>이 순서가 뒤집히면 두 가지가 병든다. 예배가 목표임을 잊은 선교는 활동주의로 탈진하고, 선교를 낳지 못하는 예배는 자기만족으로 고인다. 파이퍼의 명제는 그래서 위계의 선언이 아니라 방향의 선언이다—선교는 예배를 향하고, 예배는 선교를 낳는다. 이 방향을 놓치지 않을 때 예배와 선교는 서로를 살린다.</p>
+<h2>2. 예배가 선교의 연료</h2>
+<p>예배가 목표라면, 동시에 예배는 선교의 출발점이기도 하다. 보내심은 예배에서 나오기 때문이다. 사도행전 13:2가 이 순서를 못박는다—안디옥 교회가 주를 섬겨 금식할 때, 곧 예배의 한복판에서 성령이 바나바와 사울을 따로 세워 보내신다. 선교사를 파송한 것은 전략 회의가 아니라 예배였다. 하백선 시리즈가 반복해 강조하는 미씨오 데이(하나님의 선교)의 논리가 여기 있다—선교의 주체는 하나님이시며, 그 하나님을 깊이 예배하는 자리에서 보내심이 흘러나온다.</p>
+<p>이 연료의 신학은 찬송과 기도로 구체화된다. 하백선 14장은 예배의 두 요소가 그대로 선교적 기능을 갖는다고 본다. 찬송은 시편이 이미 선교적이어서—"땅의 모든 끝이 여호와를 기억하고 돌아오며"(시 22:27)—구속의 경험이 터져 나온 찬양(출 15의 모세와 미리암의 노래)이 열방을 향해 넘쳐흐른다. 기도 또한 선교의 행동이다. 이 볼트가 정리한 기도의 다섯 선교적 차원—구별된 표지(신 4:6-8), 열방을 위한 복(창 18, 왕상 8), 우상 대결(단 6, 행 4), 선교 지원(롬 15:30-32), 영적 전쟁(엡 6:18-20)—은 예배의 기도가 곧 선교의 최전선임을 보여준다. 파이퍼의 말대로 "하나님은 기도를 통해 세상을 향한 선교적 목적을 이루신다." 예배가 뜨거우면 선교가 타오르고, 예배가 식으면 선교의 불도 꺼진다.</p>
+<h2>3. 모임과 흩어짐의 리듬</h2>
+<p>예배가 연료라면, 그 연료는 두 박자로 탄다—모임과 흩어짐이다. 로마서 12:1의 "너희 몸을 하나님이 기뻐하시는 거룩한 산 제물로 드리라, 이는 너희가 드릴 영적 예배니라"가 이 리듬의 축이다. <a class="wl" href="../../t/%EC%98%88%EB%B0%B0/">예배</a>가 상세히 다루듯, 예배에는 성전에 모이는 예전적 예배와 삶으로 드리는 산 제물의 예배가 함께 있다. 예배와 선교의 관계는 바로 이 두 예배 사이에서 작동한다—주일에 모여 드린 예배가 주중에 흩어진 삶의 예배로 이어지고, 흩어진 자리에서의 순종이 다시 모임의 예배로 돌아온다.</p>
+<p>하백선 시리즈가 코로나 시대에 길어 올린 통찰이 이 리듬을 압축한다—"예배를 위해 교회에 모여 있던 우리를 선교를 위해 흩으신 것"이라는 재해석이다. 모임은 흩어짐을 위한 충전이고, 흩어짐은 모임의 목적이다. 이 리듬이 깨지면 예배와 선교가 함께 무너진다. 모이기만 하고 흩어지지 않으면 예배는 성소에 갇힌 자기 경건이 되고, 흩어지기만 하고 모이지 않으면 선교는 연료가 바닥난 활동이 된다. 안디옥 교회가 예배 중에 보냄받았듯, 건강한 리듬은 모이는 예배와 흩어진 예배가 한 호흡으로 순환하는 데 있다.</p>
+<h2>4. 선교적 예배 — 이방인이 들어오는 자리</h2>
+<p>흩어짐만 선교인 것은 아니다. 모이는 예배 자체가 선교의 자리가 될 수 있다. 곧 이방인이 들어올 수 있는 예배, 바깥 사람이 그 안에서 하나님을 만나는 예배다. 고린도전서 14:23-25가 이 '선교적 예배'의 원형을 그린다—믿지 않는 자가 예배에 들어왔을 때, 알아들을 수 없는 방언의 혼란이 아니라 분별 있는 말씀 앞에서 "그 마음의 숨은 일이 드러나" 엎드려 하나님께 경배하며 "하나님이 참으로 너희 가운데 계신다" 고백하게 되는 장면이다. 예배가 안으로만 닫히지 않고 바깥을 향해 알아들을 수 있게 열릴 때, 모임 자체가 회심의 자리가 된다.</p>
+<p>이 구심적 선교의 원형은 이미 구약에 있다. 솔로몬은 성전 봉헌 기도에서 이방인이 성전에 와서 기도할 때 응답해 달라고 중보한다(왕상 8:41-43)—성전은 "만민이 기도하는 집"(사 56:7)이며, 이스라엘의 예배가 열방을 끌어당기는 자석이다. 하백선 시리즈가 정리한 구심적 선교(come mission)가 이것이다—나가서 전하는 원심적 선교와 짝을 이루어, 공동체의 예배가 아름다워 사람들이 끌려오는 방향이다. 벧전 2:9-12가 말하는 "그의 아름다운 덕을 선포하는" 왕 같은 제사장의 찬송이 어두운 데서 사람들을 불러내는 통로가 된다. 선교적 예배는 예배를 전도 집회로 바꾸는 것이 아니라, 진실한 예배가 그 자체로 바깥을 향해 증언이 되게 하는 것이다.</p>
+<h2>5. 열방의 예배 — 이야기의 끝</h2>
+<p>예배와 선교의 관계는 종말에서 완성된다. 선교가 향하는 종착지가 다름 아닌 예배이기 때문이다. 요한계시록 7:9-10이 그 끝을 보여준다—"각 나라와 족속과 백성과 방언에서 아무도 능히 셀 수 없는 큰 무리가 보좌 앞과 어린 양 앞에 서서" 구원을 하나님께 돌리는 장면이다. 선교의 목표는 더 많은 활동이 아니라 이 장면의 완성, 곧 모든 족속이 한 보좌 앞에서 드리는 예배다. <a class="wl" href="../../t/%EC%84%A0%EA%B5%90/">선교</a>가 "열방의 예배—이야기의 끝"으로 그리는 그 종착을, 이 페이지는 예배의 편에서 되받는다. 선교는 아직 예배하지 않는 자리를 예배의 자리로 바꾸는 일이며, 그 일이 끝나는 날 남는 것은 오직 예배뿐이다.</p>
+<p>이 종말론적 지평이 오늘의 예배와 선교에 무게를 싣는다. 하백선 14장이 의료 현장에 적용하듯, 진료 자체가 하나님 앞에서의 예배 행위가 되고 환자를 하나님의 형상으로 대하는 것이 예배의 표현이 될 때, 의료는 계시록 7장의 그 무리에 한 족속이라도 더 참여하도록 돕는 선교가 된다(<a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a>). 파이퍼의 명제가 여기서 원을 완성한다—선교가 존재하는 것은 예배가 없기 때문이고, 선교가 하는 일은 예배가 온 땅에 가득 차게 하는 것이며, 그 일이 다 이루어질 때 선교는 그치고 예배만 영원히 남는다. 예배는 선교의 알파이자 오메가다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>예배와 선교는 경쟁이 아니라 연료-목표 관계다. 예배 없는 선교는 연료 없는 엔진, 선교 없는 예배는 목적지 없는 여행이다.</li>
+<li>파이퍼의 명제—"선교가 존재하는 것은 예배가 없기 때문"—는 선교를 목표에서 수단으로 끌어내린다. 선교는 일시적이고 예배는 영원하다.</li>
+<li>보내심은 예배에서 나온다(행 13:2 안디옥). 찬송(시편)과 기도(기도의 다섯 선교적 차원)가 그 연료다.</li>
+<li>모임과 흩어짐은 한 리듬이다(롬 12:1 산 제물). "예배를 위해 모인 우리를 선교를 위해 흩으신다"—리듬이 깨지면 둘 다 무너진다.</li>
+<li>모이는 예배도 선교가 된다. 이방인이 알아듣고 엎드리는 선교적 예배(고전 14:23-25), 열방을 끌어당기는 구심적 예배(왕상 8)다.</li>
+<li>선교의 종착지는 예배다(계 7:9-10). 모든 족속이 한 보좌 앞에 설 때 선교는 그치고 예배만 남는다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>선교적 예배(이방인을 향한 열림)와 예배의 거룩한 구별(하나님만을 향함)은 언제 긴장하며, 예배를 전도 집회로 변질시키지 않는 경계는 어디인가?</li>
+<li>"예배가 궁극 목표"라는 명제가 사회적·총체적 선교(가난·정의)를 예배에 종속된 부차로 격하시킬 위험은 없는가—<a class="wl" href="../../t/%EC%B4%9D%EC%B2%B4%EC%A0%81%EC%84%A0%EA%B5%90/">총체적선교</a>와의 조율이 필요하다.</li>
+<li>모임과 흩어짐의 리듬에서, 온라인 예배와 흩어진 시대의 예배는 이 두 박자를 어떻게 유지하는가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%98%88%EB%B0%B0/">예배</a> — 예배 자체의 신학(경배의 인간론, 영과 진리, 산 제물). 이 페이지는 그 예배가 선교와 맺는 관계에 특화된다.</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90/">선교</a> — 선교 전반(보냄, 아브라함 언약, 열방의 예배). "이야기의 끝"이 이 페이지의 종착과 만난다.</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> · <a class="wl" href="../../t/%EB%AF%B8%EC%94%A8%EC%98%A4%EB%8D%B0%EC%9D%B4/">미씨오데이</a> — 하나님의 선교라는 예배-선교 관계의 신학적 토대.</li>
+<li><a class="wl" href="../../t/%EC%B4%9D%EC%B2%B4%EC%A0%81%EC%84%A0%EA%B5%90/">총체적선교</a> — 예배와 선교의 통합적 이해가 사회적 차원과 만나는 자리.</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a> — 진료가 예배이자 선교가 되는 의료 현장의 적용.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">하백선시리즈</span> 14장(황혜진)</td>
+<td>강의</td>
+<td>파이퍼 명제, 예배=연료·목표, 찬송·기도의 선교적 기능, 계 7:9-10 종착, 구심적 선교</td>
+</tr>
+<tr>
+<td>존 파이퍼 「열방을 향한 기쁨」</td>
+<td>인용</td>
+<td>"선교가 존재하는 것은 예배가 없기 때문", 기도를 통한 선교적 목적</td>
+</tr>
+<tr>
+<td>하백선 8·13장</td>
+<td>강의</td>
+<td>구심적 선교(왕상 8 솔로몬 기도), 공적 광장의 예배적 삶</td>
+</tr>
+<tr>
+<td>하백선 코로나 재해석(뉴비긴)</td>
+<td>강의</td>
+<td>"예배를 위해 모인 우리를 선교를 위해 흩으심" — 모임/흩어짐 리듬</td>
+</tr>
+<tr>
+<td>고전 14:23-25 · 롬 12:1 · 행 13:2 · 계 7:9-10</td>
+<td>성경 본문</td>
+<td>선교적 예배, 산 제물, 예배 중 파송, 열방의 예배</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#예배와선교</span><span>#예배</span><span>#선교</span><span>#미씨오데이</span><span>#파이퍼</span><span>#discipline/선교신학</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

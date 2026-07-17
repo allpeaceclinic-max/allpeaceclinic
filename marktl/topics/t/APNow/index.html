@@ -1,0 +1,528 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>AP Now (적극적 부모역할 프로그램) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:25">상담·가정</span><span class="date">2026-05-10</span></div>
+  <h1 class="note-title">AP Now (적극적 부모역할 프로그램)</h1>
+  
+</header>
+<article class="note">
+<h2>개요</h2>
+<p><strong>AP Now (Active Parenting Now)</strong>는 마이클 펍킨(Michael Popkin)이 개발하고, 한국에서는 홍경자 교수가 도입한 부모교육 프로그램이다.</p>
+<p><strong>강의 버전:</strong>
+- <span class="wl-dead" title="위키 내부 링크">윤명숙</span> 전도사님 — 2025년 동신교회 AP Now 1차 시리즈 (청소년 자녀 부모 대상)
+- <span class="wl-dead" title="위키 내부 링크">이상협</span> 의사님 — 교회 AP Now 강사로 직접 강의 진행</p>
+<p>핵심 철학: "완벽한 부모가 아니라, <strong>Good Enough 부모</strong>를 목표로 한다. 방향과 목적을 가지고 일관성 있게 양육하는 것이 핵심이다."</p>
+<hr />
+<h2>1강 — 적극적인 부모역할 (Active Parenting)</h2>
+<h3>적극적 부모 vs. 반응적 부모</h3>
+<table>
+<thead>
+<tr>
+<th>유형</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>적극적 부모</td>
+<td>자녀교육에 대한 목표를 분명히 하고, 일관성 있고 효율적으로 자녀를 지도한다</td>
+</tr>
+<tr>
+<td>반응적 부모</td>
+<td>자녀가 요구하는 대로 움직임. 치근댐을 한없이 참다가 소리 지르며 폭발. 성적이 안 나오면 학원을 바꾸는 "널뛰기 부모"</td>
+</tr>
+</tbody>
+</table>
+<h3>부모 역할의 3가지 유형</h3>
+<h4>1) 전제형 (독재자)</h4>
+<ul>
+<li><strong>지도법</strong>: 자녀에게 자유는 없고 제약만 강요</li>
+<li><strong>지도방법</strong>: 명령, 보상과 처벌 — "숙제해! 알았지?", 학원도 엄마가 결정</li>
+<li><strong>효과</strong>: 의사표현 불가, 기가 죽거나 포기, 청소년기 반항</li>
+<li>초등학교까지는 "착한 아이"로 보이지만, 청소년기에 소극적·적극적 반항으로 전환</li>
+<li>보상은 곧 권리가 되어버림. 처벌은 분노를 쌓고, 보복심을 키움</li>
+<li>골 3:21 "아비들아 너희 자녀를 노엽게 하지 말지니 낙심할까 함이라"</li>
+</ul>
+<blockquote>
+<p>"마음을 상실시켜 놓고 스스로 공부하라 한다 — 자기가 다 상실시켜 놓고."</p>
+</blockquote>
+<h4>2) 자유방임형 (심부름꾼)</h4>
+<ul>
+<li><strong>지도법</strong>: 제약 없이 자유만 허용</li>
+<li><strong>지도방법</strong>: 무제한의 자유 — 스스로 사랑이 많다고 착각</li>
+<li><strong>효과</strong>: 안정감과 소속감 결여, 자신감 결여, 책임감을 배우지 못함</li>
+<li>규칙이 있어야 안정감을 느낀다. 무제한의 자유 = 높은 자존감이라는 착각</li>
+<li>아이가 왕이 되고, 가정질서가 무너짐</li>
+</ul>
+<blockquote>
+<p>"아이에게 잘하고자 하는 것은 본능이다. 이것을 질서를 위해 다스려야 한다."</p>
+</blockquote>
+<h4>3) 민주형 (적극적 부모)</h4>
+<ul>
+<li><strong>지도법</strong>: 일정한 한계 안에서 자유가 주어짐 ("한계 안에서의 자유")</li>
+<li><strong>비유</strong>: 바닷가 수영 — 빨간 깃발 안에서 마음껏 놀기</li>
+<li><strong>지도방법</strong>: 자녀의 권리·의무·협동심을 가르침</li>
+<li><strong>효과</strong>: 부모에게 자신의 생각과 감정을 표현, 책임감이 커지면 자유도 확대</li>
+<li>독재형의 권위 + 방임형에서 자녀가 생각/감정을 표현할 수 있는 점의 결합</li>
+<li>결혼시킬 때 동그라미를 완전히 내려놔야 성인으로 키운 것</li>
+</ul>
+<h3>순종교육의 두 단계</h3>
+<table>
+<thead>
+<tr>
+<th>시기</th>
+<th>방식</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0~13세</td>
+<td>지배의 시기 — 부모가 규칙을 정하고 가르침</td>
+</tr>
+<tr>
+<td>청소년기</td>
+<td>가르침의 시기 — 자발적 순종으로 전환, 이유를 묻기 시작함. 부모는 대답할 준비가 되어 있어야 한다</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"청소년이 '교회 왜 가냐' 물을 때 '덮어놓고 믿어라'는 대답은 준비 안 된 것이다. '오늘부터 같이 연구해보자'만 해도 된다. 자발적인 하나님에 대한 순종이 나와야 하는 시기가 청소년기다."</p>
+</blockquote>
+<h3>창조명령과 부모의 목적 (창 2장)</h3>
+<ul>
+<li>생육·번성·충만: 보호하고 섬기는 것</li>
+<li><strong>무한책임이 아닌 유한책임</strong> — 부모를 떠나 하나님의 권위 아래 들어가게 하는 것</li>
+<li>엡 6:4 "또 아비들아 너희 자녀를 노엽게 하지 말고 오직 주의 교훈과 훈계로 양육하라"</li>
+</ul>
+<h3>예수님의 부모 유형</h3>
+<ul>
+<li>요셉: 의로운 사람 (마 1:19), 마리아: 주의 여종 (눅 1:38) — 둘 다 경건한 사람</li>
+<li>유대 교육 4단계: 강보교육(말씀 두루마리), 할례(소유권·내려놓음), 정결예식, 성인식</li>
+<li>눅 2:40→52: 신체→지혜→지력→사회성 순으로 성장</li>
+</ul>
+<p><strong>자녀의 건강 4영역:</strong>
+| 영역 | 성경 | 핵심 |
+|---|---|---|
+| 신체 | 고전 10:31 | 욕심·경쟁심으로 먹지 않아야 |
+| 마음 | 잠 4:23 | 혼자 먹으려는 마음 지켜줘야 |
+| 지적 | 잠 1:9, 9:10 | 지식은 쌓는 것이 아니라 심는 것, 경외로부터 |
+| 영적 | 요 14:6, 4:23 | 집에 있는 아이 축복, 영과 진리로 예배 |</p>
+<h3>신념과 지혜 (폴트립)</h3>
+<ul>
+<li><strong>신념</strong>: 관계가 탄탄할 때 지켜진다. 야동 보자는 친구 앞에서 버틸 수 있었던 것은 부모와의 관계 때문</li>
+<li>4-10계명을 어길 때는 반드시 1-3계명을 먼저 어기게 되어 있다 → 수직관계가 수평관계에 영향</li>
+<li><strong>지혜</strong>: 성령님의 도우심. 아버지가 하나님께 의뢰하는 것을 자녀가 그림자로 배운다</li>
+</ul>
+<hr />
+<h2>2강 — 적극적인 의사소통</h2>
+<h3>공동선 (Common Good)</h3>
+<table>
+<thead>
+<tr>
+<th>개념</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>공익(공공성)</td>
+<td>너와 우리가 좋은 것 — 99마리를 위한 2자 관계</td>
+</tr>
+<tr>
+<td>공동선</td>
+<td>너, 우리 뿐 아니라 <strong>하나님이 좋아하시는 것</strong> — 잃어버린 한 마리도 포함하는 3자 관계</td>
+</tr>
+</tbody>
+</table>
+<p>협동심 = 공동선을 추구하도록 만드는 것. 협동심은 태도와 기술의 산물.</p>
+<h3>문제는 교육의 기회</h3>
+<ul>
+<li>보통 문제가 생기면: ① 짜증 ② 배우자 탓 ③ 자녀 원망 ④ 환경 탓</li>
+<li>AP Now의 관점: <strong>문제 발생 = 최상의 교육적 기회</strong></li>
+</ul>
+<h3>문제 소유권</h3>
+<ul>
+<li><strong>부모 소유</strong>: 훈육 사용</li>
+<li><strong>자녀 소유</strong>: 지지, 선택의 자유를 줘야 (잘못된 선택을 알아도 허용해야)</li>
+<li><strong>공동소유</strong>: 훈육 + 지지, 가족회의로</li>
+<li>격려는 언제나</li>
+</ul>
+<h3>적극적 의사소통 5단계</h3>
+<ol>
+<li><strong>적극적 경청</strong> — 가장 어렵다 (배우자에게도 잘 안 됨)</li>
+<li><strong>감정에 귀를 기울임</strong> — 라벨링, 읽어줌</li>
+<li><strong>감정과 이야기 내용 연결</strong> — "~처럼 들리는데, 내가 추측하건대…"</li>
+<li><strong>대안을 찾고 결과 평가</strong> — 자녀가 효율적 문제해결을 하도록 코칭</li>
+<li><strong>추후지도</strong> — 미해결 시 다시 적극적 의사소통</li>
+</ol>
+<blockquote>
+<p>"비강요적인 대안, 자신의 경험을 들려주면서. 실패해도 괜찮아."</p>
+</blockquote>
+<h3>비언어 소통의 비중</h3>
+<ul>
+<li>신체언어 55% | 음조 38% | 말 7%</li>
+<li>혼합 메시지의 위험: "핸드폰 그만해라"하면서 자신은 계속 → 하나가 되어야</li>
+</ul>
+<h3>감정 읽기</h3>
+<ul>
+<li>엡 4:26 "분을 내어도 죄를 짓지 말라" — 감정은 허용, 행동이 문제</li>
+<li>기노트의 정서적 거울: 내용보다 감정 먼저 반영</li>
+<li>게임중독 아이의 사례 — 원인은 6개월간 혼자 점심을 먹은 것. 감정을 읽었더라면</li>
+</ul>
+<hr />
+<h2>3강 — 효과적인 훈육과 문제다루기</h2>
+<h3>왜 책임감이 없을까?</h3>
+<ul>
+<li>과잉보호, 과잉공급, 구원자 역할, 너무 오랜 부모 노릇</li>
+<li>아담과 하와의 후손 — 두려움 때문에 책임을 전가</li>
+<li><strong>비난은 책임감을 기르지 못한다</strong> → 비난 → 책임전가·변명·자기합리화</li>
+</ul>
+<p><strong>책임감 기르는 법</strong>: 선택 → 결과 → 받아들이기</p>
+<h3>보상 vs. 처벌 vs. 인센티브</h3>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>처벌</td>
+<td>단기 효과처럼 보이나 앙갚음·분노 유발. "상처를 입힐 권리"를 허용하는 것</td>
+</tr>
+<tr>
+<td>보상</td>
+<td>매수. 자녀가 곧 권리로 여기게 됨</td>
+</tr>
+<tr>
+<td>인센티브</td>
+<td>논리적으로 연결된 것 (숙제 빨리 하면 놀 시간 증가)</td>
+</tr>
+</tbody>
+</table>
+<h3>행동 메커니즘</h3>
+<p><strong>사건 → 생각(의식/무의식) → 감정 → 행동 → 사건에 영향</strong></p>
+<ul>
+<li>처음은 의식적, 반복되면 무의식적 반응 — 그래서 처음이 중요</li>
+<li>감정은 사고와 가치관의 산물. 생각을 바꾸면 감정도 바뀐다</li>
+</ul>
+<h3>훈육 도구 (기본 3가지)</h3>
+<ol>
+<li><strong>관계 형성</strong>: 화나면 타임아웃 후 훈육 — 화만 전달되면 마음이 전달되지 않음</li>
+<li><strong>나 전달법 (I-message)</strong>: "단호하지만 부드럽게", 말수가 적을수록 좋다</li>
+<li><strong>논리적 결과</strong>: 선택권 제시 → 결과 경험 (예: 음식 장난치면 "먹지 말고 나가라")</li>
+</ol>
+<blockquote>
+<p>"아이가 엉뚱한 행동으로 관심 끌기 → 무관심. 보상을 주지 않으면 사라진다. 단 다른 방식으로 전환될 수 있으니 긍정적 방식으로 대체해줘야."</p>
+</blockquote>
+<hr />
+<h2>4강 — 자녀의 그릇된 행동 이해하고 교정하기</h2>
+<h3>행동은 목적으로 이해하라 (드라이쿨스 이론)</h3>
+<p>"왜 이렇게 했니?" (요인 탐색) → "뭘 하려고 했니?" (목적 탐색)</p>
+<p>자녀는 유전에도, 환경에도 핑계 댈 수 없다 — 자기결정적 존재</p>
+<h3>4가지 그릇된 목적</h3>
+<table>
+<thead>
+<tr>
+<th>목적</th>
+<th>자녀 행동</th>
+<th>부모의 실수</th>
+<th>대응</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>부당한 관심 끌기</strong></td>
+<td>엉뚱한 행동, 떼쓰기</td>
+<td>주의·잔소리·달래기 (관심=보상)</td>
+<td>무관심, 긍정적 관심으로 대체</td>
+</tr>
+<tr>
+<td><strong>반항 (힘겨루기)</strong></td>
+<td>"내가 할 거야", 말 안 듣기</td>
+<td>통제하려 함, 독재적 경향</td>
+<td>대화·선택권·실수 허용, 싸움 피함</td>
+</tr>
+<tr>
+<td><strong>앙갚음</strong></td>
+<td>고의적으로 상처 주려 함</td>
+<td>보복하면 기 꺾임</td>
+<td>악순환 끊기, 휴전선언, 차분·단호</td>
+</tr>
+<tr>
+<td><strong>극도의 기 꺾임</strong></td>
+<td>무시, 무감동, 비행에 빠짐</td>
+<td>강압·완벽주의·"아직 멀었어"</td>
+<td>무조건적 수용 경험 필요</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>예수님의 딴청: 요 8:6, 8 — 바리새인들의 힘겨루기에 몸을 굽혀 땅에 쓰심. 말려들지 않는 모범.</p>
+</blockquote>
+<h3>기질과 달란트</h3>
+<ul>
+<li>히포크라테스: 다혈·담즙·우울·점액 기질 (기질과 자녀양육 — 베블리 라헤이)</li>
+<li>다중지능이론 (하워드 가드너): 언어지능, 논리수학지능 외 다양한 지능</li>
+<li>아들러의 출생순위: 5살 이상 차이나면 별개의 두 가정과 같다</li>
+</ul>
+<h3>분노 다루기</h3>
+<ul>
+<li>분노는 fight or flight — 생존을 위한 것. 이성을 잃지 말고 이성을 사용하라</li>
+<li>"화를 내는 순간 → 힘겨루기로 들어간다. 졌다."</li>
+<li>타임아웃: 아이도, 부모도</li>
+</ul>
+<hr />
+<h2>5강 — 용기, 품성, 자기존중감</h2>
+<h3>세 가지 핵심 자질</h3>
+<table>
+<thead>
+<tr>
+<th>자질</th>
+<th>어원/출처</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>용기 (Courage)</td>
+<td>불어 꾀흐(심장)</td>
+<td>두려움이 있음에도 불구하고 try하는 것</td>
+</tr>
+<tr>
+<td>품성 (Character)</td>
+<td>—</td>
+<td>가치관·신념·태도·행동의 총체. 옳은 일을 하려는 내면의 힘</td>
+</tr>
+<tr>
+<td>자기존중감</td>
+<td>머리(Think, Know)</td>
+<td>"나는 능력 있고 사랑스러운 인간으로서 성공하게 될 것"이라는 마음</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>잠 4:23 "모든 지킬 만한 것 중에 더욱 네 마음(레브)을 지키라" — 히브리어 레브(심장)</p>
+</blockquote>
+<h3>성공회로 vs. 실패회로</h3>
+<ul>
+<li><strong>성공회로</strong>: 격려 → 용기 → try → 성장</li>
+<li><strong>실패회로</strong>: 비난 → 기 꺾임 → 낙심 → 그릇된 행동</li>
+</ul>
+<p>골 3:21 "낙심할까 함이라" — 기 꺾인 아이는 아무것도 안 하거나 비행한다</p>
+<h3>기 꺾는 4가지</h3>
+<ol>
+<li>부정적 기대 ("니 그럴 줄 알았다")</li>
+<li>실수에만 집중 ("또 40점이야, 네가 잘 하는 게 뭐 있어")</li>
+<li>완벽주의와 과잉기대 (도달할 수 없는 기준)</li>
+<li>과잉보호 ("대신해주는 것은 무시하는 것이다")</li>
+</ol>
+<h3>격려의 힘</h3>
+<ul>
+<li>인커리지(encourage) = 용기를 주입하는 것</li>
+<li><strong>격려는 자녀에게 용기·자존감·품성과 재능을 길러주는 비료</strong></li>
+<li>실패해도 격려, try하는 아이가 결국 얻어 걸린다</li>
+<li>칭찬할 만한 짓을 해야 칭찬하는가? → 긍정적 행동을 하는 순간을 포착해서 격려</li>
+</ul>
+<blockquote>
+<p>"내가 할 거야!" — 기회를 놓치지 말 것. 엄마가 내가 저 일을 할 수 있다고 생각하시는구나 라고 인식.</p>
+</blockquote>
+<h3>허드렛일의 중요성</h3>
+<ul>
+<li>선택·위임 = 하나님이 일하시는 방법</li>
+<li>창조세계를 인간에게 다스리도록 위임 — 왕 같은 역할, 종된 섬김</li>
+<li>선택권 → 자존감 연결: 운동화 선택, 라면 끓이기… 작은 일에 충성</li>
+</ul>
+<hr />
+<h2>6강 — 적극적인 가정 NOW</h2>
+<h3>민주주의와 가정</h3>
+<table>
+<thead>
+<tr>
+<th>민주주의</th>
+<th>가정 적용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>평등</td>
+<td>존중</td>
+</tr>
+<tr>
+<td>자유</td>
+<td>한계 안에서 책임</td>
+</tr>
+<tr>
+<td>투표권</td>
+<td>자녀의 의견</td>
+</tr>
+<tr>
+<td>발언권</td>
+<td>자녀가 이야기할 수 있는 분위기</td>
+</tr>
+<tr>
+<td>제한</td>
+<td>부모가 지도자</td>
+</tr>
+</tbody>
+</table>
+<h3>가족회의</h3>
+<p><strong>목적</strong>: 협동심·책임감·용기·자기존중감 → 신뢰/유대감 → 정서적 연결</p>
+<table>
+<thead>
+<tr>
+<th>나이</th>
+<th>시간</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7세 이상 참가 가능</td>
+<td>—</td>
+</tr>
+<tr>
+<td>5~7세</td>
+<td>약 10~15분</td>
+</tr>
+<tr>
+<td>8세 이상</td>
+<td>약 30~45분</td>
+</tr>
+</tbody>
+</table>
+<p><strong>운영 원칙</strong>: 안건은 누구나 포스트잇으로 제의, 사회자는 순번으로, 서기 역할이 논술·필기 능력 키움</p>
+<p><strong>3가지 기능:</strong>
+1. <strong>비형식적 모임</strong> — 일상의 나눔
+2. <strong>문제 예방적</strong> — 잠재적 문제 상황 미리 다루기 (백화점, 물놀이, 친척모임, 학교폭력 등)
+3. <strong>문제 해결적</strong> — 문제 정의 → 감정 나눔 → 브레인스토밍 → 해결책 → 논리적 결과 → 추후지도</p>
+<h3>가정예배</h3>
+<ul>
+<li><strong>일방통행 × → 나눔의 시간</strong></li>
+<li><strong>비난·지적 × → 격려·적용</strong></li>
+<li>가장 어린 자녀 기준으로 (영아부 10분)</li>
+<li>자녀가 설교? → 발상의 전환</li>
+<li>구성: 찬양(자녀 기준) → 인터뷰 or 자녀가 가르쳐주기 → 질문으로 적용 → 축복기도(아버지) → 재미있는 놀이/간식</li>
+</ul>
+<blockquote>
+<p>"가정예배를 오래 한 가정도 일방통행이면 실패. 며느리에게 교회 가는 것이 '시아버지가 일방적으로 비난·지적하는 시댁 가는 것'이 되면 안 된다."</p>
+</blockquote>
+<h3>하브루타</h3>
+<ul>
+<li>짝을 지어 질문하고 대화·토론·논쟁하는 유대 교육법</li>
+<li>목표: 제자화, 정체성, 시대에 맞는 아이</li>
+</ul>
+<h3>6강 종합: 성공회로 안에 머물게 하기</h3>
+<ul>
+<li>부모의 변화 → 자녀의 변화</li>
+<li>관계 우선 → 나중에 스스로 변화, 진정한 변화</li>
+<li>자신을 먼저 돌보는 것 (부부 에너지 유지)</li>
+<li>방치 × 과잉 개입 × → 적절한 개입 (위험·약물·안전은 반드시 개입)</li>
+</ul>
+<hr />
+<h2>핵심 인용</h2>
+<blockquote>
+<p>"완벽주의 부모 밑에 자녀들이 위험하다. 목적과 방향을 제시하는 것이 목적이다." (윤명숙 전도사님)</p>
+<p>"선택권 빠를수록 좋다. 그래야 힘겨루기를 내려놓을 수 있다." (1강)</p>
+<p>"문제가 생기면 최상의 교육적 기회가 생겼다고 인식하라." (2강)</p>
+<p>"비난은 책임감을 기르지 못한다." (3강)</p>
+<p>"화를 내는 순간 힘겨루기로 들어간다. 졌다." (4강)</p>
+<p>"격려는 자녀에게 용기, 자존감, 품성과 재능을 길러주는 비료다." (5강)</p>
+<p>"가정이 분위기가 편안해야 말할 수 있다. 민주주의란 언제나 말할 수 있는 권리가 있다는 뜻이다." (6강)</p>
+</blockquote>
+<hr />
+<h2>연결</h2>
+<ul>
+<li><a class="wl" href="../../t/%EA%B0%80%EC%A0%95%EC%82%AC%EC%97%AD/">가정사역</a> — AP Now는 가정사역의 실천 도구</li>
+<li><a class="wl" href="../../t/%EB%8C%80%ED%99%94/">대화</a> — 의사소통 걸림돌, 적극적 경청</li>
+<li><a class="wl" href="../../t/%EA%B3%B5%EC%9D%98/">공의</a> — 공동선 개념 (2강)</li>
+<li><span class="wl-dead" title="위키 내부 링크">윤명숙</span> — 2025년 강의자</li>
+<li><span class="wl-dead" title="위키 내부 링크">이상협</span> — 교회 AP Now 강사</li>
+<li><span class="wl-dead" title="위키 내부 링크">동신교회</span> — 2025년 1차 시리즈 진행 장소</li>
+</ul>
+</article>
+<div class="tagrow"><span>#부모교육</span><span>#가정사역</span><span>#청소년</span><span>#자녀양육</span><span>#AP Now</span><span>#선택권</span><span>#훈육</span><span>#격려</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

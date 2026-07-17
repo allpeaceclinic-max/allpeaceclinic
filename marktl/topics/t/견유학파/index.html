@@ -1,0 +1,152 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>견유학파 (Cynics) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:174">성경·해석</span><span class="date">2026-06-28</span></div>
+  <h1 class="note-title">견유학파 (Cynics)</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>견유학파(犬儒學派, Cynicism)는 고대 그리스에서 기원한 철학 학파로, 디오게네스(주전 412-323년경)가 대표적 인물이다. 이름은 그리스어 <em>kyon</em>(개)에서 유래하며, 사회적 관습과 물질적 욕망을 개처럼 무시하는 삶의 방식에서 비롯되었다. 핵심 주장은 <strong>인생의 간결함과 덕(arete)이 행복의 전제</strong>라는 것이다. 외부 환경이나 사회적 지위, 재물에 의존하지 않고 내적 자유와 자족(autarkeia)에서 참된 행복을 찾는다.</p>
+<h2>1. 핵심 교리: 외부로부터의 자유</h2>
+<p>견유학파는 문명의 관습, 재물, 명예, 권력이 모두 덕의 실천에 불필요하거나 오히려 방해가 된다고 보았다. 디오게네스가 통 속에서 살며 알렉산더 대왕에게 "햇빛을 가리지 말라"고 했다는 일화는 이 정신을 상징한다. 사회적 지위나 후견인-피후견인 관계망에서 독립하여, 자연에 따라 사는 것이 이상이었다.</p>
+<h2>2. 신약 세계에서의 견유학파</h2>
+<p>MBTS 2주차 강의("신약성경의 세계")에서 견유학파는 1세기 그리스-로마 세계에 공존하던 네 철학 학파 중 하나로 제시된다. 강의는 이 철학들이 신약성경의 독자들, 특히 디아스포라 유대인과 그리스-로마 문화권 이방인 그리스도인에게 어떤 지적 환경을 형성했는지를 조망하기 위해 이들을 나란히 소개한다.</p>
+<table>
+<thead>
+<tr>
+<th>학파</th>
+<th>핵심 주장</th>
+<th>행복의 근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>견유학파</td>
+<td>인생의 간결함, 덕이 행복의 전제</td>
+<td>외부 환경으로부터의 독립</td>
+</tr>
+<tr>
+<td>스토아학파</td>
+<td>이성·자연법, 덕목 추구</td>
+<td>이성에 따른 삶</td>
+</tr>
+<tr>
+<td>에피쿠로스학파</td>
+<td>실재는 물질적, 신과 죽음의 두려움에서 자유</td>
+<td>우정과 내적 평온</td>
+</tr>
+<tr>
+<td>플라톤학파</td>
+<td>비가시적 천상이 영원한 실재</td>
+<td>이데아 세계와의 합일</td>
+</tr>
+</tbody>
+</table>
+<h2>3. 신약과의 연관성</h2>
+<p>견유학파의 자족과 외부 환경으로부터의 독립이라는 주제는 신약성경과 흥미로운 접촉면을 만든다. 바울의 "어떤 형편에 있든지 자족하기를 배웠노라"(빌 4:11)는 진술은 견유-스토아적 자족(autarkeia) 언어를 사용하되, 그 근거를 그리스도 안에서 찾는다는 점에서 차별화된다. 견유학파가 인간 의지와 이성의 훈련을 통해 자족을 추구한다면, 바울은 "내게 능력 주시는 자 안에서"(빌 4:13) 자족한다. 형식은 유사하나 토대가 근본적으로 다르다.</p>
+<p>또한 명예/수치 체계를 가로지르는 견유학파의 사회 비판적 태도는, 초대 교회가 사회적 불명예(박해·주변화)를 내부에서 재해석하는 전략과 일정한 유사성을 보인다. 그러나 교회의 재해석은 공동체적 정체성(<a class="wl" href="../../t/%EC%A0%95%EC%B2%B4%EC%84%B1/">정체성</a>)과 종말론적 소망에 근거한다는 점에서 개인적 자유를 추구하는 견유학파와 구별된다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>견유학파의 핵심은 외부 조건에 묶이지 않는 내적 자유이며, 이는 1세기 지중해 세계에서 폭넓은 공감을 얻었다.</li>
+<li>신약 저자들은 견유-스토아적 언어를 사용하면서도 그 내용을 그리스도 안에서 근본적으로 재정초했다.</li>
+<li>사회 관습·명예 체계에 대한 비판이라는 공통점이 있으나, 견유학파는 개인의 의지에, 교회는 성령과 공동체에 토대를 둔다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>견유학파적 순회 철학자와 초대 교회의 순회 선교사(바울 등) 사이의 유사성이 어느 정도 의도적 전략이었는지, 아니면 문화적 형식의 우발적 공유인지.</li>
+<li>바울의 자족(autarkeia) 언어가 견유-스토아 전통을 얼마나 의도적으로 전용(appropriation)하는가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%8A%A4%ED%86%A0%EC%95%84%ED%95%99%ED%8C%8C/">스토아학파</a> — 자연법·이성 중심의 경쟁 학파. 갈릴리에도 스토아 철학자가 거주했다고 강의가 언급함.</li>
+<li><a class="wl" href="../../t/%EC%97%90%ED%94%BC%EC%BF%A0%EB%A1%9C%EC%8A%A4%ED%95%99%ED%8C%8C/">에피쿠로스학파</a> — 물질주의·우정 중심. 초대 기독교인과 외부에서 유사하게 취급받았다는 점이 주목됨.</li>
+<li><a class="wl" href="../../t/%EC%88%98%EC%B9%98%EB%AC%B8%ED%99%94%EC%99%80%EB%B3%B5%EC%9D%8C/">수치문화와복음</a> — 1세기 명예/수치 체계에 대한 소수문화의 재해석 전략.</li>
+<li><span class="wl-dead" title="위키 내부 링크">02주_신약성경의세계</span> — 그리스-로마 철학 학파 비교 도표에서 견유학파를 다룸.</li>
+</ul>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/신약학</span><span>#discipline/철학사</span><span>#topic/그리스로마철학</span><span>#topic/헬레니즘</span><span>#topic/제2성전시대</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

@@ -1,0 +1,135 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>중보자 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:226">조직신학·교리</span><span class="date">2026-07-03</span></div>
+  <h1 class="note-title">중보자</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>중보자는 하나님과 인간 사이를 잇는 존재로, <span class="wl-dead" title="위키 내부 링크">01주토론_그리스도의위격과속죄</span>에서 이상협은 완전한 인성과 완전한 신성이 한 위격 안에 연합된 그리스도만이 참된 중보자가 될 수 있다고 정리한다.</p>
+<h2>1. 인성이 중보자에게 요구하는 조건</h2>
+<p>그리스도의 인성은 대표적 순종을 위해, 대속적 희생을 위해, 하나님과 인간의 중보자로서, 피조물 통치 목적을 이루시기 위해, 우리의 모본이 되시기 위해, 우리의 구속받은 몸의 전형이 되시기 위해, 우리를 동정하시기 위해 반드시 필요하며 그의 인성은 영원하다. 사람을 대표하고 사람을 위해 온전히 순종하려면 사람이어야 한다는 것이 이 논리의 핵심이다.</p>
+<h2>2. 신성이 중보자에게 요구하는 조건</h2>
+<p>동시에 신성 역시 반드시 필요하다 — 영원하신 하나님만이 그를 믿는 모든 자들의 모든 죄를 위한 죄값을 지불할 수 있고, 구원은 주님께로부터 오는 것이기 때문이다. 완전한 인간이자 완전한 하나님이신 분만이 진정한 중보자가 되신다.</p>
+<h2>3. 위격적 연합과 중보자직</h2>
+<p>성령의 기적적인 역사로 인한 그리스도의 동정녀 탄생은 한 인격 속에 완전한 인성과 완전한 신성의 존재적 연합을 가능케 했다. 이 두 본질이 그리스도의 한 위격 안에 연합된 <a class="wl" href="../../t/%EC%84%B1%EC%9C%A1%EC%8B%A0/">성육신</a>을 통해, 그리스도께서 우리의 구원을 얻으시기 위해서 삶과 죽음으로 하신 일이 <a class="wl" href="../../t/%EC%86%8D%EC%A3%84/">속죄</a>다. 완전한 인성 없이는 사람을 대표할 수 없고, 완전한 신성 없이는 죄값을 다 갚을 수 없다는 이 이중적 필요성이 중보자 개념의 존재론적 근거를 이룬다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>중보자직은 인성과 신성 각각이 아니라 <strong>한 위격 안의 연합</strong>에서 성립한다.</li>
+<li>인성은 "대표"와 "동정"을, 신성은 "무한한 가치"와 "구원의 원천"을 담당하며 둘 다 없이는 중보가 성립하지 않는다.</li>
+<li>중보자 개념은 <a class="wl" href="../../t/%EC%86%8D%EC%A3%84/">속죄</a>의 존재론적 전제로 기능한다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>중보자직의 구약적 예표(제사장직·왕직·선지자직과의 관계)는 이 토론 노트에서 별도로 다뤄지지 않았다.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EB%A1%A0/">기독론</a> — 중보자 개념이 속한 그리스도론 전체.</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EC%9C%A1%EC%8B%A0/">성육신</a> — 중보자직의 존재론적 근거.</li>
+<li><a class="wl" href="../../t/%EC%86%8D%EC%A3%84/">속죄</a> — 중보자가 이루는 구원 사역.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">01주토론_그리스도의위격과속죄</span></td>
+<td>토론(교리 정리)</td>
+<td>중보자직의 인성·신성 조건과 위격적 연합 논지</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/조직신학</span><span>#topic/기독론</span><span>#topic/속죄론</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

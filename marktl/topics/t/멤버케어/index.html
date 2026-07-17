@@ -1,0 +1,335 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>멤버케어 (Member Care) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="date">2026-05-07</span></div>
+  <h1 class="note-title">멤버케어 (Member Care)</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<blockquote>
+<p>"영입부터 은퇴까지 — 적절한 시기에 따라 예방적·발달적·전인적 케어"</p>
+</blockquote>
+<p><strong>목표</strong>: 사역자들이 하나님의 성품·내적 강인함·사역 기술·대인관계 기술을 발달시켜<br />
+"건강하고, 회복력 있고, 사역에 있어서 효과적"이도록 유지하는 것.</p>
+<hr />
+<h2>켈리 오도넬 &amp; 데이브 폴락 — 5층 케어 구조</h2>
+<blockquote>
+<p>"분수대의 분수 같다. 하나님이 분수의 중심 자원이 되신다." — <span class="wl-dead" title="위키 내부 링크">조경아</span></p>
+</blockquote>
+<p><code>①  주님의 케어 (Master Care)
+              ↓
+     ② 자기케어 + 상호케어
+              ↓
+     ③  파송자 케어 (교회·단체)
+              ↓
+       ④  전문가 케어
+              ↓
+      ⑤  네트워크 케어</code></p>
+<p>모든 케어의 자원은 위에서 아래로 흘러내린다.<br />
+파송자(교회·단체)는 ③에 위치 — 가장 실질적 접점.</p>
+<hr />
+<h3>① 주님의 케어 (Master Care)</h3>
+<p><strong>원리</strong>: 모든 케어의 궁극적 근원. 하나님과의 관계가 선교사의 내적 강인함의 토대.</p>
+<p><strong>예시</strong>:
+- 말씀 묵상, 기도, 안식일 준수 — 선교지에서도 의도적으로 지켜야 할 리듬
+- 선교사가 탈진 상태일 때 가장 먼저 회복되어야 할 것: 하나님과의 개인적 관계
+- 분수 비유: 중심 물줄기가 마르면 아래 층 케어가 모두 메마름</p>
+<hr />
+<h3>② 자기케어 + 상호케어</h3>
+<p><strong>원리</strong>: 스스로를 돌보는 책임 + 팀 내 서로 돌보는 관계.<br />
+멤버케어의 오해: "외부에서 해주는 것"이라는 인식 → 자기·상호 케어가 일상의 기초.</p>
+<p><strong>예시</strong>:
+- <strong>자기케어</strong>: 적절한 수면·운동·취미, 감정 인식과 처리, 은사와 한계 인정
+- <strong>상호케어</strong>: 팀 내 정기 체크인 ("지금 어떠세요?"), 기도 파트너십
+- 2기 사역의 외로움·역할 고착화는 상호케어가 무너질 때 심화됨 (<span class="wl-dead" title="위키 내부 링크">유정희</span>)
+- 역기능 배경 출신 신임 선교사는 자기케어 방법 자체를 배워야 하는 경우 많음</p>
+<hr />
+<h3>③ 파송자 케어 (교회·선교단체)</h3>
+<p><strong>원리</strong>: "지금 우리의 위치" — 파송 교회와 단체의 직접적 책임 영역.</p>
+<p><strong>파송자 케어의 시작</strong>: 디브리핑(귀국 보고) + 건강검진 (신체·정서·영적)</p>
+<p><strong>예시 — 사역 단계별:</strong></p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>파송자 역할</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>파송 전</td>
+<td>부르심 소통·승인, 지지팀 형성, 훈련 연계</td>
+</tr>
+<tr>
+<td>1기 적응기</td>
+<td>정기 연락, 문화충격 4단계 이해, "사역 성과 묻지 않기"</td>
+</tr>
+<tr>
+<td>안식년</td>
+<td>디브리핑, 건강검진, 숙소 지원, 본국 재적응 돕기</td>
+</tr>
+<tr>
+<td>2기 이후</td>
+<td>팀 갈등 중재, 과부하 사역 조율, 경청·공감 우선</td>
+</tr>
+<tr>
+<td>영구 귀국</td>
+<td>귀국 이유 판단 않기, 새 역할 찾기, 재정착 지원</td>
+</tr>
+</tbody>
+</table>
+<p><strong>구체적 실천 — <span class="wl-dead" title="위키 내부 링크">조경아</span> 7가지 역할에서:</strong>
+- 기도 (출17장 모세·아론·훌) — 선교사 이름으로 하는 중보기도
+- 연락 후원: 서신·전화·음성편지·물품 — 속내를 나누는 공동체
+- 귀환 후원: "개인에게 맞추라 — 마음을 먼저 풀어줘야"</p>
+<hr />
+<h3>④ 전문가 케어</h3>
+<p><strong>원리</strong>: 파송자 케어의 범위를 넘는 심층 필요는 전문가에게 의뢰.</p>
+<p><strong>예시</strong>:
+- 심리상담사 / 정신건강의학과: 우울증·공황장애·PTSD (<span class="wl-dead" title="위키 내부 링크">최혜숙</span> — 선교지 영적 도전 결과)
+- 의사: 귀국 선교사 건강검진, 열대 질환·만성질환
+- 부부·가족 상담: 선교지 스트레스로 인한 관계 균열
+- 대장암으로 급히 귀국한 선교사 사례 (<span class="wl-dead" title="위키 내부 링크">유정희</span>) — 의료 + 정서 전문 케어 동시 필요</p>
+<hr />
+<h3>⑤ 네트워크 케어</h3>
+<p><strong>원리</strong>: 파송단체·교회를 넘어, 선교사 케어 전문 기관·단체 간 협력.</p>
+<p><strong>예시</strong>:
+- 선교사 케어 전문 기관 연계
+- 선교단체 간 선교사 케어 정보 공유 및 위기 지원 협력
+- 동일 선교지 내 타단체 선교사와 상호 돌봄 네트워크
+- 국내 귀환 선교사 네트워크 모임 (재적응, 역할 전환 지원)</p>
+<hr />
+<h2>회복력 (Resilience)</h2>
+<blockquote>
+<p>"유리컵은 깨어진다. 탁구공은 돌아온다."<br />
+얼마나 빨리 정상적으로 돌아오는가 — 이것이 내적 강인함이다. — <span class="wl-dead" title="위키 내부 링크">조경아</span></p>
+</blockquote>
+<p>멤버케어의 최종 목표는 고난·실패·갈등 이후 <strong>돌아오는 힘</strong>을 키우는 것.<br />
+보호가 아니라 강건하게 하는 것.</p>
+<hr />
+<h2>멤버케어의 성경적 근거</h2>
+<ul>
+<li><strong>딤후2:3</strong> — "선교는 복음을 위한 고난의 길"</li>
+<li><strong>고전1:27</strong> — "약한 자를 들어 사용하심"</li>
+<li><strong>고전12:22-23</strong> — "더 약하게 보이는 지체가 도리어 요긴하고… 더욱 귀한 것들로 입혀"</li>
+<li>→ 연약한 자를 세우는 것 자체가 하나님의 영광을 드러냄</li>
+</ul>
+<hr />
+<h2>번성(Flourishing) vs 생존(Surviving)</h2>
+<p><em>(멘토링2, 요 10:10 — "더 풍성히(perissos) 얻게 하려 함이라")</em></p>
+<table>
+<thead>
+<tr>
+<th>상태</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>생존(Surviving)</strong></td>
+<td>고갈, 외로움, 의무감으로 버팀</td>
+</tr>
+<tr>
+<td><strong>번성(Flourishing)</strong></td>
+<td>내면의 생수가 흐름, 관계 중심, 영적 돌파</td>
+</tr>
+</tbody>
+</table>
+<p>→ 장기 사역의 목표는 탈진을 피하는 것이 아니라 풍성한 삶으로 번성하는 것</p>
+<hr />
+<h2>4대 지원 시스템 (멘토링2)</h2>
+<p>장기 선교사의 번성을 위한 필수 구조:</p>
+<table>
+<thead>
+<tr>
+<th>시스템</th>
+<th>규모</th>
+<th>역할</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>중보기도자</strong></td>
+<td>5-15명</td>
+<td>어떤 상황에서도 영적 방패가 되어주는 사람</td>
+</tr>
+<tr>
+<td><strong>재정 지원자</strong></td>
+<td>50-150명</td>
+<td>사역의 물질적 기반</td>
+</tr>
+<tr>
+<td><strong>개인 친구</strong></td>
+<td>소수 정예</td>
+<td>함께 놀고 쉬며 속내를 나눌 사람</td>
+</tr>
+<tr>
+<td><strong>멘토</strong></td>
+<td>상위 멘토 + 동료</td>
+<td>방향을 잡아주고 함께 걷는 사람</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>후원 = 단순 자금 모금(Fund-raising)이 아닌 <strong>동역자를 세우는 것(Friend-raising)</strong></p>
+</blockquote>
+<hr />
+<h2>광야·고립의 4단계 (멘토링6)</h2>
+<p>연구 휴가·안식년·질병·추방 등 사역이 멈추는 시간의 영적 구조:</p>
+<ol>
+<li><strong>상실감</strong> — 사역자라는 신분 박탈, 역할 없음의 공허</li>
+<li><strong>몸부림</strong> — 어떻게든 해결하고 복귀하려는 시도</li>
+<li><strong>하나님 발견</strong> — 고립 속에서 일하시는 하나님을 만남</li>
+<li><strong>영적 권위 확장</strong> — 내면이 돌파되어 더 깊은 권위로 사역 재개</li>
+</ol>
+<blockquote>
+<p>"멈춤의 시간은 끝이 아니라 하나님이 우리를 빚으시는 거룩한 시간"</p>
+</blockquote>
+<p>고립의 시간에 경계할 것: 다른 일거리로 공허함 채우기 (Doing 회피)<br />
+집중할 것: 하나님과의 관계 심화, 내면 치유, 파송 공동체 교제 (Being)</p>
+<hr />
+<h2>안식년 3대 요소 (멘토링6)</h2>
+<p><em>(통상 7년마다 3개월~1년)</em></p>
+<ol>
+<li><strong>쉼</strong> — 철저한 육체적 재충전</li>
+<li><strong>사역 성찰</strong> — 개인적·전문적 성장 극대화, 타임라인 재점검</li>
+<li><strong>파송기관 연결</strong> — 파송 교회·단체와 소통·보고, 관계 재충전</li>
+</ol>
+<hr />
+<h2>평생학습 (Lifelong Learning) — 멘토링6</h2>
+<blockquote>
+<p>로버트 클린턴: "사역자가 정체에 빠지지 않기 위한 가장 중요한 해결책은 잘 개발된 학습 자세다"<br />
+"오늘 배우고 내일 죽더라도 평생학습은 가치가 있다"</p>
+</blockquote>
+<p><strong>실천 방법:</strong>
+- 연간 도서 목록 작성 — 폭넓고 꾸준한 독서
+- 세미나·워크숍·웨비나에 적극 참여
+- <strong>PDP(개인 개발 계획)</strong>: 지식에 그치지 않고 성품과 사역 기술까지 목표 설정·점검
+- <strong>개인 타임라인 작성</strong>: 출생부터 주요 사건·인물·장소를 기록하며 하나님의 인도하심을 추적
+  - "내 능력이 아닌 오직 하나님이 하신다"는 고백으로 이어짐</p>
+<hr />
+<h2>Finishing Strong — 강건하게 잘 마치기</h2>
+<blockquote>
+<p>세상의 성공 = 뛰어난 업적·직업적 타이틀<br />
+영적 완주 = <strong>Integrity(진실성)</strong>를 지키며 예수님을 향한 열정을 끝까지 유지하는 것</p>
+</blockquote>
+<p><strong>롤모델</strong>: 다니엘(세상 압력에 굴복하지 않음) + 바울(달려갈 길을 끝까지 마침, 딤후 4:7)</p>
+<p><strong>완주를 방해하는 주요 덫:</strong>
+- 재정 문제 / 교만 / 영적 고갈 / 성적·가정적 유혹
+- <strong>가장 취약한 순간</strong>: 선교지 출장 등 홀로 남겨진 고립의 시간
+- 해결책: 자신의 약점을 직면 + <strong>투명한 책임 공동체</strong> 구축</p>
+<p><strong>삼위일체적 멘토링 관계:</strong>
+- 상위 멘토 (나를 이끄는 사람)
+- 동료 + 배우자 (함께 걷는 사람)
+- 멘티 (내가 이끄는 사람)</p>
+<p>→ <a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%ED%9B%88%EB%A0%A8/">제자훈련</a> 개인제자도실습 8주 토론: 20년 사역한 멘토도 "저를 혼내는 분이 사라졌다 — 이제 어떻게 살아야 할지 고민"이라 말함. 지속적 수퍼비전이 제자도의 지속성을 유지하는 방법</p>
+<p><strong>끝까지 잘 마친 리더의 공통점:</strong>
+1. 평생 배우는 자세
+2. 하나님의 주권에 대한 흔들림 없는 신뢰
+3. 예수님을 닮은 성품</p>
+<p>→ <span class="wl-dead" title="위키 내부 링크">딤후4</span></p>
+<hr />
+<h2>선교지 자녀 양육 (멘토링6)</h2>
+<ul>
+<li>국내에서는 자녀 신앙·학업을 교회나 학원에 외주(Outsourcing) 가능</li>
+<li>선교지에서는 이 시스템이 단절 → <strong>온전히 부모의 고유한 몫</strong></li>
+<li>샬롯 메이슨 철학: 부모가 주도권을 갖는 양육 시스템</li>
+<li><strong>자녀에게 가장 강력한 교육</strong>: 사역 성과가 아닌 <strong>24시간 일상 속 부모의 진짜 성품과 영성</strong></li>
+</ul>
+<p>→ <a class="wl" href="../../t/%EC%9E%90%EB%85%80%EC%96%91%EC%9C%A1/">자녀양육</a></p>
+<hr />
+<h2>연결</h2>
+<ul>
+<li><span class="wl-dead" title="위키 내부 링크">유정희</span> — 2016 동신 센더스쿨, 선교사 생애 순환·문화충격 상세</li>
+<li><span class="wl-dead" title="위키 내부 링크">조경아</span> — 2017 동신 센더스쿨, 5층 구조·파송자 케어 7가지 역할</li>
+<li><span class="wl-dead" title="위키 내부 링크">최혜숙</span> — 선교지 영적 도전, 전문가 케어 필요의 현장</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> — 보내는 선교의 구조</li>
+<li><a class="wl" href="../../t/%EC%84%AC%EA%B9%80/">섬김</a> — 디아코니아로서 돌봄</li>
+</ul>
+</article>
+<div class="tagrow"><span>#멤버케어</span><span>#선교사돌봄</span><span>#켈리오도넬</span><span>#데이브폴락</span><span>#선교신학</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

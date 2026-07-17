@@ -1,0 +1,115 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>논리실증주의 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:300">윤리·공공</span><span class="date">2026-07-03</span></div>
+  <h1 class="note-title">논리실증주의</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>논리실증주의는 <span class="wl-dead" title="위키 내부 링크">기독교윤리학 5주차 강의</span>(6장 실존적 전통)가 세속 윤리학사의 "언어철학적 전환" 단계로 다루는 사조다. 검증원리 — 관찰이나 과학적 방법으로 검증되지 않은 문장에는 인지적 의미가 없다는 원칙 — 에 근거해 기독교와 윤리적 명제를 "참도 거짓도 아니"라고 선언한다.</p>
+<h2>강의 맥락 — <span class="wl-dead" title="위키 내부 링크">비트겐슈타인</span>에서 정서주의로</h2>
+<p>강의는 논리실증주의를 <span class="wl-dead" title="위키 내부 링크">비트겐슈타인</span>의 언어철학 논증의 뒤를 잇는 흐름으로 배치한다. 비트겐슈타인은 완전한 논리적 언어가 세계를 완벽히 재현할 수 있다고 보면서도, 윤리는 그 표현 능력 밖에 있어 "말해 줄 수는 없고 오직 보여 줄 수만 있는" "신비"의 영역이라 결론짓는다("그것에 대해 말할 수 없다면 그것에 대하여 침묵해야 한다"). 강의는 이 결론이 세속적 실존주의 윤리와 그 형태가 다르지 않다고 평가한다.</p>
+<p>논리실증주의는 이 검증원리를 근거로 윤리·신앙 명제를 무의미한 것으로 처리하는데, 강의는 이것이 사실상 <span class="wl-dead" title="위키 내부 링크">데이비드흄</span>과 무어(Moore)가 이미 지적한 "현상(is)에서 당위(ought)를 추론할 수 없다"는 가르침의 반복이라고 정리한다. 뒤이어 <a class="wl" href="../../t/%EC%A0%95%EC%84%9C%EC%A3%BC%EC%9D%98/">정서주의</a>가 윤리적 언어를 사실 진술이 아니라 "사실의 진술로 변장한 명령어"(루돌프 카르납), "행동의 규범"(모리츠 슐리크), "승인의 감정"을 권유하는 표현(C.L. 스티븐슨)으로 재해석하며 이 노선을 이어받는다.</p>
+<h2>실천 적용 — 자기모순 논박</h2>
+<p>강의는 "과학적으로 검증 안 되니 윤리·신앙 명제는 무의미하다"는 논리실증주의적 반론에 대해, 검증원리 자체가 자기모순적이라는 점 — 검증원리 자체도 검증 불가능하다는 점 — 을 지적하는 논박 구조를 실천 지침으로 제시한다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>논리실증주의의 검증원리는 흄·무어의 존재-당위 구분을 언어철학적으로 재포장한 것에 가깝다.</li>
+<li>검증원리는 자기 자신에게 적용하면 자기모순에 빠진다(검증원리 자체가 검증 불가능).</li>
+<li>이 사조는 실존적 전통이 윤리를 인간의 주관성으로 절대화하는 큰 흐름 안에서, 윤리 언어 자체가 인지적 의미를 상실하는 극단적 지점으로 자리매김된다.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><span class="wl-dead" title="위키 내부 링크">05주_실존적전통</span> — 언어철학적 전환 논의의 본 출처</li>
+<li><a class="wl" href="../../t/%EC%A0%95%EC%84%9C%EC%A3%BC%EC%9D%98/">정서주의</a> — 논리실증주의를 이어받는 윤리 언어 재해석</li>
+<li><a class="wl" href="../../t/%EC%9E%90%EC%97%B0%EC%A3%BC%EC%9D%98%EC%A0%81%EC%98%A4%EB%A5%98/">자연주의적오류</a> — 검증원리가 반복하는 존재-당위 구분</li>
+<li><span class="wl-dead" title="위키 내부 링크">비트겐슈타인</span></li>
+<li><span class="wl-dead" title="위키 내부 링크">데이비드흄</span></li>
+</ul>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/기독교윤리</span><span>#topic/논리실증주의</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

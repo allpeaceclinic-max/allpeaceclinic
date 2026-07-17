@@ -1,0 +1,393 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>선교란 무엇인가 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="author">존 스토트</span><span class="date">2026-05-03</span></div>
+  <h1 class="note-title">선교란 무엇인가</h1>
+  
+</header>
+<article class="note">
+<p><strong>저자</strong>: 존 스토트 (John Stott) · 크리스토퍼 라이트 (Christopher Wright)<br />
+<strong>분류</strong>: 선교신학 / 복음주의 선교론 / 로잔운동</p>
+<blockquote>
+<p>"메신저와 메시지는 분리될 수 없다." — 로잔언약</p>
+</blockquote>
+<hr />
+<h2>1. 이 책의 위치 — 로잔 선교 개념의 신학적 기반</h2>
+<p>이 책은 단독으로 읽히지 않는다. <strong>로잔운동 50년의 신학적 진화</strong>를 이해해야 이 책의 무게가 보인다.</p>
+<h3>로잔운동 4대회 흐름</h3>
+<table>
+<thead>
+<tr>
+<th>대회</th>
+<th>연도</th>
+<th>문서</th>
+<th>핵심 전환</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1차 로잔</strong></td>
+<td>1974</td>
+<td>로잔언약</td>
+<td>전도 + 사회적 책임의 통합 선언. 존 스토트 초안 작성</td>
+</tr>
+<tr>
+<td><strong>2차 마닐라</strong></td>
+<td>1989</td>
+<td>마닐라 선언</td>
+<td>전략적 협력, 미전도종족 운동</td>
+</tr>
+<tr>
+<td><strong>3차 케이프타운</strong></td>
+<td>2010</td>
+<td>케이프타운 서약</td>
+<td><strong>총체적 선교</strong> 공식화. 크리스토퍼 라이트 주도</td>
+</tr>
+<tr>
+<td><strong>4차 서울</strong></td>
+<td>2024</td>
+<td>서울 선언문</td>
+<td>선포와 행동, 투게더(Together). 폴리센트릭</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 전환</strong>: 선교 = 영혼 구원(좁은) → <strong>하나님 나라 전체</strong>(총체적)</p>
+<blockquote>
+<p>이재훈 목사: "케이프타운 서약 + 선교란 무엇인가? + 하나님 백성의 선교 — 이 세 권이 함께 읽혀야 한다"</p>
+</blockquote>
+<hr />
+<h2>2. 선교 개념의 변화 — 왜 이 책이 중요한가</h2>
+<h3>WCC vs 로잔의 긴장</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>WCC (에큐메니컬)</th>
+<th>로잔 (복음주의)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>선교 정의</td>
+<td>인간화(Humanization), 사회 변혁</td>
+<td>복음 전도 + 사회적 책임</td>
+</tr>
+<tr>
+<td>미씨오 데이 적용</td>
+<td>교회 밖 세상에서 하나님의 선교 찾기</td>
+<td>교회를 통한 하나님의 선교</td>
+</tr>
+<tr>
+<td>문제</td>
+<td>전도의 약화</td>
+<td>사회적 책임 소홀</td>
+</tr>
+</tbody>
+</table>
+<p>로잔언약 (1974)의 혁신: WCC에서 강조하는 사회적 책임을 <strong>전도의 우선성을 잃지 않으면서</strong> 수용</p>
+<h3>복음주의의 저항과 적용 패턴</h3>
+<ul>
+<li><strong>근본주의</strong>: 저항만 하다가 끝남 (사회적 책임 포기)</li>
+<li><strong>자유주의</strong>: 저항 없이 끌려들어감 (전도 포기)</li>
+<li><strong>복음주의 (로잔)</strong>: 현대적 개념에 저항하면서 사회적 참여 — "저항 + 적용"</li>
+</ul>
+<hr />
+<h2>3. 존 스토트 — 회심론</h2>
+<h3>회심에 대한 혐오감, 왜?</h3>
+<p>현대인이 회심을 거부하는 세 가지 이유:
+1. <strong>개종주의(Proselytism)</strong>: 제국주의·크리스텐돔·강압의 역사
+2. <strong>상대주의</strong>: 절대 진리 주장 자체가 폭력으로 인식
+3. <strong>보편구원론</strong>: 아무 것도 안 해도 구원받는다는 신학</p>
+<h3>회심의 순서 — 은혜가 먼저</h3>
+<p>```
+❌ 선불행 후구원 패턴:
+나는 비참했다 → 회심 → 은혜 → 구원</p>
+<p>✅ 바른 순서:
+은혜 → 회심(에피스트레포, ἐπιστρέφω) → 구원
+"자기 아버지가 답이라는 기억(은혜)이 먼저 → 돌아섬(회심)"
+```</p>
+<p>→ <a class="wl" href="../../b/%EB%B6%80%EC%A1%B1%ED%95%9C%EA%B2%83%EC%9D%B4%EC%97%86%EB%8A%94%EC%82%AC%EB%9E%8C%EC%97%90%EA%B2%8C%EC%99%9C%EB%B3%B5%EC%9D%8C%EC%9D%B4%ED%95%84%EC%9A%94%ED%95%9C%EA%B0%80_%EC%9C%8C%EB%A6%AC%EB%AA%AC/">부족한것이없는사람에게왜복음이필요한가_윌리몬</a>과 동일 구조: 은혜가 회개보다 앞선다</p>
+<h3>회심의 차원 — 5가지 방향</h3>
+<p>회심(에피스트레포 = 방향을 돌림)은 단순히 개인 결신이 아니다:</p>
+<table>
+<thead>
+<tr>
+<th>차원</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>주되심</strong></td>
+<td>회개 → 그리스도의 주되심 인정</td>
+</tr>
+<tr>
+<td><strong>교회</strong></td>
+<td>공동체로, 하나됨의 요구 (무교회주의 비판)</td>
+</tr>
+<tr>
+<td><strong>사회</strong></td>
+<td>"오라"가 아니라 "가라" — 세상을 향해</td>
+</tr>
+<tr>
+<td><strong>문화</strong></td>
+<td>순례자 원리(구별) + 토착화 원리(참여), 보편적 그리스도를 찾아</td>
+</tr>
+<tr>
+<td><strong>성령</strong></td>
+<td>성령이 회심을 가능하게 하심</td>
+</tr>
+</tbody>
+</table>
+<h3>회심 vs 거듭남</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>회심</th>
+<th>거듭남</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>주체</td>
+<td>인간 (돌아섬)</td>
+<td>하나님 (낳으심)</td>
+</tr>
+<tr>
+<td>의식</td>
+<td>의식적</td>
+<td>무의식 (출생은 기억 못함)</td>
+</tr>
+<tr>
+<td>속도</td>
+<td>과정 or 즉각</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>4. 크리스토퍼 라이트 — 회심·교회·문화</h2>
+<h3>내부자 운동 (Insider Movement)</h3>
+<ul>
+<li>그리스도에 대한 반감 ≠ 십자군·서양 종교에 대한 반감 — 구분 필요</li>
+<li>내부자 운동에 대한 세 시각: <strong>수용 / 격려 / 배신</strong> 논란</li>
+<li>라이트의 입장: <strong>공감하되 혼합주의 경계</strong></li>
+<li>제도적 교회 없는 상황에서도 제자도는 가능</li>
+<li>로잔 IIC: 제자도의 다양성을 존중</li>
+</ul>
+<p><strong>판단 원칙</strong> (행15:19 "괴롭게 하지 말고"):
+- 성급한 새로운 선교전략 ✗
+- 비난 ✗
+- 주와 함께 머물러 있으라 (행11:20-24, 바나바의 심정)
+- 다양한 시각 인정 (롬14:1-3)</p>
+<h3>교회론 = 구원론 = 선교론</h3>
+<blockquote>
+<p>"교회 = 복음 전파의 수단이 아니라 <strong>자체가 메시지의 구현</strong>"</p>
+</blockquote>
+<ul>
+<li>교회 = 존재 자체로 복음의 필수 요소</li>
+<li>교회 = 본질상 선교적 (Missional by nature)</li>
+<li>교회 = 새 창조의 시작 (역사적으로)</li>
+<li>복음 = 하나님과 화해 + 우주적 통합 + 유대인·이방인 통합 + 만물의 통합</li>
+<li>바울의 인식: 창세기에 시작된 복음 → 신약에서 교회로 가시화</li>
+</ul>
+<h3>회심과 문화·상황화</h3>
+<p>회심은 자신의 문화 전체를 버리는 것이 아니다:</p>
+<p>```
+문화의 3가지 층위:
+┌──────────────────────────────┐
+│ 거부해야 하는 것              │
+├──────────────────────────────┤
+│ 유지해도 되는 것              │
+├──────────────────────────────┤
+│ 변화가 필요한 것              │
+└──────────────────────────────┘</p>
+<p>접근 방식:
+배척과 금지 → 조건부 관용 → 비판적 인정
+```</p>
+<hr />
+<h2>5. 선교에 대한 4가지 견해와의 위치</h2>
+<p>(<a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EC%97%90%EB%8C%80%ED%95%9C%EB%84%A4%EA%B0%80%EC%A7%80%EA%B2%AC%ED%95%B4/">선교에대한네가지견해</a> — 스탠리 그렌츠, 크리스토퍼 라이트 외)</p>
+<table>
+<thead>
+<tr>
+<th>견해</th>
+<th>대표</th>
+<th>핵심</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>구원론적 선교 (좁은)</td>
+<td>케빈 드영·그렉 길버트</td>
+<td>제자 삼기·영적 구원</td>
+</tr>
+<tr>
+<td><strong>구원론적 선교 (넓은)</strong></td>
+<td><strong>존 스토트·크리스토퍼 라이트</strong></td>
+<td><strong>전도 + 사회적 책임</strong></td>
+</tr>
+<tr>
+<td>참여선교</td>
+<td>크리스토퍼 라이트</td>
+<td>하나님 선교에 참여, 창조세계 돌봄 포함</td>
+</tr>
+<tr>
+<td>상황중심선교</td>
+<td>존 프랭키</td>
+<td>상황에 따른 다양한 증언</td>
+</tr>
+<tr>
+<td>성례전적 선교</td>
+<td>피터 라잇하르트</td>
+<td>예전과 삶의 조화, 교회의 공적 존재</td>
+</tr>
+</tbody>
+</table>
+<p><strong>스토트·라이트의 위치</strong>: 넓은 구원론적 선교 + 참여선교 — 로잔운동의 신학적 중심</p>
+<hr />
+<h2>⭐ vault 내 연결 지점</h2>
+<table>
+<thead>
+<tr>
+<th>이 책의 개념</th>
+<th>연결 자료</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>은혜 먼저 → 회심</td>
+<td><a class="wl" href="../../b/%EB%B6%80%EC%A1%B1%ED%95%9C%EA%B2%83%EC%9D%B4%EC%97%86%EB%8A%94%EC%82%AC%EB%9E%8C%EC%97%90%EA%B2%8C%EC%99%9C%EB%B3%B5%EC%9D%8C%EC%9D%B4%ED%95%84%EC%9A%94%ED%95%9C%EA%B0%80_%EC%9C%8C%EB%A6%AC%EB%AA%AC/">부족한것이없는사람에게왜복음이필요한가_윌리몬</a> — 동일 구조</td>
+</tr>
+<tr>
+<td>선교의 총체성 (총체적 선교)</td>
+<td><a class="wl" href="../../b/%EB%B3%80%ED%99%94%ED%95%98%EB%8A%94%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90%EC%99%80%EC%84%A0%EA%B5%90_%EC%9E%84%ED%83%9C%EC%88%9C/">변화하는세계기독교와선교_임태순</a> — 선교적 차원 vs 의도</td>
+</tr>
+<tr>
+<td>문화 속 회심 / 참여하되 구별</td>
+<td><a class="wl" href="../../b/%EB%B3%B4%EB%83%84%EB%B0%9B%EC%9D%8C_%ED%82%B4%ED%96%84%EB%AA%AC%EB%93%9C/">보냄받음_킴햄몬드</a> — 참여의 영성, 다니엘 원리</td>
+</tr>
+<tr>
+<td>교회론=선교론</td>
+<td><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a> — 본질상 선교적 교회</td>
+</tr>
+<tr>
+<td>내부자 운동·상황화</td>
+<td><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> — 성육신적 선교</td>
+</tr>
+<tr>
+<td>로잔 1차→4차 흐름</td>
+<td><span class="wl-dead" title="위키 내부 링크">인터서브</span> — 케이프타운 서약 기반 사역</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>탐구 중인 질문</h2>
+<p><strong>Q1. 전도의 우선성을 유지하면서 사회적 책임을 통합하는 실천적 균형은 어디인가?</strong>
+- 부분 답변: <a class="wl" href="../../b/%EB%B3%B4%EB%83%84%EB%B0%9B%EC%9D%8C_%ED%82%B4%ED%96%84%EB%AA%AC%EB%93%9C/">보냄받음_킴햄몬드</a> — 총체적 선교(차원) + 사도적 우선순위(의도성)
+- 부분 답변: 로잔언약 — "사회적 행동이 전도에 종속되지 않지만, 전도의 우선성은 있다"
+- 여전히 열린 질문: 하루 100명 진료하는 의사에게 사도적 우선순위는 어떤 형태인가?</p>
+<p><strong>Q2. 내부자 운동과 혼합주의의 경계는 어떻게 그어야 하는가?</strong>
+- 부분 답변: 라이트 — 제자도의 다양성 존중, 전통적 교회 표지로 성급하게 판단 ✗
+- 부분 답변: <a class="wl" href="../../b/%EB%B3%B4%EB%83%84%EB%B0%9B%EC%9D%8C_%ED%82%B4%ED%96%84%EB%AA%AC%EB%93%9C/">보냄받음_킴햄몬드</a> — 다니엘 원리 (언어·학문 참여 but 정체성 지킴)
+- 여전히 열린 질문: 이슬람 문화권 의료 파트너 사역에서 정체성과 참여의 경계는?</p>
+<hr />
+<h2>관련 페이지</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> — 미씨오 데이, 성육신적 선교</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a> — 본질상 선교적 교회</li>
+<li><a class="wl" href="../../t/%ED%9A%8C%EA%B0%9C/">회개</a> — 회심(에피스트레포)과 회개</li>
+<li><a class="wl" href="../../t/%EA%B1%B0%EB%93%AD%EB%82%A8/">거듭남</a> — 회심 vs 거듭남 구분</li>
+<li><a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%A1%A0/">교회론</a> — 교회론=구원론=선교론</li>
+<li><a class="wl" href="../../b/%EB%B3%80%ED%99%94%ED%95%98%EB%8A%94%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90%EC%99%80%EC%84%A0%EA%B5%90_%EC%9E%84%ED%83%9C%EC%88%9C/">변화하는세계기독교와선교_임태순</a> — 총체적 선교 3기둥</li>
+<li><a class="wl" href="../../b/%EB%B3%B4%EB%83%84%EB%B0%9B%EC%9D%8C_%ED%82%B4%ED%96%84%EB%AA%AC%EB%93%9C/">보냄받음_킴햄몬드</a> — 참여의 영성</li>
+<li><a class="wl" href="../../b/%EB%B6%80%EC%A1%B1%ED%95%9C%EA%B2%83%EC%9D%B4%EC%97%86%EB%8A%94%EC%82%AC%EB%9E%8C%EC%97%90%EA%B2%8C%EC%99%9C%EB%B3%B5%EC%9D%8C%EC%9D%B4%ED%95%84%EC%9A%94%ED%95%9C%EA%B0%80_%EC%9C%8C%EB%A6%AC%EB%AA%AC/">부족한것이없는사람에게왜복음이필요한가_윌리몬</a> — 은혜 먼저 구조</li>
+<li><span class="wl-dead" title="위키 내부 링크">인터서브</span> — 케이프타운 서약 기반 사역 철학</li>
+</ul>
+</article>
+<div class="tagrow"><span>#선교신학</span><span>#로잔언약</span><span>#회심</span><span>#총체적선교</span><span>#상황화</span><span>#내부자운동</span><span>#복음주의</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

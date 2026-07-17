@@ -1,0 +1,282 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>정의 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:174">성경·해석</span><span class="date">2026-07-14</span></div>
+  <h1 class="note-title">정의</h1>
+  
+</header>
+<article class="note">
+<h2>정의(定義)</h2>
+<p>이 글이 다루는 정의(正義, justice)는 사회 제도의 공정이 아니라 하나님의 성품으로서의 정의(divine justice)다. 인간은 정의를 흔히 "받을 만한 자가 받을 만한 것을 받게 하는 것", 곧 보응으로 좁혀 생각한다. 그러나 성경이 계시하는 정의는 심판과 은혜가 한 성품 안에 공존하는 것이다. 하나님은 죄를 가볍게 여겨 눈감으시지도, 죄인을 향한 긍휼을 접고 형벌만 집행하시지도 않는다. 이 둘을 동시에 붙드시는 방식이 곧 하나님의 정의다.</p>
+<p>이 정의를 가장 날카롭게 시험하는 텍스트가 요나서다. MBTS 구약개론II 5주 강의는 요나서를 "정의(=은혜+심판의 공존과 균형)"를 드러내는 핵심 본문으로 읽는다. 요나는 원수 니느웨의 멸망, 곧 심판만을 원했지만, 하나님은 심판을 예고하시고도 회개한 성읍을 아끼셨다. 요나가 거부한 그 '아까워하심'이 바로 성경적 정의의 심장이다. 이 글은 요나의 질문에서 출발해, 출애굽기 34장의 자기 계시, 십자가, 인간의 정의론과의 대조, 심판의 목적을 지나, 이 성품이 사회 속 실천으로 넘어가는 다리에 이른다.</p>
+<p>한 가지 경계를 먼저 그어 둔다. 정의를 사회 속에서 어떻게 <strong>행하는가</strong> — 쩨다카와 미쉬파트의 실천, 억눌린 자의 부르짖음에 대한 응답, 남겨둠의 신학, 의료 공공성 — 는 <a class="wl" href="../../t/%EA%B3%B5%EC%9D%98/">공의</a>가 이미 확정판으로 다룬다. 이 페이지의 물음은 그 앞에 놓인 더 근원적인 것이다. 정의란 <strong>무엇인가</strong>, 곧 하나님은 어떤 분이시기에 정의로우신가.</p>
+<h2>1. 요나서가 여는 질문 — 신학적 확신범의 도망</h2>
+<p>요나서를 읽는 통념은 그를 겁쟁이로 그린다. 사명을 받고 정반대 방향 다시스로 도망친 유일한 선지자이니 그럴 만하다. 그러나 구약개론II 강의의 핵심 논지는 정반대다 — 요나는 두려워서가 아니라 <strong>알았기 때문에</strong> 도망갔다. 왕하 14:25에서 여로보암 2세의 영토 회복 예언이 성취되어 요나는 이미 "참 선지자"로 인정받은 인물이었다. 니느웨 멸망 예언이 회개로 무산되면 거짓 선지자로 낙인찍힐 위험이 있었던 것도 사실이다. 그러나 그의 도망을 결정지은 것은 체면이 아니라 신학이었다.</p>
+<p>그 신학은 요나 자신의 입에서 나온다. 니느웨가 구원받자 화를 내며 그는 하나님께 항변한다 — "내가 고국에 있을 때에 이러하겠다고 말씀하지 아니하였나이까 … 주께서는 은혜로우시며 자비로우시며 노하기를 더디하시며 인애가 크시사 뜻을 돌이켜 재앙을 내리지 아니하시는 하나님이신 줄을 내가 알았음이니이다"(욘 4:2). 요나는 하나님의 성품을 몰라서가 아니라 <strong>정확히 알았기에</strong> 도망친 것이다. 이스라엘을 삼킬 원수 앗수르가 그 은혜의 대상이 되는 것을 그는 견딜 수 없었다. 강의의 표현으로, 요나는 "정의의 심판만"을 요구했고, 은혜와 심판을 함께 붙드시는 하나님의 균형을 거부했다.</p>
+<p>여기서 요나서의 역설이 드러난다. 이스라엘은 이사야·예레미야·에스겔의 긴 메시지에도 듣지 않았는데(사 6:9-10; 렘 5:21; 겔 2:4-5), 이방 니느웨는 요나의 다섯 마디("사십 일이 지나면 니느웨가 무너지리라") 앞에 왕에서 짐승까지 회개했다. 선지자는 잠들고 이방 선원들이 기도하며, 심판을 선포한 자는 화를 내고 심판의 대상은 돌아온다. 이 전면적 역설의 한복판에 하나의 질문이 서 있다. 정의란 원수의 멸망을 보는 것인가, 아니면 원수조차 돌이킬 문이 열려 있는 것인가.</p>
+<h2>2. 은혜와 심판의 공존 — 정의를 보응으로 환원할 때</h2>
+<p>요나가 실패한 지점은 정의를 심판 한쪽으로 환원한 것이었다. 그가 붙든 정의는 "용서 없는 심판", 죄에 상응하는 대가만을 집행하는 정의다. 강의는 요나의 이름 배경(아밋대, '진리')을 짚으며 그의 이미지를 "의로운 심판, 용서 없는 심판"으로 규정한다. 그것이 잘못인 이유는 심판을 요구했기 때문이 아니라, 심판만을 정의의 전부로 삼았기 때문이다.</p>
+<p>정의를 보응으로만 환원할 때 잃는 것은 회개의 문이다. 하나님의 정의는 심판받아 마땅한 자에게도 돌이킬 기회를 여는 방식으로 작동한다. 강의가 요나서를 모세의 중보 전통과 잇는 이유가 여기 있다. 황금송아지 사건(출 32장)과 정탐꾼 사건(민 14장)에서 모세가 간구하자 하나님은 재앙을 돌이키셨다 — 심판이 유예되고 은혜가 임한 두 전례다. 요나가 인용한 성품 고백은 바로 이 전통의 언어이며, 그가 알고도 거부한 것은 이 중보의 계보 전체였다. 유대 전통이 대속죄일(욤 키푸르)에 요나서를 낭독하는 것도 같은 이유다. 정의의 심판만 구하는 선지자를 배경에 두고, 그 책이 실은 하나님의 은혜로 가득 차 있음을 예전으로 확인하는 것이다.</p>
+<p>그러나 균형은 반대 방향으로도 지켜져야 한다. 은혜가 심판을 삭제하는 순간, 그것은 더 이상 정의가 아니라 값싼 관용이 된다. 이 대칭이 이 페이지 전체를 관통하는 축이다 — 심판만 남은 정의(요나)도, 심판이 지워진 은혜도 성경이 계시하는 정의가 아니다. 정의는 이 둘의 긴장을 견디는 성품이다.</p>
+<h2>3. 출 34:6-7 — 정의의 자기 계시</h2>
+<p>이 긴장은 하나님이 스스로를 계시하신 본문에 이미 각인되어 있다. 요나가 인용한 욘 4:2는 출애굽기 34장 6-7절의 반향이다. 모세가 황금송아지 사건 후 하나님의 영광을 구했을 때, 하나님이 친히 지나가시며 선포하신 이름 — 이것이 구약 전체에서 하나님의 성품 고백의 원본이며, 시편·요엘·느헤미야·요나가 거듭 인용하는 신앙고백의 모체다. 그런데 이 자기 계시는 한 문장으로 끝나지 않고 두 축의 긴장으로 이루어져 있다.</p>
+<table>
+<thead>
+<tr>
+<th>출 34:6 — 은혜의 축</th>
+<th>출 34:7 — 심판의 축</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"자비롭고 은혜롭고 노하기를 더디하고 인자와 진실이 많은 하나님이라"</td>
+<td>"인자를 천대까지 베풀며 악과 과실과 죄를 용서하나 …"</td>
+</tr>
+<tr>
+<td>천대까지 이어지는 인자, 죄의 용서</td>
+<td>"… 형벌 받을 자는 결단코 면죄하지 아니하고 … 삼사대까지 보응하리라"</td>
+</tr>
+</tbody>
+</table>
+<p>성경적 정의의 원형이 바로 이 한 자기 계시 안의 두 절이다. 하나님은 "노하기를 더디" 하시되 "결단코 면죄하지" 않으신다. 앞 절만 취하면 죄를 죄로 부르기를 포기한 관용이 되고, �the 절만 취하면 요나의 무자비한 엄벌이 된다. 요나의 비극은 이 계시의 앞부분(은혜)을 정확히 알면서도 그것을 원수에게 적용하기를 거부하고, 뒷부분(보응)만이 니느웨의 몫이기를 요구한 데 있다. 그는 하나님의 자기 계시를 반쪽만 신봉한 셈이다. 성경적 정의는 이 두 절을 쪼갤 수 없는 하나로 붙드는 데서 성립한다.</p>
+<h2>4. 십자가 — 정의와 은혜가 만난 곳</h2>
+<p>출 34:6-7의 긴장은 사실 해결되지 않은 채 구약 전체에 걸려 있다. 죄를 "결단코 면죄하지 않는" 하나님이 어떻게 동시에 "악과 과실과 죄를 용서"하실 수 있는가. 이 물음이 신약에서 십자가로 응답된다. <span class="wl-dead" title="위키 내부 링크">문대원 목사</span>는 조셉 플레처의 상황윤리가 전제하는 "사랑과 정의는 동일하다"는 명제를 끝까지 밀어붙여 그 급소를 찌른다.</p>
+<blockquote>
+<p>"만약 사랑과 정의가 동일한 것이라면 십자가는 필요하지 않다. 그냥 용서해 주면 된다. 굳이 십자가 형벌이 필요없다. 공의를 지키기 위해 십자가가 필요하다." — 문대원, 「상황이 나쁘다는 변명」</p>
+</blockquote>
+<p>논지는 사랑이 정의보다 못하다는 것이 아니라 둘이 같지 않다는 것이다. "의인과 죄인을 똑같이 대하는 것은 정의가 아니다." 값을 치르지 않는 용서는 자비로워 보이지만 죄를 죄로 부르기를 포기함으로써 피해자를 두 번 버린다. 그래서 누군가는 죄의 대가를 치러야 하며, 그래야 "죄는 미워하되 죄인은 미워하지 않을" 수 있다. 로마서 3장 25-26절이 화목제물을 세우신 목적을 두 번이나 "자기의 의로우심을 나타내려 하심"이라 못 박는 이유가 여기 있다 — 십자가는 하나님이 죄를 얼마나 심각하게 여기시는지를 하나님 자신이 증명하신 사건이다.</p>
+<p>십자가의 논리적 핵심은 롬 3:26의 마지막 구절에 있다 — "자기도 의로우시며 또한 <a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">예수 믿는 자</a>를 의롭다 하려 하심이라." 하나님은 정의를 <strong>훼손하지 않고</strong> 죄인을 용서하신다. <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%86%8D%EC%84%B1/">하나님의 단순성</a>(divine simplicity)의 언어로 하면, 사랑과 공의는 충돌하는 두 힘이 아니라 한 성품의 두 표현이며, <a class="wl" href="../../t/%EC%86%8D%EC%A3%84%EB%A1%A0/">속죄</a>는 이 두 속성의 충돌이 아니라 통합이다. 출 34:6-7이 계시로 나란히 세워 둔 은혜와 심판이, 십자가에서 한 사건으로 만난다. 그러므로 정의를 하나님의 성품으로 묻는 이 페이지의 종착지는 필연적으로 <a class="wl" href="../../t/%EC%8B%AD%EC%9E%90%EA%B0%80/">십자가</a>다.</p>
+<h2>5. 인간의 정의론과의 대조 — 보응·분배·회복</h2>
+<p>이 성품으로서의 정의는 인간이 세운 정의론들과 어떻게 다른가. 현대 윤리학은 정의를 대개 세 유형으로 나눈다. 이 분류를 하나님의 정의에 비추어 보면, 성경적 비전이 어느 하나로 환원되지 않으면서 각 유형의 진실을 품는다는 것이 드러난다.</p>
+<table>
+<thead>
+<tr>
+<th>유형</th>
+<th>초점</th>
+<th>성경적 정의와의 관계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>보응적(retributive)</td>
+<td>죄에 상응하는 응분의 대가</td>
+<td>포함하되 전부가 아님. 보복이 아니라 "깨어진 공의의 회복"</td>
+</tr>
+<tr>
+<td>분배적(distributive)</td>
+<td>자원과 몫의 공정한 배분</td>
+<td>쩨다카의 영역 → <a class="wl" href="../../t/%EA%B3%B5%EC%9D%98/">공의</a>·<a class="wl" href="../../t/%EC%82%AC%ED%9A%8C%EC%A0%95%EC%9D%98/">사회정의</a>에 위임</td>
+</tr>
+<tr>
+<td>회복적(restorative)</td>
+<td>관계와 공동체의 회복</td>
+<td>성경 비전에 가장 근접. 단, 심판을 삭제하면 성립 불가</td>
+</tr>
+</tbody>
+</table>
+<p><span class="wl-dead" title="위키 내부 링크">문대원 목사</span>는 「크리스천의 윤리(8) 죄와 벌」에서 형벌의 네 목적(응보·억제·격리·개선)을 짚으며 보응(retribution)을 엄벌주의와 구별한다. 그의 재정의가 결정적이다 — 응보는 처벌 욕구가 아니라 "깨어진 공의를 회복하는 것"이며, 보복(revenge)이 아니라 회복(restoration)의 언어다. 히브리어 체데크(צֶדֶק)가 가리키는 것도 응징이 아니라 관계와 질서의 올바른 회복이다. 이 점에서 성경의 정의는 회복적 정의에 가장 가깝다.</p>
+<p>그러나 여기에 반드시 붙어야 할 균형이 있다. 회복이 심판을 지워 버리면 그 회복은 거짓이 된다. 문대원 목사가 수직적 용서(하나님과의 관계에서의 죄 사함)와 수평적 책임(이 땅에서의 형사적 책임)을 분리하는 이유가 그것이다. 십자가 우편 강도는 회개로 낙원을 약속받았으나 사형 집행은 중단되지 않았다(눅 23:43). 용서가 곧 책임의 면제는 아니다. 그러므로 성경적 정의의 균형은 두 극단을 동시에 겨냥한다 — ⚖️ 처벌 없는 관용도, 은혜 없는 엄벌도 정의가 아니다. 이 대칭은 특정 죄나 특정 인물을 피고석에 세우기 위한 것이 아니라, 정의를 말하는 우리 자신의 마음을 시험하는 거울이다.</p>
+<h2>6. 무게 중심은 라하밈에 — 심판의 목적과 머뭇거림</h2>
+<p>그렇다면 심판은 정의의 실패인가. 아니다. 심판은 무너진 정의를 <strong>집행</strong>하는 방식이다. 크리스토퍼 라이트가 『<span class="wl-dead" title="위키 내부 링크">하박국</span>』에서 읽어낸 하박국의 딜레마가 이를 예리하게 드러낸다. 하박국은 유다의 불의를 보며 "어느 때까지"(합 1:2) 부르짖지만, 하나님이 바벨론을 심판의 대리자로 일으키신다는 답을 듣자 이번엔 "어찌하여 더 악한 자로 덜 악한 자를 벌하시나이까"(합 1:13) 항변한다. 라이트의 정리대로 "하나님이 정의를 행하지 않으셔도 문제고, 행하셔도 문제"다. 심판은 정의의 부재가 아니라 정의가 역사 속에서 작동하는 방식이며, 하박국은 그것을 "심판을 받아들임"(합 1:12)으로 통과한다.</p>
+<p>그러나 심판이 정의의 집행이라 해도, 하나님은 그것을 서두르지 않으신다. 구약개론II 7주 강의는 이 지점에서 결정적 통찰을 제공한다. 하나님은 미쉬파트(심판)와 라하밈(긍휼)을 함께 지니신 분이되, 강의의 표현으로 "무게 중심을 라하밈에 더 두신다." 라하밈은 어머니의 자궁(레헴)에서 파생된 단어로, 창자가 뒤틀리는 어머니의 사랑을 함의한다. 예레미야 18장 8절("그 나라가 돌이키면 내가 … 뜻을 돌이키겠고"), 요엘 2장 13절, 그리고 하박국의 마지막 기도 "진노 중에라도 긍휼을 잊지 마옵소서"(합 3:2)가 모두 이 무게 중심을 증언한다. 심판을 예고하고도 회개를 기다리시는 이 '머뭇거림'이 곧 "노하기를 더디 하심"의 신학적 내용이다.</p>
+<p>이 머뭇거림의 근거는 하나님의 성품 자체에 있다. 그분은 "악인이 죽는 것을 기뻐하지 아니하고 돌이켜 사는 것을 기뻐"하신다(겔 33:11). 심판은 하나님이 마지못해 집행하시는 것이지 즐기시는 것이 아니다. 요나서로 돌아가면, 12만 명의 니느웨를 아까워하신 하나님과 자기 머리 위 박넝쿨 하나가 마르자 화를 낸 요나(욘 4:10-11)의 대비가 바로 이 무게 중심의 차이다. 인간의 정의 감각은 쉽게 라하밈보다 미쉬파트로 기울지만, 하나님의 정의는 심판의 정당성을 지키면서도 그 무게를 긍휼에 둔다.</p>
+<h2>7. 성품에서 실천으로</h2>
+<p>성품으로서의 정의는 성품에 머물지 않는다. 하나님이 은혜와 심판을 함께 붙드시는 분이라면, 그분의 형상을 지닌 사람과 공동체도 그 정의를 살아내도록 부름받는다. 미가 6장 8절이 요구하는 "정의를 행하며 인자를 사랑하며 겸손히 하나님과 함께 행하는" 삶이 그 다리다. 정의(행함)와 인자(라하밈)를 한 호흡에 묶는 이 구절은, 앞서 본 하나님의 성품이 그대로 인간의 윤리로 이월됨을 보여준다.</p>
+<p>여기서부터는 실천의 지형이며, 이 볼트의 다른 페이지들이 그 몫을 맡는다. 정의를 사회 구조 속에서 <strong>어떻게</strong> 세울 것인가 — 억눌린 자의 부르짖음(쩨아카)에 응답하는 쩨다카·미쉬파트의 실천, 자선이 아니라 정의로서의 남겨둠, 마이모니데스의 쯔다카 8단계, 진료실의 공동선 — 은 <a class="wl" href="../../t/%EA%B3%B5%EC%9D%98/">공의</a>가 확정판으로 다룬다. 선지서가 형식적 종교 행위와 대비시켜 요구한 사회 구조적 정의는 <a class="wl" href="../../t/%EC%82%AC%ED%9A%8C%EC%A0%95%EC%9D%98/">사회정의</a>가, 규범윤리의 이론적 틀(의무론·목적론·덕윤리)은 <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%9C%A4%EB%A6%AC%ED%95%99/">기독교윤리학</a>이 담당한다. 이 페이지는 그 모든 실천이 흘러나오는 원천 — 은혜와 심판을 함께 붙드시는 하나님의 성품 — 을 지키는 자리에 선다. 실천이 이 성품을 잃으면 정의는 다시 요나의 엄벌이나 값싼 관용으로 굴러떨어지기 때문이다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>성경의 정의는 보응의 동의어가 아니라 은혜와 심판이 한 성품 안에 공존하는 divine justice다. 요나서가 그 시금석이며, "정의 = 은혜 + 심판의 공존과 균형"이 강의의 정의(定義)다.</li>
+<li>요나의 도망은 겁이 아니라 신학적 확신이었다. 그는 출 34:6의 성품 고백(욘 4:2)을 정확히 알았기에, 원수 니느웨가 그 은혜를 입을 것을 알고 도망갔다.</li>
+<li>출 34:6-7의 두 절(노하기를 더디 하되 결단코 면죄하지 않음)의 긴장이 성경적 정의의 원형이다. 한 절만 취하면 값싼 관용이거나 무자비한 엄벌이 된다.</li>
+<li>십자가는 이 긴장이 해소되는 자리다. "사랑과 정의가 같다면 십자가는 불필요하다"(문대원). 롬 3:26은 하나님이 의로우시면서 <strong>동시에</strong> 죄인을 의롭다 하시는 근거를 십자가에 둔다.</li>
+<li>인간의 세 정의론(보응·분배·회복) 중 회복적 정의가 성경 비전에 가장 가깝지만, 응보를 "깨어진 공의의 회복"으로 재정의하되 심판을 삭제한 회복은 피해자를 두 번 버린다.</li>
+<li>하나님은 미쉬파트와 라하밈을 함께 지니시되 무게 중심을 라하밈에 두신다(7주 강의). "노하기를 더디 하심"은 정의의 포기가 아니라 회개의 문을 여는 머뭇거림이며, 그분은 악인의 죽음을 기뻐하지 않으신다(겔 33:11).</li>
+<li>처벌 없는 관용도, 은혜 없는 엄벌도 성경적 정의가 아니다. 정의는 심판의 언어로 시작하되 회복을 향하며, 성품에서 실천(공의)으로 흘러야 한다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>하나님이 미쉬파트와 라하밈에서 라하밈에 무게를 두신다면, 이 '무게 중심'의 언어는 출 34:7의 심판 확정성("결단코 면죄하지 아니하고")과 어떻게 양립하는가 — 두 속성을 위계화하는가, 아니면 divine simplicity 안에서 통합되는가?</li>
+<li>요나가 거부한 것은 "원수에게 임하는 은혜"였다. 오늘 우리의 정의 감각은 가해자의 회개를 기뻐하는가, 요나처럼 심판만을 원하는가 — 개인적·정치적 원한과 성경적 정의를 실제로 어떻게 분별하는가?</li>
+<li>회복적 정의가 성경 비전에 가장 가깝다면, 수직적 용서와 수평적 책임의 분리(문대원)는 회복적 정의를 보완하는가, 아니면 그 관계 회복의 이상과 충돌하는가?</li>
+<li>출 34:7의 "삼사대까지 보응"과 겔 18·33장의 "각 사람은 자기 죄로"라는 세대 책임의 개별화는, 정의의 대상 범위에서 어떤 긴장을 남기는가?</li>
+<li>심판의 권한이 하나님께 고유하다면, 인간이 그 권한을 참칭하지 않으면서도 불의에 저항하는 경계는 어디인가 — divine justice를 인간 사회의 정의 제도로 번역할 때의 한계는?</li>
+</ul>
+<h2>교차 참조</h2>
+<p>이 페이지와 <a class="wl" href="../../t/%EA%B3%B5%EC%9D%98/">공의</a>는 성경적 정의를 두 축으로 나눠 맡는다. 중복을 피하기 위해 분업을 명시한다.</p>
+<table>
+<thead>
+<tr>
+<th>축</th>
+<th><a class="wl" href="../../t/%EC%A0%95%EC%9D%98/">정의</a> (이 페이지)</th>
+<th><a class="wl" href="../../t/%EA%B3%B5%EC%9D%98/">공의</a> (완료)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>묻는 것</td>
+<td>정의란 <strong>무엇인가</strong> — 하나님의 성품</td>
+<td>정의를 <strong>어떻게 행하는가</strong> — 실천</td>
+</tr>
+<tr>
+<td>원어 초점</td>
+<td>은혜+심판의 공존, 미쉬파트/라하밈의 균형</td>
+<td>쩨다카(관계적 올바름)·미쉬파트(시정)</td>
+</tr>
+<tr>
+<td>핵심 본문</td>
+<td>요나서, 출 34:6-7, 롬 3:26</td>
+<td>창 18:19, 레 19:9-10, 암 5:24</td>
+</tr>
+<tr>
+<td>착지점</td>
+<td>십자가·속죄</td>
+<td>의료 공공성·쯔다카 8단계</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a class="wl" href="../../t/%EA%B3%B5%EC%9D%98/">공의</a> — 쩨다카·미쉬파트의 실천, 부르짖음(쩨아카)에 대한 응답, 남겨둠의 신학, 의료 공공성. 이 페이지의 '성품으로서의 정의'가 사회 속 실천으로 흐르는 지점.</li>
+<li><a class="wl" href="../../t/%EC%82%AC%ED%9A%8C%EC%A0%95%EC%9D%98/">사회정의</a> — 선지서가 형식적 종교와 대비시켜 요구한 사회 구조적 정의(암 6·8장, 사 1장).</li>
+<li><a class="wl" href="../../t/%EC%86%8D%EC%A3%84%EB%A1%A0/">속죄론</a> — 롬 3:25-26의 정의-은혜 통합, 형벌 대속과 만족설, 값 없는 용서의 문제.</li>
+<li><a class="wl" href="../../t/%EC%8B%AD%EC%9E%90%EA%B0%80/">십자가</a> — 정의를 훼손하지 않는 용서의 사건. 이 페이지의 종착지.</li>
+<li><a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a> — 심판과 짝을 이루는 축. 은혜만으로 환원된 정의의 위험.</li>
+<li><a class="wl" href="../../t/%EA%B8%8D%ED%9C%BC/">긍휼</a> — 라하밈(자궁에서 파생), 겔 33:11, 심판보다 회개에 초점을 두시는 하나님상.</li>
+<li><a class="wl" href="../../t/%ED%9A%8C%EA%B0%9C/">회개</a> — 심판이 유예되고 은혜가 임하는 통로(니느웨·모세의 중보).</li>
+<li><a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%86%8D%EC%84%B1/">하나님의속성</a> — 단순성(사랑이면서 공의), 속죄는 두 속성의 충돌이 아닌 통합.</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%9C%A4%EB%A6%AC%ED%95%99/">기독교윤리학</a> — 규범윤리 3이론. 인간 정의론의 이론적 틀.</li>
+<li><span class="wl-dead" title="위키 내부 링크">05주_요나와이사야임마누엘</span> — 본 페이지의 1차 근거.</li>
+<li><span class="wl-dead" title="위키 내부 링크">07주_하나님의자비와부활</span> — 미쉬파트+라하밈, 무게 중심은 라하밈.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">05주_요나와이사야임마누엘</span></td>
+<td>강의</td>
+<td>요나의 도망=신학적 확신, 욘 4:2 ↔ 출 34:6, 모세 중보 전통(출 32·민 14), 대속죄일 낭독, "정의=은혜+심판의 공존과 균형"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">07주_하나님의자비와부활</span></td>
+<td>강의</td>
+<td>라하밈(자궁 레헴에서 파생), 미쉬파트+라하밈, "무게 중심은 라하밈에", 렘 18·요엘 2·합 3의 회개→긍휼</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">문대원</span> 「크리스천의 윤리(8) 죄와 벌」</td>
+<td>설교</td>
+<td>응보=깨어진 공의의 회복(보복 아닌 회복), 형벌 4목적, 수직적 용서/수평적 책임 분리(눅 23:43)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">문대원</span> 「상황이 나쁘다는 변명」·롬 3장 강해</td>
+<td>설교</td>
+<td>"사랑과 정의가 같다면 십자가는 불필요", 롬 3:25-26 "자기의 의로우심", 값 없는 용서의 문제</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%86%8D%EC%A3%84%EB%A1%A0/">속죄론</a></td>
+<td>주제 페이지</td>
+<td>롬 3:26 정의-은혜 통합, 형벌 대속·만족설, 행하신 순종/당하신 순종</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%86%8D%EC%84%B1/">하나님의속성</a></td>
+<td>주제 페이지</td>
+<td>단순성 — 사랑이면서 공의, 속죄는 충돌 아닌 통합, 겔 33:11</td>
+</tr>
+<tr>
+<td>크리스토퍼 라이트 『하박국』</td>
+<td>책</td>
+<td>심판의 딜레마("행하지 않아도 문제, 행하셔도 문제"), 심판의 대리자(바벨론), 합 3:2 진노 중의 긍휼</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/구약학</span><span>#discipline/조직신학</span><span>#topic/심판</span><span>#topic/은혜</span><span>#topic/속죄</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

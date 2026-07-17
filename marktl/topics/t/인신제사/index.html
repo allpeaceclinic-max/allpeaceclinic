@@ -1,0 +1,114 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>인신제사 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:174">성경·해석</span><span class="date">2026-06-28</span></div>
+  <h1 class="note-title">인신제사</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>인신제사는 6주차 강의에서 사사기 입다의 딸 사건을 <span class="wl-dead" title="위키 내부 링크">창22</span> 아브라함의 아케다(이삭 번제 시험)와 대비하며 다뤄지는 주제다. 두 사건은 표면적으로 유사하지만("자녀를 제물로 바치려 함") 정반대로 읽힌다 — 아케다는 하나님이 시작하고 개입하고 막으신 사건인 반면, 입다 사건은 처음부터 끝까지 하나님이 등장하지 않는, 자기중심적 인간이 스스로 만든 인신제사라는 것이 강의의 핵심 논지다.</p>
+<h2>1. 입다의 서원과 딸의 희생</h2>
+<p>입다는 암몬과의 전쟁을 앞두고 "이기고 돌아오면 영접하는 자를 번제로" 바치겠다고 서원한다(<span class="wl-dead" title="위키 내부 링크">삿11</span>:30-31). 이 서원은 여호와의 신이 임한 뒤에도(29절) 나온 인간의 계약적 발상으로 지적된다. 34절에서 무남독녀인 딸이 소고를 잡고 춤추며 나오는데, 강의는 이를 삼상18장 다윗의 승리 때 여인들이 쏟아져 나와 환영하는 장면과 대비시킨다 — 입다가 기대한 것은 퍼레이드였는데 실제로는 딸 한 명만 나왔다.</p>
+<h2>2. 아케다와의 정반대 구조</h2>
+<p><span class="wl-dead" title="위키 내부 링크">창22</span>는 처음부터 끝까지 하나님이 주어다 — "그 일 후에"(22:1), "하나님이 자신을 위하여 준비하실 것이다"(22:8), 마지막에 숫양을 예비하신 것도 하나님이다. 아브라함은 순종하여 동참한 인물일 뿐 사건의 주인공은 하나님이다. 반면 삿11:31 "누구든지 내 집 문에서 나와서"는 처음부터 모호하며(사람인지 짐승인지 불명시), 서원을 막을 제3자도 등장하지 않는다. 강의는 "입다와 입다의 딸만 있다. 하나님도, 제3자도 없다"는 것을 논지의 핵심으로 제시한다.</p>
+<h2>3. 서원의 결말과 역사적 정황</h2>
+<p>35절 "너는 나로", "너는 나를"(크레아 — 무릎을 꿇다, 완전히 박살내다)이라는 표현에서 학자 <span class="wl-dead" title="위키 내부 링크">엘리아시스</span>는 입다를 기드온·아비멜렉과 함께 "셀프 센터드"(자기중심적) 사사 계열로 분류한다. 39절의 실제 결말("인신제사인가, 평생 처녀로 지낸 것인가")은 본문상 애매하지만, 강의는 <a class="wl" href="../../t/%EC%82%AC%EC%82%AC%EA%B8%B0%EC%82%AC%EC%9D%B4%ED%81%B4/">사사기사이클</a> 전체의 타락상 흐름에 비추어 인신제사가 맞다고 결론짓는다. 역사적 정황으로는 왕상16:34(여리고 재건 시 장자·계자를 잃으리라는 <span class="wl-dead" title="위키 내부 링크">수6</span>:26 저주의 성취), 왕하3(모압왕이 맏아들을 번제로), 렘7:31(므낫세 시대 자녀를 불사른 사건)이 같은 가나안 인신제사 관행의 사례로 제시되며, 강의는 이를 "케나나이제이션"(가나안화)이라 부른다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>입다 사건은 하나님의 부재가 인간의 자기중심적 선택을 인신제사로까지 몰아가는 사례로 제시된다.</li>
+<li>아케다와의 대비는 "누가 사건을 주도하는가"(하나님 vs 인간)라는 축으로 정리된다.</li>
+<li>인신제사는 개별 일탈이 아니라 가나안화라는 더 넓은 문화적 동화 현상의 일부로 다뤄진다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<p>39절의 결말이 인신제사인지 평생 독신 서원인지는 본문상 열린 질문으로 남아 있는데, 강의는 인신제사 쪽으로 결론짓는다. 반대 해석(딸이 평생 결혼하지 않고 산 것으로 보는 전통적 독법)과의 근거 비교는 강의에서 깊이 다뤄지지 않았다.</p>
+<h2>교차 참조</h2>
+<ul>
+<li><span class="wl-dead" title="위키 내부 링크">06주_여호수아와사사기</span> — 입다의 딸 사건과 아케다의 대비, 가나안화(케나나이제이션)로서의 인신제사를 다룬 근거 강의.</li>
+</ul>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/구약학</span><span>#topic/사사기</span><span>#topic/가나안정복</span><span>#topic/헤렘</span><span>#topic/사사기사이클</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

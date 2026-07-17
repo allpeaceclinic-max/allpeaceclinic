@@ -1,0 +1,173 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>LLM 위키 (LLM Wiki) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:206">변증·철학</span><span class="date">2026-04-17</span></div>
+  <h1 class="note-title">LLM 위키 (LLM Wiki)</h1>
+  
+</header>
+<article class="note">
+<h2>개념 정의</h2>
+<p><span class="wl-dead" title="위키 내부 링크">앤드레이카파시</span>가 제안한 개인 지식베이스 관리 패턴.
+LLM이 점진적으로 마크다운 위키를 구축·유지하는 시스템으로,
+전통적인 RAG(검색 후 생성)와 달리 <strong>지식을 한 번 컴파일하고 지속적으로 갱신</strong>한다.</p>
+<h2>이 Vault에서의 구현</h2>
+<p>이 0doctorvalut이 바로 LLM Wiki 패턴의 실제 구현체다.</p>
+<table>
+<thead>
+<tr>
+<th>카파시 개념</th>
+<th>이 Vault</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Raw Sources</td>
+<td><code>raw/</code> 폴더 (절대 수정 안 함)</td>
+</tr>
+<tr>
+<td>The Wiki</td>
+<td><code>wiki/</code> 폴더 (LLM이 생성·유지)</td>
+</tr>
+<tr>
+<td>The Schema</td>
+<td><code>CLAUDE.md</code></td>
+</tr>
+<tr>
+<td>Ingest</td>
+<td>새 raw 파일 → 위키 페이지 업데이트</td>
+</tr>
+<tr>
+<td>Query</td>
+<td>wiki 탐색 → 합성 답변</td>
+</tr>
+<tr>
+<td>Lint</td>
+<td>모순·고아 페이지·누락 주제 점검</td>
+</tr>
+</tbody>
+</table>
+<h2>3계층 구조</h2>
+<p><code>Raw Sources (불변)
+    ↓ LLM reads only
+The Wiki (LLM 소유)
+    ↑ governed by
+The Schema (CLAUDE.md)</code></p>
+<h2>핵심 Operations</h2>
+<h3>Ingest</h3>
+<ol>
+<li>raw/에 원본 저장</li>
+<li>관련 위키 페이지 파악</li>
+<li>합성·요약 작성 및 업데이트</li>
+<li>index.md 갱신</li>
+<li>log.md에 기록</li>
+</ol>
+<h3>Query</h3>
+<ol>
+<li>관련 wiki 페이지 탐색</li>
+<li>인용과 함께 합성 답변</li>
+<li>가치 있는 답변 → 새 페이지로 보존</li>
+</ol>
+<h3>Lint</h3>
+<ul>
+<li>모순 탐지</li>
+<li>고아 페이지 파악</li>
+<li>미생성 주제 제안</li>
+<li>오래된 프로젝트 상태 확인</li>
+</ul>
+<h2>왜 LLM이 적합한가</h2>
+<p>인간은 교차 참조 업데이트, 일관성 유지, 모순 지적 같은
+<strong>반복적이고 지루한 지식 유지 작업</strong>에서 쉽게 지친다.
+LLM은 피로 없이 이 작업을 수행하므로,
+지식이 흩어지지 않고 <strong>복리로 축적</strong>된다.</p>
+<h2>미해결 질문</h2>
+<ul>
+<li>위키가 수천 페이지로 커질 때 LLM 컨텍스트 한계를 어떻게 넘을 것인가?</li>
+<li>환각으로 인한 잘못된 합성을 어떻게 탐지·교정할 것인가?</li>
+<li>개인 신학 지식베이스에서 LLM의 신학적 해석이 편향될 위험은?</li>
+</ul>
+</article>
+<div class="tagrow"><span>#AI</span><span>#LLM</span><span>#지식관리</span><span>#방법론</span><span>#개인위키</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

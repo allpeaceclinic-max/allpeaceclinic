@@ -1,0 +1,131 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>이원론 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:226">조직신학·교리</span><span class="date">2026-07-03</span></div>
+  <h1 class="note-title">이원론</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p><span class="wl-dead" title="위키 내부 링크">조직신학I 5주차 토론</span>("창조와 섭리의 관계")은 이원론을 창조론이 성립하는 순간 곧바로 배제되는 세 가지 오류 가운데 하나로 다룬다. 하나님은 만물의 일부가 아니며(범신론이 아니며), 창조만 하시고 피조물 속에 직접 개입하지 않으시는 분이 아니며(이신론이 아니며), 물질과 나란히 존재하는 분도 아니다(이원론이 아니다) — 이 세 부정을 통해 토론은 하나님과 피조물의 관계를 정의한다.</p>
+<h2>1. 세 오류 사이에서의 이원론의 위치</h2>
+<p>토론이 배제하는 세 오류는 각기 다른 방식으로 하나님과 세계의 관계를 왜곡한다. 범신론은 하나님을 만물과 동일시하고, 이신론은 하나님을 창조 이후 세계에서 물러난 존재로 만든다. 이원론은 이 둘과 달리, 하나님을 물질(세계)과 "나란히 존재하는" 별개의 실재로 놓는다 — 즉 하나님과 물질을 대등한 두 축으로 병치하는 구도다. 토론의 결론은 이 세 오류 모두를 거부하고, "피조물은 하나님과 구분되면서도 항상 하나님께 의존한다"는 단일 명제로 관계를 정리하는 것이다.</p>
+<h2>2. 초월성·내재성과의 관계</h2>
+<p>이원론 배제는 <a class="wl" href="../../t/%EC%B4%88%EC%9B%94%EC%84%B1/">초월성</a>과 <a class="wl" href="../../t/%EB%82%B4%EC%9E%AC%EC%84%B1/">내재성</a>을 동시에 긍정하는 토론의 구도와 맞물린다. 하나님이 만물보다 훨씬 크시다는 것이 초월성이고, 하나님이 만물에 개입해 계신다는 것이 내재성이다. 이원론은 이 두 축 중 초월성만을 극단화해 하나님을 세계와 분리된 병렬적 실재로 만드는 오류라 할 수 있다 — 내재성(개입)을 놓치는 순간, 초월성은 이신론이나 이원론으로 미끄러진다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>이원론은 범신론·이신론과 나란히 창조론이 배제하는 세 오류 중 하나이며, 하나님을 물질과 "나란히 존재"하는 별개의 실재로 놓는 것이 그 핵심 특징이다.</li>
+<li>세 오류를 모두 피하는 정통 창조론의 결론은 "구분되면서도 의존한다"는 관계적 명제다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>이원론 배제가 "물질과 나란히 존재하지 않음"을 뜻한다면, 영과 육을 구분하는 성경적 인간론(<a class="wl" href="../../t/%EC%9D%B8%EA%B0%84%EB%A1%A0/">인간론</a>)과는 어떻게 신학적으로 조화되는가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><span class="wl-dead" title="위키 내부 링크">05주토론_창조와섭리</span> — 이 개념이 다뤄진 5주차 토론.</li>
+<li><a class="wl" href="../../t/%EC%B4%88%EC%9B%94%EC%84%B1/">초월성</a>, <a class="wl" href="../../t/%EB%82%B4%EC%9E%AC%EC%84%B1/">내재성</a> — 이원론 배제와 함께 작동하는 인접 축.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">05주토론_창조와섭리</span></td>
+<td>토론(본인 저작)</td>
+<td>이원론을 창조론이 배제하는 세 오류 중 하나로 정리</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/조직신학</span><span>#topic/창조론</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

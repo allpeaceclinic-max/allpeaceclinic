@@ -1,0 +1,193 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>의료선교 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="date">2026-06-16</span></div>
+  <h1 class="note-title">의료선교</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>의료선교는 의료 전문성을 통해 <a class="wl" href="../../t/%EC%B4%9D%EC%B2%B4%EC%A0%81%EC%84%A0%EA%B5%90/">총체적 선교</a>에 참여하는 방식이다. 단순히 의료 기술을 선교 도구로 사용하는 것이 아니라, 의료 행위 자체가 하나님 나라의 표징이 되는 사역이다.</p>
+<p><span class="wl-dead" title="위키 내부 링크">하백선 강의 시리즈</span>의 핵심 명제에 따르면, 의료선교는 두 가지 방향으로 정의된다:</p>
+<ul>
+<li><strong>좁은 의미</strong>: 해외 파송 의료인이 현지에서 진료와 복음 전파를 병행하는 사역</li>
+<li><strong>넓은 의미</strong>: 병원·진료실을 선교지로 인식하고 의료 현장 전체를 하나님의 선교에 드리는 삶 — HAMs(Hospital As Mission School)의 "병원이 하나님의 선교"라는 명제가 이를 압축한다</li>
+</ul>
+<p><a class="wl" href="../../t/%EB%AF%B8%EC%94%A8%EC%98%A4%EB%8D%B0%EC%9D%B4/">미씨오데이</a> 신학에 근거하여, 의료선교의 주체는 의사가 아니라 하나님이다. 의료인은 하나님의 선교에 참여하는 자다.</p>
+<hr />
+<h2>핵심 주제</h2>
+<h3>신학적 기초</h3>
+<ul>
+<li><strong><a class="wl" href="../../t/%EC%B4%9D%EC%B2%B4%EC%A0%81%EC%84%A0%EA%B5%90/">총체적선교</a> 안에서의 의료</strong>: 출애굽 구속의 4중 범위(정치적·사회적·경제적·종교적 해방)는 "출애굽 형태의 구속은 출애굽 형태의 선교를 요구한다"는 원칙을 낳는다. 의료 선교는 이 총체적 해방의 현장이다. (<span class="wl-dead" title="위키 내부 링크">하백선시리즈</span> 6장)</li>
+<li><strong>복음의 우주적 범위</strong>: 골 1:15-20 만물의 화해에 근거하여 의료선교는 우주적 복음의 부분적 현장 실현이다. (<span class="wl-dead" title="위키 내부 링크">하백선시리즈</span> 11장)</li>
+<li><strong>아브라함 언약</strong>: 의료 전문성은 열방을 위해 하나님이 위탁하신 신탁 자산(Trust Asset)이다. 요셉이 행정 역량으로 열방을 구원했듯, 의료인의 지식과 기술도 복의 통로가 되어야 한다. (<span class="wl-dead" title="위키 내부 링크">하백선시리즈</span> 4장)</li>
+<li><strong>쩨다카·미쉬파트</strong>: 의료의 공공성은 윤리적 요청이 아니라 선교적 사명이다. 밭 모퉁이의 법(레 19장)은 실력·시간·재정의 5%를 의료 사각지대에 남겨두는 "의료 5% 운동"으로 적용된다. (<a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a>)</li>
+</ul>
+<h3>의료선교의 세 유형 (볼트 내 사례)</h3>
+<p><strong>1. 장기 파송 의료선교</strong>
+- <span class="wl-dead" title="위키 내부 링크">양승봉</span>: 인터서브 파송, 네팔 탄센병원 외과 8천 건 수술. "선택해서 간 곳이 아니라 보내진 곳을 갔다." 저서 『의료선교에 길을 묻다』. (<span class="wl-dead" title="위키 내부 링크">2015의료선교대회</span>)
+- <span class="wl-dead" title="위키 내부 링크">문누가</span>: 키르키즈스탄 메림치과병원(NGO, 자립형). "영생이란 고통당하는 자에게 참여하는 것이다." (<span class="wl-dead" title="위키 내부 링크">2015의료선교대회</span>)
+- <span class="wl-dead" title="위키 내부 링크">마리암</span>: 파키스탄 캘라쉬 밸리, 현지 NGO 의장. 클리닉 설립과 호스텔 사역을 병행하는 현지인 주도 의료선교 모델. (<span class="wl-dead" title="위키 내부 링크">마리암</span>)</p>
+<p><strong>2. 텐트메이커(전문인) 의료선교</strong>
+- <span class="wl-dead" title="위키 내부 링크">이연희</span>: 오만 텐트메이커 의사. Oman International Hospital 소속으로 합법적 취업 비자로 입국. GCC 지역 여성 환자는 남성 의사를 거부하므로 여성 의료인이 진입 열쇠가 된다. (<span class="wl-dead" title="위키 내부 링크">ISK의료인숲모임</span>)
+- <span class="wl-dead" title="위키 내부 링크">ICMDA</span> 트레이닝 코스 중 'Health, Healing &amp; Missions'가 이 영역을 다룬다.</p>
+<p><strong>3. 일상 의료선교 (HAMs)</strong>
+- <span class="wl-dead" title="위키 내부 링크">HAMs</span>: "병원이 하나님의 선교지." 만촌동 진료실을 선교지로 인식하는 이상협의 3대 정체성 실천 모델. 진료 전 기도: "오늘 이 환자를 보내신 하나님이 치유를 줄 수 있게 해달라."
+- <span class="wl-dead" title="위키 내부 링크">누가회</span> 단기선교팀: 서경(인도), 대경(캄보디아), 광전(방글라데시·미얀마) 등 지역별 팀 운영.</p>
+<h3>의료단기선교의 과제와 전환</h3>
+<p><a class="wl" href="../../t/%EC%9D%98%EB%A3%8C%EB%8B%A8%EA%B8%B0%EC%84%A0%EA%B5%90/">의료단기선교</a> 참조. 핵심 전환 방향:</p>
+<table>
+<thead>
+<tr>
+<th>기존 방식</th>
+<th>전환 방향</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>진료 중심 과부하 (하루 700명)</td>
+<td>소수에게 깊은 우정</td>
+</tr>
+<tr>
+<td>일방적 의료 봉사</td>
+<td>현지 의료인과 동역 · 세미나 병행</td>
+</tr>
+<tr>
+<td>단기 이벤트</td>
+<td>매년 같은 곳 방문 + Post-field 관계 유지</td>
+</tr>
+<tr>
+<td>나의 선교 (파워보트)</td>
+<td>하나님의 선교 (세일보트)</td>
+</tr>
+<tr>
+<td>Doing(진료 중심)</td>
+<td>Being(존재 중심)</td>
+</tr>
+</tbody>
+</table>
+<p>캄한 수련회(캄보디아-한국 CMF) 사례: 2016년부터 공동 수련회 → 캄CMF 자체 발족 → 스스로 의료봉사·전도 시작. 현지인 역량강화가 목표다.</p>
+<p>냘피 눙가라이(로잔 글로벌 분석) 기준: 자선→역량강화, 열정→전문성, 직접→간접 지원, 개인→시스템, 고립→협력, 단기→장기.</p>
+<h3>기독 의료인의 정체성 — 의료선교의 주체</h3>
+<p><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a> 참조. 의료선교 주체로서의 기독 의료인은 세 겹 정체성을 통합한다:</p>
+<ol>
+<li><strong>종교적 차원</strong>: 기도하는 삶, 성령의 인도를 따르는 의료 행위</li>
+<li><strong>직업적 차원</strong>: 탁월한 의료 실력 — "선교지 의사도 보수적이다. 더 뛰어나지 않으면 귀담아 들어주지 않는다." (<span class="wl-dead" title="위키 내부 링크">2015의료선교대회</span>)</li>
+<li><strong>선교적 차원</strong>: 의료를 통한 영혼 돌봄, 사회 정의 추구</li>
+</ol>
+<p>성경 모델: 누가(골 4:14 "사랑하는 의원") — 의술 + 선교사 + 공동체 + 기록의 통합 정체성.</p>
+<h3>한국 의료선교 기관 네트워크</h3>
+<ul>
+<li><strong><span class="wl-dead" title="위키 내부 링크">누가회</span></strong> (한국기독의사회, KCMF): 약 15,000명 회원. 선교부에서 국내외 의료선교 조율. 선교훈련원(CMTC) 운영.</li>
+<li><strong><span class="wl-dead" title="위키 내부 링크">ICMDA</span></strong>: 107개국 6만 명. 한국 누가회가 소속. 2026 제주 18th 세계대회 주최.</li>
+<li><strong>인터서브 코리아 의료인 숲</strong>: 현장 파트너와 후보자·지지자의 네트워크 모임. (<span class="wl-dead" title="위키 내부 링크">ISK의료인숲모임</span>)</li>
+</ul>
+<hr />
+<h2>관련 자료</h2>
+<ul>
+<li><span class="wl-dead" title="위키 내부 링크">하백선시리즈</span> — LAMs 강의 시리즈 전 15장. 4장(열방 치유), 6장(구속적 삶), 7장(의료대사), 14장(선교적 의료), 15장(성경적 의료선교)</li>
+<li><a class="wl" href="../../t/%EC%9D%98%EB%A3%8C%EB%8B%A8%EA%B8%B0%EC%84%A0%EA%B5%90/">의료단기선교</a> — 삼덕교회 의료선교팀 강의. 현황 문제와 방향 전환 상세</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a> — 의료인의 소명, 3차원 정체성, 하백선 심화 적용</li>
+<li><a class="wl" href="../../t/%EC%B4%9D%EC%B2%B4%EC%A0%81%EC%84%A0%EA%B5%90/">총체적선교</a> — 선교 패러다임 변화, 하백선 시리즈 신학적 기반</li>
+<li><span class="wl-dead" title="위키 내부 링크">HAMs</span> — Hospital As Mission School, 이상협 3대 정체성</li>
+<li><span class="wl-dead" title="위키 내부 링크">양승봉</span> — 네팔·베트남, 장기 파송 의료선교사</li>
+<li><span class="wl-dead" title="위키 내부 링크">문누가</span> — 키르키즈스탄, 자립형 치과병원 모델</li>
+<li><span class="wl-dead" title="위키 내부 링크">마리암</span> — 파키스탄, 현지인 주도 의료선교</li>
+<li><span class="wl-dead" title="위키 내부 링크">2015의료선교대회</span> — 현장 선교사 6인 패널, 임상 전문성·소명·현실</li>
+<li><span class="wl-dead" title="위키 내부 링크">ISK의료인숲모임</span> — 인터서브 의료인 네트워크, 텐트메이커 사례</li>
+</ul>
+<hr />
+<h2>미해결 질문</h2>
+<ol>
+<li><strong>전문성과 선교의 통합</strong>: "의료 실력이 선교의 입장권"이라는 명제와 "Being이 먼저"라는 명제 사이의 실천적 균형을 어떻게 잡을 것인가?</li>
+<li><strong>HAMs의 제도화</strong>: 병원을 선교지로 보는 HAMs 신학이 의료 기관 안에서 어떤 구체적 공동체 형태로 지속 가능한가?</li>
+<li><strong>국내 의료선교</strong>: 의정갈등·공공의료 위기 상황에서 기독 의료인의 의료선교적 응답은 무엇인가? (<a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a>의 쩨다카 5% 운동 이상의 구조적 실천)</li>
+<li><strong>현지인 주도</strong>: 마리암 사례처럼 현지인 의료인을 발굴·동역하는 한국 교회의 역량이 얼마나 실질적으로 준비되어 있는가?</li>
+<li><strong>의료선교사 훈련</strong>: 누가회 CMTC 선교훈련원이 의료 현장과 연계된 실질적 의료선교 훈련 과정을 어떻게 구성할 것인가?</li>
+</ol>
+</article>
+<div class="tagrow"><span>#domain/의료</span><span>#domain/선교</span><span>#ministry/의료선교</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

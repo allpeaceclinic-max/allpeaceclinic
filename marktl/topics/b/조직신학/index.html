@@ -1,0 +1,133 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>조직신학 (Systematic Theology) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:226">리더십·일·경영</span><span class="date">2026-06-28</span></div>
+  <h1 class="note-title">조직신학 (Systematic Theology)</h1>
+  
+</header>
+<article class="note">
+<h2>책 개요</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>저자</td>
+<td>웨인 그루뎀 (Wayne Grudem)</td>
+</tr>
+<tr>
+<td>원제</td>
+<td>Systematic Theology: An Introduction to Biblical Doctrine</td>
+</tr>
+<tr>
+<td>강의 사용</td>
+<td>MBTS 조직신학 I·II (황성철 교수)</td>
+</tr>
+<tr>
+<td>핵심 질문</td>
+<td>성경이 가르치는 기독교 신앙의 전체 체계는 무엇인가?</td>
+</tr>
+</tbody>
+</table>
+<h2>핵심 주장</h2>
+<p>웨인 그루뎀의 조직신학은 복음주의 개혁신학의 관점에서 성경 전체의 가르침을 체계적으로 정리한 표준 교재다. 황성철 교수의 MBTS 강의는 이 교재를 기반으로 신학의 전 영역을 7대 교리 체계로 구성한다.</p>
+<p><strong>성경론 (Bibliology).</strong> 성경의 권위, 영감, 무오성, 명료성을 다룬다. 조직신학I 강의에서 가장 먼저 다루어지는 영역으로, 이후 모든 신학 논의의 인식론적 토대가 된다. 성경이 하나님의 말씀이라는 고백이 전체 신학 체계의 출발점이다.</p>
+<p><strong>신론 (Theology Proper).</strong> 하나님의 본성, 속성, 삼위일체를 다룬다. 조직신학I에서 성경론과 함께 핵심적으로 다루어지며, 황성철 교수의 강의는 성경의 계시와 신학적 추론을 결합해 삼위일체 교리를 설명한다.</p>
+<p><strong>교회론 (Ecclesiology).</strong> 교회의 본질, 사역, 형태를 다루는 영역으로 조직신학II의 중심 주제 중 하나다. 포스트코로나 시대의 교회론적 질문—비대면 예배의 신학적 위상, 교회 공동체성의 재정의—이 이 교재의 전통적 교회론과 긴장 관계를 이룬다는 점이 황성철 교수의 강의에서 부각된다.</p>
+<p><strong>구원론 (Soteriology).</strong> 구원의 서정(ordo salutis)—선택, 소명, 중생, 회심, 칭의, 양자, 성화, 견인, 영화—을 다룬다. 조직신학II에서 다루어진다.</p>
+<p><strong>종말론 (Eschatology).</strong> 개인 종말론(죽음, 중간 상태)과 우주적 종말론(재림, 부활, 심판, 천국·지옥)을 포함한다. 조직신학II에서 구원론과 함께 다루어지며, 종말론적 비전이 현재의 윤리와 선교 동기에 미치는 영향이 강조된다.</p>
+<h2>등장 강의</h2>
+<ul>
+<li><span class="wl-dead" title="위키 내부 링크">조직신학I</span> — 황성철 교수, 성경론·신론·7대 교리 체계 전반 소개</li>
+<li><span class="wl-dead" title="위키 내부 링크">조직신학II</span> — 황성철 교수, 교회론·구원론·종말론, 포스트코로나 교회론 논의</li>
+</ul>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/조직신학</span><span>#topic/성경론</span><span>#topic/신론</span><span>#topic/교회론</span><span>#topic/구원론</span><span>#topic/종말론</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

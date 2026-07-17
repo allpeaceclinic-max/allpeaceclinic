@@ -1,0 +1,132 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>헤렘 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:174">성경·해석</span><span class="date">2026-06-28</span></div>
+  <h1 class="note-title">헤렘</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>헤렘(חרם)은 구약에서 특정 대상을 완전히 하나님께 바쳐 진멸하는 명령을 가리킨다. <span class="wl-dead" title="위키 내부 링크">06주_여호수아와사사기</span> 강의는 헤렘을 단순한 학살 명령이 아니라 고대 근동에서 흔히 쓰인 전쟁 관용어로 규정하면서도, 신명기·여호수아 본문에서는 문자적으로 실행된 것으로 기록된다는 점을 함께 짚는다. 헤렘은 구약개론I 강의 전반에 걸쳐 반복 등장하는 주제로, 6주차(여호수아·사사기), 7주차(사울의 불순종), 8주차(에스더서의 아말렉 헤렘)가 각각 다른 각도에서 이 개념을 다룬다.</p>
+<h2>1. 헤렘의 이중적 성격 — 고대 근동 관용어와 문자적 실행</h2>
+<p>강사는 메사 석비(주전 836년, 모압어)를 근거로 헤렘이 이스라엘만의 특수한 잔혹함이 아니라 고대 근동 전쟁 수사학의 일부였다고 설명한다. 모압왕이 북이스라엘을 공격해 "헤렘시켰다"는 기록이 남아 있기 때문이다. 그러나 <span class="wl-dead" title="위키 내부 링크">수6</span>:21(여리고), 수8:25-26(아이성 1만2천 명), 수11:11(하솔)의 실제 본문은 이 명령이 문자적으로 실행되었음을 기록한다.</p>
+<h2>2. 모순되는 명령의 공존과 조건부성</h2>
+<p><span class="wl-dead" title="위키 내부 링크">신7</span>·신12·신13은 진멸을 명하지만, 같은 신명기 안에 신1:16(공정한 판단, 나그네에게도)·신10:18(나그네 사랑)·신14:21(이방인에게 주거나 팔아도 됨)이 병존한다. 강사는 이를 혼동이 아니라 헤렘이 처음부터 조건부였다는 증거로 읽는다 — 신29:10-11에서는 게르(이방인)가 오히려 언약에 참여할 수 있다고까지 나아간다. <span class="wl-dead" title="위키 내부 링크">신20</span>:10-16은 헤렘을 절차화한다 — 먼저 평화를 선언하고, 화답하면 받아들이고, 거절하면 심판. "원방 성읍"과 "가나안 성읍"을 구분해 가나안 7족속만 무조건 헤렘 대상으로 좁힌다.</p>
+<h2>3. 헤렘의 예외 — 항복과 신앙고백의 길</h2>
+<p>라합(수6:17, "기생 라합의 가족은 열외")과 기브온 족속(수9:3-24, 속임수를 통해서지만 살아남고 스스로 헤렘을 알고 있었다고 고백)은 헤렘이 항복·신앙고백 앞에서 예외를 허용하는 체계였음을 보여준다. 수15·수16처럼 가나안 족속을 완전히 쫓아내지 못하고 노예로 삼은 사례도 함께 언급되어, 헤렘이 실제로는 부분적으로만 실행되었음을 시사한다.</p>
+<h2>4. 헤렘의 적용 시점 — 죄악이 관영할 때</h2>
+<p><span class="wl-dead" title="위키 내부 링크">창15</span>:13-16(아브라함 언약, "아모리 족속의 죄악이 아직 관영치 아니함이니라")이 헤렘 신학의 축이다. 하나님은 400년을 참으시고, 죄가 가득 찰 때에야 심판(헤렘)을 명하신다. 창18:20-32(소돔과 고모라, 의인 10명 협상)도 같은 논리를 보여준다 — 헤렘을 명하시게 되고 실제로 실행하는 경우는 적으며, 원래 의도는 헤렘이 아니라는 것이 강의의 결론이다.</p>
+<h2>5. 현대·전통 해석의 세 갈래</h2>
+<p><span class="wl-dead" title="위키 내부 링크">존파이퍼</span>는 하나님이 생명을 살리고 죽일 절대 권한을 가지시며 죄인을 살려주시는 것 자체가 은혜이고 헤렘은 정당한 심판이라고 본다. <span class="wl-dead" title="위키 내부 링크">윌리엄레인크레이그</span>는 반대로 하나님이 헤렘을 원하지 않으셨으며, 창15:16처럼 관영할 때까지 참으시고 항복하면 면제하되 연합군을 형성해 대적할 때(예: 수11 하솔 연합군)만 헤렘이 심판의 도구로 작동한다고 본다. 유대 랍비 전통은 헤렘법을 신21:18 불순종하는 아들 처형법과 같은 논리로 해석하는데, 이 처형법은 절차적 제약이 많아 사실상 사문화된 법이었다. 강사는 "고대 랍비들의 의도는 하나님을 참으시고 인내하시고 은혜로우신 분으로 해석하려는 것"이라고 요약한다.</p>
+<h2>6. 사울의 헤렘 불순종 — 왕권 실패의 결정적 계기</h2>
+<p><span class="wl-dead" title="위키 내부 링크">07주_사무엘과통일왕조</span>는 헤렘을 <span class="wl-dead" title="위키 내부 링크">사울</span>이 버림받은 결정적 이유로 다룬다. <span class="wl-dead" title="위키 내부 링크">삼상15</span>에서 하나님은 아말렉에 대한 완전한 헤렘을 명하지만, 사울은 아각 왕과 가축 일부를 남겨 명령을 온전히 이행하지 않는다. 사무엘의 추궁에 사울은 "백성 때문"이라며 책임을 전가하고, 사무엘은 "순종이 제사보다 낫다"며 목소리에 대한 순종이 제사 행위보다 본질적임을 선언한다. 강의는 사울의 실패를 "능력 부족이 아니라 사람의 말(백성의 눈치)에 귀 기울인 것"으로 규정하며, 모세·예레미야·기드온처럼 "능력이 아니라 청종"이 지도자의 자격이라는 구약의 반복 패턴과 대비시킨다.</p>
+<h2>7. 에스더서 — 헤렘 순종의 반전</h2>
+<p><span class="wl-dead" title="위키 내부 링크">08주_에스더_느헤미야_룻기</span>는 사울의 헤렘 실패를 에스더서와 대조한다. 모르드개는 베냐민 지파, "기스의 증손"으로 소개되는데 기스는 사울의 아버지 이름과 같다. 사울이 아말렉 헤렘에 불순종(재산을 취함)했던 것과 달리, 에스더9:5, 10에서 모르드개 진영은 하만(아각 사람, 삼상15:8-9의 아각과 연결)을 진멸하되 재산에는 손을 대지 않는다. 강의는 이를 "제2의 사울이 사울의 실패를 반복하지 않고 승리한다"는 명제로 요약하며, 에스더서의 정경화 논란(헤렘 장면이 "야만적"이라는 우려)도 함께 다룬다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>헤렘은 고대 근동 전쟁 관용어이면서 동시에 본문상 문자적으로 실행된 명령이라는 이중적 긴장을 지닌다.</li>
+<li>신명기 안에 진멸 명령과 나그네 보호 규정이 공존하는 것은 헤렘이 처음부터 무조건적이지 않았다는 근거로 읽힌다.</li>
+<li>라합·기브온 사례는 헤렘이 항복·신앙고백 앞에서 예외를 허용하는 체계였음을 보여준다.</li>
+<li>헤렘의 적용 시점은 "죄악이 관영할 때"이며, 하나님의 오래 참으심이 전제된다.</li>
+<li>존 파이퍼(정당한 심판)와 윌리엄 레인 크레이그(하나님은 원하지 않으셨다)는 헤렘의 도덕적 정당성을 다르게 짚는다.</li>
+<li>사울(불순종)과 모르드개(순종)의 대조는 헤렘이 왕정신학 전체를 관통하는 시금석임을 보여준다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>헤렘이 조건부·제한적이었다는 랍비 전통의 해석과, 수6·수8·수11에서 문자적으로 실행된 기사 사이의 긴장이 본문 저작 당시의 의도인지 후대 윤리적 재해석인지는 별도로 다뤄볼 여지가 있다.</li>
+<li>존 파이퍼와 윌리엄 레인 크레이그의 입장 차이가 실제로 얼마나 다른 결론에 이르는지, 두 입장이 상호보완적인지 대립적인지는 명확히 정리되지 않았다.</li>
+<li>사울의 불순종 원인을 "백성을 두려워함"으로 단일화하는 해석이 삼상13장의 이전 실패 패턴과 어떻게 통합되는지 후속 검토가 필요하다.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><span class="wl-dead" title="위키 내부 링크">06주_여호수아와사사기</span> — 헤렘 명령의 근거 본문과 신학적 논리를 다루는 강의.</li>
+<li><span class="wl-dead" title="위키 내부 링크">07주_사무엘과통일왕조</span> — 사울의 헤렘 불순종이 왕권 상실로 이어지는 서사.</li>
+<li><span class="wl-dead" title="위키 내부 링크">08주_에스더_느헤미야_룻기</span> — 헤렘 순종의 반전 사례(모르드개)와 정경화 논란.</li>
+<li><span class="wl-dead" title="위키 내부 링크">사울</span> — 헤렘 불순종으로 버림받은 왕.</li>
+</ul>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/구약학</span><span>#topic/가나안정복</span><span>#topic/여호수아</span><span>#topic/사사기</span><span>#topic/왕정신학</span><span>#topic/이방인결혼금지</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

@@ -1,0 +1,241 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>정경화 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:174">성경·해석</span><span class="date">2026-07-17</span></div>
+  <h1 class="note-title">정경화</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>정경화(canonization)는 개별 문서가 권위 있는 성경 본문("정경")으로 확정되어 가는 과정을 가리킨다. 이 주제의 핵심에는 한 질문이 놓여 있다 — 교회가 정경을 만들었는가, 아니면 이미 권위 있던 문서들을 인정했을 뿐인가. MBTS 신약개론I 1주차 강의의 답은 분명하다. "교회가 정경을 선택한 것이 아니라, 정경이 정경을 선택한 것이다." 정경화는 권위를 부여하는 창조 행위가 아니라 이미 있는 권위를 식별하는 인정 행위라는 것이다.</p>
+<p>이 페이지는 정경의 형성사 자체 — 구약과 신약의 목록이 어떻게 확정되었고, 어떤 기준으로 판별되었으며, 외경 문제는 왜 교파를 가르는가 — 를 다룬다. 정경 문서의 영감과 권위가 무엇인가라는 교리적 물음은 <a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%EB%A1%A0/">성경론</a>에, 확정된 정경을 어떻게 해석할 것인가라는 물음은 <a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D%ED%95%99/">성경해석학</a>에 위임한다. 여기서 그리는 것은 문서에서 정경으로 이르는 역사의 지도다.</p>
+<h2>1. "정경"이라는 말 — 척도에서 목록으로</h2>
+<p>정경을 뜻하는 헬라어 '카논'(κανών)의 어원은 셈족 외래어 '갈대'다. 치수를 재는 도구였던 이 말이 '척도·표준·규범'을 뜻하게 되었고, 다시 그 규범을 담은 문서들의 '목록'을 가리키게 되었다. MBTS 신약개론I 강의에 따르면, 1~3세기에는 이 말이 기독교 신앙의 규범적 교리·윤리 내용을 가리켰고, 4세기부터 신구약 성경의 책 목록을 지칭하는 용어로 정착했다.</p>
+<p>이 의미 변천이 정경화의 성격을 미리 드러낸다. '척도'가 먼저 있고 '목록'이 뒤따랐다는 것은, 문서들이 이미 규범으로 기능하고 있었고 그 규범을 확인해 목록으로 정리한 것이 정경화였음을 뜻한다. 곧 정경은 회의체의 투표로 탄생한 것이 아니라, 이미 교회의 삶에서 척도로 작동하던 문서들이 시간이 지나며 목록으로 명문화된 결과다. "정경이 정경을 선택했다"는 명제의 뿌리가 여기 있다.</p>
+<h2>2. 구약 정경 — 토라 샌드위치와 얌니아</h2>
+<p>구약(히브리 성경)은 세 부분으로 구성된 타나크다 — 토라(율법), 느비임(예언서), 케투빔(성문서). 개신교 구약성경(39권)과 히브리 성경(24권)은 같은 본문을 다른 방식으로 묶은 것이며, MBTS 구약개론I 강의는 이 분류 자체가 이미 하나의 해석이라고 짚는다. 이 구약이 하나의 통일된 문헌으로 묶이는 축은 토라다. 여호수아(역사서 첫 책)가 "율법책을 네 입에서 떠나지 말게 하라"(수 1:6-9)로 열고, 말라기(구약 마지막 책)가 "내 종 모세의 율법을 기억하라"(말 4:4)로 닫으며, 시편이 "율법을 주야로 묵상"(시 1:2)을 노래하는 이 반복 언급을 강의는 "토라 샌드위치 구조"라 부른다. <a class="wl" href="../../t/%ED%86%A0%EB%9D%BC/">토라</a>가 앞뒤로 구약 전체를 감싸 하나의 문학적·신학적 단위로 묶는 것이다. 이 자기 언급의 원리는 신명기가 스스로를 "모세의 율법"(토라트 모쉐)으로 반복 증언하며 정경적 지위를 자기 확립하는 데서도 확인되는데, 이는 <a class="wl" href="../../t/%EC%8B%A0%EB%AA%85%EA%B8%B0%ED%95%99%ED%8C%8C/">신명기학파</a> 논쟁 — 모세 저작설과 후대 편집설의 대립 — 과 맞물린다.</p>
+<p>개별 문서 층위에서 정경화 논란의 대표 사례는 에스더서다. 에스더서에는 언약·시내산·죄·회개 같은 종교적 어휘가 전혀 없고 하나님의 이름조차 등장하지 않아, 탈무드 랍비들 사이에서 정경 포함에 반대가 있었다. 하만을 죽이고 <a class="wl" href="../../t/%ED%97%A4%EB%A0%98/">진멸</a>하는 장면이 "야만적"이라는 우려까지 제기되었다. 그럼에도 강의는 아말렉 진멸 명령(출 17:13-14)과의 연결을 근거로 에스더서가 정경에 포함되었다고 설명한다. 흥미로운 것은 정경화 논란의 핵심 근거(하나님 이름의 부재)가 오히려 "본문 배후에 하나님이 계신다"는 내재적 섭리의 읽기를 요구하는 계기가 되었다는 점이다 — 논란이 새로운 해석 방식을 낳은 셈이다.</p>
+<p>⚖️ 여기서 흔한 오해 하나를 바로잡을 필요가 있다. 구약 정경이 주후 90년경 '얌니아 회의'에서 최종 확정되었다는 통설이다. 그러나 볼트가 기록하는 에스더서 논란의 실상이 보여주듯, 얌니아에서 오간 것은 이미 널리 통용되던 문서들의 지위를 놓고 벌인 랍비들의 학문적 토론이었지, 정경을 처음으로 '결정'하거나 '닫은' 공식 회의가 아니었다. 토라는 이미 오래전에 규범으로 자리 잡았고, 논쟁의 대상은 에스더·아가·전도서 같은 소수의 성문서에 국한되었다. 얌니아는 정경을 만든 자리가 아니라, 이미 인정받던 정경의 경계를 확인한 자리에 가깝다.</p>
+<h2>3. 신약 정경 — 무라토리에서 아타나시우스까지</h2>
+<p>신약 정경화는 목회적 필요에서 시작되어 이단의 도전으로 촉발되고 4세기에 이르러 명문화되었다. MBTS 신약개론I 강의가 그리는 흐름은 다음과 같다.</p>
+<table>
+<thead>
+<tr>
+<th>시기</th>
+<th>사건·문서</th>
+<th>의의</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1세기</td>
+<td>바울 서신의 광범위한 유통(골 4, 벧후 3)</td>
+<td>특정 교회를 넘어 일찍부터 회람됨</td>
+</tr>
+<tr>
+<td>2세기</td>
+<td><span class="wl-dead" title="위키 내부 링크">순교자저스틴</span>: "사도들의 회고록"이 주일 예배에서 낭독</td>
+<td>복음서가 구약과 함께 예배에서 읽힘</td>
+</tr>
+<tr>
+<td>2세기</td>
+<td>마르시온의 축소 목록, 베드로복음·도마복음 등 위경 등장</td>
+<td>권위 있는 문서의 범위를 명확히 할 <strong>필요</strong>를 촉발</td>
+</tr>
+<tr>
+<td>2세기 말</td>
+<td><strong>무라토리 정경</strong> 단편</td>
+<td>사복음서·바울 13서신·일부 공동서신·계시록 포함 — 기본 합의를 보여주나 공동서신에 유동성</td>
+</tr>
+<tr>
+<td>3~4세기</td>
+<td><span class="wl-dead" title="위키 내부 링크">알렉산드리아의오리겐</span>·<span class="wl-dead" title="위키 내부 링크">유세비우스</span></td>
+<td>사복음서·바울서신 인정, 히브리서·야고보서·벧후·요이삼서·유다서·계시록은 의심(안틸레고메나)</td>
+</tr>
+<tr>
+<td>367년</td>
+<td><strong><span class="wl-dead" title="위키 내부 링크">아타나시우스</span></strong>의 부활절 서신</td>
+<td>현행 신약 27권 목록을 최초로 온전히 열거</td>
+</tr>
+<tr>
+<td>397년</td>
+<td>제3차 카르타고 공의회(<span class="wl-dead" title="위키 내부 링크">어거스틴</span> 참석)</td>
+<td>27권 공식 비준</td>
+</tr>
+</tbody>
+</table>
+<p>이 흐름에서 주목할 것은 정경화의 순서다. 문서가 먼저 권위 있게 사용되었고(1~2세기), 이단이 경계 확정의 필요를 일으켰으며(마르시온·위경), 그 필요에 응답해 목록이 명문화되었다(4세기). 곧 공의회는 정경을 발명하지 않고 이미 교회 전역에서 사용되던 문서들을 확인했다. 강의가 특히 무게를 두는 사실은, 강요하는 중앙 교회 조직이 없었음에도 지중해 전역의 교회들이 동일한 27권을 인정했다는 점이다. 이 자발적 수렴이야말로 정경의 자기 증명적 권위를 시사한다.</p>
+<h2>4. 정경의 기준 — 네 척도</h2>
+<p>무엇을 근거로 문서의 정경성을 판별했는가. 강의는 네 기준을 제시한다.</p>
+<table>
+<thead>
+<tr>
+<th>기준</th>
+<th>물음</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>사도성</strong></td>
+<td>예수의 제자이거나 그 측근(누가·마가)이 저술했는가</td>
+</tr>
+<tr>
+<td><strong>정통성</strong>(믿음의 규범)</td>
+<td>교회가 인정한 기독교 진리와 일치하는가</td>
+</tr>
+<tr>
+<td><strong>보편성</strong></td>
+<td>지중해 전역 교회들에 광범위하게 수용·사용되었는가</td>
+</tr>
+<tr>
+<td><strong>고대성</strong>(사용)</td>
+<td>사도 시대에 가까운 이른 시기의 문서인가</td>
+</tr>
+</tbody>
+</table>
+<p>네 기준의 공통점은 그것이 외부 권위가 아니라는 데 있다. 사도성은 문서의 기원을, 정통성은 내용의 일치를, 보편성과 고대성은 교회의 실제 사용을 묻는다. 어느 것도 "교권이 그렇게 정했으므로"를 근거로 삼지 않는다. 이 점은 구약 정경화의 논리(토라 자기 언급, 아말렉 명령과 에스더의 연결)와 정확히 평행한다 — 구약이든 신약이든 정경성 논증의 핵심 도구는 외부 선언이 아니라 정경 내적 자기 증언과 교회의 보편적 사용이었다. 다만 강의 자신이 남긴 물음처럼, 이 네 기준이 상충할 때(예컨대 널리 쓰였으나 사도성이 의심되는 문서) 무엇이 결정적인지는 명시되지 않는다.</p>
+<h2>5. 외경 문제 — "만들었나 인정했나" ⚖️</h2>
+<p>정경의 경계에서 교파가 갈리는 지점이 외경(아포크리파)이다. ⚖️ 개신교 구약은 39권, 로마 가톨릭 구약은 토빗·유딧·지혜서·집회서·바룩·마카베오상하 등 7권을 더한 46권이다. 이 차이의 뿌리는 두 정경 전통에 있다. 히브리 성경(팔레스타인 유대교의 정경)에는 이 책들이 없었으나, 헬라어 번역본인 70인역(디아스포라 유대교와 초기 교회가 널리 사용)에는 포함되어 있었다. 두 전통 모두 오래되었기에 어느 쪽도 자의적이라 할 수 없다는 점을 공정히 인정해야 한다.</p>
+<p>개신교의 논리는 히브리 정경을 기준으로 삼는다 — 예수와 사도들이 사용한 유대교의 정경에 이 책들이 없었고, 종교개혁이 "오직 성경"의 원리 아래 원어 정경으로 돌아가며 이 책들을 정경에서 구별해 '외경'으로 두었다는 것이다(MBTS 강의도 종교개혁의 특징으로 "외경 배제"를 짚는다). 가톨릭의 논리는 교회가 실제로 사용해 온 70인역 전통과 그 오랜 수용을 존중하며, 1546년 트리엔트 공의회에서 이 책들을 '제2정경'으로 공식 확정했다. 두 입장은 같은 사실(두 정경 전통의 병존)을 서로 다른 기준(원어 정경 vs 교회 사용)으로 판단한 결과이지, 한쪽이 성경을 더하거나 뺀 것이 아니다.</p>
+<p>이 외경 논쟁이 다시 처음의 질문으로 되돌린다 — 교회가 정경을 만들었는가, 인정했는가. 개신교와 가톨릭이 갈리는 것은 "누가 정경을 창조할 권한을 갖는가"가 아니라 "어느 사용 전통을 정경 인정의 기준으로 삼는가"이다. 양쪽 모두 정경화를 창조가 아니라 인정으로 이해한다는 점에서는 다르지 않다. 신약 27권이 강요 없이 전역에서 수렴한 사실이 그 인정의 성격을 가장 잘 보여준다. 정경화의 신학적 결론은 이것이다 — 교회는 정경에 권위를 수여한 상급자가 아니라, 이미 하나님의 말씀으로 울리던 문서들의 권위를 알아본 청중이었다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>정경화의 핵심 질문은 "교회가 정경을 만들었나, 인정했나"이며, 볼트의 답은 후자다 — "정경이 정경을 선택했다." '척도'가 먼저 있고 '목록'이 뒤따랐다는 어원 변천이 이를 뒷받침한다.</li>
+<li>정경화는 이중으로 작동한다 — 정경 전체의 구조(토라 샌드위치)와 개별 문서(에스더서)의 두 층위에서. 두 층위 모두 정경 내적 자기 증언을 핵심 도구로 삼는다.</li>
+<li>신약 정경은 사용(1~2세기) → 이단의 도전 → 명문화(367년 아타나시우스, 397년 카르타고)의 순서로 확정되었다. 공의회는 발명이 아니라 확인이었다.</li>
+<li>정경 판별의 네 기준(사도성·정통성·보편성·고대성)은 모두 외부 권위가 아니라 문서의 기원·내용·교회의 실제 사용을 묻는다.</li>
+<li>외경 논쟁(개신교 39권 vs 가톨릭 46권)은 "누가 정경을 창조하는가"가 아니라 "어느 사용 전통을 기준으로 삼는가"의 문제다. 양쪽 모두 정경화를 인정으로 이해한다. ⚖️</li>
+<li>강요하는 중앙 조직 없이 전 세계 교회가 동일한 27권으로 수렴한 사실이야말로 정경의 자기 증명적 권위를 시사한다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>정경 판별의 네 기준이 상충할 때(널리 쓰였으나 사도성이 의심되는 문서 등) 무엇이 결정적인가 — 강의는 우선순위를 명시하지 않는다.</li>
+<li>신명기 저작 연대 논쟁에서 강의자의 판단 기준(정경 내 자기 증언 우선 vs 편집사적 재구성 우선)이 에스더서 정경화 논증에도 동일하게 적용되는 원칙인지는 불분명하다.</li>
+<li>동방정교회가 일부 책을 오래 보류하거나 다른 목록을 유지한 사실은 "27권의 보편적 합의"를 어느 정도 수정하는가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%EB%A1%A0/">성경론</a> — 정경 문서의 영감과 권위가 무엇인가라는 교리적 물음. 정경화(형성사)와 짝을 이루는 교리 페이지.</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D%ED%95%99/">성경해석학</a> — 확정된 정경을 어떻게 해석할 것인가. 신약개론I 1주차가 정경·본문과 함께 다룬 세 번째 축.</li>
+<li><a class="wl" href="../../t/%ED%86%A0%EB%9D%BC/">토라</a> — 구약 정경 통일성의 축이 되는 모세오경, 토라 샌드위치 구조.</li>
+<li><a class="wl" href="../../t/%EC%8B%A0%EB%AA%85%EA%B8%B0%ED%95%99%ED%8C%8C/">신명기학파</a> — 신명기 저작 연대를 둘러싼 비평학 논쟁의 상세.</li>
+<li><a class="wl" href="../../t/%EC%A2%85%EA%B5%90%EA%B0%9C%ED%98%81/">종교개혁</a> — "오직 성경"과 외경 배제, 원어 정경으로의 회귀.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">01주_신약개론서론</span></td>
+<td>강의</td>
+<td>정경(카논) 어원, 신약 정경화 역사(무라토리·오리겐·유세비우스·아타나시우스 367년·카르타고 397년), 네 기준(사도성·정통성·보편성·고대성), "정경이 정경을 선택했다"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">01주_구약개론서론</span></td>
+<td>강의</td>
+<td>타나크 구조, 토라 샌드위치(수 1·말 4·시 1), 분류 자체가 해석</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">05주_출애굽기와신명기</span></td>
+<td>강의</td>
+<td>신명기의 자기 증언(토라트 모쉐)과 정경적 지위</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">08주_에스더_느헤미야_룻기</span></td>
+<td>강의</td>
+<td>에스더서 정경 논란(하나님 이름 부재·헤렘), 아말렉 명령과의 연결, 내재적 해석</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#정경화</span><span>#정경론</span><span>#외경</span><span>#얌니아</span><span>#discipline/성서학</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

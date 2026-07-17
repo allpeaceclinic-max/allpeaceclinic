@@ -1,0 +1,415 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>직업신학 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:345">영성·제자도</span><span class="date">2026-07-14</span></div>
+  <h1 class="note-title">직업신학</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>직업신학은 '일이란 무엇인가'를 묻는다. 누가 나를 부르셨는가를 묻는 <a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a>론도, 일터라는 현장에서 어떻게 살 것인가를 묻는 <a class="wl" href="../../t/%EC%9D%BC%ED%84%B0%EC%8B%A0%ED%95%99/">일터신학</a>도 아니다. 그 앞에 놓인 더 근원적인 질문 — 인간이 매일 하는 이 노동 자체가 신학적으로 무엇이냐는 물음이 직업신학의 자리다. 대답은 한 문장으로 압축된다. 일은 저주가 아니라 창조 질서이며, 선하게 지어졌으나 타락으로 병들었고, 그리스도 안에서 회복되어 새 창조까지 이어진다.</p>
+<p>이 문장은 성경의 큰 줄거리를 그대로 따라간다. 일은 구속사의 어느 한 국면에만 속한 주제가 아니라 창조에서 완성까지 네 막(幕)을 관통한다. 그래서 직업신학을 읽는 가장 정확한 렌즈는 이 네 막의 구조다.</p>
+<table>
+<thead>
+<tr>
+<th>국면</th>
+<th>일의 상태</th>
+<th>핵심 본문</th>
+<th>신학적 명제</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>창조</td>
+<td>선물·소명</td>
+<td>창 2:15</td>
+<td>타락 이전에 이미 일이 있었다</td>
+</tr>
+<tr>
+<td>타락</td>
+<td>왜곡·소외</td>
+<td>창 3:17-19</td>
+<td>일은 선하되 가시와 엉겅퀴 아래 놓였다</td>
+</tr>
+<tr>
+<td>구속</td>
+<td>회복·존엄</td>
+<td>골 3:23</td>
+<td>정직한 모든 직업이 소명으로 회복된다</td>
+</tr>
+<tr>
+<td>완성</td>
+<td>지속·영광</td>
+<td>고전 15:58</td>
+<td>주 안에서 한 수고는 새 창조에 남는다</td>
+</tr>
+</tbody>
+</table>
+<p>한영웅 목사가 창세기 1장을 강해하며 못박듯, 일은 "후속 조치가 아니라 타락 전에도 있었다." 이 한 마디가 직업신학 전체의 출발점을 정한다. 일을 형벌로 보는 순간 신학은 첫 단추부터 어긋나기 때문이다.</p>
+<h2>1. 창조 안의 노동 — 타락 이전에 이미 일이 있었다</h2>
+<p>성경의 첫 일꾼은 인간이 아니라 하나님이다. 창세기 1장은 하나님이 엿새를 일하시고 "보시기에 좋았더라"고 만족하시는 장면으로 채워진다. 권성수 목사는 이 지점을 놓치지 않는다 — 하나님은 정신노동만 하신 것이 아니라 흙에서 사람을 빚으시고 에덴에 물을 대신 정원사이자 목수셨다는 것이다. 노동이 신적 행위라면, 일하는 인간은 천한 존재가 아니라 하나님을 닮은 존재다. 창조 기사에서 일은 인간과 동식물을 가르는 표지다. 동물은 본능으로 움직이지만 인간은 생각하며 짓는다.</p>
+<p>결정적인 본문은 창세기 2장 15절이다. 하나님은 사람을 에덴에 두어 "그것을 경작하며 지키게" 하셨다. <span class="wl-dead" title="위키 내부 링크">문대원</span> 목사는 여기 쓰인 히브리어 아바드(경작)와 샤마르(지킴)가 훗날 성막에서 제사장이 수행하는 직무를 가리키는 바로 그 단어임을 지적한다. 최초의 성전은 에덴이었고, 동산을 가꾸는 노동은 성소에서 봉사하는 예배와 동등한 가치를 지녔다는 것이다. 그렇다면 밭일과 제단 일 사이에 위계가 없다. 창조 안에서 노동은 예배의 다른 이름이었다.</p>
+<p>한영웅 목사는 이 창조론적 노동을 세 겹으로 정의한다. 이것이 직업신학이 '일'을 규정하는 가장 압축된 문법이다(<a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%86%8C%EB%AA%85/">직업소명</a>, <a class="wl" href="../../t/%EC%B0%BD%EC%A1%B0%EC%8B%A0%ED%95%99/">창조신학</a>).</p>
+<table>
+<thead>
+<tr>
+<th>일의 정의</th>
+<th>근거 (창 1:26-28)</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>위임(委任)</td>
+<td>"다스리게 하자"</td>
+<td>하나님이 통치 권한을 인간에게 맡기심 — 통치의 파트너</td>
+</tr>
+<tr>
+<td>형상(形象)</td>
+<td>"우리의 형상대로"</td>
+<td>일하는 방식에 됨됨이가 드러남 — 이마고 데이의 통로</td>
+</tr>
+<tr>
+<td>축복(祝福)</td>
+<td>"복을 주시며… 충만하라"</td>
+<td>일할 수 있음 자체가 능력의 부어주심</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"일은 인간의 소명이다. 에덴이 풍성하고 조화로운 세상이지만, 그 가운데 일은 이미 주어졌다." — 한영웅</p>
+</blockquote>
+<p>일이 위임이라면, 일하는 인간은 세상을 향한 하나님의 대리자다. 문대원 목사가 고대 근동 신화와 대조하며 짚는 대목이 여기서 날카롭다. 바벨론 설화에서 인간은 신들이 하기 싫은 노역을 대신 지려고 지어졌지만, 창세기에서 인간은 하나님의 일에 초대받아 참여한다. "누가 더 열심히 하겠는가." 일의 기원을 어떻게 읽느냐가 일을 대하는 태도 전체를 결정한다.</p>
+<h2>2. 타락이 일에 한 일 — 가시와 엉겅퀴</h2>
+<p>그러나 우리가 아는 일은 에덴의 일이 아니다. 피곤하고, 갈등이 있고, 원치 않아도 해야 하며, 아무리 성공해도 채워지지 않는다. 창세기 3장이 그 사이에 끼어들었기 때문이다. 땅은 저주를 받아 가시덤불과 엉겅퀴를 내고, 사람은 얼굴에 땀을 흘려야 소산을 먹는다(창 3:17-19).</p>
+<p>여기서 직업신학은 미묘하지만 결정적인 구분을 지킨다. 저주받은 것은 일이 아니라 땅이며, 일은 저주 자체가 아니라 저주 '아래' 놓였다는 것이다. 권성수 목사의 표현이 정확하다 — "일 자체는 저주가 아닌데 일이 저주 아래 있게 된 것이다. 일을 저주로 보면 안 된다." 창조의 선함은 취소되지 않았고, 다만 왜곡되었다. 이 구분이 무너지면 일은 벗어나야 할 형벌이 되고, 이 구분이 서면 일은 회복을 기다리는 선한 것이 된다.</p>
+<p>타락이 일에 남긴 상처를 권성수 목사는 '무실(無實, fruitless)'이라는 말로 요약한다. 열매가 있는 듯한데 갈등과 시기와 피곤이 함께 온다. 성공해도 만족이 없고, 성품이 좋아도 일할 때는 완벽하지 않다. 그가 인용하는 한 문장이 이 상태를 냉정하게 진단한다.</p>
+<blockquote>
+<p>"당신이 정확히 옳은 소명 안에 있다 해도, 당신의 일에서 정기적으로 좌절하리라고 예상해야 한다."</p>
+</blockquote>
+<p>주목할 것은 이 좌절이 '잘못된 직업을 골랐다'는 신호가 아니라는 점이다. 옳은 자리에서도 좌절은 온다 — 세상이 타락 아래 있기 때문이다. 그래서 직업신학은 두 극단을 함께 경계한다. 일로 하나님의 영광을 온전히 구현하겠다는 이상주의와, 해봐야 별것 없다는 냉소주의. 권성수 목사가 그리는 그리스도인의 일상은 그 사이의 좁은 길, 곧 좌절과 성취가 뒤섞인 채 완성을 기다리는 자리다.</p>
+<h2>3. 루터의 혁명 — 수도원 담장을 허문 명제</h2>
+<p>중세는 일을 두 층으로 나눴다. 위층에는 기도하고 말씀을 다루는 성직(vita contemplativa)이 있었고, 아래층에는 밭 갈고 물건 만드는 세속의 노동(vita activa)이 있었다. 소명(vocatio)이라는 고귀한 단어는 수도사와 사제에게만 허락되었다. 한영웅 목사가 정리하듯, 독일어는 이 위계를 두 단어로 굳혔다 — 소명으로서의 일 베루프(Beruf)와 생계를 위한 임시 노동 아르바이트(Arbeit).</p>
+<p><span class="wl-dead" title="위키 내부 링크">루터</span>가 끊은 것이 바로 이 경계선이다. 그는 모든 정직한 직업이 하나님의 부르심이라고 선언했다. 농부의 쟁기질과 제화공의 망치질이 사제의 미사만큼 하나님 앞에서 거룩하다는 이 명제는 수도원 담장을 허무는 신학적 폭약이었다. 만인제사장직은 만인직분론으로 확장되었다 — 특별한 소명은 성직자만의 것이 아니라 모든 신자의 것이다. 훗날 막스 베버가 이를 '직업소명설'로 체계화했다는 사실은 이 혁명의 사회사적 무게를 방증한다.</p>
+<p>문대원 목사는 루터의 통찰을 가장 생생한 이미지로 전한다.</p>
+<blockquote>
+<p>"하나님은 소젖 짜는 여자아이의 일을 통해 친히 우유를 내고 계신다. 모든 직업은 하나님의 손가락과 같은 역할을 한다." — 마르틴 루터 (문대원 인용)</p>
+</blockquote>
+<p>하나님이 세상을 먹이시는 방식이 곧 평범한 사람의 평범한 노동이라는 것이다. 방사선사의 손이 겁먹은 아이를 안아 위로할 때, 그것은 하나님의 손가락이 움직이는 사건이다. 루터의 혁명은 이렇게 요약된다 — 일은 하나님이 이웃을 섬기시는 통로이며, 그 통로에 귀천이 없다. 부르심 자체의 신학은 <a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a>이 맡고, 직업신학은 그 부르심이 '모든 노동'으로 확장된 이 역사적 전환을 붙든다.</p>
+<h2>4. 성속 이원론의 끈질김 — 왜 아직도 '사역 vs 직업'인가</h2>
+<p>루터가 500년 전에 허문 담장은 그러나 여전히 서 있다. 오늘도 많은 신자가 교회 일은 '하나님의 일', 직장 일은 '세상 일'로 나눈다. 주일 예배는 영적이고 월요일 업무는 세속적이라 여긴다. 한영웅 목사는 이것을 단호히 '편견'이라 부른다 — 세상 일과 하나님 일은 나뉘는 것이 아니라 일원화되어야 한다.</p>
+<p>이 이원론의 뿌리는 성경이 아니라 헬라 철학이다. 권성수 목사가 짚듯 아리스토텔레스에게 일은 저주였고, 육체는 영혼의 감옥이었으며, 일하지 않고 사는 것이 가장 고귀한 삶이었다. 관념과 이데아의 세계는 높이고 물질세계는 천시하는 이 사고가 교회 안에 깊이 스몄다. 문대원 목사가 대조를 분명히 한다 — 모든 종교가 육체와 영혼을 갈라 영혼만 선하다 하지만, 기독교는 물질과 육체까지 선하다고 말하는 유일한 신앙이다. 그 증거가 창조와 성육신과 부활과 만유의 갱신이다. 성자 하나님이 육체를 입고 오셨고, 그 몸으로 부활하셨으며, 재림 때 만물이 새로워진다.</p>
+<p>성속을 가르는 이원론과 그것을 극복하는 통합의 신학은 이렇게 대립한다(<a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%84%B8%EA%B3%84%EA%B4%80/">기독교세계관</a>, <a class="wl" href="../../t/%ED%8F%89%EC%8B%A0%EB%8F%84%EC%8B%A0%ED%95%99/">평신도신학</a>).</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>성속 이원론</th>
+<th>창조-성육신적 통합</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>세계관 뿌리</td>
+<td>헬라 철학 (영/육 분리)</td>
+<td>성경 (창조·성육신·부활)</td>
+</tr>
+<tr>
+<td>일의 위계</td>
+<td>성직 &gt; 세속직</td>
+<td>정직한 모든 일이 소명</td>
+</tr>
+<tr>
+<td>신자의 삶</td>
+<td>주일(영적) / 평일(세속) 분리</td>
+<td>엿새와 이레가 한 예배</td>
+</tr>
+<tr>
+<td>물질세계</td>
+<td>극복·경시 대상</td>
+<td>하나님이 '좋다' 하신 무대</td>
+</tr>
+</tbody>
+</table>
+<p>이 통합을 일상의 시험대로 옮긴 것이 이안 코피가 소개한 '월요일 오전 11시 테스트'다(<a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%80%EC%9B%94%EC%9A%94%EC%9D%BC%EC%97%90%EB%AC%B4%EC%8A%A8%EC%9D%BC%EC%9D%84%ED%95%98%EC%8B%A4%EA%B9%8C_%EC%9D%B4%EC%95%88%EC%BD%94%ED%94%BC/">하나님은월요일에무슨일을하실까_이안코피</a>).</p>
+<blockquote>
+<p>"주일 오전 11시 예배에서 배운 것이 월요일 오전 11시 일터와 아무 상관이 없다면, 뭔가 잘못되고 있는 것이다." — 마크 그린</p>
+</blockquote>
+<p><span class="wl-dead" title="위키 내부 링크">LAMs</span>가 "모든 직업이 선교 영역"이라 선언하며 겨냥하는 표적도 정확히 이 이원론이다. 성속의 담장이 무너질 때 비로소 직업은 피할 수 없는 생계가 아니라 소명으로 되돌아온다.</p>
+<h2>5. 노동의 존엄 — 목수로 오신 하나님</h2>
+<p>이원론이 깨지면 노동의 존엄이라는 주제가 자연스럽게 따라온다. 그러나 현실의 통계는 서늘하다. 권성수 목사가 인용하는 조사에서 직장인의 절반 이상(52%)이 자기 직업을 천하게 여긴다. 연봉이 낮아서, 사회적 지위가 낮아서, 보람이 없어서. 직업에 귀천이 없다고 말하면서도 실제로는 귀천을 인정하며 사는 것이 우리의 이중성이다.</p>
+<p>직업신학은 이 이중성을 정면으로 반박한다. 권성수 목사가 세 노동관을 나란히 세우는 방식이 명료하다.</p>
+<table>
+<thead>
+<tr>
+<th>노동관</th>
+<th>일의 정의</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>헬라적</td>
+<td>일 = 저주</td>
+<td>육체는 영혼의 감옥</td>
+</tr>
+<tr>
+<td>서구적</td>
+<td>일 = 필요악</td>
+<td>먹고살기 위한 수단, 돈·지위 중심</td>
+</tr>
+<tr>
+<td>성경적</td>
+<td>일 = 존엄의 표시</td>
+<td>하나님의 형상이 일로 드러남</td>
+</tr>
+</tbody>
+</table>
+<p>존엄의 근거는 지위나 보수가 아니라 하나님의 형상이다. "국회의원이기 때문에 존귀한 것이 아니라 하나님의 형상이기 때문에 존귀하다"는 것이다. 그 논리의 절정을 권성수 목사는 성육신에서 찾는다. 필립 얀시를 빌려 그는 묻는다 — 고대 그리스라면 신을 철인왕(哲人王)으로, 로마라면 고결한 정치가로 상상했겠지만, 히브리의 하나님은 세상에 어떻게 오셨는가. 목수(木手)로 오셨다. 창조 때 정원사이셨던 하나님이 성육신 때는 목수이셨다. 하나님이 손으로 나무를 다루는 직업을 입고 오셨다면, 어떤 정직한 노동도 천할 수 없다.</p>
+<blockquote>
+<p>"잘 모르지만, 매일 최선을 다하지 않으면 제 자신에게 떳떳하지 못해요." — 뉴욕의 한 아파트 경비원 (권성수 인용)</p>
+</blockquote>
+<p>주민 아이들의 이름까지 외우며 성실히 일하던 그 경비원을 두고 권성수 목사는 "하나님의 일을 하고 있는 것"이라 말한다. 죄짓는 일이 아니라면 모든 일이 하나님이 주신 일이라는 것이다. 이 존엄은 게으름의 면죄부가 아니라 오히려 탁월함을 향한 부름이다. 이 볼트의 한 묵상 노트가 "자기 일에 능숙한 자는 왕 앞에 선다"(잠 22:29)를 붙들며 '탁월함 + 말씀의 기준'을 하나의 패러다임으로 제시하듯, 직업신학의 존엄은 세속적 성공과 다른 결의 탁월함 — 섬김을 향한 탁월함 — 을 요구한다.</p>
+<h2>6. 일과 안식의 리듬 — 중독과 나태 사이</h2>
+<p>일이 존엄하다는 명제는 곧장 위험한 오해로 미끄러질 수 있다. 일이 그토록 거룩하다면 쉼 없이 일할수록 거룩한가. 직업신학은 여기서 안식을 맞세운다. 창조 기사에서 하나님은 엿새를 일하시고 이레째 쉬셨다. 권성수 목사가 히브리서 4장을 강해하며 짚듯, 그 안식은 지쳐서가 아니라 — "결코 지치지 않는 분"이시므로 — 완성에서 오는 만족의 표현이었다. 일과 안식은 창조의 리듬 자체다(<a class="wl" href="../../t/%EC%95%88%EC%8B%9D/">안식</a>).</p>
+<p>그런데 이 리듬은 양쪽에서 깨진다. 한쪽은 일 중독이다. <span class="wl-dead" title="위키 내부 링크">오스기니스</span>가 진단하는 워크홀릭의 삶은 쫓기고, 탈진하며, 성과에 탐욕스럽고, 타인의 반응에 병적으로 민감하다. 일에서 자기 존재를 증명하려 할 때 안식은 사라지고 일은 우상이 된다. 다른 한쪽은 나태(sloth)다. 기니스는 나태를 게으른 한가로움과 구별한다. 그것은 삶의 의욕을 잃고 의미 추구를 포기한 영적 탈진 — "처음 사랑을 잃은 신자"의 상태다.</p>
+<blockquote>
+<p>"소명은 죽음에 이르는 죄인 나태함에 대한 최고의 해독제다." — 오스 기니스</p>
+</blockquote>
+<p>흥미로운 것은 직업신학이 이 두 병 — 중독과 나태 — 에 같은 처방을 내린다는 점이다. 곧 <a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a>의 회복이다. 일에서 자기를 구원하려는 중독도, 일의 의미를 놓아버린 나태도, 근원은 '왜 일하는가'를 잊은 데 있다. 정우현 교수가 오스 기니스를 따라 정리하듯, 그리스도인은 단 하나의 동기로 살 수 있다 — 하나님을 사랑하는 것. 그 1차 동기가 살아 있으면 무엇을 하든 어디서 하든 소명이 되고, 일과 쉼은 다시 창조의 리듬을 회복한다. 쉼조차 "내 마음대로 하는 시간"이 아니라 "내 삶 전체가 하나님 나라가 되는 시간"이 된다.</p>
+<h2>7. 일과 하나님 나라 — 내 일이 새 창조에 남는가</h2>
+<p>직업신학의 가장 먼 지평은 종말이다. 오늘 내가 하는 이 일이 세상 끝에 무엇으로 남는가. 문대원 목사의 답은 분명하다 — 하나님 나라는 물질과 영혼이 분리된 나라가 아니라 통합된 나라이며, 그렇기에 "일은 징벌이 아니라 완성하는 특권"이다. 재림 때 만물이 소멸하는 것이 아니라 갱신된다면, 창조를 개발하고 가꾸는 노동은 그 새 창조를 향해 무언가를 쌓아 올리는 일이 된다.</p>
+<p>로마서 8장이 이 전망의 성경적 뿌리다. 피조물이 탄식하며 고대하는 것은 "하나님의 아들들이 나타나는 것"이며, 썩어짐의 종노릇에서 해방되어 하나님 자녀들의 영광의 자유에 이르는 것이다(롬 8:19-21). 권성수 목사가 그리는 완성의 그림은 에덴으로의 복귀가 아니라 에덴을 넘어서는 영광이다 — 범죄 가능성이 남아 있던 첫 동산과 달리, 새 창조에는 죄의 가능성조차 없다.</p>
+<p>이 종말론적 지평이 오늘의 노동에 무게를 싣는다. 고린도전서 15장 58절은 부활을 논한 긴 장을 이렇게 맺는다 — "너희 수고가 주 안에서 헛되지 않은 줄 앎이라." 부활이 확실하기 때문에 오늘의 수고가 헛되지 않다는 이 결론은, 일이 소멸할 세상에 던지는 무의미한 몸짓이 아니라 남을 세계에 참여하는 행위임을 못박는다. 다만 무엇이 '남는' 수고인가는 결산의 문제이며, 맡은 것을 어떻게 다루었는가를 셈하는 이 청지기적 지평은 <a class="wl" href="../../t/%EC%B2%AD%EC%A7%80%EA%B8%B0/">청지기</a>와 <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EB%82%98%EB%9D%BC/">하나님나라</a>가 이어받는다. 직업신학은 여기서 한 가지만 확정한다 — 내 일은 시간 속으로 사라지지 않는다.</p>
+<h2>8. 일의 우상화와 그 회복</h2>
+<p>선한 것일수록 우상이 되기 쉽다. 일은 창조 질서이기에, 바로 그만큼 위험하게 신의 자리를 넘본다. 권성수 목사가 십계명 제1계명(출 20:3-5)을 일터에 적용하며 던지는 정의가 이 위험을 정확히 포착한다.</p>
+<blockquote>
+<p>"그것만 있으면 행복할 텐데 하는 그것이 우상이다." — 권성수</p>
+</blockquote>
+<p>일이 왜 그토록 쉽게 우상이 되는가. 권성수 목사는 세 가지를 든다. 보이지 않는 하나님과 달리 일은 보이고 만져지고 성과로 확인되며, 일을 통해 스스로를 위험에서 건져내려 하고, 결국 일한 자기 자신을 숭배하게 되기 때문이다. 문대원 목사는 같은 왜곡을 '자아실현의 수단'이라는 현대적 얼굴로 포착한다. 직업을 자아실현의 도구로 삼으면 직업과 나를 동일시하게 되고, 그 순간 직업은 우상이 되어 성공하면 교만하고 실패하면 절망하게 만든다.</p>
+<p>회복의 길은 일을 버리는 것이 아니다. 권성수 목사가 분명히 하듯, 일의 우상화를 경고하는 것은 음주운전 금지가 운전 금지가 아니듯 일하지 말라는 뜻이 아니다. 오히려 에베소서 4장 28절은 도둑질하던 손으로 "수고하여 선한 일을 하라"고 명한다 — 일의 방향을 자기 축적에서 이웃 구제로 돌리라는 것이다. 회복의 열쇠는 정체성의 이전이다. 문대원 목사의 처방은 커리어가 아니라 그리스도 안에서 정체성을 찾는 것("새로운 피조물", 고후 5:17)이고, 그때 일은 나를 증명하는 제단에서 이웃을 섬기는 도구로 되돌아온다. 이렇게 회복된 일을 실제 일터의 관계와 처세로 살아내는 실천은 <a class="wl" href="../../t/%EC%9D%BC%ED%84%B0%EC%8B%A0%ED%95%99/">일터신학</a>이, 물질과 재물의 청지기직은 <a class="wl" href="../../t/%EC%B2%AD%EC%A7%80%EA%B8%B0/">청지기</a>가 이어받는다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li><strong>일은 형벌이 아니라 창조 질서다.</strong> 창세기 2장 15절은 타락(창 3장)보다 앞선다. 이 순서를 지키느냐가 직업신학의 첫 단추이며, 뒤집으면 신학 전체가 어긋난다.</li>
+<li><strong>저주받은 것은 땅이지 일이 아니다.</strong> 일은 선하되 병들었다는 이 구분이 이상주의(일로 천국을 짓겠다)와 냉소주의(일은 무의미하다) 양쪽을 동시에 끊는다.</li>
+<li><strong>루터의 혁명은 일에 귀천을 없앤 것이 아니라 모든 일을 소명으로 격상시킨 것이다.</strong> "하나님이 소젖 짜는 소녀의 일로 우유를 내신다"— 평범한 노동이 하나님이 이웃을 먹이시는 손가락이 된다.</li>
+<li><strong>성속 이원론은 헬라 철학의 유산이지 성경의 가르침이 아니다.</strong> 기독교는 물질과 육체까지 선하다고 말하는 유일한 신앙이며, 그 증거는 창조·성육신·부활·만유 갱신이다. '월요일 11시 테스트'가 통합의 리트머스다.</li>
+<li><strong>노동의 존엄은 지위가 아니라 하나님의 형상에 근거한다.</strong> 창조 때 정원사, 성육신 때 목수로 오신 하나님 앞에서 정직한 노동은 천할 수 없다.</li>
+<li><strong>일 중독과 나태는 반대 증상이지만 같은 병이다.</strong> 둘 다 '왜 일하는가'를 잊은 상태이며, 처방도 하나 — 하나님을 사랑하는 1차 소명의 회복이다.</li>
+<li><strong>선한 일일수록 우상이 되기 쉽다.</strong> 일의 회복은 일을 버리는 것이 아니라 정체성을 커리어에서 그리스도로 옮기는 것이며, 방향을 자기 축적에서 이웃 섬김으로 돌리는 것이다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>비자발적 실업, 강제된 단순 반복 노동, 착취적 저임금 노동처럼 '선택할 수 없는 일'을 어떻게 신학적으로 의미화할 것인가 — 소명의 언어가 오히려 구조적 부조리를 미화하지는 않는가?</li>
+<li>AI와 자동화가 인간 노동의 상당 부분을 대체하는 시대에, '일할 수 있음이 축복'이라는 창조 신학은 어떻게 재진술되어야 하는가?</li>
+<li>고린도전서 15장 58절의 '남는 수고'와 베드로후서의 '풀어질 세상'은 어떻게 조화되는가 — 내 일의 무엇이 새 창조로 이어지고 무엇이 사라지는가?</li>
+<li>일의 존엄(모든 노동이 귀하다)과 소명의 분별(내게 맞는 일을 찾으라)은 언제 충돌하며, 충돌할 때 무엇을 우선하는가?</li>
+</ul>
+<h2>교차 참조</h2>
+<p>이 페이지는 '일 자체의 신학'을 다룬다. 부르심·현장·직업 분별·물질은 이웃 페이지들이 나누어 맡는다. 클러스터의 역할 지도는 다음과 같다.</p>
+<table>
+<thead>
+<tr>
+<th>페이지</th>
+<th>맡은 질문</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>직업신학 (본 페이지)</td>
+<td><strong>일이란 무엇인가</strong> — 창조·타락·구속·완성 속의 노동</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a></td>
+<td><strong>누가 부르시는가</strong> — 부르심·소명 전반 (볼트 최대 허브)</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%9D%BC%ED%84%B0%EC%8B%A0%ED%95%99/">일터신학</a></td>
+<td><strong>일터에서 어떻게 살 것인가</strong> — 현장의 처세와 선교적 실천</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%86%8C%EB%AA%85/">직업소명</a></td>
+<td><strong>이 직업으로의 부르심인가</strong> — 특정 직업 소명의 분별</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%B2%AD%EC%A7%80%EA%B8%B0/">청지기</a></td>
+<td><strong>맡은 것을 어떻게 다룰 것인가</strong> — 물질·시간·재능의 청지기직</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4%EC%84%A0%EA%B5%90/">비즈니스선교</a></td>
+<td><strong>사업 자체를 선교로</strong> — BAM·텐트메이킹 모델</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a class="wl" href="../../t/%EC%B0%BD%EC%A1%B0%EC%8B%A0%ED%95%99/">창조신학</a> — 일을 창조 명령(위임·문화명령)으로 보는 신학적 토대.</li>
+<li><a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%ED%98%95%EC%83%81/">하나님의형상</a> — 일하는 방식에 됨됨이가 드러난다는 노동 존엄의 근거.</li>
+<li><a class="wl" href="../../t/%EC%95%88%EC%8B%9D/">안식</a> — 일과 쌍을 이루는 창조의 리듬. 일 중독의 해독제.</li>
+<li><a class="wl" href="../../t/%EC%9A%B0%EC%83%81%EC%88%AD%EB%B0%B0/">우상숭배</a> — 일이 우상이 되는 왜곡과 그 회복.</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%84%B8%EA%B3%84%EA%B4%80/">기독교세계관</a> · <a class="wl" href="../../t/%ED%8F%89%EC%8B%A0%EB%8F%84%EC%8B%A0%ED%95%99/">평신도신학</a> — 성속 이원론 극복의 세계관적·교회론적 자리.</li>
+<li><a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EB%82%98%EB%9D%BC/">하나님나라</a> — 일의 종말론적 지평. 새 창조에 남는 수고.</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a> — 직업신학이 의료 현장에서 구체화되는 적용.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>권성수, 「일터의 하나님」 창 1:26-28 일의 존엄성</td>
+<td>설교</td>
+<td>세 노동관(헬라·서구·성경) 대조, 목수로 오신 하나님, 뉴욕 경비원</td>
+</tr>
+<tr>
+<td>권성수, 「일터의 하나님」 창 1:28 문화 명령</td>
+<td>설교</td>
+<td>충만·정복, 무형→유형·공허→채움, 일 = 문화 창조</td>
+</tr>
+<tr>
+<td>권성수, 「일터의 하나님」 창 3:16-19 일의 열매가 없어져</td>
+<td>설교</td>
+<td>타락과 무실(fruitless), 이상주의 vs 냉소주의, 좌절과 성취</td>
+</tr>
+<tr>
+<td>권성수, 「일터의 하나님」 출 20:1-6 일이 우상을 알려준다</td>
+<td>설교</td>
+<td>일의 우상화 3구조, 자기구원, 복음적 회복</td>
+</tr>
+<tr>
+<td>권성수, 히 4:1-11 안식의 비결</td>
+<td>설교</td>
+<td>창조안식(만족의 안식)·실체안식, 일과 안식의 리듬</td>
+</tr>
+<tr>
+<td>한영웅, 창 1:26-28 일에 대한 성경의 관점</td>
+<td>설교</td>
+<td>일 = 위임·형상·축복, 베루프/아르바이트, 루터·베버 소명설</td>
+</tr>
+<tr>
+<td>문대원, 「영원을 품고 오늘을 살다(2) 직업」 창 1:26-28</td>
+<td>설교</td>
+<td>아바드·샤마르(에덴=최초 성전), 하나님의 손가락, 자아실현의 우상화</td>
+</tr>
+<tr>
+<td>정우현, MBTS 진로상담 5·6주 (소명과 진로)</td>
+<td>강의</td>
+<td>나태(sloth) vs 소명, 워크홀릭·일편단심, 평범한 일의 신학</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%86%8C%EB%AA%85_%EC%98%A4%EC%8A%A4%EA%B8%B0%EB%8B%88%EC%8A%A4/">소명_오스기니스</a></td>
+<td>책</td>
+<td>1차·2차 소명, "소명은 나태함의 해독제", 단일 동기</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%80%EC%9B%94%EC%9A%94%EC%9D%BC%EC%97%90%EB%AC%B4%EC%8A%A8%EC%9D%BC%EC%9D%84%ED%95%98%EC%8B%A4%EA%B9%8C_%EC%9D%B4%EC%95%88%EC%BD%94%ED%94%BC/">하나님은월요일에무슨일을하실까_이안코피</a></td>
+<td>책</td>
+<td>월요일 오전 11시 테스트(마크 그린), 성속 통합</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%A7%81%EC%9E%A5%EC%9D%B8%EC%9D%B4%EB%9D%BC%EB%A9%B4%EB%8B%A4%EB%8B%88%EC%97%98%EC%B2%98%EB%9F%BC/">직장인이라면다니엘처럼</a></td>
+<td>책</td>
+<td>일터 신앙의 7I 모델(정체성·정직·중보·영향)</td>
+</tr>
+<tr>
+<td>raw 묵상노트 「자기 일에 능숙한 자」</td>
+<td>묵상</td>
+<td>잠 22:29, 탁월함 + 말씀의 기준 패러다임</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">LAMs</span></td>
+<td>사역</td>
+<td>"모든 직업이 선교 영역" — 성속 이원론 극복 선언</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#노동</span><span>#창조명령</span><span>#성속이원론</span><span>#루터소명관</span><span>#일과안식</span><span>#일의신학</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

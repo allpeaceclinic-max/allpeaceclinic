@@ -1,0 +1,247 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>숨겨진 상처의 치유 — 정태기 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:25">상담·치유·가정</span><span class="author">[[people/정태기]] 목사</span><span class="date">2026-05-03</span></div>
+  <h1 class="note-title">숨겨진 상처의 치유 — 정태기</h1>
+  
+</header>
+<article class="note">
+<p><strong>저자</strong>: <span class="wl-dead" title="위키 내부 링크">정태기</span> 목사 (충현교회 원로목사, 기독교 상담·내면치유)<br />
+<strong>분류</strong>: 내면치유 / 기독교 상담 / 영성<br />
+<strong>성경 틀</strong>: 씨 뿌리는 자 비유 (마13:3-9)</p>
+<blockquote>
+<p>네 가지 토양 = 네 가지 마음 상태 = 내면 상처의 네 가지 유형</p>
+</blockquote>
+<hr />
+<h2>1. 성경 틀 — 씨 뿌리는 자 비유</h2>
+<p><code>길가      → 폐쇄된 자아중심성  (딱딱하고 굳은 마음)
+돌밭      → 억압된 내면의 분노 (한이 박혀 있는 마음)
+가시떨기  → 허위적 체면의식   (돈·명예·권력에 빼앗긴 마음)
+옥토      → 가면을 벗은 어린아이의 심성 (치유된 마음)</code></p>
+<hr />
+<h2>2. 폐쇄된 자아중심성 (길가)</h2>
+<ul>
+<li>길바닥처럼 굳은 마음 — "바늘로 찔러도 피 한 방울 안 나올 인간"</li>
+<li>편견, 자기 틀에 맞추려 함, 융통성·여유 전혀 없음</li>
+<li>자라온 <strong>문화의 틀</strong> 안에서 벗어나지 못하는 것이 근본 원인</li>
+<li>바리새인처럼 "나사렛에서 무슨 선한 것이 날 수 있느냐" — 지역·계층·문화 편견</li>
+</ul>
+<hr />
+<h2>3. 억압된 내면의 분노 (돌밭) — 한(恨)</h2>
+<ul>
+<li>돌덩어리가 박혀 있는 마음 = <strong>한(恨) = 분노의 앙금</strong></li>
+<li>한의 신체적 결과: 암 발병(큰 상처 3~8년 후), 각종 심신 질환</li>
+<li>잘못된 문화 전통은 머리에 돌덩어리를 이고 가는 것 — 허리가 휨</li>
+</ul>
+<p><strong>삭개오 해석 (한승렬 교수)</strong>:
+- 뽕나무에 오른 이유 = 키가 작아서가 아니라 <strong>마음의 병</strong> 때문
+- 예수님을 가까이 대면할 용기가 없어서 → 소극적 행동</p>
+<p><strong>한의 증상</strong>:
+심리 불안 / 죄책감 / 불면증 / 무기력 / 식욕 극단 / 일중독 / 쾌락 추구 / 성격 급함 / 병적 공포</p>
+<blockquote>
+<p>해결: "내게로 와서 짐을 벗어버리라" — 예수님이 한의 짐을 받으신다</p>
+</blockquote>
+<hr />
+<h2>4. 허위적 체면의식 (가시떨기)</h2>
+<ul>
+<li>가시덤불 = <strong>내 신경을 온통 빼앗아가는 것</strong> — 돈·명예·권력</li>
+<li>근심·걱정·불안·시기·질투로 에너지 낭비</li>
+<li>"사촌이 논을 사면 배가 아프다" — 비교와 경쟁의 심리</li>
+<li>결국 씨(복음·변화)가 자랄 공간이 없어짐</li>
+</ul>
+<hr />
+<h2>5. 가면을 벗은 어린아이의 심성 (옥토) — 치유의 목표</h2>
+<p>어린아이의 마음 = 상처가 치유된 상태의 특징:</p>
+<table>
+<thead>
+<tr>
+<th>특성</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>염려 없음</strong></td>
+<td>내일 일을 염려하지 않음</td>
+</tr>
+<tr>
+<td><strong>선입견 없음</strong></td>
+<td>폐쇄된 자아중심성이 없음</td>
+</tr>
+<tr>
+<td><strong>티 없는 웃음</strong></td>
+<td>웃음이 치유 — 놀만 커슨 교수(불치병 → 웃음으로 회복, UCLA·스탠포드·존스홉킨스 연구)</td>
+</tr>
+<tr>
+<td><strong>티 없는 울음</strong></td>
+<td>정화·카타르시스</td>
+</tr>
+<tr>
+<td><strong>티 없이 논다</strong></td>
+<td>놀이와 휴식</td>
+</tr>
+<tr>
+<td><strong>가면 없음</strong></td>
+<td>진정한 자아로 삶</td>
+</tr>
+</tbody>
+</table>
+<p><strong>옥토의 심성 특징</strong>:
+악의 없는 유머 / 사생활을 즐길 줄 앎 / 터놓을 수 있는 친구 / 인간의 현실을 직시 / 유행에 휘말리지 않음 / 민주적 사고·도덕성·윤리감·사회공동체 의식</p>
+<hr />
+<h2>⭐ vault 내 연결 지점</h2>
+<table>
+<thead>
+<tr>
+<th>이 책의 개념</th>
+<th>연결 자료</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>한(恨) = 분노의 앙금 → 내면치유</td>
+<td><a class="wl" href="../../t/%EB%82%B4%EB%A9%B4%EC%B9%98%EC%9C%A0/">내면치유</a> — 갈등의 뿌리, 자기 인식 (윤명숙)</td>
+</tr>
+<tr>
+<td>가면 문제 — Personality vs 진정한 자아</td>
+<td><a class="wl" href="../../b/%EC%84%B1%ED%92%88%EC%9D%B8%EA%B2%A9/">성품인격</a> — Personality(페르소나·가면) vs Character(본질)</td>
+</tr>
+<tr>
+<td>외면주의 / 마음의 싸움</td>
+<td><a class="wl" href="../../b/%EC%82%AC%EB%9E%8C%EC%9D%80%EC%96%B4%EB%96%BB%EA%B2%8C%EB%B3%80%ED%99%94%EB%90%98%EB%8A%94%EA%B0%80_%EB%A0%88%EC%9D%B8%ED%8A%B8%EB%A6%BD/">사람은어떻게변화되는가_레인트립</a> — 외면주의 7가지, 코일리아</td>
+</tr>
+<tr>
+<td>씨 뿌리는 자 비유 (마13)</td>
+<td><span class="wl-dead" title="위키 내부 링크">마13</span> — 네 토양, 하나님 나라 비유</td>
+</tr>
+<tr>
+<td>한의 심신 질환 (암·심신증)</td>
+<td><a class="wl" href="../../b/%EB%AA%B8%EC%9D%B4%EC%95%84%EB%8B%88%EB%9D%BC%EA%B3%A0%EB%A7%90%ED%95%A0%EB%95%8C_%EA%B2%8C%EC%9D%B4%EB%B2%84%EB%A9%94%EC%9D%B4%ED%8A%B8/">몸이아니라고말할때_게이버메이트</a> — C형 성격·억압된 감정·암</td>
+</tr>
+<tr>
+<td>삭개오 — 마음의 병</td>
+<td><span class="wl-dead" title="위키 내부 링크">눅19</span> — 삭개오 이야기</td>
+</tr>
+<tr>
+<td>어린아이의 심성 = 치유 목표</td>
+<td><a class="wl" href="../../t/%EC%A0%95%EC%B2%B4%EC%84%B1/">정체성</a> — 진정한 자아, 십자가 정체성</td>
+</tr>
+<tr>
+<td>부부관계에서 드러나는 폐쇄성·한</td>
+<td><a class="wl" href="../../t/%EA%B0%80%EC%A0%95%EC%82%AC%EC%97%AD/">가정사역</a> — 갈등, 섬김의 영성 (윤명숙)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>탐구 중인 질문</h2>
+<p><strong>Q1. 한(恨)은 한국 문화 특유의 상처 개념인가, 보편적인가?</strong>
+- 부분 답변: <a class="wl" href="../../b/%EB%AA%B8%EC%9D%B4%EC%95%84%EB%8B%88%EB%9D%BC%EA%B3%A0%EB%A7%90%ED%95%A0%EB%95%8C_%EA%B2%8C%EC%9D%B4%EB%B2%84%EB%A9%94%EC%9D%B4%ED%8A%B8/">몸이아니라고말할때_게이버메이트</a> — 억압된 감정이 신체 질환을 낳는다는 서구 심신의학의 동일한 발견
+- 부분 답변: 분노의 앙금 = 억압된 내면 갈등 → 문화를 초월한 현상
+- 여전히 열린 질문: 한국인 의료 환자 상담에서 "한"을 어떻게 다루는 것이 복음적인가?</p>
+<p><strong>Q2. "가면을 벗은 어린아이의 심성"은 어떻게 훈련·형성되는가?</strong>
+- 부분 답변: <a class="wl" href="../../b/%EC%82%AC%EB%9E%8C%EC%9D%80%EC%96%B4%EB%96%BB%EA%B2%8C%EB%B3%80%ED%99%94%EB%90%98%EB%8A%94%EA%B0%80_%EB%A0%88%EC%9D%B8%ED%8A%B8%EB%A6%BD/">사람은어떻게변화되는가_레인트립</a> — 복음의 3시제, 성령의 조명으로 마음 내부에서 변화
+- 부분 답변: 웃음·울음·놀이 = 치유의 실천 → <span class="wl-dead" title="위키 내부 링크">결혼과가족상담</span> 카타르시스 개념
+- 여전히 열린 질문: 클리닉 환자·의료인 모두에게 "옥토의 심성"을 회복하게 하는 영성 훈련은?</p>
+<hr />
+<h2>관련 페이지</h2>
+<ul>
+<li><a class="wl" href="../../t/%EB%82%B4%EB%A9%B4%EC%B9%98%EC%9C%A0/">내면치유</a> — 갈등의 뿌리, 자기 인식, 정욕 극복</li>
+<li><a class="wl" href="../../t/%EA%B0%80%EC%A0%95%EC%82%AC%EC%97%AD/">가정사역</a> — 부부 갈등, 폐쇄성·한의 관계적 표현</li>
+<li><a class="wl" href="../../t/%EC%A0%95%EC%B2%B4%EC%84%B1/">정체성</a> — 가면 없는 진정한 자아</li>
+<li><span class="wl-dead" title="위키 내부 링크">정태기</span> — 저자 (충현교회 원로목사)</li>
+<li><span class="wl-dead" title="위키 내부 링크">마13</span> — 씨 뿌리는 자 비유</li>
+<li><a class="wl" href="../../b/%EC%84%B1%ED%92%88%EC%9D%B8%EA%B2%A9/">성품인격</a> — Personality(가면) vs Character(본질)</li>
+<li><a class="wl" href="../../b/%EC%82%AC%EB%9E%8C%EC%9D%80%EC%96%B4%EB%96%BB%EA%B2%8C%EB%B3%80%ED%99%94%EB%90%98%EB%8A%94%EA%B0%80_%EB%A0%88%EC%9D%B8%ED%8A%B8%EB%A6%BD/">사람은어떻게변화되는가_레인트립</a> — 복음적 변화, 외면주의</li>
+<li><a class="wl" href="../../b/%EB%AA%B8%EC%9D%B4%EC%95%84%EB%8B%88%EB%9D%BC%EA%B3%A0%EB%A7%90%ED%95%A0%EB%95%8C_%EA%B2%8C%EC%9D%B4%EB%B2%84%EB%A9%94%EC%9D%B4%ED%8A%B8/">몸이아니라고말할때_게이버메이트</a> — 억압된 감정과 신체 질환</li>
+<li><span class="wl-dead" title="위키 내부 링크">윤명숙</span> — 내면치유·가정사역 강의</li>
+</ul>
+<hr />
+<blockquote>
+<p>⚠️ <strong>원본 메모 짧음</strong>: DayOne 기록 기반, 추후 원문 보완 필요.</p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#내면치유</span><span>#상처</span><span>#한恨</span><span>#가면</span><span>#씨뿌리는자비유</span><span>#정태기</span><span>#심리</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

@@ -1,0 +1,260 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>장로직을 다시 생각하다 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:226">리더십·일·경영</span><span class="date">2026-05-05</span></div>
+  <h1 class="note-title">장로직을 다시 생각하다</h1>
+  
+</header>
+<article class="note">
+<p><strong>분류</strong>: 교회론 / 교회 거버넌스 / 초대 교회 연구</p>
+<hr />
+<h2>★ 핵심 명제</h2>
+<blockquote>
+<p><strong>신약성경 전체에서 '교회 장로' 언급 = 17번</strong><br />
+<strong>교회개척자 언급 = 약 1,000번</strong></p>
+</blockquote>
+<p>장로제는 신약 교회의 중심 구조가 아니었다.<br />
+초기 교회를 이끈 것은 장로가 아닌 <strong>교회개척자(church planter)</strong>였다.</p>
+<hr />
+<h2>1. 역사적 사실 — 장로제는 언제, 어디서 등장했나?</h2>
+<h3>장로가 세워진 5지역</h3>
+<table>
+<thead>
+<tr>
+<th>지역</th>
+<th>상황</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>예루살렘</td>
+<td>교회 설립 약 14년 후, 규모 3만 명</td>
+</tr>
+<tr>
+<td>갈라디아 4개 교회</td>
+<td>개척 3년 후 (비시디아 안디옥·이고니온·루스드라·더베 중 3곳)</td>
+</tr>
+<tr>
+<td>에베소</td>
+<td>바울 3년 사역 후 (행20장)</td>
+</tr>
+<tr>
+<td>빌립보</td>
+<td>교회 설립 약 10년 후</td>
+</tr>
+<tr>
+<td>크레타 섬</td>
+<td>디도서</td>
+</tr>
+</tbody>
+</table>
+<h3>주목할 사실들</h3>
+<ul>
+<li><strong>초기 6년</strong> — 예루살렘 교회에 장로 없음 (34년에 7집사 세움)</li>
+<li><strong>시리아 안디옥 교회</strong> — 장로 없음 (바울·바나바 파송 당시도 없음)</li>
+<li><strong>오순절 이후 최초 서신</strong> 갈라디아서 (AD 50, 교회 개척 20년 후)에야 등장</li>
+<li>바울이 <strong>'교회에 보낸' 9개 서신</strong> 중 장로에 대한 가르침 없음</li>
+<li>고린도전서(개척 7년 후), 고린도후서(에베소 3년 후) — 모두 장로 언급 없음</li>
+<li><strong>빌립보서 — 신약에서 바울이 최초로 장로 언급</strong> (단 한 곳)</li>
+</ul>
+<hr />
+<h2>2. 목회서신의 재해석</h2>
+<blockquote>
+<p><strong>목회서신 = 교회개척자가 다른 교회개척자들에게 보낸 서신</strong></p>
+</blockquote>
+<p>디모데전후서·디도서가 '목회서신'으로 불린 것은 <a class="wl" href="../../t/%EC%A2%85%EA%B5%90%EA%B0%9C%ED%98%81/">종교개혁</a> <strong>이후</strong>의 일이다.<br />
+목사들이 자신의 직분을 정당화하기 위해 붙인 이름.</p>
+<p>→ 본래 수신자: 바울의 교회개척 동역자들 (디모데, 디도)<br />
+→ 장로 임명 지침 = 교회개척자를 위한 실무 매뉴얼, 목사 직분론이 아님</p>
+<hr />
+<h2>3. 현대 목사직의 기원</h2>
+<blockquote>
+<p><strong>"개신교회 목사직은 로마 가톨릭 사제직의 개정판이고 수정판일 뿐이다."</strong><br />
+<strong>"현대 목사직은 루터의 작품이다."</strong></p>
+</blockquote>
+<ul>
+<li>종교개혁이 신학은 개혁했으나 <strong>교회 구조는 가톨릭 모델을 승계</strong></li>
+<li>1인 사제 → 1인 목사(설교자) 구조로 단순 치환</li>
+<li>사도성(A·P·E) 억압의 역사적 기원</li>
+</ul>
+<p>→ <a class="wl" href="../../b/%EC%9E%8A%ED%98%80%EC%A7%84%EA%B5%90%ED%9A%8C%EC%9D%98%EA%B8%B8_%EC%95%A8%EB%9F%B0%ED%97%88%EC%89%AC/">잊혀진교회의길_앨런허쉬</a>: APE가 교회 구조에서 사라진 결과 → 파라처치 출현<br />
+→ 파라처치(인터서브, 누가회, 네비게이토)는 억압된 사도성의 출구</p>
+<hr />
+<h2>4. 이상협 거버넌스 강의와의 통합</h2>
+<p>장로직 역사 연구는 거버넌스 신학의 기초 자료가 된다.</p>
+<h3>4-1. 거버넌스의 재정의</h3>
+<blockquote>
+<p><strong>거버넌스 = 권력(Power) → 위탁(Trusteeship)</strong><br />
+"조직의 운영 기술이 아닌, <strong>공동체의 영성</strong>으로서의 거버넌스"</p>
+</blockquote>
+<ul>
+<li>존 카버: 거버넌스 실패는 구조 문제가 아닌 <strong>'방식'</strong>의 문제</li>
+<li>리처드 포스터: 공동체 붕괴의 핵심 = 권력의 오남용</li>
+<li>리처드 니버: 도덕적 개인도 제도 안에서 비도덕적 행동 위험</li>
+</ul>
+<p><strong>3가지 함정</strong>:
+1. 이사회가 스스로 주인 노릇
+2. 영적 리더의 독주
+3. 회원들의 이익단체화</p>
+<h3>4-2. 신주주의(Theocracy) + 민주적 절차</h3>
+<blockquote>
+<p>하나님이 주인이시되, 결정은 공동체가 함께 분별한다.</p>
+</blockquote>
+<ul>
+<li>'좁은 문' 전략: 핵심 가치를 이해하는 사람만으로 의사결정 그룹 구성</li>
+<li>"텍스트가 된 성령의 언어" — 문서화된 정관·가치가 살아있는 리더십</li>
+</ul>
+<h3>4-3. 행15장 예루살렘 공의회 모델</h3>
+<blockquote>
+<p><strong>의사결정 주체 = 성령과 우리</strong> (행15:28)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>듣기</strong></td>
+<td>변방의 목소리(이방인 선교)를 먼저 듣다</td>
+</tr>
+<tr>
+<td><strong>분별</strong></td>
+<td>성경(암9장)과 성령의 역사를 함께 읽다</td>
+</tr>
+<tr>
+<td><strong>변화</strong></td>
+<td>고넬료의 회심 + <strong>베드로의 회심</strong> — 교회 자신이 변화됨</td>
+</tr>
+</tbody>
+</table>
+<p>뉴비긴: "고넬료가 회심한 것만큼 베드로도 회심했다" — 거버넌스는 제도가 아닌 변화의 과정<br />
+이사회 3대 기능: <strong>듣기 / 분별 / 평가를 통한 변화</strong></p>
+<blockquote>
+<p>"구조는 바꾸었으나 문화를 만들지 못했다" — 구조+문화 동시 변혁 필요</p>
+</blockquote>
+<hr />
+<h2>★ 핵심 통합: 장로직 역사 → 거버넌스 함의</h2>
+<table>
+<thead>
+<tr>
+<th>역사적 사실</th>
+<th>거버넌스 함의</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>장로 17번 vs 교회개척자 1,000번</td>
+<td>직분보다 사명·기능이 교회의 본질</td>
+</tr>
+<tr>
+<td>초기 6년간 장로 없이 교회 성장</td>
+<td>제도가 선교보다 앞설 수 없다</td>
+</tr>
+<tr>
+<td>목사직 = 루터의 작품 (가톨릭 구조 승계)</td>
+<td>구조 개혁 없인 신학 개혁도 절반</td>
+</tr>
+<tr>
+<td>행15장 — 장로+사도+평신도 함께 분별</td>
+<td>신주주의 + 민주적 절차의 성경적 모델</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%A1%A0/">교회론</a> — 장로제와 교회 구조</li>
+<li><a class="wl" href="../../t/%EB%A6%AC%EB%8D%94%EC%8B%AD/">리더십</a> — 서번트 리더십과 거버넌스</li>
+<li><a class="wl" href="../../b/%EC%9E%8A%ED%98%80%EC%A7%84%EA%B5%90%ED%9A%8C%EC%9D%98%EA%B8%B8_%EC%95%A8%EB%9F%B0%ED%97%88%EC%89%AC/">잊혀진교회의길_앨런허쉬</a> — APEST, APE 억압 → 파라처치</li>
+<li><span class="wl-dead" title="위키 내부 링크">거버넌스강의</span> — 이상협 거버넌스 강의 모음</li>
+<li><span class="wl-dead" title="위키 내부 링크">레슬리뉴비긴</span> — 고넬료·베드로의 이중 회심</li>
+</ul>
+</article>
+<div class="tagrow"><span>#교회론</span><span>#장로제</span><span>#교회개척</span><span>#거버넌스</span><span>#직분론</span><span>#사도성</span><span>#제도주의</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

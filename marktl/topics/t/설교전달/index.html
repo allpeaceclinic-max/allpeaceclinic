@@ -1,0 +1,198 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>설교전달 (Sermon Delivery) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:140">목회·실천</span><span class="date">2026-07-18</span></div>
+  <h1 class="note-title">설교전달 (Sermon Delivery)</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>설교 전달은 준비된 설교를 청중에게 실제로 "들려지게" 하는 커뮤니케이션 과정이다. 폴 틸리히의 경고가 이 레인의 문제의식을 압축한다 — "전달되지 않는 메시지는 메시지가 아니다." 아무리 정교한 강해도 청중의 마음에 도달하지 못하면 완성되지 않으며, 헬무트 틸리케가 "임종의 단계"라 진단하고 워런 위어스비가 "강단에서 춤추는 해골"이라 그린 강단의 위기는 대개 콘텐츠의 결핍이 아니라 전달의 실패다.</p>
+<p>이 페이지는 전달이라는 각론을 다룬다. 설교의 구성과 아웃라인 만들기는 <a class="wl" href="../../t/%EA%B0%95%ED%95%B4%EC%84%A4%EA%B5%90/">강해설교</a>가, 설교가 무엇이며 왜 하는가의 신학은 <a class="wl" href="../../t/%EC%84%A4%EA%B5%90%EC%8B%A0%ED%95%99/">설교신학</a>이, 적용의 이론은 <a class="wl" href="../../t/%EC%84%A4%EA%B5%90%EC%A0%81%EC%9A%A9/">설교적용</a>이 맡는다. 여기서 묻는 것은 좁고 실전적이다 — 완성된 설교를 어떤 언어로(1), 어떤 몸으로(2), 어떤 원고 형태로(3) 전할 것이며, 그 모든 기술 위에서 무엇이 정작 전달을 완성하는가(4)이다. MBTS 「강해설교전달실습」 일곱 주의 노트가 이 글의 일차 자료다.</p>
+<h2>1. 언어적 요소 — 명확한 언어와 시적 언어</h2>
+<p>전달의 첫 재료는 언어다. 「강해설교전달실습」 7주 노트는 전통적 설교와 '들려지는 설교'를 언어의 축에서 가른다. 전통적 설교의 언어는 명확한 언어 — 논리적·논증적·명령적·분석적이며 좌뇌와 지성에 호소한다. '들려지는 설교'의 언어는 시적 언어 — 이야기·메타포·상상력·이미지이며 우뇌와 감정에 호소한다. 위어스비의 단언이 그 무게를 보여준다 — "설교에서 들려지느냐 그렇지 못하느냐는 전적으로 어떠한 설교의 언어가 사용되느냐에 달려 있다."</p>
+<p>이 대비는 성경 자체가 예증한다. 사무엘하 17장에서 압살롬에게 조언하는 두 사람이 갈린다 — 아히도벨은 논리적이고 명확한 언어로(1~3절), 후새는 생생한 이미지의 언어로("들에 있는 곰 같이") 말하는데, 압살롬의 마음을 움직인 것은 후새의 이미지였다. 나단이 다윗 앞에서 "가난한 사람의 암양 새끼" 이야기(삼하 12장)로 정죄의 명제 대신 서사를 택한 것도 같은 원리다. 그래서 <a class="wl" href="../../t/%EC%9D%B4%EB%AF%B8%EC%A7%80%EC%84%A4%EA%B5%90/">이미지설교</a>는 "설교란 청중의 가슴속에 자리잡은 주된 이미지를 바꾸는 작업"이라 정의하며, 이미지를 화살촉(성경적 개념)에 달린 화살깃 — 개념을 멀리, 정확히 날아가게 하는 것 — 으로 비유한다.</p>
+<p>다만 여기에는 균형이 필요하다. 노트 자신이 짚듯, 서신서의 신학적 논증처럼 명제적 진리를 다뤄야 하는 본문에서 이미지 언어만으로 충분한가는 열린 문제다. 명확한 언어와 시적 언어는 배제가 아니라 배합의 관계이며, 이미지가 본문의 의미 범위를 벗어나면 전달은 성공해도 강해는 실패한다.</p>
+<h2>2. 비언어적 요소 — 목소리·눈맞춤·몸짓, 그리고 메라비언 오용 ⚖️</h2>
+<p>전달은 말로만 이루어지지 않는다. 목소리의 높낮이와 속도, 눈맞춤, 표정, 몸짓, 공간의 활용 같은 비언어적 요소가 함께 메시지를 실어 나른다. 7주 노트는 설교 전달에서 언어적 요소와 비언어적 요소의 비중을 35% 대 65%로 제시하며, 표정·몸짓·어조가 언어 자체보다 큰 몫을 차지한다고 강조한다.</p>
+<p>⚖️ 그러나 바로 이 수치에서 흔한 오용을 경계해야 한다. 커뮤니케이션에서 언어 7%·목소리 38%·표정 55%라는 이른바 '메라비언 법칙'은 설교 강단에서 가장 자주 인용되고 가장 자주 오독되는 통계다. 메라비언의 원래 연구는 말과 감정 표현이 서로 어긋날 때 청자가 어느 쪽을 신뢰하는가라는 좁은 조건 — 태도·감정의 불일치 상황 — 에 관한 것이었지, 모든 설교 전달의 일반 법칙이 아니다. 주목할 것은 볼트의 노트 자신이 이 정직함을 갖췄다는 점이다. 7주 노트는 35%/65%라는 수치가 "일반 대인 커뮤니케이션 연구에서 온 것인지, 설교학 고유의 연구 결과인지 원문에 명시되지 않아" 그대로 적용할 근거인지 검증이 필요하다고 스스로 단서를 단다. 비언어의 중요성은 참이되, 특정 백분율을 신학적 명제처럼 인용하는 것은 참이 아니다. 전달 훈련에서 표정·시선·어조에 원고 다듬기 못지않은 시간을 배분하되, 근거는 숫자가 아니라 "전인적 존재감(presence)"에 두는 편이 정직하다.</p>
+<h2>3. 원고의 스펙트럼 ⚖️</h2>
+<p>전달의 세 번째 물음은 원고를 어떻게 다룰 것인가이다. 완전 원고에서 개요, 무원고에 이르는 스펙트럼이 있고, 각 지점은 얻는 것과 잃는 것이 다르다.</p>
+<table>
+<thead>
+<tr>
+<th>방식</th>
+<th>얻는 것</th>
+<th>잃는 것 ⚖️</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>완전 원고</td>
+<td>정확성·밀도·시간 통제, 실언 방지</td>
+<td>눈맞춤·현장 교감의 약화, 낭독처럼 들릴 위험</td>
+</tr>
+<tr>
+<td>개요(아웃라인)</td>
+<td>흐름의 안정과 즉흥의 생기를 함께</td>
+<td>논리의 정밀함과 표현의 다듬어짐이 흔들릴 수 있음</td>
+</tr>
+<tr>
+<td>무원고</td>
+<td>청중과의 직접 교감, 성령 의존의 여지</td>
+<td>산만·중언부언·시간 초과, 준비 부실을 은폐할 위험</td>
+</tr>
+</tbody>
+</table>
+<p>볼트는 이 문제에 하나의 정답을 두지 않는다. 다만 스티븐 매튜슨의 원리가 판단의 축을 준다 — "아웃라인은 설교자에게 필요한 것이지 청중을 위한 것이 아니다." 개요를 청중에게 기억시키려 하지 말고, 중심 주제를 시작이 아니라 끝에 두어 귀납적으로 제시하며, 요점을 온전한 문장으로 적어 모호함을 없애라는 것이다. 곧 원고의 목적은 무대 장치가 아니라 설교자 자신의 명료함이다. 「강해설교준비실습」이 서론을 설교의 맨 마지막에 쓰라고 권하는 것도 같은 정신 — 원고는 완성된 사고의 기록이지, 사고를 대신하는 지팡이가 아니다.</p>
+<p>이 스펙트럼의 신학적 긴장은 여전히 볼트의 미해결로 남아 있다. 원고에 의존하면 성령을 밀어내는 것 같고, 무원고로 가면 준비를 게을리하는 것 같다는 오래된 딜레마다. 그 답의 방향은 다음 절에 있다 — 원고의 형태가 아니라 그 원고를 통과하는 인격이 전달을 완성하기 때문이다.</p>
+<h2>4. 전달과 진정성 — 기술이 인격을 대체하지 못한다</h2>
+<p>모든 전달 기법을 익힌 끝에 설교학이 만나는 것은 기법으로 환원되지 않는 한 가지다. <span class="wl-dead" title="위키 내부 링크">해돈로빈슨</span>이 짚었듯 "결국 설교는 설교자의 인격에 의해 전달된다" — 에토스(신뢰)와 파토스(공감)가 그것이다. 이것이 필립스 브룩스의 저 오래된 정의, 설교란 "진리가 인격을 통과하여(truth through personality) 전달되는 것"이라는 명제의 뜻이다. 같은 진리를 같은 원고로 전해도, 그 진리가 통과하는 인격에 따라 전달은 달라진다. 기술은 통로를 넓힐 수 있으나 통로를 대신하지는 못한다.</p>
+<p>이 인격적 전달의 신학적 원형은 성육신이다. 7주 노트는 설교자가 청중의 눈높이에 맞추는 '공감'의 원형을 예수의 성육신에서 찾는다 — 하늘의 메시지를 이 땅의 언어와 문화로 옮겨 들려주신 그 낮아짐이 모든 전달의 모델이다. 그리고 그 인격 위에서 마지막으로 일하시는 분이 <a class="wl" href="../../t/%EC%84%B1%EB%A0%B9/">성령</a>이다. 「이미지 설교 방법론」의 연날리기 은유가 이를 담는다 — 청중이라는 '연'을 설교자가 '줄'로 날리지만, 연을 실제로 띄우는 것은 사람이 통제할 수 없는 '바람', 곧 성령이다. 그러므로 전달의 완성은 역설이다. 언어를 다듬고 몸을 훈련하고 원고를 준비하는 인간의 성실을 다하되, 말이 사건이 되게 하는 것은 그 성실 위에 임하시는 바람이다. 전달은 기술의 끝에서 다시 의존으로 열린다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>전달은 설교의 부속이 아니라 완성이다 — "전달되지 않는 메시지는 메시지가 아니다"(틸리히). 강단의 위기는 대개 콘텐츠가 아니라 전달의 위기다.</li>
+<li>언어에는 두 종류가 있다 — 명확한 언어(논증·지성)와 시적 언어(이미지·감정). 삼하 17장의 후새, 삼하 12장의 나단처럼 이미지가 마음을 움직이되, 본문의 의미 범위를 벗어나면 전달은 성공하고 강해는 실패한다.</li>
+<li>비언어적 요소는 중요하나, '메라비언 55/38/7' 같은 수치를 법칙처럼 인용하는 것은 오용이다 ⚖️ — 볼트의 강의 노트 자신이 35/65 수치의 출처가 불명하다고 단서를 단다. 근거는 숫자가 아니라 전인적 존재감이다.</li>
+<li>원고는 완전 원고↔개요↔무원고의 스펙트럼이며 ⚖️, 각각 얻고 잃는 것이 다르다. 매튜슨의 원리 — "아웃라인은 청중이 아니라 설교자를 위한 것" — 이 판단의 축이다. 원고의 목적은 무대 장치가 아니라 설교자의 명료함이다.</li>
+<li>기술은 인격을 대체하지 못한다 — "진리가 인격을 통과한다"(필립스 브룩스), "설교는 설교자의 인격에 의해 전달된다"(로빈슨). 성육신적 공감이 그 모델이고, 연날리기의 바람(성령)이 그 완성이다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>원고 설교와 무원고(즉흥) 설교 사이에서 성령 의존성과 준비 성실성을 함께 살리는 방식은 무엇인가 — 개요가 그 절충인가, 아니면 본문 장르마다 다른가.</li>
+<li>이미지·시적 언어 중심의 전달과 강해설교의 본문 충실성은 어디서 균형을 이루는가 — 서신서의 논증적 본문에서 우뇌 언어는 어디까지 유효한가(<a class="wl" href="../../t/%EC%9D%B4%EB%AF%B8%EC%A7%80%EC%84%A4%EA%B5%90/">이미지설교</a>와 공유).</li>
+<li>미디어와 시각 자료를 어느 선까지 설교 전달에 통합할 것인가 — 전달을 돕는 도구와 전달을 대체하는 스펙터클의 경계는 어디인가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%84%A4%EA%B5%90%ED%95%99/">설교학</a> — 설교 형식의 지도와 준비 여정 전체. 전달은 그 여정의 마지막 단계.</li>
+<li><a class="wl" href="../../t/%EA%B0%95%ED%95%B4%EC%84%A4%EA%B5%90/">강해설교</a> — 설교의 구성·아웃라인 만들기(위임). 무엇을 전달할지는 이 페이지가 만든다.</li>
+<li><a class="wl" href="../../t/%EC%84%A4%EA%B5%90%EC%8B%A0%ED%95%99/">설교신학</a> — 전달을 완성하는 성령·성육신의 신학. '무슨 일이 일어나는가'.</li>
+<li><a class="wl" href="../../t/%EC%84%A4%EA%B5%90%EC%A0%81%EC%9A%A9/">설교적용</a> — 적용이 청중에게 전달되는 방식.</li>
+<li><a class="wl" href="../../t/%EC%9D%B4%EB%AF%B8%EC%A7%80%EC%84%A4%EA%B5%90/">이미지설교</a> — 이미지 언어의 방법론(화살 은유, 개념→이미지 변환).</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EB%A0%B9/">성령</a> — 연날리기의 바람. 말을 사건이 되게 하는 능력.</li>
+<li><a class="wl" href="../../t/%EC%98%88%EB%B0%B0/">예배</a> — 전달이 일어나는 자리.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">강해설교전달실습</span> 7주 — 들려지는 설교, 설교 커뮤니케이션</td>
+<td>수업노트</td>
+<td>명확한 언어 vs 시적 언어, 삼하 17(아히도벨/후새)·삼하 12(나단), 35%/65%와 그 출처 불명 단서, 김세광·포스딕, 성육신적 공감</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">강해설교전달실습</span> 1주 — 이미지 설교 방법론</td>
+<td>수업노트</td>
+<td>화살 은유(개념·궤적·이미지·체험), 연날리기(성령의 바람), 이미지=개념을 나르는 화살깃</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">강해설교전달실습</span> 6주 — 신설교학</td>
+<td>수업노트</td>
+<td>귀납·내러티브 전달, 전통적 설교 vs 신설교학 언어 대비</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EA%B0%95%ED%95%B4%EC%84%A4%EA%B5%90/">강해설교</a></td>
+<td>위키</td>
+<td>에토스·파토스, 매튜슨의 아웃라인 원리, 설교자 인격에 의한 전달</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">해돈로빈슨</span> · <span class="wl-dead" title="위키 내부 링크">월터브루그만</span> · <span class="wl-dead" title="위키 내부 링크">이광재</span></td>
+<td>인물</td>
+<td>"설교는 인격에 의해 전달된다", 상상력의 언어 요청, 이미지 설교 정의</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/설교학</span><span>#커뮤니케이션</span><span>#비언어적요소</span><span>#원고</span><span>#진정성</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

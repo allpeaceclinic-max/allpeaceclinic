@@ -1,0 +1,280 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>선교적 교회 (Missional Church) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="date">2026-07-11</span></div>
+  <h1 class="note-title">선교적 교회 (Missional Church)</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>선교적 교회란 해외 선교를 지원하는 교회가 아니라, 교회의 존재 자체가 선교라고 고백하는 교회다. 여기에는 주어의 전복이 들어 있다 — 선교의 주체는 교회가 아니라 하나님이시며, 교회는 그 <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A0%EA%B5%90/">하나님의 선교</a>(missio Dei)에 참여하도록 세상 가운데로 보냄받은 존재다. 신약이 교회를 부르는 이름 에클레시아(ἐκκλησία, "불러냄 받은 모임")에는 처음부터 두 방향의 운동 — 세상에서 불러냄 받음과 세상으로 보냄받음 — 이 새겨져 있는데, 선교적 교회론은 크리스텐덤 아래에서 교회가 잊어버린 후자, 곧 '보냄'의 방향을 교회의 본질로 되찾으려는 시도다.</p>
+<p>그래서 이 논의의 심장에는 두 개의 짝지어진 전환이 있다. 하나는 <strong>행위에서 존재로</strong>(from doing mission to being missional) — 선교를 교회의 여러 프로그램 중 하나가 아니라 교회의 정체성으로 옮기는 전환이고, 다른 하나는 <strong>보내는 교회에서 보냄받은 교회로</strong>(from sending church to sent church) — 선교사를 파송하고 후원하는 교회를 넘어, 온 성도가 자기 삶의 자리에서 보냄받은 자로 사는 교회로의 전환이다. 두 전환은 같은 동전의 양면이다. 하나님이 교회의 존재 이유이심을 인정할 때에야 교회는 자기 유지가 아니라 세상을 향한 보냄으로 살아갈 수 있기 때문이다.</p>
+<p>이 페이지는 <strong>교회론과 선교의 교차점</strong>을 다루는 허브다. 따라서 인접한 개념들과의 경계를 먼저 그어 둔다.</p>
+<table>
+<thead>
+<tr>
+<th>이 허브가 다루는 것</th>
+<th>이웃 페이지에 위임</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"선교적 교회"라는 교회론적 정체성 — 교회론과 선교의 접점</td>
+<td>하나님이 선교의 주체시라는 신학 자체 → <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A0%EA%B5%90/">하나님의선교</a>·<a class="wl" href="../../t/%EB%AF%B8%EC%94%A8%EC%98%A4%EB%8D%B0%EC%9D%B4/">미씨오데이</a></td>
+</tr>
+<tr>
+<td>크리스텐덤 이후 교회론의 재구성, 보냄받은 교회</td>
+<td>교회의 본질·표지·직분·구조 일반 → <a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%A1%A0/">교회론</a></td>
+</tr>
+<tr>
+<td>대안공동체·성육신적 현존·흩어지는 교회의 원리</td>
+<td>공동체 형성 원리(리미널리티·커뮤니타스) → <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B3%B5%EB%8F%99%EC%B2%B4/">선교적공동체</a></td>
+</tr>
+<tr>
+<td>말과 행위를 아우르는 선교적 교회의 사역 방향</td>
+<td>전도와 사회적 책임의 범위 신학 → <a class="wl" href="../../t/%EC%B4%9D%EC%B2%B4%EC%A0%81%EC%84%A0%EA%B5%90/">총체적선교</a></td>
+</tr>
+<tr>
+<td>보냄받은 교회의 교회론적 자리</td>
+<td>일상 자리의 선교적 정체성 → <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EC%82%B6/">선교적삶</a></td>
+</tr>
+</tbody>
+</table>
+<h2>1. 크리스텐덤 이후 — 왜 다시 "교회란 무엇인가"인가</h2>
+<p>선교적 교회론은 진공에서 나오지 않았다. MBTS 선교학 강의(임태순)는 이 논의의 출발점으로 <span class="wl-dead" title="위키 내부 링크">레슬리 뉴비긴</span>을 지목한다. 인도에서 선교사로 사역하다 1974년 무렵 영국으로 돌아온 뉴비긴은, 서구의 <a class="wl" href="../../t/%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%85%90%EB%8D%A4/">크리스텐덤</a>이 무너지면서 서구 교회가 도리어 선교지 교회보다 약화된 현실을 목격했다 — 서구 사회 자체가 선교지가 된 것이다. 크리스텐덤 시절에는 사회 전체가 이미 그리스도교적이었으므로 복음을 따로 전할 필요가 없었고 목회와 신학이 중심이었지만, 이제는 서구 상황에 맞는 교회론 아래 교회의 선교적 사명을 다시 회복해야 한다. 1990년대 미국의 "복음과 우리 문화의 네트워크" 운동에서 선교적 교회(missional church)라는 용어가 벼려진 것이 이 지점이다.</p>
+<p>같은 진단을 이상훈 교수는 훨씬 날카로운 어조로 반복한다. 교회 개척 성공률이 10%에서 3%로 떨어지고 '가나안 성도'와 아이폰 세대가 교회를 떠나는 시대, 그는 위기의 뿌리를 교회 바깥이 아니라 안에서 찾는다.</p>
+<blockquote>
+<p>"죽어가는 교회, 이 시대 — 하나님께서 주무시는 것이 아니라, 어쩌면 교회에 대한 이해가 잘못된 것이 아닌가, 본질을 잃고 있는 것이 아닌가." — 이상훈, 「미셔널 처치 운동의 로드맵」</p>
+</blockquote>
+<p>톰 레이너가 정리한 '죽어가는 교회의 징후'의 공통분모는 하나다 — 시선이 밖(세상·선교)이 아니라 안(자기 보존)으로 향한다는 것. 예산이 내부 사역에 쏠리고, 과거가 영웅이 되고, <a class="wl" href="../../t/%EB%8C%80%EC%82%AC%EB%AA%85/">대사명</a>이 누락될 때 교회는 부식한다. 뉴비긴 노선과 나란히, 도널드 맥가브란의 교회성장운동에 대한 1990년대 비판 — 상업주의·마케팅 논리로 흘렀다는 — 도 "하나님 중심적 교회, 곧 선교적 교회"라는 대안에 힘을 보탰다. 두 물줄기가 합류하는 자리에서 선교적 교회론은 하나의 방법론이 아니라 <strong>교회론의 회복 운동</strong>으로 등장한다. (크리스텐덤 붕괴의 교회사적 전개는 <a class="wl" href="../../t/%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%85%90%EB%8D%A4/">크리스텐덤</a>, 교회 본질론 전반은 <a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%A1%A0/">교회론</a>에 위임한다.)</p>
+<h2>2. 선교하는 교회에서 보냄받은 교회로 — 행위에서 존재로</h2>
+<p>진단이 "본질을 잃었다"라면, 처방은 본질의 회복이다. 그 본질을 <span class="wl-dead" title="위키 내부 링크">한철호</span> 선교사는 한 문장으로 압축한다 — "From doing mission to being missional." 선교는 제도 교회가 특별한 사람을 특별한 곳에 보내 행하는 특별한 일이 아니라, 부름받은 사명적 공동체가 곧 교회의 정체성이라는 것이다. 그는 파송하는 교회(sending church)에 앞서 세상에 파송받은 교회(sent church)라는 인식이 선행되어야 한다고 본다. 근거 본문은 <span class="wl-dead" title="위키 내부 링크">요 17:18</span>이다 — "아버지께서 나를 세상에 보내신(ἀποστέλλω, 아포스텔로) 것 같이 나도 그들을 세상에 보내었고." 보냄의 주어는 언제나 하나님이시다. "사실 센더는 하나님뿐이다. 하나님이 교회를 보내셨고, 우리가 또 누구를 보내는 것인가."</p>
+<p>문대원 목사는 이 구분을 강단의 언어로 옮긴다. <strong>선교하는 교회</strong>는 해외로 선교사를 파송하고 후원하는 보내는 교회(sending church)이고, <strong>선교적 교회</strong>는 온 성도가 자기 자리에서 선교적 <a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a>을 사는 보냄받은 교회(sent church)다. 다만 그는 둘을 대립시키지 않는다 — "선교하는 교회와 선교적 교회는 대비가 아니라 상호 보완적인 관계이다." 파송교회가 사라진 선교사의 외로움을 아는 그는, 미셔너리 처치에서 멈추어서도 안 되고 파송을 버려서도 안 된다고 못박는다. 핵심 본문은 예수의 자기 이해다 — "내가 하늘에서 내려온 것은 … 나를 보내신 이의 뜻을 행하려 함이니라"(<span class="wl-dead" title="위키 내부 링크">요 6:38</span>).</p>
+<p>여기서 존재(being)와 행위(doing)의 순서가 뒤바뀐다. 문대원은 <span class="wl-dead" title="위키 내부 링크">약 1장</span> 강해에서 "선교적 교회의 기초는 어떤 일을 열심히 하는 것이 아니라 예수님이 원하시는 사람이 되는 것"이라 말하며, <span class="wl-dead" title="위키 내부 링크">행 1:8</span>의 "내 증인이 되리라"가 활동이 아니라 <a class="wl" href="../../t/%EC%A0%95%EC%B2%B4%EC%84%B1/">정체성</a>에 초점이 맞춰져 있음을 짚는다 — "신사이기 때문에 신사처럼 행동한다. 정체성이 행동을 결정한다." 한철호가 경고하듯, 건강한 선교적 존재가 되지 못한 채 선교적 행위에 몰두하는 것은 선교에 득이 아니라 해가 될 수 있다. (선교의 주어가 하나님이라는 미씨오 데이 신학 자체는 <a class="wl" href="../../t/%EB%AF%B8%EC%94%A8%EC%98%A4%EB%8D%B0%EC%9D%B4/">미씨오데이</a>·<a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A0%EA%B5%90/">하나님의선교</a>에, 일상 자리의 선교적 정체성은 <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EC%82%B6/">선교적삶</a>에 위임한다.)</p>
+<h2>3. 하나님의 마스터플랜 — 창조·교회·구원의 중심에 선 교회</h2>
+<p>보냄받은 교회라는 정체성은 우주적 규모의 그림 안에 놓일 때 비로소 무게를 얻는다. 문대원 목사는 <span class="wl-dead" title="위키 내부 링크">골 1:15–20</span>을 "창조와 구원의 역사가 모두 담긴" 본문으로 읽는다. 만물이 그리스도로 말미암아 창조되고(16절) 그리스도의 십자가의 피로 화목하게 되는데(20절), 그 창조와 구원의 평행 구조 한가운데에 교회가 서 있다 — "그는 몸인 교회의 머리시라"(18절). 도식으로 옮기면 <strong>창조 → 교회 → 구원(하나님 나라)</strong>이며, 만물을 충만하게 하시는 이의 충만함이라는 영광스러운 책임(<span class="wl-dead" title="위키 내부 링크">엡 1:23</span>)이 교회에 맡겨졌다.</p>
+<p>그래서 하나님의 마스터플랜은 셋으로 요약된다 — 예수님이 오셔서 하나님 나라를 선포하고 부활의 능력을 나타내시고, 성령이 오셔서 십자가의 복음을 증거하는 교회를 세우시고, 그 교회를 통하여 온 땅에 복음이 증거되어 하나님 나라가 완성된다. 문대원의 결론은 선교적 교회론의 급소를 찌른다 — "하나님은 우리 교회를 편애하지 않으신다. 그런데 은혜를 주신 이유가 무엇일까? 하나님의 선교를 위해서다. 우리의 유익이 아니라 하나님 나라를 위해 존재한다. 이것이 선교적 교회의 핵심이다." 교회는 자기 성장을 목표로 삼는 순간 자기 존재 이유를 배반한다. 이 통찰은 <a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B3%B5%EB%8F%99%EC%B2%B4%EC%84%B8%EC%9A%B0%EA%B8%B0_%EB%AF%B8%EC%85%94%EB%84%90%EC%8B%A0%ED%95%99%EC%97%B0%EA%B5%AC%EC%86%8C/">『선교적 공동체 세우기』</a>의 도발적 명제와 만난다 — "하나님의 선교의 첫 대상은 … 교회 자체일 수 있습니다"(p.37). 선교는 교회가 가진 것을 베푸는 시혜가 아니라, 교회 자신이 복음으로 먼저 새로워지는 과정이다.</p>
+<p>교회가 짊어진 이 소명에는 대가가 따른다. 로잔 언약 제5항이 그것을 봉인한다.</p>
+<blockquote>
+<p>"교회는 하나님의 우주적인 목적의 중심에 서 있으며, 복음을 전파할 목적으로 하나님이 지정하신 수단이다. 십자가를 전하는 교회는 스스로 십자가의 흔적을 지녀야 한다." — 로잔 언약 제5항</p>
+</blockquote>
+<p>(창조·구원 안에서 하나님이 선교의 주체시라는 신학의 상세 전개는 <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A0%EA%B5%90/">하나님의선교</a>에 위임한다. 여기서는 그 결론 — 교회가 하나님의 선교의 도구라는 명제 — 만 취한다.)</p>
+<h2>4. 산 위의 도시 — 대안 공동체와 순결한 영향력</h2>
+<p>보냄받은 교회가 세상 속에서 취하는 첫 자세를 문대원은 <span class="wl-dead" title="위키 내부 링크">마 5:13–16</span>에서 끌어낸다. 팔복 직후, 박해받는 세상 한복판에서 예수는 제자들을 "세상의 소금이요 빛"이라 부르신다. 세상이 교회를 미워하는 것은 이상한 일이 아니다 — "세상이 너희를 미워하면 너희보다 먼저 나를 미워한 줄을 알라"(요 15:18). 그 미움의 세상에서 교회는 세 가지로 존재한다.</p>
+<p>첫째, <strong>대안 공동체</strong>(alternative community)다. 타락한 세상은 스스로 죄를 막을 수 없다. 교회는 세상이 스스로 해결하지 못하는 자리에서 다른 길을 보여주는 대안이 되어야 한다. 둘째, <strong>부패를 방지하는 소금</strong>이다. 로마 군인의 월급이 소금(salarium)이었을 만큼 소금은 필수품이었으나, 불순물이 섞이면 짠맛을 잃는다 — 맛 잃은 소금은 세상과 타협해 순결함을 잃은 성도다. "동신교회가 싫은 사람은 있을 수 있어도 무시할 수는 없어야 한다"는 그의 말은, 순결함이 곧 영향력의 조건임을 가리킨다. 셋째, <strong>어둠을 밝히는 빛</strong>이다. 그러나 교회는 발광체가 아니라 반사체, 곧 달이다 — 참빛은 예수 그리스도이시고(요 8:12) 교회는 그 빛을 반사할 뿐이다.</p>
+<p>여기서 산 위의 도시(city on a hill)라는 은유가 역사로 걸어 들어온다. 1630년 신대륙으로 향하던 청교도 지도자 존 윈스럽은 "우리는 산 위의 도시가 되어야 한다, 모든 사람의 눈이 우리를 지켜보고 있다"고 선언했고, 그 비전 위에 보스턴이 세워졌다. 그러나 50년도 지나지 않아 비전을 잃고 원주민과의 전쟁으로 치닫자, 조나단 에드워즈가 주도한 대각성운동이 바로 그 첫 비전의 회복 운동으로 일어났다. 대안 공동체는 이렇게 세워지고, 잊히고, 회복된다.</p>
+<p>이 모든 것을 지탱하는 뿌리를 문대원은 인테그리티(integrity)라 부른다 — 언제 어디서나 동일한 모습으로 사는 온전함이다. 다윗이 "마음의 완전함으로"(시 78:72) 양을 치던 자리에서나 왕이 된 자리에서나 동일했듯, 빛은 어디서나 빛이다. "메신저와 메시지는 분리될 수 없다." 마닐라 선언이 못박듯, 변화된 삶보다 복음을 더 설득력 있게 전하는 것은 없고, 삶과 복음의 불일치만큼 복음을 비난받게 하는 것도 없다. 선교적 교회의 시작은 바로 이 앞뒤가 같은 삶이다.</p>
+<h2>5. 말과 행위 — 총체적 사역과 궁극성의 논리</h2>
+<p>선교적 교회의 사역은 말(선포)과 행위(현시)를 가르지 않는다. 한철호는 이를 로잔 언약을 빌려 증인(witness) = 선포(proclamation) + 현시(demonstration), 곧 "show &amp; tell"로 정식화한다 — "witness는 동사보다 명사다. 증인이면 증거를 하게 된다." 문대원은 같은 진리를 두 편의 설교에서 구약의 자비 규례로 풀어낸다. <span class="wl-dead" title="위키 내부 링크">약 1:27</span>의 "고아와 과부를 그 환난 중에 돌보는" 참된 경건은 하나님을 닮아가는 과정이고(<a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%ED%98%95%EC%83%81/">이마고 데이</a>가 <a class="wl" href="../../t/%EB%AF%B8%EC%94%A8%EC%98%A4%EB%8D%B0%EC%9D%B4/">미씨오 데이</a>를 가능케 한다), <span class="wl-dead" title="위키 내부 링크">히 13:1–3</span>의 나그네 사랑은 "부지중에 천사를 대접하는" 일이며 지극히 작은 자에게 한 것이 곧 그리스도께 한 것(마 25:40)이다.</p>
+<p>여기서 오래된 질문 — 복음이 먼저냐, 구제(땅)가 먼저냐 — 이 등장하지만, 문대원은 <span class="wl-dead" title="위키 내부 링크">크리스토퍼 라이트</span>를 빌려 그 물음 자체를 해체한다.</p>
+<blockquote>
+<p>"복음 전도와 사회적 책임의 관계를 설명할 때, 궁극성이라는 개념이 우선성이라는 개념보다 더 효과적이다." — 크리스토퍼 라이트</p>
+</blockquote>
+<p>우선성을 다투는 것은 의미 없는 질문이다. 목적은 복음을 전하는 것이고, 착한 행실을 통해 하나님의 성품이 드러나면(마 5:16) 순서는 상관없다. 이 통찰은 로드니 스타크의 초대교회 분석과 공명한다 — AD 165년 안토니우스 역병이 로마 인구의 4분의 1을 앗아가고 모두가 가족마저 버리고 도망칠 때, 그리스도인들은 그 자리에 남아 버려진 병자를 돌보았고 로마인들은 그들을 "위험을 무릅쓰는 자들"(파라볼라노이, parabolanoi)이라 불렀다. 이 자기희생적 사랑이 초대교회 성장의 핵심 동력이었다는 것이다.</p>
+<p>다만 선교적 교회의 구제는 시혜가 아니다. 문대원은 교회의 구제와 NGO의 구제를 가르는 선을 <span class="wl-dead" title="위키 내부 링크">잠 14:31</span>에서 찾는다 — "가난한 사람을 학대하는 자는 그를 지으신 이를 멸시하는 자요." 모든 사람이 하나님의 형상으로 지어졌음을 기억할 때에야 도움을 주는 자가 받는 자를 무시하지 않는 동등한 관계가 가능하고, 물고기를 잡아 주는 대신 잡는 법을 가르치는 지속 가능한 자립의 구제가 된다. (전도와 사회적 책임의 신학적 관계, 총체적 선교의 5대 표지와 역사적 전개는 <a class="wl" href="../../t/%EC%B4%9D%EC%B2%B4%EC%A0%81%EC%84%A0%EA%B5%90/">총체적선교</a>에 위임한다.)</p>
+<h2>6. 성육신적 현존 — 다음세대와 참여의 영성</h2>
+<p>말과 행위가 만나는 자리는 결국 사람의 몸이다. 이상훈은 선교적 사역을 세 방향으로 정식화하는데, 그 첫째가 <strong>성육신적 사역</strong>(incarnational) — 공동체 안으로 찾아 들어가 동일화하는 사역이고, 나머지는 문화 안으로 들어가는 토착적 사역과 지속적인 의도적 사역이다. "상품과 서비스로 교회로 모으는 시대는 끝났다"는 그의 단언은, 매력(attraction)으로 사람을 모으는 교회에서 세상 속으로 들어가는 파송(sending)의 교회로의 전환을 요구한다. 사람들이 교회를 떠나는 이유가 "하나님 만나러 갔는데 하나님이 계시지 않아서"라는 그의 진단은 아프도록 정확하다.</p>
+<p>성육신적 현존은 다음세대에서 가장 시험받는다. 문대원은 <span class="wl-dead" title="위키 내부 링크">딤후 3:10–17</span>에서 신실함의 모델을 읽는다 — 바울이 디모데에게 "네가 과연 보고 알았거니와"라고 말할 때, 디모데는 자기 고향 루스드라에서 바울이 돌에 맞으면서도 로마 시민권의 특권을 숨긴 채 복음을 지킨 것을 눈으로 보았다. 스탠리 하우어워스의 명제 — "윤리는 행함(doing)의 문제이기 전에 먼저 봄(seeing)의 방식이다" — 처럼, 다음세대는 가르침이 아니라 본을 보고 배운다. 그래서 4–14 window, 곧 회심의 63%가 일어나는 4–14세 세대는 "현존하는 미래"다. 다음세대를 향한 진지한 고민이 있는 교회가 선교적 교회다.</p>
+<p>성육신적 현존이 개인의 영웅주의가 아님을 이사님(이상협)의 설교 「<span class="wl-dead" title="위키 내부 링크">미셔널 공동체</span>」가 짚는다. 예수는 칠십 인을 "둘씩" 보내셨다(<span class="wl-dead" title="위키 내부 링크">눅 10:1</span>) — 세상에 보내질 때에도 우리는 공동체다. 그 파송의 목적은 샬롬(shalom, 평안)이며, 방식은 참여의 영성이다 — "거기 있는 것을 먹고 마시라"(7절)는 말씀처럼, 차려진 것은 우리가 준비한 것이 아니라 그들의 문화이고 우리는 그 문화에 들어가는 손님이다. 다만 다니엘처럼 정체성은 드러내야 한다. 그렇게 참여하다 보면 그들이 먼저 "너희 속에 있는 소망에 관한 이유"(벧전 3:15)를 묻게 된다. (둘씩 보냄에서 자라나는 공동체의 형성 원리 — 리미널리티·커뮤니타스 — 는 <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B3%B5%EB%8F%99%EC%B2%B4/">선교적공동체</a>에 위임한다.)</p>
+<h2>7. 흩어지는 교회 — 센트처치의 실천</h2>
+<p>선교적 교회론이 강단의 이론에 그치지 않으려면 흩어짐의 실천으로 육화되어야 한다. 이 볼트의 두 실천 모델이 그 육화를 보여준다.</p>
+<p>첫째, <strong>CMF 센트처치</strong>다. 지역 교회가 지역사회로 보내지듯, <span class="wl-dead" title="위키 내부 링크">한국누가회(CMF)</span>는 의료사회로 보내진 센트처치(sent church)로 자신을 이해한다(<span class="wl-dead" title="위키 내부 링크">의료사회회복프로젝트</span>·<span class="wl-dead" title="위키 내부 링크">놀면뭐하니</span>). 여기서 앨런 허쉬가 빅터 터너에게서 빌려온 개념이 작동한다 — 안전지대(comfort zone)를 벗어난 경계성(liminality)에서 커뮤니타스(communitas, 문턱을 함께 넘은 이들의 연대)가 태어난다. 하나님은 사람을 경계선·보더라인으로 보내시고, 거기서 억압받는 자의 부르짖음(제아카)을 들으시며 공동체를 빚으신다. 그러나 절대 혼자 보내지 않으신다 — 둘씩, 공동체로(<span class="wl-dead" title="위키 내부 링크">눅 10:1</span>). CMF의 사명은 세 축으로 확장된다: 신앙 성장 / 의료사회 변화 / 이웃·사회 사랑.</p>
+<p>둘째, <strong>인비저블 처치</strong>다. <a class="wl" href="../../b/%EC%9D%B8%EB%B9%84%EC%A0%80%EB%B8%94%EC%B2%98%EC%B9%98_%EA%B9%80%EC%84%B1%EA%B7%9C/">김성규</a>가 개척한 도심 속 '보이지 않는 교회'는 "오게 하는 교회"에서 "찾아가는 교회"로의 패러다임 전환을 실천한다 — "복음이 배척받는 것보다 교회가 배척받는 것이 크다"는 문제의식에서다. 성경적 근거는 두 본문이다. <span class="wl-dead" title="위키 내부 링크">행 8장</span> 빌립의 사마리아 사역은 초대교회 최초의 목적적 '찾아가기'이고, <span class="wl-dead" title="위키 내부 링크">대하 17장</span> 여호사밧은 신하·레위인·제사장을 모든 성읍으로 흩어 보냈다. 바이블 트래킹·프레이어 워크·북클럽·SNS 개척 같은 형태로, 교회는 건물 안에 모이기보다 도시 속으로 흩어진다.</p>
+<p>흩어지는 교회의 또 하나의 전선은 다가온 이주민이다. 문대원은 <span class="wl-dead" title="위키 내부 링크">히 13장</span> 강해에서 나그네 사랑을 명령하며 — "너희도 애굽 땅에서 나그네 되었음이니라"(신 10:19) — 이주민 사역이 선택이 아니라 필수임을 역설하고, Friendship→Assembly→Independence→Trans-Mission→Hub의 FAITH 5단계로 역파송까지 내다본다. "선교는 지리적 개념이 아니라 문화적 개념"(한철호)이라는 명제가 여기서 구체화된다. (이주·디아스포라 신학의 전개는 <a class="wl" href="../../t/%EB%94%94%EC%95%84%EC%8A%A4%ED%8F%AC%EB%9D%BC%EC%84%A0%EA%B5%90/">디아스포라선교</a>·<a class="wl" href="../../t/%EC%9D%B4%EC%A3%BC%EB%AF%BC%EC%84%A0%EA%B5%90/">이주민선교</a>에 위임한다.)</p>
+<h2>8. 의의와 한계 — "모든 것이 선교"라는 위험</h2>
+<p>선교적 교회론은 무비판적으로 수용할 담론이 아니다. MBTS 강의는 그 의의와 한계를 나란히 짚는다. 의의는 분명하다 — 교회의 본질을 회복하고 크리스텐덤 이후 사회에서 복음의 영향력을 되살린다. 그러나 세 가지 약점이 그림자처럼 따라붙는다. 첫째, 관심이 지역(local) 중심으로 쏠리면서 <strong>미전도 종족 선교가 오히려 약화</strong>될 수 있다. 둘째, "모든 것이 선교"라는 확장된 정의가 역설적으로 <strong>"어떤 것도 선교가 아닐 수 있다"는 개념의 공허화</strong>로 이어질 위험이다. 셋째, 한국적 적용에서 <strong>해외선교와 파라처치(선교단체)에 대한 무관심</strong>으로 귀결될 수 있다.</p>
+<p>한철호는 여기에 실천적 처방을 더한다. 존재(being)를 앞세운다고 해서 아무나 내보내도 된다는 뜻은 아니다 — "준비 안 된 백 명보다 준비되고 검증된 한 명을 보내야 한다." 그가 제시하는 이중 선별(double screening)은 선교단체의 굵은 채와 공동체의 촘촘한 채로 헌신자를 함께 걸러내는 구조이고, 사과나무 비유는 방향을 응축한다 — "내 사과나무에 사과가 많이 열리는 것이 아니라, 다른 한 사과나무가 생기고 그 나무에서 열매가 열리는 것이 목표다." 촉매이지 대리가 아니라는 원칙("손을 떼면 무너지는 미니스트리는 잘못한 것") 또한 선교적 열심이 의존을 낳지 않도록 지키는 안전장치다.</p>
+<p>결국 선교적 교회론의 미래는 균형에 달려 있다. 보냄받은 교회라는 정체성을 회복하되 파송하는 교회를 버리지 않고, 지역을 품되 땅끝을 놓치지 않으며, "모든 삶이 선교"라는 통찰을 붙들되 그것이 아무것도 아닌 것으로 흩어지지 않게 하는 분별 — 그 좁은 길 위에서만 선교적 교회는 유행어가 아니라 교회론의 회복으로 남는다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>선교적 교회의 핵심은 주어의 전복이다 — 선교의 주체는 교회가 아니라 하나님이시며, 교회는 그 선교에 참여하도록 보냄받은 도구다. "센더는 하나님뿐이다."</li>
+<li>두 전환이 짝을 이룬다: 행위에서 존재로(doing→being), 보내는 교회에서 보냄받은 교회로(sending→sent). 존재가 회복되지 않은 행위는 선교에 해가 될 수 있다.</li>
+<li>선교적 교회와 선교하는 교회는 대립이 아니라 상호 보완이다 — 파송을 버리는 것이 아니라, 온 성도가 자기 자리에서 보냄받은 자로 사는 데까지 확장하는 것이다.</li>
+<li>교회는 자기 성장을 목표로 삼는 순간 존재 이유를 배반한다. 은혜의 목적은 교회의 유익이 아니라 하나님의 선교이며, 하나님의 선교의 첫 대상은 교회 자신이다.</li>
+<li>말과 행위는 갈라지지 않는다 — 궁극성이 우선성보다 효과적이라는 라이트의 명제가 "복음이 먼저냐 구제가 먼저냐"의 물음을 해체한다. 단, 형상 존중이 시혜적 구제와 선교적 구제를 가른다.</li>
+<li>성육신적 현존은 개인의 영웅주의가 아니라 둘씩 보냄받은 공동체의 참여의 영성이며, 다음세대는 가르침이 아니라 본(seeing)을 통해 신실함을 물려받는다.</li>
+<li>"모든 것이 선교"라는 확장은 자칫 "아무것도 선교가 아님"으로 공허해질 수 있다 — 미전도 종족·파라처치를 놓치지 않는 분별과 검증된 파송이 선교적 교회론의 안전장치다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>매력(attraction)과 파송(sending)은 배타적 선택인가, 통합 가능한 긴장인가 — 좋은 예배·돌봄·환경이 그 자체로 선교적 접촉점이 될 수 있다면, 어트랙셔널과 미셔널의 이분법은 어디서 무너지는가.</li>
+<li>"모든 삶이 선교"와 "미전도 종족 선교" 사이에서, 무엇이 선교이고 무엇이 아닌지를 가르는 실천적 경계선은 어떻게 그을 수 있는가. (MBTS 강의가 열어둔 물음)</li>
+<li>서구 크리스텐덤 붕괴에서 태어난 선교적 교회론을, 크리스텐덤을 경험한 적 없는 한국 교회사의 맥락에 그대로 적용할 때 생기는 오독 가능성은 무엇인가.</li>
+<li>"교회가 먼저 변화되어야 한다"는 명제가 내향적 자기 돌봄에 매몰되지 않고 파송으로 이어지려면, 변화와 흩어짐의 균형을 어떤 기제로 유지하는가.</li>
+<li>검증된 제자만 보내라는 원칙과 "다 준비되지 않아도 나갈 수 있다"(눅 10:4, 이상협)는 파송의 자유는 어떻게 양립하는가 — 준비의 문턱과 순종의 즉시성 사이.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A0%EA%B5%90/">하나님의선교</a> · <a class="wl" href="../../t/%EB%AF%B8%EC%94%A8%EC%98%A4%EB%8D%B0%EC%9D%B4/">미씨오데이</a> — 선교의 주체가 하나님이시라는 신학적 기반(이 허브는 그 결론을 교회론에 적용).</li>
+<li><a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%A1%A0/">교회론</a> — 교회의 본질·표지·직분·구조. 선교적 교회는 그 교회론의 '보냄' 방향을 특화한 허브.</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B3%B5%EB%8F%99%EC%B2%B4/">선교적공동체</a> — 둘씩 보냄에서 자라나는 리미널리티·커뮤니타스의 공동체 축.</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EC%82%B6/">선교적삶</a> — 보냄받은 교회의 정체성을 일상의 자리(직장·가정·이웃)에서 사는 방식.</li>
+<li><a class="wl" href="../../t/%EC%B4%9D%EC%B2%B4%EC%A0%81%EC%84%A0%EA%B5%90/">총체적선교</a> — 전도와 사회적 책임을 아우르는 선교의 범위와 로잔 계보.</li>
+<li><a class="wl" href="../../t/%EB%94%94%EC%95%84%EC%8A%A4%ED%8F%AC%EB%9D%BC%EC%84%A0%EA%B5%90/">디아스포라선교</a> · <a class="wl" href="../../t/%EC%9D%B4%EC%A3%BC%EB%AF%BC%EC%84%A0%EA%B5%90/">이주민선교</a> — 다가온 땅끝, 이주민을 향한 흩어지는 교회의 실천.</li>
+<li><a class="wl" href="../../t/%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%85%90%EB%8D%A4/">크리스텐덤</a> — 선교적 교회론이 응답하는 역사적 배경.</li>
+<li><a class="wl" href="../../t/%EA%B3%A0%EB%82%9C%EB%B0%9B%EB%8A%94%EC%A2%85/">고난받는종</a> — "이방의 빛"(사 49:6) 소명의 구약적 원천이 교회의 선교로 흐르는 자리.</li>
+<li><span class="wl-dead" title="위키 내부 링크">문대원_선교적교회시리즈</span> — 마5·약1·히13·신10·딤후3·골1을 관통하는 7부작 강단.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2023_선교적교회1_CityonaHill</span></td>
+<td>설교(문대원)</td>
+<td>마5 소금과 빛, 대안 공동체, City on a Hill 청교도사, 인테그리티, 라이트 궁극성 vs 우선성</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2023_선교적교회2_고아와과부의하나님</span></td>
+<td>설교(문대원)</td>
+<td>약1 경건=하나님 닮기, being&gt;doing, 이마고 데이→미씨오 데이, 로드니 스타크</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2023_선교적교회3_천사를대접한이들</span></td>
+<td>설교(문대원)</td>
+<td>히13 나그네 사랑, 이주민 선교 FAITH 5단계, 본향을 사모하는 나그네</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2023_선교적교회4_복음과방울토마토</span></td>
+<td>설교(문대원)</td>
+<td>신10 언약적 사랑, 마음의 할례, 다원주의 사회가 들어야 할 복음</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2023_선교적교회5_현존하는미래</span></td>
+<td>설교(문대원)</td>
+<td>딤후3 신실함의 모델, 보고 배움(하우어워스), 다음세대 4–14 window</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2023_선교적교회7_하나님의마스터플랜</span></td>
+<td>설교(문대원)</td>
+<td>골1 창조·교회·구원, sending vs sent church, 로잔 언약 5항</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">06주_선교적교회론</span></td>
+<td>강의(임태순)</td>
+<td>뉴비긴·크리스텐덤 붕괴·복음과우리문화, 의의와 한계, 월스·행15</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2019_이상훈_미셔널처치운동_로드맵</span></td>
+<td>강의(이상훈)</td>
+<td>죽어가는 교회, "하나님이 곧 선교사", attractional→missional, 성육신적 사역</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2018_한철호_선교적교회와_총체적선교</span></td>
+<td>강의(한철호)</td>
+<td>doing→being, sent church(요17:18), 검증된 제자·이중 선별, 사과나무 비유</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">설교_미셔널_공동체</span></td>
+<td>설교(이상협)</td>
+<td>눅10 둘씩 파송, 참여의 영성, 샬롬, 정체성 드러내기</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B3%B5%EB%8F%99%EC%B2%B4%EC%84%B8%EC%9A%B0%EA%B8%B0_%EB%AF%B8%EC%85%94%EB%84%90%EC%8B%A0%ED%95%99%EC%97%B0%EA%B5%AC%EC%86%8C/">선교적공동체세우기_미셔널신학연구소</a></td>
+<td>책(워크북)</td>
+<td>미씨오=보냄, "교회가 하나님의 선교의 첫 대상", 공동체의 삶=복음의 해설서</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%9D%B8%EB%B9%84%EC%A0%80%EB%B8%94%EC%B2%98%EC%B9%98_%EA%B9%80%EC%84%B1%EA%B7%9C/">인비저블처치_김성규</a></td>
+<td>책(김성규)</td>
+<td>오게 하는 교회→찾아가는 교회, 행8 빌립·대하17 여호사밧</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A0%EA%B5%90%EC%84%B8%EC%83%81%EC%9D%84%EB%B0%94%EA%BE%B8%EB%8B%A4_%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%86%A0%ED%8D%BC%EB%9D%BC%EC%9D%B4%ED%8A%B8/">하나님의선교세상을바꾸다_크리스토퍼라이트</a></td>
+<td>책(라이트)</td>
+<td>궁극성&gt;우선성의 논리, 선교 중심의 성경 읽기(참조)</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#domain/선교</span><span>#discipline/선교신학</span><span>#discipline/선교적교회</span><span>#크리스텐덤</span><span>#센트처치</span><span>#성육신적사역</span><span>#총체적선교</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

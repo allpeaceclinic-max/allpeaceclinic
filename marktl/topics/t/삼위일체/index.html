@@ -1,0 +1,256 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>삼위일체 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:226">조직신학·교리</span><span class="date">2026-06-23</span></div>
+  <h1 class="note-title">삼위일체</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>삼위일체(Trinity)는 기독교 신앙의 핵심 교리다. <strong>한 본질(ousia) 안에 세 위격(hypostasis)</strong> — 성부·성자·성령이 각각 완전한 하나님이시며, 동시에 세 위격이 하나의 하나님이시다. MBTS 조직신학I에서 정리한 용어로, 삼위의 각 위 간 유일한 차이는 서로의 관계와 피조물과 상관하는 방법뿐이며, 이것을 '존재론적 동등이지만 경륜적 종속'(ontological equality but economic subordination)이라 한다.</p>
+<p>이 교리는 추상적 사변이 아니다. 사랑의 본질, 교회의 원형, 선교의 뿌리가 모두 삼위일체에서 흘러나온다. 이 볼트의 설교와 강의는 삼위일체를 교실의 명제가 아니라 예배와 삶의 토대로 다루며, 그 핵심은 여섯 가지 축으로 수렴한다.</p>
+<hr />
+<h2>1. 사랑의 공동체 — "하나님은 사랑이시다"의 근거</h2>
+<p>"하나님은 사랑이시다"(요일 4:8)는 기독교에서 가장 많이 인용되는 문장 중 하나다. 그런데 이 문장이 성립하려면 전제가 필요하다. 사랑은 관계를 요구한다. 만약 하나님이 한 위격이시라면 창조 이전에는 사랑의 대상이 없었을 것이고, 사랑은 하나님의 본질이 아니라 창조 이후에 발생한 속성이 된다.</p>
+<p>삼위일체 교리가 이 난제를 해결한다. 창세 전부터 성부와 성자와 성령 안에 영원한 사랑의 교제가 있었다. 권성수 목사님은 요한일서 4:7-12 강해에서 이것을 "삼위일체의 완벽한 사랑의 교제, 이것이 사랑의 본질이다"라고 선포한다. MBTS 조직신학I은 이것을 신학적으로 전개한다 — 성부는 성자를 사랑하고, 성자는 그 사랑에 보답하며, 성부와 성자 사이의 이 사랑이 성령이시다. 영원토록 하나님은 사회적 삼위일체(social Trinity), 사랑의 공동체이시다.</p>
+<p>요한복음 17:20-26 강해에서 권성수 목사님은 삼위의 하나됨을 한 단어로 요약한다. <strong>에하드(אֶחָד)</strong> — 히브리어로 '하나'이며, 단순한 단일성이 아니라 연합 안의 하나됨을 뜻한다. "삼위는 마찰, 싸우지 않는다. 미워하시지 않는다. 완벽한 사랑의 공동체를 이루고 계신다." 이 공동체 안에는 질투도, 경쟁도, 자기 주장도 없다. 그래서 이 사랑이 인간 사랑의 원천이자 기준이 된다(<span class="wl-dead" title="위키 내부 링크">요일4</span>, <span class="wl-dead" title="위키 내부 링크">요17</span>).</p>
+<hr />
+<h2>2. 삼위의 질서 — 순종은 열등함이 아니다</h2>
+<p>이 사랑의 공동체 안에는 질서(taxis)가 있다. 성부가 성자를 보내시고, 성자가 성부께 순종하시며, 성령이 성자를 드러내신다. 그러나 이 질서는 존재론적 열등함을 의미하지 않는다. 완벽한 사랑의 공동체 안에서 자발적으로 이루어지는 관계의 질서다.</p>
+<p>권성수 목사님은 요한복음 16:12-15 강해(성능체험 시리즈 11강)에서 이것을 설명한다. "성자의 것은 성부의 것이다. 순서가 있다. 성부가 성자를 보내셨다." 그리고 이 강해에서 성령의 사역을 인상적인 비유로 묘사한다. 성령은 '투광 조명기(floodlighting)'처럼 예수님을 조명하고, 자신을 드러내지 않으신다. "나를 따르라, 나를 봐라" 하지 않으시고 오직 예수님께 초점을 맞추신다. 이것은 열등해서가 아니라, 삼위 안의 관계가 자기 비움과 상호 영광 돌림으로 이루어져 있기 때문이다(<span class="wl-dead" title="위키 내부 링크">요16</span>).</p>
+<p>이 질서는 가정과 교회의 질서에 대한 신학적 근거가 된다. 질서가 가치의 차이를 뜻하지 않는다는 것, 순종이 열등함의 표시가 아니라 사랑의 표현이라는 것 — 이 원리는 삼위일체의 내적 생명에서 비롯된다.</p>
+<hr />
+<h2>3. 역사적 씨름 — 교회는 어떻게 삼위일체를 정의했나</h2>
+<p>이 이해에 도달하기까지 교회는 수세기를 씨름했다. MBTS 교회사I 2강은 초대교회가 직면한 두 방향의 위협을 추적한다.</p>
+<p>첫째는 <strong>하나님의 단일성을 지키려다 위격 구분을 잃어버린 오류들</strong>이다. 양태론(사벨리우스주의)은 성부·성자·성령이 한 하나님의 세 역할(모드)일 뿐이라고 주장했다. 이 논리는 결국 성부가 십자가에서 죽으셨다는 성부수난설로 귀결된다. 역동적 군주신론(양자설)은 예수님이 세례 때 하나님의 능력을 부여받은 분일 뿐이라고 보아 성자의 선재와 영원한 신성을 부정했다(<a class="wl" href="../../t/%EC%9D%B4%EB%8B%A8%EB%85%BC%EC%9F%81/">이단논쟁</a>).</p>
+<p>둘째는 <strong>하나님의 통일성을 지키려다 성자를 피조물로 격하한 오류</strong>다. 아리우스는 "성자는 피조물 중 첫째이며 성부보다 열등하다"고 가르쳤고, 니케아 공의회(325년)에서 아타나시우스가 호모우시오스(ὁμοούσιος, 동일본질)라는 용어로 이를 반박했다.</p>
+<p>이 씨름의 한가운데서 삼위일체 신학의 언어를 만든 사람이 테르툴리아누스다. 그는 하나의 본질(una substantia), 위격(personae), 그리고 '트리니타스(trinitas)'라는 용어를 처음 사용했다. 로고스 기독론 — 예수 그리스도가 어떻게 하나님과 하나이면서 동시에 구분되는지를 설명하는 틀 — 은 이 용어들 위에서 발전했고, 삼위일체 신학의 토대가 되었다.</p>
+<h3>삼위일체 교리 형성 연대표</h3>
+<table>
+<thead>
+<tr>
+<th>시기</th>
+<th>인물 / 공의회</th>
+<th>핵심 기여</th>
+<th>대응한 오류</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2C 후반</td>
+<td><strong>테르툴리아누스</strong></td>
+<td><em>trinitas</em>, <em>una substantia</em>, <em>personae</em> 용어 창안</td>
+<td>다신론과 양태론 사이의 균형</td>
+</tr>
+<tr>
+<td>3C 초</td>
+<td>사벨리우스</td>
+<td><em>(이단)</em></td>
+<td><strong>양태론</strong> — 삼위는 한 하나님의 세 모드 → 성부수난설</td>
+</tr>
+<tr>
+<td>3C</td>
+<td>양자설 (역동적 군주신론)</td>
+<td><em>(이단)</em></td>
+<td>예수님은 세례 시 능력 부여받은 인간 → 선재·신성 부정</td>
+</tr>
+<tr>
+<td>318~</td>
+<td>아리우스</td>
+<td><em>(이단)</em></td>
+<td><strong>아리우스주의</strong> — 성자는 피조물 중 첫째 → 신성 격하</td>
+</tr>
+<tr>
+<td><strong>325</strong></td>
+<td><strong>니케아 공의회</strong></td>
+<td><strong>호모우시오스</strong>(ὁμοούσιος, 동일본질) 확정</td>
+<td>아리우스주의 정죄; 아타나시우스 주도</td>
+</tr>
+<tr>
+<td><strong>381</strong></td>
+<td><strong>콘스탄티노플 공의회</strong></td>
+<td>니케아 신경 확장; <strong>성령의 완전한 신성</strong> 확인</td>
+<td>마케도니우스파(성령 신성 부정) 정죄</td>
+</tr>
+<tr>
+<td><strong>451</strong></td>
+<td><strong>칼케돈 공의회</strong></td>
+<td>그리스도의 <strong>두 본성</strong>(신성+인성), 한 인격</td>
+<td>단성론·네스토리우스주의 정죄</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>읽는 법</strong>: 굵은 행은 정통 교리를 확정한 공의회, 일반 행은 이단적 주장과 그 대응이다. 세 공의회(니케아→콘스탄티노플→칼케돈)가 삼위일체 교리의 뼈대를 세웠다.</p>
+</blockquote>
+<p>삼위일체를 쉽게 설명하려는 비유들이 모두 이단으로 귀결된 것은 우연이 아니다. 물의 세 상태는 양태론이 되고, 달걀의 세 부분은 삼신론이 된다. 신비를 제거하려 할 때마다 교리는 왜곡되었다. 교회는 이 씨름을 통해, 삼위일체는 설명의 대상이 아니라 고백의 대상이라는 것을 배웠다.</p>
+<hr />
+<h2>4. 교회 하나됨의 원형 — 삼위의 에하드가 지상에 착지할 때</h2>
+<p>이렇게 확립된 삼위일체 교리는 교회의 자기 이해에 직접 영향을 미친다. 요한복음 17:20-26 강해에서 권성수 목사님은 삼위의 하나됨에서 교회의 하나됨으로 나아가는 구조를 제시한다 — 'a trinitarian-ecclesial self.' 하나님의 백성이 삼위일체 하나님을 본받아 하나가 되는 것, 우리가 삼위일체 하나님과 연결된 몸의 지체로 사는 것, 이것이 영생의 내용이다(<a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%A1%A0/">교회론</a>).</p>
+<p>교회가 분열할 때, 그것은 단순한 인간 갈등이 아니다. 삼위의 하나됨을 반영하지 못하는 것이다. 반대로 교회가 진정으로 하나될 때, 그것은 삼위일체의 내적 생명이 공동체 안에서 드러나는 것이다. MBTS 조직신학I은 이 원리를 더 넓게 적용한다 — 하나님의 통일성과 다양성의 관계는 인간관계에서도 반영된다. 결혼생활인 가정에서, 교회에서, 그리고 세계와 우주 속에서 하나님의 영광을 위해 다양성과 통일성이 함께 드러난다. 삼위일체는 교회론의 장식이 아니라 기초다.</p>
+<hr />
+<h2>5. 선교의 신학적 뿌리 — Missio Dei</h2>
+<p>삼위일체가 교회의 내적 원형이라면, 교회의 외적 사명인 선교 역시 삼위일체에 뿌리를 둔다. MBTS 선교학 1주 강의는 전통적 선교 이해를 뒤집는다. "소명을 받았기 때문에 선교한다는 설명보다, 삼위일체 하나님이 하시는 선교에 교회가 동참한다는 것이 대세이다."</p>
+<p>선교는 교회가 발명한 프로그램이 아니다. 삼위일체 하나님 자신의 보내시는 본성(missional nature)에서 흘러나온다. 파송의 삼위 구조가 이것을 보여준다 — 성부가 성자를 보내시고(요 3:16-17), 성부와 성자가 성령을 보내시며(요 14:26), 성부·성자·성령이 교회를 보내신다(요 20:21). 선교학 1주 독서과제는 이것을 정리한다. 성경의 내러티브 가운데 하나님의 나라를 향한 목적을 이루어 가시는 삼위일체 하나님이 선교의 주체가 되시는 것 — 이것이 미시오 데이(Missio Dei)다. 교회는 선교의 주체가 아니라, 삼위일체 하나님의 선교에 초대받은 참여자다(<a class="wl" href="../../t/%EB%AF%B8%EC%94%A8%EC%98%A4%EB%8D%B0%EC%9D%B4/">미씨오데이</a>).</p>
+<hr />
+<h2>6. 신비로서의 삼위일체 — 이해 아닌 경배</h2>
+<p>사랑의 공동체, 삼위의 질서, 역사적 씨름, 교회의 원형, 선교의 뿌리 — 삼위일체를 이만큼 이해한 뒤에도 여전히 남는 것은 신비다. MBTS 조직신학I 토론 에세이는 이 점을 솔직하게 인정한다.</p>
+<blockquote>
+<p>"우리는 결코 이 모든 것을 완전히 이해할 수 없으나, 삼위의 각 위가 서로 어떤 관계를 맺고 있는지는 어느 정도 이해할 수 있다 … 우리는 삼위일체의 신비를 결코 완전히 이해하지는 못하겠지만, 찬양을 통해 하나님을 경배할 수 있고, 말과 행위로 하나님의 탁월성을 어느 정도 반영할 수 있다."</p>
+</blockquote>
+<p>이 겸손이 올바른 태도다. 어거스틴이 바닷물을 모래구멍에 담을 수 없다고 고백했듯, 삼위일체의 신비를 완전히 해명하려는 모든 시도는 어김없이 이단으로 귀결되었다. 삼위일체는 풀어야 할 퍼즐이 아니라, 무릎 꿇어야 할 신비다.</p>
+<hr />
+<h2>핵심 인사이트</h2>
+<ul>
+<li><strong>사랑은 하나님의 본질이다 — 삼위 안에 영원한 사랑이 있기 때문이다</strong>: "하나님은 사랑이시다"는 명제는 삼위의 내적 교제 없이는 성립하지 않는다. 창조 이전부터 성부-성자-성령 안에 사랑의 교제가 있었기에 하나님은 사랑 자체이시다.</li>
+<li><strong>질서는 열등함이 아니다</strong>: 성자의 경륜적 종속은 존재론적 열등함이 아니다. 가정과 교회의 질서 역시 가치의 차이가 아닌 관계의 질서다.</li>
+<li><strong>삼위일체를 이해하는 관문은 요한복음이다</strong>: 권성수 목사님의 설교가 반복적으로 요 17장(하나됨), 요 14-16장(성령), 요일 4장(사랑)으로 돌아오는 것은 우연이 아니다. 요한 문서가 삼위일체의 내적 생명에 가장 깊이 접근한다.</li>
+<li><strong>교회 분열은 삼위일체 신학의 실패다</strong>: 교회가 하나되지 못하는 것은 삼위 하나님의 하나됨(에하드)을 지상에서 반영하지 못하는 것이다.</li>
+</ul>
+<hr />
+<h2>미해결 질문</h2>
+<ul>
+<li>성자의 영원한 순종(ESS, Eternal Subordination of the Son)은 존재론적 동등을 훼손하는가? (현대 복음주의 신학 논쟁)</li>
+<li>서방교회(Filioque: 성령은 성부와 성자에게서 나옴)와 동방교회(성령은 성부에게서만 나옴)의 차이를 어떻게 이해할 것인가?</li>
+<li>삼위일체를 이단적 왜곡 없이 일반 성도·다음세대에게 어떻게 가르칠 것인가?</li>
+</ul>
+<hr />
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%8B%A0%EB%A1%A0/">신론</a> — 삼위일체는 신론의 핵심; 유일신 신학 발전 5단계(니케아)</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EB%A1%A0/">기독론</a> — 삼위일체 안에서 성자의 위치; 니케아·칼케돈 공의회; 아리우스주의 이단 분별</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EB%A0%B9%EB%A1%A0/">성령론</a> — 삼위일체 안에서 성령의 위격; 페리코레시스; Filioque 논쟁</li>
+<li><a class="wl" href="../../t/%EA%B5%AC%EC%9B%90%EB%A1%A0/">구원론</a> — 성부의 선택, 성자의 속죄, 성령의 적용 — 삼위의 협력</li>
+<li><a class="wl" href="../../t/%EB%AF%B8%EC%94%A8%EC%98%A4%EB%8D%B0%EC%9D%B4/">미씨오데이</a> — 선교하시는 삼위일체 하나님 (파송 구조)</li>
+<li><a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%A1%A0/">교회론</a> — 삼위의 하나됨이 교회 연합의 원형 (요 17)</li>
+<li><a class="wl" href="../../t/%EC%9D%B4%EB%8B%A8%EB%85%BC%EC%9F%81/">이단논쟁</a> — 양태론·아리우스주의·삼신론 분별</li>
+</ul>
+<hr />
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>raw/sermons/권성수목사님/2016년/요1720-26 하나</code></td>
+<td>설교</td>
+<td>삼위 하나됨 → 교회 하나됨; 에하드; trinitarian-ecclesial self</td>
+</tr>
+<tr>
+<td><code>raw/sermons/권성수목사님/교제/요일47-12 하나님은 사랑</code></td>
+<td>설교</td>
+<td>삼위일체의 완벽한 사랑의 교제 = 사랑의 본질</td>
+</tr>
+<tr>
+<td><code>raw/sermons/권성수목사님/성능체험/(성능체험11)요1612-15 진리의 성령</code></td>
+<td>설교</td>
+<td>성부→성자→성령 질서; 어거스틴 비유; 성령의 투광 조명</td>
+</tr>
+<tr>
+<td><code>raw/lectures/MBTS/조직신학I/4주 토론</code></td>
+<td>MBTS 강의</td>
+<td>삼위일체 정의; social Trinity; 통일성과 다양성의 인간 반영</td>
+</tr>
+<tr>
+<td><code>raw/lectures/MBTS/교회사I/2강 초대교회의 신앙정립</code></td>
+<td>MBTS 강의</td>
+<td>Tertullian 용어 정립; 양태론·양자설·로고스 기독론 발전</td>
+</tr>
+<tr>
+<td><code>raw/lectures/MBTS/선교학/1주</code></td>
+<td>MBTS 강의</td>
+<td>Missio Dei — 삼위일체 하나님의 선교에 교회가 동참</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/조직신학</span><span>#discipline/삼위일체론</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

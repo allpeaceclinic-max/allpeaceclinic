@@ -1,0 +1,141 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>청소년사역 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:140">목회·실천</span><span class="date">2026-06-28</span></div>
+  <h1 class="note-title">청소년사역</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>청소년사역은 청소년기(약 12–18세)의 신앙 형성과 정체성 확립을 위한 교회·가정·교육 공동체의 통합적 노력을 가리킨다. 이 볼트에 수록된 강의들에서 청소년사역은 별도의 프로그램이나 부서 사역보다 <strong>가정을 1차 현장</strong>으로, 부모를 핵심 사역자로 보는 관점을 일관되게 취한다.</p>
+<p>황규명 교수는 청소년기를 "황금 같은 기회의 시간"으로 재정의하며, 비관주의와 복지부동에서 탈피할 것을 촉구한다. 윤명숙 교수는 부모의 역할 유형을 목적론적으로 분석하며, 올바른 부모 됨이 청소년사역의 실제 내용임을 논증한다.</p>
+<h2>1. 패러다임 전환: 위기에서 기회로</h2>
+<p>황규명은 청소년 비관주의의 신학적 진단을 내린다. 사회에 만연한 "이 시기만 무사히 지나갔으면" 하는 소극적 태도의 근저에는 <strong>믿음의 문제</strong>가 있다. 부모가 하나님의 말씀 대신 "호르몬"이나 "세상의 말"을 더 믿기 때문에 무력해진다는 것이다.</p>
+<p>이 관점 역전은 청소년사역의 방향을 바꾼다. 청소년기는 신앙적 회의(창조론·진화론 논쟁), 정체성 탐색, 독립 욕구가 폭발하는 시기다. 이 모든 움직임이 "다루기 어려운 문제"가 아니라 <strong>하나님을 진지하게 찾는 기회</strong>로 전환될 수 있다. 단, 이를 위해서는 성경에 근거한 진지한 씨름을 피하지 않는 부모와 교육자가 필요하다.</p>
+<h2>2. 부모의 역할 유형: 윤명숙의 목적론적 분석</h2>
+<p>윤명숙 교수는 부모의 역할을 창세기 1:28의 창조 위임에 근거한 목적론적 관점으로 분석한다. 자녀는 부모의 소유가 아니라 하나님께 위탁받은 존재다. 이 위탁 개념은 부모 역할의 근거를 재설정한다.</p>
+<p>그녀는 부모 유형을 적극적/반응적, 그리고 전제형(권위주의)/자유방임형의 두 축으로 분류하며, 유대관계(attachment)를 중심에 둔다. 단순한 양육 기법이 아니라 <strong>부모-자녀 관계의 질</strong>이 청소년 신앙 형성의 토대라는 주장이다.</p>
+<h2>3. 우상론: 마음의 진단 도구</h2>
+<p>황규명의 가장 독특한 기여는 청소년사역을 <strong>우상론(idolatry)</strong>의 렌즈로 해석하는 것이다. 청소년 문제와 부모-자녀 갈등의 표면 아래에는 양쪽의 마음 우상이 작동하고 있다.</p>
+<ul>
+<li><strong>안락함의 우상</strong>: 지친 부모가 쉬고 싶은데 자녀 문제가 개입될 때 치미는 분노</li>
+<li><strong>존경의 우상</strong>: "내 자녀가 잘 되어야 내가 인정받는다"는 기대</li>
+<li><strong>보답의 우상</strong>: "내가 이만큼 희생했으면 자녀가 보답해야 한다"</li>
+<li><strong>성공의 우상</strong>: 자녀의 성취를 통해 주변의 칭찬을 받으려는 욕구</li>
+<li><strong>통제의 우상</strong>: 끝까지 자녀를 통제하려는 충동("끝까지 통제하는 것은 무덤 파는 것")</li>
+</ul>
+<p>이 진단은 청소년사역을 기법 제공이 아닌 <strong>부모 자신의 영적 성찰</strong>로 끌어올린다.</p>
+<h2>4. 정체성: 자존감에서 하나님의 자녀로</h2>
+<p>황규명은 자존감 담론에 신학적 반론을 제기한다. 폴 비츠(<em>Psychology as Religion</em>), 진 트웬지(<em>Generation Me</em>) 등을 인용하며, 자존감 향상이 청소년 문제의 해결책이 아님을 논증한다. "자존감이 높은 사람은 자존감에 신경 쓰지 않는다"는 역설적 관찰이 핵심이다.</p>
+<p>대안은 <strong>정체성의 재정의</strong>다. 여호수아·갈렙이 아낙 자손 앞에서도 "우리가 이긴다"고 할 수 있었던 것은 자존감이 높아서가 아니라 하나님께 관심을 두었기 때문이다. 다윗이 골리앗 앞에서 "만군의 여호와의 이름으로 가노라"(삼상 17:45)고 한 것도 마찬가지다. "하나님의 자녀"라는 정체성이 확립될 때, 자존감 문제는 끝난다.</p>
+<h2>5. 가정: 청소년사역의 1차 현장</h2>
+<p>사사기 2:6-15는 여호수아 세대 이후 단 한 세대 만에 신앙 전수가 끊긴 사례다. 황규명은 이 본문을 통해 청소년사역의 1차 현장이 교회 부서가 아니라 가정임을 강조한다. 가정이 신학적(하나님을 처음 배우는 곳)·사회적(더불어 사는 법을 배우는 곳)·구속적(용서와 자백을 경험하는 곳) 공동체 기능을 갖출 때, 신앙 전수가 일어난다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>청소년기는 위기가 아니라 기회다. 이 패러다임 전환이 청소년사역의 출발점이다.</li>
+<li>청소년 문제의 뿌리는 종종 부모 자신의 마음 우상에 있다. 청소년사역은 부모 사역이기도 하다.</li>
+<li>자존감이 아닌 정체성이 답이다. "하나님의 자녀"라는 정체성 형성이 청소년사역의 핵심 목표다.</li>
+<li>부모-자녀 유대관계(attachment)의 질이 신앙 전수의 토대다. 기법 이전에 관계다.</li>
+<li>가정예배는 형식이 아니라 관계 속에서, 진정성 있게 드려질 때 신앙 전수의 통로가 된다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>가정이 붕괴되거나 기능하지 않을 때, 교회는 청소년의 신앙 형성을 어떻게 담당해야 하는가?</li>
+<li>자존감 담론에 대한 신학적 반론이 임상적 우울·수치심 문제를 가진 청소년에게도 그대로 적용되는가?</li>
+<li>청소년의 신앙 의심(창조론·진화론 논쟁 등)에 부모가 직접 대응할 수 없을 때 교회의 역할은 무엇인가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%82%AC%EC%B6%98%EA%B8%B0/">사춘기</a> — 청소년사역 대상의 발달 특성</li>
+<li><a class="wl" href="../../t/%EC%9E%90%EB%85%80%EC%96%91%EC%9C%A1/">자녀양육</a> — 가정에서의 신앙 전수</li>
+<li><a class="wl" href="../../t/%EB%B6%80%EB%AA%A8%EA%B5%90%EC%9C%A1/">부모교육</a> — 부모가 핵심 사역자임을 전제한 훈련</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EA%B5%90%EC%9C%A1/">기독교교육</a> — 청소년사역의 교육학적 틀</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%83%81%EB%8B%B4/">기독교상담</a> — 마음의 우상 진단과 상담 접근</li>
+<li><a class="wl" href="../../t/%EB%AF%BF%EC%9D%8C/">믿음</a> — 청소년의 신앙 형성 목표</li>
+</ul>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/기독교교육</span><span>#topic/청소년사역</span><span>#topic/부모교육</span><span>#topic/자녀양육</span><span>#topic/사춘기</span><span>#topic/기독교상담</span><span>#topic/신앙형성</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

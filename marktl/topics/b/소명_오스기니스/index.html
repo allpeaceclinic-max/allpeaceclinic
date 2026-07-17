@@ -1,0 +1,391 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>소명 (The Call) — 오스 기니스 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:226">리더십·일·경영</span><span class="author">[[people/오스기니스]]</span><span class="date">2026-05-03</span></div>
+  <h1 class="note-title">소명 (The Call) — 오스 기니스</h1>
+  
+</header>
+<article class="note">
+<p><strong>저자</strong>: <span class="wl-dead" title="위키 내부 링크">오스기니스</span> (Os Guinness)<br />
+<strong>원서</strong>: <em>The Call: Finding and Fulfilling the Central Purpose of Your Life</em> (1998)<br />
+<strong>분류</strong>: 소명신학 / 직업신학 / 제자도<br />
+<strong>용도</strong>: <span class="wl-dead" title="위키 내부 링크">진로상담</span> 주교재 / 소명 강의 기반 교재</p>
+<blockquote>
+<p>"하나님이 우리를 너무나 결정적으로 부르셨기에, 그분의 소환과 은혜에 응답하여<br />
+<strong>우리의 모든 존재, 우리의 모든 행위, 우리의 모든 소유가</strong> 헌신적이고 역동적으로<br />
+그분을 섬기는 데 투자된다는 진리다." (21p)</p>
+</blockquote>
+<hr />
+<h2>1. 인생의 목적 — 세 가지 답</h2>
+<table>
+<thead>
+<tr>
+<th>관점</th>
+<th>내용</th>
+<th>한계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>동양(힌두·불교)</strong></td>
+<td>자유 = 개별성으로부터의 탈출, 탈육신</td>
+<td>개별성을 부정</td>
+</tr>
+<tr>
+<td><strong>세속주의·무신론</strong></td>
+<td>각자 정하기 나름</td>
+<td>목적의 공백</td>
+</tr>
+<tr>
+<td><strong>성경적 대답</strong></td>
+<td>어떤 존재로 창조됐는가 + 어떤 존재로 부름받았는가</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>→ 소명이란 이 두 질문이 합쳐지는 지점: 창조와 부르심의 통합</p>
+<hr />
+<h2>2. 추구자의 세 유형</h2>
+<table>
+<thead>
+<tr>
+<th>유형</th>
+<th>특징</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>표류자</strong></td>
+<td>열린 마음, 추구 자체가 보상</td>
+<td>열린 마음 = 텅 빈 머리. 관용 = 무신론과 무구별</td>
+</tr>
+<tr>
+<td><strong>에로스의 추구자</strong></td>
+<td>갈망하는 목표를 향한 '위대한 상승'</td>
+<td>욕망의 대상이 계속 결핍 — 충족 불가</td>
+</tr>
+<tr>
+<td><strong>아가페의 추구자</strong></td>
+<td>하나님이 먼저 찾아오시는 '위대한 하강'</td>
+<td>추구자가 추적당한다 — C.S. 루이스</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"우리가 집으로 갈 수 있는 것은 길을 발견했기 때문이 아니고,<br />
+그곳에서 줄곧 우리를 기다리고 계셨던 아버지가 부르셨기 때문이다."</p>
+</blockquote>
+<hr />
+<h2>3. 나는 누구인가 — 정체성의 세 입장</h2>
+<table>
+<thead>
+<tr>
+<th>입장</th>
+<th>내용</th>
+<th>한계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>프레임(마르크스·프로이트·페미니즘)</strong></td>
+<td>계급·신경증·성으로 개인 해석</td>
+<td>개별성 무시</td>
+</tr>
+<tr>
+<td><strong>존재의 용기(니체)</strong></td>
+<td>의지의 힘으로 스스로 의미 창조, 초인</td>
+<td>능력은 있어도 목적이 텅 빔</td>
+</tr>
+<tr>
+<td><strong>타고난 존재</strong></td>
+<td>운명·사전 결정론</td>
+<td>자유와 책임 부재</td>
+</tr>
+</tbody>
+</table>
+<p>→ 성경적 답: <strong>"우리는 존재로 속박받은 것이 아니라 존재로 부름받은 자들이다"</strong><br />
+사43:1 "내가 너를 지명하여 불렀나니" — 개별적 부르심, 친밀한 관계 속 반응</p>
+<hr />
+<h2>4. 1차 소명과 2차 소명</h2>
+<table>
+<thead>
+<tr>
+<th>소명</th>
+<th>내용</th>
+<th>왜곡</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1차 소명</strong></td>
+<td>하나님 자신에게 부름받음 — "그분에 의한, 그분을 향한, 그분을 위한"</td>
+<td>무시 → 개신교적 왜곡</td>
+</tr>
+<tr>
+<td><strong>2차 소명</strong></td>
+<td>모든 사람이, 모든 곳에서, 모든 것에서 전적으로 그분을 위해 생각·말·살기</td>
+<td>절대화 → 가톨릭적 왜곡</td>
+</tr>
+</tbody>
+</table>
+<h3>두 가지 역사적 왜곡</h3>
+<p><strong>가톨릭적 왜곡 (영적 이원론)</strong>
+- 유세비우스: 완전한 삶(성직·수도원) vs 허용된 삶(세속)
+- 세속적인 것을 희생, 영적인 것을 격상
+- 루터 [교회의 바벨론 감금] 1520년 — 모든 사람이 모든 곳에서 소명을 성취한다</p>
+<p><strong>개신교적 왜곡 (세속적 이원론)</strong>
+- 소명이 직업으로 축소 — 부르는 자(Caller) 없는 소명
+- 이차적 소명이 일차적 소명을 삼켜버림
+- 값비싼 은혜 → 제자도 없는 값싼 은혜로 변질</p>
+<blockquote>
+<p>해결: 두 소명을 함께 붙들되 올바른 순서에 — 1차가 2차의 기반<br />
+아브라함 카이퍼: "모든 피조계에서 예수 그리스도께서 '이는 내 것이다!'라고 외치지 않으신 곳은 단 한 치도 없다."</p>
+</blockquote>
+<hr />
+<h2>5. 코람데오(Coram Deo) — 유일한 청중</h2>
+<ul>
+<li>창17:1 "너는 내 앞에서 행하여 완전하라"</li>
+<li>대부분 어떤 청중의 찬사를 생각하며 일한다 — 문제는 어떤 청중이냐</li>
+<li><strong>코람데오</strong>: 아시고, 보시는 분 앞에서 — 은밀한 중에 보시는 분(마6:4)</li>
+<li>변증가(복음을 세상에 이해)와 분석가(세상을 교회에 이해) — 둘 다 만족 불가</li>
+<li><strong>"다른 모든 청중 앞에서는 내가 입증할 것도, 얻을 것도, 잃을 것도 없다"</strong></li>
+</ul>
+<hr />
+<h2>6. 신앙의 세 가지 함정</h2>
+<p>현대 공적 삶에서 믿음을 위협하는 '죽음의 삼각 함정':</p>
+<table>
+<thead>
+<tr>
+<th>함정</th>
+<th>정의</th>
+<th>문제</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>사유화</strong></td>
+<td>신앙을 사적 영역에만 가두는 것</td>
+<td>총체성 결여 — 공적 광장 포기</td>
+</tr>
+<tr>
+<td><strong>정치화</strong></td>
+<td>사유화의 반작용 — 정치운동과 동일시</td>
+<td>긴장 결여 — 기독교적 차별성 상실</td>
+</tr>
+<tr>
+<td><strong>기둥화</strong></td>
+<td>신앙 공동체 기관만 만드는 것</td>
+<td>변혁성 약화 — 사회 관여 중단</td>
+</tr>
+</tbody>
+</table>
+<p><strong>소명의 대응</strong>:
+- 신앙의 총체성을 주장함으로써 <strong>사유화에 저항</strong>
+- 모든 인간적 헌신에 긴장을 유지함으로써 <strong>정치화에 저항</strong>
+- 계속적으로 사회에 관여하도록 요구함으로써 <strong>기둥화에 저항</strong></p>
+<hr />
+<h2>7. 재능과 청지기</h2>
+<ul>
+<li>"보통 하나님은 우리의 재능에 부합하게 우리를 부르시는데, 재능의 목적은 <strong>청지기직과 섬김</strong>이지 이기심이 아니다"</li>
+<li>"당신의 존재는 당신이 하는 일이다" (X)<br />
+  → "당신의 존재에 걸맞는 일을 하라" (O)</li>
+<li>재능 발견 → 예배와 귀기울임으로부터 분리될 때 이기심으로 흐른다</li>
+<li>존 코튼: <strong>공공선 + 재능 + 하나님의 인도</strong> — 뒤의 두 기준이 공공선을 추월하는 경향을 경계</li>
+</ul>
+<hr />
+<h2>8. 소명과 자만심·질투</h2>
+<ul>
+<li>소명과 자만심은 가깝다: "너는 선택받았고, 재능있고, 특별하다" → 왜곡</li>
+<li>질투는 결국 하나님과 대치: 가인→아벨, 사울→다윗, 살리에리→모차르트</li>
+<li>질투 = 과도한 자기애</li>
+<li>요21:21 베드로가 요한을 보며 "이 사람은 어떻게 되겠습니까?" → <strong>"네게 무슨 상관이냐? 너는 나를 따르라"</strong></li>
+</ul>
+<hr />
+<h2>9. 소명의 타이밍</h2>
+<ul>
+<li>소명은 준비 자세의 문제: 깨어 있으라, 미세한 음성에 완벽하게 조율</li>
+<li>소명은 결단의 문제: 유보 없이, 후퇴 없이</li>
+<li>최악: 타이밍이 <strong>트렌드 예측</strong>과 혼동될 때</li>
+<li>"우리의 때는 그분의 수중에" — 소명은 하나님께 의존</li>
+</ul>
+<hr />
+<h2>10. 유종의 미</h2>
+<ul>
+<li>소명은 직업의 종결과 소명의 종결을 혼동하지 않게 한다 (개신교적 왜곡 극복)</li>
+<li>과업이 끝나기 전에 인생이 끝나든, 인생의 막이 내리기 전에 과업을 빼앗기든 — 소명은 계속</li>
+<li>소명은 모든 결과를 하나님께 맡기도록 격려함으로써 유종의 미를 돕는다</li>
+<li>제임스 몰트케: "하나님이 나를 만드신 목적, 그 과업은 완성되었소"</li>
+</ul>
+<hr />
+<h2>⭐ vault 내 연결 지점</h2>
+<table>
+<thead>
+<tr>
+<th>이 책의 개념</th>
+<th>연결 자료</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>소명의 정의·구조 (핵심 교재)</td>
+<td><span class="wl-dead" title="위키 내부 링크">진로상담</span> — 정우현 교수, 주교재 전체 활용</td>
+</tr>
+<tr>
+<td>1차 소명 (하나님께) — 보냄받은 정체성</td>
+<td><span class="wl-dead" title="위키 내부 링크">하백선시리즈</span> — 11장 Gospel Identity, 12장 Sent Identity</td>
+</tr>
+<tr>
+<td>코람데오, 유일한 청중</td>
+<td><a class="wl" href="../../t/%EC%A0%95%EC%B2%B4%EC%84%B1/">정체성</a> — 메뚜기 콤플렉스, 십자가 정체성</td>
+</tr>
+<tr>
+<td>사유화·정치화 비판 — 공적 광장</td>
+<td><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> — 선교적 삶, 공적 광장 선교</td>
+</tr>
+<tr>
+<td>재능 = 청지기직</td>
+<td><a class="wl" href="../../b/%EC%84%B1%ED%92%88%EC%9D%B8%EA%B2%A9/">성품인격</a> — 품성 = 훈련되고 다듬어지는 것</td>
+</tr>
+<tr>
+<td>개신교적 왜곡 (소명→직업 축소)</td>
+<td><a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%8B%A0%ED%95%99/">직업신학</a> — 소명과 직업의 관계</td>
+</tr>
+<tr>
+<td>소명 발견 (윌버포스·베드로 사례)</td>
+<td><a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%ED%9B%88%EB%A0%A8/">제자훈련</a> — 소명과 제자도</td>
+</tr>
+<tr>
+<td>자만심 극복 — 고난이 보호망</td>
+<td><a class="wl" href="../../t/%EA%B3%A0%EB%82%9C/">고난</a> — 고난의 신학적 의미</td>
+</tr>
+<tr>
+<td>번영신학 비판</td>
+<td><a class="wl" href="../../t/%EB%B2%88%EC%98%81%EC%8B%A0%ED%95%99/">번영신학</a> — 건강·부·번영 복음 비판</td>
+</tr>
+<tr>
+<td>일의 내재적 가치 + 소명</td>
+<td><a class="wl" href="../../b/%EA%B3%B5%EB%8F%99%EC%84%A0%EC%9D%84%EC%B6%94%EA%B5%AC%ED%95%98%EB%8A%94%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4/">공동선을추구하는비즈니스</a> — 카바쉬·라다·아바드·샤마르, 일중독 vs 소명</td>
+</tr>
+<tr>
+<td>유종의 미 — 타이밍</td>
+<td><span class="wl-dead" title="위키 내부 링크">진로상담</span> — 7주: 타이밍, 최후의 부르심</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>탐구 중인 질문</h2>
+<p><strong>Q1. 1차 소명(하나님께)을 잃지 않으면서 2차 소명(의료·선교)을 어떻게 통합하는가?</strong>
+- 부분 답변: <span class="wl-dead" title="위키 내부 링크">진로상담</span> — "일 자체에 소명을 두지 않고 주님께 시선을 두는 것"
+- 부분 답변: <span class="wl-dead" title="위키 내부 링크">하백선시리즈</span> — "당신의 삶 자체가 하나님의 선교입니다" — 선교는 존재 방식
+- 여전히 열린 질문: 클리닉에서의 일상(진료·행정)이 1차 소명의 표현이 되려면 어떤 훈련이 필요한가?</p>
+<p><strong>Q2. 신앙의 사유화·정치화·기둥화 함정을 한국 의료 선교 맥락에서 어떻게 피하는가?</strong>
+- 부분 답변: 사유화 — 병원 현장이 공적 광장임을 의식하는 것
+- 부분 답변: 기둥화 — 누가회·인터서브가 기관으로 굳지 않고 변혁 동력 유지
+- 여전히 열린 질문: KCMF·인터서브가 아브라함 카이퍼처럼 사회 변혁으로 나아가려면?</p>
+<p><strong>Q3. 소명과 타이밍 — "준비 자세"로서의 소명을 훈련 가능한 형태로 어떻게 가르칠 수 있는가?</strong>
+- 부분 답변: <a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EC%A0%81%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98%EC%96%91%EC%84%B1/">선교적리더십의양성</a> — 콜브 경험학습 모델, 미셔털 코칭
+- 여전히 열린 질문: MBTS 진로상담 강의에서 소명 타이밍 감각을 어떻게 실습하게 할 것인가?</p>
+<hr />
+<h2>관련 페이지</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a> — 소명 개념 허브</li>
+<li><a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%8B%A0%ED%95%99/">직업신학</a> — 소명과 직업의 관계</li>
+<li><a class="wl" href="../../t/%EC%A0%95%EC%B2%B4%EC%84%B1/">정체성</a> — 코람데오, 유일한 청중</li>
+<li><a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%ED%9B%88%EB%A0%A8/">제자훈련</a> — 소명과 제자도</li>
+<li><a class="wl" href="../../t/%EB%B2%88%EC%98%81%EC%8B%A0%ED%95%99/">번영신학</a> — 소명의 왜곡 비판</li>
+<li><span class="wl-dead" title="위키 내부 링크">오스기니스</span> — 저자</li>
+<li><span class="wl-dead" title="위키 내부 링크">진로상담</span> — 주교재 (정우현 교수)</li>
+<li><span class="wl-dead" title="위키 내부 링크">하백선시리즈</span> — 선교적 정체성·소명</li>
+<li><a class="wl" href="../../b/%EA%B3%B5%EB%8F%99%EC%84%A0%EC%9D%84%EC%B6%94%EA%B5%AC%ED%95%98%EB%8A%94%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4/">공동선을추구하는비즈니스</a> — 일의 내재적 가치와 소명</li>
+</ul>
+<hr />
+<blockquote>
+<p>✔ 기존 <code>wiki/books/소명.md</code> + <code>wiki/books/소명-오스기니스.md</code> 통합 완료.</p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#소명</span><span>#직업신학</span><span>#정체성</span><span>#제자도</span><span>#코람데오</span><span>#진로</span><span>#오스기니스</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

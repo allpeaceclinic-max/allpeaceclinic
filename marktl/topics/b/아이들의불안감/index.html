@@ -1,0 +1,167 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>아이들의 불안감 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:25">상담·치유·가정</span><span class="author">미표기</span><span class="date">2026-05-04</span></div>
+  <h1 class="note-title">아이들의 불안감</h1>
+  
+</header>
+<article class="note">
+<p><strong>저자</strong>: 미표기 (아동심리 / 부모교육 분야)<br />
+<strong>분류</strong>: 아동심리 / 부모교육<br />
+<strong>원본 상태</strong>: 1장(버림받음의 불안)만 기록됨</p>
+<hr />
+<h2>핵심 전제</h2>
+<blockquote>
+<p>부모들은 아이들이 두려움과 불안감을 가지고 있다는 것은 알지만, 그 원인을 모른다.<br />
+"그런 쓸데없는 생각 그만둬. 네가 걱정할 게 뭐 있니?" — 이것이 문제다.</p>
+</blockquote>
+<hr />
+<h2>1. 버림받음에 대한 불안 — 준비를 통한 안심</h2>
+<h3>버림받음이 왜 가장 큰 두려움인가</h3>
+<p>아이들이 가장 두려워하는 것은 <strong>부모의 사랑을 잃고 버림받는 것</strong>이다.</p>
+<blockquote>
+<p>존 스타인벡 (에덴의 동쪽):<br />
+"사랑을 받지 못할 때 아이는 가장 커다란 두려움에 빠진다.<br />
+버림당하는 것을 지옥만큼이나 두려워한다.<br />
+버림받은 아이에게는 분노가 찾아온다. 분노를 느낀 아이는 앙갚음으로 범죄에 빠진다.<br />
+사랑을 거절당한 아이는 고양이를 걷어차고 나서 죄책감을 감춘다.<br />
+어떤 아이는 돈으로 사랑을 살 수 있다고 기대하며 도둑질을 한다."</p>
+</blockquote>
+<h3>절대 하지 말아야 할 것</h3>
+<ul>
+<li><strong>"여기 버려두고 갈 거야"</strong> — 농담으로도, 화가 나더라도 절대 금지</li>
+<li>이 말을 들은 아이의 뇌리에는 <strong>버림받을지 모른다는 두려움</strong>이 떠나지 않는다</li>
+<li>아이가 돌아다닐 때: 버리겠다고 위협하지 말고 <strong>손을 잡고 끌고 가라</strong></li>
+</ul>
+<h3>불가피한 이별 시 준비 방법</h3>
+<p><strong>잘못된 사례</strong> — 3살 쌍둥이의 어머니 수술:
+- 시장 가는 척하고 몰래 입원 → 3주간 부재
+- 아이들: 매일 밤 울다 잠들고, 낮에는 창가에서 어머니를 기다림
+- 아버지의 설명은 위안이 되지 못함</p>
+<p><strong>올바른 사례</strong> — 이베트(3세) 어머니의 준비:
+- 입원 2주 전부터 "엄마 병원 가는 놀이"로 반복 연습
+- 인형 세트(가족·의사·간호사)로 이별과 재회 장면을 연극화
+- 처음엔 어머니가 대사, 곧 이베트가 스스로 맡음
+- 이베트의 마지막 말: <strong>"엄마, 걱정하지 마. 엄마가 돌아올 때까지 여기 있을게"</strong></p>
+<p><strong>구체적 준비 도구</strong>:
+- 화장대에 함께 찍은 사진 세워두기
+- 잠들기 전 들을 수 있는 이야기 + 사랑 메시지 녹음 테이프
+- 새 보모를 미리 소개
+- 게시판·전자우편으로 부모 행방 남겨두기</p>
+<blockquote>
+<p>사전에 이별을 준비한 아이는 그 중압감을 쉽게 이겨낸다.<br />
+준비는 말보다 <strong>아이의 언어 — 장난감과 놀이</strong>로 해야 한다.</p>
+</blockquote>
+<hr />
+<h2>연결 고리</h2>
+<h3>미실다인과의 연결</h3>
+<ul>
+<li>미실다인의 <strong>거부형 양육</strong> → "사랑받지 못함"의 내면화 = 버림받음의 불안이 성인까지 지속</li>
+<li>미실다인의 <strong>방치형 양육</strong> → 부모 부재 경험의 반복 → 분리불안 고착</li>
+<li><a class="wl" href="../../b/%EB%AA%B8%EC%97%90%EB%B0%B4%EC%96%B4%EB%A6%B0%EC%8B%9C%EC%A0%88_%EB%AF%B8%EC%8B%A4%EB%8B%A4%EC%9D%B8/">몸에밴어린시절_미실다인</a>: 어린 시절의 불안이 내재과거아로 굳어지는 메커니즘</li>
+</ul>
+<h3>윤명숙 전도사님 설교와의 연결</h3>
+<ul>
+<li><strong>고전 13:11 어린아이의 모습</strong> — 분리불안이 해결되지 않으면 성인이 된 후 "성인아이"로 남음</li>
+<li><strong>요 8:32 내면세계</strong> — 어린 시절 버림받음의 상처 → 불안·병적 공포·통제 불능 감정 폭발</li>
+<li><strong>청소년 이해와 의사소통</strong> — "영아시기 어떻게 심었는가에 따라 이 두 가지 열매를 맺는다"</li>
+</ul>
+<h3>이상협 강의와의 연결</h3>
+<ul>
+<li><strong>마음의 건강(가정)</strong> — 두려움 → 면역계 이상 → 신체 질환의 경로에서, 버림받음의 불안이 두려움의 원형</li>
+<li><a class="wl" href="../../t/%EB%91%90%EB%A0%A4%EC%9B%80/">두려움</a> — 버림받음의 불안은 모든 두려움의 가장 원초적 형태</li>
+</ul>
+<hr />
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EB%91%90%EB%A0%A4%EC%9B%80/">두려움</a></li>
+<li><a class="wl" href="../../t/%EB%82%B4%EB%A9%B4%EC%B9%98%EC%9C%A0/">내면치유</a></li>
+<li><a class="wl" href="../../b/%EB%AA%B8%EC%97%90%EB%B0%B4%EC%96%B4%EB%A6%B0%EC%8B%9C%EC%A0%88_%EB%AF%B8%EC%8B%A4%EB%8B%A4%EC%9D%B8/">몸에밴어린시절_미실다인</a></li>
+<li><span class="wl-dead" title="위키 내부 링크">윤명숙</span></li>
+</ul>
+</article>
+<div class="tagrow"><span>#아동심리</span><span>#불안</span><span>#부모교육</span><span>#분리불안</span><span>#양육</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

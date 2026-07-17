@@ -1,0 +1,212 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>일반은총 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:226">조직신학·교리</span><span class="date">2026-07-17</span></div>
+  <h1 class="note-title">일반은총</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>일반은총(Common Grace)은 하나님이 믿는 자와 믿지 않는 자를 구분하지 않고 피조 세계 전체에 베푸시는 은총이다. 구원에 이르게 하는 특별은총(Special Grace)과 구분되며, 타락 이후에도 창조 구조가 완전히 붕괴되지 않도록 붙들어 주시는 하나님의 보존 사역을 가리킨다. 그 고전적 근거가 예수님의 말씀이다 — 하나님은 "그 해를 악인과 선인에게 비추시며 비를 의로운 자와 불의한 자에게 내리신다"(마 5:45). 해와 비는 신자에게만 내리지 않는다.</p>
+<p>이 볼트에서 일반은총은 주로 세 맥락에서 등장한다. <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%84%B8%EA%B3%84%EA%B4%80/">기독교세계관</a>의 신학적 기반으로서, <a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%84%A0/">공동선</a>을 다루는 사회 참여 논의에서, 그리고 <a class="wl" href="../../t/%EC%B9%BC%EB%B9%88%EC%A3%BC%EC%9D%98/">칼빈주의</a>의 신칼빈주의(카이퍼) 계보에서다. 이 글은 그 세 흐름을 하나로 엮어, 일반은총이 무엇을 보존하고(창조 구조), 무엇을 설명하며(문화·과학·시민적 선), 특별은총과 어떻게 구분되는가를 다룬다. 은혜 일반의 카리스 문법은 <a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a>가 허브로 다루므로, 이 페이지는 그 은혜가 온 세상으로 무차별하게 번지는 국면에 집중한다.</p>
+<h2>1. 마태복음 5장 45절 — 해와 비의 신학</h2>
+<p>일반은총의 성경적 심장은 산상수훈의 한 구절이다. 원수를 사랑하라는 명령의 근거로 예수님은 하늘 아버지를 가리키신다 — 그분은 해를 악인과 선인에게 똑같이 비추시고 비를 의로운 자와 불의한 자에게 똑같이 내리신다(마 5:45). 여기서 해와 비는 생존과 문명의 토대다. 그 토대가 도덕적 자격과 무관하게 모두에게 주어진다는 것이 일반은총의 원형이다. 시편 145편 9절이 같은 진리를 노래한다 — "여호와께서는 모든 것을 선대하시며 그 지으신 모든 것에 긍휼을 베푸시는도다."</p>
+<p>이 무차별성이 신학적으로 중요한 이유는 그것이 하나님의 성품을 드러내기 때문이다. 만일 하나님이 오직 신자에게만 복을 주신다면 은총은 거래가 되지만, 원수에게까지 해와 비를 주시는 하나님은 자격을 따지지 않고 베푸시는 분이다. 동시에 이 무차별성은 한계를 품고 있다. 해와 비는 생명을 유지하게 하지만 죄를 용서하지는 못한다. 일반은총은 삶을 지탱하되 구원하지는 않는다 — 이 구별이 4절에서 특별은총과의 경계로 이어진다.</p>
+<h2>2. 창조 구조를 보존하는 은총</h2>
+<p>일반은총의 첫 번째 기능은 타락한 세계를 붙드는 보존이다. <a class="wl" href="../../b/%EC%B0%BD%EC%A1%B0%ED%83%80%EB%9D%BD%EA%B5%AC%EC%86%8D_%EC%9B%94%ED%84%B0%EC%8A%A4/">창조타락구속_월터스</a>의 구조/방향 도식이 이를 밝힌다. 타락은 창조 세계 전체에 영향을 미치지만(롬 8:22), 창조의 <strong>구조</strong>(Structure) 자체를 소멸시키지는 않는다. 악은 구조 안에 있지 않고 방향의 문제이며, 일반은총은 타락 이후에도 구조가 방향을 잃은 채로나마 기능하도록 유지해 준다.</p>
+<blockquote>
+<p>"일반은총: 타락 이후에도 구조가 완전히 부서지지 않도록 붙들어 주심." — <a class="wl" href="../../b/%EB%8B%88%EA%B3%A0%EB%8D%B0%EB%AA%A8%EC%9D%98%EC%95%88%EA%B2%BD/">니고데모의안경</a></p>
+</blockquote>
+<p>이 보존이 있기에 의료·정치·경제 같은 사회 제도가 타락 이후에도 작동한다. 이 지점은 <a class="wl" href="../../t/%EC%B0%BD%EC%A1%B0%EC%8B%A0%ED%95%99/">창조신학</a>과 자연스럽게 만난다. 창조신학이 문화명령(생육·번성·정복)을 타락 이전에 주어진 창조의 연장으로 읽는다면, 일반은총은 그 문화명령이 타락 이후에도 여전히 수행 가능한 이유를 설명한다. 창조의 선한 구조가 완전히 무너졌다면 인간은 아무것도 경작하지 못했을 것이다. 일반은총은 그 구조를 붙들어, 타락한 세계에서도 밭이 열매를 맺고 도시가 세워지게 한다.</p>
+<h2>3. 문화·과학·시민적 선의 근거</h2>
+<p>일반은총의 두 번째 기능은 설명이다. 그것은 비신자가 이루어 내는 선·문화·학문·시민적 덕을 신학적으로 설명한다. 믿지 않는 과학자가 참된 발견을 하고, 믿지 않는 예술가가 아름다움을 빚고, 믿지 않는 시민이 정의를 세우는 일이 어떻게 가능한가? <a class="wl" href="../../b/%EB%8B%88%EA%B3%A0%EB%8D%B0%EB%AA%A8%EC%9D%98%EC%95%88%EA%B2%BD/">니고데모의안경</a>의 전적 타락 정의가 답의 실마리다 — "전적 타락이란 인간이 전적으로 나쁘다는 것이 아니라, 선한 것을 바르게 행사하는 능력을 상실했다는 것이다." 일반은총은 이 타락의 전면적 확산을 억제하여, 타락한 인간도 사회·문화·윤리 영역에서 부분적으로 선을 행할 수 있게 한다.</p>
+<p>이 통찰을 세계관으로 확장한 것이 아브라함 카이퍼의 신칼빈주의다. <a class="wl" href="../../t/%EC%B9%BC%EB%B9%88%EC%A3%BC%EC%9D%98/">칼빈주의</a>가 정리하듯 카이퍼의 심장은 두 개념 — 가정·교회·국가·학문·예술 각 영역이 하나님께 직접 책임지는 <strong>영역 주권</strong>과, 죄로 마땅히 무너져야 할 세상을 하나님이 여전히 붙들어 문화와 학문과 사회를 지탱하시는 <strong>일반 은총</strong> — 이다. 카이퍼의 유명한 선언 "내 것이 아닌 땅은 한 뼘도 없다"가 이 일반은총 위에 서 있다. 그리스도가 만유의 주이시기에, 세속 학문과 문화도 하나님의 통치 아래 있고 신자가 참여할 정당한 영역이 된다. <a class="wl" href="../../t/%EB%B3%B5%EC%9D%8C%EC%A3%BC%EC%9D%98/">복음주의</a>가 짚듯 칼뱅이 종교개혁에서 일반은총을 강조한 것도, 세속 영역에서도 하나님의 통치를 인정하는 근거였다.</p>
+<h2>4. 특별은총과의 구분</h2>
+<p>일반은총을 오해하지 않으려면 특별은총과의 경계를 분명히 그어야 한다. 둘은 같은 하나님의 은혜이되 대상·목적·범위가 다르다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>일반은총</th>
+<th>특별은총</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>대상</td>
+<td>모든 사람(악인과 선인)</td>
+<td>택하신 백성</td>
+</tr>
+<tr>
+<td>통로</td>
+<td>해·비·창조 구조·양심(마 5:45)</td>
+<td>그리스도·복음·성령</td>
+</tr>
+<tr>
+<td>목적</td>
+<td>보존 — 세계를 지탱함</td>
+<td>구원 — 죄인을 살림</td>
+</tr>
+<tr>
+<td>도달 지점</td>
+<td>삶의 유지, 문화·시민적 선</td>
+<td>죄 용서와 영생</td>
+</tr>
+<tr>
+<td>한계</td>
+<td>구원에 이르게 하지 못함</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>이 구분이 흐려질 때 두 방향의 오류가 생긴다. 하나는 일반은총을 구원의 근거로 삼는 것 — 비신자의 선이 그를 구원한다고 여기는 것 — 이고, 다른 하나는 일반은총을 무시하고 세상을 전적으로 어둠으로만 보는 것이다. <a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EA%B3%B5%EB%8F%99%EC%84%A0_%EC%86%A1%EC%9A%A9%EC%9B%90/">하나님의공동선_송용원</a>이 이 경계를 정교하게 다룬다. 공익(public good)은 일반은총의 범위 안에서 논의 가능하지만, 공동선(common good)은 특별은총 — 하나님과의 수직적 관계 — 을 포함해야 완성된다는 것이다. "일반은총(철학·정치·경제)의 언어만으로는 부족하다. 특별은총(성경·신학)으로 함께 읽어야 공동선의 전체 윤곽이 보인다." 일반은총은 세상을 붙들지만, 세상을 새롭게 하는 것은 특별은총의 몫이다.</p>
+<h2>5. 긴장과 경계 — 붙듦과 저항 사이</h2>
+<p>일반은총은 세계관적 통합의 근거인 동시에 긴장의 자리이기도 하다. <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EB%82%98%EB%9D%BC/">하나님나라</a> 논의가 짚듯 "일반은총과 특별은총을 갈등 구조로 보는 세계관으로는 모든 영역에 임하는 하나님의 통치를 담아낼 수 없다." 하나님나라가 종교 영역에 국한되지 않고 삶 전체에 임한다는 카이퍼의 주장은 일반은총 위에 서 있다. 그러나 여기에 실천적 난제가 남는다. 일반은총이 문화 참여의 근거라면, 타락한 구조에 참여하는 것과 저항하는 것의 기준은 무엇인가?</p>
+<p>일반은총은 구조를 붙들지만 그 구조가 방향을 잃었을 수 있음을 잊게 해서는 안 된다. 월터스의 구조/방향 구분이 여기서 실천적 분별의 도구가 된다 — 제도 자체(구조)는 일반은총으로 보존된 선한 것이되, 그것이 운영되는 방향은 왜곡되었을 수 있다. 그래서 그리스도인의 문화 참여는 구조를 긍정하면서 방향을 개혁하는 이중 과제가 된다. 붙듦(보존의 감사)과 저항(방향의 개혁) 사이의 이 긴장이, 일반은총을 값싼 문화 낙관으로도 세상 도피로도 미끄러지지 않게 붙드는 자리다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>일반은총의 성경적 심장은 마태복음 5장 45절이다 — 해와 비가 악인과 선인에게 무차별하게 주어짐. 자격을 따지지 않는 하나님의 성품을 드러내되, 삶을 지탱할 뿐 구원하지는 못한다.</li>
+<li>일반은총의 두 기능은 보존과 설명이다 — 타락한 창조 구조를 붙들고(월터스 구조/방향), 비신자의 문화·과학·시민적 선을 설명한다(전적 타락 ≠ 전적 악).</li>
+<li>카이퍼의 신칼빈주의는 일반은총을 세계관으로 확장했다 — 영역 주권과 함께 "내 것이 아닌 땅은 한 뼘도 없다"는 만유 주권의 근거가 된다.</li>
+<li>특별은총과의 구분이 핵심이다 — 대상(모두 vs 택함), 목적(보존 vs 구원)이 다르며, 공익은 일반은총으로 논의되나 공동선은 특별은총을 포함해야 완성된다(송용원).</li>
+<li>일반은총은 붙듦과 저항의 이중 과제를 낳는다 — 구조는 긍정하되 왜곡된 방향은 개혁하는 것이, 문화 낙관과 세상 도피 사이의 균형점이다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>일반은총으로 설명되는 "비기독교인의 선"의 범위는 어디까지인가? 구원의 근거가 될 수 없음은 분명하나, 선교 대화에서 어떻게 자리매김할 것인가?</li>
+<li>타락한 구조(예: 왜곡된 의료 제도)에 참여하는 것과 저항하는 것 사이의 실천적 기준은 무엇인가?</li>
+<li>칼 바르트의 일반은총 비판과 개혁주의(카이퍼)의 긍정 사이에서, 이 볼트의 의료·사회 참여 맥락에 더 적합한 입장은 무엇인가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a> — 카리스의 문법(값없음·자격 없음). 이 페이지는 그 은혜가 온 세상으로 무차별하게 번지는 국면.</li>
+<li><a class="wl" href="../../t/%EC%B0%BD%EC%A1%B0%EC%8B%A0%ED%95%99/">창조신학</a> — 문화명령을 타락 이후에도 수행 가능하게 하는 구조 보존의 신학.</li>
+<li><a class="wl" href="../../t/%EC%B9%BC%EB%B9%88%EC%A3%BC%EC%9D%98/">칼빈주의</a> — 카이퍼 신칼빈주의(영역 주권·일반 은총), 니고데모의 안경 계보.</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%84%B8%EA%B3%84%EA%B4%80/">기독교세계관</a> — 일반은총이 세계관적 통합의 신학적 기반이 되는 자리.</li>
+<li><a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%84%A0/">공동선</a> — 일반은총의 사회적 적용, 공익과 공동선의 구분.</li>
+<li><a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EB%82%98%EB%9D%BC/">하나님나라</a> — 일반·특별은총 갈등 구조를 넘어 모든 영역에 임하는 통치.</li>
+<li><a class="wl" href="../../t/%EB%B3%B5%EC%9D%8C%EC%A3%BC%EC%9D%98/">복음주의</a> — 칼뱅의 일반은총 강조와 종교개혁.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>마태복음 5:45 · 시편 145:9</td>
+<td>성경</td>
+<td>해와 비의 무차별성 — 일반은총의 성경적 심장</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%B0%BD%EC%A1%B0%ED%83%80%EB%9D%BD%EA%B5%AC%EC%86%8D_%EC%9B%94%ED%84%B0%EC%8A%A4/">창조타락구속_월터스</a></td>
+<td>책</td>
+<td>구조/방향 구분, 일반은총의 보존 기능</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EB%8B%88%EA%B3%A0%EB%8D%B0%EB%AA%A8%EC%9D%98%EC%95%88%EA%B2%BD/">니고데모의안경</a></td>
+<td>책</td>
+<td>전적 타락 정의(능력 상실 ≠ 전적 악), 타락 이후 구조 보존</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EA%B3%B5%EB%8F%99%EC%84%A0_%EC%86%A1%EC%9A%A9%EC%9B%90/">하나님의공동선_송용원</a></td>
+<td>책</td>
+<td>일반은총 vs 특별은총, 공익과 공동선의 구분</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%B9%BC%EB%B9%88%EC%A3%BC%EC%9D%98/">칼빈주의</a></td>
+<td>주제 페이지</td>
+<td>카이퍼 신칼빈주의 — 영역 주권·일반 은총, "내 것이 아닌 땅은 한 뼘도 없다"</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/조직신학</span><span>#일반은총</span><span>#특별은총</span><span>#문화신학</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

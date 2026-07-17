@@ -1,0 +1,201 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>중독행동이 보상경험과 심리적 기능에 대한 고찰 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:25">상담·치유·가정</span><span class="author">김재환</span><span class="date">2026-05-06</span></div>
+  <h1 class="note-title">중독행동이 보상경험과 심리적 기능에 대한 고찰</h1>
+  
+</header>
+<article class="note">
+<h2>말러의 공생적 융합개념과 코헛의 자기심리학을 중심으로 — 김재환</h2>
+<h2>핵심 주장</h2>
+<blockquote>
+<p><strong>중독 행동의 보상경험 = 말러의 공생기 융합경험의 병리적 재현</strong>
+자기 발달의 결함 → 온전한 융합경험을 강박적으로 추구 → 중독</p>
+</blockquote>
+<hr />
+<h2>말러의 발달 단계와 융합경험</h2>
+<p>유아 자아발달 4단계:
+<code>자폐기 → 공생기 → 분리개별화 → 대상항상성(독립된 자아)</code></p>
+<h3>공생기 (생후 2~6개월)</h3>
+<ul>
+<li>어머니와 자신이 동일한 시스템을 공유하는 것처럼 <strong>경계선 없는 융합 상태</strong></li>
+<li><strong>omnipotent fusion</strong> (전능한 융합) 경험</li>
+<li>욕구 충족 대상에 대한 희미한 자각 — 전능감, 즉각적 충족</li>
+</ul>
+<h3>재접근기 (18개월경)</h3>
+<ul>
+<li>독립하고 싶음 <strong>vs</strong> 여전히 함께 있고 싶음 → 양가감정</li>
+<li>양육자의 적절한 정서적 가용성이 이 긴장을 건강하게 통과시킴</li>
+<li>실패 → 파편화·분리의 두려움 → 병리적 융합 추구</li>
+</ul>
+<hr />
+<h2>코헛의 자기심리학과 중독</h2>
+<ul>
+<li>공감적 <strong>자기대상(selfobject)의 부재</strong> = 심각한 자기 발달 결함</li>
+<li><strong>자기애적 외상</strong> → 중독행동은 이 결함에 대한 방어로 작동</li>
+<li>중독 대상이 <strong>거울대상</strong> 또는 <strong>이상화된 자기대상</strong>으로 기능</li>
+<li>중독 대상과의 퇴행적 융합에서 일시적 따뜻함·전능감·안정감 경험</li>
+</ul>
+<hr />
+<h2>정상적 융합 vs 병리적 융합</h2>
+<table>
+<thead>
+<tr>
+<th>정상적 융합</th>
+<th>병리적 융합(중독)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>음악·기도·명상·성관계·데이트</td>
+<td>알코올·게임·도박·쇼핑</td>
+</tr>
+<tr>
+<td>일시적, 자기로 돌아옴</td>
+<td>강박적, 통제 불가, 부정적 결과에도 지속</td>
+</tr>
+<tr>
+<td>변연계 보상회로 정상 활성화</td>
+<td>신경생리학적 손상 야기</td>
+</tr>
+</tbody>
+</table>
+<h3>중독의 3요소</h3>
+<p>갈망 + 통제 어려움 + <strong>부정적 결과임에도 지속</strong></p>
+<hr />
+<h2>★ 정상적 융합의 신학적 해석</h2>
+<blockquote>
+<p><strong>엡 5:18</strong> — "술 취하지 말라… 오직 성령으로 충만함을 받으라"</p>
+</blockquote>
+<ul>
+<li>성령충만한 사람이 술 취한 사람처럼 보일 수 있음 = 융합의 모습</li>
+<li><strong>에덴</strong> = 공간적 융합 (신과 연결, 배우자와 한몸 → 전능감·자율감) → 타락으로 박탈</li>
+</ul>
+<p><strong>융합 = 충만 (성경적 언어):</strong>
+- 유아-부모 → 융합 → <strong>자기의 탄생</strong>
+- 인간-신 → 성령충만 → <strong>인간이 되어감</strong></p>
+<hr />
+<h2>교회의 융합기능 — 기독교적 개입</h2>
+<h3>영적 측면</h3>
+<ul>
+<li>교회 = 신과의 영적 융합경험을 제공하는 매개체</li>
+<li>성령충만 = 신의 전능감을 내재화 + 온전한 관계성 경험</li>
+<li>에덴의 회복을 가정에서 갈구</li>
+</ul>
+<h3>심리적 측면</h3>
+<ul>
+<li>사랑이라는 매개를 통한 일시적 심리적 융합경험 제공</li>
+<li>교회 = <strong>유사가족 경험</strong> (초대교회 모델)</li>
+<li>"짐진 자들아 다 내게로" — 존재 수용의 공간</li>
+</ul>
+<h3>상담적 개입</h3>
+<ul>
+<li>인지행동치료만으로는 한계 ("마른 주정" 현상)</li>
+<li>중독 = 대상관계적 문제 + 성격구조적 결함</li>
+<li>공감적 태도의 지속적 제공 → 스트레스 내성 증가 → 자아발달 결핍 보완</li>
+</ul>
+<hr />
+<h2>★ 개인 코멘트 (이상협)</h2>
+<blockquote>
+<p><strong>창 2장 — 부모를 떠나 아내와 연합, 한몸</strong>
+분리-개별화의 과제가 건강하게 이루어져야 할 때 박탈되면 중독 위험이 높아진다.</p>
+</blockquote>
+<ul>
+<li>완전히 박탈된 경우에도 <strong>예수님을 통해 공급받은 예들</strong>이 있다</li>
+<li>교회 공동체의 융합경험보다 <strong>부부관계를 통한 회복이 선행</strong>되어야 하지 않을까?</li>
+<li>초대교회의 융합경험, 은혜가 넘치는 공동체의 유익에는 동의</li>
+</ul>
+<hr />
+<h2>연결된 페이지</h2>
+<ul>
+<li><a class="wl" href="../../t/%EB%82%B4%EB%A9%B4%EC%B9%98%EC%9C%A0/">내면치유</a> — 자기대상, 공감적 수용, 트라우마</li>
+<li><a class="wl" href="../../t/%EC%9E%90%EB%85%80%EC%96%91%EC%9C%A1/">자녀양육</a> — 재접근기, 양육자의 정서적 가용성</li>
+<li><a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%A1%A0/">교회론</a> — 유사가족, 융합공동체로서의 교회</li>
+<li><a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a> — 성령충만 = 신과의 융합경험</li>
+</ul>
+</article>
+<div class="tagrow"><span>#중독</span><span>#대상관계</span><span>#자기심리학</span><span>#기독상담</span><span>#내면치유</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

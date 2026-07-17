@@ -1,0 +1,133 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>문학비평 (Literary Criticism) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:174">성경·해석</span><span class="date">2026-06-28</span></div>
+  <h1 class="note-title">문학비평 (Literary Criticism)</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>문학비평은 성경 본문을 <strong>독립된 문학 작품으로 분석하는 해석 접근</strong>이다. <a class="wl" href="../../t/%EC%96%91%EC%8B%9D%EB%B9%84%ED%8F%89/">양식비평</a>이나 <a class="wl" href="../../t/%ED%8E%B8%EC%A7%91%EB%B9%84%ED%8F%89/">편집비평</a>처럼 본문 뒤에 있는 전승·자료·편집자를 추적하는 역사적 방법론과 달리, 문학비평은 최종 형태의 본문 자체—서사 구조, 줄거리, 인물 묘사, 주인공의 드러남 방식—에 집중한다. 복음서 연구에서 문학비평은 특히 "복음서 장르가 무엇인가"라는 질문과 맞닿아 있다.</p>
+<h2>1. 복음서 장르 논의: 고대 전기(Biography)로서의 복음서</h2>
+<p>신약개론I 3주 공관복음 강의는 복음서의 장르에 관한 문학비평의 핵심 제안을 소개한다. 가장 설득력 있는 제안은 복음서를 <strong>고대 그리스-로마 전기(βίος, Bios)</strong>로 보는 것이다. 고대 전기 장르는 폭이 넓어 공관복음의 다양한 특성을 수용한다.</p>
+<p>고대 전기의 특징:
+- 연속 산문 이야기에 어록·일화·연설이 혼합됨
+- 역사적 사건보다 <strong>주인공 중심</strong> 서술
+- 시간 순서를 반드시 따르지 않음
+- 10,000–25,000자 길이(약 3시간 청취 분량)
+- 말과 행동으로 성품을 드러내 독자의 모방 또는 회피를 유도</p>
+<p>강의는 이 장르 분류가 복음서들 사이의 순서 차이나 서술 방식의 차이가 "모순"이 아니라 <strong>고대 전기 장르의 특성</strong>임을 이해하게 해 준다고 강조한다.</p>
+<h2>2. 서사비평과 내적 세계 집중</h2>
+<p>문학비평의 서사비평(narrative criticism) 분파는 복음서를 마치 현대 소설처럼 읽는다. 서술자의 관점, 독자에 대한 암시, 아이러니, 반복 패턴, 구조적 대칭 같은 서사 기법을 분석한다. 이 접근은 역사비평이 지나쳐 온 본문의 <strong>예술적·수사적 차원</strong>을 부각시키는 데 기여한다.</p>
+<h2>3. 기여와 한계</h2>
+<p>신약개론I 강의는 문학비평의 기여와 한계를 모두 직시한다.</p>
+<p><strong>기여</strong>: 복음서를 역사 자료나 교리 선언문이 아닌, 설득 의도를 가진 문학 작품으로 읽게 한다. 각 복음서 기자의 문학적 개성—마가의 속도감 있는 εὐθύς, 요한의 이원론적 언어, 누가의 이방인 친화적 서술—을 섬세하게 포착할 수 있다.</p>
+<p><strong>한계</strong>: 일부 문학비평 분파는 역사적 분석 자체를 거부하고, 현대 문학 이론의 범주를 1세기 본문에 무비판적으로 소급 적용한다. 강의는 역사적·철학적 연구를 동반한 문학비평은 성경 해석에 실질적으로 기여하지만, 역사와 진리 문제에서 벗어날 때 "비현실감"이 생긴다고 경고한다.</p>
+<h2>4. 자료비평·편집비평과의 관계</h2>
+<p>역사비평의 <a class="wl" href="../../t/%EC%9E%90%EB%A3%8C%EB%B9%84%ED%8F%89/">자료비평</a>과 <a class="wl" href="../../t/%ED%8E%B8%EC%A7%91%EB%B9%84%ED%8F%89/">편집비평</a>이 "본문 뒤"를 파고드는 방법이라면, 문학비평은 "본문 앞"에 서서 최종 완성본과 씨름한다. 이 두 접근은 상호 배타적이지 않으며, 역사적-문학적 통합 독해가 복음서 해석의 이상적 방향으로 제시된다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>복음서를 "고대 전기"로 이해하면 복음서 간 차이가 장르 내 자유로 해소된다.</li>
+<li>문학비평은 서사 기법 분석을 통해 각 복음서 기자의 신학적 강조를 더 섬세하게 드러낸다.</li>
+<li>역사와 문학을 분리하지 않는 통합 독해가 가장 균형 잡힌 접근이다.</li>
+<li>독자를 "모방 또는 회피"로 초대하는 고대 전기의 수사적 목적은 복음서의 선교적 성격과 정확히 맞아 떨어진다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>복음서를 "고대 전기"로 분류하는 것이 케리그마·구원론이라는 복음서의 신학적 특수성을 충분히 담아내는가?</li>
+<li>서사비평이 발견하는 문학적 패턴은 저자의 의도인가, 아니면 독자의 투사인가?</li>
+<li>현대 문학 이론의 범주를 1세기 본문에 적용할 때 역사적 거리를 어떻게 방법론적으로 통제할 수 있는가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%96%91%EC%8B%9D%EB%B9%84%ED%8F%89/">양식비평</a> — 전승 단계를 분석하는 역사적 방법론. 문학비평과 방향이 대비됨</li>
+<li><a class="wl" href="../../t/%ED%8E%B8%EC%A7%91%EB%B9%84%ED%8F%89/">편집비평</a> — 편집자의 신학적 목적 분석. 문학비평의 선구 방법론</li>
+<li><a class="wl" href="../../t/%EB%B3%B5%EC%9D%8C%EC%84%9C%EC%97%B0%EA%B5%AC/">복음서연구</a> — 문학비평이 속한 더 넓은 복음서 연구 지형</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D%ED%95%99/">성경해석학</a> — 문학비평이 위치하는 해석학적 맥락</li>
+</ul>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/신약학</span><span>#discipline/문학</span><span>#topic/복음서연구</span><span>#topic/해석학</span><span>#topic/성경해석학</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

@@ -1,0 +1,398 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>사람은 어떻게 변화되는가 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:25">상담·치유·가정</span><span class="author">티모시 레인 &amp; 폴 트립</span><span class="date">2026-05-10</span></div>
+  <h1 class="note-title">사람은 어떻게 변화되는가</h1>
+  
+</header>
+<article class="note">
+<p><strong>저자</strong>: 티모시 레인 &amp; 폴 트립 (Timothy Lane &amp; Paul Tripp)<br />
+<strong>분류</strong>: 성화론 / 기독교 상담 / 변화</p>
+<blockquote>
+<p>"긍정적인 삶의 변화는 나 자신의 변화의 꿈이<br />
+하나님의 변화의 목표와 일치할 때 일어난다."</p>
+</blockquote>
+<hr />
+<h2>1. 변화의 3시제 — 복음의 구조</h2>
+<table>
+<thead>
+<tr>
+<th>시제</th>
+<th>내용</th>
+<th>핵심</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>과거의 그때</strong></td>
+<td>"우리가 아직 죄인 되었을 때"</td>
+<td>용서</td>
+</tr>
+<tr>
+<td><strong>지금 여기</strong></td>
+<td>현재의 은혜 — 경건에 필요한 모든 것을 이미 주셨다 (벧후1:3)</td>
+<td>성화</td>
+</tr>
+<tr>
+<td><strong>미래의 그때</strong></td>
+<td>"그와 같이 되는 줄" (요일3:2)</td>
+<td>소망</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>많은 그리스도인은 복음을 <strong>과거(용서)</strong>와 <strong>미래(소망)</strong>에만 국한 → <strong>현재의 은혜를 누리지 못함</strong></li>
+<li>게으르고 열매 없는 것 = 현재 은혜에 대한 영적 소경</li>
+<li><strong>복음적 공백(Gospel Gap)</strong>: 현재의 은혜가 빠진 신앙</li>
+</ul>
+<hr />
+<h2>2. 외면주의 — 변질의 7가지 형태</h2>
+<blockquote>
+<p>고후10:5 "하나님 아는 것을 대적하여 스스로 높아진 것" (가장·가면)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>형태</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>형식주의</td>
+<td>외형·의례에 집중</td>
+</tr>
+<tr>
+<td>율법주의</td>
+<td>행위로 의를 얻으려 함</td>
+</tr>
+<tr>
+<td>신비주의</td>
+<td>체험·감정에 의존</td>
+</tr>
+<tr>
+<td>실천주의</td>
+<td>행동으로 내면을 대체</td>
+</tr>
+<tr>
+<td>성경주의</td>
+<td>지식이 변화를 대신함</td>
+</tr>
+<tr>
+<td>심리주의</td>
+<td>심리적 자아 이해로 복음을 대체</td>
+</tr>
+<tr>
+<td>관계주의</td>
+<td>인간관계로 하나님과의 관계를 대체</td>
+</tr>
+</tbody>
+</table>
+<p><strong>공통 함정</strong>: "우리 밖의 죄가 우리 안의 죄보다 더 위험하다"는 착각 → 스스로를 도움이 필요한 자가 아닌 <strong>독립적으로 살 수 있는 자</strong>로 여김</p>
+<hr />
+<h2>3. 마음의 싸움 — 코일리아와 잠언 4:23</h2>
+<blockquote>
+<p>잠4:23 "무릇 지킬만한 것보다 더욱 네 마음을 지키라, 생명의 근원이 이에서 남이니라"</p>
+</blockquote>
+<ul>
+<li>행동 이면에는 더 근본적인 싸움 — <strong>마음의 생각과 동기의 싸움</strong></li>
+<li><strong>코일리아(κοιλία)</strong>: 인간은 비어 있는 존재가 아니라 <strong>채워져 있는 존재</strong> (골2:8)</li>
+<li>마음의 내용물이 삶을 지배한다</li>
+<li><strong>변화 책무를 타인에게 옮기는 함정</strong>: "변해야 할 책무를 나로부터 딸에게로 편리하게 옮겨버림"</li>
+<li>무엇이 변해야 하는가? <strong>환경 → 행동 → 생각 → 자아 개념</strong> — 더 깊은 차원으로 들어가야</li>
+</ul>
+<hr />
+<h2>4. 그리스도와의 연합 — 변화의 능력</h2>
+<blockquote>
+<p>겔16:8 "내 옷으로 너를 덮어 벌거벗은 것을 가리고 네게 맹세하고 언약하여"<br />
+사54:5 "너를 지으신 이는 네 남편이니라"<br />
+엡1:4 "창세 전에 그리스도 안에서 우리를 택하사 거룩하고 흠이 없게 하시"</p>
+</blockquote>
+<ul>
+<li>변화의 능력 = <strong>그리스도와의 결합</strong> → 원수 → 의롭게, 지혜, 능력이 되신다</li>
+<li>목표: 그리스도의 눈으로, 최종 목적지를 바라보며, 영원의 관점에서</li>
+</ul>
+<hr />
+<h2>5. 십계명 구조 — 수직이 수평을 결정한다</h2>
+<blockquote>
+<p>"4-10계명을 어길 때는 반드시 1-3계명을 먼저 어기게 되어 있다."</p>
+</blockquote>
+<ul>
+<li>하나님과의 관계가 무너질 때 죄를 짓게 된다</li>
+<li>잘못된 아버지(어머니)와의 관계 → 수평 관계의 죄</li>
+<li>처방: <strong>아버지와의 관계 회복이 우선</strong> → 탕자 아버지 모델 (기다리고, 용납하고, 잔치)</li>
+</ul>
+<hr />
+<h2>6. 부모의 5가지 우상 — 자녀 변화를 가로막는 것</h2>
+<blockquote>
+<p>겔14:4 "그 우상을 마음에 들이며… 나 여호와가 그 우상의 많은 대로 응답하리니"</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>우상</th>
+<th>증상</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>안락함</strong></td>
+<td>자녀를 적으로 봄 — 평화를 깨는 존재</td>
+</tr>
+<tr>
+<td><strong>존경</strong></td>
+<td>자녀의 성장 문제를 자신에 대한 모욕으로 봄</td>
+</tr>
+<tr>
+<td><strong>보답</strong></td>
+<td>부모·자녀 관계를 섬김-보답의 계약 관계로 봄</td>
+</tr>
+<tr>
+<td><strong>성공</strong></td>
+<td>자녀를 하나님의 창조물이 아닌 트로피로 봄</td>
+</tr>
+<tr>
+<td><strong>통제</strong></td>
+<td>자녀의 독립을 위협으로 봄, 친구도 통제하려 함</td>
+</tr>
+</tbody>
+</table>
+<p>→ <strong>우리의 우상이 하나님이 주신 기회를 '애매한 고통'으로 보이게 만든다</strong></p>
+<hr />
+<h2>⭐ 이사님 강의와의 연결</h2>
+<p>raw:
+- <code>raw/lectures/keynote/기타/사람은 어떻게 변화되는가(Old).md</code>
+- <code>raw/lectures/keynote/기타/사람은 어떻게 변화되는가?(New).md</code></p>
+<h3>강의 1: "사람은 어떻게 변화되는가" (직접 강의)</h3>
+<p>책의 구조를 직접 강의로 풀어냄. 추가된 프레임:</p>
+<p><strong>변화의 3가지 결과</strong>:
+<code>변화(성숙·성화) ↔ 고착(10년이 지나도 안 변함) ↔ 퇴보(나쁘게)</code></p>
+<p><strong>하나님의 변화 도구 3가지</strong>:
+1. <strong>환경·사건</strong> — 디자인하심
+2. <strong>사람</strong> — 중요 인물 (부모, 선생, 친구)
+3. <strong>관계</strong> — 관계 → 문제 드러남 → 직면 → <strong>내면 변화의 시작</strong></p>
+<p><strong>변화의 인식론적 구조</strong>:
+<code>누스(의식·말씀 저장)
+  ↓ 성령의 조명
+프로네마(신념·무의식 패턴)
+  ↓ 인사이트(깨달음)
+신념 변화 → 행동 변화</code></p>
+<p><strong>변화의 인과 구조</strong>:
+<code>사건(사실) → 생각(무의식·신념) → 감정·결과</code>
+→ 쓴뿌리(첫 경험) → 반복 → 신념 형성 → 비슷한 사건에서 자동 작동</p>
+<p><strong>런 → 언런 → 리런</strong>: 혁명적 깨달음 + 지속적 실천(습관) = 지속적 성장</p>
+<p><strong>공동체 속에서의 성장</strong>: 솔리타리(개인) + 커뮤니티 + 미니스트리 — 3가지가 함께</p>
+<p><strong>경험이 곧 성장은 아니다</strong> (잠 26:11):</p>
+<blockquote>
+<p>"개가 그 토한 것을 도로 먹는 것 같이 미련한 자는 그 미련한 것을 거듭 행하느니라"
+- 실패를 반복하는 것은 성장이 아니다
+- 경험 → <strong>고찰·묵상 → 인사이트 → 반복</strong> → 레브에 새겨짐 = 진짜 성장</p>
+</blockquote>
+<p><strong>연합작전 — 변화의 주체</strong>:
+- 내가 혼자 하는 것이 아니다 → 의지만으로는 무의식을 바꿀 수 없다
+- 하나님 혼자 하시는 것도 아니다 → 수동적으로 기다리는 것이 아니다
+- <strong>우리가 할 일</strong>: 말씀 읽기 → 묵상·반추·고찰 (읽기만으로는 안 됨), 공동체적 해석
+- <strong>하나님이 하시는 일</strong>: 성령의 조명, 무의식 드러내심, 사건을 디자인하심
+- → <strong>연합작전</strong></p>
+<p><strong>C 여인 케이스 스터디</strong> (강의 실제 사례):</p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>표면 문제</strong></td>
+<td>시어머니 병환으로 동거 → 비인격적 시어머니와의 갈등</td>
+</tr>
+<tr>
+<td><strong>본인의 진단</strong></td>
+<td>시어머니가 문제 / 의논 없는 남편이 문제</td>
+</tr>
+<tr>
+<td><strong>성장배경</strong></td>
+<td>비인격적 시어머니 + 가난한 친정 → 부모로부터 안정감·자기존중감 공급받지 못함</td>
+</tr>
+<tr>
+<td><strong>하나님의 진단</strong></td>
+<td>시어머니가 유별난 것이 아니라, <strong>내 마음의 취약점을 드러내시는 것</strong></td>
+</tr>
+<tr>
+<td><strong>처방</strong></td>
+<td>중요성과 안정감을 근본적으로 예수 그리스도로 채우는 것</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"회피하면 안 된다. 하나님이 예수 믿고 해결되기를 바라며 디자인하신 사건이다."</p>
+</blockquote>
+<hr />
+<h3>강의 2: "자녀의 변화 부모의 변화!" (자녀양육 강의)</h3>
+<p>책의 부모 5가지 우상을 자녀양육에 직접 적용.</p>
+<blockquote>
+<p>"부모들이 먼저 자기 자신을 살펴보지 않고서<br />
+청소년 자녀들을 양육할 방법에 대해 생각한다는 것은 시간 낭비일 뿐이다."</p>
+</blockquote>
+<p><strong>양육의 목표가 되면 안 되는 것</strong>: 행동 규제, 죄의식 가중, 두렵게 만드는 것 (약1:20)</p>
+<p><strong>십대 양육 5가지 근본 목표</strong>:
+1. 영적인 싸움에 초점
+2. 신념과 지혜의 마음 갖기
+3. 자녀 문화를 이해하고 구속적으로 상호작용하도록 가르치기
+4. 하나님을 향한 마음 갖게 하기
+5. 집에서 떠나는 것을 미리 준비하기</p>
+<p><strong>신념은 관계 속에서 지켜진다</strong>:
+- 규칙이 관계 안에서 주어질 때 → 사랑스러운 지시로 받아들임
+- 관계가 깨진다고 느끼게 되면 → 규칙도 무너짐</p>
+<hr />
+<h3>연결 구조 요약</h3>
+<table>
+<thead>
+<tr>
+<th>책 개념</th>
+<th>강의 적용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>복음적 공백 (현재의 은혜 부재)</td>
+<td>강의 도입: 왜 그리스도인이 변화하지 못하는가?</td>
+</tr>
+<tr>
+<td>코일리아 (채워진 존재)</td>
+<td>누스→프로네마→성령 구조</td>
+</tr>
+<tr>
+<td>외면주의 7가지</td>
+<td>행동 규제로는 마음을 못 바꾼다</td>
+</tr>
+<tr>
+<td>부모 5가지 우상</td>
+<td>자녀 변화 가로막는 것은 부모의 문제</td>
+</tr>
+<tr>
+<td>그리스도와의 연합</td>
+<td>탕자 아버지 모델 — 관계 회복이 우선</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>탐구 중인 질문</h2>
+<p><strong>Q1. 누스(의식)에서 프로네마(신념)로의 전환은 어떻게 일어나는가?</strong></p>
+<p><strong>핵심 답: 성령의 조명 사역</strong></p>
+<p>프로네마(φρόνημα) 안에는 두 층위가 공존한다:
+- <strong>의식(누스)</strong>: 말씀·지식·배운 것 — 롬12:2 "마음을 새롭게 함으로"
+- <strong>무의식</strong>: 습관화된 패턴, 옛사람, 육신의 생각 — 자동으로 작동하는 신념 체계</p>
+<p>→ <strong>성령은 이 두 층위 사이의 간격을 조명하신다</strong> — 그때 인사이트(깨달음)가 생긴다</p>
+<p>성령의 두 역할:
+1. <strong>지혜의 영</strong> (사11:2, 엡1:17 "지혜와 계시의 영") — 상황 속에서 말씀을 적용하는 지혜
+2. <strong>기억하게 하시는 영</strong> (요14:26 "보혜사 성령께서 내가 너희에게 말한 모든 것을 생각나게 하리라")</p>
+<p>조건: <strong>누스에 말씀이 먼저 있어야 성령이 조명하실 수 있다</strong>
+→ 말씀·묵상·기도 → 누스에 저장 → 상황에서 성령이 불 켜심</p>
+<ul>
+<li>연결: <span class="wl-dead" title="위키 내부 링크">마음의건강강의</span> — 의식→성령→카르디아 순서, 같은 구조</li>
+<li>여전히 열린 질문: 상담 현장에서 프로네마 변화를 어떻게 확인하고, 그 과정을 어떻게 촉진하는가?</li>
+</ul>
+<p><strong>Q2. 관계가 변화의 통로인 동시에 위험 요소인 이유는 무엇인가?</strong>
+- 부분 답변: 관계 → 문제 드러남 → 직면 → 내면 변화의 시작 (회피하면 고착)
+- 부분 답변: <a class="wl" href="../../b/%EB%B3%80%ED%99%94%EC%97%90%EB%8C%80%ED%95%9C%EB%AC%B5%EC%83%81%EB%B0%8F%EC%B1%85%EC%A0%95%EB%A6%AC/">변화에대한묵상및책정리</a> — 변화 3유형 (바리새인형·관계 회피)
+- 여전히 열린 질문: 관계를 회피하는 패턴을 어떻게 안전하게 직면으로 이끄는가?</p>
+<hr />
+<h2>관련 페이지</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%A0%95%EC%B2%B4%EC%84%B1/">정체성</a> — 변화의 근거, 그리스도 안에서의 정체성</li>
+<li><a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a> — 현재의 은혜, 복음적 공백 극복</li>
+<li><a class="wl" href="../../t/%EA%B1%B0%EB%A3%A9/">거룩</a> — 성화, 그리스도 형상으로 변화</li>
+<li><a class="wl" href="../../t/%EC%9E%90%EB%85%80%EC%96%91%EC%9C%A1/">자녀양육</a> — 부모의 우상, 자녀 변화의 조건</li>
+<li><span class="wl-dead" title="위키 내부 링크">마음의건강강의</span> — 카르디아, 누스, 성령의 조명 구조</li>
+<li><a class="wl" href="../../b/%EB%B3%80%ED%99%94%EC%97%90%EB%8C%80%ED%95%9C%EB%AC%B5%EC%83%81%EB%B0%8F%EC%B1%85%EC%A0%95%EB%A6%AC/">변화에대한묵상및책정리</a> — 제프 아이오그와의 합성 (변화 3유형 포함)</li>
+<li><a class="wl" href="../../b/%EB%B6%80%EB%AA%A8%ED%95%99%EA%B5%90_%EA%B2%8C%EB%A6%AC%ED%86%A0%EB%A7%88%EC%8A%A4/">부모학교_게리토마스</a> — 부모의 거룩·산소마스크·분노 조절</li>
+<li><a class="wl" href="../../b/%EB%87%8C%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A4%EA%B3%84_%ED%8B%B0%EB%A8%B8%EC%8B%9C%EC%A0%9C%EB%8B%9D%EC%8A%A4/">뇌하나님의설계_티머시제닝스</a> — 사랑·두려움의 신경과학, 외면주의=두려움 기반</li>
+</ul>
+</article>
+<div class="tagrow"><span>#변화</span><span>#성화</span><span>#복음</span><span>#마음</span><span>#외면주의</span><span>#코일리아</span><span>#누스</span><span>#프로네마</span><span>#성령</span><span>#상담</span><span>#자녀양육</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

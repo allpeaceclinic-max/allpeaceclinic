@@ -1,0 +1,164 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>실존적 전통 (Existential Tradition) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:300">윤리·공공</span><span class="date">2026-07-03</span></div>
+  <h1 class="note-title">실존적 전통 (Existential Tradition)</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>실존적 전통은 인간의 내면적 주관성 — 동기·목적·의무기준 — 에 윤리의 자리를 두는 관점이다. <span class="wl-dead" title="위키 내부 링크">05주_실존적전통</span>에 따르면, 이 전통 자체는 윤리를 사람의 성품과 내면성에 연결짓는다는 점에서 정당한 통찰을 담고 있지만, 비기독교 철학자들이 이 원칙을 사용하면서 인간의 주관성을 절대화하여 <a class="wl" href="../../t/%EB%AA%A9%EC%A0%81%EB%A1%A0/">목적론적 원칙</a>과 <a class="wl" href="../../t/%EC%9D%98%EB%AC%B4%EB%A1%A0/">의무론</a>적 원칙을 배제한 채 윤리적 규범의 궁극적 근거로 삼는다는 데 문제가 있다.</p>
+<h2>1. 절대화의 구조 — 삼중관점의 붕괴</h2>
+<p>세속적 실존주의 윤리에서는 인간의 내면적 주관성이 동기·목적·의무기준이라는 세 역할 모두를 떠맡도록 요구된다. 이는 <a class="wl" href="../../t/%EC%82%BC%EC%A4%91%EA%B4%80%EC%A0%90/">삼중관점</a> 가운데 실존적 관점 하나가 규범적·상황적 관점의 자리까지 잠식하는 구조이며, 강의는 이를 "세 관점들 간의 균형이 없고 통일성이 존재하지 않는다"고 진단한다.</p>
+<h2>2. 고대의 시원 — 소피스트의 상대주의</h2>
+<p>실존적 전통의 뿌리는 고대 그리스 소피스트로 거슬러 올라간다. 트라시마쿠스는 "정의는 더욱 강한 자들의 관심거리이며 법이란 강한 자들이 대중을 복종시키기 위해 사용하는 도구"라 주장했고, 크리티아스는 통치자가 백성을 통제하려면 "실제로는 전혀 존재하지 않는 신들에 대한 두려움을 조장해야만 한다"고 했다. 소크라테스는 이에 맞서 통치의 정당성에는 반드시 질적 평가 기준이 탑재되어야 한다고 논박했다. 강의는 소피스트의 윤리가 "규범적 원칙에 대한 이해, 또는 정황적 원칙에 대한 인식을 결여하고 있다"고 평가하며, 이것이 인간의 주관성을 절대화하는 자연주의적 오류로 이어진다고 본다.</p>
+<h2>3. 근대의 내면화 — 흄과 루소</h2>
+<p><span class="wl-dead" title="위키 내부 링크">데이비드흄</span>은 현상-의무 추론에 회의적이었고, 윤리의 근거를 오직 승인과 거부의 감정을 불러일으키는 "도덕 감각"에서만 찾았다 — 그에게 윤리적 기준은 전적으로 내면적이고 주관적이었다. 낭만주의의 아버지 장 자크 루소 역시 이 세상의 모든 좋은 것은 좋은 느낌의 외적 표출이라 여겼다. 두 사람 모두 윤리를 감정·느낌이라는 내면적 실존의 영역으로 완전히 이전시킨다.</p>
+<h2>4. 19~20세기 급진화 — 마르크스와 니체</h2>
+<p>칼 마르크스에게 윤리적 기준은 사람들이 속한 계급에 따라 상대화되며, 윤리 체계는 정치적 변혁의 도구가 된다. 프리드리히 니체에게 전통적 의미의 윤리는 그저 타인을 억압하기 위한 "권력에의 의지"를 대변하는 매개체에 불과하며, "하나님은 현대인의 삶의 요인으로서는 이미 죽었다"고 선언한다. 강의는 두 사람 모두 "비합리주의를 주장하면서 스스로는 합리주의적으로 확신에 찬 대안을 제시한다"는 동형의 자기모순을 반복한다고 지적한다.</p>
+<h2>5. 언어철학적 봉쇄 — 정서주의와 논리실증주의</h2>
+<p>비트겐슈타인은 윤리가 언어의 표현 능력 밖에 있어 "말해 줄 수는 없고 오직 보여 줄 수만 있는" 신비의 영역이라 결론짓는다. 뒤이은 논리실증주의는 검증원리에 근거해 윤리적 명제를 "참도 거짓도 아니"라 선언하며, <a class="wl" href="../../t/%EC%A0%95%EC%84%9C%EC%A3%BC%EC%9D%98/">정서주의</a>는 윤리적 언어를 사실 진술이 아니라 "사실의 진술로 변장한 명령어"(카르납), "승인의 감정"을 권유하는 표현(스티븐슨)으로 재해석한다. 강의는 이 계보 전체를 실존적 전통의 언어철학적 변주로 자리매김한다.</p>
+<h2>6. 정점 — 사르트르의 실존주의</h2>
+<p><span class="wl-dead" title="위키 내부 링크">장폴사르트르</span>는 "실존이 본질을 앞선다"는 명제로 실존적 전통의 정점에 선다. 신이 존재하지 않기에 인간은 미리 정의된 본질을 소유하지 않으며, "매 순간마다 우리는 스스로 우리의 정체성을 결정한다." 강의는 사르트르가 영지주의와 다를 바 없이 윤리를 형이상학의 수준으로 축소시켰고, 인간의 책임에 파괴적인 손상을 입혔으며, 모든 윤리적 구속으로부터 인간을 자유롭게 해준다는 점에서 비합리주의적이라고 비판한다.</p>
+<h2>7. 포스트모더니즘 — 규범 자체의 부정</h2>
+<p>실존적 관점의 절대화는 포스트모더니즘에서 역사적 목적의식(정황적 관점)이 초월적 규범(규범적 관점)에 대한 반감으로 이해되는 데까지 나아간다. 세계관적 사고 자체를 인정하지 않으면 "윤리라는 말이 가진 의미 자체를 부인하는 결론"에 이른다는 것이 강의의 최종 진단이다.</p>
+<h2>8. 주권의 세 속성과 실존적 원칙</h2>
+<p><span class="wl-dead" title="위키 내부 링크">03주_주권과세속윤리학</span>은 실존적 원칙을 하나님 주권의 "임재" 속성에 대응시킨다. 실존적 원칙은 "선한 행동은 선한 내적 성품에서 비롯된다"는 정의를 가지며, 아리스토텔레스 등 세속 덕윤리는 성품·덕·내적 동기의 중요성은 강조했지만 "무엇이 덕인지, 그 덕을 어떻게 마음에 얻을 수 있는지"를 성공적으로 보여주지 못했다고 비판받는다. 기독교는 하나님의 임재를 통한 성품 형성(새사람 창조)을 설명할 수 있다는 점에서 우월하다고 평가된다.</p>
+<h2>9. 목적론적 전통과의 접점</h2>
+<p><span class="wl-dead" title="위키 내부 링크">06주_목적론적전통</span>은 목적론이 "승인과 거절이라는 주관적 감정을 윤리적 지침으로 삼고 의지하는 실존적 원칙에 동의하지 않는다"고 명시적으로 구분한다. 아리스토텔레스의 목적론적 윤리를 평가하는 대목에서도, "성품과 성격에 대한 그의 강조는 실존적 윤리의 한 부분이며, 이는 목적론적 가치체계에 대한 그의 포괄적 강조의 일환"이라고 짚어, 두 전통이 완전히 분리되지 않고 겹치는 지점이 있음을 보여준다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>실존적 전통의 근본 문제는 내면성 자체가 아니라, 내면적 주관성이 동기·목적·의무기준의 세 역할을 모두 떠맡도록 절대화되는 데 있다.</li>
+<li>소피스트에서 포스트모더니즘까지 2500년의 세속 윤리학사가 이 절대화라는 단일한 진단축으로 꿰인다 — 흄·루소(감정), 마르크스·니체(이데올로기), 비트겐슈타인·정서주의(언어), 사르트르(실존)가 모두 같은 구조적 결함을 공유한다.</li>
+<li>세속윤리학은 자율적 이성의 권위를 주장한다는 점에서 합리적이지만, 윤리적 기준에의 접근 가능성 자체를 부인한다는 점에서 비합리주의적이라는 이중적 성격을 갖는다.</li>
+<li>그리스도인의 실존적 변화는 인간의 주관성을 절대화하는 것이 아니라 그리스도의 성품을 닮아가는 것(imitatio Christi)이며, 기준을 인간 자신이 아니라 그리스도에게 둔다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>실존적 원칙 자체가 규범적·상황적 관점과 어떻게 온전히 통합되는지의 적극적 대안은 7~8장(의무론적 전통·계시)에서 종합될 것으로 예고되지만, 그 종합이 5주차 자체에서는 완결되지 않는다.</li>
+<li>흄의 "도덕감각"과 정서주의의 "감정 표현"이 유사한 결론(윤리의 주관화)에 이르면서도 인식론적 경로가 다른데(감각 경험 vs 언어철학적 검증), 두 계보의 접점이 명시적으로 연결되지는 않는다.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EB%AA%A9%EC%A0%81%EB%A1%A0/">목적론</a> — 실존적 전통과 구분되면서도 성품 강조 지점에서 겹치는 전통</li>
+<li><a class="wl" href="../../t/%EC%9D%98%EB%AC%B4%EB%A1%A0/">의무론</a> — 실존적 전통이 배제하는 규범 중심 전통</li>
+<li><a class="wl" href="../../t/%EC%A0%95%EC%84%9C%EC%A3%BC%EC%9D%98/">정서주의</a> — 실존적 전통의 언어철학적 변주</li>
+<li><span class="wl-dead" title="위키 내부 링크">장폴사르트르</span> — 실존적 전통의 정점</li>
+<li><span class="wl-dead" title="위키 내부 링크">데이비드흄</span> — 도덕감각론으로 실존적 전통에 합류</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">05주_실존적전통</span></td>
+<td>강의노트</td>
+<td>소피스트~포스트모더니즘 실존적 전통 전체 계보</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">06주_목적론적전통</span></td>
+<td>강의노트</td>
+<td>목적론과의 구분 및 겹침 지점</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">03주_주권과세속윤리학</span></td>
+<td>강의노트</td>
+<td>실존적 원칙과 주권의 "임재" 속성 대응</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>📖 근거: <span class="wl-dead" title="위키 내부 링크">07주_의무론적전통</span>, <span class="wl-dead" title="위키 내부 링크">06주_목적론적전통</span>, <span class="wl-dead" title="위키 내부 링크">03주_주권과세속윤리학</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/기독교윤리</span><span>#topic/실존주의</span><span>#topic/삼중관점</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

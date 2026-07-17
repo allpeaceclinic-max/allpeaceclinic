@@ -1,0 +1,153 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>에피쿠로스학파 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:174">성경·해석</span><span class="date">2026-06-28</span></div>
+  <h1 class="note-title">에피쿠로스학파</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>에피쿠로스학파(Epicureanism)는 주전 4세기 말 아테네의 에피쿠로스(Epicurus, 주전 341–270)가 창시한 철학 학파다. 핵심 주장은 실재의 물질성, 신과 죽음에 대한 두려움으로부터의 해방, 그리고 우정(친밀한 공동체)을 최고의 쾌락으로 보는 것이다. MBTS 신약개론I 2주 강의에서는 신약성경의 그리스-로마 배경을 이루는 네 철학 학파 중 하나로 소개된다.</p>
+<h2>1. 핵심 교리</h2>
+<p>에피쿠로스학파는 세 가지 핵심 교리로 요약된다. 첫째, <strong>실재는 물질적이다.</strong> 원자론적 세계관에 근거하여, 영혼도 물질로 이루어졌으며 죽음과 함께 흩어진다. 둘째, <strong>신과 죽음의 두려움에서 자유롭다.</strong> 신들은 인간사에 개입하지 않으며, 죽음은 감각의 소멸이므로 두려워할 대상이 아니다. 셋째, <strong>우정이 최고의 쾌락이다.</strong> 에피쿠로스학파는 욕구를 절제하고 소수의 친밀한 공동체 안에서 평온(아타락시아, ἀταραξία)을 추구했다.</p>
+<h2>2. 신약성경 세계 속 에피쿠로스학파</h2>
+<p>MBTS 신약개론I 2주 강의는 1세기 그리스-로마 철학 환경을 조망하면서, 에피쿠로스학파가 초기 그리스도인들과 유사하게 취급받았음을 지적한다. 두 공동체 모두 배타적 공동체 구조와 공동 재산 실천이라는 외적 유사성을 가졌기 때문이다. 이 비교는 초대 교회가 외부 세계에서 어떻게 인식되었는지를 이해하는 단서를 제공한다.</p>
+<h2>3. 다른 학파들과의 비교</h2>
+<p>신약개론I 강의가 제시한 네 학파 비교에서 에피쿠로스학파는 다음과 같이 위치한다.</p>
+<table>
+<thead>
+<tr>
+<th>학파</th>
+<th>핵심 주장</th>
+<th>신약과의 주요 접점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="wl" href="../../t/%ED%94%8C%EB%9D%BC%ED%86%A4%ED%95%99%ED%8C%8C/">플라톤학파</a></td>
+<td>비가시적 천상이 영원한 실재, 부당한 고난이 더 고귀</td>
+<td>디아스포라 유대 사상(필론)에 깊은 영향</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%8A%A4%ED%86%A0%EC%95%84%ED%95%99%ED%8C%8C/">스토아학파</a></td>
+<td>이성·자연법, 덕목 추구</td>
+<td>자연법 개념의 사회적 확산</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EA%B2%AC%EC%9C%A0%ED%95%99%ED%8C%8C/">견유학파</a></td>
+<td>인생의 간결함, 미덕이 행복의 전제</td>
+<td>외부 환경으로부터 독립적 행복</td>
+</tr>
+<tr>
+<td>에피쿠로스학파</td>
+<td>실재의 물질성, 신·죽음 두려움 해방, 우정이 최고 쾌락</td>
+<td>초기 교회와 유사하게 취급; 공동 재산·배타적 공동체 비교</td>
+</tr>
+</tbody>
+</table>
+<h2>4. 신약 해석과의 연관성</h2>
+<p>에피쿠로스학파의 신 개념(개입하지 않는 신들)은 바울이 아레오바고에서 "알지 못하는 신"을 논증하는 장면(<span class="wl-dead" title="위키 내부 링크">행17</span>)의 청중 맥락을 이해하는 데 관련된다. 에피쿠로스적 세계관을 가진 청중에게 "역사 안에 개입하는 하나님"과 "죽은 자의 부활"은 이중으로 낯선 개념이었을 것이다. 또한 빌립보서 4:11("어떤 형편에 있든지 자족하기를 배웠노라")의 표현이 에피쿠로스·스토아적 평온(아타락시아) 언어와 어떻게 대화하는지는 주목할 만한 접점이다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>에피쿠로스학파는 "쾌락"을 방종이 아니라 절제된 평온과 우정으로 정의했다는 점에서, 대중적 오해와 달리 금욕적 성격을 가졌다.</li>
+<li>초기 교회와 에피쿠로스 공동체의 외적 유사성(공동 재산, 배타성)은 외부인이 교회를 어떻게 이해했는지를 보여주는 사회사적 단서다.</li>
+<li>죽음을 두려워하지 않는 에피쿠로스 철학과 부활을 선포하는 복음은 결론이 달라도 동일한 질문—죽음 앞에서 어떻게 살 것인가—을 공유한다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>에피쿠로스 공동체와 초기 교회의 유사성이 의도적 모방인지 우발적 유사인지를 어떻게 판별할 수 있는가?</li>
+<li>바울의 아레오바고 설교(<span class="wl-dead" title="위키 내부 링크">행17</span>)는 에피쿠로스 청중을 어떻게 의식하고 있는가? 스토아 철학과의 대화와 어떻게 구별되는가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%ED%94%8C%EB%9D%BC%ED%86%A4%ED%95%99%ED%8C%8C/">플라톤학파</a> — 동시대 경쟁 철학 학파; 디아스포라 유대 사상에 더 깊은 영향을 미침</li>
+<li><a class="wl" href="../../t/%EC%8A%A4%ED%86%A0%EC%95%84%ED%95%99%ED%8C%8C/">스토아학파</a> — 자연법과 덕목 중심; 신약 윤리 언어와 광범위하게 겹침</li>
+<li><a class="wl" href="../../t/%EA%B2%AC%EC%9C%A0%ED%95%99%ED%8C%8C/">견유학파</a> — 간결한 삶과 외부 독립성 강조</li>
+<li><span class="wl-dead" title="위키 내부 링크">02주_신약성경의세계</span> — 에피쿠로스학파가 네 철학 학파 중 하나로 소개된 강의</li>
+</ul>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/신약학</span><span>#topic/그리스로마철학</span><span>#topic/제2성전시대</span><span>#topic/헬레니즘</span><span>#topic/성경배경</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

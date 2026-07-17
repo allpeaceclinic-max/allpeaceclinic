@@ -1,0 +1,259 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>죄성 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:226">조직신학·교리</span><span class="date">2026-07-18</span></div>
+  <h1 class="note-title">죄성</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>죄성(罪性, sinfulness)은 타락 이후 인간이 물려받아 지니게 된, 죄를 향한 본성적 성향이다. 셈할 수 있는 낱개의 잘못(죄들)도 아니고, 그 잘못이 흘러나오는 자기 신격화의 심장(<a class="wl" href="../../t/%EC%A3%84/">죄</a>)도 아니며, 죄를 규정하는 교리의 골격(<a class="wl" href="../../t/%EC%A3%84%EB%A1%A0/">죄론</a>)도 아니다. 이 페이지가 붙드는 것은 그 골격이 살로 입혀진 자리 — 원죄가 남긴 부패한 본성이 한 사람의 지·정·의 안에서 실제로 어떻게 작동하며, 거듭난 신자 안에서도 왜 사라지지 않고, 어디까지가 책임이고 어디부터가 연약인가 하는 물려받은 본성적 부패의 각론이다. 원죄와 전가의 교리적 논리는 <a class="wl" href="../../t/%EC%A3%84%EB%A1%A0/">죄론</a>이 놓고, 여기서는 그 결과로 남은 본성의 실존을 좇는다.</p>
+<p>이 각론을 떠받치는 볼트의 목소리는 셋이다. 황규명은 결혼·가정 관계에서 죄성이 드러나는 방식을, 김유정은 청소년 발달과 죄성의 긴장을, 한영웅 목사는 거듭난 신자 안에 남은 죄성을 각각 짚는다. 세 자료가 공유하는 전제는 하나다 — 죄성은 신앙 훈련이나 좋은 환경과 무관하게 모든 인간에게 보편적으로 현존한다. 황규명의 고백이 그 핵심을 압축한다: "크리스천이다, 훈련받았다, 그러니 잘 살 줄 알았는데 살아보니 다 오더라."</p>
+<h2>1. 전적 부패 — 전 영역인가 최악인가</h2>
+<p>죄성을 오해하는 가장 흔한 방식은 전적 부패(total depravity)를 "전적 악"으로 읽는 것이다. 전적 부패는 모든 사람이 상상 가능한 최악이라는 뜻이 아니다. 그것은 죄의 오염이 인간의 <em>전 영역</em> — 지성·감정·의지, 몸과 영 — 에 침투했다는 범위의 진술이다. 죄성은 인격의 한구석에 격리된 얼룩이 아니라 모든 기능에 배어든 물감이다. 판단(지성)도, 사랑(감정)도, 결단(의지)도 죄의 굴절에서 자유롭지 않다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>흔한 오해(전적 악)</th>
+<th>정확한 뜻(전 영역)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>강조점</td>
+<td>인간이 낼 수 있는 최악의 정도</td>
+<td>부패가 미친 범위의 전면성</td>
+</tr>
+<tr>
+<td>함의</td>
+<td>인간에게 아무 선도 없다</td>
+<td>모든 기능이 오염되었으나 정도는 사람마다 다르다</td>
+</tr>
+<tr>
+<td>위험</td>
+<td>냉소·정죄</td>
+<td>(없음 — 이것이 성경적 진술)</td>
+</tr>
+</tbody>
+</table>
+<p>그러나 전 영역의 침투가 곧 능력의 소멸은 아니다. 「니고데모의 안경」이 신중하게 짚듯, 전적 타락은 "인간이 자신의 능력을 모두 상실했다는 말이 아니라 그 능력을 바르게 행사할 자세를 상실했다는 말"이다. 의지라는 기능이 사라진 것이 아니라 그 의지가 향하는 방향이 뒤틀린 것이다. 그래서 죄성은 불신자의 시민적 선(civic good) — 자식을 향한 사랑, 정의감, 아름다움을 만드는 손 — 을 부정하지 않는다. 다만 그 어떤 선도 하나님과의 관계를 회복시키거나 구원의 공로가 되지는 못한다. 범위는 전면적이되 무능력은 구원론적인 것이지 도덕적 전무(全無)가 아니다. 이 균형을 놓치면 죄성 이해는 두 극단으로 미끄러진다 — 인간에게 아무 선도 없다는 냉소이거나, 스스로 구원의 첫발을 뗄 수 있다는 낙관이거나. (전적 무능력의 교리적 자리매김은 <a class="wl" href="../../t/%EC%A3%84%EB%A1%A0/">죄론</a>에 위임한다.)</p>
+<h2>2. 롬 7의 내적 전쟁 — "원함은 내게 있으나"</h2>
+<p>죄성이 각론이 되는 자리는 신자의 내면이다. 바울은 로마서 7장에서 죄성의 살아 있는 초상을 남긴다 — "선을 행하기 원하는 나에게 악이 함께 있는 것"(롬 7:21). 한영웅 목사가 이 구절에서 읽어내는 것은 죄성의 강제력이다. "자기 속의 죄가 법처럼 자리잡고 있다. 강제력을 가지고 계속 끌고 다니는 성향이 있다." 죄성은 내가 이따금 저지르는 무엇이기 이전에, 내 안에 상주하며 나를 끌고 가려는 세력이다.</p>
+<p>역설적인 것은, 이 전쟁이 거듭난 자에게 와서야 비로소 선명해진다는 점이다. 한영웅 목사의 관찰이 예리하다 — "거듭났기 때문에 이것이 보인다. 거듭나면 새로운 본성, 선을 행하기를 사모하는 본성이 생긴다. 본성의 눈으로 보니 내 속에 죄의 강력한 현상이 있다는 것이다." 빛이 들어와야 어둠이 드러나듯, 새 본성이 심겨야 남은 죄성이 눈에 잡힌다. 그래서 "치열한 싸움이 내적으로 일어난다. 거듭난 사람들 속에 일어난다." 죄성을 못 느끼는 것이 성숙의 표지가 아니다 — 오히려 죄성과 치열하게 싸우는 사람이 성숙할 가능성이 크다.</p>
+<p>이 롬 7의 전쟁은 신경학의 언어로도 번역된다. 정신과 의사 티머시 제닝스는 『뇌, 하나님의 설계』에서 이 내적 분열을 전전두피질(판단·하나님을 신뢰함)과 대뇌변연계(감정·조건화된 반응)의 충돌로 읽는다 — "내 전전두피질은 하나님의 뜻을 행하기 원한다. 하지만 구습과 조건화된 반응이 거의 반사적으로 튀어나온다." 죄성은 형이상학적 추상이 아니라, 형성된 성품과 배선된 습관 위에서 매일 작동하는 실재다.</p>
+<h2>3. 육신과 옛사람·새사람</h2>
+<p>성경이 죄성을 부르는 대표 어휘는 사륵스(σάρξ, 육신)다. 여기서 결정적인 분별이 하나 있다 — 육신은 물질로서의 몸이 아니다. 김성룡 목사가 갈 2장을 강해하며 "육신의 생각은 사망이요 하나님과 원수"(롬 8:6-7)라 짚을 때, 육신은 죄성이 지배하는 옛 실존 전체를 가리킨다. 몸을 죄의 근원으로 오해하면 금욕주의로 미끄러지고, 죄성을 몸 바깥의 관념으로 밀어내면 그 완강함을 놓친다. 육신은 나의 일부가 아니라 나를 사로잡는 옛 존재 방식이다.</p>
+<p>그래서 성경은 죄성과의 싸움을 옷을 바꿔 입는 이미지로 그린다. 한영웅 목사가 강해한 에베소서 4장이 그 정식이다 — "유혹의 욕심을 따라 썩어져 가는 구습을 따르는 옛 사람을 벗어 버리고 … 하나님을 따라 의와 진리의 거룩함으로 지으심을 받은 새 사람을 입으라"(엡 4:22-24). 세 동작이 있다: 옛사람을 <em>벗고</em>, 심령이 <em>새롭게 되어</em>, 새사람을 <em>입는다</em>. 여기서 죄성의 각론이 드러난다 — 옛사람은 이미 정죄받아 벗어야 할 대상이되, 자동으로 벗겨지지 않는다. 벗음과 입음은 능동의 명령이며, 그 가운데 "심령이 새롭게 되어"는 하나님이 공급하시는 새로움이다. 옛사람과 새사람이 한 신자 안에 공존하는 이 긴장이 곧 남은 죄성의 자리다.</p>
+<h2>4. 신자 안에 남은 죄성 ⚖️</h2>
+<p>그렇다면 왜 하나님은 거듭난 자 안에 죄성을 남겨 두시는가. 한영웅 목사는 이 질문을 정면으로 던지고 답한다 — "죄를 지으려는 성향, 이 부분이 왜 남아 있는가? 이 땅에 사는 동안 거룩하게 살게 하기 위해 남아 있다. 예수님이 없으면 살 수 없어, 충분히 훈련되게 만드신 것이다." 원죄가 물려준 두 유산 가운데 형벌과 죄책은 십자가로 면제되지만, 오염된 성향은 남는다. 그리고 그 잔재는 저주가 아니라 성화의 싸움터다 — 신자를 매일 십자가의 은혜에 의존하게 만드는 장치다.</p>
+<p>이 남은 죄성을 다루는 일은 두 낭떠러지 사이의 능선을 걷는 일이다.</p>
+<table>
+<thead>
+<tr>
+<th>완전주의</th>
+<th>성경의 자리</th>
+<th>패배주의</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>신자에게 죄성은 없다는 착각</td>
+<td>죄성은 남았으나 왕 노릇하지 못한다</td>
+<td>어차피 무너질 텐데 싸울 이유가 없다</td>
+</tr>
+<tr>
+<td>회개 불필요·성화 교리 소거(구원파)</td>
+<td>뜻을 정하여 죄에 선수치되, 힘은 십자가 사랑</td>
+<td>무기력·자포자기의 신앙</td>
+</tr>
+</tbody>
+</table>
+<p>한영웅 목사는 두 극단을 모두 지목한다. 한쪽은 구원파의 오류다 — "회개할 필요가 없다고 한다. 이들에게는 성화의 교리가 없다." 그가 관찰하기로 구원파에 빠지는 이들은 "믿는데도 죄가 남아서 찝찝한 사람들," 곧 남은 죄성의 실재를 감당할 신학이 없어 그것을 부인해 버린 이들이다. 다른 쪽은 패배주의다 — "뜻을 세우면 무너질 건데 뭐하러 세우나 하는 패배의식 속에 살고 있는 것이다. 무기력한 신앙생활이다." 성경의 자리는 그 사이에 있다. 다니엘처럼 "뜻을 정하여"(단 1:8) 끊어야 할 죄를 구체적으로 적고 지키기 위해 먼저 기도하되, 그 싸움의 힘은 이 악문 의지가 아니라 "십자가의 사랑으로 예수님을 의존"하는 데서 온다. (죄성을 이겨가는 평생의 과정으로서의 <a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a>, 죄를 이기는 적극적 능력으로서의 <a class="wl" href="../../t/%EA%B1%B0%EB%A3%A9/">거룩</a>은 각 페이지에 위임한다.)</p>
+<h2>5. 죄성과 기질·중독 — 책임과 연약의 분별 ⚖️</h2>
+<p>죄성이 본성적 성향이라면, 그것은 타고난 기질이나 병리적 중독과 어떻게 구별되는가. 의료 현장이 이 질문의 가장 예민한 자리다. 김유정의 청소년 이해 강의가 그 긴장을 정면으로 다룬다. 현대 발달심리학은 청소년의 충동적·공격적 행동을 전두엽 발달의 미완성으로 설명하는데, 이 설명은 "모르고 한다"는 너그러운 해석의 과학적 근거가 된다. 그러나 김유정은 수용하면서도 즉각 균형추를 단다 — "그렇게 볼 수 있지만, 인간의 죄성으로 봐야 한다." 자필로 두 번 강조된 물음이 핵심이다: <strong>"이것이 면죄부가 되는가?"</strong> 발달의 미완성이든 본성의 무능력이든, 할 수 없다는 사실이 곧 책임 면제는 아니다.</p>
+<p>이 분별은 스펙트럼으로 존재한다. 제닝스가 관찰하듯 책임은 흑백이 아니다.</p>
+<table>
+<thead>
+<tr>
+<th>상태</th>
+<th>의지의 조건</th>
+<th>책임의 정도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>건강한 성인</td>
+<td>판단 회로가 충동을 통제</td>
+<td>온전한 책임</td>
+</tr>
+<tr>
+<td>중독</td>
+<td>보상 회로가 납치됨</td>
+<td>감경되나 소멸하지 않음</td>
+</tr>
+<tr>
+<td>중증 정신질환·뇌손상</td>
+<td>판단 회로 자체의 손상</td>
+<td>크게 감경·면책될 수 있음</td>
+</tr>
+</tbody>
+</table>
+<p>같은 원리가 기질에도 적용된다. 황규명이 『Narcissism Epidemic』을 빌려 비판하는 자기사랑(narcissism)은 기질적 성향이면서 동시에 죄성의 변주다 — 자아를 제단에 올리는 자기중심성. 다만 이 비판은 건강한 자기 존중, 곧 하나님의 형상 회복으로서의 자기 돌봄과 구별되어야 한다. 의료인의 자리는 두 오류를 함께 피하는 데 있다. 모든 행동을 뇌 탓으로 돌려 책임을 지우는 신경 결정론과, 중독·정신질환을 순전한 의지박약으로 몰아 정죄하는 도덕주의 — 둘 다 환자를 잃는다. 죄성의 신학은 이 스펙트럼을 감당할 언어를 준다. 인간은 자발적 주체이되 손상될 수 있는 주체이며, 회복은 정보나 정죄가 아니라 갈망의 재형성에서 온다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>죄성은 물려받은 본성적 성향이다 — 죄(본질)와 죄론(교리)의 사이, 부패한 본성이 한 사람 안에서 실제로 작동하는 각론이다.</li>
+<li>전적 부패는 "전적 악"이 아니라 "전 영역"의 침투다. 부패는 지·정·의 전체에 배었으되 능력을 소멸시킨 것이 아니라 방향을 뒤틀었을 뿐이다.</li>
+<li>롬 7의 내적 전쟁은 거듭난 자에게 와서야 선명해진다. 죄성을 못 느끼는 것이 성숙이 아니라, 치열하게 싸우는 자가 성숙에 가깝다.</li>
+<li>육신(사륵스)은 몸이 아니라 죄성이 지배하는 옛 실존이며, 옛사람을 벗고 새사람을 입는 능동의 명령이 남은 죄성의 자리를 규정한다.</li>
+<li>남은 죄성은 완전주의(죄성 부인)와 패배주의(무기력) 사이의 능선이다. 그 잔재는 신자를 십자가에 의존시키는 성화의 장치다.</li>
+<li>기질·중독 앞에서 책임은 스펙트럼이다. "면죄부가 되는가"라는 물음과 "그럼에도 연약을 살핀다"는 긍휼을 함께 붙드는 것이 의료 현장의 죄성 이해다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>발달의 미완성·기질·중독과 죄성을 실제 상황에서 어떻게 분별하는가? 같은 행동을 두 관점으로 동시에 읽을 때 실천적 조율의 기준은 무엇인가.</li>
+<li>자기사랑 비판과 건강한 자기 존중 사이의 경계는 어디인가 — 상담에서 자존감 향상은 죄성의 동조인가, 하나님의 형상 회복인가.</li>
+<li>남은 죄성을 이미 수치심과 자기 정죄에 시달리는 신자에게 전할 때, 완전주의와 패배주의 사이의 균형을 어떻게 목회적으로 조율하는가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%A3%84/">죄</a> — 죄의 본질(자기 신격화)과 실존적 해부. 죄성의 뿌리를 이루는 페이지.</li>
+<li><a class="wl" href="../../t/%EC%A3%84%EB%A1%A0/">죄론</a> — 원죄·전가·전적 타락의 교리적 골격. 죄성이 딛고 선 교리.</li>
+<li><a class="wl" href="../../t/%EC%9E%90%EC%9C%A0%EC%9D%98%EC%A7%80/">자유의지</a> — 어거스틴의 네 상태, 타락한 의지의 무능과 은혜의 치유. 죄성이 의지론과 만나는 자리.</li>
+<li><a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a> — 남은 죄성을 이겨가는 평생의 과정.</li>
+<li><a class="wl" href="../../t/%EA%B1%B0%EB%A3%A9/">거룩</a> — 죄성과 싸우는 적극적 능력.</li>
+<li><span class="wl-dead" title="위키 내부 링크">황규명</span> · <span class="wl-dead" title="위키 내부 링크">김유정</span> — 가정·발달 현장에서 죄성을 다룬 두 강의.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>황규명, 「하나님이 설계하신 가정」</td>
+<td>강의</td>
+<td>죄성의 보편성("다 오더라"), 자기사랑(narcissism) 비판, 결혼 관계에서의 죄성</td>
+</tr>
+<tr>
+<td>김유정, 「청소년 이해와 의사소통」</td>
+<td>강의</td>
+<td>전두엽 미완성과 죄성, "면죄부가 되는가?", 발달과 죄성의 통합</td>
+</tr>
+<tr>
+<td>한영웅, 「죄를 죽이는 기도생활」(롬 6:14)</td>
+<td>설교</td>
+<td>롬 7 내적 전쟁, 거듭나야 보이는 죄성, 남은 죄성의 이유(거룩을 위함), 구원파↔패배주의</td>
+</tr>
+<tr>
+<td>한영웅, 「주님 안에서의 영성」(엡 4:22-24)</td>
+<td>설교</td>
+<td>옛사람 벗음·새사람 입음, 심령의 새로워짐</td>
+</tr>
+<tr>
+<td>티머시 제닝스, 『뇌, 하나님의 설계』</td>
+<td>책</td>
+<td>전전두피질vs대뇌변연계, 중독의 책임 스펙트럼, 롬 7의 신경학적 번역</td>
+</tr>
+<tr>
+<td>이상협, 「니고데모의 안경」</td>
+<td>강의</td>
+<td>전적 타락의 정확한 정의 — "능력의 상실이 아니라 바르게 행사할 자세의 상실"</td>
+</tr>
+<tr>
+<td>김성룡, 「정말! 그리스도인입니까」(갈 2:20)</td>
+<td>설교</td>
+<td>육신(사륵스)의 생각 — 사망이요 하나님과 원수</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/조직신학</span><span>#discipline/영성신학</span><span>#discipline/상담학</span><span>#전적부패</span><span>#남은죄성</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

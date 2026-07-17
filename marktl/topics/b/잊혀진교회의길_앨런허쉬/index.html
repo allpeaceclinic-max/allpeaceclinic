@@ -1,0 +1,349 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>잊혀진 교회의 길 (The Forgotten Ways) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="author">앨런 허쉬</span><span class="date">2026-05-05</span></div>
+  <h1 class="note-title">잊혀진 교회의 길 (The Forgotten Ways)</h1>
+  
+</header>
+<article class="note">
+<p><strong>저자</strong>: 앨런 허쉬 (Alan Hirsch, 2006)<br />
+<strong>분류</strong>: 교회론 / 선교학 / 사도적 운동론</p>
+<hr />
+<h2>★★ 핵심 명제: 기독론 → 선교학 → 교회론</h2>
+<blockquote>
+<p><strong>기독론이 선교학을 결정하고, 선교학이 교회론을 결정한다.</strong></p>
+</blockquote>
+<p>이 한 문장이 책 전체를 관통한다.</p>
+<p><code>그리스도가 누구인가?
+        ↓
+어떻게 선교하는가?
+        ↓
+교회는 어떤 형태여야 하는가?</code></p>
+<ul>
+<li><strong>교회론은 핵심 교리 중 가장 유동적</strong>: 역사적으로 유한하고, 문화적으로 특정됨</li>
+<li>예배 방법, 사회적 역동성, 예전은 복음을 상황화하는 과정의 결과물</li>
+<li><strong>교회는 반드시 선교적 사명을 뒤따라야 한다</strong> — 형태는 사명에서 파생됨</li>
+<li>교회 형태를 신성불가침한 것으로 만들면 → <strong>우상숭배</strong></li>
+</ul>
+<p>칼 바르트: "선교는 교회가 속해 있는 하나님의 속성이다."<br />
+→ <a class="wl" href="../../t/%EB%AF%B8%EC%94%A8%EC%98%A4%EB%8D%B0%EC%9D%B4/">미씨오데이</a>: 선교의 주체는 하나님, 교회는 도구</p>
+<hr />
+<h2>1. 사도적 천재성 (Apostolic Genius) — mDNA 6가지</h2>
+<p>초대교회(성경도·전문가도·건물도 없이 성장)와 중국 지하교회(박해 속에 증가)의 공통 비결:<br />
+→ <strong>mDNA(선교적 DNA)</strong> — 구조가 아니라 DNA</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>요소</th>
+<th>핵심 내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>J is L</strong></td>
+<td>예수님이 주님 — 만물의 주, 그리스도 중심의 유일신 (고전8:16)</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>제자도</strong></td>
+<td>모든 영역을 주님께 돌려드리는 것; 세상에서 이루어지는 제자도; 교회사역의 문턱↓ 제자 되는 문턱↑</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>선교적-성육신적 추진력</strong></td>
+<td>복음은 끊임없이 주소를 바꿔야 한다 (헬무트 틸리케); 파송(원심력)+뿌리내리기(성육신); presence·proximity·prevenience·powerlessness·passion·proclamation</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>사도적 환경</strong></td>
+<td>APEST 문화 조성 — 협동심·방향감각·목적의식</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>유기적 조직</strong></td>
+<td>교회 개척 X → <strong>운동</strong> O; DNA 기반 재생산 (씨앗→나무→숲)</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>경계성과 커뮤니타스</strong></td>
+<td>경계성(안전구역 밖) → 커뮤니타스(확장된 공동체); 빅터 터너</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>2. 구조 vs 제도주의 — 결정적 구분</h2>
+<blockquote>
+<p><strong>구조는 필수다. 제도주의는 병이다.</strong></p>
+</blockquote>
+<ul>
+<li><strong>구조</strong>: 협동·사회적 결속 유지에 절대 필요 (생명 시스템 유지)</li>
+<li><strong>제도주의</strong>: 시간이 지나면서 구조가 목적을 대체 → 하나님 백성의 역할·권한을 중앙기관이 독점</li>
+</ul>
+<p><code>비전·사명 → 프로그램·경영기법(제도화) → 쇠퇴</code></p>
+<ul>
+<li>"당신이 체제와 사랑에 빠져버리면, 그것을 변화시킬 능력을 잃는다"</li>
+<li>운동저격범(사냥꾼) → 목동이 되려는 방향으로 이동해야</li>
+<li>신학교→권위→목사안수 기관→목회자 권위: 이 구조 자체가 제도주의의 산물</li>
+</ul>
+<p><strong>네트워크 vs 구조(교단)</strong>:
+- 구조(교단): 힘의 중앙집중 → 종교적 제도주의
+- 네트워크(로잔): 힘과 책임이 두루 미침 → 참된 예수 운동</p>
+<hr />
+<h2>3. ★ APEST — 사라진 APE를 찾아라</h2>
+<p>엡4:11 — 사도·선지자·전도자·목사·교사</p>
+<table>
+<thead>
+<tr>
+<th>은사</th>
+<th>역할</th>
+<th>주요 사역</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A</strong>postolic 사도</td>
+<td>운동 확장·개척, DNA 파종과 순수성 보호</td>
+<td>교회가 당면한 초지역적·전략적 사안</td>
+</tr>
+<tr>
+<td><strong>P</strong>rophetic 선지자</td>
+<td>하나님 뜻 선포, 사회정의, 분별</td>
+<td>음성 경청, 의문 제기</td>
+</tr>
+<tr>
+<td><strong>E</strong>vangelistic 전도자</td>
+<td>복음 확장, 아웃리치</td>
+<td>복음 전파</td>
+</tr>
+<tr>
+<td><strong>S</strong>hepherding 목자</td>
+<td>공동체 돌봄</td>
+<td>셀 모임, 상담, 예배</td>
+</tr>
+<tr>
+<td><strong>T</strong>eaching 교사</td>
+<td>말씀 교육, 지혜 개발</td>
+<td>성경공부, 신학·철학 토론</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>서구 교회는 <strong>ST(목사-교사)만 남기고 APE를 추방했다.</strong></p>
+</blockquote>
+<p><strong>APE가 사라진 결과 → 파라처치 기관으로 흘러나왔다:</strong><br />
+네비게이토, 소저너스, 월드비전, 인터서브, 누가회…</p>
+<p>이것이 허쉬의 깊은 통찰이다. APE 은사를 가진 사람들이 교회 구조 안에서 자리를 찾지 못하자 <strong>파라처치(선교단체·NGO)라는 새로운 그릇</strong>을 만들어낸 것이다. 파라처치는 교회의 실패가 아니라 억압된 사도성의 출구였다.</p>
+<ul>
+<li>사도적 리더십은 공식 직분이 아닌 <strong>기능</strong></li>
+<li>목사적 개념이 교회를 선교적 기관으로 재인식하는 데 <strong>가장 큰 방해요소</strong> (록스버그)</li>
+<li>엡2:20 — 사도와 선지자의 터: 환경과 판단기준을 제공하는 기초적 은사</li>
+</ul>
+<hr />
+<h2>4. ★ 경계성과 커뮤니타스 (Liminality &amp; Communitas) — 공동체성의 탁월한 설명</h2>
+<blockquote>
+<p><strong>커뮤니타스는 안락함에서 태어나지 않는다. 경계에서 태어난다.</strong></p>
+</blockquote>
+<p>빅터 터너(Victor Turner)의 인류학 개념을 교회론에 적용:</p>
+<p><code>중산층 + 소비주의 = 안락함 → 공동체가 아닌 '나를 위한 공동체'로 전락</code></p>
+<ul>
+<li><strong>경계성(Liminality)</strong>: 안전구역 밖, 기적이 쓰이는 장소, 고난과 위험의 장소</li>
+<li><strong>커뮤니타스</strong>: 경계성에서 탄생하는 확장된 공동체 (하나님·교회·세상의 공동구역)</li>
+</ul>
+<p><code>△ → ○ → ⓞ
+수직구조 → 원 → 원의 경계에서 활발</code></p>
+<ul>
+<li>원의 <strong>중심</strong>에 있으려 하나, 하나님은 <strong>경계(변두리)</strong>에서 일하신다</li>
+<li>교회가 경계에서 사역할 때 항상 중앙까지 살렸다</li>
+<li><strong>성전 → 광장</strong></li>
+</ul>
+<p><strong>공동체성 적용</strong>:
+- 프로그램·예배 중심 교회는 안락한 중심을 지향 → 커뮤니타스 불가
+- 순례자들의 규범: 경계성이 먼저, 커뮤니타스는 그 결과
+- KCMF 누가회, 인터서브 선교 공동체: 본질상 경계성의 공동체 — 커뮤니타스를 지향해야</p>
+<hr />
+<h2>5. 크리스텐덤 모드 → 선교적 모드</h2>
+<ul>
+<li><strong>크리스텐덤</strong>: 문화가 교회 편 → 끌어모으는 전도법 가능</li>
+<li><strong>탈크리스텐덤</strong>: 문화의 장벽을 넘어 나가야 — 초대교회·현대 동일</li>
+</ul>
+<p><strong>Ecclesia semper reformanda</strong> — "교회는 항상 개혁해야 한다"</p>
+<p>역사적 선교적 운동 사례:
+신약교회, 속사도 시대, 켈트족의 운동, 모라비안 운동, 초기 감리교, 중국 교회, 인디언 하우스 처치 운동</p>
+<hr />
+<h2>6. 유기적 교회론</h2>
+<blockquote>
+<p><strong>교회를 개척하지 말고, 운동을 시작하라!</strong></p>
+</blockquote>
+<ul>
+<li>교회 = 운동의 은유 (건물과 운동은 상반된다)</li>
+<li>씨앗 안에 나무, 나무 안에 숲 — DNA 기반의 자기 재생산</li>
+<li>세상 인구는 곱하기, 교회는 더하기 (월터 헨릭슨) — 지상대위임령이 어려운 이유</li>
+<li>Pay it forward ← → Pay it back</li>
+</ul>
+<hr />
+<h2>강의와의 연결</h2>
+<h3>이상협 강의 — 직접 연결</h3>
+<table>
+<thead>
+<tr>
+<th>강의</th>
+<th>연결 지점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>공동체, 구조와 문화</code></td>
+<td>제도적(딤전3)+유기체적(요15), 구조 변화만으로 부족 → <strong>문화</strong> 변혁 필요 = 허쉬의 mDNA 개념</td>
+</tr>
+<tr>
+<td><code>선교적 교회 세미나-삼덕교회</code></td>
+<td>선교적 교회의 정의·필요, 타문화·도시문화·지역사회 선교 = 선교적-성육신적 추진력</td>
+</tr>
+<tr>
+<td><code>교회와 선교, 경운교회</code></td>
+<td>미셔널 패밀리 + 선교적 교회 공동체(확장된 가정) = 커뮤니타스</td>
+</tr>
+<tr>
+<td>MBTS 조직신학II/교회행정학</td>
+<td>포스트 코로나 교회론, 기업교회 비판 = 제도주의 비판</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>연결 고리</h2>
+<h3><a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%A1%A0/">교회론</a>과의 연결</h3>
+<ul>
+<li>기독론→선교학→교회론 명제: <strong>교회론은 선교학 이후에 온다</strong></li>
+<li>APEST 섹션: 서구 교회의 APE 추방 진단</li>
+<li>파라처치 기관 출현의 신학적 해석</li>
+</ul>
+<h3><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a>과의 연결</h3>
+<ul>
+<li>성육신적 선교(missional-incarnational): "복음은 끊임없이 주소를 바꿔야"</li>
+<li><a class="wl" href="../../t/%EB%AF%B8%EC%94%A8%EC%98%A4%EB%8D%B0%EC%9D%B4/">미씨오데이</a>와 공명: 선교의 주체는 하나님, 교회는 참여</li>
+</ul>
+<h3><a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%ED%9B%88%EB%A0%A8/">제자훈련</a>과의 연결</h3>
+<ul>
+<li>mDNA 2번 = 제자도</li>
+<li>"교회사역의 문턱은 낮추고, 제자 되는 문턱은 높이자"</li>
+<li>세상에서 이루어지는 제자도 (탈크리스텐덤 맥락)</li>
+</ul>
+<h3><a class="wl" href="../../t/%EC%98%81%EC%A0%81%EC%9D%80%EC%82%AC/">영적은사</a>와의 연결</h3>
+<ul>
+<li>APEST = 엡4:11의 은사를 <strong>조직 문화 원리</strong>로 재해석</li>
+<li>→ <span class="wl-dead" title="위키 내부 링크">APEST문화_앨런허쉬</span></li>
+</ul>
+<h3><a class="wl" href="../../b/%EC%98%A4%ED%94%88%EC%8B%9C%ED%81%AC%EB%A6%BF_%EB%A0%88%EC%8A%AC%EB%A6%AC%EB%89%B4%EB%B9%84%EA%B8%B4/">오픈시크릿_레슬리뉴비긴</a>과의 연결</h3>
+<ul>
+<li>뉴비긴: 교회와 선교의 이분법 비판 → 교회 자체가 선교적</li>
+<li>허쉬: 선교학이 교회론을 결정한다 — 동일한 방향</li>
+</ul>
+<hr />
+<h2>탐구 중인 질문</h2>
+<ul>
+<li><strong>Q. APEST를 한국교회에 적용할 때 가장 큰 저항은 무엇인가?</strong> (목사-교사 중심 권력 구조)</li>
+<li><strong>Q. 누가회·인터서브는 APE가 사라진 결과인가, 아니면 APE의 대안적 표현인가?</strong></li>
+<li><strong>Q. 경계성을 유지하면서도 조직을 지속하려면 무엇이 필요한가?</strong> (안락함과의 싸움)</li>
+</ul>
+<hr />
+<h2>교차 참조</h2>
+<ul>
+<li><span class="wl-dead" title="위키 내부 링크">앨런허쉬</span></li>
+<li><a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%A1%A0/">교회론</a> — 기독론→선교학→교회론, APEST</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> — 미씨오데이, 성육신적 선교</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a> — 크리스텐덤 비판, 대안 공동체</li>
+<li><a class="wl" href="../../t/%EB%AF%B8%EC%94%A8%EC%98%A4%EB%8D%B0%EC%9D%B4/">미씨오데이</a> — 칼 바르트 연결</li>
+<li><a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%ED%9B%88%EB%A0%A8/">제자훈련</a> — mDNA 제자도</li>
+<li><a class="wl" href="../../t/%EC%98%81%EC%A0%81%EC%9D%80%EC%82%AC/">영적은사</a> — APEST (엡4:11)</li>
+<li><span class="wl-dead" title="위키 내부 링크">엡4</span> — APEST 5중 사역 (11절)</li>
+<li><span class="wl-dead" title="위키 내부 링크">마16</span> — 교회에 주신 권위 (18-19절)</li>
+<li><span class="wl-dead" title="위키 내부 링크">APEST문화_앨런허쉬</span></li>
+</ul>
+</article>
+<div class="tagrow"><span>#교회론</span><span>#선교적교회</span><span>#mDNA</span><span>#APEST</span><span>#사도적운동</span><span>#제도주의</span><span>#앨런허쉬</span><span>#크리스텐덤</span><span>#공동체</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

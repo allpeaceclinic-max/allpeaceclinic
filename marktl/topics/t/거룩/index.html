@@ -1,0 +1,332 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>거룩 — 일반 개념과 의료인 적용 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:345">영성·제자도</span><span class="date">2026-05-06</span></div>
+  <h1 class="note-title">거룩 — 일반 개념과 의료인 적용</h1>
+  
+</header>
+<article class="note">
+<hr />
+<h2>I. 거룩이란 무엇인가?</h2>
+<h3>1. 어원과 정의</h3>
+<p><strong>카도쉬(קָדוֹשׁ)</strong> = '분리됨, 구별됨'
+거룩은 하나님의 본질적 속성이며, 죄와 불결함으로부터의 완전한 구별됨이다.</p>
+<p>신자의 거룩에는 두 차원이 있다:</p>
+<table>
+<thead>
+<tr>
+<th>차원</th>
+<th>내용</th>
+<th>주도권</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>위치적 거룩</strong> (positional holiness)</td>
+<td>칭의로 이미 주어진 것</td>
+<td>하나님</td>
+</tr>
+<tr>
+<td><strong>실존적 성화</strong> (sanctification)</td>
+<td>성령의 사역으로 진행되는 것</td>
+<td>성령 + 우리의 순종</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>2. 주도권은 하나님께 있다</h3>
+<blockquote>
+<p>레 20:26 "너희는 나에게 거룩할지어다 이는 나 여호와가 거룩하고 내가 또 너희를 나의 소유로 삼으려고 너희를 만민 중에서 구별하였음이니라"</p>
+<p><strong>"우리는 스스로 거룩해지는 것이 아니라 하나님의 택하심으로 거룩해진다."</strong> — <span class="wl-dead" title="위키 내부 링크">문대원</span></p>
+</blockquote>
+<ul>
+<li>거룩의 신학적 근거 = 하나님의 선택 + 하나님의 소유권</li>
+<li>"거룩은 단지 죄를 안 짓는 것이 아니다. 거룩은 하나님의 특별한 소유가 되는 것이다."</li>
+<li>이것을 기억하면 거룩함에 대한 <strong>부담감</strong>보다 <strong>열망과 갈망</strong>이 생긴다</li>
+</ul>
+<hr />
+<h3>3. 거룩의 두 방향</h3>
+<p><span class="wl-dead" title="위키 내부 링크">벧전1</span> — 벧전 1:13-21</p>
+<p>카도쉬 = <strong>①</strong> 죄로부터의 분리 + <strong>②</strong> 특별한 목적을 위한 구별</p>
+<blockquote>
+<p>"구원하신 목적이 있으시다. 불쌍해서 구원하신 것이 아니다."</p>
+</blockquote>
+<ul>
+<li>세상과 <strong>다름</strong> = 이것이 증거가 된다</li>
+<li>초대교회 성도들: "질문하게 하는 자들"이라는 별명 (엘런 크라이더)</li>
+</ul>
+<hr />
+<h3>4. 거룩은 수행이 아니라 싸움에서 드러난다</h3>
+<blockquote>
+<p>롬 8:13 "너희가 육신대로 살면 반드시 죽을 것이로되 영으로써 몸의 행실을 죽이면 살리니"</p>
+<p><strong>"거룩이 우리의 힘이다. 수행한다고 거룩이 되는 것이 아니다. 그리스도인이 죄와 싸울 때 거룩이 시작된다."</strong> — 한영웅 목사</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>죄를 죽이는 주체</th>
+<th>성령</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>수단</strong></td>
+<td>기도</td>
+</tr>
+<tr>
+<td><strong>원리</strong></td>
+<td>"기도는 죄를 죽이고, 죄는 기도를 죽인다" (존 라일)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>5. 거룩의 사회적 의미</h3>
+<blockquote>
+<p>"우리가 거룩하게 살 때 세상 사람들은 하나님과 하나님 나라를 체험할 수 있다." — 한영웅 목사</p>
+</blockquote>
+<p><span class="wl-dead" title="위키 내부 링크">레19</span> 주석:
+거룩함은 개인적 경건에 그치지 않고 <strong>철저히 실제적인 것</strong> — 가난한 자에 대한 관대함, 공정한 법 집행, 거류민에 대한 공평함 등이 거룩의 내용이다.</p>
+<hr />
+<h3>6. 거룩은 공동체 안에서 이루어진다</h3>
+<blockquote>
+<p>"개인의 성화는 교회 공동체의 상호 돌봄 안에서 이루어진다."</p>
+</blockquote>
+<p><a class="wl" href="../../b/%EC%A0%95%EC%B9%98%EA%B3%B5%EA%B0%84%EC%97%90%EA%B7%B8%EB%A6%AC%EC%8A%A4%EB%8F%84%EC%9D%B8%EC%9C%BC%EB%A1%9C%EC%84%9C%EA%B8%B0/">정치공간에그리스도인으로서기</a>:</p>
+<blockquote>
+<p>"세상에서는 작은 차이도 배제·갈등의 이유가 된다.
+교회에서는 큰 차이에도 불구하고 하나가 될 때, 세상은 이유를 묻는다."</p>
+</blockquote>
+<hr />
+<h2>II. 의료인에게 거룩을 적용하면?</h2>
+<h3>1. 소명의 틀 — 1차·2차 소명</h3>
+<p><span class="wl-dead" title="위키 내부 링크">CMF스피릿강의</span>, <span class="wl-dead" title="위키 내부 링크">의료인으로 산다는 것은?</span></p>
+<ul>
+<li><strong>1차 소명</strong> = 예수 그리스도께 부름받아 그분을 따르는 제자도의 삶</li>
+<li><strong>2차 소명</strong> (의료 행위) = 이 1차 소명을 이 땅에서 실현하기 위해 주신 '거룩한 도구'</li>
+</ul>
+<blockquote>
+<p>의료인의 거룩은 '의료를 잘하는 것'에서 시작하지 않는다. <strong>부르신 분 앞에서 의료를 행하는 것</strong>에서 시작한다.</p>
+</blockquote>
+<hr />
+<h3>2. 거룩의 실체 = 긍휼의 순종</h3>
+<p><strong>원래 표현:</strong> "긍휼히 여기는 마음이 거룩함의 증거다"</p>
+<p>→ <strong>신학적으로 보완된 표현 (황태선 누가 제안, 2026.05):</strong></p>
+<blockquote>
+<p>"의료 현장에서 기독 의료인의 거룩함은 단순한 감정적 연민이 아니라, 하나님의 형상으로 지음받은 인간의 존엄이 질병과 고통으로 훼손될 때 그것을 외면하지 않고 가까이 다가가는 <strong>긍휼의 순종</strong>으로 드러납니다."</p>
+</blockquote>
+<p><strong>보완이 필요했던 이유:</strong>
+- 감정을 잘 느끼는 사람과 조용히 행동으로 반응하는 사람이 다르듯, 감정의 강도 자체가 거룩함의 척도가 될 수 없다
+- 거룩함의 원천은 하나님이시므로, <strong>하나님과의 관계 없이 나타나는 연민</strong>은 성경적 의미의 거룩이 아니다
+- 1차 소명이 2차 소명보다 앞선다는 강의 전체의 구조와도 일치해야 한다</p>
+<p><strong>긍휼의 순종이란:</strong></p>
+<p><code>감정으로서의 긍휼(splankhnon)
+    +
+하나님과의 관계에서 비롯된 시선
+    +
+행동으로의 순종
+    =
+긍휼의 순종</code></p>
+<p><strong>미 6:8이 이 구조를 뒷받침한다:</strong></p>
+<blockquote>
+<p>"정의를 행하며(미쉬파트) 인자를 사랑하며(헤세드) 겸손하게 네 하나님과 함께 행하는 것" (미6:8)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>미6:8</th>
+<th>긍휼의 순종</th>
+<th>의료 현장</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>헤세드 — 인자(Heart)</td>
+<td>감정으로서의 긍휼</td>
+<td>환자의 고통을 느끼는 마음</td>
+</tr>
+<tr>
+<td>미쉬파트 — 정의(Act)</td>
+<td>행동으로의 순종</td>
+<td>진료실에서 자리를 지키는 것</td>
+</tr>
+<tr>
+<td>겸손히 하나님과 함께(Habit)</td>
+<td>하나님과의 관계에서 비롯된 시선</td>
+<td>1차 소명 → 2차 소명의 순서</td>
+</tr>
+</tbody>
+</table>
+<p>→ 미6:8은 "왜 긍휼의 순종인가?"라는 질문에 답하는 성경적 본문이다.
+→ 출처: <span class="wl-dead" title="위키 내부 링크">2023함선네</span> 3주차 강의 연결 (2026.05)</p>
+<p><span class="wl-dead" title="위키 내부 링크">눅10</span> 선한 사마리아인 비유:
+- 제사장과 레위인도 상황을 <strong>보고 파악</strong>했다
+- 결정적 차이는 <strong>긍휼의 유무</strong> — 그리고 그 긍휼이 행동(비용 지불, 자리 지킴)으로 이어졌다</p>
+<p><code>긍휼의 순종이 있는 의료인  →  소진되어도 자리를 지킨다
+긍휼의 순종이 없는 의료인  →  이익 침해되면 현장을 떠난다</code></p>
+<hr />
+<h3>3. 거룩이 도전받는 현장 — 세 가지 함정</h3>
+<table>
+<thead>
+<tr>
+<th>함정</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>비인격화</strong></td>
+<td>환자를 태스크(task)로 보기 시작할 때</td>
+</tr>
+<tr>
+<td><strong>맘몬(돈)</strong></td>
+<td>수익성이 유능함의 척도가 될 때</td>
+</tr>
+<tr>
+<td><strong>교만·특권의식</strong></td>
+<td>"의원아 너를 고쳐라" (눅 4:23)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>4. 생명윤리에서의 거룩</h3>
+<p><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a>:</p>
+<blockquote>
+<p>"거룩함을 추구하는가? — 기독 의료인의 특별한 책임"</p>
+</blockquote>
+<ul>
+<li>낙태, 존엄사, 유전자 윤리 등 <strong>진리의 편에 굳건히 서는 것</strong>이 거룩의 실천</li>
+<li>"사실(통계)과 현실(어쩔 수 없음)에 타협하지 말고, 진실(진리)의 편에 서라" — 심재두 선교사</li>
+</ul>
+<hr />
+<h3>5. 공동체 안에서만 거룩을 지킬 수 있다</h3>
+<blockquote>
+<p>"혼자서는 결코 광야에서 거룩을 지킬 수 없다. 서로의 못남을 인정하고 든든하게 붙들어 주는 CMF 공동체만이 우리의 유일한 피난처다."</p>
+</blockquote>
+<hr />
+<h2>III. 최종 정리</h2>
+<p>```
+거룩이란?
+  하나님의 택하심으로 주어진 구별된 정체성
+  + 그 정체성에 응답하여 살아가는 과정</p>
+<p>의료인에게 거룩이란?
+  의술의 탁월함이 아니라
+  환자의 고통 앞에서 기꺼이 다가가는 긍휼의 순종</p>
+<p>이 긍휼의 순종은 어디서 오는가?
+  1차 소명(예수와의 관계) → 2차 소명(의료)의 순서에서
+  성령의 사역 + 기도의 습관 + 공동체의 돌봄
+```</p>
+<hr />
+<h2>IV. 신학적 보완 경위</h2>
+<p><strong>2026.05, 황태선 누가 (가톨릭의대 강의 준비 중) 피드백</strong></p>
+<p>"긍휼히 여기는 마음이 거룩함의 본질"이라는 문구에 대해 두 가지를 지적:
+1. 긍휼이 <strong>감정의 강도</strong>로 환원될 위험
+2. <strong>하나님과의 관계 없이</strong> 나타나는 연민을 성경적 거룩이라 부르기 어렵다</p>
+<p>이 지적은 강의 구조 전체(1차 소명 → 2차 소명)와도 일치하는 정확한 신학적 보완이었다.</p>
+<blockquote>
+<p>"기독 의료인의 거룩함은 하나님의 형상으로 지음받은 인간의 존엄이 질병, 가난, 억압, 소외로 훼손될 때, 그것을 하나님 앞에서 외면하지 못하고 가까이 다가가 회복을 위해 행동하는 데서 드러납니다." — 황태선</p>
+</blockquote>
+<p><strong>'긍휼의 순종'</strong>이라는 표현으로 최종 수정.</p>
+<hr />
+<h2>V. 이 위키에서의 연결</h2>
+<ul>
+<li><a class="wl" href="../../t/%EA%B5%AC%EC%9B%90%EB%A1%A0/">구원론</a> — 칭의와 성화의 관계 속에서 거룩 이해</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EB%A0%B9%EB%A1%A0/">성령론</a> — 성화의 주체로서 성령의 역할</li>
+<li><a class="wl" href="../../t/%EA%B8%8D%ED%9C%BC/">긍휼</a> — 거룩의 실체로서의 긍휼</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a> — 의료인에게 적용된 거룩</li>
+<li><a class="wl" href="../../b/%EC%A0%95%EC%B9%98%EA%B3%B5%EA%B0%84%EC%97%90%EA%B7%B8%EB%A6%AC%EC%8A%A4%EB%8F%84%EC%9D%B8%EC%9C%BC%EB%A1%9C%EC%84%9C%EA%B8%B0/">정치공간에그리스도인으로서기</a> — 공적 공간에서의 거룩</li>
+<li><span class="wl-dead" title="위키 내부 링크">레19</span> — 거룩의 사회적 실천 강령</li>
+<li><span class="wl-dead" title="위키 내부 링크">벧전1</span> — 나그네 영성과 거룩</li>
+<li><span class="wl-dead" title="위키 내부 링크">롬8</span> — 죄 죽임과 거룩</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>율법주의적 거룩 이해와 복음 안에서의 자유를 어떻게 균형 잡을 것인가?</li>
+<li>현대 문화 속에서 '구별됨'이 구체적으로 어떤 모습이어야 하는가?</li>
+<li>'긍휼의 순종'이 소진(burnout)된 의료인에게 어떻게 지속 가능한가?</li>
+</ul>
+</article>
+<div class="tagrow"><span>#거룩</span><span>#성화</span><span>#구별됨</span><span>#조직신학</span><span>#의료인</span><span>#긍휼</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

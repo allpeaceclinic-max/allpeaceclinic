@@ -1,0 +1,129 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>플라톤학파 (Platonism) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:174">성경·해석</span><span class="date">2026-06-28</span></div>
+  <h1 class="note-title">플라톤학파 (Platonism)</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>플라톤학파(Platonism)는 고대 그리스 철학자 플라톤(기원전 428/427–348/347)의 사상에 기반한 철학 전통이다. 핵심은 가시적 현실과 비가시적 이념 세계의 이원론, 즉 우리가 감각으로 경험하는 세계는 일시적이고 불완전한 반면, 비가시적 천상의 이데아 세계가 영원하고 참된 실재라는 형이상학적 입장이다.</p>
+<h2>1. 신약 세계 속 플라톤학파</h2>
+<p>신약개론I 2주 강의(신약성경의 세계)는 플라톤학파를 신약 시대 그리스-로마 철학의 주요 네 학파(플라톤·스토아·견유·에피쿠로스) 중 하나로 소개한다. 강의는 1세기 신약 배경을 이해하려면 이 철학 학파들이 당시 지식인 세계에 어떤 영향을 미쳤는지 파악해야 한다고 전제한다.</p>
+<p>강의가 플라톤학파의 핵심 주장으로 제시하는 내용은 다음과 같다.</p>
+<blockquote>
+<p>"정의란 받을 만한 것을 주는 것이고, 경건이란 신들에게 마땅히 해야 하는 것 — 유대 사고에 영향을 준 헬라 문화의 근간이 됨."</p>
+</blockquote>
+<p>이 규정에서 드러나듯, 플라톤 철학은 덕(德)과 정의의 개념을 통해 유대 사상과 접촉했다. 특히 <strong>가지적 현실은 일시적이고 비가시적 천상이 영원하다</strong>는 이원론, <strong>부당한 고난이 더 고귀하다</strong>는 역설적 윤리가 디아스포라 유대 사상에 깊은 영향을 주었다.</p>
+<h2>2. 플라톤학파와 디아스포라 유대 사상</h2>
+<p>플라톤학파가 신약 배경에서 갖는 가장 중요한 의미는 디아스포라 유대 사상과의 융합이다. 알렉산드리아의 <span class="wl-dead" title="위키 내부 링크">필론</span>은 플라톤 철학의 로고스(Logos) 개념을 유대 성경의 지혜 전통과 결합한 대표적 인물이다. 필론의 로고스 개념은 훗날 요한복음 서론(<span class="wl-dead" title="위키 내부 링크">요1</span> "말씀이 육신이 되어")의 신학적 배경으로 종종 논의된다. 신약개론I 8주 강의(요한복음)도 필론의 사상과 요한복음 사이의 유사성이 알렉산드리아설의 근거로 제시되는 점을 언급하지만, 필론의 글이 알렉산드리아 밖에서도 유통되었음을 감안해 그 설명력에 유보를 둔다.</p>
+<p><a class="wl" href="../../t/%EC%95%8C%EB%A0%89%EC%82%B0%EB%93%9C%EB%A6%AC%EC%95%84%ED%95%99%ED%8C%8C/">알렉산드리아학파</a>는 플라톤 철학의 알레고리 해석 방식을 성경 해석에 적용한 대표 학파다. 신약개론I 1주 강의의 해석사 개관에서도 3세기 알렉산드리아 학파가 "플라톤 철학+알레고리 해석"을 취했음이 명시된다.</p>
+<h2>3. 신약과의 관련성</h2>
+<p>플라톤 철학의 천상/지상 이원론, 가시적 세계의 임시성, 영혼의 불멸은 신약의 언어와 부분적으로 공명한다. 그러나 신약 신학은 플라톤적 이원론과 결정적으로 다르다. 플라톤학파에서 물질 세계는 열등한 실재지만, 신약은 창조의 선함과 육체의 부활(<span class="wl-dead" title="위키 내부 링크">요20</span>)을 긍정한다. 성육신(<a class="wl" href="../../t/%EC%84%B1%EC%9C%A1%EC%8B%A0/">성육신</a>)은 비가시적 영원이 가시적 물질로 내려온 사건이라는 점에서, 플라톤적 천상/지상 위계를 오히려 전복한다.</p>
+<p>신약개론I 2주 강의는 플라톤학파 이해를 "신약성경의 세계" 이해를 위한 배경 지식으로 자리매김하되, 이 철학을 신약 신학과 동일시하지 않는 방향을 취한다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>플라톤학파는 헬라화 과정에서 디아스포라 유대 사상과 융합하여 신약 시대 지성사의 중요한 배경을 이루었다.</li>
+<li>필론의 로고스 개념은 플라톤-유대 융합의 대표 사례이며, 요한복음의 로고스 신학과 비교 탐구할 가치가 있다.</li>
+<li>그러나 신약은 플라톤적 이원론을 수용하지 않는다 — 성육신·부활은 물질 세계의 회복이지 탈출이 아니다.</li>
+<li>알렉산드리아 학파의 알레고리 해석은 플라톤 철학의 산물이며, 후대 성경 해석 역사에 깊은 흔적을 남겼다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>요한복음의 로고스 개념이 필론의 로고스에서 영향받았는가, 아니면 독립적인 유대-구약 전통에서 온 것인가?</li>
+<li>히브리서의 "그림자/실체" 언어(히 8:5; 10:1)는 플라톤적 이원론의 흔적인가, 아니면 구약 성막 신학의 독립적 발전인가?</li>
+<li>플라톤학파와 영지주의(<a class="wl" href="../../t/%EC%98%81%EC%A7%80%EC%A3%BC%EC%9D%98/">영지주의</a>) 사이의 연속성과 불연속성은 어떻게 정리할 수 있는가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%8A%A4%ED%86%A0%EC%95%84%ED%95%99%ED%8C%8C/">스토아학파</a> — 같은 시기 경쟁한 그리스-로마 철학 학파</li>
+<li><a class="wl" href="../../t/%EC%95%8C%EB%A0%89%EC%82%B0%EB%93%9C%EB%A6%AC%EC%95%84%ED%95%99%ED%8C%8C/">알렉산드리아학파</a> — 플라톤 철학을 성경 해석에 적용한 학파</li>
+<li><a class="wl" href="../../t/%EC%98%81%EC%A7%80%EC%A3%BC%EC%9D%98/">영지주의</a> — 플라톤 이원론의 영향을 받은 초기 기독교 이단 운동</li>
+<li><span class="wl-dead" title="위키 내부 링크">필론</span> — 플라톤-유대 사상 융합의 대표 인물</li>
+</ul>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/신약학</span><span>#topic/헬레니즘</span><span>#topic/그리스로마철학</span><span>#topic/신약배경</span><span>#topic/이원론</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

@@ -1,0 +1,327 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>디아스포라 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="date">2026-07-17</span></div>
+  <h1 class="note-title">디아스포라</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>디아스포라(διασπορά)는 "흩어짐"을 뜻하는 헬라어다. 씨를 뿌리듯 사방으로 던진다는 동사 디아스페이로(διασπείρω)에서 왔다. 그런데 이 단어의 성경적 이력이 묘하다 — 그것은 <strong>심판의 언어로 태어나 선교의 언어로 다시 태어난다.</strong> 신명기의 언약적 저주에서 하나님은 불순종한 이스라엘을 "만민 중에 흩으시겠다"고 경고하시고, 칠십인역은 그 흩으심을 디아스포라로 옮긴다. 흩어짐은 본래 벌이었다. 그러나 신약에 이르면 같은 단어의 무게가 완전히 뒤집힌다. 야고보는 "흩어져 있는 열두 지파"에게(약 1:1), 베드로는 "흩어진 나그네"에게(벧전 1:1) 편지한다. 저주로 흩어진 백성이 이제 복음이 흐르는 물길이 된다.</p>
+<p>이 페이지가 다루는 것은 바로 그 역전이다. 곧 <strong>디아스포라라는 현상 자체와 그것을 읽어내는 성경신학</strong>이다. 흩어짐이란 무엇이며, 성경은 그것을 어떻게 재난에서 섭리로, 심판에서 선교로 해석하는가. 흩어진 자의 정체성은 무엇인가. 이는 디아스포라를 어떻게 활용할 것인가를 묻는 <strong>전략</strong>의 물음과 구별된다. 전략 — 흩어진 백성을 선교의 주자로 세우는 방법론 — 은 <a class="wl" href="../../t/%EB%94%94%EC%95%84%EC%8A%A4%ED%8F%AC%EB%9D%BC%EC%84%A0%EA%B5%90/">디아스포라선교</a>에 위임하고, 우리 곁으로 찾아온 이방인을 맞이하는 국내 사역은 <a class="wl" href="../../t/%EC%9D%B4%EC%A3%BC%EB%AF%BC%EC%84%A0%EA%B5%90/">이주민선교</a>에, 남반구로 옮겨간 기독교의 무게중심은 <a class="wl" href="../../t/%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90/">세계기독교</a>와 <a class="wl" href="../../t/%EB%8B%A4%EC%A4%91%EC%8B%AC%EC%A0%81%EC%84%A0%EA%B5%90/">다중심적선교</a>에 위임한다. 이 글은 오직 "흩어짐이 무엇이며 하나님은 그것으로 무엇을 하시는가"에 집중한다.</p>
+<h2>1. 흩어짐의 언어 — 심판에서 선교로</h2>
+<p>디아스포라의 성경신학은 한 단어가 뒤집히는 사건에서 출발한다. 구약에서 흩어짐은 언약 파기에 대한 형벌이다. 신명기 28장의 저주 목록은 이스라엘이 하나님을 떠날 때 "여호와께서 너를 땅 이 끝에서 저 끝까지 만민 중에 흩으시리라"고 선언한다. 흩어짐은 땅을 잃는 것이고, 성전을 잃는 것이며, 무엇보다 한 백성으로 함께 사는 정체성을 잃는 것이었다. 예레미야가 목격한 바벨론 유수가 바로 그 저주의 성취였다.</p>
+<p>그런데 신약 저자들이 이 저주의 단어를 집어 든 방식이 놀랍다. 요한복음에서 유대인들은 예수의 말을 오해하며 "그가 헬라인 중에 흩어져 사는 자들(디아스포라)에게로 가서 헬라인을 가르칠 터인가"라고 수군거린다(요 7:35). 그들은 조롱으로 말했지만, 결과적으로 복음이 흩어진 유대인 공동체를 따라 헬라 세계로 퍼져 나갈 경로를 정확히 예언한 셈이 되었다. 야고보와 베드로에 이르면 흩어짐은 아예 편지의 수신자를 규정하는 정체성이 된다.</p>
+<table>
+<thead>
+<tr>
+<th>본문</th>
+<th>표현</th>
+<th>흩어짐의 결</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>신 28:64 (참조 신 4:27)</td>
+<td>"여호와께서 너를 만민 중에 흩으시리라"</td>
+<td>언약적 저주 · 심판으로서의 흩어짐</td>
+</tr>
+<tr>
+<td>요 7:35</td>
+<td>"헬라인 중에 흩어져 사는 자들에게로 가서"</td>
+<td>복음이 흐를 통로가 된 디아스포라</td>
+</tr>
+<tr>
+<td>약 1:1</td>
+<td>"흩어져 있는 열두 지파에게 문안하노라"</td>
+<td>흩어진 하나님 백성 = 말씀의 수신자</td>
+</tr>
+<tr>
+<td>벧전 1:1</td>
+<td>"흩어진 나그네 곧 택하심을 받은 자들"</td>
+<td>흩어짐이 택하심 · 소명의 자리로 역전</td>
+</tr>
+</tbody>
+</table>
+<p><span class="wl-dead" title="위키 내부 링크">박주용</span>은 이 역전을 성경 전체의 뼈대로 읽는다. 그에 따르면 "하나님의 선교는 창세기 11장에 나타난 열방을 흩으심과 요한계시록 22장에 기록된 열방을 치료하심 사이의 간극을 메우는 것"이다. 바벨탑에서 하나님은 교만한 인류를 언어로 갈라 온 지면에 흩으셨다(창 11:9). 흩어짐은 심판이었다. 그러나 바로 다음 장에서 하나님은 아브라함 한 사람을 불러 "땅의 모든 족속이 너로 말미암아 복을 얻으리라" 하신다(창 12:3). 흩어진 열방을 다시 복으로 모으시려는 이야기가 시작되는 것이다. 성경은 흩으심(창 11)과 치유하심(계 22) 사이에 걸쳐 있고, 그 간극을 메우는 하나님의 활동이 곧 선교다. 심판의 언어였던 디아스포라가 선교의 언어가 되는 이 반전이야말로 흩어짐의 성경신학 전체를 압축한다.</p>
+<h2>2. 바벨론 포로 — 원형적 디아스포라</h2>
+<p>흩어짐이 무엇인지를 가장 깊이 드러낸 사건은 바벨론 유수다. 이것은 디아스포라의 원형이다. 성전은 불탔고 땅은 빼앗겼으며 왕은 눈이 뽑힌 채 끌려갔다. 그것은 명백한 심판이었다 — <span class="wl-dead" title="위키 내부 링크">박주용</span>의 표현대로 "하나님의 백성이 하나님의 법을 떠나 맞이한 심판"이었다. 그러나 하나님이 그 심판의 한복판에서 하신 말씀이 디아스포라 신앙의 헌장이 된다.</p>
+<blockquote>
+<p>"너희는 집을 짓고 거기에 살며 텃밭을 만들고 그 열매를 먹으라 … 내가 너희를 사로잡혀 가게 한 그 성읍의 평안을 구하고 그를 위하여 여호와께 기도하라 이는 그 성읍이 평안함으로 너희도 평안할 것임이라" (렘 29:5-7)</p>
+</blockquote>
+<p>이 명령의 급진성은 쉽게 지나쳐진다. 하나님은 포로들에게 짐을 풀지 말고 귀환만 기다리라 하지 않으신다. 오히려 정착하라, 정원을 가꾸라, 원수의 도시가 잘되도록 기도하라 하신다. 의사이자 인터서브 이사인 <span class="wl-dead" title="위키 내부 링크">이상협</span>은 이 본문을 창조세계 돌봄의 "뿌리 내리기(Rootedness)"로 읽는다. 하나님이 나를 보내신 이 낯선 땅, 이 도시, 이 직장에 뿌리를 내리는 것이 흩어진 백성에게 주어진 소명이라는 것이다. 그는 예수께서 나사렛이라는 작은 동네에 30년을 뿌리내린 뒤 3년의 공생애를 사신 "30 대 3의 원리"를 여기에 겹쳐 놓는다. 포로지에서 텃밭을 가꾸라는 명령과 나사렛에서 목수로 사신 세월은 같은 영성을 가리킨다. 흩어진 자리가 곧 심겨진 자리다.</p>
+<p>이 영성을 몸으로 산 인물들이 포로기의 디아스포라를 채운다. 다니엘과 세 친구는 소년 포로였다 — <span class="wl-dead" title="위키 내부 링크">이상협</span>의 표현으로는 "귀족의 자녀로 어쩌면 유학생 신분, 이민 1.5세대"였다. 그들은 바벨론의 교육과 언어를 익히면서도 왕의 음식 앞에서 자기를 구별했다. 흩어진 자리에서 동화되지도 고립되지도 않는 대안적 공동체, 이것이 <span class="wl-dead" title="위키 내부 링크">박주용</span>이 "디아스포라 공동체(예: 다니엘)"를 적합한 상황화의 모델로 드는 이유다.</p>
+<table>
+<thead>
+<tr>
+<th>인물</th>
+<th>디아스포라 처지</th>
+<th>영성의 결</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>다니엘과 세 친구</td>
+<td>소년 포로 · "유학생" · 이민 1.5세대</td>
+<td>바벨론 한복판의 대안적 공동체, 타협 없는 구별</td>
+</tr>
+<tr>
+<td>에스더 · 모르드개</td>
+<td>페르시아 궁정에 흩어진 유대인</td>
+<td>흩어진 자리에서 민족을 구하는 섭리의 도구</td>
+</tr>
+<tr>
+<td>에스라 · 느헤미야</td>
+<td>성공한 이민자 · 귀환 재건 지도자</td>
+<td>포로지에서 배운 말씀으로 공동체를 다시 세움</td>
+</tr>
+</tbody>
+</table>
+<p>주목할 것은, 포로기가 이스라엘에게 상실만이 아니었다는 점이다. 성전이 없는 땅에서 그들은 회당을 발명했고, 왕이 없는 땅에서 말씀을 중심으로 모이는 법을 배웠다. 흩어짐이 강제한 이 새로운 공동체 형태가 훗날 복음이 지중해 세계로 퍼져 나갈 때 이미 깔려 있던 도로가 된다. 심판이 뜻밖의 기반 시설을 놓은 것이다.</p>
+<h2>3. 하나님은 흩으심으로 심으신다 — 섭리적 역전</h2>
+<p>신약의 교회는 이 역전을 다시 한번, 이번에는 더 선명하게 경험한다. 사도행전 8장이 그 무대다. 스데반의 순교 이후 예루살렘 교회에 큰 박해가 닥치고 성도들은 흩어진다. <span class="wl-dead" title="위키 내부 링크">이상협</span>이 짚듯이 본문은 "사도 외에는"이라고 못 박는다(행 8:1). 흩어져 복음을 전한 것은 사도도, 아직 회심하지 않은 바울도 아니었다. 그저 이름 없는 평범한 성도들이었다. "그 흩어진 사람들이 두루 다니며 복음의 말씀을 전할새"(행 8:4) — 박해라는 재난이 선교라는 결과를 낳았다.</p>
+<p>여기서 <span class="wl-dead" title="위키 내부 링크">이상협</span>은 사도행전 1장 8절의 약속("예루살렘과 온 유대와 사마리아와 땅끝까지")이 8장 1절의 박해로 성취되는 구조에 주목한다. 하나님은 "허용과 의도"를 함께 행하시는 분이다. "하나님은 가장 아름다운 예루살렘 교회가 깨어지는 것을 허용하시면서까지" 신자들을 흩으셨다. <span class="wl-dead" title="위키 내부 링크">박주용</span>은 이것을 "흩어짐으로 퍼짐(Spreading by scattering)" 이론이라 부른다. 흩어짐은 사고가 아니라 방법이다. 농부가 씨를 흩뿌리듯, 하나님은 흩으심으로 심으신다.</p>
+<p>흩어짐의 열매가 안디옥 교회다. <span class="wl-dead" title="위키 내부 링크">문대원</span>은 안디옥이야말로 흩어짐이 낳은 최초의 이방인 교회임을 강조한다. 박해로 흩어진 몇 사람이 안디옥에 이르러 헬라인에게도 복음을 전했고(행 11:20), 그 교회에서 신자들은 처음으로 "그리스도인"이라 불렸다(행 11:26). 그리고 이 흩어짐의 산물인 교회가 이번에는 자발적으로 바나바와 사울을 이방 선교로 파송한다(행 13:1-3). <span class="wl-dead" title="위키 내부 링크">문대원</span>은 두 흩어짐을 대비시킨다 — "예루살렘은 비자발적으로 흩어졌지만, 안디옥은 자발적으로 흩어졌다." 그는 존 파이퍼를 인용해 "교회를 향한 하나님의 뜻은 흩어지는 것"이라 말하며, 사도행전을 관통하는 리듬을 이렇게 요약한다.</p>
+<p><strong>흩어짐 → 모임 → 흩어짐 → 모임.</strong></p>
+<p>이 리듬은 <span class="wl-dead" title="위키 내부 링크">앤드류월스</span>의 이주 유형론과 정확히 겹친다. 월스는 성경의 모든 이주를 두 원형으로 나눈다.</p>
+<table>
+<thead>
+<tr>
+<th>유형</th>
+<th>성경적 원형</th>
+<th>흩어짐의 계기</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>아브라함식 이주</strong></td>
+<td>아브라함, 출애굽, 흩어진 초대교회</td>
+<td>부르심에 대한 자발적 순종</td>
+</tr>
+<tr>
+<td><strong>아담식 이주</strong></td>
+<td>에덴에서의 추방, 바벨론 포로</td>
+<td>심판에 따른 비자발적 추방</td>
+</tr>
+</tbody>
+</table>
+<p>자발적이든 비자발적이든, 에덴에서 쫓겨난 아담의 걸음이든 부르심을 좇은 아브라함의 걸음이든, 월스의 결론은 하나다 — "결국 모든 이주는 복음의 이동이 되어야 한다." 심판의 흩어짐(아담식)과 소명의 흩어짐(아브라함식)은 하나님의 손안에서 같은 방향을 가리킨다. 이 통찰이 흩어짐의 섭리를 완성한다.</p>
+<h2>4. 초대교회는 디아스포라 교회였다</h2>
+<p>그래서 초대교회의 자기 이해 자체가 디아스포라적이었다. 베드로가 소아시아 다섯 지역에 흩어진 성도들을 부르는 호칭이 이를 압축한다.</p>
+<blockquote>
+<p>"예수 그리스도의 사도 베드로는 본도, 갈라디아, 갑바도기아, 아시아와 비두니아에 흩어진 나그네 … 곧 하나님 아버지의 미리 아심을 따라 … 택하심을 받은 자들에게 편지하노니" (벧전 1:1-2)</p>
+</blockquote>
+<p><span class="wl-dead" title="위키 내부 링크">문대원</span>은 헬라어 원문에서 "흩어진"과 "택하심을 받은"이 나란히 붙어 있음을 짚는다. 세상의 눈으로 보면 이들은 그저 "흩어진 나그네"이지만, 하나님의 눈으로 보면 "택하심을 받은 나그네"다. 방랑자가 아니라 어디서 와서 어디로 가는지 아는 순례자라는 것이다. 베드로가 쓰는 단어 파레피데모스(παρεπίδημος)와 파로이코스(πάροικος)는 시민권 없이 남의 나라에 잠시 거주하는 자, 곧 영주권자를 가리킨다. <span class="wl-dead" title="위키 내부 링크">문대원</span>의 표현으로 "그들의 국적은 하나님 나라이고, 이 땅에서는 영주권자"다. 빌립보서의 "우리의 시민권은 하늘에 있다"(빌 3:20)가 이 정체성의 근거다.</p>
+<p>이 흩어진 정체성은 초대교회를 세상과 뚜렷이 구별되게 만들었다. <span class="wl-dead" title="위키 내부 링크">이상협</span>과 <span class="wl-dead" title="위키 내부 링크">문대원</span>이 공히 인용하는 알렌 크라이더에 따르면, 초대교회 공동체에 들어가는 데는 최소 3년이 걸렸고 그 사람의 신념과 행동과 소속이 총체적으로 점검되었다. 그렇게 형성된 성도들은 여성과 어린이와 노예를 존대했고, 전염병이 돌아도 병자를 버리지 않았다. 세상과 전혀 다른 가치관을 살아냈기에 그들은 "질문하게 하는 자들"이라는 별명을 얻었다. 흩어진 나그네의 구별된 삶 자체가 복음의 논증이 되었다.</p>
+<p>동시에, 흩어진 유대인 공동체의 회당 네트워크는 바울 선교의 기반 시설이 되었다. 바울은 도시에 들어갈 때마다 먼저 회당을 찾았고, 거기 모인 디아스포라 유대인과 "하나님을 경외하는" 이방인들이 복음의 첫 접촉점이 되었다. 초대교회의 지도자들 자신이 흩어짐의 산물이었다는 점도 우연이 아니다. <span class="wl-dead" title="위키 내부 링크">이상협</span>이 정리하듯 바울은 로마 시민권을 지닌 이중국적자였고, 바나바는 구브로 출신의 해외 교포 레위인이었으며, 브리스가와 아굴라는 국제결혼 부부, 디모데는 유대인 어머니와 헬라인 아버지 사이의 혼혈이었다. 안디옥 교회의 주요 구성원은 이민자들이었다. 흩어짐이 낳은 경계인들이 경계를 넘는 복음을 운반했다.</p>
+<h2>5. 흩어진 백성의 이중 정체성 — 현대의 디아스포라</h2>
+<p>세계화와 이주의 시대는 디아스포라를 인류의 보편적 조건으로 만들었다. 오늘날 국제 이주는 인류 역사상 유례없는 규모에 이르렀고(전 지구적 통계와 이주 요인의 상세는 <a class="wl" href="../../t/%EB%94%94%EC%95%84%EC%8A%A4%ED%8F%AC%EB%9D%BC%EC%84%A0%EA%B5%90/">디아스포라선교</a>에 위임한다), 그 거대한 흐름 속에 한인 디아스포라의 자리가 있다. <span class="wl-dead" title="위키 내부 링크">노규석</span>에 따르면 재외 한인은 740만에 이르며, 그중 약 120만은 여권만 다른 나라의 것일 뿐 여전히 한국의 정체성을 지닌 이들이다. 연해주로 이주했다가 스탈린의 명령으로 중앙아시아에 강제 이주된 고려인 17만의 후손들, 미주 한인 교회처럼 이민 1세대가 도리어 선교사로 파송된 특이한 공동체가 모두 이 흩어진 백성의 지형을 이룬다.</p>
+<p>디아스포라의 삶을 규정하는 것은 이중 정체성이다. 흩어진 자는 두 세계 사이에 산다. <span class="wl-dead" title="위키 내부 링크">문대원</span>이 외국 생활의 현실을 그대로 옮기듯 "이방인으로 사는 것은 어렵다. 아무도 나를 보호해 주지 않고, 늘 긴장이 있다." 그러나 바로 이 경계인의 자리가 복음에는 자산이 된다. 성경의 결정적 인물들이 하나같이 이중문화인이었기 때문이다. 모세는 히브리인이면서 이집트 궁정에서 자란 사람이었고, 아들의 이름을 게르솜 곧 "내가 타국에서 나그네가 되었다"로 지었다. 다니엘은 바벨론의 언어와 유다의 신앙을 함께 지녔다. 무엇보다 예수 자신이 애굽으로 피신한 난민이자 아람어와 헬라어를 함께 쓴 이중문화인이셨다.</p>
+<p>이 이중성은 디아스포라 공동체의 세대 문제로 이어진다. 흩어진 백성의 다음 세대는 부모의 출신 문화와 현재 사는 문화 어느 쪽에도 온전히 속하지 못한 채 두 세계 사이에서 정체성을 빚어야 한다. 이 긴장을 어떻게 품을 것인가는 흩어진 교회가 1세대로 끝나지 않기 위한 결정적 물음이며, 그 구체적 사역의 전략은 <a class="wl" href="../../t/%EC%9D%B4%EC%A3%BC%EB%AF%BC%EC%84%A0%EA%B5%90/">이주민선교</a>의 다음세대(TCK) 논의에서 더 깊이 다뤄진다. 여기서 확인할 것은 하나다 — 두 세계 사이에 서 있음은 결핍이 아니라, 하나님이 열방을 잇는 다리로 예비하신 자리라는 점이다.</p>
+<h2>6. 대상이자 주체 — 디아스포라와 하나님의 선교</h2>
+<p>흩어짐의 성경신학은 마침내 하나의 구조에 도달한다. 흩어진 백성은 선교의 <strong>대상</strong>인 동시에 <strong>주체</strong>다. 그들은 복음을 들어야 할 이웃이면서, 동시에 복음을 운반하도록 흩뿌려진 씨앗이다. 이 이중성이 디아스포라를 향한 하나님의 선교 전체를 지탱한다.</p>
+<p><span class="wl-dead" title="위키 내부 링크">노규석</span>이 인용하는 스가랴의 환상이 이 구조를 예언처럼 그려낸다. "그 날에는 말이 다른 이방 백성 열 명이 유다 사람 하나의 옷자락을 잡을 것이라 곧 잡고 말하기를 하나님이 너희와 함께 하심을 들었나니 우리가 너희와 함께 가려 하노라"(슥 8:23). 흩어진 하나님의 백성 곁으로 열방이 스스로 찾아와 옷자락을 붙드는 그림 — 흩어짐이 도리어 열방을 끌어당기는 자석이 되는 역설이다.</p>
+<p>이 지점에서 이 페이지는 전략의 문턱에 선다. 흩어진 자를 어떻게 선교의 주자로 세울 것인가 — 에녹 완의 디아스포라 선교 단계론, 4년 10개월 안에 이주민을 선교사로 세우는 역파송, 제아카(억압받는 자의 부르짖음)에 응답하는 체다카(정의)의 신학, LOVE 프레임워크 — 이 모든 방법론은 흩어짐의 신학이 아니라 흩어짐의 실천이다. 따라서 그것은 <a class="wl" href="../../t/%EB%94%94%EC%95%84%EC%8A%A4%ED%8F%AC%EB%9D%BC%EC%84%A0%EA%B5%90/">디아스포라선교</a>에 위임한다. 세 페이지의 역할을 나누면 다음과 같다.</p>
+<table>
+<thead>
+<tr>
+<th>위키 페이지</th>
+<th>초점</th>
+<th>핵심 질문</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>디아스포라</strong> (이 글)</td>
+<td>흩어짐이라는 현상과 성경신학</td>
+<td>흩어짐을 하나님은 어떻게 읽으시는가</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EB%94%94%EC%95%84%EC%8A%A4%ED%8F%AC%EB%9D%BC%EC%84%A0%EA%B5%90/">디아스포라선교</a></td>
+<td>흩어진 백성을 통한 선교 전략</td>
+<td>흩어진 자를 어떻게 선교의 주자로 세우는가</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%9D%B4%EC%A3%BC%EB%AF%BC%EC%84%A0%EA%B5%90/">이주민선교</a></td>
+<td>우리에게 찾아온 나그네 (국내)</td>
+<td>곁에 온 이방인을 어떻게 맞이하는가</td>
+</tr>
+</tbody>
+</table>
+<p>흩어짐(diaspora)의 이면에 모여듦이 있고, 나감의 반대편에 찾아옴이 있다. 세 페이지는 같은 <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A0%EA%B5%90/">하나님의선교</a>의 세 얼굴이되, 이 글은 흩어짐 그 자체를 응시한다.</p>
+<h2>7. 본향을 향한 나그네 — 디아스포라 영성</h2>
+<p>흩어짐의 신학은 결국 모든 그리스도인에게 되돌아온다. 성경은 신자 됨 자체를 일종의 디아스포라로 규정하기 때문이다. 히브리서 11장은 믿음의 조상들을 이렇게 요약한다 — 그들은 "땅에서는 외국인과 나그네임을 증언하였으니 … 더 나은 본향을 사모"했다(히 11:13-16). 아브라함은 헷 족속 앞에서 "나는 당신들 중에 나그네요 거류하는 자"라고 말했고(창 23:4), 돌아갈 고향이 있었으나 하늘을 본향으로 여겨 돌아가지 않았다.</p>
+<p><span class="wl-dead" title="위키 내부 링크">문대원</span>은 이 나그네 정체성을 신자의 근본 조건으로 제시한다. 우리는 이 땅의 영주권자일 뿐 시민권은 하늘에 있으므로, 이 땅의 성공과 축적을 궁극으로 삼는 것은 곳간을 늘리다 그 밤에 영혼을 도로 찾긴 어리석은 부자의 길이다(눅 12:20). 그는 스탠리 하우어스를 빌려 "구원받는다는 것은 다시 길을 떠나는 것"이라 말한다. 흩어진 나그네에게 이 세상은 종착지가 아니라 통과하는 땅이며, 그 나그네 됨이 오히려 세속에 물들지 않는 거룩의 근거가 된다.</p>
+<p>여기서 흩어짐의 신학은 <a class="wl" href="../../t/%EC%9D%B4%EC%A3%BC%EB%AF%BC%EC%84%A0%EA%B5%90/">이주민선교</a>가 도달한 지점과 만난다. <span class="wl-dead" title="위키 내부 링크">신치헌</span>이 말하듯 "우리는 모두 하늘 본향을 떠나 온 영적 이주민"이기 때문이다. 곁에 온 이방인을 나그네로 맞이할 수 있는 것은, 나 자신이 먼저 나그네임을 알 때다. 디아스포라의 성경신학은 이렇게 한 바퀴를 돈다 — 심판으로 흩어진 백성이 선교의 통로가 되고(1-3장), 흩어진 나그네가 복음의 운반자가 되며(4-6장), 마침내 모든 신자가 본향을 향해 흩어져 걷는 나그네임을 발견한다(7장). 흩으심은 벌이 아니라, 하나님이 온 땅에 자기 백성을 심으시는 방식이었다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li><strong>심판의 언어가 선교의 언어가 되었다.</strong> 신명기의 저주였던 디아스포라(신 28:64)가 벧전 1:1에서는 택하심의 자리가 된다. 흩어짐의 성경신학 전체가 이 한 단어의 역전에 담겨 있다.</li>
+<li><strong>성경은 창 11장 흩으심과 계 22장 치유하심 사이에 걸쳐 있다.</strong> 바벨탑에서 흩어진 열방을 다시 복으로 모으시는 활동이 곧 하나님의 선교이며, 그 간극을 메우는 것이 교회의 소명이다.</li>
+<li><strong>하나님은 흩으심으로 심으신다.</strong> 바벨론 포로도, 사도행전 8장의 박해도 재난이었으나 선교의 기반이 되었다. "흩어짐으로 퍼짐(Spreading by scattering)"은 사고가 아니라 방법이다.</li>
+<li><strong>자발적 흩어짐과 비자발적 흩어짐은 같은 방향을 가리킨다.</strong> 앤드류 월스의 아브라함식 이주와 아담식 이주는 계기가 정반대지만, "모든 이주는 복음의 이동"이라는 하나의 목적으로 수렴한다.</li>
+<li><strong>흩어진 정체성은 초대교회의 본질이었다.</strong> 파레피데모스(영주권자)로서의 나그네 됨이 세상과 구별된 삶을 낳았고, 디아스포라 회당 네트워크와 경계인 지도자들이 바울 선교의 인프라가 되었다.</li>
+<li><strong>흩어진 백성은 선교의 대상이자 주체다.</strong> 이 이중성을 놓치면 디아스포라는 절반만 이해된다 — 열 사람이 옷자락을 붙드는 슥 8:23의 역설이 여기서 나온다.</li>
+<li><strong>모든 그리스도인은 본향을 향한 디아스포라다.</strong> 나 자신이 나그네임을 알 때에야 곁에 온 나그네를 맞이할 수 있다(히 11:13-16).</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>심판으로서의 흩어짐과 소명으로서의 흩어짐을 신학적으로 어떻게 통합할 것인가 — 재난을 겪는 당사자에게 "이것도 하나님의 선교"라는 말은 언제 위로가 되고 언제 폭력이 되는가?</li>
+<li>포로기 이스라엘이 회당을 발명했듯, 오늘의 디아스포라 교회가 흩어짐의 조건에서 새롭게 발명해야 할 공동체 형태는 무엇인가?</li>
+<li>"그 성읍의 평안을 구하라"(렘 29:7)는 명령은 정착과 순례 사이의 긴장을 품는다. 뿌리내림(Rootedness)과 나그네 됨(파레피데모스)은 어떻게 한 삶 안에서 공존하는가?</li>
+<li>디아스포라 2세·3세의 이중 정체성은 흩어짐의 신학에서 짐인가 자산인가 — 두 세계 사이의 경계인을 하나님은 어떤 다리로 쓰시는가?</li>
+<li>흩어짐이 심판일 수도 섭리일 수도 있다면, 오늘의 교회는 자신에게 닥친 흩어짐(쇠퇴·분산·이산)을 어느 쪽으로 분별해야 하는가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EB%94%94%EC%95%84%EC%8A%A4%ED%8F%AC%EB%9D%BC%EC%84%A0%EA%B5%90/">디아스포라선교</a> — 흩어진 백성을 선교의 주자로 세우는 전략: 에녹 완 단계론, 역파송, 제아카·체다카·페아의 정의 신학, IOM 통계 (이 글이 신학이라면 그것은 실천)</li>
+<li><a class="wl" href="../../t/%EC%9D%B4%EC%A3%BC%EB%AF%BC%EC%84%A0%EA%B5%90/">이주민선교</a> — 흩어짐의 거울상: 우리 곁으로 찾아온 나그네를 맞이하는 국내 사역, for/by/with/as, 환대, 다음세대(TCK)</li>
+<li><a class="wl" href="../../t/%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90/">세계기독교</a> · <a class="wl" href="../../t/%EB%8B%A4%EC%A4%91%EC%8B%AC%EC%A0%81%EC%84%A0%EA%B5%90/">다중심적선교</a> — 흩어짐이 만든 결과: 기독교 무게중심의 남반구 이동, "어디서나 어디로나"</li>
+<li><a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A0%EA%B5%90/">하나님의선교</a> — 흩으심과 치유하심 사이를 메우는 미씨오 데이의 큰 틀</li>
+<li><a class="wl" href="../../t/%EB%B0%95%ED%95%B4/">박해</a> — 사도행전 8장, 흩어짐을 촉발한 계기이자 선교의 역설적 동력</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B3%B5%EB%8F%99%EC%B2%B4/">선교적공동체</a> — 흩어짐과 모임의 리듬을 사는 교회, 안디옥 모델</li>
+<li><a class="wl" href="../../t/%EC%8B%A0%EC%A0%81%EC%84%AD%EB%A6%AC/">신적섭리</a> — "허용과 의도"로 흩으심을 선으로 이끄시는 하나님의 주권</li>
+<li><span class="wl-dead" title="위키 내부 링크">앤드류월스</span> — 아브라함식/아담식 이주, "모든 이주는 복음의 이동"</li>
+<li><span class="wl-dead" title="위키 내부 링크">문대원</span> — 나그네 영성(벧전), 택하심 받은 나그네, 복음을 위해 흩어지는 교회</li>
+<li><span class="wl-dead" title="위키 내부 링크">박주용</span> — Spreading by scattering, 창 11–계 22의 간극</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>문대원, "나그네 영성(1) 흩어진 나그네에게 보내는 편지" (벧전 1:1-9)</td>
+<td>설교</td>
+<td>파레피데모스, 택하심 받은 나그네 vs 흩어진 나그네, 아브라함·히 11의 본향, 하늘 시민권</td>
+</tr>
+<tr>
+<td>문대원, "나그네 영성(2) 한낮에 꿈꾸는 사람" (벧전 1:13-21)</td>
+<td>설교</td>
+<td>나그네의 거룩=구별, 초대교회 "질문하게 하는 자들"(알렌 크라이더)</td>
+</tr>
+<tr>
+<td>문대원, "복음을 위해 흩어지는 교회" (행 13:1-3)</td>
+<td>설교</td>
+<td>안디옥=흩어짐이 낳은 이방인 교회, 자발/비자발 흩어짐, "흩어짐→모임" 리듬, 존 파이퍼</td>
+</tr>
+<tr>
+<td>이상협, "전체 이야기를 알고, 땅을 돌보라 — 하나님 백성의 선교 2·3장"</td>
+<td>강의</td>
+<td>렘 29:5-7 뿌리내림(Rootedness), 30:3 원리, 행 8:1-4 "사도 외에는", 크리스토퍼 라이트</td>
+</tr>
+<tr>
+<td>이상협, "유동선교 — 역사적·문화적 관점"</td>
+<td>강의</td>
+<td>앤드류 월스 아브라함식/아담식 이주, 포로기 인물 디아스포라(다니엘·에스더·에스라·느헤미야), 이중문화 리더십, 행 8:1이 행 1:8을 성취</td>
+</tr>
+<tr>
+<td>박주용, "선교의 성경적 기초"</td>
+<td>강의</td>
+<td>창 11 흩으심–계 22 치유의 간극, 바벨론 포로=심판, 다니엘=디아스포라 대안 공동체</td>
+</tr>
+<tr>
+<td>박주용, "땅끝이 다가오는 시대의 부르심, 이주선교"</td>
+<td>강의</td>
+<td>Spreading by scattering, 아브라함·요셉·룻·에스더·다니엘의 이주</td>
+</tr>
+<tr>
+<td>노규석, "우리의 이웃, 열방에서 온 이주민들"</td>
+<td>강의</td>
+<td>재외 한인 740만, 슥 8:23 옷자락, 흩어진 백성 곁으로 오는 열방</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>관련: 흩어짐의 신학(<a class="wl" href="../../t/%EB%94%94%EC%95%84%EC%8A%A4%ED%8F%AC%EB%9D%BC/">디아스포라</a>) · 흩어짐의 전략(<a class="wl" href="../../t/%EB%94%94%EC%95%84%EC%8A%A4%ED%8F%AC%EB%9D%BC%EC%84%A0%EA%B5%90/">디아스포라선교</a>) · 찾아온 나그네(<a class="wl" href="../../t/%EC%9D%B4%EC%A3%BC%EB%AF%BC%EC%84%A0%EA%B5%90/">이주민선교</a>)를 함께 읽으면 '흩어짐–심음–모여듦'의 전체 그림이 완성된다.</p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#디아스포라</span><span>#흩어짐</span><span>#나그네영성</span><span>#선교신학</span><span>#바벨론포로</span><span>#하나님의선교</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

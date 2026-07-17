@@ -1,0 +1,344 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>고난 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:226">조직신학·교리</span><span class="date">2026-07-10</span></div>
+  <h1 class="note-title">고난</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>고난은 인간이 경험하는 역경, 아픔, 시련을 총칭하되, 성경은 이를 단일한 범주로 다루지 않는다. 믿음의 연단(약 1:2-4), 하나님의 훈련(히 12:5-11), 그리스도의 고난에 참여(빌 3:10), 불의한 세상에서 의인이 당하는 부당한 고통(벧전 2:19-24), 창조 세계 전체의 탄식(롬 8:22)이 서로 다른 결에서 고난을 조명한다. 그러나 이 모든 조명을 관통하는 한 가지 특이성이 있다 — 성경은 고난을 '설명'하기보다 고난 앞에서 '탄식'하는 법을 가르치고, 고난의 한복판에 하나님이 함께 계신다는 사실을 십자가에서 증거한다는 것이다.</p>
+<p>이 주제는 <a class="wl" href="../../t/%EC%84%AD%EB%A6%AC/">섭리</a>가 가장 첨예하게 시험받는 자리이며, 변증학에서는 <span class="wl-dead" title="위키 내부 링크">신정론</span>(theodicy)이라는 이름으로 "선하신 하나님이 왜 악을 허용하시는가"라는 질문과 마주한다. 그러나 이 볼트의 자료들이 수렴하는 결론은 하나다 — 고난의 문제는 논증으로 해결되는 것이 아니라, 십자가에 못 박히신 하나님 앞에서 탄식하며 서는 것에서 응답이 시작된다.</p>
+<h2>1. 질문의 무게 — 악의 문제와 부족한 대답들</h2>
+<p>고난의 신학은 한 가지 오래된 질문에서 출발한다. <span class="wl-dead" title="위키 내부 링크">에피쿠로스</span>는 이를 네 가지 조합으로 정식화했다 — "신은 악을 없애길 원하지만 할 수 없거나, 할 수 있지만 원하지 않거나, 둘 다이거나, 둘 다 아니다."<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> 전능하고 선하신 하나님이 존재한다면, 노예제도와 홀로코스트와 쓰나미는 왜 발생하는가. 이 질문은 수천 년이 지나도 무게를 잃지 않는다.</p>
+<p>MBTS 변증학 강의(양정모)는 이 질문에 대한 다섯 가지 부족한 대답을 먼저 해체한다.<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup> 유한한 신은 예배의 대상이 될 수 없는 신을 상정하고, 전선하지 않은 하나님은 하나님의 성품 자체를 무너뜨린다. 악의 비존재(범신론·뉴에이지)는 선악이 환상이라 주장하면서도 실제로는 도덕적 판단을 계속 내려 일관성이 없다. 카르마와 윤회도 악의 실재를 설명하지 못한다.</p>
+<p>그렇다면 기독교는 어떻게 대답하는가. 양정모는 "왜 허용하는가"를 설명하려는 변신론(theodicy)보다 "어떻게 공존하는가"를 보여주는 변론(defense)이 더 현실적인 전략이라고 제안한다. <span class="wl-dead" title="위키 내부 링크">어거스틴</span>은 악을 독립된 실체가 아니라 선의 결핍(privatio boni)으로 규정하여 "하나님이 악을 창조하셨다"는 명제 자체를 해체하고, 연역적 악의 문제에 네 번째 전제 — "하나님이 허용하는 어떤 악이든 그것을 허용할 충분한 도덕적 이유를 가지며, 우리가 그 이유를 모르더라도 그렇다" — 를 더하여 논리적 공존 가능성을 확보한다.<sup id="fnref3:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<p>그러나 논리적 공존 가능성이 확보된다고 해서 고통받는 사람 앞에서 할 말이 생기는 것은 아니다. "이 특정 고통에도 충분한 도덕적 이유가 있다"는 명제는 유가족 앞에서 목회적 언어가 되지 못한다. 고난의 신학은 논증에서 출발하되, 논증을 넘어서야 한다. 그 '넘어섬'의 첫 번째 자리가 탄식이다.</p>
+<h2>2. 잃어버린 언어 — 탄식의 회복</h2>
+<p>시편의 3분의 1 이상이 <a class="wl" href="../../t/%ED%83%84%EC%9B%90%EC%8B%9C/">탄원시</a>(Lament Psalm)다.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> 탄원시는 탄원·간청 → 하나님의 도우심 간구 → 불평의 호소 → 죄의 고백 또는 무죄함의 호소 → 적들에 대한 저주 → 응답에 대한 확신 → 찬양과 감사라는 7가지 정형화된 요소로 구성된다.<sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup> 이 구조에서 주목할 것은 탄식이 절망에서 끝나지 않고 반드시 확신과 찬양으로 이행한다는 사실이다 — 구조 자체가 이미 신학적 메시지를 담는다.</p>
+<p><span class="wl-dead" title="위키 내부 링크">비노스라마찬드라</span>는 이 탄식 전통이 교회에서 잃어버린 언어라고 진단한다. 탄식은 고통을 수동적으로 묵인하는 행위가 아니라 고통의 세계에 적극적으로 개입하는 행동이다.<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> 더 나아가 "설교와 전례에서 성경의 탄식 전통을 금지하는 교회는 착취와 억압의 사회 관계를 보존하는 데 크게 기여"한다고까지 말한다.<sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup> 탄식의 억압은 곧 부정의의 보존이라는 날카로운 지적이다.</p>
+<blockquote>
+<p>"이러한 '어둠의 시편'을 사용하는 것이 세상에서는 불신앙과 실패의 행위처럼 보일 수 있지만, 신앙 공동체에는 비록 변형된 믿음일지라도 담대한 믿음의 행위다."<sup id="fnref17:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
+</blockquote>
+<p><span class="wl-dead" title="위키 내부 링크">톰라이트</span>는 『하나님과 팬데믹』에서 이 원리를 팬데믹 상황에 적용한다 — 재난을 너무 빠르게 "하나님의 심판"이나 "종말의 징조"로 신학화하는 것은 피해자들의 고통을 경시하고 하나님의 신비를 단순화한다는 것이다.<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup> 탄식이 먼저다. 설명은 그 다음이다.</p>
+<p><span class="wl-dead" title="위키 내부 링크">월터브루그만</span>의 비유가 이 원리를 포착한다. 형에게 맞은 아이가 "형이 나쁜 놈이야"라고 호소할 때, 부모가 "너도 혼난다"고 반응하는 대신 "내가 해결할게"라고 답해야 하듯, 탄식의 논리는 심판을 자기 손에 쥐지 않고 하나님께 맡기는 것이다.<sup id="fnref3:2"><a class="footnote-ref" href="#fn:2">2</a></sup> 저주 시편의 격렬한 언어(시109:8 "빨리 죽으라")조차 이 논리 안에서 작동한다 — 복수를 포기하는 것이 아니라 복수의 주권을 하나님께 돌려드리는 것이다.</p>
+<h2>3. 욥기 — '경건'이 아니라 '온전함'</h2>
+<p>탄식이 교회의 잃어버린 언어라면, 욥기는 그 언어가 가장 극단까지 밀고 나간 현장이다. 라마찬드라는 '인내의 욥'이라는 통념을 뒤집는다. 야고보서(약 5:11)가 욥을 인내의 모범으로 칭하지만, 욥기 2장 이후의 욥은 철저히 반항적 신앙인이다.<sup id="fnref3:3"><a class="footnote-ref" href="#fn:3">3</a></sup> 책의 핵심 주제는 '경건'이 아니라 '온전함(integrity)'이며, 욥은 고통 자체가 아니라 고통을 정당화하는 친구들의 인과응보 신학에 맞서 싸운다.</p>
+<blockquote>
+<p>"추상적으로 신학화하는 이러한 경박한 방식이야말로 진정한 신성 모독이다. 이런 신학은 하나님의 얼굴을 가리고 왜곡한다. 하나님을 정당화하려다 오히려 무고한 사람들을 정죄할 뿐이다."<sup id="fnref18:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
+</blockquote>
+<p>이것은 고난의 현장에서 가장 먼저 경계해야 할 지점이다 — 친구들처럼 고통받는 사람에게 "네 죄 때문이다"라는 설명을 들이대는 것. <span class="wl-dead" title="위키 내부 링크">존레녹스</span>도 같은 맥락에서 범신론의 "업보" 해석을 욥기가 반대하며, 심판으로 해석하는 사람을 경계하라고 경고한다.<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup></p>
+<p>하나님은 욥의 질문에 '설명'으로 답하지 않고 폭풍 가운데 현현(theophany)하여 우주와 피조물을 보여주신다(욥 38-41장). 라마찬드라는 <span class="wl-dead" title="위키 내부 링크">구스타보구티에레스</span>를 따라, 이 응답은 말씀의 내용과 임재가 함께 구성한다고 읽는다.<sup id="fnref4:3"><a class="footnote-ref" href="#fn:3">3</a></sup> 욥에게 주어진 것은 설명이 아니라 만남이다. 그리고 결정적으로, 하나님은 친구들이 "바른 말을 하지 않았다"고 판결하신다(욥 42:7) — 신학적으로 '틀린' 내용이 올바른 발언이 될 수 있다는 흥미로운 가능성을 제기하는 대목이다.<sup id="fnref5:3"><a class="footnote-ref" href="#fn:3">3</a></sup> 친구들은 하나님 '에 대해' 말했고, 욥은 하나님 '께' 말했다.</p>
+<h2>4. 질문하는 믿음 — 헤벨과 하박국</h2>
+<p>욥기가 고난 앞에서의 반항적 신앙을 보여준다면, 전도서와 하박국은 답 없는 현실을 안고 살아가는 질문하는 믿음을 조명한다. <span class="wl-dead" title="위키 내부 링크">크리스토퍼라이트</span>는 전도서의 핵심 단어 '헤벨'(הֶבֶל)로 삶의 불합리함을 직시한다 — "하나님이 계신데 결국 헤벨이다. 이것이 문제다."<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup> 그러나 전도서는 여기서 불신앙으로 미끄러지지 않고, 삶이 하나님의 선물임을 동시에 붙든다. 고난이 답을 주지 않을 때, 관찰보다 믿음을 일차적으로 선택하는 것 — 이것이 전도서의 길이다.<sup id="fnref2:6"><a class="footnote-ref" href="#fn:6">6</a></sup></p>
+<p>하박국은 한 걸음 더 나아간다. 불평으로 시작한다(합 1:2-4). 사회 구조적 불의 — 율법의 마비, 정의의 미행 — 앞에서 선지자는 하나님께 따진다. 그리고 하나님은 불평을 허용하시며, 큰 그림을 보여주신다(합 1:5).<sup id="fnref3:6"><a class="footnote-ref" href="#fn:6">6</a></sup> 이 여정의 정점이 하박국 3:17-19이다 — "비록 무화과나무가 무성하지 못하며… 그래도 나는 여호와로 말미암아 즐거워하리로다." 불평에서 시작하여 찬양으로 끝나는 이 궤적은, 앞서 본 탄원시의 7요소 구조와 정확히 포개진다.</p>
+<p>크리스토퍼 라이트의 두 책이 함께 보여주는 것은, 고난 앞에서의 질문이 불신앙이 아니라 신앙의 한 형태라는 사실이다. 라마찬드라가 같은 결론을 다른 언어로 못박는다 — "믿음의 반대는 의심이 아니라 확실성에 대한 욕구다."<sup id="fnref6:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
+<h2>5. 고난받는 종 — 징벌에서 구원으로</h2>
+<p>구약의 고난 신학이 가장 압축된 지점은 <span class="wl-dead" title="위키 내부 링크">이사야 53장</span>(사 52:13-53:12)이다. <a class="wl" href="../../t/%EA%B3%A0%EB%82%9C%EB%B0%9B%EB%8A%94%EC%A2%85/">고난받는종</a>의 정체를 둘러싸고 개인설·단체설·제의설·군주설·유동설·메시아설이라는 여섯 학설이 갈라지며, 이 다양성 자체가 본문이 단일한 역사적 지시 대상으로 환원되지 않는 텍스트임을 보여준다.<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup></p>
+<p>그러나 학설 논쟁보다 더 중요한 통찰은, 이 본문이 고난의 의미 자체를 전환한다는 점이다. 징벌로서의 고통과 구원으로서의 고통은 구별되어야 한다 — 징벌의 고통은 인간에게 책임이 있지만, 구원의 고통은 하나님에게 책임이 있다.<sup id="fnref2:7"><a class="footnote-ref" href="#fn:7">7</a></sup> 이스라엘을 종으로 선택하시고 "남을 위한 고통"이라는 사명을 지우신 분이 하나님이시므로, 고난의 의미는 인간의 영역에서 하나님의 영역으로, 순간에서 영원으로 자리를 옮긴다.</p>
+<table>
+<thead>
+<tr>
+<th>고통의 유형</th>
+<th>책임 소재</th>
+<th>방향</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>징벌의 고통</td>
+<td>인간의 죄에 대한 결과</td>
+<td>과거를 향함 (인과응보)</td>
+</tr>
+<tr>
+<td>구원의 고통</td>
+<td>하나님의 선택과 사명</td>
+<td>미래를 향함 (대속과 회복)</td>
+</tr>
+</tbody>
+</table>
+<p><span class="wl-dead" title="위키 내부 링크">김지찬</span>은 이 이중성을 정리한다 — 고난의 종이 선지자처럼 하나님의 의를 선포하고, 제사장처럼 자기 고난으로 중보하며, 자기희생으로 승리를 얻듯이, 이스라엘도 선교적 고난의 길을 가야 한다.<sup id="fnref3:7"><a class="footnote-ref" href="#fn:7">7</a></sup> 이 구약의 궤적은 정확히 십자가를 향한다.</p>
+<h2>6. 십자가에 못 박히신 하나님</h2>
+<p>구약의 탄식과 욥의 반항과 고난받는 종의 대속이 수렴하는 지점이 십자가다. <span class="wl-dead" title="위키 내부 링크">디트리히본회퍼</span>의 옥중 문구가 이 수렴의 신학적 중심축을 놓는다 — "오직 고통당하는 하나님만이 우리를 도울 수 있다."<sup id="fnref7:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
+<p>라마찬드라는 이 문구를 삼위일체적 사건으로 확장한다. 십자가는 성자만의 고립된 경험이 아니라 삼위 하나님 전체가 참여하는 사건이다.<sup id="fnref8:3"><a class="footnote-ref" href="#fn:3">3</a></sup> <span class="wl-dead" title="위키 내부 링크">위르겐몰트만</span>과 <span class="wl-dead" title="위키 내부 링크">칼바르트</span>와 루터의 십자가 신학이 여기서 합류한다. 그리스도는 우리의 손에 죽으셨을 뿐 아니라 우리와 함께 죽으셨다 — 죄인과 죄의 피해자 모두와 연대하시는 하나님이다.<sup id="fnref9:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
+<p>라마찬드라는 하나님이 고통받으시는 방식을 세 전치사로 정리한다.</p>
+<table>
+<thead>
+<tr>
+<th>전치사</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>때문에</strong></td>
+<td>백성이 언약을 거부하고 우상 숭배로 인간성을 상실하기 <strong>때문에</strong> 고통받으심</td>
+</tr>
+<tr>
+<td><strong>함께</strong></td>
+<td>고난받는 사람들과 <strong>함께</strong> 고통받으심</td>
+</tr>
+<tr>
+<td><strong>위해</strong></td>
+<td>자신의 백성을 <strong>위해</strong> 고통받으심</td>
+</tr>
+</tbody>
+</table>
+<p>이 삼중 구조는 십자가를 단순한 대속의 메커니즘을 넘어, 하나님 자신이 고난의 한복판에 들어오시는 사건으로 읽게 한다. 변증학 강의가 제시한 논리적 변론이 "악과 하나님이 어떻게 공존하는가"를 설명한다면, 십자가는 그 공존의 가장 극적인 현장이다 — 역사상 최대의 악(신적 존재의 죽음)이 최고의 선(인류의 구원)으로 전환되는 유일무이한 사건이다.<sup id="fnref4:1"><a class="footnote-ref" href="#fn:1">1</a></sup> 존 레녹스의 두 왕관(Corona) 이미지가 이 역설을 포착한다 — 바이러스의 왕관 vs 가시 면류관. 단절을 짊어지신 하나님.<sup id="fnref2:5"><a class="footnote-ref" href="#fn:5">5</a></sup></p>
+<p>복음서의 예수는 겟세마네 이후 '넘겨짐(παραδίδωμι)' 당하면서 능동적 행위자에서 수동적 대상으로 전환된다 — 일하는 분이 아니라 침묵 속에서 기다리는 분이 되신다.<sup id="fnref10:3"><a class="footnote-ref" href="#fn:3">3</a></sup> 이 수동성은 노화와 죽음의 신학으로 이어져 임상 현장에 직접 닿는다. "늙고 쇠하며 심지어 죽어 가는 것을 삶의 여정의 일부라고 인정하는 것은 인간으로서의 존엄성을 가진 피조물에게 합당하다."<sup id="fnref11:3"><a class="footnote-ref" href="#fn:3">3</a></sup> 통제의 상실이 패배가 아니라 인간 존엄의 일부가 되는 자리 — 완화의료와 임종 돌봄에서 이 신학은 환자와 보호자에게 언어를 제공한다.</p>
+<h2>7. 고난과 변화 — 영혼을 빚는 도구</h2>
+<p>고난의 신학에는 또 하나의 전통이 있다 — 고난이 영혼을 빚는 하나님의 도구라는 관점이다. <span class="wl-dead" title="위키 내부 링크">이레네우스</span>가 제안하고 오리겐과 어거스틴을 거쳐 <span class="wl-dead" title="위키 내부 링크">존힉</span>이 계승한 '영혼 만들기(soul-making)' 전략은, 고난이 인간을 온전하게 하는 과정이라고 본다.<sup id="fnref5:1"><a class="footnote-ref" href="#fn:1">1</a></sup> <span class="wl-dead" title="위키 내부 링크">CS루이스</span>는 『고통의 문제』에서 이를 사랑의 여러 양태로 풀어내며, 하나님의 사랑이 "소멸하는 불"처럼 가차없이 피조물을 다듬는다고 묘사한다.<sup id="fnref6:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<p>티모시 레인과 폴 트립은 이 통찰을 상담과 성화의 언어로 번역한다. 하나님의 변화 도구는 세 가지다 — 환경과 사건을 디자인하시고, 사람을 통해 일하시며, 관계 속에서 문제를 드러내시어 내면 변화를 시작하신다.<sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup> "회피하면 고착된다. 하나님이 예수 믿고 해결되기를 바라며 디자인하신 사건이다."<sup id="fnref2:8"><a class="footnote-ref" href="#fn:8">8</a></sup> 여기서 날카로운 통찰이 나온다 — "우리의 우상이 하나님이 주신 기회를 '애매한 고통'으로 보이게 만든다."<sup id="fnref3:8"><a class="footnote-ref" href="#fn:8">8</a></sup> 고난이 무의미하게 느껴지는 것은 고난 자체 때문이 아니라, 우리 마음의 우상 때문일 수 있다.</p>
+<p>강진수 선교사의 간증은 이 원리의 현장 실례다. 파퓨아뉴기니 정글에서 부당한 대우에 상처받은 그는, 상처의 뿌리가 외부의 부당함이 아니라 "하나님을 위해 포기한 것들에 대한 나의 의(self-righteousness)"에 있었음을 발견한다.<sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup> 헌신을 공로로 환산하여 정당한 보상을 청구하려는 마음이 곧 상처의 진원지였다. 그리고 그 발견의 기준점은 벧전 2:21의 '습자본(ὑπογραμμός)' — 그리스도의 고난을 그대로 덧쓰는 것이다. "예수님보다 더 나은 대우를 받으려고 하면 안 된다."<sup id="fnref2:9"><a class="footnote-ref" href="#fn:9">9</a></sup></p>
+<p>그러나 이 관점에는 주의가 필요하다. 모든 고난을 "하나님의 다듬으심"으로 읽으려는 시도는, 자칫 욥의 친구들처럼 고통을 정당화하는 함정에 빠질 수 있다. 강진수의 간증이 힘을 갖는 이유는 그것이 자기 고백이기 때문이다 — 타인의 고통에 대해 "네 우상 때문이다"라고 말하는 것은 전혀 다른 행위다. 고난의 도구론은 자기 성찰의 언어로는 유효하되, 타인에게 적용하는 순간 욥의 친구가 된다.</p>
+<h2>8. 자연적 악과 주권의 재정의</h2>
+<p>고난 신학에서 가장 난해한 지점은 자연적 악(natural evil)이다. 지진, 화산, 역병, 포식과 멸종 — 인간의 자유의지와 무관하게 발생하는 고통은 어떻게 설명할 것인가.</p>
+<p>존 레녹스는 고통을 자연적 악과 도덕적 악으로 구분하면서도 둘이 연결되어 있다고 본다.<sup id="fnref3:5"><a class="footnote-ref" href="#fn:5">5</a></sup> 핵심은 그의 이중 구분이다 — 허용적 뜻(permissive will)과 법령적 뜻(decretive will). 악은 가능하지만 하나님이 의도하지 않으셨다.<sup id="fnref4:5"><a class="footnote-ref" href="#fn:5">5</a></sup> 동시에 "하나님을 방정식에서 제거해도 고통은 제거되지 않는다 — 희망만 사라진다"는 선언으로, 무신론이 고통의 문제를 해결하는 것이 아니라 악화시킨다는 점을 못박는다.<sup id="fnref5:5"><a class="footnote-ref" href="#fn:5">5</a></sup></p>
+<p>라마찬드라는 여기서 한 걸음 더 나아간다. 그는 자연적 악을 '타락의 결과'로 보는 통념을 정면 반박한다 — "지진, 화산 폭발을 비롯한 다른 경이로운 자연 현상들은 '타락'의 결과가 아니라, 하나님이 이 땅의 생태 변화와 생물 다양성을 이루기 위해 선택하신 방식이다."<sup id="fnref12:3"><a class="footnote-ref" href="#fn:3">3</a></sup> 탄소 기반 생명은 죽음과 분리될 수 없으며, 진화의 희생자에게도 부활을 통한 정의가 필요하다 — 그리스도는 곧 진화의 구속자다.<sup id="fnref13:3"><a class="footnote-ref" href="#fn:3">3</a></sup> '깊은 성육신(deep incarnation)' 개념에 따르면, 특정 인간으로 성육신하심으로써 하나님은 다른 모든 피조물과 함께 그들의 엄청난 다양성을 인정하신다.<sup id="fnref14:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
+<p>이 논의는 궁극적으로 하나님의 주권 개념 자체를 재정의하는 데 이른다. 라마찬드라는 주권 = 완전한 통제라는 모델을 거부한다.<sup id="fnref15:3"><a class="footnote-ref" href="#fn:3">3</a></sup> 자존하신 하나님이 스스로 자족하지 않기로, "우리를 위한 하나님"이 되기로 선택하셨다. 이로써 하나님의 능력은 '통제'가 아니라 끝내 완전해질 '취약한 능력'으로 재서술된다.</p>
+<p>양정모(변증학 4주)는 이와 다른 결에서, <span class="wl-dead" title="위키 내부 링크">카슨</span>의 양립가능론(compatibilism)을 통해 하나님의 절대주권과 인간의 도덕적 책임이 동시에 참일 수 있다고 논증한다.<sup id="fnref7:1"><a class="footnote-ref" href="#fn:1">1</a></sup> 카슨의 핵심 논증은 십자가 사건이다 — "양립론을 시종일관 부인하는 기독교인도 십자가를 생각하는 순간 양립론자가 될 수밖에 없다."<sup id="fnref8:1"><a class="footnote-ref" href="#fn:1">1</a></sup> 십자가는 인간의 가장 극악한 행위(신적 존재의 살해)와 하나님의 가장 선한 뜻(인류의 구원)이 동시에 작동한 사건이기 때문이다.</p>
+<p>라마찬드라의 '취약한 능력'과 카슨의 '양립가능론'은 같은 질문에 대한 서로 다른 응답이다. 전자는 주권 개념 자체를 재정의하고, 후자는 전통적 주권 개념을 유지하면서 논리적 일관성을 확보한다. 이 긴장은 쉽게 해소되지 않으며, 이 볼트의 자료들도 하나의 답으로 수렴하지 않는다 — 고난의 신학이 여전히 열린 탐구임을 보여주는 지점이다.</p>
+<h2>9. 고난 앞에 선 교회 — 두 소망</h2>
+<p>고난의 신학은 개인의 실존에서 출발하지만, 결국 공동체의 자리로 돌아온다. 라마찬드라는 복음의 승리가 효율적 프로그램이 아니라 순교자의 피를 통해 온다고 말하며, 교회의 진정성이 십자가의 흔적(매질·못 자국·가시관)으로 인증된다고 본다.<sup id="fnref16:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
+<p>그는 소망을 두 차원으로 구분한다.</p>
+<table>
+<thead>
+<tr>
+<th>소망</th>
+<th>의미</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>가까운 소망 (proximate hope)</td>
+<td>우리의 행동에도 의존하는 역사 내적 희망</td>
+<td>인간의 노력과 하나님의 은혜의 협력</td>
+</tr>
+<tr>
+<td>궁극적 소망 (ultimate hope)</td>
+<td>하나님의 약속에만 기초한 종말론적 희망</td>
+<td>"부끄럽게 하지 않는 소망"(롬 5:5)</td>
+</tr>
+</tbody>
+</table>
+<p>고난 앞에서 교회가 빠지기 쉬운 두 극단이 있다 — 가까운 소망만 붙들어 고난을 인간의 노력으로 해결하려는 행동주의, 그리고 궁극적 소망만 붙들어 현실의 고통을 방관하는 체념. 건전한 고난의 신학은 두 소망을 동시에 붙드는 긴장 위에 선다. 초대교회가 안토니우스 역병 때 보여준 헌신 — 이교도들이 도망칠 때 병자를 돌본 그리스도인들 — 은 바로 이 이중 소망의 역사적 실례다.<sup id="fnref6:5"><a class="footnote-ref" href="#fn:5">5</a></sup></p>
+<p>강진수 선교사가 정글 한복판에서 붙든 것도 이 이중 소망이다 — 막혀 있지만 공급이 있었다는 체험(가까운 소망)과, "어떤 피조물도 그리스도 안에 있는 하나님의 사랑에서 끊을 수 없다"는 롬 8:38-39의 확신(궁극적 소망).<sup id="fnref3:9"><a class="footnote-ref" href="#fn:9">9</a></sup> 톰 라이트가 팬데믹 속에서 교회에게 요청한 것도 같은 이중 자세다 — 탄식하되 체념하지 않고, 행동하되 설명을 앞세우지 않는 것.<sup id="fnref2:4"><a class="footnote-ref" href="#fn:4">4</a></sup></p>
+<blockquote>
+<p>"고통으로 시작해 춤으로 끝나는 이 작은 공동체, 안식을 위해 생활을 멈추는 공동체, 이웃을 위해 빚을 탕감하는 공동체는 결국 살아갈 힘을 그 안에 품고 있으며 미래의 물결이 된다."<sup id="fnref19:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
+</blockquote>
+<p>본회퍼의 선언이 이 글의 출발이자 결론이 된다 — 그리스도께서 한 인간을 부르실 때에는 "와서 죽으라"고 부르신 것이다(빌 1:29).<sup id="fnref:10"><a class="footnote-ref" href="#fn:10">10</a></sup> 고난은 제자도의 본질적 요소이며, 교회는 고난을 회피하는 곳이 아니라 고난 속에서 십자가의 흔적을 지니는 공동체다. 그리고 바로 그 자리에서, 고난은 설명되지 않은 채로 응답받는다 — 고통당하시는 하나님의 임재로.</p>
+<hr />
+<h2>핵심 인사이트</h2>
+<ul>
+<li><strong>탄식은 불신앙이 아니라 담대한 믿음의 행위다.</strong> 교회가 탄식의 전통을 억압할 때, 고통받는 성도에게 "찬양만이 합당한 기도"라는 압박이 가해진다.</li>
+<li><strong>욥의 반항은 하나님 '에 대해' 말한 친구들이 아니라 하나님 '께' 말한 욥이 의로웠다는 역설을 보여준다.</strong> 고난의 현장에서 가장 경계해야 할 것은 고통을 설명하려는 신학이다.</li>
+<li><strong>징벌의 고통과 구원의 고통은 구별되어야 한다.</strong> 모든 고난을 인과응보로 읽는 것은 욥의 친구들의 오류이며, 이사야 53장은 고난의 의미를 인간의 영역에서 하나님의 영역으로 전환한다.</li>
+<li><strong>십자가는 악의 문제에 대한 논리적 해결이 아니라, 하나님 자신이 고난의 한복판에 들어오신 사건이다.</strong> "하나님은 하나님께 버림받은 자리에 임재하신다"는 역설이 기독교 고난 신학의 핵심이다.</li>
+<li><strong>고난의 도구론은 자기 성찰의 언어로는 유효하되, 타인에게 적용하는 순간 욥의 친구가 된다.</strong> "네 우상 때문이다"라는 진단은 자기 고백일 때만 힘을 갖는다.</li>
+<li><strong>믿음의 반대는 의심이 아니라 확실성에 대한 욕구다.</strong> 고난 앞에서의 질문은 불신앙의 증거가 아니라 하나님 '께' 말하는 믿음의 한 형태다.</li>
+<li><strong>가까운 소망과 궁극적 소망을 동시에 붙드는 긴장이 건전한 고난의 신학이다.</strong> 행동주의도, 체념도 아닌 제3의 자리가 십자가 아래에 있다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>라마찬드라의 '취약한 능력'(하나님의 주권 ≠ 통제)과 카슨의 양립가능론(절대주권과 인간 책임의 동시 성립)은 궁극적으로 양립할 수 있는가, 아니면 서로 다른 하나님 상(像)을 전제하는가?</li>
+<li>자연적 악이 타락의 결과가 아니라 창조의 방식이라는 라마찬드라의 주장은, "보시기에 심히 좋았더라"(창 1:31)와 어떻게 조화되며, 진화 과정의 대규모 고통에 대한 하나님의 책임 문제를 어디까지 열어놓는가?</li>
+<li>부당한 고난의 감내(벧전 2:19-24)와 구조적 불의에 대한 저항은 어디에서 구별되는가? 고난을 인내하라는 권면이 불의의 묵인으로 미끄러지지 않으려면 어떤 경계선이 필요한가?</li>
+<li>탄식을 회복한 예배가 한국 교회의 승리주의를 실제로 교정할 수 있는가? 탄식 예배의 구체적 형태는 어떠해야 하는가?</li>
+<li>같은 상황에서 공급을 체험하지 못한 채 철수하거나 무너진 사역자에게 하나님의 사랑의 불변을 어떤 언어로 증거할 수 있는가? 사랑의 불변을 '결과적 공급'으로만 증거할 때의 한계는 무엇인가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%ED%83%84%EC%9B%90%EC%8B%9C/">탄원시</a> — 탄식의 7요소 구조, 저주 시편의 신학적 기능</li>
+<li><a class="wl" href="../../t/%EA%B3%A0%EB%82%9C%EB%B0%9B%EB%8A%94%EC%A2%85/">고난받는종</a> — 이사야 53장의 종의 정체 학설, 징벌과 구원의 고통 구별</li>
+<li><a class="wl" href="../../t/%EC%84%AD%EB%A6%AC/">섭리</a> — 고난이 섭리를 가장 첨예하게 시험하는 자리</li>
+<li><a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%ED%9B%88%EB%A0%A8/">제자훈련</a> — 고난과 제자도의 관계, 본회퍼의 "와서 죽으라"</li>
+<li><span class="wl-dead" title="위키 내부 링크">변화</span> — 고난이 변화의 도구로 작동하는 메커니즘</li>
+<li><span class="wl-dead" title="위키 내부 링크">자기부인</span> — 헌신을 공로로 환산하려는 자기 의와의 대면</li>
+<li><a class="wl" href="../../t/%EC%8B%AD%EC%9E%90%EA%B0%80%EC%8B%A0%ED%95%99/">십자가신학</a> — 루터·몰트만·바르트의 십자가 중심 신학</li>
+<li><span class="wl-dead" title="위키 내부 링크">신정론</span> — 악의 문제에 대한 철학적·신학적 논증 체계</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="wl" href="../../b/%EC%98%A4%EC%A7%81%EA%B3%A0%ED%86%B5%EB%8B%B9%ED%95%98%EB%8A%94%ED%95%98%EB%82%98%EB%8B%98%EB%A7%8C%EC%9D%B4_%EB%B9%84%EB%85%B8%EC%8A%A4%EB%9D%BC%EB%A7%88%EC%B0%AC%EB%93%9C%EB%9D%BC/">오직고통당하는하나님만이_비노스라마찬드라</a></td>
+<td>북노트</td>
+<td>탄식 전통 복원, 욥기 재독, 고통당하는 하나님(삼위일체적 사건), 자연적 악, 주권 재정의, 두 소망</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">04주_하나님의섭리문제</span></td>
+<td>강의</td>
+<td>에피쿠로스 삼중 딜레마, 부족한 다섯 대답, 어거스틴의 선의 결핍, 양립가능론, 영혼 만들기, 십자가와 부활</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%ED%83%84%EC%9B%90%EC%8B%9C/">탄원시</a></td>
+<td>위키</td>
+<td>시편 탄원시 7요소, 브루그만의 심판 위탁 해석</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EA%B3%A0%EB%82%9C%EB%B0%9B%EB%8A%94%EC%A2%85/">고난받는종</a></td>
+<td>위키</td>
+<td>이사야 53장 여섯 학설, 징벌과 구원의 고통 구별</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%A0%84%EB%8F%84%EC%84%9C_%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%86%A0%ED%8D%BC%EB%9D%BC%EC%9D%B4%ED%8A%B8/">전도서_크리스토퍼라이트</a></td>
+<td>북노트</td>
+<td>헤벨과 질문하는 믿음</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%ED%95%98%EB%B0%95%EA%B5%AD_%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%86%A0%ED%8D%BC%EB%9D%BC%EC%9D%B4%ED%8A%B8/">하박국_크리스토퍼라이트</a></td>
+<td>북노트</td>
+<td>불평에서 찬양으로의 여정</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EA%B3%BC%ED%8C%90%EB%8D%B0%EB%AF%B9/">하나님과판데믹</a></td>
+<td>북노트</td>
+<td>"탄식이 먼저", 재난의 성급한 신학화 경계</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%BD%94%EB%A1%9C%EB%82%98%EB%B0%94%EC%9D%B4%EB%9F%AC%EC%8A%A4%EC%84%B8%EC%83%81%ED%95%98%EB%82%98%EB%8B%98%EC%9D%80%EC%96%B4%EB%94%94%EC%97%90_%EC%A1%B4%EB%A0%88%EB%85%B9%EC%8A%A4/">코로나바이러스세상하나님은어디에_존레녹스</a></td>
+<td>북노트</td>
+<td>허용적 뜻 vs 법령적 뜻, 두 왕관, 범신론·무신론 비판</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%82%AC%EB%9E%8C%EC%9D%80%EC%96%B4%EB%96%BB%EA%B2%8C%EB%B3%80%ED%99%94%EB%90%98%EB%8A%94%EA%B0%80_%EB%A0%88%EC%9D%B8%ED%8A%B8%EB%A6%BD/">사람은어떻게변화되는가_레인트립</a></td>
+<td>북노트</td>
+<td>고난 = 하나님의 변화 도구, 우상이 만드는 '애매한 고통'</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2021_강진수_고난속의_변하지않는_사랑</span></td>
+<td>설교</td>
+<td>부당한 고난과 자기 의, 습자본(ὑπογραμμός), 변하지 않는 사랑</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><span class="wl-dead" title="위키 내부 링크">04주_하나님의섭리문제</span> (양정모)&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p><a class="wl" href="../../t/%ED%83%84%EC%9B%90%EC%8B%9C/">탄원시</a> — MBTS 구약개론II 2주차 기반&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p><a class="wl" href="../../b/%EC%98%A4%EC%A7%81%EA%B3%A0%ED%86%B5%EB%8B%B9%ED%95%98%EB%8A%94%ED%95%98%EB%82%98%EB%8B%98%EB%A7%8C%EC%9D%B4_%EB%B9%84%EB%85%B8%EC%8A%A4%EB%9D%BC%EB%A7%88%EC%B0%AC%EB%93%9C%EB%9D%BC/">오직고통당하는하나님만이_비노스라마찬드라</a> (비노스 라마찬드라)&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref16:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref17:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref18:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref19:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p><a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EA%B3%BC%ED%8C%90%EB%8D%B0%EB%AF%B9/">하나님과판데믹</a> (톰 라이트)&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p><a class="wl" href="../../b/%EC%BD%94%EB%A1%9C%EB%82%98%EB%B0%94%EC%9D%B4%EB%9F%AC%EC%8A%A4%EC%84%B8%EC%83%81%ED%95%98%EB%82%98%EB%8B%98%EC%9D%80%EC%96%B4%EB%94%94%EC%97%90_%EC%A1%B4%EB%A0%88%EB%85%B9%EC%8A%A4/">코로나바이러스세상하나님은어디에_존레녹스</a> (존 레녹스)&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:5" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:5" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:5" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:5" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p><a class="wl" href="../../b/%EC%A0%84%EB%8F%84%EC%84%9C_%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%86%A0%ED%8D%BC%EB%9D%BC%EC%9D%B4%ED%8A%B8/">전도서_크리스토퍼라이트</a> · <a class="wl" href="../../b/%ED%95%98%EB%B0%95%EA%B5%AD_%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%86%A0%ED%8D%BC%EB%9D%BC%EC%9D%B4%ED%8A%B8/">하박국_크리스토퍼라이트</a> (크리스토퍼 라이트)&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:6" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p><a class="wl" href="../../t/%EA%B3%A0%EB%82%9C%EB%B0%9B%EB%8A%94%EC%A2%85/">고난받는종</a> — MBTS 구약개론II 이사야 53장 페이퍼 기반&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:7" title="Jump back to footnote 7 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:8">
+<p><a class="wl" href="../../b/%EC%82%AC%EB%9E%8C%EC%9D%80%EC%96%B4%EB%96%BB%EA%B2%8C%EB%B3%80%ED%99%94%EB%90%98%EB%8A%94%EA%B0%80_%EB%A0%88%EC%9D%B8%ED%8A%B8%EB%A6%BD/">사람은어떻게변화되는가_레인트립</a> (티모시 레인 &amp; 폴 트립)&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:8" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:9">
+<p><span class="wl-dead" title="위키 내부 링크">2021_강진수_고난속의_변하지않는_사랑</span> (강진수)&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:9" title="Jump back to footnote 9 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:10">
+<p>본회퍼, 『나를 따르라』&#160;<a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/조직신학</span><span>#discipline/변증학</span><span>#discipline/구약학</span><span>#topic/신정론</span><span>#topic/탄식</span><span>#topic/십자가신학</span><span>#topic/섭리</span><span>#topic/변화</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

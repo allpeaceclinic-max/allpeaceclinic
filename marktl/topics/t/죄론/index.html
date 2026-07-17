@@ -1,0 +1,316 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>죄론 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:226">조직신학·교리</span><span class="date">2026-07-17</span></div>
+  <h1 class="note-title">죄론</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>죄론(hamartiology)은 죄가 무엇이며, 어디서 왔고, 인간을 어떻게 지배하는가를 다루는 <a class="wl" href="../../t/%EC%9D%B8%EA%B0%84%EB%A1%A0/">조직신학</a>의 분과다. 이 볼트에서 죄를 다루는 페이지는 여럿이고, 그 사이에는 분업이 있다. 죄의 <em>본질</em> — 곧 죄가 결국 자기를 하나님의 자리에 앉히는 자기 신격화라는 실존적 진단 — 은 <a class="wl" href="../../t/%EC%A3%84/">죄</a>가 맡고, 타락한 본성의 성향과 그것이 결혼·양육 현장에서 드러나는 방식은 <a class="wl" href="../../t/%EC%A3%84%EC%84%B1/">죄성</a>이, 죄를 짓는 주체인 인간의 창조는 <a class="wl" href="../../t/%EC%9D%B8%EA%B0%84%EB%A1%A0/">인간론</a>이, 그 죄에서 돌이키는 응답은 <a class="wl" href="../../t/%ED%9A%8C%EA%B0%9C/">회개</a>가 각각 더 깊이 다룬다. 이 페이지가 붙드는 것은 그 모든 갈래가 딛고 선 <em>교리적 골격</em>이다 — 죄를 규정하는 성경의 어휘, 아담에게서 나에게로 죄가 전가되는 논리, 전적 타락의 정확한 범위, 행함과 행하지 않음의 두 축, 죄가 남기는 장기적 결과, 죄(단수)와 죄들(복수)의 층위, 죄의 사회적 확장, 그리고 이 모든 정확성이 왜 도리어 복음을 크게 하는가이다.</p>
+<p>이 골격을 세우는 볼트의 자료는 세 갈래다. 이상협의 MBTS 조직신학I 인죄론 토론이 원죄·전가·전적 무능력의 뼈대를 놓고, 문대원 목사의 여호수아 강해(「실패를 경영하라」)와 창세기 강해(「반역의 결과」)가 Commission과 Omission·죄의 결과·3중 관계 단절이라는 살을 입히며, 이상협의 CMF 의료사회 강의가 죄를 개인의 골방에서 구조와 제도의 차원으로까지 밀고 나간다. 죄론은 이 자료들이 함께 그리는 죄의 해부도다.</p>
+<h2>1. 죄의 정의와 어휘 — 과녁, 반역, 굽음</h2>
+<p>죄란 무엇인가. 조직신학I 인죄론 토론은 죄를 "행위, 태도, 혹은 본성에 있어서 하나님의 도덕법에 부응하지 못한 실패"로 규정한다. 여기서 결정적인 것은 죄가 언제나 하나님 및 그분의 도덕법과의 <em>관계에서</em> 규정된다는 점이다. 죄는 도둑질·간음·거짓말 같은 행위만이 아니다. "탐내지 말라"가 태도의 죄를 지적하고 산상수훈이 분노와 음욕을 금하듯, 하나님이 요구하시는 태도에 반하는 것도 죄이며, 더 깊이 들어가면 인간은 죄된 행위와 태도를 지닐 뿐 아니라 "본질상 죄인"이다. 행위·태도·본성 — 죄는 이 세 층위 모두에서 규정된다.</p>
+<p>그래서 성경은 죄를 한 단어로 말하지 않는다. 세 개의 대표 어휘가 죄의 세 얼굴을 그린다. 하마르티아(과녁 빗나감)는 마땅히 있어야 할 표적을 놓친 것이고, 페샤(반역)는 주권자에 대한 배신이며, 아온(굽음)은 곧아야 할 것이 비틀린 왜곡이다.</p>
+<table>
+<thead>
+<tr>
+<th>어휘</th>
+<th>문자적 의미</th>
+<th>강조점</th>
+<th>볼트의 목소리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>하마르티아 / 하타</td>
+<td>과녁을 빗나감</td>
+<td>마땅한 표적을 놓친 실패</td>
+<td>"하나님의 도덕법에 부응하지 못한 실패"(조직신학I)</td>
+</tr>
+<tr>
+<td>페샤</td>
+<td>반역·배신</td>
+<td>주권자에 대한 의지적 거역</td>
+<td>"죄의 본질은 반역, 거역, 배신이다"(문대원)</td>
+</tr>
+<tr>
+<td>아온</td>
+<td>굽음·비틀림</td>
+<td>본성 자체의 왜곡</td>
+<td>"만물보다 거짓되고 심히 부패한 것은 마음"(렘 17:9)</td>
+</tr>
+</tbody>
+</table>
+<p>이 세 어휘는 서로를 보완한다. 죄를 과녁 빗나감으로만 보면 죄는 단순한 실수나 미달로 축소되고, 반역으로만 보면 관계의 배신이라는 인격적 차원은 살지만 본성의 왜곡이 가려지며, 굽음으로만 보면 인간이 스스로 어쩌지 못하는 조건은 드러나되 의지적 책임이 희미해진다. 셋을 함께 붙들 때 비로소 죄는 입체가 된다 — 죄는 실수이자 배신이자 왜곡이다. 문대원이 창세기 강해에서 "죄의 핵심은 피조물에게 주어진 자리를 벗어나 하나님의 자리에 오르겠다는 것"이라 할 때 그 반역의 뿌리가 무엇인지는 <a class="wl" href="../../t/%EC%A3%84/">죄</a>가 자기 신격화로 해부하고, 이 페이지는 그 죄가 성경 어휘 안에서 어떻게 규정되는가에 머문다.</p>
+<h2>2. 원죄와 전가 — 아담의 죄가 어떻게 나의 것이 되는가</h2>
+<p>죄가 본성의 층위에까지 미친다면, 그 본성은 어디서 왔는가. 조직신학I 인죄론 토론은 인간 죄의 기원을 아담과 하와의 불순종에 둔다. 선악과 사건은 죄의 전형이다 — 그것은 지식의 기초를 쳤고, 도덕적 기준을 공격했으며, "너희가 하나님과 같이 되리라"는 유혹으로 인간이 누구인지에 대해 다른 답을 주었고, 역사적으로 실제 일어난 사건이며, 궁극적으로 비이성적이었다. 아담의 모든 자손은 여기서 두 가지를 물려받는다.</p>
+<table>
+<thead>
+<tr>
+<th>원죄가 물려주는 두 유산</th>
+<th>성격</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>부패한 본성(죄의 오염)</td>
+<td>죄를 향한 본성적 성향</td>
+<td>태어나기 전부터 죄악의 성향, 본성상 진노의 자식</td>
+</tr>
+<tr>
+<td>실제적 죄책(guilt)</td>
+<td>아담과 함께 법적으로 유죄</td>
+<td>스스로 짓기 전에 이미 하나님 앞에 죄인</td>
+</tr>
+</tbody>
+</table>
+<p>이것이 원죄(original sin)다. 웨인 그루뎀은 오해를 줄이려 "원시적 죄책(original guilt)"이라는 표현을 선호하는데, 핵심은 아담의 죄가 모든 사람에게 전가(imputation)되어 우리가 법적 죄책을 지는 동시에 죄악의 성품까지 물려받았다는 것이다. 그렇다면 아담의 죄가 <em>어떻게</em> 나의 것이 되는가. 롬 5:12-21이 그 논리의 본문이며, 신학사는 두 갈래로 답해 왔다. 대표설(연방적·언약적 대표)은 아담이 인류의 언약적 머리로 세워졌으므로 그의 행위가 대표로서 전가된다고 보고, 실재설(자연적 머리)은 온 인류가 아담 안에 유전적으로 실재했으므로 그가 범할 때 우리도 함께 범했다고 본다. 볼트가 딛고 선 그루뎀의 노선은 전가, 곧 대표의 논리에 무게를 둔다.</p>
+<p>여기서 원죄 교리는 오랜 반론과 마주친다. 펠라기우스 이래 "내가 짓지도 않은 아담의 죄를 왜 내가 책임지는가"라는 항변은 반복되어 왔고, 원죄를 부정하면 죄는 그저 후천적으로 모방된 나쁜 습관일 뿐이어서 인간은 스스로 고칠 수 있어야 한다. 그러나 경험은 반대를 증언한다. <a class="wl" href="../../t/%EC%A3%84%EC%84%B1/">죄성</a>에서 황규명이 고백하듯 "크리스천이다, 훈련받았다, 그러니 잘 살 줄 알았는데 살아보니 다 오더라." 원죄 교리는 인간을 비관하려는 냉소가 아니라, 죄가 표면의 행위가 아니라 뿌리의 조건임을 정직하게 말하려는 진단이다. 그리고 이 진단을 버릴 수 없는 더 깊은 이유가 있다. 롬 5의 핵심은 <em>대칭</em>이기 때문이다 — 한 사람(아담)으로 죄가 들어왔듯 한 사람(그리스도)으로 의가 들어온다. 아담의 죄가 전가된다는 논리를 폐기하면, 그리스도의 의가 전가된다는 <a class="wl" href="../../t/%EA%B5%AC%EC%9B%90%EB%A1%A0/">구원</a>의 논리(<a class="wl" href="../../t/%EC%86%8D%EC%A3%84%EB%A1%A0/">속죄론</a>)도 함께 무너진다. 아담론과 그리스도론은 한 문법으로 서고 넘어진다.</p>
+<h2>3. 전적 타락의 정확한 의미 — 전 영역인가 최악인가</h2>
+<p>원죄가 본성을 오염시켰다면 그 오염의 범위는 어디까지인가. 여기서 가장 자주 오해되는 교리가 등장한다. 전적 타락(total depravity)은 모든 사람이 상상할 수 있는 <em>최악</em>이라는 뜻이 아니다. 그것은 죄의 오염이 인간의 <em>전 영역</em> — 지·정·의, 몸과 영 — 에 미쳤다는 범위의 진술이다. 조직신학I 토론은 이를 성경의 언어로 옮긴다. 우리는 "죄로 죽어서 어떤 영적인 선도 행할 수 없으며" 하나님 앞에 다 죄인이다. 이것이 전적 무능력(total inability), 곧 스스로 구원에 이르는 선을 시작할 수 없다는 뜻이다.</p>
+<p>그렇다면 불신자의 선행, 예술, 정의감, 자식을 향한 사랑은 무엇인가. 전적 타락은 시민적 선(civic good)과 일반 은총(common grace)의 여지를 부정하지 않는다. 타락한 인간도 서로 사랑하고 병을 고치고 아름다움을 만든다. 다만 그 어떤 선도 하나님과의 관계를 회복시키거나 구원의 공로가 되지는 못한다. 범위는 전면적이되 정도는 사람마다 다르고, 무능력은 구원론적인 것이지 도덕적 전무(全無)를 뜻하지 않는다. 이 균형을 놓치면 교리는 두 극단으로 미끄러진다 — 인간에게 아무 선도 없다는 냉소이거나, 인간이 스스로 구원의 첫발을 뗄 수 있다는 낙관이거나.</p>
+<p>이 교리의 가장 날카로운 지점은 책임의 기준에 있다. 조직신학I 토론은 못박는다 — 죄의 책임을 가리는 기준은 "우리가 하나님께 복종할 수 있는 능력"이 아니라 "하나님의 도덕법의 절대 완전과 하나님의 거룩성"이다. 다시 말해 "나는 할 수 없으니 면제된다"는 논리가 통하지 않는다. 무능력은 면죄부가 아니다. 이 통찰은 <a class="wl" href="../../t/%EC%A3%84%EC%84%B1/">죄성</a>이 청소년 뇌발달을 두고 던지는 질문 — "이것이 면죄부가 되는가?" — 과 정확히 만난다. 발달의 미완성이든 본성의 무능력이든, 할 수 없다는 사실이 책임을 지우지는 못한다는 것이 죄론의 엄정함이다.</p>
+<h2>4. Commission과 Omission — 행한 죄와 행하지 않은 죄</h2>
+<p>죄가 본성과 무능력의 문제라면, 그것은 일상에서 어떻게 표출되는가. 문대원 목사의 여호수아 강해가 이 물음에 죄론의 심장을 내놓는다. 죄는 두 방향으로 짓는다 — 하나님이 금하신 것을 <em>행하는</em> 것(Commission, 적극적 죄)과 하나님이 명하신 것을 <em>행하지 않는</em> 것(Omission, 소극적 죄)이다.</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>라틴어</th>
+<th>정의</th>
+<th>예시</th>
+<th>기준</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>적극적 죄</td>
+<td>Commission</td>
+<td>하나님이 금하신 것을 의지적으로 행함</td>
+<td>간음, 도둑질, 우상숭배</td>
+<td>십계명 — 죄의 최소 기준</td>
+</tr>
+<tr>
+<td>소극적 죄</td>
+<td>Omission</td>
+<td>하나님이 하라고 하신 것을 행하지 않음</td>
+<td>기도하지 않음, 복음 전하지 않음, 하나님께 묻지 않음</td>
+<td>약 4:17 — 죄의 최대 기준</td>
+</tr>
+</tbody>
+</table>
+<p>Omission의 기준이 되는 본문이 야고보서다.</p>
+<blockquote>
+<p>"그러므로 사람이 선을 행할 줄 알고도 행하지 아니하면 죄니라." (약 4:17)</p>
+</blockquote>
+<p>문대원의 통찰은 여기서 나온다. 십계명이 초신자를 위한 죄의 <em>최소한의</em> 기준이라면, 약 4:17은 성숙한 자를 위한 죄의 <em>최대한의</em> 기준이다. 그래서 성숙한 그리스도인일수록 Omission을 더 조심해야 한다. "간음하지 않았으니 좋은 배우자"가 아니다 — 따뜻한 말과 격려와 배려를 하지 <em>않은</em> 것이 죄다. "술담배 안 하니 좋은 크리스천"이 아니다 — 온유·겸손·섬김을 행하지 <em>않은</em> 것이 죄다. 바리새인이 예수의 가장 강한 책망을 받은 이유가 정확히 여기 있다. 그들에게는 살인·간음의 Commission이 없었으나, 정의와 긍휼을 행하지 않은 Omission이 있었고, 나아가 남을 정죄함으로 그들이 하나님 앞에 나오지 못하도록 가로막았다.</p>
+<p>Omission의 가장 미묘한 형태를 문대원은 기브온 사건(수 9)에서 짚어낸다. 이스라엘 족장들이 기브온의 속임수에 넘어가 언약을 맺은 그 잘못의 본질은 <em>속은 것</em>이 아니었다. 속은 것은 피해이지 죄가 아니다. 죄는 "어떻게 할지를 여호와께 묻지 아니하고"(수 9:14) 스스로 결정한 것 — 곧 물어야 할 때 묻지 않은 침묵이었다. 하나님을 향한 침묵도 죄라는 것, 이것이 Omission 교리가 겨누는 가장 깊은 지점이다.</p>
+<h2>5. 죄의 장기적 결과와 실패 경영 — 용서받아도 남는 것</h2>
+<p>죄를 지은 다음은 어떻게 되는가. 문대원의 여호수아 강해는 죄론에서 자주 생략되는 진실을 붙든다 — 죄는 용서받아도 결과를 남긴다. 용서와 결과는 구분된다. 하나님과의 관계에서 죄는 십자가의 은혜로 용서되고 구원은 흔들리지 않는다(<a class="wl" href="../../t/%EA%B5%AC%EC%9B%90%EB%A1%A0/">구원론</a>). 그러나 사람들과의 관계, 이 땅의 현실에서 죄의 결과는 그대로 남는다.</p>
+<p>아간의 죄(수 7)가 그 첫 번째 증거다. 한 사람의 범죄는 아이성의 패배로, 그 패배 소식은 간담이 녹아 있던 가나안 왕들의 재결집으로, 그 연합은 불필요한 전쟁과 희생으로 번졌다. 죄의 결과는 개인에게만 머물지 않고 가정과 교회와 공동체로 흘러간다. 다윗은 두 번째 증거다. 밧세바 사건은 나단의 책망 앞에서 용서받았으나(삼하 12), "칼이 네 집에서 영영히 떠나지 아니하리라"는 결과는 그의 여생을 따라다녔다. 용서받은 죄에도 현세의 열매가 따른다는 것 — 이것이 죄를 결코 가볍게 여길 수 없는 이유다. 문대원이 C.S. 루이스를 빌려 말하는 그대로다.</p>
+<blockquote>
+<p>"당신이 무엇을 하든지 하나님은 그 가운데서 선을 이루실 것이다. 하지만 그것은 그분의 뜻에 순종했을 때 나타났을 선과 같지는 않을 것이다."</p>
+</blockquote>
+<p>그렇다면 이미 지은 죄, 이미 겪은 실패는 어떻게 하는가. 여기서 문대원은 죄론을 "실패 경영"의 지혜로 착지시킨다. 실패 앞의 잘못된 대응은 셋이다 — 없었던 것처럼 덮는 회피, 남 탓으로 돌리는 전가, 덮기 위해 또 다른 잘못을 만드는 은폐. 여호수아의 정도(正道)는 그 반대였다. 잘못을 정직하게 인정하고, 하나님 앞에서 한 맹세를 지키는 언약의 길을 택하고, 문제를 하나님 앞으로 가지고 갔다. 놀라운 것은 그 결과다. 속임수로 언약을 맺은 기브온이 훗날 예루살렘 성벽 재건에 참여하는 하나님의 종으로 편입된다(느 3:7). 잘못된 방법으로 왔어도 하나님께 은혜를 구하러 온 자들에게 하나님은 자비를 베푸신다. 죄의 결과를 직시하는 것과 실패 이후에도 은혜가 있음을 믿는 것은 모순이 아니다 — 다만 그 은혜로 돌이키는 회개의 신학 자체는 <a class="wl" href="../../t/%ED%9A%8C%EA%B0%9C/">회개</a>가 맡는다.</p>
+<h2>6. 죄와 죄들 — 상태와 행위, 권세와 열매</h2>
+<p>죄의 결과가 이토록 끈질기다면, 죄는 우리가 셈하는 개별 행위보다 더 큰 무엇이 아닌가. 성경은 죄를 단수(sin)와 복수(sins)로 말하며, 이것은 문법이 아니라 신학이다. 죄들(복수)은 우리가 짓는 개별 행위이고, 죄(단수)는 그 행위들이 흘러나오는 상태이자 권세다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>죄들 (복수)</th>
+<th>죄 (단수)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>정체</td>
+<td>개별 행위 — 셈할 수 있음</td>
+<td>상태·권세 — 인간을 지배함</td>
+</tr>
+<tr>
+<td>성경 언어</td>
+<td>간음, 도둑질, 거짓말</td>
+<td>"죄 아래", "죄가 왕 노릇"</td>
+</tr>
+<tr>
+<td>인간의 위치</td>
+<td>죄를 범하는 자</td>
+<td>"죄의 종"(롬 6:16)</td>
+</tr>
+<tr>
+<td>복음의 응답</td>
+<td>칭의 — 죄들을 사함</td>
+<td>성화 — 죄의 왕권을 무너뜨림</td>
+</tr>
+</tbody>
+</table>
+<p>이상협의 신약개론II 로마서 강의가 이 구분을 정밀하게 짚는다. 바울은 유대인과 이방인이 모두 "죄 아래", "죄의 세력 아래" 있다고 선언한다(롬 3:9-20). 여기서 죄는 셈할 수 있는 행위의 목록이 아니라 인간을 지배하는 세력이다. "아담 안에" 있는 모든 사람은 죄와 죽음의 권세 아래 놓여 있고, 그래서 로마서 6장은 죄가 "왕 노릇" 한다는 언어를 쓴다. 문대원이 창세기 강해에서 롬 6:16("죄의 종으로 사망에 이르고")을 인용하며 "인간의 죄성은 그대로 있지 않고 점점 더 깊어진다"고 말할 때, 그가 가리키는 것이 바로 이 권세로서의 죄다.</p>
+<p>이 구분이 결정적인 이유는 그것이 구원의 층위를 결정하기 때문이다. 복음은 죄들(행위)의 용서만이 아니라 죄(권세)로부터의 해방이다. 칭의는 내가 지은 죄들을 사하고, <a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a>는 나를 지배하던 죄의 왕권을 무너뜨린다. 죄를 행위로만 좁게 이해하면 "용서"는 알아도 "해방"은 모르게 되고, 신자는 사함받은 죄를 여전히 왕으로 섬기는 모순에 갇힌다. 죄와 죄들을 구분할 때 비로소 복음의 두 팔 — 용서와 해방 — 이 모두 열린다.</p>
+<h2>7. 죄의 사회적 차원 — 구조악과 공모</h2>
+<p>죄가 개인을 넘어선 권세라면, 그것은 개인의 마음에도 머물지 않는다. 문대원의 창세기 강해가 그린 3중 관계 단절이 그 확장을 보여준다. 아담의 죄는 하나님과의 관계를 끊었을 뿐 아니라, 사람과 사람 사이를 경쟁적·적대적 관계로 만들었고("존재한다는 것은 곧 경쟁한다는 뜻"이라는 C.S. 루이스의 지옥의 철학), 나아가 땅까지 저주받게 하여 피조물이 함께 탄식하게 했다(창 3:17, 롬 8:22). 죄는 관계망 전체로 번지는 오염이다.</p>
+<p>이 확장의 끝에 구조적 죄가 있다. 이상협의 CMF 의료사회 강의는 하박국이 관찰한 유다의 죄를 "구조적 죄"로 읽는다 — "율법이 마비되고 정의가 없다." 오늘의 언어로 옮기면 헌법이 무시되고 정의가 사라지는 것, 의료의 현장에서는 공공의료와 필수의료가 무너지고 의사결정에서 약자가 무시당하는 것이다. 죄는 개인의 악행으로 그치지 않고 제도와 시스템에 응고된다.</p>
+<p>그러나 구조악을 말할 때 죄론은 두 함정 사이를 지나야 한다. 하나는 개인 환원주의 — 모든 악을 개인의 회심 문제로만 돌려 불의한 구조를 방치하는 것이다. 다른 하나는 구조 환원주의 — 모든 악을 시스템 탓으로 돌려 개인의 책임을 지우는 것이다. 이상협의 강의가 내놓는 열쇠는 "나는 사실 공모자"라는 자각이다. 무너진 구조 앞에서 나는 피해자이면서 동시에 공모자다. 이 이중성이 개인 책임과 구조적 현실을 함께 붙든다 — 구조를 고발하되 나를 피고석에서 빼지 않는 것. 그래서 강의는 라비 자카라이어스를 빌려 "왼쪽이나 오른쪽만 쳐다보지 말고 위를 좀 올려다보라"고 권한다. 죄의 사회적 차원은 정치적 진영의 무기가 아니라 회개의 거울이다.</p>
+<h2>8. 죄 교리의 목회적 역설 — 죄를 작게 말하면 은혜도 작아진다</h2>
+<p>이 모든 정확성은 무엇을 위한 것인가. 죄론은 얼핏 우울하고 정죄하는 교리처럼 보인다. 그러나 그 끝에 목회적 역설이 있다 — 죄를 작게 말하면 은혜도 작아진다.</p>
+<p>논리는 단순하다. 죄가 표면의 사소한 실수라면 은혜는 약간의 도움이면 족하다. 그러나 죄가 과녁을 빗나가고(하마르티아) 주권자에게 반역하며(페샤) 본성이 굽었고(아온), 아담에게서 전가되어 전 영역을 오염시키고, 권세로 왕 노릇하며 구조에까지 응고된 것이라면 — 그때 비로소 십자가가 그만큼 크게 필요해진다. 정확한 죄론은 죄를 키워 절망하게 하는 렌즈가 아니라, 그 죄를 감당한 은혜의 크기를 드러내는 렌즈다. 그래서 죄론의 목적지는 정죄가 아니라 은혜다. 전적 타락은 절망이 아니라 은혜의 전면성을 가리키고(내가 시작할 수 없는 그 자리를 하나님이 다 시작하신다), Omission의 최대 기준은 짐이 아니라 성숙으로의 초대이며, 죄의 장기적 결과는 죄를 두려워하되 실패조차 경영하게 하는 지혜다.</p>
+<p>문대원이 여호수아 강해의 끝에서 이르듯, "겸손한 마음으로, 깨어진 마음으로 나오는 모든 사람을 하나님은 받아 주신다." 죄론이 정직할수록 은혜는 커진다. 이 역설을 잃으면 죄론은 두 방향으로 부패한다 — 죄만 크고 은혜는 없는 율법주의가 되거나, 은혜는 있으나 죄가 가벼운 값싼 은혜가 되거나. 정확한 죄론은 그 사이에서 복음의 크기를 지킨다. 죄를 <a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a>의 크기만큼 정직하게 말하는 것 — 그것이 이 교리의 목회적 소임이다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>성경은 죄를 과녁 빗나감(하마르티아)·반역(페샤)·굽음(아온)의 세 어휘로 입체화한다. 죄는 동시에 실수이자 배신이자 왜곡이다.</li>
+<li>원죄와 전가는 인간 비관이 아니라 진단의 정직함이다. 아담의 죄 전가를 폐기하면 그리스도의 의 전가도 함께 무너진다 — 아담론과 그리스도론은 한 문법으로 선다.</li>
+<li>전적 타락은 "최악"이 아니라 "전 영역"의 진술이다. 시민적 선과 일반 은총의 여지를 남기되, 구원에 이르는 무능력은 남는다. 그리고 무능력은 면죄부가 아니다.</li>
+<li>죄는 행함(Commission)만이 아니라 행하지 않음(Omission)으로도 짓는다. 성숙할수록 침묵의 죄가 더 위험하며, 하나님께 묻지 않는 것도 죄다.</li>
+<li>죄는 용서받아도 결과를 남긴다 — 용서(하나님과의 관계)와 결과(공동체·현세)는 구분되며, 그래서 실패는 회피가 아니라 경영의 대상이다.</li>
+<li>죄(단수, 권세)와 죄들(복수, 행위)의 구분이 복음의 층위를 결정한다 — 칭의는 죄들을 사하고 성화는 죄의 왕권을 깨뜨린다.</li>
+<li>죄를 작게 말하면 은혜도 작아진다. 정확한 죄론이 복음을 크게 한다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>원죄의 전가를 대표설로 볼 때, 나의 동의 없이 아담이 나를 대표한 것은 정의로운가? 이 물음의 답은 둘째 아담 그리스도의 대표를 어떻게 이해하느냐와 어떻게 맞물리는가?</li>
+<li>전적 무능력이 면죄부가 아니라면, 발달·질병·중독으로 인한 실제적 무능력(<a class="wl" href="../../t/%EC%A3%84%EC%84%B1/">죄성</a>의 청소년 뇌발달 논쟁)과 영적 무능력은 목회 현장에서 어떻게 분별되는가?</li>
+<li>구조적 죄에서 "공모자"의 책임은 어디까지인가? 시스템 안에서 불가피하게 협력할 때, 개인의 회개는 정확히 무엇을 회개하는 것인가?</li>
+<li>Omission의 최대 기준(약 4:17)을 끝까지 밀면 유한한 인간은 매 순간 죄인이 된다. 성숙으로의 초대와 병적 죄책감 사이의 경계는 어디인가?</li>
+<li>죄의 사회적 차원을 강조하는 것과 개인의 회심을 강조하는 것은 실제 사역에서 어떻게 하나로 통합되는가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%A3%84/">죄</a> — 죄의 <em>본질</em>(자기 신격화)과 실존적 해부. 이 페이지가 죄의 "교리적 골격"이라면, 죄.md는 "본질의 진단"을 맡는 분업 관계다.</li>
+<li><a class="wl" href="../../t/%EC%A3%84%EC%84%B1/">죄성</a> — 타락한 본성의 성향. 원죄의 결과로서의 부패가 결혼·양육 현장에서 어떻게 드러나는가.</li>
+<li><a class="wl" href="../../t/%EC%9D%B8%EA%B0%84%EB%A1%A0/">인간론</a> — 죄를 짓는 주체인 인간의 창조와 하나님의 형상. 죄론은 인간론을 전제한다.</li>
+<li><a class="wl" href="../../t/%ED%9A%8C%EA%B0%9C/">회개</a> — 죄에 대한 인간의 응답, 돌이킴. 죄론이 진단이라면 회개는 처방의 시작이다.</li>
+<li><a class="wl" href="../../t/%EA%B5%AC%EC%9B%90%EB%A1%A0/">구원론</a> — 죄로부터의 구원. 죄와 죄들의 층위가 칭의·성화의 층위를 규정한다.</li>
+<li><a class="wl" href="../../t/%EC%86%8D%EC%A3%84%EB%A1%A0/">속죄론</a> — 죄의 전가와 그리스도의 의의 전가가 만나는 십자가.</li>
+<li><a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a> — 죄의 왕권이 무너지는 평생의 과정.</li>
+<li><a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a> — 죄를 작게 말하면 작아지고, 정확히 말하면 커지는 그 은혜.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBTS 조직신학I 인죄론 토론 (이상협)</td>
+<td>대학원 토론</td>
+<td>죄의 정의(도덕법 부응 실패), 원죄·전가, 전적 무능력, 책임의 기준</td>
+</tr>
+<tr>
+<td>문대원 「실패를 경영하라」(수 9:3-15)</td>
+<td>설교</td>
+<td>Commission/Omission, 죄의 장기적 결과, 실패 경영, 기브온의 회복</td>
+</tr>
+<tr>
+<td>문대원 「반역의 결과」(창 3:1-8)</td>
+<td>설교</td>
+<td>죄=반역·거역·배신, 3중 관계 단절, 죄의 점진성, 롬 6 죄의 종</td>
+</tr>
+<tr>
+<td>MBTS 신약개론II 로마서 강의 (이상협)</td>
+<td>대학원 강의</td>
+<td>"죄 아래"·죄의 세력, 아담 안 vs 그리스도 안</td>
+</tr>
+<tr>
+<td>이상협 CMF 의료사회회복 강의</td>
+<td>강의안</td>
+<td>구조적 죄, "나는 공모자", 좌우 균형</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">웨인그루뎀</span> 조직신학 (인죄론)</td>
+<td>참고 신학</td>
+<td>원죄·"원시적 죄책"·전가 (조직신학I 토론의 근거)</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/조직신학</span><span>#discipline/인죄론</span><span>#원죄</span><span>#전적타락</span><span>#전가</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

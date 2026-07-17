@@ -1,0 +1,327 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>율법 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:174">성경·해석</span><span class="date">2026-07-14</span></div>
+  <h1 class="note-title">율법</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>율법(律法)은 하나님의 뜻이 계명의 형태로 성문화(成文化)된 표현이다. 같은 실재를 두고 <a class="wl" href="../../t/%ED%86%A0%EB%9D%BC/">토라</a>가 그 뜻을 담은 '문헌'을 다루고 <a class="wl" href="../../t/%EC%9C%A8%EB%B2%95%EA%B3%BC%EB%B3%B5%EC%9D%8C/">율법과복음</a>이 율법과 복음이라는 두 말씀의 '관계'를 다룬다면, 이 글은 율법이라는 '범주 자체'에 머문다 — 하나님이 언약 백성에게 성문으로 건네신 그분의 뜻이 무엇이며, 어떤 권위에 서 있고, 무엇을 할 수 있고 무엇을 할 수 없는가.</p>
+<p>율법의 첫 자리는 창조주의 권위다. 십계명은 하나님이 시내산에 강림하셔서 "직접 육성으로 말씀하신 것을 직접 손가락으로 두 돌판에 기록하신" 것이라고 <span class="wl-dead" title="위키 내부 링크">권성수</span>는 짚는다 — 점쟁이의 추측이 아니라 절대자의 확실한 말씀이라는 것. 그러나 그 권위는 진공에 서 있지 않다. 율법은 <a class="wl" href="../../t/%EC%96%B8%EC%95%BD/">언약</a>의 문서이며, 언약에는 순서가 있다. 은혜가 먼저이고 계명은 그 위에 세워진다. 이 순서를 지키느냐가 율법을 선물로 읽느냐 짐으로 읽느냐를 가른다.</p>
+<h2>1. 율법이란 무엇인가 — 은혜가 먼저다</h2>
+<p>율법을 오독하는 가장 흔한 길은 순서를 뒤집는 것이다. 지켜야 백성이 되는 것이 아니라, 이미 백성이기에 계명을 받는다. 십계명의 첫 마디가 명령이 아니라 구원의 선언이라는 사실이 이 순서를 못박는다 — "나는 너를 애굽 땅, 종 되었던 집에서 인도하여 낸 네 하나님 여호와니라"(출 20:2). 계명(3절 이하)은 이 서언 위에 세워진다. 권성수의 표현으로 십계명은 "이미 해방된 자유인들에게 주신 것"이고 "자유를 더 누리게 하기 위해 주신 것"이다. 율법은 구원의 가격표가 아니라 구원받은 자의 삶의 방식이다. 이 은혜-우선의 언약 구조가 <a class="wl" href="../../t/%EC%8B%9C%EB%82%B4%EC%82%B0%EC%96%B8%EC%95%BD/">시내산언약</a>의 뼈대이며, 여기서는 그것이 율법이라는 범주의 성격을 어떻게 규정하는가에 주목한다.</p>
+<p>율법이 언약의 문서라는 것은 그 형식에도 새겨져 있다. 권성수는 십계명이 고대 근동의 언약 양식을 그대로 따른다고 본다 — 언약의 쌍방(하나님과 백성), 역사적 배경(애굽에서 인도해 내심), 규정(열 가지 계명), 그리고 상벌. 계명만 있고 관계가 없으면 그것은 계약이 아니라 명령서다. 율법에 상벌이 붙어 있다는 사실 자체가, 이것이 일방적 강요가 아니라 두 인격 사이의 언약임을 드러낸다.</p>
+<p>그렇다면 율법의 본질은 무엇인가. 하나님의 뜻이 사람이 붙들 수 있는 말로 성문화된 것이다. 하나님은 절대자이시기에 그분의 명령에는 절대성이 있고, 그 절대 명령은 억압이 아니라 "정면충돌 방지 대책"으로 주어진다고 권성수는 말한다 — 역주행하면 망하도록 되어 있는 길에서, 계명은 파국을 막는 안내다. 율법은 창조주가 피조물에게 건네는 창조 질서의 지도이며, 그 지도를 언약이라는 관계 안에 담아 성문으로 새긴 것이다.</p>
+<h2>2. 십계명 — 율법의 심장</h2>
+<p>율법 전체의 심장은 십계명이다. 팔만대장경 같은 방대한 규정이 아니라, 권성수의 말대로 하나님은 율법을 "하나님 사랑, 이웃 사랑으로 단순화"해 두 돌판에 새기셨다. 이 두 돌판 구조가 십계명의 신학을 결정한다. 첫째 돌판(제1~4계명)은 하나님을 향한 사랑을, 둘째 돌판(제5~10계명)은 이웃을 향한 사랑을 규정한다. 예수께서 "온 율법과 선지자의 강령"을 하나님 사랑과 이웃 사랑 두 계명으로 요약하신 것(마 22:37-40)은 십계명을 축소한 것이 아니라 그 두 돌판의 심장을 드러낸 것이다.</p>
+<p>권성수의 십계명 강해(웰빙&amp;힐링 십계 시리즈)는 각 계명이 겨누는 정신을 평신도의 언어로 풀어낸 드문 사료다. 그는 첫째 돌판을 예배의 네 축 — 대상·방법·언어·날 — 으로 읽고, 둘째 돌판을 권위·생명·순결·소유·진실·마음의 질서로 읽는다. 아래 표는 각 계명의 핵심과 권성수의 강해 포인트를 요약한 것이며, 계명별 상세 강해는 설교 페이지 <span class="wl-dead" title="위키 내부 링크">권성수_십계명_웰빙힐링시리즈</span>에 위임한다.</p>
+<p><strong>첫째 돌판 — 하나님 사랑 (제1~4계명, 예배의 질서)</strong></p>
+<table>
+<thead>
+<tr>
+<th>계명</th>
+<th>핵심</th>
+<th>권성수 강해 포인트</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제1 나 외에 다른 신을 두지 말라</td>
+<td>예배의 <strong>대상</strong></td>
+<td>삶의 모든 가치관에 여호와를 최우선으로 — "마음을 가장 많이 빼앗는 것이 우상"(자식·돈·성)</td>
+</tr>
+<tr>
+<td>제2 우상을 만들지 말라</td>
+<td>예배의 <strong>방법</strong></td>
+<td>형상 자체가 아니라 '섬김의 대상'을 금함 — 칼빈 "마음은 우상 제조 공장"</td>
+</tr>
+<tr>
+<td>제3 이름을 망령되이 부르지 말라</td>
+<td>예배의 <strong>언어</strong></td>
+<td>여호와의 이름=주권·계시·임재, 마술적 오용·가짜 예언·가짜 맹세 금지</td>
+</tr>
+<tr>
+<td>제4 안식일을 거룩히 지키라</td>
+<td>예배의 <strong>날</strong></td>
+<td>창조 기념 + 구원 기념, 예수는 "안식일의 주인", 6일 노동 위의 1일 안식</td>
+</tr>
+</tbody>
+</table>
+<p><strong>둘째 돌판 — 이웃 사랑 (제5~10계명, 공동체의 질서)</strong></p>
+<table>
+<thead>
+<tr>
+<th>계명</th>
+<th>핵심</th>
+<th>권성수 강해 포인트</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제5 네 부모를 공경하라</td>
+<td>권위와 질서</td>
+<td>가정 질서가 무너지면 교회·국가가 무너짐 — 그러나 부모도 자녀의 상처를 헤아려야</td>
+</tr>
+<tr>
+<td>제6 살인하지 말라</td>
+<td>생명의 신성</td>
+<td>생명의 창조자는 하나님뿐 — 마음의 살인(분노)·언어의 살인까지, 낙태·자살 금지</td>
+</tr>
+<tr>
+<td>제7 간음하지 말라</td>
+<td>성적 순결·결혼 언약</td>
+<td>결혼은 하나님이 증인 되신 신성한 언약 — 마음·눈·입을 지키라</td>
+</tr>
+<tr>
+<td>제8 도둑질하지 말라</td>
+<td>청지기적 소유</td>
+<td>만물은 하나님 것, 인간은 청지기 — 노동과 나눔, 품삯·저울·성전 도둑질까지</td>
+</tr>
+<tr>
+<td>제9 거짓 증거하지 말라</td>
+<td>진실과 관계</td>
+<td>하나님은 진실, 사탄은 "거짓의 아비" — 규범·상황·실존의 세 시각으로 분별</td>
+</tr>
+<tr>
+<td>제10 탐내지 말라</td>
+<td>마음의 뿌리</td>
+<td>"모든 계명의 뿌리는 탐욕" — 탐욕을 끊는 길은 방향을 대망으로 돌리는 것</td>
+</tr>
+</tbody>
+</table>
+<p>제10계명이 두 돌판을 마무리하는 자리에 놓인다는 점이 특히 중요하다. 앞의 아홉 계명이 행위를 다룬다면 마지막 계명은 마음을 다룬다. 권성수는 "모든 다른 계명의 뿌리가 마음에 있고 탐욕이라는 것"을 여기서 본다 — 하나님보다 돈을 앞세우면 제1·2계명을, 주일에 가게를 열면 제4계명을 어기는데, 그 뿌리는 언제나 탐심이다. 십계명은 손끝의 행실에서 시작해 마음의 밑바닥까지 내려가며, 그렇게 율법이 겨누는 곳이 겉이 아니라 속임을 스스로 드러낸다.</p>
+<h2>3. 율법의 선함 — 문제는 율법이 아니다</h2>
+<p>율법이 짐으로 느껴질 때 사람은 율법 자체를 탓하기 쉽다. 그러나 성경은 정반대를 증언한다. 시편 119편의 시인은 율법을 규정이 아니라 연인처럼 노래한다 — "내가 주의 법을 어찌 그리 사랑하는지요 내가 그것을 종일 작은 소리로 읊조리나이다"(시 119:97). 율법의 맛이 "꿀보다 더 다니이다"(시 119:103)라고, "금 곧 순금보다 더 사랑"(시 119:127)한다고 고백한다. 권성수는 이 시편을 강해하며 율법 사랑이 곧 지혜의 원천임을 짚는다 — 계명을 묵상하며 함께 사는 사람은 "원수보다, 스승보다, 노인보다" 지혜롭게 된다. 율법은 지켜야 할 무거운 목록이기 전에, 창조주의 지혜가 담긴 선물이다.</p>
+<p>신약도 같은 자리에 선다. 율법을 가장 뜨겁게 논쟁한 바울조차 "율법은 거룩하고 계명도 거룩하고 의로우며 선하도다"(롬 7:12)라고 못박는다. 이 선언은 율법의 무능을 지적하는 다음 단계로 넘어가기 전에 반드시 붙들어야 할 전제다 — 율법에 문제가 있어서 사람이 실패하는 것이 아니라, 선하고 거룩한 율법 앞에서 사람의 죄가 드러나는 것이다. 율법의 선함을 지우면 율법의 한계는 곧바로 율법에 대한 정죄로 미끄러진다. 그러므로 율법이 할 수 없는 일을 말하기 전에, 율법 자체는 흠이 없다는 것부터 세워야 한다.</p>
+<h2>4. 율법이 할 수 없는 것 — 무능이 아니라 용도의 한계</h2>
+<p>선하고 거룩한 율법이 하지 못하는 일이 하나 있다. 사람을 의롭게 하지 못한다. "율법으로는 하나님 앞에서 아무도 의롭게 되지 못할 것이 분명하니"(갈 3:11), 나아가 율법은 생명을 주지도 못한다(갈 3:21). 이것은 율법의 결함이 아니라 용도의 경계다. 율법은 길을 가리키는 표지판이지, 그 길을 걷게 하는 다리가 아니다.</p>
+<p>권성수는 이 한계를 진단과 치료의 언어로 풀어낸다. 율법은 "구원자 지시 사인판" — "부족하구나를 깨닫게 해 주고, 선을 행할 능력이 내게 없다는 것을 알게 해 주며, 우리 본성 속에 들어 있는 죄악을 노출시켜 주는" 것이다. 거울이 얼굴의 흠을 정확히 비추지만 그 흠을 씻어 주지는 못하듯, 율법은 죄를 완벽하게 진단하되 죄를 치료하지 못한다. 그 진단이 사람을 세면대(그리스도)로 보내는 것이 율법의 본래 기능이다.</p>
+<table>
+<thead>
+<tr>
+<th>율법이 하는 것</th>
+<th>율법이 못하는 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>하나님의 뜻과 성품을 드러낸다</td>
+<td>그 뜻을 이룰 능력을 주지 못한다</td>
+</tr>
+<tr>
+<td>죄를 진단한다 ("네가 부족하구나")</td>
+<td>죄를 치료하지 못한다</td>
+</tr>
+<tr>
+<td>의의 표준을 세운다</td>
+<td>그 표준에 이르게 하지 못한다 (갈 3:11)</td>
+</tr>
+<tr>
+<td>생명의 길을 가리킨다</td>
+<td>생명을 주지 못한다 (갈 3:21)</td>
+</tr>
+</tbody>
+</table>
+<p>이 한계를 오해하면 두 극단으로 떨어진다. 율법에 없는 능력을 기대하며 율법을 구원의 수단으로 삼으면 율법주의로, 율법이 무능하다며 통째로 버리면 반율법주의로 기운다. 율법의 용도를 정확히 아는 것 — 진단하되 치료하지 않고, 가리키되 데려가지 않는다는 것 — 이 두 절벽 사이의 길을 낸다.</p>
+<h2>5. 율법의 왜곡들 — 세 가지 오용</h2>
+<p>율법 자체가 선하다면, 문제는 언제나 율법을 쓰는 손에 있다. 율법을 오용하는 방식은 크게 셋이다.</p>
+<p>첫째는 율법주의다. 율법을 구원의 수단으로 삼아, 지켜서 의로워지려는 시도다. 권성수의 진단은 순서의 문제로 압축된다 — "구원은 하나님의 은혜이지만 이후 순종은 조건이 있다." 이 순서를 뒤집어 순종을 구원의 뿌리로 앞세우는 순간 은혜는 공로로 변질된다. 둘째는 의문주의(letter without spirit), 곧 율법의 문자만 지키고 정신을 놓치는 왜곡이다. <a class="wl" href="../../t/%EC%82%B0%EC%83%81%EC%88%98%ED%9B%88/">산상수훈</a>에서 예수께 책망받은 서기관과 바리새인이 그 전형으로, 그들은 "율법의 표준을 하나님 수준에서 사람 수준으로 낮추어" 손에 피를 묻히지 않으면 살인하지 않은 것으로, 몸으로 범하지 않으면 간음하지 않은 것으로 여겼다. 문자는 지키되 마음은 비워 둔 것이다. 셋째는 반율법주의로, 은혜를 방종의 면허로 삼아 계명을 통째로 폐기하는 정반대의 왜곡이다.</p>
+<table>
+<thead>
+<tr>
+<th>왜곡</th>
+<th>무엇을 오용하는가</th>
+<th>진단</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>율법주의</td>
+<td>율법을 구원의 수단으로</td>
+<td>은혜와 순종의 순서를 뒤집음</td>
+</tr>
+<tr>
+<td>의문주의</td>
+<td>율법의 문자만, 정신 없이</td>
+<td>표준을 사람 수준으로 낮춤</td>
+</tr>
+<tr>
+<td>반율법주의</td>
+<td>은혜를 방종의 면허로</td>
+<td>계명을 통째로 폐기</td>
+</tr>
+</tbody>
+</table>
+<p>세 왜곡은 겉으로 달라 보이나 뿌리는 하나다 — 율법과 은혜의 바른 관계를 놓친 것이다. 율법주의와 반율법주의가 은혜와 순종의 순서를 두고 대칭적으로 갈라지는 실존적 해부는 <a class="wl" href="../../t/%EC%9C%A8%EB%B2%95%EC%A3%BC%EC%9D%98/">율법주의</a>와 <a class="wl" href="../../t/%EC%9C%A8%EB%B2%95%EA%B3%BC%EB%B3%B5%EC%9D%8C/">율법과복음</a>이 상술한다. 여기서 붙들 것은, 이 왜곡들이 율법의 결함이 아니라 율법을 제자리에서 밀어낸 오용이라는 점이다.</p>
+<h2>6. 그리스도와 율법 — 폐기가 아니라 성취</h2>
+<p>그렇다면 그리스도는 율법을 어떻게 하시는가. 폐기하지 않으신다. 성취하신다. "내가 율법이나 선지자를 폐하러 온 줄로 생각하지 말라 폐하러 온 것이 아니요 완전하게 하려 함이라"(마 5:17). 권성수의 요약은 세 단어다 — 예수 그리스도가 율법의 "표준이요 완성이요 성취"다. 예수께서 십계명을 다 지키셨고, 율법이 겨눠 온 본뜻을 끝까지 채우셨다.</p>
+<p>그 성취의 성격은 로마서 10장 4절의 한 단어에 압축된다 — "그리스도는 율법의 마침(텔로스)이 되시니라." 이 '마침'을 '끝'으로만 읽으면 율법은 폐지된 것이 되고, '목표'로 읽으면 율법은 처음부터 그리스도를 겨눠 온 화살이 된다. 권성수가 십계명 각 계명을 그리스도께로 잇는 것도 같은 독법이다 — 제1계명은 예수를 경배하라는 부름으로(요 10:30), 제4계명은 예수 안에서 안식을 누리라는 초대로(마 11:28) 읽힌다. 율법의 모든 조항이 그리스도라는 한 점을 향한다. 이 성취가 율법과 복음을 대립이 아니라 한 방향으로 세우는 방식은 <a class="wl" href="../../t/%EC%9C%A8%EB%B2%95%EA%B3%BC%EB%B3%B5%EC%9D%8C/">율법과복음</a>이 상술하며, 여기서는 율법이라는 범주가 그 자체로 완결되지 않고 그리스도를 향해 열려 있다는 것만 붙든다.</p>
+<h2>7. 신자와 계명 — 사랑의 문법이 된 율법</h2>
+<p>율법이 그리스도 안에서 성취되었다면, 신자는 이제 계명과 어떤 관계를 맺는가. 계명은 사라지지 않는다. 다만 그 문법이 바뀐다. "너희가 나를 사랑하면 나의 계명을 지키리라"(요 14:15)는 예수의 말씀에서 계명은 사랑의 조건이 아니라 사랑의 결과로 놓인다. 사랑하기에 지키는 것이지, 지켜서 사랑을 얻는 것이 아니다. 시편 119편의 시인이 율법을 꿀처럼 사랑한 것과 같은 자리다 — 율법을 사랑의 대상으로 읽는 사람에게 계명은 멍에가 아니라 연인의 뜻이다.</p>
+<p>이 변화의 결정적 자리가 새 언약이다. 권성수는 <a class="wl" href="../../t/%EC%83%88%EC%96%B8%EC%95%BD/">새언약</a>을 이렇게 그린다 — "돌판이 아니라 우리 마음에 새겨 놓으셨다. 성령께서 능력을 주셔서 지키게 하셨다." 예레미야가 예언한 "내 법을 그들의 속에 두며 그들의 마음에 기록하여"(렘 31:33)의 성취다. 옛 언약에서 율법이 돌판이라는 밖에 서서 요구했다면, 새 언약에서 율법은 마음이라는 안으로 들어와 성령의 능력으로 살아진다. 4장에서 본 율법의 한계 — 요구하되 능력을 주지 못한다는 것 — 이 여기서 복음으로 메워진다. 율법이 못 하던 일을 성령이 하신다. 그러므로 신자의 <a class="wl" href="../../t/%EC%88%9C%EC%A2%85/">순종</a>은 은혜를 얻어내려는 거래가 아니라 받은 <a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a>에 대한 <a class="wl" href="../../t/%EC%82%AC%EB%9E%91/">사랑</a>의 자발적 반응이며, 이 순종의 내적 역학은 <a class="wl" href="../../t/%EC%9C%A8%EB%B2%95%EA%B3%BC%EB%B3%B5%EC%9D%8C/">율법과복음</a>이 상술한다. 율법은 이렇게 정죄의 잣대에서 사랑의 문법으로 되돌아온다 — 창조주가 자녀에게 건넨 선물이라는 본래의 자리로.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>율법은 하나님의 뜻이 성문화된 표현이며, 그 권위는 창조주에게서 오되 언약이라는 관계 안에 놓인다. 십계명의 첫 마디가 계명이 아니라 구원 선언(출 20:2)이라는 사실이 '은혜가 먼저'라는 순서를 못박는다.</li>
+<li>율법의 심장은 십계명이고, 십계명의 구조는 두 돌판 — 하나님 사랑(1~4계명)과 이웃 사랑(5~10계명) — 이다. 예수의 대계명 요약(마 22:37-40)은 이 두 돌판의 심장을 드러낸 것이다.</li>
+<li>제10계명이 마음(탐욕)을 겨눈다는 사실은, 율법이 겉의 행실이 아니라 속의 뿌리까지 요구함을 스스로 드러낸다. 권성수는 "모든 계명의 뿌리는 탐욕"이라 본다.</li>
+<li>문제는 율법이 아니다. 율법은 "거룩하고 의로우며 선하"(롬 7:12)며, 시편 119편은 그것을 꿀보다 달게 사랑한다. 율법의 선함을 세운 뒤라야 그 한계를 바르게 말할 수 있다.</li>
+<li>율법이 못 하는 일 — 의롭게 하지 못하고(갈 3:11) 생명을 주지 못함(갈 3:21) — 은 결함이 아니라 용도의 한계다. 율법은 죄를 진단하되 치료하지 못하는 거울이다.</li>
+<li>율법의 왜곡은 셋(율법주의·의문주의·반율법주의)이나 뿌리는 하나 — 율법을 제자리에서 밀어낸 오용이다. 그리스도는 율법을 폐기가 아니라 성취(마 5:17)로, 그 텔로스(롬 10:4)로 완성하신다.</li>
+<li>새 언약에서 율법은 돌판 밖에서 마음 안으로 들어와(렘 31:33), 성령의 능력으로 살아지는 사랑의 문법이 된다. 신자의 계명 준수는 사랑의 조건이 아니라 사랑의 결과다(요 14:15).</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li><strong>십계명 독립 페이지 신설</strong>: 현재 볼트에는 십계명을 앵커하는 독립 페이지가 없어 <code>십계명</code> 고아 참조가 17건 존재한다. 권성수 웰빙&amp;힐링 십계 시리즈(18편)와 신명기 강해가 계명별 상세 사료를 이미 갖추고 있으므로, 이 페이지의 제2섹션을 씨앗으로 삼아 <code>topics/십계명</code> 독립 페이지를 신설하는 것이 다음 과제다 — 계명별 강해·개신교와 가톨릭의 계명 분할 차이·두 돌판 신학을 담을 자리다.</li>
+<li>제10계명이 마음의 탐욕을 겨눈다면, 율법은 애초에 외적 준수로 만족될 수 없는 것 아닌가? 그렇다면 옛 언약 아래 신자도 이미 '마음의 율법'을 요구받았는가, 아니면 그 내면화는 새 언약의 고유한 것인가?</li>
+<li>율법의 '선함'(롬 7:12)과 '무능'(갈 3:21)을 동시에 붙드는 균형은, 강단에서 한 본문을 설교할 때 실제로 어떻게 배치되는가 — 어느 하나를 앞세우면 다른 하나가 가려지지 않는가?</li>
+<li>의문주의(문자만 지킴)와 성령이 내면화한 계명 준수를 구별하는 실천적 기준은 무엇인가? 겉으로 같은 순종이 어디서 문자가 되고 어디서 사랑이 되는가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%ED%86%A0%EB%9D%BC/">토라</a> — 오경·문헌으로서의 토라, νόμος 번역사, 삼분법 논쟁 (위임)</li>
+<li><a class="wl" href="../../t/%EC%9C%A8%EB%B2%95%EA%B3%BC%EB%B3%B5%EC%9D%8C/">율법과복음</a> — 율법과 복음의 관계, 율법의 세 용도, 루터의 구분 (위임)</li>
+<li><a class="wl" href="../../t/%EA%B5%AC%EC%95%BD%EC%9C%A4%EB%A6%AC/">구약윤리</a> — 율법의 현대적 적용, 신적 수용과 패러다임 독법 (위임)</li>
+<li><a class="wl" href="../../t/%EC%9C%A8%EB%B2%95%EC%A3%BC%EC%9D%98/">율법주의</a> — 규칙의 문자적 준수라는 윤리적 왜곡 (위임)</li>
+<li><a class="wl" href="../../t/%EC%8B%9C%EB%82%B4%EC%82%B0%EC%96%B8%EC%95%BD/">시내산언약</a> — 은혜가 먼저인 언약 구조, 시내산 사건의 상세</li>
+<li><a class="wl" href="../../t/%EC%96%B8%EC%95%BD/">언약</a> — 언약 개념 전반과 상벌 구조</li>
+<li><a class="wl" href="../../t/%EC%83%88%EC%96%B8%EC%95%BD/">새언약</a> — 마음에 새겨진 법, 율법의 내면화</li>
+<li><a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a> — 계명에 앞서는 은혜, 순종의 동력</li>
+<li><a class="wl" href="../../t/%EC%82%B0%EC%83%81%EC%88%98%ED%9B%88/">산상수훈</a> — '더 나은 의'와 율법 표준의 회복</li>
+<li><a class="wl" href="../../t/%EC%88%9C%EC%A2%85/">순종</a> · <a class="wl" href="../../t/%EC%82%AC%EB%9E%91/">사랑</a> — 사랑의 결과로서의 계명 준수</li>
+<li><span class="wl-dead" title="위키 내부 링크">권성수</span> — 웰빙&amp;힐링 십계 시리즈, 신명기 강해의 주 사료</li>
+<li><span class="wl-dead" title="위키 내부 링크">전성민</span> · <span class="wl-dead" title="위키 내부 링크">크리스토퍼라이트</span> · <a class="wl" href="../../t/%ED%9D%AC%EB%85%84/">희년</a> — 율법의 패러다임적 적용 (구약윤리로 이어짐)</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>권성수 「웰빙&amp;힐링의 비결」(출 20:1-2)</td>
+<td>설교</td>
+<td>은혜가 먼저인 언약 구조, 언약의 형식(쌍방·역사적 배경·규정·상벌), 예수=표준/완성/성취, 각 계명의 그리스도 지향</td>
+</tr>
+<tr>
+<td>권성수 「행복 십계명」(신 10:12-22)</td>
+<td>설교</td>
+<td>토브(네 유익)=율법, "족쇄냐 선물이냐", 두 돌판, 하나님 사랑·이웃 사랑으로 단순화, 새 언약의 마음 새김</td>
+</tr>
+<tr>
+<td>권성수 웰빙&amp;힐링 십계 시리즈 (제1~10계명)</td>
+<td>설교 시리즈</td>
+<td>계명별 정신 — 예배의 대상·방법·언어·날, 권위·생명·순결·소유·진실·마음, "마음은 우상 제조 공장", "모든 계명의 뿌리는 탐욕"</td>
+</tr>
+<tr>
+<td>권성수 「깨우치면 살맛난다」(시 119:97-104)</td>
+<td>설교</td>
+<td>율법 사랑=지혜의 원천, "주의 법을 어찌 그리 사랑하는지요", 꿀보다 단 말씀, 묵상과 동거</td>
+</tr>
+<tr>
+<td>MBTS 신약개론 갈라디아서 강의</td>
+<td>강의</td>
+<td>갈 3:11(믿음으로 의롭게, 하박국 2:4 인용), 율법으로 의롭다 함을 얻으려는 왜곡</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%ED%86%A0%EB%9D%BC/">토라</a> · <a class="wl" href="../../t/%EC%9C%A8%EB%B2%95%EA%B3%BC%EB%B3%B5%EC%9D%8C/">율법과복음</a></td>
+<td>신학 참조</td>
+<td>롬 7:12 "거룩하고 의로우며 선한", 롬 10:4 텔로스(종점-최고조), 산상수훈의 표준 회복과 '더 나은 의'</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">전성민_패러다임적적용</span></td>
+<td>강의</td>
+<td>율법의 패러다임적 적용과 신적 수용 (구약윤리로 위임)</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/구약학</span><span>#discipline/조직신학</span><span>#십계명</span><span>#도덕법</span><span>#계명</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

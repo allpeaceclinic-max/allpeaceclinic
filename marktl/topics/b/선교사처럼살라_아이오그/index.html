@@ -1,0 +1,320 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>선교사처럼 살라 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:25">상담·치유·가정</span><span class="author">제프 아이오그</span><span class="date">2026-05-03</span></div>
+  <h1 class="note-title">선교사처럼 살라</h1>
+  
+</header>
+<article class="note">
+<p><strong>저자</strong>: 제프 아이오그 (Jeff Iorg)<br />
+<strong>분류</strong>: 선교적 삶 / 전도 / 제자도</p>
+<blockquote>
+<p>"선교적 삶은 지리적 위치에 따라서가 아니라 당신이 복음을 전하기로 헌신한 사람들에 의해 정의된다."</p>
+</blockquote>
+<hr />
+<h2>1. 핵심 명제 — 장소보다 사람</h2>
+<p>이 책의 출발점: <strong>선교 = 지리적 이동이 아니라 사람을 향한 헌신</strong></p>
+<ul>
+<li>랄프 윈터: 계7의 "각 나라 족속과 백성과 방언" = <strong>peoples(사람들)</strong></li>
+<li>바울의 사명: 이방인을 향한 선교 → 장소가 아닌 사람이 정의함</li>
+<li><strong>"장소는 당신의 부르심에 가장 중요한 요소가 아니다"</strong></li>
+<li>성도라면 선교적·선교 중인 그리스도인으로 사는 것이 당연</li>
+</ul>
+<hr />
+<h2>2. 선교적 삶의 3가지 전략</h2>
+<table>
+<thead>
+<tr>
+<th>전략</th>
+<th>내용</th>
+<th>대상</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>초청전략</strong></td>
+<td>교회 안으로 초청</td>
+<td>이미 열린 사람들</td>
+</tr>
+<tr>
+<td><strong>참여전략</strong></td>
+<td>지역사회 사역에 참여</td>
+<td>관심 있는 사람들</td>
+</tr>
+<tr>
+<td><strong>침투전략</strong></td>
+<td>완벽한 삶이 아닌 진솔한 삶으로 세상에 스며들기</td>
+<td>성숙한 믿음의 소유자</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"교회가 하는 미혼모 사역은 선교의 좋은 모델이 아닐 수 있다 — 지역사회 활동이 아니라 지역사회를 위한 교회 사역을 돕는 것"</p>
+</blockquote>
+<hr />
+<h2>3. 선교사처럼 기도하라 — 8가지 기도</h2>
+<p>마9:35-38: 더 열심히 일하라 → <strong>추수 일꾼들을 보내달라 기도하라</strong></p>
+<table>
+<thead>
+<tr>
+<th>기도 항목</th>
+<th>핵심</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 추수에 창의적으로 참여</td>
+<td>더 열심히가 아니라 더 많은 일꾼을</td>
+</tr>
+<tr>
+<td>2. 많은 성도가 동참</td>
+<td>혼자 하는 것이 아닌 운동</td>
+</tr>
+<tr>
+<td>3. 복음 증거 기회에 민감</td>
+<td>골4:3 — 문을 열어주소서</td>
+</tr>
+<tr>
+<td>4. 예수님께만 초점</td>
+<td>영적 훈련을 위한 기도</td>
+</tr>
+<tr>
+<td>5. 어떤 상황에서도 지혜</td>
+<td>상황별 적응력</td>
+</tr>
+<tr>
+<td>6. 담대히 전할 수 있게</td>
+<td>엡6:19-20</td>
+</tr>
+<tr>
+<td>7. 지역에 급속도로 복음이</td>
+<td>동심원(국가→공동체→개인)</td>
+</tr>
+<tr>
+<td>8. 친구·가족의 구원</td>
+<td>반복해야 깊이가 깊어짐</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>4. 선교사처럼 변화하라 — 변화의 3유형</h2>
+<blockquote>
+<p>"변화는 좋은 것이다. 그러니 당신부터 시작하라."</p>
+</blockquote>
+<p>예수님의 변화 초청에 대한 세 반응:</p>
+<table>
+<thead>
+<tr>
+<th>유형</th>
+<th>특징</th>
+<th>반응 방식</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>마태형</strong></td>
+<td>초청에 극적·즉각 반응</td>
+<td>변화를 기꺼이 수용</td>
+</tr>
+<tr>
+<td><strong>바리새인형</strong></td>
+<td>빠른 변화에 불만 표시</td>
+<td>변화 자체를 거부</td>
+</tr>
+<tr>
+<td><strong>세례요한 제자형</strong></td>
+<td>세상이 원하는 만큼 빨리 변하지 않음에 절망</td>
+<td>구별된 방식으로 불만</td>
+</tr>
+</tbody>
+</table>
+<p>선교적 그리스도인은 <strong>마태의 본</strong>을 따라야 한다.</p>
+<p>→ <a class="wl" href="../../b/%EB%B3%80%ED%99%94%EC%97%90%EB%8C%80%ED%95%9C%EB%AC%B5%EC%83%81%EB%B0%8F%EC%B1%85%EC%A0%95%EB%A6%AC/">변화에대한묵상및책정리</a> — 이 3유형의 합성 분석 포함</p>
+<hr />
+<h2>5. 선교의 장애물 10가지</h2>
+<ol>
+<li>전도의 의미를 왜곡 (언어적 행동 없는 섬김만으로 대체)</li>
+<li>관용의 참뜻 오해 (포스트모던적 재정의)</li>
+<li>전도를 너무 복잡하게 생각 → <strong>반기독교적 질문은 대개 설득 요구가 아니라 긍휼의 위로 요구</strong></li>
+<li>그리스도인임을 부끄러워함</li>
+<li>보편구원론과 타협</li>
+<li>전도 책임·기회 회피</li>
+<li>참여보다 전쟁을 택하는 태도</li>
+<li>자아실현을 삶의 목표로 삼음</li>
+<li>헌신을 조악하게 정의 (교회 사역 참여 ≠ 제자도)</li>
+<li>섬김의 능력을 과소평가</li>
+</ol>
+<blockquote>
+<p>"교회는 지구상에서 유일하게 그 구성원이 아닌 <strong>그 구성원 밖의 사람들을 위해</strong> 존재하는 조직이다."</p>
+</blockquote>
+<hr />
+<h2>6. 성령과 관계 — 선교의 두 엔진</h2>
+<h3>성령의 역할</h3>
+<ul>
+<li>비그리스도인들을 위해 이미 일하심 (고넬료 백부장 — 그들이 모를지라도)</li>
+<li>권위 있게 말할 수 있는 기반: <strong>메시지 전하는 사람이 아니라 메시지 자체</strong></li>
+<li>마땅히 할 말을 성령이 주심 (눅12:11-12)</li>
+<li>어떤 사람도 토론·논쟁으로 하나님 나라 백성이 된 적 없다</li>
+</ul>
+<h3>관계 형성의 원칙</h3>
+<ul>
+<li>함께 있는 사람에게 온전히 집중</li>
+<li>비그리스도인의 불쾌한 행동에도 → 구원의 필요성에 초점</li>
+<li><strong>동일 집단의 원리</strong> (도널드 맥가르란): 불필요한 소통의 장벽 제거 (고전9:22)</li>
+</ul>
+<hr />
+<h2>7. 희생 — 자아실현의 반대편</h2>
+<ul>
+<li>자아실현 = 오늘날 세상의 가치 / 자기희생 = 비합리적인 행동으로 보임</li>
+<li>선교적 삶의 희생: 시간·돈·친밀한 관계</li>
+<li><strong>희생에는 비례관계</strong>: 때로 보잘것없어 보이는 포기가 지구 반 바퀴 이동보다 더 어려울 수 있다</li>
+</ul>
+<hr />
+<h2>⭐ vault 내 연결 지점</h2>
+<table>
+<thead>
+<tr>
+<th>이 책의 개념</th>
+<th>연결 자료</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>장소보다 사람 / 선교적 삶 정의</td>
+<td><a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EB%9E%80%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80_%EC%8A%A4%ED%86%A0%ED%8A%B8%EB%9D%BC%EC%9D%B4%ED%8A%B8/">선교란무엇인가_스토트라이트</a> — 총체적 선교</td>
+</tr>
+<tr>
+<td>초청·참여·침투전략</td>
+<td><a class="wl" href="../../b/%EB%B3%B4%EB%83%84%EB%B0%9B%EC%9D%8C_%ED%82%B4%ED%96%84%EB%AA%AC%EB%93%9C/">보냄받음_킴햄몬드</a> — 참여의 영성, 다니엘 원리</td>
+</tr>
+<tr>
+<td>변화 3유형</td>
+<td><a class="wl" href="../../b/%EB%B3%80%ED%99%94%EC%97%90%EB%8C%80%ED%95%9C%EB%AC%B5%EC%83%81%EB%B0%8F%EC%B1%85%EC%A0%95%EB%A6%AC/">변화에대한묵상및책정리</a> — 합성 분석</td>
+</tr>
+<tr>
+<td>추수 기도 / 일꾼들을 보내달라</td>
+<td><a class="wl" href="../../t/%EA%B8%B0%EB%8F%84/">기도</a></td>
+</tr>
+<tr>
+<td>성령의 선행 사역 (비그리스도인 대상)</td>
+<td><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> — 미씨오 데이</td>
+</tr>
+<tr>
+<td>교회는 구성원 밖을 위해 존재</td>
+<td><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a></td>
+</tr>
+<tr>
+<td>동일 집단의 원리</td>
+<td><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> — 상황화</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>탐구 중인 질문</h2>
+<p><strong>Q1. 침투전략은 어떻게 혼합주의의 위험 없이 실천될 수 있는가?</strong>
+- 부분 답변: "완벽한 삶이 아닌 진솔한 삶" — 정직한 정체성 유지가 전제
+- 부분 답변: <a class="wl" href="../../b/%EB%B3%B4%EB%83%84%EB%B0%9B%EC%9D%8C_%ED%82%B4%ED%96%84%EB%AA%AC%EB%93%9C/">보냄받음_킴햄몬드</a> — 다니엘 원리 (언어·학문 참여 but 정체성 지킴)
+- 부분 답변: <a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EB%9E%80%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80_%EC%8A%A4%ED%86%A0%ED%8A%B8%EB%9D%BC%EC%9D%B4%ED%8A%B8/">선교란무엇인가_스토트라이트</a> — 문화의 3층위 (거부/유지/변화 필요)
+- 여전히 열린 질문: 의료 현장에서 침투전략은 구체적으로 어떤 형태인가?</p>
+<p><strong>Q2. "반기독교적 질문은 긍휼의 위로가 필요한 것"이라는 통찰을 전도에서 어떻게 적용하는가?</strong>
+- 부분 답변: 논리적 반론보다 공감·긍휼이 먼저 — 성령이 메시지 자체로 역사하심
+- 여전히 열린 질문: 의료 현장의 "왜 나에게 이런 고통이"라는 질문에 대한 목회적 접근은?</p>
+<hr />
+<h2>관련 페이지</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> — 미씨오 데이, 동일 집단 원리, 상황화</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a> — 교회는 구성원 밖을 위해 존재</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%84/">기도</a> — 추수 기도, 담대함</li>
+<li><a class="wl" href="../../t/%EC%A0%84%EB%8F%84/">전도</a> — 선교적 삶, 관계 전도</li>
+<li><a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%EB%8F%84/">제자도</a> — 변화·희생·헌신의 정의</li>
+<li><a class="wl" href="../../b/%EB%B3%B4%EB%83%84%EB%B0%9B%EC%9D%8C_%ED%82%B4%ED%96%84%EB%AA%AC%EB%93%9C/">보냄받음_킴햄몬드</a> — 침투전략, 참여의 영성</li>
+<li><a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EB%9E%80%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80_%EC%8A%A4%ED%86%A0%ED%8A%B8%EB%9D%BC%EC%9D%B4%ED%8A%B8/">선교란무엇인가_스토트라이트</a> — 총체적 선교, 문화 상황화</li>
+<li><a class="wl" href="../../b/%EB%B3%80%ED%99%94%EC%97%90%EB%8C%80%ED%95%9C%EB%AC%B5%EC%83%81%EB%B0%8F%EC%B1%85%EC%A0%95%EB%A6%AC/">변화에대한묵상및책정리</a> — 변화 3유형 합성</li>
+<li><span class="wl-dead" title="위키 내부 링크">인터서브</span> — 선교사처럼 사는 삶의 실천</li>
+</ul>
+</article>
+<div class="tagrow"><span>#선교적삶</span><span>#전도</span><span>#기도</span><span>#성령</span><span>#변화</span><span>#제자도</span><span>#선교신학</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

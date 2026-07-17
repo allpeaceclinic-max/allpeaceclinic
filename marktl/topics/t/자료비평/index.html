@@ -1,0 +1,170 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>자료비평 (Source Criticism) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:174">성경·해석</span><span class="date">2026-06-28</span></div>
+  <h1 class="note-title">자료비평 (Source Criticism)</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>자료비평은 <strong>복음서 기자들이 어떤 문서 자료를 의존하고 수정했는지를 탐구하는</strong> 성경 연구 방법론이다. 신약개론I 3주 강의는 자료비평을 복음서 형성 과정의 두 번째 단계, 즉 구전(양식비평) 이후 문서 단계를 다루는 방법으로 소개한다. 자료비평의 핵심 질문은 공관복음 문제(Synoptic Problem)다: 마태·마가·누가 세 복음서가 놀라울 만큼 유사한 이유는 무엇이며, 그 상호 관계는 어떻게 설명되는가?</p>
+<h2>1. 공관복음 문제와 주요 학설</h2>
+<p>공관복음 문제를 설명하는 이론들은 크게 네 가지로 정리된다.</p>
+<table>
+<thead>
+<tr>
+<th>학설</th>
+<th>제안자</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>상호의존설</td>
+<td><span class="wl-dead" title="위키 내부 링크">어거스틴</span></td>
+<td>마태→마가→누가 순으로 의존</td>
+</tr>
+<tr>
+<td>두 복음설</td>
+<td>J.J. Griesbach</td>
+<td>마태→누가→마가 순 (마가는 두 복음서의 요약)</td>
+</tr>
+<tr>
+<td>두 자료설</td>
+<td>C.H. Weise / Karl Lachmann</td>
+<td>마가 + Q → 마태·누가 각각 의존</td>
+</tr>
+<tr>
+<td>네 자료설</td>
+<td>B. H. Streeter</td>
+<td>마가 + Q + M(마태 특수자료) + L(누가 특수자료)</td>
+</tr>
+</tbody>
+</table>
+<p>현재 학계에서 가장 널리 수용되는 이론은 <strong>두 자료설(Two-Source Hypothesis)</strong>, 즉 마가복음 우선설과 Q자료 가설의 결합이다.</p>
+<h2>2. 마가복음 우선설의 근거</h2>
+<p>신약개론I 강의는 마가복음 우선설을 지지하는 통계적·내적 근거를 구체적으로 제시한다.</p>
+<ul>
+<li>마가복음 단어의 <strong>97%가 마태복음에</strong>, <strong>88% 이상이 누가복음에</strong> 등장한다.</li>
+<li>마태-마가, 누가-마가 사이에는 광범위한 문자적 일치가 있으나, 마태-누가 단독 일치는 희소하다. 이는 마태와 누가가 서로를 직접 의존하지 않고 공통 자료(마가)를 독립적으로 사용했음을 시사한다.</li>
+<li>마가복음의 헬라어 문법이 마태·누가보다 불규칙하고 아람어가 더 많다 — 초기 전승의 흔적이 덜 다듬어진 형태로 남아있다는 증거다.</li>
+<li>신학적으로 난해한 진술(예: 예수님이 "많은 기적을 행하실 수 없었다"는 표현)이 마가복음에 더 많이 등장하며, 마태와 누가는 이를 완화하는 경향이 있다.</li>
+</ul>
+<h2>3. 기여와 한계</h2>
+<p><strong>기여</strong>: 자료비평은 복음서들이 어떻게 서로 연결되어 있는지를 체계적으로 분석하게 해주며, 각 복음서 기자의 편집 목적(→<a class="wl" href="../../t/%ED%8E%B8%EC%A7%91%EB%B9%84%ED%8F%89/">편집비평</a>)을 연구하는 출발점이 된다. 공관복음의 유사성과 차이를 "모순"이 아니라 자료 사용 방식의 차이로 설명하는 해석 틀을 제공한다.</p>
+<p><strong>한계</strong>: 강의는 두 자료설이 "절대 이론이 아닌 작업 이론"임을 명시한다. 복음서 형성 과정은 자료비평이 제시하는 모델보다 훨씬 복잡하다. 파피아스(유세비우스 인용)의 증언처럼 히브리어 원(proto)복음의 가능성, 구두 전승과 문서 자료의 혼합 등 자료비평 단일 이론으로는 설명되지 않는 현상들이 남는다. 또한 자료비평은 목격자(eyewitnesses)의 역할을 과소평가하는 경향이 있다는 비판도 받는다.</p>
+<h2>4. 역사비평의 맥락</h2>
+<p>자료비평은 역사비평(historical criticism)의 하위 방법론 중 하나로, <a class="wl" href="../../t/%EC%96%91%EC%8B%9D%EB%B9%84%ED%8F%89/">양식비평</a>, <a class="wl" href="../../t/%ED%8E%B8%EC%A7%91%EB%B9%84%ED%8F%89/">편집비평</a>과 함께 복음서 형성의 세 단계를 분담한다.</p>
+<ul>
+<li><strong><a class="wl" href="../../t/%EC%96%91%EC%8B%9D%EB%B9%84%ED%8F%89/">양식비평</a></strong>: 구전 단계 — 전승이 어떤 삶의 정황에서 양식화되었는가</li>
+<li><strong>자료비평</strong>: 문서 단계 — 저자가 어떤 문서를 의존했는가</li>
+<li><strong><a class="wl" href="../../t/%ED%8E%B8%EC%A7%91%EB%B9%84%ED%8F%89/">편집비평</a></strong>: 구성 단계 — 저자가 자료를 어떻게 편집하여 자신의 신학을 구현했는가</li>
+</ul>
+<p>세 방법론 모두 복음서를 비판적으로 분석하는 도구로서 기여와 한계를 동시에 가진다. 신약개론I 강의는 어느 방법론에도 매몰되지 않고 각각을 유익한 도구로 취급하되, 신앙고백적 자세로 본문과 씨름해야 한다는 결론으로 수렴한다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>마가복음 단어의 97%(마태)·88%(누가) 등장이라는 통계는 마가복음 우선설의 가장 강력한 근거다.</li>
+<li>두 자료설은 현재 학계의 지배적 작업 이론이지만, 복음서 형성의 전체 복잡성을 포착하지 못한다.</li>
+<li>자료비평의 가장 중요한 신학적 함의는, 복음서들의 차이가 모순이 아니라 각 저자의 신학적 목적의 표현이라는 인식이다.</li>
+<li>"한 예수님, 3개의 초상화"라는 결론은 자료비평이 열어 주는 다양성을 신앙 안에서 수용하는 방식이다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>두 자료설의 대안인 파러 가설(Q 없이 누가가 마태를 직접 사용)은 얼마나 설득력 있는가?</li>
+<li>자료비평이 전제하는 문서 의존 모델과, 최근 구두 전승 연구가 강조하는 목격자 역할은 어떻게 통합될 수 있는가?</li>
+<li>마가복음 우선설이 흔들린다면, 편집비평의 결론들도 함께 재검토되어야 하는가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EA%B3%B5%EA%B4%80%EB%B3%B5%EC%9D%8C%EB%AC%B8%EC%A0%9C/">공관복음문제</a> — 자료비평이 답하려는 핵심 문제</li>
+<li><a class="wl" href="../../t/%EC%96%91%EC%8B%9D%EB%B9%84%ED%8F%89/">양식비평</a> — 자료비평 이전 단계, 구전 전승 분석</li>
+<li><a class="wl" href="../../t/%ED%8E%B8%EC%A7%91%EB%B9%84%ED%8F%89/">편집비평</a> — 자료비평 이후 단계, 편집 신학 분석</li>
+<li><a class="wl" href="../../t/%EC%97%AD%EC%82%AC%EC%A0%81%EC%98%88%EC%88%98/">역사적예수</a> — 자료비평의 결과가 역사적 예수 탐구에 미치는 함의</li>
+<li><span class="wl-dead" title="위키 내부 링크">03주_공관복음</span> — 자료비평을 포함한 복음서 연구 방법론 전체 논의</li>
+</ul>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/신약학</span><span>#topic/공관복음문제</span><span>#topic/복음서연구</span><span>#topic/성경해석학</span><span>#topic/역사비평</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

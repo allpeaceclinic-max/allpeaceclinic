@@ -1,0 +1,330 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>몸이 아니라고 말할 때 (When the Body Says No) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:25">상담·치유·가정</span><span class="author">게이버 메이트</span><span class="date">2026-05-03</span></div>
+  <h1 class="note-title">몸이 아니라고 말할 때 (When the Body Says No)</h1>
+  
+</header>
+<article class="note">
+<p><strong>저자</strong>: 게이버 메이트 (Gabor Maté)<br />
+<strong>분류</strong>: 심신의학 / 정서와 질병 / 내면치유</p>
+<hr />
+<h2>핵심 주장</h2>
+<blockquote>
+<p>"자신의 바운더리가 침범당해도 아니오라고 말하는 법을 배우지 못하면,<br />
+우리의 신체가 그 말을 대신할 수 있다." — 글로브 앤 메일</p>
+</blockquote>
+<p>질병은 유전자만의 문제가 아니다. <strong>감정 억압 + 무의식적 부정 + 바운더리 부재</strong>가 신체 질환을 만든다.</p>
+<ul>
+<li>루이 파스퇴르 (병원균의 독성) vs <strong>클로드 베르나르 (숙주의 취약성)</strong><br />
+  → 베르나르가 옳았다: 질병은 외부 원인보다 <strong>내부 상태</strong>와 더 연관된다</li>
+</ul>
+<hr />
+<h2>질병과 성격 유형</h2>
+<table>
+<thead>
+<tr>
+<th>성격 유형</th>
+<th>특징</th>
+<th>연관 질환</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A형</strong></td>
+<td>화를 잘 내고, 긴장·조급·공격적, 지배력 행사</td>
+<td>심혈관계</td>
+</tr>
+<tr>
+<td><strong>B형</strong></td>
+<td>감정 균형, 절제, 폭발 없음</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>C형</strong></td>
+<td>극도로 협동적, 인내·수동·자기주장 없음·순응</td>
+<td>암, 자가면역</td>
+</tr>
+</tbody>
+</table>
+<h3>C형 성격과 주요 질환</h3>
+<ul>
+<li><strong>암</strong>: 정서적 단절, 감정 억압, 화 억압, 지지관계 결핍 — 유전적 요인은 7%에 불과</li>
+<li><strong>ALS(루게릭)</strong>: 한결같이 아동기 정서 박탈·결핍 존재. ALS 환자들은 왜 그렇게 친절한가?</li>
+<li><strong>다발성 경화증</strong>: 장기간 지속된 슬픔이나 화 (샤르코)</li>
+<li><strong>류머티스 관절염</strong>: 정신적 충격·슬픔과 연관, 불평 없는 극기적 태도 아주 어린 시절 습득</li>
+<li><strong>크론·궤양성 대장염</strong>: 강박·집착·양심적, 전두엽 피질 비활성화</li>
+<li><strong>폐암</strong>: 감정을 유리병처럼 밀봉, 빈약한 감정 표출 수단</li>
+<li><strong>알츠하이머</strong>: 자가면역질환 가능성, 초기 언어 능력 열등</li>
+</ul>
+<blockquote>
+<p>"암성격보다 암<strong>상황</strong>(가정)"<br />
+— 개인의 성격보다 자라온 환경이 더 결정적이다</p>
+</blockquote>
+<hr />
+<h2>심신의학의 메커니즘</h2>
+<h3>면역계 — "떠다니는 뇌"</h3>
+<ul>
+<li>면역계 = 자기(Self)와 비자기(Non-self)를 구분하는 시스템</li>
+<li><strong>화를 억압하면 면역계 교란</strong> → 심리적 자기/비자기 혼동이 면역계에도 그대로 반영</li>
+<li>세포막이 신경계·외부환경 메시지를 해석 → 핵의 유전자만으로 암을 규정할 수 없다</li>
+</ul>
+<h3>애착과 스트레스 전승</h3>
+<ul>
+<li>존 보울비·메리 에인즈워스: 부모-자식 간 애착의 질</li>
+<li><strong>스트레스와 불안은 의도와 무관하게 세대에 걸쳐 전승된다</strong> (죄의 대물림)</li>
+<li>부모-자식 간 부적절한 공생 관계 → 수많은 병리적 이상 현상의 원인</li>
+</ul>
+<h3>무의식적 믿음이 몸을 통제한다</h3>
+<ol>
+<li>"나는 강해야 해"</li>
+<li>"화를 내는 건 옳지 않아"</li>
+<li>"화를 낸다면 사랑스러운 사람이 못 될 거야"</li>
+<li>"내가 온 세상을 다 책임져야 해"</li>
+<li>"무슨 일이든 처리할 수 있어"</li>
+<li>"나는 사랑스러운 사람이 아니야"</li>
+<li>"일을 안 하면 존재하지 않아 — 존재를 증명해야 해"</li>
+<li><strong>"보살핌을 받으려면 몸이 아파야 해"</strong></li>
+</ol>
+<p>→ 치유의 출발점: <strong>재인식(再認識)</strong> — 이 믿음들을 다시 알게 되는 것</p>
+<hr />
+<h2>치유를 위한 7A 프레임</h2>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>영어</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Acceptance</strong> 인정</td>
+<td>자신이 강도 맞은 자임을 알아야 — 작은 자 됨</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Awareness</strong> 인식</td>
+<td>감정 인식 능력 회복 — 동물·아이처럼 감정 포착</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Anger</strong> 화</td>
+<td>건강한 화 = 보강이면서 이완. 억압도 분노도 아닌 진정한 화</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Autonomy</strong> 자율</td>
+<td>내면의 관제소 발달, 바운더리 확립 — 자아 회복</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Attachment</strong> 애착</td>
+<td>세상과의 연결, 아동기 애착 회복</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Assertion</strong> 주장</td>
+<td>"지금의 모습이 우리의 존재"라고 선언 (하나님의 형상 회복)</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Affirmation</strong> 확인</td>
+<td>창조적 자아 긍정, 영적 자아 발견 (하나님의 형상 회복)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>우디 앨런: "나는 결코 화를 내지 않아. 대신 종양을 키우고 있어."</p>
+</blockquote>
+<hr />
+<h2>⭐ "마음의 건강" 강의와의 연결</h2>
+<p><em>이 책은 이상협 원장의 강의 "육체의 건강 마음의 건강"의 학문적 기반과 임상 관찰이 일치하는 지점이 많다.</em></p>
+<h3>1. 동일한 논증 체인</h3>
+<table>
+<thead>
+<tr>
+<th>강의 (이상협)</th>
+<th>게이버 메이트</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>마음 → 뇌 → 자율신경계 → 면역계</td>
+<td>감정 억압 → 자율신경계 손상 → 면역계 교란</td>
+</tr>
+<tr>
+<td>"두려움·분노 = 마음의 독소 2가지"</td>
+<td>A형(분노)→혈관, C형(두려움)→암</td>
+</tr>
+<tr>
+<td>한스 셀리에: 매일 곰을 만나는 상황</td>
+<td>한스 셀리에: 도주-응전 반응의 반복 소진</td>
+</tr>
+<tr>
+<td>면역 = "나 아닌 것과의 싸움"</td>
+<td>면역계 = 자기/비자기 구분</td>
+</tr>
+</tbody>
+</table>
+<h3>2. 임상 사례의 일치</h3>
+<p>강의에서 직접 관찰한 사례들이 게이버 메이트의 이론적 틀과 정확히 맞아 떨어진다:
+- <strong>폐암 후배</strong> (부모의 이혼) = C형 성격 + 아동기 정서 결핍
+- <strong>간암 아저씨</strong> (아들의 배신) = 감정 억압 + 지지관계 결핍
+- <strong>유방암 며느리</strong> (시어머니) = 만성 스트레스 + 분노 억압
+- <strong>갑상선암</strong> (말 못할 어려움) = "선교사 사모님들이 많다" = C형 성격의 전형</p>
+<h3>3. 강의가 책보다 더 나아간 지점 — 신학적 확장</h3>
+<p>게이버 메이트는 심리적 치유(7A)에서 멈추지만, 강의는 성경적 근거로 더 깊이 들어간다:</p>
+<table>
+<thead>
+<tr>
+<th>게이버 메이트 (심리)</th>
+<th>이상협 강의 (신학)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>무의식 재인식</td>
+<td>레브(לב) = 심장에 직관적 기억 (폴 피어셜, 50배)</td>
+</tr>
+<tr>
+<td>자아 바운더리 회복</td>
+<td>성령이 무의식을 조명 → 카르디아에 말씀이 새겨짐</td>
+</tr>
+<tr>
+<td>7A 자기 치유 프레임</td>
+<td>의식 새롭게 함 → 성령 조명 → 의지로 순종 → 반복 → 레브 변화</td>
+</tr>
+<tr>
+<td>심리적 Autonomy</td>
+<td>잠 4:23 "무엇보다 마음을 지키라" = 레브(심장)를 지키는 것</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"마음이 뇌를, 뇌가 자율신경계를, 자율신경계가 면역계를 관장한다.<br />
+마음도 하나님이 지키신다." — 이상협</p>
+</blockquote>
+<h3>4. 부모-자녀 전승의 일치</h3>
+<ul>
+<li>책: 부모-자식 간 스트레스·불안의 세대 전승 (보울비·에인즈워스)</li>
+<li>강의: 부모의 강박·강압 → 아이가 밤에도 긴장 → 교감/부교감 균형 붕괴 → 아토피 악화</li>
+<li>공통 결론: <strong>양육 방식이 면역계에 직접 영향을 미친다</strong></li>
+</ul>
+<hr />
+<h2>기독교적 연결</h2>
+<ul>
+<li><strong>8번 믿음 "보살핌을 받으려면 아파야 해"</strong> = <a class="wl" href="../../t/%EB%91%90%EB%A0%A4%EC%9B%80/">두려움</a>의 "종의 영"(롬 8:15)과 동일한 구조</li>
+<li><strong>7A의 Assertion·Affirmation</strong> = 조건 없이 사랑받는 존재임을 아는 것 → 치유의 완성</li>
+<li><strong>세대 전승 스트레스</strong> = 성경의 "죄의 대물림" 개념 → <a class="wl" href="../../b/%EB%87%8C%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A4%EA%B3%84_%ED%8B%B0%EB%A8%B8%EC%8B%9C%EC%A0%9C%EB%8B%9D%EC%8A%A4/">뇌하나님의설계_티머시제닝스</a> 연결</li>
+<li><strong>의료 현장 적용</strong>: 질병 진단 시 대인관계·감정 억압 탐색이 필요 → <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a></li>
+</ul>
+<hr />
+<h2>탐구 중인 질문 (부분 답변)</h2>
+<h3>Q1. 감정 억압과 질병의 상관관계를 어떻게 진료 현장에서 실제로 다룰 것인가?</h3>
+<ul>
+<li><strong>실마리</strong>: 강의의 실제 임상 사례 — 환자 스스로 이야기할 때까지 기다리는 것, 1분 경청 → <a class="wl" href="../../b/%EB%94%94%EC%A6%88%EB%8B%88%EB%B3%91%EC%9B%90%EC%9D%98%EC%84%9C%EB%B9%84%EC%8A%A4%EB%A6%AC%EB%8D%94%EC%8B%AD/">디즈니병원의서비스리더십</a></li>
+<li>여전히 열린 질문: 시간에 쫓기는 외래 진료 구조 안에서 어떻게 가능한가?</li>
+</ul>
+<h3>Q2. 7A 치유 프레임과 기독교 내면치유를 어떻게 통합할 것인가?</h3>
+<ul>
+<li><strong>실마리</strong>: 강의의 의식-성령-카르디아 변화 구조가 7A의 신학적 완성판 — 성령의 역할이 7A에 없는 핵심 차이</li>
+<li>여전히 열린 질문: 심리치료와 영적 치유 중 무엇이 먼저인가?</li>
+</ul>
+<hr />
+<h2>관련 페이지</h2>
+<ul>
+<li><a class="wl" href="../../t/%EB%82%B4%EB%A9%B4%EC%B9%98%EC%9C%A0/">내면치유</a> — 감정 억압, 아동기 상처, 치유 프레임</li>
+<li><a class="wl" href="../../t/%EB%91%90%EB%A0%A4%EC%9B%80/">두려움</a> — 종의 영, 조건부 사랑의 구조</li>
+<li><a class="wl" href="../../t/%EA%B0%80%EC%A1%B1%EC%B9%98%EB%A3%8C/">가족치료</a> — 애착 이론, 세대 전승</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a> — 심신의학과 통합적 의료</li>
+<li><a class="wl" href="../../b/%EB%87%8C%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A4%EA%B3%84_%ED%8B%B0%EB%A8%B8%EC%8B%9C%EC%A0%9C%EB%8B%9D%EC%8A%A4/">뇌하나님의설계_티머시제닝스</a> — 감정·뇌·신앙의 신경과학적 연결</li>
+<li><a class="wl" href="../../b/%EB%94%94%EC%A6%88%EB%8B%88%EB%B3%91%EC%9B%90%EC%9D%98%EC%84%9C%EB%B9%84%EC%8A%A4%EB%A6%AC%EB%8D%94%EC%8B%AD/">디즈니병원의서비스리더십</a> — 공감, 1분 경청의 임상 적용</li>
+</ul>
+</article>
+<div class="tagrow"><span>#심신의학</span><span>#내면치유</span><span>#정서</span><span>#스트레스</span><span>#의료</span><span>#면역학</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

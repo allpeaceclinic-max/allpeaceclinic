@@ -1,0 +1,369 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>종교개혁 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:38">교회사</span><span class="date">2026-07-14</span></div>
+  <h1 class="note-title">종교개혁</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>종교개혁(Reformation)은 1517년 마르틴 루터의 「95개 조항」에서 점화되어 16세기 서방 교회를 근본에서 다시 세운 신앙 운동이다. 그러나 그것은 한 수도사의 항의문으로 환원되지 않는다. 종교개혁은 부패한 중세 교회를 향한 도덕적 저항이자, "인간은 무엇으로 하나님 앞에 서는가"라는 구원론의 재발견이었고, 성경의 권위를 성직 계급의 손에서 회중에게 돌려준 인식론의 전환이었으며, 마침내 유럽의 정치·경제·문화 지형을 갈아엎은 문명사적 사건이었다. <a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EC%82%AC/">교회사</a>가 종교개혁을 "단순한 신학 논쟁이 아니라 사회·정치·문화 전반의 패러다임 전환"으로 규정하는 이유가 여기 있다.</p>
+<p>이 글은 종교개혁을 하나의 교리가 아니라 하나의 사건이자 운동으로 읽는다. 그 궤적은 여러 겹이다 — 개혁을 잉태한 중세 말의 위기, 원전으로 돌아가려는 인문주의와 그것을 실어 나른 인쇄술, 루터의 탑의 체험과 이신칭의의 재발견, 다섯 개의 "오직"으로 응축된 신학의 심장, 스위스와 제네바와 급진파와 영국으로 갈라진 개혁의 물줄기들, 로마의 반격, 그리고 한 세기의 종교전쟁이 남긴 유산이다. 이 층위들을 차례로 따라간다.</p>
+<p>그 신학적 심장은 다섯 개의 "오직"(sola)이다 — 오직 성경, 오직 믿음, 오직 은혜, 오직 그리스도, 오직 하나님께 영광. 다만 위임의 경계를 분명히 해 둔다. 이신칭의 교리의 조직적 전개는 <a class="wl" href="../../t/%EC%B9%AD%EC%9D%98%EB%A1%A0/">이신칭의</a>와 <a class="wl" href="../../t/%EC%B9%AD%EC%9D%98%EB%A1%A0/">칭의론</a>에, 칼뱅주의 신학 체계(TULIP)는 <a class="wl" href="../../t/%EC%B9%BC%EB%B9%88%EC%A3%BC%EC%9D%98/">칼빈주의</a>에, 트리엔트를 포함한 공의회사 전체는 <a class="wl" href="../../t/%EA%B3%B5%EC%9D%98%ED%9A%8C/">공의회</a>에 맡긴다. 이 페이지는 역사적 사건·운동으로서의 종교개혁을 중심에 둔다.</p>
+<table>
+<thead>
+<tr>
+<th>연도</th>
+<th>사건</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1517</td>
+<td>루터, 비텐베르크 「95개 조항」 게시</td>
+<td>면죄부 반박 — 개혁의 점화</td>
+</tr>
+<tr>
+<td>1520</td>
+<td>루터의 세 논문(독일 귀족에게·교회의 바벨론 포로·그리스도인의 자유)</td>
+<td>교황권·7성례 비판의 체계화</td>
+</tr>
+<tr>
+<td>1521</td>
+<td>보름스 국회, "내가 여기 섰나이다"</td>
+<td>철회 거부 → 바르트부르크 은신, 독일어 성경 번역</td>
+</tr>
+<tr>
+<td>1522~25</td>
+<td>취리히 소시지 논쟁·재세례파 첫 신자침례(1525)</td>
+<td>개혁파와 급진파의 분기</td>
+</tr>
+<tr>
+<td>1529</td>
+<td>슈파이어 2차 국회 항의서 / 마르부르크 회담</td>
+<td>'Protestant' 명칭 발생 / 성찬론으로 개혁 진영 결렬</td>
+</tr>
+<tr>
+<td>1534</td>
+<td>영국 수장령(Act of Supremacy)</td>
+<td>헨리 8세 주도의 영국 종교개혁</td>
+</tr>
+<tr>
+<td>1536</td>
+<td>칼뱅 「기독교 강요」 초판</td>
+<td>개혁주의 신학의 체계화</td>
+</tr>
+<tr>
+<td>1545~63</td>
+<td>트리엔트 공의회</td>
+<td>로마의 반종교개혁 응답</td>
+</tr>
+<tr>
+<td>1555</td>
+<td>아우크스부르크 화의</td>
+<td>"영주의 종교가 곧 그 지역의 종교"(신앙속지주의)</td>
+</tr>
+<tr>
+<td>1618~48</td>
+<td>30년 전쟁 → 베스트팔렌 조약</td>
+<td>종교전쟁의 종결, 근대 국가 질서로의 이행</td>
+</tr>
+</tbody>
+</table>
+<h2>1. 개혁 이전의 개혁 — 중세 말 교회의 위기</h2>
+<p>종교개혁은 진공에서 터지지 않았다. MBTS 교회사II 강의는 개혁의 무대를 "신앙의 시기"였던 중세, 곧 봉건제와 성직자 중심주의가 맞물린 세계로 그린다. 구원은 교회의 성례를 통해서만 흘렀고, 성경은 라틴어 불가타에 갇혀 성직자에게 독점되었다. 문제는 그 독점의 관리자들이 무너지고 있었다는 데 있다. 성직 매매와 축첩, 족벌주의가 만연했고, 매매로 성직에 오른 이들은 라틴어조차 읽지 못할 만큼 무지했으며, 성례는 그 자체에 주술적 효력이 있는 것처럼 미신화되었다.</p>
+<p>교회의 권위 자체도 이미 금이 가 있었다. 교황청이 프랑스 왕의 볼모처럼 아비뇽에 붙들려 있던 "교회의 바벨론 유수"와 뒤이은 교회 대분열은, 교황이라는 제도의 신적 후광을 세속의 눈앞에서 벗겨 놓았다. 이 위기의 정점에 면죄부가 있었다. 교회는 성인들의 "잉여 공로"를 보관하는 창고를 자처했고, 연옥에서의 형벌 기간을 돈으로 줄여 준다는 논리로 그것을 팔았다. 마인츠 대주교직을 겸하려던 알브레히트의 재정 거래와, "동전이 궤에 떨어지는 순간 영혼이 연옥에서 튀어 오른다"던 판매인 테첼의 상술이 맞물린 자리 — 바로 거기서 루터의 항의가 시작된다.</p>
+<h2>2. 근원으로 — 르네상스 인문주의와 인쇄술</h2>
+<p>개혁의 도구는 뜻밖에도 교회 밖에서 벼려졌다. 르네상스 인문주의의 구호 "아드 폰테스"(ad fontes, 근원으로)는 고전 문화와 원전으로 돌아가 문헌의 진위를 본문 비평적으로 검토하려는 정신이었다. 로이힐린은 히브리어 문법을 연구했고, 무엇보다 로테르담의 에라스무스는 헬라어 신약성경을 편집·출판하여 개혁자들의 손에 원어 성경을 쥐여 주었다. 루터가 독일어 번역에 사용한 것이 바로 이 에라스무스 헬라어판이었다. 에라스무스 자신은 교회를 떠나는 개혁에는 반대하며 학문과 교육을 통한 내부 개혁을 원했으나, 그가 놓은 원전의 사다리 위로 루터가 성벽을 넘었다.</p>
+<p>인문주의만이 아니었다. 강의는 유명론(보편보다 개체를 앞세워 개인주의의 문을 연 사상), 성직자를 거치지 않고 하나님과 직접 합일하려는 신비주의, 그리고 교황의 보편 권위에 맞선 민족주의를 모두 개혁의 밑불로 꼽는다. 그러나 이 모든 흐름을 대중 운동으로 폭발시킨 결정적 촉매는 인쇄술이었다. 문대원 목사는 이 점을 날카롭게 짚는다 — 구텐베르크의 인쇄기가 성경 출판을 값싸게 만든 지 60년 뒤 종교개혁의 동력이 되었고, 위클리프와 얀 후스의 개혁이 대중의 지지를 얻지 못해 실패한 자리에서 루터가 성공한 까닭은 「95개 조항」이 인쇄기를 통해 순식간에 대량 배포되었기 때문이라는 것이다. 개혁의 신학은 루터의 것이었지만, 개혁의 속도는 활자의 것이었다.</p>
+<h2>3. 탑의 체험 — 루터와 이신칭의의 재발견</h2>
+<p>마르틴 루터(1483~1546)는 에르푸르트에서 수학한 뒤 은혜와 믿음을 강조하던 아우구스티누스 수도회에 들어갔으나, "어떻게 하면 구원을 얻는가"라는 물음에 짓눌려 있었다. 전환은 시편·로마서·갈라디아서를 강의하던 중 롬 1:16-17에서 왔다. 그가 두려워하던 "하나님의 의"는 죄인을 심판하는 능동적 의가 아니라, 믿는 자에게 선물로 전가되는 의였다. <span class="wl-dead" title="위키 내부 링크">루터</span> 페이지가 요약하듯, 이는 아우구스티누스의 '분여된(imparted) 의'를 '전가된(imputed) 의'로 다시 읽은 법정적·선언적 전환이었다 — 하나님이 나를 의롭게 만드시는 것이 아니라 의롭다고 여겨 주신다는 것. 1517~18년의 이른바 "탑의 체험"(Turmerlebnis)이 그 깨달음의 순간으로 전해진다.</p>
+<p>이 신학적 발견이 면죄부 비판과 만나 「95개 조항」(1517)으로 터졌다. 뒤이은 논쟁들이 개혁의 논리를 한 겹씩 벼렸다. 하이델베르크 논쟁(1518)에서 그는 이성으로 하나님께 오르려는 "영광의 신학"에 맞서 겸손히 십자가 아래 서는 "십자가의 신학"을 내세웠고, 라이프치히 논쟁(1519)에서 요한 에크와 맞서다 교황과 공의회조차 오류를 범할 수 있으며 최종 권위는 오직 성경이라는 데까지 밀고 나갔다. 1520년 파문 직전 그는 세 편의 글을 쏟아 냈다 — 독일 귀족에게 로마가 쌓은 세 겹의 벽(세속 정부 위의 교황권, 성경 해석의 독점, 공의회 소집권의 독점)을 허물 것을 호소했고, 「교회의 바벨론 포로」에서 일곱 성례를 세례와 성찬 둘로 되돌리며 화체설을 비판했으며, 「그리스도인의 자유」에서 이신칭의로 해방된 신자는 누구의 종도 아님을 선언했다.</p>
+<p>절정은 보름스 국회(1521)였다. 황제 카를 5세 앞에서 60일의 철회 기한을 받은 루터는 물러서지 않았다. "내가 여기 섰나이다"(Here I stand) — 이 한마디로 그는 개인의 양심을 교회의 권위 위에 세웠다. 작센 선제후 프리드리히가 그를 바르트부르크 성에 은신시켰고, 그곳에서 루터는 신약성경을 독일어로 옮겼다(9월 성경). 이후 슈파이어 2차 국회(1529)에서 신앙의 자유를 다시 빼앗기자 개혁 진영이 항의서를 제출하고 퇴장했으니, '프로테스탄트'(Protestant, 항의하는 자)라는 이름이 여기서 났다. 이신칭의 교리 자체의 조직적 상세는 <a class="wl" href="../../t/%EC%B9%AD%EC%9D%98%EB%A1%A0/">이신칭의</a>·<a class="wl" href="../../t/%EC%B9%AD%EC%9D%98%EB%A1%A0/">칭의론</a>에 맡기되, 그것이 어떻게 한 사람의 서재에서 한 문명의 광장으로 걸어 나왔는지가 이 절의 몫이다.</p>
+<h2>4. 다섯 개의 "오직" — 종교개혁의 신학적 심장</h2>
+<p>종교개혁의 신학은 훗날 다섯 개의 라틴어 표어로 응축되었다. 그것은 새 교리의 발명이 아니라, 중세 교회가 성경 위에 덧쌓은 것을 걷어 내고 복음의 뼈대를 드러내는 작업이었다.</p>
+<table>
+<thead>
+<tr>
+<th>솔라</th>
+<th>라틴어</th>
+<th>핵심 명제</th>
+<th>무엇에 맞섰는가</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>오직 성경</td>
+<td>Sola Scriptura</td>
+<td>성경만이 신앙과 삶의 최종 권위</td>
+<td>성경 위에 선 교황·전통의 권위</td>
+</tr>
+<tr>
+<td>오직 믿음</td>
+<td>Sola Fide</td>
+<td>오직 믿음으로 의롭다 하심을 받음</td>
+<td>공로·선행의 구원 기여</td>
+</tr>
+<tr>
+<td>오직 은혜</td>
+<td>Sola Gratia</td>
+<td>구원은 전적으로 하나님의 값없는 은혜</td>
+<td>인간 자유의지의 공로</td>
+</tr>
+<tr>
+<td>오직 그리스도</td>
+<td>Solus Christus</td>
+<td>그리스도만이 유일한 중보자</td>
+<td>사제·성인·마리아를 통한 중보</td>
+</tr>
+<tr>
+<td>오직 하나님께 영광</td>
+<td>Soli Deo Gloria</td>
+<td>모든 영광은 오직 하나님께</td>
+<td>교회·성직·인간에게 돌려진 영광</td>
+</tr>
+</tbody>
+</table>
+<p>이 표어들은 서로 맞물려 하나의 논리를 이룬다. 성경만이 권위이므로(<a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%EB%A1%A0/">성경론</a>), 성경이 증언하는 구원은 오직 <a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a>로, 오직 <a class="wl" href="../../t/%EB%AF%BF%EC%9D%8C/">믿음</a>으로, 오직 그리스도를 통해 온다. 따라서 모든 영광은 인간이 아니라 하나님께 돌아간다. 그 실천적 귀결이 만인 제사장직(priesthood of all believers)이다 — 성직자만이 아니라 모든 신자가 사제 없이 하나님께 직접 나아간다. 이 원리는 <span class="wl-dead" title="위키 내부 링크">루터</span>의 소명론(<a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a>)으로도 확장되어, 구두 수선공과 농부의 일도 사제의 일과 동등한 부르심임을 선언하며 성속(聖俗)의 이분법을 해체했다.</p>
+<p>다섯 솔라의 무게 중심은 결국 은혜였다. 루터가 임종의 머리맡에 남긴 메모가 그것을 압축한다.</p>
+<blockquote>
+<p>우리는 거지들이다. 이것은 사실이다.</p>
+</blockquote>
+<p>인간이 하나님 앞에 내밀 것은 공로가 아니라 빈손뿐이며, 구원은 처음부터 끝까지 받는 것이라는 고백이다. <a class="wl" href="../../t/%EC%B9%AD%EC%9D%98%EB%A1%A0/">칭의론</a>이 정리하듯, 종교개혁이 되살린 것은 '내 안에 생겨난 의'가 아니라 '그리스도에게서 전가된 의'였다.</p>
+<h2>5. 개혁의 여러 갈래 — 취리히·제네바·부처</h2>
+<p>개혁은 루터 한 사람의 것이 아니었다. 거의 동시에 스위스에서 독자적 물줄기가 솟았다. <span class="wl-dead" title="위키 내부 링크">츠빙글리</span>(1484~1531)는 취리히에서 헬라어 성경 연구에 기초한 개혁을 이끌었다. 사순절 금육 규정을 어긴 이른바 소시지 논쟁(1522)에서 그는 "성경 어디에 먹지 말라 했는가"라고 반박하며 하나님 말씀의 권위를 앞세웠고, 잇단 공개 논쟁을 거쳐 성상과 미사와 연옥 교리를 성경적이지 않다는 이유로 걷어 냈다. 루터가 유아세례와 두 왕국의 긴장을 지킨 반면, 츠빙글리는 교회와 국가의 일치를 주장했고 끝내 카펠 전투에서 전사했다.</p>
+<p>개혁의 갈래를 가른 결정적 쟁점은 성찬이었다. 마르부르크 회담(1529)에서 루터와 츠빙글리는 화체설 부정에는 뜻을 모았으나 성찬의 본질에서 끝내 결렬했다. "이것은 내 몸이니라"를 루터는 문자적으로 붙들었고, 츠빙글리는 상징으로 읽었다. 이 분기가 이후 개신교 성찬론의 지도를 그렸다.</p>
+<table>
+<thead>
+<tr>
+<th>입장</th>
+<th>대표자</th>
+<th>핵심 주장</th>
+<th>"이것은 내 몸이니라"</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>화체설(Transubstantiation)</td>
+<td>로마 가톨릭</td>
+<td>빵과 포도주의 실체가 그리스도의 몸과 피로 변함</td>
+<td>실체의 변화</td>
+</tr>
+<tr>
+<td>공재설(Consubstantiation)</td>
+<td>루터</td>
+<td>그리스도가 빵 안에·함께·아래 실재로 임재</td>
+<td>문자적 실재</td>
+</tr>
+<tr>
+<td>영적 임재설</td>
+<td>칼뱅</td>
+<td>성령을 통해 신자가 그리스도께 영적으로 참여</td>
+<td>영적 실재</td>
+</tr>
+<tr>
+<td>기념설(Memorialism)</td>
+<td>츠빙글리</td>
+<td>성찬은 그리스도의 죽음을 기억하는 상징</td>
+<td>상징(signify)</td>
+</tr>
+</tbody>
+</table>
+<p>제2세대 개혁의 정점에 장 칼뱅(1509~1564)이 있었다. 프랑스 누아용에서 법률가의 아들로 태어나 인문주의 고전 연구로 방향을 튼 그는, "갑작스러운 회심" 이후 1536년 「기독교 강요」 초판을 내며 개혁주의 신학을 체계화했다. 파렐의 권유로 제네바 개혁에 뛰어들었다가 추방당해 스트라스부르크에서 마르틴 부처의 지도 아래 강요를 완성했고, 다시 제네바로 돌아와(1541) 목사·장로·교사·집사의 직제와 장로법원(consistory)을 세워 도시 전체를 "거룩하게" 만드는 개혁을 밀어붙였다. 그의 신학에서 하나님의 선택과 주권이 중심 주제가 되었으며, 삼위일체를 부정한 세르베투스가 제네바에서 화형당한 사건은 그의 이름에 지워지지 않는 논란을 남겼다. 칼뱅의 영향은 프랑스의 위그노, 네덜란드 개혁교회, 그리고 존 녹스를 통한 스코틀랜드 장로교로 뻗어 나갔다. 다만 흔히 칼뱅과 동일시되는 TULIP은 그의 생전 체계가 아니라, 사후 아르미니우스 논쟁에 대응해 도르트 총회(1618~19)에서 후대가 정식화한 것이다 — 그 신학 체계의 상세는 <a class="wl" href="../../t/%EC%B9%BC%EB%B9%88%EC%A3%BC%EC%9D%98/">칼빈주의</a>에 맡긴다.</p>
+<h2>6. 급진 종교개혁 — 재세례파와 "순수한 교회"</h2>
+<p>루터와 칼뱅의 개혁이 세속 통치자와 손잡은 "관료적" 개혁이었다면, 그 손잡음 자체를 거부한 이들이 있었다. 취리히에서 츠빙글리의 개혁이 충분히 철저하지 못하다고 본 콘라트 그레벨과 펠릭스 만츠 등은 신약성경만을 권위로 삼아 초대교회의 순수성으로 돌아갈 것을 주장했다. 핵심 쟁점은 세례였다. 그들은 유아세례를 성경적 근거가 없다며 무효로 선언하고, 살아 있는 신앙 고백 위에서만 세례를 베풀어야 한다고 보아 성인에게 다시 세례를 주었다(1525년 1월, 만츠의 집). 여기서 '재세례파'(Anabaptist, 다시 세례 주는 자)라는 이름이 났다.</p>
+<p>이들의 신앙은 슐라이트하임 신앙고백(1527)으로 정리되었다 — 신자의 침례, 순수한 교회를 위한 권징과 출교, 맹세 거부, 무력 사용과 군 복무 거부, 세상과의 분리. 대가는 혹독했다. 만츠는 1527년 수장형으로 처형되었고, 재세례파는 개신교와 가톨릭 양쪽에서 이단으로 몰렸다. 그러나 그 유산은 오래 살아남았다. 메노 시몬스를 따른 메노나이트, 공동체 농업을 실천한 후터파, 그 흐름에서 갈라진 아미쉬가 그 후예이며, 신약 성경의 권위·정교분리·평화주의·나눔의 공동체라는 그들의 강조점은 오늘 <a class="wl" href="../../t/%EC%B9%A8%EB%A1%80%EA%B5%90%ED%9A%8C/">침례교회</a> 전통과 자유교회의 뿌리로 이어진다. 당대엔 처형당한 신념이 오늘 대다수 개신교의 상식이 되었다는 역설 — <a class="wl" href="../../t/%EC%A0%95%EA%B5%90%EB%B6%84%EB%A6%AC/">정교분리</a>의 신학적 씨앗이 여기 있었다.</p>
+<h2>7. 왕이 세운 개혁 — 영국 종교개혁과 중도 노선</h2>
+<p>대륙의 개혁이 신학에서 출발했다면, 영국의 개혁은 왕권에서 출발했다. 본래 루터를 반박해 교황에게 "신앙의 수호자" 칭호를 받았던 헨리 8세는, 캐서린과의 이혼을 교황이 불허하자 방향을 틀었다. 토마스 크랜머의 논리에 힘입어 그는 수장령(1534)으로 영국 교회의 머리를 교황에서 왕으로 옮겼다. 시작은 신학이 아니라 왕조의 필요였던 셈이다.</p>
+<p>그러나 그 그릇에 개혁 신학이 채워졌다. 어린 에드워드 6세 치하에서 크랜머는 「공동 기도서」(Book of Common Prayer)와 칼뱅주의 색채의 신조를 마련했고, 뒤이은 '피의 메리'가 개신교도를 처형하며 가톨릭 복고를 시도했으나 곧 꺾였다. 안정은 엘리자베스 1세의 몫이었다. 통일령과 39개조로 그는 개신교 신학과 감독제(episcopal) 조직을 결합한 '중도 노선'(Via Media)을 세워, 신앙에서는 프로테스탄트이되 예식에서는 로마의 형식을 보존한 독특한 국교회를 안정시켰다. 이 절충에 만족하지 못한 이들이 두 갈래로 갈렸다 — 국교회 안에 남아 더 철저한 개혁을 요구한 청교도(Puritan)와, 국교회에는 희망이 없다며 떨어져 나온 분리주의자(Separatist)다. 훗날 대서양을 건넌 이 흐름이 미국 회중교회와 침례교의 씨앗이 된다.</p>
+<h2>8. 로마의 응답 — 반종교개혁과 트리엔트</h2>
+<p>로마 가톨릭은 개혁 앞에서 침묵하지 않았다. 반종교개혁(Counter Reformation)은 방어와 쇄신의 두 얼굴을 지녔다. 한편으로 교황 바오로 3세는 이단 심문소를 전면 확대해 개신교 색출과 이탈 방지에 나섰고, 정죄된 자에게는 투옥·사형·재산 몰수가 뒤따랐다. 다른 한편 이그나티우스 로욜라가 세운 예수회(1540년 인준)는 절대 순종과 교육·설교·선교를 결합한 군대식 조직으로 급성장했다. 프란치스코 사비에르가 인도와 일본을 거쳐 중국 문턱에서 숨질 만큼, 예수회의 선교는 세계로 뻗었다.</p>
+<p>쇄신의 신학적 정점은 트리엔트 공의회(1545~1563)였다. 25차에 걸친 회기를 통해 로마는 중세 신학을 전반적으로 재확인했다 — 성경과 전통을 나란히 권위로 세우고, 이신득의를 인정하되 선행이 개입할 여지를 남겼으며, 일곱 성례와 화체설을 고수했다. 동시에 성직자 교육 강화와 겸직 제한 같은 내부 개혁도 단행하고 금서 목록을 제정했다. 요컨대 트리엔트는 종교개혁의 산물이었다 — 로마는 개혁에 맞서면서 비로소 자신의 경계선을 그었고, 그 결과 서방 교회의 분열은 잠정적 사태에서 제도화된 현실이 되었다. 트리엔트를 포함한 공의회사 전체의 상세는 <a class="wl" href="../../t/%EA%B3%B5%EC%9D%98%ED%9A%8C/">공의회</a>에 맡긴다.</p>
+<h2>9. 개혁된 교회는 항상 개혁되어야 한다 — 유산과 오늘의 함의</h2>
+<p>종교개혁은 평화롭게 끝나지 않았다. 신앙의 분열은 한 세기의 종교전쟁으로 번졌다. 슈말칼덴 전쟁을 거쳐 아우크스부르크 화의(1555)는 "영주의 종교가 곧 그 지역의 종교"(cuius regio, eius religio)라는 신앙속지주의로 잠정 봉합했고, 프랑스의 위그노 전쟁은 낭트 칙령(1598)으로, 네덜란드 독립전쟁은 개혁파의 승리로 이어졌다. 그 모든 것의 파국이 30년 전쟁(1618~1648)이었다 — 가톨릭과 개신교 진영이 뒤엉켜 독일 인구의 4분의 1이 스러졌고, 프랑스의 리슐리외 추기경이 국익을 좇아 개신교 편에 서는 아이러니 속에서 신앙 전쟁의 명분은 바래 갔다. 베스트팔렌 조약(1648)이 그 종지부였다. 루터파·개혁파·가톨릭이 나란히 종교의 자유를 얻었고, 교황권은 내려앉고 왕권이 올라섰으며, "믿음으로 전쟁하는 것은 덧없다"는 환멸 속에서 유럽은 신앙 대신 이성으로 눈을 돌리기 시작했다. 종교개혁이 뜻하지 않게 근대의 문을 연 것이다.</p>
+<p><code>종교개혁 (1517)
+├─ 루터파(Lutheran) ── 독일·스칸디나비아
+├─ 개혁파(Reformed)
+│   ├─ 츠빙글리 ── 취리히
+│   ├─ 칼뱅 ── 제네바 → 위그노(프랑스)·네덜란드 개혁교회
+│   └─ 낙스 ── 스코틀랜드 장로교
+├─ 영국 국교회(Anglican) ── 감독제 → 청교도 → 분리파(회중·침례)
+└─ 급진 종교개혁(Radical)
+    └─ 재세례파 ── 메노나이트·후터파·아미쉬 → 자유교회·침례 전통</code></p>
+<p>그러나 종교개혁이 남긴 가장 날카로운 유산은 어떤 교파도, 어떤 조약도 아니다. 그것은 "개혁된 교회는 항상 개혁되어야 한다"(ecclesia reformata semper reformanda)는 자기 비판의 원리다. 개혁은 16세기에 완료된 사건이 아니라 교회를 향해 계속 겨누어진 칼끝이며, 그 칼끝은 언제나 자기 자신을 먼저 향한다. 권성수 목사는 종교개혁 기념강좌에서 바로 이 칼을 오늘의 목회 현장에 들이댄다 — 오직 은혜라 하면서 은혜에 녹지 않고 행위의 공로를 세우고, 오직 믿음이라 하면서 순종 없는 값싼 믿음에 안주하며, 오직 성경이라 하면서 유행하는 세속 사상을 성경으로 포장하고, 오직 하나님의 영광이라 하면서 실은 나의 야망을 좇지 않는가. 다섯 솔라는 로마를 향한 옛 구호로 박제될 때가 아니라 오늘 내 신앙의 실상을 비추는 거울이 될 때 살아 있다. 종교개혁의 참된 계승은 루터를 기념하는 데 있지 않고, 루터가 그랬듯 지금 여기서 <a class="wl" href="../../t/%EB%B3%B5%EC%9D%8C/">복음</a>으로 돌아가는 데 있다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>종교개혁은 새 종교의 창설이 아니라 "근원으로"(ad fontes) 돌아가려는 복고 운동이었다 — 인문주의의 원전 회복 정신이 성경 원어 연구로 이어져 개혁의 도구가 되었다.</li>
+<li>루터의 발견은 도덕 개혁이기 전에 문법의 전환이었다 — "하나님의 의"를 심판하는 의에서 전가되는(imputed) 의로 다시 읽은 순간 면죄부는 설 자리를 잃었다.</li>
+<li>같은 "오직 성경"을 들고도 개혁자들은 성찬 하나로 갈라섰다 — 마르부르크의 결렬은 개신교가 태생부터 다양성과 분열을 함께 안고 출발했음을 보여준다.</li>
+<li>인쇄술이 없었다면 「95개 조항」은 비텐베르크 성문에서 멈췄을 것이다 — 위클리프·후스가 실패한 자리에서 루터가 성공한 결정적 차이는 구텐베르크였다(문대원).</li>
+<li>급진 종교개혁의 신자의 침례와 정교분리는 당대엔 이단으로 처형됐으나 오늘 대다수 개신교가 물려받은 상식이 되었다.</li>
+<li>트리엔트 공의회는 종교개혁의 산물이다 — 로마는 개혁에 맞서면서 비로소 자신을 정의했고, 그 과정에서 분열은 제도화되었다.</li>
+<li>semper reformanda는 종교개혁의 자기 비판 원리다 — 개혁의 칼끝은 로마가 아니라 언제나 자기 자신을 먼저 향한다(권성수).</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>성경 해석을 회중에게 돌려준 종교개혁의 유산이 오늘의 무수한 교파 분열과 사적 해석의 혼란으로 이어졌다면, "만인 제사장"과 "해석의 무정부" 사이의 경계는 어디인가?</li>
+<li>루터의 두 왕국론은 그리스도인의 공적 책임의 근거가 되기도 했으나 국가 폭력 앞의 침묵(신앙속지주의)으로도 기능했다 — 둘을 가르는 신학적 기준은 무엇인가?</li>
+<li>종교개혁은 왜 교회의 하나 됨(공교회성)을 회복하지 못하고 오히려 분열을 낳았는가 — 개혁과 분열은 필연적으로 함께 가는가?</li>
+<li>「칭의 교리에 관한 공동선언」(1999) 이후 가톨릭과 개신교가 접근한 오늘, 16세기의 쟁점은 여전히 교회를 갈라놓는 본질인가, 아니면 화해 가능한 강조점의 차이인가?</li>
+<li>아우크스부르크에서 베스트팔렌까지의 종교전쟁이 근대 세속화와 정교분리로 귀결되었다면, 종교개혁은 근대성의 어머니인가 아니면 그 희생자인가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%B9%AD%EC%9D%98%EB%A1%A0/">이신칭의</a> — 종교개혁이 재발견한 칭의 교리의 바울신학적 논의(위임 대상)</li>
+<li><a class="wl" href="../../t/%EC%B9%AD%EC%9D%98%EB%A1%A0/">칭의론</a> — 전가된 의·믿음·은혜로서의 칭의, 조직신학적 정리(위임 대상)</li>
+<li><a class="wl" href="../../t/%EC%B9%BC%EB%B9%88%EC%A3%BC%EC%9D%98/">칼빈주의</a> — 도르트 총회 TULIP과 개혁주의 신학 체계(위임 대상)</li>
+<li><a class="wl" href="../../t/%EA%B3%B5%EC%9D%98%ED%9A%8C/">공의회</a> — 트리엔트를 포함한 공의회사 전체; 공의회 우위론이 "오직 성경"으로 이어진 다리(위임 대상)</li>
+<li><a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EC%82%AC/">교회사</a> — 종교개혁을 교회사의 결정적 전환점으로 위치시키는 상위 페이지</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%EB%A1%A0/">성경론</a> — sola scriptura, 성경 권위의 회복</li>
+<li><a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a> · <a class="wl" href="../../t/%EB%AF%BF%EC%9D%8C/">믿음</a> · <a class="wl" href="../../t/%EB%B3%B5%EC%9D%8C/">복음</a> — sola gratia·sola fide가 되살린 복음의 문법</li>
+<li><a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a> — 만인 제사장직에서 파생된 루터의 소명론, 성속 이분법 해체</li>
+<li><a class="wl" href="../../t/%EC%A0%95%EA%B5%90%EB%B6%84%EB%A6%AC/">정교분리</a> — 급진 종교개혁이 놓은 국가-교회 분리의 씨앗</li>
+<li><a class="wl" href="../../t/%EC%B9%A8%EB%A1%80%EA%B5%90%ED%9A%8C/">침례교회</a> — 재세례파에서 이어지는 신자의 침례와 자유교회 전통</li>
+<li><span class="wl-dead" title="위키 내부 링크">루터</span> · <span class="wl-dead" title="위키 내부 링크">츠빙글리</span> — 종교개혁의 주요 행위자</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBTS 교회사II 1주 강의</td>
+<td>강의 노트</td>
+<td>중세 말 교회 부패·바벨론 유수·면죄부, 인문주의(에라스무스), 루터의 생애·95개조·이신칭의·두 왕국론</td>
+</tr>
+<tr>
+<td>MBTS 교회사II 2주 강의</td>
+<td>강의 노트</td>
+<td>츠빙글리의 취리히 개혁, 칼뱅의 제네바 개혁·기독교 강요·장로정치·세르베투스, 낙스, 아르미니우스와 도르트</td>
+</tr>
+<tr>
+<td>MBTS 교회사II 3주 강의</td>
+<td>강의 노트</td>
+<td>영국 종교개혁(헨리 8세·크랜머·엘리자베스·39개조), 급진 종교개혁(재세례파·슐라이트하임), 반종교개혁·예수회·트리엔트</td>
+</tr>
+<tr>
+<td>MBTS 교회사II 4주 강의</td>
+<td>강의 노트</td>
+<td>아우크스부르크 화의·낭트 칙령·30년 전쟁·베스트팔렌 조약, 종교전쟁에서 근대로의 이행</td>
+</tr>
+<tr>
+<td>people/루터 (위키)</td>
+<td>인물 페이지</td>
+<td>전가(imputed)의 재해석, 마르부르크 성찬 논쟁, 소명론, 「그리스도인의 자유」·「교회의 바벨론 포로」</td>
+</tr>
+<tr>
+<td>people/츠빙글리 (위키)</td>
+<td>인물 페이지</td>
+<td>취리히 성경 중심 개혁, 성찬 기념설, 마르부르크 회담</td>
+</tr>
+<tr>
+<td>권성수 「종교개혁 기념강좌 — 목회 현장 개혁」(2017)</td>
+<td>설교/강좌</td>
+<td>다섯 솔라의 목회적 배반 진단, semper reformanda의 오늘적 적용</td>
+</tr>
+<tr>
+<td>문대원 「시대적 사명을 분별하는 사람」(2026)</td>
+<td>설교</td>
+<td>구텐베르크 인쇄술과 개혁의 동력, 위클리프·후스의 실패와 루터의 성공 대비</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%B9%AD%EC%9D%98%EB%A1%A0/">이신칭의</a> · <a class="wl" href="../../t/%EC%B9%AD%EC%9D%98%EB%A1%A0/">칭의론</a> · <a class="wl" href="../../t/%EC%B9%BC%EB%B9%88%EC%A3%BC%EC%9D%98/">칼빈주의</a> (위키)</td>
+<td>주제 페이지</td>
+<td>칭의·개혁주의 신학의 조직적 상세(위임 대상)</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/교회사</span><span>#discipline/역사신학</span><span>#종교개혁</span><span>#5대솔라</span><span>#개혁주의</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

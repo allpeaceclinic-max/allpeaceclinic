@@ -1,0 +1,125 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>몰리니즘 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:206">변증·철학</span><span class="date">2026-07-03</span></div>
+  <h1 class="note-title">몰리니즘</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>몰리니즘(Molinism)은 16세기 예수회 신학자 루이스 데 몰리나(Luis de Molina)가 제안한 신학적 입장으로, 하나님이 <a class="wl" href="../../t/%EC%A4%91%EA%B0%84%EC%A7%80%EC%8B%9D/">중간지식</a>(middle knowledge) — 조건적 미래 사건("만일 어떤 자유로운 행위자가 특정 상황에 놓인다면 무엇을 선택할 것인가")에 대한 지식 — 을 가지고 계신다는 전제로 신적 주권과 인간의 자유의지를 조화시키려 한다. 침례신학대학원 변증학(<span class="wl-dead" title="위키 내부 링크">04주_하나님의섭리문제</span>) 4주차 강의는 <a class="wl" href="../../t/%EC%9E%90%EC%9C%A0%EC%9D%98%EC%A7%80/">자유의지</a>와 신적 섭리의 관계를 다루는 대목에서 이 입장을 소개하되, 최종적으로는 개혁주의 <a class="wl" href="../../t/%EC%96%91%EB%A6%BD%EA%B0%80%EB%8A%A5%EB%A1%A0/">양립가능론</a> 쪽에 무게를 싣는다.</p>
+<h2>강의에서의 위치 — 자유주의 전략의 한 갈래</h2>
+<p>강의는 자유의지와 결정론의 관계를 두 진영으로 나눈다. 초기 어거스틴부터 <span class="wl-dead" title="위키 내부 링크">CS루이스</span>·<span class="wl-dead" title="위키 내부 링크">알빈플랜팅가</span>·<span class="wl-dead" title="위키 내부 링크">리처드스윈번</span>에 이르는 자유주의자(libertarian)들은 "반대 선택의 능력"을 자유의지의 필요조건으로 보며, 이는 결정론과 자유의지가 동시에 참일 수 없다는 양립불가능주의로 이어진다. <span class="wl-dead" title="위키 내부 링크">윌리엄레인크레이그</span>와 플란팅가는 이 자유주의 진영 안에서 중간지식을 활용해 신적 예지(豫知)와 인간의 자유의지를 조화시키려는 전략을 편다 — 하나님이 모든 가능한 상황에서 각 자유로운 행위자가 무엇을 선택할지 미리 아시고, 그 지식에 기초해 세계를 창조·섭리하신다는 것이다. 강의는 이 전략을 소개한 뒤, 더글러스 그로타이스가 취하는 양립가능론(전통적 개혁주의·<a class="wl" href="../../t/%EC%B9%BC%EB%B9%88%EC%A3%BC%EC%9D%98/">칼빈주의</a> 노선)을 지지하는 방향으로 결론짓는다 — 몰리니즘은 "개혁신학과 결을 달리한다"고 짧게 정리된다.</p>
+<h2>개혁신학과의 차이</h2>
+<p>강의가 명시하는 차이점은 간결하다 — 중간지식(몰리니즘)은 조건적 미래 사건에 대한 하나님의 지식을 전제해 인간의 자유의지에 더 강한 자율성을 부여하는 반면, 개혁주의 양립가능론은 유한한 행위자가 절대적 발생 능력을 갖지 않아도 외부 요인에 의해 결정되는 행동과 진정한 행위주체성이 양립할 수 있다고 본다. 다만 강의는 두 입장이 실제로 어떻게 다른 결론(특히 하나님의 섭리와 인간 책임의 관계)에 이르는지를 더 깊이 설명하지는 않는다.</p>
+<h2>미해결 지점</h2>
+<p>강의 자체가 "더 따져볼 지점"으로 남긴 문제다 — 중간지식과 몰리니즘을 "개혁신학과 차이"로 짧게 처리할 뿐, 두 입장이 <a class="wl" href="../../t/%EB%B3%80%EC%8B%A0%EB%A1%A0/">변신론</a>(악의 문제에 대한 응답)에서 실제로 어떤 다른 함의를 갖는지는 다뤄지지 않는다.</p>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%A4%91%EA%B0%84%EC%A7%80%EC%8B%9D/">중간지식</a> — 몰리니즘의 핵심 개념(조건적 미래 사건에 대한 신적 지식)</li>
+<li><a class="wl" href="../../t/%EC%96%91%EB%A6%BD%EA%B0%80%EB%8A%A5%EB%A1%A0/">양립가능론</a> — 강의가 최종적으로 지지하는 대안적 입장</li>
+<li><span class="wl-dead" title="위키 내부 링크">04주_하나님의섭리문제</span> — 이 개념이 소개된 원 강의</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">04주_하나님의섭리문제</span></td>
+<td>lecture</td>
+<td>몰리니즘·중간지식을 자유주의 진영의 전략으로 소개하고 양립가능론과 대비</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/변증학</span><span>#topic/중간지식</span><span>#topic/자유의지</span><span>#topic/변신론</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

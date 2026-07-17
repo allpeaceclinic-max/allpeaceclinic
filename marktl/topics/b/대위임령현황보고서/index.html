@@ -1,0 +1,886 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>대위임령 현황 — 현재 + 미래 상태에 관한 보고서 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="date">&quot;2026-06-07</span></div>
+  <h1 class="note-title">대위임령 현황 — 현재 + 미래 상태에 관한 보고서</h1>
+  
+</header>
+<article class="note">
+<blockquote>
+<p>로잔운동 공식 보고서 | 2024 로잔 글로벌 콩그레스 서울-인천을 위해 작성<br />
+디렉터: 매튜 니어만(Matthew Niermann) 박사<br />
+원본: <code>raw/books/대위임령현황보고서.md</code> (pp.1-111 ingest 완료 — Part II 전체 완료 / Part III 지역별 데이터는 외부 QR 링크)</p>
+</blockquote>
+<hr />
+<h2>소개: 대위임령의 신학적 근거 (Victor Nakah &amp; Ivor Poobalan)</h2>
+<h3>역사적 맥락</h3>
+<ul>
+<li>'대위임령'이라는 표현은 현대 사용된 지 <strong>150년 미만</strong></li>
+<li>처음 선교적 설교에 전면 가져온 인물: <strong>허드슨 테일러(Hudson Taylor, 1832-1905)</strong></li>
+<li>네덜란드 선교사 유스티니안 폰 벨츠(Justinianus von Welz, 1621-1688)의 글에서 '대위임령' 차용</li>
+<li>현대 세계 선교의 전환점: <strong>윌리엄 캐리(William Carey, 1792)</strong>의 열정적 호소</li>
+</ul>
+<h3>마태복음 28:18-20의 4가지 요소</h3>
+<ol>
+<li><strong>모든 권세</strong> — 하늘과 땅의 권세가 주어진 것, 위임된 선교의 근거</li>
+<li><strong>모든 민족</strong> — mathēteuō(제자 삼다), 지리적 경계가 아닌 땅의 모든 인류</li>
+<li><strong>부분한 모든 것</strong> — "내가 명한 모든 것" 가르치기, 선택적 복음 금지</li>
+<li><strong>항상</strong> — 세상 끝까지 함께하심, 위험과 환란에도 지속</li>
+</ol>
+<h3>요한복음 20:19-23의 기여 ("요하닌 대위임령")</h3>
+<ul>
+<li>성육신(sarx)이 틀: <strong>아버지께서 아들 보내신 방식으로</strong> 교회를 보냄</li>
+<li>선포 방식보다 <strong>존재의 방식</strong>에 집중 — 어떻게, 어디서, 무엇을 해야 하는지</li>
+<li>복음전도와 사회적 행동의 이분법(dichotomization) 극복의 신학적 근거</li>
+</ul>
+<h3>핵심 명제</h3>
+<blockquote>
+<p>"대위임령은 목적이 아니라 목적을 위한 수단이다."<br />
+— 존 파이퍼: "마지막은 선교가 아니라, 예배. 선교는 예배가 없기 때문에 존재한다."</p>
+</blockquote>
+<hr />
+<h2>목차 인덱스</h2>
+<h3>I부. 대위임령 현황 (현재 상태)</h3>
+<table>
+<thead>
+<tr>
+<th>섹션</th>
+<th>쪽</th>
+<th>주요 내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>소개 — 대위임령: 신학적 근거</td>
+<td>1</td>
+<td>Victor Nakah &amp; Ivor Poobalan, 마28·요20 분석</td>
+</tr>
+<tr>
+<td>세계기독교</td>
+<td>9</td>
+<td>국가별 기독교인 비율, 남반구 부상</td>
+</tr>
+<tr>
+<td>기독교 전통</td>
+<td>11</td>
+<td>가톨릭·개신교·독립교회·오순절 분포</td>
+</tr>
+<tr>
+<td>개신교 및 독립교회</td>
+<td>12</td>
+<td>남반구로의 이동</td>
+</tr>
+<tr>
+<td>복음주의자 및 오순절주의자</td>
+<td>13</td>
+<td>아프리카·라틴아메리카 성장</td>
+</tr>
+<tr>
+<td>선교사역자</td>
+<td>14</td>
+<td>파송·수용 현황, 다중심적 선교 실증</td>
+</tr>
+<tr>
+<td>복음화된 사람</td>
+<td>15</td>
+<td>선교사 집중 불균형 문제</td>
+</tr>
+<tr>
+<td>미전도 종족</td>
+<td>16</td>
+<td>국가별·종교별 분포, 3.34B 인구</td>
+</tr>
+<tr>
+<td>제자화 운동</td>
+<td>18</td>
+<td>DMM/CPM 현황, 1억 명 제자 추정</td>
+</tr>
+<tr>
+<td>디지털 성경 참여</td>
+<td>19</td>
+<td>유버전 통계, 스마트폰 기회</td>
+</tr>
+<tr>
+<td>언어</td>
+<td>20</td>
+<td>게이트웨이 언어 10개, 전략적 접근</td>
+</tr>
+<tr>
+<td>성경 번역</td>
+<td>21</td>
+<td>1,000개+ 언어 미번역 현황</td>
+</tr>
+<tr>
+<td>재정적 기부</td>
+<td>23</td>
+<td>지역별 교회 수입 불균형</td>
+</tr>
+<tr>
+<td>대위임령 제자도</td>
+<td>24</td>
+<td>글로벌 리더 서베이 결과</td>
+</tr>
+</tbody>
+</table>
+<h3>II부. 지금부터 2050년까지</h3>
+<table>
+<thead>
+<tr>
+<th>섹션</th>
+<th>쪽</th>
+<th>주요 내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>다중심적 기독교란 무엇인가?</td>
+<td>28</td>
+<td>아시아·아프리카 부상, 다수세계 선교운동</td>
+</tr>
+<tr>
+<td>희망의 원천은 무엇인가?</td>
+<td>34</td>
+<td>급진 정치·이슬람·세속주의</td>
+</tr>
+<tr>
+<td>신뢰의 기반은 무엇인가?</td>
+<td>46</td>
+<td>미디어 탈집중화·진리의 타당성·정직과 반부패</td>
+</tr>
+<tr>
+<td>부상하는 인구 통계는 무엇인가?</td>
+<td>55</td>
+<td>글로벌 고령화·청년 인구·새로운 중산층</td>
+</tr>
+<tr>
+<td>공동체는 무엇인가?</td>
+<td>61</td>
+<td>이동하는 사람들·도시 공동체·민족주의</td>
+</tr>
+<tr>
+<td>공정하고 정의로운 것은 무엇인가?</td>
+<td>69</td>
+<td>종교 박해·빈곤·성과 젠더·장애</td>
+</tr>
+<tr>
+<td>지속 가능성이란 무엇인가?</td>
+<td>78</td>
+<td>부채·창조세계·글로벌 건강·정신건강</td>
+</tr>
+<tr>
+<td>인간이 된다는 것은 무엇을 의미하는가?</td>
+<td>85</td>
+<td>AI·트랜스휴머니즘·성과 성별</td>
+</tr>
+<tr>
+<td>디지털 라이프란 무엇인가?</td>
+<td>93</td>
+<td>디지털 커뮤니티·가상 업무·탈집중화·웹3</td>
+</tr>
+<tr>
+<td>디지털 시대의 사역이란 무엇인가?</td>
+<td>100</td>
+<td>성경 읽기·사역 데이터·교회 형태·제자도</td>
+</tr>
+</tbody>
+</table>
+<h3>III부. 지역적 고려사항 (p.111~)</h3>
+<p>카리브해 / 동아시아 / 영어·포르투갈·스페인어권 아프리카 / 유라시아 / 유럽 / 프랑스어권 아프리카 / 라틴 아메리카 / 중동 및 북아프리카 / 북미 / 오세아니아 / 남아시아 / 동남아시아</p>
+<hr />
+<h2>핵심 통계 (I부 현재 상태)</h2>
+<h3>세계기독교 &amp; 교단</h3>
+<ul>
+<li><strong>기독교 인구 최대 국가</strong> (전 세계 비율): 미국 9.79% · 브라질 7.70% · 멕시코 4.92% · 러시아 4.79% · 중국 4.23%</li>
+<li><strong>성장</strong>: 사하라 이남 아프리카(젊고 빠른 성장) / <strong>쇠퇴</strong>: 유럽·북미(고령화)</li>
+<li><strong>2050년 예상</strong>: 아프리카가 전 세계 기독교인 중 최고 비율 차지</li>
+<li><strong>교단 수</strong>: 2023년 47,300개 → 2050년 64,000개 예상</li>
+</ul>
+<h3>교단별 비율 (기독교인 중 / 세계 인구 중)</h3>
+<table>
+<thead>
+<tr>
+<th>교단</th>
+<th>기독교인 비율</th>
+<th>세계 비율</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>개신교</td>
+<td>23.2%</td>
+<td>7.5%</td>
+</tr>
+<tr>
+<td>독립교회</td>
+<td>15.5%</td>
+<td>5%</td>
+</tr>
+<tr>
+<td>복음주의</td>
+<td>15.4%</td>
+<td>5%</td>
+</tr>
+<tr>
+<td>오순절/은사주의</td>
+<td>25.6%</td>
+<td>8.3%</td>
+</tr>
+</tbody>
+</table>
+<h3>선교사역자</h3>
+<ul>
+<li><strong>글로벌 선교사 총계</strong>: 약 450,000명</li>
+<li><strong>주요 파송국</strong>: 미국 135,000명 · 브라질 40,000명 · <strong>한국 35,000명</strong> · 필리핀 25,000명 · 나이지리아 20,000명</li>
+<li><strong>다중심적 선교 실증</strong>: 유럽 제외 전 세계 모든 지역이 50년 전보다 더 많은 선교사를 보내고 있음</li>
+</ul>
+<h3>복음화 불균형 (핵심 문제)</h3>
+<p><code>미전도 종족 3.34B 인구  →  국제 선교사 15,000명 (3%)
+전도된 종족  4.57B 인구  →  국제 선교사 435,000명 (97%)</code>
+- 전 세계 인구의 <strong>40%를 차지하는 미전도 종족에 국제 선교사의 3%</strong>만 집중
+- 97%의 선교사는 이미 복음을 접한 사람들에게 파송됨</p>
+<h3><a class="wl" href="../../t/%EB%AF%B8%EC%A0%84%EB%8F%84%EC%A2%85%EC%A1%B1/">미전도 종족</a></h3>
+<ul>
+<li><strong>미전도 종족 집단 최다 국가</strong>: 인도(2,135) · 파키스탄(828) · 중국(441) · 방글라데시(289) · 네팔(258) · 인도네시아(240) · 수단(132) · 러시아(116) · 미국(98) · 라오스(96) · 나이지리아(91) · 이란(84) · 차드(80) · 말레이시아(76) · 태국(74)</li>
+<li><strong>종교별</strong>: 무슬림 4,057 · 민족 종교 2,626 · 힌두교 2,476 · 불교 687 · 불가지론자 266</li>
+<li>아시아가 미전도 종족의 압도적 다수 거주</li>
+<li><strong>접근 부재</strong>: 전 세계 무슬림·힌두교도 10명 중 거의 9명은 기독교인을 개인적으로 알지 못함</li>
+<li><strong>패러다임 변화</strong>: 미전도 종족 집단 수는 감소하지만 미전도 종족(인구) 수는 증가 — 도시화·이주·디지털 공동체로 재편</li>
+</ul>
+<h3>제자화 운동 (DMM/CPM)</h3>
+<ul>
+<li>2022년: 1,950개 이상 성숙한 운동 · 1,750개 이상 사전 운동</li>
+<li><strong>DMM으로 1억 명 이상의 고백하는 제자</strong> 추정 (전 세계 인구의 약 1%)</li>
+<li>900만 개가 넘는 교회가 CPM에 참여</li>
+</ul>
+<h3>성경 번역</h3>
+<ul>
+<li><strong>1,000개 이상의 언어에 성경 일부조차 번역되지 않음</strong></li>
+<li>전 세계 인구의 3/4이 성경 전체 접근 가능 / 약 10%는 부분적으로만 가능</li>
+<li>아시아: 번역 필요 인구 가장 많음</li>
+</ul>
+<h3>재정 (지역별 교회 수입)</h3>
+<table>
+<thead>
+<tr>
+<th>지역</th>
+<th>교회 수입</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>북미</td>
+<td>$326B</td>
+</tr>
+<tr>
+<td>유럽</td>
+<td>$290B</td>
+</tr>
+<tr>
+<td>라틴아메리카</td>
+<td>$79B</td>
+</tr>
+<tr>
+<td>아시아</td>
+<td>$65B</td>
+</tr>
+<tr>
+<td>아프리카</td>
+<td>$28B</td>
+</tr>
+</tbody>
+</table>
+<h3>대위임령 제자도 (글로벌 리더 서베이, 2022, n=1,500)</h3>
+<ul>
+<li>아프리카·아시아·라틴아메리카 지도자 <strong>30~40%가 대위임령을 선택 사항</strong>으로 여김</li>
+<li>북미·유럽·호주: 약 <strong>50%가 선택 사항</strong>으로 여김</li>
+<li><strong>절반 미만이 복음을 전할 준비가 되었다고 느낌</strong></li>
+<li>지역 교회 성도 중 복음 전할 준비 비율: 라틴아메리카 47% · 아시아 46% · 유럽 44% · 아프리카 40% · 북미 37% · 오세아니아 36%</li>
+</ul>
+<p><strong>연합된 헌신 (지역별, "교회가 대위임령에 대한 공동의 헌신으로 연합되어 있는가?"):</strong>
+| 지역 | 매우 연합 | 다소 연합 | 완전히 연합되지 않음 | 전혀 연합되지 않음 |
+|---|---|---|---|---|
+| 오세아니아 | 47% | 34% | 13% | 6% |
+| 북미 | 41% | 34% | 20% | 5% |
+| 아시아 | 34% | 38% | 12% | 16% |
+| 라틴아메리카 | 32% | 39% | 22% | 7% |
+| 아프리카 | 32% | 49% | 13% | 6% |
+| 유럽 | 35% | 37% | 18% | 10% |</p>
+<p><strong>교육과 실천의 간극:</strong>
+- 65~80%의 지도자: 교회가 대위임령을 '자주' 또는 '반정기적으로' 가르친다고 인식
+- 그러나 실제 '매우 적극적으로' 복음을 선포하는 기독교인: 15~20% 미만
+- 35~40%가 복음을 '전혀/거의' 선포하지 않는다고 지도자들이 인식
+- 청년(30세 미만)이 모든 지역에서 복음 전파에 가장 덜 참여</p>
+<hr />
+<h2>Part II 미리보기: 2050년까지의 다중심적 기독교</h2>
+<h3>기독교 성장 예상 (2020-2050 성장률)</h3>
+<p>중앙 아프리카 +3.27% · 동부 아프리카 +2.93% · 서부 아프리카 +2.76% · 멜라네시아 +2.06% · 남아시아 +1.88% · 동남아시아 +1.66%</p>
+<h3>교단 수: 47,300개(2023) → 64,000개(2050)</h3>
+<ul>
+<li>최대 독립 교단: 브라질 Igreja Universal do Reino de Deus (7.5M), 남아공 시온교회 (5M), 나이지리아 천상의 그리스도 교회 (4.1M)</li>
+<li>최대 개신교 교단: 중국 삼자애국운동 (30M), 독일 복음교회 (24.45M), 영국 성공회 (23M), 나이지리아 성공회 (22M)</li>
+</ul>
+<h3>신학 교육 불균형</h3>
+<table>
+<thead>
+<tr>
+<th>언어</th>
+<th>신학교 수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>영어</td>
+<td>1,653</td>
+</tr>
+<tr>
+<td>스페인어</td>
+<td>826</td>
+</tr>
+<tr>
+<td>포르투갈어</td>
+<td>435</td>
+</tr>
+<tr>
+<td>프랑스어</td>
+<td>234</td>
+</tr>
+<tr>
+<td><strong>한국어</strong></td>
+<td><strong>163</strong></td>
+</tr>
+<tr>
+<td>인도네시아어</td>
+<td>125</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>영어 신학교가 스페인어의 2배이나, 스페인어 기독교인이 훨씬 많음 — 자원 불균형</li>
+<li>아프리카·라틴아메리카는 신학 교육 자원 여전히 부족</li>
+</ul>
+<hr />
+<h2>Part II. 희망의 원천은 무엇인가? (pp.33-44)</h2>
+<h3>글로벌 관심사와 가치</h3>
+<p><strong>디지털 관심도 (Google Trends):</strong>
+- 검색 순위: 포르노 &gt; 영화 &gt; 돈 &gt; 축구 &gt; 예수님 &gt; 기독교(최하위)
+- <strong>"기독교에 대한 디지털 관심은 섹스, 돈, 엔터테인먼트에 비해 빈약하다"</strong>
+- Google NGram 출판 트렌드: 이슬람 관련 출판물이 꾸준히 증가 → 기독교 출판물과 동등 수준에 근접</p>
+<p><strong>글로벌 가치 우선순위 (Google NGram):</strong>
+- 지식 영역: 과학 &gt; 음악 &gt; 기술 &gt; 정치 &gt; 종교 &gt; 기독교(최하위)
+- 초월적 가치: 사랑 &gt; 희망 &gt; 진실 &gt; 믿음 &gt; 아름다움 &gt; 선함
+- 지난 15~20년 간 공동체보다 <strong>자기(self)를 우선시하는 방향 전환</strong> 뚜렷
+- <strong>"사랑, 과학, 자아는 선도적인 글로벌 가치이다"</strong></p>
+<hr />
+<h3>세계 종교 변화 (pp.36-43)</h3>
+<p><strong>시간의 흐름에 따른 세계 종교 비율:</strong></p>
+<table>
+<thead>
+<tr>
+<th>종교</th>
+<th>1900</th>
+<th>1970</th>
+<th>2020</th>
+<th>2050(예상)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>기독교</td>
+<td>34.5%</td>
+<td>33.1%</td>
+<td>32.2%</td>
+<td><strong>34.3%</strong></td>
+</tr>
+<tr>
+<td>이슬람</td>
+<td>12.4%</td>
+<td>15.4%</td>
+<td>24.2%</td>
+<td><strong>29.2%</strong></td>
+</tr>
+<tr>
+<td>힌두교</td>
+<td>12.5%</td>
+<td>12.5%</td>
+<td>13.5%</td>
+<td>12.4%</td>
+</tr>
+<tr>
+<td>불교</td>
+<td>7.8%</td>
+<td>6.4%</td>
+<td>6.8%</td>
+<td>6.0%</td>
+</tr>
+<tr>
+<td>무신론자/불가지론자</td>
+<td>0.2%</td>
+<td>19.3%</td>
+<td>11.6%</td>
+<td>8.7%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>2010-2015 종교별 출산율:</strong>
+- 무슬림 <strong>3.1</strong> &gt; 기독교인 <strong>2.7</strong> &gt; 세계 평균 <strong>2.5</strong> &gt; 힌두교도 2.4 &gt; 불교도 1.6</p>
+<p><strong>2010-2050 종교 전환 순변화 예상:</strong>
+- 무소속(무종교): <strong>+61.5M</strong>
+- 이슬람: +3.2M
+- <strong>기독교인: -66.1M</strong> (이탈)
+→ 출산율로 만회하더라도 전환에 의한 순실 규모가 가장 큼</p>
+<p><strong>세속주의:</strong>
+- 전 세계 무종교인: 2010년 1.10억(16%) → 2050년 1.20억(13%) — 절대수는 늘지만 비율은 감소
+- 무종교인 비율 상위국: 중국·일본·미국·베트남·러시아·<strong>한국</strong>·독일·프랑스·북한·영국</p>
+<p><strong>종교적 다양성:</strong>
+| 종교 | 소수 지역 거주 | 다수 지역 거주 |
+|---|---|---|
+| 힌두교도 | 3% | 97% |
+| 기독교인 | 13% | 87% |
+| 무슬림 | 27% | 73% |
+| 불교도 | 72% | 28% |</p>
+<ul>
+<li><strong>힌두교도를 제외하면, 기독교인은 소수 상황에서 신앙을 증거하는 데 가장 익숙하지 않은 종교 집단</strong></li>
+<li><strong>이슬람</strong>: 2050년 역사상 처음으로 기독교 글로벌 비율에 근접 (가장 빠른 성장)</li>
+<li><strong>불교</strong>: 태국·일본 등 불교 다수 국가는 한 세기 이상 기독교 선교에 가장 저항적</li>
+</ul>
+<hr />
+<h2>Part II. 신뢰의 기반은 무엇인가? (pp.45-51)</h2>
+<h3>글로벌 신뢰 현황</h3>
+<p><strong>분쟁과 불신 (Ipsos Global Trends 2023, Edelman Trust Barometer 2022):</strong>
+- 77%: "같은 가치를 공유하지 않는 집단 간의 갈등이 점점 더 많아지고 있다"
+- <strong>59%가 증거 없이 불신하는 경향</strong> (28개국 중 24개국)
+- <strong>64%가 건설적·시민적 토론 능력 부족</strong> (28개국 중 27개국)</p>
+<p><strong>국가별 신뢰도 격차:</strong>
+| 가장 신뢰 | % | 가장 불신 | % |
+|---|---|---|---|
+| 중국 | 83% | 러시아 | 32% |
+| UAE | 76% | 일본 | 40% |
+| 인도네시아 | 75% | <strong>한국</strong> | <strong>42%</strong> |
+| 인도 | 74% | 미국 | 43% |</p>
+<h3>기관 신뢰</h3>
+<p><strong>기관별 인식 (Edelman Trust Barometer 2022):</strong>
+- NGO: 가장 윤리적이나 역량은 기업보다 낮다고 인식
+- 비즈니스: 가장 유능
+- 정부: 비윤리적이고 덜 유능 — 글로벌 정치 신뢰 바닥
+- 미디어: 사회 분열시키는 힘(46%) vs 통합하는 힘(35%)</p>
+<h3>종교 기관 신뢰 — 핵심 격차</h3>
+<ul>
+<li><strong>종교 지도자 vs 과학자</strong>: 동일한 주장을 해도 대다수가 과학자를 더 신뢰</li>
+<li><strong>북반구에서 종교 기관은 가장 신뢰도가 낮은 기관 중 하나</strong></li>
+<li><strong>남반구(아프리카·라틴아메리카)에서는 종교 기관이 정부보다 높은 신뢰 받음</strong></li>
+<li>동아시아·유럽·호주·미국: 종교 기관 신뢰 낮음</li>
+</ul>
+<h3>청소년의 신뢰 원천</h3>
+<p><strong>삶의 의미에 관해 대화하는 상대:</strong>
+- 가족 <strong>41%</strong> &gt; 소셜 미디어 <strong>20%</strong> &gt; 친구/동료 <strong>19%</strong> &gt; 교사 7% = 오프라인 미디어 7% = <strong>종교 지도자/문서 7%</strong></p>
+<p><strong>기관 신뢰 순위 (청소년):</strong>
+- 낮음: 종교 기관, 뉴스/미디어
+- 높음: 경찰, 은행, 고용주
+- 젊은이들은 <strong>교회보다 군대, 학교, 고용주를 더 신뢰</strong></p>
+<p><strong>지도자에 대한 실망 요인:</strong>
+- 권력 남용/부패 <strong>52%</strong> &gt; 불성실/부정직 <strong>31%</strong> &gt; 책임감 부족 <strong>30%</strong></p>
+<h3>문화적 영향력</h3>
+<p>전 세계 기독교 지도자 1,500명 조사 (Lausanne Global Leaders Survey 2022):
+- <strong>교회가 문화에 미치는 영향이 미미하다는 전반적인 인식이 있다</strong>
+- 아프리카·라틴아메리카: 가장 낙관적이나 50% 이상이 "영향력 미미" 인식
+- 약 30% 아프리카·아시아·라틴아메리카 지도자: 교회 영향력이 <strong>증가</strong>한다고 인식
+- 유럽·북미·오세아니아: 낙관적 전망 매우 제한적</p>
+<hr />
+<h2>Part II. 부상하는 인구 통계 (pp.54-59)</h2>
+<h3>전 세계 인구 재편</h3>
+<p><strong>"사하라 사막 이남 아프리카는 세계에서 가장 인구가 많은 지역이 될 것이다"</strong></p>
+<ul>
+<li>동아시아·동남아시아(중국 포함)의 인구 증가는 정점에 도달 → 감소 시작</li>
+<li>아프리카만 홀로 지속 증가 → 선교 전략의 중심축 이동</li>
+</ul>
+<p><strong>2019→2050→2100 인구 순위 변화:</strong>
+- 2050: 인도 1위, <strong>나이지리아</strong> 2위, 미국 3위 (중국 하락)
+- 2100: 나이지리아 1위, 콩고민주공화국 2위, 인도 3위
+- 브라질·멕시코 2050년 10대 인구대국에서 제외 예상</p>
+<h3>글로벌 고령화</h3>
+<ul>
+<li><strong>"우리 시대 가장 변혁적인 인구통계 추세: 고령화 세계"</strong></li>
+<li>65세 이상 인구 비율 상위국 (2019): 한국 23% · 싱가포르 20.9% · 대만 19.9%</li>
+<li><strong>한국은 세계에서 가장 빠른 고령화 국가 중 하나</strong></li>
+<li>고령층은 아직 개척되지 않은 복음 증거의 대리인 — 기독교 사역의 새 개척지</li>
+</ul>
+<h3>새로운 중산층</h3>
+<ul>
+<li>2018년 역사상 처음으로 전 세계 인구의 절반이 중산층 이상</li>
+<li>2030년 글로벌 중산층 <strong>5.3B</strong> 예상 (2018년 3.6B)</li>
+<li>다음 10억 중산층의 <strong>80%가 아시아</strong> (인도 350M + 중국 350M + 기타 210M)</li>
+<li>아시아 중산층 비율: 2009년 27% → 2019년 47% → 2030년 <strong>61%</strong> 예상</li>
+<li><strong>부의 재편</strong>: 과거 서구 중심에서 다극화 → 세계 선교 자원의 지형 변화</li>
+</ul>
+<h3>청년 인구</h3>
+<ul>
+<li>전 세계 젊은이의 <strong>90%가 남반구</strong> 거주</li>
+<li>젊은 인구 밀집 지역 = 기독교 성장 지역(아프리카) = 이슬람 성장 지역도 동일</li>
+<li>북미·유럽은 젊은 층 비율 낮음 → <strong>기독교 쇠퇴 지역과 청년 부족 지역이 일치</strong></li>
+</ul>
+<hr />
+<h2>Part II. 공동체 (pp.60-67)</h2>
+<h3>이주의 선교적 의미</h3>
+<ul>
+<li>글로벌 이주: 미국이 세계 최대 이민 수용국 (50.6M — 2위 독일의 3배 이상)</li>
+<li>대부분의 이주민은 극빈층이 아닌 중소득 국가 출신 (경제 전환 중)</li>
+</ul>
+<p><strong>종교별 이주 흐름 (2010-2015):</strong>
+- 기독교 최대 이주 흐름: 라틴아메리카 → 북미 <strong>2.3M</strong>
+- 무슬림 최대 이주 흐름: 아시아 태평양 → 중동-북아프리카 <strong>1.5M</strong>
+- <strong>유럽의 무슬림 인구: 2020-2050 약 63% 성장</strong> 예상 (같은 기간 유럽 총인구는 6% 감소)</p>
+<p><strong>이주 = 선교 기회:</strong> 이주는 가정에서 흔히 볼 수 없는 방식으로 종교적 변화를 유발 가능</p>
+<h3>난민</h3>
+<ul>
+<li>전 세계 난민 (2020): 난민 26.4M + 망명 신청자 4.1M + 국내 실향민 <strong>55.0M</strong></li>
+<li>최대 배출국: 시리아 6.8M, 베네수엘라 4.6M, 아프가니스탄 2.7M</li>
+<li><strong>난민은 교회가 섬겨야 할 핵심 미전도 종족 집단</strong> — 인도주의적 환대가 복음의 핵심 증언</li>
+</ul>
+<h3>유학생</h3>
+<ul>
+<li><strong>한국: 해외 유학생 101K 파견 (세계 7위 송출국)</strong></li>
+<li>전 세계 유학생 인구 주도: 중국 1.1M, 인도 516K</li>
+<li>캠퍼스 사역을 통해 신앙을 갖게 되고 제자화되는 유학생들 — 사역의 중요성 증가</li>
+</ul>
+<h3>도시와 비공식 정착지</h3>
+<ul>
+<li>세계 도시 인구 비율: 아프리카 43.5% · 아시아 51.1% · 세계 56.2% · 북미 82.6%</li>
+<li><strong>"도시 생활에서 가장 빠르게 성장하는 측면은 비공식 정착지(슬럼)이다"</strong></li>
+<li>비공식 정착지 규모: 1950년 0.8B(도시 인구의 3%) → 2050년 <strong>3B(도시 인구의 50%)</strong> 예상</li>
+<li>라틴아메리카·사하라 이남 아프리카에서 가장 빠르게 성장</li>
+<li>비공식 정착지는 빈곤의 장소이자 새로운 형태의 도시 공동체 형성의 장</li>
+</ul>
+<hr />
+<h2>Part II. 공정과 정의 (pp.68-71)</h2>
+<h3>글로벌 빈곤 감소</h3>
+<ul>
+<li>극빈층 (하루 $1.25 미만): 1990년 20억 명 → 2019년 <strong>10억 명 미만</strong> — 절반 감소</li>
+<li>전 세계 인구는 20억 명 늘었지만 극빈층은 절반으로 감소 → 총체적 선교(integral mission)의 효과</li>
+<li>아시아에서 빈곤 감소가 가장 큼 (특히 동아시아)</li>
+<li><strong>예외: 사하라 사막 이남 아프리카는 극심한 빈곤이 오히려 증가</strong> — 글로벌 추세 역행</li>
+</ul>
+<h3>종교적 박해</h3>
+<p><strong>종교에 대한 국가의 제한이 강화됨</strong> (Pew, 2019)</p>
+<table>
+<thead>
+<tr>
+<th>지역</th>
+<th>정부의 종교 예배 간섭</th>
+<th>정부의 종교 단체 무력 사용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>중동-북아프리카</td>
+<td>100%</td>
+<td>90%</td>
+</tr>
+<tr>
+<td>유럽</td>
+<td>91%</td>
+<td>42%</td>
+</tr>
+<tr>
+<td>글로벌 평균</td>
+<td>82%</td>
+<td>48%</td>
+</tr>
+<tr>
+<td>아시아 태평양</td>
+<td>70%</td>
+<td>56%</td>
+</tr>
+<tr>
+<td>아메리카</td>
+<td>80%</td>
+<td>23%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>박해 상위국</strong> (Open Doors 2023): 북한·소말리아·예멘·에리트레아·리비아
+- 이슬람이 특히 인도·중국·미얀마에서 가장 박해받는 종교
+- 기독교인 박해는 아시아와 북아프리카에서 가장 심함</p>
+<h3>여성의 참여</h3>
+<ul>
+<li>전 세계 기독교인: <strong>남성 47% / 여성 53%</strong> (192개국 20세 이상)</li>
+<li>종교적 중요도 성별 격차 (여성이 남성보다 "매우 중요하다"는 응답 높은 나라):</li>
+<li><strong>한국: 23%p 격차 — 세계 1위</strong> (여성이 신앙을 훨씬 더 중요하게 여김)</li>
+<li>리투아니아 19%, 폴란드 18%, 그리스 15%</li>
+<li>대부분의 교회 직책은 남성이 지배적이나, 기회의 평등에 대한 인식은 높아지고 있음</li>
+</ul>
+<hr />
+<h2>Part II. 소외된 자 / 장애 (p.72)</h2>
+<ul>
+<li>전 세계 인구 <strong>6명 중 1명(13억 명, 약 15%)</strong>이 신체적 또는 정신적 장애 — 80%가 남반구 거주</li>
+<li>개발도상국 장애 아동의 <strong>90%</strong>가 학교에 다니지 않음</li>
+<li>거리 청소년의 30%가 장애를 가짐</li>
+<li>선교학적 함의: 교회가 장애인을 주목·포용함으로써 그들이 몸된 교회에 적극적으로 기여 가능</li>
+</ul>
+<hr />
+<h2>Part II. 인권 (p.73)</h2>
+<ul>
+<li><strong>"인권은 최근 몇 년간 후퇴를 겪었다"</strong> — 현재 전반적으로 높은 수준이나 최근 하락 추세</li>
+<li>북반구는 인권 보호 수준 최고, 남반구는 낮음</li>
+</ul>
+<hr />
+<h2>Part II. 현대판 노예 (p.74)</h2>
+<ul>
+<li><strong>2021년 49.6M</strong> (강제 노동 27.6M + 강제 결혼 22M) — 2016년 40M에서 증가</li>
+<li>피해자의 70%가 여성·소녀, 성산업 피해자의 99%가 여성·소녀</li>
+<li><strong>아시아 태평양이 세계 피해자의 62%</strong> (남반구 선교 지역과 중첩)</li>
+<li>아프리카: 1,000명 당 7.6명으로 가장 만연</li>
+</ul>
+<hr />
+<h2>Part II. 부패 (p.75)</h2>
+<ul>
+<li>최소 부패: 덴마크(90)·핀란드·뉴질랜드(87)·노르웨이(84)·싱가포르(83)</li>
+<li>최대 부패: 소말리아(12)·시리아·남수단(13)·베네수엘라(14)</li>
+<li><strong>한국</strong>: 2018→2022 CPI 점수 <strong>+6 개선</strong> (부패 감소)</li>
+<li>기독교 인구가 빠르게 성장하는 지역에도 높은 부패 — 교회의 사회적 책임과 선교 기회 동시 존재</li>
+</ul>
+<hr />
+<h2>Part II. 지속 가능성 — 창조세계 돌봄 (pp.78-79)</h2>
+<p><strong>환경성과 지수 (EPI, 0~100):</strong>
+| 지역 | EPI |
+|---|---|
+| 서구 | 62.5 |
+| 동유럽 | 55.9 |
+| 라틴 아메리카 | 45.8 |
+| 세계 평균 | 42 |
+| 아시아 태평양 | 35.1 |
+| 사하라 이남 아프리카 | 34.9 |
+| 남아시아 | 31.5 |</p>
+<ul>
+<li><strong>"부유한 민주주의 국가들은 모든 지속 가능성 분야에 높은 헌신"</strong> — EPI 최저국은 경제 성장·내전·빈곤 우선</li>
+<li>기후 변화를 긴급 상황으로 여기는 비율: 서유럽/북미 <strong>72%</strong> &gt; 사하라 이남 아프리카 <strong>61%</strong></li>
+<li>2020년 기후변화 출판물이 기독교 관련 출판물과 맞먹는 수준으로 급성장</li>
+</ul>
+<hr />
+<h2>Part II. 글로벌 부채 비율 (p.80)</h2>
+<ul>
+<li>전 세계 GDP 대비 부채: 1970년 약 <strong>100%</strong> → 2020년 <strong>350%</strong> (증가 가속화)</li>
+<li>글로벌 금융 위기 + 코로나19 팬데믹이 주요 원인</li>
+<li>국가별 GDP 대비 부채: 일본 257%, 수단 210%, 그리스 207%</li>
+<li>총 글로벌 부채 비중: 미국 31%, 일본 17%, 중국 9.8%</li>
+</ul>
+<hr />
+<h2>Part II. 글로벌 건강 (p.81)</h2>
+<ul>
+<li>사망 1위 원인: 심혈관 질환 <strong>12.17M</strong> &gt; 암 4.91M &gt; 호흡기 질환 2.87M</li>
+<li>의료 서비스 접근성 최저 10개국 중 <strong>6개국이 아프리카</strong></li>
+<li><strong>"교회가 가장 빠르게 성장하는 곳은 의료 서비스가 가장 적은 곳"</strong> — 의료 선교의 전략적 중요성</li>
+</ul>
+<hr />
+<h2>Part II. 정신 건강 (p.82)</h2>
+<ul>
+<li>전 세계 <strong>8명 중 1명 = 9억 7천만 명</strong>이 정신 건강 문제</li>
+<li>정신병 환자 중 <strong>71%</strong>가 서비스 접근 불가 / 보건 예산의 평균 <strong>2%</strong>만 정신 건강에 사용</li>
+<li>우울증 31% &gt; 불안 장애 28.9%가 정신 장애 중 압도적 1·2위</li>
+<li>기독교 출판물 관심이 감소하고 심리학 관련 출판물 관심이 증가하면서 우울증 비율도 급증</li>
+</ul>
+<hr />
+<h2>Part II. 인공지능 (pp.85-86)</h2>
+<ul>
+<li><strong>"지금 AI의 능력은 많은 작업 수행에서 인간을 능가한다"</strong> — 독해력·음성·이미지·언어 이해 모두 2015-2020년 인간 수준 돌파</li>
+<li><strong>2021년 이후 AI 인터넷 검색이 기독교·예수님에 대한 디지털 관심도를 넘어섬</strong> (Google Trends)</li>
+<li>AI 민간 투자 최대: 데이터 관리, 의료 및 건강관리</li>
+<li>AI 낙관론: 중국·사우디아라비아·인도 등 남반구 &gt;70%, 서유럽·북미 &lt;50%</li>
+<li><strong>60%</strong>: AI가 3~5년 내 일상을 크게 변화시킬 것</li>
+</ul>
+<hr />
+<h2>Part II. 생명공학 (pp.87-88)</h2>
+<ul>
+<li>게놈 시퀀싱 비용: 2001년 $100M → 2022년 ~$1,000 (100,000배 하락, 유전자 편집 보편화)</li>
+<li><strong>전 세계 기독교인들은 유전자 편집에 일반인보다 더 유보적</strong> — 특히 질병 치료 외 인간 강화 목적에 반대</li>
+<li>한국 기독교인: 유전자 편집 적합 30% / 기술 오용 62% (높은 유보)</li>
+<li>생명공학은 기독교인에게 하나님의 주권과 인간 고유성에 관한 새 윤리 과제 제시</li>
+</ul>
+<hr />
+<h2>Part II. 성 / LGBTQ (pp.89-90)</h2>
+<ul>
+<li>동성결혼 지지: 네덜란드 84%, 미국 58%, <strong>한국 36%</strong>, 러시아 17%, 말레이시아 8%</li>
+<li><strong>세대 격차 (18-29세 vs 50세+) 세계 최대: 한국 56%p</strong> (청년 79% vs 노인 23%)</li>
+<li>일본 36%p, 스웨덴·프랑스는 세대 간 격차 최소</li>
+<li>2000~2020년 LGBTQ 수용도 전 세계적으로 점차 증가 — 지역별 편차 큼</li>
+</ul>
+<hr />
+<h2>Part II. 디지털 라이프 (pp.92-98)</h2>
+<ul>
+<li><strong>전 세계 약 60%가 인터넷에 연결</strong> (남아시아·사하라 이남 아프리카가 최저, 선교 기회와 디지털 격차가 동일 지역에 공존)</li>
+<li>아시아: 2000년 이후 급격한 인터넷 사용자 증가 → "아시아에서 디지털 선교의 기회는 상당하다"</li>
+<li>2020년 글로벌 데이터 <strong>60 제타바이트</strong> → 2025년 160-180 제타바이트 예상 (2010-2050년 5,000% 증가)</li>
+<li>WhatsApp 매일 <strong>1,400억 메시지</strong> (27억 8천만 사용자)</li>
+</ul>
+<p><strong>기술에 대한 글로벌 대중 인식 (2023):</strong>
+- 소셜 미디어 기업 권한 과다 동의: <strong>81%</strong>
+- 인터넷 없는 삶 상상 불가: <strong>71%</strong>
+- 기술 발전 두려움: <strong>60%</strong></p>
+<ul>
+<li>소셜 미디어 사용자: 글로벌 <strong>4.62B (58.4%)</strong> / 평균 <strong>2시간 27분</strong>/일</li>
+<li>북유럽 83.6%, 서유럽 83.3% vs 서아프리카 7.4% — 극단적 지역 격차</li>
+<li>웹3.0 블록체인 연구: 2013년 0편 → 2020년 32,124편 (급부상)</li>
+<li>소셜 미디어 사용 1위 목적: <strong>친구·가족과 연락 유지</strong></li>
+</ul>
+<hr />
+<h2>Part II. 디지털 시대의 사역 (pp.99-108)</h2>
+<h3>제자도 — 대위임령 격차 1위</h3>
+<p><strong>글로벌 격차 인식 순위:</strong>
+1. <strong>제자 훈련의 필요성</strong> — 가장 빈번하게 확인된 격차
+2. 사역 및 지도자 훈련
+3. 윤리적 격차·리더십 다양성</p>
+<ul>
+<li>각 지역 지도자 중 <strong>5~15%만이</strong> 적절한 제자화가 이루어지고 있다고 인식</li>
+<li><strong>20~30%는 자신의 상황에서 제자 훈련이 없다고 인식</strong></li>
+<li>제자 훈련이 가장 잘 이루어지는 영역: <strong>교회 참여</strong> (아프리카 42%~유럽 54%)</li>
+<li>가장 미흡한 영역: <strong>기독교와 직업의 통합</strong> (모든 지역 4~11%)</li>
+</ul>
+<h3>예배·기도 참여</h3>
+<ul>
+<li><strong>예배 참석률은 종교적 정체성보다 낮다</strong> — 전 세계적 패턴</li>
+<li>아프리카(나이지리아 등): 대부분 예배 참석, 전 세계 선도</li>
+<li>유럽 대부분 국가: <strong>15% 미만</strong> / 중국: <strong>5% 미만</strong></li>
+<li><strong>기도 참여는 예배 참석보다 더 빈번하다</strong></li>
+<li>전 세계 청소년 기도 참여율 vs 기성세대 격차: 평균 9% (아프리카 최소)</li>
+</ul>
+<h3>청소년 종교 소속 및 세대 격차</h3>
+<p><strong>종교 소속 연령 격차가 가장 큰 국가 (18-39세 vs 40세+):</strong>
+- 캐나다 28%, 덴마크 26%, <strong>한국 24%</strong>, 호주 23%, 노르웨이·스웨덴 20%</p>
+<p><strong>예배 참석 연령 격차:</strong>
+- 라틴 아메리카·북미: 10~12%p — 이 세대 차이로 <strong>2020-2050년 기독교 인구 성장이 거의 없을 것으로 예측</strong>
+- 아프리카: 전체 참석률 최고 + 세대 격차 최소 — 지속적 활력의 지표</p>
+<p><strong>일일 기도 격차가 큰 국가:</strong>
+- 일본 29%, 폴란드 25%, <strong>한국 21%</strong>, 미국 18%</p>
+<h3>청소년 영성</h3>
+<p><strong>청소년 그리스도인의 영적 관심사 1위: "하나님과 고통과 어려움" (38%)</strong>
+- 2위: 성경 이해 29% / 3위: 자기 성찰 27%
+- 사랑·일치·파트너십(대위임령 관심사)는 5위 22% — 전도보다 돌봄·정의 우선
+- 예수님 학습 최우선 신뢰 출처: <strong>성경 61%</strong> &gt; 가족 60% &gt; 목사·성직자 52%</p>
+<hr />
+<h2>Part III. 지역적 고려 사항 — 소개</h2>
+<p><strong>Part III는 12개 지역별 보고서로 구성되며, 본 PDF에는 QR 코드 인덱스만 있음 (상세 데이터는 외부 문서):</strong></p>
+<p>카리브해 / 동아시아 / 영·포·스페인어권 아프리카 / 유라시아 / 유럽 / 프랑스어권 아프리카 / 라틴 아메리카 / 중동·북아프리카 / 북미 / 오세아니아 / 남아시아 / 동남아시아</p>
+<blockquote>
+<p><strong>본 PDF(대위임령현황보고서) ingest 완료 — Part II 전체(pp.1-108) 완료</strong></p>
+</blockquote>
+<hr />
+<h2>핵심 인사이트</h2>
+<ol>
+<li><strong>남북 역전</strong>: 기독교의 무게 중심이 완전히 남반구로 이동 중 — 2050년 아프리카가 최대 기독교 대륙</li>
+<li><strong>복음화 불균형</strong>: 선교 자원의 97%가 이미 복음을 접한 지역에 집중되는 구조적 문제</li>
+<li><strong>대위임령 인식 부족</strong>: 전 세계 교회 지도자의 절반가량이 대위임령을 선택 사항으로 여김; 교육과 실천의 간극 심각</li>
+<li><strong><a class="wl" href="../../t/%EB%8B%A4%EC%A4%91%EC%8B%AC%EC%A0%81%EC%84%A0%EA%B5%90/">다중심적 선교</a></strong>: 한국·브라질·나이지리아 등 비서구 교회가 실질적인 선교 주체로 부상</li>
+<li><strong>제자화 운동의 폭발적 성장</strong>: DMM/CPM 운동이 1억 명 제자 생성 추정</li>
+<li><strong>번역 미완성</strong>: 1,000개 이상 언어에 성경이 아직 없음; 아시아에 번역 필요 인구 125.1M 집중</li>
+<li><strong>재정 구조 왜곡</strong>: 북미($326B) 교회 수입이 아프리카($28B)의 11배 — 성장하는 곳에 자원이 없음</li>
+<li><strong>신학적 근거</strong>: 대위임령은 목적이 아니라 수단 — 궁극 목적은 모든 민족이 왕을 예배하는 것</li>
+<li><strong>기독교 이탈 규모</strong>: 2010-2050 종교 전환으로 기독교인 6,600만 명 순 이탈 예상 — 이슬람(+322만)과 무소속(+6,150만)으로 흡수</li>
+<li><strong>신뢰 위기</strong>: 북반구에서 종교 기관은 가장 신뢰도 낮은 기관 / 청소년은 삶의 의미를 교회가 아닌 가족·소셜미디어에서 찾음</li>
+<li><strong>이슬람의 부상</strong>: 2050년 역사상 처음으로 이슬람이 기독교와 동등한 글로벌 비율에 도달 예상 — 출산율 차이(3.1 vs 2.7)가 핵심 동력</li>
+<li><strong>문화 영향력 격차</strong>: 교회 지도자 다수가 교회의 문화적 영향력이 미미하다고 인식 — 교육 분야만 예외, 금융·기술은 최하위</li>
+<li><strong>아프리카의 인구 혁명</strong>: 사하라 사막 이남 아프리카가 2100년 세계 1위 인구 지역 예상 — 나이지리아 단독으로 2050년 세계 3위 (미국 추월), 선교 자원 배분의 전략적 전환 시급</li>
+<li><strong>한국 고령화 위기</strong>: 한국은 세계에서 가장 빠른 고령화 국가 중 하나 (65세+ 비율 23%, 세계 1위 수준) — 동시에 종교적 중요도 성별 격차도 세계 1위(23%p), 교회의 고령화·여성화 구조적 진단 필요</li>
+<li><strong>아시아 중산층 부상</strong>: 2030년 글로벌 중산층의 61%가 아시아 출신 예상 — 선교 파트너십의 무게 중심이 아시아로 이동</li>
+<li><strong>이주 = 선교 기회</strong>: 유럽 무슬림 인구 2020-2050 동안 63% 성장 예상 / 국제 난민(국내 실향민 55M 포함) = 핵심 미전도 집단 / 유학생 이동(한국 101K 파견)이 새로운 선교 통로</li>
+<li><strong>빈곤 감소의 역설</strong>: 세계 전체는 빈곤이 감소했으나 사하라 사막 이남 아프리카만 증가 — 총체적 선교(integral mission)의 최전선</li>
+<li><strong>박해의 증가</strong>: 전 세계적으로 종교에 대한 국가 제한이 강화 — 중동-북아프리카는 100% 정부 간섭, 북한이 박해 순위 1위</li>
+<li><strong>장애와 선교</strong>: 세계 인구의 15%(13억 명)이 장애를 가지며 80%가 남반구 거주 — 개발도상국 장애 아동 90%가 학교 미다님; 교회가 가장 빠르게 성장하는 곳에서 소외된 이 집단이 미전도 집단과 중첩</li>
+<li><strong>현대판 노예 급증</strong>: 2021년 49.6M (2016년 40M 대비 증가) — 아시아 태평양이 62% 차지, 강제 결혼 22M이 포함된 숨겨진 박해; 선교 지역과 착취 지역의 지리적 중첩</li>
+<li><strong>한국 부패 개선</strong>: 2018-2022년 CPI +6으로 아시아에서 주목할 만한 개선 — 기독교 문화가 빠르게 성장하는 지역(아프리카, 아시아)에 높은 부패가 공존하는 역설</li>
+<li><strong>창조세계 돌봄 격차</strong>: EPI 서구 62.5 vs 남아시아 31.5 — 교회가 가장 성장하는 지역이 환경 취약 지역과 일치; 창조세계 돌봄이 선교의 핵심 의제로 부상</li>
+<li><strong>부채 위기</strong>: GDP 대비 글로벌 부채 350% (1970년 100% 대비) — 교회가 성장하는 남반구 국가들의 재정 취약성이 선교 지속 가능성에 영향</li>
+<li><strong>정신 건강 선교</strong>: 9억 7천만 명 중 71%가 서비스 미접근 — 보건 예산 2%만 할당; 교회가 가장 빠르게 성장하는 곳이 정신 건강 서비스도 가장 부족한 곳과 일치</li>
+<li><strong>AI의 종교 대체</strong>: 2021년 이후 AI 인터넷 검색이 기독교·예수님 검색을 추월 — 디지털 공간에서 영적 권위의 대체가 실제로 측정됨; 교회의 디지털 신뢰 구축이 시급</li>
+<li><strong>LGBTQ 한국 세대 단층</strong>: 한국의 세대별 LGBTQ 수용도 격차 56%p — 세계 최대; 동성결혼 지지도 36%로 아시아 평균 이상; 다음 세대 신앙 전승의 핵심 단층선</li>
+<li><strong>디지털 선교의 전략적 기회</strong>: 전 세계 60%가 인터넷 연결, 아시아는 2000년 이후 급성장 — 남아시아·사하라 이남 아프리카는 인터넷 최저 지역과 선교 공백 지역이 일치; 디지털 격차를 좁히는 것이 선교 접근성 확대와 연결됨</li>
+<li><strong>디지털 스크린이 신앙 공간을 잠식</strong>: 전 세계 일일 평균 화면 시청 6분 37초 상승, 남반구 국가들은 9시간대; 소셜 미디어 기업 권한 과다를 81%가 우려하면서도 71%는 인터넷 없는 삶을 상상 불가 — 디지털 공간이 새로운 선교지</li>
+<li><strong>제자 훈련이 대위임령 최대 격차</strong>: 지도자의 5~15%만이 적절한 제자화가 이루어진다고 인식, 20~30%는 자신의 상황에서 제자 훈련이 없다고 인식; 교회 참여(최고) vs 기독교-직업 통합(최저 4~11%)의 역설</li>
+<li><strong>청소년 세대 단층이 서구·한국·일본에서 위기 수준</strong>: 캐나다(28%)·덴마크(26%)·한국(24%) 소속 격차, 기도 격차 일본 1위(29%)·한국(21%); 라틴아메리카·북미는 청소년 이탈로 2020-2050년 기독교 인구 성장이 거의 없을 것으로 예측</li>
+<li><strong>아프리카의 영적 활력</strong>: 예배 참석률 세계 최고 + 세대 간 격차 세계 최소 — 아프리카가 2050년 기독교의 중심이 될 것을 가장 잘 뒷받침하는 사역 데이터</li>
+<li><strong>청소년 영성의 전도 우선순위 역전</strong>: 청소년 그리스도인의 영적 관심 1위는 고통과 하나님(38%), 전도·파트너십은 5위(22%) — 청소년 선교는 전도 촉구보다 고통·정의·공동체 동반에서 출발해야 함</li>
+</ol>
+</article>
+<div class="tagrow"><span>#대위임령</span><span>#로잔</span><span>#L4</span><span>#선교통계</span><span>#미전도종족</span><span>#다중심적선교</span><span>#2024</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

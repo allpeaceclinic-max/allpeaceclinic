@@ -1,0 +1,126 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>내재적 성경해석 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:174">성경·해석</span><span class="date">2026-06-28</span></div>
+  <h1 class="note-title">내재적 성경해석</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>내재적 성경해석은 본문에 하나님의 이름이나 종교적 어휘가 명시적으로 등장하지 않아도, 언어적 단서와 다른 본문과의 상호텍스트적 병행을 통해 그 배후에서 일하시는 하나님을 읽어내는 해석 방법이다. <a class="wl" href="../../t/%EC%97%90%EC%8A%A4%EB%8D%94%EC%84%9C/">에스더서</a>가 이 해석법이 적용되는 대표 사례로 다뤄진다 — 언약·시내산·죄·회개 같은 종교적 어휘가 전혀 없고 하나님의 이름도 등장하지 않는 책이지만, 본문 자체의 언어와 구조가 신학적 메시지를 실어 나른다는 것이다.</p>
+<h2>1. 정경화 논란이 드러내는 문제의식</h2>
+<p>에스더서는 탈무드 랍비들 사이에서 정경 포함에 반대가 있었던 책이다. 하나님의 이름 부재뿐 아니라, 하만을 죽이고 <a class="wl" href="../../t/%ED%97%A4%EB%A0%98/">헤렘</a>시키는 장면이 "야만적"이며 훗날 이방인 독자에게 유대인이 잔인하게 비칠 위험이 있다는 우려까지 제기되었다. 그럼에도 출애굽기 17:13-14(아말렉 진멸 명령)을 근거로 정경에 포함되었다. 이 논란 자체가 "하나님의 이름이 없는 본문을 어떻게 읽을 것인가"라는 질문을 정면으로 제기한다.</p>
+<h2>2. 언어적 근거 — 경배 동사의 사용</h2>
+<p>모르드개가 하만에게 절하지 않는 장면(<span class="wl-dead" title="위키 내부 링크">에3</span>:2, 5 "하만이 꿇지도 아니하고 절하지도 아니하니")에서 사용된 히브리어 동사는 예배드릴 때 쓰는 단어와 동일하다. 근거 본문으로 대하7:3("엎드려 경배하며")과 시95:6("엎드려 꿇어")이 제시되며, 이는 하나님께만 경배할 때 쓰는 표현이라는 것이다. 에스더서 헬라어 확장판에는 모르드개가 하만에게 절하지 않은 이유를 "하나님만 경배의 대상이기 때문"이라고 명시적으로 설명하는 내용이 있다. 하나님의 이름이 없어도 본문 배후에 하나님이 있다는 논증의 언어적 근거다.</p>
+<h2>3. 세 겹의 상호텍스트 — 요셉·아브라함·사울</h2>
+<p>내재적 해석의 핵심 방법은 에스더서를 앞선 세 인물 서사와 병행시키는 것이다.
+- <strong>요셉과 모르드개</strong>: 둘 다 이방 땅에서 오랫동안 살며 2인자 지위에 오른다. 반지를 건네받고 병거를 타는 장면이 병행되며, "요셉이야기에는 하나님이 함께하셨다는 직접적 표현이 있지만 에스더서에는 없다 — 그러나 배후에 함께 있다"는 것이 논지다.
+- <strong>아브라함·사라와 에스더</strong>: "누이"라 속이는 아브라함·사라 모티프가 에스더가 유대인 정체성을 숨긴 채 페르시아 미인대회에 보내지는 장면과 병행된다. 바로가 사라를 취했다가 징계받은 구조는 하만이 무찔러지고 심판받는 구조와 대응한다.
+- <strong>사울과 모르드개</strong>: <span class="wl-dead" title="위키 내부 링크">에2</span>:5은 모르드개가 베냐민 지파, "기스의 증손"이라 밝히는데, 기스는 <span class="wl-dead" title="위키 내부 링크">사울</span>의 아버지 이름과 같다. <span class="wl-dead" title="위키 내부 링크">삼상15</span>의 사울-아말렉 전쟁에서 사울은 헤렘 명령에 불순종(재산을 취함)했지만, <span class="wl-dead" title="위키 내부 링크">에9</span>:5, 10에서 모르드개 진영은 진멸하되 재산에는 손을 대지 않아 대조를 이룬다.</p>
+<h2>4. "제2의 사울" — 실패의 반복이 아닌 극복</h2>
+<p>사울의 주적은 아말렉, 에스더의 주적은 하만(아각 사람, 삼상15:8-9의 아각과 연결)이라는 인물 대응이 이 해석법의 핵심 결론이다. "제2의 사울이 사울의 실패를 반복하지 않고 승리한다"는 명제로 요약된다. 이는 하나님의 이름이 없는 본문이라도, 앞선 본문과의 구조적 대응을 통해 하나님의 심판과 구원의 패턴이 반복·완성되고 있음을 보여주는 읽기다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>하나님의 이름 부재는 신학적 결함이 아니라 문학적 장치로 재해석될 수 있다.</li>
+<li>상호텍스트 읽기(요셉-아브라함-사울-에스더)는 성경 각 권을 고립된 텍스트가 아니라 반복되는 패턴의 변주로 읽는 훈련이다.</li>
+<li>특정 인물이 실패한 지점에서 후속 인물이 다른 선택을 하는 "제2의 OO" 구조는 개인 성경 읽기에도 적용 가능한 방법이다.</li>
+<li>언어적 단서(동일 어근·동사 사용)가 신학적 논증의 근거로 기능할 수 있다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>모르드개-사울 족보 병행에서 "기스의 증손"이 반드시 직계 3대를 의미하지 않는다면, 족보적 연결의 강도가 상호텍스트 논증 전체의 설득력에 어느 정도 영향을 주는가?</li>
+<li>내재적 해석이 남용될 경우 본문에 없는 의미를 과도하게 투사할 위험은 없는가 — 이 해석법의 타당성 기준은 무엇인가?</li>
+<li>종교적 언어가 허용되지 않는 세속 공간(직장, 의료 현장 등)에서 신앙을 실천할 때, "보이지 않는 섭리 읽기"를 실제로 어떻게 적용할 것인가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%A0%95%EA%B2%BD%ED%99%94/">정경화</a> — 에스더서가 정경에 포함되는 과정에서 내재적 해석이 논거로 작동함.</li>
+<li><a class="wl" href="../../t/%EC%8B%A0%EC%A0%81%EC%84%AD%EB%A6%AC/">신적섭리</a> — 내재적 성경해석이 뒷받침하는 신학적 결론.</li>
+<li><span class="wl-dead" title="위키 내부 링크">에2</span>, <span class="wl-dead" title="위키 내부 링크">에3</span>, <span class="wl-dead" title="위키 내부 링크">에9</span> — 언어적·족보적 근거 본문.</li>
+</ul>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/구약학</span><span>#topic/에스더서</span><span>#topic/신적섭리</span><span>#topic/정경화</span><span>#topic/상호텍스트</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

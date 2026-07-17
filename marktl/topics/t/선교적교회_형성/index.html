@@ -1,0 +1,251 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>선교적 교회 형성 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="date">2026-07-18</span></div>
+  <h1 class="note-title">선교적 교회 형성</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>선교적 교회 형성(missional / contextual church formation)은 교회가 어떻게 <em>형성되는가</em>(being formed)를 다룬다. 건물이나 제도가 먼저 있고 사람을 그 구조에 끼워 맞추는 것이 아니라, 사람과 맥락에 따라 교회가 새롭게 형성되어야 한다는 것 — "우리가 가진 교회의 구조에 사람을 끼워 맞추는 것이 아니라, 사람과 맥락에 따라 교회가 새롭게 형성되어야 한다"는 명제가 이 논의의 심장이다. 교회는 완성된 틀에 채워 넣는 것이 아니라, 경청에서 시작해 관계를 거쳐 서서히 빚어지는 것이다.</p>
+<p>이 페이지는 그 <em>형성의 과정</em>에 집중한다. "선교적 교회란 무엇인가"라는 교회론적 정체성은 <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a>가, 선교적 공동체가 태어나는 사회학적 원리(리미널리티·커뮤니타스)는 <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B3%B5%EB%8F%99%EC%B2%B4/">선교적공동체</a>가, 개인이 일상 자리에서 사는 선교적 삶은 <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EC%82%B6/">선교적삶</a>이, 교회 본질·표지·직분 일반은 <a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%A1%A0/">교회론</a>이 각각 맡는다. 여기서 좇는 것은 실천의 문법이다 — 예배당 중심의 교회가 어떤 단계로 보냄 중심의 교회로 전환하며, 어떤 모델과 리더십으로 형성되고, 한국 교회의 미셔널 전환은 어떤 장벽 앞에 서 있는가.</p>
+<h2>1. 전환의 방향 — 예배당 중심에서 보냄 중심으로</h2>
+<p>형성론의 첫 물음은 방향이다. 전통적 교회는 "구조 먼저, 사람을 끼워 맞춤"의 순서로 움직인다 — 프로그램을 만들고 사람을 그리로 부른다("Come and see"). 선교적·상황화 접근은 순서를 뒤집는다 — "사람과 맥락 먼저, 구조는 나중"이며, 삶 속으로 들어가 존재한다("Go and be").</p>
+<table>
+<thead>
+<tr>
+<th>전통적 접근</th>
+<th>선교적·상황화 접근</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>구조 먼저, 사람을 끼워 맞춤</td>
+<td>사람과 맥락 먼저, 구조는 나중</td>
+</tr>
+<tr>
+<td>"Come and see" (교회로 오라)</td>
+<td>"Go and be" (삶 속으로 들어가라)</td>
+</tr>
+<tr>
+<td>프로그램 중심</td>
+<td>관계 중심</td>
+</tr>
+<tr>
+<td>깔때기(Funnel)</td>
+<td>여정(Journey)</td>
+</tr>
+<tr>
+<td>첫째 아들에게 최적화</td>
+<td>둘째 아들도 돌아올 수 있는</td>
+</tr>
+</tbody>
+</table>
+<p>이 전환의 신학적 근거는 성육신이다. 예수의 방식은 "포로 된 자에게 자유를, 눈 먼 자에게 다시 보게 함"(눅 4:18)을 선포하며 필요에서 시작하고 삶 속에서 복음을 전하는 것이었다. 그래서 형성의 언어도 바뀐다 — 설교(sermon)에서 메시지(message)로, 선포(proclamation)에서 공유(sharing)로, 가르침에서 공감과 나눔으로. 설명과 강의보다 이야기와 공감이, 정장보다 진정성을 반영한 자연스러움이 앞선다. 형성은 사람들을 우리 구조로 끌어당기는 일이 아니라, 그들의 자리로 들어가 함께 교회가 되어 가는 일이다.</p>
+<h2>2. 형성의 문법 — Fresh Expressions와 6단계 순환</h2>
+<p>이 전환을 가장 체계적으로 문법화한 것이 영국 성공회·감리교의 Fresh Expressions 운동이다. 이 운동은 새로 형성되는 교회가 갖추어야 할 네 가지 특성을 제시한다.</p>
+<table>
+<thead>
+<tr>
+<th>특성</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Missional</td>
+<td>보내심을 받은 공동체 — 세상 안으로</td>
+</tr>
+<tr>
+<td>Contextual</td>
+<td>지역과 문화의 맥락에 맞게 형성</td>
+</tr>
+<tr>
+<td>Ecclesial</td>
+<td>진정한 교회적 특성 유지</td>
+</tr>
+<tr>
+<td>Formational</td>
+<td>제자를 형성하는 공동체</td>
+</tr>
+</tbody>
+</table>
+<p>핵심은 형성이 정해진 순환을 따라 일어난다는 것이다. 경청(Listening) → 섬김과 사랑(Loving &amp; Serving) → 공동체 세우기(Building Community) → 제자도 탐구(Exploring Discipleship) → 교회의 형태 갖춤(Church Taking Shape) → 다시 반복(Doing It Again). 여기서 결정적인 것은 시작점이다 — <strong>경청이 먼저다.</strong> 프로그램부터 만들지 않는다. 지역과 사람의 필요를 듣는 데서 형성이 시작되고, 교회의 형태(구조)는 이 여정의 다섯 번째에야 비로소 갖춰진다. 구조가 형성을 이끄는 것이 아니라 형성이 구조를 낳는다. 이 순서가 §1의 "사람과 맥락 먼저"를 실천의 단계로 번역한 것이다.</p>
+<h2>3. 5무교회와 성육신적 형성</h2>
+<p>한국적 형성 모델의 하나가 황인권의 <a class="wl" href="../../b/5%EB%AC%B4%EA%B5%90%ED%9A%8C%EA%B0%80%EC%98%A8%EB%8B%A4/">5무교회</a>다. 건물·헌금·조직 같은 전통 교회의 다섯 요소 없이도 삶으로 이웃을 섬기는 데서 교회가 형성될 수 있다는 실험이다. 이 책의 명제가 형성론의 급소를 찌른다 — "의료를 통해 이웃을 섬기면 자연스러운 공동체가 형성된다." 형성은 예배당을 세우는 데서가 아니라 필요를 만나는 데서 시작된다.</p>
+<p>이 접근이 겨냥하는 시대적 정황이 <a class="wl" href="../../t/%ED%83%88%EA%B5%90%ED%9A%8C_%EB%94%94%EC%B2%98%EC%B9%98%EB%93%9C/">탈교회</a> 현상이다. 제도 교회를 떠났으나 신앙을 버리지 않은 이들, 기존 예배당 문법으로는 닿지 않는 이들에게, 형성적 교회는 낯선 공간에서 일어나는 교회적 경험('Popup 교회')으로 다가간다 — 짧지만 강렬한 밀도, 스토리텔링, 환대(hospitality), 미션과 참여. 성육신적 형성의 원리는 단순하다. 교회가 사람을 자기 건물로 부르는 대신, 교회가 사람의 삶의 자리로 옮겨 가 거기서 형성된다. 진료실도, 카페도, 일터도 하나의 '선교적 공간'이 될 수 있다 — 환자·이웃과의 관계가 곧 경청→섬김→공동체의 첫 단계다.</p>
+<h2>4. 구조와 리더십 — 평신도 사역화</h2>
+<p>형성적 교회의 리더십은 성직자 중심에서 평신도 사역화로 이동한다. 만인제사장의 원리가 여기서 형성론의 동력이 된다 — 사역의 주체는 목회자만이 아니라 모든 성도다. 앨런 허쉬(<span class="wl-dead" title="위키 내부 링크">앨런허쉬</span>)의 <a class="wl" href="../../b/%EC%9E%8A%ED%98%80%EC%A7%84%EA%B5%90%ED%9A%8C%EC%9D%98%EA%B8%B8/">APEST</a> 모델이 이 재편의 지도를 그린다. 에베소서 4장의 다섯 은사 — 사도(Apostle)·선지자(Prophet)·복음전도자(Evangelist)·목사(Shepherd)·교사(Teacher) — 가 특정 직분자에게 독점되지 않고 온 공동체에 분산될 때, 교회는 자기 유지형에서 재생산형으로 형성된다. 목사-교사 축에 편중된 크리스텐덤형 교회가 사도·선지자·복음전도자 축을 회복할 때 선교적 형성의 잠재력이 열린다.</p>
+<p>이 리더십 재편은 <a class="wl" href="../../t/CMF_VPM%EC%B2%A0%ED%95%99/">CMF의 VPM 철학</a>과 만난다. VPM의 순서 — 가치(Value) → 사람(People) → 사역(Ministry) — 는 Fresh Expressions의 순환과 같은 문법이다. 경청은 가치를 먼저 공유하는 과정이고, 사람이 세워진 뒤에야 사역(구조)이 온다. CMF의 학사·학원사역이 'contextual formation'의 역할을 감당해야 한다는 것 — 곧 캠퍼스라는 맥락에서 평신도(학생·의료인)가 사역의 주체로 형성되는 것 — 이 이 원리의 구체적 적용이다. 구조가 사람을 만드는 것이 아니라, 형성된 사람이 구조를 낳는다.</p>
+<h2>5. 한국 교회의 미셔널 전환 — 사례와 장벽 ⚖️</h2>
+<p>한국 교회의 선교적 형성은 가능성과 장벽을 동시에 안고 있다. 공정하게 보면 양쪽이 다 실재한다.</p>
+<table>
+<thead>
+<tr>
+<th>형성을 막는 장벽</th>
+<th>형성을 여는 가능성</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>성장주의 관성 — 규모와 건물 중심의 성공 문법</td>
+<td>탈교회·가나안 성도 흐름 — 기존 틀 밖의 목마름</td>
+</tr>
+<tr>
+<td>성직자-평신도 이분법 — 사역이 목회자에게 편중</td>
+<td>만인제사장·평신도 사역화의 잠재력</td>
+</tr>
+<tr>
+<td>목회자의 선교 무관심 — "선교는 할 사람이 한다"</td>
+<td>초신자·젊은 세대의 사회선교·이주민 관심</td>
+</tr>
+</tbody>
+</table>
+<p>장벽 쪽에서 임태순 선교사의 관찰이 날카롭다 — 그는 한국 교회의 문제를 "교회론의 문제"로 진단한다. "목사님들이 선교에 관심이 없다. 초신자들도 사회선교, 이주민에게 관심이 많은데 목사님이 관심이 없다." 선교를 "우리 교회의 일이 아니다"라고 여기는 태도, 곧 선교를 몇몇 특별한 사람의 몫으로 외주화하는 구조가 형성적 전환의 가장 큰 장벽이다. 성장주의로 최적화된 예배당 중심 교회는 "사람과 맥락 먼저"의 순서로 자기를 다시 형성하기를 본능적으로 저항한다.</p>
+<p>그러나 같은 정황이 가능성이기도 하다. 탈교회 현상은 위기이면서 형성의 기회다 — 기존 예배당 문법에 목마른 이들, 사회선교와 이주민 사역에 마음이 열린 초신자와 젊은 세대가 오히려 형성적 교회의 첫 재료다. 관건은 이 목마름을 프로그램으로 흡수하지 않고 경청에서 시작하는 형성의 문법으로 맞이하는 것이다. 5무교회의 실험, 의료를 통한 이웃 섬김, CMF의 학원사역 같은 사례들은 규모가 아니라 형성의 방향을 보여주는 씨앗이다. 한국 교회의 미셔널 전환은 새 프로그램의 도입이 아니라, 구조가 사람을 담는 순서에서 사람과 맥락이 교회를 형성하는 순서로의 회심을 요구한다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>교회는 형성되는 것(being formed)이다. 구조가 사람을 담는 것이 아니라, 경청에서 시작해 관계로 빚어지는 것이 선교적 형성의 문법이다.</li>
+<li>전환의 방향은 예배당 중심에서 보냄 중심으로, "Come and see"에서 "Go and be"로, 깔때기에서 여정으로다.</li>
+<li>Fresh Expressions의 6단계 순환은 경청을 첫걸음으로 삼는다 — 교회의 형태(구조)는 형성 여정의 다섯 번째에야 갖춰진다.</li>
+<li>5무교회와 성육신적 형성은 필요를 만나는 자리(진료실·일터)를 선교적 공간으로 삼아 탈교회 시대에 응답한다.</li>
+<li>형성의 리더십은 평신도 사역화다 — APEST의 은사 분산과 VPM(가치→사람→사역)이 성직자 편중을 넘어선다.</li>
+<li>한국 교회의 전환은 성장주의 관성·목회자 무관심이라는 장벽과, 탈교회·젊은 세대의 목마름이라는 가능성 사이에 서 있다.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a> — "선교적 교회란 무엇인가"의 교회론적 정체성. 형성론이 딛고 선 신학.</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B3%B5%EB%8F%99%EC%B2%B4/">선교적공동체</a> — 공동체가 태어나는 원리(리미널리티·커뮤니타스).</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EC%82%B6/">선교적삶</a> — 개인이 일상 자리에서 사는 선교적 삶.</li>
+<li><a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%A1%A0/">교회론</a> — 교회 본질·표지·직분·운동과 제도.</li>
+<li><a class="wl" href="../../t/%ED%83%88%EA%B5%90%ED%9A%8C_%EB%94%94%EC%B2%98%EC%B9%98%EB%93%9C/">탈교회_디처치드</a> — 형성적 교회가 응답하는 시대적 정황.</li>
+<li><a class="wl" href="../../t/CMF_VPM%EC%B2%A0%ED%95%99/">CMF_VPM철학</a> — 가치→사람→사역의 형성 순서, 학원사역의 contextual formation.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="wl" href="../../b/5%EB%AC%B4%EA%B5%90%ED%9A%8C%EA%B0%80%EC%98%A8%EB%8B%A4/">5무교회가온다</a> (황인권)</td>
+<td>책</td>
+<td>다섯 요소 없는 형성 모델, 의료를 통한 이웃 섬김과 공동체 형성</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%9E%8A%ED%98%80%EC%A7%84%EA%B5%90%ED%9A%8C%EC%9D%98%EA%B8%B8/">잊혀진교회의길</a> (앨런 허쉬)</td>
+<td>책</td>
+<td>APEST 은사 분산, 자기 유지형에서 재생산형으로의 리더십 재편</td>
+</tr>
+<tr>
+<td>Fresh Expressions (영국 성공회·감리교)</td>
+<td>운동</td>
+<td>4특성(Missional/Contextual/Ecclesial/Formational), 6단계 순환, "경청이 시작"</td>
+</tr>
+<tr>
+<td>초기 교회의 인내와 발효 (알렌 크라이더)</td>
+<td>책</td>
+<td>형성적·발효적 교회의 초대교회 모델</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/CMF_VPM%EC%B2%A0%ED%95%99/">CMF_VPM철학</a></td>
+<td>위키</td>
+<td>VPM 순서와 Fresh Expressions의 일치, 학원사역의 형성 역할</td>
+</tr>
+<tr>
+<td>임태순, 「변화하는 세계 기독교와 선교」</td>
+<td>강의</td>
+<td>한국 교회의 선교 무관심을 "교회론의 문제"로 진단</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/선교</span><span>#discipline/선교학</span><span>#FreshExpressions</span><span>#5무교회</span><span>#평신도사역</span><span>#미셔널전환</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

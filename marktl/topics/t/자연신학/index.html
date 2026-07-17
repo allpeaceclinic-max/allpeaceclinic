@@ -1,0 +1,266 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>자연신학 (Natural Theology) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:206">변증·철학</span><span class="date">2026-07-17</span></div>
+  <h1 class="note-title">자연신학 (Natural Theology)</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>자연신학은 성경(특별계시)의 권위에 호소하지 않고 창조 세계와 인간 이성이라는 재료만으로 하나님에 관한 신학을 세우려는 기획이다. MBTS 변증학 3주차(양정모 교수)의 구별을 빌리면, 계시신학이 하나님이 "커튼을 열어 보여 주시는" 내용을 성경 해석으로 풀어내는 작업이라면, 자연신학은 커튼 밖에서 일반계시를 출발점 삼아 순수 이성으로 그 안을 추론하는 작업이다. 그래서 자연신학은 <a class="wl" href="../../t/%EC%9D%BC%EB%B0%98%EA%B3%84%EC%8B%9C/">일반계시</a>에 의존하되 그것을 넘어서지 못한다는 구조적 한계를 처음부터 안고 있다.</p>
+<p>한 가지 문턱 조건이 이 기획의 성립을 좌우한다. 논증의 대상인 하나님 개념이 논리적으로 정합적이어야 한다는 것이다. 강의가 못 박듯 "네모난 원" 같은 비정합적 실체에는 애초에 좋은 논증이 펼쳐질 수 없다. 이 글은 자연신학이 실제로 구성하는 신 존재 논증들 — 그 지도는 <a class="wl" href="../../t/%EC%8B%A0%EC%A1%B4%EC%9E%AC%EC%A6%9D%EB%AA%85/">신존재증명</a>이 전담한다 — 을 되풀이하지 않고, 그 앞의 물음을 다룬다. 일반계시에서 신학을 세우는 이 기획 자체가 정당한가, 그리고 그것을 둘러싸고 전통이 어떻게 세 갈래로 갈라졌는가. <a class="wl" href="../../t/%EC%9D%BC%EB%B0%98%EA%B3%84%EC%8B%9C/">일반계시</a>가 자연신학 논쟁의 개요를 스케치한 뒤 "세 입장을 세밀히 저울질하는 일과 반대 논증 아홉 가지"를 이 페이지에 넘긴 바로 그 자리다.</p>
+<h2>1. 두 계시, 두 신학 — 자연신학이 서 있는 지반</h2>
+<p>자연신학의 정당성은 결국 그 지반인 일반계시가 무엇을 줄 수 있는가에 달려 있다. <span class="wl-dead" title="위키 내부 링크">존스토트</span>는 로마서 1장 19-20절을 일반계시의 핵심 본문으로 지목하며 그 성격을 네 가지로 짚는다. 일반계시는 <strong>일반적</strong>이고(모든 사람에게), <strong>자연적</strong>이며(창조를 통해), <strong>지속적</strong>이고(창세로부터 지금까지), <strong>창조적</strong>이다. 그리스도 안에서 은혜로 주어지는 <strong>구원적</strong> 특별계시와 갈라지는 지점이 바로 이 마지막 항이다. 창조는 "하나님이 계시다"를 웅변하지만 "그 하나님이 어떻게 죄인을 용서하시는가"는 말하지 않는다.</p>
+<p>여기서 자연신학의 딜레마가 발생한다. 일반계시가 하나님의 존재·능력·신성을 인지 가능하게 한다면, 타락한 인간의 이성은 그 계시를 재료 삼아 하나님에 관한 참된 신학을 구성할 수 있는가? 변증학 강의의 정식은 신중하다 — "일반계시가 자연신학을 위해 필요하지만 그것만으로는 충분하지 않다." 필요하되 불충분하다는 이 긴장이 자연신학을 둘러싼 모든 논쟁의 씨앗이며, 그 긴장을 어느 방향으로 푸느냐에 따라 전통이 갈린다.</p>
+<h2>2. 세 전통 — 아퀴나스, 바르트, 개혁주의 중도</h2>
+<p>일반계시가 객관적으로 존재한다는 데까지는 대체로 합의가 이루어진다. 논쟁은 그다음이다. 타락한 이성이 그 일반계시에서 신학을 세울 수 있는가. 전통은 세 갈래로 갈라진다.</p>
+<p><strong>토마스주의 전통</strong>은 가능하다고 본다. <span class="wl-dead" title="위키 내부 링크">토마스아퀴나스</span>에게 이성은 신앙에 선행하는 서곡이며, 자연 이성은 계시의 도움 없이도 신 존재를 논증하는 데까지 오를 수 있다. 반대편 끝에는 <span class="wl-dead" title="위키 내부 링크">칼바르트</span>의 단호한 "Nein!"이 있다. 그에게 타락한 이성이 만드는 자연신학은 하나님을 아는 길이 아니라 인간이 자기 형상대로 신을 빚는 우상 제조이며, 그래서 특별계시와 경쟁하는 위험한 시도다. <span class="wl-dead" title="위키 내부 링크">프란시스쉐퍼</span> 역시 자연신학이 결국 특별계시와 맞서는 지식의 자치 영역을 세운다고 경계했다.</p>
+<p>그 사이에 <strong>개혁주의 중도</strong>가 있다. <span class="wl-dead" title="위키 내부 링크">코넬리우스반틸</span>과 <span class="wl-dead" title="위키 내부 링크">헤르만바빙크</span>로 대표되는 이 입장은 일반계시가 객관적으로는 명백하게 유효하지만 죄가 그것을 억압한다고 본다. 그 성경적 닻이 로마서 1장 18절이다 — 사람들이 "불의로 진리를 막는다." 계시가 흐릿한 것이 아니라, 계시는 분명한데 인간이 그 진리를 손으로 눌러 막고 우상으로 바꾼다. 그래서 일반계시는 자연신학을 위해 필요하지만 그것만으로는 충분하지 않다.</p>
+<table>
+<thead>
+<tr>
+<th>입장</th>
+<th>자연신학은 가능한가</th>
+<th>대표</th>
+<th>핵심 논리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>토마스주의</td>
+<td>가능 — 이성이 신앙의 서곡</td>
+<td>토마스 아퀴나스</td>
+<td>자연 이성으로 신 존재까지 오를 수 있다</td>
+</tr>
+<tr>
+<td>개혁주의 중도</td>
+<td>유효하나 불충분</td>
+<td>반틸 · 바빙크</td>
+<td>계시는 객관적으로 명백하나 죄가 억압한다(롬 1:18)</td>
+</tr>
+<tr>
+<td>바르트의 "Nein!"</td>
+<td>불가 — 위험</td>
+<td>칼 바르트</td>
+<td>타락한 이성의 자연신학은 우상 제조, 특별계시와 경쟁</td>
+</tr>
+</tbody>
+</table>
+<p>세 입장의 무게 중심은 계시의 유효성이 아니라 죄의 억압력을 어떻게 평가하느냐에 놓인다. 토마스주의는 죄에도 불구하고 이성이 오를 수 있다고 낙관하고, 바르트는 죄가 그 길을 완전히 막았다고 비관하며, 개혁주의 중도는 그 사이에서 "계시는 명백하나 인간이 막는다"고 정리한다.</p>
+<h2>3. 자연신학을 반대하는 아홉 가지 — 원칙적 둘, 실천적 일곱</h2>
+<p>변증학 3주차 강의는 자연신학에 반대하는 아홉 가지 의견을 원칙적 반대 둘과 실천적 반대 일곱으로 나누어 각각 반박한다. 원칙적 반대는 자연신학이 성경적으로 허용되는가를 묻고, 실천적 반대는 그것이 실제로 쓸모 있는가를 묻는다.</p>
+<table>
+<thead>
+<tr>
+<th>범주</th>
+<th>반대 논증</th>
+<th>요지</th>
+<th>강의의 응답</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>원칙적 ①</strong></td>
+<td>성경 생략</td>
+<td>성경이 자연신학의 사례를 주지 않는다(파스칼)</td>
+<td>"침묵으로부터의 오류" — 없다는 언급이 곧 금지는 아니다</td>
+</tr>
+<tr>
+<td><strong>원칙적 ②</strong></td>
+<td>성경 권위</td>
+<td>성경은 외부 지원이 필요 없다(반틸·바빙크)</td>
+<td>개혁주의 내부의 오랜 논쟁; 보완은 대체가 아니다</td>
+</tr>
+<tr>
+<td><strong>실천적 ③</strong></td>
+<td>죄의 인지적 영향</td>
+<td>타락한 이성은 하나님 인식에 신뢰가 안 간다</td>
+<td>크레이그: 롬 1:20, 창조에 내재된 속성의 추론은 정당</td>
+</tr>
+<tr>
+<td><strong>실천적 ④</strong></td>
+<td>직접 지식</td>
+<td>하나님 인식은 기초적이라 논증이 불필요</td>
+<td>논증은 필수가 아니라 보완적 역할</td>
+</tr>
+<tr>
+<td><strong>실천적 ⑤</strong></td>
+<td>교만</td>
+<td>유신 논증이 사용자를 교만하게 만든다(파스칼)</td>
+<td>오히려 창조주 앞의 경외를 부를 수 있다</td>
+</tr>
+<tr>
+<td><strong>실천적 ⑥</strong></td>
+<td>특별계시와 경쟁</td>
+<td>지식의 자치 영역을 세워 계시와 맞선다(바르트·쉐퍼)</td>
+<td>자연신학은 계시를 대체가 아니라 보완</td>
+</tr>
+<tr>
+<td><strong>실천적 ⑦</strong></td>
+<td>종교적 부적절함</td>
+<td>논증의 신은 예배의 대상과 다르다</td>
+<td>논증은 유신론의 문턱까지, 나머지는 특별계시</td>
+</tr>
+<tr>
+<td><strong>실천적 ⑧</strong></td>
+<td>복잡성</td>
+<td>논증이 일반인에게 너무 어렵다</td>
+<td>전문가의 확신 강화라는 다른 용도가 있다</td>
+</tr>
+<tr>
+<td><strong>실천적 ⑨</strong></td>
+<td>합리적 미약함</td>
+<td>아무리 정교해도 강요 못 하고, 머리가 가슴을 못 이긴다</td>
+<td>폐기 이유가 아니라 한계를 잊지 말라는 경고</td>
+</tr>
+</tbody>
+</table>
+<p>이 목록에서 개혁주의 전통 내부의 두 반론(②·⑥)이 가장 무겁다. 반틸·바빙크의 성경 권위 논증과 바르트·쉐퍼의 특별계시 경쟁 논증은 자연신학을 부정하는 쪽도 하나님을 사랑하는 신학자들이라는 점에서, 이 논쟁이 신앙과 불신앙의 대결이 아니라 계시를 붙드는 방식의 차이임을 보여준다. 강의의 결론은 입증 책임을 뒤집는다 — 자연신학의 성경적 허용성이나 논리적 가능성을 부정하는 쪽에 오히려 입증 책임이 있다는 것이다.</p>
+<h2>4. 신앙과 이성의 지형에서 — 이성은 신앙의 서곡인가</h2>
+<p>자연신학을 어떻게 평가하느냐는 결국 신앙과 이성의 관계를 어떻게 보느냐로 수렴한다. 변증학 7주차 강의는 이 관계를 네 유형으로 나누는데, 자연신학은 그중 "이성이 신앙에 선행"하는 입장과 짝을 이룬다. 아퀴나스가 그 전형이다 — 이성이 먼저 신 존재의 서곡을 연주하고, 그 위에 신앙이 계시의 본곡을 얹는다. 반대편에서 바르트가 자연신학을 배격할 때, 그는 이성의 선행을 거부하고 오직 계시로부터만 신학이 시작된다는 신앙주의 진영에 선다.</p>
+<p>그러나 이 지형의 상세 — 개혁주의 인식론이 말하는 "적절히 기초적인 믿음", 신앙주의의 도전, 이성과 신앙의 네 유형 전체 — 는 <a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EA%B3%BC%EC%9D%B4%EC%84%B1/">신앙과이성</a>이 전담하므로 여기서는 좌표만 확인한다. 자연신학은 "이성 → 신앙"의 방향을 신뢰하는 기획이고, 그 신뢰의 정도에 따라 토마스주의(강한 신뢰)에서 개혁주의 중도(제한적 신뢰)를 지나 바르트(불신)까지 스펙트럼이 펼쳐진다는 것. 이 한 가지가 앞의 세 전통과 정확히 겹친다.</p>
+<h2>5. 보완이지 대체가 아니다 — 자연신학의 자리</h2>
+<p>이 모든 논쟁의 끝에서 강의가 내리는 결론은 겸손하다. 자연신학의 목적은 무신론자를 굴복시키는 강제적 증명이 아니라, 하나님에 대한 믿음을 "그렇지 않았을 때보다 더 신뢰할 수 있게" 만드는 데 있다. 자연신학이 세우는 신 존재 논증들 — 우주론적·목적론적·존재론적·도덕적·종교적 경험의 다섯 갈래 — 은 <a class="wl" href="../../t/%EC%8B%A0%EC%A1%B4%EC%9E%AC%EC%A6%9D%EB%AA%85/">신존재증명</a>이 지도로 전담하지만, 그 논증들의 공통된 자리는 하나다. 어느 것도 홀로 회심을 낳지 못하고, 함께 겹쳐 유신론의 문턱까지 안내할 뿐이다. 삼위일체와 성육신과 십자가는 여전히 특별계시의 영역으로 남는다.</p>
+<p>그러므로 자연신학은 특별계시를 대체하는 경쟁자가 아니라 보완하는 동반자다. 신자 내부에서 "성경만으로 충분한데 이성적 논증이 왜 필요한가"라는 물음(반틸·바빙크식 성경 권위 논증)이 제기될 때, 자연신학의 정당한 답은 대체가 아니라 보완이다. 논증은 신앙이 비합리라는 편견을 흔들어 회심이 들어올 문을 열고, 이미 믿는 이에게는 소망의 이유를 댈 준비를 시킨다. 의료 현장에서 몸의 정교함을 매일 대하는 의사가 창조주를 추론하는 일도 이 자리에 놓인다 — 그것은 신 존재를 강제로 증명하는 것이 아니라, 이미 붙든 믿음이 창조 세계 앞에서 더 견고해지는 경험이다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>자연신학은 신 존재 논증 그 자체가 아니라, 일반계시에서 신학을 세우는 <strong>기획의 정당성</strong>을 묻는 자리다 — 논증의 지도는 신존재증명에, 일반계시 자체의 유효성은 일반계시에 위임된다.</li>
+<li>성립의 문턱 조건은 하나님 개념의 논리적 정합성이다. "네모난 원"에는 좋은 논증이 없다.</li>
+<li>전통은 세 갈래다 — 아퀴나스(이성이 신앙의 서곡, 가능), 개혁주의 중도(유효하나 불충분, 죄가 억압), 바르트의 "Nein!"(불가, 우상 제조). 세 입장을 가르는 축은 계시의 유효성이 아니라 죄의 억압력 평가다.</li>
+<li>반대 아홉 논증(원칙적 2 + 실천적 7) 중 가장 무거운 둘은 개혁주의 내부의 것(성경 권위·특별계시 경쟁)이다 — 자연신학 논쟁은 신앙 대 불신앙이 아니라 계시를 붙드는 방식의 차이다.</li>
+<li>자연신학의 목적은 강제 증명이 아니라 믿음을 더 신뢰할 수 있게 만드는 것이며, 특별계시를 대체하지 않고 보완한다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>개혁주의 중도가 "계시는 명백하나 죄가 억압한다"고 할 때, 죄로 억압된 이성이 세운 자연신학의 논증은 어느 정도까지 신뢰할 수 있는가 — 억압의 정도와 논증의 타당성은 어떻게 양립하는가.</li>
+<li>바르트의 "Nein!"이 옳다면 로마서 1장 20절의 "핑계하지 못함"은 어떻게 성립하는가 — 알 수 있는 계시가 없다면 책임도 없어야 하지 않는가.</li>
+<li>자연신학이 유신론의 문턱까지만 안내한다면, 그 문턱과 삼위일체·성육신 사이의 간격은 변증에서 어떻게 다루어져야 하는가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%9D%BC%EB%B0%98%EA%B3%84%EC%8B%9C/">일반계시</a> — 자연신학이 딛고 선 지반. 세 전통과 반대 논증의 개요를 이 페이지에 위임한 원천.</li>
+<li><a class="wl" href="../../t/%EC%8B%A0%EC%A1%B4%EC%9E%AC%EC%A6%9D%EB%AA%85/">신존재증명</a> — 자연신학이 구성하는 다섯 갈래 논증의 전체 지도(위임).</li>
+<li><a class="wl" href="../../t/%EC%A1%B4%EC%9E%AC%EB%A1%A0%EC%A0%81%EB%85%BC%EC%A6%9D/">존재론적논증</a> — 자연신학의 유일한 선험적 논증(안셀무스·칸트·플랜팅가).</li>
+<li><a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EA%B3%BC%EC%9D%B4%EC%84%B1/">신앙과이성</a> — "이성이 신앙에 선행"하는 아퀴나스와 바르트의 신앙주의가 갈리는 지형.</li>
+<li><a class="wl" href="../../t/%EA%B3%84%EC%8B%9C/">계시</a> — 하나님을 아는 일의 가능성, 계시론 총론.</li>
+<li><a class="wl" href="../../t/%EB%B3%80%EC%A6%9D%ED%95%99/">변증학</a> — 자연신학이 놓이는 변증 방법론 전체.</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%EB%A1%A0/">성경론</a> — 특별계시의 정본, 자연신학이 보완하는 대상.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">03주_신존재의문제</span></td>
+<td>강의(양정모)</td>
+<td>자연신학 정의, 정합성 문턱 조건, 존 스토트의 일반계시 4구별, 반대 9논증(원칙적 2 + 실천적 7)과 반박, 유신 논증의 목적("강제 증명이 아니라 신뢰 강화")</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">07주_신앙과이성의문제</span></td>
+<td>강의(양정모)</td>
+<td>신앙과 이성의 네 유형, "이성이 신앙에 선행"(아퀴나스)과 바르트의 신앙주의</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%9D%BC%EB%B0%98%EA%B3%84%EC%8B%9C/">일반계시</a></td>
+<td>주제 페이지</td>
+<td>세 전통(토마스주의·개혁주의 중도·바르트)의 논쟁 구도, 롬 1:18 억압 논리</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%8B%A0%EC%A1%B4%EC%9E%AC%EC%A6%9D%EB%AA%85/">신존재증명</a></td>
+<td>주제 페이지</td>
+<td>다섯 갈래 논증의 지도와 누적 사례 전략(위임)</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/변증학</span><span>#discipline/조직신학</span><span>#자연신학</span><span>#일반계시</span><span>#계시신학</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

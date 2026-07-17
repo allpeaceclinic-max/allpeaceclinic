@@ -1,0 +1,148 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>알렉산드리아 학파 (Alexandrian School) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:38">교회사</span><span class="date">2026-06-28</span></div>
+  <h1 class="note-title">알렉산드리아 학파 (Alexandrian School)</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>알렉산드리아 학파는 이집트 알렉산드리아를 중심으로 2~3세기에 형성된 기독교 신학·성경 해석 전통이다. 플라톤 철학과 기독교 신앙의 통합, 그리고 성경의 알레고리 해석을 특징으로 한다. 대표 인물로는 클레멘트(알렉산드리아의 클레멘트)와 오리겐이 있으며, 이들은 당대 기독교 교육 기관인 알렉산드리아 교리 학교(Catechetical School)를 이끌었다.</p>
+<h2>1. 역사적 배경과 형성</h2>
+<p>알렉산드리아는 주전 3세기 이후 지중해 세계의 학문 중심지였다. 프톨레마이오스 왕조 아래 대도서관과 무세이온이 세워지면서 철학·문학·과학이 집중되었고, 유대인 디아스포라 공동체도 대거 거주했다. 이 환경에서 유대 철학자 필론(<span class="wl-dead" title="위키 내부 링크">필론</span>)이 플라톤 철학으로 구약을 해석하는 알레고리 기법을 발전시켰으며, 기독교 알렉산드리아 학파는 이 전통을 이어받으면서 그리스도 중심으로 재편했다.</p>
+<h2>2. 알레고리 해석의 원리</h2>
+<p>알레고리 해석의 전제는 성경의 문자 뒤에 더 깊은 영적 의미가 숨어 있다는 것이다. 알렉산드리아 학파는 특히 구약의 난해한 본문이나 인격화된 표현들을 문자 그대로 받아들이기보다 영적·철학적 의미를 추출하는 방식으로 읽었다. 오리겐은 이를 체계화하여 성경에 문자적·혼적·영적이라는 삼중 의미 구조가 있다고 주장했다.</p>
+<p>그러나 MBTS 신약개론I 1주차 강의는 알렉산드리아 학파와 안디옥 학파를 대조적 해석 흐름으로 나란히 제시한다. 알렉산드리아 학파가 플라톤 철학과 알레고리를 결합한다면, 안디옥 학파는 본문의 문자적·역사적 의미를 중시하는 방향을 취했다.</p>
+<table>
+<thead>
+<tr>
+<th>학파</th>
+<th>중심 도시</th>
+<th>해석 방법</th>
+<th>철학적 배경</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>알렉산드리아 학파</td>
+<td>이집트 알렉산드리아</td>
+<td>알레고리 해석 우선</td>
+<td>플라톤 철학</td>
+</tr>
+<tr>
+<td>안디옥 학파</td>
+<td>시리아 안디옥</td>
+<td>문자적·역사적 해석</td>
+<td>아리스토텔레스적 경향</td>
+</tr>
+</tbody>
+</table>
+<h2>3. 기여와 한계</h2>
+<p><strong>기여</strong>: 알렉산드리아 학파는 성경이 단순한 역사 기록 이상의 신학적 깊이를 가진다는 점을 강조함으로써, 성경 해석을 지적·철학적으로 진지하게 다루는 전통을 세웠다. 알렉산드리아의 클레멘트(<span class="wl-dead" title="위키 내부 링크">알렉산드리아의클레멘트</span>)가 요한복음을 "영적 복음서"로 규정한 것도 이 해석 전통과 무관하지 않다.</p>
+<p><strong>한계</strong>: 알레고리 해석이 지나치게 확장되면 본문의 역사적·문맥적 의미를 이탈할 위험이 있다. MBTS 리서치페이퍼에서 니제이 굽타의 알레고리 분류를 검토할 때도 이 한계가 지적된다. 다만 기독교 알렉산드리아 학파의 알레고리는 필론과 달리, 모든 해석을 그리스도를 향해 수렴시킨다는 방향성의 차이가 있다.</p>
+<h2>4. 해석학 역사에서의 위치</h2>
+<p>MBTS 신약개론I 1주차의 신약 해석 역사 연표에서 알렉산드리아 학파는 3세기 대표 흐름으로 등장한다. 이후 중세의 사중 의미 체계(문자·풍유·도덕·유추)는 알렉산드리아 학파의 알레고리 해석 유산을 체계화한 것으로 볼 수 있다. 종교개혁은 <em>Ad Fontes</em>(원천으로)와 <em>Sola Scriptura</em>를 내세우며 알레고리 독점에 맞섰고, 이후 역사비평과 문학비평이 본문의 역사적 의미를 복원하는 방향으로 전개되었다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>알렉산드리아 학파는 성경과 철학의 대화 전통을 열었으나, 알레고리가 본문을 대체할 위험을 내포했다.</li>
+<li>기독교 알렉산드리아 해석은 필론의 알레고리와 달리 그리스도 수렴 방향성을 가졌다는 점이 결정적 차이다.</li>
+<li>해석학 역사에서 알렉산드리아-안디옥의 대립은 오늘날 "영적 해석 vs. 역사-문법적 해석" 논쟁의 고대 원형이다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>알렉산드리아 학파의 알레고리 기법이 어느 정도까지 현대 신약 해석에서 정당하게 활용될 수 있는가?</li>
+<li>오리겐의 삼중 의미 구조와 오늘날 성경 신학적 해석(typology)은 어떻게 구별되는가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D%ED%95%99/">성경해석학</a> — 알렉산드리아 학파는 해석학 역사의 핵심 마디.</li>
+<li><span class="wl-dead" title="위키 내부 링크">알렉산드리아의클레멘트</span> — 학파의 대표 인물, 요한복음 "영적 복음서" 규정.</li>
+<li><span class="wl-dead" title="위키 내부 링크">필론</span> — 알렉산드리아 유대 알레고리 해석의 선구자. 기독교 알렉산드리아 학파에 영향을 미쳤으나 목적이 다르다.</li>
+<li><span class="wl-dead" title="위키 내부 링크">01주_신약개론서론</span> — 신약 해석 역사 흐름에서 알렉산드리아 학파가 3세기 대표 흐름으로 등장.</li>
+</ul>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/교회사</span><span>#discipline/신약학</span><span>#discipline/해석학</span><span>#topic/성경해석학</span><span>#topic/알레고리해석</span><span>#topic/해석학역사</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

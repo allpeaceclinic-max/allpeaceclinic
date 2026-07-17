@@ -1,0 +1,595 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>다중심적 선교 (Polycentric Mission) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="date">2026-06-27</span></div>
+  <h1 class="note-title">다중심적 선교 (Polycentric Mission)</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/%EB%8B%A4%EC%A4%91%EC%8B%AC%EC%A0%81%EC%84%A0%EA%B5%90/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>다중심적 선교란 선교의 중심이 단일한 곳(서구)에 있지 않고 여러 곳에 동시에 존재한다는 선교 패러다임이다. "from everyone to everywhere" — 모든 곳에서 모든 곳으로. 이 표현은 단순한 슬로건이 아니라 21세기 세계 기독교의 실제 지형을 기술하는 말이다<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
+<p>500년간 서구가 선교의 유일한 중심이었던 시대는 끝났다. 2020년 기준 세계 기독교인의 67%가 비서구 지역에 거주하며, 2050년에는 이 비율이 77%에 이를 것으로 전망된다<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. 선교사 파송에서도 미국(135,000명) 다음으로 브라질(40,000명), 한국(35,000명), 필리핀(25,000명), 나이지리아(20,000명)가 뒤따른다<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>. 유럽을 제외한 전 세계 모든 지역이 50년 전보다 더 많은 선교사를 보내고 있다 — 이것이 다중심적 선교의 실증이다.</p>
+<p>월버트 쉥크(Wilbert Shenk)가 '다중심적(polycentric)'이라는 용어를 선교학에 도입하고, 앨런 예(Allen Yeh)가 이를 "폴리센트리시티(polycentricity)"로 개념화한 이래, 이 용어는 제4차 로잔대회(서울, 2024)에서 서울선언문의 4대 신학 운동 축 중 하나로 채택되기에 이른다<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>.</p>
+<hr />
+<h2>1. 크리스텐덤 패러다임의 해체</h2>
+<p>다중심적 선교를 이해하려면 그것이 극복하려는 것 — 크리스텐덤 패러다임 — 을 먼저 이해해야 한다. 알란·엘레노어 크라이더는 이 패러다임의 네 가지 특징을 명확히 정리한다<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>:</p>
+<table>
+<thead>
+<tr>
+<th>특징</th>
+<th>내용</th>
+<th>한계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>지리적 정의</td>
+<td>선교 = 기독교 지역 → 비기독교 지역</td>
+<td>모든 곳이 선교지인 현실 무시</td>
+</tr>
+<tr>
+<td>특수 계층</td>
+<td>선교 = 소수 선교사의 역할</td>
+<td>평신도 배제</td>
+</tr>
+<tr>
+<td>기관 중심</td>
+<td>선교 = 전문 기관의 과업</td>
+<td>지역교회와 분리</td>
+</tr>
+<tr>
+<td>목표 제한</td>
+<td>선교 = 회심 + 교회 개척</td>
+<td>총체적 선교 불가</td>
+</tr>
+</tbody>
+</table>
+<p>이 패러다임은 1·2차 세계대전으로 처음 균열이 생겼다. 종교개혁의 중심이었던 독일이 홀로코스트를 일으켰다는 사실은 서구 기독교 문명의 도덕적 기반을 무너뜨렸다<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup>. 데이나 로버트는 이를 "실패한 비전과 성취된 꿈(failed vision &amp; accomplished dream)"이라 표현한다 — 크리스텐덤의 확장이라는 비전은 실패했지만, 세계화된 기독교라는 꿈은 오히려 성취되었다<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup>.</p>
+<p>코비드 팬데믹은 이 해체를 가속화했다. 선교사를 물리적으로 보낼 수 없는 상황이 장기화되면서, '파송으로서의 선교(mission-as-sending)' 모델 자체가 근본적으로 도전받았다<sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup>.</p>
+<hr />
+<h2>2. 성경적 모델 — 예루살렘에서 안디옥으로</h2>
+<p>다중심적 선교는 새로운 발명이 아니라 신약 교회로의 복귀다.</p>
+<p>사도행전의 내러티브는 단일 중심에서 다중 중심으로의 전환을 생생하게 보여준다. 예루살렘이 유일한 교회의 중심이었을 때, 박해가 성도들을 베니게·구브로·안디옥으로 흩뜨렸다(행 11장). 안디옥은 새로운 선교의 중심지로 부상했고, 바울과 바나바의 파송(행 13장)은 예루살렘이 아닌 안디옥에서 이루어졌다<sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup>. 선교의 중심은 하나에서 둘로, 둘에서 여럿으로 이동한 것이다.</p>
+<p>앤드류 월스는 이 패턴이 2,000년 기독교 역사에서 세 번 반복되었다고 본다<sup id="fnref:10"><a class="footnote-ref" href="#fn:10">10</a></sup>:</p>
+<table>
+<thead>
+<tr>
+<th>시기</th>
+<th>선교 주체</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1세기</td>
+<td>풀뿌리 그리스도인</td>
+<td>예루살렘→안디옥, 평신도 중심</td>
+</tr>
+<tr>
+<td>중세~근대</td>
+<td>유럽 크리스텐덤</td>
+<td>서구 중심 일방향 선교</td>
+</tr>
+<tr>
+<td><strong>21세기</strong></td>
+<td><strong>비서구 세계 교회</strong></td>
+<td>다중심적, 모든 곳에서 모든 곳으로</td>
+</tr>
+</tbody>
+</table>
+<p>21세기는 어떤 의미에서 1세기로의 회귀이다. 초기 기독교가 처음부터 다문화·다양성 안의 통일성을 가지고 있었듯, 오늘날의 세계 기독교도 단일 중심이 아닌 다중 중심의 협력으로 존재한다<sup id="fnref:11"><a class="footnote-ref" href="#fn:11">11</a></sup>.</p>
+<hr />
+<h2>3. 세계 기독교의 무게 중심 이동</h2>
+<p>대위임령현황보고서(2024)는 이 전환을 수치로 실증한다.</p>
+<h3>기독교 인구 이동</h3>
+<table>
+<thead>
+<tr>
+<th>연도</th>
+<th>서구</th>
+<th>비서구</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1900</td>
+<td>82%</td>
+<td>18%</td>
+</tr>
+<tr>
+<td>2020</td>
+<td>33%</td>
+<td><strong>67%</strong></td>
+</tr>
+<tr>
+<td>2050(예상)</td>
+<td>23%</td>
+<td><strong>77%</strong></td>
+</tr>
+</tbody>
+</table>
+<p>2050년에는 아프리카가 전 세계 기독교인 중 최대 비율을 차지할 것으로 전망된다. 사하라 이남 아프리카의 기독교 성장률(+3.27%)은 세계 최고이며, 예배 참석률도 세계 최고이면서 동시에 세대 간 격차가 세계 최소다 — 아프리카의 영적 활력은 데이터가 뒷받침하는 사실이다<sup id="fnref:12"><a class="footnote-ref" href="#fn:12">12</a></sup>.</p>
+<h3>교단과 신학 교육의 지각 변동</h3>
+<p>2023년 47,300개였던 교단은 2050년 64,000개로 증가할 전망이다. 최대 독립 교단 3개가 모두 남반구(브라질·남아공·나이지리아)에 있다. 그러나 신학교 수에서는 영어권(1,653개)이 스페인어권(826개)의 두 배이고, 아프리카·라틴아메리카는 여전히 신학 교육 자원이 부족하다<sup id="fnref:13"><a class="footnote-ref" href="#fn:13">13</a></sup>. 성장하는 곳에 자원이 없고, 자원이 있는 곳은 쇠퇴하는 역설 — 이것이 다중심적 선교가 해결해야 할 구조적 문제다.</p>
+<h3>재정 불균형</h3>
+<table>
+<thead>
+<tr>
+<th>지역</th>
+<th>교회 수입</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>북미</td>
+<td>$326B</td>
+</tr>
+<tr>
+<td>유럽</td>
+<td>$290B</td>
+</tr>
+<tr>
+<td>아프리카</td>
+<td>$28B</td>
+</tr>
+</tbody>
+</table>
+<p>북미 교회의 수입이 아프리카의 11배에 달한다. 그러나 아시아 중산층이 2030년에 글로벌 중산층의 61%를 차지할 것으로 예상됨에 따라, 선교 자원의 지형도 재편될 것이다<sup id="fnref:14"><a class="footnote-ref" href="#fn:14">14</a></sup>.</p>
+<hr />
+<h2>4. 이분법 언어의 극복</h2>
+<p>조셉 핸들리(Joseph Handley)는 다중심적 선교의 핵심을 "많은 중심이 모든 사람으로부터 모든 곳을 향하는 것"이라 정의하면서, 기존 선교 담론의 이분법적 언어를 탈피할 것을 촉구한다<sup id="fnref:15"><a class="footnote-ref" href="#fn:15">15</a></sup>:</p>
+<table>
+<thead>
+<tr>
+<th>탈피해야 할 이분법</th>
+<th>대안적 시각</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>북반구 / 남반구</td>
+<td>다중 중심의 협력</td>
+</tr>
+<tr>
+<td>개발도상국 / 선진국</td>
+<td>상호 파송·상호 수혜</td>
+</tr>
+<tr>
+<td>다수세계 / 소수세계</td>
+<td>—</td>
+</tr>
+<tr>
+<td>파송국 / 수혜국</td>
+<td><strong>모든 교회가 파송교회이자 수혜교회</strong></td>
+</tr>
+<tr>
+<td>타문화 선교</td>
+<td>교차문화 / 다문화 선교</td>
+</tr>
+</tbody>
+</table>
+<p>이 이분법이 위험한 이유는 그것이 서구 중심 선교의 권력 구조를 언어 안에 내장하기 때문이다. "개발도상국"이라는 말 자체가 서구를 기준점으로 설정한다. 마이클 고힌의 첫 번째 전환 — "모든 곳에서 모든 곳으로" — 은 바로 이 언어적 식민성을 해체하는 것에서 시작한다<sup id="fnref:16"><a class="footnote-ref" href="#fn:16">16</a></sup>.</p>
+<hr />
+<h2>5. 번역 가능한 복음과 다중심성</h2>
+<p>다중심적 선교의 신학적 기반은 라민 사네의 "번역 가능한 복음(translatable gospel)" 개념에서 가장 선명하게 드러난다. 사네는 세계 기독교가 가능한 이유를 복음의 번역 가능성에서 찾는다<sup id="fnref:17"><a class="footnote-ref" href="#fn:17">17</a></sup>.</p>
+<p>번역의 세 가지 성경적 근거는 다음과 같다:</p>
+<ol>
+<li><strong>성육신</strong>: 하나님이 인간이 되시고, 유대 문화를 입으시고, 아람어로 말씀하셨다 — 의도적 종속</li>
+<li><strong>오순절</strong>: 성령이 번역자가 되셔서 각자의 방언으로 들을 수 있게 하셨다</li>
+<li><strong>복음서</strong>: 아람어 말씀이 헬라어로 기록되었다 — 마가는 유대 지붕을, 누가는 이방 지붕을 묘사한다</li>
+</ol>
+<p>임태순은 번역 개념을 토착화·상황화와 구별한다. 토착화와 상황화에서 전하는 자는 바뀌지 않는다. 그러나 <strong>번역</strong>에서는 전하는 자도 바뀐다 — 내 형태도 변형·확장된다<sup id="fnref:18"><a class="footnote-ref" href="#fn:18">18</a></sup>. 이것이 다중심적 선교의 핵심 역학이다. 서구가 비서구에 복음을 전할 때, 서구 자신도 변화한다. 베드로가 고넬료에게 복음을 전했을 때, 고넬료만 회심한 것이 아니라 베드로의 편견이 무너진 것처럼(행 10장)<sup id="fnref:19"><a class="footnote-ref" href="#fn:19">19</a></sup>.</p>
+<p>폴 히버트의 자신학화(self-theologizing)도 같은 맥락이다. 서구 신학을 이식하는 것이 아니라, 각 문화가 성경·성령·하나님 백성의 공동체라는 세 가지 객관적 기준 아래에서 자기 신학을 발전시키는 것이다<sup id="fnref:20"><a class="footnote-ref" href="#fn:20">20</a></sup>. 동아시아 지역보고서가 "유교적 집단주의 맥락에서의 자신학화"를 긴급 과제로 제시하는 것은 이 때문이다<sup id="fnref:21"><a class="footnote-ref" href="#fn:21">21</a></sup>.</p>
+<hr />
+<h2>6. 선교단체의 다중심적 재편</h2>
+<p>다중심적 선교는 신학적 담론에 머물지 않는다. 선교단체의 구조 자체가 재편되어야 한다.</p>
+<p>폴 벤더 사무엘은 재편이 필요한 네 가지 근거를 제시한다<sup id="fnref:22"><a class="footnote-ref" href="#fn:22">22</a></sup>:</p>
+<ol>
+<li>가난한 비서구 교회가 감당하기 벅찬 재정 구조</li>
+<li>지역교회와 분리된 선교단체 중심 사역</li>
+<li>비자·정치적 장벽</li>
+<li>단기 사역 확대 + 장기 헌신 감소</li>
+</ol>
+<p>위클리프글로벌연대(WGA)는 2011년 커크 프랭클린의 주도로 중앙집권식 구조를 해체하고 전 세계 번역 단체가 함께 결정하는 다중심적 구조로 전환했다<sup id="fnref:23"><a class="footnote-ref" href="#fn:23">23</a></sup>. 인터서브(InterServe)는 이 방향의 선구자라 할 수 있다. 임태순은 인터서브가 "원래 다중심적 구조"를 가지고 있었다고 직접 평가한다<sup id="fnref:24"><a class="footnote-ref" href="#fn:24">24</a></sup>. 파트너와 펠로우 구조를 통해 국제 본부 중심이 아닌 현지 공동체 중심의 의사결정이 이루어지는 것이다.</p>
+<p>그러나 선교단체가 완전히 해체되어야 한다는 의미는 아니다. 레슬리 뉴비긴의 구분이 여기서 빛을 발한다 — 선교적 차원(missionary dimension)은 모든 교회에 있지만, 선교적 의도(missionary intention)는 의식적으로 추구해야 한다. 미전도 종족이 존재하는 한, "따로 세워라"(행 13:2)는 명령은 유효하며, 전문 파송 단체의 역할은 여전히 필요하다<sup id="fnref:25"><a class="footnote-ref" href="#fn:25">25</a></sup>.</p>
+<hr />
+<h2>7. 글로벌 교회 패러다임의 7가지 수정</h2>
+<p>데이비드 보쉬의 에큐메니컬 선교 패러다임은 이후 "글로벌 교회 패러다임"으로 재명명되며 7가지 수정을 거친다<sup id="fnref:26"><a class="footnote-ref" href="#fn:26">26</a></sup>:</p>
+<table>
+<thead>
+<tr>
+<th>기존</th>
+<th>수정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>영토(지역) 중심</td>
+<td><strong>종족(People) 중심</strong></td>
+</tr>
+<tr>
+<td>서구 중심 파송</td>
+<td><strong>모든 곳에서 모든 곳으로</strong></td>
+</tr>
+<tr>
+<td>서구 = 파송지</td>
+<td><strong>서구 = 선교 수신지</strong> (역방향 선교)</td>
+</tr>
+<tr>
+<td>장기 헌신만 인정</td>
+<td><strong>단기 선교 급증</strong> 수용</td>
+</tr>
+<tr>
+<td>선교단체만 파송</td>
+<td><strong>지역교회 직접 파송</strong> 병행</td>
+</tr>
+<tr>
+<td>소수 전문 기관</td>
+<td><strong>다양한 선교 기관</strong> 증가</td>
+</tr>
+<tr>
+<td>회심·교회 개척 중심</td>
+<td><strong>통합적·총체적 목표</strong></td>
+</tr>
+</tbody>
+</table>
+<p>이 수정의 핵심은 세 번째 항목 — 서구가 더 이상 파송지가 아니라 선교 수신지가 되었다는 인식이다. 영국의 실제 기독교인이 4%에 불과한 현실에서, 나이지리아에서 런던으로 오는 선교사는 이제 놀라운 일이 아니다<sup id="fnref:27"><a class="footnote-ref" href="#fn:27">27</a></sup>. 알렌 크라이더가 말하는 "매력 → 유리 → 강제"의 변질 과정을 거친 크리스텐덤이 해체된 후, 소수 공동체로 돌아갈 때 선교가 회복된다는 통찰은 이 수정의 정신과 맞닿아 있다<sup id="fnref:28"><a class="footnote-ref" href="#fn:28">28</a></sup>.</p>
+<hr />
+<h2>8. 동아시아의 다중심적 선교</h2>
+<p>동아시아는 다중심적 선교의 역동성을 가장 압축적으로 보여주는 지역이다.</p>
+<table>
+<thead>
+<tr>
+<th>국가/지역</th>
+<th>현황</th>
+<th>다중심적 선교와의 연결</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>한국</strong></td>
+<td>22,000명+ 파송, 세계 2위</td>
+<td>규모의 성취, 지속가능성의 위기</td>
+</tr>
+<tr>
+<td><strong>중국</strong></td>
+<td>박해 속 가정교회 폭발적 성장</td>
+<td>박해가 선교 동력이 된 유일한 사례</td>
+</tr>
+<tr>
+<td><strong>몽골</strong></td>
+<td>1991년 0 → 30년 만에 자립 교회</td>
+<td>다중심적 선교의 성공 모델</td>
+</tr>
+<tr>
+<td><strong>일본</strong></td>
+<td>기독교인 1% 미만</td>
+<td>동아시아 최대 선교적 공백</td>
+</tr>
+<tr>
+<td><strong>홍콩</strong></td>
+<td>국가보안법 이후 분열</td>
+<td>박해하 교회 정체성 질문</td>
+</tr>
+<tr>
+<td><strong>대만·홍콩</strong></td>
+<td>각 600~700명 파송</td>
+<td>소규모 국가의 파송 역량</td>
+</tr>
+</tbody>
+</table>
+<p>중국의 "백 투 예루살렘" 운동은 특히 주목할 만하다. 실크로드 방향으로 선교사를 파송하는 이 운동에서, 박해가 오히려 해외 선교사 파송을 증가시켰다<sup id="fnref:29"><a class="footnote-ref" href="#fn:29">29</a></sup>. 이것은 역설적으로 사도행전의 패턴 — 예루살렘 박해가 흩어짐을 낳고, 흩어짐이 선교를 낳은 것 — 의 21세기 반복이다.</p>
+<p>몽골은 다중심적 선교의 가장 순수한 성공 모델이다. 1991년 공산주의 붕괴 후 첫 현대식 교회가 세워진 이래, 30년 만에 독립 교회를 구축했다. 서구 선교사의 장기 주도가 아니라 현지인의 자립이 핵심이었다<sup id="fnref:30"><a class="footnote-ref" href="#fn:30">30</a></sup>.</p>
+<hr />
+<h2>9. 이주와 디아스포라 — 다중심성의 새로운 통로</h2>
+<p>다중심적 선교의 실제 통로는 점점 더 <strong>이주</strong>가 되고 있다. 알렌 크라이더가 밝혔듯, 초대교회의 선교 동력은 전문 선교사가 아니라 이주하는 평범한 그리스도인의 삶(이민 선교, migration mission)이었다<sup id="fnref:31"><a class="footnote-ref" href="#fn:31">31</a></sup>.</p>
+<p>대위임령현황보고서의 데이터는 이 통찰을 21세기에 실증한다:</p>
+<ul>
+<li>유럽 무슬림 인구: 2020-2050 약 63% 성장 예상</li>
+<li>한국: 해외 유학생 101,000명 파견(세계 7위 송출국)</li>
+<li>글로벌 난민: 국내 실향민 포함 55M — 핵심 미전도 집단</li>
+</ul>
+<p>앤드류 월스의 두 원리 — 토속화 원리(어느 문화에도 낯설지 않다)와 순례자 원리(어느 문화에도 완전히 동화되지 않는다) — 는 이주민 그리스도인의 정체성을 정확히 기술한다. 이 긴장 안에서 거주민이자 나그네로 사는 것이 다중심적 선교의 일상적 실천이다<sup id="fnref:32"><a class="footnote-ref" href="#fn:32">32</a></sup>.</p>
+<hr />
+<h2>10. 한국 교회의 과제 — 규모에서 생태계로</h2>
+<p>한국은 다중심적 선교의 실제 주체이면서 동시에 그 한계를 가장 선명하게 드러내는 사례다.</p>
+<p>22,000명이라는 파송 규모는 세계 2위이지만, 국내 청년 이탈(종교 소속 연령 격차 24%p, 세계 3위)과 급속한 고령화(65세+ 비율 23%, 세계 1위 수준)로 지속 가능성이 위협받고 있다<sup id="fnref:33"><a class="footnote-ref" href="#fn:33">33</a></sup>. 다중심적 선교는 파송의 '규모'가 아니라 '생태계'를 요구한다.</p>
+<p>임태순의 진단은 정곡을 찌른다 — "한국 선교 역사를 '확장했다'고 가르치는 것이 바뀌어야 한다"<sup id="fnref:34"><a class="footnote-ref" href="#fn:34">34</a></sup>. 확장의 서사는 크리스텐덤 패러다임의 잔영이다. 다중심적 선교에서 한국 교회의 역할은 세계에 선교사를 '보내는' 것이 아니라, 글로벌 선교 생태계의 한 중심으로서 다른 중심들과 협력하는 것이다.</p>
+<p>마이클 고힌의 4가지 전환은 한국 교회에 구체적 방향을 제시한다<sup id="fnref:35"><a class="footnote-ref" href="#fn:35">35</a></sup>:</p>
+<ol>
+<li><strong>모든 곳에서 모든 곳으로</strong> — 일방향 파송에서 상호 파송으로</li>
+<li><strong>교회 개척 → 창조세계 구속</strong> — 피조세계 회복 참여</li>
+<li><strong>확장 → 소통</strong> — 정복이 아닌 대화</li>
+<li><strong>총체적 복음 지향</strong> — 영혼 구원만이 아닌 전체의 회복</li>
+</ol>
+<hr />
+<h2>핵심 인사이트</h2>
+<ul>
+<li>다중심적 선교는 새로운 발명이 아니라 사도행전의 패턴(예루살렘→안디옥)으로의 회귀이다</li>
+<li>세계 기독교인의 67%가 비서구에 거주하며, 2050년에는 77%에 이를 것이다 — 서구 중심 선교는 이미 종료되었다</li>
+<li>다중심적 선교가 극복하려는 것은 크리스텐덤 패러다임의 네 가지 특징(지리적 정의·특수 계층·기관 중심·목표 제한)이다</li>
+<li>번역 가능한 복음은 다중심성의 신학적 기반이다 — 번역에서는 전하는 자도 바뀐다(토착화/상황화와의 결정적 차이)</li>
+<li>선교 자원의 97%가 이미 복음을 접한 지역에 집중되어 있다 — 다중심적 재편 없이는 이 구조적 불균형이 해소되지 않는다</li>
+<li>한국은 파송 규모 세계 2위이나 청년 이탈·고령화로 지속 가능성이 위협받는다 — 규모의 선교에서 생태계의 선교로 전환이 시급하다</li>
+<li>이주(migration)가 다중심적 선교의 핵심 통로로 부상하고 있다 — 초대교회의 이민 선교 패턴이 21세기에 반복된다</li>
+</ul>
+<hr />
+<h2>미해결 질문</h2>
+<ul>
+<li>다중심적 선교가 방향만 선언하고 구체적 협력 모델을 제시하지 못한다면, 기존 서구 중심 구조와 비서구 교회의 열망 사이에서 실질적으로 무엇이 달라지는가?</li>
+<li>한국 교회가 22,000명 파송 규모를 유지하면서도 국내 청년 이탈을 막을 수 있는 양립 가능한 전략이 존재하는가?</li>
+<li>자신학화(self-theologizing)가 상대주의로 빠지지 않고 "성경·성령·공동체"라는 기준을 유지하려면 어떤 제도적 장치가 필요한가?</li>
+<li>선교단체의 다중심적 재편(WGA·인터서브 모델)이 파송의 의도성(뉴비긴의 missionary intention)을 약화시키지 않으려면 무엇을 경계해야 하는가?</li>
+<li>박해가 선교 동력이 되는 중국 모델이 다른 맥락에서도 반복 가능한 패턴인가, 아니면 특수한 역사적 상황의 산물인가?</li>
+</ul>
+<hr />
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> — 미씨오 데이, 성육신적 선교, 보쉬의 패러다임, Life AS Mission</li>
+<li><a class="wl" href="../../t/%EB%AF%B8%EC%94%A8%EC%98%A4%EB%8D%B0%EC%9D%B4/">미씨오데이</a> — 빌링겐 대회(1952), 삼위일체적 선교의 근거</li>
+<li><a class="wl" href="../../t/%EB%AF%B8%EC%A0%84%EB%8F%84%EC%A2%85%EC%A1%B1/">미전도종족</a> — 3.34B 인구에 선교사 3% 집중의 구조적 문제</li>
+<li><a class="wl" href="../../t/%EC%B4%9D%EC%B2%B4%EC%A0%81%EC%84%A0%EA%B5%90/">총체적선교</a> — 온전한 복음 + 온 교회 + 온 세상</li>
+<li><a class="wl" href="../../t/%EB%B3%B5%EC%9D%8C%EC%A3%BC%EC%9D%98/">복음주의</a> — 로잔 운동과의 역사적 관계</li>
+<li><a class="wl" href="../../t/%EC%9D%B4%EC%A3%BC%EB%AF%BC%EC%84%A0%EA%B5%90/">이주민선교</a> — 디아스포라와 다중심적 선교의 실천적 접점</li>
+<li><span class="wl-dead" title="위키 내부 링크">2024L4로잔</span> — 서울선언문 4대 축, Allen Yeh·Handley 주도</li>
+<li><span class="wl-dead" title="위키 내부 링크">로잔운동</span> — 복음주의 세계 선교 네트워크</li>
+<li><span class="wl-dead" title="위키 내부 링크">인터서브</span> — 다중심적 구조의 선구적 모델</li>
+<li><span class="wl-dead" title="위키 내부 링크">데이비드보쉬</span> — 에큐메니컬 패러다임 → 글로벌 교회 패러다임</li>
+<li><span class="wl-dead" title="위키 내부 링크">임태순</span> — 한국 선교학자, 세계 기독교와 다중심적 재편 분석</li>
+<li><span class="wl-dead" title="위키 내부 링크">레슬리뉴비긴</span> — 선교적 차원 vs 선교적 의도</li>
+<li><a class="wl" href="../../b/%EB%8C%80%EC%9C%84%EC%9E%84%EB%A0%B9%ED%98%84%ED%99%A9%EB%B3%B4%EA%B3%A0%EC%84%9C/">대위임령현황보고서</a> — 다중심적 선교의 통계적 실증</li>
+<li><a class="wl" href="../../b/%EB%8C%80%EC%9C%84%EC%9E%84%EB%A0%B9%ED%98%84%ED%99%A9%EB%B3%B4%EA%B3%A0%EC%84%9C_%EB%8F%99%EC%95%84%EC%8B%9C%EC%95%84/">대위임령현황보고서_동아시아</a> — 한국·중국·일본·몽골 지역 데이터</li>
+<li><a class="wl" href="../../b/%EB%B3%80%ED%99%94%ED%95%98%EB%8A%94%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90%EC%99%80%EC%84%A0%EA%B5%90_%EC%9E%84%ED%83%9C%EC%88%9C/">변화하는세계기독교와선교_임태순</a> — 월스·사네·쉥크·고힌의 학문적 프레임</li>
+<li><a class="wl" href="../../b/HasAnythingChanged_%ED%8C%AC%EB%8D%B0%EB%AF%B9%EC%9D%B4%ED%9B%84%EC%84%A0%EA%B5%90%EC%B0%B8%EC%97%AC/">HasAnythingChanged_팬데믹이후선교참여</a> — 크리스텐덤 4특징, 글로벌 교회 패러다임 7수정</li>
+</ul>
+<hr />
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="wl" href="../../b/%EB%B3%80%ED%99%94%ED%95%98%EB%8A%94%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90%EC%99%80%EC%84%A0%EA%B5%90_%EC%9E%84%ED%83%9C%EC%88%9C/">변화하는세계기독교와선교_임태순</a></td>
+<td>북노트</td>
+<td>월스 3변화, 사네 번역 가능한 복음, 쉥크 다중심적, WGA/인터서브 구조 재편, 고힌 4전환</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EB%8C%80%EC%9C%84%EC%9E%84%EB%A0%B9%ED%98%84%ED%99%A9%EB%B3%B4%EA%B3%A0%EC%84%9C/">대위임령현황보고서</a></td>
+<td>북노트</td>
+<td>세계 기독교 통계, 선교사 파송 현황, 재정 불균형, 남반구 부상 데이터</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EB%8C%80%EC%9C%84%EC%9E%84%EB%A0%B9%ED%98%84%ED%99%A9%EB%B3%B4%EA%B3%A0%EC%84%9C_%EB%8F%99%EC%95%84%EC%8B%9C%EC%95%84/">대위임령현황보고서_동아시아</a></td>
+<td>북노트</td>
+<td>한국 22,000명, 중국 백투예루살렘, 몽골 30년 모델, 일본 1% 미만</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/HasAnythingChanged_%ED%8C%AC%EB%8D%B0%EB%AF%B9%EC%9D%B4%ED%9B%84%EC%84%A0%EA%B5%90%EC%B0%B8%EC%97%AC/">HasAnythingChanged_팬데믹이후선교참여</a></td>
+<td>북노트</td>
+<td>크리스텐덤 4특징, 글로벌 교회 패러다임 7수정, VUCA 8도전</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2024L4로잔</span></td>
+<td>이벤트</td>
+<td>서울선언문 4대 축, Allen Yeh·Handley, 이분법 탈피, 콜라보레이션</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a></td>
+<td>토픽</td>
+<td>미씨오 데이, 코로나 패러다임 전환, 알렌 크라이더 아비투스·이민 선교</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">데이비드보쉬</span></td>
+<td>인물</td>
+<td>에큐메니컬 패러다임, "약함의 그릇", 글로벌 교회 패러다임 기초</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">인터서브</span></td>
+<td>단체</td>
+<td>다중심적 구조 선구자, 파트너+펠로우 모델</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>인용·출처</h2>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Allen Yeh — "polycentricity" 개념, "from everyone to everywhere". <span class="wl-dead" title="위키 내부 링크">2024L4로잔</span>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>임태순, 『변화하는 세계 기독교와 선교』 — 2020년 서구 33%/비서구 67%, 2050년 전망. <a class="wl" href="../../b/%EB%B3%80%ED%99%94%ED%95%98%EB%8A%94%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90%EC%99%80%EC%84%A0%EA%B5%90_%EC%9E%84%ED%83%9C%EC%88%9C/">변화하는세계기독교와선교_임태순</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>대위임령현황보고서(2024) — 선교사역자 파송 현황. <a class="wl" href="../../b/%EB%8C%80%EC%9C%84%EC%9E%84%EB%A0%B9%ED%98%84%ED%99%A9%EB%B3%B4%EA%B3%A0%EC%84%9C/">대위임령현황보고서</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>같은 보고서 — 서울선언문 4대 신학운동 축(다중심적 선교·디아스포라·디지털·도시화). <span class="wl-dead" title="위키 내부 링크">2024L4로잔</span>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>알란·엘레노어 크라이더, Has Anything Changed? — 크리스텐덤 패러다임 4특징. <a class="wl" href="../../b/HasAnythingChanged_%ED%8C%AC%EB%8D%B0%EB%AF%B9%EC%9D%B4%ED%9B%84%EC%84%A0%EA%B5%90%EC%B0%B8%EC%97%AC/">HasAnythingChanged_팬데믹이후선교참여</a>&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p>임태순 — 1·2차 세계대전과 크리스텐덤 실패. <a class="wl" href="../../b/%EB%B3%80%ED%99%94%ED%95%98%EB%8A%94%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90%EC%99%80%EC%84%A0%EA%B5%90_%EC%9E%84%ED%83%9C%EC%88%9C/">변화하는세계기독교와선교_임태순</a>&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p>데이나 로버트 — "실패한 비전과 성취된 꿈". 같은 책에서 재인용. <a class="wl" href="../../b/%EB%B3%80%ED%99%94%ED%95%98%EB%8A%94%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90%EC%99%80%EC%84%A0%EA%B5%90_%EC%9E%84%ED%83%9C%EC%88%9C/">변화하는세계기독교와선교_임태순</a>&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:8">
+<p>Has Anything Changed? — 코비드와 mission-as-sending 패러다임 도전. <a class="wl" href="../../b/HasAnythingChanged_%ED%8C%AC%EB%8D%B0%EB%AF%B9%EC%9D%B4%ED%9B%84%EC%84%A0%EA%B5%90%EC%B0%B8%EC%97%AC/">HasAnythingChanged_팬데믹이후선교참여</a>&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:9">
+<p>L4 다중심적 선교 세션 — 예루살렘→안디옥 성경적 모델. <span class="wl-dead" title="위키 내부 링크">2024L4로잔</span>&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:10">
+<p>앤드류 월스 — 2,000년 3번의 변화. <a class="wl" href="../../b/%EB%B3%80%ED%99%94%ED%95%98%EB%8A%94%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90%EC%99%80%EC%84%A0%EA%B5%90_%EC%9E%84%ED%83%9C%EC%88%9C/">변화하는세계기독교와선교_임태순</a>&#160;<a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:11">
+<p>히포리투스의 "사도적 전통" — 초기 기독교의 다문화 다양성. 같은 책. <a class="wl" href="../../b/%EB%B3%80%ED%99%94%ED%95%98%EB%8A%94%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90%EC%99%80%EC%84%A0%EA%B5%90_%EC%9E%84%ED%83%9C%EC%88%9C/">변화하는세계기독교와선교_임태순</a>&#160;<a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn:12">
+<p>대위임령현황보고서 — 아프리카 성장률, 예배 참석률, 세대 격차 데이터. <a class="wl" href="../../b/%EB%8C%80%EC%9C%84%EC%9E%84%EB%A0%B9%ED%98%84%ED%99%A9%EB%B3%B4%EA%B3%A0%EC%84%9C/">대위임령현황보고서</a>&#160;<a class="footnote-backref" href="#fnref:12" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+<li id="fn:13">
+<p>같은 보고서 — 교단 수 전망, 신학교 언어별 분포. <a class="wl" href="../../b/%EB%8C%80%EC%9C%84%EC%9E%84%EB%A0%B9%ED%98%84%ED%99%A9%EB%B3%B4%EA%B3%A0%EC%84%9C/">대위임령현황보고서</a>&#160;<a class="footnote-backref" href="#fnref:13" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+</li>
+<li id="fn:14">
+<p>같은 보고서 — 지역별 교회 수입, 아시아 중산층 2030년 61%. <a class="wl" href="../../b/%EB%8C%80%EC%9C%84%EC%9E%84%EB%A0%B9%ED%98%84%ED%99%A9%EB%B3%B4%EA%B3%A0%EC%84%9C/">대위임령현황보고서</a>&#160;<a class="footnote-backref" href="#fnref:14" title="Jump back to footnote 14 in the text">&#8617;</a></p>
+</li>
+<li id="fn:15">
+<p>Joseph Handley — "많은 중심이 모든 사람으로부터 모든 곳을 향하는 것". <span class="wl-dead" title="위키 내부 링크">2024L4로잔</span>&#160;<a class="footnote-backref" href="#fnref:15" title="Jump back to footnote 15 in the text">&#8617;</a></p>
+</li>
+<li id="fn:16">
+<p>마이클 고힌 — 4가지 전환 중 첫 번째. <a class="wl" href="../../b/%EB%B3%80%ED%99%94%ED%95%98%EB%8A%94%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90%EC%99%80%EC%84%A0%EA%B5%90_%EC%9E%84%ED%83%9C%EC%88%9C/">변화하는세계기독교와선교_임태순</a>&#160;<a class="footnote-backref" href="#fnref:16" title="Jump back to footnote 16 in the text">&#8617;</a></p>
+</li>
+<li id="fn:17">
+<p>라민 사네(1989) — 번역 가능한 복음, 세계 기독교 개념의 핵심. <a class="wl" href="../../b/%EB%B3%80%ED%99%94%ED%95%98%EB%8A%94%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90%EC%99%80%EC%84%A0%EA%B5%90_%EC%9E%84%ED%83%9C%EC%88%9C/">변화하는세계기독교와선교_임태순</a>&#160;<a class="footnote-backref" href="#fnref:17" title="Jump back to footnote 17 in the text">&#8617;</a></p>
+</li>
+<li id="fn:18">
+<p>임태순 — 토착화/상황화/번역/자신학화 비교표. <a class="wl" href="../../b/%EB%B3%80%ED%99%94%ED%95%98%EB%8A%94%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90%EC%99%80%EC%84%A0%EA%B5%90_%EC%9E%84%ED%83%9C%EC%88%9C/">변화하는세계기독교와선교_임태순</a>&#160;<a class="footnote-backref" href="#fnref:18" title="Jump back to footnote 18 in the text">&#8617;</a></p>
+</li>
+<li id="fn:19">
+<p>선교신학 — 베드로-고넬료 쌍방향 회심. <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a>&#160;<a class="footnote-backref" href="#fnref:19" title="Jump back to footnote 19 in the text">&#8617;</a></p>
+</li>
+<li id="fn:20">
+<p>폴 히버트 — 자신학화의 3가지 객관적 기준(성경·성령·공동체). <a class="wl" href="../../b/%EB%B3%80%ED%99%94%ED%95%98%EB%8A%94%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90%EC%99%80%EC%84%A0%EA%B5%90_%EC%9E%84%ED%83%9C%EC%88%9C/">변화하는세계기독교와선교_임태순</a>&#160;<a class="footnote-backref" href="#fnref:20" title="Jump back to footnote 20 in the text">&#8617;</a></p>
+</li>
+<li id="fn:21">
+<p>동아시아 지역보고서 — 유교적 집단주의 맥락의 자신학화. <a class="wl" href="../../b/%EB%8C%80%EC%9C%84%EC%9E%84%EB%A0%B9%ED%98%84%ED%99%A9%EB%B3%B4%EA%B3%A0%EC%84%9C_%EB%8F%99%EC%95%84%EC%8B%9C%EC%95%84/">대위임령현황보고서_동아시아</a>&#160;<a class="footnote-backref" href="#fnref:21" title="Jump back to footnote 21 in the text">&#8617;</a></p>
+</li>
+<li id="fn:22">
+<p>폴 벤더 사무엘 — 선교단체 재편 4가지 근거. <a class="wl" href="../../b/%EB%B3%80%ED%99%94%ED%95%98%EB%8A%94%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90%EC%99%80%EC%84%A0%EA%B5%90_%EC%9E%84%ED%83%9C%EC%88%9C/">변화하는세계기독교와선교_임태순</a>&#160;<a class="footnote-backref" href="#fnref:22" title="Jump back to footnote 22 in the text">&#8617;</a></p>
+</li>
+<li id="fn:23">
+<p>위클리프글로벌연대(WGA) — 2011년 다중심적 구조 전환. 같은 책. <a class="wl" href="../../b/%EB%B3%80%ED%99%94%ED%95%98%EB%8A%94%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90%EC%99%80%EC%84%A0%EA%B5%90_%EC%9E%84%ED%83%9C%EC%88%9C/">변화하는세계기독교와선교_임태순</a>&#160;<a class="footnote-backref" href="#fnref:23" title="Jump back to footnote 23 in the text">&#8617;</a></p>
+</li>
+<li id="fn:24">
+<p>임태순 — "인터서브는 원래 다중심적 구조". 같은 책. <a class="wl" href="../../b/%EB%B3%80%ED%99%94%ED%95%98%EB%8A%94%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90%EC%99%80%EC%84%A0%EA%B5%90_%EC%9E%84%ED%83%9C%EC%88%9C/">변화하는세계기독교와선교_임태순</a>&#160;<a class="footnote-backref" href="#fnref:24" title="Jump back to footnote 24 in the text">&#8617;</a></p>
+</li>
+<li id="fn:25">
+<p>레슬리 뉴비긴 — 선교적 차원 vs 선교적 의도, "S를 떼지 말라". <a class="wl" href="../../b/%EB%B3%80%ED%99%94%ED%95%98%EB%8A%94%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90%EC%99%80%EC%84%A0%EA%B5%90_%EC%9E%84%ED%83%9C%EC%88%9C/">변화하는세계기독교와선교_임태순</a>&#160;<a class="footnote-backref" href="#fnref:25" title="Jump back to footnote 25 in the text">&#8617;</a></p>
+</li>
+<li id="fn:26">
+<p>Has Anything Changed? — 보쉬의 에큐메니컬 패러다임 → 글로벌 교회 패러다임 7수정. <a class="wl" href="../../b/HasAnythingChanged_%ED%8C%AC%EB%8D%B0%EB%AF%B9%EC%9D%B4%ED%9B%84%EC%84%A0%EA%B5%90%EC%B0%B8%EC%97%AC/">HasAnythingChanged_팬데믹이후선교참여</a>&#160;<a class="footnote-backref" href="#fnref:26" title="Jump back to footnote 26 in the text">&#8617;</a></p>
+</li>
+<li id="fn:27">
+<p>임태순 — 영국 실제 기독교인 4%. <a class="wl" href="../../b/%EB%B3%80%ED%99%94%ED%95%98%EB%8A%94%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90%EC%99%80%EC%84%A0%EA%B5%90_%EC%9E%84%ED%83%9C%EC%88%9C/">변화하는세계기독교와선교_임태순</a>&#160;<a class="footnote-backref" href="#fnref:27" title="Jump back to footnote 27 in the text">&#8617;</a></p>
+</li>
+<li id="fn:28">
+<p>알렌 크라이더 — 매력→유리→강제의 변질, 소수 공동체 회복. <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a>&#160;<a class="footnote-backref" href="#fnref:28" title="Jump back to footnote 28 in the text">&#8617;</a></p>
+</li>
+<li id="fn:29">
+<p>동아시아 지역보고서 — 중국 "백 투 예루살렘", 박해 속 선교 파송 증가. <a class="wl" href="../../b/%EB%8C%80%EC%9C%84%EC%9E%84%EB%A0%B9%ED%98%84%ED%99%A9%EB%B3%B4%EA%B3%A0%EC%84%9C_%EB%8F%99%EC%95%84%EC%8B%9C%EC%95%84/">대위임령현황보고서_동아시아</a>&#160;<a class="footnote-backref" href="#fnref:29" title="Jump back to footnote 29 in the text">&#8617;</a></p>
+</li>
+<li id="fn:30">
+<p>같은 보고서 — 몽골 1991년 이후 30년 교회 자립 모델. <a class="wl" href="../../b/%EB%8C%80%EC%9C%84%EC%9E%84%EB%A0%B9%ED%98%84%ED%99%A9%EB%B3%B4%EA%B3%A0%EC%84%9C_%EB%8F%99%EC%95%84%EC%8B%9C%EC%95%84/">대위임령현황보고서_동아시아</a>&#160;<a class="footnote-backref" href="#fnref:30" title="Jump back to footnote 30 in the text">&#8617;</a></p>
+</li>
+<li id="fn:31">
+<p>알렌 크라이더 — 이민 선교(migration mission), 앤드류 월스 두 원리. <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a>&#160;<a class="footnote-backref" href="#fnref:31" title="Jump back to footnote 31 in the text">&#8617;</a></p>
+</li>
+<li id="fn:32">
+<p>대위임령현황보고서 — 이주 데이터(유럽 무슬림 63% 성장, 한국 유학생 101K). <a class="wl" href="../../b/%EB%8C%80%EC%9C%84%EC%9E%84%EB%A0%B9%ED%98%84%ED%99%A9%EB%B3%B4%EA%B3%A0%EC%84%9C/">대위임령현황보고서</a>&#160;<a class="footnote-backref" href="#fnref:32" title="Jump back to footnote 32 in the text">&#8617;</a></p>
+</li>
+<li id="fn:33">
+<p>같은 보고서 — 한국 종교 소속 연령 격차 24%p, 고령화 23%. <a class="wl" href="../../b/%EB%8C%80%EC%9C%84%EC%9E%84%EB%A0%B9%ED%98%84%ED%99%A9%EB%B3%B4%EA%B3%A0%EC%84%9C/">대위임령현황보고서</a>&#160;<a class="footnote-backref" href="#fnref:33" title="Jump back to footnote 33 in the text">&#8617;</a></p>
+</li>
+<li id="fn:34">
+<p>임태순 — "한국 선교 역사, '확장했다'고 가르치는 것 바뀌어야". <a class="wl" href="../../b/%EB%B3%80%ED%99%94%ED%95%98%EB%8A%94%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90%EC%99%80%EC%84%A0%EA%B5%90_%EC%9E%84%ED%83%9C%EC%88%9C/">변화하는세계기독교와선교_임태순</a>&#160;<a class="footnote-backref" href="#fnref:34" title="Jump back to footnote 34 in the text">&#8617;</a></p>
+</li>
+<li id="fn:35">
+<p>마이클 고힌 — 4가지 전환. <a class="wl" href="../../b/%EB%B3%80%ED%99%94%ED%95%98%EB%8A%94%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90%EC%99%80%EC%84%A0%EA%B5%90_%EC%9E%84%ED%83%9C%EC%88%9C/">변화하는세계기독교와선교_임태순</a>&#160;<a class="footnote-backref" href="#fnref:35" title="Jump back to footnote 35 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+</article>
+<div class="tagrow"><span>#discipline/선교학</span><span>#discipline/세계기독교</span><span>#domain/다중심성</span><span>#domain/로잔</span><span>#domain/선교패러다임</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

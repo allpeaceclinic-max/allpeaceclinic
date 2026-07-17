@@ -1,0 +1,131 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>세계복음화 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="date">2026-06-28</span></div>
+  <h1 class="note-title">세계복음화</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>세계복음화는 모든 종족과 민족에게 복음이 증거되어 하나님 나라가 확장되는 과정이다. 마태복음 28:18-20의 대위임령에 근거하며, 지리적 확산뿐 아니라 모든 종족 집단(people group)에 복음이 뿌리내리는 것을 목표로 한다. 오늘날 세계복음화 담론은 잔존하는 미전도종족(unreached people groups) 문제와 자원 불균형을 핵심 과제로 다룬다.</p>
+<h2>1. 종족 중심 선교 패러다임</h2>
+<p>한수아는 세계복음화 전략의 핵심 전환점으로 <strong>국가 단위</strong>에서 <strong>종족 단위</strong>로의 이동을 제시한다. 국가 경계로 선교를 구획하면, 한 나라 안에 이미 교회가 있어도 접근받지 못한 종족이 수십 개 존재하는 현실을 놓친다. 미전도종족은 복음을 들을 기회가 없거나 극히 제한된 종족 집단으로, 기독교인 비율이 2% 미만인 집단으로 정의된다.</p>
+<p>랄프 윈터(<span class="wl-dead" title="위키 내부 링크">랄프윈터</span>)가 1974년 로잔대회에서 제시한 미전도종족 개념은 세계선교 전략의 지형을 바꾸었다. 이후 선교 자원 배분의 불균형이 가시화되었다: 전 세계 선교 자원의 약 73%가 이미 복음화된 지역에 집중되고, 미전도종족이 집중된 지역에는 약 3%만 투입된다는 통계가 제시된다.</p>
+<h2>2. 자원 불균형과 재배치의 과제</h2>
+<p>73% 대 3%의 자원 불균형은 단순한 통계가 아니라 선교 윤리의 문제다. 한수아는 이 불균형을 "가진 자에게 더 주는" 구조로 비판하며, 세계복음화를 위해서는 의도적인 자원 재배치가 필요하다고 주장한다.</p>
+<p>그가 사용하는 비유는 <strong>팬케이크 vs. 와플</strong> 구조다. 팬케이크처럼 고른 분포를 추구하는 것이 아니라, 와플처럼 미전도 지역에 의도적으로 자원이 집중되는 불균등한 전략적 집중이 필요하다는 것이다. CPM(Church Planting Movement, 교회개척운동) 방법론이 미전도 지역에서 효과적인 복음화 전략으로 언급된다.</p>
+<h2>3. 관계 중심 선교와 21세기 변화</h2>
+<p><span class="wl-dead" title="위키 내부 링크">박태훈</span>은 세계복음화의 전략이 21세기 맥락에서 어떻게 변화해야 하는지를 다룬다. 그가 제시하는 21세기 선교 환경의 변화 4축은 다음과 같다: ①인터넷과 디지털 연결성의 확대, ②이동성의 증가(사람들이 더 많이 이동한다), ③현지 교회의 성장과 역량 강화, ④단기선교의 대중화와 그 부작용.</p>
+<p>이 변화 속에서 세계복음화는 더 이상 "선교사만의 일"이 아니다. 그러나 선교사가 필요 없어진 것이 아니라, 선교사의 역할이 직접 복음 전도에서 현지 지도자 역량 강화와 파트너십으로 이동하는 것이다.</p>
+<p>박태훈은 세계복음화를 위한 선교의 핵심이 <strong>관계</strong>(relationship)에 있다고 강조한다. 사역 성과(results)보다 관계가 먼저이며, 관계 없는 사역은 현지에 의존성(dependency)을 만들어 장기적으로 복음화를 저해한다.</p>
+<h2>4. 선교사만으로는 불가능하다</h2>
+<p>한수아와 박태훈 모두 세계복음화가 전통적인 선교사 파송 모델만으로는 달성될 수 없음을 강조한다. 한수아는 미전도종족의 수와 그 안에 필요한 선교사의 수를 추산했을 때, 현재 전 세계 교회가 가진 선교사 파송 역량으로는 수백 년이 걸린다는 점을 지적한다.</p>
+<p>따라서 세계복음화는 평신도 동원, 전문인 선교(<a class="wl" href="../../t/%EC%A0%84%EB%AC%B8%EC%9D%B8%EC%84%A0%EA%B5%90/">전문인선교</a>), 디아스포라 활용(<a class="wl" href="../../t/%EB%94%94%EC%95%84%EC%8A%A4%ED%8F%AC%EB%9D%BC/">디아스포라</a>), 현지 교회 역량 강화를 복합적으로 포함하는 전략이 필요하다. 이는 선교를 소수 전문가의 일에서 전 교회의 사명으로 확장하는 패러다임 전환을 요청한다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>국가 단위로 복음화율을 측정하면, 한 나라 안의 수십 개 미전도종족이 보이지 않는다. 종족 단위 렌즈가 필요하다.</li>
+<li>73% 대 3%의 자원 불균형은 선교 윤리의 문제다. 이미 가진 자에게 더 많이 투자하는 구조를 의식적으로 교정해야 한다.</li>
+<li>21세기 선교에서 선교사의 역할은 사라지는 것이 아니라 변화한다. 직접 전도에서 파트너십과 역량 강화로.</li>
+<li>세계복음화는 전략 없는 열정으로도, 열정 없는 전략으로도 달성되지 않는다. 둘의 통합이 필요하다.</li>
+<li>관계 없는 사역은 의존성을 낳는다. 세계복음화의 속도를 높이려면 관계의 깊이를 먼저 확보해야 한다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>CPM 방법론이 급속한 교회 성장을 가져오지만 신학적 깊이가 얕다는 비판에 어떻게 응답해야 하는가?</li>
+<li>한국 교회의 세계선교 동원이 정체기를 맞고 있는 원인은 무엇이며, 어떻게 돌파할 것인가?</li>
+<li>디아스포라 한인 공동체는 세계복음화에서 어떤 독특한 역할을 할 수 있는가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%ED%83%80%EB%AC%B8%ED%99%94%EC%84%A0%EA%B5%90/">타문화선교</a> — 문화 경계를 넘는 선교의 방법론</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%ED%8C%A8%EB%9F%AC%EB%8B%A4%EC%9E%84/">선교패러다임</a> — 역사적 선교 패러다임의 변화</li>
+<li><a class="wl" href="../../t/%EC%A0%84%EB%AC%B8%EC%9D%B8%EC%84%A0%EA%B5%90/">전문인선교</a> — 비선교사 신분의 복음화 접근</li>
+<li><a class="wl" href="../../t/%ED%86%B5%EC%A0%84%EC%A0%81%EC%84%A0%EA%B5%90/">통전적선교</a> — 복음 전도와 사회 변혁의 통합</li>
+<li><a class="wl" href="../../t/%EB%94%94%EC%95%84%EC%8A%A4%ED%8F%AC%EB%9D%BC/">디아스포라</a> — 이주민 공동체를 통한 선교 가능성</li>
+</ul>
+</article>
+<div class="tagrow"><span>#domain/선교</span><span>#discipline/선교학</span><span>#topic/세계복음화</span><span>#topic/미전도종족</span><span>#topic/선교전략</span><span>#domain/선교동원</span><span>#discipline/선교역사</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

@@ -1,0 +1,342 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>선교패러다임 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="date">2026-07-14</span></div>
+  <h1 class="note-title">선교패러다임</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>선교 패러다임(mission paradigm)이란 한 시대와 신학 전통이 "선교란 무엇이며, 누가 어디서 어떻게 하는가"에 관해 공유하는 기본 틀이다. 토마스 쿤이 과학사에서 길어 올린 패러다임 개념을 신학자 한스 큉이 신학사에 옮겨 놓았고, 데이비드 보쉬가 그것을 다시 선교사(宣敎史)에 적용해 1991년의 『변화하는 선교』(<em>Transforming Mission</em>)에서 체계화했다. 이 개념이 담은 통찰은 단순하지만 무겁다 — 선교는 성경에서 곧바로 연역되는 초역사적 공식이 아니라, 각 시대의 신학과 문화 속에서 끊임없이 재구성되어 온 역사적 실재라는 것이다.</p>
+<p>이 인식은 곧바로 자기 시대를 향한다. 우리가 당연하게 여기는 선교의 방식 — 파송, 선교사, 선교지, 미전도종족 — 역시 어느 하늘에서 떨어진 규범이 아니라 특정 패러다임의 산물이다. 보쉬가 남아프리카 개혁교회의 선교학자로서 2천 년을 통시적으로 훑으며 던진 물음은 결국 하나다. "우리는 지금 어느 시대의 선교를 하고 있는가?"</p>
+<p>이 페이지는 바로 그 물음, 곧 <strong>선교 이해가 시대마다 어떻게 바뀌어 왔는가 — 패러다임 전환의 역사와 논리</strong>를 다룬다. 선교를 연구하는 학문 분과 자체의 지형은 <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%ED%95%99/">선교학</a>에, 미씨오 데이라는 개념의 신학사는 <a class="wl" href="../../t/%EB%AF%B8%EC%94%A8%EC%98%A4%EB%8D%B0%EC%9D%B4/">미씨오데이</a>에, 오늘의 다중심적 전환의 상세는 <a class="wl" href="../../t/%EB%8B%A4%EC%A4%91%EC%8B%AC%EC%A0%81%EC%84%A0%EA%B5%90/">다중심적선교</a>에, 선교 신학의 조직적 전개는 <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a>에 각각 맡긴다. 여기서는 그 페이지들이 서 있는 시간의 축, 곧 패러다임이 갈아 끼워져 온 궤적 자체를 그린다.</p>
+<h2>1. 패러다임이라는 렌즈 — 그 힘과 위험</h2>
+<p>쿤의 통찰은 과학이 벽돌을 쌓듯 점진적으로 발전하지 않는다는 데 있었다. 천동설에서 지동설로, 뉴턴에서 아인슈타인으로의 이행이 그러했듯, 하나의 '정상과학'은 설명하지 못하는 이상 현상이 쌓이다가 어느 순간 혁명적으로 다른 틀에 자리를 내준다. 볼트의 한 강의가 요약하듯, 그런 전환기에는 언제나 팬데믹 같은 혼돈이 함께 있었다. 보쉬는 이 도식을 선교에 빌려왔다. 선교의 이해 역시 한 시대의 신학·문화라는 '정상과학' 안에서 작동하다가, 그 틀이 감당하지 못하는 현실 앞에서 재편된다는 것이다.</p>
+<p>이 렌즈의 힘은 해방적이다. 어느 시대의 선교관도 절대적이지 않음을 보여줌으로써, 그것은 우리가 물려받은 방식을 신성불가침의 복음과 동일시하는 착각에서 우리를 건져낸다. 앨빈 토플러의 언어로 하면 패러다임 전환은 배움(learn)이 아니라 버림과 다시 배움(unlearn → relearn)을 요구한다 — 새 지식은 낡은 틀을 비워낸 자리에만 들어선다. 사도행전 10장에서 성령이 베드로에게 하신 일이 바로 그 relearn이었다. 고넬료를 만나기 전, 부정한 짐승을 먹으라는 환상 앞에서 먼저 무너져야 했던 것은 이방인을 향한 베드로 자신의 편견이었다. "원자를 부수는 것보다 편견을 부수기가 더 어렵다"는 아인슈타인의 말은 여기서 선교적 진실이 된다.</p>
+<p>그러나 이 렌즈에는 위험이 잠복해 있다. 모든 선교 이해가 시대의 산물이라면, 규범은 대체 어디에 있는가? 패러다임 사고는 자칫 "무엇이든 그 시대엔 옳았다"는 상대주의로 미끄러질 수 있다. 보쉬 자신이 이 위험을 알았고, 그래서 그의 작업은 옛것을 시대착오로 폐기하는 해체가 아니라, 변하는 것 아래에서 변하지 않는 것을 분별하려는 긴장의 작업이 된다. 이 긴장을 어떻게 견디는가가 6절과 7절의 주제다. 먼저 보쉬가 그린 지도 전체를 펼쳐 보자.</p>
+<h2>2. 보쉬의 여섯 패러다임</h2>
+<p>보쉬는 큉을 따라 2천 년의 선교사를 여섯 개의 거대 패러다임으로 나눈다. 다만 그 출발점에서 그는 한 가지를 먼저 짚는다 — 신약성경 자체가 이미 단일한 선교 모델을 담고 있지 않다는 것이다. 마태의 제자 삼는 선교, 누가-행전의 성령과 가난한 자를 향한 선교, 바울의 종말론적 이방 선교는 서로 다른 강조를 지닌 복수의 모델이다. 선교의 다양성은 훗날의 타락이 아니라 성경의 처음부터 있던 조건이다. 그 위에서 역사는 다음 여섯 국면을 지나왔다.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>패러다임</th>
+<th>시대</th>
+<th>선교 이해의 핵심</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>원시 기독교의 <strong>묵시적</strong> 패러다임</td>
+<td>1세기 유대-기독교</td>
+<td>임박한 종말의 기대 속에서, 메시아 공동체가 열방에 마지막 때의 회개를 선포</td>
+</tr>
+<tr>
+<td>2</td>
+<td>교부 시대의 <strong>헬레니즘</strong> 패러다임</td>
+<td>2~4세기 그리스 교부</td>
+<td>복음이 헬라 사유와 만나 로고스 신학으로 상황화 — 첫 번째 문화 번역</td>
+</tr>
+<tr>
+<td>3</td>
+<td>중세 <strong>로마가톨릭</strong> 패러다임</td>
+<td>중세</td>
+<td>크리스텐덤·영토 확장, 교회 이식과 강제가 뒤섞인 선교</td>
+</tr>
+<tr>
+<td>4</td>
+<td>종교개혁(<strong>개신교</strong>) 패러다임</td>
+<td>16세기</td>
+<td>이신칭의와 말씀 중심의 회복, 그러나 해외 선교 의식은 오히려 약화</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>계몽주의</strong>(근대) 패러다임</td>
+<td>18~19세기</td>
+<td>이성·진보의 신념 위에 폭발한 서구 선교운동 — 그리고 식민주의와의 결탁</td>
+</tr>
+<tr>
+<td>6</td>
+<td>부상하는 <strong>에큐메니컬</strong> 패러다임</td>
+<td>20세기~</td>
+<td>미씨오 데이, 통전성, 상황화, 교회의 선교적 본질</td>
+</tr>
+</tbody>
+</table>
+<p>이 표가 보여주는 것은 선교의 목적 자체가 이동해 왔다는 사실이다. 임태순은 그 궤적을 한 줄로 압축한다 — "영혼 구원 → 교회 개척 및 기독교 확산 → 피조세계 전반(오이쿠메네)의 회복을 위한 하나님의 선교". 각 패러다임은 앞선 것을 무효로 만들지 않고 재배치한다. 그리고 보쉬는 여섯째, 곧 오늘 우리가 그 안에 서 있는 에큐메니컬 패러다임을 다시 열세 가지 요소 — 하나님의 선교, 구원의 매개, 정의의 추구, 복음 전도, 상황화, 해방, 토착화, 공동의 증언, 하나님 백성 전체의 사역, 타종교인을 향한 증언, 신학으로서의 선교, 소망 안의 행동, 그리고 '타자와 함께하는 교회' — 로 전개한다. 이 요소들 각각은 이 볼트의 <a class="wl" href="../../t/%EB%AF%B8%EC%94%A8%EC%98%A4%EB%8D%B0%EC%9D%B4/">미씨오데이</a> · <a class="wl" href="../../t/%ED%86%B5%EC%A0%84%EC%A0%81%EC%84%A0%EA%B5%90/">통전적선교</a> · <a class="wl" href="../../t/%EC%83%81%ED%99%A9%ED%99%94/">상황화</a> · <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a>가 나누어 다룬다. 여기서는 그것들이 하나의 패러다임을 이루는 조각들이라는 점만 표시해 둔다.</p>
+<p>여섯 패러다임 가운데 오늘의 선교가 가장 크게 빚지고 또 가장 아프게 반성하는 것이 다섯째, 계몽주의 패러다임이다.</p>
+<h2>3. 계몽주의 패러다임의 해부 — 공로와 과오</h2>
+<p>근대 선교운동은 계몽주의라는 토양에서 자랐다. 1792년 윌리엄 캐리가 극단적 예정론의 소극성을 반박하며 "방법을 사용할 그리스도인의 의무"를 논증한 이래, 개신교는 200년의 위대한 선교 세기를 열었다. 성경이 수백 개 언어로 번역되고, 병원과 학교가 세워지고, "이 세대 안에 세계 복음화"라는 비전이 학생들을 움직였다. 이 성취는 부정할 수 없다.</p>
+<p>그러나 같은 패러다임의 그늘도 짙었다. 계몽주의는 선교에 이성과 진보에 대한 낙관, 그리고 서구 문명이 곧 기독교 문명이라는 등식을 주입했다. 그 결과 복음 전파는 종종 문명화 사명(civilizing mission)과 구별되지 않았고, 선교사의 배는 식민 제국의 항로를 따라갔다. 전동주는 이를 "가진 자의 힘의 논리로 하는 선교"라 부르며, 제국주의 선교의 유산이 한국에까지 흘러들었다고 뼈아프게 지적한다 — 심지어 "중국 선교를 한국이 망쳐놓았다"거나, 랄프 윈터를 빌려 "돈으로 신학교를 세운 것이 실패였다"는 말까지. 임태순은 여기에 20세기 중반 맥가브란의 『하나님의 다리』(1955)로 대표되는 경영학적·관리적 선교의 병리를 더한다. 성장을 측정 가능한 결과로 환원한 이 접근은 교회를 세웠으나 사회를 바꾸지 못했고, 성령의 자리와 십자가의 정신을 밀어냈으며, 선교사를 언제나 베푸는 강자의 위치에 고정시켰다.</p>
+<p>이 명암을 한눈에 놓으면 이렇다.</p>
+<table>
+<thead>
+<tr>
+<th>⚖️</th>
+<th>계몽주의 패러다임</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>공로</strong></td>
+<td>근대 선교운동의 폭발(캐리 이후), 성경 번역·의료·교육, 세계 복음화 비전, 자원운동의 헌신</td>
+</tr>
+<tr>
+<td><strong>과오</strong></td>
+<td>문명화 사명과 복음의 혼동, 식민주의와의 결탁, 낙관적 진보주의, 경영학적 선교(강자의 구조·성령의 소거)</td>
+</tr>
+</tbody>
+</table>
+<p>데이나 로버트는 이 패러다임의 결산을 "실패한 비전과 성취된 꿈"이라는 역설로 요약한다. 서구 크리스텐덤을 세계로 확장하려던 비전은 두 차례의 세계대전과 함께 무너졌지만, 그 과정에서 기독교가 전 지구로 번역되어 뿌리내린 꿈은 오히려 성취되었다. 보쉬 자신의 응답은 한 장의 이미지에 담긴다.</p>
+<blockquote>
+<p>"선교는 약함이란 그릇에 담겨 있다. 거지가 어디 가면 먹을 것이 있는지 알려주는 것이다."</p>
+</blockquote>
+<p>강자가 열등한 자에게 문명을 베푸는 선교에서, 은혜받은 거지가 동료 거지에게 빵의 자리를 가리키는 선교로 — 계몽주의 패러다임에 대한 보쉬의 가장 근본적인 교정은 바로 이 자기 비움의 문법이었다.</p>
+<h2>4. 20세기의 대전환</h2>
+<p>계몽주의 패러다임에서 에큐메니컬 패러다임으로의 이행은 한 번의 사건이 아니라 20세기를 관통한 일련의 대회를 통해 일어났다. 그 분수령들을 연대표로 세우면 전환의 논리가 드러난다.</p>
+<table>
+<thead>
+<tr>
+<th>연도</th>
+<th>대회</th>
+<th>패러다임적 이동</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1910</td>
+<td>에딘버러 세계선교대회</td>
+<td>협력·전략의 국제 플랫폼, "이 세대 안에 세계 복음화" — 그러나 아직 서구 낙관주의의 정점</td>
+</tr>
+<tr>
+<td>1952</td>
+<td>IMC 빌링겐 대회</td>
+<td><strong>미씨오 데이의 탄생</strong> — 선교의 주어가 교회에서 하나님으로</td>
+</tr>
+<tr>
+<td>1968</td>
+<td>WCC 웁살라 대회</td>
+<td>세속화·인간화로의 급진화(확장과 위험)</td>
+</tr>
+<tr>
+<td>1974</td>
+<td>로잔 대회</td>
+<td><strong>복음주의의 재정렬</strong> — 전도의 우선성 + 사회적 책임</td>
+</tr>
+<tr>
+<td>2010·2024</td>
+<td>케이프타운·서울</td>
+<td>통전적 선교와 다중심적 선교의 확정</td>
+</tr>
+</tbody>
+</table>
+<p>에딘버러 1910은 흩어진 선교 단체를 처음으로 한자리에 모았지만, 여전히 서구가 세계를 복음화한다는 구도 위에 서 있었다. 균열은 두 차례의 세계대전에서 왔다. 종교개혁의 나라 독일이 홀로코스트를 자행한 폐허 앞에서 "교회 꽉 찬 세상이 곧 하나님 나라"라는 등식은 무너졌고, 1952년 빌링겐에서 칼 하르텐슈타인이 정식화한 미씨오 데이가 선교의 주어를 하나님께로 되돌렸다. 이 개념이 1968년 웁살라에서 세상의 인간화로 급진화하며 교회를 괄호 안에 넣을 뻔했을 때, 1974년 로잔은 전도의 우선성과 사회적 책임을 함께 끌어안는 복음주의적 균형으로 응답했다. 이 개념사의 내부 논쟁 — 하르텐슈타인에서 호켄다이크로, 뉴비긴의 교정을 거쳐 보쉬의 종합에 이르는 과정 — 은 <a class="wl" href="../../t/%EB%AF%B8%EC%94%A8%EC%98%A4%EB%8D%B0%EC%9D%B4/">미씨오데이</a>가 상세히 추적하므로, 여기서는 그것이 계몽주의 패러다임을 무너뜨리고 에큐메니컬 패러다임을 세운 지렛대였다는 점만 새겨 둔다.</p>
+<p>그 결과 오늘 우리가 물려받은 에큐메니컬 패러다임의 요소들은 분명하다 — 선교의 주도권은 하나님께 있고(미씨오 데이), 복음 선포와 사회 변혁은 분리되지 않으며(<a class="wl" href="../../t/%ED%86%B5%EC%A0%84%EC%A0%81%EC%84%A0%EA%B5%90/">통전적선교</a>), 복음은 각 문화로 번역되고(<a class="wl" href="../../t/%EC%83%81%ED%99%A9%ED%99%94/">상황화</a>), 교회는 선교를 여러 사업 중 하나로 '하는' 것이 아니라 그 본질이 선교적인 '보냄받은' 공동체다(<a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a>).</p>
+<h2>5. 오늘의 전환과 한국의 자리</h2>
+<p>에큐메니컬 패러다임은 완성태가 아니라 지금도 움직이는 지형이다. 그 움직임의 이름이 크리스텐덤 이후(post-Christendom)이고, 남반구로의 무게중심 이동이며, 다중심적 선교다. 세계 기독교인의 67%가 이미 비서구에 거주하고 2050년에는 그 비율이 77%에 이른다. 한때 파송지였던 서구가 이제 선교 수신지가 되어, 나이지리아에서 런던으로 오는 선교사가 더 이상 낯설지 않다. 앤드류 월스가 그린 세 겹의 이동 — 유럽 중심에서 비서구 중심으로, 일방적 발신에서 다방향 선교로, 전도 중심에서 통전적 선교로 — 은 이 전환의 가장 명료한 지도다. 그 구조와 통계의 상세는 <a class="wl" href="../../t/%EB%8B%A4%EC%A4%91%EC%8B%AC%EC%A0%81%EC%84%A0%EA%B5%90/">다중심적선교</a>에 맡긴다.</p>
+<p>전동주가 이 전환을 표현하는 네 개의 구호는 현장의 체감을 담는다 — "제국주의 선교에서 현지 중심의 선교로, 외부자 중심에서 내부자 중심으로, 항공모함에서 전투함으로, 보내는 선교에서 함께 가는 선교로." 무겁고 느린 서구식 선교 기구가 신속하게 결정하는 작은 팀으로 재편되는 흐름, 그리고 "From everywhere to everywhere"라는 방향의 역전이 그 안에 압축되어 있다.</p>
+<p>이 전환 앞에서 한국 교회의 자리는 각별하다. 22,000명 이상을 파송한 세계 2위의 파송 대국이라는 성취는 분명하지만, 바로 그 성취의 서사가 패러다임 갱신의 걸림돌이 되기도 한다. 임태순의 진단은 정곡을 찌른다 — "한국 선교 역사를 '확장했다'고 가르치는 것이 바뀌어야 한다." 확장의 언어는 크리스텐덤 패러다임의 잔영이기 때문이다. 청년 이탈과 급속한 고령화로 파송의 지속 가능성이 흔들리는 지금, 한국 교회에 요청되는 것은 파송의 '규모'가 아니라 '생태계'로의 전환이다. 동시에 선교의 무대 자체가 바뀌고 있다. 2050년이면 국내 체류 외국인이 수백만에 이르리라는 전망 속에서, 버스와 지하철과 일터가 이미 타문화 선교의 최전선이 되었다 — 선교는 비행기 티켓이 아니라 이웃을 향해 건너가는 문화적 다리라는 인식으로의 이동이다.</p>
+<h2>6. 패러다임 전환기를 사는 법</h2>
+<p>그렇다면 전환기 한복판에 선 우리는 무엇을 해야 하는가. 보쉬의 대답은 옛 패러다임의 전면 폐기도, 새 패러다임에 대한 무비판적 투항도 아니다. 그는 이를 '창조적 긴장(creative tension)'이라 불렀다. 어느 한 시대의 선교관을 절대화하지 않으면서, 각 패러다임이 붙든 진리의 조각을 오늘의 종합 안으로 재구성하는 태도다. 계몽주의의 헌신도, 종교개혁의 말씀 중심도, 교부 시대의 문화 번역도 버려지지 않고 자리를 다시 얻는다.</p>
+<p>그래서 위기는 위험인 동시에 기회다. 쿤이 관찰했듯 전환기에는 언제나 혼돈이 따르지만, 바로 그 혼돈이 낡은 틀을 unlearn하고 새 틀을 relearn하도록 강제한다. 여기서 결정적인 것은 순서다. 사도행전 10장과 15장이 보여주듯, 선교는 세상을 바꾸기 전에 먼저 교회 자신을 바꾼다 — 고넬료가 회심하기 전에 베드로의 편견이 부서졌다. 전환기를 산다는 것은 세상에 새 방법을 들이밀기 전에 나 자신이 먼저 relearn의 대상이 되는 것을 받아들인다는 뜻이다.</p>
+<p>보쉬가 이 시대 선교사의 태도를 '길 위의 영성'으로 그린 것도 같은 맥락이다. 선교학은 완결된 체계가 아니라 전경이 끊임없이 바뀌는 길 위에서 계속 다시 쓰이는 지도다. 볼트의 한 강의가 빌린 비유로 하면, 전환기의 선교는 자체 엔진으로 항로를 밀어붙이는 파워보트가 아니라 성령의 바람에 돛을 맡기는 세일보트에 가깝다. 내 기획을 내려놓고 바람이 어디서 불어오는지를 먼저 분별하는 것 — 이것이 패러다임이 흔들리는 시대의 항해술이다.</p>
+<h2>7. 불변과 가변 — 남는 것과 바뀌는 것</h2>
+<p>패러다임이 바뀐다는 말이 곧 복음이 바뀐다는 말은 아니다. 오히려 패러다임 사고의 진짜 효용은 무엇이 바뀌어도 되는 것이고 무엇이 결코 바뀌어선 안 되는 것인지를 분별하게 해 주는 데 있다. 볼트의 한 강의 제목이 이 축을 정확히 표어로 삼는다 — "변화하는 세계, 변화하지 않는 복음."</p>
+<table>
+<thead>
+<tr>
+<th>변하지 않는 것 (불변)</th>
+<th>변하는 것 (가변)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>복음 자체 — 십자가와 부활</td>
+<td>선교의 방법과 전략</td>
+</tr>
+<tr>
+<td>하나님의 주도 — 미씨오 데이</td>
+<td>선교의 구조와 조직</td>
+</tr>
+<tr>
+<td>삼위일체의 파송</td>
+<td>선교사의 정의와 정체성</td>
+</tr>
+<tr>
+<td>하나님의 사랑이라는 본질</td>
+<td>선교의 지리와 강조점</td>
+</tr>
+</tbody>
+</table>
+<p>볼트의 한 강의는 이 관계를 부모와 자녀의 비유로 풀어낸다 — 부모가 자녀의 나이에 맞게 사랑을 표현하는 방식을 바꾸듯, 하나님도 시대와 문화에 맞게 선교의 방식을 갈아입히시지만 사랑이라는 본질은 변하지 않는다. 대문자 MISSION(하나님이 주도하시는 불변의 일)과 소문자 missions(그 부르심에 응답하는 우리의 가변적 사역)의 구별이 같은 진실을 가리킨다.</p>
+<p>여기서 전환기의 두 가지 대칭적 오류가 드러난다. 하나는 불변을 가변으로 착각하는 것 — 복음 자체를 시대정신에 양보해 버리는 자유주의적 미끄러짐이고, 웁살라가 경고음을 울린 위험이 그것이다. 다른 하나는 가변을 불변으로 착각하는 것 — 특정 시대의 방법(서구식 파송, 문명화, 경영학적 성장)을 복음과 동일시하는 크리스텐덤적 완고함이다. 패러다임 사고가 우리에게 주는 선물은 바로 이 두 오류 사이에서 균형을 잡는 분별력이다. 그것은 상대주의(1절의 위험)로 무너지지 않는다. 변하는 껍질 아래에서 변하지 않는 알맹이를 붙들 수 있기 때문이다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>선교 패러다임 개념의 핵심은 선교가 초역사적 공식이 아니라 각 시대의 신학·문화 속에서 재구성되어 온 역사적 실재라는 통찰이다. 이 렌즈는 우리가 물려받은 방식을 복음 자체와 혼동하는 착각에서 우리를 건진다.</li>
+<li>그 렌즈에는 상대주의의 위험이 잠복하지만, 보쉬의 작업은 옛것의 폐기가 아니라 '변하는 것 아래의 변하지 않는 것'을 분별하는 긴장의 작업이다.</li>
+<li>보쉬는 큉을 따라 2천 년을 여섯 거대 패러다임(묵시→헬라 교부→중세 가톨릭→종교개혁→계몽주의→에큐메니컬)으로 나누되, 신약 자체가 이미 마태·누가·바울의 복수 모델을 담고 있음을 먼저 짚는다 — 선교의 다양성은 처음부터의 조건이다.</li>
+<li>계몽주의 패러다임은 근대 선교의 위대한 성취(번역·의료·교육)와 짙은 그늘(문명화 사명·식민주의 결탁·경영학적 선교)을 함께 남겼다. 데이나 로버트의 "실패한 비전과 성취된 꿈"이 그 결산이며, 보쉬의 "약함의 그릇"이 그 교정이다.</li>
+<li>20세기의 대전환은 에딘버러 1910 → 빌링겐 1952(미씨오 데이) → 로잔 1974(복음주의 재정렬)의 연쇄로, 계몽주의 패러다임을 무너뜨리고 에큐메니컬 패러다임을 세웠다.</li>
+<li>한국 교회의 과제는 파송 세계 2위라는 '규모'의 성취를 '생태계'로 전환하는 것이며, "확장했다"는 서사 자체가 크리스텐덤 패러다임의 잔영임을 자각하는 데서 갱신이 시작된다.</li>
+<li>전환기의 지혜는 보쉬의 '창조적 긴장'이다 — 위기는 위험인 동시에 기회이고, 선교는 세상을 바꾸기 전에 먼저 교회 자신을 relearn시킨다(베드로의 편견이 고넬료보다 먼저 무너졌다).</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>패러다임 사고가 상대주의로 미끄러지지 않으려면, '불변의 복음'과 '가변의 방법'을 가르는 경계는 실제 사역 현장에서 누가 어떤 기준으로 확정하는가?</li>
+<li>에큐메니컬/글로벌 교회 패러다임이 '떠오르는(emerging)' 것이라면, 그것은 이미 정착한 패러다임인가 아니면 여전히 형성 중인 과도기인가 — 그리고 다음 패러다임의 씨앗은 어디서 자라고 있는가?</li>
+<li>서구가 정초한 패러다임 담론(쿤·큉·보쉬)의 틀로 비서구 주도의 선교를 읽는 것 자체가 또 하나의 서구 중심성은 아닌가?</li>
+<li>한국 교회가 '규모에서 생태계로' 전환하면서도 22,000명의 파송 헌신을 약화시키지 않을 구체적 경로는 무엇인가?</li>
+<li>계몽주의 패러다임의 과오(문명화·식민성)를 반성하는 오늘의 선교가, 반작용으로 선교의 명시적 의도(missions)마저 잃어버리지 않으려면 무엇을 붙들어야 하는가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%ED%95%99/">선교학</a> — 선교를 연구하는 학문 분과의 역사와 이론 지도(패러다임 전환을 이 페이지에 위임)</li>
+<li><a class="wl" href="../../t/%EB%AF%B8%EC%94%A8%EC%98%A4%EB%8D%B0%EC%9D%B4/">미씨오데이</a> — 빌링겐 1952에서 시작된 '하나님의 선교' 개념의 신학사(20세기 대전환의 신학적 엔진)</li>
+<li><a class="wl" href="../../t/%EB%8B%A4%EC%A4%91%EC%8B%AC%EC%A0%81%EC%84%A0%EA%B5%90/">다중심적선교</a> — 오늘의 전환(남반구 이동·polycentric)의 구조와 통계</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> — 에큐메니컬 패러다임 요소들의 조직적 전개</li>
+<li><a class="wl" href="../../t/%ED%86%B5%EC%A0%84%EC%A0%81%EC%84%A0%EA%B5%90/">통전적선교</a> — 에큐메니컬 패러다임의 핵심 내용(전도와 사회적 책임의 통합)</li>
+<li><a class="wl" href="../../t/%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%85%90%EB%8D%A4/">크리스텐덤</a> — 계몽주의·중세 패러다임이 전제한 기독교 지배 체제</li>
+<li><span class="wl-dead" title="위키 내부 링크">데이비드보쉬</span> — 패러다임 전환론의 정초자, 여섯 패러다임과 열세 요소</li>
+<li><span class="wl-dead" title="위키 내부 링크">앤드류월스</span> — 서구→비서구 무게중심 이동의 역사적 분석(3시프트)</li>
+<li><span class="wl-dead" title="위키 내부 링크">임태순</span> — 보쉬·월스의 틀을 21세기 세계 기독교와 한국 선교에 적용</li>
+<li><span class="wl-dead" title="위키 내부 링크">로잔운동</span> — 복음주의 재정렬(1974)에서 다중심 선교(2024)까지의 국제 플랫폼</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">데이비드보쉬</span> / 『변화하는 선교』(<em>Transforming Mission</em>)</td>
+<td>위키·원저작</td>
+<td>여섯 거대 패러다임, 신약의 복수 모델, 에큐메니컬 패러다임 13요소, "약함의 그릇"</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EB%B3%80%ED%99%94%ED%95%98%EB%8A%94%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90%EC%99%80%EC%84%A0%EA%B5%90_%EC%9E%84%ED%83%9C%EC%88%9C/">변화하는세계기독교와선교_임태순</a></td>
+<td>북노트·강의(임태순)</td>
+<td>선교 목적의 역사적 이동, 크리스텐덤 실패, 경영학적 선교 쇠퇴, 데이나 로버트 "실패한 비전과 성취된 꿈", 한국 선교 서사 비판</td>
+</tr>
+<tr>
+<td>「선교의 새로운 패러다임」(전동주)</td>
+<td>강의(2016)</td>
+<td>콘스탄틴 밀라노칙령(313) 기점의 크리스텐덤 전환, 제국주의→현지 중심, 항공모함→전투함, From everywhere to everywhere</td>
+</tr>
+<tr>
+<td>「변화하는 세계, 변화하지 않는 복음」(이용범)</td>
+<td>강의(2016)</td>
+<td>불변/가변 축의 표어, Old→New Paradigm 대조</td>
+</tr>
+<tr>
+<td>「선교 동향을 통해, 선교를 보다」(김정민)</td>
+<td>강의(2024)</td>
+<td>앤드류 월스의 3시프트(유럽→비서구, 일방향→다방향, 전도→통전)</td>
+</tr>
+<tr>
+<td>「선교 패러다임의 구조적 전환」(멘토링)</td>
+<td>강의안</td>
+<td>2050년 이주민 시대, 일상이 타문화 선교의 최전선</td>
+</tr>
+<tr>
+<td>「코로나시대 패러다임 전환」</td>
+<td>강의안</td>
+<td>쿤의 혁명적 전환, 토플러 Learn→Unlearn→Relearn, 세일보트 은유</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EB%AF%B8%EC%94%A8%EC%98%A4%EB%8D%B0%EC%9D%B4/">미씨오데이</a> · <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> · <a class="wl" href="../../t/%EB%8B%A4%EC%A4%91%EC%8B%AC%EC%A0%81%EC%84%A0%EA%B5%90/">다중심적선교</a></td>
+<td>위키(합성)</td>
+<td>20세기 개념사, 에큐메니컬 요소 전개, 남반구 이동 통계의 위임처</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#discipline/선교학</span><span>#domain/선교</span><span>#패러다임전환</span><span>#데이비드보쉬</span><span>#세계기독교</span><span>#크리스텐덤</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

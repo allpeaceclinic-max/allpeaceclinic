@@ -1,0 +1,331 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>칭의론 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:38">교회사</span><span class="date">2026-07-14</span></div>
+  <h1 class="note-title">칭의론</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>칭의(稱義, justification)는 하나님이 죄인을 그 법정에서 "의롭다"고 선언하시는 단번의 행위다. 이 교리의 심장은 한 동사에 있다. 헬라어 디카이오오(δικαιόω)는 사람을 의롭게 <em>만드는</em> 것이 아니라 의롭다고 <em>선언하는</em> 법정 용어이며, 그래서 칭의는 신자 안에 의로움이 실제로 생겨났기 때문이 아니라 그리스도의 의가 신자에게 <strong>전가(imputation)</strong>되었기 때문에 내려지는 판결이다. 권성수 목사가 「은혜의 복음」에서 회중의 언어로 옮긴 그대로, 칭의(디카이오시스, δικαίωσις)는 "의롭게 만드는" 것이 아니라 "의롭다고 선언하는" 천국 법정의 행위다. 상태의 변화가 아니라 신분의 변화 — 이 한 글자의 차이 위에 종교개혁 전체가 서 있고, 뒤에서 볼 가톨릭과의 분기점도 여기서 갈린다.</p>
+<p>칭의는 홀로 서지 않는다. <a class="wl" href="../../t/%EA%B5%AC%EC%9B%90%EB%A1%A0/">구원론</a>이 그리는 구원의 서정에서 칭의는 회심(믿음과 회개) 직후, <a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a> 직전에 놓이는 정거장이며, 그 즉각적 열매는 하나님과의 화평이다(롬 5:1). 이 페이지는 그 한 정거장을 확대해, 칭의가 무엇을 선언하며 무엇에 근거하고 어떻게 받아지는가, 그리고 그 선언이 신자의 삶에서 어떤 힘으로 작동하는가를 따라간다.</p>
+<blockquote>
+<p>이 문서는 기존 <code>이신칭의</code> 페이지를 흡수 통합한 확정판이다. 이신칭의는 칭의론의 핵심 명제(믿음으로 의롭다 하심)에 붙은 다른 이름이므로, 바울신학 안에서의 이신칭의 논의를 이 글의 4·6장으로 옮겨 담았다.</p>
+</blockquote>
+<hr />
+<h2>1. 칭의란 무엇인가 — 만드는 것이 아니라 선언하는 것</h2>
+<p>칭의의 문법은 법정의 문법이다. 판사가 피고를 향해 "무죄"라 선언할 때, 그 말은 피고의 성품을 개조하는 것이 아니라 그의 법적 신분을 확정한다. 칭의도 그렇다. 하나님은 죄인을 도덕적으로 개량하신 뒤 의롭다 하시는 것이 아니라, 먼저 의롭다 선언하시고 그 신분 위에서 거룩하게 빚어 가신다. 권성수 목사의 로마서 8장 강해가 칭의를 "예수를 믿는 순간의 출발점, 법정적 선언, 의롭다"로, 성화를 "그리스도인으로 평생 사는 것, 의롭게 되어 가는 과정, 의롭게"로 나란히 세우는 이유가 여기 있다. 칭의는 <strong>의롭다</strong>(단번의 선언), 성화는 <strong>의롭게</strong>(평생의 과정)다.</p>
+<p>이 선언은 즉시 관계를 바꾼다. "우리가 믿음으로 의롭다 하심을 받았으니 … 하나님과 화평을 누리자"(롬 5:1). 문대원 목사가 로마서 5장을 "반역자에서 아들로"라는 제목으로 설교하며 짚듯, 칭의의 결과는 원수 되었던 자가 화목하게 되는 것, 곧 하나님과의 깨어진 관계가 회복되는 사건이다. 신분이 바뀌면 관계가 바뀐다.</p>
+<p>그런데 여기서 정의로우신 하나님의 딜레마가 드러난다. 죄가 명백히 입증된 자를 무죄로 선언하는 판사는 엉터리 판사다. 권성수 목사가 고린도후서 5장 강해에서 던지는 질문이 정확히 이것이다 — "사형 받을 만한 죄가 입증되었는데 어떻게 무죄 선언을 할 수 있는가?" 칭의가 하나님의 의를 훼손하지 않으려면, 그 선언은 반드시 정당한 근거 위에 서야 한다. 그 근거가 다음 장의 주제다.</p>
+<hr />
+<h2>2. 의의 근거 — 그리스도의 의의 전가</h2>
+<p>하나님이 죄인을 의롭다 하실 수 있는 근거는 죄인 안에 있지 않다. 그것은 전적으로 밖에서, 그리스도에게서 온다. 칭의의 근거는 그리스도의 의가 신자에게 <strong>전가</strong>되고 신자의 죄가 그리스도에게 전가되는 <strong>이중 전가</strong>이며, 그 성경적 심장은 고린도후서 5장 21절이다 — "하나님이 죄를 알지도 못하신 이를 우리를 대신하여 죄로 삼으신 것은 우리로 하여금 그 안에서 하나님의 의가 되게 하려 하심이라." 종교개혁 전통이 이를 <strong>위대한 교환</strong>(the great exchange)이라 불렀다. 나의 죄가 그분의 것이 되고, 그분의 의가 나의 것이 되는 자리바꿈.</p>
+<p>권성수 목사는 이 교환을 은행 용어로 옮긴다. 우리의 죄가 믿는 순간 그리스도께 "구좌이체"되어 십자가에서 말소되고, 그리스도의 완벽한 의가 우리에게 넘어와 우리 것이 된다는 것이다. 고린도후서 강해에서 그는 "죄로 만드셨다"는 표현을 "죄인으로 만드신 것이 아니라 우리 죄를 다 넘기셨다"로 풀며, 이 대속의 성격을 세 겹으로 정리한다 — 그리스도는 우리를 <strong>대신</strong>(on our behalf)하시고, 하나님 백성의 <strong>대표</strong>(as our representative)로 서시며, 무한하신 분(infinite person)이기에 무수한 죄를 처리하신다.</p>
+<p>같은 진리를 옥한흠 목사는 「이보다 좋은 복은 없다」에서 "자리바꿈"이라는 한 단어로 붙든다. "예수님의 자리바꿈이 나를 의인으로, 하나님의 의가 되게 하셨다." 이 자리바꿈이 칭의의 구조 자체다.</p>
+<p><strong>이중 전가 도식</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>나(죄인)</th>
+<th>그리스도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>십자가에서</strong></td>
+<td>내 죄가 →</td>
+<td>← 그분께 전가되어 말소됨</td>
+</tr>
+<tr>
+<td><strong>칭의에서</strong></td>
+<td>← 그분의 의가 전가됨</td>
+<td>의가 → 내게 넘어옴</td>
+</tr>
+<tr>
+<td><strong>결과</strong></td>
+<td>하나님의 의가 됨(고후 5:21)</td>
+<td>우리 죄를 대신 담당하심</td>
+</tr>
+</tbody>
+</table>
+<p>전가의 방향이 이 도식의 전부다. 의는 내 안에서 자라난 것이 아니라 밖에서 넘어온 것이며, 그렇기에 칭의는 나의 진보가 아니라 그리스도의 완성에 근거한다. 권성수 목사가 로마서 4장 25절("예수는 우리가 범죄한 것 때문에 내줌이 되고 또한 우리를 의롭다 하시기 위하여 살아나셨느니라")을 들어 강조하듯, 그리스도의 완벽한 삶은 부활로 확증되었고, 그 검증된 의가 믿는 자에게 넘어온다. 유럽 여행 중 고장 난 롤스로이스를 정비받고도 "기록이 없어 수리비가 없다"는 답을 들었다는 그의 예화처럼, 신자의 죄의 기록 자체가 말소된다. 죄의 근거가 밖에 있으니 의의 근거도 밖에 있다 — 그렇다면 그 밖의 의를 나는 무엇으로 받는가.</p>
+<hr />
+<h2>3. 오직 믿음으로 — 공로가 아니라 빈 손</h2>
+<p>전가된 의를 받는 수단은 믿음이다. 그러나 여기서 결정적인 것은 믿음이 <strong>수단</strong>이지 <strong>공로</strong>가 아니라는 점이다. 믿음은 값을 치르는 손이 아니라 선물을 받는 빈 손이다. 권성수 목사의 표현대로 "믿음으로 받는다. 빈손으로 받는다. 공로가 아니다." 로마서 3장 28절("사람이 의롭다 하심을 얻는 것은 율법의 행위에 있지 않고 믿음으로 되는 줄 우리가 인정하노라")과 갈라디아서 2장 16절("사람이 의롭게 되는 것은 율법의 행위로 말미암음이 아니요 오직 예수 그리스도를 믿음으로 말미암는 줄 아는 고로")이 이 원칙을 못박는다. 믿음이 의를 <em>만드는</em> 것이 아니라, 믿음이 그리스도를 <em>붙잡을</em> 때 그분의 의가 전가된다. 믿음의 세 요소(지식·동의·신뢰)에 대한 상세는 <a class="wl" href="../../t/%EB%AF%BF%EC%9D%8C/">믿음</a>이 맡는다.</p>
+<p>이 발견이 <a class="wl" href="../../t/%EC%A2%85%EA%B5%90%EA%B0%9C%ED%98%81/">종교개혁</a>의 점화점이었다. 로마의 성당 돌계단을 무릎으로 기어올라도 평안을 얻지 못했던 수도사 <span class="wl-dead" title="위키 내부 링크">루터</span>는 로마서 1장 17절의 "하나님의 의"(디카이오쉬네 데우, δικαιοσύνη θεοῦ)에서 속격의 전환을 발견했다 — 하나님이 <strong>요구하시는</strong> 의가 아니라 하나님이 <strong>주시는</strong> 의. 그가 속했던 아우구스티누스 수도회 신학은 의가 인간 안에 분여(imparted)된다고 보았으나, 루터는 이를 전가(imputed)로 다시 읽었다. "복음은 요구가 아니라 선물이다. 주시는 것이다. … 수동적으로 받기만 하면 되는 의다." 이 이른바 탑의 체험(Turmerlebnis)에서 다섯 솔라 중 오직 믿음(sola fide)과 오직 은혜(sola gratia)가 태어났다.</p>
+<p>종교개혁이 이신칭의를 "교회가 서고 넘어지는 조항"(articulus stantis et cadentis ecclesiae)이라 부른 이유가 이것이다. <a class="wl" href="../../t/%EC%A2%85%EA%B5%90%EA%B0%9C%ED%98%81/">종교개혁</a> 페이지가 정리하듯, 인간이 하나님 앞에 내밀 것은 공로가 아니라 빈손뿐이며 구원은 처음부터 끝까지 받는 것이라는 이 고백 위에서 교회는 교회가 되고, 이것이 흔들리면 교회 전체가 흔들린다. 문대원 목사가 에베소서 2장을 강해하며 남긴 한마디가 이 문법을 압축한다 — "노력해야 한다면 선물이 아니다. 노력해야 한다면 상이다. 구원은 선물이다."</p>
+<hr />
+<h2>4. 야고보와 바울 — "행함으로 의롭다"의 자리</h2>
+<p>가장 오래된 반문은 성경 안에서 온다. 바울은 "사람이 의롭다 하심을 얻는 것은 … 믿음으로"(롬 3:28)라 하는데, 야고보는 "사람이 행함으로 의롭다 하심을 받고 믿음으로만은 아니니라"(약 2:24)라 한다. 두 사도가 같은 동사(디카이오오)를 정반대로 쓰는 것처럼 보인다.</p>
+<p>볼트의 자료는 이 긴장을 대립이 아니라 초점의 차이로 읽는다. 같은 단어가 다른 질문에 답하고 있다는 것이다. 바울은 죄인이 의를 <strong>처음 받아들이는 순간</strong>(칭의의 근거)에 초점을 두고, 야고보는 그 의로운 신분이 삶에서 <strong>입증되는 방식</strong>(칭의의 증거)에 초점을 둔다. 권성수 목사가 김세윤 교수의 칭의관을 평하며 정리한 대로, "믿음으로 의롭다 하심"(롬 5:1)은 법정의 선언이고 "행함으로 의롭다 하심"(약 2:24)은 생활 속의 입증이며, "로마서는 앞부분이고 야고보서는 뒷부분"이라 조화된다. 칭의의 관점에서 이 화해의 요점은 분명하다 — 행위는 칭의의 <strong>원인</strong>이 아니라 칭의의 <strong>열매이자 증거</strong>다. <a class="wl" href="../../t/%EA%B5%AC%EC%9B%90%EB%A1%A0/">구원론</a>이 이 논의를 서정 전체의 틀에서 상술하므로, 여기서는 칭의의 근거와 증거를 혼동하지 않는다는 원칙만 붙든다. 그런데 바로 이 "믿음과 행위의 자리"야말로 교회사에서 칭의 논쟁이 갈라져 온 단층선이었다.</p>
+<hr />
+<h2>5. ⚖️ 가톨릭과의 차이와 대화</h2>
+<p>첫 번째 단층은 종교개혁과 로마 가톨릭 사이에 있다. 쟁점은 결국 하나의 전치사로 수렴한다 — 의는 인간 안에 <em>주입</em>되는가(의화), 아니면 인간에게 <em>전가</em>되는가(칭의).</p>
+<p>트리엔트 공의회(1545~63)로 정식화된 가톨릭의 <strong>의화</strong>(義化, justification) 이해는, 의가 세례와 성례와 협력하는 선행을 통해 신자 안에 실제로 형성되는 <strong>내재적 의</strong>(inherent righteousness)라고 본다. 개신교의 <strong>칭의</strong>는 그리스도의 의가 법정적으로 돌려지는 <strong>전가된 의</strong>(imputed righteousness)다. 권성수 목사가 2014년 교황 방한 정국의 설교에서 두 전통을 다섯 쟁점(성경관·구원관·교황권·마리아·연옥)으로 대비하며 요약한 핵심이 바로 "내재적 의(inherent righteousness) → 전가된 의(imputed righteousness)"의 대비다. 그의 진단은 날카롭다 — "핵심은 우리의 의냐 하나님의 의냐이다. 가톨릭은 여기에 자기의 선행을 더한다." 개신교는 선을 행하기 위해 구원받는 것이지, 구원받기 위해 선을 행하는 것이 아니다(Saved not by works, but for works).</p>
+<p><strong>개신교 · 가톨릭 · JDDJ 비교</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>개신교(전가된 의)</th>
+<th>가톨릭(의화·내재적 의)</th>
+<th>JDDJ(1999)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>의의 성격</td>
+<td>밖에서 법정적으로 돌려짐</td>
+<td>안에서 실제로 형성됨</td>
+<td>은혜의 선행성은 공동 고백</td>
+</tr>
+<tr>
+<td>믿음과 행위</td>
+<td>오직 믿음, 행위는 열매</td>
+<td>믿음 + 성례 + 선행</td>
+<td>협력의 언어를 조율 시도</td>
+</tr>
+<tr>
+<td>확신의 근거</td>
+<td>그리스도의 완성된 의</td>
+<td>은혜로 형성되는 실제 성결</td>
+<td>남은 차이는 유예</td>
+</tr>
+</tbody>
+</table>
+<p>그러나 볼트의 강단은 정죄의 자리를 피한다. 권성수 목사의 같은 설교는 "가톨릭 안에도 구원받은 신자가 있고, 반대로 개신교 안에도 이단과 오류가 있다"고 양방향으로 말한다. 두 전통이 지키려는 관심도 다르게 읽을 수 있다 — 개신교가 확신의 근거(전가)를 지키려 한다면, 가톨릭의 관심은 실제 성결이며, 개신교는 그 정당한 관심을 성화론으로 끌어안아야 한다는 과제가 남는다. 1999년 루터교세계연맹과 로마 가톨릭이 서명한 「칭의 교리에 관한 공동선언」(JDDJ)은 은혜의 선행성에 대한 상당한 합의를 이뤄냈으나, <a class="wl" href="../../t/%EC%A2%85%EA%B5%90%EA%B0%9C%ED%98%81/">종교개혁</a> 페이지가 미해결 질문으로 남겨 두었듯 "16세기의 쟁점이 여전히 교회를 갈라놓는 본질인가, 아니면 화해 가능한 강조점의 차이인가"는 이 볼트 안에서 아직 답을 얻지 못했다. (JDDJ의 조문 자체에 대한 상세 분석은 볼트에 미개발 상태다.)</p>
+<hr />
+<h2>6. NPP가 칭의에 던진 질문 — 구원론인가 교회론인가</h2>
+<p>두 번째 단층은 20세기 후반의 새 관점(New Perspective on Paul)이다. 이 흐름은 칭의를 향해 근본 질문을 던졌다 — 칭의는 "어떻게 구원에 들어가는가"라는 <strong>구원론</strong>의 문제인가, 아니면 "누가 하나님 백성에 속해 있는가"라는 <strong>교회론</strong>의 문제인가?</p>
+<p>이 질문의 배경에는 이신칭의의 원래 정황이 있다. 흡수 통합한 옛 이신칭의 논의가 짚었듯, 이신칭의는 처음부터 추상적 교리로 태어난 것이 아니라 "유대인 사이에서 핍박받는 이방인"이 어떻게 차별 없이 하나님 백성으로 받아들여지는가라는 구체적 물음에 대한 응답으로 기능했다. 차별 없이 주어지는 그리스도의 의 — 그것이 이신칭의의 핵심이라는 것이다. 에드 샌더스의 언약적 율법주의에서 제임스 던의 '경계표지' 해석을 거쳐 톰 라이트의 언약 공동체 판결론으로 이어진 새 관점은, 칭의의 축을 하나님과 개인 사이의 <strong>수직</strong>(의의 전가)에서 유대인과 이방인의 <strong>수평</strong>(한 언약 백성의 선언)으로 옮겼다.</p>
+<p>볼트의 칭의 변증은 이를 단순 정죄하지 않되 분명한 우려를 표한다. 권성수 목사의 반론은 한 문장으로 압축된다 — 칭의의 믿음을 수동적인 의의 전가가 아니라 "언약에 대한 능동적 신실성"으로 재규정하면, 결국 인간의 행위가 칭의 안으로 슬그머니 들어오고 개신교는 자신이 떠나온 자리로 되돌아간다는 것이다. 그가 붙드는 본문은 다시 고린도후서 5장 21절, 곧 의의 전가다. 다만 볼트가 수렴하는 곳은 양자택일이 아니다 — 칭의의 수평적 차원(유대인과 이방인의 동등)은 로마서 본문 자체의 요구이되, 그것이 성립하려면 수직적 차원(하나님 앞에서의 전가)이 먼저 있어야 한다. <strong>새 관점 논쟁의 상세 — 세 학자의 입장, 전통 진영의 반증 문헌, 피스티스 크리스투 논쟁 — 는 <a class="wl" href="../../t/%EB%B0%94%EC%9A%B8%EC%8B%A0%ED%95%99/">바울신학</a>이 상세히 보유하므로 그리로 위임한다.</strong> 이 페이지가 붙드는 것은 하나다. 새 관점이 던진 질문은 칭의를 성화와 뒤섞지 않으면서도 그 공동체적 지평을 잃지 않는 균형을 요구했다는 것.</p>
+<p>같은 질문을 이 볼트의 자기 사료가 다른 각도에서 받는다. MBTS 신약개론II 리서치페이퍼 「다원주의 사회에서의 복음」(이상협 본인 작성)은 니제이 굽타의 <strong>바울신학 4관점</strong> 틀 — 이신칭의·구원역사·묵시적 관점·그리스도에 참여함 — 을 빌려, 이신칭의의 원래 수신자를 "유대인 사이에서 핍박받는 이방인"으로 놓고 그 핵심 기능을 <strong>차별 없이 주어지는 그리스도의 의</strong>로 읽는다. 굽타의 경고는 새 관점 논쟁의 목회적 번역처럼 들린다 — 이 관점만 단독으로 취하면 신앙이 개인화되고 행동이 결여된 이해로 축소될 위험이 있다는 것. 그래서 페이퍼의 결론은 "선택적 취사가 아니라 통합의 해석"이다. 칭의는 나머지 세 관점과 함께 붙잡을 때에만 바울 사상의 온전한 이해에 이르고, 바울이 상황에 따라 강조점을 달리했던 방식("여러 사람에게 여러 모양으로")은 다원주의 시대에 칭의를 말하는 자원이 된다 — 이신칭의 하나를 절대화하지 않으면서 그 상황적 기능(이방인 포용)을 살리는 길이다.</p>
+<hr />
+<h2>7. 칭의와 성화의 관계 — 구분되나 분리되지 않는</h2>
+<p>칭의를 둘러싼 모든 논쟁은 결국 한 지점으로 되돌아온다 — 칭의와 성화의 관계다. 권성수 목사의 명제는 간명하다. 둘은 "눈과 코처럼 분리할 수 없으나 구분할 수 있다." 분리하면 신앙이 무너지고, 구분하지 못하면 복음이 흐려진다.</p>
+<p><strong>칭의와 성화의 구분</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>칭의</th>
+<th>성화</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>시제</td>
+<td>단번에 — 순간적</td>
+<td>평생에 걸쳐 — 점진적</td>
+</tr>
+<tr>
+<td>성격</td>
+<td>법정적 선언, 새 지위</td>
+<td>실제적 변화, 새 성품</td>
+</tr>
+<tr>
+<td>근거</td>
+<td>오직 은혜 · 오직 믿음(수동적)</td>
+<td>은혜 100% + 노력 100%(능동적)</td>
+</tr>
+<tr>
+<td>방식</td>
+<td>하나님의 단독사역(monergism)</td>
+<td>하나님과 인간의 협력(synergism)</td>
+</tr>
+<tr>
+<td>질문</td>
+<td>무엇을 근거로 의로운가</td>
+<td>어떻게 자라 가는가</td>
+</tr>
+</tbody>
+</table>
+<p>이 구분이 무너지는 방향은 두 가지다. 하나는 칭의가 성화를 삼켜 버리는 경우 — 값싼 은혜의 문제다. "칭의만 강조하면 값싼 은혜가 된다"(권성수 「첫 사랑, 산 정통」). 의롭다 선언받았으니 어떻게 살든 상관없다는 태도, 곧 반율법주의(antinomianism)로 기운다. 다른 하나는 성화가 칭의를 침식하는 경우 — 공로주의로의 회귀다. 거룩해지려는 노력이 슬며시 칭의의 근거로 끼어들 때, 신앙은 다시 "행위로 의를 확보하려는" 신율법주의로 되돌아간다.</p>
+<p>볼트가 붙드는 순서는 분명하다. 성화는 칭의의 <strong>결과</strong>이지 <strong>원인</strong>이 아니다. 문대원 목사가 존 파이퍼를 인용하며 말하듯 "율법주의는 율법을 지킴으로써 하나님께 용납받는다는 확신"인데, 복음의 순서는 정반대다 — "용납을 받았기 때문에 지키는 것"이다. 우리는 의롭게 되었기 때문에 거룩해지려 몸부림치는 것이지, 몸부림쳐서 의롭게 되는 것이 아니다. 변화의 내적 역학과 서정 전체의 균형은 <a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a>와 <a class="wl" href="../../t/%EA%B5%AC%EC%9B%90%EB%A1%A0/">구원론</a>이 이어받는다.</p>
+<hr />
+<h2>8. 칭의의 목회적 힘 — 정죄 없음, 그리고 겸손과 담대함</h2>
+<p>칭의는 사변이 아니라 목회다. 그 힘은 로마서 8장 1절의 한 구절에 응축된다 — "그러므로 이제 그리스도 예수 안에 있는 자에게는 결코 정죄함이 없나니"(우덴 카타크리마, οὐδὲν κατάκριμα). 이 선언이 신자의 영구한 신분이 된다.</p>
+<p>첫째 힘은 <strong>확신</strong>이다. 권성수 목사는 여기서 법정적 죄책감과 관계적 죄책감을 구분한다. 지옥 형벌을 받을 법정적 죄책은 믿는 순간 사라졌으나, 자녀로서 짓는 죄는 아버지와의 관계에 그늘을 드리우므로 회개를 부른다. 그래서 사탄의 참소("너의 죄를 보라, 너는 그리스도인이 아니다")는 칭의 자체를 뒤흔들어 절망으로 몰지만, 신령한 근심(고후 7:10)은 도리어 하나님께 가까이 가게 한다. 둘을 가르는 기준은 그 열매다 — 절망인가, 회개인가. "칭의의 무정죄는 성화의 죄로 취소되지 않는다. 법정적 무정죄를 필사적으로 붙잡아야 한다." 그의 로마서 8장 강해가 "확신, 또 확신, 또 확신"으로 끝나는 이유다.</p>
+<blockquote>
+<p>"그리스도 예수 안에 있는 자에게는 결코 정죄함이 없다." — 칭의의 확신은 학설이기 전에 목회적 사활의 문제다.</p>
+</blockquote>
+<p>둘째 힘은 <strong>겸손과 담대함의 동시 성립</strong>이다. 이 둘은 흔히 반대말처럼 보이지만, 칭의 안에서는 한 뿌리에서 나온다. 담대함은 자녀의 당당함이다. 문대원 목사가 로마서 5장을 "반역자에서 아들로"라 설교하며 짚듯, 원수 되었던 자가 아들의 명분을 얻어(갈 4:5) "내 인생의 가치를 증명하지 않아도 되는 자유"를 얻는다. 그러나 같은 설교자가 에베소서 2장에서 경고하듯, 그 담대함은 결코 자기 의의 당당함이 아니다 — "하나님의 거룩하심을 조금이라도 깨닫는다면 당당할 수 없다." 내 의로는 설 수 없다는 것이 겸손이고(빈손), 그리스도의 의로는 흔들리지 않는다는 것이 담대함이다. 자랑이 사라지되(엡 2:9) 확신은 굳는 이 역설이 칭의가 빚는 인격이다.</p>
+<p>셋째로, 한국이라는 <strong>수치 문화</strong>의 자리에서 칭의는 죄책만이 아니라 수치에도 답한다. 서구 신학이 칭의를 주로 죄책(guilt)의 해결로 그려 왔다면, 수치(shame)가 지배하는 문화에서 칭의는 "가치 없음"의 감각을 향한 복음이 된다. 문대원 목사의 표현대로 "하나님의 사랑은 그 대상에 가치를 주는 사랑"이며, 그렇기에 "우리는 우리 인생의 가치를 증명할 필요가 없다." 세상이 외모·학벌·돈으로 자기 가치를 증명하라 요구할 때, 칭의는 그 증명의 짐 자체를 벗긴다. 다만 전가의 법정적 언어를 수치 문화의 언어로 온전히 번역하는 작업은 볼트에서 아직 시작 단계다.</p>
+<hr />
+<h2>핵심 인사이트</h2>
+<ul>
+<li><strong>칭의의 심장은 한 동사에 있다.</strong> 의롭게 <em>만드는</em> 것이 아니라 의롭다 <em>선언하는</em> 것 — 디카이오오의 이 법정적 성격이 개신교(전가)와 가톨릭(의화)을 가르고, 상태의 변화와 신분의 변화를 가른다.</li>
+<li><strong>전가는 이중적이다.</strong> 내 죄가 그리스도께, 그분의 의가 내게. 고린도후서 5장 21절의 "위대한 교환"이 칭의의 근거이며, 의는 안에서 자란 것이 아니라 밖에서 넘어온 것이다.</li>
+<li><strong>믿음은 공로가 아니라 빈 손이다.</strong> 그래서 오직 믿음(sola fide)이 "교회가 서고 넘어지는 조항"으로 불렸다 — 인간이 내밀 것은 공로가 아니라 빈손뿐이다.</li>
+<li><strong>야고보와 바울은 다른 질문에 답한다.</strong> 바울은 의를 처음 받아들이는 순간을, 야고보는 그 의가 입증되는 방식을 말한다. 행위는 칭의의 원인이 아니라 열매다.</li>
+<li><strong>칭의와 성화는 분리 불가·구분 가능하다.</strong> 구분이 무너지면 값싼 은혜(칭의가 성화를 삼킴)나 공로주의(성화가 칭의를 침식함)로 기운다. 성화는 칭의의 결과이지 원인이 아니다.</li>
+<li><strong>새 관점은 칭의의 축을 물었다.</strong> 구원론(수직)이냐 교회론(수평)이냐 — 볼트는 수직을 우선하되 수평을 배제하지 않으며, 상세는 바울신학에 위임한다.</li>
+<li><strong>칭의는 겸손과 담대함을 동시에 낳는다.</strong> 내 의로는 설 수 없기에 겸손하고, 그리스도의 의로는 흔들리지 않기에 담대하다. 이 역설이 확신의 목회적 힘이다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>열매 없는 믿음을 "가짜이거나 중병"이라 진단할 때, 그 판별이 새로운 불안을 낳지 않으려면 칭의의 확신과 성화의 요청을 어떻게 함께 설교해야 하는가. (값싼 은혜 경계와 확신의 균형)</li>
+<li>「칭의 교리에 관한 공동선언」(1999) 이후, 16세기의 쟁점은 여전히 교회를 갈라놓는 본질인가, 아니면 화해 가능한 강조점의 차이인가. JDDJ 조문 자체에 대한 볼트의 분석은 미개발 상태다.</li>
+<li>수치(shame) 문화에서 법정적·죄책 중심의 칭의 언어를 어떻게 번역할 것인가. 전가가 "가치 없음"의 감각을 다루는 방식은 볼트에서 아직 탐구되지 않았다.</li>
+<li>야고보서와 최후 심판의 '미래적 칭의' 언어를, 현재의 구원의 확신을 약화시키지 않으면서 어떻게 소화할 것인가. (구원론·바울신학에서 이어받은 질문)</li>
+<li>이신칭의를 "이방인 포용을 위한 상황적 논증"으로 읽는 해석과 바울신학의 보편적·핵심적 교리로 읽는 해석 사이의 긴장은 어떻게 함께 붙들리는가. (구 이신칭의 페이지에서 이관)</li>
+</ul>
+<h2>교차 참조</h2>
+<blockquote>
+<p>이 페이지는 기존 <code>이신칭의</code> 페이지를 흡수 통합했다. 이신칭의는 칭의론의 핵심 명제이므로, 바울신학 4관점 안에서의 이신칭의 논의(이방인 포용의 상황적 기능)를 4·6장에 반영했고, 이신칭의는 이 페이지로의 리다이렉트 스텁으로 전환된다.</p>
+</blockquote>
+<ul>
+<li><a class="wl" href="../../t/%EA%B5%AC%EC%9B%90%EB%A1%A0/">구원론</a> — 구원의 서정 전체 안에서 칭의의 위치, 칭의–성화–영화의 세 시제, 삼중 칭의 논쟁의 상세.</li>
+<li><a class="wl" href="../../t/%EB%B0%94%EC%9A%B8%EC%8B%A0%ED%95%99/">바울신학</a> — 새 관점 논쟁의 상세(샌더스·던·라이트, 반증 문헌, 수직/수평의 축), 이신칭의의 바울신학적 자리.</li>
+<li><a class="wl" href="../../t/%EC%A2%85%EA%B5%90%EA%B0%9C%ED%98%81/">종교개혁</a> — 루터의 탑의 체험과 95개조, 다섯 솔라, JDDJ를 둘러싼 역사적 맥락.</li>
+<li><a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a> — 값없되 값비싼 은혜의 문법, 이중 전가와 비상실성의 은혜론적 상술.</li>
+<li><a class="wl" href="../../t/%EC%9C%A8%EB%B2%95%EA%B3%BC%EB%B3%B5%EC%9D%8C/">율법과복음</a> — '율법의 행위' 해석과 루터파의 "이신칭의, 율법과 복음의 구분" 표지.</li>
+<li><a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a> — 칭의의 결과로서 성화의 내적 역학, 반율법주의와 신율법주의의 경계.</li>
+<li><a class="wl" href="../../t/%EC%86%8D%EC%A3%84%EB%A1%A0/">속죄론</a> — 전가의 근거가 되는 십자가 대속, 형벌 대속과 위대한 교환.</li>
+<li><a class="wl" href="../../t/%EB%AF%BF%EC%9D%8C/">믿음</a> — 칭의의 수단으로서 믿음의 세 요소(지식·동의·신뢰).</li>
+<li><a class="wl" href="../../t/%EB%B3%B5%EC%9D%8C/">복음</a> — "요구가 아니라 선물"로서 복음의 문법.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>권성수 「은혜의 복음」(롬 1:16-17)</td>
+<td>설교</td>
+<td>요구 아닌 선물로서의 의, 이중 전가(구좌이체), 빈손, 칭의의 비상실성</td>
+</tr>
+<tr>
+<td>권성수 「무정죄가 성화가 되는 과정」(롬 8:1-2)</td>
+<td>설교</td>
+<td>칭의–성화 구분, 법정적/관계적 죄책, 사탄의 참소, 새관점·김세윤 비판</td>
+</tr>
+<tr>
+<td>권성수 「화해의 대사」(고후 5:17-21)</td>
+<td>설교</td>
+<td>위대한 교환, 대신·대표·무한, 무죄한 그리스도가 죄가 되심</td>
+</tr>
+<tr>
+<td>권성수 「카톨릭 어떻게 볼 것인가」(마 16)</td>
+<td>설교</td>
+<td>내재적 의 vs 전가된 의, 5쟁점, 양방향 균형</td>
+</tr>
+<tr>
+<td>문대원 「반역자에서 아들로」(롬 5:6-11)</td>
+<td>설교</td>
+<td>화목, 자녀의 담대함, 사탄의 참소와 성령의 깨닫게 하심</td>
+</tr>
+<tr>
+<td>문대원 「당당함의 문제」(엡 2:4-9)</td>
+<td>설교</td>
+<td>은혜/공의 원리, 자기 의, 겸손과 담대함, 선물로서의 구원</td>
+</tr>
+<tr>
+<td>옥한흠 「이보다 좋은 복은 없다」</td>
+<td>책(독후)</td>
+<td>자리바꿈, 예수님의 보증, "나의 어떠함이 문제 되지 않는다"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">_paper_다원주의사회에서의복음_바울신학</span> (이상협)</td>
+<td>리서치페이퍼</td>
+<td>니제이 굽타 4관점 틀, 이신칭의의 원래 수신자(핍박받는 이방인), 단독 절대화의 개인화 위험, 통합의 해석 — 구 <code>이신칭의</code> 페이지에서 이관</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EA%B5%AC%EC%9B%90%EB%A1%A0/">구원론</a> · <a class="wl" href="../../t/%EB%B0%94%EC%9A%B8%EC%8B%A0%ED%95%99/">바울신학</a> · <a class="wl" href="../../t/%EC%A2%85%EA%B5%90%EA%B0%9C%ED%98%81/">종교개혁</a> · <a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a></td>
+<td>위키(위임)</td>
+<td>서정·새관점·종교개혁사·은혜론의 상세</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#신학</span><span>#조직신학</span><span>#구원론</span><span>#종교개혁</span><span>#이신칭의</span><span>#은혜</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

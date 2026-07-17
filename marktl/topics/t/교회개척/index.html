@@ -1,0 +1,390 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>교회개척 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:140">목회·실천</span><span class="date">2026-07-10</span></div>
+  <h1 class="note-title">교회개척</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>교회개척은 건물을 세우는 일이 아니다. 이용범 선교사는 알바니아 현장에서 이 점을 단호하게 선언한다: "건물을 세우는 것이 교회 개척은 아니다. 사람을 세우는 것이다. 개척자를 세우는 것이다. 그들이 그들의 교회를 개척하는 것이다."<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> 이 정의가 함축하는 바는 깊다. 교회개척의 단위는 벽돌이 아니라 사람이며, 방향은 외부에서 내부로가 아니라 내부에서 스스로 일어나는 것이다. 정성현 선교사는 이를 비유로 풀었다: "화분을 심을 것이 아니라 씨앗을 그 토양에 심어야 한다."<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
+<p>그러나 '사람을 세우는 것'이라는 정의만으로는 교회개척의 신학적 위치가 드러나지 않는다. 교회개척은 왜 필요한가? 1952년 빌링겐 선교대회에서 확립된 Missio Dei 개념은 이 질문의 출발점을 뒤집었다. 선교는 교회가 하는 일이 아니라 하나님이 하시는 일이며, 교회는 그 선교 안에 참여하도록 부름받은 존재다<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>. 교회개척이 필요한 이유는 조직 확장이 아니라, 하나님의 선교가 구체적인 공동체를 통해 드러나기 때문이다.</p>
+<p>이 토픽은 이 볼트에 축적된 설교·강의·선교보고·독서노트를 관통하는 교회개척의 신학과 실천을 아홉 개 축으로 정리한다. 어떤 토대 위에 서야 하는가, 무엇을 세우는가, 어떻게 세우는가, 누가 세우는가, 그리고 언제 손을 놓는가.</p>
+<hr />
+<h2>① 선교가 있기에 교회가 있다 — 신학적 토대</h2>
+<p>교회개척의 신학적 정당성은 어디에 놓이는가? 이 질문에 대한 대답은 크게 두 갈래로 나뉜다. 존 스토트는 교회 중심적 선교를 주장한다: 선교는 교회에 위임된 사역이며, 십자가·부활·죄사함이 복음의 핵심이다. 크리스토퍼 라이트는 미씨오 데이를 강조한다: 선교는 하나님의 것이며, 피조세계 전체의 회복이 궁극 목표다<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>. 이 분기점은 추상적 논쟁이 아니다. 스토트의 길을 걸으면 교회개척이 선교의 핵심이 되고, 라이트의 길을 걸으면 교회개척은 하나님의 더 큰 사역의 한 부분이 된다.</p>
+<p>두 입장 모두 교회개척의 필요성 자체를 부정하지 않는다. 차이는 교회개척이 최종 목적지인가, 아니면 더 큰 회복의 통로인가에 있다. 인터서브의 Church Engagement 훈련에서 송기태 간사는 이 긴장을 실용적으로 풀었다: "교회가 있으면 협력(갱신), 없으면 플랜팅(개척)."<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup> 개척과 갱신은 분리된 과업이 아니라 하나의 선교적 스펙트럼 위에 있다.</p>
+<p>뉴비긴은 이 토대를 한 문장으로 요약했다: "교회 자체가 선교적 공동체여야 한다."<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup> 교회가 선교를 '하는' 것(doing mission)이 아니라 선교적으로 '있는' 것(being missional)이라는 전환이다. 이 전환이 없으면 교회개척은 조직 복제에 머물고, 이 전환이 있으면 교회개척은 하나님의 선교가 한 지역에 뿌리내리는 사건이 된다.</p>
+<hr />
+<h2>② 화분이 아니라 씨앗 — 재생산의 원리</h2>
+<p>교회개척의 본질을 가장 날카롭게 드러내는 비유는 '화분과 씨앗'의 대비다. 화분을 옮기면 뿌리는 흙에 닿지 않는다. 겉으로는 교회가 서 있지만 토양과 분리되어 있으므로 스스로 번식하지 못한다. 씨앗을 심으면 보이지 않지만 뿌리가 토양 깊이 들어가고, 때가 되면 열매를 맺어 다시 씨앗을 퍼뜨린다.</p>
+<p>이용범 선교사의 알바니아 사역은 이 원리의 살아 있는 예시다. 김활영에게 훈련받은 이용범이 율리아, 도리, 마리글래스트를 제자로 세우고, 이들이 다시 자기 동족 안에서 교회를 개척한다<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. 정성현 선교사는 이를 "증손녀 교회를 세우는 비전"이라 불렀다: 선교사가 세운 교회(딸)가 다른 교회(손녀)를 낳고, 그 교회가 다시 교회(증손녀)를 낳는 다세대 재생산이야말로 교회개척운동(CPM)의 핵심이다<sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</p>
+<p>닐 콜(Neil Cole)의 유기적 교회(Organic Church) 개념은 이 재생산 원리에 교회론적 언어를 부여한다: 교회는 기관(institution)이 아니라 "부활하신 예수님의 화신(化身)"이며, 유기체처럼 스스로 배가(reproduce)해야 한다<sup id="fnref3:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. 이 볼트의 교회론 토픽에서 인용된 통계가 의미심장하다: "신약성경 전체에서 '교회 장로' 언급은 17번, 교회개척자 언급은 약 1,000번이다."<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup> 초기 교회의 관심은 제도를 세우는 것이 아니라 사람을 세워 보내는 것이었다.</p>
+<hr />
+<h2>③ 어떤 교회를 세울 것인가 — 상황화와 성육신모델</h2>
+<p>"교회를 세울까"라는 질문보다 "어떤 교회를 세울 것인가"가 더 결정적이다. Church Engagement 훈련에서 송기태는 이 전환을 두 가지 축으로 정리한다: 상황화(contextualization)와 총체성(holism)의 벤다이어그램. 상황화 없이 개척하면 서구 교회의 복제품이 되고, 총체성 없이 개척하면 영혼 구원과 사회 참여가 분리된다. 둘의 교집합에서만 진정한 선교적 교회가 탄생한다<sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</p>
+<p>이 훈련에서 가장 경종을 울린 사례는 '케냐 역설'이다: 복음화율 70%가 넘지만 부패 지수는 세계 최악권에 머무른다. 교회가 많다는 것이 곧 복음이 뿌리내렸다는 뜻은 아니다. 상황화 없는 교회는 토양 위에 놓인 화분이고, 총체성 없는 교회는 주일과 월요일이 단절된 교회다.</p>
+<p>이 지점에서 두 모델이 분기한다. 초대 모델(Attractional Model)은 "우리에게 와라"고 말하고, 성육신 모델(Incarnational Model)은 "우리가 너희에게 간다"고 말한다. 지역사회와 교회의 관계를 4단계로 보면 — 고립(isolation) → 초대(invitation) → 참여(engagement) → 거주(incarnation) — 대부분의 교회개척은 '초대' 단계에 머무르지만, 예수님의 방식은 '거주'였다<sup id="fnref3:3"><a class="footnote-ref" href="#fn:3">3</a></sup>. Life As Mission 3단계도 같은 방향을 가리킨다: 삶 vs 선교(Life vs Mission) → 삶을 위한 선교(Life for Mission) → 삶이 곧 선교(Life as Mission).</p>
+<p>토마토 나무의 비유가 이 원리를 시각화한다: 한 나무에 다양한 색과 크기의 열매가 동시에 달려 있듯, 한 교회 안에 전도·양육·봉사·선교가 동시에 자라야 한다. 하나의 열매만 키우면 나무 전체가 균형을 잃는다<sup id="fnref4:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</p>
+<hr />
+<h2>④ 자립의 길 — 3자원칙에서 교회개척운동까지</h2>
+<p>교회개척사에서 가장 오래된 원칙은 헨리 벤(Henry Venn)과 루푸스 앤더슨(Rufus Anderson)의 3자원칙(Three-Self Principle)이다: 자치(self-governing), 자급(self-supporting), 자전(self-propagating). 한국에 이 원칙을 적용한 네비우스(Nevius)는 성경공부·사경회 중심의 자립교회를 지향했다. 이후 홀러(Holler)는 4P로 확장했다: 자치, 자급, 자전, 자신(self-theologizing)<sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup>.</p>
+<p>그러나 원칙과 현실 사이에는 간극이 있다. 「선교지에 어떤 교회를 세울 것인가」의 분석이 날카롭다: 선교지 재산권 문제에서 선교사·현지인·선교단체의 '3자 동상이몽'이 벌어진다. 선교사는 '내가 세운 교회'라 생각하고, 현지인은 '우리 교회'라 생각하고, 선교단체는 '단체 자산'이라 관리한다<sup id="fnref2:8"><a class="footnote-ref" href="#fn:8">8</a></sup>. 이 혼란이 풀리지 않으면 자립은 공허한 구호에 머문다.</p>
+<p>도널드 맥가브란은 자립의 단위를 개인에서 종족(people group)으로 확대했다. 족속운동(People Movement)은 가족-씨족 네트워크를 통해 자발적으로 확산되므로 외부 지원이 줄어도 자생한다<sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup>. 그의 동질집단원리(Homogeneous Unit Principle) — "사람들은 인종·언어·계층의 장벽을 넘지 않고도 기독교인이 될 수 있을 때 더 쉽게 개종한다" — 는 교회개척 전략의 핵심이자 가장 논쟁적인 원리다. 비판자들은 분리 교회를 정당화할 위험과 수적 성장주의를 경계한다<sup id="fnref2:9"><a class="footnote-ref" href="#fn:9">9</a></sup>.</p>
+<p>한수아의 정리에 따르면 선교의 목표는 3층위로 나뉜다: 전도(영혼 구원) → 교회(개척과 성장) → 하나님 나라(사회적 변혁). 선교사의 교회개척이 현지인의 교회개척운동(CPM)으로 전환되는 것이 궁극 목표다<sup id="fnref:10"><a class="footnote-ref" href="#fn:10">10</a></sup>. 그러나 현실의 자원 배분은 이 목표와 정반대다: 교회 재정 중 국내사역 95%, 전통적 선교 4.5%, 개척선교는 고작 0.5%에 불과하다<sup id="fnref2:10"><a class="footnote-ref" href="#fn:10">10</a></sup>.</p>
+<hr />
+<h2>⑤ 흩어지는 교회 — 구심력과 원심력</h2>
+<p>교회에는 두 가지 힘이 동시에 작용한다. 모으는 힘(구심력)과 흩어지게 하는 힘(원심력)이다. Church Engagement 훈련에서 이 긴장은 '유람선과 구조선'의 비유로 설명된다: 유람선은 승객의 안락을 위해 존재하지만 구조선은 물에 빠진 사람을 위해 존재한다. 교회가 유람선이 되면 구심력만 남고, 구조선이 되면 원심력이 작동한다<sup id="fnref5:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</p>
+<p>문대원 목사는 안디옥교회(행 13:1-3)에서 이 원심력의 원형을 발견한다. 성령이 바나바와 사울을 "따로 세우라"(아포리조, ἀφορίζω)고 말씀하실 때, 이 동사는 갈라디아서 1:15에서 바울의 부르심을 묘사하는 것과 같은 어근이다. "선택의 목적은 소유가 아니라 파송이다."<sup id="fnref:11"><a class="footnote-ref" href="#fn:11">11</a></sup> 안디옥교회는 가장 중요한 리더 둘을 자발적으로 내어놓음으로써 성숙한 교회의 표지를 보여주었다.</p>
+<blockquote>
+<p>"성숙한 교회의 표지는 강제당하기 전에 스스로 흩어지는 능력이다."<sup id="fnref4:11"><a class="footnote-ref" href="#fn:11">11</a></sup></p>
+</blockquote>
+<p>여기서 제도(institution)와 운동(movement)의 긴장이 드러난다. 문대원은 경고한다: "안정이 목표가 되면 역동성이 사라진다. 제도화된다."<sup id="fnref2:11"><a class="footnote-ref" href="#fn:11">11</a></sup> 규칙과 절차 안에서만 일하려 하면 젊은 세대가 떠난다. 앨런 허쉬의 APEST 분석은 이 문제를 구조적으로 진단한다: 서구 교회는 목사(S)와 교사(T)만 남기고 사도(A)·선지(P)·전도(E)를 추방했다. APE가 사라진 교회는 구심력만 남은 교회, 즉 유람선이다<sup id="fnref2:7"><a class="footnote-ref" href="#fn:7">7</a></sup>.</p>
+<p>평양 대부흥(1907)은 이 원심력이 역사 속에서 작동한 사례다. 길선주 목사와 장대현교회를 중심으로 사방에 교회가 개척되어 평양은 '동방의 예루살렘'이라 불렸다. 흩어짐은 분산이 아니라 복음의 에너지가 넘쳐흐르는 것이었다<sup id="fnref3:11"><a class="footnote-ref" href="#fn:11">11</a></sup>.</p>
+<hr />
+<h2>⑥ 개척자의 내면 — 정체성이 활동에 선행한다</h2>
+<p>교회개척 담론은 '무엇을' '어떻게'에 집중하는 경향이 있다. 그러나 '누가'의 문제 — 개척자의 내면 — 가 다뤄지지 않으면 전략은 공중에 뜬다.</p>
+<p>이용범 선교사는 2018년 설교에서 바울의 사역을 "복음의 제사장 사역"(ἱερουργοῦντα τὸ εὐαγγέλιον)이라 정의한다. 전도를 통해 회심한 영혼은 하나님께 드려지는 거룩한 제물이며, 선교사는 그 제사를 집전하는 제사장이다<sup id="fnref3:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. 개척자의 정체성이 활동에 선행해야 한다는 것 — 내가 무엇을 하느냐보다 내가 누구인가가 먼저라는 것이 이 선언의 핵심이다.</p>
+<p>문형식 선교사의 이야기는 이 원리의 시간적 차원을 보여준다. 2000년에 선교사 헌신을 했지만 실제 파송까지 20년이 걸렸다. 아일랜드 비자가 거부되고 OM에서 기다리는 훈련을 거쳐 마침내 몰도바로 향했다<sup id="fnref:12"><a class="footnote-ref" href="#fn:12">12</a></sup>. 이 20년은 실패가 아니라 형성(formation)의 시간이었다. 행 16장에서 바울이 아시아와 비두니아로의 문이 막혀 마게도냐로 인도된 것처럼, 막힌 문은 열린 문의 전조였다.</p>
+<p>박진감 선교사의 고백은 더 날것이다: "비교의식, 나는 뭐하고 있지… 동료 선교사로부터 상처도 받았다."<sup id="fnref:13"><a class="footnote-ref" href="#fn:13">13</a></sup> 카자흐스탄 광야에서 그를 무너뜨린 것은 외부의 박해가 아니라 내면의 영적 탈진(burnout)이었다. 그를 일으킨 것은 새로운 전략이 아니라 고린도전서 15:58의 약속이었다: "너희 수고가 헛되지 않다." 교회개척자의 돌봄(member care)이 개척 전략만큼 중요한 이유가 여기에 있다.</p>
+<hr />
+<h2>⑦ 여섯 대륙의 증언</h2>
+<p>이 볼트에 축적된 선교보고는 여섯 나라 여섯 현장을 관통한다. 각 현장은 고유한 도전을 품고 있지만, 관통하는 패턴이 있다.</p>
+<table>
+<thead>
+<tr>
+<th>현장</th>
+<th>선교사</th>
+<th>핵심 도전</th>
+<th>개척 전략</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>알바니아</td>
+<td>이용범</td>
+<td>이슬람 70% + 공산주의 유산</td>
+<td>다세대 제자도, Via Egnatia</td>
+</tr>
+<tr>
+<td>몽골</td>
+<td>권게바</td>
+<td>외형 성장 vs 영적 공동화</td>
+<td>교각(디아스포라) 사역, 자립 양육</td>
+</tr>
+<tr>
+<td>카자흐스탄</td>
+<td>박진감</td>
+<td>무슬림 광야, 텐트메이커</td>
+<td>3축 4기둥 교회론, 기도 색채 분류</td>
+</tr>
+<tr>
+<td>기니비사우</td>
+<td>박재현</td>
+<td>극빈국, 미전도종족 27개</td>
+<td>순차 타깃팅, 필요 기반 접촉점</td>
+</tr>
+<tr>
+<td>몰도바</td>
+<td>문형식</td>
+<td>명목적 기독교 재복음화</td>
+<td>LMT(25+5일 순환), Love Moldova</td>
+</tr>
+<tr>
+<td>우크라이나</td>
+<td>김종홍</td>
+<td>전쟁, 난민, 디아스포라</td>
+<td>BAM, 관문도시, 다음세대 전략</td>
+</tr>
+</tbody>
+</table>
+<p>몽골의 사례가 특히 교훈적이다. 30년간 600여 교회가 세워졌으나 "제자양육이라는 말이 없고, 성경공부가 약하다"는 권게바 선교사의 진단은 냉정하다<sup id="fnref:14"><a class="footnote-ref" href="#fn:14">14</a></sup>. 외형 성장이 곧 깊이를 보장하지 않는다. 라마불교의 현세 기복적 종교성과 빈곤이 결합하면 신앙 동기가 왜곡된다. 해법은 물질 지원이 아니라 "훌륭한 그리스도인 양성"이다.</p>
+<p>반대편 끝에서 김종홍 선교사는 전쟁의 참화 속에서 역설적 카이로스를 발견한다: "삶의 터전을 잃은 250~600만 난민의 마음이 복음에 열린다."<sup id="fnref:15"><a class="footnote-ref" href="#fn:15">15</a></sup> 관문도시(gateway city) 오데사에는 아랍·아프간·아프리카 유학생이 모여든다. 닫힌 이슬람권으로 직접 들어갈 수 없을 때, 디아스포라가 모이는 열린 도시가 교회개척의 전략적 거점이 된다.</p>
+<p>박재현 선교사의 기니비사우 사역은 교회개척의 완결된 사이클을 보여주는 유일한 사례다: 발란타마네족에 교회를 개척하고, 독립(자립)시킨 뒤, 다음 종족(만딩카)으로 이동한다<sup id="fnref:16"><a class="footnote-ref" href="#fn:16">16</a></sup>. 개척 → 자립 → 이양 → 이동. 이 사이클이 반복될 때 CPM이 현장에서 실제로 작동한다.</p>
+<hr />
+<h2>⑧ 이양과 출구전략 — 개척의 완결</h2>
+<p>교회개척에서 가장 어려운 순간은 세우는 순간이 아니라 손을 놓는 순간이다. 한수아의 정리에 따르면 선교사와 현지 교회의 관계는 4단계를 거친다: 개척자(pioneer) → 부모(parent) → 협력자(partner) → 참여자(participant). "부모에서 협력자로 넘어가는 것"이 가장 어렵다<sup id="fnref3:10"><a class="footnote-ref" href="#fn:10">10</a></sup>. 부모는 자녀가 독립하는 것을 머리로는 원하지만 마음으로는 두려워한다.</p>
+<p>「선교지에 어떤 교회를 세울 것인가」는 이양(transfer) 전략의 구체적 함정을 파헤친다. 재산권이 대표적이다. 선교사가 건물을 지어놓고 떠나면 그 건물의 소유권을 둘러싸고 선교사·현지인·선교단체가 각자 다른 기대를 품는다<sup id="fnref3:8"><a class="footnote-ref" href="#fn:8">8</a></sup>. 출구전략이 없는 교회개척은 의존성을 구조화하고, 의존성이 구조화된 교회는 자전(self-propagating)할 수 없다.</p>
+<p>한국교회 해외선교의 압축성장은 이 문제를 증폭시켰다. 짧은 시간에 많은 교회를 세웠지만, 온정주의(paternalism)와 자문화 우월주의가 이양을 가로막는다<sup id="fnref4:8"><a class="footnote-ref" href="#fn:8">8</a></sup>. 교회를 세우는 속도보다 손을 놓는 용기가 더 오래 걸린다.</p>
+<p>송기태 간사가 제시한 책무성(accountability) 삼각 구조 — 선교사, 선교단체(IS agent), 파송교회(Sender) — 는 이양을 시스템으로 만들려는 시도다. 열정만으로는 이양이 이루어지지 않는다. 구조가 열정을 뒷받침해야 한다<sup id="fnref2:5"><a class="footnote-ref" href="#fn:5">5</a></sup>.</p>
+<hr />
+<h2>⑨ 강소교회의 숲 — 규모에서 생태계로</h2>
+<p>교회개척의 성공을 무엇으로 측정할 것인가? 문대원 목사의 답은 분명하다:</p>
+<blockquote>
+<p>"큰 나무가 아니라 숲을 이루는 것… 수평이동을 통한 성장은 진정한 부흥이 아니다."<sup id="fnref2:17"><a class="footnote-ref" href="#fn:17">17</a></sup></p>
+</blockquote>
+<p>'강소교회(Strong Small Church)의 숲'이라는 비전은 부흥을 한 교회의 수적 팽창이 아니라 한 지역의 많은 교회가 함께 일어나는 것으로 재정의한다. 한 나무가 하늘을 가리면 그 아래 풀은 자라지 못한다. 그러나 숲은 크고 작은 나무가 공존하며 생태계를 이룬다.</p>
+<p>다중심적 선교(polycentric mission) 패러다임은 이 비전을 글로벌 차원으로 확장한다. "from the West to the Rest"가 아니라 "from everyone to everywhere." 서구 단일 중심에서 여러 곳에 동시에 존재하는 다중심으로의 전환이다<sup id="fnref:18"><a class="footnote-ref" href="#fn:18">18</a></sup>. 고힌(Goheen)의 4전환은 이 방향을 극단까지 밀고 간다: 교회 개척 → 창조세계의 구속(redemption of creation). 교회개척은 궁극 목표가 아니라 더 큰 하나님 나라 회복의 통로다<sup id="fnref2:18"><a class="footnote-ref" href="#fn:18">18</a></sup>.</p>
+<p>그렇다면 교회개척은 상대화되어야 하는가? 반드시 그런 것은 아니다. 문대원 목사가 이사야 54장을 읽는 방식이 균형을 잡아준다: "장막터를 넓히라"는 건물 확장이 아니라 예배(하나님과의 관계)의 회복이며, "관계의 깊이 이상으로 사역할 수 없고, 예배의 깊이 이상으로 봉사할 수 없다."<sup id="fnref:17"><a class="footnote-ref" href="#fn:17">17</a></sup> 교회개척의 상한선은 전략의 정교함이 아니라 예배의 깊이에 있다. 이사야 53-55장의 연속 읽기가 이를 확인한다: 메시아의 고난(53장) → 장막터 확장(54장) → 만찬(55장). 교회개척의 동력은 인간의 결단이 아니라 메시아의 고난에 있다.</p>
+<hr />
+<h2>핵심 인사이트</h2>
+<ul>
+<li><strong>교회개척은 건물이 아니라 사람을 세우는 것이며, 그 사람이 또 다른 사람을 세우는 재생산(reproduction)이 본질이다.</strong> 화분이 아니라 씨앗을 심어야 한다.</li>
+<li><strong>"어떻게 세울까"보다 "어떤 교회를 세울 것인가"가 더 결정적이다.</strong> 상황화 없는 교회는 토양 위의 화분이고, 총체성 없는 교회는 주일과 월요일이 단절된 교회다.</li>
+<li><strong>교회의 성숙도는 흩어지는 능력으로 측정된다.</strong> 구심력만 남은 교회는 유람선이고, 원심력이 작동하는 교회는 구조선이다.</li>
+<li><strong>교회개척에서 가장 어려운 순간은 세우는 순간이 아니라 손을 놓는 순간이다.</strong> 이양(transfer) 없는 개척은 의존성을 구조화한다.</li>
+<li><strong>개척자의 정체성이 활동에 선행한다.</strong> 무엇을 하느냐보다 누구인가가 먼저이며, 형성(formation)의 시간 — 기다림, 실패, 탈진 — 을 거쳐야 한다.</li>
+<li><strong>교회개척의 성공은 한 교회의 크기가 아니라 강소교회의 숲으로 측정되어야 한다.</strong> 규모에서 생태계로의 전환.</li>
+<li><strong>교회개척의 상한선은 전략의 정교함이 아니라 예배의 깊이에 있다.</strong> 관계의 깊이 이상으로 사역할 수 없다.</li>
+</ul>
+<hr />
+<h2>미해결 질문</h2>
+<ol>
+<li><strong>CPM의 속도와 깊이는 양립 가능한가?</strong> 몽골의 사례(30년간 600교회, 그러나 제자양육 부재)는 급속한 재생산이 자동으로 깊이를 담보하지 않음을 보여준다. '빠른 배가'와 '깊은 뿌리' 사이의 긴장을 어떻게 풀 것인가?</li>
+<li><strong>동질집단원리(HUP)는 분리 교회를 정당화하는가?</strong> 맥가브란의 핵심 전략이 인종·계층의 장벽을 넘는 복음의 보편성과 충돌할 때, 어디에 선을 그어야 하는가?</li>
+<li><strong>선교적 교회(Missional Church)와 교회개척운동(CPM)은 같은 방향을 가리키는가?</strong> 하나는 교회의 존재 양식을, 다른 하나는 교회의 확산 전략을 말하는데, 둘이 합류하는 지점은 어디인가?</li>
+<li><strong>명목적 기독교 지역의 교회개척은 새 교회인가, 갱신인가?</strong> 몰도바에서의 사역은 전도인가 재복음화인가? 기존 교회를 인정하면서 동시에 새 교회를 세우는 것의 신학적 정당성은 무엇인가?</li>
+<li><strong>한국교회의 교회개척 경험은 수출 가능한가?</strong> 압축성장의 강점(동원력·열정)과 약점(성과주의·온정주의)이 동전의 양면일 때, 한국형 교회개척 모델의 보편성은 어디까지인가?</li>
+</ol>
+<hr />
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a> — "선교하는 교회"에서 "선교적 교회"로의 전환, 4유형 매트릭스</li>
+<li><span class="wl-dead" title="위키 내부 링크">Missio Dei</span> — 1952년 빌링겐, "하나님의 선교" 개념의 신학적 토대</li>
+<li><a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%A1%A0/">교회론</a> — APEST, 유기적 교회, "장로 17번 vs 개척자 1,000번"</li>
+<li><a class="wl" href="../../t/%EB%8B%A4%EC%A4%91%EC%8B%AC%EC%A0%81%EC%84%A0%EA%B5%90/">다중심적선교</a> — 크리스텐덤 4한계, "from everyone to everywhere"</li>
+<li><span class="wl-dead" title="위키 내부 링크">제자양육</span> — 재생산의 전제 조건, 증손녀 교회 비전</li>
+<li><a class="wl" href="../../t/%EC%83%81%ED%99%A9%ED%99%94/">상황화</a> — 복음의 번역 가능성, 화분 vs 씨앗</li>
+<li><span class="wl-dead" title="위키 내부 링크">자립</span> — 3자원칙, 네비우스, 의존성 극복</li>
+<li><a class="wl" href="../../t/%EC%B4%9D%EC%B2%B4%EC%A0%81%EC%84%A0%EA%B5%90/">총체적선교</a> — 상황화+총체성 벤다이어그램, 케냐 역설</li>
+<li><a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A0%EA%B5%90%EC%A0%84%EB%9E%B5_%EB%8F%84%EB%84%90%EB%93%9C%EB%A7%A5%EA%B0%80%EB%B8%8C%EB%9E%80/">하나님의선교전략_도널드맥가브란</a> — 족속운동, HUP, 교회 중심 선교</li>
+<li><a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EC%A7%80%EC%97%90%EC%96%B4%EB%96%A4%EA%B5%90%ED%9A%8C%EB%A5%BC%EC%84%B8%EC%9A%B8%EA%B2%83%EC%9D%B8%EA%B0%80/">선교지에어떤교회를세울것인가</a> — 3자원칙, 재산권 문제, 이양 전략</li>
+<li><span class="wl-dead" title="위키 내부 링크">church-engagement</span> — CE 4의미, 성육신모델, Life As Mission, APEST</li>
+<li><span class="wl-dead" title="위키 내부 링크">행13</span> — 안디옥교회 파송, 아포리조, 자발적 흩어짐</li>
+<li><span class="wl-dead" title="위키 내부 링크">롬15</span> — 바울의 일루리곤, pioneer principle, 복음의 제사장 사역</li>
+</ul>
+<hr />
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>이용범, 일루리곤의 회복 / 생명사역 (2015, 2018)</td>
+<td>설교/선교보고</td>
+<td>"사람을 세우는 개척", 재생산, 복음의 제사장 사역</td>
+</tr>
+<tr>
+<td>문대원, 흩어지는 교회 / 네 장막터를 넓히라 (2025)</td>
+<td>설교</td>
+<td>자발적 흩어짐, 아포리조, 강소교회의 숲, 예배의 깊이</td>
+</tr>
+<tr>
+<td>정성현, 우즈베키스탄 교회개척</td>
+<td>인물/선교보고</td>
+<td>CPM 10요소, 유기적 교회, "화분 vs 씨앗"</td>
+</tr>
+<tr>
+<td>송기태, Church Engagement 시즌1-4 / 교회와 함께하는 선교</td>
+<td>강의/이벤트</td>
+<td>Missio Dei, 상황화+총체성, 성육신모델, 개척과 갱신 통합</td>
+</tr>
+<tr>
+<td>도널드 맥가브란, 하나님의 선교전략</td>
+<td>책</td>
+<td>족속운동, HUP, 제자화 vs 완전화</td>
+</tr>
+<tr>
+<td>선교지에 어떤 교회를 세울 것인가 (함선네 세미나)</td>
+<td>책</td>
+<td>3자원칙, 재산권 문제, 이양 전략, 압축성장 비판</td>
+</tr>
+<tr>
+<td>한수아, 세계복음화를 위한 전략 (2015)</td>
+<td>강의</td>
+<td>CPM 3층위, 선교사-교회 관계 4단계, 자원 불평등</td>
+</tr>
+<tr>
+<td>권게바, 몽골 선교사역 현황과 제자양육 (2018)</td>
+<td>강의</td>
+<td>외형 성장 vs 영적 공동화, 의존성 비판</td>
+</tr>
+<tr>
+<td>박진감, 카자흐스탄 광야의 교회개척 (2018)</td>
+<td>선교보고</td>
+<td>텐트메이커, 3축 4기둥 교회론, 영적 탈진</td>
+</tr>
+<tr>
+<td>박재현, 기니비사우 미전도종족 선교 (2016)</td>
+<td>강의/선교보고</td>
+<td>개척→자립→이양→이동 완결 사이클</td>
+</tr>
+<tr>
+<td>문형식, 몰도바 파송 (2019)</td>
+<td>선교보고</td>
+<td>기다림의 영성, LMT 모델, 명목적 기독교 재복음화</td>
+</tr>
+<tr>
+<td>김종홍, 우크라이나 전쟁과 선교 (2022)</td>
+<td>선교보고</td>
+<td>BAM, 관문도시, 재난 속 카이로스, 디아스포라</td>
+</tr>
+<tr>
+<td>MBTS 선교학 4주: 로잔운동</td>
+<td>강의</td>
+<td>스토트 vs 라이트, 교회 중심 vs 미씨오 데이 분기점</td>
+</tr>
+<tr>
+<td>교회론 토픽</td>
+<td>위키토픽</td>
+<td>APEST, 유기적 교회, 선교적 교회</td>
+</tr>
+<tr>
+<td>다중심적 선교 토픽</td>
+<td>위키토픽</td>
+<td>고힌의 4전환, 크리스텐덤 비판, 다중심 패러다임</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>인용·출처</h2>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>이용범, 「일루리곤의 회복」(2015) 및 「일루리곤에서의 생명사역」(2018), 롬 15:14-21 설교.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>정성현, 우즈베키스탄 무슬림 개척사역 보고. Neil Cole, <em>Organic Church</em> 정의 인용.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>송기태, 인터서브 Church Engagement 훈련 시즌1-4 (2022-2023).&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>MBTS 선교학 4주, 「로잔 운동과 복음주의 선교신학」.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>송기태, 「교회와 함께하는 선교」(2023), 인터서브 파트너십 강의.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p>레슬리 뉴비긴(Lesslie Newbigin), 교회론 토픽에서 재인용.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p>교회론 위키토픽, APEST·유기적 교회 섹션. 앨런 허쉬 인용.&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:8">
+<p>「선교지에 어떤 교회를 세울 것인가」, 함선네 세미나 독서노트. 헨리 벤 3자원칙, 홀러 4P, 재산권 분석.&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:8" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:8" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:9">
+<p>도널드 맥가브란, 「하나님의 선교전략」 독서노트. 족속운동, 동질집단원리(HUP).&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:10">
+<p>한수아, 「세계복음화를 위한 전략」(2015), CMF 강의.&#160;<a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:10" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:10" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:11">
+<p>문대원, 「복음을 위해 흩어지는 교회」(2025), 행 13:1-3 설교.&#160;<a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 11 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:11" title="Jump back to footnote 11 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:11" title="Jump back to footnote 11 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:11" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn:12">
+<p>문형식, 「몰도바 파송」(2019), 선교보고.&#160;<a class="footnote-backref" href="#fnref:12" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+<li id="fn:13">
+<p>박진감, 「카자흐스탄 광야의 교회개척」(2018), 선교보고.&#160;<a class="footnote-backref" href="#fnref:13" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+</li>
+<li id="fn:14">
+<p>권게바, 「몽골 선교사역 현황과 제자양육」(2018), 강의.&#160;<a class="footnote-backref" href="#fnref:14" title="Jump back to footnote 14 in the text">&#8617;</a></p>
+</li>
+<li id="fn:15">
+<p>김종홍, 「우크라이나 전쟁과 선교」(2022), 선교보고.&#160;<a class="footnote-backref" href="#fnref:15" title="Jump back to footnote 15 in the text">&#8617;</a></p>
+</li>
+<li id="fn:16">
+<p>박재현, 「기니비사우 미전도종족 선교보고」(2016), 강의.&#160;<a class="footnote-backref" href="#fnref:16" title="Jump back to footnote 16 in the text">&#8617;</a></p>
+</li>
+<li id="fn:17">
+<p>문대원, 「네 장막터를 넓히라」(2025), 사 54:2-3 설교.&#160;<a class="footnote-backref" href="#fnref:17" title="Jump back to footnote 17 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:17" title="Jump back to footnote 17 in the text">&#8617;</a></p>
+</li>
+<li id="fn:18">
+<p>다중심적 선교 위키토픽. 고힌의 4전환.&#160;<a class="footnote-backref" href="#fnref:18" title="Jump back to footnote 18 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:18" title="Jump back to footnote 18 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+</article>
+<div class="tagrow"></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

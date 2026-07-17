@@ -1,0 +1,141 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>존재론적 논증 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:206">변증·철학</span><span class="date">2026-07-03</span></div>
+  <h1 class="note-title">존재론적 논증</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>존재론적 논증(ontological argument)은 하나님의 개념 자체 — "그 이상의 위대함을 상상할 수 없는 존재"라는 정의 — 로부터 순수 논리적 추론만으로 하나님의 실재를 이끌어내는 신 존재 증명 방식이다. 후험적(경험적) 증거에 의존하는 우주론적 논증·목적론적 논증과 달리, 선험적(a priori) 개념 분석만으로 결론에 이른다는 점이 특징이다. 침례신학대학원 변증학(<span class="wl-dead" title="위키 내부 링크">03주_신존재의문제</span>) 3주차 강의는 이 논증을 안셀무스의 두 형태부터 <span class="wl-dead" title="위키 내부 링크">알빈플랜팅가</span>의 가능세계 버전까지 계보적으로 추적한다.</p>
+<h2>1. 안셀무스의 첫째 논증 — 귀류법 구조</h2>
+<p><span class="wl-dead" title="위키 내부 링크">안셀무스</span>의 첫째 논증은 다음 구조를 갖는다: ① 하나님은 "그 이상의 위대함을 상상할 수 없는 존재"로 정의된다 → ② 이해력 속에만 존재하는 것보다 실재로도 존재하는 것이 더 위대하다 → ③ 만일 하나님이 이해력 속에만 존재한다면 가장 위대한 존재가 아니게 되어 정의와 모순된다 → ④ 따라서 하나님은 실재로도 존재해야 한다. 강의는 이 논증에서 <strong>가치론(axiology)</strong>이 핵심 동력이라고 짚는다 — "사랑한다는 말만 하는 것보다 선물을 주고 사랑을 표현하는 것이 더 가치 있다"는 직관이 그 논리적 추동력이라는 것이다.</p>
+<h2>2. 고닐로의 반론과 칸트의 비판</h2>
+<p>중세 수도사 고닐로(Gaunilo)는 "완전한 섬"을 상상할 수 있다고 해서 그 섬이 실재해야 하는 것은 아니라는 패러디로 안셀무스를 반박했다. 강의는 이 반론이 실패한다고 본다 — 섬은 애초에 필연적 존재의 범주에 속하지 않기 때문이다.</p>
+<p>더 무거운 도전은 <span class="wl-dead" title="위키 내부 링크">임마누엘칸트</span>의 비판이다. 칸트는 『순수이성비판』에서 존재가 주어의 진정한 술어(predicate)가 될 수 없다고 주장한다 — "존재는 논리적 술어일 뿐 실재적 술어가 아니다." <span class="wl-dead" title="위키 내부 링크">노먼말콤</span>은 이 지적에 동의하면서도, "희망하는 집이나 자녀"에 존재를 서술어로 붙이는 것은 이상하지만 다른 기술적 맥락에서는 존재를 서술어로 쓰는 것이 전혀 이상하지 않다고 구별한다. 강의는 "속성이 있기 때문에 하나님이 존재하는 것이 아니라, 하나님이 존재하고 그 속성을 알 수 있는 것"이라는 방식으로 이 논쟁을 정리하지만, 말콤 자신도 존재를 서술어로 볼 수 없다는 칸트의 핵심 주장에는 동의하고 있어 방어가 온전히 성공했다고 보기엔 이르다는 것이 강의의 "더 따져볼 지점"이다.</p>
+<h2>3. 안셀무스의 둘째 논증 — 필연성 논증</h2>
+<p>안셀무스의 둘째 형태는 우연성이 아니라 논리적 필연성에 초점을 맞춘다: 하나님은 최대한으로 위대하거나 완전한 존재로 정의됨 → 완전한 존재의 존재는 불가능하거나 필연적이다(우연적일 수 없으므로) → 완전한 존재 개념은 자기모순적이거나 터무니없지 않으므로 불가능하지 않다 → 그러므로 완전한 존재는 필연적이다 → 그러므로 존재한다. 이 논증을 무효화하려면 하나님의 속성들 간의 충돌이나 속성 자체의 비정합성을 입증해야 하는데, 강의는 이것이 "거의 불가능"하다고 평가한다.</p>
+<h2>4. 플란팅가의 가능세계 논증</h2>
+<p><span class="wl-dead" title="위키 내부 링크">알빈플랜팅가</span>는 이 필연성 논증을 양상 논리(modal logic)로 재구성한다: ① 최대한으로 위대한 존재가 존재하는 것은 가능하다 → ② 만일 가능하다면 어떤 가능세계에 존재한다 → ③ 어떤 가능세계에 존재한다면 모든 가능세계에 존재한다(필연적 존재이므로) → ④ 모든 가능세계에 존재한다면 현실세계에도 존재한다. 강의는 이 논증이 "타당하지만 100% 강제력을 갖지는 못한다"고 인정하면서도, 하나님의 존재 가능성을 부인하는 쪽에 입증책임이 더 무겁게 지워진다는 플란팅가의 논점을 강조한다.</p>
+<h2>5. 성경적 근거와의 접속</h2>
+<p>강의는 존재론적 논증을 순수 철학 영역에 가두지 않고, 행17:24-25·요5:26 같은 성경 본문 및 삼위일체·인격성 논증과 연결지어 "존재론적 하나님"이 성경의 하나님과 동일한 정체를 가리키는지를 확인한다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>존재론적 논증은 경험적 증거가 아니라 하나님 개념 자체의 논리적 분석만으로 결론에 이르는 유일한 신 존재 증명 유형이다.</li>
+<li>칸트의 "존재는 술어가 아니다"라는 비판은 여전히 논쟁적이며, 말콤의 재반박도 완전한 해소에는 이르지 못한다.</li>
+<li>플란팅가의 가능세계 버전은 입증책임을 반대 진영으로 넘기는 전략을 취하지만, 이는 "가능성" 전제 자체가 이미 결론을 함축한다는 순환성 비판(고닐로식 섬 논증의 현대판)에 노출된다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>플란팅가식 "가능성 전제"의 순환성 비판에 대한 강의 자체의 응답은 충분히 다뤄지지 않았다.</li>
+<li>안셀무스의 두 논증(귀류법·필연성)이 실제로 서로 다른 논증인지, 아니면 하나의 논증의 두 표현인지에 대한 철학사적 논쟁은 강의에서 다뤄지지 않는다.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%9E%90%EC%97%B0%EC%8B%A0%ED%95%99/">자연신학</a> — 존재론적 논증이 속한 상위 범주</li>
+<li><a class="wl" href="../../t/%EC%8B%A0%EC%A1%B4%EC%9E%AC%EC%A6%9D%EB%AA%85/">신존재증명</a> — 우주론적·목적론적 논증과의 비교 지점</li>
+<li><span class="wl-dead" title="위키 내부 링크">03주_신존재의문제</span> — 이 논증을 계보적으로 다룬 3주차 강의</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">03주_신존재의문제</span></td>
+<td>lecture</td>
+<td>안셀무스 두 논증·칸트 비판·플란팅가 가능세계 논증 전체 정리</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/변증학</span><span>#topic/신존재증명</span><span>#topic/자연신학</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

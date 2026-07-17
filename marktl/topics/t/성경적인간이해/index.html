@@ -1,0 +1,244 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>성경적 인간 이해 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:25">상담·가정</span><span class="date">2026-05-10</span></div>
+  <h1 class="note-title">성경적 인간 이해</h1>
+  
+</header>
+<article class="note">
+<h2>문제 상황에서 시작하기 — 두 가지 케이스</h2>
+<p><strong>상황 A (의대생 PK)</strong>: 섬기는 마음으로 발표를 자원했다가, 아무도 나서지 않는 상황이 반복되자 분노가 쌓임
+<strong>상황 B (약속)</strong>: 친구들 모임에 아내가 반복적으로 늦자 분노가 치밀고 과거의 서운함이 연달아 올라옴</p>
+<p>→ 공통 질문: <strong>무엇이 문제이고, 해답은 무엇인가? 왜 반복되는가?</strong></p>
+<hr />
+<h2>1. 지식 습득의 4가지 경로</h2>
+<table>
+<thead>
+<tr>
+<th>경로</th>
+<th>설명</th>
+<th>한계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>직관</strong></td>
+<td>주관적 확신이 들때까지 움직이지 않음</td>
+<td>주관적</td>
+</tr>
+<tr>
+<td><strong>이성</strong></td>
+<td>논리와 사고</td>
+<td>화합 불가한 견해차 존재</td>
+</tr>
+<tr>
+<td><strong>경험</strong></td>
+<td>특히 어린 시절 경험이 이미지로 남음</td>
+<td>어린 시절 이미지 → 편견 → 잘못된 신념 → 옛 사람 형성 → 재해석 필요</td>
+</tr>
+<tr>
+<td><strong>계시</strong></td>
+<td>성경 + 자연 계시</td>
+<td>양쪽 모두 오류 가능성 존재</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"해답이 무엇인지 모르지만, 성경에 있다는 것만은 확실하다."</p>
+</blockquote>
+<ul>
+<li>자연 계시 목적: 하나님의 존재 인정</li>
+<li>성경 목적: 생명 얻는 길 + 창조주가 주려 하셨던 삶을 살도록</li>
+</ul>
+<hr />
+<h2>2. 세상의 문제 해결 모델 3가지</h2>
+<table>
+<thead>
+<tr>
+<th>모델</th>
+<th>핵심 전제</th>
+<th>접근 방식</th>
+<th>한계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>역동 모델</strong></td>
+<td>내면의 무의식적 과정이 행동을 통제, 뿌리는 과거·어린 시절</td>
+<td>"근원의 재구성" — 숨겨진 뿌리 찾아 치료</td>
+<td>행동 변화 거의 안 다룸, 내담자 의존·전이</td>
+</tr>
+<tr>
+<td><strong>도덕 모델</strong></td>
+<td>혼란이 아닌 고집 — 행동 수정이 답</td>
+<td>지시적 충고 (제이 아담스)</td>
+<td>동기를 거의 살피지 않음</td>
+</tr>
+<tr>
+<td><strong>관계 모델</strong></td>
+<td>불만족한 관계에서 문제 발생 — 고독→상처→방어→고독</td>
+<td>비지시적, 미러링(로저스), 관계 변화를 도구로</td>
+<td>행동·동기 모두 과소평가</td>
+</tr>
+</tbody>
+</table>
+<p>→ 성경적 모델: <strong>역동처럼 내면을 고찰</strong> + <strong>도덕 모델처럼 행동 변화를 지향</strong> + <strong>관계 모델처럼 사랑의 관점으로</strong> 접근</p>
+<hr />
+<h2>3. 이마고 데이 — 하나님의 형상 4가지 특질</h2>
+<blockquote>
+<p>"원본을 복제했다 — 하나님은 전능성·자존성은 주시지 않으셨지만, 그분의 인격적 특질들은 그대로 주셨다." (제임스 패커, 『하나님을 아는 지식』)</p>
+</blockquote>
+<p>하나님이 갖고 있고 인간도 갖고 있는 4가지:</p>
+<table>
+<thead>
+<tr>
+<th>특질</th>
+<th>하나님</th>
+<th>인간</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>깊은 갈망</strong></td>
+<td>우리가 기쁨을 드리기를 갈망</td>
+<td>내면 깊은 곳의 만족을 향한 갈망</td>
+</tr>
+<tr>
+<td><strong>사고·평가</strong></td>
+<td>세계를 생각하고 평가하심 (노아 시대)</td>
+<td>사고하는 존재</td>
+</tr>
+<tr>
+<td><strong>의지·선택</strong></td>
+<td>목표를 정하고 행동을 선택하심</td>
+<td>목표와 행동을 선택할 수 있음</td>
+</tr>
+<tr>
+<td><strong>감정</strong></td>
+<td>나사로의 죽음(슬픔), 성전 장사꾼(분노), 사역(기쁨)</td>
+<td>감정을 의식 속에서 경험</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>감정(불쾌감·기쁨 모두)은 하나님의 신호다 — 억압이 아닌 해석과 반응이 필요</p>
+</blockquote>
+<hr />
+<h2>4. 성경적 변화 모델 — 혼돈을 의뢰의 기회로</h2>
+<p><code>문제·혼돈 발생
+    ↓
+갈망을 점검 (숨은 동기 찾기)
+    ↓
+회개 (메타노이아)
+    ↓
+의뢰·기도
+    ↓
+섬김으로 반응</code></p>
+<p><strong>상황 B 적용</strong>:
+- 인격적 필요 충족(제시간 도착) → 실망 → 숨은 동기(아내가 약속을 잘 지키는 사람이 되길 바람) → 회개 → 섬김("혼자 준비하느라 고생했겠네") → 마음이 풀림 → 즐거운 여행</p>
+<ul>
+<li>어린 시절의 경험은 이미지로 남아 편견과 잘못된 신념을 형성 → <strong>반드시 재해석의 과정이 필요</strong> (<span class="wl-dead" title="위키 내부 링크">윤명숙</span>)</li>
+</ul>
+<hr />
+<h2>5. 핵심 명제</h2>
+<blockquote>
+<p>"인생의 길을 안다는 것은 청사진을 아는 것이 아니다. 하나님을 알고 나를 아는 것이다. 그럴 때 가는 길은 몰라도 상관없다."</p>
+</blockquote>
+<ul>
+<li>변화의 목표: 문제 해결이 아닌 <strong>변화·성장·성숙·성화</strong></li>
+<li>해답은 성경에 있다 — 그러나 양쪽(성경·과학) 모두 오류 가능성을 인정하는 겸손함 필요</li>
+</ul>
+<hr />
+<h2>연결 페이지</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a> — 변화 순환 상세</li>
+<li><a class="wl" href="../../t/%EB%A7%88%EC%9D%8C%EC%9D%98%EA%B1%B4%EA%B0%95/">마음의건강</a> — 감정·내면 치유</li>
+<li><a class="wl" href="../../t/%EB%82%B4%EB%A9%B4%EC%B9%98%EC%9C%A0/">내면치유</a> — 어린 시절 경험 재해석</li>
+<li><a class="wl" href="../../b/%EC%82%AC%EB%9E%8C%EC%9D%80%EC%96%B4%EB%96%BB%EA%B2%8C%EB%B3%80%ED%99%94%EB%90%98%EB%8A%94%EA%B0%80_%EB%A0%88%EC%9D%B8%ED%8A%B8%EB%A6%BD/">사람은어떻게변화되는가_레인트립</a> — 코일리아·프로네마 변화 모델</li>
+</ul>
+</article>
+<div class="tagrow"><span>#성경적인간이해</span><span>#인간론</span><span>#변화</span><span>#상담</span><span>#감정</span><span>#갈망</span><span>#이마고데이</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

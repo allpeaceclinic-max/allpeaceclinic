@@ -1,0 +1,116 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>광야 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:345">영성·제자도</span><span class="date">2026-06-28</span></div>
+  <h1 class="note-title">광야</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>광야(מִדְבָּר <em>midbar</em>)는 이 볼트에서 단순한 지리적 황무지가 아니라 <strong>훈련과 형성의 장소</strong>, 곧 보장이 사라진 자리에서 신앙의 근거가 시험받고 다시 세워지는 무대로 일관되게 다루어진다. 대경누가회(CMF)에서 전해진 네 편의 설교·간증은 모두 출애굽기·신명기의 모세 내러티브를 축으로 삼아, 광야를 인생과 사역의 한 국면을 읽는 해석의 렌즈로 사용한다.</p>
+<p>광야의 첫 번째 얼굴은 <strong>보장 없는 길에서의 동행</strong>이다. 김영미 목사는 출40:38("구름과 불")을 "광야의 네비게이션"으로 풀며, "어떤 기약이나 보장을 할 수 없는 곳이 광야"라고 못박는다. 그러면서도 그 자리에서 40년간 구름과 불이 보였다는 사실에서, 안정감의 근거가 환경의 보장이 아니라 동행하시는 가시적 임재로 옮겨가는 역설을 끌어낸다 — "한번도 가보지 않은 길을, 안정감을 누리면서 가는 것이 우리의 삶이다."</p>
+<p>두 번째 얼굴은 <strong>부르심이 임하는 일상의 자리</strong>다. 한혁준 선교사는 출3장에서 양 떼를 치던 미디안 광야의 모세가 떨기나무 불꽃 앞에서 거룩한 만남으로 돌이켜지고 곧 파송받는 장면을 읽는다. 거룩한 부르심은 성소가 아니라 광야의 노동 한복판에서 시작된다. 유승용 간사 역시 "미디안 광야에서 사라질 사람을 불러 40년을 쓰셨다"는 회고와 함께, "상황이 좋을 때 사명은 오지 않는다 — 부르심은 광야 한복판에서 임한다"고 진단한다.</p>
+<p>세 번째 얼굴은 <strong>강제된 멈춤과 회복</strong>이다. 박종원 선교사의 추방 간증은 20년 중국 사역이 강제로 중단된 자리를 "또 다른 훈련의 여정"으로 재해석한다. "아무것도 하지 말고 보고, 듣고 쉬라"는 권면처럼, 활동이 박탈된 광야의 공백은 사역자 자신이 비로소 다루어지고 치유되는 형성의 자리가 된다. 이렇게 이 볼트에서 광야는 임재·부르심·회복이라는 세 결이 한데 모이는 신학적 교차로다.</p>
+<h2>이 볼트에서 다루는 설교/강의</h2>
+<ul>
+<li><span class="wl-dead" title="위키 내부 링크">2018_김영미_광야의_네비게이션</span> — 김영미 목사: 출40:38 구름과 불을 "광야의 네비게이션"으로 풀어, 보장 없는 광야에서도 동행하시는 임재가 안정감의 근거임을 제시.</li>
+<li><span class="wl-dead" title="위키 내부 링크">2019_박종원_중국_또다른_훈련의_여정</span> — 박종원 선교사: 중국 추방이라는 강제된 멈춤을 광야 경험으로 읽어, 안식·멤버케어·내면 형성의 "또 다른 훈련"으로 재해석.</li>
+<li><span class="wl-dead" title="위키 내부 링크">2021_한혁준_떨기나무_불꽃과_거룩한_땅</span> — 한혁준 선교사: 출3장 미디안 광야의 떨기나무 부르심을 통해, 광야의 일상이 거룩한 만남과 파송의 무대가 됨을 증언.</li>
+<li><span class="wl-dead" title="위키 내부 링크">2024_유승용_모세의_120세_마무리</span> — 유승용 간사: 미디안 광야에서 부름받아 40년 쓰임받은 모세의 마무리에서, "기회 주실 때 충성"과 부르심의 타이밍을 끌어냄.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%9E%84%EC%9E%AC/">하나님의임재</a> — 광야의 안정감은 환경이 아니라 구름·불·떨기나무로 나타난 가시적 임재에 근거한다.</li>
+<li><a class="wl" href="../../t/%EB%B6%80%EB%A5%B4%EC%8B%AC/">부르심</a> — 부르심은 성소가 아니라 광야의 노동과 위태로움 한복판에서 임한다.</li>
+<li><a class="wl" href="../../t/%EA%B3%A0%EB%82%9C%EA%B3%BC%ED%9A%8C%EB%B3%B5/">고난과회복</a> — 추방·트라우마 같은 광야의 멈춤은 회복과 형성의 통로로 재해석된다.</li>
+<li><a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a> — 무능한 자를 광야에서 불러 쓰시는 소명과 그 마무리의 신학.</li>
+</ul>
+<blockquote>
+<p>seed 페이지 — 추후 본격 에세이(정의·번호섹션·핵심인사이트·미해결질문·출처)로 확장 가능.</p>
+</blockquote>
+</article>
+<div class="tagrow"></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

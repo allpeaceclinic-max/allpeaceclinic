@@ -1,0 +1,126 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>기독교 변증학 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:300">신학·사회</span><span class="date">2026-07-03</span></div>
+  <h1 class="note-title">기독교 변증학</h1>
+  
+</header>
+<article class="note">
+<h2>책 개요</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>강의 사용</td>
+<td>MBTS 변증학 (양정모 교수)</td>
+</tr>
+<tr>
+<td>다루는 장</td>
+<td>1~3장 (보조노트로 정리됨)</td>
+</tr>
+<tr>
+<td>핵심 질문</td>
+<td>변증학은 왜 필요하며, 세계관을 어떻게 평가할 것인가?</td>
+</tr>
+</tbody>
+</table>
+<h2>핵심 주장</h2>
+<p>이 책은 변증학을 논증 기술이 아니라 진리에 대한 지적 정직성과 인격적 사랑이 함께 작동해야 하는 신앙의 실천으로 규정한다. 1장은 빅터 프랭클의 통찰("삶으로부터 질문받고 있다")로 문을 열어, 소망과 앎과 행함이 함께 가야 하며 진리가 부재한 소망은 무의미하다고 짚는다. 9·11 테러를 예로 든 상대주의 비판("나에게는 테러리스트, 너에게는 자유투사")은 상대주의가 철학적으로 공허한 슬로건임을 드러내는 사례로 제시된다. 기독교가 마주한 세 가지 도전 — 종교다원주의·이슬람의 득세·악의 문제 — 이 변증학의 필요성을 도출하는 출발점이다.</p>
+<p>2장은 변증학의 성경적 근거를 다진다. 어원 아폴로기아(apologia)는 "변론·해명"을 뜻하며, 근거 본문은 벧전 3:15-16("소망에 관한 이유를 묻는 자에게는 대답할 것을 항상 준비하되")이다. 변증학은 신학에 기초하되 철학적 논증의 형식을 요구하며, 목적은 논쟁의 승리가 아니라 "사랑 안에서 참된 것을 하는"(엡 4:15) 것이다. 예수님 자신이 변증 모델로 제시된다 — 사두개인들의 부활 부정 논증에 출 3:6의 동사 시제를 근거로 응수한 사례, 그리고 <span class="wl-dead" title="위키 내부 링크">CS루이스</span>의 회심 사례. 아테네 아레오바고에서의 바울(행 17장)은 ①피조물에서 창조주로 ②공통점 찾기 ③공감대 찾기 ④믿음을 변론하기라는 4단계 변증 전략의 전형으로 소개된다. 변증가의 영성(겸손·기도)도 강조되며, 회심은 노티티아(지적 동의)를 넘어 피두치아(신뢰)로 완성된다고 구분한다.</p>
+<p>3장은 세계관을 평가하는 방법론이다. 무모순성·배타적 중간·이가·동일성이라는 4가지 논리 법칙을 전제로, 세계관 평가 8가지 기준(설명력·내부적 논리 일관성·정합성·사실적 충분성·실존적 실행가능성·지적문화적 다산성·급진적 임시변통적 재조정의 부재·단순성)을 제시한다. 이어 네 변증 학파 — <a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EC%A3%BC%EC%9D%98/">신앙주의</a>·<a class="wl" href="../../t/%EC%A0%84%EC%A0%9C%EC%A3%BC%EC%9D%98/">전제주의</a>·<a class="wl" href="../../t/%EA%B0%9C%ED%98%81%EC%A3%BC%EC%9D%98%EC%9D%B8%EC%8B%9D%EB%A1%A0/">개혁주의인식론</a>·<a class="wl" href="../../t/%EC%A6%9D%EA%B1%B0%EC%A3%BC%EC%9D%98/">증거주의</a> — 를 비교하며, 특히 <span class="wl-dead" title="위키 내부 링크">알빈플랜팅가</span>의 "보증(warrant)" 개념을 통해 고전적 토대주의(JTB)의 자기 지시적 실패를 극복하려는 시도를 상세히 다룬다.</p>
+<h2>등장 강의</h2>
+<ul>
+<li><span class="wl-dead" title="위키 내부 링크">교재정리_기독교변증학1-3장</span> — 1~3장 전체를 정리한 보조노트. 소망(1장)→성경적 근거와 인격적 태도(2장)→세계관 평가 논리 도구(3장)의 흐름을 다룸.</li>
+<li><span class="wl-dead" title="위키 내부 링크">01주_변증학의문제</span> — 1주차 강의가 이 책의 1~3장을 순서대로 따라가며 변증학의 정의와 세계관 평가 기준을 다룸.</li>
+</ul>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/변증학</span><span>#topic/변증학</span><span>#topic/세계관</span><span>#topic/신앙주의</span><span>#topic/전제주의</span><span>#topic/개혁주의인식론</span><span>#topic/증거주의</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

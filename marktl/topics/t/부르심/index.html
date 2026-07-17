@@ -1,0 +1,257 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>부르심 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:226">조직신학·교리</span><span class="date">2026-07-14</span></div>
+  <h1 class="note-title">부르심</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>부르심(calling)은 하나님이 사람을 자기 자신에게로, 그리고 자기의 목적으로 이끄시는 주도적 행위다. 이 단어의 문법에서 주어는 언제나 하나님이다. 헬라어 칼레오(καλέω, '부르다')와 그 파생어 클레토스(κλητός, '부름받은 자'), 에클레시아(ἐκκλησία, '불러냄을 받은 이들의 모임')가 한 어근에서 나왔다는 사실이 이 점을 압축한다 — 부름받은 자도, 부름받은 자들의 공동체도, 먼저 부르시는 분이 있기에 존재한다. 그러므로 부르심을 다룬다는 것은 무엇보다 "부르시는 하나님"을 먼저 말하는 일이다.</p>
+<p>성경은 부르심의 드라마다. 하나님은 "빛이 있으라"는 말씀으로 없는 것을 불러 존재케 하셨고(창세기 1장), 아브람을 갈대아 우르에서 불러내셨으며(창 12장), 이스라엘을 "내 아들"이라 부르셨고(호 11:1), 예수께서는 갈릴리 어부들에게 "나를 따르라"고 부르셨다(막 1장). 사울은 다메섹 길에서 부름받아 바울이 되었다(행 9장). 이 부름들은 각기 다르지만 하나의 구조를 공유한다 — 인간의 자격이나 준비가 아니라 하나님의 선행하는 은혜가 부름을 시작한다.</p>
+<p>이 글은 "하나님이 부르신다"는 신학적 행위 자체를 다룬다. 부르심의 문법(1절), 개혁신학이 구분하는 일반적 부르심과 효과적 부르심(2절), 그리고 하나님이 우리를 무엇으로 부르시는가 하는 네 층위 — 구원(3절), 거룩(4절), 공동체(5절), 사역과 선교(6절) — 를 지나, 부르심에 대한 응답(7절)과 그 확신·분별(8절)로 맺는다. 직업·진로로서의 소명(vocation), 곧 "어떤 일자리로 부르시는가"의 상세한 지형 — 오스 기니스의 일차·이차 소명 틀, 선교사·전문인 유형, 번성 시스템 — 은 <a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a>에 맡긴다. 장연식의 압축을 빌리면, 이 페이지가 다루는 것은 <strong>"정체성 + 사명 = 부르심"</strong> 등식에서 하나님이 그 정체성과 사명을 부여하시는 신적 행위이고, <a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a>은 그 사명이 구체적 일과 자리로 번역되는 지점이다.</p>
+<h2>1. 부르시는 하나님 — 부르심의 문법</h2>
+<p>부르심의 첫 문장은 인간이 아니라 하나님이 쓰신다. 이것이 성경적 부르심을 자기실현이나 진로 탐색과 구별하는 결정적 지점이다. 오스 기니스는 소명을 이렇게 정의한다.</p>
+<blockquote>
+<p>"하나님이 우리를 너무나 결정적으로 부르셨기에, 그분의 소환과 은혜에 응답하여 우리의 모든 존재, 우리의 모든 행위, 우리의 모든 소유가 헌신적이고 역동적으로 그분을 섬기는 데 투자된다는 진리다."</p>
+</blockquote>
+<p>여기서 강조점은 "결정적으로 부르셨기에"에 있다. 응답(우리의 존재·행위·소유의 투자)은 부르심의 결과이지 원인이 아니다. 부르심은 은혜의 선행성 위에 서 있다. 이정훈과 장연식이 대경누가회 강의에서 반복한 것처럼, 부르심에 응답하려는 동기마저 "소원을 두고 행하게 하시는" 하나님에게서 온다(빌 2:13) — 선교로의 헌신이 인간의 결단처럼 보여도, 그 소원을 심으시는 분은 하나님이다.</p>
+<p>이 선행성은 부르심을 두 방향으로 열어 놓는다. 하나는 창조적 부름이다. 하나님은 이름을 불러 존재를 규정하시는데, 오스 기니스가 정리한 소명의 성경적 요소 가운데 "이름 붙이기 — 현재의 모습과 장래의 모습을 융합"하는 부름이 여기 해당한다. 아브람이 아브라함이 되고 사울이 바울이 되듯, 부르심은 옛 정체성을 새 정체성으로 바꾼다. 다른 하나는 소환적 부름이다. 부르심은 소유주가 자기 것을 부르는 행위이며, 그렇기에 순종을 정당하게 요구할 수 있다. 이 두 방향 — 존재를 새롭게 규정함과 순종을 요구함 — 이 이후 모든 층위의 부르심을 관통한다.</p>
+<h2>2. 두 부르심 — 일반적 부르심과 효과적 부르심</h2>
+<p>개혁신학은 하나의 부르심을 두 겹으로 읽는다. 복음이 선포될 때 모든 사람에게 주어지는 <strong>복음의 부르심(외적·일반적 소명)</strong>과, 그 복음을 듣는 자 안에서 성령이 실제로 믿음을 일으키는 <strong>유효적 소명(내적·효과적 부르심)</strong>이다. MBTS 조직신학 토론에서 정리된 구분은 명료하다 — "복음적 소명은 일반적이고 외적이며 종종 거부당하기도 하지만, 유효적 소명은 특별하고 내적이며 언제나 유효적이다."</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>복음의 부르심 (외적·일반적)</th>
+<th>유효적 부르심 (내적·효과적)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>대상</td>
+<td>복음을 듣는 모든 사람</td>
+<td>하나님이 택하신 자</td>
+</tr>
+<tr>
+<td>주체·수단</td>
+<td>인간의 복음 전파</td>
+<td>성령의 능력 행위</td>
+</tr>
+<tr>
+<td>성격</td>
+<td>초청 (거부 가능)</td>
+<td>창조 (거부 불가)</td>
+</tr>
+<tr>
+<td>결과</td>
+<td>종종 거부됨</td>
+<td>언제나 구원에 이름</td>
+</tr>
+<tr>
+<td>성경</td>
+<td>마 22:14 "청함을 받은 자는 많되"</td>
+<td>딤후 1:9 · 살후 2:13-14</td>
+</tr>
+</tbody>
+</table>
+<p>김효진은 사도행전 9장을 강해하며 이 구분을 목회적으로 풀어낸다. "복음의 부르심이 다 효력이 있는 것은 아니다"라고 그는 말한다 — 같은 복음을 들어도 어떤 이는 반응하고 어떤 이는 지나친다. 사울을 땅에 엎드러뜨린 빛은 "그 누구도 반항할 수 없는 강한 부르심"이었고, 그렇기에 효력이 있었다. 그의 정의는 날카롭다. "만약 부르심이 실패한다면 효력있는 부르심이 아닐 것이다." 이 구분은 냉정한 예정론적 사변으로 흐르기 쉽지만, 그 실천적 무게는 오히려 위로에 있다 — 나를 붙든 부르심이 인간의 설득이 아니라 하나님의 능력이었다면, 그 부르심은 나의 연약함 때문에 무너지지 않는다. 다음 절의 황금 사슬이 바로 이 확신의 근거다.</p>
+<h2>3. 구원으로의 부르심 — 황금 사슬</h2>
+<p>하나님이 우리를 부르시는 가장 근본적인 목적은 구원이다. 이 부르심의 위치를 바울은 로마서 8장 30절에서 하나의 끊어지지 않는 사슬로 그린다.</p>
+<p><code>미리 정하심  →  부르심  →  의롭다 하심  →  영화롭게 하심
+ (예정)        (소명)       (칭의)          (영화)</code></p>
+<p>김효진이 주목하듯 이 사슬의 각 고리는 같은 대상을 붙든다 — "미리 정하신 그들을 또한 부르시고, 부르신 그들을 또한 의롭다 하시고, 의롭다 하신 그들을 또한 영화롭게 하셨느니라." 부르심은 예정과 칭의 사이에 놓여, 영원한 선택을 시간 속의 사건으로 번역하는 자리다. 여기서 "부르심"은 2절의 유효적 부르심을 가리킨다. 사슬의 어느 고리도 빠지지 않기에, 부름받은 자는 반드시 의롭다 하심과 영화에 이른다.</p>
+<p>구원 서정(ordo salutis)에서 이 부르심은 <a class="wl" href="../../t/%EA%B1%B0%EB%93%AD%EB%82%A8/">거듭남</a>(중생)·<a class="wl" href="../../t/%ED%9A%8C%EC%8B%AC/">회심</a>과 긴밀하게 맞물린다. 조직신학 토론이 정리하듯, 유효적 부르심은 "중생으로 시작해서 본성의 변화를 통해 회심으로 이끄는 일련의 과정"이다 — 성령이 새 생명을 주입하시고(중생), 그 새 생명이 복음의 부름에 회개와 믿음으로 반응한다(회심). 김효진은 이 반응의 구조를 "지식 + 시인 + 신뢰 = 회심"으로 요약한다. 부르심은 이렇게 죽은 자를 깨워 믿게 하는 하나님의 창조 행위다.</p>
+<p>오스 기니스가 "하나님의 결정적인 부르심이 곧 구원"이며 일차적 소명은 "구원과 거의 동의어"라고 말한 것도 이 층위를 가리킨다. 그가 강조하듯 우리는 무엇보다 먼저 "하나님에게 부름받은 것이지, 무엇(어머니 역할, 정치, 교직)이나 어디(도시 빈민가나 몽골)로 부름받은 것이 아니다." 부르심의 첫 목적어는 언제나 하나님 자신이다. 히브리서가 성도를 "하늘의 부르심을 받은 거룩한 형제들"(히 3:1)이라 부를 때, 그 부름은 청와대나 백악관의 부름과 비교할 수 없는, 하나님의 백성이 되게 하시는 부름이다.</p>
+<h2>4. 거룩으로의 부르심 — 성화라는 방향</h2>
+<p>구원으로의 부름은 곧바로 거룩으로의 부름으로 이어진다. 하나님은 우리를 죄에서 건지실 뿐 아니라 자신을 닮게 하려고 부르시기 때문이다. 김대경은 에베소서 5장을 강해하며 부르심을 세 층위로 배열한다 — "첫번째 구원, 두번째 사명, 세번째 거룩으로 부르셨다." 그 근거로 그는 데살로니가전서를 든다. "하나님의 뜻은 이것이니 너희의 거룩함이라"(살전 4:3). <a class="wl" href="../../t/%EA%B1%B0%EB%A3%A9/">거룩</a>은 여러 선택지 중 하나가 아니라 부르심에 내장된 방향이다.</p>
+<p>이 방향성은 "부름받은 자"를 뜻하는 클레토스가 신약에서 "성도"(거룩한 자, hagioi)와 나란히 쓰이는 데서도 드러난다. 바울은 로마 교회를 "예수 그리스도의 것으로 부르심을 받은 자… 성도로 부르심을 받은 모든 자"(롬 1:6-7)라 부른다. 부름받음과 거룩해짐은 분리된 두 사건이 아니라, 하나님이 부르실 때 이미 지정하신 하나의 궤도다. 디모데후서가 하나님을 "우리를 구원하사 거룩하신 소명으로 부르신"(딤후 1:9) 분으로 소개할 때, 구원과 거룩은 한 부름의 안팎이다.</p>
+<p>그러므로 <a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a>는 부르심의 부록이 아니라 그 성취다. 부르심은 완료된 신분이면서 동시에 열린 방향이다 — 이미 "성도로 부르심을 받았"으나(신분), 아직 "그 부르심에 합당하게"(엡 4:1) 걸어가야 한다(방향). 성도의 견인 교리가 말하듯, 유효한 부르심을 받은 자는 성화를 향한 능동적 노력 속에서 그 부르심을 확증해 간다. 부르심이 실패하지 않는다는 확신은 나태가 아니라 오히려 거룩을 향한 최고의 자극이 된다.</p>
+<h2>5. 공동체로의 부르심 — 에클레시아</h2>
+<p>하나님은 개인을 부르시되 홀로 있게 하지 않으신다. 부름받은 자들을 한 백성으로 모으신다. 이 진리가 교회를 뜻하는 단어 자체에 새겨져 있다 — 에클레시아(ἐκκλησία)는 문자 그대로 "불러냄을 받은 이들"이다. 주종훈이 눅 9장을 강해하며 짚듯, 에클레시아는 "부르다라는 단어에서 파생"한 말이다. 조직신학 리서치페이퍼가 정리하듯 이 단어는 신약에 114회 등장하며, "계약 백성으로서의 교회, 불러낸 공동체"를 가리킨다. 부르심은 사적 종교 체험이 아니라 한 백성으로의 편입이다.</p>
+<p>정민영은 이 어원에서 교회의 본질을 끌어낸다 — "에클레시아는 특정 목적을 위한 부르심이란 뜻으로, 교회는 본질적으로 배타적 특혜 집단일 수 없고 선교적 목적이 이끄는 공동체로 자리매김하는 게 마땅하다." 부름받은 공동체는 자기를 위해 모인 클럽이 아니라 보내심을 위해 모인 백성이다. 레슬리 뉴비긴(<span class="wl-dead" title="위키 내부 링크">레슬리뉴비긴</span>)이 "교회"와 "선교회"를 서로 다른 종류의 공동체로 나누어 상상하는 관행을 비판한 것도 같은 맥락이다 — 부름받음과 보내심은 한 몸의 두 얼굴이다.</p>
+<p>이 공동체적 성격은 부르심의 분별에도 실천적 함의를 갖는다. 부르심이 홀로 받는 사적 인상에 그치지 않고 <a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%B2%B4/">공동체</a> 안에서 확인되어야 하기 때문이다. 김효진이 자녀 양육을 두고 던지는 질문이 이 점을 예시한다 — 우리는 아이를 공부의 자리로는 열심히 초청하면서, "말씀을 듣고 기도하는 자리, 예배의 자리, 교제의 자리, 훈련의 자리, 선교의 자리"로 부르는 데는 소홀하지 않았는가. 부르심은 이런 공동체적 "부름의 자리들"에 반복적으로 접촉될 때 접속된다.</p>
+<h2>6. 사역과 선교로의 부르심 — 보편과 구체</h2>
+<p>구원·거룩·공동체로 부름받은 백성은 그 부름의 연장선에서 사역과 선교로 보내진다. 여기서 장연식의 명제가 결정적이다 — 모든 하나님의 백성은 예외 없이 선교로 부름받았다. "선교는 하나님 나라의 독립운동"이며, 독립을 꿈꾸는 것이 모든 조선인의 당연한 과제였듯 하나님 나라의 회복을 꿈꾸는 것은 모든 그리스도인의 정상 소명이다. 그렇기에 "선교로 부르셨습니까?"라는 기도 자체가 불필요하다 — 그것은 예외적 특수 소명이 아니라 보편 정체성이기 때문이다.</p>
+<p>그러나 보편 소명이 모두 동일한 방식의 응답을 뜻하지는 않는다. 가는 자(goer)와 보내는 자(sender)는 동등한 가치를 지니며, 어느 자리에서 응답하느냐가 구체적 부르심의 내용을 이룬다. 그리고 이 구체화에는 두 가지 전제가 붙는다. 첫째, 제자됨이 먼저다 — 장연식이 강의의 토대로 삼듯 "선교사가 되는 것보다 제자가 되는 것이 먼저"이며(<a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%EB%8F%84/">제자도</a>), 초대교회 문헌에서 "제자"와 "순교자"가 동의어였을 만큼 이 토대는 값싸지 않다. 둘째, 존재(being)가 행함(doing)에 앞선다 — 이정훈의 말처럼 우리가 하는 사역은 "being의 열매"이지 그 역이 아니다. 이 순서가 뒤집히면 사역은 소진으로 귀결된다.</p>
+<p>구체적 파송의 분별에 대해 이정훈은 네 가지 통로를 제시한다 — 극적인 음성이나 환상, 점진적 인도, 환경과 상황을 통한 인도, 그리고 공동체의 확인. 부르심의 방식은 다양하되, 결정적인 것은 방식이 아니라 나를 부르신 분이 확고한 주체임을 아는 내적 확신이다.</p>
+<p>이 사역·선교 소명이 각자의 직업과 자리로 번역되는 지점, 곧 "무슨 일로, 어디로 부르시는가"의 상세한 지형은 이 글의 범위를 넘어선다. 오스 기니스의 일차·이차 소명 틀, 생존모드와 미션모드, 선교사·전문인의 다섯 유형, 번성을 지탱하는 지원 시스템 같은 직업 소명(vocation)의 구체는 <a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a>과 <a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%8B%A0%ED%95%99/">직업신학</a>이 전담한다. 이 페이지의 관심은 그 모든 구체적 파송에 앞서, 파송의 근거가 되는 하나님의 부르심이라는 신학적 행위에 있다. <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EB%8F%99%EC%9B%90/">선교동원</a> 역시 이 보편 소명을 어떻게 깨우고 조직하는가의 문제로 여기서 갈라져 나간다.</p>
+<h2>7. 부르심과 응답 — 회심과 순종</h2>
+<p>부르심은 응답을 부른다. 그리고 참된 응답의 성격은 조건 없는 따름이다. 주종훈은 누가복음 9장 57-62절, 예수를 따르겠다는 세 사람의 이야기에서 이 점을 예리하게 드러낸다. 첫째 사람에게 예수는 "인자는 머리 둘 곳이 없다"고 답하신다 — 주종훈의 해석으로는, "내가 얻고자 하는 것을 위해 주님을 수단화하지 말라"는 것이다. 따름의 대가로 무엇을 얻으려는 신앙을 그는 "지니처럼 이용하고자" 하는 신앙이라 부른다. 그러나 유익이 없는 것은 아니다 — "댓가는 예수님 자신이다."</p>
+<p>둘째와 셋째 사람은 "먼저 …하게 허락하소서"라며 조건을 단다. 예수의 답은 냉정하다. "손에 쟁기를 잡고 뒤를 돌아보는 자는 하나님의 나라에 합당하지 아니하니라"(눅 9:62). 주종훈이 짚듯, 이는 과거의 헌신에 갇히지도 미래를 낙관하지도 않은 채, "경험해보지 못한 초청"을 향해 오늘 순종하라는 부름이다. 응답은 회심의 두 얼굴을 가진다 — 죄에서 돌이키는 회개와 그리스도께로 향하는 믿음. 예수의 첫 선포가 정확히 이 순서였다. "회개하고 복음을 믿으라"(막 1장), 그리고 "나를 따르라."</p>
+<p>그러므로 부르심에 대한 응답은 일회적 결단이면서 평생의 여정이다. 부름받은 자는 "그 부르심에 합당한 자"(살후 1:11)로 여겨지기를 구하며, "위에서 부르신 부름의 상"(빌 3:14)을 향해 달린다. 한 번 엎드러진 것으로 끝나지 않고, 매일 쟁기를 잡은 손으로 앞을 보며 따라가는 것 — 이것이 부르심을 사는 방식이다.</p>
+<h2>8. 부르심의 확신과 분별</h2>
+<p>부르심을 사는 사람은 두 가지 질문과 씨름한다. "내가 참으로 부름받았는가"(확신), 그리고 "무엇으로 부름받았는가"(분별)이다.</p>
+<p>확신의 근거는 나의 열심이나 체험의 강도가 아니라 부르시는 분의 신실하심에 있다. 2절과 3절이 함께 이 점을 지탱한다 — 효력있는 부르심은 실패하지 않으며(김효진), 로마서 8장의 사슬은 부름받은 자를 반드시 영화에까지 이르게 한다. 그래서 확신은 자기 응시가 아니라 하나님을 바라봄에서 온다. 성도의 견인 교리가 위로가 되는 지점이 여기다 — 나를 붙든 손이 하나님의 손이라면, 나의 흔들림이 그 붙듦을 풀지 못한다.</p>
+<p>분별은 더 실천적이다. 부르심은 종종 주관적 인상과 구별되기 어렵기에, 이정훈이 제시한 네 통로(음성·점진적 인도·환경·공동체의 확인)와 특히 공동체적 검증이 필요하다. 부름의 자리에 반복적으로 접촉되며(김효진), 신뢰하는 선배와 말씀과 기도와 내면의 거룩한 소망이 한 방향을 가리킬 때, 주관적 열망은 분별된 소명이 된다.</p>
+<p>이 확신과 분별은 <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a>에게 특별히 절실하다. 의료라는 직업이 곧 선교 소명과 동일한가, 진료·수술·연구라는 행함(doing) 이전에 그리스도 안에서 내가 누구인가(being)를 먼저 다루고 있는가 — 이 물음 앞에서 부르심의 신학은 추상이 아니라 매일의 좌표가 된다. 건강보험 수가가 바뀌고 병원 경영 모델이 바뀌어도 진료의 태도가 흔들리지 않는 이유는, 그 닻이 제도가 아니라 부르시는 하나님이기 때문이다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>부르심의 주어는 언제나 하나님이다. 칼레오·클레토스·에클레시아가 한 어근인 것처럼, 부름받은 자도 부름받은 공동체도 먼저 부르시는 분에게서 나온다 — 부르심은 자기실현이 아니라 은혜의 선행이다.</li>
+<li>하나의 부르심을 두 겹으로 읽어야 한다. 복음의 부르심(외적·일반, 거부 가능)과 유효적 부르심(내적·효과적, 거부 불가). "복음의 부르심이 다 효력이 있는 것은 아니다."</li>
+<li>부르심은 구원 서정에서 예정과 칭의 사이에 놓여, 영원한 선택을 시간의 사건으로 번역한다(롬 8:30의 황금 사슬). 중생이 이 부르심의 출발점이고 회심이 그 반응이다.</li>
+<li>하나님은 우리를 무엇으로 부르시는가 — 구원, 거룩, 공동체, 사역/선교의 네 층위는 분리된 목적이 아니라 한 부름의 펼쳐짐이다. 거룩은 부르심의 부록이 아니라 성취다.</li>
+<li>부름받음은 언제나 한 백성으로의 편입이다(에클레시아). 그렇기에 부르심은 공동체 안에서 확인되고 검증된다 — 사적 인상은 아직 분별된 소명이 아니다.</li>
+<li>참된 응답은 조건 없는 따름이다. 따름의 대가로 무엇을 얻으려 하면 신앙은 주님을 수단화한다. "댓가는 예수님 자신이다."</li>
+<li>확신의 근거는 나의 열심이 아니라 부르시는 분의 신실하심이다 — 효력있는 부르심은 실패하지 않기에, 확신은 자기 응시가 아니라 하나님을 바라봄에서 온다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>유효적 부르심의 거부 불가능성(개혁신학)과 "청함을 받은 자는 많되 택함을 입은 자는 적으니라"(마 22:14)의 실제 경험 사이, 곧 인간의 책임 있는 응답은 어디에 자리하는가.</li>
+<li>부르심이 "언제나 한 백성으로의 편입"이라면, 공동체의 확인과 개인의 내적 확신이 충돌할 때(공동체는 반대하나 내면은 확신할 때, 혹은 그 반대) 무엇이 우선하는가.</li>
+<li>구원·거룩으로의 보편적 부르심과 특정 지역·민족·사역으로의 구체적 파송 사이에서, 후자의 "이것이 하나님의 부르심"이라는 확신은 어떤 검증을 통과해야 참으로 분별된 것인가.</li>
+<li>직업(의료)이 곧 부르심인가, 아니면 직업은 보편 부르심이 담기는 그릇일 뿐인가 — being과 doing의 순서를 실제 진료 현장에서 어떻게 유지하는가(<a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a>과 공유되는 질문).</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a> — 직업·진로로서의 소명(vocation)의 상세. 이 페이지가 "하나님이 부르신다"는 행위를 다룬다면, 소명은 "무엇으로/어디로 부르시는가"를 전담한다.</li>
+<li><a class="wl" href="../../t/%EA%B5%AC%EC%9B%90%EB%A1%A0/">구원론</a> · <a class="wl" href="../../t/%EA%B1%B0%EB%93%AD%EB%82%A8/">거듭남</a> · <a class="wl" href="../../t/%ED%9A%8C%EC%8B%AC/">회심</a> — 유효적 부르심이 맞물리는 구원 서정의 이웃 고리들.</li>
+<li><a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a> · <a class="wl" href="../../t/%EA%B1%B0%EB%A3%A9/">거룩</a> — 거룩으로의 부르심의 전개.</li>
+<li><a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%B2%B4/">공동체</a> · <a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%A1%A0/">교회론</a> — 에클레시아, 곧 불러냄 받은 백성으로서의 교회.</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EB%8F%99%EC%9B%90/">선교동원</a> · <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A0%EA%B5%90/">하나님의선교</a> — 사역·선교로의 보편 부르심이 조직되고 파송되는 자리.</li>
+<li><a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%EB%8F%84/">제자도</a> · <a class="wl" href="../../t/%EC%A0%95%EC%B2%B4%EC%84%B1/">정체성</a> — 부르심의 전제(제자됨)와 부르심이 규정하는 새 정체성.</li>
+<li><a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a> — 부르심의 선행성이 뿌리내린 자리.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>김효진, "부르심"(행 9:3-9)</td>
+<td>설교</td>
+<td>효력있는 부르심, 롬 8:30 황금 사슬, 부르심의 3요소(설명·초대·약속), "지식+시인+신뢰=회심"</td>
+</tr>
+<tr>
+<td>MBTS 조직신학II·전도와제자도 토론(이상협, 그루뎀 기반)</td>
+<td>리서치·토론</td>
+<td>복음의 부르심(외적·일반) vs 유효적 소명(내적·효과적), 중생·회심과의 관계, 성도의 견인</td>
+</tr>
+<tr>
+<td>김대경, "시대를 꿰뚫는 통찰력"(엡 5:15-21)</td>
+<td>설교</td>
+<td>부르심의 세 층위 — 구원·사명·거룩(살전 4:3)</td>
+</tr>
+<tr>
+<td>주종훈, "그리스도의 부르심을 향한 반응"(눅 9:57-62)</td>
+<td>설교</td>
+<td>조건 없는 따름, 회개·믿음·순종, "댓가는 예수님 자신"</td>
+</tr>
+<tr>
+<td>오스 기니스, 『소명』</td>
+<td>책</td>
+<td>일차 소명(하나님께)=구원과 동의어, 부름받은 자=에클레시아, 일·이차 소명의 순서</td>
+</tr>
+<tr>
+<td>조직신학II 리서치페이퍼(이상협)</td>
+<td>리서치</td>
+<td>에클레시아=불러낸 공동체(신약 114회), 유형·무형 교회, 계약 백성</td>
+</tr>
+<tr>
+<td>권성수, 히 3:1 강해 / 살후 1:11 강해</td>
+<td>설교</td>
+<td>하늘의 부르심, "그 부르심에 합당한 자", 파라클레토스(클레토스)</td>
+</tr>
+<tr>
+<td>장연식·이정훈, 대경누가회 선교 강의(2019)</td>
+<td>강의</td>
+<td>정체성+사명=부르심, 보편 소명과 goer/sender, 제자됨 전제, 분별의 네 방법</td>
+</tr>
+<tr>
+<td>정민영, 『하나님나라와 하나님의 선교』</td>
+<td>책</td>
+<td>에클레시아=특정 목적을 위한 부르심, 선교적 공동체</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/구원론</span><span>#discipline/조직신학</span><span>#topic/부르심</span><span>#topic/효과적부르심</span><span>#topic/성화</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

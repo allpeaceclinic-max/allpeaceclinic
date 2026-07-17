@@ -1,0 +1,380 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>기독교 지역사회 개발 (Christian Community Development) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="date">2026-07-11</span></div>
+  <h1 class="note-title">기독교 지역사회 개발 (Christian Community Development)</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>기독교 지역사회 개발(Christian Community Development)은 가난한 지역 공동체 안으로 들어가 우물·보건·교육·경제 같은 삶의 조건을 주민과 함께 일으켜 세우되, 그 회복의 종착지를 창조 때의 온전함에 두는 선교 실천이다. Perspectives(PSP) 선교훈련 과정은 이를 12과의 주제로 삼아 "빈곤 → 변혁"이라는 두 단어로 요약하는데, 이 볼트에는 같은 12과가 두 번 기록되어 있다. 2018년 <span class="wl-dead" title="위키 내부 링크">LMTC-PSP</span>에서 <span class="wl-dead" title="위키 내부 링크">황예레미야</span> 선교사가, 2019년 대경누가회에서 <span class="wl-dead" title="위키 내부 링크">장창수</span> 선교사가 각각 강의했고, 전자는 한국 교회의 신뢰도라는 착지점을, 후자는 개발의 신학과 방법의 뼈대를 제공한다. 2026년에는 <span class="wl-dead" title="위키 내부 링크">문누가</span> 선교사가 의료인 대상 온라인 강의 「전문분야에서 적용하는 기독교 지역사회개발」에서 같은 주제를 전문인 선교의 문법으로 다시 정리해, Advocate-Innovator 이론과 자산 기반 접근(ABCD)이라는 방법론의 이름들을 볼트에 보탰다(<span class="wl-dead" title="위키 내부 링크">2026-07_문누가_기독교지역사회개발</span>). 여기에 <span class="wl-dead" title="위키 내부 링크">한철호</span>의 『선교 아이디어 51』이 "지역 개발 사역으로 접근하라"(#47)를 선교 참여의 한 경로로 자리매김하고, <span class="wl-dead" title="위키 내부 링크">박주용</span>의 부룬디 염소뱅크 보고와 <span class="wl-dead" title="위키 내부 링크">송기태</span>의 "복음의 공공성" 강의, 그리고 선교실행위의 NGO 사례 조사가 한국 교회 현장의 실물을 보탠다.</p>
+<p>이 주제의 긴장은 처음부터 분명하다. 우물 파기와 보건소 세우기는 유엔도, 세속 NGO도, 타종교도 하는 일이다. 그렇다면 그리스도인이 하는 개발은 무엇이 다른가. 장창수의 표현으로는 "당장은 비슷할 수 있지만 끝이 다르다" — 기독교 개발의 변별점은 방법이 아니라 목적지에 있다는 것이다. 이 페이지는 그 목적지에서 출발해, 구제(relief)와 개발(development)의 구별, 빈곤의 심층 구조, 방법론의 도구함, 교회 개척과의 결합, 의존성의 함정, 한국 교회의 신뢰도 문제를 거쳐, 결국 "황무지를 마음에 두는 사람"이라는 존재의 문제로 내려간다.</p>
+<p>인접 페이지와의 분업을 먼저 밝혀 둔다. 총체적 선교의 신학 전체는 <a class="wl" href="../../t/%EC%B4%9D%EC%B2%B4%EC%A0%81%EC%84%A0%EA%B5%90/">총체적선교</a>가, 죄의 4중 괴리라는 신학적 정초는 <a class="wl" href="../../t/%ED%86%B5%EC%A0%84%EC%A0%81%EC%84%A0%EA%B5%90/">통전적선교</a>가, 물질을 나누는 행위·실천으로서의 구제는 <a class="wl" href="../../t/%EA%B5%AC%EC%A0%9C/">구제</a>가, "내 수입에 남의 몫이 있다"는 원리·구조의 정의론은 <a class="wl" href="../../t/%EA%B3%B5%EC%9D%98/">공의</a>가, 도시·슬럼이라는 공간적 맥락은 <a class="wl" href="../../t/%EB%8F%84%EC%8B%9C%EC%84%A0%EA%B5%90/">도시선교</a>가 맡는다. 이 페이지의 고유한 축은 <strong>구제가 개발로, 개발이 변혁으로 성숙해 가는 스펙트럼과 그 방법론</strong>이다.</p>
+<h2>1. 같은 우물, 다른 끝 — 개발의 목적지</h2>
+<p>장창수 강의의 출발 질문이 이 주제의 인식론적 좌표를 잡는다.</p>
+<blockquote>
+<p>"우물은 우리도, 불교도, 유엔도 파는데 무슨 차이인가? … 당장은 비슷할 수 있지만 끝은 다르다." — 장창수, 「기독교 지역사회 개발」(PSP 12과)</p>
+</blockquote>
+<p>끝이 다르다는 말의 내용은 회복의 기준점이다. 기독교 개발이 지향하는 것은 필요가 채워진 상태가 아니라 "원래 모습 — 부요의 때, 창조의 때"로의 회복이다. 곧 개발의 척도는 유용성이 아니라 <a class="wl" href="../../t/%EC%B0%BD%EC%A1%B0%EC%8B%A0%ED%95%99/">창조 질서</a>이며, 사람과 공동체가 하나님이 지으신 본래 모양을 되찾는 것이 변혁적 개발(transformational development)의 정의가 된다. 같은 우물이라도 어떤 신학과 태도로 파느냐에 따라 결과가 갈린다는 단서 — "변혁적 개발이 이상적이지만, 접근법에 따라 변화가 달라진다" — 는 이 기준점이 낭만이 아니라 실무의 변수임을 보여준다.</p>
+<p>이 기준점은 사역자의 마음가짐도 바꾼다. 강의는 "될 만한 일을 하는 것이 사역이 아니다"라고 교회와 선교의 오래된 습관을 겨냥한다. 성공 가능성이 보이는 일을 골라서 하는 것이 사역이 아니라면, 거대한 절망의 문제 앞에서 무엇을 붙들어야 하는가. 장창수의 답은 질문을 바꾸는 것이다 — "변화시키는 일에 참여하고 있는가?"를 물으면 굳이 절망할 필요가 없다. 결과의 크기가 아니라 참여의 방향이 기준이 되기 때문이다. 이것은 하나님이 변혁의 주체이시고 개발자는 그 일에 참여하는 자라는, <a class="wl" href="../../t/%EC%B4%9D%EC%B2%B4%EC%A0%81%EC%84%A0%EA%B5%90/">총체적선교</a>가 "우리는 없고 하나님만 존재하게 되는 것이 선교"라고 정리한 존재론과 같은 결이다.</p>
+<p>그렇다면 그 참여는 어떤 단계들을 밟는가. 여기서 개발의 스펙트럼이 필요해진다.</p>
+<h2>2. 구제에서 변혁까지 — 개발의 스펙트럼</h2>
+<p>장창수 강의는 세상의 필요에 접근하는 방식을 네 갈래로 펼친다. 구제(relief), 경제 성장(economic growth), 정치적 옹호(political advocacy), 그리고 변혁(transformation)이다.</p>
+<table>
+<thead>
+<tr>
+<th>접근</th>
+<th>성격</th>
+<th>대표 물음</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>구제 (relief)</td>
+<td>긴급한 결핍의 즉각 충족</td>
+<td>지금 무엇이 부족한가</td>
+</tr>
+<tr>
+<td>경제 성장 (economic growth)</td>
+<td>소득·생산 기반의 확충</td>
+<td>어떻게 벌게 할 것인가</td>
+</tr>
+<tr>
+<td>정치적 옹호 (political advocacy)</td>
+<td>구조와 제도의 시정</td>
+<td>무엇이 이 가난을 만들었는가</td>
+</tr>
+<tr>
+<td>변혁 (transformation)</td>
+<td>사람·공동체·관계의 총체적 회복</td>
+<td>창조의 본래 모습은 무엇인가</td>
+</tr>
+</tbody>
+</table>
+<p>이 표는 <a class="wl" href="../../t/%EA%B5%AC%EC%A0%9C/">구제</a> 페이지와의 분업선이기도 하다. 구제 페이지가 공의(원리)·긍휼(마음)·구제(행위)의 세 축 안에서 "어떻게, 누가, 어떤 관계 속에서 주는가"를 다룬다면, 이 페이지는 네 번째 축, 곧 시간과 구조의 축을 맡는다 — 긴급 대응으로 시작된 나눔이 어떻게 장기적 자립과 구조적 변화로 성숙하는가. 구제는 개발의 반대말이 아니라 개발의 첫 계단이며, 문제는 구제 자체가 아니라 구제에서 멈추는 것이다.</p>
+<p>볼트에서 이 성숙의 실물을 보여주는 것이 <span class="wl-dead" title="위키 내부 링크">박주용의 부룬디 염소뱅크 보고</span>다. 구제(기민선교)와 복음을 결합한 이 사역은 한 가정에 염소를 주는 데서 멈추지 않고, 그 염소가 낳은 새끼를 다음 가정에 전달하게 하는 순환을 설계했다. 일방적 시혜가 아니라 자생적 순환이 마을 전체를 일으키는 것 — 받은 가정이 곧 주는 가정이 되는 이 구조는, 구제가 개발로 넘어가는 문턱이 물자의 양이 아니라 설계의 철학에 있음을 보여준다. 같은 전환을 함선네 계열의 멘토링 강의는 패러다임의 언어로 요약한다. 구제·개발 사역은 "부유한 자가 가난한 자를 일방적으로 동정"하는 과거형에서 "낮은 자리에서 현지인 안에서 일하시는 하나님을 발견하는 겸손한 섬김"으로 옮겨가고 있다는 것이다. 문누가의 2026년 강의는 이 스펙트럼을 구호(생존을 위한 긴급 지원) → 개발(자립을 위한 역량 강화) → 변혁(하나님 나라의 실현)의 3단계 여정으로 압축하고, 종착지를 한 문장으로 못박는다 — "선교의 목표는 단순한 문제의 해결이 아니고 하나님나라가 실현되는 변혁입니다."</p>
+<p>그러나 스펙트럼의 오른쪽으로 갈수록 질문은 어려워진다. 구제는 눈에 보이는 결핍을 다루지만, 변혁은 결핍을 낳은 보이지 않는 층위까지 내려가야 하기 때문이다.</p>
+<h2>3. 빈곤의 해부 — 결핍·결함·결박</h2>
+<p>누가 가난한 자인가. 장창수의 정의는 통계적 빈곤선보다 깊다. 가난한 자란 "문제와 필요를 가지고 인간의 최소 가치를 보장받지 못하고 살아가지만, 당장 스스로는 문제를 해결할 수도 필요를 채울 수도 없는 이들"이다. 물질의 결핍만이 아니라 존엄의 박탈과 자구력의 상실이 겹친 상태가 빈곤이며, 그 뿌리를 강의는 죄로 소급한다. 죄는 영적·심리적·사회적·물리적 네 영역의 괴리(alienation)를 낳았고 — 강의는 이 도식을 팀 켈러(Timothy Keller)의 소외 분석 슬라이드로 뒷받침한다 — 따라서 개발은 이 네 영역 전체의 회복 사업이 된다. 이 4중 괴리의 신학적 전개는 <a class="wl" href="../../t/%ED%86%B5%EC%A0%84%EC%A0%81%EC%84%A0%EA%B5%90/">통전적선교</a>에 위임하고, 여기서는 이 죄론이 개발 현장에서 취하는 실천적 형태를 따라간다.</p>
+<p>그 형태가 강의 특유의 언어유희, 결핍 → 결함 → 결박의 3단계다.</p>
+<table>
+<thead>
+<tr>
+<th>층위</th>
+<th>내용</th>
+<th>우간다 사례 (2007)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>결핍 (부족)</td>
+<td>눈에 보이는 필요 — 우물·식량·의약품</td>
+<td>앰뷸런스가 없다</td>
+</tr>
+<tr>
+<td>결함 (구조)</td>
+<td>결핍을 재생산하는 시스템의 왜곡</td>
+<td>보건소 931곳에 앰뷸런스 0대, 고위 공직자의 벤츠는 놀고 있다</td>
+</tr>
+<tr>
+<td>결박 (영적)</td>
+<td>구조 배후의 영적 문제</td>
+<td>"결국 영적인 문제이기 때문에 기도해야"</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"결핍에 멈추면 안 된다. 결함에 들어가야 한다. … 결핍에 머무르면 진정한 변화는 일어나지 않는다." — 장창수</p>
+</blockquote>
+<p>해외원조가 주 수입원인 나라에서 물자를 더 붓는 것은 결핍의 층위에 머무는 일이다. 진정한 개발은 그 결핍을 만들어 내는 구조의 결함 — 부패, 왜곡된 분배, 무너진 행정 — 에 들어가야 하고, 마침내 그 구조를 붙들고 있는 영적 결박 앞에서 <a class="wl" href="../../t/%EA%B8%B0%EB%8F%84/">기도</a>의 싸움이 된다. <span class="wl-dead" title="위키 내부 링크">장창수</span> 인물 페이지는 이 3단계를 물질적 결핍(material lack), 역량의 결함(capacity deficit), 구조적 결박(systemic bondage)으로 옮기는데, 어떤 번역을 취하든 요점은 같다. 빈곤은 단층이 아니라 지층이며, 개발의 깊이는 어느 지층까지 내려가느냐로 결정된다.</p>
+<p>문누가의 강의는 이 지층도에 개발학의 이름을 붙인다. 개발 프로젝트의 90%가 실패하는 이유는 자원의 부족이 아니라 마인드셋의 문제이며(대로우 밀러), 가난은 "하나님과 자신, 그리고 환경에 대한 잘못된 신념의 결과"다. 그가 제시하는 변화의 피라미드 — 세계관(Base) → 공동체 문화 → 사회 구조 → 경제 — 는 결박의 지층이 곧 세계관의 지층임을 보여주고, "물리적 환경을 바꾸기 전에 사람의 생각과 세계관을 바꾸는 것이 우선"이라는 명제로 <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%84%B8%EA%B3%84%EA%B4%80/">기독교세계관</a>의 통찰을 개발 현장에 이식한다. 복음은 가장 밑바닥의 세계관을 바꿈으로써 전체 구조를 개혁한다는 것이다.</p>
+<p>이 진단이 맞다면 도구도 지층별로 달라져야 한다. 볼트가 보존한 도구들을 살펴볼 차례다.</p>
+<h2>4. 방법론의 도구함 — CHE·적정기술·마이크로 자산·NGO</h2>
+<p>볼트에 이름이 남은 기독교 지역사회 개발의 방법론들은 대체로 "작고, 단순하고, 주민이 스스로 돌릴 수 있는 것"이라는 공통 문법을 갖는다.</p>
+<table>
+<thead>
+<tr>
+<th>도구</th>
+<th>볼트의 실물</th>
+<th>원리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CHE (Community Health Evangelism)</td>
+<td>장창수 PSP 12과, 한철호 #47, 문누가 2026(실행 4요소)</td>
+<td>보건 교육과 복음의 통합 — 아프지 않게 하는 환경 만들기</td>
+</tr>
+<tr>
+<td>자산 기반 접근 (ABCD)</td>
+<td>문누가 2026 — PBA 대비표, 지속가능성 30/65/95%</td>
+<td>"무엇이 부족한가"가 아니라 "무엇을 가지고 있는가"</td>
+</tr>
+<tr>
+<td>적정기술 (appropriate technology)</td>
+<td>끌고 가는 물통, 해피 백신 — "간단한 과학의 원리"</td>
+<td>고비용 인프라 없이 주민이 운용</td>
+</tr>
+<tr>
+<td>마이크로 자산</td>
+<td>부룬디 염소뱅크</td>
+<td>자산이 순환하며 자립을 재생산</td>
+</tr>
+<tr>
+<td>비즈니스</td>
+<td>BFM·BAM (송기태의 구별)</td>
+<td>직업·경제 활동 자체가 사역</td>
+</tr>
+<tr>
+<td>NGO</td>
+<td>글로벌케어, 온누리 "더 멋진 세상"</td>
+<td>개발 사역의 법적·제도적 그릇</td>
+</tr>
+</tbody>
+</table>
+<p>CHE는 지역사회 건강 전도(Community Health Evangelism)라는 이름으로 장창수 강의 슬라이드와 <a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B451_%ED%95%9C%EC%B2%A0%ED%98%B8/">『선교 아이디어 51』</a> #47에 나란히 등장하며, <a class="wl" href="../../t/%EC%9D%98%EB%A3%8C%EC%84%A0%EA%B5%90/">의료선교</a>와 이 주제가 만나는 접점이다 — 보건이 개발의 입구가 되고 전도가 그 여정에 동행하는 구조다. 문누가의 강의가 그 실행 전략을 네 요소로 채웠다 — 지역 리더 발굴과 훈련, 예방 중심의 보건 교육, 성경적 가치관 교육의 통합, 자발적 마을 공동체 위원회 조직. "아픈 사람을 고치는 것을 넘어, 아프지 않게 하는 환경을 만드는 것"이 핵심이라는 그의 요약은, CHE가 의료선교의 보완이 아니라 재정의임을 보여준다. 적정기술은 강의가 든 사례가 인상적이다. 끌고 가는 물통, 가운데로 모이는 물을 마실 수 있게 만든 "해피 백신" 같은 간단한 과학 원리의 장치들 — 기술의 수준이 아니라 지속가능성이 기준이라는 점에서, 염소뱅크의 마이크로 자산 순환과 같은 문법이다. 경제의 축에서는 <span class="wl-dead" title="위키 내부 링크">2022년 선교포럼</span>에서 송기태가 BFM(Business for Mission)과 BAM(Business as Mission)을 구별하며 직업 자체가 선교 신분이자 사역이 되는 길을 제시했는데, 이 축의 신학은 <a class="wl" href="../../t/%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4%EC%84%A0%EA%B5%90/">BAM</a>과 <a class="wl" href="../../t/%EC%A0%84%EB%AC%B8%EC%9D%B8%EC%84%A0%EA%B5%90/">전문인선교</a>에 위임한다.</p>
+<p>제도의 축이 NGO다. <span class="wl-dead" title="위키 내부 링크">선교실행위</span>의 「NGO를 통한 선교사역」 조사는 한국 교회가 개발 사역을 담아 온 그릇들을 보여준다. <span class="wl-dead" title="위키 내부 링크">누가회</span> 출신 의사들이 반복되는 단기선교의 필요에서 세운 의료 NGO 글로벌케어는 정부 지원을 받는 공신력 있는 구호 단체로 성장했고, 온누리교회는 "구제, 지역개발, 선교를 전부 NGO를 통해 한다"는 원칙 아래 구제·사회개발 전담 NGO '더 멋진 세상'을 두어 세네갈 학교 건립, 네팔 지진 지역 재건 같은 프로젝트를 수행한다. NGO는 재산권 보호와 사역의 연속성, 창의적 접근지역의 비자 문제를 풀어 주는 동시에, 청년들이 개발 사역에 참여했다가 선교로 넘어오는 유입 통로가 되기도 한다. 그 거버넌스와 재산권의 세부는 <span class="wl-dead" title="위키 내부 링크">선교지재산권거버넌스</span>가 다룬다.</p>
+<p>도구함이 아무리 갖춰져도, 남는 질문이 있다. 이 모든 일은 복음 전파와 어떤 관계에 있는가.</p>
+<h2>5. 개발이 복음을 증명할 때 — 베텔과 성육신적 개척</h2>
+<p>장창수 강의에서 가장 극적인 사례는 <span class="wl-dead" title="위키 내부 링크">WEC</span>에서 갈라져 나온 베텔(Betel) 사역이다. 시작은 전략이 아니었다. 중독자를 만나 수프를 주고 말씀을 전하는 만남이 지속되자 변화되는 사람이 나왔고, 그렇게 중독자를 회복시키는 사역의 틀이 만들어졌다. 강의의 촌평이 핵심을 찌른다 — "교회 개척은 안 되는데, 이것은 된다." 회복 공동체가 자라 베텔교회가 되었고 1만 3천 명을 넘었으며, 중독에서 벗어난 이들이 연 레스토랑에 영국 왕자가 방문하고 황실이 후원하게 되었다. 주목할 것은 순서다. 개발이 전도의 미끼로 쓰인 것이 아니라, 회복의 공동체가 곧 교회가 되었다. 같은 강의가 92.8%라는 복음화율 통계 앞에서 "숫자가 중요하지 않다. 복음화된 삶을 살 수 있느냐가 중요하다"고 말하는 이유도 여기 있다.</p>
+<p>이 순서는 교회 개척론에도 이름이 있다. 송기태의 <span class="wl-dead" title="위키 내부 링크">Church Engagement</span> 시즌3 강의는 선교적·성육신적 모델(missional, incarnational model)을 네 요소로 소개한다. 지역사회 안으로 성육신하고(incarnate in the community), 깊은 관계를 맺으며(highly relational), 총체적 선교에 참여하고 — "오게만 하는 것이 아니라 지역사회 개발에도, 우물·환경·교육" — 그 지역사회에서 분리되지 않은 채 제자 삼아 교회에 이른다(disciple their way into a church). 사람들을 교회당으로 불러 모으는 것이 아니라 교회가 마을의 회복 속으로 들어가는 이 문법에서, 지역사회 개발은 <a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EA%B0%9C%EC%B2%99/">교회개척</a>의 장식이 아니라 경로 자체가 된다. 상세한 개척 모델 비교는 <a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EA%B0%9C%EC%B2%99/">교회개척</a>과 <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a>에 위임한다.</p>
+<p>그리고 이 모든 것의 원형은 예수님이다. 장창수는 <span class="wl-dead" title="위키 내부 링크">마태복음 8:1-4</span>의 문둥병자 치유를 총체적 개발의 모범으로 읽는다. 산상수훈을 마치고 내려오신 예수께서, 쫓겨나 눈에 띄면 안 되는 자에게 율법을 깨고 손을 대신다.</p>
+<blockquote>
+<p>"병을 낫게 하는 것이 문제가 아니다. … 예수님이 손 대신 것은 육체만이 아니라 갈망에 손을 대신 것이다." — 장창수</p>
+</blockquote>
+<p>받아들여지고 싶다는 오랜 갈망에 손이 닿을 때 그의 인생이 바뀐다 — 치유이자 관계 회복이자 사회적 재통합이다. 여기서 강의는 개발 사역자가 증명해야 할 세 가지를 도출한다. 정말 가난한 사람은 "귀가 먹어" 말이 사치스럽기 때문에, 첫째 그가 무가치하지 않다는 것을 태도와 행동으로, 둘째 예수님이 어떤 분이신지를 삶으로, 셋째 <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EB%82%98%EB%9D%BC/">하나님 나라</a>를 공동체의 "예고편"으로 보여주어야 한다. 예고편이 본편을 다 담을 수는 없지만 기대하게 만들어야 한다는 것 — 개발 공동체는 하나님 나라의 광고이지 대체물이 아니다.</p>
+<p>그런데 손을 내미는 일에는 그림자가 있다. 돕는 행위가 사람을 무릎 꿇리는 경우다.</p>
+<h2>6. 의존성이라는 함정 — 자립과 존엄의 설계</h2>
+<p>장창수 강의에서 가장 뜻밖의 문장은 "모세가 출애굽의 최대 피해자"라는 말이다. 홍해를 건넌 백성은 여전히 노예의 마음으로 광야에서 모세를 향해 부르짖었다. 첫 번째 출애굽 다음에 한 단계 더 깊은 출애굽 — 노예근성으로부터의 해방 — 이 필요했다는 것이다. 개발 사역이 이 두 번째 출애굽을 놓치면, 원조는 새로운 종살이를 만든다.</p>
+<blockquote>
+<p>"먹여주고 필요를 채워주는 것만이 아니라, 그 스스로 자각하고 질문할 수 있도록 해야 한다." — 장창수</p>
+</blockquote>
+<p>문누가는 이 원리에 Advocate-Innovator 이론이라는 이름을 붙인다. 변화의 주체는 내부인(Innovator) — 문제 발견·실행·의사결정의 주민 — 이어야 부작용을 최소화하며 변화를 감당할 수 있고, 외부인(선교사)은 격려·교육·자원 연결의 옹호자(Advocate)다. "선교사는 영웅이 아니라 조연입니다." 자산 기반 접근의 데이터가 이 역할 분담을 떠받친다 — 외부 자원 중심 프로젝트의 지속가능성이 30%에 그칠 때 자산 기반 접근(ABCD)은 95%에 이르며, "외부 돈은 마중물일 뿐"이다. 키르기스스탄에서 자립형 치과병원을 세워 현지인에게 지분을 부여하며 이양해 온 강사 자신의 사역(<span class="wl-dead" title="위키 내부 링크">문누가</span>)이 이 이론의 실물이기도 하다.</p>
+<p>볼트의 현장 자료들은 이 원리가 실제 설계로 번역된 모습을 보여준다. 글로벌케어는 예멘 내전 철수 과정에서 현지 자산을 둘러싼 소송을 겪은 뒤 방향을 바꾸었다. 현지 부동산 취득을 지양하고, 현지에서 먼저 계획을 세워 오면 그것을 평가해 지원하며, 운영비는 첫해 100%에서 5년에 걸쳐 줄여 자립과 이양에 이르게 한다는 것이다. 주도권을 현지에 두고 재정을 시한부로 설계하는 이 방식은, 염소가 새끼를 낳아 다음 가정으로 흐르게 한 염소뱅크의 순환 설계와 같은 지향이다. 시혜형 원조와 자립형 개발의 차이를 볼트의 사례들로 간추리면 이렇다.</p>
+<table>
+<thead>
+<tr>
+<th>축</th>
+<th>시혜형 원조</th>
+<th>자립형 개발</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>주도권</td>
+<td>주는 쪽이 계획</td>
+<td>현지가 계획, 주는 쪽은 평가·지원</td>
+</tr>
+<tr>
+<td>재정</td>
+<td>무기한 지원</td>
+<td>시한부 점감 (예: 5년 100%→0)</td>
+</tr>
+<tr>
+<td>자산</td>
+<td>주는 쪽 소유</td>
+<td>순환·이양 (염소뱅크)</td>
+</tr>
+<tr>
+<td>결과</td>
+<td>의존 (dependency)</td>
+<td>자각과 질문, 자립 (self-sustainability)</td>
+</tr>
+</tbody>
+</table>
+<p>이 설계 감각은 <a class="wl" href="../../t/%EA%B3%B5%EC%9D%98/">공의</a>의 남겨둠의 신학과 깊이 공명한다. 밭 모퉁이를 남겨 가난한 자가 직접 와서 줍게 한 것은 수혜자의 존엄을 지키는 장치였고, <a class="wl" href="../../t/%EA%B5%AC%EC%A0%9C/">구제</a>가 정리한 은밀한 구제의 원리 — "받는 사람을 비굴하게 하지 않는다" — 도 같은 곳을 가리킨다. 원리(공의)와 마음(긍휼)과 행위(구제)가 개발의 현장에서 만나는 지점이 바로 이 존엄의 설계다. 도움이 사람을 작게 만들지 않고 일으켜 세우려면, 사랑만으로는 부족하고 구조를 설계해야 한다.</p>
+<p>그렇다면 이 모든 논의는 한국 교회에게 어디에 놓이는가.</p>
+<h2>7. 한국 교회의 자리 — 신뢰도의 위기와 통합 선교</h2>
+<p>황예레미야의 2018년 강의는 같은 12과를 전혀 다른 문에서 연다. 인지도와 신뢰도의 간극이다. 교회에 대해 들어보지 않은 사람은 없지만 신뢰도는 다른 문제이며, "예수는 믿지만 교회는 나가지 않는" 가나안 교인 세대가 그 증상이다. 강의는 스탠리 존스(E. Stanley Jones)의 『인도의 길을 걷고 있는 예수』를 빌려 "기독교만큼 교주(예수)의 생각을 따라가지 않는 종교도 없다"고 진단하고, <span class="wl-dead" title="위키 내부 링크">야고보서 1:27</span> — 고아와 과부를 돌보는 정결한 경건 — 을 처방으로 세운다. 지역사회를 향한 실천(praxis)이 무너진 곳에서 이론(theory)은 신뢰를 만들지 못한다. 요컨대 기독교 지역사회 개발은 선교지의 전략이기 이전에, 보내는 교회 자신의 경건과 신뢰도의 문제다.</p>
+<p>흥미로운 것은 이 강의 노트에 남은 기록자의 응답이다. 사회 변혁과 "낮은 곳으로"라는 메시지에 동의하면서도, 현재의 교회를 부정하는 어조 — "교회를 해체하라", "왜 기업에 가느냐" 식의 논법 — 는 또 다른 이원론이라고 맞서고, "맞는 얘기도 정죄하듯이 하면 과연 어떻게 받을까"라고 묻는다. 좋은 모델을 제시하는 강의가 도전이 된다는 것이다. 사회참여를 강조하다 교회와 일상 직업을 피고석에 세우는 것도, 영혼 구원만 선교로 여기는 것만큼 이원론이라는 이 양방향 경계는, <span class="wl-dead" title="위키 내부 링크">한철호</span>가 51가지 선교 아이디어의 마지막 자리에 둔 결론과 포개진다 — "통합 선교: 사회참여 + 복음증거, 이원론 탈피"(#51).</p>
+<p>한국 선교 지형에서 이 통합은 이미 구조가 되어 가고 있다. 송기태는 <span class="wl-dead" title="위키 내부 링크">2022년 선교포럼</span>에서 "복음의 공공성"을 말하며 — 백신을 이웃을 위해 맞는 것이 복음의 공공성이라는 팬데믹기의 예화와 함께 — 이 시대가 요구하는 선교사 유형으로 의사·교육·건축과 나란히 지역사회 개발을 꼽았다. 총체적 복음이 "새로운 것이 아니다. 복음은 원래 그랬다"는 그의 말은, 개발 선교가 유행이 아니라 회복임을 짚는다. <span class="wl-dead" title="위키 내부 링크">동신교회</span>의 선교정책모임 회의록에는 교회 선교의 방향성을 두고 "공동체, 지역사회 개발, 교회개척, 창의적 접근 — 결국 다 하는 것으로 할 것인가"라는 물음이 남아 있는데, 지역사회 개발이 지역교회 선교 포트폴리오의 상수가 되었음을 보여주는 동시에, 집중 없는 백화점식 나열의 위험도 함께 드러낸다.</p>
+<p>구조와 전략의 문제를 지나면, 마지막에는 다시 사람의 문제가 남는다.</p>
+<h2>8. 황무지를 마음에 두는 사람 — 존재적 선교</h2>
+<p>장창수 강의의 종착지는 방법이 아니라 존재다. 강의는 10/40창의 땅들을 미전도(Unreached)이자 황무지(Unriched)로 겹쳐 읽는다 — 복음이 닿지 않았을 뿐 아니라 창조의 부요가 회복되지 않은 땅. 그리고 예언서의 황무지 본문을 빌려 그 이유를 말한다. 황폐함이 계속되는 것은 자원이 없어서가 아니라 "그것을 마음에 두는 자가 없기 때문"이다. <a class="wl" href="../../t/%EB%AF%B8%EC%A0%84%EB%8F%84%EC%A2%85%EC%A1%B1/">미전도종족</a> 개념이 지리와 종족의 지도를 그렸다면, Unriched는 그 지도 위에 결핍과 결함의 지층을 겹쳐 그린다.</p>
+<blockquote>
+<p>"마음에 둔다는 것은 최소한 그것 때문에 나의 일상이 방해를 받고 멈춰 서야 한다는 것이다. … 어떤 지역과 사람이 나의 일상을 방해하니까 그곳으로 옮겨버린 사람이 선교사이다." — 장창수</p>
+</blockquote>
+<p>연애하면 신경이 쓰이지 않을 수 없듯, 가난한 공동체를 마음에 둔다는 것은 감정이 아니라 일상의 재배치로 증명된다. 그래서 강의는 선교사의 준비에서 기능(function)과 존재(being)의 비율을 뒤집으라고 요구한다 — "8~90%는 존재에 더 힘써야 한다. I am nothing." 사회생활의 논리로는 내가 무엇이 되어야 하지만, 사역은 반대다. 내가 something이 되면 안 된다. 결론으로 제시되는 공식이 "성경읽기 + 환경읽기", 곧 로잔의 전도와 사회참여의 통합을 개인의 습관 차원으로 번역한 것이다. 급변하는 도시화·슬럼화 시대에 설계도를 스스로 그려내는 개념설계역량이 왜 필요한지는 <a class="wl" href="../../t/%EC%B4%9D%EC%B2%B4%EC%A0%81%EC%84%A0%EA%B5%90/">총체적선교</a>가 상세히 다룬다.</p>
+<p>이렇게 처음의 질문으로 돌아온다. 우물은 누구나 판다. 그러나 끝이 다른 우물은, 끝이 다른 사람 — 창조의 회복을 기준 삼고, 결핍 너머 결박까지 내려가며, 자립을 설계하고, 자기 일상이 그 땅 때문에 멈춰 선 사람 — 에게서 나온다. 기독교 지역사회 개발은 결국 기술이 아니라 삶의 태도다. "누가 보지 않아도 우리의 삶이, 일상이 그와 같아야 한다."</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>기독교 개발의 변별점은 방법이 아니라 목적지다 — 회복의 기준점이 "창조의 때"이므로, 같은 우물도 끝이 다르다.</li>
+<li>구제는 개발의 반대말이 아니라 첫 계단이다. 문제는 구제가 아니라 구제에서 멈추는 것 — 결핍 → 결함 → 결박의 지층을 내려가야 진정한 변화가 온다.</li>
+<li>개발은 전도의 미끼가 아니라 복음이 증명되는 방식이다. 베텔의 회복 공동체가 교회가 되었고, 예수님은 문둥병자의 육체가 아니라 갈망에 손을 대셨다.</li>
+<li>자립 설계 없는 원조는 두 번째 종살이를 만든다. 현지 주도권, 시한부 재정(5년 점감), 순환 자산(염소뱅크)이 존엄을 지키는 구조다.</li>
+<li>지역사회 개발은 선교지 전략이기 이전에 교회 신뢰도의 문제다 — 인지도는 높고 신뢰도는 낮은 한국 교회에서 약 1:27의 경건이 처방이다.</li>
+<li>이원론은 양방향으로 경계해야 한다. 영혼 구원만 선교로 여기는 것도, 사회참여를 강조하며 교회와 일상 직업을 정죄하는 것도 이원론이다.</li>
+<li>방법론(CHE·적정기술·마이크로 자산·NGO)의 공통 문법은 "작고, 단순하고, 주민이 스스로 돌릴 수 있는 것"이다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>한정된 자원 속에서 복음의 명시적 선포와 개발 사역이 충돌할 때의 우선순위 기준은 무엇인가 — 강의는 "예수님은 둘 다 하셨다"고 답하지만 배분의 실무 기준은 열려 있다.</li>
+<li>"숫자가 중요하지 않다"면 변혁(transformation)의 열매는 무엇으로 측정하는가 — 베텔 1만 3천 명을 성공 사례로 드는 것과의 긴장이 남는다.</li>
+<li>결함(구조) 층위의 개입, 곧 정치적 옹호(political advocacy)를 한국 선교가 실제로 감당한 사례가 볼트에 없다 — <a class="wl" href="../../t/%EA%B3%B5%EC%9D%98/">공의</a>의 미쉬파트 논의와 이 페이지가 만나야 할 지점이다.</li>
+<li>CHE의 실행 원칙 4요소는 확보되었으나(문누가 2026) 현장 사례 보고는 아직 없다 — 커리큘럼 실물과 사례 인제스트가 다음 단계다. 아울러 강의의 핵심 수치(프로젝트 실패율 90%, 지속가능성 30/65/95%)의 원 출전 확인도 필요하다.</li>
+<li>문누가가 남긴 의료선교 적용 질문 — 선교사 은퇴 후까지 지속 가능한 하나님나라 선포를 위한 개선 — 은 <a class="wl" href="../../t/%EC%9D%98%EB%A3%8C%EC%84%A0%EA%B5%90/">의료선교</a>와 이 페이지가 함께 풀어야 할 과제다.</li>
+<li>존 퍼킨스(John Perkins)의 3R이나 CCDA 같은 세계 기독교 지역사회개발 운동의 고전 문헌이 볼트에 아직 없다(볼트의 "퍼킨스"는 청교도 윌리엄 퍼킨즈뿐이다). 변혁적 개발론의 원전 확보가 다음 과제다.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%B4%9D%EC%B2%B4%EC%A0%81%EC%84%A0%EA%B5%90/">총체적선교</a> — 이 주제의 신학적 모체. 패러다임 전환·존재적 선교·개념설계역량의 본류</li>
+<li><a class="wl" href="../../t/%ED%86%B5%EC%A0%84%EC%A0%81%EC%84%A0%EA%B5%90/">통전적선교</a> — 죄의 4중 괴리 도식의 신학적 정초 (장창수 2023 강의)</li>
+<li><a class="wl" href="../../t/%EA%B5%AC%EC%A0%9C/">구제</a> — 행위·실천으로서의 나눔. 이 페이지는 그 나눔이 개발로 성숙하는 스펙트럼을 맡는다</li>
+<li><a class="wl" href="../../t/%EA%B3%B5%EC%9D%98/">공의</a> — 남겨둠의 신학과 수혜자의 존엄. 자립 설계의 원리적 뿌리</li>
+<li><a class="wl" href="../../t/%EA%B8%8D%ED%9C%BC/">긍휼</a> — 개발 사역이 발원하는 마음의 축</li>
+<li><a class="wl" href="../../t/%EB%8F%84%EC%8B%9C%EC%84%A0%EA%B5%90/">도시선교</a> — 도시화·슬럼이라는 개발의 공간적 맥락</li>
+<li><a class="wl" href="../../t/%EC%9D%98%EB%A3%8C%EC%84%A0%EA%B5%90/">의료선교</a> — CHE·보건 개발의 접점, 의료 전문성의 선교적 사용</li>
+<li><a class="wl" href="../../t/%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4%EC%84%A0%EA%B5%90/">BAM</a> — 경제 개발 축의 신학 (BFM/BAM 구별)</li>
+<li><a class="wl" href="../../t/%EC%A0%84%EB%AC%B8%EC%9D%B8%EC%84%A0%EA%B5%90/">전문인선교</a> — 전문 기술을 통한 총체적 개발 참여</li>
+<li><a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EA%B0%9C%EC%B2%99/">교회개척</a> — 성육신적 개척 모델과 개발의 결합</li>
+<li><a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EB%82%98%EB%9D%BC/">하나님나라</a> — 개발 공동체가 보여주는 "예고편"의 신학</li>
+<li><span class="wl-dead" title="위키 내부 링크">선교지재산권거버넌스</span> — NGO 개발 선교의 재산권·거버넌스 실무</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2019_장창수_기독교지역사회개발</span> (PSP 12과, 2019)</td>
+<td>강의</td>
+<td>앵커 — 개발 스펙트럼, 결핍·결함·결박, 베텔, 마 8장, 존재적 선교</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2026-07_문누가_기독교지역사회개발</span> (2026)</td>
+<td>강의</td>
+<td>Advocate-Innovator 이론, ABCD 대비와 30/65/95% 데이터, CHE 실행 4요소, 변화의 피라미드(밀러), 전문인 선교 3시각</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">황예레미야</span>, 「기독교 지역사회 개발」 (2018 LMTC-PSP 12과)</td>
+<td>강의</td>
+<td>인지도 vs 신뢰도, 가나안 교인, 약 1:27, 양방향 이원론 경계</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B451_%ED%95%9C%EC%B2%A0%ED%98%B8/">선교아이디어51_한철호</a></td>
+<td>책</td>
+<td>#47 지역 개발 사역(CHE), #51 통합 선교 — 이원론 탈피</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">송기태</span>, 「누구를 보낼 것인가」 (2022 선교포럼)</td>
+<td>강의</td>
+<td>복음의 공공성, 선교사 유형으로서의 지역사회 개발, BFM/BAM</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">송기태</span>, Church Engagement 시즌3 「교회 개척 모델들」</td>
+<td>강의</td>
+<td>선교적·성육신적 모델 4요소 — 개발과 개척의 결합</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2019_박주용_생명사역_국제화</span></td>
+<td>보고</td>
+<td>부룬디 염소뱅크 — 마이크로 자산의 자생적 순환 설계</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">선교실행위</span>, 「NGO를 통한 선교사역」</td>
+<td>발표</td>
+<td>글로벌케어·온누리 3-NGO 체제, 5년 점감 자립·이양 설계</td>
+</tr>
+<tr>
+<td>동신교회 선교정책모임 회의록</td>
+<td>회의</td>
+<td>지역교회 선교 포트폴리오 속의 지역사회 개발</td>
+</tr>
+<tr>
+<td>함선네 멘토링 강의 (「교회 및 선교기관 관계 맺기」)</td>
+<td>강의</td>
+<td>구제·개발 패러다임 전환 — 일방적 동정에서 겸손한 섬김으로</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/선교</span><span>#discipline/선교학</span><span>#topic/지역사회개발</span><span>#topic/변혁적개발</span><span>#topic/빈곤</span><span>#topic/자립과이양</span><span>#topic/NGO선교</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

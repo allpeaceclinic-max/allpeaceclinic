@@ -1,0 +1,236 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>직장인이라면 다니엘처럼 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="date">2026-05-05</span></div>
+  <h1 class="note-title">직장인이라면 다니엘처럼</h1>
+  
+</header>
+<article class="note">
+<h2>개요</h2>
+<ul>
+<li><strong>핵심 본문</strong>: 다니엘서 — 바빌론이라는 직장 현장에서의 선교적 삶</li>
+<li><strong>핵심 키워드</strong>: 디아스포라, 두 나라 정체성, 포로이면서 프로페셔널</li>
+</ul>
+<h2>★ 핵심 명제</h2>
+<blockquote>
+<p><strong>다니엘은 포로(Exile)이면서 프로페셔널이었다.<br />
+직장인도 마찬가지다: 세상에 속했지만, 세상에 속하지 않은 자.</strong></p>
+</blockquote>
+<h2>1. 다니엘의 정체성 위기 3가지</h2>
+<table>
+<thead>
+<tr>
+<th>위기</th>
+<th>내용</th>
+<th>반응</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>개명</td>
+<td>바벨론식 이름으로 변경</td>
+<td>수용 — 어쩔 수 없는 외적 의무</td>
+</tr>
+<tr>
+<td>세상 학문</td>
+<td>바빌론의 학문 배우기</td>
+<td>수용 — 열심히 배움</td>
+</tr>
+<tr>
+<td>왕의 음식</td>
+<td>부정한 음식 먹기</td>
+<td><strong>거부</strong> — 정체성을 드러낸 결정적 순간</td>
+</tr>
+</tbody>
+</table>
+<p>→ 핵심 통찰: <strong>수용할 것과 거부할 것을 분별하는 지혜</strong><br />
+격리가 아니라 대안 제시 — 창의적 타협이 아닌 창의적 대안</p>
+<h2>2. 직장 현장 적용 — 술자리</h2>
+<blockquote>
+<p>술자리야말로 그리스도인의 정체성을 드러낼 기회다!</p>
+</blockquote>
+<p><strong>회식 사역 — 거부에 머무르지 않고 대안을 제시</strong>:
+- 먹지 않고 어울리기
+- 상담자 역할
+- 대리운전
+- 분위기 메이커
+- 원칙: 여성이 나오는 자리는 참석하지 않는다</p>
+<h2>3. 7I 프레임워크</h2>
+<p>다니엘의 삶에서 추출한 직장인 선교 7가지 차원:</p>
+<table>
+<thead>
+<tr>
+<th>I</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Identity</strong></td>
+<td>두 나라의 정체성 — 포로이면서 프로페셔널</td>
+</tr>
+<tr>
+<td><strong>Intercession</strong></td>
+<td>사생결단의 기도 — 사명, 사람들을 위한 중보</td>
+</tr>
+<tr>
+<td><strong>Image</strong></td>
+<td>이미지 — 그리스도인으로서의 삶의 방식</td>
+</tr>
+<tr>
+<td><strong>Influence</strong></td>
+<td>영향력 — 다니엘이 왕들에게 미친 영향</td>
+</tr>
+<tr>
+<td><strong>Integrity</strong></td>
+<td>정직함 — 뜻을 정하여 타협하지 않음</td>
+</tr>
+<tr>
+<td><strong>Intimacy</strong></td>
+<td>친밀함 — 하나님과의 친밀함 (하루 3번 기도, 단6)</td>
+</tr>
+<tr>
+<td><strong>Impact</strong></td>
+<td>임팩트 — 결국 대제국을 변화시킴</td>
+</tr>
+</tbody>
+</table>
+<h2>4. LAMs (삶의 선교)와의 연결</h2>
+<p><span class="wl-dead" title="위키 내부 링크">LAMs</span> · 하백선 5장 (Integrity as Mission)</p>
+<table>
+<thead>
+<tr>
+<th>다니엘처럼</th>
+<th>LAMs 핵심</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identity (두 나라 정체성)</td>
+<td>Being before Doing — 존재가 선교다</td>
+</tr>
+<tr>
+<td>Integrity (뜻을 정함)</td>
+<td>5과: 의(쩨다카)와 공도(미쉬파트)</td>
+</tr>
+<tr>
+<td>직장 = 바빌론 현장</td>
+<td>13과: 공적 광장에서 살아가는 백성</td>
+</tr>
+<tr>
+<td>포로이면서 프로페셔널</td>
+<td>"모든 직업이 선교 영역이다"</td>
+</tr>
+<tr>
+<td>창의적 대안 (회식 사역)</td>
+<td>이원론 극복 — 성과 속의 통합</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>LAMs 5강 보너스 슬라이드에서 다니엘이 직접 등장:<br />
+<strong>"역사의 흐름을 바꾸는 것은 다수가 아니라,<br />
+뜻을 정한 정직한 소수다 — 다니엘이 증거다."</strong></p>
+</blockquote>
+<h2>5. Life as Mission 선언과 연결</h2>
+<blockquote>
+<p>"당신의 삶 자체가 하나님의 선교입니다" — LAMs 1장</p>
+</blockquote>
+<p>다니엘에게서 보이는 삶의 선교 구조:
+- <strong>선교지</strong> = 바빌론 궁정 (직장)
+- <strong>선교사</strong> = 포로된 청년 (기독 직장인)
+- <strong>선교 방법</strong> = 정체성 유지 + 탁월한 전문성 + 중보기도</p>
+<h2>관련 연결</h2>
+<ul>
+<li><span class="wl-dead" title="위키 내부 링크">LAMs</span> — Life as Mission 훈련, 직장 선교의 신학적 토대</li>
+<li><a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%8B%A0%ED%95%99/">직업신학</a> — 모든 직업이 선교 영역</li>
+<li><a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a> — 직업 속의 소명 (골 3:23)</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> — 삶의 선교, 총체적 선교</li>
+<li><a class="wl" href="../../t/%EC%A0%95%EC%B2%B4%EC%84%B1/">정체성</a> — 두 나라 시민으로서의 정체성</li>
+</ul>
+</article>
+<div class="tagrow"><span>#직장선교</span><span>#정체성</span><span>#삶의선교</span><span>#디아스포라</span><span>#다니엘</span><span>#기독직장인</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

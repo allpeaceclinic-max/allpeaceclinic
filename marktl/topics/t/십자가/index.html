@@ -1,0 +1,264 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>십자가 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:345">영성·제자도</span><span class="date">2026-07-11</span></div>
+  <h1 class="note-title">십자가</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>십자가(σταυρός, stauros)는 본래 로마 제국이 노예와 반역자를 가장 수치스럽게 처형하던 형틀의 이름이다. 그런데 이 볼트의 자료들 속에서 십자가라는 한 단어는 언제나 두 얼굴을 동시에 지고 나타난다. 하나는 <strong>사건이자 상징으로서의 십자가</strong> — 죄 없으신 이가 가장 낮은 자리에서 당하신 일, 그리고 그 수치의 형틀이 하나님의 능력과 영광으로 뒤집히는 역설이다. 다른 하나는 <strong>부르심으로서의 십자가</strong> — "누구든지 나를 따라오려거든 자기를 부인하고 자기 십자가를 지라"(<span class="wl-dead" title="위키 내부 링크">눅 9:23</span>)는 명령 안에서, 십자가는 그리스도가 지신 것일 뿐 아니라 제자가 매일 져야 할 것이 된다.</p>
+<p>이 두 얼굴은 십자가가 죄를 <em>어떻게</em> 처리하는가의 문제와는 구별된다. 형벌 대속·만족설·승리자 그리스도라는 속죄의 메커니즘은 <a class="wl" href="../../t/%EC%86%8D%EC%A3%84%EB%A1%A0/">속죄론</a>·<a class="wl" href="../../t/%EC%86%8D%EC%A3%84/">속죄</a>·<a class="wl" href="../../t/%EA%B5%AC%EC%86%8D%EC%8B%A0%ED%95%99/">구속신학</a>이 상술하고, <span class="wl-dead" title="위키 내부 링크">사 53장</span> 고난받는 종의 대속 구조는 <a class="wl" href="../../t/%EA%B3%A0%EB%82%9C%EB%B0%9B%EB%8A%94%EC%A2%85/">고난받는종</a>이 다룬다. 이 글은 그 메커니즘을 그 페이지들에 위임하고, 십자가가 <em>무엇으로 보이며</em>(수치→영광) <em>나에게 무엇을 요구하는가</em>(자기 십자가)라는 두 얼굴을 따라간다. 십자가의 유익이 일상에 착지하는 자리, 자기부인과 인내가 제자도가 되는 자리, 그리고 십자가가 나 자신의 폭력성을 비추는 거울이 되는 자리가 그 여정의 정거장들이다.</p>
+<h2>1. 두 얼굴 — 한 단어가 지는 두 짐</h2>
+<p><span class="wl-dead" title="위키 내부 링크">권성수 목사</span>는 <span class="wl-dead" title="위키 내부 링크">마 16:21-28</span> 강해에서 이 두 얼굴을 한 설교 안에 나란히 세운다. 그는 본문을 "예수의 십자가 → 우리의 십자가 → 죽으면 산다"의 삼중 전개로 풀면서, <strong>동일한 '십자가'라는 단어가 그리스도에게는 단번의 대속이지만 제자에게는 매일의 자기부인으로 작용한다</strong>는 점을 구조 자체로 증언한다. 그리스도의 십자가(객관적 구속)에서 출발해 신자의 십자가(주관적 적용)로 내려오는 이 평행은, 제자도를 값싼 결단주의가 아니라 그리스도의 길을 실제로 걷는 동행으로 규정한다.</p>
+<p>이 볼트에서 십자가가 읽히는 층위를 갈라 두면, 각 질문이 어느 페이지의 몫인지가 분명해진다.</p>
+<table>
+<thead>
+<tr>
+<th>층위</th>
+<th>묻는 질문</th>
+<th>담당 페이지</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>속죄 메커니즘</td>
+<td>십자가가 <em>어떻게</em> 죄를 처리하는가 (형벌 대속·만족설·크리스투스 빅토르)</td>
+<td><a class="wl" href="../../t/%EC%86%8D%EC%A3%84%EB%A1%A0/">속죄론</a> · <a class="wl" href="../../t/%EC%86%8D%EC%A3%84/">속죄</a> · <a class="wl" href="../../t/%EA%B5%AC%EC%86%8D%EC%8B%A0%ED%95%99/">구속신학</a></td>
+</tr>
+<tr>
+<td>십자가 신학(방법론)</td>
+<td>십자가가 <em>신학하는 방식</em>을 규정한다 (영광의 신학 대조·sub contrario·몰트만)</td>
+<td><a class="wl" href="../../t/%EC%8B%AD%EC%9E%90%EA%B0%80%EC%8B%A0%ED%95%99/">십자가신학</a></td>
+</tr>
+<tr>
+<td>대속의 종</td>
+<td><span class="wl-dead" title="위키 내부 링크">사 53</span>의 고난받는 종이 <em>어떻게</em> 대신 지는가</td>
+<td><a class="wl" href="../../t/%EA%B3%A0%EB%82%9C%EB%B0%9B%EB%8A%94%EC%A2%85/">고난받는종</a></td>
+</tr>
+<tr>
+<td><strong>두 얼굴 (본 페이지)</strong></td>
+<td>십자가가 <em>무엇으로 보이는가</em>(수치→영광), 나에게 <em>무엇을 요구하는가</em>(자기 십자가)</td>
+<td><a class="wl" href="../../t/%EC%8B%AD%EC%9E%90%EA%B0%80/">십자가</a></td>
+</tr>
+</tbody>
+</table>
+<p>두 얼굴은 분리되지 않는다. 첫째 얼굴(그리스도가 지신 십자가)이 둘째 얼굴(내가 지는 십자가)의 근거이자 능력이기 때문이다. 그리스도의 십자가가 없으면 나의 십자가는 종교적 자학에 그치고, 나의 십자가가 없으면 그리스도의 십자가는 구경거리에 그친다. 아래의 여정은 첫째 얼굴에서 시작해 둘째 얼굴로 건너간 뒤, <span class="wl-dead" title="위키 내부 링크">갈 2:20</span>에서 둘이 하나로 만나는 지점을 향한다.</p>
+<h2>2. 수치의 형틀에서 하나님의 능력으로 — 역설의 문법</h2>
+<p>십자가의 첫째 얼굴은 스캔들에서 출발한다. 백은성 간사는 <span class="wl-dead" title="위키 내부 링크">고전 1:18-25</span> 강해에서 무감각해진 십자가를 세 청중의 시선으로 낯설게 만든다. 유대인에게 십자가는 표적을 구하는 신앙에 어긋나는 <strong>거리끼는 것</strong>(σκάνδαλον, 스칸달론)이었고, 헬라인에게는 이성으로 신을 찾으려는 철학에 어긋나는 <strong>미련한 것</strong>(μωρία, 모리아)이었으며, 로마인에게는 입에 올리기조차 불쾌한 당혹이었다. "때려서 거반 죽이고, 십자가를 지고 행진하게 하고, 벗겨서 공개하고, 못으로 박아 죽을 때까지 매달아 두는" 야만의 형틀 — 곧 "노예처럼 굴욕적으로 죽으신 분이 왕 중의 왕"이라는 것이 복음의 스캔들이다.</p>
+<p>바로 이 스캔들의 한복판에서 바울은 십자가의 도(ὁ λόγος τοῦ σταυροῦ, 호 로고스 투 스타우루)를 하나님의 능력(δύναμις θεοῦ, 뒤나미스 데우)이라 선언한다.</p>
+<blockquote>
+<p>"십자가의 도가 멸망하는 자들에게는 미련한 것이요 구원을 받는 우리에게는 하나님의 능력이라." — 고전 1:18</p>
+</blockquote>
+<p>이 역전의 문법을 백은성은 한 문장으로 요약한다 — "세상은 자기중심성에 근거해서 돌아가지만, 하나님은 자기부인에 기초해서 일하신다." 하나님은 어리석음과 약함을 내어주심으로써 도리어 자신의 지혜와 권위를 드러내신다(고전 1:25). 그리고 이 수수께끼를 푸는 열쇠는 <a class="wl" href="../../t/%EB%B6%80%ED%99%9C/">부활</a>이다. 백은성은 C. S. 루이스의 아슬란이 말한 "하얀 마녀가 몰랐던 더 심오한 마법(deeper magic)"을 빌려, 부활이 (a) 그리스도의 죽음이 그분 자신의 죄 때문이 아님을 증명하고 (b) 그 자기 희생을 하나님이 충분한 속죄로 받으셨음을 선포하며 (c) 죽음마저 무력화했음을 보인다고 말한다. 부활이 없으면 십자가는 수치에서 멈추지만, 부활이 있기에 수치가 곧 영광의 문이 된다.</p>
+<h2>3. 어둠과 버림과 열린 휘장 — 사건의 내부와 그 유익</h2>
+<p>수치가 영광으로 뒤집히는 그 사건의 내부를 <span class="wl-dead" title="위키 내부 링크">권성수 목사</span>는 <span class="wl-dead" title="위키 내부 링크">막 15:33-39</span> 강해에서 세 국면으로 짚는다. <strong>어둠</strong>(σκότος, 스코토스) → <strong>버림</strong> → <strong>죽음</strong>이다. 정오부터 오후 3시까지 온 땅을 덮은 어둠은 유월절(만월) 시기라 자연적 일식이 불가능한, 하나님이 초자연적으로 쏟으신 심판의 어둠이다. 이 사건을 그는 성부의 무능이나 부재가 아니라 성부의 능동적 심판으로 읽는다.</p>
+<blockquote>
+<p>"성부 하나님은 골고다에 함께 계셨다. 힘이 없어서가 아니라, 자신의 외아들을 심판하고 계셨다. 예수를 죽이심으로 우리를 살리신 것이다."</p>
+</blockquote>
+<p>죄 없으신 성자가 "어찌하여 나를 버리셨나이까"(<span class="wl-dead" title="위키 내부 링크">시 22:1</span>)를 외치신 그 버림의 심연에서 무엇이 일어났는가 — 곧 형벌 대속의 메커니즘 자체는 <a class="wl" href="../../t/%EC%86%8D%EC%A3%84%EB%A1%A0/">속죄론</a>과 <a class="wl" href="../../t/%EC%86%8D%EC%A3%84/">속죄</a>의 몫이다. 이 페이지가 붙드는 것은 그 죽음에서 곧바로 흘러나온 <strong>유익(benefits)</strong>이다. 예수께서 숨지신 순간 성소 휘장(καταπέτασμα, 카타페타스마)이 "위로부터 아래까지" — 곧 인간이 아니라 하나님이 위에서 — 찢어졌다. 지성소가 열렸고, 이제 누구든 은혜의 보좌 앞에 담대히 나아갈 수 있게 되었다(히 4:16). 권성수 목사는 이를 "하나님과의 핫라인"이라 부른다. 가장 어두운 순간(버림받은 성자)이 곧 가장 밝은 문(열린 지성소)을 여는 역설이 십자가 사건의 골격이다. 그 문 앞에서 예수를 못 박은 백부장이 "진실로 하나님의 아들"을 고백하고, 함께 못 박힌 강도가 낙원을 약속받는다 — 가장 먼 자리에 있던 자가 십자가 앞에서 가장 가까운 고백에 이른다.</p>
+<p>이 "유익"을 일상의 언어로 풀어낸 것이 맥스 루케이도의 <a class="wl" href="../../b/%EC%98%88%EC%88%98%EA%B0%80%EC%84%A0%ED%83%9D%ED%95%9C%EC%8B%AD%EC%9E%90%EA%B0%80_%EB%A7%A5%EC%8A%A4%EB%A3%A8%EC%BC%80%EC%9D%B4%EB%8F%84/">『예수가 선택한 십자가』</a>다. 그는 십자가의 각 요소를 하나님이 건네신 선물로 읽는다 — 침 뱉음은 나의 수치를 대신 받으심이고, 못 박힘은 손과 나무 사이에 놓인 나의 죄 목록을 지우심이며, 휘장의 찢김은 도저히 나아갈 수 없던 곳에 열린 새 살 길이다. 특히 그는 십자가의 형태 자체에서 신학을 읽어 낸다 — <strong>가로 막대기는 사랑의 넓이, 세로 막대기는 거룩함의 높이</strong>이며, 십자가는 공의와 자비가 교차하는 유일한 자리라는 것이다. 이상협 집사가 이 책을 읽고 남긴 한 줄이 십자가의 유익을 요약한다 — "십자가, 바로 나를 향한 하나님의 완벽한 최고의 사랑 보따리이다."</p>
+<h2>4. "십자가에 못 박히신 이 외에는" — 십자가 중심성</h2>
+<p>십자가가 사건이자 유익이라면, 그것은 곧 신앙과 사역의 중심이 된다. 전원철 선교사는 <span class="wl-dead" title="위키 내부 링크">고전 2:1-5</span> 강해에서 문제로 가득했던 고린도 교회를 향한 바울의 전략을 이렇게 읽는다 — <strong>"문제에 집중하게 하지 않고, 예수님과 십자가에 집중하게 한다."</strong> 바울이 "예수 그리스도와 그가 십자가에 못 박히신 것(ἐσταυρωμένον, 에스타우로메논) 외에는 아무 것도 알지 아니하기로 작정하였다"고 말할 때, 그 완료 수동분사는 단지 과거의 사건이 아니라 "십자가에 못 박히신 채로 계신" 그리스도, 곧 사역자의 메시지를 영구히 규정하는 정체성을 가리킨다.</p>
+<p>이 십자가 중심성은 곧 가치의 재배열이다. 바울은 혈통과 율법과 열심의 자랑거리들을 "그리스도를 아는 지식이 가장 고상하기 때문에" 모두 배설물로 여겼다(<span class="wl-dead" title="위키 내부 링크">빌 3:8</span>). 전원철은 여기에 한 가지 분별을 더한다 — "공개적인 십자가, 봤지만 다 반응하지 않는다. <a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a>를 받은 자만이 반응한다." 십자가 사건은 만인 앞에 공개되었으나, 그것이 구원으로 효력을 발하는 것은 은혜 받은 자에게서다. 사역자가 할 일은 문제 해결의 기술을 처방하는 것이 아니라 사람들을 십자가로 돌아오게 하는 것이며, 십자가를 전하는 자의 삶은 자기 목숨을 대속물(λύτρον)로 주러 오신 그분을 따라 <a class="wl" href="../../t/%EC%84%AC%EA%B9%80/">섬김</a>과 자기 내어줌으로 나타나야 한다. 여기서 첫째 얼굴(사건)이 둘째 얼굴(부르심)로 건너간다 — 십자가를 바라보는 시선은 반드시 십자가를 지는 발걸음으로 이어지기 때문이다.</p>
+<h2>5. 자기 십자가를 지고 — 제자도의 얼굴</h2>
+<p>둘째 얼굴은 명령형으로 온다. "누구든지 나를 따라오려거든 자기를 부인하고 자기 십자가를 지고 나를 따를 것이니라"(<span class="wl-dead" title="위키 내부 링크">눅 9:23</span>; <span class="wl-dead" title="위키 내부 링크">마 16:24</span>). <span class="wl-dead" title="위키 내부 링크">권성수 목사</span>는 "자기 십자가를 지고"(αἴρω τὸν σταυρόν, 아이로 톤 스타우론)가 사형수가 처형장으로 자기 형틀을 지고 가던 1세기의 이미지, 곧 <strong>자아에 대한 사형 선고를 자청하는 행위</strong>임을 밝힌다. 그리고 이 십자가를 지지 못하게 막는 것이 무엇인지를 베드로의 "그리 마옵소서"에서 찾는다. 예수께서 사랑하는 제자를 "사탄아 물러가라"고 신랄하게 책망하신 이유는, 그 선의 속에 "고난 없는 영광으로 들어가라"는 지름길의 유혹이 숨어 있었기 때문이다.</p>
+<blockquote>
+<p>"사탄의 유혹은 고난 없는 영광으로 들어가라는 것이다. 사람들의 것은 고난당하기 싫어하는 것이요, 하나님의 것들은 구원을 위해 고난당하는 것이다."</p>
+</blockquote>
+<p>그래서 십자가를 지는 자리는 내 안에서 "하나님의 것들"과 "사람의 것들"이 충돌하는 지점이며, 그 결단의 셈법은 "죽으면 산다"는 역설이다 — 제 목숨을 구원하려 하면 잃고, 예수를 위해 잃으면 찾는다. <span class="wl-dead" title="위키 내부 링크">짐 엘리엇</span>의 증언이 이 신학을 압축한다 — "결코 잃을 수 없는 것을 얻기 위해 결코 보존할 수 없는 것을 주는 사람은 바보가 아니다."</p>
+<p>윤명숙 전도사는 이 무거운 제자도 본문을 가정의 관계 윤리로 착지시킨다. 그는 "자기를 부인하고"(ἀπαρνέομαι, 아파르네오마이)를 추상적 금욕이 아니라 <strong>"내가 해야 할 책임으로서의 십자가를 내가 진다"</strong>는 구체적 관계 윤리로 푼다. "나의 십자가는 내가 책임을 지길 주님은 원하신다" — 자기 십자가는 상대가 지워주는 짐이 아니라 내가 자발적으로 지는 책임이며, 이 분별이 가정 안에서 책임 전가와 탓하기를 끊는 열쇠가 된다. 십자가를 지는 제자도의 더 넓은 체계 — 정체성으로서의 제자도, 성령 의존, 공동체성 — 는 <a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%EB%8F%84/">제자도</a>와 <a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%ED%9B%88%EB%A0%A8/">제자훈련</a>이 상술하며, <span class="wl-dead" title="위키 내부 링크">본회퍼</span>의 "그리스도께서 한 사람을 부르실 때에는 와서 죽으라고 부르신 것이다"가 그 문을 연다.</p>
+<h2>6. 십자가를 참으사 — 인내라는 십자가</h2>
+<p>자기 십자가를 진다는 것은 한 번의 결단이 아니라 지속되는 견딤이다. <span class="wl-dead" title="위키 내부 링크">권성수 목사</span>는 <span class="wl-dead" title="위키 내부 링크">히 12:2</span> 강해에서 인내(ὑπομονή, 휘포모네 — "그 아래 머물러 견딤")의 완성된 모델로 십자가를 제시한다. 그는 다이아몬드가 극한의 압력과 온도의 산물이듯, 십자가야말로 인내가 시험받는 최고치라고 말한다.</p>
+<blockquote>
+<p>"최고의 압력, 최고의 온도 — 이것은 십자가이다. 인내의 한계? 예수 그리스도에게는 없었다. 그래서 예수를 바라보자는 것이다."</p>
+</blockquote>
+<p>예수께서 그 극한을 견디신 동력은 고통의 미화가 아니라 "그 앞에 있는 기쁨"(ἀντὶ τῆς προκειμένης χαρᾶς) — 곧 하나님 보좌 우편의 보상을 바라보신 소망이었다. 히 12:1의 "인내로써 경주하며"와 12:2의 "십자가를 참으사"가 같은 어근으로 묶여, 신자의 경주와 그리스도의 십자가가 하나의 인내로 연결된다. 인내는 자기 의지를 쥐어짜는 것이 아니라 여호와를 앙망하여 새 힘을 공급받는 것(사 40:31)이며, 그 끝에는 탈진이 아니라 독수리의 비상이 있다. 이렇게 십자가는 <a class="wl" href="../../t/%EA%B3%A0%EB%82%9C/">고난</a> 한복판에서 신자가 붙드는 견딤의 원형이 된다(<span class="wl-dead" title="위키 내부 링크">고난과 시련</span> 클러스터와 연결).</p>
+<h2>7. 그리스도와 함께 죽고 사는 — 갈라디아서 2장 20절의 현재형</h2>
+<p>두 얼굴이 마침내 하나로 만나는 자리가 <span class="wl-dead" title="위키 내부 링크">갈 2:20</span>이다. "내가 그리스도와 함께 십자가에 못 박혔나니 그런즉 이제는 내가 사는 것이 아니요 오직 내 안에 그리스도께서 사시는 것이라." <span class="wl-dead" title="위키 내부 링크">권성수 목사</span>는 여기서 "함께 못 박혔나니"(συνεσταύρωμαι, 쉬네스타우로마이)가 헬라어 완료형 — 과거에 일어나 현재까지 지속되는 상태 — 임에 주목한다. 십자가는 여기서 과거의 사건에서 신자의 <strong>현재 정체성</strong>으로 전환된다. 그리스도의 십자가(첫째 얼굴)에 내가 못 박혔기에, 나의 십자가(둘째 얼굴)는 자력의 고행이 아니라 "나를 통해 그리스도께서 살아가시는" 연합의 삶이 된다.</p>
+<p>권성수 목사는 이 연합을 세 시제로 푼다 — 십자가에서 함께 <strong>죽었고</strong>(과거), 부활로 함께 <strong>살았으며</strong>(완료), 지금 나를 통해 그리스도께서 <strong>살아가신다</strong>(현재 진행). 앞의 둘은 비교적 받아들여지나, 가장 실감 나지 않는 것이 세 번째 "현재의 동거"다. 그가 진단하는 신자의 핵심 병은 "예수 결핍증(JDD)" — 성경도 있고 성령도 아는데 그리스도의 내주가 추상으로 남는 상태이며, 그 처방은 더 많은 지식이 아니라 더 밀착된 접속(<span class="wl-dead" title="위키 내부 링크">요 15장</span> 포도나무 가지)이다. 십자가에 못 박힌 자기부인(§5)과 십자가를 참는 인내(§6)가 이 연합 안에서 비로소 능력을 얻는다 — 죽는 것은 내가 하되, 사는 것은 그리스도께서 하시기 때문이다.</p>
+<h2>8. 십자가가 비추는 거울 — 폭력의 폭로 (위임)</h2>
+<p>마지막으로 십자가에는 나를 위한 사건을 넘어 나를 비추는 얼굴이 있다. 김종일 목사는 <span class="wl-dead" title="위키 내부 링크">눅 20:9-18</span> 악한 농부 비유를 르네 지라르의 희생양 이론으로 읽으며, 십자가 앞에서 먼저 물어야 할 것을 뒤집는다 — "예수가 나를 위해 무엇을 하셨는가"만이 아니라 <strong>"진리 앞에서 나의 폭력성이 얼마나 강렬한가"</strong>이다. 신화가 희생양을 죽인 군중의 관점에서 서술되어 그 살해를 정당화하는 반면, 복음서는 정반대로 희생자(예수)의 무죄를 드러내고 박해자의 폭력을 폭로한다.</p>
+<blockquote>
+<p>"복음은 반(反)신화이다. 십자가를 통해 우리는 잠재적 박해 군중의 일원임을 자각하고 회개로 이끌린다."</p>
+</blockquote>
+<p>지라르의 인류학 — 모방 욕망, 희생양 메커니즘, 희생양(무죄한 어린 양)과 희생염소(유죄한 scapegoat)의 대조 — 을 온전히 전개하는 것은 <a class="wl" href="../../t/%EA%B3%A0%EB%82%9C%EB%B0%9B%EB%8A%94%EC%A2%85/">고난받는종</a> §6의 몫이므로 여기서는 위임한다. 다만 이 페이지가 붙드는 것은 그 거울의 실천적 날이다. 십자가는 내가 무고한 자를 향한 집단의 정죄에 가담할 수 있음을 비추며, 이는 <a class="wl" href="../../t/%EB%B3%80%EC%A6%9D%ED%95%99/">변증</a>의 자원일 뿐 아니라 <span class="wl-dead" title="위키 내부 링크">의료 현장</span>의 분별이 된다 — 공동체의 갈등이 고조될 때 한 사람에게 책임을 몰아 '문제아'로 지목하고 배제함으로써 손쉬운 평화를 얻으려는 충동, 그 평화가 무죄한 희생양의 대가로 얻어진 것은 아닌지를 묻는 회개가 곧 십자가를 지는 또 하나의 방식이다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>이 볼트에서 십자가는 언제나 <strong>두 얼굴</strong>로 온다 — 그리스도가 지신 사건(수치→영광)과 제자가 지는 부르심(자기 십자가). 속죄의 <em>메커니즘</em>은 <a class="wl" href="../../t/%EC%86%8D%EC%A3%84%EB%A1%A0/">속죄론</a>·<a class="wl" href="../../t/%EC%86%8D%EC%A3%84/">속죄</a>·<a class="wl" href="../../t/%EA%B5%AC%EC%86%8D%EC%8B%A0%ED%95%99/">구속신학</a>·<a class="wl" href="../../t/%EA%B3%A0%EB%82%9C%EB%B0%9B%EB%8A%94%EC%A2%85/">고난받는종</a>에 위임되고, 십자가가 신학의 <em>방법</em>을 규정하는 문제(영광의 신학 대조)는 <a class="wl" href="../../t/%EC%8B%AD%EC%9E%90%EA%B0%80%EC%8B%A0%ED%95%99/">십자가신학</a>이 맡는다. 이 페이지는 두 얼굴과 그것을 잇는 역설을 다룬다.</li>
+<li>십자가의 역설은 부활이 푼다 — σκάνδαλον(거리낌)·μωρία(미련함)이 δύναμις θεοῦ(하나님의 능력)로 뒤집히는 것은(<span class="wl-dead" title="위키 내부 링크">고전 1:18</span>) 죽음마저 무력화한 부활 때문이다. 부활 없는 십자가는 수치에서 멈춘다.</li>
+<li>사건의 절정은 "위로부터 아래까지" 찢긴 휘장이다 — 가장 어두운 버림의 순간이 가장 밝은 지성소의 문을 여는 것이 십자가의 골격이며, 그 "유익"은 담대한 기도(핫라인)로 일상에 착지한다.</li>
+<li>"자기 십자가를 짐"(αἴρω τὸν σταυρόν)은 자아에 대한 사형 선고이며, 그것을 막는 것은 죄의 유혹만이 아니라 <strong>고난 없는 영광이라는 지름길의 유혹</strong>이다. 죽으면 산다.</li>
+<li>자기부인(ἀπαρνέομαι)은 추상적 금욕이 아니라 "내가 질 책임을 내가 진다"는 관계 윤리로 착지한다 — 십자가는 상대가 지워주는 짐이 아니다(윤명숙).</li>
+<li>갈 2:20의 완료형 συνεσταύρωμαι("함께 못 박혔나니")에서 두 얼굴이 하나로 만난다 — 십자가가 과거 사건에서 현재 정체성이 되며, 죽는 것은 내가 하되 사는 것은 그리스도께서 하신다.</li>
+<li>십자가는 나를 위한 사건일 뿐 아니라 <strong>나의 폭력성을 비추는 거울</strong>이다 — 무고한 자를 희생양 삼는 나 자신을 폭로하는 회개의 자리(김종일; 상술은 <a class="wl" href="../../t/%EA%B3%A0%EB%82%9C%EB%B0%9B%EB%8A%94%EC%A2%85/">고난받는종</a> §6).</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>첫째 얼굴과 둘째 얼굴은 어디서 갈라지고 어디서 만나는가 — "자기 십자가"는 그리스도를 따름으로 받는 고난에 한정되는가, 질병·재난 같은 일반적 고난까지 포함하는가?(<span class="wl-dead" title="위키 내부 링크">권성수</span>가 명시하지 않은 열린 질문)</li>
+<li>자기부인이 자아의 사형이라면, 하나님이 주신 인격·은사·정당한 자기 돌봄과는 어떻게 양립하는가 — "나 3번"(윤명숙)이 자기 학대로 미끄러지지 않게 하는 신학적 안전장치는 무엇인가?</li>
+<li>인내의 동력이 "그 앞에 있는 기쁨"(보상)이라면(<span class="wl-dead" title="위키 내부 링크">히 12:2</span>), 보상이 보이지 않는 자리에서의 순종, 다이아몬드로 빚어지지 않는 무의미해 보이는 고난 속의 인내는 어떤 근거 위에 서는가?</li>
+<li>"십자가의 도가 사회변혁으로 이어진다"(백은성)는 선언에서, 개인의 자기부인이 구조적 변혁으로 전환되는 구체적 경로는 무엇인가 — 의료라는 성취 지향적 직업 안에서 "약함을 통한 능력"은 어떻게 구현되는가?</li>
+<li>지라르식 '폭로로서의 십자가'와 형벌 대속의 '대속으로서의 십자가'는 어떻게 함께 붙들리는가?(<a class="wl" href="../../t/%EA%B3%A0%EB%82%9C%EB%B0%9B%EB%8A%94%EC%A2%85/">고난받는종</a>·<a class="wl" href="../../t/%EC%8B%AD%EC%9E%90%EA%B0%80%EC%8B%A0%ED%95%99/">십자가신학</a>과 공유되는 긴장)</li>
+<li>"십자가 없는 복음"이 확산되는 이유는 무엇이며, <a class="wl" href="../../t/%EB%B2%88%EC%98%81%EC%8B%A0%ED%95%99/">번영신학</a>과의 대조는 어디서 갈리는가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%8B%AD%EC%9E%90%EA%B0%80%EC%8B%A0%ED%95%99/">십자가신학</a> — <em>theologia crucis</em>: 루터의 하이델베르크 논제(영광의 신학 vs 십자가 신학), 하나님은 반대되는 것 아래 자신을 감추심(sub contrario), 몰트만의 고난받는 하나님, 번영신학과의 대립. 십자가 <em>사건</em>이 아니라 십자가가 <strong>신학하는 방식</strong>을 규정하는 문제를 다룬다.</li>
+<li><a class="wl" href="../../t/%EC%86%8D%EC%A3%84%EB%A1%A0/">속죄론</a> · <a class="wl" href="../../t/%EC%86%8D%EC%A3%84/">속죄</a> — 형벌 대속·만족설·크리스투스 빅토르 등 속죄 <em>메커니즘</em>의 본산. 이 페이지가 위임하는 곳.</li>
+<li><a class="wl" href="../../t/%EC%86%8D%EC%A3%84%EB%A1%A0/">속죄론</a> · <a class="wl" href="../../t/%EA%B5%AC%EC%86%8D%EC%8B%A0%ED%95%99/">구속신학</a> — 형벌 대속·만족설·고엘의 되삼. 십자가가 <em>어떻게</em> 죄를 처리하는가.</li>
+<li><a class="wl" href="../../t/%EA%B3%A0%EB%82%9C%EB%B0%9B%EB%8A%94%EC%A2%85/">고난받는종</a> — <span class="wl-dead" title="위키 내부 링크">사 53</span>의 대속하는 종과 지라르식 반신화(§6). 십자가의 구약적 원천.</li>
+<li><a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%EB%8F%84/">제자도</a> · <a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%ED%9B%88%EB%A0%A8/">제자훈련</a> — "자기 십자가를 지고 따르라"의 체계적 전개, 성령 의존과 공동체성.</li>
+<li><a class="wl" href="../../t/%EA%B3%A0%EB%82%9C/">고난</a> — 십자가에 동참하는 고난의 신학적 위치, <span class="wl-dead" title="위키 내부 링크">고난과 시련</span> 설교 클러스터.</li>
+<li><a class="wl" href="../../t/%EB%B6%80%ED%99%9C/">부활</a> — 십자가의 역설을 푸는 열쇠. 수치를 영광으로 뒤집는 사건.</li>
+<li><span class="wl-dead" title="위키 내부 링크">의료현장제자도실천</span> · <span class="wl-dead" title="위키 내부 링크">의료사회에서제자로살아간다는것</span> — 진료실에서 십자가를 지는 제자도의 구체적 형태.</li>
+<li><span class="wl-dead" title="위키 내부 링크">막15</span> · <span class="wl-dead" title="위키 내부 링크">고전1</span> · <span class="wl-dead" title="위키 내부 링크">눅9</span> · <span class="wl-dead" title="위키 내부 링크">갈2</span> · <span class="wl-dead" title="위키 내부 링크">히12</span> — 십자가 본문 허브.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2017_십자가진다는것</span></td>
+<td>설교(권성수)</td>
+<td>두 얼굴의 평행(예수의 십자가↔우리의 십자가), 지름길의 유혹, 死卽生, αἴρω τὸν σταυρόν</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2017_십자가의유익</span></td>
+<td>설교(권성수)</td>
+<td>어둠·버림·죽음의 사건 내부, 찢긴 휘장의 유익, 백부장·강도, σκότος·καταπέτασμα</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2019_십자가인내</span></td>
+<td>설교(권성수)</td>
+<td>인내의 절정으로서의 십자가, ὑπομονή, 다이아몬드 비유, "그 앞에 있는 기쁨"(<span class="wl-dead" title="위키 내부 링크">히 12:2</span>)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2025_나를통해살아가시는예수님</span></td>
+<td>설교(권성수)</td>
+<td><span class="wl-dead" title="위키 내부 링크">갈 2:20</span> 세 시제 연합, συνεσταύρωμαι 완료형, 예수 결핍증(JDD)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2017_자기부인의사랑</span></td>
+<td>설교(윤명숙)</td>
+<td>자기부인(ἀπαρνέομαι)의 관계 윤리, "내가 질 책임", 주님-이웃-나 우선순위</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2015_백은성간사_지독한하나님의사랑_십자가공동체</span></td>
+<td>설교(백은성)</td>
+<td>세 시선의 스캔들(μωρία·σκάνδαλον), 자기부인의 신학, 부활이 푼 수수께끼, 십자가 공동체</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2025_전원철_십자가에못박히신예수외에는</span></td>
+<td>설교(전원철)</td>
+<td>십자가 중심성(<span class="wl-dead" title="위키 내부 링크">고전 2:2</span>), ἐσταυρωμένον, "은혜 받은 자만 반응한다"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2018_김종일_인간의_폭력성과_십자가</span></td>
+<td>설교(김종일)</td>
+<td>십자가가 비추는 폭력성의 거울, 희생양 vs 희생염소, "복음은 반신화"(상술 위임: <a class="wl" href="../../t/%EA%B3%A0%EB%82%9C%EB%B0%9B%EB%8A%94%EC%A2%85/">고난받는종</a> §6)</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%98%88%EC%88%98%EA%B0%80%EC%84%A0%ED%83%9D%ED%95%9C%EC%8B%AD%EC%9E%90%EA%B0%80_%EB%A7%A5%EC%8A%A4%EB%A3%A8%EC%BC%80%EC%9D%B4%EB%8F%84/">예수가선택한십자가_맥스루케이도</a></td>
+<td>책(루케이도)</td>
+<td>십자가의 12가지 선물(유익의 일상판), 십자가 형태=공의(세로)와 자비(가로)의 교차</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%8B%A0%EC%95%BD%EC%9D%98%EC%9C%A4%EB%A6%AC%EC%A0%81%EB%B9%84%EC%A0%84_%ED%97%A4%EC%9D%B4%EC%8A%A4/">신약의윤리적비전_헤이스</a> · <a class="wl" href="../../b/%EB%B0%B0%EC%A0%9C%EC%99%80%ED%8F%AC%EC%9A%A9_%EB%AF%B8%EB%A1%9C%EC%8A%AC%EB%9D%BC%EB%B8%8C%EB%B3%BC%ED%94%84/">배제와포용_미로슬라브볼프</a></td>
+<td>책(인용)</td>
+<td>십자가=신약 윤리의 초점 이미지, 십자가의 스캔들과 화해 신학</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/십자가신학</span><span>#topic/십자가</span><span>#topic/제자도</span><span>#topic/자기부인</span><span>#topic/고난</span><span>#topic/역설</span><span>#topic/부활</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

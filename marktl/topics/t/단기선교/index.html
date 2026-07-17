@@ -1,0 +1,410 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>단기선교 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="date">2026-07-17</span></div>
+  <h1 class="note-title">단기선교</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>단기선교(short-term mission)는 한 사람이 자기 문화권을 잠시 떠나, 수일에서 수주 동안 다른 지역·민족에게 복음과 섬김으로 다가갔다가 돌아오는 선교의 한 형태다. 정의 자체는 단순하지만, 이 단어가 실제로 가리키는 것은 20세기 후반 이래 그리스도인 대중이 선교에 참여하는 가장 보편적인 통로가 되었다. 미국에서 연간 160만 명, 한국에서 약 25만 명이 참여하는 것으로 추산되는 이 흐름은, 과거 소수의 장기 선교사에게 위임되어 있던 선교를 온 회중이 몸으로 경험하는 사건으로 바꾸어 놓았다.</p>
+<p>바로 그 대중화가 이 주제의 긴장을 만든다. 참여의 문이 넓어진 만큼, 준비 없이 넘나드는 발걸음도 많아졌기 때문이다. 그래서 단기선교는 오늘날 가장 뜨겁게 옹호되면서 동시에 가장 날카롭게 비판받는 선교 실천이다. 한쪽은 그것을 "인생을 바꾸는 전환점"이라 부르고, 다른 쪽은 "가성비 최악의 이벤트"라 부른다. 이 페이지의 심장은 바로 그 <strong>효용 논쟁</strong>이며, 논쟁을 정직하게 통과한 뒤 좋은 단기선교의 조건과 재설계의 방향을 묻는 데 이 글의 고유한 몫이 있다.</p>
+<p>인접 주제와의 분업을 먼저 밝혀 둔다. 이 페이지는 단기선교라는 형태 자체의 신학과 실제를 다루는 허브다.</p>
+<table>
+<thead>
+<tr>
+<th>물음</th>
+<th>초점</th>
+<th>위임</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>단기라는 형태는 정당하고 유익한가</strong></td>
+<td>효용 논쟁·좋은 조건·재설계</td>
+<td>(이 글)</td>
+</tr>
+<tr>
+<td>보내는 구조 전체를 어떻게 깨우는가</td>
+<td>동원 일반·센더 신학</td>
+<td><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EB%8F%99%EC%9B%90/">선교동원</a></td>
+</tr>
+<tr>
+<td>문화의 경계를 실제로 어떻게 넘는가</td>
+<td>타문화 이해·태도</td>
+<td><a class="wl" href="../../t/%ED%83%80%EB%AC%B8%ED%99%94%EC%84%A0%EA%B5%90/">타문화선교</a></td>
+</tr>
+<tr>
+<td>돕는 것이 왜 상처가 되는가</td>
+<td>구제·개발·의존성 패러다임</td>
+<td><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%A7%80%EC%97%AD%EC%82%AC%ED%9A%8C%EA%B0%9C%EB%B0%9C/">기독교지역사회개발</a></td>
+</tr>
+<tr>
+<td>의료 단기의 특수성은 무엇인가</td>
+<td>진료·현지 의료체계·우정</td>
+<td><a class="wl" href="../../t/%EC%9D%98%EB%A3%8C%EB%8B%A8%EA%B8%B0%EC%84%A0%EA%B5%90/">의료단기선교</a></td>
+</tr>
+</tbody>
+</table>
+<h2>1. 단기선교란 무엇인가 — 규모와 성경적 선례</h2>
+<p>현대 단기선교는 2차 세계대전 이후 참전했던 그리스도인들을 중심으로 OM(Operation Mobilization)과 YWAM(예수전도단) 같은 단체가 세워지면서 대대적인 운동이 되었다. 이 물결은 선교 인력의 구조 자체를 바꾸어 놓았다. 과거의 장기 선교사 중심 구도가, 넓은 저변의 단기선교팀에서 좁은 정점의 장기 선교사로 이어지는 다층적 피라미드로 재편된 것이다.</p>
+<p><code>장기 선교사       ← 좁은 정점 (평생 헌신)
+      ─────────────
+     단기 선교사(1~2년)
+   ───────────────────
+   단기선교팀 (수일~수주)   ← 넓은 저변 (대중 참여)</code></p>
+<p>이 피라미드는 뒤에서 다룰 동원 효과의 근거인 동시에, 저변이 정점을 대체할 수 없다는 한계의 근거이기도 하다. 넓어진 저변이 그 자체로 열매인지 아니면 정점으로 걸러 올리기 위한 깔때기인지는, 이 글이 6장에서 다시 붙들 물음이다.</p>
+<p>성경에 단기선교의 선례가 있는가. 흔히 두 장면이 인용된다. 하나는 예수께서 일흔 명을 둘씩 짝지어 마을들로 보내신 파송이다(눅 10:1). 이상협은 이 장면을 두고 "단기선교다"라고 단언한다 — 보냄을 받고, 사역하고, 돌아와 "귀신들도 항복하더이다"라며 흥분해 보고하는 흐름이 오늘의 단기팀과 겹치기 때문이다. 다른 하나는 바울의 선교 여행이다. 그는 한곳에 오래 정주하기보다 여러 도시를 팀과 함께 순회하며 교회를 세우고 다음 도시로 옮겨 갔다.</p>
+<p>그러나 유비는 정직하게 다루어야 한다. 두 선례는 오늘의 단기선교와 결정적으로 다른 조건 위에 있다.</p>
+<table>
+<thead>
+<tr>
+<th>성경의 파송</th>
+<th>오늘의 단기선교</th>
+<th>유비의 한계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>일흔 명 파송 (눅 10)</td>
+<td>2주 팀 단기</td>
+<td>예수의 직접 지휘 아래, 대체로 같은 언어·문화권 이동</td>
+</tr>
+<tr>
+<td>바울의 순회 (행 13~)</td>
+<td>반복 방문형 비전트립</td>
+<td>개척·정주가 목적, 방문자가 아니라 파송된 사역자</td>
+</tr>
+</tbody>
+</table>
+<p>곧 성경의 파송은 "잠깐 갔다 오는" 형식이 유사할 뿐, 문화의 장벽을 넘는 준비와 현지에 뿌리내린 책임의 무게에서 오늘의 관광형 단기선교와 같지 않다. 성경적 선례는 단기선교를 무조건 정당화하는 알리바이가 아니라, 오히려 그 진지함을 되묻는 거울이다. 이 되물음이 다음 장의 논쟁으로 이어진다.</p>
+<h2>2. ⚖️ 효용 논쟁 — 이 페이지의 심장</h2>
+<p>단기선교만큼 지지자와 비판자가 같은 현장을 보고 정반대로 결론짓는 사역도 드물다. 공정하게 다루는 유일한 길은 양쪽을, 각자의 지지자가 "그래, 우리 주장이 바로 그것"이라고 인정할 형태로 나란히 세우는 것이다.</p>
+<table>
+<thead>
+<tr>
+<th>쟁점</th>
+<th>비판 (회의론이 보는 것)</th>
+<th>옹호 (지지자가 보는 것)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>비용 대비 효과</td>
+<td>수백·수천만 원을 항공권과 체류에 쓰고 2주 만에 돌아온다. 그 돈이면 현지에 훨씬 큰 실질 기여가 가능하다 — 포스트사역 없이 끝나면 "가성비 제일 떨어지는 이벤트"다</td>
+<td>돈으로 환산할 수 없는 사람이 남는다. 아르바이트로 100만 원을 모아 후원하고 인생이 바뀐 청년이 실제로 나온다</td>
+</tr>
+<tr>
+<td>참가자의 동기</td>
+<td>"문화체험인가 극기훈련인가" 싶은 고된 일정, 셀카와 감격 — 결국 나를 위한 여행 아닌가</td>
+<td>세계관이 확장되는 제자훈련의 장. 안전한 동족의 울타리를 처음 넘어 보는 결정적 경험</td>
+</tr>
+<tr>
+<td>현지에 미치는 영향</td>
+<td>반복되는 물량 공세가 자립을 갉아먹고, "우리가 돕는다"는 우월감이 배어 나온다. 가르치려만 들고 한국이 주인공이 되는 공연 위주 사역</td>
+<td>고립된 최전방의 선교사에게 사람의 온기와 격려가 된다. 지속적 관계 속에서는 현지 공동체가 실제로 세워진다</td>
+</tr>
+<tr>
+<td>장기 사역과의 관계</td>
+<td>준비 부실한 단기팀이 선교사의 시간·평판·에너지를 소모시킨다. 도리어 사역을 흔든다</td>
+<td>보내는 교회 전체가 기도로 각성하고, 돌아온 팀의 보고가 회중을 선교적으로 깨운다</td>
+</tr>
+</tbody>
+</table>
+<p>비판의 무게는 볼트의 자료 곳곳에 구체적 상처로 남아 있다. 2018년 대만을 다녀온 한 팀에 대해 "후진국 대하듯 하는 무례한 모습"이라는 현지 평가가 뒤늦게 돌아왔는데, 대만 사람들은 속을 잘 드러내지 않아 그 민원이 우리에게 오지 않고 현지 교회와 선교사에게 갔다. 구일교회의 한 장로는 열 번 넘게 단기선교를 다녀왔지만 "한 번도 쉬운 적이 없었다"고 고백한다 — 재정을 맡은 집사가 환전을 헷갈려 20만 원이 비고 돈 쓸 때마다 감정을 드러내 팀이 와해되고, 선교사 가정의 헬퍼와 국제학교 다니는 자녀의 모습에 성도들이 실망하고, 귀국 후 평가회가 선교사를 향한 성토의 장이 되어 버린다. 그래서 비판자는 묻는다 — 이만한 대가를 치르고도 왜 또 가는가.</p>
+<p>옹호의 무게도 실물이다. 이상협이 3년째 이끈 캄보디아 의료 단기선교에서, 현지 의대생 스무 명 남짓과 함께한 1박 수련회에 참석했던 학생들이 "많은 은혜를 받고 서로에게 도전이 되었다"는 고백을 이어 갔고, 이듬해에는 더 많은 학생이 모여 여든 명이 넘는 수련회가 되었다. 이 관계는 장차 캄보디아에도 한국의 기독의사회(CMF) 같은 의료인 공동체가 세워지는 모태가 될 것을 기대하게 한다. 한쪽의 상처와 다른 쪽의 열매가 같은 형식(단기선교)에서 나온다는 이 사실이야말로, 문제가 형식 자체가 아니라 그 형식을 다루는 방식에 있음을 가리킨다. 그렇다면 상처는 정확히 어디서 발생하는가.</p>
+<h2>3. 해로운 도움의 해부</h2>
+<p>단기선교가 남기는 가장 뼈아픈 상처는 악의가 아니라 선의에서 나온다. 돕겠다는 마음이 오히려 현지를 무너뜨리는 경우다. 볼트에 기록된 세 장면이 이 역설의 해부도다.</p>
+<table>
+<thead>
+<tr>
+<th>사역</th>
+<th>무슨 일이 벌어졌나</th>
+<th>남은 상처</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>페인트 덧칠 사역</td>
+<td>한여름에 세 팀이 연달아 같은 곳에서 페이스페인팅을 했다</td>
+<td>현지에 남는 것은 없고, 방문의 목적이 사역이 아니라 우리의 활동량 채우기였음이 드러난다</td>
+</tr>
+<tr>
+<td>우물 파기</td>
+<td>비소를 피하려면 최소 100m를 파야 하는데 예산과 일정에 맞춰 30~40m만 판다</td>
+<td>파주는 업체만 돈을 벌고, 얕은 우물은 오히려 비소 중독의 원인이 된다</td>
+</tr>
+<tr>
+<td>이미용 선교</td>
+<td>사흘간 무료로 100명을 시술한다</td>
+<td>현지 미용실이 몇 달간 문을 닫고, 현지 교회가 민원을 넣는다</td>
+</tr>
+</tbody>
+</table>
+<p>세 장면의 공통 구조는 하나다. 도움이 <strong>일방적</strong>이고 <strong>일회적</strong>일 때, 그것은 현지의 자생적 경제와 존엄을 밀어내고 의존의 습관만 남긴다. 이 기제의 신학적 원형이 볼트에 선명하게 보존되어 있다 — 1917년 케냐에서 스코틀랜드 장로교회가 너무 많은 것을 지원하며 주도권까지 쥐고 있을 때, 현지 지도자 존 가투는 "5년간 철수하라"고 제안했고, 그 결과 현지 교회는 위축되기는커녕 다섯 배로 성장하며 자립했다. 돕는 손이 물러날 때 비로소 현지가 일어선 것이다.</p>
+<p>이 통찰의 온전한 신학 — 구제(relief)와 개발(development)의 구별, 결핍·결함·결박의 지층, 자립을 설계하는 존엄의 구조 — 은 <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%A7%80%EC%97%AD%EC%82%AC%ED%9A%8C%EA%B0%9C%EB%B0%9C/">기독교지역사회개발</a>이 상세히 다룬다. 단기선교의 관점에서 확인해 둘 원칙은 그 페이지가 "모세가 출애굽의 최대 피해자"라는 역설로 요약한 지점이다. 홍해를 건넌 뒤에도 노예의 마음은 그대로였듯, 물자를 붓는 것만으로는 두 번째 출애굽 — 자각과 자립 — 이 일어나지 않는다. 좋은 단기선교는 바로 이 자리에서 갈린다.</p>
+<h2>4. 좋은 단기선교의 조건</h2>
+<p>해로운 단기선교가 일방적·일회적·자기중심적이라면, 좋은 단기선교는 그 정확한 반대편에 선다. 볼트의 자료들은 네 개의 조건으로 수렴한다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>해로운 단기선교</th>
+<th>좋은 단기선교</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>주도권</td>
+<td>우리가 하고 싶은 사역을 들고 간다</td>
+<td>현지 선교사·교회가 주인, 단기팀은 손님</td>
+</tr>
+<tr>
+<td>관계</td>
+<td>매년 다른 곳으로 유행처럼</td>
+<td>한 민족·지역과 5~10년 지속</td>
+</tr>
+<tr>
+<td>자세</td>
+<td>가르치러·보여주러 간다</td>
+<td>배우러 간다 (섬김 + 학습)</td>
+</tr>
+<tr>
+<td>시간 지평</td>
+<td>다녀오면 끝(해단식)</td>
+<td>사전 훈련과 사후 정리까지가 한 과정</td>
+</tr>
+</tbody>
+</table>
+<p><strong>첫째, 주도권은 현지에 있다.</strong> 이상협이 강조하는 실무 장치가 "파송요청서"인데, 이는 방문팀이 아니라 현지 선교사가 작성하는 문서다. 무엇이 필요한지를 현지가 규정하게 함으로써, 사역의 주어를 방문자에서 현지로 되돌리는 것이다. 여기서 "누구를 위한 사역인가"라는 질문이 결정적이다 — 현지의 진짜 필요가 아니라 우리가 하고 싶은 사역을 쏟아내는 순간, 손님이 주인 행세를 하게 된다.</p>
+<p><strong>둘째, 관계의 지속성이다.</strong> 좋은 단기선교는 연속성(매년 같은 곳을 방문함)과 지속성(다녀와서도 관계를 이어 감)을 함께 갖는다. 단회성 이벤트가 아니라 장기적 전략일 때에야 신뢰가 쌓이고 열매가 맺힌다. 캄보디아 의대생 수련회가 해가 갈수록 규모와 깊이를 더해 간 것이 그 증거다.</p>
+<p><strong>셋째, 배우러 가는 자세다.</strong> 선교학자 데이나 로버트가 21세기 선교의 핵심을 "우정"으로 짚었듯, 좋은 단기팀은 우월감을 내려놓고 우정을 쌓으러 간다. 현지인에게 강의를 청해 듣고, 그들이 차려 주는 음식을 먹고, "하나를 가르치려면 하나를 배운다"는 태도를 지킨다. 관심의 초점도 이동한다 — 빵과 약이 필요한 사람(Needy)을 돕는 데서, 영적으로 길 잃은 사람(Lost)을 향하는 데로. 사마리아 여인에게 예수께서 냉수가 아니라 생수를 주셨듯이.</p>
+<p><strong>넷째, 사전 훈련과 사후 정리가 본 사역만큼 중요하다.</strong> 이상협의 포스트필드 사역론이 이 지점의 백미다. 그는 단기선교의 흐름을 프리필드(준비) → 온필드(현지) → 포스트필드(귀국 후)의 톱니바퀴로 그리고, 특히 귀국 후를 강조한다. "해단식 하지 말고 이제 포스트사역의 시작이라 생각하라"는 것이다. 온필드에서도 사역에만 매달리지 말고 사역·교제·교육을 각각 3분의 1씩 균형 있게 배분하라고 권한다.</p>
+<p>포스트필드 사역의 핵심 키워드는 "냉정과 열정 사이"다. 예수께서 일흔 명의 흥분한 보고를 들으신 뒤 "너희 이름이 천국에 기록된 것을 기뻐하라" 하시며 쉬라고 하신 장면(눅 10:20)이 그 모델이다. 다녀와서 붕 떠 있는 마음을 냉정하게 가라앉히는 디브리핑, 누구를 공격하지 않되 리더의 자기 반성으로 시작하는 클로즈드 자체평가회, 그리고 "무엇을 보고 왔는가"를 묻는 보고회 — 열두 정탐꾼이 같은 땅을 보고도 여호수아·갈렙만 다르게 보고했듯(민 13장), 보고할 것은 진료한 환자 수가 아니라 "하나님이 거기서 무엇을 하시는가"이다. 이 모든 기록이 자료집으로 남아 다음 팀의 자산이 된다. "기록보다 위대한 기억력은 없다."</p>
+<h2>5. 의료 단기선교</h2>
+<p>의료는 단기선교 중에서도 특수한 자리에 있다. 실질적 기여의 가능성이 가장 크면서, 동시에 해악의 위험도 가장 큰 영역이기 때문이다. 의사·한의사·치과의사와 학생들로 꾸려진 팀이 오지에서 수백 명을 진료하면 눈에 보이는 성과는 크지만, 진단 장비도 검사실도 없이 이루어지는 일회성 진료는 의료의 질을 담보하기 어렵다. 다섯 식구의 약봉지가 섞이고, 우리가 떠난 뒤 현지 약국이 혼란에 빠지며, "한국 약이 잘 듣는다"는 인상은 은연중에 현지 의료인과 그들의 약을 폄하하는 메시지를 심는다.</p>
+<p>이 위험을 누구보다 예민하게 의식한 사람이 바로 현장의 당사자다. 3년째 캄보디아 의료 단기선교를 이끈 이상협은 기도편지에 이렇게 적었다.</p>
+<blockquote>
+<p>진료에 부작용이 없도록 (저희가 다녀간 뒤 부작용이 생기면 선교사님들이 곤란합니다).</p>
+</blockquote>
+<p>한 문장에 의료 단기선교의 윤리가 압축되어 있다. 방문팀은 2주 뒤 떠나지만 선교사는 그 자리에 남아 뒷감당을 해야 한다는 것 — 그래서 의료 단기의 첫 계명은 "현지에 남는 사람을 곤란하게 하지 말라"이다. 이는 곧 현지 의료 체계를 존중하고, 일회성 진료의 물량이 아니라 현지 의료인과의 우정과 역량 강화로 무게중심을 옮기라는 요구로 이어진다. 실제로 캄보디아에서 이상협 팀의 방향은 "많이 진료하기"에서 "현지 의대생과의 관계 세우기"로 옮겨 갔고, 그 관계가 현지 의료인 공동체의 모태를 지향하게 되었다.</p>
+<p>의료 단기선교의 각론 — 진료 중심에서 존재(Being) 중심으로의 전환, 우정과 지속성의 방법론, 냘피 눙가라이의 지속가능한 의료선교 기준, 몽골·캄보디아 사역 전환 사례 — 은 <a class="wl" href="../../t/%EC%9D%98%EB%A3%8C%EB%8B%A8%EA%B8%B0%EC%84%A0%EA%B5%90/">의료단기선교</a>가 상세히 다룬다. 이 페이지에서 확인할 원칙은 하나다. 의료라는 강력한 전문성은 그것이 현지를 세우는 방향으로 쓰일 때만 축복이 되고, 우리의 성취감을 채우는 방향으로 쓰일 때는 3장의 우물·이미용 사역과 똑같은 상처가 된다.</p>
+<h2>6. ⚖️ 단기에서 장기로 — 사람이라는 열매와 그 위험</h2>
+<p>단기선교의 가장 자주 인용되는 정당화는 "사람이 남는다"는 것이다. 실제로 단기선교의 최대 열매는 현지에 세워진 무엇이 아니라 다녀온 참가자 자신인 경우가 많다. 안전한 일상을 처음 벗어나 하나님이 일하시는 현장을 목격한 청년이 소명을 발견하고, 아르바이트로 모은 돈을 후원하며, 마침내 장기 선교사로 헌신한다. 1장의 피라미드가 말하듯, 넓은 저변에서 열 명을 데려가면 그중 누가 선교사로 헌신할 확률이 높은지 드러난다. 이것이 단기선교의 동원 효과이며, 그 신학과 통로 전체는 <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EB%8F%99%EC%9B%90/">선교동원</a>이 다룬다.</p>
+<p>그러나 여기에 이 페이지가 정직하게 붙들어야 할 위험이 있다. 단기선교를 오직 이 동원 효과로만 정당화할 때, 현지는 우리 청년의 소명 발견을 위한 <strong>훈련장·배경</strong>으로 전락한다. "다녀오니 내 인생이 바뀌었다"는 간증이 넘칠수록, 정작 방문받은 현지가 무엇을 얻었는지는 조용히 묻히기 쉽다. 참가자의 변화가 사역의 부산물일 때는 건강하지만, 그것이 사역의 진짜 목적이 되는 순간 단기선교는 은밀하게 자기중심적이 된다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>빛 (건강한 동원)</th>
+<th>그림자 (뒤집힌 목적)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>참가자</td>
+<td>소명을 발견하고 센더·선교사로 성장</td>
+<td>현지를 "나를 성장시킨 배경"으로 소비</td>
+</tr>
+<tr>
+<td>현지</td>
+<td>지속적 관계의 파트너로 세워짐</td>
+<td>우리 훈련을 위한 무대로 도구화</td>
+</tr>
+<tr>
+<td>판별 질문</td>
+<td>"이 사역으로 현지가 무엇을 얻었는가"</td>
+<td>"이 여행으로 내가 무엇을 얻었는가"</td>
+</tr>
+</tbody>
+</table>
+<p>그래서 이상협의 강의는 성공 평가의 세 기준을 나란히 세운다 — 현지에 복음이 바르게 제시되었는가, 현지 선교사가 격려받았는가, 그리고 참가자가 보내는 자(Sender)로 성장했는가. 셋째 기준(참가자의 변화)은 정당하지만 앞의 두 기준(현지의 유익)과 균형을 이룰 때에만 그렇다. 열매가 사람이라는 말은 옳다. 다만 그 사람이 우리 편 사람만을 뜻할 때, 단기선교는 절반의 진실 위에 서게 된다.</p>
+<h2>7. 단기선교의 재설계 — 프로젝트에서 파트너십으로</h2>
+<p>지금까지의 논의는 하나의 방향을 가리킨다. 단기선교를 <strong>일회성 프로젝트</strong>에서 <strong>지속적 파트너십</strong>으로 재설계하는 것이다. 손창남 선교사가 선교 컨설팅에서 제시한 구도가 이 전환의 틀을 준다 — 문제는 선교를 "하느냐(Doing mission)"가 아니라 공동체가 선교적 체질로 "되었느냐(Being missional)"이며, 단기선교는 엘리트 몇 사람의 활동이 아니라 전교인이 참여하는 사역이 되어야 한다. "모든 사람이 갈 수는 없지만, 모든 사람이 참여할 수는 있다."</p>
+<p>건강한 단기선교는 세 당사자가 함께 이기는 구조다.</p>
+<p><code>보내는 교회
+       (기획·기도·파송·귀국보고까지 온 공동체가 참여)
+          ╱               ╲
+         ╱                 ╲
+   참가자                    받는 현장
+ (소명 발견,            (주도권을 쥐고,
+  센더로 성장)           지속 관계로 세워짐)
+         ╲                 ╱
+          ╲               ╱
+        셋이 함께 이기는 파트너십
+     (어느 하나가 다른 둘의 수단이 되지 않음)</code></p>
+<p>이 삼각형의 어느 한 꼭짓점이 다른 둘의 도구가 되는 순간 단기선교는 병든다. 현지가 참가자의 훈련 도구가 되면 6장의 그림자가 되고, 참가자가 교회 실적의 도구가 되면 소진되며, 보내는 교회가 빠지면 "비행기 탄 소수만의 사역"이 된다. 세 꼭짓점이 각자의 유익을 얻으면서 서로를 수단화하지 않는 균형 — 그것이 재설계의 핵심이다.</p>
+<p>이 재설계는 형식의 다양화도 요청한다. 코로나로 국경이 닫혔을 때, 대경누가회는 캄보디아 방문이 어려워지자 온라인 수련회와 ICMDA 프리 컨퍼런스, 매칭펀드로 관계를 이어 갈 길을 모색했다 — 물리적 방문이 막혀도 파트너십은 끊기지 않을 수 있음을 보여준 것이다. 예수 그 이름 교회의 정탐(리서치) 단기선교, 현지 청년을 한국으로 초청하는 역단기선교, 현지의 실제 필요에 은사를 맞추는 전문인 단기선교 — 이 모든 변형은 "우리가 가서 무언가를 해준다"는 프로젝트 문법에서 "함께 오래 걷는다"는 파트너십 문법으로의 이동이라는 점에서 하나다.</p>
+<p>마지막으로, 잘 재설계된 단기선교의 가장 깊은 열매는 뜻밖에도 보내는 쪽에 맺힌다. 사도행전 10장에서 베드로가 고넬료를 찾아간 짧은 방문의 결과는 고넬료의 회심만이 아니었다 — 이방인을 향한 베드로 자신의 편견이 깨어졌다. 레슬리 뉴비긴이 『오픈 시크릿』에서 이를 하나님 나라의 확장인 동시에 "교회의 혁명적 변화"라 부른 이유가 여기 있다. 단기선교가 제대로 이루어질 때, 그것은 방문받은 자만이 아니라 방문한 자를, 나아가 보내는 교회 전체를 바꾼다. "복음은 믿지 않는 사람들만 바꾸는 것이 아니라, 근본적으로 우리를 바꾼다" — 이것이 냉정한 평가를 다 통과하고도 여전히 단기선교를 붙드는 마지막 이유다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>단기선교의 문제는 <strong>형식 자체가 아니라 그 형식을 다루는 방식</strong>에 있다. 같은 2주짜리 파송에서 현지의 상처(대만·구일교회 사례)와 현지의 열매(캄보디아 의대생 공동체)가 함께 나온다.</li>
+<li>효용 논쟁은 어느 한쪽이 이기는 싸움이 아니다. 비판(비용·관광·의존성·우월감·장기사역 교란)과 옹호(동원·전환점·격려·실질기여·교회부흥)는 각각 실물의 근거를 가지며, 정직한 재설계는 양쪽을 모두 통과한다.</li>
+<li>해로운 도움은 악의가 아니라 선의에서 나온다. 일방적·일회적 도움(얕은 우물·이미용·페인트 사역)은 현지의 자생력과 존엄을 밀어낸다 — 존 가투의 "5년 철수 후 5배 성장"이 그 역설의 원형이다.</li>
+<li>좋은 단기선교의 네 조건은 <strong>현지 주도권·관계 지속성·배우는 자세·사전훈련과 사후정리</strong>다. 핵심 키워드는 "냉정과 열정 사이"이며, 해단식이 아니라 포스트필드 사역에서 진짜 열매가 맺힌다.</li>
+<li>의료 단기의 첫 계명은 "<strong>현지에 남는 사람을 곤란하게 하지 말라</strong>"이다("다녀간 뒤 부작용이 생기면 선교사님들이 곤란합니다"). 강력한 전문성은 현지를 세우는 방향일 때만 축복이 된다.</li>
+<li>⚖️ 단기선교의 최대 열매는 사람(참가자의 소명)이지만, 그 동원 효과로만 정당화하면 현지가 우리 청년을 위한 훈련장으로 도구화된다. "내가 무엇을 얻었는가"와 "현지가 무엇을 얻었는가"의 균형이 판별선이다.</li>
+<li>재설계의 방향은 일회성 <strong>프로젝트에서 지속적 파트너십으로</strong>의 전환이다. 보내는 교회·받는 현장·참가자 세 당사자가 서로를 수단화하지 않고 함께 이기는 구조가 목표다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>효용 논쟁의 실증적 저울은 무엇인가. "인생이 바뀐 청년 한 명"의 가치와 "현지에 남긴 상처"의 비용을 같은 단위로 비교할 방법이 없는 한, 논쟁은 각자의 일화에 머문다 — 단기선교의 장기 효과를 측정할 틀이 볼트에 아직 없다.</li>
+<li>현지 주도권을 원칙으로 삼되, 현지 선교사가 파송요청서에 정직한 필요가 아니라 방문팀이 원할 법한 사역을 적어 보내는 경우(펀드레이징·관계 유지 동기)를 어떻게 분별하는가.</li>
+<li>동원 효과(6장)와 현지 유익 사이에 실제로 상충이 발생할 때 — 이를테면 훈련 효과는 크지만 현지 부담도 큰 오지 진료 — 무엇을 우선하는가. "둘 다"라는 답 너머의 배분 기준이 열려 있다.</li>
+<li>온라인 단기선교·역단기·프리 컨퍼런스 같은 코로나 이후의 변형들이, 물리적 방문의 무엇을 대체할 수 있고 무엇은 끝내 대체할 수 없는가 — 몸으로 함께 있음의 고유한 몫은 무엇인가.</li>
+<li>전교인이 참여하는 "Being missional" 체질로의 전환(손창남)은 실제 지역교회에서 어떤 단계를 밟는가 — 단기선교가 그 체질 개선의 입구가 되는 경로와, 도리어 한 부서의 연례행사로 굳는 경로는 어디서 갈리는가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EB%8F%99%EC%9B%90/">선교동원</a> — 단기선교의 동원 효과가 봉사하는 더 큰 그림(보내는 구조 전체 깨우기). 6장이 위임하는 지점.</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%A7%80%EC%97%AD%EC%82%AC%ED%9A%8C%EA%B0%9C%EB%B0%9C/">기독교지역사회개발</a> — 해로운 도움·의존성의 신학(구제→개발→변혁, 결핍·결함·결박, 존엄의 설계). 3장이 위임하는 지점.</li>
+<li><a class="wl" href="../../t/%EC%9D%98%EB%A3%8C%EB%8B%A8%EA%B8%B0%EC%84%A0%EA%B5%90/">의료단기선교</a> — 의료 단기의 각론(진료 중심에서 존재 중심으로, 우정과 지속성). 5장이 위임하는 지점.</li>
+<li><a class="wl" href="../../t/%ED%83%80%EB%AC%B8%ED%99%94%EC%84%A0%EA%B5%90/">타문화선교</a> — 문화의 경계를 넘는 태도와 실천. 단기팀이 현지에서 지켜야 할 문화적 겸손의 본류.</li>
+<li><a class="wl" href="../../t/%EC%B4%9D%EC%B2%B4%EC%A0%81%EC%84%A0%EA%B5%90/">총체적선교</a> · <a class="wl" href="../../t/%EB%AF%B8%EC%94%A8%EC%98%A4%EB%8D%B0%EC%9D%B4/">미씨오데이</a> — "단기는 하나님의 선교를 감당하는 전략적 수식어"라는 신학적 토대.</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EC%82%B6/">선교적삶</a> — 단기선교의 최종 착지점. 이벤트가 일상의 선교적 삶으로 연결되는 순환.</li>
+<li><a class="wl" href="../../t/%EB%A9%A4%EB%B2%84%EC%BC%80%EC%96%B4/">멤버케어</a> — 방문받는 현지 선교사를 향한 돌봄, 단기팀이 흔들지 말아야 할 후방 사역.</li>
+<li><span class="wl-dead" title="위키 내부 링크">한국누가회</span> · <span class="wl-dead" title="위키 내부 링크">ICMDA</span> — 캄보디아 의료 단기선교와 그 온라인·컨퍼런스 재설계의 주체.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「비전트립 그 이후」, 이상협 (교회 연합 세미나)</td>
+<td>강의</td>
+<td>냉정과 열정 사이, 포스트필드 사역 3목적, 정탐꾼 보고(민 13), 자체평가회·보고회·자료집, 비소우물·이미용·페인트 사역, 존 가투 선교유예, 행 10 베드로 회심(뉴비긴 『오픈 시크릿』)</td>
+</tr>
+<tr>
+<td>「총체적 단기선교」, 이상협</td>
+<td>강의</td>
+<td>규모(미 160만·한 25만), OM/YWAM, 피라미드 구조, "단기는 전략적 수식어", 제자훈련의 장+선교의 창, 3가지 질문, 성공평가 3기준, Needy→Lost, 세일보트, 캄보디아 헤브론병원</td>
+</tr>
+<tr>
+<td>「비전트립 그 이후 — 부르심에서 사명으로」, 이상협 (하백선 시리즈)</td>
+<td>강의</td>
+<td>창조·타락·구속·완성, 부르심→보냄, Needy(구호)→Lost(복음), Life for/as Mission, doing에서 being으로</td>
+</tr>
+<tr>
+<td>캄보디아 의료 단기선교 기도편지, 이상협</td>
+<td>기록</td>
+<td>3년째·53명 규모, 현지 의대생 수련회(80여 명), "장기적 안목에서 단기선교", "다녀간 뒤 부작용이 생기면 선교사님들이 곤란", 캄보디아 기독의료인 공동체의 모태</td>
+</tr>
+<tr>
+<td>캄보디아 단기선교 회의 (대경누가회, 2024)</td>
+<td>회의</td>
+<td>취소 사태, 온라인 수련회·ICMDA 프리 컨퍼런스·매칭펀드 — 방문이 막혀도 파트너십을 잇는 재설계</td>
+</tr>
+<tr>
+<td>함선네 비전트립 나눔 (예수 그 이름 교회·구일교회)</td>
+<td>나눔</td>
+<td>예수그이름교회 정탐·리서치 단기선교·DDS 제자학교·태국 역단기 / 구일교회 허준 장로 — 재정 갈등·팀 와해·선교사 실망·평가회 성토장, "10회 이상 가도 쉬운 적 없어"</td>
+</tr>
+<tr>
+<td>「선교 컨설팅」, 손창남 선교사 (선교실행위)</td>
+<td>강의</td>
+<td>Doing mission vs Being missional, 선교적 체질 5단계, A/B/C 레벨 컨설팅(C=단기선교), "엘리트 선교가 아닌 전교인 선교"</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%9D%98%EB%A3%8C%EB%8B%A8%EA%B8%B0%EC%84%A0%EA%B5%90/">의료단기선교</a> (이상협, 삼덕교회 의료선교팀 강의)</td>
+<td>위키</td>
+<td>의료 각론 위임처 — 데이나 로버트의 우정, 냘피 눙가라이 지속가능 기준, 몽골 바가노르·캄한 수련회, 하워드 브란트 "냉수 한 잔 vs 생명수"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">랄프윈터</span> (볼트 인물 페이지)</td>
+<td>참조</td>
+<td>모달리티/소달리티, 단기선교가 맞물리는 선교 인력 구조의 배경</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/선교</span><span>#discipline/선교학</span><span>#단기선교</span><span>#비전트립</span><span>#포스트필드사역</span><span>#총체적선교</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

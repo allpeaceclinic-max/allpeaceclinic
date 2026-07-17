@@ -1,0 +1,333 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>의료단기선교 어떻게? — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="date">2026-05-08</span></div>
+  <h1 class="note-title">의료단기선교 어떻게?</h1>
+  
+</header>
+<article class="note">
+<p><em>(이상협, 삼덕교회 의료선교팀 강의 — 함선네 시리즈)</em></p>
+<h2>현재 의료단기선교의 문제</h2>
+<h3>현장 문제 5가지</h3>
+<table>
+<thead>
+<tr>
+<th>문제</th>
+<th>사례</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>진료 중심 과부하</strong></td>
+<td>인도 바라나시 오지 — 의사 2명이 하루 700명 진료 (사실상 불가능한 의료 수준)</td>
+</tr>
+<tr>
+<td><strong>낮은 의료 질</strong></td>
+<td>"선교라고 할 수 있나?" — 진단 장비·lab·X-ray 없이 수백명 진료</td>
+</tr>
+<tr>
+<td><strong>복약 혼란</strong></td>
+<td>5인 가족 약봉지 섞임 → 누가 누구 약 먹는지 불명확</td>
+</tr>
+<tr>
+<td><strong>비소 우물</strong></td>
+<td>캄보디아에 한국교회·단체가 판 우물 1만개 넘음 → 비소 중독 원인 (28m 깊이는 불충분, 50m+ 필요)</td>
+</tr>
+<tr>
+<td><strong>이미용 선교</strong></td>
+<td>3일 100명 무료 미용 → 지역 미장원 몇달 폐업 → 선교사 멱살</td>
+</tr>
+</tbody>
+</table>
+<h3>근본 문제</h3>
+<ul>
+<li><strong>의료 수준 상승</strong>: 현지 자국 의료인 실력 향상 → 불법 의료 행위 지역 증가</li>
+<li><strong>약 통관 어려움</strong>: 갈수록 규제 강화</li>
+<li><strong>역설</strong>: 한국약이 잘 듣는다 = 그 나라 의료인·약은 구리다는 메시지 심어줌</li>
+<li><strong>집중 포인트</strong>: Needy(필요한 자) → <strong>Lost(잃어버린 자)</strong>로 관심 이동 필요 (하워드 브란트)</li>
+</ul>
+<blockquote>
+<p>"선교사역이 '냉수 한잔'을 제공하는 것과 '생명수'를 나누는 것이 똑같이 중요하다고 믿을 때 복음은 위험에 처하게 됩니다." — 하워드 브란트</p>
+</blockquote>
+<h2>방향 전환: 바울의 패러다임 변화</h2>
+<h3>바울의 선교 변화 과정</h3>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1차 여행</strong></td>
+<td>회당 중심, 헬라어·구약 변증, 디아스포라 유대인 대상, 성공적</td>
+</tr>
+<tr>
+<td><strong>2차 여행 빌립보</strong></td>
+<td>회당 없음, 루디아·점치는 여종·간수, 완전히 다른 대상</td>
+</tr>
+<tr>
+<td><strong>빌립보 이후</strong></td>
+<td>데살로니가·베뢰아·아테네(광장)·고린도(장막업) 변화</td>
+</tr>
+<tr>
+<td><strong>패러다임 전환</strong></td>
+<td>회당→감옥+시장+광장, 준비된 사람→미친 여성+죄수, 논리→삶의 능력</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"결국 패러다임을 성령이 깨시고, 선교적 생태계가 바뀌니 자신이 깨진다.
+이제 선교의 방법을 바꿔야 한다. 광장으로 나와, 총체적 선교를 해야 한다."</p>
+</blockquote>
+<h2>Unlearn — 토마스 쿤</h2>
+<blockquote>
+<p>"배운 것을 비우지 않으면 새로운 것을 배울 수 없다. 언런 하지 않으면 변하지 않는다."</p>
+</blockquote>
+<ul>
+<li>코로나가 스탑의 기회였으나 다시 똑같은 패턴으로 회귀하려는 경향</li>
+<li><strong>리런 대상</strong>: 하나님의 선교(미씨오 데이), 개별화·직업과 선교관</li>
+</ul>
+<h2>예수님의 단기선교 모델</h2>
+<h3>사마리아 여인 (요 4장)</h3>
+<ul>
+<li>의도적으로 사마리아로 둘러감</li>
+<li>모든 도움을 주는 것이 아니라 <strong>오히려 물을 달라</strong> 함 (도움 받는 자세)</li>
+<li>사람이 없을 때 나올 한 사람에게 집중</li>
+<li>소수에 집중 → 그녀가 마을에 들어가 선교</li>
+</ul>
+<h3>삭개오 (눅 19장)</h3>
+<ul>
+<li>군중 속 의도적으로 삭개오를 지명</li>
+<li>"우리 집으로 오라"가 아닌 <strong>집으로 가신다</strong> (역방문)</li>
+<li>직업적 회심 — "오늘 구원이 이 집에 이르렀으니"</li>
+<li>선교적 의도성: 그들로 도망가게 만드는 것은 아닌지 점검</li>
+</ul>
+<blockquote>
+<p>"교회가 하는 모든 일에 선교적 차원이 있다. 그러나 교회가 하는 모든 일에 선교적 의도가 있지는 않다." — 마이클 고힌</p>
+</blockquote>
+<h2>세일보트 vs 파워보트</h2>
+<table>
+<thead>
+<tr>
+<th>비유</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>파워보트</strong></td>
+<td>내가 하고 싶은 대로, 힘이 자체적, 막 갈 수 있음 → <strong>나의 선교</strong></td>
+</tr>
+<tr>
+<td><strong>세일보트</strong></td>
+<td>바람(성령)과 함께, 바람 스케줄을 따름 → <strong>하나님의 선교</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"단기선교가 너무 바쁘다. 준비부터 사역까지 다 바쁘다. 하나님이 개입하실 시간이 허락되지 않는다."</p>
+</blockquote>
+<p><strong>해결책</strong>: 일을 1/3만 → 나머지 1/3은 교육, 1/3은 교제</p>
+<h2>사역 전환 사례</h2>
+<h3>몽골 바가노르 국립병원 (한국누가회)</h3>
+<ul>
+<li>2011년부터 지속 방문</li>
+<li>처음: 현지 의사 견제, 함께하지 않음</li>
+<li>점차 친해지며 현지 의료인 세미나 진행</li>
+</ul>
+<h3>캄한 수련회 (캄보디아-한국 CMF)</h3>
+<ul>
+<li>2016: 21명 캄보디아 의대생 + 54명 한국팀 수련회</li>
+<li>2017: 38명 캄보디아 의대생·의사, 2박3일</li>
+<li>2018: 한국 수련회에 캄보디아 의사 5명 초청</li>
+<li><strong>결과</strong>: 캄CMF 자체 발족 → 스스로 의료봉사·전도 시작</li>
+<li>몽골·태국 의료선교에서 벤치마킹 중</li>
+</ul>
+<h2>2가지 목표: 우정 + 지속성</h2>
+<h3>우정 (데이나 로버트)</h3>
+<ul>
+<li>우월감을 버리고 우정을 쌓으러 가는 선교</li>
+</ul>
+<p><strong>우정을 위한 방법</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>배우는 자세</td>
+<td>현지인이 강의하는 시간, 관습 배우기, 현지 음식 먹기</td>
+</tr>
+<tr>
+<td>대접받기</td>
+<td>대접하는 것과 대접받는 것 — 상호존중 → 상호변혁</td>
+</tr>
+<tr>
+<td>동역자 대접</td>
+<td>현지인 명단·프로필·사진 받기 — 가이드가 아닌 사역의 동역자</td>
+</tr>
+<tr>
+<td>가르치기 전 배우기</td>
+<td>하나를 가르치려면 하나를 배운다</td>
+</tr>
+<tr>
+<td>역단기선교</td>
+<td>한국 수련회 초대, 연수와 있는 친구들 연결</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"상호존중 → 상호변혁. 복음은 이미 전한 하나님의 씨앗을 발견하고 함께 배우는 것"</p>
+</blockquote>
+<h3>지속성 (연속성 + Post-field 사역)</h3>
+<ul>
+<li><strong>연속성</strong>: 매년 같은 곳 방문</li>
+<li><strong>지속성</strong>: 다녀와서 포스트필드 사역 — 페이스북·인스타그램으로 청년들 연결</li>
+<li>역단기, 초청, 연수와 친구들 — 관계의 지속</li>
+</ul>
+<h2>냘피 눙가라이 분석 (2023 로잔 글로벌 분석)</h2>
+<p>공중보건·가정의학 전문의, 7개국 경험, WHO 컨설턴트</p>
+<p><strong>효과적·지속 가능한 의료선교 기준</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>기준</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>자선→역량강화</td>
+<td>자선보다 지역사회 힘 실어주기</td>
+</tr>
+<tr>
+<td>열정→전문성</td>
+<td>"양으로 승부하면 안 된다. 몇 명 진료는 중요하지 않다"</td>
+</tr>
+<tr>
+<td>직접→간접 지원</td>
+<td>교육·멘토링·자문 지원, 그들 스스로 할 수 있도록</td>
+</tr>
+<tr>
+<td>개인→시스템</td>
+<td>시스템 지원이 더 필요</td>
+</tr>
+<tr>
+<td>고립→협력</td>
+<td>정부와 모든 단체와 협력</td>
+</tr>
+<tr>
+<td>단기→장기</td>
+<td>가능한 장기, 본국과 유대</td>
+</tr>
+</tbody>
+</table>
+<h2>핵심 전환</h2>
+<p><code>Doing (진료 중심) → Being (존재 중심)
+수많은 환자 진료 → 소수에게 깊은 우정
+일방적 봉사 → 상호 배움
+단기 이벤트 → 지속적 관계
+나의 선교 → 하나님의 선교 (세일보트)</code></p>
+<blockquote>
+<p>"삼덕교회가 이제까지 해왔던 의료선교를 넘어, 현재의 의료선교 환경을 냉철하게 바라보고, 예언자적 상상력을 통해 앞으로의 미래를 보게 하실 하나님을 기대했으면 좋겠다."</p>
+</blockquote>
+<h2>관련 링크</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%B4%9D%EC%B2%B4%EC%A0%81%EC%84%A0%EA%B5%90/">총체적선교</a> — 선교 패러다임 변화</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a> — 기독 의료인의 3가지 차원</li>
+<li><a class="wl" href="../../t/CMF_VPM%EC%B2%A0%ED%95%99/">CMF_VPM철학</a> — Value &gt; People &gt; Ministry</li>
+<li><span class="wl-dead" title="위키 내부 링크">누가회</span> — 한국기독의사회</li>
+<li><span class="wl-dead" title="위키 내부 링크">놀면뭐하니</span> — 기독의료인의 4대 질문</li>
+<li><span class="wl-dead" title="위키 내부 링크">함선네</span> — 함선네 세미나</li>
+</ul>
+</article>
+<div class="tagrow"><span>#의료단기선교</span><span>#기독의료</span><span>#선교</span><span>#누가회</span><span>#총체적선교</span><span>#Being</span><span>#우정</span><span>#지속성</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

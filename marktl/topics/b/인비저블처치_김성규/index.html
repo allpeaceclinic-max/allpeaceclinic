@@ -1,0 +1,265 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>인비저블 처치 (Invisible Church) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="author">김성규</span><span class="date">2026-06-02</span></div>
+  <h1 class="note-title">인비저블 처치 (Invisible Church)</h1>
+  
+</header>
+<article class="note">
+<h2>기본 정보</h2>
+<ul>
+<li><strong>저자</strong>: 김성규</li>
+<li><strong>교회</strong>: 찾아가는 교회 (2019년 중부세무서 등록 → 2022년 움직이는 교회로 발전)</li>
+<li><strong>주제</strong>: 도심 속 보이지 않는 교회 — 찾아가고, 흩어지고, 움직이는 선교적 교회 실천기</li>
+</ul>
+<hr />
+<h2>핵심 명제</h2>
+<blockquote>
+<p>"믿지 않는 이웃들에게 우리 교회를 전하지 말고, 복음을 전하기 위해 세상 속으로 찾아가는 교회가 되어야 할 때다."</p>
+<p>"복음이 배척받는 것보다 교회가 배척받는 것이 크다."</p>
+</blockquote>
+<hr />
+<h2>1. 찾아가는 교회 — 사마리아 모델 (행 8:4-5)</h2>
+<p>초대교회가 목적을 가지고 찾아가서 세운 첫 번째 교회는 <strong>빌립의 사마리아 교회</strong>다. 예수님도 거절당하셨던 그 땅, 하나님으로부터 멀리 떠났던 그곳에 먼저 찾아갔다.</p>
+<ul>
+<li>도심 사람들의 기독교 거부감은 '교회'에 집중됨 → 교회 홍보가 아닌 복음 전파가 전략</li>
+<li>시 78:19 "하나님이 광야에서 식탁을 베푸실 수 있으랴" — 불가능해 보이는 도심이 바로 그 광야</li>
+<li>마우로 기옌: 창의성 높은 도시일수록 빈부 격차 심화 → 불평등이 도시의 본질</li>
+</ul>
+<hr />
+<h2>2. 나노시대 도심 종족들</h2>
+<ul>
+<li>스타트업 생태계 = 한 나라 안의 다민족처럼 공존하는 도심 종족</li>
+<li><strong>유니콘</strong>: 10년 안에 기업 가치 1조 — 모든 스타트업의 목표</li>
+<li>고독한 개인의 증가, 지속가능한 관계 감소</li>
+<li>고린도 교회의 소스데네: 노예와 자유 노예 출신 노동자 80%의 도시, 바울은 텐트 만드는 노동자로 그들 곁에 서 있었다</li>
+<li><strong>나노시대의 선교 원리</strong>: 지금과 다른 연대를 이루고, 그 안에서 가치를 발견하며 영향력을 끼칠 문화를 만들어낸다</li>
+</ul>
+<hr />
+<h2>3. 여호사밧 프로젝트 — 흩어져서 가르치는 전략 (대하 17:7-9)</h2>
+<p>도심 직장인들이 가장 많이 구하는 기도 제목: <strong>지혜</strong></p>
+<p>여호사밧 왕의 전략:
+1. 우상과 산당 정비 (내부 정화)
+2. <strong>신하 + 레위인 + 제사장을 모든 유다 성읍으로 흩어 보냄</strong> — 율법과 지혜를 직접 찾아가서 가르침
+3. 결과: 믿음과 지식의 격차 축소 → 온 백성이 한 마음</p>
+<blockquote>
+<p>"교회답게 하기 위해서는 그들의 삶을 보고 이해하고 변화를 볼 수 있을 만큼 가까이에 있어야 한다."</p>
+</blockquote>
+<p><span class="wl-dead" title="위키 내부 링크">레이바케</span> (Ray Bakke, 미국 도심 목회 전문가): "말씀을 도시의 언어로 번역해줄 번역가가 필요하다"</p>
+<hr />
+<h2>4. 브로콜리 커뮤니티 — 프랙탈 구조의 공동체</h2>
+<ul>
+<li><strong>브로콜리</strong>: 라틴어 '가지', 확대해도 축소해도 같은 모양 (프랙탈)</li>
+<li><strong>컴퍼니(Company)</strong>: 라틴어 com(함께) + pany(빵) — "어려운 시기일수록 작은 빵을 나눠 먹는 돈독한 관계"</li>
+<li>식구(食口)와 같은 맥락 — 함께 먹는 공동체가 진짜 교회</li>
+</ul>
+<hr />
+<h2>5. 마음의 주인 — 영성의 두 기둥</h2>
+<h3>침묵 (<span class="wl-dead" title="위키 내부 링크">헨리나우웬</span>)</h3>
+<ul>
+<li>영성훈련 = 내면에 하나님이 자유롭게 역사하실 수 있는 <strong>공간</strong>을 만드는 것</li>
+<li>이어령 교수도 영성을 "공간 만들기"로 표현</li>
+<li>침묵의 두 차원: ① 하나님과의 관계에서 경청 ② 이웃과의 관계에서 자기 소리를 잠재움</li>
+<li><a class="wl" href="../../b/%EC%B9%9C%EB%B0%80%EA%B0%90_%ED%97%A8%EB%A6%AC%EB%82%98%EC%9A%B0%EC%9B%AC/">친밀감_헨리나우웬</a> 연결</li>
+</ul>
+<h3>인격 (<span class="wl-dead" title="위키 내부 링크">달라스윌라드</span>)</h3>
+<ul>
+<li>인간의 내면 = '중앙살림부' — 한 사람의 진정한 모습이 결정되는 곳</li>
+<li>제자훈련: 케어 대상과 가까이, 같이 살아야 한다 — "내가 받은 은혜가 무엇인지 삶이 말하게 해야"</li>
+</ul>
+<h3>존 마크 코머 — 슬로우 영성</h3>
+<blockquote>
+<p>"바쁨과 사랑은 양립할 수 없다"</p>
+</blockquote>
+<hr />
+<h2>6. 움직이는 교회 — 사역 형태들</h2>
+<table>
+<thead>
+<tr>
+<th>형태</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>바이블 트래킹</td>
+<td>트래킹 + 성경 묵상 (시 143:8)</td>
+</tr>
+<tr>
+<td>Prayer Walk / 기도PT</td>
+<td>도시를 걷고 기도하는 훈련</td>
+</tr>
+<tr>
+<td>북클럽</td>
+<td>책으로 모이는 공동체</td>
+</tr>
+<tr>
+<td>스낵타임</td>
+<td>직장인 수요일 점심 모임</td>
+</tr>
+<tr>
+<td>신우회</td>
+<td>직장 내 기독교 모임</td>
+</tr>
+<tr>
+<td>SNS 개척</td>
+<td>인스타그램 '가까운 거리감' 문화 활용</td>
+</tr>
+<tr>
+<td>주말 농장 그린 테이블</td>
+<td>흙을 매개로 한 공동체</td>
+</tr>
+<tr>
+<td>잠언노트·한장쓰기</td>
+<td>바이블 무브먼트 실천 (잠 3:15)</td>
+</tr>
+</tbody>
+</table>
+<p>전 4:10 "혹시 그들이 넘어지면 하나가 그 동무를 붙들어 일으키려니와"</p>
+<hr />
+<h2>7. 성령의 위치 — 시간×공간×인간</h2>
+<blockquote>
+<p>"그 '시간'에 소명을 받은 '공간'에 나라는 한 '인간'에게 성령을 충만히 부어 주셨다"</p>
+</blockquote>
+<ul>
+<li><span class="wl-dead" title="위키 내부 링크">CS루이스</span>: "우리의 위대하신 대장께서 세상의 삭막한 담장에 틈을 내셨다. 그분은 우리와 하나님을 갈라놓는 난공불락의 장벽에 구멍을 뚫으셨다."</li>
+<li>제프 화이트 목사: 베스킨라빈스 맛보기 스푼 — "도심 이웃들이 우리의 삶을 통해 하나님 나라를 먼저 맛보게 하는 것"</li>
+<li><span class="wl-dead" title="위키 내부 링크">팀켈러</span>: 도심 교회의 핵심 기둥 중 하나는 '문화' — 문화를 공부·이해하는 것을 넘어 생태계의 일원이 되어야</li>
+</ul>
+<hr />
+<h2>핵심 인사이트</h2>
+<ul>
+<li><strong>'교회 오게 하기'에서 '찾아가기'로</strong> — 전략의 패러다임 전환</li>
+<li>도심 선교는 투명(invisible)하게 녹아드는 방식으로 이루어진다</li>
+<li>공동체는 규모가 아니라 <strong>프랙탈 구조</strong> — 어디서나 같은 모양</li>
+<li>영성의 핵심은 하나님이 일하실 <strong>공간</strong>을 확보하는 것</li>
+</ul>
+<hr />
+<h2>선교적 교회 이론과의 연결</h2>
+<p><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a></p>
+<table>
+<thead>
+<tr>
+<th>선교적 교회 원리</th>
+<th>인비저블 처치 실천</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>교회는 본질상 보냄받은 존재 (Sent Church)</td>
+<td>찾아가는 교회 — 도심으로 먼저 나감</td>
+</tr>
+<tr>
+<td>미시오 데이: 하나님의 선교에 참여</td>
+<td>성령의 위치 — 시간×공간×인간에 충만</td>
+</tr>
+<tr>
+<td>지역사회로 흩어지는 교회</td>
+<td>흩어져 가르치는 여호사밧 모델 (대하 17)</td>
+</tr>
+<tr>
+<td>문화 속으로 성육신적 진입</td>
+<td>스타트업·직장·트래킹·농장 등 삶의 자리에서</td>
+</tr>
+<tr>
+<td>커뮤니타스 — 경계선에서 형성되는 공동체성</td>
+<td>브로콜리 프랙탈 공동체 — 어디서나 같은 모양</td>
+</tr>
+<tr>
+<td>도심 선교의 문화 번역 (팀 켈러)</td>
+<td>레이 바케: "말씀을 도시의 언어로 번역하는 번역가"</td>
+</tr>
+</tbody>
+</table>
+<p>이 책은 선교적 교회 신학의 <strong>한국 도심 현장 버전</strong>이다. 이론(앨런 허쉬·팀 켈러·크리스토퍼 라이트)을 직접 실천으로 옮긴 사례이며, 특히 '보이지 않는(invisible)' 교회라는 개념은 CMF의 의료사회 선교 및 <span class="wl-dead" title="위키 내부 링크">의료사회회복프로젝트</span>와도 직결된다.</p>
+<h2>미해결 질문</h2>
+<ul>
+<li>'찾아가는 교회'가 제도화되지 않고 지속가능하려면 무엇이 필요한가?</li>
+<li>도심 스타트업 세대에게 맞는 성경공부 형식은 어떤 것인가?</li>
+</ul>
+</article>
+<div class="tagrow"><span>#도심선교</span><span>#미셔널처치</span><span>#찾아가는교회</span><span>#영성</span><span>#공동체</span><span>#스타트업</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

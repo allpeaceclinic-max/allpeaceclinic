@@ -1,0 +1,311 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>깨어진 그릇 — 김태훈 선교사 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="author">김태훈</span><span class="date">2026-05-02</span></div>
+  <h1 class="note-title">깨어진 그릇 — 김태훈 선교사</h1>
+  
+</header>
+<article class="note">
+<h2>책 개요</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>저자</td>
+<td>김태훈 선교사 — 왼손잡이 소아외과 의사</td>
+</tr>
+<tr>
+<td>핵심 사건</td>
+<td>2014년 아프리카 사역 1년 3개월 만에 파킨슨 진단</td>
+</tr>
+<tr>
+<td>핵심 메시지</td>
+<td>깨어진 그릇이 토기장이 손에 다시 들려진다</td>
+</tr>
+<tr>
+<td>구조</td>
+<td>그릇의 7단계 여정 (빚어짐→생기→바람→건조→불→깨짐→다시 들려짐)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>그릇의 7단계 여정</h2>
+<h3>1. 빚어진 그릇 — 가치관의 전환</h3>
+<ul>
+<li>과학고 → 서울의대 → 다른 가치(온누리 대학부)</li>
+<li>박종길·박인용 목사를 통한 변화: 예배자의 정체성</li>
+<li>시므온(눅 2:25-27) — 성령의 인도를 따른 소명의 완성</li>
+</ul>
+<blockquote>
+<p>"더러운 걸레 — 자신이 깨끗하기보다는 세상을 깨끗하게 만드시는
+하나님의 도구로 드려 쓰일 수만 있다면 걸레라도 좋다"</p>
+</blockquote>
+<h3>2. 생기가 불어넣어진 그릇 — 아웃리치와 예배</h3>
+<ul>
+<li>일본·철원·제주도·러시아·태국·인도 배낭여행</li>
+<li>몸으로 경험하는 타문화</li>
+</ul>
+<h3>3. 바람을 탄 그릇 — 일심과 전심</h3>
+<blockquote>
+<p>시 86:11-12 — <strong>일심(undivided heart)과 전심(all my heart)</strong></p>
+</blockquote>
+<ul>
+<li>본과 3학년 중반, 졸업 전 하나님께 1년을 드리고 싶어 휴학</li>
+<li>인도 YWAM DTS → 영국 런던 익투스 크리스천 펠로우십</li>
+<li>영국에서 부흥에 대한 열망</li>
+</ul>
+<h3>4. 음지에서 건조된 그릇 — 긴 준비</h3>
+<ul>
+<li>소아외과 전공 / 한국방글라데시 친선병원 3년</li>
+<li>간 이식 세부 전공 2년 / 소아외과 세부 전공 2년</li>
+<li>2004년 결혼 — 선교 준비</li>
+</ul>
+<h3>5. 불 속에 던져진 그릇 — 방글라데시 KOICA</h3>
+<blockquote>
+<p>"사실 내 의료 사역은 현지 의료 시스템 강화에는 거의 도움이 못 되었다.
+현지 의료 인력과 교류가 없었고, 의료 기기 도입도 나 혼자만의 일이 되었다.
+그 나라의 의료 시스템에도 녹아들지 못했다."</p>
+</blockquote>
+<p>→ <strong>국가를 제자화할 필요성</strong> — 시스템·구조에 대한 고민의 시작</p>
+<h4>국가를 제자화 (Discipling Nations)</h4>
+<p>개인 영혼 구원을 넘어 <strong>사회 구조와 문화·제도</strong>를 복음으로 변혁하는 것.
+다로우 밀러는 <span class="wl-dead" title="위키 내부 링크">Discipling Nations</span>에서 이렇게 말한다:
+- 빈곤은 물질의 결핍이 아니라 <strong>세계관의 결핍</strong>이다
+- 개인의 회심은 국가 변혁의 시작이지 끝이 아니다
+- 선교는 영혼을 구하는 것이면서 동시에 <strong>문화·제도·시스템을 변혁</strong>하는 것</p>
+<p>→ 김태훈 선교사의 방글라데시 반성은 바로 이 지점:
+의료 기술을 전달했지만 <strong>시스템에 녹아들지 못함</strong> = 국가 제자화 실패
+→ 훗날 에티오피아에서 <strong>보건부 선임고문</strong>으로 시스템 안에 들어간 것이 교정</p>
+<p><strong>부르심·비전·전략:</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>내용</th>
+<th>성경</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>부르심</strong></td>
+<td>사귐의 자리 = 관계로의 부르심 = 더 좋은 일상으로의 초대</td>
+<td>고후 8:9, 9:8</td>
+</tr>
+<tr>
+<td><strong>비전</strong></td>
+<td>더 많은 사람을 얻는 것</td>
+<td>고전 9:19-23</td>
+</tr>
+<tr>
+<td><strong>전략</strong></td>
+<td>주님 안에 거하는 것</td>
+<td>요 15:4-5, 8:31-32</td>
+</tr>
+</tbody>
+</table>
+<h3>6. 깨지기 위해 보내진 그릇 — 에티오피아 KOFIH</h3>
+<ul>
+<li>2013년 남수단 → 가족은 에티오피아 정착</li>
+<li>짐마 국립대학, 만 5년 모자보건사업</li>
+<li>오로모어로 진행한 모자보건 워크숍 → <strong>무슬림 동료</strong>, 성경을 나누어 달라</li>
+</ul>
+<blockquote>
+<p>사람에게 가는 선교 (풀러 신학대학원)
+"보내시는 하나님, 보내신 분의 일을 예수님과 함께 행하는 것"
+요 9:3-4 — 낮동안 일해야, 일할 수 없는 밤이 곧 온다</p>
+</blockquote>
+<h3>7. 깨어진 그릇 — 파킨슨 진단</h3>
+<blockquote>
+<p>시 31:12 "깨진 그릇과 같으니이다"</p>
+</blockquote>
+<ul>
+<li>KOFIH 사임 후 자비량으로 에티오피아 연방 보건부 선임고문</li>
+<li>2014년 파킨슨 진단</li>
+</ul>
+<p><strong>회막 문 여호와:</strong></p>
+<blockquote>
+<p>"문에서 기다리시는 주님" — 레 1:3, 잠 8:34, 시 84:10</p>
+</blockquote>
+<p>누군가의 집을 방문할 때 집 앞에 나와 기다리는 것처럼
+하나님은 회막 문에서 우리를 기다리신다
+→ 약한 자를 통해 일하시는 하나님 (시 68:5, 고전 1:27-29)</p>
+<hr />
+<h2>"삶으로 말해야 진짜다" — 고전 4:16의 깊이</h2>
+<blockquote>
+<p>고전 4:16 "그러므로 내가 너희에게 권하노니 너희는 나를 본받는 자가 되라"
+<strong>"Therefore I urge you to imitate me."</strong> (NIV)
+<strong>"나를 모방하라고 강권합니다"</strong></p>
+</blockquote>
+<p>단순한 겸손의 말이 아니다. 바울이 사용한 언어의 의미:</p>
+<table>
+<thead>
+<tr>
+<th>한국어</th>
+<th>영어</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>본받다</td>
+<td>imitate (μιμητής, 미메테스)</td>
+<td>모델을 몸으로 따라하다</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>μιμητής (mimetes)</strong> — 배우가 무대에서 인물을 재현하듯, <strong>몸과 삶 전체</strong>로 따라하는 것</li>
+<li>바울의 권면은 "내 말을 믿으라"가 아니라 <strong>"나를 흉내 내서 살라"</strong></li>
+<li>이것이 성육신적 전달(incarnational communication)의 본질</li>
+</ul>
+<p>고전 4:20 — "하나님의 나라는 말에 있지 아니하고 <strong>오직 능력</strong>에 있음이라"
+요일 2:6 — "그 안에 산다고 하는 자는 그가 행하시는 대로 자기도 <strong>행할지니라</strong>"</p>
+<p>→ 김태훈 선교사에게 이 말이 더 무게를 갖는 이유:
+파킨슨으로 떨리는 손을 가진 의사가 현장에 남아 있다는 것 자체가
+어떤 설교보다 강력한 <strong>μιμητής</strong>의 증언이다</p>
+<hr />
+<h2>8. 토기장이 손에 다시 들려진 그릇</h2>
+<blockquote>
+<p>단 6:10 — 창문을 열고 기도하는 다니엘</p>
+</blockquote>
+<p><strong>활짝 열린 창문의 삶:</strong>
+- 열어놓은 창문 = 예배의 확장, 공적 영역
+- 세상을 향한 예배
+- 세상 사람들의 질문: "왜? 당신은 여기에, 몸도 불편한데"</p>
+<blockquote>
+<p>증인 = 순교자 = <strong>마르투스(μάρτυς)</strong>
+끝나지 않은 예배</p>
+</blockquote>
+<p><strong>소명의 재확인:</strong></p>
+<blockquote>
+<p>"지리적 위치나 세상의 자리로 부르심을 받은 게 아니라,
+<strong>주님과의 사귐과 동행으로 부름 받았음</strong>을 확인하고 있습니다"</p>
+</blockquote>
+<p>아내의 고백:</p>
+<blockquote>
+<p>"고지론을 믿었지만, 더 낮은 곳으로 걷게 하심
+부르신 곳에 가면 아버지가 계신다.
+돌아가는 것, 거꾸로 가는 것이 아니라 <strong>동행하는 길</strong>이다"</p>
+</blockquote>
+<hr />
+<h2>핵심 인사이트</h2>
+<ol>
+<li><strong>깨어짐이 목적이 아니라 과정</strong> — 토기장이가 다시 드신다</li>
+<li><strong>의료 사역의 한계를 직시</strong> — 시스템·구조에 녹아들지 못한 반성 → 국가 제자화</li>
+<li><strong>삶으로 말해야 진짜 (μιμητής)</strong> — 몸으로 따라하는 것이 진짜 전달</li>
+<li><strong>부르심 = 관계</strong> — 사역지가 아니라 주님과의 동행</li>
+<li><strong>약함이 통로</strong> — 파킨슨 진단 후에도 공적 예배가 계속된다</li>
+</ol>
+<hr />
+<h2>CMF·의료 선교 연결</h2>
+<p><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a>:
+- "현지 시스템에 녹아들지 못했다" → 의료 선교 = 기술 전달이 아니라 시스템 변혁
+- 파킨슨이라는 약함이 오히려 증언이 된다
+- "몸도 불편한데 왜 여기에?" — 이 질문이 선교의 문을 연다
+- μιμητής — CMF 선배 의료인이 후배에게 줄 수 있는 가장 강력한 것은 삶</p>
+<p><a class="wl" href="../../t/CMF_VPM%EC%B2%A0%ED%95%99/">CMF_VPM철학</a>:
+- 부르심 = 관계 = VPM의 Value 우선성
+- "사역이 아니라 사람, 사람이 아니라 가치"</p>
+<hr />
+<h2>연결된 페이지</h2>
+<ul>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a> — 의료 선교사의 한계와 소명</li>
+<li><a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a> — 관계로의 부르심, 사귐의 자리</li>
+<li><a class="wl" href="../../t/%EA%B3%A0%EB%82%9C/">고난</a> — 파킨슨, 깨어짐, 약함을 통한 하나님의 역사</li>
+<li><a class="wl" href="../../t/%EC%A0%95%EC%B2%B4%EC%84%B1/">정체성</a> — 더러운 걸레, 예배자의 정체성</li>
+<li><a class="wl" href="../../t/%EC%88%9C%EA%B5%90/">순교</a> — 마르투스, 끝나지 않은 예배</li>
+<li><a class="wl" href="../../t/%EC%98%88%EB%B0%B0/">예배</a> — 열린 창문, 공적 예배, 세상을 향한 예배</li>
+<li><a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81/">글로벌미션핸드북</a> — Stripping→Transformation 여정과 연결</li>
+<li><span class="wl-dead" title="위키 내부 링크">생각은결과를낳는다_다로우밀러</span> — 국가 제자화, 세계관 변혁 (미생성)</li>
+</ul>
+</article>
+<div class="tagrow"><span>#선교</span><span>#의료선교</span><span>#고난</span><span>#소명</span><span>#정체성</span><span>#증인</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

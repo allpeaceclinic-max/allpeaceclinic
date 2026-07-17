@@ -1,0 +1,123 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>북한선교 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="date">2026-06-28</span></div>
+  <h1 class="note-title">북한선교</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>북한선교는 복음이 차단된 북한 체제 안팎의 주민들에게 그리스도의 복음을 전하고 교회를 세우는 사역을 총칭한다. 직접 접근이 불가능한 폐쇄 체제라는 구조적 특성 때문에 창의적 접근(creative access), 탈북민 디아스포라 활용, 의료·인도주의 사역을 통한 간접 접근 등 다양한 전략이 발전해 왔다.</p>
+<h2>1. Build Bridges 전략 — 관계를 통한 접근</h2>
+<p>김정용의 강의는 북한선교의 핵심 전략으로 "Build Bridges(다리 놓기)"를 제시한다. 직접 전도가 불가능한 상황에서 신뢰 관계를 먼저 구축하고, 그 관계망을 통해 복음이 흘러가도록 한다는 접근이다. 이 전략의 성경적 모델은 니고데모 모델—밤에 찾아온 니고데모처럼 공개적 선언이 아닌 개인적 신뢰 관계를 통해 진리가 전달되는 방식—로 제시된다.</p>
+<h2>2. 의료선교와 21세기 제중원</h2>
+<p>김정용의 강의는 의료를 북한 접근의 핵심 통로로 제안한다. "21세기 제중원"이라는 개념은 19세기 알렌 선교사가 조선에서 의료를 통해 복음의 문을 연 제중원 모델을 북한 상황에 적용한 것이다. 의료 인력이 인도주의 명분으로 북한과 접촉할 수 있는 현실적 창구이며, CMF(누가회) 같은 의료인 선교 공동체가 이 전략의 실행 주체로 적합하다는 논지다.</p>
+<h2>3. 탈북민 디아스포라 — 복음의 일꾼</h2>
+<p>김정환의 강의는 탈북민을 북한선교의 핵심 자원으로 재정의한다. 탈북민은 단순한 선교의 대상이 아니라 "복음의 일꾼"이며, 그들이 남한에서 신앙을 갖고 훈련받아 향후 북한 변화의 시점에 복음의 운반자가 될 수 있다는 전략적 비전이다. 대구 지역만 해도 800명 이상의 탈북민이 있다는 현황은 지역 교회와 선교 단체가 탈북민 사역에 즉각 참여할 수 있음을 보여준다.</p>
+<h2>4. 디아스포라 선교 신학</h2>
+<p>김정환의 강의는 탈북민 사역을 디아스포라 선교신학의 틀로 해석한다. 이산된 민족이 오히려 복음 전파의 전략적 접점이 된다는 것은 성경 전체의 패턴—요셉의 이집트 이산, 바벨론 포로기, 초대교회의 박해로 인한 흩어짐—과 일치한다. 탈북민 디아스포라는 우연이 아니라 하나님의 섭리 안에 있는 선교적 흩어짐으로 읽힌다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>북한 접근은 직접 전도가 아니라 관계·신뢰·인도주의 통로를 통한 간접 접근이 현실적이다.</li>
+<li>탈북민은 선교의 대상이자 동시에 선교의 주체다 — 이 이중성을 인식하는 것이 사역 설계의 출발점이다.</li>
+<li>의료 전문성은 북한과의 접촉에서 실질적이고 윤리적인 접근 근거를 제공한다.</li>
+<li>Build Bridges 전략은 결과보다 관계를, 선언보다 신뢰를 우선시하는 선교 철학을 담는다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>탈북민 디아스포라의 영적 훈련과 파송을 위한 구체적 구조는 어떻게 설계되어야 하는가?</li>
+<li>북한 당국과의 관계에서 선교적 의도를 드러내지 않으면서도 복음적 정직성을 유지하는 것이 가능한가?</li>
+<li>통일 이후 북한 교회 재건에 대한 선교적 준비는 지금부터 어떻게 이루어져야 하는가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EB%94%94%EC%95%84%EC%8A%A4%ED%8F%AC%EB%9D%BC/">디아스포라</a> — 탈북민 사역의 신학적 틀</li>
+<li><a class="wl" href="../../t/%ED%86%B5%EC%A0%84%EC%A0%81%EC%84%A0%EA%B5%90/">통전적선교</a> — 의료·인도주의와 복음 전파의 통합</li>
+<li><a class="wl" href="../../t/%ED%83%80%EB%AC%B8%ED%99%94%EC%84%A0%EA%B5%90/">타문화선교</a> — 체제와 문화 장벽을 넘는 선교 전략</li>
+</ul>
+</article>
+<div class="tagrow"><span>#domain/선교</span><span>#discipline/선교학</span><span>#topic/북한선교</span><span>#topic/디아스포라</span><span>#topic/의료선교</span><span>#topic/탈북민</span><span>#topic/창의적접근</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

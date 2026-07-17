@@ -1,0 +1,317 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>전문인선교 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="date">2026-07-17</span></div>
+  <h1 class="note-title">전문인선교</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>전문인 선교(professional / tentmaker mission)란 목회자로 파송되는 대신 <strong>직업 신분으로 선교지에 서는 선교 모델</strong>이다. 의사·교사·엔지니어·사업가·기술자가 자기 직업을 유지한 채 타문화로 들어가, 그 직업이 만들어 내는 접촉면과 신뢰 위에서 복음을 증언한다. 이 모델의 원형은 사도 바울이다. 그는 고린도에서 아굴라·브리스길라와 함께 천막을 지으며 사역했고(행 18:3), 필요할 때는 후원도 받았다(빌 4:16). 바울은 "선교사"라는 직함을 달고 언어를 새로 배워 들어간 사람이 아니라, 이미 헬라어에 능한 유대인으로서 자기 일을 하며 흩어져 복음을 전한 사람이었다.</p>
+<p>전문인 선교는 두 가지 오해와 싸우면서 자기 자리를 찾는다. 하나는 "선교사 비자가 나오지 않으니 어쩔 수 없이 직업으로 위장한다"는 <strong>비자 우회책</strong>으로 보는 시선이고, 다른 하나는 "정직하게 열심히 일하기만 하면 그것이 곧 복음"이라는 <strong>직업 낭만화</strong>다. 전문인 선교의 신학은 이 두 극단 사이에 선다. 직업은 위장 수단도 아니고 복음의 자동 대체물도 아니다. 그것은 하나님이 한 사람에게 주신 소명이며, 동시에 의도적 증언이 흘러나오는 관계의 통로다.</p>
+<p>이 페이지는 전문인 선교를 <strong>총론</strong>으로 다룬다. 사업 자체가 사역이 되는 BAM의 상세는 <a class="wl" href="../../t/%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4%EC%84%A0%EA%B5%90/">비즈니스선교</a>에, 일 자체의 신학적 가치는 <a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%8B%A0%ED%95%99/">직업신학</a>에, 파송 여부를 넘어 일상을 선교로 사는 삶은 <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EC%82%B6/">선교적삶</a>에, 현지 문화 적응의 기술은 <a class="wl" href="../../t/%ED%83%80%EB%AC%B8%ED%99%94%EC%84%A0%EA%B5%90/">타문화선교</a>에 위임하고, 여기서는 "직업인으로 파송된다"는 모델 자체의 논리와 긴장에 집중한다.</p>
+<h2>1. 전문인 선교란 무엇인가 — 천막을 친 사도의 후예</h2>
+<p>전문인 선교의 역사는 근대 선교보다 오래되었다. 전동주는 이 계보를 이방의 나라에서 하나님을 증언한 인물들 — 아브라함, 요셉, 다니엘, 그리고 바울 — 에서 시작해, 열 명이 모이면 한 명을 보냈던 모라비안 공동체, 생활비를 벌려고 구두를 수선하면서 "나의 진짜 일은 복음을 전하는 것"이라 말한 윌리엄 캐리, 그리고 카불대학교 영어과 교수로 아프가니스탄에 들어간 크리스티 윌슨('현대 전문인 선교의 아버지')으로 이어 그린다. 이들의 공통점은 하나다. 선교사라는 직함이 아니라 <strong>자기 손에 든 직업을 들고</strong> 복음이 닿지 않은 곳으로 들어갔다는 것.</p>
+<p>이 모델은 전통적 목회 파송과 무엇이 같고 무엇이 다른가. 전동주가 제시하는 '옛 패러다임 → 새 패러다임'의 전환은 그 답의 골격이다.</p>
+<table>
+<thead>
+<tr>
+<th>옛 패러다임</th>
+<th>새 패러다임</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>성(聖) vs 속(俗)</td>
+<td>모든 것이 거룩하다</td>
+</tr>
+<tr>
+<td>목회자 vs 평신도</td>
+<td>한 몸, 다르지만 <strong>동등한</strong> 부르심</td>
+</tr>
+<tr>
+<td>전임 사역자에게만 특별한 소명</td>
+<td>모두가 부름받았다</td>
+</tr>
+<tr>
+<td>세속 노동은 필요악</td>
+<td>일은 거룩하다</td>
+</tr>
+<tr>
+<td>선교는 특별한 소명이 필요</td>
+<td>선교는 모두의 것</td>
+</tr>
+</tbody>
+</table>
+<p>핵심은 "다르지만 동등한 부르심"이다. 전문인 선교는 목회 파송보다 열등한 우회로가 아니라, 같은 지상명령을 다른 신분으로 수행하는 대등한 길이다. 다만 이 '동등성'을 무차별한 것으로 오해하면 안 된다. 손창남은 여기에 결정적인 단서를 단다. 누구나 요리를 하지만 요리사는 따로 있듯, 그리고 누구나 나라를 지키지만 군인과 민간인이 구분되듯, "선교는 모두가 하는 것이지만 선교사는 따로 있다"는 것이다. 그가 말하는 선교사의 표지는 신분의 우열이 아니라 <strong>재정적·사역적 책무(accountability)</strong>다 — 후원받는 것 외의 소득을 신고하고, 자기 마음대로 사역을 접거나 옮기지 못하는 책임의 구조. 새 패러다임이 만인의 소명을 선언한다고 해서 이 책무의 경계까지 지워지는 것은 아니다. 전문인 선교의 정체성은 바로 이 지점 — 만인 제사장의 평등과 파송자에 대한 책무 사이 — 에서 팽팽하게 조율된다.</p>
+<h2>2. 왜 전문인인가 — 닫힌 문, 열린 옆문</h2>
+<p>전문인 선교가 선택이 아니라 필연이 된 데에는 세 겹의 현실이 있다.</p>
+<p>첫째는 <strong>비자의 현실</strong>이다. 손창남은 전통적 선교사 비자를 내주는 나라로 다섯을 꼽는다 — 한국·일본·대만·필리핀·태국. 전동주는 더 냉정하게 "필리핀 외에는 사실상 없다"고 말한다. 복음이 가장 필요한 10/40창의 30여 개국, 곧 이슬람·힌두·공산·불교권이라는 선교의 4대 블록은 "선교사가 선교한다"는 전제 아래서는 닫힌 문이다. 그러나 같은 나라가 사업가와 직업인에게는 활짝 열려 있다. 손창남은 호치민을 예로 든다. 한 달짜리 비자, 8~10만 명의 한국인 거주, 2,500개 진출 기업, 열 개의 한인 교회 — "여기가 과연 닫힌 지역인가?" 정문이 잠겼을 때 열려 있는 옆문, 그것이 직업이다.</p>
+<p>둘째는 <strong>접촉면과 신뢰</strong>다. 목회자로 신분을 밝히는 순간 복음 전도는 오히려 어려워진다. 반면 직업은 자연스러운 관계망을 만든다. 전동주의 표현대로 "그의 증언은 일터에서 발생하는 자연스러운 접촉의 네트워크로부터 흘러나온다." 특히 의사·교수 같은 전문직은 좀처럼 남의 말을 듣지 않는 중상류·엘리트 계층에 접근하는 거의 유일한 통로다. 의사가 의사에게, 엔지니어가 엔지니어에게 다가가는 이른바 '같은 계층 원리(same-class principle)'는 전문인 선교의 전략적 핵심이다. 예전에 선교사가 현지의 엘리트 계층을 길러냈다면, 이제는 전문인이 그 자리에서 같은 계층을 복음화한다.</p>
+<p>셋째는 <strong>자비량의 재정 구조</strong>다. 다만 여기에 흔한 착각이 있다. 손창남은 단호하게 정리한다 — "전문성이 있어야 후원을 받는다. 그래서 봉사의 형태이지, 순수한 자비량이 아니다." 전문인 선교는 무일푼으로 스스로를 부양하는 낭만이 아니라, 직업 소득과 후원, 그리고 사역이 얽힌 복합 구조다. 이우윤은 이 경제 윤리를 아리스토텔레스의 두 개념으로 비춘다. 공동체를 섬기는 가계 관리(oikonomia)와 이윤 자체를 목적으로 삼는 축재(chrematistike). 전문인 선교사의 경제 활동은 크레마티스티케가 아니라 오이코노미아여야 한다. 그가 누가복음 22장 35~38절("전대 있는 자는 가지고, 검이 없는 자는 겉옷을 팔아 검을 사라")을 자급 선교 시대의 개막으로 읽으면서도, 정작 내려놓아야 할 두 개의 검으로 "겸손과 섬김"을 든 것은 이 때문이다. 재정 자립은 목적이 아니라 섬김의 조건이다.</p>
+<p>이 세 현실은 하나의 거대한 배경 위에 놓여 있다. 지금 지구에서는 해마다 1억 명이 직업을 찾아 국경을 넘고, 한국에만 200만 명 넘는 외국인이 산다. 손창남의 관찰처럼 "오늘날 이슬람의 선교사는 유학생과 학자와 난민"이다. 선교는 더 이상 "해외로 나가는 일"이 아니라 어디서든 어디로든(from everywhere to everywhere) 일어나는 타문화 사역이 되었고, 그 물결의 이름이 직업 이주다.</p>
+<h2>3. 스펙트럼 — 텐트메이커에서 전문직 파송, 그리고 BAM</h2>
+<p>전문인 선교는 단일한 모델이 아니라 하나의 스펙트럼이다. 손창남은 직업과 선교의 관계를 다섯 유형으로 나눈다.</p>
+<table>
+<thead>
+<tr>
+<th>유형</th>
+<th>신분</th>
+<th>성격</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1형</td>
+<td>목사로 파송된 선교사</td>
+<td>전통적 파송, 선교사 비자</td>
+</tr>
+<tr>
+<td>2형</td>
+<td>기술(미용 등)을 배워 들어간 선교사</td>
+<td>생계형 텐트메이커</td>
+</tr>
+<tr>
+<td>3형</td>
+<td>교수·의사 등 전문인 선교사</td>
+<td>전문직 파송</td>
+</tr>
+<tr>
+<td>4형</td>
+<td>전문인 협력자</td>
+<td>현장의 전문 파트너</td>
+</tr>
+<tr>
+<td>5형</td>
+<td>전문인 후원자</td>
+<td>보내고 세우는 자</td>
+</tr>
+</tbody>
+</table>
+<p>이 다섯 유형을 재정과 정체성의 축으로 다시 배열하면, 전문인 선교의 스펙트럼이 드러난다.</p>
+<table>
+<thead>
+<tr>
+<th>모델</th>
+<th>정체성</th>
+<th>재정 구조</th>
+<th>접촉면</th>
+<th>사역 위임</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>텐트메이커(생계형)</strong></td>
+<td>직업인이자 증인</td>
+<td>자기 노동으로 생계</td>
+<td>같은 계층 노동 현장</td>
+<td>이 페이지</td>
+</tr>
+<tr>
+<td><strong>전문직 파송</strong></td>
+<td>전문인 선교사(3형)</td>
+<td>직업 소득 + 후원</td>
+<td>전문가 네트워크(같은 계층 원리)</td>
+<td>이 페이지</td>
+</tr>
+<tr>
+<td><strong>BAM(사업 자체가 사역)</strong></td>
+<td>기업가-선교사</td>
+<td>사업 수익(사중 바텀 라인)</td>
+<td>고용·거래·공급망</td>
+<td>→ <a class="wl" href="../../t/%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4%EC%84%A0%EA%B5%90/">비즈니스선교</a></td>
+</tr>
+</tbody>
+</table>
+<p>세 모델의 차이는 규모가 아니라 <strong>정체성의 무게중심</strong>에 있다. 텐트메이커는 생계를 위해 일하되 그 일터가 증언의 자리가 되고, 전문직 파송은 전문성 자체가 신뢰와 접근의 자본이 되며, BAM은 사업의 흥망이 곧 사역의 흥망이 되는 지점까지 나아간다. 손창남은 특히 1형과 2형 사이의 전환을 강조한다. 선교사 비자로 들어가 일도 못 하고 어정쩡하게 머무는 1형에서, 창의적 접근 지역에서 실제 직업인으로 뿌리내리는 2형으로 옮겨 가야 한다는 것이다. 그가 든 스위스 선교사의 예 — 태국·라오스에서 실크 비즈니스로 들어가 "진짜 비즈니스맨이 된" 사람 — 은 이 전환의 이상형이다. 스펙트럼의 사업형 끝단, 곧 부의 창출과 사중 바텀 라인(재무·사회·환경·영적)을 성패의 척도로 삼는 BAM의 논리는 <a class="wl" href="../../t/%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4%EC%84%A0%EA%B5%90/">비즈니스선교</a>에서 상세히 다룬다.</p>
+<h2>4. 인터서브의 유산 — 무명의 선교사 시대</h2>
+<p>이 볼트가 가진 전문인 선교의 1차 사료는 <span class="wl-dead" title="위키 내부 링크">인터서브</span>에서 나온다. 인터서브(International Service Fellowship)는 1852년 인도 여성을 위해 영국 여성들이 모인 오후 차 기도 모임에서 시작해 170년을 이어 온 단체다. 여성 선교로 첫 100년(제나나 선교회)을 채웠고, 교육과 의료라는 두 축으로 "가장 소외된 자(the neediest)"를 향한 총체적 선교를 펼쳐 왔다. 조직의 자기 이해도 독특하다 — 위계적·소유적 기구가 아니라 옆으로 뻗는 뿌리줄기 같은 '리좀(rhizome)' 네트워크이며, 다양한 직업의 펠로우가 각자의 자리에서 선교적 삶을 사는 펠로우십 구조, 그리고 축적한 재산과 주도권을 현지에 넘기는 낮아짐의 영성(세컨딩과 현지 이양)이 그 정체성이다. 공갈렙 대표가 170년사를 압축한 한 문장은 이 정신을 잘 담는다 — "선교는 삶을 이어쓴다."</p>
+<p>조샘은 이 유산을 조직 철학으로 벼려 낸다. 선교 기관이 놓치기 쉬운 위계가 있다는 것이다. <strong>가치(values) → 사람(people) → 사역(ministry)</strong>. 파송 인원의 수나 사역의 성과가 아니라 가치와 사람이 먼저다. 1973년 인터서브가 재산을 현지 교회와 지도자들에게 이양한 결정은 이 순서의 역사적 표현이었다. 그는 전문인 선교를 단기 파견이나 기관 충원이 아닌 커리어 기반의 지속적 소명으로 규정하며, 선교 기관을 거대 조직이 아니라 다양한 전문인이 자기 자리에서 상호 의존하는 "작은 생태계(small ecosystem)"로 비유한다. 가치→사람→사역의 순서가 뒤집히는 순간, 전문인 선교 단체는 인력 충원 기관으로 전락한다.</p>
+<p>이 유산이 가장 시적으로 응축된 것이 문누가 선교사의 선언이다. 키르기스스탄에서 자립형 메림치과병원을 세운 그는, 2015년 의료선교대회에서 자기 직업을 "당나귀"에 비유했다 — 강도 맞은 사람을 태워 나르는 도구. 그리고 새로운 선교의 주역을 이렇게 불렀다.</p>
+<blockquote>
+<p>"평범한 직업을 가진, 성직자도 아닌, 선교사라고 불리지도 않는, 선교비 지원도 받지 않는, 그러나 잃어버린 민족을 마음에 품고 자기의 직업을 드려 다가가는 자들의 선교시대."</p>
+</blockquote>
+<p>그는 이것을 "무명의 선교사 시대"라 명명했다. 이름도 직함도 파송장도 없이, 작은 순종과 작은 당나귀 하나를 드리는 것으로 시작되는 십만 명의 선교. <span class="wl-dead" title="위키 내부 링크">문누가</span>의 이 비전은 전문인 선교 신학의 실천적 정수다 — 전문성(전문직)과 증언(선교)을 양손에 든 '양손의 선교'.</p>
+<h2>5. 정체성의 긴장 — 나는 선교사인가 직업인인가</h2>
+<p>전문인 선교의 가장 깊은 물음은 전략이 아니라 정체성에 있다. 손창남은 이 이중성을 개구리에 빗댄다. 개구리는 양서류라서 물과 땅 두 서식처가 모두 필요하다. 전문인 선교사도 직업의 세계와 사역의 세계, 두 물에 동시에 몸을 담근다. 문제는 이 두 세계가 서로를 밀어낸다는 데 있다. 전문직으로 들어간 사람(3형)이 노골적으로 전도자처럼 굴면(2형처럼 행동하면) 창의적 접근 지역에서 추방당하고, 반대로 일만 열심히 하고 복음은 입에 담지 않으면 파송 교회에서 "김 집사 취급"을 받으며 신뢰를 잃는다. 손창남은 이것을 "개구리의 운명 — 만족이 없다"고 표현한다. 어느 쪽에도 온전히 속하지 못하는 이 항구적 긴장이야말로 전문인 선교사의 실존이다.</p>
+<p>이 긴장은 두 개의 날카로운 쟁점으로 갈라진다.</p>
+<p><strong>정직성의 문제 ⚖️.</strong> 창의적 접근 지역에서 직업은 진짜인가, 위장인가. 손창남의 원칙은 분명하다 — "메시지보다 메신저가 더 중요하다. 속이면 메시지가 문제가 된다." 신분을 꾸며 낸 가짜 직업은 그 자체로 복음을 훼손한다. 그래서 실크 비즈니스로 들어가 "진짜 비즈니스맨이 된" 선교사의 사례가 이상형으로 제시된다. 해법은 은폐가 아니라 <strong>실제로 그 직업인이 되는 투명성</strong>이다. 보안이 필요한 현장에서 모든 것을 공개할 수는 없지만, 적어도 자기 직업 앞에서 거짓이어서는 안 된다.</p>
+<p><strong>일의 가치 대(對) 수단 논쟁.</strong> 일은 복음을 전하기 위한 발판인가, 아니면 그 자체로 거룩한가. 전동주는 한쪽 극단을 경고한다 — "열심히 정직하게 사는 것이 복음인가? 착각이다." 삶의 진실성만으로는 복음이 전달되지 않으며, 의도적 언어와 관계가 여전히 필요하다는 것이다. 그러나 반대편에는 일을 오직 전도의 미끼로만 취급하는 도구주의의 함정이 있다. 전문인 선교의 성숙은 이 둘을 함께 붙드는 데 있다 — 일은 그 자체로 하나님이 기뻐하시는 거룩한 소명이면서(이 신학은 <a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%8B%A0%ED%95%99/">직업신학</a>에 위임), 동시에 그 일이 만든 관계 위에서 복음은 의도적으로 선포되어야 한다. 존재가 먼저지만 침묵이 증언은 아니다. 이 통합의 일상적 실천은 <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EC%82%B6/">선교적삶</a>이 이어받는다.</p>
+<h2>6. 의료 전문인 선교 — 당나귀이자 우리(cage)</h2>
+<p>의료는 전문인 선교의 가장 오래되고 대표적인 형태다. 인터서브의 두 축 가운데 하나가 의료였고, 문누가의 메림치과병원처럼 자립형 NGO 병원은 전문인 선교의 전형적 실물이다. 의사·치과의사·간호사의 전문성은 손창남의 표현대로 어떤 나라의 문도 열 수 있는 강력한 당나귀다.</p>
+<p>그러나 바로 그 지점에 의료 전문인 선교의 고유한 함정이 있다. 손창남은 도널드 맥가브란을 인용해 '선교기지 접근법'의 위험을 지적한다. 병원·학교 같은 기지는 군대의 일시적 주둔이 영구화된 것과 같아서, 막대한 재정을 삼키며 정작 복음의 전진을 멈추게 만들 수 있다는 것이다. 그는 잃어버린 자(lost)와 궁핍한 자(needy)를 구분한다 — 궁핍한 자에게 냉수 한 그릇이 필요한 것은 사실이지만, 우리가 전해야 할 것은 생수다. 그리고 의료인을 향해 서늘한 문장을 던진다.</p>
+<blockquote>
+<p>"우리도 의료라는 것에 갇힐 수 있다. 어쩌면 의료를 버려야 선교가 될 수도 있다."</p>
+</blockquote>
+<p>의료라는 전문성이 문을 여는 당나귀인 동시에, 그 안에 안주하게 만드는 우리가 될 수 있다는 역설이다. 여기에 또 하나의 시금석이 있다 — "여기서 안 하면 거기서도 안 한다." 국내 이주노동자 진료실에서 하지 않는 사랑을 선교지 진료실에서 갑자기 하게 되지는 않는다. 단기 의료봉사와 장기 파송의 차이도 이 연장선에 있다. 단기가 문을 두드리는 일이라면, 장기는 문누가처럼 병원을 세우고 결국 현지인에게 이양하기까지의 긴 순종이다. 의료선교의 신학과 현장 쟁점 — 자립 구조, 현지 이양, 기독의료인의 정체성 — 은 <a class="wl" href="../../t/%EC%9D%98%EB%A3%8C%EC%84%A0%EA%B5%90/">의료선교</a>와 <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a>에서 심화한다.</p>
+<h2>7. 한국 전문인 선교의 과제 — 파송 구조와 케어의 공백</h2>
+<p>한국 교회는 전문인 선교의 잠재력이 큰 만큼, 그것을 담아낼 구조는 아직 성직자 모델에 머물러 있다. 과제는 세 방향에서 나타난다.</p>
+<p><strong>파송·후원 구조의 부정합.</strong> 손창남의 개구리 비유가 조직 차원에서 반복된다. 파송 기관도 교회도 전문인 선교사를 어정쩡하게 바라본다. 전임 사역자만큼 헌신하는 것 같지도, 그렇다고 순수한 직업인도 아닌 존재로 취급하며 "신학이나 하지 그러냐"고 권한다. 후원과 파송의 문법 자체가 목회자 파송에 맞춰져 있어, 직업 소득과 후원이 섞인 전문인의 복합 재정 구조를 담아내지 못한다.</p>
+<p><strong>지역교회의 이해 부족.</strong> 전동주가 지적하듯 "교회 일의 90%는 교회 밖에 있는데, 정작 교회는 안에서 하는 일만 인정한다." 성속 이원론이 살아 있는 한, 평범한 직업인의 선교적 잠재력은 "선교는 특별한 소명"이라는 옛 패러다임에 눌려 발현되지 못한다. 전문인 선교의 동원은 결국 교회가 '일'과 '소명'을 보는 눈을 바꾸는 데서 시작된다(→ <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EB%8F%99%EC%9B%90/">선교동원</a>).</p>
+<p><strong>멤버케어의 공백.</strong> 이중 정체성의 만성적 긴장을 홀로 감당하는 전문인 선교사는 소진되기 쉽다. 어느 공동체에도 온전히 속하지 못하는 개구리의 고독은 케어의 사각지대에 놓인다. 문누가가 인터서브 코리아 재산권위원회를 통해 사역의 마지막 단계 — 현지 이양과 출구 — 를 제도화하려는 노력은, 전문인 선교의 생애주기 전체를 돌보는 구조가 필요하다는 인식의 표현이다.</p>
+<p>그리고 미래가 있다. 해마다 1억 명이 국경을 넘고 2050년 한국 거주 외국인이 800만에 이르리라는 전망 속에서, 전문인 선교의 무대는 '해외'에서 '어디서든 어디로든'으로 옮겨 가고 있다. 다만 원격 노동과 디지털 직업의 시대가 "직업 신분으로 현장에 몸을 둔다"는 전문인 선교의 전제를 어떻게 다시 쓸지는, 이 볼트가 아직 답을 갖고 있지 않은 열린 물음이다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>전문인 선교는 비자 우회책이 아니라 신학적 소명이다. 천막을 친 바울(행 18:3)이 그 원형이며, 옛 패러다임의 성속 이원론을 넘어 "다르지만 동등한 부르심"으로 선다.</li>
+<li>"정직하게 열심히 사는 것이 곧 복음"이라는 등식은 착각이다(전동주). 존재의 진실성과 의도적 선포는 어느 하나도 생략될 수 없다.</li>
+<li>전문인 선교는 순수 자비량이 아니다. 전문성이 있어야 후원도 따라오며(손창남), 그 재정은 축재(chrematistike)가 아니라 섬김의 가계 관리(oikonomia)여야 한다(이우윤).</li>
+<li>이중 정체성은 물과 땅을 오가는 개구리의 긴장이다. 통합의 열쇠는 신분 위장이 아니라 실제로 그 직업인이 되는 투명성에 있다.</li>
+<li>의료 같은 전문 기술은 문을 여는 당나귀이자, 동시에 선교를 가두는 우리가 될 수 있다 — "어쩌면 의료를 버려야 선교가 될 수도 있다"(손창남).</li>
+<li>새 패러다임이 만인의 소명을 선언해도, 재정적·사역적 책무의 구분(요리사와 군인의 비유)까지 지우지는 않는다.</li>
+<li>인터서브의 170년은 전문인 선교가 거대 전략이 아니라 가치의 계승(가치→사람→사역)임을, 그리고 "무명의 선교사 시대"라는 이름으로 그 정점을 증언한다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>전문직의 탁월함 유지와 사역 헌신 사이의 시간·에너지 배분을, 소진 없이 지속 가능하게 하는 리듬은 무엇인가.</li>
+<li>창의적 접근 지역에서 '투명성 원칙'과 '신변·공동체 보안' 사이의 선을 어디에 그어야 하는가.</li>
+<li>원격 노동과 디지털 직업의 시대에, "직업 신분으로 현장에 몸을 둔다"는 전문인 선교의 전제는 어떻게 재정의되는가.</li>
+<li>성직자 파송에 맞춰진 한국 교회의 후원·멤버케어 구조가 전문인 선교사의 이중 정체성과 복합 재정을 담아내려면 무엇이 바뀌어야 하는가.</li>
+<li>이중 정체성을 '두 역할의 피로'가 아니라 '하나의 통합된 소명'으로 살아내는 영성은 어떻게 형성되는가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4%EC%84%A0%EA%B5%90/">비즈니스선교</a> — 스펙트럼의 사업형 끝단(BAM·B4M·사중 바텀 라인)의 상세</li>
+<li><a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%8B%A0%ED%95%99/">직업신학</a> — 일 자체의 신학적 가치, 성속 이원론의 극복</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EC%82%B6/">선교적삶</a> — 파송 여부를 넘어 일상을 선교로 사는 통합의 실천</li>
+<li><a class="wl" href="../../t/%ED%83%80%EB%AC%B8%ED%99%94%EC%84%A0%EA%B5%90/">타문화선교</a> — 전문인이 현지에서 겪는 문화 적응·언어·손님의 정체성</li>
+<li><a class="wl" href="../../t/%EC%9D%98%EB%A3%8C%EC%84%A0%EA%B5%90/">의료선교</a> — 의료 전문인 선교의 자립 구조·현지 이양 심화</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a> — "무명의 선교사" 패러다임과 전문인 정체성</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EB%8F%99%EC%9B%90/">선교동원</a> — 전문인을 일으키고 파송하는 교회 구조의 전환</li>
+<li><a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a> — 직업 소명과 선교 소명의 이중 소명</li>
+<li><span class="wl-dead" title="위키 내부 링크">인터서브</span> — 전문인·총체적 선교 단체의 대표 사례(170년 유산·LAMS)</li>
+<li><span class="wl-dead" title="위키 내부 링크">문누가</span> — "무명의 선교사 시대", 당나귀 비유, 메림치과병원</li>
+<li><span class="wl-dead" title="위키 내부 링크">손창남</span> · <span class="wl-dead" title="위키 내부 링크">전동주</span> · <span class="wl-dead" title="위키 내부 링크">조샘</span> — 볼트 내 전문인 선교론의 세 목소리</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>손창남, 「선교와 직업」</td>
+<td>강의(키노트)</td>
+<td>직업선교 5유형론, 개구리 이중정체성, 요리사·군인(책무) 비유, 선교사 비자 현실, 1→2유형 전환, "의료를 버려야 선교가 될 수도"</td>
+</tr>
+<tr>
+<td>전동주, 「선교의 새로운 패러다임」 (2016)</td>
+<td>강의</td>
+<td>옛/새 패러다임 8전환, 텐트메이커 계보(캐리·크리스티 윌슨), 같은 계층 원리, "정직=복음은 착각"</td>
+</tr>
+<tr>
+<td>이우윤, 「선교환경의 변화와 새로운 선교전략」</td>
+<td>강의</td>
+<td>눅 22:35~38 자급 선교 시대, 오이코노미아/크레마티스티케, 내려놓을 두 검(겸손·섬김)</td>
+</tr>
+<tr>
+<td>조샘, 인터서브 정체성 강의</td>
+<td>강의</td>
+<td>가치→사람→사역 위계, 작은 생태계, 커리어 기반 인적 자원, 1973 재산 이양</td>
+</tr>
+<tr>
+<td>공갈렙, 「인터서브 170년의 선교 유산」 (2023)</td>
+<td>강의</td>
+<td>170년사, 여성선교 100년, 리좀·펠로우십·세컨딩, 현지 이양의 영성</td>
+</tr>
+<tr>
+<td>문누가, 2015 의료선교대회 설교 · 인물 페이지</td>
+<td>설교/인물</td>
+<td>"무명의 선교사 시대" 선언, 당나귀 비유, 양손의 선교, 메림치과병원 사례</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">인터서브</span> (인터서브 코리아)</td>
+<td>단체</td>
+<td>전문인·총체적 선교 단체, 펠로우십·LAMS, 아시아·아랍 사역</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/선교</span><span>#discipline/선교학</span><span>#전문인선교</span><span>#텐트메이킹</span><span>#창의적접근지역</span><span>#자비량</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

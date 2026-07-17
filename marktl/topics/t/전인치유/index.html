@@ -1,0 +1,235 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>전인 치유 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="date">2026-07-18</span></div>
+  <h1 class="note-title">전인 치유</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>전인 치유(whole-person healing)는 인간을 영·혼·몸으로 분해되는 부품의 집합이 아니라 하나로 통합된 존재로 보고, 그 존재 전체의 회복을 겨냥하는 치유 이해다. 병소(病巢)의 제거나 수치의 정상화가 목표의 전부가 아니다. 전인 치유가 회복하려는 것은 사람이 하나님과, 자기 자신과, 이웃과, 창조 세계와 맺는 관계망 전체 — 곧 성경이 샬롬이라 부르는 온전함이다. 그래서 이 이해는 현대 의학의 생의학적(biomedical) 환원주의, 곧 사람을 고장 난 기계로 환원해 부품만 고치려는 시선에 대한 신학적·임상적 교정으로 제시된다.</p>
+<p>이 페이지는 치유의 신학 총론이 아니라 그 안의 한 각론이다. 치유가 어디서 발원하며(라파) 예수 안에서 어떤 성격을 띠고 낫지 않는 사람 앞에서 무엇이 남는가라는 치유론 전반은 <a class="wl" href="../../t/%EC%B9%98%EC%9C%A0/">치유</a>가 총론으로 다룬다. 이 글이 붙드는 것은 그중 하나 — <strong>왜 치유는 전인적이어야 하며, 그 전인성은 어떤 인간론에 서 있고, 진료 현장에서 어떤 모양으로 실천되는가</strong>이다. 억압된 감정이 몸의 병으로 번역되는 생리 기전은 <a class="wl" href="../../t/%EB%A7%88%EC%9D%8C%EC%9D%98%EA%B1%B4%EA%B0%95/">마음의건강</a>이, 내적 상처의 매듭은 <a class="wl" href="../../t/%EB%82%B4%EB%A9%B4%EC%B9%98%EC%9C%A0/">내면치유</a>가 이어받는다.</p>
+<h2>1. 전인의 인간론 — 사람은 부분의 합이 아니다</h2>
+<p>전인 치유의 뿌리는 치유론이기 전에 인간론이다. 성경은 사람을 영과 몸이 잠시 결합했다가 흩어지는 헬라적 이원론으로 보지 않는다. "너희 온 영과 혼과 몸이 흠 없게 보전되기를"(살전 5:23)이라는 바울의 축도는 세 부분의 목록이 아니라 사람 전체(홀로클레론, 온전한 한 덩어리)를 향한 기원이다. 구약의 네페시(nephesh)가 '영혼'이자 동시에 '목숨'이고 '숨 쉬는 몸'인 것처럼, 히브리적 인간 이해에서 영적인 것과 육적인 것은 포개져 있지 분리되지 않는다.</p>
+<p>이 통일체의 인간론이 무너질 때 치유는 둘 중 하나로 기운다. 몸만 남기면 의학적 환원주의가 되고, 영혼만 귀히 여기면 몸을 경시하는 영지주의가 된다. <a class="wl" href="../../t/%EC%B9%98%EC%9C%A0/">치유</a>가 하백선 강의를 빌려 짚듯, 만물을 화목케 하시는 십자가 은혜 안에서 "치료와 회복"은 영혼만 귀하다는 이원론을 넘어선 하나님의 재창조 사역이다. 창조의 선함이 몸에까지 미치고, 부활이 몸의 부활인 신앙에서 몸의 회복은 곁가지가 아니라 구원의 한 지평이다. 전인 치유는 이 인간론을 임상으로 옮긴 이름이다 — 사람은 부분의 합이 아니므로, 치유도 부분의 수리일 수 없다.</p>
+<h2>2. 예수의 치유는 전인적이었다 — 중풍병자의 자리</h2>
+<p>이 전인성의 원형이 예수의 치유 사역이다. 마가복음 2장의 중풍병자 이야기가 그 압축본이다. 지붕을 뜯고 달아 내린 친구들 앞에서 예수께서 먼저 하신 말씀은 "네 죄 사함을 받았느니라"였고(막 2:5), 이어 "일어나 네 상을 가지고 집으로 가라"(막 2:11)로 몸을 일으키셨다. 한 사건 안에 죄 사함(영), 몸 고침(육), 그리고 다시 집으로 — 곧 공동체로의 복귀(관계)가 겹쳐 있다. 예수는 죄와 병을 기계적으로 등치시키지 않으시면서도(그 등식의 거부는 <a class="wl" href="../../t/%EC%B9%98%EC%9C%A0/">치유</a>가 다룬다), 이 사람에게 필요한 회복이 몸의 회복만이 아님을 아셨다.</p>
+<table>
+<thead>
+<tr>
+<th>차원</th>
+<th>중풍병자에게 일어난 일</th>
+<th>본문</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>영</td>
+<td>"네 죄 사함을 받았느니라" — 하나님과의 화해</td>
+<td>막 2:5</td>
+</tr>
+<tr>
+<td>몸</td>
+<td>"일어나 걸어가라" — 신체 기능의 회복</td>
+<td>막 2:11-12</td>
+</tr>
+<tr>
+<td>관계</td>
+<td>"집으로 가라" — 공동체로의 복귀</td>
+<td>막 2:11</td>
+</tr>
+<tr>
+<td>공동체의 매개</td>
+<td>지붕을 뜯은 네 친구의 믿음</td>
+<td>막 2:3-5</td>
+</tr>
+</tbody>
+</table>
+<p>주목할 것은 치유가 혼자 일어나지 않았다는 점이다. 병자를 데려온 것은 네 친구였고, 예수께서 보신 것은 "그들의 믿음"(막 2:5)이었다. 전인 치유는 개인의 몸 안에서 완결되지 않고 그를 떠받치는 공동체를 통과한다. 야고보서 5장이 병든 자에게 "장로들을 청하라", "서로 죄를 고백하며 서로 기도하라"고 명하는 것도 같은 결이다. 치유는 사적 사건이 아니라 관계의 사건이다.</p>
+<h2>3. 의료선교의 전인치유 모델 — 문을 열고, 관계를 잇고, 몸을 살린다</h2>
+<p>이 전인성은 볼트의 의료선교 사료에서 하나의 실천 모델로 구체화된다. <span class="wl-dead" title="위키 내부 링크">대경누가회</span> 강의는 의료 사역의 목표를 세 단계로 그린다 — 치유(healing)로 진료실의 문을 열고, 관계(relationship)로 신뢰를 쌓고, 궁극적으로 그리스도의 주되심(Lordship)으로 나아가는 흐름이다. 여기서 치유는 종착점이 아니라 출발점이며, 몸을 고치는 일과 사람을 사귀는 일과 복음을 전하는 일이 분리된 세 과업이 아니라 한 사람을 향한 하나의 동선이다. 이 모델에서 인간의 의학적 노력과 하나님의 초자연적 개입은 경쟁하지 않는다 — 의사의 손과 하나님의 손이 협력하며, "기도 없는 의료는 환원주의적이고 의료 없는 기도는 책임 회피다".</p>
+<p>이박행의 「생명 중심 통합 선교」 강의는 여기에 두 겹을 더한다. 첫째, 전인성의 생물학적 근거다. 그는 정신신경면역학(PNI, Psychoneuroimmunology)을 신학적으로 읽어, 사랑받는 경험이 호르몬 연쇄 반응 — PEA → 도파민 → 옥시토신 → 엔도르핀 → 성장인자 → 새로운 세포 — 을 일으킨다고 말한다. "사랑받는 세포는 암을 이긴다"는 그의 표현은 사랑이 전인 치유에서 은유가 아니라 생물학적 기제임을 가리킨다. 하나님이 지으신 몸은 사랑이라는 관계적 현실에 반응하도록 설계되어 있다는 것이다(그 마음→몸의 기전 전반은 <a class="wl" href="../../t/%EB%A7%88%EC%9D%8C%EC%9D%98%EA%B1%B4%EA%B0%95/">마음의건강</a>에 위임). 둘째, 치유의 창조론적 지평이다. 그의 "생명 중심 통합 선교"는 치유를 창조 질서의 회복으로 놓는다 — 죄로 인한 네 겹의 소외(하나님·자기·이웃·창조 세계로부터)가 인간을 파괴했다면, 전인 치유는 그 네 차원 모두의 회복을 지향한다. 이 모델이 <a class="wl" href="../../t/%EC%9D%98%EB%A3%8C%EC%84%A0%EA%B5%90/">의료선교</a>와 <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a>으로 이어지는 지점이 여기다. 의료인은 치유자가 아니라 라파의 하나님이 흐르는 통로이며, 그 통로는 부품이 아니라 사람 전체를 향한다.</p>
+<h2>4. 전인 돌봄의 실제 — 네 차원의 진료</h2>
+<p>전인 치유가 구호에 그치지 않으려면 진료의 언어로 번역되어야 한다. 그 번역이 네 차원의 돌봄이다. 한 환자를 신체·정서·관계·영적 차원에서 함께 읽는 것이다.</p>
+<table>
+<thead>
+<tr>
+<th>차원</th>
+<th>묻는 질문</th>
+<th>돌봄의 형태</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>신체(body)</td>
+<td>무엇이 아픈가 — 진단과 치료</td>
+<td>의학적 탁월성, 통증 조절</td>
+</tr>
+<tr>
+<td>정서(mind)</td>
+<td>이 병을 어떻게 느끼는가</td>
+<td>불안·우울·두려움의 경청과 명명</td>
+</tr>
+<tr>
+<td>관계(social)</td>
+<td>누가 곁에 있는가</td>
+<td>가족·공동체의 회복, 고립의 해소</td>
+</tr>
+<tr>
+<td>영적(spirit)</td>
+<td>이 고통에 무슨 의미가 있는가</td>
+<td>의미·용서·화해, 하나님과의 관계</td>
+</tr>
+</tbody>
+</table>
+<p>이 네 차원이 가장 선명하게 시험받는 자리가 완화의료와 호스피스다. 더 이상 cure(고침)가 불가능한 지점, 곧 질병을 낫게 할 수 없는 자리에서도 care(돌봄)는 언제나 가능하다는 사실이 전인 치유의 진실성을 검증한다. <a class="wl" href="../../t/%EC%B9%98%EC%9C%A0/">치유</a>가 정리한 cure/care의 구별대로, 의학이 고칠 수 없는 지점은 반드시 오지만 함께 있어 줌·경청·중보는 그때 비로소 시작된다. 문누가 선교사가 "영생이란 고통당하는 자에게 참여하는 것"이라 말한 자리, 하백선 강의가 진료를 "샬롬의 전달"로 규정하며 환자가 진료실을 나설 때 신체적 호전만이 아니라 "내가 존중받고 사랑받았다"는 복까지 느끼게 하라고 요청한 자리가 이 네 차원의 돌봄이다. 죽음 앞에서 몸은 낫지 않아도 사람은 온전해질 수 있다 — 이것이 전인 치유가 <a class="wl" href="../../t/%EC%A2%85%EB%A7%90%EB%A1%A0/">종말론</a>적 소망 안에서만 성립하는 이유다. 궁극의 치유는 이 땅의 회복이 아니라 부활에 있고, 그 소망이 낫지 않는 몸 곁의 돌봄을 지탱한다.</p>
+<h2>5. 한계와 분별 ⚖️ — 두 낭떠러지 사이</h2>
+<p>전인 치유는 두 낭떠러지 사이의 능선을 걷는다. 한쪽은 치유 만능주의다. "전인적으로 접근하면 반드시 낫는다"거나 사랑과 기도가 모든 질병의 열쇠라는 기대는, PNI의 통찰을 "믿으면 낫는다"의 세련된 판본으로 변질시킨다. 사랑이 면역을 돕는다는 것과 사랑이 암을 반드시 이긴다는 것은 다른 명제다. 이 미끄러짐은 낫지 않는 환자에게 병에 더해 "네 마음이, 네 관계가, 네 믿음이 문제"라는 이중의 짐을 얹는다. 전인 치유가 심리·영성의 만능 처방으로 과장되는 순간, 그것은 위로가 아니라 정죄가 된다.</p>
+<p>다른 쪽 낭떠러지는 의료 환원주의다. 네 차원을 말하면서도 실제로는 신체 차원만 진료하고 정서·관계·영성을 "의학의 영역이 아니다"라며 잘라 내는 것이다. 이 경우 전인 치유는 간판으로만 남는다. 두 낭떠러지 사이의 능선은 겸손에 있다. 전인 치유는 의학적 탁월성을 건너뛰지 않으며(착한 성품이 의학적 무능의 핑계가 될 수 없다), 동시에 의학이 닿지 못하는 차원을 향해 사람을 여는 태도다. 낫게 하면 통로임을 잊고 교만해지고, 못 낫게 하면 무너지는 그 자리에서, 전인 치유의 분별은 하나의 고백으로 착지한다 — 나는 사람을 온전케 하는 자가 아니라, 온전케 하시는 하나님이 한 사람의 몸과 마음과 관계와 영을 함께 만지시는 자리에 서 있는 통로다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>전인 치유의 뿌리는 치유론이기 전에 인간론이다 — 사람은 영과 몸으로 분해되는 부품의 집합(이원론)이 아니라 하나로 통합된 존재(살전 5:23의 온전함)이므로, 치유도 부분의 수리일 수 없다.</li>
+<li>예수의 치유는 전인적이었다 — 마가복음 2장 중풍병자에게 죄 사함(영)·몸 고침(육)·집으로의 복귀(관계)가 한 사건에 겹쳤고, 그 치유는 네 친구의 믿음을 통과했다.</li>
+<li>의료선교의 전인치유 모델은 치유→관계→주되심의 3단계이며, PNI(사랑이 면역을 돕는 기제)와 창조 질서의 네 겹 회복이 그 신학적·생물학적 근거다.</li>
+<li>전인 돌봄은 신체·정서·관계·영적 네 차원의 진료이며, cure가 불가능한 완화의료·호스피스에서 care로 그 진실성이 검증된다.</li>
+<li>전인 치유는 두 낭떠러지 사이의 능선이다 ⚖️ — 치유 만능주의(낫지 않는 자를 정죄)와 의료 환원주의(간판만 전인) 사이에서, 판별 기준은 의학적 탁월성과 통로 됨의 겸손이다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>네 차원 중 하나가 끝내 회복되지 않을 때(예: 관계 회복 없는 임종) 전인 치유는 실패인가, 아니면 그 미완조차 부활 소망 안에서 온전함의 일부인가.</li>
+<li>PNI의 통찰을 과학적 엄밀성을 잃지 않고 전하는 길은 무엇인가 — "사랑이 세포를 살린다"가 임상적 사실과 목회적 은유 사이 어디에 놓이는가.</li>
+<li>진료 시간과 자원이 신체 차원에 집중되도록 조직된 현대 의료 체계 안에서, 정서·관계·영적 돌봄을 제도적 관행으로 어떻게 정착시킬 것인가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%B9%98%EC%9C%A0/">치유</a> — 치유 신학 총론(라파·예수의 치유·소조·신유 논쟁·cure/care). 이 페이지는 그중 전인성의 각론.</li>
+<li><a class="wl" href="../../t/%EC%9D%98%EB%A3%8C%EC%84%A0%EA%B5%90/">의료선교</a> · <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a> — 전인치유 모델이 실천되는 진료 현장과 의료인의 정체성.</li>
+<li><a class="wl" href="../../t/%EC%B4%9D%EC%B2%B4%EC%A0%81%EC%84%A0%EA%B5%90/">총체적선교</a> — 떡과 복음을 함께 추구하는 선교. 전인 치유의 선교적 짝.</li>
+<li><a class="wl" href="../../t/%EB%A7%88%EC%9D%8C%EC%9D%98%EA%B1%B4%EA%B0%95/">마음의건강</a> — 마음→몸의 생리 기전(레브·자율신경·면역). PNI의 하부 구조 위임처.</li>
+<li><a class="wl" href="../../t/%EB%82%B4%EB%A9%B4%EC%B9%98%EC%9C%A0/">내면치유</a> — 정서·관계 차원의 상처 치유.</li>
+<li><a class="wl" href="../../t/%EA%B8%8D%ED%9C%BC/">긍휼</a> — 전인 돌봄의 동기(스플랑크니조마이).</li>
+<li><a class="wl" href="../../t/%EC%A2%85%EB%A7%90%EB%A1%A0/">종말론</a> · <a class="wl" href="../../t/%EA%B3%A0%EB%82%9C/">고난</a> — 궁극의 치유(부활)와 낫지 않는 몸의 신학.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2014_대경누가회_누가와환자</span></td>
+<td>강의(CMF)</td>
+<td>치유→관계→주되심 3단계, 인간 노력과 신적 능력의 협력</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2014_이박행_생명중심통합선교</span></td>
+<td>강의</td>
+<td>PNI(사랑→면역 연쇄), "사랑받는 세포는 암을 이긴다", 창조 질서의 네 겹 회복</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%B9%98%EC%9C%A0/">치유</a></td>
+<td>위키</td>
+<td>치유 신학 총론, cure/care 구별, "샬롬의 전달"(하백선), "믿으면 낫는다"의 폭력</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a> · <a class="wl" href="../../t/%EC%9D%98%EB%A3%8C%EC%84%A0%EA%B5%90/">의료선교</a></td>
+<td>위키 교차</td>
+<td>통로로서의 의료인, 진료실 영성, HAMs·누가 모델</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EB%A7%88%EC%9D%8C%EC%9D%98%EA%B1%B4%EA%B0%95/">마음의건강</a></td>
+<td>위키 교차</td>
+<td>마음→몸 기전의 위임처(PNI 하부)</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/의료</span><span>#discipline/의료선교</span><span>#전인적돌봄</span><span>#완화의료</span><span>#인간론</span><span>#샬롬</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

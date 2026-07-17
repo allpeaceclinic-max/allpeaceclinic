@@ -1,0 +1,226 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>성품, 인격 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:226">리더십·일·경영</span><span class="date">2026-05-03</span></div>
+  <h1 class="note-title">성품, 인격</h1>
+  
+</header>
+<article class="note">
+<p><strong>분류</strong>: 개념 정리 / 기독교 인간론<br />
+<strong>형태</strong>: 메모 (출처 미확인)</p>
+<hr />
+<h2>1. 어원 — 단어의 역사</h2>
+<table>
+<thead>
+<tr>
+<th>단어</th>
+<th>어원</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Character</strong> (성격)</td>
+<td>라틴어 — 금속 인장(도장)</td>
+<td>낙인 찍힌 것, 지워지지 않음 → 개인의 고유 특성</td>
+</tr>
+<tr>
+<td><strong>Personality</strong> (인격·인성)</td>
+<td>라틴어 <strong>페르조나</strong> (persona) = 가면</td>
+<td>남에게 주는 인상으로서의 성격</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Character: 내면에 새겨진 것, 본질적·지속적</li>
+<li>Personality: 외면에 드러나는 것, 관계적·인상적</li>
+</ul>
+<hr />
+<h2>2. 성품 vs 품성 — 신학적 구분</h2>
+<p>한국어에서 혼용되지만 구분해서 사용해야 한다:</p>
+<table>
+<thead>
+<tr>
+<th>용어</th>
+<th>범위</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>성품</strong></td>
+<td>양면 포함</td>
+<td>의의 성품 + <strong>죄의 성품</strong> (엡2:3 — "본질상" 진노의 자녀, 헬: 휘시스)</td>
+</tr>
+<tr>
+<td><strong>품성</strong></td>
+<td>성장적 측면</td>
+<td>성품의 성장·개발 가능한 부분 / 훈련되고 다듬어질 수 있음</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>품성: 품격과 성질을 아울러 이르는 말<br />
+일반적으로 <strong>사람과의 관계 속에서</strong> 구체적인 말·행동·태도를 통해 표현됨</p>
+</blockquote>
+<p><strong>신의 성품에 참여</strong> (벧후1:4):
+- 본질상 최고의 품성 → "성품"이라고 표현해도 무방
+- 그리스도인의 목표: 죄의 성품을 버리고 신의 성품에 참여하는 것</p>
+<hr />
+<h2>3. 헬라어 — 휘시스 (φύσις)</h2>
+<ul>
+<li>의미: 본래, 본성, 자연적 특성</li>
+<li>성경 사용: 성품(nature) = 18회</li>
+<li>soul / spirit / <strong>nature</strong> (벧전1:4)</li>
+<li>엡2:3: "본질상(휘시스) 진노의 자녀" → 타락한 본성</li>
+<li>벧후1:4: "신의 성품(휘시스)에 참여" → 회복된 본성</li>
+</ul>
+<p><code>타락한 휘시스 (엡2:3)  ←  성화의 과정  →  신적 휘시스 참여 (벧후1:4)
+죄의 성품(품성)                              하나님의 성품(품성)</code></p>
+<hr />
+<h2>⭐ vault 내 연결 지점</h2>
+<table>
+<thead>
+<tr>
+<th>이 책의 개념</th>
+<th>연결 자료</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>품성 = 훈련되고 다듬어지는 것</td>
+<td><a class="wl" href="../../b/%EC%82%AC%EB%9E%8C%EC%9D%80%EC%96%B4%EB%96%BB%EA%B2%8C%EB%B3%80%ED%99%94%EB%90%98%EB%8A%94%EA%B0%80_%EB%A0%88%EC%9D%B8%ED%8A%B8%EB%A6%BD/">사람은어떻게변화되는가_레인트립</a> — 복음의 3시제, 외면주의 극복</td>
+</tr>
+<tr>
+<td>죄의 성품(휘시스) → 신의 성품 참여</td>
+<td><a class="wl" href="../../t/%EA%B5%AC%EC%9B%90%EB%A1%A0/">구원론</a> — 성화, 칭의·성화·영화</td>
+</tr>
+<tr>
+<td>관계 속 품성 표현</td>
+<td><a class="wl" href="../../t/%EC%82%B0%EC%83%81%EC%88%98%ED%9B%88/">산상수훈</a> — 팔복: 심령의 가난·온유·긍휼·청결</td>
+</tr>
+<tr>
+<td>성품 형성 = 리더십의 기초</td>
+<td><a class="wl" href="../../t/%EB%A6%AC%EB%8D%94%EC%8B%AD/">리더십</a> — 서번트 리더십, 성품 중심</td>
+</tr>
+<tr>
+<td>소명과 성품의 관계</td>
+<td><a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a> — 하나님의 부르심과 품성</td>
+</tr>
+<tr>
+<td>Character vs Personality 구분</td>
+<td><a class="wl" href="../../t/%EC%A0%95%EC%B2%B4%EC%84%B1/">정체성</a> — 메뚜기 콤플렉스, 십자가 정체성</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>탐구 중인 질문</h2>
+<p><strong>Q1. "성품은 타고나는가, 만들어지는가?"</strong>
+- 부분 답변: 어원상 Character = 새겨진 것 (타고남의 함의), 하지만 품성은 훈련 가능
+- 부분 답변: <a class="wl" href="../../b/%EC%82%AC%EB%9E%8C%EC%9D%80%EC%96%B4%EB%96%BB%EA%B2%8C%EB%B3%80%ED%99%94%EB%90%98%EB%8A%94%EA%B0%80_%EB%A0%88%EC%9D%B8%ED%8A%B8%EB%A6%BD/">사람은어떻게변화되는가_레인트립</a> — 복음이 변화의 능력, 아비투스는 형성됨
+- 부분 답변: 신의 성품 참여(벧후1:4) — 은혜로 주어지나 믿음·덕·지식…(벧후1:5-7)으로 더함
+- 여전히 열린 질문: 의료 현장에서 기독 의사의 품성 형성을 어떻게 훈련할 것인가?</p>
+<p><strong>Q2. Personality(페르소나=가면)와 Character(본질)의 불일치는 어떻게 극복되는가?</strong>
+- 부분 답변: <a class="wl" href="../../t/%EC%82%B0%EC%83%81%EC%88%98%ED%9B%88/">산상수훈</a> — "마음의 청결" = 외식의 반대인 순수, 두 마음을 하나로
+- 부분 답변: <a class="wl" href="../../b/%EC%82%AC%EB%9E%8C%EC%9D%80%EC%96%B4%EB%96%BB%EA%B2%8C%EB%B3%80%ED%99%94%EB%90%98%EB%8A%94%EA%B0%80_%EB%A0%88%EC%9D%B8%ED%8A%B8%EB%A6%BD/">사람은어떻게변화되는가_레인트립</a> — 외면주의 = 가면 문제, 마음의 싸움
+- 여전히 열린 질문: 선교사·목회자의 공적 페르소나와 사적 품성의 통합은?</p>
+<hr />
+<h2>관련 페이지</h2>
+<ul>
+<li><a class="wl" href="../../t/%EB%A6%AC%EB%8D%94%EC%8B%AD/">리더십</a> — 성품 중심 리더십</li>
+<li><a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a> — 부르심과 품성의 관계</li>
+<li><a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%ED%9B%88%EB%A0%A8/">제자훈련</a> — 성품 형성의 목적</li>
+<li><a class="wl" href="../../t/%EC%A0%95%EC%B2%B4%EC%84%B1/">정체성</a> — Character vs Personality</li>
+<li><a class="wl" href="../../t/%EC%82%B0%EC%83%81%EC%88%98%ED%9B%88/">산상수훈</a> — 팔복: 품성의 구체적 내용</li>
+<li><a class="wl" href="../../b/%EC%82%AC%EB%9E%8C%EC%9D%80%EC%96%B4%EB%96%BB%EA%B2%8C%EB%B3%80%ED%99%94%EB%90%98%EB%8A%94%EA%B0%80_%EB%A0%88%EC%9D%B8%ED%8A%B8%EB%A6%BD/">사람은어떻게변화되는가_레인트립</a> — 복음적 품성 변화</li>
+</ul>
+<hr />
+<blockquote>
+<p>⚠️ <strong>원본 메모 짧음</strong>: 출처 미확인, 추후 원문 확인 시 보완 필요.</p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#성품</span><span>#인격</span><span>#제자도</span><span>#성화</span><span>#리더십</span><span>#성경론</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

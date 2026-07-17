@@ -1,0 +1,345 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>선교학 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="date">2026-07-14</span></div>
+  <h1 class="note-title">선교학</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>선교학(missiology)은 교회의 선교를 하나의 <strong>학문 분과</strong>로 연구하는 신학의 한 갈래다. 선교라는 하나님의 활동과 그에 응답하는 교회의 실천을 대상으로 삼되, 그것을 성경신학·역사·인류학·전략의 도구로 함께 분석한다는 점에서 선교학은 태생부터 <strong>학제간 학문</strong>이다. 신학이 규범을 묻는다면(선교는 무엇이어야 하는가), 사회과학은 사실을 묻는다(선교는 실제로 어떻게 일어나는가). 선교학은 이 두 물음을 한 책상 위에 올려놓는다. 크레이그 오트의 『<a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99%EC%9D%98%EB%8F%84%EC%A0%84-%ED%81%AC%EB%A0%88%EC%9D%B4%EA%B7%B8%EC%98%A4%ED%8A%B8/">선교신학의 도전</a>』을 교재로 삼는 MBTS 선교학 과목이 신학적 정당성(missio Dei)에서 시작해 문화인류학(번역·상황화)과 선교 전략(소달리티·종족 선교)으로 이어지는 것은 우연이 아니라 이 학문의 구조 자체다.</p>
+<p>그래서 선교학은 순수 이론이 아니라 <strong>실천에서 태어나 실천으로 돌아가는 학문</strong>이다. 강의를 이끈 임태순 선교사가 학생들에게 요약이 아니라 질문을, 복사가 아니라 "자기 스토리"를 요구한 것은 이 분야의 성격을 드러낸다 — 선교학의 결론은 도서관이 아니라 현장에서 검증된다.</p>
+<p>이 페이지는 "<strong>선교학이라는 학문, 그 학문화의 역사, 그리고 그 이론 지도</strong>"를 그린다. 선교의 신학적 근거(missio Dei)는 <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a>과 <a class="wl" href="../../t/%EB%AF%B8%EC%94%A8%EC%98%A4%EB%8D%B0%EC%9D%B4/">미씨오데이</a>에, 성경 전체를 관통하는 선교 서사의 개관은 <a class="wl" href="../../t/%EC%84%A0%EA%B5%90/">선교</a>에, 문화를 넘는 번역의 문제는 <a class="wl" href="../../t/%EC%83%81%ED%99%A9%ED%99%94/">상황화</a>에, 종족 전략은 <a class="wl" href="../../t/%EB%AF%B8%EC%A0%84%EB%8F%84%EC%A2%85%EC%A1%B1/">미전도종족</a>에, 패러다임 전환의 상세는 <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%ED%8C%A8%EB%9F%AC%EB%8B%A4%EC%9E%84/">선교패러다임</a>에 각각 위임하고, 여기서는 그 페이지들을 하나의 학문 지도 위에 배치하는 일에 집중한다.</p>
+<h2>1. 실천에서 태어난 학문 — 선교학의 학제간 위상</h2>
+<p>선교학이 다루는 질문은 한 분과의 것이 아니다. "무슨 권리로 우리에게 와서 복음을 전하는가"라는 선교 정당성의 물음(2주 강의)은 조직신학의 문제이고, "복음이 새 문화에 들어갈 때 무엇을 벗고 무엇을 입는가"는 문화인류학의 문제이며, "선교 자원을 어디에 배치할 것인가"는 전략과 통계의 문제다. 선교학은 이 이질적 물음들을 <strong>선교라는 하나의 대상</strong> 아래 통합한다. 오트의 교재가 선교의 신학적 정당성에서 출발해 선교의 과업, 교회와 선교의 관계, 선교사의 소명, 상황화, 종족 선교로 나아가는 목차 자체가 이 통합의 지형도다.</p>
+<p>이 통합에는 위험이 따른다. 신학이 사회과학을 삼키면 선교는 성경적 명료성을 잃고, 사회과학이 신학을 삼키면 선교는 마케팅이 된다 — 뒤에서 볼 교회성장학 비판이 정확히 이 지점을 겨눈다. 그래서 선교학의 방법은 균형을 향한 부단한 조정이다. MBTS 과목이 독서보고서(신학적 논증), 토론방(현장 적용), 리서치 페이퍼(자기 결론)를 삼중으로 요구한 것은, 선교학이 한 번의 정답이 아니라 <strong>질문–증거–결론의 반복</strong>으로 굴러가는 학문임을 보여준다. 선교학자의 과제는 "이론이 현장에서 어떻게 적용되는가"라는 한 문장으로 압축되며, 이 문장이 아래 모든 절의 배음(背音)으로 깔린다.</p>
+<h2>2. 학문화의 여정 (1) — 윌리엄 캐리, 실천의 정초</h2>
+<p>선교학의 역사는 한 편의 소책자에서 열린다. 1792년 윌리엄 캐리가 쓴 『이교도 개종을 위한 방법들을 사용해야 하는 그리스도인의 의무 탐구』(<em>An Enquiry into the Obligations of Christians to Use Means for the Conversion of the Heathens</em>)가 그것이다. 당대 개신교를 지배하던 극단적 예정론은 "이방인의 개종을 원하신다면 하나님이 알아서 하시리라"며 인간의 노력을 불필요한 것으로 치부했다(세계 선교 역사 강의). 캐리는 이 소극성을 정면으로 반박했다. 그는 대위임령이 사도들에게만 주어진 종료된 명령이 아니라 오늘도 유효한 의무임을 논증하고 — 만약 "가서 제자 삼으라"가 사도에게만 유효하다면 "세례를 주라"도 그러할 것이라는 귀류법으로 — 그 명령에 순종할 구체적 <strong>방법(means)</strong>을 제안했다.</p>
+<p>캐리의 방법론이 선교학의 첫 벽돌인 이유는 그것이 단순한 열정이 아니라 <strong>체제</strong>였기 때문이다. 그는 세 가지를 제시했다 — 해외 선교회의 조직, 기도합주회, 그리고 선교비 모금. 나아가 기독교 역사상 최초로 통계 자료와 정보를 활용해 선교의 필요를 호소했다. 이 제안은 이듬해 1793년 영국 침례교 선교회로 결실을 맺었고, 런던선교회(1795)·성공회 선교부(1799)·바젤선교회(1815)로 이어지며 19세기 "선교회를 통한 선교"의 시대를 촉발했다. 랄프 윈터가 훗날 <strong>소달리티</strong>(교회 밖 선교 구조)라 부른 것이 여기서 태어났다. 다만 캐리가 놓은 것은 선교의 <strong>실천과 구조</strong>였지 아직 학문은 아니었다 — 선교를 신학의 정식 분과로 세우는 일은 다음 세대의 몫으로 남았다.</p>
+<h2>3. 학문화의 여정 (2) — 바르넥의 정초와 에딘버러 1910</h2>
+<p>선교를 하나의 학문으로 정초한 인물로 오트의 교재는 독일의 구스타프 바르넥을 "현대 선교학의 아버지"로 지목한다. 바르넥은 선포의 중심성과 회심을 선교의 필수적 시작점으로 강력히 주창하면서, 흩어져 있던 선교 실천을 신학적 성찰의 대상으로 체계화했다. 캐리가 선교회를 조직했다면, 바르넥은 선교를 <strong>연구</strong>하기 시작한 것이다. 이로써 "선교란 무엇인가, 그 정당성과 목표와 방법은 무엇인가"라는 물음이 강단과 저술의 정식 주제가 되었다.</p>
+<p>학문으로 선 선교학은 곧 국제적 협력의 무대를 얻는다. 1910년 에딘버러 세계선교대회가 그 분수령이었다. 이 대회는 흩어진 선교 단체들을 처음으로 한자리에 모아 전략과 협력을 논의했고, "이 세대 안에 세계 복음화"라는 학생자원운동의 구호를 낳았다. 에딘버러의 선교 정신은 이후 두 갈래로 흐른다 — 하나는 WCC의 에큐메니컬 운동으로, 다른 하나는 그 흐름의 선교 인간화에 저항하며 사회적 책임까지 끌어안은 <span class="wl-dead" title="위키 내부 링크">로잔운동</span>으로. 이 계보와 로잔 대회들의 상세는 <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a>과 <a class="wl" href="../../t/%ED%86%B5%EC%A0%84%EC%A0%81%EC%84%A0%EA%B5%90/">통전적선교</a>가 다루므로, 여기서는 에딘버러가 선교학을 <strong>협력과 전략의 학문</strong>으로 확장시킨 지점만 표시해 둔다.</p>
+<table>
+<thead>
+<tr>
+<th>시기</th>
+<th>인물·사건</th>
+<th>선교학적 의의</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1792</td>
+<td>윌리엄 캐리 『An Enquiry』</td>
+<td>근대 선교의 실천적 정초 — 방법(means)의 신학, 선교회(소달리티) 구조</td>
+</tr>
+<tr>
+<td>19세기</td>
+<td>헨리 벤 · 3자 원리</td>
+<td>토착교회론의 첫 이론 틀 (자전·자치·자립)</td>
+</tr>
+<tr>
+<td>19세기 말</td>
+<td>구스타프 바르넥</td>
+<td>선교의 신학적 정초 — 선교학의 분과화</td>
+</tr>
+<tr>
+<td>1910</td>
+<td>에딘버러 세계선교대회</td>
+<td>협력·전략의 국제 플랫폼, "이 세대 안에 세계 복음화"</td>
+</tr>
+<tr>
+<td>1965</td>
+<td>풀러 선교대학원 (맥가브란)</td>
+<td>사회과학(인류학·통계)과의 결합, 교회성장학</td>
+</tr>
+<tr>
+<td>1974</td>
+<td>로잔 대회</td>
+<td>복음주의 선교신학의 결집 → <a class="wl" href="../../t/%ED%86%B5%EC%A0%84%EC%A0%81%EC%84%A0%EA%B5%90/">통전적선교</a></td>
+</tr>
+<tr>
+<td>20세기 말~</td>
+<td>보쉬 · 월스</td>
+<td>패러다임 전환·세계기독교, 학문 주체의 탈중심화</td>
+</tr>
+</tbody>
+</table>
+<h2>4. 학문화의 여정 (3) — 풀러 선교대학원과 맥가브란</h2>
+<p>선교학이 사회과학과 본격적으로 결합한 것은 20세기 중반, 도널드 맥가브란과 그가 1965년 세운 풀러 선교대학원(Fuller School of World Mission)에서였다. 맥가브란의 교회성장운동은 "성장하는 교회라는 결과를 나타내야 한다"는 확신 아래, 인류학·사회학·통계를 선교 연구에 끌어들였다(3주 독서과제). 어느 종족이 왜 복음에 반응하고 왜 저항하는가를 <strong>경험적으로</strong> 묻기 시작한 것이다. 피터 와그너가 "가장 효과적인 유일한 전도 방법은 새 교회를 개척하는 것"이라 단언한 것도 이 실증적 확신의 연장선에 있었다.</p>
+<p>풀러에서 선교학은 규범적 신학을 넘어 <strong>관찰과 전략의 과학</strong>이 되었고, 이 전환이 뒤이은 미전도종족 운동과 종족 중심 선교의 방법론적 토대를 놓았다. 그러나 같은 자리에서 선교학의 항구적 긴장도 첨예해졌다. 성장을 측정 가능한 결과로 환원할 때 선교는 "특정 교단·조직의 성장"으로 변질되어 교인 빼앗기와 숫자 세기로 흐를 위험을 안았고(3주 독서과제), 1990년대의 비판은 이를 "상업적·마케팅적"이라 겨눴다. 교회성장학에 대한 이 반작용에서 하나님 중심의 <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a> 논의가 자라났다(6주 강의). 선교학이 사회과학을 얻으면서 동시에 그 사회과학에 삼켜지지 않으려는 자기 비판을 시작한 셈이다.</p>
+<h2>5. 선교학의 하위 분과 지도</h2>
+<p>학문화의 세 걸음(캐리·바르넥·풀러)을 지나며 선교학은 네 개의 하위 분과로 분화했다. 각 분과는 선교라는 한 대상을 서로 다른 각도에서 조명하며, 이 볼트에서는 대부분 독립 페이지로 전개된다.</p>
+<table>
+<thead>
+<tr>
+<th>하위 분과</th>
+<th>핵심 질문</th>
+<th>심화 페이지</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>선교신학</strong> (theology of mission)</td>
+<td>선교의 주체·근거는 누구/무엇인가</td>
+<td><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> · <a class="wl" href="../../t/%EB%AF%B8%EC%94%A8%EC%98%A4%EB%8D%B0%EC%9D%B4/">미씨오데이</a> · <a class="wl" href="../../t/%EB%8C%80%EC%82%AC%EB%AA%85/">대사명</a></td>
+</tr>
+<tr>
+<td><strong>선교역사</strong> (mission history)</td>
+<td>복음은 어떻게 퍼졌고 무엇을 배우는가</td>
+<td>(이 페이지 §2–4)</td>
+</tr>
+<tr>
+<td><strong>선교인류학</strong> (mission anthropology)</td>
+<td>문화의 경계를 어떻게 넘는가</td>
+<td><a class="wl" href="../../t/%EC%83%81%ED%99%A9%ED%99%94/">상황화</a> · <a class="wl" href="../../t/%ED%83%80%EB%AC%B8%ED%99%94%EC%84%A0%EA%B5%90/">타문화선교</a></td>
+</tr>
+<tr>
+<td><strong>선교전략론</strong> (mission strategy)</td>
+<td>자원을 어디에 어떻게 배치하는가</td>
+<td><a class="wl" href="../../t/%EB%AF%B8%EC%A0%84%EB%8F%84%EC%A2%85%EC%A1%B1/">미전도종족</a> · <a class="wl" href="../../t/%EC%84%B8%EA%B3%84%EB%B3%B5%EC%9D%8C%ED%99%94/">세계복음화</a></td>
+</tr>
+</tbody>
+</table>
+<p>이 분화는 칸막이가 아니라 순환이다. 선교신학이 "왜"를 확정하지 않으면 전략론의 "어떻게"는 방향을 잃고, 인류학이 "누구에게"를 놓치면 신학의 "무엇을"은 전달되지 않는다. 오트가 선교를 여러 <strong>과업(task)</strong>의 통합으로 본 것도 같은 맥락이다. 그가 제시한 선교의 과업 — 선포와 회심, 교회 개척과 성장, 문명화와 도덕적 개선, 그리고 긍휼과 사회적 책임 — 은 어느 하나만 절대화될 때 각각의 병리를 낳는다. 선포만 강조하면 얕은 회심과 제자도의 약화를, 교회 성장만 강조하면 확장주의와 크리스텐덤의 잔재를, 문명화만 강조하면 복음의 문화적 식민화를 낳는다는 것이다. 하위 분과의 지도는 곧 이 과업들의 균형을 잃지 않으려는 학문적 장치다.</p>
+<h2>6. 이론 지도 (1) — 토착교회론: 3자 원리에서 소달리티까지</h2>
+<p>선교학이 축적한 이론 가운데 가장 오래된 것은 "선교사가 세운 교회를 어떻게 자립시킬 것인가"라는 토착교회론이다. 그 고전적 답이 19세기의 <strong>3자 원리</strong>다 — 자전(自傳, self-propagating)·자치(自治, self-governing)·자립(自立, self-supporting). 헨리 벤이 "선교의 안락사(euthanasia of mission)" 정신으로 제창한 이 원리는, 선교의 성공이 선교사의 잔류가 아니라 <strong>철수</strong>로 증명된다는 역설을 담았다(이사님의 선교지 재산권 강의안). 이 원리는 한국 선교에서 존 네비우스의 정책으로 구체화되어 — "쌀 신자를 만들지 말라"는 경구와 함께 — 마포삼열·길선주 같은 토착 지도자를 세우는 열매로 이어졌다(선교 간담회).</p>
+<p>토착교회를 향한 선교사의 역할 변화를 헤럴드 풀러는 네 단계로 도식화했다(2주 강의). <strong>개척자(pioneer) → 부모(parent) → 파트너(partner) → 참여자(participant)</strong>로 물러서는 이 '우산 이론'은, 롤랜드 알렌의 경고 — 서구 선교사는 우월감 때문에 부모 단계를 넘어서지 못하니 차라리 "빨리 떠나라" — 와 짝을 이룬다. 그리고 이 모든 논의를 구조의 언어로 재편한 것이 랄프 윈터의 <strong>소달리티/모달리티</strong> 이론이다. 지역 교회(모달리티)와 선교 단체(소달리티)는 하나님이 세우신 두 구조이며, 개신교가 종교개혁 때 수도원(소달리티)을 폐지하면서 잃어버린 선교적 역동성을 되찾으려면 이 둘이 다시 협력해야 한다는 것이다. 이 구조론의 상세는 <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a>이 이어받는다.</p>
+<h2>7. 이론 지도 (2) — 교회성장에서 종족·통전으로</h2>
+<p>풀러 이후의 선교학은 방법론적 개념들을 빠르게 쏟아냈고, 이 개념들이 오늘날 선교 전략의 공용어가 되었다. 그 출발점이 맥가브란의 <strong>동질집단원리</strong>(HUP, Homogeneous Unit Principle)다 — "문화적·사회적·언어적으로 동질적인 집단이 모일 때 교회가 빠르게 성장한다"(문대원 설교). 사람들은 인종·언어·계급의 장벽을 넘지 않고 그리스도인이 되기를 선호한다는 이 관찰은 족속 단위 복음화의 근거가 되었지만, 동시에 가장 논쟁적인 이론으로 남았다. 언뜻 맞는 말 같아도 동질집단만 모인 교회는 장기적으로 배타적·분리적이 되어 복음의 화해를 배반할 수 있기 때문이다 — "불편해도 섞어놓아야 섬기는 문화가 된다"는 현장의 반론이 여기 맞선다(송기태 파트너).</p>
+<p>이 이론 지도의 나머지 좌표들은 대부분 이 볼트의 독립 페이지로 전개되므로, 여기서는 각 개념이 선교학 안에서 차지하는 자리만 표시한다.</p>
+<table>
+<thead>
+<tr>
+<th>이론·개념</th>
+<th>핵심 명제</th>
+<th>주요 제안자</th>
+<th>심화</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3자 원리</td>
+<td>자전·자치·자립하는 토착교회</td>
+<td>헨리 벤 · 네비우스</td>
+<td>위 §6</td>
+</tr>
+<tr>
+<td>소달리티/모달리티</td>
+<td>선교단체·지역교회의 이중 구조</td>
+<td>랄프 윈터</td>
+<td><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a></td>
+</tr>
+<tr>
+<td>동질집단원리(HUP)</td>
+<td>동질집단일수록 교회가 빠르게 성장</td>
+<td>도널드 맥가브란</td>
+<td>위 본문</td>
+</tr>
+<tr>
+<td>미전도종족 · 10/40 창</td>
+<td>미복음 종족·지역에 자원을 집중</td>
+<td>랄프 윈터</td>
+<td><a class="wl" href="../../t/%EB%AF%B8%EC%A0%84%EB%8F%84%EC%A2%85%EC%A1%B1/">미전도종족</a></td>
+</tr>
+<tr>
+<td>상황화 · 번역 원리</td>
+<td>내용은 지키고 형식은 번역한다</td>
+<td>앤드류 월스</td>
+<td><a class="wl" href="../../t/%EC%83%81%ED%99%A9%ED%99%94/">상황화</a></td>
+</tr>
+<tr>
+<td>통전적 선교</td>
+<td>전도와 사회적 책임의 통합</td>
+<td>존 스토트 · 크리스토퍼 라이트</td>
+<td><a class="wl" href="../../t/%ED%86%B5%EC%A0%84%EC%A0%81%EC%84%A0%EA%B5%90/">통전적선교</a></td>
+</tr>
+<tr>
+<td>패러다임 전환</td>
+<td>선교의 형태는 시대마다 바뀐다</td>
+<td>데이비드 보쉬</td>
+<td><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%ED%8C%A8%EB%9F%AC%EB%8B%A4%EC%9E%84/">선교패러다임</a></td>
+</tr>
+</tbody>
+</table>
+<p>랄프 윈터가 연 미전도종족 전략은 자원의 97%가 이미 복음화된 지역에 쏠린 불균형을 고발하며 10/40 창으로 선교의 초점을 이동시켰고(<a class="wl" href="../../t/%EB%AF%B8%EC%A0%84%EB%8F%84%EC%A2%85%EC%A1%B1/">미전도종족</a>), 앤드류 월스의 번역 원리는 복음이 각 문화의 옷을 입되(토착화) 그 문화에 갇히지 않는다(순례자)는 이중성으로 상황화의 신학적 기초를 놓았다(<a class="wl" href="../../t/%EC%83%81%ED%99%A9%ED%99%94/">상황화</a>). 존 스토트의 '전도 우선성'과 크리스토퍼 라이트의 '통합적 복음' 사이의 40년 논쟁은 통전적 선교의 지형을 그렸고(<a class="wl" href="../../t/%ED%86%B5%EC%A0%84%EC%A0%81%EC%84%A0%EA%B5%90/">통전적선교</a>), 데이비드 보쉬는 이 모든 변화를 토마스 쿤의 언어로 읽어 '선교 패러다임'이라는 메타 개념을 제출했다(<a class="wl" href="../../t/%EC%84%A0%EA%B5%90%ED%8C%A8%EB%9F%AC%EB%8B%A4%EC%9E%84/">선교패러다임</a>). 선교학의 이론 지도란 결국 이 좌표들이 서로를 견제하며 균형을 찾는 장(場)이다.</p>
+<h2>8. 선교학과 실천의 순환 — 탈중심화하는 학문</h2>
+<p>선교학은 서재의 학문으로 시작하지 않았고 서재에서 끝나지도 않는다. 캐리의 소책자가 선교회를 낳고, 선교회의 경험이 바르넥의 성찰을 낳고, 그 성찰이 다시 현장의 전략을 교정하는 <strong>실천–이론–실천의 순환</strong>이 이 학문의 생명이다. 데이비드 보쉬가 선교사의 영성을 "길 위의 영성"이라 부른 것은 이 순환의 다른 이름이다 — 전경(前景)이 끊임없이 바뀌는 길 위에서, 선교학은 완결된 체계가 아니라 계속 다시 쓰이는 지도다.</p>
+<p>오늘 그 지도의 무게중심이 이동하고 있다. 앤드류 월스가 말한 대로 세계 기독교의 촛대는 서구에서 비서구(다수 세계)로 옮겨갔고(<a class="wl" href="../../t/%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90/">세계기독교</a>), 그에 따라 선교의 주체만이 아니라 <strong>선교학의 주체</strong>도 다극화되고 있다(3주 강의). 서구가 비서구로 보내던 단선 구도는 "모든 곳에서 모든 곳으로"의 다방향 구도로 바뀌었고, 한때 파송지였던 서구가 이제 선교지가 되었다. 임태순 선교사가 "또 다른 윌리엄 캐리가 필요하다"고 말한 것은 이 전환의 요청이다 — 자립을 갓 시작한 비서구 교회 안에서, 회의론과 가난과 비자 장벽을 뚫고 선교를 일으킬 새로운 정초자가 필요하다는 것이다.</p>
+<p>이 순환은 멀리 있지 않다. 이 볼트의 주인은 의사로서 의료 단기선교 모델을 만들어 선교대회에 보고했고, 소달리티와 모달리티의 협력을 묻는 리서치 페이퍼를 쓰며 자신을 "선교사가 아니라 선교하는 집사"로 규정했다(리서치 페이퍼). 선교학이 강단의 이론에 그치지 않고 한 사람의 일상적 파송으로 번역되는 이 지점 — 곧 학문이 <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EC%82%B6/">선교적삶</a>으로 돌아오는 지점이야말로, 선교학이 실천에서 태어난 학문임을 다시 증명한다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>선교학은 신학과 사회과학(인류학·역사·전략·통계)을 한 대상 위에 통합하는 학제간 학문이며, "선교는 무엇이어야 하는가(규범)"와 "선교는 어떻게 일어나는가(사실)"를 동시에 묻는다.</li>
+<li>학문화는 세 걸음으로 진행되었다 — 캐리(1792)가 실천과 구조를 정초하고, 바르넥이 선교를 신학 분과로 세우고, 맥가브란의 풀러 선교대학원(1965)이 사회과학과 결합시켰다.</li>
+<li>캐리의 기여는 열정이 아니라 <strong>방법(means)과 체제</strong>였다 — 선교회·기도합주회·모금·통계가 랄프 윈터가 명명할 소달리티 구조를 낳았다.</li>
+<li>풀러의 교회성장학은 선교학을 관찰의 과학으로 만들었으나, 성장의 계량화가 확장주의·마케팅으로 변질될 위험을 함께 열었고, 그 반작용이 선교적 교회 논의를 낳았다.</li>
+<li>선교학의 이론 지도(3자 원리·소달리티·HUP·미전도종족·상황화·통전성·패러다임)는 상충하는 좌표들이 서로를 견제하며 균형을 찾는 장이다 — 어느 이론도 홀로 절대화되면 병리를 낳는다.</li>
+<li>동질집단원리는 성장 관찰로는 예리하지만 복음의 화해를 배반할 수 있어, 선교학이 사회과학에 삼켜지지 않으려는 자기 비판의 시금석이 된다.</li>
+<li>선교학은 실천–이론–실천의 순환으로 굴러가는 "길 위의 학문"이며, 오늘 그 주체는 서구에서 비서구로 탈중심화하고 있다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>선교학이 신학과 사회과학을 통합할 때, 어느 쪽이 최종 심급인가 — 성장 데이터가 신학적 규범과 충돌할 때 학문은 무엇을 기준으로 판단하는가?</li>
+<li>"또 다른 윌리엄 캐리"가 필요한 비서구 선교 시대에, 서구가 정초한 선교학의 개념 틀(소달리티·HUP·10/40)은 얼마나 유효하며 무엇이 새로 쓰여야 하는가?</li>
+<li>동질집단원리의 전략적 효율과 다양성·화해의 신학적 요청은 실제 교회 개척 현장에서 어떻게 조율되는가?</li>
+<li>3자 원리(자립)와 오늘의 다방향·상호의존적 선교 생태계는 양립하는가 — "선교의 안락사"는 여전히 성공의 지표인가?</li>
+<li>선교학의 주체가 다극화될 때, 학문의 공용어(영어·서구 문헌)와 비서구 현장의 토착적 성찰 사이의 간극은 어떻게 메워지는가?</li>
+</ul>
+<h2>교차 참조</h2>
+<p><strong>선교학의 신학적 기초</strong>
+- <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> — 선교의 신학적 근거와 소달리티/모달리티·문화론의 조직적 전개
+- <a class="wl" href="../../t/%EB%AF%B8%EC%94%A8%EC%98%A4%EB%8D%B0%EC%9D%B4/">미씨오데이</a> — 하나님이 선교의 주어라는 패러다임
+- <a class="wl" href="../../t/%EC%84%A0%EA%B5%90/">선교</a> — 창조에서 새창조까지 선교의 성경 서사 관문
+- <a class="wl" href="../../t/%EB%8C%80%EC%82%AC%EB%AA%85/">대사명</a> — 마 28장 대위임령의 본문 신학</p>
+<p><strong>선교학의 이론 분과</strong>
+- <a class="wl" href="../../t/%EC%83%81%ED%99%A9%ED%99%94/">상황화</a> · <a class="wl" href="../../t/%ED%83%80%EB%AC%B8%ED%99%94%EC%84%A0%EA%B5%90/">타문화선교</a> — 선교인류학, 번역·문화의 경계
+- <a class="wl" href="../../t/%EB%AF%B8%EC%A0%84%EB%8F%84%EC%A2%85%EC%A1%B1/">미전도종족</a> · <a class="wl" href="../../t/%EC%84%B8%EA%B3%84%EB%B3%B5%EC%9D%8C%ED%99%94/">세계복음화</a> — 선교전략론, 종족·자원 배치
+- <a class="wl" href="../../t/%ED%86%B5%EC%A0%84%EC%A0%81%EC%84%A0%EA%B5%90/">통전적선교</a> — 전도와 사회적 책임의 통합
+- <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%ED%8C%A8%EB%9F%AC%EB%8B%A4%EC%9E%84/">선교패러다임</a> — 보쉬의 패러다임 전환론
+- <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a> — 교회성장학 비판에서 자란 교회론</p>
+<p><strong>선교학의 현재</strong>
+- <a class="wl" href="../../t/%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90/">세계기독교</a> — 학문 주체의 탈중심화
+- <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EC%82%B6/">선교적삶</a> — 이론이 일상의 파송으로 돌아오는 자리</p>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBTS 선교학 강의·독서과제 (임태순)</td>
+<td>강의(임태순)</td>
+<td>선교학의 학제간 구조, 오트 교재, 탐구 방법론, 바르넥·풀러·소달리티</td>
+</tr>
+<tr>
+<td>윌리엄 캐리 「An Enquiry」 요약 (1주 토론)</td>
+<td>사료·과제</td>
+<td>대위임령 유효성 논증, 방법(선교회·기도합주회·모금), 최초의 선교 통계</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99%EC%9D%98%EB%8F%84%EC%A0%84-%ED%81%AC%EB%A0%88%EC%9D%B4%EA%B7%B8%EC%98%A4%ED%8A%B8/">선교신학의도전-크레이그오트</a></td>
+<td>책(크레이그 오트)</td>
+<td>선교의 네 과업, 선교적 교회론 평가, 사도적 선교사, 상황화·종족 선교</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A0%EA%B5%90%EC%A0%84%EB%9E%B5_%EB%8F%84%EB%84%90%EB%93%9C%EB%A7%A5%EA%B0%80%EB%B8%8C%EB%9E%80/">하나님의선교전략_도널드맥가브란</a></td>
+<td>책(도널드 맥가브란)</td>
+<td>교회성장학, 선교기지 비판, 족속운동, 동질집단원리</td>
+</tr>
+<tr>
+<td>세계 선교 역사 (이종훈 선교사)</td>
+<td>강의(이종훈)</td>
+<td>극단적 예정론 극복, 근대 선교사(캐리·저드슨·모리슨) 계보</td>
+</tr>
+<tr>
+<td>이사님 「선교지 재산권」 강의안·리서치 페이퍼</td>
+<td>강의안·페이퍼(이상협)</td>
+<td>헨리 벤 3자 정책·네비우스·헤럴드 풀러 4P, 소달리티/모달리티 협력, 의료 단기선교 모델</td>
+</tr>
+<tr>
+<td>어떤 문화를 만들면 좋을까 (송기태) · 리더는 혼자 일하지 않는다 (문대원)</td>
+<td>강의·설교</td>
+<td>동질집단원리의 현장 비판(배타·분리 위험)</td>
+</tr>
+<tr>
+<td>선교의 새로운 패러다임 (전동주) · 세계복음화 전략 (선교훈련학교)</td>
+<td>강의</td>
+<td>10/40 창, 미전도종족 90% 집중, 선교사 3%·재정 불균형</td>
+</tr>
+<tr>
+<td>존 스토트 · 크리스토퍼 라이트 (3~5주 토론)</td>
+<td>강의 정리</td>
+<td>전도 우선성 ↔ 통합적 복음의 40년 논쟁, 복음주의 선교신학의 변천</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/선교</span><span>#discipline/선교학</span><span>#topic/선교역사</span><span>#topic/교회성장운동</span><span>#topic/토착교회</span><span>#topic/미씨올로지</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

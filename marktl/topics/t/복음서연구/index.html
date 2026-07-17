@@ -1,0 +1,352 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>복음서연구 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:174">성경·해석</span><span class="date">2026-07-17</span></div>
+  <h1 class="note-title">복음서연구</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>복음서연구는 마태·마가·누가·요한의 네 복음서를 장르·역사·신학·해석의 층위에서 읽어, 그 안에 담긴 예수 이야기를 바르게 듣는 작업이다. 이 작업은 두 개의 서로 다른 물음으로 갈라진다. 하나는 "이 문서들은 서로 어떤 관계에 있는가"라는 자료의 물음이고, 다른 하나는 "이 문서들을 어떻게 읽을 것인가"라는 독법의 물음이다. 앞의 물음 — 마가 우선설·Q자료·두 자료설로 대표되는 문학적 의존 관계 — 은 그 자체로 신약학의 한 영역을 이루므로 <a class="wl" href="../../t/%EA%B3%B5%EA%B4%80%EB%B3%B5%EC%9D%8C%EB%AC%B8%EC%A0%9C/">공관복음문제</a>에 맡긴다.</p>
+<p>이 페이지는 뒤의 물음에 집중한다. 복음서가 어떤 장르이기에 어떤 규칙으로 읽어야 하는지, 왜 하나가 아니라 넷인지, 넷의 다름이 모순인지 관점인지, 그 기록이 역사적으로 믿을 만한지, 설교자는 이 본문을 어떻게 다루어야 하는지 — 곧 <strong>복음서를 읽는 법</strong>이 여기서 다루는 레인이다. 그리스도의 인격에 관한 교리적 종합은 <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EB%A1%A0/">기독론</a>이, 장르 해석 일반의 방법론은 <a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D%ED%95%99/">성경해석학</a>이, 역사적 예수 탐구의 학문사는 <a class="wl" href="../../t/%EC%97%AD%EC%82%AC%EC%A0%81%EC%98%88%EC%88%98/">역사적예수</a>가, 예언 성취의 해석학은 <a class="wl" href="../../t/%EB%A9%94%EC%8B%9C%EC%95%84%EC%98%88%EC%96%B8/">메시아예언</a>이 맡으므로, 이 글은 네 복음서를 하나의 문학·신학적 대상으로 읽는 일 그 자체를 붙든다.</p>
+<h2>1. 복음서라는 장르 — 신화도, 단순 전기도 아닌</h2>
+<p>복음서를 오독하는 가장 빠른 길은 장르를 잘못 짚는 것이다. 그래서 복음서연구는 "이것이 무슨 종류의 글인가"라는 물음에서 시작한다. 신약개론I의 복음서 개론은 여러 후보를 차례로 검토한다. K.L. 슈미트는 복음서를 대중문학으로, C.H. 도드는 그리스도에 관한 초대 기독교 선포(케리그마)를 반영하는 구두 전승의 마지막 단계로 보았고, 미드라쉬나 그리스 이적사화집이라는 제안도 있었다. 강의가 "가장 대중적이고 옹호할 수 있는 제안"으로 채택하는 것은 <strong>전기(Biography)</strong>다. 고대 전기의 장르는 폭이 넓어 다양한 작품을 수용할 수 있었고, 복음서도 그 안에 들어간다.</p>
+<p>다만 이때의 전기는 현대의 위인전이 아니라 그레코-로만 세계의 비오스(bios)다. 강의가 정리하는 고대 전기의 특징은 오늘의 독법과 사뭇 다르다 — 주인공의 생애가 반드시 시간 순서로 다루어지지 않고, 심리 분석이 거의 없으며, 두루마리 한 권이 담을 수 있는 약 1만~2만5천 자(한 번 앉아 세 시간에 듣는 분량) 안에서 어록·일화·연설이 하나의 이야기로 결합되고, 주인공의 성품은 설명이 아니라 그의 말과 행동을 통해 드러난다. 이 규칙을 알면 복음서의 낯선 특징들 — 사건의 비연대기적 배열, 예수의 내면 묘사가 없는 점, 같은 사건의 서로 다른 배치 — 이 결함이 아니라 장르의 문법임이 보인다.</p>
+<table>
+<thead>
+<tr>
+<th>장르 제안</th>
+<th>대표</th>
+<th>핵심 주장</th>
+<th>한계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>대중문학</td>
+<td>K.L. 슈미트</td>
+<td>대중문학의 전달 규칙을 따라 저술됨</td>
+<td>복음서의 신학적 통일성을 설명 못 함</td>
+</tr>
+<tr>
+<td>케리그마의 최종 단계</td>
+<td>C.H. 도드</td>
+<td>초대 기독교 선포를 반영한 구두 전승</td>
+<td>문학 작품으로서의 완결성 약화</td>
+</tr>
+<tr>
+<td>고대 전기(bios)</td>
+<td>카슨·무 등 다수</td>
+<td>넓은 전기 장르가 복음서를 수용</td>
+<td>현대 전기와 혼동하면 오독</td>
+</tr>
+</tbody>
+</table>
+<p>그러나 복음서는 전기이면서 전기 이상이다. 마가는 자기 책을 "하나님의 아들 예수 그리스도의 복음의 시작"(막 1:1)이라 부른다. 여기서 '복음(유앙겔리온)'은 단순한 전기의 표제가 아니라 <strong>선포의 형식</strong>이다. 복음서는 죽은 위인을 기념하는 글이 아니라, 지금 살아 계신 주(主)를 믿게 하려고 쓴 글이다. 동시에 복음서는 신화도 아니다. 양식비평이 사탄의 시험이나 변화산 기사를 '신화' 양식으로 분류하지만, 강의는 복음서 전체를 신화가 아니라 전기로 읽는다. 요한복음조차 "역사적인 측면을 가지고" 있으면서 더 깊은 신학적·영적 의미에 집중할 뿐이다. 전기의 뼈대 위에 선포의 목적을 얹은 이 혼합이 '복음서'라는 새 장르의 탄생이다.</p>
+<h2>2. 왜 넷인가 — 한 예수, 네 초상</h2>
+<p>초대 교회는 네 복음서를 하나로 녹여 조화복음서를 만들 수도 있었다. 실제로 2세기의 타티안은 네 복음서를 엮은 『디아테사론』을 지었다. 그러나 교회가 정경으로 보존한 것은 하나로 봉합된 조화가 아니라 넷 그대로의 복음서였다. 이 결정은 복음서연구의 심장을 이룬다. 넷은 같은 예수를 서로 다른 각도에서 그린 네 개의 초상화이며, 그 다름은 지워야 할 잡음이 아니라 보존해야 할 계시의 풍부함이다.</p>
+<p>신약개론I의 네 강의에서 각 복음서의 얼굴을 추출하면 다음과 같이 갈린다.</p>
+<table>
+<thead>
+<tr>
+<th>복음서</th>
+<th>저자·수신자</th>
+<th>예수의 초상</th>
+<th>핵심 구절</th>
+<th>구조·문체</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>마가</strong></td>
+<td>마가(베드로의 통역자) · 로마의 이방인 신자</td>
+<td>고난받는 하나님의 아들, 섬기는 종</td>
+<td>막 10:45 (대속물로 주는 목숨)</td>
+<td>갈릴리(1–8:21)→여정·수난 예고 3회(8:22–10:52)→예루살렘·수난. '즉시(에우수스)'의 긴박함, 짧고 어두운 결말(16:8)</td>
+</tr>
+<tr>
+<td><strong>마태</strong></td>
+<td>세리 마태(전승) · 유대인 그리스도인</td>
+<td>유대인의 왕, 성취된 메시아</td>
+<td>마 5:17 (율법을 완전하게 하러 옴)</td>
+<td>다섯 설교(산상수훈 등)를 축으로 한 7부. 구약 성취 공식, 대사명(28:18–20)으로 종결</td>
+</tr>
+<tr>
+<td><strong>누가</strong></td>
+<td>이방인 의사 누가 · 데오빌로와 헬라 세계</td>
+<td>만인의 구주, 소외된 자의 친구</td>
+<td>눅 19:10 (잃어버린 자를 찾아 구원)</td>
+<td>서론(1–2)→갈릴리(3–9:50)→예루살렘 여행(9:51–19:27, 10장 할애)→수난·부활. 사도행전과 짝을 이룬 2부작</td>
+</tr>
+<tr>
+<td><strong>요한</strong></td>
+<td>사랑받는 제자 · 넓은 유대·이방 신자</td>
+<td>성육신한 로고스, 아버지를 계시하는 아들</td>
+<td>요 1:14 (말씀이 육신이 되어)</td>
+<td>프롤로그(1:1–18)→표적의 책(1–12)→영광의 책·고별강화·수난(13–20)→에필로그(21)</td>
+</tr>
+</tbody>
+</table>
+<p>마가의 예수는 십자가를 향해 숨 가쁘게 걸어가는 고난받는 종이다. 강의가 마가복음을 "십자가의 변증"이라 부르는 이유가 여기 있다 — 마가는 예수의 죽음이 범죄자의 마땅한 죽음이 아니라 성경에 예언되고 하나님이 예정하신, 많은 사람을 위한 대속의 행동임을 밝힌다. 8장 27절 베드로의 고백을 경첩 삼아 복음서 전체가 갈릴리에서 예루살렘 십자가로 기울어진다. 마태의 예수는 다윗과 아브라함의 자손으로 오신 유대인의 왕이며, 마태는 구약의 예언이 그에게서 성취됨을 거듭 보여줌으로써 교회가 이스라엘의 합법적 상속자임을 논증한다. 누가의 예수는 이방인·사마리아인·여자·죄인·가난한 자에게로 향한다. 선한 사마리아인과 탕자, 죽어가는 강도에게 낙원을 약속하는 장면이 오직 누가에게만 있다는 사실이 이 초상을 압축한다. 요한의 예수는 태초의 말씀이 육신이 되신 분으로, 공관복음이 땅에서 하늘로 시선을 올린다면 요한은 하늘에서 땅으로 시선을 내린다.</p>
+<p>넷을 나란히 놓으면, 강의의 결론 — "한 예수님, 세 개의 초상화들"에 요한을 더한 네 초상 — 이 왜 모순이 아닌지 드러난다. 한 인물을 네 화가가 각각 다른 빛과 각도에서 그렸을 때, 초상들의 차이는 대상의 분열이 아니라 대상의 깊이를 증언한다. 교회가 넷을 다 남긴 것은 어느 하나로 예수를 가둘 수 없었기 때문이다.</p>
+<h2>3. 공관복음과 요한 — 시각차의 의미</h2>
+<p>네 복음서는 다시 셋과 하나로 갈린다. 마태·마가·누가는 사건의 순서와 표현에서 현저히 겹쳐 '함께 본다'는 뜻의 공관복음(Synoptic)으로 묶이고, 요한복음은 홀로 선다. 이 둘의 관계를 어떻게 읽느냐가 복음서연구의 오랜 과제다. 공관복음 사이의 문학적 의존 관계 — 마가 우선설과 Q자료 가설, 두 자료설의 통계적 근거 — 는 그 자체로 큰 논쟁이므로 <a class="wl" href="../../t/%EA%B3%B5%EA%B4%80%EB%B3%B5%EC%9D%8C%EB%AC%B8%EC%A0%9C/">공관복음문제</a>에 맡기고, 여기서는 공관과 요한의 시각차가 무엇을 뜻하는지만 다룬다.</p>
+<p>차이는 뚜렷하다. 강의가 짚는 대로 공관복음이 예수를 땅에서 시작해 하늘을 알아가는 방향으로 그린다면, 요한복음은 처음부터 하늘에서 내려오신 분으로 선언한다. 공관복음의 예수는 하나님 나라를 비유로 가르치지만, 요한복음의 예수는 자기 자신을 긴 강화로 계시한다("나는 생명의 떡이다", "나는 부활이요 생명이다"). 공관복음이 축귀와 치유의 기적을 빠르게 서술한다면, 요한복음은 소수의 '표적(세메이아)'을 골라 각각을 신학적 강화의 발판으로 삼는다.</p>
+<table>
+<thead>
+<tr>
+<th>축</th>
+<th>공관복음(마·막·눅)</th>
+<th>요한복음</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>시선의 방향</td>
+<td>땅에서 하늘로</td>
+<td>하늘에서 땅으로</td>
+</tr>
+<tr>
+<td>기독론의 명시성</td>
+<td>점진적 계시, '메시아 비밀'</td>
+<td>서두부터 명시("말씀은 하나님")</td>
+</tr>
+<tr>
+<td>예수의 가르침 양식</td>
+<td>비유·짧은 어록</td>
+<td>긴 강화·자기 계시</td>
+</tr>
+<tr>
+<td>기적의 기능</td>
+<td>하나님 나라의 도래 표지</td>
+<td>선별된 '표적'으로 믿음 유도</td>
+</tr>
+<tr>
+<td>무대</td>
+<td>갈릴리 중심</td>
+<td>유대·예루살렘 중심</td>
+</tr>
+</tbody>
+</table>
+<p>이 차이를 모순으로 읽으면 복음서는 서로를 반박하는 문서가 되지만, 관점으로 읽으면 서로를 보완하는 증언이 된다. 요한 스스로 자기 선택의 의도성을 밝힌다 — "예수께서 제자들 앞에서 이 책에 기록되지 아니한 다른 표적도 많이 행하셨으나"(요 20:30) 골라 기록했다는 것이다. 2세기의 알렉산드리아의 클레멘트가 요한복음을 "영적 복음서"라 부르며 요한이 공관복음의 외적 사실들을 알고서 그 위에 영적 차원을 더했다고 전한 것도 같은 통찰이다. 요한의 다름은 공관의 부정이 아니라 그 심화다.</p>
+<h2>4. 복음서의 역사적 신뢰성 — 목격자 증언 전통</h2>
+<p>복음서를 읽는 사람은 조만간 근대의 질문과 마주친다. 이 기록을 역사적으로 믿을 수 있는가. 양식비평은 여기에 회의적으로 답했다. 복음서의 전승은 예수의 삶을 들여다보는 창이 아니라 그 전승을 보존한 초대 교회의 삶을 들여다보는 창일 뿐이며, 초대 교회 지도자들이 상당한 창의력을 발휘해 이야기를 빚었다는 것이다. 강의는 양식비평의 기여를 인정하면서도 그 결정적 약점을 분명히 한다 — 그것은 "예수님의 사역을 직접 눈으로 본 목격자들(eyewitnesses)의 역할을 무시하거나 과소평가"하고, 예수의 실제 말씀 복원에 지나치게 회의적이라는 점이다.</p>
+<p>이 공백을 메우는 것이 목격자 증언 전통이다. 마가복음의 기원을 전하는 파피아스의 증언이 그 고전적 사례다.</p>
+<blockquote>
+<p>베드로의 통역자였던 마가는 주님의 말씀과 행적에 대해 그가 기억하는 모든 것을 체계적이진 않으나 정성 들여 기록했다. … 그러므로 마가가 어떤 것들을 그가 기억하는 대로 기록했다는 사실은 꽤 정당화된다.</p>
+</blockquote>
+<p>유세비우스가 전하는 이 진술은 세 가지를 함축한다. 마가복음은 마가의 이름으로 식별되었고, 마가 자신은 목격자가 아니되 목격자 베드로에게서 정보를 얻었으며, 그 기록의 목적은 "아무것도 틀리게 말하지 않는" 것이었다. 요한복음도 스스로를 목격자의 증언으로 제시한다. 마지막 만찬에서 예수 곁에 기댔고 십자가 아래에서 그의 어머니를 부탁받은 '사랑받는 제자'가 "이 일을 기록"했다는 것이다(요 21:24). 신약학자 <span class="wl-dead" title="위키 내부 링크">리처드보컴</span>의 『예수와 목격자들(Jesus and the Eyewitnesses)』은 바로 이 지점에서 양식비평의 목격자 경시에 정면으로 맞서, 복음서 전승이 익명의 공동체 창작이 아니라 이름을 가진 목격자들의 증언 체인에 뿌리내리고 있음을 논증한다.</p>
+<p>그렇다면 복음서들 사이의 차이는 신뢰성을 훼손하는가. 1절에서 본 장르의 문법이 여기서 답이 된다. 고대 전기에서 사건의 재배열과 저자의 관점 개입은 오류가 아니라 규범이었다. 편집비평이 밝히듯 각 복음서 기자는 "역사적 관심 이상의 것을 가지고" 자료를 신학적으로 배열했으므로, 병행 본문의 차이는 사실의 충돌이 아니라 강조점의 차이일 때가 많다. 복음서의 역사성을 둘러싼 근대의 탐구사 전체 — 라이마루스에서 슈바이처, 불트만, 제3의 탐구에 이르는 논쟁 — 는 <a class="wl" href="../../t/%EC%97%AD%EC%82%AC%EC%A0%81%EC%98%88%EC%88%98/">역사적예수</a>에 맡긴다. 다만 그 탐구가 도달한 지점만 기억하면 된다. 세 번째 탐구는 회의주의가 허용하던 것보다 훨씬 풍부하게 복음서의 역사적 핵을 재확인했다.</p>
+<h2>5. 복음서 해석의 원칙 — 단락·병행·구속사적 자리</h2>
+<p>복음서를 바르게 읽는 실천적 원칙은 앞의 논의에서 자연스럽게 흘러나온다. 첫째는 <strong>단락(페리코페) 읽기</strong>다. 양식비평이 남긴 유산 하나는, 복음서가 원래 짧고 독립적인 전승 단위 — 비유, 선언 이야기, 기적 이야기, 어록 — 의 모음이라는 통찰이다. 따라서 복음서의 한 단락을 읽을 때는 그 단락이 속한 양식의 규칙을 먼저 존중해야 한다. 비유를 알레고리로 풀거나 기적 이야기를 도덕 교훈으로 납작하게 만드는 것은 양식을 무시한 오독이다. 동시에 편집비평이 밝힌 대로, 각 단락은 저자가 의도적으로 배치한 최종 문맥 안에서 다시 읽혀야 한다. 독립성과 문맥성을 함께 붙드는 것이 첫 원칙이다.</p>
+<p>둘째는 <strong>병행 본문 비교</strong>다. 공관복음의 같은 사건을 나란히 놓고 각 저자가 무엇을 넣고 빼고 바꾸었는지를 살피면, 편집의 흔적에서 신학적 강조가 드러난다. 강의가 정리하는 편집 활동의 여섯 측면 — 자료의 삽입과 삭제, 배열, 이음매, 첨가, 생략, 어법의 변화 — 은 그대로 병행 비교의 체크리스트가 된다. 다만 이 작업이 전제하는 두 자료설은 어디까지나 작업 이론임을 잊지 말아야 한다(상세는 <a class="wl" href="../../t/%EA%B3%B5%EA%B4%80%EB%B3%B5%EC%9D%8C%EB%AC%B8%EC%A0%9C/">공관복음문제</a>).</p>
+<p>셋째는 <strong>구속사적 자리 읽기</strong>다. 복음서의 각 장면은 고립된 일화가 아니라 구약에서 시작해 그리스도에게서 절정에 이르는 구원 이야기의 한 마디다(6절에서 이어진다). 이 세 원칙이 강단에서 만나는 지점이 <a class="wl" href="../../t/%EA%B0%95%ED%95%B4%EC%84%A4%EA%B5%90/">강해설교</a>다. 복음서를 설교하는 이는 내러티브라는 장르의 규칙을 따라야 한다 — <a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D%ED%95%99/">성경해석학</a>이 정리하듯 내러티브는 문학적 분석과 신학적 분석을 함께 요구하며, 반복과 패턴을 읽되 모든 서술을 곧바로 규범으로 바꾸는 오독을 경계해야 한다. 복음서에 흔한 과장법(예수께서 부모를 "미워하라" 하신 눅 14:26)을 문자로 읽지 않는 분별도 같은 장르 감각에서 나온다. 장르 해석의 이론 전반은 <a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D%ED%95%99/">성경해석학</a>에 맡긴다.</p>
+<h2>6. 복음서와 구약 — "성취되었다"</h2>
+<p>복음서는 빈 무대 위에서 시작하지 않는다. 네 복음서 모두 예수의 이야기를 구약의 성취로 읽으며, 이 '성취' 감각이 복음서를 신약신학의 1차 자료로 만든다(<a class="wl" href="../../t/%EC%8B%A0%EC%95%BD%EC%8B%A0%ED%95%99/">신약신학</a>). 그 방식은 복음서마다 다르다. 마태는 "이는 선지자로 하신 말씀을 이루려 하심이라"는 성취 공식을 반복하며 예수를 구약 예언의 도착점으로 제시한다. 마가는 "인자는 기록된 대로 … 하거니와"라는 후렴 같은 표현으로 예수의 길이 하나님의 계획 안에 있음을 못박는다. 누가는 부활하신 예수의 입을 빌려 "모세와 모든 선지자의 글로 시작하여" 자기에 관한 것을 풀이하게 하고(눅 24:27, 44), 나사렛 회당에서 이사야 61장의 종의 노래를 자신에게 적용하게 한다(눅 4:18–21).</p>
+<table>
+<thead>
+<tr>
+<th>복음서</th>
+<th>구약 사용의 특징</th>
+<th>대표 표지</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>마태</td>
+<td>성취 인용 공식의 반복</td>
+<td>"선지자로 하신 말씀을 이루려 하심이라"</td>
+</tr>
+<tr>
+<td>마가</td>
+<td>인자의 길을 "기록된 대로"로 봉인</td>
+<td>막 14:49, 12:10–11</td>
+</tr>
+<tr>
+<td>누가</td>
+<td>"모세와 선지자"의 성취, 종의 노래</td>
+<td>눅 24:44, 4:18–21</td>
+</tr>
+<tr>
+<td>요한</td>
+<td>표적과 절기를 구약 상징의 성취로</td>
+<td>유월절 어린양, 광야의 만나</td>
+</tr>
+</tbody>
+</table>
+<p>성취의 층위는 하나가 아니다. 직접 인용도 있고, 언어의 암시도 있으며, 인물과 제도가 더 큰 실재를 예표하는 모형(유형론)도 있다. 이 세 층위 — 직접·유형론적·제도적 예언 — 를 가르고 각각의 검증 절차를 따지는 일은 <a class="wl" href="../../t/%EB%A9%94%EC%8B%9C%EC%95%84%EC%98%88%EC%96%B8/">메시아예언</a>이 전담한다. 여기서 붙들 것은 한 문장이다. 복음서에서 "성취되었다"는 선언은 구약을 폐기하는 것이 아니라 구약이 가리키던 실재의 도착을 알리는 말이며, 그 실재를 지운 성취 읽기는 성취가 아니라 억지다.</p>
+<h2>7. 복음서의 중심 — 수난 서사와 부활</h2>
+<p>복음서를 끝까지 읽으면 그 무게중심이 어디에 있는지 분명해진다. 네 복음서 모두 예수의 마지막 한 주에 불균형하다 싶을 만큼 많은 분량을 할애한다. 양식비평조차 "매우 긴 예수님의 수난 이야기"를 짧은 독립 전승들의 예외로 다루어야 했다 — 수난 기사만은 처음부터 구성의 통일성을 지닌 하나의 연속된 내러티브였기 때문이다. 복음서는 예수의 생애를 고르게 서술하다가 십자가에서 멈추는 글이 아니라, 십자가를 향해 처음부터 기울어져 있는 글이다. 오래전부터 복음서가 "긴 서론이 붙은 수난 이야기"라 불려 온 이유가 여기 있다. 마가복음을 "십자가의 변증"으로 읽는 강의의 시선은 이 사실을 가장 선명하게 드러낸다.</p>
+<p>그렇다면 무엇이 이 이야기를 쓰게 했는가. 답은 부활이다. 십자가에서 끝났다면 예수의 이야기는 실패한 한 갈릴리 교사의 전기로 묻혔을 것이다. 복음서가 존재하는 것은 그의 추종자들이 그가 죽은 후 그를 다시 만났다고 믿었기 때문이며, 이 부활 신앙이야말로 강의가 역사적 예수의 확인된 사실 목록에 포함시키는 항목이다. 클레멘트가 전하듯 요한이 "영적 복음서"를 쓴 것도 부활 이후의 빛에서였다. 마가복음이 빈 무덤과 여인들의 두려움(막 16:8)에서 갑작스레 끝나는 것조차, 부활을 이야기의 종착이 아니라 독자가 지금 예수를 만나야 할 출발점으로 남겨 두려는 장치로 읽힌다.</p>
+<p>이렇게 복음서의 중심에는 십자가와 부활이 함께 선다(<a class="wl" href="../../t/%EC%8B%AD%EC%9E%90%EA%B0%80/">십자가</a>·<a class="wl" href="../../t/%EB%B6%80%ED%99%9C/">부활</a>). 그 사이에서 예수가 선포하고 몸으로 실현한 메시지가 <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EB%82%98%EB%9D%BC/">하나님나라</a>다 — 역사적 예수 연구가 가장 확실한 사실 중 하나로 꼽는 것이 바로 예수의 "하나님 나라의 도래" 선포다. 복음서는 이 나라를 가져오신 왕의 즉위가 역설적이게도 그의 처형과 부활을 통해 이루어졌음을 증언하는 네 개의 서로 다른 목소리다. 그 왕의 인격을 교리로 정식화하는 일은 <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EB%A1%A0/">기독론</a>이 잇는다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>복음서는 그레코-로만 전기(bios)의 뼈대 위에 '복음(유앙겔리온)'이라는 선포의 목적을 얹은 새 장르다. 이 혼합을 이해하면 비연대기적 배열과 관점의 차이가 결함이 아니라 장르의 문법임이 보인다.</li>
+<li>교회가 네 복음서를 조화복음서로 봉합하지 않고 넷 그대로 보존한 것이 복음서연구의 심장이다. 마태(유대인의 왕)·마가(고난받는 종)·누가(만인의 구주)·요한(성육신한 로고스)의 초상 차이는 대상의 분열이 아니라 대상의 깊이를 증언한다.</li>
+<li>공관복음(땅→하늘)과 요한(하늘→땅)의 시각차는 모순이 아니라 관점이다. 요한의 선별성(요 20:30)과 '영적 복음서'라는 고대의 평가가 그 의도성을 뒷받침한다.</li>
+<li>목격자 증언 전통 — 파피아스가 전하는 마가-베드로 연결, 요한의 '사랑받는 제자', 보컴의 『예수와 목격자들』 — 은 양식비평의 목격자 경시에 대한 볼트 내적 응답이다.</li>
+<li>병행 본문의 차이는 신뢰성의 훼손이 아니라 편집의 흔적이며, 그 흔적을 읽는 것이 곧 각 저자의 신학을 읽는 길이다.</li>
+<li>복음서 해석의 세 원칙(단락 읽기·병행 비교·구속사적 자리)은 강해설교의 장르 감각과 만난다 — 내러티브를 규범으로 납작하게 만들지도, 알레고리로 흩뜨리지도 않는 균형이 관건이다.</li>
+<li>복음서의 무게중심은 수난 서사이며("긴 서론이 붙은 수난 이야기"), 그 이야기를 쓰게 한 사건은 부활이다. 십자가와 부활, 그리고 그 사이의 하나님 나라 선포가 복음서를 하나로 묶는다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>병행 본문의 차이(예: 부활 현현 기사, 성전 정화의 시점)를 강단에서 설교할 때, '조화'를 시도하는 것과 '각 저자의 관점'으로 존중하는 것 사이의 경계는 어디에 두어야 하는가.</li>
+<li>요한복음의 높은 기독론("말씀은 하나님")은 공관복음의 점진적 계시 및 역사적 예수와 어떻게 정합적으로 연결되는가 — 신학적 발전인가, 처음부터 있던 신앙의 명시화인가.</li>
+<li>목격자 증언 전통이 복음서의 역사적 토대를 복원한다면, 그것은 복음서의 무오성 주장과 어떤 관계에 있는가 — 목격자의 기억도 선별과 해석을 거친다는 사실을 어떻게 다룰 것인가.</li>
+<li>고대 전기의 장르 규칙(비연대기적 배열, 저자의 신학적 편집)을 인정하는 것과 복음서 서술의 사실성을 신뢰하는 것은 실제 본문 앞에서 어떤 절차로 함께 견지되는가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EA%B3%B5%EA%B4%80%EB%B3%B5%EC%9D%8C%EB%AC%B8%EC%A0%9C/">공관복음문제</a> — 마가 우선설·Q자료·두 자료설 등 네 복음서의 문학적 의존 관계 전담.</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EB%A1%A0/">기독론</a> — 네 복음서가 그린 그리스도의 인격을 교리로 정식화.</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D%ED%95%99/">성경해석학</a> — 장르 해석 일반과 내러티브·과장법의 규칙.</li>
+<li><a class="wl" href="../../t/%EC%97%AD%EC%82%AC%EC%A0%81%EC%98%88%EC%88%98/">역사적예수</a> — 라이마루스에서 제3의 탐구까지, 복음서 역사성 논쟁의 학문사.</li>
+<li><a class="wl" href="../../t/%EB%A9%94%EC%8B%9C%EC%95%84%EC%98%88%EC%96%B8/">메시아예언</a> — 복음서의 "성취되었다"가 사용하는 직접·유형론·제도의 세 층위.</li>
+<li><a class="wl" href="../../t/%EC%8B%A0%EC%95%BD%EC%8B%A0%ED%95%99/">신약신학</a> — 복음서를 1차 자료로 삼는 신약 27권의 신학.</li>
+<li><a class="wl" href="../../t/%EA%B0%95%ED%95%B4%EC%84%A4%EA%B5%90/">강해설교</a> — 복음서 내러티브를 강단에서 다루는 법.</li>
+<li><a class="wl" href="../../t/%EC%8B%AD%EC%9E%90%EA%B0%80/">십자가</a>·<a class="wl" href="../../t/%EB%B6%80%ED%99%9C/">부활</a>·<a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EB%82%98%EB%9D%BC/">하나님나라</a> — 복음서의 무게중심을 이루는 세 주제.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">02주_신약성경의세계</span></td>
+<td>MBTS 강의</td>
+<td>제2성전기 배경, 헬라화, 묵시적 세계관 — 복음서가 태어난 세계</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">03주_공관복음</span></td>
+<td>MBTS 강의</td>
+<td>복음서 장르(전기설), 양식·자료·편집·문학비평, 목격자 경시 비판, "한 예수 세 초상"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">04주_마가복음</span></td>
+<td>MBTS 강의</td>
+<td>파피아스 증언, 마가-베드로 연결, '십자가의 변증', 고난받는 아들, 16:8 결말</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">05주_마태복음</span></td>
+<td>MBTS 강의</td>
+<td>다섯 설교 구조, 구약 성취, 이스라엘과의 연속성, 대사명</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">06주_누가복음</span></td>
+<td>MBTS 강의</td>
+<td>만인의 구주, 소외된 자, 이방인·죄인·재물, 누가-행전 2부작</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">08주_요한복음</span></td>
+<td>MBTS 강의</td>
+<td>하늘→땅 방향성, 표적과 강화, 사랑받는 제자, 로고스 기독론</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">카슨</span> · <span class="wl-dead" title="위키 내부 링크">더글러스무</span></td>
+<td>신약학자</td>
+<td>각 복음서의 저자·연대·수신자·메시지 분석의 1차 근거</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">드실바</span></td>
+<td>신약학자</td>
+<td>각 복음서의 문학 구조 개요(도입·본론·결론)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">리처드보컴</span></td>
+<td>신약학자</td>
+<td>『예수와 목격자들』 — 목격자 증언 기반 역사성 논증</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/신약학</span><span>#사복음서</span><span>#복음서장르</span><span>#수난내러티브</span><span>#목격자증언</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

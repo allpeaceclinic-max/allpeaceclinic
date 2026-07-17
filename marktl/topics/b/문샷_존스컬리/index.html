@@ -1,0 +1,180 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>문샷 (Moonshot!) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:226">리더십·일·경영</span><span class="author">존 스컬리</span><span class="date">2026-05-03</span></div>
+  <h1 class="note-title">문샷 (Moonshot!)</h1>
+  
+</header>
+<article class="note">
+<p><strong>저자</strong>: 존 스컬리 (John Sculley) — 前 애플 CEO, 펩시코 CEO<br />
+<strong>분류</strong>: 혁신 전략 / 리더십 / 비즈니스 변혁</p>
+<hr />
+<h2>핵심 개념 — 문샷이란?</h2>
+<blockquote>
+<p>1962년 존 F. 케네디: "망원경 성능을 높이는 것이 아니라 달에 가는 것"</p>
+</blockquote>
+<ul>
+<li>문샷 = <strong>기존의 개선이 아니라 패러다임 자체를 바꾸는 도전</strong></li>
+<li>스티브 워즈니악 (개인용 컴퓨터), 스티브 잡스 (아이폰) = 대표적 문샷</li>
+<li>기술 쓰나미: 클라우드 컴퓨팅, IoT(폰 60억 개 → IoT 400억 개), 빅데이터, 모바일</li>
+</ul>
+<hr />
+<h2>핵심 프레임 — 적응형 혁신 (Adaptive Innovation)</h2>
+<h3>생산자 중심 → 소비자 중심으로 힘의 이동</h3>
+<ul>
+<li>4가지 기술 결합 → 전통적 비즈니스 붕괴</li>
+<li>적응형 중산층: 덜 비싼 대체품 선택, 소유보다 임대 선호</li>
+<li>신흥 시장 중산층 20억 명 (한국·터키·중국·인도 등)</li>
+</ul>
+<h3>적응형 혁신의 공식</h3>
+<blockquote>
+<p><strong>예외적인 고객 경험 + 더 나은 방법 + 최저 가격 = 최상의 적응형 혁신</strong></p>
+</blockquote>
+<ul>
+<li>사례: MDLIVE (랜디 파커) — 125달러 → 40달러, 24시간 전문의 서비스</li>
+<li>고객 경험 측정: <strong>NPS (순추천고객지수)</strong> 지표</li>
+</ul>
+<h3>파괴될 산업들</h3>
+<ul>
+<li><strong>의료 서비스</strong>: 미국 GDP의 18% → 새로운 모델로 전환 불가피</li>
+<li><strong>교육</strong>: 높아진 교육비 + 온라인 강좌 → 15년 후 대학교 파산 예측</li>
+</ul>
+<hr />
+<h2>적응형 혁신가의 6가지 특징</h2>
+<ol>
+<li><strong>호기심 + 낙천주의</strong> — 문제를 기회로 본다</li>
+<li><strong>아이디어 + 맥락 + 경험</strong> — 맥락 없는 아이디어는 단순한 일상 용품일 뿐</li>
+<li><strong>겹겹이 배워라</strong> — 한 분야에 머물지 않는다</li>
+<li><strong>더 나은 방법</strong> — 기존 방식의 개선이 아닌 재설계</li>
+<li><strong>준비</strong> — 기회가 왔을 때 잡을 수 있는 상태</li>
+<li><strong>고객 중심 비즈니스 개념</strong> — 비즈니스 계획이 아닌 고객 계획</li>
+</ol>
+<hr />
+<h2>적응형 기업의 10가지 원칙</h2>
+<ol>
+<li>변화할 태세를 갖춘 산업에서 번성한다</li>
+<li>생존은 적응의 문제다</li>
+<li>고객 문제에 초점</li>
+<li>실패를 이용하라 (아메리칸 어드밴티지 사례)</li>
+<li>예외적인 고객 경험을 지속적으로 창출</li>
+<li>엔드-투-엔드 시스템 구축</li>
+<li><strong>버스에 적합한 사람을 태워라</strong> — 나이는 장점, 피벗팅·줌잉 능력</li>
+<li>혁신적 비즈니스는 합의로 운영되지 않는다 — 분명한 의사 결정권자 필요</li>
+<li>현실 세상의 맥락을 이용하라</li>
+<li>더 좋은 방법을 찾아라</li>
+</ol>
+<h3>리더십 도구</h3>
+<ul>
+<li><strong>Zooming</strong>: 큰 그림과 세부 사항 사이를 자유롭게 오가는 능력</li>
+<li><strong>Pivoting</strong>: 상황에 따라 방향을 전환하는 유연성</li>
+<li><strong>플랜 B</strong>: 위험 관리, 실패 허용 문화</li>
+<li><strong>멘토</strong>: 또 다른 시각 제공 — 단, 의사결정을 흐리게 하거나 정치를 만들어선 안 됨</li>
+</ul>
+<hr />
+<h2>적용 — 의료 선교 맥락에서</h2>
+<ul>
+<li><strong>의료 서비스의 파괴</strong>는 위기가 아니라 기회 — 기독 의료인에게 새로운 모델을 만들 공간</li>
+<li>MDLIVE 사례 = 접근성 낮은 지역 의료 선교에 적용 가능 (원격 진료, 저비용 모델)</li>
+<li>"고객 중심" = <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a>의 "환자 중심" + <a class="wl" href="../../b/%EB%94%94%EC%A6%88%EB%8B%88%EB%B3%91%EC%9B%90%EC%9D%98%EC%84%9C%EB%B9%84%EC%8A%A4%EB%A6%AC%EB%8D%94%EC%8B%AD/">디즈니병원의서비스리더십</a>의 결정적 순간과 연결</li>
+<li>문샷 사고 = 망원경을 개선하는 것이 아니라 <strong>선교의 패러다임 자체를 재설계하는 것</strong></li>
+</ul>
+<hr />
+<h2>미해결 질문</h2>
+<ul>
+<li>기독 의료 사역에서 "문샷"은 무엇인가? — 지금 하는 사역의 점진적 개선인가, 패러다임 전환인가?</li>
+<li>적응형 혁신의 "최저 가격" 원칙과 의료 사역의 지속가능성은 어떻게 균형을 잡는가?</li>
+</ul>
+<hr />
+<h2>관련 페이지</h2>
+<ul>
+<li><a class="wl" href="../../t/%EB%A6%AC%EB%8D%94%EC%8B%AD/">리더십</a> — 적응형 리더십, 의사결정, 멘토</li>
+<li><a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a> — 문샷 사고와 소명의 관계</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a> — 의료 혁신과 기독 의료인의 역할</li>
+<li><a class="wl" href="../../b/%EB%94%94%EC%A6%88%EB%8B%88%EB%B3%91%EC%9B%90%EC%9D%98%EC%84%9C%EB%B9%84%EC%8A%A4%EB%A6%AC%EB%8D%94%EC%8B%AD/">디즈니병원의서비스리더십</a> — 고객 경험, 결정적 순간</li>
+</ul>
+</article>
+<div class="tagrow"><span>#혁신</span><span>#리더십</span><span>#비즈니스</span><span>#의료혁신</span><span>#기술</span><span>#적응형혁신</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

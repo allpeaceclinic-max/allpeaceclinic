@@ -1,0 +1,165 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>편집비평 (Redaction Criticism) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:174">성경·해석</span><span class="date">2026-06-28</span></div>
+  <h1 class="note-title">편집비평 (Redaction Criticism)</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>편집비평(Redaktionsgeschichte)은 복음서 연구 방법론 중 하나로, 복음서 기자들이 기존 자료(마가복음, Q자료, 특수 자료 등)를 편집한 방식을 분석하여 그들의 신학적 목적과 강조점을 규명하는 접근이다. 자료비평(<a class="wl" href="../../t/%EC%9E%90%EB%A3%8C%EB%B9%84%ED%8F%89/">자료비평</a>)이 "어떤 자료를 사용했는가"를 묻는다면, 편집비평은 "그 자료를 어떻게 선택·배열·수정·삭제했는가"를 묻는다. 이를 통해 마태·마가·누가 각 복음서 기자의 독자적인 신학적 개성을 발견하는 것이 목적이다.</p>
+<h2>1. 역사적 발전</h2>
+<p>편집비평은 20세기 중반 독일 신약학에서 체계화되었다. 양식비평(<a class="wl" href="../../t/%EC%96%91%EC%8B%9D%EB%B9%84%ED%8F%89/">양식비평</a>)이 복음서를 구전 단편들의 모음집으로 보고 공동체의 역할을 강조했다면, 편집비평은 공동체뿐 아니라 <strong>기자 자신의 신학적 의도</strong>에 주목한다. 루돌프 불트만(<span class="wl-dead" title="위키 내부 링크">루돌프불트만</span>)의 양식비평 이후, 군터 보른캄(마태), 한스 콩첼만(누가), 빌리 마르크센(마가)이 각각 편집비평 접근을 체계화했다.</p>
+<h2>2. 6가지 편집 측면</h2>
+<p>MBTS 3주차 강의에서 편집비평은 다음 여섯 가지 측면을 분석한다고 소개된다.</p>
+<table>
+<thead>
+<tr>
+<th>편집 측면</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>삽입</td>
+<td>자료에 없는 새 내용을 끼워 넣음</td>
+</tr>
+<tr>
+<td>삭제</td>
+<td>자료에 있던 내용을 생략함</td>
+</tr>
+<tr>
+<td>자료 배열</td>
+<td>이야기·가르침의 순서를 재편성함</td>
+</tr>
+<tr>
+<td>편집 이음새</td>
+<td>단락 사이를 연결하는 서술을 추가함</td>
+</tr>
+<tr>
+<td>추가</td>
+<td>기존 자료에 신학적 설명·해석을 덧붙임</td>
+</tr>
+<tr>
+<td>어법 변화</td>
+<td>단어·표현을 수정하여 신학적 뉘앙스를 조정함</td>
+</tr>
+</tbody>
+</table>
+<p>이 여섯 측면을 추적하면 각 복음서 기자가 동일한 예수 전승을 가지고 어떻게 서로 다른 신학적 강조를 구현했는지가 드러난다.</p>
+<h2>3. 기여: 복음서 다양성을 신학적으로 이해하기</h2>
+<p>편집비평의 핵심 기여는 공관복음 사이의 차이를 오류나 모순이 아니라 <strong>신학적 목적의 차이</strong>로 읽는 시각을 제공한다는 데 있다. 예를 들어, 마태가 누가와 다르게 특정 비유를 배치하거나 예수의 말씀을 다른 문맥에 놓을 때, 이는 단순한 기억의 차이가 아니라 마태의 신학적 관심(예: 교회론, 유대 율법과의 관계)을 반영한다는 식이다. 복음서 기자들이 "구전전승과 복음서 자료들을 자신들의 신학을 가지고 창조적이며 의도적으로 수정하여서 복음서를 기록했다"는 것이 편집비평의 기본 주장이다.</p>
+<p>이 시각은 공관복음 병행 본문을 읽을 때 각 기자의 강조를 발견하는 실천적 도구가 된다. 누가복음 6주차 강의에서 누가가 예루살렘 여정(눅 9:51-19:27, 약 10장)에 특수 자료를 집중 배치한 것 자체가 편집비평적 관찰이다.</p>
+<h2>4. 한계와 유보</h2>
+<p>강의는 편집비평의 네 가지 한계를 제시한다.</p>
+<ol>
+<li><strong>두 자료설 의존</strong>: 편집비평은 마가복음 우선설과 Q자료 가설을 전제해야 작동한다. 이 전제가 흔들리면 편집 분석의 근거도 약해진다.</li>
+<li><strong>단일 동기의 과잉 귀속</strong>: 모든 편집 변화가 신학적 동기만은 아닐 수 있다. 역사적 정확성 추구나 문체적 선호도 편집 변화의 이유가 될 수 있다.</li>
+<li><strong>삶의 정황 과잉 구체화</strong>: 복음서가 전제하는 교회 공동체 상황(<em>Sitz im Leben der Kirche</em>)을 지나치게 구체적으로 재구성하려는 경향이 있다.</li>
+<li><strong>역사적 신빙성 과소평가</strong>: 편집 변화를 강조하다 보면 복음서의 역사적 신뢰성을 불필요하게 의심하게 될 위험이 있다.</li>
+</ol>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>편집비평은 복음서 기자들을 단순한 "가위와 풀" 편집자가 아니라, 신학적 비전을 가진 저자로 읽는 길을 열었다.</li>
+<li>차이점이 곧 모순이 아니라는 원칙은 공관복음 병행 본문 연구의 출발점이다.</li>
+<li>두 자료설을 절대화하지 않아야 편집비평도 남용되지 않는다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>편집 변화와 역사적 사실의 보존 사이에 어느 지점에서 균형을 찾아야 하는가?</li>
+<li>마가복음이 편집비평의 기준점(ur-text)으로 사용될 때, 마가 자신의 편집 행위는 어떻게 평가해야 하는가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%96%91%EC%8B%9D%EB%B9%84%ED%8F%89/">양식비평</a> — 편집비평의 전단계. 구전 전승과 공동체 역할을 분석.</li>
+<li><a class="wl" href="../../t/%EC%9E%90%EB%A3%8C%EB%B9%84%ED%8F%89/">자료비평</a> — 편집비평의 전제를 제공. 마가 우선설·Q자료 등.</li>
+<li><a class="wl" href="../../t/%EA%B3%B5%EA%B4%80%EB%B3%B5%EC%9D%8C%EB%AC%B8%EC%A0%9C/">공관복음문제</a> — 편집비평이 실제 적용되는 핵심 문제.</li>
+<li><a class="wl" href="../../t/%EB%B3%B5%EC%9D%8C%EC%84%9C%EC%97%B0%EA%B5%AC/">복음서연구</a> — 편집비평을 포함하는 더 넓은 복음서 연구 방법론 지형.</li>
+<li><span class="wl-dead" title="위키 내부 링크">03주_공관복음</span> — 편집비평의 6가지 측면, 기여와 한계를 체계적으로 다룬 강의.</li>
+</ul>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/신약학</span><span>#discipline/해석학</span><span>#topic/복음서연구</span><span>#topic/공관복음문제</span><span>#topic/성경해석학</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

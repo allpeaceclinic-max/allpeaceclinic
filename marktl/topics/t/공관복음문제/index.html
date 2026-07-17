@@ -1,0 +1,164 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>공관복음 문제 (Synoptic Problem) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:174">성경·해석</span><span class="date">2026-06-28</span></div>
+  <h1 class="note-title">공관복음 문제 (Synoptic Problem)</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>공관복음 문제(Synoptic Problem)란 마태·마가·누가복음이 서로 어떤 문학적 관계에 있는가를 해명하려는 신약학의 핵심 논쟁이다. 세 복음서는 사건의 순서·표현·구조에서 현저한 일치를 보이면서도 동시에 고유한 자료와 관점을 유지한다. 이 현상을 설명하려면 세 복음서 중 어느 것이 먼저 기록되었으며, 저자들이 서로의 자료를 어떻게 활용했는지 밝혀야 한다.</p>
+<h2>1. 문제의 핵심 — 왜 이 논쟁이 중요한가</h2>
+<p>신약개론I 3주 강의는 복음서 연구의 네 방법론(양식비평·자료비평·편집비평·문학비평) 중 자료비평(<a class="wl" href="../../t/%EC%9E%90%EB%A3%8C%EB%B9%84%ED%8F%89/">자료비평</a>)이 공관복음 문제를 직접 다루는 영역이라고 소개한다. 복음서 저자들이 어떤 자료를 사용했는가를 이해해야, 각 복음서의 신학적 강조와 편집 의도를 파악하는 편집비평(<a class="wl" href="../../t/%ED%8E%B8%EC%A7%91%EB%B9%84%ED%8F%89/">편집비평</a>)도 가능하다. 즉 공관복음 문제는 복음서 해석 전체의 전제 조건이다.</p>
+<h2>2. 주요 학설 비교</h2>
+<table>
+<thead>
+<tr>
+<th>학설</th>
+<th>제안자</th>
+<th>핵심 주장</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>상호의존설</td>
+<td><span class="wl-dead" title="위키 내부 링크">어거스틴</span></td>
+<td>마태→마가→누가 순 의존</td>
+</tr>
+<tr>
+<td>두 복음설(그리스바흐 가설)</td>
+<td>J.J. Griesbach</td>
+<td>마태→누가→마가 순</td>
+</tr>
+<tr>
+<td>두 자료설</td>
+<td>C.H. Weise</td>
+<td>마가 + Q → 마태·누가</td>
+</tr>
+<tr>
+<td>마가복음 우선설</td>
+<td>Karl Lachmann, C.G. Wilke</td>
+<td>마가 = 마태·누가의 근거</td>
+</tr>
+<tr>
+<td>네 자료설</td>
+<td>B.H. Streeter</td>
+<td>마가 + <a class="wl" href="../../t/Q%EC%9E%90%EB%A3%8C/">Q자료</a> + M(마태 특수) + L(누가 특수)</td>
+</tr>
+</tbody>
+</table>
+<h2>3. 마가복음 우선설의 통계적 근거</h2>
+<p>신약개론I 3주 강의가 제시하는 마가복음 우선설의 핵심 근거는 통계다. 마가 복음 단어의 97%가 마태복음에, 88% 이상이 누가복음에 등장한다. 반면 마태-누가 단독 일치는 희소하다. 더불어 마가복음이 문법적으로 더 불규칙하고 아람어가 더 많다는 점(초기 전승의 흔적), 신학적으로 난해한 진술이 마가에 더 많다는 점도 마가 우선의 근거다.</p>
+<h2>4. Q자료와 이중전승</h2>
+<p><a class="wl" href="../../t/Q%EC%9E%90%EB%A3%8C/">Q자료</a>는 마가복음에는 없으나 마태·누가복음에 문자적으로 일치하는 예수의 가르침 구절 약 250개("이중전승")를 설명하기 위해 가설된 공통 자료다. 강의는 Q자료의 존재가 "충분히 증명된 것"이 아님을 인정하면서도, 이중전승을 설명할 가장 경제적 가설로 두 자료설을 작업 이론으로 채택한다.</p>
+<h2>5. 마태복음 저자 논쟁과의 접점</h2>
+<p>신약개론I 5주 강의(<span class="wl-dead" title="위키 내부 링크">05주_마태복음</span>)에서 공관복음 문제는 마태복음 저자 논쟁과 교차한다. 만약 마태가 마가복음을 사용했다면(두 자료설), 세리 사도 마태가 직접 저자라는 주장에 설명이 필요해진다 — 목격자인 마태가 왜 후기 자료인 마가복음을 사용했겠는가? 강의는 파피아스의 "로기아"가 복음서 전체가 아닌 예수님의 말씀 모음집일 수 있다는 해석으로 이 긴장을 완화한다.</p>
+<h2>6. 두 자료설의 한계와 작업 이론으로서의 지위</h2>
+<p>강의는 "두 자료설을 작업 이론으로서 이해하고 취급해야 하며, 특정한 사건에서는 두 자료설에 기초를 둔 설명이 맞지 않을 수도 있다는 가능성을 수용해야 한다"고 결론 내린다. 복음서 형성 과정은 매우 복잡하며, 어느 한 이론으로 모든 현상을 설명할 수 없다는 인식론적 겸손이 요청된다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>공관복음 문제는 복음서들의 다양성이 모순이 아니라 고대 전기(Biography) 장르의 특성임을 이해하게 해준다.</li>
+<li>마가복음 우선설의 통계적 근거(97%, 88%)는 설득력이 높으나, 이를 절대화하면 다른 설명이 불가능해진다.</li>
+<li>두 자료설을 전제로 해야 작동하는 편집비평은, 이 전제를 의심할 때 새로운 근거가 필요해진다.</li>
+<li>Q자료의 존재는 학계의 지배적 가설이지만 물질적 증거는 없다 — 인식론적 거리를 유지해야 한다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>Q자료가 실제 문서로 존재했는가, 아니면 공통 구전 전승을 반영하는가?</li>
+<li>마가복음 우선설을 수용한다면, 그것이 마태·누가의 역사적 신뢰성에 어떤 함의를 갖는가?</li>
+<li>두 복음설(그리스바흐 가설)을 지지하는 현대 학자들의 주요 논거는 무엇인가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%9E%90%EB%A3%8C%EB%B9%84%ED%8F%89/">자료비평</a> — 공관복음 문제를 탐구하는 방법론</li>
+<li><a class="wl" href="../../t/%EC%96%91%EC%8B%9D%EB%B9%84%ED%8F%89/">양식비평</a> — 문서 이전 구전 단계 연구</li>
+<li><a class="wl" href="../../t/%ED%8E%B8%EC%A7%91%EB%B9%84%ED%8F%89/">편집비평</a> — 두 자료설을 전제로 저자 신학 탐구</li>
+<li><a class="wl" href="../../t/Q%EC%9E%90%EB%A3%8C/">Q자료</a> — 마태-누가 이중전승의 가설 공통 자료</li>
+<li><a class="wl" href="../../t/%EC%97%AD%EC%82%AC%EC%A0%81%EC%98%88%EC%88%98/">역사적예수</a> — 복음서 역사성 문제와의 교차</li>
+</ul>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/신약학</span><span>#topic/복음서연구</span><span>#topic/자료비평</span><span>#topic/공관복음문제</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

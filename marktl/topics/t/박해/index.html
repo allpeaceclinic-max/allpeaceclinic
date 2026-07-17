@@ -1,0 +1,222 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>박해 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:38">교회사</span><span class="date">2026-07-18</span></div>
+  <h1 class="note-title">박해</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>박해(迫害, persecution)는 신앙을 이유로 개인이나 공동체에 가해지는 폭력·억압·법적 제재를 아우르는 넓은 스펙트럼이다. 투옥, 강제 개종 요구, 사회적 배제, 재산 몰수에서 죽음에 이르기까지 그 강도는 다양하며, <a class="wl" href="../../t/%EC%88%9C%EA%B5%90/">순교</a>는 그 스펙트럼의 맨 끝, 증언이 죽음에 이른 극단에 놓인다. 신약 헬라어에서 '순교자(마르튀스)'가 본래 '증인'을 뜻하듯, 박해 아래의 증언이 순교로 이어지는 하나의 연속선이 있다.</p>
+<p>이 글은 박해의 신학과 통사를 다룬다 — 박해가 예수에 의해 예고된 방식, 초대교회를 규정한 박해의 역사, "순교자의 피는 교회의 씨앗"이라는 역설과 그 경계, 오늘의 박해받는 교회, 그리고 박해 앞 신앙의 응답이다. 죽음의 증언 각론 — 마르튀스라는 말의 무게, 순교의 신학, 백색 순교, 성경의 첫 순교자들 — 은 <a class="wl" href="../../t/%EC%88%9C%EA%B5%90/">순교</a>가 이미 상세히 다루므로 그쪽에 위임하고, 여기서는 박해라는 더 넓은 지형 자체를 따라간다.</p>
+<h2>1. 박해는 예고되었다 — 요한복음 15장과 팔복</h2>
+<p>박해에 대한 성경의 첫 진술은 놀랍게도 예언이 아니라 예고다. 예수께서는 박해를 우발적 재난이 아니라 제자도에 내장된 구조로 미리 말씀하셨다. "사람들이 나를 박해하였은즉 너희도 박해할 것이요"(요 15:20) — 제자가 스승보다 크지 못하므로, 세상이 머리를 미워했다면 지체도 미워하리라는 것이다. 박해는 신앙이 실패했다는 징후가 아니라, 도리어 복음과 세상 사이의 근본적 충돌이 진짜임을 보여주는 표지다.</p>
+<p>산상수훈은 이 충돌을 복의 언어로 뒤집는다. "의를 위하여 박해를 받은 자는 복이 있나니 천국이 그들의 것임이라 … 나로 말미암아 너희를 욕하고 박해하고 거짓으로 너희를 거슬러 모든 악한 말을 할 때에는 너희에게 복이 있나니 기뻐하고 즐거워하라"(마 5:10-12). 팔복의 마지막 자리에 박해가 놓인다는 사실이 의미심장하다 — 박해는 신앙 여정의 예외적 사고가 아니라 그 여정이 도달하는 한 정점이며, 선지자들이 걸어간 길과 같은 길이다. 예수께서 박해를 예고하셨기에, 초대교회는 박해를 만났을 때 그것을 배신이 아니라 약속의 성취로 읽을 수 있었다.</p>
+<h2>2. 초대교회 박해사 — 산발에서 조직으로</h2>
+<p>초대교회 세 세기는 박해의 역사와 겹친다. 그 역사는 산발적·국지적 박해에서 조직적·전 제국적 박해로 진화했다. 로마가 그리스도인을 미워한 이유 자체가 증언과 맞닿아 있었다 — 다신교 제국에서 한 분 하나님만 섬기는 이들은 무신론자로 몰렸고, 황제 숭배를 거부하는 "나는 그리스도인이다"라는 한 문장이 사형 선고가 되었다. MBTS 교회사I 강의가 그리는 흐름을 따라 그 진화를 표로 정리하면 다음과 같다.</p>
+<table>
+<thead>
+<tr>
+<th>시기</th>
+<th>박해</th>
+<th>성격</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>64년</td>
+<td>네로 — 로마 대화재 누명, 베드로·바울 순교 전승</td>
+<td>국지적·황제 개인의 광기</td>
+</tr>
+<tr>
+<td>1세기 말</td>
+<td>도미티아누스 — 황제 숭배 거부자 압박 (요한계시록의 배경)</td>
+<td>산발적·지역적</td>
+</tr>
+<tr>
+<td>2세기</td>
+<td>트라야누스 등 — 고발당하면 처벌하되 색출은 삼감</td>
+<td>산발적·법적 애매함</td>
+</tr>
+<tr>
+<td>202년경</td>
+<td>셉티미우스 세베루스 — 개종 금지</td>
+<td>지역적·표적적</td>
+</tr>
+<tr>
+<td>250년경</td>
+<td>데키우스 — 전 제국에 희생제사 명령·증명서 요구</td>
+<td>최초의 조직적·전 제국</td>
+</tr>
+<tr>
+<td>257년</td>
+<td>발레리아누스 — 성직자와 교회 재산 표적</td>
+<td>조직적</td>
+</tr>
+<tr>
+<td>303~311년</td>
+<td>디오클레티아누스 대박해 — 성경 소각·교회 파괴</td>
+<td>최대이자 최후</td>
+</tr>
+<tr>
+<td>313년</td>
+<td>밀라노 칙령 — 신앙의 자유 선언</td>
+<td>박해의 종식</td>
+</tr>
+</tbody>
+</table>
+<p>이 진화의 분수령은 데키우스(250년)다. 그 이전의 박해가 대체로 지역 군중이나 개별 황제의 변덕에 좌우된 산발적 사건이었다면, 데키우스에 이르러 박해는 전 제국 차원의 행정 명령이 된다 — 모든 시민이 신들에게 제사하고 증명서를 받아야 했고, 거부는 곧 반역이었다. 디오클레티아누스의 대박해가 그 정점이었고, 역설적이게도 그것은 마지막 박해이기도 했다. 313년 밀라노 칙령이 박해의 시대를 닫는다.</p>
+<h2>3. 순교자의 피는 교회의 씨앗 — 역설과 그 경계 ⚖️</h2>
+<p>이 세 세기를 한 문장으로 요약한 사람이 라틴 교부 <span class="wl-dead" title="위키 내부 링크">터툴리안</span>이다 — "순교자의 피는 교회의 씨앗이다." 무너뜨리려던 힘이 도리어 파종하는 힘이 되는 이 역설이 초대교회의 서명이 되었다. MBTS 교회사I 강의가 짚듯 대박해는 이중의 효과를 낳았다. 한편으로 신자들을 확신과 위로 안에서 강하게 연합시켰고, 다른 한편으로 배교자 처리를 둘러싼 논쟁(노바티안·도나투스파)으로 심각한 분열도 낳았다. 앨런 크라이더가 <a class="wl" href="../../b/%EC%B4%88%EA%B8%B0%EA%B5%90%ED%9A%8C%EC%9D%98%EC%9D%B8%EB%82%B4%EC%99%80%EB%B0%9C%ED%9A%A8_%ED%81%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/">『초기 교회의 인내와 발효』</a>에서 분석하듯, 조직적 전도 전략도 없던 초대교회가 3세기 동안 10년마다 40%씩 성장한 동력은 박해 속에서도 유지된 "끈기 있는 발효(patient ferment)" — 정직한 거래, 가난한 자 돌봄, 역병 때의 헌신 같은 몸에 밴 삶의 방식 — 였다. <a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EC%9D%98%EB%B3%80%EC%A7%88_%ED%81%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/">또 다른 저작</a>이 기록하듯 공적 처형 현장에서도 평화의 입맞춤과 기도로 드러난 이 아비투스를, 외부인들은 예배가 아니라 삶으로 보았다.</p>
+<p>그러나 이 역설을 낭만화하는 순간 그것은 위험한 공식이 된다 ⚖️. 박해가 자동으로 성장을 보장하지는 않기 때문이다. <a class="wl" href="../../t/%EC%88%9C%EA%B5%90/">순교</a> 노트가 일본 교회의 소멸 사례로 짚듯, 어떤 박해는 교회를 정화·성장시키고 어떤 박해는 분열·소멸로 이어진다. 그 둘을 가르는 것은 박해의 강도가 아니다. 로잔 대회 증언자들이 거듭 말했듯 "핍박은 절대 교회를 무너뜨리지 못하지만, 타협한 교회는 무너진다." 관건은 박해 자체가 아니라 타협 여부이며, 박해를 성장의 공식으로 계산하려는 순간 순교의 신학은 성공의 논리로 미끄러진다. 순교의 통계와 신학 각론은 <a class="wl" href="../../t/%EC%88%9C%EA%B5%90/">순교</a>에 위임한다.</p>
+<h2>4. 오늘의 박해받는 교회 — 창의적 접근 지역</h2>
+<p>박해는 과거형이 아니다. 오늘도 매년 수천 명의 그리스도인이 신앙 때문에 죽고, 훨씬 많은 이들이 투옥·차별·감시 아래 산다. 2024 로잔 서울 대회(L4) 4일차 박해 세션은 이 현실을 정면으로 다뤘다. 이란 가정교회 지도자 <span class="wl-dead" title="위키 내부 링크">파르시드파시</span>는 2010년 체포되어 5년을 독방에서 보낸 뒤 출소했을 때, 이란 교회가 오히려 추정 100만 명 규모로 성장해 있었다고 증언했다 — 2년간 48개 교회가 개척된 사례가 보고될 만큼 지하 네트워크는 확산되어 있었다. "고난은 사랑의 가장 큰 표현"이며 "우리는 이야기의 결말을 안다"는 그의 말은, 창의적 접근 지역(무슬림권 등 복음 전파가 제약된 지역)에서 신앙이 어떤 대가를 동반하는지를 보여준다.</p>
+<p>주목할 것은 관점의 전환이다. 로잔 세션의 중동·북아프리카 증언자들은 박해받는 이들을 "피해자(victim)"가 아니라 "회복력 있는 증인(resilient witness)"으로 바라볼 것을 제안했다. <span class="wl-dead" title="위키 내부 링크">패트릭퐁</span>은 사도행전 8·11·12장을 본문으로, 흩어진 무명의 자들의 힘·신뢰의 힘·신실한 증인의 힘을 짚으며 신약에서 '그리스도인'이 3번 언급되는 동안 '제자'는 230번 등장한다는 사실로 박해를 견디는 힘의 뿌리가 급진적 <a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%ED%9B%88%EB%A0%A8/">제자도</a>임을 강조했다. 박해받는 교회를 향한 대응도 시혜가 아니라 동역의 언어로 제시된다 — 정보 수집에서 보고, 방문, 그리고 교육·일자리 같은 맥락 속의 실질적 도움으로.</p>
+<h2>5. 박해 아래의 응답 — 도피·저항·인내의 분별</h2>
+<p>박해 앞에서 신자의 응답은 하나가 아니다. 성경과 초대교회는 세 갈래의 응답을 보여주며, 그 셋 사이의 분별을 요구한다. 첫째는 도피(흩어짐)다. 스데반의 순교 이후 예루살렘 교회에 큰 박해가 일어나자 "흩어진 사람들이 두루 다니며 복음의 말씀을 전"(행 8:4)했다. 여기서 도피는 비겁이 아니라 선교의 매개가 된다 — 흩어짐의 종착지가 이방인 교회 안디옥이었고, 거기서 신자들은 처음으로 "그리스도인"이라 불렸다. 둘째는 저항이다. 황제 숭배를 거부하고 신앙 고백을 고수하며 타협을 거절하는 것, 곧 "나는 그리스도인이다"를 끝내 물리지 않는 것이다. 셋째는 인내다. 크라이더가 말한 patient ferment처럼, 도망치지도 맞서지도 않으면서 박해의 한복판에서 아비투스를 지키며 버티는 것이다.</p>
+<p>어느 것이 옳은가. 성경은 상황적 분별을 보여준다 — 예수께서도 때가 이르지 않았을 때는 갈릴리로 피하셨고, 때가 찼을 때는 예루살렘으로 올라가셨다. 도피가 언제나 비겁인 것도, 저항이 언제나 충성인 것도 아니다. 만용은 도피만큼이나 공동체를 위태롭게 할 수 있고, 무분별한 인내는 타협으로 미끄러질 수 있다. 이 분별의 뿌리가 급진적 제자도라는 패트릭퐁의 통찰이 여기서 다시 유효하다. 한국 교회의 오늘도 이 분별을 요구한다 — L4 소그룹 나눔이 짚었듯, 안티크리스천 정서와 세속화 속에서 자초한 기독교 혐오는 고전적 박해와 다른 "미묘한 형태의 박해"다. "크리스천인 것이 부끄러운 시대"에, 이 새로운 압력에 도피·저항·인내 중 무엇으로, 어떻게 회복력 있는 증인이 될 것인가가 물음으로 남는다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>박해는 예수에 의해 예고되었다(요 15:20, 마 5:10-12) — 신앙의 실패 징후가 아니라 복음과 세상의 근본 충돌의 표지이며, 팔복의 정점에 놓인다.</li>
+<li>초대교회 박해는 산발적·국지적(네로·도미티아누스)에서 조직적·전 제국적(데키우스 250년 이후·디오클레티아누스)으로 진화했고, 313년 밀라노 칙령으로 종식되었다.</li>
+<li>"순교자의 피는 교회의 씨앗"(터툴리안)은 박해 속 아비투스가 낳은 발효적 성장의 역설이지만 ⚖️, 낭만화는 금물이다 — 박해는 자동으로 성장을 보장하지 않으며, 성장과 소멸을 가르는 것은 박해가 아니라 타협 여부다.</li>
+<li>오늘의 박해는 진행형이며(이란·창의적 접근 지역), 박해받는 이는 "피해자"가 아니라 "회복력 있는 증인"으로 보아야 한다. 견디는 힘의 뿌리는 급진적 제자도다.</li>
+<li>박해 앞 응답은 도피·저항·인내의 세 갈래이며, 상황적 분별을 요구한다 — 도피가 선교가 되고(행 8:4), 저항이 충성이 되며, 인내가 발효가 되는 자리는 각기 다르다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>박해가 교회를 정화·성장시키는 경우와 분열·소멸로 이어지는 경우(일본 사례)를 가르는 요인은 정확히 무엇인가 — 타협 여부 외에 어떤 변수가 작동하는가.</li>
+<li>한국 교회가 직면한 사회적 불신·기독교 혐오는 고전적 박해와 어떻게 다르며, 회복력 있는 증인됨의 원리를 이 "미묘한 박해"에 어떻게 적용하는가.</li>
+<li>도피·저항·인내의 분별에 성경적 기준이 있는가 — 언제 피하고 언제 맞서고 언제 버티는지를 무엇으로 판단하는가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%88%9C%EA%B5%90/">순교</a> — 박해의 극단으로서의 순교. 마르튀스 어원, 순교 신학 3축, 백색 순교, 성경의 첫 순교자 각론.</li>
+<li><a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EC%82%AC/">교회사</a> · <a class="wl" href="../../t/%EC%B4%88%EB%8C%80%EA%B5%90%ED%9A%8C/">초대교회</a> — 대박해기(175~313)와 밀라노 칙령의 흐름.</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> — 흩어짐이 파종이 되는 박해-선교의 역설.</li>
+<li><a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%ED%9B%88%EB%A0%A8/">제자훈련</a> — 박해를 견디는 힘의 뿌리로서의 급진적 제자도.</li>
+<li><a class="wl" href="../../t/%EA%B3%A0%EB%82%9C/">고난</a> — 박해가 뿌리내리는 고난의 신정론.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">02주_초대교회의신앙정립</span></td>
+<td>강의</td>
+<td>대박해기(세베루스→데키우스→발레리아누스→디오클레티아누스), 박해의 이중효과(연합·분열), 배교자 처리 문제</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">터툴리안</span></td>
+<td>인물</td>
+<td>"순교자의 피는 교회의 씨앗"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2024L4로잔</span> · <span class="wl-dead" title="위키 내부 링크">패트릭퐁</span> · <span class="wl-dead" title="위키 내부 링크">파르시드파시</span></td>
+<td>컨퍼런스·인물</td>
+<td>박해와 선교 세션, "타협한 교회는 무너진다", 이란 교회 성장, 회복력 있는 증인, 급진적 제자도</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%B4%88%EA%B8%B0%EA%B5%90%ED%9A%8C%EC%9D%98%EC%9D%B8%EB%82%B4%EC%99%80%EB%B0%9C%ED%9A%A8_%ED%81%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/">초기교회의인내와발효_크라이더</a> · <a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EC%9D%98%EB%B3%80%EC%A7%88_%ED%81%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/">선교의변질_크라이더</a></td>
+<td>책(크라이더)</td>
+<td>patient ferment와 발효적 성장, 처형 현장의 아비투스</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%88%9C%EA%B5%90/">순교</a></td>
+<td>위키</td>
+<td>일본 교회 소멸 사례, 순교 통계·신학 위임처</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/교회사</span><span>#초대교회</span><span>#대박해기</span><span>#종교의자유</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

@@ -1,0 +1,204 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>양심 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:226">조직신학·교리</span><span class="date">2026-07-17</span></div>
+  <h1 class="note-title">양심</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>양심(συνείδησις, 쉬네이데시스)은 자기 행위를 선악의 기준에 비추어 고발하거나 변호하는 내면의 증인이다. 어원 그대로 "함께(συν) 앎(εἴδησις)" — 내가 한 일을 나와 함께 아는 또 하나의 목격자다. 바울은 롬 2:14-15에서 율법 없는 이방인도 "마음에 새겨진 율법"을 따라 행할 때 그들의 양심이 증거가 되어 생각들이 "서로 고발하거나 변명한다"고 말한다. 양심은 하나님의 형상의 한 자락이며, 구원 여부와 무관하게 모든 사람에게 주어진 도덕 인식 기관이다.</p>
+<p>이 글은 그 기관 자체를 다룬다. 양심이 가리키는 보편 도덕 질서의 존재론 — 자연법과 일반계시 — 은 이미 <a class="wl" href="../../t/%EC%9E%90%EC%97%B0%EB%B2%95/">자연법</a>과 <a class="wl" href="../../t/%EC%9D%BC%EB%B0%98%EA%B3%84%EC%8B%9C/">일반계시</a>가 정본으로 다루었으므로 여기서는 넘긴다. 남는 물음은 안쪽을 향한다. 양심은 언제나 옳은가, 양심은 무엇으로 형성되고 무엇으로 망가지는가, 강제될 수 없는 이 내면의 법정을 국가와 교회는 어디까지 존중해야 하는가. 그리고 매일 남의 몸과 생명 앞에서 판단하는 의료인에게 양심은 어떤 자리인가.</p>
+<h2>1. 마음에 새겨진 율법 — 입법자가 아니라 증인</h2>
+<p>양심을 이해하는 출발점은 롬 2:14-15이다. 시내산 언약을 받지 못한 이방인도 "본성으로 율법의 일을 행할 때" 그 자체가 자기에게 율법이 되고, 양심이 함께 증언한다. 전성민 교수가 이를 "상식(common sense)"으로 풀어내듯, 명문 조항이 없어도 "인간이라면 해서는 안 되는 짓"이라는 감각이 모든 양심에 새겨져 있다. 아모스가 언약 밖 열방의 반인륜적 범죄를 심판하는 근거가 바로 여기다.</p>
+<p>그러나 이 보편 도덕 질서의 존재 자체를 논증하는 일은 자연법의 몫이다. 이 페이지가 붙드는 것은 그보다 앞선 한 가지 구별이다 — <strong>양심은 입법자가 아니라 증인이다.</strong> 양심은 스스로 법을 만들지 않고, 이미 새겨진 법에 비추어 판결할 뿐이다. 그래서 양심의 권위는 그것이 증언하는 법의 권위에서 파생한다. 이 구별을 놓치면 "내 양심이 그렇게 말한다"는 문장이 곧 도덕의 최종 근거가 되어 버리는데, 성경이 그리는 양심은 그렇게 자족적인 기관이 아니다. 증인은 자기가 본 것만 증언하며, 잘못 볼 수도 있다.</p>
+<h2>2. 양심의 상태 스펙트럼</h2>
+<p>성경은 양심을 하나의 고정된 장치가 아니라 여러 상태로 그린다. 신약의 어휘를 모으면 하나의 눈금이 드러난다 — 건강한 양심에서 마비된 양심까지.</p>
+<table>
+<thead>
+<tr>
+<th>상태</th>
+<th>성경 본문</th>
+<th>무슨 뜻인가</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>선한 양심</td>
+<td>딤전 1:5, 1:19 · 벧전 3:16</td>
+<td>믿음·진실과 함께 작동하는 청결한 양심</td>
+</tr>
+<tr>
+<td>약한 양심</td>
+<td>고전 8:7-12</td>
+<td>지식이 부족해 자유 앞에서 걸려 넘어지는 양심</td>
+</tr>
+<tr>
+<td>더러워진 양심</td>
+<td>딛 1:15</td>
+<td>불신으로 오염되어 순결을 잃은 양심</td>
+</tr>
+<tr>
+<td>화인 맞은 양심</td>
+<td>딤전 4:2</td>
+<td>반복된 거역으로 감각이 죽은 양심</td>
+</tr>
+</tbody>
+</table>
+<p>양 끝이 특히 중요하다. <strong>약한 양심</strong>을 바울은 고전 8장에서 우상 제물 문제로 다룬다. 지식 있는 자에게는 우상이 아무것도 아니지만, 그런 지식이 없는 형제의 양심은 그 음식에 걸려 상한다. 권성수 목사가 「본의 사다리」에서 이 본문을 강해하며 붙드는 원칙이 여기다 — 내 자유가 옳더라도 형제의 약한 양심을 상하게 하면 "그리스도께 죄를 짓는 것"이다. 자유보다 사랑이 앞선다. 반대편 끝의 <strong>화인 맞은 양심</strong>은 불에 지진 살처럼 통증을 잃은 상태다. 거역이 반복되면 양심은 더 이상 고발하지 않는다 — 가장 무서운 것은 양심의 가책이 아니라 가책의 소멸이다. 이 스펙트럼 자체가 하나의 결론을 강제한다. 양심은 강해질 수도 마비될 수도 있는 <strong>살아 있는 기관</strong>이지, 오류 없는 신탁이 아니다.</p>
+<h2>3. 양심은 무오하지 않다 — 재교육되는 기관</h2>
+<p>앞의 스펙트럼이 곧바로 함의하는 바가 있다. 약한 양심은 정당한 자유를 부당하게 정죄하고, 화인 맞은 양심은 명백한 죄를 무죄로 방면한다. 곧 <strong>양심은 틀릴 수 있다.</strong> 전성민 교수가 자연법의 약점을 다루며 월터 브루그만의 창조 신학 비판을 끌어온 지점이 이 위험의 사회적 판본이다 — "무엇이 자연스러운가"의 정의권이 권력과 결합하면, 양심조차 가부장제와 인종주의를 "정상 질서"로 승인한다. 내 집단에 익숙한 것을 양심이 곧 도덕법으로 착각하는 부족주의적 왜곡이다. <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%9C%A4%EB%A6%AC%ED%95%99/">기독교윤리학</a>이 정리하듯, 타락은 양심을 완전히 지우지 못하되 손상된 채로 남긴다.</p>
+<p>그러므로 양심은 최종 심판관이 아니라 <strong>재교육되어야 할 기관</strong>이며, 그 교사는 성령과 말씀이다. 약한 양심은 바른 지식으로 강화되어야 하고(고전 8장이 결국 겨냥하는 성장), 화인 맞은 양심은 회개로 감각을 되찾아야 한다. 여기서 흔한 격언 하나가 절반만 참이 된다 — "양심을 따르라"는 옳되 불완전하다. 그 앞에 "양심을 하나님의 말씀으로 교육하라"가 선행하지 않으면, 잘못 형성된 양심을 따르는 것은 오류를 확신 있게 따르는 일이 된다. 성화란 행동만이 아니라 이 판단 기관 자체가 그리스도의 마음으로 다시 조율되는 과정이다.</p>
+<h2>4. 양심의 자유 — 강제될 수 없는 내면의 법정</h2>
+<p>양심이 각 사람의 것이고 하나님과 개인 사이에서 형성되는 것이라면, 국가도 교회도 그것을 대신 판결할 수 없다. 이 확신이 침례교 전통의 심장인 양심의 자유(soul liberty)다. 아이작 배커스의 정식 — "참 종교는 하나님에 대한 자발적 복종" — 이 그 한 문장 요약이며, 강제된 신앙은 신앙이 아니다. 스미스·헬위스·로저 윌리엄스·존 릴런드를 거쳐 미국 수정헌법 제1조에 이르는 이 계보의 상세는 <a class="wl" href="../../t/%EC%A0%95%EA%B5%90%EB%B6%84%EB%A6%AC/">정교분리</a>·<a class="wl" href="../../t/%EC%B9%A8%EB%A1%80%EA%B5%90%ED%9A%8C/">침례교회</a>·<a class="wl" href="../../t/%EC%96%91%EC%8B%AC%EC%9D%98%EC%9E%90%EC%9C%A0/">양심의자유</a>가 완성판으로 다루므로 여기서는 넘긴다.</p>
+<p>붙들 것은 하나의 구별이다 — <strong>양심의 자유는 도덕 상대주의가 아니다.</strong> 진리가 없어서 각자 알아서 하라는 것이 아니라, 진리는 본래 강제로 심어지지 않기에 자유가 필요하다는 것이다. §3에서 본 대로 양심은 교육되어야 하지만, 그 교육은 설득이지 강압이 아니다. 바울이 롬 14장에서 먹는 문제로 다투는 성도들에게 "각각 자기 마음으로 확정하라"고 한 것이 이 자유의 사도적 뿌리다. 형제의 확신을 억지로 내 것에 맞추려 하지 말고, 각자 주 앞에서 서게 하라는 것. 양심의 자유는 서로 다른 확신을 가진 사람들이 한 몸으로 살아가는 법이다.</p>
+<h2>5. 진료실의 양심 — 의료인의 자리</h2>
+<p>이 모든 논의가 한 임상의의 손끝에서 시험받는다. 바울이 목회의 목표를 "청결한 마음과 선한 양심과 거짓 없는 믿음에서 나오는 사랑"(딤전 1:5)으로 요약했듯, 진료 역시 선한 양심에서 나올 때 비로소 섬김이 된다. 그런데 진료실에는 §2의 두 양심 문제가 함께 살아 있다. 하나는 <strong>약한 양심의 배려</strong>다. 나에게는 아무 문제가 아닌 처치나 조언이 환자나 동료의 양심을 상하게 할 수 있고, 고전 8장의 원칙 — 내 자유보다 상대의 약한 양심 — 이 그대로 적용된다.</p>
+<p>다른 하나는 더 날카롭다. <strong>양심적 진료 거부</strong>의 딜레마다. 생명의 시작과 끝에 관여하는 특정 시술 앞에서, 의료인 자신의 양심의 자유(§4)와 환자의 자율·직업적 의무가 정면으로 부딪힌다. 여기서 §3의 겸손이 다시 요구된다 — 내 거부가 성숙한 양심의 판단인지 교육되지 않은 편견인지를 먼저 물어야 하며, 동시에 §4의 원칙에 따라 그 양심은 강제로 꺾이지 않아야 한다. <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%9C%A4%EB%A6%AC%ED%95%99/">기독교윤리학</a>이 진료실에 던지는 세 질문 — 이 행위가 사람을 섬기는가 이용하는가, 누가 혜택을 받고 누가 제외되는가, 나를 더 사랑 많은 의사로 만드는가 — 이 이 판단의 저울이 된다. 다만 양심적 거부의 구체적 경계(어디까지가 정당한 거부이고 어디부터가 의무의 방기인가)는 생명윤리의 각론이며, <a class="wl" href="../../t/%EC%83%9D%EB%AA%85%EC%9C%A4%EB%A6%AC/">생명윤리</a>·<a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a>에 맡긴다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>양심(쉬네이데시스)은 입법자가 아니라 증인이다 — 스스로 법을 만들지 않고 이미 새겨진 법(롬 2:15)에 비추어 판결하며, 그 권위는 증언하는 법에서 파생한다.</li>
+<li>성경의 양심은 고정된 장치가 아니라 상태의 스펙트럼이다 — 선한 양심(딤전 1:5)에서 약한 양심(고전 8), 더러워진 양심(딛 1:15), 화인 맞은 양심(딤전 4:2)까지. 가장 위험한 것은 가책이 아니라 가책의 소멸이다.</li>
+<li>양심은 무오하지 않다. 약한 양심은 잘못 정죄하고 화인 양심은 잘못 방면하며, 권력과 결합한 양심은 억압을 "정상"으로 승인한다(전성민·브루그만). 그러므로 양심은 성령과 말씀으로 재교육되어야 할 기관이다.</li>
+<li>"양심을 따르라"는 절반만 참이다 — "양심을 하나님의 말씀으로 교육하라"가 선행해야 한다. 성화는 판단 기관 자체가 그리스도의 마음으로 조율되는 과정이다.</li>
+<li>양심의 자유(soul liberty)는 상대주의가 아니다 — 진리가 없어서가 아니라 진리는 강제로 심어지지 않기에 자유가 필요하다(롬 14:5, 배커스).</li>
+<li>진료실에서 양심은 두 번 시험받는다 — 환자·동료의 약한 양심을 배려하는 자리에서, 그리고 양심적 거부와 직업적 의무가 충돌하는 자리에서.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>잘못 형성된 양심(약한 양심·화인 양심)의 판단을 "존중"하는 것과 "교육"하는 것은 실천에서 어떻게 갈라지는가 — 언제 설득이고 언제 강압인가.</li>
+<li>양심의 자유가 보장하는 개인의 확신과 공동체의 진리 기준은 롬 14장 너머에서 어떻게 조화되는가. 관용은 어디까지가 사랑이고 어디부터가 진리의 방기인가.</li>
+<li>의료 현장의 양심적 거부는 어디까지가 정당한 양심의 자유이고 어디부터가 환자에 대한 의무의 방기인가 — 볼트에 이 경계를 직접 다룬 생명윤리 사료가 아직 얇다.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%9E%90%EC%97%B0%EB%B2%95/">자연법</a> — 양심이 증언하는 보편 도덕 질서의 존재론. 이 페이지가 기관을 다룬다면 저 페이지는 그 기관이 읽는 법을 다룬다.</li>
+<li><a class="wl" href="../../t/%EC%9D%BC%EB%B0%98%EA%B3%84%EC%8B%9C/">일반계시</a> — 양심을 세 통로(창조·양심·역사) 중 하나로 배치하는 계시론 총론.</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%9C%A4%EB%A6%AC%ED%95%99/">기독교윤리학</a> — 손상된 양심, 진료실의 세 질문, 자연법의 두 얼굴.</li>
+<li><a class="wl" href="../../t/%EC%96%91%EC%8B%AC%EC%9D%98%EC%9E%90%EC%9C%A0/">양심의자유</a> · <a class="wl" href="../../t/%EC%A0%95%EA%B5%90%EB%B6%84%EB%A6%AC/">정교분리</a> · <a class="wl" href="../../t/%EC%B9%A8%EB%A1%80%EA%B5%90%ED%9A%8C/">침례교회</a> — soul liberty의 정치신학과 그 계보(완성판 위임).</li>
+<li><a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a> — 양심이 그리스도의 마음으로 재교육되는 과정.</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a> · <a class="wl" href="../../t/%EC%83%9D%EB%AA%85%EC%9C%A4%EB%A6%AC/">생명윤리</a> — 양심적 거부와 진료실 윤리의 각론.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">전성민_구약에드러난자연법</span></td>
+<td>강의</td>
+<td>롬 2:14-15 양심=상식, 아모스 열방 신탁, 양심의 보편성</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">전성민_자연법의약점</span></td>
+<td>강의</td>
+<td>양심 포획(브루그만 왕정 신학), 부족 도덕감의 왜곡</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2016_본의사다리</span></td>
+<td>설교(권성수)</td>
+<td>고전 8장 약한 양심, "자유보다 사랑" — 약한 양심을 상하게 함=그리스도께 죄</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%9C%A4%EB%A6%AC%ED%95%99/">기독교윤리학</a></td>
+<td>위키 교차</td>
+<td>손상된 양심, 진료실의 세 질문</td>
+</tr>
+<tr>
+<td>신약(딤전 1:5·1:19, 딤전 4:2, 딛 1:15, 벧전 3:16, 고전 8:7-12, 롬 2:14-15, 롬 14:5)</td>
+<td>성경</td>
+<td>양심 상태의 스펙트럼, 마음에 새겨진 율법, 각자 마음의 확정</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/조직신학</span><span>#discipline/기독교윤리</span><span>#쉬네이데시스</span><span>#양심의자유</span><span>#의료윤리</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

@@ -1,0 +1,284 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>설교학 (Homiletics) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:140">목회·실천</span><span class="date">2026-07-18</span></div>
+  <h1 class="note-title">설교학 (Homiletics)</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>설교학은 설교의 준비·구성·전달을 학문적으로 다루는 실천신학의 한 분과다. 한 편의 설교가 본문에서 출발해 회중의 삶에 닿기까지의 전 과정 — 본문 연구, 중심 사상 도출, 목적 설정, 구성, 전달, 적용 — 을 원리와 방법으로 정련하는 작업이며, 신학과 성경 원어와 수사학과 커뮤니케이션 이론이 한자리에서 만나는 접합점이다.</p>
+<p>이 페이지는 그 분과 전체의 <strong>지도</strong>다. 설교 클러스터는 이미 여러 페이지로 나뉘어 각 영역의 상세를 전담한다 — 설교란 무엇이며 왜 하는가라는 신학은 <a class="wl" href="../../t/%EC%84%A4%EA%B5%90%EC%8B%A0%ED%95%99/">설교신학</a>이, 본문 석의와 중심 사상 구성의 방법론은 <a class="wl" href="../../t/%EA%B0%95%ED%95%B4%EC%84%A4%EA%B5%90/">강해설교</a>가, 전달의 기법은 <a class="wl" href="../../t/%EC%84%A4%EA%B5%90%EC%A0%84%EB%8B%AC/">설교전달</a>이, 적용의 이론은 <a class="wl" href="../../t/%EC%84%A4%EA%B5%90%EC%A0%81%EC%9A%A9/">설교적용</a>이 맡는다. 그러므로 이 글은 어느 하나를 깊이 파는 대신, 설교학이 어디에 서 있고(1), 어떤 형식들의 지도를 갖고 있으며(2), 한 편의 설교가 어떤 여정을 통과하고(3), 그 여정이 어떤 역사를 거쳐 왔는지(4)를 그린다. 상세가 필요한 자리마다 완료된 페이지로 라우팅하는 것이 이 관문 페이지의 방식이다.</p>
+<h2>1. 설교학의 자리 — 실천신학 안에서</h2>
+<p>설교학(homiletics)은 예배학·목회상담·기독교교육과 나란히 실천신학을 이루는 분과다. 성서신학과 조직신학이 "무엇을 전할 것인가"의 내용을 공급한다면, 설교학은 "그 내용을 어떻게 선포할 것인가"를 묻는다. 그러나 이 "어떻게"를 순수한 기술로 오해하면 설교학의 절반을 잃는다. MBTS 「강해설교준비실습」이 1강에서 아웃라인이나 예화가 아니라 "설교자로 헌신하기"부터 다룬 것이 이를 증언한다 — 설교학은 방법론 이전에 설교자의 소명과 인격을 다루는 학문이다.</p>
+<p>그래서 설교학은 두 얼굴을 갖는다. 한 얼굴은 규범적이다. 설교가 무엇이며 무슨 일이 일어나는가라는 물음, 곧 <a class="wl" href="../../t/%EC%84%A4%EA%B5%90%EC%8B%A0%ED%95%99/">설교신학</a>이 다루는 신학적 토대가 설교학의 지반이다. 다른 얼굴은 실천적이다. 본문에서 중심 사상을 뽑아 구성하고 전달하는 기술의 축적이 그것이다. 이 두 얼굴이 분리되면 설교학은 곧 병든다 — 신학만 있고 기술이 없으면 설교는 강의가 되고, 기술만 있고 신학이 없으면 마틴 로이드 존스가 경고한 "오락의 한 형태"로 전락한다. 건강한 설교학은 "설교자는 본문 위가 아니라 말씀 아래 선다"는 신학적 자각 위에서 기술을 훈련한다.</p>
+<h2>2. 설교 형식의 지도 ⚖️</h2>
+<p>설교학이 다루는 형식은 하나가 아니다. 각 형식은 저마다 지키려는 것과 그 대가로 치르는 것이 다르며, 어느 하나가 다른 것을 완전히 대체하지 못한다. 한국 교회 통계가 이 긴장을 압축한다 — 교인이 선호하는 설교는 강해설교(72.1%)인데 실제 설교자들이 하는 방식은 대지설교(64%)이며, 이 어긋남의 뿌리에 "대지설교를 강해설교로 잘못 이해"하는 혼동이 있다.</p>
+<table>
+<thead>
+<tr>
+<th>형식</th>
+<th>출발점·구조</th>
+<th>힘</th>
+<th>한계 ⚖️</th>
+<th>상세</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>대지 설교</strong></td>
+<td>본문의 교훈을 3~4 대지로, 연역적</td>
+<td>명료·기억 용이, 초보 설교자 접근성(곽안련)</td>
+<td>대지 부각이 본문 석의를 앞질러 '강해로 오인'</td>
+<td><a class="wl" href="../../t/%EA%B0%95%ED%95%B4%EC%84%A4%EA%B5%90/">강해설교</a></td>
+</tr>
+<tr>
+<td><strong>강해 설교</strong></td>
+<td>본문 중심, 저자의 의도가 구조를 규정</td>
+<td>본문의 권위 보존, 저자 의도 존중</td>
+<td>장르 편중(서사·시가에 약함), 통일성·적용이 빈약해질 위험</td>
+<td><a class="wl" href="../../t/%EA%B0%95%ED%95%B4%EC%84%A4%EA%B5%90/">강해설교</a></td>
+</tr>
+<tr>
+<td><strong>내러티브 설교(신설교학)</strong></td>
+<td>청중 경험에서 귀납적으로(크래독·라우리)</td>
+<td>청중 참여, '들려지는' 설교</td>
+<td>본문의 권위가 청중 경험에 종속될 위험</td>
+<td><a class="wl" href="../../t/%EC%84%A4%EA%B5%90%EC%A0%84%EB%8B%AC/">설교전달</a></td>
+</tr>
+<tr>
+<td><strong>이미지 설교</strong></td>
+<td>강해의 범주 안에서 이미지를 활용(이광재)</td>
+<td>기억·체험화, 우뇌에 호소</td>
+<td>이미지가 본문의 통제를 벗어날 위험</td>
+<td><a class="wl" href="../../t/%EC%84%A4%EA%B5%90%EC%A0%84%EB%8B%AC/">설교전달</a> · <a class="wl" href="../../t/%EC%9D%B4%EB%AF%B8%EC%A7%80%EC%84%A4%EA%B5%90/">이미지설교</a></td>
+</tr>
+</tbody>
+</table>
+<p>이 지도의 열쇠는 오른쪽 두 칸의 관계다. <span class="wl-dead" title="위키 내부 링크">해돈로빈슨</span>이 설교를 "청중 중심 ↔ 본문 중심"의 스펙트럼으로 그렸듯, 형식들은 대립하는 진영이 아니라 하나의 축 위의 눈금이다. 볼트의 방침은 분명하다 — 기본은 강해설교이되, 청중·상황·본문의 장르에 따라 변형하며, 그 변형은 "반드시 강해설교의 맥락 안에서" 이루어진다. 로마서 같은 논증적 본문은 대지·연역이, 삭개오·오병이어 같은 서사는 이야기식이 어울린다는 장르 감수성이 그 실천적 원리다.</p>
+<h2>3. 설교 준비의 여정 — 라우팅 표</h2>
+<p>한 편의 설교는 여러 단계를 통과한다. MBTS 「강해설교준비실습」은 이 여정을 여덟 주에 걸쳐 밟는다 — 설교자로 헌신하기 → 설교 정의하기 → 본문 연구와 묵상맵 → 메인 아이디어 찾기 → 설교의 목적 → 스타일 파악 → 아웃라인 → 튜닝. 그리고 「강해설교전달실습」이 그 뒤를 이어 완성된 설교를 전달로 밀어낸다. 이 페이지는 각 단계의 상세를 담지 않고, 그것을 전담하는 완료 페이지로 안내한다.</p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>핵심 물음</th>
+<th>라우팅</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>본문 연구·해석</td>
+<td>이 본문은 무엇을 말하는가</td>
+<td><a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D%ED%95%99/">성경해석학</a></td>
+</tr>
+<tr>
+<td>중심 사상 도출</td>
+<td>저자의 의도를 한 문장으로 무엇이라 할까</td>
+<td><a class="wl" href="../../t/%EA%B0%95%ED%95%B4%EC%84%A4%EA%B5%90/">강해설교</a></td>
+</tr>
+<tr>
+<td>목적·구성·아웃라인</td>
+<td>무엇을 이루려 하며 어떻게 배열하는가</td>
+<td><a class="wl" href="../../t/%EA%B0%95%ED%95%B4%EC%84%A4%EA%B5%90/">강해설교</a></td>
+</tr>
+<tr>
+<td>전달</td>
+<td>어떻게 '들려지게' 하는가</td>
+<td><a class="wl" href="../../t/%EC%84%A4%EA%B5%90%EC%A0%84%EB%8B%AC/">설교전달</a></td>
+</tr>
+<tr>
+<td>적용</td>
+<td>어떻게 오늘의 삶에 닿는가</td>
+<td><a class="wl" href="../../t/%EC%84%A4%EA%B5%90%EC%A0%81%EC%9A%A9/">설교적용</a></td>
+</tr>
+<tr>
+<td>(그 밑에 깔린) 신학</td>
+<td>왜 설교인가, 무슨 일이 일어나는가</td>
+<td><a class="wl" href="../../t/%EC%84%A4%EA%B5%90%EC%8B%A0%ED%95%99/">설교신학</a></td>
+</tr>
+</tbody>
+</table>
+<p>이 여정에는 방향이 있다. 스티븐 매튜슨의 3단계가 그 방향을 가장 간명하게 보여준다 — 석의적 해석(원저자 의도)에서 강해적 해석(보편 원리)을 거쳐 설교적 해석(오늘의 메시지)에 이르는 것이다. 로빈슨이 "주해적 중심사상"에서 "설교의 중심사상"으로의 이동을 준비의 핵심으로 지목한 것도 같은 지점이다 — 본문의 의미를 오늘 청중이 받을 수 있는 언어로 옮기는 이 전환이 설교학 전체의 심장이며, 두 현실(본문의 현실과 우리가 사는 현실) 사이에 다리를 놓는 그 작업이 곧 적용이자 설교다.</p>
+<h2>4. 설교의 역사 개관 — 강해에서 강해로</h2>
+<p>설교학은 진공에서 태어나지 않았다. 볼트의 강해설교 계보가 그 흐름을 압축한다. 뿌리는 초대교회 이전, 학사 에스라가 수문 앞 광장에서 율법을 낭독하고 해석하며 백성이 깨닫게 한 사건(느 8:8)이다 — 낭독·해석·적용이라는 강해의 원형이 여기 있다. 이 전통은 쿰란 공동체의 해석자를 거쳐 오리겐·크리소스톰·<span class="wl-dead" title="위키 내부 링크">어거스틴</span>에게로 이어진다. 어거스틴이 『기독교 교육론』에서 설교자의 의무를 가르침·기쁘게 함·감동시킴으로 정리한 것은 고대 수사학을 설교학으로 세례 준 사건이었다.</p>
+<table>
+<thead>
+<tr>
+<th>시대</th>
+<th>강단의 형편</th>
+<th>설교학의 표지</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>초대교회</td>
+<td>회당 강해 전통의 계승</td>
+<td>에스라(느 8) — 낭독·해석·적용, 크리소스톰의 연속 강해</td>
+</tr>
+<tr>
+<td>중세</td>
+<td>성례 중심, 강단의 상대적 쇠퇴</td>
+<td>설교가 예전의 부속으로 물러남</td>
+</tr>
+<tr>
+<td>종교개혁</td>
+<td>강해의 회복</td>
+<td>"오직 성경" — 루터·<span class="wl-dead" title="위키 내부 링크">칼빈</span>의 연속 강해, 강단이 예배 중심으로 복귀</td>
+</tr>
+<tr>
+<td>현대</td>
+<td>형식의 분화와 위기</td>
+<td>곽안련의 대지설교 한국 도입(1901~), 크래독의 신설교학</td>
+</tr>
+</tbody>
+</table>
+<p>두 결절점이 특히 중요하다. 하나는 종교개혁이다. 중세에 강단이 성례의 그늘로 물러났다면, 루터와 칼빈은 "말씀의 설교가 곧 하나님의 말씀"이라는 확신 위에서 강해를 예배의 중심으로 되돌렸다(<a class="wl" href="../../t/%EC%84%A4%EA%B5%90%EC%8B%A0%ED%95%99/">설교신학</a>가 이 신학을 상술한다). 다른 하나는 현대다. 한국에서는 초기 선교사 곽안련(C. Clark)이 신학 교육을 충분히 받지 못한 설교자들을 위해 대지설교를 도입했고(1910 『강도요령』, 1925 『설교학』), 서구에서는 프레드 크래독이 연역적·명제 중심의 설교 틀을 깨는 귀납적 설교를 "설교의 코페르니쿠스적 혁명"으로 제창했다. 흥미로운 것은 이 긴 역사의 두 끝이 같은 자리를 가리킨다는 점이다 — 에스라의 강해로 시작한 설교사는 종교개혁의 강해 회복을 지나 오늘도 "본문이 스스로 목소리를 내게 하라"는 강해의 이상으로 되돌아온다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>설교학은 실천신학의 한 분과이되 기술의 학문이 아니다. MBTS 강해설교 실습이 아웃라인이 아니라 "설교자로 헌신하기"에서 출발하듯, 설교학은 소명과 인격을 방법론의 앞에 둔다.</li>
+<li>설교 형식(대지·강해·내러티브·이미지)은 대립하는 진영이 아니라 "청중 중심 ↔ 본문 중심" 한 축 위의 눈금이며 ⚖️, 각기 지키는 것과 잃는 것이 다르다. 기본은 강해이되 장르에 따라 변형한다.</li>
+<li>한국 교회의 실제 위기는 형식의 부재가 아니라 혼동이다 — 교인은 강해를 원하나 설교자는 대지를 하며, 그 대지를 강해로 오인한다.</li>
+<li>설교 준비의 여정에는 방향이 있다 — 석의적 해석에서 설교적 해석으로, 주해적 중심사상에서 설교의 중심사상으로. 본문을 오늘의 언어로 옮기는 이 전환이 설교학의 심장이다.</li>
+<li>설교사는 강해에서 시작해 강해로 돌아온다 — 에스라(느 8)의 낭독·해석·적용, 종교개혁의 강해 회복, 현대의 "본문이 목소리를 내게 하라"는 이상이 한 줄로 이어진다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>대지설교와 강해설교의 경계는 실제 강단에서 얼마나 뚜렷한가 — 통계상 64%가 대지설교를 하면서 강해로 여긴다면, 둘을 가르는 판별 기준(저자 의도가 구조를 규정하는가)은 실천에서 어떻게 적용되는가.</li>
+<li>신설교학의 귀납·이야기 방법이 본문의 권위를 청중 경험에 종속시키지 않으면서 그 강점(들려짐)을 취할 수 있는가 — 이미지 설교가 그 절충인가(<a class="wl" href="../../t/%EC%84%A4%EA%B5%90%EC%A0%84%EB%8B%AC/">설교전달</a>와 공유).</li>
+<li>미디어 시대에 '한 사람이 오래 말하고 여럿이 듣는' 설교 형식은 어디까지가 설교학의 본질이고 어디까지가 문화적 관습인가(<a class="wl" href="../../t/%EC%84%A4%EA%B5%90%EC%8B%A0%ED%95%99/">설교신학</a>와 공유).</li>
+</ul>
+<h2>교차 참조</h2>
+<p>설교 클러스터는 역할을 나눈다. 이 페이지(설교학)는 분과 전체의 지형을 그리고, 상세는 아래로 위임한다.</p>
+<ul>
+<li><a class="wl" href="../../t/%EC%84%A4%EA%B5%90%EC%8B%A0%ED%95%99/">설교신학</a> — 왜 설교인가·무슨 일이 일어나는가. 설교학이 딛고 선 신학적 지반.</li>
+<li><a class="wl" href="../../t/%EA%B0%95%ED%95%B4%EC%84%A4%EA%B5%90/">강해설교</a> — 본문 석의·중심 사상·구성의 방법론(설교자 7이미지, 학자별 정의 포함). 준비 여정의 대부분을 전담.</li>
+<li><a class="wl" href="../../t/%EC%84%A4%EA%B5%90%EC%A0%84%EB%8B%AC/">설교전달</a> — 언어적·비언어적 전달과 커뮤니케이션. 여정의 마지막 단계.</li>
+<li><a class="wl" href="../../t/%EC%84%A4%EA%B5%90%EC%A0%81%EC%9A%A9/">설교적용</a> — 적용의 다리, 복음 중심 적용.</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D%ED%95%99/">성경해석학</a> — 본문에서 의미를 길어내는 이론. 준비 여정의 첫 단계.</li>
+<li><a class="wl" href="../../t/%EC%9D%B4%EB%AF%B8%EC%A7%80%EC%84%A4%EA%B5%90/">이미지설교</a> — 강해의 범주 안 이미지 방법론.</li>
+<li><a class="wl" href="../../t/%EC%98%88%EB%B0%B0/">예배</a> — 설교가 놓이는 자리.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">강해설교준비실습</span></td>
+<td>강의 연작</td>
+<td>설교 준비 8단계 여정, 설교자 정체성 우선, 학자별 강해설교 정의, 한국 교회 통계(강해 72.1% vs 대지 64%)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">강해설교전달실습</span></td>
+<td>강의 연작</td>
+<td>전달·커뮤니케이션, 이미지·신설교학, 준비에서 전달로의 이행</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EA%B0%95%ED%95%B4%EC%84%A4%EA%B5%90/">강해설교</a></td>
+<td>위키</td>
+<td>형식의 지도, 곽안련 대지설교, 연속주해 계보(에스라~로이드존스), 매튜슨 3단계, 스펙트럼</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%84%A4%EA%B5%90%EC%8B%A0%ED%95%99/">설교신학</a></td>
+<td>위키</td>
+<td>설교의 신학적 토대, 종교개혁의 강해 회복, "말씀 아래 선 설교자"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">해돈로빈슨</span> · <span class="wl-dead" title="위키 내부 링크">존스토트</span> · <span class="wl-dead" title="위키 내부 링크">칼빈</span> · <span class="wl-dead" title="위키 내부 링크">어거스틴</span> · <span class="wl-dead" title="위키 내부 링크">마틴로이드존스</span></td>
+<td>인물</td>
+<td>강해설교 정의, 본문 중심, 강해 회복, 수사학의 세례, 강단꾼 경고</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/설교학</span><span>#설교형식</span><span>#실천신학</span><span>#설교사</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

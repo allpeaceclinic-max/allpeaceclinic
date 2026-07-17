@@ -1,0 +1,233 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>요나의 심판과 구원 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="author">자끄 엘륄</span><span class="date">2026-05-05</span></div>
+  <h1 class="note-title">요나의 심판과 구원</h1>
+  
+</header>
+<article class="note">
+<p><strong>저자</strong>: 자끄 엘륄 (Jacques Ellul)<br />
+<strong>분류</strong>: 성경신학 / 선교신학 / 소명론</p>
+<hr />
+<h2>핵심 전제</h2>
+<blockquote>
+<p>요나서는 단순한 도덕교훈서가 아니라 <strong>예수 그리스도를 가리키는 3중 예언서</strong>다.<br />
+희생양(1장) → 요나의 표적(2장) → 운명공동체(3장)</p>
+</blockquote>
+<hr />
+<h2>★ 핵심 인사이트: 소명을 위한 선택 — 선교적 선택</h2>
+<blockquote>
+<p><strong>"일반적인 선택이란 없고, 언제나 구체적인 어떤 행위, 한정된 어떤 사역에 참여하는 소명을 위한 선택만이 있다."</strong></p>
+</blockquote>
+<p>이것이 엘륄이 요나서 1장 1절("하나님의 말씀이 요나에게 임하니라")에서 뽑아낸 선택론의 핵심이다.</p>
+<ul>
+<li>하나님의 선택은 <strong>개별적이지만 개인주의적이지 않다</strong> — 이스라엘의 언약, 즉 공동체적 맥락에서 주어진다</li>
+<li>선택의 목적은 <strong>택함받은 자를 만족케 하는 것이 아니라</strong> 구체적인 사역에 투입하는 것</li>
+<li><strong>선교적 선택</strong>: 하나님의 선택은 항상 "누구에게 보냄을 받느냐"와 연결된다</li>
+<li>소명을 인식하는 순간 인간은 도피하지만, <strong>하나님의 선택은 여전히 효력을 가진다</strong></li>
+<li>하나님은 소명이 완수되기까지 택함받은 자를 추적하신다 — 자연현상까지 동원하여</li>
+</ul>
+<blockquote>
+<p><strong>선교적 적용</strong>: 선교사·전도자의 부르심은 특정 민족·장소·사역을 향한 구체적 소명이다.<br />
+"나는 선택받았는가?"가 아니라 "나는 무엇을 위해 선택받았는가?"가 올바른 질문이다.</p>
+</blockquote>
+<hr />
+<h2>1장: 희생양 — 첫 번째 예언</h2>
+<h3>요나의 도피</h3>
+<ul>
+<li>하나님이 지시한 곳과 정반대 방향(다시스)으로 도망 — 아담·카인처럼 하나님의 낯을 피함</li>
+<li>폭풍 중에 배 밑에서 잠을 잠 — 자연현상을 하나님과 무관한 것으로 보려는 시도 + 타인과의 연대 거절</li>
+</ul>
+<h3>선원들: 운명공동체</h3>
+<ul>
+<li>비그리스도인이지만 같은 배를 탔기 때문에 운명이 연결됨</li>
+<li>"그들이 요구하지 않은 위험에 참여한다" — 교회와 세상의 관계의 원형</li>
+<li>세상은 자신이 필요할 때 하나님과 그리스도인을 시험에 붙인다</li>
+</ul>
+<h3>희생양과 예언</h3>
+<ul>
+<li>요나: 자신이 문제임을 수용 → <strong>증인, 즉 순교자</strong>가 됨</li>
+<li>바다가 잠잠해짐 = 첫 번째 예언: 예수 그리스도의 희생 → 타인의 구원</li>
+<li>교회는 세상을 지배하는 권력이 아니라 <strong>세상을 위해 자신을 희생하는 순교자들의 어머니</strong></li>
+</ul>
+<hr />
+<h2>2장: 요나의 표적 — 두 번째 예언</h2>
+<h3>지옥에서의 찬미</h3>
+<ul>
+<li>물고기 뱃속 = <strong>강화된 죽음, 실제적 지옥</strong> (구조가 아니라 심판의 절정)</li>
+<li>요나가 찾던 것: 하나님이 계시지 않는 장소 → 역설적으로 그 극점에서 찬미가 터져나옴</li>
+</ul>
+<p><strong>찬미의 3중 의미</strong>:
+1. <strong>은혜의 영속성</strong>: 구원의 실마리조차 없는 상황에서 "하나님이 늘 곁에 계신다"는 사실만이 남는다
+2. <strong>시제의 역설</strong>: 사망과 지옥의 일은 <strong>완료시제</strong>(이미 끝남), 하나님의 일은 <strong>미완료시제</strong>(계속 진행) — 모든 미래는 주님께 속한다
+3. <strong>진정한 회심</strong>: 모든 회심은 이해관계가 있다. 순수한 이상주의적 회심을 주장하는 것은 교만. <strong>진정한 회심은 고통의 심연에서, 하나님 외에 아무것도 의뢰할 수 없는 절망에서 일어난다</strong></p>
+<h3>요나의 표적</h3>
+<ul>
+<li>"악하고 음란한 세대는 요나의 표적 밖에 표적을 받지 못한다" (마 12:39)</li>
+<li>예언은 <strong>그 예언하는 바의 성취에 의해</strong> 실재성을 얻는다 → 요나의 기적은 예수님의 부활에 의해 실재적이 된다</li>
+<li>요나의 기적이 충분해야 한다 — 부활의 현장에 있었어도 요나의 기적을 믿지 않으면 설득되지 않는다</li>
+</ul>
+<hr />
+<h2>3장: 운명공동체 — 세 번째 예언</h2>
+<h3>내 안의 두 사람</h3>
+<ul>
+<li>회심한 요나에게도 두 사람의 싸움이 존재 (롬 7)</li>
+<li>요나가 하나님의 자비를 분노하며 거부 → 성경 본문을 하나님의 명령에 대립시킴 = <strong>사탄의 전략</strong></li>
+<li>박 넝쿨의 의미: 요나가 스스로 만든 보호를 하나님의 보호로 대체 → 사라지자 존재 전체를 의심</li>
+</ul>
+<blockquote>
+<p><strong>교훈</strong>: 새로운 탄생의 지점에 머물거나 주관적 영적 경험에 의존해서는 안 된다.<br />
+<strong>하나님께 의존할 때</strong> 모든 불확실성은 사라진다.</p>
+</blockquote>
+<h3>하나님의 인내</h3>
+<ul>
+<li>물고기 뱃속에서 나온 요나에게 <strong>처음과 똑같은 말씀</strong>: "일어나 니느웨로 가라"</li>
+<li>하나님의 뜻은 변하지 않는다 — 변화하는 상황 속에서도 목적은 동일</li>
+<li>40일의 의미: 시험기간(심판 유예) + 언약 수립 → 니느웨는 결국 굴복하고 하나님이 주인 되심</li>
+</ul>
+<h3>하나님의 돌이키심</h3>
+<ul>
+<li>인간의 슈브(태도·존재 변화)와 다른, <strong>나함(내면의 고통)</strong></li>
+<li>하나님은 회개하는 죄인을 정죄한 것 때문에 <strong>내면의 고통</strong>을 느끼신다</li>
+<li>그 형벌을 자신에게 돌리신다 → <strong>십자가의 예표</strong></li>
+</ul>
+<h3>세 번째 예언: 운명공동체</h3>
+<ul>
+<li>요나와 니느웨의 경험이 완전히 평행:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>요나</th>
+<th>니느웨</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>불순종 → 정죄 → 지옥</td>
+<td>거역 → 심판 앞에 섬</td>
+</tr>
+<tr>
+<td>회개 → 은혜로 구원</td>
+<td>회개 → 은혜로 용서</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>니느웨의 구원이 요나를 <strong>매개</strong>로 일어남 → 예수 그리스도와 그가 구원하는 모든 사람 사이의 관계를 예언</li>
+</ul>
+<hr />
+<h2>연결 고리</h2>
+<h3>선교신학과의 연결</h3>
+<ul>
+<li><strong>소명을 위한 선택</strong> = 미씨오 데이(Missio Dei)의 개인적 차원</li>
+<li>뉴비긴(<a class="wl" href="../../b/%EC%98%A4%ED%94%88%EC%8B%9C%ED%81%AC%EB%A6%BF_%EB%A0%88%EC%8A%AC%EB%A6%AC%EB%89%B4%EB%B9%84%EA%B8%B4/">오픈시크릿_레슬리뉴비긴</a>): "선교는 하나님이 하시고, 교회는 참여자" ↔ 엘륄: "선택은 사역을 위한 것"</li>
+<li>선교사는 파송받은 자이기 전에 <strong>소명 위에 선 자</strong></li>
+</ul>
+<h3>이상협 강의와의 연결</h3>
+<ul>
+<li><strong>박준범 선교사 설교</strong> — 요나서는 선교사의 자기 이해에 대한 가장 솔직한 거울</li>
+<li><strong>선교훈련 커리큘럼</strong> — "소명이 없으면 현장에서 버티지 못한다" — 엘륄의 소명론과 직결</li>
+</ul>
+<h3>선교사 돌봄·소명 위기와의 연결</h3>
+<ul>
+<li>소명 거부 → 도피 → 하나님의 추적 → 재소명 구조</li>
+<li>소명 위기에 처한 선교사에게: "하나님의 선택은 여전히 효력을 가진다"</li>
+</ul>
+<hr />
+<h2>교차 참조</h2>
+<ul>
+<li><span class="wl-dead" title="위키 내부 링크">자끄엘륄</span></li>
+<li><a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a></li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a></li>
+<li><a class="wl" href="../../t/%ED%9A%8C%EA%B0%9C/">회개</a></li>
+<li><a class="wl" href="../../t/%EB%B6%80%ED%99%9C/">부활</a></li>
+<li><span class="wl-dead" title="위키 내부 링크">욘</span> — 요나서 전체</li>
+<li><a class="wl" href="../../b/%EC%98%A4%ED%94%88%EC%8B%9C%ED%81%AC%EB%A6%BF_%EB%A0%88%EC%8A%AC%EB%A6%AC%EB%89%B4%EB%B9%84%EA%B8%B4/">오픈시크릿_레슬리뉴비긴</a> — 소명과 Missio Dei 연결</li>
+</ul>
+</article>
+<div class="tagrow"><span>#요나서</span><span>#선교신학</span><span>#소명</span><span>#선택</span><span>#회심</span><span>#예언</span><span>#하나님의인내</span><span>#구약</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

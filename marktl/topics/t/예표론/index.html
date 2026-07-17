@@ -1,0 +1,300 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>예표론 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:174">성경·해석</span><span class="date">2026-07-17</span></div>
+  <h1 class="note-title">예표론</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>예표론(Typology)은 구약의 인물·사건·제도가 신약에서 더 크고 완전한 실체로 성취되는 것을 읽어내는 해석 패턴이다. 그 핵심 구조는 두 항으로 이루어진다 — 모형(型, type)과 원형/대형(對型, antitype). 모형은 그림자이고 원형은 실체다. 구약의 희생제사가 그림자라면 그리스도의 십자가가 실체이고, 아론의 제사장직이 모형이라면 멜기세덱 계열 예수님의 대제사장직이 원형이다.</p>
+<p>이 페이지가 다루는 것은 예표론이라는 해석 방법 자체다 — 그것이 성경 안에 어떤 근거를 두고, 어떤 대표 사례를 갖고, 무엇으로 알레고리와 구별되며, 어디서 남용되는가. 해석학의 이론·방법론 전체는 <a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D%ED%95%99/">성경해석학</a>이, 구약이 그리스도를 가리키는 세 방식(직접·유형론적·제도적)과 이중성취의 문제는 <a class="wl" href="../../t/%EB%A9%94%EC%8B%9C%EC%95%84%EC%98%88%EC%96%B8/">메시아예언</a>이 맡는다. 예표론이 시간축(구약→신약)의 연결이라면, 그 개념을 문화 간 수평 연결로 눕힌 것이 <a class="wl" href="../../t/%EA%B5%AC%EC%86%8D%EC%A0%81%EC%9C%A0%EC%82%AC/">구속적유사</a>다 — <span class="wl-dead" title="위키 내부 링크">김연수</span>의 도식대로 "모형과 원형을 시간축에 놓으면 모형론, 수평으로 놓으면 구속적 유사"가 된다.</p>
+<h2>1. 성경 자체의 예표 해석 — 예표론은 후대의 발명이 아니다</h2>
+<p>예표론에 대한 가장 흔한 오해는 그것이 해석자가 본문에 덧씌우는 기법이라는 것이다. 그러나 예표론이 정당한 근거는, 그것이 신약 저자들이 스스로 구약을 읽은 방식이라는 데 있다. 신약은 '튀포스(τύπος, 型)'라는 단어를 직접 사용해 구약과 그리스도를 잇는다.</p>
+<table>
+<thead>
+<tr>
+<th>본문</th>
+<th>튀포스의 사용</th>
+<th>예표 관계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>고전 10:6, 11</td>
+<td>광야 사건이 "본보기(튀포스)가 되었으니"</td>
+<td>이스라엘의 광야 여정 → 교회를 향한 경고</td>
+</tr>
+<tr>
+<td>롬 5:14</td>
+<td>아담은 "오실 자의 표상(튀포스)이라"</td>
+<td>첫 아담 → 마지막 아담 그리스도</td>
+</tr>
+<tr>
+<td>히 8-10장</td>
+<td>성막은 "하늘 것의 그림자(스키아)"</td>
+<td>지상 성소·제사 → 그리스도의 완전한 제사</td>
+</tr>
+</tbody>
+</table>
+<p>바울이 광야의 이스라엘을 "본보기"라 부르고 아담을 "오실 자의 표상"이라 부를 때, 그는 예표론을 실천하고 있는 것이다. 히브리서 저자는 아예 예표론을 신학적 논증의 골격으로 삼는다 — 레위 계열 아론 제사장직은 불완전하고 일시적이나, 멜기세덱 계열의 예수님은 영원히 살아 계셔서 완전한 구원을 이루신다(히 7장). 지상의 성막과 제사 전체가 "하늘 것의 모형과 그림자"이며, 그 실체가 그리스도다.</p>
+<p>이 사실이 예표론의 정당성과 한계를 동시에 정한다. 정당성은 신약이 승인한 예표들이 실재한다는 데 있고, 한계는 예표론이 신약 저자들이 실제로 이은 선을 따라야지 해석자가 마음대로 새 선을 그어서는 안 된다는 데 있다. <a class="wl" href="../../t/%EB%A9%94%EC%8B%9C%EC%95%84%EC%98%88%EC%96%B8/">메시아예언</a>이 못박듯 "유형론은 알레고리가 아니라 역사적 패턴의 점진적 심화"이며, 그 심화의 방향은 성경 자체가 이미 열어 놓은 것이다.</p>
+<h2>2. 대표 예표 — 그림자들의 지도</h2>
+<p>이 볼트가 축적한 예표들을 모으면, 구약 전체가 여러 겹의 그림자로 그리스도를 향해 뻗어 있음이 드러난다.</p>
+<table>
+<thead>
+<tr>
+<th>모형 (type)</th>
+<th>원형 (antitype)</th>
+<th>접점</th>
+<th>본문</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>아담</td>
+<td>마지막 아담 그리스도</td>
+<td>한 사람의 대표성 (한 사람으로 죄·죽음, 한 사람으로 의·생명)</td>
+<td>롬 5:14</td>
+</tr>
+<tr>
+<td>이삭</td>
+<td>성부께 드려진 독생자</td>
+<td>독자를 지고 오른 나무, 대신 죽은 숫양</td>
+<td>창 22장</td>
+</tr>
+<tr>
+<td>멜기세덱</td>
+<td>영원한 대제사장 예수</td>
+<td>계보 없는 왕이자 제사장, 영원한 직분</td>
+<td>히 7장</td>
+</tr>
+<tr>
+<td>출애굽</td>
+<td>총체적 구속</td>
+<td>종살이에서의 해방, 새 창조의 원형(prototype)</td>
+<td><a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EB%B0%B1%EC%84%B1%EC%9D%98%EC%84%A0%EA%B5%90/">하나님백성의선교</a></td>
+</tr>
+<tr>
+<td>성전·희생제사</td>
+<td>그리스도의 몸과 십자가</td>
+<td>피 흘림과 사함(히 9:22)</td>
+<td><a class="wl" href="../../t/%ED%9D%AC%EC%83%9D%EC%A0%9C%EC%82%AC/">희생제사</a></td>
+</tr>
+<tr>
+<td>요나</td>
+<td>죽음과 부활</td>
+<td>사흘 물고기 뱃속, 하나님의 형벌을 자신에게 돌리심</td>
+<td><span class="wl-dead" title="위키 내부 링크">자끄엘륄</span></td>
+</tr>
+<tr>
+<td>마른 뼈(겔 37)</td>
+<td>성령의 부활 사역</td>
+<td>죽음에서 생명으로, <a class="wl" href="../../t/%EC%A2%85%EB%A7%90%EB%A1%A0/">종말론</a>적 부활</td>
+<td>겔 37장</td>
+</tr>
+<tr>
+<td>여자의 후손(창 3:15)</td>
+<td>사탄을 이기신 그리스도</td>
+<td>원시복음, 구속사 최초의 예표 선언</td>
+<td>창 3장</td>
+</tr>
+</tbody>
+</table>
+<p>이 지도에서 두 축이 특히 두껍다. 하나는 대표성의 축이다 — 아담과 그리스도는 각각 온 인류를 대표하는 '머리'로서, "한 사람이 순종하심으로 많은 사람이 의인이 되리라"(롬 5:19)는 구원의 논리를 떠받친다. 다른 하나는 제사의 축이다 — 이삭의 대속 숫양, 유월절 어린양, 성막의 희생제사가 모두 "피 흘림이 없은즉 사함이 없느니라"(히 9:22)는 원리로 십자가를 예표한다. <span class="wl-dead" title="위키 내부 링크">자끄엘륄</span>이 요나서에서 읽어낸 것도 같은 구조다. 하나님이 심판을 선언하시되 그 형벌을 스스로 담당하시는 사건이 곧 "십자가의 예표"다.</p>
+<h2>3. 알레고리와의 구분 — 역사성이 관건이다</h2>
+<p>예표론이 정당한 해석이 되려면 알레고리와 구별되어야 한다. 둘 다 본문에서 더 깊은 의미를 읽어낸다는 점에서 비슷해 보이지만, 그 경계는 분명하다. <a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D%ED%95%99/">성경해석학</a>이 정리한 대비가 이 구별을 세운다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>예표론 (typology)</th>
+<th>알레고리 (allegory)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>역사성</td>
+<td>사건의 역사적 실재성과 단단히 결합</td>
+<td>역사적 실재를 중시하지 않음</td>
+</tr>
+<tr>
+<td>상응의 근거</td>
+<td>구속사의 계속성 — 내적 원리</td>
+<td>개념 사이의 평행·공명</td>
+</tr>
+<tr>
+<td>의미의 방향</td>
+<td>모형의 의미를 강화하고 성취를 살핌</td>
+<td>원래 사건과 무관한 의미를 도출</td>
+</tr>
+<tr>
+<td>청중</td>
+<td>본문의 독자</td>
+<td>암호에 입회한 '내부자'</td>
+</tr>
+</tbody>
+</table>
+<p>결정적 분수령은 역사성이다. 예표는 역사 속에서 실제로 일어난 사건이 더 큰 성취를 향해 심화되는 것이지만, 알레고리는 역사를 건너뛰고 숨은 의미를 부여한다. <a class="wl" href="../../t/%EB%A9%94%EC%8B%9C%EC%95%84%EC%98%88%EC%96%B8/">메시아예언</a>의 표현이 이 원리를 압축한다 — "이삭을 결박한 아브라함의 이야기가 그리스도를 예표한다고 말할 때, 그 말이 정당하려면 이삭의 결박이 먼저 역사적 사건으로 온전히 서 있어야 한다. 역사를 지우고 그리스도를 얹는 순간 그것은 유형론이 아니라 알레고리가 된다." 세 층위 어디에서든 원리는 하나다 — <strong>당대의 실재를 지운 성취는 성취가 아니다.</strong></p>
+<p>또 하나의 차이는 상응의 근거다. 예표론은 외형적 유사점이 아니라 구속사의 내적 원리에 근거해 모형과 원형을 잇는다. 유월절 어린양이 그리스도를 가리키는 것은 둘 다 '어린양'이어서가 아니라, 대속의 피라는 구속사적 원리가 둘을 관통하기 때문이다. 알레고리가 두 세트의 개념 사이에서 자의적 대응을 찾는다면, 예표론은 하나님이 구속사 안에서 실제로 반복하신 일하심의 패턴을 따라간다.</p>
+<h2>4. 남용의 경계 — 모든 세부에서 그리스도 찾기 ⚖️</h2>
+<p>예표론의 정당성을 인정하는 것과 그것을 남용하는 것은 다르다. 예표론의 가장 흔한 남용은 본문의 모든 세부에서 그리스도를 찾아내려는 강박이다. 라합의 붉은 줄, 성막의 못 하나, 다윗의 물맷돌 다섯 개까지 그리스도의 무엇으로 대응시키는 해석은, 언제나 "가능"하지만 바로 그 '언제나 가능함'이 문제다. 모든 본문에서 그리스도를 찾아내는 일은 늘 가능하지만, 그 가능함이 곧 예표론적 정당성은 아니다.</p>
+<p>경계선은 3절의 두 기준으로 그어진다. 역사적 실재성과 구속사의 내적 원리다. 이 둘 없이 이루어지는 연결은 예표가 아니라 알레고리이며, <a class="wl" href="../../t/%EB%A9%94%EC%8B%9C%EC%95%84%EC%98%88%EC%96%B8/">메시아예언</a>이 경계한 "결론을 정해 놓고 근거를 찾는 역방향 해석"으로 되돌아간다. <a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D%ED%95%99/">성경해석학</a>이 짚듯, 그리스도 중심 해석의 남용은 언제나 이 경계를 넘는 데서 발생하며, 티슬턴이 알레고리를 "조심스러운 유보와 경고를 견지하는 가운데" 허용될 수 있다고 말한 것은 이 무게 때문이다.</p>
+<p>이 남용은 알레고리화가 앗아가는 것이 정확성만이 아니라 본문의 충격이라는 데서 특히 위험하다(<a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D%ED%95%99/">성경해석학</a>). 세부마다 그리스도를 심으면 본문이 원래 독자에게 주려던 고유한 메시지가 도식의 배경으로 물러난다. 예표론의 건강한 사용은 절제에 있다 — 신약이 승인한 예표의 선을 따르고, 역사적 실재성을 보존하며, 구속사의 내적 원리가 뒷받침하는 곳에서만 모형과 원형을 잇는 것이다. 예표론과 <a class="wl" href="../../t/%EA%B5%AC%EC%86%8D%EC%A0%81%EC%9C%A0%EC%82%AC/">구속적유사</a>는 같은 규율 아래 있다. 문화 속 그림자든 구약의 그림자든, 그것은 실체를 가리키고 물러나는 그림자일 뿐이며, 그림자의 소명은 실체를 가리키고 사라지는 것이다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>예표론은 해석자의 발명이 아니라 신약 저자들의 읽기 방식이다. 성경 자체가 '튀포스'라는 단어로 광야 사건(고전 10:6)·아담(롬 5:14)·성막(히브리서)을 그리스도와 잇는다.</li>
+<li>대표 예표는 두 축이 두껍다 — 대표성의 축(아담↔그리스도, 롬 5:19)과 제사의 축(이삭의 숫양·유월절·성막↔십자가, 히 9:22).</li>
+<li>예표론과 알레고리를 가르는 것은 역사성이다. 예표는 역사적 실재와 결합해 성취를 향해 심화하지만, 알레고리는 역사를 지우고 무관한 의미를 부여한다 — "당대의 실재를 지운 성취는 성취가 아니다."</li>
+<li>상응의 근거는 외형적 유사가 아니라 구속사의 내적 원리다. 유월절 어린양이 그리스도인 것은 '어린양'이어서가 아니라 대속의 피라는 원리가 관통하기 때문이다.</li>
+<li>예표론의 남용은 모든 세부에서 그리스도를 찾는 강박이다 ⚖️. '언제나 가능함'이 정당성은 아니며, 알레고리화는 정확성만이 아니라 본문의 충격을 앗아간다. 건강한 예표론은 절제에 있다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>신약이 명시적으로 승인한 예표(아담·멜기세덱·유월절) 외에, 신약이 언급하지 않은 인물·사건(다윗·요셉 등)의 예표는 어느 범위까지 정당한가?</li>
+<li>예표론적 해석이 구약 본문의 원래 역사적·문학적 의미를 압도하거나 대체할 위험을 설교 현장에서 어떻게 방지하는가(<a class="wl" href="../../t/%EB%A9%94%EC%8B%9C%EC%95%84%EC%98%88%EC%96%B8/">메시아예언</a>의 미해결 질문과 공유)?</li>
+<li>예표론(시간축)과 <a class="wl" href="../../t/%EA%B5%AC%EC%86%8D%EC%A0%81%EC%9C%A0%EC%82%AC/">구속적유사</a>(수평축)는 같은 그림자-실체 구조를 공유하지만, 성경의 예표에는 계시적 보증이 있고 문화 속 유사물에는 없다. 이 비대칭은 두 개념의 관계를 어떻게 규정하는가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D%ED%95%99/">성경해석학</a> — 예표론이 놓인 해석학의 이론·방법론 전체. 예표 vs 알레고리 대비의 출처.</li>
+<li><a class="wl" href="../../t/%EB%A9%94%EC%8B%9C%EC%95%84%EC%98%88%EC%96%B8/">메시아예언</a> — 구약이 그리스도를 가리키는 세 방식(직접·유형론적·제도적)과 이중성취. 유형론의 검증 원리.</li>
+<li><a class="wl" href="../../t/%EA%B5%AC%EC%86%8D%EC%A0%81%EC%9C%A0%EC%82%AC/">구속적유사</a> — 예표론의 수평 대응 개념(문화 간 연결). 같은 그림자-실체 구조.</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EB%A1%A0/">기독론</a> — 예표론이 기독론의 구약적 근거로 작동하는 자리(멜기세덱 대제사장직).</li>
+<li><a class="wl" href="../../t/%ED%9D%AC%EC%83%9D%EC%A0%9C%EC%82%AC/">희생제사</a> — 제의적 예표 체계(유월절·번제·속죄제)와 피-사함 원리.</li>
+<li><a class="wl" href="../../t/%EA%B5%AC%EC%95%BD%EC%8B%A0%ED%95%99/">구약신학</a> · <a class="wl" href="../../t/%EA%B5%AC%EC%86%8D%EC%8B%A0%ED%95%99/">구속신학</a> — 구속사 안에서 예표론이 딛고 서는 신학적 구조.</li>
+<li><a class="wl" href="../../t/%EC%A2%85%EB%A7%90%EB%A1%A0/">종말론</a> — 겔 37 마른 뼈 환상이 가리키는 부활의 예표.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">04주_예표론_원형과대형</span></td>
+<td>강의 과제</td>
+<td>예표의 역사성, 원형-대형의 내적 원리 상응, 알레고리와의 구별</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EB%A9%94%EC%8B%9C%EC%95%84%EC%98%88%EC%96%B8/">메시아예언</a> · 구약개론II 「요나와 이사야」</td>
+<td>위키·강의</td>
+<td>유형론=역사적 패턴의 점진적 심화, "당대의 실재를 지운 성취는 성취가 아니다"</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D%ED%95%99/">성경해석학</a></td>
+<td>위키</td>
+<td>예표 vs 알레고리 4항 대비, 그리스도 중심 해석의 남용, 티슬턴의 유보</td>
+</tr>
+<tr>
+<td>고전 10:6 · 롬 5:14 · 히 7-10장</td>
+<td>성경</td>
+<td>튀포스의 성경적 용례 — 광야·아담·성막</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%9A%94%EB%82%98%EC%9D%98%EC%8B%AC%ED%8C%90%EA%B3%BC%EA%B5%AC%EC%9B%90_%EC%9E%90%EB%81%84%EC%97%98%EB%A5%84/">요나의심판과구원_자끄엘륄</a> · <span class="wl-dead" title="위키 내부 링크">자끄엘륄</span></td>
+<td>책·인물</td>
+<td>요나서의 십자가 예표 — 하나님이 형벌을 스스로 담당하심</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EB%B0%B1%EC%84%B1%EC%9D%98%EC%84%A0%EA%B5%90/">하나님백성의선교</a></td>
+<td>책</td>
+<td>출애굽=총체적 구속의 원형, 치유=새 창조의 예표</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EA%B5%AC%EC%86%8D%EC%A0%81%EC%9C%A0%EC%82%AC/">구속적유사</a> · <span class="wl-dead" title="위키 내부 링크">김연수</span></td>
+<td>위키·인물</td>
+<td>모형론(시간축)과 구속적 유사(수평축)의 구분 도식</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/성경해석학</span><span>#예표론</span><span>#모형론</span><span>#알레고리</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

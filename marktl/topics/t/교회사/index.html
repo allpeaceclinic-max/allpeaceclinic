@@ -1,0 +1,287 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>교회사 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:38">교회사</span><span class="date">2026-07-14</span></div>
+  <h1 class="note-title">교회사</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>교회사(Church History)는 오순절 이후 오늘까지 하나님의 백성 공동체가 걸어온 길을 신학적으로 성찰하는 학문이다. MBTS 교회사 강의는 그 출발을 갈라디아서 4장 4절, "때가 차매 하나님이 그 아들을 보내사"에 둔다 — 교회사는 정치·문화·사상의 필요가 우연히 맞물린 사건이 아니라, 성령이 한 공동체를 이끌어 온 섭리의 발자취라는 것이다. 그러나 그것은 성인전(聖人傳)이 아니다. E. H. 카의 말대로 역사가 "과거와 현재의 끊임없는 대화"라면, 교회사가에게 요구되는 것은 두 가지 — 사료에 대한 충실과 평가에 대한 공정이다. 교회사는 성령이 교회를 이끌어 온 발자취인 동시에, 그 교회가 되풀이해 온 오류의 목록이기도 하다. 역사를 모르는 교회는 같은 실수를 반복한다.</p>
+<p>이 볼트에는 이미 시대별 대형 페이지가 확정판으로 서 있다. <a class="wl" href="../../t/%EA%B3%B5%EC%9D%98%ED%9A%8C/">공의회</a>가 고대 교리 논쟁의 전 과정을, <a class="wl" href="../../t/%EC%A2%85%EA%B5%90%EA%B0%9C%ED%98%81/">종교개혁</a>이 16세기 전체를, <a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%A1%A0/">교회론</a>이 교회의 본질을, <a class="wl" href="../../t/%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%85%90%EB%8D%A4/">크리스텐덤</a>과 <a class="wl" href="../../t/%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90/">세계기독교</a>가 각각 제국 교회의 성립과 그 해체 이후를 맡고 있다. <a class="wl" href="../../t/%EC%A1%B0%EC%A7%81%EC%8B%A0%ED%95%99/">조직신학</a>이 각 교리(loci)를 풀어놓지 않고 그 지도를 조망하는 관문이 되었듯, 이 글은 <strong>교회사 전체의 흐름을 조망하고 각 시대 페이지로 길을 내는 통사(通史) 관문</strong>이다. 각 시대의 상세는 전부 해당 페이지에 위임하고, 여기서는 이천 년을 한눈에 꿰는 지도와, 특별히 이 볼트가 풍부하게 다뤄 온 몇 구간(초대교회·콘스탄티누스 전환·중세의 재평가)을 서술한다. MBTS 교회사 I·II(황성철 교수)가 이 글의 1차 사료다.</p>
+<h2>1. 시대 구분 지도 — 이 페이지의 심장</h2>
+<p>교회사 강의는 이천 년을 다섯 마디로 끊는다 — 초대교회, 중세, 종교개혁, 근대, 현대. 그러나 이 다섯 마디의 이음매마다 결정적 전환이 있다. 박해받던 소수가 제국의 종교가 된 콘스탄티누스의 문턱, 서로마가 무너진 자리에 교회가 문명의 담지자로 올라선 중세의 시작, 성경을 회중에게 돌려준 종교개혁, 이성이 계시를 심문하기 시작한 근대, 그리고 기독교의 무게중심이 서구에서 남반구로 옮겨 가는 오늘이다. 아래 표가 이 페이지의 심장이다. 각 시대의 핵심만 못박고, 내용은 전부 볼트 페이지에 위임한다.</p>
+<table>
+<thead>
+<tr>
+<th>시대</th>
+<th>연대</th>
+<th>핵심 사건·인물</th>
+<th>볼트 페이지</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>초대교회 (사도~투쟁기)</td>
+<td>~313</td>
+<td>사도·속사도, 정경·신조 정립, 교부 변증, 대박해와 순교</td>
+<td><a class="wl" href="../../t/%EC%B4%88%EB%8C%80%EA%B5%90%ED%9A%8C/">초대교회</a> · <a class="wl" href="../../t/%EC%88%9C%EA%B5%90/">순교</a> · <a class="wl" href="../../t/%EB%B0%95%ED%95%B4/">박해</a></td>
+</tr>
+<tr>
+<td>콘스탄티누스 전환</td>
+<td>313~</td>
+<td>밀라노 칙령(313), 테오도시우스의 국교화(380)</td>
+<td><a class="wl" href="../../t/%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%85%90%EB%8D%A4/">크리스텐덤</a></td>
+</tr>
+<tr>
+<td>고대 공의회 시대</td>
+<td>325~787</td>
+<td>니케아·콘스탄티노플·에베소·칼케돈, 삼위일체·기독론 확정</td>
+<td><a class="wl" href="../../t/%EA%B3%B5%EC%9D%98%ED%9A%8C/">공의회</a> · <a class="wl" href="../../t/%EC%9D%B4%EB%8B%A8%EB%85%BC%EC%9F%81/">이단논쟁</a></td>
+</tr>
+<tr>
+<td>중세</td>
+<td>590~1517</td>
+<td>그레고리 대제, 수도원·스콜라, 동서 대분열(1054), 교황권의 명멸</td>
+<td><a class="wl" href="../../t/%EC%88%98%EB%8F%84%EC%9B%90%EC%9A%B4%EB%8F%99/">수도원운동</a> · <a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EA%B3%BC%EC%9D%B4%EC%84%B1/">신앙과이성</a></td>
+</tr>
+<tr>
+<td>종교개혁</td>
+<td>16C</td>
+<td>루터의 95개조(1517), 다섯 솔라, 급진·영국 개혁, 트리엔트</td>
+<td><a class="wl" href="../../t/%EC%A2%85%EA%B5%90%EA%B0%9C%ED%98%81/">종교개혁</a></td>
+</tr>
+<tr>
+<td>정통주의와 경건주의</td>
+<td>17~18C</td>
+<td>신조의 시대, 스페너·프랑케, 모라비안(친첸도르프)</td>
+<td><a class="wl" href="../../t/%EA%B2%BD%EA%B1%B4%EC%A3%BC%EC%9D%98/">경건주의</a></td>
+</tr>
+<tr>
+<td>대각성과 부흥</td>
+<td>18C</td>
+<td>에드워즈·휫필드·웨슬리, 신대륙 대각성</td>
+<td><a class="wl" href="../../t/%EB%B6%80%ED%9D%A5/">부흥</a></td>
+</tr>
+<tr>
+<td>선교의 세기</td>
+<td>19C</td>
+<td>윌리엄 캐리 이후의 자발적 선교 운동</td>
+<td><a class="wl" href="../../t/%EC%84%A0%EA%B5%90/">선교</a></td>
+</tr>
+<tr>
+<td>세계 기독교 (남반구 이동)</td>
+<td>20~21C</td>
+<td>무게중심의 이동, 다중심적 선교</td>
+<td><a class="wl" href="../../t/%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90/">세계기독교</a></td>
+</tr>
+</tbody>
+</table>
+<p>이 지도가 보여주는 것은 교회가 한 번도 한자리에 머문 적이 없다는 사실이다. 복음은 유대에서 헬라-로마로, 로마에서 게르만 유럽으로, 유럽에서 신대륙으로, 그리고 이제 남반구로 끊임없이 변경(frontier)을 옮겨 왔다. 그 이동의 마디마디를 이제 몇 구간만 걸어 들어가 본다.</p>
+<h2>2. 교회사를 읽는 이유 — 실험실이자 거울</h2>
+<p>교회사가 신학교 필수 과목인 데는 이유가 있다. 첫째, 교회사는 살아 있는 신학 실험실이다. 삼위일체도 기독론도 서재에서 조용히 태어나지 않았다. 초대교회가 에비온파·영지주의·마르키온·몬타누스라는 도전과 부딪히며 신조와 정경과 감독제라는 "권위의 기둥"을 세웠고, 아리우스·네스토리우스·유티케스와의 논쟁이 공의회를 통해 정통 교리로 벼려졌다. 교리는 대개 이단이라는 반대 명제 앞에서 자기를 명료화했다 — 이 전 과정은 <a class="wl" href="../../t/%EA%B3%B5%EC%9D%98%ED%9A%8C/">공의회</a>와 <a class="wl" href="../../t/%EC%9D%B4%EB%8B%A8%EB%85%BC%EC%9F%81/">이단논쟁</a>에 위임한다.</p>
+<p>둘째, 교회사는 거울이다. 교회사 강의가 되풀이해 짚는 구도가 있다 — 박해받던 교회는 순수했고, 특권을 누리자 부패했으며, 부패한 자리에서 개혁이 일어났다. 이 "박해 → 정화 → 확장, 특권 → 타락 → 개혁"의 리듬은 어느 한 시대의 이야기가 아니라 오늘의 교회를 비추는 거울이다. 그래서 교회사가의 의무는 미화도 정죄도 아닌 충실과 공정이다. 특정 시대를 영웅담으로 만들거나 통째로 암흑으로 몰아붙이는 순간, 거울은 깨진다. 이 원칙은 특히 뒤에 올 두 구간 — 콘스탄티누스 전환과 중세 — 을 읽을 때 시험받는다.</p>
+<h2>3. 초대교회 — 살아갔던 방식이 자라난 교회</h2>
+<p>이 볼트가 가장 풍부하게 붙든 구간이 초대교회다. 첫 삼백 년의 교회는 힘 있는 대중 설교로 성장하지 않았다. 공공장소에서의 설교는 위험했고, 당시 그리스도인은 "공공장소에서는 침묵하고 구석진 곳에서는 말하는" 사람들로 불렸다. 그런데도 <span class="wl-dead" title="위키 내부 링크">알렌 크라이더</span>의 연구가 전하듯 교회는 10년마다 약 40%씩 자라났다. 성장의 동력은 프로그램이 아니라 몸에 밴 삶(habitus)이었다. 3년에 걸친 신앙문답으로 삶을 빚었고, 예배는 외부인에게 닫힌 채 사람을 형성했으며, 그 형성된 삶이 이웃을 복음으로 이끌었다.</p>
+<blockquote>
+<p>"우리의 설교나 말, 또는 우리의 예배가 교회를 성장하게 하는 것이 아닙니다. 하나님의 능력과 변화된 삶이 사람들을 신앙으로 이끄는 것입니다." — 알렌 크라이더 『초대교회에 길을 묻다』</p>
+</blockquote>
+<p>그 삶의 문법을 2세기 「디오그네투스에게 보내는 편지」는 "거주민이자 나그네"로 요약한다. 그리스도인은 각 지역의 언어와 의복과 음식을 따라 살면서도 자기만의 독특한 삶의 방식을 지녔고, "모든 사람을 사랑하지만 모든 사람에게 박해를 받았다." 로마는 한 신만 섬기는 그들을 무신론자로, 살과 피를 나눈다는 성찬을 식인으로, 형제자매라는 호칭을 근친상간으로 오해해 박해했다. 데키우스·발레리아누스·디오클레티아누스로 이어진 대박해에도 교회는 오히려 연합했다 — 터툴리안의 "순교자의 피는 교회의 씨앗"이라는 문장이 이 역설을 압축한다. 순교사의 상세는 <a class="wl" href="../../t/%EC%88%9C%EA%B5%90/">순교</a>가, 박해의 전개는 <a class="wl" href="../../t/%EB%B0%95%ED%95%B4/">박해</a>가 맡는다. 여기서 붙들 것은 하나다 — 초대교회는 세상을 이기려 하지 않고 세상 속에서 다르게 삶으로써 세상을 바꾸었다.</p>
+<h2>4. 콘스탄티누스 전환 — 얻은 것과 잃은 것</h2>
+<p>312년 밀비안 다리의 승리, 313년 밀라노 칙령, 그리고 380년 테오도시우스의 국교화. 박해받던 소수가 한 세기도 안 되어 제국의 종교가 되었다. 교회사에서 이보다 큰 전환은 종교개혁뿐이다. 그리고 이 전환의 평가만큼 공정함이 시험받는 자리도 없다. 강의는 이 사건에 상반된 두 이름표를 나란히 붙인다.</p>
+<blockquote>
+<p>Creation of Christendom(기독교 왕국의 창설) vs. Union of Church and State — the fall of the church(교회와 국가의 야합 — 교회의 타락)</p>
+</blockquote>
+<p>단순한 타락 서사로 미끄러지지 않으려면 얻은 것과 잃은 것을 함께 세어야 한다. 얻은 것은 분명하다. 박해가 끝나고 신앙의 자유가 왔으며(밀라노 칙령은 국교화가 아니라 자유의 보장이었다), 황제가 소집한 공의회를 통해 삼위일체와 기독론의 정통이 확립되었다. 니케아에서 칼케돈까지의 결정은 오늘 가톨릭·개신교·정교회가 함께 고백하는 유산이다. 잃은 것도 그만큼 분명하다. 크라이더의 도식대로 전도의 방식이 "매력에서 강제로" 뒤집혔고 — 유스티니아누스는 모두에게 세례를 강요했다 — 명목뿐인 신자가 쏟아져 들어오며 교회는 세속화·형식화되었고, 태양신 숭배의 잔재(주일=Sunday)와 미신적 요소가 스며들었다. 순교의 시대가 저물자 그 순수를 이어가려는 자들이 광야로 나갔으니, 수도원 운동은 이 전환에 대한 교회 내부의 반작용이었다(§5).</p>
+<p>그러나 이 전환을 "타락"이라는 한 단어로 봉인하면 절반만 보는 것이다. 밀라노의 암브로스가 데살로니가 학살을 저지른 테오도시우스 황제를 성당 문 앞에서 막아 공개 참회를 받아 낸 사건은, 제국과 손잡은 교회가 동시에 제국을 심판하는 예언자적 자리에 설 수도 있음을 보여준다. 크리스텐덤은 교회가 세상을 얻는 대가로 나그네의 정체성을 잃어 가는 긴 실험의 시작이었다 — 그 개념의 전개와 20세기 말의 해체는 <a class="wl" href="../../t/%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%85%90%EB%8D%A4/">크리스텐덤</a>에 위임한다. 크라이더가 남긴 한 문장이 이 구간의 저울을 잡아 준다 — "교회가 선지자적 역할을 감당하는 소수일 때 하나님의 선교를 가장 잘 수행한다."</p>
+<h2>5. 중세를 공정하게 — '암흑기'라는 이름표 다시 보기</h2>
+<p>'중세'라는 말 자체가 폄하다. 르네상스 지식인들이 고전 시대와 자기 시대 사이의 '중간기'를 가리키며 붙인 이름이고, 거기엔 "암흑과 야만의 시기(Dark Age)", "목욕 없는 천 년"이라는 조롱이 실렸다. 그러나 강의노트조차 그 조롱 끝에 한마디를 덧붙인다 — "그래도 신앙의 시기." 공정한 교회사는 이 두 얼굴을 함께 본다.</p>
+<p>먼저 빛이다. 서로마가 476년 무너진 자리, 세속 정치의 공백을 메우며 로마 문명의 담지자로 올라선 것이 교회였다. 특히 수도원은 중세의 심장이었다. 순교 정신을 일상으로 옮긴 안토니의 은둔에서 파코미우스의 공동생활을 거쳐 베네딕트의 규율로 제도화된 수도원은, 게르만 이민족을 교육하고 문명화하고 복음화한 선교 기지였다. 패트릭이 아일랜드로, 콜롬바가 스코틀랜드 아이오나로, 보니파키우스가 독일로 나아간 것도 이 수도원 모델에서였다. 수도원은 인재를 길러 내고 고전 문헌을 필사해 보존한 학문의 중심지이기도 했다 — 수도원 운동의 상세는 <a class="wl" href="../../t/%EC%88%98%EB%8F%84%EC%9B%90%EC%9A%B4%EB%8F%99/">수도원운동</a>에 맡긴다. 지성의 영역에서는 스콜라 신학이 "이해하기 위해 믿는다"(안셀무스)와 "믿기 위해 이해한다"(아벨라르) 사이에서 신앙과 이성의 종합을 시도했고, <span class="wl-dead" title="위키 내부 링크">토마스 아퀴나스</span>의 『신학대전』에서 그 절정에 이르렀다 — 이 지적 모험은 <a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EA%B3%BC%EC%9D%B4%EC%84%B1/">신앙과이성</a>이 깊이 다룬다.</p>
+<p>그러나 그림자도 실재했다. 아퀴나스가 정식화한 '잉여 공로의 보고(寶庫)'와 그 대출 권한이 교황에게 있다는 논리는 훗날 면죄부 판매의 이론적 바탕이 되었고, 성례의 효력이 집전자의 자격이 아니라 예식 자체에 있다는 사효성(ex opere operato) 교리는 평신도를 예식만 따라오면 되는 수동적 존재로 만들었다. 교황권은 그레고리우스 7세가 황제를 카노사에서 무릎 꿇린 절정(1077)에서 인노첸시오 3세의 "해와 달" 이론을 지나, 아비뇽 유수(1309~1377)와 세 교황이 병립한 교회 대분열(1377~1415)의 추락으로 명멸했다. 성상과 필리오케를 둘러싼 동서의 균열은 1054년 대분열로 굳었다(<a class="wl" href="../../t/%EB%8F%99%EC%84%9C%EA%B5%90%ED%9A%8C%EB%8C%80%EB%B6%84%EC%97%B4/">동서교회대분열</a>). 개혁의 목소리는 안에서 먼저 터졌다 — 위클리프와 얀 후스가 성경의 권위를 앞세워 교황 제도에 맞섰고, 공의회 우위론은 바젤에서 "교황도 오류를 범할 수 있고 이단이 될 수 있다"까지 나아갔다(<a class="wl" href="../../t/%EC%A2%85%EA%B5%90%ED%9A%8C%EC%9D%98%EC%9A%B0%EC%9C%84%EC%84%A4/">종교회의우위설</a>). 중세는 암흑이 아니라, 빛과 그림자가 같은 강도로 얽힌 천 년이었다. 그 그림자를 성경 앞에서 다시 심문한 것이 종교개혁이다(<a class="wl" href="../../t/%EC%A2%85%EA%B5%90%EA%B0%9C%ED%98%81/">종교개혁</a>).</p>
+<h2>6. 부흥과 선교의 세기 — 경건주의에서 캐리까지</h2>
+<p>종교개혁이 신조를 세웠다면, 그 신조가 정통주의의 메마른 논쟁으로 굳어 갈 때 심장을 다시 뛰게 한 것이 경건주의였다. 슈페너는 『경건한 열망(Pia Desideria)』에서 신앙을 "복잡한 교리의 체계가 아니라 삶을 변화시키는 행함"으로 되돌렸고, 소그룹(Collegia Pietatis)을 조직했다. 프랑케는 그 경건을 고아원과 성경 배포와 해외 선교로 확장했다. 이 불씨가 친첸도르프 백작의 영지로 옮겨붙어 헤른후트의 모라비안 공동체(1727)를 낳았다. 강의는 이 작은 공동체의 선교 열정을 잊지 못할 통계로 각인시킨다 — 150년 동안 2,158명의 선교사를 파송했고, 헌신 후 죽음까지 걸린 시간은 평균 2년이었다.</p>
+<p>모라비안의 불은 대서양을 건넜다. 조나단 에드워즈가 노샘프턴에서 하나님의 주권을 설교하며 부흥을 일으켰고(1739), 조지 휫필드의 순회 설교가 신대륙을 흔들었으며, 웨슬리는 올더스게이트에서 "마음이 뜨거워지는" 체험 이후 속회와 평신도 설교로 감리교 운동을 조직했다. 이 대각성은 회심과 경건의 회복 운동인 동시에 교단 분열의 씨앗이기도 했다 — 그 부흥의 신학과 명암은 <a class="wl" href="../../t/%EB%B6%80%ED%9D%A5/">부흥</a>이 다룬다. 그리고 이 부흥의 열기가 마침내 흘러넘친 곳이 선교였다.</p>
+<blockquote>
+<p>"복음 때문에 순교, 다 죽여버리면 말살될 줄 알았다. 그런데 또 다른 증인들이 일어났다." — 이종훈, 「세계 선교 역사」</p>
+</blockquote>
+<p>19세기는 '선교의 세기'로 불린다. 종교개혁자들에게는 "이방인의 개종은 하나님이 알아서 하실 일"이라는 수동적 선교관이 있었다. 그 빈자리를 경건주의와 모라비안이 채웠고, 1792년 구두 수선공 <span class="wl-dead" title="위키 내부 링크">윌리엄 캐리</span>가 『이교도 개종을 위한 방법 사용의 의무』를 써서 "하나님으로부터 위대한 일을 기대하고, 하나님을 위해 위대한 일을 시도하라"(이사야 54:2)를 외치며 근대 개신교 선교의 문을 열었다. 랄프 윈터의 도식대로 그 물결은 캐리의 해안선 선교에서 <span class="wl-dead" title="위키 내부 링크">허드슨 테일러</span>의 내지 선교(중국내지선교회, 후일 OMF)를 거쳐 미전도 종족 선교로 이어졌다. 앞선 1,600년이 사실상 가톨릭의 선교사였다면, 개신교 선교는 이 세기에 비로소 세계로 뻗었다 — 그 신학과 계보는 <a class="wl" href="../../t/%EC%84%A0%EA%B5%90/">선교</a> 클러스터에 위임한다.</p>
+<h2>7. 남반구 이동 — 무게중심이 옮겨 가는 시대</h2>
+<p>19세기 선교의 세기가 뿌린 씨앗은 20세기와 21세기에 예상치 못한 방식으로 열매 맺었다. 복음을 받던 비서구가 이제 복음의 중심이 되고 있다. 앤드류 월스는 기독교사를 세 번의 중심 이동으로 읽는다 — 유대 문화권에서 헬라-로마로(초대교회), 로마-중세 유럽 크리스텐덤으로, 그리고 크리스텐덤 해체 이후 비서구 세계로. 지금은 세 번째 이동의 한복판이다. 20세기 초 세계 기독교 인구의 80% 이상이 유럽과 북미에 있었으나, 2050년에는 약 77%가 아프리카·아시아·라틴아메리카에 있을 것으로 전망된다.</p>
+<p>이 이동을 가능케 한 힘을 월스는 기독교의 높은 '번역가능성'에서 찾는다. 말씀이 특정 문화의 육신이 되신 성육신 신앙은 어느 언어로도 번역될 수 있고, 번역된 복음은 그 문화 안에서 새로운 신학 자원을 낳는다. 비서구 교회가 조상 숭배·가난·부족 공동체처럼 서구 신학이 답하지 못한 물음에 응답하며 기독교를 풍요롭게 하고 있다는 것이다 — 이 패러다임 전환의 상세는 <a class="wl" href="../../t/%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90/">세계기독교</a>에 맡긴다.</p>
+<p>이 지형에서 한국 교회의 자리는 독특하다. 불과 한 세기 전 선교 수혜국이던 한국은 이제 주요 선교 발신국이 되었으나, 여전히 서구 선교 모델에 의존하는 '중간 세대'에 서 있다. 세계 교회사가 곧 우리 이야기의 전사(前史)임을 보여주는 접점도 있다 — 콜롬바가 아이오나에 세운 선교 거점이 유럽 복음화의 전초기지가 되었듯, 성공회가 1893년 강화도 갑곶에 정착해 1900년 강화 성당을 세운 것이 한국 선교사의 한 장면이다. 한국 교회가 "서구에서 나머지로"가 아니라 "어디서나 어디로나"의 다중심 선교에서 어떤 독자적 기여를 할 것인가는 아직 열린 물음이다.</p>
+<h2>8. 교회사가 오늘에 주는 것 — 분별·개혁·겸손</h2>
+<p>이 통사가 오늘의 교회와 평신도에게 남기는 것은 세 가지다. 첫째, 이단을 분별하는 눈이다. 초대교회가 아리우스와 부딪혀 얻은 교훈은 "신학이 사역의 방향을 결정한다"는 것이었다 — 그리스도의 신성을 부인하면 대속이 무너지고 행위구원으로 미끄러진다는 도미노가 니케아에서 확인되었다. 여호와의 증인·몰몬·안식교처럼 오늘 되살아나는 오류의 계보를 교회사는 미리 그려 놓았다. 역사를 아는 교회는 옛 이단을 새 이름으로 다시 맞이하지 않는다.</p>
+<p>둘째, 개혁의 원리다. 종교개혁이 남긴 "개혁된 교회는 항상 개혁되어야 한다(semper reformanda)"는 명제는 16세기에 완료된 구호가 아니라 교회를 향해 계속 겨누어진 칼끝이며, 그 칼끝은 언제나 자기 자신을 먼저 향한다. 교회사의 리듬 자체가 이 원리의 증거다 — 특권은 타락을 부르고, 타락한 자리에서 다시 개혁이 일어났다. 지금 우리가 누리는 것이 특권인지 소명인지를 묻는 것이 교회사적 자기 점검이다.</p>
+<p>셋째, 겸손이다. 이천 년의 교회는 진리를 지켜 낸 공의회의 영광과 형제를 화형에 넘긴 콘스탄스의 수치를 함께 지녔다. 어느 시대도 온전히 빛이거나 온전히 어둠이지 않았다. 이 사실은 오늘의 교회가 자기 시대를 절대화하지 않도록, 그리고 과거를 함부로 정죄하지 않도록 붙든다. 생명과 고난과 죽음을 매일 마주하는 의료인에게도 이 겸손은 실용적이다(<a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a>) — 교회가 역병과 박해와 제국의 부침을 어떻게 통과해 왔는지를 아는 사람은, 오늘의 위기 앞에서도 성령이 교회를 이끌어 오셨다는 긴 시야를 잃지 않는다. 교회사의 결론은 연대표의 암기가 아니라, 그 긴 이야기의 주인이 여전히 하나님이시라는 고백이다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>교회사는 성령이 교회를 이끌어 온 발자취인 동시에 교회가 되풀이한 오류의 목록이다 — 미화도 정죄도 아닌 충실과 공정이 교회사가의 두 의무다.</li>
+<li>복음은 한 번도 한자리에 머문 적이 없다 — 유대에서 헬라-로마로, 유럽으로, 신대륙으로, 이제 남반구로. 교회사는 끊임없이 변경을 옮겨 온 이동의 기록이다.</li>
+<li>초대교회는 세상을 이기려 하지 않고 세상 속에서 다르게 삶으로써 세상을 바꾸었다 — 성장의 동력은 설교가 아니라 몸에 밴 삶(habitus)이었다(크라이더).</li>
+<li>콘스탄티누스 전환은 '기독교 왕국의 창설'이자 '교회의 타락'이라는 두 얼굴을 함께 지녔다 — 얻은 것(자유·정통 확립)과 잃은 것(세속화·강제)을 함께 세어야 공정하다.</li>
+<li>중세는 암흑이 아니라 빛과 그림자가 얽힌 천 년이다 — 수도원의 보존·선교와 스콜라의 종합이 한쪽에, 면죄부의 논리와 평신도의 수동화가 다른 쪽에 있었다.</li>
+<li>부흥과 선교는 하나의 강물이다 — 경건주의(스페너)에서 모라비안(친첸도르프)을 거쳐 대각성(에드워즈·웨슬리)으로, 그리고 캐리의 선교의 세기로 흘렀다.</li>
+<li>"박해가 교회를 순수하게 하고, 특권이 교회를 부패시킨다"는 리듬은 어느 한 시대가 아니라 오늘을 비추는 거울이다 — 교회사의 세 유산은 이단 분별·개혁의 원리·겸손이다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>'박해가 정화한다'는 통찰은 강력하지만, 그렇다면 평안과 자유 가운데 누리는 신앙은 본질적으로 열등한가 — 고난의 낭만화로 흐르지 않으면서 이 리듬을 읽는 길은 무엇인가?</li>
+<li>콘스탄티누스 전환의 저울에서 '정통 교리의 확립'이라는 얻은 것과 '나그네 정체성의 상실'이라는 잃은 것 중 무엇이 더 무거운가 — 크리스텐덤은 필요한 단계였는가, 최초의 타락이었는가?</li>
+<li>종교개혁자들의 수동적 선교관("하나님이 알아서 하신다")은 종교개혁 신학의 본질적 한계인가, 당대 상황(제도 정비 우선)의 산물인가?</li>
+<li>무게중심이 남반구로 옮겨 간 세계 기독교 시대에, 선교 수혜국에서 발신국으로 이행한 한국 교회의 독자적 기여는 무엇이며, 그 압축 성장의 그림자(대형화·분열)는 세계 교회사에서 어떻게 위치시켜야 하는가?</li>
+<li>12사도의 순교 방식이나 패트릭의 꿈처럼 사료와 전승이 뒤섞인 대목에서, 역사적 사실과 경건한 전승을 신자가 어떻게 분별하도록 도울 것인가?</li>
+</ul>
+<h2>교차 참조</h2>
+<p>통사 관문으로서, 이 페이지가 라우팅하는 시대 지도다.</p>
+<p><strong>시대별 대형 페이지 — 이 지도의 마디들</strong>
+- <a class="wl" href="../../t/%EC%B4%88%EB%8C%80%EA%B5%90%ED%9A%8C/">초대교회</a> · <a class="wl" href="../../t/%EC%88%9C%EA%B5%90/">순교</a> · <a class="wl" href="../../t/%EB%B0%95%ED%95%B4/">박해</a> — 첫 삼백 년의 신앙 정립과 대박해
+- <a class="wl" href="../../t/%EA%B3%B5%EC%9D%98%ED%9A%8C/">공의회</a> · <a class="wl" href="../../t/%EC%9D%B4%EB%8B%A8%EB%85%BC%EC%9F%81/">이단논쟁</a> — 고대 교리가 벼려진 논쟁의 자리
+- <a class="wl" href="../../t/%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%85%90%EB%8D%A4/">크리스텐덤</a> — 콘스탄티누스 전환과 제국 교회
+- <a class="wl" href="../../t/%EC%88%98%EB%8F%84%EC%9B%90%EC%9A%B4%EB%8F%99/">수도원운동</a> · <a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EA%B3%BC%EC%9D%B4%EC%84%B1/">신앙과이성</a> — 중세의 영성과 지성
+- <a class="wl" href="../../t/%EC%A2%85%EA%B5%90%EA%B0%9C%ED%98%81/">종교개혁</a> — 16세기 개혁 운동 전체
+- <a class="wl" href="../../t/%EA%B2%BD%EA%B1%B4%EC%A3%BC%EC%9D%98/">경건주의</a> · <a class="wl" href="../../t/%EB%B6%80%ED%9D%A5/">부흥</a> — 정통주의 이후의 심장과 대각성
+- <a class="wl" href="../../t/%EC%84%A0%EA%B5%90/">선교</a> · <a class="wl" href="../../t/%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90/">세계기독교</a> — 선교의 세기와 남반구 이동</p>
+<p><strong>인접 주제</strong>
+- <a class="wl" href="../../t/%EC%A1%B0%EC%A7%81%EC%8B%A0%ED%95%99/">조직신학</a> — loci 관문(이 통사 관문의 자매 페이지)
+- <a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%A1%A0/">교회론</a> — 교회의 본질과 표지
+- <a class="wl" href="../../t/%EC%A0%95%EA%B5%90%EB%B6%84%EB%A6%AC/">정교분리</a> · <a class="wl" href="../../t/%EC%B9%A8%EB%A1%80%EA%B5%90%ED%9A%8C/">침례교회</a> — 국가-교회 관계사와 자유교회 전통
+- <a class="wl" href="../../t/%EA%B5%90%ED%99%A9%EB%AC%B4%EC%98%A4%EC%84%A4/">교황무오설</a> · <a class="wl" href="../../t/%EB%B0%94%ED%8B%B0%EC%B9%B82%EC%B0%A8%EA%B3%B5%EC%9D%98%ED%9A%8C/">바티칸2차공의회</a> — 근대 가톨릭의 두 얼굴
+- <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a> — 교회사의 긴 시야가 현장의 분별로 번역되는 자리</p>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBTS 교회사I 1주 「교회사 개론」</td>
+<td>강의</td>
+<td>역사의 정의(카), 기독교 역사관, 교회사가의 의무(충실·공정), 시대 구분, 고대 교회 성립 배경</td>
+</tr>
+<tr>
+<td>MBTS 교회사I 2~4주 강의</td>
+<td>강의</td>
+<td>속사도·이단(영지주의·마르키온·몬타누스)·정경·신조, 콘스탄티누스와 국교화, 니케아~칼케돈, 수도원의 발생</td>
+</tr>
+<tr>
+<td>MBTS 교회사I 5~8주 강의</td>
+<td>강의</td>
+<td>중세의 정의('암흑기'·"그래도 신앙의 시기"), 수도원·선교, 동서 대분열(1054), 스콜라(안셀무스·아퀴나스), 교황권의 절정과 쇠퇴, 위클리프·후스</td>
+</tr>
+<tr>
+<td>MBTS 교회사II 5~8주 강의</td>
+<td>강의</td>
+<td>이신론, 독일 경건주의(스페너·프랑케)·모라비안, 대각성(에드워즈·휫필드·웨슬리), 근대 로마 가톨릭·에큐메니컬 운동</td>
+</tr>
+<tr>
+<td>알렌 크라이더 『초대교회에 길을 묻다』 / <a class="wl" href="../../b/%EC%B4%88%EA%B8%B0%EA%B8%B0%EB%8F%85%EA%B5%90%EC%9D%98%EC%98%88%EB%B0%B0%EC%99%80%EB%B3%B5%EC%9D%8C%EC%A0%84%EB%8F%84_%ED%81%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/">초기기독교의예배와복음전도_크라이더</a> · <a class="wl" href="../../b/%EC%B4%88%EA%B8%B0%EA%B5%90%ED%9A%8C%EC%9D%98%EC%9D%B8%EB%82%B4%EC%99%80%EB%B0%9C%ED%9A%A8_%ED%81%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/">초기교회의인내와발효_크라이더</a></td>
+<td>book</td>
+<td>아비투스, 10년 40% 성장, 매력→강제 전환, "선지자적 소수", 디오그네투스 서신</td>
+</tr>
+<tr>
+<td>이종훈 「세계 선교 역사」(2019, CMF)</td>
+<td>강의</td>
+<td>박해→정화→확장의 통사 구도, 랄프 윈터 시대 구분, 모라비안 통계, 강화도 성공회 접점</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">윌리엄캐리</span> · <span class="wl-dead" title="위키 내부 링크">허드슨테일러</span></td>
+<td>person</td>
+<td>근대 선교의 아버지, 랄프 윈터 3물결(해안선→내지→종족)</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EA%B3%B5%EC%9D%98%ED%9A%8C/">공의회</a> · <a class="wl" href="../../t/%EC%A2%85%EA%B5%90%EA%B0%9C%ED%98%81/">종교개혁</a> · <a class="wl" href="../../t/%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90/">세계기독교</a></td>
+<td>topic</td>
+<td>각 시대의 상세 위임 대상</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/교회사</span><span>#discipline/역사신학</span><span>#통사</span><span>#시대구분</span><span>#교리사</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

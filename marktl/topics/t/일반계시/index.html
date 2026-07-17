@@ -1,0 +1,304 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>일반계시 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:206">변증·철학</span><span class="date">2026-07-14</span></div>
+  <h1 class="note-title">일반계시</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>일반계시(general revelation)는 하나님이 창조 세계와 역사, 그리고 인간의 양심을 통해 모든 사람에게 자신을 드러내시는 방식을 가리킨다. 특정한 시대·민족에게 말씀과 성육신으로 주어진 특별계시(special revelation)와 달리, 시대와 장소를 가리지 않고 모든 인류가 접근할 수 있다는 의미에서 "일반적"이다. 전성민 교수는 구약의 자연법 강의에서 이를 "양심 + 창조질서 = 상식"으로 압축하는데, 이 정의는 일반계시가 사변적 개념이기 이전에 보편적 인간 경험에 뿌리를 두고 있음을 짚는다.</p>
+<p>이 글은 그 보편의 자리를 정본으로 다룬다. <a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%EB%A1%A0/">성경론</a>이 특별계시(성경)를 서술하면서 "일반계시의 각론은 일반계시가 맡는다"고 넘긴 지점이 바로 여기이며, 계시 개념 자체의 인식론적 구조 — 하나님을 아는 일이 어떻게 가능한가 — 는 <a class="wl" href="../../t/%EA%B3%84%EC%8B%9C/">계시</a>에 맡긴다. 그렇게 정리하고 나면 일반계시의 고유한 물음이 선명해진다. 하나님은 성경 밖에서도 자신을 말씀하시는가. 만일 그렇다면 그 말씀은 무엇을 주고 무엇을 주지 못하는가. 그리고 그 대답이 왜 곧바로 선교와 과학과 타문화의 문제가 되는가.</p>
+<h2>1. 두 권의 책 — 자연이라는 책과 성경이라는 책</h2>
+<p>고전적인 신학은 하나님이 두 권의 책을 쓰셨다고 말해 왔다. 자연이라는 책과 성경이라는 책이다. 문대원 목사는 히브리서 1장 설교에서 같은 구분을 더 감각적인 언어로 옮긴다 — 하나는 "아래로부터의 지식", 다른 하나는 "위로부터의 지식"이다. 일반계시는 창조 세계를 통해 아래로부터 올라오고, 특별계시는 말씀을 통해 위로부터 내려온다. 두 책은 경쟁하지 않는다. 자연이라는 책이 "하나님이 계시다"라고 크게 외친다면, 성경이라는 책은 "그 하나님이 너를 구원하신다"라고 이름을 부르며 다가온다.</p>
+<p>이 두 책의 경계를 존 스토트는 로마서 1장 19-20절 해석에서 네 가지로 구별한다. 일반계시는 <strong>일반적</strong>이고(모든 사람에게), <strong>자연적</strong>이며(창조를 통해), <strong>지속적</strong>이고(창세로부터 지금까지), <strong>창조적</strong>이다 — 그리스도 안에서 은혜로 주어지는 <strong>구원적</strong> 특별계시와 갈라지는 지점이 바로 이 마지막 항이다. 일반계시는 창조를 통해 하나님의 영광을 드러내지만, 그 영광 안에 구원의 문은 열려 있지 않다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>일반계시</th>
+<th>특별계시</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>통로</td>
+<td>창조·양심·역사</td>
+<td>말씀·성육신·성경</td>
+</tr>
+<tr>
+<td>방향</td>
+<td>아래로부터(창조에서 올라옴)</td>
+<td>위로부터(하나님이 내려오심)</td>
+</tr>
+<tr>
+<td>범위</td>
+<td>모든 사람, 모든 시대</td>
+<td>언약 백성, 구속사</td>
+</tr>
+<tr>
+<td>드러내는 것</td>
+<td>하나님의 존재·능력·신성</td>
+<td>그리스도, 구원의 길</td>
+</tr>
+<tr>
+<td>도달 지점</td>
+<td>핑계할 수 없음</td>
+<td>구원에 이름</td>
+</tr>
+<tr>
+<td>정본 페이지</td>
+<td>(이 글)</td>
+<td><a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%EB%A1%A0/">성경론</a></td>
+</tr>
+</tbody>
+</table>
+<h2>2. 세 통로 — 창조·양심·역사</h2>
+<p>일반계시는 한 갈래로만 흐르지 않는다. 하나님은 세 개의 통로로 자신을 드러내신다.</p>
+<p>첫째는 <strong>창조 세계</strong>다. "하늘이 하나님의 영광을 선포하고 궁창이 그의 손으로 하신 일을 나타내는도다"(시 19:1). 바울은 이를 더 단정적으로 말한다.</p>
+<blockquote>
+<p>창세로부터 그의 보이지 아니하는 것들 곧 그의 영원하신 능력과 신성이 그가 만드신 만물에 분명히 보여 알려졌나니 그러므로 그들이 핑계하지 못할지니라. (롬 1:20)</p>
+</blockquote>
+<p>둘째는 <strong>양심</strong>이다. 바울이 로마서 2장 14-15절에서 율법 없는 이방인이 "마음에 새긴 율법"을 따라 행한다고 말한 그 자리다. 전성민 교수는 이를 자연법의 두 축 가운데 하나 — "인간의 양심에 새겨진 법" — 로 정리하며, 아모스가 이방 민족의 반인륜적 범죄(임산부 살해, 왕의 뼈 소각)를 심판하는 근거를 여기서 찾는다. 명문 율법 조항이 없어도 "인간이라면 해서는 안 되는 짓"이라는 감각이 모든 양심에 새겨져 있다는 것이다.</p>
+<p>셋째는 <strong>역사와 섭리</strong>다. 바울은 아테네에서 하나님이 "그들의 연대를 정하시며 거주의 경계를 한정하셨다"(행 17:26)고 선포했고, 아모스는 하나님이 이스라엘만이 아니라 블레셋과 아람의 역사도 친히 이동시키셨다고 증언한다(암 9:7). 열방의 흥망 자체가 하나님이 쓰신 문장이다.</p>
+<table>
+<thead>
+<tr>
+<th>통로</th>
+<th>성경의 증언</th>
+<th>드러내는 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>창조 세계</td>
+<td>시 19:1 · 롬 1:20</td>
+<td>하나님의 영원한 능력과 신성</td>
+</tr>
+<tr>
+<td>양심</td>
+<td>롬 2:14-15</td>
+<td>마음에 새겨진 도덕법, 선악의 감각</td>
+</tr>
+<tr>
+<td>역사·섭리</td>
+<td>행 17:26 · 암 9:7</td>
+<td>열방을 다스리시는 주권</td>
+</tr>
+</tbody>
+</table>
+<h2>3. 일반계시가 주는 것 — 핑계할 수 없음</h2>
+<p>세 통로가 함께 겨냥하는 결론은 하나다. <strong>핑계하지 못한다</strong>(롬 1:20). 일반계시는 하나님의 존재와 그분의 영원한 능력·신성을 인지 가능하게 하며, 동시에 인간을 도덕적 책임 앞에 세운다. 기독교 윤리학 강의가 정리하듯, 자연계시는 사람에게 구원의 길을 가르치지는 않지만 "충분히 죄를 의식하게 하고 핑계를 대지 못하게" 한다.</p>
+<p>이 "핑계할 수 없음"의 가장 강력한 구약적 증거가 전성민 교수가 주목하는 아모스의 열방 신탁이다. 이스라엘은 시내산 언약을 어겼기에 심판받는다 — 여기에는 명확한 근거가 있다. 그러나 언약을 받은 적 없는 다마스쿠스와 모압과 암몬은 무엇을 근거로 심판받는가. 답은 언약 밖의 보편적 도덕, 곧 양심에 새겨진 일반계시일 수밖에 없다. 성경 없이도 알 수 있는 도덕적 요구가 있고, 그것을 짓밟은 자는 성경을 몰랐다는 이유로 면죄되지 않는다. 일반계시는 구원의 문은 아니지만, 도덕적 책임의 법정으로는 충분히 열려 있다.</p>
+<h2>4. 일반계시가 주지 못하는 것 — 구원의 지식</h2>
+<p>그러나 정확히 여기서 일반계시의 한계가 드러난다. 문대원 목사의 문장이 그 경계를 가장 간명하게 긋는다 — "타락한 인간은 일반계시로 하나님의 존재는 알 수 있어도, 구원의 길은 알 수 없다." 창조는 창조주가 계심을 외치지만, 그 창조주가 어떻게 죄인을 용서하시는지는 말하지 않는다. 그리스도와 복음은 오직 특별계시로만 온다. 믿음은 들음에서 나고 들음은 그리스도의 말씀으로 말미암기 때문이다(롬 10:13-17).</p>
+<p>이 불충분성은 사변적 결함이 아니라 <strong>선교의 필연</strong>을 낳는 신학적 사실이다. 만일 일반계시가 구원에 충분했다면 그리스도는 오실 이유가 없고 교회는 보냄받을 이유가 없다. 일반계시가 주지 못하는 그 한 가지 때문에 전달자가 필요하다. 전성민 교수는 "왜 이스라엘만 선택하셨는가"라는 강의에서 복음을 듣지 못한 자의 운명이라는 난제 앞에 "모른다는 것이 정직한 대답"이라는 인식론적 겸손을 지키면서도, 욥이라는 비이스라엘 신앙인과 아모스 9장 7절의 보편적 섭리를 근거로 "반드시 전달자가 없었으리라 보기는 어렵다"고 가능성을 열어 둔다. 다만 그가 스스로 남긴 미해결 질문이 이 섹션의 긴장을 정직하게 요약한다. 섭리 아래 있음과 구원받음 사이에는 여전히 간격이 있고, 일반계시는 그 간격을 스스로 메우지 못한다.</p>
+<h2>5. ⚖️ 자연신학 논쟁 — 일반계시에서 신학을 세울 수 있는가</h2>
+<p>일반계시가 객관적으로 존재한다는 데까지는 대체로 합의가 이루어진다. 논쟁은 그다음이다. 타락한 인간이 그 일반계시를 출발점 삼아 순수 이성으로 하나님에 관한 신학 — 자연신학 — 을 세울 수 있는가. 여기서 전통은 세 갈래로 갈라진다.</p>
+<p><strong>토마스주의 전통</strong>은 가능하다고 본다. 토마스 아퀴나스에게 이성은 신앙에 선행하는 서곡이며, 자연 이성은 계시의 도움 없이도 신 존재를 논증하는 데까지 오를 수 있다. 반대편 끝에는 칼 바르트의 단호한 "Nein!"이 있다. 그에게 타락한 이성이 만드는 자연신학은 하나님을 아는 길이 아니라 인간이 자기 형상대로 신을 빚는 우상 제조이며, 그래서 특별계시와 경쟁하는 위험한 시도다. 프란시스 쉐퍼 역시 자연신학이 결국 특별계시와 맞서는 지식의 자치 영역을 세운다고 경계했다.</p>
+<p>그 사이에 <strong>개혁주의 중도</strong>가 있다. 코넬리우스 반틸과 헤르만 바빙크로 대표되는 이 입장은 일반계시가 객관적으로는 명백하게 유효하지만, 죄가 그것을 억압한다고 본다. 그 성경적 닻이 로마서 1장 18절이다 — 사람들이 "불의로 진리를 막는다." 계시가 흐릿한 것이 아니라, 계시는 분명한데 인간이 그 진리를 손으로 눌러 막고 우상으로 바꾼다(롬 1:23). 기독교 윤리학 강의의 표현대로 "하나님의 은총이 없으면 우리는 불가피하게 자연계시의 진리를 막거나 왜곡할 수밖에 없다." 그래서 일반계시는 자연신학을 위해 필요하지만 그것만으로는 충분하지 않다.</p>
+<table>
+<thead>
+<tr>
+<th>입장</th>
+<th>일반계시로 신학이 가능한가</th>
+<th>대표</th>
+<th>핵심 논리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>토마스주의</td>
+<td>가능 — 이성이 신앙의 서곡</td>
+<td>토마스 아퀴나스</td>
+<td>자연 이성으로 신 존재까지 오를 수 있다</td>
+</tr>
+<tr>
+<td>개혁주의 중도</td>
+<td>유효하나 불충분</td>
+<td>반틸 · 바빙크</td>
+<td>계시는 객관적으로 명백하나 죄가 억압한다(롬 1:18)</td>
+</tr>
+<tr>
+<td>바르트의 "Nein!"</td>
+<td>불가 — 위험</td>
+<td>칼 바르트</td>
+<td>타락한 이성의 자연신학은 우상 제조, 특별계시와 경쟁</td>
+</tr>
+</tbody>
+</table>
+<p>이 세 입장을 세밀히 저울질하는 일과 그 반대 논증 아홉 가지는 <a class="wl" href="../../t/%EC%9E%90%EC%97%B0%EC%8B%A0%ED%95%99/">자연신학</a>에 맡기고, 자연신학이 실제로 구성하는 신 존재 논증들은 <a class="wl" href="../../t/%EC%8B%A0%EC%A1%B4%EC%9E%AC%EC%A6%9D%EB%AA%85/">신존재증명</a>과 <a class="wl" href="../../t/%EC%9A%B0%EC%A3%BC%EB%A1%A0%EC%A0%81%EB%85%BC%EC%A6%9D/">우주론적논증</a>으로 넘긴다. 이 글이 붙드는 것은 그 앞의 물음, 곧 논증의 재료가 되는 일반계시 자체의 유효성과 한계다.</p>
+<h2>6. 일반계시와 타종교·문화 — 접촉점인가 혼합주의인가</h2>
+<p>일반계시가 모든 사람에게 주어졌다면, 성경 밖의 종교와 문화에도 진리의 파편이 있는가. 바울의 아테네 설교가 이 물음에 실천적으로 답한다. 그는 우상으로 가득한 도시에서 이방 시인의 시구 — "우리가 그의 소생이라"(행 17:28) — 를 인용하며 복음의 다리를 놓았다. 낯선 청중의 세계 안에서 이미 울리고 있던 일반계시의 한 소절을 접촉점(point of contact)으로 삼은 것이다. 전성민 교수가 지혜문학을 "신앙 세계와 일반 세계를 잇는 다리"로, 잠언이 이집트의 지혜와 닮았다는 사실을 공통 기반으로 읽는 것도 같은 통찰이다. 크리스토퍼 라이트의 선교신학이 그 배경에 있다.</p>
+<p>그러나 접촉점은 언제든 혼합주의로 미끄러질 수 있다. 타문화의 진리 요소를 인정하는 일과 복음을 그 문화에 녹여 무해하게 만드는 일은 종이 한 장 차이다. 게다가 일반계시를 읽는 인간의 눈 자체가 죄로 굴절되어 있다. 전성민 교수는 자연법의 약점을 다루며 월터 브루그만의 "창조 신학의 보수성"을 끌어와, 권력이 자기 질서를 "창조 질서"라고 선언하며 가부장제나 인종주의를 신성화하는 위험을 지적한다. 내가 "일반계시" 혹은 "상식"이라 부르는 것이 참으로 보편적인지, 아니면 내 집단의 이해관계인지를 분별하는 겸손이 없다면, 일반계시는 이데올로기의 알리바이가 된다. 접촉점의 신학은 언제나 이 자기비판과 함께 가야 한다. 선교 현장에서의 함의는 <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a>이 이어받는다.</p>
+<h2>7. 일반계시와 과학·의학 — 창조를 읽는 일이 계시를 읽는 일</h2>
+<p>창조가 하나님을 드러내는 책이라면, 그 책을 정밀하게 읽는 과학과 의학은 계시를 읽는 일이 된다. 문대원 목사는 히브리서 1장 설교에서 이 진리를 몸의 언어로 풀어낸다. 우리 안에는 지구를 세 바퀴 감을 12만 킬로미터의 혈관이 있고, 심장은 누구의 명령도 없이 20억 번 넘게 뛴다. 자율신경계의 이 조율을 누가 설계했는가. "정직한 마음으로 자연을 연구하면 창조주 하나님의 손길을 발견할 수 있다"는 것이다. 의료 현장은 매일 일반계시의 세밀한 지면을 넘기는 자리이며, 몸의 경이는 그 자체로 무언가를 가리킨다.</p>
+<p>우주론도 같은 방향을 가리킨다. 에드윈 허블이 발견한 우주 팽창은 우주에 시작이 있음을 함축했고, 정적 우주론을 무너뜨렸다. 성경은 빅뱅을 말하지 않지만 세상의 시작과 끝을 말하며, 시작이 있는 우주는 그 시작의 원인을 묻게 한다. 다만 여기에는 절제가 필요하다. 특정 시점의 과학을 변증에 지나치게 결부시키면, 그 과학이 바뀔 때 신앙이 함께 흔들리는 부메랑이 된다는 경고를 <a class="wl" href="../../t/%EC%9A%B0%EC%A3%BC%EB%A1%A0%EC%A0%81%EB%85%BC%EC%A6%9D/">우주론적논증</a>이 남겨 두었다. 창조 세계는 하나님을 가리키지만, 창조를 읽는 과학이 곧 특별계시의 자리를 대신할 수는 없다. 자연은 창조주가 계심을 웅변하고, 그 창조주가 누구이며 무엇을 하셨는지는 여전히 위로부터 온 말씀이 말해 준다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>일반계시와 특별계시는 경쟁하는 두 지식이 아니라 방향이 다른 두 책이다 — 자연은 "하나님이 계시다"를 아래로부터 외치고, 성경은 "그 하나님이 구원하신다"를 위로부터 말한다.</li>
+<li>일반계시는 세 통로(창조·양심·역사)로 오며, 그 셋이 함께 겨냥하는 결론은 "핑계할 수 없음"이다(롬 1:20).</li>
+<li>아모스의 열방 신탁은 언약 없는 이방 민족조차 심판받는다는 점에서, 성경 밖에도 알 수 있는 도덕적 요구가 있음을 보여주는 구약의 강력한 증거다.</li>
+<li>일반계시가 주지 못하는 단 하나 — 구원의 지식 — 이 바로 선교의 필연을 낳는다. 자연이 충분했다면 그리스도도 교회도 필요 없었을 것이다.</li>
+<li>자연신학 논쟁의 핵심은 계시의 유효성이 아니라 죄의 억압력이다. 개혁주의 중도는 "계시는 명백하나 인간이 진리를 막는다"(롬 1:18)로 토마스주의와 바르트 사이에 선다.</li>
+<li>타문화의 진리 요소는 접촉점이 될 수 있으나, "창조 질서"라는 언어가 권력의 알리바이로 오용될 수 있으므로 접촉점의 신학은 자기비판과 함께 가야 한다.</li>
+<li>의사에게 몸의 경이는 매일 넘기는 일반계시의 지면이다 — 창조를 정밀하게 읽는 일은 계시를 읽는 일이 될 수 있으나, 과학이 특별계시를 대신하지는 못한다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>일반계시는 죄를 깨닫게 하는 데까지만 이르는가, 아니면 드물게 구원의 지식으로 이어질 수 있는가. 섭리 아래 있음과 구원받음 사이의 간격은 신학적으로 어떻게 메워지는가.</li>
+<li>로마서 1장이 말하는 "억압된 계시"가 사실이라면, 죄인의 이성이 일반계시에서 세운 자연신학의 논증은 어느 정도까지 신뢰할 수 있는가.</li>
+<li>접촉점과 혼합주의를 가르는 실천적 경계선은 어디인가 — 타종교의 진리 파편을 인정하는 일과 복음을 문화에 용해시키는 일 사이에서.</li>
+<li>"창조 질서"의 정당한 호소와 권력에 의한 부당한 신성화를 분별할 적극적 기준은 무엇인가.</li>
+<li>특정 시점의 우주론·의학에 변증을 결부시키는 위험을 피하면서도, 창조 세계의 증거를 신앙적으로 활용할 균형점은 어디인가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EA%B3%84%EC%8B%9C/">계시</a> — 하나님을 아는 일의 가능성, 일반계시가 딛고 선 계시론 총론</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%EB%A1%A0/">성경론</a> — 특별계시로서의 성경, 위로부터의 지식의 정본</li>
+<li><a class="wl" href="../../t/%EC%9E%90%EC%97%B0%EC%8B%A0%ED%95%99/">자연신학</a> — 일반계시에서 신학을 세우려는 시도와 그 반대 논증 상세</li>
+<li><a class="wl" href="../../t/%EC%8B%A0%EC%A1%B4%EC%9E%AC%EC%A6%9D%EB%AA%85/">신존재증명</a> · <a class="wl" href="../../t/%EC%9A%B0%EC%A3%BC%EB%A1%A0%EC%A0%81%EB%85%BC%EC%A6%9D/">우주론적논증</a> — 자연신학이 구성하는 신 존재 논증</li>
+<li><a class="wl" href="../../t/%EC%96%91%EC%8B%AC/">양심</a> · <a class="wl" href="../../t/%EC%9E%90%EC%97%B0%EB%B2%95/">자연법</a> — 일반계시의 내면적 통로와 그 윤리적 구현</li>
+<li><a class="wl" href="../../t/%EC%B0%BD%EC%A1%B0%EC%8B%A0%ED%95%99/">창조신학</a> — 창조 세계를 계시로 읽는 신학</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> — 접촉점·미전도 종족·일반계시 문제의 선교적 함의</li>
+<li><a class="wl" href="../../t/%EA%B5%AC%EC%95%BD%EC%8B%A0%ED%95%99/">구약신학</a> — 열방 신탁·지혜문학에 나타난 일반계시의 구약적 근거</li>
+<li><a class="wl" href="../../t/%EC%8B%A0%EB%A1%A0/">신론</a> — 자기 계시로 시작하는 하나님 지식의 큰 그림</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>전성민 「구약에 드러난 자연법」</td>
+<td>강의</td>
+<td>양심+창조질서=상식, 아모스 열방 신탁, 언약 밖 심판의 근거</td>
+</tr>
+<tr>
+<td>전성민 「왜 이스라엘만 선택하셨는가」</td>
+<td>강의</td>
+<td>욥·비이스라엘 신앙인, 암 9:7 보편 섭리, 구원과 섭리의 간격</td>
+</tr>
+<tr>
+<td>전성민 「자연법의 약점」</td>
+<td>강의</td>
+<td>브루그만 창조 신학의 보수성, "창조 질서"의 이데올로기적 오용</td>
+</tr>
+<tr>
+<td>문대원 「하나님의 언어」(히 1:1-3)</td>
+<td>설교</td>
+<td>아래로부터/위로부터의 지식, 시 19:1·롬 1:20, 혈관·심장의 경이</td>
+</tr>
+<tr>
+<td>문대원 「교만한 자는 감사하지 않는다」(롬 1:18-23)</td>
+<td>설교</td>
+<td>진리를 막음, 계시의 억압과 우상 교체</td>
+</tr>
+<tr>
+<td>문대원 「세계관 이야기(1)」(행 17:24-31)</td>
+<td>설교</td>
+<td>바울의 접촉점 변증, 역사·섭리를 통한 계시, 이방 시인 인용</td>
+</tr>
+<tr>
+<td>변증학 3주 「신 존재의 문제」(양정모)</td>
+<td>강의</td>
+<td>존 스토트의 일반계시 4구별, 일반계시와 자연신학의 관계</td>
+</tr>
+<tr>
+<td>기독교 윤리학 8주 「계시의 유기체」</td>
+<td>강의</td>
+<td>계시의 유기체, 자연계시의 삼중 통로, 구원 지식의 결여</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/변증학</span><span>#discipline/조직신학</span><span>#계시론</span><span>#자연신학</span><span>#창조</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

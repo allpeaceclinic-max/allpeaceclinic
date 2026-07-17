@@ -1,0 +1,332 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>오픈 시크릿 (The Open Secret) — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="author">레슬리 뉴비긴</span><span class="date">2026-05-05</span></div>
+  <h1 class="note-title">오픈 시크릿 (The Open Secret)</h1>
+  
+</header>
+<article class="note">
+<p><strong>저자</strong>: 레슬리 뉴비긴 (Lesslie Newbigin)<br />
+<strong>분류</strong>: 선교신학 / 교회론<br />
+<strong>핵심 명제</strong>: 선교는 교회가 하는 것이 아니라, 삼위일체 하나님이 하시는 것이며 교회는 그 선교에 동참하는 공동체다</p>
+<hr />
+<h2>1장. 논의의 배경</h2>
+<ul>
+<li>서구 교회 선교사역의 오랜 위기 — 빌링엔(1952), 로잔(1974), 방콕(1971) 등</li>
+<li>선교 논쟁의 두 진영:
+  1. <strong>에큐메니컬</strong>: 선교 = 하나님의 정의를 위한 사회적 행동
+  2. <strong>복음주의</strong>: 선교 = 개인적 회심</li>
+<li>두 진영 모두 위험: 정의 프로그램은 예배에서 단절되면 도덕주의 십자군이 되고, 예배 공동체는 세상에 닫히면 자기중심적 존재가 된다</li>
+<li>뉴비긴의 목표: <strong>하나의 통합적 틀</strong>을 제시한다</li>
+</ul>
+<hr />
+<h2>2장. 권위의 문제</h2>
+<blockquote>
+<p>"당신은 무슨 권리로 우리에게 이 메시지를 전하는가?" (막 11:28)</p>
+</blockquote>
+<ul>
+<li>선교의 정당성을 인류 발전·해방·유익에 두려는 시도 → 틀렸다</li>
+<li>선교사역의 토대: 궁극적 신념 자체 — 유용성이 아니다</li>
+<li>예수님의 권위는 파생된 권위가 아니라 <strong>인간 역사 한복판에 존재하는 하나님의 권위</strong></li>
+<li><strong>기독교 선교 = 예수는 만유의 주님이라는 고백을 모든 삶의 영역에서 행동으로 옮기는 일</strong></li>
+</ul>
+<hr />
+<h2>3장. 삼위일체 하나님의 선교</h2>
+<ul>
+<li>선교의 출발점: "너희는 나를 누구라 하느냐?"</li>
+<li>예수님은 하나님 나라의 창설자가 아니라 <strong>반포자요 사자</strong></li>
+<li>삼위일체 선교 구조:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>위격</th>
+<th>선교 방식</th>
+<th>장</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>성부</td>
+<td>나라를 선포하는 것 — <strong>행동하는 믿음</strong></td>
+<td>4장</td>
+</tr>
+<tr>
+<td>성자</td>
+<td>아들의 삶에 동참하는 것 — <strong>행동하는 사랑</strong></td>
+<td>5장</td>
+</tr>
+<tr>
+<td>성령</td>
+<td>성령의 증언을 전달하는 것 — <strong>행동하는 소망</strong></td>
+<td>6장</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>4장. 성부: 하나님 나라 선포 — 행동하는 믿음</h2>
+<ul>
+<li>노아 → 70개 나라 → 아브라함 → 이스라엘 → 예수님으로 이어지는 구속사의 흐름</li>
+<li><strong>감춰진 동시에 드러난 비밀 = 십자가</strong> — 두루마리의 인을 뗀 것은 죽임당한 어린양</li>
+<li>선교 = 행동하는 믿음: 하나님의 나라가 가까이 왔다는 믿음을 역사 가운데 복음전파와 인내로 옮기는 일</li>
+</ul>
+<hr />
+<h2>5장. 성자: 아들의 삶에 동참 — 행동하는 사랑</h2>
+<ul>
+<li>예수님의 현존 = 그 나라의 현존</li>
+<li><strong>요 20:21</strong> — "아버지께서 나를 보내신 것같이 나도 너희를 보내노라" → 파송의 원형</li>
+<li>교회는 <strong>하나님 나라를 선포할 뿐 아니라 삶으로 그 나라의 현존을 증언</strong>하기 위해 보냄받은 공동체</li>
+<li>성찬식 — 죽음과 부활의 생명에 참여하는 중심</li>
+<li>승리주의나 도덕주의가 아닌, <strong>십자가와 부활의 형태로 나라의 현존을 보여주는 것</strong></li>
+</ul>
+<hr />
+<h2>6장. 성령: 성령의 증언 — 행동하는 소망</h2>
+<blockquote>
+<p><strong>성령은 교회보다 앞서 가시는 증인이다. 교회의 증언은 그에 따른 부차적인 것이다.</strong></p>
+</blockquote>
+<ul>
+<li>행 8 (빌립·에티오피아), 행 9 (아나니아·사울), 행 10 (베드로·고넬료), 행 13 (안디옥 파송), 행 16 (마게도냐 환상) — 모두 성령이 주도</li>
+<li>복음의 진정한 승리는 교회가 강할 때가 아니라 <strong>연약한 가운데서도 믿음을 지킬 때</strong></li>
+<li>선교의 삼중 구조: 하나님 나라의 <strong>선포</strong> + <strong>현존</strong> + <strong>선행</strong></li>
+</ul>
+<h3>★ 베드로와 고넬료 — 쌍방향 회심의 원형</h3>
+<blockquote>
+<p><strong>베드로와 고넬료의 만남 = 고넬료의 회심 + 베드로의 회심(교회의 회심)</strong><br />
+행 11:17 — "내가 누구이기에 하나님을 능히 막겠느냐"</p>
+</blockquote>
+<p><strong>사건의 구조</strong>:
+- 고넬료는 하나님을 경외하는 사람 (행 10:2) — 완전한 비그리스도인이 아님
+- 그러나 유대인 베드로에게 고넬료는 "이방인"이자 <strong>경계 밖의 사람</strong>
+- 베드로: "주여 그럴 수 없나이다" → 성령 앞에서 자기 확신이 무너짐</p>
+<p><strong>뉴비긴의 4가지 통찰</strong>:
+1. <strong>선교는 세상뿐 아니라 교회도 변화시킨다</strong> — 단지 교회의 확장이 아닌 "더 값비싸고 혁명적인 그 무엇"
+2. <strong>성령은 교회보다 앞서 가신다</strong> — 교회는 성령이 이미 행하신 곳을 따라간다
+3. <strong>교회는 선교를 좌우하는 권한이 없다</strong> — 행 15:12, 교회는 입을 다물고 들어야 할 때가 있다
+4. <strong>타문화·타종교인을 통해 교회가 책망받을 수 있다</strong> — 10장으로 연결되는 원리</p>
+<hr />
+<h2>7장. 복음과 세계역사</h2>
+<ul>
+<li><strong>특수성의 스캔들</strong>: 하나님의 보편성과 특정한 행위(유대인·예수)의 결합은 모순이 아니라 상호 필요</li>
+<li><strong>선택 교리의 올바른 이해</strong>: 이스라엘은 만국의 지배자가 아니라 <strong>만국을 위해 종과 증인</strong>이 되도록 선택됨</li>
+<li>언약이 계약으로 변질되는 위험 — 율법 준수가 축복의 조건이 되어서는 안 된다</li>
+<li>궁극 목표: <strong>그리스도 안에서 온 피조세계의 통일</strong> (엡 1:9-10)</li>
+</ul>
+<hr />
+<h2>8장. 선교와 하나님의 정의</h2>
+<ul>
+<li><strong>복음전도 ↔ 사회정의의 분리는 잘못</strong> — 선교사역은 두 가지를 분리할 수 없다</li>
+<li>해방신학의 통찰: 실천 없이 진리를 안다고 할 수 없다 (미구에즈 보니노)</li>
+<li>해방의 3차원 (구스타보 구티에레스): 정치적 → 문화적 → 영적 해방</li>
+<li>십자가를 영적 해방으로만 보는 것은 이원론</li>
+<li>인간의 사적 영역과 공적 영역 분리는 잘못 — <strong>부활이 통일성의 근거</strong> (롬 8장)</li>
+<li>교회가 정치적 이슈에 발언·행동하는 것은 정치화가 아니다; 특정 세력과 결탁할 때 비로소 정치화된다</li>
+</ul>
+<hr />
+<h2>9장. 교회성장, 회심, 문화</h2>
+<h3>교회성장과 하나님 나라</h3>
+<ul>
+<li>맥가브란(교회성장학) 비판: 수적 성장이 선교 성공의 기준이 아니다</li>
+<li>바울의 모델: 공동체가 형성되면 선교사는 본분을 다한 것 (롤랜드 앨런)</li>
+<li><strong>제자 삼는 일과 온전케 하는 일은 분리될 수 없다</strong></li>
+</ul>
+<h3>★ 회심의 윤리적 차원</h3>
+<blockquote>
+<p>회심은 두 단계로 일어나지 않는다.<br />
+종교적 회심 → 이후 윤리적 결단 ❌<br />
+<strong>전인(全人)의 방향 전환이 한번에</strong> ✅</p>
+</blockquote>
+<ul>
+<li>회심 = 이 시대·이 장소의 윤리적 결단을 내포하는 <strong>전인적 사건</strong></li>
+<li>베드로의 회심: 식사법·정결 규례라는 삶의 방식 전환 = 윤리적 회심의 원형</li>
+<li>회심의 윤리적 내용을 복음전도자가 미리 규정하면 → <strong>복음 위에 군림하는 지배자</strong>가 됨</li>
+<li>성령이 회심자를 인도하신다 — "우리가 삭개오의 증언을 좀 더 경청했더라면"</li>
+</ul>
+<blockquote>
+<p><strong>의료·직업적 적용</strong>: 의사로서 환자를 대하는 방식, 진료실에서의 가치관이 회심과 분리될 수 없다.<br />
+영적 거듭남과 직업적·윤리적 거듭남은 하나의 사건이다.</p>
+</blockquote>
+<h3>복음과 문화의 삼각관계</h3>
+<ul>
+<li>지역 문화 + 선교사의 기독교(본국 문화 영향) + 성경의 증언 — 세 축의 긴장</li>
+<li><strong>"우리 문화에 입각한 성경 해석을 바로잡으려면 다른 문화 그리스도인의 증언이 필요하다"</strong></li>
+<li>"고넬료가 필요하다" — 다른 문화 그리스도인이 나의 편견을 교정한다</li>
+</ul>
+<hr />
+<h2>10장. 복음과 타종교</h2>
+<ul>
+<li>타종교에 대한 6가지 입장 검토 (배격 → 준비단계 → 가치인정 → 동심원 → 구원수단)</li>
+<li>뉴비긴의 입장: <strong>신앙고백형 대화</strong> — 진리는 예수 그리스도께 순종하는 제자의 삶에서 찾는다</li>
+<li><strong>베드로와 고넬료</strong> — 대화는 쌍방의 회심을 일으킨다</li>
+<li>성령이 비그리스도인을 사용하여 <strong>교회를 책망</strong>하실 수 있다</li>
+<li>대화 = 성령께서 양방을 예수님께 회심시키는 과정에 노출되는 것</li>
+<li>케노시스(자기 비움) — 타종교와의 진정한 대화를 위한 전제</li>
+</ul>
+<hr />
+<h2>핵심 주제 종합</h2>
+<table>
+<thead>
+<tr>
+<th>주제</th>
+<th>뉴비긴의 입장</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>선교의 주체</td>
+<td>삼위일체 하나님 (Missio Dei) — 교회는 참여자</td>
+</tr>
+<tr>
+<td>선교의 권위</td>
+<td>예수는 만유의 주 — 유용성이 아닌 신념 자체</td>
+</tr>
+<tr>
+<td>복음과 정의</td>
+<td>분리 불가 — 이원론 거부</td>
+</tr>
+<tr>
+<td>교회성장</td>
+<td>수치가 기준이 아님 — 공동체 형성이 목표</td>
+</tr>
+<tr>
+<td>회심</td>
+<td>전인적, 윤리적 차원 내포, 두 단계 없음</td>
+</tr>
+<tr>
+<td>타종교 대화</td>
+<td>신앙고백형 — 쌍방이 성령 앞에 노출됨</td>
+</tr>
+<tr>
+<td>문화와 선교</td>
+<td>삼각관계 — 다른 문화 그리스도인의 교정 필요</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>강의 연결</h2>
+<table>
+<thead>
+<tr>
+<th>강의</th>
+<th>연결점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MBTS 선교학</strong> (임태순)</td>
+<td>미씨오 데이, 선교의 정당성 — 빌링엔 1952 동일 출처</td>
+</tr>
+<tr>
+<td><strong>선교강의 — 총체적 선교</strong></td>
+<td>복음전도와 사회정의의 통합 (8장)</td>
+</tr>
+<tr>
+<td><strong>선교강의 — 성육신적 선교</strong> (문대원, 고후 4)</td>
+<td>"메신저와 메시지는 분리될 수 없다" — 5장 성자 선교와 공명</td>
+</tr>
+<tr>
+<td><strong>선교강의 — 문화 인식</strong></td>
+<td>복음과 문화 삼각관계 (9장)</td>
+</tr>
+<tr>
+<td><strong>하백선 시리즈</strong></td>
+<td>선교적 삶 = 6장 "행동하는 소망"의 일상적 구현</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>교차 참조</h2>
+<ul>
+<li><span class="wl-dead" title="위키 내부 링크">레슬리뉴비긴</span></li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> — 미씨오데이의 원전</li>
+<li><a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%A1%A0/">교회론</a> — 선교적 교회</li>
+<li><span class="wl-dead" title="위키 내부 링크">선교학</span></li>
+<li><span class="wl-dead" title="위키 내부 링크">요20</span> — 파송 (5장)</li>
+<li><span class="wl-dead" title="위키 내부 링크">행10</span> — 베드로·고넬료 (6장, 10장)</li>
+<li><a class="wl" href="../../b/%EB%88%84%EA%B0%80%EA%B7%B8%EC%A7%84%EB%A6%AC%EB%A5%BC%EC%A3%BD%EC%98%80%EB%8A%94%EA%B0%80_%EB%A0%88%EC%8A%AC%EB%A6%AC%EB%89%B4%EB%B9%84%EA%B8%B4/">누가그진리를죽였는가_레슬리뉴비긴</a> — 동일 저자</li>
+</ul>
+</article>
+<div class="tagrow"><span>#선교신학</span><span>#미씨오데이</span><span>#삼위일체</span><span>#통전적선교</span><span>#교회론</span><span>#상황화</span><span>#타종교</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

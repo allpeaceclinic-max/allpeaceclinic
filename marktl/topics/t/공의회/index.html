@@ -1,0 +1,338 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>공의회 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:38">교회사</span><span class="date">2026-07-10</span></div>
+  <h1 class="note-title">공의회</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>공의회(Council)는 교회의 신앙과 질서에 관한 문제를 감독(주교)들과 지도자들이 함께 모여 분별하고 결정하는 회의다. 사도행전 15장의 예루살렘 공의회가 그 성경적 원형이며, 니케아(325)에서 제2차 니케아(787)에 이르는 일곱 에큐메니칼 공의회가 삼위일체와 기독론의 정통 교리를 확립했다. MBTS 교회사 강의는 니케아-칼케돈까지의 결정을 "가톨릭·개신교·동방정교 모두가 인정하는 정통신학"으로 못박는다.</p>
+<p>그러나 이 볼트에서 공의회는 교리사의 유물로만 머물지 않는다. 공의회는 두 얼굴을 가진 전통이다. 한편으로 그것은 헬라 철학과 정치권력의 도전 앞에서 "그리스도는 참 하나님이며 참 사람"이라는 신앙고백을 지켜낸 교리 확립의 장이었고, 다른 한편으로 "특정 영웅 한 명이 아닌, 공동체 가운데 임하시는 성령의 뜻을 함께 분별"하는 의사결정 전통으로서 오늘의 이사회와 <a class="wl" href="../../t/%EA%B1%B0%EB%B2%84%EB%84%8C%EC%8A%A4/">거버넌스</a>에까지 이어지는 살아 있는 모델이다. 이 페이지는 그 두 얼굴을 함께 추적한다.</p>
+<h2>1. 예루살렘 공의회 — 모든 공의회의 원형</h2>
+<p>공의회 전통의 출발점은 니케아가 아니라 예루살렘이다. 사도행전 15장, "사도와 장로들이 이 일을 의논하러 모여"(행 15:6)라는 한 절에 이후 모든 공의회의 구조가 압축되어 있다. 안건은 이방인 신자에게 할례를 요구할 것인가였고, 문대원 목사는 이 논쟁을 "타협할 수 없는 본질(구원의 도리)과 자유로울 수 있는 비본질(구원의 형식)"의 분별로 읽는다. 베드로가 "우리와 동일하게 주 예수의 은혜로 구원받는다"(행 15:11)고 선언함으로써, 유대인의 사도와 이방인의 사도가 출신과 배경이 달라도 <a class="wl" href="../../t/%EC%B9%AD%EC%9D%98%EB%A1%A0/">구원의 진리</a>에서 일치했다는 것이 이 공의회의 교리적 결론이다.</p>
+<p>그런데 이 볼트의 거버넌스 강의들은 같은 본문에서 결론 못지않게 <strong>과정</strong>을 읽어낸다. 지역교회 전략 세미나는 행 15장을 4단계로 분석한다 — 현장 선교사 바울과 바나바의 보고를 <strong>듣고</strong>(15:4,12), "많은 변론"(15:7)으로 치열하게 <strong>분별하며</strong>, 그 결과로 이방인이 아니라 <strong>예루살렘 자신이 변화</strong>되고, 결정을 편지와 사람으로 현장에 <strong>공유·재파송</strong>하는 구조다. 레슬리 뉴비긴은 세 번째 단계를 '교회의 회심'이라 불렀다 — 고넬료가 회심한 만큼 베드로도 회심했다. 조샘 선교사는 여기서 "공동체적 인식론"이라는 개념을 길어 올린다. 진리 분별이 한 사람의 권위나 다수결이 아니라, 공동체 전체가 함께 성령의 음성을 듣는 과정으로 이루어진다는 것이다. "성령과 우리가 결정하였으니"(행 15:28) — 의사결정의 주체는 성령과 우리, 그 둘의 합작이다.</p>
+<p>이 원형이 확립해 놓은 것은, 공의회가 승자와 패자를 가리는 법정이 아니라 공동체가 함께 하나님의 뜻에 가까워지는 분별의 자리라는 이상이다. 그렇다면 그 이상은 제국의 시대에 어떻게 시험받았는가.</p>
+<h2>2. 니케아와 콘스탄티노플 — 아리우스 논쟁과 참 하나님이신 그리스도</h2>
+<p>첫 에큐메니칼 공의회인 니케아 공의회(325)는 <span class="wl-dead" title="위키 내부 링크">콘스탄티누스</span> 황제가 직접 소집했다. 표면은 신학 논쟁이지만 동기는 정치적이었다 — 교회가 분열되는 것을 황제가 용납할 수 없었던 것이다. 논쟁의 당사자는 <span class="wl-dead" title="위키 내부 링크">아리우스</span>와 <span class="wl-dead" title="위키 내부 링크">아타나시우스</span>였다. 아리우스는 성자가 성부와 동일본질(homoousios)이 아니라 창조된 존재이며 성부에 종속된다고 주장했고 — "그가 존재하지 않았던 때가 있었다" — 니케아 공의회는 이를 정죄하고 "그리스도는 참 하나님이다"를 신조로 확정했다.</p>
+<p>다만 니케아로 논쟁이 끝나지 않았다. 이후로도 호모우시오스(동일본질)와 호모이우시오스(유사본질) 논쟁이 계속되었고, <span class="wl-dead" title="위키 내부 링크">테오도시우스</span> 1세가 소집한 콘스탄티노플 공의회(381)가 니케아 신조를 재확인하면서 새 논쟁을 정리했다. 아폴리나리우스는 그리스도에게 인간의 영 대신 로고스가 자리했다고 주장했는데, 공의회는 이를 정죄하며 "그리스도는 참 인간이다"를 재확인했다. 결정적 반박은 나지안주스의 그레고리(Gregory of Nazianzus)에게서 나왔다 — "취택함을 받지 않은 것은 회복(구원)될 수 없다." 그리스도가 인간의 영을 취하지 않았다면 인간의 영은 구원받을 수 없다는 이 원리는, 공의회의 교리 논쟁이 사변이 아니라 구원론의 사활 문제였음을 보여준다. 니케아 신학의 이론적 정교화는 카파도키아 세 교부(바실, 나지안주스의 그레고리, 니사의 그레고리)의 몫이었고, 그 결실이 <a class="wl" href="../../t/%EC%82%BC%EC%9C%84%EC%9D%BC%EC%B2%B4/">삼위일체</a> 교리다.</p>
+<p>이 논쟁의 무게는 강단에서도 확인된다. 문대원 목사는 골로새서 강해에서 아리우스 노선(오늘의 여호와의 증인)이 신성 부인 → 대속 부인 → 행위구원으로 도미노처럼 무너지는 논리적 붕괴를 경고한다. "동일본질이냐 유사본질이냐"라는 한 글자 차이가 복음 자체를 좌우했던 것이다.</p>
+<h2>3. 에베소와 칼케돈 — 두 학파의 충돌과 기독론의 완성</h2>
+<p>성자의 신성이 확정되자 질문은 다음 단계로 이동한다. 참 하나님이며 참 인간이신 그리스도 안에서 신성과 인성은 <strong>어떻게</strong> 결합되는가. 교회사I 5주 토론은 이 국면을 두 학파의 대결로 정리한다. 그리스도의 신성을 강조하고 신비적·초자연주의 경향을 띤 알렉산드리아학파(아타나시우스-아폴리나리스-키릴)와, 인성을 강조하고 그리스도의 역사·윤리·인격 면을 중시한 안디옥학파(데오도레-네스토리우스-데오도렛)다.</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>알렉산드리아학파</th>
+<th>안디옥학파</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>강조점</td>
+<td>그리스도의 신성</td>
+<td>그리스도의 인성</td>
+</tr>
+<tr>
+<td>경향</td>
+<td>신비적·초자연주의</td>
+<td>역사·윤리·인격 중시</td>
+</tr>
+<tr>
+<td>계보</td>
+<td>아타나시우스 → 아폴리나리스 → 키릴</td>
+<td>데오도레 → 네스토리우스 → 데오도렛</td>
+</tr>
+<tr>
+<td>극단화 시</td>
+<td>유티케스(인성이 신성에 용해)</td>
+<td>네스토리우스(두 본성의 기계적 분리)</td>
+</tr>
+</tbody>
+</table>
+<p>기선은 알렉산드리아가 잡았다. 에베소 공의회(431)는 마리아를 "하나님의 어머니(Theotokos)"가 아니라 "그리스도의 어머니(Christotokos)"로 불러야 한다고 주장한 <span class="wl-dead" title="위키 내부 링크">네스토리우스</span>를 정죄했다 — 그의 입장은 신성과 인성의 결합을 기계적으로 설명하는 위험을 안고 있었다. 그러나 반대편 극단도 무사하지 못했다. 칼케돈 공의회(451)는 "그리스도의 인성이 신성 속으로 용해되어 버렸다"고 주장한 유티케스를 정죄하고, 터툴리안이 몇 세기 전에 선포했던 명제를 다시 확정했다 — 한 위격 안에 두 본성.</p>
+<blockquote>
+<p>그리스도는 완전한 하나님이며 아울러 완전한 사람이며, 두 본성은 나누어지지 않고, 분리되지 않으며, 변하지 않고, 혼합되지 않는다. — 칼케돈 신조 (교회사I 5주 토론 정리)</p>
+</blockquote>
+<p>주목할 것은 칼케돈이 스스로를 새 교리의 발명이 아니라 "이미 교회에서 진리로 인정했던 내용을 보다 명백하게 표현한 '신앙의 정의'"로 이해했다는 점이다. 5주 토론은 이 전체 논쟁을 "헬라 문화의 도전에 대한 교회의 신앙고백적 응전"으로 총평한다 — 신성 또는 인성을 극단적으로 강조한 이단들은 한결같이 헬라의 이원론 사고양식에 충실했고, 기독론의 역사는 그 사고양식을 배격해 온 역사였다는 것이다. 흥미로운 것은 여기에 붙은 동아시아적 성찰이다. 복음이 동아시아에 먼저 전해졌다면 음양(陰陽)의 원리 — 둘이면서 하나이고, 나누어지면서도 분리되지 않는 — 로 이 문제를 이해하여 같은 갈등을 겪지 않았을 수 있다는 것인데, 이는 공의회의 결정이 초문화적 진리를 특정 문화의 언어로 지켜낸 사건임을 역으로 드러낸다.</p>
+<h2>4. 공의회를 움직인 또 하나의 손 — 정치와 신학의 얽힘</h2>
+<p>그런데 이 교리 확립의 역사를 신학 논증만으로 읽으면 절반만 보는 것이다. 니케아부터 칼케돈까지 모든 에큐메니칼 공의회는 황제가 소집했다 — 니케아는 콘스탄티누스, 콘스탄티노플은 테오도시우스, 에베소는 데오도시우스 2세, 칼케돈은 마르키아누스. 교회사I 3주 강의는 니케아에서 "황제가 교권에 우선하는 모습이 처음 나타나며", 이것이 동로마의 황제 우위 체제와 서방의 교황 우위 체제로 갈라지는 분기점이 되었다고 짚는다.</p>
+<p>5주 토론은 더 직설적이다. 박해 시대에 "겸손한 자세로 십자가에 달리신 주님만을 바라보던" 교회가, 신앙의 자유와 함께 황실의 지원과 세속 특권을 누리면서 권력투쟁에 개입했다. 로마·알렉산드리아·안디옥·콘스탄티노플이라는 전략 교구를 차지하기 위한 암투가 벌어졌고, 알렉산드리아의 키릴이 네스토리우스를 정죄하기 위해 "정략을 세우고 여러 가지 수단을 동원"한 것처럼 정치적 이해관계가 신학 논쟁에 상당한 영향을 미쳤다. 칼케돈 직전의 에베소 2차 회의(449)가 "강도들의 회의"라는 오명으로 남은 것도 같은 맥락이다.</p>
+<p>그렇다면 공의회의 결정은 정치의 산물에 불과한가. 5주 토론의 결론은 반대 방향을 가리킨다 — 그 모든 정치적 소용돌이에도 불구하고 교회는 신앙고백을 지켜냈고, "기독론 논쟁의 배후에는 헬라문화 양식의 도전과 위협에서 기독교의 진리를 보전한 하나님의 특별한 섭리가 엿보인다." 예루살렘의 이상(공동체적 분별)과 제국의 현실(권력의 개입)이 공존하는 이 긴장이야말로 공의회 전통을 읽는 정직한 렌즈다.</p>
+<h2>5. 후기 공의회들 — 칼케돈의 여진과 동방 교회의 길</h2>
+<p>칼케돈은 일단락이었지 종결이 아니었다. 이후 세 차례의 공의회가 칼케돈의 여진을 수습한다. 제2차 콘스탄티노플 공의회(553)에서는 유스티니아누스 황제가 단성론을 성립시키려 했으나 실패하고 오히려 칼케돈 신조("한 인격, 두 본성")가 재확립되었다. 제3차 콘스탄티노플 공의회(680~681)는 단의지론(monothelitism)을 정죄하며 "그리스도는 두 의지를 가지셨으나, 인간 의지가 신적 의지에 주저 없이 순종했다"고 결론지었다. 마지막 일곱 번째, 제2차 니케아 공의회(787)는 <a class="wl" href="../../t/%EC%84%B1%EC%83%81%EB%85%BC%EC%9F%81/">성상 논쟁</a>을 다뤄, 다마스쿠스의 요한(John Damascus)이 제시한 "Latria(경배)와 Dulia(존경)의 구분"으로 성상 사용을 인정했다 — 서방은 이 구분에 반대했다.</p>
+<p>일곱 공의회를 한눈에 정리하면 다음과 같다.</p>
+<table>
+<thead>
+<tr>
+<th>차수</th>
+<th>연도</th>
+<th>공의회</th>
+<th>핵심 결정</th>
+<th>정죄/정리된 입장</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>325</td>
+<td>니케아</td>
+<td>동일본질(homoousios), "참 하나님"</td>
+<td>아리우스주의</td>
+</tr>
+<tr>
+<td>2</td>
+<td>381</td>
+<td>콘스탄티노플</td>
+<td>니케아 신조 재확인, "참 인간"</td>
+<td>아폴리나리우스주의</td>
+</tr>
+<tr>
+<td>3</td>
+<td>431</td>
+<td>에베소</td>
+<td>테오토코스, 신성·인성의 유기적 연합</td>
+<td>네스토리우스 (펠라기우스주의도 정죄)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>451</td>
+<td>칼케돈</td>
+<td>한 위격 안 두 본성 (4대 부정어)</td>
+<td>유티케스(단성론)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>553</td>
+<td>콘스탄티노플 2차</td>
+<td>칼케돈 신조 재확립</td>
+<td>단성론 재시도 실패</td>
+</tr>
+<tr>
+<td>6</td>
+<td>680~681</td>
+<td>콘스탄티노플 3차</td>
+<td>그리스도의 두 의지</td>
+<td>단의지론</td>
+</tr>
+<tr>
+<td>7</td>
+<td>787</td>
+<td>니케아 2차</td>
+<td>Latria/Dulia 구분, 성상 공경 인정</td>
+<td>성상파괴론</td>
+</tr>
+</tbody>
+</table>
+<p>이 일곱 공의회는 이후 교회 전통들의 정체성을 가르는 기준선이 되었다. 교회사II 5주 강의에 따르면 동방교회는 이 일곱 회의 전체를 신봉했으나, 그 과정에서 페르시아(네스토리우스파)·아르메니아·에티오피아·콥트(단성론)·시리아 야곱파 등 공의회 결정을 받아들이지 않은 교회들이 갈라져 나갔고 — 네스토리우스파는 중국과 신라에까지 전파되었다 — 성상 논쟁에 대한 동서의 이견은 <a class="wl" href="../../t/%EB%8F%99%EC%84%9C%EA%B5%90%ED%9A%8C%EB%8C%80%EB%B6%84%EC%97%B4/">1054년 대분열</a>로 가는 균열의 하나가 되었다.</p>
+<h2>6. 공의회는 교황보다 높은가 — 중세 공의회 우위론</h2>
+<p>서방 중세에서 공의회는 새로운 질문의 무대가 된다. 교리가 아니라 <strong>권위</strong>의 문제다. 인노첸시오 3세가 소집한 제4차 라테란 공의회(1215)가 <a class="wl" href="../../t/%ED%99%94%EC%B2%B4%EC%84%A4/">화체설</a>을 공인하던 시점은 <a class="wl" href="../../t/%EA%B5%90%ED%99%A9%EA%B6%8C/">교황권</a>의 절정이었다 — 이때 공의회는 교황 권위의 도구였다. 그러나 <a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%8C%80%EB%B6%84%EC%97%B4/">아비뇽 유수와 교회 대분열</a>(1377~1415)로 교황이 둘, 나중엔 셋이 병립하는 초유의 사태가 벌어지자, 관계가 역전된다. 교황이 교회를 수습할 수 없다면 누가 하는가 — 공의회다.</p>
+<p>이것이 <a class="wl" href="../../t/%EC%A2%85%EA%B5%90%ED%9A%8C%EC%9D%98%EC%9A%B0%EC%9C%84%EC%84%A4/">공의회 우위론(Conciliarism)</a>이다. 피사 회의(1409)는 "종교회의가 교황보다 우위에 있다, 교회 개혁은 위에서 아래로 진행되어야 한다, 성경이 유일한 근원이자 규칙이다"라고 의결했고, 콘스탄스 회의(1414)는 세 교황을 폐위·사퇴시키고 마틴 5세를 세워 분열을 봉합했다. 바젤 회의에 이르면 논리는 급진화의 정점에 달한다 — "교황도 오류를 범할 수 있고 이단이 될 수 있으며 직무 소홀 시 제거할 수 있다." 교회사I 8주 강의는 이 사상이 이후 <a class="wl" href="../../t/%EC%A2%85%EA%B5%90%EA%B0%9C%ED%98%81/">종교개혁</a>에서 "교황권이 아니라 성경이 최종 권위"라는 주장으로 이어지는 사상적 다리 역할을 했다고 평가한다. 다만 콘스탄스 회의는 분열 봉합에는 성공했으나 실질적 개혁에는 실패했고, 오히려 <span class="wl-dead" title="위키 내부 링크">얀후스</span>를 정죄해 화형에 넘겼다 — 공의회가 개혁의 통로이면서 동시에 정죄의 도구일 수 있다는 양면성이 여기서도 반복된다.</p>
+<h2>7. 바티칸 I·II — 근대의 두 공의회와 개신교의 시선</h2>
+<p>근대 가톨릭의 두 공의회는 정반대 방향을 가리킨다. 제1차 바티칸 공의회(1870)는 <a class="wl" href="../../t/%EA%B5%90%ED%99%A9%EB%AC%B4%EC%98%A4%EC%84%A4/">교황무오설</a>을 확정했다 — 교황이 "엑스 카테드라"에서 선포하는 신앙·행습은 무오하다는 교리다. 교회사II 8주 강의는 이 결정을 "세속 권력 상실과 교리적 권위 강화의 반비례"라는 역설로 읽는다. 프랑스 혁명과 나폴레옹에게 재산과 영토를 잃고 이탈리아 통일로 교황령이 바티칸 시로 축소되던 바로 그 시기에, 무염수태 교리(1854)·이단 교서 목록(1864)·교황무오설(1870)이 잇달아 선포되었다. 세속 권력을 잃은 자리를 교리적 절대 권위로 메우려 한 것이다.</p>
+<p>반면 <a class="wl" href="../../t/%EB%B0%94%ED%8B%B0%EC%B9%B82%EC%B0%A8%EA%B3%B5%EC%9D%98%ED%9A%8C/">제2차 바티칸 공의회</a>(1962~1965)는 같은 전통 안에서의 근본적 전환이었다. 성경 접근성 확대, 지역 언어 미사, 종교의 자유 개념 수용, 그리고 개신교인에 대한 호칭을 "이단자(heretic)"에서 "분리된 형제(separated brother)"로 바꾼 것 — 교회사II 강의는 이를 "이전 200년과 단절되는 근본적 전환"으로, 위기 이후에도 결국 개방으로 전환할 수 있음을 보여주는 사례로 평가한다.</p>
+<p>같은 사건을 개신교 강단은 다른 각도에서 본다. 권성수 목사는 2014년 교황 방한을 배경으로 한 설교에서 바로 이 호칭 전환을 교황무오설 반박의 논거로 사용한다 — 무오하다면 입장이 바뀔 수 없다는 것이다. 그는 교황 3명이 병립했던 대분열기를 들어 사도적 계승의 역사적 단절도 지적한다. 그러나 같은 설교가 "가톨릭 안에도 구원받은 신자가 있고, 개신교 안에도 이단과 오류가 있다"는 양방향 진술로 단순 정죄를 피한다는 점은 기억할 만하다. 가톨릭 전통에게 공의회는 살아 있는 교도권의 기관이고, 개신교 전통에게 공의회의 권위는 성경에 종속된다 — 니케아와 칼케돈을 함께 고백하면서도 트렌트와 바티칸의 지위에서 갈라지는 이 차이는, 어느 한쪽을 피고석에 세우기보다 각 전통이 "최종 권위가 어디에 있는가"라는 질문에 달리 답해 온 역사로 읽는 것이 정확하다.</p>
+<h2>8. 공의회 전통의 현재 — 이사회 테이블 위의 니케아</h2>
+<p>이 볼트에서 공의회가 가장 활발하게 살아 있는 자리는 뜻밖에도 교리사 강의실이 아니라 이사회 테이블이다. 거버넌스 강의는 이사회의 정체성을 이렇게 규정한다.</p>
+<blockquote>
+<p>기독교는 니케아, 카르타고, 칼케돈 공의회 등 거룩한 '공의회(Council)'의 전통 위에 서 있습니다. 이사회는 경영 논리에 따라 움직이거나 한두 명의 탁월한 리더가 이끄는 곳이 아닙니다. 공동체 전체가 함께 임하시는 하나님의 뜻을 분별해 내는 거룩한 전통을 이어가는 곳입니다. — 「건강한 공동체 — 거버넌스」</p>
+</blockquote>
+<p>여기서 공의회 전통은 "신주주의(Theocracy)를 민주적 절차(Process)로 구현한다"는 명제로 요약된다. 주인은 하나님이시되, 하나님의 뜻을 드러내는 방법론은 한 사람의 영웅적 결단이 아니라 함께하는 공의회적 분별이다 — 어떤 개인도 홀로 하나님의 뜻 전체를 파악할 수 없기 때문에, 신앙 공동체에서 민주적 절차는 선택이 아니라 필수다. 예루살렘 공의회에서 도출된 세 가지 특징 — 변방의 목소리(과거의 적이었던 바울)를 듣고, 자기 이익이 아닌 하나님의 뜻을 위해 치열하게 분별하며, 그 결과로 현장이 아니라 리더십 자신이 변화·회심하는 것 — 은 그대로 이사회의 세 기능(듣기·분별·평가)으로 번역된다.</p>
+<p>강단에서도 마찬가지다. 문대원 목사가 예루살렘 공의회에서 "본질에는 일치를, 비본질에는 자유를, 모든 일에 사랑을"이라는 분별의 원리를 끌어내고, 아리우스 논쟁에서 "신학이 사역의 방향을 결정한다"는 경고를 끌어낼 때, 공의회는 1,600년 전의 사건이 아니라 오늘의 공동체가 본질과 비본질을 분별하는 현재형의 준거가 된다. 니케아에서 지켜낸 것과 예루살렘에서 배운 것 — 진리의 확정과 분별의 과정 — 이 함께 있어야 공의회 전통의 온전한 상속이다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>공의회의 원형은 니케아가 아니라 예루살렘이다 — "성령과 우리가 결정하였으니"(행 15:28)라는 공동체적 분별이 모든 공의회의 이상을 규정한다.</li>
+<li>니케아-칼케돈의 기독론 논쟁은 사변이 아니라 구원론의 사활 문제였다 — "취택함을 받지 않은 것은 회복될 수 없다"(나지안주스의 그레고리), 신성 부인은 대속 부인과 행위구원으로 도미노처럼 무너진다(문대원).</li>
+<li>에큐메니칼 공의회는 모두 황제가 소집했고 정치적 이해관계가 깊이 개입했으나, 교회는 그 소용돌이 속에서도 신앙고백을 지켜냈다 — 이상과 현실의 긴장이 공의회사를 읽는 정직한 렌즈다.</li>
+<li>칼케돈의 4대 부정어(나누어지지 않고·분리되지 않으며·변하지 않고·혼합되지 않는다)는 새 교리의 발명이 아니라 이미 믿던 바의 명료화("신앙의 정의")였다.</li>
+<li>공의회는 교리 확립의 장이자 권위 논쟁의 무대다 — 중세 공의회 우위론("교황도 이단이 될 수 있다", 바젤)은 종교개혁의 "오직 성경"으로 이어지는 사상적 다리였다.</li>
+<li>바티칸 I(권위의 응축)과 바티칸 II(개방으로의 전환)는 같은 공의회 전통이 정반대 방향으로 작동할 수 있음을 보여준다.</li>
+<li>이 볼트에서 공의회 전통의 현재형 상속자는 이사회다 — "신주주의를 민주적 절차로 구현한다"는 거버넌스 원리는 예루살렘 공의회의 직계다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>공의회의 결정이 "성령과 우리"의 합작이라면, 오류로 판명된 회의(강도들의 회의 449, 후스를 화형에 넘긴 콘스탄스)와 정통을 확립한 회의를 사후에 구별하는 기준은 무엇인가 — 수용(reception)의 역사인가, 성경과의 일치인가?</li>
+<li>5주 토론의 동아시아적 성찰(음양의 원리라면 기독론 갈등이 없었을 것)을 밀고 나가면, 니케아·칼케돈의 헬라적 용어(본질·위격)는 어디까지가 초문화적 진리이고 어디까지가 문화적 옷인가?</li>
+<li>공의회 우위론이 "교황도 이단이 될 수 있다"까지 나아갔다가 왜 종교개혁으로 직접 이어지지 못하고 교황 절대주의로 회귀했는가 — 교회사I 8주 강의도 이 질문을 범위 밖으로 남겨두었다.</li>
+<li>개신교, 특히 침례교 전통은 신조적 권위를 경계하면서도 니케아-칼케돈 신앙을 고백한다 — "공의회의 권위는 성경에 종속된다"는 원칙과 "정통의 기준선"이라는 실질 사이의 관계를 어떻게 정식화할 것인가?</li>
+<li>예루살렘 공의회 모델(변방의 소리, 많은 변론, 공동체의 회심)을 한국의 위계적 회의 문화에 이식할 때 가장 먼저 부딪히는 장벽은 무엇인가 — <a class="wl" href="../../t/%EA%B1%B0%EB%B2%84%EB%84%8C%EC%8A%A4/">거버넌스</a>의 진단(변론 회피, 평가 부재)과 연결해 탐구할 과제다.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EB%8B%88%EC%BC%80%EC%95%84%EA%B3%B5%EC%9D%98%ED%9A%8C/">니케아공의회</a> · <a class="wl" href="../../t/%EC%B9%BC%EC%BC%80%EB%8F%88%EA%B3%B5%EC%9D%98%ED%9A%8C/">칼케돈공의회</a> · <a class="wl" href="../../t/%EC%97%90%EB%B2%A0%EC%86%8C%EA%B3%B5%EC%9D%98%ED%9A%8C/">에베소공의회</a> — 개별 공의회 시드 페이지</li>
+<li><a class="wl" href="../../t/%EC%82%BC%EC%9C%84%EC%9D%BC%EC%B2%B4/">삼위일체</a> — 니케아·콘스탄티노플이 확립한 교리; 공의회별 기여 연대표 수록</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EB%A1%A0/">기독론</a> — 칼케돈 '한 인격 두 본성'을 축으로 한 교리 페이지</li>
+<li><a class="wl" href="../../t/%EC%9D%B4%EB%8B%A8%EB%85%BC%EC%9F%81/">이단논쟁</a> — 공의회가 정죄한 입장들(아리우스·네스토리우스·유티케스 등)의 별도 정리</li>
+<li><a class="wl" href="../../t/%EC%B4%88%EB%8C%80%EA%B5%90%ED%9A%8C/">초대교회</a> — 공의회를 통한 정경·신조·교리 정립의 시대적 배경</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EC%83%81%EB%85%BC%EC%9F%81/">성상논쟁</a> — 제2차 니케아 공의회(787)의 쟁점</li>
+<li><a class="wl" href="../../t/%EC%A2%85%EA%B5%90%ED%9A%8C%EC%9D%98%EC%9A%B0%EC%9C%84%EC%84%A4/">종교회의우위설</a> — 중세 공의회 우위론(피사·콘스탄스·바젤)</li>
+<li><a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%8C%80%EB%B6%84%EC%97%B4/">교회대분열</a> · <a class="wl" href="../../t/%EA%B5%90%ED%99%A9%EA%B6%8C/">교황권</a> — 공의회 우위론이 부상한 배경</li>
+<li><a class="wl" href="../../t/%EB%B0%94%ED%8B%B0%EC%B9%B82%EC%B0%A8%EA%B3%B5%EC%9D%98%ED%9A%8C/">바티칸2차공의회</a> · <a class="wl" href="../../t/%EA%B5%90%ED%99%A9%EB%AC%B4%EC%98%A4%EC%84%A4/">교황무오설</a> — 근대 가톨릭의 두 공의회</li>
+<li><a class="wl" href="../../t/%EB%8F%99%EC%84%9C%EA%B5%90%ED%9A%8C%EB%8C%80%EB%B6%84%EC%97%B4/">동서교회대분열</a> — 7대 공의회 이후 동서 교회의 분기</li>
+<li><a class="wl" href="../../t/%EA%B1%B0%EB%B2%84%EB%84%8C%EC%8A%A4/">거버넌스</a> — 예루살렘 공의회를 원형으로 한 의사결정 신학</li>
+<li><span class="wl-dead" title="위키 내부 링크">행15</span> — 예루살렘 공의회 본문 허브</li>
+<li><span class="wl-dead" title="위키 내부 링크">아리우스</span> · <span class="wl-dead" title="위키 내부 링크">아타나시우스</span> · <span class="wl-dead" title="위키 내부 링크">콘스탄티누스</span> · <span class="wl-dead" title="위키 내부 링크">네스토리우스</span> · <span class="wl-dead" title="위키 내부 링크">테오도시우스</span> — 공의회사의 주요 인물</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">교회사I 3주 — 제국의 기독교</span></td>
+<td>MBTS 강의</td>
+<td>니케아(325)·콘스탄티노플(381), 아리우스·아폴리나리우스 논쟁, 황제 소집의 정치성, 카파도키아 교부</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">교회사I 4주 — 분열하는 제국</span></td>
+<td>MBTS 강의</td>
+<td>에베소(431)·칼케돈(451), 네스토리우스·유티케스 정죄, "정통신학" 규정</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">교회사I 5주 — 중세교회의 전개</span></td>
+<td>MBTS 강의</td>
+<td>553·681·787 후기 공의회, Latria/Dulia, 동방 분파 교회들</td>
+</tr>
+<tr>
+<td>교회사I 5주 토론 (raw)</td>
+<td>수업 과제</td>
+<td>알렉산드리아 vs 안디옥 학파, 정치 요소 분석, 동아시아적 성찰, 칼케돈 총평</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">교회사I 8주 — 교황권의 절정과 쇠퇴</span></td>
+<td>MBTS 강의</td>
+<td>제4차 라테란(1215), 공의회 우위론(피사·콘스탄스·바젤), 얀 후스 정죄</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">교회사II 5주 — 근대교회와 이신론</span></td>
+<td>MBTS 강의</td>
+<td>7대 공의회 목록과 동방교회의 수용, 동서 대분열</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">교회사II 8주 — 근대 로마 가톨릭 교회</span></td>
+<td>MBTS 강의</td>
+<td>바티칸 I(1870) 교황무오설의 역사적 맥락, 바티칸 II(1962~65)의 전환</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">문대원 「본질과 비본질 사이에서」(2024)</span></td>
+<td>설교</td>
+<td>예루살렘 공의회의 본질/비본질 분별, "동일한 은혜"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">문대원 「하나님의 마스터플랜」(2023)</span></td>
+<td>설교</td>
+<td>아리우스 정죄의 현재적 의미(여호와의 증인), 신성 부인의 도미노</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">문대원 「너의 성장을 보이라」(2025)</span></td>
+<td>설교</td>
+<td>"신학이 사역의 방향을 결정한다" — 아리우스 논쟁의 목회적 적용</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수 「카톨릭 어떻게 볼 것인가」(2014)</span></td>
+<td>설교</td>
+<td>교황무오설·사도적 계승에 대한 개신교 변증, 바티칸 II 호칭 전환 논거</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">조샘 「선교단체 거버넌스」(2020)</span></td>
+<td>강의</td>
+<td>행 15장의 공동체적 인식론, 변방의 소리</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EA%B1%B0%EB%B2%84%EB%84%8C%EC%8A%A4/">거버넌스</a> · 「건강한 공동체 — 거버넌스」 키노트</td>
+<td>위키/강의</td>
+<td>공의회 전통 위의 이사회 정체성, 신주주의+민주적 절차, 행 15장 4단계</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/교회사</span><span>#discipline/조직신학</span><span>#공의회</span><span>#교리사</span><span>#삼위일체논쟁</span><span>#기독론논쟁</span><span>#의사결정</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

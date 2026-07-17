@@ -1,0 +1,227 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>협력 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:18">선교</span><span class="date">2026-07-18</span></div>
+  <h1 class="note-title">협력</h1>
+  
+</header>
+<article class="note">
+<blockquote>
+<p>동음이의 주의
+이 페이지는 <strong>사역 협력(partnership)</strong> — 서로 다른 주체가 하나님 나라 사명을 위해 자원과 역할을 나누는 동반자 관계 — 를 다룬다. 조직신학 섭리론에서 하나님이 피조물과 함께 일하시는 <strong>협력(concurrence)</strong> 개념은 <a class="wl" href="../../t/%EC%84%AD%EB%A6%AC/">섭리</a>를, 동역의 태도·우정·경청을 다루는 <strong>협업(collaboration, συνεργός)</strong> 은 <a class="wl" href="../../t/%ED%98%91%EC%97%85/">협업</a>을 참조하라. 한국어 표기가 겹칠 뿐 서로 다른 주제다.</p>
+</blockquote>
+<h2>정의</h2>
+<p>사역 협력(partnership)은 서로 다른 교회·단체·개인이 각자의 자원과 은사와 책임을 나누어 하나의 하나님 나라 사명을 함께 감당하는 동반자 관계다. 그 성경적 이름은 코이노니아(κοινωνία)다 — 바울이 빌립보 교회를 향해 감사한 "첫날부터 이제까지 복음을 위한 코이노니아"(빌 1:5)가 그것이다. 협력은 효율을 위한 방편이기 이전에 복음 안에서 맺어진 사귐의 표현이다.</p>
+<p>이 페이지는 협력의 <strong>신학적 뿌리와 구조</strong>를 총론으로 다루되, 상세는 이웃 페이지들에 위임한다. 동역의 심리와 태도(우정·경청·희생적 헌신)는 <a class="wl" href="../../t/%ED%98%91%EC%97%85/">협업</a>이, 교회와 교회가 하나 되는 일치의 신학(요 17장·모달리티·소달리티·3자 협약)은 <a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EC%97%B0%ED%95%A9/">교회연합</a>이, 그리스도와의 연합이라는 존재론적 결합은 <a class="wl" href="../../t/%EC%97%B0%ED%95%A9/">연합</a>이, 무게중심 이동이라는 세계 지형은 <a class="wl" href="../../t/%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90/">세계기독교</a>가 맡는다. 여기서 좇는 것은 이 여러 갈래를 하나로 꿰는 질문 — 왜 협력해야 하며, 무엇이 협력을 무너뜨리고 무엇이 세우는가이다.</p>
+<h2>1. 협력의 성경적 기초 — 코이노니아와 삼겹줄</h2>
+<p>협력의 첫째 근거는 성경이 사역을 언제나 <strong>함께</strong>의 일로 그린다는 데 있다. 바울은 "복음을 위한 코이노니아"(빌 1:5)로 빌립보 교회와 묶였고, 로마서 16장에서 33명의 동역자를 일일이 호명한다 — 남녀·노소·귀족·노예·사업가가 뒤섞인 이 목록은 세상의 신분이 아니라 복음을 위해 쓰임받았는가가 동역의 자격임을 보여준다. 바울 같은 선교사조차 동역자 없이는 그 사역을 이루지 못했다.</p>
+<p>지혜문학은 이 원리를 삶의 격언으로 압축한다. 전도서 4장의 "두 사람이 한 사람보다 나음은 그들이 수고함으로 좋은 상을 얻을 것이기 때문이라 … 한 사람이면 패하겠거니와 두 사람이면 맞설 수 있나니 세 겹줄은 쉽게 끊어지지 아니하느니라"(전 4:9-12)가 그것이다. 홀로 선 자는 넘어지면 일으킬 이가 없지만, 함께 선 자는 서로를 붙든다. 이 삼겹줄의 이미지가 협력의 성경적 심상이다 — 협력은 약함을 감추는 방편이 아니라, 약함을 서로 짊어짐으로 강해지는 하나님의 설계다. 협력의 궁극적 원형은 삼위일체 하나님이시다. 하나님이 이미 삼위로 함께 일하고 계시기에, 협력은 사역의 방법이기 이전에 하나님의 존재 방식을 닮는 일이다(상세는 <a class="wl" href="../../t/%ED%98%91%EC%97%85/">협업</a>).</p>
+<h2>2. 협력의 층위</h2>
+<p>협력은 단일한 활동이 아니라 여러 층위에서 일어난다. 볼트의 자료들이 그리는 지형을 정리하면 다음과 같다.</p>
+<table>
+<thead>
+<tr>
+<th>층위</th>
+<th>주체</th>
+<th>관건</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>교회 간</td>
+<td>지역 교회와 지역 교회</td>
+<td>개교회주의를 넘어 지역 복음화를 함께 (→ <a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EC%97%B0%ED%95%A9/">교회연합</a>)</td>
+</tr>
+<tr>
+<td>단체 간</td>
+<td>교단(모달리티)과 선교단체(소달리티)</td>
+<td>흡수·위계가 아니라 서로 다른 은사의 상보</td>
+</tr>
+<tr>
+<td>현지-파송 간</td>
+<td>파송 교회·단체와 현지 사역자</td>
+<td>원조가 아니라 대등한 동역 (→ <a class="wl" href="../../t/%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90/">세계기독교</a>)</td>
+</tr>
+</tbody>
+</table>
+<p>랄프 윈터의 모달리티(조직화된 제도 교회)와 소달리티(자발적 선교 운동체) 구분이 이 층위론의 뼈대다. 둘은 대립이 아니라 상보 관계다 — 제도가 모든 것을 통제하면 운동이 죽고, 운동이 제도를 무시하면 지속성을 잃는다. 이 구조적 상세는 <a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EC%97%B0%ED%95%A9/">교회연합</a>이 전담하므로, 여기서는 협력이 언제나 <strong>서로 다른 구조를 가진 주체들 사이의 일</strong>임을 확인하는 데 그친다. 협력이 어려운 것은 바로 이 다름 때문이다.</p>
+<h2>3. 협력을 깨는 것과 세우는 것</h2>
+<p>협력은 이상이지만 동시에 실패의 자리다. 무엇이 협력을 무너뜨리고 무엇이 세우는지는 대칭을 이룬다.</p>
+<table>
+<thead>
+<tr>
+<th>협력을 깨는 것</th>
+<th>협력을 세우는 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>주도권 다툼 — "누가 이끄는가"</td>
+<td>상호 존중 — 각자의 은사를 인정함</td>
+</tr>
+<tr>
+<td>재정의 불투명 — 돈이 위계를 만듦</td>
+<td>투명성 — 자원과 결정을 열어 나눔</td>
+</tr>
+<tr>
+<td>공로 다툼 — "누구의 열매인가"</td>
+<td>이름을 내려놓음 — "나는 아무것도 아닙니다"</td>
+</tr>
+<tr>
+<td>일방성 — 협력의 언어로 자기 역할 관철</td>
+<td>경청 — 상대의 필요를 먼저 물음</td>
+</tr>
+</tbody>
+</table>
+<p>협력이 무너지는 자리는 대개 과업이 아니라 관계다. 주도권·재정·공로를 둘러싼 다툼은 결국 "생각이 다른 사람을 사랑하기 어렵다"는 한 문제로 수렴한다(<a class="wl" href="../../t/%ED%98%91%EC%97%85/">협업</a>이 이를 자기 실패담으로 깊이 해부한다). 반대로 협력을 세우는 것은 정교한 제도가 아니라 신뢰·투명·상호 존중이라는 관계의 덕목이며, 그 정점에 "복음을 위해 내 이름을 내려놓는" 겸손이 있다. 안디옥에서 바나바가 자기 이름이 가려질 위험을 무릅쓰고 다소의 사울을 찾아가 동역한 장면이 그 원형이다.</p>
+<h2>4. 파트너십의 전환 — 원조에서 동역으로</h2>
+<p>현대 선교에서 협력의 가장 큰 과제는 <strong>가부장적 원조에서 대등한 동역으로</strong>의 전환이다. 20세기까지의 선교는 흔히 "서구에서 나머지로(From the West to the Rest)"라는 단방향, 곧 자원을 가진 자가 베풀고 받는 자는 의존하는 구조였다. <a class="wl" href="../../t/%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90/">세계기독교</a>가 정리하듯, 기독교 무게중심이 남반구로 이동한 오늘 이 구조는 해체되었다. 한국 교회의 여정이 이 전환을 압축한다 — 받는 교회(19-20세기 수혜국)에서 보내는 교회(20세기 후반 파송 대국)를 거쳐 이제 동반자(21세기 다중심 협력의 대등한 참여자)로 이행 중이다.</p>
+<p>위험은 두 번째 단계에 안주하는 것이다. 파송 대국의 위상을 서구의 원조 모델을 복제하는 방식으로 유지하려 할 때, 협력은 다시 재정과 주도권의 위계로 굳는다. 진정한 동역은 자원을 주는 쪽이 아니라 사명을 나누는 쪽에 무게를 둔다 — "확장(expansion)"의 언어를 "소통·동반"의 언어로 바꾸는 것이 그 표지다. 협력의 성숙도는 결국 힘의 비대칭을 어떻게 다루느냐로 판가름난다.</p>
+<h2>5. 볼트의 현장 — 병원선교와 파송의 협력</h2>
+<p>이 총론이 가장 구체적으로 시험되는 자리가 의료 현장이다. 서울기독의사회 김성록 장로가 증언한 <strong>병원선교 3자 협약</strong>이 그 사례다 — 원목(병원 안 영적 돌봄), 지역 교회(인적·재정적 후원), 신우회(의료 전문성을 가진 신앙 공동체)라는 세 주체가 따로 움직이면 병원선교는 산발적이고 지속 불가능해지지만, 한 협약으로 묶일 때 비로소 지속 가능한 운동이 된다. 그가 노트에 남긴 마지막 단어 "프레임"이 핵심이다 — 일회성 행사가 아니라 후임에게 이양 가능한 틀로 구조화될 때 협력은 운동이 된다(상세는 <a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EC%97%B0%ED%95%A9/">교회연합</a>).</p>
+<p>파송의 현장도 협력의 자리다. 선교사를 보내는 일은 보내는 자와 가는 자, 남은 자와 떠나는 자가 함께 짊어지는 코이노니아다 — 김신홍 선교사 파송 사례가 보여주듯 파송은 한 사람을 떠나보내는 사건이 아니라 파송 공동체 전체가 선교에 참여하는 협력의 형식이다. 의료든 파송이든, 협력은 추상적 이상이 아니라 구체적 구조와 지속 가능한 프레임으로 육화될 때 비로소 열매를 맺는다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>협력(partnership)의 성경적 이름은 코이노니아다(빌 1:5) — 효율의 방편이기 이전에 복음 안의 사귐이며, 그 심상은 전도서 4장의 삼겹줄이다.</li>
+<li>협력은 언제나 서로 다른 구조(교회-교회, 모달리티-소달리티, 파송-현지) 사이의 일이며, 그 다름이 협력을 필요하게 하는 동시에 어렵게 한다.</li>
+<li>협력을 깨는 것은 과업이 아니라 관계다 — 주도권·재정·공로 다툼 대 신뢰·투명·상호 존중, 그 정점은 "이름을 내려놓는" 겸손이다.</li>
+<li>현대 선교 협력의 최대 과제는 가부장적 원조에서 대등한 동역으로의 전환이며, 한국 교회는 받는 교회→보내는 교회→동반자의 세 번째 단계로 이행 중이다.</li>
+<li>협력은 병원선교 3자 협약과 선교사 파송처럼 구체적 구조와 이양 가능한 "프레임"으로 육화될 때 운동이 된다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>재정을 대는 쪽과 받는 쪽 사이의 힘의 비대칭을, 협력의 언어(대등한 동역)만으로 실제로 상쇄할 수 있는가.</li>
+<li>협력의 토대가 관계(우정·신뢰)라면, 그 관계를 제도적으로 배양할 수 있는가 — 아니면 협력은 늘 개인의 성숙에 의존하는가.</li>
+<li>한국 교회가 "보내는 교회"의 관성을 내려놓고 "동반자"로 이행하는 데 필요한 구체적 전환은 무엇인가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%ED%98%91%EC%97%85/">협업</a> — 동역의 심리와 태도(우정·경청·희생적 헌신), 이상협 이사의 자기 실패담. 협력의 내면.</li>
+<li><a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EC%97%B0%ED%95%A9/">교회연합</a> — 교회 일치의 신학(요 17장), 모달리티·소달리티, 병원선교 3자 협약의 상세.</li>
+<li><a class="wl" href="../../t/%EC%97%B0%ED%95%A9/">연합</a> — 그리스도와의 연합(union with Christ). 협력의 존재론적 뿌리.</li>
+<li><a class="wl" href="../../t/%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90/">세계기독교</a> — 무게중심 이동과 받는 교회→동반자 전환의 지형.</li>
+<li><a class="wl" href="../../t/%EC%84%AD%EB%A6%AC/">섭리</a> — 표기가 겹치는 섭리론의 협력(concurrence). 본 페이지와 별개 개념.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EC%97%B0%ED%95%A9/">교회연합</a></td>
+<td>위키 교차</td>
+<td>모달리티·소달리티, 병원선교 3자 협약(원목·교회·신우회)·프레임</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90/">세계기독교</a></td>
+<td>위키 교차</td>
+<td>받는 교회→보내는 교회→동반자, 원조→동역 전환</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%ED%98%91%EC%97%85/">협업</a></td>
+<td>위키 교차</td>
+<td>코이노니아·삼위일체 동역, 우정=토대, 이름을 내려놓는 겸손</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2019_김성록_병원선교_연합과_기독의사회</span></td>
+<td>설교(김성록)</td>
+<td>병원선교 3자 협약, 지속 가능한 프레임</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">보내심과_협력_김신홍선교사파송</span></td>
+<td>강의(이상협)</td>
+<td>파송과 남은 자의 협력, 선교적 파트너십</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/선교</span><span>#discipline/선교신학</span><span>#파트너십</span><span>#동역</span><span>#협력선교</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

@@ -1,0 +1,343 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>창조질서 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:300">윤리·공공</span><span class="date">2026-07-14</span></div>
+  <h1 class="note-title">창조질서</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>창조질서(creation order)란 하나님이 세계를 지으실 때 그 안에 새겨 넣으신 규범적 구조들의 총체다. 창조가 "누가 세계를 만들었는가"라는 교리적 물음이라면, 창조질서는 그 물음의 뒷면 — "그렇게 지어진 세계는 어떻게 작동하도록 설계되었는가", 곧 결혼과 노동과 안식과 성(性)과 통치가 저마다 어떤 규범 아래 놓여 있는가 — 을 묻는다. <a class="wl" href="../../t/%EC%B0%BD%EC%A1%B0%EC%8B%A0%ED%95%99/">창조신학</a>은 이 볼트에서 이미 완성된 페이지이고, 그 글은 창조 교리 자체를 다룬 뒤 "창조 질서가 성·가정·노동·생태의 규범으로 번역되는 실천 지형"을 명시적으로 이 페이지에 위임했다. 이 글은 그 위임을 받아, 창조라는 사실이 어떻게 규범이 되는지를 따라간다.</p>
+<p>규범이라는 말이 이 페이지의 무게중심이다. 알버트 월터스는 <a class="wl" href="../../b/%EC%B0%BD%EC%A1%B0%ED%83%80%EB%9D%BD%EA%B5%AC%EC%86%8D_%EC%9B%94%ED%84%B0%EC%8A%A4/">『창조 타락 구속』</a>에서 하나님의 법이 세계를 지배하는 두 방식을 구분한다 — 비인간 영역을 직접적·강제적으로 다스리는 <strong>자연법칙</strong>과, 문화·사회 영역에서 인간이 하나님의 동역자로서 실현해 가야 하는 <strong>규범</strong>이다. 별은 궤도를 벗어날 수 없지만 인간은 결혼을 왜곡할 수 있다. 창조질서가 윤리의 주제가 되는 것은 바로 이 둘째 층위, 곧 지켜질 수도 어겨질 수도 있는 규범의 영역에서다.</p>
+<p>그래서 이 페이지의 심장은 분별이다. 성경이 창조에 근거시키는 규범과, 특정 시대의 문화적 관습을 창조 질서의 이름으로 격상시킨 오류는 겉보기에 똑같은 문장("이것이 하나님의 창조 설계다")을 쓴다. 노예제와 인종 분리도 한때 "창조 질서"로 정당화되었다. 창조질서를 말하는 일은 따라서 규범을 선언하는 일인 동시에, 그 선언이 남용되지 않도록 검증하는 일이다. 이 글은 질서가 있다는 사실에서 출발해(1–3절), 그 질서를 계시 없이 알 수 있는가를 묻고(4절), 질서 논증의 사용과 남용을 가르는 자리에서 멈춰 선 뒤(5절), 타락한 질서의 신음과 그 회복으로 나아간다(6–7절).</p>
+<h2>1. 창조에는 질서가 있다 — 혼돈을 가르고 채우다</h2>
+<p>창세기 1장은 사건의 나열이 아니라 질서의 발생을 그린다. 땅은 처음에 "혼돈하고 공허하며"(창 1:2) — 토후 바보후, 곧 형체 없음과 텅 빔이었다. 창조는 정확히 이 두 결핍을 메우는 두 동작으로 전개된다. 무형에 형태를 주는 <strong>구분</strong>(separation)과, 공허를 메우는 <strong>채움</strong>(filling)이다. 권성수 목사가 문화명령 강해에서 읽어낸 대로 앞 사흘은 빛과 어둠·궁창·뭍이라는 <strong>영역</strong>을 지어 나누고, 뒤 사흘은 광명체·새와 물고기·짐승과 사람이라는 <strong>입주자</strong>로 그 영역을 채운다.</p>
+<p><code>구분(형태 부여)              채움(입주)
+   1일 · 빛 / 어둠      ─────▶   4일 · 해 · 달 · 별
+   2일 · 궁창(위/아래 물) ────▶   5일 · 새 · 물고기
+   3일 · 뭍 · 바다 · 식물 ────▶   6일 · 짐승 · 사람
+        (혼돈 · 공허)    ─────▶   (질서 · 충만)</code></p>
+<p>이 독법의 요점은 창조가 곧 질서화라는 것이다. 하나님은 무언가를 만드셨을 뿐 아니라 만든 것들의 자리를 정하셨고, 그 자리들 사이의 관계를 세우셨다. 여섯 번 반복되는 "보시기에 좋았더라"는 그 질서에 대한 판결이다. 문대원 목사가 세계관이야기 시리즈의 창조 편에서 강조하듯, 궁극적 본질을 우연한 물질에 두면 세계는 의미 없는 잡음으로 남지만, 인격이신 하나님이 말씀으로 세우신 질서라면 세계는 읽을 수 있는 텍스트가 된다 — "사람이 정성껏 가꿀 때 가장 아름답다"는 그의 문장은, 창조가 방치할 무질서가 아니라 가꿀 질서로 주어졌다는 뜻이다.</p>
+<p>질서가 있다는 것은 그 자체로 은혜다. 예측 가능한 세계라야 인간은 살 수 있다. 씨를 뿌리면 거둘 수 있고, 약속을 하면 지킬 수 있고, 오늘의 인과가 내일도 유효한 세계 — 그 규칙성이야말로 자유의 조건이다. 여기서 월터스의 통찰이 인본주의와 갈린다. 인본주의는 법을 자유의 부정으로 보지만, 성경은 법을 자유의 조건으로 본다. 궤도가 있어야 행성이 존재하듯, 규범이 있어야 문화가 자란다.</p>
+<p>성경 안에서 이 질서를 가장 명시적으로 노래하는 것은 지혜문학이다. 잠언·전도서·욥기는 이스라엘의 특수한 구원 역사가 아니라 창조 질서와 인간 경험의 관찰에서 도덕 원리를 길어 올린다. 잠언 8장이 지혜를 창조의 현장에 세워 두는 것은 우연이 아니다 — 세계를 지으신 질서와 인간이 지혜롭게 사는 질서가 같은 하나님에게서 나왔다는 증언이다. 전성민이 분석하듯 지혜문학은 이스라엘 신학과 보편적 인간 이성 사이의 다리로 기능하며, 바로 이 다리가 다음 물음, 곧 창조 질서를 계시 없이도 알 수 있는가라는 물음으로 이어진다.</p>
+<h2>2. 구조와 방향 — 창조 질서를 읽는 렌즈</h2>
+<p>창조질서를 윤리의 도구로 벼려 내려면 하나의 구분이 필요하다. 월터스의 가장 유명한 기여인 <strong>구조</strong>(structure)와 <strong>방향</strong>(direction)의 구분이다. 구조는 창조의 질서 — 사물을 그 사물 되게 하는 것으로, <a class="wl" href="../../t/%EC%9D%BC%EB%B0%98%EC%9D%80%EC%B4%9D/">일반은총</a>으로 보존된다. 방향은 그 구조가 하나님을 향하는가(구속) 등지는가(타락)의 문제다. 결정적 명제는 이것이다: 세상의 어떤 것도 구조 자체가 악하지 않다. 악은 방향의 문제다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>구조</strong>(Structure)</th>
+<th><strong>방향</strong>(Direction)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>무엇인가</td>
+<td>창조된 것 자체 — 사물을 사물 되게 하는 질서</td>
+<td>그것이 하나님을 향하는가 등지는가</td>
+</tr>
+<tr>
+<td>상태</td>
+<td>본질적으로 선함 · 일반은총으로 보존됨</td>
+<td>타락으로 왜곡됨 · 구속으로 돌이켜짐</td>
+</tr>
+<tr>
+<td>타락이 한 일</td>
+<td>파괴하지 못함 (질서는 남는다)</td>
+<td>비틀어 다른 곳을 향하게 함</td>
+</tr>
+<tr>
+<td>그리스도가 하실 일</td>
+<td>새롭게 함 (버리지 않음)</td>
+<td>하나님께로 돌이킴</td>
+</tr>
+<tr>
+<td>예</td>
+<td>성(性)·가정·노동·정치·의료라는 제도</td>
+<td>그 제도가 착취로 가는가 섬김으로 가는가</td>
+</tr>
+</tbody>
+</table>
+<p>이 표가 창조질서 논의에서 지니는 힘은 두 가지 오류를 동시에 막는다는 데 있다. 한쪽 끝에는 구조를 방향과 혼동하는 오류가 있다 — 물질이나 성이나 정치를 그 자체로 악하다고 보는 영지주의와 이원론이 여기 속한다. 이들은 타락한 방향을 구조의 탓으로 돌려 세계를 버리려 한다. 다른 쪽 끝에는 방향의 왜곡을 부인하는 오류가 있다 — 현상을 그대로 "자연스럽다"고 승인하는 보수적 안일함이다. 월터스가 "Status quo는 그리스도인에게 결코 옳은 말이 아니다"라고 못박은 이유가 여기 있다. 구조가 선하므로 전면적 파괴(혁명)는 불가하고, 방향이 왜곡되었으므로 현상 유지도 불가하다. 남는 길은 성별(consecration)이 아니라 성화(sanctification), 곧 안에서부터의 갱신이다.</p>
+<p>이 구분이 창조질서에 주는 실천적 선물은 평가의 틀이다. 어떤 문화나 제도 앞에서 "이것은 선한가 악한가"를 통째로 묻는 대신, "이 구조는 무엇이며(창조), 그 방향은 어디를 향하고 있으며(타락), 어떻게 돌이켜질 수 있는가(구속)"를 나누어 물을 수 있게 된다. 구조와 방향 구분이 세속 세계관 비평과 문화 변혁의 총론으로 전개되는 지형은 <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%84%B8%EA%B3%84%EA%B4%80/">기독교세계관</a>이 이미 상술했으므로, 이 페이지는 그것을 창조 질서를 읽는 렌즈로만 취하고 넘어간다.</p>
+<h2>3. 질서의 마당들 — 다섯 영역과 그 위임</h2>
+<p>창조질서는 추상이 아니라 구체적인 마당들에서 규범으로 나타난다. 창세기 1–2장은 인간 삶의 근본 제도들을 타락 이전에, 곧 죄와 무관하게 세워 두었다. 이것들은 죄를 수습하려 나중에 도입된 장치가 아니라 창조 자체의 구성 요소다. 이 볼트는 각 영역을 이미 별도의 완성된 페이지로 다루므로, 여기서는 다섯 마당이 어떻게 창조에 뿌리내리는지를 한눈에 정리하고 상술은 위임한다.</p>
+<table>
+<thead>
+<tr>
+<th>마당</th>
+<th>제정 본문</th>
+<th>창조 규범의 핵심</th>
+<th>상술 페이지</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>결혼·가정</td>
+<td>창 2:24</td>
+<td>한 남자와 한 여자의 언약적 한 몸 — 인간의 발명이 아니라 하나님이 세우신 제도</td>
+<td><a class="wl" href="../../t/%EA%B2%B0%ED%98%BC/">결혼</a></td>
+</tr>
+<tr>
+<td>노동</td>
+<td>창 2:15</td>
+<td>경작하고 지키는 일은 저주가 아니라 타락 이전의 소명</td>
+<td><a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%8B%A0%ED%95%99/">직업신학</a></td>
+</tr>
+<tr>
+<td>안식</td>
+<td>창 2:2-3</td>
+<td>일곱째 날의 쉼 — 성경 최초의 "거룩", 창조의 리듬</td>
+<td><a class="wl" href="../../t/%EC%95%88%EC%8B%9D/">안식</a></td>
+</tr>
+<tr>
+<td>성(性)</td>
+<td>창 1:27</td>
+<td>하나님의 형상으로서 남자와 여자</td>
+<td><a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%ED%98%95%EC%83%81/">하나님의형상</a></td>
+</tr>
+<tr>
+<td>통치·문화</td>
+<td>창 1:28</td>
+<td>정복·다스림(카바쉬·라다)과 섬김·지킴(아바드·샤마르)의 청지기직</td>
+<td><a class="wl" href="../../t/%EC%B2%AD%EC%A7%80%EA%B8%B0/">청지기</a> · <a class="wl" href="../../t/%EC%B0%BD%EC%A1%B0%EC%8B%A0%ED%95%99/">창조신학</a></td>
+</tr>
+</tbody>
+</table>
+<p>이 다섯을 관통하는 문법이 있다. 각 제도는 창조에 근거하되, 그 근거는 지배가 아니라 섬김으로 방향 지어져 있다. 결혼은 소유가 아니라 언약이고, 노동은 착취가 아니라 경작이며, 통치는 군림이 아니라 청지기직이다. 문대원 목사가 창조의 아름다움을 강해하며 "경작·지킴은 타락의 결과가 아니다"라고 반복하는 것은, 이 제도들이 흠 없는 세계에 이미 있었다는 사실이 그 규범성의 근거이기 때문이다. 무언가가 창조에 속한다는 것은 그것이 인간의 편의를 위해 바꿔도 되는 관습이 아니라, 인간됨의 조건이라는 뜻이다.</p>
+<p>의료와 생태의 자리도 이 질서의 연장선에 있다. 이박행의 생명중심통합선교 강의는 선교를 "창조질서의 회복"으로 정의하며, 그 회복의 가장 가시적 형태가 영·정신·사회·신체의 네 차원을 아우르는 전인치유임을 논증한다(<a class="wl" href="../../t/%EC%A0%84%EC%9D%B8%EC%B9%98%EC%9C%A0/">전인치유</a>). 박선영(<span class="wl-dead" title="위키 내부 링크">박선영</span>)의 에코라이프스타일 강의는 "인간도 피조세계의 일부"라는 명제에서 출발해, 창조 질서를 보존하는 생태적 삶을 선교의 한 형태로 읽는다. 치유든 생태든, 창조 질서의 각 마당은 결국 하나님의 설계를 그 설계대로 회복하려는 응답이다.</p>
+<h2>4. 계시 없이도 아는가 — 창조 질서와 자연법</h2>
+<p>창조질서가 세계의 구조에 새겨져 있다면, 그것을 특별 계시 없이도 알 수 있는가? 성경 자신이 그렇다고 답한다. 로마서 1장 20절은 창조 세계가 하나님의 능력과 신성을 드러내어 사람들이 "핑계하지 못하게" 한다고 말하고, 로마서 2장 14–15절은 율법 없는 이방인이 "본성으로 율법의 일을 행할 때" 그들의 양심이 증거한다고 말한다. 창조 질서는 성경을 읽어 본 적 없는 이에게도 부분적으로 접근 가능한 것이다.</p>
+<p>이 접근 가능성을 다루는 전통이 자연법이며, 전성민은 자연법을 두 겹으로 구분한다. 하나는 <strong>양심</strong>으로서의 자연법 — 모든 인간 안에 새겨진 도덕 감각(롬 2장)이고, 다른 하나는 <strong>창조 질서</strong>로서의 자연법 — 가족·노동·안식·약자 보호가 특정 계시 없이도 여러 문화에서 반복되는 이유를 설명하는 세계의 규범적 패턴이다. 아모스 1–2장의 열방 신탁이 이 논리의 구약적 근거다. 하나님은 시내산 언약 밖의 민족들에게도 임산부 학살 같은 반인륜적 범죄의 책임을 물으시는데, 이는 언약 백성이 아닌 이들에게도 작동하는 인류 공통의 도덕 인식을 전제한다.</p>
+<p>창조 질서와 자연법은 이렇게 겹치지만 같지는 않다. 창조 질서는 신학적 개념 — 세계가 창조되었다는 사실에 근거한 규범이고, 자연법은 인식론적 개념 — 그 규범을 이성과 양심으로 어디까지 알 수 있는가에 관한 논의다. 자연법 전통의 자원과 그 약점에 대한 본격적 논의는 <a class="wl" href="../../t/%EC%9E%90%EC%97%B0%EB%B2%95/">자연법</a>이 맡으므로, 이 페이지는 다만 그 논의의 가장 날카로운 지점 하나를 넘겨받는다 — 창조 질서에 호소하는 논증이 어떻게 오용되는가라는 물음이다.</p>
+<h2>5. 사용과 남용 — 창조 질서 논증의 분별 ⚖️</h2>
+<p>여기가 이 페이지의 심장이다. 창조 질서 논증은 성경 안에서 정당하게 쓰인다. 예수님은 이혼 논쟁에서 "본래 그렇지 아니하니라" 하시며 창세기 2장의 창조 설계로 돌아가셨고(마 19장), 안식일의 근거도 창조의 일곱째 날에 놓인다. 어떤 규범을 창조에 근거시키는 것은 그것을 시대와 문화를 초월한 것으로 세우는 강력한 방식이다.</p>
+<p>그러나 바로 그 강력함이 남용의 통로가 된다. 특정 시대의 문화적 관습을 "창조 질서"의 이름으로 격상시키면, 인간의 편견이 하나님의 설계로 둔갑한다. 역사가 그 위험을 증언한다. 전성민이 자연법의 약점을 다루며 열거하듯, 노예제·식민 지배·가부장제·인종 차별이 모두 "자연 질서"의 이름으로 정당화된 적이 있다. 월터 브루그만이 창조 신학을 향해 던지는 경고가 이 지점을 겨눈다 — 창조 질서에 호소하는 신학은 언제나 기존 사회 구조의 "자연스러움"을 강화하는 보수적 이데올로기가 될 위험을 안고 있다는 것이다. 창조를 말하는 순간, 나는 하나님의 설계를 진술하는가 아니면 내 기득권을 신성화하는가?</p>
+<blockquote>
+<p>"자연법이 '자연스럽다'고 느껴지는 것은 종종 권력자의 관점이다." — 전성민의 자연법 비판을 요약하며</p>
+</blockquote>
+<p>남용을 막는 유일한 길은 검증 절차를 세우는 것이다. 이 볼트의 자료들에서 그 절차를 추출하면 네 개의 관문이 나온다.</p>
+<table>
+<thead>
+<tr>
+<th>관문</th>
+<th>묻는 것</th>
+<th>통과 실패의 예</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>① 본문 검증</td>
+<td>성경이 실제로 이것을 <strong>창조에 근거시키는가</strong>, 아니면 내가 창조를 끌어다 붙이는가</td>
+<td>"노예제는 창조 질서" — 성경은 창조에서 노예제를 세운 적이 없다</td>
+</tr>
+<tr>
+<td>② 방향 검증</td>
+<td>이 규범이 <strong>약자를 보호하고 인간 존엄을 증진</strong>하는가(사랑의 기준)</td>
+<td>인종 분리는 특정 집단의 종속을 정당화했다</td>
+</tr>
+<tr>
+<td>③ 겸손 검증</td>
+<td>내 <strong>문화적 선입견이 "창조 질서"로 둔갑</strong>하고 있지 않은가(자기 비판)</td>
+<td>가부장제를 창조로 읽는 것은 시대의 관습을 소급 투영한 것</td>
+</tr>
+<tr>
+<td>④ 거울 검증</td>
+<td>이 논증이 특정 진영의 무기가 아니라 <strong>모두를 비추는 거울</strong>로 서는가</td>
+<td>좌·우 어느 쪽도 자기 이념을 창조로 포장할 수 있다</td>
+</tr>
+</tbody>
+</table>
+<p>②의 사랑과 ③의 겸손은 전성민이 자연법의 올바른 사용을 위해 제시한 두 기준을 그대로 옮긴 것이다. 자연법적 판단이 약자를 보호하는 방향으로 작동하는가, 그리고 자신의 문화적 선입견이 "자연 질서"로 둔갑하지 않도록 끊임없이 자기 비판하는가 — 이 둘이 없으면 창조 질서 논증은 권력 유지의 도구로 전락한다.</p>
+<p>논쟁적 현대 이슈에 이 절차를 적용할 때는 볼트가 실제로 다룬 자료만을 따르고, 좌·우를 대칭으로 비추는 거울의 톤을 지킨다. 성 정체성 문제가 그 예다. 임주현의 정신의학 강의는 창조 질서가 남성과 여성의 성별 구분을 규범으로 제시한다고 보면서도, 동성애 원인론을 단순화하지 않는다. 유전적·생물학적·심리적·사회적·영적 요인이 복합적으로 작용한다는 다요인 원인론을 제시하고, 성향(orientation)과 행위(behavior)를 구분한다. 이 구분은 두 방향의 조급함을 동시에 막는다 — 성향 자체를 죄로 정죄하는 율법주의와, 규범을 문화적 관습으로 치부하는 느슨함이다. 창조 질서는 규범을 제시하되 그 규범 앞에 선 인간의 복잡성을 외면하지 않으며, 어떤 개인도 피고석에 세우지 않는 채로 말해질 수 있어야 한다. 이것이 검증된 창조 질서 논증과 남용된 논증을 가르는 시금석이다.</p>
+<h2>6. 신음하는 질서 — 타락과 왜곡</h2>
+<p>창조 질서는 타락으로 파괴되지 않았다. 그러나 왜곡되었다. 이 구분이 6절 전체의 핵심이며, 2절의 구조·방향 렌즈가 여기서 결실을 맺는다. 타락은 구조를 지우지 못했다 — 결혼도 노동도 통치도 여전히 존재한다. 다만 그 모든 것의 방향이 하나님에게서 돌아섰다.</p>
+<p>창세기 3장이 그 왜곡을 세 겹으로 그린다. 문대원 목사가 반역의 결과를 강해하며 정리하듯, 죄의 본질은 아우토노모스 — 스스로 법을 정하는 주체가 되어 하나님의 자리에 오르려는 반역이고, 그 결과는 삼중 관계의 단절이다. 하나님과의 단절(아담이 낯을 피해 숨음), 사람과의 단절(아내에게 책임을 전가함), 창조세계와의 단절(땅이 저주받아 가시와 엉겅퀴를 냄, 창 3:17-19). 질서의 세 축 — 수직·수평·생태 — 이 동시에 비틀린 것이다. 노동은 사라지지 않았으나 이마의 땀과 수고 아래 놓였고, 관계는 끊어지지 않았으나 지배와 회피로 뒤틀렸다.</p>
+<p>이 왜곡의 우주적 범위를 로마서 8장이 증언한다. 피조물이 허무한 데 굴복하여 "함께 탄식하며 함께 고통을 겪는다"(롬 8:20-22). 주목할 것은 이 탄식이 소멸의 신음이 아니라 해산의 신음이라는 점이다 — 피조물은 부서져 사라지는 것이 아니라 "하나님의 아들들이 나타나는 것"을 고대하며 신음한다. 질서는 무너진 것이 아니라 병든 것이고, 병든 것은 고쳐질 수 있다. 월터스가 문대원 목사의 강해에서 재인용되며 놓은 문제 설정이 이 절 전체를 압축한다.</p>
+<blockquote>
+<p>"세상은 선하다. 그러나 무엇인가가 확실히 잘못되었다." — 알버트 월터스</p>
+</blockquote>
+<p>"선하다"와 "잘못되었다"가 모순 없이 한 문장에 놓이는 것 — 이것이 구조와 방향 구분의 실존적 번역이다. 세계가 통째로 악하다면 구속은 파괴일 것이고, 세계에 아무 문제가 없다면 구속은 불필요할 것이다. 창조 질서가 선하게 지어졌으나 방향에서 왜곡되었다는 이중 진단만이, 구속을 회복으로 이해하게 한다.</p>
+<h2>7. 회복되는 질서 — 그리스도와 새 창조</h2>
+<p>그리스도의 구속은 창조 질서를 폐기하지 않는다. 회복하고 완성한다. 이것이 창조질서 신학의 마지막이자 가장 중요한 결론이다. 월터스의 정의가 표준형을 제공한다 — 구속은 창조에 무언가를 첨가하는 것이 아니라, 손상되지 않은 창조 세계의 선한 상태로 돌아가는 것이다. 구속이 회복이라면, 회복되는 것은 다름 아닌 창조 질서다. 구조는 구속되고, 방향은 돌이켜진다.</p>
+<p>이 회복은 성경 전체의 곡선에 새겨져 있다. 창조신학이 강조하듯 성경은 창세기 3장의 타락에서 시작해 요한계시록 20장에서 끝나지 않고, 창세기 1장 1절의 창조에서 시작해 요한계시록 21장 1절의 새 창조로 끝난다. 그리고 그 양 끝을 잇는 화살표가 결정적이다 — 창조의 대상이 곧 구속의 대상이다. 창조된 질서가 왜곡되었고, 왜곡된 바로 그 질서가 회복된다. 새 하늘과 새 땅은 이 땅과 동떨어진 다른 곳이 아니라, 이 질서가 온전히 회복된 버전이다.</p>
+<p>그래서 창조 질서의 회복은 미래로만 미뤄지지 않는다. 이박행이 선교를 "창조질서의 회복"으로 정의하고 전인치유를 그 실천으로 제시할 때, 박선영이 에코라이프스타일을 창조 질서를 하나님의 설계대로 회복하려는 신앙적 실천으로 읽을 때, 이들은 새 창조를 앞당겨 사는 것이다. 다만 이 실천은 두 극단을 경계해야 한다. 박선영이 지적하듯 에코라이프스타일은 미니멀리즘·비건·제로웨이스트가 빠지기 쉬운 규칙주의와 죄책감으로 흐를 수 있다 — 창조 돌봄은 율법주의적 자기 정결이 아니라 공동체적 기쁨의 응답이어야 한다. 성향을 정죄하지도 규범을 방기하지도 않는 5절의 태도가, 창조 돌봄에서도 그대로 요구된다.</p>
+<p>회복의 방식은 그래서 혁명도 현상 유지도 아니다. 구조가 선하므로 세계를 갈아엎을 수 없고, 방향이 왜곡되었으므로 세계를 그대로 둘 수 없다. 남는 길은 누룩처럼 안에서부터 갱신하는 것 — 창조 질서를 파괴된 잔해로 버리는 것이 아니라, 신음하는 질서를 그 본래의 선함으로 돌이키는 것이다. 이것이 창조에서 시작해 새 창조로 완성되는 한 이야기의 논리다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li><strong>창조질서는 창조 교리가 위임한 규범의 영역이다.</strong> 별은 궤도를 벗어날 수 없지만 인간은 결혼을 왜곡할 수 있다 — 창조질서가 윤리의 주제가 되는 것은 지켜질 수도 어겨질 수도 있는 규범(월터스의 "규범" 대 "자연법칙")의 층위에서다.</li>
+<li><strong>창조는 곧 질서화다.</strong> 창세기 1장의 구분과 채움은 혼돈을 질서로 바꾸는 두 동작이며, 예측 가능한 세계라야 인간이 산다 — 질서는 자유의 부정이 아니라 자유의 조건이다.</li>
+<li><strong>구조와 방향의 구분이 창조질서를 읽는 렌즈다.</strong> 악은 구조가 아니라 방향의 문제이므로, 세계를 버리는 영지주의와 현상을 승인하는 안일함이 동시에 배제된다.</li>
+<li><strong>창조 질서 논증은 사용될 수도 남용될 수도 있다.</strong> 예수님도 창조로 돌아가 규범을 세우셨지만(마 19장), 노예제·인종 분리도 "창조 질서"로 정당화된 적이 있다 — 본문·방향·겸손·거울의 네 관문이 그 둘을 가른다.</li>
+<li><strong>타락은 질서를 파괴하지 못하고 왜곡했을 뿐이다.</strong> "세상은 선하다, 그러나 무엇인가 잘못되었다"는 이중 진단만이 구속을 회복으로 이해하게 하며, 로마서 8장의 신음은 소멸이 아니라 해산의 신음이다.</li>
+<li><strong>구속은 창조 질서의 회복이자 완성이다.</strong> 창조의 대상이 곧 구속의 대상이므로, 새 창조는 질서의 폐기가 아니라 이 질서가 온전히 회복된 버전이다 — 구조는 구속되고 방향은 돌이켜진다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>창조 질서 논증의 네 관문(본문·방향·겸손·거울)은 남용을 걸러 내는 데 유용하지만, 관문 자체가 시대의 감수성에 좌우되지는 않는가? "약자 보호"와 "인간 존엄"의 내용이 문화마다 다르다면, 검증 기준은 무엇으로 다시 검증되는가?</li>
+<li>성경이 창조에 근거시킨 규범(결혼·안식)과 문화적 관습(가부장제)을 실제 본문에서 가르는 해석학적 기준은 무엇인가? 같은 창세기 2–3장에서 하나는 규범으로, 다른 하나는 타락의 결과로 읽는 근거를 어떻게 일관되게 제시할 것인가?</li>
+<li>브루그만의 비판 — 창조 신학은 본질적으로 보수적이다 — 에 대해, 창조 질서가 오히려 불의한 현상을 심판하는 해방의 근거가 될 수 있는 방식은 무엇인가? 아모스의 열방 신탁이 그 실마리인가?</li>
+<li>성 정체성의 다요인 원인론에서 창조 규범과 목회적 돌봄은 어떻게 통합되는가? 성향과 행위의 구분은 정죄를 피하게 하지만, 그 구분 자체가 실제 인격의 고통 앞에서 얼마나 목회적으로 작동하는가?</li>
+<li>창조 질서의 회복(전인치유·에코라이프)이 "이미"의 실천이라면, 어디까지가 이 시대에 실현 가능한 회복이고 어디부터가 새 창조를 기다려야 할 완성인가? 이 경계를 모르면 실천은 규칙주의로, 혹은 체념으로 기운다.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%B0%BD%EC%A1%B0%EC%8B%A0%ED%95%99/">창조신학</a> — 창조 교리 자체(무로부터의 창조, 문화명령, 안식의 신학). 이 페이지에 규범의 실천 지형을 위임한 상위 페이지</li>
+<li><a class="wl" href="../../t/%EC%B0%BD%EC%A1%B0%EB%A1%A0/">창조론</a> — 창조-진화 논쟁과 과학과의 접점(이 페이지가 다루지 않는 영역)</li>
+<li><a class="wl" href="../../t/%EC%9E%90%EC%97%B0%EB%B2%95/">자연법</a> — 창조 질서를 계시 없이 아는 가능성과 그 약점·오용의 역사</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%84%B8%EA%B3%84%EA%B4%80/">기독교세계관</a> — 구조/방향 구분의 총론과 세속 세계관 비평, 좌우 대칭의 거울 톤</li>
+<li><a class="wl" href="../../t/%EA%B2%B0%ED%98%BC/">결혼</a> — 창 2:24의 제정, 제도·언약으로서의 결혼</li>
+<li><a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%8B%A0%ED%95%99/">직업신학</a> — 창 2:15의 노동, 창조 안의 일과 타락의 왜곡</li>
+<li><a class="wl" href="../../t/%EC%95%88%EC%8B%9D/">안식</a> — 창 2:2-3의 일곱째 날, 안식의 실존적·종말론적 지평</li>
+<li><a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%ED%98%95%EC%83%81/">하나님의형상</a> — 창 1:27의 남자와 여자, 형상으로서의 인간 존엄</li>
+<li><a class="wl" href="../../t/%EC%B2%AD%EC%A7%80%EA%B8%B0/">청지기</a> — 카바쉬·라다·아바드·샤마르의 통치·문화명령</li>
+<li><a class="wl" href="../../t/%EC%A0%84%EC%9D%B8%EC%B9%98%EC%9C%A0/">전인치유</a> · <a class="wl" href="../../t/%ED%86%B5%EC%A0%84%EC%A0%81%EC%84%A0%EA%B5%90/">통전적선교</a> — 창조 질서 회복으로서의 의료·선교 실천</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="wl" href="../../b/%EC%B0%BD%EC%A1%B0%ED%83%80%EB%9D%BD%EA%B5%AC%EC%86%8D_%EC%9B%94%ED%84%B0%EC%8A%A4/">창조타락구속_월터스</a></td>
+<td>책(월터스)</td>
+<td>구조와 방향의 구분, 자연법칙 대 규범, "악은 방향의 문제", 구속=회복, status quo 거부, 개혁=성화</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%9E%90%EC%97%B0%EB%B2%95/">자연법</a> (전성민 강의 종합)</td>
+<td>위키·강의</td>
+<td>자연법 이중 정의(양심/창조 질서), 롬 1:20·2:14-15, 아모스 열방 신탁, 노예제·가부장제·인종차별의 오용, 브루그만 비판, 사랑·겸손 기준</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%B0%BD%EC%A1%B0%EC%8B%A0%ED%95%99/">창조신학</a></td>
+<td>위키(이상협·권성수·문대원 종합)</td>
+<td>창 1장의 구분과 채움 구조, 문화명령, 창 1:1→계 21:1, 창조 대상=구속 대상</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2025_세계관이야기2_창조의아름다움</span></td>
+<td>설교(문대원)</td>
+<td>창조의 아름다움과 질서, 창 2:15 경작·지킴은 타락 이전, 청지기, 인격 대 물질</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2025_세계관이야기3_반역의결과</span></td>
+<td>설교(문대원)</td>
+<td>아우토노모스, 삼중 관계 단절, 창 3:17-19, 롬 8:22, 월터스 "세상은 선하다 그러나…"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2014_이박행_생명중심통합선교</span></td>
+<td>강의(이박행)</td>
+<td>선교=창조질서의 회복, 전인치유의 4차원</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2015_임주현_정신의학으로 본 동성애</span></td>
+<td>강의(임주현)</td>
+<td>성 정체성과 창조 질서, 다요인 원인론, 성향/행위 구분</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2021_박선영_에코라이프스타일</span></td>
+<td>강의(박선영)</td>
+<td>"인간도 피조세계의 일부", 에코라이프 5R, 규칙주의 경계</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%84%B8%EA%B3%84%EA%B4%80/">기독교세계관</a></td>
+<td>위키(문대원·이상협 종합)</td>
+<td>구조/방향의 총론, 좌우 대칭 거울 톤, 이데올로기화 경계</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EA%B2%B0%ED%98%BC/">결혼</a> · <a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%8B%A0%ED%95%99/">직업신학</a> · <a class="wl" href="../../t/%EC%95%88%EC%8B%9D/">안식</a> · <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%ED%98%95%EC%83%81/">하나님의형상</a></td>
+<td>위키</td>
+<td>질서의 다섯 마당 각 영역의 제정 본문과 규범</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/창조신학</span><span>#discipline/기독교윤리</span><span>#discipline/자연법</span><span>#구조와방향</span><span>#창조규범</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

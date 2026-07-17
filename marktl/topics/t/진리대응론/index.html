@@ -1,0 +1,232 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>진리대응론 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:206">변증·철학</span><span class="date">2026-07-17</span></div>
+  <h1 class="note-title">진리대응론</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>진리대응론(Correspondence Theory of Truth)은 하나의 진술이 참이 되려면 그 진술의 진리를 결정하는 "진리-제조자"(truth-maker)가 실재 안에 반드시 존재해야 한다는 입장이다. "하나님은 존재한다"는 진술이 참이려면 하나님이라는 의도적 대상이 실제로 존재해야 하며, 그 대상을 찾는 데 실패하면 진술은 거짓이 된다. 곧 진리는 마음속 정합성이나 삶의 유용성이 아니라, 진술과 실재의 일치에 있다.</p>
+<p>침례신학대학원 변증학 6주차(양정모 교수) 강의는 "성경은 정말 하나님의 말씀인가"라는 질문에 사본학적·정경론적 증거를 나열하기 전에, 먼저 이 진리론적 토대부터 세워야 한다고 본다. 진리가 무엇인지 규정하지 않은 채 "성경은 참이다"라고 말하는 것은 허공에 집을 짓는 일이기 때문이다. 이 페이지는 그 토대의 세 부분을 다룬다 — 왜 진리론이 변증에 앞서는가, 대응론은 경쟁 이론들과 어떻게 갈리는가, 그리고 성경 자신의 진리 개념은 대응론과 어떤 관계에 있는가이다.</p>
+<h2>1. 왜 진리론이 먼저인가</h2>
+<p>강의는 <span class="wl-dead" title="위키 내부 링크">프란시스쉐퍼</span>의 진단에서 출발한다 — 현대인은 "객관적이고 인식 가능한 실재로부터 분리된 새로운 진리관"에 집중하고 있다는 지적이다. <a class="wl" href="../../t/%ED%8F%AC%EC%8A%A4%ED%8A%B8%EB%AA%A8%EB%8D%94%EB%8B%88%EC%A6%98/">포스트모더니즘</a>이 지배하는 시대에 기독교인들조차 객관적이고 이성적으로 인식 가능한 진리 개념 자체를 저버리고 있다는 것이다. 이 진단이 방법론을 결정한다. 성경이 하나님의 말씀이라는 변증은 궁극적으로 진리대응론을 견지할 때만 성립한다. 진리정합론이나 실용주의적 진리관은 내적으로 일관되거나 유용해 보여도 실재와의 대응을 보장하지 못하기 때문에, 성경의 신뢰성을 변론하는 토대가 될 수 없다.</p>
+<p>이 토대가 흔들리면 성경 변증만 무너지는 것이 아니다. 도덕적 판단도 함께 흔들린다. "간음은 잘못이다"가 참인 것은 그 행위가 발생할 때마다 갖는 객관적 도덕적 속성 때문이며, 이는 도덕실재론("내 의견과는 별개로 도덕은 존재한다")과 직결된다. 진리대응론을 버리는 순간 인종차별·아동학대에 대한 판단의 객관성까지 함께 상대화된다는 것이 강의의 핵심 경고다. 그래서 진리론은 성경론과 윤리학이 함께 딛고 서는 상위 인식론적 토대다.</p>
+<h2>2. 진리론의 지형 — 대응·정합·실용</h2>
+<p>진리대응론의 위치는 경쟁 이론들과의 대비에서 선명해진다. 강의가 다루는 세 이론을 정리하면 다음과 같다.</p>
+<table>
+<thead>
+<tr>
+<th>이론</th>
+<th>진리의 기준</th>
+<th>대표</th>
+<th>강의의 비판</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>대응론</strong></td>
+<td>진술이 실재와 일치하는가</td>
+<td>(강의가 채택)</td>
+<td>성경이 채택하는 진리관, 그러나 정당화가 필요</td>
+</tr>
+<tr>
+<td><strong>정합론</strong></td>
+<td>다른 믿음들과 일관·정합적인가</td>
+<td>—</td>
+<td>정합적이나 거짓일 수 있다</td>
+</tr>
+<tr>
+<td><strong>실용론</strong></td>
+<td>믿으면 유용한가("현금가치")</td>
+<td><span class="wl-dead" title="위키 내부 링크">윌리엄제임스</span>, 퍼스, 듀이</td>
+<td>유용성과 진리를 혼동한다</td>
+</tr>
+</tbody>
+</table>
+<p>정합론의 한계를 강의는 삼단논법 하나로 드러낸다 — "모든 인간은 죄인이다, 예수님도 인간이다, 그러므로 예수님은 죄인이다"는 논리적으로 정합적이지만 진리는 아니다. 내적 일관성은 진리의 필요조건일 수 있어도 충분조건은 아니다. 실용주의는 믿음의 "현금가치"(유용성)를 진리의 기준으로 삼는데, <span class="wl-dead" title="위키 내부 링크">버트런드러셀</span>의 비판을 빌리면 이는 "효과가 좋으면 진리로 간주하라"는 요구에 불과하다. 강의는 성령을 돈으로 사려 한 마술사 시몬을 예로 들어, 유용성과 진리를 혼동하는 오류를 짚는다.</p>
+<p>그렇다면 기독교 인식론은 왜 대응론을 기본으로 삼는가. 이유는 신학적이다. 하나님이 실재의 근거이기 때문이다. 세계가 하나님의 창조로 실제로 존재하고 그분이 그 세계에 관해 참되게 말씀하신다면, 진리는 인간의 합의나 유용성이 만들어내는 것이 아니라 하나님이 지으신 실재에 인간의 진술이 부합하는가의 문제가 된다. 대응론은 단지 여러 진리론 중 하나가 아니라, 창조주-피조물 구도가 인식론으로 번역된 형태다. 강의가 "성경은 신구약 안에서 진리대응관을 함축적이고도 일관되게 개진시킨다"고 못 박는 이유가 여기 있다.</p>
+<h2>3. 성경적 진리 개념 — 에메트와 알레테이아</h2>
+<p>그런데 성경의 진리 개념이 대응론으로 온전히 담기는가. 이 물음은 대응론을 약화시키기보다 그 깊이를 드러낸다. 성경이 진리를 뜻하는 히브리어 에메트(אֱמֶת)와 헬라어 알레테이아(ἀλήθεια)는 두 결을 함께 지닌다.</p>
+<table>
+<thead>
+<tr>
+<th>차원</th>
+<th>뜻</th>
+<th>함의</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>사실성</strong></td>
+<td>진술이 실재와 일치함, 거짓이 아님</td>
+<td>진리대응론의 근거 — "참"은 실재에 부합함</td>
+</tr>
+<tr>
+<td><strong>신실함</strong></td>
+<td>언약을 지키는 신뢰성, 견고함</td>
+<td>진리는 명제일 뿐 아니라 인격의 성품 — 하나님은 "참되시다"</td>
+</tr>
+</tbody>
+</table>
+<p>에메트의 어근은 '견고하다·믿을 만하다'와 잇닿아 있어, 성경에서 진리는 종종 하나님의 언약적 신실하심을 가리킨다. 하나님이 "참"이시라는 말은 그분의 진술이 사실과 일치할 뿐 아니라 그분이 약속을 지키는 신실한 분이심을 함께 뜻한다. 이 두 결은 대립하지 않는다. 오히려 사실성 없는 신실함은 공허하고(약속을 지키려면 그 약속 내용이 실재와 부합해야 한다), 신실함 없는 사실성은 차갑다(참된 명제의 궁극 보증은 그것을 말씀하시는 분의 인격이다). 강의가 대응론을 성경적 진리관으로 제시하되 그 근거를 "진리를 의미하는 히브리어·헬라어 단어들의 중심에 사실 일치 개념이 있다"는 한 문장에 의존한 것은 이 점에서 절반의 진술이다. 사실 일치(대응)는 성경적 진리의 중심에 있지만, 그 대응을 떠받치는 것은 실재의 근거이신 하나님의 신실하심이다. 대응론은 성경적 진리관의 뼈대이되, 그 뼈대에 피가 도는 것은 언약적 신실함이라는 인격적 차원 때문이다.</p>
+<h2>4. 포스트모더니즘과의 대결</h2>
+<p>대응론이 정면으로 맞서는 것은 진리를 사회적 구성물로 보는 <a class="wl" href="../../t/%ED%8F%AC%EC%8A%A4%ED%8A%B8%EB%AA%A8%EB%8D%94%EB%8B%88%EC%A6%98/">포스트모더니즘</a>의 진리관이다. 강의는 네 가지로 반박한다.</p>
+<table>
+<thead>
+<tr>
+<th>반박</th>
+<th>요지</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>① 거대담론이 곧 억압은 아니다</td>
+<td>포괄적 진리 주장 자체가 억압인 것은 아니다</td>
+</tr>
+<tr>
+<td>② 자기모순</td>
+<td>객관적 진리를 거부하는 선언 자체가 실재 전체에 적용된다고 주장되어, "상대성을 절대적 진리로 받아들이는" 자기모순에 빠진다</td>
+</tr>
+<tr>
+<td>③ 도덕적 판단의 실재성</td>
+<td>인종차별·여성 성기절제·강간·아동학대는 사회적 구성이 아니라 객관적 악으로 판단된다</td>
+</tr>
+<tr>
+<td>④ 신뢰할 기준의 부재</td>
+<td>진리 주장을 실재와 대조해 검증할 신뢰할 만한 기준을 전혀 제공하지 못한다</td>
+</tr>
+</tbody>
+</table>
+<p>가장 무거운 것은 두 번째다. "모든 진리는 상대적이다"라는 명제 자체가 상대적이지 않은 절대 주장으로 발화되기 때문이다. 상대주의는 자기 자신을 예외로 두어야만 성립하며, 그 예외의 인정이 곧 상대주의의 자기부정이다. 강의는 여기서 관용의 문제도 짚는다 — "관용이라 해서 다 좋은 것은 아니다. 죄에 대해서는 적용해서는 안 되는데 그렇게 하지 않는다." D.A. 카슨의 "관용의 비관용" 개념, 곧 관용을 절대화하는 것 자체가 새로운 독단이 된다는 지적이 인용된다. 강의는 이 모든 귀결을 "우주적 불경건"이라 부른다 — 진리의 본질과 의미로서의 대응을 유기하는 모든 진리관은 실재를 무시하기에, 실재의 근거이신 하나님을 무시하는 불경건으로 귀착한다는 것이다.</p>
+<h2>5. 토대로서의 재확인과 남는 물음</h2>
+<p>진리대응론이 왜 토대인지는 <span class="wl-dead" title="위키 내부 링크">_paper_기말종합보고서</span>에서 재확인된다. 성경무오성을 다루는 문항의 배경으로 6주차의 진리대응론이 다시 소환되는데, 무오성 논증은 사본학적·정경론적 증거를 나열하기 전에 애초에 "성경이 참이다"라는 명제가 어떤 진리관 위에서 성립하는지를 먼저 규정해야 설득력을 갖는다는 것이다. 보고서는 나아가 이 진리대응론이 교리적 논증(무오성·선택과 유기)과 역사적 논증(부활·역사적 예수) 두 방식 모두를 떠받치는 상위 인식론적 토대임을 짚는다. 곧 <a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%EB%AC%B4%EC%98%A4/">성경무오</a>도 <a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%EB%A1%A0/">성경론</a>도 진리대응론이라는 지반 위에 서 있다.</p>
+<p>다만 한 가지 긴장이 남는다. 개혁주의 인식론(<span class="wl-dead" title="위키 내부 링크">알빈플랜팅가</span>의 "보증" 개념)은 하나님을 아는 지식이 반드시 대응론적 정당화 절차를 거쳐야만 성립한다고 보지 않는다 — 신 인식은 명제적 논증 이전에 인간에게 자연스럽게 형성되는 기초 믿음일 수 있다는 것이다. 대응론(진리의 본질에 관한 이론)과 개혁주의 인식론(그 진리가 어떻게 정당하게 알려지는가에 관한 이론)은 층위가 다르므로 원리상 충돌하지 않지만, 강의는 6주차의 대응론 강조와 이 인식론이 어떻게 정합적으로 공존하는지를 명시적으로 잇지 않는다. 이 연결은 볼트가 이어받아야 할 과제다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>진리대응론은 성경의 신뢰성을 변론하는 모든 후속 논증(사본학·정경론·역사성)이 딛고 서는 인식론적 토대다. 진리가 무엇인지 규정하지 않으면 "성경은 참이다"는 허공의 주장이 된다.</li>
+<li>대응론이 기독교 인식론의 기본인 이유는 신학적이다 — 하나님이 실재의 근거이므로, 진리는 인간의 합의나 유용성이 아니라 하나님이 지으신 실재에 진술이 부합하는가의 문제다.</li>
+<li>성경적 진리(에메트·알레테이아)는 사실성과 신실함을 함께 지닌다. 대응론은 그 뼈대이되, 대응을 떠받치는 것은 하나님의 언약적 신실하심이라는 인격적 차원이다.</li>
+<li>포스트모던 상대주의는 "상대성을 절대적 진리로 주장한다"는 자기모순에서 벗어나지 못한다. 자기 자신을 예외로 두어야만 성립하기 때문이다.</li>
+<li>진리대응론을 버리면 성경 변증만이 아니라 도덕적 판단의 객관성(인종차별·아동학대)까지 함께 흔들린다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>성경적 진리의 두 결(사실성·신실함) 중 대응론이 담아내는 것은 사실성이다. 신실함의 차원까지 포괄하는 성경적 진리관을 대응론의 언어로 어떻게 온전히 진술할 수 있는가.</li>
+<li>개혁주의 인식론(플랜팅가의 "보증")과 6주차의 대응론 강조는 층위가 다르지만, 강의 안에서 그 관계가 명시되지 않았다 — 두 입장의 정합적 통합은 남은 과제다.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%ED%8F%AC%EC%8A%A4%ED%8A%B8%EB%AA%A8%EB%8D%94%EB%8B%88%EC%A6%98/">포스트모더니즘</a> — 진리대응론이 논박하는 상대주의적 진리관의 전모.</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%EB%AC%B4%EC%98%A4/">성경무오</a> — 진리대응론을 토대로 성립하는 후속 교리 논증.</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%EB%A1%A0/">성경론</a> — 성경의 영감·권위 논의가 딛고 서는 진리론적 지반.</li>
+<li><a class="wl" href="../../t/%EB%B3%80%EC%A6%9D%ED%95%99/">변증학</a> — 진리론(6장)과 진리를 살아내는 인격적 조건(7장, 진리의 적)의 전체 지형.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">06주_성경의문제</span></td>
+<td>강의(<span class="wl-dead" title="위키 내부 링크">양정모</span>)</td>
+<td>진리대응론 정의, 대응·정합·실용 세 이론 비교, 도덕실재론 연결, 포스트모더니즘 4대 반박, 카슨의 "관용의 비관용", 우주적 불경건</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">_paper_기말종합보고서</span></td>
+<td>보고서</td>
+<td>성경무오성 논증의 인식론적 토대로 대응론 재확인, 교리적·역사적 논증을 떠받치는 상위 토대</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#진리대응론</span><span>#진리론</span><span>#포스트모더니즘</span><span>#도덕실재론</span><span>#discipline/변증학</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

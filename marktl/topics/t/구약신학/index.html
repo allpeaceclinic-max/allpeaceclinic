@@ -1,0 +1,456 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>구약신학 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:174">성경·해석</span><span class="date">2026-07-14</span></div>
+  <h1 class="note-title">구약신학</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>구약신학(Old Testament theology)은 히브리 성경을 구약 자체의 흐름과 범주로 읽어, 그 안에 담긴 하나님·인간·세계 이해를 서술하는 성경신학의 한 분과다. 핵심은 '무엇을 읽느냐'가 아니라 '어떻게 읽느냐'에 있다. 같은 서른아홉 권을 두고도, 후대의 교리 체계(신론·인간론·구원론)를 격자 삼아 주제별로 훑으면 조직신학이 되고, 본문이 놓인 시대의 목소리를 그 시점의 문법으로 따라 들으면 구약신학이 된다. 구약신학은 뒤엣것을 택한다 — 계시가 창조에서 침묵기까지 역사 속에서 점진적으로 펼쳐졌다는 전제 아래, 그 전개를 통시적으로 재구성한다.</p>
+<p>그래서 구약신학의 첫 규율은 자제(自制)다. 신약의 완성된 빛을 구약 본문에 곧바로 역투사하지 않고, 먼저 그 본문이 자기 자리에서 무엇을 말했는지를 듣는다. 이 볼트의 구약개론 강의가 이사야 7장의 임마누엘을 다루며 "성경부터 봐야 한다, 7장에서 11장까지 읽어야 하고, 그다음에 주석을 볼 수 있으나 그것이 먼저면 좋은 방법이 아니다"라고 못박는 태도가 바로 그 규율의 실천이다. 구약을 구약의 문법으로 먼저 듣는 것 — 이것이 분과로서의 구약신학이 지키는 최소한의 정직이다.</p>
+<p>이 글은 분과의 성격에서 출발해, 구약에 하나의 중심 주제가 있는가라는 오랜 논쟁, 창조에서 침묵기까지의 큰 줄거리, 장르들이 각기 기여하는 신학, 본문이 본문을 해석하는 내재적 읽기, 구약과 신약의 관계, 그리고 구약을 설교하고 사는 길까지를 따라간다. 오경 문헌 자체는 <a class="wl" href="../../t/%ED%86%A0%EB%9D%BC/">토라</a>가, 언약들의 지형은 <a class="wl" href="../../t/%EC%96%B8%EC%95%BD/">언약</a>이, 구속사 체계는 <a class="wl" href="../../t/%EA%B5%AC%EC%86%8D%EC%8B%A0%ED%95%99/">구속신학</a>이, 해석 방법론 일반은 <a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D%ED%95%99/">성경해석학</a>이, 구약의 도덕적 권위는 <a class="wl" href="../../t/%EA%B5%AC%EC%95%BD%EC%9C%A4%EB%A6%AC/">구약윤리</a>가, 예언과 성취는 <a class="wl" href="../../t/%EB%A9%94%EC%8B%9C%EC%95%84%EC%98%88%EC%96%B8/">메시아예언</a>이, 신약의 신학은 <a class="wl" href="../../t/%EC%8B%A0%EC%95%BD%EC%8B%A0%ED%95%99/">신약신학</a>이 맡으므로, 이 글은 '구약을 하나의 신학적 전체로 읽는 일' 그 자체에 집중한다.</p>
+<h2>1. 구약을 구약의 문법으로 — 분과로서의 성격</h2>
+<p>구약신학과 조직신학은 같은 본문을 다루지만 배열의 원리가 다르다. 조직신학은 무시간적이다. 성경 전체가 '하나님'에 대해, '구원'에 대해 무엇을 가르치는지를 논리적 체계로 종합한다. 구약신학은 시간적이다. 하나님이 아브라함에게 하신 말씀과 포로기 예언자에게 하신 말씀 사이에 놓인 수백 년의 계시 전개를 지우지 않고, 그 순서 그대로 따라 읽는다. 조직신학이 완성된 건물의 설계도라면, 구약신학은 그 건물이 세대를 거쳐 지어져 온 공정(工程)의 기록이다.</p>
+<p>이 차이는 사소하지 않다. 구약을 조직신학의 범주로만 읽으면, 삼위일체나 대속 같은 후대의 완성된 교리를 구약 본문이 이미 명료하게 알고 있었던 것처럼 다루기 쉽다. 구약신학은 그 조급함을 경계한다. 이 볼트의 강의가 부활을 다루며 제시하는 '점진적 계시'의 원리가 그 절제를 잘 보여준다 — 창세기 3장 15절의 "여자의 후손"은 "쓰일 당시가 아니라 시간이 지나서야 알 수 있는" 씨앗이며, "구약은 희미한 그림자이고 신약으로 넘어가면 거울을 보듯 분명해진다"는 것이다. 구약신학은 그 그림자를 그림자의 밝기 그대로 존중하는 데서 시작한다.</p>
+<table>
+<thead>
+<tr>
+<th>축</th>
+<th>조직신학</th>
+<th>구약신학(성경신학)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>배열 원리</td>
+<td>주제·교리 체계(신론·인간론·구원론…)</td>
+<td>계시의 역사적 전개를 따르는 통시적 서술</td>
+</tr>
+<tr>
+<td>시간 감각</td>
+<td>무시간적·논리적</td>
+<td>시간적·서사적</td>
+</tr>
+<tr>
+<td>핵심 질문</td>
+<td>"성경 전체가 X에 대해 무엇을 가르치는가"</td>
+<td>"이 본문이 그 시점에서 무엇을 말했는가"</td>
+</tr>
+<tr>
+<td>사용 범주</td>
+<td>후대의 신학 범주</td>
+<td>본문 자체의 범주(언약·토라·임재)</td>
+</tr>
+<tr>
+<td>고유한 위험</td>
+<td>본문을 체계에 끼워 맞춤</td>
+<td>종합의 결여·역사주의로의 미끄러짐</td>
+</tr>
+</tbody>
+</table>
+<p>그러면서도 구약신학은 구약을 고대 근동 문헌으로 환원해 버리는 반대편 함정도 피한다. 강의가 소개하는 카우프만의 통찰이 이 균형점을 짚는다 — 이스라엘의 유일신론은 다신론에서 일신론으로 진화한 종교사의 한 단계가 아니라, "창세기 1장 1절에 나타난 하나님은 여럿 중 하나(oneness)가 아니라 비교 불가한 독특함(uniqueness)의 하나님"이라는 혁명적 선언이라는 것이다. 구약은 주변 문화의 언어와 양식을 빌려 쓰면서도(창조 기사, 종주-봉신 조약, 지혜 잠언) 그 내용을 전복한다. 구약신학은 이 '빌려 씀과 전복'의 이중성을 함께 읽어내는 작업이다.</p>
+<h2>2. 중심(Mitte)을 찾아서 — 구약에 하나의 통일 주제가 있는가</h2>
+<p>구약신학의 가장 오래된 물음은 이것이다. 서른아홉 권을 하나로 꿰는 단일한 중심(독일어로 Mitte)이 있는가. 이 질문은 20세기 구약학을 둘로 갈랐다. 한쪽은 통일 주제를 찾으려 했고, 다른 쪽은 그 시도 자체가 구약의 다성성(多聲性)을 억압한다고 보았다.</p>
+<p>통일 주제를 찾은 대표는 언약이다. 발터 아이히로트는 언약(Bund)을 구약 전체를 조직하는 축으로 삼았다. 이 볼트에도 그 입장을 뒷받침할 자료가 있다. 이상협 본인의 구약개론 리서치 페이퍼가 인용하는 유진 메릴의 「구약신학」은 언약을 "하나님과 인간이 처음으로 관계를 맺은 원리이자, 깨어진 관계를 새롭게 갱신하는 원리"로 규정한다. 강의가 짚은 '토라 샌드위치 구조' — 여호수아가 "이 율법책을 네 입에서 떠나지 말게 하라"로 열리고 말라기가 "내 종 모세의 율법을 기억하라"로 닫히는 정경의 골격 — 도 언약-토라가 구약을 감싸는 뼈대임을 보여준다. 언약 신학의 상세는 <a class="wl" href="../../t/%EC%96%B8%EC%95%BD/">언약</a>과 <a class="wl" href="../../t/%EC%8B%9C%EB%82%B4%EC%82%B0%EC%96%B8%EC%95%BD/">시내산언약</a>·<a class="wl" href="../../t/%EC%95%84%EB%B8%8C%EB%9D%BC%ED%95%A8%EC%96%B8%EC%95%BD/">아브라함언약</a>에 맡긴다.</p>
+<p>그러나 후보는 언약만이 아니다. 하나님의 임재를 중심으로 보는 시각도 강력하다. 강의는 성막을 "천상의 성소를 그대로 재현한 것, 하늘이 이 땅 가운데 임한 것"으로 읽고, 창세기 1–11장 전체를 "하나님의 자리와 인간의 자리"의 구분과 침범의 드라마로 풀어낸다. 에덴에서의 동행, 성막과 성전의 영광, 포로기의 떠나가심과 회복의 약속은 모두 '하나님이 어디에 어떻게 계신가'라는 임재의 실을 따라 꿰인다(<a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%9E%84%EC%9E%AC/">하나님의임재</a>). 또 다른 후보는 약속이다 — 족장에게 주신 씨·땅·복의 약속이 구약 전체를 앞으로 끌고 가는 추진력이라는 것이다. 그리고 하나님의 왕권(통치)을 중심으로 보는 시각도 있다. 시내산 언약을 다루며 강의가 "이스라엘에는 왕의 묘가 없다, 유일한 왕은 하나님이시기 때문"이라 강조하고 시편 2편이 여호와의 왕권을 노래하는 대목은, 구약이 결국 '하나님이 왕 되심'을 향해 간다는 <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EB%82%98%EB%9D%BC/">하나님나라</a>의 실마리다.</p>
+<p>반대편에는 게르하르트 폰 라트가 있다. 그는 하나의 중심을 강요하기를 거부하고, 구약을 이스라엘이 세대마다 자신의 신앙고백(구원사)을 새롭게 다시 진술한 전승의 층위들로 읽었다. 구약의 통일성은 하나의 개념이 아니라, 옛 고백을 끊임없이 재해석해 온 역동적 과정 자체에 있다는 것이다. 이 입장은 구약의 다양성 — 제사장의 목소리와 지혜자의 회의(懷疑)와 예언자의 분노가 한 정경 안에 공존하는 사실 — 을 정직하게 끌어안는다는 강점이 있다. 강의가 잠언의 인과응보와 전도서의 회의주의, 애가의 침묵을 "입장이 서로 다른 책들"로 병치하는 것도 이 다성성의 승인이다.</p>
+<table>
+<thead>
+<tr>
+<th>중심 후보</th>
+<th>대표 관점</th>
+<th>볼트가 뒷받침하는 근거</th>
+<th>강점과 한계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>언약</td>
+<td>아이히로트·유진 메릴</td>
+<td>토라 샌드위치, 종주-봉신 양식, 언약=관계의 원리</td>
+<td>골격은 뚜렷하나 지혜서가 잘 안 담김</td>
+</tr>
+<tr>
+<td>하나님의 임재</td>
+<td>임재 신학 계열</td>
+<td>성막=천상 성소 재현, 하나님/인간의 자리</td>
+<td>서사·예언을 폭넓게 꿰나 개념이 넓음</td>
+</tr>
+<tr>
+<td>약속(씨·땅·복)</td>
+<td>약속-성취 도식</td>
+<td>창11→12 초점 전환, 족장 약속</td>
+<td>미래 지향성 포착, 율법의 현재성 약화</td>
+</tr>
+<tr>
+<td>하나님의 왕권</td>
+<td>하나님 나라 계열</td>
+<td>"유일한 왕은 하나님", 시2편 왕권</td>
+<td>신약과 잘 이어지나 구약엔 늦게 명시</td>
+</tr>
+<tr>
+<td>중심 없음</td>
+<td>폰 라트(전승사)</td>
+<td>지혜·회의·탄식의 공존, 장르 다양성</td>
+<td>다성성 존중, 종합의 구심력은 약함</td>
+</tr>
+</tbody>
+</table>
+<p>이 볼트가 취하는 자리는 특정 중심의 독점이 아니라, 언약을 골격으로 삼되 임재·약속·왕권을 그 골격에 걸린 살로 읽는 통합에 가깝다. 중심 논쟁의 값어치는 정답을 못박는 데 있다기보다, 구약을 파편이 아니라 하나의 이야기로 읽으려는 의지를 벼리는 데 있다.</p>
+<h2>3. 창조에서 침묵기까지 — 구약의 큰 줄거리</h2>
+<p>구약신학이 통시적 분과인 한, 그 뼈대는 줄거리다. 강의는 구약 전체를 선역사에서 포로 귀환까지 하나의 흐름으로 지도화한다 — "창조·노아·아브라함의 선역사, 족장 시대, 사백삼십 년 노예살이와 출애굽, 토라를 받은 광야 시대, 가나안 정복과 사사 시대, 사울·다윗·솔로몬의 통일왕조, 남북 분열, 북이스라엘과 남유다의 멸망, 바벨론 유수, 포로 귀환." 이 줄거리는 단순한 연대기가 아니라 신학적 리듬을 갖는다. 약속이 주어지고, 구속으로 성취되고, 언약으로 봉인되고, 불순종으로 깨어지고, 심판으로 무너지고, 소망으로 다시 열린다.</p>
+<table>
+<thead>
+<tr>
+<th>국면</th>
+<th>본문 범위</th>
+<th>핵심 사건</th>
+<th>신학적 의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>선역사</td>
+<td>창 1–11</td>
+<td>창조·타락·홍수·바벨탑</td>
+<td>하나님의 자리와 인간의 자리, 보편 인류의 죄</td>
+</tr>
+<tr>
+<td>족장</td>
+<td>창 12–50</td>
+<td>아브라함 부르심, 씨·땅·복 약속</td>
+<td>창11→12의 초점 전환, 택함과 약속의 시작</td>
+</tr>
+<tr>
+<td>출애굽</td>
+<td>출 1–18</td>
+<td>애굽 탈출, 홍해</td>
+<td>구속의 원형(paradigm)이 된 해방 사건</td>
+</tr>
+<tr>
+<td>시내산</td>
+<td>출 19–민</td>
+<td>언약·토라·성막</td>
+<td>언약 백성의 형성, 임재의 처소</td>
+</tr>
+<tr>
+<td>정복·사사</td>
+<td>수·삿</td>
+<td>가나안 정착과 배교의 순환</td>
+<td>언약 준수의 시험, '가나안화'의 위협</td>
+</tr>
+<tr>
+<td>통일왕국</td>
+<td>삼상–왕상 11</td>
+<td>사울·다윗·솔로몬</td>
+<td>다윗 언약, 하나님의 왕권과 인간 왕권의 긴장</td>
+</tr>
+<tr>
+<td>분열·멸망</td>
+<td>왕상 12–왕하 25</td>
+<td>남북 분열, 두 왕국의 패망</td>
+<td>언약 파기에 대한 심판</td>
+</tr>
+<tr>
+<td>포로·귀환</td>
+<td>스·느·에·학·슥</td>
+<td>바벨론 유수, 성전·성벽 재건</td>
+<td>심판 속의 소망, 미완의 회복</td>
+</tr>
+<tr>
+<td>침묵기</td>
+<td>신구약 중간기</td>
+<td>유대교의 형성</td>
+<td>왕→제사장, 문서 선지자→토라 연구로의 이행</td>
+</tr>
+</tbody>
+</table>
+<p>이 줄거리에서 두 마디가 특히 구약신학의 무게를 진다. 하나는 출애굽이다. 강의가 반복해 짚듯 출애굽은 이후 모든 구속 이해의 원형이 된다 — 애굽(종살이)에서 나와 홍해(죽음)를 건너 광야(형성)를 지나 가나안(안식)으로 가는 이 문법은, 훗날 포로 귀환을 '제2의 출애굽'으로, 세례를 홍해 건넘으로 읽게 하는 렌즈가 된다(<a class="wl" href="../../t/%EA%B5%AC%EC%86%8D%EC%8B%A0%ED%95%99/">구속신학</a>). 다른 하나는 포로기다. 남유다의 멸망은 단순한 정치적 패배가 아니라 '언약이 파기될 수 있는가'라는 신학적 위기였고, 에스겔 16장은 그 위기에 답하며 조건적 시내산 언약의 심판과 무조건적 아브라함 언약의 기억을 함께 붙든다.</p>
+<p>줄거리의 끝은 닫힘이 아니라 열림이다. 강의가 소선지서의 배열을 "심판에서 회복으로" 향하는 흐름으로 읽고, 말라기가 "의로운 해가 떠올라 치료하는 광선을 비추리라, 선지 엘리야를 보내리라"로 정경을 닫는다는 사실은 의미심장하다. 구약은 완결된 이야기가 아니라 기다림의 자세로 끝난다. 그 미완의 여백이 신약을 향해 문을 열어 둔다.</p>
+<h2>4. 다섯 목소리의 신학 — 장르들이 기여하는 것</h2>
+<p>구약은 한 가지 문체로 말하지 않는다. 강의가 첫 시간부터 "장르 이해가 중요하다 — 시편은 노래, 레위기는 법, 창세기는 내러티브"라고 강조하는 이유가 여기 있다. 장르는 포장이 아니라 신학의 방식이다. 법은 명령하고, 이야기는 형성하고, 시는 토로하고, 잠언은 관찰하고, 예언은 고발한다. 구약신학은 각 장르가 다른 방식으로 하나님을 증언한다는 사실을 존중한다.</p>
+<p>토라는 언약과 은혜의 순서를 세운다. 강의의 핵심 명제 — "이야기가 먼저 등장하고 법이 뒤따른다, 순서가 중요하다" — 대로, 십계명은 "너를 애굽에서 인도한 여호와"라는 구원 서사 위에 세워진다. 법은 구원의 조건이 아니라 구원받은 자의 삶의 방식이다(상세는 <a class="wl" href="../../t/%ED%86%A0%EB%9D%BC/">토라</a>). 역사서(전기 예언서)는 그 언약이 땅에서 지켜지고 깨어지는 드라마를 기록한다 — 사사기의 배교 순환, 사울의 버림받음, 다윗의 영광과 그림자가 모두 '언약 백성이 어떻게 사는가'를 보여주는 신학적 서사다.</p>
+<p>시가서와 지혜서는 하나님 앞에 선 인간의 목소리를 연다. 강의는 지혜문학의 독특성을 문체로 짚는다 — "율법서와 역사서에 흔한 단어들이 지혜서에는 빠진다, 언약(베리트)이라는 말도, '여호와께서 말씀하시기를'이라는 정형구도 드물다." 대신 지혜서는 창조 세계에 이미 심긴 삶의 원리를 관찰하고(잠언의 인과응보), 그 원리가 현실에서 어긋날 때 정직하게 항의한다(욥기·전도서의 회의). 시편은 그 목소리를 기도로 바꾼다 — 찬양과 탄식이 공존하고, 탄원시가 시편의 삼분의 일을 차지하며 "어찌하여 나를 버리셨나이까"라는 절규까지 성경 안에 품는다. 예언서는 심판과 회복, 그리고 사회정의를 외친다. 이 장르의 신학은 <a class="wl" href="../../t/%EC%84%A0%EC%A7%80%EC%84%9C/">선지서</a>와 <a class="wl" href="../../t/%EB%AC%B8%EC%84%9C%EC%84%A0%EC%A7%80%EC%9E%90/">문서선지자</a>에 상세히 맡긴다.</p>
+<table>
+<thead>
+<tr>
+<th>장르</th>
+<th>히브리 분류</th>
+<th>대표</th>
+<th>신학적 기여</th>
+<th>상세</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>토라</td>
+<td>토라</td>
+<td>창–신</td>
+<td>은혜가 먼저, 언약 백성의 정체성</td>
+<td><a class="wl" href="../../t/%ED%86%A0%EB%9D%BC/">토라</a></td>
+</tr>
+<tr>
+<td>역사서</td>
+<td>네비임(전)</td>
+<td>수–왕하</td>
+<td>언약 준수·파기의 드라마</td>
+<td><a class="wl" href="../../t/%EB%82%B4%EC%9E%AC%EC%A0%81%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D/">내재적성경해석</a></td>
+</tr>
+<tr>
+<td>시가·지혜</td>
+<td>케투빔</td>
+<td>욥·시·잠·전</td>
+<td>하나님 앞 인간의 목소리, 삶의 원리와 항의</td>
+<td>—</td>
+</tr>
+<tr>
+<td>예언서</td>
+<td>네비임(후)</td>
+<td>사–말</td>
+<td>심판과 회복, 사회정의, 중보</td>
+<td><a class="wl" href="../../t/%EC%84%A0%EC%A7%80%EC%84%9C/">선지서</a></td>
+</tr>
+<tr>
+<td>묵시·성문</td>
+<td>케투빔</td>
+<td>단·에·스·느</td>
+<td>이방 땅의 섭리, 정체성의 보존</td>
+<td><a class="wl" href="../../t/%EC%8B%A0%EC%A0%81%EC%84%AD%EB%A6%AC/">신적섭리</a></td>
+</tr>
+</tbody>
+</table>
+<p>이 다섯 목소리를 한 정경으로 묶는 힘이 바로 앞 장에서 다룬 '중심'의 문제다. 장르가 다르다고 신학이 분열하는 것이 아니라, 서로 다른 악기가 한 교향곡을 이루듯 각 장르가 하나의 구원 이야기를 다른 음역으로 연주한다.</p>
+<h2>5. 본문이 본문을 해석한다 — 내재적 읽기</h2>
+<p>이 볼트의 구약개론이 특히 벼려 낸 방법이 내재적 성경 해석(inner-biblical interpretation)이다. 외부의 신학 체계나 역사 재구성을 먼저 들이대는 대신, 본문 안의 문학 장치와 본문과 본문 사이의 상호텍스트로 신학을 읽어내는 방식이다. 구약이 스스로를 어떻게 해석하는지를 듣는 이 읽기는 구약신학이 '구약의 문법으로' 작동하는 가장 구체적인 실천이다.</p>
+<p>방식은 여럿이다. 첫째는 상호텍스트다. 강의는 다니엘 2장과 창세기 41장을 나란히 놓아 요셉과 다니엘의 꿈 해석 이야기가 얼마나 정교하게 겹치고 갈라지는지를 읽고, 에스더서의 모르드개를 "제2의 사울" — 아각 자손 하만을 상대로 사울이 아말렉 왕 아각 앞에서 실패한 순종을 이번에는 완수하는 인물 — 로 읽는다(상세는 <a class="wl" href="../../t/%EB%82%B4%EC%9E%AC%EC%A0%81%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D/">내재적성경해석</a>). 둘째는 언어유희다. 예레미야 1장에서 하나님이 보여 주신 '아몬드나무 가지'(샤케드)는 '내가 지켜보리라'(쇼케드)와 자음이 겹치며, 말씀을 반드시 이루시겠다는 약속을 소리로 각인한다. 셋째는 균형감이다. 내재적 읽기는 인물을 미화하지 않는다. 강의는 요셉을 다루며 "믿음의 사람이지만 부정적이고 어두운 그림자도 보인다, 영웅적 선입견이 그것을 제대로 보지 못하게 한다"고 경계하는데, 요셉의 애굽 경제 정책이 백성을 노예로 만든 대목을 그냥 지나치지 않는 이 정직함이야말로 구약을 구약의 목소리로 듣는 태도다.</p>
+<p>내재적 읽기가 겨누는 신학적 과녁은 '숨어 계신 하나님'이다. 하나님의 이름이 한 번도 나오지 않는 에스더서가 어떻게 정경이 되었는가라는 물음에, 강의는 본문의 구조 자체가 보이지 않게 일하시는 섭리를 증언한다고 답한다 — 아하수에로의 불면, 때맞춘 기록의 낭독, 뒤집히는 운명이 모두 이름 없이 역사하시는 손을 가리킨다(<a class="wl" href="../../t/%EC%8B%A0%EC%A0%81%EC%84%AD%EB%A6%AC/">신적섭리</a>). 구약신학은 이렇게 본문의 결을 따라 신학을 길어 올린다. 다만 내재적 읽기의 개별 사례 전체는 <a class="wl" href="../../t/%EB%82%B4%EC%9E%AC%EC%A0%81%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D/">내재적성경해석</a>과 <a class="wl" href="../../t/%EB%A9%94%EC%8B%9C%EC%95%84%EC%98%88%EC%96%B8/">메시아예언</a>에 맡기고, 여기서는 그것이 구약신학의 방법론적 심장이라는 사실만 붙든다.</p>
+<h2>6. 그리스도인의 구약 — 약속과 성취, 연속과 불연속</h2>
+<p>구약신학이 신학인 한, 그것은 결국 '구약이 그리스도인에게 무엇인가'라는 물음에 답해야 한다. 교회사 초기에 마르키온은 구약의 하나님을 신약의 하나님과 다른 열등한 신으로 보아 구약을 통째로 폐기하려 했다. 교회는 이를 이단으로 배격했다. 구약은 신약의 배경 자료가 아니라 그리스도인의 성경이다. 강의가 구속사적 관점을 소개하며 인용하는 누가복음 24장 27절 — 부활하신 예수께서 "모세와 모든 선지자의 글로 시작하여 자기에 관한 것을 풀어 주셨다" — 은 구약을 그리스도를 향한 증언으로 읽는 교회의 오랜 확신을 압축한다.</p>
+<p>그러나 이 그리스도 중심 읽기는 두 방향의 절제를 요구한다. 한편으로 구약과 신약은 연속한다 — 약속과 성취의 관계다. 강의가 이사야 7장의 임마누엘을 '이중성취'로 읽는 방식이 그 모범이다. "산이 멀리서는 하나로, 가까이서는 둘로 보이듯" 예언은 점진적으로 성취되어, 알마(젊은 여인)의 아이는 먼저 아하스 시대에 표징으로 태어나고, 그 예언은 다시 마리아의 아들에게서 궁극적으로 채워진다. 예언을 당대의 정황에서 뽑아내 곧바로 예수에게만 대입하는 조급함도, 반대로 신약의 성취를 부정하는 축소도 함께 피하는 이 독법이 구약신학의 균형이다(<a class="wl" href="../../t/%EB%A9%94%EC%8B%9C%EC%95%84%EC%98%88%EC%96%B8/">메시아예언</a>).</p>
+<p>다른 한편으로 구약과 신약 사이에는 불연속도 있다 — 점진적 계시이기 때문이다. 구약이 그림자로 품고 있던 것들(부활, 대속, 성령)은 신약에서 실체로 드러난다. 그럼에도 구약은 이미 그 실체를 향해 손을 뻗고 있다. 에스겔 16장에서 강의가 발견하는 '구약의 십자가 복음'이 그 증거다. 죄로 죽을 수밖에 없는 이스라엘을 향한 하나님의 선언은 심판과 은혜를 한 호흡에 담는다.</p>
+<blockquote>
+<p>내가 네 곁으로 지나갈 때에 네가 피투성이로 발짓하는 것을 보고 네게 이르기를 너는 피투성이라도 살라 다시 이르기를 너는 피투성이라도 살라 하고 (겔 16:6)</p>
+</blockquote>
+<p>버려두면 죽을 존재에게 "피투성이라도 살라"고 두 번 명하시는 이 은혜는, 골고다에서 세상 죄를 지고 가신 어린양을 이미 그림자로 안고 있다. 구약과 신약의 관계에서 구속사의 체계는 <a class="wl" href="../../t/%EA%B5%AC%EC%86%8D%EC%8B%A0%ED%95%99/">구속신학</a>이, 신약 자체의 신학은 <a class="wl" href="../../t/%EC%8B%A0%EC%95%BD%EC%8B%A0%ED%95%99/">신약신학</a>이, 새 언약으로의 성취는 <a class="wl" href="../../t/%EC%83%88%EC%96%B8%EC%95%BD/">새언약</a>이 잇는다.</p>
+<h2>7. 율법주의도 알레고리도 아니게 — 구약을 설교하고 사는 길</h2>
+<p>구약신학의 마지막 시험대는 강단과 삶이다. 구약을 설교할 때 교회는 두 함정 사이를 지난다. 하나는 율법주의적 읽기다 — 구약을 '착하게 살라'는 도덕 교훈집으로 납작하게 만들어, 다윗과 골리앗에서 '용기를 내라'는 처세훈만 뽑아내는 방식이다. 다른 하나는 알레고리적 남용이다 — 모든 세부에서 억지로 예수를 찾아내, 라합의 붉은 줄을 그리스도의 피로, 성막의 못 하나까지 알레고리로 환원하는 방식이다. 앞의 함정은 그리스도를 잃고, 뒤의 함정은 본문을 잃는다.</p>
+<p>구약개론 강의가 제시하는 길은 그 사이에 있다. 첫째, 순서를 지키는 것이다. "이야기가 먼저, 법이 나중"이라는 토라의 문법대로 은혜를 먼저 선포하고 순종을 그 위에 세우면, 설교는 율법주의로 미끄러지지 않는다. 둘째, 토라의 심장을 놓치지 않는 것이다. 강의가 선지서를 다루며 던지는 질문 — "좋은 그리스도인은 안식일과 십일조로 판가름 나는가" — 에 아모스와 이사야는 사회정의로 답한다. 종교적 열심이 아니라 "약자를 보호하고 악에 저항하는 것"이 예언자가 요구한 신앙의 실체다(<a class="wl" href="../../t/%EA%B5%AC%EC%95%BD%EC%9C%A4%EB%A6%AC/">구약윤리</a>). 셋째, 회복의 문법을 사는 것이다. 강의가 구약 신앙의 리듬으로 정리하는 기억(자코르)–잊음–회개(슈브)–용서(카파르)의 순환은, 오늘의 신자에게도 그대로 유효한 삶의 궤도다. 원래의 자리 — 하나님 아래의 자리 — 를 기억하고, 벗어났을 때 돌이키고, 용서 안에서 다시 서는 것이다.</p>
+<p>구약을 이렇게 읽고 설교할 때, 그것은 폐기된 옛 언약의 유물도, 억지 영해의 채석장도 아니게 된다. 침묵기 이후 성전이 무너지고 왕이 사라진 자리에서 유대교가 "모든 제국은 망해도 말씀은 살아서 역사한다"는 확신으로 토라 학교를 세웠듯, 구약신학은 이 오래된 본문이 여전히 살아 있는 하나님의 가르침임을 강단과 삶에서 증언하는 일이다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>구약신학은 '무엇을 읽느냐'가 아니라 '어떻게 읽느냐'의 문제다. 후대의 교리 체계로 주제를 종합하면 조직신학이 되고, 계시의 역사적 전개를 그 순서대로 따라 읽으면 구약신학이 된다 — 통시성이 이 분과의 정체성이다.</li>
+<li>첫 규율은 자제다. 신약의 완성된 빛을 곧바로 역투사하지 않고 본문이 자기 시점에서 무엇을 말했는지 먼저 듣는다. '점진적 계시'에서 구약은 그림자이고 신약은 거울이되, 그림자를 그림자의 밝기 그대로 존중하는 데서 구약신학은 시작한다.</li>
+<li>중심(Mitte) 논쟁에 정답은 없다. 언약(아이히로트)·임재·약속·하나님의 왕권이 각각 통일 주제 후보이고, 폰 라트는 '중심 없음'(전승사)으로 다성성을 옹호한다. 이 볼트는 언약을 골격으로 삼되 임재·약속·왕권을 그 살로 읽는 통합에 가깝다.</li>
+<li>구약의 줄거리는 닫힘이 아니라 열림으로 끝난다. 선역사에서 침묵기까지의 흐름은 약속–구속–언약–파기–심판–소망의 리듬을 타며, 출애굽은 구속의 원형이 되고 포로기는 언약의 위기가 되며, 말라기의 마지막 말은 신약을 향해 문을 연다.</li>
+<li>장르는 신학의 방식이다. 법은 명령하고 이야기는 형성하고 시는 토로하고 잠언은 관찰하고 예언은 고발한다. 특히 지혜서는 언약 언어가 빠진 자리에서 창조에 심긴 삶의 원리와 그에 대한 정직한 항의를 담는다.</li>
+<li>내재적 읽기가 구약신학의 방법론적 심장이다. 상호텍스트(다니엘–요셉, 에스더–사울), 언어유희(샤케드–쇼케드), 인물 미화의 거부(요셉의 그림자)를 통해 본문이 본문을 해석하게 하고, '숨어 계신 하나님'의 섭리를 길어 올린다.</li>
+<li>그리스도인의 구약은 마르키온을 거부한다. 약속과 성취의 연속(임마누엘의 이중성취), 점진적 계시의 불연속을 함께 붙들며, 강단에서는 율법주의와 알레고리 사이에서 '은혜가 먼저'라는 순서와 사회정의라는 심장을 지킨다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>언약을 구약의 중심 골격으로 삼을 때, 언약 언어가 거의 없는 지혜문학(욥기·전도서·잠언)의 신학은 그 골격 안에 어떻게 통합되는가, 아니면 별도의 축으로 남는가?</li>
+<li>'구약을 그 자체의 문법으로 먼저 읽는다'는 자제와 '구약을 그리스도 중심으로 읽는다'는 확신은 실제 설교에서 어떤 비율로 결합되어야 하는가 — 어느 순간 전자를 넘어 후자로 이행하는 것이 정당한가?</li>
+<li>이중성취(알마–임마누엘)의 원리는 어떤 예언에 적용 가능하고 어떤 예언에는 부당한가? 점진적 성취와 자의적 대입을 가르는 해석학적 기준은 무엇인가?</li>
+<li>내재적 읽기가 발견하는 상호텍스트적 연결(제2의 사울, 요셉–다니엘 병행)은 본문에 실재하는 저자의 의도인가, 아니면 독자가 사후에 구성한 패턴인가 — 그 판정 기준은 어디에 있는가?</li>
+<li>구약의 심판 서사(헤렘·포로)를 오늘의 회중에게 설교할 때, 그것을 '옛 이스라엘의 특수 상황'으로 한정하는 것과 '오늘도 유효한 하나님의 성품'으로 확장하는 것 사이의 경계는 어디인가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%ED%86%A0%EB%9D%BC/">토라</a> — 오경 문헌 자체와 그 수용사, 은혜가 먼저인 순서 (위임)</li>
+<li><a class="wl" href="../../t/%EC%96%B8%EC%95%BD/">언약</a> — 베리트의 의미와 다섯 언약의 지형, 언약 신학 전반 (위임)</li>
+<li><a class="wl" href="../../t/%EA%B5%AC%EC%86%8D%EC%8B%A0%ED%95%99/">구속신학</a> — 출애굽을 원형으로 한 구속사 체계 (위임)</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D%ED%95%99/">성경해석학</a> — 해석 방법론 일반과 정경적·구속사적 읽기 (위임)</li>
+<li><a class="wl" href="../../t/%EA%B5%AC%EC%95%BD%EC%9C%A4%EB%A6%AC/">구약윤리</a> — 구약의 도덕적 권위와 율법 적용, 사회정의 (위임)</li>
+<li><a class="wl" href="../../t/%EB%A9%94%EC%8B%9C%EC%95%84%EC%98%88%EC%96%B8/">메시아예언</a> — 예언과 성취, 이중성취와 그리스도 중심 읽기 (위임)</li>
+<li><a class="wl" href="../../t/%EC%8B%A0%EC%95%BD%EC%8B%A0%ED%95%99/">신약신학</a> — 신약 27권의 신학, 약속의 성취 (위임)</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EC%A7%80%EC%84%9C/">선지서</a> · <a class="wl" href="../../t/%EB%AC%B8%EC%84%9C%EC%84%A0%EC%A7%80%EC%9E%90/">문서선지자</a> — 예언서의 심판과 회복, 사회정의</li>
+<li><a class="wl" href="../../t/%EB%82%B4%EC%9E%AC%EC%A0%81%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D/">내재적성경해석</a> — 상호텍스트·언어유희로 본문을 읽는 방법의 상세</li>
+<li><a class="wl" href="../../t/%EC%8B%9C%EB%82%B4%EC%82%B0%EC%96%B8%EC%95%BD/">시내산언약</a> · <a class="wl" href="../../t/%EC%95%84%EB%B8%8C%EB%9D%BC%ED%95%A8%EC%96%B8%EC%95%BD/">아브라함언약</a> — 조건적·무조건적 언약의 대조</li>
+<li><a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%9E%84%EC%9E%AC/">하나님의임재</a> · <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EB%82%98%EB%9D%BC/">하나님나라</a> — 중심 후보로서의 임재와 왕권</li>
+<li><a class="wl" href="../../t/%EC%8B%A0%EC%A0%81%EC%84%AD%EB%A6%AC/">신적섭리</a> — 숨어 계신 하나님, 에스더서의 섭리</li>
+<li><a class="wl" href="../../t/%EC%83%88%EC%96%B8%EC%95%BD/">새언약</a> — 마음에 새겨지는 토라, 구약의 성취</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">01주_구약개론서론</span></td>
+<td>MBTS 강의</td>
+<td>타나크 구조, 장르 이해, 토라 샌드위치, 고대 vs 현대 해석, 구속사적 관점(눅 24:27)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">02주_이스라엘의세계_사본과종교</span></td>
+<td>MBTS 강의</td>
+<td>카우프만의 uniqueness 유일신론, 구약 전체 줄거리(선역사→포로 귀환)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">03주_창세기_창조와바벨탑</span></td>
+<td>MBTS 강의</td>
+<td>하나님의 자리/인간의 자리, 창 1–11 선역사의 구조</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">04주_아브라함과시내산언약</span></td>
+<td>MBTS 강의</td>
+<td>창11→12 초점 전환, 종주-봉신 언약, "유일한 왕은 하나님"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">05주_출애굽기와신명기</span></td>
+<td>MBTS 강의</td>
+<td>성막=천상 성소 재현·임재, 하나님의 자비와 심판, 은혜가 먼저</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">08주_에스더_느헤미야_룻기</span></td>
+<td>MBTS 강의</td>
+<td>에스더-사울 내재적 해석, '제2의 사울', 숨어 계신 하나님</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">01주_지혜문학과아가서</span></td>
+<td>MBTS 강의</td>
+<td>지혜문학의 장르적 독특성(언약 언어 부재, 인과응보·회의)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">02주_시편</span></td>
+<td>MBTS 강의</td>
+<td>시편 5권=오경 대응, 탄원시와 기도의 신학</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">03주_다니엘서와요셉_내재적해석</span></td>
+<td>MBTS 강의</td>
+<td>창41–단2 상호텍스트, 요셉의 그림자·영웅 미화의 거부</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">04주_선지서개론</span></td>
+<td>MBTS 강의</td>
+<td>신관의 전복, 사회정의, "누가 좋은 그리스도인인가"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">05주_요나와이사야임마누엘</span></td>
+<td>MBTS 강의</td>
+<td>알마·임마누엘의 이중성취, 점진적 예언 성취</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">06주_예레미야_에스겔_소선지서</span></td>
+<td>MBTS 강의</td>
+<td>샤케드-쇼케드 언어유희, 에스겔 16장 '구약의 십자가 복음', 소선지서 심판→회복 배열</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">07주_하나님의자비와부활</span></td>
+<td>MBTS 강의</td>
+<td>점진적 계시("구약은 희미한 그림자"), 부활의 구약적 근거</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">08주_기억과회개와용서</span></td>
+<td>MBTS 강의</td>
+<td>이야기→법 순서, 기억–잊음–회개–용서 사이클, 침묵기의 유대교 형성</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">_paper_아브라함언약과시내산언약비교</span></td>
+<td>개인 리서치 페이퍼</td>
+<td>유진 메릴 「구약신학」 인용 — 언약=관계의 원리, 창11→12 전환</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">유진메릴</span> · <span class="wl-dead" title="위키 내부 링크">트렘퍼롱맨</span></td>
+<td>구약학자</td>
+<td>언약을 구약신학의 조직 원리로 봄, 은혜 언약이 행위 언약에 앞섬</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">제임스쿠겔</span> · <span class="wl-dead" title="위키 내부 링크">야르자코비치</span></td>
+<td>구약학자</td>
+<td>내재적·고대 해석 전통, 본문 내 문학 장치 읽기</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/구약학</span><span>#discipline/성서신학</span><span>#discipline/조직신학</span><span>#discipline/유대학</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

@@ -1,0 +1,318 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>신론 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:226">조직신학·교리</span><span class="date">2026-07-14</span></div>
+  <h1 class="note-title">신론</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>웨인 그루뎀의 조직신학은 성경 전체가 가르치는 교리를 일곱 범주로 묶는데, 성경론 다음에 곧바로 오는 것이 신론(Theology Proper)이다. 순서 자체가 하나의 고백이다. 하나님이 말씀하셨기에(성경론) 우리는 비로소 하나님이 누구신지 말할 수 있다(신론). 신론은 "하나님은 어떤 분이신가"와 "우리가 그분을 어떻게 알 수 있는가"라는 두 물음을 함께 붙드는 신학이며, 조직신학 전체가 그 위에 세워지는 토대다. 구원론이 어떤 구원을 말할지, 인간론이 인간을 얼마나 높이거나 낮출지, 종말론이 어떤 소망을 품을지 — 이 모든 것이 결국 "누구를 하나님이라 부르는가"에서 결정된다.</p>
+<p>그런데 신론은 인간이 하나님을 향해 올라가 발견한 결론이 아니다. 그것은 하나님이 먼저 내려와 자신을 열어 보이셨기에 가능해진 응답이다. 유한한 피조물이 무한한 창조주를 붙잡는 것이 아니라, 무한한 창조주가 유한한 피조물에게 말을 거셨다. 그래서 이 글은 하나님을 아는 일의 가능성에서 출발해(1) 그분이 자신을 여신 이름(2), 그 이름이 펼쳐 보이는 속성의 지형(3), 신론의 심장인 삼위일체(4), 초월과 내재의 긴장(5), 인격이신 하나님(6)을 지나, 이 그림이 뒤틀릴 때 생기는 왜곡들(7)과 그 모든 것이 삶에 새기는 차이(8)로 나아간다.</p>
+<h2>1. 신론은 어디서 시작하는가 — 계시가 없으면 신학도 없다</h2>
+<p>하나님을 아는 것이 애초에 가능한가. 이 물음 앞에서 초대교회부터 종교개혁까지 신학은 한 가지 겸손한 전제를 공유했다. 하나님은 그 존재의 깊은 곳에서 불가해(incomprehensible)하시다는 것이다. 그리고 그 불가해성은 인간의 죄악 때문이 아니라 유한과 무한 사이의 존재론적 간극 자체에서 온다. 소발이 욥에게 던진 물음 — "네가 하나님의 오묘함을 어찌 능히 측량하며 전능자를 어찌 능히 완전히 알겠느냐"(욥 11:7) — 은 이 한계를 가장 날카롭게 드러낸다.</p>
+<p>그렇다면 신학은 불가능한가. 여기서 신론의 결정적 전제가 등장한다. 하나님은 자신의 속성 속에서, 그리고 궁극적으로 예수 그리스도 안에서 우리와 관계를 맺으심으로 자신을 알리셨다. 루터가 숨어 계신 하나님(Deus absconditus)과 계시된 하나님(Deus revelatus)을 구분한 것도 같은 통찰이다. 우리는 하나님의 본질을 그 심연에서 붙잡을 수는 없지만, 그분이 관계 속에서 자신을 여신 만큼은 참되게 — 상대적 지식이 아니라 부분적이나마 하나님의 실제 본성에 관한 지식으로 — 알 수 있다. 인간 지식 가능성을 둘러싼 이 인식론적 논의의 세부는 <a class="wl" href="../../t/%EA%B3%84%EC%8B%9C/">계시</a>와 <a class="wl" href="../../t/%EC%9D%BC%EB%B0%98%EA%B3%84%EC%8B%9C/">일반계시</a>에 맡기고, 여기서는 그 결론만 붙든다. 자기 계시가 신학의 첫 단추다. 계시가 없으면 신학도 없다.</p>
+<p>이 계시는 두 갈래로 온다. 문대원 목사는 히브리서 1장 설교에서 이를 "아래로부터의 지식"과 "위로부터의 지식"으로 나눈다. 일반 계시는 창조 세계를 통해 아래로부터 올라온다. 하늘이 하나님의 영광을 선포하고(시 19:1), 만드신 만물에 그의 영원한 능력과 신성이 분명히 보여 사람이 핑계하지 못하게 한다(롬 1:20). 그러나 타락한 인간은 일반 계시로 하나님의 존재는 알아도 구원의 길은 알 수 없다. 그래서 위로부터의 지식, 곧 말씀을 통한 특별 계시가 필요하다. 하나님은 침묵하는 원리가 아니라 "말씀하시는 분"이시기 때문이다. 제임스 패커의 물음처럼, 인간이 무엇을 위해 지음받았느냐 묻는다면 답은 하나다 — 하나님을 알기 위해서다.</p>
+<h2>2. 하나님의 이름 — 야웨·엘로힘·아도나이</h2>
+<p>하나님을 안다는 것은 추상적 관념을 파악하는 일이 아니라 한 이름을 부르는 일이다. 모세가 떨기나무 앞에서 "그들이 내게 그의 이름이 무엇이냐 물으면 무엇이라 대답하리이까" 물었을 때, 하나님은 "나는 스스로 있는 자"(출 3:14)라고 답하셨다. 이 이름 — 야웨(YHWH) — 은 절대자만이 자신에게 붙일 수 있는 이름이다. 다른 모든 존재는 무언가에 의해, 무언가로부터 존재하지만, 이분만은 자기 자신으로부터 존재하신다(자존성, aseity). 그분은 원인을 갖지 않으시며, 어떤 것에도 의존하지 않으신다.</p>
+<p>권성수 목사는 제3계명 설교에서 이 여호와의 이름이 세 가지를 여는 통로라고 정리한다. 첫째는 <strong>주권</strong>이다. 이름 위에 아무도 없다는 것 — 여호와라는 이름 위에 군림할 존재는 없으며 그분은 스스로를 다스리는 분이시다. 둘째는 <strong>계시</strong>다. 이름은 그 인격을 알린다. 여호와라는 이름은 그분이 참되고 지존하신 하나님이심을 전달한다. 셋째는 <strong>임재</strong>다. 이름은 그 사람과 동일시되기에, 여호와의 이름이 불리는 곳에 그분이 함께 계신다. 그래서 이름을 망령되이 지니고 다니지 말라(낫싸: 지니다·들어 올리다) 하셨고, 유대인들은 이 이름을 감히 발음하지 못해 "아도나이"(주)로 바꾸어 읽었다. 이름이 여는 이 주권의 차원은 다스림의 교리로 이어지지만, 그 각론은 <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%A3%BC%EA%B6%8C/">하나님의주권</a>에 맡긴다.</p>
+<p>성경은 한 하나님을 여러 이름으로 부르며 각기 다른 얼굴을 드러낸다.</p>
+<table>
+<thead>
+<tr>
+<th>이름</th>
+<th>어원·의미</th>
+<th>여는 차원</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>야웨(YHWH)</strong></td>
+<td>"나는 스스로 있는 자"(출 3:14)</td>
+<td>자존·불변·언약에 신실하신 인격적 주</td>
+</tr>
+<tr>
+<td><strong>엘로힘(Elohim)</strong></td>
+<td>능력·위엄의 복수형, 창세기 1장의 창조주</td>
+<td>초월적 능력·창조·만물의 주권자</td>
+</tr>
+<tr>
+<td><strong>아도나이(Adonai)</strong></td>
+<td>"주(主)", 소유하고 다스리는 이</td>
+<td>주되심·순종을 부르는 관계</td>
+</tr>
+</tbody>
+</table>
+<p>이름을 안다는 것은 곧 관계로 초대받는 것이다. 신약에서 이 흐름은 한 이름으로 수렴한다. "예수"는 "여호와가 구원하신다"는 뜻이다. 스스로 계신 그 이름이 마침내 사람의 얼굴로 우리를 구원하러 오셨다는 고백이 그 안에 담겨 있다.</p>
+<h2>3. 속성의 지형 — 비공유적/공유적이라는 지도</h2>
+<p>하나님이 자신을 여신 이름은 곧 속성으로 펼쳐진다. 전통 신학은 속성을 크게 둘로 나눈다. 하나님만 홀로 지니시는 <strong>비공유적 속성</strong>(전지·전능·편재·무한·영원·불변)과, 인간이 부분적으로 나눠 받는 <strong>공유적 속성</strong>(<a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%82%AC%EB%9E%91/">사랑</a>·거룩·공의·긍휼·은혜)이다. 이 구분은 하나님을 상자에 가두는 도식이 아니라, 그분의 풍성함을 길 잃지 않고 순례하기 위한 지도다.</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>내용</th>
+<th>성격</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>비공유적 속성</strong></td>
+<td>전지·전능·편재·무한·영원·불변·자존</td>
+<td>오직 하나님만 지니심 — 피조물과의 절대적 차이</td>
+</tr>
+<tr>
+<td><strong>공유적 속성</strong></td>
+<td>사랑·거룩·공의·긍휼·은혜·지혜·진실</td>
+<td>인간에게 흐릿하게 반영됨 — 하나님 형상의 근거</td>
+</tr>
+</tbody>
+</table>
+<p>다만 이 지도에는 반드시 덧붙일 단서가 있다. 하나님의 <strong>단순성</strong>(divine simplicity)이다. 속성들은 하나님 안에서 서로 분리된 부품이 아니다. 하나님은 사랑의 30%와 공의의 70%로 이루어진 분이 아니라, 사랑이시면서 동시에 온전히 공의이시다. 그래서 십자가의 속죄는 사랑과 공의가 충돌한 끝의 타협이 아니라, 두 속성이 완전히 하나로 만나는 자리다. 각 속성의 성경적 결·목회적 적용·의료 현장에서의 함의는 <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%86%8D%EC%84%B1/">하나님의속성</a>이 각론으로 다루므로, 여기서는 지도만 펼쳐 둔다.</p>
+<h2>4. 삼위일체 — 신론의 심장</h2>
+<p>신론의 지형을 걷다 보면 결국 그 심장에 이른다. 삼위일체다. 기독교의 하나님은 한 본질, 세 위격(one substance, three persons)으로 존재하신다. 성부·성자·성령은 각각 완전한 하나님이시며, 존재·속성·본질에서 아무 차이가 없다. 세 위격 사이의 유일한 구별은 서로의 관계와 피조물을 향해 일하시는 방식에 있다. 조직신학은 이를 "존재론적 동등이지만 경륜적 종속"(ontological equality but economic subordination)이라 부른다. 존재에서는 완전히 동등하되 역할에서는 질서가 있다는 것이다.</p>
+<p>왜 이것이 신론의 심장인가. 삼위일체는 하나님이 세상을 창조하시기 전, 영원 전부터 이미 <strong>관계이셨음</strong>을 뜻하기 때문이다. "하나님은 사랑이시라"(요일 4:8)는 사도 요한의 선언은 무엇보다 이 삼위일체 내적 관계를 가리킨다. 성부가 성자를 사랑하고, 성자가 그 사랑에 응답하며, 그 둘 사이의 사랑이 성령이시다. 하나님은 사랑할 대상이 필요해서 세상을 지으신 것이 아니다. 그분은 영원토록 사랑의 공동체, 곧 사귐 그 자체이셨다. 창조는 결핍의 산물이 아니라 넘치는 사랑의 흘러넘침이다. 그리고 이 통일성(한 하나님)과 다양성(세 위격)은 결혼·가정·교회·공동체 안에서 인간이 서로 다르면서도 하나 되어 살아가는 삶의 신학적 뿌리가 된다.</p>
+<p>삼위일체를 이해하려는 모든 비유는 결함을 지닌다. 신비를 제거해 단순화하려는 순간 어김없이 이단으로 미끄러지기 때문이다. 성자와 성령의 위격을 각각 깊이 다루는 일은 <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EB%A1%A0/">기독론</a>과 <a class="wl" href="../../t/%EC%84%B1%EB%A0%B9%EB%A1%A0/">성령론</a>에 맡기고, 여기서는 삼위일체가 왜 하나님을 이해하는 문법 전체의 토대인지만 확인한다. 한 분 하나님을 셋으로 쪼개지도(삼신론), 세 위격을 한 얼굴의 가면으로 뭉개지도(양태론) 않는 이 균형 위에서만 기독교의 하나님은 바르게 고백된다.</p>
+<h2>5. 초월과 내재 — 전적 타자이면서 임마누엘</h2>
+<p>삼위일체 하나님은 세계와 어떻게 관계하시는가. 신론은 두 진리를 동시에 붙든다. 하나님이 만물보다 무한히 크시다는 <strong>초월성</strong>(transcendence)과, 하나님이 만물에 친밀히 개입해 계시다는 <strong>내재성</strong>(immanence)이다.</p>
+<p>초월의 진리는 창조주와 피조물 사이에 결코 지워지지 않는 경계선을 긋는다. 문대원 목사는 신명기 4장 설교에서 하나님이 자신의 형상조차 만들지 말라 하신 이유를 여기서 찾는다. 창조주를 피조 세계의 일부로 표현하는 것 — 무한을 유한한 물질로 환원하는 것 — 자체가 우상숭배이기 때문이다. 크리스토퍼 라이트의 말대로 우상숭배의 일차적 문제는 "창조주 하나님과 피조 세계 사이의 구별을 흐려 놓는" 데 있다. 사도행전 7장에서 스데반이 증언하듯, 하나님은 성전에도 이스라엘에도 어떤 교단이나 교회에도 가둘 수 없는 분이시다.</p>
+<p>그러나 이 전적 타자는 동시에 임마누엘이시다. 그분은 호렙산 불길 가운데, 성전을 채운 구름 가운데, 오순절의 불의 혀 가운데 자신을 나타내셨다(theophany, 신현). 초월하시되 멀리 계시지 않고, 내재하시되 세계에 녹아 사라지지 않으신다. 문제는 이 둘 중 하나만 붙들 때 시작된다. 초월만 붙들면 창조 후 손을 뗀 <a class="wl" href="../../t/%EC%9D%B4%EC%8B%A0%EB%A1%A0/">이신론</a>의 신으로, 내재만 붙들면 세계와 동일시되어 무력해진 <a class="wl" href="../../t/%EB%B2%94%EC%8B%A0%EB%A1%A0/">범신론</a>의 신으로 기운다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>내재를 긍정</th>
+<th>내재를 부정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>초월을 긍정</strong></td>
+<td>유신론 — 초월+내재를 함께 붙듦 (기독교)</td>
+<td>이신론 — 창조 후 철수한 시계공</td>
+</tr>
+<tr>
+<td><strong>초월을 부정</strong></td>
+<td>범신론 — 만물이 곧 신, 무능한 하나님</td>
+<td>무신론 — 신 자체를 부정</td>
+</tr>
+</tbody>
+</table>
+<p>이 사분면에서 기독교적 유신론만이 두 진리를 동시에 견지한다. 세계가 하나님 안에 있으되 하나님은 세계보다 크시다는 범재신론(panentheism)은 유신론과 범신론의 경계에서 흔들리는 절충으로 남는다. 초월과 내재를 함께 붙드는 이 구조를 "완전한 세계관"으로 논증하는 변증학적 전개는 <a class="wl" href="../../t/%EC%9C%A0%EC%9D%BC%EC%8B%A0%EB%A1%A0/">유일신론</a>에 맡긴다.</p>
+<h2>6. 인격적 하나님 — 힘이 아니라 인격</h2>
+<p>초월과 내재를 함께 붙드는 하나님은 결국 어떤 분이신가. 비인격적 힘이 아니라 인격이시다. 이것이 성경의 하나님과 여느 종교·철학의 신 개념을 가르는 분수령이다. 뉴에이지가 말하는 우주적 기운, 이신론의 초연한 제1원인, 범신론의 만유에 스민 원리 — 이것들은 모두 인격이 없는 무엇(it)이다. 그러나 성경의 하나님은 이름을 가지고, 말씀하시고, 사랑하시고, 진노하시고, 언약을 맺으시는 누구(who)다.</p>
+<p>문대원 목사의 대조가 이 차이를 선명히 한다.</p>
+<table>
+<thead>
+<tr>
+<th>우상</th>
+<th>하나님</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>형상</td>
+<td>인격</td>
+</tr>
+<tr>
+<td>물질</td>
+<td>생명</td>
+</tr>
+<tr>
+<td>죽음</td>
+<td>살아 계심</td>
+</tr>
+<tr>
+<td>말 못함</td>
+<td>말씀하심</td>
+</tr>
+</tbody>
+</table>
+<p>권성수 목사가 "신답지 못한 신은 신이 아니다"라고 말할 때도 같은 기준이 작동한다. 인간이 만든 신, 동물의 형상을 한 신은 창조주가 될 수 없다. 오직 인격적 창조자만이 인격을 지닌 인간을 지으실 수 있기 때문이다. 그리고 하나님이 인격이시라는 이 사실이야말로 기도와 예배와 언약을 가능하게 하는 근거다. 우리는 힘에게 기도하지 않는다. 원리와 언약을 맺지 않는다. 오직 인격과 인격 사이에서만 관계가 성립하며, 신론이 결국 신앙이 되는 지점이 바로 여기다.</p>
+<h2>7. 신론의 왜곡들 — 균형이 무너질 때</h2>
+<p>신론은 여러 진리를 동시에 붙드는 팽팽한 균형 위에 서 있다. 그래서 어느 한쪽을 놓치는 순간 특유의 왜곡이 발생한다. 조직신학I 리서치 페이퍼가 코로나 시대의 신학을 다루며 짚었듯, 신론의 실패는 대개 두 방향으로 갈린다. 하나님을 세계에서 너무 멀리 밀어내거나, 세계 안으로 너무 깊이 녹여 버리는 것이다.</p>
+<ul>
+<li><strong>이신론(Deism)</strong> — 초월만 남기고 내재를 잘라낸다. 하나님은 우주를 만든 뒤 법칙에 맡기고 철수한 시계공이 된다. 이 신은 고통 속에 개입하지 않으며, 기도를 들을 이유도 없다.</li>
+<li><strong>범신론(Pantheism)</strong> — 내재만 남기고 초월을 지운다. 만물이 곧 신이라면, 재난과 악까지 신의 일부가 되어 하나님은 세계를 심판하거나 구원할 능력을 잃는다. 리서치 페이퍼의 표현대로, 이는 "무능한 하나님의 시대"를 사는 것이다.</li>
+<li><strong>범재신론·유한신론·과정신학</strong> — 하나님의 무한성이나 전능을 부분적으로 양보하는 흐름들이다. 세계와 함께 변화하고 성장하는 신을 상정함으로써 초월의 무게를 덜어낸다. 이 볼트에는 이들을 깊이 다룬 자료가 얇으므로 여기서는 계보만 표시하고, 세계관 분류 안에서의 위치는 <a class="wl" href="../../t/%EC%9C%A0%EC%9D%BC%EC%8B%A0%EB%A1%A0/">유일신론</a>·<a class="wl" href="../../t/%EC%9D%BC%EC%8B%A0%EB%A1%A0/">일신론</a>에 위임한다.</li>
+</ul>
+<p>이 왜곡들은 학문적 오류이기 이전에 실존적 유혹이다. 삶이 평온할 때는 손 떼신 이신론의 신이 편하고, 고난이 닥치면 나를 위로해 줄 내재적 기운이 그립기 때문이다. 정통 신론은 그 어느 쪽으로도 도망치지 않고, 초월하시면서 내재하시는 살아 계신 하나님 앞에 계속 서 있기를 요구한다.</p>
+<h2>8. 어떤 하나님을 믿는가가 어떻게 사는가를 정한다</h2>
+<p>신론은 서재의 사변이 아니다. 어떤 하나님을 믿느냐가 어떻게 사느냐를 결정한다. 이신론의 신을 믿으면 기도가 사라지고, 범신론의 신을 믿으면 악에 저항할 이유가 흐려진다. 반대로 인격적이고 주권적인 하나님을 믿으면 삶의 결이 통째로 달라진다.</p>
+<p>가장 흔한 현장의 왜곡은 기복신앙이다. 복·건강·성공을 위해 하나님을 도구로 삼는 신앙은, 겉으로는 하나님을 부르지만 실제로는 많은 신들 가운데 가장 효험 있는 신을 고르는 기능적 다신론일 수 있다. 참된 신론은 하나님을 유익의 제공자가 아니라 삶 전체의 주권자로 고백한다. 루터의 통찰처럼 "당신의 마음이 궁극적 안전을 위해 매달리는 것이 무엇이든 그것이 당신의 하나님"이라면, 돈도 학벌도 외모도 궁극이 되는 순간 우상이 된다. 좋은 것이 궁극이 될 때 그것은 사람을 무너뜨린다.</p>
+<p>그러나 바른 신론은 정반대의 열매를 맺는다. 나의 앉고 섬을 다 아시고 모태에서 나를 지으신 전지하신 창조주 앞에서 인간은 건강한 자아상을 얻는다. 열방을 물통의 한 방울처럼 여기시는 초월의 하나님이 나의 고통에 몸소 개입하신다는 내재의 진리에서 위로를 얻는다. 그리고 하나님을 아는 것 자체가 인생의 목적이라는 패커의 고백 위에서, 신학은 마침내 예배가 된다. 신론이 바로 서면 예배가 서고, 예배가 서면 삶이 선다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>신론은 인간이 하나님을 향해 올라가 얻은 결론이 아니라, 하나님이 먼저 자신을 여신 자기 계시에 대한 응답이다. 계시가 없으면 신학도 없다.</li>
+<li>하나님의 불가해성은 인간의 죄가 아니라 유한과 무한의 존재론적 간극에서 온다. 그럼에도 하나님이 관계 속에서 여신 만큼은 참되게 알 수 있다.</li>
+<li>"나는 스스로 있는 자"(출 3:14)라는 이름은 자존성의 선언이며, 하나님의 이름은 주권·계시·임재를 함께 여는 통로다.</li>
+<li>삼위일체가 신론의 심장인 까닭은 하나님이 창조 이전 영원부터 사랑의 관계이셨음을 뜻하기 때문이다. 창조는 결핍이 아니라 넘치는 사랑에서 나왔다.</li>
+<li>초월과 내재는 양자택일이 아니다. 초월만 붙들면 이신론, 내재만 붙들면 범신론으로 미끄러지며, 기독교적 유신론만이 둘을 동시에 견지한다.</li>
+<li>성경의 하나님은 비인격적 힘이 아니라 말씀하시고 사랑하시는 인격이시며, 이 인격성이 기도·예배·언약을 가능하게 하는 근거다.</li>
+<li>어떤 하나님을 믿는가가 어떻게 사는가를 정한다. 기복신앙은 기능적 다신론일 수 있고, 바른 신론은 신학을 예배로 바꾼다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>하나님의 불변성(말 3:6)과 성경이 기록하는 하나님의 후회·슬픔을 어떻게 통합할 것인가 (divine passibility 논쟁)?</li>
+<li>삼위일체의 신비를 이단적 단순화(양태론·삼신론) 없이 일반 성도에게 어떻게 전할 것인가?</li>
+<li>범재신론과 열린유신론(open theism)이 초월과 내재를 재조정하려는 시도라면, 정통 신론은 이들과 어디서 정확히 갈라지는가?</li>
+<li>초월과 내재의 균형을 이론으로는 고백하면서도, 실제 신앙에서는 고난 앞에서 한쪽으로 기울어지는 인간의 성향을 목회적으로 어떻게 붙들 것인가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%86%8D%EC%84%B1/">하나님의속성</a> — 비공유적/공유적 속성의 각론과 단순성 원리</li>
+<li><a class="wl" href="../../t/%EC%82%BC%EC%9C%84%EC%9D%BC%EC%B2%B4/">삼위일체</a> — 페리코레시스·공의회·이단 분별을 다루는 상세 페이지</li>
+<li><a class="wl" href="../../t/%EA%B3%84%EC%8B%9C/">계시</a> · <a class="wl" href="../../t/%EC%9D%BC%EB%B0%98%EA%B3%84%EC%8B%9C/">일반계시</a> — 하나님을 아는 일의 가능성과 인식론</li>
+<li><a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%A3%BC%EA%B6%8C/">하나님의주권</a> — 이름이 여는 주권·다스림의 교리 각론</li>
+<li><a class="wl" href="../../t/%EC%84%AD%EB%A6%AC/">섭리</a> — 보존·협력·통치, 초월과 내재가 역사 속에서 만나는 자리</li>
+<li><a class="wl" href="../../t/%EC%9C%A0%EC%9D%BC%EC%8B%A0%EB%A1%A0/">유일신론</a> · <a class="wl" href="../../t/%EC%9D%BC%EC%8B%A0%EB%A1%A0/">일신론</a> — 초월+내재의 세계관 논증과 유일신 신학</li>
+<li><a class="wl" href="../../t/%EC%9D%B4%EC%8B%A0%EB%A1%A0/">이신론</a> · <a class="wl" href="../../t/%EB%B2%94%EC%8B%A0%EB%A1%A0/">범신론</a> — 신론의 균형이 무너진 두 방향의 왜곡</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EB%A1%A0/">기독론</a> · <a class="wl" href="../../t/%EC%84%B1%EB%A0%B9%EB%A1%A0/">성령론</a> — 삼위 각 위격을 다루는 신론의 두 갈래</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>조직신학I 1주 강의 (황성철 · 웨인그루뎀 교재)</td>
+<td>lecture</td>
+<td>신론의 조직신학적 위치, 일곱 교리 구조</td>
+</tr>
+<tr>
+<td>조직신학I 3주 토론 "하나님 지식의 가능성"</td>
+<td>lecture</td>
+<td>불가해성, 자기 계시, Deus absconditus/revelatus</td>
+</tr>
+<tr>
+<td>조직신학I 4주 토론 "삼위일체"</td>
+<td>lecture</td>
+<td>존재론적 동등·경륜적 종속, 사회적 삼위일체, 사랑의 공동체</td>
+</tr>
+<tr>
+<td>조직신학I 5주 토론 "창조와 섭리"</td>
+<td>lecture</td>
+<td>초월성·내재성 정의, 범신론·이신론 배제</td>
+</tr>
+<tr>
+<td>조직신학I 리서치 페이퍼</td>
+<td>lecture</td>
+<td>이신론(초월)·범신론(무능)의 왜곡 구도</td>
+</tr>
+<tr>
+<td>권성수 「제3계명」(출 20:7)</td>
+<td>sermon</td>
+<td>여호와의 이름, 주권·계시·임재, 자존성</td>
+</tr>
+<tr>
+<td>문대원 「하나님의 언어」(히 1:1-3)</td>
+<td>sermon</td>
+<td>일반 계시/특별 계시, 인격이신 하나님, 패커</td>
+</tr>
+<tr>
+<td>문대원 「형상 없는 신」(신 4:15-24)</td>
+<td>sermon</td>
+<td>초월(창조주-피조물 구별), 신현, 인격 대조, 크리스토퍼 라이트</td>
+</tr>
+<tr>
+<td>권성수 「진짜 하나님」(요 14:6-11)</td>
+<td>sermon</td>
+<td>인격적 창조자, 잡신 비판, 우상의 본질</td>
+</tr>
+<tr>
+<td>변증학 2주 (양정모)</td>
+<td>lecture</td>
+<td>초월+내재 신관의 변증학적 위치 (유일신론에 위임)</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/조직신학</span><span>#discipline/신론</span><span>#topic/삼위일체</span><span>#topic/초월과내재</span><span>#topic/하나님의이름</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

@@ -1,0 +1,205 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>양식비평 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:174">성경·해석</span><span class="date">2026-07-18</span></div>
+  <h1 class="note-title">양식비평</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>양식비평(Form Criticism, 독: Formgeschichte)은 복음서가 초대 교회 공동체의 목회적 필요("삶의 정황", <em>Sitz im Leben</em>)에 따라 구전으로 전승되고 양식화된 단편들의 모음집이라는 전제 아래, 그 전승 단위들의 유형·기원·기능을 분석하는 신약학 방법론이다. 곧 복음서 최종 본문 이전에 있었던 구전 전승 단계를 조명하는 방법이다.</p>
+<p>이 페이지는 양식비평이라는 방법 자체 — 그 배경·개념·기여·한계·유산 — 를 다룬다. 복음서의 역사적 신뢰성 논증(목격자 증언 전통)은 <a class="wl" href="../../t/%EB%B3%B5%EC%9D%8C%EC%84%9C%EC%97%B0%EA%B5%AC/">복음서연구</a>가, 성경 해석 방법론의 역사 전체(알렉산드리아·안디옥에서 역사비평까지)는 <a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D%EC%9D%98%EC%97%AD%EC%82%AC/">성경해석의역사</a>가, 양식비평의 회의가 촉발한 역사적 예수 탐구사는 <a class="wl" href="../../t/%EC%97%AD%EC%82%AC%EC%A0%81%EC%98%88%EC%88%98/">역사적예수</a>가 각각 전담한다. 여기서 좇는 것은 하나다 — 이 방법이 무엇을 밝혔고, 어디서 과욕에 빠졌으며, 오늘 어떻게 균형 있게 쓰이는가.</p>
+<h2>1. 등장 배경 — 자료비평 다음 단계</h2>
+<p>양식비평은 복음서 형성 과정의 세 층위 가운데 가장 이른 단계를 다룬다. 신약개론I 강의는 그 과정을 구전 단계(양식비평) → 문서 단계(<a class="wl" href="../../t/%EC%9E%90%EB%A3%8C%EB%B9%84%ED%8F%89/">자료비평</a>) → 편집 단계(<a class="wl" href="../../t/%ED%8E%B8%EC%A7%91%EB%B9%84%ED%8F%89/">편집비평</a>)로 정리한다. 자료비평이 마가복음이나 Q 같은 <em>문서 자료</em>의 관계를 물었다면, 양식비평은 그 문서들이 기록되기 <em>이전</em>의 구전 단계로 거슬러 올라가 "이 이야기가 글로 적히기 전에 어떤 형태로 교회 안에서 떠돌았는가"를 묻는다.</p>
+<p>방법의 뿌리는 구약학에 있다. 헤르만 궁켈이 창세기와 시편을 연구하며 각 본문이 속한 장르(양식)와 그것이 생성된 삶의 자리를 추적하는 방법을 개척했고, 이 방법이 20세기 초 복음서 연구로 옮겨졌다. 마르틴 디벨리우스와 루돌프 불트만(<span class="wl-dead" title="위키 내부 링크">루돌프불트만</span>)이 이 적용을 주도하며, 복음서를 초대 교회의 설교·교육·변증의 필요에서 형성된 전승 단위들의 집합으로 읽어냈다. 이렇게 양식비평은 자료비평이 멈춘 자리에서 한 걸음 더 뒤로, 구전의 시대로 파고든 방법으로 등장했다.</p>
+<h2>2. 핵심 개념 — 전승 단위의 양식과 삶의 자리</h2>
+<p>양식비평의 두 기둥은 전승 단위의 <em>양식</em>(form)과 <em>삶의 자리</em>(Sitz im Leben)다. 복음서는 처음부터 하나의 통일된 서사로 쓰인 것이 아니라 짧고 독립적인 단위들 — 어록, 이야기, 비유 — 의 모음이며, 각 단위는 그 형태(양식)에 따라 분류된다. 신약개론I 강의가 제시하는 분류는 다음과 같다.</p>
+<table>
+<thead>
+<tr>
+<th>유형</th>
+<th>내용</th>
+<th>예시</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>독립적 예수 어록</td>
+<td>비유·예화·우화</td>
+<td>씨 뿌리는 자 비유</td>
+</tr>
+<tr>
+<td>선언 이야기</td>
+<td>짧은 이야기 끝에 예수의 선언이 절정</td>
+<td>중풍병자 치유 + 죄 사함 선언</td>
+</tr>
+<tr>
+<td>기사·이적 이야기</td>
+<td>이적의 정황·행위·결과 구조</td>
+<td>치유·축귀 기사</td>
+</tr>
+<tr>
+<td>신화(전설) 양식</td>
+<td>초자연적 장면</td>
+<td>시험(마 4:1-11)·변화산(마 17:1-8)</td>
+</tr>
+<tr>
+<td>수난기사</td>
+<td>통일된 서사, 신학적 관심 포함</td>
+<td>백부장 선언·성전 휘장</td>
+</tr>
+</tbody>
+</table>
+<p>또 하나의 기둥이 삶의 자리다. 이는 특정 전승 단위가 <em>어떤 교회적 맥락</em>(예배·교육·변증·전도)에서 형성되고 보존되었는가를 묻는 개념이다. 양식비평자들은 초대 교회 공동체가 목회적 필요에 따라 예수 전승을 선택·형성했다고 본다 — 세례 문답의 필요가 특정 어록을 다듬고, 이단 논박의 필요가 특정 논쟁 이야기를 보존하는 식이다. 양식과 삶의 자리는 짝을 이룬다. 형태가 그것이 태어난 자리를 가리키고, 자리가 그것의 형태를 빚었기 때문이다.</p>
+<h2>3. 방법의 기여 — 장르 인식과 구전 단계 조명</h2>
+<p>양식비평이 남긴 유산은 결코 작지 않다. 첫째, 장르에 맞는 해석을 가능하게 했다. 복음서의 한 단락(페리코페)이 비유인지 선언 이야기인지 기적 이야기인지를 인식하면, 그 양식의 규칙에 따라 읽을 수 있다 — 비유를 알레고리로 풀거나 기적 이야기를 도덕 교훈으로 납작하게 만드는 오독을 피할 수 있다. 장르를 알면 해석이 달라진다.</p>
+<p>둘째, 구전 단계를 조명해 전승과 초대 공동체의 관계를 드러냈다. 복음서 본문이 진공에서 나온 것이 아니라 살아 있는 예배·교육 공동체 안에서 보존되고 전해졌음을 보게 한 것이다. 어떤 이야기가 어떤 교회적 필요를 위해 간직되었는지를 물음으로써, 본문의 목회적 뿌리를 이해하게 했다. 셋째, 복음서 기자가 단순한 기록자가 아니라 자료를 선별·배열한 편집자이기도 했음을 인식하게 하여 <a class="wl" href="../../t/%ED%8E%B8%EC%A7%91%EB%B9%84%ED%8F%89/">편집비평</a>의 기초를 놓았다. 양식비평은 그 자체로 불완전했으나, 후속 방법들이 딛고 설 발판을 마련했다.</p>
+<h2>4. 급진적 회의로의 전개와 반론 ⚖️</h2>
+<p>문제는 양식비평이 방법에 머물지 않고 하나의 전제를 결론처럼 밀어붙였을 때 생겼다. 그 전제는 "초대 교회가 목회적 필요에 따라 전승을 <em>창조</em>했다"는 것이며, 그 논리를 끝까지 밀어붙인 사람이 <span class="wl-dead" title="위키 내부 링크">루돌프불트만</span>이다. 그에게 복음서는 예수의 생애를 들여다보는 창이 아니라 그 전승을 보존한 초대 교회의 삶을 들여다보는 창일 뿐이었고, 그 배후의 역사적 예수에게 도달하는 것은 불가능했다. 이 급진적 회의가 1900–1950년의 이른바 "무(無) 탐구 시대"를 낳았다(<a class="wl" href="../../t/%EC%97%AD%EC%82%AC%EC%A0%81%EC%98%88%EC%88%98/">역사적예수</a>).</p>
+<p>이 회의를 공정하게 평가하려면 두 가지를 함께 보아야 한다. 한편으로 양식비평자들은 전승을 엄밀히 분류하려는 방법론적 진지함을 지녔고, 그 도구는 실제로 유익했다. 다른 한편으로 "교회가 전승을 창조했다"는 것은 <em>증명된 결론이 아니라 출발점 가정</em>이었다. 회의는 데이터에서 도출된 것이 아니라 전제에서 미리 정해져 있었다. 그리고 그 전제의 가장 큰 약점은 목격자(eyewitnesses)의 역할을 무시하거나 과소평가한 데 있다.</p>
+<p>이 공백에 대한 반론이 두 방향에서 왔다. 하나는 목격자 증언 연구다. 신약학자 리처드 보컴(<span class="wl-dead" title="위키 내부 링크">리처드보컴</span>)의 『예수와 목격자들(Jesus and the Eyewitnesses)』은 복음서 전승이 익명의 공동체 창작이 아니라 이름을 가진 목격자들의 증언 체인에 뿌리내리고 있음을 논증한다 — 마가복음의 기원을 전하는 파피아스의 증언이나, 스스로를 목격자로 제시하는 요한복음(요 21:24)이 그 근거다. 다른 하나는 공동체 기억력 연구다. 구전 문화의 공동체는 전승을 무제한 변형하는 것이 아니라 핵심을 통제하며 전달한다는 통찰로, "교회가 자유롭게 이야기를 지어냈다"는 불트만적 가정을 정면으로 반박한다. 양식비평의 회의가 정직한 질문을 던진 것은 사실이나, 그 질문에 대한 응답은 회의가 허용하던 것보다 훨씬 풍부하게 복음서의 역사적 핵을 재확인하는 방향으로 나아갔다.</p>
+<h2>5. 오늘의 유산 — 균형 잡힌 활용</h2>
+<p>양식비평의 교훈은 결국 하나로 수렴한다 — 방법은 도구이지 신학적 전제가 아니라는 것. 신약개론I 강의의 비판대로, 역사비평의 하위 방법들은 공관복음 관계의 복합성을 인식하게 하는 유익이 있으나, 저자를 단순한 "가위와 풀" 편집자로 전락시킬 위험이 있다. 관건은 방법을 그 반(反)초자연적 전제에서 분리해 쓰는 것이다.</p>
+<p>전제를 걷어내고 나면 양식비평이 남긴 실천적 유산은 여전히 값지다. 복음서를 읽을 때 단락(페리코페)의 독립성과 양식을 존중하는 감각, 각 장르의 규칙에 맞게 해석하는 분별은 오늘의 강해에도 유효하다. 씨 뿌리는 자 비유는 비유의 문법으로, 치유 기사는 이적 이야기의 문법으로 읽어야 한다. 다만 그 단락은 다시 저자가 의도적으로 배치한 최종 문맥 안에서 읽혀야 한다(편집비평). 요컨대 오늘의 성숙한 활용은 양식비평의 통찰(구전 단계·장르 인식)은 취하되 그 회의주의(전승 창조·목격자 경시)는 버리는 것이다. 복음서 자체의 역사적 신뢰성 논증은 <a class="wl" href="../../t/%EB%B3%B5%EC%9D%8C%EC%84%9C%EC%97%B0%EA%B5%AC/">복음서연구</a>가, 이 방법이 놓인 해석사 전체의 지형은 <a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D%EC%9D%98%EC%97%AD%EC%82%AC/">성경해석의역사</a>가 잇는다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>양식비평은 자료비평 다음 단계가 아니라 그 <em>이전</em> 단계다 — 문서 자료가 기록되기 전의 구전 전승을 다룬다. 뿌리는 궁켈의 구약 연구에 있고, 디벨리우스·불트만이 복음서에 적용했다.</li>
+<li>두 핵심 개념은 전승 단위의 양식과 삶의 자리(<em>Sitz im Leben</em>)다. 형태가 그것이 태어난 교회적 자리를 가리킨다.</li>
+<li>기여는 장르 인식(양식에 맞는 해석)과 구전 단계 조명이며, 편집비평의 기초를 놓았다.</li>
+<li>"교회가 전승을 창조했다"는 것은 증명이 아니라 전제다. 불트만의 회의는 데이터가 아니라 이 전제에서 미리 정해져 있었고, 목격자 경시가 그 구조적 약점이다.</li>
+<li>보컴의 목격자 증언 연구와 공동체 기억력 연구가 이 회의를 반박하며, 복음서의 역사적 핵을 오히려 재확인한다.</li>
+<li>방법은 도구다. 양식비평의 통찰은 취하되 반초자연적 전제는 분리해 쓰는 것이 오늘의 균형이다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>구전 전승의 정확성을 어떻게 평가하는가 — 목격자의 존재와 공동체의 기억 통제가 전승 보존에 미친 영향을 어디까지 실증할 수 있는가.</li>
+<li><em>Sitz im Leben</em> 재구성은 어느 정도까지 역사적으로 신뢰 가능한가 — 삶의 자리 추정이 순환논증에 빠지지 않으려면 무엇이 필요한가.</li>
+<li>양식비평의 통찰(장르·구전 단계)과 신앙고백적 해석은 방법론으로 어떻게 공존하는가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EB%B3%B5%EC%9D%8C%EC%84%9C%EC%97%B0%EA%B5%AC/">복음서연구</a> — 복음서의 역사적 신뢰성(목격자 증언 전통)과 넷의 초상. 양식비평의 회의에 대한 응답.</li>
+<li><a class="wl" href="../../t/%EC%9E%90%EB%A3%8C%EB%B9%84%ED%8F%89/">자료비평</a> — 문서 단계 연구. 양식비평이 거슬러 올라간 그 다음(문서) 층위.</li>
+<li><a class="wl" href="../../t/%ED%8E%B8%EC%A7%91%EB%B9%84%ED%8F%89/">편집비평</a> — 편집 단계 연구. 양식비평의 통찰 위에서 작동.</li>
+<li><a class="wl" href="../../t/%EA%B3%B5%EA%B4%80%EB%B3%B5%EC%9D%8C%EB%AC%B8%EC%A0%9C/">공관복음문제</a> — 양식비평이 다루는 구전 단계의 상위 문제.</li>
+<li><a class="wl" href="../../t/%EC%97%AD%EC%82%AC%EC%A0%81%EC%98%88%EC%88%98/">역사적예수</a> — 불트만의 회의가 촉발한 무 탐구 시대와 그 이후의 탐구사.</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D%EC%9D%98%EC%97%AD%EC%82%AC/">성경해석의역사</a> — 역사비평이 놓인 해석 방법론의 전체 역사.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">03주_공관복음</span></td>
+<td>강의</td>
+<td>복음서 형성 세 층위, 전승 유형 분류, 삶의 자리, 양식비평의 기여와 한계</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">01주_신약개론서론</span></td>
+<td>강의</td>
+<td>역사비평 하위 방법 개관, "가위와 풀" 편집자 비판</td>
+</tr>
+<tr>
+<td>리처드 보컴, 『예수와 목격자들』</td>
+<td>참고 신학</td>
+<td>목격자 증언 체인, 익명 공동체 창작설 반박</td>
+</tr>
+<tr>
+<td>헤르만 궁켈 / 디벨리우스 / 불트만</td>
+<td>학술 배경</td>
+<td>구약 양식비평의 기원과 복음서로의 적용, 전승 창조 가정</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/신약학</span><span>#복음서비평</span><span>#삶의자리</span><span>#구전전승</span><span>#역사비평</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

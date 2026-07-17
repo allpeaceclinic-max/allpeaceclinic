@@ -1,0 +1,517 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>신약의 윤리적 비전 — 리처드 헤이스 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:25">상담·치유·가정</span><span class="author">리처드 헤이스</span><span class="date">2026-05-05</span></div>
+  <h1 class="note-title">신약의 윤리적 비전 — 리처드 헤이스</h1>
+  
+</header>
+<article class="note">
+<p><strong>저자</strong>: 리처드 헤이스 (Richard B. Hays) — 듀크 신학대학원 신약학<br />
+<strong>원서</strong>: <em>The Moral Vision of the New Testament</em> (1996)<br />
+<strong>분류</strong>: 신약윤리학 / 성경해석학 / 기독교 윤리<br />
+<strong>용도</strong>: MBTS 기독교윤리학 참고 / 독서토론 + <span class="wl-dead" title="위키 내부 링크">기독교윤리학</span> 발제 영상 제작</p>
+<blockquote>
+<p>"1세기에 씌여진 성경이 21세기에 어떻게 적용될 수 있는가? 그것은 근본적으로 <strong>해석의 문제</strong>이다."</p>
+</blockquote>
+<hr />
+<h2>1. 왜 이 책이 필요한가 — 서론</h2>
+<ul>
+<li>정통 교회들이 <strong>윤리 문제에서 가장 심각하게 분열</strong>하고 있다</li>
+<li>원인: 성경의 정밀한 독해 없이 <strong>대중적 담론의 범주들을 무분별하게 수용</strong></li>
+<li>성경 주해를 더 잘한다고 해결되지 않는다 — 근본적으로 <strong>해석학적 문제</strong></li>
+<li><strong>노르마 노르만스</strong> (norma normans): 성경은 '규범화된 규범'(norma normata)이 아니라 <strong>'규범을 만드는 규범'</strong> — 성경을 마땅히 따르고 지켜야 할 최고 기준으로 설정</li>
+</ul>
+<hr />
+<h2>2. 4가지 과제 — 책의 구조</h2>
+<table>
+<thead>
+<tr>
+<th>과제</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>서술 과제</strong></td>
+<td>개별 신약 문서(바울서신·복음서 등)를 정밀하게 독해</td>
+</tr>
+<tr>
+<td><strong>종합 과제</strong></td>
+<td>정경 전체의 맥락에서 통일성 찾기 → 3가지 초점 이미지 도출</td>
+</tr>
+<tr>
+<td><strong>해석 과제</strong></td>
+<td>1세기 본문을 21세기 현실과 연계 — 4가지 양식 + 성경 외 권위</td>
+</tr>
+<tr>
+<td><strong>실천 과제</strong></td>
+<td>해석된 말씀이 구현된 공동체로 — 은유만들기(메타포 메이킹)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>3. 3가지 초점 이미지 (종합 과제의 결론)</h2>
+<p>신약 정경의 <strong>다양성 속의 통일성</strong>:</p>
+<p><code>공동체 (Community)    — 이스라엘의 연속성으로서 교회
+     ↓
+십자가 (Cross)        — 행위의 패러다임, 자기 포기적 사랑
+     ↓
+새 창조 (New Creation) — 종말론적 하나님 나라, 부활의 능력</code></p>
+<ul>
+<li><strong>공동체</strong>: "내가 무엇을 해야 하는가"가 아니라 "우리가 무엇을 해야 하는가"</li>
+<li><strong>십자가</strong>: 세상을 향한 하나님의 신실함을 보여주는 패러다임</li>
+<li><strong>새 창조</strong>: 완성될 하나님 나라를 현재에 구현하는 부활의 능력</li>
+</ul>
+<hr />
+<h2>4. 바울의 신학 틀 — 서술 과제</h2>
+<p>바울은 체계적 윤리서를 쓰지 않았다. 그러나 3가지 신학 주제로 윤리에 접근한다.</p>
+<h3>4a. 종말론 — 두 시대의 긴장</h3>
+<ul>
+<li>예수의 죽음과 부활 = 옛 시대의 종말 + 새 시대의 도래</li>
+<li>그러나 옛 시대가 완전히 없어지지 않음 → <strong>이미(Already)와 아직(Not Yet)의 긴장</strong></li>
+<li>교회 = <strong>두 시대 사이의 교두보</strong> — 하나님의 능력이 세상에 침투하는 장소</li>
+<li>종말론적 관점이 <strong>도덕적 분별력</strong>을 준다: 파루시아(강림)를 앞두고 흠 없이 준비하는 삶</li>
+<li>"교회가 하나님의 의가 되는 것" (고후5:21) — 의를 알도록, 받도록이 아니라 의 자체가 되어야</li>
+</ul>
+<h3>4b. 십자가 — 행위의 패러다임</h3>
+<ul>
+<li>예수님의 십자가 = 자기희생적 순종, 인류를 하나님과 화목케 하는 유일한 사건</li>
+<li>"그리스도의 죽음을 따라가는 일" + "그리스도를 본받는 것" = 바울 윤리의 근본</li>
+<li><strong>믿음과 순종은 실질적 동의어</strong> — 예수 그리스도의 십자가 순종, 그 믿음이 삶의 생명력</li>
+<li>그리스도 안에 있다 = 자기 포기의 사랑에 맞추어 나가는 것</li>
+<li>영광만 있는 것이 아니라 <strong>고난·십자가가 함께</strong> — 잠재적 승리주의 경계</li>
+</ul>
+<h3>4c. 구속받은 공동체</h3>
+<ul>
+<li>부활과 파루시아 사이: 성령을 통해 세상을 화해시키고 치유하는 공동체 창조</li>
+<li><strong>배타적 보편주의</strong>: 교회는 보편주의를 추구하지만 세상과는 배타적</li>
+<li>개인의 윤리가 아니라 <strong>공동체의 윤리</strong> — 오이코도메인(건덕을 세움)</li>
+<li>사랑이 공동체적 삶의 중심</li>
+</ul>
+<h3>바울 윤리의 근거·규범·능력</h3>
+<table>
+<thead>
+<tr>
+<th>요소</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>근거</strong></td>
+<td>구속 역사의 논리적 귀결 — 은혜가 윤리를 폐지하지 않는다</td>
+</tr>
+<tr>
+<td><strong>규범</strong></td>
+<td>공동체의 하나됨 + 그리스도를 본받는 것 (정해진 규율이 아니라 기독론적 패러다임에 근거한 분별)</td>
+</tr>
+<tr>
+<td><strong>능력</strong></td>
+<td>성령 — 모세의 율법은 의를 지적만 했지 의를 이루어낼 능력은 없다. 생명의 성령의 법이 능력</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>바울이 말하는 윤리의 근본적인 규범은 <strong>그리스도를 형상화하는 삶</strong>이다.</p>
+</blockquote>
+<hr />
+<h2>5. 성경을 윤리학에 이용하는 4가지 양식 (해석 과제)</h2>
+<table>
+<thead>
+<tr>
+<th>양식</th>
+<th>다우마 표현</th>
+<th>헤이스 표현</th>
+<th>예시</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>규정</strong></td>
+<td>안내자·보호자</td>
+<td>Rules</td>
+<td>살인하지 말라, 이혼하지 말라</td>
+</tr>
+<tr>
+<td><strong>원리</strong></td>
+<td>나침반</td>
+<td>Principles</td>
+<td>하나님·이웃 사랑(막12) — 신6+레19의 종합</td>
+</tr>
+<tr>
+<td><strong>패러다임</strong></td>
+<td>모범</td>
+<td>Paradigms</td>
+<td>선한 사마리아인 — 모범적 행실의 모형</td>
+</tr>
+<tr>
+<td><strong>상징세계</strong></td>
+<td>—</td>
+<td>Symbolic World</td>
+<td>타락한 인간 상황, 하나님의 성품 묘사</td>
+</tr>
+</tbody>
+</table>
+<p><strong>헤이스의 결론</strong>: 4가지 양식 모두 필요하지만, 신약 성경이 대부분 내러티브이므로 <strong>패러다임 양식이 신약적 우선권</strong>을 가진다.</p>
+<p><strong>성경 외의 권위</strong> (상호 균형적으로만 사용):</p>
+<table>
+<thead>
+<tr>
+<th>권위</th>
+<th>역할</th>
+<th>한계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>전통</strong></td>
+<td>중요한 해석 자료 (어거스틴·루터·칼빈도 전통)</td>
+<td>늘 개혁의 대상이 될 수 있음</td>
+</tr>
+<tr>
+<td><strong>이성</strong></td>
+<td>성경 해석의 필수 도구</td>
+<td>이성만으로는 계몽주의의 함정 — 하나님의 미련한 것이 사람보다 지혜</td>
+</tr>
+<tr>
+<td><strong>경험</strong></td>
+<td>공동체 전체의 체험만 신학적 권위</td>
+<td>개인 경험은 이단의 원천 — "경험은 모호한 인도자"</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>6. 5명의 윤리학자 비교 (12장)</h2>
+<table>
+<thead>
+<tr>
+<th>윤리학자</th>
+<th>핵심 입장</th>
+<th>초점 이미지</th>
+<th>강점</th>
+<th>약점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>라인홀드 니버</strong></td>
+<td>기독교 현실주의 — 사랑(이상) vs 평등의 정의(근사치)</td>
+<td>상징세계(인간의 악함)</td>
+<td>힘의 균형·현실 감각</td>
+<td>공동체 생략, 롬8장(성령 변화) 무시, 성경 선택적 사용</td>
+</tr>
+<tr>
+<td><strong>칼 바르트</strong></td>
+<td>신정통주의 — 하나님의 명령, 계시 중심</td>
+<td>규정 + 패러다임 (예수 그리스도 인격)</td>
+<td>석의 깊이, 바르멘 선언 실천</td>
+<td>이성·경험 배제, 예외 상황 처리 애매</td>
+</tr>
+<tr>
+<td><strong>존 하워드 요더</strong></td>
+<td>십자가 정치 — 비폭력, 예수님의 정치학</td>
+<td>십자가</td>
+<td>십자가 제자도 강조, 유비적 상상력</td>
+<td>공동체 고립 경향, 누가복음 편중</td>
+</tr>
+<tr>
+<td><strong>스탠리 하우어워스</strong></td>
+<td>내러티브 공동체 — 순종이 먼저, 성품 형성</td>
+<td>내러티브(이야기)</td>
+<td>공동체를 통한 해석·성품 형성</td>
+<td>성경 독해 약함, 신약 권위보다 실천 공동체에 근거</td>
+</tr>
+<tr>
+<td><strong>엘리자베스 쉬슬러 피오렌자</strong></td>
+<td>페미니스트 — 평등의 제자도, 여성 해방</td>
+<td>공동체 + 새창조</td>
+<td>여성 억압 문제 제기</td>
+<td>십자가 생략, 경험에만 의존, 성경 권위 약함</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>헤이스의 평가: 니버는 공동체를, 피오렌자는 십자가를 생략 — <strong>어느 하나를 빼면 심각한 해석학적 왜곡</strong><br />
+바르트·요더·하우어워스가 3가지 이미지의 윤곽을 잡았다고 할 수 있다.</p>
+</blockquote>
+<hr />
+<h2>7. 헤이스의 방법론 — 은유만들기(메타포 메이킹)</h2>
+<p>1세기 성경과 21세기 현실 사이의 <strong>엄청난 갭</strong> → 초시간적 진리를 추출하는 것은 불가능</p>
+<blockquote>
+<p>"많은 사람들이 초시간적 진리라는 키메라(가공의 괴물)를 쫓아 다녔다.<br />
+진리는 특정한 인격 안에서, 특정한 시간과, 특정한 장소에서 <strong>성육신으로 오신 것</strong>이다."</p>
+</blockquote>
+<p><strong>해결책: 은유만들기 (Metaphor Making)</strong>
+- 본문과 우리 세계 사이에 <strong>유비(형태·관계·구조적 유사성)</strong> 발견
+- 성령의 조명이 필수 — 성령이 상상력에 입각한 통합을 가능하게 함
+- 만들어진 은유는 반드시 <strong>공동체의 검증</strong> 필요 → 3가지 초점 이미지와 조화 확인</p>
+<p><strong>해석학적 피드백 고리</strong>:
+<code>본문 → 은유만들기(성령의 조명) → 공동체 구현 → 공동체가 본문 의미를 밝혀 줌</code></p>
+<p>→ <strong>교회 자체가 살아있는 은유</strong> = 그리스도의 형상으로 변화된 공동체 = 하나님의 능력에 대한 살아 있는 증거</p>
+<blockquote>
+<p>"가장 중요한 해석학적 과제는 말씀 아래서 살고자 애쓰는 공동체를 형성하는 것이다."</p>
+</blockquote>
+<hr />
+<h2>⭐ vault 내 연결 지점</h2>
+<table>
+<thead>
+<tr>
+<th>이 책의 개념</th>
+<th>연결 자료</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>신약 윤리의 4가지 과제 (서술-종합-해석-실천)</td>
+<td><span class="wl-dead" title="위키 내부 링크">기독교윤리학</span> — 이 책 중심 과목</td>
+</tr>
+<tr>
+<td>노르마 노르만스 — 성경이 최고 규범</td>
+<td><a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%EB%A1%A0/">성경론</a> — 성경의 권위·충족성·명료성</td>
+</tr>
+<tr>
+<td>바울의 3주제 (종말론·십자가·공동체)</td>
+<td><a class="wl" href="../../t/%EB%B0%94%EC%9A%B8%EC%8B%A0%ED%95%99/">바울신학</a> — 칭의, 새 창조, 공동체</td>
+</tr>
+<tr>
+<td>이미/아직 — 두 시대의 긴장</td>
+<td><a class="wl" href="../../t/%EC%A2%85%EB%A7%90%EB%A1%A0/">종말론</a> — 하나님 나라, 재림</td>
+</tr>
+<tr>
+<td>십자가가 윤리의 패러다임</td>
+<td><a class="wl" href="../../t/%EC%8B%AD%EC%9E%90%EA%B0%80/">십자가</a> — 속죄론, 대속, 구속</td>
+</tr>
+<tr>
+<td>구속받은 공동체의 배타적 보편주의</td>
+<td><a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%A1%A0/">교회론</a> — 교회의 본질, 표지</td>
+</tr>
+<tr>
+<td>성경 해석의 4가지 양식</td>
+<td><a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D%ED%95%99/">성경해석학</a> — 저자 중심 해석학, 핵심 용어</td>
+</tr>
+<tr>
+<td>니버의 기독교 현실주의 비판</td>
+<td><a class="wl" href="../../b/%EA%B8%B0%EB%8F%85%EC%8B%9C%EB%AF%BC%EC%9D%98%EC%82%AC%ED%9A%8C%EC%A0%81%EC%B1%85%EC%9E%84_%EC%9C%8C%EB%A6%AC%EC%97%84%ED%85%9C%ED%94%8C/">기독시민의사회적책임_윌리엄템플</a> — 교회=원리 선포·시민=실행</td>
+</tr>
+<tr>
+<td>요더의 십자가 정치 — 비폭력</td>
+<td><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a> — 소금과 빛, 대안공동체</td>
+</tr>
+<tr>
+<td>하우어워스 — 공동체가 성경을 구현</td>
+<td><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C_%ED%98%95%EC%84%B1/">선교적교회_형성</a> — 공동체가 복음을 살아냄</td>
+</tr>
+<tr>
+<td>은유만들기 — 성령의 조명으로 현재화</td>
+<td><a class="wl" href="../../b/%EC%84%B1%EA%B2%BD%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A0%EA%B5%90%EC%9D%98%EA%B8%B0%EB%A1%9D%EC%9D%B4%EC%9E%90%EB%8F%84%EA%B5%AC/">성경하나님의선교의기록이자도구</a> — 성경의 도구적 능력</td>
+</tr>
+<tr>
+<td>하나님의 의가 되라 (고후5:21)</td>
+<td><a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EC%9D%98%EB%B3%80%EC%A7%88_%ED%81%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/">선교의변질_크라이더</a> — 아비투스, 삶이 복음을 구현</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>탐구 중인 질문</h2>
+<p><strong>Q1. 3가지 초점 이미지(공동체·십자가·새창조) 중 한국교회가 가장 간과하는 것은?</strong>
+- 부분 답변: 헤이스 — 공동체를 빼면 니버 식 개인주의, 십자가를 빼면 피오렌자 식 왜곡
+- 부분 답변: 한국교회는 새 창조를 번영신학으로 왜곡 → <a class="wl" href="../../t/%EB%B2%88%EC%98%81%EC%8B%A0%ED%95%99/">번영신학</a> 비판과 연결
+- 여전히 열린 질문: 올피스클리닉·누가회·인터서브가 세 이미지를 균형 있게 구현하고 있는가?</p>
+<p><strong>Q2. 은유만들기(메타포 메이킹)를 의료 선교 맥락에서 어떻게 구현하는가?</strong>
+- 부분 답변: <span class="wl-dead" title="위키 내부 링크">하백선시리즈</span> — "당신의 삶 자체가 하나님의 선교" = 삶이 은유
+- 부분 답변: 본문-은유-공동체 고리 → 진료실이 살아있는 은유가 되는 것
+- 여전히 열린 질문: 기독 의사의 일상적 진료 행위가 십자가의 은유가 되려면?</p>
+<p><strong>Q3. 요더(십자가 정치) vs 니버(기독교 현실주의) — 선교 현장의 불의에 어떻게 대응하는가?</strong>
+- 부분 답변: 헤이스는 요더에 더 가까움 — 십자가 패러다임이 우선권
+- 부분 답변: <a class="wl" href="../../b/%EA%B8%B0%EB%8F%85%EC%8B%9C%EB%AF%BC%EC%9D%98%EC%82%AC%ED%9A%8C%EC%A0%81%EC%B1%85%EC%9E%84_%EC%9C%8C%EB%A6%AC%EC%97%84%ED%85%9C%ED%94%8C/">기독시민의사회적책임_윌리엄템플</a> — 교회는 원리 선포, 시민이 실행
+- 여전히 열린 질문: 캄보디아·파키스탄 현장에서 불의 앞에서 기독 의사의 선택은?</p>
+<hr />
+<h2>관련 페이지</h2>
+<ul>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%9C%A4%EB%A6%AC%ED%95%99/">기독교윤리학</a> — 성경적 윤리의 체계, 3대 전통</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EA%B2%BD%ED%95%B4%EC%84%9D%ED%95%99/">성경해석학</a> — 해석학 원리, 양식 분류</li>
+<li><a class="wl" href="../../t/%EB%B0%94%EC%9A%B8%EC%8B%A0%ED%95%99/">바울신학</a> — 종말론, 십자가, 칭의</li>
+<li><a class="wl" href="../../t/%EC%8B%AD%EC%9E%90%EA%B0%80/">십자가</a> — 속죄론, 윤리의 패러다임</li>
+<li><a class="wl" href="../../t/%EC%A2%85%EB%A7%90%EB%A1%A0/">종말론</a> — 이미/아직, 하나님 나라</li>
+<li><a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%A1%A0/">교회론</a> — 공동체, 교회의 본질</li>
+<li><span class="wl-dead" title="위키 내부 링크">기독교윤리학</span> — 수업 연계</li>
+<li><a class="wl" href="../../b/%EA%B8%B0%EB%8F%85%EC%8B%9C%EB%AF%BC%EC%9D%98%EC%82%AC%ED%9A%8C%EC%A0%81%EC%B1%85%EC%9E%84_%EC%9C%8C%EB%A6%AC%EC%97%84%ED%85%9C%ED%94%8C/">기독시민의사회적책임_윌리엄템플</a> — 기독교 사회 윤리 비교</li>
+<li><a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EC%9D%98%EB%B3%80%EC%A7%88_%ED%81%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/">선교의변질_크라이더</a> — 아비투스, 삶이 복음을 구현</li>
+<li><a class="wl" href="../../b/%EC%84%B1%EA%B2%BD%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A0%EA%B5%90%EC%9D%98%EA%B8%B0%EB%A1%9D%EC%9D%B4%EC%9E%90%EB%8F%84%EA%B5%AC/">성경하나님의선교의기록이자도구</a> — 성경의 도구적 능력</li>
+</ul>
+<hr />
+<blockquote>
+<p>📝 <strong>원본 출처</strong>: 독서토론 발제 노트(파일1) + 이상협 원장 직접 발제 영상 촬영(파일2, 11~13장) — 두 자료 통합.</p>
+</blockquote>
+<hr />
+<h2>⭐ 독서 후 성찰: "우리는 과연 대안 공동체인가?"</h2>
+<p><em>이상협 (누가회 독서토론, 헤이스 후반부 읽기)</em><br />
+원본: <code>raw/books/우리는 과연 대안공동체인가.md</code></p>
+<blockquote>
+<p>헤이스가 제시한 3가지 초점 이미지 — <strong>공동체·십자가·새 창조</strong> — 를 검증하는 실천적 질문:<br />
+<strong>"지금 이 교회는, 이 공동체는, 나는 진짜 대안 공동체인가?"</strong></p>
+</blockquote>
+<hr />
+<h3>1. 반유대주의·인종갈등 → 다문화·이주민·탈북민</h3>
+<ul>
+<li>한국은 단일 민족 사회라 "상관없는 이야기" 같지만, 이주민 선교·북한 선교 현장에서는 핵심 이슈</li>
+<li>런던·밴쿠버·뉴욕의 선교사들: <strong>다문화·다인종이 선교 최전방</strong> — 복음이 그들을 용납할 때 변화가 일어남</li>
+<li>예멘 난민 논쟁: 비기독교인이 아니라 <strong>기독교인 안에서 의견 분열</strong> = 교회가 대안 공동체이지 못하다는 증거</li>
+<li>탈북민·이주민에게 <strong>심리적으로 문이 열려 있는가</strong> — 휠체어가 들어갈 수 없는 교회 건물처럼, 마음의 문턱이 문제</li>
+<li>이방인과 유대인을 차별하지 않으시는 하나님 → 가운데 와 있는 이방인을 받아들이는 대안 공동체인가</li>
+</ul>
+<h3>2. 이혼·재혼 → 싱글맘과 이혼가정</h3>
+<ul>
+<li>15년 <a class="wl" href="../../t/%EA%B0%80%EC%A0%95%EC%82%AC%EC%97%AD/">가정사역</a>: 성경적 결혼을 강의하고 이혼의 문제를 가르쳤지만 — <strong>정작 이혼한 싱글맘의 고충에는 답이 없었다</strong></li>
+<li>실제 사례: 싱글맘이 아이를 주일학교에 데려갈 수 없었던 이유 — "아이가 정죄받을까봐", "나도 손가락질 당할까봐"</li>
+<li>15년 가정사역의 성찰: <strong>이혼가정에 대한 신학적 답변과 실제적 도움 중 무엇이 남았는가?</strong></li>
+<li>이혼가정 사역을 하는 교회들이 존재하지만, 보수적 교회에서 어떻게 시작해야 할지 → <a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a>받은 이를 위한 <a class="wl" href="../../t/%EA%B8%B0%EB%8F%84/">기도</a></li>
+<li><strong>이혼가정에게 교회는 대안 공동체인가?</strong></li>
+</ul>
+<h3>3. 정당방위·폭력 → 십자가가 패러다임인가</h3>
+<ul>
+<li>예수님의 선택: 정치적 상황을 피한 것이 아니라(요더) 어떤 폭력에도 반응은 <strong><a class="wl" href="../../t/%EC%8B%AD%EC%9E%90%EA%B0%80/">십자가</a></strong>였다</li>
+<li>십자가 = 기독교 윤리의 핵심적 해석학적 패러다임 (헤이스의 3이미지와 일치)</li>
+<li>개인 성찰: "정의롭지 못한 상대에게 정의를 말하고 싶었고, 비도덕적인 것에 같이 공격하는 태도(정죄)가 없었나"</li>
+<li><strong>라인홀드 니버의 기독교 현실주의</strong> 선택 — 최소한의 폭력 허용·방어적 정의 → 여전히 고민 중</li>
+<li>분명한 것: 폭력에 대한 예수 그리스도의 반응은 <strong>십자가</strong>였다</li>
+<li><a class="wl" href="../../t/%EC%82%AC%EB%9E%91/">사랑</a>의 근사치(성령 없는 인간적 최대 노력) vs <strong>진짜 사랑(성령에 의한 사랑)</strong> — 어느 쪽으로 반응하고 있는가</li>
+</ul>
+<h3>4. 동성애·낙태 → 의료 현장의 현실적 고민</h3>
+<ul>
+<li>처음에는 "나와 거리가 먼 주제"처럼 보였지만:</li>
+<li><strong>동성애</strong> — 정신과 의사들에게는 실제적 임상 고민</li>
+<li><strong>낙태</strong> — 산부인과 의사들에게는 쉽지 않은 현실</li>
+<li>이론적 답변 너머에 있는 의료 현장의 전쟁 — "현실을 무시하지 않고 답을 해나가려니 속에서 전쟁이 일어난다"</li>
+</ul>
+<h3>5. 결론: 행위가 아닌 존재 — 성품 윤리</h3>
+<blockquote>
+<p><strong>스탠리 그렌츠</strong> (<em>기독교 윤리학의 토대와 흐름</em>):<br />
+기독교 윤리학은 지난 100년간 <strong>'행위'에서 '존재'로</strong> 뚜렷하게 이동했다.</p>
+</blockquote>
+<ul>
+<li>윤리에 대한 참된 지식을 더 갖는 것이 아니라 → <strong>존재 자체가 더 윤리적이 되는 것</strong></li>
+<li>존재가 윤리적이 된다 = <strong>성품</strong> — 성령의 열매로 나타나는 성품, 성령의 역동적 힘으로 사는 사람의 생활 방식</li>
+<li>이 논의의 근원적 목적: 지적 추구를 넘어 <strong>나와 공동체가 존재론적으로 변화되는 것</strong></li>
+</ul>
+<blockquote>
+<p>"나와 계명누가회가 좀 더 윤리적인 대안 공동체로 성장하기를 기도합니다."</p>
+</blockquote>
+<hr />
+<h3>헤이스 본문과의 대응</h3>
+<table>
+<thead>
+<tr>
+<th>성찰 주제</th>
+<th>헤이스 개념</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>이주민·탈북민 수용</td>
+<td>구속받은 공동체 — 배타적 보편주의</td>
+</tr>
+<tr>
+<td>싱글맘 사례</td>
+<td>은유만들기 — 공동체가 살아있는 해석</td>
+</tr>
+<tr>
+<td>폭력 앞의 십자가</td>
+<td>십자가 = 윤리의 해석학적 패러다임</td>
+</tr>
+<tr>
+<td>성품 윤리 (그렌츠)</td>
+<td>새 창조 — 성령의 능력으로 변화되는 존재</td>
+</tr>
+<tr>
+<td>대안 공동체 질문</td>
+<td>실천 과제 — "교회 자체가 살아있는 은유"</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#신약윤리학</span><span>#해석학</span><span>#성경윤리</span><span>#십자가</span><span>#종말론</span><span>#공동체</span><span>#리처드헤이스</span><span>#대안공동체</span><span>#다문화</span><span>#이혼가정</span><span>#성품윤리</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

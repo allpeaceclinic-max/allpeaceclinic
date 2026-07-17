@@ -1,0 +1,331 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>율법과복음 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:226">조직신학·교리</span><span class="date">2026-07-14</span></div>
+  <h1 class="note-title">율법과복음</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>율법과 복음은 성경이 인간에게 건네는 두 종류의 말씀이다. 율법은 "하라"와 "하지 말라"로 요구하고, 복음은 "다 이루었다"로 선물한다. 문제는 이 둘의 관계를 어디에 놓느냐가 기독교 신학사 전체를 기울여 왔다는 데 있다. 은혜로 구원받는다면 율법은 왜 있는가. 율법을 지켜 의롭게 되는 것이 아니라면 그리스도인은 왜 여전히 계명 앞에 서는가. 이 물음은 사변이 아니라 영혼의 자리다 — 잘못 답하면 율법으로 짓눌려 절망하거나, 은혜를 방종의 구실로 삼아 방탕해진다.</p>
+<p>이 글은 율법이 무엇인지도, 복음이 무엇인지도, 믿음으로 의롭게 됨이 무엇인지도 다루지 않는다. 오직 그 둘이 <strong>어디서 어떻게 만나는가</strong>에 머문다. 토라의 문헌적 성격과 삼분법 논쟁, νόμος 번역사는 <a class="wl" href="../../t/%ED%86%A0%EB%9D%BC/">토라</a>가, 복음의 내용과 범위는 <a class="wl" href="../../t/%EB%B3%B5%EC%9D%8C/">복음</a>이, 칭의 교리는 <a class="wl" href="../../t/%EC%B9%AD%EC%9D%98%EB%A1%A0/">이신칭의</a>가, 바울의 율법 이해와 새 관점 논쟁은 <a class="wl" href="../../t/%EB%B0%94%EC%9A%B8%EC%8B%A0%ED%95%99/">바울신학</a>이 맡는다. 여기서는 율법과 복음이라는 두 말씀 사이의 긴장 — 종교개혁이 신학자의 표지로 삼은 그 구별과, 그것이 목회와 강단에서 부딪는 실제 — 을 따라간다.</p>
+<h2>1. 왜 율법인가 — 신약 안의 긴장</h2>
+<p>율법과 복음의 문제가 까다로운 첫째 이유는 신약 자체가 율법을 한 목소리로 말하지 않기 때문이다. 예수는 "내가 율법이나 선지자를 폐하러 온 줄로 생각하지 말라 폐하러 온 것이 아니요 완전하게 하려 함이라"(마 5:17)고 못박는다. 그러나 같은 신약에서 바울은 "너희가 법 아래에 있지 아니하고 은혜 아래에 있음이라"(롬 6:14)고 선언한다. 한쪽은 율법의 영속을, 다른 쪽은 율법으로부터의 자유를 말하는 듯하다. 이 긴장을 어떻게 읽느냐가 율법과 복음 신학의 출발점이다.</p>
+<table>
+<thead>
+<tr>
+<th>본문</th>
+<th>말씀</th>
+<th>강조점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>마 5:17</td>
+<td>"폐하러 온 것이 아니요 완전하게 하려 함"</td>
+<td>율법의 성취·영속</td>
+</tr>
+<tr>
+<td>마 22:37-40</td>
+<td>온 율법과 선지자가 사랑 두 계명에 달림</td>
+<td>율법의 중심</td>
+</tr>
+<tr>
+<td>롬 6:14</td>
+<td>"법 아래 있지 아니하고 은혜 아래에 있음"</td>
+<td>율법으로부터의 자유</td>
+</tr>
+<tr>
+<td>갈 3:24</td>
+<td>율법은 그리스도께로 인도하는 초등교사</td>
+<td>율법의 잠정성</td>
+</tr>
+<tr>
+<td>롬 10:4</td>
+<td>"그리스도는 율법의 마침(텔로스)이 되심"</td>
+<td>율법의 종점·목표</td>
+</tr>
+</tbody>
+</table>
+<p>이 긴장을 평신도의 언어로 옮긴 것이 권성수 목사의 신명기 강해다. 신 30:11-14를 강해하며 그는 문제를 두 단어로 압축한다 — "율법은 선물로 주셨다. 그런데 수갑으로 이해하는 사람이 많다. 선물? 수갑?" 같은 율법이 어떤 이에게는 하나님이 건네신 선물이고 어떤 이에게는 손목을 채우는 수갑이다. 이 "선물이냐 수갑이냐"의 물음이야말로 율법과 복음 문제의 실존적 판본이며, 아래의 모든 논의가 되돌아올 자리다. 율법을 수갑으로 만드는 오독이 율법주의이고, 그 수갑을 아예 부수어 던지려는 반발이 반율법주의이며, 율법을 선물로 되돌려 읽게 하는 것이 복음이다.</p>
+<h2>2. 루터의 구분 — 정죄하는 말씀과 살리는 말씀</h2>
+<p>종교개혁이 율법과 복음의 관계에 남긴 가장 굵은 획은 루터의 '구분'이다. 이 볼트의 조직신학 지형도는 각 전통의 표지를 나란히 놓는데, 개혁주의가 하나님의 주권과 예정을, 오순절이 성령세례를 표지로 삼듯, 루터파의 표지는 "이신칭의, 율법과 복음의 구분"으로 명시된다. 루터에게 이 둘을 갈라 듣는 능력은 학문의 장식이 아니라 목회의 사활이었다. 정죄하는 말씀(율법)과 살리는 말씀(복음)을 뒤섞으면, 율법으로 위로하려다 절망을 안기고 복음으로 경고하려다 방종을 부른다.</p>
+<p>이 구분은 루터 자신의 회심에서 길어 올린 것이다. MBTS 교회사 강의가 정리하는 그의 '탑의 체험'(Turmerlebnis)은 로마서 1:16-17의 "하나님의 의"를 다시 읽은 사건이다. 수도사 루터는 "하나님의 의"를 죄인을 심판하는 잣대, 곧 율법으로 읽으며 그 앞에서 짓눌렸다. 그런데 그 의가 심판이 아니라 믿음으로 값없이 주어지는 선물, 곧 복음임을 깨닫는 순간 그는 "다시 태어나 낙원의 열린 문으로 들어갔다"고 고백했다. 같은 "하나님의 의"라는 구절이 율법으로 읽히면 절망을, 복음으로 읽히면 생명을 낳는다 — 구분의 사활이 여기 있다.</p>
+<p>구분의 목회적 힘은 분명하다. 자기 의에 취한 교만한 자에게는 율법의 거울을 들이대 그를 무너뜨리고, 죄책에 상한 자에게는 복음의 선물을 건네 그를 일으킨다. 한 사람에게 지금 필요한 말씀이 율법인지 복음인지를 분별하는 것이 설교자의 첫 과제가 된다. 다만 이 구분에는 그림자도 있다. 율법과 복음을 지나치게 갈라 세우면 구약(율법)과 신약(복음)을 대립시키거나, 율법을 순전히 부정적인 것 — 정죄 전용의 몽둥이 — 으로만 보게 된다. <a class="wl" href="../../t/%ED%86%A0%EB%9D%BC/">토라</a>가 지적하듯 '율법 대 복음'이라는 대립 구도의 그림자는 길다. 율법이 신자의 삶에서 여전히 긍정적 자리를 갖는가라는 물음, 곧 율법의 셋째 용도를 둘러싼 논쟁이 바로 이 그림자에서 자라난다.</p>
+<h2>3. 율법의 세 용도 — 거울·채찍·길잡이</h2>
+<p>율법이 왜 있는가라는 물음에 개혁 전통이 내놓은 고전적 답이 율법의 세 용도(usus legis)다. 먼저 혼동을 피해야 한다. 율법의 '종류'를 나누는 삼분법(의식법·시민법·도덕법)과 율법의 '기능'을 나누는 삼용도는 다른 층위의 이야기다. 종류의 구분과 그 논쟁은 <a class="wl" href="../../t/%ED%86%A0%EB%9D%BC/">토라</a>가 맡는다. 여기서 다루는 것은 도덕법이 인간에게 하는 세 가지 일이다.</p>
+<p>놀랍게도 이 삼중 기능이 권성수의 신명기 강해 한 편에 고스란히 담겨 있다. 그는 먼저 율법 안에 "의식법(제사), 국가법, 도덕법"이 들어 있으며 본문이 겨누는 것은 십계명으로 요약되는 도덕법임을 짚은 뒤, 그 도덕법의 기능을 세 이미지로 푼다.</p>
+<table>
+<thead>
+<tr>
+<th>용도</th>
+<th>전통 명칭</th>
+<th>하는 일</th>
+<th>권성수의 이미지</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제1용도</td>
+<td>신학적 용도(usus elenchticus)</td>
+<td>죄를 드러내 그리스도께 몰아감</td>
+<td><strong>거울</strong> — "완벽한 의의 거울에 비춰 보면 우리가 죄를 안다. 정죄 → 예수 그리스도"</td>
+</tr>
+<tr>
+<td>제2용도</td>
+<td>시민적 용도(usus politicus)</td>
+<td>사회의 악을 억제함</td>
+<td><strong>채찍</strong> — "잘못된 쪽으로 가면 맞는다. 억제하지 않으면 무시무시한 결과가 온다"</td>
+</tr>
+<tr>
+<td>제3용도</td>
+<td>교훈적 용도(tertius usus legis)</td>
+<td>신자의 삶을 인도하는 규범</td>
+<td><strong>네비게이션</strong> — "세상은 지뢰밭, 미로 같다. 말씀이 네비게이션이다"</td>
+</tr>
+</tbody>
+</table>
+<p>세 용도 가운데 율법과 복음의 관계를 가장 직접 건드리는 것은 첫째다. 율법의 거울은 정죄에서 멈추지 않는다. 권성수의 표현대로 "죄가 있으면 구원자에게 가면 된다" — 거울은 얼굴의 흠을 비추어 우리를 세면대(그리스도)로 보낸다. 이것이 율법이 그리스도께로 인도하는 초등교사(갈 3:24)라는 몽학선생의 기능이다. 박재은 교수도 같은 자리를 다른 문으로 들어간다. 야고보서 1:25의 "자유롭게 하는 온전한 율법"을 "몸을 구부려 면밀히 들여다보라"는 뜻으로 풀며, 그렇게 율법을 깊이 들여다보면 그 끝에서 그리스도가 나온다고 본다. 율법은 지키라고만 준 것이 아니라, 율법을 완성하실 분을 가리키기 위해 주어졌다는 것이다. 정죄하는 율법이 살리는 복음을 손가락질하는 이 구조가, 율법과 복음이 대립이 아니라 한 방향으로 놓이는 첫 번째 이음매다.</p>
+<h2>4. 두 전통 — 제2용도의 루터파, 제3용도의 개혁주의</h2>
+<p>율법의 세 용도에 모두가 같은 무게를 두지는 않았다. 여기서 루터파와 개혁주의의 강조점이 갈린다 — 대립이라기보다 같은 진리를 붙드는 손의 위치가 다르다.</p>
+<p>루터파는 율법의 첫째·둘째 용도(정죄와 억제)에 무게를 싣고, 셋째 용도에 대해서는 신중하다. 복음으로 거듭난 신자는 성령의 인도로 자발적으로 선을 행하므로, 그 앞에 율법을 규범으로 다시 세우면 자칫 은혜에서 공로로 미끄러진다고 보기 때문이다. 루터파에게 율법의 주된 얼굴은 죄인을 그리스도께 몰아가는 거울이다. 반면 개혁주의(칼뱅)는 셋째 용도(tertius usus legis)를 율법의 '주된' 용도로 본다. 이 볼트의 <a class="wl" href="../../t/%EC%96%B8%EC%95%BD%EC%8B%A0%ED%95%99/">언약신학</a>이 그 뿌리를 짚는다 — 구약과 신약이 한 은혜언약의 두 시행이라면, 구약의 도덕법은 신약 신자에게도 삶의 규범으로 유효하다는 것이다. 율법은 폐기된 짐이 아니라 감사로 순종할 자의 삶의 지도다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>루터파</th>
+<th>개혁주의</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>신학의 표지</td>
+<td>이신칭의, 율법과 복음의 구분</td>
+<td>하나님의 주권, 은혜언약의 단일성</td>
+</tr>
+<tr>
+<td>율법의 주된 용도</td>
+<td>제1·2용도(정죄·억제)</td>
+<td>제3용도(신자의 삶의 규범)</td>
+</tr>
+<tr>
+<td>제3용도에 대한 태도</td>
+<td>신중 — 공로화를 경계</td>
+<td>강조 — 감사의 순종의 지침</td>
+</tr>
+<tr>
+<td>경계하는 위험</td>
+<td>율법주의로의 회귀</td>
+<td>율법이 다시 짐이 됨</td>
+</tr>
+</tbody>
+</table>
+<p>두 강조는 서로를 필요로 한다. 루터파의 신중함은 개혁주의가 제3용도를 말하다가 율법을 다시 무거운 멍에로 만들 위험을 견제하고, 개혁주의의 강조는 루터파가 율법을 정죄 전용으로 축소해 신자의 삶에서 성경의 규범적 안내를 지워 버릴 위험을 견제한다. 둘 다 "율법으로 의롭게 되지 않는다"에 동의하고, 둘 다 신자가 선을 행해야 한다는 데 동의한다. 오직 갈리는 것은 그 선행 앞에 율법을 규범으로 세우느냐다. 이 차이는 판결할 대상이 아니라 함께 붙들 긴장이다.</p>
+<h2>5. 두 절벽 — 율법주의와 반율법주의</h2>
+<p>율법과 복음의 순서를 뒤집으면 둘 중 하나의 절벽으로 떨어진다. 은혜가 먼저이고 순종이 그 열매라는 순서를 세우면 복음이지만, 순종을 구원의 뿌리로 앞세우면 율법주의로, 그 순서를 아예 무너뜨려 은혜를 방종의 면허로 삼으면 반율법주의로 기운다. 이 볼트의 <a class="wl" href="../../t/%EA%B5%AC%EC%9B%90%EB%A1%A0/">구원론</a>이 잡는 표현으로, 성화론이 빠지기 쉬운 두 극단은 "은혜를 핑계 삼은 방종(반율법주의)과 행위를 구원 조건으로 되돌리는 율법화(신율법주의)"다. 두 절벽은 대칭이다.</p>
+<p><code>율법주의  ←————————  복음  ————————→  반율법주의
+"내가 지켜야 산다"   "은혜로 살아 순종한다"   "은혜니 살아도 된다"
+ (행위로 의를 얻음)   (은혜가 순종을 낳음)    (은혜를 방종의 구실로)</code></p>
+<p>한쪽 절벽인 율법주의는 율법을 지켜 스스로 의로워지려는 시도다. 갈라디아의 유대주의자들이 할례와 율법 준수를 복음의 조건으로 덧붙인 것이 그 전형이며(바울의 대응은 <a class="wl" href="../../t/%EB%B0%94%EC%9A%B8%EC%8B%A0%ED%95%99/">바울신학</a>이 상술한다), 박재은은 이를 "율법을 내가 지켜서 복을 받는 것으로 읽는" 태도로 규정한다. 권성수의 경고도 같다 — "열매를 먼저 강조하면 율법주의에 빠진다." 그가 든 성철 스님의 유언("내 죄는 산보다 높고 바다보다 깊은데 내 어찌 감당하랴")은 평생 계율을 지킨 자의 막다른 절망을 보여준다. "모든 다른 종교는 율법뿐이고 기독교만이 은혜"라는 그의 대비가 이 절벽의 실체를 드러낸다.</p>
+<p>다른 쪽 절벽인 반율법주의는 은혜를 죄의 허가증으로 오용한다. 바울은 이 오해를 미리 차단했다 — "그런즉 우리가 무슨 말을 하리요 은혜를 더하게 하려고 죄에 거하겠느냐 그럴 수 없느니라"(롬 6:1-2). 유다서는 "하나님의 은혜를 도리어 방탕한 것으로 바꾸는"(유 1:4) 자들을 고발한다. 이 절벽에 붙인 20세기의 가장 유명한 이름이 <span class="wl-dead" title="위키 내부 링크">본회퍼</span>의 '값싼 은혜'다 — 회개 없는 용서, 제자도 없는 세례, 십자가 없는 은혜.</p>
+<blockquote>
+<p>"그리스도께서 한 인간을 부르실 때에는 '와서 죽으라'고 부르신 것이다." — 디트리히 본회퍼</p>
+</blockquote>
+<p>권성수의 「나는 그리스도인인가」는 두 절벽을 한 설교에서 동시에 경계하는 모범이다. "좋은 나무가 먼저이지 열매가 먼저가 아니다"라는 명제로 율법주의를 막고, "행위로 구원받지 못하나 믿으면 반드시 열매가 나온다"로 반율법주의를 막는다. 그 균형을 떠받치는 한 문장이 있다 — 행위는 구원의 <strong>근거</strong>(ground)가 아니라 구원의 <strong>증거</strong>(evidence)다. 이 구분을 놓치면 증거를 근거로 바꾸어 율법주의로 가거나, 증거 자체를 없애 반율법주의로 간다.</p>
+<h2>6. 폐기가 아니라 성취 — 율법의 텔로스이신 그리스도</h2>
+<p>그렇다면 복음은 율법을 폐기하는가. 아니다. 성취한다. 마 5:17의 '완전하게 하다'(플레로오)는 '채우다'라는 뜻으로(<a class="wl" href="../../t/%ED%86%A0%EB%9D%BC/">토라</a>가 원어를 상술한다), 예수는 율법을 폐기하지도 그대로 반복하지도 않고 그것이 겨눠 온 본뜻을 끝까지 채우신다. 문대원 목사가 로마서 13장 강해에서 짚듯 그 채움의 내용은 사랑이다 — "사랑은 율법의 완성이니라"(롬 13:10). 율법이 낱낱의 조항으로 가리켜 온 것을 그리스도가 사랑으로 한데 모아 이루신다.</p>
+<p>이 성취를 한 단어로 압축한 것이 로마서 10장 4절의 텔로스다 — "그리스도는 율법의 마침(τέλος)이 되시니라." 여기서 '마침'을 '끝'으로 읽으면 율법은 그리스도로 인해 폐지된 것이 되고, '목표'로 읽으면 율법은 처음부터 그리스도를 겨눠 온 화살이 된다. 이 볼트의 로마서 이해는 후자, 곧 단순한 폐기가 아니라 "종점이자 최고조"로 읽는다 — 율법이 나빠서 끝난 것이 아니라, 그 과녁에 화살이 닿은 자리가 그리스도라는 것이다. 이스라엘의 실패는 율법 자체가 아니라 "율법의 목적을 그리스도 안에서 깨닫지 못한" 자기 의의 추구에 있었다(바울의 상세는 <a class="wl" href="../../t/%EB%B0%94%EC%9A%B8%EC%8B%A0%ED%95%99/">바울신학</a>에 위임한다).</p>
+<p>박재은은 이 성취를 야고보서의 언어로 되짚는다. "자유롭게 하는 온전한 율법"(약 1:25)이란 그리스도 안에서 완성된 율법, 곧 복음이라는 것이다. 그는 그리스도의 자기부인을 성육신·고난·십자가·무덤의 네 계단으로 배열하며, 율법을 만드신 분이 친히 율법의 요구와 형벌을 온전히 감당하시고 그것을 선물로 주셨다고 본다. 그러므로 성취된 율법을 들여다보는 것은 곧 복음을 묵상하는 일이며, 거기서 자유가 흘러나온다. 율법과 복음은 대립이 아니라, 요구가 선물 안에서 다 이루어진 연속이다.</p>
+<h2>7. 감사의 순종 — 은혜가 낳는 자발성</h2>
+<p>성취된 율법 앞에서 신자는 무엇을 하는가. 순종한다. 그러나 그 순종의 <strong>동력</strong>이 모든 것을 가른다. 박재은은 이 갈림길을 한 문장에 담는다.</p>
+<blockquote>
+<p>"무엇이든 은혜를 받기 위해서 하면 그것은 율법이고, 받은 은혜에 대한 마땅한 반응으로 하면 그것이 자유다." — 박재은, 「자유를 자유하라」</p>
+</blockquote>
+<p>같은 예배, 같은 헌신, 같은 봉사라도 은혜를 얻어내려는 거래이면 그것은 이미 율법주의이고, 이미 받은 은혜에 대한 반응이면 그것이 자유다. 은혜는 그 정의상 무조건적이어서, 조건이 붙는 순간 더 이상 은혜가 아니기 때문이다. 순종의 자리를 '은혜를 위한 수단'에서 '은혜에 대한 반응'으로 옮기는 것 — 이것이 율법과 복음이 신자의 일상에서 화해하는 방식이다.</p>
+<p>권성수의 신명기 강해가 이 반응의 구조를 네 마디로 정리한다 — 구원 → 명령 → 순종 → 상벌. "은혜로 구원받은 하나님의 백성에게 요구하시는 것이 명령이다. 명령을 주시는 것은 은혜이다." 명령조차 은혜의 문법 안에 있다는 이 통찰이 율법을 짐에서 선물로 되돌린다. 은혜가 앞서기에 순종은 빚 갚기가 아니라 사랑의 자발성이 된다. 이 순종이 은혜를 폐하지 않고 오히려 은혜에서 흘러나온다는 역학 — 은혜 100%와 노력 100%가 한 행위 안에 겹친다는 구조 — 은 <a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a>와 <a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a>가 상술한다. 개혁 전통의 하이델베르크 요리문답이 십계명을 '감사'의 자리에 둔 것도 같은 순서다 — 죄와 비참을 알고, 구원을 받고, 감사로 순종한다. 문대원 목사의 표현이 이 은혜의 논리를 압축한다 — "하나님은 할 수 있는 일을 하라 하시지 할 수 없는 일을 하라 하지 않으신다." 율법은 정죄의 잣대가 아니라, 본성을 아시는 아버지의 단계적 양육이다.</p>
+<h2>8. 강단의 두 말씀 — 설교에서 율법과 복음을 배치하기</h2>
+<p>율법과 복음의 구분은 결국 강단에서 시험받는다. 설교자는 매 설교에서 이 두 말씀을 어떻게 배치하는가. 두 실패가 강단을 위협한다.</p>
+<p>하나는 정죄로 끝나는 설교다. 율법만 선포하고 복음으로 데려가지 않으면, 청중은 죄책과 절망에 남겨진다. 율법의 거울은 흠을 비추는 데서 멈추지 않고 "구원자에게 가면 된다"(권성수)로 이어져야 한다. 정죄로 문을 닫는 설교는 율법의 첫째 용도를 절반에서 끊어, 청중을 그리스도께 데려다주지 못한 채 세면대 앞이 아니라 거울 앞에 버려둔다. 다른 하나는 값싼 위로로 끝나는 설교다. 복음만, 그것도 죄에 대한 정직한 진단 없이 위로만 선포하면 본회퍼가 말한 값싼 은혜가 강단에서 재생산된다. <a class="wl" href="../../t/%EB%B3%B5%EC%9D%8C/">복음</a>이 이 균형을 날카롭게 정리한다 — "율법을 지우면 복음의 무례함이 사라져 값싼 은혜가 되고, 복음을 지우면 율법의 단순함이 사라져 종교의 짐이 된다."</p>
+<p>좋은 설교는 율법으로 상하게 하고 복음으로 싸맨다. 권성수의 「나는 그리스도인인가」가 율법주의(열매 먼저)와 반율법주의(나무 없는 열매)를 동시에 피하며 정죄와 위로 어느 하나로 끝나지 않은 것이 그 본보기다. 청중을 율법의 거울 앞에 세워 자기 의를 깨뜨리되, 반드시 복음의 선물로 그리스도께 데려가는 것 — 이 배치가 강단에서의 율법과 복음이다. <a class="wl" href="../../t/%EA%B0%95%ED%95%B4%EC%84%A4%EA%B5%90/">강해설교</a> 전통에서 이 배치는 본문의 결을 따르는 문제이기도 하다. 율법 본문에서 그리스도를 성급히 끌어내 본문 자체를 지워 버리지도 않으면서, 그 율법이 겨눈 그리스도를 끝내 놓치지도 않는 것. 율법과 복음을 바르게 구별하는 신학자의 기술은, 조직신학의 책상이 아니라 바로 이 강단에서 완성된다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>율법과 복음의 긴장은 신약 자체에 내장되어 있다(마 5:17 "완전하게" vs 롬 6:14 "율법 아래 있지 아니하고"). 이 둘을 어디에 놓느냐가 문제의 핵심이며, "율법은 선물인가 수갑인가"가 그 실존적 판본이다.</li>
+<li>루터파 전통은 "율법과 복음의 구분"을 신학의 표지로 삼는다 — 정죄하는 말씀과 살리는 말씀을 뒤섞지 않는 것이 목회의 사활이지만, 지나친 이분법은 율법을 정죄 전용으로 축소할 위험이 있다.</li>
+<li>율법의 세 용도(거울·채찍·네비게이션)는 권성수의 신명기 강해에 고스란히 담겨 있다 — 정죄해 그리스도께 몰고(제1), 사회의 악을 억제하며(제2), 신자의 삶을 인도한다(제3).</li>
+<li>루터파는 제1·2용도에, 개혁주의는 제3용도에 무게를 둔다. 대립이 아니라 같은 진리의 다른 무게중심이며, 갈리는 것은 신자의 선행 앞에 율법을 규범으로 세우느냐다.</li>
+<li>율법주의와 반율법주의는 은혜와 순종의 순서를 뒤집는 대칭적 절벽이다. 행위는 구원의 근거가 아니라 증거라는 구분(권성수)이 두 절벽 사이의 다리다.</li>
+<li>복음은 율법을 폐기하지 않고 성취한다. 그리스도는 율법의 텔로스 — 폐기된 끝이 아니라 겨눠 온 목표의 완성이다(롬 10:4).</li>
+<li>순종의 동력이 갈림길이다 — 은혜를 얻으려는 순종은 율법이고, 받은 은혜에 대한 반응은 자유다(박재은). 강단은 이 순서를 정죄로도 값싼 위로로도 끝내지 않고 배치해야 한다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>루터파의 제2용도 강조와 개혁주의의 제3용도 강조는 실천에서 어떻게 조화되는가 — 한 설교가 두 강조를 동시에 담을 수 있는가, 아니면 회중의 상태에 따라 달리 배치해야 하는가?</li>
+<li>율법의 제1용도(정죄)와 제3용도(규범)를 같은 신자가 동시에 경험한다면, 설교자는 한 본문에서 이 둘을 어떻게 분별해 적용하는가?</li>
+<li>'텔로스'를 '끝'으로 읽는 것과 '목표'로 읽는 것은 신자의 실제 율법 준수에 서로 다른 결론을 낳는가, 아니면 강조의 차이에 그치는가?</li>
+<li>값싼 은혜를 피하려다 다시 율법주의로, 율법주의를 피하려다 다시 값싼 은혜로 미끄러지는 진자 운동을 강단은 어떻게 벗어나는가?</li>
+<li>하이델베르크 요리문답처럼 율법을 복음 뒤 '감사'의 자리에 두는 배치가, 율법 본문 자체를 설교할 때에도 지켜질 수 있는가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%ED%86%A0%EB%9D%BC/">토라</a> — 토라의 문헌적 성격, 삼분법(의식·시민·도덕법) 논쟁, νόμος 번역사와 플레로오·텔로스 원어 (위임)</li>
+<li><a class="wl" href="../../t/%EC%9C%A8%EB%B2%95/">율법</a> — 신학 범주로서의 율법, 패러다임적 적용과 신적 수용 (위임)</li>
+<li><a class="wl" href="../../t/%EB%B3%B5%EC%9D%8C/">복음</a> — 복음의 내용·범위, "복음과 율법"의 상보성 (위임)</li>
+<li><a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a> — 은혜와 율법의 화해, 구원→명령→순종→상벌, 은혜 100% 노력 100%</li>
+<li><a class="wl" href="../../t/%EC%B9%AD%EC%9D%98%EB%A1%A0/">이신칭의</a> — 믿음으로 의롭게 됨 (위임)</li>
+<li><a class="wl" href="../../t/%EB%B0%94%EC%9A%B8%EC%8B%A0%ED%95%99/">바울신학</a> — 갈라디아의 전선, '율법의 행위', 새 관점 논쟁 (위임)</li>
+<li><a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a> — 순종의 내적 역학, 칭의의 결과로서의 성화</li>
+<li><a class="wl" href="../../t/%EA%B5%AC%EC%9B%90%EB%A1%A0/">구원론</a> — 반율법주의와 신율법주의, 칭의 단독사역·성화 동역</li>
+<li><a class="wl" href="../../t/%EC%9C%A8%EB%B2%95%EC%A3%BC%EC%9D%98/">율법주의</a> — 규칙의 문자적 준수라는 윤리적 왜곡</li>
+<li><a class="wl" href="../../t/%EC%96%B8%EC%95%BD%EC%8B%A0%ED%95%99/">언약신학</a> — 은혜언약의 단일성이 낳는 율법의 제3용도</li>
+<li><a class="wl" href="../../t/%EC%A2%85%EA%B5%90%EA%B0%9C%ED%98%81/">종교개혁</a> — 루터의 이신칭의와 율법과 복음의 구분</li>
+<li><a class="wl" href="../../t/%EA%B0%95%ED%95%B4%EC%84%A4%EA%B5%90/">강해설교</a> — 강단에서 율법과 복음의 배치</li>
+<li><span class="wl-dead" title="위키 내부 링크">루터</span> · <span class="wl-dead" title="위키 내부 링크">본회퍼</span> — 율법과 복음의 구분, 값싼 은혜</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>권성수 「율법은 하나님의 선물」(신 30:11-14)</td>
+<td>설교</td>
+<td>율법의 삼분법과 세 용도(거울·채찍·네비게이션), "선물이냐 수갑이냐", 성철 유언 대비</td>
+</tr>
+<tr>
+<td>권성수 「은혜와 상벌」(신 30:15-20)</td>
+<td>설교</td>
+<td>구원→명령→순종→상벌, "명령을 주시는 것은 은혜"</td>
+</tr>
+<tr>
+<td>권성수 「나는 그리스도인인가」(고후 13:5)</td>
+<td>설교</td>
+<td>율법주의·반율법주의(antinomianism) 동시 경계, "좋은 나무가 먼저", 행위=근거 아닌 증거</td>
+</tr>
+<tr>
+<td>박재은 「자유를 자유하라」(약 1:25)</td>
+<td>설교</td>
+<td>"은혜 받으려 하면 율법, 받은 은혜에 반응하면 자유", 율법을 들여다보면 그리스도, 제3용법 물음</td>
+</tr>
+<tr>
+<td>문대원 「쓸데없는 질문, 쓸데 있는 질문」(눅 10:25-28)</td>
+<td>설교</td>
+<td>행위언약 vs 은혜언약, "할 수 있는 일을 하라 하신다", 몽학선생(갈 3:24) 물음</td>
+</tr>
+<tr>
+<td>문대원 「의무 이상의 관계」(롬 13:8-10)</td>
+<td>설교</td>
+<td>마 5:17 플레로오='fulfill', 사랑=율법의 완성</td>
+</tr>
+<tr>
+<td>MBTS 교회사II 「종교개혁의 배경과 루터」</td>
+<td>강의</td>
+<td>루터의 이신칭의·전가, 탑의 체험(롬 1:16-17)</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%A1%B0%EC%A7%81%EC%8B%A0%ED%95%99/">조직신학</a> · <a class="wl" href="../../t/%EC%96%B8%EC%95%BD%EC%8B%A0%ED%95%99/">언약신학</a></td>
+<td>신학 참조</td>
+<td>루터파의 '율법과 복음의 구분' 표지, 은혜언약 단일성과 율법의 제3용도</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EA%B5%AC%EC%9B%90%EB%A1%A0/">구원론</a></td>
+<td>신학 참조</td>
+<td>반율법주의 vs 신율법주의, 칭의 단독사역·성화 동역</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">본회퍼</span> 《나를 따르라》</td>
+<td>인물·책</td>
+<td>값싼 은혜와 값비싼 은혜, "와서 죽으라"</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/조직신학</span><span>#discipline/기독교윤리</span><span>#종교개혁</span><span>#율법의용도</span><span>#성화</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

@@ -1,0 +1,230 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>감정 — 주제·북노트 위키</title>
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --bg:#14161c; --surface:#1d212b; --ink:#e8e6dd; --muted:#98a0ac;
+  --accent:#93ace4; --accent-ink:#111726; --line:#2b303c; --line-soft:#262b36;
+  --chip-l1:21%; --chip-l2:76%; --chip-s1:22%; --chip-s2:42%;
+  --shadow:0 10px 28px rgba(0,0,0,.28);
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fffefb; --ink:#1d2433; --muted:#636b76;
+  --accent:#2c4a8a; --accent-ink:#fff; --line:#e2dfd4; --line-soft:#eceadfa8;
+  --chip-l1:90%; --chip-l2:30%; --chip-s1:38%; --chip-s2:46%;
+  --shadow:0 10px 28px rgba(29,36,51,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.chip{--h:220;font-size:11.5px;font-weight:700;letter-spacing:.02em;border-radius:5px;padding:3px 8px;
+  background:hsl(var(--h) var(--chip-s1) var(--chip-l1));color:hsl(var(--h) var(--chip-s2) var(--chip-l2));white-space:nowrap}
+
+main{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+header.top{border-top:3px solid var(--ink);padding-top:16px;margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.head-row a{font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap}
+.head-row a:hover{text-decoration:underline}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",Batang,"Noto Serif KR",serif;
+  font-size:clamp(27px,4.6vw,40px);line-height:1.18;margin:12px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{margin:12px 0 0;padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;background:var(--surface);font-size:14px}
+.pubnote a{font-weight:700;text-decoration:none}
+article.note{font-size:16px;line-height:1.75}
+article.note h1{display:none}
+article.note h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);letter-spacing:-.01em}
+article.note h3{font-size:17.5px;margin:26px 0 8px}
+article.note p{margin:0 0 15px}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 15px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:18px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);background:var(--surface);border-radius:0 6px 6px 0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;font-size:14.5px}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface);font-weight:700;white-space:nowrap}
+article.note code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%}
+a.wl{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+a.wl:hover{border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--muted);border-bottom:1px dashed var(--line);cursor:default}
+.footnote{margin-top:36px;font-size:13.5px;color:var(--muted)}
+.footnote hr{border:0;border-top:1px solid var(--line)}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.tagrow span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13.5px;color:var(--muted)}
+footer a{font-weight:700;text-decoration:none}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip" style="--h:300">윤리·공공</span><span class="date">2026-07-17</span></div>
+  <h1 class="note-title">감정</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>감정에 대한 뿌리 깊은 오해가 하나 있다. 감정은 이성의 방해물이거나, 심하게는 타락의 산물이라는 생각이다. 신앙이 깊어질수록 감정은 다스려 없애야 할 것으로 여겨지고, '평정'이 성숙의 표지로 통한다. 그러나 성경은 다른 곳에 선다. 하나님이 감정을 지니시고 예수님이 감정을 표현하셨다면, 감정은 인간이 극복해야 할 결함이 아니라 하나님의 형상의 일부다. 문대원 목사가 「분노의 시대를 사는 법」에서 못박듯, "하나님은 우리가 느끼는 감정을 죄라고 말씀하지 않으신다." 감정의 신학이 서는 첫 자리가 여기다 — 감정은 타락의 산물이 아니다.</p>
+<p>이 페이지가 다루는 것은 감정의 신학적·윤리적 위상이다. 감정이 몸에 미치는 생리적 경로(마음→뇌→자율신경→면역)와 화병·한(恨)의 의학은 <a class="wl" href="../../t/%EB%A7%88%EC%9D%8C%EC%9D%98%EA%B1%B4%EA%B0%95/">마음의건강</a>이, 상처와 거짓 자아를 다루는 상담의 방법론은 <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%83%81%EB%8B%B4/">기독교상담</a>이 맡는다. 여기서 붙드는 것은 그 앞의 물음이다 — 감정은 무엇이며, 신앙과 어떤 관계에 있고, 어떻게 분별되고 성숙되는가.</p>
+<h2>1. 하나님의 감정, 예수의 감정</h2>
+<p>감정이 형상의 일부라는 명제의 근거는 하나님 자신이다. 성경의 하나님은 무감정한 철학적 절대자가 아니라 분노하고 슬퍼하고 기뻐하시는 인격이다. 그리고 성육신하신 예수님은 그 감정을 인간의 얼굴로 드러내셨다.</p>
+<table>
+<thead>
+<tr>
+<th>감정</th>
+<th>본문</th>
+<th>장면</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>분노</td>
+<td>막 3:5</td>
+<td>마음의 완악함을 보고 노하심 / 성전을 청결케 하심</td>
+</tr>
+<tr>
+<td>슬픔</td>
+<td>요 11:35</td>
+<td>나사로의 무덤에서 눈물 흘리심</td>
+</tr>
+<tr>
+<td>기쁨</td>
+<td>눅 10:21</td>
+<td>성령으로 기뻐하심</td>
+</tr>
+<tr>
+<td>긍휼</td>
+<td>막 6:34</td>
+<td>목자 없는 양 같은 무리를 불쌍히 여기심</td>
+</tr>
+</tbody>
+</table>
+<p>문대원 목사는 「분노의 시대」에서 하나님의 감정을 특히 분노를 통해 조명한다. 성경은 하나님도 분노하시고(시 7:11, "매일 분노하시는 하나님"), 예수님도 성전에서 장사하는 자들을 향해 마음속으로만이 아니라 채찍을 드는 행동으로 분노하셨다고 증언한다. 그러나 하나님의 감정에는 인간의 감정과 결정적으로 다른 질서가 있다. 하나님은 "노하기를 더디하시는" 분이다(출 34:6) — 성경에 가장 처음 선포된 하나님의 성품이 이것이다. 노하기를 더딘 분이 분노하신다면 그것은 정말 심각한 상황이라는 뜻이며, 그 분노조차 자기 유익이 아니라 백성을 향한 사랑에서 나온다. 하나님의 감정은 통제되어 없어진 것이 아니라, 사랑과 공의라는 올바른 질서 안에서 표현된다. 인간의 감정도 그 질서를 향해 자라야 한다.</p>
+<h2>2. 감정 자체는 죄가 아니다</h2>
+<p>하나님과 예수님의 감정이 감정의 정당성을 세운다면, 문대원 목사의 「분노의 시대」는 그 원리를 인간의 감정에 적용한다. 핵심은 느끼는 것과 품는 것의 구별이다. "인생을 살면서 기쁨과 슬픔, 불안과 공포를 느낀다. 슬픔을 느끼는 것, 불안을 느끼는 것 자체가 죄는 아니다." 분노도 마찬가지다. 사랑하는 가족이 부당한 대우를 받을 때 분노를 느끼는 것은 자연스러운 반응이며, 오히려 "불의 앞에서 분노를 느끼지 않는 것이 문제가 될 수 있다." 학대당하는 사람을 보고도 아무 감정이 없다면 그것이야말로 잘못이다.</p>
+<p>성경의 명령은 감정을 없애라가 아니라 감정을 오래 품지 말라다. "분을 내어도 죄를 짓지 말며 해가 지도록 분을 품지 말라"(엡 4:26). 감정을 느끼는 것은 죄가 아니지만, 그것을 방치하고 오래 품으면 죄로 이어질 수 있다는 것이다. 야고보서가 "사람이 성내는 것이 하나님의 의를 이루지 못한다"(약 1:20)고 할 때도, 문제는 분노의 감정 자체가 아니라 분노에 휩싸여 이성이 마비되는 상태다. 초대교회 신학자 에바그리우스가 말했듯 "분노는 영혼의 눈을 어둡게 하고 기도하는 상태를 망가뜨린다." 감정은 손님이지 주인이 아니다. 느끼는 것을 허락하되 다스리는 자리를 내주지 않는 것 — 이것이 감정에 대한 성경의 첫 규율이다.</p>
+<h2>3. 감정과 신앙 — 감정주의와 주지주의 사이 ⚖️</h2>
+<p>감정이 정당하다는 인정은 곧바로 반대편 위험을 낳는다. 감정을 신앙의 척도로 삼는 것이다. 이 볼트가 다루는 윤리학은 감정을 도덕적 지각과 동기의 한 축으로 본다(<a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%9C%A4%EB%A6%AC%ED%95%99/">기독교윤리학</a>). 실존적·낭만주의 전통(루소 등)은 양심과 감정을 도덕의 근거로 강조했고, 반대로 이성 중심 전통은 감정을 신뢰할 수 없는 것으로 경계했다. 신앙 안에서도 이 두 극단이 그대로 나타난다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>감정주의 (Emotionalism)</th>
+<th>주지주의 (Intellectualism)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>감정의 위상</td>
+<td>신앙의 척도·증거</td>
+<td>신앙의 방해물</td>
+</tr>
+<tr>
+<td>위험</td>
+<td>뜨거움이 식으면 신앙도 흔들림</td>
+<td>메마른 정통 — 아는데 감동이 없음</td>
+</tr>
+<tr>
+<td>뿌리</td>
+<td>낭만주의·체험주의</td>
+<td>합리주의·이성 중심</td>
+</tr>
+</tbody>
+</table>
+<p>한쪽 극단인 감정주의는 뜨거운 체험·눈물·감동을 신앙의 증거로 삼는다. 그러나 <a class="wl" href="../../t/%EA%B2%BD%EA%B1%B4%EC%A3%BC%EC%9D%98/">경건주의</a>가 보여주듯, 감정을 척도로 삼으면 감정이 식는 날 신앙 전체가 흔들린다. 다른 쪽 극단인 주지주의는 감정을 불신하고 교리적 정확성만 붙든다. 그러나 감정 없는 정통은 "얼어붙은 폭포수" — 크지만 움직이지 않는 죽은 정통이 된다. 기독교 윤리학이 실존적 관점(윤리 주체의 내면·성품·중생)을 규범적 관점(성경의 권위)과 함께 세우듯, 성숙한 신앙은 감정과 이성을 대립시키지 않는다. 감정은 진리를 대체할 수 없지만, 진리가 마음에 닿았는지를 알려주는 정직한 신호다. 균형점은 감정을 신앙의 근거로 승격시키지도, 방해물로 추방하지도 않는 자리 — 감정을 진리에 대한 마음의 반응으로 받아들이되 그 진리 자체에 뿌리내리는 자리다.</p>
+<h2>4. 시편 — 감정의 학교</h2>
+<p>감정을 다스리되 억압하지 않는 법을 성경은 시편에서 가르친다. <a class="wl" href="../../t/%EC%8B%9C%ED%8E%B8/">시편</a>의 약 3분의 1이 탄원시이며, 그 언어는 놀랍도록 날것이다. "어찌 나를 버리셨나이까"(시 22:1), "내 영혼아 어찌하여 낙망하는가"(시 42:5), 심지어 원수를 향한 저주까지(시 109편). 성경이 이런 격렬한 감정의 언어를 기도로 정경화했다는 사실 자체가, 감정을 하나님 앞에 정직하게 쏟아내는 것이 신앙의 결함이 아니라 신앙의 한 형태임을 보여준다. 탄식은 불신앙이 아니다. 오히려 하나님이 들으신다고 믿기에 터뜨리는 신뢰의 표현이다.</p>
+<p>다만 시편은 감정을 배출하는 데서 그치지 않는다. <span class="wl-dead" title="위키 내부 링크">월터브루그만</span>의 비유가 그 구조를 밝힌다 — 다친 아이가 "형이 나쁜 놈이야"라고 호소할 때, 부모의 올바른 반응은 "그러면 안 돼"라는 훈계가 아니라 "알았어, 내가 해결할게"라는 응답이다. 탄원시의 저주 언어도 스스로 복수하는 것이 아니라 심판을 하나님께 맡기는 신앙적 장치다. 그래서 탄원시는 거의 언제나 찬양과 감사로 끝난다. 감정의 학교로서 시편이 가르치는 것은 이것이다 — 감정을 감추지 말고 하나님 앞에 다 내어놓되, 그 감정의 해결을 스스로 쥐지 말고 하나님께 넘기라. 정직한 토로에서 시작해 신뢰의 위탁으로 끝나는 이 궤적이 감정을 성숙시키는 길이다.</p>
+<h2>5. 감정의 분별과 성숙 — 감정은 정보다</h2>
+<p>감정을 억압하지도 추종하지도 않는다면, 남는 길은 분별이다. 감정을 다스린다는 것은 감정을 없애는 통제가 아니라, 감정에 귀 기울여 그것이 무엇을 가리키는지 읽어내는 경청이다. 감정은 명령이 아니라 정보다. 그것은 내 마음 깊은 곳에서 무슨 일이 일어나고 있는지를 알려주는 신호다.</p>
+<p>문대원 목사의 통찰이 이 분별의 열쇠를 준다 — "분노는 내가 무엇을 가장 사랑하는지 보여주는 거울과도 같다." 하나님의 분노가 사랑과 공의에서 나온다면, 인간의 분노는 대개 자존심에서 나온다. 팀 켈러의 말대로 "많은 경우에 우리는 우리의 자존심을 지키기 위해서 분노하며, 우리가 분노하는 이유를 진지하게 살펴보면 금방 당황하고 부끄러울 것이다." 무시당했다고 느낄 때, 원하는 것을 얻지 못했을 때 터지는 분노는 내가 실은 나 자신을 예배하고 있음을 폭로한다. 그래서 감정의 분별은 곧 마음의 진단이다 — 이 감정이 어디서 왔는지를 물으면, 내가 무엇을 사랑하고 무엇을 우상으로 삼는지가 드러난다.</p>
+<p>성숙은 이 분별 위에서 자란다. 문대원 목사가 「분노의 시대」에서 내리는 결론은 감정의 제거가 아니라 감정의 방향과 속도의 조정이다 — 자기 유익이 아니라 올바른 목적을 위해, 그리고 "노하기를 속히" 하지 않고 더디 하는 것이다. 이것은 의지만의 일이 아니라 성령의 열매다. 오래 참음과 온유와 절제(갈 5:22-23)는 감정을 억누른 결과가 아니라 성령이 감정을 빚어 가신 열매다(<a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a>). 감정은 훈련의 대상이지 박멸의 대상이 아니다. 두려움의 정서 신학은 <a class="wl" href="../../t/%EB%91%90%EB%A0%A4%EC%9B%80/">두려움</a>이, 기쁨은 <a class="wl" href="../../t/%EA%B8%B0%EC%81%A8/">기쁨</a>이, 타인의 감정에 들어가는 능력은 <a class="wl" href="../../t/%EA%B3%B5%EA%B0%90/">공감</a>이 이어받지만, 그 모든 감정을 관통하는 원리는 하나다 — 감정을 경청하고 하나님 앞에 내어놓아 성령이 그것을 성숙시키시게 하는 것.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>감정은 타락의 산물이 아니라 하나님의 형상의 일부다. 하나님이 분노·슬픔·기쁨을 지니시고(시 7:11, 출 34:6), 예수님이 그것을 인간의 얼굴로 드러내셨다(막 3:5, 요 11:35, 눅 10:21).</li>
+<li>감정 자체는 죄가 아니다. 문제는 느끼는 것이 아니라 오래 품는 것이다(엡 4:26). 불의 앞에서 분노를 느끼지 않는 것이 오히려 문제일 수 있다.</li>
+<li>감정주의와 주지주의는 양극단이다 ⚖️. 감정을 신앙의 척도로 삼으면 식는 날 무너지고, 감정을 추방하면 죽은 정통이 된다. 감정은 진리에 대한 마음의 정직한 반응이다.</li>
+<li>시편은 감정의 학교다. 탄식은 불신앙이 아니라 신뢰의 표현이며(약 1/3이 탄원시), 정직한 토로에서 시작해 심판을 하나님께 맡기는 위탁으로 끝난다(브루그만).</li>
+<li>감정은 명령이 아니라 정보이자 거울이다. 분노는 내가 무엇을 사랑하는지 폭로한다(팀 켈러의 자존심). 성숙은 감정의 제거가 아니라 방향과 속도의 조정이며, 성령의 열매다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>감정을 하나님 앞에 정직하게 내어놓는 것과 감정을 방치하는 것의 경계는 어디인가 — 탄식의 정당성과 "해가 지도록 품지 말라"는 명령은 어떻게 동시에 지켜지는가?</li>
+<li>감정을 "정보"로 읽는 분별과, 우울·불안장애처럼 뇌의 질병으로서의 감정 이상은 어떻게 구별되는가(<a class="wl" href="../../t/%EB%A7%88%EC%9D%8C%EC%9D%98%EA%B1%B4%EA%B0%95/">마음의건강</a>과 공유)?</li>
+<li>한국 문화의 감정 억압(참는 것을 미덕으로 여김)과 시편적 감정 표현은 어떻게 화해하는가 — 신앙 공동체가 감정 억압을 '온유'로 미화할 위험은 어떻게 막는가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EB%A7%88%EC%9D%8C%EC%9D%98%EA%B1%B4%EA%B0%95/">마음의건강</a> — 감정이 몸에 미치는 생리적 경로와 화병·한(恨)의 의학. <strong>분업</strong>: 감정의 신학적 위상은 이 페이지가, 그 신체적 기전은 마음의건강이 맡는다.</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%83%81%EB%8B%B4/">기독교상담</a> — 감정을 다루는 상담의 방법론과 인간관.</li>
+<li><a class="wl" href="../../t/%EC%8B%9C%ED%8E%B8/">시편</a> — 탄원시의 구조와 신학. 감정의 학교로서의 성경.</li>
+<li><a class="wl" href="../../t/%EB%91%90%EB%A0%A4%EC%9B%80/">두려움</a> · <a class="wl" href="../../t/%EA%B8%B0%EC%81%A8/">기쁨</a> · <a class="wl" href="../../t/%EA%B3%B5%EA%B0%90/">공감</a> — 개별 감정의 신학. 이 페이지의 원리가 각 정서로 구체화되는 자리.</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%9C%A4%EB%A6%AC%ED%95%99/">기독교윤리학</a> — 감정을 도덕적 지각·동기의 축으로 보는 윤리학적 틀(실존적 관점).</li>
+<li><a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a> — 성령의 열매로서 감정이 빚어지는 과정.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>문대원, 「분노의 시대를 사는 법」 민 20장</td>
+<td>설교</td>
+<td>감정은 죄가 아님, 느낌 vs 품음(엡 4:26), 하나님·예수의 분노, 노하기 더디(출 34:6), 자존심의 거울(팀 켈러)</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%8B%9C%ED%8E%B8/">시편</a> · 구약개론II 「시편」 강의</td>
+<td>위키·강의</td>
+<td>탄원시의 정당성, 저주 시편, 브루그만의 위탁 구조, 탄원→찬양</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">기독교윤리학</span> 2주</td>
+<td>강의</td>
+<td>감정=도덕적 지각·동기의 축, 실존적 관점, 실존·낭만주의(루소) vs 이성 전통</td>
+</tr>
+<tr>
+<td>막 3:5 · 요 11:35 · 눅 10:21 · 약 1:20</td>
+<td>성경</td>
+<td>예수의 분노·슬픔·기쁨, 성냄이 하나님의 의를 이루지 못함</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EB%A7%88%EC%9D%8C%EC%9D%98%EA%B1%B4%EA%B0%95/">마음의건강</a></td>
+<td>위키 교차</td>
+<td>감정의 생리적 차원과 억압의 위험(위임 지점)</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/기독교윤리</span><span>#감정</span><span>#정서신학</span><span>#탄원</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
