@@ -5,53 +5,54 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f6f7f9;--surface:#fff;--ink:#1c2530;--muted:#5b6775;--line:#e2e6ec;
-  --accent:#2f4a6b;--accent2:#3f6291;--tint:#e7edf5;--shadow:0 1px 3px rgba(20,34,54,.09)}
-@media(prefers-color-scheme:dark){:root{--bg:#161b22;--surface:#1d242d;--ink:#eaeef3;--muted:#9aa7b5;
-  --line:#2b333d;--accent:#8fb0d6;--accent2:#a9c4e4;--tint:#243040;--shadow:none}}
-:root[data-theme=dark]{--bg:#161b22;--surface:#1d242d;--ink:#eaeef3;--muted:#9aa7b5;--line:#2b333d;--accent:#8fb0d6;--accent2:#a9c4e4;--tint:#243040;--shadow:none}
-:root[data-theme=light]{--bg:#f6f7f9;--surface:#fff;--ink:#1c2530;--muted:#5b6775;--line:#e2e6ec;--accent:#2f4a6b;--accent2:#3f6291;--tint:#e7edf5;--shadow:0 1px 3px rgba(20,34,54,.09)}
+:root{--bg:#f4f5f9;--surface:#fff;--ink:#1a2230;--muted:#586372;--line:#e3e7ef;
+  --accent:#324a74;--accent2:#5a4a86;--tint:#e9ecf6;--grad1:#2b3f66;--grad2:#4a3d72;--shadow:0 2px 8px rgba(24,32,54,.08)}
+@media(prefers-color-scheme:dark){:root{--bg:#14181f;--surface:#1c232d;--ink:#e9edf3;--muted:#9aa6b6;--line:#2a323d;
+  --accent:#9db4dc;--accent2:#b9a8e0;--tint:#232c3c;--grad1:#243657;--grad2:#3a3060;--shadow:none}}
+:root[data-theme=dark]{--bg:#14181f;--surface:#1c232d;--ink:#e9edf3;--muted:#9aa6b6;--line:#2a323d;--accent:#9db4dc;--accent2:#b9a8e0;--tint:#232c3c;--grad1:#243657;--grad2:#3a3060;--shadow:none}
+:root[data-theme=light]{--bg:#f4f5f9;--surface:#fff;--ink:#1a2230;--muted:#586372;--line:#e3e7ef;--accent:#324a74;--accent2:#5a4a86;--tint:#e9ecf6;--grad1:#2b3f66;--grad2:#4a3d72;--shadow:0 2px 8px rgba(24,32,54,.08)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Figtree",Pretendard,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;line-height:1.6}
-.wrap{max-width:680px;margin:0 auto;padding:3.5rem 1.5rem 4rem}
-.lock{display:inline-flex;align-items:center;gap:.4rem;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--accent);background:var(--tint);border-radius:999px;padding:.35rem .8rem;margin-bottom:1.4rem;font-weight:600}
-h1{font-family:"Noto Serif KR",serif;font-size:clamp(1.6rem,4vw,2.2rem);line-height:1.35;margin:0 0 .6rem;word-break:keep-all}
-.intro{color:var(--muted);font-size:1rem;margin:0 0 2.6rem;word-break:keep-all;font-family:"Noto Serif KR",serif}
-.group-label{font-size:.8rem;font-weight:700;letter-spacing:.06em;color:var(--accent2);text-transform:uppercase;
-  margin:2.2rem 0 .9rem;padding-bottom:.5rem;border-bottom:1px solid var(--line)}
-.card{display:block;background:var(--surface);border:1px solid var(--line);border-radius:14px;
-  padding:1.35rem 1.5rem;margin-bottom:.9rem;box-shadow:var(--shadow);transition:transform .12s,border-color .12s;text-decoration:none;color:inherit}
-.card:hover{transform:translateY(-2px);border-color:var(--accent)}
-.card-title{font-family:"Noto Serif KR",serif;font-weight:700;font-size:1.15rem;line-height:1.4;word-break:keep-all}
+.hero{background:linear-gradient(160deg,var(--grad1),var(--grad2));color:#fff;padding:3.4rem 1.5rem 3.2rem;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:48px;background:linear-gradient(to bottom,transparent,var(--bg))}
+.lock{display:inline-flex;align-items:center;gap:.4rem;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+  color:#fff;background:rgba(255,255,255,.16);border-radius:999px;padding:.35rem .85rem;margin-bottom:1.3rem;font-weight:600}
+.hero h1{font-family:"Noto Serif KR",serif;font-size:clamp(1.55rem,4vw,2.15rem);line-height:1.4;margin:0 auto .7rem;max-width:20ch;word-break:keep-all}
+.hero p{color:rgba(255,255,255,.82);font-size:1rem;margin:0 auto;max-width:34ch;word-break:keep-all;font-family:"Noto Serif KR",serif}
+.wrap{max-width:680px;margin:0 auto;padding:2.4rem 1.5rem 4rem}
+.group-label{font-size:.78rem;font-weight:700;letter-spacing:.07em;color:var(--accent2);text-transform:uppercase;
+  margin:2.2rem 0 1rem;display:flex;align-items:center;gap:.7rem}
+.group-label::after{content:'';flex:1;height:1px;background:var(--line)}
+.card{display:flex;gap:1rem;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:15px;
+  padding:1.4rem 1.5rem;margin-bottom:.9rem;box-shadow:var(--shadow);transition:transform .13s,border-color .13s,box-shadow .13s;text-decoration:none;color:inherit}
+.card:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 6px 18px rgba(24,32,54,.13)}
+.num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--tint);color:var(--accent);
+  font-weight:700;font-size:.9rem;display:flex;align-items:center;justify-content:center;margin-top:.15rem}
+.card-title{font-family:"Noto Serif KR",serif;font-weight:700;font-size:1.16rem;line-height:1.4;word-break:keep-all}
 .card-sub{color:var(--muted);font-size:.9rem;margin-top:.35rem;word-break:keep-all}
-.card-go{display:inline-block;margin-top:.8rem;font-size:.82rem;font-weight:600;color:var(--accent)}
-.pair{background:var(--tint);border:1px solid var(--line);border-radius:16px;padding:.6rem .8rem .2rem;margin-bottom:.9rem}
-.pair .card{box-shadow:none;background:var(--surface)}
-.pair-note{font-size:.78rem;color:var(--muted);padding:.5rem .7rem .7rem;word-break:keep-all}
-.byline{margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
-.foot{margin-top:.6rem;color:var(--muted);font-size:.74rem;line-height:1.6}
+.card-go{display:inline-block;margin-top:.75rem;font-size:.82rem;font-weight:600;color:var(--accent)}
+.pair-note{font-size:.8rem;color:var(--muted);margin:.2rem .2rem 0;word-break:keep-all;line-height:1.6}
+.solo-note{font-size:.8rem;color:var(--muted);margin:.2rem .2rem 0;word-break:keep-all;line-height:1.6}
+.byline{margin-top:2.8rem;padding-top:1.4rem;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+.foot{margin-top:.6rem;color:var(--muted);font-size:.74rem;line-height:1.7}
 </style></head><body>
-<div class="wrap">
-  <span class="lock">🔒 비공개 · 주소를 아는 사람만</span>
+<header class="hero">
+  <span class="lock">🔒 비공개 · 주소를 아는 분만</span>
   <h1>영아부 사역, 무엇이며 어떻게 지킬 것인가</h1>
-  <p class="intro">같은 주제를 두 가지 방식으로 담았습니다. 아래에서 골라 읽으시면 됩니다.</p>
-
-  <div class="group-label">한 편으로 엮은 글 — 처음 읽으신다면</div>
-  <a class="card" href="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/영아부_통합본/"><div class="card-title">영아부, 무엇이며 어떻게 결정할 것인가</div><div class="card-sub">통합본 · 본질과 결정의 방식을 한 편으로</div><span class="card-go">읽기 →</span></a>
-
+  <p>같은 주제를 두 가지 방식으로 담았습니다.</p>
+</header>
+<div class="wrap">
   <div class="group-label">두 편으로 나눈 글 — 각 주제를 깊이</div>
-  <div class="pair">
-    <a class="card" href="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/영아부_본질편/"><div class="card-title">영아부는 왜 부모와 함께 드리는 예배인가</div><div class="card-sub">본질편 · 성경과 발달의 언어로</div><span class="card-go">읽기 →</span></a>
-    <a class="card" href="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/영아부_거버넌스편/"><div class="card-title">현장의 목소리가 올라가는 통로</div><div class="card-sub">거버넌스편 · 좋은 결정은 어떻게 내려지는가</div><span class="card-go">읽기 →</span></a>
-    <div class="pair-note">본질편과 거버넌스편은 이어지는 한 쌍입니다. 본질편을 먼저 읽으시길 권합니다.</div>
-  </div>
+  <a class="card" href="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/영아부_본질편/"><span class="num">1</span><div class="card-body"><div class="card-title">영아부는 왜 부모와 함께 드리는 예배인가</div><div class="card-sub">본질편 · 성경과 발달의 언어로</div><span class="card-go">읽기 →</span></div></a>
+  <a class="card" href="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/영아부_거버넌스편/"><span class="num">2</span><div class="card-body"><div class="card-title">현장의 목소리가 올라가는 통로</div><div class="card-sub">거버넌스편 · 좋은 결정은 어떻게 내려지는가</div><span class="card-go">읽기 →</span></div></a>
+  <p class="pair-note">본질편과 거버넌스편은 이어지는 한 쌍입니다. 본질편(1)을 먼저 읽으시길 권합니다.</p>
+
+  <div class="group-label">한 편으로 엮은 글 — 짧게 한 번에</div>
+  <a class="card" href="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/영아부_통합본/"><div class="card-body"><div class="card-title">영아부, 무엇이며 어떻게 결정할 것인가</div><div class="card-sub">통합본 · 본질과 결정의 방식을 한 편으로</div><span class="card-go">읽기 →</span></div></a>
+  <p class="solo-note">위 두 편의 핵심을 한 편으로 압축한 글입니다. 시간이 없으실 때 이것 하나로 갈음하실 수 있습니다.</p>
 
   <div class="byline">글쓴이 · 이상협 집사 (M.D., M.Div.)</div>
   <div class="foot">이 모음과 각 글은 영닥터 아카이브 검색·목록에 노출되지 않습니다. 주소를 공유받은 분만 열람하실 수 있습니다.</div>
 </div>
-<script>
-// 시스템 테마 토글 대응(뷰어 설정 우선)
-try{var t=localStorage.getItem('yd-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}
-</script>
+<script>try{var t=localStorage.getItem('yd-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
 </body></html>
