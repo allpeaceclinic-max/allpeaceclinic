@@ -26,13 +26,14 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:"Figtree",Preten
 .card{display:flex;gap:1rem;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:15px;
   padding:1.4rem 1.5rem;margin-bottom:.9rem;box-shadow:var(--shadow);transition:transform .13s,border-color .13s,box-shadow .13s;text-decoration:none;color:inherit}
 .card:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 6px 18px rgba(24,32,54,.13)}
+.card.ref{background:transparent;box-shadow:none;border-style:dashed}
 .num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--tint);color:var(--accent);
   font-weight:700;font-size:.9rem;display:flex;align-items:center;justify-content:center;margin-top:.15rem}
 .card-title{font-family:"Noto Serif KR",serif;font-weight:700;font-size:1.16rem;line-height:1.4;word-break:keep-all}
+.card.ref .card-title{font-size:1.05rem}
 .card-sub{color:var(--muted);font-size:.9rem;margin-top:.35rem;word-break:keep-all}
 .card-go{display:inline-block;margin-top:.75rem;font-size:.82rem;font-weight:600;color:var(--accent)}
-.pair-note{font-size:.8rem;color:var(--muted);margin:.2rem .2rem 0;word-break:keep-all;line-height:1.6}
-.solo-note{font-size:.8rem;color:var(--muted);margin:.2rem .2rem 0;word-break:keep-all;line-height:1.6}
+.pair-note,.solo-note,.ref-note{font-size:.8rem;color:var(--muted);margin:.2rem .2rem 0;word-break:keep-all;line-height:1.6}
 .byline{margin-top:2.8rem;padding-top:1.4rem;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
 .foot{margin-top:.6rem;color:var(--muted);font-size:.74rem;line-height:1.7}
 </style></head><body>
@@ -50,6 +51,10 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:"Figtree",Preten
   <div class="group-label">한 편으로 엮은 글 — 짧게 한 번에</div>
   <a class="card" href="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/영아부_통합본/"><div class="card-body"><div class="card-title">영아부, 무엇이며 어떻게 결정할 것인가</div><div class="card-sub">통합본 · 본질과 결정의 방식을 한 편으로</div><span class="card-go">읽기 →</span></div></a>
   <p class="solo-note">위 두 편의 핵심을 한 편으로 압축한 글입니다. 시간이 없으실 때 이것 하나로 갈음하실 수 있습니다.</p>
+
+  <div class="group-label">참고할 글</div>
+  <a class="card ref" href="https://allpeaceclinic-max.github.io/allpeaceclinic/marktl/거버넌스/"><div class="card-body"><div class="card-title">거버넌스 — 청지기의 프로세스, 공의회의 분별</div><div class="card-sub">거버넌스편이 기대고 있는 거버넌스 신학의 자세한 논의</div><span class="card-go">읽기 →</span></div></a>
+  <p class="ref-note">거버넌스편이 기대고 있는 거버넌스 신학을 10개의 축으로 자세히 다룬 글입니다. (영닥터 아카이브 공개 글)</p>
 
   <div class="byline">글쓴이 · 이상협 집사 (M.D., M.Div.)</div>
   <div class="foot">이 모음과 각 글은 영닥터 아카이브 검색·목록에 노출되지 않습니다. 주소를 공유받은 분만 열람하실 수 있습니다.</div>
