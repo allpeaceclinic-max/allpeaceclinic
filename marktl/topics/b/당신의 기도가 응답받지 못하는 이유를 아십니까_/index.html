@@ -1,0 +1,201 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>당신의 기도가 응답받지 못하는 이유를 아십니까? — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">영성·제자도</span><span class="date">2026-05-06</span></div>
+  <h1 class="note-title">당신의 기도가 응답받지 못하는 이유를 아십니까?</h1>
+  
+</header>
+<article class="note">
+<blockquote>
+<p><em>2013.3.21 목요제자반 독후감 — 이상협 집사</em></p>
+</blockquote>
+<hr />
+<h2>나의 기도가 응답받지 못하는 5가지 이유</h2>
+<h3>1. 가정에서의 증거와 봉사 부재</h3>
+<blockquote>
+<p><strong>귀신 나간 사람의 동행 요청을 거절하신 예수님:</strong>
+"집으로 돌아가 하나님이 네게 어떻게 큰 일 행하신 것을 일일이 고하라"</p>
+</blockquote>
+<ul>
+<li>신앙생활의 시작 = <strong>가정</strong></li>
+<li>그리스도인의 일 = 증거로 시작</li>
+<li><strong>제1사역지, 제1선교지는 가정</strong></li>
+<li>사역에서의 응답 부재 = "가정을 돌보라"는 하나님의 메시지</li>
+</ul>
+<blockquote>
+<p>"내가 이 일을 하니 그 위에 축복해 달라는 기도였음을 고백합니다."</p>
+</blockquote>
+<hr />
+<h3>2. 나의 연약함으로 인한 넘어짐 — 엘리야의 교훈</h3>
+<ul>
+<li>성공 후에 오는 실패의 원인은 항상 <strong>내적인 문제</strong></li>
+<li>엘리야: 하나님의 도우심으로 거짓 선지자를 이겼으나, 그 후 무너짐</li>
+<li>환경을 탓하고, 불평하며 기도의 방향을 잃음</li>
+<li><strong>엘리야의 실수 → 맡기신 일이 그의 후대로 넘어감</strong></li>
+</ul>
+<blockquote>
+<p>나의 상황보다 <strong>하나님의 마음에 맞는 기도</strong>를 드려야 한다.</p>
+</blockquote>
+<hr />
+<h3>3. 탐욕적인 기도 — 잘못된 동기</h3>
+<ul>
+<li>잘못된 태도·합당치 못한 동기·이기심 = 하나님을 영화롭게 못 하는 기도</li>
+<li>"삼가 모든 탐심을 물리치라 사람의 생명이 그 소유의 넉넉한 데 있지 아니하니라"</li>
+<li>나의 필요보다 <strong>하나님의 뜻이 무엇인지를 묻는 기도</strong></li>
+</ul>
+<hr />
+<h3>4. 기도를 받는 것으로만 생각함</h3>
+<blockquote>
+<p>★ <strong>기도는 받는 것이 아니라 주는 것이다.</strong></p>
+</blockquote>
+<ul>
+<li>기도 = 대가를 치르는 것</li>
+<li>기도 = 하나님과 사람 사이에 적절한 관계를 맺는 데 시간·정력 투자</li>
+<li><strong>기도는 어떤 규칙이 아니라 관계</strong></li>
+<li>기도 = 내가 도구로 사용될 수 있도록 <strong>나를 드리는 것</strong>
+  → 즉, 내가 준비되는 것이 기도다</li>
+</ul>
+<hr />
+<h3>5. 균형을 맞추어 주시는 하나님을 모름</h3>
+<blockquote>
+<p><strong>예수님:</strong> "이는 내 사랑하는 아들이요 내 기뻐하는 자라" → 곧바로 광야에서 사탄의 시험</p>
+</blockquote>
+<ul>
+<li>하나님은 감당할 수 없는 축복으로 영혼을 잃지 않도록 <strong>축복과 멍에를 함께 주신다</strong></li>
+<li>바울의 육체의 가시 = 내적 성품을 다듬는 도구</li>
+<li>절름발이 인생이라도 → <strong>하나님 말씀을 따르는 복된 인생</strong></li>
+</ul>
+<hr />
+<h2>★ 핵심 통찰 (이상협, 2013)</h2>
+<blockquote>
+<p><strong>기도는 무엇을 받는 것이 아니라,
+하나님의 일을 위해 내가 도구로 사용될 수 있도록 나를 드리는 것이다.</strong></p>
+</blockquote>
+<ul>
+<li>알고 있는 죄 + 이기심 + 가정과의 불일치 + 말씀 불순종 = 응답 막는 네 벽</li>
+<li>가정은 모든 사역의 출발점 — 가정에서 먼저 증거되지 않은 사역은 사상누각</li>
+</ul>
+<hr />
+<h2>연결된 페이지</h2>
+<ul>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%84/">기도</a> — 응답 조건, 관계로서의 기도</li>
+<li><a class="wl" href="../../t/%EA%B0%80%EC%A0%95%EC%82%AC%EC%97%AD/">가정사역</a> — 제1사역지·제1선교지</li>
+<li><a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a> — 긴급함이 부르심 아님, 연결</li>
+</ul>
+</article>
+<div class="tagrow"></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

@@ -1,0 +1,352 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>글로벌 미션 핸드북 — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">선교</span><span class="date">2026-05-02</span></div>
+  <h1 class="note-title">글로벌 미션 핸드북</h1>
+  
+</header>
+<article class="note">
+<h1>Global Mission Handbook — 스티브 호크 · 빌 테일러</h1>
+<h2>책 개요</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>저자</td>
+<td>스티브 호크 (Steve Hoke) · 빌 테일러 (Bill Taylor)</td>
+</tr>
+<tr>
+<td>역자</td>
+<td>한철호 · 양명호</td>
+</tr>
+<tr>
+<td>출판</td>
+<td>IVP, 2014</td>
+</tr>
+<tr>
+<td>성격</td>
+<td>선교 헌신자를 위한 실전 훈련 교재</td>
+</tr>
+<tr>
+<td>적용</td>
+<td>동신교회 미션앤톡 — 선교 헌신자 멘토링 프로그램 12주 교재</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>동신 미션앤톡 12주 커리큘럼</h2>
+<p>이 책을 기반으로 이상협 집사가 동신교회에서 운영한 선교 헌신자 멘토링 프로그램:</p>
+<table>
+<thead>
+<tr>
+<th>주차</th>
+<th>주제</th>
+<th>해당 챕터</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>타문화 선교 준비 / 훈련 프로필</td>
+<td>0.5, 0.9, 52-66p</td>
+</tr>
+<tr>
+<td>2</td>
+<td>개인 영성 형성 — 하나님을 향한 갈망</td>
+<td>1.1, 1.2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>부르심 — 개인 사명 선언문</td>
+<td>1.3, 1.5</td>
+</tr>
+<tr>
+<td>4</td>
+<td>다양한 선교사 유형</td>
+<td>6과 전체</td>
+</tr>
+<tr>
+<td>5</td>
+<td>주위에 비전 나눔 / 교회·단체와 관계 맺기</td>
+<td>2.4, 2.6, 5.1, 5.2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>재정 — 후원 모집의 열쇠</td>
+<td>4.3</td>
+</tr>
+<tr>
+<td>7</td>
+<td>연애와 결혼 / 독신 여성 선교사</td>
+<td>5.5, 9.4</td>
+</tr>
+<tr>
+<td>8</td>
+<td>언어 장벽 극복</td>
+<td>—</td>
+</tr>
+<tr>
+<td>9</td>
+<td>단기선교 / 타문화 이해</td>
+<td>3.1, 3.2, 3.3, 8.5</td>
+</tr>
+<tr>
+<td>10</td>
+<td>강건하게 잘 마치기</td>
+<td>10.1, 10.2, 10.4</td>
+</tr>
+<tr>
+<td>11</td>
+<td>WEC 소개 (WINK Day)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>12</td>
+<td>예배와 파송식</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>핵심 신학: 세 가지 소명 구분</h2>
+<table>
+<thead>
+<tr>
+<th>소명</th>
+<th>대상</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>The call to mission</strong></td>
+<td>모든 그리스도인</td>
+<td>선교적 삶</td>
+</tr>
+<tr>
+<td><strong>The call to missionary</strong></td>
+<td>선교사</td>
+<td>타문화 파송</td>
+</tr>
+<tr>
+<td><strong>The call to missions</strong></td>
+<td>특정 사역자</td>
+<td>달란트·직업적 소명</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>부르심을 받는 네 가지 길</h2>
+<ol>
+<li><strong>신비를 통한 부르심</strong> — 베드로-고넬료, 바울-마게도니아, 이사야, 요나
+   → 통상적이지 않으므로 주의</li>
+<li><strong>위임을 통한 부르심</strong> — 행 13장 안디옥 교회
+   → 장로나 교회 리더로부터 은사가 있다는 말을 가볍게 여기지 말라</li>
+<li><strong>상식을 통한 부르심</strong> — 빌립이 에티오피아 내시를 만났을 때 (행 8장)
+   → 지속적으로 만나는 사람, 독서, 메일을 통해서도</li>
+<li><strong>순종을 통한 부르심</strong> — 룻/나오미 스타일</li>
+</ol>
+<hr />
+<h2>바울의 프론티어 정신 (롬 15:19-24)</h2>
+<blockquote>
+<p>"내가 예루살렘으로부터 두루 행하여 일루리곤까지 그리스도의 복음을 편만하게 전하였노라"
+"이 지방에 일할 곳이 없고" (롬 15:23)</p>
+</blockquote>
+<p>납득이 안 가는 이 말의 뜻:
+- 에베소·빌립보 등에 불신자가 아직 많은데 왜 일할 곳이 없다고 하는가?
+- 작더라도 <strong>교회가 세워졌기 때문</strong> — 이제 그것은 교회의 사역
+- 바울은 <strong>교두보</strong>가 세워지면 다음 프론티어로 나간다</p>
+<blockquote>
+<p><strong>선교사 마인드 vs. 목회자 마인드</strong>
+- 목회자: 세워진 교회를 든든히 하는 것
+- 선교사: 부르지 않는 곳, 터가 없는 곳을 향하는 것</p>
+<p>"선교는 초청받아 가는 곳이 아니다. 환영받는 곳은 선교지가 아니다."</p>
+</blockquote>
+<hr />
+<h2>9과. 평생학습</h2>
+<blockquote>
+<p>"정체기에 빠지는 것을 막는 가장 중요한 한 가지 해결책은
+잘 개발된 학습 자세다" — 로버트 클린터 (풀러 신학교)</p>
+</blockquote>
+<p><strong>FAT 원칙:</strong>
+- <strong>F</strong>lexible / <strong>A</strong>daptable / <strong>T</strong>eachable</p>
+<p><strong>약함과 치유의 여정:</strong>
+<code>Stripping (벗겨내기) → Wrestling (씨름)
+    → Transformation (변화) → Expansion (확장)</code></p>
+<blockquote>
+<p>약함을 직시하고 받아들일 때 하나님이 치유하신다
+치유된 그 상처(Scar)가 다른 사람에게 도움이 된다</p>
+</blockquote>
+<ul>
+<li>리더의 90%가 고립을 경험한다</li>
+<li>사색하는 사역자 (Reflective Practitioners)</li>
+<li>연간 독서 목표: 10-15권</li>
+</ul>
+<hr />
+<h2>10과. 강건하게 잘 마치기</h2>
+<blockquote>
+<p>"측정할 수 있는 결과가 아니라
+<strong>궁극적인 목표에서 눈을 떼지 않도록 하는 계속적인 격려</strong>가 필요하다"</p>
+</blockquote>
+<h3>잘 마치지 못하는 이유</h3>
+<p>잘못된 재정관리 / 성적인 죄 / 가정 문제 /
+권력 남용 / 자만과 야망 / 이양하지 못하는 무능력</p>
+<h3>예방 가능한 중도 포기의 원인</h3>
+<ol>
+<li>영성 형성과 성품의 부적절함</li>
+<li>섬김의 희생에 대한 오해</li>
+<li>대인관계 갈등 (가족·동료·현지인)</li>
+<li>사역에 맞는 지식과 목적의식의 부재</li>
+</ol>
+<h3>잘 마치는 리더의 6가지 특징</h3>
+<ol>
+<li>하나님과 생명력 넘치는 관계를 끝까지 유지</li>
+<li>배우려는 자세를 유지하고 여러 곳에서 배움</li>
+<li>예수님을 닮은 성품</li>
+<li>진리의 삶으로 하나님의 약속이 실재함을 보임</li>
+<li>하나 이상의 궁극적인 공헌</li>
+<li>운명 의식을 갖고 살며, 그것이 이루어지는 것을 봄</li>
+</ol>
+<hr />
+<h2>CMF·의료 선교 연결</h2>
+<p><strong><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a>:</strong>
+- 의료인도 세 가지 소명(mission/missionary/missions) 중 어디에 있는지 물어야 한다
+- 바울의 프론티어 정신 → 의료 기술이 닿지 않는 곳으로 나가는 의료 선교사
+- Stripping→Transformation 여정 = 번아웃 의료인의 회복 구조
+- 잘 마치지 못하는 이유 중 재정·가정 문제는 의료인에게도 동일</p>
+<p><strong><a class="wl" href="../../t/CMF_VPM%EC%B2%A0%ED%95%99/">CMF_VPM철학</a>:</strong>
+- 잘 마치는 리더 6가지 특징 = CMF가 세우고자 하는 사람의 기준
+- 멘토 구조(상위/동료/멘티) = CMF 학사원 사역의 틀</p>
+<hr />
+<h2>연결된 페이지</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a> — 세 가지 소명 구분, 부르심의 네 가지 길</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%ED%95%99/">선교학</a> — 프론티어 정신, 선교사 마인드</li>
+<li><a class="wl" href="../../t/%EB%A6%AC%EB%8D%94%EC%8B%AD/">리더십</a> — 잘 마치는 리더, FAT 원칙</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a> — 의료 선교사의 소명</li>
+<li><a class="wl" href="../../t/CMF_VPM%EC%B2%A0%ED%95%99/">CMF_VPM철학</a> — 사람을 세우는 기준</li>
+<li><a class="wl" href="../../b/%EA%B5%90%ED%9A%8C%EC%99%80%EC%84%A0%EA%B5%90_%EC%86%90%EC%B0%BD%EB%82%A8/">교회와선교_손창남</a> — 소달리티·책무 구조와 연결</li>
+<li><span class="wl-dead" title="위키 내부 링크">동신교회</span> — 동신 미션앤톡 프로그램 운영</li>
+</ul>
+</article>
+<div class="tagrow"></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

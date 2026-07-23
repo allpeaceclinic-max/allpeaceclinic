@@ -1,0 +1,623 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>디즈니 병원의 서비스 리더십 (If Disney Ran Your Hospital) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">리더십·일·경영</span><span class="author">Fred Lee</span><span class="date">2026-06-18</span></div>
+  <h1 class="note-title">디즈니 병원의 서비스 리더십 (If Disney Ran Your Hospital)</h1>
+  
+</header>
+<article class="note">
+<p><strong>저자</strong>: Fred Lee<br />
+<strong>분류</strong>: 의료 리더십 / 환자 경험 / 조직 문화</p>
+<blockquote>
+<p>"환자들은 질병이 치료된 방식이 아니라 한 인간으로서 자신이 돌보아진 방식을 가지고 자신의 경험을 판단한다." (본문)</p>
+</blockquote>
+<hr />
+<h2>1. 핵심 명제 — 만족도 vs 충성도</h2>
+<p>Fred Lee는 병원을 관리하다 디즈니의 임원으로 이직한 경력을 가진 저자로, "디즈니가 병원을 경영한다면"이라는 화두에서 출발한다. 핵심 구분은 <strong>만족도(Satisfaction)</strong>와 <strong>충성도(Loyalty)</strong>의 차이다.</p>
+<ul>
+<li><strong>만족도</strong>: 기대를 충족시키는 것. 측정 가능하지만 충성도를 보장하지 않는다.</li>
+<li><strong>충성도</strong>: "우리가 기대하지 않았는데 기억에 남을 좋은 일이 일어났을 때 생긴다" (p.86)</li>
+</ul>
+<blockquote>
+<p>"만약 우리가 고객을 위해 뭔가 특별한 경험을 제공하지 않는다면, 고객은 우리를 기억하지 못할 것이다. 고객들이 우리를 기억하지 못한다면, 우리를 다시 찾아올 일은 없을 것이다." (p.87)</p>
+<p>"병원의 미래는 환자 만족도가 아니라 환자 충성도에 달려있다." (p.85)</p>
+</blockquote>
+<p>충성심이나 불만족의 경험에서 절대로 빠지지 않는 것은 <strong>스토리</strong>다 (p.89). 환자가 퇴원 후 가족에게 말하는 이야기 — 그것이 병원의 평판을 결정한다.</p>
+<h3>핵심 인사이트: 임상 역량은 기본값이다</h3>
+<p>프레스 개니협회의 환자 만족도 결정 항목 Top 10을 보면, "내원 기간 동안 나의 걱정이나 불만에 대한 반응", "나의 개인적이고 특별한 필요에 보여진 관심의 정도" 같은 요소가 상위를 차지한다. 의사의 백과사전 같은 암기능력은 목록에 없다. 가장 높은 상관관계를 보인 문항들은 의료진의 임상 역량이 아니라 <strong>인간으로서 자신이 어떤 대우를 받았는지에 대한 인식</strong>과 관련된 것이다.</p>
+<blockquote>
+<p>"고객 만족은 최고의 임상 수준을 지닌 쪽으로 향하지 않는다."</p>
+</blockquote>
+<hr />
+<h2>2. 결정적 순간 (Moments of Truth)</h2>
+<p>환자가 병원을 평가하는 것은 의료 기술이 아니라 <strong>접점의 순간들</strong>이다. "결정적 순간"이란 <strong>긍정적이거나 부정적인 인상을 창출하는 어떤 상호작용</strong> (p.51)을 뜻한다.</p>
+<ul>
+<li>대기, 첫 인사, 검사 안내, 퇴원 과정 — 모든 순간이 기억을 만든다</li>
+<li>불쾌한 경험 하나가 100번의 좋은 경험을 지운다</li>
+<li><strong>"첫인상은 마지막 인상이다"</strong> — 처음 5분이 환자 경험 전체를 결정한다</li>
+</ul>
+<blockquote>
+<p>"조직이 효율보다 배려를 더 중시하면 환자가 중요하게 여기는 것과 회사가 가치를 두는 것이 비로소 일치하게 된다." (p.59)</p>
+</blockquote>
+<h3>결정적 순간 브레인스토밍 3요소 (p.178)</h3>
+<table>
+<thead>
+<tr>
+<th>요소</th>
+<th>질문</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>우리가 하는 일</td>
+<td>실제 수행해야 할 업무는 무엇인가?</td>
+</tr>
+<tr>
+<td>손님이 알고 느껴야 할 것</td>
+<td>환자가 이 순간 느껴야 할 감정은?</td>
+</tr>
+<tr>
+<td>기억에 남는 방식으로 관계 맺기</td>
+<td>이 순간을 기억에 남게 할 말과 행동은?</td>
+</tr>
+</tbody>
+</table>
+<h3>환자 접점 8가지 행동 (p.177)</h3>
+<ol>
+<li>환자의 이름을 부르며 반갑게 인사하고 자기를 소개한다</li>
+<li>방안에 있는 꽃이나 가족 사진 등 눈에 띄는 점에 대해 이야기한다</li>
+<li>방 안에 다른 사람이 있다면 그들과도 인사한다</li>
+<li>필요로 하는 것이나 설명이 필요한 부분이 있는지 묻는다</li>
+<li>환자의 감정 표현에 공감을 표시한다</li>
+<li>나갈 때 문을 열어둘지/닫을지/약간만 열어둘지 묻는다</li>
+<li>입원 중 매일의 대화를 기억하며 이어나간다</li>
+<li><strong>이 모든 것을 본래 하려던 업무를 수행하기 전에 한다</strong></li>
+</ol>
+<hr />
+<h2>3. 공감 — 상상력이 먼저다</h2>
+<p>Fred Lee는 <strong>공감(Empathy)</strong>을 감정이 아니라 <strong>상상력의 훈련</strong>으로 정의한다.</p>
+<blockquote>
+<p>"상대방의 입장에 서서 상상력을 동원하는 순간, 우리는 환자들이 경험하고 있는 것과 동일한 감정을 느끼고 비로소 공감할 수 있다." (p.217)</p>
+<p>"분노의 감정을 효과적으로 관리하는 데 있어서 가장 중요한 요소는 공감이다. 감정에 효과적인 것은 상상력이다. 상상력의 목적은 공감을 통해 자기 방어를 극복하는 것이다." (p.227)</p>
+<p>"상상력이 의지력보다 더 강력한 힘을 갖고 있다." (p.204)</p>
+</blockquote>
+<h3>휫필드의 공감 사례</h3>
+<p>김성민은 조지 휫필드의 전기를 통해 공감의 위력을 설명한다. 존 웨슬리와 찰스 웨슬리는 유능했지만 조지아 선교에서 좌절했다. 학자로서의 삶 외에 경험이 없었기에 사람을 보는 통찰력이 부족했다. 반면 휫필드는 옥스퍼드 진학 전 여관에서 사람을 섬겼고, 근로장학생으로 동기들의 수종을 들며 인간에 대한 이해와 공감 능력을 키웠다.</p>
+<p>아메리카로 향하는 배 안에서 휫필드는 뱃멀미와 질병으로 고생하는 사람들을 찾아다니며 차, 설탕, 수프를 나눠주고 이렇게 말했다:</p>
+<blockquote>
+<p>"수많은 가여운 사람들을 보면서 그들의 아픔이 마음으로 전해져와 내 일인 듯 가슴이 아팠다."</p>
+</blockquote>
+<p>배에는 군의관이 있었고, 아메리카 선교가 목적이었기에 배 안의 사람들은 그의 주요 타겟이 아니었다. 그러나 그는 <strong>그들의 아픔으로 인해 자신도 아픔을 느끼고 있었다</strong>. 이런 헌신에 감화받은 선장은 자기 선실을 기도 공간으로 내어주고, 갑판에서 <a class="wl" href="../../t/%EC%98%88%EB%B0%B0/">예배</a>를 드릴 수 있게 허락했다.</p>
+<h3>공감의 핵심 원리들</h3>
+<ul>
+<li>"어떤 단어를 사용하느냐가 아니고 그 말에 진심이 담겨 있느냐 하는 것. 진정한 공감이 실리게 하는 열쇠는 상상력이다." (p.228)</li>
+<li>"아무리 화가 났어도 누군가 진심으로 공감해 준다고 느끼면 마음이 가라앉기 마련이다." (p.230)</li>
+<li>"말을 전하는 말투와 목소리 톤이다." (p.231)</li>
+<li>"우리 안에 숨은 진심은 생각보다 훨씬 강력하고, 의도치 않게 드러난다." (p.213)</li>
+</ul>
+<hr />
+<h2>4. 공감 훈련 — 연기 수업과 상상력</h2>
+<p>공감은 타고나는 성품인가, 훈련 가능한 기술인가? Fred Lee의 답은 <strong>훈련 가능하다</strong>는 것이다.</p>
+<blockquote>
+<p>"그들에게 필요한 것은 상상하고 공감하는 방법을 배울 수 있는 연기수업이다." (p.216)</p>
+<p>"환자들과 같은 입장에 놓여진다면 어떨까를 그녀가 생각(상상)했기 때문에 그녀는 그들과 공감하게 된 것이다." (p.212)</p>
+<p>"공감에는 스트레스에 대한 치유 능력이 있으며 동정심은 환자 충성도에 주요한 영향력을 미친다." (p.214)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>동기부여 4단계</th>
+<th>설명</th>
+<th>힘의 원천</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1단계</td>
+<td>당근과 채찍</td>
+<td>외적 보상/벌칙 (가장 약함, p.202)</td>
+</tr>
+<tr>
+<td>2단계</td>
+<td>의무감</td>
+<td>"해야 하니까" — 내키지 않아도 한다</td>
+</tr>
+<tr>
+<td>3단계</td>
+<td>상상력</td>
+<td>의지력보다 강력 (p.204)</td>
+</tr>
+<tr>
+<td>4단계</td>
+<td>습관</td>
+<td>아무 생각 없이 하는 행동 — 최고 단계</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"매니저가 언제나 가장 완벽하게 부합하는 인재를 찾을 수 있는 건 아니다. 두 번째로 중요한 임무는 직원들을 개발하고 동기 부여하여 그 역할을 성공적으로 수행하는 데 필요한 습관을 갖게 하는 것이다." (p.207)</p>
+</blockquote>
+<p><strong>신경과학적 근거</strong>: ACC(전전두대상피질)는 공감·긍휼의 뇌신경 기반으로, 사용할수록 강화된다 → <a class="wl" href="../../b/%EB%87%8C%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A4%EA%B3%84_%ED%8B%B0%EB%A8%B8%EC%8B%9C%EC%A0%9C%EB%8B%9D%EC%8A%A4/">뇌하나님의설계_티머시제닝스</a>. 공감은 하나님 형상(성품)이면서 동시에 훈련 가능한 근육이다.</p>
+<hr />
+<h2>5. 자발성과 헌신의 문화</h2>
+<blockquote>
+<p>"좋은 조직에서 위대한 조직으로 나아가기 위해서는 순응의 문화가 아닌 <strong>헌신의 문화</strong>가 있어야 한다. 헌신이란 조직의 성공을 위해 대다수의 직원들이 주인의식을 가지고 리더들과 같은 정도로 전념하는 것을 말한다." (p.309)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>순응의 문화</th>
+<th>헌신의 문화</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>규정을 따른다</td>
+<td>의미를 알기에 자발적으로 한다</td>
+</tr>
+<tr>
+<td>해고당하지 않기 위해 한다</td>
+<td>주인의식으로 전념한다</td>
+</tr>
+<tr>
+<td>책임감 있어 <em>보이는</em> 방법을 가르침</td>
+<td>실제로 책임을 갖고 일하도록 권한 부여</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"직원들에게 좀 더 책임감 있는 사람처럼 보이는 방법을 가르치기보다는 그들이 실제로 책임을 가지고 일할 수 있도록 권한을 부여해야 한다. 고객은 말보다는 행동을 보고 조직을 평가한다." (p.144)</p>
+<p>"자발성이 고객 충성도에 굉장히 큰 영향을 미친다는 점, 자발성은 현장 직원들이 현장에서 즉각적으로 문제를 해결할 수 있는 능력으로 정의되었다." (p.165)</p>
+<p>"구조가 문화를 결정한다. 가장 중요한 단 하나의 변화는 자발성." (p.142)</p>
+</blockquote>
+<h3>패러다임 전환 5가지 (p.320)</h3>
+<table>
+<thead>
+<tr>
+<th>기존</th>
+<th>전환</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>서비스</td>
+<td>→ <strong>경험</strong></td>
+</tr>
+<tr>
+<td>리더십</td>
+<td>→ <strong>시민의식</strong></td>
+</tr>
+<tr>
+<td>권한부여</td>
+<td>→ <strong>주인의식</strong></td>
+</tr>
+<tr>
+<td>의무</td>
+<td>→ <strong>책임감</strong></td>
+</tr>
+<tr>
+<td>하향식</td>
+<td>→ <strong>어디에서나</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"병원 직원들이 자신의 일을 환자들에게 '훌륭한 서비스'를 제공하는 차원이 아닌 기억에 남는 인상적인 경험을 제공하는 일이라고 생각할 때, 그러한 전환은 실질적인 것이고, 진정한 패러다임의 전환이 이루어지게 된다." (p.171)</p>
+</blockquote>
+<hr />
+<h2>6. 서비스 리커버리 — 실패를 충성의 기회로</h2>
+<p>실수나 불만이 생겼을 때 어떻게 대응하느냐가 <strong>충성도의 분기점</strong>이다.</p>
+<blockquote>
+<p>"문제가 발생했을 때 탁월한 문제 해결 과정 없이는 우리는 고객 충성심을 얻을 수 없다." (p.141)</p>
+</blockquote>
+<ul>
+<li>불만을 표현한 환자는 <strong>기회</strong>다 — 침묵하는 불만이 더 위험하다</li>
+<li>리커버리의 3단계: <strong>듣기 → 인정하기 → 행동하기</strong></li>
+<li>변명보다 공감이 먼저: "그렇게 느끼셨군요" → 관계 회복의 문이 열린다</li>
+</ul>
+<blockquote>
+<p>"병원의 전 부서는 환자들이 겪지 말아야 할 실망과 불편함의 목록을 만들고, 각각의 경우에 자동적으로 실행되어야 할 적절한 서비스 리커버리 시스템을 고안해야 한다." (p.161)</p>
+<p>"손님을 만족시킬 수 있다면 당신은 언제나 정당하다." (p.137)</p>
+</blockquote>
+<hr />
+<h2>7. 불만족의 동력 — 디즈니의 성장 사이클</h2>
+<p>디즈니는 만족이 아니라 <strong>건전한 불만족</strong>을 동력으로 삼는다.</p>
+<blockquote>
+<p>"불만은 발전의 아버지이다. 자기만족은 위대함의 적이다." (p.238)</p>
+<p>"끊임없이 노력하게 만드는 원천은 바로 결코 만족하지 않는 것이다." (p.241)</p>
+</blockquote>
+<p>```
+현상태에 대한 불만 + 이렇게 될 수 있다는 꿈 + 어떻게에 대한 지식</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>조직의 타성 (p.238)
+```</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>사이클 단계</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>계획</td>
+<td>현상 분석, 목표 설정</td>
+</tr>
+<tr>
+<td>실행</td>
+<td>서비스 개선 시도</td>
+</tr>
+<tr>
+<td>측정</td>
+<td>결과 평가</td>
+</tr>
+<tr>
+<td>불만족</td>
+<td>결과에 만족하지 않음</td>
+</tr>
+<tr>
+<td>재시작</td>
+<td>→ 경사를 오르는 거대한 공 (p.246)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"타인과의 경쟁심은 오늘보다 내일 더 잘하고 싶은 욕구에 비해 강력한 동기 부여 요인이 아니다." (p.244)</p>
+<p>"꿈은 발전의 필수요소이다. 헌신과 동기를 불러일으키는 것은 다름 아닌 꿈이다." (p.240, 313)</p>
+</blockquote>
+<hr />
+<h2>8. 리더십과 인재 — 채용, 인정, 자율성</h2>
+<h3>채용: 기술보다 재능</h3>
+<blockquote>
+<p>"기술보다는 고객과 친밀한 관계를 형성하는 '재능'과 그들이 수행하는 핵심 역할에 근거해 직원들을 채용하게 함으로써 업무의 수준을 높이는 것이다." (p.183)</p>
+<p>"컴퓨터 기술이나 보험코드는 배울 수 있지만 소위 싹싹한 성격 같은 재능이란 타고나는 것이다." (p.185)</p>
+<p>"이 사람이 행복한가? 그리고 똑똑한가? 행복한 사람이면 고객을 행복하게 만들 수 있습니다." (p.186)</p>
+</blockquote>
+<h3>인정: 보상의 역설</h3>
+<blockquote>
+<p>"사람들은 올바른 일을 한 것에 대해 인정을 받고 싶은 것이지, 상을 받고 싶은 것이 아니다." (p.268)</p>
+<p>"보상은 실제로 애초에 그것이 장려하고자 했던 내적인 동기와 소중한 가치를 소멸시킬 수 있다." (p.269)</p>
+<p>"언제나 한결같이 자신의 업무를 수행하는 직원들을 인정해주고 칭찬하는 데 결코 인색해서는 안 된다." (p.180)</p>
+</blockquote>
+<h3>자율성과 리더의 자신감</h3>
+<blockquote>
+<p>"자율성과 결정권을 부여하는 것이야말로 훌륭한 직원들을 근속하게 만드는 비결." (p.138)</p>
+<p>"훌륭한 리더들은 능력 있고 자신감 있는 인재들을 고용하여 그들이 실력을 발휘할 수 있도록 풀어줄 만큼 충분한 자신감을 갖고 있다." (p.150)</p>
+</blockquote>
+<hr />
+<h2>9. 지행격차 — 아는 것과 하는 것</h2>
+<blockquote>
+<p>"시스템을 개선하는 방법을 아는 것과 그것을 실제로 하는 것은 별개의 문제다." (p.299)</p>
+<p>"어떻게를 묻는 것은 행동을 취하지 않으려는 가장 흔한 수단이다." (p.303)</p>
+<p>"방법을 몰라서 문제가 생기는 경우는 거의 없다. 무관심과 의존성, 낮은 자신감이라는 습관들을 깰 만큼 충분히 원하지 않는다는 것이 문제다." (p.306)</p>
+<p>"행동하면서 배운다면 지행격차는 존재하지 않는다." (p.298)</p>
+<p>"널리 공유된 가치와 사람들이 일반적으로 원하는 행동들을 매일매일 실천하는 일관성이 디즈니의 비결이다." (p.289)</p>
+</blockquote>
+<hr />
+<h2>개인 적용 — 김성민의 응급실 실험</h2>
+<p>김성민은 이 책을 읽고 응급실에서 2가지를 바꿔보기로 했다.</p>
+<p><strong>첫째, 듣는 것.</strong> 통계상 의사가 환자의 말을 중간에 자르고 자기 말을 시작하는 데 3초가 걸린다. 처음 환자를 만났을 때 최대한 말을 자르지 않도록 노력한 결과, 환자의 말을 자르지 않는 데는 <strong>고작 1분만 더 투자</strong>하면 되었다. 그 1분 동안 공감을 몇 번이나 표현해줄 수 있었다.</p>
+<p><strong>둘째, 먼저 찾아가기.</strong> 환자에게 중간에 한두 번 먼저 찾아가서 설명하고 관심을 표현해주는 것. 시간이 허락할 때마다 해보니 효과가 좋았다.</p>
+<blockquote>
+<p>"고작 2가지를 바꿨을 뿐인데 퇴원하면서 고마웠다고 말하는 사람이 부쩍 늘어났다. 특별히 더 많은 조치를 취하거나 입원을 빨리 시켜주지도 못했는데, 이야기를 들어준 것만으로도 고마웠다고 말하는 환자를 보며 '이렇게까지 달라지나'라는 생각이 들었다."</p>
+</blockquote>
+<p>이전까지 의사와 환자는 적대관계였다. 의사 입장에서 환자는 수고를 무시하고 몰라주는 사람이었고, 환자 입장에서 의사는 원하는 것에 관심 가져주지 않는 사람이었다. <strong>공감과 관심이 이 관계를 근본적으로 바꾸었다.</strong></p>
+<hr />
+<h2>환대(Hospitality)와의 교차점</h2>
+<p>Fred Lee의 서비스 철학은 <a class="wl" href="../../t/%ED%99%98%EB%8C%80/">환대</a>의 신학적 원리, 그리고 <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">의료인으로 산다는 것은?</a> 강의의 "환대의 공간" 개념과 놀라울 정도로 겹친다. 세 갈래의 목소리가 서로 다른 맥락(디즈니/다문화교회/의료현장)에서 같은 원리에 도달한다.</p>
+<h3>1. 병원 = 환대의 공간</h3>
+<blockquote>
+<p>"진료실이나 병원은 길 잃고 두려움에 떠는 나그네를 따뜻하게 맞이하는 <strong>'환대의 공간(Hospitality)'</strong>이 되어야 합니다. 치유자는 단순히 병을 고치는 기술자가 아니라, 내 마음속에 환자가 편히 쉴 수 있는 <strong>'빈 공간'을 기꺼이 내어주는 사람</strong>입니다." — 의료인으로 산다는 것은?</p>
+</blockquote>
+<p>Fred Lee는 이것을 경영 언어로 이렇게 말한다:</p>
+<blockquote>
+<p>"조직이 효율보다 배려를 더 중시하면 환자가 중요하게 여기는 것과 회사가 가치를 두는 것이 비로소 일치하게 된다." (p.59)</p>
+</blockquote>
+<p><strong>'빈 공간을 내어주는 것'</strong>과 <strong>'배려를 효율보다 우선하는 것'</strong>은 같은 움직임이다. 하나는 영적 언어로, 하나는 경영 언어로 표현했을 뿐이다.</p>
+<h3>2. "존귀한 손님" vs "케이스" — 비인격화의 함정</h3>
+<blockquote>
+<p>"환자를 고쳐야 할 대상, 실적을 위한 케이스가 아니라 <strong>존귀한 손님으로 맞이할 때</strong>, 우리는 진료실에서 그리스도 그분을 대접하는 신비로운 만남의 기쁨을 누리게 됩니다." — 의료인으로 산다는 것은?</p>
+</blockquote>
+<p>이 강의는 비인격화의 현실을 생생히 고발한다: "환자는 고통받는 인격체가 아니라, 화면의 바코드처럼 아침 회진 전까지 그저 풀어치워야 할 '태스크(Task)'나 질병 덩어리로 전락하게 됩니다." 이것은 환대의 정반대 — <strong>반(反)환대</strong>다.</p>
+<table>
+<thead>
+<tr>
+<th>반환대 (비인격화)</th>
+<th>환대</th>
+<th>Fred Lee의 언어</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>환자 = 태스크, 질병 덩어리</td>
+<td>환자 = 존귀한 손님</td>
+<td>서비스 → <strong>경험</strong> (p.320)</td>
+</tr>
+<tr>
+<td>컨베이어 벨트 같은 병원</td>
+<td>환대의 공간</td>
+<td>효율 → <strong>배려</strong> (p.59)</td>
+</tr>
+<tr>
+<td>차트 번호로 부름</td>
+<td>이름을 부르며 인사</td>
+<td>환자 접점 8행동 1번 (p.177)</td>
+</tr>
+<tr>
+<td>"내가 볼 환자가 아니다"</td>
+<td>기꺼이 다가가는 근접성</td>
+<td>먼저 찾아가기</td>
+</tr>
+</tbody>
+</table>
+<h3>3. 긍휼·공감·상상력 — 세 언어, 하나의 원리</h3>
+<p>세 맥락이 환대의 동력을 각기 다른 언어로 설명하지만, 가리키는 곳은 같다:</p>
+<table>
+<thead>
+<tr>
+<th>맥락</th>
+<th>핵심 용어</th>
+<th>정의</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>의료인으로 산다는 것은?</td>
+<td><strong>긍휼</strong> (σπλαγχνίζομαι)</td>
+<td>선한 사마리아인이 "불쌍히 여기는" 마음 — 자격이 아닌 <strong>근접성</strong>의 문제</td>
+</tr>
+<tr>
+<td>Fred Lee</td>
+<td><strong>공감</strong> (Empathy)</td>
+<td>"상대방의 입장에 서서 상상력을 동원하는 순간" (p.217)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">신치헌</span></td>
+<td><strong>대긍휼의 환대</strong></td>
+<td>"우리가 먼저 환대 받은 자"라는 인식에서 출발 (p.213)</td>
+</tr>
+</tbody>
+</table>
+<p>존 놀랜드의 통찰 — 선한 사마리아인 비유의 핵심은 "저 사람이 내 이웃일 <strong>자격</strong>이 있는가?"가 아니라 "내가 그 환자의 이웃이 <strong>되어 주었는가?</strong>"라는 <strong>근접성(Proximity)</strong>의 문제 — 은 Fred Lee의 "먼저 찾아가기"와 정확히 같은 구조다. 김성민이 응급실에서 환자를 먼저 찾아간 것, 휫필드가 자기 타겟도 아닌 병자들에게 다가간 것, 모두 근접성의 실천이다.</p>
+<h3>4. 상처 입은 치유자 = 공감의 원천</h3>
+<blockquote>
+<p>"치유자가 자신의 상처와 약점을 숨기지 않고 그것을 통해 환자의 고통에 다가갈 때, 기계적인 치료를 넘어선 진정한 영적 치유가 시작됩니다." — 의료인으로 산다는 것은? (헨리 나우웬)</p>
+</blockquote>
+<p>Fred Lee가 "공감은 상상력의 훈련"이라고 한다면, 나우웬은 한 걸음 더 나아간다 — <strong>내 상처 자체가 공감의 통로</strong>가 된다. 이상협 누가의 하의도 실패담이 이를 증명한다. 피곤함을 핑계로 독거 할머니의 마지막 부름을 외면한 그 뼈아픈 경험이, 이후 "환자가 나를 부르는 콜은 생명의 부름"이라는 흔들리지 않는 나침반이 되었다. 이것은 Fred Lee의 "결정적 순간"이 가장 극단적인 형태로 나타난 사례다.</p>
+<h3>5. 환대의 장애물 — 교만의 세 얼굴</h3>
+<table>
+<thead>
+<tr>
+<th>환대의 장애물 (<span class="wl-dead" title="위키 내부 링크">신치헌</span>)</th>
+<th>의료 현장의 장애물 (의료인으로 산다는 것은?)</th>
+<th>Fred Lee의 언어</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>문화 우월주의 (p.132)</td>
+<td>특권 의식·교만 — "의원아 너를 고쳐라" (눅 4:23)</td>
+<td>전문가적 교만</td>
+</tr>
+<tr>
+<td>무의식적 차별</td>
+<td>비인격화 — 질병 케이스로만 봄</td>
+<td>임상 역량 만능주의</td>
+</tr>
+<tr>
+<td>동일집단원리 (p.128)</td>
+<td>"내가 볼 환자가 아니다"</td>
+<td>회피 — 작은 예절의 기회 상실 (p.38)</td>
+</tr>
+</tbody>
+</table>
+<p>해법도 수렴한다. 신치헌은 "오직 복음만이", 이상협 누가는 "<a class="wl" href="../../t/%EA%B8%8D%ED%9C%BC/">긍휼</a>의 동기 점검"을, Fred Lee는 "상상력"을 말하지만, 셋 모두 <strong>자기 방어기제를 극복하고 타자의 세계로 들어가는 것</strong>을 가리킨다.</p>
+<h3>6. 3단계 구현 = 환대의 완성</h3>
+<p>다니엘 설마시의 3단계 영성 구현은 Fred Lee의 프레임워크와 정확히 대응한다:</p>
+<table>
+<thead>
+<tr>
+<th>설마시 (의료인으로 산다는 것은?)</th>
+<th>Fred Lee</th>
+<th>환대의 언어</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1단계: <strong>기술적 탁월성</strong></td>
+<td>임상 역량은 기본값</td>
+<td>환대의 전제조건 (역량 없는 환대는 무책임)</td>
+</tr>
+<tr>
+<td>2단계: <strong>인격적 만남</strong></td>
+<td>공감·결정적 순간·환자 접점 8행동</td>
+<td>환대의 실천 — 빈 공간을 내어줌</td>
+</tr>
+<tr>
+<td>3단계: <strong>초월적 연결</strong></td>
+<td>— (Fred Lee에겐 없는 차원)</td>
+<td>환대의 완성 — 진료실에서 그리스도를 대접함</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Fred Lee의 한계는 3단계에서 드러난다. 경영학적 공감은 "고객 충성도"에서 멈추지만, 기독의료인의 환대는 <strong>진료실의 만남 자체가 성례적(Sacramental) 사건</strong>이 되는 초월적 차원으로 나아간다.</p>
+</blockquote>
+<hr />
+<h2>기독교적 연결 — 의료선교의 맥락</h2>
+<p><em>(HAMs 스터디 그룹 적용)</em></p>
+<ul>
+<li>디즈니의 "마법"은 결국 <strong>사람을 귀하게 여기는 것</strong> — 하나님의 형상론(창 1:27)과 연결</li>
+<li>임상 역량 + 인간적 돌봄 = <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a>의 통합적 모델</li>
+<li><span class="wl-dead" title="위키 내부 링크">크리스토퍼라이트</span>: "메신저와 메시지는 분리될 수 없다" → 의사의 태도 자체가 복음의 메시지</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a>의 성육신적 원리: 환자의 세계로 들어가는 것 = 공감의 신학적 근거</li>
+<li>서비스 리커버리 = 잘못을 인정 → 관계 회복 → 신뢰 재건 — 복음의 구조와 동일</li>
+</ul>
+<blockquote>
+<p>"만약 모든 세상이 무대라면, 연기는 우리 자신이 다른 사람들의 경험에 감동할 수 있게 함으로써 세상이 이해와 사랑으로 연결되게 하는 수단이다." (p.197)</p>
+</blockquote>
+<hr />
+<h2>미해결 질문</h2>
+<h3>Q1. 헌신의 문화는 어떻게 지속 가능하게 만들어지는가?</h3>
+<p>vault에서 찾은 실마리:
+- <strong>소명의 재정의</strong>: 번아웃은 "일=소명" 공식으로만 볼 때 발생. 소명은 일 자체가 아니라 하나님과의 관계에서 흘러나온다 → <span class="wl-dead" title="위키 내부 링크">공동선을추구하는비즈니스</span>
+- <strong>리추얼의 역할</strong>: 정기적 영적·심리적 리추얼이 번아웃을 막는 실천적 도구 → <a class="wl" href="../../t/%ED%98%84%EB%8C%80%EC%9D%B8%EC%9D%98%EB%A6%AC%EC%B6%94%EC%96%BC/">현대인의리추얼</a>
+- <strong>공동체적 구조</strong>: "혼자 버티기(소진)"는 실패 구조 — 짐을 나누는 공동체가 지속가능성의 기반 → <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a></p>
+<p>여전히 열린 질문: 제도 차원(병원 시스템, 근무 환경)에서 헌신의 문화를 어떻게 만들 것인가?</p>
+<h3>Q2. 한국 의료 문화의 위계적 구조에서 자발성 문화는 가능한가?</h3>
+<p>vault에서 찾은 실마리:
+- <strong>리더십 패러다임 전환</strong>: MZ세대 리더십 = '통제→코칭', '지시→질문' → <a class="wl" href="../../t/%EB%A6%AC%EB%8D%94%EC%8B%AD/">리더십</a>
+- <strong>세족식 모델</strong>: 예수님의 세족식 = 위계를 역전시키는 섬김의 시연 → <a class="wl" href="../../t/%EC%84%AC%EA%B9%80/">섬김</a></p>
+<p>여전히 열린 질문: 자발성을 제도화할 수 있는가? (자발성을 강제하는 역설)</p>
+<h3>Q3. 소진 상태의 의료인도 공감 훈련이 가능한가?</h3>
+<p>vault에서 찾은 실마리:
+- <strong>훈련 가능한 스킬</strong>: 경청→공감→신뢰 순서는 연습으로 형성 → <a class="wl" href="../../t/%EB%8C%80%ED%99%94/">대화</a>
+- <strong>신경과학적 근거</strong>: ACC 사용할수록 강화 → <a class="wl" href="../../b/%EB%87%8C%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A4%EA%B3%84_%ED%8B%B0%EB%A8%B8%EC%8B%9C%EC%A0%9C%EB%8B%9D%EC%8A%A4/">뇌하나님의설계_티머시제닝스</a></p>
+<p>여전히 열린 질문: 번아웃 상태에서 공감 훈련의 전제조건은 무엇인가? 자기 돌봄이 선행되어야 하는가?</p>
+<hr />
+<h2>핵심 인용 모음</h2>
+<blockquote>
+<p>"환자는 우리가 얼마나 많이 아는가를 신경 쓰지 않는다. 우리가 얼마나 많이 신경 쓰는가를 알기 전까지는."</p>
+<p>"따뜻한 친절, 고통에 대한 공감, 혁신, 뭔가 특별한 것으로 그들을 놀라게 하라. 그러면 그들의 독보적인 충성을 얻을 수 있을 것이다." (p.122)</p>
+<p>"어떻게 하면 더 좋은 서비스를 제공할까가 아닌 어떻게 하면 고객의 경험을 더 나아지게 할 수 있는가에 초점을 맞춘다." (p.168)</p>
+<p>"우리의 환자들이 환호한다면 우리 또한 보상을 받은 것이다." (p.287)</p>
+<p>"탁월함의 수준에서 행해지는 일이나, 탁월함을 추구하는 일은 흥미진진하고 즐겁다." (p.316)</p>
+</blockquote>
+<hr />
+<h2>관련 페이지</h2>
+<ul>
+<li><a class="wl" href="../../t/%EB%A6%AC%EB%8D%94%EC%8B%AD/">리더십</a> — 서번트 리더십, 헌신의 문화</li>
+<li><a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a> — 의미 회복, 직업 소명론</li>
+<li><a class="wl" href="../../t/%EC%84%AC%EA%B9%80/">섬김</a> — 디아코니아와 서비스 리더십의 연결</li>
+<li><a class="wl" href="../../t/%ED%99%98%EB%8C%80/">환대</a> — 대긍휼, 빈 공간을 내어주는 환대, 환대의 장애물</li>
+<li><a class="wl" href="../../t/%EA%B8%8D%ED%9C%BC/">긍휼</a> — 선한 사마리아인, 근접성의 문제</li>
+<li><a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> — 성육신적 선교, 메신저=메시지</li>
+<li><a class="wl" href="../../t/%EB%8C%80%ED%99%94/">대화</a> — 경청→공감→신뢰 스킬</li>
+<li><a class="wl" href="../../t/%ED%98%84%EB%8C%80%EC%9D%B8%EC%9D%98%EB%A6%AC%EC%B6%94%EC%96%BC/">현대인의리추얼</a> — 번아웃 예방, 의료인 자기돌봄</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a> — 임상 역량 + 인간적 돌봄의 통합, 환대의 공간, 3단계 영성 구현</li>
+<li><a class="wl" href="../../b/%EC%A1%B4%EC%9E%AC%EB%A7%8C%EC%9C%BC%EB%A1%9C%ED%8A%B9%EB%B3%84%ED%95%9C%EB%8B%A4%EB%AC%B8%ED%99%94%EA%B5%90%ED%9A%8C_%EC%8B%A0%EC%B9%98%ED%97%8C/">존재만으로특별한다문화교회_신치헌</a> — 대긍휼의 환대, 3B 비전, 문화 우월주의 극복</li>
+<li><a class="wl" href="../../b/%EB%87%8C%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A4%EA%B3%84_%ED%8B%B0%EB%A8%B8%EC%8B%9C%EC%A0%9C%EB%8B%9D%EC%8A%A4/">뇌하나님의설계_티머시제닝스</a> — 공감의 신경과학적 기반</li>
+<li><span class="wl-dead" title="위키 내부 링크">공동선을추구하는비즈니스</span> — 소명의 재정의</li>
+</ul>
+</article>
+<div class="tagrow"></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
