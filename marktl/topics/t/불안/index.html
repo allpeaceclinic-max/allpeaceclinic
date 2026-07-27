@@ -1,0 +1,218 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>불안 — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-t">목회·실천</span><span class="date">2026-07-24</span></div>
+  <h1 class="note-title">불안</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>불안은 신앙이 다루어야 할 부차적 정서가 아니라, <strong>인간이 왜 구원을 필요로 하는가</strong>를 설명하는 출발점이다. 94회 CMF 수련회 EBS 트랙은 복음을 제시하기 전에 먼저 이 물음에 답한다 — 인간은 모두 행복을 갈망하는데, 왜 행복할 수 없는가.</p>
+<h2>1. 존재론적 정식 — 유한한데 무한을 욕망한다</h2>
+<p>가장 압축된 진단은 이것이다. <strong>나는 유한한데, 나는 무한을 욕망한다.</strong> 한계가 분명한 존재인데 욕망은 언제나 그 한계를 뛰어넘으려 한다 — 죽음을 피하고 싶고, 노화를 피하고 싶고, 감당해야 할 결과와 거쳐야 할 과정을 피하고 싶고, 관계가 내 뜻대로 되기를 바란다.</p>
+<p>이 구조 때문에 불안은 조건이 개선되어도 해소되지 않는다. 대학에 들어가면, 면허를 따면, 병원에 가면, 결혼하면 괜찮아지리라는 기대는 매번 다음 단계의 불안으로 이월된다. 알랭 드 보통의 표현으로 <strong>인생은 불안이 또 다른 불안으로 전이되는 과정</strong>이다.</p>
+<h2>2. 틸리히의 세 축</h2>
+<p><span class="wl-dead" title="위키 내부 링크">폴틸리히</span>는 『존재의 용기』에서 인간이 인간이기 때문에 겪는 불안을 셋으로 나눈다.</p>
+<table>
+<thead>
+<tr>
+<th>축</th>
+<th>불안</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>존재론적</td>
+<td><strong>죽음</strong> — 누구도 예외가 없고, 더 두려운 것은 언제 어떻게 죽을지 모른다는 것</td>
+</tr>
+<tr>
+<td>도덕적</td>
+<td><strong>죄책감</strong> — 아는 만큼 살지 못하는 실존에서 오는 후회</td>
+</tr>
+<tr>
+<td>영적</td>
+<td><strong>무의미와 공허</strong> — "내가 왜 살지"라는 물음, 심해지면 허무주의</td>
+</tr>
+</tbody>
+</table>
+<h2>3. 의미가 없을 때 남는 것</h2>
+<p>우연에는 의미가 없고 필연에는 의미가 있다. 생명을 복잡한 화학 작용으로만 보면 생의 목적은 <strong>생존</strong>뿐이고, 생존이 해결된 삶에는 <strong>자기만족</strong>만 남는다. 그 끝이 허무이며, 허무를 견디지 못하면 <strong>자극</strong>으로 달래게 된다. 재물로 채우면 더 많은 재물이, 성취로 채우면 더 큰 성취가 필요해지는 악순환이다.</p>
+<h2>4. 풍요가 답이 아니었다는 증거</h2>
+<p>능력이 좋아지면 불안이 해소되리라는 기대를 가장 강력하게 말해 온 것이 과학기술이다. 그러나 검증은 간단하다 — TV는 가족이 더 행복해지려고 있는 물건인데, <strong>브라운관에서 얇고 넓어진 만큼 가정이 더 행복해졌는가.</strong> 전화기는 소통과 관계를 위한 물건인데, <strong>스마트폰이 좋아진 만큼 우리는 더 잘 이해하고 이해받는가.</strong></p>
+<p>역사상 가장 풍요로운 시대를 살면서 자살률은 올라가고 영혼은 빈곤해진다.</p>
+<h2>5. 자기 자신이 상품이 되는 구조</h2>
+<p>대량생산 이후 결정적으로 중요해진 것은 <strong>선택받는 것</strong>이고, 그래서 마케팅이 모든 것을 지배한다. 그 논리가 사람에게 내면화되면 <strong>나 자신을, 심지어 나의 인성마저 잘 팔아야 할 상품으로 대하게 된다.</strong></p>
+<p>귀결은 연쇄적이다. 내가 사실 어떠한가보다 남이 나를 어떻게 인식하는가가 중요해지고 → 계속 <strong>선택받아야 하는 존재</strong>라는 무의식이 자리 잡고 → 그래서 <strong>선택할 힘</strong>을 가지려 하고 → 소비하고 획득하기 편한, 생명 없는 것들을 사랑하게 되고 → <strong>결과만 남고 과정은 아무도 보지 않는다.</strong> 그리고 자기 과정도 타인의 과정도 살피지 않게 된다.</p>
+<h2>6. 무관심이라는 최악</h2>
+<p><span class="wl-dead" title="위키 내부 링크">에리히프롬</span>의 진단이 이 지점을 찌른다 — <strong>고통은 최악이 아니고, 최악은 무관심</strong>이다. 고통스러울 때는 원인을 없애려 노력할 수 있지만 아무 감정도 없을 때는 마비된다. 역사에서 고통은 변화의 산파였는데, 현대인은 자기 내면에도 타인에게도 무관심해지고 있다.</p>
+<h2>7. 불안이 삭제되지 않는 신앙</h2>
+<p>이 진단들의 목적지는 "믿으면 불안이 사라진다"가 아니다. 오히려 정반대의 고백이 놓인다.</p>
+<blockquote>
+<p>두려움이 삭제되고 불안이 삭제되고 흔들림이 삭제되는 삶을 살아가는 것이 아닙니다. <strong>여전히 흔들리고 여전히 불안하지만</strong>, 내게 역사하시는 그분이 의미가 되셔서 나를 살게 만드시는 겁니다.</p>
+</blockquote>
+<p>같은 자리에서 <strong>"죽음이 두렵습니다 — 그러나 죽음을 두려워하는 깊이보다 더 그리스도를 사랑합니다"</strong>라는 고백이 나온다. 불안의 제거가 아니라 <strong>불안보다 큰 사랑</strong>이 해답의 형식이다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>불안은 조건의 문제가 아니라 존재의 구조에서 나오므로, 조건 개선으로는 해소되지 않고 다음 불안으로 이월된다.</li>
+<li>의미가 사라진 자리에 남는 것은 생존과 자기만족이며, 그 끝은 허무이고 허무의 대처법은 점점 강해지는 자극이다.</li>
+<li>경쟁이 내면화되면 사람은 자기 자신을 상품으로 대하게 되고, 결과만 남고 과정은 누구에게도 보이지 않는다.</li>
+<li>고통보다 무관심이 더 나쁘다 — 고통은 행동을 낳지만 무관심은 마비를 낳는다.</li>
+<li>신앙의 해답은 불안의 삭제가 아니라, 불안을 안고도 계속 걸어가게 하는 사랑이다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>불안의 구조적 원인(경쟁·마케팅·결과주의)에 대한 진단이 관계적 처방("서로의 과정을 보아주기")으로 이어질 때, 구조 자체를 바꾸는 일은 어디에 놓이는가.</li>
+<li>"불안보다 큰 사랑"이 임상적 불안장애와 실존적 불안을 어떻게 구분해 다룰 것인가 — 목회적 돌봄과 치료의 경계.</li>
+<li>청년기의 불안과 노년기의 불안은 같은 처방으로 다뤄질 수 있는가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><span class="wl-dead" title="위키 내부 링크">폴틸리히</span> — 세 가지 근원적 불안.</li>
+<li><span class="wl-dead" title="위키 내부 링크">에리히프롬</span> — 무관심 비판.</li>
+<li><a class="wl" href="../../t/%EA%B3%A0%EB%82%9C/">고난</a> — 설명되지 않는 고통의 자리.</li>
+<li><a class="wl" href="../../t/%EC%82%AC%EB%9E%91/">사랑</a> — 불안의 해답이 놓이는 자리.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">EBS5_탕자와잃어버린양_대체불가능하게하는사랑</span></td>
+<td>설교(장현준, 2026)</td>
+<td>존재론적 정식, 과학기술 검증, 자기 마케팅 구조, 프롬의 무관심 비판, "불안이 삭제되지 않는 신앙"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">EBS2_구원과하나님나라_부르심과거듭남</span></td>
+<td>강의(이수진, 2026)</td>
+<td>틸리히의 세 축, 행복 갈망과 종교의 발생</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">EBS1_길이요진리요생명</span></td>
+<td>설교(장현준, 2026)</td>
+<td>유물론 → 생존 → 자기만족 → 허무 → 자극의 계단</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#실존</span><span>#목회돌봄</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

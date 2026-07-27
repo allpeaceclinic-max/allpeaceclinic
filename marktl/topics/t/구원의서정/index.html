@@ -1,0 +1,237 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>구원의 서정 (ordo salutis) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-t">조직신학·교리</span><span class="date">2026-07-24</span></div>
+  <h1 class="note-title">구원의 서정 (ordo salutis)</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>하나님께서 신자에게 베풀어 주시는 구원의 은덕들을 <strong>질서 있게 순차적으로 서술한 교리</strong>. 라틴어 <strong>오르도 살루티스(ordo salutis)</strong>에서 왔으며, '오르도'는 영어 order의 어원이다. 한자로는 차례 서(序)와 길 정(程) — 정해진 길을 차례차례 서술한다는 뜻이다.</p>
+<p>종교개혁 전통이 발전시킨 툴로, <span class="wl-dead" title="위키 내부 링크">츠빙글리</span>가 <span class="wl-dead" title="위키 내부 링크">롬8</span>:30을 주석하며 <strong>황금 사슬(golden chain)</strong>이라 부른 데서 별칭이 나왔다. 해당 구절에 <strong>예정 → 부르심 → 칭의 → 영화</strong>의 연쇄가 압축되어 있다.</p>
+<blockquote>
+<p>또 미리 정하신 그들을 또한 부르시고, 부르신 그들을 또한 의롭다 하시고, 의롭다 하신 그들을 또한 영화롭게 하셨느니라</p>
+</blockquote>
+<h2>아홉 단계</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>단계</th>
+<th>뜻</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>소명</strong>(召命)</td>
+<td>부르심</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>중생</strong>(重生)</td>
+<td>거듭남</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>믿음</strong></td>
+<td>아만·바타흐·피스튜오. 🔴 <strong>수단이자 통로</strong> — 믿음 자체에 능력은 없다</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>회개</strong></td>
+<td>슈브(돌이킴)·메타노에오(마음을 바꿈). 결정적 회개 = <a class="wl" href="../../t/%ED%9A%8C%EC%8B%AC/">회심</a></td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>칭의</strong>(稱義)</td>
+<td>의롭다 하심 = <strong>선언</strong>이지 변화가 아니다 → <a class="wl" href="../../t/%EC%9D%B4%EC%8B%A0%EC%B9%AD%EC%9D%98/">이신칭의</a></td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>양자</strong>(養子)</td>
+<td>자녀 됨 → <a class="wl" href="../../t/%EC%96%91%EC%9E%90%EB%90%A8/">양자됨</a></td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>성화</strong>(聖化)</td>
+<td>하나님의 성품(거룩)을 닮아감. 능력의 통로는 <a class="wl" href="../../t/%EC%97%B0%ED%95%A9/">연합</a> → <a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a></td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>견인</strong>(堅忍)</td>
+<td>🔴 견인차가 아니라 <strong>굳을 견·참을 인</strong> = 인내 → <a class="wl" href="../../t/%EC%84%B1%EB%8F%84%EC%9D%98%EA%B2%AC%EC%9D%B8/">성도의견인</a></td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>영화</strong>(榮化)</td>
+<td>구원의 최종 완성, 그리스도를 온전히 닮음 → <a class="wl" href="../../t/%EC%98%81%ED%99%94/">영화</a></td>
+</tr>
+</tbody>
+</table>
+<h2>가장 흔한 오해 — 시간표가 아니다</h2>
+<p>🔴 이 단계들은 <strong>시간적·경험적 순서가 아니라 논리적 순서</strong>다. "중생을 경험해야 믿음이 생기고 그다음이 회개"라는 식의 단계 통과가 아니며, 실제로는 부르심·거듭남·믿음·회개·칭의가 <strong>동시다발적으로</strong> 일어날 수 있다. 신학자마다 순서와 단계 수에 견해차가 있으므로, 옳고 그름을 다투기보다 각 요소가 지닌 의미와 적용을 발견하는 데 목적이 있다.</p>
+<h2>🔴 칭의가 먼저고 성화가 나중이다</h2>
+<p>단계 사이의 순서가 논리적이라 해도, <strong>반드시 지켜야 할 방향이 하나 있다</strong> — 성화되었기에 의롭다 하시는 것이 아니라, <strong>의롭다 하심을 얻은 뒤에 성화의 길로 나아간다.</strong></p>
+<p>이것이 자꾸 뒤집히는 이유는 세상의 원리가 정반대이기 때문이다. 자격증을 따야 입사하고 성적이 좋아야 진학하듯, 구원도 "더 거룩해지고 더 준비되어야 얻는 것"으로 착각하게 된다. 순서를 바로잡으면 실천적 결과가 따라온다 — <strong>지금 내 모습이 구원을 의심할 근거가 되지 못한다.</strong> 애초에 우리의 어떠함 때문에 하신 구원이 아니기 때문이다.</p>
+<h2>예정은 왜 첫 단계로 세지 않는가</h2>
+<p>롬 8:30에서는 예정이 부르심보다 앞선다. 그럼에도 서정의 실제 출발점을 부르심으로 잡는 이유는, <strong>예정이 인간의 시간 밖(영원)에서 일어난 하나님의 일이어서 경험의 대상이 아니기 때문</strong>이다. 인간의 시간 안에서 경험되는 첫 지점이 부르심이다.</p>
+<p>이 구분은 목회적으로 중요하다. 부르심이 예정에 근거한다는 것은 곧 <strong>구원의 출발이 우리 쪽 조건이 아니라 전적인 은혜</strong>라는 뜻이며, 따라서 내 상태가 나쁠 때도 구원이 흔들리지 않는다.</p>
+<h2>왜 배우는가</h2>
+<p>구원은 과거 어느 시점에 스쳐 지나간 통과의례가 아니다. 성경은 구원을 <strong>받았고, 받고 있으며, 받을 것이다</strong>라는 세 시제로 말한다. 구원을 제대로 이해하지 못하면 합당하게 살지 못하고, 합당하게 살지 못하면 <strong>자기가 받은 구원을 의심하고 마침내 구원의 주를 의심하는</strong> 악순환에 빠진다. 서정은 그 고리를 끊는 문법이다.</p>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EB%B6%80%EB%A5%B4%EC%8B%AC/">부르심</a> · <a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a> — 서정 ①. 카라·칼레오, 관계의 시작.</li>
+<li><a class="wl" href="../../t/%EC%A4%91%EC%83%9D/">중생</a> — 서정 ②. 위로부터 다시 남. 거듭나야 회개할 수 있다.</li>
+<li><a class="wl" href="../../t/%EC%9D%B4%EC%8B%A0%EC%B9%AD%EC%9D%98/">이신칭의</a> — 서정 ⑤. 선언이지 변화가 아니다.</li>
+<li><a class="wl" href="../../t/%EC%96%91%EC%9E%90%EB%90%A8/">양자됨</a> — 서정 ⑥. 종이 아니라 자녀라는 신분의 전환.</li>
+<li><a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a> — 서정 ⑦. <strong>칭의 다음</strong>에 온다. 죄를 씻는 일이 아니라 죄로 오염된 습성을 교정하는 과정.</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EB%8F%84%EC%9D%98%EA%B2%AC%EC%9D%B8/">성도의견인</a> — 서정 ⑧. 참고 견딤.</li>
+<li><a class="wl" href="../../t/%EC%98%81%ED%99%94/">영화</a> — 서정 ⑨. 구원의 최종 완성.</li>
+<li><a class="wl" href="../../t/%EC%97%B0%ED%95%A9/">연합</a> — 성화가 자기 노력의 프로젝트로 변질되지 않게 하는 유일한 통로.</li>
+<li><a class="wl" href="../../t/%EA%B5%AC%EC%9B%90/">구원</a> — 상위 주제.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">EBS2_구원과하나님나라_부르심과거듭남</span></td>
+<td>강의(이수진, 2026)</td>
+<td>정의·9단계·논리적 순서라는 단서·예정이 첫 단계가 아닌 이유·황금 사슬 명칭</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">EBS4_믿음과회개와칭의</span></td>
+<td>강의(이수진, 2026)</td>
+<td>3~5단계(믿음·회개·칭의)와 양자됨, 칭의→성화 순서, <span class="wl-dead" title="위키 내부 링크">존머레이</span>의 칭의 정의</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">EBS6_성화와견인과영화</span></td>
+<td>강의(이수진, 2026)</td>
+<td>7~9단계(성화·견인·영화), 출애굽이 보이는 칭의→성화 순서, 성화의 능력=연합, 견인 용어 교정</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/구원론</span><span>#개혁신학</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
