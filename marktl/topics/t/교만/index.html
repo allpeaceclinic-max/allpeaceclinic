@@ -1,0 +1,513 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>교만 — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-t">영성·제자도</span><span class="date">2026-08-03</span></div>
+  <h1 class="note-title">교만</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>교만을 가리키는 신약의 낱말은 휘페레파니아(ὑπερηφανία, hyperēphania)다. '위로(hyper)' 자기를 '드러내 보인다(phainō)'는 두 조각이 붙은 말이니, 문자 그대로 자신을 남보다 높은 자리에 올려 전시하는 태도다. 구약의 가온(גָּאוֹן) 역시 높이 솟아오름을 뜻한다. 그러나 성경이 이 낱말들로 지목하는 것은 성격의 흠이 아니라 <strong>위치의 찬탈</strong>이다. 문대원 목사가 「내 마음의 그늘 (1) 교만」에서 교만을 사 14:14의 "지극히 높은 이와 같아지리라"와 <span class="wl-dead" title="위키 내부 링크">창 3:5</span>의 "하나님과 같이 되어"로 묶어 읽는 이유가 여기 있다 — 교만의 본질은 자기 신격화이며, 선악과 사건의 핵심은 열매가 아니라 "하나님처럼 높아지고자 하는 욕망"이었다.</p>
+<p>같은 진단을 그는 창세기 3장 강해에서 아우토노모스(autonomos, autos '자아' + nomos '법')라는 한 낱말로 압축한다. 죄는 율법 조항을 어긴 위반(transgression)이기 이전에, 입법자이신 하나님을 폐위하고 자아를 입법자로 세우는 일이다. "하나님과 같이 되어 선악을 알 줄"이란 단순한 지식이 아니라 선악의 기준을 스스로 제정하고 재판권까지 행사하겠다는 주권 주장이라는 것이다. 그렇기에 성경이 교만에 붙이는 말은 유난히 무겁다. "교만은 패망의 선봉이요 거만한 마음은 넘어짐의 앞잡이니라"(<span class="wl-dead" title="위키 내부 링크">잠 16:18</span>)라는 선언 옆에, 하나님이 교만한 자를 "대적하신다"(<span class="wl-dead" title="위키 내부 링크">벧전 5:5</span>)는 표현이 놓인다. 이 '대적'(안티탓세타이, ἀντιτάσσεται)은 군대를 도열해 맞선다는 군사 용어다. 교만은 미움받는 성품이 아니라 전선(戰線)을 형성하는 죄다.</p>
+<p>이 글은 교만을 그 반대편 미덕에서 되비추지 않고 교만 자체의 문법으로 따라간다 — 어디서 발원하고(기원), 왜 좀처럼 진단되지 않으며(은밀성), 어떤 조건에서 발화하고(기제), 어떤 얼굴로 나타나며(증상), 무엇으로 귀결되고(결과), 어떻게 다스려지는가(처방). 겸손이라는 미덕의 신학과 그리스도의 케노시스는 <a class="wl" href="../../t/%EA%B2%B8%EC%86%90/">겸손</a>에 위임한다.</p>
+<h2>1. 기원 — 하늘에서 시작해 에덴을 거친 죄</h2>
+<p>교만이 죄 목록의 한 항목이 아니라 목록 전체의 뿌리로 다루어지는 것은, 성경이 최초의 두 타락을 모두 교만으로 설명하기 때문이다. 문대원 목사는 사탄의 타락과 첫 인간의 타락이 정확히 같은 논리 위에 서 있다고 본다 — "네가 하나님이 되어라." 아우구스티누스 이래 서방 전통이 교만(superbia)을 모든 악의 뿌리(radix omnium malorum)로 놓고, 기독교가 칠죄종(교만·시기·분노·나태·탐욕·탐식·정욕)의 으뜸에 교만을 세운 계보가 여기서 이어진다. C.S. 루이스의 문장이 그 무게를 압축한다.</p>
+<blockquote>
+<p>"교만에 비하면 다른 죄들은 벼룩에 물린 자국과 같다." — C.S. 루이스(문대원 인용)</p>
+</blockquote>
+<p>교만의 문장이 언제나 1인칭이라는 점은 눈여겨볼 만하다. 자료들이 인용하는 세 개의 자기 선언은 시대와 무대가 다른데도 문법이 동일하다.</p>
+<table>
+<thead>
+<tr>
+<th>자리</th>
+<th>본문</th>
+<th>자기 선언</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>타락한 천사</td>
+<td><span class="wl-dead" title="위키 내부 링크">사 14:13-14</span></td>
+<td>"내가 하늘에 올라… 지극히 높은 이와 같아지리라"</td>
+</tr>
+<tr>
+<td>첫 인간</td>
+<td><span class="wl-dead" title="위키 내부 링크">창 3:5</span></td>
+<td>"하나님과 같이 되어 선악을 알 줄"</td>
+</tr>
+<tr>
+<td>바벨론 왕</td>
+<td><span class="wl-dead" title="위키 내부 링크">단 4:30</span></td>
+<td>"내가 능력과 권세로 건설하여… 내 위엄의 영광을 나타낸 것이 아니냐"</td>
+</tr>
+</tbody>
+</table>
+<p>문대원 목사는 마지막 문장에서 '나'라는 단어가 네 번 반복되는 것을 짚는다. 니체가 자기 확장의 원동력으로 긍정한 권력의지(der Wille zur Macht)를 그는 죄론으로 되받아 읽는데, 그 결론은 우상이 형상의 문제가 아니라 "내가 주권자가 되려는 마음"의 문제라는 것이다. 교만이 <a class="wl" href="../../t/%EC%9A%B0%EC%83%81%EC%88%AD%EB%B0%B0/">우상숭배</a>와 한 몸인 까닭이 여기 있다. 그리고 이 씨앗은 왕의 궁전에만 있지 않다. 문대원 목사는 두세 살 아이가 배운 적 없이 "싫어!"라고 말하는 장면을 죄성의 증거로 든다. 명령받기를 싫어하고 누구에게도 구속받고 싶어 하지 않는 이 성향이야말로 교만의 가장 이른 형태다.</p>
+<h2>2. 진단의 사각지대 — 세상이 죄라 부르지 않는 죄</h2>
+<p>교만이 뿌리인 데 비해 좀처럼 다루어지지 않는 것은, 그것이 어느 법정에도 서지 않기 때문이다. 문대원 목사의 관찰이 이 공백을 정확히 짚는다 — "어느 누구도 교만한 사람을 좋아하지 않는다. 그런데 교만을 죄로 여기는 국가는 없다." 세상은 거짓말은 리더의 결격 사유로 처벌하면서 교만은 "덕스럽지 못한 소인배의 모습" 정도로 분류한다. 모두가 혐오하되 아무도 기소하지 않는 유일한 죄가 교만이다.</p>
+<p>더 깊은 문제는 당사자에게도 보이지 않는다는 데 있다. 이성욱 목사는 교만을 "모든 사람이 다 가지고 있지만 정작 자기 스스로 깨닫지 못하는 것, 다른 사람에게 나타나면 싫어하는 것"으로 규정하고, 권성수 목사는 그것을 병리학의 언어로 옮긴다.</p>
+<blockquote>
+<p>"교만은 95%의 잠재의식 속에 숨어 있는 영적인 암이다." — 권성수, 「자기 기념비 하나님 기념비」</p>
+</blockquote>
+<p>이 진단이 무서운 것은 인과의 순서 때문이다. 의식되지 않기에 회개되지 않고, 회개되지 않기에 삶의 패턴이 되며, 패턴이 된 뒤에야 패망의 앞잡이로 드러난다. <span class="wl-dead" title="위키 내부 링크">사울</span>이 "내가 범죄하였다"(<span class="wl-dead" title="위키 내부 링크">삼상 15:24</span>)고 말하고도 참회에 이르지 못한 것이 그 실례다. 권성수 목사는 그 고백이 백성을 두려워한 데서 나온 변명일 뿐, 정작 자기 불순종 자체를 보지 못한 거짓 회개였다고 읽는다.</p>
+<p>이성욱 목사가 <span class="wl-dead" title="위키 내부 링크">눅 18:9-14</span> 강해에서 세워 놓은 덫이 이 사각지대를 가장 날카롭게 보여준다. 바리새인의 기도는 "서서 따로"(프로스 헤아우톤, πρὸς ἑαυτόν) 드려졌는데, 이 표현은 '그 자신에게 향하여'로도 읽힌다 — 형식은 기도였으나 내용은 자기를 향한 독백이었다는 것이다. 그렇다면 "나는 저 바리새인과 같지 않아 감사하다"는 기도야말로 정확히 바리새인의 기도가 된다. 이 비유를 다른 누군가에게 적용하려는 충동 자체가 진단의 대상인 셈이다.</p>
+<p>그래서 교만은 자기 점검만으로는 잡히지 않고 반드시 외부의 거울을 요구한다. 윤명숙 전도사는 "본인은 모르지만 상대가 보면 꼴불견"이라는 한마디로 이 비대칭을 짚고, 「부모에게 주신 권위」에서는 권위를 가진 자리에 반드시 점검자를 두어야 한다며 "멘토가 없다면 그 자리를 내려놓으라"는 권면을 인용한다. 교만의 진단은 원리상 혼자 할 수 없다.</p>
+<h2>3. 발화 조건 — 교만은 잘될 때 온다</h2>
+<p>교만이 언제 발화하는지에 대해 자료들은 이례적으로 한목소리를 낸다. 위기가 아니라 형통이다. 윤명숙 전도사의 진단이 이 통찰의 가장 간결한 형태다 — "어떤 사람도 교만하고 싶어서 교만하지 않는다. 내가 계획한 일이 잘 이루어지면 찾아오는 것이 교만이다." 곧 교만은 선택된 악덕이 아니라 성취의 순간에 자기 신분을 잊으면서 저절로 기울어지는 것이며, 그렇기에 금지가 아니라 훈련의 문제가 된다.</p>
+<p>권성수 목사는 「낮추시고 시험하사 마침내 복」에서 <span class="wl-dead" title="위키 내부 링크">신명기 8장</span>이 그리는 인과의 사슬을 그대로 드러낸다. 배부르고 집을 짓고 소유가 풍부해질 때 마음이 교만해지고, 교만해지면 하나님을 잊고, 잊으면 멸망한다. 본문이 "잊어버릴까 염려하노라"를 세 번이나 되풀이하는 이유가 여기 있다.</p>
+<p>```
+풍요 · 형통 (신 8:12-13)
+   │  받은 것을 "내 능력과 내 손의 힘으로"(8:17) 셈함
+   ▼
+교만 (8:14)
+   ▼
+망각 (8:14,19) ── 하나님을 시야에서 지움
+   ▼
+멸망 (8:19-20)</p>
+<p>◀── 기억하라(8:18) — 이 사슬을 끊는 단 하나의 고리
+```</p>
+<p>같은 역설이 왕의 평전에서 반복된다. 권성수 목사가 「위기관리와 성공관리」에서 읽어낸 히스기야가 그 전형이다. 그는 즉위 1년차에 700년 내려온 놋뱀까지 부수는 종교개혁을 단행했고, 앗수르 18만 5천 대군 앞에서 협박 편지를 성전에 펴 놓고 기도해 위기를 이겼다. 그러나 <span class="wl-dead" title="위키 내부 링크">왕하 18장</span>의 형통("여호와께서 그와 함께 하시매… 어디로 가든지 형통하였더라") 뒤에 오는 것은 방심이었고, 적국 사절에게 보물을 다 보여준 작은 과시가 후손의 포로로 이어졌다. 권 목사의 관찰은 본문의 침묵에까지 미친다 — 히스기야의 기도는 위기의 장면에만 기록되어 있고, 형통의 절정에는 기도의 기록이 없다. <strong>성공이 기도를 밀어낸 자리에 과시가 들어왔다.</strong></p>
+<p>문대원 목사는 이 임계점을 한 문장의 후반부로 특정한다. 「성공에 도취되지 않으려면」에서 그가 위기의 시작으로 지목하는 말은 "하나님, 감사합니다"가 아니라 그 뒤에 붙는 "이제부터는 제가 감당할 수 있습니다"이다. 스티븐 버글래스의 '성공 증후군'(거만·외로움·파괴적 모험·간음)을 사울에게 적용한 「성품은 말보다 더 크게 말한다」의 진단도 같은 자리를 가리킨다 — 교만은 평소 잠복해 있다가 성공의 순간 창궐하며, 그래서 "자리가 사람을 보여준다." 결핍의 광야가 원망으로 시험한다면, 풍요의 가나안은 교만으로 시험한다. 무대만 바뀔 뿐 질문은 하나다.</p>
+<h2>4. 얼굴들 — 밖으로 드러나는 네 증상</h2>
+<p>교만은 단일한 표정을 갖지 않는다. 자료들이 각기 다른 본문에서 진단한 증상을 겹쳐 놓으면 네 개의 얼굴이 드러난다.</p>
+<table>
+<thead>
+<tr>
+<th>얼굴</th>
+<th>본문</th>
+<th>표지</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>자기 과시</td>
+<td><span class="wl-dead" title="위키 내부 링크">행 12:21-23</span> · 단 4:30</td>
+<td>은빛 왕복과 공중정원, 그리고 네 번 반복되는 '나'</td>
+</tr>
+<tr>
+<td>불순종</td>
+<td><span class="wl-dead" title="위키 내부 링크">삼상 15:22-23</span></td>
+<td>"부득이하여"라는 상황 논리로 포장된 자기 의지</td>
+</tr>
+<tr>
+<td>시기</td>
+<td><span class="wl-dead" title="위키 내부 링크">삼상 18:6-9</span></td>
+<td>남의 승리를 자기 몫의 탈취로 셈하는 계산</td>
+</tr>
+<tr>
+<td>공동체 분열</td>
+<td>딤전 6:4 · <span class="wl-dead" title="위키 내부 링크">삿 12:1-6</span></td>
+<td>변론·언쟁·분쟁, 그리고 무시의 순간</td>
+</tr>
+</tbody>
+</table>
+<p><strong>자기 과시</strong>를 문대원 목사는 「교만한 리더의 결말」에서 스노비즘, 곧 "본질에는 관심이 없으면서 남에게 과시하기 위해 껍데기만 빌려오는 허영"으로 정의한다. 헤롯 아그립바 1세가 가이사랴 대극장에 은으로 만든 왕복을 입고 동틀 무렵 등장한 장면이 그 극단인데, 여기서 그가 끌어내는 통찰이 통념을 뒤집는다 — 자기 영광의 과시는 강함이 아니라 리더십의 불안을 드러내는 증거다. 요순시대의 격양가처럼 백성이 임금의 힘을 의식하지 않는 것이 좋은 통치라면, 매스게임과 은빛 왕복은 정확히 그 반대의 신호다. SNS로 부와 학벌과 집을 전시하는 '자기 과시의 시대'를 그가 같은 진단 아래 놓는 이유도 여기 있다. 말콤 글래드웰이 꼽은 성공의 세 조건(타고난 능력·적절한 환경·끈기) 가운데 둘은 스스로 정할 수 없는 것이니, 자기 몫은 애초에 3분의 1을 넘지 않는다.</p>
+<p><strong>불순종</strong>은 교만이 하나님을 향할 때의 이름이다. 사울의 죄는 무신론이 아니라 종교적 명분 뒤에 숨은 자기 의지였다. 제사를 드리려 했다는 명분(삼상 15:21)에 대해 <span class="wl-dead" title="위키 내부 링크">사무엘</span>은 "순종이 제사보다 낫고… 거역하는 것은 점치는 죄와 같다"고 선언한다. 권성수 목사는 이 등치를 표면상 종교적인 사람이라도 그 중심에 자기 의지가 있으면 우상숭배자와 다르지 않다는 뜻으로 읽고, 윤명숙 전도사는 더 짧게 못 박는다 — "최고의 교만은 말씀을 거역하고 멸시하는 것이다."</p>
+<p><strong>시기</strong>는 교만이 옆 사람을 향할 때의 이름이다. 문대원 목사가 「내 마음의 그늘」 시리즈에서 교만 바로 다음에 시기를 배치한 것은 우연이 아니다. 여인들의 노래 "사울은 천천, 다윗은 만만"은 히브리 시의 평행법으로 '엄청난 승리'를 뜻하는 수사일 뿐이고 사울도 그 어법을 알았지만, 그는 시기했다. 시기가 사실 이해의 문제가 아니라 마음의 문제임이 여기서 드러난다. 그리고 시기의 첫 희생자는 대상이 아니라 시기하는 자다 — "시기는 뼈를 썩게 하느니라"(잠 14:30). 사울은 <span class="wl-dead" title="위키 내부 링크">다윗</span>을 죽이는 데 실패했으나 평생 그를 두려워하는 인생을 살았다.</p>
+<p><strong>공동체 분열</strong>은 교만이 집단에 번질 때의 이름이다. 문대원 목사는 교만이 변론과 언쟁과 분쟁을 낳는다는 딤전 6:4을 인용하며, 우월의식이 상대를 무시하는 바로 그 순간 분열이 시작된다고 본다. 토론은 얼마든지 해도 되지만 무시는 다르다는 것이다. 권성수 목사가 「에브라임의 도전」에서 읽어낸 사사기 12장은 그 극단적 사례다. 암몬의 18년 압제에서 나라를 건진 입다에게 형제 지파 에브라임은 감사 대신 "너와 네 집을 불사르겠다"며 시비를 걸었고, 십볼렛 발음으로 가려진 4만 2천 명의 죽음이 뒤따랐다. 감사해야 할 자리에서 도전하는 이 반골 기질은 기드온 때에도, 훗날 남북 분열 때에도 반복된다 — 자각하지 않으면 교만은 세대를 넘어 유전된다. <a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%B2%B4/">공동체</a>의 파괴가 사탄이 교회를 무너뜨리는 단골 수법이라는 문대원 목사의 경고가 이 지점에 놓인다.</p>
+<h2>5. 소란한 마음 — 안으로 파고드는 증상</h2>
+<p>밖으로 드러나는 네 얼굴이 관계를 무너뜨린다면, 교만은 안에서도 한 사람을 갉아먹는다. 문대원 목사는 「소란한 마음 다스리기」에서 시 131:1을 세 갈래로 해부하는데, 이 삼분법이 교만의 내면 지형을 가장 정밀하게 보여준다.</p>
+<table>
+<thead>
+<tr>
+<th>갈래</th>
+<th>하나님을 어떻게 하는가</th>
+<th>표지</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>교만</td>
+<td>업신여긴다</td>
+<td>쫓는 자가 없어도 도망하는 마음(잠 28:1)</td>
+</tr>
+<tr>
+<td>오만</td>
+<td>잊어버린다</td>
+<td>기도하지 않음</td>
+</tr>
+<tr>
+<td>야망</td>
+<td>그 자리를 넘본다</td>
+<td>통제할 수 없는 것을 통제하려는 욕심</td>
+</tr>
+</tbody>
+</table>
+<p>가운데 오만의 원어가 룸(רוּם, '높다·높이 들리다')이라는 점이 결정적이다. "내 눈이 오만하지 아니하오며"의 오만과 "네 마음이 교만하여… 여호와를 잊어버릴까"(<span class="wl-dead" title="위키 내부 링크">신 8:14</span>)의 교만이 같은 어근이니, 자기를 높이는 행위와 하나님을 잊는 행위가 애초에 한 단어 안에 묶여 있는 셈이다. 문대원 목사가 오만의 가장 정확한 진단 지표로 기도 생활을 지목하는 것도 그래서다. 5분만 기도하고 나머지는 자기 노력에 의지하는 실용주의, 곧 "적게 기도하고 더 많이 노력하겠다"는 태도가 곧 하나님 없이도 다 처리할 수 있다는 고백이라는 것이다.</p>
+<p>권성수 목사는 이 상태를 「안개 사업을 하세요」에서 <strong>실천적 무신론</strong>이라 부른다. 입으로는 하나님을 부인하지 않으면서 직장과 사업에서는 하나님이 없는 듯 행동하는 태도, "이것은 종교가 아니라 정치다"라며 신앙과 삶을 떼어 놓는 분리 의식이다. 주목할 것은 그가 계획 자체를 죄로 몰지 않는다는 점이다. 솔로몬도 바울도 계획했고 예수께서도 망대를 세우기 전 비용을 계산하라 하셨으니, 문제는 꿈이 아니라 시간과 결과를 자기가 통제할 수 있다는 착각이다. "너희는 잠깐 보이다가 없어지는 안개니라"(<span class="wl-dead" title="위키 내부 링크">약 4:14</span>)는 선언 뒤에 야고보가 곧바로 "허탄한 자랑은 다 악한 것이라"(4:16)를 놓은 것은, 통제 환상의 뿌리가 교만임을 본문 자체가 밝힌 것이다.</p>
+<p>그 통제욕의 밑바닥에 무엇이 있는지에 대해서는 라인홀드 니버의 진단이 인용된다 — 권력의지의 이면에는 유한성에서 오는 불안이 있다. 문대원 목사는 여기서 교만의 심리적 자기 모순을 끌어낸다. 교만은 자기 힘을 의지하므로 염려가 많고, 통제를 붙들수록 마음은 더 소란해진다. 자기를 높이려는 마음이 정작 자기에게서 평안을 빼앗는 것이다. 그래서 <span class="wl-dead" title="위키 내부 링크">벧전 5:7</span>의 "너희 염려를 다 주께 맡기라"가 겸손 권면(5:6) 바로 뒤에 붙는다. 염려를 손에서 놓지 못하는 것은 통제권을 내가 쥐겠다는 교만의 다른 얼굴이며, 맡김은 감정 조절이 아니라 위치의 재확인이다.</p>
+<h2>6. 결과 — 은혜의 단절과 파멸의 보편 원리</h2>
+<p>교만의 결과를 자료들은 벌의 목록이 아니라 관계의 차단으로 먼저 서술한다. 하나님이 교만한 자를 대적하시므로, 등을 돌린 자에게는 주고 싶어도 은혜를 줄 수 없다는 것이다. 문대원 목사의 문장이 이 구조를 정확히 담는다.</p>
+<blockquote>
+<p>"은혜를 주고 싶어도 하나님을 등지고 있는 사람에게는 은혜를 줄 수 없다." — 문대원, 「내 마음의 그늘 (1) 교만」</p>
+</blockquote>
+<p><a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a> 없이는 한순간도 살 수 없는 존재에게 이것은 치명적이다. 다만 두 설교자 모두 이 단절을 구원의 상실로 확대하지 않는다는 점은 짚어 둘 필요가 있다. 권성수 목사는 하나님이 사울을 "버리셨다"는 선언을 지옥행이 아니라 도움과 능력과 축복의 손길을 철수하시고 징계하시는 상태로 한정하고, 문대원 목사도 "하나님은 교만한 사람을 사용하실 수 없다"를 구원이 아니라 쓰임받음의 문제로 명시한다. 교만이 막는 것은 구원이 아니라 통로다.</p>
+<p>그다음에 오는 것이 계량이다. 벨사살의 벽에 나타난 손가락이 쓴 "메네 메네 데겔 우바르신"은 본래 화폐와 무게의 단위였던 낱말들이 동사로 재해석되어 심판 선언이 된 언어유희다 — 세었고(메네), 달았고(데겔), 나누었다(베레스). 권성수 목사는 여기에 "여호와는 지식의 하나님이시라 행동을 달아 보시느니라"(삼상 2:3)를 겹쳐, 하나님의 심판이 자의적 처벌이 아니라 정밀한 계량임을 세운다. 그가 이 본문에서 가장 날카롭게 짚는 것은 벨사살의 죄가 무지가 아니었다는 사실이다. 선왕 느부갓네살이 교만으로 7년간 짐승처럼 산 사건을 그는 "다 알고도"(단 5:22) 마음을 낮추지 않았다.</p>
+<blockquote>
+<p>"성경을 다 알면서도 교만한 자 — 다 아는 것이 중요한 게 아니라 알면 겸손해져야 한다." — 권성수, 「이러면 파멸!」</p>
+</blockquote>
+<p>지식이 겸손으로 번역되지 않을 때 지식 자체가 정죄의 근거가 된다는 이 통찰은, 신앙의 연륜이 쌓인 사람일수록 더 아프게 찌른다. 그리고 그가 여기서 끌어내는 결론은 제국사에 머물지 않는다 — "개인이, 가정이, 국가가, 교회가 망하는 원리는 똑같다."</p>
+<p>다만 결과의 시점과 형태는 한결같지 않다. 자료 안의 다섯 사례를 나란히 놓으면 그 편차가 드러난다.</p>
+<table>
+<thead>
+<tr>
+<th>인물</th>
+<th>교만의 형태</th>
+<th>귀결</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>느부갓네살</td>
+<td>"내가 건설한 이 큰 바벨론"</td>
+<td>7년 짐승의 자리 → 하늘을 우러러봄 → 회복</td>
+</tr>
+<tr>
+<td>벨사살</td>
+<td>선왕의 징계를 "다 알고도" 낮추지 않음</td>
+<td>그날 밤 멸망</td>
+</tr>
+<tr>
+<td>사울</td>
+<td>자기 기념비 · 불순종 · 시기</td>
+<td>회개 기회를 잃고 참혹한 종말</td>
+</tr>
+<tr>
+<td>히스기야</td>
+<td>형통의 절정에서 보물을 다 보여줌</td>
+<td>후손의 바벨론 포로</td>
+</tr>
+<tr>
+<td>헤롯 아그립바 1세</td>
+<td>영광을 하나님께 돌리지 않음</td>
+<td>벌레에 먹혀 죽음</td>
+</tr>
+</tbody>
+</table>
+<p>같은 죄에 어떤 경우는 즉각 심판이, 어떤 경우는 7년의 유예와 회복이 주어지는 기준은 자료가 명시하지 않는다. 다만 권성수 목사가 「에브라임의 도전」에서 덧붙이는 단서가 이 편차에 한 가지 무게를 더한다 — 회개해도 아픔의 대가는 따른다. 죄책은 사해져도 죄가 빚어낸 결과까지 소급해 지워지지는 않는다는 것이다.</p>
+<p>한편 이 모든 귀결과 나란히 놓이는 문장이 하나 있다. 헤롯이 벌레에 먹혀 죽은 바로 다음 절이 "하나님의 말씀은 흥왕하여 더하더라"(<span class="wl-dead" title="위키 내부 링크">행 12:24</span>)라는 것이다. 문대원 목사는 이 병치를 역사의 주체가 누구인지 드러내는 구조로 읽는다. 교만한 권력은 심판으로 사라지지만 복음은 신실한 사람들을 통해 계속 전진한다.</p>
+<h2>7. 낮추심 — 하나님이 교만을 다루시는 방식</h2>
+<p>그렇다면 교만은 심판으로만 처리되는가. 자료들이 훨씬 더 많은 지면을 할애하는 것은 심판이 아니라 <strong>낮추심</strong>이다. <span class="wl-dead" title="위키 내부 링크">신 8:16</span>의 "이는 다 너를 낮추시며 너를 시험하사 마침내 네게 복을 주려 하심이었느니라"가 그 열쇠 구절이다. 히브리어 아나(עָנָה, 낮추다)와 나사(נָסָה, 시험하다)를 권성수 목사는 파괴가 아니라 형성의 동사로 읽는다. 궁핍과 광야는 형벌이 아니라 사람의 진짜 모습을 본인에게 보여주고 교만을 깎아내시는 도구이며, 하나님이 몰라서 시험하시는 것이 아니라 나로 하여금 내 마음의 실체를 보게 하시려는 것이다. 광야 40년은 징벌이 아니라 빚어내심이었다.</p>
+<p>이 시선이 뒤집는 것은 모욕의 의미다. 시므이가 돌을 던지며 저주할 때 <span class="wl-dead" title="위키 내부 링크">다윗</span>이 그것을 여호와께서 그에게 명하신 일로 받아들였듯, 낮춰지는 자리에서 낮아질 줄 아는 것이 신앙이라는 것이다. 권 목사의 권면은 짧다 — "무시당하면 된다. 그리고 높이신다." 같은 논리로 그는 바울의 육체의 가시를 "교만을 제어하는 장치, 겸손을 발동하는 장치"로 읽는데, 이 통찰의 상세는 <a class="wl" href="../../t/%EA%B2%B8%EC%86%90/">겸손</a>이 이어받는다.</p>
+<p>낮추심의 가장 극적인 사례는 느부갓네살이다. 문대원 목사는 파스칼을 빌려 그 곡선을 요약한다.</p>
+<blockquote>
+<p>"인간은 천사와 같아지려다가 오히려 짐승과 같아진다." — 파스칼(문대원 인용)</p>
+</blockquote>
+<p>초인이 되려던 인간이 짐승(subhuman)의 자리로 떨어진 것이다. 그런데 회복의 계기는 결심이 아니었다. 7년 뒤 그가 "하늘을 우러러보았을 때" 총명이 돌아왔다(<span class="wl-dead" title="위키 내부 링크">단 4:34</span>) — 고개를 든 동작이 아니라 세상을 주관하시는 분을 인식한 사건이다. 다니엘 4장이 세 번(17·25·32절) 반복하는 후렴 "지극히 높으신 이가 사람의 나라를 다스리시며 자기의 뜻대로 그것을 누구에게든지 주신다"가 그 인식의 내용이다. 윤명숙 전도사가 부모의 권위를 다루며 이 본문을 택한 것도 같은 맥락이다. 권위는 소유가 아니라 "입혀 주신" 것이므로, 그것을 자기 것으로 착각하는 순간 권위는 권위주의로 변질되고 끝내 튕겨져 나간다.</p>
+<p>다만 이 대목에는 자료가 열어 둔 물음이 있다. 문대원 목사 자신이 던진 질문이 그것이다 — 한 대 맞기 전에 깨달을 수는 없는가. 다니엘의 사전 경고를 듣고도 떨쳐내지 못한 왕의 모습은 교만이 의지로 단번에 제거되지 않는 끈질긴 영적 중력임을 보여준다.</p>
+<h2>8. 처방 — 수양이 아니라 기억과 순종</h2>
+<p>교만의 처방을 자료들은 한결같이 자기 노력 바깥에서 찾는다. 문대원 목사의 명제가 가장 단호하다.</p>
+<blockquote>
+<p>"교만은 수양한다고 되는 것이 아니다. 유일한 방법은 예수님께 순종하는 것이다." — 문대원, 「세상이 가르칠 수 없는 미덕」</p>
+</blockquote>
+<p>이유는 구조적이다. 명상과 성찰 같은 자기 노력은 시선이 여전히 자기에게 붙들려 있으므로 오히려 교만을 강화할 수 있다. 자기를 신격화하려는 마음을 깨뜨리는 것은 <strong>외부성</strong>뿐이며, 그래서 첫째 아담의 교만이 가져온 것을 둘째 아담의 <a class="wl" href="../../t/%EC%88%9C%EC%A2%85/">순종</a>이 역전시켰고(<span class="wl-dead" title="위키 내부 링크">히 5:8-9</span>), 중세 수도원이 가난·순결·순종의 세 서약 가운데 순종을 첫자리에 두었다는 것이다. 눈에 보이는 권위에 순종하지 않으면서 하나님께 순종할 수는 없다는 말이 여기서 나온다.</p>
+<p>두 번째 축은 기억이다. 신명기 8장의 사슬을 끊는 고리가 "네 하나님 여호와를 기억하라"(8:18)였듯, 받은 것의 출처를 되짚는 일이 교만의 유일한 해독제로 제시된다. 권성수 목사는 여기에 "네가 가진 것 중에 받지 아니한 것이 무엇이냐"(고전 4:7)를 겹쳐, 의지도 건강도 지성도 선물이라면 자랑할 자리는 남지 않는다고 못 박는다. 문대원 목사가 겸손의 시작을 도덕적 분발이 아니라 구원의 기억에서 끌어내는 것도 같은 문법이다 — 선물을 받으면 준 사람을 자랑하게 된다.</p>
+<p>가장 실천적인 제안은 윤명숙 전도사에게서 나온다. 그는 교만을 금지가 아니라 훈련의 문제로 재정의한다. "교만하지 말라고만 하면 안 된다. 배우지 못하면 교만해진다." 유대인이 병이 나았을 때, 일이 잘될 때마다 외우는 기도문을 어려서부터 가르치듯, 형통의 순간마다 "이 영광 주님께 올려드립니다"가 입에 붙어야 한다는 것이다. 교만은 잘될 때 오므로 처방도 잘될 때 작동해야 한다는 이 논리는, 문대원 목사가 제안하는 서술의 교정과 정확히 맞물린다 — 성취를 기록할 때 주어를 '내가'에서 "내 하나님의 선한 손이"(<span class="wl-dead" title="위키 내부 링크">느 2:8</span>)로 바꿔 쓰는 것이다. 느헤미야서에 기적이 하나도 없다는 사실을 그는 결함이 아니라 신학적 의도로 읽는다. 정치적 협상과 치밀한 준비라는 평범한 통로로 일하시되, 저자는 그 전부를 '선한 손'으로 서술한다.</p>
+<table>
+<thead>
+<tr>
+<th>처방</th>
+<th>실행의 문법</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>순종</td>
+<td>보이는 권위에 순종함으로 자기 의지를 깨뜨린다</td>
+<td>빌 2:8 · 히 5:8-9</td>
+</tr>
+<tr>
+<td>기억</td>
+<td>받은 것의 출처를 의식적으로 되짚는다</td>
+<td>신 8:18 · 고전 4:7</td>
+</tr>
+<tr>
+<td>훈련</td>
+<td>금지가 아니라 형통할 때의 고백을 몸에 익힌다</td>
+<td>잠 16:19</td>
+</tr>
+<tr>
+<td>서술 교정</td>
+<td>성취의 주어를 '내가'에서 '하나님의 선한 손이'로 바꾼다</td>
+<td>느 2:8</td>
+</tr>
+<tr>
+<td>맡김</td>
+<td>통제하려는 염려를 손에서 놓는다</td>
+<td>벧전 5:7</td>
+</tr>
+<tr>
+<td>외부의 거울</td>
+<td>점검해 줄 멘토와 공동체를 자리 옆에 둔다</td>
+<td>삼상 15장(사무엘)</td>
+</tr>
+</tbody>
+</table>
+<p>마지막 축은 <a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a>의식이다. 권성수 목사가 자기 기념비를 허무는 두 기둥으로 세우는 것은 "영광을 우리에게 돌리지 마옵소서… 주의 이름에만 영광을 돌리소서"(시 115:1)와 "그는 흥하여야 하겠고 나는 쇠하여야 하리라"(요 3:30)다. 이성욱 목사가 <span class="wl-dead" title="위키 내부 링크">눅 18장</span> 강해를 '양자겸비(兩者兼備)'로 닫은 것도 이 처방이 도덕적 자학으로 미끄러지지 않게 하는 균형추다. 거룩을 향한 갈망을 꺾는 것이 교만의 해법이 아니라, 그 갈망을 붙들되 성취를 자기 공로로 셈하지 않는 것 — 오직 은혜로 얻는 칭의와 처절한 노력의 <a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a>는 양자택일이 아니라는 것이다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>교만(휘페레파니아·가온)은 성격의 흠이 아니라 위치의 찬탈이다. 스스로 법을 정하는 주체가 되겠다는 아우토노모스의 욕망이 그 정체이며, 사탄·첫 인간·바벨론 왕의 자기 선언이 모두 같은 1인칭 문법을 쓴다.</li>
+<li>세상은 교만을 혐오하되 기소하지 않는 유일한 죄로 남겨 둔다. 당사자에게도 보이지 않는 "95% 잠재의식의 영적 암"이라, 의식되지 않아 회개되지 않고 회개되지 않아 삶의 패턴이 된다.</li>
+<li>교만의 진단은 원리상 혼자 할 수 없다. "나는 저 바리새인과 같지 않아 감사하다"는 기도가 곧 바리새인의 기도이므로, 외부의 거울(공동체·멘토·말씀)이 처방의 일부가 된다.</li>
+<li>교만은 위기가 아니라 형통에서 발화한다. 풍요 → 교만 → 망각 → 멸망의 사슬(신 8장)이 그 경로이고, 히스기야의 침묵과 "이제부터는 제가 감당할 수 있습니다"가 임계점의 두 표지다.</li>
+<li>교만은 밖으로 과시·불순종·시기·분열의 네 얼굴로, 안으로는 교만·오만·야망의 세 갈래로 나타난다. 오만의 가장 정확한 진단 지표는 기도 생활이며, 기도의 실종이 곧 실천적 무신론이다.</li>
+<li>교만이 끊는 것은 구원이 아니라 통로다. 하나님이 대적하시므로 은혜가 흐르지 못하고 쓰임이 멈추지만, "버리심"은 지옥행이 아니라 도움의 손길을 거두시는 징계로 한정된다.</li>
+<li>하나님이 교만을 다루시는 일차적 방식은 심판이 아니라 낮추심이다. 아나·나사는 파괴가 아니라 형성의 동사이며, 광야와 모욕과 가시는 "마침내 복"을 향한 작업이다.</li>
+<li>처방은 수양이 아니라 순종과 기억이다. 자기 성찰은 시선이 자기에게 머물러 교만을 강화할 수 있으므로, 외부성(권위에의 순종)과 귀속의 고백(기억·감사 훈련)이 해독제가 된다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>같은 교만에 대해 벨사살은 그날 밤 멸망하고 느부갓네살은 7년의 유예 뒤 회복된다. 즉각 심판과 회복의 유예를 가르는 기준은 무엇인가 — 자료는 이 편차를 서술하되 설명하지 않는다.</li>
+<li>"한 대 맞기 전에 깨달을 수는 없는가." 낮추심이라는 강제적 경로 외에 자발적으로 교만을 자각하는 길은 실제로 존재하는가, 아니면 자각 자체가 이미 은혜의 결과인가.</li>
+<li>죄가 되는 교만·야망과 소명적 성취욕은 어디서 갈라지는가. "큰 일을 하려 힘쓰지 아니함"(시 131:1)과 하나님 나라를 위한 거룩한 야심의 경계는 실천에서 어떻게 분별되는가.</li>
+<li>성취를 "하나님의 선한 손"으로 귀속시키는 서술이, 또 다른 형태의 자기 전시(겸손한 척)로 변질되는 것을 무엇이 막는가 — 귀속의 고백은 어떻게 검증되는가.</li>
+<li>지식과 권위의 비대칭이 구조화된 자리(의료·교육·목회)에서, 개인의 자기 점검만으로 잡히지 않는 교만을 견제하는 제도는 어떻게 설계되는가(<a class="wl" href="../../t/%EA%B6%8C%EB%A0%A5/">권력</a> · <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a>과 공유되는 질문).</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EA%B2%B8%EC%86%90/">겸손</a> — 교만의 정반대편. 케노시스, 거짓 겸손과 참 겸손, 당당한 겸손, 자존감과의 관계는 그쪽에서 상술한다.</li>
+<li><a class="wl" href="../../t/%EC%9A%B0%EC%83%81%EC%88%AD%EB%B0%B0/">우상숭배</a> — "내가 주권자가 되려는 마음"으로서의 교만. 형상 없는 현대적 우상으로서의 권력의지.</li>
+<li><a class="wl" href="../../t/%EA%B6%8C%EB%A0%A5/">권력</a> — 교만이 제도와 지배로 실체화되는 자리, 그리고 통제와 인격적 존중의 갈림길.</li>
+<li><a class="wl" href="../../t/%ED%9A%8C%EA%B0%9C/">회개</a> — 사울의 거짓 회개와 세리의 여섯 단어를 가르는 지점.</li>
+<li><a class="wl" href="../../t/%EC%88%9C%EC%A2%85/">순종</a> — 교만의 유일한 해독제로 제시되는 외부성. 순종이 제사보다 낫다는 명제의 신학.</li>
+<li><a class="wl" href="../../t/%EA%B9%A8%EC%96%B4%EC%9E%88%EC%9D%8C/">깨어있음</a> — 각성과 방심의 분기점. 형통이 곧 방심의 자리가 되는 구조.</li>
+<li><a class="wl" href="../../t/%EC%A3%84%EC%84%B1/">죄성</a> · <a class="wl" href="../../t/%EC%A3%84/">죄</a> — 칠죄종의 으뜸이자 모든 죄의 뿌리로서의 교만이 놓인 죄론적 좌표.</li>
+<li><a class="wl" href="../../t/%EB%A6%AC%EB%8D%94%EC%8B%AD/">리더십</a> — 언씬 리더십과 자기 과시, 그리고 권위가 권위주의로 변질되는 경로.</li>
+<li><span class="wl-dead" title="위키 내부 링크">2023_내마음의그늘2_시기</span> — 교만이 옆 사람을 향할 때의 파생 죄. 사울과 다윗, 모방욕구.</li>
+<li><span class="wl-dead" title="위키 내부 링크">권성수_각성시리즈</span> · <span class="wl-dead" title="위키 내부 링크">문대원_내마음의그늘시리즈</span> — 교만을 왕들의 평전과 칠죄종의 렌즈로 각각 다룬 두 연속 강해.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">문대원, 「내 마음의 그늘 (1) 교만」(벧전 5:5-7)</span></td>
+<td>설교</td>
+<td>교만=하나님과의 동등성 추구, 세 증상(높아짐·자기중심성·분열), 은혜의 단절, 통제광과 염려</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수, 「자기 기념비 하나님 기념비」(삼상 15장)</span></td>
+<td>설교</td>
+<td>"95% 잠재의식의 영적 암", Ministry→Monument, 거짓 회개, "버림"의 신학적 한정, 은혜의식</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수, 「낮추시고 시험하사 마침내 복」(신 8:11-20)</span></td>
+<td>설교</td>
+<td>풍요→교만→망각→멸망의 사슬, 아나·나사의 형성적 의미, "무시당하면 된다", 기억(자카르)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수, 「이러면 파멸!」(단 5:22-31)</span></td>
+<td>설교</td>
+<td>"다 알고도" 낮추지 않는 죄, 메네 메네 데겔 우바르신, 저울에 다시는 하나님, 파멸 원리의 보편성</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수, 「위기관리와 성공관리」(왕하 18:1-8)</span></td>
+<td>설교</td>
+<td>위기보다 성공이 더 위험함, 히스기야의 과시, 형통기의 기도 실종, 느후스단</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수, 「안개 사업을 하세요」(약 4:13-17)</span></td>
+<td>설교</td>
+<td>실천적 무신론, 허탄한 자기 자랑, "사람은 작정하지만 하나님이 처리하신다", 고전 4:7</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수, 「대가 만나면 겸손」(벧전 5:5-7)</span></td>
+<td>설교</td>
+<td>휘페레파니아와 '대적'(안티탓소마이)의 군사적 함의, 자동 교만, 육체의 가시</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수, 「에브라임의 도전」(삿 12:1-7)</span></td>
+<td>설교</td>
+<td>감사할 자리의 시비, 형제 경쟁과 반골 기질의 세대 반복, "회개해도 아픔의 대가는 따른다"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">문대원, 「교만한 리더의 결말」(행 12:20-24)</span></td>
+<td>설교</td>
+<td>스노비즘, 과시=불안의 증거, 언씬 리더십, 헤롯의 죽음과 "말씀은 흥왕하여 더하더라"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">문대원, 「우리가 사랑한 우상들 (5) 권력의지」(단 4:28-37)</span></td>
+<td>설교</td>
+<td>니체의 권력의지를 죄론으로 재독, '나' 4회, 파스칼, 니버(불안), 하늘을 우러러봄</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">문대원, 「세상이 가르칠 수 없는 미덕」(빌 2:5-8)</span></td>
+<td>설교</td>
+<td>"교만을 죄로 여기는 국가는 없다", 수양이 아니라 순종, 수도원 서약의 순종 우선</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">문대원, 「성공에 도취되지 않으려면」(느 2:1-10)</span></td>
+<td>설교</td>
+<td>"이제부터는 제가 감당할 수 있습니다"의 임계점, 하나님의 선한 손, 매컬리 컬킨·모토로라</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">문대원, 「소란한 마음 다스리기」(시 131:1-3)</span></td>
+<td>설교</td>
+<td>교만·오만·야망의 삼분법, 룸(rûm)의 망각 구조, 기도로 진단하는 오만</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">문대원, 「성품은 말보다 더 크게 말한다」(삼상 15:17-23)</span></td>
+<td>설교</td>
+<td>성공 증후군의 네 함정, "자리가 사람을 보여준다", 쓰임받음과 구원의 구별</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">문대원, 「세계관 이야기 (3) 반역의 결과」(창 3:1-8)</span></td>
+<td>설교</td>
+<td>아우토노모스, 죄의 점진성, 피조물의 자리를 벗어남으로서의 교만, 삼중 단절</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">문대원, 「내 마음의 그늘 (2) 시기」(삼상 18:6-9)</span></td>
+<td>설교</td>
+<td>교만의 파생으로서의 시기, 평행법 해석, "시기는 자신을 먼저 망친다"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">윤명숙, 「잘될 때 감사」(잠 16:17-19)</span></td>
+<td>설교</td>
+<td>"잘될 때 찾아오는 것이 교만", 신분 망각론, 금지가 아닌 훈련, "최고의 교만은 말씀 거역"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">윤명숙, 「부모에게 주신 권위」(단 4:34)</span></td>
+<td>설교</td>
+<td>권위는 "입혀 주신" 위임, 권위와 권위주의의 구별, "멘토가 없다면 그 자리를 내려놓으라"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">이성욱, 「양자겸비」(눅 18:9-14)</span></td>
+<td>설교</td>
+<td>자기는 못 보고 남은 아는 죄, 프로스 헤아우톤(자기를 향한 독백), 양자겸비</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수 각성 시리즈</span></td>
+<td>시리즈 개요</td>
+<td>각성과 방심의 이항 대조, "위기보다 성공이 더 위험하다", 왕들의 평전 구조</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">문대원 내 마음의 그늘 시리즈</span></td>
+<td>시리즈 개요</td>
+<td>칠죄종의 으뜸으로서의 교만, 진단-처방의 2단 구조, 죄의 자기 귀결성</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/영성신학</span><span>#topic/교만</span><span>#topic/죄론</span><span>#topic/칠죄종</span><span>#topic/자기과시</span><span>#topic/성공관리</span><span>#topic/심판</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

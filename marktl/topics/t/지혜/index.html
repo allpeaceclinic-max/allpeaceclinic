@@ -1,0 +1,586 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>지혜 — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-t">목회·실천</span><span class="date">2026-08-03</span></div>
+  <h1 class="note-title">지혜</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>히브리어 호크마(חָכְמָה)는 사변적 통찰이 아니라 "잘 사는 기술"이다. 장인의 솜씨에도, 왕의 통치에도, 창조 세계의 질서를 읽는 눈에도 같은 단어가 쓰인다. 그래서 <a class="wl" href="../../t/%EC%A7%80%ED%98%9C%EB%AC%B8%ED%95%99/">지혜문학</a>이 묻는 것은 "무엇을 아는가"가 아니라 "아는 대로 사는가"이며, 잠언·전도서·야고보서를 관통하는 이 질문은 설교의 자리에서 늘 한 문장으로 압축되어 왔다 — 지식은 아는 것이고 지혜는 아는 대로 사는 것이다.</p>
+<p>그러나 지혜를 실천 능력으로만 정의하면 절반이다. 잠언은 이 능력의 출발점을 사람의 총명이 아니라 관계에 둔다. "여호와를 경외하는 것이 지식의 근본"(<span class="wl-dead" title="위키 내부 링크">잠 1:7</span>)이라는 한 절이 지혜론 전체의 뿌리이며, 신약은 그 뿌리를 한 인격으로 옮겨 놓는다 — "그 안에는 지혜와 지식의 모든 보화가 감추어져 있느니라"(<span class="wl-dead" title="위키 내부 링크">골 2:3</span>). 지혜는 관계에서 발원해 분별로 작동하고 삶으로 증명되며 마침내 다음 사람에게 흘러간다.</p>
+<p>이 글은 그 흐름을 아홉 겹으로 따라간다. 경외라는 뿌리에서 시작해 어휘의 지도를 그리고, 듣기와 자기 한계 인정이라는 두 입구를 지나, 삶의 증명과 현장의 분별로 나아간다. 그리고 구하는 지혜와 추구하는 지혜라는 두 날개, 유한한 시간을 세는 계산법을 거쳐, 마지막에는 지혜가 소유가 아니라 매일 갱신되는 자세라는 사실을 솔로몬 자신의 생애가 반증하는 자리에 이른다.</p>
+<h2>1. 여호와 경외 — 뿌리에서 시작하는 지혜</h2>
+<p>잠언의 첫 명제는 지혜의 정의가 아니라 지혜의 출처다. 권성수 목사는 이 경외를 "존경과 사랑을 겸한 두려움"으로 풀고, 나아가 "하나님과 접속하는 방법"이라고 규정한다. 접속이라는 은유가 중요한 이유는 지혜를 축적의 결과가 아니라 연결의 결과로 놓기 때문이다. 그가 자녀교육 강해에서 그린 도해가 이 구조를 한눈에 보여준다.</p>
+<table>
+<thead>
+<tr>
+<th>지혜라는 나무</th>
+<th>내용</th>
+<th>본문</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>뿌리</td>
+<td>여호와 경외</td>
+<td>잠 1:7</td>
+</tr>
+<tr>
+<td>둥치</td>
+<td>아는 것(지식·학식·명철) → 써먹는 것(지혜·슬기·훈계·지략) → 바르게 하는 것(정직·정의·공의·근신)</td>
+<td>잠 1:2-6</td>
+</tr>
+<tr>
+<td>열매</td>
+<td>머리의 아름다운 관, 목의 금 사슬</td>
+<td>잠 1:9</td>
+</tr>
+</tbody>
+</table>
+<p>뿌리에 연결되지 않은 가지는 생명력이 없다는 것이 이 도해의 요지다. 같은 목사가 다른 강해에서 경외를 "숭앙적 두려움"으로 정의하면서 "숭앙 없는 두려움은 하나님을 독재자로 오해하는 것"이라고 못박은 것도 같은 맥락이다. 경외는 정서가 아니라 관계의 형식이며, 그 형식은 결국 "말씀대로 사는 것"으로만 확인된다.</p>
+<p>문대원 목사는 이 경외를 훨씬 구체적인 문장으로 옮긴다. 전도서 5장 강해에서 그는 "하나님을 경외하는 것은 그분 때문에 할 수 없는 일이 있는 것"이라고 정의한다. 경외를 감정에서 행동의 제약으로 번역한 것인데, "강단에서도 할 수 없는 말이 있다"는 자기 고백이 뒤따르면서 이 정의는 추상을 벗는다. 흥미롭게도 같은 설교자는 전도서 7장 강해에서 경외의 또 다른 얼굴을 짚는다. "하나님을 경외하는 자는 이 모든 일에서 벗어날 것"(전 7:18)의 NIV 번역이 "will avoid all extremes"라는 점을 들어, 경외를 율법주의적 과잉과 도덕적 냉담이라는 양극단으로부터의 자유로 읽는 것이다. 지나치게 의인이 되지 말라는 경고는 도덕적 해이의 허가가 아니라 자기 의(義)라는 우상에 대한 경계다.</p>
+<p>경외가 뿌리라면, 그 뿌리에서 자라나는 것을 부르는 말들은 서로 어떻게 다른가.</p>
+<h2>2. 지식·명철·지략 — 지혜를 이루는 말들</h2>
+<p>지혜를 다룬 강해들은 거의 예외 없이 인접 어휘를 구별하는 데서 출발한다. 그 구별이 없으면 지혜는 곧장 지식으로 미끄러지기 때문이다.</p>
+<table>
+<thead>
+<tr>
+<th>어휘</th>
+<th>원어</th>
+<th>강조점</th>
+<th>대표 본문</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>지식</td>
+<td>다아트(דַּעַת)</td>
+<td>아는 것 — 정보와 학식</td>
+<td>잠 1:7</td>
+</tr>
+<tr>
+<td>지혜</td>
+<td>호크마(חָכְמָה)</td>
+<td>아는 대로 사는 것 — 삶의 기술, 통치 능력</td>
+<td>왕상 3:12, 잠 3:14</td>
+</tr>
+<tr>
+<td>명철</td>
+<td>비나(בִּינָה)</td>
+<td>옳고 그름·진위를 식별하는 분별</td>
+<td>잠 16:21-22</td>
+</tr>
+<tr>
+<td>지략</td>
+<td>타흐불로트(תַּחְבֻּלוֹת)</td>
+<td>배의 키를 조종하듯 인생을 조타하는 전략</td>
+<td>잠 24:6</td>
+</tr>
+<tr>
+<td>슬기(신약)</td>
+<td>프로니모스(φρόνιμος)</td>
+<td>미래를 내다보는 실천적 명민함</td>
+<td>눅 16:8, 마 10:16</td>
+</tr>
+</tbody>
+</table>
+<p>전지천 간사는 이 구별을 한 문장으로 압축한다 — "지식은 말을 하지만, 지혜는 듣는다." 지혜의 본질이 발화가 아니라 수용에 있다는 이 정식은 이후의 여러 층위와 곧장 이어진다. 같은 구별을 권성수 목사는 골로새서 강해에서 어순의 문제로 읽는다. 본문이 "지혜와 지식"(<span class="wl-dead" title="위키 내부 링크">골 2:3</span>)의 순서로 말하는 데는 이유가 있으니, 예수 자신이 지혜이시므로 지혜를 먼저 알아야 한다는 것이다.</p>
+<p>한편 야고보서 강해에서는 같은 구별이 IQ와 LQ의 대비로 나타난다. 머리로 아는 지식이 아니라 행동으로 보일 수 있는 삶(LIFE)이 지혜의 자격 심사라는 것이다. 이 대비는 정보 과잉 시대에 특히 날카롭다. 솔로몬의 태평성대를 강해하면서 권 목사는 정보 과잉 문화(info-glut culture)에 대한 진단을 인용한 뒤 한 문장으로 되묻는다 — "But have we become wiser?" 정보의 축적이 지혜를 보장하지 않는다는 이 물음 뒤에 그가 놓는 것은 <span class="wl-dead" title="위키 내부 링크">J.I. 패커</span>의 정의다. 지혜란 최선이고 최고인 목표를 보는 능력이며, 그것을 선택하려는 성향이고, 동시에 그것을 이루는 가장 확실한 수단이다. 목표를 정확히 보고 수단을 정확히 쥐는 힘 — 이 정의가 어휘 구별의 종착점에 선다.</p>
+<h2>3. 듣는 마음 — 지혜는 말하기 전에 듣는다</h2>
+<p>지혜가 수용이라면 그 첫 동작은 듣기다. 그리고 이 지점에서 자료들은 놀라울 만큼 한 곳으로 모인다.</p>
+<p>전지천 간사의 솔로몬 강해는 일천번제라는 화려한 제의에서 무게중심을 옮겨 9절의 단 한 마디에 집중한다. 솔로몬이 구한 것은 "듣는 마음"(레브 쇼메아, לֵב שֹׁמֵעַ)이었고, 히브리어 동사 샤마(שָׁמַע)는 '듣다'와 '순종하다'를 한 단어에 품는다. 그래서 "듣는 마음을 구하는 것은 여호와께 순종하는 것"이라는 그의 정식은 어휘의 무게를 정확히 짚은 것이다. 이 설교의 또 다른 미덕은 통념을 모두에서 차단한다는 데 있다. 일천번제는 소원 성취의 비법도, 하나님의 마음을 움직이는 기술도 아니며, 성전 건축 이전 기브온 산당이라는 정황이 이를 뒷받침한다는 것이다.</p>
+<p>문대원 목사는 같은 원리를 야고보서 1장 19절에서 끌어내며 순서를 도식화한다 — 경청 → 공감 → 신뢰 → 대화 → 설득. 첫 단추가 경청이며, 경청은 소극적 침묵이 아니라 적게 말하고 집중해서 들어주는 적극적 태도라는 것이다. 그가 잠언 1:5("지혜 있는 자는 듣고 학식이 더할 것이요")를 끌어와 "지혜로운 사람은 듣는 사람"이라고 못박을 때, 잠언과 야고보서의 공통 DNA가 드러난다. 같은 설교자는 전도서 강해에서 이 원리를 뒤집어 확인한다. 말이 많으면 우매한 자의 소리이며, 다 안다고 속시원히 풀어주는 확신 자체가 우매함의 징표라는 것이다.</p>
+<p>윤명숙 전도사는 부부 소통을 다루면서 이 순서를 이사야 50장 4절의 해석 순서로 정초한다. 학자의 혀보다 학자의 귀가 먼저라는 것이다.</p>
+<blockquote>
+<p>"학자의 귀를 가져야 학자의 말을 할 수 있다. 잘 알아듣는 귀가 먼저 필요하다." — 윤명숙, 「의논의 경영」</p>
+</blockquote>
+<p>그리고 이 듣기가 가장 어려워지는 자리를 권성수 목사가 짚는다. 시편 119편 강해에서 그는 진짜 지혜로운 사람을 "충고를 받는 사람, 제일 듣기 싫은 말을 듣는 사람"으로 정의한다. 다윗이 말씀으로 깨어났다면 나단이라는 스승은 왜 필요했는가 — 하나님이 완벽한 교재와 사람이라는 두 통로를 함께 쓰시기 때문이라는 답이다. 듣기는 말씀 앞에서만이 아니라 사람 앞에서도 시험받는다.</p>
+<h2>4. 자기 한계의 인정 — "명철은 내게 있는 것이 아니다"</h2>
+<p>듣기가 지혜의 첫 동작이라면, 듣기를 가능하게 하는 전제는 자기가 다 알지 못한다는 인정이다.</p>
+<p>윤명숙 전도사의 잠언 16장 강해는 이 전제를 가장 단호하게 진술한다. "마음이 지혜로운 자"란 능력자가 아니라 "자기의 연약함을 알아서 하나님을 의지하는 자"이며, 따라서 명철은 본래 내게 있는 것이 아니다. 그는 솔로몬의 위대함을 지능이 아니라 자백에서 찾는다 — "솔로몬이 대단한 것은 자기의 무능, 자기의 연약을 알았던 것이다." 일천번제는 그래서 흥정이 아니라 자기를 하나님께 올려드리는 행위이며, "나는 이 나라를 다스릴 사람이 아니다"라는 고백을 하나님이 기쁘게 받으셨다는 독법이 나온다. 자기 비움이 권위의 토대가 되는 역설이다.</p>
+<p>문대원 목사는 시편 127편에서 같은 결론에 다른 경로로 도착한다. 역사상 가장 화려한 성전을 지은 왕조차 통제할 수 없는 변수 앞에서 "여호와께서 집을 세우지 아니하시면 세우는 자의 수고가 헛되다"고 고백했으니, 한계를 깨닫고 인정하는 것이 진정한 지혜이고 다 할 수 있다고 말하는 것이 어리석음이라는 것이다. 이 설교의 백미는 잠(睡眠)의 신학이다. 잠은 우리가 하나님이 아님을 매일 밤 기억하게 하는 장치이며, 졸지도 주무시지도 않으시는 분이 지키시기에 인간은 통제를 내려놓고 잘 수 있다. 불면이 종종 모든 것을 통제하려는 마음의 증상이라면, 잠은 신뢰의 실천이다. 여기에 겸손의 정의가 따라붙는다 — 겸손은 나를 작게 생각하는 것이 아니라 나에 대해 적게 생각하는 것이며, 시선을 자기에서 하나님의 크심으로 돌리는 일이다.</p>
+<p>한계 인정이 지혜의 지적 형태로 나타나면 그것은 <a class="wl" href="../../t/%EC%97%AD%EC%84%A4/">역설</a>을 견디는 능력이 된다. 문 목사는 전도서 7장 강해에서 모순과 역설을 구별한다. 모순은 둘 다 참일 수 없는 관계지만, 역설은 더 깊은 차원에서 둘이 동시에 참인 관계다. 규범(세상은 정의로워야 한다)과 실존(세상은 정의롭지 않다)이 충돌할 때 이를 모순으로 처리하면 신앙이 무너지고, 역설로 끌어안으면 신앙이 깊어진다. 그 출발점은 "지혜가 나를 멀리하였도다"(전 7:23)라는 솔로몬 자신의 실패 고백이며, 도착점은 광야의 이미지다.</p>
+<blockquote>
+<p>"광야에서는 지도가 필요한 것이 아니라 안내자가 필요하다." — 문대원, 「크리스천의 윤리(4) 실존주의자가 바라본 세상」</p>
+</blockquote>
+<p>인생에 80억 명 모두에게 통하는 공식이 없다는 인정은 획일적 율법주의와 전적 주관주의를 동시에 넘어서는 제3의 길을 연다. 그리고 이 인정 위에서만 지혜는 삶으로 검증될 수 있다.</p>
+<h2>5. IQ가 아니라 LQ — 삶으로 증명되는 지혜</h2>
+<p>야고보는 "지혜와 총명이 있는 자가 누구냐"(<span class="wl-dead" title="위키 내부 링크">약 3:13</span>)고 묻고 곧바로 증명을 요구한다. 선행으로 그 행함을 보이라는 것이다. 권성수 목사가 이 도전을 "삶으로 보여 달라, 그렇지 않으면 인정할 수 없다"로 옮긴 것은 본문의 어조를 정확히 살린 것이다. 그리고 그는 증명의 두 축을 마음(HEART)과 삶(LIFE)으로 잡아, 세상 지혜와 천상 지혜를 나란히 세운다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>세상 지혜 (약 3:14-16)</th>
+<th>천상 지혜 (약 3:17-18)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>동기 (HEART)</td>
+<td>시기 · 이기적 야망</td>
+<td>하나님께 영광 · 사람에게 평화</td>
+</tr>
+<tr>
+<td>본질 (LIFE)</td>
+<td>땅에 속하고 정욕적이며 귀신적인 것</td>
+<td>성결 · 화평 · 관용 · 양순 · 긍휼 · 선 · 무편견 · 무외식</td>
+</tr>
+<tr>
+<td>결과</td>
+<td>불안 → 혼란 → 악</td>
+<td>평안 → 평화 → 의의 열매</td>
+</tr>
+</tbody>
+</table>
+<p>출처가 본질을 결정한다는 것이 이 도해의 핵심이다. 같은 "지혜"라도 아래에서 났는가 위에서 났는가에 따라 정반대 열매를 맺는다. 그리고 본문이 "지혜의 온유함"을 말하는 대목에서 권 목사는 프라우테스(πραΰτης)를 힘의 부재가 아니라 통제된 힘으로 재정의한다. 200만을 지휘할 카리스마를 다스려 지면에서 가장 온유한 자가 된 <span class="wl-dead" title="위키 내부 링크">모세</span>와, 천군천사를 부르실 수 있었으나 통제하신 예수가 그 모델이다. 온유는 나약함이 아니라 다스려진 강함이다.</p>
+<p>같은 원리를 문대원 목사는 초대교회의 일꾼 선출에서 읽는다. 일곱 일꾼의 자격이 "성령과 지혜가 충만한" 것이었다면, 그 인과의 사슬은 성령 충만 → 순종 → 자신을 내어줌 → 욕심 없음 → 지혜로운 결정으로 이어진다. 바둑 두는 사람보다 훈수 두는 사람이 더 잘 보는 이유는 욕심이 없기 때문이며, 욕심이 눈을 가리는 한 판단은 흐려진다는 것이다. 그가 잠언 8장을 근거로 지혜를 추상 개념이 아니라 인격체로 규정하는 대목도 같은 방향을 가리킨다. 지혜를 얻으려면 정보를 모으는 것이 아니라 인격적 관계와 변화가 있어야 한다.</p>
+<p>윤명숙 전도사는 이 증명을 상담자의 언어로 옮긴다. 해본 것이 없으면 나눌 것이 없다는 것이다. 그가 그린 다섯 단계 — 마음을 내려놓을 때 → 지혜 → 그 경험 → 학식 → 명철을 나눌 수 있다 — 는 지혜가 머리로 아는 정보가 아니라 살아낸 경험에서 길어 올린 자산임을 못박는다.</p>
+<h2>6. 막힌 자리에서 발동한다 — 분별·정의·타이밍</h2>
+<p>지혜의 증명은 대개 조용한 일상이 아니라 막다른 골목에서 이루어진다. 권성수 목사의 솔로몬 재판 강해가 이 국면을 다룬다. 두 여인이 한 아이를 두고 다투는 사건에는 DNA도 물증도 증인도 단서도 없다. 완전한 교착 상태에서 "칼을 가져오라"는 뜻밖의 명령이 진짜 어머니의 모성을 끌어냈고, 무시무시한 상황이 경이로운 회복으로 뒤집혔다.</p>
+<blockquote>
+<p>"우리가 볼 때 막혀 있지만 하나님의 지혜가 가동되면 풀린다." — 권성수, 「솔로몬의 재판」</p>
+</blockquote>
+<p>이 강해의 신학적 정점은 그다음이다. 솔로몬의 판결은 진실을 밝히는 정의인 동시에 생명을 회복시키는 <a class="wl" href="../../t/%EA%B8%8D%ED%9C%BC/">긍휼</a>이었으며, 권 목사는 이를 "현명한 정의(wise justice)"와 "정의로운 긍휼(just mercy)"의 결합으로 부른다. 참된 지혜는 정의와 긍휼을 대립시키지 않는다. 사회적으로 가장 천대받던 두 여인을 왕이 무시하지 않았다는 사실 자체가 지혜의 증거로 제시되는 것이다. 같은 본문을 윤명숙 전도사는 양육의 언어로 다시 읽는다. 이 재판이 가른 것은 "생모냐 아니냐"가 아니라 "누가 이 아이를 잘 키울 마음이 있는가"였다는 것이다. 혈연이 사랑을 보장하지 않으며 양육은 마음의 문제라는 이 독법은 입양·재혼 가정·돌봄의 현장을 품는 시선이 된다.</p>
+<p>분별의 또 다른 얼굴은 타이밍이다. 솔로몬의 대관식 강해에서 권 목사는 위기의 무기가 흥분이 아니라 머리임을 강조하며, 나단의 은밀한 전략이 성공한 이유를 시간에서 찾는다. 하루만 지나면 세력이 굳어지므로 불이 번지기 전에 꺼야 한다는 것이다. 기드온의 300명을 다룬 강해에서도 지혜는 같은 방식으로 형상화된다. 물을 핥아 먹은 사람은 곧 옆을 살피며 주의하는 사람이며, 그 분별이 전투에서 지혜가 된다.</p>
+<p>그리고 분별의 구조를 명시적으로 도해한 것이 삼중시각이다. <span class="wl-dead" title="위키 내부 링크">존 프레임</span>의 <a class="wl" href="../../t/%EC%82%BC%EC%A4%91%EA%B4%80%EC%A0%90/">삼관점주의</a>를 빌린 이 틀은 권성수·문대원 두 설교자가 공유한다.</p>
+<table>
+<thead>
+<tr>
+<th>시각</th>
+<th>묻는 것</th>
+<th>치우칠 때</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>규범적</td>
+<td>이것은 말씀의 기준에 맞는가</td>
+<td>율법주의</td>
+</tr>
+<tr>
+<td>상황적</td>
+<td>그가 처한 사정은 무엇인가</td>
+<td><span class="wl-dead" title="위키 내부 링크">상황윤리</span>·변명</td>
+</tr>
+<tr>
+<td>실존적</td>
+<td>그가 내 가족이라면 나는 어떻게 하겠는가</td>
+<td>주관주의</td>
+</tr>
+</tbody>
+</table>
+<p>지하철에서 소리 지르는 아이를 규범으로만 판단하면 정죄가 되지만 장례를 치르고 오는 길이라는 상황을 알면 판단이 뒤집힌다는 예화가 이 틀을 한 장면으로 각인시킨다. 셋 중 하나만 어긋나도 안 된다는 것이 권 목사의 결론이고, 문 목사는 같은 틀에서 실존을 절대화한 <a class="wl" href="../../t/%EC%8B%A4%EC%A1%B4%EC%A3%BC%EC%9D%98/">실존주의</a>의 우울을 진단한다.</p>
+<p>이 분별이 가장 미묘해지는 자리가 정직의 영역이다. 제9계명 강해에서 권 목사는 거짓말을 "거짓이라고 믿는 것을 말이나 글로 옳다고 하는 것"으로 정의한 뒤, 침묵과 동문서답은 거짓말이 아니라 지혜라고 못박는다. 진실을 말할 의무가 곧 모든 정보를 공개할 의무는 아니라는 것이다. 다른 강해에서 그는 이를 "정직과 투명은 다르다"로 정식화하며, 하나님 앞에서는 다 드러내되 악한 자가 넘어뜨리려 할 때는 다 밝힐 필요가 없다고 정리한다. "뱀같이 지혜롭고 비둘기같이 순결하라"(마 10:16)는 명령이 순전함과 지혜의 결합을 요구하기 때문이다. 같은 결합을 갈등 상황에 적용한 것이 평화 시리즈의 통찰이다 — 사랑만 주면 상대를 망치므로, 사랑에는 반드시 지혜가 동반되어야 한다.</p>
+<h2>7. 두 날개 — 구하는 지혜와 추구하는 지혜</h2>
+<p>지혜는 위에서 주어지는가, 아래에서 길러지는가. 자료들은 이 질문을 양자택일로 두지 않는다.</p>
+<p>야고보서 1장 5절을 강해하면서 권성수 목사는 구하는 지혜의 성격을 정밀하게 나눈다. 시련에서 <em>벗어나는</em> 지혜는 당장 안 주실 수 있지만 시련을 <em>통과하는</em> 지혜는 반드시 주신다는 것이다. 그가 이 지혜를 랜턴에 비유한 대목이 인상적이다. 얼마 후 벗어난다는 미리보기 랜턴이 아니라 바로 앞만 비추는 랜턴이며, 한 날의 괴로움은 그 날에 족하므로 오늘을 감당할 지혜를 한 걸음씩 주신다. 응답 없음을 신앙의 실패가 아니라 더 깊은 통로로 재해석하면서도, 하나님을 자판기로 만들지 않는 균형이 여기 있다. 같은 강해가 제시한 고통의 분류는 어떤 지혜를 구할지를 가려주는 진단 도구가 된다.</p>
+<table>
+<thead>
+<tr>
+<th>고통의 종류</th>
+<th>구해야 할 지혜</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>징계의 고통(요나)</td>
+<td>연단·성숙의 지혜</td>
+</tr>
+<tr>
+<td>이유를 알 수 없는 신비한 고통(욥)</td>
+<td>신뢰의 지혜</td>
+</tr>
+<tr>
+<td>바로 살기에 당하는 고통</td>
+<td>용서의 지혜</td>
+</tr>
+<tr>
+<td>누구나 겪는 생로병사</td>
+<td>수용의 지혜</td>
+</tr>
+</tbody>
+</table>
+<p>반대편 날개가 <a class="wl" href="../../t/%EC%9D%BC%EB%B0%98%EC%9D%80%EC%B4%9D/">일반은총</a>의 지혜다. 솔로몬의 재판 강해에서 권 목사는 "나를 간절히 찾는 자가 나를 만날 것"(잠 8:17)의 '나'가 지혜임을 짚으며, 지혜는 추구하는 사람에게 온다고 말한다. 자기 분야의 책·강의·전문가를 부지런히 흡수하고 "사람을 읽는" 훈련을 하라는 권면이 뒤따르고, 기도와 노력은 대립이 아니라 양 날개라는 결론이 나온다. 이 관점을 공식으로 압축한 것이 잠언 24장 강해다.</p>
+<blockquote>
+<p>"경건 + 지략 = 승리. 둘 중에 하나가 없으면 실패한다." — 권성수, 「솔로몬 트위터3 — 경건한 제갈량이 되세요」</p>
+</blockquote>
+<p>여기서 지략(타흐불로트)은 본래 배의 키를 조종하는 기술을 뜻하며, 인생을 조타하는 실천적 능력을 함의한다. 이 강해가 미련함을 정의하는 방식도 특징적이다. 미련한 자는 지식이 없는 자가 아니라 자기 세계에 머물기를 좋아하는 자이며, 발전을 거부하는 것이 곧 미련함이다. 그래서 지혜의 추구는 안락지구(comfort zone)를 떠나 도전지구(challenge zone)로 들어가 평생 배우는 이동으로 재정의된다. 지혜를 정적 지식이 아니라 동적 이동으로 놓은 이 프레임이 이 설교의 가장 실천적인 대목이다.</p>
+<p>다만 두 날개를 인정하는 것과 둘을 동일시하는 것은 다르다. 문대원 목사가 몽테뉴를 빌려 남긴 문장이 그 경계를 긋는다 — 다른 사람의 지식으로 지식인이 될 수는 있지만 다른 사람의 지혜로 지혜자가 될 수는 없으며, 오직 성령과 동행할 때 지혜자가 된다.</p>
+<h2>8. 날을 세는 지혜 — 유한성 앞에서의 계산</h2>
+<p>지혜가 시간을 다루는 능력으로 나타날 때, 성경이 쓰는 동사는 '계수하다'다. 시편 90편 강해에서 권성수 목사는 "우리 날 계수함을 가르치사 지혜로운 마음을 얻게 하소서"(시 90:12)를 시간관리의 신학으로 읽는다. 핵심은 기법이 아니라 좌표다. 하나님의 영원시계에 비추어 천 년을 세 시간으로 환산하면 일생 80년은 한 경점 15분에 불과하며, 그 환산이 추상적 무상함을 몸으로 느끼게 한다. 그가 반복하는 명제는 단순하다 — 영원을 봐야 셀 수 있고, 없어질 것에 인생을 걸면 불안하며, 영원한 것에 인생을 걸어야 한다.</p>
+<p>같은 계산을 에베소서 5장은 다른 어휘로 명령한다. "세월을 아끼라"의 직역이 "카이로스를 구속하라(엑사고라조)"이며, 엑사고라조는 노예를 값 주고 사 내는 단어다. 시간은 절약의 대상이 아니라 어둠에 사로잡힌 상태에서 대가를 치러 되찾아 와야 할 구속의 대상이라는 것이다. 송구영신예배의 결구가 이 신학을 손에 쥐여준다 — 매일 새로운 86,400초, 오늘은 현찰이다.</p>
+<p>윤명숙 전도사는 이 계산법을 누가복음 16장의 불의한 청지기에게서 찾아낸다. 주인이 칭찬한 것은 부정이 아니라 쫓겨날 것을 미리 알고 대비한 명민함(프로니모스)이었으며, 본문의 자조 섞인 책망은 "이 세대의 아들들이 자기 시대에 있어서는 빛의 아들들보다 더 지혜롭다"는 것이다. 세상 사람도 자기 미래엔 이토록 영민한데 빛의 자녀가 영원 앞에서 둔하다는 역설이다. 그가 '불의한 재물'을 부정 축재로 좁히지 않고 "하나님의 표준에 비하면 우리 손의 모든 재물"로 넓힌 대목이 이 독법의 열쇠다. 어차피 없어질 것을 영원히 남는 것으로 환전하라는 <a class="wl" href="../../t/%EC%B2%AD%EC%A7%80%EA%B8%B0/">청지기</a>적 권면이 여기서 나오고, 물질 관리라는 지극히 작은 일이 영원 대비라는 큰 일의 시금석이 된다는 결론이 뒤따른다. 같은 본문을 다룬 다른 해에 그는 이 태도를 "치밀함"이라 부르며, 영원과 천국을 준비해야 할 사람이 하나님과의 관계는 대충 맺어 가는 현실을 겨눈다.</p>
+<p>시간의 지혜가 종말의 지평까지 뻗으면 다니엘 12장에 이른다. "지혜 있는 자"(마스킬림, מַשְׂכִּילִים)는 단지 영리한 자가 아니라 하나님의 뜻을 분별해 많은 사람을 옳은 데로 돌이키는 자이며, 그들이 별처럼 영원토록 빛난다. 권 목사는 여기서 지혜를 "편한 타협이 아니라 손해를 감수하고 하나님 편에 서는 선택"으로 정의하고, 한 문장으로 종말 윤리를 재배치한다 — 완벽한 사람은 없어도 선명한 사람은 있다. 그리고 이 우주적 약속을 새벽마다 커피와 율무차를 나누며 복음을 전하는 다섯 사람으로 착지시킨다. 별처럼 빛나는 삶은 멀리 있지 않다는 것이다.</p>
+<h2>9. 감추어진 보화, 그리고 전수 — 지혜는 소유가 아니라 자세다</h2>
+<p>지혜론의 모든 갈래는 결국 한 인격으로 수렴한다. 골로새서 2장 3절 — "그 안에는 지혜와 지식의 모든 보화가 감추어져 있느니라." 권성수 목사는 이 '감추어져'(아포크뤼포스)를 부재가 아니라 은닉으로 읽고, 300년 전 침몰한 보물선의 이미지로 풀어낸다. 보화는 이미 거기 있으나 사모하지 않고 찾지 않으니 없는 것처럼 여겨진다는 것이다. 이 어휘가 중요한 이유는 골로새서의 정황 때문이다. 소수에게만 전수되는 비밀 지식을 자랑하던 <a class="wl" href="../../t/%EC%98%81%EC%A7%80%EC%A3%BC%EC%9D%98/">영지주의</a>에 맞서, 본문은 참된 비밀이 그리스도 안의 "공개된 비밀"임을 선언한다. 누구나 배우고 누구나 가르칠 수 있다는 뜻이다.</p>
+<p>윤명숙 전도사는 이 그리스도 중심성을 잠언 강해에서 훨씬 단순하게 진술한다. 구약이 "여호와를 경외"라면 신약은 "지혜이신 예수께 나아감"이며, 따라서 지혜의 내용은 예수를 바로 아는 것이라는 도식이다. 잠언이 지혜를 하나의 인격으로 묘사한다는 관찰이 이 도식을 뒷받침한다. 지혜를 얻는 일은 명제를 습득하는 일이 아니라 인격에게 나아가는 관계적 행위다. 그가 "성경을 모른 채 세상의 박사가 되는 것보다 성경을 아는 것이 더 좋다"고 할 때, 이는 학문의 부정이 아니라 우선순위의 선언이다.</p>
+<p>그렇다면 이 보화는 어떻게 다음 사람에게 건네지는가. 권 목사는 교사의 사명을 "지혜 보물창고의 열쇠를 학생에게 전달하는 일"로 규정하고, 그 전달이 결코 한가한 전수가 아님을 어휘 하나로 못박는다. 바울이 "얼마나 힘쓰는지"(골 2:1)라고 할 때 쓴 아곤(ἀγών)은 경기장의 사투를 뜻하는 단어이며, 사형 직전의 감옥에서도 그는 얼굴도 보지 못한 이들을 위해 이 싸움을 벌였다. 전달의 순서도 정교하다. 마음의 위안(신뢰)이 없으면 어떤 교육도 들어가지 않으므로 신뢰 → 사랑의 연합 → 복음 교육 → 영접 확인 → 뿌리내림 → 영혼 방어의 단계를 밟아야 한다.</p>
+<p>가정으로 오면 이 전달은 삶의 문제가 된다. 잠언 1장 8절을 근거로 권 목사는 지혜 전수의 일차 책임을 부모에게 두면서, 하나님은 보이지 않고 부모는 보이므로 자녀가 부모를 통해 하나님께 접속한다고 말한다. 다만 그가 진단한 병목은 콘텐츠가 아니라 관계다 — 마음을 놓치면 다 놓치므로, 부모의 기준과 기대를 강요하기 전에 자녀의 '마음 높이'로 내려가야 한다. 박영찬 목사는 같은 병목을 다른 어휘로 짚는다. 자녀들은 말씀이 진리임을 이미 안다(머리 지식). 문제는 그렇게 살면 패배자가 될까 하는 불안이며, 그 간극을 메우는 유일한 통로가 타협하지 않고 살아낸 선배의 삶이라는 것이다. 잠언의 조언이 지혜가 되는가 잔소리가 되는가는 듣는 자의 마음에 달렸고, 그 마음을 여는 열쇠는 더 강한 가르침이 아니라 말보다 크게 이야기하는 삶이다. 효도를 다룬 강해가 남긴 진단도 같은 자리에 선다 — 문제는 모르는 것이 아니라 알면서 안 하는 것이다(Knowing but not doing).</p>
+<p>그리고 마지막 반전이 있다. 지혜를 가장 많이 받은 사람이 그 지혜를 잃었다. 전지천 간사는 이 비극을 한 문장으로 압축한다 — 기브온에서 듣는 마음을 구했던 왕이 나이 들며 하나님의 마음이 아니라 여인들의 마음을 들어주는 사람이 되었다는 것이다. 권성수 목사는 야고보서 강해에서 같은 몰락을 다르게 읽는다. 초기의 솔로몬은 자기 힘을 통제해 잠언을 남겼으나 후기에는 통제하지 못했고, 통제된 힘(온유)의 상실이 곧 지혜의 상실이었다는 것이다. 여러 강해의 미해결 질문 목록에 "지혜와 거룩은 어떤 관계인가"가 반복해서 올라오는 이유가 여기 있다. 지혜는 한 번 받아 보관하는 소유물이 아니라 매일 갱신해야 하는 자세이며, 그 자세의 이름이 처음부터 경외였다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>지혜의 정의는 어휘의 구별에서 시작된다 — 지식은 아는 것이고 지혜는 아는 대로 사는 것이며, 명철은 분별하는 눈이고 지략은 인생을 조타하는 전략이다. 정보의 축적이 지혜를 보장하지 않는다.</li>
+<li>지혜의 첫 동작은 발화가 아니라 수용이다. "지식은 말을 하지만, 지혜는 듣는다" — 그리고 히브리어 샤마에서 듣기와 순종은 분리되지 않는다.</li>
+<li>명철의 입구는 지적 우월이 아니라 자기 무능의 정직한 자백이다. 솔로몬의 위대함은 지능이 아니라 "나는 이 나라를 다스릴 사람이 아니다"라는 고백에 있었다.</li>
+<li>지혜는 IQ가 아니라 LQ로 검증되며, 그 검증의 두 축은 마음(동기)과 삶(열매)이다. 시기와 야망에서 난 지혜는 불안·혼란·악으로, 위에서 난 지혜는 평안·화평·의의 열매로 끝난다.</li>
+<li>참된 분별은 정의와 긍휼을 분리하지 않는다 — 현명한 정의(wise justice)와 정의로운 긍휼(just mercy)이 한 판결 안에 공존한다.</li>
+<li>규범·상황·실존의 삼중시각은 두 설교자가 공유하는 분별의 틀이며, 셋 중 하나만 어긋나도 판단은 어긋난다.</li>
+<li>구하는 지혜와 추구하는 지혜는 대립이 아니라 양 날개다. 시련에서 벗어나는 지혜는 보류될 수 있어도 통과하는 지혜는 반드시 주어지며, 일반은총의 지혜는 안락지구를 떠나 도전지구로 들어갈 때 길러진다.</li>
+<li>지혜는 결국 소유가 아니라 자세다. 가장 많이 받은 사람이 잃을 수 있다는 사실을 솔로몬의 생애가 반증으로 증언한다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>지혜와 거룩은 어떤 관계인가. 같은 지혜를 받은 사람이 어떻게 타락하는가 — 지혜가 경건을 보장하지 못하는 이유는 여러 강해에서 반복적으로 미결로 남는다.</li>
+<li>일반은총의 지혜(전문성·학문·처세)와 위로부터 오는 지혜는 어디서 구별되고 어디서 만나는가. "지식이 곧 지혜"라는 실용적 정의가 세속적 성공을 영적 지혜와 등치시킬 위험은 어떻게 차단되는가.</li>
+<li>순종에 형통을 약속하는 잠언·신명기의 인과와, 순종했으나 형통하지 못한 의인의 고난(욥·십자가)은 어떻게 함께 읽히는가. 이 긴장을 놓치면 지혜론은 곧장 <a class="wl" href="../../t/%EB%B2%88%EC%98%81%EC%8B%A0%ED%95%99/">번영신학</a>으로 미끄러진다.</li>
+<li>"핵심을 숨기고 지엽적인 것을 말하는 지혜"와 의도적 오도의 경계는 무엇이 긋는가. 동기가 진술의 도덕성을 결정한다면, 그것은 거부된 <a class="wl" href="../../t/%EC%83%81%ED%99%A9%EC%9C%A4%EB%A6%AC/">상황윤리</a>와 어떻게 구별되는가.</li>
+<li>지혜의 전수 책임을 부모와 교사에게 강하게 물을 때, 신실하게 가르쳤음에도 자녀가 떠난 경우의 목회적 위로는 어디에 있는가 — 인간의 책임과 <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%A3%BC%EA%B6%8C/">하나님의 주권</a>의 경계 문제다.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%A7%80%ED%98%9C%EB%AC%B8%ED%95%99/">지혜문학</a> — 잠언·전도서·욥기의 장르적 특성과 지혜론의 문헌적 토대.</li>
+<li><a class="wl" href="../../t/%EC%9D%BC%EB%B0%98%EC%9D%80%EC%B4%9D/">일반은총</a> — 신자·불신자가 공유하는 지혜의 영역과 그 신학적 위치.</li>
+<li><a class="wl" href="../../t/%EA%B2%B8%EC%86%90/">겸손</a> · <a class="wl" href="../../t/%EC%88%9C%EC%A2%85/">순종</a> — 한계 인정과 듣는 마음이 곧장 이어지는 두 덕목.</li>
+<li><a class="wl" href="../../t/%EC%82%BC%EC%A4%91%EA%B4%80%EC%A0%90/">삼중관점</a> — 규범·상황·실존의 분별 틀. 권성수·문대원이 공유하는 윤리적 도해.</li>
+<li><a class="wl" href="../../t/%EC%B2%AD%EC%A7%80%EA%B8%B0/">청지기</a> — 시간·물질을 다루는 지혜의 실천적 귀결.</li>
+<li><a class="wl" href="../../t/%EB%A7%90%EC%94%80%EB%AC%B5%EC%83%81/">말씀묵상</a> — 말씀을 마음에 새기는(Sculpturing) 과정으로서의 지혜 형성.</li>
+<li><a class="wl" href="../../t/%EC%9E%90%EB%85%80%EA%B5%90%EC%9C%A1/">자녀교육</a> · <a class="wl" href="../../t/%EC%84%B8%EB%8C%80%EC%A0%84%EC%88%98/">세대전수</a> — 지혜 전수의 일차 현장인 가정과 다음 세대.</li>
+<li><a class="wl" href="../../t/%EC%97%AD%EC%84%A4/">역설</a> · <a class="wl" href="../../t/%EC%8B%A4%EC%A1%B4%EC%A3%BC%EC%9D%98/">실존주의</a> — 답을 다 알지 못함을 인정하는 지혜의 인식론.</li>
+<li><span class="wl-dead" title="위키 내부 링크">성숙과제자도</span> · <span class="wl-dead" title="위키 내부 링크">부모와자녀</span> — 관련 설교 주제 묶음.</li>
+<li><span class="wl-dead" title="위키 내부 링크">잠1</span> · <span class="wl-dead" title="위키 내부 링크">잠16</span> · <span class="wl-dead" title="위키 내부 링크">왕상3</span> · <span class="wl-dead" title="위키 내부 링크">약3</span> · <span class="wl-dead" title="위키 내부 링크">전5</span> · <span class="wl-dead" title="위키 내부 링크">시90</span> · <span class="wl-dead" title="위키 내부 링크">시127</span> · <span class="wl-dead" title="위키 내부 링크">골2</span> — 지혜 본문 허브.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">솔로몬 트위터1 — 지혜의 발동을 거세요</span></td>
+<td>설교(권성수)</td>
+<td>경외=접속의 방법, 지식·훈계·법을 아우르는 통합적 지혜 정의, 부모의 본(本)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">솔로몬 트위터2 — 부모를 기쁘게 해 드리세요</span></td>
+<td>설교(권성수)</td>
+<td>지혜의 실천성 — "알면서 안 하는 것이 문제", 효도의 발달 단계</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">솔로몬 트위터3 — 경건한 제갈량이 되세요</span></td>
+<td>설교(권성수)</td>
+<td>타흐불로트(지략), "경건+지략=승리", 안락지구→도전지구</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">솔로몬의 대관식</span></td>
+<td>설교(권성수)</td>
+<td>지혜=타이밍, "불이 번지기 전에 꺼야 한다"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">솔로몬의 재판</span></td>
+<td>설교(권성수)</td>
+<td>wise justice / just mercy, 막힌 자리의 지혜 발동, 잠 8:17의 추구하는 지혜</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">태평성대</span></td>
+<td>설교(권성수)</td>
+<td>질서를 세우는 능력으로서의 지혜, info-glut 비평, 패커의 지혜 정의</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">솔로몬의 업적</span></td>
+<td>설교(권성수)</td>
+<td>잠 3:14, 집중의 신학, 외교·국방·경제를 관통하는 실용 지혜</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">솔로몬(열왕기상 강해) 시리즈</span></td>
+<td>시리즈 개요(권성수)</td>
+<td>통치의 최상위 주제로서의 지혜, 그리스도 예표론</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">지혜롭게 사세요</span></td>
+<td>설교(권성수)</td>
+<td>IQ→LQ, 온유=통제된 힘, 세상 지혜/천상 지혜 대조표</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">시련 중에 기뻐하세요 (2)</span></td>
+<td>설교(권성수)</td>
+<td>지혜의 랜턴, from/through 구분, 고통 4종류와 대응 지혜</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">생생신앙(야고보서 강해) 시리즈</span></td>
+<td>시리즈 개요(권성수)</td>
+<td>역설의 어법, 지혜(2편·10편)의 짝 구조</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">생각이 깊어야 영향이 넓다</span></td>
+<td>설교(권성수)</td>
+<td>마음 지킴(잠 4:23), 말씀 새김(Sculpturing), 창의적 삼중시각</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">기지은 — 용기·지혜·은혜</span></td>
+<td>설교(권성수)</td>
+<td>지혜=에누리 없는 순종, TPO 분별</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">제9계명 — 거짓 증거하지 말라</span></td>
+<td>설교(권성수)</td>
+<td>침묵·동문서답의 합법성, 정상참작/전투윤리/상황윤리 구분</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">갑부(甲富)보다 진부(眞富)</span></td>
+<td>설교(권성수)</td>
+<td>"정직과 투명은 다르다", 지혜와 순전함의 결합</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">상대방의 이권도 살펴 주라</span></td>
+<td>설교(권성수)</td>
+<td>사랑만으로는 부족하다 — 갈등 협상에서의 지혜, PAUSE</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">깨우치면 살맛난다</span></td>
+<td>설교(권성수)</td>
+<td>묵상(하가)의 지혜, "충고를 받는 사람이 진짜 지혜로운 사람", 스승론</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">순종교육이 행복의 비결</span></td>
+<td>설교(권성수)</td>
+<td>경외="숭앙적 두려움", 멸시(부즈)로서의 불순종, 부모의 우선적 교사권</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">'마음 높이' 자녀교육</span></td>
+<td>설교(권성수)</td>
+<td>지혜의 나무 도해(뿌리·둥치·열매), "마음을 놓치면 다 놓친다"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">소수의 기드온</span></td>
+<td>설교(권성수)</td>
+<td>물 핥는 자의 분별, 정보→전략→평가, Missional·BAM</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">남은 날들 세는 지혜</span></td>
+<td>설교(권성수)</td>
+<td>시 90:12의 날 계수, 영원시계 환산, 인생 정산 5축</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">남은 날 세는 지혜</span></td>
+<td>설교(권성수)</td>
+<td>"영원을 봐야 셀 수 있다", 진노와 긍휼의 순서, 아이젠하워 매트릭스</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">기회를 사라</span></td>
+<td>설교(권성수)</td>
+<td>카이로스·엑사고라조, 단순한 삶 4요소, "오늘은 현찰"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">천국의 스타</span></td>
+<td>설교(권성수)</td>
+<td>마스킬림, "완벽한 사람은 없어도 선명한 사람은 있다"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">그리스도 우리의 보화</span></td>
+<td>설교(권성수)</td>
+<td>골 2:3의 감추어진 보화, 보좌와 십자가의 자리바꿈</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">지혜 보물창고의 열쇠</span></td>
+<td>설교(권성수)</td>
+<td>지혜/지식의 어순, 아곤(교육은 사투), 열쇠 전달 7단계</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">말을 적게 하는 지혜</span></td>
+<td>설교(문대원)</td>
+<td>"경외란 그분 때문에 할 수 없는 일이 있는 것", 한계 인정의 지혜</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">관계는 경청에서 시작된다</span></td>
+<td>설교(문대원)</td>
+<td>경청→공감→신뢰→대화→설득, 지혜의 청각적 기원(잠 1:5)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">하나님을 의지하는 지혜</span></td>
+<td>설교(문대원)</td>
+<td>한계 인정=지혜, 잠(睡眠)은 신뢰의 표현, 겸손의 재정의</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">실존주의자가 바라본 세상</span></td>
+<td>설교(문대원)</td>
+<td>규범·상황·실존, 모순과 역설의 구별, "광야에는 안내자가 필요하다"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">리더는 혼자 일하지 않는다</span></td>
+<td>설교(문대원)</td>
+<td>성령충만→욕심 없음→지혜로운 결정, 인격체로서의 지혜(잠 8:1)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">하나님을 더 사랑하는 새해</span></td>
+<td>설교(문대원)</td>
+<td>"다른 사람의 지혜로 지혜자가 될 수 없다", 성령 동행의 지혜</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">하나님의 마음을 읽기</span></td>
+<td>설교(전지천)</td>
+<td>듣는 마음(레브 쇼메아), "지식은 말을 하지만 지혜는 듣는다", 솔로몬의 반례</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">믿음의 유산을 유산시키지 않는 법</span></td>
+<td>설교(박영찬)</td>
+<td>머리/가슴/생활 지식, 잔소리와 조언을 가르는 것, 삶으로 전달되는 지혜</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">금보다 나은 지혜</span></td>
+<td>설교(윤명숙)</td>
+<td>지혜의 내용=예수를 아는 것, 지혜의 인격성, 부요의 재정의</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">명철의 샘</span></td>
+<td>설교(윤명숙)</td>
+<td>"명철은 내게 있는 것이 아니다", 자기 무능의 인정, 흘러가는 지혜의 5단계</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">의논의 경영</span></td>
+<td>설교(윤명숙)</td>
+<td>"학자의 귀가 학자의 혀보다 먼저다", 의논·모사(상담자)의 지혜</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">미래를 대비하는 지혜</span></td>
+<td>설교(윤명숙)</td>
+<td>프로니모스(명민함), 불의한 재물의 재정의, 작은 일의 충성</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">치밀한 계획</span></td>
+<td>설교(윤명숙)</td>
+<td>치밀함의 역설, 관계 속의 은혜, 자녀 신앙 설계</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">어떻게 서로를 도와야 하는지</span></td>
+<td>설교(윤명숙)</td>
+<td>아비가일의 기민한 분별, 비방 없는 보완, 위임의 영성</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">잠언 4장</span></td>
+<td>성경 본문 허브</td>
+<td>마음 지킴과 지혜 형성 본문의 설교 계보</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/지혜문학</span><span>#discipline/실천신학</span><span>#topic/여호와경외</span><span>#topic/잠언</span><span>#topic/솔로몬</span><span>#topic/분별</span><span>#topic/경청</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

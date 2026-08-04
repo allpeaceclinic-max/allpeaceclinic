@@ -1,0 +1,528 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>인내 — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-t">목회·실천</span><span class="date">2026-08-03</span></div>
+  <h1 class="note-title">인내</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>인내는 성경이 가장 자주 명령하면서 가장 자주 오해받는 덕목이다. 오해의 뿌리는 단어에 있다. 한국어 "참는다"는 아무것도 하지 않고 견디는 수동적 체념을 먼저 떠올리게 하지만, 신약이 쓰는 두 단어는 정반대를 가리킨다. 휘포모네(ὑπομονή)는 "아래에(hypo) 머무름(menō)" — 짐과 압력 아래로 도망치지 않고 그 자리를 지키는 능동적 버팀이며, 마크로튀미아(μακροθυμία)는 "긴(makros) 마음(thymos)" — 분노가 폭발하기까지의 거리를 길게 두는 성품이다. 권성수 목사가 야고보서 5장 강해의 첫 문장을 "버티는 힘, 스태미나"로 연 것은 이 어감을 정확히 짚은 것이다. 인내는 견딜 힘이 없어 주저앉는 자리가 아니라, 힘을 써서 자리를 지키는 노동이다.</p>
+<p>이 글이 붙드는 것은 그 견딤이라는 행위 자체의 문법이다. 인접한 확정판들과 경계는 이렇게 갈린다. "선하신 하나님이 왜 악을 허용하시는가"라는 신정론의 물음과 탄식의 정당성은 <a class="wl" href="../../t/%EA%B3%A0%EB%82%9C/">고난</a>이, 고난에서 회복으로 이어지는 구속적 궤적 전체는 <a class="wl" href="../../t/%EA%B3%A0%EB%82%9C%EA%B3%BC%ED%9A%8C%EB%B3%B5/">고난과회복</a>이, 이사야 53장의 대속과 징벌·구원의 고통 구별은 <a class="wl" href="../../t/%EA%B3%A0%EB%82%9C%EB%B0%9B%EB%8A%94%EC%A2%85/">고난받는종</a>이 담당한다. 여기서 다루는 것은 그보다 좁고 실천적인 질문들이다 — 인내란 무엇을 견디는 것이며(어휘), 무엇을 하는 것이고(능동성), 누가 하는 것이며(주체), 무엇을 보며 하는 것이고(초점), 어떻게 하는 것이며(기술), 어디서 무너지는가(한계).</p>
+<p>자료의 지형에도 특징이 있다. 인내를 정면으로 다룬 설교들은 압도적으로 야고보서와 로마서 5장에 몰려 있고, 그 대부분이 시련·고난을 전제로 삼는다. 인내는 진공에서 연습되는 미덕이 아니라 언제나 무언가를 견디는 일이며, 그래서 이 주제는 고난 신학의 실천편에 해당한다.</p>
+<h2>1. 두 개의 인내 — 환경을 견딤과 사람을 견딤</h2>
+<p>야고보서 5:7-11이 흥미로운 것은 한 단락 안에 두 단어가 나란히 놓인다는 점이다. 7-8절의 "길이 참으라"는 마크로튀미아이고, 11절의 "인내하는 자"는 휘포모네다. 개역 성경은 둘 다 인내로 뭉뚱그리지만, 원어는 견딤의 대상을 나누어 놓는다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>휘포모네 (ὑπομονή)</th>
+<th>마크로튀미아 (μακροθυμία)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>어원</td>
+<td>아래에(hypo) 머무름(menō)</td>
+<td>긴(makros) 마음·분노(thymos)</td>
+</tr>
+<tr>
+<td>견디는 대상</td>
+<td>환경·고난·짐</td>
+<td>사람</td>
+</tr>
+<tr>
+<td>이미지</td>
+<td>압력 아래에서 자리를 지킴</td>
+<td>분노 폭발까지의 거리를 길게 둠</td>
+</tr>
+<tr>
+<td>야고보서의 배치</td>
+<td>5:11 "인내하는 자" — 상실과 비난을 통과한 욥</td>
+<td>5:7-8 "길이 참으라" — 비를 기다리는 농부</td>
+</tr>
+<tr>
+<td>다른 용례</td>
+<td>롬 5:3 · 약 1:3 · 히 12:1 · 고전 13:7</td>
+<td>고전 13:4 · 갈 5:22 · 시 103:8</td>
+</tr>
+<tr>
+<td>번역 관행</td>
+<td>인내·견딤</td>
+<td>오래 참음·길이 참음</td>
+</tr>
+</tbody>
+</table>
+<p>이 구별이 목회적으로 뾰족해지는 지점을 권성수 목사는 한 문장으로 잡아낸다 — "환경보다 사람을 견디는 것이 어렵다. 자신을 괴롭히는 사람을 견디는 것이 어렵다." 야고보가 선지자를 인내의 본으로 든 것도 같은 맥락이다. 선지자의 고난은 자연재해가 아니라 사람이 가한 핍박이었다. 실제로 성도가 무너지는 자리는 대개 질병이나 가난 자체가 아니라, 그 곁에서 함께 견뎌야 할 사람들이다.</p>
+<p>마크로튀미아가 사람을 향한 인내라는 사실은 곧바로 신학적 무게를 얻는다. 이 단어는 하나님의 성품을 서술하는 데 쓰이고("여호와는 긍휼이 많으시고… 노하기를 더디 하시고", 시 103:8), 성령의 아홉 열매 중 하나로 열거된다(갈 5:22 "오래 참음"). 사람을 향한 인내는 인간의 기질이 아니라 하나님을 닮아가는 자리이며, 따라서 <a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a>의 열매다. 이 사실은 뒤에서 인내의 주체를 물을 때 결정적 단서가 된다.</p>
+<h2>2. 인내는 체념이 아니다 — 능동성의 회복</h2>
+<p>두 단어가 모두 능동태의 감각을 품고 있다면, 인내를 무기력이나 운명론과 구별하는 일이 가장 먼저 필요하다. 권성수 목사가 야고보서 5:7의 농부 비유를 풀 때 강조점은 정확히 여기에 놓인다.</p>
+<blockquote>
+<p>"그냥 참는 것이 아니고 열심히 일하면서 오래 참아야 거둘 수가 있다." — 권성수, 「길이 참으세요」</p>
+</blockquote>
+<p>농부의 상황을 보면 이 정의가 왜 정확한지 드러난다. 이른 비(가을)와 늦은 비(봄)는 농부가 통제할 수 없는 변수다. 그는 비를 내리게 할 수 없다. 그러나 그가 할 수 없는 일이 있다고 해서 할 일이 없는 것은 아니다. 파종하고 경작하는 노동과, 비를 기다리는 무력한 기다림이 한 사람 안에서 동시에 일어난다. 인내란 통제할 수 없는 것 앞에서 통제할 수 있는 것을 계속하는 일이다.</p>
+<p>같은 취지가 야고보서 5장을 다시 다룬 「쓴 인내, 단 열매」에서 더 밀고 나아간다. 인내는 "아무것도 안 하고 견디는 것이 아니라", 의에 주리고 목마른 자(마 5:6)와 박해받는 자(마 5:10)처럼 하나님의 정의를 겸손하고 온유하게 세우는 자세라는 것이다. 야고보서 5장 전반부가 노임을 떼먹는 부자들을 향한 통곡 선언이라는 사실을 기억하면 이 해석의 무게가 달라진다. 불의를 고발한 바로 그 사도가 곧이어 "길이 참으라"고 말한다. 인내는 불의를 못 본 척하는 능력이 아니라, 불의에 맞서되 자기 방식으로 터뜨리지 않는 자기 절제다.</p>
+<p>능동성은 시간의 감각으로도 표현된다. 야고보서 1장 강해에서 권성수 목사는 인내를 "마라톤"으로 형상화하며 "잘 참아야 그 단계만큼은 넘어간다"고 말한다. 순간의 폭발력이 아니라 완주의 지구력이고, 단계마다 통과 여부가 판정되는 누적적 과정이다. 미켈란젤로가 시스티나 천장을 4년 2개월간 매일 그렸다는 일화, "천재는 영원한 인내다"라는 그의 말, "인내는 대리석도 뚫을 수 있다"는 모로코 속담이 반복해서 인용되는 이유가 여기 있다. 견딤이 시간 위에 쌓일 때 그것은 체념의 반대편에서 성취가 된다.</p>
+<h2>3. 환난에서 소망까지 — 인내가 놓인 사슬</h2>
+<p>인내가 능동적 노동이라면, 그 노동은 어디에 놓여 있으며 무엇으로 이어지는가. 신약은 이 질문에 사슬의 언어로 답한다. 인내는 시작점도 종착점도 아니고 언제나 중간 고리다.</p>
+<table>
+<thead>
+<tr>
+<th>본문</th>
+<th>들어오는 것</th>
+<th>인내가 놓인 자리</th>
+<th>도달점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>롬 5:3-4</td>
+<td>환난(θλῖψις, 짓누름·압착)</td>
+<td>환난 → <strong>인내</strong> → 연단(δοκιμή)</td>
+<td>소망(ἐλπίς)</td>
+</tr>
+<tr>
+<td>약 1:2-4</td>
+<td>여러 가지 시험(πειρασμός)</td>
+<td>믿음의 시련 → <strong>인내</strong> → 온전히 이룸</td>
+<td>온전·구비(τέλειος·ὁλόκληρος)</td>
+</tr>
+<tr>
+<td>벧전 1:6-7</td>
+<td>여러 가지 시험과 근심</td>
+<td>불로 연단하는 용광로</td>
+<td>칭찬·영광·존귀</td>
+</tr>
+<tr>
+<td>약 5:7-11</td>
+<td>압제와 기다림</td>
+<td>쓴 인내(마크로튀미아·휘포모네)</td>
+<td>주께서 주신 결말(τέλος)</td>
+</tr>
+<tr>
+<td>갈 6:7-9</td>
+<td>선을 행함</td>
+<td>낙심하지 않고 심음</td>
+<td>때가 이르매(καιρός) 거둠</td>
+</tr>
+</tbody>
+</table>
+<p>이 사슬을 읽을 때 권성수 목사가 붙인 주석 하나가 인내의 자리를 정확히 규정한다 — "환난은 오는 것, 연단은 이루어지는 것, 소망도 오는 것. 인내만 우리가 할 수 있는 것이다." 환난은 선택할 수 없고 연단은 나를 대상으로 일어나며 소망은 주어진다. 네 고리 가운데 인간 편의 책임은 정확히 하나, 견디는 것뿐이다. 이 책임 배분은 인내를 무겁게 하는 동시에 가볍게 한다. 결과를 만들어 낼 의무는 없고, 자리를 지킬 의무만 있다.</p>
+<p>사슬의 끝에 무엇이 맺히는지를 설교들은 네 개의 이미지로 반복해서 그린다.</p>
+<table>
+<thead>
+<tr>
+<th>이미지</th>
+<th>압력의 정체</th>
+<th>견디는 주체</th>
+<th>맺히는 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>용광로와 순금</td>
+<td>불</td>
+<td>금속</td>
+<td>불순물이 빠진 순금 — "그가 나를 단련하신 후에는 내가 순금 같이 되어 나오리라"(욥 23:10)</td>
+</tr>
+<tr>
+<td>다이아몬드</td>
+<td>극한의 압력과 온도</td>
+<td>탄소</td>
+<td>가장 단단하고 빛나는 결정</td>
+</tr>
+<tr>
+<td>조개와 진주</td>
+<td>살에 박힌 모래</td>
+<td><strong>생명체</strong></td>
+<td>아픔을 감싸며 굳어진 진주</td>
+</tr>
+<tr>
+<td>씨줄과 날줄</td>
+<td>고통(씨줄)</td>
+<td>옷감을 짜시는 하나님</td>
+<td>고통과 축복이 함께 짜인 한 폭의 옷감</td>
+</tr>
+</tbody>
+</table>
+<p>앞의 셋이 인내의 결과를 말한다면, 넷째 옷감 비유는 인내의 시야를 말한다. 고통이라는 씨줄 한 가닥만 응시하면 위축되지만, 하나님이 축복이라는 날줄을 동시에 엮고 계신 전체 직물을 보면 견딜 수 있다는 것이다. 인내의 실패는 종종 힘의 고갈이 아니라 시야의 축소에서 온다.</p>
+<p>한 가지 단서가 반드시 따라붙어야 한다. 이 열매의 언어는 일인칭으로만 안전하다. 윤명숙 전도사가 심방 현장을 두고 "벌 받는다고 생각하면서 위로한다면 큰 가식이다, 차라리 심방하지 않는 것이 낫다"고 못박은 것이 그 경계다. 고난 중인 사람에게 "이 인내가 너를 순금으로 만들 것"이라 말하는 순간 그것은 위로가 아니라 욥의 친구가 되며, 이 경계는 <a class="wl" href="../../t/%EA%B3%A0%EB%82%9C%EA%B3%BC%ED%9A%8C%EB%B3%B5/">고난과회복</a>이 연단의 신학 전반에 대해 같은 방식으로 그어 둔 선이기도 하다.</p>
+<h2>4. 인내의 주체 — "인내에도 한계가 있다"는 말</h2>
+<p>사슬이 아무리 정교해도 실제로 견디는 사람은 어느 지점에서 무너진다. 그리고 무너지는 순간 우리 입에서 나오는 말이 정해져 있다 — "인내도 한계가 있지." 권성수 목사는 이 명제를 정면으로 해체한다.</p>
+<blockquote>
+<p>"인내도 한계가 있다? 성경 말씀 아니다. 이것을 정당화한다." — 권성수, 「고통을 인내」</p>
+</blockquote>
+<p>주목할 것은 이 반박의 근거가 인간 의지의 무한성이 아니라는 점이다. 근거는 인내의 주체가 누구인가에 있다. 「고통을 인내」의 진주 비유가 이 전환을 수행한다. 다른 보석은 광석에서 캐내지만 진주만은 생명체가 만든다. 조개의 외투막에 모래가 들어오면 조개는 아픔을 느끼며 그것을 감싸고, 세월이 지나 그 이물질이 진주가 된다. 그렇다면 신자 안에 환난이 들어올 때 반응하는 것은 무엇인가. 설교는 갈라디아서 2:20으로 답한다 — "내 안에 그리스도께서 사시는 것." 진주를 빚는 것은 조개의 의지가 아니라 조개의 생명이고, 인내를 만드는 것은 내 의지가 아니라 내 안의 그리스도의 생명이다. 한계가 있는 것은 내 의지지 그분의 생명이 아니다.</p>
+<p>히브리서 12:2를 다룬 「십자가 인내」가 같은 결론에 다른 길로 도착한다. 다이아몬드가 극한의 압력과 온도에서 만들어진다면, 압력과 온도의 최고치는 십자가다. 그 최고치에서도 인내가 꺾이지 않은 유일한 사례가 예수 그리스도이며, 그래서 히브리서는 "예수를 바라보자"고 명령한다. 원어의 배치가 이 논리를 뒷받침한다. 12:1의 "인내로써 경주하며"와 12:2의 "십자가를 참으사"는 같은 어근(휘포메노)이어서, 신자의 경주와 그리스도의 십자가가 한 단어로 묶인다. 게다가 그분은 믿음의 주(아르케고스, 앞서 길을 낸 개척자)이면서 온전하게 하시는 이(텔레이오테스, 끝까지 완성하시는 분)다. 인내를 명령하시는 분이 친히 그 인내의 모범이자 보증이 되신 셈이다.</p>
+<p>주체가 바뀌면 인내의 동사도 바뀐다. 이사야 40:31의 "앙망하는"은 히브리어 카바(קָוָה) — 줄을 꼬듯 팽팽히 당겨 자신을 하나님께 동여매는 기다림이다. 그 능동적 기다림의 결과가 쥐어짜서 얻는 힘이 아니라 "새 힘"이라는 점이 중요하다. 인내는 짜내기가 아니라 공급받기다. 인내의 끝에 탈진이 아니라 독수리의 비상이 약속되는 이유가 여기 있다.</p>
+<h2>5. 인내의 초점 — 종말이 오늘을 견디게 한다</h2>
+<p>인내의 주체가 그리스도라면, 인내의 시선은 어디를 향하는가. 자료들이 이구동성으로 지목하는 답은 종말이다. 인내는 뒤를 견디는 것이 아니라 앞을 보는 것이다.</p>
+<p>야고보서 5:8-9가 그 근거를 두 문장으로 제시한다. "주의 강림이 가까우니라", "심판자가 문밖에 서 계시니라." 권성수 목사는 이 두 절을 억울함의 처리 문제로 읽는다. 우주의 대법원장이 문밖에 서 계시므로 문만 열면 모든 억울함이 풀린다. 그러니 "내 방식대로 터뜨리지 말고 주의 방식대로 견뎌내라"는 것이다. 종말론은 여기서 추상적 교리가 아니라 분노의 밸브로 기능한다. 인내가 불가능해지는 순간은 대개 억울함이 해소될 길이 보이지 않을 때인데, 최종 판결자가 계시다는 사실이 그 압력을 빼낸다.</p>
+<p>같은 절이 인내의 보상 구조도 결정한다. 야고보서 5:11의 "주께서 주신 결말"은 텔로스(τέλος) — 단순한 종료가 아니라 목적을 품은 완성이다. 그리고 욥의 텔로스는 갑절의 재산이 아니라 "이제는 눈으로 주를 뵈옵나이다"(욥 42:5)라는 고백이다. 쓴 인내의 단 열매는 물질의 회복이기 이전에 하나님을 더 깊이 아는 것이며, 귀로 듣던 신앙이 눈으로 보는 신앙이 되는 전환이다.</p>
+<p>같은 종말론이 그리스도 자신의 인내에도 동력이었다. 히브리서 12:2는 그분이 "그 앞에 있는 기쁨을 위하여" 십자가를 참으셨다고 말한다. 부끄러움을 개의치 않으신 것은 고통을 미화해서가 아니라 더 큰 영광을 보셨기 때문이다. 문대원 목사가 디모데후서 4장 강해에서 도달하는 결론도 이 자리다 — "끈기는 인간의 의지에서 나오는 것이 아니다. 주님의 나타나심을 사모하는 믿음에서 나온다." 그는 초대교회의 외침 "마라나타"(우리 주여 오시옵소서)가 살기 좋아진 시대에 잊혔다고 진단하고, 35년을 필리핀에서 보낸 고 김활영 선교사의 마지막 찬양이 「마라나타」였다는 증언으로 그 신앙을 육화한다. 재림을 사모하지 않는 사람에게는 견딜 이유가 없고, 이유가 없는 견딤은 오래 가지 않는다.</p>
+<p>시간에 대한 이해도 이 초점에서 재편된다. 갈라디아서 6:9의 "때가 이르매"는 크로노스가 아니라 카이로스, 곧 하나님이 정하신 결정적 추수의 시점이다. 존 파이퍼의 말대로 시간이 열정의 가장 큰 적이라면, 같은 시간이 약속 안에서는 가장 큰 친구가 된다. 인도 선교 7년 만에 첫 열매를 본 윌리엄 캐리가 그 전환의 증인이고, 마더 테레사의 한 문장이 그 기준을 요약한다 — 하나님이 요구하시는 것은 성공이 아니라 신실함이다. 완주는 경쟁자를 이기는 일이 아니라 자기에게 주어진 코스를 끝내는 일이며, <a class="wl" href="../../t/%EC%84%B1%EB%8F%84%EC%9D%98%EA%B2%AC%EC%9D%B8/">성도의견인</a>과 <a class="wl" href="../../t/%EC%98%81%EC%A0%81%EC%99%84%EC%A3%BC/">영적완주</a>가 이 지점에서 인내와 만난다.</p>
+<h2>6. 사랑의 인내 — 사람을 견디는 일</h2>
+<p>종말이 환경을 견디게 한다면, 사람을 견디는 일에는 또 다른 근거가 필요하다. 고린도전서 13장이 그 본문이다. 권성수 목사가 이 장에서 발견한 구조가 결정적이다. 사랑을 서술하는 열다섯 개의 동사는 "오래 참고"(마크로튀메이, 13:4)로 열리고 "모든 것을 견디느니라"(휘포메네이, 13:7)로 닫힌다. 사랑의 처음과 끝이 모두 인내라는 것이다. 그렇다면 사랑의 진위는 격정의 순간이 아니라 인내의 시간에서 판가름난다. 감정에 근거한 사랑이 결혼 후 금방 사라지는 이유도, 사랑이 "추상명사가 아니라 동사"인 이유도 여기서 나온다.</p>
+<p>두 번째 동사 "온유하며"(크레스테우오마이, 친절하게 행하다)가 이 인내에 방향을 준다. 오래 참음이 악을 견디는 소극적 측면이라면, 온유는 그 견딤 속에서도 선을 베푸는 적극적 측면이다. 이를 갖추지 못한 견딤은 원한의 저장에 불과하다. 사람을 향한 인내는 참으면서 동시에 친절해야 완성된다.</p>
+<p>그렇다면 사람을 오래 참는 힘은 어디서 오는가. 권성수 목사는 요셉을 인간 모델로 든다. 형제에게 팔리고, 노예가 되고, 누명으로 감옥에 갇히고, 꿈을 해석해 주고도 2년을 잊힌 사람. "2년, 사람이 다 녹을 것이다"라는 한 줄이 그 시간의 무게를 압축한다. 그런데 요셉이 마침내 도달한 자리는 형제들에 대한 승리 선언이 아니라 창세기 50:20의 해석이었다 — "당신들은 나를 해하려 하였으나 하나님은 그것을 선으로 바꾸사." 그리고 그는 그들을 간곡한 말로 위로한다. 설교의 결론은 단순하다. 오래 참는 비결은 인내력이 아니라 하나님이시다. 인내는 환경을 이기는 문제가 아니라 하나님을 신뢰하는 관계의 문제로 옮겨 간다.</p>
+<p>같은 인내가 부부관계라는 가장 좁은 자리에서 시험받는 장면을 윤명숙 전도사가 그려낸다. 바베큐를 조립하던 남편에게 마지막 마무리를 맡긴 아내가 7초의 기다림을 못 견디고 공구를 빼앗는다. 남편은 갈림길에 선다 — 무시당했다고 해석할 것인가, 돕고 있을 뿐이라고 해석할 것인가. 그의 진단은 날카롭다. "성질이 급한 것은 어린아이의 모습이다. 상처 입은 어린아이가 그 속에 있다." 그리고 통념 하나가 뒤집힌다.</p>
+<blockquote>
+<p>"뒤끝 없다는 사람이 오히려 미성숙한 사람이다." — 윤명숙, 「성숙한 믿음」</p>
+</blockquote>
+<p>즉각 터뜨리고 잊는 것은 인내가 아니라 인내의 부재를 솔직함으로 포장한 것이다. 성숙은 빠른 망각이 아니라 감정을 통과시키며 견디는 깊이에 있다. 모세가 이 변화의 산 증거로 반복 인용되는 것도 같은 이유다. 민수기 12:3은 그를 지면에서 가장 온유한 사람이라 부르지만, 애굽인을 쳐 죽인 40세의 모세는 그렇지 않았다. 온유(아나브)는 타고나는 기질이 아니라 광야 40년에 걸쳐 빚어진 것이며, 이 형성의 자리는 <a class="wl" href="../../t/%EA%B4%91%EC%95%BC/">광야</a>가 상술한다.</p>
+<h2>7. 인내의 기술 — 마음·원망·맹세, 그리고 6초</h2>
+<p>인내가 성령의 열매이고 그리스도의 생명이 하시는 일이라면, 인간 편의 기술을 말하는 것이 모순처럼 보일 수 있다. 그러나 설교들은 정확히 그 기술을 가르친다. 은혜가 주체라는 것과 훈련이 필요하다는 것은 대립하지 않는다.</p>
+<p>야고보서 5:8-12가 세 가지를 제시한다. 첫째, 마음을 굳게 하라. 근거는 잠언 4:23 "모든 지킬 만한 것 중에 네 마음을 지키라"이다. 인내는 상황을 통제하는 기술이 아니라 내면을 통제하는 훈련이며, 어려움 앞의 본능적 반응 3F(fight·fright·flight)를 Faith의 반응으로 재정향하는 일이다. 둘째, 원망하지 말라. 압박을 밖으로 분출하면 원망이 되고, 원망은 하나님과 가족과의 관계를 먼저 깨뜨린다. 셋째, 맹세하지 말라. 이 항목이 인내 단락에 들어와 있는 이유가 흥미롭다. 시련 앞에서 사람이 가장 쉽게 빠지는 함정이 당장을 모면하려는 큰소리이기 때문이다. 맹세 금지의 적극적 함의는 "예, 아니요"로 끝나는 정직한 인격이다.</p>
+<p>분노 자체를 다룬 「격분을 인내」는 여기에 재범주화 하나를 더한다. 전도서 7:9는 노가 우매한 자의 "품에 머무름"이라고 말한다. 분노는 지나가는 감정이 아니라 가슴에 거주하는 것이며, 거주하다가 터진다. 그렇다면 "욱하는 성격"이라는 자기 규정은 성립하지 않는다 — 성격의 문제라면 성경이 그것을 죄라고 부르지 않았을 것이다. 이 재범주화가 목회적으로 여는 문은 크다. 성격은 못 바꾼다는 체념 대신 죄는 회개로 다스릴 수 있다는 길이 열리기 때문이다. 처방은 다섯 글자로 압축된다.</p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>처방</th>
+<th>성경 근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>잠깐!</td>
+<td>6초 심호흡, 화를 더디 하라</td>
+<td>약 1:19</td>
+</tr>
+<tr>
+<td>바보!</td>
+<td>화내는 자기 자신을 직면하라</td>
+<td>약 1:20</td>
+</tr>
+<tr>
+<td>오죽!</td>
+<td>역지사지하고 시비를 먼저 그치라</td>
+<td>잠 17:14</td>
+</tr>
+<tr>
+<td>주여!</td>
+<td>주님께 접속해 붙어 있으라</td>
+<td>요 15:7 · 시 103:8 · 갈 5:22</td>
+</tr>
+<tr>
+<td>모세!</td>
+<td>평생 온유의 모델을 삼으라</td>
+<td>민 12:3</td>
+</tr>
+</tbody>
+</table>
+<p>결론 문장이 이 훈련의 성격을 규정한다 — "화풀이도 쌓이고 인내도 쌓인다. 어느 것을 쌓을 것인가?" 인내는 위기의 순간에 발휘되는 능력이 아니라 매일의 선택으로 적립되는 잔고다.</p>
+<p>기술의 마지막 항목은 지혜다. 야고보서 1:5-6 강해에서 권성수 목사는 시련 속에서 구할 지혜를 두 층으로 나눈다. 시련에서 벗어나는(from) 지혜는 당장 주어지지 않을 수 있지만, 시련을 통과하는(through) 지혜는 반드시 주신다는 것이다. 그리고 그 지혜는 앞길 전체를 보여 주는 조명이 아니라 바로 앞만 비추는 랜턴이다 — "한 날의 괴로움은 그 날에 족하다"(마 6:34). 인내가 감당 못 할 무게가 되는 이유는 대개 오늘치를 견디기 때문이 아니라 남은 전부를 한꺼번에 계산하기 때문이다. 랜턴의 은유는 인내의 단위를 하루로 되돌려 놓는다.</p>
+<h2>8. 인내가 무너지는 자리 — 낙심과 좌절</h2>
+<p>여기까지가 인내가 작동하는 방식이라면, 이제 인내가 멈추는 자리를 봐야 한다. 성경은 이 실패를 다루는 데 인색하지 않다. 갈라디아서 6:9의 "낙심하지 말지니"는 엔카케오(ἐγκακέω, 지쳐 포기하다·좋은 일에 싫증 내다)이고 "포기하지 아니하면"은 에클뤼오(ἐκλύω, 매듭이 풀리듯 기력이 빠지다)다. 두 단어를 겹치면 좌절의 정체가 드러난다. 선을 행하다 내면의 끈이 풀려 주저앉는 것.</p>
+<p>권성수 목사는 이 좌절을 도덕적 실패로 정죄하지 않고 진단 가능한 증상으로 다룬다. 엘리야에게 책망 대신 음식과 잠과 새 사명을 차례로 주신 하나님처럼(왕상 19장), 원인에 따라 처방이 달라야 한다는 것이다.</p>
+<table>
+<thead>
+<tr>
+<th>좌절의 뿌리</th>
+<th>결이 다른 처방</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>아무리 해도 안 되니까(무응답)</td>
+<td>거둠의 때(카이로스)는 내가 정하지 않음을 받아들임</td>
+</tr>
+<tr>
+<td>은혜 안 받고 일만 해서</td>
+<td>활동 앞에 말씀의 공급을 회복</td>
+</tr>
+<tr>
+<td>일이 많고 힘들어서(과로)</td>
+<td>엘리야처럼 먹고 자는 회복이 먼저</td>
+</tr>
+<tr>
+<td>지속적인 고통 때문에</td>
+<td>"오랜 병에 효자 없다"는 현실의 정직한 인정</td>
+</tr>
+<tr>
+<td>잘못된 동기로 일해서</td>
+<td>채울수록 커지는 인정 욕구의 자기 증식을 직면</td>
+</tr>
+<tr>
+<td>첫사랑의 감격이 식어서</td>
+<td>처음 행위의 회복</td>
+</tr>
+<tr>
+<td>사탄의 참소에 넘어가서</td>
+<td>참소와 가책의 분별</td>
+</tr>
+<tr>
+<td>죄를 회개하지 않아서</td>
+<td>회개</td>
+</tr>
+</tbody>
+</table>
+<p>일곱째 항목의 분별 기준이 특히 실용적이다. 동일하게 자신을 향한 부정적 메시지라도, 나를 꺾어 주저앉히려 하면 참소이고 나를 일으켜 세우려 하면 성령의 가책이다. 출처는 내용이 아니라 방향으로 판별된다.</p>
+<p>기도의 자리에서도 같은 문제가 반복된다. 누가복음 18장의 강청하는 과부 비유를 다루며 권성수 목사가 붙인 관찰이 정직하다 — 기도하는 사람만이 낙심한다. 기도하지 않으면 낙심할 일도 없다. 응답이 더딜 때 기도자는 자신을 억울한 과부로, 하나님을 불의한 재판관으로 느끼게 되는데, 설교는 이 느낌을 부정하지 않고 이름 붙인 뒤 해석을 바꾼다. 응답 지연은 거절이 아니라 관계를 깊게 하시려는 타이밍이며, 기도는 자판기가 아니라 "다이아몬드 광산에서 다이아몬드를 캐는 것"이다. 그리고 비유의 꼬리표가 이 인내를 종말과 다시 묶는다. 인자가 올 때 찾으시는 "믿음"(눅 18:8)이란 다름 아니라 끝까지 기도하는 끈기라는 것이다. <a class="wl" href="../../t/%EA%B8%B0%EB%8F%84/">기도</a>와 인내가 만나는 자리가 여기다.</p>
+<h2>9. 인내의 깊이가 성숙의 깊이다</h2>
+<p>마지막 층위는 인내가 무엇의 지표인가 하는 물음이다. 윤명숙 전도사의 야고보서 1장 강해가 그 답을 한 문장으로 못박는다 — "영적으로 성숙한 사람은 인내의 깊이도 깊다." 성숙을 재는 자가 은사나 기도 응답의 빈도가 아니라 인내의 깊이라는 이 기준은, 외적 영성의 표지를 성숙과 혼동하는 관행에 대한 교정이다.</p>
+<p>야고보서 1:4의 어휘가 이 기준을 뒷받침한다. "온전하고 구비하여 조금도 부족함이 없게"의 텔레이오스(τέλειος)는 도덕적 무흠이 아니라 목적에 도달한 완성이고, 홀로클레로스(ὁλόκληρος)는 전체가 온전하여 새는 데가 없는 상태다. 권성수 목사가 이를 "새는 것이 없는 성숙"으로 옮긴 것은 원어의 핵심을 정확히 짚은 것이며, 윤 전도사가 이 단어들이 군인에게 쓰이는 말임을 지적한 것도 같은 방향이다. 성숙은 결함의 제거가 아니라 전인격의 통합이고, 그 통합은 인내라는 단련 없이 도달되지 않는다.</p>
+<p>시련을 자격의 표지로 뒤집는 재해석이 여기서 나온다. 윤 전도사는 시험을 "시험 칠 기회"로 읽는다 — 아무나 수능을 응시할 수 없듯, 시험 기회가 주어졌다는 것은 하나님이 인정하셨다는 표지라는 것이다. 훈련의 방식에 대해서도 그는 균형을 강조한다. 하나님은 둥지에서 새끼를 떨어뜨려 날게 하는 독수리처럼도(신 32:11), 날개 아래 품는 어미닭처럼도(마 23:37) 대하신다. 공의와 사랑이 함께 작동하는 이 훈련상은 부모의 양육에 그대로 옮겨진다.</p>
+<p>실제로 김유정 교수는 사춘기 자녀를 다루는 부모교육 강의에서 야고보서 1:4를 부모 자신의 동사로 끌어온다. "인내를 온전히 이루라"의 주어는 자녀만이 아니다. 사춘기 자녀를 견디는 과정에서 부모 자신이 조금도 부족함 없게 성숙해진다는 것이다. 시편 37:24의 "그는 넘어지나 아주 엎드러지지 아니함은 여호와께서 그의 손으로 붙드심이로다"가 그 인내의 시야를 열어 준다. 자녀의 넘어짐에 부모가 먼저 무너지지 않는 것은 걸음을 정하시는 분이 따로 계시다는 신뢰에서 온다. 인내는 여기서 고난 신학의 언어를 떠나 <a class="wl" href="../../t/%EC%9E%90%EB%85%80%EC%96%91%EC%9C%A1/">자녀양육</a>의 일상 언어가 된다.</p>
+<p>그렇다면 이 인내는 어떻게 길러지는가. 문대원 목사가 빌립보서 3장 강해에서 제시하는 답은 "열정의 강도보다 열정의 지속성"이다. 그는 인내를 타고난 기질이 아니라 "배워야 하는 덕목"으로 규정하고, 지속성의 원천을 확고한 목표에서 찾는다. 목표가 분명해야 방향이 서고, 방향이 서야 우선순위가 잡히며, 인격적 목표라야 수단까지 정직해진다. 어니스트 뉴먼이 위대한 작곡가에 대해 남긴 관찰 — 영감을 받아 시작하는 것이 아니라 매일 동일한 시간에 시작하고 나서 영감을 받는다 — 이 습관과 동기의 순서를 뒤집는다. 인내는 동기가 충만할 때 발휘되는 능력이 아니라, 동기가 없는 날에도 자리를 지킴으로써 동기를 다시 불러오는 습관이다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li><strong>원어가 인내를 둘로 나눈다.</strong> 휘포모네는 환경과 짐 아래에 머무는 견딤이고 마크로튀미아는 사람을 향해 분노의 거리를 길게 두는 오래 참음이다. 야고보서 5장은 둘을 함께 써서 인내의 양면을 포괄하며, 실제로 더 어려운 쪽은 사람이다.</li>
+<li><strong>인내는 체념이 아니라 노동이다.</strong> "그냥 참는 것이 아니고 열심히 일하면서 오래 참아야" 거둔다. 통제할 수 없는 것 앞에서 통제할 수 있는 것을 계속하는 일이며, 불의 앞의 침묵이 아니라 자기 방식으로 터뜨리지 않는 절제다.</li>
+<li><strong>사슬에서 인간 편의 몫은 인내 하나뿐이다.</strong> 환난은 오는 것, 연단은 이루어지는 것, 소망도 오는 것이다. 결과를 만들 의무는 없고 자리를 지킬 의무만 있다.</li>
+<li><strong>인내의 주체는 내 의지가 아니다.</strong> 진주를 빚는 것은 조개의 의지가 아니라 조개의 생명이다. 한계가 있는 것은 내 의지이고, 십자가라는 최고 압력에서도 인내가 꺾이지 않은 분이 계시다. 그래서 인내는 짜내기가 아니라 앙망하여 공급받기다.</li>
+<li><strong>인내는 뒤가 아니라 앞을 본다.</strong> 재림·심판·결말(텔로스)이라는 종말론적 정박 없이는 억울함의 압력을 뺄 밸브가 없다. 욥의 텔로스가 갑절의 복이 아니라 "눈으로 주를 뵈옵나이다"였다는 사실이 그 보상의 성격을 규정한다.</li>
+<li><strong>연단의 언어는 일인칭으로만 안전하다.</strong> 고난 중인 사람에게 "이 인내가 너를 순금으로 만든다"고 말하는 순간 위로는 정죄가 된다. "벌 받는다고 생각하며 위로하면 차라리 심방하지 않는 것이 낫다."</li>
+<li><strong>성숙의 척도는 은사가 아니라 인내의 깊이다.</strong> "뒤끝 없다"는 즉각적 분출은 솔직함이 아니라 미성숙의 포장이며, 온유는 타고나는 기질이 아니라 40년에 걸쳐 빚어진다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>"인내에 한계가 없다"는 명제는 신학적으로는 옳으나, 학대·착취·트라우마 상황에서 "더 참으라"는 권면으로 오용될 위험이 크다. 그리스도의 생명에 근거한 무한한 인내와, 자기를 보호하기 위해 그 자리를 떠나는 결정 사이의 경계는 어디에 그어지는가.</li>
+<li>인내와 저항은 어디서 갈라지는가. 야고보는 부자들의 압제에 통곡을 선언하면서 같은 문단에서 "길이 참으라"고 한다. "겸손하고 온유하게 정의를 세운다"는 원칙이 실제 불의에 맞서는 행동과 어떻게 구별되며, 어디까지가 인내이고 어디부터가 묵인인가.</li>
+<li>의분과 감정 폭발을 실시간으로 어떻게 분별하는가. 분노를 죄로 재범주화하는 처방은 강력하지만, 성전을 정화하신 예수와 "분을 내어도 죄를 짓지 말며"(엡 4:26)를 함께 붙들려면 6초의 심호흡 이상의 기준이 필요하다.</li>
+<li>결말을 보지 못하고 끝나는 인내는 어떻게 위로받는가. 욥은 살아서 갑절의 복을 보았고 요셉은 총리가 되었지만, 히브리서 11:39의 믿음의 선진들은 약속을 받지 못한 채 죽었다. 인내의 신학이 가시적 회복 사례에 기대어 서술될 때 무명의 인내자는 어디에 서는가.</li>
+<li>같은 불이 어떤 사람은 단단하게 하고 어떤 사람은 깨뜨린다. 환난을 진주로 바꾸는 반응과 환난에 짓눌려 부서지는 반응을 가르는 것은 시련의 강도인가, 받는 자의 해석인가, 별도의 은혜인가. 그리고 인내가 성숙의 척도라면, 번아웃과 트라우마로 인내가 무너진 성도를 정죄하지 않을 목회적 안전장치는 무엇인가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EA%B3%A0%EB%82%9C/">고난</a> — 악의 문제와 신정론, 탄식의 정당성. 왜 견뎌야 하는가라는 물음의 앞자리</li>
+<li><a class="wl" href="../../t/%EA%B3%A0%EB%82%9C%EA%B3%BC%ED%9A%8C%EB%B3%B5/">고난과회복</a> — 고난에서 회복으로 이어지는 구속적 궤적 전체와 연단 신학의 경계</li>
+<li><a class="wl" href="../../t/%EA%B3%A0%EB%82%9C%EB%B0%9B%EB%8A%94%EC%A2%85/">고난받는종</a> — 이사야 53장의 대속, 벧전 2장의 글씨본(휘포그라모스)으로서의 그리스도의 침묵</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EB%8F%84%EC%9D%98%EA%B2%AC%EC%9D%B8/">성도의견인</a> — 끝까지 견딤을 교리로 진술한 자리</li>
+<li><a class="wl" href="../../t/%EC%98%81%EC%A0%81%EC%99%84%EC%A3%BC/">영적완주</a> — 약함을 직면하는 완주, 고후 12:9의 역설</li>
+<li><a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a> · <a class="wl" href="../../t/%EC%84%B1%EB%A0%B9%EC%B6%A9%EB%A7%8C/">성령충만</a> — 오래 참음이 성령의 열매로 맺히는 과정</li>
+<li><a class="wl" href="../../t/%EC%82%AC%EB%9E%91/">사랑</a> — 고전 13장의 양 기둥, 오래 참음으로 열리고 견딤으로 닫히는 사랑</li>
+<li><a class="wl" href="../../t/%EC%8B%AD%EC%9E%90%EA%B0%80/">십자가</a> — 히 12:2, 인내의 최고 압력이자 최고 모범</li>
+<li><a class="wl" href="../../t/%EC%A2%85%EB%A7%90%EB%A1%A0/">종말론</a> — 재림·심판·결말이 인내에 주는 방향과 동력</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%84/">기도</a> — 강청하는 과부, 응답 지연 속의 끈기</li>
+<li><a class="wl" href="../../t/%EA%B4%91%EC%95%BC/">광야</a> — 40세의 모세를 온유한 모세로 바꾼 형성의 자리</li>
+<li><a class="wl" href="../../t/%EC%97%AD%EC%84%A4/">역설</a> · <a class="wl" href="../../t/%EA%B8%B0%EC%81%A8/">기쁨</a> — 시련 중에 기뻐하라는 명령의 어법</li>
+<li><a class="wl" href="../../t/%EC%8B%9C%ED%97%98%EA%B3%BC%EC%9C%A0%ED%98%B9/">시험과유혹</a> — 페이라스모스의 이중 의미, 시련과 유혹의 분별</li>
+<li><a class="wl" href="../../t/%EC%9E%90%EB%85%80%EC%96%91%EC%9C%A1/">자녀양육</a> — 인내를 부모 자신의 성숙 훈련으로 읽는 지평</li>
+<li><span class="wl-dead" title="위키 내부 링크">고난과시련</span> — 인내 본문들이 모인 설교 클러스터</li>
+<li><span class="wl-dead" title="위키 내부 링크">약1</span> · <span class="wl-dead" title="위키 내부 링크">약5</span> · <span class="wl-dead" title="위키 내부 링크">롬5</span> · <span class="wl-dead" title="위키 내부 링크">히12</span> · <span class="wl-dead" title="위키 내부 링크">고전13</span> — 인내 본문 허브</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수, 「길이 참으세요」</span></td>
+<td>설교(약 5:7-12)</td>
+<td>인내의 삼중 구조(보상·방법·초점), 휘포모네와 마크로튀미아 구별, "환경보다 사람을 견디는 것이 어렵다", 마음·원망·맹세, 재림·심판·결말</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수, 「쓴 인내, 단 열매」</span></td>
+<td>설교(약 5:7-11)</td>
+<td>농부·선지자·욥의 고통 삼분류, 씨줄과 날줄의 옷감 비유, 욥의 텔로스, "아무것도 안 하고 견디는 것이 아니다"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수, 「고통을 인내」</span></td>
+<td>설교(롬 5:3-4)</td>
+<td>"인내도 한계가 있다"는 통념 해체, 진주 비유(생명체가 만든다), 갈 2:20, 환난→인내→연단→소망 사슬에서 인간의 몫</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수, 「십자가 인내」</span></td>
+<td>설교(히 12:2)</td>
+<td>다이아몬드(압력·온도), 아르케고스와 텔레이오테스, "그 앞에 있는 기쁨", 앙망(카바)과 새 힘</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수, 「사랑의 인내」</span></td>
+<td>설교(고전 13:4,7)</td>
+<td>사랑의 양 기둥 구조, 아가페와 에로스, 온유(크레스테우오마이), 요셉의 2년, "오래 참는 비결은 하나님이시다"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수, 「격분을 인내」</span></td>
+<td>설교(전 7:9)</td>
+<td>분노는 성격이 아니라 죄, 품에 머무는 노, 잠·바·오·주·모 다섯 처방, "화풀이도 쌓이고 인내도 쌓인다"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수, 「시련 중에 기뻐하세요 (1)」</span></td>
+<td>설교(약 1:1-6)</td>
+<td>파사 카라와 여김(헤게오마이), 홀로클레로스="새는 것이 없는 성숙", 인내 마라톤, 믿음의 시험(도키미온)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수, 「시련 중에 기뻐하세요 (2)」</span></td>
+<td>설교(약 1:1-8)</td>
+<td>"잘 참아야 그 단계만큼 넘어간다", from과 through의 지혜, 바로 앞만 비추는 랜턴, 고통의 4분류, 체육관 비유</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수, 「시련 중의 기쁨」</span></td>
+<td>설교(벧전 1:6-7)</td>
+<td>에이 데온("필요해서"), 번영신학 비판과 성경적 형통, 용광로와 순금, 시련 목적의 총론·각론</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수, 「사역자의 좌절, 어떻게 해결」</span></td>
+<td>설교(갈 6:6-10)</td>
+<td>엔카케오·에클뤼오, 좌절의 여덟 뿌리, 참소와 가책의 분별, 크로노스에서 카이로스로, 윌리엄 캐리</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수, 「낙심 말고 기도하자」</span></td>
+<td>설교(눅 18:1-8)</td>
+<td>"기도하는 사람만이 낙심한다", 다이아몬드 광산으로서의 기도, 응답 지연=관계 심화의 타이밍, 눅 18:8의 믿음</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수, 「장미꽃, 가시, 감사」</span></td>
+<td>설교(엡 5:15-21)</td>
+<td>가시의 유익, 시 119:71, 고난→죄 버림→인내→연단된 인격→희망의 연쇄, 감사의 역설</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수, 생생신앙(야고보서 강해)</span></td>
+<td>설교 시리즈(16편)</td>
+<td>시련→인내→온전함 도식이 1·2편에서 14편까지 이어지는 구조, 역설을 해석의 열쇠로 삼는 일관성</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">윤명숙, 「성숙한 믿음」</span></td>
+<td>설교(약 1:2-4)</td>
+<td>"영적으로 성숙한 사람은 인내의 깊이도 깊다", "뒤끝 없다=미성숙", 시험은 "시험 칠 기회", 독수리와 어미닭</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">윤명숙, 「성숙한 사람이 누군가」</span></td>
+<td>설교(약 1~5장)</td>
+<td>온전=성숙, 성숙의 네 표지(인내·언행일치·화평·절제), "벌 받는다고 위로하면 큰 가식"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">윤명숙, 「성숙한 사람」</span></td>
+<td>설교(고전 13:4,11)</td>
+<td>7초의 바베큐 장면, "자신의 반응을 살펴볼 수 있는 눈", 성인아이와 오래 참지 못함, 해석의 선택권</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">문대원, 「끝까지 완주하는 사람」</span></td>
+<td>설교(딤후 4:5-8)</td>
+<td>"끈기는 인간의 의지에서 나오지 않는다", 마라나타와 의의 면류관, 절제(엔크라테이아), 성공이 아니라 신실함</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">문대원, 「진정한 변화는 어떻게 지속되는가」</span></td>
+<td>설교(빌 3:12-16)</td>
+<td>열정의 강도보다 지속성, 인내는 배워야 하는 덕목, 지속적 동기부여, 목표가 방향·우선순위·윤리를 결정</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">김유정, 「청소년 이해와 의사소통」</span></td>
+<td>강의(부모교육)</td>
+<td>약 1:4를 부모 자신의 인내로 읽기, 시 37:23-24의 거시적 관점, 사 49:16의 긍휼</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/목회신학</span><span>#topic/인내</span><span>#topic/오래참음</span><span>#topic/시련</span><span>#topic/성숙</span><span>#topic/종말론</span><span>#topic/성화</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

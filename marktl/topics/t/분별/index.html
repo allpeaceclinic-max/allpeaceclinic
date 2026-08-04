@@ -1,0 +1,529 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>분별 — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-t">목회·실천</span><span class="date">2026-08-03</span></div>
+  <h1 class="note-title">분별</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>두 여자가 한 아이를 두고 다툰다. 한집에 살며 사흘 차이로 아이를 낳았고, 그중 한 아이가 밤중에 죽었다. 증인도 물증도 단서도 없다. 권성수 목사가 <span class="wl-dead" title="위키 내부 링크">왕상 3장</span> 강해에서 "굉장히 분별하기 힘든 상황"이라 부른 이 교착은, 분별이라는 주제의 원형적 장면이다. 인간의 이성이 동원할 수 있는 모든 자료가 소진된 지점 — 바로 거기서 <span class="wl-dead" title="위키 내부 링크">솔로몬</span>은 칼을 가져오라 하고, 진짜 어머니의 모성이 터져 나오면서 진실이 스스로 드러난다.</p>
+<p>분별은 그러니까 정보의 양이 아니라 성격의 문제다. 신약이 이 일을 가리키는 두 단어가 그 성격을 드러낸다. <span class="wl-dead" title="위키 내부 링크">롬 12:2</span>의 도키마조(δοκιμάζω)는 금속을 불에 달구어 시험하고, 시험을 통과한 것을 승인·인정하는 행위다. <span class="wl-dead" title="위키 내부 링크">요일 4:1</span>과 고전 14:29의 디아크리시스(διάκρισις)는 뒤섞인 것을 갈라 나누는 행위다. 곧 분별은 수동적 식별이 아니라 검증하고 승인하는 능동적 작업이며, 권성수 목사의 표현대로 "전부 분별해서 선택해서 행동하는 것"이다.</p>
+<p>이 검증은 두 방향으로 뻗는다. 하나는 위를 향한다 — 하나님의 뜻이 무엇인가. 다른 하나는 옆을 향한다 — 이 정보는 사실인가, 이 관계는 나를 어디로 끌고 가는가, 이 고통은 연단인가 유혹인가, 지금이 때인가. 흔히 이 두 축은 별개의 주제로 다뤄지지만, 아래에서 보듯 둘은 한 뿌리에서 갈라진 가지다. 헌신 없는 시대 분별은 냉소로 굳고, 시대 감각 없는 뜻 분별은 자기 욕망의 합리화로 전락한다. 이 글은 그 한 뿌리에서 아홉 개의 층위를 따라간다.</p>
+<h2>1. 분별의 문법 — 검증하고 승인하는 일</h2>
+<p>분별을 "옳고 그름을 아는 능력" 정도로 이해하면 본문이 요구하는 무게를 놓친다. 도키마조가 담고 있는 것은 불에 달구는 과정이다. 시험을 거치지 않은 판단은 분별이 아니라 인상(印象)이며, 시험을 거쳤더라도 승인하고 행동으로 옮기지 않으면 분별은 미완이다. 롬 12:2가 분별의 대상을 "하나님의 선하시고 기뻐하시고 온전하신 뜻"이라는 세 형용사로 특정한 것도 같은 맥락이다. 분별의 목표는 막연한 옳음이 아니라, 우리에게 유익하고(선함) 하나님께 받으심직하며(기뻐하심) 부족함이 없는(온전함) 구체적 한 가지를 짚어내는 것이다.</p>
+<table>
+<thead>
+<tr>
+<th>어휘</th>
+<th>본문</th>
+<th>어감</th>
+<th>분별의 성격</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>도키마조 δοκιμάζω</td>
+<td>롬 12:2</td>
+<td>불에 달구어 시험하고 승인함</td>
+<td>검증 후 받아들이는 <strong>능동적 승인</strong></td>
+</tr>
+<tr>
+<td>디아크리시스 διάκρισις</td>
+<td>요일 4:1 · 고전 14:29</td>
+<td>뒤섞인 것을 갈라 나눔</td>
+<td>진위를 가르는 <strong>판별</strong></td>
+</tr>
+<tr>
+<td>소프론 σώφρων(신중함)</td>
+<td>딤전 3:2 · 딛 1:8</td>
+<td>절제된 판단력</td>
+<td>결론을 유보할 줄 아는 <strong>태도</strong></td>
+</tr>
+</tbody>
+</table>
+<p>여기서 분별과 <a class="wl" href="../../t/%EC%A7%80%ED%98%9C/">지혜</a>의 관계도 정리된다. 왕상 3:28이 솔로몬에게 있다고 말한 "하나님의 지혜"(호크마)는 지식의 축적이 아니라 삶의 현장에서 옳은 것을 짚어 실행하는 실천적 능력이다. 지혜가 능력이라면 분별은 그 능력이 작동하는 방식이다. 그리고 그 작동은 인간이 막혔다고 판단한 자리에서 시작된다 — "우리가 볼 때 막혀 있지만 하나님의 지혜가 가동되면 풀린다"는 것이 권 목사가 두 창녀의 재판에서 끌어낸 결론이다. 주목할 것은 그 풀림의 방향이다. 솔로몬의 판결은 진실을 밝히는 정의인 동시에 어머니와 아이를 살리는 긍휼이었다. 참된 분별은 <a class="wl" href="../../t/%EC%A0%95%EC%9D%98/">정의</a>와 <a class="wl" href="../../t/%EA%B8%8D%ED%9C%BC/">긍휼</a> 중 하나를 고르는 일이 아니다.</p>
+<h2>2. 헌신이 먼저다 — 분별의 네 토대</h2>
+<p>그렇다면 이 능력은 어떻게 얻는가. 롬 12장의 대답은 단호하고, 그 단호함은 순서에 있다. 권성수 목사가 「하나님의 뜻을 분별하세요」에서 못박은 대로, 1절의 <a class="wl" href="../../t/%ED%97%8C%EC%8B%A0/">헌신</a>이 먼저고 2절의 분별이 그 결과다. 몸과 마음 전체를 산 제물로 드리는 자리에 서지 않은 사람에게 분별은 열리지 않는다. 분별 능력은 정보나 지능이 아니라 드려진 삶에서 나오며, 헌신 없는 분별은 예외 없이 자기 욕망의 합리화로 미끄러진다.</p>
+<p>권 목사는 그 토대를 네 겹으로 세운다.</p>
+<table>
+<thead>
+<tr>
+<th>토대</th>
+<th>본문</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>① <span class="wl-dead" title="위키 내부 링크">은혜</span> 의식</td>
+<td>롬 12:1 "모든 자비하심"</td>
+<td>그리스도를 주신 자비를 먼저 의식하는 데서 출발</td>
+</tr>
+<tr>
+<td>② 헌신</td>
+<td>롬 12:1 "산 제물"</td>
+<td>몸과 마음 전체를 드린 자리에서만 뜻이 보임</td>
+</tr>
+<tr>
+<td>③ 세속 가치의 거절</td>
+<td>롬 12:2 "이 세대를 본받지 말고"</td>
+<td>돈·성공·체면이라는 시스템에서 벗어남</td>
+</tr>
+<tr>
+<td>④ 은사 의식</td>
+<td>롬 12:3 "믿음의 분량"</td>
+<td>혼자 다 하려는 과대망상을 버리고 <span class="wl-dead" title="위키 내부 링크">은사</span>의 한계를 인정</td>
+</tr>
+</tbody>
+</table>
+<p>세 번째 토대가 특히 오해받기 쉽다. 세상 가치의 거절은 한 번의 결단이 아니라 날마다의 역류다. 권 목사가 같은 본문을 송구영신의 자리에서 다시 편 「마음을 새롭게」는 이것을 "마음 → 생각 → 행동 → 습관 → 인격 → 인생"의 연쇄로 도식화하고, 그 발원지인 마음을 "날마다 순간마다" 새롭게 하지 않으면 분별의 눈이 곧 흐려진다고 경고한다. 흥미로운 것은 그가 이 갱신의 동력을 인간의 결심이 아니라 "하나님의 모든 자비하심"에 둔다는 점이다. 분별은 자력으로 짜내는 총명이 아니라 받은 <a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a>에 대한 응답의 형태로 주어진다.</p>
+<h2>3. 묻는 사람과 묻지 않는 사람</h2>
+<p>헌신이 분별의 토대라면, 그 토대 위에서 실제로 일어나는 행위는 묻는 것이다. 성경은 분별의 실패를 대개 정보의 실패가 아니라 물음의 생략으로 진단한다.</p>
+<p><span class="wl-dead" title="위키 내부 링크">다윗</span>의 그일라 전투(<span class="wl-dead" title="위키 내부 링크">삼상 23장</span>)가 그 표본이다. 문대원 목사가 짚듯 다윗의 생애에서 "물었다"는 표현이 처음 명시되는 이 장면에는 세 겹의 물음이 겹쳐 있다. 첫째, 그는 옳은 일에도 물었다 — 동족 유다 지파를 블레셋에게서 구하는 일은 명분이 분명했으나 바로 그런 자리에서 사람은 묻기를 생략한다. 둘째, 군사들이 두려워하자 두 번 물었다. 셋째, 방향이 확인된 뒤 그일라 사람들의 배신이 닥쳤을 때 낙담 대신 다시 물었다. 방향의 확인이 무탈함의 보장은 아니었던 것이다.</p>
+<p>반대편에 <span class="wl-dead" title="위키 내부 링크">사울</span>이 있다. 그는 첩보에 의존했고 "하나님이 그를 내 손에 넘기셨도다"라고 단정했다. 묻지도 듣지도 않은 채 믿고 싶은 대로 믿는 것 — 문 목사는 이를 확증편향의 전형으로 읽고, 빅데이터와 추천 알고리즘이 이미 믿는 것만 반복 확인시켜 주는 오늘의 조건에서 사울의 자기 확신이 현대인의 보편적 위험으로 갱신된다고 본다. 묻지 않음의 뿌리가 <a class="wl" href="../../t/%EA%B5%90%EB%A7%8C/">교만</a>이라는 점에서, 질문은 곧 자기 한계를 인정하는 <a class="wl" href="../../t/%EA%B2%B8%EC%86%90/">겸손</a>의 형식이다 — "세상에서 제일 위험한 사람은 내가 문제의 정답을 갖고 있다는 사람이다."</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>다윗</th>
+<th>사울</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>정보의 출처</td>
+<td>여호와께 물음(삼상 23:2, 4)</td>
+<td>첩보원의 보고(삼상 23:7)</td>
+</tr>
+<tr>
+<td>명분이 분명할 때</td>
+<td>그럴수록 물음</td>
+<td>물음을 생략하고 단정</td>
+</tr>
+<tr>
+<td>결정 이후</td>
+<td>배신 앞에서 다시 물음</td>
+<td>결론을 밀어붙임</td>
+</tr>
+<tr>
+<td>결과</td>
+<td>하나님이 넘기지 않으심(23:14)</td>
+<td>정반대의 결과</td>
+</tr>
+</tbody>
+</table>
+<p>이 대비의 가장 무서운 판본은 여호수아의 기브온 사건이다. <span class="wl-dead" title="위키 내부 링크">수 9:14</span>는 "어떻게 할지를 여호와께 묻지 아니하고"라고 적는다. 이스라엘은 낡은 떡과 해진 신발이라는 외형을 검증했다 — 정보 수집은 했다. 다만 물음을 생략했을 뿐이다. 문 목사가 이를 소극적 죄(sin of omission)의 표본으로 읽는 것이 정확하다. 분별의 실패는 정보의 실패가 아니라 관계의 실패이며, 약 4:17의 "선을 행할 줄 알고도 행하지 아니하면 죄니라"가 그 최대 기준이 된다. 큰 죄를 짓지 않았다는 도덕적 자기 안도가 가장 깊은 사각지대인 셈이다.</p>
+<p>그렇다면 무엇을 어떻게 묻는가. 문 목사가 제시한 세 차원의 틀이 실무적이다. <strong>규범</strong>(성경에 나타난 일반적 뜻)을 먼저 교육과 훈련으로 확립하고, 그것이 이 <strong>상황</strong>과 나라는 <strong>실존</strong>에 어떻게 적용되는지를 기도로 분별하는 순서다(<a class="wl" href="../../t/%EC%82%BC%EC%A4%91%EA%B4%80%EC%A0%90/">삼중관점</a>). 여기에 그가 덧붙인 한 문장이 이 틀을 율법주의에서 구해낸다 — 정답이 하나만 있는 것은 아니다. 육아에 왕도가 없듯, 동일한 성경 원칙도 적용의 결은 여럿일 수 있다. 분별은 규칙의 기계적 대입이 아니라 겸손한 기도 안에서의 적용이다.</p>
+<h2>4. 성령의 인도와 그 한계선</h2>
+<p>묻는다면 응답도 있다. 문제는 그 응답을 어떻게 검증하는가이다. 권성수 목사는 이 지점에서 두 극단을 동시에 견제하는 정교한 틀을 세운다.</p>
+<p>먼저 그는 <a class="wl" href="../../t/%EC%9D%B8%EB%8F%84%ED%95%98%EC%8B%AC/">성령의 인도</a>를 두 양태로 나눈다. <strong>통상 감동</strong>은 생각나게 하시는 일상적 인도로, 성경 원리에 부합하면 순종해야 할 민감성의 영역이다. <strong>비상 지시</strong>는 환상이나 음성 같은 예외적·주권적 개입으로, "통상적으로 일어나지 않는다." 이 구분만으로도 모든 것을 비상 지시로 보려는 신비주의와 성령의 인도 자체를 부정하는 합리주의가 함께 차단된다. 여기에 번 포이쓰레스에게서 빌려온 권위의 차등이 안전장치로 얹힌다.</p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>주체</th>
+<th>무오성</th>
+<th>요구되는 분별</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>예수님</td>
+<td>100%</td>
+<td>—</td>
+</tr>
+<tr>
+<td>2</td>
+<td>사도들</td>
+<td>인격은 실수하나 기록 시 무오</td>
+<td>낮음</td>
+</tr>
+<tr>
+<td>3</td>
+<td>지도자</td>
+<td>교육·감동을 받으나 실수 가능</td>
+<td>높음</td>
+</tr>
+<tr>
+<td>4</td>
+<td>평신도</td>
+<td>—</td>
+<td><strong>가장 많은 분별 필요</strong></td>
+</tr>
+</tbody>
+</table>
+<p>핵심은 이 위계의 방향이다. 아래로 내려올수록 분별의 요구가 커지며, 어떤 단계의 감동도 성경을 넘어설 수 없다. 권 목사가 로랜 커닝햄의 순종 연쇄를 소개하면서도 "절대 성경보다 먼저, 멀리 가면 안 된다"고 못박은 이유다.</p>
+<p>이 원칙은 예언 은사를 다룰 때 더 날카로워진다. 권 목사는 「신약의 예언」에서 은사중지론과 은사계속론 사이에서 <span class="wl-dead" title="위키 내부 링크">웨인 그루뎀</span>·포이쓰레스·<span class="wl-dead" title="위키 내부 링크">존 파이퍼</span>의 중간 입장을 채택한다. 성경 수준의 계시는 완료되었으나 성령께서 마음에 떠오르게 하시는, 성경에 종속되고 오류 가능한 예언은 지금도 있다는 것이다. 그래서 표현의 층위가 중요해진다 — "주님이 말씀하셨다"가 아니라 "주님의 뜻인 것 같습니다" 수준으로.</p>
+<p>교회사가 제공하는 검증 도구는 놀랄 만큼 단순하다. 『디다케』의 예언자 테스트는 성경 교리에 맞는가와 색욕·탐욕이 있는가를 물었고, 신 18:21-22는 성취 여부를 물었으며, 신 13:1-3은 이적이 성취되더라도 다른 신을 따르게 하면 거짓이라고 판정했다. 곧 교리·성취·지향 대상의 세 문항이다. 그중 마지막이 가장 근본적이다.</p>
+<blockquote>
+<p>"악령의 특징은 파괴이다. 이루어지는데 다른 신을 따라 가자고 하면 가짜이다." — 권성수, 「신약의 예언」</p>
+</blockquote>
+<p>같은 시금석이 은사와 기적 현상 전반에 적용된다. 「베드로의 설교(1)」에서 권 목사는 나답과 아비후의 "이상한 불"(레 10:1)을 들어 무분별한 기적 추종을 경계하면서도, 성령께서 일으키시는 역사에 마음을 닫는 것 역시 경계한다. 분별의 단일 기준은 행 1:8이다 — 이것이 예수님을 증거하고 높이게 하는가, 아니면 현상과 사람에게서 멈추는가. 오순절 아침 기적의 한복판에서 <span class="wl-dead" title="위키 내부 링크">사도들</span>과 함께 선 베드로가 기적을 해설하지 않고 요엘서를 펼친 것 자체가 이미 그 답이었다. 기적을 쫓지 않고 말씀으로 돌아가는 것, 그것이 분별이다.</p>
+<h2>5. 시험의 분별 — 한 단어 두 실체</h2>
+<p>인도의 진위를 가르는 일 못지않게 어려운 것이 고통의 정체를 가르는 일이다. 윤명숙 전도사는 <span class="wl-dead" title="위키 내부 링크">약 1:12-17</span>에서 우리말 '시험' 하나에 전혀 다른 두 실체가 들어 있음을 갈라 보여 준다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>12절의 시험</th>
+<th>13절의 시험</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>원어 계열</td>
+<td>페이라스모스(시련)</td>
+<td>페이라조(유혹)</td>
+</tr>
+<tr>
+<td>출처</td>
+<td>하나님이 성숙을 위해 허락</td>
+<td>삶을 파괴하려는 미혹</td>
+</tr>
+<tr>
+<td>본문</td>
+<td>"시험을 참는 자에게 복을 주시며"</td>
+<td>"친히 아무도 시험하지 아니하시느니라"</td>
+</tr>
+<tr>
+<td>응답</td>
+<td>인내</td>
+<td>회개와 끊어냄</td>
+</tr>
+</tbody>
+</table>
+<p>윤 전도사가 이 단락을 요약하며 시험을 분별하는 것이 곧 <a class="wl" href="../../t/%EC%98%81%EC%A0%81%EC%84%B1%EC%88%99/">성숙</a>의 길이라고 말한 것은 과장이 아니다. 이 구분을 놓치면 두 가지 병리가 생긴다. 자기 실수와 잘못을 '시련'으로 합리화하여 회개를 피하거나, 반대로 하나님이 허락하신 연단을 마귀의 공격으로 오해해 원망에 빠지는 것이다. 윤 전도사가 "죄로 인한, 실수와 잘못으로 인한 것이 아닌 시련이 성숙을 위해 주신 것"이라고 선을 그은 뒤 곧바로 "분별을 위해 기도해야 한다"고 말하는 이유가 여기 있다. 고통이 닥쳤을 때 먼저 해야 할 일은 견디는 것도 저항하는 것도 아니고 묻는 것이다.</p>
+<p>유혹 쪽으로 시선을 돌리면 분별의 초점은 밖에서 안으로 옮겨 간다. 14절이 유혹의 책임 소재를 외부가 아니라 "자기 욕심"에 두기 때문이다. 윤 전도사는 그 욕심을 "과도한 욕망"으로 정의하되 그 뿌리를 결핍이 아니라 <strong>비교</strong>에서 찾는다. 은혜를 자족하지 못하고 옆 사람과 견주는 데서 욕망이 과도해진다는 것이다. 그리고 욕심은 정적이지 않다 — 잉태하면 죄를 낳고 죄가 장성하면 사망을 낳는다(15절). 죄가 생물처럼 자란다면 대응도 사후 진압이 아니라 예방이어야 한다. "욕심을 심지 않도록 훈련해야 한다. 훈련하지 않으면 또아리를 튼다."</p>
+<p>분별이 사랑의 영역에까지 미친다는 점은 종종 간과된다. 윤 전도사가 「우리 속에 사랑이 없다」에서 주목한 것은 <span class="wl-dead" title="위키 내부 링크">요한일서 4장</span>의 배열이다. 영을 분별하라는 명령(1-6절)과 사랑하자는 권면(7절)이 한 단락으로 묶여 있다. 그래서 그는 <a class="wl" href="../../t/%EC%82%AC%EB%9E%91/">사랑</a>을 예찬하기 전에 먼저 그 출처를 검증한다 — 사랑은 하나님께 속한 것이므로, 그리스도의 영이 없는 사랑은 "이기심을 포장하기 위해 사랑으로 위장한 것"일 수 있다. 첫눈에 반함이 사랑이 아니라 "보이는 것에 끌린" 자기중심적 해석이라는 진단도 같은 검증의 연장이다. 참된 사랑은 감정의 강도가 아니라 상대에 대한 깊은 지식과 이해 위에 선다. 분별 없는 사랑은 사랑이 아니라 자기 서사인 셈이다.</p>
+<h2>6. 관계의 분별 — 옥의 티</h2>
+<p>사랑의 진위를 묻는 자리에서 한 걸음 더 나아가면 관계 전반의 분별이 나온다. 권성수 목사는 여호사밧의 생애를 "백옥미하(白玉微瑕)" — 흰 옥의 작은 티 — 라는 한 이미지로 꿴다.</p>
+<p>여호사밧은 명백히 옥이었다. 국방을 강화했고 산당과 아세라 목상을 제거했으며 율법책을 가르치게 했고, 연합군이 쳐들어왔을 때는 금식을 선포하고 성가대를 군대 앞에 세워 찬양으로 싸웠다. 그런데 그 빛에 가려 보이지 않던 티가 하나 있었다. 사귐의 티다. 그는 아들을 아합과 이세벨의 딸과 결혼시켰고, 평화 공존이라는 명분으로 북이스라엘과 동맹을 맺었다. 그 결과 400명의 거짓 선지자가 "가라" 하고 미가야 한 사람만 "가면 진다" 할 때 다수를 따라갔다.</p>
+<p>여기서 두 개의 분별 원리가 나온다. 첫째, <strong>교제는 영향이 오가는 통로</strong>다. 여호사밧의 옥은 다윗과 아사라는 거룩한 모델과의 연결에서 왔고, 그의 티는 아합과의 연결에서 왔다. 같은 사람이 어떤 교제로 자신을 두르느냐가 운명을 가른다. 둘째, <strong>다수는 분별의 기준이 아니다</strong>. 400 대 1의 구도에서 옳은 쪽은 1이었다.</p>
+<blockquote>
+<p>"구사일생으로 살아났는데 다시 아하시야와 교제한다. 이것이 정말 무서운 것이다." — 권성수, 「여호사밧, 옥의 티」</p>
+</blockquote>
+<p>권 목사가 정작 무섭다고 한 것은 한 번의 실패가 아니라 반복되는 패턴이었다. 그래서 그의 처방은 관계를 끊으라는 명령에서 멈추지 않는다. 왕자를 얻으려 개구리에게 입 맞추었다가 자기가 개구리가 되어 버렸다는 멜로디 비티의 이미지가 보여주듯, 악한 대상을 변화시키려는 선의가 도리어 자기 동화로 끝나는 것이 상호의존의 함정이다. 이 패턴의 근본 치료는 관계 정리가 아니라 <strong>공급원의 교체</strong>다. 정서적 양분을 사람에게서 구하지 않고 예수의 생수에서 구하는 사람은, 유해한 관계에 매달릴 이유가 사라진다. 다만 한 가지 경계선은 여전히 열려 있다 — 원수를 사랑하라는 명령과 악한 친구를 조심하라는 경고가 성경에 동시에 있다면, 한 관계에서 어디까지가 사랑의 인내이고 어디부터가 끊어야 할 유해 우정인가.</p>
+<h2>7. 시대의 분별 — 선동과 정보의 홍수</h2>
+<p>관계에서 시험받는 분별은 여론의 장에서 훨씬 더 큰 규모로 시험받는다. 문대원 목사의 <span class="wl-dead" title="위키 내부 링크">행 21장</span> 강해는 이 주제를 정면으로 다룬다.</p>
+<p>본문은 <span class="wl-dead" title="위키 내부 링크">바울</span>이 예루살렘 성전에서 체포되는 장면이다. 그를 고발한 소문 — 모세를 배반하고 할례를 금지했다 — 은 완전한 날조가 아니라 진실의 일부를 잘라 정반대로 비튼 것이었다. 바울은 <a class="wl" href="../../t/%EC%9C%A8%EB%B2%95%EA%B3%BC%EB%B3%B5%EC%9D%8C/">율법</a>을 거룩하다 인정했고 디모데에게 할례를 행하기까지 했으나, 율법과 할례로는 구원에 이를 수 없다고 가르쳤을 뿐이다. 문 목사가 가짜 뉴스를 "단순한 오류가 아니라 공격하기 위한 의도를 가진 죄악"으로 규정하는 근거가 여기 있다. 신학적 뉘앙스를 제거하면 어떤 진리도 이단으로 만들 수 있다.</p>
+<p>그리고 선동은 진실보다 빠르다. 괴벨스의 선전 전략을 인용한 문 목사의 진단이 그 비대칭을 압축한다 — 선동은 한 문장으로 가능하지만 반박에는 수십 장의 증거가 필요하고, 반박이 준비될 즈음 사람들은 이미 선동당해 있다. 더 아픈 것은 그 무리의 정체다. "그를 없이하자"(행 21:36)를 외친 이들은 며칠 전 "이 사람을 없이하라"(눅 23:18)를 외친 무리였고, 그전에는 호산나를 외친 무리였다.</p>
+<p>이 대목에서 본문이 의도적으로 대비시키는 두 인물이 드러난다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>선동된 무리</th>
+<th>로마 천부장</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>정보 처리</td>
+<td>주장을 검증 없이 수용</td>
+<td>일관된 주장이 없음을 확인</td>
+</tr>
+<tr>
+<td>반응 속도</td>
+<td>즉각적 분노</td>
+<td>결론 유보</td>
+</tr>
+<tr>
+<td>조치</td>
+<td>"없이하자"</td>
+<td>영내로 데려가 변호 기회를 거듭 부여</td>
+</tr>
+</tbody>
+</table>
+<p>여기서 놓치기 쉬운 아이러니가 있다. 진상을 확인한 쪽은 이방인 로마 군인이었고, 검증 없이 소동한 쪽은 성전에 모인 하나님의 백성이었다. 진리를 가졌다고 믿는 자리가 오히려 선동에 취약할 수 있다는 뜻이다. 이 경고는 특정 진영을 향하지 않는다. 어느 쪽에 서 있든, 자기 편의 주장은 검증 없이 받아들이고 반대편의 주장은 확인 없이 기각하는 순간 우리는 같은 무리가 된다. 문 목사가 "가장 편리한 대응은 비난할 대상을 찾는 것"이라 하면서 희생양 찾기와 영웅 찾기를 나란히 놓은 것도 같은 균형이다. 둘 다 문제를 해결하지 못한다.</p>
+<p>대안으로 제시되는 것이 신중함이다. 딤전 3:2와 딛 1:8이 감독과 장로의 자격으로 신중함을 요구하고, 잠 5:1-2가 근신(discretion)을 말씀 안에 거함의 열매로 말한다. 곧 신중함은 성격의 문제가 아니라 판단력의 문제이며, 그 판단력은 말씀에 뿌리내릴 때 생긴다. 천부장의 절차적 사실 확인이 그 세속적 모형이라면, 그리스도인의 신중함은 거기에 말씀이라는 뿌리를 더한 것이다.</p>
+<p>실무적 도구는 윤명숙 전도사가 「입에 파수꾼을 세우소서」에서 소개한 유대인의 정보 분별 습관이 간명하다 — 이것이 <strong>사실인가</strong>, 이것은 <strong>누구에게 유익한가</strong>, 말하는 사람의 <strong>의도는 무엇인가</strong>. 세 문항을 통과하지 못한 정보는 입 밖으로 나가지 않는다. 그가 정작 문제 삼은 것은 정보의 홍수가 아니라 "체크하지 않는 무덤덤함"이었다. 검증 없이 흘려보내는 태도와 즉각 반응하는 태도는 반대편처럼 보이지만, 둘 다 분별의 부재라는 같은 뿌리에서 나온다.</p>
+<p>시대 자체에 대한 진단은 김대경 목사가 <span class="wl-dead" title="위키 내부 링크">엡 5:15-21</span>에서 끌어낸다. "때가 악하니라"의 포네로스는 단순한 도덕적 나쁨이 아니라 적극적으로 해를 끼치고 부패시키는 악이다. 그는 이 악을 음란으로 특정하되, 음란을 성적 일탈이 아니라 "신랑과 신부 되는 관계를 깨는 것"으로 재정의한다. 시대의 악은 곧 언약적 신실함이 깨진 상태이며, 그 진단은 정죄가 아니라 <a class="wl" href="../../t/%EA%B1%B0%EB%A3%A9/">거룩</a>으로의 부르심(살전 4:3)으로 이어진다. 시대를 분별한다는 것은 시대를 비난하는 일이 아니라 그 한복판에서 자기 자리를 정하는 일이다.</p>
+<h2>8. 때의 분별 — 크로노스와 카이로스</h2>
+<p>악한 시대를 진단했다면 남는 질문은 시간을 어떻게 쓸 것인가이다. 김대경 목사는 엡 5:16의 "세월을 아끼라"를 시간 관리의 윤리로 읽기를 거부한다. '아끼라'의 엑스아고라조(ἐξαγοράζω)는 아고라, 곧 시장에서 값을 치르고 사오는 행위이며 여기에 구속(redeem)의 의미가 얹힌다. 그리고 사야 할 대상은 흘러가는 크로노스가 아니라 영적 의미를 가진 카이로스다. 그래서 그리스도인의 근면은 세상의 근면과 외양이 같아도 뿌리가 다르다 — 세상은 미래의 불확실성 때문에 시간을 절약하고, 그리스도인은 그 날들이 악하기 때문에 시간을 사들인다.</p>
+<p>그런데 카이로스를 미리 계산해 낼 수 있는가. 이재화 대표는 행 1:6-8에서 그 물음이 정면으로 기각되는 장면을 짚는다. 제자들이 "이 때니이까"라고 묻자 예수는 "너희가 알 바 아니요"라고 선을 그으신 뒤 곧장 "내 증인이 되리라"로 넘어가신다. 질문과 응답이 어긋난 것이다. 이 대표는 그 어긋남을 실수가 아니라 의도로 읽는다.</p>
+<blockquote>
+<p>"때를 알고자 한다면 주의 뜻에 순종해야 한다. 순종하면 알게 된다는 역설적 표현이다." — 이재화, 「선교의 때와 우리의 능력」</p>
+</blockquote>
+<p>일반적으로는 알아야 순종하지만 본문은 순종해야 안다고 말한다. <a class="wl" href="../../t/%EC%88%9C%EC%A2%85/">순종</a>이 분별의 결과가 아니라 전제가 되는 이 구도는, 완벽한 때를 산출할 때까지 멈춰 서 있으려는 태도를 차단한다. 다만 이 대표 자신이 인정하듯 "움직일 때와 멈추어야 할 때를 반대로 하는 경우가 많으므로", 여기서 요구되는 것은 움직임 자체가 아니라 성령의 인도에 민감한 움직임이다.</p>
+<p>움직임의 형태에 대해서는 권성수 목사의 「플랜!」이 세 가지 결을 제시한다.</p>
+<table>
+<thead>
+<tr>
+<th>계획의 결</th>
+<th>원리</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>생동 계획(Planning)</td>
+<td>상황은 순간적으로 바뀌므로 그때그때 수정</td>
+<td>고정된 계획을 고집하면 참패</td>
+</tr>
+<tr>
+<td>원리 계획</td>
+<td>상황이 바뀌어도 기본 원리는 같다</td>
+<td>롬 12:2 — 성경이 기본 원리</td>
+</tr>
+<tr>
+<td>거시 계획</td>
+<td>영원한 경륜 안에서 자기 자리를 봄</td>
+<td>롬 11:36 — 만물이 주에게로</td>
+</tr>
+</tbody>
+</table>
+<p>핵심은 "원리는 고정이되 적용은 생동적"이라는 긴장이다. 이 긴장이 율법주의(고정된 계획의 맹종)와 상황주의(원칙 없는 표류)를 동시에 피한다. 그리고 이것은 3절에서 본 삼중 분별과 정확히 같은 구조다 — 규범은 고정, 상황과 실존에의 적용은 유동.</p>
+<p>마지막으로, 때는 종종 위기의 얼굴로 온다. 문대원 목사가 <span class="wl-dead" title="위키 내부 링크">느 2장</span>에서 읽어낸 것이 이 점이다. 왕 앞에서 수심을 들킨 순간은 죽을 수도 있는 위기였으나 <a class="wl" href="../../t/%EA%B8%B0%EB%8F%84/">기도</a>하던 느헤미야는 그것을 오래 기다린 기회로 분별했다. 문 목사가 이를 'Divine Appointment'라 부른 것은 정확하다. 분별력은 우연을 섭리로, 위기를 부르심으로 번역하는 독해력이다. 그리고 그 독해가 성립하려면 읽는 사람이 이미 기도의 자리에 있어야 한다. 여기서도 순서는 뒤집히지 않는다.</p>
+<h2>9. 물려주는 분별 — 소견대로가 아닌 기준</h2>
+<p>분별을 개인의 역량으로만 다루면 한 세대에서 끝난다. 윤명숙 전도사가 삿 21:25을 오늘의 본문으로 읽는 이유가 여기 있다. "왕이 없으므로 사람이 각기 자기의 소견에 옳은 대로 행하였더라" — 절대 기준이 부재할 때 모든 사람이 자기 눈을 기준으로 삼는다. 그가 덧붙인 인간론적 통찰이 날카롭다. "사람이 급하면 소견대로 하게 되어 있다." 평소에 순종을 알아도, 새겨진 기준이 없으면 위기의 순간에 본능적으로 자기 소견으로 회귀한다는 것이다. 분별은 그러므로 아는 것이 아니라 새겨지는 것이다.</p>
+<p>새김에는 시기가 있다. 윤 전도사는 유대 전통의 12~13세 독립과 <span class="wl-dead" title="위키 내부 링크">요셉</span>의 도애굽, 다니엘과 친구들의 어린 포로기를 근거로 13세 적기론을 제시한다. 부모가 언제까지나 옆에서 도울 수 없으므로, 스스로 옳고 그름을 가릴 수 있도록 훈련시켜 내어놓는 것이 <a class="wl" href="../../t/%EC%9E%90%EB%85%80%EC%96%91%EC%9C%A1/">양육</a>의 목표라는 것이다. 여기서 그가 겨냥하는 것은 금지가 아니다. "발목에 쇠고랑을 채워도 아이들은 나간다"는 현실 인정 위에서, 외적 통제가 아니라 "하나님의 높은 기준이 더 행복하다"는 것을 아는 내면화된 자존감만이 실제로 사람을 지킨다고 본다. 그러려면 부모가 먼저 그 기준의 타당한 이유를 알고 설명할 수 있어야 한다.</p>
+<p>그리고 전달의 통로는 말이 아니라 삶이다. 윤 전도사가 꾀병 결근, 사무실 물건, 이력서 허위, 세금 신고 속임 같은 일상의 작은 거짓을 열거하며 "부모의 가짜 삶"이 자녀에게 "각자 소견대로 할 여지를 남긴다"고 진단한 것은 <a class="wl" href="../../t/%EB%82%B4%EB%A9%B4%EC%B9%98%EC%9C%A0/">내면</a>의 차원에서 정확하다. 자녀는 가르치는 말이 아니라 사는 모습에서 가치를 흡수한다. 그래서 그의 결론은 주입이 아니라 공유다 — 우리가 가진 최고의 가치, 예수 그리스도를 자녀와 공유하는 것.</p>
+<p>이 마지막 층위는 앞의 여덟 층위를 되비춘다. 헌신에서 시작해 물음과 검증을 거쳐 시대와 때를 읽는 데까지 이른 분별은, 결국 진실하게 살아냄으로써만 다음 사람에게 건네진다. 분별은 소유할 수 있는 능력이 아니라 통과해야 하는 삶의 형태다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>분별은 식별이 아니라 <strong>검증하고 승인하는 능동적 행위</strong>다(도키마조). 시험을 거치지 않은 판단은 인상일 뿐이고, 승인하고 행동하지 않으면 분별은 미완이다. 그리고 롬 12장의 순서가 말하듯 이 검증은 <strong>헌신의 자리에서만 작동한다</strong> — 분별 능력은 정보나 지능이 아니라 드려진 삶에서 나오며, 헌신 없는 분별은 자기 욕망의 합리화로 전락한다.</li>
+<li>분별의 실패는 대개 <strong>정보의 실패가 아니라 물음의 생략</strong>이다. 이스라엘은 기브온의 낡은 떡을 검증했으나 여호와께 묻지 않았고, 사울은 첩보를 모았으나 묻지 않았다. 명분이 분명할수록 묻기를 생략한다는 것이 다윗이 뒤집은 지점이다.</li>
+<li>성령의 인도는 실재하되 <strong>성경을 넘지 못한다</strong>. 통상 감동과 비상 지시의 구분, 예수-사도-지도자-평신도의 권위 차등, 교리·성취·지향 대상의 세 검증 문항이 신비주의와 합리주의를 동시에 차단한다. 최종 시금석은 그리스도를 증거하게 하는가이다.</li>
+<li>같은 우리말 '시험' 안에 <strong>성숙을 위한 시련과 파괴를 위한 유혹</strong>이 함께 있다. 둘을 뒤섞으면 자기 잘못을 시련으로 합리화하거나 연단을 공격으로 오해하는 두 병리가 생긴다.</li>
+<li>시대 분별에서 가장 위험한 자리는 <strong>진리를 가졌다고 믿는 자리</strong>다. 예루살렘에서 진상을 확인한 쪽은 이방인 천부장이었고 소동한 쪽은 하나님의 백성이었다. 어느 편에 서 있든 자기 편은 검증 없이 받고 반대편은 확인 없이 기각하는 순간 같은 무리가 된다.</li>
+<li>때는 계산되지 않고 <strong>순종 가운데 알려진다</strong>. "알 바 아니요"에 이어진 답이 "내 증인이 되리라"인 이상, 분별은 멈춰 서서 산출하는 일이 아니라 움직이며 읽는 일이다.</li>
+<li>분별은 소유되지 않고 <strong>물려받는다</strong>. 새겨진 기준이 없으면 급할 때 자기 소견으로 회귀하며, 그 기준은 가르침이 아니라 진실하게 사는 모습을 통해 전달된다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>통상 감동과 단순한 자기 선호를 실제로 어떻게 구별하는가. "성경 원리에 맞으면 순종하라"는 원칙은 옳으나, 성경이 직접 말하지 않는 구체적 결정(어느 직장, 어느 배우자)에서 검증의 메커니즘은 여전히 열려 있다.</li>
+<li>규범·상황·실존의 세 차원 틀에서 "정답이 하나만 있는 것은 아니다"와 "두 번 다 분명한 답을 받았다"는 어떻게 양립하는가. 분별이 열려 있다면 잘못 분별한 결과의 책임은 어디까지 신자에게 돌아가는가.</li>
+<li>원수를 사랑하라는 명령과 악한 친구를 경계하라는 경고 사이에서, 한 관계가 사랑의 인내에서 끊어야 할 유해 우정으로 넘어가는 경계선은 무엇인가. 세상과의 <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교적</a> 동행과 유해 동맹은 실천에서 어떻게 구분되는가.</li>
+<li>신중함(결론 유보)과 불의에 대한 즉각적 항거는 어떻게 균형을 이루는가. 모든 사안에서 판단을 유보하는 것이 항상 옳은가 — 그리고 유보 자체가 또 다른 형태의 회피가 되는 지점은 어디인가.</li>
+<li>"여호와께 묻는다"는 것이 우림과 둠밈이 없는 오늘의 신자에게 구체적으로 어떤 절차(기도·말씀·공동체 분별)로 구현되는가. 원리로만 남아 있는 이 질문이 실무적 절차로 번역되지 않으면 소극적 죄의 진단도 공허해진다.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%A7%80%ED%98%9C/">지혜</a> — 분별이 작동 방식이라면 지혜는 그 능력 자체, 두 주제가 맞물리는 자리.</li>
+<li><a class="wl" href="../../t/%EA%B5%90%EB%A7%8C/">교만</a> · <a class="wl" href="../../t/%EA%B2%B8%EC%86%90/">겸손</a> — 묻지 않음의 뿌리와 질문할 수 있는 마음.</li>
+<li><a class="wl" href="../../t/%EC%98%81%EC%A0%81%EC%84%B1%EC%88%99/">영적성숙</a> · <a class="wl" href="../../t/%EC%9D%B8%EB%82%B4/">인내</a> — 시련을 분별하고 견뎌 내는 일이 성숙으로 이어지는 경로.</li>
+<li><a class="wl" href="../../t/%EC%82%BC%EC%A4%91%EA%B4%80%EC%A0%90/">삼중관점</a> — 규범·상황·실존의 세 차원, 분별을 실무 절차로 번역하는 틀.</li>
+<li><a class="wl" href="../../t/%EC%9D%B8%EB%8F%84%ED%95%98%EC%8B%AC/">인도하심</a> — 성령의 인도와 통상 감동·비상 지시의 구분이 만나는 자리.</li>
+<li><a class="wl" href="../../t/%EC%8B%9C%ED%97%98%EA%B3%BC%EC%9C%A0%ED%98%B9/">시험과유혹</a> — 약 1장의 시련과 유혹 구분, 욕심의 발생학.</li>
+<li><a class="wl" href="../../t/%EC%98%81%EC%A0%81%EC%9D%80%EC%82%AC/">영적은사</a> — 예언 은사의 검증과 은사중지론·계속론 논쟁.</li>
+<li><a class="wl" href="../../t/%ED%97%8C%EC%8B%A0/">헌신</a> · <a class="wl" href="../../t/%EC%88%9C%EC%A2%85/">순종</a> — 분별의 전제이자 그 열매가 되는 두 축.</li>
+<li><a class="wl" href="../../t/%EA%B9%A8%EC%96%B4%EC%9E%88%EC%9D%8C/">깨어있음</a> · <a class="wl" href="../../t/%EC%96%91%EC%8B%AC/">양심</a> — 영적 경계심과 내적 판단 기준의 자리.</li>
+<li><a class="wl" href="../../t/%EC%9C%A8%EB%B2%95%EA%B3%BC%EB%B3%B5%EC%9D%8C/">율법과복음</a> — 진리의 뉘앙스가 제거될 때 어떻게 왜곡이 발생하는가.</li>
+<li><span class="wl-dead" title="위키 내부 링크">롬12</span> · <span class="wl-dead" title="위키 내부 링크">약1</span> · <span class="wl-dead" title="위키 내부 링크">삼상23</span> · <span class="wl-dead" title="위키 내부 링크">행21</span> · <span class="wl-dead" title="위키 내부 링크">요일4</span> — 분별의 핵심 본문 허브.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수 「하나님의 뜻을 분별하세요」</span></td>
+<td>설교(롬 12:1-2)</td>
+<td>도키마조의 검증·승인 성격, 분별의 네 토대, 통상 감동/비상 지시, 권위 차등 4단계</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수 「여호사밧, 옥의 티」</span></td>
+<td>설교(대하 17장)</td>
+<td>백옥미하, 교제는 영향의 통로, 다수결 거부, 유해 우정·상호의존, 공급원 교체</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수 「솔로몬의 재판」</span></td>
+<td>설교(왕상 3장)</td>
+<td>분별 불가능한 교착에서의 지혜 발동, 정의와 긍휼의 통합</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수 「신약의 예언」</span></td>
+<td>설교(롬 12:6-8)</td>
+<td>은사중지론·계속론·중간 입장, 거짓 예언의 세 검증 문항, 교회사적 지형</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수 「베드로의 설교(1)」</span></td>
+<td>설교(행 2장)</td>
+<td>"이상한 불"의 분별, 행 1:8 단일 시금석, 기적의 현장에서 말씀으로</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수 「마음을 새롭게」</span></td>
+<td>설교(롬 12:1-2)</td>
+<td>마음→인생의 연쇄, 세상 가치에 대한 날마다의 역류</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수 「플랜!」</span></td>
+<td>설교(잠 16장)</td>
+<td>생동·원리·거시 계획, "원리는 고정, 적용은 생동"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">문대원 「선동하는 세상에서 신중함으로」</span></td>
+<td>설교(행 21장)</td>
+<td>무리 vs 천부장, 선동의 비대칭성, 신중함=말씀 안의 판단력</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">문대원 「질문할 수 있는 겸손」</span></td>
+<td>설교(삼상 23장)</td>
+<td>다윗과 사울의 대비, 규범·상황·실존 3차원, 확증편향</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">문대원 「실패를 경영하라」</span></td>
+<td>설교(수 9장)</td>
+<td>"여호와께 묻지 아니하고" — 분별의 실패는 관계의 실패, 소극적 죄</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">문대원 「성공에 도취되지 않으려면」</span></td>
+<td>설교(느 2장)</td>
+<td>Divine Appointment — 위기를 부르심으로 번역하는 독해력</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">윤명숙 「시험의 분별」</span></td>
+<td>설교(약 1:12-17)</td>
+<td>시련과 유혹의 원어 구분, 두 병리, 욕심의 발생학과 예방적 훈련</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">윤명숙 「우리 속에 사랑이 없다」</span></td>
+<td>설교(요일 4장)</td>
+<td>분별을 전제로 한 사랑, 감정의 끌림과 지식 위에 선 사랑의 구별</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">윤명숙 「입에 파수꾼을 세우소서」</span></td>
+<td>설교(시 141장)</td>
+<td>정보 분별 3문(사실·유익·의도), "무덤덤함"이라는 분별의 부재</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">윤명숙 「소견대로가 아닌 최고의 가치」</span></td>
+<td>설교(삿 21:25)</td>
+<td>"급하면 소견대로", 13세 적기론, 부모의 진실성과 가치의 공유</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">김대경 「시대를 꿰뚫는 통찰력」</span></td>
+<td>설교(엡 5:15-21)</td>
+<td>엑스아고라조, 크로노스/카이로스, 포네로스한 때의 진단</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">이재화 「선교의 때와 우리의 능력」</span></td>
+<td>설교(행 1:6-8)</td>
+<td>"순종하면 알게 된다" — 순종이 분별의 전제가 되는 역설</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/실천신학</span><span>#topic/분별</span><span>#topic/하나님의뜻</span><span>#topic/성령의인도</span><span>#topic/시대분별</span><span>#topic/의사결정</span><span>#topic/영적성숙</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
