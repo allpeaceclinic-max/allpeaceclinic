@@ -323,6 +323,16 @@
   @media(max-width:620px){.stats.sheet .stat:nth-child(2){border-right:0}
     .stats.sheet .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
 
+  /* 수치 블록 축소형 — 명제에 자리를 내준다 */
+  .metric.mini{padding:15px 18px;margin:18px 0;background:transparent;box-shadow:none;
+    border-radius:0;border:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .metric.mini .label{margin-bottom:9px;font-size:11px}
+  .metric.mini .row{gap:12px}
+  .metric.mini .a,.metric.mini .b{font-size:23px}
+  .metric.mini .arw{font-size:14px}
+  .metric.mini .note{font-size:12.5px;color:var(--muted)}
+  @media(max-width:560px){.metric.mini .a,.metric.mini .b{font-size:20px}}
+
   .feature-video iframe,.gallery iframe{width:100%;aspect-ratio:16/9;display:block;border:0}
   .letter blockquote{margin:16px 0}
 </style></head><body>
@@ -576,20 +586,20 @@
     <p><b>김소망 누가</b>와 <b>김푸름 학생을 비롯한 여러 학생들</b>이 직접 무대에 올라, 자살을 시도한 뒤 입원한 한 환자가 회복해 가는 과정을 세 장면의 연극으로 풀어냈습니다. 무심히 지나치는 의료진, 성급하게 기도를 권했다가 거절당하는 장면, 그리고 곁에 앉아 듣는 것부터 시작한 간호사.</p>
     <p><mark>학생들이 만든 무대가 대단히 탁월했습니다.</mark> 강의로 설명했다면 한참 걸렸을 것을 몇 분의 장면이 그대로 보여 주었습니다.</p>
     <p>장면 사이사이 학생들은 조별로 그 환자의 영적 개방도를 점수로 매겨 보았습니다.</p>
-    <div class="metric"><div class="label">조별 영적 개방도 점수 · 62명 응답</div>
+    <div class="metric mini"><div class="label">조별 영적 개방도 점수 · 62명 응답</div>
       <div class="row"><div class="a">−10.6</div><div class="arw">→</div><div class="b">−7</div>
         <div class="note">간호사가 곁에 앉아<br>듣기 시작한 뒤</div></div></div>
-    <p>1부가 던진 명제는 이것이었습니다 — <i>“교회 문보다 병원 문을 드나드는 사람이 훨씬 많다.”</i></p>
+    <p class="pull" style="margin:34px auto 8px">교회 문보다<br><b>병원 문을 드나드는 사람이<br>훨씬 많다.</b><cite>1부가 던진 명제</cite></p>
   </div>
 
   <div class="theme reveal">
     <div class="theme__head"><div class="theme__no">2</div><h3>학생이 학생에게</h3></div>
     <p>6월 제주에서 열린 ICMDA 세계대회 직후라, 이번에는 구성을 바꿨습니다. <b>대회에 다녀온 학생 네 명이 단상에 서서 자기 말로 이야기했습니다.</b></p>
     <div class="deflist">
-      <div class="row"><div class="k">가천대 간호학과 3학년</div><div class="v">“이번 대회로 가장 크게 달라진 것은 <b>기도의 범위</b>입니다.”</div></div>
-      <div class="row"><div class="k">고신대 간호학과 3학년</div><div class="v">베트남 최초의 호스피스 병원을 연 선교사, 모리타니로 간 치과의사 부부 — 씨앗 심는 자의 자세는 <b>사랑과 겸손</b>.</div></div>
-      <div class="row"><div class="k">계명대 의대 본과 1학년</div><div class="v">다음 대회도 함께 가자고 지체들과 약속.</div></div>
-      <div class="row"><div class="k">카자흐스탄 의대 1학년</div><div class="v">학생의 90%가 무슬림인 캠퍼스에서 홀로 침체된 한 해를 보낸 뒤, 130개국이 함께 예배하는 것을 보고 — <b>“나는 혼자가 아니었습니다.”</b></div></div>
+      <div class="row"><div class="k">가천대 간호학과 3학년</div><div class="v">300개가 넘는 선택강의 중 리더십·팬데믹 대응·전쟁과 분쟁을 골라 들었습니다. 마지막 날 기도회에서 <b>박해받는 나라의 참가자들이 한국 교회를 위해 기도하는 것</b>을 보고 부끄러웠다고 했습니다. — “이번 대회로 가장 크게 달라진 것은 <b>기도의 범위</b>입니다.”</div></div>
+      <div class="row"><div class="k">고신대 간호학과 3학년</div><div class="v">베트남 최초의 호스피스 병원을 연 혈액종양내과 선교사, 선교를 위해 치대에 들어가 모리타니로 간 치과의사 부부. <b>“나라면 순종할 수 있을까”</b>를 묻다가 이른 결론 — 씨앗 심는 자의 자세는 <b>사랑과 겸손</b>.</div></div>
+      <div class="row"><div class="k">계명대 의대 본과 1학년</div><div class="v">성적 지향과 우크라이나 전쟁이 다른 나라 크리스천들에게는 <b>매일의 현실</b>이라는 것을 그 자리에서 알게 되었습니다. 세상의 기준에 휩쓸리지도, 무조건 피하지도 않는 <b>자기 기준</b>을 정리하게 되었다고 했습니다.</div></div>
+      <div class="row"><div class="k">카자흐스탄 의대 1학년</div><div class="v">학생의 90%가 무슬림인 캠퍼스에서 홀로 침체된 한 해를 보낸 뒤, 130개국이 함께 예배하는 것을 보고 — <b>“나는 혼자가 아니었습니다.”</b> 성벽을 다시 쌓은 것은 제사장만이 아니었다면서, <b>중요한 것은 능력이 아니라 가용성</b>이라고 했습니다.</div></div>
     </div>
   </div>
 
