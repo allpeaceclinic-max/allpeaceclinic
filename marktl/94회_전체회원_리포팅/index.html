@@ -254,6 +254,75 @@
   .hero h1{text-shadow:0 2px 30px rgba(0,0,0,.5)}
   .hero .meta b{color:#f6efdd}
 
+  /* ═══ 지면 레이어 — 먹지 시안 참조 (2026-08-07) ═══ */
+
+  /* 챕터 룰 */
+  .chap{margin:6px 0 18px;border-top:2px solid var(--ink);padding-top:15px;
+    display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+    font-family:var(--sans)}
+  .chap .no{font-size:11.5px;letter-spacing:.22em;font-weight:800;color:var(--accent);white-space:nowrap}
+  .chap .sub{font-size:11.5px;letter-spacing:.14em;color:var(--muted);text-align:right;font-weight:600}
+
+  /* 반전 블록 — 무게가 실리는 한마디 (챕터당 1회) */
+  .inv{background:#1b2540;color:#f2eee4;padding:30px 32px;border-radius:14px;margin:26px 0;
+    border:1px solid transparent}
+  .inv .t{font-family:var(--serif);font-size:20px;line-height:1.92;letter-spacing:.005em}
+  .inv .t b{color:#e7c887}
+  .inv .who{display:block;margin-top:14px;font-family:var(--sans);font-size:12.5px;
+    font-weight:700;letter-spacing:.02em;color:#b9b1a0}
+  .inv.center{text-align:center;padding:40px 34px}
+  .inv.center .t{font-size:23px;line-height:1.95}
+  @media(prefers-color-scheme:dark){.inv{background:#0c1120;border-color:#2a3350}}
+  :root[data-theme="light"] .inv{background:#1b2540;border-color:transparent}
+  :root[data-theme="dark"] .inv{background:#0c1120;border-color:#2a3350}
+  @media(max-width:560px){.inv{padding:24px 22px}.inv .t{font-size:17.5px}.inv.center .t{font-size:19px}}
+
+  /* 2단 대비 */
+  .split{display:flex;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:22px 0}
+  .split .side{flex:1;padding:22px 22px 22px 0}
+  .split .side+.side{padding:22px 0 22px 22px;border-left:1px solid var(--line)}
+  .split .k{font-family:var(--sans);font-size:11.5px;letter-spacing:.14em;color:var(--accent);
+    font-weight:800;margin-bottom:9px}
+  .split .v{font-size:16.5px;line-height:1.85;color:var(--ink-2)}
+  @media(max-width:560px){.split{flex-direction:column}
+    .split .side,.split .side+.side{padding:20px 0;border-left:0}
+    .split .side+.side{border-top:1px solid var(--line)}}
+
+  /* 정의형 리스트 */
+  .deflist{border-top:1px solid var(--line);margin:18px 0 0}
+  .deflist .row{display:flex;gap:20px;padding:15px 0;border-bottom:1px solid var(--line)}
+  .deflist .k{font-family:var(--sans);font-size:12.5px;color:var(--muted);min-width:152px;
+    flex:0 0 152px;line-height:1.7;font-weight:700}
+  .deflist .v{font-size:16px;line-height:1.8;color:var(--ink-2)}
+  @media(max-width:560px){.deflist .row{flex-direction:column;gap:5px}
+    .deflist .k{min-width:0;flex:none}}
+
+  /* 수치 블록 */
+  .metric{border:1px solid var(--line);background:var(--surface);border-radius:14px;
+    padding:22px 24px;margin:22px 0;box-shadow:var(--shadow)}
+  .metric .label{font-family:var(--sans);font-size:11.5px;letter-spacing:.14em;
+    color:var(--muted);font-weight:800;margin-bottom:14px}
+  .metric .row{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+  .metric .a{font-family:var(--num);font-size:38px;font-weight:700;color:var(--muted);line-height:1}
+  .metric .arw{font-size:18px;color:var(--muted)}
+  .metric .b{font-family:var(--num);font-size:38px;font-weight:700;color:var(--accent);line-height:1}
+  .metric .note{font-family:var(--sans);font-size:13px;color:var(--ink-2);line-height:1.6}
+  @media(max-width:560px){.metric .a,.metric .b{font-size:29px}}
+
+  /* 드롭캡 */
+  .dropcap::first-letter{float:left;font-family:var(--serif);font-size:62px;line-height:.9;
+    font-weight:700;padding:8px 13px 0 0;color:var(--accent)}
+  @media(max-width:560px){.dropcap::first-letter{font-size:50px;padding:6px 10px 0 0}}
+
+  /* 통계 — 지면형 4분할 */
+  .stats.sheet{gap:0;border-top:2px solid var(--ink);border-bottom:1px solid var(--line)}
+  .stats.sheet .stat{background:transparent;border:0;border-right:1px solid var(--line);
+    border-radius:0;box-shadow:none;padding:24px 14px;text-align:left}
+  .stats.sheet .stat:last-child{border-right:0}
+  .stats.sheet .stat .n{font-size:clamp(28px,5.4vw,40px)}
+  @media(max-width:620px){.stats.sheet .stat:nth-child(2){border-right:0}
+    .stats.sheet .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+
   .feature-video iframe,.gallery iframe{width:100%;aspect-ratio:16/9;display:block;border:0}
   .letter blockquote{margin:16px 0}
 </style></head><body>
@@ -284,7 +353,7 @@
 
 <section class="wrap tight">
   <div class="letter reveal">
-    <p>지난 7월 16일, 저희는 회원 여러분께 편지를 드렸습니다.</p>
+    <p class="dropcap">지난 7월 16일, 저희는 회원 여러분께 편지를 드렸습니다.</p>
     <p>협소한 장소와 부족한 기숙사, 조장과 헬퍼의 부족을 그대로 적어 기도를 부탁드렸습니다. 무엇보다 복음이 분명히 선포되고, 모든 학생이 예수 그리스도를 깊이 만나며, 구원의 기쁨과 확신을 얻게 해 달라고 함께 기도해 주시기를 청했습니다. 그 편지의 마지막에 저희는 시편 127편 1절을 적었습니다.</p>
     <blockquote><p>여호와께서 집을 세우지 아니하시면 세우는 자의 수고가 헛되며</p></blockquote>
     <p>이제 그 자리에서 있었던 일을 여러분께 돌려 드립니다.</p>
@@ -307,7 +376,7 @@
 </section>
 
 <section class="wrap tight">
-  <div class="stats reveal">
+  <div class="stats sheet reveal">
     <div class="stat"><div class="n">900<small>여 명</small></div><div class="l">함께한 지체</div><div class="s">최근 수련회 중 최다</div></div>
     <div class="stat"><div class="n">500<small>여 명</small></div><div class="l">EBS</div><div class="s">복음에 집중하는 트랙</div></div>
     <div class="stat"><div class="n">400<small>여 명</small></div><div class="l">GBS</div><div class="s">시편 강해 트랙</div></div>
@@ -317,6 +386,7 @@
 </section>
 
 <section class="wrap">
+  <div class="chap"><div class="no">CHAPTER 01</div><div class="sub">기도 제목 · 응답</div></div>
   <div class="kicker">기도가 응답된 자리</div>
   <h2>협소한 장소와 부족한 기숙사</h2>
   <p class="lede">7월 16일 편지에서 저희가 가장 먼저 적은 것이 그것이었습니다. 호남신학대학교는 92회부터 세 해째 수련회를 치른 곳입니다. 그런데 올해는 그 공간이 모자랐습니다. 신청은 하루 만에 마감됐고, 더 이상 받을 수 없어 닫아야 했습니다.</p>
@@ -346,6 +416,7 @@
 <div class="wrap"><div class="orn"><span>✦</span></div></div>
 
 <section class="wrap">
+  <div class="chap"><div class="no">CHAPTER 02</div><div class="sub">강해 · GBS / EBS</div></div>
   <div class="kicker">말씀이 지나간 자리</div>
   <h2>시편, 예수님과 교회의 노래로 읽다</h2>
 
@@ -353,7 +424,7 @@
 
   <p>총신대학교 <b>김희석 교수</b>가 시편 다섯 권을 이레 동안 하나의 드라마로 읽어 냈습니다. 개인의 신앙(1권)에서 공동체의 예배(2권)로, 예루살렘이 무너진 자리의 가장 어두운 노래(3권)를 지나, “여호와가 왕이시다”라는 선언(4권)과 하시딤 공동체(5권)로 이어지는 흐름이었습니다.</p>
   <p>강해가 닿은 결론은 이것이었습니다. 하나님은 다윗과 맺은 약속을 폐기하신 것이 아니라, <b>친히 다윗의 후손이 되어 오심으로</b> 지키셨다는 것.</p>
-  <blockquote><p>가장 약한 것이 가장 강한 것이다. 가장 작은 것이 가장 큰 것이다. 십자가가 부활이다. 내려가는 것이 올라가는 것이다.<span class="who">시편 강해 마지막 시간</span></p></blockquote>
+  <div class="inv center"><div class="t">가장 약한 것이 가장 강한 것이다.<br>가장 작은 것이 가장 큰 것이다.<br>십자가가 부활이다.<br><b>내려가는 것이 올라가는 것이다.</b><span class="who">시편 강해 마지막 시간</span></div></div>
   <blockquote><p>참여한 모든 사람이 말씀이 중심이 되는 수련회의 중요성을 새롭게 깨달았고, 시편 말씀을 통해 주어진 은혜가 모든 환경적 어려움을 덮고도 남을 정도였습니다.<span class="who">최기훈 간사</span></p></blockquote>
 
   <h2 style="margin-top:48px">EBS — 복음에 집중하는 트랙</h2>
@@ -371,6 +442,7 @@
 <div class="wrap"><div class="orn"><span>✦</span></div></div>
 
 <section class="wrap">
+  <div class="chap"><div class="no">CHAPTER 03</div><div class="sub">소감문 · 익명</div></div>
   <div class="kicker">학생들이 남긴 말</div>
   <h2>그것이 실제로 어디에 가서 닿았는가</h2>
   <p>7월 16일 편지에서 저희는 <b>모든 학생이 예수 그리스도를 깊이 만나며, 구원의 기쁨과 확신을 얻게 되도록</b> 기도를 부탁드렸습니다. 참가자들이 남긴 소감문에서 몇 대목을 옮깁니다. 글쓴이는 모두 익명으로, 자리와 전공 계열만 밝힙니다.</p>
@@ -408,7 +480,11 @@
 
   <div class="theme reveal">
     <div class="theme__head"><div class="theme__no">4</div><h3>열네 해를 사이에 둔 두 자리</h3></div>
-    <blockquote><p>저는 예과 1학년 때 80회 CMF 전국수련회 EBS 조원으로 참여하여 그냥 내 옆에 계시는 분인줄 알았던 예수님을 나의 주인으로 처음 만나게 되었습니다.<br><br>본과 4학년 마지막 94회 전국수련회에서 GBS를 통해 하나님께서는 그분이 모든 것의 왕이심을 알려주시며 이제는 나에게 인생을 맡겨보지 않을래? 라고 물어보시는 것 같습니다.<span class="who">GBS 조장 · 의학 졸업반</span></p></blockquote>
+    <div class="split">
+      <div class="side"><div class="k">80회 · 예과 1학년</div><div class="v">저는 예과 1학년 때 80회 CMF 전국수련회 <b>EBS 조원</b>으로 참여하여 그냥 내 옆에 계시는 분인줄 알았던 예수님을 나의 주인으로 처음 만나게 되었습니다.</div></div>
+      <div class="side"><div class="k">94회 · 본과 4학년</div><div class="v">본과 4학년 마지막 94회 전국수련회에서 <b>GBS</b>를 통해 하나님께서는 그분이 모든 것의 왕이심을 알려주시며 이제는 나에게 인생을 맡겨보지 않을래? 라고 물어보시는 것 같습니다.</div></div>
+    </div>
+    <p class="muted" style="font-size:13px;margin-top:-8px">— GBS 조장 · 의학 졸업반</p>
     <p class="pull">올해 EBS에 앉은 학생의 자리가,<br>이 조장이 앉았던 자리입니다.<br><b>그리고 이 조장이 선 자리가,<br>그 학생이 갈 수 있는 자리입니다.</b></p>
     <p>그는 글을 두려움으로 닫습니다. <i>“실제로 병원에서 일을 하게 되면 얼마나 힘든 시간들이 저를 찾아올지 여전히 두려운 마음도 있습니다.”</i> 그 뒤에 오는 것은 낙관이 아니라 기도였습니다.</p>
     <blockquote><p>이번 94회 전국수련회의 모든 순간을 기억하며 예수님과 함께, 사랑하는 CMF 지체들과 함께 <b>시편을 노래하는 기독의료인</b>이 될 수 있길 기도하려 합니다.</p></blockquote>
@@ -418,6 +494,7 @@
 <div class="wrap"><div class="orn"><span>✦</span></div></div>
 
 <section class="wrap">
+  <div class="chap"><div class="no">CHAPTER 04</div><div class="sub">간사 · 진행팀</div></div>
   <div class="kicker">섬긴 사람들</div>
   <h2>조장과 헬퍼의 부족</h2>
   <p class="lede">7월 16일 편지에서 저희가 적은 또 하나가 그것이었습니다. 그 자리가 어떻게 채워졌는지, 섬긴 이들의 말로 전합니다.</p>
@@ -447,6 +524,7 @@
 <div class="wrap"><div class="orn"><span>✦</span></div></div>
 
 <section class="wrap">
+  <div class="chap"><div class="no">CHAPTER 05</div><div class="sub">소망의 밤 · 선배 누가</div></div>
   <div class="kicker">선배 누가들이 본 자리</div>
   <h2>금요일 밤, 100분이 넘는 선배가 찾아오셨습니다</h2>
   <p>「소망의 밤」에 함께해 주신 선배 누가 선생님들이 보내 주신 글입니다.</p>
@@ -465,11 +543,7 @@
     <p>까막득한 후배들과의 나눔 속에서 주님을 향한 순수함과 <b>예상 외의 수준 높은 질문과 고민에 적잖이 놀라면서</b> 이 자랑스런 후배들에게 부끄럽지 않은 선배가 되고자 다시 다짐했습니다.<br><br>— 이진형 누가</p>
   </div>
 
-  <div class="voice reveal">
-    <span class="tag">96졸 치과 · 학사학원사역부 이사장</span>
-    <h4>윗 세대가 볼 때만 어리다 느낄 뿐</h4>
-    <p>윗 세대가 볼 때만 어리다 느낄 뿐, 늘 그 세대는 성숙하고 충만하다.. 하나님나라를 소망하며 모이기에 힘쓰는 CMF 후배들에게 <b>이번에도 큰 도전을 받는다.</b><br><br>— 이상일 이사장</p>
-  </div>
+  <div class="inv reveal"><div class="t">윗 세대가 볼 때만 어리다 느낄 뿐, 늘 그 세대는 성숙하고 충만하다.. 하나님나라를 소망하며 모이기에 힘쓰는 CMF 후배들에게 <b>이번에도 큰 도전을 받는다.</b><span class="who">이상일 이사장 · 96졸 치과, 학사학원사역부 이사장</span></div></div>
 
   <p class="pull">96졸, 98졸, 01졸.<br>스무 해 서른 해를 지나온 선배들이 하나같이<br><b>놀랐고, 도전을 받았다</b>고 적었습니다.</p>
 
@@ -482,7 +556,7 @@
   <div class="theme reveal">
     <div class="theme__head"><div class="theme__no">✦</div><h3>무거움과 무서움</h3></div>
     <p>7월 16일 기도 요청 편지를 전체 방에 올려 주신 <b>심재두 이사장</b>의 소감입니다. 감사만 있지 않았습니다.</p>
-    <blockquote><p>저도 학생때 수련회를 경험했지만 밝고 열정 있으며 하나님을 구하는 그 순수한 마음이 표출/전달되어 그저 감사감사. <b>다만 이미 오랜 세월이 지난 누가로서 그들의 다음 미래 과정이 간단치 않을 것을 알기에 무거움과 무서움도 동반되었다.</b><span class="who">심재두 이사장</span></p></blockquote>
+    <div class="inv"><div class="t">저도 학생때 수련회를 경험했지만 밝고 열정 있으며 하나님을 구하는 그 순수한 마음이 표출/전달되어 그저 감사감사. <b>다만 이미 오랜 세월이 지난 누가로서 그들의 다음 미래 과정이 간단치 않을 것을 알기에 무거움과 무서움도 동반되었다.</b><span class="who">심재두 이사장</span></div></div>
     <p>이 문장을 그대로 싣습니다. 학생들의 소감문은 은혜의 정점에서 멈춘 기록이지만, 오래 걸어온 이들은 그 다음에 무엇이 기다리는지 압니다. 학년이 겹치고, 유급을 겪고, 군에 간 후배들이 있습니다. 병원을 떠난 전공의들이 있습니다. 아직 그 안에 있는 사람들이 있습니다.</p>
     <p class="pull" style="margin-bottom:8px"><b>그래서 이 리포팅은 감사로만 끝나지 않고<br>기도 부탁으로 이어집니다.</b></p>
   </div>
@@ -491,6 +565,7 @@
 <div class="wrap"><div class="orn"><span>✦</span></div></div>
 
 <section class="wrap">
+  <div class="chap"><div class="no">CHAPTER 06</div><div class="sub">금요일 오전 · 포럼</div></div>
   <div class="kicker">의료와 세상 포럼</div>
   <h2>세상 속 의료인의 자리</h2>
   <p>금요일 오전, GBS 트랙의 마지막 시간이었습니다. 세 부로 나뉘어 두 시간 동안 이어졌습니다.</p>
@@ -500,19 +575,22 @@
     <p>응급실 장면으로 문을 열었습니다. <i>“혈압 80에 50, 노멀셀라인 달아 주세요.”</i></p>
     <p><b>김소망 누가</b>와 <b>김푸름 학생을 비롯한 여러 학생들</b>이 직접 무대에 올라, 자살을 시도한 뒤 입원한 한 환자가 회복해 가는 과정을 세 장면의 연극으로 풀어냈습니다. 무심히 지나치는 의료진, 성급하게 기도를 권했다가 거절당하는 장면, 그리고 곁에 앉아 듣는 것부터 시작한 간호사.</p>
     <p><mark>학생들이 만든 무대가 대단히 탁월했습니다.</mark> 강의로 설명했다면 한참 걸렸을 것을 몇 분의 장면이 그대로 보여 주었습니다.</p>
-    <p>장면 사이사이 학생들은 조별로 그 환자의 영적 개방도를 점수로 매겨 보았습니다. 처음 평균 −10.6이던 점수가 간호사가 개입한 뒤 −7로 움직였습니다. 62명이 응답한 결과였습니다.</p>
+    <p>장면 사이사이 학생들은 조별로 그 환자의 영적 개방도를 점수로 매겨 보았습니다.</p>
+    <div class="metric"><div class="label">조별 영적 개방도 점수 · 62명 응답</div>
+      <div class="row"><div class="a">−10.6</div><div class="arw">→</div><div class="b">−7</div>
+        <div class="note">간호사가 곁에 앉아<br>듣기 시작한 뒤</div></div></div>
     <p>1부가 던진 명제는 이것이었습니다 — <i>“교회 문보다 병원 문을 드나드는 사람이 훨씬 많다.”</i></p>
   </div>
 
   <div class="theme reveal">
     <div class="theme__head"><div class="theme__no">2</div><h3>학생이 학생에게</h3></div>
     <p>6월 제주에서 열린 ICMDA 세계대회 직후라, 이번에는 구성을 바꿨습니다. <b>대회에 다녀온 학생 네 명이 단상에 서서 자기 말로 이야기했습니다.</b></p>
-    <ul class="lect">
-      <li><b>가천대 간호학과 3학년</b> <span>— “이번 대회로 가장 크게 달라진 것은 기도의 범위입니다”</span></li>
-      <li><b>고신대 간호학과 3학년</b> <span>— 베트남 최초의 호스피스 병원을 연 선교사, 모리타니로 간 치과의사 부부. 결론은 씨앗 심는 자의 자세 = 사랑과 겸손</span></li>
-      <li><b>계명대 의대 본과 1학년</b> <span>— 다음 대회도 함께 가자고 지체들과 약속</span></li>
-      <li><b>카자흐스탄 의대 1학년</b> <span>— 학생의 90%가 무슬림인 캠퍼스에서 홀로 침체된 한 해를 보낸 뒤, 130개국이 함께 예배하는 것을 보고 “나는 혼자가 아니었습니다”</span></li>
-    </ul>
+    <div class="deflist">
+      <div class="row"><div class="k">가천대 간호학과 3학년</div><div class="v">“이번 대회로 가장 크게 달라진 것은 <b>기도의 범위</b>입니다.”</div></div>
+      <div class="row"><div class="k">고신대 간호학과 3학년</div><div class="v">베트남 최초의 호스피스 병원을 연 선교사, 모리타니로 간 치과의사 부부 — 씨앗 심는 자의 자세는 <b>사랑과 겸손</b>.</div></div>
+      <div class="row"><div class="k">계명대 의대 본과 1학년</div><div class="v">다음 대회도 함께 가자고 지체들과 약속.</div></div>
+      <div class="row"><div class="k">카자흐스탄 의대 1학년</div><div class="v">학생의 90%가 무슬림인 캠퍼스에서 홀로 침체된 한 해를 보낸 뒤, 130개국이 함께 예배하는 것을 보고 — <b>“나는 혼자가 아니었습니다.”</b></div></div>
+    </div>
   </div>
 
   <div class="theme reveal">
@@ -588,7 +666,7 @@
     <p>그리고 올해 처음 수련회를 섬긴 간사가 이렇게 기도했습니다.</p>
     <blockquote><p>우리 작은 누가들이 이곳에서 나눈 기억과 따뜻함을 깊이 간직하기를 소망합니다.<br>나아가 치열한 의료현장 속에서도 예수님의 시선으로 환자들을 돌보며,<br>곁에 있는 동료들과 사랑으로 연대하는 삶을 살아내기를 간절히 기도합니다.<span class="who">양동익 간사</span></p></blockquote>
     <p class="pull" style="margin-top:32px">여러분이 기도해 주신 그 자리에서,<br><b>900여 명이 이 노래를 배웠습니다.</b></p>
-    <p class="verse">그는 시냇가에 심은 나무가 철을 따라 열매를 맺으며<br>그 잎사귀가 마르지 아니함 같으니<br>그가 하는 모든 일이 다 형통하리로다<br><br>— 시편 1편 3절, 제94회 수련회 주제 말씀</p>
+    <div class="inv center" style="margin:30px 0 0"><div class="t">그는 시냇가에 심은 나무가 철을 따라 열매를 맺으며<br>그 잎사귀가 마르지 아니함 같으니<br>그가 하는 모든 일이 다 형통하리로다<span class="who">시편 1편 3절 · 제94회 수련회 주제 말씀</span></div></div>
     <p style="margin-top:30px">기도해 주셔서 감사합니다. 앞으로도 학사학원사역부의 사역과 소식을 종종 전해 드리겠습니다. 지속적인 관심과 기도를 부탁드립니다.</p>
     <div class="sign"><b>학사학원사역부 이사장 이상일</b><br><b>학사학원사역부 간사대표 장현준</b></div>
   </div>
