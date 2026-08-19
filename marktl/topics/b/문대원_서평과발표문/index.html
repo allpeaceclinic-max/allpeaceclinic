@@ -1,0 +1,370 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>문대원 — 서평 2편과 국문 발표문 — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">선교</span><span class="author">서평과발표문</span><span class="date">2026-08-18</span></div>
+  <h1 class="note-title">문대원 — 서평 2편과 국문 발표문</h1>
+  
+</header>
+<article class="note">
+<h1>학술 소품 저작 정리</h1>
+<blockquote>
+<p><span class="wl-dead" title="위키 내부 링크">문대원</span>의 저작 중 <strong>논문·단행본·로잔 기고문을 제외한 나머지</strong>를 모았다. 분량은 작지만 <strong>박사논문에 없는 것이 셋 나온다</strong> — 그의 초기 이력, 국문으로 쓴 유일한 학술 발표, 그리고 2025년 한국 선교 글의 씨앗.</p>
+<p>관련 노트: <a class="wl" href="../../b/%EB%8F%99%EC%95%84%ED%94%84%EB%A6%AC%EC%B9%B4%EB%B6%80%ED%9D%A5%EC%9A%B4%EB%8F%99_%EB%AC%B8%EB%8C%80%EC%9B%90/">동아프리카부흥운동_문대원</a>(박사논문 344쪽) · <a class="wl" href="../../b/%EB%AC%B8%EB%8C%80%EC%9B%90_%EB%A1%9C%EC%9E%94%EA%B8%B0%EA%B3%A0%EB%AC%B82%ED%8E%B8/">문대원_로잔기고문2편</a>(로잔 기고 2편)</p>
+</blockquote>
+<h2>확보 현황 — 저작 전수 정산</h2>
+<table>
+<thead>
+<tr>
+<th>저작</th>
+<th>지면</th>
+<th>시기</th>
+<th>접근</th>
+<th>상태</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>박사논문 (344쪽)</td>
+<td>보스턴대</td>
+<td>2019</td>
+<td>OpenBU 무료</td>
+<td>✅ <strong>전문 정독</strong> → <a class="wl" href="../../b/%EB%8F%99%EC%95%84%ED%94%84%EB%A6%AC%EC%B9%B4%EB%B6%80%ED%9D%A5%EC%9A%B4%EB%8F%99_%EB%AC%B8%EB%8C%80%EC%9B%90/">동아프리카부흥운동_문대원</a></td>
+</tr>
+<tr>
+<td>"Pentecostalism in African Christianity"</td>
+<td><em>Lausanne Global Analysis</em> 10(1)</td>
+<td>2021.1</td>
+<td>웹 무료</td>
+<td>✅ <strong>전문 정독</strong> → <a class="wl" href="../../b/%EB%AC%B8%EB%8C%80%EC%9B%90_%EB%A1%9C%EC%9E%94%EA%B8%B0%EA%B3%A0%EB%AC%B82%ED%8E%B8/">문대원_로잔기고문2편</a></td>
+</tr>
+<tr>
+<td>"The Korean Mission Movement"</td>
+<td><em>Lausanne Global Analysis</em></td>
+<td>2025.1</td>
+<td>웹 무료</td>
+<td>✅ <strong>전문 정독</strong> → <a class="wl" href="../../b/%EB%AC%B8%EB%8C%80%EC%9B%90_%EB%A1%9C%EC%9E%94%EA%B8%B0%EA%B3%A0%EB%AC%B82%ED%8E%B8/">문대원_로잔기고문2편</a></td>
+</tr>
+<tr>
+<td><strong>Peterson, <em>Ethnic Patriotism</em> 서평</strong></td>
+<td><em>African Studies Quarterly</em> 15(2)</td>
+<td>2015.3</td>
+<td><strong>오픈액세스</strong></td>
+<td>✅ <strong>전문 정독</strong> — 아래</td>
+</tr>
+<tr>
+<td><strong>McKnight, <em>One.Life</em> 서평</strong></td>
+<td><em>Africanus Journal</em> 3(2)</td>
+<td>2011.11</td>
+<td><strong>Internet Archive 무료</strong></td>
+<td>✅ <strong>전문 정독</strong> — 아래</td>
+</tr>
+<tr>
+<td><strong>"아프리카 독립교회와 조상숭배"</strong></td>
+<td>KRIM 한국선교학포럼</td>
+<td>2017.1.12</td>
+<td>발표문 비공개 · <strong>언론 보도</strong></td>
+<td>◐ <strong>요지 확보</strong> — 아래</td>
+</tr>
+<tr>
+<td>단행본 (Brill)</td>
+<td>Theology and Mission in World Christianity 24</td>
+<td>2022</td>
+<td>€54 페이월</td>
+<td>❌ 목차조차 차단(403/405). <strong>논문의 개정판이라 내용은 사실상 확보됨</strong></td>
+</tr>
+<tr>
+<td>"The Conversion of Yosiya Kinuka…"</td>
+<td><em>IBMR</em> 41(3): 204–14</td>
+<td>2017.7</td>
+<td>Sage 페이월</td>
+<td>◐ <strong>본문 = 박사논문 2장</strong>(정독 완료). 초록 미확보</td>
+</tr>
+<tr>
+<td>"Testimony and Fellowship…"</td>
+<td><em>Studies in World Christianity</em> 24(2): 157–73</td>
+<td>2018.8</td>
+<td>EUP 페이월</td>
+<td>◐ <strong>본문 = 박사논문 3장</strong>(정독 완료). <strong>초록 확보</strong> — 아래</td>
+</tr>
+<tr>
+<td><em>World Christian Encyclopedia</em> 3판 기고</td>
+<td>Edinburgh UP / Brill</td>
+<td>2019–</td>
+<td>—</td>
+<td>✅ <strong>등재 확인</strong>(교회 공식 프로필) · 집필 항목은 불명 — 아래</td>
+</tr>
+</tbody>
+</table>
+<p>🔴 <strong>결론: 페이월 뒤에 남은 것은 실질적으로 없다.</strong> 유료 3건(단행본·IBMR·SWC)이 모두 박사논문의 개정판이거나 그 일부이기 때문이다. <strong>접근 가능한 저작은 전부 읽었다.</strong></p>
+<h3>✅ 해소 — <em>World Christian Encyclopedia</em> 3판 (2026-08-18)</h3>
+<p>처음에는 웹 검색으로 확인되지 않아 「확인 실패」로 남겼으나, <strong>대구동신교회 공식 담임목사 소개 페이지</strong>(<code>ds-ch.org/page_fTeu48</code>)의 <strong>「저서 및 논문」란에 IBMR·<em>Studies in World Christianity</em>와 나란히 <em>World Christian Encyclopedia</em>가 등재</strong>돼 있음을 확인했다. 기재의 근거는 확실하다.</p>
+<p>🔴 <strong>다만 어떤 항목을 집필했는지는 여전히 불명이다.</strong> 3판(2019)은 국가별 집필진이 방대해 온라인 기여자 명단이 공개되지 않는다. 그의 이력(부룬디 6년·르완다 연구)을 보면 <strong>부룬디·르완다 등 동아프리카 국가 항목</strong>일 개연성이 높으나 <strong>추정일 뿐</strong>이다. 확정하려면 3판 실물의 기여자 목록을 봐야 한다.</p>
+<hr />
+<h1>① Derek Peterson, <em>Ethnic Patriotism and the East African Revival</em> 서평 (2015)</h1>
+<blockquote>
+<p><em>African Studies Quarterly</em> 15, no. 2 (2015.3): 128–130. 당시 소속 <strong>보스턴대학교</strong>. 오픈액세스.
+대상: Derek R. Peterson, <em>Ethnic Patriotism and the East African Revival: A History of Dissent, c. 1935–1972</em> (Cambridge UP, 2012).</p>
+</blockquote>
+<h2>왜 이 서평이 중요한가</h2>
+<p>🔴 <strong>박사논문의 선행 연구 검토가 여기서 시작됐다.</strong> 논문 서론에서 Peterson을 다루는 대목은 이 서평을 자기 인용한 것이다(논문 각주에 명시). 즉 <strong>박사논문의 문제의식이 형성되는 현장</strong>을 볼 수 있다.</p>
+<h2>서평의 뼈대 — Peterson의 대비 구조</h2>
+<p>Peterson은 동아프리카를 <strong>두 진영의 도덕 논쟁</strong>으로 읽는다. 문대원이 요약한 대비는 이렇다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>부흥사(revivalists)</strong></th>
+<th><strong>애국자(patriots)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>태도</td>
+<td><strong>경계를 넘는다</strong> — 복음을 전하려고</td>
+<td><strong>경계를 세운다</strong> — 조국과 종족의 결속을 지키려고</td>
+</tr>
+<tr>
+<td>이미지</td>
+<td>번연 『천로역정』의 <strong>순례자</strong> — 늘 이동 중이고, 어느 시민사회에도 정착하거나 자신을 동일시하지 않으려 한다</td>
+<td><strong>보수적 도덕 개혁가</strong> — 종족 정체성·가족 관습·전통 덕목·체면을 지킨다</td>
+</tr>
+<tr>
+<td>방법</td>
+<td>새로운 세계시민적 공동체 형성</td>
+<td><strong>역사를 다시 쓰고, 전통을 발명하고, 문화 질서를 보존한다</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Peterson의 기여로 저자가 꼽은 것: 종래 연구가 <strong>아프리카 민족주의자 vs 유럽 식민주의자</strong>의 대립에 치우쳤던 데 반해, Peterson은 <strong>아프리카 문화 내부와 문화들 사이의 도덕적·문화적 담론</strong>을 다뤘다는 점. 그리고 회심을 <strong>"종교적 확신의 내적 재정향"으로만 보지 않고 격변기의 사회정치적 효과</strong>로 검토한 점.</p>
+<h2>🔴 공개 고백을 둘러싼 대목 — 여기가 핵심이다</h2>
+<p>Peterson은 부흥사의 공개 고백이 왜 박해를 불렀는지 설명한다. 애국자들에게 그것은 <strong>체면의 전통 기준을 위반하는 사회 질서의 위협</strong>이었다. 보수적 도덕주의 문화에서 <strong>가정사를 공적 시야 밖에 두는 것</strong>이 질서 있는 공동체의 관건이었는데, 공개 고백이 사적인 것과 공적인 것의 경계를 파괴한 것이다.</p>
+<p>문대원이 인상적으로 옮긴 사례 — 북탄자니아 하야족 애국자들은 <strong>고백을 매춘과 등치</strong>시켰다. 둘 다 <strong>자기를 공중 앞에 노출하는 일</strong>이며(방식은 전혀 다르지만) 어느 쪽이든 사회적 평판을 훼손하고, 남자의 경우 확대가족 안의 지도적 역할이나 도덕적 권위를 위태롭게 하기 때문이다. 그래서 <strong>하야족의 반매춘 캠페인과 부흥사 억압이 나란히 갔다.</strong></p>
+<p><strong>그리고 여기서 비판이 나온다.</strong></p>
+<blockquote>
+<p>🔴 <strong>"이 고백 분석에는 값진 통찰이 담겨 있지만, Peterson은 고백을 실천한 이들의 종교적 동기를 무심코 축소하는 경향이 있다."</strong></p>
+</blockquote>
+<p>이어서 반론의 근거를 댄다 — <strong>공개 고백은 세계 여러 곳 부흥주의의 뚜렷한 특징 중 하나였다.</strong> 1730년대 북아메리카 <strong>대각성</strong>에서도, <strong>1907년 한국의 평양 부흥</strong>에서도 수많은 회심자가 공개 고백을 실천했다.</p>
+<blockquote>
+<p>🔴 <strong>2015년에 이미 평양 부흥이 등장한다.</strong> 10년 뒤 <a class="wl" href="../../b/%EB%AC%B8%EB%8C%80%EC%9B%90_%EB%A1%9C%EC%9E%94%EA%B8%B0%EA%B3%A0%EB%AC%B82%ED%8E%B8/">「한국 선교 운동」(2025)</a>에서 본격적으로 다룰 주제의 씨앗이 여기 있다. 그리고 이 반론의 논리 — <strong>사회적 기능으로 환원하면 종교적 동기가 사라진다</strong> — 는 박사논문 2장에서 Comaroff 부부를 반박하는 논리와 정확히 같다.</p>
+</blockquote>
+<h2>그 밖에</h2>
+<ul>
+<li>Peterson의 마지막 장은 도덕 논쟁의 역사를 <strong>현대 아프리카 사회의 쟁점</strong>으로 잇는다 — 우간다의 <strong>반동성애 법안</strong>이 20세기 중반 애국자들이 벼려낸 도덕 질서·전통의 토대 위에 서 있음을 보여 준다.</li>
+<li>흥미로운 대목으로 꼽은 것: <strong>회심 간증의 틀이 문학 장르로 전화</strong>된 과정. 수용소의 <strong>마우마우 게릴라 출신들이 자서전을 쓰면서 바로 그 틀을 사용</strong>했다.</li>
+<li>자료 규모에 대한 평가: <strong>3개 대륙 46개 문서고 + 우간다·케냐·탄자니아 제보자 170명.</strong> "꼼꼼한 연구자이자 명민한 학자"라 평하며, <strong>"통찰력 있고 포괄적인 이 단행본은 부흥과 후기 식민 아프리카에서의 사회정치적 함의에 대한 후속 연구를 자극하는 학문적 목적에 기여한다"</strong>고 맺는다.</li>
+<li>독자 대상: <strong>대학원생과 아프리카 사회사·아프리카 기독교 연구자.</strong> 아프리카 민족주의에 대한 사전 지식을 전제하며, 예컨대 마우마우 운동의 배경은 상세히 설명하지 않는다고 지적한다.</li>
+</ul>
+<hr />
+<h1>② Scot McKnight, <em>One.Life: Jesus Calls, We Follow</em> 서평 (2011)</h1>
+<blockquote>
+<p><em>Africanus Journal</em> 3, no. 2 (2011.11): 77. 고든콘웰 보스턴캠퍼스(CUME) 아프리카누스 길드 발행.
+대상: Scot McKnight, <em>One.Life: Jesus Calls, We Follow</em> (Zondervan, 2010).</p>
+</blockquote>
+<h2>🔴 이 서평에서만 나오는 이력 정보</h2>
+<p>저자 소개란이 <strong>볼트 <span class="wl-dead" title="위키 내부 링크">문대원</span> 학력표에 없는 두 가지</strong>를 알려 준다.</p>
+<ol>
+<li>2011년 시점 그는 <strong>보스턴대–고든콘웰 공동 선교학 프로그램의 Th.D. 과정 학생</strong>이었다. (최종 학위는 보스턴대 <strong>Ph.D.</strong>다 — 도중에 프로그램이나 트랙이 바뀐 것으로 보인다.)</li>
+<li><strong>"대원과 아내 정화는 YWAM과 함께 아시아·아프리카·유럽에서 여러 국제 선교 사역에 참여하며 널리 여행했다."</strong> — 로잔 YWAM 훈련 이후의 활동이 이렇게 기록돼 있다.</li>
+</ol>
+<h2>내용 — 제자도를 어떻게 읽는가</h2>
+<p>McKnight의 정의를 그대로 옮기며 시작한다: <strong>"그리스도인은 예수를 따르는 사람이다."</strong></p>
+<p>🔴 이 서평이 붙잡는 문장은 이것이다.</p>
+<blockquote>
+<p>현대의 많은 그리스도인이 제자도를 성경 읽기·기도·전도 같은 <strong>개인 경건의 실천과 동의어로</strong> 여기지만, McKnight는 열정적으로 논한다 — <strong>"그것은 옳다. 그러나 충분히 옳지는 않다(It's right, but it ain't right enough)."</strong></p>
+</blockquote>
+<p>정리한 논지들.
+- 제자도는 지적 선택이 아니라 <strong>자기 존재 전체를 내어 주는 일</strong>이며, 목표는 일상에서 그분의 길을 따라 그 나라의 삶을 사는 <strong>전인의 변화</strong>다.
+- 예수께 나라(kingdom)는 <strong>이 세상을 향한 하나님의 꿈</strong> — 개인의 마음속 통치만이 아니라 땅 위의 <strong>"꿈의 사회(Dream Society)"</strong>다. 그 특징은 <strong>사랑·정의·평화·지혜</strong>다.
+- 인용해 놓은 두 문장이 서평자의 관심을 보여 준다.</p>
+<blockquote>
+<p><strong>"평화는 결과이지 목표가 아니다. 평화는 사랑의 결과이므로, 사랑이 우리의 목표다."</strong>
+<strong>"사랑이나 로맨스나 친밀함을 사랑하는 대신, 그 나라의 사랑하는 자는 타자를 사랑하고 그 타자를 위해 자기 삶을 산다."</strong>
+- 유보도 단다 — <strong>영원과 지옥을 다룬 장은 저자의 태도가 모호해(어쩌면 복음주의적 만인구원론으로 다소 기울어) 논쟁적일 수 있다.</strong> 반면 <strong>평화와 성(sex)을 다룬 장은 탁월하다</strong>고 평한다.</p>
+</blockquote>
+<h2>🔴 결론에 그의 선교 현장 감각이 드러난다</h2>
+<p><em>Operation World</em>의 저자 <strong>Jason Mandryk</strong>을 인용한다 — 선교지의 가장 큰 도전 중 하나는 <strong>현지 그리스도인들 사이의 제자도 결핍</strong>이며, <strong>말은 하지만 그렇게 걷지는 않는다</strong>는 것이다. 그리고 곧바로 덧붙인다: <strong>"나는 북미의 많은 교회에도 같은 것이 해당된다고 믿는다."</strong></p>
+<p>그래서 이 책을 <strong>"전 세계의 명목상이고 잠들어 있는 수많은 그리스도인에게 주는 값진 경종"</strong>으로 평가하고, 특히 <strong>청년들</strong>에게 추천하며 맺는다.</p>
+<blockquote>
+<p>🔴 <strong>20대 후반 유학생 시절의 글인데, 이후 그의 설교를 관통하는 주제가 이미 여기 있다</strong> — <strong>명목상 신앙에 대한 문제 제기</strong>. 8년 뒤 박사논문에서 발로콜레가 <strong>"세례받은 이교도"</strong>를 향해 던진 도전을 연구하게 되고, 14년 뒤 한국 교회를 향해 같은 질문을 던진다. → <a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%EB%8F%84/">제자도</a></p>
+</blockquote>
+<hr />
+<h1>③ 「아프리카 독립교회와 조상숭배」 — KRIM 한국선교학포럼 (2017)</h1>
+<blockquote>
+<p>2017년 1월 12일 오후 2시, 남서울교회 비전센터. <strong>한국선교연구원(KRIM) 2017 상반기 한국선교학포럼.</strong>
+당시 부룬디 International Leadership University에서 <strong>교회사와 세계기독교</strong>를 가르치며 보스턴대에서 Dana Robert 지도로 박사과정 중.
+⚠️ <strong>발표문 원문은 공개돼 있지 않다.</strong> 아래는 언론 보도(기독일보)에 근거한 요지이므로 <strong>축어 인용으로 쓰지 말 것.</strong></p>
+</blockquote>
+<h2>🔴 그가 국문으로 남긴 유일한 학술 발표로 확인된다</h2>
+<p>논문·기고문이 모두 영문인 가운데, 이 발표는 <strong>한국 선교계를 향해 한국어로 말한 자리</strong>다. 세계기독교 연구자가 한국 선교 실무자들에게 무엇을 전하려 했는지가 드러난다.</p>
+<h2>논지</h2>
+<ul>
+<li><strong>19세기 후반 인류학</strong>(에드워드 타일러, 제임스 프레이저)은 <strong>조상숭배를 원시 종교의 확정적 표징</strong>으로 간주했다. 종교진화론의 틀에서 애니미즘을 저등 종교로 분류하고 그 핵심으로 조상숭배를 꼽았다.</li>
+<li>그러나 식민지 시대의 종료와 세계화를 거치며 학계의 인식이 바뀌었다 — <strong>아프리카에서 조상이 갖는 사회학적·현상학적 가치와 의미</strong>를 인정하기 시작했다. 아프리카 전통 세계관에서 <strong>죽은 자는 살아 있는 가족의 일상에서 계속 중요한 역할</strong>을 한다.</li>
+<li>이를 <strong>세계기독교(World Christianity)</strong>의 틀 — 기독교 신앙의 <strong>보편화(universalization)와 개별화(particularization)의 복잡한 상호작용</strong> — 을 고찰하기 위한 사례로 다뤘다.</li>
+<li>🔴 <strong>결론</strong>: 아프리카인의 전통과 정체성을 단순히 이교적으로 치부하지 않는 <strong>견식 있는 신학적 자세</strong>가 절실하다. 아프리카 독립교회(AIC)의 가장 큰 공헌은 <strong>기독교를 더 이상 서양의 종교가 아니라 그들 자신의 신앙으로 변화시킨 것</strong>이며, 조상 관련 의식을 <strong>정화·변화·보존</strong>하는 역할이 중요하다.</li>
+</ul>
+<h2>세 글을 잇는 선</h2>
+<blockquote>
+<p><strong>정화(purify)·변화(transform)·보존(preserve)</strong> — 이 세 동사가 그의 선교학적 입장을 압축한다. 전면 부정도 무비판적 수용도 아니다.</p>
+</blockquote>
+<ul>
+<li>2017 이 발표: 아프리카 <strong>조상숭배</strong>를 대할 때 그렇게 하라</li>
+<li>2021 <a class="wl" href="../../b/%EB%AC%B8%EB%8C%80%EC%9B%90_%EB%A1%9C%EC%9E%94%EA%B8%B0%EA%B3%A0%EB%AC%B82%ED%8E%B8/">로잔 기고 ①</a>: 아프리카 <strong>오순절주의</strong>의 영 관념에 오순절주의가 실제로 그렇게 했다(악마화 전략으로 토착 우주관을 보존)</li>
+<li>2019 <a class="wl" href="../../b/%EB%8F%99%EC%95%84%ED%94%84%EB%A6%AC%EC%B9%B4%EB%B6%80%ED%9D%A5%EC%9A%B4%EB%8F%99_%EB%AC%B8%EB%8C%80%EC%9B%90/">박사논문</a>: 그러나 <strong>발로콜레는 정반대였다</strong> — 부적과 성물을 공개적으로 파괴하며 <strong>급진적 단절</strong>을 택했고, 저자는 그래서 혼합주의 해석의 근거가 약하다고 판정한다</li>
+</ul>
+<p>🔴 <strong>즉 그는 「토착화는 좋은 것」이라는 단순 명제를 쥐고 있지 않다.</strong> 사례마다 실제 사료가 무엇을 보여 주는지에 따라 판단이 갈린다. 같은 연구자가 한쪽에서는 전통 존중을 촉구하고 다른 쪽에서는 단절을 있는 그대로 기록한다.</p>
+<hr />
+<h1>④ 부록 — SWC 2018 논문 초록</h1>
+<blockquote>
+<p>본문은 <a class="wl" href="../../b/%EB%8F%99%EC%95%84%ED%94%84%EB%A6%AC%EC%B9%B4%EB%B6%80%ED%9D%A5%EC%9A%B4%EB%8F%99_%EB%AC%B8%EB%8C%80%EC%9B%90/">박사논문</a> 3장으로 정독을 마쳤으므로, 저자 자신이 요약한 초록만 남긴다. (<em>Studies in World Christianity</em> 24:2, 157–173)</p>
+</blockquote>
+<p>동아프리카 부흥은 이른바 <strong>회심 경험</strong> — 개인의 죄에 대한 자각과 용서의 체험 — 을 강조했다. 부흥사들은 회심의 증거가 <strong>개인적 차원과 공동체적 차원 양쪽에서 식별 가능해야 한다</strong>고 주장했다. 이 부흥의 두 가지 두드러진 특징:</p>
+<ol>
+<li><strong>간증</strong> — 부흥 집회나 시장에서 회심자들이 자신의 <strong>원래 회심 경험을 재연(re-enact)</strong>하는 간증을 나눴다. 회심의 진정성을 입증하고 <strong>일상에서 그 효력을 지속</strong>시키기 위해서였다.</li>
+<li><strong>교제</strong> — 다른 회심자들과의 교제에 강한 초점을 뒀다. 구조화된 교제의 기회가 <strong>정체성 재정향의 지속적 과정</strong>을 촉진했고, 새 회심자가 다른 구성원들에게 영적·실제적 지원을 받을 수 있는 <strong>안전하고 품어 주는 환경</strong>을 제공했다.</li>
+</ol>
+<blockquote>
+<p>발표 시점 소개는 <strong>"보스턴대 선교학·세계기독교 박사과정생"</strong>이며, 논문 주제를 <strong>"운동을 확장하고 유럽 복음주의 전통을 아프리카 맥락에 적용하는 데 아프리카인 부흥사들이 한 필수불가결한 역할"</strong>로 소개한다.</p>
+</blockquote>
+<hr />
+<h2>이 정리에서 새로 알게 된 것</h2>
+<ol>
+<li>🔴 <strong>2015년 서평에 이미 평양 부흥이 나온다.</strong> 2025년 한국 선교 글은 갑자기 나온 것이 아니라 <strong>10년 전부터 품고 있던 비교 관점</strong>이다.</li>
+<li>🔴 <strong>Peterson 비판의 논리가 박사논문의 방법론이 됐다</strong> — "사회적 기능으로 환원하면 종교적 동기가 사라진다." 이것이 논문 2장에서 Comaroff 부부를 반박하는 그 논리다.</li>
+<li><strong>초기 이력이 보정된다</strong> — 2011년엔 <strong>BU–고든콘웰 공동 Th.D. 과정</strong>이었고, <strong>아내 정화와 YWAM으로 3개 대륙에서 사역</strong>했다. 볼트 학력표에 없던 정보다.</li>
+<li>🔴 <strong>「정화·변화·보존」이 그의 선교학적 입장을 압축한다.</strong> 그리고 그는 이 원칙을 기계적으로 적용하지 않는다 — 사료가 단절을 보여 주면 단절이라고 쓴다.</li>
+<li><strong>명목상 신앙에 대한 문제 제기가 2011년부터 일관된다.</strong> <em>One.Life</em> 서평의 <strong>"옳다, 그러나 충분히 옳지는 않다"</strong>가 시작이다.</li>
+</ol>
+<h2>미해결 질문</h2>
+<ol>
+<li><strong><em>World Christian Encyclopedia</em> 3판 기고는 실재하는가?</strong> 확인되지 않았다. 본인 확인이 필요하다.</li>
+<li><strong>국문 저작이 더 있는가?</strong> KRIM 발표 외에 국내 학술지·교단지 기고가 있을 법하나 검색으로 잡히지 않았다. 한국선교학회(KAMS)·복음과상황·기독교사상 등을 직접 뒤져야 확인된다.</li>
+<li><strong>박사논문에서 단행본(2022)으로 오며 무엇이 바뀌었나?</strong> Brill이 목차조차 막아 두어 확인하지 못했다. 344쪽 논문이 232쪽 단행본이 됐으니 <strong>상당한 압축이 있었을 텐데 무엇을 덜어냈는지</strong> 알 수 없다. 실물을 구해야 한다.</li>
+<li><strong>2019년 이후 새 학술 저작은?</strong> 담임목사 부임(2022) 이후로는 학술 출판이 확인되지 않는다. 로잔 기고 2편이 사실상 그 자리를 대신하고 있는 것으로 보인다.</li>
+</ol>
+<h2>교차 참조</h2>
+<ul>
+<li><span class="wl-dead" title="위키 내부 링크">문대원</span> — 저자</li>
+<li><a class="wl" href="../../b/%EB%8F%99%EC%95%84%ED%94%84%EB%A6%AC%EC%B9%B4%EB%B6%80%ED%9D%A5%EC%9A%B4%EB%8F%99_%EB%AC%B8%EB%8C%80%EC%9B%90/">동아프리카부흥운동_문대원</a> — 박사논문. ①의 Peterson 검토가 그 서론이 됐다</li>
+<li><a class="wl" href="../../b/%EB%AC%B8%EB%8C%80%EC%9B%90_%EB%A1%9C%EC%9E%94%EA%B8%B0%EA%B3%A0%EB%AC%B82%ED%8E%B8/">문대원_로잔기고문2편</a> — 로잔 기고 2편. ①의 평양 부흥 언급이 10년 뒤 「한국 선교 운동」으로 이어진다</li>
+<li><a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%EB%8F%84/">제자도</a> — ②의 "옳다, 그러나 충분히 옳지는 않다"</li>
+<li><a class="wl" href="../../t/%ED%9A%8C%EC%8B%AC/">회심</a> — ①의 공개 고백 논쟁, ④의 간증과 교제</li>
+<li><a class="wl" href="../../t/%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90/">세계기독교</a> — ③의 보편화·개별화 상호작용</li>
+</ul>
+</article>
+<div class="tagrow"><span>#서평</span><span>#학회발표</span><span>#아프리카독립교회</span><span>#조상숭배</span><span>#제자도</span><span>#세계기독교</span><span>#민족애국주의</span><span>#문대원</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

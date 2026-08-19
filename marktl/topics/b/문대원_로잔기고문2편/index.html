@@ -1,0 +1,382 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>문대원 로잔 기고문 2편 — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">선교</span><span class="date">2026-08-18</span></div>
+  <h1 class="note-title">문대원 로잔 기고문 2편</h1>
+  
+</header>
+<article class="note">
+<h1>Lausanne Global Analysis 게재 — 아프리카 오순절주의 / 한국 선교 운동</h1>
+<blockquote>
+<p><span class="wl-dead" title="위키 내부 링크">문대원</span>의 학술 저작 중 <strong>웹에서 무료로 읽을 수 있는 두 편</strong>을 정리한다. 박사논문·단행본은 <a class="wl" href="../../b/%EB%8F%99%EC%95%84%ED%94%84%EB%A6%AC%EC%B9%B4%EB%B6%80%ED%9D%A5%EC%9A%B4%EB%8F%99_%EB%AC%B8%EB%8C%80%EC%9B%90/">동아프리카부흥운동_문대원</a>에 별도로 있다.
+🔴 <strong>두 글은 성격이 다르다.</strong> 첫 편은 박사논문의 학문적 관심을 <strong>현재의 아프리카 교회</strong>로 확장한 글이고, 둘째 편은 <strong>자기 교회와 자기 나라를 향한 자기비판</strong>이다. 둘을 나란히 읽으면 <strong>"아프리카를 연구한 한국인 선교학자가 한국 교회를 어떻게 보는가"</strong>가 드러난다.</p>
+</blockquote>
+<h2>서지</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>① 아프리카 기독교 안의 오순절주의</th>
+<th>② 한국 선교 운동</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>원제</td>
+<td><strong>Pentecostalism in African Christianity: The formation and scope of a distinctive spirituality</strong></td>
+<td><strong>The Korean Mission Movement</strong></td>
+</tr>
+<tr>
+<td>원게재</td>
+<td><em>Lausanne Global Analysis</em> Vol.10 No.1 (2021년 1월호) — 본문 서명은 2020년 12월</td>
+<td><em>Lausanne Global Analysis</em> (2025년 1월호)</td>
+</tr>
+<tr>
+<td>재게재</td>
+<td>Evangelical Focus 2021-02-16</td>
+<td>Evangelical Focus 2025-04-18</td>
+</tr>
+<tr>
+<td>원문</td>
+<td><code>lausanne.org/content/lga/2021-01/pentecostalism-in-african-christianity</code></td>
+<td><code>lausanne.org/global-analysis/the-korean-mission-movement</code></td>
+</tr>
+<tr>
+<td>기반</td>
+<td>박사논문의 연장 — 발로콜레 부흥을 아프리카 카리스마 영성사의 한 마디로 재배치</td>
+<td><strong>제4차 로잔대회(인천, 2024.9) 세션 발제</strong>를 글로 옮긴 것</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ <strong>게재 시기 표기 주의</strong>: 볼트 <span class="wl-dead" title="위키 내부 링크">문대원</span>에 ②가 "2025.4"로 기재돼 있었는데, 이는 <strong>Evangelical Focus 재게재일</strong>이다. <strong>원출처는 LGA 2025년 1월호</strong>다. ①도 마찬가지로 LGA 2021년 1월 / EF 2월로 갈린다. 인용할 때 어느 쪽을 쓸지 정해야 한다.</p>
+</blockquote>
+<hr />
+<h1>① 아프리카 기독교 안의 오순절주의 (2021)</h1>
+<h2>논지</h2>
+<p>아프리카 오순절주의는 <strong>외부에서 수입된 것이 아니라 아프리카가 그리스도인으로 존재하는 하나의 방식</strong>이며, 수백 년에 걸친 토착적 뿌리를 갖는다. 세계화에 대한 아프리카 그리스도인의 전략적 응답이 <strong>기독교의 보편 진리와 자기 전통에서 나온 카리스마적 영성을 결합한 창조적 종합</strong>을 만들어 냈다.</p>
+<blockquote>
+<p><strong>"아프리카의 거의 모든 교단에서 오순절적 영성의 깊은 영향을 알아볼 수 있다."</strong></p>
+</blockquote>
+<h2>1. 오순절주의의 네 전사(前史) — 이 글의 뼈대</h2>
+<p>🔴 <strong>핵심 주장</strong>: 최근 수십 년 아프리카 오순절 교회의 폭발적 등장은 <strong>지난 한 세기 동안 아프리카에서 일어난 갱신 운동들이 누적된 결과</strong>로 이해해야 한다. 아주사에서 온 것이 아니다.</p>
+<table>
+<thead>
+<tr>
+<th>시기</th>
+<th>주체</th>
+<th>성격</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>18세기</td>
+<td><strong>킴파 비타(Kimpa Vita)</strong> — 콩고 왕국의 전통 점술가. 성 안토니오의 영에 사로잡혔다고 주장</td>
+<td><strong>기독교 상징과 메시지를 전통 종교에 전유해 새로운 종합</strong>을 만든 최초 사례</td>
+</tr>
+<tr>
+<td>19세기 말</td>
+<td><strong>아프리카 예언자들</strong> — William Wadé Harris(서), Isaiah Shembe(남), Simon Kimbangu(중앙)</td>
+<td>기독교의 <strong>영적(pneumatic) 측면</strong>에 근거한 도덕적·영적 개혁 요구</td>
+</tr>
+<tr>
+<td>20세기 초</td>
+<td><strong>아프리카 독립교회(AIC)</strong> — 서아프리카 알라두라(Aladura), 남부 시온주의 교회</td>
+<td><strong>"영형(Spirit-type)" 교회.</strong> 치유와 예언 중심, 전통 의례·상징에 기독교적 의미 부여</td>
+</tr>
+<tr>
+<td>1930년대</td>
+<td><strong>발로콜레 부흥</strong> (우간다 성공회)</td>
+<td>성령의 변화시키는 사역을 강조해 <strong>명목상 신자를 재활성화</strong>하려 함</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>🔴 <strong>자기 논문을 이 계보의 네 번째 자리에 놓았다.</strong> 다만 앞의 셋과 달리 발로콜레는 <strong>주류 교단 안에 남았고 치유·기적을 거의 취하지 않았다</strong>는 점에서 결이 다르다 — 그 차이가 <a class="wl" href="../../b/%EB%8F%99%EC%95%84%ED%94%84%EB%A6%AC%EC%B9%B4%EB%B6%80%ED%9D%A5%EC%9A%B4%EB%8F%99_%EB%AC%B8%EB%8C%80%EC%9B%90/">박사논문</a> 3장·5장의 주제다.</p>
+</blockquote>
+<h2>2. 현재의 흐름 네 가지</h2>
+<ol>
+<li><strong>문화·전통에 대한 적응</strong> — 영들에 대한 전통 신앙을 <strong>부정하지 않고 악마화(demonization)</strong>하는 전략을 쓴다. 성령을 <strong>더 선하고 더 강력한 영</strong>으로 제시함으로써 <strong>오순절적 이원론이 토착 영적 우주관을 유지한 채로</strong> 신자가 될 수 있게 한다.</li>
+<li><strong>근대성의 촉진</strong> — 도시 아프리카에서 <strong>개인주의</strong>(구원의 책임은 각자에게), <strong>자본주의</strong>(근대 노동시장의 일자리를 위한 기도), <strong>성평등</strong>(결혼에서의 친절, 간음 거부)을 끌어안는다. <strong>"아프리카 오순절주의자들은 자기 나름의 근대를 벼려내는 데 능동적이었다."</strong><blockquote>
+<p>🔴 박사논문 4장의 <strong>"자기 나름의 근대를 벼려낸다(forging their own modernity)"</strong>는 표현이 그대로 재등장한다. 발로콜레를 설명하던 틀을 현재 오순절주의에 적용한 것이다.</p>
+</blockquote>
+</li>
+<li><strong>평신도와 여성에게 호소</strong> — <strong>"종교적 권위는 종교 관료제가 아니라 영적 은사를 가진 사람에게 있다"</strong>는 오순절 신학이, 교회 지도력에서 배제돼 있던 <strong>여성과 배우지 못한 이들</strong>에게 결정적 매력이 됐다. 우간다의 한 메가처치 표어: <strong>"모든 교인이 사역자다(every member is a minister)."</strong> → <a class="wl" href="../../t/%ED%8F%89%EC%8B%A0%EB%8F%84%EC%8B%A0%ED%95%99/">평신도신학</a></li>
+<li><strong>예배의 혁신</strong> — 야외 전도집회, 전자 악기, 힐송류의 현대 찬양, 유튜브 채널과 방송 스튜디오. <strong>오순절 예배의 자발적·경험적·활기찬 요소가 아프리카 종교성과 양립하는 예배의 대안</strong>을 제공한다.</li>
+</ol>
+<h2>3. 쟁점 — 번영복음을 다루는 방식이 이 글의 백미다</h2>
+<p>케이프타운 서약을 그대로 인용해 비판한다 — <strong>"번영복음을 강력히 퍼뜨리는 많은 이들의 가르침은 성경을 심각하게 왜곡한다"</strong>(CTC II-E-5).</p>
+<p>🔴 <strong>그러나 곧바로 문화적 맥락화를 요구한다.</strong></p>
+<blockquote>
+<p><strong>"번영에 대한 아프리카의 개념은 미국의 이해와 상당히 다르다. 미국인에게 번영은 새 차나 더 큰 집을 갖는 것을 뜻한다. 반면 아프리카인에게 번영은 충분한 한 끼 식사나 기본적인 의료에 접근할 수 있음을 뜻한다."</strong></p>
+</blockquote>
+<p>이것이 이 글에서 가장 인용 가치가 높은 대목이다. <strong>같은 단어를 쓰지만 같은 것을 말하고 있지 않다</strong>는 지적이며, 서구발 신학 비판을 아프리카에 그대로 적용하는 것에 대한 제동이다. 그러면서도 면죄부를 주지 않는다 — 근년 주요 교단에서 번영복음의 위세는 <strong>실제로 줄었고</strong>, 정보에 밝은 아프리카 목회자들이 자기 교회에서 이를 적극 차단하고 있다고 보고한다.</p>
+<p><strong>그 밖의 쟁점</strong>
+- <strong>세계화와 다문화</strong> — 부룬디의 Christian Life Ministries, 르완다의 Christian Life Assembly가 가장 빠르게 성장하는 교회다. 부룬디·르완다·우간다·케냐·캐나다·영국 출신의 <strong>다국적 목회팀</strong>을 두고 20개국 청년 전문직·학생이 모인다. 🔴 경고를 덧붙인다 — <strong>"세계 오순절 운동이 단일한 성격을 갖는다고 가정하지 않도록 주의해야 한다. 오순절주의에 대한 어떤 정의든 본질상 복수적이어야 한다."</strong>
+- <strong>총체적 우주관</strong> — 아프리카인은 <strong>보이는 것과 보이지 않는 것 사이에 깔끔한 경계를 그을 수 없는 총체적 우주 이해</strong>를 유지한다. 질병·불행·갈등을 영적 공격으로 보고 축귀와 치유를 위해 기도하는 것이 <strong>일상적 사역</strong>이다. <strong>"근대 세계에 온전히 통합된 오늘의 아프리카인 다수가 전통적 우주관을 그대로 지니고 있다."</strong> 부룬디의 한 성공회 성직자는 <strong>밤낮없이 귀신 들린 이를 위한 기도 요청을 받는다</strong>고 증언한다.</p>
+<h2>결론</h2>
+<blockquote>
+<p><strong>"이른바 '아프리카 기독교의 카리스마화'는 아프리카인의 우주 이해에 호소하는 독자적 영성을 세우려 한 아프리카의 성공적 시도로 인정되고 축하받아야 한다."</strong></p>
+</blockquote>
+<p>순전히 신학적인 접근으로는 이 현상을 이해할 수 없으며 그 <strong>경험적·자발적 본성</strong>을 봐야 한다는 것이 결론이다. Timothy Tennent의 요청 — <strong>학제 간·문화 간 기독교 신학을 세계 선교 운동에 폭넓게 적용할 것</strong> — 을 인용하며 닫는다.</p>
+<p><strong>주요 참고 문헌</strong>: Ogbu Kalu, <em>African Pentecostalism</em>(OUP 2008) · J. Kwabena Asamoah-Gyadu, <em>African Charismatics</em>(Brill 2005) · Allan Anderson, <em>An Introduction to Pentecostalism</em>(CUP 2004) · Joel Robbins · Timothy Tennent, <em>Theology in the Context of World Christianity</em>(Zondervan 2007).</p>
+<hr />
+<h1>② 한국 선교 운동 (2025)</h1>
+<blockquote>
+<p><strong>제4차 로잔대회(인천, 2024년 9월) 세션 발제</strong>가 바탕이다. 로잔운동 창립 50주년이자, 기독교의 무게중심이 <strong>북에서 남으로</strong> 이동한 것을 확인한 자리였다. 한국은 <strong>세계 2위 선교사 파송국</strong>으로 소개된다.</p>
+</blockquote>
+<h2>1. 1907년 평양 대부흥</h2>
+<ul>
+<li>1903–1910년의 넓은 부흥 운동의 일부. <strong>첫 불꽃은 1903년 원산</strong>에서 감리교 선교사 <strong>Robert A. Hardie</strong>에 의해 붙었고, <strong>1907년 1월 평양 장대현교회</strong>에서 정점에 달했다.</li>
+<li>🔴 <strong>주도한 것은 서양 선교사가 아니라 한국인 목사 길선주</strong>였다. 평양은 <strong>"동방의 예루살렘"</strong>으로 불리게 됐다.</li>
+<li><strong>세 가지 지속적 영향</strong>
+  1. <strong>내적 변화와 개인적 회심 경험</strong>의 강조 — 그리스도인이 된다는 것은 지적 동의 이상이며 개인의 회심 체험을 포함한다는 신앙 전통이 이때 자리 잡았다.
+  2. <strong>사회적 평등과 화해의 촉진</strong> — 계급과 성별의 경계가 흐려졌다.
+  3. <strong>실천의 정착</strong> — <strong>새벽기도회, 통성기도, 성경공부</strong>가 대중화됐다.</li>
+</ul>
+<blockquote>
+<p>🔴 <a class="wl" href="../../b/%EB%8F%99%EC%95%84%ED%94%84%EB%A6%AC%EC%B9%B4%EB%B6%80%ED%9D%A5%EC%9A%B4%EB%8F%99_%EB%AC%B8%EB%8C%80%EC%9B%90/">박사논문</a>과 정확히 같은 문법이다. <strong>①현지인이 주도했고 ②내적 회심을 핵심으로 삼았으며 ③독자적 실천(새벽기도·통성기도)을 창조했다.</strong> 동아프리카에서 키누카·은시밤비를 찾아낸 눈으로 한국사에서 길선주를 읽는다.</p>
+</blockquote>
+<h2>2. 부흥에서 선교로 — "직접적 상관관계"</h2>
+<blockquote>
+<p><strong>"기독교 역사는 부흥과 선교 사이에 직접적인 상관관계가 있음을 보여 왔다."</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>연도</th>
+<th>사건</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1907</td>
+<td><strong>최초의 한국인 장로교 목사 7명 안수</strong>(길선주 포함). <strong>이기풍이 제주 선교사로 파송</strong></td>
+</tr>
+<tr>
+<td>1909</td>
+<td>2차 안수 9명. <strong>최관흘을 시베리아 블라디보스토크로 파송</strong></td>
+</tr>
+<tr>
+<td>1910</td>
+<td><strong>백만인구령운동</strong> — 전국적 전도 캠페인</td>
+</tr>
+<tr>
+<td>1912</td>
+<td>장로교 총회 조직과 동시에 <strong>한국인 목사 3명을 중국 산둥에 파송</strong></td>
+</tr>
+</tbody>
+</table>
+<p>🔴 <strong>부흥 3년 만에 첫 안수자가 곧 선교사가 됐고, 총회를 조직하자마자 해외 선교사를 보냈다.</strong> 부흥과 선교가 시차 없이 붙어 있었다는 것이 이 절의 논점이다.</p>
+<h2>3. 청년 선교 운동 (1970~2000년대)</h2>
+<p><strong>촉매</strong>: 1970~80년대 민주화·산업화 / <strong>1973년 빌리 그레이엄 전도대회</strong> / <strong>1974년 로잔 언약</strong>의 자극.</p>
+<p><strong>선교한국(Mission Korea) 대회</strong> — 1988년 서울올림픽의 해에 시작된 격년제 대학생·청년 대회.
+- 참가자: <strong>664명(1988) → 6,300명(1996)</strong>
+- <strong>참가자의 절반 이상이 해외 선교에 헌신</strong>했다.</p>
+<p><strong>선교사 수의 증가</strong>
+| 연도 | 선교사 수 |
+|---|---|
+| 1986 | 511명 |
+| 2002 | 10,422명 |
+| 2013 | 20,000명 이상 |</p>
+<p><strong>세 가지 요인</strong>
+1. <strong>성경에 대한 높은 존중</strong>과 대위임령에 대한 폭넓은 수용
+2. <strong>관대하고 희생적인 헌금의 전통</strong>
+3. <strong>경제 성장과 외교 관계</strong> — 2024년 헨리 여권지수에서 한국은 <strong>3위</strong>(191개국 무비자)</p>
+<h2>4. 현재의 위기와 자기비판 — 이 글의 무게중심</h2>
+<p>🔴 <strong>잔치가 아니라 반성문이다.</strong> 지난 20년의 쇠퇴 지표를 나열한다.
+- 세속화, 청년의 종교적 무관심, <strong>메가처치 스캔들</strong>
+- 대중이 한국 기독교를 <strong>배타적·물질주의적·위선적·이기적</strong>으로 인식
+- 코로나19 — 출석과 헌금의 동반 감소</p>
+<p><strong>응답</strong>
+- <strong>2023년 7월, 430개 교회에서 1만 명의 그리스도인이 송도 컨벤시아에 모여 기도</strong>했다. 이재훈·유기성 목사 등이 <strong>회개와 부흥</strong>을 촉구했다.
+- 🔴 <strong>한국로잔위원회는 제4차 대회가 축하가 아니라 「성찰하고, 회개하고, 배우는」 자리가 되어야 한다고 못 박았다.</strong> 세계 2위 파송국이 자기 대회를 이렇게 규정한 것이다.</p>
+<p><strong>신학적 재정향</strong></p>
+<blockquote>
+<p>케이프타운 서약을 인용해 닫는다 — <strong>"어떤 한 민족이나 국가나 대륙도 대위임령을 완수하는 자가 되는 배타적 특권을 주장할 수 없다"</strong>(CTC II-F-2).</p>
+</blockquote>
+<p>세계 선교는 <strong>하나님의 주권에 속한다</strong>는 것 — 한국 교회의 자기 이해를 "완수의 주역"에서 내려놓게 하는 결론이다.</p>
+<p><strong>주요 참고</strong>: Philip Jenkins · <strong>옥성득(Sung-Deuk Oak)</strong> · Andrew Walls · <strong>박기호(Timothy Kiho Park)</strong> · <strong>이대행</strong> · <strong>문상철(Steve Sang-Cheol Moon)</strong> · Timothy Tennent · Isabel Ong(<em>Christianity Today</em> 2024.9) — 각주 17개.</p>
+<hr />
+<h2>두 글을 겹쳐 읽으면</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>아프리카를 볼 때</th>
+<th>한국을 볼 때</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>주체</strong></td>
+<td>서구 선교사가 아니라 <strong>키누카·은시밤비</strong></td>
+<td>서양 선교사가 아니라 <strong>길선주</strong></td>
+</tr>
+<tr>
+<td><strong>부흥의 핵심</strong></td>
+<td>죄의 자각과 내적 회심</td>
+<td>내적 변화와 개인적 회심 경험</td>
+</tr>
+<tr>
+<td><strong>독자적 창조물</strong></td>
+<td>아볼루간다(새 씨족)·간증·교제 모임</td>
+<td><strong>새벽기도·통성기도·성경공부</strong></td>
+</tr>
+<tr>
+<td><strong>평가의 태도</strong></td>
+<td>🔴 <strong>변호한다</strong> — 번영복음 비판도 "아프리카의 번영은 한 끼 식사"라며 맥락을 세워 준다</td>
+<td>🔴 <strong>비판한다</strong> — 배타적·물질주의적·위선적이라는 대중 인식을 그대로 옮기고, 대회를 "회개하고 배우는" 자리로 규정한다</td>
+</tr>
+<tr>
+<td><strong>결론의 방향</strong></td>
+<td>아프리카의 시도를 <strong>인정하고 축하하라</strong></td>
+<td>한국은 <strong>완수의 배타적 특권을 주장할 수 없다</strong></td>
+</tr>
+</tbody>
+</table>
+<p>🔴 <strong>이것이 그의 선교학적 자세다.</strong> 남의 것은 그 문화의 논리로 이해하려 애쓰고, 자기 것은 그 문화의 변명 없이 평가한다. <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a>에서 흔히 말하는 겸손이 실제 글쓰기에서 어떤 모양인지를 보여 주는 사례로 쓸 만하다.</p>
+<h2>우리 맥락에 쓸 수 있는 것</h2>
+<ol>
+<li><strong>"번영의 정의는 문화마다 다르다"</strong> — 의료 사역·해외 사역 강의에서 번영복음을 다룰 때 이 대비(새 차 vs 한 끼 식사)를 그대로 쓸 수 있다. 비판을 유지하면서도 값싼 정죄를 피하는 방법이다.</li>
+<li><strong>"모든 교인이 사역자다"</strong> — <a class="wl" href="../../t/%ED%8F%89%EC%8B%A0%EB%8F%84%EC%8B%A0%ED%95%99/">평신도신학</a>. 오순절주의의 성장 요인을 신학이 아니라 <strong>권위의 소재</strong>(관료제가 아니라 은사)에서 찾은 분석은 한국 교회 평신도론에도 그대로 겨눠진다.</li>
+<li><strong>부흥→선교의 시차 없음</strong> — 1907 부흥, 1907 첫 안수, 1907 제주 파송, 1909 시베리아, 1912 산둥. <strong>부흥을 말하면서 파송이 따라오지 않으면 그것은 부흥이 아니다</strong>는 논증에 쓸 수 있는 연표다. → <a class="wl" href="../../t/%EB%B6%80%ED%9D%A5/">부흥</a></li>
+<li><strong>자기비판의 수위</strong> — 세계 2위 파송국이 자기 대회를 "성찰·회개·배움"으로 규정한 사례. 단체 이사회·수련회 기획에서 <strong>잔치와 반성의 배분</strong>을 논할 때 참조점이 된다.</li>
+<li><strong>CTC II-F-2</strong> — "어떤 민족·국가·대륙도 대위임령 완수의 배타적 특권을 주장할 수 없다." 한국 선교의 자기 이해를 조정하는 데 반복 인용할 만한 문장.</li>
+</ol>
+<h2>미해결 질문</h2>
+<ol>
+<li><strong>번영복음의 문화적 맥락화는 어디까지 가능한가?</strong> "아프리카의 번영은 한 끼 식사"라는 변호는 정당하지만, 그 논리는 <strong>가난한 나라의 번영복음은 괜찮다</strong>는 결론으로 미끄러지기 쉽다. 저자는 어디에 선을 긋고 있는가.</li>
+<li><strong>발로콜레를 오순절주의 계보에 넣은 것은 정합적인가?</strong> 박사논문 5장에서는 <strong>"강력한 반(反)오순절·반방언 운동"</strong>이라고 못 박았는데, 이 글에서는 카리스마 영성의 네 전사 중 하나로 배치한다. <strong>계보에 넣되 성격은 다르다</strong>는 뜻으로 읽히지만, 두 서술의 관계를 저자가 명시적으로 다룬 곳은 찾지 못했다.</li>
+<li><strong>한국 부흥 서술에 아프리카 연구의 방법이 얼마나 적용됐는가?</strong> 길선주를 앞세운 것은 박사논문의 문제의식과 같지만, 이 글은 대회 발제문이라 <strong>1차 사료 검증의 밀도</strong>가 논문과 다르다. 한국 교회사에 같은 방법론을 본격 적용한 연구가 그에게 있는지는 미확인이다.</li>
+<li>~~<strong>선교사 20,000명 이후는?</strong>~~ ✅ <strong>해소(2026-08-18)</strong> — 본인 인터뷰(주간기독신문 2024.5)에서 <strong>"세계 174개국에서 2만 3천여 한국 선교사"</strong>라고 밝혔다. 2013년 2만 명 → <strong>2024년 2만 3천여 명</strong>. <a class="wl" href="../../b/%EB%8C%80%EC%9C%84%EC%9E%84%EB%A0%B9%ED%98%84%ED%99%A9%EB%B3%B4%EA%B3%A0%EC%84%9C/">대위임령현황보고서</a>의 22,000명과도 정합적이다. 🔴 즉 <strong>최근 10년은 사실상 정체</strong>이며, 이것이 「한국 선교 운동」이 반성문이 된 배경 수치다.</li>
+</ol>
+<h2>교차 참조</h2>
+<ul>
+<li><span class="wl-dead" title="위키 내부 링크">문대원</span> — 저자</li>
+<li><a class="wl" href="../../b/%EB%8F%99%EC%95%84%ED%94%84%EB%A6%AC%EC%B9%B4%EB%B6%80%ED%9D%A5%EC%9A%B4%EB%8F%99_%EB%AC%B8%EB%8C%80%EC%9B%90/">동아프리카부흥운동_문대원</a> — 박사논문 전문 정독본. ①은 그 연장이고, ②는 같은 방법을 한국사에 적용한 글이다</li>
+<li><a class="wl" href="../../t/%EB%B6%80%ED%9D%A5/">부흥</a> — 부흥과 선교의 상관관계, 부흥이 만들어 낸 독자적 실천(새벽기도·통성기도)</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EB%A0%B9/">성령</a> — 성령을 "더 강력한 영"으로 제시하는 오순절적 이원론</li>
+<li><a class="wl" href="../../t/%ED%8F%89%EC%8B%A0%EB%8F%84%EC%8B%A0%ED%95%99/">평신도신학</a> — "모든 교인이 사역자다", 권위의 소재</li>
+<li><a class="wl" href="../../t/%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90/">세계기독교</a> · <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a> — 무게중심의 남반구 이동, 완수의 배타적 특권 부정</li>
+<li><span class="wl-dead" title="위키 내부 링크">2024L4로잔</span> — ②의 바탕이 된 제4차 로잔대회. 저자는 준비위 총무였다</li>
+<li><a class="wl" href="../../b/%EB%8C%80%EC%9C%84%EC%9E%84%EB%A0%B9%ED%98%84%ED%99%A9%EB%B3%B4%EA%B3%A0%EC%84%9C/">대위임령현황보고서</a> — 같은 L4에서 나온 공식 보고서. 한국 선교사 수치 대조 가능</li>
+<li><a class="wl" href="../../b/%EB%AC%B8%EB%8C%80%EC%9B%90_%EC%84%9C%ED%8F%89%EA%B3%BC%EB%B0%9C%ED%91%9C%EB%AC%B8/">문대원_서평과발표문</a> — 서평 2편·국문 발표문 + 저작 전수 정산표. 🔴 <strong>2015년 서평에 이미 평양 부흥이 등장</strong>한다 — ②의 씨앗</li>
+</ul>
+</article>
+<div class="tagrow"><span>#로잔</span><span>#기고문</span><span>#아프리카오순절주의</span><span>#한국선교운동</span><span>#평양대부흥</span><span>#번영복음</span><span>#세계기독교</span><span>#선교한국</span><span>#문대원</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
