@@ -1,0 +1,156 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>애착 (Attachment) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-t">상담·가정</span><span class="date">2026-08-23</span></div>
+  <h1 class="note-title">애착 (Attachment)</h1>
+  
+</header>
+<article class="note">
+<blockquote>
+<p>아이가 양육자와 맺는 최초의 정서적 유대. 이후 모든 관계의 원형이 되며, 하나님 이미지 형성에까지 영향을 미친다.</p>
+</blockquote>
+<hr />
+<h2>개념</h2>
+<p>애착은 존 볼비(John Bowlby)가 정식화한 발달심리학 개념으로, 유아가 주 양육자와 형성하는 지속적 정서 유대를 가리킨다. 이 유대는 단순한 애정이 아니라 <strong>세상이 안전하고 의지할 만한 곳인가</strong>에 대한 아이의 근본 판단을 만든다.</p>
+<p>관련 자료들이 공통으로 강조하는 세 지점이 있다.</p>
+<ol>
+<li><strong>부모는 아이가 만난 최초의 타인이자 세상이자 자기 자신이다.</strong> 아이는 스스로 자기가 누구인지 정의할 수 없다. 양육자가 "예쁘다, 사랑스럽다"고 불러줄 때 비로소 자기를 그렇게 안다. 여기서 <a class="wl" href="../../t/%EC%A0%95%EC%B2%B4%EC%84%B1/">정체성</a>의 기초가 놓인다.</li>
+<li><strong>응답이 곧 임재다.</strong> 아이가 미소 지을 때 어른이 미소로 응답하는 '거울 관계'가 인간됨의 각인이 된다. 얼굴을 뜻하는 헬라어 <em>prosopon</em>이 임재(presence)를 함축한다는 점에서, 부모의 응답하는 얼굴은 하나님의 임재를 미리 경험하게 하는 통로로 읽힌다.</li>
+<li><strong>부모 이미지와 하나님 이미지는 혼동된다.</strong> 임상 현장에서 반복 관찰되는 현상이다. 아버지에게 맞고 자란 사람이 하나님을 아버지라 부르기 어려워하는 것이 그 예다.</li>
+</ol>
+<h2>애착과 감정조절 · 중독</h2>
+<p>감정적으로 공감받지 못하고 자신의 고통이 부모와 공유·조율되지 못할 때, 감정은 발달하지도 조절되지도 못한다. 그러면 아이는 <strong>관계를 포기한다</strong> — 문을 닫고 나오지 않으며, 사람 대신 미디어와 자기를 연결한다. <a class="wl" href="../../t/%EC%A4%91%EB%8F%85/">중독</a>을 애착 손상의 귀결로 읽는 관점이 여기서 나온다.</p>
+<p>역으로 절제와 자기조절도 애착에서 자란다. 안전하다고 느낄 때 인간은 감정을 억압하지 않고 표현하며, 그 표현이 받아들여지는 경험이 반복될 때 조절 능력이 생긴다. 감정적 발달은 인지적 변화보다 훨씬 오래 걸리므로, 훈계나 지식 전달로는 대체되지 않는다.</p>
+<h2>관련 자료</h2>
+<p><strong>강의</strong>
+- <span class="wl-dead" title="위키 내부 링크">2017_유중근_자녀양육의원칙</span> — 애착이론과 안전기지(secure base)를 신학적 존재론과 결합
+- <span class="wl-dead" title="위키 내부 링크">2019_김재환_청소년_게임중독_예방과치료</span> — 애착·대상관계를 감정조절 능력의 토대로
+- <span class="wl-dead" title="위키 내부 링크">2026-08_김재환_중독사회속의우리아이</span> — 볼비 인용, 0~5세 뇌 기초공사와 애착</p>
+<p><strong>설교·부모교육</strong>
+- <span class="wl-dead" title="위키 내부 링크">2014_부모교육이란4_발달과정이해</span> — 제임스 로더의 8단계, 거울 관계와 <em>prosopon</em>
+- <span class="wl-dead" title="위키 내부 링크">2019_부모를통한신앙형성</span> — 잠 4:23, 애착형성과 신뢰
+- <span class="wl-dead" title="위키 내부 링크">2014_부모교육이란6_부모됨</span>
+- <span class="wl-dead" title="위키 내부 링크">2014_성경적인아내의역할</span>
+- <span class="wl-dead" title="위키 내부 링크">반야월_성경적부모교육</span></p>
+<h2>교차 참조</h2>
+<p><a class="wl" href="../../t/%EB%B6%80%EB%AA%A8%EA%B5%90%EC%9C%A1/">부모교육</a> · <a class="wl" href="../../t/%EC%9E%90%EB%85%80%EC%96%91%EC%9C%A1/">자녀양육</a> · <a class="wl" href="../../t/%EC%A0%95%EC%B2%B4%EC%84%B1/">정체성</a> · <a class="wl" href="../../t/%EC%A4%91%EB%8F%85/">중독</a> · <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%83%81%EB%8B%B4/">기독교상담</a> · <a class="wl" href="../../t/%EA%B0%80%EC%A0%95%EC%82%AC%EC%97%AD/">가정사역</a></p>
+<blockquote>
+<p>📌 <strong>표기 통일 메모</strong>: 기존 노트들이 <code>애착</code>·<code>애착이론</code>·<code>애착형성</code> 세 이름으로 갈라져 링크하고 있다(각 2·3·2건). 이 문서를 정본으로 두되, 나머지 두 이름을 이쪽으로 모으는 작업은 별도 정리 패스가 필요하다.</p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#애착</span><span>#발달심리</span><span>#부모교육</span><span>#자녀양육</span><span>#상담심리</span><span>#신앙형성</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
