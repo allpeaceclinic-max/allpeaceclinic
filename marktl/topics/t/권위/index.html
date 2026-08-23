@@ -1,0 +1,364 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>권위 — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-t">목회·실천</span><span class="date">2026-08-23</span></div>
+  <h1 class="note-title">권위</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>권위(ἐξουσία, 엑수시아)는 <strong>받은 힘</strong>이다. 축적하는 힘인 뒤나미스와 달리 엑수시아는 위임의 흔적을 이름 안에 지니고 있다. 그 어휘적 구별과 권력 일반의 문제는 <a class="wl" href="../../t/%EA%B6%8C%EB%A0%A5/">권력</a>이 다루고, 따르는 쪽의 응답은 <a class="wl" href="../../t/%EC%88%9C%EC%A2%85/">순종</a>이 다룬다. 여기서 묻는 것은 그 사이에 남는 질문이다.</p>
+<blockquote>
+<blockquote>
+<p>저 사람의 권위가 진짜인지 나는 어떻게 아는가. 그리고 알 수 없다면, 그 아래에서 어떻게 살아야 하는가.</p>
+</blockquote>
+</blockquote>
+<p>이것은 사변적인 물음이 아니다. 교회에서 상처를 입은 사람이 가장 먼저 던지는 질문이고, 대개 아무도 대답해 주지 않는 질문이다.</p>
+<hr />
+<h2>1. 권위는 소유가 아니라 입혀진 것이다</h2>
+<p>성경이 권위를 말하는 방식은 일관되게 수동태다. 총명을 잃었다가 회복된 느부갓네살이 마지막에 도달한 고백도 그것이었다 — 권세는 지극히 높으신 이의 것이며, 자신은 그것을 잠시 입고 있었을 뿐이라는 자각.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<p>윤명숙 전도사는 이 장면을 부모 권위의 출발점으로 삼는다. 부모의 권위는 본래 자기 것이 아니라 하나님이 대리자로 <strong>입혀 주신</strong> 것이므로, 부모는 "내 것이 아닌" 권위를 걸친 청지기라는 것이다.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> 여기서 중요한 것은 겸손을 권하는 말이 아니라 <strong>소유권의 소재</strong>다. 빌린 것은 돌려주어야 하고, 빌린 것에는 사용 조건이 붙는다.</p>
+<p>문대원 목사가 리더십 교육에서 제시하는 사슬도 같은 방향을 가리킨다 — <strong>인격 → 존경심 → 권위 → 영향력</strong>. 직위에서 권한이 나온다는 통념을 뒤집어, 교회의 권위는 자리가 아니라 인격에서 자란다고 본다.<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
+<p><strong>핵심 한 문장</strong>: 권위가 자기 것이 되는 순간, 그것은 이미 다른 것이 되어 있다.</p>
+<hr />
+<h2>2. 권위와 권위주의를 가르는 선</h2>
+<p>두 낱말은 붙어 있지만 방향이 반대다. 윤명숙은 이렇게 구별한다. 권위는 아랫사람이 하나님의 통치를 경험하게 하는 <strong>통로</strong>이고, 권위주의는 상대의 의견을 무시하고 점검 없이 옛 방식을 답습하여 상대 내면에 분노를 쌓는 <strong>남용</strong>이다.<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></p>
+<p>실무적으로 쓸 만한 판별 기준은 「점검 없음」이다. 권위주의는 대개 나쁜 의도가 아니라 <strong>검토되지 않은 관행</strong>의 얼굴로 온다. 그래서 스스로는 좀처럼 알아차리지 못한다.</p>
+<p>같은 설교에 더 무서운 관찰이 있다. 사람은 한 영혼을 끝까지 책임질 수 없으므로 권위는 <strong>유한 책임</strong> 안에서만 행사되어야 하며, 그 선을 넘으면 그 권위는 반드시 상대에게서 튕겨져 나간다는 것이다.<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup> 권위의 남용은 처벌받기 전에 먼저 <strong>작동을 멈춘다</strong>.</p>
+<hr />
+<h2>3. 예수의 권위가 선 자리 — "무슨 권위로?"</h2>
+<p>권위의 정당성을 정면으로 다룬 성경 본문은 마가복음 11장의 논쟁이다. 종교 지도자들이 "무슨 권위로 이런 일을 하느냐"고 따져 물었고, 예수께서는 답 대신 되물으셨다.</p>
+<p>유승용 간사는 이 본문에서 예수의 권위가 서 있는 근거를 세 겹으로 읽는다 — <strong>출처</strong>(하나님으로부터 왔다), <strong>실현</strong>(말씀하신 대로 그대로 이루어졌다), <strong>부활</strong>(죽음을 이기셨다).<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup> 곧 예수의 권위는 자기주장이 아니라 <strong>검증 가능한 자리</strong> 위에 선다.</p>
+<p>그리고 반대편이 무너지는 방식이 더 날카롭다. 종교 지도자들은 세례 요한의 권위를 백성 앞에서 이미 인정하면서도 정작 그를 믿지 않았기에 답할 수 없었다. 설교자는 그 진퇴양난 자체가 그들에게 참된 권위가 없음을 드러낸다고 본다.</p>
+<blockquote>
+<p><strong>답을 회피하는 자리에 권위는 설 수 없다.</strong><sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup></p>
+</blockquote>
+<p><strong>핵심 한 문장</strong>: 권위는 질문을 견딜 수 있어야 한다. 질문을 금지해서 지켜지는 권위는 이미 권위가 아니다.</p>
+<hr />
+<h2>4. ★ 그런데 우리는 판정할 수 없다</h2>
+<p>여기까지는 권위를 세우는 쪽의 논의다. 문제는 현장에서 이 기준들이 잘 작동하지 않는다는 데 있다.</p>
+<p>진 에드워즈는 사울과 다윗의 이야기를 우화로 다시 쓰면서, 독자가 가장 알고 싶어 하는 질문에 정면으로 대답하기를 거부한다. 내 위에 있는 저 사람이 사울인가 다윗인가 — 그 답은 <strong>하나님만 아시고, 하나님은 말씀하지 않으신다.</strong><sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup> 사울의 후예와 다윗의 후예는 겉으로 분간되지 않는다.</p>
+<p>그렇다면 검증 기준표를 만들면 되지 않을까. 이 제안에 대한 반박이 이 논의에서 가장 단단한 대목이다.</p>
+<blockquote>
+<p>그런 목록이 실제로 존재하고 선한 왕이 그 모든 요건을 충족시킨다 해도, <strong>자격요건을 갖추지 못했다고 주장하는 반역자들은 일어난다.</strong><sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup></p>
+</blockquote>
+<p>근거는 민수기 16장이다. 고라의 반역에서 하나님은 <strong>직접</strong> 판정하셨다. 땅이 갈라졌다. 그런데 그것으로 문제가 끝났는가.</p>
+<blockquote>
+<p>모세는 쉼을 누리지 못했고, 백성들도 하나님이 주신 답에 만족하지 못했다. <strong>바로 다음날 온 백성이 모세를 원망했다.</strong><sup id="fnref:10"><a class="footnote-ref" href="#fn:10">10</a></sup></p>
+</blockquote>
+<p><strong>핵심 한 문장</strong>: 판정의 부재가 문제가 아니라 판정을 받아들이지 않는 마음이 문제이므로, 어떤 기준표도 이 문제를 해결하지 못한다.</p>
+<hr />
+<h2>5. 알 수 없다면 무엇을 알 수 있는가</h2>
+<p>판정 불가능성은 무기력의 근거가 될 수도 있고 자기 검열의 근거가 될 수도 있다. 에드워즈는 후자를 택한다. 알 수 없는 것과 알 수 있는 것을 이렇게 나눈다.</p>
+<table>
+<thead>
+<tr>
+<th>알 수 없는 것</th>
+<th>알 수 있는 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>저 사람이 사울인가 다윗인가</td>
+<td><strong>시간</strong> — 충분히 흐르면 그 사람의 행동이 드러난다</td>
+</tr>
+<tr>
+<td>하나님이 그와 끝내셨는가</td>
+<td><strong>내 반응</strong> — 그 반응이 결국 나 자신을 드러낸다<sup id="fnref:11"><a class="footnote-ref" href="#fn:11">11</a></sup></td>
+</tr>
+</tbody>
+</table>
+<p>두 번째 항목이 이 논의의 전환점이다. 시선이 저 사람에게서 나에게로 옮겨진다. 그리고 그 전환은 우화 안에서 더 밀고 나아간다 — 하나님의 시선이 고정된 곳은 눈앞의 사울이 아니라 <strong>내 안의 또 다른 사울</strong>이며, 겉사람 사울은 그것을 도려내는 도구였다는 것이다.<sup id="fnref:12"><a class="footnote-ref" href="#fn:12">12</a></sup></p>
+<p>🔴 <strong>이 대목은 오독되기 쉽다.</strong> "참고 견디라"는 말로 읽으면 학대 상황을 방치하게 된다. 그러나 같은 책이 제시하는 자기 보호 방법 세 가지 중 두 번째가 <strong>창 던지는 자들에게서 멀리 떨어지기</strong>이고,<sup id="fnref:13"><a class="footnote-ref" href="#fn:13">13</a></sup> 다윗도 결국 떠났다. 이 논의가 금지하는 것은 <strong>떠나는 것이 아니라 되던지는 것</strong>이다.</p>
+<p><strong>핵심 한 문장</strong>: 떠나되 창을 던지지 않는 자리가 있다 — 참고 남는 것도, 폭로하고 싸우는 것도 아니다.</p>
+<hr />
+<h2>6. 권위를 주장하는 것과 가지는 것은 반비례한다</h2>
+<p>아둘람 동굴의 육백 명은 이 명제가 실물로 드러나는 장면이다. 다윗은 그들을 이끌지 않았고 규칙도 정하지 않았으며 <strong>권위를 언급한 적도 복종을 가르친 적도 없는데</strong> 모두가 순종했다.<sup id="fnref:14"><a class="footnote-ref" href="#fn:14">14</a></sup></p>
+<p>노병의 입으로 명제화된 문장은 더 직설적이다.</p>
+<blockquote>
+<p><strong>권위는 반역을 낳는다.</strong><sup id="fnref:15"><a class="footnote-ref" href="#fn:15">15</a></sup></p>
+</blockquote>
+<p>순종과 굴복을 강조하는 사람은 실은 두 가지 두려움을 드러낼 뿐이라는 것이다 — 자신이 참으로 세움받았는지에 대한 불안, 그리고 반역에 대한 공포. 같은 자리에서 법치주의도 <strong>지도자가 고난을 피하려고 만든 수단</strong>으로 규정된다.<sup id="fnref:16"><a class="footnote-ref" href="#fn:16">16</a></sup></p>
+<p>그리고 참된 권위의 정의가 이렇게 내려진다.</p>
+<blockquote>
+<p>하나님으로부터 온 권위를 가진 사람은 <strong>도전자를 두려워하지도 방어하지도 않으며, 자리에서 물러나도 개의치 않는다.</strong><sup id="fnref:17"><a class="footnote-ref" href="#fn:17">17</a></sup></p>
+</blockquote>
+<p>이것은 §3의 마가복음 논지와 정확히 만난다. 질문을 견디는 권위, 도전을 두려워하지 않는 권위. 반대로 <strong>방어의 강도가 정당성의 결핍을 드러낸다.</strong></p>
+<hr />
+<h2>7. 은사가 있다는 것이 인정받았다는 뜻은 아니다</h2>
+<p>권위 문제에서 가장 자주 발생하는 혼란은 능력과 인정을 동일시하는 데서 온다. "저렇게 쓰임받는 사람인데" 하는 문장이 그것이다.</p>
+<p>에드워즈는 이 혼란을 신학적으로 해체한다. 하나님의 능력은 <strong>겉사람만 만지고 속사람에는 영향을 주지 않으며</strong>,<sup id="fnref:18"><a class="footnote-ref" href="#fn:18">18</a></sup> 능력만을 구하는 기도는 <strong>내면 성장이라는 긴 여정을 건너뛰는 지름길</strong>이다.<sup id="fnref:19"><a class="footnote-ref" href="#fn:19">19</a></sup> 더 나아가 하나님은 때로 합당치 않은 그릇에게 <strong>더 큰 능력을 주셔서</strong> 그 내면이 드러나게 하신다고 본다.</p>
+<p>결정적인 것은 다음 명제다. <strong>은사는 한 번 주어지면 회수되지 않는다.</strong><sup id="fnref:20"><a class="footnote-ref" href="#fn:20">20</a></sup> 그러므로 무너진 뒤에도 능력은 남아 있고, 능력의 크기로 속사람을 추정하는 것은 범주 오류가 된다.</p>
+<p>그가 사울을 괴물로 그리지 않는 이유도 여기 있다. 사울은 혈통이 뛰어났고 무에서 군대를 일으켰으며 <strong>하나님의 영으로 충만했고 선지자이기도 했다.</strong> 오늘의 기준으로 보면 완벽한 이상형이었다.<sup id="fnref:21"><a class="footnote-ref" href="#fn:21">21</a></sup> 무너진 지점은 단 하나, 질투였다.</p>
+<p><strong>핵심 한 문장</strong>: 사울이 처음부터 악인이었다면 이 이야기는 「악한 지도자를 알아보는 법」이 되었을 것이다. 그가 이상적 지도자였기 때문에 이야기는 「나도 그렇게 될 수 있다」가 된다.</p>
+<hr />
+<h2>8. ★ 권위는 안에 두는가 밖에 두는가</h2>
+<p>앞의 논의가 인격의 층위라면, 같은 저자의 다른 책은 구조의 층위에서 같은 문제를 다룬다.</p>
+<p>에드워즈는 사도행전과 서신서를 연대기로 배열해, 신약에서 장로직이 <strong>자립적 제도가 아니라 순회 교회개척자에게 매달린 파생 직분</strong>이었다고 주장한다. 이 논의에서 권위 문제와 직결되는 명제는 하나다.</p>
+<blockquote>
+<p>가장 영향력 있는 리더십이 그 지역교회 안에 뿌리내리고 있다면 그 교회는 <strong>재앙을 예비해둔 것이나 다름없다.</strong> 리더십인 당신이 곧 그 교회이므로, <strong>당신은 그 문제의 일부</strong>다.<sup id="fnref:22"><a class="footnote-ref" href="#fn:22">22</a></sup></p>
+</blockquote>
+<p>따라서 임시적 수단은 있어도 <strong>장기적인 수단은 존재할 수 없고</strong>, 교회가 위기에 처했을 때 살려낼 도움은 <strong>밖에서 왔다</strong>는 것이다.<sup id="fnref:23"><a class="footnote-ref" href="#fn:23">23</a></sup></p>
+<p>이 논지는 <span class="wl-dead" title="위키 내부 링크">함선네</span>의 외부사역자 논의가 인용하는 자리이며, 선교단체와 파라처치의 자기 이해를 다시 쓰게 만든다 — 초지역 조직은 교회를 돕는 보조기구가 아니라 잃어버린 기능의 복원이라는 자리매김이 여기서 나온다.</p>
+<blockquote>
+<p>⚖️ <strong>그러나 반대 방향의 논지가 있다.</strong> <a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EC%99%80%EB%82%B4%EB%B6%80%EC%9D%B8_%EA%B6%8C%EC%84%B1%EC%B0%AC%EC%99%B8/">선교와내부인_권성찬외</a>에서 권성찬은 <strong>내부자의 영역을 외부자가 결정하는 것은 월권</strong>이라고 못 박는다. 한쪽은 "내부자는 문제의 일부이므로 외부자가 필요하다"고 하고, 다른 쪽은 "외부자가 내부자를 판정하는 것이 문제다"라고 한다. <strong>둘 다 옳게 들리는데 방향이 반대다.</strong> 두 논의 모두 「결정하는 외부자」와 「거드는 외부자」를 가르는 선을 긋지 않는다.</p>
+</blockquote>
+<hr />
+<h2>9. 감독자는 감독받아야 한다</h2>
+<p>권위 문제의 실무적 해법은 판정이 아니라 <strong>절차</strong>에 있다. 개인은 판정할 수 없지만 공동체는 절차를 가질 수 있기 때문이다.</p>
+<p>에드워즈가 신약에서 찾아낸 절차는 두 가지다. 첫째, 장로직은 영구직이 아니라 <strong>순환(rotation)</strong>되는 구조였다.<sup id="fnref:24"><a class="footnote-ref" href="#fn:24">24</a></sup> 둘째, 누군가를 전체 회중 앞으로 끌어내 책망하는 데까지 나아간 경우는 신약에 <strong>단 두 가지</strong>뿐이었다 — <strong>간음, 그리고 장로.</strong><sup id="fnref:25"><a class="footnote-ref" href="#fn:25">25</a></sup></p>
+<blockquote>
+<p><strong>감독하는 자(watcher)는 반드시 감독받아야 한다(be watched).</strong><sup id="fnref:26"><a class="footnote-ref" href="#fn:26">26</a></sup></p>
+</blockquote>
+<p>이 두 항목은 사실 한 사건의 두 얼굴이다. 직분이 영구직이 되는 것과 그 직분을 책망할 주체가 사라지는 것은 함께 일어난다. <strong>외부에 매인 직분만이 순환할 수 있다.</strong></p>
+<p>거버넌스 언어로 옮기면 이렇게 된다. 이사회의 기능을 듣기·분별·변화로 정리한 <span class="wl-dead" title="위키 내부 링크">거버넌스강의</span>의 틀에, 이 논의는 네 번째 축을 더한다 — <strong>평가받는 구조</strong>. 평가 절차의 부재는 운영상의 미비가 아니라 <strong>신학적 결함</strong>이 된다.</p>
+<hr />
+<h2>10. 순종의 한계 — 그럼에도 세워진 질서</h2>
+<p>여기까지 읽으면 권위를 의심하는 쪽으로 기울기 쉽다. 그러나 같은 지식 기반의 다른 축은 정반대 방향을 향한다. 균형을 위해 나란히 놓는다.</p>
+<p>문대원 목사는 가정을 <strong>하나님이 설계하신 권위의 첫 번째 학교</strong>로 규정한다. 권위와 질서는 창조 질서이며, 순종은 현실적 손익 계산이 아니라 그 설계에 응답하는 규범적 행위라는 것이다.<sup id="fnref:27"><a class="footnote-ref" href="#fn:27">27</a></sup> 순종을 배우지 못한 사람이 권위를 잘 행사할 수 있다는 보장은 어디에도 없다.</p>
+<p>두 축은 실제로 충돌하지 않는다. 한쪽은 <strong>순종을 배우는 자리</strong>를 말하고 다른 쪽은 <strong>순종이 남용되는 자리</strong>를 말한다. 다만 현장에서는 이 둘이 같은 언어를 쓰기 때문에 구별이 어렵다. 그래서 <a class="wl" href="../../t/%EC%88%9C%EC%A2%85/">순종</a>이 제시하는 한계 조항이 필요하다 — <strong>사람보다 하나님께.</strong></p>
+<p>그 한계선이 그어져 있지 않은 순종 교육은, 아무리 성경적 언어로 되어 있어도 §2가 말한 권위주의의 재료가 된다.</p>
+<p><strong>핵심 한 문장</strong>: 권위를 세우는 가르침과 권위를 견제하는 가르침은 반대가 아니다. 둘 중 하나만 있을 때 각각 무너진다.</p>
+<hr />
+<h2>핵심 인사이트</h2>
+<ol>
+<li><strong>권위는 받은 것이므로 조건이 붙는다.</strong> 성경의 권위 어휘는 일관되게 수동태이며, 자기 것이 되는 순간 다른 것이 된다.</li>
+<li><strong>권위주의는 나쁜 의도가 아니라 「점검 없음」의 얼굴로 온다.</strong> 그래서 스스로는 알아차리지 못한다.</li>
+<li><strong>권위는 질문을 견딜 수 있어야 한다.</strong> 답을 회피하는 자리에 권위는 서지 못하며, 방어의 강도가 정당성의 결핍을 드러낸다.</li>
+<li>★ <strong>정당성은 외부에서 판정할 수 없다.</strong> 하나님은 아시지만 말씀하지 않으신다. 그리고 직접 판정하신 사건에서조차 사람들은 승복하지 않았다.</li>
+<li>★ <strong>판정 불가능성은 자기 검열로 전환된다.</strong> 알 수 있는 것은 시간과 내 반응뿐이며, 그 반응이 나 자신을 드러낸다.</li>
+<li><strong>금지되는 것은 떠남이 아니라 되던짐이다.</strong> 떠나되 창을 던지지 않는 자리가 있다.</li>
+<li><strong>권위를 주장하는 것과 가지는 것은 반비례한다.</strong> "권위는 반역을 낳는다."</li>
+<li><strong>은사와 인정은 다르다.</strong> 능력은 겉사람만 만지고 은사는 회수되지 않으므로, 무너진 뒤에도 능력은 남는다.</li>
+<li>★ <strong>정당성 문제의 해법은 판정이 아니라 절차다.</strong> 개인은 판정할 수 없지만 공동체는 순환과 평가를 가질 수 있다.</li>
+<li><strong>권위를 세우는 가르침과 견제하는 가르침은 함께 있어야 한다.</strong> 한쪽만으로는 각각 무너진다.</li>
+</ol>
+<hr />
+<h2>미해결 질문</h2>
+<ol>
+<li><strong>「결정하는 외부자」와 「거드는 외부자」는 어떻게 구별되는가.</strong> §8의 두 논지가 정면으로 어긋나는 지점이며, 어느 쪽도 그 선을 긋지 않는다. 실무에서는 외부 이사·외부 감사·외부 조정자의 권한 범위를 정하는 문제로 나타난다.</li>
+<li><strong>감독의 사슬은 어디서 끝나는가.</strong> 장로를 감독할 주체로 교회개척자를 세우면, 교회개척자를 감독할 주체는 누구인가. 사슬이 한 칸 올라갔을 뿐 최상단은 여전히 비어 있는 것 아닌가.</li>
+<li><strong>판단 불가능성이 위를 향해서만 적용되는 비대칭.</strong> 지도자가 사울인지 다윗인지는 알 수 없다면서, 도전자가 압살롬인지 아닌지는 어떻게 확신하는가. 「반역자는 예외 없이 무가치하다」는 단정은 §4의 원칙과 긴장한다.</li>
+<li><strong>아무것도 하지 않음과 방관은 어떻게 갈리는가.</strong> §5의 논의는 <strong>자신이 피해자일 때</strong>를 전제한다. 그러나 실무에서 이 물음은 대부분 <strong>제3자로서</strong> 만나며, 그때 무행동은 방관이 된다.</li>
+<li><strong>개인 윤리로는 다음 피해자를 막지 못한다.</strong> 떠나라·되던지지 마라는 처방은 개인에게 옳지만 구조를 바꾸지 않는다. §8·§9의 구조적 처방이 그 공백을 메우는가, 아니면 두 층위 모두 같은 공백을 가지는가.</li>
+<li><strong>「하나님은 말씀하지 않으신다」는 명제는 어디까지 확장되는가.</strong> 이것이 참이라면 공동체의 분별(「성령과 우리」, 행 15:28)은 무엇인가. 개인에게는 침묵하시고 공동체에는 말씀하신다면, 그 차이의 근거는 무엇인가.</li>
+</ol>
+<hr />
+<h2>인용·출처</h2>
+<hr />
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EA%B6%8C%EB%A0%A5/">권력</a> — 힘 자체의 속성과 엑수시아/뒤나미스 구별. §5가 이 페이지의 전사(前史)에 해당한다</li>
+<li><a class="wl" href="../../t/%EC%88%9C%EC%A2%85/">순종</a> — 따르는 쪽의 응답과 그 한계(「사람보다 하나님께」)</li>
+<li><a class="wl" href="../../t/%EB%A6%AC%EB%8D%94%EC%8B%AD/">리더십</a> — 리더 형성의 사슬</li>
+<li><a class="wl" href="../../t/%EC%84%AC%EA%B9%80/">섬김</a> · <a class="wl" href="../../t/%EA%B2%B8%EC%86%90/">겸손</a> · <a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%B2%B4/">공동체</a></li>
+<li><a class="wl" href="../../t/%EA%B1%B0%EB%B2%84%EB%84%8C%EC%8A%A4/">거버넌스</a> — §9의 「평가받는 구조」가 이어지는 자리</li>
+<li><a class="wl" href="../../b/%EC%84%B8%EC%99%95%EC%9D%B4%EC%95%BC%EA%B8%B0_%EC%A7%84%EC%97%90%EB%93%9C%EC%9B%8C%EC%A6%88/">세왕이야기_진에드워즈</a> — 인격의 층위</li>
+<li><a class="wl" href="../../b/%EC%9E%A5%EB%A1%9C%EC%A7%81%EC%9D%84%EB%8B%A4%EC%8B%9C%EC%83%9D%EA%B0%81%ED%95%98%EB%8B%A4/">장로직을다시생각하다</a> — 구조의 층위</li>
+<li><a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EC%99%80%EB%82%B4%EB%B6%80%EC%9D%B8_%EA%B6%8C%EC%84%B1%EC%B0%AC%EC%99%B8/">선교와내부인_권성찬외</a> — §8의 반대 논지</li>
+<li><span class="wl-dead" title="위키 내부 링크">진에드워즈</span> · <span class="wl-dead" title="위키 내부 링크">유승용</span> · <span class="wl-dead" title="위키 내부 링크">윤명숙</span> · <span class="wl-dead" title="위키 내부 링크">문대원</span></li>
+<li><span class="wl-dead" title="위키 내부 링크">거버넌스강의</span></li>
+</ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><span class="wl-dead" title="위키 내부 링크">2016_부모에게주신권위</span> — <span class="wl-dead" title="위키 내부 링크">단4</span>:34 강해.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>같은 설교, 핵심 명제 1.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p><span class="wl-dead" title="위키 내부 링크">2022_리더십피택자교육</span> — 「인격 → 존경심 → 권위 → 영향력」 사슬.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p><span class="wl-dead" title="위키 내부 링크">2016_부모에게주신권위</span>, 핵심 명제 2.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>같은 설교, 핵심 명제 3.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p><span class="wl-dead" title="위키 내부 링크">2023_유승용_그리스도_예수의_권위</span> — <span class="wl-dead" title="위키 내부 링크">막11</span>:11-33 강해.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p>같은 설교, 권위 논쟁(11:27-33) 분석.&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:8">
+<p><a class="wl" href="../../b/%EC%84%B8%EC%99%95%EC%9D%B4%EC%95%BC%EA%B8%B0_%EC%A7%84%EC%97%90%EB%93%9C%EC%9B%8C%EC%A6%88/">세왕이야기_진에드워즈</a>, p.36 · p.60.&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:9">
+<p>같은 책, p.113.&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:10">
+<p>같은 책, p.118 — <span class="wl-dead" title="위키 내부 링크">민16</span> 고라의 반역.&#160;<a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:11">
+<p>같은 책, p.61.&#160;<a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn:12">
+<p>같은 책, p.37~38.&#160;<a class="footnote-backref" href="#fnref:12" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+<li id="fn:13">
+<p>같은 책, p.34 — 자기 보호 세 방법(기술을 배우지 않기 · 멀리 떨어지기 · 입 다물기).&#160;<a class="footnote-backref" href="#fnref:13" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+</li>
+<li id="fn:14">
+<p>같은 책, p.47.&#160;<a class="footnote-backref" href="#fnref:14" title="Jump back to footnote 14 in the text">&#8617;</a></p>
+</li>
+<li id="fn:15">
+<p>같은 책, p.65.&#160;<a class="footnote-backref" href="#fnref:15" title="Jump back to footnote 15 in the text">&#8617;</a></p>
+</li>
+<li id="fn:16">
+<p>같은 책, p.64.&#160;<a class="footnote-backref" href="#fnref:16" title="Jump back to footnote 16 in the text">&#8617;</a></p>
+</li>
+<li id="fn:17">
+<p>같은 책, p.66.&#160;<a class="footnote-backref" href="#fnref:17" title="Jump back to footnote 17 in the text">&#8617;</a></p>
+</li>
+<li id="fn:18">
+<p>같은 책, p.12.&#160;<a class="footnote-backref" href="#fnref:18" title="Jump back to footnote 18 in the text">&#8617;</a></p>
+</li>
+<li id="fn:19">
+<p>같은 책, p.56.&#160;<a class="footnote-backref" href="#fnref:19" title="Jump back to footnote 19 in the text">&#8617;</a></p>
+</li>
+<li id="fn:20">
+<p>같은 책, p.57~58.&#160;<a class="footnote-backref" href="#fnref:20" title="Jump back to footnote 20 in the text">&#8617;</a></p>
+</li>
+<li id="fn:21">
+<p>같은 책, p.53~55.&#160;<a class="footnote-backref" href="#fnref:21" title="Jump back to footnote 21 in the text">&#8617;</a></p>
+</li>
+<li id="fn:22">
+<p><a class="wl" href="../../b/%EC%9E%A5%EB%A1%9C%EC%A7%81%EC%9D%84%EB%8B%A4%EC%8B%9C%EC%83%9D%EA%B0%81%ED%95%98%EB%8B%A4/">장로직을다시생각하다</a>, p.151.&#160;<a class="footnote-backref" href="#fnref:22" title="Jump back to footnote 22 in the text">&#8617;</a></p>
+</li>
+<li id="fn:23">
+<p>같은 책, p.178.&#160;<a class="footnote-backref" href="#fnref:23" title="Jump back to footnote 23 in the text">&#8617;</a></p>
+</li>
+<li id="fn:24">
+<p>같은 책, p.129 · p.131.&#160;<a class="footnote-backref" href="#fnref:24" title="Jump back to footnote 24 in the text">&#8617;</a></p>
+</li>
+<li id="fn:25">
+<p>같은 책, p.137.&#160;<a class="footnote-backref" href="#fnref:25" title="Jump back to footnote 25 in the text">&#8617;</a></p>
+</li>
+<li id="fn:26">
+<p>같은 책, p.137.&#160;<a class="footnote-backref" href="#fnref:26" title="Jump back to footnote 26 in the text">&#8617;</a></p>
+</li>
+<li id="fn:27">
+<p><span class="wl-dead" title="위키 내부 링크">2026-05-10_순종을배우는곳</span> — <span class="wl-dead" title="위키 내부 링크">엡6</span>:1-4 강해.&#160;<a class="footnote-backref" href="#fnref:27" title="Jump back to footnote 27 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/실천신학</span><span>#topic/권위</span><span>#topic/권위주의</span><span>#topic/정당성</span><span>#topic/순종</span><span>#topic/리더십</span><span>#topic/거버넌스</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
