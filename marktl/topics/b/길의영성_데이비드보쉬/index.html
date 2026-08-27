@@ -1,0 +1,544 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>길의 영성 — 데이비드 보쉬 (한국해외선교회출판부) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">선교</span><span class="author">데이비드보쉬</span><span class="date">2026-08-27</span></div>
+  <h1 class="note-title">길의 영성 — 데이비드 보쉬 (한국해외선교회출판부)</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/%EA%B8%B8%EC%9D%98%EC%98%81%EC%84%B1_%EB%8D%B0%EC%9D%B4%EB%B9%84%EB%93%9C%EB%B3%B4%EC%89%AC/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<blockquote>
+<p>부제: 모든 그리스도인을 위한 선교적 영성. 원제 <em>A Spirituality of the Road</em>(1979). 김동화·이길표 공역.
+<span class="wl-dead" title="위키 내부 링크">보쉬</span>가 『변화하는 선교』(1991)로 선교학의 표준을 세우기 <strong>12년 전</strong>에 쓴 얇은 책으로, 패러다임 분석이 아니라 <strong>선교사의 무너짐</strong>을 다룬다. 뼈대는 고린도후서 한 권이다.
+📷 표시(밑줄·<strong>동그라미</strong>·형광펜)를 페이지 사진 95장에서 원문 그대로 전사한 독서 노트. 인쇄 페이지 93면 수록.</p>
+</blockquote>
+<hr />
+<h2>요약 — 주제별 상세 정리</h2>
+<h3>1. 왜 '길의 영성'인가 — 도착지가 아니라 여정</h3>
+<p>책 제목이 곧 논지다. 보쉬는 영성을 세상에서 물러나 도달하는 <strong>상태</strong>가 아니라, 길 위에서 유지되는 <strong>삶의 방식</strong>으로 재정의한다.</p>
+<blockquote>
+<p>"영성(spirituality)이라는 용어에는 일상의 거룩함, 즉 거룩과 세속의 조화, 실천 가능하고 지속 가능하며 의미 있는 삶의 방식이라는 뜻이 담겨 있다." (p.8)</p>
+<p>"도착지에 머무르는 것(수도원의 영성)이 아니라 여정 가운데 있는 <strong>영성(길의 영성)</strong>을 추구하였다" (p.9)</p>
+<p>"그의 영성은 수도원의 영성이 아니라 길의 영성인 것이다." (p.32)</p>
+</blockquote>
+<p>문제는 현실의 선교사들이 정반대의 정의를 갖고 산다는 데 있다. 보쉬가 인용하는 설문에서 선교사들이 9가지 영역 중 가장 어렵다고 꼽은 것이 <strong>"만족스러운 경건의 삶을 사는 것"</strong>(p.16)이었고, 이는 교단을 가리지 않았다 — "메노나이트 선교사들도 장로교 선교사들과 마찬가지로 자신들이 원한 것만큼 영적이지 않다고 생각한다"(p.18). 보쉬는 그 좌절의 원인이 개인의 게으름이 아니라 <strong>정의 자체의 오류</strong>라고 본다.</p>
+<blockquote>
+<p>"영성이나 경건한 삶은 세상과 거리를 둔 채 자신을 충전하여 다시 세상으로 나가는 것을 의미하는 듯 보인다. 그래서 천사의 음식만을 먹으며 살기 원하고, 이 세상의 일들에는 가능한 관여하지 않으려 한다." (p.19)</p>
+<p>"나는 반드시 영성이란, 다른 방식으로 재정의되어야 한다고 생각한다." (p.20)</p>
+</blockquote>
+<hr />
+<h3>2. 세 모델 — 천로역정 · 요나 · 십자가</h3>
+<p>보쉬는 <span class="wl-dead" title="위키 내부 링크">뉴비긴</span>의 두 모델을 가져와 검토한 뒤, <strong>둘 다 폐기</strong>하고 제3의 모델을 세운다. 이 대목이 책의 구조적 심장이다.</p>
+<table>
+<thead>
+<tr>
+<th>모델</th>
+<th>방향</th>
+<th>성읍(세상)의 위치</th>
+<th>보쉬의 판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>천로역정 모델</strong></td>
+<td>세상 → 밖으로</td>
+<td>'사악한 성읍'에서 탈출</td>
+<td>"출발점이 세상일에 관여하지 않고 도피하는 것"이라 부적합</td>
+</tr>
+<tr>
+<td><strong>요나 모델</strong></td>
+<td>밖 → 세상 안으로</td>
+<td>성읍 한복판·혼잡함 속으로 보내심</td>
+<td>보완재로 제시되지만 그것으로 부족</td>
+</tr>
+<tr>
+<td><strong>십자가 모델</strong></td>
+<td>두 방향이 <strong>하나의 운동</strong></td>
+<td>세상과 맞섬 + 세상을 향한 내어줌</td>
+<td><strong>둘 다 이것으로 대체되어야 한다</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"레슬리 뉴비긴(Lesslie Newbigin)은 이것을 '천로역정 모델'이라고 부른다." (p.20)</p>
+<p>"'천로역정 모델'은 출발점이 세상일에 관여하지 않고 도피하는 것이기에 영성이 의미하는 바를 제대로 묘사한다고 볼 수 없다. 이 모델은 뉴비긴이 말하는 '요나 모델'로 보완되어야 한다." (p.22)</p>
+<p>"두 모델 모두 제3의 모델인 <strong>십자가의 모델로</strong> 대체되어야 한다." (p.25)</p>
+</blockquote>
+<p>십자가가 모델인 이유는 그것이 수직과 수평의 도해여서가 아니라, <strong>분리와 보냄이 같은 한 사건</strong>이기 때문이다. 보쉬는 영·육 이원론도 같은 논리로 거부한다 — "'육체'와 '영'을 서로 분리된 두 가지로 다루지 않는다… 외적 영역은 세상적이며, 내적 영역은 세상을 초월하는 것이라 구분해서는 안 된다"(p.21). 그리고 오늘의 교회가 한 극단에서 반대 극단으로 옮겨갔을 뿐임을 지적한다.</p>
+<blockquote>
+<p>"아직도 단성론자처럼 이쪽 아니면 저쪽을 택하는데, <strong>영성을</strong> 전적인 세상으로부터의 도피인 것처럼 정의를 내렸다가, 지금은 오로지 세상에 대한 적극적인 관여만이 전부인 듯 정의한다." (p.24)</p>
+</blockquote>
+<hr />
+<h3>3. 핵심 인사이트: 균형이 아니라 <strong>긴장</strong>이다</h3>
+<p>이 책에서 가장 자주 오해되는 지점을 보쉬가 직접 못 박는다. 그는 "기도와 행동의 균형"이라는 익숙한 처방을 <strong>자기기만</strong>으로 부른다.</p>
+<blockquote>
+<p>"그러나 이러한 균형은 새로운 형태의 자기기만이 되기 쉽다." (p.25)</p>
+<p>"하나의 움직임이다. 그러므로 둘 사이에는 <strong>균형이</strong> 아닌 <strong>긴장이</strong> 필요한 것이다. 즉 평형을 이루는 것이 아니라는 말이다." (p.25)</p>
+<p>"더 정확히 말하면, 세상으로부터 구별되라는 부르심을 받은 교회는 세상으로 나아가고, 그렇게 세상으로 보냄을 받은 교회는 세상으로부터 그 자신을 구별되게 해야 한다는 것이다." (p.25)</p>
+</blockquote>
+<p>균형은 두 힘을 반씩 나눠 평형점에 멈추는 것이고, 긴장은 두 힘이 동시에 최대로 걸린 채 하나로 작동하는 것이다. 그래서 보쉬의 결론은 절충이 아니라 <strong>동시성</strong>이다.</p>
+<blockquote>
+<p>"기도하기 위해 사랑을 멈출 필요도 없고, 사랑하기 위해 기도를 멈출 필요도 없다. 영성이란 온전히 스며들어 가는 것이다." (p.22)</p>
+</blockquote>
+<p>이 원리는 책 후반에서 그대로 반복된다 — 냉담과 과도한 관심 사이에서 "적절한 균형을 취하는 데 있는 것이 <strong>아니라</strong>"(p.114), "모든 것이 우리 하기에 달린 것처럼 전심으로 우리 자신을 다 내어주면서 동시에 모든 것이 주님께 달린 것처럼 우리의 모든 염려를 주님께 맡기는 데 있다"(p.115).</p>
+<hr />
+<h3>4. 고린도후서를 영성 문서로 읽기 — 교리가 없는 서신</h3>
+<p>보쉬가 고린도후서를 택한 이유는 그것이 신학적으로 풍성해서가 아니라, 오히려 <strong>교리가 비어 있어서</strong>다.</p>
+<blockquote>
+<p>"여기서 놀랄만한 점은 이 서신에는 교리적인 것에 관한 논의가 전혀 발견되지 않는다는 것이다. 그러므로 기독교 신학 발전에 있어서 고린도후서는 로마서, 갈라디아서, 고린도전서에 필적할 만한 기여도는 전혀 없다고 봐도 무관하다." (p.41)</p>
+<p>"고린도후서의 중심 주제는 바울의 사도로서의 <strong>사역 정당성</strong>으로… 다른 관점에서 본다면 이 서신의 중심 주제는 선교사의 진정한 영성 탐구라고 할 수 있다." (p.41)</p>
+</blockquote>
+<p>배경은 오늘의 상황과 겹친다. 보쉬는 1970년대의 <strong>선교 중단(moratorium) 논쟁</strong>과 "선교사는 무엇을 하는 사람이며 무엇을 위해 존재하는가"라는 정당성 위기(p.28)를 언급하며, 국제선교연구협회(IAMS)가 네 번째 콘퍼런스 주제를 "선교에서의 신뢰와 영성"으로 정한 것을 그 대응으로 읽는다(p.30). 그리고 그 원형을 고린도에서 찾는다.</p>
+<blockquote>
+<p>"일찍이 선교사업이 논쟁거리가 되고 선교사가 도전받는 일이 있었는데, 그것은 고린도에서였다." (p.31)</p>
+<p>"그들은 철저히 무시되고 폄하되었다. 하지만 바울의 경우 이 모든 것들로 인하여 낙담하거나 자기연민에 빠지지 않았다는 것이 고린도후서의 핵심 메시지 중 하나이다." (p.31)</p>
+</blockquote>
+<p>여기서 보쉬는 중요한 분별을 하나 세운다. 반대에 부딪히는 일이 곧 신실함의 증거는 아니라는 것이다.</p>
+<blockquote>
+<p>"많은 경우, 우리가 반대에 직면하게 되는 것은 우리가 선포하려는 복음과는 전혀 상관이 없고, 자신의 됨됨이와 관련이 있다." (p.44)</p>
+<p>"그렇지만 바울은 자신의 <strong>완고함과</strong> <strong>죄악으로</strong> 인해 받게 되는 <strong>고난과</strong> 예수 그리스도에 대한 <strong>충성에</strong>서 비롯된 <strong>고난을</strong> <strong>구분할</strong> 수 있었다." (p.44)</p>
+</blockquote>
+<hr />
+<h3>5. 선교사가 무너지는 두 자리 — 절제 상실과 과잉활동</h3>
+<p>보쉬는 실패를 도덕적으로 훈계하지 않고 <strong>두 방향의 이탈</strong>로 구조화한다.</p>
+<blockquote>
+<p>"하나는 과도한 활동이고, 다른 하나는 절제하지 못하는 것(loss of discipline)이다." (p.33)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>이탈 방향</th>
+<th>증상</th>
+<th>책 속 근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>절제 상실</strong></td>
+<td>판에 박힌 일, 보고서 얼버무림, 편안한 틀로 미끄러짐</td>
+<td>실패 원인의 약 1/4(22%)이 "자기절제 부족"으로 묶임 (p.34)</td>
+</tr>
+<tr>
+<td><strong>과잉활동</strong></td>
+<td>"쉬지 않고 자신을 혹독하게 몰아붙임"</td>
+<td>p.37</td>
+</tr>
+<tr>
+<td><strong>제3의 길</strong></td>
+<td>내려놓음 + 안식이 동시에 걸린 "부드러운 긴장감"</td>
+<td>p.37</td>
+</tr>
+</tbody>
+</table>
+<p>절제 상실의 종착점을 보쉬는 선배 선교사의 냉소적인 말로 보여 준다.</p>
+<blockquote>
+<p>"첫 임기 동안에 당신은 거기서 기독교 선교사로 살 것입니다. 두 번째 임기 동안에는 그리스도인으로 살게 될 것이고, 세 번째 임기 동안에는 그냥 외국에서의 삶을 즐기는 또 한 사람의 미국인으로 살게 될 것입니다." (p.35)</p>
+<p>"그러므로 우리가 직면하는 첫 번째 위험은 자제력을 상실하고 편안히 기름칠 잘 된 틀 속으로 미끄러져 들어가는 것이다." (p.35)</p>
+</blockquote>
+<p>반대편 과잉활동의 해법으로 보쉬가 드는 근거는 예수의 두 말씀이 <strong>한 입에서 나왔다</strong>는 사실이다.</p>
+<blockquote>
+<p>"'누구든지 나를 따라오려거든 자기를 부인하고 자기 십자가를 지고 나를 따를 것이니라'(마 16:24)라고 말씀하신 예수님은 또한 '수고하고 무거운 짐 진 자들아 다 내게로 오라 내가 너희를 쉬게 하리라'(마 11:28)고 말씀하시기도 하였다." (p.37)</p>
+</blockquote>
+<p>여기에 <strong>기도가 회피의 도구가 되는</strong> 경우에 대한 날카로운 관찰이 붙는다.</p>
+<blockquote>
+<p>"선교사들은 책임에서 벗어나기 위해 흔히 기도를 사용하는 경향이 있다. 우리는 심각한 문제가 생기면 너무나 쉽게 '내가 그 일에 대해 기도드렸으니 이제 하나님 손에 달렸어'라고 말한다. 이것은 아주 경건하고 순종적인 것처럼 보이지만, 실제로는 현실에 직면하고 싶지 않은 마음을 은폐하려는 것일 수도 있다." (p.27)</p>
+<p>"비천해 보이는 활동에 가장 진실한 경건이 스며들 수 있고, 가장 열성적인 기도가 전적으로 세속적일 수도 있다." (p.27)</p>
+</blockquote>
+<hr />
+<h3>6. 잡상인이냐 향기냐 — 결과주의와 승리주의 비판</h3>
+<p>바울이 대적들에게 붙인 이름은 <strong>잡상인</strong>이다.</p>
+<blockquote>
+<p>"바울은 그들을 가리켜 '잡상인' 즉 '하나님의 말씀을 팔아서 먹고 살아가는 장사꾼'이라 칭했다(고후 2:17, 새번역)." (p.48)</p>
+<p>"잡상인의 전형적인 사고방식은 사람들의 필요나 질문에는 관심이 없고 오직 자기가 팔려는 상품에만 관심이 있는 것이다." (p.50)</p>
+</blockquote>
+<p>보쉬는 이 진단을 오늘의 선교 보고 문화로 곧장 옮긴다.</p>
+<blockquote>
+<p>"그래서 우리는 구체적인 결과를 보고할 수 없을 때나, 다른 선교사들의 사역 현장에서 일어난 것과 같은 기적이 일어나지 않을 때, 멋지고 극적인 일들 대신 황량함만이 도드라지게 남은 듯 보일 때 비참할 정도로 부끄러움을 느낀다." (p.50)</p>
+</blockquote>
+<p>코수케 코야마를 빌려 그 뿌리를 <strong>통제 욕구</strong>로 짚고(p.51), 유혹의 정체를 메시아 시험과 동일시한다.</p>
+<blockquote>
+<p>"선교사들이 받는 유혹은 예수님이 받으신 것과 같다. 즉 세상의 기대에 부응하는 인기 있는 메시아가 되는 것이다." (p.52)</p>
+<p>"그러나 고린도후서에서 바울은 진정한 기독교 영성은 초인적인 사람이나 기적과 같은 일에서가 아니라 일상적인 삶 속에서 발견된다고 주장한다." (p.52)</p>
+</blockquote>
+<p>바울이 든 무기 목록은 그래서 초라하다 — "인내, 진리, 사랑, 약함, 섬김, 겸손, 존중이라는 지극히 평범한 현실적인 무기"(p.53). 그 대신 보쉬는 '향기'라는 대안 은유를 제시하는데, 결정적으로 <strong>향은 희생과 짝</strong>이다(p.48). "기뻐하는 포로가 곧 향기로운 제사란 것이다"(p.48).</p>
+<p><strong>핵심 인사이트: '해답 신학'이 아니라 '관계 신학'.</strong></p>
+<blockquote>
+<p>"여기에서 우리가 보는 것은 <strong>'해답 신학'</strong>이 아닌 <strong>'관계 신학'</strong>이다." (p.57)</p>
+<p>"주여, 당신을 찾지 못한 채 해답을 얻기보다는 해답을 찾지 못해 문제가 해결되지 않더라도 당신을 찾는 편이 더 낫습니다" (p.55)</p>
+</blockquote>
+<p>같은 자리에서 보쉬는 <strong>'선교'(mission)와 '선전'(propaganda)의 구분이 결정적으로 중요하다</strong>고 말하고(p.58), 벧전 3:15의 그 유명한 변증 구절이 <strong>묻는 자가 있을 때 답하는 것</strong>임을 상기시킨다 — "이 사람들에게는 우리에게 없는 소망이 있구나!"라는 관찰이 먼저 있어야 질문이 생긴다(p.61).</p>
+<hr />
+<h3>7. 핵심 인사이트: 접촉점은 선교사 자신이다 — <strong>도구가 아니라 가지</strong></h3>
+<p>헨드릭 크레머가 『비기독교 세계에서의 기독교 메시지』에서 접촉점 개념에 도전한 뒤(p.65), 보쉬는 남는 접촉점이 하나뿐이라고 말한다.</p>
+<blockquote>
+<p>"이 하나의 <strong>접촉점</strong>이 바로 선교사의 <strong>성품</strong>과 <strong>태도</strong>이다. 선교사를 그러한 접촉점으로 삼는 것이 당황스러울지도 모른다. 그렇지만 그것은 사실이다." (p.66)</p>
+</blockquote>
+<p>이어지는 은유 교체가 이 책에서 가장 자주 인용될 만한 대목이다.</p>
+<table>
+<thead>
+<tr>
+<th>은유</th>
+<th>함의</th>
+<th>문제/미덕</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>통로·도구</strong></td>
+<td>전달자는 내용에 관여하지 않음</td>
+<td>"통로의 내부는 흘러가는 것이 무엇이든 전혀 영향받지 않는다" (p.68)</td>
+</tr>
+<tr>
+<td><strong>가지</strong>(요 15장)</td>
+<td>전달자가 수액을 흡수해 변화됨</td>
+<td>"가지는 뿌리와 줄기에 담겨 흘러오는 영양분의 힘을 흡수한다" (p.68)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"그러나 고린도후서 말씀처럼 그리스도인 자신이 전할 <strong>메시지의</strong> <strong>한 부분이</strong> 되어 개인적이면서 인격적인 참여를 강조한 곳은 신약성경 어디에도 찾을 수 없다." (p.68)</p>
+</blockquote>
+<p>그래서 준비도 달라진다 — 바울조차 "별로 알려지지 않은 상태로 <strong>15년 이상</strong> 지난 후에야 우리가 알고 있는 선교사가 되었다"(p.69). "신학적 준비만으로 끝내서는 안 된다. 심리적 준비 또는 선교사가 지녀야 할 자질을 갖추는 것(formation)도 필요하다"(p.70).</p>
+<p>그 자질이 시험받는 곳을 보쉬는 웃음기 없이 지목한다.</p>
+<blockquote>
+<p>"세상에서 가장 힘들고 어려운 것 중의 하나가 선교사들의 공동체이다!" (p.72)</p>
+<p>"선교사들은 종종 자신들의 '단호함'을 다음과 같이 표현한다. '나는 단호하고, 당신은 완고하며, 그는 고집불통이다.' 그렇지만 이 세 가지 표현은 사실상 모두 같은 의미이며 단지 감정적으로만 아주 다른 의미를 담고 있을 뿐이다." (p.72)</p>
+</blockquote>
+<p>한편 자기부인을 <strong>연기</strong>하는 것도 같은 무게로 경계된다. 자기 희생을 과시하다 곧 사역을 그만둔 사례(p.80)를 들며 보쉬는 가식적 순교자의 병리를 짚는다 — 자초한 불행은 남을 위태롭게 하고, 일이 잘못될 때 무죄 확신을 준다(p.80). 그 반대편의 좁은 길은 이렇다.</p>
+<blockquote>
+<p>"바울은 진정한 내려놓음이란 자기 확신과 거짓된 자기 부인 사이에 생긴 좁은 길에서 발견될 수 있음을 보여준다." (p.85)</p>
+<p>"복음이 신뢰를 얻기 위해서는 선교사 자신이 신뢰를 받아야 한다. 그렇지 않으면 그는 걸림돌이 될 것이다." (p.87)</p>
+</blockquote>
+<hr />
+<h3>8. 우리는 모두 거지다 — 동일시·상호의존, 그리고 스페어타이어</h3>
+<p>책의 후반부는 현지 교회와의 관계로 옮겨간다. 보쉬는 선교사가 넘는 경계를 손실이 아니라 <strong>모험</strong>으로 규정한다 — "선교학은 경이로움의 교회를 연구하는 학문이다"(p.92). 바울과 베드로·야고보의 차이도 경계를 넘었느냐로 설명한다(p.94).</p>
+<p>그러나 현실 진단은 냉정하다. 실패 원인 항목에 오른 <strong>"현지인들과 현지 동역자들에 대한 우월감을 버리지 못함"이 전체의 13%</strong>를 차지했다(p.96). 그 결과가 한 문장으로 요약된다.</p>
+<blockquote>
+<p>"선교사님은 우리를 주님 안에서만 사랑하는 것 같아요." (p.96)</p>
+</blockquote>
+<p>보쉬가 제시하는 처방은 자기 문화를 지우는 것이 <strong>아니다</strong>.</p>
+<blockquote>
+<p>"더 나아가 나는 우리의 태생(origins)을 잊어버리는 것은 불가능할 뿐만 아니라 불필요한 일이며 잘못된 것이라는 점을 덧붙이고 싶다." (p.99)</p>
+<p>"자신의 태생에 깊이 뿌리를 내리고 있을 때만 다른 민족에 속한 사람들과도 의미 있는 관계를 맺을 수 있다." (p.99)</p>
+</blockquote>
+<p>관계의 위치는 두 은유로 고정된다. 하나는 <strong>편지의 저자가 누구인가</strong>이고, 다른 하나는 <strong>스페어타이어</strong>다.</p>
+<blockquote>
+<p>"바울은 자신이 이 편지를 썼다고 주장하지 않는다. 그는 이 편지의 저자는 그리스도이시며, 살아계신 하나님의 영으로 편지를 직접 쓰셨다고 말한다." (p.101)</p>
+<p>"고린도 교회에 보내는 이 편지에서 바울은 운전자보다는 스페어타이어 같은 역할을 한다." (p.104)</p>
+</blockquote>
+<p><strong>핵심 인사이트: 일방향 전달은 결과만 넘겨주고 여정을 빼앗는다.</strong></p>
+<blockquote>
+<p>"우리는 그들이 어떻게 행동하고, 무엇을 해야 하며, 어떻게 믿어야 하는지 또한, 무엇을 그만둘지를 정확하게 말해 준다. 주의 깊게 준비된 복음이라는 처방을 하는 것이다." (p.106)</p>
+<p>"그러나 이것이 바로 문제의 핵심이다. 그들이 이 모든 것을 우리와 함께 경험할 기회를 거의 주지 않는다는 것이다. 그러니 탐색하고 찾아가는 발견의 여정을 우리와 함께 하지 않는다. 결과만 받을 뿐이다." (p.106)</p>
+</blockquote>
+<p>그래서 나중에 그들이 무너질 때 책임 소재를 되묻는다 — "책임이 그들에게 있는가 아니면 <strong>우리</strong>에게 있는 것인가?"(p.108). 대안은 아프리카 속담과 거지 비유로 제시된다.</p>
+<blockquote>
+<p>"'사람은 타인을 통해야 사람이다'(Umuntu ngumuntu ngabantu)라는 속담이 있다. … '사람은 섬이 아니다. 사람은 오로지 사람을 통해서만 사람이 된다'라는 의미이다." (p.109)</p>
+<p>"그는 선교사란 어디에 가야 빵을 찾을 수 있는지 다른 거지들에게 알려주는 거지라고 말한다. 그렇다면 우리는 모두 거지다." (p.111)</p>
+<p>"진실한 사랑이란 자신을 다른 사람에게 주는 것만으로는 이루어질 수 없다. … 반면 진실한 사랑은 의존적인 자신을 솔직히 인정하고 상대로부터 뭔가를 기대하는 것이다." (p.111)</p>
+</blockquote>
+<p>📌 <span class="wl-dead" title="위키 내부 링크">데이비드보쉬</span> 페이지에 "약함의 그릇 — 거지가 어디 가면 먹을 것이 있는지 알려주는 것"이 <a class="wl" href="../../b/%EB%B3%80%ED%99%94%ED%95%98%EB%8A%94%EC%84%B8%EA%B3%84%EA%B8%B0%EB%8F%85%EA%B5%90%EC%99%80%EC%84%A0%EA%B5%90_%EC%9E%84%ED%83%9C%EC%88%9C/">임태순</a>을 경유해 인용돼 있는데, <strong>그 원출처가 이 책 p.111</strong>이다. 이제 원문으로 확인된다.</p>
+<hr />
+<h3>9. 연약함의 신학 — 십자가가 교회의 보증 마크</h3>
+<p>보쉬는 고린도후서의 어휘 통계로 논증을 연다. 이 책에서만 두드러지는 단어 쌍이 있다.</p>
+<table>
+<thead>
+<tr>
+<th>부정적 계열</th>
+<th>긍정적 계열</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>약함(astheneia)·사역/섬김(diakonia)·환난(thlipsis)·근심(lypē) (p.117)</td>
+<td>능력(dynamis)·기쁨(chara)·자랑(kauchēsis) (p.117)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"자랑과 그와 관련된 단어는 로마서, 갈라디아서, 빌립보서, 고린도전서를 모두 합친 것보다 고린도후서에서 더 많이 나타난다." (p.118)</p>
+<p>"진정한 선교는 생각할 수 있는 모든 인간의 행위 가운데 가장 보잘것없고 연약해 보이는 것이며, 이는 영광의 신학과는 정반대가 되는 것이다." (p.118)</p>
+<p>"'연약함'은 사도적 사역의 참된 특징이다." (p.119)</p>
+<p>"상한(broken) 사람들만이 다른 사람들을 십자가로 이끌 수 있다." (p.120)</p>
+</blockquote>
+<p>보쉬는 여기서 멈추지 않고 <strong>연약함을 다루는 두 가지 잘못된 방식</strong>을 해부한다. 이것이 이 장의 실천적 가치다.</p>
+<table>
+<thead>
+<tr>
+<th>반응</th>
+<th>작동 방식</th>
+<th>보쉬의 평가</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>핑계로 삼기</strong></td>
+<td>"내가 연약한 것은 하나님께서 그리하셨으므로 일이 잘못되더라도 책임은 하나님께"</td>
+<td>연약함이 덕목으로 둔갑, "양심에 거리낄 것이 없으므로 마음 편히 지내면 된다" (p.120–121)</td>
+</tr>
+<tr>
+<td><strong>거부하고 힘을 구하기</strong></td>
+<td>"주님, 우리에게 힘과 능력을 주십시오!"</td>
+<td>사마리아 마을에서 불을 구한 제자들의 반응 (눅 9:53, p.121)</td>
+</tr>
+<tr>
+<td><strong>바울의 길</strong></td>
+<td>가시를 붙들고 씨름하지 않고 통치를 받아들임</td>
+<td>"그 문제 전체를 내려놓고, 하나님의 통치를 받아들였다" (p.123)</td>
+</tr>
+</tbody>
+</table>
+<p>육체의 가시에 대한 조언은 특히 실용적이다.</p>
+<blockquote>
+<p>"나는 지금 우리가 우리의 다양한 '육체의 가시'가 무엇인지 찾아내는 데 몰두할 필요는 없다고 생각한다. 가시에 온통 마음을 쓰다 보면 일종의 자기학대(masochism)의 상황이 되어 사역 전체가 마비되기 쉬운데, 불행히도 일부 선교사들이 바로 이런 일을 겪고 있다." (p.122)</p>
+</blockquote>
+<p>역설의 신학적 지위도 분명히 한다 — 어니스트 퓨치스를 인용해 "내가 약한 그 때에 강함이라"를 "신약성경 전체를 통틀어 가장 잘 알려진 역설"이라 부르고(p.124), 그 역설이 <strong>예수 안의 영광과 십자가의 공존과 같은 구조</strong>임을 밝힌다(p.123).</p>
+<p>그리고 소비 시장 경제와의 대조에서 이 책 특유의 풍자가 나온다. 바울의 세계는 "모든 것을 배당금과 자금 회전율 그리고 성공이란 기준으로 정의하고 평가하는 소비 시장 경제의 사회와는 아주 달랐다"(p.126) — 이어 자기계발서의 목차를 그대로 흉내 낸다: "자신감을 높일 수 있는 10개의 단순하고도 실행 가능한 목표들"(p.126), "도움이 필요한 사람들을 기도의 능력으로 어떻게 도왔는지에 관한 13가지 실제 사례"(p.127).</p>
+<blockquote>
+<p>"코수케 코야마는 '사도적 신학은 고난의(stigmatized) 신학이어야만 한다'고 말한다. 예수님의 손이 레닌처럼 주먹을 쥔 것이었다면, 신학은 이데올로기가 되었을 것이다." (p.127)</p>
+<p>"논쟁할 때 근육질의 그리스도가 유사한 근육질의 그리스도와 맞서면 강력한 근육의 굴곡 뒤로 못 자국은 보이지 않게 된다." (p.128)</p>
+<p>"우리가 꼭 기억해야 하는 것은 십자가는 교회를 보증하는 마크(the hallmark)라는 사실이다. 부활하신 그리스도께서 제자들에게 나타나셨을 때, 그의 흉터는 그가 그리스도이시라는 증거였다." (p.128)</p>
+</blockquote>
+<p>이 지점에서 보쉬는 또 하나의 <strong>제3의 길</strong>을 놓는다 — 무엇이든 용인하는 관대함도, 확신을 강요하는 오만함도 아닌 길이다.</p>
+<blockquote>
+<p>"잘난 체하지 않는 겸손과 겸허한 모습으로 살아가면서도, 자신이 선포하는 메시지가 인생에서 생명과 죽음을 결정하는 가장 중요한 문제를 다루고 있다는 점에 대하여서 추호의 흔들림도 없는 확신을 보여준다." (p.129)</p>
+<p>"사도적 사역은 아무리 겸손하고 연약하여도 효과를 발휘한다." (p.129)</p>
+</blockquote>
+<hr />
+<h3>10. 카이로스 — "지금이 은혜의 때"이고, 아직 여정 가운데 있다</h3>
+<p>마지막 축은 종말론이다. 보쉬는 고린도후서 6:2의 <strong>아포 투 뉜(ἀπὸ τοῦ νῦν, "지금부터")</strong>을 번역이 흐려 놓았다고 지적하며(p.130), 시간 이해를 바꾼다.</p>
+<blockquote>
+<p>"바울은 '지금부터' 모든 것이 달라지게 할 어떤 일이 일어나고 있음을 말하고 있다." (p.130)</p>
+<p>"예수님은 유대인 지도자들이 이 '카이로스'를 분간하지 못한 것에 대해 꾸짖으셨다. '외식하는 자여 너희가 천지의 기상은 분간할 줄 알면서 어찌 이 시대는 분간하지 못하느냐?'(눅 12:56)." (p.131)</p>
+<p>"우리는 새로운 시대의 '첫 번째 열매들'을 받았으며 그 열매들은 옛 시대를 침공하여 치명적인 상처를 입히고 있다." (p.132)</p>
+</blockquote>
+<p>성령이 <strong>보증(arrabōn)</strong>으로 주어졌기에(고후 1:22, 5:5) "진정한 사도적 사역으로 종말(eschatōn)은 현재의 실재가 된다"(p.132). 교회의 자기 이해도 그래서 소박하고 실험적이다.</p>
+<blockquote>
+<p>"우리는 앞으로 다가올 세계의 작은 흔적이며 세상에 있지만, 하나님의 뜻에 따라 살아가고 그 통치하심을 받아들이는 하나님의 실험적 동산(garden)이다. 우리는 마치 눈 속에 피어 있는 크로커스(crocus)와도 같다." (p.134)</p>
+</blockquote>
+<p>이 종말론이 세 단어의 뜻을 바꾼다.</p>
+<table>
+<thead>
+<tr>
+<th>단어</th>
+<th>일상 용법</th>
+<th>바울의 용법</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>인내</strong></td>
+<td>숙명론적 감내</td>
+<td>"기대만 있을 뿐 숙명론적인 의미는 전혀 찾아볼 수 없다" (p.136)</td>
+</tr>
+<tr>
+<td><strong>소망</strong></td>
+<td>"그저 최선의 결과를 소망할 뿐" = 반대 조짐이 있음</td>
+<td>"앞으로 도래할 하나님 나라의 실재적 확실성에 기반" (p.136)</td>
+</tr>
+<tr>
+<td><strong>기쁨</strong></td>
+<td>고난이 그친 뒤의 감정</td>
+<td>"고통과 환란에도 <strong>불구하고</strong> 누리는 기쁨이 아니라, 고통과 환란 <strong>안에서의</strong> 기쁨" (p.137)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"아직 여정 가운데 있는 것이다." (p.136) — 책 제목이 마지막에 다시 회수되는 문장이다.</p>
+</blockquote>
+<p>그러면서도 보쉬는 감상적 낙관을 허락하지 않는다. 마게도니아 환상에 순종해 빌립보에 도착한 바울을 맞은 것은 "근사한 오케스트라나 환영 위원회가 아닌 심한 채찍질과 감옥"이었다(p.138). 책의 마지막 표시 구절은 소명의 주체를 되돌려 놓는다.</p>
+<blockquote>
+<p>"네가 나와 내가 할 사역을 선택했다고? 그럴 리가 없지 않니? … 내가 너를 택하여 부르지 않았더라면 너는 여전히 거기에 있었을 게다." (p.140)</p>
+<p>"'네가 나를 선택한 것이 아니라 내가 너를 선택한 것이다. 네가 가서 수고하여 열매를…'" (p.140, 요 15:16)</p>
+</blockquote>
+<hr />
+<h2>독서의 흔적 — 무엇에 표시했는가</h2>
+<p>전사 93면 중 <strong>92면에 표시</strong>가 있고, 여백 손글씨는 없다. 동그라미·네모로 강조된 단어(<strong>굵게</strong> 표기, 45곳)가 몰린 자리가 독서의 관심을 드러낸다.</p>
+<table>
+<thead>
+<tr>
+<th>표시가 집중된 어휘</th>
+<th>위치</th>
+<th>무엇을 붙든 것인가</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>균형이</strong> 아닌 <strong>긴장이</strong> / <strong>십자가의 모델로</strong></td>
+<td>p.25</td>
+<td>절충안을 거부하는 지점</td>
+</tr>
+<tr>
+<td><strong>접촉점</strong> · <strong>성품</strong> · <strong>태도</strong></td>
+<td>p.66</td>
+<td>방법이 아니라 사람이 접촉점이라는 전환</td>
+</tr>
+<tr>
+<td><strong>도구가</strong> 아니라 <strong>가지이다</strong> / <strong>메시지의 한 부분이</strong></td>
+<td>p.68</td>
+<td>전달자의 위치 재정의</td>
+</tr>
+<tr>
+<td><strong>우리</strong>에게 있는 것인가</td>
+<td>p.108</td>
+<td>책임 소재를 우리 쪽으로 돌리는 물음</td>
+</tr>
+<tr>
+<td><strong>냉담</strong>과 <strong>과도한 관심</strong> … <strong>아니라</strong></td>
+<td>p.114</td>
+<td>3번 주제의 후반부 재확인</td>
+</tr>
+<tr>
+<td><strong>연약함</strong> · <strong>허약함</strong> / <strong>핑곗거리로 사용하</strong> · <strong>강함을 원하는 것</strong></td>
+<td>p.118, 120</td>
+<td>연약함을 다루는 두 오류</td>
+</tr>
+<tr>
+<td><strong>고린도후서에</strong> / 사역 <strong>정당성</strong></td>
+<td>p.8, 41</td>
+<td>책의 방법론에 대한 관심</td>
+</tr>
+</tbody>
+</table>
+<p>첫 페이지(p.7)의 표시가 <strong>"우리의 사역이 얼마나 자본주의 가치와 논리에 영향을 받고 있는가 하는 것이다"</strong>인 것과, p.126의 소비 시장 경제 대비에 표시가 이어지는 것은 한 줄기로 읽힌다.</p>
+<hr />
+<h2>목회적·실천적 적용</h2>
+<ul>
+<li><strong>선교 보고 문화</strong>: "구체적인 결과를 보고할 수 없을 때… 비참할 정도로 부끄러움을 느낀다"(p.50)는 진술은 파송 단체의 보고 양식 자체가 잡상인의 사고방식을 강화하는지 묻게 한다. 이사회·선교위원회 자료에서 <strong>성과 지표 옆에 '함께 걸은 여정'을 기록할 칸</strong>이 있는지 점검할 수 있다. → <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%8B%A0%ED%95%99/">선교신학</a></li>
+<li><strong>단기선교 설계</strong>: p.106의 "결과만 받을 뿐이다"는 단기팀이 프로그램을 완성해 주고 떠나는 방식에 대한 직접적 비판으로 읽힌다. 발견의 여정을 함께하는 설계(공동 계획·공동 실패)로 바꾸는 근거 본문. → <a class="wl" href="../../t/%ED%83%80%EB%AC%B8%ED%99%94%EC%84%A0%EA%B5%90/">타문화선교</a></li>
+<li><strong>의료 현장</strong>: "도구가 아니라 가지"(p.68)와 "복음이 신뢰를 얻기 위해서는 선교사 자신이 신뢰를 받아야 한다"(p.87)는 진료실에도 그대로 적용된다. 진료가 전달 통로라면 인격은 무관하지만, 가지라면 인격이 내용의 일부다. → <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a></li>
+<li><strong>번아웃 분별</strong>: p.33의 두 이탈(과잉활동 / 절제 상실)은 사역자 면담에서 쓰기 좋은 축이다. 흔히 번아웃을 과로 한 축으로만 보지만, 보쉬는 <strong>반대편의 미끄러짐</strong>을 같은 무게로 둔다. p.35의 3임기 서술은 그 미끄러짐의 시간표다.</li>
+<li><strong>멘토링 대화</strong>: "나는 단호하고, 당신은 완고하며, 그는 고집불통이다"(p.72)는 팀 갈등을 다룰 때 웃으며 꺼낼 수 있는 거울이다. → <a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%EB%8F%84/">제자도</a></li>
+<li><strong>연약함을 말하는 방식</strong>: p.120–121의 두 오류(핑계 삼기 / 힘을 구하기)는 간증과 설교에서 연약함을 다룰 때의 점검표가 된다. p.85의 "가면을 쓰고 있다는 것을 알아차리기 때문이다"도 함께.</li>
+</ul>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<p><strong>적용</strong>
+- 「균형이 아니라 긴장」(p.25)을 일정표에 적용하면, 기도 시간과 사역 시간을 나누는 문제가 아니라 <strong>한 활동 안에 둘이 동시에 걸려 있는지</strong>를 묻는 문제가 된다.
+- 선교사 파송·후원 심사에서 신학적 준비 외에 <strong>formation(자질 형성)</strong> 항목이 실제로 평가되는지 확인할 것(p.70).
+- 「스페어타이어」(p.104)는 이사·자문 역할의 자기규정으로 쓸 수 있다. 운전대를 잡지 않되 없으면 곤란한 자리.</p>
+<p><strong>미해결 질문</strong>
+- 보쉬가 "균형이 아니라 긴장"이라고 할 때, 그 긴장을 <strong>어떻게 측정하고 점검하는가</strong>? 실천 지침 없이 놔두면 결국 각자의 기질대로 한쪽으로 기운다.
+- 「연약함」의 신학이 조직 운영에도 그대로 적용되는가? 개인 영성에서는 설득력 있지만, 재정·인사·안전 책임을 지는 <strong>단체 차원</strong>에서 연약함을 택한다는 것이 무엇인지는 이 책이 답하지 않는다.
+- 1979년의 '선교 중단(moratorium)' 논쟁(p.28)과 오늘의 선교 정당성 위기는 같은 문제인가 다른 문제인가? <a class="wl" href="../../b/HasAnythingChanged_%ED%8C%AC%EB%8D%B0%EB%AF%B9%EC%9D%B4%ED%9B%84%EC%84%A0%EA%B5%90%EC%B0%B8%EC%97%AC/">팬데믹 이후 선교 참여</a>의 7가지 수정과 대조해 볼 것.
+- <span class="wl-dead" title="위키 내부 링크">크라이더</span>가 『Beyond Bosch』에서 "교리보다 윤리가 선교적"이라며 보쉬가 너무 빨리 교리로 넘어간다고 비판했는데(→ <a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EC%9D%98%EB%B3%80%EC%A7%88_%ED%81%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/">선교의변질_크라이더</a>), <strong>1979년의 보쉬는 이미 윤리·성품 쪽에 서 있다.</strong> 그 비판은 『변화하는 선교』(1991)에만 해당하는가, 아니면 보쉬 전체에 해당하는가?</p>
+<hr />
+<blockquote>
+<p>📖 전사 원문(줄이지 않은 표시 구절 전체): <span class="wl-dead" title="위키 내부 링크">길의영성_데이비드보쉬_전사</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#discipline/선교학</span><span>#discipline/영성신학</span><span>#domain/선교신학</span><span>#domain/선교사훈련</span><span>#scripture/고후</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
