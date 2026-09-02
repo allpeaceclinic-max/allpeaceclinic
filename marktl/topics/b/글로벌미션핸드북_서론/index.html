@@ -1,0 +1,337 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>글로벌 미션 핸드북 — 서론 (서문 · 0장 「여정의 기초」) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">선교</span><span class="author">서론</span><span class="date">2026-09-02</span></div>
+  <h1 class="note-title">글로벌 미션 핸드북 — 서론 (서문 · 0장 「여정의 기초」)</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81_%EC%84%9C%EB%A1%A0/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<blockquote>
+<p>스티브 호크·빌 테일러의 <em>Send Me!</em> 개정판(<em>Global Mission Handbook</em>)에 한철호가 한국 저자 글을 보강한 판. 서론은 「왜 다시 쓰는가」(세계·세대·교회·저자의 변화), 책의 3단계 10장 구조, 핵심 용어(단기/장기·선교·선교사), 글로컬 세계 진단, 그리고 한국 상황(0.6·0.7·0.13·0.14)과 <strong>4가지 개인 적성 평가·훈련 프로필</strong>로 이루어진다. 📷 표시 전사 기반 독서 노트. 책 전체 허브와 12주 미션앤톡 커리큘럼은 <a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81/">글로벌미션핸드북</a>.</p>
+</blockquote>
+<hr />
+<h2>요약 — 주제별 상세 정리</h2>
+<h3>1. 왜 개정판인가 — 네 가지 변화와 「글로컬」</h3>
+<p>저자들은 『나를 보내소서』를 다시 쓰는 이유를 넷으로 정리한다. 첫째 <strong>세계</strong>가 변했다. "이제는 글로컬glocal 세상이다"(p.12). 그리고 그 세계는 더 위험해졌다 — "<strong>단기</strong>, <strong>중기</strong>, <strong>장기</strong> 선교를 진지하게 고려하는 사람이라면 고통과 박해, 순교에 대한 실천적인 신학을 가져야 한다"(p.12). 독자는 세 기간 구분을 동그라미로 묶었다. <a class="wl" href="../../t/%EC%88%9C%EA%B5%90/">순교</a>·<a class="wl" href="../../t/%EA%B3%A0%EB%82%9C/">고난</a> 신학이 준비 과정의 필수 항목으로 격상된 대목이다.</p>
+<p>둘째 <strong>세대</strong>가 변했다(빌더·부머·X·밀레니얼, p.12-13). 셋째 <strong>교회와 선교의 지형</strong>이 변했다. "모든 민족에서 모든 민족으로 가는 것이다 … '남반구에서 온 것은 모두 좋은 것'이라고 순진하게 믿지도 말고, '북반구의 선교사가 더 이상 필요하지 않다'고 섣불리 판단하지도 말아야 한다"(p.13). 이 균형 감각은 <a class="wl" href="../../t/%EB%8B%A4%EC%A4%91%EC%8B%AC%EC%A0%81%EC%84%A0%EA%B5%90/">다중심적선교</a>의 핵심 명제와 같다. 넷째 저자 자신들이 변했고, 한국판은 "한국 상황에 적절하지 않은 내용은 삭제하고, 관련된 주제에 대해 한국 저자들의 글과 정보를 싣도록 했다"(p.15).</p>
+<p><strong>통계로 본 판도</strong>(p.14): 북미 장기 파송은 쇠퇴하지 않고 "천천히 성장"하며, 한국은 "1979년 93명이던 선교사가 오늘날에는 2만 명을 넘어섰다. 그러나 2010년 이후에는 한국 교회의 성장이 주춤하며 이것이 서서히 선교 동원에까지 영향을 미치기 시작했다."</p>
+<h3>2. 핵심 인사이트: 「선교주의력결핍장애」와 단기 선교의 자립화</h3>
+<p>"아주 많은 북미인들에게 '선교주의력결핍장애'가 있다. 즉 선교에 주의를 기울이는 기간이 아주 짧다. 어떤 교회들은 선교 정책의 초점을 지혜롭지 못하게 급격히 바꾸어 때로 '10년 선교 정책'이 되고 말거나, 현 선교팀 리더의 열정에 따라 계속 바뀌기도 한다"(p.14). 미국 <strong>160만 명</strong>(2005), 한국 <strong>10만 명</strong>(연간)이라는 단기 선교 규모는 독자가 동그라미로 표시했다.</p>
+<p>한국판의 진단은 더 날카롭다. "처음에 한국에서 단기 선교는 장기 선교를 준비하는 한 과정이었다. 그러나 이제는 단기 선교 자체가 하나의 사역으로 자리 잡았다. 단기 선교가 장기적인 효과를 내거나 장기 선교를 위한 과정으로 이해되지 않고 있다"(p.15). 0.6은 같은 질문을 재정으로 돌린다 — "한국에서 한 해 동안 나가는 10만 명의 단기 선교 여행 참가자들이 쓴 자금이 장기 사역자들과 사역을 위한 예산에 영향을 끼쳤는가?"(p.33). → <a class="wl" href="../../t/%EB%8B%A8%EA%B8%B0%EC%84%A0%EA%B5%90/">단기선교</a></p>
+<h3>3. 책의 지도 — 3단계 10장과 두 축(My Journey · Global Perspectives)</h3>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>장</th>
+<th>핵심 문장(서론의 요약)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1단계 탐구하기</strong></td>
+<td>1 개인 영성 형성</td>
+<td>"사역이란 내가 누구인가 하는 존재의식에서 오는 것 … 초기 단계에서 <strong>멘토를</strong> 찾는 것이 매우 중요하다"(p.18)</td>
+</tr>
+<tr>
+<td></td>
+<td>2 그리스도의 몸에서 사역 정체성</td>
+<td>"<strong>어느 부분</strong>에 있을 때 영적으로 강한지, <strong>어느 부분</strong>에 다른 사람들이 필요하게 될지"(p.19)</td>
+</tr>
+<tr>
+<td></td>
+<td>3 타문화 접하기</td>
+<td>"일찍부터 <strong>타문화를</strong> 접하도록 하라 … 정신적·신체적·영적 근육은 신축성을 가지게 될 것"(p.19)</td>
+</tr>
+<tr>
+<td></td>
+<td>4 교육과 후원 모집</td>
+<td>"효과적으로 타문화 사역을 하는 선교사들이 모두 대학교육을 받은 것은 아니다"(p.19)</td>
+</tr>
+<tr>
+<td><strong>2단계 준비하기</strong></td>
+<td>5 교회·선교기관과 관계</td>
+<td>"적합한 선교기관과 연결하는 것은 구애하는 과정과 비슷하다. ★ 양자가 서로를 알아 가는 <strong>과정</strong>이다"(p.19)</td>
+</tr>
+<tr>
+<td></td>
+<td>6 사역 역할과 과제</td>
+<td>선교지·대상·임무가 조직 선택을 결정</td>
+</tr>
+<tr>
+<td></td>
+<td>7 선교사 실습 훈련</td>
+<td>"<strong>언어</strong>와 <strong>문화</strong>를 배우는 것은 선교사의 '기초 훈련'"(p.20)</td>
+</tr>
+<tr>
+<td><strong>3단계 시작하기</strong></td>
+<td>8 견습과 인턴</td>
+<td>"함께 동행하는 멘토링come-alongside mentoring은 이제 흔한 일"(p.20)</td>
+</tr>
+<tr>
+<td></td>
+<td>9 평생 학습</td>
+<td>"선교사들이 배우는 것을 멈추면 시들어 버리거나 … 고착 상태에 빠지기 쉽다"(p.20)</td>
+</tr>
+<tr>
+<td></td>
+<td>10 강건하게 잘 마치기</td>
+<td>"사역으로부터from, 그리고 사역 안에서in 약해지는 것이 아니라 강하게 성장해야 한다"(p.20)</td>
+</tr>
+</tbody>
+</table>
+<p>"선교의 항해를 계획하는 일은 휴가 계획을 세우는 것과는 다르다. 이 일은 하나님의 외교 정책 팀에 의도적으로 합류하는 것이다. 이것은 관중석에서 경기장으로 옮겨 준비를 갖추거나 달려가는 것이다"(p.20-21). 각 장 끝의 Global Perspectives는 리더들에게 던진 <strong>4가지 질문</strong>(비서구 선교사의 역할·다음 세대 동원·사전 훈련·성품과 영성)에 대한 답이다(p.21). 전제는 명확하다 — "이 책은 선교사가 되라고 설득하지 않는다. 그보다는 이미 당신에게 '초기 관심'initial interest이 있다고 전제한다"(p.22). 학습 방식으로 저자는 "그룹으로 모일 경우 먼저 각자 집에서 각 단원의 읽을거리를 읽고, 함께 모여서는 워크시트를 가지고 토론"하는 방법을 권한다(p.27, ★) — <a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81/">동신 미션앤톡 12주</a>가 그대로 따른 구조다.</p>
+<h3>4. 용어 정의 — 「모두가 선교사라면 아무도 선교사가 아니다」</h3>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>정의(p.23)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>단기</td>
+<td>2주 ~ 1년(교회 용어로는 2주 미만 여행까지), 저자 기준 <strong>2년 이하</strong></td>
+</tr>
+<tr>
+<td>중기</td>
+<td>2 ~ 4년</td>
+</tr>
+<tr>
+<td>장기</td>
+<td>4년 이상</td>
+</tr>
+</tbody>
+</table>
+<p>책의 초점은 "근본적으로는 단기 선교(2년 이하)"이되 "은사가 있고 이동성이 있는 청년들이 장기 선교에 헌신하도록 도전"한다(p.22). 선교 형태 목록(p.24)에는 의료 선교·훈련, 비즈니스 선교, 민족 음악학, 첨단 설비 개발, 텐트메이커까지 14가지가 열거된다.</p>
+<p><strong>'선교사'의 범위</strong>가 서론의 신학적 핵심이다. "어떤 사람은 '모두가 선교사'라고 한다. 모두가 선교사라면, 아무도 선교사가 아니라는 말이다"(p.24). 저자는 헬라어 <strong>아포스텔로</strong>(동사 132회 / 사도적 명사 80회)에서 출발해 라틴어 <strong>미토</strong>mitto로 이어진 "언어 역사적 '우연'accident"(p.25)과, 종교개혁이 "로마 교회의 선교 수도승 직을 가볍게 내던졌다"가 모라비안·<span class="wl-dead" title="위키 내부 링크">윌리엄캐리</span>로 다시 일어난 역사를 짚는다(p.25). 결론은 세 신학이다.</p>
+<blockquote>
+<p>"성경적인 <strong>직업 신학</strong>, 즉 하나님이 우리에게 다양한 직업을 주셨는데, 모든 것이 거룩하다. 그러나 모든 직업이 다 똑같지는 않다. <strong>은사 신학</strong>, 즉 모두가 사도는 아니며 모두가 기적을 행하지는 않는다(고전 12:29). 그러므로 모든 그리스도인이 다 선교사는 아니다. 소명 신학, 즉 주권자이신 삼위 하나님이 어떤 사람들을 이 직분과 임무로 부르셨다."(p.25)</p>
+</blockquote>
+<p>이는 허브 노트의 「세 가지 소명 구분」(mission / missionary / missions)의 원문 근거이며, <a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a>·<a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%86%8C%EB%AA%85/">직업소명</a>·<a class="wl" href="../../t/%EC%98%81%EC%A0%81%EC%9D%80%EC%82%AC/">영적은사</a>를 하나로 묶는다. 더 깊은 용어론은 <a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A0%EA%B5%90%EC%84%B8%EC%83%81%EC%9D%84%EB%B0%94%EA%BE%B8%EB%8B%A4_%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%86%A0%ED%8D%BC%EB%9D%BC%EC%9D%B4%ED%8A%B8/">하나님의선교세상을바꾸다_크리스토퍼라이트</a> pp.22-25를 참조하라고 안내한다(p.26).</p>
+<h3>5. 글로컬 세계 읽기 — 거시 문제 목록과 「참여하라」</h3>
+<p>0.5는 "사려 깊은 그리스도인으로서 <strong>세계적이고 지역적인glocal 문제issues와 추세trends들을 붙들고 씨름해야 한다</strong>"(p.29)고 요구하며 세 층위의 목록을 준다.</p>
+<ul>
+<li><strong>세계 사회의 거시 문제</strong>(p.29-30): 승자와 패자의 세계화("많은 얼굴을 가진 히드라"), 문명 충돌(9·11), 기술 폭발, 근대→포스트모던→포스트 포스트모던의 세계관 변동, 자연 재앙·풍토병, 도시 인구 밀집, <strong>세계적인 이주</strong>(중국 내 1억 5천만 노동자), 이슬람의 유럽 변화, 테러, 국경 없는 경제, 재소생하는 종교 — "특히 이슬람은 세계적인 종교가 되어 기독교의 선교와 존재에 정면으로 대응하며 경쟁한다"(p.30).</li>
+<li><strong>세계 기독교 공동체의 문제</strong>(p.31-32): 북반구 교회의 "구조적인 결함", 남반구로부터 배우기, 다원주의와 "부드럽고 설득력 있는 보편구원론", 약 2억 명의 박해받는 그리스도인, "신학을 경시하고 은혜로운 보편구원론에 문호를 개방하는 위험한 복음주의의 동향", 젊은 세대의 정의·노예제·환경 관심, 세대 간 "전례 없는 부의 이전", 성령이 "북반구를 포기하지 않으시면서 남반구로 움직이고 계시다"는 인식, '열방이 열방에게로', "변두리로부터의 선교", 선교 주체의 <strong>선교기관→교회</strong> 이동.</li>
+<li><strong>선교 현장의 재정의</strong>(p.33): 사역 용어의 재작업, 직업 변경의 융통성, 팀 중심, 본국 체류 기간 연장, "복잡한 선교 현실에 대한 지나친 단순화[환원주의reductionism]"의 회피, "다른 문화와 언어권의 리더들과 함께 섬기고 그들의 리더십 아래 섬길 수 있는 종".</li>
+</ul>
+<p>"하나님이 자신을 나타내시기를 진정으로 원하시는 곳은 바로 <strong>공동체</strong>다. 우리는 서로를 필요로 한다"(p.34). → <a class="wl" href="../../t/%EB%94%94%EC%95%84%EC%8A%A4%ED%8F%AC%EB%9D%BC%EC%84%A0%EA%B5%90/">디아스포라선교</a>·<a class="wl" href="../../t/%EC%9D%B4%EC%A3%BC%EB%AF%BC%EC%84%A0%EA%B5%90/">이주민선교</a></p>
+<h3>6. 요한계시록의 캔버스 — 「예배가 없기 때문에 선교가 있다」</h3>
+<p>거시 목록 끝에서 저자는 계 4-7장으로 시선을 옮긴다. "우리의 첫 부모는 하나님의 형상으로 창조된 모든 인류의 원형<strong>prototype</strong>이다 … 초대교회는 이내 다중심적이고 다방향적이 되었다"(p.36). 계 6:9-11의 순교자, 모라비안의 "주께서 받으신 고통의 보상을 받으시도록", 그리고 <span class="wl-dead" title="위키 내부 링크">존파이퍼</span> — "선교는 교회의 궁극적인 목표가 아니다. 예배가 목표다 … 예배가 없기 때문에 선교가 있다"(p.37).</p>
+<blockquote>
+<p>"하나님의 선교는 이제 모든 나라에서from 흘러나와 모든 나라로to 흘러들어간다. 우리는 믿을 수 없을 만큼 중대한 기로에 섰다. 이것은 '카이로스'kairos의 순간이다. 우리에게는 이 순간에 동참할 <strong>특권</strong>이 있다."(p.37)</p>
+</blockquote>
+<p>"하나님이 창세기에서 시작해서 요한계시록에서 막을 내리는 이 영광의 이야기 속에 주와 동참하라고 연약하고 깨진 인간을 초청하시는 것은 아름다운 신비다"(p.39). <span class="wl-dead" title="위키 내부 링크">계7</span>·<a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A0%EA%B5%90/">하나님의선교</a>·<a class="wl" href="../../t/%EB%AF%B8%EC%94%A8%EC%98%A4%EB%8D%B0%EC%9D%B4/">미씨오데이</a></p>
+<h3>7. 한국 상황 진단 (0.6) — 「어떤 선교사를 보낼 것인가」</h3>
+<p>한국 저자의 0.6은 두 가지 상반된 현상을 짚는다. 한편으로 "선교가 모든 성도들의 사역임을 자각하면서 많은 수의 평신도 자원들이 … 장년들 혹은 은퇴한 이들까지" 나오는데, 다른 한편 "젊은이들의 선교사 헌신은 급속히 축소되고 있다"(p.40). 남겨진 선교지는 "전통적인 선교사 비자를 가지고 들어갈 수 없는 지역이 대부분"이다.</p>
+<p>핵심은 <strong>두 종류의 사람</strong>이다(p.41, 동그라미 다수). "하나는 <strong>전문성</strong>을 가진 사람들이다. <strong>다른 하나는</strong> 선교지라는 삶의 현장에 가서 겸손하게 <strong>성육신적 삶을</strong> 통해 그들을 섬기며 복음의 가치를 그대로 드러내는 사람들이 필요하다."</p>
+<blockquote>
+<p>"그런데 현재 대부분의 선교 헌신자들은 중간 정도의 영역에 있는 사람들이다. 그들은 최고의 전문성과 능력을 갖추지 못했고, 선교지의 삶의 현장으로 내려가 성육신적인 삶을 살 만한 용기 또한 가지지 못했다. 때문에 어정쩡한 상태에서 선교라는 낭만을 즐기며 시간만 흘려보낼 수 있다."(p.41, ★)</p>
+</blockquote>
+<p>"결국 우리는 이제 <strong>어떤 선교사를 보낼 것인가</strong>라는 질문을 다시 해야 할 시점에 왔다"(p.41, ★). ⚠️ p.42는 사진이 흔들려 판독 불가 — 이 논의의 결론부가 빠져 있다.</p>
+<h3>8. 정민영 「선교 개념의 변화」(0.7) — 네 가지 전환</h3>
+<p><span class="wl-dead" title="위키 내부 링크">정민영</span>의 기고는 서론에서 가장 많이 표시된 절이다. 부제가 곧 논지다: "<strong>선교하는 교회에서 선교적 교회로, 이원론적 선교에서 총체적 선교로, 동원에서 참여로, 과업 중심 파트너십에서 하나님 나라 파트너십으로</strong>"(p.44).</p>
+<table>
+<thead>
+<tr>
+<th>전환</th>
+<th>핵심 문장</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>선교하는 교회 → <strong>선교적 교회</strong></td>
+<td>"파송하는 교회sending church의 관점 이전에 파송받은 교회sent church 의식이 먼저"(p.44). 베드로가 고넬료를 "다가온 땅 끝으로 인식"한 <span class="wl-dead" title="위키 내부 링크">행10</span>이 모델. "선교라는 명목으로 아무나 무슨 일이든 아무렇게나 해도 된다는 식의 행동 지상주의는 청산되어야 한다"(p.44, ★)</td>
+</tr>
+<tr>
+<td>이원론 → <strong>총체적 선교</strong></td>
+<td>"증거witness는 전도evangelism를 포함하지만 보다 근원적이고 포괄적인 개념"(p.45). <span class="wl-dead" title="위키 내부 링크">존스토트</span>의 선포proclamation·현시demonstration 두 기둥(★). "준비 안 된 100명보다 준비되고 검증된 한 명을"(p.45). "'예수 천당, 불신 지옥' 식의 무례한 일방통행이나 … '땅 밟기' 식 동원을 자제"(p.45)</td>
+</tr>
+<tr>
+<td>동원 → <strong>참여</strong></td>
+<td>"교회에서 자원을 뽑아 가는 틀에서 교회를 섬기는 틀로 전환"(p.46). "선교/교회 지도자의 통합된 성품과 <strong>언행일치</strong>integrity가 건강한 선교 운동의 관건"(p.46)</td>
+</tr>
+<tr>
+<td>과업 중심 → <strong>하나님 나라 파트너십</strong></td>
+<td>"산업혁명 이래 … 비즈니스 패러다임이 교계와 선교계에도 깊이 들어와, 결과 중심 사역으로 인해 공동체의 가치가 실종되고, 미래와 변수를 통제하는 운영 방식으로 인해 성령님께서 개입하고 역사할 여지가 사라져 버렸다"(p.47). "협력의 효율성보다 <strong>협력 자체가</strong> 갖는 공동체적 가치"(p.47). "선교(사)는 처음부터 출구 전략을 가지고 사역을 시작해야 한다"(p.47). 주7: '가는 패러다임'(go) → '따르는 패러다임'(follow)(p.48)</td>
+</tr>
+</tbody>
+</table>
+<p>독자는 "특정 지역 교회가 처한 독특한 선교적 기회와 도전을 분석" 옆에 📝 <strong>환경읽기</strong>라고 적었다. 이 절은 <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a>·<a class="wl" href="../../t/%EC%B4%9D%EC%B2%B4%EC%A0%81%EC%84%A0%EA%B5%90/">총체적선교</a>·<a class="wl" href="../../t/BAM/">BAM</a>·<a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EB%82%98%EB%9D%BC%EC%99%80%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A0%EA%B5%90_%EC%A0%95%EB%AF%BC%EC%98%81/">하나님나라와하나님의선교_정민영</a>의 압축판이다.</p>
+<h3>9. 4가지 개인 적성 평가와 훈련 프로필 (0.8~0.11) — know · be · do</h3>
+<p>"바르게 '훈련받고' 짐을 잘 '꾸리면' 예기치 못했던 일을 더 잘 처리할 수 있"다(p.48). 평가는 <strong>자기인식 → 민감성 → 실제적인 기술</strong> 3단계로, "자기 인식이 높을수록 민감성도 커진다"(p.48).</p>
+<table>
+<thead>
+<tr>
+<th>도구</th>
+<th>내용</th>
+<th>위치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>평가 1</td>
+<td>오늘날 필요한 선교사 — <strong>교회 개척가</strong> 프로필을 기본형으로 채택</td>
+<td>p.50-51</td>
+</tr>
+<tr>
+<td>평가 2</td>
+<td>실제 사례 연구로 준비 상태 평가</td>
+<td>p.59-66</td>
+</tr>
+<tr>
+<td>평가 3</td>
+<td>삶의 청사진 — 영적 은사 목록. "당신이 무엇을 잘하는지에 대한 것이 아니라 성령이 당신에게 무엇을 하도록 권능을 주셨는지"(p.49)</td>
+<td>p.113-116 (2장)</td>
+</tr>
+<tr>
+<td>평가 4</td>
+<td>매 장 워크시트</td>
+<td>전권</td>
+</tr>
+</tbody>
+</table>
+<p><strong>훈련 프로필</strong>은 "<strong>인격 자질</strong>, <strong>사역 기술</strong>, <strong>지식 목표</strong>" 3열(p.52)로, "필리핀, 한국, 나이지리아, 아르헨티나, 그리고 미국에서 시험해 본 것"(p.52)이다. 독자는 세 열 위에 <strong>Are / do / know</strong>라고 손글씨로 대응시켰고(p.51), 제목 옆에 ★ <em>know / (Are) being / doing</em>을 적었다(p.50). 원문의 축이 그것이다.</p>
+<blockquote>
+<p>"<strong>지식knowing, 존재being, 사역doing 간에 균형이 있어야 함을 유의하라.</strong>"(p.50)
+"사역은 존재에서 나온다. 타문화 사역은 그리스도 안에 있는 바로 그 정체성에서 생기는 것이지 학업이나 전문기술에서 생기는 것이 아니다. 아무리 훈련을 잘 받았다 해도 그의 삶에 성령의 임재가 없다면 단지 시늉만 하고 말게 될 것이다."(p.51)</p>
+</blockquote>
+<p>프로필의 수혜자 <strong>6그룹</strong>(p.53-54): 후보생·파송 교회·선교기관·동원가·훈련학교·현지 교회. 프로필 항목 중 독자가 굵게 표시한 것은 <strong>가족의 온전함</strong>("가족을 위해 계획된 휴일과 여가 시간을 지킨다. 여유 있게 계획한다 / 다른 선교사 가족, 공동체와 관계를 맺는다", p.57)과 <strong>본국의 소속 교회</strong>(p.57)다. → <a class="wl" href="../../t/%EB%A9%A4%EB%B2%84%EC%BC%80%EC%96%B4/">멤버케어</a>·<a class="wl" href="../../t/%EA%B0%80%EC%A0%95%EC%82%AC%EC%97%AD/">가정사역</a></p>
+<h3>10. 사례 연구(0.12)와 교육의 세 형태 — 「준비하느라 보낸 시간을 후회하는 사람은 없다」</h3>
+<p>빌 테일러의 친구들 사례에서 공통점은 "<strong>모두 교회 사역에 상당한 경험이 있고</strong>"(p.60), 언어에 1~2년을 투자했다는 것이다. 중도 포기의 세 원인(p.61, 큰 ★): 영성 부족과 검증된 헌신의 부재 / '관계성'을 비롯한 사역 역량 부족 / 정규·비정규·비공식 훈련의 부족. "즉, 사전 준비를 철저히 하라는 말이다. 그러면 결코 후회하지 않을 것이다"(p.61).</p>
+<p>"대부분의 <strong>정규 학교</strong>는 우선 지식에 초점을 맞추고 … 인격 개발, 영성, 그리고 관계성에 집중하는 학교는 거의 없다"(p.63) — 그래서 <strong>멘토링</strong>(★)이 필요하다. 역량 3범주(인격·사역 역량·지식, p.63)와 교육 3형태(비정규=인턴·멘토링 / 비공식='알게 되는' 것 / 정규='학교', p.64), 선교사를 형성하는 <strong>7가지 상황</strong>(가정·일·교회·정규 학교·선교기관·선교지·대인관계, p.65). "대중 사역을 시작하시기 전에 예수님은 몇년 동안 일하면서 사셨는지 생각해 보라. 사도 바울은 또 어떤가?"(p.66)</p>
+<h3>11. 한국 목소리 둘 — 정마태의 「글로벌 제자」와 김승호의 언어 훈련</h3>
+<p><strong>정마태</strong>(<span class="wl-dead" title="위키 내부 링크">인터서브</span> 코리아, 0.13): "21세기의 선교사를 간단히 '하나님의 선교에 참여하는 글로벌 제자'로 재정의하고 싶다 … '협력'보다는 상호의존(Interdependent)이란 말이 더 어울린다"(p.67). 비서구 글로벌 제자의 5역할 — <strong>친구</strong>("많은 사람들이 나를 제자 양육하고 훈련해 주길 원했지만 어느 누구도 나의 친구가 되려고 하지는 않았다"는 무슬림 회심자의 말, p.67)·촉매자·훈련자·전문 개발자·나누는 자("과거의 '갑을' 방식으로 다시 돌아가서는 안 된다", p.68). 사전 훈련은 <strong>3I's</strong>(Identity·International·Interdependent, p.69)와 제자 되기, 전문성, 의사소통 — "'의사소통 문제'가 한국 사역자들이 서양 사역자나 현지인들과의 관계에서 문제/충돌이 일어나는 가장 큰 원인"(p.70). 가장 필요한 영성은 "<strong>겸손</strong>, <strong>사랑</strong>, <strong>융통성</strong>, <strong>성숙</strong>의 순"(p.70)이고, "3Cs(Crisis, Changes, Chaos)가 넘치는 글로벌 시대에 가장 중요한 영성은 단연코 하나님과의 깊은 관계"(p.70).</p>
+<p><strong>김승호</strong>(OMF, 0.14): 세무사 고시 준비 중 김준곤 목사의 도전으로 헌신. 훈련 4종(전도·하나님의 공급 의지·말씀 양육·공동체 갈등 해결, p.71). 언어 학습 실례 — "1년간 하루 12시간 … 언어 선생님과 3시간, 예습과 복습 각 3시간, … 듣는 시간 3시간"(p.72). "언어를 충실히 배우는 것은 현지의 영혼들을 사랑하는 최상의 표현이다. 현지 언어는 '누구나 들으면 생명을 얻는 하나님의 복음'을 담아 전하는 그릇이기 때문이다"(p.72).</p>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<ul>
+<li><strong>적용(동신 미션앤톡)</strong>: 1주차(타문화 선교 준비 / 훈련 프로필 0.5·0.9, p.52-66)가 이 서론이다. know·be·do 3열 프로필을 첫 주 자가평가지로 쓰고, 12주 마지막에 다시 채우게 하면 0.11이 요구하는 "주기적으로 다시 평가"(p.55)가 구조로 들어간다.</li>
+<li><strong>적용(인터서브 이사회)</strong>: 0.6의 "두 종류의 사람"(전문성 vs 성육신적 삶)과 "중간 지대의 어정쩡한 헌신자"는 후보 심사의 언어로 그대로 쓸 수 있다. 0.7의 「동원→참여」는 인터서브가 지역 교회를 대하는 방식(자원을 뽑아 가는가, 섬기는가)을 점검하는 잣대다.</li>
+<li><strong>적용(의료)</strong>: 선교 형태 목록에 "의료 선교와 훈련"(p.24)이 있고, 프로필은 의료 같은 특수 기술을 "위임하는 것이 가장 지혜로운 방법"(p.54)이라 본다. 의료인의 준비는 기술이 아니라 인격·관계·언어 쪽이 병목이라는 뜻이다.</li>
+<li><strong>미해결 질문</strong>: ① "모두가 선교사라면 아무도 선교사가 아니다"(p.24)와 0.7의 "선교적 교회"(모든 교회가 파송받은 교회)는 어떻게 양립하는가 — 저자들은 직업·은사·소명 세 신학으로 답하지만 <a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EC%97%90%EB%8C%80%ED%95%9C%EB%84%A4%EA%B0%80%EC%A7%80%EA%B2%AC%ED%95%B4/">선교에대한네가지견해</a>의 리먼·라이트 논쟁과 대조할 가치가 있다.  ② 2014년 기준 통계(한국 2만 명, 단기 10만 명)의 2026년 현재값은?</li>
+</ul>
+<hr />
+<blockquote>
+<p>📖 전사 원문(줄이지 않은 표시 구절 전체): <span class="wl-dead" title="위키 내부 링크">글로벌미션핸드북_서론_전사</span>
+📚 시리즈: <a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81/">허브</a> · 서론 · <a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81_1%EC%9E%A5_%EA%B0%9C%EC%9D%B8%EC%98%81%EC%84%B1%ED%98%95%EC%84%B1/">1장</a> · <a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81_2%EC%9E%A5_%EC%82%AC%EC%97%AD%EC%A0%95%EC%B2%B4%EC%84%B1/">2장</a></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#discipline/선교학</span><span>#domain/선교동원</span><span>#domain/선교사훈련</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

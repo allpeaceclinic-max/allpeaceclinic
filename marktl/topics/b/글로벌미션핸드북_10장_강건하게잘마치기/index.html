@@ -1,0 +1,290 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>글로벌 미션 핸드북 — 10장 「강건하게 잘 마치기」 · 마치는 말 — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">리더십·일·경영</span><span class="date">2026-09-02</span></div>
+  <h1 class="note-title">글로벌 미션 핸드북 — 10장 「강건하게 잘 마치기」 · 마치는 말</h1>
+  
+</header>
+<article class="note">
+<blockquote>
+<p>마지막 장. 빌 테일러의 <strong>낡은 신발</strong> 이야기(88세·30킬로그램으로 마친 마라토너)로 열고, 다니엘·바울을 표준으로 <strong>잘 마치지 못하는 8가지 이유</strong>와 <strong>해결 7가지</strong>를 짚은 뒤, 14개국 중도 포기 연구(10.1), 클린턴의 <strong>잘 마치는 리더 6특징</strong>(10.2), 자가 점검표(10.3), <strong>멘토 3유형과 십계명</strong>(10.4)으로 끝난다. 마치는 말은 한철호의 한 문장으로 닫힌다 — "선교는 한 번의 사건이 아니라 <strong>인생 전체를 통해 일어날 긴 여정</strong>이다"(p.355). 📷 표시 전사 + 📎 2026-05 발제 메모 통합 노트. 허브: <a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81/">글로벌미션핸드북</a> (미션앤톡 10주차 · 멘토링 시리즈 6강 교재).</p>
+</blockquote>
+<hr />
+<h2>요약 — 주제별 상세 정리</h2>
+<h3>1. 낡은 신발 — 「은행장은 창구 직원으로 돌아가지 않습니다」</h3>
+<p><span class="wl-dead" title="위키 내부 링크">빌테일러</span>가 한 베테랑에게 "인생, 결혼, 부모 역할, 타문화 사역, 리더십, 웃고 사랑하고 섬기는 것을 잘 마치는 법에 대해 눈에 보이는 직접적인 증거"(p.332)를 청하자 낡은 운동화가 배달됐다. 10대에 시작해 남미 3개국 수십 년, 선교기관 CEO 12년, 60세에 스페인행을 청하자 "은행장은 창구 직원으로 돌아가지 않습니다"라는 답 — "나는 은행에서 일하지 않습니다"(p.333). 스페인 5년 뒤 귀향해 히스패닉 교회 개척, 애틀랜타 17개 스페인어 교회. 알츠하이머와 치매 속에서도 "무엇을 보든지 많이 웃는다 … '빌… 네가… 나에게… 잘… 마치는 법을… 가르쳐 주었지… 지금… 그렇게… 하려고… 한다.' 나는 울었다. 그는 88세의 나이로 세상을 떠났다. 그의 몸무게는 30킬로그램이었다"(p.333).</p>
+<blockquote>
+<p>"내가 이 이야기를 하는 이유는 68세인 나에게 조직이나 사역 목표의 관리가 아니라, 생산성을 높이 평가하는 사회의 거짓되고 자율적인 목표가 아니라, 측정할 수 있고 만질 수 있는 결과 … 에 대한 프로필이 아니라, 궁극적인 목표에서 눈을 떼지 않도록 하는 <strong>계속적인 격려</strong>가 필요하기 때문이다."(p.333)</p>
+</blockquote>
+<h3>2. 잘 마친다는 것 — 다니엘·바울과 두 가지 열정</h3>
+<p>"자신에 대해서 아는 것과 저 밖에 있는 잠재적인 지뢰밭을 예상하는 것. 그리고 위험을 분별하고 싸움을 잘 마친 사람들에게 배우는 것"(p.334). 다니엘 — "최소한 다섯 전제 군주의 정권에 걸쳐 일할 만큼 기민한 … '큰 은총을 받은' 사람 … 왜? 그가 잘 마쳤기 때문"(p.334). 바울 — "선한 싸움을 싸우고, 나의 달려갈 길을 마치고, 믿음을 지켰으니"(딤후 4:7). "잘 마친다는 것은 은퇴 축하 잔치, 일대기, 성공 비결 소개, 또는 10단계 영상 프로그램 제작을 의미하지 않는다 … 진정한 믿음과 진실성으로 인생 경주의 마지막에 다다른 것"(p.334).</p>
+<p>두 열정(p.334-335): ① "내 장례식에서 나는 내 자녀들이 '아버지는 어머니를 끝까지 사랑하시며 온전히 신실하셨고, 사역을 위해 돌아다니시기 위해 우리를 희생시키지 않으셨다'라고 말하게 되기를" ② "모든 문화와 세대, 모든 사람들이 예수 그리스도의 복음을 듣고 이해해서 … 정당한 결정을 내릴 수 있는 정당한 기회를 갖게 하는 목표를 위해 내가 기여할 수 있는 모든 것". "그리스도인의 삶은 스페셜 올림픽이다. 우리는 경기를 마친다. 그리고 우리의 코치가 되시는 분이 우리를 맞이하신다"(p.335). 📎 메모: <em>두 가지 열정 — 기독교의 진리를 붙잡고 인생을 마치기 / 다음 세대를 위해 내가 기여할 수 있는 것을 하는 것.</em> → <a class="wl" href="../../t/%EC%98%81%EC%A0%81%EC%99%84%EC%A3%BC/">영적완주</a></p>
+<h3>3. 핵심 인사이트: 잘 마치지 못하는 8가지 이유 — 「발전 정지 장치」</h3>
+<p>"우리 모두에게는 약한 면이 있는데, 이것을 일찍 인식하고 강화하면 할수록 더 나아진다. '저는 아직 젊어서 이 모든 것들을 이해할 수가 없습니다. 부정적으로 들립니다' … 이것은 시간 낭비가 아니다"(p.336).</p>
+<table>
+<thead>
+<tr>
+<th>함정</th>
+<th>핵심 문장</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>잘못된 재정 관리</td>
+<td></td>
+</tr>
+<tr>
+<td>성적인 죄</td>
+<td>"인터넷 음란물이 세계의 외딴 지역에서조차 아주 많은 남성 선교사들을 파멸시키는 것이 현실"(p.336)</td>
+</tr>
+<tr>
+<td>심각한 가정 문제</td>
+<td></td>
+</tr>
+<tr>
+<td>권력 남용</td>
+<td>"유독한toxic 리더십에는 파괴적인 힘이 있어 미성숙하고 고통스러운 마찰을 일으킨다"(p.336)</td>
+</tr>
+<tr>
+<td>자만과 야망</td>
+<td>"'최고의 위치에 오르려는'"(p.336)</td>
+</tr>
+<tr>
+<td>이양하지 못하는 무능력</td>
+<td>"'설립자 증후군'founder's syndrome"(p.337)</td>
+</tr>
+<tr>
+<td>사역 도중의 시험</td>
+<td>"하나님이 그의 종들을 더 깊은 단계의 깨어짐과 고통으로 부르신다 … 하나님이 우리를 해체시키거나, 정결케 하거나, 혹은 사역의 다음 단계를 위해 준비시키시는 중 … '인생을 절름거리며' 걷는 것으로 마칠 수도 있다"(사 53:10, p.337). "이것을 우리에게 강요하지 않고 선택하도록 하신다"</td>
+</tr>
+<tr>
+<td>끝을 향해 서서히 움직이기</td>
+<td>"체제를 유지하고 그저 일상적인 사역의 일정을 수행하며 겉으로 보이는 종교적인 행동을 한다. 그러나 그들은 거기에 마음이 없다. 물론 성령의 능력도 없다"(p.337)</td>
+</tr>
+<tr>
+<td>영적 전쟁</td>
+<td>"적의 우두머리가 공격하는 우리의 특유한 약점을 분별할 줄 알아야 한다"(p.337)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>해결 7</strong>(p.338-339): 약점을 다루라('숨겨진 중독') / 결혼서약을 잊지 말라 — "어린 자녀들의 요구와 '선교사로서의 삶'에서 오는 기대치 사이에서 균형을 이루기 위해 애쓰는 것에 나는 아주 민감하지 못했다"(p.338) / <strong>여행 초대의 유혹</strong>을 조심하라 — "동료들이 밖에 나가서 자신의 일을 하다가 그들의 자녀나 결혼 또는 둘 다 잃어버린 경우를 너무 많이 봤다"(p.338) / 책임 공동체("주요 인물 한 사람이나 소그룹 하나") / 적의 공격 — "호텔에서 다른 동료와 함께 묵는 것을 선호한다"(p.338) / 다른 사람이 기도하게 / 영적으로 계속 자라라(나우엔·윌라드·피터슨) / 멘토가 되고 멘토를 찾으라.</p>
+<p><strong>중도 포기를 막는 한 가지 해결책 — 교회.</strong> "<strong>교회는</strong> 선교사의 모판이고, 선발과 검증의 주된 장소이고, 기본적인 준비가 이루어지는 곳이고, 파송과 중보기도의 주요한 기지다"(p.339). 2·5장의 「파송은 교회의 일」이 마지막 장의 결론으로 돌아온다. "마음을 강하게 하라. 힘을 내라. 수많은 증인들과 우리가 당신과 함께 있고, 당신을 위해 있다"(p.339).</p>
+<h3>4. 테일러 「중도 포기를 어떻게 해야 하나」(10.1) — 5.1%, 그중 71%는 예방 가능</h3>
+<p>1994-96년 14개국 연구: "장기 선교사들의 약 5.1퍼센트가 매년 현지를 떠나고, 그들 중 71퍼센트는 '예방할 수 있는' 이유 … <strong>15만 명</strong> … 매년 7650명 … 4년 임기 동안에 3만 600명 … 예방할 수 있는 2만 1726명"(p.341). 예방 가능한 세 원인(📎 메모와 일치): ① 영성 형성·성품의 부적절함 / 섬김의 희생에 대한 오해 ② 가족·동료·현지인과의 갈등 ③ 사역에 맞는 공부와 목적의식 있는 지식의 부재. 분류: 피할 수 없는(사망·은퇴·계약 만료·정치 불안) / 예방할 수 없는(자녀교육·건강·직무 변화·팀 갈등·후원 감소) / "고통스러운 이유가 있으나 예방할 수 있는"(감정·윤리 문제, 기도·자금 부족, 직무 기대치 오해, 기관과의 충돌, 동료 갈등, "부르심에 대한 의식 부족, 부적절한 사전 훈련")(p.341). 출처 『잃어버리기에는 너무 소중한 사람들』. 서론 0.12의 세 원인(p.61)과 동일 — 책의 처음과 끝이 같은 통계로 닫힌다.</p>
+<h3>5. 도허티 「잘 마치는 리더들의 6가지 특징」(10.2) — 클린턴의 4가지 관찰</h3>
+<p><span class="wl-dead" title="위키 내부 링크">로버트클린턴</span>의 평생 연구: "1. 잘 마치는 사람이 적다. 2. 리더십은 어렵다. 3. 권능을 부여하시는 하나님의 임재가 성공적인 리더십의 필수 요소다. 4. 영적 리더십은 영향력이 있다"(p.342). "나는 소수의 리더만이 잘 마친다는 사실에 놀랐고, 그것으로 인해 평생 연구를 하게 되었다"(p.342).</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>특징</th>
+<th>근거·해설</th>
+<th>📝 자가 점검(p.344)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>하나님과 개인적이고 생명력 넘치는 관계를 끝까지</td>
+<td>다니엘·베드로·바울·요한</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>배우려는 자세, 여러 곳에서 배움</td>
+<td>단 9장의 만년 다니엘, 벧후 3:18·딤전 4:13</td>
+<td>5</td>
+</tr>
+<tr>
+<td>3</td>
+<td>예수님을 닮은 성품</td>
+<td>성령의 열매. "거칠면서 강인한 것에서 부드러우면서 강인한 것으로 평생에 걸쳐 바뀌었다"(p.343)</td>
+<td>3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>진리의 삶으로 하나님의 약속이 실재함을 보임</td>
+<td></td>
+<td>2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>하나 이상의 궁극적인 공헌</td>
+<td>모범적 삶·사역 모델·공중 연설·잘못 바로잡음·조직 설립·운동 시작·조사·글과 음악·동원(p.343)</td>
+<td>4</td>
+</tr>
+<tr>
+<td>6</td>
+<td>운명의식을 갖고 살며 이루어지는 것을 봄</td>
+<td>"운명의식sense of destiny은 리더의 내면에 있는 확신"(p.343)</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>독자의 10.3 점검표 점수는 배움(5)·공헌(4)이 높고 <strong>관계(1)·진리의 실재(4)·운명의식(6)이 2점</strong>으로 낮다 — 9장 이태웅의 「선교학은 늘고 영성은 준다」가 개인 점검표에서 그대로 확인된다. 허브 「CMF·의료 연결」의 "잘 마치는 리더 6특징 = CMF가 세우려는 사람의 기준"의 원문. → <a class="wl" href="../../t/CMF_VPM%EC%B2%A0%ED%95%99/">CMF_VPM철학</a>·<span class="wl-dead" title="위키 내부 링크">영적지도자만들기_클린턴</span></p>
+<h3>6. 「개인 멘토 찾기 연습」(10.4) — 3유형 · 균형 · 십계명</h3>
+<p>정의: "멘토링이란 '한 사람이, 하나님이 주신 자원을 나누어 줌으로써 다른 사람의 역량을 강화시키는 관계적인 경험이다' … <strong>멘토</strong>는 하나님이 주신 자원을 나누어 주는 사람이고, <strong>멘티</strong>는 역량이 강화되는 사람이다. 멘토와 멘티 간의 상호작용을 통한 전이transfer를 역량강화empowerment라고 한다"(p.345). 멘토의 일(p.345-346): 자원 제공, 격려와 적시의 조언, 리더십·사역 습관의 모델, "도서, 소논문, 사람, 워크숍, 재정 자원, 그리고 멘토와 함께 사역할 기회들을 연결".</p>
+<blockquote>
+<p>"그리스도인 사역자들에게는 멘토 받을 수 있는 관계가 있어야 하고, 서로 멘토 할 동료가 필요하고, 멘토 할 사람이 있어야 한다. 이것이 삶과 사역의 균형과 건강한 관점을 보장하는 데 도움이 된다." — 클린턴 『멘토 해 주세요』(p.346)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>유형</th>
+<th>내용(p.346-347)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>상위</strong> 멘토링 upward</td>
+<td>"리더들이 잠재력을 확대하도록 리더들을 밀고 나간다"</td>
+</tr>
+<tr>
+<td><strong>동료</strong> 멘토링 co-mentoring</td>
+<td>내부(같은 사역 환경, 비슷한 성숙도) / 외부 — "<strong>객관적인 관점을</strong> 갖게 하고 사고와 행동에 도전"</td>
+</tr>
+<tr>
+<td><strong>제자</strong> 멘토링 disciple</td>
+<td>"젊거나 경험이 부족한 리더들에게 역량을 길러 주는 것"</td>
+</tr>
+</tbody>
+</table>
+<p>"멘토링 관계의 시작은 대부분 <strong>멘티에게</strong> 달렸다"(p.347). 질문: 어떤 도움이 가장 필요한가, 내년 우선순위 목표 3가지, "지역, 부서, 조직을 넘어서 생각하라", "그들은 당신의 군집도에서 어디에 해당되는가"(p.348). "리더들은 4가지 유형 모두에 언제나 멘토가 있는 것은 아닌데, 이것은 정상적이다. 그러나 그것이 장기간 계속되면 위험하다"(p.348).</p>
+<p><strong>멘토링 십계명</strong>(스탠리·클린턴, p.349-350): ① 관계 구축("때로는 <strong>의도적으로</strong>") ② 목적 ③ 규칙적인 만남 ④ 책임 ⑤ 커뮤니케이션 방법 ⑥ 비밀 유지 ⑦ 라이프 사이클("영구할 것이라고 기대하지 말라 … 현실적인 시간제한") ⑧ 평가("침체에 빠지지 않도록 주기적인") ⑨ 기대치("미치지 못한 것들은 대부분 멘토링에 대해 실망하는 근원") ⑩ <strong>마무리 짓기</strong> — "마지막을 염두에 두고 시작하라 … 어디에서 어떻게 역량이 강화되었는지 양쪽이 모두 평가하고 인정하는 결말". 참고: 『영적 멘토링』·『영혼의 돌봄』·『영혼의 친구』·『인생의 궤도를 수정할 때』·『삶으로 전달되는 지혜』·월링 워크북. 2.5 번성 전략의 4번째 시스템, 7.2 "제 멘토가 되어 주십시오", 9.8 '상위 멘토들'의 종합. → <span class="wl-dead" title="위키 내부 링크">멘토링</span>·<span class="wl-dead" title="위키 내부 링크">멘토링_매뉴얼_로버트클린턴</span></p>
+<h3>7. 문상철 · 김명선 — 가난한 자로서 가난한 자에게</h3>
+<p><span class="wl-dead" title="위키 내부 링크">문상철</span>(<span class="wl-dead" title="위키 내부 링크">KRIM</span>, 10.5): "다수 세계the Majority World 선교사들은 가난한 자로서 가난한 자에게 다가가는 선교를 할 필요가 있다. 우월감을 배제하고 복음의 능력만 믿고 성령님을 의지하며 나아가야 한다. 한국 선교는 이미 다수 세계 선교의 양태를 띠지 않고 오히려 전형적인 서구 선교의 모습을 많이 닮았다"(p.351). "협력은 필수 사항"(p.351). 훈련: 지식·성품·관계 세 영역, "성령의 아홉 가지 열매를 성품 속에 구현", "성육신적 영성과 역량"(p.351). 5.7 임태순(십자가 모델)·7.7 유병국·9.6 타란탈(근접 선교)이 같은 결에 있다.</p>
+<p><span class="wl-dead" title="위키 내부 링크">김명선</span>(<span class="wl-dead" title="위키 내부 링크">GP</span>·코디아, 10.6): 남부 수마트라 신학교 교수·팔렘방 교회 개척·IVF/Perkantas 시작 → 내수동교회 청빙·GP 이사 → 다시 선교사로 GP 훈련원장 → 코디아(Korean Diaspora with a Mission) 대표(p.352). 9장의 「유동성」·「다음은 어디로」를 산 이력.</p>
+<h3>8. 마치는 말 — 「선교는 한 번의 사건이 아니라 긴 여정」</h3>
+<p>호크·테일러: "관계와 개인의 삶에서 고통스러운 실패들 혹은 가족이나 사역에서 오는 상실도 이미 경험했을 것이다. 이 모든 것은 제자로 변화되어 가며 경험하는 것들이다"(p.354). "그리스도인의 삶을 평생의 순례라는 말로 가장 잘 표현할 수 있다 … 멋지고 평화스러워 보이는 힌두교도, 불교도, 회교도, 혹은 세속주의자들을 만나게 될 것이고 … 기독교가 유일하다고 주장할 필요가 있는가 하는 생각이 들 수도"(p.354). "가장 중요한 것은 예수님의 제자로서의 삶을 어느 곳에서 이루어 가느냐가 아니라 어느 곳에서든지 열정적으로 주님을 추구하는 것이다"(p.355). 서론의 계 7장으로 되돌아간다 — "모든 나라와 족속과 언어의 사람들과 함께 있는 때를 즐기라. 언젠가 그들은 하나님 나라의 보좌에 둘러서서 당신과 함께 예배할 사람들이다"(p.355).</p>
+<p><span class="wl-dead" title="위키 내부 링크">한철호</span> 「선교사가 되기에 앞서 선교적 삶에 헌신하라」: "선교는 한 번의 사건이 아니라 <strong>인생 전체를 통해 일어날 긴 여정</strong>이다 … 가는 참여, 영접하는 참여, 보내는 참여, 동원하는 참여 중 어느 하나는 반드시 일어나야"(p.355). "먼저 선교적 삶을 사는 여정을 가야 한다 … 하나님은 우리의 등대이시다"(p.355-356). 서론 0.7의 「선교적 교회」와 6.2 손창남의 「모든 교인이 각자 위치에서」가 한 문장으로 봉합된다.</p>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<ul>
+<li><strong>적용(미션앤톡 10주차 · 멘토링 6강)</strong>: 10.1 중도 포기 원인 → 10.2 6특징 → 10.3 점검표 → 10.4 멘토 3유형 순서가 그대로 한 회차. 점검표는 본인 점수(2/5/3/2/4/2)를 먼저 공개하면 멘티가 정직해진다. 십계명 ⑦·⑩(시간제한·마무리)은 미션앤톡 같은 기간제 멘토링의 설계 원칙.</li>
+<li><strong>적용(선교헌신자 멘토링)</strong>: 이 장의 「멘토 3유형 균형」이 <span class="wl-dead" title="위키 내부 링크">00_선교헌신자멘토링_허브</span>의 운영 원칙이 된다 — 본인은 헌신자에게 상위 멘토이면서 동시에 자기 상위·동료 멘토가 있는가. 「잘 마치지 못하는 이유」 8개는 헌신자에게 파송 전에 미리 보여 줄 지뢰밭 지도(p.334).</li>
+<li><strong>적용(인터서브 이사·CMF)</strong>: 5.1%·71% 통계와 "교회는 모판"(p.339)은 멤버케어 예산·교회 협력 정책의 근거. 6특징은 CMF 학사원 사역이 세우려는 사람의 기준(허브 §8). "권력 남용·유독한 리더십·설립자 증후군·이양 무능력"(p.336-337)은 단체 거버넌스 항목.</li>
+<li><strong>적용(개인)</strong>: 점검표에서 2점을 준 세 항목(하나님과의 생명력 있는 관계·진리의 실재·운명의식)이 이 책이 내게 남긴 과제다. 1장 1.2 갈망 리트리트와 9.3 「요구되는 만큼 고립 상태에」로 돌아간다.</li>
+<li><strong>미해결 질문</strong>: ① p.341·344·352는 인쇄 번호 추정.  ② 2014년 15만·5.1% 통계의 현재 KRIM 수치.</li>
+</ul>
+<hr />
+<blockquote>
+<p>📖 전사 원문(사진 전사 + 📎 2026-05 타이핑 메모 병합): <span class="wl-dead" title="위키 내부 링크">글로벌미션핸드북_10장_강건하게잘마치기_전사</span>
+📚 시리즈: <a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81/">허브</a> · <a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81_%EC%84%9C%EB%A1%A0/">서론</a> · <a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81_1%EC%9E%A5_%EA%B0%9C%EC%9D%B8%EC%98%81%EC%84%B1%ED%98%95%EC%84%B1/">1장</a> · <a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81_2%EC%9E%A5_%EC%82%AC%EC%97%AD%EC%A0%95%EC%B2%B4%EC%84%B1/">2장</a> · <a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81_3%EC%9E%A5_%ED%83%80%EB%AC%B8%ED%99%94%EC%A0%91%ED%95%98%EA%B8%B0/">3장</a> · <a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81_4%EC%9E%A5_%EA%B5%90%EC%9C%A1%EA%B3%BC%ED%9B%84%EC%9B%90/">4장</a> · <a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81_5%EC%9E%A5_%EA%B5%90%ED%9A%8C%EC%99%80%EC%84%A0%EA%B5%90%EA%B8%B0%EA%B4%80/">5장</a> · <a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81_6%EC%9E%A5_%EC%82%AC%EC%97%AD%EC%97%AD%ED%95%A0%EA%B3%BC%EA%B3%BC%EC%A0%9C/">6장</a> · <a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81_7%EC%9E%A5_%EC%84%A0%EA%B5%90%EC%82%AC%EC%8B%A4%EC%8A%B5%ED%9B%88%EB%A0%A8/">7장</a> · <a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81_8%EC%9E%A5_%EA%B2%AC%EC%8A%B5%EA%B3%BC%EC%9D%B8%ED%84%B4/">8장</a> · <a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81_9%EC%9E%A5_%ED%8F%89%EC%83%9D%ED%95%99%EC%8A%B5/">9장</a> · 10장</p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#discipline/선교학</span><span>#domain/영적완주</span><span>#domain/리더십개발</span><span>#domain/멘토링</span><span>#domain/멤버케어</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

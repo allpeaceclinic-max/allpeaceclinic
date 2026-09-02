@@ -1,0 +1,447 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>글로벌 미션 핸드북 — 스티브 호크 · 빌 테일러 · 한철호 (IVP, 2014) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">선교</span><span class="date">2026-09-02</span></div>
+  <h1 class="note-title">글로벌 미션 핸드북 — 스티브 호크 · 빌 테일러 · 한철호 (IVP, 2014)</h1>
+  
+</header>
+<article class="note">
+<blockquote>
+<p><em>Global Mission Handbook</em> (『나를 보내소서 Send Me!』 개정판)의 한국판. 선교 헌신자를 위한 <strong>3단계 10장 준비 워크북</strong>이며, 각 장에 한국 저자의 글·My Journey·Global Perspectives가 붙는다.
+이 페이지는 <strong>허브</strong>다 — 책(장별 노트·전사)과 <strong>강의</strong>(동신 미션앤톡·멘토링 시리즈)만 연결한다. 장별 상세는 §1, 미션앤톡 교재 대응은 §3, 본인 강의는 §4. 멘토링 활용은 별도 문서(§5 링크).</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>저자</td>
+<td>스티브 호크 (Steve Hoke) · 빌 테일러 (Bill Taylor) + 한철호(한국판 편저) / 양명호 옮김</td>
+</tr>
+<tr>
+<td>성격</td>
+<td>선교 헌신자를 위한 실전 훈련 교재 — 워크시트·평가 도구·사례</td>
+</tr>
+<tr>
+<td>구조</td>
+<td><strong>1단계 탐구하기</strong>(1~4장) · <strong>2단계 준비하기</strong>(5~7장) · <strong>3단계 시작하기</strong>(8~10장) + 서문·0장</td>
+</tr>
+<tr>
+<td>본인과의 접점</td>
+<td><span class="wl-dead" title="위키 내부 링크">동신교회</span> <strong>미션앤톡 12주 교재</strong>(2019) · 멘토링 시리즈 0~6강 발제 원고의 축</td>
+</tr>
+<tr>
+<td>소스</td>
+<td>📷 책 사진 표시 전사 <strong>서론·1~10장 완결</strong>(사진 275장, 2026-09-02) + 📎 2026-05 타이핑 메모(9·10과 → 9·10장 raw에 병합, 구 파일 삭제)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>1. 시리즈 목차 — 장별 노트</h2>
+<table>
+<thead>
+<tr>
+<th>장</th>
+<th>노트</th>
+<th>한 줄</th>
+<th>전사</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>서론</td>
+<td><span class="wl-dead" title="위키 내부 링크">서론 — 여정의 기초</span></td>
+<td>글로컬 세계·「모두가 선교사라면 아무도 선교사가 아니다」·정민영 4전환·<strong>know·be·do 훈련 프로필</strong></td>
+<td><span class="wl-dead" title="위키 내부 링크">raw</span></td>
+</tr>
+<tr>
+<td>1장</td>
+<td><span class="wl-dead" title="위키 내부 링크">개인 영성 형성</span></td>
+<td>사역은 존재에서 나온다·<strong>1단계 갈망 → 2단계 섬김</strong>·사명 선언문·부르심의 네 길과 세 종류</td>
+<td><span class="wl-dead" title="위키 내부 링크">raw</span></td>
+</tr>
+<tr>
+<td>2장</td>
+<td><span class="wl-dead" title="위키 내부 링크">사역 정체성 발견하기</span></td>
+<td>「당신에게는 몸이 필요하다」·리더 70%가 은사를 모른다·파송은 교회의 일(송기태)·<strong>번성 전략 4시스템</strong></td>
+<td><span class="wl-dead" title="위키 내부 링크">raw</span></td>
+</tr>
+<tr>
+<td>3장</td>
+<td><span class="wl-dead" title="위키 내부 링크">타문화 접하기</span></td>
+<td>문화는 게임의 룰(콰스트 4층)·단기 선교 6원칙(한철호)·6T·<strong>문화는 불순종의 감옥</strong>(링겐펠터)</td>
+<td><span class="wl-dead" title="위키 내부 링크">raw</span></td>
+</tr>
+<tr>
+<td>4장</td>
+<td><span class="wl-dead" title="위키 내부 링크">교육과 후원 모집</span></td>
+<td>교육은 도구·침목은 영성 형성·<strong>채무자는 파송되지 않는다</strong>·후원 5열쇠(친구 모집)·MK는 아킬레스건</td>
+<td><span class="wl-dead" title="위키 내부 링크">raw</span></td>
+</tr>
+<tr>
+<td>5장</td>
+<td><span class="wl-dead" title="위키 내부 링크">교회 및 선교기관과 관계 맺기</span></td>
+<td>기관 선택은 결혼·파송 측의 7가지 검증·<strong>장기 사역자는 여전히 필요</strong>·토털 케어·독신 여성·한국 선교 통계</td>
+<td><span class="wl-dead" title="위키 내부 링크">raw</span></td>
+</tr>
+<tr>
+<td>6장</td>
+<td><span class="wl-dead" title="위키 내부 링크">사역 역할과 과제 찾기</span></td>
+<td>부르심 vs 시기의 균형·증거와 분별 신호·<strong>손창남 5유형</strong>(선교적 교회=전 국민 배드민턴)·전문 기술 6분야·조샘 BAM·박준범 의료 선교·<strong>7가지 분별 신호와 의사결정 점검표</strong></td>
+<td><span class="wl-dead" title="위키 내부 링크">raw</span></td>
+</tr>
+<tr>
+<td>7장</td>
+<td><span class="wl-dead" title="위키 내부 링크">선교사 실습 훈련</span></td>
+<td>훈련은 본국에서 시작해 <strong>현지에서 강화</strong>·LAMP·호크 10영역과 TLC·<strong>TIMO 2년·12가치</strong>·이태웅 「선교학은 늘고 영성은 준다」·한철호 방콕포럼 리더십(탈한국화+탈서구화)·라슨 배우는 자→거래자→이야기꾼·유병국 Mission Planting</td>
+<td><span class="wl-dead" title="위키 내부 링크">raw</span></td>
+</tr>
+<tr>
+<td>8장</td>
+<td><span class="wl-dead" title="위키 내부 링크">견습과 인턴 과정</span></td>
+<td><strong>「언어 학습은 곧 사역이다」</strong>(2년 풀타임)·첫 해 인턴 견본(학습 목표·절차)·카라카스 6개월 단위·테드 워드 「문화적 수하물 신고서」·이용웅 태국어 1년 9개월·호프만 「문제는 능력이 아니라 약점과 의존성」·맥그리거 직무 현장 교육</td>
+<td><span class="wl-dead" title="위키 내부 링크">raw</span></td>
+</tr>
+<tr>
+<td>9장</td>
+<td><span class="wl-dead" title="위키 내부 링크">평생 학습</span></td>
+<td>「다음은 어디로」·<strong>클린턴 학습 자세</strong>(정체기 해독제)·독서·안식년 필수·타임라인·개인 개발 계획·린드퀴스트 세 짐(의존성·중독성·기능장애)·<strong>고립 4단계 Stripping→Expansion</strong>(리더 90%)·정민영 「공론 → 시행」·FAT</td>
+<td><span class="wl-dead" title="위키 내부 링크">raw</span> (📎 메모 병합)</td>
+</tr>
+<tr>
+<td>10장</td>
+<td><span class="wl-dead" title="위키 내부 링크">강건하게 잘 마치기 · 마치는 말</span></td>
+<td>낡은 신발(88세·30kg)·<strong>잘 마치지 못하는 8가지 이유</strong>와 해결 7·중도 포기 5.1%/71%·<strong>클린턴 6특징</strong>과 자가 점검표·<strong>멘토 3유형·십계명</strong>·문상철 「가난한 자로서」·한철호 「선교는 긴 여정」</td>
+<td><span class="wl-dead" title="위키 내부 링크">raw</span> (📎 메모 병합)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>2. 책 전체를 꿰는 다섯 축</h2>
+<ol>
+<li><strong>존재 → 지식 → 사역</strong>(be · know · do). 훈련 프로필의 3열(서론 p.50-57)이 1장 「사역은 존재에서 나온다」(p.51), 2장 「은사는 몸 안에서」, 4장 「침목은 영성 형성」(p.174)으로 반복된다. 독자 손글씨 <em>Are / do / know</em>가 이 축의 기록이다.</li>
+<li><strong>부르심은 다양하고 검증되어야 한다.</strong> 1.4 네 길(신비·순종·평가·필요) + 1.5 사도행전 세 종류(신비·위임·상식) → 5.2 파송 측의 7가지 검증. 「모두가 선교사는 아니다」(서론 p.24-25)의 직업·은사·소명 세 신학이 토대.</li>
+<li><strong>파송은 개인이 아니라 교회의 일.</strong> 2.4 송기태(위임→파송), 5.1 테일러(선교사를 파송하는 것은 교회), 서론 0.7 정민영(동원→참여, 과업→하나님 나라 파트너십).</li>
+<li><strong>단기는 장기를 위한 과정이어야 한다.</strong> 서론의 「단기 선교의 자립화」 진단(p.15) → 3.2 「short-term mission, long-term effect」(p.148) → 5.3 「비용-효과 사고를 거부한다」(p.206).</li>
+<li><strong>잘 마치는 것이 잘 시작하는 것보다 중요하다.</strong> 서론 10장 예고(p.20) → 2.5 번성 전략 → 4.4 MK → 5.4 토털 케어 → 9.3 고립 4단계 → 10장 8가지 함정·6특징·멘토 3유형. 서론 0.12의 중도 포기 세 원인(p.61)이 10.1(p.341)에서 통계로 닫힌다.</li>
+</ol>
+<hr />
+<h2>3. 동신 미션앤톡 12주 ↔ 핸드북 ↔ 시리즈 노트</h2>
+<p><span class="wl-dead" title="위키 내부 링크">동신교회</span> 헌신자 멘토링 프로그램(2019, <span class="wl-dead" title="위키 내부 링크">이상협</span> 인도). 설계·3그룹 구조·6대 산출물·헌신자 질문 14개는 <span class="wl-dead" title="위키 내부 링크">2019년동신미션앤톡</span>, 회차 기록(1차 타문화 선교 준비 · 2차 영성과 부르심)은 <span class="wl-dead" title="위키 내부 링크">동신미션앤톡</span>, 재사용 템플릿은 <span class="wl-dead" title="위키 내부 링크">60_프로그램_자산</span> §2. 12주 커리큘럼은 <span class="wl-dead" title="위키 내부 링크">전주홍</span>(WEC)의 「WEC n TALK 12주 과정」을 참고해 짰다.</p>
+<table>
+<thead>
+<tr>
+<th>주</th>
+<th>주제</th>
+<th>핸드북 절</th>
+<th>시리즈 노트</th>
+<th>실제 회차</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>복음과 선교 / 타문화 선교 준비 · 훈련 프로필</td>
+<td>0.5·0.6·0.9·0.11 (p.40-66)</td>
+<td><span class="wl-dead" title="위키 내부 링크">서론</span> §7·§9</td>
+<td><strong>1차 모임</strong>(7/23, p.52-66 토론 + 미션 포트폴리오)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>개인 영성 형성</td>
+<td>1.1·1.2</td>
+<td><span class="wl-dead" title="위키 내부 링크">1장</span> §4·§5</td>
+<td><strong>2차 모임</strong>(영성과 부르심)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>부르심 — 개인 사명 선언문</td>
+<td>1.3·1.5</td>
+<td>1장 §6·§8</td>
+<td>2차 모임</td>
+</tr>
+<tr>
+<td>4</td>
+<td>다양한 선교사 유형</td>
+<td>6과 전체</td>
+<td><span class="wl-dead" title="위키 내부 링크">6장</span> §3·§7</td>
+<td>1차 모임(도입 성격)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>주위에 비전 나눔 / 교회·단체와 관계 맺기</td>
+<td>2.4·2.6·5.1·5.2</td>
+<td><span class="wl-dead" title="위키 내부 링크">2장</span> §5·§7 · <span class="wl-dead" title="위키 내부 링크">5장</span> §2·§3</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>재정 — 후원 모집의 열쇠</td>
+<td>4.3</td>
+<td><span class="wl-dead" title="위키 내부 링크">4장</span> §4</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>연애와 결혼 / 독신 여성 선교사</td>
+<td>5.5·9.4 (+1.6)</td>
+<td>5장 §6 · 1장 §9 · <span class="wl-dead" title="위키 내부 링크">9장</span> §6</td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>언어 장벽 극복</td>
+<td>7장 언어 부분·7.6 (+8.5)</td>
+<td><span class="wl-dead" title="위키 내부 링크">7장</span> §2·§8</td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>단기선교 / 타문화 이해</td>
+<td>3.1·3.2·3.3·8.5</td>
+<td><span class="wl-dead" title="위키 내부 링크">3장</span> §2~§4 · <span class="wl-dead" title="위키 내부 링크">8장</span> §5</td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>강건하게 잘 마치기</td>
+<td>10.1·10.2·10.4</td>
+<td><span class="wl-dead" title="위키 내부 링크">10장</span> §4~§6</td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td>선교단체 소개 — <span class="wl-dead" title="위키 내부 링크">인터서브</span>·<span class="wl-dead" title="위키 내부 링크">GMP</span>·<span class="wl-dead" title="위키 내부 링크">OM</span>·<span class="wl-dead" title="위키 내부 링크">WEC</span> 등 (WINK Day)</td>
+<td>5장 도입 「정신ethos」(p.197)</td>
+<td><span class="wl-dead" title="위키 내부 링크">5장</span> §1</td>
+<td></td>
+</tr>
+<tr>
+<td>12</td>
+<td>예배와 파송식</td>
+<td>—</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>2차 모임 발제에서 본인이 정리한 <strong>세 가지 소명 구분</strong>과 <strong>바울의 프론티어 정신</strong>(§7)은 핸드북 본문이 아니라 핸드북을 축으로 한 본인의 재구성이다. 책의 원문 근거는 서론 p.24-25(직업·은사·소명 세 신학)와 1.4·1.5다.</p>
+</blockquote>
+<hr />
+<h2>4. 본인 강의와의 연결</h2>
+<table>
+<thead>
+<tr>
+<th>강의</th>
+<th>핸드북과의 관계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">타문화선교사_멘토링시리즈</span> (0~6강, New·Old 판본)</td>
+<td>핸드북을 축으로 한 정규 발제. <strong>1강</strong>=서론(세계의 캔버스·정민영 4전환·파워보트→세일보트·know·be·do) / <strong>2강</strong>=1·2장(Solitary→Community→Ministry·갈망 1단계·부르심 네 길·Body Life Design·4대 지원 시스템·프렌드레이징) / <strong>3강</strong>=3·4장(링겐펠터 감옥·콰스트 4층·단기 6원칙·후원 5열쇠·MK 50%) / <strong>4강</strong>=5.6·이주민(풀뿌리 자원·정체성 매트릭스) / <strong>5강</strong>=5장(장기 사역자·토털 케어·독신 여성·기관 선택 기준·십자가 모델) / <strong>6강</strong>=9·10장(평생학습·PDP·광야 4단계·완주의 덫·삼위일체적 멘토링)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">동신미션앤톡</span></td>
+<td>1차·2차 회차 기록 + 12주 표. 롬 15장 프론티어 정신의 원출처</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">우리들의_선교로드맵</span></td>
+<td>"핸드북이 프로그램에 쓸 만한 좋은 텍스트" — 5개 단체 연합 헌신자 멘토링의 실행 보고. 사람이 바뀌어도 프로그램을 지탱할 콘텐츠로 이 책을 지목</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">SNS공동체_모임안내</span> · <span class="wl-dead" title="위키 내부 링크">선자팀_기획안</span></td>
+<td>핸드북을 교재로 언급한 기획 문서</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">멘토링_매뉴얼_로버트클린턴</span></td>
+<td>9·10장과 2.5 멘토 유형(스탠리·클린턴 『인도』)의 원출처</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>5. 멘토링 활용 — 별도 문서로 관리</h2>
+<blockquote>
+<p>이 허브는 <strong>책과 강의</strong>만 연결한다. 헌신자 멘토링에서 어느 절을 어떻게 쓰는지는 ⭐ <strong><span class="wl-dead" title="위키 내부 링크">글로벌 미션 핸드북 — 선교헌신자 멘토링 참조 가이드</span></strong>(공개, 멘티에게 그대로 줄 수 있음)에서 별도로 관리한다. </p>
+</blockquote>
+<hr />
+<h2>6. 9·10과 타이핑 메모 (2026-05) — 병합 완료</h2>
+<blockquote>
+<p>2026-05 미션앤톡 10주차 발제 준비 메모(9과 평생학습·10과 강건하게 잘 마치기)는 2026-09-02 사진 전사와 함께 <a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81_9%EC%9E%A5_%ED%8F%89%EC%83%9D%ED%95%99%EC%8A%B5/">9장</a>·<a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81_10%EC%9E%A5_%EA%B0%95%EA%B1%B4%ED%95%98%EA%B2%8C%EC%9E%98%EB%A7%88%EC%B9%98%EA%B8%B0/">10장</a> 노트와 각 raw에 <strong>원문 그대로 병합</strong>했다(줄 단위 손실 0 검증). 메모의 독자 소회("둘 다 필요하지 않을까"·흉터scar 해석·홈스쿨링)는 노트 본문에 📎로 남아 있다.</p>
+</blockquote>
+<h2>7. 본인 발제의 재구성 — 세 가지 소명 · 바울의 프론티어 정신 (2차 모임)</h2>
+<p><strong>세 가지 소명 구분</strong> (핸드북 p.25의 직업·은사·소명 신학을 본인이 재정리):</p>
+<table>
+<thead>
+<tr>
+<th>소명</th>
+<th>대상</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>The call to mission</strong></td>
+<td>모든 그리스도인</td>
+<td>선교적 삶</td>
+</tr>
+<tr>
+<td><strong>The call to missionary</strong></td>
+<td>선교사</td>
+<td>타문화 파송</td>
+</tr>
+<tr>
+<td><strong>The call to missions</strong></td>
+<td>특정 사역자</td>
+<td>달란트·직업적 소명</td>
+</tr>
+</tbody>
+</table>
+<p><strong>바울의 프론티어 정신</strong> (<span class="wl-dead" title="위키 내부 링크">롬15</span>:19-24): "이 지방에 일할 곳이 없고"(23절) — 에베소·빌립보에 불신자가 많은데 왜? <strong>교회가 세워졌기 때문</strong>이며 이제 그것은 교회의 사역이다. 바울은 교두보가 서면 다음 프론티어로 간다.</p>
+<blockquote>
+<p>선교사 마인드 vs 목회자 마인드 — 목회자는 세워진 교회를 든든히 하고, 선교사는 부르지 않는 곳·터가 없는 곳을 향한다. "선교는 초청받아 가는 곳이 아니다. 환영받는 곳은 선교지가 아니다." 단, 가지 않는 선택을 정죄하는 것이 아니라 부름받은 소수를 국내 필요를 근거로 힘 빼지 말자는 것.</p>
+</blockquote>
+<hr />
+<h2>8. CMF · 의료 선교 연결</h2>
+<p><strong><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a></strong> — 의료인도 세 소명 중 어디에 있는지 물어야 한다 · 바울의 프론티어 정신 → 의료 기술이 닿지 않는 곳으로 · Stripping→Transformation = 번아웃 의료인의 회복 구조 · 잘 마치지 못하는 이유(재정·가정)는 의료인에게도 동일 · 4.6 박상은의 검진·정신건강·예방접종·CPR 목록은 의료인이 맡을 파송 전 준비 · 5.6 초임 40세 문제는 수련 종료 후 나가는 의료인에게 절박.
+<strong><a class="wl" href="../../t/CMF_VPM%EC%B2%A0%ED%95%99/">CMF_VPM철학</a></strong> — 잘 마치는 리더 6특징 = CMF가 세우려는 사람의 기준 · 멘토 구조(상위/동료/멘티) = 학사원 사역의 틀.</p>
+<hr />
+<h2>9. 다른 책·주제와의 교차</h2>
+<ul>
+<li><a class="wl" href="../../b/%EA%B5%90%ED%9A%8C%EC%99%80%EC%84%A0%EA%B5%90_%EC%86%90%EC%B0%BD%EB%82%A8/">교회와선교_손창남</a> — 소달리티·책무 구조. 손창남은 이 책 3.1의 저자이기도 하다</li>
+<li><a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EC%97%90%EB%8C%80%ED%95%9C%EB%84%A4%EA%B0%80%EC%A7%80%EA%B2%AC%ED%95%B4/">선교에대한네가지견해</a> — "모두가 선교사라면 아무도 선교사가 아니다"(서론 p.24)와 리먼·라이트의 넓은/좁은 선교 논쟁</li>
+<li><a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EB%82%98%EB%9D%BC%EC%99%80%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A0%EA%B5%90_%EC%A0%95%EB%AF%BC%EC%98%81/">하나님나라와하나님의선교_정민영</a> — 서론 0.7 네 가지 전환의 확장판</li>
+<li><a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A0%EA%B5%90%EC%84%B8%EC%83%81%EC%9D%84%EB%B0%94%EA%BE%B8%EB%8B%A4_%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%86%A0%ED%8D%BC%EB%9D%BC%EC%9D%B4%ED%8A%B8/">하나님의선교세상을바꾸다_크리스토퍼라이트</a> — 서론이 용어론의 참고로 지목(pp.22-25)</li>
+<li><a class="wl" href="../../b/%EA%B9%A8%EC%96%B4%EC%A7%84%EA%B7%B8%EB%A6%87_%EA%B9%80%ED%83%9C%ED%9B%88/">깨어진그릇_김태훈</a> — Stripping→Transformation 여정</li>
+<li><a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EC%A0%81%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98%EC%96%91%EC%84%B1/">선교적리더십의양성</a> · <a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EC%A7%80%EC%97%90%EC%96%B4%EB%96%A4%EA%B5%90%ED%9A%8C%EB%A5%BC%EC%84%B8%EC%9A%B8%EA%B2%83%EC%9D%B8%EA%B0%80/">선교지에어떤교회를세울것인가</a> — 잘 마치는 리더 6특징·부르심 네 길을 인용</li>
+<li><a class="wl" href="../../t/%EC%98%81%EC%A0%81%EC%99%84%EC%A3%BC/">영적완주</a> — 10과의 결론과 세 표지로 수렴</li>
+<li><a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a> · <a class="wl" href="../../t/%EB%B6%80%EB%A5%B4%EC%8B%AC/">부르심</a> · <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a> · <a class="wl" href="../../t/%EB%8B%A8%EA%B8%B0%EC%84%A0%EA%B5%90/">단기선교</a> · <a class="wl" href="../../t/%EB%A9%A4%EB%B2%84%EC%BC%80%EC%96%B4/">멤버케어</a> · <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EB%8F%99%EC%9B%90/">선교동원</a> · <a class="wl" href="../../t/%EB%A6%AC%EB%8D%94%EC%8B%AD/">리더십</a></li>
+</ul>
+<hr />
+<blockquote>
+<p>📖 전사 원문: 장별 raw는 §1 표(서론·1~10장, 타이핑 메모는 9·10장 raw에 병합)
+🔁 이 허브는 2026-05-02 북써머리(3소명·4길·프론티어·9·10과)를 2026-09-02 사진 전사 시리즈(서론·1~10장)와 <strong>통합</strong>한 것이다. 이전 내용은 §6·§7·§8에 보존.
+🧭 멘토링 참조 가이드: <span class="wl-dead" title="위키 내부 링크">글로벌 미션 핸드북 — 선교헌신자 멘토링 참조 가이드</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#discipline/선교학</span><span>#domain/선교동원</span><span>#domain/선교사훈련</span><span>#domain/멘토링</span><span>#국내도서</span><span>#기독교(개신교)선교/전도</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

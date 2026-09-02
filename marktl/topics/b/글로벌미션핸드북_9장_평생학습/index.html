@@ -1,0 +1,226 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>글로벌 미션 핸드북 — 9장 「평생 학습」 — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">상담·치유·가정</span><span class="author">평생학습</span><span class="date">2026-09-02</span></div>
+  <h1 class="note-title">글로벌 미션 핸드북 — 9장 「평생 학습」</h1>
+  
+</header>
+<article class="note">
+<blockquote>
+<p>3단계 「시작하기」의 둘째 장. "다음은 어디로 가지?"라는 20년차의 질문에서 시작해, <strong>학습 자세</strong>(클린턴)·독서·안식년·<strong>타임라인</strong>·<strong>개인 개발 계획</strong>이라는 도구를 주고, 그 밑바닥에 있는 두 현실 — <strong>과거의 짐</strong>(9.2 의존성·중독성·기능장애)과 <strong>고립</strong>(9.3 Stripping→Wrestling→Transformation→Expansion)을 다룬다. 정민영의 가정 사역(9.4)은 "공론적 차원 → 시행적 차원"이라는 한 문장으로 요약된다. 📷 표시 전사 + 📎 2026-05 발제 메모 통합 노트(메모의 독자 소회는 📎로 표시). 허브: <a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81/">글로벌미션핸드북</a> (미션앤톡 7주차 9.4 · 멘토링 시리즈 6강 교재).</p>
+</blockquote>
+<hr />
+<h2>요약 — 주제별 상세 정리</h2>
+<h3>1. 「다음은 어디로 가지?」 — 유동성의 시대</h3>
+<p>"20년간 사역한 한 선교사가 이렇게 질문한다. '다음은 어디로 가지?'"(p.313). "한 선교사의 아내는 그늘에 가려 아무 일도 하지 않는다. 그녀에게는 상당한 사역 능력이 있지만, 그녀가 역할을 찾을 수 있도록 그 누구도 도와주지 않는다"(p.313). "우리는 '사역 기간'의 개념을 바꾸어야 한다. 앞으로는 선교사들에게 훨씬 더 많은 <strong>유동성</strong>이 요구될 것"(p.313). "은사와 기술이 원숙해짐에 따라 하나님이 당신에게 새롭고 창의적인 영역을 열어 주셔서"(p.313) — 📎 메모: <em>각 나라, 족속과, 백성과 방언에서 백성이 아닐까? People에 대한 다양한 접근.</em> "배우는 일에는 결코 끝이 없다"(p.313). 7장의 "재배치되는 일이 많아질 것"(p.265)의 연장.</p>
+<h3>2. 핵심 인사이트: 정체기의 해독제는 학습 자세다 (클린턴)</h3>
+<blockquote>
+<p>"정체기에 빠지는 것을 막는 가장 중요한 한 가지 해결책은 잘 개발된 <strong>학습 자세</strong>다. 그런 자세는 또한 성령이 비전을 주시는 중요한 통로 중의 하나이기도 하다." — <span class="wl-dead" title="위키 내부 링크">로버트클린턴</span>(p.314)</p>
+</blockquote>
+<p>두 함정: "'급한 일에 쫓겨서' 사역이 곁길로 새는 것과, 너무 짧은 시간에 지나치게 많은 일을 하려다 스트레스를 받는 것"(p.314). "리더와 따르는 자의 차이는 관점에 있다. 평범한 리더와 효과적인 리더의 차이는 더 나은 관점에 있다"(p.314).</p>
+<table>
+<thead>
+<tr>
+<th>실천</th>
+<th>내용(p.314)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>꾸준히 읽으라</td>
+<td>"훌륭한 리더들에게서 볼 수 있는 두드러진 특징은 그들이 독서가라는 사실". 연간 독서 목록(Christianity Today 올해의 책)</td>
+</tr>
+<tr>
+<td>폭넓게 읽으라</td>
+<td>일간·주간지, 선교 저널, 신학·선교학 신간, 영성 고전과 현대서</td>
+</tr>
+<tr>
+<td>지속적인 교육</td>
+<td>안식년 활용, 장기 학습 계획, 워크숍·세미나</td>
+</tr>
+<tr>
+<td>연구 휴가</td>
+<td>원격 학습·웨비나, 1년 이상 대학원 허용 규정</td>
+</tr>
+<tr>
+<td>안식년</td>
+<td>"7년마다 3-9개월 … 안식년은 더 이상 선택 사항이 아니라 필수 사항"</td>
+</tr>
+</tbody>
+</table>
+<p>"성숙한 그리스도인 리더십을 개발하는 데에는 평생이 소요된다. 하나님은 평생에 걸쳐 우리의 인격과 가치, 리더십 기술을 제련해 가신다"(p.314). 9.6 타란탈: "우리는 '사색하는 사역자'reflective practitioners가 되어야 한다 … 유연하고flexible, 적응력 있고adaptable, 잘 배울 줄 알아야teachable"(p.327) — <strong>FAT</strong>. 9.8: "매년 가장 읽고 싶은 <strong>책</strong> 10-15권을 정하고 중요한 순서대로"(p.331). 4.1의 투 트랙·역동적 반영과 7.3 TIMO 가치 ⑩(훈련은 평생)의 결론부. → <span class="wl-dead" title="위키 내부 링크">평생학습</span>·<span class="wl-dead" title="위키 내부 링크">영적지도자만들기_클린턴</span></p>
+<h3>3. 두 도구 — 타임라인(9.1)과 개인 개발 계획(9.8)</h3>
+<p>"사역은 근본적으로 <strong>존재에서</strong> 흘러나온다. 시간을 내서 개인 타임라인을 작성하라"(p.315). 타임라인은 "하나님이 당신을 빚어 가실 때 당신이 어떻게 반응했는지 추적"(p.315)하는 것으로, 6.7의 분별 신호 ⑦(과거의 경험)과 같은 도구다. 작성법(p.316): 출생부터 현재까지 그림·건물·사람·핵심 단어로, 주요 인물·상황·사건, 과도기 기록 → "하나님이 주요 인물과 상황과 사건(과정 요소들)을 어떻게 사용해서 … 성장의 계절(발전 과정들)을 어떻게 지나왔는가 … 긍정적이거나 부정적인 인생의 모든 경험이 당신을 어떻게 더 큰 성장과 사역의 단계에 이르게 했는가"(p.316). "하나님이 지금까지 어떻게 당신과 동행해 오셨는지 다른 사람들에게 설명하는 데에도 도움"(p.316).</p>
+<p><strong>개인 개발 계획</strong>(PDP, p.329-331): "프로필의 세 가지 부문, 즉 <strong>성품</strong>과 <strong>기술</strong>과 <strong>지식</strong>의 영역에서 구체적인 성장을 이루고 학습 목표를 세우기 위해"(p.315). 지침 — "알고 있으면 좋은 것이나 혹은 배우고 싶은 것들을 기록하지 말라. 인격-영성 형성, 사역 형성, 혹은 지식 목표 부문과 관련된 특정 훈련 영역에 초점"(p.329), 개발 필요 항목 먼저, 학습 자료 메모, 완료 일자, 1년에 골고루 배열, "계획을 검토하고 서명해 달라고 부탁하라"(p.329). 현황 파악(p.331): 독서 10-15권, 멘토링 관계 유지, '상위 멘토들'. 📎 메모의 독자 소회: <em>서양의 합리성·계획 — "스터디 하는데 이런거 왜 하냐? 매일 하나님 인도하심, 기도하고 따르면 되지 않나?"라는 극단적인 사람을 봤다 … 둘 다 필요하지 않을까?</em> 참고 도서: 밥 버포드 『하프타임』, 클린턴 『영적 지도자 만들기』·연속 읽기(p.315).</p>
+<h3>4. 린드퀴스트 「과거의 어두움 받아들이기」(9.2) — 짐의 세 종류</h3>
+<p>"우리들 대부분은 안타깝게도 '기능장애'dysfunctionalities라는 짐을 계속 짊어지고 … 쉽게 해결되지 않는 많은 문제를 가지고 선교사 생활을 시작한다"(p.318).</p>
+<table>
+<thead>
+<tr>
+<th>짐</th>
+<th>정의(p.318)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>의존성 dependencies</td>
+<td>"우리의 약점, 되돌아가려는 성향, 혹은 … 향상시키지 못하는 행동들을 반복하는 것"</td>
+</tr>
+<tr>
+<td><strong>중독성</strong> addictions</td>
+<td>"이런 행동들이 영적으로 통제할 수 없게 되거나 더욱 악화되는 것"</td>
+</tr>
+<tr>
+<td><strong>기능장애</strong> dysfunction</td>
+<td>"손상된 것들을 정상화하는데 사실상 적응에 해가 되는 방법으로 하는 것"</td>
+</tr>
+</tbody>
+</table>
+<p>"음란물, 인터넷 과다 사용, 마약, 술 등에 의존하거나 중독될 수 있다. 이런 문제들은 바이러스가 되어 … 모든 영역을 감염시킬 수 있다"(p.318). 치유의 원리: "우리가 약할 때 하나님은 강하시다는 것이다 … 내가 포기할 때 치료가 시작되고, 보다 중요한 것은 그 치료가 계속된다는 사실이다. 나는 내가 속한 공동체에 도움을 구한다"(p.318). "당신이 선교사를 소망한다면, 바로 지금이 당신의 과거를 직시할 때다"(p.318). "과거를 감출수록 그것은 더 강해질 뿐이다. 당신이 다음 세대를 책임지는 리더라면, 당신의 상처와 그 치료 과정이 모델이 되게 하라"(p.319). 📎 메모의 해석: <em>약할 때 강함되신다는 뜻은? 약함을 그냥 놔두라는 것은 아닐 것이다. 약함을 인정, 직시, 받아들이고, 하나님이 치유하심 그것을 통해 하나님의 강함이 드러나신다. 그리고 그 스카(scar)가 다른 사람에게 도움이 된다. 치유된 상황이 하나님의 영광이 드러나는 것.</em> 참고: 마브로조지 『순환 고리 끊기』, 도이치먼 『변하지 않으면 죽는다』(p.319). 8.6 호프만의 "약점과 의존성"과 직결. → <span class="wl-dead" title="위키 내부 링크">고후12</span>·<a class="wl" href="../../t/%EA%B3%A0%EB%82%9C%EA%B3%BC%ED%9A%8C%EB%B3%B5/">고난과회복</a></p>
+<h3>5. 핵심 인사이트: 고립은 하나님이 빚으시는 대기석이다 (9.3 트레베쉬)</h3>
+<p>"'지금은 아무것도 하지 않는다.' '나는 쓸모없는 것 같다.'"(p.319) — <span class="wl-dead" title="위키 내부 링크">OMF</span> 선교사 개발 디렉터 셀리 트레베쉬의 「대기석에 앉아서」. "'고립'이란 일정한 기간 동안 사역에서 떨어져 있는 것 … 이 '떨어져 있음'setting aside은 타문화 사역의 시작(언어 학습 기간 중), 연구 휴가, 안식년 휴가 같은 요인에 의해 자발적으로 일어나거나 혹은 질병이나 사고, 수감, 조직의 치리 등으로 본의 아니게 일어나기도 한다"(p.319). "로버트 클린턴의 연구에 의하면 리더의 90퍼센트가 고립을 겪는다"(p.324).</p>
+<p><code>Stripping (벗겨내기)  →  Wrestling (씨름)  →  Transformation (변화)  →  Expansion (확장)
+외부 신분·'사역' 신분 제거   '사역'하지 않을 때 나는 누구인가   하나님이 뜻하신 변화   사역 책임·영적 권위·돌파력 확대</code></p>
+<p>"씨름하는 단계 … 이 단계 중 극심한 불안감이나 열등감을 경험할 수 있다"(p.319). 처방(p.320): 하나님과의 관계 깊게(묵상·듣기·기록), 치유·인격 형성·성격 변화에 마음 열기, 후원 공동체. 그리고 가장 강조된 문장 — "부디 <strong>요구되는 만큼 고립 상태에 있으라고</strong> 당부하고 싶다. 이것은 보통 고통스러운 일이다. 그래서 우리는 이 상황을 벗어나 다시 사역 활동으로 삶을 채우기 위해 필요한 일은 뭐든 한다. 이런 유혹을 물리치라! 고립된 당신을 위해 주님이 준비하신 보배가 기다린다"(p.320, 📝 <em>안식년 가지세요</em>). 멘토링 시리즈 6강의 「광야의 시간 4단계」·<a class="wl" href="../../t/%EA%B4%91%EC%95%BC/">광야</a>·<a class="wl" href="../../b/%EA%B9%A8%EC%96%B4%EC%A7%84%EA%B7%B8%EB%A6%87_%EA%B9%80%ED%83%9C%ED%9B%88/">깨어진그릇_김태훈</a>의 그릇 여정과 같은 구조. → <a class="wl" href="../../t/%EB%A9%A4%EB%B2%84%EC%BC%80%EC%96%B4/">멤버케어</a></p>
+<h3>6. 정민영 「선교지에서 배운 가정 사역의 정도」(9.4) — 공론에서 시행으로</h3>
+<p><span class="wl-dead" title="위키 내부 링크">정민영</span>의 자기 고백: "자식에 대해 큰 소리칠 수 있는 부모가 어디 있으며 … 사역을 위해 가정을 희생한다는 그럴싸한 궤변이 '은혜롭게' 통하는 우리네 풍토에서 … 가정을 자신 있게 공개할 위인이 과연 몇이나 될까? 물론 있겠지만 나는 분명 아니다. 그런 걸 '반면교사'라고 하던가?"(p.320).</p>
+<blockquote>
+<p>"우리네 교회 문화에서 자녀 양육을 비롯한 대부분의 복음적 가치는 시행적이기보다는 <strong>공론적 차원에</strong> 머물고 있지 않나 … 부모의 책임이라는 '정답'은 곧잘 말하지만, 실천적으로는 학교와 학원, 과외 교사, 그리고 교회와 주일학교에 모든 책임을 떠맡긴 우리네 현실"(p.321)</p>
+</blockquote>
+<p>인도네시아 내지 정글 마을이 "기대하지 않았던 가정의 축복"이 되어 "성경적 자녀 양육론이 <strong>공론적 차원</strong>에서 <strong>시행적 차원</strong>으로 바뀌기 시작했던 것 … 순전히 우연이었다"(p.321). "가장 큰 상급은 하루 24시간, 1년 365일 대부분을 온 가족이 함께 지낼 수 있게 된 환경 … 더 이상 세 아이들의 정규 교육이나 신앙 교육을 위탁할 곳이 없었기 때문에 … 가정 학습과 가정 예배는 자연스런 삶의 일부분"(p.321). 귀국 후에도 유지되어 "우리 가정의 빼앗긴 시간과 공간에 대한 분노와 원망의 쓴 뿌리를 순화"(p.322)했다 — "'한계효용 체감의 법칙'에 따른 희소가치 때문일까?"(p.322). 📎 메모: <em>→ 홈스쿨링, 샬롯 메이슨.</em> 4.4 김동화의 「부모 시간 50%」·「자녀교육 외주화」(멘토링 6강)의 원출처. 미션앤톡 7주차 교재. → <a class="wl" href="../../t/%EA%B0%80%EC%A0%95%EC%82%AC%EC%97%AD/">가정사역</a>·<span class="wl-dead" title="위키 내부 링크">신6</span></p>
+<h3>7. 안식년 휴가 (9.5) — 위기 개입이 아니라 예방적 돌봄</h3>
+<p>"선교기관과 교회는 단순히 위기 상황이 발생했을 때 개입하는 것이 아니라 예방적인 <strong>돌봄</strong>과 <strong>양육</strong> 시스템을 만들어야 한다"(p.324). "고립 상태에 있거나 거의 그런 상태에 처한 선교사들이 일반적으로 생각하는 것보다 더 많다"(p.324). 근거·기간·활동(p.324): 7년마다 1년, 보통 3개월~1년, 정상 임금·혜택, 영성 리트리트, "반추, 재충전, 초점을 맞추는 시간", 조사·저술, 자격 향상, 교환 교육·강좌, 전문 인턴, 창의적 프로젝트. 보고와 책임(p.325): 종료 후 90일 내 보고, <span class="wl-dead" title="위키 내부 링크">네비게이토</span> 본부의 나흘 안식년 오리엔테이션 워크숍. 5.4 토털 케어·7.2 TLC의 구체안. 멘토링 6강 「안식년 3요소」(쉼·성찰·보고)가 여기서 나왔다.</p>
+<h3>8. 타란탈 · 밴더 — 근접 선교와 벗겨 내신 명성</h3>
+<p>피터 타란탈(<span class="wl-dead" title="위키 내부 링크">OM</span>, 남아공, 9.6): "남반구와 북반구 리더들이 서로 멘토가 되어 주기를 제안"(p.326). 남반구에 권장하는 모델은 <strong>근접 선교</strong>proximate mission — "비슷한 민족 언어를 사용하며 근접해 사는, 또 경제력이 대체로 비슷한 계층의 사람들에게"(p.326). "세계 포럼에 동등한 자격으로 참석해야 한다"(p.326). 사전 훈련의 결핍은 "견고한 성경 교육"(p.327). 7.7 유병국의 "자국인·동일 문화권이 마무리"와 같은 방향.</p>
+<p>피어스 밴더(시더스프링스 장로교회, 9.7): 사업 기술과 다방면 경험 → "성공과 명성에 대한 사랑을 벗겨 내셨다"(p.328) — 9.3의 Stripping이 한 사람의 서사로. 교회의 청빙, "믿음의 친구들이 내게 전임 사역을 하라고 말해 주었다", 가족의 확인, "미국에서의 내 신분 문제"라는 장애물 제거(p.328) — 1.5 위임을 통한 부르심·6.7 분별 신호(영적 조언·환경)의 실례.</p>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<ul>
+<li><strong>적용(미션앤톡 7주차·멘토링 6강)</strong>: 9.4 정민영을 「연애와 결혼」 회차에서 가정 사역 축으로, 9.3 고립 4단계를 6강 「광야의 시간」의 원문 근거로. 타임라인(p.316)은 본인이 6강에서 NMTC·인도 단기·MK캠프로 직접 시연한 도구다 — 멘티에게 첫 과제로.</li>
+<li><strong>적용(인터서브 이사·멤버케어)</strong>: "리더의 90%가 고립을 겪는다"와 "안식년은 필수"(p.314)는 안식년 규정을 선택에서 의무로 바꾸는 근거. 9.5의 「90일 내 보고」·「오리엔테이션 워크숍」은 인터서브 안식년 절차 점검 항목. 9.2의 세 짐(의존성·중독성·기능장애)은 허입 면담이 아니라 <strong>케어 면담</strong>의 언어로 써야 한다.</li>
+<li><strong>적용(멘토링·의료)</strong>: "요구되는 만큼 고립 상태에 있으라"(p.320)는 번아웃 의료인·사역자에게 가장 하기 어려운 처방이다 — 대체 활동으로 공허를 채우려는 유혹(6강)을 먼저 짚는다. 📎 메모의 "둘 다 필요하지 않을까"(계획 vs 인도하심)는 멘티 유형별로 강조점을 바꾸는 기준.</li>
+<li><strong>적용(개인)</strong>: 이 위키 자체가 "연간 독서 10-15권 + 역동적 반영"의 실행이다. PDP의 성품·기술·지식 3열을 본인 연간 계획에 대입할 것.</li>
+<li><strong>미해결 질문</strong>: ① 9.5 안식년 절의 저자명 미확인.  ② "리더의 90%가 고립"의 클린턴 원출처 확인.</li>
+</ul>
+<hr />
+<blockquote>
+<p>📖 전사 원문(사진 전사 + 📎 2026-05 타이핑 메모 병합): <span class="wl-dead" title="위키 내부 링크">글로벌미션핸드북_9장_평생학습_전사</span>
+📚 시리즈: <a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81/">허브</a> · <a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81_%EC%84%9C%EB%A1%A0/">서론</a> · <a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81_1%EC%9E%A5_%EA%B0%9C%EC%9D%B8%EC%98%81%EC%84%B1%ED%98%95%EC%84%B1/">1장</a> · <a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81_2%EC%9E%A5_%EC%82%AC%EC%97%AD%EC%A0%95%EC%B2%B4%EC%84%B1/">2장</a> · <a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81_3%EC%9E%A5_%ED%83%80%EB%AC%B8%ED%99%94%EC%A0%91%ED%95%98%EA%B8%B0/">3장</a> · <a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81_4%EC%9E%A5_%EA%B5%90%EC%9C%A1%EA%B3%BC%ED%9B%84%EC%9B%90/">4장</a> · <a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81_5%EC%9E%A5_%EA%B5%90%ED%9A%8C%EC%99%80%EC%84%A0%EA%B5%90%EA%B8%B0%EA%B4%80/">5장</a> · <a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81_6%EC%9E%A5_%EC%82%AC%EC%97%AD%EC%97%AD%ED%95%A0%EA%B3%BC%EA%B3%BC%EC%A0%9C/">6장</a> · <a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81_7%EC%9E%A5_%EC%84%A0%EA%B5%90%EC%82%AC%EC%8B%A4%EC%8A%B5%ED%9B%88%EB%A0%A8/">7장</a> · <a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81_8%EC%9E%A5_%EA%B2%AC%EC%8A%B5%EA%B3%BC%EC%9D%B8%ED%84%B4/">8장</a> · 9장 · <a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81_10%EC%9E%A5_%EA%B0%95%EA%B1%B4%ED%95%98%EA%B2%8C%EC%9E%98%EB%A7%88%EC%B9%98%EA%B8%B0/">10장</a></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#discipline/선교학</span><span>#domain/평생학습</span><span>#domain/멤버케어</span><span>#domain/리더십개발</span><span>#domain/가정사역</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
