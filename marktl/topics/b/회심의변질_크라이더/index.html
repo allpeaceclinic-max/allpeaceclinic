@@ -1,0 +1,342 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>회심의 변질 — 알렌 크라이더 (대장간) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">선교</span><span class="author">크라이더</span><span class="date">2026-09-03</span></div>
+  <h1 class="note-title">회심의 변질 — 알렌 크라이더 (대장간)</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/%ED%9A%8C%EC%8B%AC%EC%9D%98%EB%B3%80%EC%A7%88_%ED%81%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<blockquote>
+<p>원제 <em>The Change of Conversion and the Origin of Christendom</em>, 부제 「초대교회의 회심을 돌아보다」. 박삼종·신광은·이성하·전남식 옮김. 메노나이트 역사신학자 <span class="wl-dead" title="위키 내부 링크">알렌크라이더</span>가 2~6세기 회심의 실제 모습을 추적해, <strong>회심이 「삶의 변화」에서 「소속의 확인」으로 변질되는 과정이 곧 크리스텐덤의 기원</strong>이었음을 논증하는 책. 표지 인용은 <span class="wl-dead" title="위키 내부 링크">본회퍼</span>의 "그리스도께서 당신을 부르시는 것은 와서 죽으라고 부르시는 것이다." 📷 표시 전사 기반 독서 노트.</p>
+<p>⚠️ <strong>부분 독서 노트</strong>. 촬영·전사된 범위는 옮긴이 글(p.15), 1장(p.29~37), 2장 앞부분(p.45~53), 8장(p.168~190)뿐이다. 3장 「회심의 여정」, 4장 「콘스탄틴」, 5~7장(시릴·크리소스톰·어거스틴·볼루시안·카이사리우스)은 아직 읽지 않았다. 차례에서 4·5·8장에 밑줄을 쳐 두었으니 4·5장이 다음 독서 순서다. 이 글은 나머지를 읽은 뒤 갱신한다.</p>
+</blockquote>
+<hr />
+<h2>요약 — 주제별 상세 정리</h2>
+<h3>1. 저자의 분석 틀: 회심 = 신념·소속·행동 세 영역의 지각변동</h3>
+<p>크라이더는 책 전체를 관통하는 세 축을 첫 장에서 세운다. 회심이란 사람의 <strong>신념(belief)·소속(belonging)·행동(behavior)</strong> 세 영역이 한꺼번에 흔들리는 사건이다.</p>
+<blockquote>
+<p>"예수의 우정은 부담스러운 것이었다. 그것은 사람들의 신념belief, 소속belonging, 행동behavior에 엄청난 지각변동을 일으켰다. 사복음서 저자들은 공통적으로 이것을 강조하고 있다." (p.29)</p>
+<p>"<strong>회심은 곧 변화를 의미했다.</strong>" (p.30 — 독자 동그라미)</p>
+</blockquote>
+<p>이 틀은 8장에서 크리스텐덤의 특징을 분류하는 뼈대로 그대로 돌아온다. "나는 이들 특징들은 지도자들과 수많은 사람들이 회심의 세 영역신념, 소속, 행동에 대한 모종의 관점을 갖게 되는 방식과 직접적으로 관련되어 있다고 믿는다."(p.176) 즉 이 책의 논리는 <strong>①초대교회에서 세 영역이 어떻게 함께 변했는가 → ②크리스텐덤에서 세 영역이 어떻게 각각 「공통의 것」으로 굳어졌는가</strong>의 대조다.</p>
+<p>독자는 1장에서 「회심」·「변화」·「신념」·「행동」·「소속」에 반복해서 동그라미를 쳤다(p.30, 31, 33, 35, 36, 37). 저자의 세 축을 처음부터 의식하며 읽은 흔적이다. <a class="wl" href="../../t/%ED%9A%8C%EC%8B%AC/">회심</a> 페이지가 회심을 "회개와 믿음이 한 몸으로 일어나는 사건"으로 정의한다면, 크라이더는 그 사건의 <strong>사회적 결과</strong>(소속과 행동의 변화)를 회심의 정의 안에 넣는다.</p>
+<table>
+<thead>
+<tr>
+<th>축</th>
+<th>신약·초대교회의 회심</th>
+<th>크리스텐덤의 「공통의 ~」</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>신념</td>
+<td>마귀의 권세 영역을 분별하는 데까지 이름 (p.36)</td>
+<td>종교·세속 지도자가 승인한 정통 = 사회의 체계적 이데올로기 (p.176)</td>
+</tr>
+<tr>
+<td>소속</td>
+<td>공동 기금·원수를 위한 기도 등 대안 공동체 (p.37)</td>
+<td>시민 = 교인, 거류민(paroikos) → 거주자(parochianus) (p.179)</td>
+</tr>
+<tr>
+<td>행동</td>
+<td>돈·섹스·권력·주술과의 씨름에서 해방 (p.36)</td>
+<td>상식·전통·구약(십계명)에 기초, 주류 사회 상식을 반영 (p.183)</td>
+</tr>
+<tr>
+<td>밑바탕</td>
+<td>"하나님의 능력"을 덧입음 (p.37)</td>
+<td><strong>강제</strong>: 유인과 강제, 당근과 채찍 (p.185)</td>
+</tr>
+</tbody>
+</table>
+<h3>2. 신약의 회심 이야기가 남긴 「미결 상태」</h3>
+<p>저자는 신약의 회심 기사를 둘로 나눈다. 바울과 베드로처럼 <strong>값비싼</strong> 회심이 있고, 고넬료와 에디오피아 환관처럼 <strong>결말이 없는</strong> 회심이 있다.</p>
+<blockquote>
+<p>"바울과 베드로에게, 회심은 값비싼 것이었다. 그 이후로 그들의 삶은 위험을 감수해야만 했고, 종국에는 사형으로 생을 마감하게 되었다." (p.30)</p>
+<p>"백부장 고넬료는 성령 충만을 경험하고는 침례를 받았다. 그 후 그에게 무슨 일이 일어났는가? 군대를 떠났던가? 회심 이후 그의 생활 방식과 우선순위에 무슨 변화가 일어났던가? 사도행전 저자는 아무런 대답도 하지 않는다." (p.30~31)</p>
+<p>"환관은 '기쁨에 차서 가던 길을 갔다.'8:39 그가 기뻐한 것은 알겠지만, 과연 그는 변화되었을까? 이 이야기는 미결 상태로 남아 있다." (p.31)</p>
+</blockquote>
+<p>이 「미결」은 수사적 장치다. 저자는 곧바로 "2세기 초에야 회심 이야기를 구할 수 있었으며, 언제나 그래왔듯이 <strong>삶의 변화가 회심의 전부였다</strong>"(p.31)고 못 박는다. 신약이 침묵한 자리를 2세기 저스틴이 채운다는 구성이다. 5세기 <span class="wl-dead" title="위키 내부 링크">어거스틴</span>이 북아프리카 평신도들의 삶의 쇄신에 "깜짝 놀랐다"는 언급(p.31)은 이 책이 어거스틴을 다루는 6장의 복선이다.</p>
+<h3>3. 저스틴의 회심: 철학 순례에서 「말씀의 권세」로</h3>
+<p><span class="wl-dead" title="위키 내부 링크">순교자저스틴</span>은 이 책의 첫 사례다. 스토아·아리스토텔레스·피타고라스·플라톤학파를 차례로 거친 철학 순례자가 해안가에서 만난 "외모가 전혀 볼품없는 한 노인"(유대 그리스도인)과의 대화로 돌아선다.</p>
+<blockquote>
+<p>"저스틴은 그 대화를 통해 삶의 변화가 일어나는 것을 감지했다." (p.32)</p>
+<p>"저스틴은 오직 그리스도의 철학만이 '안전하고도 유익한 것이다'라는 사실을 발견했다. 저스틴에게 회심은 신념의 변화를 수반하는 것이었으며, 이 새로운 신념은 입교 의식에서 입증되어야 했다." (p.33)</p>
+</blockquote>
+<p>두 번째 회심 이야기(『제2 변증서』)는 철학이 아니라 <strong>목격</strong>이다. 박해와 고문 아래서도 그리스도인들이 "죽음을 두려워하지 않았다"(p.33)는 사실이 그를 감동시켰고, 그때부터 플라톤주의에 대한 헌신이 식어 갔다. 즉 저스틴의 회심에는 지적 설득(신념)과 순교자의 삶에 대한 관찰(행동)이 함께 작동했다.</p>
+<h3>4. 저스틴의 신앙문답: 신념에서 행동으로, 그리고 소속으로</h3>
+<p>저자가 저스틴에게서 가장 공들여 복원하는 것은 그가 로마에서 가르친 <strong>신앙문답의 내용</strong>이다. 『제1 변증서』 12~17장이 그 요약본이라고 본다.</p>
+<blockquote>
+<p>"그 후 저스틴의 가르침은 <strong>신념에서 행동으로</strong> 옮겨갔다. 그의 말을 듣던 사람들은 예수의 가르침대로 산다는 것이 얼마나 어려운지를 익히 알고 있었다. 그들은 자신들을 속이고 '어쩔 수 없다'라는 덫으로 자신들을 노예를 삼는 마귀와의 '씨름'에 사로잡혀 있었다. 그 씨름은 아마 충동compulsion과 중독addiction으로 표현할 수 있을 것이다." (p.35)</p>
+<p>"저스틴은 그리스도인에게 다음 세 가지 영역에서 마귀의 권세에 저항하라고 촉구하였다. 그것은 돈, 섹스, 권력으로, 이는 수세기에 걸쳐 목회자 및 신학자들이 한 결같이 언급했던 것들이었다. 하지만 저스틴은 여기에 네 번째 요소인 <strong>주술occult</strong>을 추가했다." (p.36)</p>
+</blockquote>
+<p>저스틴의 「우리」 화법 네 가지는 회심의 전후 대조표 그 자체다.</p>
+<table>
+<thead>
+<tr>
+<th>영역</th>
+<th>이전</th>
+<th>이후 (p.36)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>섹스</td>
+<td>음란에 빠짐</td>
+<td>"절제하는 삶을 기뻐합니다"</td>
+</tr>
+<tr>
+<td>주술</td>
+<td>마술 사용</td>
+<td>"오로지 자존하시는unbegotten 하나님께만 헌신합니다"</td>
+</tr>
+<tr>
+<td>돈</td>
+<td>부와 재산 축적이 최고의 만족</td>
+<td>"재산을 공동 기금으로 가지고 와서 궁핍에 처한 모든 사람과 나누고 있습니다"</td>
+</tr>
+<tr>
+<td>권력·폭력</td>
+<td>관습이 다른 부족민을 증오·살해</td>
+<td>"함께 모여 살며, 원수들을 위해 기도하고 있습니다"</td>
+</tr>
+</tbody>
+</table>
+<p>그리고 세 번째 축이 따라온다. "또한 그 자유는 독특한 형태의 <strong>소속으로</strong> 이어졌다. 기독교 공동체는 예수의 가르침을 준행하는데 발생할 수 있는 섹스, 주술, 재산 문제를 다루는 방법에 대해 서로 긴밀하게 논의하였다."(p.37) 회심은 개인의 결심이 아니라 <strong>공동체가 함께 씨름하는 제도</strong>(공동 기금, 원수를 위한 기도)를 낳았다. 이를 살아내는 근거는 의지가 아니라 "하나님의 능력"이다. 저스틴의 인용: "사람은 할 수 없는 일이라도, 하나님은 하실 수 있다."(p.37)</p>
+<p><strong>핵심 인사이트: 초대교회의 세례 준비는 교리 암기가 아니라 중독과의 씨름이었다.</strong> 세례 전 축사(逐邪)로 마귀에게 "공격"을 감행하고(p.35), 침례가 "회심의 핵심nodal point"(p.37)이 되는 이유다. 오늘의 새신자 교육이 대부분 신념 전달에 머무는 것과 대조된다. <a class="wl" href="../../t/%EC%84%B8%EB%A1%80/">세례</a>·<a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%EB%8F%84/">제자도</a> 연결점.</p>
+<h3>5. 핵심 인사이트: 예배는 전도 도구가 아니었다 — 매력적인 삶이 성장의 열쇠</h3>
+<p>2장은 크라이더의 다른 책들(<a class="wl" href="../../b/%EC%B4%88%EA%B8%B0%EA%B8%B0%EB%8F%85%EA%B5%90%EC%9D%98%EC%98%88%EB%B0%B0%EC%99%80%EB%B3%B5%EC%9D%8C%EC%A0%84%EB%8F%84_%ED%81%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/">초기기독교의예배와복음전도_크라이더</a>, <a class="wl" href="../../b/%EC%B4%88%EA%B8%B0%EA%B5%90%ED%9A%8C%EC%9D%98%EC%9D%B8%EB%82%B4%EC%99%80%EB%B0%9C%ED%9A%A8_%ED%81%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/">초기교회의인내와발효_크라이더</a>)과 가장 겹치는 대목이지만, 이 책에서는 「회심의 통로」 문제로 좁혀진다. 로드니 스타크의 수치가 출발점이다.</p>
+<blockquote>
+<p>"312년, 로마 제국 인구의 약 10퍼센트가 교회에 소속되어 있었고, 이전 3세기 동안 교회는 통계상으로 매 10년마다 평균 40퍼센트씩 증가했다.Stark, 1996:8" (p.46)</p>
+</blockquote>
+<p>그런데 성장 수단이 없었다. 저자는 세 가지 부재를 나열한다.</p>
+<blockquote>
+<p>"그리스도인들은 눈에 띌만한 복음전도 프로그램을 갖고 있지도 않았다. … '수십 년 동안 복음 전도'를 실시한 적이 없었다." (p.51)</p>
+<p>"그들이 참여하는 예배 형태가 매력적이었기 때문에 교회가 성장한 것이 아니었다. 2세기 즈음부터, 불신자들은 교회 모임에 들어오는 것이 금지되었다." (p.51)</p>
+<p>"<strong>기독교 예배는</strong> 그리스도인들이 하나님을 예배하도록 설계된 것이었다. 비그리스도인들을 끌어 모이기 위해 설계된 것이 아니었다. 한마디로 '구도자에게 민감한 예배'seeker-sensitive가 아니었다. 구도자들은 아예 입장이 허용되지 않았기 때문이다." (p.52)</p>
+</blockquote>
+<p>대신 성장은 <strong>부산물</strong>이었다. 적대자 캐실리우스와 변증가 <span class="wl-dead" title="위키 내부 링크">터툴리안</span>의 증언이 같은 지점을 가리킨다. 캐실리우스는 그리스도인들의 "행동"과 "공동체에 대한 소속감"(p.47)에 분노하면서도 호기심을 가졌고, 터툴리안은 이교도 남편의 눈으로 아내의 변화(감옥의 순교자 방문, 형제들과의 입맞춤, 가난한 자의 집 방문)를 묘사하며 "그 남편도 언제가 하나님을 경외하는 예비자candidate"(p.49)라고 말한다.</p>
+<blockquote>
+<p>"왜냐하면, 그리스도인들이 비록 주변인이었지만, 그들의 삶은 호기심을 자아낼 만큼 충분히 매력적이었기 때문이었다. 이러한 매력적인 삶이 교회 성장의 열쇠였다." (p.50)</p>
+<p>"만일 기독교 예배가 복음 전도에 도움이 되었다면, 그것은 그리스도인들 개개인의 의식 수준과 그들이 이룬 특별한 공동체 때문이었으며, 그들의 삶과 외인outsider들과 맺은 매력적인 관계성과, 호기심을 자아내는 행동으로 발생한 부산물로서, 전혀 의도되지 않은 것이었다." (p.52)</p>
+</blockquote>
+<p>예배가 전도에 기여한 유일한 경로는 <strong>예배가 사람을 빚는다</strong>는 것이다. 『사도계율』의 주교는 떠돌이 가난뱅이에게 자리를 내주기 위해 "땅바닥에 앉는 한이 있더라도"(p.53) 그렇게 해야 했고, 그 모본이 공동체의 습관이 되었다. "그리스도인들의 예배는 간접적으로 교회의 전도를 지원해 주었다."(p.53) 이것이 <a class="wl" href="../../b/%EC%B4%88%EA%B8%B0%EA%B5%90%ED%9A%8C%EC%9D%98%EC%9D%B8%EB%82%B4%EC%99%80%EB%B0%9C%ED%9A%A8_%ED%81%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/">초기교회의인내와발효_크라이더</a>에서 「아비투스」로 발전하는 개념의 초기 형태다. <a class="wl" href="../../b/1%EC%84%B8%EA%B8%B0%EA%B5%90%ED%9A%8C%EC%98%88%EB%B0%B0%EC%9D%B4%EC%95%BC%EA%B8%B0_%EB%A1%9C%EB%B2%84%ED%8A%B8%EB%B1%85%ED%81%AC%EC%8A%A4/">1세기교회예배이야기_로버트뱅크스</a>의 가정교회 묘사, <a class="wl" href="../../b/1%EC%84%B8%EA%B8%B0%EA%B7%B8%EB%A6%AC%EC%8A%A4%EB%8F%84%EC%9D%B8%EC%9D%98%EC%84%A0%EA%B5%90%EC%9D%B4%EC%95%BC%EA%B8%B0_%EB%A1%9C%EB%B2%84%ED%8A%B8%EB%B1%85%ED%81%AC%EC%8A%A4/">1세기그리스도인의선교이야기_로버트뱅크스</a>의 「선교 프로그램 없는 선교」와 같은 그림을 그린다. <a class="wl" href="../../t/%EC%98%88%EB%B0%B0%EC%99%80%EC%84%A0%EA%B5%90/">예배와선교</a> 연결점.</p>
+<p>「죽음 앞에서 나누는 평화의 입맞춤」(p.51)은 초대교회 회심의 사회적 결과를 압축한다. 신분을 넘어 입을 맞추는 사람들은 "같은 신분끼리만 합법적으로 입을 맞추는 사람들과 얼마나 다른가!"(MacMullen, p.51)</p>
+<h3>6. 클로비스의 세례: 「패스트푸드 회심」의 원형</h3>
+<p>8장은 5세기 말 프랑크 왕 클로비스의 세례로 크리스텐덤의 기원을 연다. 저자가 주목하는 것은 세례의 <strong>형식은 그대로인데 내용이 비었다</strong>는 점이다.</p>
+<blockquote>
+<p>"자신의 군대가 자신을 따라 기독교로 개종하리라는 것을 알게 된 클로비스 왕은 침례를 받았다." (p.168)</p>
+<p>"성탄절 전야가 다가오자부활절 때까지 왕을 기다리게 하지 않기로 결정한 것이 분명하다 클로비스 왕은 라임의 침례탕으로 들어갔다." (p.169)</p>
+</blockquote>
+<p>기다림(신앙문답 기간)이 생략되었고, 왕은 "침례탕에서도 끝까지 투구를 벗지 않았다"(p.169). 흐르는 물·기름 바름·하얀 침례복 등 <strong>전통과의 연속성</strong>(p.169)은 남았지만, 회심의 세 축 가운데 남은 것은 "우상숭배를 거부하고 성직자에게 복종하는 것"뿐이다.</p>
+<blockquote>
+<p>"이것은 초기의 회심과는 완전히 다르며, 회심의 요소인 우상숭배를 거부하고 성직자에게 복종하는 것'하나님의 종 앞에 [무릎 꿇는 것]'도 순식간에 양산될 수 있었다. 그로 인해 클로비스 왕의 회심은 그의 병사들의 회심의 모범이 되었으며, 나중에는 헤아릴 수 없는 유럽인들의 회심의 모범이 되었다." (p.171)</p>
+</blockquote>
+<p>역자 각주가 저자의 「패스트푸드」 비유를 풀어 준다. "삶의 변화가 없이 군주가 회심함으로 그 나라 전체가 기독교 국가가 되는 현상."(p.171 각주) 이 사건은 서구 기독교의 중심을 지중해에서 북유럽으로 옮긴 "종교-지리정치학"적 전환점(p.171)이기도 했다. <span class="wl-dead" title="위키 내부 링크">콘스탄티누스</span>가 「유혹을 확대」(4장 제목)했다면 클로비스는 그 유혹이 완성된 형태다.</p>
+<h3>7. 크리스텐덤의 해부: 공통의 신념·소속·행동 + 강제</h3>
+<p>저자는 크리스텐덤을 "인간 경험의 모든 영역을 그리스도의 주재권Lordship 하에 굴복시키기를 원하는 문화"(p.176)로 정의하고, 회심의 세 축에 따라 특징을 분류한다. 이 분류표는 책의 백미이며 <a class="wl" href="../../t/%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%85%90%EB%8D%A4/">크리스텐덤</a> 페이지의 정의를 <strong>회심론의 관점에서</strong> 보완한다.</p>
+<p><strong>1) 공통의 신념: 정통 기독교</strong> (p.176~179)
+- "크리스텐덤의 신념 체계는 정통 기독교의 체계다. 이는 종교와 세속적 지도자들이 승인한 정통 기독교의 신념 체계를 말한다. 이것은 전체 사회에 대한 '체계적 이데올로기'를 제공한다."(p.176) — <span class="wl-dead" title="위키 내부 링크">자끄엘륄</span> 『뒤틀려진 기독교』 인용
+- <strong>이단은 용납될 수 없다</strong>: "종교적으로, 크리스텐덤 사회는 단일 정당 국가다. … '이단'헬라어 하이레시스hairesis에서 유래한 말로, 이는 선택에 기초한 종파를 말한다은 절대로 용납될 수 없는 것이었다. 크리스텐덤에서 오류는 아무런 권리를 갖지 못한다."(p.177) 유일하게 허용된 타종교는 유대교였다.
+- <strong>비공식 관습이 살아남는다</strong>: 브라가의 마틴이 "돌과 나무, 샘 곁이나 세 갈래 길"의 촛불을 꾸짖었지만 "이중 신앙 관습"은 지속되었다(p.178).
+- <strong>종교적 교훈은 초보 수준</strong>: "성직자들은 종종 주기도문이나 사도신경, 그리고 십계명에 관한 지식을 전달해 주기만 하면 신앙문답 교육이 성공적이라고 보았다."(p.179) — 저스틴의 「씨름」과 정확히 대비되는 지점.
+- 사회의 상징·예술·제의가 기독교적이나, 성상은 점성술·비기독교 신화에서 이미지를 빌린다(p.179).</p>
+<p><strong>2) 공통의 소속</strong> (p.179~183)
+- "크리스텐덤에서 모든 사람은 그리스도인이다. 그리고 모든 그리스도인은 거주외국인paroikos이 아니라 거주자, 곧 파로키아누스parochianus이다."(p.179) — 초대교회의 자기 정체성 「거류민paroikoi」(p.53)이 「교구민」으로 뒤집힌다. 언어 하나에 담긴 변질.
+- <strong>교구는 거대</strong>하고 예배 참석자는 불규칙·불손하다(p.181).
+- <strong>교회/국가의 공생</strong>: "왕권regnum과 교권sacerdotium은 공생 관계이다. 교회는 국가에 믿음직한 종교적 정당화를 제공한다. … 국가는 또한 교회론에 관한 논쟁을 해결해 주고, … 이단을 처형하는 것 같은 지저분한 일들을 대신 해줄 수 있다."(p.181) → <a class="wl" href="../../t/%EC%A0%95%EA%B5%90%EB%B6%84%EB%A6%AC/">정교분리</a>
+- <strong>선택의 부재</strong>: "크리스텐덤의 백성들에게 선택이란 존재하지 않는다."(p.181)
+- <strong>성직자주의</strong>: "크리스텐덤 내부에서 기본적인 분리는 교회와 세상이 아니라 성직자clergy와 평신도laity 사이의 분리다. … 침례가 제구실을 못함에 따라 … 서품ordination과 서임induction에 의해 다른 그리스도인들과 구분되었다."(p.182) — 세례가 경계 사건의 자리를 잃자 서품이 그 자리를 차지했다는 진단.
+- <strong>선교의 실종</strong>: "크리스텐덤 사회에서 선교는 거의 강조되지 않는다. … 선교는 종종 크리스텐덤 교회의 지리적 영역 밖에서, 곧 외국인에게 일어난다. 자국내에서 … 종종 사용되는 언어는 … '갱신' 혹은 '부흥' 혹은 '재복음화'를 의미한다."(p.183) → <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a></p>
+<p><strong>3) 공통의 행동</strong> (p.183~185)
+- "크리스텐덤에서, 그리스도인의 행동은 상식, 전통, 그리고 성서, 특별히 구약성서에 기초한다십계명이 강조된다. 확대 신앙문답 공부는 회심자를 예수의 가르침을 따라 살도록 했던 초기와는 다르게, 크리스텐덤에서 그리스도인의 행동은 당시 주류 사회의 상식을 반영하기에 이르렀다."(p.183)
+- <strong>행동 규범의 강요</strong>(독자 동그라미): 이웃의 압력, 교회의 「계약」 상기, 국가의 법제화(p.184).
+- <strong>예외적으로 헌신된 그리스도인</strong>: 산상설교를 "완전한 덕행의 권고counsels of perfection"로 격리시키고, 헌신자를 성직자나 수도 공동체("제2의 침례")로 보낸다. "크리스텐덤 문화는 헌신된 소수자들의 삶의 방식이 '평범한' 그리스도인을 위한 삶의 방식을 형성해야 한다는 것을 제안하지 않는다는 조건으로 헌신된 소수자들을 존경한다."(p.184~185) — 제자도의 이중 기준. <a class="wl" href="../../b/%EC%9E%8A%ED%98%80%EC%A7%84%EC%A0%9C%EC%9E%90%EB%8F%84_%EB%8B%AC%EB%9D%BC%EC%8A%A4%EC%9C%8C%EB%9D%BC%EB%93%9C/">잊혀진제자도_달라스윌라드</a>가 비판하는 「제자 아닌 그리스도인」의 역사적 기원.</p>
+<p><strong>4) 강제</strong> (p.185~186)</p>
+<blockquote>
+<p>"이것은 크리스텐덤의 세 가지 특성의 밑바탕에 흐르고 있다. … 허버트 버터필드 경은 … 유인inducement과 강제compulsion에 대해서 썼다. 보다 구어적으로 짤즈만은 '당근과 채찍'이라는 말을 썼다. 한편 맥멀린은 특유한 감각을 가지고 '아첨과 구타'flattery and battery라고 표현했다." (p.185)</p>
+</blockquote>
+<p>585년 제2차 메이콘 공의회의 십일조 세금화(p.185), 공공기관 참여의 정통교회 제한, 학교·감옥의 채플 의무(p.186)가 사례다. "크리스텐덤의 사전에서, 핍박이란 비그리스도인들이 그리스도인들에게 가하는 것일 뿐이다."(p.186)</p>
+<h3>8. 크리스텐덤의 그늘: 후기 크리스텐덤의 양면성</h3>
+<p>저자는 크리스텐덤을 단순 악으로 몰지 않는다. 독자가 「효과는 · 다의적이고도 · 모호하다」(p.188)에 세 겹 동그라미를 친 것이 이 균형을 붙든 지점이다.</p>
+<blockquote>
+<p>"그럼에도 불구하고 대부분의 서양사회에서 크리스텐덤은 해체되지 않았다 할지라도 심각한 노쇠의 상태에 있다." (p.187)</p>
+<p>"나는 서구사회의 경험이 가르쳐주는 것은 강제력 없이는 통일된 기독교사회는 세워질 수 없다고 믿는다. 그리고 과거 크리스텐덤에서와 같은 강제력은 후기 크리스텐덤에서는 불가능하다." (p.187~188)</p>
+<p>"크리스텐덤의 이러한 에큐메니컬한 산물은 우리의 삶을 풍요롭게 해주었다. … <strong>하지만</strong> 추하고 무가치한 크리스텐덤의 다른 잔해도 여전히 남아 있으며, 많은 사람들에게 이것들은 분명 신앙에 이르는 데 장애가 될 것이다. 이것들 중에는, 내가 보기에, 사람들을 그리스도인의 통제 하에 굴복시키는 접근법들이나 제도들이 포함되어 있다." (p.188)</p>
+</blockquote>
+<p>특히 「부흥·갱신·재복음화」의 언어를 경계한다. 역자 각주대로 저자는 이 세 단어의 공통 어근 <em>re-</em>를 이탤릭으로 표시해 <strong>크리스텐덤으로의 회귀를 꿈꾸는 기독교</strong>를 암시한다(p.189 각주). "크리스텐덤으로 인해, 기독교에 대해 언급할 때 사람들은 지루함 혹은 불쾌감을 경험하게 될 것이다."(p.189) <a class="wl" href="../../t/%EC%84%B8%EC%86%8D%ED%99%94/">세속화</a> 논의와 직결되며, <span class="wl-dead" title="위키 내부 링크">스탠리하우어워스</span>·오도노반 등의 크리스텐덤 모델 논쟁(p.187)을 배경으로 둔다.</p>
+<h3>9. 핵심 인사이트: 후기 크리스텐덤이지 후기 기독교가 아니다</h3>
+<blockquote>
+<p>"우리는 후기 크리스텐덤post-Christendom에서 살고 있다. 그렇다고 이것이 절망할 이유는 아니다. 대신 그리스도인들의 어깨에서 무거운 짐을 내려놓게 된 해방으로 볼 수 있다. 이것이 분명 후기 크리스텐덤 시대라 할 수는 있겠지만 결단코 후기 기독교 시대는 아니다." (p.189)</p>
+<p>"초대교회는 이미 후기 크리스텐덤에서 살고 있는 그리스도인들에게 회심에 대한 '유의미한 실마리'의 원천이 되었다. 필자는 초대교회가 훨씬 더 많은 사람들에게 회심의 단초를 제공하는 원천이 될 수 있다고 생각한다." (p.190)</p>
+</blockquote>
+<p>버터필드가 50년 전에 말한 "지난 1500년의 기독교 역사에서 가장 중요하고 가장 신나는 시기"(p.189~190)가 지금이라는 것. 저자는 결론에서 세 실마리를 예고하는데 첫째가 <strong>선교적 민감성(missiological alertness)</strong>이다. "초대교회 그리스도인들은 그들 문명을 지배했던 문화적 패턴에 민감했다. … 어떤 것은 활용하고 어떤 것은 개작하고 어떤 건 거부했다."(p.190) 나머지 두 실마리는 미독 구간에 있다. <a class="wl" href="../../b/%EB%88%84%EA%B0%80%EA%B7%B8%EC%A7%84%EB%A6%AC%EB%A5%BC%EC%A3%BD%EC%98%80%EB%8A%94%EA%B0%80_%EB%A0%88%EC%8A%AC%EB%A6%AC%EB%89%B4%EB%B9%84%EA%B8%B4/">누가그진리를죽였는가_레슬리뉴비긴</a>이 서구 문화를 선교지로 읽는 것과 같은 자리에 선다.</p>
+<hr />
+<h2>다른 크라이더 저작과의 관계</h2>
+<table>
+<thead>
+<tr>
+<th>책</th>
+<th>초점</th>
+<th>이 책과의 관계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="wl" href="../../b/%EC%B4%88%EA%B8%B0%EA%B8%B0%EB%8F%85%EA%B5%90%EC%9D%98%EC%98%88%EB%B0%B0%EC%99%80%EB%B3%B5%EC%9D%8C%EC%A0%84%EB%8F%84_%ED%81%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/">초기기독교의예배와복음전도_크라이더</a></td>
+<td>예배와 전도의 「무관계」</td>
+<td>2장이 요약판. 이 책은 그것을 <strong>회심의 통로</strong> 문제로 좁힘</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%B4%88%EA%B8%B0%EA%B5%90%ED%9A%8C%EC%9D%98%EC%9D%B8%EB%82%B4%EC%99%80%EB%B0%9C%ED%9A%A8_%ED%81%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/">초기교회의인내와발효_크라이더</a></td>
+<td>아비투스·인내</td>
+<td>이 책 p.53 「예배가 사람을 빚는다」가 아비투스 개념의 씨앗</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EC%9D%98%EB%B3%80%EC%A7%88_%ED%81%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/">선교의변질_크라이더</a></td>
+<td>보쉬 비판·크리스텐덤 전환표</td>
+<td>8장의 「공통의 신념·소속·행동+강제」가 전환표의 회심론 버전</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%B4%88%EB%8C%80%EA%B5%90%ED%9A%8C%EC%97%90%EA%B8%B8%EC%9D%84%EB%AC%BB%EB%8B%A4_%ED%81%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/">초대교회에길을묻다_크라이더</a></td>
+<td>초대교회의 실천</td>
+<td>저스틴 신앙문답(1장)의 상세 배경</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<ul>
+<li><strong>적용(청년·학사 사역)</strong>: 새신자 교육이 「신념 전달」에 머무는지 점검. 저스틴은 돈·섹스·권력·주술과의 「씨름」을 세례 전 과정의 본체로 삼았다(p.35~36). 학사수련회·GBS에서 회심 이후의 <strong>행동·소속 변화</strong>를 어떻게 묻고 있는가.</li>
+<li><strong>적용(교회)</strong>: "구도자에게 민감한 예배"가 아니라 "그리스도인을 빚는 예배"(p.52~53). 예배 설계의 목적 함수를 무엇으로 두고 있는지. 성직자·평신도 분리가 세례의 자리를 대신하고 있지 않은지(p.182).</li>
+<li><strong>적용(선교·인터서브)</strong>: 크리스텐덤의 선교 언어 「갱신·부흥·재복음화」(p.183, 189)가 한국 교회의 선교 담론에 어떻게 스며 있는지. 「선교는 외국인에게」라는 구조가 국내 이주민·청년 세대에 대한 선교적 민감성을 가리고 있지 않은지.</li>
+<li><strong>적용(의료·직업)</strong>: 저스틴의 「우리」 화법(p.36)은 직업 현장에서의 회심 증거를 묻는 질문이다. 의사로서 돈·권력 영역의 「이전/이후」를 말할 수 있는가.</li>
+<li><strong>미해결 질문</strong></li>
+<li>3~7장 미독: 콘스탄틴(4장)이 「유혹을 확대」한 구체적 메커니즘, 시릴·크리소스톰의 대중 신앙문답(5장), 어거스틴이 볼루시안을 「유혹」한 방식(6장), 카이사리우스의 「그리스도인 변화시키기」(7장)를 읽어야 1장→8장 사이의 변질 곡선이 채워진다.</li>
+<li>8장 결론의 나머지 두 실마리(p.190 이후)는 무엇인가.</li>
+<li>한국 교회는 크리스텐덤을 경험한 적이 없는데 크리스텐덤의 <strong>정신구조</strong>(성직자주의, 강제, 부흥의 언어)는 수입했다. 「크리스텐덤 없는 크리스텐덤 정신」은 어떻게 형성되었나. <a class="wl" href="../../t/%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%85%90%EB%8D%A4/">크리스텐덤</a>의 한국 적용 논의와 이어진다.</li>
+<li>저자가 말하는 「선택에 기초한 종파(hairesis)」의 복권은 종교 자유·다원 사회에서 교회의 정체성 주장과 어떻게 양립하는가.</li>
+</ul>
+<hr />
+<blockquote>
+<p>📖 전사 원문(줄이지 않은 표시 구절 전체): <span class="wl-dead" title="위키 내부 링크">회심의변질_크라이더_전사</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#discipline/교회사</span><span>#discipline/구원론</span><span>#domain/선교</span><span>#domain/신학</span><span>#회심</span><span>#크리스텐덤</span><span>#초대교회</span><span>#신앙문답</span><span>#세례</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
