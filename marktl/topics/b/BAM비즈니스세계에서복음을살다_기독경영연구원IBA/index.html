@@ -1,0 +1,344 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>BAM: 비즈니스 세계에서 복음을 살다 — 기독경영연구원 &amp; IBA 공저 ((주)샘앤북스) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">리더십·일·경영</span><span class="date">2026-09-03</span></div>
+  <h1 class="note-title">BAM: 비즈니스 세계에서 복음을 살다 — 기독경영연구원 &amp; IBA 공저 ((주)샘앤북스)</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/BAM%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4%EC%84%B8%EA%B3%84%EC%97%90%EC%84%9C%EB%B3%B5%EC%9D%8C%EC%9D%84%EC%82%B4%EB%8B%A4_%EA%B8%B0%EB%8F%85%EA%B2%BD%EC%98%81%EC%97%B0%EA%B5%AC%EC%9B%90IBA/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<blockquote>
+<p>「젊은 세대를 위한 BAM 개론서」를 표방한 공저. 신학적 정초(1~3장) → 국내·선교지 현장 인터뷰(4~5장) → 창업 실무 길라잡이(6~7장)의 3단 구조로, <strong>BAM을 이념이 아니라 직업 선택지로 제시</strong>하려는 책이다. 📷 표시 전사 기반 독서 노트.</p>
+</blockquote>
+<hr />
+<h2>요약 — 주제별 상세 정리</h2>
+<h3>1. 출발 질문의 전환 — "예수가 답이라면, 무엇이 문제인가"</h3>
+<p>책의 문제의식은 익숙한 명제를 뒤집는 데서 시작한다. 저자는 청년 시절 받은 질문을 이렇게 기억한다.</p>
+<blockquote>
+<p>"너희가 오랜 시간 교회를 다니면서… '예수 그리스도가 정답'이라고 계속 배웠는데, 그렇다면 너희가 살고 있는 이 시대 가운데 정말 우리를 어렵게 만들고 우리에게 도전을 주는 '진짜 문제'(question이자 problem)이 무엇인지 생각해 봐라" (p.11)</p>
+</blockquote>
+<p>그리고 그 질문을 다시 한 번 옮긴다. <strong>"우리는 비즈니스 세상 속에서 예수의 제자로 어떻게 살 것인가?"</strong>(p.17) 이 전환이 책 전체의 축이다. 저자가 지목한 시대의 화두는 자본이다 — "돈으로 대표되는 '<strong>자본</strong>'의 힘이 초막강해 져서, 모든 사람들의 삶을 좌지우지함"(p.11), "세상 모든 것이 '비즈니스화' 되었다"(p.19).</p>
+<p>따라서 제자훈련의 커리큘럼 자체가 바뀌어야 한다는 요구가 뒤따른다. 기도·예배·큐티·선교를 가르치는 기존 과정에 "지금 이 비즈니스 상황 속에 예수의 제자로 살아가기 위해 우리가 훈련해야 할 것들"(p.17)이 포함되어야 한다는 것. 이는 <a class="wl" href="../../t/%EC%9D%BC%ED%84%B0%EC%8B%A0%ED%95%99/">일터신학</a>이 교리 담론에 머물지 않고 <strong>양육 커리큘럼의 문제</strong>로 내려온 지점이다.</p>
+<h3>2. 핵심 인사이트: 청년의 이탈은 신앙 부족이 아니라 '적용 모델의 부재'다</h3>
+<p>책이 인용한 기독대안학교 고등학생 4곳의 육성은 진단을 바꾼다(p.18~19).</p>
+<blockquote>
+<p>"당장 교회는 열심히 나가는데 교회 안과 교회 바깥의 괴리가 너무 크다."
+"복잡한 시대 상황 속에 복음은 전혀 관련이 없는 듯하고 힘이 없는 것 같다."
+"예수님 믿으라고 얘기는 많이 들었는데, <strong>어떻게 적용할 수 있지</strong> 전혀 모르겠다."
+"교회에 어른들은 많은데, 일터와 신앙에 있어 본 받을 만한 이야기를 들어본 적 없다."</p>
+</blockquote>
+<p>마지막 문장이 결정적이다. 문제는 헌신도가 아니라 <strong>참조할 어른이 없다는 것</strong>이다. 그래서 이 책이 4~5장을 통째로 인터뷰에 할애한 편집 판단이 이해된다 — 논증이 아니라 <strong>모델 공급</strong>이 목적이다. 저자 자신도 "젊은 크리스천 기업가들을 통해 '따라가야 할 모델'을 발견하는 모습에 나름 안도할 수 있었다"(p.19)고 적는다.</p>
+<p>동시에 MZ세대는 "사회적 가치, 환경적 가치 등에 열광적인 모습을 보이는 것처럼 대단히 '<strong>가치 지향적</strong>'"(p.20)이라는 관찰이 붙는다. 즉 수요는 이미 있고, 공급(모델)이 없었다는 구도다.</p>
+<h3>3. 노동관 3분법 — 저주설 · 방편설 · 소명설</h3>
+<p>2장의 뼈대는 같은 일을 하는 세 사람의 대답 차이가 "다름 아닌, 그들의 노동관 때문"(p.37)이라는 관찰이다.</p>
+<table>
+<thead>
+<tr>
+<th>노동관</th>
+<th>노동의 정의</th>
+<th>일의 성격</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>저주설</strong></td>
+<td>"노동을 하늘이 내린 천형처럼, 저주처럼 여긴다"</td>
+<td>견뎌야 할 형벌</td>
+</tr>
+<tr>
+<td><strong>방편설</strong></td>
+<td>"그의 노동은 <strong>생존</strong>의 방편이다. 일은 다만 돈벌이, 밥벌이의 수단"</td>
+<td>목적 밖의 수단</td>
+</tr>
+<tr>
+<td><strong>소명설</strong></td>
+<td>"그의 노동은 하나님의 소명이다. 거룩한 목적을 가진 행위며, 자신의 신앙의 구현이고, 그의 예배며, 신에 대한 즐거운 헌신"</td>
+<td>예배이자 헌신</td>
+</tr>
+</tbody>
+</table>
+<p><em>(p.37 — 세 항목 모두 원문에서 굵게 표시된 대목)</em></p>
+<p>저자는 여기에 눅 11:34~35("그 눈이 밝아야 온 몸이 밝을 것이라")를 걸어 "바른 노동관은 절실하다"(p.38)고 못박는다. <a class="wl" href="../../b/%EC%9D%BC%EC%9D%98%EC%8B%A0%ED%95%99_%ED%8F%B4%EC%8A%A4%ED%8B%B0%EB%B8%90%EC%8A%A4/">일의신학_폴스티븐스</a>·<a class="wl" href="../../b/%ED%8F%89%EC%9D%BC%EC%9D%98%EC%98%88%EB%B0%B0%EB%85%B8%EB%8F%99_%EB%B2%A4%EC%9C%84%EB%8D%94%EB%A7%81%ED%84%B43%EC%84%B8/">평일의예배노동_벤위더링턴3세</a>와 같은 계열의 논의이되, 이 책은 <strong>노동관을 진단 도구로 쓴다</strong>는 점이 다르다.</p>
+<h3>4. 창조언약의 세 축 — 결혼 · 노동 · 안식, 그리고 '아보다'</h3>
+<p>신학적 정초는 창세기에서 온다. 하나님은 "땅을 갈 사람"(창2:5), 즉 "<strong>'일하는 존재'</strong>를 창조하신 것"(p.44)이고, 창조 언약의 내용은 "인간에게 주신 <strong>세 가지 축복</strong>, <strong>결혼</strong>과 <strong>노동</strong>과 <strong>안식</strong>"(p.44)이다. 이 셋의 관계가 명료하게 규정된다.</p>
+<blockquote>
+<p>"여기서 결혼 명령은 하나님의 목적을 성취하기 위한 <strong>조건</strong>이며, 노동과 안식 명령은 동전의 양면처럼 하나의 짝(pair)으로 인간 창조의 목적이다." (p.45)</p>
+</blockquote>
+<p><strong>핵심 인사이트: 안식을 '노동의 휴식'이 아니라 '노동의 짝'으로 놓는다.</strong> 그래서 "하나님의 안식은 우리의 안식의 모델(Model)이다… <strong>쉬는 것은 죄가 아니다</strong>"(p.46)라는 문장이 가능해진다. 일 중독을 노동의 타락 목록에 함께 넣은 것도 같은 논리다 — "부당한 임금제도, 구조적인 고용의 모순, 위기의 일터 환경, 과중한 업무로 인한 스트레스, 일 중독"(p.47).</p>
+<p>어휘 근거도 제시된다. 히브리어 עבד(아바드)는 창세기 2장에서 '경작하다/노동하다'이지만 여호수아 24장에서는 '섬기다/예배하다'로 쓰인다. 따라서 "에덴의 '노동'(העבודה, ABODAH)은 '예배'라는 말을 함의하고 있다… '아보다'는 우리의 노동을 통한 '예배'이며 '삶'이다"(p.50).</p>
+<blockquote>
+<p>📝 이 대목 여백에 <strong>"일과 예배를 (?) 같은 것(?)"</strong> 이라 적혀 있다. 등식으로 볼 것인가를 두고 멈춘 흔적이다.</p>
+</blockquote>
+<p>일원론을 말하면서 저자가 곧바로 단 안전장치도 기록해 둘 만하다.</p>
+<blockquote>
+<p>"'일원론(Monism)'을 말할 때에 반드시 경계해야 할 것이 있다. 그것은 선과 악에 대한 구별이 없는 세속적 혼합주의(Syncretism)다. 세상을 분리하지 말아야 하지만, 선과 악의 구별은 해야 한다." (p.42)
+"거룩한 하나님 나라의 일은 반드시 거룩한 방법을 통해 이루어져야 한다." (p.43)</p>
+</blockquote>
+<h3>5. BAM의 정의 — 'As'가 결정타다</h3>
+<p>3장은 BAM을 세 단어로 해부한다. Business, Mission, 그리고 둘을 잇는 <strong>As</strong>. 저자는 이견의 원인이 바로 이 셋의 이해 차이(p.55)라고 본다.</p>
+<blockquote>
+<p>"그러나 <strong>'As'</strong>는 단순한 영어의 '전치사'가 아니다. 'Business'가 'Mission'이 되게 하는 결정타이기 때문이다. <strong>어떤 목적과 비전과 영성으로 그 일을 수행하는가</strong> 이다." (p.57)
+"BAM에서 As는 거룩한 세계와 세속세계로 분리하였던 우리의 세계관을 보다 총체적이고 통전적으로 통합하고, 우리의 전인적인 삶을 통하여 선교하도록 하는 역동적 에너지다." (p.57)</p>
+</blockquote>
+<p>정의 자체는 이렇게 정리된다.</p>
+<blockquote>
+<p>"<strong>BAM</strong>은 상대적으로 복음의 영향력이 낮은 곳에서 복음을 전하려는 의도를 가진 리더십에 의하여 운영되는 <strong>재정적 유지가 가능한</strong> 비즈니스로서, 하나님 나라의 가치에 근거하여 개인과 지역사회에서 영적, 경제적, 사회적, 환경적인 총체적 변혁을 가져오는데 그 목적이 있다." (p.60)</p>
+</blockquote>
+<p><strong>BAM의 세 요건</strong>(p.66): 선한 영향력 · 지속 가능성 · 선교적 의도성. 그리고 <strong>4대 변혁</strong>: 경제적 · 사회적 · 환경적 · 영적(p.70). 로잔 BAM선언문 4~9항이 근거로 인용되며(p.58~59), BAM은 "<strong>창조 명령</strong>과 <strong>선교 명령</strong>의 통합"(p.67), "<strong>제4의 선교물결</strong>(the 4th Mission Wave)"(p.53)로 자리매김된다. → <a class="wl" href="../../t/%EC%B4%9D%EC%B2%B4%EC%A0%81%EC%84%A0%EA%B5%90/">총체적선교</a></p>
+<h3>6. 핵심 인사이트: 이윤은 타협이 아니라 조건이다</h3>
+<p>BAM 논의에서 가장 자주 흐려지는 지점을 이 책은 정면으로 정리한다.</p>
+<blockquote>
+<p>"모든 기업에 있어서 <strong>이윤추구</strong>는 가장 중요한 목표 중의 하나다. 그 이유는 <strong>기업의 지속 조건</strong>이기 때문이다. 그러므로 BAM 기업도 마찬가지로 수익창출을 통해 재무적 성과를 일으켜야 한다." (p.61)
+"기업의 <strong>선한 영향력</strong>은 성장하고 힘을 가진 후, 그 다음의 일이다." (p.62)
+"BAM은 반드시 '괄목할만한 지속적인 한 비즈니스'로 성장해야 한다." (p.62)</p>
+</blockquote>
+<p>동시에 목적어는 바꾼다 — "BAM은 '이윤만 추구하는 기업'(Profit Making Business)이라기 보다 <strong>'유익을 추구하는 기업'</strong>(Benefit Making Business)"(p.62)이며, 그 근거는 "하나님의 본성인 '토브'(TOV), <strong>'선함'</strong>"(p.62)이다.</p>
+<p>경계도 분명하다. <strong>"기업이 교회를 대신하려고 해서는 안 된다. 그러므로 지역교회와의 파트너십이 중요하다."</strong>(p.63) BAM 담론이 교회론을 잠식하는 방향으로 흐르는 것을 저자 스스로 차단한다.</p>
+<p>또 하나 — BAM이 무엇이 <strong>아닌지</strong>를 세 번 부정한 뒤 다시 긍정하는 p.69~70의 서술 구조는 인용 가치가 높다. 일자리 창출도 맞고, 기업문화 변화도 맞고, 공유경제도 맞다. "그러나 이 모든 이야기들을 포괄하고도 <strong>중요한 한 가지가 더 있다. 이를 통해 하나님 나라의 복음을 전하자는 이야기다</strong>"(p.70).</p>
+<h3>7. 국내 현장 — 다섯 기업이 보여준 '작동 방식'</h3>
+<p>4장 인터뷰는 이념이 아니라 <strong>메커니즘</strong>을 드러내는 데 값이 있다.</p>
+<p><strong>① 향기내는사람들 / 히즈빈스</strong> (임정택 대표, p.75~86). 마 25:40("지극히 작은 자 하나에게 한 것이 곧 내게 한 것")으로 세워진 회사다. 진단이 정확하다 — "장애를 가지고 있는 사람들이 <strong>장애 때문에 일을 못하는 것이 아니라</strong>, 이들의 강점을 발견하여 일할 수 있게 하는 맞춤형 직업교육과 일자리의 기회가 없기 때문"(p.76). 해법은 두 개의 장치다: 바리스타 1인당 지역사회 7인이 붙는 <strong>다각적 지지 시스템</strong>(정신과 의사·사회복지학 교수·사회복지사·자원봉사자·점장·본사 팀장·선배 기수)과 7단계 반복 교육 <strong>히즈빈스 아카데미</strong>(p.78).</p>
+<p>성과 수치가 이 모델의 핵심 증거다.</p>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>대한민국 정신장애인 직업유지율</td>
+<td>18.3%</td>
+</tr>
+<tr>
+<td>OECD 평균</td>
+<td>약 50%</td>
+</tr>
+<tr>
+<td><strong>히즈빈스</strong></td>
+<td><strong>약 90%</strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>(p.79)</em></p>
+<p>경영 판단도 기록해 둘 만하다. 2014년 위기 때 "백 번 생각해도 이것이 경영학적으로는 맞는 말"(p.80)인 인력 구조조정을 두고, "리더들은 장애인들에 대한 인사정리를 하지 않고 <strong>곧바로 다른 비즈니스 모델을 찾기 시작</strong>했습니다"(p.81) — 그 결과가 장애인 의무고용 컨설팅 사업이다. <strong>가치를 지키기 위해 사업모델을 바꾼 사례</strong>다. 균형에 관한 자기 정식화도 명료하다: 신앙정체성(영성) / 사회복지정체성(한 사람을 위해 존재) / 기업정체성(앞 두 가치를 이루는 도구)의 "<strong>조화와 균형</strong>"(p.79). 7가지 원칙 전문은 전사에 남겨 두었다(p.85).</p>
+<p><strong>② 스페이스클라우드</strong> (정수현 대표, p.89~103). 대학생 때 묵상한 <strong>레위기 25:23</strong>을 영리 비즈니스로 구현한 경우다(p.74). "땅은 하나님의 것이라"에서 토지 공개념을 끌어내고(p.90), 도시의 유휴공간 문제를 "도시의 막힌 <strong>유통의 문제</strong>"(p.90)로 재정의해 매칭 플랫폼을 세웠다 — 회원 100만 명, 공간 2만여 개(p.94). → <a class="wl" href="../../t/%ED%9D%AC%EB%85%84/">희년</a></p>
+<p>전도 방식에 대한 진술이 특히 인상적이다. "저는 제가 성경에서 가져온 토지 공개념의 이야기나 사업 철학 등의 이야기를 할 때 <strong>일부러 종교를 숨기거나 감추지 않습니다</strong>"(p.98), 다만 "복음을 전하는 방식이 아니라 <strong>제가 믿고 있는 복음을 실천하는 방식으로</strong> 이야기합니다"(p.99). 그리고 희년의 실천이 재산 몰수가 아님을 분명히 한다 — "실패한 공산주의처럼 폭력적인 방식으로 소유권을 박탈해서 n빵으로 나누자가 아니라, 토지라는 가치를 가장 잘 활용할 수 있는 지혜를 위한 관점"(p.102).</p>
+<blockquote>
+<p>📝 p.98 여백: <strong>"교회공간의 창의적 사용."</strong> — 건물주를 공공·비영리·개인으로 나눈 대목(교회·사찰·재단이 '비영리 건물주', p.97)에서 곧바로 한국교회 유휴공간에 대한 착상을 적어 둔 것으로 보인다. 이 책에서 <strong>독자 자신의 적용점이 가장 뚜렷하게 드러난 지점</strong>이다.</p>
+</blockquote>
+<p><strong>③ 임팩트스퀘어</strong> (도현명 대표, p.104~117). 소셜벤처 액셀러레이터. "우리나라에 액셀러레이터가 200여 개 정도 되는데 그 중 소셜벤처에 집중하는 곳은 대략 5~6개"(p.106). 인사 원칙이 독특하다 — "정규직으로 채용한 이후에는 <strong>업무의 퍼포먼스로 사람을 내보낼 수 없다</strong>"(p.109), 그리고 "팀원들에게 <strong>장기 저성장</strong>을 추구하며 매년 5-10%씩 <strong>영원히</strong> 성장하자"(p.110). 채용 기준은 실력이 아니라 성품이다 — "가장 중요한 <strong>성품</strong>은 진지하게 오늘 하루를 투쟁하며 살아가는 친구들"(p.114).</p>
+<p>교회론적 함의가 가장 강한 발언도 여기서 나온다.</p>
+<blockquote>
+<p>"교회 건물에서 청년들이 흩어지고 있고… <strong>주중교회, 일터에서의 교회</strong>가 무엇인지를 보여줘야 한다… <strong>교회가 아닌 교회를 세상 많은 곳에 개척하는 것</strong>도 저희가 해야 할 일 중 하나라고 생각합니다." (p.115)
+"그리스도가 이 땅에 오셔서 공생애 기간에 하셨던 <strong>먹이고</strong>, <strong>입히고</strong>, <strong>고치고</strong>, <strong>가르치는</strong> 일들을 우리의 수준에 맞게 반복하는 것… 과거에 선교사님들이 병원을 세우고, 학교를 세우고, 사회복지 시설을 세웠는데 지금은 이것들을 정부와 사회가 다 하고 있습니다. <strong>교회도 못하고 있고요.</strong>" (p.115)</p>
+</blockquote>
+<p>→ <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a>. 의료·교육·복지가 국가로 이관된 뒤 선교적 기관의 자리를 어디서 찾을 것인가라는 질문은 <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C_%ED%98%95%EC%84%B1/">선교적교회_형성</a> 논의와 직접 맞물린다.</p>
+<p>기업가 정체성에 대한 정식도 날카롭다. 폴 호켄 인용 "당신이 가장 잘 할 수 있고 성공할 수 있는 사업은 두 말 할 필요 없이 당신을 <strong>닮은</strong> 사업이다"(p.116) 위에, "<strong>내가 그리스도를 닮는다면 내 일은 그리스도를 닮게 되어있습니다</strong>. 내 주변에서 크리스천 기업의 Business As Mission이 잘 느껴지지 않는다는 건 둘 중에 하나가 거짓말이여서 그렇습니다"(p.117).</p>
+<p><strong>④ 루디아에서 이름을 가져온 회사</strong> (p.119~129). 사도행전의 자색 옷감 상인 루디아에서 회사명을 가져왔다(p.119). 블라인드 채용, 3개월 수습, <strong>전 직원 투표로 채용 결정</strong>, 직무별 학습조, 팀장급 자체 MBA, 7년 차 한 달 유급휴가(p.124~125). 레위기 19:13("품꾼의 삯을 아침까지 밤새도록 네게 두지 말며")을 매일 새긴다(p.128)는 진술이 이 인사제도의 신학적 출처를 밝힌다. 목표는 "직원들 모두가 각 분야의 대표"(p.129) — 사업을 쪼개어 직원을 대표로 세우겠다는 것.</p>
+<p><strong>⑤ 가평우리마을</strong> (p.87) — 사회적 약자의 쉼과 존엄 회복을 위한 웰니스 리조트. 전사에 남은 표시는 소개 한 문장뿐이다.</p>
+<h3>8. 선교지 현장 — 캄보디아와 중국, 그리고 정체성의 시험</h3>
+<p>5장은 국내 사례와 성격이 다르다. <strong>정체성과 재정 사이의 충돌</strong>이 전면에 나온다.</p>
+<p><strong>캄보디아 헤세드 공동체 / 팜슈가</strong>(p.132~142). KOTRA와 협력해 현지 최우수 인재 30명에게 창업훈련을 시키고 USD 50,000 창업비를 지원, 6개월 훈련 끝에 선발된 한 팀의 과제가 팜슈가였다(p.133). 제품 선택의 근거가 데이터로 제시된다 — 혈당지수 48±5(일반설탕 100 이상, 꿀 88, 메이플시럽 73), 폴리페놀이 꿀의 20배 이상(p.133). 시장에 없던 이유도 명확하다: "생산 과정이 비위생적이고 품질이 균일하지 않아서"(p.134) — <strong>BAM의 사업 기회가 대개 '품질·위생의 공백'에 있다</strong>는 전형이다. 공동체 규모는 7가정+솔로 3명, 6개 사업부, 농부조합 80가정(150여 명), 농민 중 크리스천 15%·타 분야 30%(p.140).</p>
+<p><strong>중국 보이마루 / 보문상업무역</strong>(p.144~155). 여기서 이 책에서 가장 무거운 갈등이 나온다.</p>
+<blockquote>
+<p>"첫 번째 위기는 교회와의 관계에서 겪었던 일이었습니다. 당시 Business As Mission에 대한 인식이 요즘처럼 세워지지 않았던 터라 <strong>파송한 교회에서는 비즈니스를 하는 것을 반대</strong>했고 우리는 선택해야만 했습니다." (p.148)
+"<strong>파송교회가</strong> 저희의 생활비를 후원해 주고 있었기에 이 문제가 저희에게는 작은 것이 아니었습니다… 파송교회에 이곳에 남기로 했다는 답변을 드리자 <strong>교회의 후원비가 끊어지게 되었습니다</strong>." (p.149)</p>
+</blockquote>
+<p>그가 세운 재정 3원칙은 이 충돌에 대한 답변이다.</p>
+<blockquote>
+<p>"첫째, 나의 정체성은 선교사다. 둘째, 나의 재정의 공급은 하나님이시기 때문에 <strong>비즈니스를 통해 생활비로 가져가지 않는다</strong>. 셋째, 이곳에 투자되는 모든 것은 내가 책임지지만 내가 돌아갈 때에는 <strong>하나도 가져가지 않는다</strong>." (p.149)</p>
+</blockquote>
+<p><strong>핵심 인사이트: BAM의 최대 저항은 선교지가 아니라 파송 구조에서 온다.</strong> 3장이 신학적으로 정리한 성속 통합이 현장에서는 후원 중단이라는 형태로 반박당한다. 이 사례는 BAM 담론이 <strong>파송교회 교육 없이는 개인의 희생으로 지불된다</strong>는 것을 보여준다.</p>
+<blockquote>
+<p>📝 p.131·p.144 여백에 각각 <strong>"type 2 (?)"</strong>, <strong>"type 2 경(?)"</strong> 표기. 인터뷰 대상을 BAM 유형별로 분류하며 읽은 흔적으로 보인다(p.144 "저는 전통적 목회자입니다" 옆).</p>
+</blockquote>
+<h3>9. 창업 길라잡이 — 기업가정신과 실무 프레임</h3>
+<p>6~7장은 성격이 다시 바뀌어 경영학 교재에 가깝다. 출발은 '네카라쿠배당토'(p.157)이며, "기업가정신은 한 사회의 흥망성쇠를 결정하는 가장 중요한 요소 중 하나… 사업을 통해 수많은 <strong>혁신</strong>(innovation)을 일으키기 때문"(p.157), 한국 기업가정신의 핵심 요소는 "<strong>도전정신</strong>과 <strong>속도</strong>와 <strong>유연성</strong>"(p.159)으로 정리된다.</p>
+<blockquote>
+<p>📝 p.157 여백: <strong>"창업정신(?) 사명"</strong></p>
+</blockquote>
+<p>역사적 계보도 짚는다 — 'business as calling' 성속일원론(p.160), 18세기 <strong>모라비안 형제단</strong>(신용조합·아마 재배와 방직·소금 유통·맥주 양조)과 <strong>바젤선교회</strong>(인도 회심자에게 주거와 일자리 제공, 카키색 옷감 발명, 고품질 타일 개발)(p.160~161). "모라비안과 바젤선교회는 1, 2차 세계대전을 거치면서 약화되었지만, 90년대부터 개발도상국가들이 외국인 투자에 개방적이 되면서 비즈니스 선교가 활성화"(p.161).</p>
+<p><strong>핵심 개념: '영적 자본'</strong>(p.167~168). 켄 엘드레드(리빙스턴재단)의 BAM 3목표 — 1) 사업의 수익성과 안정성 2) 현지인 일자리와 부의 창출 3) 현지교회 부흥과 <strong>영적 자본</strong>의 형성. 그리고 정의: "영적 자본이란 신용, 정직, 사랑, 봉사, 우수한 품질, 성실 등의 가치관이 <strong>법이나 제도가 아닌 신앙의 기초 위에</strong> 형성될 때 축적된다"(p.168). BAM의 성과를 재무 지표 밖에서 측정하려는 시도로 읽을 만하다.</p>
+<p><strong>선교지 BAM 진입 4경로</strong>(p.169~170):</p>
+<table>
+<thead>
+<tr>
+<th>방식</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>소규모 투자</td>
+<td>무역·여행업 등으로 시작해 현지 적응 후 컨설팅·물류로 확장</td>
+</tr>
+<tr>
+<td>현지인 창업 지원</td>
+<td>2만 달러 이하 설비 대여, 4~5년 원리금 상환</td>
+</tr>
+<tr>
+<td>적정기술 개발</td>
+<td>태양광 램프, 정수기 필터 등</td>
+</tr>
+<tr>
+<td>기술 전문성 기반</td>
+<td>보유 기술로 사업 일으키기</td>
+</tr>
+</tbody>
+</table>
+<p>두 번째 방식에는 실패 경험이 함께 붙어 있다 — "깊은 사귐이 없는 상태에서 복음을 받아 들였다는 것만으로 창업을 지원하였다가 <strong>상대방의 배신으로 돈과 사람을 잃어버리는 실패</strong>"(p.170). <strong>회심을 신용조사로 대체하지 말라</strong>는 경고다.</p>
+<p><strong>성공 조건 3가지</strong>(p.171~173): ① 비즈니스가 문화명령의 도구라는 인식 ② 선교사의 전문성 — 선교적·직업적·지역적·<strong>사업적</strong>(사업계획 수립, 생산, 영업, 회계, 직원관리) ③ 현지화와 위험관리(명의 차용 시 금전대차계약서 등). 그리고 인사 원칙: "직원을 채용할 때는 <strong>능력보다 인격</strong>이 중요하다. 인격에서 능력이 나오기 때문이다"(p.173). 부패 관행 앞에서의 사례도 붙는다 — 리베이트 요구를 뿌리친 V국 K선교사, 개인비용과 회사비용을 철저히 분리해 회계 투명성을 확보한 T국 S선교사(p.175).</p>
+<p><strong>실무 프레임</strong>(p.177~192): 피터 드러커의 "사업은 고객을 창조하는 것"(p.177), 고객 창조의 두 방법인 기술혁신과 마케팅(p.178), "중요한 문제는 내가 차별화했다고 판단하는 것이 아니라 <strong>고객이 차별화되었다고 받아들이는 것</strong>"(p.179), 린스타트업·MVP·피봇팅(p.179), '새로움의 부담'(liability of newness)과 '낯설음의 불이익'(p.180), 진입장벽과 틈새시장(p.190), 핵심역량(p.192).</p>
+<p>기업 사례로는 하형록의 <strong>팀하스</strong>와 잠언 31장 기반 〈P31〉 17개 회사상(p.164~165), 서비스마스터의 4대 목표("1) 모든 일에 하나님을 경외하자, 2) 다른 사람의 발전을 도와주자, 3) 탁월함을 추구하자, 4) 수익을 올리자", p.163), 네패스 이병구 회장(p.165)이 소개된다. <strong>폴 스티븐스</strong>의 크리스천 기업가 6중 부르심(p.163)도 인용된다 → <a class="wl" href="../../b/%EC%9D%BC%EC%9D%98%EC%8B%A0%ED%95%99_%ED%8F%B4%EC%8A%A4%ED%8B%B0%EB%B8%90%EC%8A%A4/">일의신학_폴스티븐스</a></p>
+<p>서비스마스터 대목에 붙은 관찰은 되새길 만하다 — "내 동료 한 명은 그들이 갖는 <strong>종교적인 성향 때문에</strong> 그곳이 '정상적인' 조직의 귀감으로 부적합하다는 의견을 내놨다"(p.164). 신앙 기반 경영이 학술·경영 담론에서 어떻게 배제되는지를 보여주는 장면이다.</p>
+<h3>10. 향후 30년의 세 키워드</h3>
+<p>결론(p.195~202)은 책 구조를 스스로 요약한 뒤 — "이 책은 <strong>복음</strong>(text)과 <strong>상황</strong>(context)을 함께 다루고 있다"(p.195) — 청소년·청년이 마주할 시대 키워드 셋을 제시한다.</p>
+<ol>
+<li><strong>4차 산업혁명 시대</strong> — "코로나-19로 인해 개인, 사회, 비즈니스 등 모든 추세가 10년씩 앞당겨졌다"(p.198)</li>
+<li><strong>다문화 상황</strong> — "2030년이 되면 한국 땅에서 <strong>500만 이주민</strong>들이 우리와 함께 살아갈 것"(p.199)</li>
+<li><strong>통일한국 비전</strong> — "'통일이 되면 북한에 올라가 교회를 짓고 주민들을 전도하겠다'는 전통적인 구호를 넘어, 이제는 '<strong>도시민으로서의 삶을 살고 자본의 맛을 본 북한 주민들에게 어떻게 복음을 전할 것인가</strong>'라는 전략적 질문으로"(p.201)</li>
+</ol>
+<p>마지막 문장은 처음의 질문으로 돌아온다. "말씀묵상도 기도하는 것도 필요하겠지만, 그만큼 복음을 아는 자로서 세상 속에서 <strong>청지기로서 책임을 다하는 삶</strong>도 중요하다"(p.202).</p>
+<hr />
+<h2>이 책의 한계 — 읽으며 남는 유보</h2>
+<ul>
+<li><strong>공저의 이음매가 그대로 보인다.</strong> 1~3장(선교신학), 4~5장(인터뷰), 6~7장(경영학)의 문체·밀도·독자 상정이 각각 다르다. 6~7장은 BAM이 아니어도 성립하는 일반 창업 교재에 가깝다.</li>
+<li><strong>인터뷰가 전부 성공 사례다.</strong> 실패한 BAM 기업의 해부가 없다. p.170의 배신 사례가 유일하게 실패를 다루는데, 한 문단에 그친다.</li>
+<li><strong>'As'가 결정타라면서 그 검증 기준은 없다.</strong> 목적·비전·영성으로 판별한다고 했으나, 자기 진술 외에 무엇으로 확인할 것인지는 비어 있다. p.117의 "둘 중 하나가 거짓말"이라는 문장이 오히려 이 공백을 드러낸다.</li>
+</ul>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<p><strong>적용 — 의료</strong>
+- <strong>직업유지율 지표를 진료에 붙일 수 있다.</strong> 히즈빈스의 정신장애인 직업유지 90%(vs 국내 18.3%)는 「다각적 지지 시스템 7인 + 반복 교육 7단계」라는 <strong>재현 가능한 구조</strong>의 결과다. 정신건강 영역의 사회적 처방 논의에 그대로 쓸 만한 근거다.
+- 진료 현장 자체를 BAM 프레임으로 재기술하면 어떤 항목이 비는가 — 지속가능성(수익), 선한 영향력, 선교적 의도성 셋 중 실제로 약한 곳이 어디인지 점검할 수 있다.</p>
+<p><strong>적용 — 사역·강의</strong>
+- <strong>p.18~19 학생 육성은 강의용 오프닝으로 강력하다.</strong> "교회에 어른들은 많은데, 일터와 신앙에 있어 본 받을 만한 이야기를 들어본 적 없다" — 청년 대상 일터신앙 강의의 문제 제기로 그대로 쓸 수 있다.
+- 노동관 3분법(저주설/방편설/소명설)은 <strong>한 장짜리 진단 도구</strong>다. 강의에서 청중에게 자기 위치를 표시하게 하는 용도로 적합하다.
+- 📝 여백의 <strong>"교회공간의 창의적 사용"</strong> — 스페이스클라우드가 분류한 '비영리 건물주(교회·사찰·재단)' 항목은 한국교회 유휴공간 문제와 직결된다. 별도 검토 가치가 있다.</p>
+<p><strong>미해결 질문</strong>
+1. <strong>'아보다'가 노동과 예배를 함의한다고 해서, 노동이 곧 예배인가?</strong> 📝 여백의 "일과 예배를 (?) 같은 것(?)"이 남긴 질문이다. 등식으로 놓으면 주일 공예배의 고유성이 흐려지고, 완전히 분리하면 책의 논지가 무너진다. 이 책은 그 사이를 정밀하게 다루지 않는다.
+2. <strong>파송교회는 BAM을 어떤 조건에서 승인해야 하는가?</strong> p.148~149의 후원 중단 사례는 개인의 결단으로 끝났다. 이사회·선교부 차원에서 <strong>사전에 합의할 기준</strong>은 무엇인가 — 겸업 허용 범위, 사업 수익의 귀속, 생활비 출처. 인터서브·GMP 등 파송단체 논의에 바로 걸리는 문제다.
+3. <strong>'영적 자본'은 측정 가능한가?</strong> 신용·정직·품질을 신앙 기반으로 축적한다고 했으나, 이를 사후에 어떻게 확인하는지는 비어 있다. 확인 불가능하다면 BAM의 성과 평가는 결국 재무 지표로 회귀한다.
+4. <strong>BAM은 창의적 접근지역의 전략인가, 보편적 제자도인가?</strong> p.26은 "BAM이 힘을 발휘하는 곳은 창의적 접근지역"이라 하고, p.53·p.68은 "모든 신자"의 일상이라 한다. 둘은 층위가 다른 주장인데 같은 이름으로 묶여 있다.</p>
+<hr />
+<blockquote>
+<p>📖 전사 원문(줄이지 않은 표시 구절 전체): <span class="wl-dead" title="위키 내부 링크">BAM비즈니스세계에서복음을살다_기독경영연구원IBA_전사</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#discipline/선교학</span><span>#discipline/경영학</span><span>#domain/일터</span><span>#domain/비즈니스선교</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
