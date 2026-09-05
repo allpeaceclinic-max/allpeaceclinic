@@ -1,0 +1,401 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>다니고 싶은 회사 만들기 (*Loving Monday*) — 존 베케트 (홍성사) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">상담·치유·가정</span><span class="author">존베케트</span><span class="date">2026-09-05</span></div>
+  <h1 class="note-title">다니고 싶은 회사 만들기 (*Loving Monday*) — 존 베케트 (홍성사)</h1>
+  
+</header>
+<article class="note">
+<blockquote>
+<p>경영서가 아니라 <strong>일터 이원론에 대한 반론서</strong>다. 미국 오하이오의 가정용 버너 제조사 R. W. 베케트 사(社)를 물려받아 경영한 저자가, ABC 방송사가 "신앙으로 경영하는 회사"를 취재하러 들이닥친 사건에서 시작해 자기 회사의 채용·인사·가정 정책·기도 모임까지를 신학적 근거와 함께 공개한다. 원제가 말하듯 목표는 하나다 — <strong>월요일을 사랑할 수 있는가.</strong> 📷 표시 전사 기반 독서 노트.</p>
+</blockquote>
+<hr />
+<h2>요약 — 주제별 상세 정리</h2>
+<h3>1. 문제의 자리: 왜 신앙과 일이 갈라져 있는가</h3>
+<p>저자는 이 분리를 개인의 신앙심 부족이 아니라 <strong>문화가 물려준 사고 습관</strong>으로 본다. 그리고 자신도 그것을 뒤늦게 알았다고 고백한다.</p>
+<blockquote>
+<p>"일과 신앙을 통합적으로 보는 것, 즉 같은 세계의 다른 부분으로 이 둘을 보는 태도가 서구인들에게 특히 어려운 데는 문화적 원인이 있다는 것을 시간이 지나서야 온전히 깨달았다." (p.66)</p>
+</blockquote>
+<p>이 문장이 책 전체의 설계도다. 2부의 대주제인 <strong>'통찰력'</strong>(p.66)은 곧 이 문화적 원인을 꿰뚫어 보는 능력을 뜻한다. 원인 규명 없이 "직장에서도 신앙적으로 살자"는 권면만 하면 실패한다는 것이 저자의 판단이며, 이 점에서 이 책은 <a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%80%EC%9B%94%EC%9A%94%EC%9D%BC%EC%97%90%EB%AC%B4%EC%8A%A8%EC%9D%BC%EC%9D%84%ED%95%98%EC%8B%A4%EA%B9%8C_%EC%9D%B4%EC%95%88%EC%BD%94%ED%94%BC/">이안 코피</a>나 <a class="wl" href="../../b/%EC%9D%BC%EC%9D%98%EC%8B%A0%ED%95%99_%ED%8F%B4%EC%8A%A4%ED%8B%B0%EB%B8%90%EC%8A%A4/">폴 스티븐스</a>와 같은 진단을 공유한다.</p>
+<h3>2. 이원론의 계보 — 그리스에서 경건주의까지</h3>
+<p>책의 2부(9~10장)는 사상사를 훑는다. 독자가 이 대목에 가장 많은 밑줄을 그었다.</p>
+<blockquote>
+<p>"서구 문화를 사는 우리의 <strong>렌즈는 거의 3천 년 역사의 그리스 사상에</strong> 물들어 있다." (p.75)
+"그러나 이들은 골칫거리도 함께 물려주었다. 이 사상가들은 히브리인들의 하나님은 외면한 채 그들 주변 세계에 한정된 인간 중심적이고…" (p.75)</p>
+</blockquote>
+<p>저자가 짚는 계보는 다음과 같다. <strong>일이 어느 영역에 배치되었는가</strong>가 일관된 질문이다.</p>
+<table>
+<thead>
+<tr>
+<th>인물</th>
+<th>상위 영역</th>
+<th>하위 영역</th>
+<th>일·직업의 자리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">플라톤</span> (p.77)</td>
+<td>이데아 (영원·완전)</td>
+<td>질료의 세계 (일시적·불완전)</td>
+<td><strong>하위</strong></td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">아우구스티누스</span> (p.77)</td>
+<td>명상적인 삶</td>
+<td>활동적인 삶</td>
+<td><strong>하위</strong> (이름만 바뀐 재판)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">토마스 아퀴나스</span> (p.78)</td>
+<td>은총 (깨달음)</td>
+<td>본성 (타고난 지성)</td>
+<td><strong>하위</strong> — 깨달음이 필요 없는 영역</td>
+</tr>
+<tr>
+<td>경건주의 17C, <span class="wl-dead" title="위키 내부 링크">프란시스 셰퍼</span>의 비판 (p.78)</td>
+<td>정신세계</td>
+<td>물질세계</td>
+<td><strong>하위</strong> — 관념적 영성의 부작용</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"<strong>플라톤은</strong> 더 높은 차원인 이데아에 관심이 있었고, 이데아는 일시적이고 불완전한 질료의 세계보다 우월하다고 생각했다. … 플라톤이 일과 직업을 어느 영역에 두었는가가 중요하다. 과연 어디일까? 하위 영역이다." (p.77)
+"13세기에 <strong>토마스 아퀴나스</strong>는 그리스 사상의 <strong>이원론을 영구화하여</strong> '일'을 경시하는 개념을 한층 발전시켰다." (p.78)</p>
+</blockquote>
+<p>핵심은 이 구도가 <strong>철학사의 유물이 아니라 지금 신자의 직관</strong>이라는 것이다. 목사·선교사는 상위, 회사원·의사는 하위라는 감각이 여기서 나온다. 볼트의 <a class="wl" href="../../t/%EC%9D%B4%EC%9B%90%EB%A1%A0/">이원론</a> 노트가 창조론 안에서 배제되는 오류로 이원론을 다룬다면, 이 책은 같은 오류가 <strong>직업관에 남긴 잔재</strong>를 추적한다는 점에서 서로를 보완한다.</p>
+<h3>3. 두 진영의 대결 — 테르툴리아누스와 카이퍼</h3>
+<p>10장은 그리스냐 성경이냐를 정면으로 묻는다. 저자는 두 인물을 대비시킨다.</p>
+<blockquote>
+<p>"<strong>테르툴리아누스는</strong> … '아테네가 예루살렘과 도대체 무슨 상관이 있는가?'" (p.82)
+"그리스인들은 인간의 경험에서 영감을 얻은 이성을 믿었다. 근원이 달랐기에 결과도 달랐다." (p.83)
+"<span class="wl-dead" title="위키 내부 링크">아브라함 카이퍼</span>가 1898년 프린스턴 신학교 학생들에게 강연을 했다. 세계관이 주제였다." (p.83)</p>
+</blockquote>
+<p>카이퍼의 영역주권 강연을 끌어온 것은 우연이 아니다. 문제를 <strong>개인 경건의 문제에서 <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%84%B8%EA%B3%84%EA%B4%80/">세계관</a>의 문제로 옮기는</strong> 것이 저자의 전략이기 때문이다. "삶의 모든 영역에 그리스도의 주권"이라는 카이퍼의 명제가 없으면, 회사 경영은 신학의 대상이 될 자격조차 얻지 못한다.</p>
+<h3>4. 통합의 근거 — "영적이지 않은 것은 없다"</h3>
+<p>계보를 해체한 자리에 저자가 놓는 것은 창조 교리다.</p>
+<blockquote>
+<p>"<strong>참된</strong> 영성은 삶 전체를 다루며, 삶의 전 영역을 동등하게 다룬다. 그러므로 실재하는 것 가운데 영적이지 않은 것은 없다." (p.80)
+"'땅과 거기에 충만한 것과 세계와 그 가운데에 사는 자들은 다 여호와의 것이로다.'" (p.84, <span class="wl-dead" title="위키 내부 링크">시24</span>)
+"'하나님께서 지으신 모든 것이 선하매 감사함으로 받으면 버릴 것이 없나니 하나님의 말씀과 기도로 거룩하여짐이라'" (p.85, <span class="wl-dead" title="위키 내부 링크">딤전4</span>)
+"하나님의 의지와 조화를 이루는가에 있다." (p.87)</p>
+</blockquote>
+<p>세 인용이 각각 <strong>소유권(시편 24편)·선함(디모데전서 4장)·기준(p.87)</strong> 을 담당한다. 일터가 거룩해지는 근거는 그곳에서 전도를 하기 때문이 아니라 그곳이 <strong>본래 하나님의 것이고 본래 선하기 때문</strong>이라는 논리다. 이 점에서 저자는 일을 전도의 수단으로 환원하는 접근과 선을 긋는다.</p>
+<h3>5. 핵심 인사이트: 도덕법칙 없는 윤리 교육은 성립하지 않는다</h3>
+<p>8장은 <span class="wl-dead" title="위키 내부 링크">찰스 콜슨</span>의 하버드 경영대학원 강연을 전한다. 이 책에서 가장 논쟁적인 대목이다.</p>
+<blockquote>
+<p>하버드는 절대 가치를 믿지 <strong>않으므로</strong> 결코 사업 윤리를 가르칠 수 없으며 기껏해야 실용적인 사업 결정 방법이나 가르칠 수 있다. (p.71)
+"하지만 물리 법칙이 존재하듯 도덕법칙도 존재합니다. 단지 그 사실을 인정하고 싶지 않을 뿐인데 이를 인정하는 순간, 원하는 대로 사는 것이 최고의 미덕이 되고 만 현실 속에서 그 법칙은 우리 욕망에 걸림돌이 되기 때문입니다. 하버드와 같은 기관들, 그중에서도 유독 하버드가 그런 가치를 확산시키고 있습니다." (p.71)
+"도덕적 상대주의와 상황 윤리에 근거한 교육을 받는다는 사실이며, 이는 학생들에게서 미래 업무 현장에서 꼭 필요한 기반을 빼앗는다." (p.72)</p>
+</blockquote>
+<p><strong>뒤집는 지점</strong>: 통념은 "윤리 교육이 부족해서 기업 비리가 난다"이다. 콜슨의 반론은 <strong>윤리 교육의 양이 아니라 그 교육이 서 있는 토대가 문제</strong>라는 것이다. 상대주의 위에서 가르치는 윤리는 결국 "들키지 않는 법"으로 수렴한다. 의료 현장의 직업윤리 교육에도 그대로 옮겨 볼 수 있는 비판이다.</p>
+<h3>6. 제1원칙은 직원 존중 — 사람을 하나님이 보시듯</h3>
+<p>3부부터는 실제 경영으로 내려온다. 저자의 제1원칙은 이익도 성장도 아니다.</p>
+<blockquote>
+<p>"왜 꼭 개개인의 가치에 역점을 두십니까?" — "중요한 건 바로 하나님이 보시듯 사람들을 보는 자세입니다." (p.102)
+"'진심 어린 돌봄과 관심'을 정확히 포착한 이야기들이었다." (p.105)</p>
+</blockquote>
+<p>이 원칙은 세 가지 구체적 결정으로 나타난다.</p>
+<ul>
+<li><strong>소유 구조</strong>: "우리는 비상장 기업으로 남았으며," (p.99) — 분기 실적 압박이 사람 중심 경영을 갉아먹는 것을 구조적으로 차단한 선택이다.</li>
+<li><strong>채용</strong>: 성경의 성문 장로 이미지를 채용 철학으로 삼는다. "<strong>성문이 있었고, 장로들이 성문 옆에</strong>" (p.101) 앉아 드나드는 사람을 살폈듯이 —<blockquote>
+<p>"'회사 문'을 통과해 들어오는 사람들은 회사의 성공에 지대한 영향을 줍니다. 저는 일하려는 열의, 권위에 대한 존중, 기본적인 기질 같은 인격 문제들을 평가하려고 노력합니다." (p.101)
+  기술이 아니라 <strong>열의·권위에 대한 존중·기질</strong> 세 가지를 본다는 점이 특징이다.</p>
+</blockquote>
+</li>
+<li><strong>육아 지원의 근거</strong>: "생후 첫 3년이 엄마와 아이의 유대 관계, 즉 평생 큰 유익이 될 유대 관계를 형성하는 데 결정적이라는 사실을 배웠다. 엄마가 일주일에 약 20시간 이상 아이와 떨어져 있으면 이 유대 관계는 현저히 약화된다고 한다." (p.103)
+  ⚠️ 이 대목은 <strong>1990년대 애착 연구를 근거로 한 서술</strong>이며, 저자가 여성 직원의 근로시간 정책을 설계한 배경이다. 오늘의 연구 지형과 노동 규범에서는 그대로 적용하기 어렵고, 회사 정책으로 옮길 때는 성별 고정을 강화할 위험이 있다.</li>
+</ul>
+<h3>7. 소명·은사·영역 — "소명은 종교용어만이 아니다"</h3>
+<p>13장은 볼트의 <a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%86%8C%EB%AA%85/">직업소명</a>·<a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a> 클러스터와 정면으로 맞물린다.</p>
+<blockquote>
+<p><strong>소명은 종교용어만이 아니다</strong> (p.110)
+"<strong>비종교적인 직업으로 부르심을 받았다는</strong>" (사실을 자주 놓친다) (p.110)
+"요셉은 바로의 총리였고 모세와 다윗은 양치기, 베드로는 어부였으며, 루디아는 옷감 장수, 바울은 천막 만드는 사람이었다." (p.110)
+"특히 인사 배치에서 이 은사의 원칙이 적용되는 경우를 자주 본다." (p.112)
+"<strong>거주의 경계를 한정하셨</strong>" (p.113, <span class="wl-dead" title="위키 내부 링크">행17</span> 26절)</p>
+</blockquote>
+<p>세 겹의 논증이다. ① 성경 인물 목록으로 <strong>비종교 직업의 정당성</strong>을 세우고(p.110), ② 은사론을 <strong>인사 배치라는 실무</strong>로 번역하며(p.112), ③ 사도행전 17장의 '거주의 경계'로 <strong>일하는 자리 자체가 섭리</strong>임을 말한다. <a class="wl" href="../../b/%EC%86%8C%EB%AA%85_%EC%98%A4%EC%8A%A4%EA%B8%B0%EB%8B%88%EC%8A%A4/">오스 기니스</a>가 소명을 정체성 차원에서 다룬다면, 베케트는 그것을 <strong>조직도 위에서</strong> 다룬다는 차이가 있다.</p>
+<h3>8. 핵심 인사이트: 가정이 회사보다 우선이다 — 선언이 아니라 정책으로</h3>
+<p>18장이 이 책에서 가장 실행 가능한 부분이며, 독자도 여기에 가장 촘촘히 밑줄을 그었다(p.152~155 연속).</p>
+<blockquote>
+<p>"성경은 가정, 교회, 국가 이렇게 세 '기관'을 인정한다. 교회는 가정으로 이루어지며 교회 안의 가정이어야 건실하고 유효하다. 국가는 가정과 교회의 자유와 안전을 확보하기 위해 세워진 기관이다. <strong>이 셋 가운데 가정이 가장 중요하며 근본이 된다.</strong>" (p.152)</p>
+</blockquote>
+<p><strong>뒤집는 지점</strong>: 대부분의 기업 신앙 담론은 "일터를 선교지로"라고 말하며 회사 쪽으로 무게를 옮긴다. 베케트는 반대 방향으로 간다. 회사는 <strong>가정을 지키는 방향으로 스스로를 제한해야 하는 기관</strong>이다.</p>
+<table>
+<thead>
+<tr>
+<th>개인이 지킬 습관 (p.153~154)</th>
+<th>회사가 정할 정책 (p.155)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>사랑을 적극적으로 표현하고 책임을 다하는 애정을 보이자</td>
+<td>일부 회사처럼 <strong>항공료가 싼 토요일 출장을 강요하지 마라</strong></td>
+</tr>
+<tr>
+<td>규율이 있는 분위기를 유지하되, 즐거움으로 균형을 맞추자</td>
+<td><strong>가족 간 근무평가 금지</strong>라는 안전장치는 있어야 한다</td>
+</tr>
+<tr>
+<td>부부 사이가 좋아야 한다. 이는 자녀들에게 안정감을 준다</td>
+<td>(그 밖에 출산 휴가·회사 개방과 방문·가정으로 부치는 회사 소식지·가족과 친척 고용 항목이 이어진다)</td>
+</tr>
+<tr>
+<td>소통하려고 노력하자. 가족이 대화를 원하면 시간을 내자</td>
+<td></td>
+</tr>
+<tr>
+<td>대가족인 경우, 자녀와 일대일 대화 시간을 정기적으로 갖자</td>
+<td></td>
+</tr>
+<tr>
+<td>식사를 함께하도록 노력하자. 식사 중 즐거운 대화의 꽃을 피우자</td>
+<td></td>
+</tr>
+<tr>
+<td>휴가를 함께 보내자. 되도록 자녀 중심의 휴가가 되게 하자</td>
+<td></td>
+</tr>
+<tr>
+<td>육아 시기에는 시간이 많이 드는 취미를 줄이자</td>
+<td></td>
+</tr>
+<tr>
+<td>선생님들과 시간을 보내자</td>
+<td></td>
+</tr>
+<tr>
+<td>텔레비전 시청 시간을 제한하자. 봐야 한다면 함께 보라</td>
+<td></td>
+</tr>
+<tr>
+<td>가족과 함께 정기적으로 기도하자</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>가장 자기폭로적인 문장은 이것이다.</p>
+<blockquote>
+<p>"육아에 집중할 시기에는 시간이 많이 드는 취미 활동을 줄이자. <strong>나는 20년 동안 골프채를 치워 두었다. 내 핸디캡을 보면 그 사실을 알 수 있다.</strong>" (p.154)</p>
+</blockquote>
+<p>원칙을 말한 뒤 자기가 치른 대가를 농담으로 덧붙이는 이 방식이 책 전체의 화법이다. <a class="wl" href="../../t/%EA%B0%80%EC%A0%95%EC%82%AC%EC%97%AD/">가정사역</a> 관점에서 보면, 가정 우선은 감정이 아니라 <strong>포기 목록</strong>으로 증명된다는 주장이다.</p>
+<h3>9. 고난과 기도 — 압착기, 그리고 목요일 아침</h3>
+<blockquote>
+<p>"이 구절에서 '환난' 또는 '고난'이라 번역하는 단어는 포도나 올리브를 압착기에 넣어 으깨는 모습을 묘사할 때 쓰는 단어다!" (p.121)
+"어려움은 하나님의 도구다. 난관이 주는 교훈을 받아들일 수도 피할 수도 있지만 결국 우리는 이를 통해 배운다. 하나님의 경계 원리, 과연 또 다른 길이 있을까?" (p.123)</p>
+</blockquote>
+<p>경영 위기(4장의 화재 사건)를 신학적으로 소화한 결과다. 압착은 파괴가 아니라 <strong>기름을 내는 공정</strong>이라는 어원 관찰이 이 장의 축이다.</p>
+<p>기도에 대해서는 과장 없이 쓴다.</p>
+<blockquote>
+<p>"기도는 사업 경영 안내서의 차례에 흔히 등장하는 단어는 아니다." (p.161)
+"나는 매주 목요일 아침마다 밥 쿡을 포함한 남자 직원들과 소그룹으로 만나고 있다." (p.161)
+"'당신을 위해, 당신이 처한 상황을 놓고 기도해도 괜찮겠습니까?'라고 요청한다. <strong>지금까지 한 번도 거절당한 적이 없다.</strong>" (p.162)</p>
+</blockquote>
+<p>경영자가 직원에게 기도를 제안하는 일은 권력 관계 때문에 위험할 수 있는데, 저자는 그것을 <strong>요청 형식</strong>과 <strong>거절 가능성이 살아 있는 문장</strong>으로 다룬다. "한 번도 거절당한 적이 없다"는 자랑이 아니라 그 방식이 통했다는 보고로 읽어야 한다.</p>
+<h3>10. 긍휼과 책임, 그리고 내부 고객</h3>
+<blockquote>
+<p>"'긍휼'과 '책임감'이었다. 둘은 서로 보완 관계인데 어느 쪽도 홀로 완전할 수 없다." (p.128)
+"사회적 약자들을 고용하고 교육하여 창업하는 구상을 나누었다." (p.130)</p>
+</blockquote>
+<p>긍휼만 있으면 조직이 무너지고 책임만 있으면 사람이 상한다는 것이 15장의 요지다. 16장에서는 리츠 칼튼을 사례로 삼아 섬김의 방향을 안으로 돌린다.</p>
+<blockquote>
+<p>"'내부 고객'이란 회사 내에서 다른 직원에게 서비스를 받는 모든 직원을 말한다." (p.137)
+"이 모든 교류는 직원들 사이에서 늘 일어나는 상황으로, 서로를 섬기는 중요한 기회다." (p.137)</p>
+</blockquote>
+<p><a class="wl" href="../../t/%EC%84%AC%EA%B9%80/">섬김</a>을 조직 내부의 일상 업무 흐름으로 정의한 것으로, <a class="wl" href="../../b/%EA%B2%85%ED%98%B8_%EC%BC%84%EB%B8%94%EB%9E%9C%EC%B0%A8%EB%93%9C/">겅호</a>류의 조직문화 논의와 접점이 있다.</p>
+<h3>11. 세 가지 가치와 최종 목표</h3>
+<p>21장에서 회사의 비전과 가치가 명문화된다.</p>
+<blockquote>
+<p>"'탁월한 회사 조직' 세우기다. 각 계열사는 고객을 특별하고 소중하게 섬기며, 모든 분야에 성경적 가치를 실제로 적용하고 반영한다." (p.172)
+핵심어: "<strong>'세우다, 탁월한, 섬기다, 고객, 성경적 가치'</strong>" (p.172)</p>
+</blockquote>
+<p>책 맨 뒤(p.215)에서 독자는 <strong>세 단어에 각각 동그라미</strong>를 쳐 두었다. 이 책이 그에게 남긴 최종 요약이라 할 만하다.</p>
+<table>
+<thead>
+<tr>
+<th>가치</th>
+<th>정의</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>청렴</strong></td>
+<td>"청렴이란 가치의 표준을 고수하는 것이라고 정의할 수 있다." (p.179)</td>
+<td>시편·잠언에서 청렴 9회, 겸손 11회, <strong>정의 29회</strong> 언급 (p.91)</td>
+</tr>
+<tr>
+<td><strong>탁월함</strong></td>
+<td>"나는 탁월함과 완벽함을 혼동하지 않으려고 조심합니다. <strong>탁월함은 내가 애써 도달할 수 있지만, 완벽함은 하나님께서 하시는 일이니까요.</strong>" (p.182)</td>
+<td>창조를 "'심히' 좋았다"고 하신 하나님 (p.181), "'하나님께서 창조하신 모든 것은 탁월하다.'" (p.181)</td>
+</tr>
+<tr>
+<td><strong>개인에 대한 깊은 존중</strong></td>
+<td>제1원칙 (p.102, p.215)</td>
+<td>"하나님이 보시듯 사람들을 보는 자세"</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"<strong>탁월함.</strong> 이는 결국 제품이나 공정이 아니라 사람이 해내는 일이다." (p.182)</p>
+</blockquote>
+<p><strong>탁월함과 완벽함의 구별</strong>(p.182)은 실무자에게 특히 유용하다. 완벽주의는 신앙의 이름으로 자주 정당화되지만, 저자는 그것을 <strong>하나님의 몫을 침범하는 태도</strong>로 규정한다.</p>
+<h3>12. 일의 존엄과 최종 목표: 관계</h3>
+<p>22장 "나는 월요일을 사랑해"에서 제목의 뜻이 밝혀진다.</p>
+<blockquote>
+<p>"'일'은 누명을 써왔다. 성경적 규범에서 왜곡된 많은 부분들처럼, 우리는 일을 존엄과 성취가 아닌 고달픔과 무가치함과 연관 지어 왔다. 그러나 사실 성경의 첫 번째 절에서, 천지를 창조하고 모든 피조물에게 생명을 불어넣으신 하나님께선 일을 존중하며 그 위상을 몸소 세우셨다. <strong>하지만 하나님은 휴식하는 법도 아셨다.</strong>" (p.188, <span class="wl-dead" title="위키 내부 링크">창2</span>)</p>
+</blockquote>
+<p>일의 존엄과 <a class="wl" href="../../t/%EC%95%88%EC%8B%9D/">안식</a>이 한 문단 안에 함께 있다는 점이 중요하다. 일 예찬으로 기울지 않게 하는 제동 장치다. 그리고 마지막 장은 모든 것을 관계로 수렴시킨다.</p>
+<blockquote>
+<p>"'최종 목표란 바로 관계다.'" (p.192)
+"'하나님께서 행하시는 일을 우리도 함께 행해야 한다.'" (p.195)
+"우리의 최종 목표는 하나님과 하나님의 원칙을 '아는 것'에 그치지 않는다. 최종 목표는 바로 그분을 우리의 창조주, 구원자, 친구로 깨닫는 데 있다." (p.196)</p>
+</blockquote>
+<p><strong>뒤집는 지점</strong>: 앞의 200쪽이 원칙·가치·정책이었는데, 저자는 마지막에 그 모두를 수단 자리로 내린다. 성경적 경영의 목적은 성경적 경영이 아니라 <strong>관계</strong>라는 것이다.</p>
+<hr />
+<h2>독서 흔적이 말하는 것</h2>
+<ul>
+<li><strong>여백 손글씨는 한 건도 없다.</strong> 47장 전체에서 표시는 연필 밑줄과 동그라미/네모뿐이다. 논평하며 읽기보다 <strong>동의하는 문장을 표시하며 읽은</strong> 독서다.</li>
+<li><strong>밑줄이 가장 조밀한 구간은 두 곳</strong> — 이원론 계보(p.75~85)와 가정 우선(p.152~155). 전자는 <em>왜</em>, 후자는 <em>어떻게</em>에 해당한다. 이론과 실행 양쪽에 표시가 몰렸다.</li>
+<li><strong>동그라미·네모를 친 말</strong>은 인물과 가치어에 집중된다 — 토마스 아퀴나스(p.78), 참된(p.80), 플라톤은·아우구스티누스는(p.77), 탁월함(p.182), 그리고 마지막 장의 <strong>청렴·탁월함·개인에 대한 깊은 존중</strong>(p.215).</li>
+<li><strong>토론 질문면 3곳에도 표시가 있다</strong>(p.25·60·81). 읽기만 한 것이 아니라 <strong>질문에 답할 자리를 표시</strong>했다는 뜻이며, 이 책을 소그룹·팀 교재로 쓸 여지를 시사한다.</li>
+</ul>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<p><strong>적용 — 클리닉 경영</strong>
+- 이 책의 제1원칙(p.102)과 채용 기준(p.101, 열의·권위에 대한 존중·기질)은 진행 중인 클리닉 동역·동업 논의에서 <strong>동업자 평가 항목</strong>으로 그대로 옮겨 쓸 수 있다. 재무 조건보다 먼저 물어야 할 질문의 목록이 이미 문장으로 정리되어 있다.
+- <strong>비상장 유지</strong>(p.99)의 취지는 소유 구조가 가치를 지켜 준다는 것이다. 의원 지분·의사결정 구조를 설계할 때 "어떤 구조가 우리 가치를 압박에서 지켜 주는가"로 번역된다.
+- <strong>가족 간 근무평가 금지</strong>(p.155)는 가족·지인이 함께 일하기 쉬운 개원가 환경에서 곧바로 쓸 수 있는 안전장치다.</p>
+<p><strong>적용 — 사역과 강의</strong>
+- 2절의 이원론 계보 표는 <a class="wl" href="../../t/%EC%9D%BC%ED%84%B0%EC%8B%A0%ED%95%99/">일터신학</a> 강의에서 <strong>한 장짜리 슬라이드</strong>로 쓰기 좋다. 플라톤–아우구스티누스–아퀴나스–경건주의로 이어지는 네 칸이면 "일이 왜 하찮게 느껴지는가"가 설명된다.
+- 콜슨의 하버드 비판(p.71~72)은 의료윤리 교육에 옮겨 볼 수 있다. 상대주의 위에서 가르치는 직업윤리가 실제로 무엇을 남기는지 묻는 방식이다.
+- 탁월함과 완벽함의 구별(p.182)은 소진(burnout)을 다루는 멘토링 대화에서 쓸 수 있는 문장이다.</p>
+<p><strong>미해결 질문</strong>
+- 저자는 <strong>비상장 가족기업의 오너</strong>다. 그가 누린 재량(채용 기준·기도 모임·가정 정책)을 <strong>고용된 관리자</strong>나 상장사 임원이 그대로 행사할 수 있는가. 이 책은 그 격차를 다루지 않는다.
+- 경영자가 직원에게 기도를 제안할 때(p.162) <strong>권력 관계</strong>를 어떻게 중화할 것인가. "한 번도 거절당한 적이 없다"는 결과는 좋은 신호이기도 하고, 거절이 어려운 구조의 방증이기도 하다.
+- 생후 3년 애착 서술(p.103)을 오늘의 노동 규범과 연구 지형에서 어떻게 다시 쓸 것인가. 원칙(가정 우선)은 남기고 근거와 성별 전제는 갱신해야 한다.
+- 이 책은 <strong>1998년 미국 제조업</strong>을 배경으로 한다. 개원 의료·비영리 사역 조직처럼 <strong>고객과 수혜자가 분리되는 조직</strong>에서 "내부 고객"(p.137) 개념이 어떻게 달라지는가.</p>
+<hr />
+<blockquote>
+<p>📖 전사 원문(줄이지 않은 표시 구절 전체): <span class="wl-dead" title="위키 내부 링크">다니고싶은회사만들기_존베케트_전사</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#discipline/일터신학</span><span>#domain/신학</span><span>#faith-at-work</span><span>#일터제자도</span><span>#기업경영</span><span>#소명</span><span>#가정우선</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
