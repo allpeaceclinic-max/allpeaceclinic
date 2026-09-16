@@ -1,0 +1,416 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>케이프타운 서약 (The Cape Town Commitment) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">선교</span><span class="date">2026-09-16</span></div>
+  <h1 class="note-title">케이프타운 서약 (The Cape Town Commitment)</h1>
+  
+</header>
+<article class="note">
+<blockquote>
+<p>부제 <strong>「하나님의 선교를 위한 복음주의 헌장」</strong>. 2010년 남아공 케이프타운에서 열린 <strong>제3차 로잔대회</strong>(198개국 4,200여 명)의 산출 문서다. 한국어판은 IVP에서 나왔고, 현장에서는 표지 색을 따 <strong>「노란 책」</strong>으로 불린다. <span class="wl-dead" title="위키 내부 링크">크리스토퍼라이트</span>가 신학 분과 의장으로 문안을 주도했다.</p>
+</blockquote>
+<p><strong>한 문장 명제</strong>: 로잔 언약(1974)이 전도와 사회적 책임을 재봉합했다면, 케이프타운 서약은 그 둘의 <strong>우선순위를 매기는 일 자체를 그만두고</strong> 사랑이라는 하나의 동사 아래 선교 전체를 다시 배열한다.</p>
+<hr />
+<h2>1. 구조 — 사랑의 고백이 먼저, 행동은 그 뒤</h2>
+<p>서약은 두 부분이다. 이 순서 자체가 논지다. 무엇을 할 것인가(2부)를 말하기 전에 <strong>누구를 사랑하는가</strong>(1부)를 먼저 고백한다.</p>
+<h3>1부 — 우리가 사랑하는 주님을 위하여: 케이프타운 신앙고백 (10항목)</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>항목</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>우리는 하나님이 먼저 우리를 사랑하셨기에 하나님을 사랑한다</td>
+</tr>
+<tr>
+<td>2</td>
+<td>우리는 살아 계신 하나님을 사랑한다</td>
+</tr>
+<tr>
+<td>3</td>
+<td>우리는 하나님 아버지를 사랑한다</td>
+</tr>
+<tr>
+<td>4</td>
+<td>우리는 성자 하나님을 사랑한다</td>
+</tr>
+<tr>
+<td>5</td>
+<td>우리는 성령 하나님을 사랑한다</td>
+</tr>
+<tr>
+<td>6</td>
+<td>우리는 하나님의 말씀을 사랑한다</td>
+</tr>
+<tr>
+<td>7</td>
+<td>우리는 하나님의 세상을 사랑한다</td>
+</tr>
+<tr>
+<td>8</td>
+<td>우리는 하나님의 복음을 사랑한다</td>
+</tr>
+<tr>
+<td>9</td>
+<td>우리는 하나님의 백성을 사랑한다</td>
+</tr>
+<tr>
+<td>10</td>
+<td>우리는 하나님의 선교를 사랑한다</td>
+</tr>
+</tbody>
+</table>
+<p>열 항목이 모두 <strong>"우리는 ~을 사랑한다"</strong> 한 문형으로 반복된다. 신조(信條)를 명제가 아니라 <strong>사랑의 목록</strong>으로 쓴 것이 이 문서의 형식적 특징이다.</p>
+<h3>2부 — 우리가 섬기는 세상을 위하여: 케이프타운의 행동 요청 (6부문)</h3>
+<table>
+<thead>
+<tr>
+<th>부문</th>
+<th>제목</th>
+<th>하위 항목</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>IIA</strong></td>
+<td>다원적이고 세계화된 세상 속에서 <strong>그리스도의 진리 증거하기</strong></td>
+<td>진리와 그리스도의 인격 · 다원주의의 도전 · <strong>일터</strong> · 전 세계적 미디어 · 선교에서의 예술 · 부상하는 기술 문명 · <strong>공적 영역</strong></td>
+</tr>
+<tr>
+<td><strong>IIB</strong></td>
+<td>분열되고 깨진 세상에서 <strong>그리스도의 평화 이루기</strong></td>
+<td>그리스도께서 이루신 평화 · <strong>종족 갈등</strong> · 가난하고 억압받는 자 · <strong>장애인</strong> · <strong>고통받는 피조물</strong></td>
+</tr>
+<tr>
+<td><strong>IIC</strong></td>
+<td><strong>타종교인 사이에서</strong> 그리스도의 사랑으로 살아가기</td>
+<td>이웃 사랑 명령은 타종교인을 포함 · 고난과 죽음의 감수 · 행동하는 사랑 · <strong>제자도의 다양성</strong> · 흩어진 사람들 · <strong>모든 사람의 종교적 자유</strong></td>
+</tr>
+<tr>
+<td><strong>IID</strong></td>
+<td>세계복음화를 위한 <strong>그리스도의 뜻 분별하기</strong></td>
+<td><strong>미전도·소외 종족</strong> · <strong>구술문화</strong> · 그리스도 중심의 지도자 · <strong>도시</strong> · <strong>어린이</strong> · 기도</td>
+</tr>
+<tr>
+<td><strong>IIE</strong></td>
+<td>그리스도의 교회를 향한 <strong>겸손·온전함·단순성</strong>으로의 부르심</td>
+<td>구별된 새 인류 · 성 숭배 거부 · <strong>권력 우상 거부</strong> · <strong>성공 우상 거부</strong> · <strong>탐욕 우상 거부</strong></td>
+</tr>
+<tr>
+<td><strong>IIF</strong></td>
+<td>선교의 일치를 위해 <strong>그리스도의 몸 안에서 협력</strong></td>
+<td>교회의 연합 · 글로벌 선교 동반자 · <strong>남녀의 동반자적 협력</strong> · <strong>신학교육과 선교</strong></td>
+</tr>
+</tbody>
+</table>
+<h3>부록 — 로잔 언약 (1974)</h3>
+<p>한국어판 <strong>p.215~229</strong>에 <span class="wl-dead" title="위키 내부 링크">로잔 언약</span> 전문이 실려 있다. 15개 조항이며, 케이프타운 서약은 스스로를 이 언약의 <strong>재해석·계승</strong>으로 위치시킨다.</p>
+<table>
+<thead>
+<tr>
+<th>조</th>
+<th>제목</th>
+<th>조</th>
+<th>제목</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>하나님의 목적</td>
+<td>9</td>
+<td>전도의 긴박성</td>
+</tr>
+<tr>
+<td>2</td>
+<td>성경의 권위와 능력</td>
+<td>10</td>
+<td>전도와 문화</td>
+</tr>
+<tr>
+<td>3</td>
+<td>그리스도의 유일성과 보편성</td>
+<td>11</td>
+<td>교육과 지도력</td>
+</tr>
+<tr>
+<td>4</td>
+<td>전도의 본질</td>
+<td>12</td>
+<td>영적 싸움</td>
+</tr>
+<tr>
+<td>5</td>
+<td>그리스도인의 사회적 책임</td>
+<td>13</td>
+<td>자유와 핍박</td>
+</tr>
+<tr>
+<td>6</td>
+<td>교회와 전도</td>
+<td>14</td>
+<td>성령의 능력</td>
+</tr>
+<tr>
+<td>7</td>
+<td>전도를 위한 협력</td>
+<td>15</td>
+<td>그리스도의 재림</td>
+</tr>
+<tr>
+<td>8</td>
+<td>교회의 선교 협력</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>2. 페이지 지도 — 나우선 세미나 기준</h2>
+<p><span class="wl-dead" title="위키 내부 링크">램스코리아</span>의 <span class="wl-dead" title="위키 내부 링크">나우선 세미나</span>는 이 책을 6강으로 나눠 읽는다. <strong>강의 순서가 책 순서와 다르다</strong> — 1강이 부록(로잔 언약)에서 시작해 2강부터 본문 2부로 들어간다. 계보를 먼저 깔고 행동 요청으로 내려오는 배치다.</p>
+<table>
+<thead>
+<tr>
+<th>강</th>
+<th>주제</th>
+<th>페이지</th>
+<th>책에서의 위치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1강</td>
+<td>예수 그리스도의 중심성</td>
+<td><strong>p.215~229</strong></td>
+<td>부록 — 로잔 언약 15개 조항</td>
+</tr>
+<tr>
+<td>2강</td>
+<td>세상 속에서 그리스도를 증거함</td>
+<td><strong>p.67~77</strong></td>
+<td>2부 <strong>IIA</strong></td>
+</tr>
+<tr>
+<td>3강</td>
+<td>그리스도의 평화</td>
+<td><strong>p.78~90</strong></td>
+<td>2부 <strong>IIB</strong></td>
+</tr>
+<tr>
+<td>4강</td>
+<td>타종교인들 가운데서</td>
+<td><strong>p.91~100</strong></td>
+<td>2부 <strong>IIC</strong></td>
+</tr>
+<tr>
+<td>5강</td>
+<td>세상 모든 민족을 제자삼아</td>
+<td><strong>p.100~111</strong></td>
+<td>2부 <strong>IID</strong></td>
+</tr>
+<tr>
+<td>6강</td>
+<td>교회, 그리스도의 공동체</td>
+<td><strong>p.112~132</strong></td>
+<td>2부 <strong>IIE·IIF</strong></td>
+</tr>
+</tbody>
+</table>
+<p>선택 읽기로 지정되는 <strong>p.21~64</strong>가 1부(신앙고백)에 해당한다. 본문 2부는 p.67에서 시작한다.</p>
+<blockquote>
+<p>📍 <strong>본문 위치 단서(강의 인용으로 확인된 것)</strong>: p.40 창조–타락–구속–새창조의 우주적 이야기 · p.44~45 "선교란 구원이 개인과 사회와 창조세계를 위한 것이라는 성경적 진리를 분별하고 선포하고 살아내는 것" · p.71 사역과 선교는 전임 사역자만의 일이 아니다 · p.78 하나님과의 화해는 이웃과의 화해와 분리되지 않는다 · p.90 이웃 사랑의 명령은 타종교인을 포함한다.</p>
+</blockquote>
+<hr />
+<h2>3. 로잔 계보 안에서의 좌표</h2>
+<p>이 문서의 의미는 앞뒤 문서와의 차이에서 드러난다. → 상세는 <a class="wl" href="../../t/%ED%86%B5%EC%A0%84%EC%A0%81%EC%84%A0%EA%B5%90/">통전적선교</a></p>
+<table>
+<thead>
+<tr>
+<th>대회</th>
+<th>연도</th>
+<th>문서</th>
+<th>통전성의 무게중심</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1차 로잔</td>
+<td>1974</td>
+<td>로잔 언약</td>
+<td>전도와 사회적 책임 <strong>재통합의 출발</strong> — <span class="wl-dead" title="위키 내부 링크">존스토트</span> 초안</td>
+</tr>
+<tr>
+<td>2차 마닐라</td>
+<td>1989</td>
+<td>마닐라 선언</td>
+<td>전도의 <strong>우선성</strong>을 명시</td>
+</tr>
+<tr>
+<td><strong>3차 케이프타운</strong></td>
+<td><strong>2010</strong></td>
+<td><strong>케이프타운 서약</strong></td>
+<td><strong>'우선성' 대신 통합성·총체성</strong> — 창조세계 돌봄까지 확장</td>
+</tr>
+<tr>
+<td>4차 서울</td>
+<td>2024</td>
+<td>서울 선언문</td>
+<td>선포와 행동을 함께, <strong>다중심(polycentric)</strong></td>
+</tr>
+</tbody>
+</table>
+<p>핵심 이동은 <strong>마닐라의 '우선성'에서 케이프타운의 '통합성'으로</strong>다. <a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EB%9E%80%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80_%EC%8A%A4%ED%86%A0%ED%8A%B8%EB%9D%BC%EC%9D%B4%ED%8A%B8/">『선교란 무엇인가』</a>에 기록된 대로, 눈이 보이지 않게 된 말년의 스토트가 이 서약을 "며칠에 걸쳐 한 단락씩" 읽어 달라고 고집했다(p.41).</p>
+<p>⚖️ 다만 대회 현장에는 긴장이 있었다 — 로잔 집담회의 증언에 따르면 케이프타운에서도 "주강사와 문서가 달랐다. 영혼 구원, 전도의 우선성을 노골적으로 강조"하는 목소리가 있었다. <strong>문서가 합의한 것과 강단에서 말해진 것이 같지 않았다.</strong></p>
+<hr />
+<h2>4. 한국 교회에서의 수용 — 비어 있는 14년</h2>
+<p>이 문서를 다룰 때 가장 먼저 짚어야 할 사실은 <strong>한국 교회가 이것을 거의 읽지 않았다</strong>는 것이다. 로잔 집담회에서 정성국 교수가 남긴 진단이 직설적이다.</p>
+<blockquote>
+<p>"케이프타운, 학교 안에서 어떻게 전달해야 할지 고민이 있다. <strong>로잔 운동 가르치는 수업이 없다.</strong> 교단 차원에서 얼마나 이해할 수 있을까? <strong>신학교, 교단 안에서 들은 바가 없다. 지난 14년 동안 뭐 했나?</strong>"</p>
+</blockquote>
+<p><a class="wl" href="../../t/%ED%86%B5%EC%A0%84%EC%A0%81%EC%84%A0%EA%B5%90/">통전적선교</a>가 남겨 둔 미해결 질문도 여기에 걸려 있다 — 한국 교회의 통전성 결핍은 신학의 문제인가 구조의 문제인가. 이 진단이 맞다면 통전성의 회복은 <strong>교육의 문제로 환원되는가</strong>.</p>
+<p>나우선 세미나는 정확히 이 공백을 메우려는 시도다. 문서를 교단이나 신학교가 아니라 <strong>지역교회 소그룹이 직접 읽게</strong> 하는 경로를 택했다.</p>
+<hr />
+<h2>5. 이 책을 읽는 법 — 강의는 보조다</h2>
+<p>나우선 안내 영상이 이 책의 사용법을 명시한다.</p>
+<blockquote>
+<p>"사실상 <strong>강의는 이 책을 읽는 데 도움을 줄 뿐입니다.</strong> 그렇기에 이 책을 천천히 읽고 묵상하고 생각을 적어 보세요."</p>
+</blockquote>
+<p>읽기 방식으로 세 가지를 제시한다 — <strong>성찰적 학습</strong>(천천히 읽고 묵상하고 적는다) · <strong>실천적 학습</strong>(기도하고 현장에서 실천하면 더 깊은 질문이 생긴다) · <strong>공동체적 학습</strong>(소그룹에서 나누고 함께 기도한다). 문서를 지식으로 소비하지 말라는 요구이며, 이 점에서 <a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EB%B0%B1%EC%84%B1%EC%9D%98%EC%84%A0%EA%B5%90/">하나님백성의선교</a>를 15과 강해로 다루는 방식과 결이 다르다.</p>
+<hr />
+<h2>6. 볼트 안의 접점</h2>
+<ul>
+<li><a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EB%9E%80%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80_%EC%8A%A4%ED%86%A0%ED%8A%B8%EB%9D%BC%EC%9D%B4%ED%8A%B8/">선교란무엇인가_스토트라이트</a> — <strong>케이프타운 서약 IIC의 원문이 이 책에 수록</strong>되어 있다. 스토트·라이트 두 세대의 대화로 서약의 신학적 배경을 읽을 수 있다</li>
+<li><a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EB%B0%B1%EC%84%B1%EC%9D%98%EC%84%A0%EA%B5%90/">하나님백성의선교</a> — <span class="wl-dead" title="위키 내부 링크">LAMs</span>의 다른 축(하백선). 성경 전체 이야기로서의 선교</li>
+<li><a class="wl" href="../../t/%ED%86%B5%EC%A0%84%EC%A0%81%EC%84%A0%EA%B5%90/">통전적선교</a> — 우선성 대 통합성 논쟁, 대반전(Great Reversal)의 계보</li>
+<li><a class="wl" href="../../t/%EC%B4%9D%EC%B2%B4%EC%A0%81%EC%84%A0%EA%B5%90/">총체적선교</a> — 함선네 계열의 실천 문법</li>
+<li><span class="wl-dead" title="위키 내부 링크">2024L4로잔</span> — L4 서울(2024). <strong>교재 순서로 "케이프타운서약 + 선교란 무엇인가 + 하나님 백성의 선교 → 서울선언문 + 대위임령 현황보고서"</strong>가 이미 정리되어 있다</li>
+<li><span class="wl-dead" title="위키 내부 링크">로잔운동</span> · <span class="wl-dead" title="위키 내부 링크">크리스토퍼라이트</span> · <span class="wl-dead" title="위키 내부 링크">존스토트</span></li>
+</ul>
+<hr />
+<h2>미해결 질문</h2>
+<ol>
+<li><strong>2024년 서울 선언문이 나온 뒤에도 2010년 케이프타운 서약이 교재인 이유는 무엇인가.</strong> 다중심적 선교·AI·디지털 의제가 추가된 최신 문서가 있는데, 입문 과정이 14년 전 문서를 쓰는 것은 의도된 선택인가 관성인가.</li>
+<li>문서가 "우선성을 매기지 않는다"고 선언한 것과, 현장에서 전도가 실제로 밀려나는 것은 어떻게 구별되는가. <a class="wl" href="../../t/%ED%86%B5%EC%A0%84%EC%A0%81%EC%84%A0%EA%B5%90/">통전적선교</a>가 던진 NGO화/영혼환원주의의 경계선 문제가 그대로 남는다.</li>
+<li>1부(사랑의 고백 10항목)를 <strong>선택 읽기</strong>로 돌리고 2부(행동 요청)를 본 과정으로 삼는 나우선의 배치는, 이 문서가 의도한 "고백이 먼저"라는 순서를 뒤집는 것은 아닌가.</li>
+</ol>
+</article>
+<div class="tagrow"><span>#discipline/선교학</span><span>#domain/선교신학</span><span>#케이프타운서약</span><span>#로잔언약</span><span>#총체적선교</span><span>#통전적선교</span><span>#복음주의</span><span>#format/공식문서</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
