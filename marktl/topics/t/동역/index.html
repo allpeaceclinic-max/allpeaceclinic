@@ -1,0 +1,183 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>동역 (Partnership, κοινωνός / συνεργός) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-t">선교</span><span class="date">2026-09-20</span></div>
+  <h1 class="note-title">동역 (Partnership, κοινωνός / συνεργός)</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>동역은 같은 일을 나누어 맡는 분업이 아니라, 같은 주인을 섬기는 관계다. 신약이 쓰는 두 단어가 이 성격을 각각 드러낸다. <strong>쉬네르고스(συνεργός)</strong> 는 "함께 일하는 자"로 사역의 실무적 동반을 가리키고, <strong>코이노노스(κοινωνός)</strong> 는 "함께 나누는 자" — 몫과 운명을 공유하는 자를 뜻한다. 빌레몬서는 후자를 택한다.</p>
+<p>문대원 목사는 이 구별을 사업 파트너와의 대조로 정리한다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>사업 파트너</th>
+<th>성경의 동역자(코이노노스)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>존재 목적</td>
+<td>공동의 <strong>이익</strong></td>
+<td><strong>관계</strong> 그 자체</td>
+</tr>
+<tr>
+<td>결속의 근거</td>
+<td>계약과 성과</td>
+<td><span class="wl-dead" title="위키 내부 링크">코이노니아</span>(성령의 교통하심)</td>
+</tr>
+<tr>
+<td>지속 조건</td>
+<td>이익이 유지되는 동안</td>
+<td>거룩한 갈망과 비전을 공유하는 한</td>
+</tr>
+</tbody>
+</table>
+<p>곧 동역은 일을 나누는 기술이 아니라 <strong>성령 안에서 이미 주어진 사귐의 표현</strong>이다. 고후 13:13의 축도가 매 주일 선포하는 "성령의 교통하심"이 그 신학적 토대다.</p>
+<hr />
+<h2>1. 호칭이 관계를 규정한다</h2>
+<p>바울은 빌레몬서를 "우리의 사랑을 받는 자요 동역자인 빌레몬"(몬 1:1)으로 연다. 빌레몬은 사실 바울의 영적인 아들이었다. 그런데 영적 아버지가 먼저 그를 <strong>동역자</strong>라 불러 준다. 윗자리에 있는 사람이 아랫자리에 있는 사람을 수평의 이름으로 부를 때, 관계 자체가 재편된다.</p>
+<p>같은 구조가 한 겹 더 반복된다. 바울은 빌레몬에게 "네가 나를 동역자로 알진대 그를 영접하기를 내게 하듯 하고"(몬 1:17)라고 청한다. 바울↔빌레몬의 동역이, 빌레몬↔오네시모의 동역을 낳는 근거가 된다. 동역은 이렇게 전이된다.</p>
+<hr />
+<h2>2. 한 사람이 다 할 수 없다</h2>
+<p>동역의 전제는 <strong>불완전성의 인정</strong>이다. 비저너리·전략가·추진력 — 장점은 저마다 다르고, 모든 능력을 갖춘 사람은 없다. 그래서 비전을 공유한 팀이 필요하다.</p>
+<p>이 인식은 <a class="wl" href="../../t/%EB%B6%80%EB%A5%B4%EC%8B%AC/">부르심</a>의 다양성과 맞물린다. 1990년대 말 한국 선교계의 고지론(사회 지도층으로)과 미답지론(남들이 꺼리는 험지로) 논쟁에서 문대원 목사는 어느 쪽의 손도 들지 않는다 — <strong>둘 다 맞고, 하나님이 부르신 자리로 가는 것이 맞다.</strong> 한 사람이 모든 일을 다 할 수 없기 때문이다. 고전 7:20, 22가 같은 원리를 말한다.</p>
+<hr />
+<h2>3. 다름이 자산이 되는 지점</h2>
+<p>동질성은 편안하지만 성장을 멈춘다. 생각이 비슷한 사람들만 모이면 변화와 혁신이 일어나지 않는다. 링컨이 출신과 배경이 다른 윌리엄 수어드를 국무장관에 임명해 남북전쟁기 영국·프랑스의 개입을 차단한 사례가, 이 원리가 실제 성과로 이어지는 모습을 보여 준다.</p>
+<p>같은 논리가 교회 안에서도 작동한다. 제도권 교회(mainline)와 실험적 교회(emerging)는 스타일이 달랐을 뿐 신학은 유사했다 — 말씀 중심, 하나님 나라 추구. 차이를 본질로 오인할 때 동역이 끊긴다.</p>
+<hr />
+<h2>4. 회복된 사람이 동역자가 된다</h2>
+<p>동역의 가장 급진적인 형태는 <strong>실패한 사람을 동역자로 받는 것</strong>이다. 오네시모는 주인의 재산을 훔쳐 달아난 종이었다. 그가 골 4:9에서는 "신실하고 사랑을 받는 형제"로 불리며 골로새서를 직접 전달하고, 훗날 에베소 교회의 감독이 된다. AD 107년 안디옥 감독 이그나티우스의 편지가 이를 증언한다.</p>
+<p>동역은 자격을 심사한 뒤 주어지는 지위가 아니라, <a class="wl" href="../../t/%EC%9A%A9%EC%84%9C/">용서</a>와 <a class="wl" href="../../t/%ED%99%94%ED%95%B4/">화해</a>가 만들어 내는 열매다.</p>
+<hr />
+<h2>미해결 질문</h2>
+<ul>
+<li>코이노노스(나눔의 동반)와 쉬네르고스(일의 동반)를 실무에서 어떻게 구분해 쓸 것인가 — 모든 협력 관계를 코이노니아로 부를 때 생기는 희석은 없는가?</li>
+<li>"관계를 위해 존재하는 동역"이 성과 책임을 어떻게 감당하는가. 열매 없는 동역을 언제까지 유지할 것인가?</li>
+<li>권위의 비대칭(영적 아버지↔아들)이 남아 있는 관계에서 '동역자'라는 호칭은 실질인가 수사인가?</li>
+</ul>
+<hr />
+<h2>관련 설교</h2>
+<ul>
+<li><span class="wl-dead" title="위키 내부 링크">1세기 교회 이야기(4) 의외의 동역</span> (몬 1:8-18, 2026-09-20)</li>
+</ul>
+</article>
+<div class="tagrow"><span>#discipline/선교학</span><span>#discipline/목회학</span><span>#domain/동역</span><span>#domain/공동체</span><span>#domain/리더십</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

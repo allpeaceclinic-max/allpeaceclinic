@@ -1,0 +1,180 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>코이노니아 (κοινωνία) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-t">성경·해석</span><span class="date">2026-09-20</span></div>
+  <h1 class="note-title">코이노니아 (κοινωνία)</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>코이노니아는 "함께 가짐(having in common)"을 뜻한다. 친교·교제·나눔·참여로 번역되지만, 어느 한 단어도 전부를 담지 못한다. 어근 <strong>koinos(공통의)</strong> 가 말하듯, 코이노니아는 감정적 친밀함이 아니라 <strong>무엇인가를 실제로 공유하는 상태</strong>다.</p>
+<p>한국 교회에서 이 말은 종종 "친교실의 교제" 정도로 축소된다. 그러나 신약의 용례는 훨씬 무겁다 — 재산의 공유(행 2:44-45), 헌금(고후 8:4), 고난의 참여(빌 3:10), 성찬(고전 10:16), 그리고 성령 자신(고후 13:13).</p>
+<hr />
+<h2>1. 축도가 곧 코이노니아의 선언이다</h2>
+<blockquote>
+<p><strong>고후 13:13</strong> 주 예수 그리스도의 은혜와 하나님의 사랑과 성령의 교통하심(κοινωνία)이 너희 무리와 함께 있을지어다</p>
+</blockquote>
+<p>매 주일 예배 끝에 선포되는 축도의 세 번째 항목이 코이노니아다. 문대원 목사는 여기서 결정적인 연결을 끌어낸다 — <strong><a class="wl" href="../../t/%EB%8F%99%EC%97%AD/">동역</a>의 근거가 축도 안에 이미 있다.</strong> 성령의 교통하심이 먼저 주어졌기에, 그 위에서 사람과 사람의 관계가 세워진다.</p>
+<p>곧 코이노니아는 우리가 만들어 내는 분위기가 아니라 <strong>성령이 이미 이루어 놓으신 사실</strong>이며, 우리의 교제는 그 사실에 참여하는 행위다. 순서가 뒤집히면 교제는 노력이 되고, 노력은 지친다.</p>
+<hr />
+<h2>2. 코이노노스 — 코이노니아를 사는 사람</h2>
+<p>코이노니아의 인격적 형태가 <strong>코이노노스(κοινωνός, 동역자·동참자)</strong> 다. 몬 1:17의 "네가 나를 동역자(코이노노스)로 알진대"가 빌레몬서 전체의 주제어다.</p>
+<table>
+<thead>
+<tr>
+<th>헬라어</th>
+<th>뜻</th>
+<th>강조점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>코이노니아</td>
+<td>함께 가짐</td>
+<td>관계의 <strong>상태</strong></td>
+</tr>
+<tr>
+<td>코이노노스</td>
+<td>함께 가진 자</td>
+<td>관계 속의 <strong>사람</strong></td>
+</tr>
+</tbody>
+</table>
+<p>사업 파트너십이 공동의 이익 위에 서는 반면, 코이노노스 관계는 <strong>거룩한 갈망과 비전의 공유</strong> 위에 선다. 이익이 사라지면 전자는 해소되지만, 후자는 이익과 무관하게 지속된다.</p>
+<hr />
+<h2>3. 벽을 허무는 코이노니아</h2>
+<p>코이노니아가 진짜인지는 <strong>누구와 함께 가지는가</strong>에서 드러난다. 1세기 로마에서 종과 자유인은 같은 식탁에 앉을 수 없었다. 그 사회에서 갈 3:28은 "유대인이나 헬라인이나 종이나 자유인이나 남자나 여자나 다 그리스도 예수 안에서 하나"라고 선언한다. 근거는 감정이 아니라 사건이다 — 예수께서 그들 모두를 위해 십자가에서 죽으셨다.</p>
+<p>빌레몬이 오네시모를 "종 이상으로 사랑받는 형제"(몬 1:16)로 맞는 것은 그래서 <a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%A1%A0/">교회가 무엇인지</a>를 보여 주는 상징적 사건이다. 함께 식사하고 함께 일하는 관계로 받아들이는 것 — 그것이 코이노니아의 가시적 형태다.</p>
+<hr />
+<h2>4. 식탁과 코이노니아</h2>
+<p>고전 10:16은 성찬의 떡과 잔을 그리스도의 몸과 피에 "참여함(코이노니아)"이라 부른다. <a class="wl" href="../../t/%EC%84%B1%EC%B0%AC/">성찬</a>에서 한 떡과 한 잔 앞에 모두가 평등해지는 것은 코이노니아의 원형이며, <span class="wl-dead" title="위키 내부 링크">「기억의 식탁」</span>이 다룬 주제와 직결된다. 식탁의 코이노니아가 없는 곳에서 동역의 코이노니아도 자라지 않는다.</p>
+<hr />
+<h2>미해결 질문</h2>
+<ul>
+<li>코이노니아를 "친교"로 번역해 온 관행이 초대교회의 재산 공유·고난 참여라는 무게를 얼마나 덜어 냈는가?</li>
+<li>성령의 교통하심이 선행한다면, 코이노니아가 깨진 공동체를 어떻게 진단해야 하는가 — 성령의 부재인가, 참여의 거부인가?</li>
+<li>다름을 포함하는 코이노니아와 이단·중대한 죄에 대한 권징은 어디서 갈라지는가?</li>
+</ul>
+<hr />
+<h2>관련 설교</h2>
+<ul>
+<li><span class="wl-dead" title="위키 내부 링크">1세기 교회 이야기(4) 의외의 동역</span> (몬 1:8-18, 2026-09-20)</li>
+<li><span class="wl-dead" title="위키 내부 링크">1세기 교회 이야기(2) 기억의 식탁</span> (고전 11:23-29, 2026-09-13)</li>
+</ul>
+</article>
+<div class="tagrow"><span>#discipline/신약학</span><span>#discipline/목회학</span><span>#domain/코이노니아</span><span>#domain/공동체</span><span>#domain/성령</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
