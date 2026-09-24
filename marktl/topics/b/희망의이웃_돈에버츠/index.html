@@ -1,0 +1,381 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>희망의 이웃 — 돈 에버츠 (성서유니온, 이지혜 옮김) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">선교</span><span class="author">돈에버츠</span><span class="date">2026-09-24</span></div>
+  <h1 class="note-title">희망의 이웃 — 돈 에버츠 (성서유니온, 이지혜 옮김)</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/%ED%9D%AC%EB%A7%9D%EC%9D%98%EC%9D%B4%EC%9B%83_%EB%8F%88%EC%97%90%EB%B2%84%EC%B8%A0/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<blockquote>
+<p>부제 「그리스도인은 우리 동네와 이웃을 어떻게 섬길 수 있을까?」. 바나 그룹과 루터란아워 미니스트리가 3년간 함께 진행한 연구(첫해는 말로 하는 증언, 마지막 해는 이웃과의 관계, p.21·p.137·p.203)를 대중서로 풀어낸 책이다. 저자는 스스로 "유목민 같은 삶"을 살아 온 사람이라고 고백하고(p.22), 서른 번째 동네 피어먼트에서 이웃과 멀어진 경험에서 출발한다. 📷 표시 전사 기반 독서 노트.</p>
+</blockquote>
+<hr />
+<h2>책의 뼈대 — 다섯 명령, 한 편지</h2>
+<p>다섯 장은 모두 명령문이다(차례). 장마다 <strong>창세기의 창조 기사 → 성경 전체의 부르심 → 베드로전서의 일깨움 → 1세기 소아시아 신자의 가상 편지 → 역사 사례 → 현대 사례 → 바나 연구 수치 → 실천 목록</strong>의 같은 순서로 반복된다. 베드로전서가 척추이고, 「희망의 이웃」이라는 제목은 벧전 1:3의 "산 소망"에서 왔다(p.143, p.197).</p>
+<table>
+<thead>
+<tr>
+<th>장</th>
+<th>명령</th>
+<th>베드로전서</th>
+<th>1세기 편지의 화자</th>
+<th>현대 사례</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>공동선을 추구하라</td>
+<td>3:13 "열심으로 선을 행하면"</td>
+<td>앙카라의 신자(p.49-50)</td>
+<td>그렉과 친구들 — 런드리 러브(p.54)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>온갖 은사를 활용하라</td>
+<td>4:10 "선한 청지기같이"</td>
+<td>서머나의 석공 스트라보(p.77-78)</td>
+<td>레베카와 학생들 — 로스 베키노스(p.86-87)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>모든 사람을 항상 사랑하라</td>
+<td>4:12 "불 시험"</td>
+<td>고르디우스 이야기(p.111)</td>
+<td>제시카 크라이와 무신론자 패트릭 그린(p.120-122)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>하나님께 영광을 돌리라</td>
+<td>2:11-12, 3:15</td>
+<td>아버지를 존중하지 않는 손님 이야기(p.146)</td>
+<td>사라와 이웃들 — 인터섹트 아트센터(p.192)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>혁명에 동참하라</td>
+<td>2:9, 3:8 "다 마음을 같이하여"</td>
+<td>시노프의 딜피우스(p.175)</td>
+<td>토니 쿡 — 희망의 이웃 프로젝트(p.187, p.192)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>요약 — 주제별 상세 정리</h2>
+<h3>1. 진단: 「사는 곳과 동떨어진 삶」</h3>
+<p>책은 교회가 받는 평판에서 시작한다. 비그리스도인이 보는 그리스도인은 "가식적이고, 비판적이고, 사람보다는 교회 방침을 우선하며, 근심 걱정이 없는 사람들"이다(p.12). 원인은 셋으로 정리된다.</p>
+<ul>
+<li><strong>교회의 구심력</strong>: "교회와 목회자들이 그리스도인들을 <strong>교회에만 묶어 두는 경향</strong>이 있다"(p.12). 저자 자신도 "서서히 <strong>직장</strong>과 <strong>교회</strong>와 <strong>아이들</strong> 활동에 집중하게 되었고, 그러다 보니 자연스레 피어먼트와는 상관할 일이 줄어들게 된 것"이다(p.16).</li>
+<li><strong>문화의 원심력</strong>: 제2차 세계대전 이후 "<strong>미국의 이웃 개념에</strong> 패러다임 전환"이 일어났고 "개인주의와 물질주의의 상당한 증가가 수반되었다." 결국 "이웃으로부터 받았던 돌봄을 돈을 주고 사게 되었다"(p.35). 추천사의 요약이 정확하다. "대다수 그리스도인은 자기 이웃을 모른다. <strong>개인주의</strong>와 <strong>소비주의</strong>가 우리를 고립시켜 버렸다."</li>
+<li><strong>두려움</strong>: "우리가 사는 곳에서 사랑과 섬김을 실천하는 데 있어 가장 큰 장애물은 <strong>두려움이다</strong>. 우리는 적절하지 않은 말을 꺼내고 싶어 하지 않는다. 약점이나 실패를 노출하기 싫어한다"(p.12-13).</li>
+</ul>
+<p>반대편 증거도 제시한다. "가장 회복력이 왕성한 제자들은 교회 활동에 더하여, 하나님이 그들을 두신 세상 속에서도 활동적이다"(p.12). 그리고 저자는 여기서 역설을 본다. "그리스도인들과 교회가 현실성이 없다는 취급을 받는 날, 우리 앞에는 적실성(relevance)으로 향하는 길이 놓여 있다. 바로 우리 주변의 장소와 사람들을 위해 공동선(common good)을 추구하는 길 말이다"(p.23).</p>
+<h3>2. 창조 명령 — 「경작하며 지키게」 하신 인류 공동의 과제</h3>
+<p>1장의 신학적 기초는 창세기 2:15다. 저자는 히브리어 두 동사를 풀어 쓴다.</p>
+<table>
+<thead>
+<tr>
+<th>동사</th>
+<th>문자적 뜻</th>
+<th>저자의 적용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>경작하다</td>
+<td>땅을 <strong>'섬기다'</strong>(p.32)</td>
+<td>장소를 번성하게 하는 노동</td>
+</tr>
+<tr>
+<td>지키다</td>
+<td>"무언가를 <strong>돌보다</strong>" 혹은 "매우 주의하다"(p.33)</td>
+<td>장소와 피조물을 보호하는 책임</td>
+</tr>
+</tbody>
+</table>
+<p>"이것이 <strong>인류가</strong> 받은 <strong>창조 명령</strong>이다. 이 명령은 땅은 물론, 그곳에 거주하는 모든 피조물을 돌보는 것까지 포함한다"(p.33). 저자가 초등학교 1학년 때 배운 "우리 모두는 하나"(p.30)가 여기서 신학적 명제가 된다. "우리 인류는 모두 하나다. 공통의 과제를 함께 맡은 파트너로 창조되었다"(p.31).</p>
+<p><strong>핵심 인사이트 — 창조 명령은 타락으로 철회되지 않았다.</strong> 에덴에서 쫓겨날 때도 "그의 근원이 된 땅을 갈게 하시니라"(창 3:23)는 말씀은 남는다. "인간이 창조 세계를 다스리는 임무가 철회되었다는 암시는 없다"(p.37). 율법이 휴경(출 23:11), 가축의 안식(신 5:14), 원수의 가축까지 도우라는 규정(출 23:4-5)을 담은 것도 이 명령의 연장이다. 그래서 그리스도인과 비그리스도인 이웃은 "생각 외로 공통점이 많다"(p.26). 같은 과제를 받은 동료이기 때문이다.</p>
+<p>공동선의 정의로 책이 인용하는 두 문장에 독자가 밑줄을 그었다. "모두를 공통의 운명으로 묶어 주는 공동체적 연대감", 그리고 "땅의 모든 피조물과 자원을 선한 목적을 위해 관리하는 것"이다(p.33). 그 목표는 "창조 세계가 번성할 수 있는 환경"(p.34)이다.</p>
+<h3>3. 샬롬을 「만드는」 사람 — 화평하게 하는 자와 교구</h3>
+<p>산상수훈의 "화평하게 하는 자"(마 5:9)는 '에이레네'(평화)와 '포이에오'(만들다)의 합성어다(p.38). '포이에오'는 "창조하다, 만들다, 형성하다, 건설하다"라는 뜻이다(p.39). 평화는 지키는 것이 아니라 <strong>건설하는 것</strong>이고, 그 평화는 샬롬, 곧 "안전과 안정, 사랑과 관계, 좋은 일자리와 집"을 포함하는 인간 번영이다(p.39). 신약은 이 요청을 반복한다(롬 14:19, 히 12:14, 약 3:18, p.43).</p>
+<p><strong>핵심 인사이트 — 포로지에서 받은 부르심이 기준이다.</strong> 저자는 1장의 요절 벧전 3:13을 예레미야 29:7에 겹친다. 적대적인 환경에서도 이웃과 함께 "공동선을 위해 열심을 내라"는 부르심은 "이스라엘 백성이 바벨론에 <strong>포로로 있을 때</strong> 하나님께서 그들에게 주신 것과 동일한 부르심이다"(p.52). "너희는 내가 사로잡혀 가게 한 그 성읍의 평안을 구하고…"에서 '평안함'(welfare)으로 옮긴 말이 샬롬이다(p.52). 주류에서 밀려난 시대일수록 이웃과 거리를 두고 싶은 유혹이 크지만, 저자는 "공동선 추구는 가장 혁명적이고 강력한 방법이 될 수 있다"고 쓴다(p.24).</p>
+<p>여기서 <strong>교구(parish)</strong> 개념이 되살아난다. "<strong>교구란</strong> 교회를 둘러싼 지역사회와 그 안에 살고 있는 모든 것을 가리킨다. 그리스도인과 비그리스도인, 상점, 기관, 학교, 나무, 공원, 농장 등이 모두 포함된다"(p.53). 교회의 관할은 교인 명부가 아니라 지도다.</p>
+<p>사례는 <strong>런드리 러브</strong>다. 노숙인 이웃의 말, "사람들이 나를 인간으로 대접해 줄 것 같습니다", 에서 "깨끗한 옷도 샬롬의 일부"라는 발견이 나왔고 운동은 미국 수백 곳으로 퍼졌다(p.54). 독자가 밑줄 친 대목은 방법이다. 그렉과 친구들은 "이웃의 이야기를 <strong>경청하는 일부터</strong> 시작했다"(p.55). 동기에 대한 연구도 덧붙는다. "평균적으로는 <strong>내</strong>향적인 동기가 더 흔하지만… <strong>외</strong>향적 동기가 더 적극적인 참여와 긍정적인 결과를 낳는" 것으로 나타났다(p.56).</p>
+<h3>4. 핵심 인사이트: 문제에서가 아니라 선물에서 출발하라</h3>
+<p>책에서 가장 실천적인 전환점은 2장이다. 저자는 선의의 봉사가 흔히 밟는 순서를 뒤집는다(p.79-80).</p>
+<table>
+<thead>
+<tr>
+<th>흔한 방식 (문제 중심)</th>
+<th>베드로의 방식 (은사 중심)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 문제를 확인한다</td>
+<td>1. 은사를 발견한다</td>
+</tr>
+<tr>
+<td>2. 해결책을 제시한다</td>
+<td>2. 가능성을 상상한다</td>
+</tr>
+<tr>
+<td>3. 해결책을 실행한다</td>
+<td>3. 공동선을 추구한다</td>
+</tr>
+<tr>
+<td>지역사회는 결핍된 곳</td>
+<td>이웃은 보물 상자</td>
+</tr>
+<tr>
+<td>백기사(대신 해결해 주는 영웅)</td>
+<td>어깨를 나란히 한 동료</td>
+</tr>
+</tbody>
+</table>
+<p>"문제에서부터 출발하면 풍성한 은사와 이웃의 복잡한 현실을 간과하기 쉽다"(p.79). 우리는 "문제를 먼저 파악하고, 지역사회에는 자원이 부족하다고 가정한다"(p.68). 그래서 "살리기 위해 한 트럭 가득 자원을 싣고 달려가고픈 유혹을 받는다"(p.69). 저자는 이것을 <strong>자산 기반 지역 개발</strong>(asset-based community development)로 이름 붙인다. "은사에서부터 출발하라. 먼저 은사에 주목하고, 그다음에 공동선을 추구하라. 이렇게 하면 우리는 이웃을 보물 상자로 보기 시작한다"(p.81).</p>
+<p>비유는 숲이다. 과학자 수잔 시머드의 연구 이후 과학자들은 <strong>숲을</strong> 새로 보기 시작했다. 나무들은 "땅속 균류망을 통해 서로 연결되어 자원을 공유"한다(p.68). 독자는 이 페이지 여백에 이렇게 적었다.</p>
+<blockquote>
+<p>📝 지역사회 내에 이미 선물(사람, 은사)이 있다. (p.69)</p>
+</blockquote>
+<p>그리고 베드로가 "서둘러 실행하기보다는, 하나님이 이미 그들과 그들의 이웃과 지역사회에 허락하신 선물들에 주의를 기울이기를 기대한다"(p.75)는 대목 옆에는 이렇게 남겼다.</p>
+<blockquote>
+<p>📝 이미 있는데 몰라보고(?) 있으면(?) 모른다. (p.75)</p>
+</blockquote>
+<p>순서의 핵심은 <strong>멈춤</strong>이다. "우리는 하나님이 나와 주변 사람들에게 주신 은사에 주목하기 위해 우선 <strong>멈추는</strong> 일에 더 관심을 기울여야 할 것 같다"(p.88). 로스 베키노스의 결론도 같다. 이웃과 어깨를 나란히 하고 "우리 땅에서 자라고 우리 집에서 만든 해결책"을 내놓을 때 신뢰가 다시 쌓인다(p.88).</p>
+<h3>5. 사람이 선물이다 — 바라크, 돕는 배필, 소명</h3>
+<p>은사 중심 방식의 신학적 근거는 다시 창세기다. 창 1:28의 "복을 주시며"는 '바라크'(barak)로, "성공, 번영, 풍요의 능력을 부여하다"라는 뜻이다(p.66). 정복하고 다스리는 일에는 "힘의 에너지와 지혜의 기술"과 긍휼이 필요하다(p.65). 그리고 아담에게는 "적합한 짝", 곧 "딱 맞는 보완자"가 필요했다(p.67). 결론은 짧다. "사람이 선물이다. 우리는 서로에게 선물이다. 그렇게 우리는 서로 어깨를 나란히 하고 인류의 공통 과제에 임한다"(p.67).</p>
+<p>야고보서의 "온갖 좋은 은사와 온전한 선물"(p.70)은 신자에게만 해당하지 않는다. "그 선물이 그리스도인 친구든, 비그리스도인 이웃이든, 지적·신체적 기술이나 창의적 재능이나 물질적 축복이든, 온갖 좋은 선물은 하나님이 주신 것이다"(p.70). 사도행전의 초대교회도 돈, 땅, 영적 은사, 리더십, 환상, 일꾼, 복음 가운데 가진 것을 가리지 않고 썼다(p.71).</p>
+<p>직업은 이 은사의 주된 통로다. "우리가 하나님의 선하심과 샬롬(인간의 번영)을 위한 그분의 계획을 본받을 수 있는 것은 우리의 소명을 통해서일 때가 많다(소명에도 불구하고가 아니라)"(p.82).</p>
+<table>
+<thead>
+<tr>
+<th>소명 유형</th>
+<th>하는 일 (p.82)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>창의적인 분야</td>
+<td>아름다움을 창조하는 일</td>
+</tr>
+<tr>
+<td>사업가</td>
+<td>풍요를 개발하는 일</td>
+</tr>
+<tr>
+<td>과학기술 분야</td>
+<td>질서를 만드는 일</td>
+</tr>
+<tr>
+<td>서비스 분야</td>
+<td>도움이 필요한 사람들을 직접 보살피는 일</td>
+</tr>
+</tbody>
+</table>
+<p>2장은 이렇게 맺는다. "우리가 주변 이웃들을 우연히 근처에 살게 된 사람이 아니라 나와 우리 동네에 필요한 선물로 볼 수 있다면 어떻게 될까?"(p.91)</p>
+<h3>6. 전염병 속의 교회 — 가진 것이 없었는데 충분했다</h3>
+<p>2장과 4장은 같은 역사 사례를 두 번 쓴다. 전염병이 로마제국 인구의 3분의 1을 앗아 갔을 때 "사실상 발병 이후 제대로 작동한 <strong>사회 연결망은</strong> <strong>교회가 유일했다</strong>"(p.72). 객관적으로 보면 그 그리스도인들에게는 쓸 만한 자원이 별로 없었다. 저자가 던지는 질문은 날카롭다. "초기 그리스도인들에게 있었던 은사와 없었던 은사를 목록으로 만들고 서로 비교해 보자. 그들에게 은사와 재능이 부족했다고 말할 수 있겠는가, 충분했다고 말할 수 있겠는가?"(p.73) 독자는 이 질문 옆에 선한 사마리아인 비유를 적어 두었다(📝 「사마리아인」「강도 만난 사람(?)」「피하려는(?) 유혹(?)」, p.73). 피해 가는 제사장과 레위인이 전염병 앞의 유혹과 겹쳐 읽힌 것이다.</p>
+<p>4장에서 이 사례는 증언의 문제로 돌아온다. 이방인들은 그리스도인들의 "설득력 있는 행동"과 "놀랍고도 매력적인 생활 방식"에 "크게 감명을 받았다." 원수조차 "낯선 이들을 향한 선행"에 존경을 표했다(p.140). 오리게네스와 테르툴리아누스의 증언이 여기 붙는다(p.139-140). 이 대목은 <a class="wl" href="../../b/%EC%B4%88%EA%B8%B0%EA%B5%90%ED%9A%8C%EC%9D%98%EC%9D%B8%EB%82%B4%EC%99%80%EB%B0%9C%ED%9A%A8_%ED%81%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/">크라이더</a>가 말하는 카르타고 전염병과 원수 사랑의 서술과 그대로 겹친다.</p>
+<h3>7. 모든 사람을 항상 사랑하라 — 원수와 무신론자까지</h3>
+<p>3장은 가장 짧은 명령이 가장 어렵다는 것을 보여 준다. 율법의 핵심에 사랑하라는 명령이 있고, 예수님은 온 율법을 두 계명으로 요약하셨다(마 22:37-40, p.102). "하나님은 사람들에게 서로 사랑하라고 명확히 요청하셔야 했다"(p.102)는 문장은 인간이 그것을 저절로 하지 않는다는 인정이다. 예수님은 이 명령이 "모든 사람을 항상 사랑하라"는 요청임을 분명히 하셨고, 원수까지 포함하셨다(p.103). 근거는 "선인과 악인, 의로운 자와 불의한 자를 막론하고 모든 사람을 향한 하나님 아버지의 사랑"(p.104)이다.</p>
+<p>배경은 오늘의 대화 문화다. "분노와 '날 선 언쟁 분위기'로 인해 대화는 점점 약해져서, 오늘날 미국에서 대화는 형편없는 상태에 있다"(p.100). 저자의 질문은 이렇다. "강한 의견 충돌이 있더라도, 비판을 중단하고 품위 있는 대면 대화를 유지한다면 어떻게 될까?"(p.101) 1세기 소아시아 신자들도 "다르다는 이유로" 소외당했고, 베드로는 그 적대를 "이상한 일 당하는 것같이 이상히 여기지 말고"라고 했다(벧전 4:12, p.109).</p>
+<p>현대 사례가 불편할 만큼 구체적이다. 제시카 크라이와 친구들은 "공공연한 무신론자" 패트릭 그린을 도왔고(p.121), 일부 그리스도인은 그 일로 "분개했다"(p.122). 대사 한 줄이 상황을 요약한다. "그리스도인에게 무신론자는 가장 큰 공공의 적이죠"(p.122). 그리고 교회 현실을 보여 주는 수치가 있다. 조사에서 "고작 <strong>5퍼센트</strong>만이 지역사회 참여를 최우선순위로 꼽았다"(p.120).</p>
+<h3>8. 행동의 변증학 — 「말로」에서 「삶으로」</h3>
+<p>4장은 마케팅의 변화를 끌어온다. 광고는 표현법과 수사법의 조화를 추구하지만, 소셜 미디어 이후 마케터들은 실제 인물에게 관심을 돌렸다. "이런 마케팅 방법의 비결은 진정성(authenticity)이다"(p.134). 사람들은 실제 사람과 상품 사이의 "'진정한 연관성'을 알아보기 때문"이다(p.135). 저자는 이렇게 묻는다. "그리스도인들이 하나님에 대한 세상의 생각에 영향을 주기 위한 접근법에서도 이와 비슷한 패러다임 전환을 시작할 때가 되었는지 모른다"(p.135).</p>
+<p>바나 연구의 첫해는 "<strong>이 말로</strong> 하는 중요한 메시지에 집중했다. 하지만 예수님이 산상수훈에서 하신 다음 말씀은 <strong>삶으로</strong> 드러나는 메시지를 언급하고 있다"(p.137). 요절은 마 5:14-16과 벧전 2:11-12다. 베드로는 그리스도인의 "<strong>행위가</strong> 그들의 증언에서 강력한 일부분"임을 알았다(p.142). 저자의 결론은 이렇다. "광고나 수사학적 기교가 필요한 것이 아니라, 교회의 첫 세기에 하나님의 이름을 드높였던 '행동의 변증학'으로 돌아가면 되지 않나 싶다"(p.151).</p>
+<p><strong>핵심 인사이트 — 「온유와 두려움」은 말의 태도다.</strong> 행동이 먼저지만 말이 사라지지는 않는다. 벧전 3:15는 "소망에 관한 이유를 묻는 자에게는 대답할 것을 항상 준비하되 <strong>온유와 두려움</strong>으로" 하라고 한다(p.143). 가상 편지의 화자는 그것이 얼마나 어려운지 털어놓는다. "고개를 가로젓는 사람을 그렇게 대하기는 힘듭니다. 우리 아버지를 존중해 주지 않는 손님을 존중해 주기란 쉽지 않습니다"(p.146). 독자는 두 단어 <strong>온유</strong>와 <strong>두려움</strong>에 모두 동그라미를 쳤다(p.146, p.151).</p>
+<p>현실 점검도 있다. 선행의 가시성은 기대에 못 미친다. 비그리스도인의 27퍼센트만이 "선행의 대다수가 그리스도인들 덕분이라고 답변"했다(p.149). 저자는 이것을 변명이 아니라 협력의 부족으로 읽는다. "우리가 공동선을 추구할 때 이웃과의 협력이 부족한 것은 아닐까?"(p.149) 실천 목록에는 "찾아가서 교회를 대신해 사과하고 용서를 구하자"(p.158)가 들어 있다.</p>
+<h3>9. 혁명에 동참하라 — 산 돌, 신령한 집, 관계망</h3>
+<p>5장은 개인의 열심에서 <strong>네트워크와 제도</strong>로 초점을 옮긴다. 지상 명령은 전 지구적이어서 혼자 할 수 없고, 그래서 아담에게 "돕는 사람"이 필요했다(p.164). "위대한 사명을 위해 <strong>연합해</strong>야 한다"(p.164).</p>
+<p>베드로전서의 이미지가 이것을 붙든다. "각각의 그리스도인은 <strong>'산 돌'</strong>과 같지만, 그 돌은 스스로 서지 못한다. 하나님은 그 돌들을 모아 '신령한 <strong>집</strong>'으로 세우고 계신다"(p.173). "다 마음을 같이하여"(벧전 3:8)는 헬라어 한 단어 '호모프로네스'(homophrones), 곧 "같은 마음"이다(p.173). 골로새서 4장에서 바울은 다른 두 교회의 소식과 동역자 열 사람(두기고, 오네시모, 아리스다고, 마가, 유스도, 아킵보, 에바브라, 누가, 데마, 눔바)을 언급한다. "교회는 매우 생산적인 인적 네트워크 역할을 하고 있었다"(p.169).</p>
+<p><strong>핵심 인사이트 — 혁명에는 체계가 필요하다.</strong> 저자는 제도를 폄하하는 유행을 정면으로 거스른다. "이런 종류의 일에는 '협력, 네트워킹, 상호 의존, 제도 설립'이 자연적으로 필요하기 때문이다. 구조와 제도를 폄하하는 게 유행일지는 몰라도, 역사는 인류 번영이라는 큰 목적을 위해서는 올바른 제도가 꼭 필요함을 보여 준다"(p.182). 베드로의 편지가 소아시아 전역에 돌기 위해서도 "협력과 실행 계획"이 필요했다(p.186). 역사학자들은 "역사의 핵심 동력은 천재 한 사람이 아니라 사람들의 <strong>관계망</strong>과 그 안에서 파생된 <strong>새로운 제도</strong>"라고 본다(p.186). 윌버포스, 수전 앤서니, 마틴 루터 킹도 각자 "구성원들의 협력 네트워크인 한 운동의 일부였다"(p.187, p.192).</p>
+<p>수치 두 개가 이 장의 실천 과제를 정한다. 소그룹에 속하지 않은 실천적 그리스도인의 <strong>91퍼센트</strong>는 교회의 도움에 열려 있다(p.180). 목회자의 <strong>92퍼센트</strong>는 새 프로그램을 평신도가 먼저 시작하기를 선호한다(p.184). 둘 다 원하는데 연결이 없다는 뜻이다. 성공하는 그룹은 "잘 조직되었고, 효과적인 결정을 내리며, 너무 많은 일거리로 그룹에 속한 사람들을 힘들게 하지 않는다"(p.184).</p>
+<h3>10. 핑계에 대한 연구의 반박, 그리고 저자의 결론</h3>
+<p>책 끝에서 저자는 흔한 핑계를 연구 결과로 하나씩 반박한다(p.196-197).</p>
+<table>
+<thead>
+<tr>
+<th>핑계</th>
+<th>연구 결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>너무 바쁘다</td>
+<td>시간이 남는 사람보다 <strong>바쁜 사람일수록</strong> 지역사회 활동에 참여할 가능성이 더 크다</td>
+</tr>
+<tr>
+<td>아이를 키워야 한다</td>
+<td>6-12세 자녀를 둔 부모가 성인 자녀를 둔 부모보다 공동선 추구에 <strong>더 적극적</strong>이다</td>
+</tr>
+<tr>
+<td>개인의 영적 성장에 주력한다</td>
+<td>지역사회를 위해 시간을 내는 사람이 <strong>영적으로 성장</strong>하고 하나님과 가까워졌다고 느낀다</td>
+</tr>
+<tr>
+<td>열정이 없다</td>
+<td>이웃을 위해 함께 힘을 모으면 영감과 자극이 <strong>생긴다</strong></td>
+</tr>
+<tr>
+<td>교회에 소홀히 하기 싫다</td>
+<td>지역사회 활동에 참여해도 교회 프로그램은 <strong>피해를 보지 않는다</strong></td>
+</tr>
+</tbody>
+</table>
+<p>"이 모든 장애물 중 어느 것도 그리 대단하지 않다"(p.196). 두려움의 자리는 베드로가 말한 <strong>'산 소망'</strong>이 대신한다(p.197).</p>
+<p>저자 자신의 결론은 이사 문제다. 자녀들이 떠난 뒤 피어먼트(서른 번째 동네)에 남을지, 서른한 번째 동네로 옮길지 묻다가(p.198) 이렇게 적는다. "더는 '사는 곳과 동떨어져' 살고 싶지 않다"(p.199). 기도는 이것이다. "어떻게 우리 삶이 그분이 우리를 두신 이 작은 땅덩어리의 <strong>'멤버십'</strong>과 엮여 있는지 알게 하시기를"(p.200). 1장에서 소개한 웬델 베리의 "멤버십"(p.17-18)이 마지막 단어로 돌아온다.</p>
+<hr />
+<h2>추천사에서 건진 문장</h2>
+<ul>
+<li>김기석(청파교회): "이웃은 물리쳐야 할 적이 아니라 비스듬히 기댄 채 함께 살도록 하늘로부터 허락된 소중한 선물이다. 이웃을 축복하고 공동체를 이루어 자신을 선물로 주는 것이야말로 우리를 욕망의 벌판으로 떠미는 세상에 대한 가장 강력한 저항이다."</li>
+<li>송용원(장신대): "그리스도의 '지체됨'(membership)을 지체하기만 하는 걸까?" 루터의 "모든 것은 좋든 나쁘든 공동의 것"을 인용한다. 송용원 자신의 공동선 신학(<a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EA%B3%B5%EB%8F%99%EC%84%A0_%EC%86%A1%EC%9A%A9%EC%9B%90/">하나님의공동선_송용원</a>)과 이어지는 지점이다.</li>
+</ul>
+<hr />
+<h2>교차 연결</h2>
+<ul>
+<li><a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%84%A0/">공동선</a> · <a class="wl" href="../../b/%EA%B8%B0%EB%8F%85%EC%8B%9C%EB%AF%BC%EC%9D%98%EC%82%AC%ED%9A%8C%EC%A0%81%EC%B1%85%EC%9E%84_%EC%9C%8C%EB%A6%AC%EC%97%84%ED%85%9C%ED%94%8C/">기독시민의사회적책임_윌리엄템플</a> · <a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EA%B3%B5%EB%8F%99%EC%84%A0_%EC%86%A1%EC%9A%A9%EC%9B%90/">하나님의공동선_송용원</a> — 공동선 신학의 대중적 실천판. 이 책은 공동선을 정의하는 데서 그치지 않고 동네 단위의 절차(은사 발견→상상→추구)로 내린다.</li>
+<li><a class="wl" href="../../b/%EC%B4%88%EA%B8%B0%EA%B5%90%ED%9A%8C%EC%9D%98%EC%9D%B8%EB%82%B4%EC%99%80%EB%B0%9C%ED%9A%A8_%ED%81%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/">초기교회의인내와발효_크라이더</a> · <a class="wl" href="../../b/%EC%B4%88%EB%8C%80%EA%B5%90%ED%9A%8C%EC%97%90%EA%B8%B8%EC%9D%84%EB%AC%BB%EB%8B%A4_%ED%81%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/">초대교회에길을묻다_크라이더</a> — 전염병 속 교회, 매력적인 생활 방식, 원수 사랑. 에버츠의 「행동의 변증학」은 크라이더의 아비투스 논지를 동네 수준에서 적용한 것이다.</li>
+<li><a class="wl" href="../../b/%EC%82%AC%EB%8F%84%ED%96%89%EC%A0%84%EC%84%A0%EA%B5%90%EC%A0%81%EC%9D%BD%EA%B8%B0_%EB%B0%95%EC%98%81%ED%98%B8/">사도행전선교적읽기_박영호</a> — 렘 29장을 「제2의 셰마」로 읽는 박영호의 해석이 이 책 1장의 포로지 공동선 논지와 같은 축에 선다.</li>
+<li><a class="wl" href="../../b/%EC%84%A0%EA%B5%90%ED%98%95%EA%B5%90%ED%9A%8C_%EC%9E%89%EA%B8%80%EB%9E%9C%EB%93%9C%EC%84%B1%EA%B3%B5%ED%9A%8C/">선교형교회_잉글랜드성공회</a> — 교구(parish)와 이웃 단위 사역의 재발견이라는 공통 문제의식.</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%A7%80%EC%97%AD%EC%82%AC%ED%9A%8C%EA%B0%9C%EB%B0%9C/">기독교지역사회개발</a> — 자산 기반 지역 개발(ABCD)은 CHE·지역사회 개발 논의에서 결핍 중심 접근을 비판하는 표준 틀이다.</li>
+<li><a class="wl" href="../../b/%EC%9D%B8%ED%84%B0%EC%84%9C%EB%B8%8C%EC%9D%98%EC%84%A0%EA%B5%90%EC%97%AD%EC%82%AC/">인터서브의선교역사</a> · <span class="wl-dead" title="위키 내부 링크">LAMs</span> — 인터서브코리아의 2018년 모토 「당신의 삶, 하나님의 선교입니다」와 이 책의 「사는 곳에서의 소명」은 같은 방향이다. 같은 날 전사한 두 책이 해외 선교지와 동네를 같은 논리로 잇는다.</li>
+<li><a class="wl" href="../../t/%ED%99%98%EB%8C%80/">환대</a> · <a class="wl" href="../../t/%EC%9D%B4%EC%9B%83%EC%82%AC%EB%9E%91/">이웃사랑</a> · <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EC%82%B6/">선교적삶</a> · <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B3%B5%EB%8F%99%EC%B2%B4/">선교적공동체</a> · <a class="wl" href="../../t/%EC%98%81%EC%A0%81%EC%9D%80%EC%82%AC/">영적은사</a> · <a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%86%8C%EB%AA%85/">직업소명</a> · <a class="wl" href="../../t/%EB%B3%80%EC%A6%9D%ED%95%99/">변증학</a></li>
+</ul>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<p><strong>적용</strong></p>
+<ul>
+<li><strong>의원이라는 교구</strong>: 진료실은 동네의 거의 모든 사람이 지나가는 몇 안 되는 장소다. 교구를 "교회를 둘러싼 지역사회와 그 안에 살고 있는 모든 것"으로 정의한다면(p.53), 의원도 교구의 한 거점이 된다. 저자의 소명 네 유형 가운데 의료는 "도움이 필요한 사람들을 직접 보살피는 일"이다(p.82).</li>
+<li><strong>은사 중심으로 다시 설계하기</strong>: 의료 선교와 단기선교 준비에서 「문제 확인 → 해결책 제시」로 가는 습관을 점검할 근거가 된다. 현지에 「이미 있는 선물」(📝 p.69)을 먼저 목록으로 만드는 절차를 준비 단계에 넣을 수 있다.</li>
+<li><strong>멘토링의 질문</strong>: 「바쁘다·아이 키운다·영적 성장에 집중한다」는 후배들의 흔한 이유에 이 책의 연구 반박표(p.196-197)를 그대로 쓸 수 있다.</li>
+<li><strong>행동의 변증학과 온유와 두려움</strong>: 의료인 모임에서 신앙을 말로 방어하기보다 먼저 행동을 보이고, 설명은 온유와 두려움으로 하라는 순서는 <a class="wl" href="../../t/%EB%B3%80%EC%A6%9D%ED%95%99/">변증학</a> 강의 재료가 된다.</li>
+</ul>
+<p><strong>미해결 질문</strong></p>
+<ol>
+<li>책은 미국 교외 동네를 전제한다. 이웃 관계가 아파트 단지와 온라인 커뮤니티로 바뀐 한국 도시에서 「교구」의 경계는 어디에 그어야 하는가?</li>
+<li>은사 중심 접근(ABCD)은 구조적 불의가 분명한 곳에서도 충분한가? 「문제에서 출발하지 말라」는 원칙이 불의를 이름 부르는 예언자적 역할을 약하게 만들 위험은 없는가?</li>
+<li>제시카 크라이 사례에서 그리스도인들이 "분개했다"는 반응(p.122)은 교회 안의 반발을 어떻게 다뤄야 하는지에 대한 답을 남기지 않는다. 공동선 추구가 교회 내부 갈등을 만들 때 목회적 절차는 무엇인가?</li>
+<li>목회자의 92퍼센트가 평신도의 자발성을 원하고, 소그룹 밖 신자의 91퍼센트가 도움에 열려 있다. 둘 사이를 잇는 「체계」(p.182)를 누가 만드는가? 이것이 선교단체의 역할인가, 지역교회의 역할인가?</li>
+</ol>
+<hr />
+<blockquote>
+<p>📖 전사 원문(줄이지 않은 표시 구절 전체): <span class="wl-dead" title="위키 내부 링크">희망의이웃_돈에버츠_전사</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#domain/선교</span><span>#domain/교회와사회</span><span>#discipline/선교학</span><span>#discipline/실천신학</span><span>#topic/공동선</span><span>#topic/이웃사랑</span><span>#topic/샬롬</span><span>#topic/은사</span><span>#topic/지역사회개발</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
