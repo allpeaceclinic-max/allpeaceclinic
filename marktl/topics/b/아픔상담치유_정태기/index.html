@@ -1,0 +1,490 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>아픔·상담·치유 — 정태기 (상담과치유, 치유·목회·상담 시리즈 5) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">상담·치유·가정</span><span class="author">정태기</span><span class="date">2026-09-26</span></div>
+  <h1 class="note-title">아픔·상담·치유 — 정태기 (상담과치유, 치유·목회·상담 시리즈 5)</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/%EC%95%84%ED%94%94%EC%83%81%EB%8B%B4%EC%B9%98%EC%9C%A0_%EC%A0%95%ED%83%9C%EA%B8%B0/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<blockquote>
+<p>한국 목회상담 1세대 <span class="wl-dead" title="위키 내부 링크">정태기</span>가 쓴 <strong>치유목회 논문 모음집</strong>. 전인치유의 신학, 한(恨)과 한풀이 목회, 기독교 치유목회의 역사, 꿈 해석, 설교를 통한 치유, 신학과 심리학의 대화까지 여섯 편으로 이루어져 있다. 흐름은 하나다. 교회는 치유를 잃었고, 심리학이 그 빈자리를 채웠으며, 이제 <strong>신학·심리학·의학이 함께 전인을 치유해야 한다.</strong> 📷 표시 전사 기반 독서 노트이며, 2012년 뒤 면지에 남긴 장별 정리 노트와 독후 소감도 함께 반영했다.</p>
+</blockquote>
+<hr />
+<h2>요약 — 주제별 상세 정리</h2>
+<h3>1. 치유의 목표는 「온전함」이고, 온전함은 과정이다</h3>
+<p>정태기는 먼저 의료 현장의 숫자를 꺼낸다. 이 숫자는 책에서 두 번 나온다. <strong>「신체적인 문제로 의사를 찾는 환자들 가운데 50~75%가 신체적인 문제와 함께 영적 이상 증세를 보여준다」</strong>(p.11). 결론 장에서는 이것이 그랜저 웨스트버그(Granger Westberg)의 관찰로 다시 인용된다(p.195).</p>
+<p>치유의 목표는 영·마음·몸이 조화를 이루는 <strong>온전함(wholeness)</strong> 이다. 그는 인간 안에 목표지를 아는 사령탑이 있다고 본다. 이 사령탑을 두고 그는 이렇게 쓴다.</p>
+<blockquote>
+<p>「C. G. Jung은 이 사령탑을 자기(Self)라고 불렀으나, 기독교인으로서 필자는 이것을 '하나님의 형상'이라고 부르고 싶다.」(p.20)</p>
+<p>「'온전하게 된다'는 것은 완전함을 의미하거나 완성된 상태를 말하는 것이 아니다. '되어져 가는' 성장과정을 의미한다.」(p.21)</p>
+<p>「치유의 궁극적 목적은 인간 구원이며, 구원은 끊임없이 치유를 받으면서 살아가는 삶의 과정이다.」(p.21)</p>
+</blockquote>
+<p>이렇게 해서 <strong>전인치유 → 전인건강 → 전인구원</strong>이 한 줄로 이어진다(p.25). 병의 정의도 여기서 나온다. <strong>「병이란 어디에서 나타나든지 상처와 분열과 유대관계가 무너지는 것에서 비롯된다」</strong>(p.24). 성서가 죄를 말할 때 늘 분열의 상징을 쓰는 것과 같은 구조다. 관계가 병을 막는다는 사례도 든다. <strong>「가족간의 조화, 공동체와의 조화, 또 자연과의 조화를 이루며 살아가는 미국 토착 인디언들에게는 암이 거의 발생하지 않는다」</strong>(p.26).</p>
+<p><strong>핵심 인사이트: 의학과 목회는 둘 다 「부분 치유」다.</strong> 폴 투르니에(Paul Tournier)는 의학이 육신의 세계만 치유하므로 부분적 치유라고 단정했다(p.28). 정태기는 같은 잣대를 목회에도 들이댄다. <strong>「인간의 영적인 삶만을 관심하는 목회는 부분적인 목회요, 부분적인 구원행위에 불과하다」</strong>(p.28). 뒤 면지 노트는 이 대목을 화살표 둘로 정리해 두었다. 📝 「↑ 목회. ↑ 의학 ⇒ 결국 부분적인 치유.」</p>
+<table>
+<thead>
+<tr>
+<th>몸–마음–영 상관 (p.27 표시)</th>
+<th>예</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>신체 → 마음</td>
+<td>신체적 질병이 불안 심리·우울증·인격 변화를 부른다</td>
+</tr>
+<tr>
+<td>마음 → 몸</td>
+<td>심리적 장애가 위궤양을 부르고, 심한 고독은 관상동맥 질환과 암을 부른다</td>
+</tr>
+<tr>
+<td>마음 → 영</td>
+<td>지나친 죄책감이 영적 장애가 된다</td>
+</tr>
+<tr>
+<td>영 → 몸·마음</td>
+<td>영적 장애가 저항력을 약화시키고 정서장애가 된다</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>2. 핵심 인사이트: 교회는 어떻게 치유를 잃어버렸나 — 사상사로 읽는 치유의 퇴조</h3>
+<p>이 책에서 가장 많이 표시한 곳은 1장(p.13~16)과 3장(p.83~92)이다. 두 장 모두 초대교회에서 20세기까지 치유가 교회 밖으로 밀려난 과정을 추적한다. 뒤 면지에도 이 흐름을 화살표 연대표로 두 번 옮겨 적었다.</p>
+<table>
+<thead>
+<tr>
+<th>시대</th>
+<th>사상</th>
+<th>치유에 미친 영향</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>초대교회(~400)</td>
+<td>저스틴·클레멘트·오리겐·터툴리안 — 몸과 마음을 하나로 보는 히브리 사상</td>
+<td>치유 목회가 활발했다</td>
+</tr>
+<tr>
+<td>후기 희랍</td>
+<td>영지주의, 플로티누스(신플라톤) — 「완성은 영이 육체로부터 완전 독립하는 상태」(p.13)</td>
+<td>영육 분리, 몸을 경시</td>
+</tr>
+<tr>
+<td>4~5세기</td>
+<td>성 어거스틴이 플라톤 사상을 틀로 삼음, 기독교 국교화, 이슬람의 로마 함락</td>
+<td>치유 목회가 위축됨(p.85)</td>
+</tr>
+<tr>
+<td>번역의 오류</td>
+<td>치유(heal and care)를 <strong>「'구원(Salvo)'이라는 어휘로 번역하는 오류」</strong>(p.14)</td>
+<td>치유가 내세 구원으로 영성화</td>
+</tr>
+<tr>
+<td>13세기</td>
+<td>아리스토텔레스 증명철학 → 토마스 아퀴나스 『신학대전』 — 「하나님은 체험을 통해서가 아니라 지적인 활동을 통해서 알 수 있는 분」(p.14)</td>
+<td>신앙과 이성, 과학과 신학 분리</td>
+</tr>
+<tr>
+<td>16~17세기</td>
+<td>데카르트 「생각하는 것이 인간존재의 총체적 본질」(p.14), 뉴튼</td>
+<td>이성 중심 인간관</td>
+</tr>
+<tr>
+<td>18~19세기</td>
+<td>역사성서비평학, 자유주의 성서비평, 크리스천 사이언스, 칸트·헤겔·마르크스</td>
+<td>「인간의 정신은 물리적 과정의 산물일 뿐」(p.89)</td>
+</tr>
+<tr>
+<td>20세기</td>
+<td>실존주의·사신론, 불트만·본회퍼·바르트·틸리히</td>
+<td>초자연적 치유 부정</td>
+</tr>
+<tr>
+<td>1928</td>
+<td><strong>영국성공회 회의 「처음으로 치유를 교회 목회의 필수적인 활동으로 선포」</strong>(p.16)</td>
+<td>회복의 시작</td>
+</tr>
+</tbody>
+</table>
+<p>루터는 예외로 남는다. <strong>「루터 자신은 치유가 목회의 핵심 부분이라고 믿고 있었다」</strong>(p.89). 켈시(Morton Kelsey)는 치유를 부정하는 입장을 넷으로 나누었는데, 그중 셋째(섭리론)를 이렇게 설명한다. <strong>「자연법을 뚫고 들어올 수 있는 초자연적인 능력은 실재하지 않는다고 생각하는 것인데, 불트만과 같은 실존주의 신학자들에게서 볼 수 있는 견해」</strong>(p.91).</p>
+<p>그 결과를 정태기는 이렇게 진단한다. <strong>「교회와 신학은 기계론적이고 물질주의적인 세계관에 지배되어 교회 본연의 권위를 행사하지 못하고 있으며, 교회의 영적 생활도 논리적이고 합리적인 명제가 되어 있다」</strong>(p.92). 그러나 결론은 비관이 아니다. <strong>「치유신학이 부재하고, 과학과 철학사상이 치유를 부인한다고 해서 우리 교회에서 치유가 일어나지 않고 있는가? 아니다!」</strong>(p.91). 근거로 플라시보 효과, 그리고 우울할 때 줄어드는 노에피네프린·도파민·세로토닌 연구를 든다(p.92~93). 몸과 마음이 얼마나 깊이 얽혀 있는지를 보여 주는 예다.</p>
+<p>→ 같은 사상사를 의사의 눈으로 다룬 책은 <a class="wl" href="../../b/%EC%9D%98%ED%95%99%EA%B3%BC%EC%B9%98%EC%9C%A0_%EB%A7%88%ED%8B%B4%EB%A1%9C%EC%9D%B4%EB%93%9C%EC%A1%B4%EC%8A%A4/">의학과치유_마틴로이드존스</a>다. 두 책을 함께 읽으면 「교회는 치유를 잃었다」는 진단과 「의학이 그 빈자리를 채웠다」는 진단이 서로 겹친다.</p>
+<hr />
+<h3>3. 한(恨) — 돌바닥 심리, 그리고 새 역사 창조의 모티브</h3>
+<p>2장 「한풀이 목회를 위한 목회상담적 접근」은 한국적 개념 <strong>한(恨)</strong>을 목회상담의 언어로 옮긴 글이다. 한이란 <strong>「풀리지 않고 가슴속에 축적된」</strong> 것이며, 사람들은 이를 「마음의 상처, 고통, 마음의 쓴 뿌리」라고 부른다(p.32). 정태기는 이를 <strong>「내적인 상처」「분노의 앙금」</strong>으로 정의하고(p.45), 씨 뿌리는 자 비유(<span class="wl-dead" title="위키 내부 링크">마13</span>)의 <strong>돌 바닥 심리</strong>에 대응시킨다.</p>
+<blockquote>
+<p>「병든 심리 가운데 돌 바닥 심리를 필자는 인간의 마음속에 자리잡고 있는 내적 상처이자 풀리지 않고 쌓여 있는 분노의 앙금, 곧 가슴속에 서리서리 맺혀 있는 한(恨)으로 보고 싶다.」(p.45)</p>
+</blockquote>
+<p>→ 이 네 토양 도식은 <a class="wl" href="../../b/%EC%88%A8%EA%B2%A8%EC%A7%84%EC%83%81%EC%B2%98%EC%9D%98%EC%B9%98%EC%9C%A0_%EC%A0%95%ED%83%9C%EA%B8%B0/">숨겨진상처의치유_정태기</a>에서 한 권 분량으로 펼쳐진다(길가=폐쇄된 자아중심성, 돌밭=한, 가시떨기=체면의식, 옥토=어린아이의 심성). 이 책의 2장이 그 원형이다.</p>
+<p><strong>핵심 인사이트: 한은 병의 원인이면서 성장의 원동력이다.</strong> 정태기는 한을 제거할 대상으로만 보지 않는다.</p>
+<blockquote>
+<p>「인류 역사를 움직인 사람들, 특히 기독교 역사의 주인공들을 조사해보면 자신의 마음속에 쌓인 한의 응어리를 그리스도 안에서 위대한 힘으로 분출했던 사람들이다.」(p.33)</p>
+<p>「인간의 아픔인 한은 칠흑같은 어두움이면서도 너무나 밝은 태양의 가능성을 동시에 소유하고 있다.」(p.38)</p>
+</blockquote>
+<p>신학적 근거는 <strong>「아픔을 당한 인간 되신 하나님」</strong>(p.35)이다. 구약의 가난하고 억눌린 백성에서 삭개오까지(p.36), 「주님은 인간의 아픔이 있는 곳에는 어디에서나 그 아픔을 함께 나누고 계신다」. 여백에는 📝 「→ 새역사 창조의 모티브」라고 적었다(p.34). 아우슈비츠 생존자 엘리 비젤(Elie Wiesel)도 표시했다(p.37).</p>
+<p><strong>한의 유발 요인 3가지</strong> (p.39 📝 「— 무관심. 열등감. 무력감.」)</p>
+<table>
+<thead>
+<tr>
+<th>요인</th>
+<th>연쇄</th>
+<th>인용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>무관심</td>
+<td>사랑의 욕구 결핍 → 성장 정지</td>
+<td>「사랑은 삶을 이끌어 가는 힘」(틸리히), 매슬로우: 이 욕구가 충족되지 않으면 성장이 중단된다(p.39~40)</td>
+</tr>
+<tr>
+<td>열등감</td>
+<td>열등감 → 불안 → 강박관념 → 분노</td>
+<td>「열등감은 적대감을 유도하고, 적대감은 폭력으로 분출되거나 한으로 숨어들어 버린다」(p.41)</td>
+</tr>
+<tr>
+<td>무력감</td>
+<td>분노·짜증 → (내면화) 우울증·자제력 상실 / (외현화) 격노</td>
+<td>「이 상황을 뚫고 나갈 수 있는 능력이 전혀 없다고 느껴질 때」(p.43)</td>
+</tr>
+</tbody>
+</table>
+<p>열등감 항목에서 정태기는 구조를 짚는다. <strong>「우월감과 열등감, 강자와 약자, 부자와 가난한 자 … 수직적인 제도 아래에서는 적대감이 자연스러운 감정으로 나타난다」</strong>(p.41). 남녀 불평등과 인종차별이 있는 <strong>교회</strong>도 열등감의 온상이 된다. 저자가 자기 아버지 이야기를 한 줄 적은 곳도 표시했다. 「맏아들의 전사 통지서를 받고 나서는 몇 달을 소리내어 우셨었다」(p.42).</p>
+<p><strong>한의 증상</strong> — 불안(정상적 불안 / 신경증적 불안, p.48), 두근거림·두통·식은 땀·근육경련·위장장애(p.49), 신경증적 공포(p.50), 그리고 심인성 질환이다.</p>
+<blockquote>
+<p>「위장장애, 궤양성 대장염, 신경성 피부염, 류마치스성 관절염, 편두통, 본태성 고혈압을 비롯한 여러 가지 심인성 질환을 앓고 있는 사람들의 무의식 속에는 분노의 앙금, 즉 한의 어두운 그림자가 들어있음을 알 수 있다.」(p.53)</p>
+</blockquote>
+<hr />
+<h3>4. 한풀이 — 웃음·춤·울음, 그리고 고통의 긍정 기능</h3>
+<p>한국 민중은 한을 푸는 전통 방법을 갖고 있었다. 뒤 면지 노트는 이를 이렇게 정리했다. 📝 「농악, 탈춤 — 춤치료. 웃음 / 판소리 — 울음 / 굿. 한풀이 / 목회적 한풀이」.</p>
+<ul>
+<li><strong>웃음·유머</strong>: 매슬로우는 역사를 움직인 사람들의 공통점으로 <strong>「신비와 절정의 경험을 자주 하는 것과 유머가 살아 있다는 것」</strong>을 꼽았다(p.54). 에릭 번(Eric Berne)의 P·A·C 자아도 여기서 언급된다(p.55).</li>
+<li><strong>춤</strong>: 정신장애·성격장애 치료에 춤 치료가 쓰인다(p.56).</li>
+<li><strong>울음</strong>: 클라인벨을 인용하며 한 줄로 요약한다. <strong>「눈물, 즉 울음은 하나님이 인간에게 주신 최고의 치료제이다」</strong>(p.57, 「눈물」에 동그라미).</li>
+<li><strong>예수의 기쁨</strong>: 예수는 「먹고 마시기를 즐기는 자」라는 비난을 받았고, 「피리를 불어도 춤출 줄 모르는 사람들」을 꾸짖었다. 그리고 「내 기쁨이 너희 안에 있어 너희 기쁨이 충만하게 하려 함이라」고 하셨다(p.63).</li>
+</ul>
+<p><strong>고통의 긍정 기능.</strong> 롤로 메이는 <strong>「인간은 고통에 직면했을 때 기뻐해야 한다」</strong>고 말했다(p.60). 끓어오르는 감정이 <strong>「의미 있는 출구를 찾아 분출된다면 … 성장과 변화의 힘으로 작용할 수 있지만」</strong> 무절제하게 분출되면 상처만 남긴다(p.61). 고통이 주는 선물로 표시한 것은 네 가지다. <strong>고통을 통한 자기 자각, 겸손의 삶, 인간관계, 하나님께 더 가깝게</strong>(p.61). 목회적 한풀이의 과제는 이렇게 요약된다. <strong>「한의 응어리를 자각케 하고, 자각된 감정을 건전한 방향으로 표현하도록」</strong>(p.64).</p>
+<p><strong>매슬로우의 자기실현자 특성 (p.69 전 항목 표시)</strong> — 현실지각, 인간본성의 수용, 자발성, 문제 중심, 사적 생활, 자율성, 늘 새로운 인식, 신비 경험, 사회공동체감, 밀접한 관계, 민주적 성격, 도덕 윤리감, 유머 센스, 창조성, 그리고 <strong>문화의 모순과 사회의 부당성에 대한 비판적 태도</strong>(p.70).</p>
+<hr />
+<h3>5. 성경의 치유 — 히브리인의 전인 건강과 예수의 치유 사역</h3>
+<p>3장은 치유를 <strong>「누워있는 환자가 일어나는 것을 말하는 것뿐 아니라 마음과 영과 신체의 모든 면에서 긍정적인 변화를 모두 내포하는 것」</strong>으로 정의하며 시작한다(p.72). 그리고 이런 신학이 없는 이유를 이렇게 본다. <strong>「건전한 치유신학을 현대 신학교육이 제시해주지 못하기 때문」</strong>이다(p.72).</p>
+<p><strong>히브리인</strong>: 위생·식이·운동·수면에 관한 엄격한 법은 <strong>「건강 그 자체를 목적으로 한 것이 아니라 이스라엘 백성들로 하여금 거룩한 삶, 즉 전인적인 건강을 누리게 함」</strong>이었다(p.74). 질병은 형벌로도 이해되었다(<span class="wl-dead" title="위키 내부 링크">신32</span>:39). 이때 <strong>「죄로 인한 질병은 개인보다는 집단적으로 발생하는 것이 특징」</strong>이다(p.75).</p>
+<p><strong>예수</strong>: 복음서 기사의 25%가 치유 이야기이고(p.17), <strong>「마가복음서는 20% 이상을 치유에 관한 기사에 할애」</strong>한다. 그래서 마가는 <strong>「'치유사역'을 '가르치는 사역'보다 훨씬 더 중요하게 취급」</strong>한다(p.78). 이 사역을 선언한 본문이 <span class="wl-dead" title="위키 내부 링크">눅4</span>:18이고, 세례 요한에게 보낸 답이 <span class="wl-dead" title="위키 내부 링크">마11</span>:4~5다(p.78, p.166). 치유는 메시아성의 증거였고(p.18), <strong>「치유는 인간의 고통에 대한 하나님의 사랑의 행위」</strong>였다(p.79).</p>
+<table>
+<thead>
+<tr>
+<th>예수의 치유 자원 (p.80~81, 전부 굵게 표시)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>말씀의 선포</strong> · <strong>죄의 용서</strong> · <strong>믿음과 확신</strong> · <strong>소망</strong> · <strong>사랑</strong></td>
+</tr>
+</tbody>
+</table>
+<p>그러면서 신학교를 비판한다. <strong>「예수님은 치유사역에 가장 많은 시간을 할애하셨다」</strong>(p.166). <strong>「그런데도 신학교에서 치유에 대한 훈련이 거의 없다고 해도 과언이 아니다」</strong>(p.167). 목회자의 소명은 <strong>「병든 인간과 깨어진 인간관계를 치유하고, 자연을 치유하며, 병들어 가는 사회를 치유하는 일에 동참」</strong>하는 것이다(p.166).</p>
+<hr />
+<h3>6. 심리학과 목회의 만남 — 현대 치유목회의 네 흐름</h3>
+<p>20세기에 들어 프로이트의 정신분석이 <strong>「기독교가 무시해 왔던 인간의 심리적인 면을 파헤쳐 주었다는 공적」</strong>(p.99)을 남겼다. 이후 목회는 심리학을 두고 세 갈래로 나뉜다. 뒤 면지와 여백에 인명을 도식으로 정리해 두었다.</p>
+<p><code>[20세기 심리학 5대 학파]  프로이트(정신분석) · 애들러(개인) · 융(분석) · 스키너(행동주의) · 로저스(인간중심)
+          ↓
+[수용]  안톤 보이슨(3년 정신분열 체험→임상목회) · 웨더헤드(정신분석 후 그리스도로 치유, 인격 통합)
+        → 롤로 메이 · 힐트너 · 와이즈 · 오츠
+[반대]  호바트 모러 · 폴 비츠 · 킬패트릭 — 「세속주의 심리이론이 죄의 개념을 마비시키고 … 하나님의 신비를 한 인간의 체험으로 축소」(p.100)
+[대화]  게리 콜린스 · 토마스 오덴 — 세속 이론을 존중하되 목회 신학과 신중히 대화</code></p>
+<p>오덴의 분류에 따른 <strong>현대 치유목회의 네 흐름</strong> (p.101 📝 「내적치유 / 관계중심 / 명상·기도 / 말씀중심」)</p>
+<table>
+<thead>
+<tr>
+<th>흐름</th>
+<th>대표</th>
+<th>핵심</th>
+<th>정태기의 평가</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>① 내적 치유</td>
+<td>오토 랭크·아더 야노프(primal therapy), 프랭크 레이크(primal integration)</td>
+<td>태아·출생 기억을 다시 살려 주님의 사랑으로 치유. 내적 치유·기억 치유·믿음-상상요법·기도상담</td>
+<td><strong>「신중한 치료자가 아니면 무리를 범할 수 있는 위험」, 태아 기억의 신빙성은 「미지수」</strong>(p.103)</td>
+</tr>
+<tr>
+<td>② 관계 중심</td>
+<td>클라인벨·오츠·힐트너·투르니에·오덴·<span class="wl-dead" title="위키 내부 링크">헨리나우웬</span></td>
+<td>로저스·칼크허프: 관계가 치료 효과를 좌우. 성장·해방·전인건강, 7영역(영·정신·대인관계·신체·일·자연·사회제도) 건강</td>
+<td><strong>「관계는 하나님의 은혜를 경험케 하는 도구다」</strong>(p.105)</td>
+</tr>
+<tr>
+<td>③ 내적 영성 계발</td>
+<td>융·아싸지올리 → 토마스 머튼·몰튼 켈시·크리스토퍼 브라이언트·나우웬</td>
+<td>목표는 자기실현(=자기 초월의 모험). 명상·고백·기도·성례전·요가·꿈 해석</td>
+<td><strong>「영적인 깊이가 없는 사람에게는 위험」</strong>, 한국 풍토에서는 주의(p.106~107)</td>
+</tr>
+<tr>
+<td>④ 성서 중심</td>
+<td><span class="wl-dead" title="위키 내부 링크">제이아담스</span> 권면상담, 밥간 영적상담, 크래독·<span class="wl-dead" title="위키 내부 링크">래리크랩</span> 성서중심, 게리 콜린스 제자상담</td>
+<td>성서와 세속 심리학은 「서로 자리를 함께 할 수 없다」, 변화는 성서적 변화</td>
+<td>아래 참조</td>
+</tr>
+</tbody>
+</table>
+<p>④에 대한 평가는 균형을 잡는다. 아담스는 <strong>「우리의 기독교 전통 안에도 치유이론이 있다는 것을 일깨워 주었다는 점에서 긍정적」</strong>이지만, <strong>「하나님의 섭리를 성경 안으로만 국한시켜 버린 점에서는 부정적」</strong>이다. <strong>「세상 과학을 단지 악마적인 요인으로만 바라보는 그의 견해도 잘 이해되지 않는다」</strong>(p.108). 반면 크랩은 <strong>「성서의 원리를 거스르지 않는 범위 안에서 세속심리 치료 이론을 수용한다」</strong>(p.109, 굵게 표시). 격려·권고·계몽을 거쳐 감정 → 행동 → 생각을 성서적으로 바꾸는 방식이다. 여백 메모는 이를 이렇게 정리했다. 📝 「통합적 치유. — 로렌스 J 크랩(?). 혼합과 다름.」(p.111)</p>
+<p><strong>핵심 인사이트: 양 극단 모두 실패했다.</strong> <strong>「세속심리 치료 이론에 치우치는 학자들에게는 인간의 영을 건드려 주는 힘이 없어 너무 메마르게 느껴질 뿐만 아니라 병을 치유해 내는 생명력도 없다」</strong>(p.110). 말씀에만 치우치는 쪽은 <strong>「지나친 아집과 정열로 인해서 쉽사리 오류에 빠져들 위험성」</strong>이 있다(p.111).</p>
+<p>→ 크랩의 통합 모델은 <a class="wl" href="../../b/%EC%84%B1%EA%B2%BD%EC%A0%81%EC%83%81%EB%8B%B4%ED%95%99_%EB%9E%98%EB%A6%AC%ED%81%AC%EB%9E%A9/">성경적상담학_래리크랩</a>에서, 관계 중심 흐름의 영성은 <a class="wl" href="../../b/%EC%83%81%EC%B2%98%EC%9E%85%EC%9D%80%EC%B9%98%EC%9C%A0%EC%9E%90_%ED%97%A8%EB%A6%AC%EB%82%98%EC%9A%B0%EC%9B%AC/">상처입은치유자_헨리나우웬</a>에서 자세히 다룬다.</p>
+<hr />
+<h3>7. 꿈 해석 — 하나님이 무의식에 말을 거시는 통로</h3>
+<p>4장은 성경이 <strong>「꿈과 환상, 천사의 출현, 황홀경과 성령체험에 대한 기록의 보고」</strong>라는 데서 출발한다(p.120). 뒤 면지에 성경 인물을 정리해 두었다. 📝 「구약 — 아브라함 (쪼갠 고기) 야곱. 모세. 기드온. 사무엘. 사울왕 / 신약 — 요셉. 마리아. 동방박사. 베드로. 바울」.</p>
+<ul>
+<li>야곱은 꿈을 통해 <strong>「하나님과 대화를 나누었고, 하나님과의 관계를 더욱 풍성하게 만들었다」</strong>(p.123). <span class="wl-dead" title="위키 내부 링크">민12</span>:6, <span class="wl-dead" title="위키 내부 링크">욜2</span>:28~29(여백 괄호), 호 12:5.</li>
+<li>요셉은 <strong>「유대 풍습과 법을 어기면서까지 꿈이 지시하는 바를 기꺼이 따랐다」</strong>. <strong>「그는 꿈이 종교적인 풍습이나 율법보다 더 높은 권위를 지니고 있는 근원으로부터 온다고 믿었다」</strong>(p.125).</li>
+<li>바울의 마게도냐 환상(<span class="wl-dead" title="위키 내부 링크">행16</span>:6~10): <strong>「무엇이 바울로 하여금 마케도니아로 가도록 했고, 서방세계로 뛰어들도록 했던 것일까!」</strong>(p.127)</li>
+</ul>
+<blockquote>
+<p>「하나님은 꿈과 환상에 마음 문을 열고 있는 사람들에게 그들의 방향을 제시하신다.」(p.127)</p>
+</blockquote>
+<p><strong>꿈의 분류 (p.128)</strong> — 켈시의 분류를 축으로 샌포드와 패러데이를 수용한다.</p>
+<table>
+<thead>
+<tr>
+<th>샌포드(Sanford)</th>
+<th>패러데이(Faraday)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>① 의식에 뿌리 — 일상생활 ② 무의식에 뿌리 — 억압된 것 ③ 집단 무의식 — 영적 실체 ④ 초감각적(ESP) ⑤ 사람들에 관한 꿈</td>
+<td>① Looking Outward — 객관적 실체 정보 ② Through the Looking Glass — 나 자신 ③ Looking Inward — 내면의 깊은 세계</td>
+</tr>
+</tbody>
+</table>
+<p>해석의 원칙도 정리한다. 꿈속 인물은 대개 나 자신의 한 면이다. <strong>「꿈에 등장하는 사람들의 99%는 꿈을 꾸는 당사자의 모습이라고 볼 수 있다」</strong>(p.131). 융에 따르면 <strong>「꿈을 가장 분명하게 해석할 수 있는 사람은 꿈을 꾼 당사자」</strong>다(p.134). 같은 인물이 반복해 나오면 해결하고 넘어가라는 영적 자아의 촉구다(p.140).</p>
+<p><strong>핵심 인사이트: 꿈 해석은 인격 성숙의 걸림돌을 보여 준다.</strong> 행동이 무의식 속의 상(像)에 어긋날 때 생기는 문제를 <strong>「가장 세밀하게 이야기해 주는 것이 꿈」</strong>이다(p.143). 표시한 사례가 이를 보여 준다. 어린 시절의 상처를 모른 채 살던 사람이 꿈 해석으로 <strong>「상처 입은 어린아이가 자기 안에서 웅크리고 앉아 울고 있음을 발견하고, 그 어린아이를 붙잡고 한없이 울고 난 뒤」</strong> 비로소 성인으로 살아가게 되었다(p.143).</p>
+<blockquote>
+<p>「융에 의하면 모든 신경증 환자는 살아있는 영적인 실체를 체험하지 못하는 사람들이고, 이들 모두 살아 역사하시는 하나님의 실체, 즉 영적인 실체를 경험할 때 신경증에서 벗어난다」(p.146)</p>
+</blockquote>
+<p>이 장의 해석 전통은 성공회 사제 켈시(Morton Kelsey)와 샌포드(John Sanford)에게서 왔다(p.134).</p>
+<hr />
+<h3>8. 세 가지 영양소와 네 마음 — 설교를 통한 치유</h3>
+<p>5장은 리버사이드 교회의 해리 에머슨 포스딕(p.152)을 모델로, <strong>설교 자체가 목회상담의 과정</strong>이라고 주장한다(p.168). <strong>「상담과 설교는 분리될 수 없는 관계」</strong>라는 것이다(p.169). 진단은 이렇다. <strong>「물질은 풍부해졌는데 인간의 마음은 점점 더 가난해지고 있다」</strong>, <strong>「현대인들의 상처는 하나님을 떠난 데서 시작한다」</strong>(p.156). 마음의 중심에는 하나님 대신 <strong>물질·권력·명예</strong>가 앉아 있다(p.157, 세 단어 모두 동그라미).</p>
+<p><span class="wl-dead" title="위키 내부 링크">마5</span>:8 「마음이 청결한 자」를 정태기는 원뜻대로 <strong>「마음이 하나인 사람은 복이 있나니 저희가 하나님과 만날 수 있다」</strong>로 읽는다(p.156).</p>
+<table>
+<thead>
+<tr>
+<th>인간의 세 가지 필수 영양소 (p.158~159)</th>
+<th>결핍의 결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>안정 — 휴식의 필수 요소는 심리적 안정</td>
+<td>「안정의 욕구가 채워지지 않으면 성장이 멈추고 … 결국 병들어 가는 것」(p.158)</td>
+</tr>
+<tr>
+<td>사랑 — 가족 식구와 이웃과의 만남</td>
+<td>히스테리 신경증</td>
+</tr>
+<tr>
+<td>신비 — 창조주와의 만남</td>
+<td>우울증. 「사랑과 신비의 영양결핍으로 인해 생겨난다」(p.164)</td>
+</tr>
+</tbody>
+</table>
+<p>신비 영양소를 가장 무겁게 다룬다. 신비 경험을 자주 하는 사람은 <strong>「영적으로 다른 사람보다 훨씬 더 빠르게 성장하고 분열된 마음이 하나로 통일되어 있으며 생의 방향이 전환된다」</strong>(p.161). <strong>「융에 의하면, 이 신비의 힘은 중년에 들어선 이후의 인간 건강에 결정적인 역할을 한다」</strong>(p.161). 융은 자신이 치료한 <strong>수천 명의 환자 모두가 「사랑과 신비의 영양분으로 회복되었다」</strong>고 했다(p.164~165).</p>
+<p>네 마음(씨 뿌리는 자 비유)은 여기서 다시 나온다. 길바닥 마음은 바리새인처럼 <strong>「뚫고 들어갈 수 없을 정도로 자기 방어적인 마음」</strong>이고, <strong>「자기 신앙, 자기 사상, 자기 의견을 절대화하는 순간」</strong> 굳어진다(p.162). 돌바닥은 무의식 속 바위 덩어리(한)다. 가시덤불은 <strong>「자기 욕심이 뿌리」</strong>이며, 결국 <strong>「자기의 힘을 다른 사람들에게 다 빼앗겨 버리고 사는 것」</strong>이고 그 핵심에 <strong>비교</strong>가 있다(p.163~164).</p>
+<hr />
+<h3>9. 신학과 심리학의 만남 — 대화의 다섯 유형과 통합의 조건</h3>
+<p>마지막 6장이 책의 결론이다. 역사적으로 교회는 늘 <strong>「당시의 지배적인 문화 사상에 신앙을 접근시키려 시도해 왔다」</strong>(p.174). 2~3세기에는 희랍 철학, 어거스틴에게는 플라톤, 아퀴나스에게는 아리스토텔레스가 그 문화였다. 지금은 심리학이다.</p>
+<p><strong>심리학이 목회에 들어온 경로</strong>: 분트 → 프로이트 → 왓슨(행동주의) → 보이슨의 임상목회 훈련 → 1940년대 로저스(비지시적·인간 중심) → 실존주의(키에르케고르 → 프랭클·롤로 메이)(p.176~181). 자유주의 목회상담의 방향은 이렇게 요약된다. <strong>「죄를 고백하고 하나님의 용서하심을 받으라고 하는 것이 아니라 … 경직된 양심을 부드럽게 해서 그의 생을 즐길 수 있도록 돕는 것」</strong>(p.179). 프랭클의 한 문장도 표시했다. <strong>「만일 어떤 사람이 생의 의미를 획득하지 못한다면 그는 존재의 이유도 갖지 못한다」</strong>(p.181).</p>
+<p><strong>카터(John D. Carter)의 대화 유형</strong> (p.185~190)</p>
+<table>
+<thead>
+<tr>
+<th>유형</th>
+<th>입장</th>
+<th>대표</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>종교 반대형</td>
+<td>심리학이 종교를 반대</td>
+<td>프로이트</td>
+</tr>
+<tr>
+<td>심리학 ⊃ 종교</td>
+<td>심리학이 종교를 포괄</td>
+<td>에릭 프롬, 융</td>
+</tr>
+<tr>
+<td>평행선형</td>
+<td>「종교와 심리학은 아무런 관계가 없다」</td>
+<td>토른, 올포트·프랭클(일치하는 진리 발견)</td>
+</tr>
+<tr>
+<td>심리학 반대형</td>
+<td>「결국 모든 정서적인 문제는 영적인 문제에서 비롯된다」</td>
+<td><strong>아담스</strong></td>
+</tr>
+<tr>
+<td><strong>상호연관형(동맹, Allies)</strong></td>
+<td>개념을 서로 연관시킴 — 초자아↔양심, 원초아↔원죄, <strong>로저스의 감정이입↔아가페</strong></td>
+<td>클레멘트, 미힐, <strong>크랩</strong>(✓ 체크), 훌름</td>
+</tr>
+</tbody>
+</table>
+<p>나라모어(Narramore)의 세 그룹도 있다(p.182~183). ① 성서적 진리와 심리학적 진리를 결합한 콜린스·나라모어·투르니에 등, ② 핵심 이론을 비교 해석한 튀디(프랭클)·피스터·바크만(정신분석)·드레이크포드(현실요법), ③ 심리학을 기독교의 큰 관심사로 부각한 힐트너·오츠·클라인벨·아담스 등. 아담스는 지시적, 힐트너·오츠는 로저스 쪽, 클라인벨은 절충(성장상담)이다.</p>
+<p><strong>핵심 인사이트: 정신분석이 신학에 은혜의 뜻을 돌려주었다.</strong> <span class="wl-dead" title="위키 내부 링크">폴틸리히</span>는 이렇게 썼다.</p>
+<blockquote>
+<p>「신학은 정신분석 방법에서 은혜의 의미를 배워야 한다. … 정신분석자는 환자를 용납하되, 환자에게 용납이라는 말을 하지도 않고, 다만 그를 용납할 뿐이다. 이것이 바로 하나님이 우리를 대하는 방법이다.」(p.194)</p>
+</blockquote>
+<p>융의 고백도 인용된다. 자신이 만난 환자 가운데 <strong>「단 한 명도 그의 문제가 신앙과 관련되지 않은 환자를 보지 못했다. … 아무도 신앙의 회복 없이 정신장애를 치유할 수 없었다」</strong>(p.196). 사무엘 수타드(Samuel Southard)가 정신치료에 신학을 적용하며 제시한 네 원칙은 여백에 괄호로 묶어 두었다(p.197). ① 환자의 영적 면을 진단하고, 그 진단에 따라 치료할 것 ② 성직자는 병·실패·비극의 영적 의미에 예민할 것 ③ 신학은 모든 사건에 영원한 의미를 줄 것 ④ 신학은 인간 문제 진단에 반드시 응용될 것.</p>
+<p><strong>통합의 조건</strong> — 신학과 심리학은 <strong>「하나님의 실재 안에서 일어나는 창조와 구원 과정에 함께 동참하는 영역」</strong>이다(p.198). 신학은 특별계시, 심리학은 우주 자연법칙을 통한 <strong>보편적 계시</strong>를 다룬다. 그래서 <strong>「신학은 심리학을 포함한 인접 학문을 하나님의 계시인 진리로 받아들여야 한다」</strong>(p.200, 📝 「보편적 계시.」). 다만 <strong>「진리 판단의 기준점은 성서에 두어져야 한다」</strong>(p.200). 그리고 결론의 핵심 문장이 이것이다.</p>
+<blockquote>
+<p>「신학, 심리학, 의학이 공동으로 대처해야 한다 … 전인적인 건강은 신학과 심리학, 의학이 연합하여 작용할 때 일어나는 사건인 것이다.」(p.195)</p>
+</blockquote>
+<hr />
+<h2>독자의 반응 — 여백과 뒤 면지</h2>
+<ul>
+<li><strong>p.191 반론</strong>: 「신학자들은 심리학이 … 어린 시절의 환경의 유산이기 때문에 본인에게 책임을 묻지 않는다고 생각한다. 그러나 이것은 정신분석 심리학의 깊은 의도를 왜곡하는 것이다」에 📝 <strong>「나도 그런데? / 무엇을 왜곡하는 것인지?」</strong> 저자는 정신분석이 책임 면제가 아니라고 말하지만, 그 「깊은 의도」가 무엇인지는 설명하지 않는다. 독자가 정확히 그 빈 곳을 짚었다. 같은 페이지 상단에는 📝 「의학과 신학 사이」.</li>
+<li><strong>p.201</strong>: 「신학이 과학적 자료를 무시하고, 과학적 사고 밖에서 존재한다면」에 📝 「과학적 사고를 도외시하게 되지 않을까?」</li>
+<li><strong>뒤 면지 노트 5면</strong>: 여섯 장을 장별로 요약했다. 특히 치유 사상사를 화살표 연대표로 두 번 그렸고, 결론 장 요약 끝에는 이렇게 적었다. 📝 「신학, 심리학, <strong>의학</strong>의 공동 대처 → 전인적 접근으로서의 의학의 역할은 뭘(?)」「균형의 문제 — 통합의 시대.」</li>
+<li><strong>뒤 면지 독후 소감 (2012)</strong>:</li>
+</ul>
+<blockquote>
+<p>📝 의학의 입장에서 본 신학과 심리학. 초대교회의 치유 사역에 대한 도전. 생명공학의 시대를 지나 통합의 시대를 맞아 전인적 치유에 대한 의료의 역할을 생각해 보게 됨. 영의 문제(마음의 문제, 무의식, self)에 대한 의학적 접근으로 심리학을 좋은 tool로 쓰고 싶은 마음. 칼 로저스, 프로이트, 융을 이해하고 래리 크랩과 아담스를 바탕으로 나의 의학적 치유를 만들어가고 싶다.</p>
+</blockquote>
+<p>→ 이 소감은 책이 비워 둔 자리를 정확히 짚는다. 정태기는 결론에서 「신학·심리학·의학」을 나란히 불렀지만, 본문은 신학과 심리학만 다루고 <strong>의학의 역할은 한 줄도 전개하지 않는다.</strong> 독자는 그 빈칸을 자기 과제로 받아 적었다.</p>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<p><strong>적용</strong>
+- <strong>진료실</strong>: 「50~75%」(p.11, p.195)는 1차 진료의 체감과 맞는다. 심인성 질환 목록(p.53)과 한의 신체 증상(p.49)은 문진에서 <strong>「마음에 쌓인 분노의 앙금」</strong>을 물어볼 근거가 된다. 다만 인과를 단정하지 않고 가설로 다룰 것.
+- <strong>의료선교·기독의료인 정체성</strong>: 결론의 「신학·심리학·의학의 공동 대처」는 <a class="wl" href="../../t/%EC%A0%84%EC%9D%B8%EC%B9%98%EC%9C%A0/">전인치유</a>·<a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a>의 뼈대가 된다. 1928년 영국성공회 선언, 마가복음의 치유 비중(20%)은 강의 도입부로 쓸 만한 사실이다.
+- <strong>목회·설교</strong>: 세 가지 영양소(안정·사랑·신비)와 네 마음은 설교에서 쓰는 진단 도구로 바로 옮길 수 있다. 「눈물은 최고의 치료제」(p.57)와 「고통의 네 선물」(p.61)은 <a class="wl" href="../../t/%EA%B3%A0%EB%82%9C/">고난</a> 설교의 재료다.
+- <strong>상담 모델 선택</strong>: 네 흐름 표(§6)는 상담 방법을 고를 때 쓰는 지도가 된다. 2012년 소감에서 세운 방향(로저스·프로이트·융 이해 + 크랩·아담스 기반)은 표의 ②·④를 잇는 통합 노선이다. 이후 <a class="wl" href="../../b/%EC%84%B1%EA%B2%BD%EC%A0%81%EC%83%81%EB%8B%B4%ED%95%99_%EB%9E%98%EB%A6%AC%ED%81%AC%EB%9E%A9/">성경적상담학_래리크랩</a> 독서로 이어졌다.</p>
+<p><strong>미해결 질문</strong>
+- <strong>의학의 자리</strong>: 신학 = 진리 판단 기준, 심리학 = 보편계시로서의 인간 이해라면, 의학은 무엇인가? 2012년 뒤 면지의 「의학의 역할은 뭘(?)」은 아직 답이 없다. <a class="wl" href="../../b/%EC%9D%98%ED%95%99%EA%B3%BC%EC%B9%98%EC%9C%A0_%EB%A7%88%ED%8B%B4%EB%A1%9C%EC%9D%B4%EB%93%9C%EC%A1%B4%EC%8A%A4/">의학과치유_마틴로이드존스</a>와 나란히 읽을 것.
+- <strong>p.191의 「깊은 의도」</strong>: 정신분석이 책임을 면제하지 않는다면, 어린 시절의 영향과 현재의 책임은 어떻게 함께 설 수 있는가? (크랩의 「책임」 개념과 대조)
+- <strong>꿈 해석과 내적 치유의 경계</strong>: 정태기는 내적 치유(태아 기억)는 경계하면서 꿈 해석은 적극 옹호한다. 둘 다 무의식에 접근하는데 기준은 무엇인가? 한국 교회 현장에서 꿈 해석을 어디까지 권할 수 있는가?
+- <strong>「한」의 보편성</strong>: 한을 한국 민중의 고유 정서로 볼 것인가, 억압된 분노의 보편적 이름으로 볼 것인가? 이주민·선교 현장에서 이 개념이 통하는가?</p>
+<hr />
+<blockquote>
+<p>📖 전사 원문(줄이지 않은 표시 구절 전체 + 뒤 면지 정리 노트): <span class="wl-dead" title="위키 내부 링크">아픔상담치유_정태기_전사</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#discipline/목회상담</span><span>#domain/상담</span><span>#전인치유</span><span>#한恨</span><span>#치유목회</span><span>#꿈해석</span><span>#신학과심리학</span><span>#통합</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
