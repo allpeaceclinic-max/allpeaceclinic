@@ -1,0 +1,352 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>부부 성생활 설문 — 문항은행 — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-t">상담·가정</span><span class="date">2026-09-27</span></div>
+  <h1 class="note-title">부부 성생활 설문 — 문항은행</h1>
+  
+</header>
+<article class="note">
+<blockquote>
+<p>성교육·부부 세미나에서 쓸 설문 문항을 모아 두고, 대상에 맞게 골라 쓰는 곳이다. 첫 출처는 라헤이 부부가 가정생활 세미나에서 그리스도인 부부 3,377명(아내 1,705·남편 1,672)에게 받은 47문항(<a class="wl" href="../../b/%EA%B2%B0%ED%98%BC%ED%96%89%EC%A0%84_%ED%8C%80%EB%9D%BC%ED%97%A4%EC%9D%B4/">결혼행전_팀라헤이</a> p.294~302). 책을 읽을 때 제목 옆에 📝 <strong>「항목 ☆」</strong>이라고 적어 두었다 — 결과보다 <strong>문항 자체</strong>가 쓸모 있다는 판단이었다.</p>
+<p>📖 문항·응답 분포 원문 전체: <span class="wl-dead" title="위키 내부 링크">결혼행전_팀라헤이_성관계설문조사</span></p>
+</blockquote>
+<hr />
+<h2>1. 문항 지도 — 47문항의 7개 영역</h2>
+<table>
+<thead>
+<tr>
+<th>영역</th>
+<th>문항</th>
+<th>무엇을 재는가</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A. 배경</td>
+<td>1~9</td>
+<td>연령·결혼 년차·자녀·<strong>함께 기도하는 횟수(5)</strong>·학력·맞벌이·직업·연애 기간</td>
+</tr>
+<tr>
+<td>B. 성교육 경로와 결혼 전 태도</td>
+<td>10~12, 17</td>
+<td>성교육을 <strong>어디서</strong> 받았나 · 읽은 결혼 책 · 두려움/기대 · 약혼 중 성에 대한 대화</td>
+</tr>
+<tr>
+<td>C. 원가족과 과거</td>
+<td>13~16, 18</td>
+<td>가정을 이끈 사람 · 부모 결혼생활 인상 · <strong>유년기 성경험(트라우마)</strong> · 이혼 · 혼전 성관계</td>
+</tr>
+<tr>
+<td>D. 피임·신혼</td>
+<td>19~23</td>
+<td>피임법 · 신혼여행 · 첫날밤(나체·성교·오르가즘)</td>
+</tr>
+<tr>
+<td>E. 성반응·기법</td>
+<td>24~37, 43~44</td>
+<td>오르가즘 빈도·인지 · 음핵 자극 · 구강 애무 · 선후·동시 · 전희 시간 · 사정·발기 어려움</td>
+</tr>
+<tr>
+<td>F. 소통</td>
+<td>38~39</td>
+<td>무엇이 좋은지 <strong>말로</strong> 알려 준 적이 있나 (남편→아내 / 아내→남편)</td>
+</tr>
+<tr>
+<td>G. 빈도·만족·자기상</td>
+<td>40~42, 45~47</td>
+<td><strong>실제 횟수 vs 원하는 횟수</strong> · 만족도 · 내 외모 / 배우자가 보는 내 외모 · 성생활 자기평가</td>
+</tr>
+</tbody>
+</table>
+<h2>2. 설계 기법 — 이 설문에서 빌려 올 네 가지</h2>
+<table>
+<thead>
+<tr>
+<th>기법</th>
+<th>문항 예</th>
+<th>강의에서의 쓰임</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>① 아내/남편 분리 집계</strong></td>
+<td>전 문항</td>
+<td>같은 질문에 두 열이 갈리는 곳이 곧 강의 주제가 된다</td>
+</tr>
+<tr>
+<td><strong>② 실제 vs 희망 쌍</strong></td>
+<td>40 ↔ 41</td>
+<td>「두 숫자의 차이」 — 현실과 바람의 간극</td>
+</tr>
+<tr>
+<td><strong>③ 내 느낌 vs 배우자 추정 쌍</strong></td>
+<td>31, 32, 45 ↔ 46, 43 괄호</td>
+<td>배우자 마음을 <strong>얼마나 잘못 읽고 있는지</strong> 드러낸다</td>
+</tr>
+<tr>
+<td><strong>④ 원가족 배경 변수</strong></td>
+<td>13, 14</td>
+<td>성 태도의 뿌리를 부모 결혼생활에서 찾는 연결고리</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 인사이트: ③번 쌍 문항이 가장 강력하다.</strong> 31번에서 음핵 애무를 "짜릿하다"고 한 아내는 54%인데, 남편은 43%만 그렇게 짐작한다. 32번에서 구강 애무를 "아주 좋다"는 남편은 78%인데, 아내의 짐작은 69%다. 45↔46번에서는 자기 외모에 "아주 만족"한 아내가 20%인데 배우자가 그렇게 본다고 믿는 아내는 37%다. 부부는 서로의 기쁨을 <strong>과소평가</strong>한다. 이 차이를 보여 주는 것만으로 대화가 시작된다.</p>
+<h2>3. 결과에서 건질 강의 재료</h2>
+<table>
+<thead>
+<tr>
+<th>발견</th>
+<th>수치</th>
+<th>강의 메시지</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>교회에서 성교육을 받은 사람</td>
+<td><strong>아내 1% · 남편 1%</strong> (10번), 책 53%·47%</td>
+<td>교회는 성교육의 자리에 없었다 → <span class="wl-dead" title="위키 내부 링크">CMF를-위한-성교육</span>의 출발점</td>
+</tr>
+<tr>
+<td>결혼 전 섹스에 대한 두려움</td>
+<td>아내 20% vs 남편 13% (12번)</td>
+<td>신부의 두려움을 신랑이 과소평가한다</td>
+</tr>
+<tr>
+<td>첫날밤 오르가즘</td>
+<td>아내 <strong>26%</strong>. 못 느낀 74% 중 대부분이 1주~3달 안에 느낌, "전혀"는 5% (23번)</td>
+<td><strong>신혼부부에게 가장 안심이 되는 숫자</strong> — 첫날밤은 시험이 아니다</td>
+</tr>
+<tr>
+<td>첫날밤 삽입 실패</td>
+<td>아내 12% · 남편 22% (22번)</td>
+<td>드문 일이 아니다</td>
+</tr>
+<tr>
+<td>실제 횟수</td>
+<td>주 0~2회 61% — 부부가 <strong>같게</strong> 답함 (40번)</td>
+<td></td>
+</tr>
+<tr>
+<td>원하는 횟수</td>
+<td>주 3회 이상: 남편 73% vs 아내 52% (41번)</td>
+<td>현실은 같게 보고 <strong>바람은 다르다</strong></td>
+</tr>
+<tr>
+<td>만족도 "상당히"</td>
+<td>남편 90% vs 아내 73% (42번)</td>
+<td>만족의 성별 격차</td>
+</tr>
+<tr>
+<td>무엇이 좋은지 말한 적 "거의 없다"</td>
+<td>약 1/3 (38·39번)</td>
+<td>성적 소통은 배우는 것이다</td>
+</tr>
+<tr>
+<td>유년기 원치 않은 성경험</td>
+<td>아내 19% · 남편 10% (15번)</td>
+<td>청중 5명 중 1명은 상처를 안고 앉아 있다 → 트라우마 인지 강의</td>
+</tr>
+<tr>
+<td>함께 기도 "전혀 없다"</td>
+<td>아내 33% · 남편 30% (5번)</td>
+<td>영적 친밀감과 성적 친밀감의 연결(<a class="wl" href="../../b/%EA%B2%B0%ED%98%BC%ED%96%89%EC%A0%84_%ED%8C%80%EB%9D%BC%ED%97%A4%EC%9D%B4/">결혼행전_팀라헤이</a> p.17)</td>
+</tr>
+</tbody>
+</table>
+<h2>4. 대상별 추천 세트</h2>
+<table>
+<thead>
+<tr>
+<th>대상</th>
+<th>추천 문항</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>예비부부·신혼</strong></td>
+<td>10, 12, 13, 14, 17, 20~23, 40, 41, 42, 38·39</td>
+<td>첫날밤 문항은 <strong>결과 공유</strong>로 쓰고 응답은 받지 않아도 된다</td>
+</tr>
+<tr>
+<td><strong>기혼 부부 세미나</strong></td>
+<td>5, 26, 31·32(쌍), 33, 36, 38·39, 40·41, 42, 45·46(쌍), 47</td>
+<td>쌍 문항은 부부가 각자 적고 <strong>서로 바꿔 보는</strong> 활동으로</td>
+</tr>
+<tr>
+<td><strong>CMF 청년(미혼) 성교육</strong></td>
+<td>10, 11, 12, 13, 14, (15는 선택)</td>
+<td>기혼·기법 문항은 제외. 원가족·성교육 경로 중심</td>
+</tr>
+<tr>
+<td><strong>의료인 대상 성의학</strong></td>
+<td>24~37, 43, 44</td>
+<td>성기능 문항은 IIEF·FSFI 같은 <strong>표준 척도로 교체</strong> 검토</td>
+</tr>
+</tbody>
+</table>
+<h2>5. 현재 사용 중인 설문과의 대응</h2>
+<p>「신혼부부성강의」 사전설문(Google Form, 10문항 — <code>create_pre_survey_신혼부부성강의.gs</code>)은 이미 이 설문의 뼈대를 쓰고 있다.</p>
+<table>
+<thead>
+<tr>
+<th>신혼부부성강의 사전설문</th>
+<th>결혼행전 설문</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q1 성별 · Q2 결혼 기간</td>
+<td>3번 (결혼 년차)</td>
+</tr>
+<tr>
+<td>Q3 현재 실제 횟수 · Q4 내가 원하는 횟수</td>
+<td><strong>40 ↔ 41 (실제 vs 희망 쌍)</strong> — 본강의 도입 「두 숫자의 차이」</td>
+</tr>
+<tr>
+<td>Q5 성생활 만족도</td>
+<td>42번</td>
+</tr>
+<tr>
+<td>Q6 배우자와 얼마나 솔직하게 대화하나</td>
+<td>17, 38, 39번</td>
+</tr>
+<tr>
+<td>Q7~Q10 고민·바람·익명 질문·원하는 주제</td>
+<td>(주관식 — 라헤이 설문에 없는 부분)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>다음 판에 추가할 후보</strong>: 12번(결혼 전 두려움/기대) · 10번(성교육 경로 — 교회 1%와 비교) · 31·32번 형식의 <strong>배우자 추정 쌍 문항</strong> 1개 · 5번(함께 기도).</p>
+<h2>6. 쓸 때 주의할 점</h2>
+<ul>
+<li><strong>표본의 한계</strong>: 1970년대 미국, 세미나에 <strong>스스로 온</strong> 그리스도인 부부, 고학력(남편 대학원 37%). 결과를 한국 부부의 기준처럼 제시하지 말고 「한 세미나 참석자들의 답」으로 소개한다.</li>
+<li><strong>민감 문항</strong>: 15번(유년기 성경험)·16번(이혼)·18번(혼전 성관계)은 <strong>익명·선택 응답</strong>으로만. 15번을 넣을 때는 상담 연결 안내를 함께 둔다.</li>
+<li><strong>표현 순화</strong>: 번역 용어(「페니스」·「음핵 애무」·「질외 사정」)는 대상에 맞게 바꾼다. 청년 대상에서는 E영역을 빼는 것이 기본이다.</li>
+<li><strong>낡은 문항</strong>: 19번 피임법 목록(거품·젤리·세정)은 현행 방법으로 바꾼다. 42번 남편·47번 남편은 원문 수치 합이 100이 아니다(99·110) — 인용할 때 주의.</li>
+<li><strong>현대에 없는 영역</strong>: 포르노·스마트폰, 섹스리스, 출산 후 변화, 갱년기 — 라헤이 설문에는 없다. 추가 문항 후보.</li>
+</ul>
+<hr />
+<h2>미해결 질문</h2>
+<ul>
+<li>47번이 마지막 문항인가? 사진이 p.302에서 끊겨 <strong>p.303~319의 해설·추가 문항은 미확인</strong>이다 — 재촬영 필요.</li>
+<li>한국 그리스도인 부부 대상의 비교 가능한 조사가 있는가? (예: 기독교 가정사역 단체 조사) 있으면 이 파일에 합친다.</li>
+<li>신혼부부성강의에서 실제로 받은 사전설문 응답을 이 문항 지도에 비추어 보면 무엇이 달라 보이는가?</li>
+</ul>
+</article>
+<div class="tagrow"><span>#domain/가정사역</span><span>#domain/성교육</span><span>#discipline/기독교상담학</span><span>#topic/성</span><span>#topic/설문설계</span><span>#topic/부부관계</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
