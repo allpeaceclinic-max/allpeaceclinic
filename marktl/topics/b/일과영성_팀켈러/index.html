@@ -1,0 +1,631 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>팀 켈러의 일과 영성 — 팀 켈러 (두란노) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">리더십·일·경영</span><span class="author">팀켈러</span><span class="date">2026-09-27</span></div>
+  <h1 class="note-title">팀 켈러의 일과 영성 — 팀 켈러 (두란노)</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/%EC%9D%BC%EA%B3%BC%EC%98%81%EC%84%B1_%ED%8C%80%EC%BC%88%EB%9F%AC/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<blockquote>
+<p>원제 <em>Every Good Endeavor: Connecting Your Work to God's Work</em>(2012, 원서는 캐서린 리어리 알스도프 공저), 최종훈 옮김. 표지 부제 ‘인간의 일과 하나님의 역사 사이의 줄 잇기’. 뉴욕 리디머장로교회를 세운 <span class="wl-dead" title="위키 내부 링크">팀 켈러</span>가 교회 안 신앙과 노동 센터(CFW)의 경험을 바탕으로 <strong>일을 창조–타락–복음의 3막 구조</strong>로 다시 읽는 책. 📷 표시 전사 기반 독서 노트.</p>
+</blockquote>
+<p><strong>책의 뼈대</strong> — 3부 12장 구성(표시 분포로 재구성):</p>
+<table>
+<thead>
+<tr>
+<th>부</th>
+<th>질문</th>
+<th>핵심 장면</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1부 하나님의 계획</td>
+<td>일은 원래 무엇이었나</td>
+<td>창조 기사·정원사 하나님·문화명령·소명·능숙함</td>
+</tr>
+<tr>
+<td>2부 일의 문제</td>
+<td>왜 일이 이토록 힘든가</td>
+<td>가시덤불·전도서 「해 아래서」·바벨·에스더·문화적 우상</td>
+</tr>
+<tr>
+<td>3부 복음과 일</td>
+<td>복음은 무엇을 바꾸나</td>
+<td>새 스토리(세계관)·일반 은총·새 윤리(지혜)·새 힘(열정과 안식)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>요약 — 주제별 상세 정리</h2>
+<h3>1. 문제 제기: 일과 신앙을 잇는 물줄기가 너무 많다</h3>
+<p>켈러는 출발점을 교회의 빈약한 답에서 잡는다. 목회자·직장인에게 신앙을 일터에 어떻게 적용하느냐고 물으면 대개 「"함께 일하는 동료들에게 복음을 전해야 한다"는 답이 돌아왔다」(p.14). 그 대안으로 <strong>소명(vocare)</strong> 개념의 회복을 내세우며, 「노동은 그저 개인의 이익을 도모하는 수단이 아니라 모두의 유익에 기여하는 행위로 보아야 한다」(p.21)고 못박는다. 반대로 「자기완성의 도구이자 자아실현의 수단이라는 노동관은 … 개인을 파괴하고 더 나아가 사회 자체를 붕괴시킨다」(p.21, 벨라 인용).</p>
+<p>그런데 「신앙과 일의 통합」을 말하는 전통은 한둘이 아니다. 독자는 p.24–25의 <strong>여덟 가지 주장 목록 전체에 여백 괄호·세로선</strong>을 그어 두었다:</p>
+<table>
+<thead>
+<tr>
+<th>전통(물줄기)</th>
+<th>일터에서 하나님을 섬기는 방법</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>부흥운동·복음주의</td>
+<td>정직하게 살며 <strong>동료에게 복음을 전함</strong> — 일터=「공개 간증」의 마당(p.23)</td>
+</tr>
+<tr>
+<td>종교개혁(루터·칼뱅)</td>
+<td>성직·세속 구분 없이 <strong>모든 노동이 하나님이 주신 소명</strong>(p.23)</td>
+</tr>
+<tr>
+<td>신칼뱅주의(카이퍼)</td>
+<td><strong>세계관</strong>을 가지고 문화에 뛰어들어 영향을 미침</td>
+</tr>
+<tr>
+<td>사회정의 전통</td>
+<td>세상에서 <strong>정의를 세워 감</strong></td>
+</tr>
+<tr>
+<td>장인 전통</td>
+<td>더도 덜도 말고 <strong>능숙한 솜씨로 탁월하게</strong> 일함</td>
+</tr>
+<tr>
+<td>예술·미학</td>
+<td>본보기가 될 만큼 <strong>아름다운 결과</strong></td>
+</tr>
+<tr>
+<td>내면·영성</td>
+<td>감사와 기쁨, <strong>복음으로 변화된 마음</strong>으로 우여곡절을 헤쳐 감</td>
+</tr>
+<tr>
+<td>열정·재정</td>
+<td>기쁨과 열정을 주는 일 / <strong>최대한 벌어 넉넉히 베풂</strong></td>
+</tr>
+</tbody>
+</table>
+<p>켈러의 진단은 「저마다 최소한의 성경적 근거를 갖추고 있으니 대답하기가 무척 까다로운 질문이다」(p.25)이고, 문제는 신참들이 「어느 한두 가닥 물줄기에 특별한 강세를 두는 반면, 나머지는 깨끗이 무시해 버리는 식」(p.27)이라는 것. 루터교가 개혁교회의 「세계관」 개념을 받아들이지 않는다는 지적(p.24)도 표시되어 있다 — <strong>책 전체가 이 물줄기들을 창조–타락–복음 틀 안에서 하나로 엮으려는 시도</strong>다.</p>
+<h3>2. 핵심 인사이트: 「니글의 이파리」 — 진짜 나무가 있다</h3>
+<p>서론은 <span class="wl-dead" title="위키 내부 링크">톨킨</span>의 단편 「니글의 이파리」로 연다. 거대한 신화 체계를 꿈꾸던 완벽주의자 톨킨(p.29–30)이 자신을 투영한 화가 니글 — 「"깨작거리거나 비능률적으로 일하거나 … 쓸데없이 시시콜콜 사소한 일에 시간을 낭비"한다는 뜻」(p.30). 평생 나무 한 그루를 그리려다 이파리 한 장만 남기고 「먼 길을 떠나」고, 그 그림은 「후미진 구석에 오래도록 걸려 있었다」(p.32). 그러나 저 너머에서 니글은 본다: 「"커다란 나무, 그의 나무가 완성된 모습으로 서 있었다."」(p.33)</p>
+<blockquote>
+<p>「그러나 실제로는 너나없이 니글이다. 다들 무언가를 성취하기를 꿈꾸지만 한편으로는 그걸 온전히 이룰 힘이 없음을 깨닫는다. … 하지만 그럴 수 있느냐 없느냐를 가름하는 건 인간의 몫이 아니다.」(p.34)</p>
+</blockquote>
+<p>근거 구절은 고전 15:58 「너희 수고가 주 안에서 헛되지 않은 줄 앎이라」(p.35). 결론: 「적어도 평생 한두 번쯤은 '달랑 이파리 한 장 얻었을 뿐'이란 감정에 시달릴지도 모른다」 — 그러나 「무슨 일을 하든지 <strong>'진짜 나무'가 있다</strong>는 사실을 알아야 한다」(p.36). 단 「"이러한 사실을 제대로 마음에 새긴다면"이란 전제가 붙는다」(p.36). 이것이 책 전체의 종말론적 받침대다 — 일의 의미는 완성도가 아니라 <strong>새 창조 안에서 보존됨</strong>에서 온다.</p>
+<h3>3. 창조에 새겨진 일: 존엄과 문화명령</h3>
+<p><strong>하나님이 먼저 일하셨다.</strong> 성경의 창조는 신화처럼 「갈등의 결과물이 아니다」(p.42). 창조를 가리키는 <strong>멜라카(mlkh)</strong>는 「인간의 노동을 뜻하는 히브리 단어의 어원」(p.42)이며, 「태초에 하나님은 일하셨다」(p.42). 하나님은 「공급자로서 샘물이 솟아나게 하시고 땅을 경작하시며 세상을 가꾸셨」(p.43)고, 「일하실 뿐만 아니라 일꾼들에게 그 일을 맡기기도 하신다」(p.44).</p>
+<blockquote>
+<p>「창조주께서 낙원에 일을 두셨다는 사실은 노동을 필요악이나 심지어 징계쯤으로 여기는 이들에게는 기겁할 만큼 놀라운 진리다. … <strong>일은</strong> 음식, 아름다움, 쉼, 우정, 기도, 섹스와 마찬가지로 인간의 기본적인 욕구에 해당한다. 영혼을 고치는 약이 아니라 영양을 공급하는 밥이다.」(p.45)</p>
+</blockquote>
+<p>발달장애 성인에게도 「노동이 절실하게 필요하다」(p.45)는 사례, 「하루하루 연명할 뿐만 아니라 온전한 인생을 살자면 일 자체가 필수적이다」(p.47)가 이어진다. 안식은 「짐스러운 명령이 아니라 자유로 이끄시는 초대」(p.49).</p>
+<p><strong>그리스 노동관 vs 성경 노동관:</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>그리스(플라톤·아리스토텔레스)</th>
+<th>성경</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>일의 지위</td>
+<td>「그리스인들에게 일은 저주에 지나지 않았다」(p.56, 틸게르)</td>
+<td>「인간 존엄을 보장하는 주요한 성분」(p.56)</td>
+</tr>
+<tr>
+<td>이상적 삶</td>
+<td>「실업 상태 … 야말로 진정으로 가치 있는 삶의 첫 번째 요건」(p.56)</td>
+<td>오직 사람만이 <strong>일을 명확히 부여받음</strong>(p.59)</td>
+</tr>
+<tr>
+<td>육체</td>
+<td>죽음은 「일종의 해방」, 「영혼의 친구」(p.57, 『파이돈』)</td>
+<td>「물질과 영혼이 영원토록 통합된 상태로 함께 사는 꿈을 제시하는 종교는 오로지 기독교뿐」(p.64)</td>
+</tr>
+<tr>
+<td>결론</td>
+<td>일은 인간을 <strong>짐승 수준으로 전락</strong>시킴</td>
+<td>일은 인간을 <strong>짐승과 구별해 존엄한 위치로</strong> 끌어올림(p.60)</td>
+</tr>
+</tbody>
+</table>
+<p>켈러는 이 그리스 논리가 「지금도 여전히 살아 왕성하게 작용하고 있다」(p.58)고 경고한다. 하나님의 창조 자체가 「'육체노동'이었다」(p.61) — <strong>「창세기에서 하나님은 정원사였으며 신약에서는 목수였다」</strong>(p.61).</p>
+<p><strong>문화명령(창 1:28).</strong> 「충만하라」는 「'출산'이 아니라 '문명'을 뜻하기 때문이다」(p.69). 「정복」은 타락 이전에 주어진 명령이므로 「폭력적인 의도가 눈곱만큼도 섞여 있지 않다」, 「'다스린다는' 건 청지기나 대리인 역할」(p.69). 창조 6일의 구조가 이를 보여 준다:</p>
+<table>
+<thead>
+<tr>
+<th>첫 사흘 — 영역을 <strong>나누심</strong>(형성)</th>
+<th>둘째 사흘 — 영역을 <strong>채우심</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>빛/어둠</td>
+<td>해·달·별</td>
+</tr>
+<tr>
+<td>하늘/바다</td>
+<td>새·물고기</td>
+</tr>
+<tr>
+<td>땅</td>
+<td>짐승·인간</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>「'정복'이라는 말은 세상을(타락하지 않은 원초적 상태에서조차도) 일의 무대로 만드셨음을 암시한다. … 지금부터는 인류가 개발하는 사역을 감당해야 한다.」(p.71)</p>
+</blockquote>
+<p>그래서 우리는 「능동적인 자세로 업무에 임하는 정원사」(p.72)이며, 영어 culture 자체가 「경작(cultivation)의 개념에 뿌리를 둔 단어」(p.73)다. 동물 이름 짓기는 「창조 과정에 동참하라고 부르시는 하나님의 초대장」(p.75).</p>
+<blockquote>
+<p>「인간은 일을 통해 혼돈에 질서를 부여하고, 새로운 사물을 만들어 내고, 창조 패턴을 활용하며, 공동체를 조직한다. 따라서 유전자를 결합시키든, <strong>뇌수술을 하든</strong>, 고물을 수집하든, 그림을 그리든, 일은 세상의 기본 구조를 더 발전시키거나 유지하거나 고치는 기능을 한다.」(p.75)</p>
+</blockquote>
+<h3>4. 소명: 칼레오와 루터의 혁명, 그리고 능숙함이 곧 사랑</h3>
+<p>「각 사람을 부르신 그대로 행하라」(고전 7:17, p.79). <strong>칼레오</strong>는 원래 구원으로의 부르심을 가리키고 <strong>에클레시아</strong>는 「'부르심을 받은 이들'」(p.80)이다. 그런데 바울은 같은 단어를 일상의 자리에 쓴다 — 하나님이 교회를 세우게 하시듯 「거룩한 백성들 모두에게 갖가지 달란트와 은사를 주셔서 인류 공동체를 건설하는 목표를 이루게 하셨다」(p.81).</p>
+<blockquote>
+<p>「한쪽에서 명령하고 이편에서도 자신이 아니라 상대를 위해 그 일을 해낼 때에 비로소 소명이나 부르심이 될 수 있다 … <strong>다른 이들을 섬기도록 하나님이 주신 과업으로 일을 새로이 정의하는 과정</strong>이 선행되지 않으면 일상적인 일은 소명이 될 수 없다.」(p.81–82)</p>
+</blockquote>
+<p><strong>하나님의 가면(larva Dei)</strong> — 루터식 논리: 하나님은 성읍을 어떻게 지키시는가? 「의원들, 경찰관들, 정부에서 일하는 관리들과 정치가들을 통해서가 아니겠는가? 그러므로 주님은 친히 부르신 이들의 노동을 도구 삼아 시민들의 필요를 채우신다」(p.86). 루터가 이 통찰에 이른 경로가 핵심이다 — 「저마다의 노력을 통해서가 아니라 <strong>오직 은혜로 구원을 받는다</strong>는 진리를 깨닫는 순간, 일의 의미를 바라보는 시각을 포함해서 성경의 가르침 전체를 다시 돌아보게 되었다」(p.89).</p>
+<blockquote>
+<p><strong>핵심 인사이트: 이신칭의가 노동관을 해방한다.</strong> 「남들이 애쓰고 수고해서 얻으려는 것들(구원, 자부심, 선한 양심, 평안 따위)을 크리스천들은 이미 그리스도 안에서 소유하고 있으므로 이제는 그저 하나님과 이웃을 사랑하기 위해 일하면 그만이다. 즐거이 감당하는 희생이자 자유가 보장된 제한이다.」(p.91)</p>
+</blockquote>
+<p><strong>능숙함 = 사랑.</strong> 「주차 위반 딱지를 끊든, 소프트웨어를 만들든, 책을 쓰든 제 일을 열심히 하는 것만큼 이웃을 사랑하기에 좋은 방법은 없다. 다만 <strong>노련하고 능숙하게</strong> 하는 게 중요하다」(p.94). 비상착륙 기장의 증언 — 「"승객들을 위해 잠깐 기도하고 곧바로 일에 집중했습니다."」(p.96) — 재난 앞의 승객에게 「기장이 동료들과 얼마나 사이좋게 지내는지, 또는 어떻게 다른 이들과 신앙을 나누는지 따위는 중요치 않았다」(p.97). 그래서 「<strong>능숙함은</strong> 가장 기초가 되는 자질」이며 「부와 명예가 따라오기도 하지만 그게 최종 목표는 아니다」(p.97). 1장의 「동료 전도」 물줄기에 대한 정면 교정이다.</p>
+<h3>5. 타락한 일: 가시덤불과 「해 아래서」</h3>
+<p>타락 후 인류는 「도덕적 분열증에 시달려 왔다」(p.108). 창 3장은 「사랑과 일이라는 인생의 두 가지 커다란 책무를 다하는 게 극심하게 힘든가? 이것이 그 이유다」(p.109)라고 말하는 듯하다 — 영어 labor(분만/노동), travail(산통/노고)이 같은 말인 이유(p.109).</p>
+<blockquote>
+<p>「"타락한 세상에서 일에게 닥친 저주 가운데 하나는 <strong>열매를 맺지 못하는 사례가 수두룩하다</strong>는 점이다."」(p.110)</p>
+</blockquote>
+<p>켈러는 자기 고백을 덧붙인다 — 세상에서 가장 신나는 일을 하고 있지만 「엄청난 가시덤불과 엉겅퀴를 경험하고 있는 것 또한 부인할 수 없는 사실」(p.113). 그래서 「정확하게 제자리에서 해야 할 일을 한다손 쳐도 일터에서 <strong>주기적으로</strong> 좌절을 경험하는 건 지극히 정상적인 현상」(p.116)이고, 평균 서너 번 직업을 바꾸는 시대에 「하나님은 우리에게 시킬 일을 바꾸실 수 있고 또 종종 그리하신다」(p.116). 그럼에도 「가시덤불과 먹을거리가 모두 예고된 셈이다」(p.117).</p>
+<p><strong>코헬레트의 세 프로젝트</strong> — 전도서 「해 아래에서」라는 표현이 「철학자의 시각을 파악할 수 있는 결정적 단서」(p.122, 「허구적 자전」 문학 형식):</p>
+<table>
+<thead>
+<tr>
+<th>프로젝트</th>
+<th>본문</th>
+<th>결말</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>① 지식과 지혜</td>
+<td>전 1:12–18, 2:12–16</td>
+<td>헛됨</td>
+</tr>
+<tr>
+<td>② 즐거움</td>
+<td>전 2:1–11</td>
+<td>헛됨</td>
+</tr>
+<tr>
+<td>③ 열심히 일해 성과 올리기</td>
+<td>전 2:17–26</td>
+<td>「이러므로 내가 사는 것을 미워하였노니」(p.125)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>「<strong>'해 아래서'</strong> 사는 삶이란 전제가 사라지지 않는 한, 궁극적으로는 무의미하기 짝이 없다는 뜻이다.」(p.126)</p>
+</blockquote>
+<p>후임자가 흔적을 「모조리 지워 버릴지도 모른다」(p.126)는 현실, 「외롭고 무의미한 일의 이 초상은 고되게 일해서 은총을 누리길 바라는 과욕을 눌러 준다」(p.131). 그러나 코헬레트는 동시에 「자기 일에 즐거워하는 것보다 더 나은 것이 없음을」(전 3:22), 「수고함으로 낙을 누리는 그것이 하나님의 선물」(p.137)이라 말한다. 전 4:5–6의 세 선택지:</p>
+<table>
+<thead>
+<tr>
+<th>빈손(5절)</th>
+<th>한 줌의 평안</th>
+<th>두 줌의 부(6절)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>어리석은 이의 게으름</td>
+<td>✅ 코헬레트의 권면</td>
+<td>「바람을 잡는」 수고</td>
+</tr>
+</tbody>
+</table>
+<p>📝 독자는 「<strong>일과 평온은 둘 다 필요하다</strong>」(p.138) 앞에 체크 표시를 했다.</p>
+<p><strong>직업 선택의 세 기준</strong>(p.133–135): ① 선택의 여지가 있다면 <strong>달란트와 능력</strong>에 맞는 일 ② 노동의 목적이 섬김이므로 <strong>이웃에게 유익</strong> ③ 가족·공동체·자신만이 아니라 <strong>그 분야 자체의 유익</strong>. 셋째가 독창적이다 — 섬긴다는 생각만 해도 「공동체에 요구할 몫이 있다는 관념을 갖게」 되지만(p.136), 「후배들이 그 작업을 더 잘 해내는 데 힘을 보탤 수 있다면 '일 자체에' 기여할 뿐만 아니라 참마음으로 이웃을 사랑하는 셈」(p.137).</p>
+<h3>6. 이기적인 일: 바벨에서 에스더의 왕궁까지</h3>
+<p>창 1–11장만큼 「'선물로 받은 은사를 관리하는 행복한 작업'에서 '자존감의 허상을 세우는 신경증적인 반응'으로 일이 변질되는 과정」(p.142)을 또렷이 보여 주는 곳은 없다. 바벨의 동기는 「권력과 영예, 만사를 제 뜻대로 통제할 권한을 극대화하려는 의도」이지만 이 허세는 「극도의 불안감을 선명하게 노출할 뿐」(p.142). <strong>「'이름을 낸다'는 말은 정체성을 확립한다는 의미」</strong>(p.143) — 이름을 내려 한다는 건 스스로 누구인지 모른다는 반증이다. 동시에 켈러는 이분법을 경계한다: 「'좋은 사람'으로 규정하고 … '나쁜 인간'으로 단정하는 건 대단히 위험한 발상」(p.146).</p>
+<p><strong>에스더 — 회색지대의 크리스천.</strong> 페미니스트는 굴종에, 다른 이들은 「윤리적인 타협을 기반으로 권력의 핵심부에 들어갔다」는 데 분개한다. 「이처럼 도덕적으로, 문화적으로, 영적으로 애매모호한 상황에서도 하나님은 여전히 우리와 더불어, 그리고 우리를 통해 일하시는가? 에스더서의 대답은 "그렇다"이다」(p.147). 귀환기 세 책의 대비:</p>
+<table>
+<thead>
+<tr>
+<th>책</th>
+<th>인물 유형</th>
+<th>사역</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>에스라서</strong></td>
+<td>목회자·말씀 교사</td>
+<td>가르침</td>
+</tr>
+<tr>
+<td><strong>느헤미야서</strong></td>
+<td>탁월한 관리자</td>
+<td>성벽 재건</td>
+</tr>
+<tr>
+<td><strong>에스더서</strong></td>
+<td>시민 정부 안의 영향력자</td>
+<td>극심한 부정과 맞섬</td>
+</tr>
+</tbody>
+</table>
+<p>「하나님은 이들 모두를 사용하셨다」(p.149). 다니엘·요셉·에스더 모두 「선지자나 제사장, 장로, 교사는 아무도 없었다」(p.148). 또한 「전문사역자들이 날마다 하는 일들은 회색 지대가 상대적으로 적어서 흑백을 가리기가 한결 낫습니다」(p.148)라는 대목이 표시되어 있다.</p>
+<blockquote>
+<p>「에스더가 궁궐 생활을 잃어버릴 각오를 하면 모든 걸 상실할지 모르지만, 대궐의 삶을 잃어버릴 위험을 무릅쓰지 않는다면 어김없이 모든 걸 다 빼앗길 것」(p.153) — 「"수중에 넣은 영향력과 자격증, 돈을 풀어 남들을 섬기지 않는다면, 왕궁은 곧 감옥이 될 겁니다."」(p.153)</p>
+</blockquote>
+<p><strong>핵심 인사이트: 죄책감은 연료가 못 된다.</strong> 에스더처럼 되겠다는 결심이 「이기적인 삶에 대한 죄책감, 엘리트 의식을 가졌던 것에 대한 죄책감」에서 왔다면 「얼마 지나지 않아 추진력이 떨어지게 마련」이고 결국 「또 다른 형태로 자기 의를 드러내는 게 고작」(p.156–157). 답은 에스더의 「죽으면 죽으리이다」와 그리스도의 차이에 있다 — 「그리스도는 "죽으면 죽으리이다"라고 말씀하신 게 아니라 <strong>"죽어야 할 때가 차면 반드시 죽을 것이다"</strong>라고 약속하셨다」(p.158). 우리 대신 확정적으로 죽으신 분이 우리를 왕궁에서 자유롭게 한다.</p>
+<h3>7. 우상: 개인에서 문화로 — 일이 「구원」이 될 때</h3>
+<p>루터: 「첫 번째 계명만 잘 지키면 나머지 계명들을 어길 일이 없」다(p.166). 「거짓말하는 죄의 밑바닥에는 우상숭배라는 더 교묘하고 근원적인 악이 깔려 있는 법」(p.167). 개인 우상은 파악이 어렵지 않지만 「집합적으로도 우상은 죄와 문제가 싹트는 온상」(p.168)이다.</p>
+<table>
+<thead>
+<tr>
+<th>사회 유형</th>
+<th>집합적 우상</th>
+<th>일에 미치는 영향</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>전통사회</td>
+<td><strong>가족·혈통·인종</strong></td>
+<td>가족 가치를 떠받드느라 「학대받는 여성이나 자녀들을 지원하고 보호하려는 움직임이 약할 수밖에」(p.172)</td>
+</tr>
+<tr>
+<td>근대(모던)</td>
+<td><strong>이성·개인의 자유</strong></td>
+<td>「개인이 우주의 중심」 → 「인간이 스스로 하나님을 대신」(p.175) → <strong>「일은 이제 자신을 규정하는 수단」</strong>, 일을 「'좋은 것'에서 일종의 '구원'으로까지 격상」(p.176)</td>
+</tr>
+<tr>
+<td>탈근대(포스트모던)</td>
+<td><strong>과학기술·불확실성·시장</strong> — 「목적 없는 수단」</td>
+<td>2008년 금융위기의 기만·사기는 「'목적 없는 수단'이란 우상이 낳은 가장 확연한 성과」(p.183)</td>
+</tr>
+</tbody>
+</table>
+<p>「하이데거와 닥스뿐만 아니라 자크 엘룰을 비롯해 수많은 학자들」이 기술과 시장을 포스트모던의 우상으로 지목한다(p.181, → <span class="wl-dead" title="위키 내부 링크">자끄엘륄</span>). 좌우 양쪽이 모두 이 우상을 알아챘다는 점(p.184)도 표시.</p>
+<h3>8. 복음의 스토리라인: 세계관이 일하는 방식을 바꾼다</h3>
+<p>3부의 선언: 「<strong>복음은</strong> 지금 이곳에서 영감을 잃지 않고, 현실을 직시하며, 충족감을 느끼며, 신실하게 일하는 힘의 원천」(p.187). 복음이 일에 주는 네 가지 — 이것이 3부 네 장의 목차다:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>복음이 주는 것</th>
+<th>해당 장</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>맥락이 전혀 다른 <strong>대안적 스토리</strong></td>
+<td>새로운 스토리(세계관)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>주님의 파트너로 세상을 돌보는 <strong>새 노동관</strong></td>
+<td>일반 은총·새로운 개념</td>
+</tr>
+<tr>
+<td>3</td>
+<td>마음에 관한 조언 + 현명한 결정을 위한 <strong>새 윤리 기준</strong></td>
+<td>새로운 나침반</td>
+</tr>
+<tr>
+<td>4</td>
+<td>동기를 백팔십도 바꾸는 <strong>새 힘</strong></td>
+<td>새로운 힘</td>
+</tr>
+</tbody>
+</table>
+<p>「스토리라인에 비추어 보지 않으면 무엇도 이해하기 어렵다」(p.193). 모든 세계관은 세 질문에 답한다 — ①상황이 어떻게 흘러가야 마땅한가 ②<strong>문제점</strong>은 무엇인가 ③<strong>해결책</strong>은 무엇인가(p.199). 세계관별 「문제」 진단(p.197–198, 독자가 핵심어에 동그라미):</p>
+<table>
+<thead>
+<tr>
+<th>사상가</th>
+<th>인간 문제의 근원</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>플라톤</td>
+<td><strong>육신</strong>과 그 연약함</td>
+</tr>
+<tr>
+<td>마르크스</td>
+<td>불공정한 <strong>경제구조</strong></td>
+</tr>
+<tr>
+<td>프로이트</td>
+<td>욕구와 <strong>양심</strong>의 무의식적 갈등</td>
+</tr>
+<tr>
+<td>사르트르</td>
+<td>객관적 가치가 없음을 깨닫지 못함</td>
+</tr>
+<tr>
+<td>스키너</td>
+<td><strong>환경의 지배</strong>를 자각하지 못함</td>
+</tr>
+<tr>
+<td>로렌츠</td>
+<td>진화가 낳은 태생적 공격성</td>
+</tr>
+<tr>
+<td><strong>기독교</strong></td>
+<td><strong>죄</strong>(하나님과의 관계 상실) → 해결은 <strong>은혜</strong>(p.201)</td>
+</tr>
+</tbody>
+</table>
+<p>압축하면 창조(계획)·타락(문제)·구원과 회복(해결책) — 「온 세상은 선하다. 온 세상은 죄에 빠져 있다. 온 세상은 구원을 받고 회복될 것이다」(p.202). 이 틀이 <a class="wl" href="../../b/%EC%B0%BD%EC%A1%B0%ED%83%80%EB%9D%BD%EA%B5%AC%EC%86%8D_%EC%9B%94%ED%84%B0%EC%8A%A4/">창조타락구속_월터스</a>와 정확히 같은 골격이다.</p>
+<p><strong>직업별 적용</strong>: 비즈니스 — 「"목적이 없는 이윤은 재앙을 짓는 레시피"」(p.207), 자동차 영업 관행 대신 「복음의 스토리라인을 따랐다」(p.208, 📝 상단 여백에 「<strong>복음의 스토리라인.</strong>」 손글씨). 언론 — 세계관에 따라 「천진난만하리만치 긍정적이거나 과도하다 싶을 만큼 냉소적」(p.210). 예술 — 복음은 어두운 스토리와 낙관을 「태피스트리의 씨줄과 날줄로 삼아 어느 쪽도 짓눌리지 않는 온전한 그림을 짜낸다」(p.216).</p>
+<h3>9. ★ 복음과 의료 — 이 책에서 가장 진하게 표시된 대목</h3>
+<p>📝 독자는 소제목 「복음과 의료」 옆과 「<strong>'전인'</strong>」 아래에 <strong>별표(☆) 두 개</strong>를 그렸다. 켈러가 리디머 교회 의료인 그룹에서 모은 증언을 네 겹의 위험으로 정리할 수 있다:</p>
+<table>
+<thead>
+<tr>
+<th>위험</th>
+<th>원문</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>① 소명 상실</td>
+<td>「직면하는 가장 큰 위험은 소명을 잃어버릴지 모른다는 점」(p.217)</td>
+</tr>
+<tr>
+<td>② 권력의 유혹</td>
+<td>「생명을 인계받아서 노예로 만드는 권력으로 지배하라는 유혹」 — 「일종의 자아 마사지」(p.217)</td>
+</tr>
+<tr>
+<td>③ 우월감</td>
+<td>「의료나 목회처럼 남들을 돕는 일을 하는 이들은 스스로 고상하고 베푸는 노동을 한다고 생각해서 상대적 우월감을 느끼기 쉽다」(p.217)</td>
+</tr>
+<tr>
+<td>④ 냉소와 분리</td>
+<td>「앙심과 고소로 답하는 배은망덕하고 불합리하며 완고한 이들」 → 「인간에 대해 극도로 냉소적이 되고 … 감정적으로 분리되며 거리를 두고 안정을 확보하려는 본능적인 방어기제」(p.217–218)</td>
+</tr>
+</tbody>
+</table>
+<p>「오직 복음만이 살금살금 됨됨이 속으로 기어들어온 교만과 냉소, 분리 따위를 똑바로 보게 한다」(p.218). 문화적 압력도 있다 — 「의사들은 임상의 견고한 울타리를 넘어 영적인 영역을 탐험하는 걸 몹시 주저한다」(p.218). <strong>로드 호더</strong>의 관찰: 환자 가운데 「삼분의 일 정도만 확실하게 의학적으로 문제가 있을 뿐, 나머지는 걱정 근심과 스트레스, 살면서 내린 어처구니없는 선택 … 탓에 탈이 났거나 악화된 사례」(p.219).</p>
+<blockquote>
+<p>「요컨대, <strong>'전인'</strong>이란 개념이 발붙일 자리는 없어졌다. 인간은 몸과 정신과 영혼으로 구성된다는 옛 관념은 사라지고 정신적, 정서적, 영적 신경증을 가진 몸만 남았다.」(p.220–221)</p>
+<p>「'의료'는 지극히 고귀한 소명이다. 하지만 주님은 육체만 보살피시지 않는다. <strong>영혼도</strong> 지으시고 구속하셨다. 따라서 크리스천 의료인은 전인적인 인간을 염두에 두어야 한다.」(p.221)</p>
+</blockquote>
+<p>→ <a class="wl" href="../../t/%EC%A0%84%EC%9D%B8%EC%B9%98%EC%9C%A0/">전인치유</a>·<a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a>의 「진료실의 영성」과 직결. 동시에 켈러는 「누가 봐도 기독교적인 활동을 하는 경우에만 복음적인 세계관이 작동한다고 믿는 건 심각한 오류」(p.222)라고 덧붙인다 — 전인 치유는 진료실에서 전도하라는 말이 아니라 <strong>환자를 몸으로만 보지 않는 시선</strong>이다.</p>
+<h3>10. 일반 은총: 세상에 중립은 없지만, 비신자의 일도 선물이다</h3>
+<p>세계관만 강조하면 부작용이 생긴다. 그뿐이라면 「크리스천 말고는 선한 일이나 행동을 할 수 없다거나 … 예수님을 모르는 이들이 하는 노동과 백팔십도 달라야 하는데, 현실은 그렇지가 않다」(p.228). 또 「세계관의 측면에서만 일을 보고 하나님의 섭리와 사랑이라는 차원에서 살필 줄 모른다면」 성경의 노동관이 「노동자 계층과는 별 상관이 없는 걸로 여기는 꼴」(p.230)이 된다.</p>
+<p><strong>성경의 일반 은총 사례</strong>(p.233): <strong>브살렐</strong>의 예술적 재주는 하나님의 영에서(출 31) · 이방 왕 <strong>고레스</strong>에게 기름 부으심(사 45) · 또 다른 이방 왕을 죄에서 지키심(창 20). 「하나님은 일반 은총을 통해 인류에게 축복을 베푸시고 거룩한 자녀들이 주님을 모르는 이들과 협력하며 유익을 얻게 하셨다」(p.233).</p>
+<p>비신자는 진리를 분간할 수 있는가? 「그렇기도 하고 아니기도 하다」(p.235) — <strong>「세상에 중립은 없다」</strong>(p.235)면서도 그릇된 세계관 안에서 성경적 진실의 일부를 알아볼 수 있다는 것이 일반 은총이다. 「모차르트는 예수를 믿었든 아니든, 선물임에 틀림없다」(p.237).</p>
+<blockquote>
+<p><strong>핵심 인사이트: 크리스천 스토리의 악당은 비신자가 아니다.</strong> 「크리스천의 스토리에서 악당은 그리스도를 주님으로 인정하지 않는 이들이 아니라 <strong>죄의 실존</strong>, 그 자체다. 복음은 그이들뿐만 아니라 크리스천들의 내면에도 죄가 도사리고 있다고 지적한다.」(p.238)</p>
+</blockquote>
+<p>대중문화 외면에 대해: 몸을 빼내면 「죄스럽다는 느낌이 덜 들지 모르지만 실은 어리석기 짝이 없는 것」(p.239). 필요한 것은 죄를 「'우상을 만들려는 마음의 강박적 욕구'로 죄를 규정하는 '두터운' 신학적 시각」 — 그래야 「무작정 도망치거나 무절제하게 소비하는 오류를 범하지 않고 겸손하면서도 비판적인 자세로 문화에 참여」(p.240). 모든 문화 산물은 「하나님의 일반계시에 대한 긍정적인 반응인 동시에 그분의 주권적인 통치에 반역하는 몸짓」(p.241). 그리고 <a class="wl" href="../../t/%EC%9D%B4%EC%9B%90%EB%A1%A0/">이원론</a>은 「명백하게 그리스도의 이름으로 하는 일이어야 주님을 기쁘시게 할 수 있다는 착각」(p.243)을 낳는다.</p>
+<h3>11. 새 나침반과 새 힘: 윤리·지혜, 그리고 열정과 안식</h3>
+<p><strong>손익분석 윤리의 한계.</strong> 프리드먼의 「'주주의 이익을 극대화하는 것'」(p.248) 아래서 「다들 손익분석을 토대로 한 윤리를 부르짖고 있는 셈」인데, 「하지만 그걸로 충분한가?」(p.249) — 형편에 따라 「정직한 태도가 비즈니스에 해롭다는 말이 나오는 것」(p.249). 부패는 낙후 지역 문제가 아니며(p.251) 「일터에서 개인이 저지르는 부정은 기하급수적으로 새끼를 치며 사회 전체에 어마어마하게 증폭된 파장」(p.252).</p>
+<p><strong>지혜 — 인생사의 80퍼센트.</strong> 윤리 논의에는 「'지혜'라는 커다란 범주가 통째로 빠져 있」다(p.260): 「<strong>지혜는</strong> … 도덕률이 명쾌한 답을 주지 않는 인생사의 80퍼센트에 이르는 영역에서 마땅히 해야 할 바를 알려 준다」(p.260).</p>
+<table>
+<thead>
+<tr>
+<th>지혜를 얻는 길(p.261–263)</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 하나님을 <strong>인격적으로 알아 감</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>2. <strong>자신을 앎</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>3. <strong>경험</strong>에서 배움</td>
+<td></td>
+</tr>
+<tr>
+<td>4. <strong>성령님</strong> — 「'지혜의 영'(엡 1:17)」</td>
+<td>행 15장 예루살렘 회의: 「지식과 경험을 총동원해 고민하고 검토한 끝에, 성령님께 맡기겠다는 지혜로운 결정」(p.263)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>일꾼과 상사의 마음가짐(엡 6장).</strong> 「그리스도께 하듯이」(p.264) — ①온 마음을 다해 ②「존경과 두려움」 ③「눈가림」이 아니라 ④「기쁜 마음으로」(p.265–267). 상사에게는 「"위협을 그치라"는 말은 책임을 묻고 압력을 행사하는 방식으로 일을 시켜서는 안 된다는 뜻」(p.269). 크리스천이 일터에서 들어야 할 평판: <strong>너그럽다</strong>(p.271) · 난관 앞에서 <strong>평온하고 침착하다</strong>(p.272) · <strong>편협한 종파주의자로 비치지 않는다</strong>(p.273). 새내기에게는 「되짚어 보고 고민하기를 게을리 하지 말아야 한다. 그래야 언젠가 더 큰 권한과 영향력을 가졌을 때 … 핵심적인 변화를 이끌어 낼 수 있을 것」(p.278).</p>
+<p><strong>새 힘 — 열정.</strong> 「허다한 현대인들이 생산성이니, 성공이니 하는 데서 자존감을 얻으려 안간힘을 쓰지만 금방 탈진」(p.281). 제자들은 「일과 돈에 매이지 않는 정체성과 의미가 생겼으므로」 따라나설 수도, 다시 그물을 잡을 수도 있었다(p.282). 회심한 시리아 사령관 <strong>나아만</strong>의 고백으로 읽는 자세:</p>
+<blockquote>
+<p>「"국가를 위해 <strong>봉사</strong>하겠지만 절대로 <strong>섬기지는</strong> 않겠다. 시리아의 국익이 내게도 중요하지만 더 이상 거기에 궁극적인 가치를 두거나 신으로 삼지는 않겠다"」(p.283)</p>
+</blockquote>
+<p>성경의 <strong>열정</strong>은 「자신의 자유를 누군가를 위해 희생하는 자세」(p.287)이고, 롬 12:11 「열심」은 「'<strong>긴급</strong>'과 '<strong>성실</strong>'이 결합된 의미」(p.288).</p>
+<p><strong>새 힘 — 안식.</strong> 「하나님은 안식일을 종살이에서 풀려난 사건을 재연하는 날로 그려 보이신다」(p.292, 신 5장). 「안식일을 지키라는 거룩한 명령에 순종할 수 없다면, 누구든 노예 신세다. 개중에는 <strong>자진해서 노예가 되는</strong> 이들까지 있다. 그러므로 <strong>안식일은 일종의 해방 선언</strong>이다」(p.292). 「장기적으로는 두말할 것도 없이 <strong>푹 쉰</strong> 이들이 더 생산적」(p.293)이지만, 「쉬는 사이에도 염려를 내려놓지 못한다면 안식일에 참여하고 있는 게 아니다」(p.294). 하나님께 기댈지 공동체에 기댈지 — 「정답은 <strong>'양쪽 모두'</strong>다」(p.294).</p>
+<blockquote>
+<p>「녹초가 되도록 일을 시키지 않으며 최상의 성과를 내지 않아도 구박하지 않는 상사는 그리스도뿐이다. 주님이 시키시는 일은 <strong>이미 완성되어 있는</strong> 까닭이다.」(p.295)</p>
+</blockquote>
+<p>→ 2절 「니글의 이파리」의 「진짜 나무」와 수미상관 — 일이 이미 완성되어 있기에 쉴 수 있다.</p>
+<hr />
+<h2>목회적 적용 — 리디머 교회의 「신앙과 노동」 사역 (에필로그)</h2>
+<p>리디머는 렘 29:7 「그 성읍이 평안함으로 너희도 평안할 것」을 사역 방향으로 삼았다(p.301). 사역의 전환을 보여 주는 표(p.303)에서 독자가 표시한 항목:</p>
+<table>
+<thead>
+<tr>
+<th>변화 이전</th>
+<th>변화 이후 (표시)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>…</td>
+<td>하나님의 섭리를 좇아 <strong>지상의 일에 기여</strong></td>
+</tr>
+<tr>
+<td>…</td>
+<td><strong>하나님을 위해 사는 삶</strong></td>
+</tr>
+<tr>
+<td>…</td>
+<td>세상에 <strong>적극 개입·참여</strong></td>
+</tr>
+<tr>
+<td>…</td>
+<td><strong>공동체</strong>를 받아들임</td>
+</tr>
+<tr>
+<td><strong>인간에 초점</strong></td>
+<td><strong>제도에 초점</strong></td>
+</tr>
+<tr>
+<td>…</td>
+<td>하나님은 누구든 친히 선택한 이를 통해 역사(<strong>일반 은총</strong>)</td>
+</tr>
+</tbody>
+</table>
+<p>CFW의 세 목표 — <strong>준비시키고(equip), 연결시키며(connect), 동기를 부여한다(mobilize)</strong>. 「성인 학습 전문가들은 새로운 사상을 듣고(준비), 동료들과 토론하며 검토하고(연결), 시뮬레이션하거나 실제 상황에 적용하지 않으면(동기 부여) 변화가 일어나지 않는다고 말한다」(p.308, 📝 여백 세로 괄호). 실제 구조: 월 1회 <strong>직능 그룹</strong>(연기자·건축가·금융·보건·외교·법률 등, p.310), 청년 직장인 9개월 <strong>고섬 펠로우십</strong>(어거스틴·칼뱅·오웬·루터 강독, p.310). 교회가 할 수 있는 최소치 — 「비즈니스, 예술, 사회복지로 영역을 세 갈래로 나누어 의견을 주고받는 정도는 어느 교회에서나 가능」, 직군별 12–24명이 <a class="wl" href="../../b/%EC%86%8C%EB%AA%85_%EC%98%A4%EC%8A%A4%EA%B8%B0%EB%8B%88%EC%8A%A4/">오스 기니스 『소명』</a>이나 <a class="wl" href="../../b/%EC%B0%BD%EC%A1%B0%ED%83%80%EB%9D%BD%EA%B5%AC%EC%86%8D_%EC%9B%94%ED%84%B0%EC%8A%A4/">월터스 『창조, 타락, 구속』</a>을 함께 읽는 것(p.313).</p>
+<blockquote>
+<p>「① 일은 하나님이 저마다 가진 우상들을 조명하시고 죄다 녹여서 그리스도를 닮게 하시는 <strong>용광로</strong> 구실을 하는 경우가 많다. ② 교회는 신실하게 일터를 지키는 크리스천들을 통해 세상을 두루 어루만진다.」(p.312)</p>
+</blockquote>
+<h2>교차 연결</h2>
+<ul>
+<li><a class="wl" href="../../b/%EC%86%8C%EB%AA%85_%EC%98%A4%EC%8A%A4%EA%B8%B0%EB%8B%88%EC%8A%A4/">소명_오스기니스</a> — 켈러가 직접 추천 도서로 꼽은 짝. 기니스의 <strong>1차/2차 소명</strong>이 켈러의 칼레오의 이중 용법(p.80–81)과 같은 구조, 기니스의 「개신교적 왜곡」(소명→직업)은 켈러 7절의 일이 구원으로 격상과 같은 진단.</li>
+<li><a class="wl" href="../../b/%EC%B0%BD%EC%A1%B0%ED%83%80%EB%9D%BD%EA%B5%AC%EC%86%8D_%EC%9B%94%ED%84%B0%EC%8A%A4/">창조타락구속_월터스</a> — 8절 3막 스토리라인의 원형. 켈러가 소그룹 교재로 추천(p.313).</li>
+<li><a class="wl" href="../../b/%EC%9D%BC%ED%84%B0%EC%8B%A0%ED%95%99_%ED%8F%B4%EC%8A%A4%ED%8B%B0%EB%B8%90%EC%8A%A4/">일터신학_폴스티븐스</a> — 「능숙함=사랑」(켈러) ↔ <strong>주님의 일의 기준은 종교성이 아니다</strong>(스티븐스)가 같은 결론. 스티븐스의 베버 다시 읽기(일 중독=행위 구원론)이 켈러 4절 이신칭의가 노동관을 해방한다와 겹침.</li>
+<li><a class="wl" href="../../b/%EC%A0%84%EB%8F%84%EC%84%9C_%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%86%A0%ED%8D%BC%EB%9D%BC%EC%9D%B4%ED%8A%B8/">전도서_크리스토퍼라이트</a> — 5절 「해 아래서」 읽기의 병행 주석.</li>
+<li><span class="wl-dead" title="위키 내부 링크">권성수_일터의하나님시리즈</span> — 「정원사 하나님」·문화명령·타락이 저주한 것은 일이 아니라 땅·일이 우상을 알려준다 등 <strong>골격이 이 책 1–2부와 거의 겹친다</strong>(설교가 이 책을 참고했는지는 미확인).</li>
+<li><span class="wl-dead" title="위키 내부 링크">문대원_우리가사랑한우상들시리즈</span> — 7절 개인·집합적 우상론의 설교판.</li>
+<li><span class="wl-dead" title="위키 내부 링크">졸업생_모임</span> — CMF 졸업생 강의(「슬기로운 누가」)에서 이미 「<strong>일과 영성을 읽어라</strong> — 주일 11시가 월요일 11시에 영향을 미칠 수 없다면」으로 추천한 책. 로잔 전문인 모임 도서 목록에도 올라 있다.</li>
+<li><a class="wl" href="../../t/%EC%9D%BC%EB%B0%98%EC%9D%80%EC%B4%9D/">일반은총</a>·<a class="wl" href="../../t/%EC%9A%B0%EC%83%81%EC%88%AD%EB%B0%B0/">우상숭배</a>·<a class="wl" href="../../t/%EC%84%B8%EA%B3%84%EA%B4%80/">세계관</a>·<a class="wl" href="../../t/%EC%A0%84%EC%9D%B8%EC%B9%98%EC%9C%A0/">전인치유</a>·<a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%8B%A0%ED%95%99/">직업신학</a>·<a class="wl" href="../../t/%EC%9D%BC%ED%84%B0%EC%8B%A0%ED%95%99/">일터신학</a></li>
+</ul>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<p><strong>적용</strong>
+- <strong>의료(진료실)</strong>: 9절의 네 겹 위험(소명 상실·권력·우월감·냉소)을 CMF 졸업생·전공의 대상 기독의료인 정체성 강의의 진단 틀로 쓸 수 있다. 특히 돕는 직업의 우월감(p.217)은 의료와 목회를 한 문장에 묶어 두 영역을 오가는 사람에게 정확히 겨눠진 말이다.
+- <strong>전인 치유</strong>: 호더의 환자의 삼분의 이 관찰(p.219)과 「영혼도 지으시고 구속하셨다」(p.221)를 <a class="wl" href="../../t/%EC%A0%84%EC%9D%B8%EC%B9%98%EC%9C%A0/">전인치유</a> 페이지의 성경적 근거로 보강.
+- <strong>CMF·교회 일터 사역</strong>: CFW의 준비–연결–동기부여 3단(p.308)과 세 갈래 직능 그룹 + 12–24명 독서 모임(p.313)은 누가회 졸업생 사역·지역교회 의료선교부에 바로 이식 가능한 최소 모델이다.
+- <strong>리더십·이사회</strong>: 에스더 「왕궁은 곧 감옥이 될 겁니다」(p.153)와 죄책감은 연료가 못 된다(p.156)는 영향력 있는 자리에 있는 이들을 권면할 때의 핵심 문장.
+- <strong>안식</strong>: 「자진해서 노예가 되는 이들」(p.292)과 「상사는 그리스도뿐」(p.295) — 진료·사역·개발을 병행하는 삶에 대한 자기 점검 문장.</p>
+<p><strong>미해결 질문</strong>
+- 켈러는 「능숙함」을 사랑의 기초로 세우는데(p.97), <strong>능숙하지 못한 시기(수련의·초보)</strong>나 <strong>능숙함을 잃어 가는 시기(은퇴·질병)</strong>의 일은 무엇으로 정당화되는가? — 「진짜 나무」(p.36)가 그 답인가?
+- 일반 은총의 「협력」(p.233)과 「세상에 중립은 없다」(p.235)의 긴장을, 비신자 동료와 공동 개원·공동 사업을 할 때 실제 의사결정에서 어떻게 가르는가?
+- 리디머 표의 <strong>인간에 초점 → 제도에 초점</strong>(p.303)을 한국 교회 의료선교에 적용하면 무엇이 바뀌는가 — 단기 진료에서 현지 의료 <strong>체계</strong> 강화로의 전환(<a class="wl" href="../../t/%EC%9D%98%EB%A3%8C%EB%8B%A8%EA%B8%B0%EC%84%A0%EA%B5%90/">의료단기선교</a>)과 같은 방향인가?
+- 전문사역자의 일은 「회색 지대가 상대적으로 적어서」(p.148)는 전제는 사실인가? 목회·선교 단체 이사회 현장의 경험과 맞는가?</p>
+<hr />
+<blockquote>
+<p>📖 전사 원문(줄이지 않은 표시 구절 전체): <span class="wl-dead" title="위키 내부 링크">일과영성_팀켈러_전사</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/일터신학</span><span>#topic/직업소명</span><span>#topic/문화명령</span><span>#topic/일반은총</span><span>#topic/우상숭배</span><span>#topic/의료인소명</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
