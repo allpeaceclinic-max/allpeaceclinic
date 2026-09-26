@@ -1,0 +1,370 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>영성에의 길 — 헨리 나우웬 (IVP) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">영성·제자도</span><span class="author">헨리나우웬</span><span class="date">2026-09-27</span></div>
+  <h1 class="note-title">영성에의 길 — 헨리 나우웬 (IVP)</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/%EC%98%81%EC%84%B1%EC%97%90%EC%9D%98%EA%B8%B8_%ED%97%A8%EB%A6%AC%EB%82%98%EC%9A%B0%EC%9B%AC/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<blockquote>
+<p>원제 <em>Finding My Way Home</em>. 1995년에 나온 세 편의 글 「능력의 길」·「평안의 길」·「기다림의 길」에, 시카고 국제 가톨릭 에이즈 집회 연설과 인터뷰에서 발췌한 「삶과 죽음의 길」을 더해 엮은 책이다(서문 p.12·14). 네 편이 모두 <strong>집을 향해 가는 영적 여정</strong>을 다룬다. 📷 표시 전사(25면) 기반 독서 노트.</p>
+<p>⭐ 「짧은 글이지만 긴 묵상으로」 — 2010. 10. 5 출근길, 지하철에서
+뒤 면지에 <strong>책 네 편을 한 쪽으로 정리한 도해</strong>와 날짜 메모가 있다(§9에 전문). 나우웬을 읽은 날짜 기록이 이것으로 넷이 된다: <a class="wl" href="../../b/%EC%83%81%EC%B2%98%EC%9E%85%EC%9D%80%EC%B9%98%EC%9C%A0%EC%9E%90_%ED%97%A8%EB%A6%AC%EB%82%98%EC%9A%B0%EC%9B%AC/">09.6.30</a> → <a class="wl" href="../../b/%EC%98%81%EC%84%B1%EC%88%98%EC%97%85_%ED%97%A8%EB%A6%AC%EB%82%98%EC%9A%B0%EC%9B%AC/">2010.5.3</a> → <strong>2010.10.5</strong> → <a class="wl" href="../../b/%EC%B6%A4%EC%B6%94%EC%8B%9C%EB%8A%94%ED%95%98%EB%82%98%EB%8B%98_%ED%97%A8%EB%A6%AC%EB%82%98%EC%9A%B0%EC%9B%AC/">2011.5.26</a>. 「영성 수업」 뒤 다섯 달 만의 기록이다. 독자는 책 전체를 다섯 단어로 줄였다: <strong>무력함 · 연약함 · 수난 · 죽음 · 기다림</strong>.</p>
+</blockquote>
+<p><strong>한 문장 명제</strong>: 영적 여정의 능력은 통제에서 오지 않는다. 능력은 <strong>연약함을 받아들이는 데서</strong> 오고, 그렇게 기다리는 자리에 <strong>하나님도 우리의 반응을 기다리며 함께 서 계신다</strong>.</p>
+<hr />
+<h2>1. 네 개의 길 — 책의 지도</h2>
+<p>엮은이의 서문이 네 편을 차례로 소개한다. 독자는 서문에 나오는 네 제목에 모두 밑줄을 그었다(p.12~14).</p>
+<table>
+<thead>
+<tr>
+<th>길</th>
+<th>원 출처</th>
+<th>핵심 운동</th>
+<th>면지 노트(독자)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>능력의 길</strong></td>
+<td>1995 크로스로드</td>
+<td>권력 → 무력함 → 능력</td>
+<td>권력(power) — 무력함(powerlessness) — 능력(power), 무력함 밑에 「성육신」</td>
+</tr>
+<tr>
+<td><strong>평안의 길</strong></td>
+<td>1995 크로스로드</td>
+<td>라르쉬 데이브레이크의 아담에게서 배운 평안</td>
+<td>ex) 아담. 존재에 거하는(?) · 마음에 근거하는 · 공동체를 형성하는</td>
+</tr>
+<tr>
+<td><strong>기다림의 길</strong></td>
+<td>1995 크로스로드</td>
+<td>하나님을 기다림 ↔ 우리를 기다리시는 하나님</td>
+<td>두려움·남은 자·본질·훈련·θ의 기다림 (가장 길게 적음)</td>
+</tr>
+<tr>
+<td><strong>삶과 죽음의 길</strong></td>
+<td>에이즈 집회 연설 + 크로스포인트 인터뷰</td>
+<td>성공이 아닌 열매</td>
+<td>열매 맺는 또 다른 길 · 연약함의 극치 ⇒ 열매</td>
+</tr>
+</tbody>
+</table>
+<p>밑줄의 분포를 보면 이 독서의 무게가 어디 있었는지 드러난다. 표시 25면 가운데 <strong>16면(p.71~91)이 「기다림의 길」</strong>이다.</p>
+<h2>2. 능력의 길 — 멀리서, 위로부터 보기</h2>
+<p>나우웬은 먼저 <strong>시점</strong>을 정한다. 우주 비행사가 푸른 별을 내려다보는 비유로 시작하지만, 그가 원하는 것은 물리적 거리가 아니다.</p>
+<blockquote>
+<p>"나 역시 우리 세상을 멀리서 바라보고 싶다. 비행기나 우주선을 이용한 물리적 거리가 아니라, 신앙에 입각한 영적인 거리를 두고 바라보고 싶다." (p.22)</p>
+</blockquote>
+<p>이 시점이 곧 신학의 정의로 이어진다. 신학은 「하나님의 시각으로 실재를 바라보는 것」(p.22)이고, 능력의 길은 「연약함의 신학」(p.23)이다. 그다음 독자가 밑줄 그은 문장이 이 편의 설계도다.</p>
+<blockquote>
+<p>"나는 세 단어 즉 '권력'(power), '무력함'(powerlessness), '능력'(power)에 초점을 맞출 것이다." (p.23)</p>
+</blockquote>
+<p>같은 영어 단어 power가 앞뒤에 두 번 나오고, 그 사이에 무력함이 끼어 있다. 억압하는 권력이 <strong>무력함을 통해</strong> 무너지고, 해방하고 치유하는 능력으로 다시 태어난다. 면지 노트는 가운데 항 「무력함」 밑에 <strong>「성육신」</strong>을 적어, 이 전환의 경첩이 하나님의 하향성임을 짚었다. 서문도 두 번째 능력을 「우리의 연약함이 능력」(p.12~13)이라고 요약한다.</p>
+<blockquote>
+<p>🔗 <a class="wl" href="../../t/%EA%B6%8C%EB%A0%A5/">권력</a> — 종교 권력의 남용(서문 p.12 「그것은 정곡을 찌른다」). <a class="wl" href="../../t/%EC%84%B1%EC%9C%A1%EC%8B%A0/">성육신</a>.</p>
+</blockquote>
+<h2>3. 기다림과 두려움 — 왜 기다리지 못하는가</h2>
+<p>「기다림의 길」 첫 쪽 여백에 독자가 이 편의 명제를 적었다.</p>
+<blockquote>
+<p>📝 기다림 ⟷ 두려움. (기다릴 수 없는 이유) (p.71 상단)</p>
+</blockquote>
+<p>서언(p.8)에서 이미 밑줄을 그어 둔 정의가 출발점이다.</p>
+<blockquote>
+<p>"…기다림이란 우리가 현재 있는 곳과 우리가 있고 싶어하는 곳 사이에 있는 메마른 사막이다." (p.8, p.71)</p>
+</blockquote>
+<p>두려움은 우리를 지금 있는 곳에서 몰아낸다. 도망갈 수 없으면 싸운다. 그래서 두려운 사람은 남에게 <strong>「먼저 공격하는」</strong> 식으로 다가간다(p.72).</p>
+<blockquote>
+<p>"우리가 더 많이 두려워할수록 기다림은 더 힘겨워진다." (p.72)</p>
+</blockquote>
+<p><strong>핵심 인사이트</strong>: 기다리지 못하는 것은 성격이 급해서가 아니다. <strong>두려움이 빚어낸 통제 욕구</strong>다(서문 p.13 「미지의 세계에 대한 깊은 두려움과 … 통제하려는 우리의 욕구」). 그러므로 인내를 훈련으로 기르기보다 두려움을 먼저 다뤄야 한다. 이것은 <a class="wl" href="../../b/%EC%B6%A4%EC%B6%94%EC%8B%9C%EB%8A%94%ED%95%98%EB%82%98%EB%8B%98_%ED%97%A8%EB%A6%AC%EB%82%98%EC%9A%B0%EC%9B%AC/">춤추시는하나님_헨리나우웬</a>의 「내려놓음 → 두려움 ← 기도」 도식과 이어진다.</p>
+<blockquote>
+<p>🔗 <a class="wl" href="../../t/%EB%91%90%EB%A0%A4%EC%9B%80/">두려움</a> · <a class="wl" href="../../t/%EC%9D%B8%EB%82%B4/">인내</a></p>
+</blockquote>
+<h2>4. 남은 자의 자세 — 누가복음 첫 장면</h2>
+<blockquote>
+<p>"복음의 시작 장면 전체가 기다리는 사람들로 가득 차 있다." (p.72)</p>
+</blockquote>
+<p>사가랴·엘리사벳·마리아·시므온·안나는 모두 기다리는 사람이고, 모두 「두려워하지 말아라」라는 말을 듣는다. 나우웬은 이들을 시편 130편의 파수꾼 계보에 세운다. 독자는 시 130:5-7 인용문 전체에 밑줄을 그었다(p.72~73).</p>
+<blockquote>
+<p>"결국 기다림이란 이스라엘의 남은 자의 자세요, 신실하게 남아 있던 이스라엘의 작은 무리의 자세였다." (p.73)</p>
+</blockquote>
+<p>스바냐 3:12-13의 <strong>「순결한 남은 자」</strong>(p.73)에도 표시가 있다. 면지 노트는 이 대목을 인물 다섯 이름과 <strong>「남은자의 자세」</strong> 한 줄로 요약했다. 기다림은 개인의 기질이 아니라 <strong>공동체적 신실함의 형식</strong>이다.</p>
+<blockquote>
+<p>🔗 <span class="wl-dead" title="위키 내부 링크">시130</span> · <span class="wl-dead" title="위키 내부 링크">습3</span> · <span class="wl-dead" title="위키 내부 링크">눅1</span> · <span class="wl-dead" title="위키 내부 링크">눅2</span></p>
+</blockquote>
+<h2>5. 기다림의 본질 — 약속 · 능동 · 소망</h2>
+<p>면지 노트는 이 절을 한 줄로 줄였다. 「기다림의 본질 — 약속에 대한. 능동적인(씨앗이 심겨졌다). 소원이 아닌 소망이 있는 사람.」 세 요소를 표로 정리하면 다음과 같다.</p>
+<table>
+<thead>
+<tr>
+<th>요소</th>
+<th>핵심 문장</th>
+<th>반대편</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>① 약속에 대한 기다림</strong></td>
+<td>"우리를 위해 이미 시작된 일을 기다리고 있을 때에만 우리 역시 기다릴 수 있기 때문이다." (p.74)</td>
+<td>무(無)에서 유(有)로 가는 기다림</td>
+</tr>
+<tr>
+<td><strong>② 능동적 기다림</strong></td>
+<td>"우리가 씨앗이 땅에 심겼으며 무언가 이미 시작되었다는 확신 가운데 기다린다면, 이것은 우리의 기다리는 방식을 변화시킨다." (p.75)</td>
+<td>버스를 기다리듯 「그냥 기다려」</td>
+</tr>
+<tr>
+<td><strong>③ 소망의 기다림</strong></td>
+<td>"소원들(wishes)이 없었다. 그들은 소망(hope)으로 충만해 있었다." (p.77)</td>
+<td>결말이 정해진 소원 = 미래를 통제하는 방식</td>
+</tr>
+</tbody>
+</table>
+<p>독자는 <strong>「능동적」</strong>(p.75)과 <strong>「인내하는」</strong>(p.76)에 물결 밑줄을 그어 두 단어를 따로 떼어 냈다. 인내는 「무언가 숨겨져 있다는 믿음으로 그 상황 가운데 기꺼이 살며, 그 곳에 머무르고자 한다는 의미」(p.76)다.</p>
+<p><strong>핵심 인사이트: 소원과 소망은 다르다.</strong> 소원은 구체적이고 끝이 있다. 「직업을 가졌으면… 고통이 사라졌으면…」(p.76)처럼 내가 정한 결말이 이루어지기를 바란다. 그래서 소원은 두려움과 한 몸이다.</p>
+<blockquote>
+<p>"우리가 그러한 힘든 기다림의 시간을 보내는 이유 중 하나는, 우리가 바라는 일들을 일어나게 해서 우리의 소원이 이루어지도록 뭔가를 하고 싶어하기 때문이다." (p.77)</p>
+</blockquote>
+<p>소망은 끝을 알 수 없다. 성취가 내 소원이 아니라 하나님의 약속에 따라 이루어진다고 신뢰하는 것이기 때문이다. 마리아의 「말씀대로 이루어지기를」(눅 1:38)이 그 전형이다(p.77). 이 구분은 <a class="wl" href="../../b/%EC%83%81%EC%B2%98%EC%9E%85%EC%9D%80%EC%B9%98%EC%9C%A0%EC%9E%90_%ED%97%A8%EB%A6%AC%EB%82%98%EC%9A%B0%EC%9B%AC/">상처입은치유자_헨리나우웬</a>의 「약속에 근거한 소망」과 같은 축에 있다.</p>
+<h2>6. 기다림의 훈련 — 함께 기다리기, 곧 기도</h2>
+<blockquote>
+<p>"엘리사벳과 마리아는 함께 거하면서 서로 기다릴 수 있게 해주었기 때문이다." (p.79)</p>
+</blockquote>
+<p>마리아의 방문(눅 1:39-56)은 <strong>공동체의 원형</strong>이다. 가정과 공동체는 「이미 우리 안에서 시작된 일을 소리 높여 지지하고, 축하하고, 확인해 주는 곳」(p.80)이다. 여기서 이 책의 <strong>기도 정의</strong>가 나온다.</p>
+<blockquote>
+<p>"이것이 바로 기도가 의미하는 바이다. 기도란 약속 주변으로 함께 모이는 것이다." (p.80)</p>
+<p>"함께 기다리는 것, 이미 시작된 일에 영양분을 공급하는 것, 그것의 완성을 기대하는 것, 이것이 결혼, 우정, 공동체, 그리스도인의 삶의 의미이다." (p.81)</p>
+</blockquote>
+<p>면지 노트는 「약속을 근거로 모이는 것 — 기도」로 줄였다. 독자는 <span class="wl-dead" title="위키 내부 링크">시몬베유</span>의 명제에도 밑줄을 그었다.</p>
+<blockquote>
+<p>시몬느 베유(Simone Weil)는 "기대감을 갖고 인내하며 기다리는 것이 영적 삶의 기초이다" (p.82)</p>
+</blockquote>
+<p>마태복음 24장의 종말 설교도 같은 태도로 읽힌다. 준비하고, 깨어 기다리고, 말씀에 집중한 채 머무는 것이다(p.82). 이것이 혼란스러운 세상에서 「영적으로 살아 남을 수 있는 사람」(p.82)을 만든다.</p>
+<blockquote>
+<p>🔗 <a class="wl" href="../../t/%EA%B8%B0%EB%8F%84/">기도</a> · <a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%B2%B4/">공동체</a> · <a class="wl" href="../../t/%EA%B2%B0%ED%98%BC/">결혼</a> · <span class="wl-dead" title="위키 내부 링크">마24</span></p>
+</blockquote>
+<h2>7. 핵심 인사이트: 우리를 기다리시는 하나님 — 행동에서 수난으로</h2>
+<p>이 책의 반전이다. 나우웬은 암으로 죽어 가는 친구와 함께 밴스턴의 『기다림의 위업』(<em>The Stature of Waiting</em>, p.84 밑줄)을 읽는다. 그 친구는 「내가 아직 얼마나 많은 일을 할 수 있을까」에 매여 있었다.</p>
+<p><strong>① 넘겨주다.</strong> 겟세마네 이야기의 열쇠말은 「배반당했다」가 아니라 <strong>「넘겨주다」</strong>다(p.85 밑줄). 유다가 예수님을 넘겨주었고(막 14:10), 같은 동사로 하나님이 아들을 넘겨주셨다(롬 8:32).</p>
+<blockquote>
+<p>"예수님의 삶의 첫 번째 부분은 행동으로 가득 차 있다." (p.85)
+"다른 사람의 행동을 받아들이는 자가 되는 것, 이것이 수난의 의미이다." (p.85)</p>
+</blockquote>
+<p><strong>② 다 이루었다.</strong> 독자는 p.86 윗부분 전체에 밑줄을 그었다.</p>
+<blockquote>
+<p>"단순히 '나는 하고 싶었던 모든 일을 다 했다'는 의미로 하신 말씀이 아니었음을 깨닫는 것이 중요하다. … '내 소명을 완수하기 위해서 나에게 행해져야 하는 일이 내게 행해지도록 허락했다'는 의미가 들어 있다." (p.86, 요 19:30)</p>
+</blockquote>
+<p><strong>③ 하나님의 고뇌.</strong> 수난은 통제하지 못하고 기다려야만 하는 고뇌다. 하나님은 「우리 가운데서 행동하시기 위해서만이 아니라 우리의 반응을 받아들이는 자가 되기 위해 인간이 되셨다」(p.87).</p>
+<blockquote>
+<p>"모든 행동은 수난으로 끝이 난다." (p.87)
+"수난 가운데 계신 예수님은 우리의 반응을 기다리시는 분이다." (p.87)</p>
+</blockquote>
+<p>p.87 위 여백에 이 책에서 가장 강한 독자 반응이 적혀 있다.</p>
+<blockquote>
+<p>📝 <strong>모든 것을 하실 수 있는 θ도 우리의 반응만을 기다릴 수밖에 없다! ↳ 사랑.</strong> (p.87 상단)</p>
+</blockquote>
+<p>전능하신 분이 기다리실 수밖에 없는 이유는 <strong>사랑이기 때문</strong>이다. 강제로 얻은 반응은 사랑이 아니다(p.87 「진정으로 사랑하는 자일 수 없을 것이다」). 이 통찰은 기다림을 <strong>하나님의 기다림에 참여하는 일</strong>로 바꾼다.</p>
+<blockquote>
+<p>"예수 그리스도 안에 거하시는 하나님이 그분의 사랑에 대한 우리의 반응을 기다리시는 것이 사실이라면, 우리는 삶에서 기다리는 방법에 대한 온전하고 새로운 조망을 발견할 수 있다." (p.91)</p>
+</blockquote>
+<p>면지 도식은 이렇다: <strong>행동 → 넘겨줌 → 수난 / 우리의 반응을 기다리신다.</strong></p>
+<p><strong>의료·사역 적용</strong>: 「내가 아직 얼마나 많은 일을 할 수 있을까」는 암 환자 친구의 질문이면서 <a class="wl" href="../../b/%EC%98%81%EC%84%B1%EC%88%98%EC%97%85_%ED%97%A8%EB%A6%AC%EB%82%98%EC%9A%B0%EC%9B%AC/">영성수업_헨리나우웬</a> 면지에서 독자가 스스로를 진단한 「Workholic」의 질문이기도 하다. 행동이 끝나는 자리, 곧 은퇴·질병·노년에서 소명이 끝나는 것이 아니라 <strong>수난의 방식으로 완수된다</strong>. 다른 사람을 섬기는 일에는 그들이 「행동을 받아들이는 상황에서도 영광이 나타남을 바라보도록 도와주는 것」(p.91)이 포함된다.</p>
+<blockquote>
+<p>🔗 <a class="wl" href="../../t/%EA%B3%A0%EB%82%9C/">고난</a> · <span class="wl-dead" title="위키 내부 링크">막14</span> · <span class="wl-dead" title="위키 내부 링크">롬8</span> · <span class="wl-dead" title="위키 내부 링크">요19</span></p>
+</blockquote>
+<h2>8. 삶과 죽음의 길 — 성공이 아니라 열매</h2>
+<p>마지막 편은 에이즈 환자들에게 한 연설이다. 서문은 이 편을 「사랑받는 자녀라는 진정한 정체성」과 「성공보다는 열매」로 요약한다(p.14). 독자의 밑줄은 <strong>연약함의 재평가</strong>에 몰려 있다.</p>
+<blockquote>
+<p>"우리 문화가 주는 강력한 시각 때문에, 연약함을 부정적인 것이 아니라 긍정적인 것으로 보는 것은 커다란 도전이다." (p.108)
+"열매가 항상 연약함의 결과라는 사실은 흥미롭다." (p.108)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>성공 (문화의 척도)</th>
+<th>열매 (영적 삶의 척도)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>직함·수입·친구 수·업적·바쁨 (p.108)</td>
+<td>사랑에 관한 것 (p.108)</td>
+</tr>
+<tr>
+<td>나이 들수록 잃는다</td>
+<td>연약함에서 맺힌다. 서로 연약해질 때 아이가 잉태되고, 부서진 땅에서 씨앗이 열매 맺는다</td>
+</tr>
+<tr>
+<td>십자가 = 실패자</td>
+<td>십자가 = 역사상 가장 풍성한 열매 (p.109)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 인사이트: 돌봄을 받는 것도 섬김이다.</strong></p>
+<blockquote>
+<p>"우리의 약함과 나이 많음은 사람들로 하여금 우리를 둘러싸서 우리를 돌보도록 한다. 우리는 우리의 약함에 대해 저항하지 않고 다른 사람들의 보살핌을 기꺼이 받아들임으로써 공동체를 만들어 내고, 우리를 보살펴 주는 사람들에게는 그들이 가진 긍휼, 보살핌, 사랑, 섬김의 은사를 발휘할 기회를 준다." (p.109)</p>
+</blockquote>
+<p>§7의 「수난 = 다른 사람의 행동을 받아들이는 자」가 여기서 공동체론이 된다. 돌봄을 받는 사람이 돌보는 사람의 은사를 깨운다. <span class="wl-dead" title="위키 내부 링크">라르쉬</span>의 아담이 나우웬에게 준 것도 이것이다(서문 p.13).</p>
+<p>죽음도 같은 논리로 읽는다.</p>
+<blockquote>
+<p>"죽음은 여행을 떠나는 것보다는 훨씬 극단적인 떠남이다. 그럼에도 불구하고 어떤 사람은 떠난 이후 우리 마음속에서 기억을 통해 계속해서 우리에게 아주 중요한 존재가 될 수 있다고 나는 믿는다." (p.107)
+"내가 죽을 때도 사랑은 계속 존재할 것이며, 나는 하나님과의 온전한 사귐을 통해 내가 남겨 두고 온 사람들에게 사랑을 줌으로써 현존하게 된다." (p.107)</p>
+</blockquote>
+<p>면지 노트: <strong>「삶과 죽음의 길 ↳ 열매 맺는 또 다른 길. 연약함의 극치 ⇒ 열매」.</strong> 이것은 요한복음 16:7(「내가 떠나는 것이 너희에게 유익이다」, p.109)과 <a class="wl" href="../../b/%EC%B6%A4%EC%B6%94%EC%8B%9C%EB%8A%94%ED%95%98%EB%82%98%EB%8B%98_%ED%97%A8%EB%A6%AC%EB%82%98%EC%9A%B0%EC%9B%AC/">춤추시는하나님_헨리나우웬</a>의 「죽음 때문에 사랑할 수 있다」로 이어진다.</p>
+<blockquote>
+<p>🔗 <a class="wl" href="../../t/%EA%B8%8D%ED%9C%BC/">긍휼</a> · <a class="wl" href="../../t/%EC%A0%95%EC%B2%B4%EC%84%B1/">정체성</a> · <span class="wl-dead" title="위키 내부 링크">요16</span></p>
+</blockquote>
+<h2>9. 📝 2010. 10. 5 출근길 — 독자의 결론 (뒤 면지 2면)</h2>
+<p><strong>① 정리 노트</strong> (page_028 — 네 편을 한 쪽으로 요약)</p>
+<blockquote>
+<p>능력의 길. 권력(power) — 무력함(powerlessness) — 능력(power) / 성육신.
+평안의 길. ex) 아담. 존재에 거하는(?). 마음에 근거하는. 공동체를 형성하는.
+기다림의 길. 기다림 ⟷ 두려움 (기다릴 수 없는 이유) / 사가랴. 엘리사벳. 마리아. 시므온. 안나. / 남은자의 자세 / 기다림의 본질 — 약속에 대한. 능동적인(씨앗이 심겨졌다). 소원이 아닌 소망이 있는 사람. / 기다림의 훈련 — 엘리사벳. 마리아. 공동체. 약속을 근거로 모이는 것 — 기도 / θ의 기다림. 행동 → 넘겨줌 → 수난. 우리의 반응을 기다리신다. (모든 것이 가능한 θ도 우리의 반응을 기다릴 수밖에 없다)
+삶과 죽음의 길. ↳ 열매 맺는 또 다른 길. 연약함의 극치 ⇒ 열매</p>
+</blockquote>
+<p><strong>② 날짜 메모</strong> (page_029)</p>
+<blockquote>
+<ol start="2010">
+<li>
+<ol start="10">
+<li>5 / 출근길. 지하철에서. / 헨리 나우웬. 짧은 글이지만 긴 묵상으로 이르게 한다. / 영성에의 길 … 무력함. 연약함. 수난. 죽음. 기다림. 이것에 대하여 / 영적인 통찰력 — 이것이 / 나의 삶에 [?]일 수 있기를 / 소망한다.</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<p>다섯 달 전 「영성 수업」 면지의 결론은 자기 고발이었다(「Workholic인 자는(나는) … 피하는 일중독이 아닌가?」). 이번 결론은 <strong>소망</strong>이다. 독자는 이 책이 가르친 소원/소망 구분(§5)을 그대로 따라 마지막 동사를 「소망한다」로 골랐다. 일중독의 해독제로 이 책이 주는 단어는 <strong>수난</strong>, 곧 행동을 멈추고 받아들이는 자가 되는 것이다.</p>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<ul>
+<li><strong>의료</strong>: 말기 환자의 「아직 무엇을 할 수 있나」를 「무엇을 받아들일 수 있나」로 옮기는 대화. p.109의 「보살핌을 받는 것이 공동체를 만든다」는 돌봄을 받는 쪽의 존엄을 말하는 언어로 쓸 수 있다.</li>
+<li><strong>사역·리더십</strong>: 기다림은 「남은 자의 자세」다. 단체가 약해지는 시기의 이사회에 소원(정해진 결말)이 아닌 소망(약속)으로 모이는 틀을 제시할 수 있다. 「기도 = 약속 주변으로 함께 모이는 것」은 이사회 기도의 정의로도 쓸 수 있다.</li>
+<li><strong>가정·결혼</strong>: p.81의 네 동사(함께 기다림 · 영양분 공급 · 완성 기대)를 결혼예비 강의에서 결혼의 정의로 쓸 수 있다 → <span class="wl-dead" title="위키 내부 링크">결혼, 언약을 넘어 한 몸으로</span> 연결 후보.</li>
+<li><strong>미해결 질문</strong></li>
+<li>「평안의 길」(아담 편)은 본문 촬영이 없다. 면지 요약만 있다. 재촬영이 필요한가?</li>
+<li>면지 마지막 줄 「나의 삶에 [?]일 수 있기를」의 가운데 단어를 판독하지 못했다. 원본 확인이 필요하다.</li>
+<li>하나님의 기다림(수동성)을 말할 때 하나님의 주권은 어떻게 말해야 하는가? 밴스턴 원서를 볼 가치가 있다.</li>
+<li>2010년의 「소망한다」 이후, 실제 삶에서 「행동에서 수난으로」의 전환이 일어났는가?</li>
+</ul>
+<hr />
+<blockquote>
+<p>📖 전사 원문(줄이지 않은 표시 구절 전체): <span class="wl-dead" title="위키 내부 링크">영성에의길_헨리나우웬_전사</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#discipline/영성신학</span><span>#domain/목회신학</span><span>#topic/기다림</span><span>#topic/연약함</span><span>#topic/수난</span><span>#topic/소망</span><span>#topic/공동체</span><span>#topic/죽음</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
