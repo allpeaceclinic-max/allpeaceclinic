@@ -1,0 +1,427 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>크리스천을 위한 마음코칭 — 헨리 클라우드 (생명의말씀사) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">상담·치유·가정</span><span class="author">헨리클라우드</span><span class="date">2026-09-26</span></div>
+  <h1 class="note-title">크리스천을 위한 마음코칭 — 헨리 클라우드 (생명의말씀사)</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/%ED%81%AC%EB%A6%AC%EC%8A%A4%EC%B2%9C%EC%9D%84%EC%9C%84%ED%95%9C%EB%A7%88%EC%9D%8C%EC%BD%94%EC%B9%AD_%ED%97%A8%EB%A6%AC%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<blockquote>
+<p>기독교 임상심리학자 <span class="wl-dead" title="위키 내부 링크">헨리 클라우드</span>의 대표작(원제 <em>Changes That Heal</em>, 전병철 옮김). 『No라고 말할 줄 아는 그리스도인』(<em>Boundaries</em>)의 모태가 된 책으로, <strong>은혜·진리·시간</strong>이라는 치유의 세 요소와 <strong>유대감·경계·선악 분별·어른 되기</strong>라는 네 가지 발달과제로 그리스도인의 정서 문제를 성경적으로 재구성한다. 📷 표시 전사 기반 독서 노트.</p>
+</blockquote>
+<hr />
+<h2>요약 — 주제별 상세 정리</h2>
+<h3>1. 문제의식: 교회의 양분과 "쓸모없는 의원"</h3>
+<p>책은 교회가 상처 입은 사람을 돕는 <strong>방법론</strong>을 두고 양분되어 있다는 진단에서 출발한다. 한쪽은 "감정적인 문제로 고통을 받는 원인이 그들의 죄 때문이라고 주장"하고, 이런 입장은 "욥의 세 친구들이 욥에게 했던 충고와 거의 같은 맥락"이다(p.9). 절망 속에 있는 사람에게 필요한 것은 "친구로부터 동정"(욥 6:14)인데, 도리어 "사람들의 충고를 받아들이지 못한다는 죄책감까지 더해져 이중의 고통"을 겪는다(p.10). 결국 그들은 "교회에 남아 있기 위해서 마치 자신들의 문제가 해결된 것처럼 가장"한다(p.10).</p>
+<p>저자는 자신도 그 편에 서 있었음을 고백한다 — 기독교적 '정답'으로 문제를 풀려다 욥의 표현처럼 <strong>"쓸모없는 의원"</strong>(욥 13:4)이라는 결론에 도달했다(p.11, 동그라미 표시). 그래서 책의 목표는 심리학이냐 하나님의 능력이냐를 겨루는 것이 아니라, "우울증, 염려, 공황장애, 중독, 죄책감의 문제를 해결할 수 있는 성경적인 해결책이 있다는 사실을 보여 주는 것"이다(p.11).</p>
+<blockquote>
+<p>"은혜와 진리가 결핍된 교회에서는 성도들이 치유받기 위해 다른 곳을 찾아 떠나야 하는 일이 생긴다." (p.37)</p>
+</blockquote>
+<p>이 문제의식은 <a class="wl" href="../../b/%EC%84%B1%EA%B2%BD%EC%A0%81%EC%83%81%EB%8B%B4%ED%95%99_%EB%9E%98%EB%A6%AC%ED%81%AC%EB%9E%A9/">래리 크랩</a>이 제이 아담스의 권면적 상담을 비판한 지점과 같은 자리에 선다 — 죄를 지적하는 것만으로는 치유가 일어나지 않는다.</p>
+<h3>2. 치유의 세 재료: 은혜 · 진리 · 시간</h3>
+<p>저자는 우화(은혜의 여신과 진리의 신)로 시작한다. 은혜의 여신을 따르는 이들은 "'함께'의 정신으로 살았"지만(p.20, '함께'에 물결 밑줄), "과거와 똑같은 잘못에 거듭 빠지지 않도록 지켜 줄 규율과 지침이 필요했다"(p.21). 그래서 "나쁜 행위에 경계를 분명히 세우는 일에 능통한" 진리의 신이 필요하다(p.21). 결론은 짧다 — <strong>"은혜 없는 진리는 심판이다"</strong>(p.23).</p>
+<table>
+<thead>
+<tr>
+<th>요소</th>
+<th>정의(책의 표현)</th>
+<th>결핍 시</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>은혜</strong></td>
+<td>"하나님의 성품 중에서도 관계적인 면"(p.20) · 긍휼과 관계</td>
+<td>진리만 있으면 심판 — "'반드시 해야만 하는 일들'에 둘러싸"인 루스(p.27)</td>
+</tr>
+<tr>
+<td><strong>진리</strong></td>
+<td>규율·지침·경계 — 나쁜 행위에 선을 긋는 것(p.21)</td>
+<td>은혜만 있으면 같은 잘못의 반복</td>
+</tr>
+<tr>
+<td><strong>시간</strong></td>
+<td>은혜와 진리가 작동하는 과정 · "좋은 인내가 있고 나쁜 인내가 있다"(p.59)</td>
+<td>즉각적 변화 요구 → 실패의 정죄</td>
+</tr>
+</tbody>
+</table>
+<p>모델은 예수님이다 — "은혜와 진리가 충만하더라"(요 1:14, p.30). <span class="wl-dead" title="위키 내부 링크">간음한 여인</span> 장면에서 주님은 "나도 너를 정죄하지 아니하노니"(은혜)와 "가서 다시는 죄를 범하지 말라"(진리)를 함께 선포하셨다.</p>
+<blockquote>
+<p>"용납과 새로운 지침, 이 두 가지 요소가 함께 연합할 때 진정한 자아를 관계 속으로 인도할 수 있다. 진정한 치유가 일어나는 유일한 방법인 것이다." (p.33)</p>
+</blockquote>
+<p>시간에 대해서는 베드로가 예다. "시간을 초월하신 예수님"은 베드로가 어떻게 실족하고, 이후 어떻게 성숙해 남을 돕게 될지 다 보시면서도 "베드로를 있는 그대로 받아 주셨다"(p.60). 발달은 "진정한 자아가 은혜의 관계 속에 들어오면 그제서야 오랜 시간에 걸쳐" 일어난다(p.54).</p>
+<p>📝 p.27 여백: "강요(?). 진리가 진리게(?) 한다" — 판독 불확실하나, 은혜 없는 진리가 '강요'가 된다는 반응으로 읽힌다.</p>
+<h3>3. 네 가지 발달과제 — 책 전체의 뼈대</h3>
+<p>저자는 하나님의 형상대로 성장하기 위해 누구나 거쳐야 할 네 과제를 제시한다(p.13). 네 과제가 곧 책의 2~5부다.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>과제(p.13)</th>
+<th>실패 시 증상</th>
+<th>치유의 방향</th>
+<th>독자 표시</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>다른 사람과의 <strong>유대감</strong> 형성</td>
+<td>고립·우울·중독·방어기제</td>
+<td>관계 속 내면화, 연약함 드러내기</td>
+<td>📝 p.357 "애착"</td>
+</tr>
+<tr>
+<td>2</td>
+<td>다른 사람과의 <strong>분리</strong>(경계)</td>
+<td>남 기쁘게 하기·순교자 증후군·조종당함</td>
+<td>책임의 주인 되기, 견책</td>
+<td>📝 p.13 "NO라고 말할 <strong>울타리</strong>"</td>
+</tr>
+<tr>
+<td>3</td>
+<td>좋은 것과 나쁜 것의 균형 있는 <strong>분별</strong></td>
+<td>완벽주의·자기정죄·분열(splitting)</td>
+<td>은혜로 포용, 고백과 용서</td>
+<td>☆ p.258</td>
+</tr>
+<tr>
+<td>4</td>
+<td>성인으로서의 <strong>책임감</strong></td>
+<td>인정 중독·율법적 양심·불필요한 죄책감</td>
+<td>부모의 권위에서 하나님께로</td>
+<td>✓ p.314</td>
+</tr>
+</tbody>
+</table>
+<p>결론부(p.357~358)는 네 과제를 다시 묶으며 원칙 몇 가지를 남긴다. "모든 치유의 근본은 관계의 회복에 있으며 … 관계 회복이 없는 해결책은 사랑이 없는 해결책이다"(p.358). 그리고 "증상은 문제의 본질이 아니다 … 증상은 문제의 본질을 알려 주는 신호라는 것을 기억하라"(p.358).</p>
+<h3>4. 과제 1 — 유대감: 하나님은 사랑이시다</h3>
+<p>유대감 형성은 "인간의 기본 욕구"다(p.66, 📝 여백 "안정감."). 근거는 신론이다 — "하나님은 <strong>사랑</strong>이시라"(요일 4:8, p.69). 하나님은 "가장 본질적인 성품과 행위에 있어서" 관계적이시므로, 율법조차 관계의 도구다.</p>
+<blockquote>
+<p>"율법은 사랑의 청사진, 혹은 기초가 된다. 율법은 사랑이 살아가는 구체적인 방식이다." (p.70)
+"복음의 메시지는 관계의 회복을 의미한다." (p.72)
+"성경은 도덕과 윤리의 기초는 사랑이지 원칙이나 규범이 아니라고 말한다." (p.84)</p>
+</blockquote>
+<p>구약의 '자비' <strong>헤세드</strong>는 "'친밀한 사랑' 혹은 '충성되고 신실한 사랑'"이며 "'사랑의 관계에 함께 소속되는 것의 중요성'을 강조"한다(p.83, 📝 "관계를 통한 안정감.").</p>
+<p><strong>발달심리 개념 — 대상 항상성.</strong> 아기는 "엄마의 돌봄을 점차적으로 내면화"하고, 그 결과 "자신을 사랑해 주던 사람이 곁에 없을 때도 그 사람에게 사랑받는 듯한 경험을 지속적으로 체험"한다(p.75). 저자는 이를 <strong>'영적인 대상 항상성'</strong>으로 확장한다 — 예수님이 하나님의 사랑이 우리 안에 거하게 해 달라고 기도하신 것(요 17)이 "바로 이것을 구하는 기도"였다(p.76).</p>
+<p><strong>핵심 인사이트: 마음의 건강은 관계의 깊이다.</strong> 저자는 잠언의 '마음' 구절들(잠 4:23; 14:30; 15:13; 17:22; 18:14)을 모아 이렇게 결론짓는다.</p>
+<blockquote>
+<p>"우리의 정서적이고 심리적인 건강은 마음 상태에 달렸으며, 우리의 마음 상태는 하나님 및 다른 사람들과의 유대감의 깊이에 달려 있다. 성경은 오래전에 이 사실을 기록했고, 과학이 오늘날 이를 증명하고 있다." (p.79)</p>
+</blockquote>
+<p>이 대목(p.78~79)은 <span class="wl-dead" title="위키 내부 링크">MBTS 기독교윤리학 기말종합</span>에서 "마음의 상태에 따라 전인이 건강해진다"는 결론의 근거로 이미 인용된 바 있다 — 이번 전사로 그 인용의 원문 맥락이 확보되었다.</p>
+<p>또한 저자는 "'관계적' 해결책은 인본주의적인 것이기 때문에 그만두고 '오직 주님만을 의지해야 한다'"는 가르침(p.81~82)을 반박한다 — 대계명 자체가 "하나님을 사랑하고 또한 네 이웃을 네 자신 같이 사랑하라"(p.82, 📝 "그렇지(?)")이기 때문이다. 바울조차 "디도가 옴으로" 위로받았다 — "인간관계를 통해 바울을 어루만지신 것이다"(p.97~98).</p>
+<h3>5. 유대감이 깨질 때: 단절의 세 단계 · 중독 · 방어기제</h3>
+<p>유대감을 잃은 사람은 세 단계를 거친다(p.89~90).</p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 저항</td>
+<td>관계를 되찾으려 몸부림</td>
+</tr>
+<tr>
+<td>2. 우울증과 절망감</td>
+<td>되찾지 못함을 느끼며 가라앉음</td>
+</tr>
+<tr>
+<td>3. 단절</td>
+<td>감각을 잃음 — "자해 충동", "내가 통증이라도 못 느끼면 속으로 죽은 것 같다는 느낌이 들어요"(p.90)</td>
+</tr>
+</tbody>
+</table>
+<p>에베소서 4:18~19의 "감각 없는 자"(p.94)가 이 상태다. 여기서 <strong>중독</strong>이 나온다.</p>
+<blockquote>
+<p>"중독은 진짜 필요한 것을 향한 욕구가 아니라 거짓된 욕망이다." "대체물이 바로 중독이다." (p.95)
+"중독을 치료하기 위해서는 잃어버린 감각을 되찾고 겸허한 마음을 갖는 것이 필요하다." (p.95)</p>
+</blockquote>
+<p>유대감 결핍은 또 여러 <strong>방어기제</strong>로 나타난다(p.112~115 — 회피, 투사("다른 사람에게 반영하는 것"), 반동형성("충동과는 정반대로 감정을 표현"), 조증적 흥분, 마약·음식·섹스). 문제는 이것이 "마음속 깊이 새겨진 <strong>신념</strong>"이어서 "바꾼다는 것은 말처럼 쉽지가 않다"는 것이다(p.110). → <a class="wl" href="../../t/%EC%A4%91%EB%8F%85/">중독</a>과 연결.</p>
+<p><strong>가정의 자리.</strong> "<strong>가정</strong>은 자녀들에게 우주의 영적 법칙을 심어 주라고 하나님께서 친히 세우신 체계"이며, 거기서 "다른 사람들과 애착 관계를 맺는 법을 익히고 선택의 자유와 용서, 은사와 재능을 성장시키는 하나님의 방법을 배워야 한다"(p.116).</p>
+<p>📝 p.116~117 여백(이 책에서 가장 긴 손글씨): "애착관계 형성 — 새로운 상징체계(언어체계)를 통해서 도달(?)하는 것. (용납(?)받기 위해서). → 사랑의 관계에서의(?) 유대감형성." — 유대감이 단지 정서가 아니라 <strong>새로운 언어·상징체계를 익히는 과정</strong>이라는 독자의 해석이다.</p>
+<p>회복의 길은 드러냄이다. 연약함을 드러냈는데도 "사람들이 여전히 자신을 사랑해 준다는 사실에 그녀는 깜짝 놀랐다"(p.127). 그리고 기도 — 시편 139:23~24 "나를 살피사 내 마음을 아시며"(p.124, 📝 "내게 알려 주세요!!").</p>
+<h3>6. 과제 2 — 경계: 분리된 인격으로 서기</h3>
+<blockquote>
+<p>"<strong>경계란</strong> 넓은 의미에서 제한, 한계, 경계를 표시하려고 긋는 선을 뜻한다. 그리고 심리학적으로는 타인과 분리된 자기 인식을 의미한다." (p.132)</p>
+</blockquote>
+<p>경계 역시 신론에 뿌리를 둔다. "하나님은 우리와 분리된 인격이시다. … 하나님이 우리는 아니며, 우리도 하나님이 될 수 없다"(p.136). 하나님은 "부정적인 확인을 통해서도 자신에 대해 말씀하신다"(p.138) — 무엇을 싫어하시는지 밝히시는 것이 곧 경계다. 경계는 유대감에 이은 "하나님의 형상대로 성장하기 위한 <strong>두 번째 발달과제</strong>"다(p.135, 📝 "애착형성 → 이후(?) 독립").</p>
+<p><strong>발달 순서가 핵심이다.</strong> </p>
+<blockquote>
+<p>"우리가 먼저 강한 유대감으로 맺어지지 않는다면 누군가로부터 진정으로 분리될 수 없다." (p.164)
+"처음 일어나는 이 모든 분리 과정은 엄마에게서 유발되는 것이 아니다. 아기가 원해서 <strong>스스로</strong> 멀리 움직여 가는 것이다." (p.165, ☆)
+"두 살 이후 평생 동안, 정서적 유대와 분리는 나란히 작용해야 한다." (p.167)</p>
+</blockquote>
+<p><strong>경계 = 책임의 소유권.</strong> 포도원 품꾼 비유에서 예수님은 "자신의 감정은 스스로 책임을 지라고 말씀하셨다" — "네 분노는 네가 책임지고 나를 원망하지 마라"(p.141). '모든 생각을 사로잡는다'(고후 10:5)는 것도 "억누르거나 부정하는 것이 아니다. 그 생각의 주인이 된다는 것이다"(p.145). 선택도 마찬가지다 — "선택을 하지 않는 것도 선택이다"(p.155, 수 24:15 "<strong>택하라</strong>"). 억지로 주면 "'순교자 증후군'으로 이어진다"(p.153).</p>
+<table>
+<thead>
+<tr>
+<th>경계가 무너진 모습</th>
+<th>책의 예</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>남의 기분 책임지기</td>
+<td>"다른 사람의 불쾌감에 책임을 느낀다면, 우리는 하나님이 아니라 그 사람의 조종을 받고 있는 것"(p.177)</td>
+</tr>
+<tr>
+<td>죄책감에서 나온 순종</td>
+<td>"사랑이 아니라 노예근성일 뿐이다"(p.180)</td>
+</tr>
+<tr>
+<td>순교자 증후군</td>
+<td>손주를 봐주겠다고 애걸해 놓고 한 주 내내 불평한 부인(p.154)</td>
+</tr>
+<tr>
+<td>대가 대신 치르기</td>
+<td>술 취한 남편 대신 직장에 병가 전화하는 아내(p.189)</td>
+</tr>
+<tr>
+<td>죄책감 유도</td>
+<td>"어떻게 나에게 이럴 수가 있어?" — "그저 선택의 자유를 실천했을 뿐이다"(p.197)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 인사이트: 견책은 사랑이다.</strong> "너는 네 형제를 마음으로 미워하지 말며 네 이웃을 반드시 <strong>견책</strong>하라"(레 19:17). 저자는 이를 "'쓰레기를 버리는 것'이며, 쓰레기들이 미움이나 쓴 뿌리로 변질되지 않도록 방지하는 조치"라고 푼다(p.207). 분노도 마찬가지로 "우리의 분노가 자신의 문제임을 깨닫는다면 그 분노에 스스로 책임을 질 수 있다"(p.183). 한계 설정은 "상호 존경과 사랑의 토대"다(p.205).</p>
+<p>갈라디아서 6장이 균형을 잡는다 — "각각 자기의 짐을 질 것이라"(6:5)와 "너희가 짐을 서로 지라"(6:2). "바로 여기에서 개인의 책임과 공동의 책임이 함께 만난다"(p.203). 구약의 이삭줍기도 그렇다 — 곡식을 남겨 두라 했지만 "그것을 직접 거둘 책임은 가난한 자들에게 있었다"(p.203).</p>
+<p>이 경계론은 『No라고 말할 줄 아는 그리스도인』으로 발전했고, 국내에서는 <span class="wl-dead" title="위키 내부 링크">임주현의 누가 상담 강의</span>가 경계를 "정체성의 근본"으로 정교화한 대목(<a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%83%81%EB%8B%B4/">기독교상담</a>)과 이어진다.</p>
+<h3>7. 과제 3 — 선과 악: 이상적 자아와 실제적 자아의 화해</h3>
+<blockquote>
+<p>"우리는 우리 상상 속의 완벽한 자아와 현실 사이에 간격이 있음을 안다." (p.241)
+"이상적인 자아는 우리가 되기 원하는 모습이다." (p.241) "실제적 자아는 우리의 현실 속 모습이지 우리가 원하는 모습이 아니다." (p.243)</p>
+</blockquote>
+<p>문제는 간격 자체가 아니라 둘의 <strong>관계</strong>다. "이상이 현실을 받아들이지 못하고 정죄와 분노를 쏟아 낸다 … 이것이 둘 사이의 적대적 관계를 형성"한다(p.244). 사례: 아내에게 화가 났지만 "화를 내면 안 된다고 생각했기 때문에 분노의 감정 자체를 부정"한 리처드 — "문제의 본질은 그가 그 감정들을 자신의 일부로 받아들이지 않았다는 것"이다(p.245). 소제목에 밑줄: <strong>"정죄할 것인가, 포용할 것인가"</strong>(p.245).</p>
+<p><strong>핵심 인사이트: 포용이 곧 은혜다.</strong></p>
+<blockquote>
+<p>"<strong>포용</strong>이야말로 이상과 현실의 딜레마를 푸는 해답이며 그것이 바로 <strong>은혜</strong>다." (p.246)
+"좋은 관계란 이상을 포기하지 않으면서 현실을 사랑으로 받아들이는 것이다." (p.247)</p>
+</blockquote>
+<p>성경은 두 진실을 함께 말한다 — 하나님의 형상으로 "영화와 존귀로 관을 씌우"신 존재(시 8)이면서 "의인은 없나니 하나도 없"는 존재(롬 3:10). "둘 다 맞는 말이다. 그리고 그 둘은 … 은혜를 나눔으로 화합되어야 한다"(p.248). 로마서 7장(p.243)에서 8장 "결코 정죄함이 없나니"(p.246)로 넘어가는 바울의 궤적이 이 과제의 성경적 모형이다.</p>
+<p><strong>항상 실패하는 방법들</strong>(p.251~254):</p>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>악의 부정</td>
+<td>리처드처럼 분노를 부정. "성경은 내면의 나쁜 것들을 부정하지 말라고 엄중하게 경고한다"(p.252)</td>
+</tr>
+<tr>
+<td>선의 부정</td>
+<td>자기(또는 배우자)의 좋은 면까지 부정(p.253~254)</td>
+</tr>
+<tr>
+<td>공격과 비판</td>
+<td>"악을 다루는 가장 흔한 방법" — 성경이 말하는 "세상 근심"(p.254)</td>
+</tr>
+<tr>
+<td>✅ 경건한 근심</td>
+<td>"악을 슬퍼하고 회개하는 것"(p.254)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>분열(splitting)의 발달적 기원.</strong> 꾸준한 양육을 받은 아이는 "자신을 사랑해 주는 바로 그 사람이 자신을 좌절시키기도 한다는 사실을 배운다". 그러나 그렇지 못한 아이는 "세상을 좋은 쪽과 나쁜 쪽으로 계속해서 구분 짓는다 … 아내가 자신을 기쁘게 해 주면 사랑하고, 그렇지 않으면 떠난다"(p.258, ☆). 해법은 먼저 용서받음을 아는 것이다 — "우리가 용서받은 만큼 용서할 수 있다"(p.257). "선과 악에 대한 모든 문제의 해답은 바로 <strong>사랑</strong>이다 … 진리가 동반된 은혜"(p.260).</p>
+<h3>8. 양심·고백·용서 — 선악 과제의 치유 경로</h3>
+<p><strong>양심은 내면화된 부모다.</strong> "우리는 부모님의 그런 비판적인 성향을 양심이라고 부르는 자기평가 시스템에 내면화한다. 그 <strong>양심</strong>은 부모님이 했던 것과 똑같은 방법으로 우리에게 말한다"(p.275). 📝 여백: <strong>"양심은 부모의 거울 ?"</strong> — 독자가 이 장에서 붙잡은 한 줄이다. → <a class="wl" href="../../t/%EC%96%91%EC%8B%AC/">양심</a>과 연결: 신학적 양심론(하나님이 심으신 도덕 감각)과 발달적 양심론(부모의 목소리)이 어떻게 겹치고 갈라지는지는 미해결 질문으로 남긴다.</p>
+<p>그러므로 치유는 새로운 관계 속에서 일어난다. "은혜의 관계에서 용서를 배우는 일은 그리스도의 몸이 해야 하는 중요한 과제 중 하나이다"(p.275).</p>
+<ul>
+<li><strong>고백</strong> — "죄를 서로 고백하며 병이 낫기를 위하여 서로 기도하라"(약 5:16). 하나님께만 고백하면 된다는 것은 "반쪽짜리 진실"이다(p.276). 단, "아무에게나 고백을 해야 한다는 것은 아니다 … 주님의 대사로서 하나님의 은혜를 베풀 수 있는 사람이어야 한다"(p.277).</li>
+<li><strong>용서</strong> — "용서하지 않으면 우리 자신에게 수갑을 채우는 꼴이 되고 만다"(p.279).</li>
+<li><strong>분노</strong> — 부인된 분노는 "쓴 뿌리로 바뀌고, 비판적이고 용서하지 못하는 마음을 품게 한다"(p.281, 히 12:15).</li>
+<li><strong>슬픔</strong> — "슬픔이 웃음보다 나음은 …"(전 7:3~4, p.281). 해소되지 못한 슬픔(p.282).</li>
+<li><strong>두려움</strong> — "하나님을 필요로 하는 위치에 이르려면 반드시 두려움을 인정해야 한다"(p.284).</li>
+</ul>
+<p>"죄의 힘을 잃게 만드는 것은 바로 '정죄함 없음'을 통해서만 가능하다"(p.262). 선악 문제에서 우리가 거할 장소는 "'정죄함이 없는 곳'"이다(p.274).</p>
+<h3>9. 과제 4 — 어른 되기: 부모의 권위에서 하나님의 권위로</h3>
+<blockquote>
+<p>"우리 모두는 어른의 권위 아래 놓인 어린아이로 태어났다. 시간이 흐르면서 우리 스스로 그 권위를 갖게 되고 자신의 인생을 책임지게 되는 것이다. … 이는 자기 삶의 권위를 되찾는 일이며, 하나님의 형상을 회복해 가는 중요한 과정이다." (p.292)</p>
+</blockquote>
+<p>증상은 <strong>인정 중독</strong>이다. "모든 사람이 너희를 칭찬하면 화가 있도다"(눅 6:26, p.295) · "사람을 기쁘게 하려 함이 아니요"(살전 2:4, p.296). "다른 사람들이 인정을 해 주기 전까지 자기 자신이나 일 자체에 계속 불안을 느낀다면 문제가 있는 것이다"(p.328). 그리고 <strong>불필요한 죄책감</strong> — "누군가가 필요 없는 죄책감에 시달리고 있다면 그 사람은 여전히 부모의 목소리 아래에 살고 있는 셈이다"(p.330). 창세기의 "다스리라"(p.297)는 어른 됨이 창조 명령임을 보여 준다.</p>
+<table>
+<thead>
+<tr>
+<th>발달 단계(p.306~318)</th>
+<th>내면화되는 것</th>
+<th>부모의 과제</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>초기</td>
+<td><strong>사랑</strong>, 그리고 <strong>한계</strong>가 좋은 것임</td>
+<td>유대 + 한계</td>
+</tr>
+<tr>
+<td>학령기</td>
+<td>성역할·동일화, 수행 능력·근면성</td>
+<td>"힘과 은사를 인정해 주고 계발하도록"(p.311), 노엽게 하지 않기(p.309)</td>
+</tr>
+<tr>
+<td>청소년기</td>
+<td>권위에 대한 재평가, 가치관 혼란</td>
+<td>"이해와 인내로 지켜봐"(p.312) — "어느 정도의 반항 없이는 이루어질 수가 없다"(p.314, ✓)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 인사이트: 규범 중심에서 원칙 중심으로.</strong> 바울은 율법을 "초등교사"(갈 3:24)라 부르고 어린 시절을 "후견인과 청지기 아래"의 종살이에 빗댄다(갈 4:1~4, p.315·320). 열두 살 예수님이 성전에 남으신 사건에서 저자는 두 가지를 읽는다 — "우리의 부모의 권위에서 벗어나 하나님께 순종해야 하며 … 우리의 생각이 규범 중심에서 원칙 중심으로 변화되어야 한다"(p.323). 율법적 양심으로 "'충분히 좋은' 사람이 되려고" 애쓰는 것(p.321)은 아직 초등교사 아래 있는 것이다.</p>
+<h3>10. 결론 — "온전한 기능을 발휘하는 존재"와 자기부인의 재정의</h3>
+<p>책의 마지막 단락은 네 과제를 한 문장에 담는다(동그라미 + 전체 밑줄).</p>
+<blockquote>
+<p>"<strong>온전한 기능을 발휘하는 존재란</strong> 유대감을 형성하고, 다른 사람에게서 건강하게 분리될 수 있으며, 남들을 용서하고, 성인다운 자아로 이 세상에 존재하되 남들을 위해서 그 자아를 건강하게 포기할 수도 있는 존재를 말한다." (p.358)</p>
+</blockquote>
+<p>그리고 곧바로 오해를 막는다.</p>
+<blockquote>
+<p>"남을 위해 자기를 부인한다는 것은 내면에 자기 모습이 없다는 의미가 아니라, 오히려 건강한 자신이 내면을 풍족하게 채우고 있어서 이를 타인에게도 나누어 줄 수 있다는 뜻이다." (p.358)</p>
+</blockquote>
+<p><strong>핵심 인사이트: 자기부인은 자기 없음이 아니다.</strong> 경계 없는 희생(순교자 증후군, p.153)과 성경적 자기부인은 다르다. 앞의 것은 비어 있는 자아가 인정을 사려는 것이고, 뒤의 것은 채워진 자아가 흘려보내는 것이다. 그래서 목표는 '온전한 기능'이 아니라 사랑이다 — "그 중에 제일은 사랑"(고전 13:13, p.358).</p>
+<hr />
+<h2>교차 연결</h2>
+<ul>
+<li><a class="wl" href="../../b/%EC%84%B1%EA%B2%BD%EC%A0%81%EC%83%81%EB%8B%B4%ED%95%99_%EB%9E%98%EB%A6%AC%ED%81%AC%EB%9E%A9/">성경적상담학_래리크랩</a> — 두 책 모두 "죄 지적만으로는 치유가 없다"는 전제를 공유한다. 크랩은 <strong>인격 구조(중요성·안전의 필요)</strong>, 클라우드는 <strong>발달과제(유대·경계·선악·어른)</strong>로 같은 문제를 푼다. 크랩의 '안전' 필요 ↔ 클라우드의 유대감/대상 항상성이 겹친다.</li>
+<li><a class="wl" href="../../b/%EC%83%81%EC%B2%98%EC%9E%85%EC%9D%80%EC%B9%98%EC%9C%A0%EC%9E%90_%ED%97%A8%EB%A6%AC%EB%82%98%EC%9A%B0%EC%9B%AC/">상처입은치유자_헨리나우웬</a> — 나우웬의 「노출된 상처는 악취를 풍길 뿐」과 클라우드의 「아무에게나 고백하지 말라」(p.277)는 같은 안전장치다.</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%83%81%EB%8B%B4/">기독교상담</a> · <span class="wl-dead" title="위키 내부 링크">2014_임주현_누가와 상담</span> — 경계 개념의 선행 정리.</li>
+<li><a class="wl" href="../../t/%EC%95%A0%EC%B0%A9/">애착</a> — 1부 전체가 애착 이론의 성경적 재진술이다(독자도 p.135·357에 "애착"으로 바꿔 적었다).</li>
+<li><a class="wl" href="../../t/%EC%96%91%EC%8B%AC/">양심</a> — "양심은 부모의 거울 ?"(p.275).</li>
+<li><span class="wl-dead" title="위키 내부 링크">기말종합3번째주제</span> — p.78~79 인용의 원문 맥락.</li>
+</ul>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<p><strong>적용</strong>
+- <strong>의료 현장</strong>: "증상은 문제의 본질을 알려 주는 신호"(p.358)는 진료실 원칙과 같다. 우울·불안·중독을 호소하는 교인 환자에게 "기도가 부족하다"는 욥의 친구식 처방 대신, 네 과제 중 어디가 막혔는지를 묻는 틀로 쓸 수 있다.
+- <strong>멘토링·청년 사역</strong>: 네 과제 표를 진단 도구로 — 인정받기 위해 사역하는 청년(과제 4), 거절 못 해 소진되는 리더(과제 2), 자기 실패를 견디지 못하는 의대생(과제 3).
+- <strong>공동체</strong>: 고백이 "반쪽짜리"가 되지 않으려면 교회 안에 "주님의 대사"가 될 안전한 관계가 있어야 한다(p.277). 소그룹 설계의 기준.
+- <strong>가정</strong>: 부모의 양육이 자녀의 양심이 된다(p.275) — 비판보다 "인자하심이 회개로 인도"(롬 2:4, p.260)하는 방식.</p>
+<p><strong>미해결 질문</strong>
+- 📝 "양심은 부모의 거울 ?" — 발달심리의 양심(내면화된 부모)과 성경의 양심(롬 2:15, 하나님이 새기신 법)은 어떻게 관계되는가? 부모의 거울을 넘어서는 양심의 '재교육'은 무엇으로 일어나는가?
+- 📝 p.116~117 "새로운 상징체계(언어체계)" — 유대감 형성이 언어 습득과 같다면, 어린 시절 그 언어를 배우지 못한 성인은 교회 공동체에서 어떻게 '제2언어'로 배울 수 있는가?
+- 경계와 선교적 헌신의 긴장: 순교자 증후군(p.153)과 참된 자기희생(p.358)을 현장 선교사의 소진 문제에 어떻게 구분 적용할 것인가?
+- 📝 p.167 "유착 / 분리 / 7살(?)" — 판독 불확실. 원서 대조가 필요하다.</p>
+<hr />
+<blockquote>
+<p>📖 전사 원문(줄이지 않은 표시 구절 전체): <span class="wl-dead" title="위키 내부 링크">크리스천을위한마음코칭_헨리클라우드_전사</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#domain/상담</span><span>#discipline/기독교상담학</span><span>#domain/심리학</span><span>#topic/발달과제</span><span>#topic/경계</span><span>#topic/애착</span><span>#topic/은혜와진리</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
