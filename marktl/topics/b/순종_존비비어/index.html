@@ -1,0 +1,386 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>순종 — 존 비비어 (두란노, 윤종석 옮김) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">리더십·일·경영</span><span class="author">존비비어</span><span class="date">2026-09-26</span></div>
+  <h1 class="note-title">순종 — 존 비비어 (두란노, 윤종석 옮김)</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/%EC%88%9C%EC%A2%85_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<blockquote>
+<p>원제 <em>Under His Authority</em>, 부제 「하나님의 권위 아래서 누리는 보호와 자유」. 미국 메신저 인터내셔널의 순회 설교자 <span class="wl-dead" title="위키 내부 링크">존비비어</span>가 <strong>"모든 권위의 근원은 하나님이다"</strong> 한 문장에서 출발해, 불순종=죄의 본질·거역=사술·순종(행동)과 복종(태도)의 구분·부당한 권위 아래서의 반응·믿음의 성장까지를 17장에 걸쳐 밀고 가는 책. 가정사역·세계관 강의에서 "순종과 복종의 구분"으로 반복 인용해 온 바로 그 원전이다. 📷 표시 전사 기반 독서 노트.</p>
+</blockquote>
+<hr />
+<h2>요약 — 주제별 상세 정리</h2>
+<h3>1. 권위의 근원은 하나님 하나다 — 하나님 나라는 왕국이다</h3>
+<p>책 전체의 전제는 1~2장에서 세워진다. 보호와 권위는 한 짝이다. <strong>"보호 아래 있는 사람은 하나님의 권위 아래 있는 사람이다"</strong>(p.13). 그리고 그 권위의 체계는 합의제가 아니다. <strong>"하나님 나라는 왕국이지 민주주의 국가가 아니다"</strong>(p.21).</p>
+<p>저자가 가장 먼저 무너뜨리는 것은 "하나님께는 복종하되 사람에게는 수긍할 때만"이라는 이중 기준이다.</p>
+<blockquote>
+<p>"나는 하나님에게는 복종하지만 인간에게는 먼저 내가 수긍할 수 있어야 복종할 수 있다"고 말할 사람들도 있을 것이다. (p.23)</p>
+<p>하나님에게만 있는 권위에 대한 복종과 하나님이 위임하신 권위에 대한 복종은 나뉠 수 없다. 모든 권위의 근원은 하나님이다! (p.23)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>권위의 층</th>
+<th>내용</th>
+<th>표시</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>직접적 권위</td>
+<td>하나님이 말씀·성령으로 직접 행사</td>
+<td>p.35 밑줄</td>
+</tr>
+<tr>
+<td>위임하신 권위</td>
+<td>가정·교회·사회·국가의 지도자를 통해 행사</td>
+<td>p.35 밑줄</td>
+</tr>
+<tr>
+<td>근원</td>
+<td>둘 다 하나님에게서 — 나눌 수 없다</td>
+<td>📝 뒤 면지 「but 모든 권위의 근원은 Θ이시다 !!!」</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 인사이트: 자유는 반항이 아니라 복종에 있다.</strong> "우리는 권위에 반항하여 자유를 얻으려 하지만 실은 권위에 반항하면 그 자유를 잃게 된다. … 복종에는 자유가 있고 반항에는 속박이 있다"(p.23). 바울의 회심 장면 "가시채를 뒷발질하기가 네게 고생이니라"(행 26:14, p.24)가 이 명제의 그림이 된다.</p>
+<p><strong>vision과 division.</strong> 저자는 분열(division)을 <em>di</em>(둘)+<em>vision</em>으로 읽는다 — "오늘날 교회와 가정이 분열되는 이유는 무엇인가? 비전이 나뉘었기 때문이다. … 머리가 둘인 기관은 분열될 수밖에 없기에 하나님은 지도자를 세우신다"(p.32). 독자는 'di'에 동그라미를 치고 뒤 면지 요약에 「vision 과 division」을 따로 적었다. 셀 그룹을 두고 "담임 목사가 틀렸고 당신이 맞으면 어떻게 됩니까?"라는 질문 단락(p.35)에는 여백에 세로 괄호를 쳤다 — 옳음과 권위가 충돌하는 장면이 이 책의 진짜 시험대임을 처음부터 짚어 둔 셈이다.</p>
+<hr />
+<h3>2. 죄의 정의 — 불법(아노미아)은 권위 거부다</h3>
+<p>3장은 죄를 윤리 목록이 아니라 <strong>권위 관계</strong>로 재정의한다. "죄는 불법이라"(요일 3:4)의 불법은 <em>아노미아</em>, 즉 "하나님의 법이나 뜻을 거부하고 그 자리에 자기의 뜻을 놓는 것"(p.41)이다.</p>
+<blockquote>
+<p>땅을 사는 것은 죄가 아니다. 하지만 소유에 대한 관심이 하나님의 말씀에 대한 즉각적 복종보다 앞선다면 그것은 죄의 핵심에 해당된다. (p.43)</p>
+<p>즉시 순종하는 것보다 생업이나 사업을 중요하게 여기면 죄다 (p.43)</p>
+</blockquote>
+<p>그래서 독자는 이 장의 결론 "'하나님의 권위에 복종하지 않는 것'이 <strong>죄라고</strong> 답할 수 있게 됐다"(p.47)에 동그라미를 쳤다. 뒤 면지에는 「죄에 대한 올바른 이해 — Θ의 권위에 복종하지 않은것 ex) 질병에 대한 비유(감기와 암)」라고 적었다 — 증상(개별 죄)과 병인(권위 거부)을 구분하는 <strong>의사의 비유</strong>로 번역해 둔 것이다.</p>
+<p>외적 준수만으로는 부족하다는 단서도 함께 붙는다. "하나님이 원하시는 것은 외면적 순종이 아니라 상하고 통회하는 마음이다"(p.34, 시 51:16-17). 그리고 은혜는 순종의 면제가 아니라 동력이다 — "은혜를 받자 이로 말미암아 … 하나님을 기쁘시게 섬길지니"(히 12:28, p.49).</p>
+<hr />
+<h3>3. 미혹의 구조 — 전달된 지식 vs 계시된 지식</h3>
+<p>4장 「미혹의 대가 사탄」은 말세의 고통하는 때(딤후 3:1)를 박해가 아니라 <strong>교회 안의 미혹</strong>으로 읽는다(p.53). "오늘날 훌륭한 설교와 교육을 좋아하지만 현실에서는 여전히 하나님의 뜻보다는 자기 삶을 더 사랑하는 교인이 많다"(p.55).</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>하와</th>
+<th>아담</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>불순종의 형태</td>
+<td>속아서 불순종</td>
+<td>알고서 불순종</td>
+</tr>
+<tr>
+<td>원문</td>
+<td>"하와는 속아서 불순종하게 되었으나 아담은 자기가 하려는 일을 잘 알았다"(p.57)</td>
+<td></td>
+</tr>
+<tr>
+<td>뒤 면지 도식</td>
+<td>전한(전달된) 지식</td>
+<td>제시된(계시된) 지식 — 📝 판독 불확실</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 인사이트: 미혹의 해독제는 정보가 아니라 계시다.</strong> "<strong>미혹에</strong> 대한 가장 확실한 <strong>대비책은</strong> 전달된 지식이 아니라 계시된 지식이다"(p.59). 말씀을 듣되 성령의 계시로 받지 않으면 "그 말씀은 우리의 한 부분이 아니다. 일종의 율법일 뿐이다. '죄(불순종)의 권능은 율법이라'(고전 15:56)"(p.58). 계시는 경외와 겸손으로 받는다(사 66:2, 시 25:14; p.60).</p>
+<p>하와가 명령에 없던 「만지지도 말라」를 덧붙인 대목(p.58, p.63)에 독자는 두 번 밑줄을 긋고 📝「추가.」라고 적었다. 그리고 선악과 하나에 집중하다 "하나님의 풍성한 공급하심과 선하심을 잊어버렸다"(p.64) — 금지에 대한 과장과 선하심의 망각이 한 쌍으로 온다.</p>
+<hr />
+<h3>4. 가인과 사울 — 자기 논리로 섬기는 불순종</h3>
+<p>5~6장은 불순종의 가장 위험한 형태를 <strong>종교적 불순종</strong>으로 규정한다. 가인은 제사를 드렸다. 그러나 "그는 자기 방식으로 하나님을 섬긴 것이다. 동생처럼 어린아이의 순수함으로 순종하지 않고, 이성에 따라 작용하며 옳고 그름의 논리를 따르는 저주에 마음이 끌렸다"(p.74).</p>
+<blockquote>
+<p><strong>참된 믿음은</strong> 옳고 그름에 대한 인식이 아니라 <strong>순종에서</strong> 나온다. (p.75)</p>
+</blockquote>
+<p>창 4:7을 저자는 물리 비유로 푼다 — 죄의 소원은 중력처럼 늘 작용하지만, 순종은 양력처럼 그것을 지배한다(p.77). 독자는 뒤 면지에 이 도식을 창 4:7 각 구절 옆에 괄호로 병기해 옮겨 적었다.</p>
+<p>사울은 "순도 99%"의 불순종이다. 아말렉 전리품을 남긴 것은 제사를 위해서였다 — <strong>"'성경적인' 일을 하게 한 것이다"</strong>(p.84). "사울은 자기 논리에 미혹당했다"(p.85). 반복된 불순종은 두 가지를 낳는다: 불순종이 쉬워지고, "미혹의 휘장이 마음을 덮어 죄를 깨닫는 감각이 둔해지며 결국 그 감각 대신 논리적인 판단을 넣게 된다"(p.85). 뒤 면지: 「불순종으로 '하나님의 일'(제사)을 하게 함 ↳ 자기 논리에 미혹당함 (이렇게 하면 될꺼야)」.</p>
+<p>회개 없는 불순종의 표지는 남 탓이다 — "회개할 마음이 없는 사람은 불순종이 발각되면 남을 탓한다"(p.91). 그리고 "하나님은 당신을 있는 그대로 받아 주신다"는 말에 저자는 선을 긋는다: <strong>"하나님은 우리가 회개할 때 받아 주신다!"</strong>(p.71).</p>
+<hr />
+<h3>5. 거역은 사술이다 — 보호막이 걷히는 원리</h3>
+<p>삼상 15:22-23 "거역하는 것은 사술의 죄와 같고"에서 저자는 이 책의 가장 강한 명제를 끌어낸다: <strong>"거역은 사술이다"</strong>(p.94~95, 같은 문장에 세 번 표시).</p>
+<table>
+<thead>
+<tr>
+<th>저주의 유형</th>
+<th>사례</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>불가능한 저주</td>
+<td>발람이 이스라엘을 저주하지 못함(민 23:23, 잠 26:2)</td>
+<td>"까닭 없는 저주는 … 이르지 아니하느니라"(p.102)</td>
+</tr>
+<tr>
+<td>스스로 부른 저주</td>
+<td>발람의 꾀 — 브올의 우상 제물과 음행(민 31:16, 계 2:14)</td>
+<td>염병, "무려 2만 4천 명이다!"(p.105)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>하나님의 보호하심이 사라지면서 원수인 사탄이 하나님이 허용하시는 가운데 합법적으로 드나들게 되었다. … <strong>거역은</strong> 귀신이 다스릴 통로를 내 주는 일이다. (p.106)</p>
+</blockquote>
+<p>외부의 저주는 순종하는 백성을 뚫지 못하지만, 불순종은 문을 안에서 연다. 그래서 순종하는 이의 고생과 사술에 빠진 이의 고생은 겉으로 같아 보여도 다르다 — "순종하는 이는 영적으로 성장한다"(p.115). 대처는 온유한 징계다(딤후 2:25-26, p.108). 독자는 뒤 면지에서 이 구절 앞에 *표를 달았다.</p>
+<hr />
+<h3>6. 역사를 주관하시는 분 — 후포타소·타소와 요셉</h3>
+<p>8장은 롬 13:1-2를 원어로 푼다.</p>
+<table>
+<thead>
+<tr>
+<th>원어</th>
+<th>뜻</th>
+<th>본문</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hupotasso(후포타소) '굴복'</td>
+<td>"지도자의 명령하에 군대의 진용을 갖춘다" / "자발적으로 복종하고 협조하고 책임을 감당하며 짐을 지는 태도"</td>
+<td>p.120</td>
+</tr>
+<tr>
+<td>tasso(타소) '정하셨다'</td>
+<td>임명하다</td>
+<td>p.120</td>
+</tr>
+</tbody>
+</table>
+<p>"이 말은 명령이지 의견이 아니다"(p.120). "신자들은 하나님에게 복종한다고 고백하면서도 하나님이 위임하신 권위에는 복종하지 않는 경우가 많다. 미혹된 것이다!"(p.121) 독자는 본문 행간에 「후포타소」「타소」를 연필로 적어 넣었다.</p>
+<p>요셉이 이 장의 증인이다 — "그런즉 나를 이리로 보낸 자는 당신들이 아니요 하나님이시라"(창 45:8, p.125)와 "그 말씀이 저를 단련하였도다"(시 105:19, p.126). 권위의 부당함 너머로 섭리를 본다는 것, 그래서 "우리는 하나님을 힐문할 자격이 없다"(p.131, 롬 9:20)는 것, "그 뜻은 영원의 관점에서 드러난다"(p.132). 지도자에게 영향을 미치는 통로는 저항이 아니라 <strong>"겸손과 순종과 기도"</strong>(p.132, 딤전 2:1-3)다.</p>
+<hr />
+<h3>7. 왕을 공경하라 — 비방하지 않는 권위 대면</h3>
+<p>9~10장은 부당한 지도자 앞에서의 <strong>말</strong>을 다룬다. 야고보를 죽인 아그립바 아래서 베드로는 "왕을 공경하라"(벧전 2:17)고 썼다(p.134). 저자는 여기서 "선한 행실은 권위에 대한 복종이다"(page_059)라고 말한다.</p>
+<ul>
+<li>세례 요한은 헤롯의 <strong>죄 자체</strong>를 지적했지 사람을 조롱하지 않았다(p.141).</li>
+<li>지도자를 비웃은 경건한 사람은 엘리야뿐이다(p.142, 왕상 18:27).</li>
+<li>미가엘도 마귀를 "감히 훼방하는 판결"로 대하지 않았다(유 9, p.142).</li>
+<li>같은 책망도 "증오가 가득한, 율법주의적인 마음"과 "긍휼히 여기는 마음"은 다르다(p.143).</li>
+<li>"너의 백성의 관원을 비방치 말라"(행 23:5, p.144).</li>
+</ul>
+<p>롬 13:4의 "하나님의 사자"에 독자는 📝「사역자 (개역개정)」라고 적고 「사자, 일꾼」에 동그라미를 쳤다(p.146~147). 공무원을 볼 때 "마음이 뜨거워진다"는 저자의 고백까지 밑줄이 이어진다 — 국가 권위를 <strong>하나님의 사역자</strong>로 보는 시선 전환이다.</p>
+<p><strong>한나와 엘리.</strong> 기도하는 한나를 술 취했다고 몰아세운 엘리 앞에서(p.154), 한나는 억울함을 쏟지 않고 "대제사장을 존중하며 공경하는 반응"(p.155)을 보였고, 하나님은 "둔감하고 세속적인 제사장의 말을 사용하여 약속의 씨앗을 주신다"(p.156). <strong>"지도자에게 잘못이 있다면 그 문제는 하나님이 다루실 것이다"</strong>(p.155). 뒤 면지: 「가장 고통스러운 순간 오해받음 — 정죄 / but, 한나의 승리」.</p>
+<p><strong>배나 존경할 자.</strong> 영적 권위의 질서(하나님 아버지 → 예수님 → 선지자 → 의인 → 소자, p.161)를 영접하는 이에게 보상이 따른다. <strong>"하나님은 우리에게 필요한 것을 우리가 원치 않는 꾸러미에 담아 보내실 때가 많다"</strong>(p.164). 결론은 한 문장: <strong>"만나는 사람들 안에서 하나님의 권위를 보는 것, 바로 그것이 핵심이다"</strong>(p.172). 다만 타락한 권위에 대한 경계도 분명하다 — 두세 증인(딤전 5:19), 그리고 "그들의 죄에 동참하지 말라. 그들이 진정으로 회개하지 않으면 그 권위에게서 떠나라"(p.159).</p>
+<hr />
+<h3>8. 핵심 인사이트: 순종은 행동, 복종은 태도</h3>
+<p>11장이 이 책의 중심축이며, 가정사역·기독교세계관 강의가 반복 인용해 온 바로 그 구분이다.</p>
+<blockquote>
+<p>순종이 권위에 반응하는 행동의 문제라면 복종은 권위에 대한 태도의 문제다. (p.180)</p>
+<p>복종은 태도의 문제고 순종은 명령을 수행하는 문제임을 잊지 말라. (p.182)</p>
+</blockquote>
+<p>독자가 뒤 면지에 정리한 2×2가 이 장의 가장 좋은 요약이다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>행동: 순종</th>
+<th>행동: 불순종</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>태도: 복종</strong></td>
+<td>✅ 즐겨 순종(사 1:19 "너희가 <strong>즐겨</strong> 순종하면")</td>
+<td>예외 — 하나님의 명령과 충돌할 때(단 6:10 다니엘)</td>
+</tr>
+<tr>
+<td><strong>태도: 불복종</strong></td>
+<td>"억지로 하는 경우"</td>
+<td>"'네'하고 안하는 것"</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>어디까지?</strong> — 📝「복종하는 태도는 항상. 순종은 Θ과 충돌될 때에만 예외.」 저자: "지도자들이 우리에게 죄를 지으라고 명하면 순종할 책임에서 벗어나게 된다. 그러나 그런 경우라도 우리는 겸손히 복종하는 태도를 잃지 말아야 한다"(p.182).</li>
+<li><strong>귀여운 거역</strong>도 거역이다 — "귀여운 거역도 노골적 거역 못지 않게 독소적인 태도다"(p.181).</li>
+<li>다윗은 사울의 단창을 피해 <strong>떠났으되</strong> "사울의 권위를 공경하는 태도는 잃지 않았다"(p.185). 떠남과 공경은 양립한다.</li>
+<li>바울은 "회칠한 담이여"라고 했다가 대제사장인 줄 알자 "자기의 태도와 말을 뉘우쳤다"(행 23:4-5, p.186).</li>
+<li>📝「but. 결과가 항상 좋을 수는 없다.」 — 독자가 덧붙인 현실의 단서.</li>
+</ul>
+<hr />
+<h3>9. 부당한 권위 아래에서 — 호소·중재·자기변호 포기</h3>
+<p>12~13장은 "지도자가 틀렸다면?"에 대한 실천 매뉴얼이다.</p>
+<table>
+<thead>
+<tr>
+<th>상황</th>
+<th>성경 사례</th>
+<th>원리(원문)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>지도자가 내막을 모르고 결정</td>
+<td>에스더</td>
+<td>"여전히 복종하는 마음을 잃지 않고 공경하는 태도로 왕에게 말했다"(p.201), "자기만 아니라 왕의 유익을 생각하면서 극히 겸손한 자세로"(p.202)</td>
+</tr>
+<tr>
+<td>이미 결정이 내려짐</td>
+<td>아비가일</td>
+<td>탄원의 예(p.203)</td>
+</tr>
+<tr>
+<td>누군가를 위한 중재</td>
+<td>아비가일·모세</td>
+<td>"중재하려고 나선다는 것은 그 사람의 잘못을 모르는 체 한다는 뜻이 아니다. 오히려 잘못을 인정하는 것이다"(p.206)</td>
+</tr>
+<tr>
+<td>이견 제시</td>
+<td>모세</td>
+<td>"그것이 일차적으로 누구를 위한 일인지 자문해야 한다"(p.208)</td>
+</tr>
+<tr>
+<td>까다로운 지도자</td>
+<td>다윗과 사울</td>
+<td>스콜리오스 = "비뚤어지다, 괴팍하다, 악하다, 불공평하다"(벧전 2:18, p.216)</td>
+</tr>
+</tbody>
+</table>
+<p>벧전 2:21 "이를 위하여 너희가 부르심을 입었으니(즉 너희 소명과 뗄 수 없는 부분이니)"(p.217)는 부당한 고난을 소명의 일부로 재배치한다. 예수님은 자기변호를 하지 않으시고 하나님이 변호하시게 했다(📝 뒤 면지). 그리고 <strong>"고난이 클수록 큰 권위를 맡기신다. … 부당한 권위를 만나면 하나님이 당신을 복 받을 자리에 두셨음을 알아야 한다. … 선택은 당신 몫이다. 승자의 길을 택하라"</strong>(p.236). 여기서 복은 "그리스도를 닮은 성품, 하나님 나라의 진보, 영원한 상급"(p.235)이다.</p>
+<p>사울이 왜 제거되지 않았는가에 대한 저자의 논증 — "사울은 백성이 택했고, 다윗은 하나님이 택하셨다"는 통념을 거부하고(p.229), 제사장 85명 학살·다윗의 기름부음·정당방위·하나님이 잠들게 하신 군대라는 네 반론을 하나씩 짚는다(p.232) — 은 <a class="wl" href="../../b/%EC%84%B8%EC%99%95%EC%9D%B4%EC%95%BC%EA%B8%B0_%EC%A7%84%EC%97%90%EB%93%9C%EC%9B%8C%EC%A6%88/">세왕이야기_진에드워즈</a>와 정확히 같은 본문을 같은 방향으로 읽는다. 진 에드워즈가 다윗의 <strong>내면</strong>을 이야기로 그렸다면 비비어는 <strong>원리</strong>로 정리했다.</p>
+<hr />
+<h3>10. 은사보다 직분, 그리고 순종으로 자라는 믿음</h3>
+<p>14장의 경고: <strong>"그들의 과오는 영적 은사나 능력을 권위보다 높이 본 것이다"</strong>(p.243), <strong>"하나님 나라의 권위는 은사가 아니라 직분을 통해 내려온다"</strong>(p.244). 소명이 있어도 권위가 아직 머물지 않을 수 있다 — "모세의 마음에 소명은 있었으나, 아직 하나님의 권위가 그 위에 머물지 않았다"(p.252; 📝「소명과 권위.」). 고라 일당 250명과 염병 14,700명(p.253~256)이 그 반대편 끝이다. 노아의 수치를 드러낸 함의 이야기는 📝「옳은 얘기를 했지만 틀린 상태」로 요약된다(p.238).</p>
+<p>16장은 순종과 믿음을 결합한다. 눅 17:7-10의 종의 비유에서 세 원리를 뽑는다(p.284, 독자가 번호에 동그라미):</p>
+<ol>
+<li><strong>믿음은</strong> 권위에 대한 순종과 직결된다 — 로마 백부장의 큰 믿음은 "권위에 대한 복종을 이해하고 그 안에서 행했기 때문이다"(p.286).</li>
+<li><strong>믿음은</strong> 명령받은 것을 다 행할 때만 자란다 — 📝「아브라함(100%) ↔ 사울(99%)」.</li>
+<li>참된 겸손의 태도가 가장 중요하다 — 📝「안전장치」. "예수님이 유일하게 자랑하신 덕목이 바로 겸손이다"(p.297, 마 11:29).</li>
+</ol>
+<p>야고보서 2장을 저자는 "믿음은 몸에, 순종하는 행동은 인간의 영혼에"(p.290) 대응시킨다. 그리고 <strong>순종의 효율</strong>: "부지런한 순종이 당장은 효율이 없는 것처럼 보일 수 있으나 결국은 효율이 높다"(p.299). 결말은 아가서의 그늘이다 — "그분의 그늘 아래 생명 나무가 있다"(아 2:3-4). 아픔은 양심이 살아 있다는 증거이자 출구(회개)가 있다는 신호이고(p.301), 그 출구의 실천은 구체적이다: <strong>"권위 있는 자리에 있는 사람들에게 직접 찾아가거나 편지로 용서를 구하라. 지금은 상대를 탓하거나 자기 상황을 변호할 때가 아니다"</strong>(p.302).</p>
+<hr />
+<h2>독자의 흔적 — 뒤 면지 장별 노트와 독후 기록</h2>
+<p>뒤 면지 5면에 1~17장 전체를 <strong>장 번호를 매겨 요약한 손글씨 노트</strong>가 있다(Θ=하나님 약기호). 본문 밑줄을 그대로 옮기되 <strong>2×2 순종·복종 표, 창 4:7 중력·양력 병기, 영적 권위의 질서 사슬, 아브라함 100% ↔ 사울 99%</strong> 같은 도식화가 곳곳에 들어가 있어, 설교·강의로 옮길 뼈대가 이미 이 면지에서 만들어져 있었음을 보여 준다. <span class="wl-dead" title="위키 내부 링크">가정사역-대경누가회-2013</span>·<a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%84%B8%EA%B3%84%EA%B4%80/">기독교세계관</a> 강의에 등장하는 존 비비어 인용의 출처가 이 노트다.</p>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<ul>
+<li><strong>의료·조직 리더십</strong>: 「옳지만 틀린 상태」(함)와 「'네'하고 안 하는 것」은 병원·이사회에서 가장 흔한 두 실패다. 이사로서 이견을 낼 때 p.208의 질문 — "일차적으로 누구를 위한 일인가" — 을 발언 전 점검표로 쓸 수 있다.</li>
+<li><strong>가정사역 강의</strong>: 순종(행동)/복종(태도) 2×2는 이미 강의에서 쓰고 있으나, 원전 페이지(p.180·182)와 "어디까지?"의 예외 규칙(p.182, 벧전 3:1-2, 단 6:10)을 함께 인용하면 "무조건 복종" 오해를 막을 수 있다.</li>
+<li><strong>멘토링</strong>: 은사 vs 직분(p.243~244), 소명과 권위(p.252)는 사역 현장에서 "은사가 있으니 먼저 하겠다"는 후배에게 주는 응답의 뼈대가 된다.</li>
+<li><strong>미해결 질문 1 — 학대적 권위의 경계</strong>: 저자는 "진정으로 회개하지 않으면 그 권위에게서 떠나라"(p.159)와 다윗의 떠남(p.185)을 인정하지만, 떠남의 기준선(언제 공경의 태도로 머물고, 언제 떠나는가)은 사례 나열에 그친다. 교회 권위 남용 피해자에게 이 책을 그대로 권할 수 있는가? — <a class="wl" href="../../t/%EA%B6%8C%EC%9C%84/">권위</a>의 「권위가 진짜인지 어떻게 아는가」 질문과 함께 다룰 것.</li>
+<li><strong>미해결 질문 2 — 거역=사술의 적용 범위</strong>: 인간 권위에 대한 불순종 일반을 사술의 저주 통로로 등치하는 것(p.106~107)은 삼상 15장의 문맥(하나님의 직접 명령)을 넘어서는 확장이 아닌가.</li>
+<li><strong>미해결 질문 3 — 국가 권위</strong>: 공무원을 "하나님의 사역자"로 보는 시선(p.147)은 불의한 국가 권력 앞에서 어떻게 <a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%84%B8%EA%B3%84%EA%B4%80/">기독교세계관</a>의 예언자적 기능과 조화되는가(세례 요한 p.141이 단서).</li>
+<li>인용 원전: p.280의 인용 <em>Spiritual Authority</em>(p.62)는 <span class="wl-dead" title="위키 내부 링크">워치만니</span>의 『영적 권위』 — 비비어 논지의 계보 확인 필요.</li>
+</ul>
+<hr />
+<blockquote>
+<p>📖 전사 원문(줄이지 않은 표시 구절 전체 + 뒤 면지 손글씨): <span class="wl-dead" title="위키 내부 링크">순종_존비비어_전사</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/제자도</span><span>#discipline/실천신학</span><span>#topic/권위</span><span>#topic/순종</span><span>#topic/복종</span><span>#topic/미혹</span><span>#topic/리더십</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
