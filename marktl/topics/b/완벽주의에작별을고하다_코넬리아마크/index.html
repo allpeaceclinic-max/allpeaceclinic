@@ -1,0 +1,443 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>완벽주의에 작별을 고하다 — 코넬리아 마크 (토기장이, 강미경 옮김) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">상담·치유·가정</span><span class="author">코넬리아마크</span><span class="date">2026-09-29</span></div>
+  <h1 class="note-title">완벽주의에 작별을 고하다 — 코넬리아 마크 (토기장이, 강미경 옮김)</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/%EC%99%84%EB%B2%BD%EC%A3%BC%EC%9D%98%EC%97%90%EC%9E%91%EB%B3%84%EC%9D%84%EA%B3%A0%ED%95%98%EB%8B%A4_%EC%BD%94%EB%84%AC%EB%A6%AC%EC%95%84%EB%A7%88%ED%81%AC/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<blockquote>
+<p>부제 ‘완벽주의의 덫에서 자유해지는 비결’. 독일어권 기독교 상담가인 저자가 완벽주의를 <strong>증상 → 대가 → 뿌리 → 은혜 → 실천</strong> 순으로 풀어낸 짧은 상담서다. 한국어판에는 목회자 세 사람(강준민·이상준·전광진)의 추천의 글이 붙어 있고, 이 추천사들이 책의 신학적 틀을 본문보다 더 선명하게 잡아 준다. 📷 표시 전사 기반 독서 노트.</p>
+</blockquote>
+<p><strong>한 문장 명제</strong>: 완벽을 추구하는 것은 나쁘지 않다. 문제는 <strong>특정 분야의 탁월함이 삶 전체의 조건이 될 때</strong>이며, 그 감옥의 열쇠는 더 잘하는 것이 아니라 <strong>나를 「총액」으로 사랑하시는 하나님의 은혜</strong>를 받아들이는 데 있다.</p>
+<hr />
+<h2>요약 — 주제별 상세 정리</h2>
+<h3>1. 완벽과 완벽주의는 다르다 — 추구의 대상과 감옥</h3>
+<p>저자는 완벽을 변호하는 데서 책을 시작한다. 강준민의 추천사가 이 점을 먼저 짚는다 — 저자는 「"완벽을 추구하는 것이 나쁜 것이 아니다."라는 말로 그의 책을 시작한다」.</p>
+<blockquote>
+<p>"완벽이란 근본적으로 나쁜 게 아니다. 우리 사회의 특정 분야들에서는 완벽함이 매우 중요하다. 예를 들어, <strong>의료계</strong>에서는" (프롤로그)</p>
+<p>"자동차를 공장에서 가져올 때도 우리는 브레이크가 75퍼센트만이 아니라 100퍼센트 완벽하게 작동되기를 바란다." (프롤로그)</p>
+</blockquote>
+<p>「의료계」에 동그라미가 쳐져 있다. 생명을 다루는 자리에서 완벽은 덕목이다(강준민: 「생명과 관련된 일을 하는 사람들은 완벽을 추구해야 한다」). 그러나 위험은 그 기준이 <strong>영역을 넘어</strong> 번질 때 생긴다.</p>
+<blockquote>
+<p>"하지만 그런 사람들이 자주 갖게 되는 위험은, 특정한 분야뿐 아니라 삶의 모든 부분에서 완벽하려 하며, 그로 인해 자신과 주위 사람들에게 부담을 준다는 데 있다. 그들은 자신의 가치를 능력으로만 평가하면서, 자신의 목표에 도달하지 못하면 스스로를 무가치하다고 느끼는 경우가 많다." (프롤로그)</p>
+<p>"누구에게나 완벽해지고 싶은 특정한 <strong>분야나 상황</strong>이 있다. 그러나 그 외의 다른 영역에서는 완벽이 그다지 중요한 문제가 아닌 경우가 많다." (p.33)</p>
+</blockquote>
+<p>그리고 누구도 이 질문에서 자유롭지 않다. 「"당신은 완벽한 사람이 되기를 – 적어도 몰래 – 바라는가?"」 겉으로는 <strong>아니오</strong>, 솔직하다면 거의 모두 <strong>예</strong>다(PART 1 도입).</p>
+<h3>2. 완벽주의자의 초상 — 증상 목록</h3>
+<p>PART 1은 사례와 함께 완벽주의자의 내면 풍경을 그린다. 밑줄을 모으면 하나의 진단표가 된다.</p>
+<table>
+<thead>
+<tr>
+<th>영역</th>
+<th>표시한 문장</th>
+<th>쪽</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>쉼의 불가능</td>
+<td>「아무것도 하지 않고 있다는 것은 그녀 스스로 용납할 수 없다.」</td>
+<td>p.25</td>
+</tr>
+<tr>
+<td>내면의 비평가</td>
+<td>「칭찬받을 때마다 기쁘면서도, 곧장 마음속에서 어떤 비평가가 벌떡 일어나 "하지만 좀 더 잘할 수도 있었잖아."」</td>
+<td>p.25</td>
+</tr>
+<tr>
+<td>자책</td>
+<td>「끊임없이 <strong>자책감</strong>에 시달린다.」</td>
+<td>p.26</td>
+</tr>
+<tr>
+<td>통제</td>
+<td>「주변이 그녀의 <strong>통제권</strong>에서 벗어나는 것보다 더 그녀를 힘들게 하는 것은 없다.」</td>
+<td>p.28</td>
+</tr>
+<tr>
+<td>조건적 사랑</td>
+<td>「그녀의 사랑은 조건적이고, 아이들과 남편과 다른 사람들에게는 분노와 불만이 가득하다.」</td>
+<td>p.28</td>
+</tr>
+<tr>
+<td>귀인</td>
+<td>「실패했을 때는 즉각 자신에게 책임을 돌리는 경향이 강하다.」</td>
+<td>p.34</td>
+</tr>
+<tr>
+<td>이분법</td>
+<td>「전부가 아니면 무無라는」</td>
+<td>p.35</td>
+</tr>
+<tr>
+<td>도움의 수치</td>
+<td>「도움을 필요로 한다는 것을 수치로 여긴다.」</td>
+<td>p.36</td>
+</tr>
+<tr>
+<td>이미지 관리</td>
+<td>「오직 칭찬만 허용된다. 그렇지 않으면 유능하고 성실한 이미지에 금이 간다고 여긴다.」</td>
+<td>p.36</td>
+</tr>
+<tr>
+<td>규칙</td>
+<td>「완벽주의자의 생각 속에는 <strong>규칙</strong>으로 꽉 차 있다.」</td>
+<td>p.37</td>
+</tr>
+<tr>
+<td>감사 상실</td>
+<td>「자칫 감사하는 마음을 잃기 쉽다.」</td>
+<td>p.43</td>
+</tr>
+<tr>
+<td>죄책감·자기비하</td>
+<td>「그래도 제대로 안 되면 결국 자신이 <strong>무가치하다</strong>고 스스로를 <strong>비하</strong>한다.」</td>
+<td>p.43</td>
+</tr>
+<tr>
+<td>두려움</td>
+<td>「예민해서 두려움도 많다.」</td>
+<td>p.45</td>
+</tr>
+<tr>
+<td>고립</td>
+<td>「스스로 '한 마리 외로운 참새'가 된다.」</td>
+<td>p.48</td>
+</tr>
+</tbody>
+</table>
+<p>관계의 비용도 크다. 「완벽한 사람은 존경받을 수는 있지만 사랑받지는 못한다. 완벽한 사람들은 대체로 '비인간적'인 경우가 많다.」(p.22) 곁에 있는 사람은 「같이 있기만 해도 심적으로 얼어붙기 시작한다」(p.22). 완벽주의자는 「불편한 이웃이다」(p.40).</p>
+<p>성경의 예로 저자는 <strong>베드로</strong>를 든다(p.35, 동그라미). 여백에는 물음표가 붙어 있고, p.107 소제목 「성경의 예 – 완벽주의자 베드로」 옆에도 📝 「? 바울이 아니고」가 적혀 있다 — 율법적 흠 없음을 자랑하던 바울(빌 3:6)이 더 전형적인 사례가 아니냐는 독자의 반문이다(§미해결 질문).</p>
+<h3>3. 몸과 삶이 치르는 대가 — 핵심 인사이트: 무질서도 완벽주의의 열매다</h3>
+<p>완벽주의는 몸으로 청구서를 보낸다. 「그럴수록 나의 위기대처능력은 마비되고 나는 점점 더 <strong>불안</strong>해져.」(p.52) 어떤 사람은 <strong>두통</strong>, 어지럼증이나 시력저하, 면역기능 장애를 겪는다(p.52~53).</p>
+<blockquote>
+<p>"완벽주의는 탈진으로 인한 우울증, 소위 탈진burn-out 신드롬을 일으키는 경우가 많다." (p.47)</p>
+<p>"탈진과 완벽주의는 동전의 양면이다." (p.58)</p>
+<p>"완벽주의자는 무엇보다 <strong>일중독</strong>이 되기 쉽다." (p.59)</p>
+</blockquote>
+<p>외모를 향한 완벽주의는 스포츠·다이어트·거식증·구토로 나타난다(p.60).</p>
+<p><strong>핵심 인사이트</strong>: 가장 통념을 뒤집는 대목은 이것이다.</p>
+<blockquote>
+<p>"완벽주의의 이미지에는 정말 안 맞지만 <strong>무질서</strong>와 <strong>게으름</strong>도 완벽주의의 열매가 될 수 있다." (p.54~55, 쪽 경계에서 이어지는 한 문장)</p>
+</blockquote>
+<p>완벽하게 할 시간이 없으니 <strong>아예 손을 대지 않는다</strong>. 「많은 시간이 없으니 아예 세차를 안 하는 것이다.」(p.56) 그리고 그 무질서 때문에 또 괴로워한다. 미루기·방치가 게으름이 아니라 완벽주의의 다른 얼굴일 수 있다는 진단이다. 극단적인 경우 완벽주의자는 <strong>창의성</strong>마저 잃는다(p.57). 저자의 처방은 이미 여기서 나온다 — 「'그저 적당한 정도로만' 잘하고 완벽하게 하려 하지 말 것. 부분적인 목적을 세울 것. 자신의 평균치에 만족할 것.」(p.56~57)</p>
+<p>두려움에 대해서는 <strong>역설적 치유양식</strong>(p.62)을 권한다. 두려워하는 일을 일부러 해 보면 「그럴 때 우려했던 결과가 나타나는 경우는 드물다」(p.63).</p>
+<h3>4. 뿌리 — 「사랑 = 기대충족」이라는 낡은 가치평가 방식</h3>
+<p>왜 이렇게 되는가. 저자는 성장기의 <strong>조건적 사랑</strong>을 뿌리로 본다.</p>
+<blockquote>
+<p>"무조건적인 사랑과 인정에 목말라 한다. 그들이 알고 있는 방식이란 오직 "잘해라, 노력해라, 일등해라, 그러면 너는 사랑받을 거야"" (p.68)</p>
+<p>"'사랑=기대충족'이라는 낡은 가치평가 방식의 종이 되어 있는 것이다." (p.113)</p>
+</blockquote>
+<p>「인정받는 것이 기본을 이룬 교육을 받았기」(p.67) 때문에, 사랑받을 자격을 성취로 증명하려는 내면의 문법이 자리 잡는다. 「네가 사랑받을 만하면 너를 사랑하겠어.」(p.113)</p>
+<p>이 문법은 <strong>그림자</strong>를 만든다. 저자는 C.G. 융의 「그림자」(어두운 면) 개념을 끌어온다(p.40). 인정받지 못할 면을 감추다 보니, 「이렇게 완벽주의자들은 자신의 감추어둔 부정적인 면이 드러날 때 자주 분노 폭발의 고통을 겪는다」(p.42).</p>
+<h3>5. 핵심 인사이트: 완벽주의는 ‘하나님처럼 되라’는 옛 유혹이다 — 추천사의 신학</h3>
+<p>한국어판 추천사 세 편은 심리학적 진단을 신학의 언어로 번역한다. 가장 많이 밑줄 그은 곳이 이 부분이다.</p>
+<p><strong>강준민</strong> — 완벽주의 = 선악과의 유혹</p>
+<blockquote>
+<p>"진정한 영성은 완벽을 추구하는 것이 아니다. 참된 영성은 우리가 하나님이 되는 것이 아니라 참된 인간이 되는 것이다. 그런데 우리는 참된 인간이 되기보다 하나님처럼 되려고 한다." (추천의 글)</p>
+<p>"이 유혹은 지금도 계속되고 있다. 그 유혹이 완벽주의다." (추천의 글)</p>
+<p>"하나님이 우리에게 원하시는 것은 하나님의 형상을 닮은 <strong>유한한 인간이</strong> 되는 것이다." (추천의 글)</p>
+</blockquote>
+<p>그래서 이 책은 「'불완전함의 <strong>영성</strong>'에 관한 책」이다. 이어지는 논리가 날카롭다 — 인간이 완벽하다면 「십자가가 필요 없고, 구세주 예수님도 필요 없으시다」. 완벽주의는 <strong>율법 아래 사는 것</strong>이고, 「가장 아름다운 이름으로 자신을 학대하는 것」이다(두 번 밑줄).</p>
+<p><strong>이상준</strong> — 완벽의 양가성</p>
+<table>
+<thead>
+<tr>
+<th>완벽을 추구하는 이유 (긍정)</th>
+<th>완벽한 사람의 문제 (부정)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>셋째, <strong>소명적 차원</strong>에서 완벽주의는 긍정적이다 — 「최고의 주님께 나의 최선을 드리는 삶이야말로 향유옥합을 부어드리는 삶」</td>
+<td>첫째, 비인간적이다 — 「존경받을 수는 있지만 사랑받지는 못한다」</td>
+</tr>
+<tr>
+<td></td>
+<td>둘째, 불행하다 — 「완벽이라는 이상의 벼랑 끝을 걷다가 추락한다」</td>
+</tr>
+<tr>
+<td></td>
+<td>셋째, 영혼이 시든다</td>
+</tr>
+<tr>
+<td></td>
+<td>넷째, 부정적이다</td>
+</tr>
+</tbody>
+</table>
+<p>「완벽주의자는 완벽에 대한 양가감정을 갖는다. 완벽을 갈망하지만 이룰 수 없다.」</p>
+<p><strong>전광진</strong> — 비은혜와 자기 의</p>
+<blockquote>
+<p>"이러한 비은혜의 삶이 바로 이 책에서 말하는 완벽주의, 즉 '자기 의'를 추구하는 종교 생활이다." (추천의 글)</p>
+<p>"하지만 <strong>온전함</strong>은 결과물이 아니라 '<strong>방향</strong>'이다." (추천의 글)</p>
+</blockquote>
+<p>이 마지막 문장이 책 전체의 열쇠 역할을 한다. 온전함을 도달점(결과물)으로 보면 완벽주의가 되고, 방향으로 보면 <a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a>가 된다. 완벽주의를 <a class="wl" href="../../t/%EC%9C%A8%EB%B2%95%EC%A3%BC%EC%9D%98/">율법주의</a>의 심리적 형태로 읽게 해 주는 틀이다.</p>
+<h3>6. 그림자를 대면하기 — 자기 수용과 솔직함</h3>
+<p>치유의 첫걸음은 감추어진 이면을 보는 것이다.</p>
+<blockquote>
+<p>"완벽주의가 나와 이웃들에게 미치는 파괴적인 영향들을 대면하는 것, 즉, 내 인생의 감추어진 이면을 바라보는 것은 꼭 필요한 일이다." (p.76)</p>
+</blockquote>
+<p>자기 인식에는 두 면이 있다 — 「첫째는 자기 인생의 그늘진 면인 자신의 약점이고, 둘째는 밝은 면인 자신의 멋진 재능이다.」(p.78) 자기 수용은 「완벽하지 못한 다른 면도 직시하고 용납한다는 뜻이다」(p.80).</p>
+<blockquote>
+<p>"솔직함은 참된 우정을 여는 열쇠이다. 내가 나를 받아들일 때 남에게도 내 어두운 면을 내보일 수 있고, 그러면 훨씬 더 자유롭게 살 수 있다." (p.80)</p>
+<p>"자기 약점을 알고 실수를 인정하는 사람은 이해하기 힘들고 호감을 갖기 힘든 사람들도 사랑하는 법을 배우게 된다." (p.85)</p>
+</blockquote>
+<p>단, 자기를 열어 보인 사람에게 던지는 <strong>충고</strong>를 경계한다 — 「충고는 상처가 되는 경우가 많기 때문이다」(p.86).</p>
+<p>그리고 <span class="wl-dead" title="위키 내부 링크">마5</span>:48 「너희도 <strong>온전하라</strong>」를 다시 읽는다. 이 명령은 흠 없음이 아니라 <strong>전체성</strong>이다.</p>
+<blockquote>
+<p>"사랑받는 사람으로서 네 모든 면을 다 아울러 전체적인 너 자신으로 살아라. 너를 하나님 앞에 담대하게 솔직히 드러내어라. 네 삶의 몇 부분만이 아닌 전체를 하나님의 사랑의 품에 내어드리라"는 뜻이다. (p.87)</p>
+</blockquote>
+<p>§5의 ‘온전함은 방향’과 짝을 이룬다. 온전(τέλειος)을 「완벽」이 아니라 「전체」로 읽는 해석이며, <a class="wl" href="../../b/%EC%83%81%EC%B2%98%EC%9E%85%EC%9D%80%EC%B9%98%EC%9C%A0%EC%9E%90_%ED%97%A8%EB%A6%AC%EB%82%98%EC%9A%B0%EC%9B%AC/">상처입은치유자_헨리나우웬</a>이 상처를 결함이 아니라 사역의 도구로 본 것과 같은 방향이다.</p>
+<h3>7. 은혜 — 「순액」이 아니라 「총액」으로 사랑하시는 하나님</h3>
+<p>책의 신학적 중심이다.</p>
+<blockquote>
+<p>"하나님은 우리를 '순액'netted amount이 아니라 '총액'total amount으로 사랑하신다. 총액이란 포장과 이것저것 잡다한 것을 전부 포함했다는 뜻이고, 순액이라 할 때는 본질적인 내용만 가리킨다." (p.94)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>순액의 사랑 (완벽주의의 문법)</th>
+<th>총액의 사랑 (은혜의 문법)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>좋은 부분만 계산에 넣는다</td>
+<td>포장과 잡다한 것까지 다 포함한다</td>
+</tr>
+<tr>
+<td>「네가 사랑받을 만하면」</td>
+<td>「우리가 아직 죄인 되었을 때에」</td>
+</tr>
+<tr>
+<td>그림자는 숨겨야 한다</td>
+<td>그림자까지 품에 내어드린다</td>
+</tr>
+</tbody>
+</table>
+<p>이 쪽 여백에 📝 「우리가 아직 죄인 되었을 때에」(<span class="wl-dead" title="위키 내부 링크">롬5</span>:8)가 적혀 있다 — 총액의 사랑을 성경 본문으로 곧장 연결한 독자의 반응이다. 예수님은 건강한 자에게는 의사가 필요 없다고 말씀하시면서(<span class="wl-dead" title="위키 내부 링크">마9</span>:12) 아픈 자, 죄 있는 자, 무거운 짐을 진 자에게 가셨다(p.96).</p>
+<blockquote>
+<p>"성도는 선한 사람이 아니라 하나님의 선하심을 맛본 사람이다." (p.103)</p>
+<p>"이 사랑은 우리가 노력해서 얻는 것이 아니라 공짜로 선물받는 것이다. 우리 모두 그 사랑에 초대받았다." (p.105)</p>
+<p>"내가 내게 만족하게 되는 게 아니라, 하나님이 나를 만족해 하신다는 사실에 만족하게 된다." (p.105)</p>
+<p>"하나님이 우리를 사랑하시기 때문에 우리가 가치 있는 것이다." — <span class="wl-dead" title="위키 내부 링크">본회퍼</span> (p.106)</p>
+</blockquote>
+<p>구원은 「나는 완벽해야 한다는 압박에서 자유」이며, 내가 실수와 죄를 저질러도 하나님이 나를 필요로 하시고 내 헌신을 통해 선한 일을 행하신다(p.106). 그래서 <strong>열매</strong>의 동기가 바뀐다 — 「우리 자신의 영광을 위해서가 아니라 하나님의 영광을 위해서 우리 삶에 열매가 맺힌다」(p.107).</p>
+<h3>8. 가치평가 방식을 바꾸기 — 사람과 일을 구분하라</h3>
+<p>은혜를 받아들이면 자기 평가의 문법이 바뀐다.</p>
+<blockquote>
+<p>"하나님은 죄인을 사랑하시고 죄를 미워하신다. 하나님은 사람과 일을 구분하신다." (p.114)</p>
+<p>"옛 가치평가 방식을 완전히 무시해버려도 되고, '광야'로 보내버려도 된다는 뜻이다." (p.114)</p>
+</blockquote>
+<p>‘광야로 보낸다’는 표현은 속죄일의 아사셀 염소(레 16장)를 떠올리게 한다 — 옛 문법을 고치려 애쓰는 것이 아니라 <strong>내보내는 것</strong>이다. 실수는 「나」의 가치가 아니라 「일」의 문제로 분리된다.</p>
+<h3>9. 실천 도구 — 약함 자랑·80퍼센트·유머·즐김·도움받기</h3>
+<p>PART 후반부는 구체적 연습으로 넘어간다.</p>
+<table>
+<thead>
+<tr>
+<th>연습</th>
+<th>표시한 문장</th>
+<th>쪽</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>약함을 자랑하기</td>
+<td>「하나님은 내 오물로 거름을 만드실 수 있다」 / 「이는 내 능력이 <strong>약한</strong> 데서 온전하여짐이라」(<span class="wl-dead" title="위키 내부 링크">고후12</span>:9)</td>
+<td>p.121~122</td>
+</tr>
+<tr>
+<td>실수를 일의 일부로</td>
+<td>「일하는 사람은 실수한다. 많이 일하는 사람은 많이 실수한다. 다만 손을 무릎 위에 올려놓고 있는 사람만이 전혀 실수하지 않는다.」</td>
+<td>p.123</td>
+</tr>
+<tr>
+<td>자기에 대한 유머</td>
+<td>「나 자신에 대해 웃을 줄 아는 유머는 분노 폭발을 막아주는 장치와도 같다.」</td>
+<td>p.125</td>
+</tr>
+<tr>
+<td>목표 낮추기</td>
+<td>「지나치게 높은 목표 주위를 뱅뱅 맴도는 대신 부분적인 목표를 세우고, 기대치를 좀 낮추고, 좀 더 작은 걸음에 만족하는 것이다.」</td>
+<td>p.127</td>
+</tr>
+<tr>
+<td>80/20 원칙</td>
+<td>「처음 80퍼센트에 도달하기까지 드는 시간과 힘은, 나머지 20퍼센트를 달성하는데 드는 시간과 힘의 양과 거의 똑같다.」 → 「두 가지 일을 80퍼센트씩 하는 게 더 효율적이지 않을까?」</td>
+<td>p.127</td>
+</tr>
+<tr>
+<td>즐김</td>
+<td>「즐길 줄 안다는 것은 자신의 욕구를 인식하고 허용할 줄 안다는 뜻이다.」 / 「즐길 줄 아는 자만이 즐거움을 줄 수 있다.」</td>
+<td>p.129</td>
+</tr>
+<tr>
+<td>도움 받기</td>
+<td>「도움을 받아들일 줄 안다는 것은 정말 멋지고 자유로운 일이다.」</td>
+<td>p.130</td>
+</tr>
+</tbody>
+</table>
+<p>유머는 §4의 분노 폭발에 대한 직접 처방이고, 도움 받기는 §2의 「도움을 필요로 한다는 것을 수치로 여긴다」에 대한 처방이다. 증상과 연습이 짝을 이룬다. 프롤로그가 바란 삶 — 「좀 더 <strong>자유롭고</strong>, <strong>느긋하며</strong>, <strong>유머 가득한</strong> 삶」 — 의 세 동그라미가 여기서 구체화된다.</p>
+<h3>10. 완벽주의자의 은사 — 자유를 얻은 완벽주의자는 세상을 치유한다</h3>
+<p>저자는 완벽주의자를 병리로만 보지 않는다. 그들은 「대부분 뛰어난 <strong>재능</strong>과 <strong>평균</strong> 이상의 <strong>능력</strong>」(p.65), 높은 유연성과 민감성을 가졌고, 책임지는 역할을 맡는다.</p>
+<blockquote>
+<p>"완벽주의자는 세상을 끊임없이 발전시키는 자들이다." (p.66)</p>
+<p>"오히려 우리는 언제나 그런 사람들이 필요하다." (p.67)</p>
+</blockquote>
+<p>그러니 목표는 완벽주의자를 없애는 것이 아니라 <strong>풀어 주는 것</strong>이다. 주변 사람의 역할도 분명하다.</p>
+<blockquote>
+<p>"완벽주의자에게 이런 조건 없는 사랑과 존중을 계속 전달해 주는 것, 그가 아주 완벽하지 않아도 여전히 사랑받으며, 그의 가치는 실수하지 않는 완벽함에 달린 것이 아님을 계속 경험하게 해 주는 것이 바로 그를 완벽주의의 감옥에서 빠져나오게 하는 방법이다." (p.131)</p>
+<p>"자유를 얻은 완벽주의자들은 이 세상을 치유하는 데 기여하는 사람들이다." (p.132)</p>
+</blockquote>
+<p>자유를 얻은 완벽주의자는 <strong>지도자</strong>가 되는 경우가 많고, 다른 이에게 <strong>사다리를 놓아줄 수 있으며</strong>, 「때로는 느긋하게 쉬면서 아무 일도 안 한다」. 그리고 「가장 중요한 것은, 하나님과 화목하게 지낸다는 사실이다」(p.132~133).</p>
+<p>책 끝(p.140~142)에는 살림·시간관리·교육·외모까지 「완벽한 삶을 살고 싶답니다」라고 말하는 인물의 자기소개로 보이는 글이 이어지다가, 「우리 애들은 다 '원본 그대로'예요.」라는 문장에 밑줄이 그어져 있다. 자녀를 고쳐야 할 작품이 아니라 <strong>원본 그대로</strong> 받아들이는 말로, 총액의 사랑이 다음 세대로 건너가는 장면이다.</p>
+<hr />
+<h2>연결 — 다른 글과의 교차점</h2>
+<ul>
+<li><a class="wl" href="../../t/%EB%B2%88%EC%95%84%EC%9B%83%EA%B3%BC%EC%A0%95%EC%B2%B4%EC%84%B1/">번아웃과정체성</a> — 「탈진과 완벽주의는 동전의 양면」(p.58). 탈진을 업무량이 아니라 <strong>가치의 근거</strong>(성취로 존재를 증명하는 문법)의 문제로 보는 관점을 보강한다.</li>
+<li><a class="wl" href="../../t/%EC%9C%A8%EB%B2%95%EC%A3%BC%EC%9D%98/">율법주의</a> · <a class="wl" href="../../t/%EC%9C%A8%EB%B2%95%EA%B3%BC%EB%B3%B5%EC%9D%8C/">율법과복음</a> — 추천사의 「완벽주의란 율법아래 사는 것」, 「자기 의를 추구하는 종교 생활」. 완벽주의는 율법주의의 심리적 얼굴이다.</li>
+<li><a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a> — 순액/총액 비유(p.94)는 은혜를 설명하는 좋은 도구다.</li>
+<li><a class="wl" href="../../t/%EC%9E%90%EC%A1%B4%EA%B0%90/">자존감</a> · <a class="wl" href="../../t/%EC%A0%95%EC%B2%B4%EC%84%B1/">정체성</a> — 「하나님이 우리를 사랑하시기 때문에 우리가 가치 있는 것」(본회퍼). 자존감을 자기 평가가 아닌 <strong>받은 평가</strong> 위에 세운다.</li>
+<li><a class="wl" href="../../t/%EC%88%98%EC%B9%98%EB%AC%B8%ED%99%94%EC%99%80%EB%B3%B5%EC%9D%8C/">수치문화와복음</a> — 「도움을 필요로 한다는 것을 수치로 여긴다」(p.36). 체면·이미지 관리 문화에서 완벽주의가 증폭되는 지점.</li>
+<li><a class="wl" href="../../b/%EC%83%81%EC%B2%98%EC%9E%85%EC%9D%80%EC%B9%98%EC%9C%A0%EC%9E%90_%ED%97%A8%EB%A6%AC%EB%82%98%EC%9A%B0%EC%9B%AC/">상처입은치유자_헨리나우웬</a> — 약함·상처를 결함이 아니라 사역의 자원으로 보는 방향이 같다(§6·§9).</li>
+<li><a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EC%9D%98%EB%A3%8C%EC%9D%B8%EC%A0%95%EC%B2%B4%EC%84%B1/">기독의료인정체성</a> — 의료계는 저자가 완벽이 필요한 분야의 첫 예로 든 곳이다. 직업적 완벽과 존재적 완벽주의를 구분하는 것이 의료인 영성의 과제다.</li>
+</ul>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<p><strong>적용 — 의료 현장</strong>
+- 진료실의 완벽(정확한 진단·안전한 처방)은 지켜야 할 덕목이다. 다만 그 기준이 <strong>가정·관계·쉼</strong>으로 번지는지 스스로 점검한다(p.33의 「특정한 분야나 상황」).
+- 후배 의료인 멘토링에서 탈진을 다룰 때, 업무량 조정만이 아니라 「사랑=기대충족」의 문법을 함께 묻는다(p.113).
+- 「일하는 사람은 실수한다」(p.123)를 의료 안전 문화의 언어로 옮길 수 있다 — 실수를 인격의 실패가 아니라 시스템과 일의 문제로 분리하는 것(§8 「사람과 일을 구분」).</p>
+<p><strong>적용 — 사역·설교</strong>
+- 마 5:48 「온전하라」를 ‘전체로 살아라’로 읽는 해석(p.87)과 「온전함은 결과물이 아니라 방향」(추천사)은 성화 설교에서 율법주의를 피하는 틀로 쓸 수 있다.
+- 순액/총액 비유(p.94)는 청년 대상 은혜 강의의 도입 예화로 적합하다.
+- 부모교육 — 「우리 애들은 다 '원본 그대로'예요」와 「잘해라, 노력해라, 일등해라, 그러면 너는 사랑받을 거야」(p.68)를 대조해, 조건적 사랑이 자녀에게 완벽주의를 물려주는 경로를 보여 줄 수 있다.</p>
+<p><strong>미해결 질문</strong>
+- 📝 <strong>왜 베드로인가, 바울이 아니고?</strong> 저자는 완벽주의자의 성경 예로 베드로를 든다(p.35·p.107). ‘흠이 없는 자’(빌 3:6)였다가 ‘약한 것들을 자랑’(고후 12)하게 된 바울이 전형에 더 가깝지 않은가. 베드로의 「전부가 아니면 무」(주와 함께 죽겠다 → 세 번 부인)와 바울의 ‘율법의 의’는 완벽주의의 서로 다른 유형(관계적·충동형 vs 규범적·성취형)으로 나눠 볼 수 있을지.
+- 이상준이 말한 ‘소명적 차원’의 긍정적 완벽주의(향유옥합)와 병적 완벽주의의 경계선은 어디인가. 동기(하나님의 영광 vs 자기 의)만으로 구분되는가, 아니면 <strong>실패했을 때의 반응</strong>으로 드러나는가.
+- ‘무질서와 게으름도 완벽주의의 열매’(p.54~55)라면, 미루기를 게으름으로 꾸짖는 권면이 오히려 완벽주의를 강화하지는 않는가.
+- 📝 p.55 여백 손글씨(「또(?) 하(?) 모(?) 나버림(?)」)는 판독되지 않았다. 원본 재확인 필요.</p>
+<hr />
+<blockquote>
+<p>📖 전사 원문(줄이지 않은 표시 구절 전체): <span class="wl-dead" title="위키 내부 링크">완벽주의에작별을고하다_코넬리아마크_전사</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#discipline/영성신학</span><span>#domain/기독교상담</span><span>#topic/완벽주의</span><span>#topic/은혜</span><span>#topic/자기수용</span><span>#topic/탈진</span><span>#topic/약함</span><span>#topic/불완전함의영성</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
