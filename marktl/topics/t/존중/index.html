@@ -1,0 +1,551 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>존중 — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-t">목회·실천</span><span class="date">2026-09-29</span></div>
+  <h1 class="note-title">존중</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>존중은 <strong>무게를 다는 일</strong>이다. 제5계명의 "공경하라"는 히브리어 <em>카베드</em>(כָּבֵד)로, 본래 "무겁다"는 뜻의 어근이다. 에베소서 6:2에서 같은 계명을 옮긴 헬라어 <em>티마오</em>(τιμάω)는 "값을 매기다, 무겁게 여기다"를 뜻한다.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> 존 비비어는 명사 <em>티메</em>(time)를 "중요시함", "진가를 인정함, 중시, 우호적 대우, 존경"으로 풀고, 그 반대말 <em>아티미아</em>(atimia)를 경멸로 옮긴다.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> 그러니 존중의 반대는 미움이 아니라 <strong>가볍게 여김</strong>이다.</p>
+<p>무게를 다는 저울은 마음 안에 있다. 비비어는 "하나님을 경외함이 머무는 자리는 마음이고, 존중은 거룩한 경외가 밖으로 흘러나온 것"이라고 말한다.<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> 경외(<em>야레</em>)가 하나님 앞에서 마땅한 무게를 두는 것이라면, 존중은 그 무게감이 하나님이 세우신 사람과 질서에게로 흘러가는 모양이다. 이 글은 그 흐름이 위·옆·아래·밖의 네 방향으로 어떻게 뻗어 가는지, 그리고 어디서 멈춰야 하는지를 따라간다. 권위 그 자체의 정당성 문제는 <a class="wl" href="../../t/%EA%B6%8C%EC%9C%84/">권위</a>가, 따르는 행동의 문제는 <a class="wl" href="../../t/%EC%88%9C%EC%A2%85/">순종</a>이 다루므로, 여기서는 그 둘 사이를 잇는 <strong>태도</strong>에 초점을 둔다.</p>
+<blockquote>
+<blockquote>
+<p>존중할 만하지 않은 사람을 왜, 그리고 어디까지 존중해야 하는가. 그리고 존중이 침묵이나 사람 숭배로 바뀌지 않게 하는 선은 어디에 있는가.</p>
+</blockquote>
+</blockquote>
+<hr />
+<h2>1. 보이는 이를 존중하는 법이 보이지 않는 하나님을 경외하는 학교다</h2>
+<p>존중이 왜 신앙의 문제인가. 윤명숙 전도사의 답은 교육학적이다. 십계명은 안식일 계명으로 하나님과의 관계를, 부모 공경 계명으로 사람과의 관계를 다루는데, 눈에 보이지 않는 아버지를 공경하기는 쉽지 않으므로 아이에게는 <strong>가시적인 공경의 훈련</strong>이 먼저 필요하다는 것이다. 아버지의 자리에 함부로 앉지 않는 일, 먹을 것을 남겨 두는 일 같은 작은 습관이 그 학교의 교과서다. "효도는 몸에 배어야 한다."<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></p>
+<p>권성수 목사는 레위기 19:32에서 같은 구조를 읽어 낸다. "센 머리 앞에 일어서라", "노인을 공경하라", "하나님을 경외하라"는 세 명령이 한 절에 나란히 놓이고 그 위에 "나는 여호와이니라"는 도장이 찍혀 있다. 사람 앞에서 몸을 일으키는 일과 하나님 앞에서 두려워하는 일이 분리되지 않는다는 것이다.<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup> 베드로의 논리도 다르지 않다 — 볼 수 있는 이를 공경할 수 없다면, 보지 못하는 하나님을 어떻게 공경하겠는가.<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup></p>
+<p>이것은 존중을 신앙의 곁가지가 아니라 <strong>경외의 실습장</strong>으로 본다는 뜻이다. 비비어가 책 전체를 요한이서 1:8로 열고 닫으며 "하나님의 권고를 일관되게 존중하는 습관"을 수고의 열매를 잃지 않는 가장 간단한 길로 제시할 때도,<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup> 강조점은 감정이 아니라 <strong>몸에 밴 습관</strong>에 있다.</p>
+<p><strong>핵심 한 문장</strong>: 존중은 경외가 밖으로 드러난 모양이고, 습관이 되기 전에는 아직 존중이 아니다.</p>
+<hr />
+<h2>2. 존중의 근거는 상대의 자격이 아니라 하나님의 배치다</h2>
+<p>가장 어려운 질문은 곧바로 온다. 존중할 만하지 않은 사람은 어떻게 하는가. 여기서 여러 설교자와 저자가 놀라울 만큼 같은 답을 내놓는다 — <strong>존중의 근거를 상대에게서 하나님에게로 옮기라</strong>는 것이다.</p>
+<p>권성수 목사는 제5계명의 부모 앞에 수식어가 없다는 데 주목한다. 하나님은 좋은 부모가 아니라 "네 부모"를 공경하라 하셨다. 존경할 요소가 없는 부모를 어떻게 존경하느냐고 물으면, 그 부모를 통해 하나님이 생명을 주셨기 때문이라고 답한다. 부모는 생명의 통로이자 권위와 질서의 통로다.<sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup> 로마서 13:7의 "존경할 자를 존경하며"도 같은 방식으로 읽는다. "존경할 만한"은 인품의 등급이 아니라 <strong>하나님이 세우신 직책</strong>을 가리킨다는 것이다.<sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup></p>
+<p>비비어는 이 전환을 더 날카롭게 표현한다. "당신은 나의 존경심을 얻어 내야만 할 것입니다"라는 말은 슬픈 말이며, 하나님을 두려워하는 사람은 "당신은 이미 나의 존경심을 얻으셨습니다"라고 말한다는 것이다.<sup id="fnref:10"><a class="footnote-ref" href="#fn:10">10</a></sup> 베드로가 "왕을 공경하라"고 썼을 때 그 왕은 야고보를 죽이고 베드로 자신을 가둔 헤롯 아그립바 1세였다.<sup id="fnref:11"><a class="footnote-ref" href="#fn:11">11</a></sup> 다윗은 자신을 14년간 쫓은 사울의 옷자락만 베고도 양심이 찔렸고, 사울이 심판받아 죽은 뒤에도 그를 위한 애가를 지어 백성에게 부르게 했다.<sup id="fnref:12"><a class="footnote-ref" href="#fn:12">12</a></sup></p>
+<p>그러나 이 논리에는 곧바로 제동 장치가 붙는다. 비비어 자신이 선을 긋는다.</p>
+<blockquote>
+<p>성경은 모든 권세가 하나님한테서 왔다고 했지 모든 권세가 경건하다고 하지는 않았다.<sup id="fnref:13"><a class="footnote-ref" href="#fn:13">13</a></sup></p>
+</blockquote>
+<p>권위의 <strong>출처</strong>를 인정하는 것과 권위자의 <strong>행실</strong>을 승인하는 것은 다르다. 존중은 앞의 것에 대한 응답이지 뒤의 것에 대한 보증이 아니다. 비비어가 한나와 엘리의 장면에서 "우리는 열매, 즉 사람들의 행동은 판단해야 하지만 그들의 마음의 동기는 판단해서는 안 된다"고 말하는 것도 이 구분 위에 서 있다.<sup id="fnref:14"><a class="footnote-ref" href="#fn:14">14</a></sup></p>
+<table>
+<thead>
+<tr>
+<th>존중의 근거</th>
+<th>물음</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>상대의 자격 (능력주의)</td>
+<td>"그 사람이 존경받을 만한가?"</td>
+<td>조건부 존중 — 실망하면 철회</td>
+</tr>
+<tr>
+<td>하나님의 배치 (위임)</td>
+<td>"하나님이 그를 그 자리에 두셨는가?"</td>
+<td>태도로서의 존중은 유지, 행동에 대한 평가는 별개</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 한 문장</strong>: 존경은 상대가 벌어들이는 것이 아니라, 하나님을 경외하는 사람이 먼저 건네는 것이다.</p>
+<hr />
+<h2>3. 존중은 예배가 아니고, 복종은 순종이 아니다</h2>
+<p>존중의 근거를 하나님께 두면, 역설적으로 존중의 <strong>한계</strong>도 하나님께서 정하신다. 이 글이 다루는 자료들은 세 개의 선을 긋는다.</p>
+<p>첫째 선은 예배와의 구분이다. 비비어는 존중을 가장 강하게 말하는 책에서 "존중과 예배는 다르다"고 먼저 못 박는다. 예배는 한 분만 영원토록 받으시고, 사람에게는 존중할 자들을 존중할 뿐이다.<sup id="fnref:15"><a class="footnote-ref" href="#fn:15">15</a></sup></p>
+<p>둘째 선은 태도와 행동의 구분이다. 비비어는 이렇게 쓴다.</p>
+<blockquote>
+<p>성경은 우리에게 권위에 무조건 복종하라고 가르치지만, 권위에 무조건 순종하라고 가르치지는 않는다. 복종과 순종은 다르다. 복종이 태도의 문제라면 순종은 행동의 문제<sup id="fnref:16"><a class="footnote-ref" href="#fn:16">16</a></sup></p>
+</blockquote>
+<p>권성수 목사도 에베소서 6장을 읽으며 같은 구분에 이른다. 순종(<em>휘파쿠오</em>, 아래에서 듣다)은 미혼 자녀에게 일차적으로 주어진 행위이고, 공경은 성인이 된 자녀에게도 평생 유효한 태도이며, 순종할 수 없는 경우에도 "온유"는 남아야 한다는 것이다.<sup id="fnref:17"><a class="footnote-ref" href="#fn:17">17</a></sup> 사드락·메삭·아벳느고는 느부갓네살의 명령에 순종하지 않았지만 왕을 모독하지도 않았다.<sup id="fnref:18"><a class="footnote-ref" href="#fn:18">18</a></sup></p>
+<p>셋째 선은 <strong>떠남</strong>이다. 이것은 『존중』에서는 잘 보이지 않고 같은 저자의 다른 책에서 분명해진다. 다윗은 사울의 단창을 피해 떠났으되 사울의 권위를 공경하는 태도는 잃지 않았다 — 떠남과 공경은 양립한다.<sup id="fnref:19"><a class="footnote-ref" href="#fn:19">19</a></sup> 비비어는 하나님의 말씀에 반하는 일을 시키며 학대하는 남편에게 아내가 순종할 필요는 없고, 때로는 "면전을 떠나야" 한다고까지 쓴다.<sup id="fnref:20"><a class="footnote-ref" href="#fn:20">20</a></sup></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>태도 (존중·복종)</th>
+<th>행동 (순종)</th>
+<th>거리 (머묾·떠남)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>원칙</td>
+<td>항상 유지</td>
+<td>하나님 말씀에 어긋나면 거부</td>
+<td>학대·죄의 동참 강요 시 떠날 수 있음</td>
+</tr>
+<tr>
+<td>본보기</td>
+<td>다윗의 애가</td>
+<td>세 친구의 거부</td>
+<td>다윗의 도피</td>
+</tr>
+<tr>
+<td>이탈 시 이름</td>
+<td>경멸 (<em>아티미아</em>)</td>
+<td>불법</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 한 문장</strong>: 태도는 붙들되 행동은 분별하고, 필요하면 존중을 품은 채 떠난다.</p>
+<hr />
+<h2>4. 아래를 향한 존중 — 권위는 세우라고 준 것이다</h2>
+<p>위를 향한 존중만 말하면 존중은 권력자의 도구가 된다. 그래서 같은 자료들이 반드시 <strong>아래를 향한 존중</strong>을 함께 말한다는 사실이 중요하다.</p>
+<p>권성수 목사의 제5계명 두 번째 설교는 계명의 무게중심을 자녀에서 부모로 옮긴다. 부모가 옳더라도 자녀 마음에 박힌 대못을 뽑지 않은 채 "공부해라, 공경해라"를 일방으로 강요하면, 신앙 좋은 집안일수록 더 깊은 상처가 생긴다.<sup id="fnref:21"><a class="footnote-ref" href="#fn:21">21</a></sup> 윤명숙 전도사는 자녀를 "주 안에서 관리"하라고 하면서, 그 관리의 필수조건이 <strong>인격존중</strong>이며 "이것이 한국에 부족한 부분"이라고 진단한다.<sup id="fnref:22"><a class="footnote-ref" href="#fn:22">22</a></sup> 존중받지 못한 자녀에게 전해지는 것은 말씀이 아니라 상처다.</p>
+<p>휴게이트의 양육서는 이 두 층을 한 문단에 담는다. 부모는 그 지위로 인해 공경받을 권리를 얻지만, 자녀를 가르치는 데 성공하려면 "한 인격자로 존중받아야만 한다."<sup id="fnref:23"><a class="footnote-ref" href="#fn:23">23</a></sup> <strong>지위에 대한 공경</strong>과 <strong>인격에 대한 존경</strong>은 다른 것이고, 가르침은 뒤의 것 위에서만 자란다. 비비어의 관찰도 방향이 같다 — 부모가 자녀의 부정적 행동을 혼내는 데 에너지를 쏟으면 자녀는 더 나빠지고, 하나님의 약속을 입술로 선포하면 결국 그 선포대로 자랐다.<sup id="fnref:24"><a class="footnote-ref" href="#fn:24">24</a></sup> 부모교육 강의 「용기, 품성, 자기존중감」은 이것을 하나의 순환으로 그린다. 격려가 용기를 낳고 용기가 자기존중감과 품성을 기르며, 비난은 기를 꺾고 낙심을 거쳐 비행으로 이어진다.<sup id="fnref:25"><a class="footnote-ref" href="#fn:25">25</a></sup></p>
+<p>교회와 일터의 지도자에게도 같은 원리가 적용된다. "주께서 주신 권세는 너희를 무너뜨리려고 하신 것이 아니요 세우려고 하신 것이니"(고후 10:8). 비비어는 권위에 "섬김과 보호가 포함된다"고 말하고, 지도자는 존중을 <strong>요구해서는 안 된다</strong>고 덧붙인다. 존중받기를 원할 이유는 두 가지뿐이다 — 그 존중을 하나님께 돌려 드리기 위해, 그리고 존중하는 사람이 받을 보상을 위해.<sup id="fnref:26"><a class="footnote-ref" href="#fn:26">26</a></sup></p>
+<p><strong>핵심 한 문장</strong>: 위에서 존중을 요구하는 순간 권위는 권위주의가 되고, 아래를 존중하는 순간 권위는 비로소 통로가 된다.</p>
+<hr />
+<h2>5. 옆을 향한 존중 — 부부 사이의 「존중의 선」</h2>
+<p>가장 가까운 관계에서 존중은 가장 쉽게 무너진다. 윤명숙 전도사는 부부 싸움의 규칙을 하나로 요약한다 — <strong>존중의 선</strong>을 지키라는 것이다. 배우자의 존재감과 자존심은 하나님이 주신 같은 가치이므로 아무리 화가 나도 그 자리는 건드리지 않고, 욕설과 반말은 절대 금지선으로 둔다. 욕을 들은 쪽은 그 말을 "가슴에 세이브"하고 있으며, 선을 한 번 넘도록 받아 주면 계속 넘게 된다.<sup id="fnref:27"><a class="footnote-ref" href="#fn:27">27</a></sup></p>
+<p>같은 설교자는 다른 설교에서 존중의 결핍이 어떤 토양을 만드는지 짚는다. 집에 들어와 존중받지 못하고 지적만 당하는 남편, 말로 당하지 못할 때 폭력으로 가는 흐름이다. 폭력의 책임은 분명히 가해자에게 있지만, 그 <strong>발생 토양</strong>을 함께 볼 때 예방적 섬김이 가능해진다.<sup id="fnref:28"><a class="footnote-ref" href="#fn:28">28</a></sup> 비비어는 남편 쪽을 향해 더 무겁게 말한다. 아내를 존중하지 않는 남편의 기도는 막히며(벧전 3:7), 존중의 근거는 두 가지 — 더 연약한 그릇이라서, 그리고 생명의 은혜를 함께 받을 <strong>공동 상속자</strong>라서다.<sup id="fnref:29"><a class="footnote-ref" href="#fn:29">29</a></sup></p>
+<table>
+<thead>
+<tr>
+<th>방향</th>
+<th>무너지는 모양</th>
+<th>지키는 모양</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>아내 → 남편</td>
+<td>의존하면서도 무시함</td>
+<td>말로 세워 줌 (엡 5:33)</td>
+</tr>
+<tr>
+<td>남편 → 아내</td>
+<td>의논 없이 결정함</td>
+<td>지식을 따라 동거, 최종 결정 전 의논</td>
+</tr>
+<tr>
+<td>서로</td>
+<td>존재감·자존심 공격, 욕설·반말</td>
+<td>문제에만 초점, 존중의 선</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 한 문장</strong>: 부부 사이의 존중은 싸우지 않는 것이 아니라, 싸우는 중에도 넘지 않는 선을 두는 것이다.</p>
+<hr />
+<h2>6. 공동체와 조직의 존중 — 신뢰와 판단의 절제</h2>
+<p>존중은 개인의 덕목이지만 조직의 문화이기도 하다. 조샘은 인터서브의 심층 문화를 개인의 자유 존중, 신뢰의 문화(Y-culture), 다양성의 존중으로 요약하고, 인터서브를 "성인들의 공동체", "개인성을 존중하는 공동체"라고 부른다. 여성·젊은 사람·소수민족·소수교파를 동등하게 존중하는 수평적 문화다. 미얀마 쿠데타 때 본부가 철수를 권유하면서도 현지 팀의 결정을 존중해 맡긴 일은 그 가치가 위기에서 시험받은 사례다.<sup id="fnref:30"><a class="footnote-ref" href="#fn:30">30</a></sup> 일터 쪽에서는 존 베케트가 "개인에 대한 깊은 존중"을 회사의 제1원칙으로 두고, 사람을 뽑을 때 기술보다 열의·<strong>권위에 대한 존중</strong>·기질을 본다고 말한다.<sup id="fnref:31"><a class="footnote-ref" href="#fn:31">31</a></sup> 위를 존중할 줄 아는 사람과 아래를 존중하는 조직은 한 쌍이다.</p>
+<p>공동체 안의 존중을 지키는 실무 원칙으로는 비비어의 두 문장이 쓸 만하다. 하나는 앞서 본 행동과 동기의 구분이고, 다른 하나는 소문을 다루는 법이다.</p>
+<blockquote>
+<p>부정적인 소식의 출처가 딱 한 사람이거나 또는 적어도 두 사람의 구체적인 증거가 없다면, 나는 그것을 무시해 버린다.<sup id="fnref:32"><a class="footnote-ref" href="#fn:32">32</a></sup></p>
+</blockquote>
+<p>두세 증인의 원칙은 지도자를 보호하려는 장치가 아니라 <strong>공동체가 서로를 경멸하지 않도록</strong> 지키는 장치다. 이 원칙이 무너진 공동체에서는 한 사람의 말이 모든 사람의 평판을 결정한다.</p>
+<p><strong>핵심 한 문장</strong>: 존중하는 공동체는 서로의 동기를 재단하지 않고, 증거 없는 말에 무게를 두지 않는다.</p>
+<hr />
+<h2>7. 밖을 향한 존중 — 동의하지 않는 이를 존중하는 법</h2>
+<p>교회 밖으로 나가면 존중은 전혀 다른 시험을 받는다. 다원주의 사회는 "다양한 가치관을 있는 그대로 존중하라"는 요구를 기본값으로 삼고, 분명한 기준을 가진 그리스도인은 포용력이 부족한 사람처럼 보인다. 문대원 목사는 베드로전서 3:15의 "온유와 두려움으로"를 NIV가 <em>respect</em>로 옮긴 데 주목한다. 전도는 상대를 설득의 표적으로 삼는 일이 아니라 <strong>존중받을 인격</strong>에게 진리를 건네는 일이며, 그 근거는 "뭇 사람을 공경하라"(벧전 2:17)와 창조 교리다. 그래서 "무례하지 않은 기독교"는 확고한 신념과 예의 바름을 동시에 요구한다.<sup id="fnref:33"><a class="footnote-ref" href="#fn:33">33</a></sup> 설교는 이 균형이 남기는 물음을 숨기지 않는다 — 존중이 어디까지 가면 동의가 되는가.</p>
+<p>미로슬라브 볼프는 그 물음을 더 깊이 판다. 그는 현대 자유주의가 도달한 원칙 — "모두가 모두를 존중해야 하며, 그 누구도 모두를 존중하지 않는 사람을 존중해서는 안 된다" — 을 짚으며, 해체를 말하던 사유가 결국 보편적 정의를 다시 조립하고 있음을 드러낸다.<sup id="fnref:34"><a class="footnote-ref" href="#fn:34">34</a></sup> 동시에 그는 증인이 자주 실패한다고 해서 <strong>진리를 말하려 애씀으로써 타자의 타자성을 존중할</strong> 의무가 사라지지 않는다고 말한다.<sup id="fnref:35"><a class="footnote-ref" href="#fn:35">35</a></sup> 존중은 입을 다무는 것이 아니라, 상대를 진리 앞에 설 수 있는 사람으로 대하는 것이다. 손경문이 인용하는 조나단 채플린의 경고도 같은 자리를 가리킨다. 여과 없이 모든 문화를 존중하자는 말은 인간의 타락과 회복의 필요를 가볍게 보는 것이며, 필요한 것은 단순한 인정·불인정을 넘어 자기 자신부터 점검하는 <strong>변혁</strong>이다.<sup id="fnref:36"><a class="footnote-ref" href="#fn:36">36</a></sup></p>
+<table>
+<thead>
+<tr>
+<th>입장</th>
+<th>존중의 모양</th>
+<th>위험</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>무조건적 관용</td>
+<td>모든 것을 "다름"으로 인정</td>
+<td>진리의 포기, 타락 경시</td>
+</tr>
+<tr>
+<td>무례한 확신</td>
+<td>진리를 말하되 상대를 표적으로</td>
+<td>인격의 경멸</td>
+</tr>
+<tr>
+<td>존중하는 증언</td>
+<td>인격을 존중하며 진리를 증언</td>
+<td>경계가 늘 긴장 속에 있음</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 한 문장</strong>: 밖을 향한 존중은 동의가 아니라, 동의하지 않는 이를 진리를 들을 자격 있는 사람으로 대하는 것이다.</p>
+<hr />
+<h2>8. 존중에도 순서가 있다 — 평화를 지키는 자가 되지 말 것</h2>
+<p>마지막으로 존중에는 과잉의 위험이 있다. 아랫사람이나 가족, 존경하는 선배를 존중한다는 이름으로 하나님의 말씀을 뒤로 미루는 것이다. 비비어는 엘리와 아브라함이 자녀를, 모세가 아내 십보라를 하나님보다 앞세웠던 장면을 모은다. 모세는 아들의 할례를 미루다 길에서 죽을 뻔했다.<sup id="fnref:37"><a class="footnote-ref" href="#fn:37">37</a></sup> 열왕기상 13장의 젊은 선지자는 선배를 공경하는 훌륭한 덕목을 지녔지만, 늙은 선지자의 말을 하나님의 말씀보다 더 존중한 것이 과오였고 "그 대가는 혹독했다."<sup id="fnref:38"><a class="footnote-ref" href="#fn:38">38</a></sup></p>
+<blockquote>
+<p>"화평하게 하는 자는 복이 있나니"(마 5:9)라고 하셨지 "평화를 지키는 자는 복이 있나니"라고 하신 적이 없다. 평화를 지키는 자는 거짓된 평화의 느낌을 유지하기 위해서 진실을 타협하는 사람이다.<sup id="fnref:39"><a class="footnote-ref" href="#fn:39">39</a></sup></p>
+</blockquote>
+<p>존중의 순서는 명확하다. "아버지나 어머니를 나보다 더 사랑(존중)하는 자는 내게 합당하지 아니하고"(마 10:37). 사무엘상 2:30의 약속 — "나를 존중히 여기는 자를 내가 존중히 여기고" — 은 모든 존중의 출발점이자 상한선이다. 하나님을 가장 무겁게 여기는 사람만이 사람을 알맞은 무게로 대할 수 있다. 비비어가 책 끝에 두는 경고도 이 순서와 이어진다. 넘어진 사람들은 대부분 곤고한 시절이 아니라 풍성한 시절에 넘어졌으며, "마음이 겸손하면 영예(존중)를 지키리라"(잠 29:23).<sup id="fnref:40"><a class="footnote-ref" href="#fn:40">40</a></sup></p>
+<p><strong>핵심 한 문장</strong>: 하나님을 가장 무겁게 여길 때만, 사람을 너무 가볍게도 너무 무겁게도 여기지 않게 된다.</p>
+<hr />
+<h2>핵심 인사이트</h2>
+<ul>
+<li><strong>존중은 무게를 다는 일이다.</strong> <em>카베드</em>와 <em>티메</em>는 모두 "무겁게 여김"이고, 존중의 반대는 미움이 아니라 가볍게 여김(<em>아티미아</em>)이다.</li>
+<li><strong>존중은 경외의 실습장이다.</strong> 보이는 부모와 노인을 공경하는 몸의 습관이 보이지 않는 하나님을 경외하는 법을 가르친다.</li>
+<li><strong>존중의 근거를 상대의 자격에서 하나님의 배치로 옮긴다.</strong> 그러나 권위의 출처를 인정하는 것이 권위자의 행실을 승인하는 것은 아니다.</li>
+<li><strong>태도·행동·거리는 세 겹이다.</strong> 존중(태도)은 붙들고, 순종(행동)은 분별하며, 필요하면 존중을 품은 채 떠난다.</li>
+<li><strong>아래를 향한 존중이 위를 향한 존중을 정당하게 만든다.</strong> 존중을 요구하는 권위는 권위주의가 되고, 아래를 존중하는 권위만이 통로가 된다.</li>
+<li><strong>밖을 향한 존중은 동의가 아니다.</strong> 상대를 진리를 들을 자격 있는 인격으로 대하는 것이다.</li>
+<li><strong>존중에도 순서가 있다.</strong> 하나님을 최우선으로 존중하지 않으면 사람에 대한 존중은 「평화를 지키는」 타협으로 변질된다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ol>
+<li><strong>학대와 공경의 경계선.</strong> 「네 부모」에 수식어가 없다는 무조건성과 「모든 부당대우는 보상의 준비 단계」라는 약속은, 가정폭력이나 교회 권위 남용의 피해자에게 어떻게 들리는가. 떠남과 공경이 양립한다는 원칙만으로 충분한 목회적 안내가 되는가?</li>
+<li><strong>존중과 동의의 경계.</strong> 다원 사회에서 존중이 어디까지 가면 동의가 되는가. 볼프의 「진리를 말하려 애씀으로써 타자성을 존중하는」 증언은 실제 대화에서 어떤 모양이어야 하는가?</li>
+<li><strong>위계의 존중과 수평의 존중.</strong> 비비어의 「하나님 나라는 왕국이지 민주주의가 아니다」와 인터서브의 「개인성을 존중하는 수평적 공동체」는 어떻게 한 신학 안에 들어갈 수 있는가? 위임된 권위와 상호 순복(엡 5:21)은 어떻게 통합되는가?</li>
+<li><strong>보상 언어의 위험.</strong> 존중에 약속된 보상(형통·치유·재정)을 강조할수록, 존중이 경외의 흘러넘침이 아니라 거래가 될 위험은 어떻게 막는가?</li>
+<li><strong>역사적 지도자에 대한 존중.</strong> 다윗의 사울 애가는 공과가 갈리는 지도자를 그가 떠난 뒤에 어떻게 대할지에 대한 모델이 되는가, 그리고 그것은 공적 비판의 책임과 어떻게 공존하는가?</li>
+</ol>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EA%B6%8C%EC%9C%84/">권위</a> — 권위의 정당성과 권위주의를 가르는 선. 이 글은 그 아래에서의 태도를 다룬다</li>
+<li><a class="wl" href="../../t/%EC%88%9C%EC%A2%85/">순종</a> — 행동으로서의 따름. 이 글 3장의 복종/순종 구분과 짝</li>
+<li><a class="wl" href="../../t/%EA%B2%B8%EC%86%90/">겸손</a> · <a class="wl" href="../../t/%EC%84%AC%EA%B9%80/">섬김</a> — 존중을 받는 쪽이 아니라 건네는 쪽의 덕목</li>
+<li><a class="wl" href="../../t/%EB%B6%80%EB%B6%80%EA%B4%80%EA%B3%84/">부부관계</a> — 「존중의 선」과 공동 상속자로서의 존중</li>
+<li><a class="wl" href="../../t/%EC%9E%90%EB%85%80%EC%96%91%EC%9C%A1/">자녀양육</a> · <a class="wl" href="../../t/%EC%9E%90%EC%A1%B4%EA%B0%90/">자존감</a> — 아래를 향한 존중, 격려와 자기존중감</li>
+<li><a class="wl" href="../../t/%EB%8B%A4%EC%9B%90%EC%A3%BC%EC%9D%98/">다원주의</a> — 밖을 향한 존중과 존중·동의의 경계</li>
+<li><a class="wl" href="../../b/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EC%A1%B4%EC%A4%91_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">존비비어의존중_존비비어</a> — 이 주제의 주 출처. 4영역×3방향 존중의 지도</li>
+<li><a class="wl" href="../../b/%EC%88%9C%EC%A2%85_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">순종_존비비어</a> · <a class="wl" href="../../b/%EB%AC%B4%EC%8B%9C%EB%90%98%EC%96%B4%EC%98%A8%EC%B6%95%EB%B3%B5%EC%9D%98%ED%86%B5%EB%A1%9C_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">무시되어온축복의통로_존비비어</a> — 떠남과 공경의 양립, 학대의 한계선</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="wl" href="../../b/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EC%A1%B4%EC%A4%91_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">존비비어의존중_존비비어</a></td>
+<td>책</td>
+<td>티메/아티미아, 존중≠예배, 복종/순종, 불의한 권위의 세 유익, 존중의 순서, 평화를 지키는 자</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%88%9C%EC%A2%85_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">순종_존비비어</a></td>
+<td>책</td>
+<td>한나와 엘리, 떠남과 공경의 양립</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EB%AC%B4%EC%8B%9C%EB%90%98%EC%96%B4%EC%98%A8%EC%B6%95%EB%B3%B5%EC%9D%98%ED%86%B5%EB%A1%9C_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">무시되어온축복의통로_존비비어</a></td>
+<td>책</td>
+<td>「이미 드린 존경」, 헤롯 아그립바, 학대하는 남편과 순종의 한계</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2015_부모를공경하는것</span></td>
+<td>설교</td>
+<td>보이는 공경 → 보이지 않는 하나님 경외, 몸에 밴 효도</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2017_주안에서관리</span></td>
+<td>설교</td>
+<td>자녀 관리의 필수조건 = 인격존중</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2019_싸우는법</span></td>
+<td>설교</td>
+<td>부부 싸움의 「존중의 선」</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2013_남녀의차이</span></td>
+<td>설교</td>
+<td>존중의 결핍과 폭력의 토양</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2016_센머리앞에일어서라</span></td>
+<td>설교</td>
+<td>레 19:32 세 명령, 롬 13:7 「존경할 만한 자」= 직책</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2021_축복의통로막혔는가뚫렸는가</span></td>
+<td>설교</td>
+<td>카베드/티마오, 「네 부모」, 순종(행위)과 공경(태도)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">십계명_10_제5계명2</span></td>
+<td>설교</td>
+<td>공경 강요가 남기는 상처, 치유가 먼저</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2026-08-30_무례하지않은기독교</span></td>
+<td>설교</td>
+<td>벧전 3:15 respect, 존중과 동의의 경계</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%A0%9C%EB%A9%8B%EB%8C%80%EB%A1%9C%EC%9D%B8%EC%9A%94%EC%A6%98%EC%95%84%EC%9D%B4%EB%A7%90%EC%94%80%EC%9C%BC%EB%A1%9C%EC%96%91%EC%9C%A1%ED%95%98%EB%9D%BC_%ED%9C%B4%EA%B2%8C%EC%9D%B4%ED%8A%B8/">제멋대로인요즘아이말씀으로양육하라_휴게이트</a></td>
+<td>책</td>
+<td>지위에 대한 공경과 인격에 대한 존경의 구분</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">용기_품성_자기존중감</span></td>
+<td>강의</td>
+<td>격려–용기–자기존중감–품성의 순환</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2023_조샘_인터서브_가치-사람-사역</span></td>
+<td>강의</td>
+<td>개인성 존중, Y-culture, 미얀마 현지 팀 결정 존중</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EB%8B%A4%EB%8B%88%EA%B3%A0%EC%8B%B6%EC%9D%80%ED%9A%8C%EC%82%AC%EB%A7%8C%EB%93%A4%EA%B8%B0_%EC%A1%B4%EB%B2%A0%EC%BC%80%ED%8A%B8/">다니고싶은회사만들기_존베케트</a></td>
+<td>책</td>
+<td>개인에 대한 깊은 존중을 제1원칙으로</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EB%B0%B0%EC%A0%9C%EC%99%80%ED%8F%AC%EC%9A%A9_%EB%AF%B8%EB%A1%9C%EC%8A%AC%EB%9D%BC%EB%B8%8C%EB%B3%BC%ED%94%84/">배제와포용_미로슬라브볼프</a></td>
+<td>책</td>
+<td>자유주의적 정의의 원칙, 진리를 말함으로써 타자성을 존중</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%84%B8%EA%B3%84%EC%8B%9C%EB%AF%BC%EA%B5%90%EC%9C%A1_%EC%86%90%EA%B2%BD%EB%AC%B8/">기독교세계시민교육_손경문</a></td>
+<td>책</td>
+<td>채플린 — 여과 없는 존중 비판과 변혁</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><span class="wl-dead" title="위키 내부 링크">2021_축복의통로막혔는가뚫렸는가</span> — 공경(כָּבֵד / τιμάω) 풀이.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p><a class="wl" href="../../b/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EC%A1%B4%EC%A4%91_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">존비비어의존중_존비비어</a>, p.26~27.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>같은 책, p.74.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p><span class="wl-dead" title="위키 내부 링크">2015_부모를공경하는것</span>.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p><span class="wl-dead" title="위키 내부 링크">2016_센머리앞에일어서라</span>.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p><a class="wl" href="../../b/%EB%AC%B4%EC%8B%9C%EB%90%98%EC%96%B4%EC%98%A8%EC%B6%95%EB%B3%B5%EC%9D%98%ED%86%B5%EB%A1%9C_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">무시되어온축복의통로_존비비어</a>, p.64 본문.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p><a class="wl" href="../../b/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EC%A1%B4%EC%A4%91_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">존비비어의존중_존비비어</a>, p.11, 16, 253.&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:8">
+<p><span class="wl-dead" title="위키 내부 링크">2021_축복의통로막혔는가뚫렸는가</span>.&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:9">
+<p><span class="wl-dead" title="위키 내부 링크">2016_센머리앞에일어서라</span> — 롬 13:7 강해.&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:10">
+<p><a class="wl" href="../../b/%EB%AC%B4%EC%8B%9C%EB%90%98%EC%96%B4%EC%98%A8%EC%B6%95%EB%B3%B5%EC%9D%98%ED%86%B5%EB%A1%9C_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">무시되어온축복의통로_존비비어</a>, p.66.&#160;<a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:11">
+<p>같은 책, p.64; <a class="wl" href="../../b/%EC%88%9C%EC%A2%85_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">순종_존비비어</a>, p.134.&#160;<a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn:12">
+<p><a class="wl" href="../../b/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EC%A1%B4%EC%A4%91_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">존비비어의존중_존비비어</a>, p.59~65.&#160;<a class="footnote-backref" href="#fnref:12" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+<li id="fn:13">
+<p>같은 책, p.58.&#160;<a class="footnote-backref" href="#fnref:13" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+</li>
+<li id="fn:14">
+<p>같은 책, p.139, 141.&#160;<a class="footnote-backref" href="#fnref:14" title="Jump back to footnote 14 in the text">&#8617;</a></p>
+</li>
+<li id="fn:15">
+<p>같은 책, p.44.&#160;<a class="footnote-backref" href="#fnref:15" title="Jump back to footnote 15 in the text">&#8617;</a></p>
+</li>
+<li id="fn:16">
+<p>같은 책, p.73.&#160;<a class="footnote-backref" href="#fnref:16" title="Jump back to footnote 16 in the text">&#8617;</a></p>
+</li>
+<li id="fn:17">
+<p><span class="wl-dead" title="위키 내부 링크">2021_축복의통로막혔는가뚫렸는가</span> — 휘파쿠오 풀이.&#160;<a class="footnote-backref" href="#fnref:17" title="Jump back to footnote 17 in the text">&#8617;</a></p>
+</li>
+<li id="fn:18">
+<p><a class="wl" href="../../b/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EC%A1%B4%EC%A4%91_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">존비비어의존중_존비비어</a>, p.75; <a class="wl" href="../../b/%EB%AC%B4%EC%8B%9C%EB%90%98%EC%96%B4%EC%98%A8%EC%B6%95%EB%B3%B5%EC%9D%98%ED%86%B5%EB%A1%9C_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">무시되어온축복의통로_존비비어</a> — 복종/순종 표(단 3).&#160;<a class="footnote-backref" href="#fnref:18" title="Jump back to footnote 18 in the text">&#8617;</a></p>
+</li>
+<li id="fn:19">
+<p><a class="wl" href="../../b/%EC%88%9C%EC%A2%85_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">순종_존비비어</a>, p.185.&#160;<a class="footnote-backref" href="#fnref:19" title="Jump back to footnote 19 in the text">&#8617;</a></p>
+</li>
+<li id="fn:20">
+<p><a class="wl" href="../../b/%EB%AC%B4%EC%8B%9C%EB%90%98%EC%96%B4%EC%98%A8%EC%B6%95%EB%B3%B5%EC%9D%98%ED%86%B5%EB%A1%9C_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">무시되어온축복의통로_존비비어</a>, p.71.&#160;<a class="footnote-backref" href="#fnref:20" title="Jump back to footnote 20 in the text">&#8617;</a></p>
+</li>
+<li id="fn:21">
+<p><span class="wl-dead" title="위키 내부 링크">십계명_10_제5계명2</span>.&#160;<a class="footnote-backref" href="#fnref:21" title="Jump back to footnote 21 in the text">&#8617;</a></p>
+</li>
+<li id="fn:22">
+<p><span class="wl-dead" title="위키 내부 링크">2017_주안에서관리</span>.&#160;<a class="footnote-backref" href="#fnref:22" title="Jump back to footnote 22 in the text">&#8617;</a></p>
+</li>
+<li id="fn:23">
+<p><a class="wl" href="../../b/%EC%A0%9C%EB%A9%8B%EB%8C%80%EB%A1%9C%EC%9D%B8%EC%9A%94%EC%A6%98%EC%95%84%EC%9D%B4%EB%A7%90%EC%94%80%EC%9C%BC%EB%A1%9C%EC%96%91%EC%9C%A1%ED%95%98%EB%9D%BC_%ED%9C%B4%EA%B2%8C%EC%9D%B4%ED%8A%B8/">제멋대로인요즘아이말씀으로양육하라_휴게이트</a> — 전사 원문.&#160;<a class="footnote-backref" href="#fnref:23" title="Jump back to footnote 23 in the text">&#8617;</a></p>
+</li>
+<li id="fn:24">
+<p><a class="wl" href="../../b/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EC%A1%B4%EC%A4%91_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">존비비어의존중_존비비어</a>, p.203~204.&#160;<a class="footnote-backref" href="#fnref:24" title="Jump back to footnote 24 in the text">&#8617;</a></p>
+</li>
+<li id="fn:25">
+<p><span class="wl-dead" title="위키 내부 링크">용기_품성_자기존중감</span>.&#160;<a class="footnote-backref" href="#fnref:25" title="Jump back to footnote 25 in the text">&#8617;</a></p>
+</li>
+<li id="fn:26">
+<p><a class="wl" href="../../b/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EC%A1%B4%EC%A4%91_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">존비비어의존중_존비비어</a>, p.184, 195.&#160;<a class="footnote-backref" href="#fnref:26" title="Jump back to footnote 26 in the text">&#8617;</a></p>
+</li>
+<li id="fn:27">
+<p><span class="wl-dead" title="위키 내부 링크">2019_싸우는법</span>.&#160;<a class="footnote-backref" href="#fnref:27" title="Jump back to footnote 27 in the text">&#8617;</a></p>
+</li>
+<li id="fn:28">
+<p><span class="wl-dead" title="위키 내부 링크">2013_남녀의차이</span>.&#160;<a class="footnote-backref" href="#fnref:28" title="Jump back to footnote 28 in the text">&#8617;</a></p>
+</li>
+<li id="fn:29">
+<p><a class="wl" href="../../b/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EC%A1%B4%EC%A4%91_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">존비비어의존중_존비비어</a>, p.214~216.&#160;<a class="footnote-backref" href="#fnref:29" title="Jump back to footnote 29 in the text">&#8617;</a></p>
+</li>
+<li id="fn:30">
+<p><span class="wl-dead" title="위키 내부 링크">2023_조샘_인터서브_가치-사람-사역</span>.&#160;<a class="footnote-backref" href="#fnref:30" title="Jump back to footnote 30 in the text">&#8617;</a></p>
+</li>
+<li id="fn:31">
+<p><a class="wl" href="../../b/%EB%8B%A4%EB%8B%88%EA%B3%A0%EC%8B%B6%EC%9D%80%ED%9A%8C%EC%82%AC%EB%A7%8C%EB%93%A4%EA%B8%B0_%EC%A1%B4%EB%B2%A0%EC%BC%80%ED%8A%B8/">다니고싶은회사만들기_존베케트</a>, p.101~102, 215.&#160;<a class="footnote-backref" href="#fnref:31" title="Jump back to footnote 31 in the text">&#8617;</a></p>
+</li>
+<li id="fn:32">
+<p><a class="wl" href="../../b/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EC%A1%B4%EC%A4%91_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">존비비어의존중_존비비어</a>, p.141.&#160;<a class="footnote-backref" href="#fnref:32" title="Jump back to footnote 32 in the text">&#8617;</a></p>
+</li>
+<li id="fn:33">
+<p><span class="wl-dead" title="위키 내부 링크">2026-08-30_무례하지않은기독교</span>.&#160;<a class="footnote-backref" href="#fnref:33" title="Jump back to footnote 33 in the text">&#8617;</a></p>
+</li>
+<li id="fn:34">
+<p><a class="wl" href="../../b/%EB%B0%B0%EC%A0%9C%EC%99%80%ED%8F%AC%EC%9A%A9_%EB%AF%B8%EB%A1%9C%EC%8A%AC%EB%9D%BC%EB%B8%8C%EB%B3%BC%ED%94%84/">배제와포용_미로슬라브볼프</a> — 전사 원문.&#160;<a class="footnote-backref" href="#fnref:34" title="Jump back to footnote 34 in the text">&#8617;</a></p>
+</li>
+<li id="fn:35">
+<p>같은 책 — 전사 원문.&#160;<a class="footnote-backref" href="#fnref:35" title="Jump back to footnote 35 in the text">&#8617;</a></p>
+</li>
+<li id="fn:36">
+<p><a class="wl" href="../../b/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%84%B8%EA%B3%84%EC%8B%9C%EB%AF%BC%EA%B5%90%EC%9C%A1_%EC%86%90%EA%B2%BD%EB%AC%B8/">기독교세계시민교육_손경문</a> — 전사 원문(채플린 인용).&#160;<a class="footnote-backref" href="#fnref:36" title="Jump back to footnote 36 in the text">&#8617;</a></p>
+</li>
+<li id="fn:37">
+<p><a class="wl" href="../../b/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EC%A1%B4%EC%A4%91_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">존비비어의존중_존비비어</a>, p.242~246.&#160;<a class="footnote-backref" href="#fnref:37" title="Jump back to footnote 37 in the text">&#8617;</a></p>
+</li>
+<li id="fn:38">
+<p>같은 책, p.248.&#160;<a class="footnote-backref" href="#fnref:38" title="Jump back to footnote 38 in the text">&#8617;</a></p>
+</li>
+<li id="fn:39">
+<p>같은 책, p.245.&#160;<a class="footnote-backref" href="#fnref:39" title="Jump back to footnote 39 in the text">&#8617;</a></p>
+</li>
+<li id="fn:40">
+<p>같은 책, p.252~253.&#160;<a class="footnote-backref" href="#fnref:40" title="Jump back to footnote 40 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/실천신학</span><span>#discipline/제자도</span><span>#topic/존중</span><span>#topic/공경</span><span>#topic/권위</span><span>#topic/순종</span><span>#topic/복종</span><span>#topic/경외</span><span>#topic/가정</span><span>#topic/공동체</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
