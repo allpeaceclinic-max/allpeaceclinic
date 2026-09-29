@@ -1,0 +1,515 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>날마다 하나님께로 더 가까이 — 존 비비어 (순전한나드, 김유태 옮김) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">영성·제자도</span><span class="author">존비비어</span><span class="date">2026-09-30</span></div>
+  <h1 class="note-title">날마다 하나님께로 더 가까이 — 존 비비어 (순전한나드, 김유태 옮김)</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/%EB%82%A0%EB%A7%88%EB%8B%A4%ED%95%98%EB%82%98%EB%8B%98%EA%BB%98%EB%A1%9C%EB%8D%94%EA%B0%80%EA%B9%8C%EC%9D%B4_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<blockquote>
+<p>원제 <em>Drawing Near</em>. 표제어는 약 4:8 「하나님을 가까이하라 그리하면 너희를 가까이하시리라」. <span class="wl-dead" title="위키 내부 링크">존비비어</span>가 <strong>하나님은 인간과 친밀한 관계를 갈망하시지만 강요하지 않으신다</strong>는 전제에서 출발해, 에녹·노아·아브라함·모세·다윗으로 이어지는 「동행한 사람들」의 계보를 훑고, 친밀함의 조건(경외·순종·겸손), 방해물(교만한 종교성·탐욕·발람의 길), 통로(진정한 예배·속사람·말씀·믿음)를 14장에 걸쳐 풀어낸 책. 경외론의 뿌리인 <a class="wl" href="../../b/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EB%8F%99%ED%96%89_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">존비비어의동행_존비비어</a>(<em>The Fear of the Lord</em>)가 「경외 = 가까이 감」을 논증했다면, 이 책은 <strong>그 가까이 감의 실제 방법</strong>을 다룬다. 📷 표시 전사 기반 독서 노트. 검정 펜 밑줄 외에 <strong>p.333·346·347은 파란 펜</strong>으로 다시 표시했고, p.333 상단에 독자가 책 전체를 한 줄로 요약한 <strong>「들음 → 믿음 → 확신 → 순종 → 친밀」</strong> 사슬을 남겼다.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>부</th>
+<th>장</th>
+<th>흐름</th>
+<th>표시 쪽수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>초대</td>
+<td>1~2장</td>
+<td>광야로 부르심 · 자원하는 반응 · 에녹의 동행</td>
+<td>p.17~29</td>
+</tr>
+<tr>
+<td>갈망</td>
+<td>4~5장</td>
+<td>체험 아닌 임재 · 현존이 곧 구별 · 동행의 계보</td>
+<td>p.83~95</td>
+</tr>
+<tr>
+<td>조건</td>
+<td>6장</td>
+<td>경외와 순종 · 하나님의 친구(아브라함 vs 롯)</td>
+<td>p.124~132</td>
+</tr>
+<tr>
+<td>방해</td>
+<td>7장</td>
+<td>교만한 종교성(웃시야) · 탐욕대로 주심(발람)</td>
+<td>p.151~171</td>
+</tr>
+<tr>
+<td>통로</td>
+<td>8~9장</td>
+<td>진정한 예배 = 순종 · 겸손 3면</td>
+<td>p.181~210</td>
+</tr>
+<tr>
+<td>언어</td>
+<td>10·12장</td>
+<td>계시 · 속사람 세우기(읽고·기도하고·순종)</td>
+<td>p.237~304</td>
+</tr>
+<tr>
+<td>확신</td>
+<td>13장</td>
+<td>들음→믿음→확신→순종→친밀 · 부부관계와 기도</td>
+<td>p.311~333</td>
+</tr>
+<tr>
+<td>실천</td>
+<td>14장</td>
+<td>마음으로 · 듣기 위해 가까이 · 시편으로 기도</td>
+<td>p.339~347</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>요약 — 주제별 상세 정리</h2>
+<h3>1. 출애굽의 목적지는 가나안이 아니라 「광야에서 나를 섬김」</h3>
+<p>책은 출애굽 명령의 정확한 문장에서 시작한다. 독자는 <strong>「광야에서」</strong>에 동그라미를 쳤다.</p>
+<blockquote>
+<p>내 백성을 보내라 그러면 그들이 <strong>광야에서</strong> 나를 섬길 것이니라”(출 7:16). (p.17)</p>
+</blockquote>
+<p>비비어는 이것이 「그러면 그들이 좋은 땅으로 들어가리라」가 아니라는 데 주목한다. 모세가 백성을 약속의 땅보다 먼저 <strong>약속하신 분</strong>께 데려간 이유는, 풍요로운 땅에 먼저 들어가면 사람들이 「약속을 주신 하나님보다 약속된 물건을 더 사랑하게 될 위험성」이 있었기 때문이다(p.17). 오늘의 교회도 같은 실수를 한다 — 예수님이 누구인가보다 무슨 복을 주시는가에만 관심을 쏟는다.</p>
+<p>같은 재료(출애굽의 목적 = 「내게로」, 출 19:4)가 <a class="wl" href="../../b/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EC%97%B4%EC%A0%95_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">존비비어의열정_존비비어</a>에서도 첫 장을 연다. 「광야」라는 장소 자체의 의미는 <a class="wl" href="../../b/%EA%B4%91%EC%95%BC%EC%97%90%EC%84%9C%EC%9D%98%EC%8A%B9%EB%A6%AC_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">광야에서의승리_존비비어</a>에서 따로 다룬다.</p>
+<h3>2. 핵심 인사이트: 하나님은 친밀함을 강요하지 않으신다 — 반응에 반응하신다</h3>
+<p>이 책의 신학적 전제는 「하나님의 절제」다. 독자가 밑줄 친 문장:</p>
+<blockquote>
+<p>하나님은 인간이 스스로 하나님을 알고, 자원해서 반응하기 원하신다. (p.19~23)</p>
+</blockquote>
+<p>비비어는 막 6:48 「지나가려고 하시매」를 「그냥 지나쳐 버리실 의향이었다」로 읽는다. 제자들이 부르짖지 않았다면 예수님은 그냥 가셨을지도 모른다 — 「물위로 스쳐 지나가는 예수님을 붙잡는 것은 제자들의 울부짖음이다.」 하나님은 사람들의 반응으로 더 가까이 오시고, 무시하면 거리를 유지하신다. 친밀한 관계는 <strong>강요한다고 되는 것이 아니기 때문</strong>이다.</p>
+<p>그래서 책의 표제어는 조건문이다.</p>
+<blockquote>
+<p>하나님을 가까이하라 그리하면 너희를 가까이하시리라 (약 4:8, p.344)</p>
+</blockquote>
+<p><strong>통념 뒤집기:</strong> 흔히 「하나님이 먼저 찾아오신다」(은혜의 선행성)만 강조하지만, 비비어는 친밀함의 <strong>깊이</strong>는 인간의 추구에 비례한다고 말한다 — 구원의 주도권이 아니라 <strong>관계의 깊이</strong>에 관한 주장이다(미해결 질문 1 참조).</p>
+<h3>3. 동행한 사람들의 계보 — 에녹에서 다윗까지</h3>
+<p>5장 「누가 하나님의 임재를 경험했나」에서 독자는 인물 이름마다 동그라미를 쳤다 — <strong>에녹·노아·아브라함</strong>(p.91). 이 책이 가장 많이 표시된 대목 중 하나다.</p>
+<table>
+<thead>
+<tr>
+<th>인물</th>
+<th>동행의 표지</th>
+<th>책의 해석</th>
+<th>쪽</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>에녹</td>
+<td>「삼백 년을 하나님과 동행하며」(창 5:22)</td>
+<td>65세에 아담에게서 에덴(=하나님과의 친밀한 동행)과 결별의 이야기를 들었을 것</td>
+<td>p.26, 29</td>
+</tr>
+<tr>
+<td>노아</td>
+<td>「그는 하나님과 동행하였으며」(창 6:9)</td>
+<td>하나님의 마음을 감동시킨 사람</td>
+<td>p.29, 91</td>
+</tr>
+<tr>
+<td>아브라함</td>
+<td>「아침에 일찍이 일어나」(창 19:27, 22:3)</td>
+<td>하나님이 계획을 털어놓고 상의하신 친구</td>
+<td>p.91, 128, 131</td>
+</tr>
+<tr>
+<td>모세</td>
+<td>「모세는 하나님이 계신 흑암으로 가까이 가니라」(출 20:21)</td>
+<td>백성은 멀리 섰다 — 「인류 최대의 비극」</td>
+<td>p.95</td>
+</tr>
+<tr>
+<td>다윗</td>
+<td>「여호와여 내가 주의 얼굴을 찾으리이다」(시 27:8)</td>
+<td>임재 앞의 시간이 400명 상처 입은 무리를 이끄는 영향력이 됨</td>
+<td>p.93</td>
+</tr>
+<tr>
+<td>웃시야(반례)</td>
+<td>「그가 교만해졌을 때」(대하 26장)</td>
+<td>초창기엔 경외, 교만 후 문둥병</td>
+<td>p.94, 151</td>
+</tr>
+</tbody>
+</table>
+<p>📝 <strong>독자의 교정:</strong> p.26에서 저자는 에녹이 「360년간 하나님과 동행했다」고 썼는데, 독자는 그 아래 <strong>「300」</strong>이라고 고쳐 적고, 바로 아래 인용된 창 5:22 「<strong>삼백 년</strong>을 하나님과 동행하며」에 밑줄을 그었다. 에녹의 향년(365)에서 동행 시작(65세)을 빼면 300년이다 — 저자(또는 번역)의 계산 착오를 성경 본문으로 바로잡은 표시다.</p>
+<p>📝 <strong>다윗의 영향력 공식:</strong> p.93에서 「상처가 많은 400명의 무리들에게까지 영향력을 행사한 것이다」에 밑줄을 긋고, 화살표로 끌어내려 괄호 안에 <strong>「오랜 기간, 지근거리, 동행」</strong>이라고 적었다. 저자의 문장(「주님과 아주 깊이 오랫동안 함께 동행함으로 능력을 받았고」)을 세 요소로 분해한 것 — 영향력은 <strong>시간 × 거리 × 함께 걸음</strong>에서 나온다는 독자의 요약이다. 이 공식은 멘토링·제자훈련에 그대로 옮겨진다(개인 적용 참조).</p>
+<h3>4. 체험이 아니라 임재를 구하라 — 만나와 세미한 소리</h3>
+<p>4장은 「거룩한 웃음」 집회 사례로 시작한다. 인도네시아에서는 하나님을 갈망한 결과로 웃음이 왔지만, 아시아의 다른 집회는 「거룩한 웃음이 없으면 하나님의 임재도 없다」는 잘못된 전제에서 출발했다. 독자가 밑줄 친 균형 문장:</p>
+<blockquote>
+<p>보다 정확하게 말하자면, 하나님의 임재를 구하다 보면 영적으로 놀라운 체험도 하게 된다. (p.83)</p>
+</blockquote>
+<p>체험은 부산물이다 — 비비어의 비유로는 바지 주머니에서 100불을 발견했다고 다음부터 100불을 찾으려고 바지를 입지는 않는다. 그 근거로 만나를 든다.</p>
+<blockquote>
+<p>만나가 인간을 만족시키지 못했다는 사실이다 (p.84)
+만나를 네게 먹이신 것은 사람이 떡으로만 사는 것이 아니요 여호와의 입에서 <strong>나오는</strong> 모든 말씀으로 사는 줄을 네가 알게 하려 하심이니라(신 8:2-3) (p.84)</p>
+</blockquote>
+<p>독자는 <strong>「나오는」</strong>에 동그라미를 쳤다. 저자의 해설 — 「하나님의 입에서 나오는 말씀은 항상 존재하는 말씀이다. 과거에 한 번 나오고 그치는 그런 말씀이 아니다」(p.84~85) — 즉 현재진행형의 말씀이 핵심이다. 엘리야도 바람·지진·불이 아니라 <strong>「세미한 소리」</strong>(왕상 19:12, p.85)에서 하나님을 만났다. 「영적 체험이란 참으로 중요하기는 하지만, 하나님은 그 체험의 종류를 계속 바꾸신다」(p.85).</p>
+<p>→ <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%9E%84%EC%9E%AC/">하나님의임재</a>의 「임재 vs 현시」 구분에 넣을 만한 사례.</p>
+<h3>5. 핵심 인사이트: 그리스도인을 구별하는 것은 교리가 아니라 현존이다</h3>
+<p>출 33:15-16 모세의 기도에서 저자는 「놀라운 진리」를 끌어낸다. 독자는 세 문장 모두에 밑줄을 쳤다.</p>
+<blockquote>
+<p>주께서 우리와 함께 행하심으로 나와 주의 백성을 천하 만민 중에 구별하심이 아니니이까(출 33:15-16) (p.90)
+하나님의 현존은 우리를 지상의 다른 모든 사람들로부터 구별시켜 준다. (p.90)
+하나님이 우리와 함께 하심으로 우리는 세상의 어떤 것과도 구별된 존재가 된다. (p.90)</p>
+</blockquote>
+<p>교리 고백·교회 출석·선량함이 신자를 구별하는 것이 아니다. 저자는 A. W. 토저 『하나님을 추구함』을 인용해 「하나님의 임재로 들어가는 것」은 「교리를 수호하는 것 이상」이라고 말한다(p.90). 「구원받는다는 것은 일회적인 경험이 아니다」(p.91) — 일생 동안 하나님과 동행하는 생생한 경험이다.</p>
+<p>그 반대편에 「인류 최대의 비극」이 있다.</p>
+<blockquote>
+<p>“백성은 멀리 서 있고 모세는 하나님이 계신 흑암으로 가까이 가니라”(출 20:21). (p.95)</p>
+</blockquote>
+<p><a class="wl" href="../../b/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EB%8F%99%ED%96%89_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">존비비어의동행_존비비어</a>의 핵심 대비(<strong>두려움 = 멀리함 / 경외 = 가까이 감</strong>, 출 20:18-21)와 같은 본문이다. 두 책을 겹쳐 읽으면, 이 책은 그 명제의 <strong>친밀함 쪽 절반</strong>을 확장한 책이다.</p>
+<h3>6. 하나님의 친구 — 경외와 순종이 조건이다</h3>
+<p>6장은 신 5장에서 출발한다. 독자가 밑줄 친 하나님의 탄식:</p>
+<blockquote>
+<p>다만 그들이 항상 이 같은 마음을 품어 나를 경외하며 내 모든 명령을 지켜서 그들과 그 자손이 영원히 복 받기를 원하노라(신 5:29) (p.124)</p>
+</blockquote>
+<p>저자는 여기서 두 가지 원칙을 뽑는다(둘 다 밑줄).</p>
+<table>
+<thead>
+<tr>
+<th>원칙</th>
+<th>원문 (p.124)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>① 조건</td>
+<td>거룩한 두려움인 경외가 없는 한 하나님 앞으로 가까이 나아올 수 없다</td>
+</tr>
+<tr>
+<td>② 증거</td>
+<td>그러한 경외가 있는지 없는지에 대한 증거는 하나님께 순종함을 보이느냐 보이지 않느냐 하는 태도에 달려있다</td>
+</tr>
+</tbody>
+</table>
+<p>결과는 신 5:30 「각기 장막으로 돌아가라」 — 저자는 이를 「구약성경에 나오는 가장 비극적인 발언」이라 부른다.</p>
+<p>아브라함과 롯의 대비가 이 원칙의 실례다. 아브라함은 이삭을 바치라는 명령에 <strong>「아침에 일찍이 일어나」</strong>(창 22:3, p.128 물결 밑줄) 순종했다 — 미루지 않은 순종. 그 결과 하나님은 「그분의 계획을 털어놓고」(p.131) 소돔의 운명을 아브라함과 상의하셨다(창 18:17). 반면 독자가 밑줄 친 대로:</p>
+<blockquote>
+<p>“의로운 롯”(벧후 2:7)이라는 사람조차도 사실은 하나님의 계획을 제대로 인지하지 못했다. (p.131)
+“아브람은 가나안 땅에 거주하였고 롯은 그 지역의 도시들에 머무르며 그 장막을 옮겨 소돔까지 이르렀더라”(창 13:12). (p.132)</p>
+</blockquote>
+<p>롯은 악의 진원지에서 「좀 떨어져 있으면서도 그 풍요로부터 떨어지지 않으려는」 계획을 세웠다. 장막을 조금씩 옮긴 끝이 소돔 성 안이었다. <strong>의로움(구원)과 친밀함(하나님의 계획을 앎)은 다르다</strong> — 롯은 구원받았으나 하나님의 친구는 아니었다.</p>
+<p>→ <a class="wl" href="../../t/%EA%B2%BD%EC%99%B8/">경외</a>·<a class="wl" href="../../t/%EC%88%9C%EC%A2%85/">순종</a>. 순종의 태도론은 <a class="wl" href="../../b/%EC%88%9C%EC%A2%85_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">순종_존비비어</a>가 전개한다.</p>
+<h3>7. 친밀함을 방해하는 것 ① — 교만은 더 종교적이 된다</h3>
+<p>7장에서 가장 역설적인 문장이 독자의 밑줄로 남았다.</p>
+<blockquote>
+<p>웃시야가 잘나가게 되었을 때, 그는 더욱 종교적이 되었나 비종교적이 되었나? (p.151)
+웃시야는 더 열심히 예배를 드린 것을 알 수 있다. 교만해지면 더욱더 종교적이 되기 쉽다. 이는 종교를 이용하려는 경향성이 증가하기 때문이다. (p.151)</p>
+</blockquote>
+<p><strong>핵심 인사이트:</strong> 통념은 「잘되면 하나님을 잊는다」이지만, 비비어는 반대로 「잘되면 종교를 <strong>이용</strong>한다」고 본다. 웃시야는 제사장의 일(분향)까지 자기가 하려 했고, 지적받자 화를 냈다(대하 26:16-19). 「교만이 종교로 포장된 것」이며, 「하나님을 경외하지 않는 곳에는 참된 겸손도 없다」(p.151). 가인이 하나님께 화를 낸 것(창 4:5)도 같은 원리다.</p>
+<p>이것은 오래 신앙생활한 사람, 교회 사정을 잘 아는 사람, 사역의 성과를 거둔 사람에게 향한 경고다 — <a class="wl" href="../../t/%EA%B5%90%EB%A7%8C/">교만</a>.</p>
+<h3>8. 친밀함을 방해하는 것 ② — 탐욕을 품고 구하면 그 탐욕대로 주신다</h3>
+<p>7장 후반은 이 책에서 가장 두려운 주장이다. 출발점은 겔 14:4.</p>
+<blockquote>
+<p>이스라엘 족속 중에 그 우상을 마음에 들이며 죄악의 걸림돌을 자기 앞에 두고 선지자에게로 가는 모든 자에게 나 여호와가 그 우상의 수효대로 보응하리니”(겔 14:4). (p.159)</p>
+</blockquote>
+<p>저자는 NASB를 따라 「그 우상이 많은 정도에 따라서 응답하리니」로 읽고, 「우상」을 「탐욕」으로 치환한다. 우상이란 「하나님보다 더 믿고 따르고 앞세우는 것」이며, 「하나님의 뜻을 떠난 만족을 찾게 되는 곳이 다름 아닌 우상숭배의 자리」다(p.159). 그 실례가 발람이다.</p>
+<blockquote>
+<p>밤에 하나님이 발람에게 임하여 이르시되 그 사람들이 너를 부르러 왔거든 일어나 함께 가라 그러나 내가 네게 이르는 말만 준행할지니라(민 22:20) (p.161~165)</p>
+</blockquote>
+<p>처음엔 가지 말라던 하나님이 돈을 더 준다니 가라고 하시고, 막상 가니 진노하신다(민 22:21-22) — 「하나님은 정신분열증이 있으신」가? 저자의 답, 독자가 네 줄에 걸쳐 밑줄 친 문장:</p>
+<blockquote>
+<p>우리가 진정으로 원하는 것이 있고, 하나님이 이미 원하시는 것을 계시하였음에도 계속 탐욕을 부린다면, 그것이 하나님의 의지와 반할 때조차도 아마도 우리에게 주실 것이다. 하나님이 아시고 계셨다 할지라도 우리는 심판을 받게 될 것이다. (p.166)</p>
+</blockquote>
+<p>이스라엘이 왕을 구했을 때(삼상 8장), 광야에서 고기를 구했을 때도 같았다 — 「하나님은 그들이 갈망했던 것을 주셨다!」(p.166). <strong>응답이 곧 승인은 아니다.</strong> 유다서가 그 결말을 요약한다.</p>
+<blockquote>
+<p>주께서 백성을 애굽에서 <strong>구원하여 내시고</strong> 후에 믿지 아니하는 자들을 <strong>멸하셨으며</strong>(유 1:5) (p.170)</p>
+</blockquote>
+<p>그래서 해독제는 두렵고 떨림으로 이루는 구원이다.</p>
+<blockquote>
+<p>너희 안에서 행하시는 이는 하나님이시니 자기의 기쁘신 뜻을 위하여 너희에게 소원을 두고 행하게 하시나니(빌 2:12-13) (p.171)</p>
+</blockquote>
+<p>빌 2:12 「두렵고 떨림으로」는 <a class="wl" href="../../b/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EA%B5%AC%EC%9B%90_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">존비비어의구원_존비비어</a>에서 「사랑과 경외는 짝」으로 다시 나온다. → <a class="wl" href="../../t/%EC%9A%B0%EC%83%81%EC%88%AD%EB%B0%B0/">우상숭배</a>.</p>
+<h3>9. 진정한 예배는 노래가 아니라 순종의 삶이다 — 그리고 겸손</h3>
+<p>8장의 첫 논증은 「예배」라는 단어의 첫 등장이다. 창 22:5 — 아브라함이 이삭을 바치러 가며 「저기 가서 <strong>예배하고</strong>」(p.181, 물결 밑줄). 「아브라함은 이삭과 신령한 분위기가 있는 CCM 노래를 흥얼거리며 예배(경배)를 드리러 간 것이 아니다」 — 예배의 첫 용례가 <strong>가장 귀한 것을 바치는 순종</strong>이었다. 그 반대편이 아모스다.</p>
+<blockquote>
+<p>네 노랫소리를 내 앞에서 그칠지어다 네 비파 소리도 내가 듣지 아니하리라 오직 정의를 물같이, 공의를 마르지 않는 강같이 흐르게 할지어다(암 5:23-24) (p.181)</p>
+</blockquote>
+<p>「신령과 진정으로」(요 4:24)에서 독자는 <strong>「신령」</strong>과 <strong>「진정」</strong> 두 단어에 동그라미를 치고, 헬라어 <strong>‘아레세이아’</strong>(알레테이아)에 밑줄을 그었다(p.182). 바인 성경사전의 풀이 — 「겉으로 나타나 보이는 것의 배후에 내지는 그 밑바닥에 깔린 진실; 진짜 핵심」. 진정한 예배란 겉모양새가 아니라 마음 중심에서 시작되는, 「하나님과 인간 사이에 서로 마음이 통하는 ‘커뮤니케이션’」이다.</p>
+<blockquote>
+<p>“너희가 즐겨 순종하면 땅의 아름다운 소산을 먹을 것이요”(사 1:19). (p.183~191)</p>
+</blockquote>
+<p>「순종하면」이 아니라 <strong>「즐겨」</strong> 순종하면이다. 저자는 아들이 즉시 순종하되 마음에 불만이 가득하면 기쁘지 않을 것이라며, 자신이 말로는 불평하지 않았으나 성령께서 「나는 네가 마음으로 불평하는 것을 들었다」고 하셨던 경험을 고백한다.</p>
+<p>9장은 그런 사람을 하나님이 찾아다니신다고 말한다. 독자가 밑줄 친 <strong>겸손의 3면</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>겸손의 면</th>
+<th>근거 (p.195~209)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>① 하나님께 순종</td>
+<td>약 4:7 「하나님께 복종할지어다」</td>
+</tr>
+<tr>
+<td>② 하나님께만 의존함</td>
+<td>잠 3:5 「네 명철을 의지하지 말라」</td>
+</tr>
+<tr>
+<td>③ 우리 자신에 관한 관점</td>
+<td>(거짓 겸손과의 구분)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>“나 여호와가 말하노라 무릇 마음이 가난하고 심령에 통회하며 내 말을 듣고 떠는 자 그 사람은 내가 돌보려니와”(사 66:2). (p.210)</p>
+</blockquote>
+<p>하나님이 이새의 아들들 중 다윗을 찾으신 이유다 — 「하나님은 그런 자들을 줄곧 쫓아다니신다」(p.210). → <a class="wl" href="../../t/%EC%98%88%EB%B0%B0/">예배</a>·<a class="wl" href="../../t/%EA%B2%B8%EC%86%90/">겸손</a>.</p>
+<h3>10. 친밀함의 언어 — 속사람을 세우는 세 가지 방법</h3>
+<p>10·12장은 성령과의 친밀함을 다룬다. 바울은 3년 반 예수님과 함께 다닌 베드로보다 예수님을 더 깊이 알았다 — 그 원천은 <strong>계시</strong>였다.</p>
+<blockquote>
+<p>이는 내가 사람에게서 받은 것도 아니요 배운 것도 아니요 오직 예수 그리스도의 <strong>계시로</strong> 말미암은 것이라 (갈 1:12, p.237)</p>
+</blockquote>
+<p>베드로조차 「그 중에 알기 어려운 것이 더러 있으니」(벧후 3:16, p.237 밑줄)라고 인정했다. 12장은 하나님이 우리의 머리가 아니라 <strong>심령</strong>에 말씀하신다고 강조한다.</p>
+<blockquote>
+<p>“사람의 영혼은 여호와의 등불이라 사람의 깊은 속을 살피느니라”(잠 20:27). (p.300)
+단단한 음식은 장성한 자의 것이니 그들은 지각을 사용함으로 연단을 받아 선악을 분별하는 자들이니라(히 5:14) (p.300)</p>
+</blockquote>
+<p>「지각을 사용한다」는 것은 「영혼에 센스가 있다」는 말이다. 미각·후각을 훈련받은 감정사처럼, 영혼의 오감도 <strong>반복 훈련</strong>으로 발달한다(p.300~304). 그 방법을 독자는 이 책에서 가장 촘촘하게 표시했다 — 문단 전체 밑줄에 세 동사마다 동그라미:</p>
+<blockquote>
+<p>그렇다면 우리는 어떻게 영혼(심령, 속 사람)을 키우고, 성장시키고, 개발하고, 성숙시키고, 세울 것인가? 하나님의 방법은 아주 분명하다. 그것은 하나님의 말씀을 <strong>읽고</strong>(벧전 2:2, 행 20:32), 그 말씀을 중심으로 <strong>기도하면서</strong>(고전 14:4, 유20), 그 말씀에 <strong>순종하는</strong>(히 5:9) 것이다. (p.304)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>속사람을 세우는 길</th>
+<th>근거 구절</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>읽기</td>
+<td>벧전 2:2 · 행 20:32</td>
+</tr>
+<tr>
+<td>기도하기</td>
+<td>고전 14:4 · 유 1:20 (고전 14:15 「영으로… 마음으로」, p.297 밑줄)</td>
+</tr>
+<tr>
+<td>순종하기</td>
+<td>히 5:9</td>
+</tr>
+</tbody>
+</table>
+<p>비비어는 여기서 방언 기도(고전 14:4·14:18)를 속사람 세우기의 도구로 명시한다 — 은사주의적 강조점이다(미해결 질문 3).</p>
+<h3>11. 핵심 인사이트: 들음 → 믿음 → 확신 → 순종 → 친밀 (독자의 요약 사슬)</h3>
+<p>13장은 「왜 나에게는 하나님의 음성이 들리지 않고 임재의 경험이 없나요?」라는 질문에서 출발해 믿음의 온전한 확신(히 10:22)으로 답한다. 믿음은 어디서 오는가(p.321 소제목 밑줄)?</p>
+<blockquote>
+<p>그러므로 믿음은 들음에서 나며 들음은 그리스도의 말씀으로 말미암았느니라(롬 10:17) (p.322)</p>
+</blockquote>
+<p>그래서 설교자는 듣기 좋은 말이 아니라 말씀을 전해야 한다.</p>
+<blockquote>
+<p>“이제 내가 사람들에게 좋게 하랴 하나님께 좋게 하랴 … 내가 지금까지 사람들의 기쁨을 구하였다면 그리스도의 종이 아니니라”(갈 1:10). (p.323)</p>
+</blockquote>
+<p>그리고 p.333, 독자가 <strong>파란 펜으로 다시 읽으며</strong> 핵심어 다섯 개에 동그라미를 친 문단:</p>
+<blockquote>
+<p>우리의 온전한 <strong>확신은</strong> 믿음으로부터 오며, <strong>믿음은</strong> 하나님의 말씀을 <strong>들음</strong>에서 온다. 그리고 말씀에 대한 확신을 가지면 가질수록, 우리의 심령은 하나님께 더 <strong>순종하게</strong> 된다. 순종이 깊으면 깊을수록 하나님과의 <strong>친밀감</strong>도 깊어진다. (p.333)</p>
+</blockquote>
+<p>📝 그리고 페이지 상단 여백에 이것을 한 줄로 정리했다: <strong>「들음 → 믿음 → 확신 → 순종 → 친밀」.</strong></p>
+<p><code>들음(롬 10:17) → 믿음 → 확신(히 10:22) → 순종 → 친밀
+   ↑                                         │
+   └───── 말씀(읽기·듣기) ←── 더 가까이 ──────┘</code></p>
+<p>이 사슬이 책 전체의 구조를 거꾸로 요약한다 — 14장이 말하는 친밀함은 맨 끝의 열매이고, 그 뿌리는 <strong>말씀을 듣는 것</strong>이다. 1장의 「자원하는 반응」(섹션 2), 6장의 「경외의 증거는 순종」(섹션 6), 12장의 「읽고·기도하고·순종」(섹션 10)이 모두 이 한 줄에 들어간다.</p>
+<p><strong>부부관계라는 시험지.</strong> 이 사슬의 「순종」 단계가 어디서 시험받는지를 저자는 뜻밖의 자리에서 보여준다. 「교회에 출석하고, 십일조 생활도 하고, 성경도 읽고, 기도도 하는데 왜 내 믿음은 매일 제자리걸음입니까?」라는 남자 성도에게 비비어는 「당신은 지금 당신의 아내를 어떻게 대우하고 있나요?」라고 되묻는다. 독자는 이 문단 전체를 여백 괄호로 묶고 구절 출처 <strong>(벧전 3:7)</strong>에 동그라미를 쳤다.</p>
+<blockquote>
+<p>남편들아 이와 같이 지식을 따라 너희 아내와 동거하고 그를 더 연약한 그릇이요 또 생명의 은혜를 함께 이어받을 자로 알아 귀히 여기라 이는 너희 기도가 막히지 아니하게 하려 함이라 (벧전 3:7, p.330)</p>
+</blockquote>
+<p>📝 p.333 상단에도 <strong>「지식을 따라. 벧전 3:7」</strong>을 다시 적었다 — 사슬과 부부관계 구절을 한 여백에 나란히 둔 것이다. 「우리의 일상생활의 모든 영역에서 하나님을 인정하기 전까지는 하나님과의 온전한 교통이 이루어지지 않는다」(p.330). <strong>하나님과의 친밀함은 가장 가까운 사람과의 관계에서 막히기도 하고 열리기도 한다.</strong> → <a class="wl" href="../../t/%EA%B0%80%EC%A0%95%EC%82%AC%EC%97%AD/">가정사역</a>.</p>
+<h3>12. 가까이 다가가는 실제 — 마음으로, 들으러, 시편으로</h3>
+<p>마지막 14장은 결혼한 사람에게 침실의 친밀함을 가르치는 것에 비유해 하나님께 다가가는 구체적 방법을 다룬다.</p>
+<blockquote>
+<p>친밀함의 아름다움은 생각이 아닌 마음으로부터 나온다. (p.339)</p>
+</blockquote>
+<p>금식하면서도 다투던 이스라엘(사 58:3-4)처럼, 약 4장의 표제어 앞에는 <strong>「싸움」</strong>과 <strong>「정욕」</strong>이 있다(p.343, 두 단어 밑줄). 「하나님을 가까이하라」(약 4:8, p.344)는 이기심을 내려놓으라는 문맥 안의 명령이다 — 「나의 욕심(욕망)을 내세울 것이 아니라, 하나님의 갈망(소원)을 알아드리는 자가 되어야 한다」(p.344).</p>
+<p>그리고 독자가 <strong>파란 펜</strong>으로 표시한 마지막 소제목 「말씀을 들으러 가까이 다가서라」:</p>
+<blockquote>
+<p>너는 하나님의 집에 들어갈 때에 네 발을 삼갈지어다 가까이 하여 말씀을 듣는 것이 우매한 자들이 제물 드리는 것보다 나으니 … 그런즉 마땅히 말을 적게 할 것이라 (전 5:1-3, p.346~347)</p>
+</blockquote>
+<p>다른 번역으로는 「어리석은 사람같이 제사를 드리기보다는 하나님의 말을 들으러 가까이 다가오라」. 저자가 만난 대형교회 목회자는 「나 혼자만 이야기 하는 것에 대해 이제는 신물이 납니다」라며 매일 아침 듣기만 하기로 작정했고, 얼마 후 새벽기도에서 성령께서 말씀하시기 시작했다. 저자 자신의 방법, 파란 펜 밑줄:</p>
+<blockquote>
+<p>나에게는 하나님과 대화하는 기발한 아이디어가 하나 있다. 그것은 기도 시간에 성경을 읽는 것인데, 특히 나는 시편을 읽는다. (p.347)</p>
+</blockquote>
+<p>→ <a class="wl" href="../../t/%EB%8C%80%ED%99%94/">대화</a>·<a class="wl" href="../../t/%EA%B8%B0%EB%8F%84/">기도</a>. 말하는 기도에서 <strong>듣는 기도</strong>로, 그리고 말씀을 기도의 언어로 삼는 것(시편 기도)이 책의 마지막 실천이다. 섹션 11의 사슬 맨 앞(「들음」)으로 되돌아가는 결말이기도 하다.</p>
+<hr />
+<h2>비비어 저작 안에서의 자리</h2>
+<table>
+<thead>
+<tr>
+<th>책</th>
+<th>이 책과의 연결</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="wl" href="../../b/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EB%8F%99%ED%96%89_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">존비비어의동행_존비비어</a></td>
+<td>같은 출 20:21·출 33:15·신 5:29를 쓴다. 저쪽은 <strong>경외론</strong>(경외 없으면 심판), 이쪽은 <strong>친밀론</strong>(경외하면 친구) — 한 쌍으로 읽을 것</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EC%97%B4%EC%A0%95_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">존비비어의열정_존비비어</a></td>
+<td>출애굽의 목적지 = 「내게로」 · 경외 = 가까이 감 — 섹션 1과 같은 재료</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EB%81%88%EC%A7%88%EA%B9%80_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">존비비어의끈질김_존비비어</a></td>
+<td>「끈질기게 하나님을 찾는 사람을 특히 좋아하신다」(p.19~23) — 추구하는 신자론</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EC%9D%80%ED%98%9C_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">존비비어의은혜_존비비어</a></td>
+<td>「믿음 = 은혜의 송수관」 · 「필요가 아니라 믿음에 반응하신다」 — 13장 믿음론과 짝</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EA%B5%AC%EC%9B%90_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">존비비어의구원_존비비어</a></td>
+<td>빌 2:12 「두렵고 떨림으로」 — 섹션 8의 결론</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%88%9C%EC%A2%85_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">순종_존비비어</a></td>
+<td>경외의 증거 = 순종(섹션 6), 사울의 부분 순종</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EA%B4%91%EC%95%BC%EC%97%90%EC%84%9C%EC%9D%98%EC%8A%B9%EB%A6%AC_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">광야에서의승리_존비비어</a></td>
+<td>「광야에서 나를 섬기리라」(출 7:16) — 광야의 목적</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<ul>
+<li><strong>적용(멘토링·제자훈련):</strong> p.93 📝 「오랜 기간, 지근거리, 동행」은 다윗-400인뿐 아니라 <strong>멘토링의 세 조건</strong>으로 그대로 쓸 수 있다. 영향력은 강의가 아니라 시간 × 거리 × 함께 걸음에서 나온다 — 누가회 학사·학생 사역에서 「짧게 자주 가까이」 원칙의 성경적 근거.</li>
+<li><strong>적용(가정사역 강의):</strong> 벧전 3:7 「기도가 막히지 아니하게」를 「믿음이 제자리걸음인 남편」 사례와 묶은 p.330은 가정사역 강의(남편의 역할)의 도입 사례로 바로 쓸 수 있다. 「지식을 따라」 동거한다 = 아내를 <strong>알고</strong> 대우하는 것이 영성의 문제라는 연결.</li>
+<li><strong>적용(설교·QT):</strong> 「들음 → 믿음 → 확신 → 순종 → 친밀」 사슬은 롬 10:17 + 히 10:22 + 약 4:8을 잇는 설교 한 편의 뼈대다. 웃시야(교만하면 더 종교적이 된다)는 사역 성과를 거둔 리더를 향한 설교의 경고 사례.</li>
+<li><strong>적용(개인 경건):</strong> 「기도 시간에 시편을 읽는다」 — 말하는 기도에서 듣는 기도로. 전 5:1-2 「말을 적게 할 것이라」.</li>
+<li><strong>미해결 질문 1:</strong> 「하나님은 반응에 반응하신다」(막 6:48 「지나가려고」를 「그냥 지나치실 의향」으로 읽음)는 <strong>은혜의 선행성</strong>과 어떻게 조화되는가? 저자의 주장을 「구원의 주도권」이 아니라 「관계의 깊이」에 관한 것으로 제한하면 성립하지만, 책은 그 구분을 명시하지 않는다. 막 6:48의 「지나가려고」(parelthein)는 출 33·왕상 19의 <strong>신현(theophany) 언어</strong>(하나님이 「지나가심」)로 읽는 해석이 더 일반적이다.</li>
+<li><strong>미해결 질문 2:</strong> 「탐욕대로 주신다」(p.166)는 겔 14:4 NASB 번역에 크게 기대는데, 이것을 기도 응답 일반의 원리로 확장해도 되는가? 응답받은 기도를 두고 「이것이 하나님의 뜻인지 내 탐욕의 보응인지」를 무엇으로 분별하는가 — 저자는 「하나님이 이미 원하시는 것을 계시하였음에도」라는 조건을 달았으므로, <strong>계시된 뜻을 거스른 간구</strong>에 한정된 원리로 읽는 것이 안전하다.</li>
+<li><strong>미해결 질문 3:</strong> 속사람 세우기에서 방언 기도(고전 14:4·유 20)를 필수 도구로 제시하는 은사주의적 강조를, 방언을 하지 않는 신자에게는 어떻게 옮길 것인가? 「영으로 또 마음으로」(고전 14:15)의 균형이 대안이 될 수 있다.</li>
+<li><strong>미해결 질문 4:</strong> 저자의 에녹 계산(360년) 오류처럼, 번역서의 성경 수치·인용에 부정확한 곳이 있다. 설교·강의에 인용할 때는 성경 본문으로 대조 필요.</li>
+</ul>
+<hr />
+<blockquote>
+<p>📖 전사 원문(줄이지 않은 표시 구절 전체 + 여백 손글씨): <span class="wl-dead" title="위키 내부 링크">날마다하나님께로더가까이_존비비어_전사</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#domain/영성</span><span>#discipline/제자도</span><span>#topic/하나님의임재</span><span>#topic/친밀함</span><span>#topic/경외</span><span>#topic/순종</span><span>#topic/믿음</span><span>#topic/예배</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
