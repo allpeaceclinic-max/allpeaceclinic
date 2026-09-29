@@ -1,0 +1,530 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>존 비비어의 존중 — 존 비비어 (두란노) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">상담·치유·가정</span><span class="author">존비비어</span><span class="date">2026-09-29</span></div>
+  <h1 class="note-title">존 비비어의 존중 — 존 비비어 (두란노)</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EC%A1%B4%EC%A4%91_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<blockquote>
+<p>원제 <em>Honor's Reward</em>, 부제 「형통한 그리스도인의 비밀」. <span class="wl-dead" title="위키 내부 링크">존 비비어</span>가 『<a class="wl" href="../../b/%EC%88%9C%EC%A2%85_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">순종</a>』(<em>Under Cover</em>)에서 다룬 권위론을 <strong>「존중(honor)」과 그 보상</strong>이라는 한 축으로 다시 엮은 책이다. 4부 구성 — ①존중하는 사람이 형통하다 ②존중하는 공동체가 형통하다 ③존중하는 인생이 형통하다 ④존중하면 예수님을 닮는다. 📷 표시 전사 기반 독서 노트.</p>
+</blockquote>
+<hr />
+<h2>책의 뼈대 — 존중의 네 방향</h2>
+<table>
+<thead>
+<tr>
+<th>부</th>
+<th>제목</th>
+<th>대상</th>
+<th>핵심 본문</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1부</td>
+<td>존중하는 <strong>사람</strong>이 형통하다</td>
+<td>하나님의 권고·위임된 권위 전반</td>
+<td>요이 1:8 · 삼상 2:30 · 롬 13:1-2 · 벧전 2:18-21</td>
+</tr>
+<tr>
+<td>2부</td>
+<td>존중하는 <strong>공동체</strong>가 형통하다</td>
+<td>정부·사회(직장·학교)·가정·교회 리더십</td>
+<td>엡 6:2-8 · 벧전 3:1-2 · 시 92:13 · 고전 4:5</td>
+</tr>
+<tr>
+<td>3부</td>
+<td>존중하는 <strong>인생</strong>이 형통하다</td>
+<td>사역자·동료·맡겨진 이들·자녀·아내</td>
+<td>딤전 5:17 · 잠 3:9-10 · 빌 2:3 · 벧전 3:7</td>
+</tr>
+<tr>
+<td>4부</td>
+<td>존중하면 <strong>예수님을 닮는다</strong></td>
+<td>영혼 세우기 · 하나님만 높이기</td>
+<td>마 5:9 · 마 10:34-37 · 잠 22:4 · 잠 29:23</td>
+</tr>
+</tbody>
+</table>
+<p>저자가 제시하는 존중의 좌표는 <strong>4영역 × 3방향</strong>이다.</p>
+<blockquote>
+<p>"정부, 교회, 가정, 사회다." / "우리 위의 사람들, 우리 수준의 사람들, 우리의 권위 아래 있는 사람들이다." (p.51)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>위 (권위)</th>
+<th>옆 (동료)</th>
+<th>아래 (맡겨진 이들)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>정부</strong></td>
+<td>통치자·공직자 (2부 1장)</td>
+<td>시민</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>사회</strong></td>
+<td>직장 상사·스승 (2부 2장)</td>
+<td>동료 (3부 2장)</td>
+<td>부하 직원 (3부 3장)</td>
+</tr>
+<tr>
+<td><strong>가정</strong></td>
+<td>부모 (2부 3장)</td>
+<td>배우자 — 아내 존중 (3부 5장)</td>
+<td>자녀 (3부 4장)</td>
+</tr>
+<tr>
+<td><strong>교회</strong></td>
+<td>목회자·영적 아비 (2부 4장 · 3부 1장)</td>
+<td>성도</td>
+<td>양 떼 (3부 3장)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>요약 — 주제별 상세 정리</h2>
+<h3>1. 요이 1:8 — 수고한 것을 잃지 않는 길은 「존중의 습관」</h3>
+<p>책은 요한이서 한 절로 열리고 같은 절로 닫힌다(수미상관). 독자는 첫 인용에서 「온전한」에 동그라미를 쳤다.</p>
+<blockquote>
+<p>너희는 스스로 삼가 우리가 일한 것을 잃지 말고 오직 <strong>온전한</strong> 상을 받으라(요이 1:8). (p.11)</p>
+</blockquote>
+<p>「스스로 삼가」는 "자신을 경계하라고 권하는" 말이다(p.12). 저자는 인생의 베테랑들이 "문제의 핵심을 직감적으로 짚어 내"고 "그들이 고르는 말에는 무게가 있다"(p.11)고 관찰하고, 무너진 한 사람을 두고 이렇게 진단한다 — "인생의 결정적 순간이 왔을 때 그에게는 건전한 판단을 내리는 데 필요한 습관이 없었던 거야"(p.14). 결론은 단순하다.</p>
+<blockquote>
+<p>자신이 바라는 것을 얻기 위해 들인 수고를 잃지 않는 가장 간단한 길은 하나님의 권고를 일관되게 존중하는 습관을 기르는 것이다. (p.16)</p>
+</blockquote>
+<p>보상은 이생에 그치지 않는다 — "경건한 습관에는 심판대의 보상이 약속"(p.19)되어 있고, 그 보상의 성격은 "여호와께서 주시는 복은 사람을 부하게 하고 근심을 겸하여 주지 아니하시느니라"(잠 10:22, p.20)이다. 근원은 보상 자체가 아니라 하나님이다: "나는 네 방패요 너의 지극히 큰 상급(보상)이니라"(창 15:1, p.17).</p>
+<p>📝 <strong>뒤 면지 손글씨</strong>는 이 장을 세 단어의 눈금으로 요약한다 — 「온전한」에서 화살표를 그어 <strong>없음 — 부분적인 — 온전한</strong>, 그리고 여백에 <strong>"이생뿐 아니라 내세에도."</strong> 보상이 "받느냐 못 받느냐"가 아니라 <strong>얼마나 온전히 받느냐</strong>의 문제라는 읽기다.</p>
+<table>
+<thead>
+<tr>
+<th>보상의 정도</th>
+<th>책의 사례</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>없음</td>
+<td>나사렛 사람들 — "다 놀랐으나 고침 받은 사람은 하나도 없었다" (p.29)</td>
+</tr>
+<tr>
+<td>부분적</td>
+<td>자기 논리로 하나님을 아는 사람들 (p.25)</td>
+</tr>
+<tr>
+<td>온전한</td>
+<td>시므온 · 로마 백부장 · 수로보니게 여인 (p.25~33)</td>
+</tr>
+</tbody>
+</table>
+<h3>2. 존중의 의미 — 티미(time)와 아티미아(atimia)</h3>
+<p>「존중」의 그리스어는 <strong>티미(time)</strong>, 뜻은 "'중요시함'", "'진가를 인정함, 중시, 우호적 대우, 존경'"이다. 반대어는 <strong>아티미아(atimia)</strong>, 곧 경멸이다(p.26~27). 존중은 감정이 아니라 <strong>값을 매기는 행위</strong>다 — 무엇을, 누구를 무겁게 여기느냐.</p>
+<p>이 정의가 드러나는 자리가 메시아 사건이다. 저자는 "하나님은 우리에게 필요한 것을 우리가 원치 않는 꾸러미에 담아 보내실 때가 많다"(p.24)고 말한다. 대부분은 목수의 아들이라는 포장만 보고 알맹이를 놓쳤다 — "그들은 하나님을 마음으로 안 게 아니라 자기네 논리로 알았다"(p.25). 반면 시므온은 달랐다. "시므온과 다른 사람들 사이에 결정적 차이가 있다"(p.26).</p>
+<blockquote>
+<p>이 계시를 이해하면, 하나님께 온전한 유업을 받지 못하는 사람들이 왜 그토록 많은지 까닭을 알게 된다. (p.26)</p>
+</blockquote>
+<p>📝 면지에서 독자는 이 대목을 <strong>"θ는 우리에게 필요한 것을 우리가 원하지 않는 꾸러미에 담아 보내실 때가 있다 → 메시아. 예수. 그러나 시므온은 자기 눈(?)이 아닌 θ의 마음을 알았다"</strong>로 정리했다.</p>
+<h3>3. 믿음이 큰 사람들 — 절박함 속에서도 잃지 않은 존중</h3>
+<p>예수께서 "믿음이 크다"고 하신 두 사람은 모두 이방인이다. 저자는 "예수님은 이 로마 장교가 세례 요한보다 믿음이 크다고 공포하신다"(p.32)고 짚고 묻는다 — "그의 믿음은 어째서 그렇게 컸을까." 답은 두 겹이다. 믿음은 "들음에서 나며 들음은 그리스도의 말씀"(롬 10:17)으로 말미암지만, 그것만으로는 부족하고 "권위를 존중하고 순종함이 보완되어야 한다"(p.32). 백부장은 권위 아래 있는 사람이었기에 권위의 말 한마디가 가진 무게를 알았다.</p>
+<p>수로보니게 여인은 "개"라는 말을 듣고도 물러서지 않았다 — "주여 옳소이다마는 상 아래 개들도 아이들이 먹던 부스러기를 먹나이다"(p.33).</p>
+<blockquote>
+<p>그들의 절박함 속에 존중심이 흘렀고, 그래서 둘 다 온전한 보상 (p.33)</p>
+</blockquote>
+<p>📝 면지: <strong>"로마 백부장, 그리스 여인(이방인) → 절박함 속에서도 존중을 잃지 않았다. 예수님이 개라고 지칭했으나. 믿음이 크다 … + 권위를 존중하는 순종함이 더함."</strong> 그리고 한 줄 — <strong>"삼상 2:30 나를 존중히 여기는 자를 내가 존중히 여기고. 존중할 수 있는 기회."</strong> 존중은 의무 이전에 <strong>기회</strong>라는 것이 이 장에서 독자가 건진 문장이다.</p>
+<h3>4. 핵심 인사이트: 존중과 예배는 다르다 — "핵심은 존중이다"</h3>
+<p>3장은 아프리카와 서구의 대비로 시작한다.</p>
+<blockquote>
+<p>아프리카에서 이런 권능을 보고 있는 남녀 사역자들의 사연을 … 사역자들이 미국이나 다른 서구 국가들에도 온다는 것이다. 사람도 똑같고, 메시지도 똑같고, 기름부음도 똑같고, 사역 방법도 똑같다. 그러나 서구 집회에서는 몇 명의 두통, 허리 아픈 것, 소수의 관절염만 고침 받을 뿐이다. (p.43)</p>
+</blockquote>
+<p>차이를 가른 것은 기름부음이 아니라 받는 쪽의 태도다 — <strong>"핵심은 존중이다"</strong>(p.43). 📝 면지: "아프리카에서의 사역 결과 — 존중의 결과이다. 사역자를 대접하는 자세 — 존중."</p>
+<p>그러나 저자는 곧바로 선을 긋는다. <strong>"존중과 예배는 다르다."</strong> 예배는 "한 분만 영원토록" 받으시고, 사람에게는 "존중할 자들을" 존중할 뿐이다(p.44). 존중을 강조하는 책이 사람 숭배로 미끄러지지 않도록 세운 첫 번째 안전장치다(두 번째는 5절의 순종 예외, 세 번째는 9절의 "하나님이 최우선").</p>
+<h3>5. 권위의 신학 — 왕국은 민주주의가 아니다</h3>
+<blockquote>
+<p>하나님 나라(kingdom of God)는 말 그대로 왕국임을 잊어서는 안 된다. 그 나라에는 서열과 질서와 위임된 권위가 있다. (p.53)
+"우리는 민주주의 사고방식으로 왕국의 원리를 이해하려는 사람들이다." (p.53)</p>
+</blockquote>
+<p>이 대목은 『<a class="wl" href="../../b/%EC%88%9C%EC%A2%85_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">순종</a>』의 요약이다 — 독자도 p.55 여백에 <strong>📝 "존비비어의 순종" 요약</strong>이라고 적었다. "하나님을 아는 것은 곧 권위를 아는 것"(p.55)이며, "모든 권세는 다 하나님께서 정하신 바"(롬 13:1)의 「정하다」는 <strong>타소(tasso)</strong>, "'지명하다, 임명하다, 세우다'"이다(p.55). 따라서 "권세를 거스르는 자는 하나님의 명을 거스름이니"(롬 13:2).</p>
+<p>동시에 저자는 결정적인 구분을 넣는다.</p>
+<blockquote>
+<p>성경은 모든 권세가 하나님한테서 왔다고 했지 모든 권세가 경건하다고 하지는 않았다. (p.58)</p>
+</blockquote>
+<p>바로·느부갓네살(하나님이 "내 종"이라 부르심)·사울 왕이 모두 하나님이 세우신 권위였다(p.58~59). 고난도 두 종류로 나뉜다 — "<strong>핍박</strong>에는 두 가지 종류가 있다. 하나는 스스로 자초하는 것이고, 또 하나는 의를 위해 기꺼이 감당하는 것이다"(p.56). 전자는 피하기 쉽다("권위에 순종하라. 그러면 아무 문제도 없을 것이다"), 후자는 소명이다(벧전 2:20-21).</p>
+<p><strong>다윗의 존중</strong>이 이 장의 절정이다. 16세부터 30세까지 14년 동안 쫓기면서, 엔게디 굴 속에서 사울의 옷자락만 베고도 "양심이 찔려 괴로워한다. 그 행위는 왕을 경멸하는 행위였기 때문이다"(p.60). 친구의 조언은 "논리는 맞지만 하나님 말씀에 어긋났다"(p.63). 하나님이 사울의 군대를 깊이 잠들게 하신 이유는 "다윗의 마음을 시험하시기 위해서였다"(p.64). 그리고 끝까지:</p>
+<blockquote>
+<p>사울과 요나단을 위하여 사랑 노래를 지었고, 유다 온 시민에게 가르쳐 부르게 했다. 자기 지도자가 심판받은 <strong>후</strong>에도 지도자를 존중한 것이다. (p.65)</p>
+</blockquote>
+<p>독자는 「후」에 동그라미를 치고 여백에 📝 <strong>"ex) 박정희 대통령."</strong>이라고 적었다 — 역사적 평가가 갈리는 지도자를 그가 떠난 뒤에 어떻게 대할 것인가라는 한국적 적용이다. 다윗 서사는 <a class="wl" href="../../b/%EC%84%B8%EC%99%95%EC%9D%B4%EC%95%BC%EA%B8%B0_%EC%A7%84%EC%97%90%EB%93%9C%EC%9B%8C%EC%A6%88/">세 왕 이야기</a>와 정확히 겹친다.</p>
+<h3>6. 불의한 권위 앞에서 — 세 가지 유익, 그리고 복종과 순종의 구분</h3>
+<p>벧전 2:18의 "까다로운 자들"에서 「까다롭다」는 <strong>스콜리오스(skolios)</strong> — "'비뚤어지다, 괴팍하다, 악하다, 불공평하다, 주제넘다'"(p.67). 성경은 "선하고 친절한" 주인만이 아니라 "가혹한 이들에"게도 두려워함으로 순종하라고 한다. 이유는 존중의 뿌리가 상대의 자격이 아니기 때문이다.</p>
+<blockquote>
+<p><strong>참된 존중은</strong> 마음에서 비롯되며 하나님을 경외함에서 흘러나온다. (p.67)
+하나님을 경외함이 머무는 자리는 마음이고, 존중은 거룩한 경외가 밖으로 흘러나온 것이다. (p.74)</p>
+</blockquote>
+<p><strong>까다로운 권위를 존중할 때의 세 가지 유익</strong> (p.68~73)</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>유익</th>
+<th>근거</th>
+<th>📝 면지 요약</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>하나님의 손안에 놓이게 된다</td>
+<td>(p.68)</td>
+<td>θ의 손에 놓임</td>
+</tr>
+<tr>
+<td>2</td>
+<td>복을 이어받는다</td>
+<td>"악을 악으로 욕을 욕으로 갚지 말고 도리어 복을 빌라(존중하라)… 복을 이어받게 하려 하심이라"(벧전 3:9)</td>
+<td>복을 받음. ex) 보험회사 기부(?)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>경건한 성품이 이루어진다</td>
+<td>"직접 억울함을 풀지 않고 하나님을 의지할 때"(p.73), 롬 5:3-4</td>
+<td>정련된(?) 성품. 환난—인내—연단—소망</td>
+</tr>
+</tbody>
+</table>
+<p>그래서 저자는 역설적으로 말한다 — "특히 권위 있는 사람에게 부당대우를 당하거든 아주 감격해도 좋다. 보상의 준비 단계이기 때문이다"(p.69), "모든 부당대우는 진급이나 보상의 준비 단계"(p.77). 다만 현실적 경고를 붙인다 — "몇 주가 지나도록 아무 일 없었다. 대개 그렇다. 그것을 알아야 한다"(p.70).</p>
+<p><strong>핵심 인사이트: 복종은 무조건, 순종은 조건부</strong></p>
+<blockquote>
+<p>성경은 우리에게 권위에 무조건 복종하라고 가르치지만, 권위에 무조건 순종하라고 가르치지는 않는다. / 복종과 순종은 다르다. 복종이 태도의 문제라면 순종은 행동의 문제 (p.73)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>복종 (submission)</th>
+<th>순종 (obedience)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>차원</td>
+<td><strong>태도</strong></td>
+<td><strong>행동</strong></td>
+</tr>
+<tr>
+<td>범위</td>
+<td>무조건 — 항상</td>
+<td>조건부 — 예외 있음</td>
+</tr>
+<tr>
+<td>예외</td>
+<td>없음</td>
+<td>"권위가 하나님 말씀에 어긋나는 일을 시킬 때" (p.116)</td>
+</tr>
+<tr>
+<td>본보기</td>
+<td></td>
+<td>사드락·메삭·아벳느고 — 느부갓네살 앞 (p.75, 표시만 있음)</td>
+</tr>
+<tr>
+<td>성경</td>
+<td>"순종하고 복종하라"(히 13:17 — 독자가 두 단어 모두 동그라미)</td>
+<td>"너희가 <strong>즐겨</strong> 순종하면"(사 1:19, p.74)</td>
+</tr>
+</tbody>
+</table>
+<p>하나님이 저자에게 주셨다는 책망이 이 구분을 요약한다 — "순종은 행동의 문제지만 즐겨 순종하는 것은 네 태도의 문제다. 그런데 지금 네 태도는 어떠하냐? 너무 불손하지 않느냐!"(p.74). 📝 면지: <strong>"순종과 복종을 구분 히 13:17 ↓행동 ↓태도(즐겨) 사 1:19."</strong> 이 2×2는 『<a class="wl" href="../../b/%EC%88%9C%EC%A2%85_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">순종</a>』의 「순종=행동 / 복종=태도」와 『<a class="wl" href="../../b/%EB%AC%B4%EC%8B%9C%EB%90%98%EC%96%B4%EC%98%A8%EC%B6%95%EB%B3%B5%EC%9D%98%ED%86%B5%EB%A1%9C_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">무시되어온 축복의 통로</a>』의 「복종/순종 구별과 학대의 한계선」과 같은 골격이다.</p>
+<h3>7. 공동체 속의 존중 — 정부·직장·가정·교회 (2부)</h3>
+<p><strong>정부와 직장.</strong> 참된 거룩함은 교회 밖에서 칭송받는다 — "(교회 밖) 백성이 칭송하더라"(행 5:13). "참된 거룩함이란, 하나님 나라 수준의 사고와 삶을 따라 사는 능력이다"(p.87). 일터의 종은 "범사에 우리 구주 하나님의 교훈을 빛나게 하려"(딛 2:10, p.100) 섬기고, "눈가림만 하여 사람을 기쁘게 하는 자처럼 하지 말고 … 주께 하듯"(엡 6:5-8, p.106) 한다. 보상은 "주께로부터 그대로" 온다.</p>
+<p><strong>가정 — 남의 잘못이 내 옳은 행동을 결정하지 못하게.</strong> 부모 공경은 "약속이 있는 <strong>첫 계명</strong>"(엡 6:2-3, p.108)이고, 경멸은 저주 아래 놓인다(신 27:16, p.110). 저자는 세 개의 실패 서사를 겹친다 — 📝 독자의 여백 정리: <strong>"노아 - 함 / 야곱(?) - 르우벤 / 모세."</strong></p>
+<table>
+<thead>
+<tr>
+<th>인물</th>
+<th>상황</th>
+<th>교훈</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>함</td>
+<td>"노아의 도덕적 실패가 세 아들이 품은 존중을 시험하는 상황이 된 것이다" (p.111)</td>
+<td>권위의 실패는 나의 존중을 시험하는 무대다</td>
+</tr>
+<tr>
+<td>레아와 야곱</td>
+<td>"레아를 무시하고 라헬을 사랑한 야곱의 행동이 잘못되었다" (p.114) — 하나님은 "그 남편이 고통스럽게 한 부분에서 레아에게 복을 주셨다" (p.115)</td>
+<td>무시당한 자리가 복의 자리가 된다</td>
+</tr>
+<tr>
+<td>모세</td>
+<td>백성에게 질려 "반역한 너희여 들으라" 호통치고 반석을 두 번 침 → 가나안 입성 박탈 (p.115)</td>
+<td>"자신의 잘못을 남 탓으로 돌릴 수 없다" (p.116)</td>
+</tr>
+</tbody>
+</table>
+<p>원리 한 줄: <strong>"다른 사람들의 잘못된 행동이 우리가 아는 옳은 행동에 영향을 미치도록 해서는 안 된다"</strong>(p.115).</p>
+<p><strong>말씀 선포 — 하늘에 선 말씀을 땅에 세우는 입.</strong> "여호와여 주의 말씀은 영원히 <strong>하늘에</strong> 굳게 섰사오며"(시 119:89) — "땅에 대해서는 일언반구도 없다"(p.119). 말씀이 땅에 서는 통로는 "두세 증인의 입"이다: "이미 그분 입에서 나온 그분의 말씀을 우리 입으로 말할 때, 그 말씀을 이 땅에 굳게 세우는 것이다"(p.120). 그래서 "하나님의 약속은 자동이 아니라 믿음으로 얻어내야 한다"(p.117).</p>
+<p><strong>아내의 소명.</strong> 벧전 3:1-2를 확대역으로 인용하며 공경에 포함되는 감정을 "존경하고, 공경하고, 복종하고, 존중하고, 높이고, 가치를 인정하고, 소중히 여기고 … 흠모"(p.124)하는 것으로 풀어낸다. 요지는 다음 문장에 있다.</p>
+<blockquote>
+<p>성경이 우리에게 존중을 가르치는 것은 존중의 대상들을 위해서만 아니라 우리 자신을 위해서다. 마땅히 존중할 자를 존중하지 않을 때 우리가 그 손해를 직접 당한다. (p.125)</p>
+</blockquote>
+<p><strong>교회 — 심기고, 아비를 귀히 여기고, 함부로 판단하지 않기.</strong>
+- 심김: "이는 여호와의 집에 심겼음이여 … 번성하리로다"(시 92:13). "심긴다는 것은 거기가 당신의 삶을 내려놓고 하나님을 섬기는 곳이라는 뜻이다"(p.131). → 『<a class="wl" href="../../b/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EA%B5%AC%EC%9B%90_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">구원</a>』의 소명 열쇠 「지역교회에 심기라」와 같은 말이다.
+- 영적 아비: "그리스도 안에서 일만 스승이 있으되 아버지는 많지 아니하니"(고전 4:15, p.137).
+- <strong>판단의 경계</strong>: "우리는 열매, 즉 사람들의 행동은 판단해야 하지만 그들의 마음의 동기는 판단해서는 안 된다"(p.139, 고전 4:5).
+- 한나와 엘리: "한나는 고약한 성품의 엘리한테서 '술 취했다'는 매정한 소리를 들으면서도 냉소적인 태도를 보이지 않고 자기 마음을 지켰다"(p.141). 📝 면지: <strong>"지도자를 〃 — ex) 한나. 나는 여종, 내 주여."</strong>
+- <strong>소문 처리 원칙</strong>: "부정적인 소식의 출처가 딱 한 사람이거나 또는 적어도 두 사람의 구체적인 증거가 없다면, 나는 그것을 무시해 버린다"(p.141).
+- 결론: "모든 지도자들은 천국에서 오는 보상의 통로다"(p.142).</p>
+<h3>8. 사역자 존중과 재정 — 가장 논쟁적인 장 (3부 1장)</h3>
+<p>딤전 5:17의 「<strong>잘 다스리는</strong>」 장로들을 「<strong>배나 존경</strong>」할 것(p.146, 독자 표시)을 저자는 <strong>재정 지원</strong>으로 읽는다 — "일을 잘하는 교회 지도자들은 갑절의 보수를 받아야 하며"(p.149). 대상은 "말씀과 가르침에 수고하는" 장로들(p.150)이다. 그리스도 자신은 "사람에게서 영광(존중)을 취하지 아니"하셨고(요 5:41), 서로 영광을 취하는 지도자들을 꾸짖으셨다(요 5:44, p.148~149).</p>
+<p>저자는 남용을 먼저 인정한다 — "소수의 미국 사역자들이 특히 이 진리를 남용해 왔다"(p.152). 그러나:</p>
+<blockquote>
+<p>존중의 원리가 남용된 예는 고금의 사역뿐만 아니라 성경에도 있다. 하지만 그런 잘못된 예들에 발목 잡혀 하나님의 종들에게 재정적 보상을 갑절로 주라는 성경의 명령을 외면해야 되겠는가? 악에 악으로 대응하여 하나님 보시기에 선이 나온 유례는 없다. (p.153)</p>
+</blockquote>
+<p><strong>헌금의 세 용도</strong> (p.162)</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>용도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>위임받은 종들의 부양 — "갑절의 보수"</td>
+</tr>
+<tr>
+<td>2</td>
+<td>사역에 필요한 것들의 공급</td>
+</tr>
+<tr>
+<td>3</td>
+<td>가난한 사람들·과부·고아·외인 구제</td>
+</tr>
+</tbody>
+</table>
+<p>약속은 삼상 2:30("나를 존중히 여기는 자를 내가 존중히 여기고")과 잠 3:9-10이다. 저자는 "네 포도즙 틀에 새 포도즙이 넘치리라"를 "성령의 새로운 임재"로 읽고 "당신이 그분을 존중하여 교회 지도자들에게 헌금하면, 그분의 넘치는 임재를 온전한 보상으로 받게 된다"(p.166)고 말한다. 마게도냐 교회는 "극심한 가난"에도 "힘에 지나도록"(고후 8:1-3) 드렸다. 보상이 반드시 돈은 아니다 — "그 존중에는 은혜와 호의도 들어 있다"(p.167). 사례로 여의도순복음교회(p.156)와, "아들아, 새로 산 네 시계를 그에게 주어라"(p.170)는 저자의 개인 순종 일화가 나온다.</p>
+<blockquote>
+<p>⚠️ 이 장은 치유·형통을 헌금·존중의 결과로 연결하는 경향이 강하다(4절 아프리카 대비 포함). 번영신학과의 거리를 어떻게 둘지는 독자 몫으로 남겨 둔다 — 아래 미해결 질문 참조.</p>
+</blockquote>
+<h3>9. 옆과 아래를 향한 존중 — 동료·맡겨진 이들·자녀·아내 (3부 2~5장)</h3>
+<p><strong>동료.</strong> "의인의 이름으로 의인을 존중하는 자는 의인의 보상을 받을 것이요"(마 10:41, p.168). 기준은 "각각 자기보다 남을 낫게 여기고"(빌 2:3, p.178), "존경하기를 서로 먼저 하며"(롬 12:10, p.179).</p>
+<p><strong>맡겨진 이들 — 권위는 세우라고 준 것.</strong> "주께서 주신 권세는 너희를 무너뜨리려고 하신 것이 아니요 세우려고 하신 것이니"(고후 10:8). "권위란 세우라고 주신 것이며, 거기에 섬김과 보호가 포함된"다(p.184). 그러나 세움은 아부가 아니다.</p>
+<blockquote>
+<p>하나님은 구도자에 민감한 방법에는 찬성하시지만 구도자에 민감한 메시지에는 반대하신다. (p.186)</p>
+</blockquote>
+<p>리더십 유형(전통적·진보적·율법적·팀워크·독재형·위임형·세부관리)을 나열한 뒤 저자는 둘로 줄인다 — "삶을 향상시키는 지도자요, 하나는 삶의 진을 빼놓는 지도자다"(p.188). 모든 신자는 하나님의 집을 세우는 소명을 받았고(엡 2:10, p.190), 지도자는 <strong>존중을 요구하지 않는다</strong>:</p>
+<blockquote>
+<p>존중을 요구하는 것은 하나님 마음에 어긋난다. 우리가 존중받기를 원하는 이유는 두 가지라야 한다. 첫째, 그 존중을 마음속에서 하나님께 돌려 드리기 위해서다. 둘째, 존중을 베푸는 당사자의 유익을 위해서다. (p.195)</p>
+</blockquote>
+<p><strong>자녀 — 자녀는 부모의 선포대로 자란다.</strong> "양육한다는 것은 성장에 필요한 것을 준다는 뜻이다"(p.202). 자녀는 "여호와의 기업"이자 "상급(보상)"이다(시 127:3). 저자의 관찰:</p>
+<blockquote>
+<p>부모가 자녀의 부정적 행동을 혼내는 데 에너지를 집중하면 자녀는 더 악화될 뿐이었다. 반면 부모가 자녀에 대한 하나님의 약속들을 입술로 선포하면 결국 자녀는 그 선포대로 자랐다. (p.204)</p>
+</blockquote>
+<p>"부모가 비판하는 자녀의 그 부분들은 존중을 통해서 쉽게 고쳐질 수 있는 경우가 대부분이다"(p.203). 선포가 훈육을 대체하지는 않는다 — 잠 13:24·29:15, 그리고 "훈육이 신속 간결해"야 한다(p.209).</p>
+<p><strong>아내 — 존중하지 않는 남편의 기도는 막힌다.</strong> "아내를 존중하지 않는 남편의 기도는 하나님이 듣지 않으신다"(벧전 3:7, p.214). 저자 자신의 고백: "시간이 가면서 아내의 말이 결국 하나님의 지혜로 판명되는 일이 반복되었다"(p.214), 하나님의 책망 — "네가 지혜로운 지도자라면 내가 네 아내한테 준 내 것을 끌어낼 줄 알아야 한다. 그리고 가장으로서 최종 결정을 내리기 전에 그 일로 함께 의논할 줄 알아야 한다"(p.215). 독자는 「지식을 따라」에 두 번 물결 밑줄을 그었다. 존중의 근거는 둘이다 — "<strong>첫째는</strong> 더 연약한 그릇으로서 존중하는 것이고, <strong>둘째는</strong> 생명의 은혜를 받을 공동 상속자로서"(p.216).</p>
+<p>아내의 <strong>소명에 순종하도록 돕는</strong> 대목에서 저자는 여성 사역을 적극 지지한다 — "소식을 공포하는 여자들은 큰 무리라"(시 68:11), 최초의 복음 전도자 막달라 마리아, 여선지자 안나, 빌립의 네 딸(p.219~220), 그리고 <span class="wl-dead" title="위키 내부 링크">로렌 커닝햄</span>·데이비드 조엘 해밀턴의 『여자라고 왜 안 되나?』(p.221)를 권한다. 권위 질서를 강하게 말하는 책이 여성의 사역 소명을 동시에 옹호한다는 점이 눈여겨볼 균형이다.</p>
+<h3>10. 핵심 인사이트: 존중에도 순서가 있다 — 하나님이 최우선이다 (4부)</h3>
+<p>책의 마지막 안전장치는 <strong>존중의 과잉</strong>에 대한 경고다. 아랫사람·가족을 존중한다는 명분으로 진리를 타협하는 것.</p>
+<blockquote>
+<p>나는 권위상 아랫사람을 기쁘게 하려고 진리를 타협해서는 안 된다는 중요성을 깨달았다. (p.245)
+"화평하게 하는 자는 복이 있나니"(마 5:9)라고 하셨지 "평화를 지키는 자는 복이 있나니"라고 하신 적이 없다. 평화를 지키는 자는 거짓된 평화의 느낌을 유지하기 위해서 진실을 타협하는 사람이다. (p.245)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>인물</th>
+<th>하나님보다 더 존중한 대상</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>엘리</td>
+<td>자녀</td>
+<td>집안 심판</td>
+</tr>
+<tr>
+<td>아브라함</td>
+<td>자녀</td>
+<td>—</td>
+</tr>
+<tr>
+<td>모세</td>
+<td>아내 십보라 — 아들 할례 미룸</td>
+<td>"여호와께서 그를 만나사 그를 죽이려 하신지라"(출 4:24)</td>
+</tr>
+<tr>
+<td>젊은 선지자 (왕상 13)</td>
+<td>늙은 선지자의 말</td>
+<td>"그 대가는 혹독했다" (p.248)</td>
+</tr>
+</tbody>
+</table>
+<p>"엘리와 아브라함의 경우는 상대가 자녀였고, 모세의 경우는 아내였다"(p.246). 예수의 말씀이 결론이다 — "아버지나 어머니를 나보다 더 사랑(존중)하는 자는 내게 합당하지 아니하고"(마 10:37). 젊은 선지자의 경우는 특히 날카롭다: 선배를 공경하는 덕목 자체는 "훌륭한 덕목"이었지만 "늙은 선지자의 말을 하나님의 말씀보다 더 존중한 것"이 과오였다(p.248).</p>
+<p><strong>미련한 자 vs 지혜로운 자.</strong> 저자가 잠언에서 뽑은 미련한 자의 목록(p.249~250): 하나님이 없다 하는 자 · 중상하는 자 · 행악으로 낙을 삼는 자 · <strong>늘 자기가 옳은 줄 알고 경건한 권고를 구하지 않는 자</strong> · 교만한 말로 허풍을 떠는 자 · 자기만 믿고 지혜와 지식과 훈계를 업신여기는 자. 반대편에 지혜가 있다 — "지혜를 품으면 존중을 얻는다. 지혜의 출발점은 하나님을 경외함이다"(p.251), "<strong>겸손</strong>과 여호와를 <strong>경외함</strong>의 보상은 재물과 영광(존중)과 생명이니라"(잠 22:4).</p>
+<p>마지막 경고는 풍요에 대한 것이다.</p>
+<blockquote>
+<p>넘어진 사람들은 대부분 곤고한 시절이 아니라 풍성한 시절에 그리되었다. (p.252)</p>
+</blockquote>
+<p>"네게 있는 것 중에 받지 아니한 것이 무엇이냐"(고전 4:7) — 그래서 책은 처음 구절로 돌아간다. "너희는 스스로 삼가 우리가 일한 것을 잃지 말고 오직 온전한 상을 받으라"(요이 1:8), "마음이 겸손하면 영예(존중)를 (지키)리라"(잠 29:23, p.253).</p>
+<hr />
+<h2>독자의 표시 패턴</h2>
+<ul>
+<li><strong>뒤 면지 장별 노트</strong>: 1부 1~4장만 손글씨로 요약했다(요이 1:8 → 온전한 보상 → 권위 → 불의한 권위). 1부가 이 책의 신학적 뼈대이고, 2~4부는 적용 확장이라는 읽기로 보인다. 면지 첫 줄 「존중하는 사람이 형통하다」와 다음 면 「존중하는 공동체가 형통하다」는 1부·2부 제목을 옮겨 적은 것이다.</li>
+<li><strong>『순종』과의 연결을 독자 스스로 명시</strong>: p.55 여백 "존비비어의 순종 요약", 면지 "3장 권위에 순종하는 삶 — 「존 비비어의 순종」 도서".</li>
+<li><strong>한국적 적용 메모</strong>: 다윗의 사울 애가 옆 "ex) 박정희 대통령"(p.65), 한나의 "나는 여종, 내 주여"(면지).</li>
+<li><strong>동그라미 단어</strong>: 온전한 · 순종 · 핍박 · 즐겨 · 순종하고/복종하라 · 첫 계명 · 함 · 르우벤 · 하늘에 · 지혜/명철 · 겸손/경외함 — 대부분 <strong>대조 쌍</strong>(태도/행동, 하늘/땅, 겸손/교만)에 표시가 몰려 있다.</li>
+<li>2부 후반~3부(p.126~221)는 밑줄이 촘촘하고, 4부 「영혼을 세워주는 삶」(p.230~237)은 표시가 거의 없다(p.234 사 50:4 하나).</li>
+</ul>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<p><strong>적용</strong>
+- <strong>이사회·단체 사역</strong>: 「행동은 판단하되 동기는 판단하지 않는다」(p.139)와 「출처가 한 사람뿐이거나 두 사람의 구체적 증거가 없으면 무시한다」(p.141)는 이사회에서 대표·실무자에 관한 부정적 보고를 다루는 실무 원칙으로 그대로 쓸 수 있다. 동시에 "평화를 지키는 자"(p.245)가 되지 말 것 — 존중이 침묵의 핑계가 되어서는 안 된다.
+- <strong>의료 현장</strong>: 까다로운 상급자·병원 경영진 아래에서 「복종(태도)은 유지하되, 환자 안전·윤리에 어긋나는 지시에는 순종(행동)하지 않는다」는 2×2가 명료한 기준이 된다.
+- <strong>가정</strong>: 자녀의 약점을 혼내기보다 약속을 선포하라(p.204), 아내에게 주신 하나님의 것을 끌어내고 최종 결정 전 의논하라(p.215).
+- <strong>선교·후배 멘토링</strong>: 현지 지도자·선교단체 리더를 향한 존중을 「사람 숭배」와 구분하는 틀로 "존중과 예배는 다르다"(p.44)를 쓸 수 있다.</p>
+<p><strong>미해결 질문</strong>
+- <strong>번영신학의 경계</strong>: 아프리카/서구의 치유 차이를 「존중」 하나로 설명하고(p.43), 헌금 → 임재·형통을 약속으로 묶는(p.166) 논리는 어디까지 성경적인가? 딤전 5:17의 「배나 존경」을 재정으로 읽는 해석과 <a class="wl" href="../../b/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EA%B5%AC%EC%9B%90_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">『구원』</a>의 「안전·돈」 경고를 함께 놓으면 어떻게 조정되는가?
+- <strong>학대와 복종의 한계</strong>: "모든 부당대우는 진급이나 보상의 준비 단계"(p.77)라는 문장은 가정폭력·직장 내 괴롭힘 피해자에게 어떻게 들리는가? 이 책은 순종의 예외(하나님 말씀에 어긋날 때)만 말하고 <strong>보호·이탈의 한계선</strong>은 말하지 않는다 — 『<a class="wl" href="../../b/%EB%AC%B4%EC%8B%9C%EB%90%98%EC%96%B4%EC%98%A8%EC%B6%95%EB%B3%B5%EC%9D%98%ED%86%B5%EB%A1%9C_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">무시되어온 축복의 통로</a>』의 학대 한계선 논의로 보완할 필요.
+- <strong>역사적 지도자 존중</strong>: 다윗의 사울 애가를 근거로 한 「심판받은 후에도 존중」(p.65)은 민주주의 체제의 비판적 시민성과 어떻게 공존하는가? (저자 스스로 "민주주의 사고방식으로 왕국의 원리를 이해하려는" 오류를 경계하지만, 교회 밖 정치 영역에도 같은 원리가 그대로 적용되는지는 별개 문제다.)
+- <strong>존중의 순서</strong>: 4부의 「하나님 &gt; 가족·선배」 원칙과 1~3부의 「위임된 권위 존중」이 충돌할 때 — 예컨대 영적 아비(고전 4:15)의 조언이 내가 받은 말씀과 다를 때 — 젊은 선지자의 실패(p.248)를 피하는 분별 기준은 무엇인가?
+- 여성 사역 옹호(p.219~221)와 아내의 복종(p.124)을 한 책 안에서 어떻게 통합하고 있는가? 표시되지 않은 3부 5장 후반부를 다시 읽어 볼 것.</p>
+<hr />
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../b/%EC%88%9C%EC%A2%85_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">순종_존비비어</a> — 이 책 1부 3~4장의 원전. 권위의 근원·타소·순종/복종 2×2·다윗과 사울</li>
+<li><a class="wl" href="../../b/%EB%AC%B4%EC%8B%9C%EB%90%98%EC%96%B4%EC%98%A8%EC%B6%95%EB%B3%B5%EC%9D%98%ED%86%B5%EB%A1%9C_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">무시되어온축복의통로_존비비어</a> — 부당대우에 대한 세 약속·벧전 3:9·학대의 한계선(이 책의 공백을 메움)</li>
+<li><a class="wl" href="../../b/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EA%B5%AC%EC%9B%90_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">존비비어의구원_존비비어</a> — 「지역교회에 심기라」(p.131과 짝)·안전·돈 경고</li>
+<li><a class="wl" href="../../b/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EB%81%88%EC%A7%88%EA%B9%80_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">존비비어의끈질김_존비비어</a> — 의를 위한 고난 vs 자초한 고난(p.56과 짝)</li>
+<li><a class="wl" href="../../b/%EC%84%B8%EC%99%95%EC%9D%B4%EC%95%BC%EA%B8%B0_%EC%A7%84%EC%97%90%EB%93%9C%EC%9B%8C%EC%A6%88/">세왕이야기_진에드워즈</a> — 다윗·사울 서사</li>
+<li><a class="wl" href="../../t/%EA%B6%8C%EC%9C%84/">권위</a> · <a class="wl" href="../../t/%EC%88%9C%EC%A2%85/">순종</a> · <a class="wl" href="../../t/%EA%B2%B8%EC%86%90/">겸손</a> · <a class="wl" href="../../t/%EA%B5%90%EB%A7%8C/">교만</a> · <a class="wl" href="../../t/%EC%A7%80%ED%98%9C/">지혜</a> · <a class="wl" href="../../t/%EB%A6%AC%EB%8D%94%EC%8B%AD/">리더십</a> · <a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%B2%B4/">공동체</a> · <a class="wl" href="../../t/%EA%B0%80%EC%A0%95%EC%82%AC%EC%97%AD/">가정사역</a> · <a class="wl" href="../../t/%EC%9E%90%EB%85%80%EC%96%91%EC%9C%A1/">자녀양육</a> · <a class="wl" href="../../t/%EB%B6%80%EB%B6%80%EA%B4%80%EA%B3%84/">부부관계</a></li>
+<li><span class="wl-dead" title="위키 내부 링크">존중</span> — (신설 후보) 이 책이 주 출처가 될 주제 페이지</li>
+</ul>
+<hr />
+<blockquote>
+<p>📖 전사 원문(줄이지 않은 표시 구절 전체): <span class="wl-dead" title="위키 내부 링크">존비비어의존중_존비비어_전사</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/제자도</span><span>#discipline/실천신학</span><span>#topic/존중</span><span>#topic/권위</span><span>#topic/순종</span><span>#topic/복종</span><span>#topic/리더십</span><span>#topic/가정</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
