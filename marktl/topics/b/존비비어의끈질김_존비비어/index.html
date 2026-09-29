@@ -1,0 +1,434 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>존 비비어의 끈질김 — 존 비비어 (두란노) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">영성·제자도</span><span class="author">존비비어</span><span class="date">2026-09-29</span></div>
+  <h1 class="note-title">존 비비어의 끈질김 — 존 비비어 (두란노)</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EB%81%88%EC%A7%88%EA%B9%80_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<blockquote>
+<p>원제 <em>Relentless</em>. 표지 문구 「나는 달려갈 길을 다 마칠 때까지 멈추지 않는다」. <span class="wl-dead" title="위키 내부 링크">존비비어</span>가 <strong>롬 5:17 「생명 안에서 왕 노릇 하리로다」</strong> 한 구절을 축으로, 은혜를 「용서」가 아니라 <strong>「능력」</strong>으로 다시 정의하고, 그 능력으로 다스리려는 자에게 <strong>환난은 피할 수 없는 입구</strong>이며, 그 환난을 이기는 무기가 <strong>벧전 5장의 겸손·내려놓음·근신·대적·순종</strong>이라고 밀고 가는 책. 4부 구성(전진 → 싸움 → 돌파 → 완주). 📷 표시 전사 기반 독서 노트.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>제목</th>
+<th>장</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>신앙은 끈질기게 전진하는 것이다</td>
+<td>표류(16) · 다스리는 자(30) · 은혜의 능력(46) · 안일함 깨기(70)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>끈질기게 싸우기로 결단하라</td>
+<td>의를 위한 고난(94) · 고난의 배후 분별(118) · 영적 무장(142)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>「끈질김」으로 모든 난관을 돌파하라</td>
+<td>믿음(162) · 겸손(170) · 내려놓음(186) · 근신(208) · 대적(224) · 순종(244) · 기도(262)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>끈질기게 완주하라, 영광의 상을 받으리라</td>
+<td>하나님의 비전(282) · 천국(300) · 마지막 순간까지(310)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>요약 — 주제별 상세 정리</h2>
+<h3>1. 신앙은 표류가 아니라 완주다</h3>
+<p>책은 1장 표제면의 전 7:8로 문을 연다 — <strong>「일의 끝이 시작보다 낫고(전 7:8).」</strong>(p.16). 저자의 문제의식은 시작하는 그리스도인은 많은데 끝까지 가는 그리스도인이 적다는 데 있다. 제목 「끈질김」은 이 완주의 태도를 가리킨다.</p>
+<blockquote>
+<p>메시지 성경의 히브리서 12장 1절 번역이 마음에 든다. "달려가십시오. 절대로 멈추지 마십시오!" (p.27)</p>
+</blockquote>
+<p>책의 끝(Part 4)은 다시 완주로 돌아와, 완주는 <strong>자기 경로를 아는 것</strong>에서 시작한다고 말한다.</p>
+<blockquote>
+<p>바울이 자신의 길을 몰랐다면 어떻게 "나의 달려갈 길을 마치고"(딤후 4:7)라고 말할 수 있었겠는가? (p.290)</p>
+<p>"그리스도 예수 안에서 선한 일을 위하여 지으심을 받은 자니 이 일은 하나님이 전에 예비하사 우리로 그 가운데서 행하게 하려 하심이라"(엡 2:10)라고 말한다. (p.291)</p>
+</blockquote>
+<p>저자는 자기 집을 지은 <strong>하청업자</strong> 비유로 소명을 설명한다. 하청업자는 전체 설계도를 모르고 자기 몫만 받는다. 표시한 문장은 그 결론이다.</p>
+<blockquote>
+<p>건축가가 미리 정해 놓은 계획을 따랐을 뿐이다. (p.292)</p>
+</blockquote>
+<p><strong>핵심 인사이트: 완주는 「더 많이」가 아니라 「맡은 부분」이다.</strong> 끈질김은 성취 욕구가 아니라, 설계자가 정한 자기 몫을 끝까지 붙드는 것이다. <a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a>과 <span class="wl-dead" title="위키 내부 링크">딤후4</span>가 한 축으로 묶인다.</p>
+<h3>2. 다스리는 자로 부름 받았다 — 「생명 안에서 왕 노릇」</h3>
+<p>책 전체의 신학적 축은 롬 5:17이다.</p>
+<blockquote>
+<p>"은혜와 의의 선물을 넘치게 받는 자들은 한 분 예수 그리스도를 통하여 생명 안에서 왕 노릇 하리로다"(롬 5:17). (p.42–43)</p>
+</blockquote>
+<p>저자는 「왕 노릇」을 내세의 약속으로 미루지 않고 <strong>이 땅의 삶을 다스리는 것</strong>으로 읽는다.</p>
+<blockquote>
+<p>우리는 생명의 영역에서 타의 추종을 불허하는 최고가 되어야 한다. 이 땅에서의 삶은 우리를 뛰어넘을 수 없다. 우리가 그 삶을 다스려야 한다. (p.32)</p>
+<p>즉 왕으로서 통치한다는 것은 특정한 영역에서 높은 권세와 영향력을 가진다는 뜻이다. (p.32 — 밑줄 옅음, 범위 불확실)</p>
+</blockquote>
+<p>그 근거로 창조 위임(시 115:16)과 부르심의 불변성(롬 11:29)을 든다.</p>
+<blockquote>
+<p>"하늘은 여호와의 하늘이라도 땅은 사람에게 주셨도다"(시 115:16) (p.33, p.99에서 재표시)</p>
+<p>우리는 하나님의 은혜로, 그리스도를 통해 생명 안에서 왕 노릇 할 권능을 부여받았다! (p.99)</p>
+</blockquote>
+<p>p.98에서는 눅 6:20의 「하나님의 나라」를 <strong>「하나님의 최고로 강력한 통치」</strong>로 풀어 옮긴다 — 저자는 <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EB%82%98%EB%9D%BC/">하나님나라</a>를 장소가 아니라 통치로 읽고, 그 통치에 신자가 참여한다고 본다.</p>
+<h3>3. 정체성: 그리스도와 한 근원에서 났다</h3>
+<p>다스림의 근거는 신분이다. Part 1-2장(p.30~)의 표시는 모두 <strong>그리스도와의 연합</strong>을 가리키는 구절들이다.</p>
+<blockquote>
+<p>"거룩하게 하시는 이와 거룩하게 함을 입은 자들이 다 한 근원에서 난지라"(히 2:11) (p.37)</p>
+<p>"주께서 그러하심과 같이 우리도 이 세상에서 그러하니라"(요일 4:17). (p.38)</p>
+<p>당신은 다른 몸의 지체인가? 아니다. 당신은 그리스도의 몸이다! 바울의 확신이 담긴 말을 주의 깊게 보라. (p.41)</p>
+</blockquote>
+<p>p.38에는 벧후 1:4의 <strong>「신성한 성품에 참여하는 자」</strong>와 요 1:16 <strong>「우리가 다 그의 충만한 데서 받으니」</strong>가 함께 표시되어 있다. 저자의 논리는 「그리스도처럼 행할 수 있는가」가 아니라 「이미 그분의 몸이므로 그분처럼 행한다」로 흐른다(요일 2:6, p.57).</p>
+<h3>4. 핵심 인사이트: 은혜는 「용서」가 아니라 「능력」이다</h3>
+<p>이 책에서 가장 선명하게 표시된 정의다. 저자는 은혜를 흔히 「받을 자격 없는 호의」로만 이해하는 데서 멈추면 신자가 무력해진다고 본다.</p>
+<blockquote>
+<p><strong>은혜는</strong>, 하나님이 값없이 권능을 주셔서 우리의 자연적인 능력을 넘어서는 능력을 갖게 해 주시는 것이다. (p.51)</p>
+<p>'하나님의 넘치는 은혜'로 인해 통치할 수 있다. (p.47)</p>
+</blockquote>
+<p>p.66에는 은혜와 자비를 가르는 공식이 있고, 두 단어에 동그라미가 쳐져 있다.</p>
+<blockquote>
+<p><strong>은혜는</strong> 우리가 받을 자격이 없는 것을 주는 것이고, <strong>자비는</strong> 우리가 마땅히 받아야 할 것을 주지 않는 것이다. (p.66)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>정의(p.66)</th>
+<th>저자가 더하는 층</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>자비(mercy)</td>
+<td>마땅히 받을 것(형벌)을 주지 않음</td>
+<td>용서·면제</td>
+</tr>
+<tr>
+<td>은혜(grace)</td>
+<td>받을 자격 없는 것을 줌</td>
+<td><strong>능력(권능)</strong> — 자연적 능력을 넘어서게 함(p.51)</td>
+</tr>
+</tbody>
+</table>
+<p>이 정의 위에서 엡 3:20의 「능력」에 저자가 <strong>[은혜]</strong>를 끼워 넣는다 — <strong>「우리 가운데서 역사하시는 능력[은혜]대로」</strong>(p.78). 엡 1:19(AMP) <strong>「헤아릴 수 없고 무한하고 지극히 크다」</strong>(p.79)도 같은 줄에 표시되어 있다. 바울의 자기 이해 <strong>「내가 나 된 것은 하나님의 은혜로 된 것이니」</strong>(고전 15:10, p.84)는 이 능력으로서의 은혜를 요약하는 문장으로 쓰인다.</p>
+<p>그리고 은혜는 <strong>믿음으로만 접속된다</strong>.</p>
+<blockquote>
+<p>"부단한 도덕적 열심"은 하나님과의 관계에 아무 도움도 되지 않는다. (p.90)</p>
+<p>오로지 당신이 믿고, 의지하고, 믿음으로 하나님의 은혜를 사용하는 것이다. (p.90)</p>
+<p>"그들과 같이 우리도 복음 전함을 받은 자이나 들은 바 그 말씀이 그들에게 유익하지 못한 것은 듣는 자가 믿음과 결부시키지 아니함이라"(히 4:2). (p.88)</p>
+</blockquote>
+<h3>5. 은혜와 거룩 — 은혜는 죄를 이기게 하는 힘이다</h3>
+<p>은혜를 능력으로 정의하면, 은혜는 방종의 면허가 아니라 거룩의 동력이 된다. 저자는 두 극단을 동시에 차단한다. 한쪽은 <a class="wl" href="../../t/%EC%9C%A8%EB%B2%95%EC%A3%BC%EC%9D%98/">율법주의</a>다.</p>
+<blockquote>
+<p>여러분이 종교 활동에 기대어 살려고 하는 순간, 여러분은 그리스도에게서 떨어져 나간 것이며, 은혜에서 떨어져 나간 것입니다"(갈 5:4, 메시지). (p.49)</p>
+</blockquote>
+<p>다른 쪽은 은혜를 핑계로 한 방종이다. p.57~62의 표시는 전부 <strong>거룩</strong>을 향한다.</p>
+<blockquote>
+<p>"오직 너희를 부르신 거룩한 이처럼 너희도 모든 행실에 거룩한 자가 되라"(벧전 1:15). (p.57)</p>
+<p>"거룩함을 따르라 이것이 없이는 아무도 주를 보지 못하리라"(히 12:14). (p.59)</p>
+<p>"죄가 너희를 주장하지 못하리니 이는 너희가 법 아래에 있지 아니하고 은혜 아래에 있음이라"(롬 6:14). (p.61)</p>
+<p>"하나님의 은혜를 헛되이 받지 마라 …… 거룩함을 온전히 이루어 육과 영의 온갖 더러운 것에서 자신을 깨끗하게 하자"(고후 6:1, 7:1). (p.62)</p>
+</blockquote>
+<p>롬 6:14의 논리가 핵심이다 — 죄가 주장하지 못하는 <strong>이유가</strong> 은혜 아래 있기 때문이다. 은혜는 거룩의 반대가 아니라 거룩의 원인이다. <a class="wl" href="../../t/%EA%B1%B0%EB%A3%A9/">거룩</a>·<a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a>와 연결된다.</p>
+<p>이어서 저자는 은혜를 받은 자의 <strong>탁월함</strong>을 요구한다. 가장 도발적인 문장이다.</p>
+<blockquote>
+<p>'하나님, 다니엘과 그의 친구들이 동료들보다 열 배 더 뛰어났고 그들이 옛 언약 아래 있었다면, 은혜의 새 언약 아래 있는 저는 제 동료들보다 적어도 열 배 이상 뛰어나야 합니다.' (p.77)</p>
+</blockquote>
+<p>그 목적은 자기 영광이 아니라 마 5:16 — <strong>「그들로 너희 착한 행실을 보고 하늘에 계신 너희 아버지께 영광을 돌리게 하라」</strong>(p.77)이다.</p>
+<h3>6. 환난은 통치로 들어가는 입구다</h3>
+<p>Part 2의 첫 명제. 다스리려는 자는 반드시 환난을 통과한다. 저자는 행 14:22의 「하나님의 나라」를 다시 「통치」로 바꿔 읽는다.</p>
+<blockquote>
+<p>루스드라와 이고니온과 안디옥으로 돌아가서 제자들의 마음을 굳게 하여 이 믿음에 머물러 있으라 권하고 또 우리가 하나님의 나라에 들어가려면 많은 환난을 겪어야 할 것이라 하고(행 14:21-22). (p.103)</p>
+<p>"하나님의 최고로 강력한 통치에 들어가려면 많은 환난을 겪어야 할 것이다." (p.103)</p>
+</blockquote>
+<p>「환난」은 헬라어 <strong>「들립시스」(thlipsis)</strong>(p.103) — 누르는 압력이다. 그러나 그 압력은 장차의 통치와 비교되지 않는다.</p>
+<blockquote>
+<p>당신이 어떤 환난의 압력에 직면하든, 그 어려움은 장차 환난이 지나간 후에 당신이 누리게 될 통치권과 비교할 수 없다. (p.107)</p>
+<p>면류관은 권위를 나타내는 것이다. (p.111)</p>
+</blockquote>
+<p>약 1:12를 저자는 <strong>「시험을 참는[끈질기게 진리 안에 거하는] 자」</strong>(p.110)로 확장 번역한다 — 「끈질김」의 성경적 정의가 여기 있다. 인내는 수동적 버팀이 아니라 <strong>진리 안에 머무는 것</strong>이다.</p>
+<table>
+<thead>
+<tr>
+<th>고난의 두 종류(p.108)</th>
+<th>성격</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>의를 위한 고난</td>
+<td>그리스도를 따르기 때문에 받는 압력</td>
+<td>면류관(권위, p.111)</td>
+</tr>
+<tr>
+<td>세상을 위한 고난</td>
+<td>세상에 속해서 받는 대가</td>
+<td>통치와 무관</td>
+</tr>
+</tbody>
+</table>
+<p>그리고 저자는 의를 위한 고난의 가장 흔한 얼굴이 <strong>사람의 비방</strong>이라고 짚는다.</p>
+<blockquote>
+<p>당신이 이 세상을 다스리는 끈질긴 그리스도인이 되기로 결심할 때 사람들에게 비방을 받고, 거짓으로 고발을 당하고, 오해받고, 심지어 무시당할 가능성이 매우 높다. (p.116)</p>
+<p>"모든 사람이 너희를 칭찬하면 화가 있도다 그들의 조상들이 거짓 선지자들에게 이와 같이 하였느니라"(눅 6:26). (p.115)</p>
+<p>이것은 통치권에 들어가기 위해 감내해야 할 가장 고차원적인 고난이다. (p.143)</p>
+<p>부당한 대우는 사도 바울에게도 가장 큰 문제였다. (p.143)</p>
+</blockquote>
+<p>p.143의 「부당한 대우」는 같은 저자의 <a class="wl" href="../../b/%EB%AC%B4%EC%8B%9C%EB%90%98%EC%96%B4%EC%98%A8%EC%B6%95%EB%B3%B5%EC%9D%98%ED%86%B5%EB%A1%9C_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">무시되어온축복의통로_존비비어</a> 전체의 주제다 — 이 책은 그 책의 논지를 「통치로 가는 고난」이라는 더 큰 틀에 끼워 넣는다. 예수도 광야로 <strong>「성령에게 이끌리시며」</strong>(p.109) 들어가셨다는 것, 즉 시험의 자리조차 <strong>「바로 아버지가 성령을 통해 이끄셨다」</strong>(p.109)는 표시가 이 장의 위로다.</p>
+<h3>7. 고난의 배후를 분별하라 — 원수의 계책과 정죄</h3>
+<p>Part 2-2장은 모든 고난이 하나님의 연단은 아니라고 선을 긋는다. 원수가 있다.</p>
+<blockquote>
+<p>"이는 우리로 사탄에게 속지 않게 하려 함이라 우리는 그 계책을 알지 못하는 바가 아니로라"(고후 2:11) (p.127)</p>
+<p>"도둑이 오는 것은 도둑질하고 죽이고 멸망시키려는 것뿐이요 내가 온 것은 양으로 생명을 얻게 하고 더 풍성히 얻게 하려는 것이라"(요 10:10) (p.127)</p>
+</blockquote>
+<p>p.127에는 원수의 호칭 네 개가 각각 따로 표시되어 있다 — <strong>「도둑」 · 「이 세상 임금」 · 「이 세상의 신」 · 「공중의 권세 잡은 자」</strong>. 원수의 가장 강력한 무기로 저자가 지목하는 것은 <strong>죄의식</strong>이다.</p>
+<blockquote>
+<p>생명 안에서 왕 노릇 하는 신자에게 가장 큰 장애물이 바로 죄의식이다. (p.132)</p>
+</blockquote>
+<p>요일 3:20의 「책망」은 헬라어 <strong>「카타지노스코」(kataginosko)</strong> — 「흠을 잡다」「비난하다」(p.130). 저자는 정죄와 징계를 <strong>출구의 유무</strong>로 가른다.</p>
+<blockquote>
+<p>"모든 연단이 당시에는 즐거움이 아니라 괴로움으로 보인다"(히 12:11, 우리말성경). 그러나 둘 사이에 큰 차이점이 있다. 정죄는 당신에게 탈출구를 알려 주지 않는다. (p.131)</p>
+<p>반면에 징계는 당신에게 탈출구를 준다. 그것이 바로 회개다. (p.131)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>정죄(condemnation)</th>
+<th>징계(discipline)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>출처</td>
+<td>원수(카타지노스코, 흠잡기)</td>
+<td>아버지(히 12:11)</td>
+</tr>
+<tr>
+<td>당시 느낌</td>
+<td>괴로움</td>
+<td>괴로움 — 느낌으로는 구별 안 됨</td>
+</tr>
+<tr>
+<td><strong>결정적 차이</strong></td>
+<td><strong>출구가 없다</strong></td>
+<td><strong>출구가 있다 = 회개</strong></td>
+</tr>
+<tr>
+<td>해독</td>
+<td>그리스도의 피(히 9:14)·대언자(요일 2:1)</td>
+<td>순종으로 응답</td>
+</tr>
+</tbody>
+</table>
+<p>이 장 후반은 시 103:2-3(AMP)을 근거로 <strong>죄 사함과 치유를 한 문장에</strong>(p.134) 묶고, 빌 4:19·신 28:12·요삼 2·신 8:18로 <strong>재정 공급</strong>까지 약속의 범위에 넣는다(p.139–140). 표시는 성구 인용에 집중되어 있고 저자의 해설 문장은 p.134 한 줄(<strong>「모든 죄의 용서와 질병의 치유를 같은 문장 안에서 말하는 것은 우연의 일치가 아니다.」</strong>)뿐이다 — 이 부분은 <a class="wl" href="../../t/%EB%B2%88%EC%98%81%EC%8B%A0%ED%95%99/">번영신학</a>과 경계가 맞닿는 대목이라 아래 「미해결 질문」에 남긴다.</p>
+<h3>8. 영적 무장 — 믿음으로 은혜에 「들어간다」</h3>
+<p>Part 2-3장과 Part 3-1장은 한 논지다. 승리는 은혜의 양이 아니라 믿음의 접근에 달렸다.</p>
+<blockquote>
+<p>믿음은 우리가 승리하기 위해 필요한 은혜(능력)에 다가가게 해 준다. (p.151)</p>
+<p>"우리가 믿음으로 서 있는 이 은혜에 들어감을 얻었으며"(롬 5:2). (p.168)</p>
+<p>문제는 은혜가 모자란 게 아니라 우리의 믿음이 약해지는 것이다. (p.168)</p>
+</blockquote>
+<p><strong>핵심 인사이트: 은혜는 이미 충분하다 — 변수는 믿음이다.</strong> 롬 5:2는 은혜를 「들어가는 공간」으로, 믿음을 「입구」로 그린다. 이 구절은 p.151과 p.168에 두 번 표시되어 있다.</p>
+<p>싸움의 상대와 무기도 명확히 한다. Part 3-1장 표제면은 엡 6:12 전체에 밑줄(p.162)이 있고, 무기는 육신에 속하지 않는다(고후 10:4, p.164). 디모데에게 준 명령 — <strong>「내 아들아 그러므로 너는 그리스도 예수 안에 있는 은혜 가운데서 강하고 …… 너는 그리스도 예수의 좋은 병사로 나와 함께 고난을 받으라」</strong>(딤후 2:1, 3, p.166) — 는 은혜(능력)와 고난(병사)을 한 문장에 둔다. 저자는 이어 <strong>「디모데는 "은혜" 안에서 강해지라는 권면을 들었다.」</strong>(p.166)고 강조한다.</p>
+<p>신자가 이미 이긴 자리에 서 있다는 성구들이 p.150–159에 연속으로 표시되어 있다 — 요일 4:4 <strong>「너희 안에 계신 이가 세상에 있는 자보다 크심이라」</strong>(p.151), 고후 2:14 <strong>「항상 우리를 그리스도 안에서 이기게 하시는」</strong>(p.151), 롬 8:37 <strong>「넉넉히 이기느니라」</strong>(p.158), 롬 8:31 <strong>「만일 하나님이 우리를 위하시면 누가 우리를 대적하리요?」</strong>(p.159). 고난이 신자에게 특별한 것이 아니라는 점(고전 10:13 메시지, p.147–148 · 벧전 5:9, p.150)도 함께 표시되었다.</p>
+<p><strong>끈질긴 기도</strong>(Part 3-7장)도 같은 맥락에서 믿음의 문제로 읽힌다.</p>
+<blockquote>
+<p>예수님이 우리에게 끈질기게 구하고, 찾고, 두드리라고 권면하시는 것을 알 수 있다. 왜 그럴까? 하나님이 듣기가 힘드신 걸까? 절대 그렇지 않다! 그것은 우리 믿음의 문제다. (p.270)</p>
+<p>끈질기고 간절하고 확신 있는 태도로 구하는 것이다. (p.272)</p>
+</blockquote>
+<h3>9. 벧전 5장이 설계도다 — 겸손·내려놓음·대적·순종</h3>
+<p>Part 3의 장 표제면 성구를 모으면 <strong>벧전 5:5–9가 순서대로</strong> 나온다. 저자는 베드로의 권면 한 단락을 「끈질김」의 실천 목록으로 삼았다.</p>
+<table>
+<thead>
+<tr>
+<th>장(Part 3)</th>
+<th>표제면 성구(표시됨)</th>
+<th>요지</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2 끈질긴 겸손(p.170)</td>
+<td>벧전 5:5–6 「<strong>겸손</strong>으로 허리를 동이라」</td>
+<td>겸손은 하나님의 갑옷</td>
+</tr>
+<tr>
+<td>3 끈질긴 내려놓음(p.186)</td>
+<td>벧전 5:7 「너희 염려를 다 주께 맡기라」</td>
+<td>크고 작은 걱정을 내려놓음</td>
+</tr>
+<tr>
+<td>4 끈질긴 근신(p.208)</td>
+<td>(벧전 5:8 「근신하라」) — 촬영분 없음</td>
+<td>세상 가치관에 취하게 하는 습관 정리</td>
+</tr>
+<tr>
+<td>5 끈질긴 대적(p.224)</td>
+<td>벧전 5:8–9 「믿음을 굳건하게 하여 그를 대적하라」</td>
+<td>말씀으로 직접 공격</td>
+</tr>
+<tr>
+<td>6 끈질긴 순종(p.244)</td>
+<td>벧전 5:9 「동일한 고난을 당하는 줄을 앎이라」</td>
+<td>말씀대로 사는 것이 순종</td>
+</tr>
+</tbody>
+</table>
+<p><strong>겸손은 믿음의 쌍둥이다.</strong> 저자는 합 2:4가 교만과 믿음을 대립시킨다는 데 주목한다.</p>
+<blockquote>
+<p>하박국 2장 4절은 교만과 믿음을 서로 정반대의 것으로 묘사한다. (p.171)</p>
+<p>참된 겸손은 하나님께 절대적으로 순종하고 의존하는 것이다. 모든 일에서 첫째가 하나님, 둘째는 다른 사람들, 셋째는 자기 자신을 생각하는 것이다. (p.178)</p>
+</blockquote>
+<p>교만은 믿음이 사람(자기 포함)에게 가 있는 상태이고(렘 17:5–7, p.173), 겸손은 믿음이 하나님께 가 있는 상태다. 저자는 시험이 오는 두 장소도 짚는다.</p>
+<blockquote>
+<p>아들아, 내 자녀들은 주로 두 곳에서 시험을 받는다. 바로 광야와 풍요로운 곳이다. (p.181)</p>
+</blockquote>
+<p><strong>대적은 순종으로 한다.</strong> 이 책의 가장 역설적인 전술이다.</p>
+<blockquote>
+<p>"너희는 하나님께 복종할지어다 마귀를 대적하라 그리하면 너희를 피하리라"(약 4:7) (p.245)</p>
+<p>야고보는 마귀와 싸우는 가장 중요한 방법이 하나님께 복종하는 것임을 보여 준다. (p.245)</p>
+</blockquote>
+<p>그리고 순종은 <strong>고난으로 배운다</strong> — 예수께서도 그러셨다.</p>
+<blockquote>
+<p>"그가 아들이시면서도 받으신 고난으로 순종함을 배워서"(히 5:8). (p.249)</p>
+<p>예수님이 고난으로 순종을 배우셨다는 것이다. (p.249)</p>
+</blockquote>
+<p>📝 p.249 여백: <strong>「고난을 통한 순종 훈련. → 영적 성숙(?)」</strong> — 이 책에서 독자가 직접 적은 두 줄 가운데 하나다. 6장(환난)과 9장(순종)이 여기서 만난다: 고난은 통치로 들어가는 입구이자 순종을 배우는 교실이다. 벧전 4:1 <strong>「육체의 고난을 받은 자는 죄를 그쳤음이니」</strong>(p.142 표제면 · p.246 재표시)가 두 번 표시된 것도 같은 연결이다. 순종의 신학 전체는 <a class="wl" href="../../b/%EC%88%9C%EC%A2%85_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">순종_존비비어</a>가 더 깊이 다룬다.</p>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<p><strong>적용</strong>
+- <strong>은혜=능력 정의(p.51)는 번아웃 사역자에게 먼저 필요한 말이다.</strong> 은혜를 「용서」로만 알면 사역은 내 힘으로 하고 실패만 은혜로 덮는다. 의료 현장·이사회 사역처럼 소진이 구조적인 자리에서, 은혜를 「자연적 능력을 넘어서게 하는 권능」으로 구하는 기도의 방향 전환.
+- <strong>정죄 vs 징계 표(7절)는 멘토링 도구로 바로 쓸 수 있다.</strong> 「출구가 있는가 — 회개로 이어지는가」 한 질문으로 후배의 죄책감이 성령의 책망인지 원수의 흠잡기인지 가를 수 있다. <a class="wl" href="../../t/%EC%9C%A8%EB%B2%95%EC%A3%BC%EC%9D%98/">율법주의</a> 성향의 신실한 청년들에게 특히.
+- <strong>의를 위한 고난 vs 세상을 위한 고난(p.108)</strong> — 선교 현장·단체 갈등에서 겪는 비방이 어느 쪽인지 먼저 정직하게 묻게 한다. 비방받는다고 다 의로운 고난은 아니다.
+- <strong>벧전 5:5–9 = 5개 장</strong> 구조는 그대로 설교·수련회 5회 시리즈 뼈대가 된다(겸손→내려놓음→근신→대적→순종).
+- <strong>하청업자 비유(p.292)</strong> — 전체 설계를 모른 채 맡은 부분을 끝까지 하는 것. 여러 단체 이사직을 겸하는 자리에서 「내 몫이 어디까지인가」를 묻는 소명 점검 문장.</p>
+<p><strong>미해결 질문</strong>
+- 롬 5:17 「생명 안에서 왕 노릇」을 저자처럼 <strong>현세의 영역 통치</strong>(p.32 「특정한 영역에서 높은 권세와 영향력」)로 읽는 것이 주석적으로 타당한가? 문맥상 아담의 사망 통치와 대비되는 종말론적 생명의 통치로 읽는 해석과 어떻게 조정되는가.
+- p.134–140의 치유·재정 약속 해석은 <a class="wl" href="../../t/%EB%B2%88%EC%98%81%EC%8B%A0%ED%95%99/">번영신학</a>과 어디서 갈라지는가? 저자 스스로 Part 2에서 「환난은 필수」라고 강조하므로 단순 번영신학은 아니지만, 경계선을 명시하지는 않는다.
+- 「동료들보다 적어도 열 배 이상 뛰어나야」(p.77)는 탁월함에 대한 소명인가, 성과주의의 영적 포장인가? 마 5:16(아버지께 영광)이라는 목적이 이 긴장을 다 풀어 주는가.
+- Part 3-4장 「끈질긴 근신」(p.208~)과 Part 4 대부분(p.300~)은 촬영분이 없다 — 표시가 없었던 것인지, 촬영이 빠진 것인지 확인 필요.</p>
+<hr />
+<blockquote>
+<p>📖 전사 원문(줄이지 않은 표시 구절 전체): <span class="wl-dead" title="위키 내부 링크">존비비어의끈질김_존비비어_전사</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#domain/영성</span><span>#discipline/제자도</span><span>#topic/은혜</span><span>#topic/고난</span><span>#topic/영적전쟁</span><span>#topic/인내</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
