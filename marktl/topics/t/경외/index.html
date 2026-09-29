@@ -1,0 +1,205 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>경외 — 멀리하게 하는 두려움이 아니라 가까이 가게 하는 두려움 — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-t">목회·실천</span><span class="date">2026-09-30</span></div>
+  <h1 class="note-title">경외 — 멀리하게 하는 두려움이 아니라 가까이 가게 하는 두려움</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>경외(히 <strong>이르아</strong> יִרְאָה yirʾâ, 헬 <strong>포보스</strong> φόβος)는 하나님을 하나님으로 대우하는 마음의 태도다. 같은 「두려움」이라는 말을 쓰지만, 공포가 대상에게서 <strong>멀어지게</strong> 한다면 경외는 대상에게로 <strong>가까이 가게</strong> 한다. 출 20장에서 백성은 떨며 멀리 섰고 모세는 하나님이 계신 흑암으로 가까이 갔다 — 같은 산 앞에서 두 두려움이 갈린다. 경외는 감정이 아니라 <strong>예배·순종·일상의 대우</strong>로 검증되며, 친밀함과 대립하지 않고 친밀함의 조건이 된다(「여호와의 친밀하심이 그를 경외하는 자들에게 있음이여」 시 25:14).</p>
+<blockquote>
+<p>이 페이지는 경외를 다루는 설교·책 노트들을 잇는 <strong>시드 허브</strong>다. 확정판 에세이로 확장할 때는 아래 「결」 표가 뼈대가 된다.</p>
+</blockquote>
+<hr />
+<h2>경외가 쓰이는 여덟 결</h2>
+<table>
+<thead>
+<tr>
+<th>결</th>
+<th>핵심 명제</th>
+<th>대표 자료</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 두려움 vs 경외</td>
+<td>공포는 멀리하게, 경외는 가까이 가게 한다(출 20:18-21). 사람을 두려워하면 올무에 걸린다(잠 29:25)</td>
+<td><a class="wl" href="../../b/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EB%8F%99%ED%96%89_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">존비비어의동행_존비비어</a> · <a class="wl" href="../../b/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EB%91%90%EB%A0%A4%EC%9B%80_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">존비비어의두려움_존비비어</a> · <a class="wl" href="../../b/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EC%9D%80%ED%98%9C_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">존비비어의은혜_존비비어</a> §1</td>
+</tr>
+<tr>
+<td>2. 항상됨</td>
+<td>위기 때 떠는 것은 누구나 한다. 하나님이 원하시는 것은 분위기가 사라진 뒤에도 남는 「항상 이같은 마음」(신 5:29)</td>
+<td><span class="wl-dead" title="위키 내부 링크">신명기_04_항상이같은마음으로</span></td>
+</tr>
+<tr>
+<td>3. 경외와 기쁨</td>
+<td>「떨며 즐거워하라」(시 2:11) — 떪과 기쁨은 대립이 아니라 한 신앙 안에서 통합되는 복의 조건</td>
+<td><span class="wl-dead" title="위키 내부 링크">2013_떨며즐거워하라</span></td>
+</tr>
+<tr>
+<td>4. 경외와 은혜·권능</td>
+<td>초대교회는 <strong>큰 권능 + 큰 은혜 + 큰 두려움</strong>(행 4:33·5:5·11)이 함께 있었다. 현대 교회는 앞의 둘만 구한다</td>
+<td><span class="wl-dead" title="위키 내부 링크">2023_김대경_두려움은_선물이다</span> · <a class="wl" href="../../b/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EB%8F%99%ED%96%89_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">존비비어의동행_존비비어</a>(아나니아와 삽비라)</td>
+</tr>
+<tr>
+<td>5. 경외의 마모</td>
+<td>익숙함이 거룩을 잠식한다 — 궤가 「만만한 가구」가 된 아비나답의 집, 웃사의 손(삼하 6)</td>
+<td><span class="wl-dead" title="위키 내부 링크">2019_저때문에불편하지않으세요</span> · <a class="wl" href="../../b/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EB%8F%99%ED%96%89_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">존비비어의동행_존비비어</a>(웃사 사건)</td>
+</tr>
+<tr>
+<td>6. 일상의 대우</td>
+<td>경외=하나님을 하나님으로 대우함 — 예의를 갖춘 절(예배), 「듣겠습니다」(순종), 가정의 질서와 공경(신 10:12)</td>
+<td><span class="wl-dead" title="위키 내부 링크">2015_신10장12-17</span> · <span class="wl-dead" title="위키 내부 링크">2015_부모를공경하는것</span> · <span class="wl-dead" title="위키 내부 링크">2016_내면세계를들여다보는방법</span></td>
+</tr>
+<tr>
+<td>7. 전수되는 경외</td>
+<td>보이지 않는 하나님은 부모의 삶으로 보여진다 — 물려줄 가장 큰 유업은 경외하는 삶(신 6:2)</td>
+<td><span class="wl-dead" title="위키 내부 링크">2023_영원을품고오늘을산다3_가족</span></td>
+</tr>
+<tr>
+<td>8. 경외와 지혜·공의</td>
+<td>여호와 경외는 지혜의 근본(잠 9:10) — 솔로몬의 「듣는 마음」. 공의의 하나님은 교만을 그냥 두지 않으신다. 상벌도 은혜이며 경외는 「생명을 택하라」는 결단이다</td>
+<td><span class="wl-dead" title="위키 내부 링크">2024_전지천_하나님의_마음을_읽기</span> · <span class="wl-dead" title="위키 내부 링크">2014_에브라임의도전</span> · <span class="wl-dead" title="위키 내부 링크">신명기_13_은혜와상벌</span></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>핵심 인사이트</h2>
+<ul>
+<li><strong>경외와 친밀함은 양자택일이 아니다.</strong> 여러 자료가 같은 결론에 닿는다 — 하나님을 「친부」로만 여기면 친밀함마저 왜곡된다(김대경), 경외는 친밀함의 열쇠다(비비어 『동행』).</li>
+<li><strong>경외의 적은 불신앙보다 익숙함이다.</strong> 오래 믿은 사람일수록 하나님을 「너무 잘 알아서」 만만하게 여긴다(이성욱·웃사 사건).</li>
+<li><strong>경외는 은혜와 짝을 이룬다.</strong> 「큰 권능과 큰 은혜」(행 4:33)는 비비어가 은혜론의 근거로 쓰는 본문이고(<a class="wl" href="../../b/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EC%9D%80%ED%98%9C_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">존비비어의은혜_존비비어</a> §7), 김대경은 같은 초대교회에 「큰 두려움」이 함께 있었음을 짚는다 — 은혜를 능력으로 읽을수록 경외가 그 능력의 안전장치가 된다.</li>
+<li><strong>사람에 대한 두려움은 하나님 경외로만 대체된다.</strong> 사람을 두려워하면 권위와 은사가 잠든다(『두려움』), 사람을 기쁘게 하려면 그리스도의 종이 아니다(『은혜』 갈 1:10).</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>「공포가 아닌 경외」를 강조하는 흐름과, 아나니아·삽비라·웃사처럼 실제 죽음이 따르는 두려움의 본문은 어떻게 한 손에 쥐어지는가 — 경외에서 「두려움」의 성분을 얼마나 남겨야 하는가.</li>
+<li>가정에서 부모를 경외하는 훈련으로 하나님 경외를 가르친다는 논리(윤명숙·문대원)는, 부모의 권위가 학대로 뒤틀린 가정에서는 어떻게 재구성되어야 하는가.</li>
+</ul>
+<h2>관련 자료</h2>
+<ul>
+<li>책: <a class="wl" href="../../b/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EB%8F%99%ED%96%89_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">존비비어의동행_존비비어</a>(원제 <em>The Fear of the Lord</em> — 이 주제의 주 교재) · <a class="wl" href="../../b/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EB%91%90%EB%A0%A4%EC%9B%80_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">존비비어의두려움_존비비어</a> · <a class="wl" href="../../b/%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4%EC%9D%98%EC%9D%80%ED%98%9C_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">존비비어의은혜_존비비어</a></li>
+<li>설교(권성수): <span class="wl-dead" title="위키 내부 링크">신명기_04_항상이같은마음으로</span> · <span class="wl-dead" title="위키 내부 링크">신명기_13_은혜와상벌</span> · <span class="wl-dead" title="위키 내부 링크">2013_떨며즐거워하라</span> · <span class="wl-dead" title="위키 내부 링크">2014_에브라임의도전</span> · 시리즈 <span class="wl-dead" title="위키 내부 링크">권성수_신명기강해시리즈</span></li>
+<li>설교(윤명숙): <span class="wl-dead" title="위키 내부 링크">2015_신10장12-17</span> · <span class="wl-dead" title="위키 내부 링크">2015_부모를공경하는것</span> · <span class="wl-dead" title="위키 내부 링크">2016_내면세계를들여다보는방법</span></li>
+<li>설교(기타): <span class="wl-dead" title="위키 내부 링크">2023_영원을품고오늘을산다3_가족</span> · <span class="wl-dead" title="위키 내부 링크">2019_저때문에불편하지않으세요</span> · <span class="wl-dead" title="위키 내부 링크">2024_전지천_하나님의_마음을_읽기</span> · <span class="wl-dead" title="위키 내부 링크">2023_김대경_두려움은_선물이다</span></li>
+<li>인물: <span class="wl-dead" title="위키 내부 링크">존비비어</span> · <span class="wl-dead" title="위키 내부 링크">김대경</span></li>
+<li>교차 주제: <a class="wl" href="../../t/%EA%B1%B0%EB%A3%A9/">거룩</a> · <a class="wl" href="../../t/%EB%91%90%EB%A0%A4%EC%9B%80/">두려움</a> · <a class="wl" href="../../t/%EC%88%9C%EC%A2%85/">순종</a> · <a class="wl" href="../../t/%EC%98%88%EB%B0%B0/">예배</a> · <a class="wl" href="../../t/%EC%A7%80%ED%98%9C/">지혜</a></li>
+</ul>
+</article>
+<div class="tagrow"><span>#경외</span><span>#이르아</span><span>#포보스</span><span>#두려움</span><span>#친밀함</span><span>#거룩</span><span>#순종</span><span>#예배</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
