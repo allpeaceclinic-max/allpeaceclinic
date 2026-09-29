@@ -1,0 +1,299 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>훈육 — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-t">목회·실천</span><span class="date">2026-09-29</span></div>
+  <h1 class="note-title">훈육</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>훈육(discipline)은 자녀의 잘못된 행동과 의지를 바로잡아 스스로 자신을 다스리는 사람으로 기르는 부모의 일이다. 신약의 파이데이아(παιδεία)와 잠언의 무사르(מוּסָר)는 모두 가르침과 징계를 함께 품는다 — 훈육은 처벌의 동의어가 아니라 양육의 한 축이다.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<p>그런데 같은 말 안에 서로 다른 것이 섞여 있다. 이 페이지는 <strong>무엇을 바로잡는가(의지인가 행동인가)</strong>, <strong>무엇으로 바로잡는가(회초리인가 결과인가 관계인가)</strong> 두 질문으로 훈육 논의를 정리하는 시드 허브다.</p>
+<h2>1. 핵심 구분 — 반항과 잘못은 다르다</h2>
+<p>세 권의 양육서가 서로 다른 이름으로 같은 선을 긋는다. 아이가 <strong>권위 자체를 거부하는 것(반항)</strong>과 <strong>기준을 모르거나 어긴 것(잘못·미숙)</strong>은 다르게 다뤄야 한다는 것이다.</p>
+<table>
+<thead>
+<tr>
+<th>저자</th>
+<th>의지의 문제 (반항)</th>
+<th>행동의 문제 (잘못·미숙)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">휴게이트</span></td>
+<td><strong>징계</strong> — 순복하면 철회되는 경고</td>
+<td><strong>처벌</strong> — 깨어진 기준에 상응하는 벌칙</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">스윈돌</span></td>
+<td>의지를 꺾는다 (반항 → 처벌)</td>
+<td>정신은 꺾지 않는다 (무책임 → 가르침)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">브래들리</span></td>
+<td>고의적 반항 → <strong>체벌</strong>(chastisement)</td>
+<td>우발적 경솔함 → <strong>징계</strong>(punishment)</td>
+</tr>
+</tbody>
+</table>
+<p>휴게이트는 이 구분을 가장 날카롭게 세운다. 반항에서 문제는 오직 의지, 곧 「누가 다스릴 것인가」이고, 반항하는 아이를 처벌로 다루면 권위에 대한 증오만 키운다.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> 반대로 모르고 어긴 아이에게는 처벌이 아니라 <strong>기준을 세우는 것</strong>이 먼저다 — 알려지지 않은 기준을 어긴 것은 범함이 아니기 때문이다(롬 4:15).<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
+<p>⚠️ <strong>번역어가 서로 엇갈린다.</strong> 휴게이트의 「징계」(discipline)는 반항을 겨누지만, 브래들리의 「징계」(punishment)는 우발적 잘못을 겨눈다. 같은 한국어 단어가 책마다 반대편을 가리키므로, 인용할 때는 원어와 대상을 함께 적어야 한다.</p>
+<p><strong>핵심 한 문장</strong>: 반항에는 권위를, 미숙에는 가르침을 — 둘을 한 가지 방법으로 다루면 둘 다 실패한다.</p>
+<h2>2. 훈육의 순서 — 관계와 마음이 먼저인가, 통제가 먼저인가</h2>
+<p>여기서 입장이 갈린다.</p>
+<ul>
+<li><strong>통제 우선</strong>: 휴게이트는 「아이들은 가르쳐지기 전에 통제되어져야만 한다」고 말하고, 이유 설명은 순종 뒤로 미룬다.<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></li>
+<li><strong>마음·공감 우선</strong>: 권성수 목사는 자녀의 「마음 높이」에 맞춰 공감으로 마음을 얻은 뒤에야 훈육으로 지혜를 전수할 수 있다고 설교한다.<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup> 문대원 목사는 상벌(당근과 채찍)로 행동은 바꿀 수 있어도 마음은 가르치지 못한다며, 훈육을 「마음을 다루는 것」으로 재정의한다.<sup id="fnref2:6"><a class="footnote-ref" href="#fn:6">6</a></sup></li>
+<li><strong>관계 전제</strong>: 윤명숙 전도사의 부모교육은 체벌을 인정하되 「사랑의 관계 없이 때리면 원수가 된다」는 조건을 단다.<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup></li>
+</ul>
+<p>두 입장은 연령에서 만난다. 휴게이트도 청소년기에는 통제를 풀고 이유를 가르치는 <strong>가르침 국면</strong>으로 넘어가며, 이는 <a class="wl" href="../../t/%EC%82%AC%EC%B6%98%EA%B8%B0/">사춘기</a>의 「통제에서 코칭으로」와 같은 방향이다.</p>
+<h2>3. 훈육이 무너지는 자리 — 부모 쪽의 실패</h2>
+<p>훈육의 실패는 아이보다 부모에게서 먼저 시작된다는 데 자료들이 일치한다.</p>
+<table>
+<thead>
+<tr>
+<th>실패</th>
+<th>자료</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>반복 명령·실행 없는 위협·변명 허용 — 부모가 자녀에게 <strong>훈련당한다</strong></td>
+<td>휴게이트</td>
+</tr>
+<tr>
+<td>노엽게 함 — 부당한 처벌·약속 불이행·멋대로 바꾼 규칙이 낙심을 낳는다 (엡 6:4·골 3:21)</td>
+<td>휴게이트 · <a class="wl" href="../../t/%EB%B6%80%EB%AA%A8%EA%B5%90%EC%9C%A1/">부모교육</a>(윤명숙)</td>
+</tr>
+<tr>
+<td>도덕적 권위 상실 — 같은 죄를 지은 다윗은 압살롬을 훈육할 권위가 없었다</td>
+<td>문대원<sup id="fnref3:6"><a class="footnote-ref" href="#fn:6">6</a></sup></td>
+</tr>
+<tr>
+<td>방임 — 엘리는 「금하지 아니하였다」(삼상 3:13)</td>
+<td>휴게이트 · 윤명숙</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 한 문장</strong>: 일관성 없는 훈육은 훈육이 없는 것보다 나쁘다 — 아이는 규칙이 아니라 부모의 약함을 배운다.</p>
+<h2>4. ⚖️ 체벌 — 성경 해석과 오늘의 법 사이</h2>
+<p>휴게이트·스윈돌·브래들리와 윤명숙 강의는 모두 잠언의 「채찍」을 근거로 체벌을 인정한다(손이 아니라 매, 분노가 아니라 절제, 어릴수록 효과적). 휴게이트는 이것이 다음 세대 기독교 확신의 시금석이 될 것이라고까지 말한다.<sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup></p>
+<p>그러나 <strong>2021년 민법 제915조(친권자의 징계권)가 삭제</strong>되어 한국에서는 부모의 체벌이 법적 근거를 잃었다. 따라서 이 자료들의 체벌 지침은 그대로 가르칠 수 없다. 남는 길은 둘이다.</p>
+<ol>
+<li><strong>구분은 살리고 도구는 바꾼다</strong> — 반항(의지)과 잘못(행동)의 구분, 고백 → 용서 → 결과의 순서는 회초리 없이도 유지된다. 스윈돌이 「채찍」을 타임아웃·특권 박탈까지 넓혀 정의한 것이 실마리다.</li>
+<li><strong>자연적·논리적 결과로 옮긴다</strong> — 적극적 부모역할 강의가 말하는 선택권과 결과의 경험.<sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup></li>
+</ol>
+<h2>5. 하나님의 징계 — 훈육의 원형</h2>
+<p>가정의 훈육은 하나님이 자녀를 다루시는 방식의 축소판이다. 히브리서 12장이 그 연결을 못박는다 — 「주께서 그 사랑하시는 자를 징계하시고」(히 12:6), 「후에 그로 말미암아 연달한 자에게는 의의 평강한 열매를 맺나니」(히 12:11). 설교 자료들은 이 원형을 네 방향에서 읽는다.</p>
+<p><strong>① 징계는 형벌이 아니라 양육이다.</strong> 권성수 목사는 광야 40년을 응보(retribution)가 아니라 <strong>양육적 징계</strong>(corrective discipline)로 해석한다. 매는 파괴가 아니라 자녀를 성숙시키는 사랑의 도구이며, 「한 번도 징계를 못 받았다면 자녀가 아니다」.<sup id="fnref:10"><a class="footnote-ref" href="#fn:10">10</a></sup> 문대원 목사도 어린 시절 용돈을 깎였던 기억으로 설교를 열며, 징계는 미워서가 아니라 <strong>돌아오게 하려는</strong> 아버지의 마음이라고 말한다.<sup id="fnref:11"><a class="footnote-ref" href="#fn:11">11</a></sup></p>
+<p><strong>② 치는 손과 싸매는 손은 같은 손이다.</strong> 호세아 6장의 「찢으셨으나 도로 낫게 하실 것이요」에서, 사자가 먹이를 찢듯 아픈 징계와 상처를 동여매는 회복은 두 신이 아니라 <strong>한 분의 두 손</strong>에서 나온다.<sup id="fnref:12"><a class="footnote-ref" href="#fn:12">12</a></sup></p>
+<p><strong>③ 용서받아도 징계는 남는다.</strong> 다윗은 용서받았으나 아들을 잃고 암논·압살롬의 비극을 겪었고, 광야의 이스라엘은 용서받았으나 40년을 방황했다(삼하 12:13-14; 민 14:20-23). 권성수 목사는 여기서 결정적인 구분을 세운다 — <strong>징벌은 정의이며 판사가 하는 것이고, 징계는 사랑이며 아버지가 하는 것이다.</strong><sup id="fnref:13"><a class="footnote-ref" href="#fn:13">13</a></sup> 이것은 휴게이트가 가정 안에서 그은 선과 그대로 겹친다. 휴게이트도 고백과 용서가 먼저 오고 벌칙은 그 뒤에 「객관적인 사실」로 남는다고 보며, 용서해도 값은 누군가 치러야 하고 오직 그리스도가 그 값을 치르셨기에 용서가 가능하다고 말한다.<sup id="fnref:14"><a class="footnote-ref" href="#fn:14">14</a></sup> 문대원 목사가 다윗을 두고 「죄는 용서받아도 그 결과는 남는다」고 한 것도 같은 자리다.<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup></p>
+<p><strong>④ 징계할 줄 모르는 아버지.</strong> 윤명숙 전도사는 다윗 가계의 역기능을 「징계할 줄 모르는 아버지」와 「분명하지 않은 기준, 그 틈을 아이들이 들어온다」로 진단한다.<sup id="fnref:15"><a class="footnote-ref" href="#fn:15">15</a></sup> 하나님의 징계를 받는 사람이 곧 자녀를 징계해야 하는 사람이라는 점에서, 이 설교는 §5의 원형을 다시 §1~3의 가정으로 돌려보낸다.</p>
+<table>
+<thead>
+<tr>
+<th>층위</th>
+<th>징계하는 이</th>
+<th>목적</th>
+<th>대비되는 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>하나님 → 백성</td>
+<td>아버지 하나님</td>
+<td>돌아오게 함, 의의 평강한 열매</td>
+<td>판사의 징벌(정의)</td>
+</tr>
+<tr>
+<td>부모 → 자녀</td>
+<td>부모</td>
+<td>반항하는 의지를 다스림</td>
+<td>깨어진 기준에 대한 처벌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 한 문장</strong>: 징계는 판사의 일이 아니라 아버지의 일이다 — 그래서 사랑받는 자녀만 받는다.</p>
+<h2>미해결 질문</h2>
+<ul>
+<li>체벌 없이 「징계(의지)」의 범주가 유지되는가, 아니면 모든 훈육이 「처벌(결과)」로 수렴하는가?</li>
+<li>통제 우선(휴게이트)과 공감 우선(권성수·문대원)은 연령으로 나뉘는가, 아니면 기질·관계 상태로 나뉘는가?</li>
+<li>「활동적인 아이」를 죄성으로만 설명하는 입장(휴게이트)과 신경발달 평가 사이에서, 교회 부모교육은 어디에 선을 그어야 하는가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%9E%90%EB%85%80%EC%96%91%EC%9C%A1/">자녀양육</a> — 저자별 양육 방법론 각론</li>
+<li><a class="wl" href="../../t/%EB%B6%80%EB%AA%A8%EA%B5%90%EC%9C%A1/">부모교육</a> — §6 「노엽게 하지 말고」가 이 페이지의 짝</li>
+<li><a class="wl" href="../../t/%EC%88%9C%EC%A2%85/">순종</a> · <a class="wl" href="../../t/%EA%B6%8C%EC%9C%84/">권위</a> — 훈육이 세우려는 것과 그 한계</li>
+<li><a class="wl" href="../../t/%EC%82%AC%EC%B6%98%EA%B8%B0/">사춘기</a> — 통제에서 코칭으로</li>
+<li><a class="wl" href="../../t/%EC%9E%90%EB%85%80%EA%B5%90%EC%9C%A1/">자녀교육</a> — 무엇을 가르치는가</li>
+</ul>
+<h2>인용·출처</h2>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><span class="wl-dead" title="위키 내부 링크">2024_마음을다루지않으면실패한다</span> · <span class="wl-dead" title="위키 내부 링크">2020_마음높이자녀교육</span> — 파이데이아·무사르 풀이.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p><a class="wl" href="../../b/%EC%A0%9C%EB%A9%8B%EB%8C%80%EB%A1%9C%EC%9D%B8%EC%9A%94%EC%A6%98%EC%95%84%EC%9D%B4%EB%A7%90%EC%94%80%EC%9C%BC%EB%A1%9C%EC%96%91%EC%9C%A1%ED%95%98%EB%9D%BC_%ED%9C%B4%EA%B2%8C%EC%9D%B4%ED%8A%B8/">제멋대로인요즘아이말씀으로양육하라_휴게이트</a> §8 (원서 p.197, 220).&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>같은 책 §9 (p.252, 262).&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>같은 책 §3 (p.154, 115).&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p><span class="wl-dead" title="위키 내부 링크">2020_마음높이자녀교육</span>.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p><span class="wl-dead" title="위키 내부 링크">2024_마음을다루지않으면실패한다</span>.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:6" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p><a class="wl" href="../../t/%EB%B6%80%EB%AA%A8%EA%B5%90%EC%9C%A1/">부모교육</a> §6 — 「청소년 교훈과 훈계」(에젤 청소년 부모학교).&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:8">
+<p><a class="wl" href="../../b/%EC%A0%9C%EB%A9%8B%EB%8C%80%EB%A1%9C%EC%9D%B8%EC%9A%94%EC%A6%98%EC%95%84%EC%9D%B4%EB%A7%90%EC%94%80%EC%9C%BC%EB%A1%9C%EC%96%91%EC%9C%A1%ED%95%98%EB%9D%BC_%ED%9C%B4%EA%B2%8C%EC%9D%B4%ED%8A%B8/">제멋대로인요즘아이말씀으로양육하라_휴게이트</a> §8 (p.227). 스윈돌·브래들리의 체벌 지침과 보정 논의는 각 책노트의 ⚖️ 항목.&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:9">
+<p><span class="wl-dead" title="위키 내부 링크">적극적인_부모역할_4강</span> — 선택권과 결과, 처벌과 보상의 한계.&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:10">
+<p><span class="wl-dead" title="위키 내부 링크">신명기_01_이제는전진</span> — 광야 방황 = 양육적 징계.&#160;<a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:11">
+<p><span class="wl-dead" title="위키 내부 링크">2022_예배회복의기쁨</span> — 도입부 「100원 용돈과 아버지의 징계」.&#160;<a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn:12">
+<p><span class="wl-dead" title="위키 내부 링크">2021_우리가그분앞에서살리라</span> — 호 6:1 찢음(taraph)과 싸맴(chavash).&#160;<a class="footnote-backref" href="#fnref:12" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+<li id="fn:13">
+<p><span class="wl-dead" title="위키 내부 링크">2021_저주축복전환비결</span> — 「용서와 징벌?」, 존 파이퍼의 훈육적 결과 인용.&#160;<a class="footnote-backref" href="#fnref:13" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+</li>
+<li id="fn:14">
+<p><a class="wl" href="../../b/%EC%A0%9C%EB%A9%8B%EB%8C%80%EB%A1%9C%EC%9D%B8%EC%9A%94%EC%A6%98%EC%95%84%EC%9D%B4%EB%A7%90%EC%94%80%EC%9C%BC%EB%A1%9C%EC%96%91%EC%9C%A1%ED%95%98%EB%9D%BC_%ED%9C%B4%EA%B2%8C%EC%9D%B4%ED%8A%B8/">제멋대로인요즘아이말씀으로양육하라_휴게이트</a> §9 (p.254–255).&#160;<a class="footnote-backref" href="#fnref:14" title="Jump back to footnote 14 in the text">&#8617;</a></p>
+</li>
+<li id="fn:15">
+<p><span class="wl-dead" title="위키 내부 링크">2018_역기능을체크하라</span>.&#160;<a class="footnote-backref" href="#fnref:15" title="Jump back to footnote 15 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+</article>
+<div class="tagrow"><span>#discipline/기독교교육</span><span>#domain/가정사역</span><span>#topic/훈육</span><span>#topic/징계</span><span>#topic/체벌</span><span>#topic/자녀양육</span><span>#topic/순종</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
