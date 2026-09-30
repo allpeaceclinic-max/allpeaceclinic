@@ -1,0 +1,295 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>족자비안 나이트 — 손창남 (죠이선교회·OMF) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">리더십·일·경영</span><span class="author">손창남</span><span class="date">2026-09-30</span></div>
+  <h1 class="note-title">족자비안 나이트 — 손창남 (죠이선교회·OMF)</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/%EC%A1%B1%EC%9E%90%EB%B9%84%EC%95%88%EB%82%98%EC%9D%B4%ED%8A%B8_%EC%86%90%EC%B0%BD%EB%82%A8/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<blockquote>
+<p>부제 「족자카르타 선교사 이야기」. 국립세무대학 회계학 교수였던 <span class="wl-dead" title="위키 내부 링크">손창남</span>이 OMF 전문인 선교사로 인도네시아 족자카르타(족자)에 가서, 두따와짜나(Duta Wacana) 대학에서 가르치며 대학생 모임 「죠이」를 세우고 현지인에게 넘기고 떠나기까지를 4부 17장으로 쓴 필드 회고록이다 — 1부 「배를 떠나서」(부르심·가족 구원·후원 훈련), 2부 「왕궁의 도마뱀」(언어·기다림·대학교수·죠이 창립), 3부 「하나님의 은혜를 보다」(재정·제자양육·공동체), 4부 「또 다른 부르심」(작별과 귀국). 후속작 <a class="wl" href="../../b/%EC%8F%98%EB%9D%BC%EB%B9%84%EC%95%88%EB%82%98%EC%9D%B4%ED%8A%B8_%EC%86%90%EC%B0%BD%EB%82%A8/">쏘라비안나이트_손창남</a>(본국 동원 사역편)의 <strong>앞 이야기</strong>다. 📷 표시 전사 기반 독서 노트.</p>
+</blockquote>
+<hr />
+<h2>요약 — 주제별 상세 정리</h2>
+<h3>1. 부르심의 경로 — 극적 체험이 아니라 사람과 직업을 통해</h3>
+<p>저자는 마케도니아 환상 같은 초자연적 계기를 부정한다. 그가 짚는 결정적 계기는 사람이다.</p>
+<blockquote>
+<p>"굳이 선교사가 되기로 한 결정적인 계기를 하나 들라고 한다면 선교사들에게서 받은 영향 때문이라고 할 수 있다."(p.20)</p>
+</blockquote>
+<p>그래서 그는 반농담으로 "선교사는 위험한 사람이다. 가까이하면 쉽게 물든다"고 말한다. 대학 3학년 때 죠이선교회 모임에서 본 아마존 선교사의 슬라이드가 시작이었다.</p>
+<p>부르심의 형식도 예상 밖이었다. 신학교를 거쳐 목사로 가리라 생각했지만, 교수 휴게실에서 인도네시아 한정국 선교사의 편지를 받는 순간 들린 것은 에스더서였다.</p>
+<blockquote>
+<p>"네가 왕후의 자리를 얻은 것이 이때를 위함이 아닌지 누가 알겠느냐?"(p.26, <span class="wl-dead" title="위키 내부 링크">에4</span>)</p>
+</blockquote>
+<p><strong>핵심 인사이트: 직업이 곧 파송 경로다.</strong> 회계학 교수라는 "왕후의 자리"가 선교를 미루는 이유가 아니라 선교의 통로가 되었다. 1장 제목 「이때를 위함인지」가 책 전체의 소명론이다(<a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%86%8C%EB%AA%85/">직업소명</a>·<a class="wl" href="../../t/%EC%A0%84%EB%AC%B8%EC%9D%B8%EC%84%A0%EA%B5%90/">전문인선교</a>). 한정국 선교사가 신학 공부보다 <strong>박사 과정을 마치고 오라</strong>고 권한 것(p.37)도 같은 논리다.</p>
+<h3>2. 가족 구원과 떠남의 준비 — 「나 같은 죄인 살리신」</h3>
+<p>선교지로 가기 전 가장 큰 기도 제목은 15년간 열리지 않던 아버지의 구원이었다. 호놀룰루에서 수술을 앞둔 아버지께 복음을 전하며 저자가 든 예화는 존 뉴턴이었다.</p>
+<blockquote>
+<p>"노예선의 선장으로 젊음을 허비하다가 주님을 만나 돌아온 <strong>존 뉴튼</strong> 목사에 대해 이야기해 드렸다. 그리고 그가 작사한 "나 같은 죄인 살리신"(Amazing Grace)이라는 찬양을 함께 불렀다."(p.32)</p>
+</blockquote>
+<p>며칠 뒤 환갑잔치에서, 술친구들이 유행가를 기대하던 자리에서 아버지가 하모니카로 연주한 곡이 바로 그 찬송이었다. <strong>떠나기 전에 풀린 가장 무거운 짐</strong>이 선교 출발의 서막이 된다.</p>
+<h3>3. OMF와 허드슨 테일러의 계보 — 책을 관통하는 인용 축</h3>
+<p>책 곳곳에 <span class="wl-dead" title="위키 내부 링크">허드슨테일러</span>가 등장하고, 표시도 그 대목마다 붙어 있다. 세 번의 인용이 선교사의 <strong>시작·유지·마침</strong>을 각각 맡는다.</p>
+<table>
+<thead>
+<tr>
+<th>국면</th>
+<th>표시 구절</th>
+<th>쪽</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>시작(연결)</td>
+<td>"중국내지선교회(CIM)를 시작한 허드슨 테일러의 증손자인 테일러 박사는 당시 국제 OMF 선교부의 총재이자 선교한국 대회 주강사였는데"</td>
+<td>p.37</td>
+</tr>
+<tr>
+<td>유지(공급)</td>
+<td>"우리가 주님의 일을 주님의 방법대로 한다면 주님의 공급은 끊이지 않을 것이다"</td>
+<td>p.154</td>
+</tr>
+<tr>
+<td>마침(이양)</td>
+<td>선교사 = <strong>비계목</strong> — "건축이 진행될 때만 필요하고 건물이 완성되면 언제라도 떼어내야 하는 것이다."</td>
+<td>p.279</td>
+</tr>
+</tbody>
+</table>
+<p>선교한국 대회에서 들은 테일러 박사의 말씀 이후 OMF 허입 서류(수십 장 영문)와 이사 면담, 2년 미뤄 둔 박사 논문 마무리가 동시에 진행된다(p.37).</p>
+<h3>4. 까마귀와 공급 — 믿음 선교의 두 번의 훈련</h3>
+<p>선교훈련원에 들어갔는데 약속된 후원금이 두 달째 들어오지 않았다. 동료 훈련생들이 "우리 집에 까마귀가 왔다"고 말하는 뜻을 그는 나중에야 알았다.</p>
+<blockquote>
+<p>"열왕기상 17장에서 엘리야 선지자를 먹인 까마귀를 말하는 것임을 알게 되었다."(p.48, <span class="wl-dead" title="위키 내부 링크">왕상17</span>)</p>
+</blockquote>
+<p>저자는 이 결핍을 <strong>"하나님과 사람 중에 누구를 의지해야 하는지를 알려 주시기 위해서"</strong> 시작된 "특별한 훈련 프로그램"으로 해석한다.</p>
+<p>같은 훈련이 10년 뒤 족자의 학생들에게 반복된다(9장 「돈은 어디서 나나요」). 인도네시아 학생들은 늘 "돈은 어디서 나나요?"라고 물었는데, 거액의 헌금이 들어오는 것을 겪은 뒤에는 새로 온 학생이 그렇게 물으면 기존 학생들이 먼저 "돈은 주님께로부터 옵니다"라고 답하게 된다(p.154). 그리고 저자는 한 걸음 더 나간다 — 공급은 필요 충족 이상으로 <strong>"우리가 하나님의 일을 하나님의 방법대로 하고 있다는 확신"</strong> 이며, "하나님의 공급이 중단된 사역을 인간적으로 해봐야 무슨 의미가 있는가."</p>
+<p><strong>핵심 인사이트: 공급은 방법에 대한 검증 장치다.</strong> 재정은 사역의 연료이기 전에 그 사역이 하나님의 방식인지 묻는 시험지다.</p>
+<h3>5. 기다림은 순종이다 — 쓸모없음의 두려움을 넘어서</h3>
+<p>선교 준비에만 3년(한국 훈련 1년·싱가포르 4개월·반둥 언어 1년·족자 8개월)이 걸렸고, 족자에서도 길이 열리지 않았다. 사무엘상 14장 요나단의 징조 이야기에서 그가 붙든 문장은 이것이다.</p>
+<blockquote>
+<p>"'거기 있으라, 우리가 내려가겠다'"(p.74, <span class="wl-dead" title="위키 내부 링크">삼상14</span>)
+"'하나님은 징조를 주신다. 하나님의 때를 기다리자.'"(p.74)</p>
+</blockquote>
+<p>그 밑바닥의 두려움은 훈련 때부터 있던 것이다 — <strong>"선교지에 갔을 때 내가 쓸모없는 존재라는 것이 밝혀진다면"</strong>(p.75). 함께 훈련받던 형제가 준 답이 그를 붙들었다.</p>
+<blockquote>
+<p>"우리를 선교지에 머물게 하는 것은 사역의 성패가 아니라 주님이 우리를 그곳에 부르셨다고 하는 소명에 대한 순종이라고 말입니다."(p.75)</p>
+</blockquote>
+<p>그리고 저자의 정의.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>포기</th>
+<th>기다림</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>하나님께 대한 태도</td>
+<td>하실 일을 기대하지 않음</td>
+<td>부족하고 상황이 나빠도 분명히 하실 것을 기대</td>
+</tr>
+<tr>
+<td>판정</td>
+<td><strong>불순종</strong></td>
+<td><strong>순종</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"기다림은 순종이고 포기는 불순종이다."(p.75)</p>
+</blockquote>
+<p><strong>핵심 인사이트: 선교지 체류의 근거는 성과가 아니라 소명이다.</strong> 이것은 <a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a> 논의에서 "열매가 없으면 철수해야 하는가"라는 질문에 대한 저자의 답이다.</p>
+<h3>6. 전문인 선교사의 존재 이유 — 필요를 채우고, 초문화적 가치를 말하는 아웃사이더</h3>
+<p>저자는 전문인 선교를 기능적으로 정의한다.</p>
+<blockquote>
+<p>"전문인 선교사는 그 지역의 사람들에게 필요를 채워줄 때 존재 의미가 있다."(p.99)</p>
+</blockquote>
+<p>제한된 인도네시아어 탓에 초기엔 그 필요를 채우지 못했지만, 이면우 교수의 『W이론을 만들자』가 현지 신문에 소개되면서 한국 경영철학을 소개하는 자리가 열린다.</p>
+<p>더 흥미로운 것은 회의에서 체면 문화를 거슬러 진실을 말했을 때의 반응이다. 대학장이 엄지를 들며 "빡 손, 우리가 하고 싶은 말을 대신 해주셔서 감사합니다"라고 했다.</p>
+<blockquote>
+<p>"다만 자신들은 그 문화에 있어서 쉽게 벗어나지 못하고 있기 때문에 나 같은 아웃사이더가 초문화적 가치를 주장해 주기를 기대하고 있었던 것이다."(p.99)</p>
+</blockquote>
+<p><strong>핵심 인사이트: 외부인의 자리는 약점만이 아니다.</strong> <a class="wl" href="../../t/%EC%83%81%ED%99%A9%ED%99%94/">상황화</a>는 현지 문화에 녹아드는 것만이 아니라, 현지인이 스스로 말하기 어려운 초문화적 가치(진실)를 대신 말해 줄 수 있는 <strong>아웃사이더의 자유</strong>를 포함한다.</p>
+<h3>7. 죠이(JOY) — 이름에 담은 우선순위와 모임의 성장</h3>
+<p>스뚜란의 교수 사택에서 서너 명으로 시작한 영어 모임이 시내 언어학교 교실로 옮기면서 커지자, 두 번째 학기에 임원을 세우고 이름을 붙였다.</p>
+<blockquote>
+<p>"죠이(JOY)라고 부르기로 했다. 이것은 영어로 예수님(Jesus)을 뜻하는 J, 그리고 이웃(Others)을 뜻하는 O, 그리고 당신 자신(Yourself)을 뜻하는 Y를 합친 말이다."(p.86)</p>
+</blockquote>
+<p><span class="wl-dead" title="위키 내부 링크">죠이선교회</span>의 표어 "Jesus first, Others second, You third"를 그대로 옮긴 것이다(표지 로고에도 있다). 성장 궤적은 서너 명 → 평균 20명(2학기) → 30~40명(3학기). 회장단·4개 부서 임원회, 사회·기도·광고 맡은 학생들을 따로 만나는 구조가 <strong>개인 접촉의 통로</strong>가 되었다(p.86). 대부분은 아직 주님과의 교제를 모르는 학생들 — 교회 다니는 명목 신자와 불교 신자까지 섞인 전도적 모임이었다.</p>
+<h3>8. 영적 아버지 — 여러 모습이 되기, 그리고 아비처럼 사랑하기</h3>
+<p>10장 「늑대와 춤을」은 고린도전서 9장 22절로 연다.</p>
+<blockquote>
+<p>"내가 여러 사람에게 여러 모습이 된 것은 아무쪼록 몇 사람이라도 구원하고자 함이니"(p.155, <span class="wl-dead" title="위키 내부 링크">고전9</span>)</p>
+</blockquote>
+<p>같은 장에서 저자는 제자(유도)의 비웃음에 크게 상한다. 기관지염으로 엑스레이를 기다리며 묵상한 말씀이 반응을 바꿨다.</p>
+<blockquote>
+<p>"그리스도 안에서 일만 스승이 있으되 아버지는 많지 아니하니 그리스도 예수 안에서 내가 복음으로써 너희를 낳았음이라"(p.169, <span class="wl-dead" title="위키 내부 링크">고전4</span>)</p>
+</blockquote>
+<p>결론은 <strong>"유도가 나에게 어떻게 반응하든지 내가 할 것은 그를 아비처럼 사랑하는 것"</strong>이었고, 그는 병원에서 곧장 유도의 하숙집으로 찾아간다. 스승은 가르치고, 아버지는 반응과 무관하게 관계를 지킨다 — 대학생 제자양육의 핵심이 <strong>교사 모델에서 부모 모델로의 전환</strong>임을 보여 주는 장면이다.</p>
+<h3>9. 불씨와 비계목 — 떠나는 선교사의 신학</h3>
+<p>16장 「쁘르삐싸한」(송별)에서 두 개의 비유가 겹친다. 죠이의 자문위원이 된 가톨릭 톰 신부는 "죠이 사역을 다른 나라에 접목하려면 어떤 원리를 가지고 가야 하느냐"는 질문에 이렇게 답했다.</p>
+<blockquote>
+<p>"선교사는 원리를 가지고 가는 사람이 아닙니다. 선교사가 선교지에 갈 때는 부채 하나만 달랑 들고 가면 됩니다. 그곳에는 아마 꺼져가는 불씨들이 있을 텐데, 많은 선교사들은 그곳의 불은 꺼버리고 본국에서 새로운 불을 가지고 오려고 합니다. 하지만 현지에 있는 불씨를 살리는 것이 선교사의 임무라고 생각합니다."(p.278)</p>
+</blockquote>
+<p>저자는 여기에 덧붙인다 — 본국에서 가져온 불은 <strong>"선교사가 떠나버리면 그 불도 꺼져버리는 경우가 얼마나 많은가."</strong>(p.279) 그리고 허드슨 테일러의 비계목.</p>
+<table>
+<thead>
+<tr>
+<th>비유</th>
+<th>선교사의 역할</th>
+<th>실패 형태</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>부채와 불씨(톰 신부)</td>
+<td>현지에 이미 있는 불씨를 살린다</td>
+<td>현지 불을 끄고 본국 불을 이식 → 떠나면 꺼짐</td>
+</tr>
+<tr>
+<td>비계목(허드슨 테일러)</td>
+<td>건축 중에만 필요, 완성되면 떼어낸다</td>
+<td>떠나야 할 때 떠나지 못함</td>
+</tr>
+</tbody>
+</table>
+<p>2001년 6월 송별 파티로 저자는 죠이를 떠나고, 인도네시아 간사·리더를 도울 자문위원 세 명(페기 선교사·톰 신부 등)을 남긴다.</p>
+<p><strong>핵심 인사이트: 선교의 성공 기준은 선교사가 없어도 불이 타는가이다.</strong> 이양은 사역의 끝에 붙이는 절차가 아니라 처음부터의 설계 원리다.</p>
+<h3>10. 또 다른 부르심 — 다시 어린아이가 되다</h3>
+<p>귀국 후 한국 OMF 대표로서 첫 일은 이사회 재구성이었다. 12년 전 선교훈련원장 <span class="wl-dead" title="위키 내부 링크">이태웅</span> 목사의 말 — "10년 동안 밖에 있었다면 10년은 배워야 한다고 생각해야 할 거야" — 을 새기며, 그는 족자에서 묵상한 말씀을 붙든다.</p>
+<blockquote>
+<p>"그러므로 너희 마음의 허리를 동이고 근신하여 예수 그리스도께서 나타나실 때에 너희에게 가져다 주실 은혜를 온전히 바랄지어다"(p.283, <span class="wl-dead" title="위키 내부 링크">벧전1</span>)</p>
+</blockquote>
+<p>이 지점이 곧 <a class="wl" href="../../b/%EC%8F%98%EB%9D%BC%EB%B9%84%EC%95%88%EB%82%98%EC%9D%B4%ED%8A%B8_%EC%86%90%EC%B0%BD%EB%82%A8/">쏘라비안나이트_손창남</a>의 출발점이다. 두 책을 이어 읽으면 <strong>전문인 필드 선교사 → 동원·행정 선교사</strong>로 한 사람의 소명이 재배치되는 전 과정이 보인다.</p>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<ul>
+<li><strong>적용(의료·전문인 사역)</strong>: "전문인 선교사는 필요를 채워줄 때 존재 의미가 있다"(p.99)는 의료 전문인 선교사에게 가장 직접적인 기준이다. 동시에 5절의 "머물게 하는 것은 성패가 아니라 소명"과 긴장 관계에 있다 — <strong>기능(필요 충족)과 소명(순종) 두 기준을 함께 쥐는 법</strong>이 과제다.</li>
+<li><strong>적용(단기선교·학생 사역)</strong>: 불씨와 비계목(9절)은 단기선교팀이 "우리 프로그램"을 이식하는지, 현지 교회의 불씨에 부채질하는지 점검하는 질문으로 쓸 수 있다.</li>
+<li><strong>적용(멘토링)</strong>: "일만 스승 vs 아버지"(p.169) — 후배의 반응에 따라 관계가 흔들린다면 스승 모델에 머물러 있는 것이다.</li>
+<li><strong>적용(선교단체 이사)</strong>: 까마귀 훈련(p.48)과 "주님의 방법대로 하면 공급은 끊이지 않는다"(p.154)는 단체 재정 논의에서 "공급 중단을 방법의 신호로 읽을 것인가"라는 질문을 남긴다.</li>
+<li><strong>미해결 질문</strong>: 공급을 방법의 검증 장치로 보는 해석은, 정당한 사역이 재정난을 겪는 경우를 어떻게 설명하는가? 기다림(순종)과 포기(불순종)의 경계를 판정하는 기준은 무엇인가 — 요나단처럼 징조를 구하는 것은 일반화 가능한가?</li>
+</ul>
+<hr />
+<blockquote>
+<p>📖 전사 원문(줄이지 않은 표시 구절 전체): <span class="wl-dead" title="위키 내부 링크">족자비안나이트_손창남_전사</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#domain/선교</span><span>#discipline/선교학</span><span>#topic/전문인선교</span><span>#topic/대학생선교</span><span>#topic/소명</span><span>#topic/상황화</span><span>#topic/선교사리더십이양</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
