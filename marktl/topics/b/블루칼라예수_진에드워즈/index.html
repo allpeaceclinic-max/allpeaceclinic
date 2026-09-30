@@ -1,0 +1,326 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>블루 칼라 예수 — 진 에드워즈 (미션월드) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">리더십·일·경영</span><span class="author">진에드워즈</span><span class="date">2026-10-01</span></div>
+  <h1 class="note-title">블루 칼라 예수 — 진 에드워즈 (미션월드)</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/%EB%B8%94%EB%A3%A8%EC%B9%BC%EB%9D%BC%EC%98%88%EC%88%98_%EC%A7%84%EC%97%90%EB%93%9C%EC%9B%8C%EC%A6%88/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<blockquote>
+<p>원제 <em>Your Lord is a Blue Collar Worker</em>, 박선규 옮김. 『<a class="wl" href="../../b/%EC%84%B8%EC%99%95%EC%9D%B4%EC%95%BC%EA%B8%B0_%EC%A7%84%EC%97%90%EB%93%9C%EC%9B%8C%EC%A6%88/">세 왕 이야기</a>』·『이야기 사도행전』의 <span class="wl-dead" title="위키 내부 링크">진 에드워즈</span>가 <strong>예수의 나사렛 목수 시절</strong>을 우화로 풀어 쓴 70쪽 남짓한 소책자. 11장 구성이고, 앞 절반(1~5장)은 이야기, 뒤 절반(6~11장)은 독자에게 직접 말을 거는 권면이다. 📷 표시 전사 기반 독서 노트.</p>
+</blockquote>
+<p><strong>한 문장 명제</strong>: 하나님은 아들의 훈련 과정으로 성전이 아니라 <strong>목공소</strong>를 고르셨고, 그 선택으로 <strong>직업에 대한 당신의 견해를 이미 밝히셨다</strong>(p.67).</p>
+<hr />
+<h2>요약 — 주제별 상세 정리</h2>
+<h3>1. 세 젊은이 — 같은 나이, 다른 훈련장</h3>
+<p>이야기는 스물한 살 동갑내기 셋으로 시작한다. 멘로드는 서기관이 되려고, 조르독은 제사장이 되려고 예루살렘으로 떠나고, 셋째는 나사렛에 남아 목수 일을 배운다(p.11~12). 떠나는 두 사람은 남는 친구를 이해하지 못한다.</p>
+<blockquote>
+<p>"커다란 잠재력을 가진 예수는 왜 나무나 자르면서 나사렛에 남기로 결심했는지 이해할 수 없어. 일용직이나 다름없는 목수로 사는 게 뭐가 좋을까!" (p.14)</p>
+</blockquote>
+<p>그들이 그 친구를 인정하는 근거는 열두 살 성전 사건(눅 2:41~52)이다 — "열두 살 밖에 안 되는 나이에 어쩌면 그렇게 깊은 통찰력을"(p.13). 그래서 "제사장이나 서기관, 바리새인도 될 수 있을 거야"(p.13)라고 아쉬워한다. <strong>재능이 있으면 종교직으로 가야 한다</strong>는 전제가 이 대화 전체에 깔려 있다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>멘로드</th>
+<th>조르독</th>
+<th>예수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>목표</td>
+<td>서기관</td>
+<td>제사장</td>
+<td>(없음 — 남음)</td>
+</tr>
+<tr>
+<td>훈련장</td>
+<td>예루살렘</td>
+<td>예루살렘 성전</td>
+<td>나사렛 목공소</td>
+</tr>
+<tr>
+<td>9년간 배운 것</td>
+<td>필사·암송·주석</td>
+<td>제사법·곡물·향신료·「거룩한 몸짓」</td>
+<td>톱질·문 수리·손님 응대·체불</td>
+</tr>
+<tr>
+<td>도달점</td>
+<td>"위대한 성서학자이자 성경해설자"(p.29)</td>
+<td>지성소 입장(p.32)</td>
+<td>목수</td>
+</tr>
+<tr>
+<td>오늘의 대응물</td>
+<td>신학교 교수·주석가</td>
+<td>예전 전문가·목회자</td>
+<td>블루칼라 노동자</td>
+</tr>
+</tbody>
+</table>
+<h3>2. 핵심 인사이트: 예수도 훈련받으셨다 — 장소가 달랐을 뿐</h3>
+<p>2장은 <strong>같은 날</strong> 세계의 종교들을 훑는다. 그리스 제사장은 제우스에게, 드루이드 사제는 인신 제사를, 동방 승려는 열반을 위해 염불한다(p.19). 모든 종교는 "훈련받은 사제"를 두고, 그들은 "노동자 계급이 아니었다"(p.20). 떠나는 두 젊은이도 "자신들이 하나님의 온전한 뜻을 수행하고 있다고 확신했다"(p.20).</p>
+<p>저자는 여기서 뒤집는다.</p>
+<blockquote>
+<p>"멘로드와 조르독처럼, 주님도 그때 훈련을 받으셨다." (p.21)
+"그렇다! 그분의 '신학교 교실'은 거룩한 예루살렘의 회당이 아닌 나사렛의 목공소였다." (p.21)</p>
+</blockquote>
+<p>통념은 "예수의 30년은 공생애를 위한 대기 시간"이다. 저자는 그 30년을 <strong>훈련 그 자체</strong>로 읽는다. 대기가 아니라 과정이었다는 것이다.</p>
+<h3>3. 종교 훈련의 섬세함 — 저자는 비웃지 않는다</h3>
+<p>4장은 멘로드와 조르독의 9년을 꽤 자세히 그린다. 멘로드는 아침마다 갈대 펜으로 「아멜렉」을 써 보며 펜을 점검하고(p.29), 조르독은 "곡물 박사, 향신료 박사"가 되고 "노련한 제사장들의 섬세한 움직임과 거룩한 몸짓을 주의 깊게 관찰하며 배웠다"(p.32). 결국 "유월절 의식을 거행하는 책임"을 맡고 "지성소에 들어갈 수 있게"(p.32) 된다.</p>
+<p>같은 시각의 대조는 한 줄이다 — "그동안 이 땅에 오신 주님께서는 무엇을 하고 계셨는가? 그는 톱으로 나무를 켜고 계셨다."(p.32)</p>
+<p>종교 훈련은 조롱의 대상이 아니다. 성실하고 정교하다. 저자가 묻는 것은 그 훈련이 틀렸느냐가 아니라 <strong>하나님이 아들에게 고른 것이 그것이었느냐</strong>다.</p>
+<h3>4. 목공소의 실제 — 파르낙과 세포리스</h3>
+<p>추상론으로 흐르지 않도록 저자는 목수의 하루를 구체적으로 쓴다. 까다로운 손님 파르낙은 완성된 옷장을 보자 "나무 값밖에는 줄 수 없다"고 우기고, "시장에 가서 당신이 형편없는 목수라고 사람들에게 알릴 테야"(p.34)라고 위협한다. 그 순간 예수가 듣는 음성:</p>
+<blockquote>
+<p>"파르낙이 원하는 대로 해 주어라. 그는 자기 자신과 함께 사는 것만으로도 충분한 대가를 치르고 있단다. 아들아, 명심해라. 나는 들의 백합화에게도 옷을 입힌단다. 내가 너의 필요를 채워 줄 것이다." (p.34)</p>
+</blockquote>
+<p>마태복음 6장의 공급 약속이 <strong>체불 손님 앞에서</strong> 적용된다. 5장에서는 로마가 새 도시를 세우며 나사렛 목수들이 "이 이방인의 도시를 건설하기 위해 매일 아침 세포리스(Sepphoris)라는 도시로 출근하기 시작했"는데(p.37), 몇 주 만에 노예를 부리는 사람이 더 싼 값을 부르는 바람에 일자리를 잃는다. <strong>저임금 경쟁과 실직</strong>이다.</p>
+<blockquote>
+<p>⚠️ 본문은 새 도시가 "예루살렘과 매우 가까운 곳"(p.37)이라고 하지만, 세포리스는 갈릴리에 있고 나사렛에서 수 km 거리다. 원서 오류인지 번역 오류인지는 확인하지 못했다. 예수 가족이 세포리스 재건에 참여했다는 것은 학계 가설일 뿐이고 복음서에 근거는 없다 — 이 책은 역사서가 아니라 <strong>우화</strong>다.</p>
+</blockquote>
+<h3>5. 핵심 인사이트: 아버지가 골라 주신 훈련 과정</h3>
+<p>6장부터 저자는 독자에게 직접 말한다. 도랑 파는 중노동자를 가리키며 "그는 그리스도 안에서 하나된 당신의 한 형제이다"(p.43)라고 하고, 예수도 그 고통을 안다고 말한다 — "그는 스스로 노동자가 되어 이 같은 고통을 몸소 겪으셨기 때문이다"(p.45). 이 책에서 가장 무겁게 그은 밑줄이 여기 있다.</p>
+<blockquote>
+<p>"영원하신 하나님 아버지께서는 자기 아들을 위한 가장 좋은 훈련 과정으로 목수 노동자의 삶을 주셨다." (p.47)
+"하나님께서는 생계를 유지하기 위한 어렵고 힘든 노동이 예루살렘 성전에서의 제사장이 되기 위한 거룩한 훈련보다 훨씬 더 훌륭하다는 것을 알고 계셨다." (p.47)
+"이처럼 날마다 땀을 흘리며 힘겹게 살아가는 노동자의 삶이야말로 하나님께서 선택하신 예수님의 훈련 과정이었다." (p.48)</p>
+</blockquote>
+<p>주어가 <strong>아버지</strong>라는 점이 핵심이다. 목수 일은 예수가 형편상 떠밀려 한 일이 아니라 <strong>아버지의 선택</strong>이다. 9장에서 이것이 두 가지 사실로 정리된다.</p>
+<blockquote>
+<p>"그 하나는 아버지 하나님께서 자신의 아들이 사람으로 이 땅에 오셔서 행할 일을 친히 선택해 주셨다는 사실이고, 또 다른 하나는 예수께서 행하신 일과 당신이 행하고 있는 일은 하나님의 눈으로 바라보실 때 너무나 아름답다는 사실이다." (p.62)</p>
+</blockquote>
+<h3>6. 평범함의 성화 — 일터가 성전이 된다</h3>
+<p>8~9장의 논리는 성육신에서 나온다. 예수가 평범한 노동을 했으므로 평범한 노동이 거룩해졌다는 것이다.</p>
+<blockquote>
+<p>"지극히 평범한 것을 거룩하게 하신 것이다." (p.57)
+"그리고 당신이 날마다 하고 있는 일을 거룩하고 성스러운 행위로 만드신 것이다." (p.58)
+"예수 그리스도는 당신과 똑같은 일을 하며 사셨다." (p.58)</p>
+</blockquote>
+<p>그리고 독자가 동그라미를 친 두 단어, <strong>일터</strong>와 <strong>성전</strong>이 만난다.</p>
+<blockquote>
+<p>"당신의 <strong>일터</strong>는 하나님께서 선택하신 곳이다." (p.62)
+"당신이 일터에 나가서 일할 때 그 곳은 하나님의 <strong>성전</strong>, 그것도 참 성전이 된다는 사실 말이다." (p.63)</p>
+</blockquote>
+<p>단서가 붙는다 — "이렇게 당신의 일터를 하나님의 성전으로 만드는 일은 당신이 그리스도 안에 있을 때에만 가능하다"(p.63). 노동 자체가 자동으로 거룩해지는 것이 아니라, <strong>그리스도 안에 있는 사람의</strong> 노동이 거룩해진다. 이 단서를 빼면 책이 노동 예찬론으로 오독된다.</p>
+<table>
+<thead>
+<tr>
+<th>성육신이 한 일</th>
+<th>본문</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>평범한 것을 거룩하게</td>
+<td>p.57</td>
+</tr>
+<tr>
+<td>날마다 하는 일을 성스러운 행위로</td>
+<td>p.58</td>
+</tr>
+<tr>
+<td>일터를 선택된 곳으로</td>
+<td>p.62</td>
+</tr>
+<tr>
+<td>일터를 참 성전으로 (그리스도 안에서만)</td>
+<td>p.63</td>
+</tr>
+</tbody>
+</table>
+<h3>7. 주부·정비공의 하루 — 비교의 독</h3>
+<p>7장은 가장 목회적인 장이다. 잔디 깎는 사람, 빨래·다림질을 반복하는 주부, 기저귀를 가는 엄마, 가족을 먹이려고 차를 고치는 사람을 차례로 부르고, 그들 속의 목소리를 짚는다 — "다른 사람들은 하나님을 위해 훌륭한 일을 많이 하고 있는데 나는…"(p.53).</p>
+<blockquote>
+<p>"반면에 다른 사람들은 정말로 당신보다 가치 있는 일을 하고 있다고 당신이 느낄지 모르겠다." (p.54)
+"그러나 누군가 당신의 이 같은 삶을 이해하고 있다는 사실에 감사하라. 그분은 당신의 하루가 얼마나 가치 있는지를 알고 계신다." (p.54)</p>
+</blockquote>
+<p>처방은 논증이 아니라 <strong>동반</strong>이다. 노동의 가치를 증명하는 대신 "그 일을 해 본 분이 알고 계신다"고 말한다. <a class="wl" href="../../b/%EC%9D%BC%EC%9D%98%EC%8B%A0%ED%95%99_%ED%8F%B4%EC%8A%A4%ED%8B%B0%EB%B8%90%EC%8A%A4/">스티븐스</a>가 "하는 일 말고 사랑하는 것을 물어보라"로, <a class="wl" href="../../b/%EC%9D%BC%EA%B3%BC%EC%98%81%EC%84%B1_%ED%8C%80%EC%BC%88%EB%9F%AC/">켈러</a>가 정체성 우상으로 다룬 문제 — <strong>일을 서열로 비교하는 습관</strong> — 를 저자는 위로의 언어로 푼다.</p>
+<h3>8. 보좌 위의 목수 — 성육신은 끝나지 않았다</h3>
+<p>마지막 11장은 이 책에서 신학적으로 가장 깊다. 승천으로 목수 신분이 지워지지 않는다는 것이다.</p>
+<blockquote>
+<p>"이 땅에 계시는 동안 인간의 삶을 배우셨다! 인간이 되신 경험을 자기에게 더하신 것이다." (p.72)
+"인간으로서의 면모는 지금도 여전히 그분 안에 있다." (p.72)
+"한 목수가 하나님의 보좌 위에 앉아 계신다." (p.72)
+"보좌에 앉으신 분은 여전히 일용직 노동자이신 블루 칼라 예수이시다." (p.72)</p>
+</blockquote>
+<p><strong>승천하신 그리스도의 인성이 지속된다</strong>는 고전 기독론(히 4:15의 대제사장론)을 <strong>직업 정체성</strong>에까지 밀고 간 것이다. 그래서 10장의 명령이 성립한다 — "당신이 누구인지를 잊지 말라"(p.67), "세상과 다른 하나님 나라의 가치 체계에서는 목수의 신분이 참으로 중요하다"(p.67). 그리고 책의 결론: "하나님께서는 당신의 아들이 목수가 되도록 선택하셨을 때에, 이미 직업에 대한 그분의 견해를 밝히셨다"(p.67).</p>
+<hr />
+<h2>다른 책과의 대화</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>블루 칼라 예수</th>
+<th><span class="wl-dead" title="위키 내부 링크">스티븐스</span></th>
+<th><span class="wl-dead" title="위키 내부 링크">켈러</span></th>
+<th><span class="wl-dead" title="위키 내부 링크">위더링턴</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>형식</td>
+<td>우화 + 권면</td>
+<td>성경 인물 이력</td>
+<td>창조–타락–복음</td>
+<td>신약 주해·개념 구분</td>
+</tr>
+<tr>
+<td>근거</td>
+<td><strong>성육신</strong>(나사렛 30년)</td>
+<td>창조·믿음·소망·사랑</td>
+<td>창조·복음·일반은총</td>
+<td>창조·종말(새 땅의 노동)</td>
+</tr>
+<tr>
+<td>성속 서열</td>
+<td><strong>뒤집는다</strong>(노동 &gt; 제사장 훈련 p.47)</td>
+<td>없앤다</td>
+<td>없앤다</td>
+<td>1차/2차 소명으로 <strong>다시 세운다</strong></td>
+</tr>
+<tr>
+<td>대상</td>
+<td>블루칼라·주부</td>
+<td>전 신자</td>
+<td>전문직 포함 전 신자</td>
+<td>전 신자</td>
+</tr>
+</tbody>
+</table>
+<p>같은 저자의 『<a class="wl" href="../../b/%EC%84%B8%EC%99%95%EC%9D%B4%EC%95%BC%EA%B8%B0_%EC%A7%84%EC%97%90%EB%93%9C%EC%9B%8C%EC%A6%88/">세 왕 이야기</a>』와도 짝을 이룬다. 두 책 모두 짧은 우화이고, 둘 다 <strong>종교 권력 바깥에 있는 사람</strong>의 편에 선다 — 『세 왕 이야기』는 권위주의에 상처받은 사람, 이 책은 종교직이 아니어서 자신을 낮게 보는 사람이다.</p>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<p><strong>적용</strong>
+- <strong>의료 현장</strong>: 진료실을 "선교 현장이 되려면 뭔가를 더 해야 하는 곳"으로 보는 습관을 점검한다. 저자의 논리대로라면 진료실은 이미 "하나님께서 선택하신 곳"(p.62)이다. 단 p.63의 단서 — 그리스도 안에 있을 때에만 — 를 함께 붙들어야 한다.
+- <strong>청년·학사 진로 멘토링</strong>: "재능 있으면 신학교/선교지로"라는 멘로드·조르독의 전제(p.13)는 지금도 청년부에 있다. p.13·p.21·p.67 세 장면이 멘토링 대화 재료로 쓰기 좋다.
+- <strong>블루칼라 성도 목회</strong>: 논증보다 동반(p.54 "그분은 알고 계신다")이 먼저라는 것을 7장이 보여 준다. 설교·권면에서 주부·일용직·정비공을 <strong>이름 불러</strong> 호명하는 방식을 배울 만하다.
+- <strong>『세 왕 이야기』와 묶어 읽기</strong>: 짧은 우화 두 권을 세트로 소그룹 교재로 쓸 수 있다.</p>
+<p><strong>미해결 질문</strong>
+- 🔴 <strong>서열을 뒤집는 것도 서열이다.</strong> p.47은 노동이 제사장 훈련보다 "훨씬 더 훌륭하다"고 하고, p.54는 하나님이 성전에서 섬기는 일보다 그런 일들을 "더 귀하게 보신다"고 한다. 성속 이원론을 없애는 대신 <strong>거꾸로 세운</strong> 것은 아닌가? 스티븐스·켈러는 서열 자체를 없앤다. (저자가 제도권 교회·성직주의를 비판해 온 가정교회 운동 쪽 인물이라는 배경이 이 과장을 설명할 수 있는지 확인이 필요하다.)
+- <strong>의사는 블루칼라인가?</strong> 이 책의 위로는 육체노동자·주부를 향한다. 전문직·화이트칼라의 유혹(권력·우월감 — 켈러의 「복음과 의료」)에는 이 책이 무엇을 말하는가? 오히려 그들은 멘로드·조르독 쪽에 더 가깝지 않은가?
+- <strong>나사렛 30년의 "훈련"은 무엇을 기른 훈련이었나?</strong> 저자는 "가장 좋은 훈련"이라고만 하고 <strong>무엇이 길러졌는지</strong>(인내? 공감? 순종?)는 말하지 않는다. 히 5:8("받으신 고난으로 순종함을 배워")과 연결해 채울 수 있는가?
+- <strong>세포리스 서술(p.37)의 오류</strong>와 우화의 역사적 상상을 청중에게 어떻게 구분해 전할 것인가.</p>
+<hr />
+<blockquote>
+<p>📖 전사 원문(줄이지 않은 표시 구절 전체): <span class="wl-dead" title="위키 내부 링크">블루칼라예수_진에드워즈_전사</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#discipline/일터신학</span><span>#domain/신학</span><span>#직업소명</span><span>#성육신</span><span>#노동</span><span>#성속이원론</span><span>#우화</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
