@@ -1,0 +1,460 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>쏘라비안 나이트 — 손창남 (죠이선교회·OMF) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">리더십·일·경영</span><span class="author">손창남</span><span class="date">2026-09-30</span></div>
+  <h1 class="note-title">쏘라비안 나이트 — 손창남 (죠이선교회·OMF)</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/%EC%8F%98%EB%9D%BC%EB%B9%84%EC%95%88%EB%82%98%EC%9D%B4%ED%8A%B8_%EC%86%90%EC%B0%BD%EB%82%A8/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<blockquote>
+<p>부제 「본국 사역이라는 긴 항해에서 만난 기쁨과 고통, 그리고 소명 이야기」. 인도네시아에서 사역하던 OMF 선교사 <span class="wl-dead" title="위키 내부 링크">손창남</span>이 한국으로 돌아와 <strong>한국 OMF 대표로서 본국 사역(동원 사역)</strong> 을 감당한 시간을 4부 23장으로 쓴 사역 회고록이다 — Ⅰ 「좁은 문으로 들어가라」(자카르타 오디세이·국화 향기 속에서·편도 비행기 티켓·은혜의 빗줄기·사람은 무엇으로 사는가), Ⅱ 「일어나 건설하자」(리모델링·내 이름으로 물 한 그릇을·새로운 타문화·절반의 성공·실버 라이닝), Ⅲ 「이 옷을 입어라」(무등산 수박·광야 학교·땅이 흔들리고·겟세마네 프로세스·로뎀 나무 아래서), Ⅳ 「깊은 데로 가서 그물을 던져라」(노트북·나의 타임라인·OMF의 유산·반추하는 실천가·말쟁이에서 글쟁이로). 추천사는 이 책이 <strong>"선교의 속살을 들여다볼 수 있게 해 준다"</strong> 고 평한다 — 선교단체 내부의 고민과 갈등을 감추지 않고 드러낸다는 뜻이다. 📷 표시 전사 기반 독서 노트.</p>
+</blockquote>
+<hr />
+<h2>요약 — 주제별 상세 정리</h2>
+<h3>1. 책의 자리 — 드물게 기록된 「동원 선교사」의 이야기</h3>
+<p>선교사 회고록은 대개 필드 이야기다. 이 책은 반대편, 파송하는 쪽의 이야기다.</p>
+<blockquote>
+<p>"동원 사역을 하며 살아가는 선교사의 이야기라는 점이다. 동원 사역 선교사의 이야기가 글로 엮여 나온 경우는 아직 많지 않다."(p.16)</p>
+</blockquote>
+<p>제목도 거기서 왔다. <strong>"'서울'이 '쏘라'가 된 연유는 영어를 사용하는 사람들이 서울 사람을 '쏠라이트'(Seoulite)라고 부르는 것"</strong>(p.17) — 서울에서 보낸 밤들, 곧 본국에서의 사역 이야기라는 뜻의 「아라비안 나이트」 말놀이다.</p>
+<p>추천의 글 둘은 이 책의 가치를 다른 각도에서 짚는다. 하나는 정직함이다 — "선교단체의 내부적 고민과 갈등을 다뤄 가는 과정을" "기꺼이 문제들을 드러냄으로써" 보여 준다. 다른 하나(<span class="wl-dead" title="위키 내부 링크">이태웅</span>, 한국해외선교회 GLFocus 원장)는 선교 담론 속의 위치다. 세계복음주의연맹 선교위원회가 <strong>"2013년 9월 2-5일 스웨덴에서 열린 글로벌선교리더포럼(Global Mission Roundtable)"</strong> 에서 최우선 과제로 꼽은 <strong>"선교 현안 다섯 가지로, ①교회의 선교적 역할과 세계화 ②장벽이 허물어진 지역화 ③종교적 대결 ④전인적 제자도와 함께 ⑤선교의 지속성"</strong> 가운데, 이 책은 특히 ⑤ 선교의 지속성에 기여한다고 본다. 추천자가 굵은 글씨로 제시한 사이클은 이렇다.</p>
+<table>
+<thead>
+<tr>
+<th>현지 선교사</th>
+<th>→ 재정착</th>
+<th>→ 역할(role)의 변화</th>
+<th>→ 선교의 재창출</th>
+<th>→ 선교의 지속성</th>
+<th>→ 100세 시대를 위한 선교 모델화</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>이 사이클은 뒤의 <span class="wl-dead" title="위키 내부 링크">선교 유산 빌리지</span> 구상에서 저자 자신의 제안으로 구체화된다.</p>
+</blockquote>
+<h3>2. 소명의 재배치 — 하나님은 여물통을 엎으신다</h3>
+<p>필드를 떠나 본국으로 오는 것은 선교사에게 일종의 상실이다. 저자는 이것을 소명의 재배치로 읽는다.</p>
+<blockquote>
+<p>"하나님은 우리를 다른 차원으로 인도하시기 위해 종종 우리의 여물통을 엎으시는 분이다."(p.24)</p>
+</blockquote>
+<p>본국에서 그는 스스로를 이방인으로 느꼈다. 모세가 미디안에서 낳은 아들의 이름을 빌린다 — <strong>"'내가 타국에서 나그네가 되었다'는 뜻으로 '게르솜'"</strong>(p.31, <span class="wl-dead" title="위키 내부 링크">출2</span>). 고국이 오히려 타국이 된 역문화 충격이다. 동시에 그는 자신의 기질을 정확히 안다 — "나는 외향적인 사람이라 지치고 힘들다가도 사람들을 만나서 이야기를 하면 힘이 생긴다."(p.30) 동원 사역에 맞는 사람이 동원 자리로 옮겨진 셈이다.</p>
+<p>정체성의 결론은 3부에서 분명해진다. 대표라는 직함에도 불구하고 <strong>"학생 사역자라고 말할 것이다. 나의 정체성은 학생 사역자다."</strong>(p.150)</p>
+<h3>3. 핵심 인사이트: 리더십은 무엇을 하느냐(doing)가 아니라 어떤 사람이냐(being)다</h3>
+<p>책 전체를 관통하는 축이다. 대표가 되었을 때 한 목사에게서 들은 조언이 출발점이다.</p>
+<blockquote>
+<p>"목사님은 어떤 일을 하는 <strong>리더가</strong> 아니라 <strong>어떤 성품을</strong> 갖는 리더가 되어야 하는지를 정확히 말씀해 주셨다."(p.42) — 독자는 두 어구에 동그라미를 쳤다.</p>
+</blockquote>
+<p>3부 「겟세마네 프로세스」에서는 리더가 입어야 할 「옷」(골 3:12의 성품 목록)을 하나씩 풀어낸다. 3부 제목 「이 옷을 입어라」가 여기서 나온다.</p>
+<table>
+<thead>
+<tr>
+<th>성품</th>
+<th>원어·예</th>
+<th>저자의 풀이 (표시 구절)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>긍휼</strong>(compassion)</td>
+<td>히브리어 '라하임'</td>
+<td>"그 말은 어머니의 자궁이라는 뜻이란다."(p.210)</td>
+</tr>
+<tr>
+<td><strong>자비</strong>(kindness)</td>
+<td>누가복음 사마리아인 비유</td>
+<td>"율법 교사가 '자비를 베푼 자니이다' 하고 대답했다."(p.211, <span class="wl-dead" title="위키 내부 링크">눅10</span>)</td>
+</tr>
+<tr>
+<td><strong>겸손</strong>(humility)</td>
+<td>—</td>
+<td>(p.211)</td>
+</tr>
+<tr>
+<td><strong>온유</strong>(gentleness)</td>
+<td>"<strong>단연 모세일</strong>"(p.212)</td>
+<td>온유의 대표 인물로 <span class="wl-dead" title="위키 내부 링크">모세</span></td>
+</tr>
+<tr>
+<td><strong>오래 참음</strong>(patience)</td>
+<td>—</td>
+<td>(p.213)</td>
+</tr>
+</tbody>
+</table>
+<p>4부의 리더십 훈련에서 같은 원리가 다시 나온다 — <strong>"리더십은 하는 일(doing)에서 비롯되는 것이 아니라 됨됨이(being)에서 비롯된다는 것을 특히 마음에 새겼다."</strong>(p.248) 그리고 가장 인상적인 한 줄: <strong>"예수님은 자기가 리더라는 것을 의식하지 않으셨다. 그분은 자기가 할 일에 집중했다."</strong>(p.251) <a class="wl" href="../../b/%EA%B5%90%ED%9A%8C%EC%99%80%EC%84%A0%EA%B5%90_%EC%86%90%EC%B0%BD%EB%82%A8/">교회와선교_손창남</a>에서 교회에 던진 진단("선교를 하는 것(doing)에는 익숙하지만 선교적 체질이 되는 것(being)에는 부족하다")이 여기서는 리더 개인에게 적용된다.</p>
+<h3>4. 선교단체 거버넌스 — 이사회·허입·재정의 원칙</h3>
+<p>2부 「리모델링」은 한국 OMF의 제도를 정비한 기록이다. 대표 취임 때 세운 모토는 세 가지였다 — <strong>"재정의 투명성, 윤리적 삶, 규칙을 지키는 것을 모토로 세웠다."</strong>(p.45)</p>
+<p><strong>한국 OMF 이사회의 다섯 역할</strong> (p.88)</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>역할</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>이사회는 이사회를 운영한다</td>
+</tr>
+<tr>
+<td>2</td>
+<td>이사회는 한국 교회를 향해서 OMF를 대표한다</td>
+</tr>
+<tr>
+<td>3</td>
+<td>이사회는 멤버들의 신상 변동에 대한 결정을 한다</td>
+</tr>
+<tr>
+<td>4</td>
+<td>이사회는 대표의 사역을 <strong>후원하고 지지하며 동시에 관리 감독</strong>한다</td>
+</tr>
+<tr>
+<td>5</td>
+<td>이사회는 한국 OMF와 관련해서 중요한 결정을 내린다</td>
+</tr>
+</tbody>
+</table>
+<p><strong>선교사 허입 절차의 네 승인</strong> — 독자는 "<strong>OMF의 선교사 허입 절차에는 원칙이</strong>"에 동그라미를 쳤다(p.92-93).</p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 필드 웰컴(Field Welcome)</td>
+<td>받아들일 필드가 먼저 환영해야 한다</td>
+</tr>
+<tr>
+<td>2. 홈의 승인(Home Acceptance)</td>
+<td>파송하는 홈(본국 OMF)의 승인</td>
+</tr>
+<tr>
+<td>3. 건강상의 승인(Medical Clearance)</td>
+<td>의료 검진</td>
+</tr>
+<tr>
+<td>4. 재정 승인(Financial Clearance)</td>
+<td>후원 확보</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>순서가 핵심이다 — 필드가 먼저다. 이는 허드슨 테일러가 본부를 영국·미국이 아니라 필드(상하이, 이후 싱가포르)에 둔 원칙과 같다(p.34 전후, 국제 본부 대목). <a class="wl" href="../../b/%EA%B5%90%ED%9A%8C%EC%99%80%EC%84%A0%EA%B5%90_%EC%86%90%EC%B0%BD%EB%82%A8/">교회와선교_손창남</a>의 「허입 4확인」도 같은 틀이다.</p>
+</blockquote>
+<p>재정 원칙은 개인 차원에서도 지켰다 — <strong>"선교사가 되면서 꼭 실천해 온 원리 가운데 하나는 하나님이 내게 주시는 생활비 이외에 어떤 이유로든 빚을 지지 말자는 것이었다."</strong>(p.108) 믿음 선교(faith mission)의 전통이다.</p>
+<h3>5. OMF라는 그릇 — 필드 중심·국제성·자녀 정체성</h3>
+<p>저자가 기록한 OMF의 구조적 특징:</p>
+<ul>
+<li><strong>기원</strong>: <strong>"중국내지선교회 해외 선교사 모임(China Inland Mission Overseas Missionary Fellowship, CIM/OMF)"</strong>(p.129). 150년 된 단체다(p.228).</li>
+<li><strong>국제 본부</strong>: 싱가포르 <strong>"OMF 국제 본부에서 '클루니 로드'(Cluny Road)"</strong> 를 건너면 <strong>"보타닉 가든(Botanic Garden)으로 들어가는 출입문이"</strong> 나온다(p.34 전후). 본부가 필드에 있어야 한다는 <span class="wl-dead" title="위키 내부 링크">허드슨테일러</span>의 원칙에 따라 중국 철수 후에도 서구로 옮기지 않았다.</li>
+<li><strong>대칭적 국제성</strong>: <strong>"OMF는 동아시아의 18개 나라에서 사역하고 있다. 선교사를 보내는 홈도 18개 국가다. 그 중 9개 국은 서구에 있고 나머지 9개 국은 동아시아에 있다."</strong>(p.130) — 보내는 나라의 절반이 비서구다.</li>
+<li><strong>한국 OMF 규모</strong>: "한국 OMF 선교사 <strong>70명이</strong> 모여 수련회를"(p.132).</li>
+<li><strong>자녀 정체성 결정</strong>: <strong>"이미 1990년 한국 선교사들 모임에서 한국 OMF 멤버의 자녀들은 한국 정체성을 갖는 아이로 키우기로 결정했다."</strong>(p.136) — 선교사 자녀(MK) 교육의 방향을 공동체가 먼저 정했다. 저자는 이후 "선교사 자녀들을 위한 사역을 해 왔다"(p.230).</li>
+<li><strong>한국 선교 동원사의 한 장면</strong>: "1988년부터 2년마다" 열린 <strong>"제1회 선교한국 대회"</strong> 에 "허드슨 테일러의 증손자인 제임스 테일러 박사님"이 왔다(p.61).</li>
+</ul>
+<p>2부 제목 「일어나 건설하자」는 느헤미야의 구호(<strong>"일어나 건축하자"</strong>, p.136 표시, <span class="wl-dead" title="위키 내부 링크">느2</span>)에서 왔다. 2부 마지막 장 제목 <strong>「실버 라이닝」(silver lining)</strong>(p.152)은 먹구름 가장자리의 은빛, 곧 고난 속의 희망이다.</p>
+<h3>6. 동원의 사다리와 「일차 동원」</h3>
+<p>동원 사역자로서 저자는 한 사람이 선교사가 되기까지의 단계를 이렇게 정리한다.</p>
+<blockquote>
+<p>"처음에는 선교에 무지하지만(전무) 점차 인식이 생기고(의식) 흥미가 생기고(관심) 더 참여하게 되고(관여) 후에는 파송을 받아 나가는 선교사가 된다."(p.239)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>전무</th>
+<th>→ 의식</th>
+<th>→ 관심</th>
+<th>→ 관여</th>
+<th>→ 파송</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>선교에 무지</td>
+<td>인식이 생김</td>
+<td>흥미가 생김</td>
+<td>더 참여</td>
+<td>선교사로 나감</td>
+</tr>
+</tbody>
+</table>
+<p>이 과정 전체를 이끄는 것을 저자는 <strong>「일차 동원」</strong> 이라 부른다(p.239). <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EB%8F%99%EC%9B%90/">선교동원</a>의 단계 모델과 나란히 놓을 수 있다 — 동원은 이벤트가 아니라 사다리를 한 칸씩 오르게 돕는 긴 동행이라는 것이다.</p>
+<h3>7. 프로젝트 티모티 — 시간선(Timeline)으로 자기 인생을 읽기</h3>
+<p>4부 「나의 타임라인」은 OMF의 리더십 개발 과정 <strong>'프로젝트 티모티'(Project Timothy)</strong>(p.241)를 다룬다. 저자는 수강자로 시작해 <strong>퍼실리테이터(facilitator, 조력자 또는 진행자)</strong> 로 초청받았다(p.252).</p>
+<p><strong>구조</strong> — "이 프로그램은 전체 18개월 과정으로 이루어져 있다. 6개월 간격으로 네 개 세션을 거쳐야 하는데," 각 세션은 "4박 5일로" 진행되며, 방식은 "연역적이다."(p.247)</p>
+<table>
+<thead>
+<tr>
+<th>세션</th>
+<th>주제</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>리더와 내적인 삶 (The Leader and the Inner Life)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>리더와 과업 (The Leader and the Task)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>리더와 팀 (The Leader and the Team)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>리더와 조직 (The Leader and the Organization)</td>
+</tr>
+</tbody>
+</table>
+<p>순서 자체가 메시지다 — <strong>내면이 먼저, 조직이 마지막</strong>.</p>
+<p><strong>시간선</strong> — 이론적 배경은 <strong>"풀러 신학대학의 고명한 로버트 클린턴 교수"</strong>(p.248)의 리더십 출현 이론이다(<span class="wl-dead" title="위키 내부 링크">멘토링_매뉴얼_로버트클린턴</span>). <strong>"세션 1에서 가장 중요하게 다루는 것은 시간선(Timeline)이다."</strong>(p.248) 인생을 선으로 그리면 "주신 재능과 은사가 무엇인지가 더 명확해진다."(p.248) 클린턴 용어로 <strong>「주권적 기초」</strong>(p.249)와 <strong>「심화 과정(deep process)」</strong>(p.250)이 드러난다.</p>
+<blockquote>
+<p>"내 인생의 시간선을 그려 보니 매우 선명한 선이 발견되었다. 그것은 교사로서의 모습이었다."(p.250)</p>
+<p>"시간선을 그려 나가면서 나는 하나님께서 얼마나 섬세하게 나를 다듬어 오셨는지를 보았고 주님이 허락하신 모든 과정의 의미를 새롭게 깨달았다."(p.250)</p>
+</blockquote>
+<p><strong>핵심 인사이트: 운명(fate)이 아니라 숙명(destiny)</strong> — <span class="wl-dead" title="위키 내부 링크">요셉</span>의 시간선을 예로 든다. <strong>"요셉이 성공했다는 것보다 중요한 것은 요셉의 성품을 하나님이 빚어 가셨다는 점이다."</strong>(p.251)</p>
+<blockquote>
+<p>"운명이 이미 결정된 것이라면 숙명은 자신이 걸어온 인생의 경험 속에서 점점 나이가 들어 감에 따라 하나님께서 나를 이 일을 하도록 부르셨다고 말할 수 있는 확신이다."(p.251)</p>
+</blockquote>
+<p>숙명은 미리 주어지는 것이 아니라 <strong>돌아보며 확인되는 것</strong>이다. 그래서 실패도 교재가 된다.</p>
+<blockquote>
+<p>"<strong>교육이란</strong> 미리 배워서 실패를 예방하려는 목적도 있지만 실패를 한 후 반추함으로써 더 확실한 교육의 효과가 나타나는 법이다. 누군가 말했다. 선수들은 필드에서 뛸 때보다 벤치에 앉아 있을 때 더 많은 것을 배운다고."(p.251)</p>
+</blockquote>
+<p>세션의 성경적 닻은 <span class="wl-dead" title="위키 내부 링크">요8</span> 29절이다 — "나는 항상 그가 기뻐하시는 일을 행하므로 나를 혼자 두지 아니하셨느니라."(p.252)</p>
+<h3>8. 선교 유산 빌리지 — 은퇴 선교사를 위한 「사회적 기반」</h3>
+<p>4부 「OMF의 유산」에서 저자는 한국 선교가 곧 맞을 문제, 은퇴 선교사를 정면으로 다룬다.</p>
+<blockquote>
+<p>"영국, 미국, 캐나다 OMF처럼 역사가 오래된 홈에서는 은퇴한 선교사들이 대부분 한곳에 모여 산다. 이처럼 OMF는 중국내지선교회 시절부터 자녀 교육이나 은퇴 선교사의 노후 생활 등 선교사들의 어려움을 적극적으로 해결해 주었다."(p.261)</p>
+</blockquote>
+<p>필요한 것은 <strong>「사회적 기반」(social base)</strong>(p.261)과 <strong>「하부 구조」(infrastructure)</strong>(p.262)다. 모델로 <strong>"모라비안 프라트룸"</strong>(p.261, 모라비안 형제단의 공동체)을 떠올리고, 한국판 <strong>「선교 유산 빌리지」</strong>(p.262)를 구상한다.</p>
+<table>
+<thead>
+<tr>
+<th>구상 요소</th>
+<th>표시 구절</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>노동의 영성</td>
+<td>"중세의 수도원에서는 '노동이 기도'라고 할 정도로 노동에 높은 가치를 부여했다."(p.263)</td>
+</tr>
+<tr>
+<td>필요한 것</td>
+<td>"거주할 공간과 적절한 활동,"(p.263)</td>
+</tr>
+<tr>
+<td>판로 해법</td>
+<td>"생산물을 판매할 경로가 막연하다는 것인데, 패밀리 멤버들에게 책과 함께 빌리지에서 생산한 안전한 농산물을 공급한다면 판매는 걱정하지 않아도 된다."(p.263)</td>
+</tr>
+<tr>
+<td>확장</td>
+<td>"어쩌면 빌리지 안에서 다문화 가정의 자녀들을 위한 대안 학교도 할 수 있겠다."(p.263)</td>
+</tr>
+<tr>
+<td>성경적 근거</td>
+<td>"이 손으로 나와 내 동행들이 쓰는 것을 충당하여."(p.264, <span class="wl-dead" title="위키 내부 링크">행20</span> 34절 — 바울의 자비량)</td>
+</tr>
+</tbody>
+</table>
+<p>판로의 열쇠는 앞 장에서 만든 <strong>"OMF 패밀리 멤버"</strong>(p.255) 제도다 — "도서 회원 제도나 북 클럽(book club)이라는 말보다 더 좋은 명칭"으로 지은 이름이다. 독자는 p.264 "숙명처럼"에 물결 밑줄을 그었다 — 7절의 숙명(destiny)이 은퇴 이후의 삶까지 이어진다는 연결로 읽힌다.</p>
+<blockquote>
+<p>추천사의 「재정착 → 역할의 변화 → 선교의 재창출 → 지속성 → 100세 시대 선교 모델화」 사이클이 바로 이 구상이다. <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%82%AC%EC%9D%80%ED%87%B4/">선교사은퇴</a>·<a class="wl" href="../../t/%EB%A9%A4%EB%B2%84%EC%BC%80%EC%96%B4/">멤버케어</a>와 연결.</p>
+</blockquote>
+<h3>9. 반추하는 실천가 — 실패를 나누는 선교사들, 그리고 풀뿌리 선교</h3>
+<p>4부 도입면의 비유가 이 장의 열쇠다. 예수님이 고기를 만들어 주신 것이 아니라 <strong>"베드로가 보지 못하는 고기를 낚도록 도움을 주신 것뿐이다."</strong>(p.228-229, <span class="wl-dead" title="위키 내부 링크">눅5</span>) 한국 OMF의 보이지 않던 보물은 <strong>"150년 된 선교단체의 유산인 그 보물이란 OMF 선교사들이 써 놓은 책들이다."</strong> 그 결과 <strong>"리더십 훈련, 반추하는 실천가들의 모임, 그리고 책 쓰기를 시작하게 되었다."</strong></p>
+<p><strong>반추하는 실천가(reflective practitioner)</strong> — 현장 선교사들이 스스로를 이렇게 불렀다(p.269). 출발은 실패담이었다. KWMA의 〈한국선교 KMQ〉에 "여섯 가지 실패담을"(p.267) 싣고, 거기서 두 가지를 배웠다.</p>
+<blockquote>
+<p>"하나님 나라는 OMF보다 크다는 것을 배웠다." / "연합 사역에 대한 헌신이다."(p.267)</p>
+</blockquote>
+<p>모임의 첫 합의 주제는 <strong>"선교사의 책무(accountability)의 문제"</strong> 였고, <strong>"사역적 재정적 책무를 택했다."</strong> 그리고 "그때 다룬 이야기를 책으로 출간했다."(p.270) → 이것이 <a class="wl" href="../../b/%EA%B5%90%ED%9A%8C%EC%99%80%EC%84%A0%EA%B5%90_%EC%86%90%EC%B0%BD%EB%82%A8/">교회와선교_손창남</a>의 뼈대인 「사역적·재정적 책무」로 이어진다.</p>
+<p><strong>이탈의 통계</strong> — <span class="wl-dead" title="위키 내부 링크">GBT</span>의 김동화 선교사에게서 들은 숫자: <strong>"위클리프 성경번역선교회의 경우 세계적으로 6천 명의 선교사가 있는데 한 해 그만두는 선교사의 수가 5백 명에 가깝다고 한다."</strong> 그 빈자리는 "2, 3세계 출신 선교사로 충원된다"(p.271).</p>
+<p><strong>두 포럼의 대비</strong> (p.272)</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>방콕 포럼</th>
+<th>설악 포럼</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>질문</td>
+<td>필드 선교사들의 사역을 어떻게 잘 도울 것인가</td>
+<td>이 시대에 맞는 선교의 모델은 무엇인가</td>
+</tr>
+<tr>
+<td>초점</td>
+<td>현장 지원</td>
+<td>모델·패러다임</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 인사이트: 선교의 두 모델</strong> — 설악 포럼의 결론이다. 바울 팀만 선교 모델이 아니다.</p>
+<blockquote>
+<p>"사도행전 8장부터는 이름도 없이 빛도 없이 로마 제국을 떠돌며 복음을 헬라인들에게도 전했던 <strong>풀뿌리 선교 모델</strong>도 존재한다."(p.273)</p>
+<p>"<strong>안디옥 교회가</strong> 파송한 사도 바울이라는 큰 인물에 집중하지만 사도행전 7장의 마지막에서 스데반이 순교를 당한 이후 핍박을 피해서 흩어진 사람들이 각지를 다니며 복음을 전한 이야기에 우리는 더 주목할 필요가 있다."(p.282)</p>
+<p>"선교사라는 타이틀도 없고 후원하는 교회도 없었지만 자기 직업을 가지고 이곳저곳을 다니며 사도 바울 팀이 다닌 곳보다 더 넓은 지역에서 타문화 사역을 했다."(p.282-283)</p>
+<p>📝 독자 메모(p.283 상단): <strong>"다리가 된(?) 사람들"</strong> — 흩어진 사람들이 복음의 다리였다는 반응.</p>
+</blockquote>
+<p>이 관점은 이미 1부에서도 표시되어 있다 — "사도행전 11장에 나타난 흩어진 사람들을"(p.67, <span class="wl-dead" title="위키 내부 링크">행11</span>). 이 연구가 <strong>"《직업과 선교》의 성경적 배경이 되었다."</strong>(p.282) 국제 OMF 부총재 <strong>이안 프리스콧 선교사</strong>의 풀러 논문 「전문인 선교사의 정체성」과 <span class="wl-dead" title="위키 내부 링크">손창남</span>의 직업과 선교 <strong>"4, 5 타입"</strong>(p.284) 강조가 여기서 만난다(<a class="wl" href="../../t/%EC%A0%84%EB%AC%B8%EC%9D%B8%EC%84%A0%EA%B5%90/">전문인선교</a>·<a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%8B%A0%ED%95%99/">직업신학</a>·<a class="wl" href="../../t/%EB%94%94%EC%95%84%EC%8A%A4%ED%8F%AC%EB%9D%BC/">디아스포라</a>).</p>
+<p>배경 인식은 한 문장이다 — <strong>"선교적 상황이 지난 200년 동안 서구를 중심으로 진행되었던 선교적 상황과는 완전히 달라졌다는 사실이다."</strong>(p.273) 같은 대목에서 《기독교의 미래》(p.272)라는 책이 함께 언급된다.</p>
+<h3>10. 말쟁이에서 글쟁이로 — 쓰고 싶은 책들, 그리고 지친 몸</h3>
+<p>마지막 장에서 저자는 앞으로 쓸 책을 나열한다 — "타문화 선교의 실제에 대한 책도 쓰고 싶고, 사도행전에 나타나는 두 가지 선교의 모델도 책으로 쓰고 싶다." "…중심으로 리더십에 대한 책도 쓰고 싶다."(p.284-285) 이 목록은 이후 실제로 『사도행전을 읽으면 두 가지 모델이 보인다』·『교회와 선교』·<a class="wl" href="../../b/%EB%8B%A4%EB%8B%88%EC%97%98%EC%84%9C%EB%A5%BC%EC%84%A0%EA%B5%90%EC%A0%81%EC%9C%BC%EB%A1%9C%EC%9D%BD%EC%9C%BC%EB%A9%B4_%EC%86%90%EC%B0%BD%EB%82%A8/">『다니엘서를 선교적으로 읽으면』</a> 등으로 이어졌다.</p>
+<p>에필로그는 담백하다. 사역에서 배운 것은 <strong>"사역에는 즐거움뿐만 아니라 고통도 있다는 것을 배웠고, 권리나 특권보다는 책임이 막중하다는 것도 배웠습니다."</strong>(p.288) 그리고 앞으로 바라는 것은 소박하다.</p>
+<blockquote>
+<p>"잠을 많이 자고 싶다. 늘 새벽에 깨고 밤늦게 잠자리에 들면서 줄곧 피곤 속에서 보냈다. 또 운동을 많이 하고 싶다. 늘 운동 부족으로 시달렸다." "1만 보를 걷는 날은 한 달에 닷새 정도 될까."(p.291)</p>
+</blockquote>
+<p>본국 사역자의 소진은 필드 선교사의 소진만큼 보이지 않는다 — <a class="wl" href="../../t/%EB%A9%A4%EB%B2%84%EC%BC%80%EC%96%B4/">멤버케어</a>가 동원 사역자·단체 대표까지 포함해야 하는 이유다.</p>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<p><strong>적용</strong>
+- <strong>이사회 자기 점검표</strong>: p.88 「이사회 다섯 역할」의 4번 — 대표를 <strong>"후원하고 지지하며 동시에 관리 감독"</strong> — 은 이사회가 지지와 견제를 한 몸에 지는 구조다. 선교단체 이사회의 자기 점검 문항으로 그대로 쓸 수 있다. 허입의 「필드 웰컴이 먼저」 원칙도 파송 결정 순서를 점검하는 데 유용하다.
+- <strong>은퇴 이후를 설계하는 그릇</strong>: 「선교 유산 빌리지」는 선교 자산을 <strong>은퇴 선교사의 사회적 기반</strong>으로 전환하는 한국형 구상이다. 한국 선교 1세대의 은퇴와 자산 이양을 고민할 때 참조 모델이 된다.
+- <strong>동원과 멘토링</strong>: 전무→의식→관심→관여→파송 사다리는 학생·청년 동원의 단계 진단에 바로 쓸 수 있다. 프로젝트 티모티의 <strong>시간선 그리기</strong>는 멘토링 첫 세션 도구로 적합하다(<span class="wl-dead" title="위키 내부 링크">멘토링_매뉴얼_로버트클린턴</span>).
+- <strong>직업인 선교</strong>: 풀뿌리 선교 모델(행8·11의 흩어진 사람들)은 「직업을 가진 그리스도인이 곧 복음의 다리」라는 메시지의 성경적 근거가 된다.</p>
+<p><strong>미해결 질문</strong>
+- 「쏘라비안」은 쏠라이트(Seoulite)+아라비안 나이트의 말놀이로 설명되는데(p.17), p.261의 <strong>「모라비안」</strong> 공동체 구상과도 소리가 겹친다. 저자가 의도한 이중 함의인가? (본문 확인 필요 — 추정)
+- 「선교 유산 빌리지」는 실제로 추진되었는가? 추진되었다면 판로(패밀리 멤버)·거주·노동 모델은 어떻게 되었나?
+- 1990년 「MK는 한국 정체성으로」 결정은 이후 세대에서 어떤 결과를 냈나? 제3문화 아이(TCK) 논의와 어떻게 맞물리는가?
+- 위클리프 연 500/6,000(약 8%) 이탈률은 한국 선교사 이탈률과 비교하면 어떤가?
+- 촬영본에는 p.153~209(3부 「무등산 수박」~「땅이 흔들리고」 대부분)가 없다 — 표시가 없었던 구간인지 확인 필요.</p>
+<hr />
+<blockquote>
+<p>📖 전사 원문(줄이지 않은 표시 구절 전체): <span class="wl-dead" title="위키 내부 링크">쏘라비안나이트_손창남_전사</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#domain/선교</span><span>#discipline/선교학</span><span>#discipline/리더십</span><span>#topic/본국사역</span><span>#topic/선교동원</span><span>#topic/선교단체거버넌스</span><span>#topic/성품리더십</span><span>#topic/반추하는실천가</span><span>#topic/풀뿌리선교</span><span>#topic/선교사은퇴</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
