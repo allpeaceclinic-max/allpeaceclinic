@@ -1,0 +1,563 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>소망 — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-t">목회·실천</span><span class="date">2026-10-02</span></div>
+  <h1 class="note-title">소망</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>소망(엘피스, ἐλπίς)은 아직 보이지 않는 선(善)을, 그것을 약속하신 분 때문에 기다리는 일이다. 일상어의 소망은 대개 그 반대를 뜻한다. 데이비드 보쉬가 『길의 영성』에서 짚듯, 그저 최선의 결과를 바랄 뿐이라는 말은 실제로는 일이 잘못될 조짐이 보인다는 고백에 가깝다. 성경의 소망은 불확실성을 감추는 말이 아니라 확실성에 기대는 말이다. 한국어 성경은 이 단어를 '소망'으로 옮기고 강단은 '희망'을 섞어 쓰는데, 권성수 목사는 골로새서 1:27을 풀면서 "영광의 소망, 영광의 희망이다"라고 두 낱말을 그대로 포갠다. 이 글도 둘을 구별하지 않는다.</p>
+<p>설교와 책들은 이 한 단어를 서로 다른 자리에서 부른다.</p>
+<table>
+<thead>
+<tr>
+<th>소망이 불리는 자리</th>
+<th>대표 본문</th>
+<th>그 자리에서 소망이 하는 일</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>시련의 끝</td>
+<td>롬 5:3-4, 벧전 1:6-7, 롬 8:18</td>
+<td>환난이 헛되이 끝나지 않는다는 결말을 준다</td>
+</tr>
+<tr>
+<td>절망의 맞은편</td>
+<td>겔 37장, 롬 4:18, 시 42:5</td>
+<td>끝났다고 판정된 자리에서 다시 말하게 한다</td>
+</tr>
+<tr>
+<td>죽음과 세월 앞</td>
+<td>골 1:27, 시 39:7, 딛 2:13, 벧전 1:3-4</td>
+<td>쇠하지 않는 것을 가리킨다</td>
+</tr>
+<tr>
+<td>오늘의 동력</td>
+<td>히 6:11, 벧전 1:13, 히 11:1</td>
+<td>게으름과 도피를 끊고 움직이게 한다</td>
+</tr>
+</tbody>
+</table>
+<p>네 자리는 모두 미래를 말하지만 어느 것도 미래의 일정표를 묻지 않는다. 마지막에 무엇이 어떤 순서로 일어나는가는 <a class="wl" href="../../t/%EC%A2%85%EB%A7%90%EB%A1%A0/">종말론</a>이, 다시 일어난 몸이 어떤 몸인가는 <a class="wl" href="../../t/%EB%B6%80%ED%99%9C/">부활</a>이, 그 사이를 견디는 기술은 <a class="wl" href="../../t/%EC%9D%B8%EB%82%B4/">인내</a>가 맡는다. 여기서 붙드는 것은 소망이라는 덕 자체다 — 무엇을 바라는가(1·2절), 무엇에 근거하는가(3절), 무엇과 혼동되는가(4절), 어떤 길을 지나오는가(5절), 믿음·사랑과 어떻게 일을 나누는가(6절), 어떻게 자라고(7절) 오늘을 어떻게 바꾸며(8절), 어디에서 꺾이는가(9절).</p>
+<h2>1. 무엇을 바라는가 — 물건이 아니라 인격</h2>
+<p>성경의 소망 문장들은 목적어 자리에 사물보다 인격을 둔다. 다윗은 인생이 한 뼘 그림자임을 헤아린 끝에 "나의 소망은 주께 있나이다"(시 39:7)라고 말하고, 바울은 하나님을 아예 '소망의 하나님'(롬 15:13)이라 부르며, 골로새서는 소망의 내용을 한 분으로 줄인다 — "너희 안에 계신 그리스도시니 곧 영광의 소망이니라"(골 1:27). 권성수 목사가 이 절에 붙인 한 줄은 소망이 생존의 조건임을 말한다. "사람이 희망이 있으면 산다. 살아야 할 이유다."</p>
+<p>대상이 인격이라는 사실은 소망의 방향을 바꾼다. 문대원 목사는 베드로전서 1:13의 '온전히 바랄지어다'를 소망을 고정시키라는 명령으로 읽는다. "소망을 그분에게 두는 것이다. 내가 원하는 것이 이루어지는 것이 아니라 예수님에게 집중하는 것이다." 히브리서 3:6의 '소망의 확신'을 강해한 권성수 목사의 말은 더 거칠다. "다른 것을 소망으로 잡으면 허망하고 엉터리인데 예수는 절대 엉터리가 아닌 진짜 소망이다." 윤명숙 전도사는 디도서 2:13의 '복스러운 소망'에서 같은 결론을 실망이라는 일상 경험으로 끌어내린다. "우리가 왜 이렇게 실망할까? 소망을 가지기 때문이다." 실망은 소망이 없어서가 아니라 소망을 둘 수 없는 곳에 두어서 생긴다. 배우자도 정치 지도자도 모든 것을 걸 대상이 아니며, 그래서 결론은 "우리의 모든 소망은 주님께 두어야 실망하지 않는다"이다.</p>
+<p>그러면 천국을 바라는 것은 인격에서 장소로 옮겨 가는 이탈인가. 권성수 목사의 히브리서 강해는 그렇지 않음을 보인다. "더 좋은 소망이 생기니 이것으로 우리가 하나님께 가까이 가느니라"(히 7:19)에서 소망의 내용은 '접근'이다. 온전함이란 하나님께 완전히 나아갈 수 있음이다. 그는 이 본문으로 소망의 진위를 가르는 세 등급을 세운다.</p>
+<table>
+<thead>
+<tr>
+<th>소망의 등급</th>
+<th>정체</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>신기루 소망</td>
+<td>실체가 없는 것에 건 기대(설교의 적용: 조상 제사)</td>
+<td>아무것도 이루어지지 않는다</td>
+</tr>
+<tr>
+<td>그림자 소망</td>
+<td>실체를 가리키지만 실체는 아닌 것(구약 제사)</td>
+<td>실체가 오면 물러나야 한다</td>
+</tr>
+<tr>
+<td>실체의 소망</td>
+<td>그리스도 안에서 하나님께 직접 나아감</td>
+<td>언제든 보좌 앞에 설 수 있다</td>
+</tr>
+</tbody>
+</table>
+<p>히브리서 6장 강해에서 그는 내세 소망이 비현실적이라는 통념도 뒤집는다. 행복하게 살겠다는 누구나의 꿈이 이미 잃어버린 에덴을 향한 갈망이라는 것이다. "잘 살고 싶은 마음이 천국소망이다." 천국 소망은 일상의 바람과 다른 종류의 바람이 아니라, 그 바람이 끝까지 가 닿으려는 곳의 이름이다.</p>
+<p>이 대상이 통과해야 하는 마지막 시험이 죽음이다. 문대원 목사는 내일은 나으리라는 기대로 하루를 견디는 삶을 그린 뒤 이렇게 끊는다. "소망을 무너뜨리는 것이 있다. 바로 죽음이다." 죽음을 건너지 못하는 대상은 소망의 대상이 될 수 없고, 베드로가 소망 앞에 '산'이라는 수식어를 붙여 그것을 부활에 묶은 까닭(벧전 1:3)이 여기 있다. 그 논증은 <a class="wl" href="../../t/%EB%B6%80%ED%99%9C/">부활</a>로 넘긴다.</p>
+<h2>2. 소원과 소망 — 바람을 끄지 않고 방향을 잡는다</h2>
+<p>소망의 대상이 인격이라면, 건강과 합격과 화목 같은 수많은 소원은 어떻게 되는가. 권성수 목사는 로마서 4장과 8장 강해에서 이 물음을 욕망 자체를 내려놓아 고통을 끝내려는 길과 나란히 놓고 답한다. 그는 그 길의 현실 진단부터 인정한다. "고통의 현실 분석은 맞다". 갈림은 처방에서 난다. 소원을 없애면 고통도 없다는 길 앞에서 그는 되묻는다. "잘 살려고 하는 것이 잘못된 것인가? 에덴을 회복하려고 하는 것은 정당한 소원이다." 그래서 요약은 짧다. "기독교는 희망을 말한다." 소망은 바라는 능력을 끄지 않는다.</p>
+<p>그러나 같은 설교자가 새해 설교에서는 반대편 경계를 긋는다. 「새해 새 소원」에서 그는 공부를 잘하고 싶고 인정받고 싶은 마음을 건전하다고 한 뒤 덧붙인다. "소원이 문제가 있는 것이 아니다. 지나칠때 문제가 있는 것이다." 그것을 얻지 못했을 때의 반응 — 실망·불평·낙심·좌절·짜증 — 이 소원의 지위를 폭로한다. 좋은 것(a good thing)이 하나님의 자리(god-thing)에 올라선 것이다. 다만 이 판별법은 자기를 살피는 도구이지 남의 낙심을 재는 자가 아니다(9절). 그가 내놓는 교정은 소원의 폐기가 아니라 자리 배치다. "좋은것은 하나님을 즐거워하는 다리이다."</p>
+<p>시편 39편 설교가 인용하는 버나드 쇼의 말은 이 구별에 날을 세운다. 인간의 비극은 둘인데 하나는 소원이 이루어지지 않는 것이고 다른 하나는 이루어지는 것이라는 것이다. 설교자의 주석은 이렇다. "이루어져도 하나님과 접속되어 있지 않으면 비극이다." 빌립보서 1:20 강해는 같은 구별을 '체감 필요의 꿈'과 '실질 필요의 꿈'이라 부른다. 안전과 형통을 바라는 꿈은 정당하되, 살든지 죽든지 그리스도가 존귀하게 되기를 바라는 바울의 '간절한 기대와 소망' 위에 놓일 때 제자리를 얻는다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>소원</th>
+<th>우상이 된 소원</th>
+<th>소망</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>바라는 것</td>
+<td>좋은 것</td>
+<td>좋은 것이 궁극의 자리에 오름</td>
+<td>좋은 것을 주시는 분</td>
+</tr>
+<tr>
+<td>얻지 못했을 때</td>
+<td>아쉬움</td>
+<td>낙심·불평·분노가 삶을 지배</td>
+<td>탄식하되 무너지지 않음</td>
+</tr>
+<tr>
+<td>얻었을 때</td>
+<td>감사</td>
+<td>공허, 더 큰 요구</td>
+<td>주신 분을 즐거워함</td>
+</tr>
+</tbody>
+</table>
+<p>문대원 목사가 우상을 진단하는 세 질문의 마지막도 소망의 언어다 — 기도가 응답되지 않고 희망이 적을 때 어떻게 반응하는가. 소망과 <a class="wl" href="../../t/%EC%9A%B0%EC%83%81%EC%88%AD%EB%B0%B0/">우상숭배</a>는 같은 능력의 두 방향이다. 궁극적 기대가 놓인 자리가 그 사람의 신이다. 그렇다면 올바른 자리에 놓인 소망은 무엇 때문에 한낱 기대와 달리 확실한가.</p>
+<h2>3. 무엇에 근거하는가 — 맹세와 피와 보증</h2>
+<p>문대원 목사는 히브리서 11:1 강해에서 소망의 약점을 숨기지 않고 정의부터 한다. "소망이 무엇인가? = 이루어지기를 바라는데 보장은 없는 상태". 소망이 확실해지는 것은 분명한 보증이 생길 때이며, 신약이 성령을 가리켜 쓰는 아라본(ἀρραβών)이 바로 시장에서 계약할 때 치르는 보증금이다. 그는 이 상업 용어에 한 줄을 보탠다. "세상은 보증금을 내고도 파기하지만, 하나님은 보증하신 후에 파기하지 않으신다."</p>
+<p>히브리서 6:13-20은 이 보증의 구조를 가장 촘촘하게 쌓은 본문이고, 권성수 목사의 「소망, 영혼의 닻」이 그 층을 하나씩 짚는다. 하나님은 아브라함에게 약속하시고 그 위에 맹세를 얹으셨다. 약속과 맹세라는 "두 가지 변하지 못할 사실"(히 6:18)이 소망을 받친다. 여기에 설교자는 십자가를 서명으로 읽는다. "하나님은 자기 아들의 피 도장을 찍으셨다." 마지막 층은 선구자다. 예수께서 휘장 안으로 먼저 들어가셨으므로 약속은 한 사람에게서 이미 실현되었다.</p>
+<table>
+<thead>
+<tr>
+<th>근거</th>
+<th>본문</th>
+<th>설교가 붙인 이미지</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>약속과 맹세</td>
+<td>히 6:13-18</td>
+<td>문서의 최종 서명</td>
+</tr>
+<tr>
+<td>그리스도의 피와 앞서 가심</td>
+<td>히 6:19-20</td>
+<td>피 도장, 먼저 들어간 선구자</td>
+</tr>
+<tr>
+<td>성령</td>
+<td>고후 1:22·5:5, 롬 5:5</td>
+<td>계약금(아라본)</td>
+</tr>
+<tr>
+<td>부활</td>
+<td>벧전 1:3, 롬 4:17</td>
+<td>죽은 자를 살리시고 없는 것을 부르시는 분</td>
+</tr>
+<tr>
+<td>성취된 과거</td>
+<td>히 11:2, 약 5:11</td>
+<td>선진들이 얻은 증거, 욥에게 주신 결말</td>
+</tr>
+</tbody>
+</table>
+<p>마지막 줄은 문대원 목사가 보탠 것이다. 송구영신 설교 「기억하고 기대하라」에서 그는 소망 가운데 인내할 수 있는 조건을 둘로 정리한다 — 믿을 만한 사람이 약속했을 때, 그리고 그 약속이 실제로 성취되는 것을 보았을 때. 소망은 지켜진 약속의 이력을 가진 분을 향한 기대다. 이범수 목사가 베드로전서 1장에서 '산 소망'의 확실성을 거듭남의 수동성에서 찾는 것도 같은 방향이다. "구원은 나로부터가 아니라 하나님으로부터 시작된 것이다. 그래서 확실한 소망이 있다."</p>
+<p>이 근거들은 전부 바라는 사람 바깥에 있다. 헨리 나우웬은 『상처 입은 치유자』에서 소망의 사람이 가진 힘이 자기 인격에 대한 자신감이나 미래에 대한 구체적 기대가 아니라 그가 받은 약속에서 온다고 쓰고, 구체적 결과를 기대하며 소명을 수행하는 것을 모래 위에 집을 짓는 일에 견준다. 히브리서의 닻도 그렇다. 권성수 목사의 풀이대로 "닻은 견고하게 하는 것이다. 소망이 견고하게 한다." 닻은 배 안에 실려 있을 때가 아니라 배 밖 깊은 곳에 박혀 있을 때 배를 붙든다. 소망의 닻이 내려진 곳은 내 마음의 상태가 아니라 "휘장 안"(히 6:19)이다. 이것이 뒤에서 소망이 꺾이는 자리를 읽는 열쇠가 된다.</p>
+<h2>4. 낙관도 비관도 아니다 — 현실을 직시하는 소망</h2>
+<p>근거가 바깥에 있다면, 소망은 눈앞의 형편을 좋게 볼 필요가 없다. 아브라함은 "바랄 수 없는 중에 바라고"(롬 4:18) 믿었고, 바로 다음 절은 그가 백 세 된 자기 몸과 사라의 태가 죽은 것 같음을 '알고도' 약해지지 않았다고 쓴다. 권성수 목사는 이 두 절을 '현실 직시 + 희망 믿음'으로 묶는다. "팩트를 무시 부인 하지 않고 직시 했다." "현실을 무시하고 덮어놓고 믿는 것이 아니다. 현실을 정확하게 보면서 믿는 것이다." 아픈데 아프지 않다고 여기는 것은 믿음이 아니라 현실 부인이다. 에스겔 37장은 이 직시를 더 가혹하게 요구한다. 하나님은 선지자를 뼈 사방으로 지나가게 하셔서 그것이 심히 많고 아주 말랐음을 똑똑히 보게 하신다. 같은 설교자의 말로 "이것을 피하면 안된다". 소망의 말은 마른 뼈를 다 본 사람의 입에서만 나온다.</p>
+<p>그래서 소망은 낙관과 다르다. 크리스토퍼 라이트는 『이것이 너희 신이다』의 끝에서 탐욕과 거짓이 지배하는 듯한 세계를 열거한 뒤 선을 긋는다 — "기독교적 소망은 단순한 낙관주의가 결코 아니었다". 낙관은 상황이 언젠가 나아지리라 상상하지만, 소망은 상황이 더 나빠질 수 있음을 알면서도 하나님이 여전히 다스리시고 선하시며 의로우시다는 것을 안다. 나우웬에게도 소망의 사람은 좌절된 꿈이 저절로 이루어지리라 기대하는 순진한 낙관론자가 아니고, 해 아래 새것이 없다고 되뇌는 염세주의자도 아니다. 주종훈 목사는 쟁기를 잡고 뒤돌아보지 말라는 말씀 앞에서 같은 구별을 한 문장으로 한다. "앞을 본다는 것은 무엇인가? 낙관이 아니다."</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>낙관</th>
+<th>체념(운명론)</th>
+<th>현실 부인</th>
+<th>소망</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>현실을 보는 눈</td>
+<td>밝은 쪽을 본다</td>
+<td>어두운 쪽만 본다</td>
+<td>보지 않는다</td>
+<td>마른 뼈를 끝까지 본다</td>
+</tr>
+<tr>
+<td>기대의 근거</td>
+<td>추세·기질·태도</td>
+<td>없음</td>
+<td>생각의 힘</td>
+<td>약속하신 분</td>
+</tr>
+<tr>
+<td>예측이 빗나갈 때</td>
+<td>무너지거나 더 세게 다짐한다</td>
+<td>그럴 줄 알았다고 한다</td>
+<td>실패를 믿음 부족으로 돌린다</td>
+<td>탄식하며 기다린다</td>
+</tr>
+</tbody>
+</table>
+<p>문대원 목사는 히브리서 11장 강해에서 믿음이 아닌 것 두 가지를 먼저 치운다 — 간절히 원하면 그대로 이루어지리라는 자기 확신, 그리고 상황을 긍정적으로 보면 그대로 되리라는 신념. 공식이 있다면 그것은 신앙이 아니라 마법이고, 마법에는 순종할 인격이 없다. "하나님은 어떤 공식이 아니다."</p>
+<p>그렇다고 이 설교자들이 밝은 태도를 버리는 것은 아니다. 이 점을 놓치면 구별이 정죄로 바뀐다. 문대원 목사는 감사하는 사람이 밝은 면을 보고 밝은 면을 보는 사람이 미래의 소망을 본다고 말하며, 긍정적 사고를 말하는 책들이 감사의 중요성을 일깨운 기여도 인정한다. 권성수 목사는 「태도고도」 연속 설교에서 적극적 태도를 권하며 근거를 이렇게 댄다. "우리는 궁극적인 낙관주의자다. 우주의 왕이 계신다." 다른 자리에서 내놓은 정식은 더 조심스럽다. "비관적 낙관주의, 낙관적 비관주의가 성경적 삶이다." 쟁점은 밝은가 어두운가가 아니라 무엇에 기대어 밝은가, 그 밝음이 언제 완성되는가이다. 번영의 기대가 이 시제를 앞당길 때 생기는 문제는 <a class="wl" href="../../t/%EB%B2%88%EC%98%81%EC%8B%A0%ED%95%99/">번영신학</a>이 '타이밍'의 축으로 다루었다.</p>
+<h2>5. 탄식하며 기다린다 — 값싼 희망과 조급증 사이</h2>
+<p>현실을 끝까지 보는 사람은 탄식하게 된다. 소망의 본문들이 거의 예외 없이 탄식의 본문이기도 한 까닭이다. 시편 42편에서 시인은 눈물을 음식 삼다가 갑자기 "너는 하나님께 소망을 두라"(시 42:5)고 말한다. 배준현 목사는 이 급반전의 앞뒤로 형편이 조금도 달라지지 않았다는 데 주목한다. 달라진 것은 시제다. 도우심이 미래형으로 말해지고, 그래서 그의 정의는 이렇다. "소망을 두는 것은 기다리라는 것이다." 뒤따르는 찬송도 회복된 감정의 노래가 아니라 결심이다. "자신의 마음의 결심을 주님께 올려 드리고 있다." 김희석 교수가 시편 강해에서 보여 주듯 이 후렴은 42편과 43편에 걸쳐 세 번 되풀이된다(42:5, 42:11, 43:5). 소망은 한 번 선언하고 끝나는 결론이 아니라 탄식 사이사이에 거듭 불러야 하는 노래다.</p>
+<p>로마서 8장은 같은 구조를 우주의 규모로 넓힌다. 피조물이 탄식하고 성령의 첫 열매를 받은 이들도 탄식하며, 바로 그 문맥에서 "보이는 소망이 소망이 아니니"(롬 8:24)라는 문장이 나온다. 이상협의 로마서 8장 묵상 「탄식하며 기다리기」는 여기서 탄식과 소망의 관계를 순서로 정리한다.</p>
+<blockquote>
+<p>"새로운 창조는 쉽게 오지 않으며, 오직 비통과 희망을 모두 포괄하는 고통스러운 싸움을 통해서 옵니다. 결국 탄식은 하나님의 새 창조라는 미래로 들어가는 문입니다."</p>
+</blockquote>
+<p>탄식이 문이라면, 문을 건너뛴 소망은 다른 것이 된다. 에마뉘엘 카통골레와 크리스 라이스는 『화해의 제자도』에서 이를 가장 짧게 말한다 — "탄식 없는 화해는 값싼 희망을 만들어 낸다". 두 저자에게 탄식은 절망도 허무한 외침도 아니다. 현실 때문에 고통을 깊이 느낀다는 것 자체가 희망의 신호이며, 그래서 희망을 말하기 전에 먼저 탄식을 배워야 한다. 비노스 라마찬드라가 『오직 고통당하는 하나님만이』에서 옮긴 월터 브루그만의 주장 — 탄식이 절망이 아니라 희망을 낳는다 — 도, 라이트가 전도서에서 악에 대한 분노조차 희망의 신호라고 한 것도 같은 자리에 선다. 아무것도 기대하지 않는 사람은 탄식하지 않는다.</p>
+<p>탄식을 생략하는 것이 한쪽 실패라면, 기다림을 생략하는 것이 다른 쪽 실패다. 알렌 크라이더는 교부들의 인내론을 정리하며 이렇게 쓴다 — "조급증에는 소망이 없다". 바울이 빌립보서 1:20에서 쓴 '간절한 기대'(아포카라도키아)를 권성수 목사는 머리를 들고 목을 내밀어 고대하는 학수고대로 풀고, 그 기다림이 편안한 대기가 아님을 덧붙인다. "아픔을 가지고 기대하는 삶을 살았다." 반대로 소망이 빠진 기다림이 어떤 것인지는 김다위 목사가 나사로 이야기에서 말한다. "기다려도 소망이 없다면, 기다리는 것이 낭비로 느껴진다."</p>
+<p><code>값싼 희망            ←    탄식하며 기다림    →      조급증·체념
+(탄식을 건너뛴 위로)      (롬 8:23-25, 시 42편)      (기다림을 건너뛴 해결, 또는 포기)</code></p>
+<p>탄원시가 탄식에서 신뢰로 건너가는 문법은 <a class="wl" href="../../t/%ED%83%84%EC%9B%90%EC%8B%9C/">탄원시</a>가, 애통이 회복을 향해 방향을 트는 경첩이라는 점은 <a class="wl" href="../../t/%EA%B3%A0%EB%82%9C%EA%B3%BC%ED%9A%8C%EB%B3%B5/">고난과회복</a> 2절이 자세히 다룬다. 여기서 보탤 것은 한 가지다. 소망은 탄식의 반대말이 아니라 탄식을 견디게 하는 시제다.</p>
+<h2>6. 믿음·소망·사랑 — 세 덕의 분업</h2>
+<p>소망은 혼자 서지 않는다. 신약은 이 덕을 거의 언제나 믿음·사랑과 묶어 말한다.</p>
+<p>먼저 믿음이다. 히브리서 11:1은 믿음을 "바라는 것들의 실상"이라 부르는데, 문대원 목사는 이를 '소망하는 것들의 확신'으로 옮기고 요약한다. "믿음 = 미래에 임할 기쁨을 먼저 누리는 것". 소망이 아직 오지 않은 것을 가리킨다면 믿음은 그것을 현재로 당겨 붙든다. 이 정의의 다른 층위는 <a class="wl" href="../../t/%EB%AF%BF%EC%9D%8C/">믿음</a> 1절이 다룬다.</p>
+<p>고린도전서 13:13은 셋에 서열을 준다. 권성수 목사의 정리는 간명하다. "믿음은 과거 지향, 소망은 미래 지향, 사랑은 현재이다." 그리고 이유를 댄다. "믿음과 소망의 목표가 사랑이다." 보이는 날이 오면 믿음과 소망은 제 일을 마치지만 사랑은 남는다는 이 지위는 <a class="wl" href="../../t/%EC%82%AC%EB%9E%91/">사랑</a> 3절이 풀었다. 여기서 눈여겨볼 것은 그 사랑의 목록 안에 소망이 동사로 들어 있다는 점이다. 사랑은 "모든 것을 바라며"(고전 13:7). 문대원 목사는 이 동사를 사람을 향한 소망으로 읽는다. "상대방을 향한 소망을 포기하지 않는다는 것이다." 그것은 지금의 모습이 아니라 은혜로 달라질 모습을 미리 보는 일이다. 그가 로마서 15장으로 부부에게 전한 설교도 같은 연결을 쓴다. "용납을 지속하기 위해서는 소망의 하나님이 주시는 은혜가 필요하다." 사람에 대한 소망을 접는 순간 용납은 체념으로, 사랑은 관리로 바뀐다.</p>
+<p>데살로니가전서 1:3은 세 덕에 저마다 노동의 이름을 붙인다.</p>
+<table>
+<thead>
+<tr>
+<th>덕</th>
+<th>향하는 때(권성수)</th>
+<th>살전 1:3의 노동</th>
+<th>소망과의 관계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>믿음</td>
+<td>과거 — 이미 하신 일</td>
+<td>역사(일함)</td>
+<td>바라는 것에 실상을 준다</td>
+</tr>
+<tr>
+<td>소망</td>
+<td>미래 — 하실 일</td>
+<td>인내(버팀)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>사랑</td>
+<td>현재 — 지금 할 일</td>
+<td>수고(애씀)</td>
+<td>소망이 향하는 목표이며, 사람을 향해 바란다</td>
+</tr>
+</tbody>
+</table>
+<p>문대원 목사는 '소망의 인내'를 "다시 오실 주님을 기대하면서 복음을 전하는 것이다"라고 풀었다. 여기서 소망과 인내의 순서가 로마서 5장과 뒤집힌다. 로마서 5:3-4의 사슬에서 소망은 환난·인내·연단의 끝에 맺히는 열매이고, 권성수 목사의 표현대로 "소망도 오는 것"이다. 데살로니가전서에서는 소망이 인내를 낳는 뿌리다. 문대원 목사의 예가 이 방향을 선명하게 한다. 군 복무를 견디게 하는 것은 제대 날짜다. "제대 날짜가 없다면 어떨까? 견디기 어렵다." 두 본문을 겹치면 순환이 된다. 소망이 견딜 이유를 주고, 견딤이 연단을 거쳐 소망을 깊게 한다. 소망이 없으면 인내는 시작되지 않고, 인내를 지나지 않은 소망은 아직 검증되지 않았다. 견딤의 구체적 기술은 <a class="wl" href="../../t/%EC%9D%B8%EB%82%B4/">인내</a>로 넘긴다.</p>
+<h2>7. 소망은 어떻게 자라는가 — 말씀·기억·성령</h2>
+<p>소망이 '오는 것'이라면 그것은 결심으로 짜낼 수 있는 감정이 아니다. 그렇다고 손 놓고 기다릴 것도 아니다. 소망이 들어오는 통로는 꽤 구체적으로 지목된다.</p>
+<p>첫째는 말씀이다. 성경이 기록된 목적은 "인내로 또는 성경의 위로로 소망을 가지게 함이니라"(롬 15:4). 권성수 목사는 이 절에서 순서를 읽어 낸다. "교훈이 정확해야 위로를 받고 위로를 받으면 인내가 생기고 소망이 생긴다." 위로는 정확한 가르침에서 나오고, 소망은 그 위로를 거쳐 온다. 이 통로의 일상적 형태는 <a class="wl" href="../../t/%EB%A7%90%EC%94%80%EB%AC%B5%EC%83%81/">말씀묵상</a>이 다룬다.</p>
+<p>둘째는 기억이다. 문대원 목사의 「기억하고 기대하라」는 제목이 곧 논지다. "불확실한 미래가 두렵다면 과거를 기억해야 한다. 그러면 기대할 수 있다. 소망을 가질 수 있다." 역대상 16장 강해에서 그는 잊지 말아야 할 과거를 둘로 꼽는다 — 하나님이 행하신 일과 하나님이 주신 약속. 요나서 2장 강해는 이것을 가장 낮은 자리에서 확인한다. 물고기 뱃속에서 요나는 여호와를 '생각했다'(자카르, 기억했다). "구원과 약속을 기억하는 것은 너무나 중요한 일이다. 소망을 가지고 기도할 수 있다." 탄식이 찬양으로 넘어가는 동력이 환경의 변화가 아니라 기억의 회복이라는 <a class="wl" href="../../t/%ED%83%84%EC%9B%90%EC%8B%9C/">탄원시</a> 5절의 관찰과 정확히 겹친다.</p>
+<p>셋째는 성령이다. 바울의 기도는 소망의 출처를 사람의 의지 바깥에 둔다 — "성령의 능력으로 소망이 넘치게 하시기를 원하노라"(롬 15:13). 문대원 목사는 눈앞의 일이 잘 안 되면 소망이 왔다 갔다 하는 까닭을 여기서 찾는다. "성령충만이 소망의 근원이다." 3절에서 본 보증금이 바로 이분이다. <a class="wl" href="../../t/%EC%84%B1%EB%A0%B9/">성령</a>은 소망의 근거이면서 소망을 실제로 불어넣는 분이다.</p>
+<p>넷째는 사람과 공동체다. 윤명숙 전도사는 시편 71:5-6에서 다윗의 소망이 어디서 왔는지를 묻고 경험이라고 답한다. "절망에 있을때 소망을 주시는 분이 하나님이라는 것도 다윗은 알았다." 그래서 경고는 자녀 세대를 향한다. "하나님과의 경험이 없으면 교회를 떠날 수 밖에 없다." 정태기는 『위기 목회 상담』에서 이 형성의 가장 이른 층을 짚는다. 아기의 울음은 희망이며, 거기에 응답이 돌아오는 경험이 쌓일 때 신뢰가 자리 잡는다. 소망은 약속의 말만이 아니라 응답받은 경험으로 배운다 — <a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EC%A0%84%EC%88%98/">신앙전수</a>와 <a class="wl" href="../../t/%EB%8B%A4%EC%9D%8C%EC%84%B8%EB%8C%80/">다음세대</a>가 이어받을 대목이다. 크리스토퍼 라이트는 여기에 공동 <a class="wl" href="../../t/%EC%98%88%EB%B0%B0/">예배</a>를 더한다. 악인의 형통 앞에서 흔들리던 시편 73편의 시인이 관점을 되찾은 곳도 성소였다.</p>
+<h2>8. 소망이 오늘을 바꾼다 — 허리띠, 부지런함, 경계 넘기</h2>
+<p>미래를 향한 덕이 현재를 비워 버린다는 의심은 오래되었다. 그러나 소망의 명령문은 거의 언제나 현재형 동사를 달고 나온다.</p>
+<p>베드로전서 1:13은 '온전히 바라라'는 명령 앞에 두 개의 준비 동작을 세운다 — "마음의 허리를 동이고 근신하여"(벧전 1:13). 문대원 목사는 첫째 것을 유월절 밤의 차림으로 읽는다. 허리에 띠를 띠는 것은 즉시 움직일 채비를 하는 것이다. "소망이 있으면 당장 실천을 생각하게 된다." 둘째 것, 근신은 술 취하지 않음이다. 힘든 현실을 잠시 잊으려는 취함은 "소망없는 사람들의 도피이다". 소망은 현실을 똑바로 보고도 압도당하지 않게 한다.</p>
+<p>히브리서 6:11-12는 소망을 나태의 맞은편에 놓는다. 문대원 목사는 나태를 선을 향한 의욕과 하나님을 향한 사랑을 잃은 무기력으로 정의하고, 거기서 나오는 첫걸음으로 약속의 소망을 붙드는 일을 꼽는다. "우리에게 소망의 풍성함이 있을 때 부지런하게 살 수 있다." 소망은 내 미래가 달라질 수 있다는 믿음에서 오고, 그 믿음의 근거는 은혜가 사람을 바꿀 수 있다는 것이다. "그래서 운명주의로 살아가지 않는다." 이 논리를 따르면 부지런함은 의지력의 문제이기 전에 바랄 것이 있느냐의 문제다.</p>
+<p>권성수 목사는 재림을 다루며 정직한 질문을 던진다. "희망인가 부담인가? 부담이 더 크지 않는가?" 소망이 부담으로 느껴진다면 그것은 이 세상을 낙원으로 착각하고 있다는 신호다. 그 소망이 거룩을 밀어붙이는 논리(요일 3:3)와, 내세를 가장 많이 생각한 이들이 현세에 가장 크게 기여했다는 C. S. 루이스의 관찰은 <a class="wl" href="../../t/%EC%A2%85%EB%A7%90%EB%A1%A0/">종말론</a> 2절과 8절이 다루었다. 히브리서 강해에서 그는 방향을 하나 더 보탠다. 소망의 닻이 들어간 "휘장 안"(6:19)과 그리스도가 고난받으신 "영문 밖"(13:12-13)이 한 편지 안에 있다. "이 2가지를 같이 기억해야 한다." 휘장 안에서 은혜를 누린 사람이 영문 밖 시련의 현장에서 사명을 진다.</p>
+<p>이 바깥 방향을 선교의 언어로 옮긴 것이 레슬리 뉴비긴이다. 그는 『오픈 시크릿』에서 선교를 '행동하는 소망'이라 정의해도 좋다고 쓴다. 크라이더가 그린 초기 교회는 소망을 논쟁이 아니라 선한 일로 표현했고, 그 낯선 삶이 사람들로 하여금 까닭을 묻게 했다. 베드로전서 3:15가 변증의 출발점을 "소망에 관한 이유를 묻는 자"(벧전 3:15)에 두는 것은 그래서다. 질문은 소망이 삶으로 보일 때 생긴다.</p>
+<p>카통골레와 라이스는 그 행동의 방향과 한계를 함께 적는다. 기독교적 희망은 이방인과 적이 친구가 되는 것이며, 새 창조의 이름으로 경계선을 넘는다. 그러나 궁극적 희망을 인간의 행동에 두라는 유혹 앞에서는 모든 것을 내려놓고 안식과 찬양의 시간을 가질 때 오히려 더 깊은 희망이 솟는다. 라마찬드라가 가까운 소망은 우리의 행동에도 달려 있으나 궁극적 소망은 오직 하나님의 약속에 서 있다고 한 구별이 이 균형의 뼈대이며, 둘을 함께 붙드는 교회의 자세는 <a class="wl" href="../../t/%EA%B3%A0%EB%82%9C/">고난</a> 9절이 다루었다.</p>
+<p>소망은 끝으로 건네지는 것이다. 권성수 목사는 '소망의 하나님'을 본문으로 한 송구영신 설교를 이 구호로 맺는다. "절망의 통로가 아니라 소망의 통로!" 문대원 목사는 그것을 <a class="wl" href="../../t/%EB%A6%AC%EB%8D%94%EC%8B%AD/">리더십</a>의 정의로 삼는다. "미래에 대한 소망을 주는 것이 리더의 역할이다."</p>
+<h2>9. 소망이 꺾이는 자리 — 살 소망까지 끊어지고</h2>
+<p>여기까지만 읽으면 소망은 잘 관리하면 유지되는 자산처럼 보인다. 그러나 성경은 소망이 끊어지는 경험을 숨기지 않으며, 그것을 겪은 사람을 실패자로 부르지도 않는다.</p>
+<p>바울은 아시아에서 "살 소망까지 끊어지고"(고후 1:8) 사형 선고를 받은 줄 알았다고 썼다. 권성수 목사는 이 고백을 본능적 반응이라 이름 붙이고 변호한다. "바울도 이런 반응을 보이고 있다. 사람이기 때문에 이런 반응이 일어난다." 사도에게서 소망이 끊어졌다면 그것은 믿음의 등급 문제가 아니다(<a class="wl" href="../../t/%EB%AF%BF%EC%9D%8C/">믿음</a> 6절). 엠마오로 가던 두 제자는 소망을 과거형으로 말한다 — "우리는 이 사람이 이스라엘을 속량할 자라고 바랐노라"(눅 24:21). 문대원 목사는 이들에게서 책망할 거리를 찾지 않는다. "소망이 더디 이루어지게 되면 우리 마음이 상하게 된다." 본문에서 예수는 설명보다 먼저 다가와 함께 걷고, 가르치기 전에 무슨 이야기를 하고 있었느냐고 묻는다. "소망을 잃어버린 자들에게 찾아오셨다." 꺾인 소망을 먼저 만나는 것은 교정이 아니라 동행이다.</p>
+<p>시편 42편의 시인은 낙심하고 불안해한다. 배준현 목사는 두 단어를 절망하여 엎드린 상태와 탄식 섞인 중얼거림으로 풀고, 그 원인 하나를 이렇게 적는다. "계시다는 것은 아는데 안 느껴진다." 그는 이 상태를 불신앙으로 분류하지 않고 아브라함과 요셉과 모세와 다윗과 엘리야를 불러 세운다. 스물다섯 해를 기다리다 이스마엘을 낳은 사람도, 미친 체까지 한 사람도 불안의 과정을 지났다. "아직 끝나지 않았기 때문에 불안한 것이다." 불안과 낙심은 소망이 없다는 증거가 아니라 이야기가 아직 중간이라는 표지다(<a class="wl" href="../../t/%EB%B6%88%EC%95%88/">불안</a>).</p>
+<p>에스겔 37장은 한 걸음 더 나아간다. 골짜기의 뼈들은 스스로 소망하지 않는다. 박성훈 목사는 이 환상을 꿈과 희망까지 포기 목록에 올리는 세대의 초상 곁에 놓고, 소망 없이 살아가던 포로 이스라엘에게 다시 희망을 바라보게 하려는 말씀으로 읽는다. 이 뼈들이 살겠느냐는 물음에 에스겔은 긍정도 부정도 하지 않는다. "주 여호와여 주께서 아시나이다"(겔 37:3). 낙관도 비관도 아닌 이 위탁이 소망의 가장 낮은 형태다. 권성수 목사의 말로는 "절망을 희망으로 바꾸는 것은 하나님의 손에 있다". 살아나는 일은 뼈들의 각오에서 시작되지 않고, 누군가 그들에게 말씀을 대언하고 생기가 불어오는 데서 시작된다.</p>
+<p>나우웬은 이 대목을 목회의 장면으로 옮긴다. 『상처 입은 치유자』 3장의 제목은 '소망 없는 사람을 위한 사역'이다. 수술을 앞두고 죽음도 다시 살 일도 두려워하던 환자 앞에서, 찾아간 신학생은 가혹한 현실을 부드러운 말로 바꾸어 비켜 갔다. 나우웬이 보기에 필요했던 것은 삶과 죽음 양쪽에서 그를 기다려 주는 한마디 — "나는 당신을 기다리고 있겠습니다" — 였다. 소망은 때로 내 안에서 길어 올리는 것이 아니라 나를 기다려 주는 사람에게서 건너온다.</p>
+<p>이 자료들이 한목소리로 지키는 선이 있다. 절망과 깊은 낙심을 소망의 결핍으로 판정하지 않는다는 것이다. 시편 42편의 "소망을 두라"는 남이 고통 중인 사람에게 내리는 이인칭 명령이 아니라 시인이 자기 영혼에게 건네는 말이며, 그 말조차 세 번을 되풀이해야 했다. 3절의 닻은 배의 흔들림을 없애지 않는다. 다만 떠내려가지 않게 한다. 소망의 느낌이 바닥났을 때에도 닻은 내 느낌이 아니라 휘장 안에 내려져 있다. 그래서 꺾인 자리에서 할 일은 느낌을 끌어올리는 것이 아니라, 엠마오의 제자들처럼 곁에 온 분에게 있었던 일을 말하고, 에스겔처럼 주께서 아신다고 말하고, 누군가의 기다림을 받는 것이다. 좌절의 원인별 처방은 <a class="wl" href="../../t/%EC%9D%B8%EB%82%B4/">인내</a> 8절이, 자기 영혼에게 말을 거는 자기 설교의 실제는 <a class="wl" href="../../t/%EA%B8%B0%EC%81%A8/">기쁨</a> 5절이, 꺾인 마음이 쓸 수 있는 기도의 언어는 <a class="wl" href="../../t/%ED%83%84%EC%9B%90%EC%8B%9C/">탄원시</a>가 맡는다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li><strong>소망의 목적어는 인격이다.</strong> 성경은 소망을 사물이 아니라 하나님께 '둔다'. 실망은 소망이 없어서가 아니라 둘 수 없는 곳에 두어서 생긴다.</li>
+<li><strong>소망은 바라는 능력을 끄지 않고 방향을 잡는다.</strong> 소원은 정당하다. 그것이 궁극의 자리에 오를 때 우상이 되고, 얻지 못했을 때의 반응이 그 지위를 드러낸다.</li>
+<li><strong>소망의 근거는 전부 바라는 사람 바깥에 있다.</strong> 약속과 맹세, 그리스도의 피, 성령이라는 보증금. 닻은 배 안이 아니라 휘장 안에 박혀 있다.</li>
+<li><strong>소망은 낙관이 아니다.</strong> 낙관은 형편이 나아지리라 상상하고, 소망은 더 나빠질 수 있음을 알면서 약속하신 분을 바란다. 밝은 태도 자체가 문제는 아니다 — 문제는 근거와 시제다.</li>
+<li><strong>탄식을 건너뛴 희망은 값싸고, 기다림을 건너뛴 희망은 조급하다.</strong> 소망은 탄식의 반대말이 아니라 탄식을 견디게 하는 시제다.</li>
+<li><strong>소망과 인내는 순환하고, 사랑은 사람을 향해 바란다.</strong> 소망이 견딜 이유를 주고 견딤이 소망을 깊게 한다. 사람에 대한 소망을 접으면 용납은 체념이 된다.</li>
+<li><strong>소망은 '오는 것'이며, 꺾이는 것은 정상적 경험이다.</strong> 말씀·기억·성령·공동체를 통해 오고, 바울에게서도 끊어졌다. 꺾인 소망을 먼저 만나는 것은 교정이 아니라 동행이다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>영적 낙심과 임상적 우울은 어디서 구별되고 어디서 겹치는가. 낙심을 정죄하지 않는다는 데까지는 분명하지만, 치료가 필요한 상태를 가르는 기준은 자료에 없다.</li>
+<li>적극적 태도를 권하는 설교와 낙관을 경계하는 설교가 같은 강단에서 나온다. 둘을 근거(약속)와 시제(종말)로 가르는 정리는 충분한가.</li>
+<li>가까운 소망과 궁극적 소망 사이의 거리는 얼마인가. 병의 회복·관계의 화해·사회의 정의를 어디까지 구체적으로 바라도 되며, 이루어지지 않았을 때 궁극적 소망은 어떤 식으로 남는가.</li>
+<li>구약의 소망 어휘(기다리다·바라다로 옮겨지는 히브리어 낱말들)와 신약의 엘피스는 어떻게 이어지는가. 원어 차원의 정리는 아직 자료가 얇다.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EB%AF%BF%EC%9D%8C/">믿음</a> — 바라는 것들의 실상(1절). 살 소망이 끊어진 자리의 신앙적 반응(6절).</li>
+<li><a class="wl" href="../../t/%EC%82%AC%EB%9E%91/">사랑</a> — 믿음과 소망의 목표. 사랑이 끝까지 남는 지위(3절).</li>
+<li><a class="wl" href="../../t/%EC%9D%B8%EB%82%B4/">인내</a> — 환난에서 소망까지의 사슬(3절), 종말이 오늘을 견디게 함(5절), 좌절의 처방(8절).</li>
+<li><a class="wl" href="../../t/%EC%A2%85%EB%A7%90%EB%A1%A0/">종말론</a> · <a class="wl" href="../../t/%EB%B6%80%ED%99%9C/">부활</a> · <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EB%82%98%EB%9D%BC/">하나님나라</a> — 소망이 바라는 미래의 내용.</li>
+<li><a class="wl" href="../../t/%EA%B3%A0%EB%82%9C/">고난</a> · <a class="wl" href="../../t/%EA%B3%A0%EB%82%9C%EA%B3%BC%ED%9A%8C%EB%B3%B5/">고난과회복</a> — 가까운 소망과 궁극적 소망(고난 9절), 애통에서 소망으로(고난과회복 2절).</li>
+<li><a class="wl" href="../../t/%ED%83%84%EC%9B%90%EC%8B%9C/">탄원시</a> · <a class="wl" href="../../t/%EA%B8%B0%EC%81%A8/">기쁨</a> — 탄식에서 신뢰로 건너가는 문법, 시편 42편의 자기 설교.</li>
+<li><a class="wl" href="../../t/%EB%B2%88%EC%98%81%EC%8B%A0%ED%95%99/">번영신학</a> · <a class="wl" href="../../t/%EC%9A%B0%EC%83%81%EC%88%AD%EB%B0%B0/">우상숭배</a> — 소망의 시제를 앞당길 때와 소망의 자리를 잘못 둘 때.</li>
+<li><a class="wl" href="../../t/%EB%B6%88%EC%95%88/">불안</a> · <a class="wl" href="../../t/%EC%84%B1%EB%8F%84%EC%9D%98%EA%B2%AC%EC%9D%B8/">성도의견인</a> · <a class="wl" href="../../t/%EA%B9%A8%EC%96%B4%EC%9E%88%EC%9D%8C/">깨어있음</a> — 과정 중의 불안, 견인, 기다리는 태도.</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EB%A0%B9/">성령</a> · <a class="wl" href="../../t/%EB%A7%90%EC%94%80%EB%AC%B5%EC%83%81/">말씀묵상</a> · <a class="wl" href="../../t/%EC%98%88%EB%B0%B0/">예배</a> · <a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EC%A0%84%EC%88%98/">신앙전수</a> · <a class="wl" href="../../t/%EB%8B%A4%EC%9D%8C%EC%84%B8%EB%8C%80/">다음세대</a> — 소망이 들어오고 전해지는 통로.</li>
+<li><a class="wl" href="../../t/%EB%A6%AC%EB%8D%94%EC%8B%AD/">리더십</a> · <a class="wl" href="../../t/%ED%99%94%ED%95%B4/">화해</a> · <a class="wl" href="../../t/%EC%84%A0%EA%B5%90/">선교</a> — 소망이 행동이 되는 자리.</li>
+<li><span class="wl-dead" title="위키 내부 링크">롬4</span> · <span class="wl-dead" title="위키 내부 링크">롬5</span> · <span class="wl-dead" title="위키 내부 링크">롬8</span> · <span class="wl-dead" title="위키 내부 링크">롬15</span> · <span class="wl-dead" title="위키 내부 링크">히6</span> · <span class="wl-dead" title="위키 내부 링크">히7</span> · <span class="wl-dead" title="위키 내부 링크">히11</span> · <span class="wl-dead" title="위키 내부 링크">벧전1</span> · <span class="wl-dead" title="위키 내부 링크">벧전3</span> · <span class="wl-dead" title="위키 내부 링크">시39</span> · <span class="wl-dead" title="위키 내부 링크">시42</span> · <span class="wl-dead" title="위키 내부 링크">겔37</span> · <span class="wl-dead" title="위키 내부 링크">골1</span> · <span class="wl-dead" title="위키 내부 링크">살전1</span> · <span class="wl-dead" title="위키 내부 링크">고전13</span> · <span class="wl-dead" title="위키 내부 링크">고후1</span> · <span class="wl-dead" title="위키 내부 링크">눅24</span> — 소망 본문 허브.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2015_그리스도우리의희망</span></td>
+<td>설교(권성수, 골 1:27)</td>
+<td>그리스도 자신이 영광의 소망, 희망이 있으면 산다</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2015_새해새소원</span></td>
+<td>설교(권성수, 벧전 1:13-15)</td>
+<td>소원과 지나친 소원, 반응으로 가리는 우상</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2016_그림자인생벅찬희망</span></td>
+<td>설교(권성수, 시 39:4-7)</td>
+<td>이루어져도 비극인 소원</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2017_성경의위로와소망</span></td>
+<td>설교(권성수, 롬 15:1-6)</td>
+<td>교훈→위로→소망</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">소망, 영혼의 닻</span></td>
+<td>설교(권성수, 히 6:13-20)</td>
+<td>맹세·피 도장·선구자, 닻, 휘장 안과 영문 밖</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2017_더나은소망</span> · <span class="wl-dead" title="위키 내부 링크">2017_예수께집중하라</span></td>
+<td>설교(권성수, 히 7장·3장)</td>
+<td>신기루·그림자·실체의 소망, 예수가 진짜 소망</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2019-12_소망의하나님</span></td>
+<td>설교(권성수, 롬 15:12-13)</td>
+<td>소망의 통로</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2020_역전신앙고난영광</span></td>
+<td>설교(권성수, 롬 8:18-25)</td>
+<td>욕망 제거의 길과의 대조, 정당한 소원</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">태도고도_05_인생카메라의초점</span></td>
+<td>설교(권성수, 롬 4:17-25)</td>
+<td>현실 직시 + 희망 믿음</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2019_베스트</span></td>
+<td>설교(권성수, 겔 37:1-10)</td>
+<td>마른 뼈를 직시하게 하심</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2021-01_새해새꿈그리스도만세</span></td>
+<td>설교(권성수, 빌 1:12-21)</td>
+<td>체감 필요·실질 필요의 꿈, 아포카라도키아</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">교제_05_재림희망과도전</span></td>
+<td>설교(권성수, 요일 2:28-3:3)</td>
+<td>재림이 희망인가 부담인가</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2020_사랑의묘약3</span> · <span class="wl-dead" title="위키 내부 링크">2020_재난본능적반응신앙적반응</span> · <span class="wl-dead" title="위키 내부 링크">태도고도_04_세상이문제냐내가문제냐</span> · <span class="wl-dead" title="위키 내부 링크">12보석_11_환희의사역자</span> · <span class="wl-dead" title="위키 내부 링크">2019_고통을인내</span></td>
+<td>설교(권성수)</td>
+<td>세 덕의 시제, 살 소망이 끊어진 바울, 궁극적 낙관주의</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2021_한번도가보지않은길</span></td>
+<td>설교(문대원, 히 11:1-2)</td>
+<td>소망의 정의와 보증(아라본), 믿음이 아닌 것</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2022_기억하고기대하라</span></td>
+<td>설교(문대원, 약 5:7-11)</td>
+<td>소망 가운데 인내하는 두 조건, 기억에서 기대로</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2023_내마음의그늘4_나태</span></td>
+<td>설교(문대원, 히 6:9-12)</td>
+<td>소망의 풍성함과 부지런함</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2025_나그네영성2_한낮에꿈꾸는사람</span></td>
+<td>설교(문대원, 벧전 1:13-21)</td>
+<td>소망을 그분에게 고정, 허리띠와 근신</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2024_뜨거운가슴으로맞는새해</span></td>
+<td>설교(문대원, 눅 24:13-35)</td>
+<td>엠마오의 꺾인 소망과 동행</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2025_옳은실패1_실패에대한새로운관점</span> · <span class="wl-dead" title="위키 내부 링크">2023_겸손과긍정으로가는길</span> · <span class="wl-dead" title="위키 내부 링크">2024_리더를키우는리더</span> · <span class="wl-dead" title="위키 내부 링크">2022_모든믿는자의본이되는교회</span> · <span class="wl-dead" title="위키 내부 링크">2024_혼자서는사랑을배울수없다</span> · <span class="wl-dead" title="위키 내부 링크">2026-05-24_내인생의증인</span></td>
+<td>설교(문대원)</td>
+<td>기억과 소망, 소망의 인내, 사람을 향한 소망, 성령과 소망</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2022_IAM5_죽음앞에무력한세상을향해</span> · <span class="wl-dead" title="위키 내부 링크">2026_우리가사랑한우상들8_배신의아픔</span></td>
+<td>설교(문대원)</td>
+<td>죽음이라는 시험대, 우상 진단 질문</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2016_딛2장11-14</span> · <span class="wl-dead" title="위키 내부 링크">2014_에젤수련회3</span></td>
+<td>설교(윤명숙)</td>
+<td>실망의 원인과 복스러운 소망, 경험으로 배운 소망</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">너는 하나님께 소망을 두라</span></td>
+<td>설교(배준현, 시 42:1-5)</td>
+<td>급반전의 해부, 소망=기다림, 과정 중의 불안</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">절망의 골짜기에 희망의 바람이 불다</span></td>
+<td>설교(박성훈, 겔 37:1-10)</td>
+<td>포기하는 세대와 마른 뼈</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2025_이범수_산_소망과_전인격적_구원</span> · <span class="wl-dead" title="위키 내부 링크">2024_김다위_예수님의_사랑이_의심될_때</span> · <span class="wl-dead" title="위키 내부 링크">2025_주종훈_그리스도의_부르심을_향한_반응</span></td>
+<td>설교(이범수·김다위·주종훈)</td>
+<td>확실한 소망의 출처, 소망 없는 기다림, 낙관이 아닌 따름</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">탄식하며 기다리기</span></td>
+<td>묵상(이상협, 롬 8:22-27)</td>
+<td>탄식은 새 창조로 들어가는 문</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">시편 제2권 강해</span></td>
+<td>강의(김희석)</td>
+<td>시 42-43편 후렴의 세 번 반복</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%ED%99%94%ED%95%B4%EC%9D%98%EC%A0%9C%EC%9E%90%EB%8F%84_%EC%B9%B4%ED%86%B5%EA%B3%A8%EB%A0%88%EB%9D%BC%EC%9D%B4%EC%8A%A4/">화해의제자도_카통골레라이스</a> · <a class="wl" href="../../b/%EC%98%A4%EC%A7%81%EA%B3%A0%ED%86%B5%EB%8B%B9%ED%95%98%EB%8A%94%ED%95%98%EB%82%98%EB%8B%98%EB%A7%8C%EC%9D%B4_%EB%B9%84%EB%85%B8%EC%8A%A4%EB%9D%BC%EB%A7%88%EC%B0%AC%EB%93%9C%EB%9D%BC/">오직고통당하는하나님만이_비노스라마찬드라</a></td>
+<td>책</td>
+<td>값싼 희망과 탄식의 훈련, 가까운 소망과 궁극적 소망</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%83%81%EC%B2%98%EC%9E%85%EC%9D%80%EC%B9%98%EC%9C%A0%EC%9E%90_%ED%97%A8%EB%A6%AC%EB%82%98%EC%9A%B0%EC%9B%AC/">상처입은치유자_헨리나우웬</a> · <a class="wl" href="../../b/%EC%9D%B4%EA%B2%83%EC%9D%B4%EB%84%88%ED%9D%AC%EC%8B%A0%EC%9D%B4%EB%8B%A4_%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%86%A0%ED%8D%BC%EB%9D%BC%EC%9D%B4%ED%8A%B8/">이것이너희신이다_크리스토퍼라이트</a> · <a class="wl" href="../../b/%EC%A0%84%EB%8F%84%EC%84%9C_%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%86%A0%ED%8D%BC%EB%9D%BC%EC%9D%B4%ED%8A%B8/">전도서_크리스토퍼라이트</a></td>
+<td>책</td>
+<td>소망의 사람과 기다려 주는 사람, 소망과 낙관주의의 구별</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EA%B8%B8%EC%9D%98%EC%98%81%EC%84%B1_%EB%8D%B0%EC%9D%B4%EB%B9%84%EB%93%9C%EB%B3%B4%EC%89%AC/">길의영성_데이비드보쉬</a> · <a class="wl" href="../../b/%EC%98%A4%ED%94%88%EC%8B%9C%ED%81%AC%EB%A6%BF_%EB%A0%88%EC%8A%AC%EB%A6%AC%EB%89%B4%EB%B9%84%EA%B8%B4/">오픈시크릿_레슬리뉴비긴</a> · <a class="wl" href="../../b/%EC%B4%88%EA%B8%B0%EA%B5%90%ED%9A%8C%EC%9D%98%EC%9D%B8%EB%82%B4%EC%99%80%EB%B0%9C%ED%9A%A8_%ED%81%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/">초기교회의인내와발효_크라이더</a> · <a class="wl" href="../../b/%EC%9C%84%EA%B8%B0%EB%AA%A9%ED%9A%8C%EC%83%81%EB%8B%B4_%EC%A0%95%ED%83%9C%EA%B8%B0/">위기목회상담_정태기</a></td>
+<td>책</td>
+<td>일상어의 소망, 행동하는 소망, 조급증, 응답받은 희망</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/실천신학</span><span>#topic/소망</span><span>#topic/희망</span><span>#topic/탄식</span><span>#topic/믿음소망사랑</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

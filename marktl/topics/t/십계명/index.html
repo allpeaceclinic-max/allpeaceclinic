@@ -1,0 +1,544 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>십계명 — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-t">성경·해석</span><span class="date">2026-10-02</span></div>
+  <h1 class="note-title">십계명</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>십계명은 하나님이 시내산에서 이스라엘 온 회중에게 직접 말씀하시고 두 돌판에 새겨 주신 열 가지 말씀이다(<span class="wl-dead" title="위키 내부 링크">출 20:1-17</span>, <span class="wl-dead" title="위키 내부 링크">신 5:6-21</span>). <span class="wl-dead" title="위키 내부 링크">권성수</span> 목사는 이 사건의 무게를 한 문장에 담는다 — 하나님이 "강림하셔서 직접 육성으로 말씀하신 것을 직접 손가락으로 두 돌판에 기록하셨다". 오경에 두 번 실렸고, 언약궤 안에 보관되었으며, 뒤따르는 법 조항들이 세부 지침으로 풀어내는 포괄적 원리다. 김지찬의 표현을 빌리면 언약의 정신을 담은 헌법과 같다.</p>
+<p>그러나 열 가지 말씀은 열 개의 금지 조항으로만 읽히는 순간 본래의 모습을 잃는다. 이 말씀에는 서문이 있고, 두 돌판이라는 구조가 있으며, 처음과 끝이 나머지를 붙드는 짜임이 있다. 율법이라는 범주의 신학과 세 용도는 <a class="wl" href="../../t/%EC%9C%A8%EB%B2%95/">율법</a>·<a class="wl" href="../../t/%EC%9C%A8%EB%B2%95%EA%B3%BC%EB%B3%B5%EC%9D%8C/">율법과복음</a>에, 언약 체결의 사건과 조약 양식은 <a class="wl" href="../../t/%EC%8B%9C%EB%82%B4%EC%82%B0%EC%96%B8%EC%95%BD/">시내산언약</a>·<a class="wl" href="../../t/%EC%96%B8%EC%95%BD/">언약</a>에 넘기고, 이 글은 십계명 자체에 머문다 — 서문이 정하는 순서, 두 돌판의 구조, 계명 하나하나의 뜻과 오늘 갈라지는 적용.</p>
+<p>뼈대는 권성수 목사가 출애굽기 20장을 열일곱 편으로 강해한 '웰빙&amp;힐링 십계' 연속 설교이며, <span class="wl-dead" title="위키 내부 링크">문대원</span> 목사와 <span class="wl-dead" title="위키 내부 링크">윤명숙</span> 전도사의 설교, 구약학 과제와 몇 권의 책이 다른 각도의 빛을 보탠다. 판단이 갈리는 대목은 누구의 판단인지 밝혀 나란히 놓는다.</p>
+<h2>1. 서문 — 열 가지 말씀은 구원의 선언으로 시작한다</h2>
+<p>십계명의 첫 문장은 명령이 아니다. "나는 너를 애굽 땅, 종 되었던 집에서 인도하여 낸 네 하나님 여호와니라"(출 20:2). 계명은 3절부터다. 이 순서가 열 계명 전체의 해석 열쇠라는 데 자료들은 한목소리를 낸다. 권성수 목사는 십계명이 "이미 해방된 자유인들에게 주신것"이며 "자유를 더 누리게 하기 위해 주신 것"이라 하고, 문대원 목사는 고대 근동 조약의 다섯 요소 가운데 "가장 중요한 것은 역사적 선언이다"라고 짚은 뒤 그 선언을 둘로 푼다 — 나는 너의 하나님이다, 나는 너를 구원했다. 윤명숙 전도사의 메모는 더 짧다. 십계명을 받는 이들은 "구속한 백성(이미 구원 받은 백성)"이다.</p>
+<p>구약학 과제들도 같은 자리에 선다. 이상협의 구약개론 리서치페이퍼는 시내산의 논리를 "율법을 지켜야 너희가 내 백성이 된다는 것이 아니라" 이미 구원했으니 받으라는 것으로 정리하고, 성경해석학 과제는 출애굽이 율법 수여보다 앞선다는 사실에서 이 순서는 뒤집힐 수 없으며 구원이 복종에 앞선다고 결론짓는다. 구약개론 강의 메모는 실천적 함의를 한 줄로 적는다. "먼저 기억해야 지킬 수 있다."</p>
+<p><span class="wl-dead" title="위키 내부 링크">레슬리뉴비긴</span>은 같은 관찰을 십계명에 대한 흔한 불평 앞에 놓는다. 십계명이 부정적이라는 비판에 그는 서두의 대명제가 더할 나위 없이 긍정적이라고 답한다. 다른 신들은 형통과 쾌락을 약속하지만 너희를 사랑하지 않는다, 너희를 구해 낸 이는 나다 — 그러니 다른 신을 따르지 말라는 것이다. 첫 계명은 금지이기 전에 사랑한 이의 목소리다. 서문을 떼어 내면 열 계명은 누가 말하는지 알 수 없는 규칙 목록이 되고, 붙여 읽으면 구원받은 백성의 생활 방식이 된다. 권 목사가 십계명을 쌍방·역사적 배경·규정·상벌이라는 언약의 네 요소로 읽는 것도 같은 뜻이다.</p>
+<h2>2. 울타리 — '하지 말라'는 말이 자유를 지킨다</h2>
+<p>서문 다음에 오는 것이 대부분 금지형이라는 사실은 여전히 설명을 요구한다. 문대원 목사의 계산으로 열 계명은 "8개가 부정, 2개가 긍정명령이다". 왜 하나님은 구원받은 백성에게 '하지 말라'로 말씀하시는가.</p>
+<p>뉴비긴의 답은 금지형이 오히려 자유를 준다는 것이다. 긍정 명령은 상황마다 할 일을 정확히 지시하므로 여지를 남기지 않지만, 부정 명령은 한계만 긋고 그 안을 통째로 열어 둔다. 그는 이를 학교 놀이터의 울타리에 견준다. 윤명숙 전도사는 야고보서의 '자유의 율법'(약 2:12)을 강해하며 거의 같은 그림을 쓴다 — 율법은 "여기까지만 안전하게 노세요 하는 곳이다". 설교의 은유들은 이 울타리를 여러 이름으로 부른다.</p>
+<table>
+<thead>
+<tr>
+<th>은유</th>
+<th>출처</th>
+<th>십계명이 하는 일</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>정면충돌 방지 대책</td>
+<td>권성수 「웰빙&amp;힐링의 비결」</td>
+<td>역주행하면 망하게 되어 있는 길에서 파국을 막는다</td>
+</tr>
+<tr>
+<td>안전벨트·네비게이션</td>
+<td>권성수 「언약적 효도」</td>
+<td>쇠고랑이 아니라 풀어 주고 잘 살게 한다</td>
+</tr>
+<tr>
+<td>놀이터의 울타리</td>
+<td>뉴비긴 『성경 한 걸음』</td>
+<td>한계 안에서 마음껏 놀게 한다</td>
+</tr>
+<tr>
+<td>진단 장치 겸 보호의 울타리</td>
+<td>제닝스 『뇌, 하나님의 설계』</td>
+<td>온전히 치유될 때까지 결함을 드러내고 지킨다</td>
+</tr>
+</tbody>
+</table>
+<p>공통 근거는 신명기의 한 구절이다. 모세는 계명을 "네 행복을 위하여"(신 10:13) 주신 것이라 말하고, 두 목사는 각각 이 본문으로 「행복 십계명」과 「행복을 위한 계명」을 설교했다. 권 목사의 연속 설교 제목 '웰빙&amp;힐링'도 여기서 나온다.</p>
+<blockquote>
+<p>"지뢰밭 같은 인생, 그것을 피하는 것이 십계명이다." — 권성수, 「행복 십계명」</p>
+</blockquote>
+<p>그는 한 걸음 더 나아가 "불신자도 지키면 더 잘 살수 있다. 물론 구원은 아니지만"이라고 말한다. 윤명숙 전도사도 같은 편에 선다. "풍성함을 누리게 하기 위해 주신 것이 율법, 십계명이다."</p>
+<p>다만 울타리는 바닥이지 천장이 아니다. 문대원 목사는 "십계명 = 죄에 대한 최소한의 기준"이라 하고, 선을 행할 줄 알고도 행하지 않는 죄(약 4:17)를 최대한의 기준으로 맞세운다. 간음하지 않았다고 좋은 배우자가 되는 것은 아니다. 이 간격은 9절에서 다시 본다.</p>
+<h2>3. 두 돌판 — 열 계명의 지형</h2>
+<p>십계명은 한 장이 아니라 두 돌판이다. 첫째 돌판은 하나님을 향하고 둘째 돌판은 이웃을 향한다. 권성수 목사의 말로 하나님은 팔만대장경을 주신 것이 아니라 율법을 하나님 사랑과 이웃 사랑으로 단순화해 주셨고, 예수께서 온 율법의 강령을 두 계명으로 요약하신 것(<span class="wl-dead" title="위키 내부 링크">마 22:37-40</span>)은 이 두 돌판의 심장을 드러낸 것이다. 권 목사는 첫째 돌판을 다시 예배의 네 측면 — 대상·방법·언어·날 — 으로 읽는다. 아래 표는 열 계명과 강해가 무게를 실은 자리, 이 글에서 다루는 곳을 한눈에 놓은 것이다.</p>
+<table>
+<thead>
+<tr>
+<th>계명</th>
+<th>겨누는 것</th>
+<th>강해가 힘을 실은 곳</th>
+<th>이 글</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 다른 신을 두지 말라</td>
+<td>예배의 대상</td>
+<td>마음의 최우선, 유일성의 변증</td>
+<td>4·5절</td>
+</tr>
+<tr>
+<td>2 우상을 만들지 말라</td>
+<td>예배의 방법</td>
+<td>형상과 우상의 구별, 조상 제사</td>
+<td>5절</td>
+</tr>
+<tr>
+<td>3 이름을 망령되게 부르지 말라</td>
+<td>예배의 언어</td>
+<td>이름의 오용, 서원과 서약</td>
+<td>5절</td>
+</tr>
+<tr>
+<td>4 안식일을 거룩하게 지키라</td>
+<td>예배의 날</td>
+<td>창조·구원의 기념, 주일</td>
+<td>6절</td>
+</tr>
+<tr>
+<td>5 부모를 공경하라</td>
+<td>권위와 질서</td>
+<td>약속 있는 첫 계명, 자녀의 상처</td>
+<td>6절</td>
+</tr>
+<tr>
+<td>6 살인하지 말라</td>
+<td>생명</td>
+<td>마음의 살인, 낙태·안락사, 사형·전쟁</td>
+<td>7절</td>
+</tr>
+<tr>
+<td>7 간음하지 말라</td>
+<td>결혼 언약</td>
+<td>창조 질서, 이혼과 재혼</td>
+<td>7절</td>
+</tr>
+<tr>
+<td>8 도둑질하지 말라</td>
+<td>소유와 노동</td>
+<td>일곱 가지 도둑질, 부와 가난</td>
+<td>8절</td>
+</tr>
+<tr>
+<td>9 거짓 증거하지 말라</td>
+<td>진실</td>
+<td>규범·상황·실존의 세 시각</td>
+<td>8절</td>
+</tr>
+<tr>
+<td>10 탐내지 말라</td>
+<td>마음</td>
+<td>욕구와 탐욕의 경계, 자족</td>
+<td>4절</td>
+</tr>
+</tbody>
+</table>
+<p>열 계명을 어디서 나누고 어떻게 세느냐는 자료 안에서도 한 가지가 아니다. 권성수·윤명숙·문대원은 1~4계명과 5~10계명으로 나눈다. 권 목사의 말로는 앞의 넷이 천륜이고 "인륜의 맨 처음이 네 부모를 공경하라 이다". 이상협의 가정사역 강의는 제5계명을 두 돌판 사이의 연결 고리로 본다 — 부모 공경이 하나님에 관한 계명 쪽 돌판에 함께 놓여 하나님 공경과 이어진다는 것이다. 번호 매김도 전통마다 다르다. 권 목사는 가톨릭의 십계명 목록을 옮겨 적으며, 형상 금지가 독립된 계명으로 서지 않고 탐심의 계명이 둘로 나뉘어 있음을 지적하고 이를 제2계명의 삭제로 평가한다. 그 전통의 자기 설명은 손에 든 자료에 없으므로 여기서는 권 목사의 평가를 기록하는 데서 멈춘다.</p>
+<p>어떻게 세든 구조의 논리는 같다. 수직이 수평을 낳고, 열 계명은 흩어진 조항이 아니라 한 그물이다.</p>
+<h2>4. 처음과 끝 — 제1계명과 제10계명이 나머지를 붙든다</h2>
+<p>십계명의 첫 계명과 마지막 계명은 둘 다 행위가 아니라 마음을 겨눈다. 그리고 자료들은 이 두 계명을 각각 나머지 전체의 뿌리로 지목한다.</p>
+<p>권성수 목사는 일터 연속 설교에서 왜 우상 금지가 첫 계명이냐고 묻고 답한다 — "첫 계명을 범하지 않고는 다른 계명들을 범하지 않기 때문". 사람이 거짓말하는 것은 성공이 순종보다 귀하다고 여기기 때문이다. <a class="wl" href="../../b/%EC%9D%BC%EA%B3%BC%EC%98%81%EC%84%B1_%ED%8C%80%EC%BC%88%EB%9F%AC/">팀 켈러</a>가 루터에게서 가져온 통찰도 같다. 첫 계명을 지키면 나머지를 어길 일이 없고, 거짓말이라는 죄 밑바닥에는 더 근원적인 우상숭배가 깔려 있다. 이상협의 부모교육 강의안은 이 통찰을 변화의 원리로 옮긴다. "4-10계명을 어길때는 반드시 1-3계명을 먼저 어기게 되어 있다" — 수직 관계가 무너질 때 수평의 죄가 시작되므로 행동을 고치려면 관계의 회복이 먼저다. 권 목사가 제1계명 강해에서 묻는 것도 행위가 아니라 마음의 주인이다. "마음을 가장 많이 빼앗는 것이 우상이다."</p>
+<p>제10계명 쪽의 논리는 대칭을 이룬다.</p>
+<blockquote>
+<p>"모든 계명의 뿌리는 탐욕이다. 탐욕이 있으면 하나님보다 돈이나, 자식을 앞세운다." — 권성수, 「제10계명」</p>
+</blockquote>
+<p>겉으로 흠 없던 바울이 걸려 넘어진 계명도 이것이었다고 그는 다른 설교에서 덧붙인다. 그렇다고 모든 욕망이 죄는 아니다. 그는 욕구와 탐욕을 가르는 선을 말씀의 선에 두고 — 돈을 많이 벌겠다는 것은 탐욕이 아니지만 가짜 영수증은 선을 넘은 것이다 — 모든 욕망을 끊으라는 가르침과 구별한다. "욕망이 큰게 문제가 아니고 방향이 문제이다." 처방은 회개와 마음 지킴, 감사와 자족, 그리스도와의 동행이다. 문대원 목사는 탐심 설교를 탐심은 우상숭배(골 3:5)라는 바울의 말 위에 세운다.</p>
+<p>여기서 원이 닫힌다. 탐심이 우상숭배라면 제10계명을 어기는 것은 이미 제1계명을 어긴 것이다. 그 사이의 여덟 계명은 이 한 뿌리가 예배와 가정과 생명과 성과 소유와 말에서 어떤 얼굴로 나타나는지를 보여 준다. 윤명숙 전도사가 성적 타락을 두고 "7계명을 범하게 되면 모든 계명을 다 범하게 된다"고 한 것, 야고보가 하나를 범하면 모두를 범한 것이라 한 것(약 2:10)은 같은 그물을 다른 매듭에서 당겨 본 것이다. 마음의 우상에 대한 상세는 <a class="wl" href="../../t/%EC%9A%B0%EC%83%81%EC%88%AD%EB%B0%B0/">우상숭배</a>에 있다.</p>
+<h2>5. 첫째 돌판 — 누구를, 어떻게, 어떤 이름으로</h2>
+<p><strong>대상.</strong> 권성수 목사에 따르면 제1계명의 명령은 생각·관심·비전·열정의 최우선 자리에 여호와를 두라는 것이고, 금지는 보이든 보이지 않든 다른 신을 두지 말라는 것이다. 그는 이 계명을 종교다원주의 앞에 세워 한 편을 따로 설교했다. 그리스도의 유일성은 편협이 아니라 정답이고, 다툼이 아니라 참 평화의 근거이며, 타협할 것이 아니라 지킬 것이라는 세 대구가 골격이고, 결론은 지키되 사랑으로 지킨다는 것이다(<a class="wl" href="../../t/%EB%B3%80%EC%A6%9D%ED%95%99/">변증학</a>).</p>
+<p><strong>방법.</strong> 제2계명에서 두 설교자의 강조점이 갈린다. 권 목사는 "부족한 예배는 받으시지만, 틀린 예배는 받지 않으신다"는 전제 위에서, 금지된 것은 형상 일반이 아니라 섬김의 대상으로 삼는 형상이라고 본다. 놋뱀도 예표로 주어진 형상이었고, 형상 자체가 죄라면 조각가는 모두 우상 제조자가 된다. "형상을 정죄하신 것이 아니고 우상을 정죄하신 것이다." 문대원 목사는 신명기 4장에서 금지의 초점을 다르게 잡는다. "여기서 말하는 형상은 다른 신의 형상이 아니다. 하나님의 형상이다." 이스라엘만 신상이 없었던 까닭은 형상화가 창조주를 피조 세계의 일부로 끌어내리기 때문이다. 그는 성상이 예배에 유익하다는 가톨릭의 주장과 이를 비판한 종교개혁자들을 함께 소개하고 말씀 중심의 예배 편에 선다. 두 독법은 충돌하지 않는다. 하나는 예술과 예표의 자리를 지키고, 다른 하나는 하나님을 그려 내려는 시도 자체를 겨눈다.</p>
+<p>권 목사는 제2계명 둘째 편을 조상 제사에 할애했다. 그의 판단으로 제사는 기원과 순서로 보아 종교 행위이며 우상숭배다. 효도는 살아 계신 부모에게 하는 것이고, 고인의 삶을 기억하고 나누는 추모는 좋으나 예배는 하나님께 드리는 것이다. 그는 제사를 문화 의례로 보아 허용하는 입장을 소개하고 반박한다. 같은 물음이 선교 현장에서는 복음과 문화의 경계 문제로 다시 열린다(<a class="wl" href="../../t/%EC%83%81%ED%99%A9%ED%99%94/">상황화</a>).</p>
+<p><strong>이름.</strong> 권 목사는 제3계명의 '망령되게 부르다'에 쓰인 동사를 지니고 다닌다는 뜻으로 풀고, 여호와의 이름이 주권과 계시와 임재를 담는다고 설명한다. 오용의 세 형태는 마술적 사용·거짓 예언·거짓 맹세다. 신자는 "여호와 하나님의 로고를 달고 사는 것"이어서 삶이 그 이름의 평판을 만든다. 윤명숙 전도사는 이 계명을 상호(商號)에까지 가져간다. 간판에 성경의 이름을 걸었다면 속이지 말라.</p>
+<p>서원과 서약은 이 계명의 적용이다. 권 목사는 도무지 맹세하지 말라는 말씀(마 5:34)을 문맥으로 읽어 헛맹세의 금지로 이해한다. 율법이 맹세를 명한 자리가 있고 예수도 맹세 아래 답하셨기 때문이다. 반면 <a class="wl" href="../../b/%EC%B4%88%EA%B8%B0%EA%B5%90%ED%9A%8C%EC%9D%98%EC%9D%B8%EB%82%B4%EC%99%80%EB%B0%9C%ED%9A%A8_%ED%81%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/">크라이더</a>가 그린 초기 교회의 생활 규범에는 그리스도인이 맹세하지 않는다는 항목이 진실함의 표지로 들어 있다. 두 독법이 만나는 자리는 권 목사의 마지막 권면이다 — 서약이 필요 없을 만큼 신실하게 살라. "예 하면 인감도장찍은거 보다 확실해야 한다." 죄가 되는 서원은 입다의 경우처럼 지키지 말아야 하고, 죄가 아닌 서원은 손해가 되어도 지킨다.</p>
+<h2>6. 두 개의 '하라' — 안식일과 부모 공경</h2>
+<p>열 계명 가운데 긍정형은 둘뿐이고, 그 둘이 두 돌판의 이음매에 나란히 놓여 있다. 윤명숙 전도사는 십계명 교육의 요약본을 이 둘로 잡는다. 하나님과의 관계는 안식일 계명, 사람과의 관계는 부모 공경이며 "이것만 잘 지킨다면 모든 다른 것이 가능해 진다".</p>
+<p><strong>제4계명.</strong> 안식의 신학 — 창조와 해방이라는 두 근거, 예수와 안식일, 남아 있는 안식 — 은 <a class="wl" href="../../t/%EC%95%88%EC%8B%9D/">안식</a>이 다룬다. 계명으로서 여기서 볼 것은 세 가지다. 첫째, 문대원 목사가 짚듯 이것이 첫 번째 긍정 명령이며, 금지보다 넓고 포괄적이어서 더 어렵다. 그는 십계명 전체를 "노예 근성을 버리고 참된 자유인으로 살기위한 지침"으로 읽고 그 중심에 이 계명을 둔다. "안식일은 하나님이 하나님 되시게 하는 날이다." 둘째, 날의 문제다. 권성수 목사는 안식일이 주일로 옮겨진 것을 안식일의 주인이라는 예수의 선언(막 2:28), 부활의 날인 주의 날(계 1:10), 사도들이 첫날에 모인 기록(행 20:7)으로 논증한다. 셋째, 지키는 방식이다. 권 목사 자신이 이 물음의 답이 "교회,교단,목사, 신학자 마다 다르다"고 인정하고 시작한다. 그의 답은 본질에 충실하라는 것이다. 엿새를 힘써 일하고, 하루를 구별해 쉬고 예배하며, 불가피한 일과 선행은 예외다.</p>
+<p>일터 사역자 <a class="wl" href="../../b/%EC%A7%81%EC%9E%A5%EC%9D%B8%EC%9D%B4%EB%9D%BC%EB%A9%B4%EB%8B%A4%EB%8B%88%EC%97%98%EC%B2%98%EB%9F%BC/">원용일</a>은 주일 성수가 의무이자 특권이지만 율법적인 짐은 아니라고 말하고, 책임이 걸린 주일 근무를 성실히 감당하는 것도 그리스도인의 모습일 수 있다고 본다. <span class="wl-dead" title="위키 내부 링크">간호사 누가회원을 조사한 한 연구</span>에서는 규칙적으로 주일 예배를 드리지 못하는 이가 절반에 가까웠고 가장 큰 이유는 근무 일정이었다. 문대원 목사는 주일 성수를 강조하면서 도덕적 기준은 낮은 교회의 현실을 지적하고, 주일 성수 같은 계명이 "모두 사랑하기 위해 주신 계명이다"라고 목적을 환기한다. 최창용 목사는 이 계명의 잘 보이지 않던 수혜자를 찾아낸다. 종과 가축과 문 안의 객까지 쉬게 하라는 조항에는 나그네를 향한 하나님의 배려가 있다(<a class="wl" href="../../t/%EC%9D%B4%EC%A3%BC%EB%AF%BC%EC%84%A0%EA%B5%90/">이주민선교</a>).</p>
+<p><strong>제5계명.</strong> 바울은 이 계명을 "약속이 있는 첫 계명"(엡 6:2)이라 부른다. 권성수 목사는 제2계명에도 약속이 있지 않느냐는 물음에, 그것은 율법 전체에 걸린 약속이고 특정 계명에 직접 붙은 약속은 이것이 처음이라고 답한다. 그가 이 계명에서 읽는 것은 권위다. 권위가 없으면 무질서가 오고 "권위의 질서 속에서 자유가 있다". 문대원 목사도 가정을 순종을 배우는 첫 자리로 보고, 윤명숙 전도사는 아이들에게 보이는 아버지를 공경하는 일이 보이지 않는 분을 공경하는 학교라고 가르친다(<a class="wl" href="../../t/%EA%B2%BD%EC%99%B8/">경외</a>).</p>
+<p>그런데 권 목사의 설교는 중간에서 방향을 튼다. 경건하기로 이름난 목회자의 딸이 아버지에게 받은 상처를 책으로 쓴 사례를 들고 그는 이렇게 말한다.</p>
+<blockquote>
+<p>"무엇보다 먼저 상처가 해결되어야 한다. 자녀의 대못을 뽑아내지 않고 하면 안된다." — 권성수, 「아! 아하! 하하!」</p>
+</blockquote>
+<p>자녀는 부모답지 못한 부모라도 공경해야 하지만 "부모의 입장에서는 자녀의 상처를 헤아려야 한다". 바울이 계명 바로 뒤에 자녀를 노엽게 하지 말라고 덧붙인 것(엡 6:4)과 같은 균형이며, 문 목사도 "사랑과 공감 없는 훈육은 자녀에게 쓴 마음을 갖게 한다"고 경고한다. 순종에는 한계도 있다. 권 목사는 '주 안에서'라는 단서에 주목해, 신앙을 버리라는 요구는 부드럽게 거절할 수밖에 없고, 결혼한 자녀는 부모를 봉양하되 지시에 따를 의무는 없다고 구별한다. 공경의 모양과 약속, 늙은 부모, 떠남, 상처 입은 자녀의 물음은 <a class="wl" href="../../t/%EB%B6%80%EB%AA%A8%EA%B3%B5%EA%B2%BD/">부모공경</a>이, 권위와 순종의 문법은 <a class="wl" href="../../t/%EA%B6%8C%EC%9C%84/">권위</a>·<a class="wl" href="../../t/%EC%88%9C%EC%A2%85/">순종</a>이, 가정에서의 전수는 <a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EC%A0%84%EC%88%98/">신앙전수</a>가 잇는다.</p>
+<h2>7. 생명과 언약 — 제6·7계명과 갈라지는 적용</h2>
+<p>둘째 돌판의 중심부는 생명과 결혼을 지킨다. 원칙은 단순하고 적용은 갈린다.</p>
+<p><strong>제6계명.</strong> 권성수 목사는 먼저 계명의 범위를 좁힌다. 여기 쓰인 동사는 "악한 생각을 가지고 고의적으로 미리 계획하고 사람을 죽이는 것"을 가리키며, 정당방위·과실치사·심판의 집행은 해당하지 않는다고 그는 본다. 그다음 범위를 넓힌다. 예수의 해석을 따라 욕설과 차별의 말, 미움과 분노가 살인의 테두리 안으로 들어온다(<a class="wl" href="../../t/%EB%B6%84%EB%85%B8/">분노</a>). 근거는 생명이 창조주의 것이라는 한 가지다.</p>
+<table>
+<thead>
+<tr>
+<th>쟁점</th>
+<th>권성수·문대원 설교의 판단</th>
+<th>자료 안의 다른 목소리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>전쟁</td>
+<td>정당한 전쟁은 가능하되 마지막 수단이다. 문대원은 방어·비례·정당한 권위를 조건으로 들고, 권성수는 임박한 공격에 대한 선제 대응까지 포함한다</td>
+<td>헤이스는 정당 전쟁 전통을 버려야 한다고 본다. 크라이더가 그린 초기 교회의 규범에는 죽이지 않는다는 항목이 있다</td>
+</tr>
+<tr>
+<td>사형</td>
+<td>국가는 칼의 권세를 위임받았다(롬 13:4). 용서와 형벌은 별개다</td>
+<td>크라이더는 사법과 전투에서의 살인이 허용된 것을 4세기의 전환으로 서술한다</td>
+</tr>
+<tr>
+<td>낙태</td>
+<td>금지하되 산모의 생명이 위협받는 경우는 예외로 둔다(권성수)</td>
+<td><a class="wl" href="../../t/%EC%83%9D%EB%AA%85%EC%9C%A4%EB%A6%AC/">생명윤리</a>는 태아의 생명과 임신한 여성의 고통이라는 두 우려를 함께 듣는다</td>
+</tr>
+<tr>
+<td>안락사</td>
+<td>금지하되 죽어 가는 이를 떠나보내는 문제는 "굉장히 신중해야 하는 부분"으로 남겨 둔다(권성수)</td>
+<td>같은 페이지가 자율성과 존엄의 긴장, 완화의료를 다룬다</td>
+</tr>
+</tbody>
+</table>
+<p>전쟁에 대한 두 전통은 서로를 가장 강한 형태로 읽어야 한다. 정당 전쟁의 논리는 사랑이 이웃을 지킬 책임을 포함한다는 데서 나온다. 문대원 목사는 산상수훈을 완성될 하나님 나라의 모습으로 보고, 타락한 세상에서는 공격당하는 이를 보호할 책임이 있다고 말한다. 평화주의의 논리는 십자가가 예수의 방식이었다는 데서 나온다. 이상협의 <a class="wl" href="../../b/%EC%8B%A0%EC%95%BD%EC%9D%98%EC%9C%A4%EB%A6%AC%EC%A0%81%EB%B9%84%EC%A0%84_%ED%97%A4%EC%9D%B4%EC%8A%A4/">『신약의 윤리적 비전』</a> 발제는 요더의 입장을 메시아적 폭력을 거부하고 고난을 따르는 공동체로 요약한다. 한쪽은 지켜야 할 생명을, 다른 쪽은 취할 수 없는 생명을 먼저 본다. 권 목사도 둘째 편을 형벌이나 전쟁으로 끝내지 않고, 사형수가 형장에서 찬송을 부른 간증과 복음이 들어가자 부족 간의 싸움이 그친 선교지 이야기로 닫는다.</p>
+<p><strong>제7계명.</strong> 권성수 목사는 이 계명을 창조 질서에서 시작한다. 성은 하나님의 복이고 "성 자체를 죄악시 하면 안된다". 문제는 결혼의 테두리다. 결혼은 하나님이 증인이 되신 언약이며(말 2:14), 그는 간음을 혼전을 포함해 그 테두리 밖의 모든 성관계로 넓게 정의한다. 문대원 목사도 같은 구절로 결혼을 계약이 아닌 언약으로 풀고(<a class="wl" href="../../t/%EA%B2%B0%ED%98%BC/">결혼</a>), 윤명숙 전도사는 성을 생육과 친밀과 기쁨을 위한 선물로 그린 뒤 그 선물이 테두리를 벗어날 때의 파괴력을 경고한다.</p>
+<p>둘째 편에서 그는 한 몸 원리에 어긋나는 것으로 일부다처·매춘·동성 간 성관계·근친상간·음욕을 들고, 이것들이 용서받지 못할 죄는 아니며 회복의 길이 있다고 맺는다. 문 목사의 윤리 설교도 같은 판단에 서되 정죄와 배척이 목적은 아니라고 덧붙인다. 이 목록에서 오늘 해석이 가장 첨예하게 갈리는 항목에 대해 <span class="wl-dead" title="위키 내부 링크">전성민</span> 교수의 구약윤리 강의는 결론보다 태도를 먼저 묻는다. 모든 본문은 해석을 통과하며 "해석하지 않겠다면 내 해석을 옳게 보는 것이다". 선한 동기로도 다른 해석에 이를 수 있는데 현실에서는 "토론이 되어야 하는데, 싸움이 일어난다". 규범의 명확성을 붙드는 설교와 해석의 겸손을 요청하는 강의는 같은 교회 안의 두 목소리이며, 방법론은 <a class="wl" href="../../t/%EA%B5%AC%EC%95%BD%EC%9C%A4%EB%A6%AC/">구약윤리</a>가 다룬다.</p>
+<p>이혼과 재혼에서 권 목사는 모세·예수·바울의 본문을 차례로 읽어 간통과 버림을 정당한 사유로 보되, 이혼은 허용이지 명령이 아니라고 말한다. 폭력 같은 다른 사유는 한 장로교단의 결정과 별거를 권하는 견해를 나란히 소개하고 결론을 내리지 않는다. 그리고 복음으로 닫는다. 형벌이 끝이 아니듯 "이혼도 끝이 아니다".</p>
+<h2>8. 소유와 진실 — 제8·9계명</h2>
+<p><strong>제8계명.</strong> 도둑질 금지는 훔칠 수 있는 '남의 것'이 있다는 전제 위에 선다. 권성수 목사에 따르면 모든 것은 하나님의 것이고, 하나님은 "청지기적 관리 차원에서 사유재산을 인정하셨다". 문대원 목사도 이 계명에서 나와 상대의 소유가 구별된다는 것을 읽고, <a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%84%EC%98%81%ED%99%94%EB%A1%AD%EA%B2%8C%ED%95%98%EB%8A%94%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4_%EA%B7%B8%EB%A3%A8%EB%8E%80/">그루뎀</a>은 소유가 하나님의 주권을 닮는 길이자 청지기로서 책임지는 자리라고 본다. 둘째 전제는 노동과 나눔이다. 바울은 도둑에게 훔치지 말라고만 하지 않고 제 손으로 일해 가난한 자에게 나누라고 한다(엡 4:28). 이 위에서 권 목사는 도둑질의 목록을 일곱으로 넓힌다 — 재물, 제때 주지 않는 품삯, 희년에 돌려주지 않는 토지와 투기의 불로소득, 속이는 저울, 사람을 납치하고 파는 일, 남에게 가야 할 존경을 가로채는 일, 종교로 돈을 버는 일. 그리고 십일조(말 3:8)로 소유권의 고백을 묻는다.</p>
+<p>경제 제도에 대한 그의 평가는 양쪽을 향한다. 사유재산을 부정하는 체제는 인간의 탐욕을 계산하지 않았다고 비판하고, 이어 "민주주의 자본주의도 문제가 있다"고, 성장과 분배 사이에서 "어느 정권도 완벽하지 않다. 상대적인 것이다"라고 말한다. 둘째 편의 구호도 대칭이다. "부자를 정죄하거나 빈자를 무시하지 말라." 부는 언약의 복이자 근면의 열매일 수 있지만 나누어야 하며, 안식년의 탕감·이삭줍기·무이자 대여 같은 성경의 가난 대책은 굶는 이가 없게 하려는 것이다. 문대원 목사의 경제윤리 설교도 같은 균형을 잡는다. "성경은 결과적 평등을 이야기 하지 않는다." 그러나 품삯을 미루는 착취와 구조적 불의는 하나님의 뜻이 아니다. <a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%B4%EB%83%90%EB%8F%88%EC%9D%B4%EB%83%90_%EC%9E%90%EB%81%84%EC%97%98%EB%A5%84/">자끄 엘륄</a>은 방향이 다르다. 그는 첫째 계명에서 이미 부자가 되려는 성향 자체에 대한 회의를 읽는다. 소유의 정당성을 먼저 말하는 목소리와 소유의 위험을 먼저 말하는 목소리가 같은 돌판 아래 함께 있다(<a class="wl" href="../../t/%EC%B2%AD%EC%A7%80%EA%B8%B0/">청지기</a>·<a class="wl" href="../../t/%ED%9D%AC%EB%85%84/">희년</a>·<a class="wl" href="../../t/%EA%B5%AC%EC%A0%9C/">구제</a>).</p>
+<p><strong>제9계명.</strong> 권성수 목사는 이 계명을 규범·상황·실존의 세 시각으로 다룬다(<a class="wl" href="../../t/%EC%82%BC%EC%A4%91%EA%B4%80%EC%A0%90/">삼중관점</a>). 규범의 시각에서 그는 거짓말을 정의한다 — "거짓이라고 믿는 것을 말이나 글로 옳다고 하는 것". 그러므로 침묵, 실수, 비유와 소설, 과장법은 거짓말이 아니다. 다른 설교에서 그는 정직을 우직함이나 모든 것을 드러내는 투명성과 구별한다(<a class="wl" href="../../t/%EC%A0%95%EC%A7%81/">정직</a>). 계명의 이유는 하나님이 진실하시고, 예수는 침묵하실지언정 거짓말하지 않으셨으며, 거짓말은 관계를 깬다는 것이다.</p>
+<p>상황의 시각에서 시험대는 라합이다. 권 목사는 정상 참작과 전투의 위장은 인정하되 사랑을 기준으로 거짓말을 허용하는 <a class="wl" href="../../t/%EC%83%81%ED%99%A9%EC%9C%A4%EB%A6%AC/">상황 윤리</a>는 거부하고, 라합을 "우리의 모델로 삼으면 안된다"고 말한다. "성경에서 거짓말을 칭찬한 경우는 없다." 권할 길은 침묵과 에두른 대답, 그리고 결과를 하나님께 맡기는 것이다. 문대원 목사는 같은 본문에서 다른 데 무게를 둔다. 성경이 라합의 행동을 믿음(히 11:31)과 의로운 행함(약 2:25)으로 평가한다는 사실, 바로를 속인 히브리 산파들의 경우를 들어, 두 규범이 충돌할 때 결정적인 것은 절대자 하나님에 대한 신앙이라고 본다. 두 설교는 같은 틀을 쓰고 똑같이 상황 윤리를 거부하면서도, 생명을 지키려는 거짓말이라는 고전적 난제에서는 한 걸음씩 다른 자리에 선다.</p>
+<p>실존의 시각에서 권 목사는 계명을 자기에게 돌린다. "진실하게 살면 마음이 편하다. 떳떳하다. 이것이 힐링이다."</p>
+<h2>9. 그리스도와 열 계명 — 지키라고 주신 것인가</h2>
+<p>십계명 앞에 선 사람이 결국 묻는 것은 이것을 지킬 수 있느냐다. 답은 한 가지가 아니다. 권성수 목사는 낙관에서 출발한다. 그는 첫 편에서 십계명을 큰 소리로 읽기보다 집에 가서 지키라는 일화를 들고, 신명기 30장 설교에서는 말씀이 가까워 "네가 이를 행할 수 있느니라"(신 30:14)는 본문을 붙든다. 단, 스스로 지키려 하면 쇠고랑이고 은혜 안에서는 쉽다는 단서가 붙는다. 박재은 교수는 반대편에서 출발한다. 미워하면 살인이고 음욕을 품으면 간음이라면 이 계명들은 "지키라고 준 것인가? 아니다". 기준이 하나님 자신이므로 사람은 지킬 수 없고, 율법을 깊이 들여다보면 대신 지켜 완성하신 분이 보인다. 문대원 목사는 셋째 자리에 선다. 십계명은 최소한의 기준이며, 그것을 지키고 암송한다고 온전함에 이르는 것이 아니라 그리스도와의 전인격적 관계 안에 거할 때 이른다.</p>
+<p>세 목소리의 차이는 율법의 기능 가운데 무엇을 앞세우느냐의 차이다. 권 목사는 솔로몬 강해에서 도덕법의 핵심을 십계명이라 하고 그 용도를 죄의 정죄, 죄의 억제, 삶의 기준으로 정리한다(<a class="wl" href="../../t/%EC%9C%A8%EB%B2%95%EA%B3%BC%EB%B3%B5%EC%9D%8C/">율법과복음</a>). 박 교수는 첫째를, 권 목사의 웰빙 강해는 둘째와 셋째를 앞세운 셈이다. 세 목소리는 그리스도에게서 만난다. 권 목사는 첫 편에서 예수를 십계명의 표준이요 완성이요 성취라 하고, 열 계명을 하나씩 그리스도께로 돌려 읽는다.</p>
+<table>
+<thead>
+<tr>
+<th>계명</th>
+<th>그리스도 안에서의 지향</th>
+<th>붙인 본문</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>주 예수를 경배하라</td>
+<td>요 10:30</td>
+</tr>
+<tr>
+<td>2</td>
+<td>예수의 형상 외에 다른 형상을 섬기지 말라</td>
+<td>히 1:3</td>
+</tr>
+<tr>
+<td>3</td>
+<td>예수의 이름을 헛되이 부르지 말라</td>
+<td>빌 2:10-11</td>
+</tr>
+<tr>
+<td>4</td>
+<td>예수 안에서 안식을 누리라</td>
+<td>마 11:28</td>
+</tr>
+<tr>
+<td>5</td>
+<td>가족으로 삼아 주신 예수를 공경하라</td>
+<td>엡 2:19</td>
+</tr>
+<tr>
+<td>6</td>
+<td>생명이신 예수를 존경하라</td>
+<td>요 10:10</td>
+</tr>
+<tr>
+<td>7</td>
+<td>신랑이신 예수께 정조를 지키라</td>
+<td>엡 5:23</td>
+</tr>
+<tr>
+<td>8</td>
+<td>예수를 재산의 원천으로 삼으라</td>
+<td>롬 8:7(메모의 표기)</td>
+</tr>
+<tr>
+<td>9</td>
+<td>예수처럼 진실하게 말하라</td>
+<td>요 14:6</td>
+</tr>
+<tr>
+<td>10</td>
+<td>예수만으로 만족하라</td>
+<td>고후 3:5</td>
+</tr>
+</tbody>
+</table>
+<p>십계명은 그리스도인에게 폐기된 목록도, 그리스도 없이 오를 사다리도 아니다. 권창규 목사의 한 줄 요약대로 산상수훈은 십계명이라는 기본법의 주석이고(<a class="wl" href="../../t/%EC%82%B0%EC%83%81%EC%88%98%ED%9B%88/">산상수훈</a>), 예수는 그 주석을 자기 삶으로 쓰셨다. 바울은 둘째 돌판의 계명들을 인용한 뒤 그것들이 이웃 사랑 한 마디에 다 들어 있다고, "사랑은 율법의 완성이니라"(<span class="wl-dead" title="위키 내부 링크">롬 13:10</span>)고 말한다. 문 목사는 이 '완성'이 마태복음 5:17의 '완전하게 하다'와 같은 낱말임을 짚는다. 사랑은 계명을 대체하지 않고 채운다. 그리고 새 언약에서 그 계명은 돌판에서 마음으로 자리를 옮긴다(<a class="wl" href="../../t/%EC%83%88%EC%96%B8%EC%95%BD/">새언약</a>). 요한이 계명들은 무거운 것이 아니라고 한 말(요일 5:3)을 윤명숙 전도사가 십계명에 그대로 적용하는 것도 이 때문이다.</p>
+<h2>10. 돌판이 놓이는 자리 — 언약궤, 밥상, 일상, 열방</h2>
+<p>두 돌판은 어디에 놓이는가. 자료는 네 자리를 가리킨다. 첫째는 언약궤다. 두 돌판은 궤 안에 보관되었고 그 뚜껑이 속죄소다. 권성수 목사는 솔로몬의 성전 봉헌을 강해하며 하나님이 "십계명의 돌판 위에서 백성들과 함께 거주 하신다"고 말한다. 임재의 자리가 계명 위이고 그 계명을 자비의 뚜껑이 덮고 있다는 것은 한 가구에 담긴 신학이다(<a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%9E%84%EC%9E%AC/">하나님의임재</a>). 그래서 "십계명을 무시하는 것은 하나님을 무시하는 것이다". 권 목사는 「행복 십계명」을 돌판이 깨졌다가 다시 주어진 장면으로 맺는다. 깨진 뒤에도 다시 주시는 것이 십계명이므로 무너진 삶도 그 위에 다시 지을 수 있다.</p>
+<p>둘째는 밥상이다. 윤명숙 전도사는 쉐마(신 6장)가 '이 말씀'이라 부르는 것이 바로 앞 장의 십계명이라는 데 주목한다. 그러므로 쉐마는 부모가 십계명을 먼저 마음에 새기고 가르치는 일이며 "쉐마하는데 십계명을 가르치지 않으면 안하는 것이다". 그는 무겁지 않게 놀이로 익히는 길을 찾고(<a class="wl" href="../../t/%EC%9E%90%EB%85%80%EA%B5%90%EC%9C%A1/">자녀교육</a>), 계명을 거창하게 지키려 하지 말고 곁의 사람에게 헌신하는 데서 시작하라고 권한다. "이 계명이 가정안에서 잘 유지될때 바깥으로 드러날것이다."</p>
+<p>셋째는 일상이다. 김희석 교수는 시편 50편 강해에서 하나님이 책망하시는 악인의 목록(도둑과 연합, 간음, 거짓)이 십계명의 불이행임을 짚고, 감사로 드리는 제사란 말씀대로 사는 삶의 예배라고 풀이한다. 모이는 예배보다 이 예배가 더 어렵다(<a class="wl" href="../../t/%EC%98%88%EB%B0%B0/">예배</a>).</p>
+<p>넷째는 열방이다. 십계명은 제사장 나라로 부르신 직후에 주어졌다(<span class="wl-dead" title="위키 내부 링크">출 19:6</span>). 뉴비긴은 이 순서를 따라 십계명을 만국의 제사장이 될 백성에게 주신 선물로 읽고, 박주용 목사는 규례를 지켜 행하는 것이 여러 민족 앞에서 이스라엘의 지혜가 된다는 신명기 4:6을 선교의 본문으로 든다. 이상협의 강의는 아브라함의 의와 공도, 십계명, 큰 계명, 가르쳐 지키게 하라는 대위임령을 한 줄로 잇는다(<a class="wl" href="../../t/%EB%8C%80%EC%9C%84%EC%9E%84%EB%A0%B9/">대위임령</a>). 그러나 <a class="wl" href="../../b/%ED%9A%8C%EC%8B%AC%EC%9D%98%EB%B3%80%EC%A7%88_%ED%81%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/">크라이더</a>는 경고를 단다. <a class="wl" href="../../t/%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%85%90%EB%8D%A4/">크리스텐덤</a>의 교회는 주기도문과 사도신경과 십계명의 지식을 전달하면 교리 교육이 된 것으로 여겼고, 회심자를 예수의 가르침대로 살게 하던 초기의 형성은 약해졌다. 십계명은 암송될 때가 아니라 한 백성의 삶으로 보일 때 열방 앞에 놓인다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>십계명은 명령이 아니라 구원의 선언으로 시작한다. 서문(출 20:2)을 떼면 규칙 목록이 되고, 붙이면 구원받은 백성의 생활 방식이 된다.</li>
+<li>금지형은 한계만 긋고 그 안을 열어 두는 울타리다. 다만 울타리는 최소한의 기준이며, 그 안에서 잘 사는 것은 또 다른 일이다.</li>
+<li>열 계명은 목록이 아니라 그물이다. 제1계명과 제10계명이 양 끝에서 마음을 겨누고, 탐심이 우상숭배라는 점에서 끝이 처음으로 돌아온다.</li>
+<li>긍정 명령은 안식일과 부모 공경 둘뿐이며 두 돌판의 이음매에 놓인다. 멈추는 법과 순종하는 법이 나머지를 가능하게 한다.</li>
+<li>계명의 원칙은 단순하고 적용은 갈린다. 형상, 맹세, 주일, 전쟁, 라합의 거짓말에서 생기는 차이는 대개 같은 계명의 다른 면을 먼저 보는 데서 온다.</li>
+<li>권성수의 강해는 논쟁적 적용을 복음으로 닫는다. 형벌도 이혼도 끝이 아니다.</li>
+<li>십계명은 그리스도 안에서 폐기되지도, 그리스도 없이 지켜지지도 않는다. 예수가 표준이자 성취이고, 돌판은 마음과 밥상과 일상과 열방으로 옮겨진다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>계명 번호 매김과 두 돌판의 분할은 전통마다 다르다. 다른 전통의 자기 설명은 자료에 없고 한 설교의 평가만 있다. 그것을 들은 뒤에야 공정한 비교가 가능하다.</li>
+<li>십계명을 지키면 더 행복하고 건강하다는 약속은 정직하게 살았으나 고난받는 사람 앞에서 어떻게 말해져야 하는가. 약속 있는 계명의 '잘되고 장수'도 같은 물음을 받는다.</li>
+<li>생명을 지키려는 거짓말을 권성수는 본받을 수 없는 것으로, 문대원은 믿음의 행동으로 읽는다. 같은 틀에서 왜 다른 결론이 나오는가.</li>
+<li>불가피하게 주일에 일하는 직업인에게 제4계명은 무엇을 요구하는가. 예외와 원칙 사이의 실제 기준은 원리로만 주어져 있다.</li>
+<li>정당 전쟁 전통과 평화주의 전통은 화해할 수 있는가, 아니면 교회는 두 증언을 긴장 속에 함께 지녀야 하는가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%9C%A8%EB%B2%95/">율법</a> — 율법이라는 범주의 신학. 십계명을 율법의 심장으로 요약한 절이 출발점이다.</li>
+<li><a class="wl" href="../../t/%EC%9C%A8%EB%B2%95%EA%B3%BC%EB%B3%B5%EC%9D%8C/">율법과복음</a> · <a class="wl" href="../../t/%EC%9C%A8%EB%B2%95%EC%A3%BC%EC%9D%98/">율법주의</a> — 세 용도, 순서가 뒤집힐 때.</li>
+<li><a class="wl" href="../../t/%EC%8B%9C%EB%82%B4%EC%82%B0%EC%96%B8%EC%95%BD/">시내산언약</a> · <a class="wl" href="../../t/%EC%96%B8%EC%95%BD/">언약</a> · <a class="wl" href="../../t/%ED%86%A0%EB%9D%BC/">토라</a> — 언약 체결, 조약 양식, 삼분법 논쟁.</li>
+<li><a class="wl" href="../../t/%EC%9A%B0%EC%83%81%EC%88%AD%EB%B0%B0/">우상숭배</a> — 제1·2·10계명: 형상에서 마음으로.</li>
+<li><a class="wl" href="../../t/%EC%95%88%EC%8B%9D/">안식</a> — 제4계명의 신학.</li>
+<li><a class="wl" href="../../t/%EA%B2%BD%EC%99%B8/">경외</a> · <a class="wl" href="../../t/%EA%B6%8C%EC%9C%84/">권위</a> · <a class="wl" href="../../t/%EC%88%9C%EC%A2%85/">순종</a> · <a class="wl" href="../../t/%EA%B0%80%EC%A0%95/">가정</a> — 제5계명: 권위와 전수.</li>
+<li><a class="wl" href="../../t/%EC%83%9D%EB%AA%85%EC%9C%A4%EB%A6%AC/">생명윤리</a> · <a class="wl" href="../../t/%EB%B6%84%EB%85%B8/">분노</a> — 제6계명의 적용.</li>
+<li><a class="wl" href="../../t/%EA%B2%B0%ED%98%BC/">결혼</a> — 제7계명: 언약, 이혼과 재혼.</li>
+<li><a class="wl" href="../../t/%EC%B2%AD%EC%A7%80%EA%B8%B0/">청지기</a> · <a class="wl" href="../../t/%ED%9D%AC%EB%85%84/">희년</a> · <a class="wl" href="../../t/%EA%B5%AC%EC%A0%9C/">구제</a> — 제8계명: 소유, 회복, 나눔.</li>
+<li><a class="wl" href="../../t/%EC%82%BC%EC%A4%91%EA%B4%80%EC%A0%90/">삼중관점</a> · <a class="wl" href="../../t/%EC%83%81%ED%99%A9%EC%9C%A4%EB%A6%AC/">상황윤리</a> · <a class="wl" href="../../t/%EA%B5%AC%EC%95%BD%EC%9C%A4%EB%A6%AC/">구약윤리</a> — 계명을 적용하는 방법론.</li>
+<li><a class="wl" href="../../t/%EC%82%B0%EC%83%81%EC%88%98%ED%9B%88/">산상수훈</a> · <a class="wl" href="../../t/%EC%83%88%EC%96%B8%EC%95%BD/">새언약</a> — 예수의 해석, 마음에 새겨지는 법.</li>
+<li><a class="wl" href="../../t/%EC%9E%90%EC%9C%A0/">자유</a> — 계명이 지키는 자유. 철로와 멍에(8절).</li>
+<li><span class="wl-dead" title="위키 내부 링크">출20</span> · <span class="wl-dead" title="위키 내부 링크">신5</span> — 본문 허브.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수_십계명_웰빙힐링시리즈</span></td>
+<td>시리즈 개요(권성수)</td>
+<td>열일곱 편의 구조, 복음으로 닫는 결론</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">십계명_01_웰빙힐링의비결</span></td>
+<td>설교(권성수)</td>
+<td>서문과 자유, 언약의 네 요소, 계명별 그리스도 지향</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">십계명_02_제1계명</span> · <span class="wl-dead" title="위키 내부 링크">십계명_03_제1계명2</span> · <span class="wl-dead" title="위키 내부 링크">십계명_04_제2계명</span> · <span class="wl-dead" title="위키 내부 링크">십계명_05_제2계명2</span> · <span class="wl-dead" title="위키 내부 링크">십계명_06_제3계명</span> · <span class="wl-dead" title="위키 내부 링크">십계명_07_서원과서약</span></td>
+<td>설교(권성수)</td>
+<td>마음의 최우선과 유일성, 형상과 우상, 조상 제사, 이름의 오용, 서원</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">십계명_08_제4계명</span> · <span class="wl-dead" title="위키 내부 링크">십계명_10_제5계명2</span></td>
+<td>설교(권성수)</td>
+<td>주일의 근거와 준수, 권위와 질서, 자녀의 상처</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">십계명_11_제6계명</span> · <span class="wl-dead" title="위키 내부 링크">십계명_12_제6계명2</span> · <span class="wl-dead" title="위키 내부 링크">십계명_13_제7계명</span> · <span class="wl-dead" title="위키 내부 링크">십계명_14_제7계명2</span></td>
+<td>설교(권성수)</td>
+<td>마음의 살인, 낙태·안락사, 형벌과 전쟁, 결혼 언약, 이혼·재혼</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">십계명_15_제8계명</span> · <span class="wl-dead" title="위키 내부 링크">십계명_16_제8계명2</span> · <span class="wl-dead" title="위키 내부 링크">십계명_17_제9계명</span> · <span class="wl-dead" title="위키 내부 링크">십계명_18_제10계명</span></td>
+<td>설교(권성수)</td>
+<td>사유재산과 청지기, 일곱 도둑질, 거짓말의 정의와 라합, 탐욕이라는 뿌리</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">신명기_09_행복십계명</span> · <span class="wl-dead" title="위키 내부 링크">신명기_12_율법은하나님의선물</span> · <span class="wl-dead" title="위키 내부 링크">솔로몬_12_성전봉헌연설</span></td>
+<td>설교(권성수)</td>
+<td>행복을 위한 계명, 다시 받은 돌판, 돌판 위의 임재</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2017_부모순종과자녀양육</span> · <span class="wl-dead" title="위키 내부 링크">2018_언약적효도</span> · <span class="wl-dead" title="위키 내부 링크">2020_효도왜축복</span></td>
+<td>설교(권성수)</td>
+<td>약속 있는 첫 계명, 천륜과 인륜, 순종의 한계</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">일터의하나님_09_일이우상을알려준다</span> · <span class="wl-dead" title="위키 내부 링크">2016_정직하게살아야</span></td>
+<td>설교(권성수)</td>
+<td>첫 계명의 우선성, 정직과 우직의 구별</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2023_아무것도하지않을자유</span> · <span class="wl-dead" title="위키 내부 링크">2021_의무이상의관계</span> · <span class="wl-dead" title="위키 내부 링크">2026-05-10_순종을배우는곳</span></td>
+<td>설교(문대원)</td>
+<td>긍정·부정 명령, 역사적 선언, 사랑=율법의 완성</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2026_우리가사랑한우상들1_형상없는신</span> · <span class="wl-dead" title="위키 내부 링크">2026_우리가사랑한우상들6_탐심의문제</span></td>
+<td>설교(문대원)</td>
+<td>하나님의 형상 금지, 탐심과 제10계명</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2024_크리스천의윤리1_행복을위한계명</span> · <span class="wl-dead" title="위키 내부 링크">2024_크리스천의윤리3_상황이나쁘다는변명</span> · <span class="wl-dead" title="위키 내부 링크">2024_크리스천의윤리7_경제윤리</span> · <span class="wl-dead" title="위키 내부 링크">2024_크리스천의윤리8_죄와벌</span></td>
+<td>설교(문대원)</td>
+<td>라합과 규범의 충돌, 정당 전쟁, 경제윤리, 형벌</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2024_본질과비본질사이에서</span> · <span class="wl-dead" title="위키 내부 링크">2026_실패를경영하라</span> · <span class="wl-dead" title="위키 내부 링크">2026-05-18_AI시대멘토링</span></td>
+<td>설교(문대원)</td>
+<td>계명의 목적은 사랑, 최소한의 기준</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2015_물질사용</span> · <span class="wl-dead" title="위키 내부 링크">2015_부모를공경하는것</span> · <span class="wl-dead" title="위키 내부 링크">2016_사경회에대한해석</span> · <span class="wl-dead" title="위키 내부 링크">2019_성에대한올바른이해</span></td>
+<td>강의(윤명숙)</td>
+<td>두 긍정 명령, 쉐마=십계명, 제7계명과 열 계명의 그물</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2018_계명을주신이유</span> · <span class="wl-dead" title="위키 내부 링크">2015_차별하지않는것</span> · <span class="wl-dead" title="위키 내부 링크">2014_어떻게계명을지킬것인가</span> · <span class="wl-dead" title="위키 내부 링크">2014_하나님으로부터낳다면</span></td>
+<td>강의(윤명숙)</td>
+<td>풍성함을 위한 계명, 자유의 율법, 가정에서의 순종</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">_paper_아브라함언약과시내산언약비교</span> · <span class="wl-dead" title="위키 내부 링크">03주_언약과율법_종주봉신조약</span> · <span class="wl-dead" title="위키 내부 링크">08주_기억과회개와용서</span></td>
+<td>과제·강의(이상협)</td>
+<td>은혜가 먼저인 순서, 기억과 준수</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">자녀의변화_부모의변화</span> · <span class="wl-dead" title="위키 내부 링크">성경적_남성상_울산누가회</span> · <span class="wl-dead" title="위키 내부 링크">전략적_학습공동체</span></td>
+<td>강의(이상협)</td>
+<td>수직과 수평, 제5계명=연결 고리, 대위임령</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">성경강해4_시편2권_하나님이원하시는세가지예배</span> · <span class="wl-dead" title="위키 내부 링크">전성민_낙태금지와동성애금지이해</span></td>
+<td>강해·강의</td>
+<td>시 50편과 삶의 예배, 해석의 불가피성</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2024_박재은_자유를_자유하라</span> · <span class="wl-dead" title="위키 내부 링크">권창규_에젤수련회2</span> · <span class="wl-dead" title="위키 내부 링크">2019_최창용_유동선교_성경적관점</span> · <span class="wl-dead" title="위키 내부 링크">2019_박주용_선교의성경적기초</span></td>
+<td>설교·강의</td>
+<td>지킬 수 없는 기준, 산상수훈, 나그네의 안식, 신 4:6</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%84%B1%EA%B2%BD%ED%95%9C%EA%B1%B8%EC%9D%8C_%EB%A0%88%EC%8A%AC%EB%A6%AC%EB%89%B4%EB%B9%84%EA%B8%B4/">성경한걸음_레슬리뉴비긴</a> · <a class="wl" href="../../b/%EC%9D%BC%EA%B3%BC%EC%98%81%EC%84%B1_%ED%8C%80%EC%BC%88%EB%9F%AC/">일과영성_팀켈러</a> · <a class="wl" href="../../b/%EB%87%8C%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A4%EA%B3%84_%ED%8B%B0%EB%A8%B8%EC%8B%9C%EC%A0%9C%EB%8B%9D%EC%8A%A4/">뇌하나님의설계_티머시제닝스</a></td>
+<td>책</td>
+<td>서두와 울타리, 첫 계명의 우선성, 진단 장치</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%B4%88%EA%B8%B0%EA%B5%90%ED%9A%8C%EC%9D%98%EC%9D%B8%EB%82%B4%EC%99%80%EB%B0%9C%ED%9A%A8_%ED%81%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/">초기교회의인내와발효_크라이더</a> · <a class="wl" href="../../b/%ED%9A%8C%EC%8B%AC%EC%9D%98%EB%B3%80%EC%A7%88_%ED%81%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/">회심의변질_크라이더</a> · <a class="wl" href="../../b/%EC%8B%A0%EC%95%BD%EC%9D%98%EC%9C%A4%EB%A6%AC%EC%A0%81%EB%B9%84%EC%A0%84_%ED%97%A4%EC%9D%B4%EC%8A%A4/">신약의윤리적비전_헤이스</a></td>
+<td>책</td>
+<td>초기 교회의 규범, 교리 교육의 변질, 평화주의</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%84%EC%98%81%ED%99%94%EB%A1%AD%EA%B2%8C%ED%95%98%EB%8A%94%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4_%EA%B7%B8%EB%A3%A8%EB%8E%80/">하나님을영화롭게하는비즈니스_그루뎀</a> · <a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%B4%EB%83%90%EB%8F%88%EC%9D%B4%EB%83%90_%EC%9E%90%EB%81%84%EC%97%98%EB%A5%84/">하나님이냐돈이냐_자끄엘륄</a> · <a class="wl" href="../../b/%EC%A7%81%EC%9E%A5%EC%9D%B8%EC%9D%B4%EB%9D%BC%EB%A9%B4%EB%8B%A4%EB%8B%88%EC%97%98%EC%B2%98%EB%9F%BC/">직장인이라면다니엘처럼</a> · <span class="wl-dead" title="위키 내부 링크">간호누가의삶과신앙_김유진_2019</span></td>
+<td>책·논문</td>
+<td>소유의 정당성과 위험, 주일의 현장</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/구약학</span><span>#discipline/기독교윤리</span><span>#topic/십계명</span><span>#topic/두돌판</span><span>#topic/언약</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

@@ -1,0 +1,507 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>부모 공경 — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-t">윤리·공공</span><span class="date">2026-10-02</span></div>
+  <h1 class="note-title">부모 공경</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>부모 공경은 십계명의 다섯째 말씀에서 나온 자녀의 도리다. "네 부모를 공경하라 그리하면 네 하나님 여호와가 네게 준 땅에서 네 생명이 길리라"(출 20:12). <span class="wl-dead" title="위키 내부 링크">권성수</span> 목사는 에베소서 6장 강해에서 공경의 폭을 이렇게 편다. "순종, 공경, 존대하면서 또 필요한 모든 것을 공급하는 봉양을 말한다." 어릴 때의 순종, 자라서의 존경, 부모가 늙었을 때의 돌봄이 이 한 낱말 안에 들어 있다. 순종에는 끝나는 때가 있지만 공경에는 없다.</p>
+<p>이 글은 그 계명을 <strong>자녀 쪽에서</strong> 읽는다. 부모가 자녀를 기르는 일은 <a class="wl" href="../../t/%EB%B6%80%EB%AA%A8%EA%B5%90%EC%9C%A1/">부모교육</a>·<a class="wl" href="../../t/%EC%9E%90%EB%85%80%EA%B5%90%EC%9C%A1/">자녀교육</a>·<a class="wl" href="../../t/%ED%9B%88%EC%9C%A1/">훈육</a>이, 열 계명 안에서 이 계명이 놓인 자리는 <a class="wl" href="../../t/%EC%8B%AD%EA%B3%84%EB%AA%85/">십계명</a>이, 보이는 부모를 통해 보이지 않는 분을 배운다는 논리는 <a class="wl" href="../../t/%EA%B2%BD%EC%99%B8/">경외</a>가, 순종과 권위의 일반 문법은 <a class="wl" href="../../t/%EC%88%9C%EC%A2%85/">순종</a>과 <a class="wl" href="../../t/%EA%B6%8C%EC%9C%84/">권위</a>가 맡는다. 여기 남는 물음은 공경이 무엇이고 무엇이 아닌가, 나이를 따라 그 모양이 어떻게 달라지는가, 늙은 부모와 공경하기 어려운 부모 앞에서 이 계명이 무엇을 요구하는가이다.</p>
+<p>자료의 대부분은 해마다 5월에 선 강단에서 나왔다. 권성수 목사의 어버이주일 설교와 십계명 강해, <span class="wl-dead" title="위키 내부 링크">문대원</span> 목사의 설교, 그리고 가정 상담의 자리에서 말하는 <span class="wl-dead" title="위키 내부 링크">윤명숙</span> 전도사와 <span class="wl-dead" title="위키 내부 링크">황규명</span> 교수, 이상협의 가정사역 강의다. 두 자리의 목소리는 결이 다르다. 윤 전도사는 그 차이를 감추지 않는다. "강단에서는 어김없이 보편적인 입장에서 효를 설교한다." "그러나 그 설교를 받아서 살아가기에는 힘든 부분이 많다." 이 글은 두 목소리를 다 듣는다.</p>
+<h2>1. 인륜의 첫 자리 — 왜 하필 부모인가</h2>
+<p>열 계명에서 사람을 향한 말씀은 부모에서 시작한다. 권성수 목사는 앞의 네 계명을 천륜, 뒤의 여섯을 인륜이라 부르고 인륜의 맨 앞에 이 계명이 놓였다는 데서 출발한다. 두 돌판의 구조는 <a class="wl" href="../../t/%EC%8B%AD%EA%B3%84%EB%AA%85/">십계명</a> 3절과 6절이 다루었으므로 여기서는 왜 그 첫 자리가 부모인지만 묻는다. 그의 설교들을 모으면 답은 셋이다.</p>
+<table>
+<thead>
+<tr>
+<th>근거</th>
+<th>설교의 문장</th>
+<th>뜻</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>생명</td>
+<td>"부모는 생명의 통로이다. 공경이 당연, 공양이 당연하다"</td>
+<td>생명은 하나님이 부모를 통해 주셨다</td>
+</tr>
+<tr>
+<td>지혜</td>
+<td>"오래 살아본 사람의 지혜를 무시하면 안된다"</td>
+<td>지혜는 겪어 보아야 생기고, 부모는 먼저 겪은 사람이다</td>
+</tr>
+<tr>
+<td>질서</td>
+<td>"가정에서 지키지 않으면 밖에서 지키지 않는다"</td>
+<td>가정의 질서가 학교와 교회와 나라의 질서로 이어진다</td>
+</tr>
+</tbody>
+</table>
+<p>윤명숙 전도사는 다른 각도를 더한다. 이 계명은 질서만이 아니라 <strong>전수</strong>를 지킨다. "효도라는 것은 아버지의 사상을 그대로 받겠다는 것이다." 아버지가 건네는 것이 성경의 도리일 때 그것을 받을 자세가 곧 효다. 그래서 그는 신명기 5:16 강해에서 이 계명의 목적을 한 줄로 적는다. "효는 통로, 결국의 목적은 말씀전수이다." 뒤집으면 조건이 보인다. 부모가 말씀이 아닌 다른 것을 넘겨주고 있다면 효도를 통해 전수될 것도 없다(<a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EC%A0%84%EC%88%98/">신앙전수</a>).</p>
+<p>세 근거와 전수의 논리는 한 곳을 가리킨다. 공경의 근거는 부모의 자격이 아니라 부모를 세우신 분이다. 권 목사는 계명의 문장 자체에서 이것을 읽는다. "부모 앞에 수식어가 없다. 네 부모이다." 존경할 만한 부모, 잘해 준 부모라는 단서가 없다. 윤 전도사도 재산을 물려주어야 공경받는다는 계산을 물리치며 말한다. "하나님이 주신 부모의 영적인 권위 때문에 공경하는 것이다." 이상협의 가정사역 강의가 제5계명을 하나님 공경과 이어진 고리로 읽는 것도 같은 뜻이다.</p>
+<p>이 근거에는 두 얼굴이 있다. 부모가 변변치 못해도 계명이 사라지지 않는다는 점에서 든든하고, 부모에게 깊이 다친 사람에게는 바로 그 점 때문에 무겁다. 뒤의 얼굴은 9절에서 다시 만난다.</p>
+<h2>2. 순종에서 돌봄으로 — 나이를 따라 모양이 바뀌는 계명</h2>
+<p>에베소서 6장은 두 동사를 쓴다. 1절은 순종하라, 2절은 공경하라. 권성수 목사는 이 둘을 같은 말의 반복으로 읽지 않는다. "순종은 미혼자녀에게 주신 것이다." 1절의 자녀는 부모의 보호 아래 있는, 결혼 전의 자녀다. 결혼한 뒤에는 달라진다. "부모의 권위는 인정하지만, 지시나 명령에 따라가야할 의무는 없다." 그렇다고 계명이 끝나는 것은 아니다. "그리고 결혼후 봉양해야 한다."</p>
+<p>잠언 강해 「부모를 기쁘게 해 드리세요」는 이 변화를 세 단계로 적는다.</p>
+<table>
+<thead>
+<tr>
+<th>시기</th>
+<th>공경의 모양</th>
+<th>덧붙는 자료</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10대 이전</td>
+<td>순종(obey)</td>
+<td>문대원 — 가정은 순종을 배우는 첫 자리다</td>
+</tr>
+<tr>
+<td>10대</td>
+<td>존경(respect)</td>
+<td>황규명 — 부모의 권위가 약해지기 전에 하나님의 권위를 알아야 한다</td>
+</tr>
+<tr>
+<td>10대 이후</td>
+<td>돌봄(care)</td>
+<td>권성수 — 지시를 따를 의무는 끝나도 봉양의 의무는 남는다</td>
+</tr>
+</tbody>
+</table>
+<p>황규명 교수는 자녀를 결혼시키는 부모들에게 가장 간명하게 말한다. "네 부모를 공경하라는 결혼후에도 해야 한다. 공경하는 방법이 달라지는 것이다."</p>
+<p>어린 자녀의 순종이 무엇을 길러 내는지는 <a class="wl" href="../../t/%EC%88%9C%EC%A2%85/">순종</a>이, 부모가 그것을 어떻게 가르칠지는 <a class="wl" href="../../t/%ED%9B%88%EC%9C%A1/">훈육</a>이 다룬다. 이 글이 붙들 것은 순종에 <strong>목적지</strong>가 있다는 점이다. 문대원 목사는 이렇게 말한다. "하나님을 인격적으로 만나기 전까지 부모의 권위에 순종해야 한다." 부모에 대한 순종은 하나님께 순종하는 사람이 되기 위한 길이지 그 자체가 종착지가 아니다. 황 교수가 청소년 부모들에게 한 말이 그 이음매를 보여 준다. 아이가 자랄수록 부모의 권위는 통하지 않게 되므로 그 전에 하나님의 권위가 자녀 안에 자리 잡아야 하고, 그래야 나중에 자녀가 부모의 허물을 보고도 부모를 잘 대할 수 있다.</p>
+<p>계명은 평생 유효하지만 순종은 평생의 의무가 아니다. 이 둘을 한 덩어리로 묶으면 두 가지 탈이 난다. 결혼한 자녀가 여전히 부모의 지시 아래 머물러 새 가정이 서지 못하거나(6절), 순종할 수 없는 부모를 둔 사람이 계명 전체를 내려놓는다(9절).</p>
+<h2>3. 약속 있는 첫 계명 — 잘되고 장수한다는 말을 어떻게 들을 것인가</h2>
+<p>바울은 이 계명을 약속이 있는 첫 계명이라 부른다(엡 6:2). 왜 '첫'인지는 <a class="wl" href="../../t/%EC%8B%AD%EA%B3%84%EB%AA%85/">십계명</a> 6절에 있다. 문대원 목사는 명령 뒤에 약속이 붙었다는 사실에서 하나님의 성품을 읽는다. "명령만 내리는 엄격한 사령관이 아니다."</p>
+<p>부모 공경과 잘됨이 어떻게 이어지는지에 대한 설교자들의 답은 세 갈래다. 첫째는 성품이다. 문 목사는 묻는다. "어떻게 절제를 배울까? 더 큰 권위에 순종하면서 배울 수 있다." 둘째는 순환이다. 권성수 목사가 보은의 순환이라 부르는 것으로, 부모를 섬기는 모습을 보고 자란 자녀가 그대로 섬긴다. "자식키우는 최고의 방법이 효도이다. 효도를 보여 주는 것이다." 셋째는 언약이다. 「언약적 효도」는 십계명을 언약 문서로 읽는다. "무조건적이면서 조건적이다. 효도가 언약속에 들어있다."(<a class="wl" href="../../t/%EC%96%B8%EC%95%BD/">언약</a>)</p>
+<p>이 약속을 기계적 보장으로 읽지 않으려는 조심도 같은 설교들 안에 있다. 권 목사는 장수의 약속을 두고 스스로 묻는다. "오래사는 것이 복인가? 그 당시로 해석해야 한다." 전쟁 한 번에 온 마을이 죽던 시대에 이 말은 평안히 제 수명을 누린다는 뜻이었다. 다른 설교에서는 "대체적으로 봤을 때 영혼이 잘되고 범사가 잘된다"고 하여 '대체로'라는 단서를 붙인다.</p>
+<p>복을 바라고 공경하는 것이 옳으냐는 물음에서는 두 목소리가 갈린다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>권성수</th>
+<th>윤명숙</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>문장</td>
+<td>"복 받을려고 순종? 없어도 하는 것?"</td>
+<td>"순종을 통해서 복을 받든지 못 받든지.. 상관없는 이 순종이 필요하다"</td>
+</tr>
+<tr>
+<td>논지</td>
+<td>사람에게 베풀 때와 달리, 하나님이 약속하신 것을 바라보는 일은 믿음이다. 예수도 앞에 있는 기쁨을 위하여 십자가를 참으셨다(히 12:2)</td>
+<td>받을 것이 있어서 하는 순종은 자기중심의 순종이다. 부모를 향해서도 같다. "계산된 사랑은 저쪽도 계산한다"</td>
+</tr>
+<tr>
+<td>지키려는 것</td>
+<td>약속을 약속으로 받는 신뢰</td>
+<td>계산이 섞이지 않은 사랑</td>
+</tr>
+</tbody>
+</table>
+<p>둘은 서로를 지우지 않는다. 한쪽은 하나님의 약속을 약속으로 받으라고 하고, 다른 쪽은 그 약속이 부모를 향한 계산으로 바뀌지 않게 하라고 한다. 윤 전도사의 물음이 경계선을 긋는다. "재산 상속을 위해 사랑하고 있는가?"</p>
+<p>약속의 뒷면에는 경고가 있다. 패역한 아들을 성문으로 끌고 가는 신명기 21장의 규정이 있고, 잠언의 말이 있다. "아비를 조롱하며 어미 순종하기를 싫어하는 자의 눈은 골짜기의 까마귀에게 쪼이고 독수리 새끼에게 먹히리라"(잠 30:17). 권 목사는 숨기지 않고 말한다. "잔인한 말씀으로 보인다." 그가 여기서 끌어내는 것은 형벌의 시행이 아니라 무게다. 하나님이 불효를 그만큼 무겁게 보신다는 것이다.</p>
+<h2>4. 봉양과 존대 — 요셉이 보여 준 공경의 두 손</h2>
+<p>권성수 목사가 공경의 본으로 거듭 세우는 사람은 요셉이다. 먼저 반대편이 있다. 형들은 동생을 팔았고, 아버지는 스물두 해 동안 아들이 짐승에게 죽은 줄 알고 살았다. 권 목사의 진단은 한 줄이다. "편애를 핑계 삼아 불효했다." 야곱의 편애는 사실이었다. 그러나 그것이 불효의 면허가 되지는 않았다.</p>
+<p>요셉이 한 일을 그는 두 낱말로 묶는다. <strong>봉양</strong>은 필요를 채우는 일이다. 그 시작은 뜻밖에도 얼굴이다. 스물두 해 만에 아버지의 목을 안고 우는 장면을 두고 그는 말한다. "자식이 부모에게 얼굴을 보여주는 것이 효도다." 그다음이 공급이다. "질병, 의식주 문제를 고민하지 않게 하는 것이 봉양이다." 요셉은 자기를 판 형들의 가족까지 먹였는데, 권 목사는 이것도 아버지를 향한 일로 읽는다. 부모는 한 자식만 잘사는 것으로 마음이 놓이지 않기 때문이다.</p>
+<p><strong>존대</strong>는 높이는 일이다.</p>
+<blockquote>
+<p>"의식주만 아니라, 부끄럽지 않도록, 자랑스럽도록, 이것이 존대이다." — 권성수, 「효도의 모델」</p>
+</blockquote>
+<p>요셉은 애굽 사람들이 가증히 여기는 목축을 업으로 삼은 늙은 아버지를 바로 앞에 모시고 갔고, 야곱은 거기서 왕을 축복했다. 존대에는 소극적인 면도 있다. "부모님의 영예를 높인다는 것은 부모에게 욕이 될 일을 하지 않는 것이다." 그리고 끝까지 간다. "아버지의 축복권을 인정, 뒷방 노인 취급하지 않았다."</p>
+<p>「축복의 통로 막혔는가 뚫렸는가」는 같은 내용을 오늘의 말로 여섯 갈래로 편다. 신체적 도움, 정서적 지지, 간병, 경제적 부양, 규범적 의무, 그리고 부모에게 복음을 전하고 부모를 위해 기도하는 신앙적 본분이다. 권 목사는 "10만원 가지고 효도 하지 않는 자식은 1억이 있어도 안한다"고 하여 형편을 핑계 삼을 수 없게 한다. 윤명숙 전도사는 부모의 마음을 반대편에서 말한다. "대부분은 자식의 돈을 바라는 것이 아니라 자식을 보는 것을 바란다." 문대원 목사는 되돌릴 수 없는 선택의 예로 이것을 든다. "효도는 만회할 수 없다. 후회하는 경우가 많다."</p>
+<p>권 목사가 요셉 곁에 세우는 이름은 시어머니를 위해 이삭을 주운 룻, 그리고 예수다. 예수는 나사렛에서 부모에게 순종하며 지내셨고(눅 2:51), 십자가 위에서는 요한에게 어머니를 맡기셨다. 권 목사는 이것을 피의 효도라 부르고 한 문장을 끌어낸다. "죽은 효도가 아니라 살아있는 부모에게 효도해야 한다." 이 문장은 7절에서 제사 문제와 다시 만난다.</p>
+<p>요셉의 공경에는 짝이 있었다. 아들이 봉양하고 아버지는 축복했다. "나는 죽으나 하나님이 너희와 함께 계시사"(창 48:21). 권 목사는 이 주고받음을 언약 신앙이라 부른다. 자녀의 공경과 부모의 축복이 만나는 자리에서 믿음이 다음 세대로 건너간다(<a class="wl" href="../../t/%EC%84%B8%EB%8C%80%EC%A0%84%EC%88%98/">세대전수</a>).</p>
+<h2>5. 늙은 부모를 돌보는 일 — 고르반과 디모데전서 5장</h2>
+<p>이 계명은 어린아이에게만 하는 말이 아니다. 잠언은 장성한 아들에게 이렇게 말한다. "너를 낳은 아비에게 청종하고 네 늙은 어미를 경히 여기지 말지니라"(잠 23:22). 공경의 시험은 부모가 힘을 잃었을 때 온다.</p>
+<p>예수가 이 계명을 직접 변호하신 자리도 늙은 부모의 부양 문제였다. <span class="wl-dead" title="위키 내부 링크">티어베르그</span>와 스팽글러는 랍비들이 율법을 '폐한다'고 할 때 그 말이 무엇을 뜻했는지 설명하며 이 장면을 든다.</p>
+<blockquote>
+<p>"예수님은 이미 고르반(하나님께 바친 것)으로 바쳤기에 연로한 부모님께 드릴 돈이 없다는 주장이 부모를 공경하라는 율법을 폐한 것이라고 책망하셨다(막 7:11)." — 티어베르그·스팽글러, 『랍비 예수, 제자도를 말하다』</p>
+</blockquote>
+<p>헌금이 봉양을 면제해 주지 않는다. 경건의 언어가 가장 가까운 사람에 대한 의무를 덮는 데 쓰일 수 있고, 예수는 그것을 계명을 폐하는 일이라 부르셨다.</p>
+<p>서신서는 이 의무를 더 구체적으로 적는다. <span class="wl-dead" title="위키 내부 링크">존 프레임</span>의 교재를 따라간 신대원 기독교윤리학 강의는 일반 규범과 적용 지침의 관계를 설명하며 바로 이 계명을 예로 든다. 하나님은 부모를 공경하라고만 하셨지 어떻게 공경할지는 적어 두지 않으셨다. 그리고 "딤전5:3-8에 명시된 연로한 가족을 돌봐야 할 의무가 이 계명에 대한 구체적인 지침에 해당한다". "누구든지 자기 친족 특히 자기 가족을 돌보지 아니하면 믿음을 배반한 자요 불신자보다 더 악한 자니라"(딤전 5:8).</p>
+<p>돌봄은 결국 돈과 손의 문제로 내려온다. 윤명숙 전도사는 집을 사고 나서 효도하겠다는 계획을 받아 주지 않는다. "집사면 효도 할께요는 틀린 것이다." 그러면서 그는 반대쪽 유혹도 본다. 부모가 재산으로 공경을 붙들어 두려는 것이다. "돈 때문에 효도를 받는다면 보여줄 것이 없는 사람이다." 문대원 목사가 자녀 쪽에서 한 말과 짝이 맞는다. "그리스도인이라면 받을 유산이 없어도 효도해야 한다." 돌봄의 짐이 형제 사이에 고르게 놓이지 않는 현실도 그의 설교에 있다. 한 사람이 부모를 끝까지 모시고 병수발까지 했는데 남은 재산은 형제들에게 나뉘고 고맙다는 말도 없었던 경우를 두고 그는 말한다. "형이 섬긴것을 동생들이 잘 계산해야 한다."</p>
+<p>권성수 목사는 부모를 버리는 일을 현대판 고려장이라 부른다. 강단의 말도 그만큼 낮아졌다. "부모를 버리지 마세요. 아주 기초적인 호소를 하고 있다." 버림은 내쫓는 것만이 아니다. 예순다섯의 어머니가 손주를 보고 청소하고 밥을 하는 집을 그는 불효의 예로 든다. "병은 다 있다 그 병을 달래고 사는 것이 부모이다." 늙은 몸에 일을 얹지 않는 것도 공경이다.</p>
+<p>돌보는 자녀 자신이 이미 노인인 경우도 있다. 이상협의 한 강의는 공중보건의 시절 치매에 걸린 노모를 혼자 모시던 예순 줄의 아들을 만난 이야기를 전한다. 두 달 동안 날마다 그 집으로 가 상처를 돌본 일이 계기가 되어 마을에서 거동이 어려운 노인들을 찾아 등록하는 사업이 생겼다. 한 사람의 효심만으로는 감당되지 않는 돌봄이 있고, 그때 공경은 이웃과 공동체가 함께 지는 일이 된다. 선교사를 떠나보낸 집의 부모도 그런 자리에 있다. 하지영 목사는 선교사가 떠난 뒤 한국에 남은 부모를 섬기는 사역을 소개하고, 센더 학교의 강의는 보내는 교회가 맡을 일에 선교사 부모 돌봄을 올려 둔다(<a class="wl" href="../../t/%EB%A9%A4%EB%B2%84%EC%BC%80%EC%96%B4/">멤버케어</a>). 자녀가 부름을 따라 떠났다고 계명이 사라지지는 않는다. 그 짐을 지는 손이 넓어질 뿐이다.</p>
+<h2>6. 떠남과 공경 — 효도와 집착은 다르다</h2>
+<p>성경은 부모를 공경하라고 하고, 같은 성경이 "이러므로 사람이 그 부모를 떠나서"(막 10:7)라고 한다. 황규명 교수는 이 둘이 부딪쳐 보인다는 것을 먼저 인정한다. "이것이 모순되어 보인다. 중요한 진리이다."</p>
+<p>윤명숙 전도사는 마가복음 10장을 여러 해에 걸쳐 설교하며 이 매듭을 한 문장으로 푼다. "효도와 집착은 다르다." 그가 말하는 떠남은 발길을 끊는 것이 아니라 생각과 결정의 중심을 부모에게서 배우자에게로 옮기는 것이다. 그리고 이 옮김은 부모를 저버리는 일이 아니다.</p>
+<blockquote>
+<p>"부모에 대한 배신과 거절이 아니다. 효도를 위해 서도 인격적 분리가 있는 성숙함이 있어야 한다." — 윤명숙, 「부모의 입장에서 자녀를 떠나는 것」</p>
+</blockquote>
+<p>떠남이 오히려 공경의 조건이라는 것이 그의 요점이다. "떠나야 도울 수 있다. 의존 되어 있으면 효도가 어렵다." 그리고 하나가 된 부부가 함께 드리는 효도가 더 낫다. "건강한 결혼은 부부가 같이 효도하는 것이 질이 높다." 그의 설교에서 떠남은 세 겹이다.</p>
+<table>
+<thead>
+<tr>
+<th>떠남</th>
+<th>내용</th>
+<th>공경과의 관계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>관계적</td>
+<td>배우자의 눈으로 자기 부모를 보고, 결정의 중심을 부부에게 둔다</td>
+<td>조언은 듣되 마지막 결정은 새 가정이 한다</td>
+</tr>
+<tr>
+<td>경제적</td>
+<td>전세금이나 잔치 비용을 부모에게 기대지 않는다</td>
+<td>받는 자리에서 드리는 자리로 옮긴다</td>
+</tr>
+<tr>
+<td>정서적</td>
+<td>부모의 감정에서 벗어나고, 부모에게 받은 상처와 한을 살핀다</td>
+<td>묵은 감정이 풀려야 섬김이 겉돌지 않는다</td>
+</tr>
+</tbody>
+</table>
+<p>부모의 간섭이 부부를 흔들 때 그것을 끊는 일은 그 부모의 자녀가 맡는다. "각자 자기 부모에게 정중하게 본인이 끊어야 한다." 며느리가 시어머니에게, 사위가 장모에게 말하면 "거꾸로 하면 평생 원수가 된다". 황 교수도 같은 선을 긋는다. 자문은 구할 수 있지만 결정은 새 가정이 한다. 그리고 "맹목적으로 수용하거나, 부당한 대우를 그대로 놔두면 안된다".</p>
+<p>이상협의 가정사역 강의도 같은 내용을 전한다. "여전히 부모를 공경해야 되지만 이젠 그들의 primary focus는 더 이상 부모가 아니다." 그러면 불효가 아니냐는 물음에는 이렇게 답한다. "부모의 말을 듣는 것이 효도가 아니라, 부부가 먼저 잘 사는 것이 효도입니다." 배우자에게 효도를 요구하는 남편들에게는 한마디를 더한다. "부모에게 자발적으로 하지 않는 것은 절대 효도가 아닙니다."</p>
+<p>윤 전도사는 단서도 직접 단다. 효도와 부부 문제를 늘 한 묶음으로 볼 필요는 없다. 부모가 자녀를 떠나보내는 일은 <a class="wl" href="../../t/%EB%B6%80%EB%AA%A8%EA%B5%90%EC%9C%A1/">부모교육</a> 9절이, 떠난 둘이 하나가 되는 일은 <a class="wl" href="../../t/%EC%97%B0%ED%95%A9/">연합</a>과 <a class="wl" href="../../t/%EA%B2%B0%ED%98%BC/">결혼</a>이 다룬다.</p>
+<h2>7. 유교의 효와 성경의 공경 — 겹치는 자리와 갈라지는 자리</h2>
+<p>이상협의 강의는 부부보다 부모와 자식의 관계를 앞세우는 생각을 유교적 사고라 부른다. 강단에서 효를 말할 때 유교는 늘 곁에 서 있고, 설교자들이 그 이웃을 대하는 태도는 한 가지가 아니다.</p>
+<p>먼저 기꺼이 받아들이는 자리가 있다. 문대원 목사는 어버이주일 설교를 공자의 말로 연다. "효는 덕행의 근본이요, 인간 교화의 근원이다." 그리고 맞는 이야기라고 평한다. "믿지 않는 사람도 부모공경의 의미를 안다." 윤명숙 전도사는 부모가 드나들 때 예의를 갖추는 가정의 예절을 가르치며 우리나라 유교에도 있는 것이라 하고, 권성수 목사는 가정의 질서가 나라의 질서로 이어진다는 말을 수신제가치국평천하로 받는다. 그는 불효가 누구에게나 양심의 가책이 된다고 본다. "아무리 마비된 양심도 부모를 생각하면 움직인다."</p>
+<p>갈라지는 자리는 셋이다.</p>
+<table>
+<thead>
+<tr>
+<th>논점</th>
+<th>설교와 강의가 유교의 효라 부른 것</th>
+<th>성경의 공경으로 내놓은 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>대상과 때</td>
+<td>장례와 제사를 통해 죽은 뒤에도 이어지는 효</td>
+<td>살아 있는 부모를 향한 섬김. 죽은 이를 향한 제사는 예배의 문제가 된다</td>
+</tr>
+<tr>
+<td>우선순위</td>
+<td>부모와 자식의 관계가 부부 관계보다 앞선다</td>
+<td>결혼하면 부부가 먼저이고, 그 부부가 함께 부모를 섬긴다</td>
+</tr>
+<tr>
+<td>권위의 방식</td>
+<td>사랑 없이 하라와 하지 말라만 있는 권위</td>
+<td>책임과 소통이 따르는 권위. 필요하면 공손히 이견을 말한다</td>
+</tr>
+</tbody>
+</table>
+<p>첫째가 가장 날카롭다. 권 목사의 십계명 강해는 제2계명에서 조상 제사를 다루며 효와 제사를 떼어 놓는다. "명백하게 효도가 아니다. 효도는 살아계신 부모에게 해야 한다." 다른 설교에서는 이렇게 뒤집는다. "살아계신 분들을 제사 지내듯 모셔야 한다. 네 부모를 공경하라는 것을 지키면 된다." 고인이 어떻게 살았는지를 나누는 추모는 좋은 것으로 남겨 두되 예배는 하나님께만 드린다는 것이 그의 선이다. 제사 자체에 대한 판단은 <a class="wl" href="../../t/%EC%9A%B0%EC%83%81%EC%88%AD%EB%B0%B0/">우상숭배</a>와 <a class="wl" href="../../t/%EC%8B%AD%EA%B3%84%EB%AA%85/">십계명</a> 5절의 몫이다. 셋째에 대해서 그는 사랑 없이 명령만 있는 부모를 유교의 영향으로 돌리고, 필요할 때는 토를 달아야 하되 존대하는 마음으로 부드럽게 하라고 한다.</p>
+<p>이 비교에는 조심할 점이 있다. 여기 실린 유교는 설교자와 강사들의 눈에 비친 유교이고, 그 전통이 스스로를 설명하는 글은 손에 든 자료에 없다. 그리고 문화가 본문을 한쪽으로 기울여 듣는 일은 동양에만 있지 않다. <span class="wl-dead" title="위키 내부 링크">폴 스티븐스</span>와 클라이브 림은 『돈은 중요하다』에서 동양과 서양의 그리스도인이 이 계명을 서로 다르게 듣는다고 적는다. 동양에서는 부모를 부양하라는 뜻으로, 서양에서는 부모에게 영광을 돌리고 존경하라는 뜻으로 듣는다. 부모가 자식을 위해 재산을 모은다는 고린도후서 12:14는 서양의 방식을 받치고, 고르반을 꾸짖으신 예수의 말씀은 동양의 방식을 받친다. 한쪽으로만 들을 때의 그늘도 책에 있다. 결혼한 남자가 부모를 배우자보다 앞세우는 사회에서는 결혼이 자주 불행해지는데, 저자가 그곳 교회의 장로들에게 창세기 2장의 '아버지와 어머니를 떠나'는 어떻게 되느냐고 되물으면 대개 침묵이 돌아왔다고 한다. 책은 곧이어 평생 남에게 넉넉했으나 노년을 대비하지 못해 열악한 노인 시설에서 지내는 친구의 이야기를 싣는다. 누가 늙은 부모를 돌보느냐는 물음은 어느 문화에서도 저절로 풀리지 않는다. 봉양을 크게 듣는 귀와 떠남을 크게 듣는 귀가 서로에게서 나머지 절반을 배운다.</p>
+<h2>8. 주 안에서 — 공경의 한계, 그리고 더 큰 부름</h2>
+<p>바울은 순종하라는 말 앞에 단서를 달았다. "자녀들아 주 안에서 너희 부모에게 순종하라 이것이 옳으니라"(엡 6:1). 권성수 목사는 '주 안에서'라는 말에서 순종의 한계를 읽는다. "주님이 싫어하실때는 못한다." 그가 드는 예는 교회에 가지 말라는 요구와 제사를 지내라는 요구다. 그는 거절의 내용만큼 거절의 태도를 말한다. "어떤 경우에도 부모를 무시하는 말이나 표정을 하면 안된다." 그리고 "부모의 권위를 인정, 부드럽게 거역해야 한다". 레위기 19:32 설교는 이 구별에 이름을 붙인다.</p>
+<blockquote>
+<p>"권위의 자체가 아니라 권위의 잘못된 명령에 불복하는 것이다." — 권성수, 「센 머리 앞에 일어서라」</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>따르지 않을 수 있는 것</th>
+<th>내려놓을 수 없는 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>대상</td>
+<td>하나님의 뜻을 거스르는 명령</td>
+<td>부모라는 자리 자체</td>
+</tr>
+<tr>
+<td>태도</td>
+<td>부드러운 거절, 공손한 이견</td>
+<td>무시하지 않는 말과 표정</td>
+</tr>
+<tr>
+<td>판단</td>
+<td>그 명령이 그르다는 분별</td>
+<td>부모를 벌하는 일은 자녀의 몫이 아니라는 것</td>
+</tr>
+</tbody>
+</table>
+<p>마지막 줄의 근거는 다윗이다. 사울이 동굴에 들어왔을 때 다윗은 손대지 않았다. "징계도 있고 처벌도 있지만, 내가 하는 것이 아니다." 같은 설교가 권위자 쪽에도 선을 긋는다. 권위주의는 "내 위에 하나님이 계신다는 것을 잊어버릴때 생긴다". 문대원 목사의 말로는 부모의 권위도 "일정기간 동안 위임 받은 것이다". 위임받은 권위가 위임하신 분을 거스르는 순간 그 명령은 따를 근거를 잃는다(<a class="wl" href="../../t/%EA%B6%8C%EC%9C%84/">권위</a>).</p>
+<p>복음서에는 이보다 훨씬 거친 말들이 있다. 부모를 미워하지 않으면 제자가 될 수 없다는 말씀이 있고(눅 14:26), 이런 말씀이 있다. "아버지나 어머니를 나보다 더 사랑하는 자는 내게 합당하지 아니하고"(마 10:37). 이상협의 성경해석학 과제는 앞의 말씀을 과장법의 예로 다룬다. 말하는 이가 다른 곳에서 한 가르침과 정면으로 부딪치는 진술은 과장으로 읽어야 하는데, 예수는 고르반 논쟁과 부자 청년과의 대화에서 부모를 공경하라는 계명을 그대로 세우셨기 때문이다. 미워하라는 말은 미움의 명령이 아니라 견줄 수 없는 우선순위의 선언이다. 아버지의 장례를 먼저 치르게 해 달라는 사람에게 하신 대답을 <span class="wl-dead" title="위키 내부 링크">주종훈</span> 목사도 같은 틀로 읽는다. "아버지의 장례 문제를 이야기 한다. 우선순위의 문제다." 예수가 겨누신 것은 장례가 아니라 '먼저'라는 말, 곧 모든 일이 정리되면 따르겠다는 조건이다.</p>
+<p>이 긴장이 가장 현실로 닥치는 사람은 부름을 받아 멀리 떠나는 사람이다. 『글로벌 미션 핸드북』에서 김동화는 선교 헌신자에게 서로 부딪쳐 보이는 두 말씀을 함께 쥐여 준다. "우선순위는 그리스도에 대한 헌신이 되어야겠지만 그렇다고 해서 가족을 저버리라는 뜻은 아님을 위의 두 성경 구절은 보여 준다." 그가 세우는 본은 십자가 위의 예수다. 소명을 끝까지 지시면서도 어머니를 맡기셨다(요 19:27).</p>
+<p>그래서 한계는 두 방향으로 그어진다. 권성수 목사의 제1계명 강해에는 두 문장이 나란히 있다. "부모와 하나님이 충돌될때에는 하나님을 섬겨야 한다. 고르반하면 안된다." 앞 문장은 부모가 하나님의 자리에 설 수 없다는 것을, 뒤 문장은 하나님의 이름이 부모를 저버리는 핑계가 될 수 없다는 것을 말한다고 읽을 수 있다. 공경은 이 두 문장 사이에 선다.</p>
+<h2>9. 공경하기 어려운 부모 앞에서 — 5월이 없었으면 하는 사람들</h2>
+<p>여기까지의 이야기는 부모가 적어도 부모였던 집을 전제한다. 그렇지 않은 집이 있다. 윤명숙 전도사는 어버이주일 무렵의 설교를 이 사람들 이야기로 연다. "부모와의 관계에서 힘든 사람들은 5월이 없었으면 한다." 강단은 보편적인 효를 말할 수밖에 없는데 "꼭 상처 받은 사람들이 그 말씀을 받아간다". 그들에게 이 달은 "겉으로는 효도를 하는듯 하면서 내면과 일치가 안되는 불편한 5월이다". 한영웅 목사는 어릴 적 아버지에게 학대를 당한 한 성도가 가정의 달 설교를 견디기 힘들어한 이야기를 전한다. 공경하고 순종하라는 말 자체가 듣기 싫었다는 것이다. 이상협의 강의는 병든 시어머니를 모시게 된 며느리의 상담 사례를 놓고 적는다. "부모공경이란 말씀이 더 정죄, 죄책감".</p>
+<p>이 자리에서 대답은 둘로 나온다. 어느 쪽도 가볍지 않다.</p>
+<p><strong>강단의 대답은 계명이 조건을 달고 있지 않다는 것이다.</strong> 권성수 목사는 불효의 핑계를 읽어 내려가다 이 대목에 이른다. 부모에게 한이 맺혀서, 부모가 해 준 것이 없어서. 그의 답은 짧다. "네 부모를 공경, 여기에 조건이 없다. 잘해주는 부모에게 하는 것이 아니다." 다른 설교에서는 부모와 의절하지 말라고 한다. 공경을 부모의 자격에 묶는 순간 계명은 자격 심사가 되고, 심사하는 사람이 다친 쪽이므로 결과는 정해져 있다. 문대원 목사도 폭력적인 아버지를 미워하며 자란 아들을 두고 "미워하는 것은 어떤 문제를 해결하지 못한다"고 하고, 미워하던 그 모습을 닮아 갈 수 있다고 경고한다. 공경이 받은 것의 값이 아니라 하나님께 드리는 순종이라면, 받은 것이 없는 사람도 공경할 수 있다.</p>
+<p><strong>그런데 같은 강단이 방향을 튼다.</strong> 권 목사의 제5계명 강해는 권위와 질서를 길게 말한 뒤, 믿음 좋기로 이름난 집안에서 자란 자녀가 받은 상처의 사례로 넘어간다. <a class="wl" href="../../t/%EC%8B%AD%EA%B3%84%EB%AA%85/">십계명</a> 6절이 인용한 대로 그는 상처가 먼저 해결되어야 한다고 말하고, 원인을 숨기지 않는다. "공부해라 부모 공경해라를 일방적으로 강조하면 이렇게 상처가 생긴다." 그리고 부모들에게 묻는다. "깊이 박힌 대못이 무엇인지 알고 있는지, 파악해 보려 했는가?" 문 목사도 자녀가 부모에게 쓴 마음을 품는 일을 두고 말한다. "많은 경우, 이것은 부모가 잘못했기 때문이다." 학대받은 아이가 세상을 불공평하게 느끼게 되는 것은 부모의 책임이라고 그는 못박는다.</p>
+<p><strong>상담의 대답은 순서가 있다는 것이다.</strong> 윤 전도사는 잠언 강의에서 '부모 용서하기'를 다루며 먼저 사실 하나를 적는다. "어릴 때는 신체적인 학대를 받는 아이들조차도 정상적인 부모는 자녀들을 때리지 않는다는 것을 깨닫지 못한다." 다친 사람은 자기가 다쳤다는 것부터 알아야 한다. 그다음이 공감이다.</p>
+<blockquote>
+<p>"그럴 수 있어 많이 힘들지 라고 절감하고 공감할 때 상처된 내면이 치료될 수 있다." — 윤명숙, 「잠언 자기 이해」</p>
+</blockquote>
+<p>부모의 어떤 말과 행동이 상처로 남았는지 정확히 알아본 뒤에야 그럴 수밖에 없었던 부모의 사정을 헤아릴 수 있다. 순서를 건너뛰면 어떻게 되는지도 그는 안다. "절차를 무시하고 사실과 진리를 알려주면 따라가지 않는다." "오히려 실천하지 못하기 때문에 더 절망한다."</p>
+<p>그가 권하는 것은 덮는 것도 터뜨리는 것도 아닌 넘기는 기도다. "하나님의 손에 양도, 넘기는 기도를 분명히 해야 한다." 요셉의 용서도 그런 기도 끝에 온 것이다. "요셉이 형들을 용서했다고 쉽게 생각하면 안된다." "덮고 지나가면 외면과 내면의 차이가 심해지면서 어려운 신앙생활을 하게 된다." 문대원 목사는 회복이 가능하다고 말하면서 시간을 감추지 않는다. "예수 그리스도로 가능하다. 다만 오랜 시간과 과정이 필요하다." <span class="wl-dead" title="위키 내부 링크">헨리 클라우드</span>는 다 자란 사람의 까닭 없는 죄책감 속에서 부모의 목소리를 듣는다. 그 사람은 "여전히 부모의 목소리 아래에 살고 있는 셈이다". 그 목소리에서 풀려나는 것과 부모를 공경하는 것은 맞서지 않는다. 6절의 정서적 떠남이 여기서도 공경의 조건이 된다(<a class="wl" href="../../t/%EB%82%B4%EB%A9%B4%EC%B9%98%EC%9C%A0/">내면치유</a>).</p>
+<p>용서는 이 길의 한 구간이다. 권 목사는 부모를 생각하면 용서가 힘들다는 사람들이 있다는 것을 알고 말한다. "불쌍히 여기지 않으면 어렵다." 술에 취해 가족을 때리던 아버지를 어떻게 용서하느냐는 물음에는 "감정으로는 안되지만 의지로는 용서해야 한다"고 답한다. 한영웅 목사가 전한 그 성도에게 길이 열린 것은 명령을 통해서가 아니었다. 아버지를 용서하기가 이렇게 힘든데 하나님은 어떻게 나를 용서하셨을까 하는 물음에서 그는 하나님이 겪으신 아픔을 느꼈다고 한다. 용서와 화해의 구분은 <a class="wl" href="../../t/%EC%9A%A9%EC%84%9C/">용서</a>가 다룬다. 이상협의 강의는 요셉이 맏아들을 므낫세라 부른 까닭을 읽다가 <span class="wl-dead" title="위키 내부 링크">미로슬라브 볼프</span>의 물음을 가정으로 가져온다. "최종적 화해의 부재 속에서도 평화롭게 살기 위해서 우리에게 어떤 자원이 필요한가" 화해가 끝내 오지 않을 수 있음을 인정하는 물음이다.</p>
+<p>두 대답은 서로를 필요로 한다. 강단의 말만 남으면 다친 사람에게 정죄가 하나 더 얹히고, 상담의 말만 남으면 계명은 상처가 다 나을 때까지 미뤄진다. 윤 전도사는 둘을 한자리에 둔다. 강단의 설교를 받아 살기 힘든 사람이 많다고 말한 바로 뒤에 그는 덧붙인다. "그럼에도 불구하고 말씀의 표준을 지켜야 한다."</p>
+<p>여기서 처음의 물음으로 돌아갈 수 있다. 설교자와 강사들이 공경에 넣은 것과 넣지 않은 것을 모으면 다음과 같다.</p>
+<table>
+<thead>
+<tr>
+<th>공경에 들어가는 것</th>
+<th>공경이 요구하지 않는 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>무시하지 않는 말과 표정(권성수)</td>
+<td>하나님의 뜻을 거스르는 명령에 따르는 것(권성수)</td>
+</tr>
+<tr>
+<td>부모를 벌하려 하지 않고 판단을 하나님께 넘기는 것(권성수·윤명숙)</td>
+<td>부당한 대우를 그대로 두는 것(황규명)</td>
+</tr>
+<tr>
+<td>필요를 살피고 채우는 것(권성수·윤명숙)</td>
+<td>결혼한 뒤에도 지시와 간섭을 받아들이는 것(권성수·윤명숙)</td>
+</tr>
+<tr>
+<td>부모를 부끄럽게 하지 않는 삶(권성수)</td>
+<td>상처를 덮고 겉으로만 섬기는 것(윤명숙)</td>
+</tr>
+</tbody>
+</table>
+<p>이 표에는 빈칸이 있다. 학대가 지금도 이어지고 있을 때 자녀가 자신과 제 아이를 지키려고 부모와 거리를 두는 것이 공경과 어떻게 함께 설 수 있는지를 직접 다룬 자료는 없다. 케이프타운 서약의 학습 질문이 교회 쪽에 던지는 물음으로 이 절을 닫는다. "교회는 이 땅의 부모에 의해 상처 입거나 버려지거나 고아가 된 사람들을 어떤 방법으로 돌보아야 하는가?"</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>공경은 순종보다 넓고 길다. 순종은 부모의 보호 아래 있는 동안의 일이고, 공경은 존경과 봉양으로 모양을 바꾸며 평생 이어진다.</li>
+<li>공경의 근거는 부모의 자격이 아니라 부모를 세우신 하나님이다. 그래서 계명에는 수식어가 없고, 같은 이유로 부모의 명령이 하나님의 뜻을 거스를 때 순종은 멈춘다. '주 안에서'는 근거이자 한계다.</li>
+<li>요셉이 보여 준 공경은 필요를 채우는 봉양과 높이는 존대다. 시작은 얼굴을 보이는 것이다.</li>
+<li>예수는 경건의 이름으로 늙은 부모의 부양을 면하려는 고르반을 계명을 폐하는 일이라 하셨다. 부모가 하나님의 자리에 설 수 없고, 하나님의 이름이 부모를 저버리는 핑계가 될 수 없다.</li>
+<li>떠남은 공경의 반대가 아니라 조건이다. 부모에게 기대어 있는 자녀는 부모를 섬길 수 없다. 효도와 집착은 다르다.</li>
+<li>유교의 효와 성경의 공경은 부모 섬김을 사람의 근본으로 본다는 데서 만나고, 제사와 우선순위와 권위의 방식에서 갈라진다.</li>
+<li>공경하기 어려운 부모 앞에서 강단은 조건 없는 계명을, 상담은 치유의 순서를 말한다. 표준을 낮추지 않되 거기까지 가는 길이 길다는 것을 인정할 때 계명은 정죄가 아니라 방향이 된다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>학대와 방임이 지금도 이어지는 가정에서 안전을 위해 거리를 두거나 관계를 끊는 일은 공경과 어떻게 함께 설 수 있는가. 의절하지 말라는 권면(권성수)과 부당한 대우를 그대로 두지 말라는 권면(황규명)이 부딪칠 때의 기준을 다룬 자료가 없다. <a class="wl" href="../../t/%EA%B2%BD%EC%99%B8/">경외</a>의 미해결 질문과 이어진다.</li>
+<li>잘되고 장수하리라는 약속은 정성껏 부모를 섬겼으나 형통하지 못한 사람에게 어떻게 말해져야 하는가. 약속을 바라보는 믿음과 복에 상관없는 순종은 어디서 만나는가. <a class="wl" href="../../t/%EC%8B%AD%EA%B3%84%EB%AA%85/">십계명</a>과 함께 지는 물음이다.</li>
+<li>늙은 부모를 돌보는 일의 실제, 곧 치매와 요양 시설과 형제 사이의 분담과 돌보는 자녀의 소진에 대해서는 원리와 몇 개의 일화가 있을 뿐이다. 시설에 모시는 것이 봉양인지 버림인지를 가르는 기준은 무엇인가.</li>
+<li>결혼을 기준으로 순종과 봉양을 나누는 구분은 결혼하지 않은 성인 자녀를 어디에 두는가.</li>
+<li>여기 실린 유교의 효는 설교자와 강사들의 눈에 비친 것이다. 그 전통의 자기 설명을 들은 뒤에야 공정한 비교가 가능하다. 공경으로 옮겨진 성경 원어의 폭을 다룬 어휘 연구도 아직 근거 자료에 없다.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%8B%AD%EA%B3%84%EB%AA%85/">십계명</a> — 두 돌판에서 제5계명이 놓인 자리(3·6절). <a class="wl" href="../../t/%EA%B2%BD%EC%99%B8/">경외</a> — 보이는 부모와 보이지 않는 분(6·7절).</li>
+<li><a class="wl" href="../../t/%EC%88%9C%EC%A2%85/">순종</a> · <a class="wl" href="../../t/%EA%B6%8C%EC%9C%84/">권위</a> — 가정이라는 순종의 학교, 권위의 위임과 견제.</li>
+<li><a class="wl" href="../../t/%EB%B6%80%EB%AA%A8%EA%B5%90%EC%9C%A1/">부모교육</a> · <a class="wl" href="../../t/%EC%9E%90%EB%85%80%EA%B5%90%EC%9C%A1/">자녀교육</a> · <a class="wl" href="../../t/%ED%9B%88%EC%9C%A1/">훈육</a> — 같은 계명의 부모 쪽 일.</li>
+<li><a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EC%A0%84%EC%88%98/">신앙전수</a> · <a class="wl" href="../../t/%EC%84%B8%EB%8C%80%EC%A0%84%EC%88%98/">세대전수</a> — 효가 지키는 전수의 통로.</li>
+<li><a class="wl" href="../../t/%EA%B2%B0%ED%98%BC/">결혼</a> · <a class="wl" href="../../t/%EC%97%B0%ED%95%A9/">연합</a> · <a class="wl" href="../../t/%EA%B2%B0%ED%98%BC%EA%B3%BC%EA%B0%80%EC%A0%95/">결혼과가정</a> · <a class="wl" href="../../t/%EA%B0%80%EC%A0%95/">가정</a> — 부모를 떠나 한 몸이 되는 일.</li>
+<li><a class="wl" href="../../t/%EC%9A%A9%EC%84%9C/">용서</a> · <a class="wl" href="../../t/%ED%99%94%ED%95%B4/">화해</a> · <a class="wl" href="../../t/%EB%82%B4%EB%A9%B4%EC%B9%98%EC%9C%A0/">내면치유</a> — 부모에게 받은 상처와 치유의 순서.</li>
+<li><a class="wl" href="../../t/%EC%A1%B4%EC%A4%91/">존중</a> · <a class="wl" href="../../t/%EC%9A%B0%EC%83%81%EC%88%AD%EB%B0%B0/">우상숭배</a> · <a class="wl" href="../../t/%EB%A9%A4%EB%B2%84%EC%BC%80%EC%96%B4/">멤버케어</a> — 공경과 존중, 조상 제사, 선교사의 부모.</li>
+<li><span class="wl-dead" title="위키 내부 링크">출20</span> · <span class="wl-dead" title="위키 내부 링크">신5</span> · <span class="wl-dead" title="위키 내부 링크">엡6</span> · <span class="wl-dead" title="위키 내부 링크">레19</span> · <span class="wl-dead" title="위키 내부 링크">막7</span> · <span class="wl-dead" title="위키 내부 링크">막10</span> · <span class="wl-dead" title="위키 내부 링크">딤전5</span> — 본문 허브.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">십계명_10_제5계명2</span> · <span class="wl-dead" title="위키 내부 링크">2017_부모순종과자녀양육</span> · <span class="wl-dead" title="위키 내부 링크">2014_솔로몬트위터2_부모를기쁘게</span> · <span class="wl-dead" title="위키 내부 링크">2016_센머리앞에일어서라</span></td>
+<td>설교(권성수)</td>
+<td>권위와 상처, 공경의 폭과 세 단계, 결혼 전후의 구분, 잘못된 명령과 권위 자체</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2018_언약적효도</span> · <span class="wl-dead" title="위키 내부 링크">2019_효도의모델</span> · <span class="wl-dead" title="위키 내부 링크">2020_효도왜축복</span> · <span class="wl-dead" title="위키 내부 링크">2021_축복의통로막혔는가뚫렸는가</span></td>
+<td>설교(권성수)</td>
+<td>요셉의 봉양과 존대, 조건 없는 계명, 보은의 순환, 약속의 해석</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">십계명_05_제2계명2</span> · <span class="wl-dead" title="위키 내부 링크">진리_진리대결이냐능력대결이냐</span> · <span class="wl-dead" title="위키 내부 링크">십계명_02_제1계명</span> · <span class="wl-dead" title="위키 내부 링크">2021_저주축복전환비결</span> · <span class="wl-dead" title="위키 내부 링크">생생신앙_11_갈등을해소하는방법</span></td>
+<td>설교(권성수)</td>
+<td>제사와 효도의 구별, 고르반, 부모를 용서하는 어려움</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2026-05-10_순종을배우는곳</span> · <span class="wl-dead" title="위키 내부 링크">2025_권위는하나님의계획이다</span></td>
+<td>설교(문대원)</td>
+<td>약속과 절제, 위임된 권위, 공자 인용</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2026_기쁨없는예배</span> · <span class="wl-dead" title="위키 내부 링크">2025_나그네영성6_상속자들</span> · <span class="wl-dead" title="위키 내부 링크">2023_영원을위한선택</span></td>
+<td>설교(문대원)</td>
+<td>학대의 책임과 회복, 만회할 수 없는 효도</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2015_부모를공경하는것</span> · <span class="wl-dead" title="위키 내부 링크">2017_주안에서관리</span></td>
+<td>설교(윤명숙)</td>
+<td>효는 말씀 전수의 통로, 5월이 힘든 사람들</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2019_부모를떠나는것</span> · <span class="wl-dead" title="위키 내부 링크">2019_가정에서한몸이되는것</span> · <span class="wl-dead" title="위키 내부 링크">2015_자녀를떠나는것</span> · <span class="wl-dead" title="위키 내부 링크">2015_부부갈등과싸움</span> · <span class="wl-dead" title="위키 내부 링크">2019_정서적인떠남</span></td>
+<td>설교(윤명숙)</td>
+<td>효도와 집착, 세 겹의 떠남</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2018_하나님께올려드리는기도</span> · <span class="wl-dead" title="위키 내부 링크">2015_자기이해</span></td>
+<td>설교(윤명숙)</td>
+<td>넘기는 기도, 부모 용서하기의 순서</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2016_사랑을체크해보라</span> · <span class="wl-dead" title="위키 내부 링크">2016_하나님우선순위</span> · <span class="wl-dead" title="위키 내부 링크">2019_부부연합</span> · <span class="wl-dead" title="위키 내부 링크">2017_기쁨으로돌아가서</span></td>
+<td>설교(윤명숙)</td>
+<td>계산 없는 효도, 재산과 공경, 돌봄의 분담</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2016_황규명교수_하나님이설계하신가정</span> · <span class="wl-dead" title="위키 내부 링크">2016_황규명교수_새가정을세우는부모역할</span> · <span class="wl-dead" title="위키 내부 링크">황규명_청소년신앙및정체성확립</span></td>
+<td>강의(황규명)</td>
+<td>달라지는 공경의 방법, 부당한 대우</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">건강한-결혼을-위한-하나님의-가정-설계</span> · <span class="wl-dead" title="위키 내부 링크">성경적_남편과_아내의역할</span> · <span class="wl-dead" title="위키 내부 링크">사람은_어떻게_변화되는가</span> · <span class="wl-dead" title="위키 내부 링크">가정의-관계-훈련</span> · <span class="wl-dead" title="위키 내부 링크">의료사회회복프로젝트</span></td>
+<td>강의(이상협)</td>
+<td>떠남과 효도, 정죄로 들리는 계명, 노모를 돌보는 아들</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2016_한영웅_죄를죽이는기도생활</span> · <span class="wl-dead" title="위키 내부 링크">2025_주종훈_그리스도의_부르심을_향한_반응</span> · <span class="wl-dead" title="위키 내부 링크">2016_하지영목사_바르실래의_섬김</span> · <span class="wl-dead" title="위키 내부 링크">2017년동신센더스쿨</span></td>
+<td>설교·강의</td>
+<td>학대받은 이에게 들리는 계명, 우선순위, 선교사의 부모</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">01주_서론_1-2장</span> · <span class="wl-dead" title="위키 내부 링크">성경해석학개론</span></td>
+<td>신대원 강의·과제</td>
+<td>딤전 5:3-8이라는 지침, 눅 14:26의 과장법</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EB%9E%8D%EB%B9%84%EC%98%88%EC%88%98%EC%A0%9C%EC%9E%90%EB%8F%84%EB%A5%BC%EB%A7%90%ED%95%98%EB%8B%A4_%ED%8B%B0%EC%96%B4%EB%B2%A0%EB%A5%B4%EA%B7%B8%EC%8A%A4%ED%8C%BD%EA%B8%80%EB%9F%AC/">랍비예수제자도를말하다_티어베르그스팽글러</a> · <a class="wl" href="../../b/%EB%8F%88%EC%9D%80%EC%A4%91%EC%9A%94%ED%95%98%EB%8B%A4_%EC%8A%A4%ED%8B%B0%EB%B8%90%EC%8A%A4%EB%A6%BC/">돈은중요하다_스티븐스림</a></td>
+<td>책</td>
+<td>고르반, 동양과 서양의 독법</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EC%85%98%ED%95%B8%EB%93%9C%EB%B6%81_2%EC%9E%A5_%EC%82%AC%EC%97%AD%EC%A0%95%EC%B2%B4%EC%84%B1/">글로벌미션핸드북_2장_사역정체성</a> · <a class="wl" href="../../b/%ED%81%AC%EB%A6%AC%EC%8A%A4%EC%B2%9C%EC%9D%84%EC%9C%84%ED%95%9C%EB%A7%88%EC%9D%8C%EC%BD%94%EC%B9%AD_%ED%97%A8%EB%A6%AC%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C/">크리스천을위한마음코칭_헨리클라우드</a> · <a class="wl" href="../../b/%EC%BC%80%EC%9D%B4%ED%94%84%ED%83%80%EC%9A%B4%EC%84%9C%EC%95%BD/">케이프타운서약</a> · <a class="wl" href="../../b/%EB%B0%B0%EC%A0%9C%EC%99%80%ED%8F%AC%EC%9A%A9_%EB%AF%B8%EB%A1%9C%EC%8A%AC%EB%9D%BC%EB%B8%8C%EB%B3%BC%ED%94%84/">배제와포용_미로슬라브볼프</a></td>
+<td>책</td>
+<td>선교 헌신과 가족, 부모의 목소리, 교회의 과제, 화해 없는 평화</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/기독교윤리</span><span>#topic/십계명</span><span>#topic/가정</span><span>#topic/효도</span><span>#topic/권위</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

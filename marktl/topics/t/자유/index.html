@@ -1,0 +1,634 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>자유 — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-t">조직신학·교리</span><span class="date">2026-10-02</span></div>
+  <h1 class="note-title">자유</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>성경이 말하는 자유는 '하고 싶은 대로 할 수 있음'이 아니다. 그것은 먼저 사건이다. 종이던 사람이 값을 치른 분에게 넘겨져 주인이 바뀐 일이다. 그리고 그 사건이 낳는 능력이다. 옳은 것을 택하고, 멈추고, 자기를 내어 줄 수 있는 힘이다. 바울은 이 둘을 한 문장에 담는다 — "그리스도께서 우리를 자유롭게 하려고 자유를 주셨으니 그러므로 굳건하게 서서 다시는 종의 멍에를 메지 말라"(갈 5:1). 여기에는 받은 것과 지킬 것과 잃을 수 있는 것이 함께 들어 있다.</p>
+<p>설교들이 자유를 부르는 자리를 따라가면 물음은 셋으로 모인다. <strong>무엇으로부터</strong> 풀려났는가 — 죄의 지배, 율법의 저주, 종 된 두려움. <strong>무엇을 향해</strong> 풀려났는가 — 사랑으로 서로 종노릇 하는 삶. <strong>무엇 안에서</strong> 그 자유가 지켜지는가 — 진리와 계명이라는 테두리. 첫째만 붙들면 자유는 방종이 되고, 셋째만 붙들면 자유는 다시 율법이 된다. 둘째가 가운데서 둘을 붙든다. 이 글은 세 물음을 차례로 지나 일상의 사슬과 공적 광장까지 따라간다.</p>
+<p>경계를 먼저 긋는다. 타락한 의지가 스스로 선을 택할 수 있는가는 <a class="wl" href="../../t/%EC%9E%90%EC%9C%A0%EC%9D%98%EC%A7%80/">자유의지</a>가, 율법의 세 용도는 <a class="wl" href="../../t/%EC%9C%A8%EB%B2%95%EA%B3%BC%EB%B3%B5%EC%9D%8C/">율법과복음</a>이, 은혜와 순종의 순서를 뒤집는 왜곡은 <a class="wl" href="../../t/%EC%9C%A8%EB%B2%95%EC%A3%BC%EC%9D%98/">율법주의</a>가 맡는다. 순종을 배우는 학교와 그 한계는 <a class="wl" href="../../t/%EC%88%9C%EC%A2%85/">순종</a>에, 종 됨의 원어와 두 종됨의 구별은 <a class="wl" href="../../t/%EC%84%AC%EA%B9%80/">섬김</a>에 있다. 국가의 강제로부터 신앙을 지키는 제도는 <a class="wl" href="../../t/%EC%A0%95%EA%B5%90%EB%B6%84%EB%A6%AC/">정교분리</a>·<a class="wl" href="../../t/%EC%96%91%EC%8B%AC%EC%9D%98%EC%9E%90%EC%9C%A0/">양심의자유</a>·<a class="wl" href="../../t/%EC%A2%85%EA%B5%90%EC%9D%98%EC%9E%90%EC%9C%A0/">종교의자유</a>로 넘긴다. 여기서 다루는 것은 그 논의들이 전제하는 한 가지, <strong>그리스도인의 자유 그 자체</strong>다.</p>
+<h2>1. 두 개의 자유 — 하고 싶은 대로와 옳은 것을 택할 능력</h2>
+<p>자유라는 낱말에서 사람들이 먼저 떠올리는 것은 제한이 없는 상태다. <span class="wl-dead" title="위키 내부 링크">문대원</span> 목사는 여러 해에 걸친 설교에서 이 통념을 같은 문장으로 거듭 뒤집는다. 여호수아 4장 강해 「천 대까지 이어지는 행복」에서 그는 자유를 두 단계로 나눈다.</p>
+<blockquote>
+<p>"가장 낮은 단계의 자유: 하고 싶은대로 할 수 있는 것
+가장 높은 단계의 자유: 옳은 것을 선택할 수 있는 능력" — 문대원, 「천 대까지 이어지는 행복」</p>
+</blockquote>
+<p>낮은 단계의 자유가 왜 끝이 아닌가. "술 마실 자유가 있지만, 매일 마시면 알콜 중독이다. 자유를 잃어버리고 노예가 된다." 하고 싶은 대로 하는 자유는 자기를 먹어 치운다. 요한복음 14장 강해 「진리를 거부하는 세상을 향해」는 그 이유를 인간 이해에서 찾는다. "인간의 본성이 어그러져 있기 때문에 하고 싶은대로 하면 죄가 된다." 그리고 죄는 되풀이되면 주인이 된다 — "처음에는 선택해서 죄를 지었지만, 죄가 시키는대로 살게된다." "죄를 범하는 자마다 죄의 종이라"(요 8:34)는 말씀이 가리키는 것이 이 역전이다. 선택으로 시작한 것이 선택을 지운다.</p>
+<p>그래서 높은 단계의 자유는 허락이 아니라 능력의 문제다. 「천 대까지 이어지는 행복」은 가족끼리 다툰 뒤의 장면을 든다. 먼저 사과하는 것이 옳은 줄 알면서 자존심 때문에 하지 못한다 — "옳은 것을 아는데 자유를 선택하지 않는다. 선택할 능력이 없다." 옳은 줄 알면서 그쪽으로 몸이 가지 않는 사람도 자유롭지 않다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>낮은 단계의 자유</th>
+<th>높은 단계의 자유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>뜻</td>
+<td>하고 싶은 대로 할 수 있는 것</td>
+<td>옳은 것을 선택할 수 있는 능력</td>
+</tr>
+<tr>
+<td>숨은 전제</td>
+<td>내 본성은 믿을 만하다</td>
+<td>본성이 어그러져 있다</td>
+</tr>
+<tr>
+<td>자유의 반대말</td>
+<td>간섭, 제한</td>
+<td>지배당함, 얽매임</td>
+</tr>
+<tr>
+<td>가는 곳</td>
+<td>되풀이 → 중독 → 다시 종</td>
+<td>절제 → 섬김</td>
+</tr>
+</tbody>
+</table>
+<p>이 구별은 설교단 밖에서도 같은 모양으로 나타난다. 윌리엄 템플은 『기독시민의 사회적 책임』에서, 자유를 제한이 없는 상태로만 이해하면 자유와 방종을 가를 수 없다고 지적하고 "자유가 보배로운 것이 되기 위해서는 무엇인가를 위한 자유이면서 동시에 무엇인가로부터 연유하는 자유이여야 한다"고 쓴다. 그래서 "자유에는 훈련이 내포되어 있다." 신국원은 『니고데모의 안경』에서 같은 선을 자유와 자율 사이에 긋는다. "자유를 행사하는 것이 잘못은 아니다." 잘못은 그 선물을 "하나님의 뜻과 상관없이 멋대로 행사하는 것", 곧 자율(自律)이다. 자유의 반대편에 있는 것은 제한이 아니라 자율이다.</p>
+<p>어그러진 본성이 어떻게 선을 택할 수 있게 되는가는 별개의 물음이며, 문대원 목사가 조나단 에드워즈를 빌려 의지와 욕구의 관계를 다루는 대목과 함께 <a class="wl" href="../../t/%EC%9E%90%EC%9C%A0%EC%9D%98%EC%A7%80/">자유의지</a>가 맡는다. 여기서는 그 결론만 받아 온다. 선을 택하려면 선을 갈망해야 하고, 그 갈망은 은혜가 되살린다. 그렇다면 은혜가 오기 전에 무엇이 우리를 묶고 있었는가.</p>
+<h2>2. 무엇으로부터 — 출애굽에서 속량까지</h2>
+<p>성경에서 자유의 원형은 철학의 정의가 아니라 탈출 이야기다. "너는 기억하라 네가 애굽 땅에서 종이 되었더니 네 하나님 여호와가 강한 손과 편 팔로 거기서 너를 인도하여 내었나니"(신 5:15). 홍정길 목사와 최종상 선교사의 대담집 『나라와 교회를 생각한다』는 한 걸음 더 나아가 "하나님의 이름이 자유(출3:11-14)"라고 말한다. 구원이 곧 자유이고, 복종만 요구하는 종교에는 이 낱말이 없다는 것이다. 이 책이 C. S. 루이스의 이름으로 전하는 한마디가 그 깊이를 잰다 — "하나님마저도 반역할 수 있어야 자유다".</p>
+<p>출애굽의 해방은 한 겹이 아니었다. 『하나님 백성의 선교』 6장을 풀어낸 「구속적 삶」 강의는 구속을 "고대 노예 시장이나 전당포에서 '대가를 지불하고 권리를 되찾아오는' 개념"으로 풀고, 출애굽이 영적 차원에만 머물지 않는 "정치적 압제, 사회적 불의, 경제적 착취로부터의 '실제적이고 총체적인 해방'"이었다고 말한다.</p>
+<p>신약은 이 문법으로 십자가를 읽는다. 문대원 목사는 고린도전서 6장 20절을 설명하며 속량을 한 줄로 정의한다 — "속량 redemption 값을 치르고 소유권을 사서 자유를 주는 것". 여기에 자유의 첫 역설이 있다. 자유는 주인이 없어져서가 아니라 주인이 바뀌어서 온다. "너희는 너희 자신의 것이 아니라"(고전 6:19)는 선언과 자유의 선언이 같은 자리에서 나온다. 「건강」 설교의 표현으로는 "과거에는 죄의 노예로 살았다면, 이제는 하나님을 위해 살게 된다."</p>
+<p>무엇에서 풀려났는가. 갈라디아서 5장 강해 「새로운 관계」는 그것을 "율법의 멍에, 죄와 사망, 종된 두려움으로 부터의 자유"로 요약한다. 모으면 다음과 같다.</p>
+<table>
+<thead>
+<tr>
+<th>묶고 있던 것</th>
+<th>풀려남의 내용</th>
+<th>본문과 자료</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>죄의 지배</td>
+<td>죄를 죄로 알아보고, 거부할 수 있게 됨</td>
+<td><span class="wl-dead" title="위키 내부 링크">롬 6:6</span>, 롬 8:2 — 문대원 「인생 리셋」·「부활, 영원을 인식하는 첫 순간」</td>
+</tr>
+<tr>
+<td>율법의 저주</td>
+<td>지키지 못할 때 받는 저주에서 벗어남</td>
+<td>갈 5:1 — 문대원 「새로운 관계」</td>
+</tr>
+<tr>
+<td>종 된 두려움</td>
+<td>양자의 영을 받음</td>
+<td>롬 8:15 — <a class="wl" href="../../t/%EC%84%AC%EA%B9%80/">섬김</a>·<a class="wl" href="../../t/%EC%96%91%EC%9E%90%EB%90%A8/">양자됨</a></td>
+</tr>
+<tr>
+<td>죽음과 썩어짐</td>
+<td>피조물까지 아우르는 마지막 해방</td>
+<td><span class="wl-dead" title="위키 내부 링크">롬 8:21</span></td>
+</tr>
+</tbody>
+</table>
+<p>첫째 줄에서 눈여겨볼 것은 해방의 첫 증거다. 문대원 목사는 부활 설교에서 "죄의 노예는 자신이 노예인지도 모른다"고 말한다. 풀려난 사람에게 먼저 오는 것은 가벼움이 아니라 눈이다 — "죄에서부터 해방된 사람만이 무엇이 죄인지 보인다." 「인생 리셋」은 그다음 걸음을 말한다. 거듭난 사람은 "죄의 지배를 거부할 수 있는 능력을 받았다." 알아보는 눈과 거부할 힘이 죄로부터의 자유의 내용이다.</p>
+<p>둘째 줄에는 흔한 오해가 붙어 있다. 「새로운 관계」는 못박는다 — "율법으로 부터 해방은 율법을 지키지 못할때 받는 저주로 부터 해방이다." 그리고 덧붙인다. "지키지 않아도 된다는 말이 아니다." 이 구별이 흐려지는 자리에서 방종이 시작된다.</p>
+<p>끝으로 이 풀려남은 기분이 아니다. 문대원 목사는 골로새서 3장 강해에서 고대의 노예 해방을 예로 들며 "이것은 감정의 문제가 아니라 사실의 문제이다"라고 말한다. 신분이 바뀌어도 감정은 뒤늦게 따라온다. 그 사실을 삶에서 알아 가는 길을 요한복음 8장이 보여 준다.</p>
+<h2>3. 진리가 자유롭게 한다 — 말씀에 거하는 사람의 자유</h2>
+<p>"너희가 내 말에 거하면 참으로 내 제자가 되고 진리를 알지니 진리가 너희를 자유롭게 하리라"(요 8:31-32). <span class="wl-dead" title="위키 내부 링크">권성수</span> 목사는 진리 시리즈의 「자유냐 속박이냐」에서 이 두 절을 한 덩어리로 읽는다. 32절만 떼어 내면 진리는 정보가 되고 자유는 구호가 된다. 31절부터 읽으면 순서가 보인다.</p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>본문</th>
+<th>권성수 목사의 풀이</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>거함</td>
+<td>"내 말에 거하면"</td>
+<td>거주하다, 머무르다. 듣고 나가며 잊는 것은 머무름이 아니다</td>
+</tr>
+<tr>
+<td>제자 됨</td>
+<td>"참으로 내 제자가 되고"</td>
+<td>머무는 것이 제자의 표지</td>
+</tr>
+<tr>
+<td>앎</td>
+<td>"진리를 알지니"</td>
+<td>맛보는 앎, 체험으로 아는 앎</td>
+</tr>
+<tr>
+<td>자유</td>
+<td>"자유롭게 하리라"</td>
+<td>회개하고 순종할 때 체험되는 자유</td>
+</tr>
+</tbody>
+</table>
+<p>이 말씀을 들은 이들은 예수를 믿은 유대인들이었다. 권성수 목사는 그 믿음을 "무늬는 믿었는데 실제로는 안 믿은 것이다"라고 풀이한다. 믿음의 진위는 머무름으로 가려지고, 자유를 누리지 못하는 까닭도 거기에 있다. "못 누리는 것은 거주하지 않는 것이다."</p>
+<p>그 앎의 길은 뜻밖에 소박하다. 진리를 깨달을 때 오는 자유는 "지옥에서 천국으로 넘겨놓은 자유이다." 그것은 회개에서 몸으로 느껴진다 — "회개를 하면 속이 시원해 진다." 순종이 더해지면 "그러면 진리의 자유를 체험한다." 설교 제목이 '자유냐 속박이냐'인 것은 중간 지대가 없기 때문이다. 같은 장에서 예수는 마귀를 거짓의 아비라 부르신다(요 8:44). 진리가 자유롭게 한다면 거짓은 종으로 만든다.</p>
+<p>문대원 목사는 같은 구절을 기준이 사라진 시대 앞에 세운다. 절대 진리를 거부하는 시대의 표어는 "무엇이 옳고 그른지 내가 정하겠다"이다. 그러나 자유가 옳은 것을 택하는 능력이라면, 옳음을 가릴 기준 없이는 자유도 서지 못한다. 그래서 결론은 "진리를 기준으로 가장 선한 것을 선택하는 자유를 누림"이다. 리처드 포스터도 『영적 훈련과 성장』에서 같은 구절을 붙든다 — "우리를 자유케 하는 것은 그냥 진리가 아니라 진리를 아는 지식이라고 예수님은 말씀하셨다". 진리는 머물러 배우는 사람을 자유롭게 한다.</p>
+<p>미로슬라브 볼프는 『배제와 포용』에서 이 구절을 빌라도의 법정으로 가져간다. 예수는 진리를 증언하셨지만 설득하려고 힘을 쓰지 않으셨다. "그분이 선포하러 오신 진리의 나라는 자유의 나라이기 때문에, 폭력이라는 기둥 위에 놓일 수 없다." 그는 "진정한 자유는 진리와 비폭력에 대한 이중적 헌신의 열매"라고 정리한 뒤 묻는다 — "무엇을 위한 자유인가?" 성경은 이 물음에 답하기 전에 먼저 잘못된 쓰임새부터 막아 놓는다.</p>
+<h2>4. 방종 — 자유가 육체의 도약판이 될 때</h2>
+<p>"형제들아 너희가 자유를 위하여 부르심을 입었으나 그러나 그 자유로 육체의 기회를 삼지 말고 오직 사랑으로 서로 종 노릇 하라"(갈 5:13). 바울은 자유를 선포한 바로 그 장에서 자유의 오용을 경고한다. 문대원 목사는 '기회'라는 낱말을 "육체의 도약판, 기회=스프링 보드"라고 풀이한다. 자유가 죄로 뛰어오르는 발판이 될 수 있다. "어느날 갑자기 큰죄를 짓는 것이 아니다. 작은 죄를 허용할때 점점 악한 길로 간다." 이 내리막의 논리는 은혜를 아는 사람에게서 나오므로 그는 "어차피 구원 받았으니 라고 생각할 수 없다"고 선을 긋는다. <span class="wl-dead" title="위키 내부 링크">윤명숙</span> 전도사도 같은 본문에서 같은 곳을 짚는다 — "죄의 종에서 자유를 얻었다. 그런데 내맘대로 쓰면 잘 못 가는 것이다."</p>
+<p>베드로는 같은 위험을 다른 그림으로 말한다. "너희는 자유가 있으나 그 자유로 악을 가리는 데 쓰지 말고 오직 하나님의 종과 같이 하라"(벧전 2:16). 갈라디아서에서 자유가 죄로 뛰어오르는 발판이라면 베드로전서에서 자유는 악을 덮는 가리개다. 발판은 죄를 짓기 전에, 가리개는 지은 뒤에 쓰인다.</p>
+<p>방종의 종착지는 다시 종이 되는 것이다. 「건강」 설교는 고린도전서 6장 12절 "내가 무엇에든지 얽매이지 아니하리라"를 "어떤 것에도 지배를 받지 않겠다는 선포이다"라고 읽는다. 중독자는 자유를 가장 많이 쓴 사람처럼 보이지만 실은 "멈출 수 있는 자유를 박탈당한 사람이다." 「성적 순결의 중요성」은 그 내리막에 되돌아오는 길이 없음을 짚는다 — "약화되는 중독은 없다. 강화되는 중독만 있다." 이 설교가 성(性)을 다루며 내놓는 핵심어가 뜻밖에도 자유다. "얽매이지 않는 것, 죄의 문제에서 벗어나, 중독의 문제에서 벗어나는 것, 이것이 자유이다." 값을 치르고 얻은 자유를 다시 내어 주는 일을 그는 탄식한다. "우리가 다시 자유를 잃어버렸다. 얼마나 어처구니 없는 일인가?" 중독의 기전과 회복의 길은 <a class="wl" href="../../t/%EC%A4%91%EB%8F%85/">중독</a>이 다룬다.</p>
+<p>방종은 쾌락의 문제만이 아니다. 「자유 의지로 무엇을 하겠습니까」는 "자유로워지면 더 행복해질까?"라고 묻고, 술만이 아니라 "돈의 노예, 성공의 노예, 처음에는 좋은 의미로 선택했지만 노예가 되어 있다"고 답한다. 좋은 뜻으로 고른 것도 주인이 된다. 자유를 잃는 길이 방종뿐이라면 처방은 더 조이는 것으로 충분했을 것이다. 그러나 갈라디아서가 싸운 상대는 정반대편에도 있었다.</p>
+<h2>5. 다시 메는 멍에 — 율법으로, 우상으로</h2>
+<p>갈라디아서 5장 1절의 "다시는"은 자유가 되돌려질 수 있음을 전제한다. MBTS 신약개론 강의의 정리에 따르면 이 교회의 이탈은 두 방향이었다. 한쪽에는 할례와 절기로 의롭다 함을 얻으려는 움직임이, 다른 쪽에는 "그리스도안의 자유에 대한 바울의 가르침을 왜곡한 방탕함(갈5:13)"이 있었다. 바울은 하갈과 사라의 비유로 앞의 것을 겨눈다. 강의 노트의 요약으로는 "갈라디아 성도들은 자유인의 자녀들임에도 불구하고 율법의 요구에 복종함으로써 노예의 언약으로 돌아가고 있음"이다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>율법으로 돌아감</th>
+<th>방종</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>갈라디아서의 자리</td>
+<td>할례·절기로 의롭다 함을 얻으려 함(갈 4장–5:4)</td>
+<td>자유를 육체의 기회로 삼음(갈 5:13)</td>
+</tr>
+<tr>
+<td>자유를 대하는 태도</td>
+<td>자유가 불안해서 조건을 다시 세운다</td>
+<td>자유를 면허로 읽고 테두리를 지운다</td>
+</tr>
+<tr>
+<td>닿는 곳</td>
+<td>종의 멍에, 노예의 언약</td>
+<td>죄의 종, 중독</td>
+</tr>
+<tr>
+<td>겉모습</td>
+<td>경건해 보인다</td>
+<td>자유로워 보인다</td>
+</tr>
+</tbody>
+</table>
+<p>앞의 길은 경건의 얼굴을 하고 와서 알아보기 어렵다. 윤명숙 전도사는 「계명을 주신 이유」에서 한 문장으로 양면을 말한다 — "율법은 우리를 자유롭게 한다. 그런데 이것으로 스스로 올가매는 경우도 많다." 포스터도 영적 훈련을 가르치는 책 한가운데서 경고한다. "훈련을 목표로 삼는 순간 우리는 훈련을 율법으로 바꾸어 놓게 되며 그 훈련에 상응하는 자유를 잃게 된다." 더 세게는 "종교만큼 인간을 노예로 만드는 것도 없으며"라고 쓴다. 박재은 교수의 「자유를 자유하라」는 같은 행위가 율법도 되고 자유도 되는 갈림을 동기에서 찾는다. "어떠한 마음으로 하는가? 해야되기 때문에 하는 것은 위험하다." 그의 정식은 과감하다 — "예수 밖에서 하는 모든 일은 율법이다." 이 왜곡의 구조는 <a class="wl" href="../../t/%EC%9C%A8%EB%B2%95%EC%A3%BC%EC%9D%98/">율법주의</a>가 다룬다.</p>
+<p>다시 메는 멍에가 하나 더 있다. 문대원 목사의 사사기 7장 설교 「자유는 공짜가 아니다」는 자유를 억압하는 악을 바깥의 적과 안의 적으로 나눈다. 약속의 땅에 들어간 백성이 약탈자를 피해 굴에 숨는다 — "이것이 자유를 잃은 모습이다." 그들을 거기로 데려간 것은 안의 적, 우상이었다. "우상은 우리가 원하는 것을 그냥 주겠다는 것이 우상이다. 내면의 변화 없이 주겠다는 것이다." 그는 마이클 윌콕을 인용한다 — "모든 시대마다 우리의 욕망을 만족시켜 주겠다고 약속하며 작동하는 세력이 있다." 오늘의 우상은 형상이 없다. 수고 없이 얻게 해 주겠다는 약속, 책임을 묻지 않는 이념이 그 자리에 선다. 그러나 다 들어주겠다던 것이 끝내 주인이 된다. "내부의 적, 우상숭배는 실상은 우리를 억압하고 노예로 만든다." 설교는 이 대목을 "진리안에 자유가 있다"로 닫는다. 우상이 약속하고 배신하는 방식은 <a class="wl" href="../../t/%EC%9A%B0%EC%83%81%EC%88%AD%EB%B0%B0/">우상숭배</a>에 있다.</p>
+<p>율법으로 돌아가는 사람과 우상에 매이는 사람은 한 가지를 함께한다. 둘 다 은혜 바깥에서 안전을 구한다. 한쪽은 자기 행위에서, 다른 쪽은 욕망을 채워 줄 무엇에서. 이 큰 멍에들 곁에 일상의 작은 사슬들이 있다.</p>
+<h2>6. 안쪽의 사슬 — 증명·돈·원한에서 풀려나는 자유</h2>
+<p>설교들이 자유를 가장 자주 말하는 자리는 교리가 아니라 일상이다.</p>
+<table>
+<thead>
+<tr>
+<th>사슬</th>
+<th>묶는 방식</th>
+<th>풀려남</th>
+<th>자료</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>사람의 눈</td>
+<td>보이려고 살고 인정에 끌려다님</td>
+<td>완전한 사랑을 받아 증명할 필요가 없어짐</td>
+<td>문대원 「자기애의 늪에서 탈출하기」</td>
+</tr>
+<tr>
+<td>돈</td>
+<td>많으면 욕심과 집착, 없으면 염려와 걱정</td>
+<td>있는 바를 족한 줄로 앎</td>
+<td>문대원 「돈」</td>
+</tr>
+<tr>
+<td>원한</td>
+<td>과거에 갇혀 앞으로 가지 못함</td>
+<td>용서</td>
+<td>윤명숙 「용서의 원리」, 문대원 「과거로부터의 해방」</td>
+</tr>
+<tr>
+<td>숨긴 죄</td>
+<td>감추고 줄여 말함</td>
+<td>자복하고 버림</td>
+<td>권성수 「고백하면 자유롭다」</td>
+</tr>
+<tr>
+<td>내 뜻대로</td>
+<td>모든 일이 계획대로 되어야 함</td>
+<td>한계를 인정하고 맡김</td>
+<td>포스터, 문대원 「아무것도 하지 않을 자유」</td>
+</tr>
+</tbody>
+</table>
+<p>「자기애의 늪에서 탈출하기」는 사람에게 보이려는 삶을 잠언 29장 25절로 진단한다. 사람을 두려워하면 "올무에 걸린다. 덫, 함정에 빠진다. 자유가 없어진다." 해법은 자기를 더 사랑하는 것이 아니라 완전한 사랑을 받는 것이다 — "어떤 자유인가? 나를 증명하지 않아도 되는 자유이다." 이 자유가 자아를 다시 세우는 과정은 <a class="wl" href="../../t/%EC%A0%95%EC%B2%B4%EC%84%B1/">정체성</a>과 <a class="wl" href="../../t/%EC%9E%90%EC%A1%B4%EA%B0%90/">자존감</a>이 이어받는다.</p>
+<p>돈에 대해서도 설교는 양쪽을 함께 본다. 문대원 목사는 "돈에 대해 자유? 무소유가 아니다"라고 말한 뒤 가진 사람이 버릴 것과 없는 사람이 버릴 것을 나란히 놓는다. 돈에 매이는 일은 지갑의 두께와 상관이 없다. 그래서 자유의 정의도 액수가 아니라 태도다 — "돈에 자유하고 싶다는 것은 족한 줄로 여기는 것이다." 진로와 결혼에서 돈이 첫째 기준이 되면 "그러면 돈의 노예가 된다."</p>
+<p>원한은 과거가 현재를 붙드는 방식이다. 윤명숙 전도사는 탕감받은 종의 비유에서 용서를 피해자 자신의 일로 돌려놓는다 — "용서하면 자유를 누린다는 것을 경험해야 한다." 문대원 목사도 요셉 이야기에서 같은 결론에 이른다. "용서를 행할 때 과거로부터 자유로워 진다." 용서의 근거와 층위는 <a class="wl" href="../../t/%EC%9A%A9%EC%84%9C/">용서</a>에 있다. 숨긴 잘못도 사람을 묶는다. 권성수 목사는 잠언 28장 13절 설교에서 후회와 회개를 가른 뒤, 인정하고 끊은 사람의 상태를 두 마디로 적는다 — "마음이 편하다. 홀가분하다."</p>
+<p>마지막 사슬은 점잖아 보인다. 포스터는 "내가 원하는 대로 일이 진행되어야 한다는 강박 관념이 오늘날 인간 사회의 가장 큰 속박 가운데 하나이다"라고 쓰고, 복종의 훈련이 주는 자유를 "항상 일이 내 마음대로 되어야 한다고 생각하는 무거운 짐을 버릴 수 있는 능력"이라 부른다. 문대원 목사가 안식일을 "내 인생을 스스로 책임지려는 것을 내려놓은 날이다"라고 정의할 때 가리키는 것도 이 자유다. 통제를 내려놓는 것이 왜 자유인가 — 이 물음은 자유가 무엇을 향해 있는지를 묻게 한다.</p>
+<h2>7. 자유인이 종이 된다 — 자유와 섬김의 방정식</h2>
+<p>갈라디아서 5장 13절은 금지에서 멈추지 않고 방향을 준다. 풀려난 사람에게 주어진 명령이 다시 종이 되라는 것이다. 문대원 목사는 이 역설을 표 하나로 정리한다.</p>
+<table>
+<thead>
+<tr>
+<th>자유</th>
+<th>섬김</th>
+<th>상태</th>
+<th>성경의 예</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>없음</td>
+<td>있음</td>
+<td>정치적 노예</td>
+<td>애굽에서의 이스라엘</td>
+</tr>
+<tr>
+<td>있음</td>
+<td>없음</td>
+<td>이기심의 노예</td>
+<td>사사 시대의 이스라엘</td>
+</tr>
+<tr>
+<td>있음</td>
+<td>있음</td>
+<td>하나님의 종</td>
+<td>예수 그리스도의 모델</td>
+</tr>
+</tbody>
+</table>
+<p>요점은 둘째 줄이다. 자유는 있으나 섬김이 없는 상태를 그는 또 하나의 노예 상태라고 부른다. 섬김이 빠진 자유는 자기에게 갇힌다.</p>
+<p>바울이 그 본이다. "내가 모든 사람에게서 자유로우나 스스로 모든 사람에게 종이 된 것은 더 많은 사람을 얻고자 함이라"(고전 9:19). 「여러 사람에게 여러 모양으로」는 그 자유의 실질을 짚는다. 바울은 여행과 상거래의 자유, 공정한 재판을 받을 권리를 지닌 로마 시민이었다. 그런 사람이 "모든 사람에게 자유롭지만 종이 되었다. 무엇을 위해서? 더 많은 사람을 얻고자 했다." 「새로운 관계」는 이 고백의 조건을 말한다 — "이것은 정말로 자유로운 사람이 할 수 있는 고백이다." 스스로 종이 될 수 있다는 것이 자유의 증거다. 그 종 됨은 주인이 바뀐 결과다 — "과거에는 죄의 종, 이제는 그리스도의 종".</p>
+<blockquote>
+<p>"그리스도인은 아무에게도 종속되지 않은 가장 자유로운 주인인 동시에 모든 사람에게 종속된 종이다" — 마틴 루터(리처드 포스터, 『영적 훈련과 성장』에서 재인용)</p>
+</blockquote>
+<p><span class="wl-dead" title="위키 내부 링크">루터</span>의 이 문장은 <a class="wl" href="../../t/%EC%A2%85%EA%B5%90%EA%B0%9C%ED%98%81/">종교개혁</a>이 낳은 자유 이해의 요약이다. 베드로전서 2장 16절도 같은 자리를 가리킨다. 문대원 목사의 풀이로는 "자유를 가지고 가장 귀하게 사용하는 것은 하나님의 종과 같이 되는 것, 예수님처럼 되는 것이다."</p>
+<p>그 종노릇은 어디서 하는가. 윤명숙 전도사는 설교 제목으로 답한다. 「종 노릇은 가정에서」. 집에서 배우자와 자녀를 섬기는 일은 보는 이가 없다. "종노릇을 어디서 할것인가? 생각해야한다. 바깥에서 하는 것은 쇼이다." 종을 가르는 기준도 내놓는다 — "종의 가장 큰 특징은 댓가를 기대하지 않는 것이다." 반대로 "댓가를 바라는 것은 왕노릇이다. 거래관계이다."</p>
+<p>포스터는 한 겹 더 들어가 섬김을 택하는 것과 종이 되기를 택하는 것을 구별한다. "섬김을 선택할 때 우리는 여전히 결정권을 갖고 있다." 그래서 그 결정권을 빼앗길까 늘 경계한다. 그러나 "종이 되기를 선택할 때에는 결정권을 포기하게 된다. 여기에 큰 자유가 있다." 다만 그는 복종의 가르침만큼 오용되는 것도 없다고 경고한다. 종 됨이 스스로 택한 것이 아니라 남이 요구하는 것이 될 때 그것은 조종이다. 이 선을 원어로 가르는 일 — 그리스도의 종과, 두려움에 매인 종의 영(롬 8:15)의 구별 — 은 <a class="wl" href="../../t/%EC%84%AC%EA%B9%80/">섬김</a>이 해 놓았다.</p>
+<p>볼프는 이 역설을 더 큰 틀에 놓는다. 그는 구티에레즈를 따라 "자유가 아니라 사랑이 궁극적인 것"이라 말하고, 몰트만을 빌려 자유를 "하나님의 친구가 되어, 다른 어떤 것이 아니라 바로 순전한 사랑이신 삼위일체 하나님의 영광에 참여하는 것"으로 다시 정의한다. 템플도 같은 서열을 세운다 — "사랑을 해치는 방식으로 자유를 추구해서는 안 되며". 자유는 사랑을 위해 있다. 그렇다면 그 사랑의 모양은 누가 정해 주는가.</p>
+<h2>8. 철로와 멍에 — 계명과 훈련이 자유를 지킨다</h2>
+<p>야고보는 율법에 낯선 수식어를 붙인다. "자유롭게 하는 온전한 율법"(약 1:25), "자유의 율법"(약 2:12). 권성수 목사는 「자유의 왕법」에서 이웃 사랑의 계명을 왕의 법이라 부르고 이렇게 잇는다 — "왕의 법은 자유의 법이다. 본인, 가정, 공동체가 자유로워 진다." 그도 이 결합이 낯설다는 것을 안다. "법인데 자유를 준다." 근거는 법을 주신 왕에게 있다. "자기 법을 국민이 안지켰다고 국민을 위해서 목숨을 내 놓은 왕은 없다." 왕이 법을 이루려고 내려오셨고 그 백성은 "지킬 수 있는 마음, 능력을 이미 받았다." 밖에서 누르는 법이 아니라 지킬 힘과 함께 오는 법이다.</p>
+<p>윤명숙 전도사는 같은 본문을 놀이터의 울타리로 설명한다. "율법을 지키는 것이 오히려 자유롭다." 계명은 "여기까지만 안전하게 노세요 하는 곳이다." 「계명을 주신 이유」에서는 부모의 마음에 빗댄다 — "어떤 부모도 자녀를 꼼짝못하게 하려는 사람은 없다. 부모앞에서 자유롭기를 원한다."</p>
+<p>문대원 목사는 이것을 창조의 질서에서부터 읽는다. 「권위는 하나님의 계획이다」에서 에덴의 선악과는 자유의 제한이 아니라 조건이다. 하나님은 사람에게 "능동적으로 살아갈 자유를 주셨다. 무제한의 자유는 아니다." 시편 119편 45절을 두고는 "지킬 때 자유롭게 걸어간다. 구속되는 것이 아니다"라고 풀이한다. 기차는 철로 위에서 가장 자유롭다는 비유와 가정이 그 철로를 놓는 첫 학교라는 논지는 <a class="wl" href="../../t/%EC%88%9C%EC%A2%85/">순종</a>이 이미 펼쳤다. 덧붙일 것은 그 자유가 자란다는 점이다. "부모는 어린아이에게 무제한의 자유를 주지 않는다. 그 자유를 사용할 능력이 없기 때문이다." 윤명숙 전도사가 부모 교육에서 쓰는 세 유형이 이를 보여 준다.</p>
+<table>
+<thead>
+<tr>
+<th>부모 유형</th>
+<th>자유와 제약의 배합</th>
+<th>자녀에게 남는 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>독재형</td>
+<td>자유는 주지 않고 제약만 강요</td>
+<td>의사 표현을 못 함, 기가 죽거나 반항</td>
+</tr>
+<tr>
+<td>방임형</td>
+<td>제약 없이 자유만 허용</td>
+<td>안정감·소속감·책임감의 결여</td>
+</tr>
+<tr>
+<td>민주형</td>
+<td>일정한 한계 안에서 자유를 줌</td>
+<td>책임이 커지는 만큼 자유가 넓어짐</td>
+</tr>
+</tbody>
+</table>
+<p>제약만 있는 집과 자유만 있는 집은 앞에서 본 두 이탈, 곧 율법으로 돌아감과 방종의 가정판이다. 셋째 유형을 그는 한마디로 부른다 — "한계안에서의 자유다."</p>
+<p>십계명도 같은 자리에 놓인다. 「아무것도 하지 않을 자유」는 십계명을 "노예 근성을 버리고 참된 자유인으로 살기위한 지침"이라 부른다. 오래 자유 없이 지내다 풀려난 사람이 삶을 가누지 못하는 까닭은 "주어진 자유를 잘 사용하는 것 = 성숙함, 이것이 없기 때문이다." 안식일은 쉼 없이 일해야 했던 종의 삶과 정면으로 맞서는 계명이다. 그날을 구별해 지키는 순종에서 자라는 것을 설교는 "망치는 자유가 아니라 살리는 자유"라 부른다. 안식의 두 근거는 <a class="wl" href="../../t/%EC%95%88%EC%8B%9D/">안식</a>에 있다.</p>
+<p>예수는 이것을 멍에라는 말로 하신다. 박경남 선교사는 「내게로 오라」에서 "진정한 자유는 주님의 멍에를 메고 배울 때 찾을 수 있다"고 말한다. 갈라디아서 5장 1절은 종의 멍에를 메지 말라 하고 마태복음 11장 29절은 나의 멍에를 메라 한다. 멍에 없는 삶은 선택지에 없다. 어느 멍에를 누구와 메는가가 있을 뿐이다. 자끄 엘륄이 열왕기하를 읽으며 얻은 결론도 같다 — "인간의 자유는 하나님에게 자발적으로 복종하는 것입니다." 존 비비어는 더 짧게 말한다. "복종에는 자유가 있고 반항에는 속박이 있다".</p>
+<p>다만 율법으로 돌아가는 멍에에 대한 앞의 경고가 여기에 그대로 걸린다. 포스터의 문장이 저울추다 — "훈련의 목적은 자유에 있다. 목표는 훈련 자체가 아니라 자유이다." 율법이 정죄하고 가르치고 인도하는 세 용도는 <a class="wl" href="../../t/%EC%9C%A8%EB%B2%95%EA%B3%BC%EB%B3%B5%EC%9D%8C/">율법과복음</a>으로 넘긴다.</p>
+<h2>9. 공적 자유 — 공짜도 아니고 절대도 아니다</h2>
+<p>출애굽이 그랬듯 자유에는 바깥의 조건이 있다. 권성수 목사는 「자유냐 속박이냐」를 식민 지배에서 풀려난 날의 기억으로 연다 — "억압에서 감격스럽게 풀려난 날이다." 그는 설교 끝에서 "자유의 환경도 중요하다"고 말하고, 다스리는 이들을 위해 기도하라는 디모데전서 2장 2절을 붙인다. 문대원 목사의 「자유는 공짜가 아니다」도 같은 자리에 선다. 자유는 누군가의 희생으로 주어졌고 지키는 데에는 용기가 든다 — "두렵지만 하는 것이 용기이다." 그는 방어를 위한 것일 것, 과하지 않을 것, 정당한 권위가 공포할 것이라는 조건 아래 무력의 사용을 인정하며 "국가와 시민의 자유를 지키기 위해 노력해야 한다"고 맺는다.</p>
+<p>같은 설교자들이 자유가 절대는 아니라고도 말한다. 권성수 목사는 공중보건을 위한 제한을 자유의 박탈이라 부르는 시위 소식 앞에서 "자유라는 것은 절대로 제한이 없는가?"라고 묻고 곧 "제한의 기준은 무엇인가?"라고 잇는다. 그런데 같은 서두에서 신앙의 자유가 좁아질까 하는 염려도 함께 전한다. 제한을 받아들일 때와 자유를 지킬 때가 한 설교 안에 나란히 있다. 문대원 목사는 내 몸은 내 것이라는 주장 앞에서 "자유는 절대적 가치가 아니다. 하나님의 뜻 안에서 합당하게 사용되어야 한다"고 말한다.</p>
+<p>권성수 목사의 정의 시리즈는 이 긴장에 틀을 준다. 「정의의 강이 흐르게 하라」는 정의를 세 겹으로 정리한다 — "총체적 정의: 자유와 책임, 공평, 복지와 분배". 자유는 첫 겹이고("자유가 정의이다"), 책임이 짝으로 붙는다("정의는 책임지는 것이다"). 책임의 소재를 두고는 두 목소리를 나란히 적는다. "보수주의자들은 개인 책임을 강조한다." "진보주의자들은 집단 책임을 강조한다." 그의 정리는 한쪽을 지우지 않는다 — "분명히 개인 책임이 1차적이다. 그러나 집단 책임이 있다."</p>
+<p>책들은 이 두 목소리가 자유라는 낱말을 다르게 읽는 데서 나옴을 보여 준다. 템플은 가진 사람의 자유는 "나를 내버려 두라"는 뜻이고 갖지 못한 사람의 자유는 "기회를 달라"는 뜻이라고 전한다. 볼프도 근대의 자유 이념 곁에, 자유를 "존엄한 삶을 살아갈 수 있는 실질적인 힘"으로 보는 전통을 놓는다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>간섭의 부재로 읽는 자유</th>
+<th>실질적 능력으로 읽는 자유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>표어</td>
+<td>나를 내버려 두라</td>
+<td>기회를 달라</td>
+</tr>
+<tr>
+<td>지키려는 것</td>
+<td>양심·신앙·재산·결사를 강제로부터 지킴</td>
+<td>가난·질병·차별이 닫아 버린 선택지를 되찾음</td>
+</tr>
+<tr>
+<td>가장 강한 논거</td>
+<td>강제된 선은 선이 아니며, 권력은 좋은 명분으로도 자란다</td>
+<td>먹고살 길이 막힌 사람에게 법적 자유는 이름뿐이다</td>
+</tr>
+<tr>
+<td>놓치기 쉬운 것</td>
+<td>약한 이의 '할 수 없음', 자유와 방종의 구별</td>
+<td>평등을 앞세우다 자유를 지우는 일, 개인의 책임</td>
+</tr>
+<tr>
+<td>이 면을 짚는 책</td>
+<td>홍정길·최종상 『나라와 교회를 생각한다』</td>
+<td>템플 『기독시민의 사회적 책임』, 볼프가 소개하는 전통</td>
+</tr>
+</tbody>
+</table>
+<p>두 읽기는 각각 진실의 한 면을 붙든다. 홍정길 목사는 평등을 앞세워 자유라는 말을 지우려는 흐름을 경계한다. 템플은 반대편에서 "경제적으로 불안한 법적 자유는 개인적인 구속에 불과할 것이다"라고 쓰면서도, 예수가 구원을 위해서조차 사람의 자유를 억누르지 않으셨음을 상기시킨다 — "모든 영적인 삶은 전적으로 자유에 의지하고 있기 때문이다." 그리고 둘 사이에 법을 놓는다. "법은 진정한 자유를 보호하고 신장시키기 위해 존재한다." 실제 사안에서는 두 말이 진영 사이에서 자리를 바꾼다. 감염병 시기의 제한, 시장 규제, 표현의 한계 같은 문제마다 어제 '내버려 두라'던 쪽이 오늘은 '책임'을 말하고, 그 반대도 일어난다. 지금 자기가 어느 자유를 말하고 있는지부터 아는 것이 이 표의 쓸모다.</p>
+<p>성경의 자유는 이 표의 어느 한 칸에 포개지지 않는다. 풀려난 사람에게 풀어 주는 사람이 되라고 요구하기 때문이다. 「구속적 삶」 강의는 말한다 — "애굽의 종의 멍에를 벗고 자유인이 된 백성은 결코 타인을 종으로 부리거나 억압할 수 없습니다." 종과 나그네와 가축에게까지 쉼을 넓힌 안식일 계명(<span class="wl-dead" title="위키 내부 링크">신 5:14</span>), "주 안에서 부르심을 받은 자는 종이라도 주께 속한 자유인이요"(고전 7:22)라는 선언, 도망친 종을 형제로 받으라는 빌레몬서가 그 궤적이다. 문대원 목사는 이를 "노예를 형제로 대하는 공동체"라 부른다. 종과 땅과 빚을 함께 풀어 주는 제도의 상상력은 <a class="wl" href="../../t/%ED%9D%AC%EB%85%84/">희년</a>에 있다. 권성수 목사가 짧게 적은 "양심의 자유는 하나님이 주신 것이다"라는 명제가 어떻게 제도가 되었는지는 <a class="wl" href="../../t/%EC%96%91%EC%8B%AC%EC%9D%98%EC%9E%90%EC%9C%A0/">양심의자유</a>·<a class="wl" href="../../t/%EC%A2%85%EA%B5%90%EC%9D%98%EC%9E%90%EC%9C%A0/">종교의자유</a>·<a class="wl" href="../../t/%EC%A0%95%EA%B5%90%EB%B6%84%EB%A6%AC/">정교분리</a>가, 교회가 공적 사안에 어디까지 말할 것인가는 <a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EC%99%80%EC%82%AC%ED%9A%8C%EC%B0%B8%EC%97%AC/">교회와사회참여</a>가 맡는다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li><strong>자유는 능력이다.</strong> 하고 싶은 대로 함은 가장 낮은 단계의 자유이고 되풀이되면 중독으로 끝난다. 높은 단계의 자유는 옳은 것을 택하고 멈출 수 있는 힘이다.</li>
+<li><strong>자유는 주인이 바뀌어서 온다.</strong> 속량은 값을 치르고 소유권을 사서 자유를 주는 일이다. "너희는 너희 자신의 것이 아니라"와 자유의 선언은 같은 자리에서 나온다.</li>
+<li><strong>자유를 잃는 길은 둘이다.</strong> 방종은 테두리를 지우고, 율법으로 돌아감은 조건을 다시 세운다. 겉은 반대지만 둘 다 은혜 바깥에서 안전을 구한다.</li>
+<li><strong>진리는 머무는 사람을 자유롭게 한다.</strong> 요한복음 8장의 순서는 거함, 제자 됨, 앎, 자유다.</li>
+<li><strong>자유는 섬김에서 완성된다.</strong> 자유는 있고 섬김이 없는 상태는 이기심의 노예 상태다. 스스로 종이 될 수 있다는 것이 자유의 증거이고, 대가를 바라지 않는 것이 종의 표지다.</li>
+<li><strong>계명과 훈련은 자유의 울타리이지 자유 자체가 아니다.</strong> 법인데 자유를 준다. 그러나 훈련을 목표로 삼는 순간 훈련은 율법이 된다.</li>
+<li><strong>공적 자유는 공짜도 절대도 아니다.</strong> 지키는 데 희생이 들고 쓰는 데 책임이 따른다. 풀려난 백성은 남을 종으로 부릴 수 없다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>고린도전서 8~10장은 약한 형제의 양심을 위해 자기 자유를 접는 문제를 다루는데, 이 본문을 정면으로 강해한 자료가 아직 없다. 자유의 자발적 제한은 어디까지가 사랑이고 어디부터가 남의 눈에 다시 매이는 일인가.</li>
+<li>로마서 6장의 '의의 종'과 8장 21절의 "하나님의 자녀들의 영광의 자유"는 표의 한 줄로만 다루었다. 이미 누리는 자유와 아직 오지 않은 자유의 관계는 따로 써야 한다.</li>
+<li>종 됨의 언어는 약한 자리의 사람에게 굴종을 요구하는 데 쓰일 수 있다. 스스로 택한 종 됨과 강요된 종 됨을 공동체는 무엇으로 가려내는가.</li>
+<li>공적 자유를 제한해야 할 때 그 기준은 누가 어떻게 정하는가. 설교들에서도 물음으로 남아 있다.</li>
+<li>중독된 사람처럼 옳은 것을 택할 능력을 잃은 이에게 자유는 어떻게 다시 시작되는가. <a class="wl" href="../../t/%EC%9E%90%EC%9C%A0%EC%9D%98%EC%A7%80/">자유의지</a>·<a class="wl" href="../../t/%EC%A4%91%EB%8F%85/">중독</a>과 함께 풀어야 한다.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%9E%90%EC%9C%A0%EC%9D%98%EC%A7%80/">자유의지</a> — 의지가 선을 택할 수 있는가. 어거스틴의 네 상태, 은혜와 의지.</li>
+<li><a class="wl" href="../../t/%EC%9C%A8%EB%B2%95%EA%B3%BC%EB%B3%B5%EC%9D%8C/">율법과복음</a> · <a class="wl" href="../../t/%EC%9C%A8%EB%B2%95%EC%A3%BC%EC%9D%98/">율법주의</a> · <a class="wl" href="../../t/%EC%9C%A8%EB%B2%95/">율법</a> — 율법의 세 용도, 순서를 뒤집는 왜곡.</li>
+<li><a class="wl" href="../../t/%EC%88%9C%EC%A2%85/">순종</a> · <a class="wl" href="../../t/%EA%B6%8C%EC%9C%84/">권위</a> — 순종을 배우는 학교, 순종의 한계.</li>
+<li><a class="wl" href="../../t/%EC%84%AC%EA%B9%80/">섬김</a> — 그리스도의 종과 종의 영의 구별, 자기 비움의 원형.</li>
+<li><a class="wl" href="../../t/%EC%95%88%EC%8B%9D/">안식</a> · <a class="wl" href="../../t/%ED%9D%AC%EB%85%84/">희년</a> — 종살이에서 풀려난 백성의 쉼과 풀어 줌.</li>
+<li><a class="wl" href="../../t/%EC%A4%91%EB%8F%85/">중독</a> · <a class="wl" href="../../t/%EC%9A%B0%EC%83%81%EC%88%AD%EB%B0%B0/">우상숭배</a> — 자유가 다시 종의 자리로 떨어지는 두 통로.</li>
+<li><a class="wl" href="../../t/%EC%A0%95%EC%B2%B4%EC%84%B1/">정체성</a> · <a class="wl" href="../../t/%EC%9E%90%EC%A1%B4%EA%B0%90/">자존감</a> · <a class="wl" href="../../t/%EC%9A%A9%EC%84%9C/">용서</a> · <a class="wl" href="../../t/%EB%82%B4%EB%A9%B4%EC%B9%98%EC%9C%A0/">내면치유</a> — 증명·원한·상처에서 풀려나는 자유의 세부.</li>
+<li><a class="wl" href="../../t/%EC%96%91%EC%9E%90%EB%90%A8/">양자됨</a> · <a class="wl" href="../../t/%EA%B5%AC%EC%86%8D%EC%8B%A0%ED%95%99/">구속</a> — 종의 문법에서 자녀의 문법으로, 값을 치르고 되찾음.</li>
+<li><a class="wl" href="../../t/%EC%A0%95%EA%B5%90%EB%B6%84%EB%A6%AC/">정교분리</a> · <a class="wl" href="../../t/%EC%96%91%EC%8B%AC%EC%9D%98%EC%9E%90%EC%9C%A0/">양심의자유</a> · <a class="wl" href="../../t/%EC%A2%85%EA%B5%90%EC%9D%98%EC%9E%90%EC%9C%A0/">종교의자유</a> — 강제 없는 신앙이라는 제도적 자유.</li>
+<li><a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EC%99%80%EC%82%AC%ED%9A%8C%EC%B0%B8%EC%97%AC/">교회와사회참여</a> · <a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%84%A0/">공동선</a> · <a class="wl" href="../../t/%EC%A0%95%EC%9D%98/">정의</a> — 자유와 책임이 만나는 공적 지평.</li>
+<li><a class="wl" href="../../t/%EC%A2%85%EA%B5%90%EA%B0%9C%ED%98%81/">종교개혁</a> · <span class="wl-dead" title="위키 내부 링크">루터</span> — 「그리스도인의 자유」의 자리.</li>
+<li><a class="wl" href="../../t/%EC%8B%AD%EA%B3%84%EB%AA%85/">십계명</a> — 경계 안의 자유. 서문이 정한 은혜의 순서와 '하지 말라'가 지키는 울타리.</li>
+<li><span class="wl-dead" title="위키 내부 링크">갈5</span> · <span class="wl-dead" title="위키 내부 링크">요8</span> · <span class="wl-dead" title="위키 내부 링크">고전9</span> · <span class="wl-dead" title="위키 내부 링크">벧전2</span> · <span class="wl-dead" title="위키 내부 링크">약1</span> — 자유 본문 허브.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2021_천대까지이어지는행복</span></td>
+<td>설교(문대원)</td>
+<td>자유의 두 단계, 자유와 섬김의 방정식</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2021_ReShape5_새로운관계</span></td>
+<td>설교(문대원)</td>
+<td>갈 5:1·13 — 풀려남의 내용, 육체의 도약판</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2022_IAM6_진리를거부하는세상을향해</span></td>
+<td>설교(문대원)</td>
+<td>선을 택하는 능력, 죄가 주인이 되는 역전</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2023_아무것도하지않을자유</span></td>
+<td>설교(문대원)</td>
+<td>십계명은 자유인의 지침, 살리는 자유</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2023_자유는공짜가아니다</span></td>
+<td>설교(문대원)</td>
+<td>바깥의 적과 안의 적, 우상의 약속</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2023_영원을품고오늘을산다6_건강</span> · <span class="wl-dead" title="위키 내부 링크">2024_크리스천의윤리5_성적순결의중요성</span></td>
+<td>설교(문대원)</td>
+<td>고전 6장 — 속량, 얽매이지 않음, 중독</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2023_영원을품고오늘을산다7_돈</span> · <span class="wl-dead" title="위키 내부 링크">2023_자기애의늪에서탈출하기</span></td>
+<td>설교(문대원)</td>
+<td>돈과 인정에서 풀려나는 자유</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2025_나그네영성4_자유의지로무엇을하겠습니까</span></td>
+<td>설교(문대원)</td>
+<td>벧전 2:16 — 하나님의 종으로 쓰는 자유</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2025_권위는하나님의계획이다</span> · <span class="wl-dead" title="위키 내부 링크">2024_한결같은주의생명</span></td>
+<td>설교(문대원)</td>
+<td>경계 안의 자유, 절대가 아닌 자유</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2025_다시생명사역3_여러사람에게여러모양으로</span> · <span class="wl-dead" title="위키 내부 링크">2026-09-20_1세기교회이야기3_의외의동역</span></td>
+<td>설교(문대원)</td>
+<td>종이 된 자유인, 노예를 형제로</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2022_인생리셋</span> · <span class="wl-dead" title="위키 내부 링크">2022_부활영원을인식하는첫순간</span> · <span class="wl-dead" title="위키 내부 링크">2025_안전할때성장한다</span> · <span class="wl-dead" title="위키 내부 링크">2025_과거로부터의해방</span></td>
+<td>설교(문대원)</td>
+<td>죄를 알아보는 눈, 사실로서의 해방, 용서</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">진리_자유냐속박이냐</span></td>
+<td>설교(권성수)</td>
+<td>요 8:31-32의 순서, 자유의 환경과 제한</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">생생신앙_07_자유의왕법</span></td>
+<td>설교(권성수)</td>
+<td>약 2장 — 왕의 법은 자유의 법</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">정의_정의의강이흐르게하라</span></td>
+<td>설교(권성수)</td>
+<td>자유와 책임, 개인 책임과 집단 책임</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2016_평화6_고백하면자유롭다</span></td>
+<td>설교(권성수)</td>
+<td>잠 28:13 — 자복의 홀가분함</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2016_종노릇은가정에서</span></td>
+<td>설교(윤명숙)</td>
+<td>종의 표지는 대가를 바라지 않는 것</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2018_계명을주신이유</span> · <span class="wl-dead" title="위키 내부 링크">2015_차별하지않는것</span></td>
+<td>설교(윤명숙)</td>
+<td>자유롭게 하는 율법과 옭아매는 율법</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2017_용서의원리</span> · <span class="wl-dead" title="위키 내부 링크">2016_청소년부모의역할유형</span></td>
+<td>설교·강의(윤명숙)</td>
+<td>용서의 자유, 부모 유형과 자유</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2024_박재은_자유를_자유하라</span></td>
+<td>설교(박재은)</td>
+<td>약 1:25 — 율법과 자유를 가르는 동기</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2021_박경남_내게로_오라</span></td>
+<td>설교(박경남)</td>
+<td>마 11:28-30 — 주님의 멍에와 자유</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">하백선6장_구속적삶</span></td>
+<td>강의(이상협)</td>
+<td>구속의 어원, 총체적 해방</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">02주_갈라디아서_데살로니가전후서</span></td>
+<td>강의(MBTS)</td>
+<td>갈라디아 교회의 두 방향 이탈</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%98%81%EC%A0%81%ED%9B%88%EB%A0%A8%EA%B3%BC%EC%84%B1%EC%9E%A5_%EB%A6%AC%EC%B2%98%EB%93%9C%ED%8F%AC%EC%8A%A4%ED%84%B0/">영적훈련과성장_리처드포스터</a></td>
+<td>책(포스터)</td>
+<td>훈련의 목적은 자유, 종 됨의 자유</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EA%B8%B0%EB%8F%85%EC%8B%9C%EB%AF%BC%EC%9D%98%EC%82%AC%ED%9A%8C%EC%A0%81%EC%B1%85%EC%9E%84_%EC%9C%8C%EB%A6%AC%EC%97%84%ED%85%9C%ED%94%8C/">기독시민의사회적책임_윌리엄템플</a></td>
+<td>책(템플)</td>
+<td>자유와 방종, 자유의 두 읽기, 법과 자유</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EB%B0%B0%EC%A0%9C%EC%99%80%ED%8F%AC%EC%9A%A9_%EB%AF%B8%EB%A1%9C%EC%8A%AC%EB%9D%BC%EB%B8%8C%EB%B3%BC%ED%94%84/">배제와포용_미로슬라브볼프</a></td>
+<td>책(볼프)</td>
+<td>진리와 비폭력, 자유보다 사랑이 궁극</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EB%82%98%EB%9D%BC%EC%99%80%EA%B5%90%ED%9A%8C%EB%A5%BC%EC%83%9D%EA%B0%81%ED%95%9C%EB%8B%A4_%ED%99%8D%EC%A0%95%EA%B8%B8%EC%B5%9C%EC%A2%85%EC%83%81/">나라와교회를생각한다_홍정길최종상</a></td>
+<td>책(홍정길·최종상)</td>
+<td>하나님의 이름이 자유, 자유와 평등</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EB%8B%88%EA%B3%A0%EB%8D%B0%EB%AA%A8%EC%9D%98%EC%95%88%EA%B2%BD_%EC%8B%A0%EA%B5%AD%EC%9B%90/">니고데모의안경_신국원</a> · <a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%A0%95%EC%B9%98%EC%99%80%EC%9D%B8%EA%B0%84%EC%9D%98%EC%A0%95%EC%B9%98_%EC%9E%90%EB%81%84%EC%97%98%EB%A5%84/">하나님의정치와인간의정치_자끄엘륄</a> · <a class="wl" href="../../b/%EC%88%9C%EC%A2%85_%EC%A1%B4%EB%B9%84%EB%B9%84%EC%96%B4/">순종_존비비어</a></td>
+<td>책</td>
+<td>자유와 자율, 자발적 복종</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/조직신학</span><span>#discipline/기독교윤리</span><span>#topic/자유</span><span>#topic/종됨</span><span>#topic/갈라디아서</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

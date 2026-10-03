@@ -1,0 +1,588 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>교제 — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-t">조직신학·교리</span><span class="date">2026-10-02</span></div>
+  <h1 class="note-title">교제</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>교제(交際)는 신약의 코이노니아(κοινωνία)를 옮긴 말이다. 어근 코이노스(κοινός, 공통의)가 말하듯 이 단어의 뜻은 '함께 가짐'(having in common)이다. 친교·사귐·교통·나눔·참여로 번역되지만 어느 한 단어도 전부를 담지 못한다. 한 가지는 분명하다. 코이노니아는 감정적 친밀함이 아니라 <strong>무엇인가를 실제로 공유하고 있는 상태</strong>를 가리킨다. 신약의 용례가 그 무게를 보여 준다 — 재산의 공유(행 2:44-45), 헌금(고후 8:4), 고난의 참여(빌 3:10), 성찬(고전 10:16), 그리고 성령 자신(고후 13:13). 이 말이 예배 뒤 '친교실의 교제' 정도로 줄어들 때 덜어 내지는 것이 바로 이 무게다.</p>
+<p>그래서 교제를 묻는 일은 '얼마나 친한가'가 아니라 '무엇을 함께 가졌는가'를 묻는 일이다. 나는 선교 강의에서 이 단어를 이렇게 풀곤 했다. 코이노니아는 "2자 간에 이루어지는 것이 아니라, 제3의 무엇에 함께 참여하는 것을 뜻한다." 두 사람이 서로 마주 보는 것만으로는 교제가 되지 않는다. 둘이 함께 참여하는 셋째 것이 있어야 한다. 요한일서는 그것을 생명이라 부르고, 고린도후서의 축도는 성령이라 부르며, 빌립보서는 복음을 위한 일이라 부른다.</p>
+<p>이 글은 <a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%B2%B4/">공동체</a>와 일을 나눈다. 공동체가 부름받아 모이고 부대끼며 한 몸으로 서는 '모인 몸 전체'를 다룬다면(교제의 깊이를 재는 다섯 단계와 초대교회의 강도는 그 글 2절, 1세기의 식탁은 3절), 여기서는 그 몸 안을 흐르는 것 자체를 따라간다. 함께 가진 것이 무엇인지, 하나님과의 교제와 성도의 교제가 어떻게 한 사귐인지, 그 사귐이 어디서 끊기고 무엇으로 회복되는지, 어디까지 열리고 어디에 선이 있는지를 묻는다. 몸의 생김새가 공동체의 몫이라면 그 안을 도는 피의 성분과 순환은 이 글의 몫이다.</p>
+<h2>1. 함께 가진다는 말 — 여러 번역어와 '제3의 것'</h2>
+<p>우리말 성경은 같은 헬라어를 본문마다 다르게 옮긴다. 번역어를 나란히 놓으면 무엇을 함께 가지는지가 드러난다.</p>
+<table>
+<thead>
+<tr>
+<th>본문</th>
+<th>우리말 번역</th>
+<th>함께 가지는 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>행 2:42</td>
+<td>교제</td>
+<td>사도의 가르침·떡·기도와 나란히 놓인 삶</td>
+</tr>
+<tr>
+<td>요일 1:3</td>
+<td>사귐</td>
+<td>아버지와 아들, 곧 생명</td>
+</tr>
+<tr>
+<td>고후 13:13</td>
+<td>교통하심</td>
+<td>성령</td>
+</tr>
+<tr>
+<td>빌 1:5</td>
+<td>참여</td>
+<td>복음을 위한 일</td>
+</tr>
+<tr>
+<td>고전 10:16</td>
+<td>참여함</td>
+<td>그리스도의 몸과 피</td>
+</tr>
+<tr>
+<td>빌 3:10</td>
+<td>참여함</td>
+<td>그리스도의 고난</td>
+</tr>
+<tr>
+<td>고후 8:4</td>
+<td>참여함</td>
+<td>가난한 성도를 섬기는 연보</td>
+</tr>
+</tbody>
+</table>
+<p>이 말은 본래 교회의 말이 아니었다. 박영호는 아리스토텔레스가 폴리스를 시민들의 정치적 참여 곧 코이노니아로 정의했다고 짚는다. "시민들이 함께 살아가는 생활과 뜻을 모아 가는 절차 전체"가 코이노니아였다. 그가 읽는 사도행전은 그리스가 끝내 이르지 못한 그 이상을 실현하는 공동체로 그리스도인의 에클레시아를 내놓는다(<a class="wl" href="../../b/%EC%82%AC%EB%8F%84%ED%96%89%EC%A0%84%EC%84%A0%EA%B5%90%EC%A0%81%EC%9D%BD%EA%B8%B0_%EB%B0%95%EC%98%81%ED%98%B8/">사도행전선교적읽기_박영호</a>). 코이노니아는 처음부터 한 도시의 운명을 함께 지는 사람들의 말이었지 여가의 말이 아니었다.</p>
+<p>강단도 같은 자리에서 출발한다. <span class="wl-dead" title="위키 내부 링크">문대원</span> 목사는 생명사역의 다섯 영역 가운데 교제를 다루며 첫 문장을 이렇게 놓는다. "코이노니아, 단지 식사와 대화가 아니다." "식사, 커피 정도만이 아니다. 성도의 교제는 동일한 방향으로 나아가기 위한 연합이다." <span class="wl-dead" title="위키 내부 링크">리처드 포스터</span>는 같은 말을 예배 쪽에서 한다. "이 코이노니아는 성령의 능력 안에서 가지는 깊은 내적 친교이다"(<a class="wl" href="../../b/%EC%98%81%EC%A0%81%ED%9B%88%EB%A0%A8%EA%B3%BC%EC%84%B1%EC%9E%A5_%EB%A6%AC%EC%B2%98%EB%93%9C%ED%8F%AC%EC%8A%A4%ED%84%B0/">영적훈련과성장_리처드포스터</a>).</p>
+<p>다만 식사를 낮추어 보는 것으로 이 말을 지킬 수는 없다. <span class="wl-dead" title="위키 내부 링크">권성수</span> 목사는 사도행전 2장을 강해하며 "음식을 나눈다는 것이 굉장히 중요하다"고 말하고, 교제의 첫걸음으로 예배 전후에 커피 한 잔을 나누는 가벼운 모임을 권한다(<span class="wl-dead" title="위키 내부 링크">행2</span>). 두 설교자가 어긋나는 것이 아니다. 한쪽은 식탁에서 멈추는 교제를, 다른 쪽은 식탁에도 이르지 못하는 고립을 염려한다. 밥상은 교제의 문이다. 문 앞에서 돌아서는 사람에게는 들어오라고, 문간에 눌러앉은 사람에게는 안쪽이 있다고 말해야 한다. MBTS 개인제자도실습 강의 노트의 진단 — "친교, 교제가 축소되고 있다. 교회 건강한 방법이 아닌 소셜 관계 수준" — 도 어느 교회나 교단을 향한 지적이 아니라, 함께 가진 것을 잊을 때 어떤 모임에나 찾아오는 일에 대한 경고로 읽어야 한다.</p>
+<p>그렇다면 함께 가진 것 가운데 가장 먼저 오는 것은 무엇인가. 매 주일 예배의 마지막 문장이 답한다.</p>
+<h2>2. 축도가 먼저다 — 성령의 교통하심과 삼위의 사귐</h2>
+<blockquote>
+<p>주 예수 그리스도의 은혜와 하나님의 사랑과 성령의 교통하심이 너희 무리와 함께 있을지어다 (고후 13:13)</p>
+</blockquote>
+<p>축도의 세 번째 항목 '교통하심'이 코이노니아다(<span class="wl-dead" title="위키 내부 링크">고후13</span>). 문대원 목사는 빌레몬서 강해에서 여기에 결정적인 연결을 놓는다. 성경이 말하는 동역자는 "거룩한 갈망과 비전을 나누는 영적인 교제" 위에 선 사람인데, 그 교제의 근거 본문이 바로 이 축도라는 것이다. "이 교제의 근거한 관계가 동역자이다." <a class="wl" href="../../t/%EB%8F%99%EC%97%AD/">동역</a>의 근거가 축도 안에 이미 있다. <a class="wl" href="../../t/%EC%84%B1%EB%A0%B9/">성령</a>의 교통하심이 먼저 주어졌기에 그 위에서 사람과 사람의 관계가 세워진다.</p>
+<p>곧 교제는 우리가 만들어 내는 분위기가 아니라 성령이 이미 이루어 놓으신 사실이며, 우리의 교제는 그 사실에 참여하는 행위다. 순서가 뒤집히면 교제는 노력이 되고, 노력은 지친다. 친해지려 애쓰다 지친 모임이 돌아가야 할 곳은 더 정교한 프로그램이 아니라 축도다.</p>
+<p>성령의 교통하심은 다시 그 뒤에 있는 것을 가리킨다. 권성수 목사는 요한일서 4장 강해에서 말한다. "삼위일체의 완벽한 사랑의 교제, 이것이 사랑의 본질이다." 전도서 4장 강해에서도 같다. "삼위간의 교제, 완벽한 교제가 있다. 완벽한 공동체 모델이다." 교제는 창조 뒤에 생긴 것이 아니다. 성부·성자·성령 사이에 먼저 있었고, 사람은 그 <a class="wl" href="../../t/%EC%82%BC%EC%9C%84%EC%9D%BC%EC%B2%B4/">삼위일체</a> 하나님의 형상으로 지어졌기에 관계 없이는 살 수 없다(창조와 고립의 문제는 <a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%B2%B4/">공동체</a> 1절).</p>
+<p>그 사귐 안으로 사람이 들어가는 문도 성령이다. 권성수 목사는 요일 4:13-16을 한 줄의 순서로 푼다. "성령을 받으면 예수를 하나님의 아들이라 시인하게 된다. 그렇게 되면 자녀가 되기 때문에 하나님과 교제하게 된다." 우리가 그의 안에, 그가 우리 안에 거한다는 말은 사람이 신이 된다는 뜻이 아니다. "우리는 하나님과 교제할 수 있다. 신비적 연합, 교제 하는 것이다." 하나가 되되 구별이 지워지지 않는 것, 그것이 교제라는 말이 지키는 선이다(<span class="wl-dead" title="위키 내부 링크">요일4</span>, 그리스도와의 연합은 <a class="wl" href="../../t/%EC%97%B0%ED%95%A9/">연합</a>).</p>
+<p>교회의 공적 고백들도 이 순서를 따른다. 제4차 로잔대회 <a class="wl" href="../../t/%EC%84%9C%EC%9A%B8%EC%84%A0%EC%96%B8%EB%AC%B8/">서울선언문</a>의 교회론을 정리한 노트는 "교회는 하나님 백성의 교제이다"라는 문장으로 시작하고, <a class="wl" href="../../b/%EC%BC%80%EC%9D%B4%ED%94%84%ED%83%80%EC%9A%B4%EC%84%9C%EC%95%BD/">케이프타운 서약</a>은 교회를 "성령의 교통 안에 있는 은혜와 순종과 사랑의 공동체"라 부른다. 교회가 교제를 하기 전에 교제가 교회를 있게 한다. 그러면 성령이 먼저 주신 그 사귐의 내용물은 무엇인가. 요한일서가 서신 전체를 들여 답하는 물음이다.</p>
+<h2>3. 무엇을 함께 가지는가 — 듣고 보고 만진 생명</h2>
+<p>권성수 목사는 요한일서 다섯 장을 '교제'라는 한 제목 아래 열세 번에 걸쳐 강해했다(<span class="wl-dead" title="위키 내부 링크">권성수_교제_요한일서강해</span>). 그가 서신에서 길어 올린 정의는 한 문장이다. "예수의 생명을 빛가운데 나누는 것이 교제이다." 열세 편을 이 글의 눈으로 다시 묶으면 교제의 다섯 마디가 나온다.</p>
+<table>
+<thead>
+<tr>
+<th>마디</th>
+<th>교제의 무엇인가</th>
+<th>요한일서 본문</th>
+<th>이 글의 자리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>생명</td>
+<td>본질 — 함께 가진 것</td>
+<td>1:1-4</td>
+<td>3절</td>
+</tr>
+<tr>
+<td>빛</td>
+<td>증명 — 깨지고 회복되는 자리</td>
+<td>1:5-2:2, 3:4-10</td>
+<td>5절</td>
+</tr>
+<tr>
+<td>사랑</td>
+<td>흐름 — 끊기면 미움이 된다</td>
+<td>2:7-11, 3:11-18, 4:7-21</td>
+<td>6절</td>
+</tr>
+<tr>
+<td>진리</td>
+<td>경계 — 무엇은 함께 가질 수 없는가</td>
+<td>2:18-27, 4:1-6</td>
+<td>9절</td>
+</tr>
+<tr>
+<td>확신</td>
+<td>토대 — 흔들리지 않는 신분</td>
+<td>5:13-21</td>
+<td>5·9절</td>
+</tr>
+</tbody>
+</table>
+<p>출발점은 체험이다. "교제를 다루면서 생명체험부터 시작한다." 사도 <span class="wl-dead" title="위키 내부 링크">요한</span>은 생명의 말씀을 들었고 보았고 손으로 만졌다고 쓴다(<span class="wl-dead" title="위키 내부 링크">요일1</span>). 육체로 오신 그리스도를 부정하던 <a class="wl" href="../../t/%EC%98%81%EC%A7%80%EC%A3%BC%EC%9D%98/">영지주의</a> 앞에서 요한이 감각의 동사를 겹쳐 쓴 까닭을, 변진석 GMTC 원장은 '만짐'이라는 말에서 읽는다. "만지는 것은 정말 근접, 친밀성, 동일성, 애정 이것이 가지는 의미이다." 교제가 함께 가지는 것은 관념이 아니라 만져진 분이다.</p>
+<p>요한은 그 체험을 혼자 간직하지 않는다.</p>
+<blockquote>
+<p>우리가 보고 들은 바를 너희에게도 전함은 너희로 우리와 사귐이 있게 하려 함이니 우리의 사귐은 아버지와 그의 아들 예수 그리스도와 더불어 누림이라 (요일 1:3)</p>
+</blockquote>
+<p>이 한 절에 사귐이 두 번 나온다. 너희와 우리의 사귐, 그리고 우리와 아버지·아들의 사귐이다. 앞의 것은 뒤의 것으로 들어오라는 초대다. 권성수 목사는 이것을 전함에서 사귐으로, 누림으로, 기쁨으로 이어지는 고리로 그리고 짧게 경고한다. "생명이 고인물이 되면 안된다." 생명은 건너갈 때 알아보게 되는 것이기도 하다. 고린도전서 12장 강해에서 그는 오래 교회를 다니고도 예수를 만나지 못하던 이가 한 노인의 따스한 눈빛에서 평안을 맛본 간증을 전하며 말한다. "내 속에서만 있는 것이 아니라 상대방에 들어갈 때 예수님이 더 귀하다는 것을 알게 된다"(<span class="wl-dead" title="위키 내부 링크">고전12</span>).</p>
+<p>변진석 원장이 이 본문을 편 것은 한국 선교의 첫 물결이 잦아든다는 진단 한가운데서였다. 균형을 잃기 쉬운 전환기일수록 "핵심을 붙잡는 것이 너무나 중요하다." 그가 건넨 점검은 전략이 아니라 물음이었다. "사귐, 공유하는 것, 코이노니아를 경험하는가?" 일의 규모가 줄어들 때 무엇이 남는지가 그 일의 동력이 무엇이었는지를 말해 준다. 요일 1:3이 말한 두 사귐 — 하나님과의 사귐, 성도 사이의 사귐 — 은 그러면 어떤 사이인가.</p>
+<h2>4. 두 사귐은 하나다 — 하나님과의 교제와 성도의 교제</h2>
+<p>권성수 목사는 빛 가운데 행한다는 말을 풀며 두 축을 한 줄에 적는다. "수직적으로 하나님과 사귐, 수평적으로 사람과 사귐." 열두 번째 강해의 맺음말도 둘을 한 호흡에 둔다. "하나님과의 교제, 성도와의 교제가 풍성." 문대원 목사는 단어 자체가 그렇게 쓰인다고 짚는다. "코이노니아, 하나님과의 관계, 사람과의 관계에도 쓸 수 있다." 그리고 단언한다. "하나님과 관계는 좋은데, 다른 사람과 관계는 좋지 않다는 것은 불가능한 것이다." 근거는 요한의 문장이다. "보는 바 그 형제를 사랑하지 아니하는 자는 보지 못하는 바 하나님을 사랑할 수 없느니라"(요일 4:20).</p>
+<p>둘은 어느 방향으로 이어지는가. 먼저 위에서 아래로다. 권성수 목사는 "사랑의 실천이 안되는 이유는 원천까지 가지 않았기 때문이다"라고 말한다. 중심축인 그리스도께 가까워질수록 바퀴살 사이도 좁아진다는 그의 비유가 이 방향을 그린다(상술은 <a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%B2%B4/">공동체</a> 2절). 예수께서 열두 제자를 세우신 첫째 목적이 일이 아니라 "자기와 함께 있게 하시고"(막 3:14)였다는 사실도 같은 쪽을 가리킨다. 권성수 목사는 인사에서 사건으로, 의견으로, 기분으로, 마침내 전부를 나누는 데까지 깊어지는 사귐의 단계를 예수와의 동행에 옮겨 놓는다. "교제가 깊어지면 태도가 변화된다"(<span class="wl-dead" title="위키 내부 링크">막3</span>).</p>
+<p>그러나 아래에서 위로도 이어진다. 권성수 목사는 히브리서 12:15를 들어 교제하지 않는 사람은 은혜에서 멀어진다고 경고한다. "쓴뿌리가 나지 않도록 교제해야 한다." 베블리 라헤이는 한 여성의 사례를 두고 적는다. "사람들과의 교제에서 분리되자 그녀는 또한 하나님과의 교제도 잃어버리고 있었다"(<a class="wl" href="../../b/%EC%84%B1%EB%A0%B9%EC%B6%A9%EB%A7%8C%ED%95%9C%EC%97%AC%EC%9D%B8_%EB%B2%A0%EB%B8%94%EB%A6%AC%EB%9D%BC%ED%97%A4%EC%9D%B4/">성령충만한여인_베블리라헤이</a>). 두 사귐은 한 줄의 양끝이어서 한쪽을 놓으면 다른 쪽도 느슨해진다.</p>
+<p>그렇다고 홀로 있음이 교제의 반대말은 아니다. 권성수 목사는 혼자 기도하고 연구하고 훈련받는 좋은 고독과, 관계가 끊어진 고립적 고독을 가른다. 앞의 것은 필요하고 뒤의 것은 병이다. 문대원 목사는 "수도원 영성을 추구하면서 혼자 사는 것은 옳지 않다"고 말하지만 그가 겨누는 것은 고요가 아니라 단절이다. 리처드 포스터의 문장이 균형을 잡는다. "우리가 평안하게 홀로 있기를 원한다면 다른 사람들과의 친교를 찾아야 한다." 홀로 있음과 성도의 교제는 서로를 대신하지 못하고 서로를 참되게 한다.</p>
+<p>두 사귐이 하나라면 하나가 깨질 때 다른 하나도 깨진다. <span class="wl-dead" title="위키 내부 링크">윤명숙</span> 전도사가 요한일서 1장에서 읽어 낸 대로 "하나님과 사귐이 있다면 빛가운데 행할 수 밖에 없다." 교제가 깨지는 자리와 회복되는 자리는 같은 곳, 빛이다.</p>
+<h2>5. 빛 가운데 — 교제가 깨지고 회복되는 자리</h2>
+<p>요한은 생명 다음에 곧바로 빛을 말한다. 권성수 목사의 구도로는 생명이 교제의 본질이고 빛은 그 증명이다. 그런데 현실에는 어둠이 있다. 그래서 요한일서 1장 후반은 교제론이면서 죄론이 된다. 죄가 없다고 말하면 스스로 속이는 것이다. 권성수 목사가 늘어놓는 대로 죄를 죄 아닌 것으로 바꾸어 부르는 길은 과학의 말로든 종교의 말로든 여럿이지만 모두 한곳에서 만난다. 자백할 것이 없어진다. 그리고 자백이 사라진 자리에서는 사귐도 사라진다. 윤명숙 전도사의 말로 "가면과 가면이 만나면 친밀감을 누릴 수 없다."</p>
+<p>여기서 요한일서 강해가 가장 공들여 세우는 구분이 나온다. 죄로 흔들리는 것은 무엇이고 흔들리지 않는 것은 무엇인가.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>흔들리지 않는 것</th>
+<th>흔들리는 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>이름</td>
+<td>신분 — 칭의, 하나님의 자녀</td>
+<td>교제 — 성화의 길에서 누리는 사귐</td>
+</tr>
+<tr>
+<td>근거</td>
+<td>그리스도의 의, 하나님께로부터 난 생명</td>
+<td>날마다 빛 가운데 행함</td>
+</tr>
+<tr>
+<td>죄를 지었을 때</td>
+<td>자녀가 아니게 되지 않는다</td>
+<td>어둠이 끼어 사귐이 막힌다</td>
+</tr>
+<tr>
+<td>길</td>
+<td>확신한다</td>
+<td>자백한다</td>
+</tr>
+</tbody>
+</table>
+<p>"신분은 의인, 실제는 죄인이다." 권성수 목사는 루터의 명제를 빌려 이 두 줄을 함께 붙든다(<a class="wl" href="../../t/%EC%B9%AD%EC%9D%98%EB%A1%A0/">칭의론</a>, <a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a>). 요일 3장의 '하나님께로부터 난 자마다 죄를 짓지 아니한다'는 말은 신분을 말한다. "날개가 다쳐도 새는 난다는 것이 맞는 말이다." 그러므로 죄를 지은 신자가 할 일은 신분을 의심하는 것이 아니라 사귐을 회복하는 것이고, 그 길이 자백이다. "지적으로 인정, 감정적으로 죄를 아파해야 한다. 의지적으로 죄를 버려야 한다"(<a class="wl" href="../../t/%ED%9A%8C%EA%B0%9C/">회개</a>). 자백한 뒤에도 따라오는 죄책감에는 요일 2:12를 처방한다. "나 때문이 아니라 예수님 때문에 용서를 받았다는 것을 자꾸 생각해야 한다."</p>
+<p>두 줄 가운데 하나를 지우면 교제는 양쪽에서 무너진다. 흔들리는 줄을 지우면 — 나는 죄와 상관없다고 하면 — 자백이 없어지고 가면이 남는다. 흔들리지 않는 줄을 지우면 — 죄를 지을 때마다 자녀 됨을 의심하면 — 사람은 빛으로 나오지 못하고 숨는다. 시리즈가 '우리가 안다'는 확신의 선언(요일 5:18-20)으로 끝나는 것은 그래서다. 확신은 교제의 장식이 아니라 토대다. 신분이 흔들리지 않음을 아는 사람만 자기 어둠을 빛 앞에 내놓을 수 있다(<span class="wl-dead" title="위키 내부 링크">요일5</span>).</p>
+<p>성도 사이의 교제도 같다. 리처드 포스터는 서로 죄를 고백하는 일이 왜 어려운지를 한 문장으로 짚는다.</p>
+<blockquote>
+<p>고백이 우리에게 어려운 훈련이 되는 이유는 우리가 믿음의 공동체를 죄인들의 친교 단체로 보기 전에 성도들의 친교 단체로 보는 데 있다.</p>
+</blockquote>
+<p>모두가 성도의 얼굴만 하고 모이면 죄인은 혼자가 된다. 하나님의 백성이 먼저 죄인들의 모임임을 알 때 형제자매 앞에 어려움을 내놓을 자유가 생긴다(고백을 훈련으로 익히는 길은 <a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%B2%B4%EC%A0%81%EC%98%81%EC%84%B1%ED%9B%88%EB%A0%A8/">공동체적영성훈련</a> 5절). 권성수 목사가 "참된 교제를 위해 죄에 대한 성경적 시각이 확보되어야 한다"고 말할 때 가리키는 것도 같은 자리다. 남의 죄를 보면 관계부터 끊고 싶어지는 마음이 사귐을 먼저 깬다.</p>
+<p>빛의 교제에는 오용의 위험도 있다. 권성수 목사는 요한일서 강해를 열며, 제 눈의 들보부터 빼라는 바로 앞 주의 설교가 악용될 수 있음을 스스로 짚었다. "분명히 잘못하고서 사과하지 않고 니 눈의 통나무 보라고 할 수있다." 자기 성찰의 언어가 남에게 겨누어지면 사과를 피하는 방패가 된다. 빛 가운데 행한다는 것은 남의 어둠을 비추는 일이 아니라 내 어둠을 내놓는 일이다. 그가 이 장을 맺으며 준 그림은 화단이다. "죄의 잡초를 뽑아야 하고, 의의 화초는 가꾸어야 한다." 심을 화초 가운데 마지막 것이 사랑이다.</p>
+<h2>6. 선을 긋는 것이 미움이다 — 사랑이라는 흐름</h2>
+<p>요한일서에서 사랑은 교제에 덧붙는 덕목이 아니라 교제가 살아 있다는 표지다. 권성수 목사는 요일 2:7-11에서 미움을 다시 정의한다. "선을 그어놓고 교제하지 않는것 미워하는 것이다." 미움은 대개 분노의 얼굴을 하지 않는다. 그저 인사하지 않는 것, 그 사람이 있는 자리를 피하는 것으로 온다. 형제에게 선을 그어 둔 채 빛 가운데 있다고 말하는 것이 요한이 말한 어둠이다(<span class="wl-dead" title="위키 내부 링크">요일2</span>).</p>
+<p>이 정의는 사랑의 정의를 함께 바꾼다. 끌림이 사랑의 전부라면 선 건너편의 사람은 영영 사랑할 수 없다. "원수는 절대로 감정으로 사랑할 수 없다. 의지의 결단이다." 선을 지우는 한 걸음을 먼저 떼는 사람에게 약속이 따른다. "빛가운데 교제하면 거침돌이 사라지고 디딤돌이 나타난다."</p>
+<p>요일 3:11-18 강해는 같은 대조를 두 인물로 세운다(<span class="wl-dead" title="위키 내부 링크">요일3</span>).</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>가인의 길</th>
+<th>예수의 길</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>뿌리</td>
+<td>미움</td>
+<td>사랑</td>
+</tr>
+<tr>
+<td>영적 상태</td>
+<td>죽음 — 예배는 드렸으나 마음은 드리지 않았다</td>
+<td>생명 — 사망에서 생명으로 옮겨진 증거</td>
+</tr>
+<tr>
+<td>관계</td>
+<td>단절</td>
+<td>연결</td>
+</tr>
+<tr>
+<td>끝</td>
+<td>살인</td>
+<td>목숨을 내어 줌</td>
+</tr>
+</tbody>
+</table>
+<p>미움은 관계를 끊고 사랑은 관계를 잇는다. 여기서 권성수 목사는 교제를 한 번 더 정의한다. "사랑의 인맥을 넓혀라. 이것이 진짜 교제이다." 교제는 마음 맞는 몇 사람과의 사귐을 깊게 하는 데서 그치지 않고 품을 넓히는 일이며, 그 넓이는 "말과 혀로만 하지 말고 행함과 진실함으로 하자"는 요구대로 시간과 재능과 물질로 재어진다.</p>
+<p>사랑이 흐름이라는 것은 요일 4장에서 분명해진다. 사랑은 하나님께 속했고 십자가에서 정점에 이르렀으며, 받은 사람에게는 흘려보낼 빚으로 남는다. 포도나무의 수액처럼 흘러든 사랑은 고이면 썩는다(<a class="wl" href="../../t/%EC%82%AC%EB%9E%91/">사랑</a>). 그리고 흘려보내는 사람에게 일어나는 일이 있다.</p>
+<blockquote>
+<p>제대로 된 사랑은 교제가 있다. 사랑의 교제는 두려움이 없어진다. 몰아낸다.</p>
+</blockquote>
+<p>"사랑 안에 두려움이 없고 온전한 사랑이 두려움을 내쫓나니"(요일 4:18)를 권성수 목사는 교제의 유익으로 읽는다. 심판만이 아니다. 사람이 나를 싫어할까, 병에 걸릴까, 가진 것을 잃을까 하는 일상의 불안도 자기 세계에 갇혀 있을 때 자란다. 처방은 동굴에서 나오는 것이다. "나의 세계에서 밖으로 나오면 산다. 혼자 살면 죽는다. 이것이 사랑의 교제이다." 그날 설교의 마지막 줄은 "Let love flow through your fellowship"이었다(<a class="wl" href="../../t/%EB%91%90%EB%A0%A4%EC%9B%80/">두려움</a>).</p>
+<p>물론 동굴 밖은 안전하지 않다. 같은 해 사도행전 2장 강해에서 그는 말했다. "모이면 우리가 약점이 있기 때문에 상처가 난다." 그래도 결론은 물러남이 아니다. "상처를 각오해야 성숙한다." 사귐 안의 마찰을 하나님이 사람을 빚으시는 도구로 읽는 '부대낌의 교제'는 <a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%B2%B4/">공동체</a> 5절이 자세히 다룬다. 다만 부대낌은 교제의 실패가 아니라 교제가 실제로 일어나고 있다는 증거다. 선을 그어 둔 사이에는 부대낌도 없다. 그 선을 지우는 사랑은 어디까지 가는가. 1세기 교회는 사회가 그어 놓은 가장 굵은 선 앞에서 답을 보여 주었다.</p>
+<h2>7. 누구와 함께 가지는가 — 벽을 허무는 교제와 한 식탁</h2>
+<p>교제가 진짜인지는 누구와 함께 가지는가에서 드러난다. 문대원 목사는 빌레몬서 강해에서 1세기 로마의 식탁을 이렇게 적는다. "당시 사회에서 종과 자유인은 같은 지위가 아니었다. 식사를 같이 할 수 없었다." 바로 그 사회에서 바울은 선언한다. "너희는 유대인이나 헬라인이나 종이나 자유인이나 남자나 여자나 다 그리스도 예수 안에서 하나이니라"(갈 3:28). 근거는 감정이 아니라 사건이다. "예수님께서 그들 모두를 위해 십자가에 달려 죽으셨기 때문이다"(<span class="wl-dead" title="위키 내부 링크">갈3</span>).</p>
+<p><span class="wl-dead" title="위키 내부 링크">바울</span>이 빌레몬에게 도망쳤던 종 오네시모를 "종 이상으로 곧 사랑 받는 형제로"(몬 1:16) 맞으라고 청한 일은 그래서 한 가정의 일로 끝나지 않는다(<span class="wl-dead" title="위키 내부 링크">몬1</span>). 문대원 목사의 말로 그것은 교회가 어떤 곳인지를 보여 주는 상징적인 사건이며, 함께 식사하고 함께 일하는 관계로 받아들이는 것이 교제의 눈에 보이는 형태다(<a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%A1%A0/">교회론</a>). 함께 가진 것이 십자가라면 사회가 갈라 놓은 것은 그 앞에서 가를 근거가 되지 못한다. 케이프타운 서약의 표현으로 교회는 "모든 죄악된 장벽이 허물어진 화해의 친교"로 부름받았다. 1세기의 집과 식탁에서 이 일이 어떤 모양이었는지는 <a class="wl" href="../../t/%EC%B4%88%EB%8C%80%EA%B5%90%ED%9A%8C/">초대교회</a> 6절과 <a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%B2%B4/">공동체</a> 3절이 그려 놓았다.</p>
+<p>벽이 허물어지는 자리가 식탁인 것은 우연이 아니다. 고린도전서 10:16은 성찬의 떡과 잔을 그리스도의 몸과 피에 '참여함' 곧 코이노니아라 부른다. 권성수 목사도 교제를 나눔으로 정의한 뒤 곧바로 성찬으로 간다. "예수님의 한몸을 우리가 함께 나눈다. 이것이 성찬이다." <a class="wl" href="../../t/%EC%84%B1%EC%B0%AC/">성찬</a>에서 한 떡과 한 잔 앞에 모두가 평등해지는 것은 교제의 원형이다. 문대원 목사가 <span class="wl-dead" title="위키 내부 링크">「기억의 식탁」</span>에서 말한 대로 그 상 앞에서는 누구도 자기 힘이나 자기 의로 서지 못하고, 함께 성찬을 받기에 영적인 식구가 된다. 그가 그다음 설교 <span class="wl-dead" title="위키 내부 링크">「의외의 동역」</span>에서 빌레몬과 오네시모로 넘어간 순서가 곧 논리의 순서다. 식탁의 교제가 없는 곳에서는 동역의 교제도 자라지 않는다.</p>
+<p>초기 교회는 이 식탁 앞에 한 가지 절차를 두었다. <span class="wl-dead" title="위키 내부 링크">앨런 크라이더</span>가 복원한 대로 기도와 성찬 사이에는 평화의 입맞춤이 있었고, 그것은 교회가 성령의 임재와 교통하심을 기뻐하는 몸짓이면서 교회 안에 평화를 만드는 수단이었다(<a class="wl" href="../../b/%EC%B4%88%EA%B8%B0%EA%B8%B0%EB%8F%85%EA%B5%90%EC%9D%98%EC%98%88%EB%B0%B0%EC%99%80%EB%B3%B5%EC%9D%8C%EC%A0%84%EB%8F%84_%ED%81%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/">초기기독교의예배와복음전도_크라이더</a>). 5절의 자백과 6절의 선 지우기가 예배의 순서 안에 들어와 있었던 셈이다. 한 식탁에 앉은 사람들은 이제 무엇을 향해 함께 일어서는가.</p>
+<h2>8. 코이노노스 — 목적이 있는 교제, 목적이 없는 교제</h2>
+<p>코이노니아의 인격적 형태가 코이노노스(κοινωνός), 곧 함께 가진 사람이다. "네가 나를 동역자로 알진대 그를 영접하기를 내게 하듯 하고"(몬 1:17)의 '동역자'가 이 말이고, 문대원 목사는 이것을 빌레몬서 전체의 주제로 본다.</p>
+<table>
+<thead>
+<tr>
+<th>헬라어</th>
+<th>뜻</th>
+<th>강조점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>코이노니아</td>
+<td>함께 가짐</td>
+<td>관계의 <strong>상태</strong></td>
+</tr>
+<tr>
+<td>코이노노스</td>
+<td>함께 가진 자</td>
+<td>관계 속의 <strong>사람</strong></td>
+</tr>
+</tbody>
+</table>
+<p>사업 파트너십은 공동의 이익 위에 선다. 코이노노스의 관계는 성령 안에서 거룩한 갈망과 비전을 함께 가진 데 선다. 이익이 사라지면 앞의 것은 풀리지만 뒤의 것은 이익과 무관하게 이어진다(호칭이 관계를 바꾸는 일과 회복된 사람이 동역자가 되는 일은 <a class="wl" href="../../t/%EB%8F%99%EC%97%AD/">동역</a>).</p>
+<p>그러므로 교제에는 방향이 있다. 문대원 목사는 빌립보서 1:5의 '복음을 위한 일에 참여'에서 '참여'가 코이노니아임을 짚고 말한다. "성도의 교제는 분명한 목적을 가지고 있다." "각 지체들은 중요한 역할을 담당하고 있다. 이것을 깨닫는 것이 성도의 교제의 시작이다"(<span class="wl-dead" title="위키 내부 링크">빌1</span>). 권성수 목사도 같은 쪽으로 민다. 외로움의 시대에 교제가 치유라면 치유에서 멈춘 교제는 아직 절반이다. "교제가 사명으로 연결되어야 보람으로 간다"(<a class="wl" href="../../t/%EC%83%9D%EB%AA%85%EC%82%AC%EC%97%AD/">생명사역</a>).</p>
+<p>함께 가지는 것에는 좋은 것만 있지 않다. 바울은 그리스도의 고난에도 이 말을 썼다. 『고난과 하나님의 선교』는 고린도후서의 고난을 네 측면으로 읽으면서 그 하나를 코이노니아적 측면이라 부른다. 가난한 성도를 위한 연보에 참여하라는 바울의 권면은 모금이 아니라 한 가족이 고통을 나누어 지는 일이며, 그것이 "하나님의 가족이 함께 살아가는 코이노니아의 원리, 즉 고난에 동참하는 삶의 모습이다"(<a class="wl" href="../../b/%EA%B3%A0%EB%82%9C%EA%B3%BC%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A0%EA%B5%90_%EC%8A%A4%ED%8B%B0%EB%B8%90%ED%85%8C%EC%9D%BC%EB%9F%AC%EC%99%B8/">고난과하나님의선교_스티븐테일러외</a>). 헌금이 교제라는 말은 여기서 나온다. 지갑이 함께 움직이지 않는 사귐을 신약은 코이노니아라 부르지 않는다.</p>
+<p>그런데 문대원 목사는 목적을 그토록 강조한 바로 그 설교를 정반대처럼 들리는 말로 맺는다.</p>
+<blockquote>
+<p>아무 이유와 목적 없이 만나는 것이 진정한 교제이다. 진정한 관계는 그 자체가 목적이다.</p>
+</blockquote>
+<p>아무 행사도 없는 금요기도회가 좋은 까닭을 그는 여기서 찾는다. 모순이 아니다. 교제는 일을 위한 수단이 아니라는 뜻이다. 함께 가진 것이 있기에 함께 일하는 것이지, 함께 일하려고 사귐을 꾸미는 것이 아니다. 그가 시리즈의 다음 설교를 열며 덧붙인 말이 두 문장을 잇는다. "오랜 시간 지나서 남는 것은 사역의 결과가 아니다. 관계의 결과가 오래 남는다." 목적 있는 교제와 목적 없는 교제는 둘 가운데 하나를 고르는 문제가 아니라 한 사귐의 두 얼굴이다. 축도에서 받은 사귐은 그 자체로 충분하고, 충분하기에 밖으로 흘러간다. 그러나 아무 데로나 흘러가지는 않는다. 요한일서는 사귐에 경계가 있다고 말한다.</p>
+<h2>9. 교제의 경계 — 진리 안에 거하는 사귐, 그리고 초대</h2>
+<p>요한일서가 쓰인 계기는 교회를 떠난 사람들이었다. "그들이 우리에게서 나갔으나 우리에게 속하지 아니하였나니"(요일 2:19). 그들은 예수께서 육체로 오셨음을 부인했다. 변진석 원장은 요한의 판단을 이렇게 옮긴다. 요한은 "이들과 사귐이 불가능하다고" 말한다. 교제가 함께 가지는 것이 육체로 오신 생명이라면, 그 생명을 부인하는 자리에서는 함께 가질 것이 없다. 교제의 경계는 배타심에서 나오지 않고 교제의 정의에서 나온다.</p>
+<p>권성수 목사는 요일 4:1-6 강해를 영어 한 줄로 맺는다. "Abide in the truth for fellowship, discerning the spirits." 영을 분별하여 진리 안에 머무는 것이 교제의 조건이라는 것이다(<a class="wl" href="../../t/%EB%B6%84%EB%B3%84/">분별</a>). MBTS 신약개론 강의는 요한일서가 내놓는 평가 기준을 셋으로 정리한다. 첫째는 예수께서 육신으로 오신 참 그리스도이심을 믿는가이고, 둘째와 셋째는 그 믿음이 의로, 사랑으로 실천되는가다. 이 셋은 3절의 표에서 본 생명·빛·사랑과 겹친다. 교제의 내용이 곧 교제의 경계다. 권성수 목사가 시리즈를 끝내며 "우리는 이것을 가지고 서로 교제한다"고 한 것도 같은 뜻이다.</p>
+<p>이 경계를 지키는 방식을 두고는 강조점이 갈린다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>경계를 먼저 말하는 목소리</th>
+<th>초대를 먼저 말하는 목소리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>염려하는 것</td>
+<td>모든 것이 같다고 말하는 사귐은 결국 아무것도 함께 가지지 않는다</td>
+<td>경계를 지키려다 사귐 자체가 정복과 강요가 된다</td>
+</tr>
+<tr>
+<td>붙드는 본문</td>
+<td>요일 4:1-6 — 영을 다 믿지 말고 분별하라</td>
+<td>요일 1:3-4 — 사귐이 있게 하려고 전한다</td>
+</tr>
+<tr>
+<td>요구하는 태도</td>
+<td>겸손하지만 당당하게</td>
+<td>기쁘기 때문에 초대한다</td>
+</tr>
+<tr>
+<td>스스로 세우는 단서</td>
+<td>미워할 것은 사람이 아니라 하나님을 적대하는 체계다</td>
+<td>성육신 신앙이 사귐의 첫째 점검이다</td>
+</tr>
+</tbody>
+</table>
+<p>앞의 목소리가 권성수 목사다. 그는 서로 다른 신앙이 결국 한 하나님을 섬긴다는 식의 통합 논의를 요한의 시금석으로 단호히 거절하고, 진리를 말할 때 위축되지 말라고 한다. "겸손하지만 당당하게, 교만하지 않아야 한다." 그러나 같은 시리즈에서 그는 요한이 사랑하지 말라고 한 '세상'을 피조물이나 인류가 아니라 하나님을 적대하는 체계로 정의하고, 사람은 누구든 사랑의 대상이라고 분명히 한다. 교회 안을 향해서도 단정하지 않는다. "알곡과 가라지, 우리는 모른다."</p>
+<p>뒤의 목소리가 변진석 원장이다. 그는 같은 요한일서 1장에서 선교의 방식에 대한 반성을 끌어낸다. "전략, 정복, 강요에서 바뀌어야 한다." 사귐은 이겨서 얻는 것이 아니라 "우리가 기쁘기 때문에 그들을 초대하는 것"이며, 그래서 그의 마지막 물음은 밖이 아니라 안을 향한다. "사귐이 있는 우리의 공동체에 초대하기를 좋아하는가?" 잔치를 못마땅해하는 큰아들의 얼굴이 우리에게 없느냐는 것이다(<a class="wl" href="../../t/%ED%99%98%EB%8C%80/">환대</a>). 그러나 그 역시 세 가지 점검의 첫째로 성육신 신앙을 두었다.</p>
+<p>두 목소리는 서로를 지우지 않고 서로의 단서를 이미 품고 있다. MBTS 개인제자도실습 강의의 한 줄이 그 접점을 적는다. "진리에 대해서는 배타성을 고수해야 하지만, 삶에서 인격적인 부분의 배타성은 없어야 한다." 교제의 경계는 '무엇을 함께 가지는가'에 그어지는 선이지 '누구를 사랑하는가'에 그어지는 선이 아니다. 다만 이 원칙이 교회 안의 중대한 죄와 <a class="wl" href="../../t/%EA%B6%8C%EC%A7%95/">권징</a>의 문제에서 어디에 선을 긋는지는 여기 모은 설교들이 끝까지 답하지 않는다.</p>
+<h2>10. 사치가 아니라 필수 — 고립의 시대와 보좌 앞의 사귐</h2>
+<p>권성수 목사는 2016년을 교제의 해로 삼으며 스스로 진단한 약점을 회중 앞에 내놓았다. 여러 분야가 건강한데 유독 소그룹의 사귐이 약하다는 것이다. 그가 붙든 문장은 "교제는 사치가 아니다. 삶의 필수이다"였다. 그래서 그는 교인이 걸어가는 다섯 걸음 가운데 둘째를 '보도록'에서 '사귀도록'으로 고쳐 썼고, 그 이유를 정착에서 찾았다. "잘 정착하는 사람은 교제가, 친구가 있는 사람이다." 믿음이 뿌리내리는 데도 함께 가진 사람이 필요하다(<span class="wl-dead" title="위키 내부 링크">권성수_생명사역시리즈</span>).</p>
+<p>고립이 사람을 어떻게 무너뜨리는지 — 외로움이라는 전염병, 넘버원 킬러와 넘버원 힐러 — 는 <a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%B2%B4/">공동체</a> 1절이 다루었으므로 되풀이하지 않는다. 여기서는 교제를 가로막는 것이 대개 큰 죄가 아니라 작은 핑계라는 그의 관찰만 옮긴다. 생명사역 강해에서 그는 그 핑계 열 가지를 하나씩 뒤집어 '교제 십계명'이라 불렀다(<span class="wl-dead" title="위키 내부 링크">생명사역_11_교제</span>).</p>
+<table>
+<thead>
+<tr>
+<th>하지 말 말</th>
+<th>대신 할 일</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>나 살기도 바쁜데</td>
+<td>서로 잘 살도록 격려해 주라</td>
+</tr>
+<tr>
+<td>애 보고 살림도 해야</td>
+<td>모여 삶의 지혜를 배우라</td>
+</tr>
+<tr>
+<td>상처받으면 어떻게 해</td>
+<td>상처를 통해서도 성장하라</td>
+</tr>
+<tr>
+<td>비교되는 게 싫어</td>
+<td>비교를 통해 도전받으라</td>
+</tr>
+<tr>
+<td>자랑하는 말 듣기 싫어</td>
+<td>서로 높이고 세워 주라</td>
+</tr>
+<tr>
+<td>집안을 공개하기 싫어</td>
+<td>터놓는 용기를 배우라</td>
+</tr>
+<tr>
+<td>친하지 않아서 불편해</td>
+<td>자주 만나서 친해지라</td>
+</tr>
+<tr>
+<td>늙고 몸이 불편해서</td>
+<td>모여 마음 건강을 도모하라</td>
+</tr>
+<tr>
+<td>혼자 있는 게 편해</td>
+<td>한 몸의 지체라 생각하라</td>
+</tr>
+<tr>
+<td>세상 얘기가 싫어</td>
+<td>성경 말씀 중심으로 대화하라</td>
+</tr>
+</tbody>
+</table>
+<p>열 줄 어디에도 대단한 결심은 없다. 전화 한 통, 이름을 기억하는 일이 교제의 실제다. 전도서의 세 겹줄을 강해하면서 그는 교제의 유익을 열둘로 꼽았다. 공동의 예배, 타인 포용, 격려와 교정, 인내의 개발, 섬김의 자유, 용서의 성숙, 완악함의 방지, 기도 응답, 영적 보호, 전도의 효과, 공동체의 완성, 영광과 축복이다. 목록이 예배에서 시작해 <a class="wl" href="../../t/%EC%84%AC%EA%B9%80/">섬김</a>과 전도를 지나 영광에서 끝난다. 교제는 교회가 하는 여러 일 가운데 하나라기보다 다른 일들이 그 안에서 일어나는 자리다.</p>
+<p>교제의 마지막 지평은 종말이다. 권성수 목사는 재림을 다룬 요한일서 강해를 찰스 웨슬리의 문장으로 맺었다.</p>
+<blockquote>
+<p>이 아래서 우리의 교제가 예수 안에서 이토록 달콤하다면 우리가 그분의 보좌 주변에서 만날 때 얼마나 황홀한 환희에 빠질까</p>
+</blockquote>
+<p>지금의 교제는 완성이 아니라 맛보기다. 그는 이 세상을 병동에, 천국을 왕궁에 빗대고 권한다. "세상 병동에서 천국 왕궁에 대한 희망을 품고 예수 사랑의 빛 가운데 예수 생명을 나누자." 병동의 사귐은 불완전하다. 가면이 남아 있고, 선이 다시 그어지고, 가라지가 섞여 있다. 그래도 그 사귐이 달콤한 것은 왕궁의 것이 미리 와 있기 때문이다. 축도에서 시작한 사귐은 보좌 앞에서 끝난다. 그 사이의 모든 교제는 받은 것에 참여하는 일이면서 올 것을 미리 누리는 일이다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li><strong>교제는 친밀함이 아니라 공유다.</strong> 둘이 마주 보는 것이 아니라 셋째 것에 함께 참여하는 것이다. 물음은 '얼마나 친한가'가 아니라 '무엇을 함께 가졌는가'이다.</li>
+<li><strong>축도가 먼저다.</strong> 우리의 교제는 성령이 먼저 주신 사귐에 참여하는 행위다. 순서가 뒤집히면 교제는 노력이 되고 노력은 지친다.</li>
+<li><strong>두 사귐은 한 줄의 양끝이다.</strong> 하나님과의 교제가 성도의 교제를 낳고, 성도의 교제가 끊기면 하나님과의 교제도 흐려진다.</li>
+<li><strong>죄로 깨지는 것은 신분이 아니라 교제이고, 회복의 길은 자백이다.</strong> 확신 없는 자백은 숨음이 되고 자백 없는 확신은 가면이 된다.</li>
+<li><strong>미움의 가장 흔한 얼굴은 선 긋기다.</strong> 사랑은 끌림이 아니라 그 선을 지우는 의지의 결단이며, 흘려보내는 사람에게서 두려움이 물러난다.</li>
+<li><strong>목적 있는 교제와 목적 없는 교제는 한 사귐의 두 얼굴이다.</strong> 함께 가진 것이 있기에 함께 일하고 함께 고난받지만, 사귐은 일의 수단이 아니다.</li>
+<li><strong>교제의 내용이 곧 교제의 경계다.</strong> 선은 '무엇을 함께 가지는가'에 그어지지 '누구를 사랑하는가'에 그어지지 않는다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>코이노니아를 '친교'로 옮겨 온 관행이 초대교회의 재산 공유·고난 참여라는 무게를 얼마나 덜어 냈는가? 거꾸로 교제를 '목적을 가진 연합'으로만 정의할 때 잃는 것은 무엇인가?</li>
+<li>성령의 교통하심이 먼저라면, 교제가 깨진 공동체를 어떻게 진단해야 하는가 — 성령의 부재인가, 참여의 거부인가?</li>
+<li>다름을 품는 교제와 이단·중대한 죄에 대한 권징은 어디서 갈라지는가?</li>
+<li>교제가 처방이라는 말은 교제 자체가 상처의 통로였던 사람에게 어떻게 들리는가? 상처를 각오하라는 권면과 안전한 자리를 먼저 마련하라는 요청은 어떤 순서로 놓여야 하는가?</li>
+<li>중그룹·소그룹 편성 같은 구조는 사귐을 담는 그릇인가 사귐의 대체물인가? 조직이 관리에 머물지 않고 코이노니아가 되는 조건은 무엇인가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%B2%B4/">공동체</a> — 모인 몸 전체. 고립(1절), 교제의 깊이와 강도(2절), 식탁과 집(3절), 부대낌(5절)</li>
+<li><a class="wl" href="../../t/%EB%8F%99%EC%97%AD/">동역</a> — 코이노노스의 호칭과 전이, 회복된 사람이 동역자가 되는 일</li>
+<li><a class="wl" href="../../t/%EC%B4%88%EB%8C%80%EA%B5%90%ED%9A%8C/">초대교회</a> — 집과 식탁에서 신분과 민족의 벽이 넘어진 역사(6절)</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EC%B0%AC/">성찬</a> — 그리스도를 향한 연합과 지체를 향한 연합이 겹치는 식탁</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EB%A0%B9/">성령</a> · <a class="wl" href="../../t/%EC%82%BC%EC%9C%84%EC%9D%BC%EC%B2%B4/">삼위일체</a> · <a class="wl" href="../../t/%EC%97%B0%ED%95%A9/">연합</a> — 교통하심의 주체, 삼위의 사귐, 그리스도와의 연합</li>
+<li><a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%A1%A0/">교회론</a> · <a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EC%97%B0%ED%95%A9/">교회연합</a> — 교제로서의 교회, 교회와 교회 사이의 하나됨</li>
+<li><a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%B2%B4%EC%A0%81%EC%98%81%EC%84%B1%ED%9B%88%EB%A0%A8/">공동체적영성훈련</a> · <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B3%B5%EB%8F%99%EC%B2%B4/">선교적공동체</a> — 고백과 상호 책임의 훈련, 보냄으로 이어지는 사귐</li>
+<li><a class="wl" href="../../t/%EA%B6%8C%EC%A7%95/">권징</a> · <a class="wl" href="../../t/%EB%B6%84%EB%B3%84/">분별</a> · <a class="wl" href="../../t/%EC%98%81%EC%A7%80%EC%A3%BC%EC%9D%98/">영지주의</a> — 교제의 경계를 묻는 주제들</li>
+<li><a class="wl" href="../../t/%ED%99%98%EB%8C%80/">환대</a> · <a class="wl" href="../../t/%ED%99%94%ED%95%B4/">화해</a> · <a class="wl" href="../../t/%EC%9A%A9%EC%84%9C/">용서</a> · <a class="wl" href="../../t/%EA%B4%80%EA%B3%84%ED%9A%8C%EB%B3%B5/">관계회복</a> — 사귐을 열고 다시 잇는 일</li>
+<li><a class="wl" href="../../t/%EC%82%AC%EB%9E%91/">사랑</a> · <a class="wl" href="../../t/%EC%84%AC%EA%B9%80/">섬김</a> · <a class="wl" href="../../t/%EC%83%9D%EB%AA%85%EC%82%AC%EC%97%AD/">생명사역</a> — 교제가 흘러가는 방향</li>
+<li><a class="wl" href="../../t/%EA%B6%8C%EC%A7%95/">권징</a> — 9절이 남긴 물음, 교제의 경계와 권징의 선(6절).</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수_교제_요한일서강해</span></td>
+<td>설교 시리즈(권성수)</td>
+<td>교제의 다섯 마디(생명·빛·사랑·진리·확신)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">교제_01_빛가운데교제</span> · <span class="wl-dead" title="위키 내부 링크">교제_03_세상을사랑하지말자</span> · <span class="wl-dead" title="위키 내부 링크">교제_06_신자와죄</span></td>
+<td>설교(권성수)</td>
+<td>생명 체험, 두 사귐, 신분과 실제, 자백, 한 문장 정의</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">교제_02_보여주는사랑</span> · <span class="wl-dead" title="위키 내부 링크">교제_07_미워하지말고사랑하라</span> · <span class="wl-dead" title="위키 내부 링크">교제_09_하나님은사랑</span> · <span class="wl-dead" title="위키 내부 링크">교제_10_사랑하면두렵지않아</span></td>
+<td>설교(권성수)</td>
+<td>선 긋기와 미움, 가인과 예수, 삼위의 교제, 두려움을 내쫓는 교제</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">교제_04_적그리스도를경계하라</span> · <span class="wl-dead" title="위키 내부 링크">교제_08_영을분별하라</span> · <span class="wl-dead" title="위키 내부 링크">교제_12_신자의확신</span> · <span class="wl-dead" title="위키 내부 링크">교제_13_참참참</span></td>
+<td>설교(권성수)</td>
+<td>나간 자들, 분별과 진리 안의 교제, 확신이라는 토대</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">교제_05_재림희망과도전</span></td>
+<td>설교(권성수)</td>
+<td>찰스 웨슬리 인용, 병동과 왕궁</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2016_나눔의교제</span> · <span class="wl-dead" title="위키 내부 링크">2016_부대낌의교제</span></td>
+<td>설교(권성수)</td>
+<td>건너갈 때 드러나는 생명, 성찬, 교제는 필수</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2016_모이면살고사귀면더잘산다</span> · <span class="wl-dead" title="위키 내부 링크">2016_모이면살고사귀면더잘산다_생명사역</span></td>
+<td>설교(권성수)</td>
+<td>음식 나눔, 상처 각오, 사귀도록, 정착과 친구</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">생명사역_11_교제</span> · <span class="wl-dead" title="위키 내부 링크">2018_세겹줄힐링에서행복으로</span> · <span class="wl-dead" title="위키 내부 링크">태도고도_03_내태도어떻게바꿀까</span></td>
+<td>설교(권성수)</td>
+<td>두 고독, 교제 십계명, 열두 유익, 사명, 예수와 함께 있음</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2025_다시생명사역5_관계중심의리더십</span> · <span class="wl-dead" title="위키 내부 링크">2025_다시생명사역6_하나님께인정받는복음의일꾼</span></td>
+<td>설교(문대원)</td>
+<td>목적 있는 교제와 목적 없는 교제, 두 관계의 불가분</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2026-09-20_1세기교회이야기3_의외의동역</span> · <span class="wl-dead" title="위키 내부 링크">2026-09-13_1세기교회이야기2_기억의식탁</span></td>
+<td>설교(문대원)</td>
+<td>축도와 코이노노스, 종과 자유인의 벽, 한 떡 앞의 평등</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2022_변진석_손으로_만진_바라</span> · <span class="wl-dead" title="위키 내부 링크">2014_가정과자아상</span></td>
+<td>설교(변진석·윤명숙)</td>
+<td>만짐, 정복에서 초대로 / 가면과 친밀감</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%98%81%EC%A0%81%ED%9B%88%EB%A0%A8%EA%B3%BC%EC%84%B1%EC%9E%A5_%EB%A6%AC%EC%B2%98%EB%93%9C%ED%8F%AC%EC%8A%A4%ED%84%B0/">영적훈련과성장_리처드포스터</a> · <a class="wl" href="../../b/%EC%84%B1%EB%A0%B9%EC%B6%A9%EB%A7%8C%ED%95%9C%EC%97%AC%EC%9D%B8_%EB%B2%A0%EB%B8%94%EB%A6%AC%EB%9D%BC%ED%97%A4%EC%9D%B4/">성령충만한여인_베블리라헤이</a></td>
+<td>책(포스터·라헤이)</td>
+<td>내적 친교, 죄인들의 친교 단체 / 두 교제가 함께 무너짐</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%82%AC%EB%8F%84%ED%96%89%EC%A0%84%EC%84%A0%EA%B5%90%EC%A0%81%EC%9D%BD%EA%B8%B0_%EB%B0%95%EC%98%81%ED%98%B8/">사도행전선교적읽기_박영호</a> · <a class="wl" href="../../b/%EC%B4%88%EA%B8%B0%EA%B8%B0%EB%8F%85%EA%B5%90%EC%9D%98%EC%98%88%EB%B0%B0%EC%99%80%EB%B3%B5%EC%9D%8C%EC%A0%84%EB%8F%84_%ED%81%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/">초기기독교의예배와복음전도_크라이더</a></td>
+<td>책(박영호·크라이더)</td>
+<td>폴리스의 코이노니아 / 평화의 입맞춤</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EA%B3%A0%EB%82%9C%EA%B3%BC%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%84%A0%EA%B5%90_%EC%8A%A4%ED%8B%B0%EB%B8%90%ED%85%8C%EC%9D%BC%EB%9F%AC%EC%99%B8/">고난과하나님의선교_스티븐테일러외</a> · <a class="wl" href="../../b/%EC%BC%80%EC%9D%B4%ED%94%84%ED%83%80%EC%9A%B4%EC%84%9C%EC%95%BD/">케이프타운서약</a></td>
+<td>책</td>
+<td>고난의 코이노니아적 측면 / 화해의 친교</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">전체이야기와_창조세계돌봄_충진램스</span></td>
+<td>강의(이상협)</td>
+<td>'제3의 무엇'에 함께 참여함</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">08주_요한서신_계시록</span> · <span class="wl-dead" title="위키 내부 링크">04주_교회공동체와제자도</span> · <a class="wl" href="../../t/%EC%84%9C%EC%9A%B8%EC%84%A0%EC%96%B8%EB%AC%B8/">서울선언문</a></td>
+<td>강의(MBTS)·선언문</td>
+<td>요한일서의 세 기준, 진리의 배타성 / 하나님 백성의 교제</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/교회론</span><span>#discipline/신약학</span><span>#topic/코이노니아</span><span>#topic/요한일서</span><span>#topic/성령</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

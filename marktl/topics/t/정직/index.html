@@ -1,0 +1,298 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>정직 — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-t">영성·제자도</span><span class="date">2026-10-02</span></div>
+  <h1 class="note-title">정직</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>정직은 사실대로 말하는 데서 시작해 겉과 속이 같은 삶으로 넓어지는 낱말이다. 잠언은 두 겹으로 말한다. "진리를 말하는 자는 의를 나타내어도 거짓 증인은 속이는 말을 하느니라"(잠 12:17)는 입의 정직이고, "정직한 자의 성실은 자기를 인도하거니와"(잠 11:3)는 사람 전체의 정직이다. 뒤의 '성실'을 <span class="wl-dead" title="위키 내부 링크">권성수</span> 목사는 히브리어 투마, 순전함으로 풀고 영어 인테그러티(integrity)에 잇는다.</p>
+<p>이 주제를 부르는 자료는 여러 갈래다. 권성수 목사의 잠언 설교와 욥기 31장의 「유리 집」은 정직의 뜻과 이유를, 십계명 강해는 약속과 신용을, <span class="wl-dead" title="위키 내부 링크">문대원</span> 목사의 설교는 하나님 앞의 정직과 물려주는 정직을, <span class="wl-dead" title="위키 내부 링크">윤명숙</span> 전도사의 가정 강의는 부부와 자녀 사이의 정직을 다룬다. 자료마다 투명성, 신용, 진실성, 가면, 고백 같은 다른 이름으로 불렀지만 가리키는 것은 하나다. 거짓말의 정의와 라합의 난제는 <a class="wl" href="../../t/%EC%8B%AD%EA%B3%84%EB%AA%85/">십계명</a> 8절에 맡기고, 이 글은 정직이 무엇이고 무엇이 아닌지, 왜 정직해야 하며 어디서 시험받는지를 다룬다.</p>
+<h2>1. 사실대로 말하기에서 겉과 속의 일치로 — 정직의 뜻</h2>
+<p>권성수 목사의 2016년 설교는 가장 좁은 뜻에서 출발한다. "정직은 진리, 사실대로 말하는 것이다." 결혼에서는 속이지 않고 정조를 지키는 것, 교리에서는 왜곡하지 않는 것, 사업에서는 사실대로 해 나가는 것, 법정에서는 거짓 증언하지 않는 것이다.</p>
+<p>2022년 설교 「갑부보다 진부」는 뜻을 넓힌다. 잠언 11:3의 낱말을 순전함, 무죄함으로 풀고 인테그러티를 만져지지 않은, 오염되지 않은, 더러워지지 않은 상태로 설명한다. 겉만이 아니라 속도 부자인 사람이 진짜 부자이고, 속이 부유해지는 길이 정직이라는 것이다. 「유리 집」은 같은 것을 한 줄로 말한다. "겉과 속이 다른것이 없다는 것이다. 말과 행위가 같다." 포장된 이미지로 살아가는 시대에 하나님은 속을 보신다.</p>
+<p>문대원 목사도 선교적 교회 설교에서 인테그러티를 앞뒤가 똑같은 사람으로 옮긴다. "언제 어디서나 동일한 모습으로 살아가는 것이다." 양을 칠 때나 왕이 되어서나 같은 마음이었던 다윗(시 78:72)이 그 모델이다. 반대편 그림은 윤명숙 전도사가 그린다. 영이 잘못되면 사람은 가면을 쓰게 되고, "가면을 쓴다면 죽은 인격이다."</p>
+<p>정직이 겉과 속의 일치라면, 속에 있는 것을 다 내보여야 정직한가. 자료는 여기서 조심스럽게 선을 긋는다.</p>
+<h2>2. 우직도 아니고 다 보여 주는 것도 아니다 — 현명한 정직</h2>
+<p>권성수 목사는 정직을 두 가지와 구별한다. 하나는 투명성이다. "정직성과 투명성을 구분해야 한다. 투명성은 속을 다 보이는 것이다." 성경은 속에 있는 것을 다 드러내라고 하지 않는다. 다른 하나는 우직이다. "성경이 말하는 정직은 우직이 아니다." 병이 나은 히스기야가 바벨론 사신에게 보물과 무기고를 다 열어 보인 것은 정직이 아니라 어리석음이었다. 사무엘은 기름을 부으러 가면서 제사를 드리러 왔다고 말했고(삼상 16:2), 예수는 올무를 놓는 질문에 가이사의 것은 가이사에게 돌리라고 답하셨다(마 22:21). 넘어뜨리려는 사람에게 다 밝힐 필요는 없다. "다 보여주는 것은 성경이 말하는 정직이 아니다." "그러나 하나님 앞에서는 다 드러내야 한다."</p>
+<p>그런데 같은 설교자가 욥을 두고는 이렇게 말한다. "하나님을 가까이 하는 영성의 대가는 유리 집에서 산다." 모순이 아니라 투명이라는 말의 뜻이 다르다. 「유리 집」이 말하는 것은 "정직에서 나오는 투명"이고, 2016년 설교도 "물론 정직에는 투명성이 포함되어 있다."고 덧붙인다. 문대원 목사가 재정 보고를 두고 말하는 투명은 또 다른 층이다.</p>
+<table>
+<thead>
+<tr>
+<th>투명이라는 말</th>
+<th>요구되는가</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>속마음과 정보를 누구에게나 다 내보임</td>
+<td>아니다</td>
+<td>히스기야의 무기고, 사무엘의 대답</td>
+</tr>
+<tr>
+<td>겉과 속이 다르지 않음</td>
+<td>그렇다</td>
+<td>유리 집의 욥, 정직에서 나오는 투명</td>
+</tr>
+<tr>
+<td>맡은 돈과 일의 정확한 보고</td>
+<td>그렇다</td>
+<td>재정·사역 보고의 투명</td>
+</tr>
+<tr>
+<td>하나님 앞에서 숨김없음</td>
+<td>그렇다</td>
+<td>하나님 앞에서는 다 드러내야 한다</td>
+</tr>
+</tbody>
+</table>
+<p>그래서 잠언의 정직은 지혜와 짝을 이룬다. "정직한 사람은 지혜롭다." 침묵과 에두른 대답이 왜 거짓말이 아닌지, 생명을 지키려는 거짓말을 어떻게 볼 것인지는 <a class="wl" href="../../t/%EC%8B%AD%EA%B3%84%EB%AA%85/">십계명</a> 8절이 다룬다. 여기서 붙들 것은 순서다. 다 말하지 않을 자유는 속이지 않는다는 바탕 위에서만 지혜가 된다.</p>
+<h2>3. 은밀한 중에 보시는 분 앞에서 — 정직의 뿌리는 경외</h2>
+<p>왜 정직해야 하는가. 권성수 목사의 첫 답은 이익이 아니다. "우리가 하나님 때문에 정직해야 한다." 하나님은 거짓말하지 않으시고 약속하신 것은 반드시 지키시는 분이며, 우리는 그분을 닮아야 한다. "정직은 하나님의 속성이다." 둘째 답은 <a class="wl" href="../../t/%EC%96%B8%EC%95%BD/">언약</a>이다. 복, 행복, 신용, 성공, 자녀 교육 같은 유익은 그 뒤에 온다.</p>
+<p>이 순서가 중요한 까닭을 설교의 한 장면이 보여 준다. 캔커피 무인 판매에서 97%가 돈을 내고 가져갔다. 그런데 설교자는 덧붙인다. 우리처럼 CCTV를 의식하는 사람도 없을 것이니 "정직해서 낸건지 알수 없다." 감시가 만든 정직과 경외가 만든 정직은 겉으로 구별되지 않는다. 갈리는 곳은 아무도 보지 않는 자리다. "하나님은 은밀한 중에 보시고 갚으시는 분이다."</p>
+<p>욥이 그 모델이다. 성과 돈의 문제에서 깨끗하게 산 동기를 묻자 <span class="wl-dead" title="위키 내부 링크">욥기 31장</span>은 하나님을 두려워했다고 답한다. "하나님이 두렵다는 것을 알면 정직하게 산다"는 것이 고후 5:11에 대한 권 목사의 풀이다. 문대원 목사는 뒤집어서 말한다. 아나니아와 삽비라가 땅값 얼마를 감추고 전부인 것처럼 내놓았을 때 베드로는 사람이 아니라 하나님께 거짓말했다고 꾸짖었다. "하나님을 속이려는 사람은 전능자로 믿지 않는 것이다. 하나님을 두려워하지 않는 사람이다." 거짓은 윤리의 실패이기 전에 신앙의 실패다.</p>
+<p>같은 설교는 그 심판이 과하지 않으냐는 물음에 바퀴벌레로 답한다. "한 마리가 보이면 최소한 100마리 이상이 있다." 드러난 거짓 하나 뒤에는 보이지 않던 거짓들이 있었다. 그래서 제목이 「딱 한 번의 죄는 없다」이고, 결론은 "하나님도, 우리 자신도 속이면 안된다."이다.</p>
+<p>경외에서 나온 정직에는 안전장치가 하나 붙는다. 욥은 깨끗했지만 자기 의를 드러내다 교만에 빠졌고 하나님이 그 태도를 고치셨다. "깨끗하게 살되 절대로 교만하면 안된다." 그래서 권 목사가 내놓는 비결은 완벽주의가 아니라 자기 점검이다. 나는 내 자신에게, 가족에게, 주변 사람에게 떳떳한가. 그리고 "나는 하나님께 떳떳한가?" 경외 자체는 <a class="wl" href="../../t/%EA%B2%BD%EC%99%B8/">경외</a>가 다룬다.</p>
+<h2>4. 예는 예로 — 약속과 신용, 그리고 돈</h2>
+<p>하나님 앞의 정직은 사람 앞에서 신용이라는 이름을 얻는다. 권성수 목사는 말한다. "하나님과의 관계는 신앙이고 사람과의 관계가 신용이다." 하나님이 약속을 어기지 않으시는 분이기에 그분을 믿는 사람은 약속을 지킨다. 그는 신용을 배려와 실력의 합으로 풀기도 한다.</p>
+<p>제3계명 강해 「서원과 서약」은 이것을 일상으로 넓힌다. "삶 전체가 약속이다. 모든 약속은 하나님 앞에서 한 것이다." 서약은 신중히 하고, 죄가 되는 서약은 회개하고 지키지 않으며, 죄가 아니라면 손해가 되어도 지킨다. 과녁은 서약이 필요 없을 만큼 신실하게 사는 것이다. "예 하면 인감도장찍은거 보다 확실해야 한다." 지키지 못하게 되면 미리 양해를 구한다. "정직하게 약속을 지키는 인격 - 이 인격이 신용이다."</p>
+<p>정직이 가장 구체적으로 시험받는 곳은 돈이다. 2016년 설교의 실천 항목에는 "돈 거래 꼭 정직하게 하세요"가 따로 있다. 윤명숙 전도사는 야고보서 5장에서 품꾼에게 주지 않은 삯을 읽는다. 대금을 미루는 쪽은 괜찮다고 생각해도 반대쪽의 신음을 하나님이 들으신다. "깨끗하고 정직한 부자가 되길 원하신다. 그만큼 깨끗하고 정직하게 돈을 벌어야 한다." 맡은 것을 다루는 원리는 <a class="wl" href="../../t/%EC%B2%AD%EC%A7%80%EA%B8%B0/">청지기</a>가 잇는다.</p>
+<p>그러면 정직하면 잘되는가. 자료는 한목소리가 아니다.</p>
+<table>
+<thead>
+<tr>
+<th>목소리</th>
+<th>말하는 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>약속을 앞세우는 쪽 (권성수)</td>
+<td>대학생의 75%가 정직하면 못 산다고 하지만 그렇지 않다. 전쟁 통에도 은행 빚을 갚은 한 장로, 십 년에 걸쳐 빚을 갚은 링컨이 증거다.</td>
+</tr>
+<tr>
+<td>비용을 먼저 세는 쪽 (문대원이 전한 아버지의 이야기)</td>
+<td>"너무 정직하면 조직에서 불편하게 여긴다." 실적이 좋아도 일찍 물러나야 했다. "여기까지만 보면 말씀대로 사는 것이 손해처럼 보인다."</td>
+</tr>
+</tbody>
+</table>
+<p>원용일의 『직장인이라면 다니엘처럼』도 뒤쪽에서 시작한다. "물론 아직도 우리 사회의 현실은 정직하면 이익을 보기 힘들고 주로 손해를 본다." 그러고는 그것이 단기적으로 보았을 때의 결과라고 덧붙인다. 두 목소리가 만나는 곳은 시간이다. 권 목사도 "장기적으로 보면 인격이 이긴다."고 말하고, 문 목사의 이야기도 손해에서 끝나지 않는다. 정직을 인격으로 물려받은 자녀가 사역 현장에서 정확하게 보고했고, 후원이 그리로 모였다. "투명하게 정직하게 사용하기 때문이다." 다만 순서는 3절이 정해 두었다. 잘되기 때문에 정직한 것이 아니라 하나님 때문에 정직하다.</p>
+<h2>5. 집에서는 무장해제 — 부부, 자녀, 자기 자신</h2>
+<p>정직이 가장 가까운 자리에서 가장 어렵다는 것은 윤명숙 전도사의 가정 강의가 붙드는 주제다. 대화법을 가르치는 자리에서 그는 먼저 못박는다. "열심히 테크닉을 배운다 하더라도 대화는 정직해야 가능하다." 그리고 "기술과 주님의 마음이 있어야 하지만, 가장 기초는 정직이다." 예는 사소하다. 산 옷의 값을 배우자에게 다르게 말하는 것이다. 그러나 "숨기면서 하는 말은 피상적인 대화에 머물게 한다." 집은 달라야 한다. "집에 들어갈땐 적어도 무장해제 해야 한다." 한 사람이 정직하게 계속 다가가면 상대가 변한다고 그는 말한다(<a class="wl" href="../../t/%EB%B6%80%EB%B6%80%EA%B4%80%EA%B3%84/">부부관계</a>).</p>
+<p>정직은 사실만이 아니라 감정에도 미친다. 에베소서 4장 강의에서 그는 감정을 다루는 길을 억제, 표출, 고백 셋으로 나누고 셋째를 권한다. "정직이 최선의 방침인데, 가장 선호하고 선택해야 할 내용이 고백이다." 고백에 앞서 직면이 있고, 직면하면 싸움의 상대가 바뀐다. "정직하게 살다보면 남하고 싸울 것이 아니라, 자기와 싸우게 된다." 본문은 "그런즉 거짓을 버리고 각각 그 이웃과 더불어 참된 것을 말하라"(엡 4:25)이고, 가장 가까운 이웃이 배우자다. 고백의 근거는 이것이다. "하나님 앞에 못 내어놓을 감정은 하나도 없다."</p>
+<p>가면을 벗는 일도 같은 자리에 있다. 사람이 덮으려 해도 하나님이 드러내실 때가 있는데, 윤 전도사는 그 부끄러움을 벌이 아니라 초대로 읽는다. "하나님이 나를 부끄럽게 하시는 것은 하나님의 프로포즈 이다." 정직이 <a class="wl" href="../../t/%ED%9A%8C%EA%B0%9C/">회개</a>로 이어지는 길목이다.</p>
+<p>그리고 자녀다. 잠언은 "비록 아이라도 자기의 동작으로 자기 품행이 청결한 여부와 정직한 여부를 나타내느니라"(잠 20:11)고 말하는데, 아이의 정직은 어른에게서 온다. 윤 전도사는 부모에게 세 가지를 요구한다. "사실대로 말하기, 약속 지키기, 책임 지키기". 꾀병으로 결근하고 사무실 물건을 가져오는 부모의 가짜 삶이 자녀에게 각자 소견대로 할 여지를 남긴다. 권성수 목사의 말로는 "우리 뒷모습 보고 자라는 아이들이 있기 때문에 정직해야 한다." 문대원 목사는 아버지에게서 정직을 배웠다고 말하며 이렇게 정리한다. "미덕은 철학적 개념이 아니라 인격적 모습이다." 자녀에게 남길 유산이 그것이다(<a class="wl" href="../../t/%EC%9E%90%EB%85%80%EA%B5%90%EC%9C%A1/">자녀교육</a>).</p>
+<h2>6. 번 영향력 — 정직이 복음의 길을 연다</h2>
+<p>마지막으로 정직의 열매다. 권성수 목사는 바울이 사람들을 권면할 수 있었던 까닭(<span class="wl-dead" title="위키 내부 링크">고후 5:11</span>)을 영향력의 두 종류로 설명한다. "빌린 영향력은 말로만 그런 것이다. 진짜 영향력은 벌어들인 것이다." 행동과 인격으로 번 것만 사람을 움직인다. 그래서 거짓 교사들은 바울의 정직성을 공격했다. "지도자의 정직성을 공격하면 끝난다." 속임은 안에서도 값을 치른다. "속일때는 남도 속이고, 자신을 정당화 하면서 자기도 속인다. 그래서 정체성이 파괴된다." 주변이 그 말을 믿지 않으니 공동체도 깨진다.</p>
+<p>이 원리는 전도로 이어진다. "상대적으로 정직한 사람이 복음을 전하면 영향을 미친다." 문대원 목사도 같은 말을 한다. "메신저와 메시지는 분리될 수 없다." 이상협의 하백선 강의는 의료 현장의 첫 적용으로 과잉 진료를 거절하는 정직한 진료를 든다.</p>
+<p>정직은 개인만이 아니라 공동체의 덕목이기도 하다. 문대원 목사는 누가를 이렇게 부른다. "누가는 정직한 역사가였다. 좋은 일만 기록하지 않았다." 초대교회 안의 죄를 감추지 않은 기록이 과거를 낭만적으로 그리는 일을 막는다. 자기 역사를 있는 그대로 적는 것이 공동체의 정직이다. <a class="wl" href="../../b/%EC%BC%80%EC%9D%B4%ED%94%84%ED%83%80%EC%9A%B4%EC%84%9C%EC%95%BD/">케이프타운서약</a>은 같은 요구를 사역 보고에 적용한다. "그러나 우리는 '성공'과 '성과'를 갈망한 나머지 정직을 희생하라는 유혹을 받는다." 확실치 않은 통계로 보고서를 부풀리는 것도 부정직이다. 서약이 교회에 회복을 요청한 세 가지가 겸손과 정직과 단순성이었다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>정직은 사실대로 말하기에서 시작해 겉과 속, 말과 행위의 일치로 넓어진다. 반대말은 거짓말만이 아니라 이미지와 가면이다.</li>
+<li>정직은 우직이 아니고 속을 다 내보이는 것도 아니다. 다 말하지 않을 지혜는 속이지 않는다는 바탕 위에서만 선다. 하나님 앞에서는 다 드러낸다.</li>
+<li>정직의 뿌리는 이익이 아니라 경외다. 감시가 만든 정직과 경외가 만든 정직은 아무도 보지 않는 자리에서 갈린다.</li>
+<li>사람 앞의 정직은 신용이다. 삶 전체가 약속이고, 예가 서명보다 확실한 사람이 신자다. 돈과 보고는 정직이 가장 구체적으로 시험받는 자리다.</li>
+<li>정직은 가장 가까운 자리에서 가장 어렵고, 단기적으로는 손해일 수 있다. 그러나 번 영향력만 사람을 움직이고 메신저의 정직이 메시지의 길을 연다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>다 말하지 않는 지혜와 속이는 침묵은 실제 장면에서 어떻게 구별되는가. 환자에게 나쁜 소식을 전하는 자리나 조직 안의 보고처럼 침묵이 상대의 판단을 그르칠 수 있는 경우는 자료가 다루지 않았다.</li>
+<li>정직의 대가가 자기 한 사람의 손해로 끝나지 않고 가족과 동료에게 미칠 때는 어떻게 판단하는가.</li>
+<li>감정의 고백은 어디까지가 정직이고 어디부터가 상대에게 짐을 지우는 일인가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%8B%AD%EA%B3%84%EB%AA%85/">십계명</a> — 제9계명의 거짓말 정의와 라합의 난제(8절), 제3계명의 서원과 서약.</li>
+<li><a class="wl" href="../../t/%EA%B2%BD%EC%99%B8/">경외</a> — 정직의 뿌리.</li>
+<li><a class="wl" href="../../t/%EC%96%B8%EC%95%BD/">언약</a> — 약속을 지키시는 하나님과 약속을 지키는 백성.</li>
+<li><a class="wl" href="../../t/%EC%B2%AD%EC%A7%80%EA%B8%B0/">청지기</a> — 맡은 돈과 일에 대한 충성과 셈.</li>
+<li><a class="wl" href="../../t/%EC%9E%90%EB%85%80%EA%B5%90%EC%9C%A1/">자녀교육</a> · <a class="wl" href="../../t/%EB%B6%80%EB%B6%80%EA%B4%80%EA%B3%84/">부부관계</a> · <a class="wl" href="../../t/%ED%9A%8C%EA%B0%9C/">회개</a> — 부모의 뒷모습, 무장해제의 자리, 가면을 벗는 일.</li>
+<li><a class="wl" href="../../t/%EC%98%81%ED%96%A5%EB%A0%A5/">영향력</a> — 빌린 영향력과 번 영향력.</li>
+<li><span class="wl-dead" title="위키 내부 링크">잠12</span> · <span class="wl-dead" title="위키 내부 링크">잠11</span> · <span class="wl-dead" title="위키 내부 링크">욥31</span> · <span class="wl-dead" title="위키 내부 링크">엡4</span> — 진리를 말하는 자, 정직한 자의 성실, 유리 집의 욥, 참된 것을 말하라.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2016_정직하게살아야</span></td>
+<td>설교(잠 12:17)</td>
+<td>정직의 뜻, 투명성·우직과의 구별, 정직의 이유, 무인 판매</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2022_갑부보다진부</span></td>
+<td>설교(잠 11:3, 고후 5:11-14)</td>
+<td>인테그러티, 하나님의 속성, 지혜와 정직, 번 영향력</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">12보석_10_유리집</span> · <span class="wl-dead" title="위키 내부 링크">권성수_12보석_리더십시리즈</span></td>
+<td>설교(욥 31:1-12)</td>
+<td>유리 집, 경외와 겸손, 정직에서 나오는 투명, 자기 점검</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">십계명_17_제9계명</span> · <span class="wl-dead" title="위키 내부 링크">십계명_07_서원과서약</span></td>
+<td>설교(십계명 강해)</td>
+<td>거짓말의 정의, 삶 전체가 약속, 인격이 신용</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2016_신용에목숨걸어야</span></td>
+<td>설교(시 78편)</td>
+<td>신앙과 신용, 배려와 실력</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2024_딱한번의죄는없다</span></td>
+<td>설교(행 5:1-11)</td>
+<td>정직한 역사가, 하나님을 속이는 죄</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2025_권위는하나님의계획이다</span> · <span class="wl-dead" title="위키 내부 링크">2023_선교적교회1_CityonaHill</span></td>
+<td>설교(문대원)</td>
+<td>물려받은 정직, 투명한 보고, 앞뒤가 똑같은 사람</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2018_정직한대화</span> · <span class="wl-dead" title="위키 내부 링크">2019_엡4장23-27</span></td>
+<td>강의(윤명숙)</td>
+<td>대화의 기초, 무장해제, 감정의 고백</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2015_입의열매</span> · <span class="wl-dead" title="위키 내부 링크">2016_소견대로가아닌최고의가치</span> · <span class="wl-dead" title="위키 내부 링크">2015_믿음과행함물질관</span></td>
+<td>강의(윤명숙)</td>
+<td>가면, 부모의 가짜 삶, 정직한 부자</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2018_김효진_자녀의_성품</span></td>
+<td>설교(잠 20:11)</td>
+<td>아이의 청결과 정직</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%BC%80%EC%9D%B4%ED%94%84%ED%83%80%EC%9A%B4%EC%84%9C%EC%95%BD/">케이프타운서약</a> · <a class="wl" href="../../b/%EC%A7%81%EC%9E%A5%EC%9D%B8%EC%9D%B4%EB%9D%BC%EB%A9%B4%EB%8B%A4%EB%8B%88%EC%97%98%EC%B2%98%EB%9F%BC/">직장인이라면다니엘처럼</a> · <span class="wl-dead" title="위키 내부 링크">하백선5장_통전성으로서의선교</span></td>
+<td>선언문·책·강의</td>
+<td>보고의 정직, 단기의 손해, 정직한 진료</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#정직</span><span>#인테그러티</span><span>#투명성</span><span>#신용</span><span>#진실성</span><span>#하나님경외</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
