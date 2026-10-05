@@ -1,0 +1,424 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>경제학이 필요한 순간 — 김현철 (김영사) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">신학·사회</span><span class="author">김현철</span><span class="date">2026-10-05</span></div>
+  <h1 class="note-title">경제학이 필요한 순간 — 김현철 (김영사)</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/%EA%B2%BD%EC%A0%9C%ED%95%99%EC%9D%B4%ED%95%84%EC%9A%94%ED%95%9C%EC%88%9C%EA%B0%84_%EA%B9%80%ED%98%84%EC%B2%A0/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<blockquote>
+<p>의사 출신 경제학자가 「엄마 배 속에서 무덤까지」 생애주기를 따라가며, 국가가 국민의 생존과 행복을 위해 무엇을 해야 하는지를 데이터와 실험으로 묻는 책. 저자는 연세대 의대를 졸업하고 컬럼비아대에서 경제학 박사를 받은 뒤 코넬대를 거쳐 홍콩과학기술대에 재직 중이다. 📷 표시 전사 기반 독서 노트.</p>
+</blockquote>
+<hr />
+<h2>요약 — 주제별 상세 정리</h2>
+<h3>1. 출발점 — 진료실에서 만난 사회적 약자, 그리고 「신뢰성 혁명」</h3>
+<p>저자가 의사 가운을 벗고 경제학으로 간 이유는 진료실에서 만난 사람들이다.</p>
+<blockquote>
+<p>"이 결정은 제가 만났던 사회적 약자들 때문입니다." (p.16)</p>
+<p>"이들은 더 아프고 더 일찍 죽습니다. 제가 경제학 연구를 하는 원동력입니다." (p.17)</p>
+<p>"<strong>건강 불평등</strong>은 의학의 영역을 넘어 사회·경제학적 문제라는 것도 알았지요." (p.149)</p>
+</blockquote>
+<p>책 전체를 받치는 방법론은 경제학의 「신뢰성 혁명Credibility Revolution」(p.17), 곧 연관성과 인과성을 가르는 도구들이다. 밑줄 친 용어를 모으면 이 책의 도구상자가 된다.</p>
+<table>
+<thead>
+<tr>
+<th>도구</th>
+<th>뜻</th>
+<th>책 속 사례</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>무작위 통제 실험(RCT)·현장 실험</td>
+<td>제비뽑기로 배정해 비교</td>
+<td>페리 프리스쿨, 프로그레사, 말라위 장학금 (p.55, 58, 160)</td>
+</tr>
+<tr>
+<td>자연 실험</td>
+<td>우연한 사건이 실험 구실을 함</td>
+<td>스페인독감, 체르노빌, 한국전쟁, 라마단 (p.55)</td>
+</tr>
+<tr>
+<td>이중차분법</td>
+<td>먼저 바뀐 곳과 나중에 바뀐 곳 비교</td>
+<td>말라리아 박멸, 등교 일수 (p.54, 264)</td>
+</tr>
+<tr>
+<td>삼중차분법</td>
+<td>차분을 한 겹 더</td>
+<td>홍콩 가사 도우미 (p.138)</td>
+</tr>
+<tr>
+<td>회귀 불연속 설계</td>
+<td>커트라인 바로 위·아래 비교</td>
+<td>명문대 입학, 요양 등급, 돌봄 수당 (p.31, 116, 125)</td>
+</tr>
+<tr>
+<td>고정 효과 모델·역인과관계</td>
+<td>「건강→육아」 방향을 걸러냄</td>
+<td>황혼 육아 (p.113)</td>
+</tr>
+</tbody>
+</table>
+<p>개발 원조 논쟁(대규모 원조 「빅 푸시」 대 윌리엄 이스털리의 회의론)에 대해서도 저자의 답은 같다. 근거에 기반해 "효과적인 개발 프로그램을 설계하자"(p.19)는 것이다.</p>
+<h3>2. 핵심 인사이트: 인생 성취의 8할은 운이다</h3>
+<p>통념은 「내 성취는 내 능력과 노력의 결과」다. 저자는 자기 이력부터 뒤집는다.</p>
+<blockquote>
+<p>"저는 1996년 의과대학에 (거의) 꼴등으로 합격했습니다." (p.25)</p>
+<p>"그렇기에 능력과 노력만으로는 제 성취를 도저히 설명할 수 없습니다." (p.26)</p>
+</blockquote>
+<p>운은 세 겹이다.</p>
+<table>
+<thead>
+<tr>
+<th>운의 층</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>태어난 나라</td>
+<td>밀라노비치 — 태어난 나라가 평생 소득의 절반 이상을 결정. 한국에서 태어난 것만으로 상위 20% (p.27)</td>
+</tr>
+<tr>
+<td>부모(유전+양육)</td>
+<td>환경이 같아도 유전 요인이 교육·소득에 큰 영향 (p.28)</td>
+</tr>
+<tr>
+<td>우연</td>
+<td>암 발생의 50% 이상이 우연 (p.29), 명문대 커트라인 한 끗이 고소득 확률을 50%가량 올림 — 그것도 사립고 출신 남성에게만 (p.34)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"오늘의 내가 될 수 있던 것은 <strong>8할 이상</strong>이 공동체와 다른 사람 덕분입니다." (p.35)</p>
+</blockquote>
+<p>저자는 로버트 프랭크, 그리고 <span class="wl-dead" title="위키 내부 링크">마이클샌델</span>의 『공정하다는 착각』이 제안한 제비뽑기 입시까지 "충분히 고려해볼 수 있다"(p.35)고 본다. 다만 능력주의가 젊은 층에 인기 있는 이유도 짚는다 — 세습주의에 대한 반발이었고, 우리 사회가 실제로는 능력대로 보상하지 못하기 때문이다(p.36). 결론은 개인이 아니라 국가로 향한다.</p>
+<blockquote>
+<p>"국민 성취의 대부분은 사실 국가가 결정합니다. 잘 작동하는 국가의 국민은 풍성한 삶을 삽니다." (p.19)</p>
+</blockquote>
+<p>성취를 「받은 것」으로 읽는 이 대목은 <a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a>·<a class="wl" href="../../t/%EC%B2%AD%EC%A7%80%EA%B8%B0/">청지기</a>의 언어와 맞닿는다. 다만 저자는 신학이 아니라 통계로 같은 자리에 도착한다.</p>
+<h3>3. 배 속 10개월과 다섯 살까지 — 불평등이 대물림되는 경로</h3>
+<p>태아기 충격은 평생을 따라간다.</p>
+<table>
+<thead>
+<tr>
+<th>충격</th>
+<th>결과</th>
+<th>쪽</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1918 스페인독감(임신 중 감염)</td>
+<td>고교 졸업 가능성 −15%, 남성 임금 −5~9%, 빈곤 확률 +15%</td>
+<td>p.42</td>
+</tr>
+<tr>
+<td>체르노빌 방사능(스웨덴)</td>
+<td>고교 입시 합격률 90%→87%</td>
+<td>p.45</td>
+</tr>
+<tr>
+<td>한국전쟁(1951년 중부 출생)</td>
+<td>학력·직업 수준 하락</td>
+<td>p.47</td>
+</tr>
+<tr>
+<td>라마단 금식</td>
+<td>장애 확률 +20%</td>
+<td>p.47</td>
+</tr>
+<tr>
+<td>임신 중 부모 사망 스트레스</td>
+<td>ADHD +25%, 불안장애 +13%, 우울증 약 +8%</td>
+<td>p.48</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"그렇게 하지 못할 경우 그 피해는 사회적 약자에게 집중됩니다." (p.50)</p>
+<p>"불우한 어린 시절은 불평등이 대물림되는 가장 중요한 경로라는 것도 밝혀냈습니다." (p.53)</p>
+</blockquote>
+<p><strong>핵심 인사이트: 조기교육의 효과는 성적이 아니라 비인지 기능이다.</strong> 헤크먼의 페리 프리스쿨·ABC/CARE 40년 추적이 보여준 것은 자존감·끈기·성실성 같은 능력의 상승이었다.</p>
+<blockquote>
+<p>"영·유아 조기교육 프로그램의 효과는 상당 부분 <strong>비인지 기능 상승</strong>으로 나타났습니다." (p.61)</p>
+<p>"저소득층 아이들을 가난의 대물림에서 구하려면 성적 향상보다는 자존감과 참을성 등 비인지 기능을 개선하는 노력을 반드시 병행해야 합니다." (p.61)</p>
+</blockquote>
+<p>「헤크먼 곡선」 — 임신기·아동기 투자가 성인기 직업교육보다 비용 대비 효과가 크다(p.61).</p>
+<h3>4. 엄마·아빠·친구 — 양육에서 「평균」은 답이 아니다</h3>
+<p>노르웨이는 어린이집을 늘렸을 때도(p.68), 집에서 돌볼 권리를 보장했을 때도(p.70) 아이들 성적이 올랐다. 모순처럼 보이는 두 결과의 풀이가 이 장의 핵심이다.</p>
+<blockquote>
+<p>"각 가정이 부모의 노동시장 참여를 스스로 결정했을 때 아이에게 가장 좋은 결과를 가져왔습니다. 영·유아 돌봄의 무조건적인 시설화는 바람직하지 않습니다." (p.71)</p>
+</blockquote>
+<p>육아휴직 연장도 효과가 갈린다. 오스트리아에서는 대졸 엄마의 자녀 점수는 오르고 고졸 이하 엄마의 자녀 점수는 떨어졌다(p.74).</p>
+<p><strong>핵심 인사이트: 아빠의 육아는 「참여」보다 「능력」이다.</strong> 스웨덴에서는 아빠가 필요할 때 쓸 수 있는 휴가를 주자 엄마의 입원이 14%, 정신과 약 처방이 26% 줄었다(p.80). 반대로 에티오피아에서는 아빠 프로그램을 더한 마을의 영양 점수가 오히려 떨어졌다(p.84).</p>
+<blockquote>
+<p>"아빠가 엄마와 비슷한 수준일 때, 아빠의 적극적 육아 참여가 빛을 발할 수 있다는 말입니다." (p.85)</p>
+<p>"아빠의 실질적 육아 능력을 기르는 일 또한 필수라는 사실을, 우리 사회가 인식하고 팔을 걷어붙여야 합니다." (p.87)</p>
+</blockquote>
+<p>친구 효과도 조건부다. 룸메이트 학점이 1점 오르면 내 학점이 0.12점 오르지만(p.92), 상대평가 경쟁이 심한 중국 대학에서는 거꾸로였다 — "잘못된 제도(인센티브)가 학생들을 더욱 이기적으로 행동하게 만든 것"(p.93). 전교 1등과 꼴찌를 붙여 놓는 것은 둘 모두에게 소용이 없고(p.94), 유사 범죄자를 한 방에 두지 않는 것만으로 재범이 준다(p.97).</p>
+<p>이 장은 <a class="wl" href="../../t/%EA%B0%80%EC%A0%95/">가정</a> 논의에 실증 근거를 보탠다.</p>
+<h3>5. 돌봄의 공백 — 황혼 육아, 노년, 외국인 가사 도우미</h3>
+<ul>
+<li><strong>황혼 육아</strong>: 육아 자체는 조부모 건강을 해치지 않지만(p.113), 전담하면 관절염·우울증 위험이 커진다(p.114). 일본의 「노노老老 부양」에서는 돌보는 쪽 건강이 크게 나빠졌다(p.115).</li>
+<li><strong>노년</strong>: 저자의 박사과정 연구(요양 등급 커트라인 비교)의 결론은 아래와 같다. 요양원의 현실 묘사에 밑줄이 몰려 있다 — 아침 6시 기상, 정해진 시간까지 기다려야 하는 기저귀(p.123). 정책 방향은 "어느 정도 돌봄의 탈시설화"(p.128).</li>
+<li><strong>외국인 가사 도우미</strong>: 맞벌이 582만 가구에 내국인 종사자는 12만 명(p.131). 홍콩은 약 34만 명, 월 100만 원 수준(p.133). 저자 자신이 이 제도 때문에 홍콩으로 옮겼다(p.135). 효과는 대졸 이상 여성에게 집중되므로(p.140) 임금 설계가 관건이다. 「현대판 노예」라는 비판에는 설문 결과로 답한다(p.136).</li>
+</ul>
+<blockquote>
+<p>"노인들에게는 <strong>재가 서비스가</strong> (시설 서비스에 비해) 일반적으로 더 나은 선택지였습니다." (p.126)</p>
+<p>"월 300만 원 넘는 막대한 추가 간병비를 감당할 수 있는 노인들만이 돌봄이 필요할 때 집에서 그나마 안락하게 지낼 수 있습니다." (p.126)</p>
+</blockquote>
+<h3>6. 핵심 인사이트: 뜨거운 마음만으로는 사람을 살릴 수 없다</h3>
+<p>2부의 제목이자 이 책의 논지다.</p>
+<blockquote>
+<p>"이 세월은 뜨거운 마음만으로는 사회적 약자를 제대로 도울 수 없음을 깨달아가는 과정이기도 했습니다. 의도는 좋으나 작동하지 않는 정책이 너무도 많습니다." (p.158)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>선의의 정책</th>
+<th>실제 결과</th>
+<th>쪽</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>국가 암 검진(연 1조 원)</td>
+<td>암은 더 일찍 찾았으나 사망률은 줄지 않음. 혜택이 정작 필요한 사람에게 가지 않음</td>
+<td>p.155</td>
+</tr>
+<tr>
+<td>말라위 성적 장학금(상위 15%)</td>
+<td>성적이 오히려 하락. 하위 85%의 의지·자존감·성실성이 모두 나빠짐</td>
+<td>p.157~158</td>
+</tr>
+<tr>
+<td>멕시코 프로그레사(조건부 현금 급여)</td>
+<td>취학률↑ 질병↓ 키·몸무게↑ — 실험으로 검증돼 정권이 바뀌어도 유지</td>
+<td>p.160</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"정책은 의료 시술처럼 이루어져야 합니다." (p.161)</p>
+<p>"당위와 직관이 아닌 데이터와 근거에 기반한 정책을 만들어야 합니다." (p.21)</p>
+</blockquote>
+<p>말라위 실험은 저자 본인의 현장 연구다. 감사의 글은 이 「정책 실험」을 지원한 아프리카미래재단과 말라위·에티오피아 현장의 이름들을 적고 있고, 그 대목에 밑줄이 있다(p.274). 단기 의료 봉사의 효과를 묻는 <a class="wl" href="../../t/%EC%9D%98%EB%A3%8C%EC%84%A0%EA%B5%90/">의료선교</a> 논의, 그리고 <a class="wl" href="../../b/%EC%9D%98%EB%A3%8C%EC%84%A0%EA%B5%90%EC%9D%98%EA%B8%B8%EC%9D%84%EB%AC%BB%EB%8B%A4_%EB%AF%BC%EC%9A%94%EC%85%89%EC%99%B8/">의료선교의길을묻다_민요셉외</a>와 나란히 읽을 대목이다 — 「선의」와 「효과」를 구분하라는 요구는 선교 현장에도 그대로 적용된다.</p>
+<h3>7. 소득 보장 — 기초생활보장의 구멍, 안심 소득 대 기본 소득</h3>
+<p>한국은 공공 사회복지 지출 GDP 대비 10.8%로 OECD 36개국 중 35위, 세전·세후 지니계수 개선율은 뒤에서 다섯 번째다(p.163). 기초생활보장제도의 허점은 선별 조건(부양 의무자·재산 기준), 일할 유인의 부재, 서류 부담이다(p.165~166).</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>안심 소득(음의 소득세)</th>
+<th>기본 소득</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>방식</td>
+<td>기준 소득(중위 85%)과 실제 소득 차이의 50% 지급</td>
+<td>모두에게 같은 액수</td>
+</tr>
+<tr>
+<td>30조 원을 쓰면</td>
+<td>저소득층에 집중</td>
+<td>1인당 연 60만 원</td>
+</tr>
+<tr>
+<td>장점</td>
+<td>재분배 효과 월등</td>
+<td>자산·소득 조사 불필요</td>
+</tr>
+<tr>
+<td>조건</td>
+<td>재산 3억 2,600만 원 이하</td>
+<td>강력한 누진세제에 대한 국민 동의</td>
+</tr>
+<tr>
+<td>공통</td>
+<td>일할 유인 유지 (p.171)</td>
+<td>일할 유인 유지 (p.171)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"기본 소득은 가난한 사람에게 집중하는 하후상박下厚上薄이 아닌, 모두에게 동일한 액수를 나누어주는 방식입니다. 이는 소득 재분배 효과가 매우 떨어집니다." (p.171)</p>
+<p>"학자로서 저는 같은 재원으로 불평등 개선 효과(부의 재분배 효과)가 월등한 안심 소득을 지지하는 쪽입니다." (p.172)</p>
+</blockquote>
+<p><a class="wl" href="../../t/%EC%82%AC%ED%9A%8C%EC%A0%95%EC%9D%98/">사회정의</a>와 연결된다.</p>
+<h3>8. 의료 정책 — 싼 의료비의 비싼 대가, 공공 의대</h3>
+<p><strong>본인 부담금은 필요악이 아니라 장치다.</strong> 한국의 의료비는 GDP의 8%로 OECD 평균(8.8%)보다 낮고, 저자는 그 비결을 상대적으로 높은 본인 부담률에서 찾는다(p.175). 청소년 입원 본인 부담을 20%→5%로 낮추자 전체 의료비가 11.5% 늘었다(p.178). MRI·초음파 급여화 후 검사량은 3년 만에 3배가 됐다(p.179).</p>
+<blockquote>
+<p>"그렇기에 단순히 "보장률을 높이겠다"가 아니라 "추가 지출을 어디에 하느냐?"가 중요한 것입니다." (p.182)</p>
+<p>"생명과 직결된, 새롭게 효과가 검증된 항암제는 최우선 순위로 두어야 하고, 경증 질환의 본인 부담은 줄일 이유가 없다고 생각합니다." (p.182)</p>
+</blockquote>
+<p>단, 반대 방향의 증거도 함께 밑줄 쳐 있다 — 미국에서 약값 본인 부담을 올리자 고혈압·고지혈증 약 사용이 23% 줄고 사망률이 33% 늘었다(p.183). 해법은 본인 부담금 <strong>상한제</strong>(p.182).</p>
+<p><strong>의사 수와 공공 의대.</strong> 인구 1,000명당 임상 의사 2.3명(OECD 3.5명)이지만 외래 진료는 연 16.9회로 세계 최다, 도·농 격차는 일본과 함께 가장 작다(p.187, 190).</p>
+<blockquote>
+<p>"우리나라는 적은 수의 의사가 장시간 노동과 짧고 효율적인 외래 진료를 통해 국민에게 충분한 의료 서비스를 제공하고 있습니다." (p.190)</p>
+<p>"가장 큰 이유는 원치 않는 곳에서 억지로 일하는 의사가 그곳에 오래 남을 가능성은 거의 없기 때문입니다." (p.191)</p>
+</blockquote>
+<p>저자는 증원 자체에는 열려 있다 — 충분한 의사 공급은 노동 강도 개선과 진료 시간 확대의 필요조건이고, 4,000명은 2030년 의사 수의 2.5%에 불과하다(p.190). 반대하는 것은 「사명감」에 기대는 설계다.</p>
+<h3>9. 일 — 실직, 보상, 노동시간</h3>
+<ul>
+<li><strong>실직</strong>: 미국에서는 실직 1년 내 사망률이 79% 늘었다(p.102). 한국 자료는 달랐다 — 여성 사망률은 0.24%→0.38%로 늘었으나 남성은 오히려 건강이 좋아졌다(p.104~105). 처방은 「유연 안정성」: 연공제를 버리되 실직해도 걱정 없는 안전망을 깐다(p.107~108).</li>
+<li><strong>보상</strong>: 높은 보상은 선별 효과와 인센티브 효과(선물 교환 포함)로 작동한다(p.199). 멕시코 공무원 채용 실험에서 고임금 지역에 더 유능한 사람이 지원했고 "사명감은 두 집단에 별 차이가 없었습니다"(p.204~205).</li>
+<li><strong>노동시간</strong>: 전공의 근무시간을 줄여도 환자의 주요 경과에는 눈에 띄는 변화가 없었다(p.211). 주 4일제는 시간당 생산성이 20% 넘게 올라야 성립하고(p.220), 「저임금·주 4일」 회사에는 생산성 낮은 지원자가 몰린다(p.221). 그래서 저자의 결론은 찬반이 아니라 시범 사업이다(p.223).</li>
+</ul>
+<blockquote>
+<p>"공무원 또한 능력 있는 사람을 고용하려면 충분히 보상해야 한다는 걸 증명한 것입니다. 사명감과는 상관없이 말입니다." (p.205)</p>
+<p>"정책은 나아갈 방향을 제시해야지 회사와 국민의 일상을 지나치게 규제하고 조정하는 구실을 해서는 안 됩니다." (p.216)</p>
+</blockquote>
+<p><a class="wl" href="../../t/%EC%9D%BC%ED%84%B0%EC%8B%A0%ED%95%99/">일터신학</a>이 「소명」으로 말하는 영역을 이 책은 「인센티브」로 말한다. 두 언어가 어디서 만나고 어디서 갈리는지가 읽을거리다.</p>
+<h3>10. 양성평등·팬데믹, 그리고 공동체</h3>
+<p><strong>양성평등은 「여성」이 아니라 「가정」에 초점을.</strong> 한국에서 1981~2019년 성비로 추산한 사라진 여아는 최소 30만 명(p.229), 성별 임금 격차는 31.5%로 OECD 1위(p.231), 출산 후 여성의 노동시장 참여율은 65%→45%, 임금은 68% 감소한다(p.233). 할당제는 유능한 여성이 기피했고(p.234), 저자가 권하는 것은 넛지다.</p>
+<blockquote>
+<p>"여성 전용 주차장도 오답입니다. 정답은 어린아이와 노약자 동반 가족을 위한 주차장입니다." (p.234)</p>
+<p>"'여성'에게만 초점을 둔 정책보다 '가정'에 초점을 둔 정책이 좋습니다." (p.235)</p>
+</blockquote>
+<p><strong>팬데믹.</strong> 3년간 코로나19 사망자는 3만 4,960명(연평균 1만 1,652명)으로 2018년 폐렴(2만 8,280명)·자살(1만 3,670명) 사망과 크게 다르지 않았다(p.239). 저자가 걱정한 것은 「시민 자율성 부재」와 가용성 편향이다.</p>
+<blockquote>
+<p>"정부가 국민의 가장 중요한 위험에 대처하기보다는 사람들의 가장 큰 두려움을 해소하는 데 역량을 집중하게 만들기 때문입니다." (p.238)</p>
+</blockquote>
+<p>등교 제한은 감염 예방 효과가 없었고(p.243), 한국 고등학생의 평균 학력은 떨어지지 않았으나 학습 불평등은 커졌다(p.262, 265).</p>
+<p><strong>나오며 — 좋은 공동체에는 불행을 극복하는 힘이 있다.</strong> 한국전쟁을 겪은 세대는 위험을 회피하고 보수화됐다(p.270). 그러나 동일본 대지진 이주민에게 공동체가 개입하자 사회 참여가 늘었고, 9·11을 겪은 공동체는 단결했다(p.270~271).</p>
+<blockquote>
+<p>"불행은 개인은 물론 사회 공동체도 변화시킵니다." (p.270)</p>
+</blockquote>
+<p>2장의 「8할은 공동체 덕분」과 수미상관을 이룬다 — <a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%B2%B4/">공동체</a>.</p>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<p><strong>적용</strong>
+- <strong>진료·의료 정책</strong>: 8장(본인 부담·공공 의대)은 진료 현장의 일상과 직접 닿는다. 「3분 진료」가 높은 접근성의 다른 얼굴이라는 진단(p.188~190)은 의료 현안을 말할 때 쓸 수 있는 틀이다.
+- <strong>의료선교·단기선교</strong>: 6장의 표(암 검진·말라위 장학금·프로그레사)는 「선의와 효과는 다르다」의 실증 사례다. 수용국에 실제로 무엇이 남는지를 묻는 대목에 인용할 수 있다.
+- <strong>가정사역</strong>: 「아빠의 참여보다 능력」(p.85), 「가정이 스스로 결정했을 때 가장 좋았다」(p.71)는 부부·부모 교육에서 통념을 흔드는 재료다.
+- <strong>멘토링</strong>: 「8할은 운」(p.35)은 성취한 후배에게는 겸손을, 좌절한 후배에게는 자책에서 벗어날 근거를 준다.</p>
+<p><strong>미해결 질문</strong>
+- 저자는 「사명감은 차이가 없었다」(p.205)며 보상을 설계의 중심에 둔다. 그렇다면 소명으로 오지를 택한 의료 선교사는 예외인가, 아니면 다른 종류의 보상을 받는 것인가?
+- 「성취의 8할은 운」과 「은혜」는 같은 말인가? 운은 감사의 대상이 없고 은혜는 있다 — 이 차이가 재분배의 동기에서 어떤 차이를 만드는가?
+- 실험으로 검증할 수 없는 사역(관계·제자 양육)의 「효과」는 무엇으로 평가할 것인가? 증거 기반이라는 요구를 어디까지 받아들일 것인가?
+- 외국인 가사 도우미를 최저임금 예외로 두자는 제안(p.142)은 당사자의 만족 설문(p.135)으로 정당화되는가? 나그네 환대의 관점에서는 어떻게 읽히는가?
+- 현장 사역 단체와 학술 연구가 협업한 저자의 「정책 실험」(p.274)은 어떤 구조였는가 — 사역 현장이 스스로의 효과를 검증받는 모델로 따로 정리할 가치가 있는가?</p>
+<hr />
+<blockquote>
+<p>📖 전사 원문(줄이지 않은 표시 구절 전체): <span class="wl-dead" title="위키 내부 링크">경제학이필요한순간_김현철_전사</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#domain/사회과학</span><span>#discipline/보건경제학</span><span>#증거기반정책</span><span>#능력주의</span><span>#돌봄</span><span>#의료정책</span><span>#불평등</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
