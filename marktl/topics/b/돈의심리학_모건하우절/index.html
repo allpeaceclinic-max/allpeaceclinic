@@ -1,0 +1,320 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>돈의 심리학 — 모건 하우절 (인플루엔셜) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">리더십·일·경영</span><span class="author">모건하우절</span><span class="date">2026-10-06</span></div>
+  <h1 class="note-title">돈의 심리학 — 모건 하우절 (인플루엔셜)</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/%EB%8F%88%EC%9D%98%EC%8B%AC%EB%A6%AC%ED%95%99_%EB%AA%A8%EA%B1%B4%ED%95%98%EC%9A%B0%EC%A0%88/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<blockquote>
+<p>원제 The Psychology of Money. 전 월스트리트저널 기자가 "돈 문제는 지식이 아니라 행동의 문제"라는 한 문장을 20개의 이야기로 풀어 쓴 책(이지연 옮김, 30만 부 기념 스페셜 에디션 — 보너스 스토리와 「나의 아이들에게 보내는 금융 조언」 수록). 📷 표시 전사 기반 독서 노트.</p>
+</blockquote>
+<hr />
+<h2>요약 — 주제별 상세 정리</h2>
+<h3>1. 금융은 소프트 스킬이다 — 물리학이 아니라 심리학</h3>
+<p>책 전체의 전제다. 우리는 돈을 규칙과 법칙이 있는 물리학처럼 배우지만, 실제로 돈을 다루는 일은 감정과 뉘앙스가 있는 심리학에 가깝다.</p>
+<blockquote>
+<p><strong>금융은</strong> 소프트 스킬soft skill이고, 소프트 스킬에서는 아는 것보다 행동이 더 중요하다. (p.17)</p>
+<p>사람들이 왜 빚에 허덕이는지 이해하려면 이자율을 공부할 것이 아니라 탐욕과 불안, 낙천주의의 역사를 공부해야 한다. (p.20)</p>
+<p>“역사가 반복되는 것이 아니다. 사람이 반복하는 것이다.” (p.20)</p>
+</blockquote>
+<p>독자는 p.18에서 「건강」과 「돈」에 동그라미를 쳤다. 관심이 있든 없든 누구나 영향을 받는 두 주제라는 문장이다. 스페셜 에디션의 마지막 조언도 같은 자리로 돌아온다.</p>
+<blockquote>
+<ol start="3">
+<li>투자는 '금융에 대한 연구'가 아니라, 돈과 관련한 <strong>'사람에 대한 연구'</strong>임을 깨달아라. (p.401)</li>
+</ol>
+</blockquote>
+<h3>2. 아무도 미치지 않았다 — 경험이 만드는 내러티브</h3>
+<p>사람마다 돈에 대한 판단이 다른 것은 지능 차이가 아니라 살아온 시대와 형편이 다르기 때문이다.</p>
+<blockquote>
+<p>돈에 대한 당신의 경험은 아마도 세상에서 실제로 일어난 일 0.00000001퍼센트와 당신이 머릿속으로 세상의 원리라고 ‘생각하는’ 내용 80퍼센트로 구성되어 있을 것이다. (p.28)</p>
+<p>그러나 모든 금융 의사결정은 그 순간 판단을 내리는 그 사람에게는 타당한 것이다. (p.37)</p>
+<p>개인적인 경험과 나만의 세계관, 자존심, 자부심, 마케팅, 괴상한 이유들이 전부 합쳐져 나에게만은 옳은 하나의 <strong>내러티브</strong>가 만들어진다. (p.39)</p>
+</blockquote>
+<p>주식시장이 강세일 때 자란 사람은 인생 후반에도 주식에 더 많이 투자한다(p.31). 📝 독자는 이 대목 여백에 「성인기 초기 경험?」이라고 적었다. 저자는 여기에 한 가지를 더한다. 은퇴·퇴직연금·인덱스펀드 같은 현대 금융 자체가 생긴 지 한두 세대밖에 되지 않았다는 것이다(p.39~43).</p>
+<h3>3. 행운과 리스크는 도플갱어다</h3>
+<blockquote>
+<p>행운과 리스크를 만들어내는 힘은 동일하다. (p.52)</p>
+<p>나는 다른 누군가의 실패는 보통 잘못된 의사결정 탓이고, 나 자신의 실패는 보통 리스크의 어두운 면 때문임을 깨달았다. (p.56)</p>
+<p>성공에서 행운이 차지하는 역할을 인정한다면, 리스크의 존재는 우리가 실패를 판단할 때 나 자신을 용서하고 이해의 여지를 남겨야 한다는 뜻임을 아는 것이다. (p.64)</p>
+</blockquote>
+<p>부록의 자녀에게 주는 편지도 같은 말로 시작한다.</p>
+<blockquote>
+<p>모든 성공이 노력의 결실도 아니고, 모든 가난이 게으름의 결과도 아님을 깨닫기를 바란다. (p.385)</p>
+</blockquote>
+<p><strong>독자의 응답</strong>: 저자가 "우연에 의해 좌우되는 법"(p.384)이라고 쓴 자리에 독자는 화살표를 긋고 📝 「우연이라고 한다. 나는 은혜라 믿는다」고 적었다. 저자가 「운」이라 부르는 것을 신앙의 언어는 <a class="wl" href="../../t/%EC%84%AD%EB%A6%AC/">섭리</a>와 <a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a>로 읽는다. 결론은 같은 방향이다. 성공 앞에서 교만할 수 없고, 남의 실패 앞에서 정죄할 수 없다.</p>
+<h3>4. 핵심 인사이트: 「충분」 — 멈출 수 있는 골대</h3>
+<p>통념은 더 버는 법을 묻는다. 저자는 언제 멈출지를 묻는다. 이미 큰 부를 가졌던 굽타와 매도프가 무너진 이유가 여기에 있다.</p>
+<blockquote>
+<p>두 사람은 '충분'이라는 것을 몰랐다. (p.75)</p>
+<p>가장 어려운 것은 멈출 수 있는 골대를 세우는 일이다. (p.76)</p>
+<p>현대 자본주의는 두 가지를 좋아한다. <strong>부를</strong> 만들어내는 것과 <strong>부러움을</strong> 만들어내는 것. (p.76)</p>
+<p>5만 달러를 벌지만 4만 달러만 갖고도 행복한 사람은 15만 달러를 벌면서 15만 1,000달러가 있어야 행복한 사람보다 더 부자다. (p.386)</p>
+</blockquote>
+<p>바울의 자족(<span class="wl-dead" title="위키 내부 링크">빌4</span>, <span class="wl-dead" title="위키 내부 링크">딤전6</span>)과 겹친다. 다만 근거가 다르다. 저자의 「충분」은 후회를 줄이는 지혜이고, <a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%B4%EB%83%90%EB%8F%88%EC%9D%B4%EB%83%90_%EC%9E%90%EB%81%84%EC%97%98%EB%A5%84/">하나님이냐돈이냐_자끄엘륄</a>에서 <span class="wl-dead" title="위키 내부 링크">자끄엘륄</span>이 말하는 돈은 섬김을 요구하는 권세(맘몬)다. 하우절은 돈을 잘 다루는 법을 말하고 엘륄은 돈에서 풀려나는 법을 말한다.</p>
+<h3>5. 복리·생존·꼬리 — 시간이 일하게 두는 법</h3>
+<blockquote>
+<p>그의 재주는 <strong>투자</strong>였지만, 그의 <strong>비밀</strong>은 <strong>시간</strong>이었다. 이것이 바로 복리의 원리다. (p.90)</p>
+<p>버핏의 성공 요인을 해부한 2,000권의 책 중에 '이 남자는 <strong>75년간</strong>이나 꾸준히 투자를 해왔다'라는 제목의 책은 없다. (p.93)</p>
+<p>금전적 성공을 한 단어로 요약한다면 나는 '<strong>생존</strong>'이라고 말하겠다. (p.103)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>부자가 되는 재주</th>
+<th>부자로 남는 재주</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>태도</td>
+<td>리스크 감수·낙천적 사고·적극성</td>
+<td>검소함·돈이 사라질 수 있음을 두려워하기</td>
+</tr>
+<tr>
+<td>실패 사례</td>
+<td>—</td>
+<td>리버모어(1929년 대박 뒤 전부 잃음, p.102~103)</td>
+</tr>
+<tr>
+<td>근거</td>
+<td>p.103</td>
+<td>p.103~104</td>
+</tr>
+</tbody>
+</table>
+<p>성과의 대부분은 소수의 「꼬리 사건」에서 나온다.</p>
+<blockquote>
+<p>그런데 지수에 포함된 기업 중 <strong>40퍼센트는</strong> 사실상 실패작이었다. 그러나 지극히 훌륭한 성과를 낸 <strong>7퍼센트</strong>의 기업들이 실패작을 벌충하고도 남았다. (p.126)</p>
+<p>절반을 틀려도 여전히 큰돈을 벌 수 있다. (p.134, p.335에서 다시 밑줄)</p>
+<p>“복리의 첫 번째 규칙은 절대로 쓸데없이 손대지 않는 것이다.” (찰리 멍거, p.351)</p>
+</blockquote>
+<h3>6. 핵심 인사이트: 돈이 주는 가장 큰 배당금은 시간이다</h3>
+<blockquote>
+<p>돈에 내재하는 가장 큰 가치는 내 시간을 내 마음대로 쓸 수 있게 해준다는 점이다. (p.141)</p>
+<p>'내 시간을 내 뜻대로 쓸 수 있다는 것이 돈이 주는 가장 큰 배당금이다.' (p.150)</p>
+</blockquote>
+<p>노인들이 돌아보며 중요하다고 꼽은 것은 "좋은 우정을 나누는 것, 개인의 안위보다 더 큰 뜻을 위한 일에 참여하는 것, 자녀와 좋은 시간을 보내는 것"(p.150)이었다. 독자는 부록 p.385에서 「돈」과 「시간」에 다시 동그라미를 쳤다. 이 관점은 <a class="wl" href="../../b/%ED%95%98%ED%94%84%ED%83%80%EC%9E%84_%EB%B0%A5%EB%B2%84%ED%8F%AC%EB%93%9C/">하프타임_밥버포드</a>의 물음, 곧 성공 이후의 시간을 어디에 쓸 것인가와 이어진다.</p>
+<h3>7. 부는 쓰지 않은 소득이다 — 저축은 겸손의 문제</h3>
+<blockquote>
+<p>그러나 '부wealth'는 숨어 있다. 부는 쓰지 않은 소득이다. (p.164)</p>
+<p>부를 쌓는 것은 소득, 투자수익률과 거의 관계가 없다. <strong>저축률과</strong> 관계가 깊다. (p.172)</p>
+<p>저축을 늘리는 가장 좋은 방법은 소득을 늘리는 것이 아니라 겸손을 늘리는 것이다. (p.176)</p>
+</blockquote>
+<p>소득이 일정 수준을 넘으면 사람은 세 부류로 갈린다(p.171).</p>
+<table>
+<thead>
+<tr>
+<th>부류</th>
+<th>태도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>저축을 하는 사람</td>
+</tr>
+<tr>
+<td>2</td>
+<td>저축을 할 수 없다고 생각하는 사람</td>
+</tr>
+<tr>
+<td>3</td>
+<td>저축을 할 필요가 없다고 생각하는 사람</td>
+</tr>
+</tbody>
+</table>
+<p>일정 선을 넘는 소비는 "자존심의 반영"(p.176)이라는 진단은 <a class="wl" href="../../t/%EA%B2%B8%EC%86%90/">겸손</a>의 문제를 재정으로 옮긴 것이다. 저자 자신의 실천도 같다. 월급이 올라도 생활양식을 그대로 두어 저축률을 높였고, 이론상 손해인데도 대출 없이 집을 샀다(p.348~349). 목표는 수익률이 아니라 「독립성」과 "밤에 깊이 잠들 수 있는 방법"(p.355)이다.</p>
+<h3>8. 적당히 합리적인 것이 철저히 이성적인 것보다 낫다 — 의사의 눈으로 읽은 대목</h3>
+<p>독자가 가장 길게 밑줄을 그은 곳이다. p.187~189는 거의 전부에 밑줄이 있다. 저자는 의학에서 세 가지 예를 가져온다.</p>
+<p><strong>열(fever)</strong>: 바그너야우레크는 말라리아로 열을 일으켜 신경매독을 치료했고 1927년 노벨상을 받았다. 열이 감염과 싸우는 데 도움이 된다는 근거도 있다. 그런데도 병원은 열을 내린다.</p>
+<blockquote>
+<p>복잡한 이유가 아니다. 열이 나면 아프다. 사람들은 아픈 게 싫다. 그게 전부다. (p.189)</p>
+<p>의사의 목표는 단순히 질병을 치료하는 게 아니다. 환자가 참을 만하고 적당히 합리적인 범위 내에서 질병을 치료하는 것이다. (p.189)</p>
+</blockquote>
+<p><strong>환자의 자기결정</strong>: 의학 교육은 지난 50년간 "질병을 치료하는 것에서 환자를 치료하는 쪽으로"(p.331) 옮겨 왔다. 재무 상담도 같아야 한다는 것이 저자의 결론이다.</p>
+<p><strong>의사 자신의 죽음</strong>: 의사들은 대부분의 미국인보다 "훨씬 더 적은 치료"를 받는다(p.344).</p>
+<blockquote>
+<p>보편적 진리란 없다. 나와 내 가족에게 맞는 진리가 있을 뿐이다. (p.345)</p>
+<p>우리는 스프레드시트가 아니다. 우리는 사람이다. 엉망진창으로 사는, 감정적인 사람이다. (p.185)</p>
+</blockquote>
+<h3>9. 역사는 지도가 아니다 — 예측 대신 여지를 남긴다</h3>
+<blockquote>
+<p>이는 분석의 실패가 아니다. 상상력의 실패다. (p.209)</p>
+<p>"안전마진의 목적은 예측을 불필요하게 만들기 위한 것." (벤저민 그레이엄, p.224)</p>
+<p>실제로 모든 계획에서 가장 중요한 부분은 계획이 계획대로 되지 않을 때를 위한 계획을 세워두는 것이다. (p.236)</p>
+</blockquote>
+<p>그레이엄조차 판을 낼 때마다 자기 공식을 버리고 새 공식으로 바꿨다(p.214~215). 변하지 않는 것은 탐욕과 공포에 대한 사람의 반응이고, 변하는 것은 특정 전략과 지표다(p.217). 스페셜 에디션은 이를 세 가지 조언으로 묶는다.</p>
+<table>
+<thead>
+<tr>
+<th>조언</th>
+<th>요지</th>
+<th>쪽</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 예상은 많이 하고, 전망은 줄여라</td>
+<td>언제인지는 몰라도 일어날 것은 인정한다</td>
+<td>p.398~399</td>
+</tr>
+<tr>
+<td>2. 세상은 바뀌는데 내 생각이 영원하기를 바라지 마라</td>
+<td>"'한 번 맞히는 것'은 '계속 맞히는 것'의 적"</td>
+<td>p.399~400</td>
+</tr>
+<tr>
+<td>3. 투자는 사람에 대한 연구다</td>
+<td>심리학·사회학·역사·생물학·정치</td>
+<td>p.401</td>
+</tr>
+</tbody>
+</table>
+<p>계획하는 사람 자신도 변한다. 「역사가 끝났다는 착각」(p.244)을 경계하고, 양극단의 계획을 피하며(p.247), 다른 사람이었을 때 세운 목표는 "가차 없이 버리는 편이 낫다"(p.249). 남의 행동을 따라 하기 전에 그가 나와 같은 게임을 하는지도 물어야 한다(p.271, p.279).</p>
+<h3>10. 낙관·비관·스토리 — 기대치는 현실보다 느리게 움직인다</h3>
+<blockquote>
+<p>낙관주의는 중간에 차질이 있더라도 시간이 지나면 좋은 결과가 나올 확률이 크다는 믿음이다. (p.286)</p>
+<p>몸집을 불리며 성장하는 데는 오랜 시간이 걸리지만, 파괴는 단 몇 초, 단 한 차례 실패로도 일어난다. (p.299)</p>
+<p>무언가가 사실이기를 간절히 바랄수록 그게 사실일 확률을 과대평가하는 스토리를 믿을 가능성이 커진다. (p.310)</p>
+</blockquote>
+<p>2009년 미국은 공장도 지식도 그대로였는데 더 가난해졌다. 저자는 이를 「내러티브 손실」(p.310)이라 부른다. 마지막 장의 전후 미국 경제사도 같은 틀이다. 1945~1973년에는 모두 함께 호황이었고, 1980년대 이후에는 같은 크기의 성장이 다른 주머니로 들어갔다. 그러나 사람들의 기대는 전후의 평등 문화에 머물렀다.</p>
+<blockquote>
+<p>사람들은 자신의 웰빙을 주변 사람들과 비교해 측정한다. (p.369)</p>
+<p>내가 말하고자 하는 중심 테마는 '기대치가 현실보다 더 느리게 움직인다'는 것이다. (p.382)</p>
+</blockquote>
+<p>저자의 낙관은 확률에 근거한 베팅이다. 약속에 근거한 <a class="wl" href="../../t/%EC%86%8C%EB%A7%9D/">소망</a>과는 뿌리가 다르지만, 눈앞의 비관에 휩쓸리지 않게 한다는 점에서 구실은 닮았다.</p>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<ul>
+<li><strong>적용(진료)</strong>: 8번의 「참을 만한 범위에서 치료한다」는 환자 설명의 틀로 쓸 수 있다. 근거상 최선인 선택과 환자가 지속할 수 있는 선택이 다를 때, 후자가 실제로 더 나은 결과를 낸다.</li>
+<li><strong>적용(재정 교육·멘토링)</strong>: 젊은 의료인에게 수익률보다 저축률과 「충분」의 선을 먼저 말한다. p.386의 5만 달러/15만 달러 비교가 좋은 예화다.</li>
+<li><strong>적용(청지기직)</strong>: 「부는 쓰지 않은 소득」을 <a class="wl" href="../../t/%EC%B2%AD%EC%A7%80%EA%B8%B0/">청지기</a>의 언어로 옮기면, 남긴 것은 흘려보낼 수 있는 몫이 된다. <a class="wl" href="../../b/%EB%8F%88%EC%9D%80%EC%A4%91%EC%9A%94%ED%95%98%EB%8B%A4_%EC%8A%A4%ED%8B%B0%EB%B8%90%EC%8A%A4%EB%A6%BC/">돈은중요하다_스티븐스림</a>과 함께 읽는다.</li>
+<li><strong>적용(시간)</strong>: 돈의 최대 배당금이 시간이라면, 그 시간을 어디에 쓰는가가 다음 질문이다(<a class="wl" href="../../t/%EC%95%88%EC%8B%9D/">안식</a>, <span class="wl-dead" title="위키 내부 링크">눅12</span>의 어리석은 부자).</li>
+<li><strong>미해결 질문 1</strong>: 저자의 목표는 「독립성」이다. 그리스도인의 목표가 독립일 수 있는가? 의존(<span class="wl-dead" title="위키 내부 링크">마6</span>)과 대비(안전마진)는 어떻게 함께 가는가?</li>
+<li><strong>미해결 질문 2</strong>: 「운」과 「은혜」는 같은 현상의 다른 이름인가, 다른 주장인가? 운은 감사할 대상이 없고 은혜는 있다.</li>
+<li><strong>미해결 질문 3</strong>: 「보편적 진리란 없다, 내 가족에게 맞는 진리가 있을 뿐」(p.345)은 재무에서는 맞지만 어디까지 넓힐 수 있는가?</li>
+<li><strong>미해결 질문 4</strong>: 저축이 겸손이라면, 나눔 없이 쌓기만 하는 저축은 무엇인가? 저자는 나눔을 거의 다루지 않는다.</li>
+</ul>
+<hr />
+<blockquote>
+<p>📖 전사 원문(줄이지 않은 표시 구절 전체): <span class="wl-dead" title="위키 내부 링크">돈의심리학_모건하우절_전사</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#domain/일터재정</span><span>#돈</span><span>#투자</span><span>#행동경제학</span><span>#저축</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
