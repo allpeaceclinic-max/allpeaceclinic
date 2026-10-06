@@ -1,0 +1,446 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>올라인 교회 — 김병삼 외 (두란노) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">교회·공동체</span><span class="author">김병삼외</span><span class="date">2026-10-06</span></div>
+  <h1 class="note-title">올라인 교회 — 김병삼 외 (두란노)</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/%EC%98%AC%EB%9D%BC%EC%9D%B8%EA%B5%90%ED%9A%8C_%EA%B9%80%EB%B3%91%EC%82%BC%EC%99%B8/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<blockquote>
+<p>분당 만나교회 담임목사와 각 국장(예배·교회학교·청년·교구·양육·선교·나눔)이 코로나19 첫 1년(2020~2021 초)에 교회 전체를 온라인+오프라인(All Line)으로 재편한 과정을 부서별로 기록한 현장 보고서. 📷 표시 색인 기반 독서 노트.</p>
+</blockquote>
+<hr />
+<h2>요약 — 주제별 상세 정리</h2>
+<h3>1. 핵심 인사이트: 변화의 출발점은 기술이 아니라 교회론이다</h3>
+<ul>
+<li>책의 첫 주장은 코로나19가 변화를 "만든" 것이 아니라 "앞당겼다"는 것이다. 종식 뒤에도 사회 시스템과 신앙 환경은 이전으로 돌아가지 않는다고 본다(p.26). 릭 워렌·크레이그 그로쉘·스티븐 퍼틱이 모두 "예전 교회로의 복귀가 아니라 새 모습으로의 진입"을 말했다는 점을 근거로 든다(p.19~20).</li>
+<li>톰 레이너(라이프웨이리서치)의 9가지 예측을 받아 적는다(p.20). 레이너 자신의 책은 <a class="wl" href="../../b/%EC%BD%94%EB%A1%9C%EB%82%98%EC%9D%B4%ED%9B%84%EB%AA%A9%ED%9A%8C_%ED%86%B0%EB%A0%88%EC%9D%B4%EB%84%88/">코로나이후목회_톰레이너</a>.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>예측</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>사역의 단순화</td>
+</tr>
+<tr>
+<td>2</td>
+<td>교회 밖에 대한 관심 증가</td>
+</tr>
+<tr>
+<td>3</td>
+<td>예배 인원 감소</td>
+</tr>
+<tr>
+<td>4</td>
+<td>지교회 확대</td>
+</tr>
+<tr>
+<td>5</td>
+<td>디지털 활용 능력 수요 증가</td>
+</tr>
+<tr>
+<td>6</td>
+<td>'가나안' 교인에 더 집중</td>
+</tr>
+<tr>
+<td>7</td>
+<td>온라인 예배 집중</td>
+</tr>
+<tr>
+<td>8</td>
+<td>목회 훈련에 콘텐츠 제작 훈련 추가</td>
+</tr>
+<tr>
+<td>9</td>
+<td>목회자가 뒤에 서지 않고 평등하게 함께 사역</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>만나교회가 창립기념일마다 교회론을 설교해 온 이유: 교회를 어떻게 정의하느냐가 목회의 영역과 신앙의 패턴 전부를 바꾸기 때문이다(p.27~28). "교회 중심"이 아니라 "선교 중심"을 추구하다 보니 건물에 묶인 교회를 자연스레 넘게 됐다고 설명한다(p.27). 미디어교회는 코로나 이전에 <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B5%90%ED%9A%8C/">선교적교회</a>론에서 나온 것이지 방역 대응책이 아니었다(p.29).</li>
+<li>로버트 주잇의 강의(바울이 오늘 살았다면 '영화'로 선교했을 것)를 빌려, 교회가 미디어를 쓰지 않은 것은 선교에 대한 "직무유기"였을 수 있다고까지 말한다(p.28~29).</li>
+<li>연결: <a class="wl" href="../../b/%EB%89%B4%EB%85%B8%EB%A9%80%EC%8B%9C%EB%8C%80%EA%B5%90%ED%9A%8C%EC%9D%98%EC%9C%84%EB%8C%80%ED%95%9C%EB%AA%A8%ED%97%98/">뉴노멀시대교회의위대한모험</a>과 문제의식이 같고, 건물 밖 교회라는 점에서 <a class="wl" href="../../b/%EC%9D%B8%EB%B9%84%EC%A0%80%EB%B8%94%EC%B2%98%EC%B9%98_%EA%B9%80%EC%84%B1%EA%B7%9C/">인비저블처치_김성규</a>와 나란히 읽을 만하다. 북미 사례는 <a class="wl" href="../../b/%EC%98%A8%EB%9D%BC%EC%9D%B8%EC%82%AC%EC%97%AD%ED%98%81%EB%AA%85_%EC%9D%B4%EC%83%81%ED%9B%88/">온라인사역혁명_이상훈</a>.</li>
+</ul>
+<h3>2. 올라인 교회로 가는 4단계 (프레임워크)</h3>
+<p>온라인 교회의 정의: 예배·선교·교육·봉사·친교라는 교회의 본질 기능 전부 또는 일부를 온라인으로 수행하는 교회(p.70).</p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>내용</th>
+<th>쪽</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>예배 실시간 스트리밍 — 성도는 온라인으로 예배만 드림</td>
+<td>p.68</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2018.4 독립 교회 '미디어교회' 설립 — 예배에 더해 목양적 돌봄까지. 구호 "담장을 넘어라!"</td>
+<td>p.30, 68</td>
+</tr>
+<tr>
+<td>3</td>
+<td>미디어교회를 만나교회와 합치고 '미디어동산' 교구 신설</td>
+<td>p.30, 69</td>
+</tr>
+<tr>
+<td>4</td>
+<td>교회 조직 전체가 온라인 역량을 갖춤 = 올라인 교회 (2021 진행형)</td>
+<td>p.30, 69~70</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>배경 통계: 한국 스마트폰 보급률 <strong>95%</strong>(퓨리서치 2019, 세계 1위), 주말 모바일 인터넷 평균 3시간 5분(p.61).</li>
+<li>코로나는 "예배는 교회 건물에서"라는 인식의 선(line)을 넘게 한 기폭제일 뿐, 온라인 교회의 등장은 오래전에 예견돼 있었다(p.61).</li>
+</ul>
+<h3>3. 예배 — 장소가 아니라 시간과 자세</h3>
+<ul>
+<li>성경 근거: 출 3:5(하나님이 계신 곳이 예배의 자리), 요 4:21-24(예배는 장소의 문제가 아님)(p.34~35). 초대교회는 '가정에서 드리는 예배'가 아니라 '가정 교회에서 드리는 예배'라는 표현을 썼다는 구분도 표시돼 있다(p.36).</li>
+<li>유익: 선택의 폭이 넓어지고(p.37), 세대별로 갈라진 예배를 <strong>온 세대 예배</strong>로 되돌릴 기회가 된다(p.39).</li>
+<li>경계: 편의주의. 헤셸의 《안식》을 인용해, 정신이 빠진 휴식은 타락의 근원이고 금지 조항이 안식일의 위엄을 지켰다고 짚는다. 하나님은 '어디서'보다 정한 시간에 바른 자세로 드리는 예배를 받으신다(p.41).</li>
+<li>만나교회 예배 철학 3요소: 소통·일관성·참여(p.72).</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>온택트 예배 실천</th>
+<th>내용</th>
+<th>쪽</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>실시간 채팅</td>
+<td>설교 중 성도가 아멘과 결단을 계속 올림. 이제 완전히 정착</td>
+<td>p.73~75</td>
+</tr>
+<tr>
+<td>줌 예배</td>
+<td>화상회의로 함께 드리는 예배</td>
+<td>p.72, 75</td>
+</tr>
+<tr>
+<td>온라인 성찬</td>
+<td>신학 논쟁의 선을 넘기로 결단, 2020 성금요일 시행. 수찬자의 적극적 참여와 성령의 역사로 체현이 경험된다는 논리</td>
+<td>p.78</td>
+</tr>
+<tr>
+<td>기획의 정교화</td>
+<td>모든 요소가 한 메시지로 모이도록</td>
+<td>p.72</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>기획 구조(부록 1): 시리즈 설교 원고가 <strong>6개월 전</strong> 예배팀에 전달 → 평신도 묵상팀이 묵상·간증을 더함 → 콘셉트·선곡·참여 요소 → 디자인·인트로 영상(p.83). 생방송이라 20명이 초 단위로 공유하고(p.84), 끝나면 피드백, 특별 행사는 AAR 문서로 남긴다(p.85).</li>
+<li>부록 2의 조언: 여력이 있으면 장비보다 미디어 전문가를 고용하라. 감신대와 MOU로 '만나 미디어 장학생' 운영(p.89). 온라인은 철저히 끌어당기기(pull) 방식이므로 열심히 전달해 줄 사람을 세워야 한다(p.91).</li>
+<li>연결: <a class="wl" href="../../t/%EC%98%88%EB%B0%B0/">예배</a>, <a class="wl" href="../../b/1%EC%84%B8%EA%B8%B0%EA%B5%90%ED%9A%8C%EC%98%88%EB%B0%B0%EC%9D%B4%EC%95%BC%EA%B8%B0_%EB%A1%9C%EB%B2%84%ED%8A%B8%EB%B1%85%ED%81%AC%EC%8A%A4/">1세기교회예배이야기_로버트뱅크스</a>(가정 교회 예배).</li>
+</ul>
+<h3>4. 설교 — 바뀐 것은 준비가 아니라 전달 방식</h3>
+<ul>
+<li>저자에게 설교는 "설득"이다. 변하지 않는 진리를 변하는 세상의 사람들이 살아 내도록 설득하는 일(p.43). 코로나로 달라진 것은 <strong>'전달 방식'</strong>뿐이다(p.43).</li>
+<li>청중 반응이 사라진 온라인에서는 설교자가 먼저 홀로 설교의 감정에 충실해야 하며, 방법은 더 기도하고 원고에 더 시간을 들이는 것뿐이다(p.44). 기록으로 남으므로 정직성과 성실성이 요구된다(p.46).</li>
+<li>📝 여백 손글씨(p.45): "온라인 청중 - 케빈리(?). → 온라인에 맞게 눈맞춤(?)" — 채팅창을 열어 소통하는 대목 위에 적은 메모. <a class="wl" href="../../b/%EC%98%A8%EB%9D%BC%EC%9D%B8%EC%82%AC%EC%97%AD%EC%9D%84%EB%B6%80%ED%83%81%ED%95%B4_%EC%BC%80%EB%B9%88%EB%A6%AC/">온라인사역을부탁해_케빈리</a>와 겹쳐 읽은 흔적으로 보인다.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>네 가지 시도</th>
+<th>내용</th>
+<th>쪽</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>① <strong>대화체 설교</strong></td>
+<td>'토크 설교'</td>
+<td>p.47</td>
+</tr>
+<tr>
+<td>② <strong>함께</strong>하는 설교</td>
+<td>묵상팀이 원고를 미리 읽고 피드백 → 청중의 소리가 담긴 설교. 2021 시리즈는 <strong>4명</strong>이 공동 준비</td>
+<td>p.47~48</td>
+</tr>
+<tr>
+<td>③ 강단 밖 설교</td>
+<td>서재·카페 등 일상 공간에서 사전 제작</td>
+<td>p.49</td>
+</tr>
+<tr>
+<td>④ 공동체가 한 메시지를 품게 함</td>
+<td>교회의 예배 경험이 가정 신앙교육으로 이어짐</td>
+<td>p.50~51</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>설교 밖 확장: 청년부 <strong>'문화살롱'</strong>, 인터뷰 형식, 〈랜선 성지 순례 In JEJU〉, 〈성서학당〉, <strong>가정</strong>·<strong>상담</strong>·<strong>리더</strong>십 스쿨(p.50~52), 〈삼.담.소〉 라이브와 줌 심방(1~3월)(p.52~53), 한 개 층을 '스튜디오 엠'으로(p.54).</li>
+<li>연결: <a class="wl" href="../../t/%EC%84%A4%EA%B5%90%EC%A0%84%EB%8B%AC/">설교전달</a>, <a class="wl" href="../../t/%EC%9D%B4%EB%AF%B8%EC%A7%80%EC%84%A4%EA%B5%90/">이미지설교</a>.</li>
+</ul>
+<h3>5. 다음세대·청년 — 부모와의 연대, 그리고 '휴먼 터치'</h3>
+<p><strong>교회학교(5장)</strong></p>
+<ul>
+<li>출생아 수가 2016년 <strong>41만</strong> → 2018년 <strong>33만</strong>으로 급감한 표에 동그라미(p.99). 대응 4가지: 질적 승부(p.101), 공간 리모델링, 온·오프 접점을 위한 미디어 콘텐츠(p.102), 교육 목사 비중 확대(사역자 11명 중 7명)(p.102).</li>
+<li>2015년부터 '<strong>교회와 부모가</strong> 함께하는 신앙교육'을 외쳤지만 부모는 꿈쩍하지 않았다. 코로나가 부모를 움직이게 했다는 점을 유익으로 꼽는다(p.95). 요셉의 풍년/흉년(창 41:25), 예레미야의 포로기 편지를 틀로 삼아 "심판을 뒤집으면 미래"라고 읽는다(p.96, 104~105).</li>
+<li>핵심 인사이트: '주일'과 '교회'가 '일상'과 '가정'으로 옮겨 갔다(p.109). 가정과 일상에서 어떻게 살아 낼지 돕는 일이 교회의 '오리지널'이다(p.118).</li>
+<li>도구: 구글 클래스룸·미트·설문, 스마트 스토어로 교육 키트 전달(p.129, 136). 조언은 "아무것도 하지 않는 것만은 하지 말라"(p.121).</li>
+</ul>
+<p><strong>청년(6장)</strong></p>
+<ul>
+<li>통계: 교회발 확진 실제 11% vs 국민 인식 44%(p.138), 한국 교회 신뢰도 32% → 21%, 비개신교인은 9%(p.139).</li>
+<li>교회 콘텐츠는 유튜브 알고리즘에 익숙한 청년에게 매력이 없다(p.140~141). 그래서 방향을 《트렌드 코리아 2021》의 '휴먼 터치'로 잡고, 로뎀나무 아래 엘리야를 어루만진 천사(왕상 19:5, 7)를 청년 목회의 역할로 삼는다(p.141~144).</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>터치</th>
+<th>키워드</th>
+<th>실천</th>
+<th>쪽</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>워십 터치</td>
+<td>심플·스타일리시·스파크</td>
+<td>설교 20~25분, 7~8분 단위 소주제로 후편집 가능하게. 스탠딩 테이블·태블릿. 설교 끝 '미션 커넥트'</td>
+<td>p.147~151</td>
+</tr>
+<tr>
+<td>공감 터치</td>
+<td>일대일·M/C Connect</td>
+<td>일대일 심방·양육이라는 "오래된 방법"으로 회귀. 온라인/오프라인 중심 공동체 분리</td>
+<td>p.152~155</td>
+</tr>
+<tr>
+<td>유튜브 터치</td>
+<td>블루오션</td>
+<td>〈만청 스타렉스〉 등</td>
+<td>p.157~163</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>NO MORE / MORE / MUST 도식(p.145). 대규모 집회와 대규모 <a class="wl" href="../../t/%EB%8B%A8%EA%B8%B0%EC%84%A0%EA%B5%90/">단기선교</a>는 더 어렵다고 보고 '일상 선교사' 양성으로 방향을 돌린다(p.146~147).</li>
+<li>📝 여백 표시(p.155): '관리형 목양' → '자기 주도형 목양 시스템'으로 화살표와 ★.</li>
+<li>연결: <a class="wl" href="../../t/%EB%8B%A4%EC%9D%8C%EC%84%B8%EB%8C%80/">다음세대</a>, <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EC%A0%81%EC%82%B6/">선교적삶</a>, <a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EC%A0%81%EA%B0%80%EC%A0%95_%EC%86%A1%EA%B8%B0%ED%83%9C/">선교적가정_송기태</a>.</li>
+</ul>
+<h3>6. 핵심 인사이트: 온라인의 기능은 오프라인으로의 유도다 (교구·소그룹)</h3>
+<ul>
+<li>교구사역의 핵심은 <strong>심방</strong>과 <strong>소그룹</strong>(p.170). 목양은 쉽고 빨라야 하고 그 답은 전화 심방이다(p.171). 돌봄은 소수에 집중할수록 효과적(p.172).</li>
+<li>고령층 우려는 통계로 반박된다: 리더 562명 중 90% 이상이 적응(p.175), 유튜브 최다 이용층은 50대 이상(p.176). 줌으로 약 3천 명이 담임목사를 만났다(p.173).</li>
+<li>온라인 모임은 오프라인을 대체하는 것이 아니라 공백을 메우고 다시 불붙게 하는 것이다(p.180~181). 그래서 <strong>블렌딩 전략</strong>(블렌디드 러닝에서 차용)이 필요하다(p.181, 193).</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>살롱 커뮤니티</th>
+<th>내용</th>
+<th>쪽</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>착상</td>
+<td>2020 트렌드 키워드 '느슨한 연대'</td>
+<td>p.183~184</td>
+</tr>
+<tr>
+<td>원칙</td>
+<td>① 관심·취향에 따른 자발적 참여 ② 주로 온라인(오프 1회 이상 권장) ③ 정해진 기간</td>
+<td>p.184</td>
+</tr>
+<tr>
+<td>결과</td>
+<td>53개 소그룹·400명+ 신청. 한 달 뒤 매일 만나는 그룹 70%, 2/3 이상 참여 그룹 87%</td>
+<td>p.184~185</td>
+</tr>
+<tr>
+<td>반론 대응</td>
+<td>테마는 교인이 고르지만 매뉴얼과 지침은 교역자가 만든다</td>
+<td>p.186</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>새가족 등록도 온라인으로 열었고(p.190~191), 디지털 취약층을 위한 스마트폰 교육 '스마투게더'를 운영(p.193~194).</li>
+<li>맺음: <span class="wl-dead" title="위키 내부 링크">어거스틴</span>의 "본질에는 일치, 비본질에는 자유, 모든 것에 사랑"과 <span class="wl-dead" title="위키 내부 링크">웨슬리</span>의 '관용의 정신' 설교(p.196).</li>
+<li>연결: <a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%B2%B4/">공동체</a>, <a class="wl" href="../../b/%EC%86%8C%EA%B7%B8%EB%A3%B9%EA%B3%BC%EA%B5%90%ED%9A%8C%EC%84%B1%EC%9E%A5/">소그룹과교회성장</a>.</li>
+</ul>
+<h3>7. 양육 — 온라인 전환이 전부가 아니다</h3>
+<ul>
+<li>영상 강의는 '있으면 좋은' 것에서 '있어야만 하는' 것이 됐다(p.206). 영상 시청 뒤 줌에서 토의하는 혼합형으로 발전(p.211). 원거리 양육의 부담이 줄어 양육자들이 오히려 반겼다(p.212).</li>
+<li>원칙 한 줄: 줌으로 새 일을 하는 것이 아니라 해 오던 일을 줌으로 하는 것(p.214).</li>
+<li>패러다임 전환: 특정 대상용 강의 개설을 넘어 연령·성별·영성 단계·관심·성격 유형에 따라 양육 과정 전체를 '맞춤식'으로 제안(p.218). 원칙 5가지 — 언제든 접속, 실시간 필요 충족, 장소 무관 참여, 상호 소통, 개인 특성 맞춤(p.218~219). 첫 단계는 검진표(문진) 설계(p.219).</li>
+<li>스티브 창: 회복력 있는 신앙의 요소는 "개인 영성의 실천 능력". 정재영: '소규모 모임'이 관계를 회복시킬 것(p.217).</li>
+<li>연결: <a class="wl" href="../../t/%EC%A0%9C%EC%9E%90%ED%9B%88%EB%A0%A8/">제자훈련</a>.</li>
+</ul>
+<h3>8. 선교·나눔 — 이주민, 원격 의료, 공교회성</h3>
+<p><strong>선교(9장)</strong></p>
+<ul>
+<li>2020년 '한셈치고' 헌금이 목표의 250%(p.225).</li>
+<li>이주민 사역은 오래 했지만 관심이 낮았다(p.228). 세 갈래: 광주 파구스 비전센터(한글 교실·이미용), 이주민·유학생 건강검진(의료선교회+캠퍼스선교회), MMP-W(이주민 교회 협업)(p.228). 코로나 이후 TF 과제 3가지: 선교 방향 정립, 성남·분당 이주민 사역, 네트워크 선교(p.231).</li>
+<li>훈련: '선교적 삶 학교'(LAMs)는 2020 취소·2021 온라인 예정, 퍼스펙티브스 병행(p.235).</li>
+<li>의료선교위원회: 몽골·미얀마 사역이 막힘. 과제는 의료 행위 제한 문제와 원격 진료 기반 구축(p.236).</li>
+<li>MMP: 농촌·다문화 등 어려운 교회의 자립 지원. 흩어지는 교회가 MMP 교회와 만나교회 모두를 살린다(p.237~238). 기도는 '올라인 기도 운동'(p.254).</li>
+</ul>
+<p><strong>나눔(10장)</strong></p>
+<ul>
+<li>초대교회 '파라볼라노이'(곁에 있는 자)와 대비되는 오늘의 이미지 조사: 거리를 두고 싶다 31%, 이중적 30%, 사기꾼 같다 29%(p.259).</li>
+<li>교회 이름을 감추고 일하려고 NGO 월드휴먼브리지를 세웠다(안양감리교회·대전산성교회 동참)(p.262). 2019년 50억 이상 규모였으나 성도와의 거리감이라는 한계가 드러났다(p.266). 복지관 수탁은 지자체 통제로 기대한 시너지가 없었다(p.269).</li>
+<li>대응: 기독교 <strong>자선</strong> 교육 커리큘럼('도움과나눔' 재단 협력)(p.269~271), 공동체 살리기 운동 — 가장 어려운 것은 공정성 유지(p.274).</li>
+<li>핵심 인사이트: 개교회주의 vs 공교회주의. 팬데믹에서는 공교회성 회복이 더 필요하다(p.275). 성남 13개 교회 연대 '성남 연대 희망 캠페인'(p.276).</li>
+<li>연결: <a class="wl" href="../../t/%EC%9D%B4%EC%A3%BC%EB%AF%BC%EC%84%A0%EA%B5%90/">이주민선교</a>, <a class="wl" href="../../t/%EC%9D%98%EB%A3%8C%EC%84%A0%EA%B5%90/">의료선교</a>, <a class="wl" href="../../b/%EC%A1%B4%EC%9E%AC%EB%A7%8C%EC%9C%BC%EB%A1%9C%ED%8A%B9%EB%B3%84%ED%95%9C%EB%8B%A4%EB%AC%B8%ED%99%94%EA%B5%90%ED%9A%8C_%EC%8B%A0%EC%B9%98%ED%97%8C/">존재만으로특별한다문화교회_신치헌</a>.</li>
+</ul>
+<h3>9. 실제 — 플랫폼은 포장지다</h3>
+<ul>
+<li>외로움은 정신의학에서 '뇌의 통증'(p.284). 예배는 하나님과의 소통이자 성도 간 코이노니아(p.286).</li>
+<li>교역자의 두 자세 "창조성과 지속성". 필자는 49:51로 지속성이 더 부족하다고 고백(p.294).</li>
+<li>유튜브 3원칙(테크 리뷰어에게서 배움, p.300~301): ① 5분 안에 짧고 간결하게 ② 업로드는 알람 시계처럼 ③ 보고 행동할 지침을 줄 것. '바이블로그 로마서'의 평균 시청 시간이 7분 내외였다는 데이터가 근거.</li>
+<li>랜선 성지 순례: 둘이서 3일간 14개 코스·33km 촬영(p.304~305).</li>
+<li>결론: 플랫폼이라는 포장지보다 안에 담는 목회의 본질이 중요하다. 물음은 '무엇을 할 것인가'가 아니라 하나님이 나를 통해 무엇을 하기 원하시는가다(p.314).</li>
+</ul>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<ul>
+<li><strong>적용(강의·모임)</strong>: 4장의 기획 구조(원고 선행 → 묵상팀 → AAR)와 청년 설교의 "7~8분 단위 후편집" 설계는 강의 영상·쇼츠 제작 흐름에 그대로 옮길 수 있다. 유튜브 3원칙도 같다.</li>
+<li><strong>적용(소그룹·캠퍼스)</strong>: 살롱 커뮤니티 3원칙(관심 기반·기간 한정·온라인 중심)은 학사·학생 모임의 단기 프로젝트 모임 설계에 참고. "온라인의 기능은 오프라인으로의 유도"가 판단 기준.</li>
+<li><strong>적용(의료선교)</strong>: p.236의 원격 진료 과제는 표시만 있고 책에 답이 없다. 의료 단기선교 강의에서 "문이 닫혔을 때의 대안" 사례로 연결 가능.</li>
+<li><strong>미해결 질문</strong></li>
+<li>2021년 초의 기록이다. 대면이 회복된 뒤 미디어동산·살롱 커뮤니티·온라인 등록은 얼마나 남았는가?</li>
+<li>온라인 성찬을 "논쟁의 선을 넘기로 결단"했다고만 하고 신학적 논증은 짧다(p.78). 다른 전통의 반론과 어떻게 대화할 것인가?</li>
+<li>대형교회의 인력(예배팀 20명, 교육 교역자 11명)을 전제로 한 모델을 작은 교회·선교단체는 무엇부터 가져올 수 있는가?</li>
+<li>'맞춤식 양육'(알고리즘 비유)은 소비자 맞춤과 어떻게 구별되는가 — <a class="wl" href="../../b/%EA%B5%90%ED%9A%8C%EC%9D%98%EB%A7%A5%EB%8F%84%EB%82%A0%EB%93%9C%ED%99%94_%EC%A1%B4%EB%93%9C%EB%A0%88%EC%9D%B8/">교회의맥도날드화_존드레인</a>의 비판과 대조할 것.</li>
+</ul>
+<hr />
+<blockquote>
+<p>📖 표시 색인(쪽별 표시 위치·요지 전체): <span class="wl-dead" title="위키 내부 링크">올라인교회_김병삼외_전사</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#domain/교회</span><span>#discipline/교회론</span><span>#discipline/목회학</span><span>#온라인교회</span><span>#코로나19</span><span>#만나교회</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
