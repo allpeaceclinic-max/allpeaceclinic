@@ -1,0 +1,353 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>롤모델보다 레퍼런스 1 — 한선회·박지민 (진저티프로젝트) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">신학·사회</span><span class="author">한선회박지민</span><span class="date">2026-10-10</span></div>
+  <h1 class="note-title">롤모델보다 레퍼런스 1 — 한선회·박지민 (진저티프로젝트)</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/%EB%A1%A4%EB%AA%A8%EB%8D%B8%EB%B3%B4%EB%8B%A4%EB%A0%88%ED%8D%BC%EB%9F%B0%EC%8A%A41_%ED%95%9C%EC%84%A0%ED%9A%8C%EB%B0%95%EC%A7%80%EB%AF%BC/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<blockquote>
+<p>20대 초반 여성 인터뷰어들이 「나답게 일하고 사는」 여성 선배 네 명(백희원·김하나·조재원·정수현)을 만나 삶과 공간을 물은 인터뷰집. 부제 「나만의 삶과 공간을 만들 수 있을까요?」. 📷 표시 전사 기반 독서 노트.</p>
+</blockquote>
+<hr />
+<h2>요약 — 주제별 상세 정리</h2>
+<h3>1. 핵심 인사이트: 롤모델이 아니라 레퍼런스</h3>
+<p>이 책의 제목이 곧 논지다. 20대 인터뷰어들은 「성공의 정점에 있는 장년의 여성들에게는 관심이 별로 없었다. 모든 걸 갖춘 완벽한 롤모델을 필요로 하지도 않았다. 롤모델이라는 판타지 대신 실용적인 레퍼런스를 원했다」(추천의 글).</p>
+<blockquote>
+<p>자신의 일과 삶의 이야기를 아낌없이 나누어 준 17명의 인터뷰이들에게 우리는 '롤모델'이라는 명칭을 부여하지 않았다. … '나답게 일하는 삶'이란 결코 복제되거나 복사될 수 없는 삶이기 때문이다. (p.14)</p>
+<p>변화의 속도가 빨라지는 세상 속에서는 이전 세대가 걸어온 커리어 여정이 뒷세대가 걸어갈 정답이 될 수 없다는 걸 알기에, 오히려 우리는 상대방의 맥락과 고민을 섬세하게 존중하고 이해하며 대화할 수 있었다. (p.15)</p>
+</blockquote>
+<p>탐색은 「'정답을 찾는 과정'이라기보다는 '방향을 잡아가는 여정'」(p.14)이다. <a class="wl" href="../../t/%EC%84%B8%EB%8C%80%EC%A0%84%EC%88%98/">세대전수</a>를 「본을 따라 하게 하는 일」로만 이해해 온 자리에서는 불편한 문장이다. 앞세대가 줄 수 있는 것은 복제할 길이 아니라 참조할 사례라는 뜻이기 때문이다.</p>
+<h3>2. 책을 만든 방식 — 듣기와 대화</h3>
+<p>세 키워드는 여성·일·대화다(p.10). 독자가 동그라미를 친 낱말은 「협업」·「맥락」·「대화」였다.</p>
+<blockquote>
+<p>우리는 '분업'보다는 <strong>'협업'</strong>을 '분명한 업무적 프로세스'보다는 '<strong>맥락</strong>을 이해할 수 있는 충분한 <strong>대화</strong>'를 선택했다. (p.12)</p>
+<p>인터뷰는 본질적으로 듣는 행위이다. … 듣는 것은 속도를 늦추고 멈출 때에만 가능하다. (p.12)</p>
+<p>결국 이 모든 과정을 통해 우리가 가장 듣고 싶었던 것은 '내 안의 목소리'였다. (p.13)</p>
+</blockquote>
+<p>추천의 글은 책보다 책이 만들어진 과정을 눈여겨본다. 40대 편집자가 「삼성에서 일하던 방식을 과감하게 버렸을 때 비로소 20대들과 제대로 일할 수 있었다」는 대목에 밑줄이 있다. 성장은 「한 발 한 발 내딛고 있는 모두에게 서서히 붙고 있는 근육과 같은 것」이며 「때로는 고통이 따르기에 우리는 서로가 필요하다」(p.15). → <a class="wl" href="../../t/%EB%8C%80%ED%99%94/">대화</a> · <a class="wl" href="../../t/%EB%8B%A4%EC%9D%8C%EC%84%B8%EB%8C%80/">다음세대</a></p>
+<h3>3. 백희원 — 기본소득과 생활동반자법, 「협상력」이라는 교차점</h3>
+<p>기본소득청'소'년네트워크(BIYN)와 녹색당에서 활동하는 「액티비스트 리서처」. 스스로를 「본질적으로 느낌이 많은 사람」이라 하고, 여러 활동이 「하나의 경로」라고 말한다(p.26).</p>
+<table>
+<thead>
+<tr>
+<th>의제</th>
+<th>한 줄 정의</th>
+<th>개인에게 주는 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>기본소득</td>
+<td>모든 구성원에게 생계 가능한 금액을 매달 현금으로 (p.28)</td>
+<td>착취적 노동을 거절할 힘</td>
+</tr>
+<tr>
+<td>생활동반자법</td>
+<td>혈연·혼인 밖의 동거 관계를 제도로 인정</td>
+<td>「가부장제 정상가족으로 밀어넣는 힘」에 저항할 힘 (p.47)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>둘 다 개인이 기존의 문법에서 벗어나 자신이 원하는 삶을 선택하고 결정할 수 있도록 하는 자기결정권을 확보하기 위한 시도이지 않을까요? … 두 정책 모두 개인에게 협상력을 주는 거예요. (p.46)</p>
+</blockquote>
+<p>키워드는 「공공성」(동그라미)이다. 「저성장 상황 속에서 국가 중심의 공공성에 위기가 왔고 이를 회복하기 위해서는 개인을 환대할 수 있는 사회가 필요하다」(p.28). 구호로는 「Girls can do anything」이 「No one left behind」와 함께 가야 한다(p.47). → <a class="wl" href="../../t/%ED%99%98%EB%8C%80/">환대</a> · <a class="wl" href="../../t/%EC%82%AC%ED%9A%8C%EC%A0%95%EC%9D%98/">사회정의</a></p>
+<p>활동가로서의 고백도 표시돼 있다. 「어떻게 보면 계속 실패한 거예요」(p.31), 그럼에도 「'나는 이 시점에 이 메시지를 전달하고 싶었지!'라는 생각으로 버틸 수 있었어요」(p.32). 후배에게는 「자기 욕망을 상수에 두는 게 중요」하고 「오히려 사회 변화와 연결된 활동에 그런 덫이 많은 것 같아요」(p.49)라고 말한다.</p>
+<h3>4. 비혼·우정·가족의 재상상</h3>
+<blockquote>
+<p>저는 비혼을 통해서 여자가 결혼하지 않아도 추가적인 자격이 필요한 사람이 아니라는 걸 말하고 싶어요. (p.41)</p>
+<p>생활동반자 관계가 꼭 사랑하는 사람들의 파트너십이어야 할 필요는 없잖아요. 그것보다는 비혈연 비성애적인 가족을 상상할 힘이 더욱 필요하다고 생각해요. … 그래서 저는 우정이 가족 관계를 표현하는 데 적절한 단어라고 생각해요. (p.43)</p>
+</blockquote>
+<p>「회색 지대」(동그라미)인 비혼의 삶을 「분명한 삶의 모양으로 하나씩 결정해보자」(p.42)는 태도다. 한국의 집 유형이 「원룸, 신혼부부 맞춤형 집, 4인 가족 아파트」 셋뿐이라는 관찰(p.44)이 다음 장의 주거 논의로 이어진다.</p>
+<p><a class="wl" href="../../t/%EA%B2%B0%ED%98%BC%EA%B3%BC%EA%B0%80%EC%A0%95/">결혼과가정</a>의 언약적 결혼 이해와는 전제가 다르다. 다만 「가족에 속하지 않은 여성은 정책적으로 붕 뜬 존재」라는 지적은 교회 안 비혼 청년이 겪는 자리와 겹치고, 혈연 밖의 가족을 「우정」으로 부르자는 제안은 교회가 스스로를 가족이라 부를 때 무엇을 실제로 나누고 있는지 묻게 한다. → <a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%B2%B4/">공동체</a></p>
+<h3>5. BIYN 성평등 약속문 — 규정보다 「함께 만드는 과정」</h3>
+<blockquote>
+<p>처음에는 사건을 해결하는 처리 규정이나 매뉴얼을 가지고 있는 것이 중요하다고 생각했어요. 그런데 만드는 과정에서 우리가 왜 이것을 만드는지 이야기하고, 함께 공표하고, 잘 작동이 되는지 논의하며 이 약속문이 우리에게 중요하다는 신호를 보내는 것이 중요한 것 같아요. (p.36)</p>
+<p>공동의 일로 만드는 과정이 반드시 수반되어야 해요. (p.37)</p>
+</blockquote>
+<p>약속문은 젠더를 넘어 「조직에서 명시적이지 않은 위계를 없애는 데 도움이 되었다」(p.35). 「룰」에 동그라미. 조재원의 공유 공간 규범론(8절)과 같은 결이다.</p>
+<h3>6. 김하나(서울소셜스탠다드) — 「표준」에 돌 던지기</h3>
+<p>통의동집·어쩌다집·소담소담·청운광산을 지은 공유주택 기획자. 스스로 꼽는 세 강점은 관찰·순발력·공감 능력(p.57, 모두 동그라미).</p>
+<p><strong>표준의 유효기간</strong>: 25평 기준은 「1972년 당시, 가족 규모가 평균 5인이었으니 다섯 명이 한 명당 5평씩」(p.63)에서 나왔다. 그래서 1~2인 소형 주택 연구를 시작했다.</p>
+<p><strong>신신/신벗 — 집 안의 준공적 공간</strong></p>
+<table>
+<thead>
+<tr>
+<th>용어</th>
+<th>뜻</th>
+<th>성격</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>신신 (신발 신는 곳)</td>
+<td>남을 초대할 수 있는 공간</td>
+<td>퍼블릭</td>
+</tr>
+<tr>
+<td>신벗 (신발 벗는 곳)</td>
+<td>나만의 공간</td>
+<td>프라이빗</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>공유주택을 계획하는 것은 집이라는 굉장히 프라이빗한 공간에 남을 초대할 수 있는 공간, 조금 공적인 공간을 개입시키는 일이에요. (p.66)</p>
+</blockquote>
+<p>이 쪽 여백에 📝 「교회 카페(?)」. 「제3의 공간」(동그라미)·준공적 공간이라는 정의를 교회 카페에 겹쳐 읽은 흔적이다. 청운광산은 주방을 없애고 1층에 채식·발효 카페 「큔」을 들였다(p.65) — 「집의 외주화」(p.70).</p>
+<p><strong>핵심 인사이트: 다양성은 저렴함에서 나온다</strong></p>
+<blockquote>
+<p>그런데 운영하면서 느낀 건 다 필요 없고 '지불 가능한 집'이 중요하다는 거였어요. … 다양한 것이 존재하기 위해서는 여지가 있어야 하고, 여지는 저렴한 것에서 나오는 것이었어요. (p.71)</p>
+</blockquote>
+<p>건축 실험을 세 채로 마친 뒤 도달한 결론이 설계가 아니라 임대료였다는 점이 뼈아프다. 그도 「공유주택이 정답이라고 생각하지는 않아요」(p.64)라고 말한다.</p>
+<h3>7. 주거는 사회문제다 — 땅·돈·이웃이라는 세 벽</h3>
+<blockquote>
+<p>청년을 위한 주택 지어 달라 하니까 정부에서는 '땅이 없어' 이러고, '땅 찾았어요' 하니까 '돈이 없어'라고 하는 거죠. (p.74)</p>
+</blockquote>
+<p>세 번째 벽은 이웃이다. 주민들은 어린이 도서관인 줄 알고 반대하지 않다가 「임대주택이라고 하는 순간 반대가 시작됐죠」(p.75).</p>
+<blockquote>
+<p>배제하고 배제당하는 것의 연속이네요. 이웃으로 한 동네에 살 수 있는 자격을 부여하고, 자격 미달된 사람들에게 낙인을 찍어요. (p.76)</p>
+<p>주거가 개인의 문제가 아니라 <strong>사회문제</strong>라는 공감대 형성이 필요해요. (p.76)</p>
+</blockquote>
+<p>「100년이 가는 주택을 지어주세요」라는 주문에 시공사가 왜 그러냐고 되물었다는 일화(p.73), 건축 법규 하나가 전국의 집을 장애인에게 편리하게 바꿨다는 「제도와 정책의 힘」(p.77)도 표시돼 있다. 김하나도 기본소득을 말한다 — 3절과 만나는 지점. → <a class="wl" href="../../t/%EC%9D%B4%EC%9B%83%EC%82%AC%EB%9E%91/">이웃사랑</a> · <a class="wl" href="../../t/%ED%99%98%EB%8C%80/">환대</a></p>
+<h3>8. 조재원(공일스튜디오) — 공유 공간은 「일상의 민주주의 훈련장」</h3>
+<p>코워킹 스페이스 카우앤독을 설계한 건축가. 대학 시절 공동 작업실의 기억에서 출발한다. 「창작자가 같이 공간을 쓰는 것은 외롭기 때문」(p.95), 그곳에는 자원을 나눠 쓰는 것을 넘어 「<strong>'공유'</strong>의 선순환 작용」(p.96)이 있었다.</p>
+<p><strong>1평 × 10 사고실험</strong> (p.97~98): 1평짜리 개인 방 10개는 독립은 보장하나 협소하고 비어 있는 시간이 길다. 「나만 쓴다는 배타적인 소유개념을 벗어나면 각자 5.5평의 '내 거주 공간'으로 인지되는 집을 갖게」 된다.</p>
+<blockquote>
+<p>공유 공간은 … 완전히 다른 종류의 공간경험, 새로운 종류의 상호작용이 쌓여가고, 그 결과로 거주자들이 고유한 가치와 문화를 함께 만들게 된다는 점이 사회적인 공간으로서 중요한 잠재력이에요. (p.98, 형광펜)</p>
+<p>공유 공간은 공유 구성원들의 차이들이 갈등을 일으키기도 하지만 동시에 다양한 요구들 사이에서 공동의 가치를 찾고, 규범을 만들고 자치의 시스템을 만들어가는, 시민사회가 확립되고 민주주의가 작동하는 일상의 훈련장이 될 수 있다는 기대를 해요. (p.103, 형광펜+밑줄)</p>
+</blockquote>
+<p>설계 원칙은 「일단 '개방한다'를 기준으로」(p.99)이고, 물리적으로는 열어 두되 「사용자들이 만들어가는 규칙과 규범으로 조절할 수 있는 여지」를 남긴다. 「공간이 개방적으로 조성되는 것은 시작에 불과」(p.102)하다. 커튼홀은 세 사무소 사이에 벽도 명문 규정도 없이 「이 공간만의 문화와 관습」이 경계를 만든다(p.104).</p>
+<p><strong>핵심 인사이트: 공유는 당위가 아니다</strong></p>
+<blockquote>
+<p>공유라는 개념이 보편타당한 가치, 당위성을 가진 전형적인 공간의 유형인 것처럼 말하는 것은 굉장히 위험한 것 같아요. … 누가, 왜, 공유 공간을 필요로 하는가가 중요해요. (p.103)</p>
+</blockquote>
+<p><a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%B2%B4/">공동체</a>를 말하는 자리에 그대로 옮길 수 있는 경고다. 공동체가 좋다는 당위에서 출발하면 「누가, 왜」가 빠진다.</p>
+<p>독립에 대한 재정의도 눈에 띈다. 북한산 전체를 「자기 집의 별채처럼」 쓰는 사람(p.106), 「'나의 도시'를 적극적으로 만들어가는 것이 독립」(p.107, 형광펜).</p>
+<p>노인 주거: 「노인 개인의 자유, 인권의 추구가 안전과 동시에 추구될 수 있는가」(p.108). 다인실은 「프라이버시가 존중받지 못하는 주거환경」(p.109). 아툴 가완디 『어떻게 죽을 것인가』를 읽으며 「노년의 삶은 '어떻게 살 것인가'보다 '어떻게 죽을 것인가' 관점에서 볼 때 제대로 보인다」고 말한다 — 의료 현장의 요양·임종 돌봄과 바로 닿는 대목.</p>
+<h3>9. 정수현(앤스페이스) — 소유자 중심에서 사용자 중심으로</h3>
+<p>한동대 시절 모임 공간을 찾던 경험이 출발점이다.</p>
+<blockquote>
+<p>저처럼 크리스천들은 봉사를 다니는 가까운 복지관이나 교회를 빌려 공간을 사용했는데 같은 종교인이 아닌 좀 더 다양한 사람들을 초대할 때 한계가 있다는 걸 알았어요. (p.122)</p>
+</blockquote>
+<p>교회 공간이 「우리끼리」에게는 넉넉하고 바깥 사람에게는 문턱이라는 관찰이다. 6절의 「교회 카페(?)」 메모와 짝을 이룬다.</p>
+<p>대방동 무중력지대에서는 「'너의 시도를 환영해' 환대의 문화가 흐르니까 사람들이 그 공간을 마음껏 누렸」고 「나름의 작은 유토피아를 경험」했다(p.125). → <a class="wl" href="../../t/%ED%99%98%EB%8C%80/">환대</a></p>
+<table>
+<thead>
+<tr>
+<th>개념</th>
+<th>내용</th>
+<th>쪽</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>공간 오퍼레이터</td>
+<td>기획자라기보다 운영자와 건물주를 잇는 코디네이터</td>
+<td>p.126</td>
+</tr>
+<tr>
+<td>좋은 공간 기획</td>
+<td>「운영을 어떻게 하겠다는 계획이 전제가 된 공간」</td>
+<td>p.127</td>
+</tr>
+<tr>
+<td>커먼즈 방식 운영</td>
+<td>sharing(공용)을 넘어 함께 관리하는 communing</td>
+<td>p.130</td>
+</tr>
+<tr>
+<td>청년 리츠</td>
+<td>빈 집·상가를 리츠가 매입, 청년이 주식을 갖고 다음 청년에게 넘김</td>
+<td>p.132</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 인사이트: 임차인 경험만으로는 부족하다</strong></p>
+<blockquote>
+<p>저는 거의 대부분의 청년들이 항상 '임차인' 입장에서의 경험에서만 정책 제안을 하기도 하는데 '자산 관리자' 입장이 되어보는 것도 정말 중요한 경험이라고 생각해요. (p.133)</p>
+</blockquote>
+<p>지분 2%의 소액 주주로서 「건물주들이 책임져야 하는 것들이 뭔지 전후 맥락을 다 경험」했다는 말이 근거다. 그 위에서 「'소유자' 중심에서 '사용자' 중심으로」(p.133, 137)를 말한다.</p>
+<h3>10. 일하는 여성 · 조직과 리더</h3>
+<ul>
+<li>김하나: 일과 삶이 구분되지 않는 타입, 「집은 일터에서 5분 거리」(p.59). 원동력은 「운」과 주변의 지지(p.82). 「어떤 사람이 '되는' 것을 목표로 하기보다 … 하고싶은 일을 책임감 있게 해내는 것」(p.85). 건축계 수치 — 대표 건축가 12인 중 여성 0명(p.79).</li>
+<li>조재원: 「공평한 기회만 주어지면 보호와 육성 없이도 여성은 알아서 잘 성장해요」(p.112). 작은 부분에서 출발하는 학생들의 작업 방식을 두고 「나는 왜 … '다르다'라고 생각하지 않고 '틀렸다'고 생각했을까」(p.113)라는 자기 성찰. 「혼자는 좋은 것을 못 만들어요」(p.117).</li>
+<li>정수현: 리더의 조건 두 가지 — 가치에 대한 신념, 그리고 현실화 역량과 조직을 돌보는 힘(p.138). 「<strong>미션과 비전</strong>」에 동그라미.</li>
+</ul>
+<blockquote>
+<p>"내가 20대, 30대 때 이 일을 했어"라고 자신의 언어로 이야기할 수 있는 사람이 되면 좋겠어요. … 최소 3년 이상은 일할 생각으로 함께하면 좋겠다고 말해요. (p.139)</p>
+<p>사용자 중심적이고 소프트한 것들이 사랑받고, 작은 의사결정이 존중받으려면 여성 플레이어들이 정말 많이 들어와 활동해야 한다고 생각해요. (p.141)</p>
+</blockquote>
+<p>「10년 내로 … 리더를 10인 이상 배출」(p.139)이라는 목표는 <a class="wl" href="../../t/%EB%A6%AC%EB%8D%94%EC%8B%AD/">리더십</a> 양성을 사업 성과와 같은 무게로 둔다는 뜻이다. → <a class="wl" href="../../t/%EC%A7%81%EC%97%85%EC%86%8C%EB%AA%85/">직업소명</a> · <a class="wl" href="../../t/%EC%9D%BC%ED%84%B0%EC%8B%A0%ED%95%99/">일터신학</a></p>
+<h3>11. 네 사람을 꿰는 낱말 — 「선택」</h3>
+<p>추천사(안연정)가 정리한다.</p>
+<blockquote>
+<p>네 개의 레퍼런스에서 공통적으로 '선택'에 대해 이야기하고 있고, 이 '선택'을 구체화하는 과정의 경험들에는 더 많은 '선택'하는 사람들의 이야기가 연결되어 있기 때문입니다. (p.147)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>인터뷰이</th>
+<th>넓히려는 선택지</th>
+<th>수단</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>백희원</td>
+<td>노동·가족 형태</td>
+<td>기본소득, 생활동반자법</td>
+</tr>
+<tr>
+<td>김하나</td>
+<td>집의 형태·용도</td>
+<td>공유주택, 토지임대부 사회주택</td>
+</tr>
+<tr>
+<td>조재원</td>
+<td>혼자/함께의 방식</td>
+<td>개방을 기준으로 한 설계, 자치 규범</td>
+</tr>
+<tr>
+<td>정수현</td>
+<td>공간 접근과 소유</td>
+<td>공유 플랫폼, 청년 리츠</td>
+</tr>
+</tbody>
+</table>
+<p>김하나의 말로는 「자기 결정권이 없는 사회에서 내가 스스로 선택할 수 있는 길이 많아지는 방향」(p.61)이다. 인터뷰어는 「기본소득과 생활동반자법은 삶에 선택지를 더해주는 일임과 동시에 바닥으로 떨어지지 않게 해주는 정책」(p.53)이라고 받아 적는다.</p>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<p><strong>적용</strong>
+- <strong>멘토링·세대 전수</strong>: 후배에게 「내가 걸은 길」을 답으로 주지 않고 참조 사례로 내놓는다. 정답보다 맥락을 묻는 대화. 「듣는 것은 속도를 늦추고 멈출 때에만 가능하다」.
+- <strong>교회·선교단체 공간</strong>: 신신/신벗과 「제3의 공간」 틀로 교회 카페·모임 공간을 다시 본다. 믿지 않는 사람을 초대할 때 문턱이 되는 것은 무엇인가(p.122).
+- <strong>공동체 운영</strong>: 규정을 내려 주는 것보다 「왜 만드는지 이야기하고 함께 공표하는」 과정(p.36). 공유는 당위가 아니라 「누가, 왜」에서 출발(p.103).
+- <strong>의료 현장</strong>: 요양시설 다인실과 프라이버시, 안전과 자유의 동시 추구(p.108~109).
+- <strong>조직 리더십</strong>: 「10년에 리더 10인」처럼 사람 길러내기를 명시 목표로 두기.</p>
+<p><strong>미해결 질문</strong>
+- 「자기결정권」과 「선택」을 최상위 가치로 두는 이 책의 전제를 <a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a>·<a class="wl" href="../../t/%EC%9E%90%EC%9C%A0/">자유</a>의 언어로는 어떻게 받아야 하는가. 선택지를 넓히는 일과 부르심에 응답하는 일은 어디서 만나고 어디서 갈라지는가.
+- 「우정이 가족 관계를 표현하는 데 적절한 단어」라는 제안 앞에서, 교회가 말하는 「영적 가족」은 비혼 청년에게 실제로 무엇을 내주고 있는가.
+- 「롤모델이 존재할 수 없는 시대」라면 제자도의 「본받음」은 무엇을 본받는 것인가 — 길인가, 태도인가.
+- 「다양성은 저렴함에서 나온다」는 통찰은 교회 공간·선교 재정에 어떻게 옮겨지는가.</p>
+<hr />
+<blockquote>
+<p>📖 전사 원문(줄이지 않은 표시 구절 전체): <span class="wl-dead" title="위키 내부 링크">롤모델보다레퍼런스1_한선회박지민_전사</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#domain/사회</span><span>#discipline/청년</span><span>#주거</span><span>#공유공간</span><span>#인터뷰집</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
