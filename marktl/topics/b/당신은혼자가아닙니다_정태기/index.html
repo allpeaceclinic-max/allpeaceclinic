@@ -1,0 +1,292 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>당신은 혼자가 아닙니다 — 정태기 (상담과 치유) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">상담·치유·가정</span><span class="author">정태기</span><span class="date">2026-10-11</span></div>
+  <h1 class="note-title">당신은 혼자가 아닙니다 — 정태기 (상담과 치유)</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/%EB%8B%B9%EC%8B%A0%EC%9D%80%ED%98%BC%EC%9E%90%EA%B0%80%EC%95%84%EB%8B%99%EB%8B%88%EB%8B%A4_%EC%A0%95%ED%83%9C%EA%B8%B0/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<blockquote>
+<p>한국 목회상담 1세대 <span class="wl-dead" title="위키 내부 링크">정태기</span>의 짧은 글 34편 모음(<em>You're Not Alone</em>). 표지는 「위기상담 전문가 정태기 교수가 띄우는 생명의 언어」라고 소개한다. 편마다 이야기 하나를 들려주고 한 문장으로 맺는데, 밑줄은 거의 모두 그 <strong>이야기</strong>와 <strong>맺는 문장</strong>에 그어졌다. 📷 표시 전사 기반 독서 노트이며, 2011년 12월 27일 뒤 면지에 적은 한 쪽 메모를 함께 반영했다.</p>
+</blockquote>
+<hr />
+<h2>요약 — 주제별 상세 정리</h2>
+<h3>1. 표제 — 위로받은 사람이 위로하러 간다</h3>
+<p>책 제목은 두 번 말해진다. 먼저 예수가 우리에게 「너는 혼자가 아니다. 너의 아픔을 아는 내가 너와 함께 있다」고 하고, 그 음성을 들은 우리가 다른 사람에게 가서 「그분의 사랑으로 치유받은 내가 당신과 함께 있습니다」라고 한다(표지 문구). 치유가 받는 데서 끝나지 않고 건네는 데까지 간다는 구조가 책 전체의 틀이다. 목차에도 「외로움의 치유자」「'나홀로 병'에 걸린 사람들에게」「치유하러 오신 예수님」이 나란히 있다.</p>
+<h3>2. 핵심 인사이트: 사랑은 감정이 아니라 생명을 살리는 힘이다</h3>
+<p>첫 글 「사랑의 기적」은 저자가 켄터키 루이빌에서 공부할 때 본 사례다. 부모의 이혼으로 여섯 살에 양자로 간 아이의 이야기다.</p>
+<blockquote>
+<p>「아이는 12살 때부터 가슴에 무기를 품고 다녔다.」(p.13)</p>
+</blockquote>
+<p>원한은 스물두 살에 위의 병으로 나타났고 수술은 세 번째 입원까지 이어졌다(p.13). 병원은 수술이 아니라 상담이 필요하다고 보았고, 어머니를 찾아 만나게 했다.</p>
+<blockquote>
+<p>「그러나 그의 어머니는 아들에게 용서를 빌면서 하염없이 울었다.」(p.13)</p>
+<p>「사흘 만에 아들은 어머니의 가슴에 얼굴을 묻고 울기 시작했다.」(p.13)</p>
+</blockquote>
+<p>같은 논지가 「가족과의 화해」의 홀트 이야기에서 되풀이된다.</p>
+<blockquote>
+<p>「그는 고칠 가능성이 있는 아이들은 병원에 입원을 시키고, 가망이 없다고 여겨지는 아이들은 자신이 직접 데리고 살았다.」(p.84)</p>
+<p>「그런데 결과는 의외였다. 병원에 입원한 대다수의 아이들이 사망한 데 반해 그가 데리고 산 아이들은 오히려 건강해지기 시작한 것이다.」(p.84)</p>
+</blockquote>
+<p>두 이야기 모두 의학의 자리에서 벌어진다. 수술로 낫지 않은 위, 병원에서 죽은 아이들. <a class="wl" href="../../b/%EC%95%84%ED%94%94%EC%83%81%EB%8B%B4%EC%B9%98%EC%9C%A0_%EC%A0%95%ED%83%9C%EA%B8%B0/">아픔상담치유_정태기</a>가 논문으로 말한 「의학도 목회도 부분 치유」를 여기서는 사례로 보여 준다. <a class="wl" href="../../t/%EC%82%AC%EB%9E%91/">사랑</a> <a class="wl" href="../../t/%EC%9A%A9%EC%84%9C/">용서</a></p>
+<blockquote>
+<p>「인간은 자기를 이해해 주고 사랑해 주는 사람과 만나게 될 때 생명의 활기를 느낀다.」(p.17)</p>
+<p>「사랑하는 사람들과의 만남은 소중한 재산이다.」(p.17)</p>
+</blockquote>
+<h3>3. 한 사람의 인정 — 틸리히의 카드</h3>
+<p>「겨울이 오기 전에」에는 <span class="wl-dead" title="위키 내부 링크">폴틸리히</span>의 일화가 나온다. 독일에서 추방되어 유니온 신학교에 온 그는 독일식 발음 때문에 수업마다 학생들의 웃음을 샀다.</p>
+<blockquote>
+<p>「이것 때문에 틸리히는 의기소침해졌다. 결국 그는 마음의 병을 얻게 되었다.」(p.97)</p>
+</blockquote>
+<p>그러다 집 문앞에서 카드 한 장을 발견한다.</p>
+<blockquote>
+<p>「사랑하는 선생님, 우리는 모두 선생님을 사랑합니다. 우리는 모두 당신을 존경합니다. 우리가 수업시간에 웃는 것은 다만 선생님의 발음이 낯설어서 웃는 것뿐입니다. … 힘을 내십시오.」(p.97)</p>
+<p>「한 사람의 인정과 사랑의 관심이 이렇게 놀라운 생명력을 주는데 하물며 죄인된 우리에게 예수 그리스도가 오심은 얼마나 더 큰 역사인가?」(p.98)</p>
+</blockquote>
+<p>저자는 「이 내용은 틸리히의 유명한 책에서 핵심이 된다」(p.98)고 덧붙인다. 면지 메모에는 「폴 틸리히 - 독일식 영어 발음 1m 85cm」라고 적혀 있다. 거구의 석학도 카드 한 장에 울었다는 대목이 남은 것이다.</p>
+<h3>4. 마음을 그리는 다섯 가지 그림</h3>
+<p>이 책은 마음을 개념이 아니라 그림으로 말한다. 밑줄 친 대목을 모으면 다음과 같다.</p>
+<table>
+<thead>
+<tr>
+<th>그림</th>
+<th>뜻</th>
+<th>원문</th>
+<th>쪽</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>틀</td>
+<td>성장하며 굳어지는 반응 방식</td>
+<td>「그 마음의 틀이 너무 굳어지면 자신을 해치고 다른 사람까지 해치게 된다.」</td>
+<td>p.106</td>
+</tr>
+<tr>
+<td>그릇</td>
+<td>자아상의 크기</td>
+<td>「잔소리는 아이들이 지니고 있는 자아상의 그릇을 위축시키는 작용을 한다.」</td>
+<td>p.39</td>
+</tr>
+<tr>
+<td>사닥다리</td>
+<td>부모 사이의 관계</td>
+<td>「아이들은 부모 사이에 맺어진 사닥다리를 타고 자란다.」</td>
+<td>p.155</td>
+</tr>
+<tr>
+<td>밭의 바위</td>
+<td>드러나지 않는 상처</td>
+<td>「상처받아 세상을 왜곡되게 바라보는 마음을 '밭고랑에 바위가 묻혀 있는 마음'」</td>
+<td>p.166</td>
+</tr>
+<tr>
+<td>찰흙</td>
+<td>빚는 대로 굳는 아이의 마음</td>
+<td>「찰흙 덩어리는 마침내 내가 만든 형체 그대로 굳어 있었습니다.」</td>
+<td>p.200</td>
+</tr>
+</tbody>
+</table>
+<p>「마음의 틀」은 <a class="wl" href="../../b/%EB%82%B4%EB%A9%B4%EC%84%B8%EA%B3%84%EC%9D%98%EC%B9%98%EC%9C%A02_%EC%A0%95%ED%83%9C%EA%B8%B0/">내면세계의치유2_정태기</a>·<a class="wl" href="../../b/%EC%9C%84%EA%B8%B0%EB%AA%A9%ED%9A%8C%EC%83%81%EB%8B%B4_%EC%A0%95%ED%83%9C%EA%B8%B0/">위기목회상담_정태기</a>의 「결혼의 틀」과 같은 말의 넓은 판이다. 밭의 바위는 <a class="wl" href="../../b/%EC%88%A8%EA%B2%A8%EC%A7%84%EC%83%81%EC%B2%98%EC%9D%98%EC%B9%98%EC%9C%A0_%EC%A0%95%ED%83%9C%EA%B8%B0/">숨겨진상처의치유_정태기</a>가 씨 뿌리는 자 비유로 풀어 간 네 토양의 한 장면이다. 밭을 일굴 때 「제일 먼저 땅 속에 있는 돌들을 골라내는 것을 보았었다」(p.166)는 저자의 기억이 치유의 순서를 말한다. <a class="wl" href="../../t/%EB%82%B4%EB%A9%B4%EC%B9%98%EC%9C%A0/">내면치유</a></p>
+<p>「마음의 자아상」에서는 재미동포 강동만 선생의 사냥개 이야기가 나온다.</p>
+<blockquote>
+<p>「개가 호랑이를 몰아붙이는 것은 기적이다.」(p.148)</p>
+</blockquote>
+<p>주인이 뒤에 있다고 믿는 개는 호랑이 앞에서도 물러서지 않는다는 것이다. 면지 메모는 「호랑이 잡는 개」로 줄여 적었다. <a class="wl" href="../../t/%EC%9E%90%EC%A1%B4%EA%B0%90/">자존감</a></p>
+<h3>5. 마음이 청결한 사람 = 마음이 하나인 사람</h3>
+<p>「내 마음은…」에서 저자는 신학교 시절 마 5:8 한 절로 소논문을 써야 했던 일을 들려주고, 그 구절을 이렇게 푼다.</p>
+<blockquote>
+<p>「'마음이 하나인 사람은 복이 있어서 저와 하나님이 하나가 된다'는 것이다.」(p.137)</p>
+<p>「그러니까 마음이 하나가 된다는 것은 마음이 비워졌다는 것을 의미한다. 마음에 자리가 비어 있어야 하나님과 하나가 될 수 있는 것이다.」(p.138)</p>
+</blockquote>
+<p>청결을 도덕적 깨끗함보다 <strong>갈라지지 않음</strong>과 <strong>비워짐</strong>으로 읽는다. 면지 메모도 「마음이 하나인 사람은 (청결한 사람은). 복이 있나니. / 마음의 비워짐」으로 옮겨 적었다. 이어서 베데스다의 병자에게 하신 물음을 의지의 문제로 본다. <span class="wl-dead" title="위키 내부 링크">마5</span> <span class="wl-dead" title="위키 내부 링크">요5</span></p>
+<blockquote>
+<p>「일어나서 걸어가고 싶은 의지와 마냥 주저앉아 있고 싶은 의지이다.」(p.139)</p>
+</blockquote>
+<h3>6. 핵심 인사이트: 자녀에게 줄 가장 큰 유산은 부부의 사랑이다</h3>
+<p>「위대한 유산」의 밑줄은 한 줄로 이어진다. 독자는 「플라톤은」에 동그라미를 쳤다.</p>
+<blockquote>
+<p>「<strong>플라톤은</strong> 한 가정의 두 기둥을 남편과 아내로 비유했다. … 그 사닥다리가 사랑의 끈으로 묶여져 있으면 아이들도 안정감 있게 자라나고, 사닥다리가 흔들리면 아이들도 불안정하게 성장한다는 것이다.」(p.155)</p>
+<p>「한 역설적인 교육학자는 아이들을 큰 인물로 키우고 싶거든 아이들에게 신경을 쓰지 말라고 말했다. 부부가 서로 사랑하면서 살면 아이들이 저절로 건강하게 자란다는 점을 강조한 것이다.」(p.156)</p>
+<p>「부부가 서로 사랑하는 모습을 보여주는 것만큼 자식들에게 물려줄 귀한 유산은 없다.」(p.158)</p>
+</blockquote>
+<p>면지 메모는 이것을 「아이들에게 신경쓰지 마라. 부부가 서로 사랑 ⇒ 귀한 유산」으로 묶었다. <a class="wl" href="../../b/%EC%9C%84%EA%B8%B0%EB%AA%A9%ED%9A%8C%EC%83%81%EB%8B%B4_%EC%A0%95%ED%83%9C%EA%B8%B0/">위기목회상담_정태기</a>의 「자식사랑의 뿌리는 부부사랑」과 같은 명제다. <a class="wl" href="../../t/%EB%B6%80%EB%B6%80%EA%B4%80%EA%B3%84/">부부관계</a></p>
+<p>부부 사랑이 왜 식는지는 「사랑은 파도를 넘어」가 깨 터는 일로 설명한다.</p>
+<blockquote>
+<p>「애정기에 사랑의 깨를 다 쏟아버리고 만다. … 베어 낸 깻단을 가을볕에 잘 말려서 막대기로 툭툭 털어내면 깨가 한꺼번에 다 쏟아져 나온다.」(p.177)</p>
+</blockquote>
+<p>같은 비유가 <a class="wl" href="../../b/%EC%9C%84%EA%B8%B0%EB%AA%A9%ED%9A%8C%EC%83%81%EB%8B%B4_%EC%A0%95%ED%83%9C%EA%B8%B0/">위기목회상담_정태기</a> p.183에도 있는데 강조점이 다르다. 거기서는 깨가 벌어지려면 오래 말려야 한다는 쪽이고, 여기서는 한꺼번에 다 쏟아져 버린다는 쪽이다.</p>
+<h3>7. 아이의 마음은 찰흙이다 — 굳기 전에</h3>
+<p>「삶의 귀한 유산」은 잠 22:6과 속담을 나란히 놓는다. <span class="wl-dead" title="위키 내부 링크">잠22</span></p>
+<blockquote>
+<p>「마땅히 행할 길을 가르치라 그리하면 늙어서도 그것을 떠나지 아니하리라」(p.199)</p>
+</blockquote>
+<p>그리고 어느 초등학교 선생의 글을 통째로 인용한다. 독자는 이 인용문 전체에 세로줄을 그었다.</p>
+<blockquote>
+<p>「나는 살아 있는 찰흙 덩어리를 가져다 매일매일 부드럽게 다듬어 가며 나의 힘과 기술로 아이들의 마음을 만들었습니다. 여러 해가 지나고 다시 살펴본 그들의 모습은 내가 바라던 형상이었습니다. 그들은 아직도 옛날의 모습을 지녔으나 더 이상의 모양은 빚을 수 없었습니다.」(p.200)</p>
+</blockquote>
+<p>빚는 말의 반대편에 잔소리가 있다.</p>
+<blockquote>
+<p>「이런 잔소리는 아이들을 '눈치나 슬슬 보는 아이'로 만들어 버린다.」(p.39)</p>
+</blockquote>
+<p>「네 가지 언어」 장의 한 대목인데, 촬영된 면은 이 한 쪽뿐이라 네 가지가 무엇인지는 전사로 확인되지 않는다. <a class="wl" href="../../t/%EC%9E%90%EB%85%80%EC%96%91%EC%9C%A1/">자녀양육</a></p>
+<h3>8. 고향 — 마음에 돌아갈 곳이 있는 사람</h3>
+<blockquote>
+<p>「마음에 고향이 살아 있는 사람은 힘을 잃지 않는다.」(p.21)</p>
+</blockquote>
+<p>「해가 지면 돌아가는 집」은 <a class="wl" href="../../b/%EB%82%B4%EB%A9%B4%EC%84%B8%EA%B3%84%EC%9D%98%EC%B9%98%EC%9C%A02_%EC%A0%95%ED%83%9C%EA%B8%B0/">내면세계의치유2_정태기</a>의 마지막 장과 제목이 같다. 저자에게 그 고향은 구체적인 지명이다.</p>
+<blockquote>
+<p>「증도면 대초리가 유년시절을 보냈던 나의 고향이다.」(p.201)</p>
+</blockquote>
+<p>면지 메모에도 「증도면 대초리」가 한 줄로 적혀 있다.</p>
+<h3>9. 고난 — 자기를 발견하는 자리</h3>
+<p>마지막 글 「고난에서 얻은 생명」은 탕자의 비유를 읽는다. <span class="wl-dead" title="위키 내부 링크">눅15</span></p>
+<blockquote>
+<p>「자기 발견은 고난을 통해서 온다」(p.234)</p>
+</blockquote>
+<p>📝 여백 메모: 「→ test를 받을 때 알 수 있다.」</p>
+<p>저자는 예를 셋 든다.</p>
+<blockquote>
+<p>「사도 바울은 감옥에서 빌립보서를 썼고, 존 번연도 감옥에서 〈천로역정〉을 썼으며, 밀톤 역시 눈이 먼 후에야 영적인 눈을 떠서 〈실락원〉을 쓰게 되었다.」(p.236)</p>
+</blockquote>
+<p>「절정의 경험」에서는 <span class="wl-dead" title="위키 내부 링크">알버트슈바이처</span>의 어린 시절이 나온다. 싸움에서 이긴 순간 밑에 깔린 가난한 집 아이가 한 말이다.</p>
+<blockquote>
+<p>「나도 너처럼 고기를 먹을 수 있다면 너를 이길 수 있어.」(p.214)</p>
+</blockquote>
+<p>같은 쪽에서 저자가 존경한 이국선 목사에도 밑줄이 있다. 둘 다 삶의 방향이 바뀐 계기로 소개된다. <a class="wl" href="../../t/%EA%B3%A0%EB%82%9C/">고난</a> <span class="wl-dead" title="위키 내부 링크">존밀턴</span></p>
+<hr />
+<h2>뒤 면지 메모 (2011. 12. 27 아침 출근길 지하철 안에서)</h2>
+<p>면지 한 쪽에 책의 이야기 열세 가지를 순서대로 적었다. 홀트 아동복지회 · 폴 틸리히 · 마음의 틀 · 마음이 하나인 사람 · 강동만 선생의 사냥개 · 플라톤의 사닥다리 · 부부 사랑이 귀한 유산 · 밭고랑의 바위 · 애정기=허니문=깨가 쏟아지는 시기 · 찰흙 덩어리 · 증도면 대초리 · 슈바이처 · 감옥의 바울과 번연, 눈먼 밀턴. 논지보다 <strong>예화의 색인</strong>에 가깝다. <a class="wl" href="../../b/%EB%82%B4%EB%A9%B4%EC%84%B8%EA%B3%84%EC%9D%98%EC%B9%98%EC%9C%A02_%EC%A0%95%ED%83%9C%EA%B8%B0/">내면세계의치유2_정태기</a>의 면지 메모가 바로 다음 날(12월 28일)이다.</p>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<ul>
+<li><strong>진료실</strong>: 위 절제 청년과 홀트의 아이들은 둘 다 의학적 처치가 닿지 않은 자리를 보여 준다. 몸의 증상 뒤에 있는 관계의 상처를 묻는 일이 진료의 일부가 될 수 있다.</li>
+<li><strong>가정사역·결혼예비 강의</strong>: 사닥다리(p.155), 「아이들에게 신경을 쓰지 말라」(p.156), 깨 터는 비유(p.177)는 예화로 바로 쓸 수 있다. <a class="wl" href="../../b/%EC%9C%84%EA%B8%B0%EB%AA%A9%ED%9A%8C%EC%83%81%EB%8B%B4_%EC%A0%95%ED%83%9C%EA%B8%B0/">위기목회상담_정태기</a>의 만남의 발전 단계와 묶으면 한 흐름이 된다.</li>
+<li><strong>격려</strong>: 틸리히의 카드(p.97)는 학생이 선생에게 보낸 것이다. 인정은 위에서 아래로만 흐르지 않는다.</li>
+<li>미해결: 「마음이 청결한」을 「마음이 하나인」으로 읽는 풀이(p.137)는 저자가 「아람어로」라고만 했다. 원어 근거는 따로 확인이 필요하다.</li>
+<li>미해결: 「틸리히의 유명한 책」(p.98)이 어느 책인지 본문은 밝히지 않는다.</li>
+<li>미해결: 플라톤의 「두 기둥」(p.155)과 「역설적인 교육학자」(p.156)의 출처도 책에 없다.</li>
+<li>미해결: 일화 다수가 설교 예화처럼 출처 없이 전해진다. 강의에 쓸 때는 「정태기가 전하는 이야기」로 소개하는 편이 안전하다.</li>
+</ul>
+<hr />
+<blockquote>
+<p>📖 전사 원문(줄이지 않은 표시 구절 전체): <span class="wl-dead" title="위키 내부 링크">당신은혼자가아닙니다_정태기_전사</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#discipline/목회상담</span><span>#domain/상담</span><span>#내면치유</span><span>#사랑</span><span>#마음의틀</span><span>#자아상</span><span>#부부관계</span><span>#자녀양육</span><span>#고난</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
