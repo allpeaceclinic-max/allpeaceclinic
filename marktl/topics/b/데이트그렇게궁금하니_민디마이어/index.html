@@ -1,0 +1,391 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>데이트, 그렇게 궁금하니? — 민디 마이어 (IVP) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">상담·치유·가정</span><span class="author">민디마이어</span><span class="date">2026-10-11</span></div>
+  <h1 class="note-title">데이트, 그렇게 궁금하니? — 민디 마이어 (IVP)</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/%EB%8D%B0%EC%9D%B4%ED%8A%B8%EA%B7%B8%EB%A0%87%EA%B2%8C%EA%B6%81%EA%B8%88%ED%95%98%EB%8B%88_%EB%AF%BC%EB%94%94%EB%A7%88%EC%9D%B4%EC%96%B4/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<blockquote>
+<p>부제 「성과 사랑에 관한 가장 흔한 질문과 솔직한 답변」. 캠퍼스 사역 현장에서 받은 질문에 하나씩 답하는 문답집으로, 1부 「성」 18문항과 2부(데이트·결혼)로 이루어진다. 이지혜 옮김. 📷 표시 전사 기반 독서 노트.</p>
+</blockquote>
+<hr />
+<h2>요약 — 주제별 상세 정리</h2>
+<h3>1. 성은 왜 있는가 — 일곱 가지 목적</h3>
+<p>책은 금지에서 출발하지 않는다. 「사람은 누구나 <strong>관계를 갈망</strong>한다」(p.14)에서 시작하고, 그 갈망과 성욕을 하나님이 주셨다고 먼저 말한다. 그다음 성의 목적을 일곱으로 센다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>목적</th>
+<th>책의 문장</th>
+<th>쪽</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>쾌감</td>
+<td>「아마도 사람들은 섹스의 목적으로 쾌감을 제일 먼저 떠올릴 것이다.」</td>
+<td>15</td>
+</tr>
+<tr>
+<td>2</td>
+<td>긴밀한 유대</td>
+<td>「하나님은 성교가 두 사람을 하나로 묶는 관계의 강력 접착제가 되도록 계획하셨다.」</td>
+<td>16</td>
+</tr>
+<tr>
+<td>3</td>
+<td>새 생명</td>
+<td>「섹스에는 새 생명을 탄생시키는 목적도 있다.」</td>
+<td>17</td>
+</tr>
+<tr>
+<td>4</td>
+<td>소통</td>
+<td>「네 번째 목적은 소통이다.」</td>
+<td>17</td>
+</tr>
+<tr>
+<td>5</td>
+<td>타자 중심성으로의 변화</td>
+<td>「성적인 사랑을 나누며 우리는 상호 복종을 연습하게 된다.」</td>
+<td>18</td>
+</tr>
+<tr>
+<td>6</td>
+<td>감정적인 해소</td>
+<td>「그 동안 쌓인 긴장감이 해소된다.」</td>
+<td>18</td>
+</tr>
+<tr>
+<td>7</td>
+<td>하나님을 향한 열정</td>
+<td>「섹스는 하나님을 향한 우리의 궁극적인 갈망을 표현하는 영적인 은유다.」(리사 맥민, 『성, 거룩한 갈망』)</td>
+<td>18</td>
+</tr>
+</tbody>
+</table>
+<p>📝 p.19 위 여백에 이 일곱을 손으로 다시 적어 두었다 — 즐거움(쾌락) / 긴밀한 유대(친밀감) / 생명(생육, 번성) / 소통 / 변화(섬김) / 감정해소 / 열정. 강의 뼈대로 그대로 쓸 수 있는 목록이다.</p>
+<p>다섯 번째 목적이 눈에 띈다. 성을 「자기 중심성에서 타자 중심성으로 변화되는 것」(p.18)으로 보면, 뒤에 나오는 포르노·자위 비판(4절)과 상호 복종(9절)이 한 줄로 이어진다.</p>
+<h3>2. 「어디까지 허용되나요?」 — 네 가지 기준과 구혼 과정</h3>
+<p>저자는 짧은 답을 질문으로 돌려준다. 「당신이라면 이 미래의 배우자가 데이트 상대와 어느 선까지 가기를 바라는가?」(p.35) 대부분은 「물론 아무것도 안 하기를 바라죠!」라고 답한다.</p>
+<p>긴 답은 네 가지 기준이다(p.38~39).</p>
+<ol>
+<li>같은 침대에서 밤을 보내지 마라.</li>
+<li>옷을 벗지 마라.</li>
+<li>여자라면 비키니 수영복, 남자라면 수영 팬츠로 가려지는 신체 부위는 만지지 마라.</li>
+<li>다른 사람 위에 눕지 마라.</li>
+</ol>
+<p>기준의 근거는 죄책감이 아니라 기쁨이다. 「하나님은 성적인 즐거움이 죄책감의 근원이 아니라 기쁨의 근원이 되기를 바라신다」(p.38). 그래서 「온몸이 달아오른 후 반복적으로 브레이크를 거는 습관은 해롭다」(p.38)고 본다.</p>
+<p>두 사람의 기준이 다르면 「더 엄격한 기준을 적용하는 것이 좋겠다」(p.34). 성 경험이 없어 불리할까 걱정하는 청년에게는 자기 통제력이 「결혼할 여성에게 깊은 신뢰감을 줄 것」(p.40)이라고 답한다.</p>
+<p>저자가 되찾고 싶어 하는 것은 <strong>구혼 과정(courtship)</strong> 이다. 「남녀가 결혼 가능성을 염두에 두고 서두르지 않고 여유 있게 깊은 우정을 형성해 가는 과정, 성적으로 깊이 들어가지 않고도 함께하는 시간을 즐기는 관계」(p.41). 📝 여백에 「courtship」이라고 적었다. 반대편에 있는 것이 「간헐적 동거 형태」(p.41)다.</p>
+<blockquote>
+<p>「뭔가를 도둑맞았다고 느끼지만, 사실은 우리가 도둑이었음을 깨닫는 것이다.」(p.44)</p>
+</blockquote>
+<h3>3. 핵심 인사이트: 결혼은 성적 유혹의 해결책이 아니다</h3>
+<p>통념은 「결혼하면 끝난다」이다. 저자는 세 번 부정한다.</p>
+<ul>
+<li>혼전 관계에 대해: 「그와 결혼하는 것이 성적인 죄에 대한 해결책이 아님을 깨닫기 시작했다」(p.49).</li>
+<li>포르노에 대해: 결혼하면 관심 밖이 될 거라는 기대에 「그런데 실은 그렇지가 않다」(p.63).</li>
+<li>유혹 일반에 대해: 「솔직히 말하자면, 답은 '아니오'다」(p.89).</li>
+</ul>
+<p>그래서 결혼 전 순결은 결혼 뒤와 끊어진 일이 아니다. 「결혼 전 순결을 지키는 것이 바로 결혼 생활에서 정절을 지키는 것과 동일한 종류의 영적인 훈련이라 할 수 있다」(p.91).</p>
+<p>선을 지키는 방법은 의지력보다 환경과 공동체다. 「강에 빠지기 싫거든 미끄러운 강둑에서 놀지 마라」(p.59~60). 📝 여백 메모는 「악은 모양이라도 버리라」. 통행 금지 시간을 정한 커플의 예(p.47)가 붙는다. 그리고 「사람들은 종종 순결 문제를 당사자의 책임으로만 돌리고, 신앙 공동체가 줄 수 있는 도움을 간과하는 경향이 있다」(p.59). <a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%B2%B4/">공동체</a>가 순결의 조건이라는 말이다.</p>
+<h3>4. 포르노그라피와 자위 — 관계에서 떼어 낸 성</h3>
+<p>두 문제를 한 논리로 다룬다. 성은 타인에게 나아가라고 주신 것인데, 둘 다 그것을 혼자만의 세계로 되돌린다.</p>
+<blockquote>
+<p>「하나님은 인간이 이기적인 나만의 세계에서 벗어나 타인과 소통하게 하기 위해서 성을 창조하셨다.」(p.64)</p>
+<p>「아마도 포르노그라피의 가장 큰 위험은 성관계의 연합을 배제하고 그것을 완전히 이기적인 행위로 만드는 것이리라.」(p.64)</p>
+</blockquote>
+<p>한 남편의 고백이 이를 드러낸다. 「아내는 쉽지가 않습니다. … 나만의 섹스 판타지 세계에서 저는 왕이 됩니다」(p.64). 벗어나는 길도 같은 방향이다. 「이 중독에서 벗어나려면 자신이 건설한 판타지 세계를 근본적으로 포기해야만 하는데, 현실에서 살아 있는 사람과 살아가려면 대단한 용기가 필요하다」(p.67). 처방은 금욕 기술이 아니라 관계다 — 「남성과 여성 모두와 건전한 관계를 맺는 것」(p.67), 그리고 진단은 「사람들은 종종 외로움과 고립감 때문에 포르노그라피를 찾는다」(p.67). <a class="wl" href="../../t/%EC%A4%91%EB%8F%85/">중독</a>을 고립의 문제로 읽는 관점과 맞닿는다.</p>
+<p>자위에 대해서는 단정하지 않는다. 정죄하는 견해와 관대한 견해를 나란히 소개한 뒤 자기 판단을 좁게 낸다. 「자위에 중독된 사람들 또는 자위 행위로 인해 진정한 관계를 맺지 못하는 사람들은 문제가 있는 것 같다」(p.74). 다만 「음욕을 품지 않고 자위 행위를 하기란 거의 불가능에 가깝다」(p.71), 「그러나 자위는 불충분한 대체물이다」(p.74). 책이 인용하는 편지글이 논지를 가장 잘 요약한다.</p>
+<blockquote>
+<p>「내가 보기에 자위 행위가 진짜 해로운 까닭은, 그것이 한 개인으로 하여금 자신에게서 벗어나 다른 사람 안에서 자기 성품을 교정하고 완성시킬 수 있는 기회를 박탈하여 다시금 그를 자아라는 감옥 속으로 돌려보내기 때문이네.」(p.71)</p>
+</blockquote>
+<p>배경 진단 하나: 「우리 사회의 딜레마는, 성에 눈뜨는 시기는 점점 빨라지는데 결혼 시기는 늦어진다는 데 있다」(p.69).</p>
+<h3>5. 죄책감·과거·용서 — 되돌릴 수 있는가</h3>
+<p><strong>죄책감은 기준이 아니다.</strong> 「섹스를 해도 전혀 죄책감이 없습니다」라는 질문에 저자는 양심도 고장 날 수 있다고 답한다. 교인 800명을 다 식사에 초대하지 못해 괴로워하는 목회자처럼 「때로 사람들은 잘못이 아닌 일에도 죄책감을 느낀다」(p.111). 그러므로 「죄책감 여부를 윤리적 선택의 지침으로 삼는 것은 잘못이다」(p.113). 거꾸로 깊은 수치심은 「성을 아름답게 창조하신 하나님의 본래 의도를 부각시킨다」(p.122).</p>
+<p><strong>선을 넘은 사람에게</strong>는 두 본문을 준다 — 요일 1:9(p.30)와 고후 5:17(p.50, p.209). 같은 구절에 두 번 밑줄을 그었다.</p>
+<p><strong>학대의 상처</strong>에 대해서는 값싼 위로를 피한다. 「성적 학대가 남긴 상처를 예수 그리스도가 치유하실 수 있다」고 하면서 곧바로 「거기에는 고통 속으로 걸어 들어가려는 의지와 힘겨운 작업이 뒤따를 것」(p.97)이라고 덧붙인다. 진지하게 교제 중이라면 그 경험을 나누라고 권한다(p.100).</p>
+<p><strong>상대의 과거</strong>를 듣는 쪽의 이야기도 있다. 「마이클은 소냐의 솔직함을 높이 평가하면서도, 실망한 기색을 감출 수 없었다」(p.207). 결론은 <a class="wl" href="../../t/%EC%9A%A9%EC%84%9C/">용서</a>가 양쪽을 푼다는 것이다. 「마이클이 소냐의 모습을 적나라하게 알고도 그녀를 완전히 용서할 때 소냐의 치유가 완성될 것이다」(p.210). 저자 자신도 남편의 과거 앞에서 「자세한 이야기를 캐묻거나 그의 과거를 들춰내지 않고 계속해서 용서의 태도를 견지하기가 힘들 때도 있었」다고 쓴다(p.134).</p>
+<h3>6. 몸·정체성·남녀 — 창세기 2~3장 읽기</h3>
+<p><strong>몸과 정체성은 떨어지지 않는다.</strong> 「일회성 만남과 엔조이 파트너는 우리가 몸에 하는 일이 우리 정체성과는 관계가 없다는 신념에 근거한다. 그러나 실제로 인간은 몸과 마음과 영혼이 연합된 존재다」(p.118). 근거 본문은 <span class="wl-dead" title="위키 내부 링크">고전6</span>이다.</p>
+<p><strong>정체성을 이성의 관심에 걸지 말라.</strong> 「남자들의 관심이란 금세 시들기 마련이란다. … 네 정체성을 걸 수 있을 만큼 좀더 든든한 관계를 찾아야 할 거야」(p.76). 반대편 질문(「여자들이 섹스 상대로만 보입니다」)에는 예수님이 사마리아 여인에게 세 가지 문화 장벽을 넘어 말을 거신 장면(p.85, <span class="wl-dead" title="위키 내부 링크">요4</span>)과 「젊은 여자에게는 온전히 깨끗함으로 자매에게 하듯 하라」(p.87, 딤전 5:1-2)를 준다.</p>
+<p><strong>「돕는 배필」의 두 단어</strong>(p.141, <span class="wl-dead" title="위키 내부 링크">창2</span>):</p>
+<table>
+<thead>
+<tr>
+<th>히브리어</th>
+<th>뜻</th>
+<th>책의 설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>에제르(ezer)</td>
+<td>도움, 돕는 사람</td>
+<td>구약에 21회. 하나님처럼 더 높은 위치의 도움 16회, 동등한 위치 5회</td>
+</tr>
+<tr>
+<td>네게드(neged)</td>
+<td>적절하고도 완벽한 보완</td>
+<td>「아담은 하와를 자신이 의지할 만한 동등한 파트너로 보았다」</td>
+</tr>
+</tbody>
+</table>
+<p><strong>창 3:16의 두 해석</strong>(p.145~146, <span class="wl-dead" title="위키 내부 링크">창3</span>): 「남편은 너를 다스릴 것이니라」를 하나님의 뜻(규범)으로 읽는 견해와, 죄가 퍼진 뒤 일어날 일을 말한 예언으로 읽는 견해. 저자는 동사가 명령형이 아니라 미완료 시제라는 점을 들어 둘째를 지지한다. 「너는 남편을 원하고」는 하와가 「하나님만이 채우실 수 있는 그 필요」를 남편에게서 채우려 한다는 뜻으로 푼다(p.144~145).</p>
+<p>균형도 잡는다. 「인간의 마음에는 사람들이 채울 수 있는 공간도 있는 것 같다. 하나님은 우리가 사람들 속에서 공동체로 살아가도록 하신다」(p.140).</p>
+<p><strong>동성애</strong>(p.103~107): 저자는 성향과 행위를 가른다. 「마음속 바람이나 유혹에는 책임을 질 필요가 없지만, 행동에는 책임이 뒤따른다」(p.105). 성경 본문 목록과 스탠튼 존스의 요인 설명, 스피처의 연구를 인용한다(이 연구에 대해서는 아래 미해결 질문 참조).</p>
+<h3>7. 데이트의 역사와 배우자 분별</h3>
+<p><strong>데이트는 최근의 발명이다.</strong> 「성경 시대와 대부분의 인류 역사 동안, 대세는 중매 결혼이었다」(p.150). 미국에서 사랑과 로맨스가 결혼의 중심이 된 것은 1800년대부터다(p.151). 그 반작용으로 조슈아 해리스의 『NO 데이팅』이 힘을 얻었고, 저자는 그 책이 「데이트 과정에 내재된 많은 결함들을 잘 조명해 냈다」(p.153)고 인정하되, 성경의 결혼 사례(창 24장, 삿 21장)를 그대로 가져올 수 없다는 점도 짚는다(p.154~155). 남는 것은 원리다 — 「인간의 최우선적인 소명은 예수 그리스도의 헌신된 제자가 되는 것」(p.155).</p>
+<p><strong>혼자 결정하지 말라.</strong> 「이십대 혹은 삼십대인 두 사람이 진공 상태에서 그처럼 중요한 결정을 내릴 수 있다고 생각하는 것 자체가 무리다」(p.157). 약혼 전까지 네 부류 중 적어도 세 부류의 허락을 받으라고 한다.</p>
+<p><strong>이 사람인가 — 분별 질문</strong>(p.174~178, 밑줄 그은 것만):</p>
+<table>
+<thead>
+<tr>
+<th>영역</th>
+<th>질문</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>신앙</td>
+<td>두 사람은 같은 신앙과 같은 수준의 헌신을 고백하는가?</td>
+</tr>
+<tr>
+<td>에너지</td>
+<td>함께하는 시간이 힘이 되는가, 더 지치게 만드는가?</td>
+</tr>
+<tr>
+<td>삶의 열매</td>
+<td>데이트를 시작한 이후 학업 성적이나 직업 수행 능력이 나아졌는가?</td>
+</tr>
+<tr>
+<td>주변의 눈</td>
+<td>신뢰하는 친구와 가족들에게 잘 어울린다는 평을 듣는가?</td>
+</tr>
+<tr>
+<td>자연스러움</td>
+<td>상대방과 함께 있을 때 자연스런 모습을 보일 수 있는가?</td>
+</tr>
+<tr>
+<td>변화 기대</td>
+<td>앞으로 달라질 가능성이 전혀 없다 해도 행복하게 살 수 있겠는가?</td>
+</tr>
+<tr>
+<td>성장</td>
+<td>당신이 직업적으로, 영적으로, 신체적으로 발전하는 데 관심을 가지고 적극 돕는가?</td>
+</tr>
+<tr>
+<td>가족</td>
+<td>상대방의 부모님과 가족들을 만나 보았는가?</td>
+</tr>
+<tr>
+<td>목표</td>
+<td>두 사람의 인생 목표가 비슷한가?</td>
+</tr>
+<tr>
+<td>갈등</td>
+<td>두 사람은 갈등을 잘 해결하는가?</td>
+</tr>
+<tr>
+<td>정직·신뢰</td>
+<td>솔직할 수 있는가? 떨어져 있어도 정절을 지키리라고 확신하는가?</td>
+</tr>
+<tr>
+<td>우정</td>
+<td>상대에게 좋은 동성 친구들이 있는가?</td>
+</tr>
+</tbody>
+</table>
+<p><strong>하나님의 뜻은 청사진이 아니다.</strong> 「하나님이 청사진 전체를 보이시는 일은 거의 없습니다. … 하나님의 뜻은 매일 펼쳐지는 두루마리에 훨씬 가깝습니다」(p.182). 그리고 성경이 이미 말한 것은 따로 구할 필요가 없다 — <span class="wl-dead" title="위키 내부 링크">고후6</span> 14절(p.174).</p>
+<p><strong>신앙이 다른 사람과의 교제.</strong> 저자는 금지보다 결과를 그린다. 평화를 위해 「신앙은 결혼이라는 가장 친밀한 관계에서는 배제되어야 마땅한 사적인 문제로 전락해 버린다」(p.186), 아이들은 「종교가 사람들을 편 가르는 것이라고 생각하게 된다」(p.187). 「'선교적 데이트'의 위험」(p.191)을 경고하고, 비그리스도인과 사귀고 있다면 「당신의 신앙 상태를 점검해 보라」(p.189)고 한다.</p>
+<h3>8. 헌신 — 동거, 서약, 세 가지 사랑</h3>
+<p><strong>동거의 통계</strong>(p.240~243). 1970년대에는 동거가 이혼의 해결책이 되리라 기대했으나 「실제 증거는 정반대다」(p.243). 책이 드는 수치 — 미국 동거 커플 1960년 50만 → 2000년 475만, 동거 커플의 우울증 발생 비율은 결혼한 부부의 <strong>3배</strong> 이상, 파트너에게 살해될 확률 9배.</p>
+<p><strong>왜 그런가.</strong> 「책임 회피라는 대안이 있는 한, 갈등 해결의 기술 또한 구체화되지 않는다. 그들에게 관계란 깨지기 쉽고, 실험적인 것에 불과하다」(p.244). 시승해 보고 사라는 논리에는 이렇게 답한다. 「사람은 차가 아니잖아. 나는 5년에 한 번씩 차를 바꾸거든」(p.244).</p>
+<p><strong>서약의 자리.</strong> 「서약은 두 사람을 <strong>헌신된</strong> 결혼 생활로 이끄는 표지판이다」(p.245). 「결혼하고 어느 정도 시간이 흐르면, 누구나 사랑이 고갈된 듯한 상태에 맞닥뜨리게 된다」(p.245). 그래서 「평생 지속되는 결혼은 하나님과 배우자에 대한 헌신에 기초해야 한다」(p.246, 같은 취지의 문장이 p.169에도 있다). <a class="wl" href="../../t/%ED%97%8C%EC%8B%A0/">헌신</a>·<a class="wl" href="../../t/%EC%96%B8%EC%95%BD/">언약</a>과 이어지는 대목이고, 『<a class="wl" href="../../b/%EA%B2%B0%ED%98%BC%EC%8B%A0%ED%95%99_%EC%A1%B4%ED%8C%8C%EC%9D%B4%ED%8D%BC/">결혼신학</a>』이 말하는 언약 지킴과 같은 방향이다.</p>
+<p><strong>세 가지 사랑</strong>(p.165): 만약에 사랑 · 때문에 사랑 · 그럼에도 불구하고 사랑. 평생 가는 결혼에는 셋째가 「아주 많이」 필요하다.</p>
+<p><strong>매일의 두 질문</strong>(p.168): 오늘 가장 하나님께 감사할 일은 무엇이었는가 / 하나님께 기도해야 할 문제는 무엇인가. 그리고 「고백과 회개와 용서는 결혼 생활에 빠져서는 안 될 요소다」.</p>
+<p>저자가 『<a class="wl" href="../../b/5%EA%B0%80%EC%A7%80%EC%82%AC%EB%9E%91%EC%9D%98%EC%96%B8%EC%96%B4_%EA%B2%8C%EB%A6%AC%EC%B1%84%ED%94%84%EB%A8%BC/">5가지 사랑의 언어</a>』에 「여섯 번째 사랑의 언어」로 음식을 덧붙인 대목(p.60)에도 밑줄이 있다.</p>
+<h3>9. 핵심 인사이트: 상호 복종이 먼저다 — 엡 5장 읽기</h3>
+<p><span class="wl-dead" title="위키 내부 링크">엡5</span> 22절을 21절에서 떼어 읽지 말라는 것이 저자의 요점이다. 헬라어 원문에는 22절에 동사가 없어 「그리스도를 경외함으로 피차 복종하라. 아내들은 자기 남편에게, 주께 하듯」으로 이어진다(p.257).</p>
+<blockquote>
+<p>「그리스도인의 결혼 생활에서는 <strong>상호 복종이 필수다.</strong>」(p.257)</p>
+<p>「상호 복종이란 상대방의 유익을 위해 자신의 권리를 내려놓는 것이다.」(p.257)</p>
+</blockquote>
+<p>복종이라는 말의 결도 바꾼다. 약 3:17(공동번역)의 「고분고분하고」가 하늘의 지혜를 묘사하는 말이라는 것(p.256). 📝 여백에 다른 번역어를 적어 두었다(「관용(?) 양순(?)」).</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>책의 정의</th>
+<th>쪽</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>아내의 복종</td>
+<td>「기쁨과 감사가 넘치는 자발적인 복종」 — 법적 강제가 아니라 성령 충만의 결과</td>
+<td>259~260</td>
+</tr>
+<tr>
+<td>남편의 머리됨</td>
+<td>「남편의 책임이라는 특별한 사역」, 그 특징은 「자신을 주는 극단적인 사랑」</td>
+<td>260</td>
+</tr>
+<tr>
+<td>기준</td>
+<td>「교회에 대한 그리스도의 자기 희생 수준」</td>
+<td>261</td>
+</tr>
+</tbody>
+</table>
+<p>엡 5:33에서 필요의 비대칭을 읽는다. 아내는 변함없는 사랑 속의 <strong>안정감</strong>, 남편은 존경(p.262). 현장 관찰도 붙는다 — 아내들의 불평은 남편이 수동적이고 <strong>자기 마음대로 한다</strong>는 것, 남편들의 불평은 아내가 존경하지 않고 <strong>조종</strong>하려 한다는 것(p.263). 동그라미 친 낱말이 모두 이 절에 몰려 있다.</p>
+<p>6절의 창 3:16 해석(지배는 죄의 결과)과 이 절은 한 쌍이다. 『<a class="wl" href="../../b/%EA%B2%B0%ED%98%BC%EA%B1%B4%EC%B6%95%EA%B0%80_%EB%9E%98%EB%A6%AC%ED%81%AC%EB%9E%A9/">결혼건축가</a>』의 「조종 대신 사역」과도 나란히 읽을 만하다.</p>
+<h3>10. 헤어짐, 그리고 채워지지 않은 갈망</h3>
+<p><strong>헤어져야 할 신호</strong>(p.266): 영성이 다르다 / 부정직한 행동 / 신체적·성적·언어적 학대 / 서로 신뢰하지 못한다 / 믿을 만한 친구와 가족의 반대 / 함께하는 시간이 지치게 만든다 / 성질을 돋운다 / 만나기만 하면 싸운다.</p>
+<p>결정 전에 물을 것: 「둘 사이에 발생한 문제점이 곧 하나님이 고치기 원하시는 부분은 아닌가?」(p.275)</p>
+<p><strong>이별을 읽는 법.</strong> 「만약 하나님이 당신에게 이별을 주신다면, 그것을 그분이 집도하시는 수술로 볼 수 있겠는가?」(p.202) 그 뒤에는 「자기를 보호하겠다는 결심을 버려야 한다」(p.204), 그리고 「누군가를 만나고 헤어지는 과정에서 우리는 얻는 것이 있어야 한다」(p.276). 헤어진 뒤의 우정은 가능하지만 「스킨십보다 대화가 우선」(p.231)이고, 지금 연인이 있다면 「과거 파트너를 실망시키는 편이 더 낫다」(p.232).</p>
+<p><strong>맞는 사람 찾기에 대하여.</strong> 「행복한 결혼 생활의 열쇠는 딱 맞는 배우자를 찾아내는 것이 아니라, 스스로 그런 배우자가 되는 것이다」(p.236). 「물길이 한데 모일 때는 항상 난류와 소용돌이, 거품이 동반된다」(p.236).</p>
+<p><strong>그리스도 중심의 관계</strong>(p.279~283, <span class="wl-dead" title="위키 내부 링크">엡4</span> 25절~5:3): <strong>정직한</strong> 관계 → 분을 오래 품지 않기 → 덕을 세우는 말 → 친절과 긍휼 → 순결. 「자존심 그리고 모든 것을 완벽하게 갖춘 사람처럼 보이려는 욕구가 고립감을 낳는다」(p.280~281).</p>
+<p><strong>후기.</strong> 책은 채워 주겠다는 약속으로 끝나지 않는다.</p>
+<blockquote>
+<p>「오늘날 그리스도인들의 믿음이 극복해야 할 도전 중의 하나는 충족되지 못한 갈망을 안고 살아갈 은혜를 구하는 것이다.」(p.288)</p>
+<p>「우리는 하나님이 주실 최선의 것을 끝까지 기다리기보다는 지금 당장 손에 쥘 수 있는 것에 집착한다.」(p.287~288)</p>
+</blockquote>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<p><strong>적용</strong>
+- 청년·결혼예비 강의: 1절의 일곱 목적 표가 「성은 좋은 것이다」에서 출발하는 도입으로 쓸 만하다. 한 몸 논지와 5번(타자 중심성)·2번(유대)이 겹친다.
+- 멘토링: 7절의 분별 질문 표는 교제 중인 후배와 함께 읽을 점검표가 된다. 「혼자 결정하지 말라」(p.157)가 멘토의 자리를 정당화한다.
+- 상담·진료: 포르노·자위를 의지의 실패가 아니라 고립의 신호로 듣는 관점(p.67, p.73). 처방이 「관계」와 「공동체」라는 점.
+- 부부 사역: 매일의 두 질문(p.168), 상호 복종의 정의(p.257).</p>
+<p><strong>미해결 질문</strong>
+- 스피처 연구(p.106~107)는 책이 쓰인 뒤 저자 본인이 철회한 것으로 알고 있다(원자료 확인 필요). 이 책을 인용해 가르칠 때 이 대목을 어떻게 다룰 것인가.
+- 동거 통계(p.240~243)는 2000년 전후 미국 자료다. 한국의 현재 자료로 같은 결론이 서는가. 상관과 원인을 저자는 「결혼 제도에 덜 헌신하는 경향」(p.244)으로 풀었는데, 그것으로 충분한가.
+- 네 가지 기준(p.38~39)은 미국 캠퍼스 문맥에서 나왔다. 한국 청년에게 그대로 줄 것인가, 원리(p.35의 되묻는 질문)만 줄 것인가.
+- p.71의 편지글 출처 — 밑줄 그은 쪽에는 인용만 있고 출처가 없다. <span class="wl-dead" title="위키 내부 링크">CS루이스</span>의 편지로 알려진 글과 같은지 확인.
+- 「충족되지 못한 갈망을 안고 살아갈 은혜」(p.288)는 미혼자에게만 하는 말인가. 기혼자의 채워지지 않는 갈망에는 어떻게 이어지는가.</p>
+<hr />
+<blockquote>
+<p>📖 전사 원문(줄이지 않은 표시 구절 전체): <span class="wl-dead" title="위키 내부 링크">데이트그렇게궁금하니_민디마이어_전사</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#domain/가정</span><span>#discipline/기독교윤리</span><span>#데이트</span><span>#성</span><span>#순결</span><span>#결혼예비</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
