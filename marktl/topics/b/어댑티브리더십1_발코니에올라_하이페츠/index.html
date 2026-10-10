@@ -1,0 +1,478 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>어댑티브 리더십 1 — 발코니에 올라 변화를 이해하라 — 하이페츠·그래쇼·린스키 (진저티프로젝트) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">리더십·일·경영</span><span class="author">하이페츠</span><span class="date">2026-10-10</span></div>
+  <h1 class="note-title">어댑티브 리더십 1 — 발코니에 올라 변화를 이해하라 — 하이페츠·그래쇼·린스키 (진저티프로젝트)</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/%EC%96%B4%EB%8C%91%ED%8B%B0%EB%B8%8C%EB%A6%AC%EB%8D%94%EC%8B%AD1_%EB%B0%9C%EC%BD%94%EB%8B%88%EC%97%90%EC%98%AC%EB%9D%BC_%ED%95%98%EC%9D%B4%ED%8E%98%EC%B8%A0/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<blockquote>
+<p>하버드 케네디 스쿨의 로널드 A. 하이페츠가 알렉산더 그래쇼·마티 린스키와 함께 쓴 <em>The Practice of Adaptive Leadership</em>(HBR Press) 한국어판 다섯 권 가운데 1권. 앞선 두 책(『하버드 케네디 스쿨의 리더십 수업』·『실행의 리더십』)이 이론이라면 이 책은 25년 컨설팅에서 쌓인 <strong>실천 도구집</strong>이다. 1권은 전체 개요 — 어댑티브 챌린지, 권위와 리더십의 구분, 생산적 불안정 구역, 관찰·해석·개입 — 를 다룬다. 📷 표시 전사 기반 독서 노트.</p>
+</blockquote>
+<hr />
+<h2>요약 — 주제별 상세 정리</h2>
+<h3>1. 이 책은 「가능성」에 관한 책이다 — 목적과 기술, 두 가지</h3>
+<p>책은 자신을 세 부류의 독자에게 건넨다. 조직과 공동체가 번성하기를 원하는 사람, 어떤 위치에서든 리더십을 발휘하려는 사람, 다른 사람의 변화 역량을 돕는 사람이다(p.22).</p>
+<blockquote>
+<p>"이 책은 <strong>가능성</strong>에 관한 것이다. 우리가 말하는 가능성은 막연히 꿈을 꾸거나 그저 바라기만 하는 것이 아니다. 그것은 적극적이고, 긍정적이며, 현실적이고, 용기를 내고, 의미 있는 진전을 만드는 가능성이다." (p.22)</p>
+</blockquote>
+<p>리더십이 막히는 자리는 두 곳이다. 고통과 위험을 감수할 만한 목적을 찾지 못하는 것, 그리고 미지의 영역에서 실제 변화를 만드는 기술이 없는 것.</p>
+<blockquote>
+<p>"반드시 이루고 싶은 목적이 없다면 리더라는 어려운 역할을 맡거나, 상사나 배우자와 껄끄러운 대화를 시도하거나, 새로운 아이디어를 위해 위험을 무릅쓸 이유가 없을 것이다." (p.25)</p>
+<p>"그래서 이 책은 <strong>목적을 발견하는 것</strong>과 <strong>실질적 변화를 만드는 기술</strong>, 두 가지를 모두 다루려고 한다." (p.25)</p>
+</blockquote>
+<p>📝 이 대목 뒤 백지면에 「목적 발견 + 변화 만드는 기술」, 「세상이 직면한 (공동체가 직면한)」이라고 적혀 있다. 책의 "세상이 직면한 도전"을 공동체의 도전으로 옮겨 읽은 흔적이다.</p>
+<p>한국어판 기획자·실험자의 글에서도 밑줄은 같은 방향을 가리킨다.</p>
+<blockquote>
+<p>"리더십은 '직위'의 문제가 아니라 '행동'의 문제이며, 새로운 시대에 이전에는 시도되지 않은 실험을 해나가면서 해결책을 도출해 나가는 리더십" (p.9)</p>
+<p>"오랜 고민을 통해 얻은 내 나름의 해답은 '텍스트text가 콘텍스트context를 만날 때' 비로소 가능하다는 것이다." (p.16)</p>
+</blockquote>
+<h3>2. 핵심 인사이트: 변화는 버리는 일이 아니라 보존하는 일이다</h3>
+<p>통념은 변화를 과거와의 단절로 본다. 저자들은 진화 생물학에서 정반대의 그림을 가져온다. 성공적 진화는 ① 핵심 유전자를 보존하고 ② 필요 없는 유전자를 버리거나 재배열하고 ③ 새 배열로 번성한다(p.39).</p>
+<blockquote>
+<p>"변화 자체를 위해서가 아니라 핵심가치와 역량을 보호하고 보존하기 위해 변화하고 혁신해야 한다." (p.23)</p>
+<p>"어댑티브 리더십은 조직의 <strong>전통</strong> 중에서 무엇을 <strong>보존하고</strong> <strong>버릴지</strong> 구분하는 것이다. 조직의 성공적 진화는 보수적이면서 진보적이다." (p.40)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>진화의 원리</th>
+<th>어댑티브 리더십의 명제</th>
+<th>쪽</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>번성(thrive)</td>
+<td>변화란 조직의 역량을 성장시키는 것이다</td>
+<td>p.39</td>
+</tr>
+<tr>
+<td>유전자의 극히 일부만 변한다</td>
+<td>진정한 변화는 과거의 토대 위에 구축한다</td>
+<td>p.40</td>
+</tr>
+<tr>
+<td>유성생식 = 실패율 높은 실험</td>
+<td>새로운 진화에는 실험 정신이 필요하다</td>
+<td>p.41</td>
+</tr>
+<tr>
+<td>변이의 다양성</td>
+<td>다양성 = 분산형 지성·집단 지성. 중앙 집중과 엘리트 의존을 줄인다</td>
+<td>p.42</td>
+</tr>
+<tr>
+<td>버려지는 유전자</td>
+<td>혁신에는 손실이 따른다 → 리더에게 <strong>진단 능력</strong>이 요구된다</td>
+<td>p.42~43</td>
+</tr>
+<tr>
+<td>축적된 변이</td>
+<td>변화 적응은 <strong>시간이</strong> 걸린다. <strong>문화는 천천히 변한다</strong></td>
+<td>p.43~44</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"진화의 비밀은 다양성에 있다. 조직 용어로 표현하면, <strong>다양성은</strong> '분산형 지성' 또는 '집단 지성'이라 할 수 있다." (p.42)</p>
+<p>"의미 있는 변화는 긴 시간동안 수많은 실험이 축적된 결과물이기 때문이다. 무엇보다 <strong>문화는</strong> <strong>천천히</strong> <strong>변한다.</strong>" (p.44)</p>
+</blockquote>
+<p>📝 p.23 여백에 「변화 ←→ 여기가 좋사오니?」. 변화산에서 초막을 짓고 머물자던 베드로의 말(<span class="wl-dead" title="위키 내부 링크">마17</span>)을 변화의 반대편에 세운 메모로 읽힌다.</p>
+<h3>3. 핵심 인사이트: 망가진 조직이란 없다</h3>
+<p>변화 시도를 무력하게 만드는 흔한 착각은 "조직이 망가졌으니 고쳐야 한다"는 믿음이다.</p>
+<blockquote>
+<p>"망가진 조직이란 존재하지 않는다. 모든 조직은 현재 상태가 만들어질 수밖에 없도록 완벽하게 구조화되어있기 때문이다." (p.45)</p>
+<p>"하지만 조직(회사, 국가, 가족 등)의 현재 상태는 조직원들(적어도 기득권을 가진 개인이나 그룹)이 그 상태를 원했기 때문에 나타난 것이다." (p.45)</p>
+</blockquote>
+<p>조직이 내건 가치와 현실 사이의 간극도 사고가 아니라 선택이다.</p>
+<blockquote>
+<p>"분명한 것은 조직이 '외부에 선언한 가치와 실제 현실의 간극'을 허용하기로 했다는 것이다. 기득권층에게는 간극을 줄이는 것이 간극을 허용하는 것보다 더 힘든 일이다." (p.46)</p>
+</blockquote>
+<p>그래서 "의도의 정당성만으로는 설득이 어렵다"(p.46). 높은 이직률이 계속되는 조직의 사례에서 저자들은 그 상태가 의사결정권자와 장기근속자의 기득권을 지켜 주고 있었음을 짚는다(p.47). 문제를 개인 탓으로 돌리는 습관도 같은 뿌리다.</p>
+<blockquote>
+<p>"사실 이런 갈등은 개인적인 것이 아니라 구조적인 것이다." (p.31)</p>
+</blockquote>
+<h3>4. 기술적 문제와 어댑티브 챌린지 — 그리고 사람들이 정말 싫어하는 것</h3>
+<blockquote>
+<p>"어댑티브 리더십이 실패하는 가장 주요한 원인은 무엇일까? 어댑티브 챌린지adaptive challenge를 기술적 문제technical problem로 취급하기 때문이다." (p.48)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>기술적 문제</th>
+<th>어댑티브 챌린지</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>해결 수단</td>
+<td>기존 지식·전문성, 현재의 구조·절차 안에서</td>
+<td>사람들의 우선순위·신념·습관·충성심의 변화</td>
+</tr>
+<tr>
+<td>필요한 것</td>
+<td>권위 있는 전문가(p.58)</td>
+<td>새로운 실험과 도전</td>
+</tr>
+<tr>
+<td>인과·해법</td>
+<td>비교적 분명</td>
+<td>인과 파악이 어렵고 계획은 바뀐다(p.69)</td>
+</tr>
+<tr>
+<td>예</td>
+<td>인공 심장 밸브 교체 수술</td>
+<td>운전을 그만둬야 하는 노모의 정체성 재확립(p.50)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"<strong>반면,</strong> 어댑티브 챌린지는 사람들의 우선순위, 신념, 습관, 충성심 등의 변화를 통해서만 해결할 수 있다." (p.48)</p>
+</blockquote>
+<p>둘은 깨끗이 갈라지지 않는다. "대부분의 문제는 기술적 요소와 어댑티브 챌린지 요소, 두 가지가 긴밀하게 얽혀 있다"(p.48).</p>
+<p><strong>핵심 인사이트: 사람들은 변화가 아니라 손실을 싫어한다.</strong></p>
+<blockquote>
+<p>"'사람들은 변화를 싫어한다'라는 말은 진실이 아니다." (p.53)</p>
+<p>"사람들이 꺼리는 것은 변화 자체가 아니라 변화로 인해 '잃게 되는 것', 즉 <strong>손실</strong>이다." (p.54)</p>
+<p>"어댑티브 리더십은 변화 상황에서 발생하는 손실을 평가하고 관리하는 것이다." (p.54)</p>
+</blockquote>
+<p>그러므로 던질 질문은 둘이다. "생존하고 번성하기 위해 중요한 가치 중 무엇을 포기해야 하는가?" 그리고 "보존하지 않으면 잃게 되는 가치, 핵심 역량, 정체성은 무엇인가?"(p.54~55)</p>
+<h3>5. 핵심 인사이트: 리더십은 권위가 아니다 — 권한 위임자를 실망시킬 용기</h3>
+<blockquote>
+<p>"<strong>리더십은</strong> 어떤 특정한 사람이 특정한 순간에 하는 <strong>행동</strong>이다. 즉 리더십은 직업이나 직위가 아니라 '행동'이라는 것을 이해해야 한다." (p.56)</p>
+</blockquote>
+<p>권위는 거래다. "서비스를 제공하고 권력을 위임받는 것"(p.57)이고, 위임하는 사람 — 상사·동료·부하·고객·언론 — 이 모두 <strong>권한 위임자(authorizer)</strong>다(p.58). 문제는 그 위임이 리더를 묶는다는 데 있다.</p>
+<blockquote>
+<p>"리더라고 부르면서 조직은 그들이 원하는 곳에 당신을 머무르게 할 수 있다." (p.59)</p>
+<p>"조직의 변화 적응력을 키우기 위해서는 주어진 권한의 <strong>경계선을 넘나들며</strong> 리더십을 발휘하겠다는 의지와 역량이 있어야 한다." (p.60)</p>
+<p>"환자들에게서 변화를 요구하는 의사는 병원 문을 닫게 될지도 모른다." (p.61)</p>
+<p>"일반적인 조직에서 어댑티브 리더십이 거의 나타나지 않는 것은 그리 놀라운 일이 아니다. 어댑티브 리더십은 위험하기 때문이다." (p.61)</p>
+</blockquote>
+<p>📝 「경계선을 넘나들며」 줄에서 화살표를 내려 「불의한 청지기 비유 ?」라고 적었다(<span class="wl-dead" title="위키 내부 링크">눅16</span>). 주인이 맡긴 권한의 테두리를 넘어 움직인 청지기와 이 대목을 견주어 본 물음이다. p.61에는 「리딩(?) + 관리(?)」.</p>
+<p>권위가 맡는 세 의무 — <strong>방향·보호·질서</strong> — 는 문제의 성격에 따라 정반대로 수행된다(〈표1-2〉, p.63~64).</p>
+<table>
+<thead>
+<tr>
+<th>권위의 의무</th>
+<th>기술적 문제일 때</th>
+<th>어댑티브 챌린지일 때</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>방향</td>
+<td>문제를 정의하고 해결책을 제공한다</td>
+<td>어댑티브 챌린지가 무엇인지 규명한다. 핵심 질문과 중심 주제를 구조화한다</td>
+</tr>
+<tr>
+<td>보호</td>
+<td>외부 위협으로부터 보호한다</td>
+<td>어떤 외부 위협이 존재하는지 <strong>드러낸다</strong></td>
+</tr>
+<tr>
+<td>질서 — 역할</td>
+<td>기존 역할에 익숙해지게 한다</td>
+<td>기존 역할을 넘어서게 한다</td>
+</tr>
+<tr>
+<td>질서 — 갈등</td>
+<td>기존 질서를 회복시킨다</td>
+<td>갈등을 노출하거나 수면 위로 떠오르게 한다</td>
+</tr>
+<tr>
+<td>질서 — 규범</td>
+<td>규범을 유지한다</td>
+<td>규범에 도전하거나 도전받게 만든다</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"하지만 <strong>리더십과 전문성은</strong> 분명히 다르다." (p.63)</p>
+</blockquote>
+<p><a class="wl" href="../../t/%EB%A6%AC%EB%8D%94%EC%8B%AD/">리더십</a> 허브가 지위가 아닌 영향력을 말한다면, 이 책은 한 걸음 더 들어가 <a class="wl" href="../../t/%EA%B6%8C%EC%9C%84/">권위</a>가 오히려 리더십을 가두는 장치가 될 수 있다고 본다.</p>
+<h3>6. 생산적 불안정 구역 — 온도를 다루는 일</h3>
+<p>적응은 균형을 깨고 미지로 들어가는 일이라 불안정을 낳는다(p.63). 리더의 일은 그 불안정을 없애는 것이 아니라 <strong>견딜 만한 범위에 붙들어 두는 것</strong>이다.</p>
+<blockquote>
+<p>"어댑티브 리더십은 불안정한 시기를 통과할 때 제대로 길을 찾도록 돕는 것이다." (p.65)</p>
+<p>"변화에는 고통이 따라오지만 좀 더 분석적으로 살펴보면 사람들을 불편하게 하는 것은 변화의 목적이나 본질이 아니라 변화로 인한 결과다." (p.66)</p>
+</blockquote>
+<p>비유는 압력솥이다. "온도와 압력을 너무 낮추면 솥 안의 재료들이 맛있는 요리가 되지 못하고, 온도와 압력을 너무 높이면 뚜껑이 튀어 오르고 재료들이 바깥으로 튀어나올 것이다"(p.67).</p>
+<p>〈그림1-3〉 <strong>생산적 불안정 구역</strong> (p.67~69)</p>
+<table>
+<thead>
+<tr>
+<th>위치</th>
+<th>상태</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>구역 위</td>
+<td>긴장이 통제 불능 — 조직이 견디지 못한다</td>
+</tr>
+<tr>
+<td><strong>생산적 불안정 구역</strong></td>
+<td>긴장이 적당히 높아 사람들이 문제에 집중한다</td>
+</tr>
+<tr>
+<td>구역 아래</td>
+<td>편안함 — 아무 일도 일어나지 않는다</td>
+</tr>
+<tr>
+<td>「과업 회피」 곡선</td>
+<td>어려운 문제를 피하면서 불안정성만 낮춘다</td>
+</tr>
+</tbody>
+</table>
+<p>기술적 문제는 불안정이 올랐다가 해결과 함께 내려간다. 어댑티브 챌린지는 반대로 <strong>처음에 불안정이 낮다</strong> — 그래서 리더가 온도를 올려 조직을 구역 안으로 끌고 들어가야 한다(p.69). 회피의 전형도 적혀 있다. "권한은 전혀 없는 그럴듯한 위원회를 구성할 수도 있고, 희생양을 지목할 수도 있다"(p.69).</p>
+<p>리더에게 요구되는 것은 두 가지다. 불안정 속에서 자신을 다스리는 것, 그리고 사람들이 불편함을 견디도록 돕는 것 — "근본적인 변화 과정에서 발생하는 고통을 인식하고 연민과 공감을 가지는 것"(p.65).</p>
+<h3>7. 발코니에 올라 — 관찰하라, 해석하라, 개입하라</h3>
+<p>책 제목이 된 비유다. 무도회장에서 춤을 추는 동안에는 전체가 보이지 않는다.</p>
+<blockquote>
+<p>"<strong>시스템</strong> 또는 자신을 진단하기 위해서는 지금 일어나고 있는 일에서 거리를 두는 능력이 필요하다." (p.30)</p>
+<p>"사람들은 결단성 있는 행동으로 문제를 해결하는 데에 훈련이 잘되어 있다. 진흙탕 같은 상황을 헤집어 문제를 진단하는 것은 그다지 환영받지 못한다." (p.30)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>내용</th>
+<th>걸림돌</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>① 관찰</td>
+<td>사건과 패턴을 본다. 가능한 모든 자료를 모은다(p.70, 73)</td>
+<td>관찰은 주관적이다 — 같은 그림 앞에서 한 사람은 다른 사람의 25%만 본다(p.71)</td>
+</tr>
+<tr>
+<td>② 해석</td>
+<td>무엇이 실제로 일어나는지 여러 가설을 세운다</td>
+<td>해석은 무의식적이고 순식간이다. 사람들은 자기가 선호하는 '진실'을 원한다(p.74~75)</td>
+</tr>
+<tr>
+<td>③ 개입</td>
+<td>해석에 바탕을 둔 행동을 <strong>실험</strong>으로 설계한다</td>
+<td>익숙한 방식만 쓰면 조직원들이 예측하고 피한다(p.77~78)</td>
+</tr>
+</tbody>
+</table>
+<p>발코니에서 던질 질문(p.73): 누가 누구와 말하는가 / 누가 누구에게 반응하는가 / 조직도에는 없지만 실제로 형성된 집단과 관계는 무엇인가 / 이 문제는 어떻게 발전해 왔는가 / 다른 관점이 있는가 / 조직 문화와 구조는 사람들에게 어떻게 영향을 미치는가.</p>
+<blockquote>
+<p>"해석은 '말 속에 감춰진 노래'를 듣는 것과 같다." (p.75)</p>
+<p>"아무리 심사숙고 끝에 나온 해석이라도 결국 좋은 추측에 불과하다는 것을 인정해야 한다." (p.75)</p>
+</blockquote>
+<p>📝 p.75 위 여백에 「이전 패턴으로(?) 인식X, 의식X.」 — 해석이 무의식적으로 굳는다는 문장에 선을 그어 붙였다.</p>
+<blockquote>
+<p>"<strong>개입은</strong> 일종의 <strong>실험</strong>으로 간주하여야 한다(자신과 조직원 모두 그렇게 인식해야 한다)." (p.77)</p>
+</blockquote>
+<p>실험 정신은 확신과 의심을 함께 쥐는 일이다.</p>
+<blockquote>
+<p>"어떤 행동을 결정했다면 그 시점에서 그 행동이 전적으로 옳은 것이라고 믿어야 한다. 하지만 동시에 완전히 틀릴 수 있다는 가능성도 열어두어야 한다." (p.80)</p>
+</blockquote>
+<p>저자들은 이것을 결혼 결정에 견준다. "반신반의한 상태로는 상대방을 배우자로 결코 확신할 수 없다"(p.79). 그리고 순서에 관한 권고 — 구조 문제를 개인 문제로 오인하지 않도록 <strong>시스템을 먼저 진단하고 그다음 자신을</strong> 진단하되, 둘은 "항상 <strong>동시</strong>에 움직인다"(p.31).</p>
+<h3>8. 머리와 마음, 그리고 목적</h3>
+<blockquote>
+<p>"리더십은 <strong>의지</strong>와 <strong>기술</strong> 모두가 필요하다. 따라서 머리와 마음을 모두 사용해야 한다." (p.81)</p>
+<p>"이는 다면적 지능—지적, 정서적, 영적, 신체적—의 융합으로 이해할 수 있다." (p.81)</p>
+</blockquote>
+<p>📝 '신체적' 위에 「건강(?)」.</p>
+<blockquote>
+<p>"어댑티브 리더십은 사람들의 <strong>가치</strong>, <strong>믿음</strong>, 고민과 연결되어 있어야 한다. 진심이 없으면 연결되기 어렵다." (p.81)</p>
+<p>"어댑티브 리더십은 논쟁에서 이기거나 더 다양한 지식을 알려주는 것을 의미하지 않는다." (p.81)</p>
+</blockquote>
+<p>흡연자의 예가 이를 보여 준다. 그가 담배를 끊지 못하는 이유는 지식이 아니라 "마음과 연관되어" 있다 — 즐거움인지, 걱정을 덜어 주는지, 사랑하는 아버지를 떠올리게 하는지를 알아야 한다(p.82).</p>
+<p>위험을 감수하게 하는 것은 목적이다. 그런데 목적을 정하는 일 자체가 손실을 요구한다.</p>
+<blockquote>
+<p>"충분히 타당한 여러 목적 중에서 한 두 가지를 선택하고 다른 목적은 희생해야 한다." (p.83)</p>
+<p>"공동의 목적을 정의하는 것은 어렵고 고통스러운 과정이다. … 근본적인 이익을 위해 지엽적 이익을 희생해야 하기 때문이다." (p.84~85)</p>
+</blockquote>
+<p>교사들의 사례에서 저자들은 개인의 소명 의식이 "변화에 적응하기 위한 집단적 노력을 방해하기도 한다"고 적는다(p.83). <a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a>이 공동의 목적을 가리는 자리가 있다는 지적이다.</p>
+<h3>9. 여정을 시작하기 전 네 가지</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>권고</th>
+<th>핵심</th>
+<th>쪽</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>혼자 시작하지 말라</td>
+<td>칭찬과 관망이 사람을 고립시킨다. 협력자를 찾아라</td>
+<td>p.88~91</td>
+</tr>
+<tr>
+<td>2</td>
+<td>인생을 리더십 실험실처럼 살아라</td>
+<td>가정·직장·지역·종교 공동체 어디서나. 25%를 30%로</td>
+<td>p.91~93</td>
+</tr>
+<tr>
+<td>3</td>
+<td>성급하게 행동하지 말라</td>
+<td>'뭐라도 해야 한다'는 압박에 맞서 진단에 시간을 써라</td>
+<td>p.94~95</td>
+</tr>
+<tr>
+<td>4</td>
+<td>어려운 선택에서 새로운 즐거움을 발견하라</td>
+<td>선택은 옳고 그름이 아니라 가치의 문제다</td>
+<td>p.95~98</td>
+</tr>
+</tbody>
+</table>
+<p><strong>고립의 세 경로</strong>(p.88~90). 반대자의 칭찬("당신의 생각에 동의하지는 않지만, 용기 있게 싸우는 당신을 존경합니다"), 지인의 관망("그가 자발적으로 빙판에 나가서 얼음의 상태를 확인하는군"), 그리고 자신의 열정.</p>
+<blockquote>
+<p>"변화를 이끌기 위해서는 자신이 하는 일에 반드시 신념을 가져야 한다. 하지만 신념이 약점이 될 수도 있다. 추구하는 대의명분에 지나치게 몰입하면 현실에서 일어나는 위험 신호를 감지하지 못할 수 있기 때문이다." (p.90)</p>
+<p>"리더십을 발휘하는 시간을 하루 중 25%에서 75%로 늘리는 것을 바라지 않는다. <strong>25%에서 30%로</strong> 늘리기만 해도 일상에 큰 변화가 생길 것이다." (p.92)</p>
+<p>"'뭐라도 해야 한다'는 압박에 대항하고, <strong>문제 진단에 더 많은 시간을</strong> 사용하라." (p.95)</p>
+<p>"적응이란 바로 '무엇이 가장 본질적인지 판단하고, 보존해야 할 것을 선택하고, 가치 있는 것 중 포기해야 할 것이 무엇인지 결정하는 과정'이기 때문이다." (p.95)</p>
+</blockquote>
+<p>마지막 권고는 가치의 진위를 묻는다.</p>
+<blockquote>
+<p>"어떤 가치를 중요하다고 말하지만 다른 가치에 밀려서 한 번도 행동으로 실천해본 적이 없다면 그 가치를 진심으로 믿고 있는 것이 아니다." (p.97)</p>
+<p>"이처럼 어떤 신념이나 관습을 고수하는 것은 신념이나 관습 자체가 중요해서 라기보다는 그 신념과 관습이 <strong>생긴 과정이</strong> 자신과 연관되어 있기 때문일 경우가 많다." (p.98)</p>
+<p>"무엇인가에 대해 확실하게 '아니오'라고 말하는 것은 명확한 방향을 드러내는 행동이고, 자신을 더 깊게 이해하는 과정이며, 아무리 어렵다 하더라도 무엇인가를 추구하겠다는 헌신의 표현이다." (p.98)</p>
+</blockquote>
+<p>리더십을 미루는 변명의 목록에도 밑줄이 그어져 있다 — 부모를 요양 시설에 모시는 문제를 꺼내지 못하는 형제들, 미션을 실천하지 않는 비영리 단체, 수입보다 지출이 많은 교회(p.91).</p>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<p><strong>적용</strong>
+- <strong>이사회·위원회 자리</strong>: 지금 다루는 안건이 기술적 문제인가 어댑티브 챌린지인가를 먼저 가른다. 〈표1-2〉로 보면 위원의 일은 답을 내는 것이 아니라 질문을 구조화하고 갈등을 수면 위로 올리는 쪽일 수 있다. 「권한 없는 그럴듯한 위원회」(p.69)가 과업 회피의 한 형태라는 지적은 <a class="wl" href="../../t/%EC%84%A0%EA%B5%90%EB%8B%A8%EC%B2%B4%EC%A1%B0%EC%A7%81%EB%AC%B8%ED%99%94/">선교단체조직문화</a>에 그대로 닿는다.
+- <strong>이양·승계</strong>: "무엇을 보존하고 무엇을 버릴지"(p.40)와 "보존하지 않으면 잃게 되는 정체성"(p.55)은 사역 이양을 진단하는 두 질문으로 쓸 수 있다. 저항을 만나면 변화가 아니라 <strong>누가 무엇을 잃는가</strong>를 묻는다.
+- <strong>진료 현장</strong>: "환자들에게서 변화를 요구하는 의사는 병원 문을 닫게 될지도 모른다"(p.61). 생활습관 질환은 처방(기술적)과 삶의 재편(적응적)이 얽힌 문제이고, 흡연자의 예(p.82)는 지식이 아닌 마음에서 이유를 찾으라고 한다.
+- <strong>공동체 강의</strong>: 발코니 질문 여섯 개(p.73)는 소그룹·수련회에서 그대로 쓸 수 있는 관찰 도구다.</p>
+<p><strong>미해결 질문</strong>
+- 📝 「불의한 청지기 비유 ?」(p.60) — 위임받은 권한의 경계를 넘는 것과 맡은 자의 신실함은 어디서 갈리는가. 눅 16장의 청지기는 이 책의 「경계선을 넘나드는 리더십」의 예인가, 반례인가.
+- 📝 「변화 ←→ 여기가 좋사오니?」(p.23) — 진화 은유에는 방향을 주는 분이 없다. "번성"의 내용을 이해관계자의 조율로 정하는 이 책의 틀(p.40)과, 목적이 주어지는 것이라는 <a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a>의 이해는 어떻게 만나는가.
+- 온도를 올리는 일과 연민(p.65) 사이의 선은 어디인가. <a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%B2%B4/">공동체</a>에서 「생산적 불안정」이 상처가 되는 지점.
+- 「망가진 조직은 없다」(p.45)를 교회·선교단체에 적용하면 죄와 구조악의 언어는 어디에 놓이는가.
+- 2~5권(시스템 진단 · 시스템 행동 · 자신 진단 · 자신 행동)은 아직 읽지 않았다.</p>
+<hr />
+<blockquote>
+<p>📖 전사 원문(줄이지 않은 표시 구절 전체): <span class="wl-dead" title="위키 내부 링크">어댑티브리더십1_발코니에올라_하이페츠_전사</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#discipline/리더십</span><span>#domain/조직</span><span>#변화</span><span>#어댑티브리더십</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
