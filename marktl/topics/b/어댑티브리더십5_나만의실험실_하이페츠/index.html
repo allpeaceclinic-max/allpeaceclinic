@@ -1,0 +1,280 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>어댑티브 리더십 5 — 나만의 실험실: 나를 실험하라 — 하이페츠·그래쇼·린스키 (진저티프로젝트) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">리더십·일·경영</span><span class="author">하이페츠</span><span class="date">2026-10-10</span></div>
+  <h1 class="note-title">어댑티브 리더십 5 — 나만의 실험실: 나를 실험하라 — 하이페츠·그래쇼·린스키 (진저티프로젝트)</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/%EC%96%B4%EB%8C%91%ED%8B%B0%EB%B8%8C%EB%A6%AC%EB%8D%94%EC%8B%AD5_%EB%82%98%EB%A7%8C%EC%9D%98%EC%8B%A4%ED%97%98%EC%8B%A4_%ED%95%98%EC%9D%B4%ED%8E%98%EC%B8%A0/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<blockquote>
+<p><em>The Practice of Adaptive Leadership</em>(HBR Press) 한국어판 다섯 권의 마지막 권. 책의 2×2 지도(p.12)에서 「자신 × 행동하기」 칸이다. <a class="wl" href="../../b/%EC%96%B4%EB%8C%91%ED%8B%B0%EB%B8%8C%EB%A6%AC%EB%8D%94%EC%8B%AD4_%EB%82%B4%EB%A9%B4%EC%9D%98%ED%98%84_%ED%95%98%EC%9D%B4%ED%8E%98%EC%B8%A0/">4권</a>이 자신을 진단했다면 5권은 그 자신을 도구로 써서 실험한다. 다섯 장 — 목적과 연결되어 있어라 · 용기 있게 참여하라 · 영감을 불어넣어라 · 실험하라 · 번성하라(p.16). 📷 표시 판독 기반 독서 노트(풀어쓴 정리).</p>
+</blockquote>
+<hr />
+<h2>요약 — 주제별 상세 정리</h2>
+<h3>1. 5권의 자리 — 「자신을 효과적으로 활용하라」</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>진단하기</th>
+<th>행동하기</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>조직</strong> system</td>
+<td><span class="wl-dead" title="위키 내부 링크">2권</span> 방 안의 코끼리</td>
+<td><span class="wl-dead" title="위키 내부 링크">3권</span> 시스템의 온도</td>
+</tr>
+<tr>
+<td><strong>자신</strong> self</td>
+<td><span class="wl-dead" title="위키 내부 링크">4권</span> 내면의 현</td>
+<td><strong>5권 나만의 실험실 — 나를 실험하라</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>추천의 글은 이 권의 한 문장으로 "리더십은 즉흥 예술이다"(p.5, 본문 p.104)를 꼽는다. 즉흥에도 지켜야 할 규칙과 함께 연주하는 사람들과의 공동 목표가 있다는 점에서 어댑티브 리더십과 닿는다(p.5~6).</li>
+<li>첫 장이 목적인 까닭: 목적을 잃은 실험은 의미가 없다(p.6).</li>
+<li>자신을 활용한다는 것은 역량보다 <strong>의지</strong>의 문제다(p.15). 자신이 변하지 않고는 어댑티브 챌린지를 풀 수 없고, 조직은 현재 상태를 지키려 하므로 내 약점을 건드리며 저항한다(p.14).</li>
+<li>5권이 다루는 것은 <strong>감정</strong>이다 — 사람을 익숙한 곳에서 낯선 곳으로 옮기려면 이성만이 아니라 감정을 다뤄야 하고, 그러려면 나부터 안전지대를 벗어나야 한다(p.15). 마지막 두 장은 번아웃에서 자신을 지키는 법이다(p.16).</li>
+</ul>
+<h3>2. 목적과 연결되어 있어라 — 윤리, 상기 장치, 절충</h3>
+<ul>
+<li>목적은 행동으로 이어지도록 영감과 방향을 주는 것이다(p.18). 목적만큼 <strong>윤리</strong>를 함께 따져야 한다: ① 내 행동이 남에게 줄 피해 ② 내 이미지와 가치에 줄 손해 ③ 끊임없이 질문하기(p.19~21). 링컨의 전쟁, 로버트 모세스(사욕은 없었으나 수단을 가리지 않음) 사례가 나온다. 명확한 판단 기준은 없다고 저자들은 인정한다(p.21).</li>
+<li>📝 p.21 여백: 「회색지대(?)」</li>
+<li>목적을 살려 두는 장치: <strong>물건</strong>(티셔츠, 지갑 속 연설문 카드, 벽의 문구)과 <strong>리추얼</strong>(기존 의식을 활용하거나 새로 만들기)(p.26~28). 「리더십 모토」 한 문장 만들기(p.30).</li>
+<li><strong>목적을 절충하라</strong>(동그라미, p.31): 다른 사람의 우선순위를 그들의 관점에서 파악하고, 처음 겨눈 곳이 아닌 곳으로 갈 수도 있음을 받아들인다. 한 걸음 옆으로 가는 것이 목적을 저버리는 것은 아니다(p.34).</li>
+<li><strong>상대방의 언어</strong>로 말하고(p.33) 목적을 <strong>구체화</strong>·시각화하라(킹 목사, p.34).</li>
+</ul>
+<h3>3. 핵심 인사이트: 야망과 열망은 통합할 수 있다</h3>
+<ul>
+<li>공공 분야 대학원생은 열망은 말하되 야망을 불편해하고, 경영·법학 쪽은 그 반대다. 둘 다 편협하다 — 존경받는 대통령들은 야망과 열망이 함께 있었다(p.36~37).</li>
+<li>📝 p.37 여백: 「통합 이야기하는 이유는(?)」 — 동그라미 친 「통합할」로 화살표</li>
+<li>목적의 <strong>함정</strong>(p.40~42): 눈과 귀 가리기(반대 데이터를 못 봄) · 순교자 되기 · 독선적으로 보이기 · 모든 일에 목적을 주입해 사람들을 지치게 하기. 「목적을 관리하는 사람으로 임명된 것처럼」 굴지 말라는 경고에 밑줄(p.42~43).</li>
+</ul>
+<h3>4. 용기 있게 참여하라 — 다섯 방해요소와 충성심 재정비</h3>
+<table>
+<thead>
+<tr>
+<th>방해요소 (p.46)</th>
+<th>5권의 처방</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>나를 믿어주지 않는 이들을 향한 충성심</td>
+<td>충성심 재정비 6단계 (p.47~52)</td>
+</tr>
+<tr>
+<td>무능함에 대한 두려움</td>
+<td>무능력을 인정하고 드러내기 (p.55~59)</td>
+</tr>
+<tr>
+<td>옳은 길인가에 대한 불확실함</td>
+<td>어려운 결정과 사랑에 빠지기 (p.63~68)</td>
+</tr>
+<tr>
+<td>손실에 대한 두려움</td>
+<td>자신의 실패를 허용하기 (p.69~72)</td>
+</tr>
+<tr>
+<td>여정을 견딜 용기 부족</td>
+<td>인내 (p.73~77)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>충성심 재정비 6단계: ① 말과 행동의 차이 보기 ② 현재에 집중(과거가 현재를 지배하는지) ③ 재정비할 충성심 파악(동료·공동체·선대의 기대) ④ 해야 할 대화를 피하지 않기 ⑤ 선대를 향한 충성심을 내려놓는 의식 ⑥ 지키고 싶은 것에 집중 — 관점을 버려도 핵심 가치를 버린 것은 아니다(p.49~52).</li>
+<li>4단계의 사례가 인상 깊게 표시됐다: 아버지를 위해 예배에 나갔다는 아들과, 아들을 위해 나갔다는 아버지(p.50~51). <a class="wl" href="../../b/%EC%96%B4%EB%8C%91%ED%8B%B0%EB%B8%8C%EB%A6%AC%EB%8D%94%EC%8B%AD4_%EB%82%B4%EB%A9%B4%EC%9D%98%ED%98%84_%ED%95%98%EC%9D%B4%ED%8E%98%EC%B8%A0/">4권</a>의 「말할 수 없는 충성심」이 대화로 풀리는 장면이다.</li>
+</ul>
+<h3>5. 무능력·어려운 결정·실패·인내</h3>
+<ul>
+<li>역량의 경계에서 씨름하고 있다고 느끼지 않는다면 기술적 문제를 다루고 있거나, 어댑티브 챌린지를 기술적 문제처럼 다루는 중이다(p.55).</li>
+<li><strong>진실을 가설로</strong>: 내가 전하는 이야기는 내가 고른 사실로 만든 하나의 「진실」일 뿐이다. 가설로 놓고 실험하고 고친다(p.57~59). 다른 분야와의 <strong>융합적</strong> 사고(동그라미, p.61).</li>
+<li>〈표 5-2〉 무엇이 결정을 어렵게 하는가 — 우열을 가리기 어려움 · 알려진 것과 알려지지 않은 것 사이의 선택 · 내 가치들끼리의 상충(p.63~64). 「어려움」이 곧 「중요함」은 아니다(p.65).</li>
+<li>실패를 <strong>허용하라</strong>(p.69): 성공 범위를 넓히고, 구성원을 준비시키고, <strong>작은 실험</strong>부터(p.70~71).</li>
+<li><a class="wl" href="../../t/%EC%9D%B8%EB%82%B4/">인내</a>: 단기 목표를 현실적으로 잡고 목적을 계속 기억한다(p.74). 조바심은 해롭고, 내가 사람들에게 얼마나 많은 것을 요구하는지 인식할 때 <strong>공감 능력</strong>이 자란다(p.76).</li>
+</ul>
+<h3>6. 영감을 불어넣어라 — 마음으로부터 듣고, 마음으로부터 말하기</h3>
+<ul>
+<li>영감은 사람들 마음에 닿아 채우는 역량이며, <strong>듣기</strong>와 <strong>말하기</strong> 두 가지를 길러야 한다(p.80~81).</li>
+<li>듣기: 내 감정은 그룹의 감정과 공명한다(p.82). 판단 대신 호기심과 <strong>동정심</strong>으로(p.85). <strong>침묵을 허락하라</strong> — 물러나는 사람 대부분은 말이 너무 많았다(p.86~87). 의사결정자일수록 듣기가 어렵다(p.88~89).</li>
+<li>말하기: 아리스토텔레스의 「부동의 동자」와 헤셸의 「가장 많이 움직이는 동자」 대비(p.92). 음악적으로 말하기(p.95), 낱말 하나의 무게(「십자군」 사례, p.99), 킹 목사가 원고를 접고 「지친」을 변주한 순간(p.100~101).</li>
+</ul>
+<h3>7. 핵심 인사이트: 메시지는 불확실하게, 어조는 확신 있게</h3>
+<ul>
+<li>이 권에서 가장 무겁게 표시된 곳이다(p.97, 문단 전체 굵은 밑줄 + 동그라미 4곳 + 별표). 어조와 메시지의 네 조합 가운데 저자들은 <strong>메시지만 불확실하게</strong>를 권한다: 도전은 분명히 말하되 적응 과정의 불확실성을 인정하고, 권위적으로 단정하지 않으면서 침착하고 자신 있게.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>메시지 강하게</th>
+<th>메시지 불확실하게</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>어조 강하게</strong></td>
+<td>둘 다 강하게</td>
+<td><strong>저자들의 권고 ★</strong></td>
+</tr>
+<tr>
+<td><strong>어조 불확실하게</strong></td>
+<td>어조만 불확실하게</td>
+<td>둘 다 불확실하게</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>📝 p.98~99 위 여백: 「확신한(?) 내용보다 초안(?) (방향이 분명한) / 그리고 확신하는 어조」</li>
+<li>같은 원리의 짝: 계획을 「실험」이라 부를 것인가 「해결책」이라 부를 것인가(p.106~108). 위급하고 스트레스가 압도적이면 해결책으로(지뢰밭 사례) 내놓되 기대치를 빨리 조정하고, 위급하지 않으면 처음부터 시범 프로젝트로 내놓는다.</li>
+</ul>
+<h3>8. 실험하라 — 권한의 경계, 온도, 자기 몫, 무능력 보이기</h3>
+<ul>
+<li>리더십에는 정해진 방법이 없다. 「해결책」은 무도회장으로 돌아가기 전 잠시 쉬는 벤치일 뿐이다(p.104).</li>
+<li><strong><a class="wl" href="../../t/%EA%B6%8C%EC%9C%84/">권한</a>을 넘어서라</strong>(p.113~115, 〈그림 5-1〉): 경계선 위(A)에서 조금씩 밀되 한참 밖(B)으로는 가지 말라. 내가 경계에 있는지 아는 유일한 방법은 <strong>저항의 정도</strong>다 — 저항이 전혀 없으면 리더십을 발휘하고 있지 않은 것이다. 저항은 농담·화제 전환으로 위장되기도 한다(p.117).</li>
+<li><strong>온도를 높여라</strong>(p.118~120): 온도를 낮추는 데 유능하던 경영자가 높이는 실험을 한 사례. 단, 내가 문제가 되지 않게. <a class="wl" href="../../b/%EC%96%B4%EB%8C%91%ED%8B%B0%EB%B8%8C%EB%A6%AC%EB%8D%94%EC%8B%AD3_%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9D%98%EC%98%A8%EB%8F%84_%ED%95%98%EC%9D%B4%ED%8E%98%EC%B8%A0/">3권</a>의 온도 조절을 자기 행동으로 옮긴 것이다.</li>
+<li><strong>문제에 내 몫이 있음을 인정하라</strong>(p.121~123), <strong>무능력함을 보여라</strong> — 감추면 아무것도 배울 수 없다(p.124~125).</li>
+</ul>
+<h3>9. 번성하라 — 생존을 넘어</h3>
+<ul>
+<li>탈진할 때까지 일하지 말라. 어댑티브 리더십은 혼자 해서는 안 된다(p.128). → <a class="wl" href="../../t/%EB%B2%88%EC%95%84%EC%9B%83%EA%B3%BC%EC%A0%95%EC%B2%B4%EC%84%B1/">번아웃과정체성</a></li>
+<li>조직 <strong>밖</strong> 네트워크 세 가지(p.128~131): 신뢰할 만한 사람들(약점을 공유해야 유익하다, p.130) · 개인적 욕구는 조직 밖에서 충족 · 다양한 공동체 활동.</li>
+<li>📝 p.131 여백: 「안에서라(?)」</li>
+<li>자신을 안아주는 환경: 몸, 그리고 <strong>피난처</strong>(일요일 저녁, 금요일 산책, 아침 명상, 예배 장소)(p.135~136).</li>
+<li>스스로를 새롭게 하는 세 가지(p.140~142): 삶의 포트폴리오 균형(리어왕 — 왕과 아버지) · 일상의 <strong>소소한 만족</strong> · <strong>낙관주의와 현실주의</strong>를 함께.</li>
+<li>맺음: 리더십이라는 행동을 저자들은 신성한 것이라 부른다(p.143).</li>
+</ul>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<ul>
+<li>적용(회의 자리): p.97의 「메시지는 불확실하게, 어조는 확신 있게」는 여백 메모까지 남긴 대목이다. 안건을 「확정안」이 아니라 「방향이 분명한 초안」으로 내놓는 방식과 맞닿는다.</li>
+<li>적용(사역): 저항이 없다는 것이 순항의 증거가 아니라는 기준(p.115)을 지금 맡은 자리들에 대어 볼 것.</li>
+<li>적용(자기 돌봄): 조직 밖 신뢰 관계와 피난처 — 지금 실제로 있는 것을 적어 보기.</li>
+<li>미해결: p.21 「회색지대(?)」 — 목적을 위해 평소의 가치를 어기는 불편함을 어디까지 감당할 것인가. 저자들도 기준을 주지 않는다.</li>
+<li>미해결: p.37 「통합 이야기하는 이유는(?)」 — 야망과 열망의 통합을 신앙의 언어(<a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a>)로는 어떻게 말할 것인가.</li>
+<li>미해결: 「개인적 욕구는 조직 밖에서」(p.129)는 교회·선교 공동체처럼 일과 삶이 겹치는 곳에서도 성립하는가.</li>
+</ul>
+<hr />
+<blockquote>
+<p>📌 이 노트는 표시한 대목을 풀어 쓴 정리다. 쪽 번호는 한국어판 5권 기준. 촬영본에 없는 쪽: p.9~11·13·17·22~24·38·45·62·66·78~79·90~91·93~94·96·103·109·112·126~127·132~133·137~139.</p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#discipline/리더십</span><span>#domain/조직</span><span>#변화</span><span>#어댑티브리더십</span><span>#실험</span><span>#자기돌봄</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
