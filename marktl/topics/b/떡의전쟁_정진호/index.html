@@ -1,0 +1,298 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>떡의 전쟁 — 정진호 (홍성사) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">선교</span><span class="author">정진호</span><span class="date">2026-10-12</span></div>
+  <h1 class="note-title">떡의 전쟁 — 정진호 (홍성사)</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/%EB%96%A1%EC%9D%98%EC%A0%84%EC%9F%81_%EC%A0%95%EC%A7%84%ED%98%B8/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<blockquote>
+<p>연변과기대 교수를 거쳐 평양과기대 부총장이 된 공학자가 「떡」이라는 한 낱말로 성경 전체를 꿰어 읽은 비전 고백서(The Bread Battles). 열세 개의 「떡」(장)과 장마다 붙은 「떡고물」(개인 이야기)로 짜여 있다. 📷 표시 전사 기반 독서 노트.</p>
+</blockquote>
+<hr />
+<h2>요약 — 주제별 상세 정리</h2>
+<h3>1. 전쟁의 시작: 선악과는 배고픔의 문제가 아니었다</h3>
+<p>저자는 떡의 전쟁을 에덴에서 시작한다(<span class="wl-dead" title="위키 내부 링크">창3</span>). 선악과만이 금지된 열매였으므로 그것은 양식의 문제일 수 없다.</p>
+<blockquote>
+<p>"선악과 문제는 결코 육신의 양식의 필요에서 비롯된 배고픔의 문제는 아니었다. 오히려 선악과는 하나님과 우리 사이의 관계를 설정하는 존재의 법칙을 드러내는 시금석이었다." (p.20)</p>
+</blockquote>
+<p>뱀과 여자의 대화에서 말씀이 어떻게 비틀리는지를 저자는 낱말 단위로 짚는다. 표시는 그 낱말들에 찍혀 있다.</p>
+<table>
+<thead>
+<tr>
+<th>하나님의 말씀</th>
+<th>여자의 말</th>
+<th>일어난 일</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>모든 나무의 실과를 임의로 먹되</td>
+<td>먹을 수 있으나</td>
+<td>풍요로운 자유가 제한적으로 표현됨</td>
+</tr>
+<tr>
+<td>반드시 죽으리라</td>
+<td>"너희가 죽을까 하노라"</td>
+<td>확언이 약화됨</td>
+</tr>
+<tr>
+<td>(없음)</td>
+<td>"만지지도 말라"</td>
+<td>첨언(添言) — 이미 손이 절반 이상 다가가 있었다</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"풍요롭게 주어졌던 자유는 제한적으로 표현되었고, 반드시 죽으리라는 하나님의 확언은 약화되었다." (p.21)</p>
+</blockquote>
+<h3>2. 핵심 인사이트: 모든 유혹은 「존재를 소유로 환원」하는 한 수다</h3>
+<p>돈·성·명예·권력의 유혹을 늘어놓은 뒤 저자는 그것들을 한 문장으로 접는다.</p>
+<blockquote>
+<p>"돌을 떡으로 바꾸라는 그 말 한마디에 압축되어 있다. 다름 아닌 존재의 문제를 소유의 문제로 환원하려는 사탄의 간교한 계략에서 시작된 것들이기 때문이다." (p.25)</p>
+</blockquote>
+<p>에덴의 풍요 속 아담과 달리 예수는 40일 금식의 굶주림 속에서 같은 수법을 만났고(<span class="wl-dead" title="위키 내부 링크">마4</span>), 답은 떡을 더 갖는 것이 아니었다.</p>
+<blockquote>
+<p>"예수에게는 생명의 떡인 하나님의 말씀이 바로 그 해답이었다. 그것은 바로 '존재냐 소유냐'라는 하나님의 질문과 사탄의 유혹 앞에 던져진 영원한 해답, 즉 존재의 떡이었다." (p.28)</p>
+</blockquote>
+<p>장 제목 「존재냐 소유냐」는 <span class="wl-dead" title="위키 내부 링크">에리히프롬</span>의 책 제목과 같은 물음이다. 프롬이 실존 양식의 문제로 다룬 것을 저자는 창조주 앞의 자리(피조물의 존재 법칙) 문제로 옮겨 놓는다.</p>
+<h3>3. 떡의 인생: taken – blessed – broken – given</h3>
+<p>오병이어에서 예수가 떡을 다루는 네 동작이 곧 예수 자신의 인생이고 제자의 부르심이라는 것이 여섯 번째 떡의 뼈대다.</p>
+<table>
+<thead>
+<tr>
+<th>동사</th>
+<th>예수의 생애</th>
+<th>우리가 머무는 곳</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>taken (붙들림)</td>
+<td>하나님 손에 붙들린 인생</td>
+<td>좋아한다</td>
+</tr>
+<tr>
+<td>blessed (축사)</td>
+<td>세례 때 성령의 임하심</td>
+<td>좋아한다</td>
+</tr>
+<tr>
+<td>broken (찢김)</td>
+<td>십자가</td>
+<td>싫어한다</td>
+</tr>
+<tr>
+<td>given (나눔)</td>
+<td>생명의 떡으로 만민에게</td>
+<td>싫어한다</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"'taken-blessed-broken-given'의 인생, 이 네 가지 동사로 이루어진 떡의 인생으로 부름을 받는 것이다." (p.114)</p>
+<p>"종종 우리는 앞의 두 가지 동사 taken과 blessed의 자리에 머물기는 좋아하나, 뒤의 두 가지 동사 broken과 given의 인생을 살기는 싫어한다." (p.114)</p>
+</blockquote>
+<p><span class="wl-dead" title="위키 내부 링크">헨리나우웬</span>이 성찬의 네 동사로 「사랑받는 자의 삶」을 풀었던 것과 같은 틀이다. 저자는 여기에 연변과기대 10년을 겹쳐 전도서 11장 1절로 맺는다 — "네 식물을 물 위에 던지라 여러 날 후에 도로 찾으리라."(p.117)</p>
+<h3>4. 두 가지 떡: 가난의 복음과 총체성</h3>
+<p>일곱 번째 떡은 육체의 떡과 영혼의 떡을 가르지 않는다.</p>
+<blockquote>
+<p>"육체의 떡과 영혼의 떡이 함께 필요하다. 우리는 그 어느 하나도 경시하거나 도외시할 수 없다. 우리는 가난한 자들에게 그 두 가지 떡을 함께 주어야만 한다." (p.135)</p>
+</blockquote>
+<p>📝 이 문장 옆 여백 메모: 「그러나 더 갈급하는(?) 것은 영의 떡이다.」 — 둘 다를 말하는 저자에게 우선순위를 되묻는 반응이다.</p>
+<p>저자는 복음서 읽기의 편식을 지적한다.</p>
+<blockquote>
+<p>"영적 복음만을 중시하는 보수 근본주의자들에게는 마태복음의 산상수훈이 더 인기가 있고, 사회 복음을 중시하는 진보적 자유주의자들에게는 누가복음이 더 인기가 있다는 것은 잘 알려진 사실이다." (p.138)</p>
+</blockquote>
+<p>마태는 천국이 「저희 것」(3인칭), 누가는 "너희 것임이라"(2인칭, <span class="wl-dead" title="위키 내부 링크">눅6</span>)고 쓴다는 대비에도 밑줄이 있다. 가난의 정의도 넓다 — 타락의 순간 인간은 "영적 가난, 육체적 가난, 사회적 가난, 환경적, 생태적 가난에 직면하고 말았다."(p.138) 그래서 "가난한 자는 항상 너희와 함께 있으리라던 예수의 예언은 적중하였"고(p.136), "하나님나라의 백성에게는 떡을 나누는 삶에 대한 강한 도덕적 책임이 부과"된다(p.136). 베들레헴의 어원이 「떡집」(the house of bread)이라는 대목(p.140)이 이 장의 상징이다. <a class="wl" href="../../t/%EC%B4%9D%EC%B2%B4%EC%A0%81%EC%84%A0%EA%B5%90/">총체적선교</a>의 언어로 읽을 수 있는 장이다.</p>
+<h3>5. 불의한 청지기의 세 가지 지혜 — 그리고 물음표 하나</h3>
+<p>여덟 번째 떡은 <span class="wl-dead" title="위키 내부 링크">눅16</span>의 옳지 않은 청지기를 「바로 우리 자신」으로 읽고, 그가 깨달은 것을 셋으로 정리한다.</p>
+<table>
+<thead>
+<tr>
+<th>지혜</th>
+<th>내용 (p.156)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>자각</td>
+<td>'옳지 않은 청지기라는 사실에 대한 자각'</td>
+</tr>
+<tr>
+<td>종말론적 인식</td>
+<td>'마지막 순간이 임박했다는 종말론적 인식'</td>
+</tr>
+<tr>
+<td>윤리적 판단</td>
+<td>'어떻게 처신해야 할 것인지에 대한 윤리적 판단'</td>
+</tr>
+</tbody>
+</table>
+<p>이어지는 문장에는 밑줄과 함께 여백에 큰 물음표가 있다.</p>
+<blockquote>
+<p>"타락한 세상에서 어차피 재물은 불의한 것이다." (p.156) 📝 <strong>?</strong></p>
+<p>"재물에는 이미 불의한 영이 깃들어 있다." (p.156)</p>
+</blockquote>
+<p>재물 자체가 불의한가, 재물을 우상으로 만든 탐심이 불의한가 — 독자가 멈춰 선 지점이다. <a class="wl" href="../../b/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%B4%EB%83%90%EB%8F%88%EC%9D%B4%EB%83%90_%EC%9E%90%EB%81%84%EC%97%98%EB%A5%84/">하나님이냐돈이냐_자끄엘륄</a>이 맘몬을 인격적 권세로 본 것과 나란히 놓고 따져 볼 만하다. 반대편에는 각주의 막스 베버가 있다. 근검절약과 합리적 이윤 추구가 청교도의 소명이었고 그것이 "부의 축적에 대한 합리적 정당성과 근거를 제공"했다는 것(p.158 각주 5) — 저자는 이를 부를 축복의 증거로 여긴 바리새인의 논리가 종교개혁 뒤에도 이어진 사례로 든다. <a class="wl" href="../../t/%EC%B2%AD%EC%A7%80%EA%B8%B0/">청지기</a></p>
+<h3>6. 갈멜 산의 뒷면: 바알 숭배와 사유 재산, 희년</h3>
+<p>열 번째 떡의 물음은 승리가 아니라 그 뒤다(<span class="wl-dead" title="위키 내부 링크">왕상18</span>).</p>
+<blockquote>
+<p>"엄청난 승리를 거둔 엘리야의 사역이 어째서 갈멜 산 승리 이후 갑자기 위축되었으며, 어떻게 아합 왕과 이세벨 왕후에 의해 이스라엘 역사 속에 본격적인 바알 숭배와 사유 재산 제도가 도입되고 말았는가" (p.194)</p>
+</blockquote>
+<p>저자에게 바알과의 싸움은 경제 질서의 싸움이다. 하나님의 통치는 "청지기 경제(oikonomia)의 원리"(p.196) 위에 서 있고, 율법은 그 장치였다.</p>
+<blockquote>
+<p>"십일조와 가난한 자들을 위한 구제 명령과 안식일과 안식년 제도를 통한 절제와 희년 제도들은 물질의 재분배를 통해 영구적인 빈부의 격차가 확대 재생산되는 것을 억제하는 제도적 장치였다." (p.196)</p>
+</blockquote>
+<p>여기서 저자는 "토지의 사유화를 막고 토지 공개념을 실시해야"(p.197) 한다는 데까지 나아간다(p.136의 헨리 조지에도 표시). 다만 같은 쪽에서 공산주의가 대안이 될 수 없음은 사회주의 국가의 실험으로 입증됐다고 덧붙인다. 갈멜의 승리에도 그 땅에는 "바알 신앙과 사유 재산 제도가 정착되는 아이러니컬한 결과"(p.207, 나봇의 포도원 왕상 21장)가 남는다. <a class="wl" href="../../t/%ED%9D%AC%EB%85%84/">희년</a> · <span class="wl-dead" title="위키 내부 링크">레25</span></p>
+<h3>7. 핵심 인사이트: 큰 일을 행한 직후가 가장 위험하다</h3>
+<p><span class="wl-dead" title="위키 내부 링크">엘리야</span>의 로뎀나무(<span class="wl-dead" title="위키 내부 링크">왕상19</span>)를 저자는 사역자의 함정으로 읽는다. 표시가 가장 촘촘한 대목이다.</p>
+<blockquote>
+<p>"위대한 일, 큰 일을 행한 직후, 자신이 그 일을 행했다고 생각하는 순간 위기가 닥친다. 그리고 이전의 그 놀라운 믿음은 어디로 갔는지 순식간에 사라지고, 깊은 회의와 패배감이 닥쳐오게 되는 것이다." (p.206)</p>
+</blockquote>
+<p>"네가 어찌하여 여기 있느냐?"(p.205)라는 실존적 질문에 엘리야는 두 번 다 불평으로 답했고, "그 능력의 겉옷이 엘리사에게로 넘어가고 말았다"(p.206). 저자는 물러남 자체를 은혜로 본다.</p>
+<blockquote>
+<p>"<strong>모세</strong>를 가나안 땅에 들어가지 못하도록 막으신 것도 역시 모세를 향한 하나님의 특별한 사랑이었다." (p.206)</p>
+</blockquote>
+<p>퇴진할 때를 찾지 못해 "결국 역사의 오점으로"(p.207) 남은 사람들을 말하는 줄 옆에 📝 「히스기야」라고 적혀 있다 — 15년을 더 얻고 므낫세를 남긴 왕을 떠올린 메모다.</p>
+<h3>8. 공동체의 떡: 누룩과 꿀을 넣지 말라</h3>
+<p>아홉 번째 떡은 연변과기대 공동체를 소제물에 빗댄다. 곡식이 부서져 가루가 되고 기름으로 반죽되어 화덕에 구워지는 과정이 공동체의 성화다. 레위기는 "소제물에 누룩과 꿀을 넣지 말라"(p.184, 레 2:11-13)고 하는데, 저자의 풀이로 누룩은 공동체를 부풀리는 교만, 꿀은 유혹하는 탐심이고, 그 위에 치는 소금은 변치 않는 십자가의 언약이다.</p>
+<blockquote>
+<p>"그들이 하나 되어 서로 사랑할 때 비로소 그들을 그리스도의 제자로 인정한다는 것을 알려 주는 것이다." (p.185)</p>
+</blockquote>
+<p>사역의 성과가 아니라 하나 됨이 제자의 표지라는 말이다. <a class="wl" href="../../t/%EA%B3%B5%EB%8F%99%EC%B2%B4/">공동체</a></p>
+<p><em>(열세 번째 떡에서는 포스트모던 논쟁과 "푸코와 하버마스"(p.256~257)에 표시가 있으나, 촬영분만으로는 저자의 결론을 확인할 수 없다.)</em></p>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<ul>
+<li><strong>적용(사역)</strong>: 단체·위원회에서 일이 잘 끝난 직후가 p.206의 자리다. 「내가 했다」는 생각이 드는 순간을 점검 지점으로 삼고, 물러날 때를 미리 정해 둔다(📝 히스기야).</li>
+<li><strong>적용(의료·선교)</strong>: 진료와 복음을 「두 가지 떡」으로 함께 주되(p.135), 여백 메모대로 무엇이 더 갈급한지를 현장마다 다시 묻는다. 단기 의료선교 논의와 이어진다.</li>
+<li><strong>적용(재정)</strong>: 세 가지 지혜(자각·종말론적 인식·윤리적 판단, p.156)를 재정 결정의 점검표로 쓴다.</li>
+<li><strong>미해결 질문</strong></li>
+<li>"재물은 어차피 불의한 것"(p.156)인가? 여백의 물음표에 대한 답 — 엘륄과 베버 사이 어디에 설 것인가.</li>
+<li>바알 숭배와 사유 재산 제도를 한 묶음으로 보는 저자의 읽기는 본문(왕상 21장)이 지지하는 만큼인가, 그 이상인가.</li>
+<li>희년을 「토지 공개념」이라는 정책으로 곧장 옮길 수 있는가.</li>
+<li>taken·blessed에 머물고 싶어 하는 것은 개인만의 문제인가, 교회·단체의 구조 문제이기도 한가.</li>
+<li>p.105(다섯 번째 떡, 광야의 만나) 표시 구절 — 재촬영 후 보완.</li>
+</ul>
+<hr />
+<blockquote>
+<p>📖 전사 원문(줄이지 않은 표시 구절 전체): <span class="wl-dead" title="위키 내부 링크">떡의전쟁_정진호_전사</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/경제신학</span><span>#discipline/선교</span><span>#물질관</span><span>#북한선교</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
