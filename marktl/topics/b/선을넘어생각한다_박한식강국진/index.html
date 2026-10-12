@@ -1,0 +1,408 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>선을 넘어 생각한다 — 박한식·강국진 (부키) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">신학·사회</span><span class="author">박한식강국진</span><span class="date">2026-10-12</span></div>
+  <h1 class="note-title">선을 넘어 생각한다 — 박한식·강국진 (부키)</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/%EC%84%A0%EC%9D%84%EB%84%98%EC%96%B4%EC%83%9D%EA%B0%81%ED%95%9C%EB%8B%A4_%EB%B0%95%ED%95%9C%EC%8B%9D%EA%B0%95%EA%B5%AD%EC%A7%84/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<blockquote>
+<p>부제 「남과 북을 갈라놓는 12가지 편견에 관하여」. 평양을 50차례 넘게 방문하며 북·미 사이의 비공식 가교 노릇을 한 조지아대학 정치학자 박한식이, 기자 강국진의 물음에 2년 넘게 답한 대담집. 📷 표시 전사 기반 독서 노트.</p>
+</blockquote>
+<hr />
+<h2>요약 — 주제별 상세 정리</h2>
+<h3>1. 책의 출발점 — 신뢰는 대화의 조건이 아니라 결과다</h3>
+<p>책 전체를 받치는 문장은 머리말에 있고, 독자는 「신뢰」에 동그라미를 쳤다.</p>
+<blockquote>
+<p>"<strong>신뢰</strong>라는 것은 대화의 전제 조건이 아니라 대화의 결과이기 때문입니다." (p.10, p.29에서 반복)</p>
+<p>"'신뢰'가 있어야만 친구가 될 수 있다고 한다면 세상에 친구를 사귈 수 있는 사람은 아무도 없을 것입니다." (p.10)</p>
+</blockquote>
+<p>저자는 북한에 대한 무지가 폐쇄성 탓만이 아니라 "의도적인 '악마화' 혹은 '북한에 대한 오리엔탈리즘'"(p.10) 때문이라고 본다. 그래서 윌리엄 페리의 말을 방법으로 삼는다 — "우리는 우리가 바라는 북한이 아니라 있는 그대로의 북한 정부와 교섭해야 한다"(p.11). 열두 장은 각각 편견 하나를 다루지만, 실제로는 이 한 가지 태도를 열두 번 적용한 것이다.</p>
+<h3>2. 「북한은 곧 무너진다」는 도그마 — 체제를 지탱하는 것은 경제가 아니라 정통성</h3>
+<p>1994년 "빠르면 사흘, 늦어도 3년"(p.18)부터 고위급 탈북 때마다 되풀이된 붕괴론에 저자는 "북한은 '절대' 붕괴하지 않습니다"(p.20)라고 답한다. 독자가 별표를 친 대목이 논거의 핵심이다.</p>
+<blockquote>
+<p>"독재국가에서는 외부의 압력으로 경제가 어려울수록 독재는 더 잘 이루어집니다." (p.21 ☆)</p>
+<p>"체제가 붕괴하는 것은 그 체제를 유지하는 <strong>정통성이</strong> 무너졌을 때입니다. … 북한의 정통성은 경제성장이 아니라 항일 무장투쟁을 지도한 김일성 주석과 조선노동당 그리고 미국 등 외세에 맞서 자주성을 지키는 것에 그 뿌리를 두고 있기 때문입니다." (p.21 ☆)</p>
+</blockquote>
+<ul>
+<li>지지 기반: 당원 약 360만(인구의 14%)과 그 가족을 합치면 인구의 절반 가까이가 '친정부' 범주이고, 또 4분의 1은 '비판적 지지'층이다(p.23). 직급을 가리지 않는 자아비판 모임이 불만을 "체제 안으로 순치"한다(p.24).</li>
+<li>붕괴의 결말: "'북한 붕괴'의 결말은 '독일'이라기보다 '시리아'에 더 가깝지 않을까"(p.25). 그래서 "북한은 붕괴하지 않습니다. 그리고 붕괴해서도 안 됩니다"(p.25).</li>
+<li>제재의 역설: "대북 제재의 목표가 북한을 굴복시키는 것이라면 실패할 것입니다. 이는 한국이 아니라 중국 품에 안기라고 북한의 등을 떠미는 것"(p.33). "남북 대결은 한국은 미국에, 북한은 중국에 갇히는 결과만 초래"(p.34).</li>
+</ul>
+<h3>3. 「미치광이 한 사람이 지배한다」는 착각 — 조선노동당이라는 집단</h3>
+<p>김일성·김정일·김정은으로 주어만 바뀐 '미친 독재자' 레퍼토리(p.40)에 대해 저자는 올브라이트("결단력이 있으며 실용주의적", p.41)와 최은희·신상옥의 증언을 맞세운다.</p>
+<blockquote>
+<p>"북한은 조선노동당이 지배하는 일당 독재국가로, 조선노동당을 움직이는 것은 특정한 개인이 아닙니다." (p.45)</p>
+<p>"김일성 주석이 국가 <strong>정통성</strong>의 바탕을 만들었고, 김정일 국방위원장이 … <strong>정통성과</strong> 안보를 이미 이루어 놓았기 때문에 <strong>김정은</strong> 국무위원장은 경제를 살리는 것밖에 할 일이 없습니다." (p.43)</p>
+</blockquote>
+<ul>
+<li>김정은의 목표는 '북한의 덩샤오핑'(p.44). 시장은 "통제되는 시장"이며 "조선노동당 통치와 자본주의적 경제는 양립 불가능한 목표가 아닙니다"(p.33).</li>
+<li>경쟁은 개인이 아니라 "집단과 집단끼리"(p.32, p.73) — 상도 1등 학생이 아니라 1등 학교가 받는다.</li>
+<li>장성택 처형은 1인의 변덕이 아니라 최고위 간부들의 협의 결과였고, 죄목은 '개인주의'였다(p.50~51). 다만 저자는 "그 같은 불편함을 수용할 수 없었다는 것이고, 이는 곧 약함"(p.52)이라고 평가한다.</li>
+</ul>
+<h3>4. 핵심 인사이트: 주체사상은 유물론이 아니라 종교다 — 신정국가로 읽기</h3>
+<blockquote>
+<p>"북한에서 김일성 주석은 한마디로 신神이라고 할 수 있습니다. … 북한은 사실상 신정국가나 다름없습니다." (p.58)</p>
+<p>"노래가 있고, 신학이 있고, 성경이 있고, 목사가 있습니다. 한마디로 종교 집단이나 다름없습니다." (p.66)</p>
+</blockquote>
+<p>주체사상은 "사람이란 자주성, 창조성, 의식성"을 갖는다는 인간 중심의 "형이상학적인 철학"(p.59)이고, 통일교와 "한민족의 우월성, 선민의식"(p.67)을 공유한다. 독자는 수령에 대한 절대 충성 대목 옆에 📝「유대교의 토라 비슷(?)」이라고 적었다 — 종교 문법으로 읽고 있다는 표시다.</p>
+<p><strong>주체사상을 만든 네 가지 기억</strong> (p.64~65, 독자가 번호마다 동그라미)</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>기억</th>
+<th>남긴 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>첫 번째</td>
+<td>일제강점기와 항일운동</td>
+<td>반제·반외세</td>
+</tr>
+<tr>
+<td>두 번째</td>
+<td>분단 — 남은 미군정·친일파, 북은 항일운동가 그룹</td>
+<td>정통성 의식</td>
+</tr>
+<tr>
+<td>세 번째</td>
+<td>전쟁 — "결국 미국에 패하지 않았다"</td>
+<td>철저한 민족주의</td>
+</tr>
+<tr>
+<td>네 번째</td>
+<td>중소대립</td>
+<td>등거리 외교 → '유일사상'</td>
+</tr>
+</tbody>
+</table>
+<p>전쟁 사상자 수치(한국군 62만·인민군 60만·중국군 97만·유엔군 15만)에 독자는 동그라미를 치고 쪽 위에 📝「남한 민간인 100만 / 북한 127만」을 보탰다.</p>
+<p>선군정치도 군부독재가 아니라 "'군인들에게 배우자', '군대가 인민들의 생활을 도우라'"(p.70)로 읽어야 한다는 것이 저자의 풀이다. 에필로그의 한 줄이 이 장과 짝을 이룬다 — "평양 방문을 통해 기독교 신자로서 신앙심이 더 깊어졌으니 저에게 가장 큰 선교사 역할을 한 것은 조선노동당인 셈입니다"(p.310).</p>
+<h3>5. 인권 — 세 가지 권리와 '인권 정치'</h3>
+<p>저자는 북한 인권 문제가 심각함을 부정하지 않는다(p.78, p.92). 문제 삼는 것은 인권을 쓰는 방식이다.</p>
+<table>
+<thead>
+<tr>
+<th>저자의 구분 (p.79~80)</th>
+<th>내용</th>
+<th>독자 표시</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>생명권</strong></td>
+<td>생명의 위협으로부터의 안전 — 전쟁은 인권과 양립 불가</td>
+<td>동그라미</td>
+</tr>
+<tr>
+<td><strong>평등권</strong></td>
+<td>경제적 자립, 노동3권, 일할 권리</td>
+<td>동그라미 2회</td>
+</tr>
+<tr>
+<td><strong>선택권</strong></td>
+<td>선택할 수 있는 권리 — 앞의 둘이 갖춰져야 기능</td>
+<td>동그라미 2회</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>개인의 권리 대 집단의 권리: 기독교 영향권은 인권을 개인의 것으로, 북한은 "공동체 차원의 인권을 개인의 권리보다 더 앞세우는 곳"(p.81). 저자 자신도 "공동체라는 이름으로 개인에게 가해지는 폭력이 모두 정당화될 수 있는 것인지는 모르겠습니다"(p.78)라고 단서를 단다.</li>
+<li>인권 정치: 냉전기 미·소가 서로 상대 진영의 인권만 거론했고(p.81), 만델라는 "국제 앰네스티에서도 거부당한 투사"였다(p.81).</li>
+<li>"'역지사지易地思之'야말로 인권 감수성의 첫 단추"(p.83) — 월마트 반문 일화.</li>
+<li>탈북자 증언의 편향(p.85~91): 김운철/박충일, 이순옥, 신동혁, 박연미 사례와 인터뷰 대가·'시장 압력'. 탈북자를 <strong>난민</strong>으로 볼지 <strong>노동 이민</strong>으로 볼지가 대북정책을 가른다(p.93).</li>
+<li>"인도적 목적을 위해서라면 어느 정도 '조용한 외교'가 필수적"(p.95). '대사관 치기'는 "'인권 사건'이 아니라 … '정치적 사건'"(p.96). 대안은 탈북자를 낳는 경제 격차를 줄이는 '마셜 플랜'(p.98).</li>
+</ul>
+<h3>6. 핵심 인사이트: 접경 선교의 자기 점검 — 억류 사건과 선교단체</h3>
+<p>오토 웜비어 사건에서 저자는 북한의 잘못을 명시하면서도(p.103) 오바마 행정부의 방치를 함께 묻고, 2009년 두 여기자 송환을 직접 중재한 경험을 든다. 북한이 요구한 것은 돈이 아니라 사과와 격에 맞는 특사였다(p.105~106). "북한은 흥정할 거리를 만들기 위해 외국 사람을 체포하는 것이 아닙니다"(p.111).</p>
+<p>선교 현장에 직접 닿는 대목은 여기다.</p>
+<blockquote>
+<p>"저도 개신교 신도입니다만 일부 선교단체들이 이 접경 지역에서 행하는 행태에는 문제가 매우 많습니다." (p.107)</p>
+<p>"'남쪽은 옳고 북쪽은 틀렸다', '남쪽은 천국이고 북쪽은 지옥이다', '북쪽이 살길은 개종하는 것밖에 없다'는 사고방식이 북한 사람들의 인권 수준을 높이는 데 어떤 도움이 되는지 저는 잘 모르겠습니다." (p.107)</p>
+<p>"그런 방식은 전도는 고사하고 분란만 일으킬 뿐입니다." (p.108)</p>
+</blockquote>
+<p>억류된 이들 다수가 한국계이고 선교 활동과 얽혀 있다는 지적(p.107), 기획 망명에 선교원이 공모했다는 사례(p.97)까지 독자는 빠짐없이 밑줄을 쳤다. <a class="wl" href="../../t/%EB%B6%81%ED%95%9C%EC%84%A0%EA%B5%90/">북한선교</a>와 <a class="wl" href="../../t/%ED%83%80%EB%AC%B8%ED%99%94%EC%84%A0%EA%B5%90/">타문화선교</a>에서 말하는 「선교사의 우월감」 문제가 한반도판으로 나타난 자리이고, <a class="wl" href="../../b/%EC%98%A4%EB%A7%8C%EA%B3%BC%ED%99%98%EB%8C%80_%EC%9D%B4%EC%84%A0%EC%9A%A9/">오만과환대_이선용</a>의 문제의식과 겹친다.</p>
+<h3>7. 「퍼 주기」라는 말 — 숫자로 다시 보기</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>규모</th>
+<th>쪽</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>김영삼 정부 대북 인도적 지원(1995~97)</td>
+<td>정부 2,118억 + 민간 196억 = <strong>2,314억 원</strong></td>
+<td>p.121</td>
+</tr>
+<tr>
+<td>김대중·노무현 정부 10년</td>
+<td>현물 <strong>1조 8,786억</strong> + 식량차관 8,872억 = <strong>2조 7,658억 원</strong></td>
+<td>p.121</td>
+</tr>
+<tr>
+<td>연평균 / 국민 1인당</td>
+<td>2,766억 원 / 연 6,000원 미만</td>
+<td>p.127</td>
+</tr>
+<tr>
+<td>비교: 마창대교와 연결도로</td>
+<td>3,800억 원</td>
+<td>p.127</td>
+</tr>
+<tr>
+<td>미국의 대북 지원(1995~2009)</td>
+<td>12억 8,585만 달러</td>
+<td>p.128</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>"김대중·노무현 정부 10년 동안 북한에 지원한 내역 중에 '현금'은 없었습니다"(p.123).</li>
+<li>금강산·개성공단은 지원이 아니라 <strong>'투자'</strong>(p.120, p.124 — 두 번 동그라미).</li>
+<li>지원을 끊은 뒤 갈등 비용은 "'퍼 주기'를 하던 당시보다도 두 배가 넘는 돈"(p.128). "'기다리는 것도 전략'이 아니라 '기다리는 것 말고는 전략이 없다'"(p.131).</li>
+</ul>
+<h3>8. 북·중 관계 — 혈맹과 실리, 그리고 '중국 책임론'</h3>
+<p>항일 무장투쟁 시절부터의 전우 관계(p.136~138), 1962년 조중변계조약에서 중국이 천지의 54.5%를 북한에 내준 일(p.139), 동시에 김일성이 중국의 간섭을 끝까지 경계한 일(p.141)이 함께 서술된다. "혈맹관계를 유지하면서도 실리를 취하려는 긴장관계"(p.142)가 요점이다.</p>
+<blockquote>
+<p>"'북핵 중국 책임론'은 조지 W. 부시 행정부의 작품이나 다름없습니다." (p.145)</p>
+<p>"미국 정부로서는 대단히 편리한 알리바이를 손에 넣은 셈입니다." (p.146)</p>
+</blockquote>
+<p>북한 무역의 대중 의존도는 2000년 20.4% → 2015년 63.7%(남북교역 제외 시 91.3%, p.147~150, 표의 수치에 동그라미). 저자는 이것이 북한의 선택이 아니라 제재의 결과이며 "남한·미국에도 좋지 않다"(p.151)고 본다.</p>
+<h3>9. 핵심 인사이트: 진보/보수가 아니라 두 개의 길 — 안보 접근법과 평화 접근법</h3>
+<blockquote>
+<p>"냉전 이후는 크게 두 가지 상반된 경로로 나눌 수 있는데, 바로 노태우-김대중-노무현의 길과 김영삼-이명박-박근혜의 길입니다." (p.161)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>안보 접근법</th>
+<th>평화 접근법</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>수단</td>
+<td>"언제나 무기와 공포를 통해서만 유지"(p.234)</td>
+<td>교류·협력·신뢰(p.252)</td>
+</tr>
+<tr>
+<td>사례</td>
+<td>5·24 조치, '통일 대박', 사드, 전략적 인내</td>
+<td>북방외교·7·7 선언, 햇볕정책, 6·15, 10·4</td>
+</tr>
+<tr>
+<td>귀결</td>
+<td>"전쟁의 공포와 갈등, 과거로 퇴행"(p.185)</td>
+<td>"남북 화해와 협력, 미래"(p.185)</td>
+</tr>
+<tr>
+<td>핵심 문장</td>
+<td>"안보만 강조해서는 안보를 이룰 수 없습니다"(p.242)</td>
+<td>"평화는 지배가 아니라 조화입니다"(p.244)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>노태우의 북방외교를 높이 평가하고(p.166) 김영삼 정부의 조문 파동을 "다시없는 기회를 망쳐 버린"(p.173) 일로 본다. 진영이 아니라 정책으로 가른 구분이라 통념을 뒤집는다.</li>
+<li>북핵은 "안보 패러다임의 산물"(p.297). "북한이 핵무기를 왜 개발했을까요? 바로 안전보장 때문"(p.222). 후세인·카다피의 몰락이 그 공포를 굳혔다(p.216). 해법은 "제재가 아니라 평화조약, 압박이 아니라 협상"(p.297).</li>
+<li>미국 변수: 북핵은 미국에 "대중 관계와 대일 관계의 종속변수"(p.195)이고, <strong>군산복합체</strong>(p.205, p.219 동그라미)에는 "북한의 '악마' 이미지가 필수"(p.239). 아이젠하워의 1961년 경고와 "모든 총과 군함과 로켓은 결국 배고프고 춥고 헐벗은 사람들로부터 훔친 것"(p.238)이 길게 인용된다.</li>
+<li>주체의 문제: "통일의 주체는 남과 북이지 미국과 중국이 아닙니다"(p.187). 분단의 처음 원인은 외세였지만 "분단 고착화는 분명 우리 민족의 책임"(p.230).</li>
+</ul>
+<h3>10. 통일의 편익 — 개성·나선·지하자원</h3>
+<ul>
+<li><strong>개성</strong>(p.252 동그라미): 개성공단은 "남측에선 자본과 기술을, 북측에선 노동력과 토지를 결합"(p.257)한 모델이고, 북한이 6사단을 10~15km 후방으로 물려 "휴전선이 북상한 것이나 다름없었"다(p.256). 저자는 개성을 '통일특구'·통일 도읍 후보로 제안한다(p.259~261) — 브뤼셀에 비유(p.260, p.292).</li>
+<li><strong>의료</strong>: 개성에 "남북 간 의학협력을 수행하는 <strong>의료기관</strong>"을 두고 고려의학과 한의학을 함께 연구해 '통일의학'의 중심지로 삼자는 구상(p.263~264)에 독자는 동그라미를 쳤다.</li>
+<li><strong>나선</strong>: 북·중·러가 만나는 부동항(p.265). 지하자원 잠재 가치 약 4,000조 원(p.272). "통일은 비용보다 훨씬 더 큰 편익을 얻을 수 있는 블루오션"(p.269).</li>
+</ul>
+<h3>11. 핵심 인사이트: 동질성 회복이 아니라 이질성 수용 — 변증법적 통일</h3>
+<p>책의 결론이자 독자의 표시가 가장 짙은 곳이다.</p>
+<blockquote>
+<p>"동질성 회복은 <strong>유아적 발상</strong>이라고 생각합니다. … 동질성 회복이 아니라 <strong>이질성을 인정하고 수용하는</strong> 것이 중요합니다." (p.279, 강원용 목사에게 한 말)</p>
+<p>"저는 이것을 <strong>'변증법적 통일론'</strong>이라고 부릅니다. 정正 안에 반反이 있고, 반 안에 정이 있습니다. 정은 반을 적대시하지 않습니다. 정과 반이 서로 배워 가며 자신을 더 높은 단계로 승화시키는 것, 그것이 바로 합合입니다." (p.281)</p>
+</blockquote>
+<p><strong>남북의 다섯 가지 차이와 다섯 가지 닮음</strong> (p.286~288)</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>남</th>
+<th>북</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>가치</td>
+<td>형이하학 — <strong>경제성장</strong>·<strong>외환</strong></td>
+<td>형이상학 — 자주성 등 <strong>정신적인</strong> 면</td>
+</tr>
+<tr>
+<td>단위</td>
+<td><strong>개인주의</strong></td>
+<td><strong>집단주의</strong></td>
+</tr>
+<tr>
+<td>지향</td>
+<td><strong>세계주의</strong></td>
+<td><strong>민족주의</strong></td>
+</tr>
+<tr>
+<td>시간</td>
+<td>미래지향</td>
+<td>과거지향</td>
+</tr>
+<tr>
+<td>고유성</td>
+<td>—</td>
+<td><strong>수령</strong>주의</td>
+</tr>
+</tbody>
+</table>
+<p>닮음: ① 넓고 깊은 역사 경험 ② 언어·인종·유교적 가치관 ③ <strong>'한'</strong>·<strong>'정'</strong>·<strong>'흥'</strong> ④ '사람이 되어야지'라는 절대 가치 ⑤ 긍지. "남한이 오히려 더 유물론자 성향이 강합니다"(p.286)라는 역설이 4번 섹션과 맞물린다.</p>
+<ul>
+<li>'주적'·'종북'은 이질성을 용납하지 않는 언어이고 "'북한은 주적'이라고 강조하는 것은 곧 통일을 하면 안 된다고 말하는 것"(p.280).</li>
+<li>이질성 존중은 "'너는 너대로 나는 나대로'"가 아니다(p.281). 『논어』의 화이부동(p.289).</li>
+<li>방법: 비공개·비공식·비구속의 '3자 간 트랙 II 대화'(p.282~283), 서로 칭찬하기(문익환 목사의 '친북·친남', p.288), 낮은 단계 연방과 '작은 통일정부'(p.291~292).</li>
+<li>장면 하나: 2011년 저자의 집, 남북이 선수를 섞어 탁구를 치다 하이파이브를 하는 모습 — "'이런 것이 바로 통일이 아니겠는가'"(p.299).</li>
+<li>정의와 평화: "통일은 건강한 공동체를 새롭게 만드는 것인데, 공동체가 건강해지려면 정의로운 공동체가 되어야 합니다"(p.293). <a class="wl" href="../../t/%EC%A0%95%EC%9D%98/">정의</a>·<a class="wl" href="../../t/%ED%99%94%ED%95%B4/">화해</a>와 닿는 지점이며, <a class="wl" href="../../b/%ED%99%94%ED%95%B4%EC%9D%98%EC%A0%9C%EC%9E%90%EB%8F%84_%EC%B9%B4%ED%86%B5%EA%B3%A8%EB%A0%88%EB%9D%BC%EC%9D%B4%EC%8A%A4/">화해의제자도_카통골레라이스</a>가 화해를 「전략」이 아니라 함께 걷는 여정으로 본 것과 같은 방향이다.</li>
+</ul>
+<h3>12. 저자의 삶 — 만주에서 미국, 다시 평양으로</h3>
+<p>1939년 만주 출생(p.301), 해방 뒤 경북 청도, 전쟁 중 아버지가 "빨갱이로 몰려" 고문당한 일로 장래 희망이 의사에서 국회의원으로 바뀜(p.305), 4·19에서 팔이 부러지고(p.306), "<strong>열세 살 때</strong> 선교사들을 만나면서 기독교에 귀의"(p.306), 1965년 유학, 1971~2015년 조지아대학 교수. 카터·덩샤오핑·황장엽으로 이어진 인연으로 평양에 갔고 방문은 <strong>50차</strong>례를 넘는다(p.311). 북한 당국은 그를 끝내 '동지'가 아니라 '선생'이라 불렀고(p.312), 한국에서는 '친북학자'로 백안시되었다(p.313). 양쪽 어디에도 속하지 못한 자리가 이 책의 시야를 만든다.</p>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<p><strong>적용</strong>
+- 선교: 6번 섹션의 접경 선교 비판은 단기선교·타문화 훈련에서 「우리는 옳고 저쪽은 틀렸다」는 전제를 점검하는 사례로 쓸 수 있다. "있는 그대로의" 상대와 만난다는 원칙(p.11)은 타문화 사역 일반에 그대로 옮겨진다.
+- 공동체·화해: "신뢰는 대화의 결과"와 "이질성의 수용"은 남북만이 아니라 교회·단체 안의 세대·진영 갈등에도 적용되는 문장이다. 동질성을 일치의 조건으로 삼는 습관을 돌아보게 한다.
+- 의료: 개성 의료기관·'통일의학' 구상(p.263~264)은 북한 보건의료 협력을 생각할 때의 한 가지 그림. 생명권이 인권의 첫째라는 구분(p.79)은 인도적 의료 지원의 근거로 읽힌다.</p>
+<p><strong>미해결 질문</strong>
+- 책은 2018년 초의 시점에서 쓰였다. 김정은을 '북한의 덩샤오핑'으로 본 전망과 "안전만 보장되면 핵을 포기할 것"(p.223)이라는 판단은 이후의 전개에 비추어 어떻게 평가되어야 하는가.
+- 저자는 북한 당국자에게 들은 말을 근거로 삼는 대목이 많다(장성택 처형, 천안함, 웜비어). 탈북자 증언의 편향을 따지는 같은 잣대를 이 증언들에는 어떻게 적용할 것인가.
+- 「집단의 인권」을 인정하는 것과 개인에게 가해지는 폭력을 묵인하지 않는 것 사이의 선은 어디인가 — 저자도 "모르겠습니다"(p.78)로 남긴 물음이다.
+- 주체사상을 종교로 본다면, 북한선교는 「무종교 사회에 복음을 전하는 일」이 아니라 「다른 신앙 체계와 만나는 일」이 된다. 이때 선교의 언어는 어떻게 달라져야 하는가.
+- 그리스도인에게 「이질성의 수용」과 복음의 진리 주장은 어떻게 함께 가는가(<a class="wl" href="../../t/%ED%99%98%EB%8C%80/">환대</a>).</p>
+<hr />
+<blockquote>
+<p>📖 전사 원문(줄이지 않은 표시 구절 전체): <span class="wl-dead" title="위키 내부 링크">선을넘어생각한다_박한식강국진_전사</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#domain/사회</span><span>#discipline/평화학</span><span>#남북관계</span><span>#통일</span><span>#북한</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
