@@ -1,0 +1,382 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>기질 — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-t">상담·가정</span><span class="date">2026-10-13</span></div>
+  <h1 class="note-title">기질</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>기질(temperament)은 사람이 타고나는 반응의 결이다. 같은 일을 겪어도 어떤 사람은 먼저 말하고 어떤 사람은 먼저 물러서며, 어떤 사람은 화를 내고 어떤 사람은 걱정한다. 고대의 네 체액설에서 온 네 가지 이름 — 다혈질·담즙질·우울질·점액질 — 은 성경의 용어가 아니다. 그런데도 이 틀이 가정사역과 설교에서 거듭 쓰이는 까닭은, 부부와 공동체가 가장 자주 묻는 질문 「저 사람은 왜 저러는가」에 정죄가 아닌 다른 대답을 주기 때문이다.</p>
+<p>이 글이 기대는 자료는 세 갈래다. <span class="wl-dead" title="위키 내부 링크">팀라헤이</span>·<span class="wl-dead" title="위키 내부 링크">베블리라헤이</span> 부부의 책 세 권, 권성수 목사의 설교 「기질과 신앙」, 그리고 가정사역 강의들이다. 세 갈래는 네 기질의 초상에는 거의 일치하지만, <strong>기질이 변하는가</strong>라는 물음에서는 서로 다른 답을 낸다. 이 글의 중심은 그 차이에 있다.</p>
+<h2>1. 네 기질의 초상</h2>
+<p><a class="wl" href="../../b/%EB%8B%B9%EC%8B%A0%EC%9D%84%EC%82%AC%EB%9E%91%ED%95%98%EB%8A%94%EB%8D%B0%EC%9A%B0%EB%A6%B0%EC%99%9C%EB%8B%A4%EB%A5%B8%EA%B1%B0%EC%A3%A0_%ED%8C%80%EB%9D%BC%ED%97%A4%EC%9D%B4/">당신을사랑하는데우린왜다른거죠_팀라헤이</a>의 강점·약점 표를 줄이면 이렇다.</p>
+<table>
+<thead>
+<tr>
+<th>기질</th>
+<th>방향</th>
+<th>강점</th>
+<th>약점</th>
+<th>흔한 죄</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>다혈질</td>
+<td>외향</td>
+<td>사교성·열정·이야기꾼</td>
+<td>자제력·의지력 부족, 과장, 자기중심</td>
+<td>분노</td>
+</tr>
+<tr>
+<td>담즙질</td>
+<td>외향</td>
+<td>의지력·결단력·실제적 리더</td>
+<td>적대적·냉소적, 동정심 없음</td>
+<td>분노</td>
+</tr>
+<tr>
+<td>우울질</td>
+<td>내향</td>
+<td>재능·분석·완벽주의·충직</td>
+<td>부정적·비판적, 자신감 결여</td>
+<td>두려움</td>
+</tr>
+<tr>
+<td>점액질</td>
+<td>내향</td>
+<td>침착·유머·조정자</td>
+<td>수동적·우유부단, 미룸, 고집</td>
+<td>두려움</td>
+</tr>
+</tbody>
+</table>
+<p>가정사역 강의는 같은 표에 운전 습관을 붙여 웃음으로 확인시킨다 — 뒷좌석에 계속 말을 거는 다혈질, 속도광 담즙질, 지도를 미리 준비하되 양보는 하지 않는 우울질, 차선을 바꾸지 않는 점액질. 표가 설득력을 얻는 자리는 정의가 아니라 이런 장면이다.</p>
+<h2>2. 기질은 사람의 전부가 아니다 — 세 층과 행동 공식</h2>
+<p>기질론이 운명론으로 흐르지 않으려면 타고난 것과 길러진 것을 나누어야 한다. 라헤이는 세 층을 구별한다.</p>
+<blockquote>
+<p>"<strong>기질</strong>은 우리가 타고난 특징들의 조합이고, <strong>성격</strong>은 우리의 “교화된” 기질이고, <strong>인격</strong>은 우리가 다른 사람들에게 보여주는 우리의 “얼굴”이다."</p>
+</blockquote>
+<p>가정사역 강의는 같은 저자를 인용해 「인격 = 기질 + 어린 시절 받은 훈련(부모의 양육 태도) + 양심」이라고 가르친다. 두 서술은 번역어가 엇갈리지만(한쪽의 「성격」이 다른 쪽의 「인격」에 가깝다) 가리키는 구조는 같다. 기질은 재료이고, 그 위에 양육과 훈련과 신앙이 얹힌다.</p>
+<p>그렇다면 기질의 몫은 얼마인가. 라헤이는 한편으로 기질을 인간 행동에 「가장 강력한 영향력을 미치는 단일한 요소」라 부르고, 다른 한편으로 그 영향력을 「약 20%~35%정도」로 잡는다. 「행동 공식」의 나머지 항 — 어린 시절의 훈련, 삶의 경험과 정신적 태도, 자기 훈련 — 이 3분의 2 이상을 차지하는 셈이다. 베블리 라헤이도 「타고난 기질보다 더 의미심장한 것은 아무것도 없다」고 쓴다. 저자들의 강조와 저자들의 수치 사이에 틈이 있고, 그 틈에 양육의 자리가 있다. → <a class="wl" href="../../t/%EC%84%B1%ED%92%88/">성품</a></p>
+<h2>3. 섞여 있다 — 혼합 기질과 성경 인물</h2>
+<p>순수한 한 기질인 사람은 없다. 라헤이는 주기질과 부기질의 조합 열두 가지에 성경 인물을 하나씩 세운다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>부기질 다혈</th>
+<th>부기질 담즙</th>
+<th>부기질 우울</th>
+<th>부기질 점액</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>주기질 다혈</strong></td>
+<td>—</td>
+<td>베드로</td>
+<td>다윗</td>
+<td>아볼로</td>
+</tr>
+<tr>
+<td><strong>주기질 담즙</strong></td>
+<td>야고보</td>
+<td>—</td>
+<td>바울</td>
+<td>디도</td>
+</tr>
+<tr>
+<td><strong>주기질 우울</strong></td>
+<td>세례 요한·엘리야·예레미야</td>
+<td>누가·모세</td>
+<td>—</td>
+<td>사도 요한</td>
+</tr>
+<tr>
+<td><strong>주기질 점액</strong></td>
+<td>디모데</td>
+<td>아브라함</td>
+<td>바나바</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>권성수 목사의 설교는 더 단순한 배정을 쓴다 — 베드로는 다혈질, 바울은 담즙질, 솔로몬·엘리야·도마는 우울질, 아브라함은 점액질. 두 배정은 큰 줄기에서 겹치지만 세부는 다르다. 이 차이 자체가 알려 주는 바가 있다. 성경 인물의 기질 배정은 주해가 아니라 예화이며, 몇 장면에서 읽어 낸 인상이다.</p>
+<h2>4. 매력은 기질이고, 결혼은 인격으로 유지된다</h2>
+<p>가정사역 강의가 기질론에서 꺼내는 첫 명제는 연애에 관한 것이다. 우리가 「딱 내 스타일」이라고 부르는 매력은 상대의 인격이 아니라 기질이다. 그것도 대개 나에게 없는 기질이다. 허니문이 끝나면 그 매력의 자리에 양육 태도로 빚어진 인격이 드러나고, 없어서 끌렸던 것을 이제는 왜 없느냐고 요구하게 된다.</p>
+<p>라헤이는 같은 현상을 여섯 쌍의 끌림으로 정리한 뒤 평가를 뒤집는다.</p>
+<blockquote>
+<p>"나는 반대되는 기질을 가진 배우자는 채무가 아니라 자산이라고 생각하고 싶다."</p>
+</blockquote>
+<p>베블리 라헤이의 문장도 같은 방향이다 — 「정반대 기질의 축복과 풍성함을 누리기 위해 반드시 필요한 것은 조화이다」. 처방은 궁합을 다시 맞추는 것이 아니라, 배우자의 강점에 초점을 두고 약점에 집중하지 않는 것이다. → <a class="wl" href="../../t/%EB%B6%80%EB%B6%80%EA%B4%80%EA%B3%84/">부부관계</a> · <a class="wl" href="../../t/%EA%B2%B0%ED%98%BC/">결혼</a></p>
+<h2>5. 기질이 죄를 짓는 방식 — 분노와 두려움</h2>
+<p>라헤이 부부의 세 책이 일치하는 진단이 하나 있다. 외향 기질은 분노로, 내향 기질은 두려움으로 넘어진다.</p>
+<blockquote>
+<p>"다혈질들과 담즙질들은 <strong>분노의</strong> 문제로 고통을 당한다. 우울질들과 점액질들은 <strong>두려움</strong>의 문제로 고통을 당한다."</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>외향(다혈·담즙)</th>
+<th>내향(우울·점액)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>흔한 죄</td>
+<td>분노·적개심</td>
+<td>근심·두려움</td>
+</tr>
+<tr>
+<td>성령과의 관계</td>
+<td>성령을 근심하게 한다</td>
+<td>성령을 소멸한다</td>
+</tr>
+<tr>
+<td>이기주의의 모양</td>
+<td>타고난 / 강박적</td>
+<td>남에게서 채우려 함 / 잘 드러나지 않음</td>
+</tr>
+<tr>
+<td>부부 사이에서</td>
+<td>「분노하는 유형은 걱정하는 유형을 공격한다」</td>
+<td>껍질 속으로 숨는다</td>
+</tr>
+</tbody>
+</table>
+<p>이 표의 쓸모는 상대를 분류하는 데 있지 않다. 내 기질이 어떤 죄로 기우는지 먼저 아는 데 있다. → <a class="wl" href="../../t/%EB%B6%84%EB%85%B8/">분노</a> · <a class="wl" href="../../t/%EB%91%90%EB%A0%A4%EC%9B%80/">두려움</a> · <a class="wl" href="../../t/%EC%A3%84%EC%84%B1/">죄성</a></p>
+<h2>6. 기질은 변하는가 — 두 목소리 ⚖️</h2>
+<p>여기서 자료가 갈린다.</p>
+<p>권성수 목사는 기질을 변하지 않는 것으로 본다. 「기질은 영적 DNA이다」, 「모든 것이 변해도 기질은 변하지 않는다」. 다만 창조와 타락의 두 층을 구별한다 — 「원죄가 없다면 우리의 기질은 다 축복이다」. 기질은 그대로이되 죄와 얽히면서 그 특징이 단점으로 드러난다. 그러므로 할 일은 기질을 바꾸는 것이 아니라 아는 것이다. 「나의 기질을 아는 것이 나의 신앙을 강화한다」. 그리고 설교는 기질론에서 믿음론으로 넘어간다. 베드로가 물에 빠진 까닭은 기질이 아니라 작은 믿음이었고, 결론은 「주님만 바라보고 가야 한다」이다.</p>
+<p>라헤이는 변화를 말한다.</p>
+<blockquote>
+<p>"나는 의식적인 행위로서 화를 내지 않는 것이 아니라 성령 충만함을 통해 화를 내지 않게 되었다."</p>
+</blockquote>
+<p>그에게 성령이 바꾸는 것은 외모나 지능이 아니라 「바로 당신의 감정」이다. 그는 성령의 열매마다 네 기질의 닮은꼴을 가려낸다. 점액질의 겸손은 조용하고 수동적이어서 그렇게 보일 뿐이고, 점액질의 인내는 자기를 보호하고 싶어서이며, 다혈질의 자비는 인정을 얻으려는 것일 수 있다. 타고난 온유는 열매가 아니다. → <a class="wl" href="../../t/%EC%84%B1%EB%A0%B9%EC%9D%98%EC%97%B4%EB%A7%A4/">성령의열매</a> · <a class="wl" href="../../t/%EC%84%B1%EB%A0%B9%EC%B6%A9%EB%A7%8C/">성령충만</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>권성수 「기질과 신앙」</th>
+<th>라헤이</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>기질 자체</td>
+<td>변하지 않는다(영적 DNA)</td>
+<td>재료는 남는다</td>
+</tr>
+<tr>
+<td>변하는 것</td>
+<td>자기 이해, 시선(믿음)</td>
+<td>감정과 반응(분노·두려움)</td>
+</tr>
+<tr>
+<td>약점을 대하는 법</td>
+<td>인정하고 간다</td>
+<td>죄로 인식하고 성령께 맡긴다</td>
+</tr>
+<tr>
+<td>위험</td>
+<td>「원래 그렇다」는 변명</td>
+<td>기질의 약점을 전부 죄로 읽는 정죄</td>
+</tr>
+</tbody>
+</table>
+<p>두 목소리는 생각만큼 멀지 않다. 둘 다 기질이라는 재료가 사라진다고 말하지 않으며, 둘 다 해법을 기질 바깥 — 믿음과 성령 — 에 둔다. 차이는 약점을 무엇이라 부르느냐에 있다. 한쪽은 이해하고 감사할 것으로, 다른 쪽은 회개할 것으로 부른다. 두 이름을 함께 쥐어야 한다. 느린 것은 이해의 대상이고, 느림을 핑계로 사랑하지 않는 것은 회개의 대상이다. → <a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a></p>
+<h2>7. 기질의 문제와 옳고 그름의 문제</h2>
+<p>공동체 갈등에서 기질론이 하는 일은 분별이다. 윤명숙 전도사는 바울과 바나바의 다툼(행 15:36~41)을 일 중심과 관계 중심의 차이로 읽고 이렇게 못박는다.</p>
+<blockquote>
+<p>"기질상의 문제이지 옳고 그른 문제는 아니다. 다만, 상처로 그렇다면 다른 얘기이다."</p>
+</blockquote>
+<p>앞 문장은 정죄를 멈추게 하고, 뒷문장은 기질론의 남용을 막는다. 기질처럼 보이는 것 뒤에 치유되지 않은 상처가 있을 수 있기 때문이다. 권성수 목사의 적용도 같은 자리에 선다 — 가족의 기질을 알면 「그래서 그렇구나」라는 이해가 생긴다. 느린 사람에게 느리다고 거듭 지적하는 것은 진리를 말하는 것이 아니라 기질을 탓하는 것이다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>기질은 타고난 재료이고, 사람은 그 위에 양육·경험·신앙이 얹힌 존재다. 저자들도 기질의 몫을 3분의 1 이하로 잡는다.</li>
+<li>연애의 매력은 대개 나에게 없는 기질에서 온다. 결혼은 그 기질의 이면까지 받아들이는 일이며, 반대 기질은 채무가 아니라 자산이다.</li>
+<li>외향 기질은 분노로, 내향 기질은 두려움으로 기운다. 이 대칭은 상대가 아니라 나를 진단하는 데 쓴다.</li>
+<li>타고난 온유와 인내는 성령의 열매와 겉모습이 같을 수 있다. 가르는 것은 동기다 — 사랑인가 자기 보호인가.</li>
+<li>「기질은 변하지 않는다」와 「성령이 감정을 바꾼다」는 함께 참일 수 있다. 재료는 남고 반응이 바뀐다.</li>
+<li>기질의 문제를 옳고 그름의 문제로 다투지 않는다. 다만 기질로 보이는 것이 상처일 수 있다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>네 기질은 체액설에서 온 틀이다. 현대 성격심리학의 모형과 견주어 어디까지 설명 도구로 쓸 수 있는가.</li>
+<li>기질 불변론과 「새로운 피조물」(고후 5:17) 사이에서, 성화는 기질의 어느 층을 새롭게 하는가.</li>
+<li>기질의 약점과 죄의 경계는 어디인가. 불안·우울 같은 임상 상태를 「두려움의 죄」로 읽는 위험을 어떻게 피하는가.</li>
+<li>할레스비의 『기질과 기독교 신앙』이 라헤이에게 무엇을 건넸는지는 원서를 읽어야 확인된다.</li>
+<li>성경 인물에게 기질을 배정하는 일은 어디까지 정당한가. 배정이 저자마다 다르다는 사실은 무엇을 뜻하는가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><span class="wl-dead" title="위키 내부 링크">팀라헤이</span> · <span class="wl-dead" title="위키 내부 링크">베블리라헤이</span> · <span class="wl-dead" title="위키 내부 링크">할레스비</span> — 기질론의 계보</li>
+<li><a class="wl" href="../../t/%EC%84%B1%ED%92%88/">성품</a> — 타고난 기질과 길러지는 성품</li>
+<li><a class="wl" href="../../t/%EB%B6%84%EB%85%B8/">분노</a> · <a class="wl" href="../../t/%EB%91%90%EB%A0%A4%EC%9B%80/">두려움</a> — 기질별로 기우는 두 죄</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EB%A0%B9%EC%9D%98%EC%97%B4%EB%A7%A4/">성령의열매</a> · <a class="wl" href="../../t/%EC%84%B1%EB%A0%B9%EC%B6%A9%EB%A7%8C/">성령충만</a> · <a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a> — 기질과 변화</li>
+<li><a class="wl" href="../../t/%EB%B6%80%EB%B6%80%EA%B4%80%EA%B3%84/">부부관계</a> · <a class="wl" href="../../t/%EA%B2%B0%ED%98%BC/">결혼</a> — 끌림과 조정</li>
+<li><a class="wl" href="../../t/%EB%AF%BF%EC%9D%8C/">믿음</a> — 권성수 설교의 결론부(작은 믿음과 큰 믿음)</li>
+<li><a class="wl" href="../../t/%EC%A3%84%EC%84%B1/">죄성</a> — 기질·중독과 책임의 분별</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="wl" href="../../b/%EB%8B%B9%EC%8B%A0%EC%9D%84%EC%82%AC%EB%9E%91%ED%95%98%EB%8A%94%EB%8D%B0%EC%9A%B0%EB%A6%B0%EC%99%9C%EB%8B%A4%EB%A5%B8%EA%B1%B0%EC%A3%A0_%ED%8C%80%EB%9D%BC%ED%97%A4%EC%9D%B4/">당신을사랑하는데우린왜다른거죠_팀라헤이</a></td>
+<td>책(팀 라헤이)</td>
+<td>기질·성격·인격 세 층, 네 기질 강약점 표, 열두 혼합 기질과 성경 인물, 끌림의 여섯 쌍, 행동 공식(20~35%), 분노/두려움 대칭, 열매의 기질별 닮은꼴</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%84%B1%EB%A0%B9%EC%B6%A9%EB%A7%8C%ED%95%9C%EC%82%B6%EC%9D%80%EA%B0%80%EC%A0%95%EC%97%90%EC%84%9C%EB%B6%80%ED%84%B0_%ED%8C%80%EB%9D%BC%ED%97%A4%EC%9D%B4/">성령충만한삶은가정에서부터_팀라헤이</a></td>
+<td>책(팀·비벌리 라헤이)</td>
+<td>기질별 분노·이기심·비판·말하기 표, 약점 40가지와 성령</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%84%B1%EB%A0%B9%EC%B6%A9%EB%A7%8C%ED%95%9C%EC%97%AC%EC%9D%B8_%EB%B2%A0%EB%B8%94%EB%A6%AC%EB%9D%BC%ED%97%A4%EC%9D%B4/">성령충만한여인_베블리라헤이</a></td>
+<td>책(베블리 라헤이)</td>
+<td>「타고난 기질보다 더 의미심장한 것은 아무것도 없다」, 기질별 성령 근심, 봉사 배치, 정반대 기질의 조화</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2018_기질과신앙</span></td>
+<td>설교(권성수, 마 14:25~33)</td>
+<td>기질 불변론(영적 DNA), 창조-타락 이중 평가, 자기 이해, 기질에서 믿음으로</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2017_무엇이성숙인가</span></td>
+<td>설교(윤명숙, 행 15:36~41)</td>
+<td>일 중심/관계 중심, 기질의 문제와 옳고 그름의 구별, 상처라는 단서</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">연애와-결혼-사이</span> · <span class="wl-dead" title="위키 내부 링크">가정사역-대경누가회-2013</span> · <span class="wl-dead" title="위키 내부 링크">가정사역_대경누가회</span></td>
+<td>강의(가정사역)</td>
+<td>매력은 기질, 인격의 세 요소, 운전 습관 예화, 허니문 뒤에 드러나는 양육 태도</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/가정사역</span><span>#discipline/기독교상담학</span><span>#topic/기질</span><span>#topic/성화</span><span>#topic/부부관계</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
