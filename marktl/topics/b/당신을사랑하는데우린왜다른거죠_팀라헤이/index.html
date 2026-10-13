@@ -1,0 +1,494 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>당신을 사랑하는데, 우린 왜 다른 거죠? — 팀 라헤이 (행복하우스) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">상담·치유·가정</span><span class="author">팀라헤이</span><span class="date">2026-10-13</span></div>
+  <h1 class="note-title">당신을 사랑하는데, 우린 왜 다른 거죠? — 팀 라헤이 (행복하우스)</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/%EB%8B%B9%EC%8B%A0%EC%9D%84%EC%82%AC%EB%9E%91%ED%95%98%EB%8A%94%EB%8D%B0%EC%9A%B0%EB%A6%B0%EC%99%9C%EB%8B%A4%EB%A5%B8%EA%B1%B0%EC%A3%A0_%ED%8C%80%EB%9D%BC%ED%97%A4%EC%9D%B4/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<blockquote>
+<p>네 기질과 열두 혼합 기질로 「서로 반대인 사람끼리 끌리고, 그래서 부딪친다」를 설명하고, 그 해법을 기질 교정이 아니라 성령 충만에서 찾는 부부 관계서. 최규택 옮김, 원제 <em>I Love You, But Why Are We So Different?</em>. 📷 표시 전사 기반 독서 노트(2011년 7월에 읽은 흔적이 뒤 면지에 남아 있다).</p>
+</blockquote>
+<hr />
+<h2>요약 — 주제별 상세 정리</h2>
+<h3>1. 기질 · 성격 · 인격 — 세 층을 구별한다</h3>
+<p>책 전체의 전제는 「타고난 것」과 「길러진 것」과 「보이는 것」을 나누는 일이다.</p>
+<blockquote>
+<p>"<strong>기질</strong>은 우리가 타고난 특징들의 조합이고, <strong>성격</strong>은 우리의 “교화된” 기질이고, <strong>인격</strong>은 우리가 다른 사람들에게 보여주는 우리의 “얼굴”이다." (p.44)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>층</th>
+<th>정의</th>
+<th>쪽</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>기질 temperament</td>
+<td>인간의 행동에 무의식적인 영향을 미치는 타고난 특징들의 조합</td>
+<td>p.42~43</td>
+</tr>
+<tr>
+<td>성격 character</td>
+<td>「실제 우리 자신」·「마음에 숨은 사람」. 훈련·교육·신념·동기로 기질이 변형된 것</td>
+<td>p.43</td>
+</tr>
+<tr>
+<td>인격 personality</td>
+<td>「외부로 표현된 우리 자신」</td>
+<td>p.43</td>
+</tr>
+</tbody>
+</table>
+<p>저자는 네 기질이 잠언 30장(아굴로 추정되는 저자)의 네 부류 사람과 겹친다고 본다(p.38).</p>
+<p><strong>핵심 인사이트: 가장 강한 변수는 기질이라는 주장 — 그리고 독자의 이의</strong></p>
+<blockquote>
+<p>"나는 인간 행동에 가장 강력한 영향력을 미치는 단일한 요소는 바로 선천적인 기질임을 알게 되었다." (p.37)</p>
+</blockquote>
+<p>이 문장 옆에 📝 「+ 양육태도」, p.41의 같은 주장 옆에는 📝 「다른이는 양육에 더 무게를 둔다」가 적혀 있다. 저자 자신도 뒤에서 기질의 몫을 「약 20%~35%정도」로 잡으므로(p.123), 「가장 강력하다」와 「3분의 1 이하다」가 한 책 안에 함께 있는 셈이다.</p>
+<h3>2. 네 기질의 초상</h3>
+<table>
+<thead>
+<tr>
+<th>기질</th>
+<th>강점(표시한 것)</th>
+<th>약점(표시한 것)</th>
+<th>쪽</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>다혈질</td>
+<td>사교성·열정·이야기꾼, 「타고난 장사꾼」「달변가」「타인을 움직이는 사람」</td>
+<td>자제력·의지력 부족, 자기중심, 흥분, 과장, 속임수, 침착하지 못함. 📝 「과식 → 비만. 유혹에 약함.」</td>
+<td>p.45~49</td>
+</tr>
+<tr>
+<td>담즙질</td>
+<td>의지력·결단력·독립적, 실제적, 「리더는 타고나는 것」</td>
+<td>적대적, 냉소적이고 잔인함, 동정심 없음, 분노를 수단으로 씀, 위궤양</td>
+<td>p.49~54</td>
+</tr>
+<tr>
+<td>우울질</td>
+<td>재능·분석·완벽주의·창의·감수성·충직</td>
+<td>부정적, 비판적이고 까다로움, 자신감 결여, 우울증</td>
+<td>p.55~59</td>
+</tr>
+<tr>
+<td>점액질</td>
+<td>과묵·침착·여유·유머, 조정자</td>
+<td>수동적·의욕 부족, 미룸, 우유부단, 자기보호, 고집, 느리고 게으름</td>
+<td>p.60~64</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"그가 의사결정을 하는데 주도적인 역할을 하는 것은 깊은 생각이라기 보다는 감정이다." (p.45, 다혈질)</p>
+<p>"감정적 특성은 그의 기질 안에서 가장 개발이 덜 된 부분이다." (p.50, 담즙질)</p>
+<p>"밀거나 당기는 것은 그들에게 아무런 효과를 발휘하지 못한다." (p.63, 점액질)</p>
+</blockquote>
+<p>담즙질 표 위에는 슥 4:6을 기질에 대입한 인용이 표시돼 있다 — "이는 (담즙질의) 힘으로 되지 아니하며 (타고난) 능으로 되지 아니하고 오직 나의 신으로 되느니라"(p.54). 강점조차 성령 없이는 답이 아니라는 책의 결론이 여기서 미리 나온다.</p>
+<h3>3. 열두 혼합 기질과 성경 인물</h3>
+<p>누구나 주기질과 부기질이 섞여 있다는 것이 8장의 내용이다 — 「한 가지 기질이 55%~70%」, 부기질이 「30%~45%」(p.80). 저자는 자신을 담즙-다혈질, 아내를 점액-다혈질로 밝힌다(p.80, p.245).</p>
+<table>
+<thead>
+<tr>
+<th>혼합 기질</th>
+<th>성경 인물</th>
+<th>표시한 특징</th>
+<th>쪽</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>다혈-담즙</td>
+<td>베드로</td>
+<td>판매사원, 스포츠 광, 분노, 「말에 문제가 있는 사람」</td>
+<td>p.83~85</td>
+</tr>
+<tr>
+<td>다혈-우울</td>
+<td>다윗</td>
+<td>감정 기복, 훌륭한 강사·교사, 분노와 두려움 둘 다</td>
+<td>p.85~87</td>
+</tr>
+<tr>
+<td>다혈-점액</td>
+<td>아볼로</td>
+<td>가장 쉽게 좋아지는 사람, 동기 결여·단련 부족</td>
+<td>p.88~89</td>
+</tr>
+<tr>
+<td>담즙-다혈</td>
+<td>야고보</td>
+<td>생산적·목적지향, 적개심, 「날카롭고 역동적인 혀」</td>
+<td>p.90~92</td>
+</tr>
+<tr>
+<td>담즙-우울</td>
+<td>바울</td>
+<td>목표지향이면서 섬세, 논쟁, 위궤양·고혈압·50대 이후 심장마비</td>
+<td>p.93~95</td>
+</tr>
+<tr>
+<td>담즙-점액</td>
+<td>디도</td>
+<td>가장 완화된 외향성, 조직적, 원한·고집</td>
+<td>p.96~98</td>
+</tr>
+<tr>
+<td>우울-다혈</td>
+<td>세례 요한·엘리야·예레미야</td>
+<td>재주, 자기 연민, 좋지 않은 자아상</td>
+<td>p.98~101</td>
+</tr>
+<tr>
+<td>우울-담즙</td>
+<td>누가·모세</td>
+<td>완벽주의자이면서 선동가, 정확성, 자기 학대·적개심</td>
+<td>p.102~105</td>
+</tr>
+<tr>
+<td>우울-점액</td>
+<td>사도 요한</td>
+<td>대학자·분석적·인도주의, 쉽게 좌절, 낮은 자존감</td>
+<td>p.106~109</td>
+</tr>
+<tr>
+<td>점액-다혈</td>
+<td>디모데</td>
+<td>가장 편한 기질, 가정적, 동기 결여, 두려움</td>
+<td>p.109~111</td>
+</tr>
+<tr>
+<td>점액-담즙</td>
+<td>아브라함</td>
+<td>공동체의 좋은 리더·상담자, 두려움, 완고함</td>
+<td>p.111~114</td>
+</tr>
+<tr>
+<td>점액-우울</td>
+<td>바나바</td>
+<td>친절·정확, 가정에 충실, 관여하지 않으려는 강박</td>
+<td>p.114~117</td>
+</tr>
+</tbody>
+</table>
+<p>소제목마다 성경 인물 이름을 손으로 적어 두었고, p.130 여백에는 이 열두 인물을 십자 좌표 하나에 모은 도식을 직접 그렸다(네 귀퉁이에 네 기질). 같은 좌표에 주변 사람들을 배치한 도식도 하나 더 있다 — 책을 「읽는」 데서 「써 보는」 데로 넘어간 자리다.</p>
+<h3>4. 핵심 인사이트: 반대 기질은 채무가 아니라 자산이다</h3>
+<p>끌림의 규칙은 「비슷하면 튕겨 나가고 다르면 끌린다」이다. 저자는 여섯 쌍을 든다(p.118~121) — 다혈-담즙↔우울-점액, 다혈-우울↔우울-다혈, 다혈-점액↔우울-담즙, 담즙-다혈↔점액-우울, 담즙-우울↔점액-다혈, 담즙-점액↔점액-담즙. 독자는 쌍마다 화살표 기호를 그려 좌표 위의 방향으로 옮겨 놓았다.</p>
+<blockquote>
+<p>"나는 반대되는 기질을 가진 배우자는 채무가 아니라 자산이라고 생각하고 싶다." (p.76)</p>
+<p>"부부간 조정과정을 신속하게 거치고 조화로운 부부생활을 오랫동안 지속하기 위한 핵심 중 하나는 결혼 생활 동안 배우자의 강점들에 초점을 맞추고 약점들에 집중하는 것을 피하는 것이다." (p.75)</p>
+</blockquote>
+<p>다만 끌림은 그대로 상처의 경로가 된다.</p>
+<blockquote>
+<p>"당신은 화를 잘 내고 마음 속에 떠오르는 생각은 무엇이든지 내뱉어 버리는 외향성의 사람의 날카로운 조롱이 쉽게 상처를 받고 낮은 자아상을 가진 채 결혼 생활을 하고 있는 우울-점액질의 마음을 얼마나 많이 파괴하는지 상상할 수 있을 것이다." (p.118)</p>
+</blockquote>
+<p>10장의 결론 네 가지 가운데 표시된 것 — 「부부가 다른 것은 정상적인 것이다」, 다름은 <strong>다양성</strong>을 보증한다, 「차이점들이 갈등을 유발하는 것은 당연하다」(p.173).</p>
+<h3>5. 행동 공식 — 기질은 전부가 아니다</h3>
+<p>p.124의 「행동 공식」 도표에 독자가 번호와 메모를 달았다.</p>
+<table>
+<thead>
+<tr>
+<th>요소</th>
+<th>📝 손글씨</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>타고난 기질</td>
+<td>1. — 20-35%</td>
+</tr>
+<tr>
+<td>어린 시절의 훈련</td>
+<td>2. — 양육태도</td>
+</tr>
+<tr>
+<td>삶의 경험 · 정신적 태도</td>
+<td>3.(?) 종교적·도덕적 헌신</td>
+</tr>
+<tr>
+<td>자기 훈련</td>
+<td>4. — 성령에 의지(?)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"중대한 요소 하나를 … 자기훈련이다." (p.126, 토막 밑줄)</p>
+</blockquote>
+<p>1절의 이의(「양육에 더 무게를 둔다」)가 여기서 저자의 공식 안에 자리를 얻는다. 이 공식은 <a class="wl" href="../../b/%EC%84%B1%EB%A0%B9%EC%B6%A9%EB%A7%8C%ED%95%9C%EC%82%B6%EC%9D%80%EA%B0%80%EC%A0%95%EC%97%90%EC%84%9C%EB%B6%80%ED%84%B0_%ED%8C%80%EB%9D%BC%ED%97%A4%EC%9D%B4/">성령충만한삶은가정에서부터_팀라헤이</a>의 「인격 3요소」와 같은 뼈대다.</p>
+<h3>6. 기질 말고도 다른 것들 — 성별 · 주기 · 성 · 존경</h3>
+<p>10장은 기질 밖의 차이를 다룬다. 호르몬 주기(에스트로겐기의 낙관 ↔ 월경 전의 자존감 저하, p.150~151), 그리고 미시건 대학 데이비드 부스의 600명 조사.</p>
+<table>
+<thead>
+<tr>
+<th>여성이 겪는 어려움(남편에 대해)</th>
+<th>남성이 겪는 어려움(아내에 대해)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>외도 · 성적 요구 · 비하 · 속박적이고 과잉적인 감정 · 무시 · 배려부족 (p.154)</td>
+<td>성적 거절 · 변덕 · 자기몰두 (p.155)</td>
+</tr>
+</tbody>
+</table>
+<p>뒤 면지에 이 표를 그대로 옮겨 적었다.</p>
+<blockquote>
+<p>"남편에게 있어 부부관계란 강렬한 육체적 경험이다. 반면 여성에게 있어 부부관계란 무엇보다 감정적인 경험이다." (p.164)</p>
+<p>"아내에게 남편을 존경하라고 분명히 가르치고 있다(엡 5:33). 이 말씀이 진리라면 아내로부터 지속적인 존경을 받지 못한 남편이 아내를 사랑할 수 있게 되기란 어려운 일일 것이다." (p.161)</p>
+<p>"일반적으로 남편은 직업을 통해 자기 수용을 경험하고 아내는 남편을 통해 자기 수용을 경험한다." (p.288)</p>
+<p>"그래서, 하나님께서는 신약 성경에서 <strong>네 번씩이나</strong> 남편들에게 "네 아내를 사랑하라"고 명령하셨던 것이다." (p.289)</p>
+</blockquote>
+<p>p.157에서 저자가 자기 책 『결혼의 행위』를 언급한 자리에 📝 「결혼 행전」이라고 적어 두었다 — <a class="wl" href="../../b/%EA%B2%B0%ED%98%BC%ED%96%89%EC%A0%84_%ED%8C%80%EB%9D%BC%ED%97%A4%EC%9D%B4/">결혼행전_팀라헤이</a>가 그 책이다. 성 횟수의 차이(p.164)와 「엔진을 냉각시키고 낭만주의자가 될 필요」(p.156)는 그쪽 노트와 함께 읽는다.</p>
+<h3>7. 핵심 인사이트: 문제의 뿌리는 이기주의, 줄기는 분노와 두려움</h3>
+<p>독자가 가장 진하게 표시한 대목이다. 기질마다 이기주의의 모양이 다르다(p.184~185).</p>
+<table>
+<thead>
+<tr>
+<th>기질</th>
+<th>이기주의의 모양</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>다혈질</td>
+<td>「타고난 이기주의자들」 — 인정받고자 하는 열망</td>
+</tr>
+<tr>
+<td>담즙질</td>
+<td>「강박적인 이기주의자들」 — 타인에게 지나친 요구, 냉정</td>
+</tr>
+<tr>
+<td>우울질</td>
+<td>모든 필요들을 다른 사람에게서 충족시키려</td>
+</tr>
+<tr>
+<td>점액질</td>
+<td>(📝 면지: 잘 드러나지 않음)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"어린 시절 우리의 부모가 우리를 어떻게 사랑했고(혹은 사랑하지 않았고) 훈련시켰는가는 우리의 이기주의(기질이 낳은) 정도가 결정되는데 심오한 영향을 미친다." (p.183)</p>
+</blockquote>
+<p>발생 원인으로 표시된 것은 자기 중심성과 낮은 자존감(p.186), 그리고 부모의 「지나치게 많은 기대」(p.188)다.</p>
+<blockquote>
+<p>"다혈질들과 담즙질들은 <strong>분노의</strong> 문제로 고통을 당한다. 우울질들과 점액질들은 <strong>두려움</strong>의 문제로 고통을 당한다." (p.202)</p>
+<p>"분노하는 유형은 걱정하는 유형을 공격한다" (p.202)</p>
+</blockquote>
+<p>분노는 몸으로 간다 — 위궤양·심장마비·고혈압·대장염·신장결석·담낭염(p.214, 멕밀렌 『이러한 질병들에 걸리지 말고』, <span class="wl-dead" title="위키 내부 링크">헨리브란트</span>의 「97%」 인용). 두려움 쪽은 이렇게 적혔다.</p>
+<blockquote>
+<p>"사람을 두려워하면 올무에 걸리게 된다" / "온전한 사랑은 두려움을 내어 쫓는다" (p.204)</p>
+<p>"성경에는 "두려워하지 말라"라는 말이 무려 365번이나 나온다." / "믿음은 두려움의 해독제라고 할 수 있다." (p.222)</p>
+</blockquote>
+<p>그리고 둘 다 성령과의 관계 문제로 귀결된다 — 「분노가 성령을 근심하게 하고」 「두려움도 성령을 "소멸시키거나" 억제한다」(p.237). 첫 처방은 「당신의 분노나 두려움을 죄라고 인식하라(엡 4:30-32; 롬 14:23)」(p.239). 이 「분노=근심, 두려움=소멸」 틀은 <a class="wl" href="../../b/%EC%84%B1%EB%A0%B9%EC%B6%A9%EB%A7%8C%ED%95%9C%EC%97%AC%EC%9D%B8_%EB%B2%A0%EB%B8%94%EB%A6%AC%EB%9D%BC%ED%97%A4%EC%9D%B4/">성령충만한여인_베블리라헤이</a>의 「기질별 성령 근심」과 같고, 계보는 저자가 건네받았다고 밝힌 <span class="wl-dead" title="위키 내부 링크">할레스비</span>의 『기질과 기독교 신앙』(p.207)으로 올라간다. <a class="wl" href="../../t/%EB%B6%84%EB%85%B8/">분노</a> · <a class="wl" href="../../t/%EB%91%90%EB%A0%A4%EC%9B%80/">두려움</a> 참조.</p>
+<p>뒤 면지의 손글씨 도식이 이 장 전체를 한 장으로 줄였다 — 📝 「<strong>이기주의</strong> ← 자기중심성, 낮은 자존감에 의해 발생 (지나치게 많은 기대(부모의))」, 「<strong>분노</strong>와 <strong>두려움</strong> → 올무에 걸림」, 「분노(다혈·담즙) → 성령을 근심 / 두려움(우울·점액) → 성령을 소멸」, 「믿음은 두려움의 해독제」.</p>
+<h3>8. 성령 충만이 기질을 바꾼다 — 열매로 본 네 기질</h3>
+<blockquote>
+<p>"나는 의식적인 행위로서 화를 내지 않는 것이 아니라 성령 충만함을 통해 화를 내지 않게 되었다." (p.255)</p>
+<p>"… 하지만 무엇이 변화된다는 것인가? 당신의 외모와 IQ인가? 아니다. 바로 당신의 감정이다!" (p.266)</p>
+</blockquote>
+<p>책 뒷부분은 성품마다 네 기질의 「가짜 버전」을 가려낸다.</p>
+<table>
+<thead>
+<tr>
+<th>덕목</th>
+<th>다혈</th>
+<th>담즙</th>
+<th>우울</th>
+<th>점액</th>
+<th>쪽</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>자비</td>
+<td>인정·우정을 얻으려 이용</td>
+<td>연약한 행위로 간주</td>
+<td>기분 좋을 때만</td>
+<td>마지못해</td>
+<td>p.320</td>
+</tr>
+<tr>
+<td>겸손</td>
+<td>거만·자기 과장</td>
+<td>교만</td>
+<td>자기 정당화·비판</td>
+<td>겸손해 보이나 조용하고 수동적일 뿐</td>
+<td>p.321~322</td>
+</tr>
+<tr>
+<td>온유</td>
+<td>거리가 멂</td>
+<td>연약함의 표시로 여김</td>
+<td>부족</td>
+<td>유일하게 선천적</td>
+<td>p.325</td>
+</tr>
+<tr>
+<td>인내</td>
+<td>참을성 부족</td>
+<td>참을성 부족</td>
+<td>훨씬 강함</td>
+<td>인내하나 자기보호 때문</td>
+<td>p.330~331</td>
+</tr>
+<tr>
+<td>용서</td>
+<td>가장 쉽게 함</td>
+<td>가장 어려움</td>
+<td>가장 어려움</td>
+<td>—</td>
+<td>p.332</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"외향적이면서도 인내심이 강한 사람을 만나보았다면, 당신은 그의 연약한 육체 속에 성령이 충만하게 채워져 있음을 느꼈을 것이다." (p.331)</p>
+</blockquote>
+<p>타고난 온유·인내도 동기가 자기보호라면 열매가 아니라는 것이 이 표의 요점이다. <a class="wl" href="../../t/%EC%84%B1%EB%A0%B9%EC%9D%98%EC%97%B4%EB%A7%A4/">성령의열매</a> · <a class="wl" href="../../t/%EA%B2%B8%EC%86%90/">겸손</a> · <a class="wl" href="../../t/%EC%9D%B8%EB%82%B4/">인내</a> · <a class="wl" href="../../t/%EC%9A%A9%EC%84%9C/">용서</a>.</p>
+<h3>9. 받아들임과 순종 — 결혼을 지키는 것</h3>
+<blockquote>
+<p>"기질에 대한 이해는 "왜"라는 의문에 대하여 당신에게 도움을 줄 것이다." (p.290, 16장 배우자의 기질을 받아들이라)</p>
+<p>"우리는 “나는 그를 사랑하는가?”라는 질문 보다 “나는 나 자신 보다 그를 더 사랑하는가?”라는 질문을 할 필요가 있다." (p.355)</p>
+<p>"행복한 결혼은 목사의 기도에 달려 있는 것이 아니라 하나님의 뜻에 대한 부부의 계속적인 순종에 달려 있는 것이다." (p.387~388)</p>
+</blockquote>
+<p>저자가 이혼을 구하는 이에게 읽어 준 본문은 고전 7:10, 27이다(p.386). 뒤 면지에 독자는 이 구절을 손으로 옮겨 적고 그 아래 📝 「계명을 순종하지 않으면 행복할 수 없다」고 요약했다. 7절의 이기주의 진단과 맞물린다 — 이기주의의 반대편에 놓인 것은 기질 궁합이 아니라 「나 자신보다 더」와 순종이다.</p>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<ul>
+<li><strong>적용(가정사역·결혼예비 강의)</strong>: ①기질 검사보다 「기질·성격·인격」 세 층 구별을 먼저 준다 — 「기질이라 못 바꾼다」는 변명을 막는다. ②열두 혼합 기질–성경 인물 좌표는 강의용 한 장 도해로 쓸 수 있다. ③배우자 기질을 다루는 시간의 결론은 「채무가 아니라 자산」과 「강점에 초점」. ④갈등 상담에서는 궁합이 아니라 분노/두려움 중 어느 쪽인지부터 묻는다.</li>
+<li><strong>적용(멘토링)</strong>: 8절의 표는 「타고난 온유·인내를 열매로 착각하지 않기」를 설명할 때 쓴다 — 점액질의 겸손, 우울질의 인내.</li>
+<li><strong>미해결 질문</strong></li>
+<li>기질의 몫이 20~35%라면 「가장 강력한 단일 요소」(p.37)라는 주장은 어떻게 성립하는가? 양육을 더 무겁게 보는 쪽과 견주면?</li>
+<li>4기질론은 히포크라테스–갈레노스 체액설에서 온 틀이다. 현대 성격심리학(Big Five 등)과 견주어 어디까지 쓸 수 있는가?</li>
+<li>성경 인물에게 기질을 배정하는 것은 주해인가 예화인가. 한 인물의 몇 장면으로 기질을 단정할 수 있는가?</li>
+<li>두려움·분노를 「죄로 인식하라」는 처방은 불안장애·우울증 같은 임상 상태에 어디까지 적용되는가(의료 현장의 경계).</li>
+<li>「아내는 남편을 통해 자기 수용을 경험한다」(p.288)는 오늘의 맞벌이 부부에게도 그대로인가.</li>
+</ul>
+<hr />
+<blockquote>
+<p>📖 전사 원문(줄이지 않은 표시 구절 전체): <span class="wl-dead" title="위키 내부 링크">당신을사랑하는데우린왜다른거죠_팀라헤이_전사</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#domain/가정사역</span><span>#discipline/기독교상담학</span><span>#topic/기질</span><span>#topic/결혼</span><span>#topic/분노</span><span>#topic/두려움</span><span>#topic/성령충만</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
