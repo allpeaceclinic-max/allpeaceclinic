@@ -1,0 +1,409 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>마음을 여는 경청기술 — 데이브 핑·앤 클립파드 (국제제자훈련원, 서진희 옮김) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">상담·치유·가정</span><span class="author">데이브핑</span><span class="date">2026-10-16</span></div>
+  <h1 class="note-title">마음을 여는 경청기술 — 데이브 핑·앤 클립파드 (국제제자훈련원, 서진희 옮김)</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/%EB%A7%88%EC%9D%8C%EC%9D%84%EC%97%AC%EB%8A%94%EA%B2%BD%EC%B2%AD%EA%B8%B0%EC%88%A0_%EB%8D%B0%EC%9D%B4%EB%B8%8C%ED%95%91/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<blockquote>
+<p>원제 <em>Quick-to-Listen Leaders</em>, 부제 「예수님으로부터 배우는 경청의 리더십」. 야고보서 1:19 「듣기는 속히」를 축으로, 상담학의 능동적 듣기(로저스·카커프·이건)를 교회 지도자의 리더십 언어로 옮긴 책이다. 앞부분은 듣기 기술(관심·이해·존중, 느낌과 생각, 질문, 자기 공개, 대면, 즉각성), 뒷부분은 지도자의 네 기질과 교회의 네 유형, 끝은 팔복과 부록 말씀으로 맺는다. 📷 표시 전사 기반 독서 노트.</p>
+</blockquote>
+<p><strong>한 문장 명제</strong>: 지도자의 듣기는 시간 낭비나 우유부단이 아니라, 사람을 소중히 여긴다는 것을 몸으로 보여 주어 신뢰와 변화를 여는 리더십의 핵심 기술이다.</p>
+<hr />
+<h2>요약 — 주제별 상세 정리</h2>
+<h3>1. 왜 지도자는 듣지 않는가 — 일곱 가지 변명</h3>
+<p>출발점은 야고보서 1:19다. 독자는 「<strong>듣기는 속히 하고</strong>」에 동그라미를 치고 「말하기는」 앞에 사선을 그었다(p.9). 저자들은 세계 어디서나 지도자들이 같은 이유로 듣기를 피한다고 고백한다(p.23).</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>지도자가 속으로 하는 생각 (p.23)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>듣기는 너무 오래 걸린다</td>
+</tr>
+<tr>
+<td>2</td>
+<td>듣기는 약한 사람, 결정력이 없는 사람, <strong>우유부단한 사람처럼 보이게 한다</strong></td>
+</tr>
+<tr>
+<td>3</td>
+<td>감정·의견이 정리 안 된 말을 듣는 일이다</td>
+</tr>
+<tr>
+<td>4</td>
+<td>계획 실행이 늦어진다</td>
+</tr>
+<tr>
+<td>5</td>
+<td>제안을 듣고 실행하지 않으면 사람들이 화를 낸다</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>들으면 그들은 우리가 동의했다고 나름대로 해석해 버릴 것이다</strong></td>
+</tr>
+<tr>
+<td>7</td>
+<td>우리 계획에 동의하지 않는 의견에는 관심이 없다</td>
+</tr>
+</tbody>
+</table>
+<p>밑줄은 2번과 6번 — 「약해 보임」과 「동의로 오해됨」 — 에 그어졌다. 지도자가 듣기를 두려워하는 진짜 이유가 시간보다 <strong>권위의 손실</strong>이라는 데 독자가 반응한 셈이다. 여백 손글씨 📝「진심을 듣는 것은 본심을 불러일으킨다(?)」, 「이해득실(下?) / 이해심(上?)」은 이 목록에 대한 반론처럼 읽힌다 — 이해득실을 따지는 듣기는 낮고, 이해하려는 듣기가 높다.</p>
+<p>이 책이 다루는 범위도 처음에 밝힌다. 「하나님 말씀과 당신의 내면의 소리, 그리고 하나님께서 당신에게 보내어 인도하도록 하신 사람들의 마음의 소리를 듣는 방법」(p.33) — 듣기는 대인 기술 이전에 세 겹(하나님·자기·사람)의 경청이다.</p>
+<h3>2. 관심이 먼저다 — 공동체의 원들</h3>
+<p>저자는 <span class="wl-dead" title="위키 내부 링크">래리크랩</span>의 「크리스천 공동체 내의 관계」를 빌려(p.51) 듣기를 공동체의 동심원으로 설명한다.</p>
+<blockquote>
+<p>「"당신이 그에게 얼마나 관심을 가지고 있는지 그 사람이 깨닫기 전까지는 당신에게 아무리 많은 지식이 있다 해도 그 사람은 별로 관심을 갖지 않는다"라는 말은 백번 옳은 말이다.」(p.52–53)</p>
+<p>「오늘날 교회를 다니는 많은 사람들은 진정한 관심을 보여 주는 지도자가 필요하다고 강력하게 요구하고 있다.」(p.53)</p>
+</blockquote>
+<p>조사에서 사람들이 나쁜 지도자를 묘사한 말은 「강요하는 자」「상대방을 존중하지 않는 자」「비판적인 자」였고, 좋은 지도자에게는 「관심」이라는 말을 썼다(p.53). 원은 단계적으로 깊어진다 — 세 번째 원은 「가치를 인정받고 존중받는다고 느끼는 장소」(p.55), 네 번째 원은 「단지 소속감을 갖는 단계에서 벗어나 목적의식을 갖도록」 이끈다(p.59). 전체는 「공동체의 7개 원('천국의 맛')」(p.75)으로 묶인다. 크랩의 『지상에서 가장 안전한 곳』이 그리는 공동체(p.77)와 짝을 이룬다 — <a class="wl" href="../../b/%EB%82%B4%EC%98%81%ED%98%BC%EC%9D%80%EC%9D%B4%EB%9F%B0%EB%8C%80%ED%99%94%EB%A5%BC%EC%9B%90%ED%95%9C%EB%8B%A4_%EB%9E%98%EB%A6%AC%ED%81%AC%EB%9E%A9/">내영혼은이런대화를원한다_래리크랩</a>·<a class="wl" href="../../b/%EA%B2%A9%EB%A0%A4%EB%A5%BC%ED%86%B5%ED%95%9C%EC%98%81%EC%A0%81%EC%84%B1%EC%9E%A5_%EB%9E%98%EB%A6%AC%ED%81%AC%EB%9E%A9/">격려를통한영적성장_래리크랩</a> 참조.</p>
+<h3>3. 듣기의 세 수준과 네 방해꾼</h3>
+<p><strong>핵심 인사이트: 침묵은 금이지만 듣기만큼 귀하지는 않다.</strong></p>
+<blockquote>
+<p>「침묵은 지혜의 시작일 수가 있다. 그것은 정말 금만큼 귀하다. 그러나 듣기만큼 귀하지는 않다.」(p.99)</p>
+</blockquote>
+<p>듣기는 세 동작이다 — 「듣는다는 것과 이해한다는 것, 그리고 들은 말에 기초해서 행동한다는 것」(p.99). 그래서 신명기 6:4의 「이스라엘아 들으라」(p.100)는 순종까지 포함한다. 수준은 방어적 &lt; 수동적 &lt; 능동적 순이다. 「수동적인 듣기는 방어적인 듣기보다 조금 더 낫다」 — 수동적 듣기의 위험은 「상대방이 자기 말을 듣고 있다고 착각하게끔 만드는 것」이다(p.101).</p>
+<table>
+<thead>
+<tr>
+<th>방해꾼 (p.98)</th>
+<th>방해 방식</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>사자</td>
+<td>분노</td>
+</tr>
+<tr>
+<td>사슴</td>
+<td>염려</td>
+</tr>
+<tr>
+<td>주머니쥐</td>
+<td>의존</td>
+</tr>
+<tr>
+<td>토끼</td>
+<td>냉담함</td>
+</tr>
+</tbody>
+</table>
+<h3>4. 그리스도처럼 능동적으로 듣기 — 관심·이해·존중</h3>
+<p>책의 중심 모델(p.106–107).</p>
+<table>
+<thead>
+<tr>
+<th>요소</th>
+<th>내용</th>
+<th>관련 쪽</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>관심</strong></td>
+<td>진정한 관심을 보이는 것 — 「온몸」「전심전력」으로</td>
+<td>p.106–107</td>
+</tr>
+<tr>
+<td><strong>이해</strong></td>
+<td>진실한 이해 — 느낌과 생각을 함께 파악</td>
+<td>p.115–125</td>
+</tr>
+<tr>
+<td><strong>존중</strong></td>
+<td>그리스도처럼 존중심을 보이는 것 — 상대의 자유의지·책임을 인정</td>
+<td>p.132–138</td>
+</tr>
+</tbody>
+</table>
+<p>몸이 말보다 크게 말한다. 「말과 목소리 톤, 비언어적인 신호가 일치하지 않으면 사람들은 말보다 몸짓이나 톤에 훨씬 많은 비중을 둔다」(p.109, 요지).</p>
+<p><strong>이해 — 느낌인가, 생각인가?</strong> 첫 번째로 잡을 정보는 느낌이다(p.115). 기본 감정은 「기쁘다, 화나다, 슬프다, 두렵다, 혼란스럽다, 부끄럽다」 여섯 가지다(p.118).</p>
+<blockquote>
+<p>「느낌은 열정의 기초다.」(p.119)
+「사람의 느낌은 생각을 따라 간다는 것을 알아야 한다.」(p.121)
+「상대방의 생각 쪽에만 너무 비중을 두는 것은 잘못된 점을 바로잡아 주어야겠다는 마음에서 비롯되는 경우가 많다.」(p.123)</p>
+</blockquote>
+<p>독자는 p.123 연습 문제에 직접 📝「슬픔」「혼란」을 적어 넣었다. 그리고 확신의 한계를 인정한다 — 최선을 다해도 「제대로 파악하고 있는지는 확실하게 알 수가 없다」(p.125). 그래서 「중요한 것은 유능함이 아니라 겸손함」(p.126)이고, 20년을 쓴 저자들도 여전히 「<strong>방어적</strong>으로 반응할 때가 있다」(p.127).</p>
+<p><strong>존중 — 핵심 인사이트: 존중은 거저 주고, 신뢰는 얻는다.</strong></p>
+<blockquote>
+<p>「존중은 상대방이 존중받을 만한 노력을 했기 때문에 베푸는 것이 아니라 모든 사람에게 값없이 베풀어져야 하는 것이다. 그러나 신뢰는 반드시 노력으로 얻어야 한다.」(p.135)</p>
+</blockquote>
+<p>듣는 척하며 끌고 가는 것은 「마음을 여는 리더십이 전혀 아니다. 그것은 상대방을 조종하려는 것이다」(p.132). 예수님은 부자 청년에게 주신 「자유의지라는 선물을 존중하셨다」(p.134).</p>
+<h3>5. 짐과 책임 — 갈라디아서 6:2와 6:5</h3>
+<p><span class="wl-dead" title="위키 내부 링크">헨리클라우드</span>·존 타운센드의 『No!라고 말할 줄 아는 그리스도인』(p.136, 140)을 빌려, 「서로 짐을 지라」(갈 6:2)를 「대신 일해 주라」로 읽는 오해를 바로잡는다.</p>
+<blockquote>
+<p>「"우리는 다른 사람들에 대한 책임이 있다. 그러나 궁극적으로 그들에 대한 책임은 그들 자신에게 있다"」(p.136)</p>
+</blockquote>
+<p>혼자 감당 못 할 짐(burden)은 함께 지고, 각자의 몫(load)은 「그가 스스로 책임을 지도록」 둔다(p.138). 산후조리를 돕다가 지나치게 간섭하게 되는 친정어머니 비유가 붙는다 — 「분별력 있는 친정어머니라면 그때가 다시 자신의 집으로 돌아가야 할 때라는 것을 깨달아야 한다」(p.137). 이 대목은 뒤의 「부모 기질」 지도자 비판(8절)과 이어진다. <a class="wl" href="../../b/%ED%81%AC%EB%A6%AC%EC%8A%A4%EC%B2%9C%EC%9D%84%EC%9C%84%ED%95%9C%EB%A7%88%EC%9D%8C%EC%BD%94%EC%B9%AD_%ED%97%A8%EB%A6%AC%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C/">크리스천을위한마음코칭_헨리클라우드</a>·<span class="wl-dead" title="위키 내부 링크">갈6</span>.</p>
+<p>계보도 밝힌다. 능동적 듣기는 칼 로저스가 개척하고 로버트 카커프·제라드 이건이 상담·의료·간호용으로 체계화했다(p.139). 독자는 참고문헌 목록(『유능한 상담자』, 『폴 투르니에의 기독교 심리학』, 『크리스찬 카운슬링』, 크랩의 『끊어진 관계 다시 잇기』, 『기독교 상담심리학 개론』)에 줄을 쳤다(p.139). 그러나 결론은 기술이 아니다 — 「적극적인 듣기에는 진정한 사랑이 앞서야 한다. (성령이여 오소서!)」(p.146).</p>
+<h3>6. 관계를 깊게 하는 도구 — 질문과 자기 공개</h3>
+<p><strong>관계가 깊어지는 신호</strong>(p.149–150): 말을 많이 하기 시작한다 → 받아 준다고 느낀다 → 의구심이 줄고 관심을 신뢰한다 → 중요한 문제를 털어놓는다 → 조언이 필요할 때 찾아온다 → 큰 결정 때 가장 먼저 묻는다 → 꾸준한 관계를 원하고 당신의 관심사에도 흥미를 보인다.</p>
+<p><strong>질문</strong>. 연결 질문(「요즘 잘 지내고 있어요?」)은 「밧줄을 통해 그 사람과 연결되기를 바라는 것」이며(p.151), 예수님도 우물가에서 「물 좀 주시겠습니까?」로 시작하셨다(p.152, <span class="wl-dead" title="위키 내부 링크">요4</span>). 듣는 사람은 「운전대를 잡고 대화의 방향을 이리저리 돌리는 자가 아니라 <strong>승객</strong>」이다(p.157).</p>
+<table>
+<thead>
+<tr>
+<th>효과적인 질문의 3원칙 (p.161–162)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 위압감을 주지 않는다</td>
+</tr>
+<tr>
+<td>2. 겸손한 느낌을 준다</td>
+</tr>
+<tr>
+<td>3. 상대가 자기 나름의 답을 내게 한다</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>「궁금함을 나타내는 좋은 질문은 사람들이 새로운 관점에서 생각하도록 해주며, 보다 흥미로운 질문을 할 수 있도록 이끌어 준다.」(p.162)</p>
+</blockquote>
+<p><strong>자기 공개</strong>는 희망을 주고 수치심을 덜며 새 방향을 보게 한다(p.166). 조건은 둘 — 다 아는 척하지 않을 것, 그리고 「당신을 개방한 후에는 재빨리 상대방에게 다시 초점을 맞추라」(p.170).</p>
+<h3>7. 폭풍을 다루기 — 사랑 안에서 참된 것을 말하기, 대면, 즉각성</h3>
+<p><strong>핵심 인사이트: 갈등은 관계에 필수다.</strong> 「어느 정도의 타당성 있는 폭풍의 양은 모든 인간관계에 필수적이며, 경우에 따라 유익하기도 하다」(p.175).</p>
+<p>에베소서 4:15가 기준이다. 우리는 「진리와 사랑을 따로 구분하는 경향이 있다」(p.176~180 사이 면). 그 면의 도해는 진실과 사랑을 「은혜」의 저울에 올린다.</p>
+<table>
+<thead>
+<tr>
+<th>진실만 (방어적)</th>
+<th>⚖ 은혜 — 오직 사랑 안에서 참된 것을 (엡 4:15)</th>
+<th>사랑만 (수동적)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>비난·수치심 유발·공격·처벌·굴욕감·과장·처지를 고소하게 여김</td>
+<td></td>
+<td>변명·부정·회유·포상·문제 감추기·축소·농담으로 넘기기</td>
+</tr>
+</tbody>
+</table>
+<p>대면은 사랑의 표현이다(p.181). 정의는 「객관적 사실에 근거해서 상대방의 말이나 행동이 모순이 될 때 그 사람에게 의도적으로 접근하는 것」(p.183). p.194에는 분노·거래·수용·피해 의식·조종·무감정의 목록이 표시돼 있다(전사에 맥락이 없어 무엇의 목록인지는 원문 확인 필요). 마지막 도구는 즉각성 — 「지금까지 우리가 행동하던 방식을 버리고 우리의 인간관계의 모든 오류를 회복하고 치유하기 위해 최선의 노력을 해보자는 것」(p.196).</p>
+<h3>8. 지도자의 네 기질 — 누구에게 듣기가 어려운가</h3>
+<p>책 후반부는 리더십의 「열정」이 듣기 스타일을 어떻게 비트는지 다룬다. 고전적 4기질(<a class="wl" href="../../t/%EA%B8%B0%EC%A7%88/">기질</a>)이 아니라 <strong>리더십 동기의 네 유형</strong>이다.</p>
+<table>
+<thead>
+<tr>
+<th>기질</th>
+<th>강점</th>
+<th>듣기의 함정</th>
+<th>처방</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>사령관</strong></td>
+<td>목적·비전</td>
+<td>「'오직 목적과 비전만 있다'」(p.261)</td>
+<td>「듣기가 전략임을 알아야」(p.264) · 공감 안 되면 동의를 미루라(p.244) · 「'듣기 약속'에 가장 높은 우선순위」(p.267)</td>
+</tr>
+<tr>
+<td><strong>공연자</strong></td>
+<td>무대·사람</td>
+<td>자기가 주인공이 됨</td>
+<td>「그 드라마에 영웅이 있다면 그것은 당신이 아니다. 영웅은 바로 주님이시다」(p.270)</td>
+</tr>
+<tr>
+<td><strong>학자</strong></td>
+<td>지식·신념</td>
+<td>신념에 「집착에 가깝게」 매달림(p.277)</td>
+<td>「지식은 일시적이다」(고전 13:8) · 「말하는 양에 비해 최소한 다섯 배는 더 들으려고」(p.279)</td>
+</tr>
+<tr>
+<td><strong>부모</strong></td>
+<td>긍휼(p.280)</td>
+<td>과보호·간섭 → 의존과 무책임(p.281)</td>
+<td>존중과 「사랑 안에서 진리를 말하는 것」 연습(p.283)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 인사이트: 필요 중독.</strong> 「필요 중독은 알코올 중독과 매우 비슷하다」 — 이 지도자는 어려운 사람을 도우며 「마음 깊이 자기만족을 얻기를 원한다」(p.284). 돕는 사람의 그림자를 정면으로 짚는 대목이다(<a class="wl" href="../../t/%EC%A4%91%EB%8F%85/">중독</a>). 그리고 네 기질 모두를 같은 자리로 부른다.</p>
+<blockquote>
+<p>「사령관을 높은 말안장에서 내려오게 하고, 공연자를 무대에서 내려오게 하며, 학자를 높은 탑에서 내려오게 하고, 부모를 권위의 자리에서 내려오게 한다.」(p.285)</p>
+</blockquote>
+<h3>9. 교회의 네 유형 — 교회의 소리 듣기</h3>
+<p>같은 틀을 교회에 적용한다(「영적 신호 조사표」, p.298). 변화에 저항하는 사람과 열렬히 지지하는 사람 「모두가」 듣기를 어려워하고, 듣기만이 두 극단을 묶는다(p.288).</p>
+<table>
+<thead>
+<tr>
+<th>교회</th>
+<th>대응 기질</th>
+<th>방향</th>
+<th>특징 (표시 구절)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>군대 교회</td>
+<td>사령관</td>
+<td>외부</td>
+<td>(군대/학교 혼합형) 매일 묵상·성경 읽기·중보기도·십일조 같은 제자훈련에 전력(p.308)</td>
+</tr>
+<tr>
+<td>파티 교회</td>
+<td>공연자</td>
+<td>외부</td>
+<td>「무리를 모으고」 — 마음 상한 사람을 많이 끌어옴(p.307)</td>
+</tr>
+<tr>
+<td>학교 교회</td>
+<td>학자</td>
+<td>내부</td>
+<td>미국 교회의 75% 가까이(p.301) · 배타성 때문에 새 성도를 쉽게 받지 않음(p.302)</td>
+</tr>
+<tr>
+<td>가족 교회</td>
+<td>부모</td>
+<td>내부</td>
+<td>성장에 따른 고통을 피하고 싶어함(p.303)</td>
+</tr>
+</tbody>
+</table>
+<p>내부 중심 교회는 「시간이 흐르면서 규모가 작아지고 또 배타적이 되는 경향」이 있다(p.307).</p>
+<h3>10. 팔복과 듣기 — 장애물과 마음가짐</h3>
+<p>듣기의 장애물은 둘 — 「태도의 장애물」과 「기회의 장애물」(p.323). 끝은 팔복(<span class="wl-dead" title="위키 내부 링크">마5</span>)으로 듣는 사람의 성품을 그린다. 심령이 가난해질 때 「하나님 나라의 지혜를 들을 마음의 준비가 된 것」이고(p.335), 애통하는 자에게 필요한 것은 해답이 아니라 「함께해 주고 우리의 말을 들어주는 것… 기대서 실컷 울 수 있도록 내어주는 어깨」다(p.338). 독자는 「<strong>온유한</strong>」에 동그라미를 쳤다(p.339).</p>
+<p>부록 「마음을 여는 경청의 지도자를 위한 말씀」에서는 시 103:2–4, 고후 1:3–4, 빌 2:1–2, 골 3:12, 약 1:19, 잠 10:19·16:24·25:11, 벧전 2:17, 갈 6:1–5에 줄을 쳤다(p.354–357) — 위로받은 자가 위로하고, 말을 아끼고, 온유한 심령으로 바로잡는 말씀들이다.</p>
+<hr />
+<h2>목회적·실천적 적용</h2>
+<ul>
+<li><strong>이사회·위원회 자리</strong>: 「들으면 동의한 줄 안다」(p.23 6번)는 두려움은 「공감이 안 되면 동의를 미루라」(p.244)로 푼다 — 듣기와 동의를 분리해 말로 밝히면 된다.</li>
+<li><strong>멘토링·후배 상담</strong>: 생각을 바로잡기 전에 느낌을 먼저 짚는다(p.123). 질문은 승객의 자리에서(p.157), 자기 이야기는 짧게 하고 곧 상대에게 초점을 돌린다(p.170).</li>
+<li><strong>의료 현장</strong>: 능동적 듣기는 원래 상담·의료·간호용으로 체계화됐다(p.139). 진료실에서 말과 몸이 어긋나면 환자는 몸을 믿는다(p.109).</li>
+<li><strong>돌봄 사역자의 그림자</strong>: 부모 기질과 필요 중독(p.281–284)은 선교사·의료인 멤버케어에서 그대로 쓸 수 있는 자기 점검 틀이다. MBTS 목회학개론 3주 「돌봄의 본질」의 경청 훈련과 이어 읽을 수 있다(<span class="wl-dead" title="위키 내부 링크">03주강의_돌봄의본질</span>).</li>
+</ul>
+<h2>개인 적용 · 미해결 질문</h2>
+<ul>
+<li>📝 「진심을 듣는 것은 본심을 불러일으킨다(?)」 — 내 손글씨는 듣기를 기술이 아니라 <strong>상대의 진심을 끌어내는 일</strong>로 읽었다. 이 문장을 멘토링 글의 한 축으로 키울 수 있는가?</li>
+<li>나는 네 기질 가운데 어디에 가장 가까운가? 사령관(이사회·프로젝트)과 부모(돌봄·멘토링)가 섞여 있다면, 상황마다 다른 함정이 작동하는가?</li>
+<li>교회 4유형에서 학교 교회 75%는 미국 통계다. 한국 교회, 그리고 선교단체 같은 단체 공동체에도 이 틀이 맞는가?</li>
+<li>p.194 목록(분노·거래·수용·피해 의식·조종·무감정)의 맥락 — 원문 확인 필요.</li>
+<li>손글씨 판독 불확실: p.23 상단, p.139 「자□□」.</li>
+</ul>
+<hr />
+<blockquote>
+<p>📖 전사 원문(줄이지 않은 표시 구절 전체): <span class="wl-dead" title="위키 내부 링크">마음을여는경청기술_데이브핑_전사</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#discipline/목회상담</span><span>#domain/리더십</span><span>#경청</span><span>#능동적듣기</span><span>#공감</span><span>#존중</span><span>#질문</span><span>#자기공개</span><span>#대면</span><span>#즉각성</span><span>#리더십기질</span><span>#교회유형</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
