@@ -1,0 +1,240 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>새관점 (바울에 관한 새 관점, New Perspective on Paul) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-t">성경·해석</span><span class="date">2026-10-20</span></div>
+  <h1 class="note-title">새관점 (바울에 관한 새 관점, New Perspective on Paul)</h1>
+  
+</header>
+<article class="note">
+<blockquote>
+<p>바울이 반대한 것은 유대교의 「행위 구원」이었는가, 아니면 이방인을 하나님 백성에서 밀어내던 「경계」였는가. 20세기 후반 바울 연구를 둘로 가른 이 질문을 묶어 부르는 이름이다.</p>
+</blockquote>
+<h2>1. 무엇을 뒤집으려 했나</h2>
+<p>종교개혁 이래 익숙한 그림은 이렇다. 바울 당대의 유대교는 선행을 쌓아 구원을 얻으려는 율법주의 종교였고, 바울은 그에 맞서 오직 믿음으로 얻는 의를 선포했다. 새관점은 이 그림의 첫 문장을 문제 삼는다. 바울 시대의 유대교가 율법주의적이고 행위-의에 주도되었다는 전제 자체가 틀렸다면, 바울이 무엇에 반대했는지도 다시 물어야 한다.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<p>여기서 나오는 결론은 칭의의 축을 옮기는 것이다. 바울은 행위 자체를 반대한 것이 아니라, 이방인이 교회에 들어오기 위해 유대 율법(토라)에 순종해야 한다는 생각에 반대했다.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> 그래서 칭의는 하나님과 개인 사이의 <strong>수직</strong>(의의 전가)만이 아니라 유대인과 이방인 사이의 <strong>수평</strong>(한 언약 백성의 선언)을 함께 갖는다. 칭의가 「어떻게 구원에 들어가는가」라는 구원론의 문제인지, 「누가 하나님 백성에 속해 있는가」라는 교회론의 문제인지가 쟁점이 된다.<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
+<h2>2. 계보</h2>
+<table>
+<thead>
+<tr>
+<th>인물</th>
+<th>기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">크리스터스텐달</span></td>
+<td>출발점. 다메섹 이전의 바울은 죄책감에 눌린 사람이 아니라 「왕성한 양심」을 가진 사람이었다 — 종교개혁의 내면적 회심 읽기에 대한 문제 제기</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">에드샌더스</span></td>
+<td><strong>언약적 율법주의</strong>(covenantal nomism). 하나님과의 관계는 은혜와 자비에 근거하고(언약적), 그 안에서 토라 순종이 기대된다(율법주의). 속죄 체계는 율법을 다 지키지 못할 것을 이미 전제한다<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">제임스던</span></td>
+<td>1983년 강연에서 「바울에 관한 새 관점」이라는 이름을 처음 붙였다. 「율법의 행위들」은 유대인과 이방인을 가르는 토라의 사회적 표지(할례·음식법·안식일)를 가리킨다<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup></td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">톰라이트</span></td>
+<td>바울을 당대의 종교·사회 환경 안에서 읽을 것, 바울이 반대한 것을 성급히 추정하지 말 것, 바울은 유대인과 이방인의 연합을 염려한 사회적 옹호자였다는 것 — 세 원칙<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup></td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">김세윤</span></td>
+<td>한국 신약학에서 이 논쟁을 지속적으로 다뤄 온 축. 과거·현재·미래의 삼중 칭의</td>
+</tr>
+</tbody>
+</table>
+<p>MBTS 신약개론II는 이 계보를 갈라디아서 해석의 중심축으로 놓고, 카슨·스툴마허 등의 반론까지 함께 다룬다(<span class="wl-dead" title="위키 내부 링크">02주_갈라디아서_데살로니가전후서</span>).</p>
+<h2>3. 반론</h2>
+<p>비판은 여러 방향에서 왔다. 굽타가 정리한 대표적 반론 하나는 「곤경에서 해결책으로」라는 이름이 붙은 것이다 — 당시 유대인들도 스스로를 죄로 오염되어 하나님의 종말론적 구원이 필요한 존재로 보았다는 것이다.<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup> 유대교가 은혜의 종교였다 해서 바울의 「행위」 비판이 경계표지에만 국한된다는 결론이 곧바로 따라 나오지는 않는다.</p>
+<p>목회의 자리에서 나온 반론은 칭의의 성격을 겨눈다. <span class="wl-dead" title="위키 내부 링크">권성수</span> 목사는 새관점을 단순 정죄하지 않고 검토하되, 칭의의 믿음을 수동적인 의의 전가가 아니라 「언약에 대한 능동적 신실성」으로 바꾸면 인간의 행위가 칭의 안으로 슬그머니 들어온다고 우려한다(<span class="wl-dead" title="위키 내부 링크">로마서8장_01_무정죄가성화가되는과정</span>). 같은 결의 긴장이 <a class="wl" href="../../t/%EC%B9%AD%EC%9D%98%EB%A1%A0/">칭의론</a> 6절과 <a class="wl" href="../../t/%EA%B5%AC%EC%9B%90%EB%A1%A0/">구원론</a> 8절에 정리되어 있다.</p>
+<h2>4. 지금의 자리</h2>
+<p>굽타는 정직하게 진단한다. 「새 관점」은 이제 40년이 넘어 더 이상 새롭지 않으며 잘못된 호칭이 되었다. 오늘의 학자들은 옛 관점과 새 관점 가운데 옳아 보이는 양상들을 취사선택한다 — 아마 바울이 역사의 분수령에 살았고 비범한 작가였기 때문일 것이다.<sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup></p>
+<p>이 결론은 <a class="wl" href="../../t/%EB%B0%94%EC%9A%B8%EC%8B%A0%ED%95%99/">바울신학</a>이 도달한 자리와 같다. 칭의가 바울신학의 중심이냐 아니냐를 묻는 대신, 칭의가 <strong>어느 지평 안에 놓이느냐</strong>를 묻는 것이다. 이신칭의·구원 역사·묵시론·그리스도에 참여라는 네 문 가운데 하나만 고르는 것이 아니라, 상황화된 편지들과 그 배후의 일관된 사고를 함께 붙드는 통합의 읽기다.<sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup></p>
+<h2>함께 더 생각할 질문 (미해결)</h2>
+<ul>
+<li>칭의의 수평 차원(유대인과 이방인의 한 백성)을 받아들이면서도 수직 차원(의의 전가)의 확신을 잃지 않는 길은 무엇인가.</li>
+<li>「율법의 행위들」이 경계표지라면, 오늘의 교회가 다른 문화의 신자에게 요구하는 「행위」는 무엇인가 — 선교 현장의 <a class="wl" href="../../t/%EC%83%81%ED%99%A9%ED%99%94/">상황화</a>와 맞닿는 질문.</li>
+<li>파이퍼와 라이트의 칭의 논쟁(행위에 따른 최종 심판)은 새관점과 어디까지 같은 문제인가(<a class="wl" href="../../b/%EC%8B%A0%EC%95%BD%ED%95%99%EA%B0%95%EC%9D%98%EB%85%B8%ED%8A%B8_%EB%8B%88%EC%A0%9C%EC%9D%B4%EA%B5%BD%ED%83%80/">신약학강의노트_니제이굽타</a> 8절).</li>
+</ul>
+<h2>인용·출처</h2>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="wl" href="../../b/%EC%8B%A0%EC%95%BD%ED%95%99%EA%B0%95%EC%9D%98%EB%85%B8%ED%8A%B8_%EB%8B%88%EC%A0%9C%EC%9D%B4%EA%B5%BD%ED%83%80/">신약학강의노트_니제이굽타</a> 제5·6강</td>
+<td>책</td>
+<td>정의, 샌더스·던·라이트 세 기둥, 「곤경에서 해결책으로」 반론, 「더 이상 새롭지 않다」</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../t/%EC%B9%AD%EC%9D%98%EB%A1%A0/">칭의론</a> · <a class="wl" href="../../t/%EA%B5%AC%EC%9B%90%EB%A1%A0/">구원론</a> · <a class="wl" href="../../t/%EB%B0%94%EC%9A%B8%EC%8B%A0%ED%95%99/">바울신학</a></td>
+<td>주제</td>
+<td>구원론↔교회론 질문, 수직↔수평, 통합의 읽기</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">01주_바울서신개론_야고보서</span> · <span class="wl-dead" title="위키 내부 링크">02주_갈라디아서_데살로니가전후서</span></td>
+<td>강의</td>
+<td>스텐달에서 라이트까지의 계보, 카슨·스툴마허의 반론</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">로마서8장_01_무정죄가성화가되는과정</span></td>
+<td>설교</td>
+<td>능동적 언약 신실성 재규정에 대한 목회적 우려</td>
+</tr>
+</tbody>
+</table>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a class="wl" href="../../b/%EC%8B%A0%EC%95%BD%ED%95%99%EA%B0%95%EC%9D%98%EB%85%B8%ED%8A%B8_%EB%8B%88%EC%A0%9C%EC%9D%B4%EA%B5%BD%ED%83%80/">신약학강의노트_니제이굽타</a> 제6강, p.151.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>같은 책, p.152.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p><a class="wl" href="../../t/%EC%B9%AD%EC%9D%98%EB%A1%A0/">칭의론</a> 6절 「NPP가 칭의에 던진 질문」; <a class="wl" href="../../t/%EA%B5%AC%EC%9B%90%EB%A1%A0/">구원론</a> 8절.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p><a class="wl" href="../../b/%EC%8B%A0%EC%95%BD%ED%95%99%EA%B0%95%EC%9D%98%EB%85%B8%ED%8A%B8_%EB%8B%88%EC%A0%9C%EC%9D%B4%EA%B5%BD%ED%83%80/">신약학강의노트_니제이굽타</a> p.154.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>같은 책, p.156-157.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p>같은 책, p.157-158.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p>같은 책, p.158-159.&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:8">
+<p>같은 책, p.172-173.&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:9">
+<p><a class="wl" href="../../t/%EB%B0%94%EC%9A%B8%EC%8B%A0%ED%95%99/">바울신학</a> 1절; <a class="wl" href="../../b/%EC%8B%A0%EC%95%BD%ED%95%99%EA%B0%95%EC%9D%98%EB%85%B8%ED%8A%B8_%EB%8B%88%EC%A0%9C%EC%9D%B4%EA%B5%BD%ED%83%80/">신약학강의노트_니제이굽타</a> 제5강, p.141-143.&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/신약학</span><span>#topic/바울신학</span><span>#topic/칭의론</span><span>#topic/언약적율법주의</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
