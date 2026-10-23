@@ -82,13 +82,76 @@
   .scripture p{font-style:italic;color:var(--text2);font-size:.95rem;line-height:1.85;margin-bottom:0}
   .sn{display:none}
   @media(max-width:600px){.article,.read-header{padding-left:1rem;padding-right:1rem}}
-</style><style>.media{float:left;width:42%;margin:.35rem 1.5rem .9rem 0;clear:left;break-inside:avoid;page-break-inside:avoid}.media img{width:100%;max-width:none}.media figcaption{text-align:left;font-size:.72rem;margin-top:.45rem;line-height:1.45;break-before:avoid;page-break-before:avoid}h2,h3,h4,h5,table,.pq,blockquote,hr,.media-grid{clear:both}@media(max-width:700px){.media{float:none;width:100%;margin:1.4rem 0}.media figcaption{text-align:center}}</style></head><body>
+</style><style>@import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@300;400;600;800&display=swap');
+.media{float:left;width:42%;margin:.35rem 1.5rem .9rem 0;clear:left;break-inside:avoid;page-break-inside:avoid}.media img{width:100%;max-width:none}.media figcaption{text-align:left;font-size:.72rem;margin-top:.45rem;line-height:1.45;break-before:avoid;page-break-before:avoid}h2,h3,h4,h5,table,.pq,blockquote,hr,.media-grid{clear:both}@media(max-width:700px){.media{float:none;width:100%;margin:1.4rem 0}.media figcaption{text-align:center}}
+:root{--bg:#f2f2ee;--text:#23282b;--text2:#596164;--accent:#2e5b60;--al:#6b8a8c;--ochre:#9c6b2e;--rule:#d8d3c6;--wash:#e3eae8;--abg:#e3eae8;--bdl:#d8d3c6;--bd:#c9c3b3;--pq:#23282b;--tbg:#e3eae8;--ttx:#2e5b60;--serif:'Hahmlet','Noto Serif KR',serif;--sans:-apple-system,'Apple SD Gothic Neo','Pretendard','Malgun Gothic',sans-serif;--max:38rem}
+@media (prefers-color-scheme:dark){:root{--bg:#1d2122;--text:#e6e4dd;--text2:#a9b0ae;--accent:#8fbcbf;--al:#7a9a9b;--ochre:#d3a46a;--rule:#3a4142;--wash:#263031;--abg:#263031;--bdl:#3a4142;--bd:#4a5253;--pq:#e6e4dd;--tbg:#263031;--ttx:#8fbcbf}}
+body{font-size:18px;line-height:1.95;font-weight:400;background:var(--bg);color:var(--text)}
+::selection{background:var(--wash)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* 머리: 우물가 수채화가 종이로 번져 나온다 */
+.read-header{max-width:none;padding:0 0 2.5rem;border-bottom:0;display:grid;grid-template-columns:minmax(1rem,1fr) minmax(0,var(--max)) minmax(1rem,1fr)}
+.read-header>*{grid-column:2}
+.read-header::before{content:"";grid-column:1/-1;display:block;height:min(62vh,560px);margin-bottom:-4.5rem;background:url(img/04.jpg) center 40%/cover no-repeat;-webkit-mask-image:linear-gradient(to bottom,#000 55%,transparent 100%);mask-image:linear-gradient(to bottom,#000 55%,transparent 100%);opacity:.92}
+.read-label{position:relative;font-family:var(--sans);font-size:.8rem;letter-spacing:.02em;text-transform:none;color:var(--ochre);font-weight:600;margin-bottom:.9rem}
+.read-header h1{position:relative;font-family:var(--serif);font-weight:800;font-size:clamp(2rem,5.2vw,3.4rem);line-height:1.22;letter-spacing:-.02em;text-wrap:balance;margin-bottom:1.1rem}
+.read-sub{font-family:var(--sans);font-size:.95rem;color:var(--text2);margin-bottom:1.8rem}
+.read-excerpt{font-style:normal;font-weight:300;font-size:1.12rem;line-height:1.85;color:var(--text);padding-top:1.4rem;border-top:1px solid var(--rule);text-wrap:pretty}
+.read-author{opacity:1;color:var(--text2);font-size:.85rem;margin-top:1.2rem}
+
+/* 본문 */
+.article{max-width:calc(var(--max) + 2.5rem);padding:1rem 1.25rem 2rem}
+.article p{margin-bottom:1.6rem;text-wrap:pretty}
+.article>h2.chapter-label:first-child{display:none}
+.lead-p{display:none}
+.section-divider{display:none}
+
+/* 부: 돌 한 줄을 쌓고 그 위에 제목 */
+.chapter-label{font-family:var(--serif);font-size:clamp(1.5rem,3.4vw,2rem);font-weight:800;color:var(--text);text-transform:none;letter-spacing:-.015em;line-height:1.3;margin:5rem 0 2rem;padding:1.6rem 0 0;border:0;position:relative;text-wrap:balance}
+.chapter-label::before{content:"";position:absolute;top:0;left:0;width:9rem;height:.9rem;background:linear-gradient(90deg,var(--accent) 0 30%,transparent 30% 33%,var(--accent) 33% 63%,transparent 63% 66%,var(--accent) 66% 100%) top/100% .38rem no-repeat,linear-gradient(90deg,transparent 0 14%,var(--ochre) 14% 47%,transparent 47% 50%,var(--ochre) 50% 83%,transparent 83%) bottom/100% .38rem no-repeat;opacity:.85}
+h2{font-family:var(--serif);font-size:1.28rem;font-weight:600;line-height:1.45;margin:3rem 0 1.2rem;color:var(--accent)}
+h3,h4{font-family:var(--serif);font-weight:600;font-size:1.08rem;margin:2.4rem 0 .9rem}
+
+/* 인용·강조 */
+.pullquote{border-left:2px solid var(--ochre);padding:.1rem 0 .1rem 1.25rem;margin:2.2rem 0}
+.pullquote p{font-size:1.04rem;font-weight:400;color:var(--text);line-height:1.85;margin:0}
+.pullquote strong{font-weight:600;color:var(--accent)}
+.lead-p+.pullquote{border:0;background:var(--wash);padding:1.1rem 1.3rem;border-radius:3px}
+.lead-p+.pullquote p{font-family:var(--sans);font-size:.88rem;line-height:1.8;color:var(--text2)}
+.lead-p+.pullquote+.pullquote{border:0;text-align:center;margin:3.5rem auto 1rem;max-width:30rem;padding:0}
+.lead-p+.pullquote+.pullquote p{font-weight:300;font-size:1.15rem;line-height:2;text-align:center}
+.scripture{background:none;border:0;border-radius:0;padding:0 0 0 1.25rem;margin:2rem 0;position:relative}
+.scripture::before{content:"";position:absolute;left:0;top:.35em;bottom:.35em;width:2px;background:var(--accent)}
+.scripture p{font-style:normal;font-size:1.06rem;color:var(--text);font-weight:300}
+
+/* 삽화: 넓은 화면에선 왼쪽 여백으로 걸어 나간다 */
+.media img{border:0;border-radius:2px}
+.media figcaption{font-family:var(--sans);color:var(--text2);font-size:.76rem}
+@media(min-width:1100px){.media{width:46%!important;margin-left:-9rem!important;margin-right:1.75rem!important}}
+
+/* 표 */
+.table-wrap{margin:2rem 0}
+table{font-size:.86rem}
+th{background:none;color:var(--ochre);font-weight:700;border-bottom:1.5px solid var(--ochre);padding:8px 12px}
+td{color:var(--text);padding:10px 12px;border-bottom:1px solid var(--rule)}
+td strong{color:var(--accent)}
+
+/* 각주·끝 */
+.fnref a{color:var(--ochre)}
+.footnotes .fn-num{background:none;color:var(--ochre);border:1px solid var(--rule)}
+.tag{background:none;border:1px solid var(--rule);color:var(--text2)}
+.footer{opacity:.7}
+@media(max-width:700px){.read-header::before{height:46vh;margin-bottom:-3rem}body{font-size:17px}.chapter-label{margin-top:3.5rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.read-header{padding-bottom:1rem}
+</style></head><body>
 <header class="read-header">
   <div class="read-label">의료선교</div>
   <h1>함께 지어져 가는 의료선교 — 도우러 가는 길에서 함께 걷는 길로</h1>
   <p class="read-sub">문헌과 현장, 성경으로 다시 생각하는 단기 의료선교</p>
   <p class="read-excerpt">이십 년 전 후배가 물었습니다. 「우리 진료실에서라면 하지 않을 진료를 여기서는 이렇게 해도 되는 건가요?」 그 물음에 대한 답입니다. 지난 삼십 년이 틀렸다는 이야기가 아니라, 그 헌신이 서 있던 땅이 바뀌었다는 이야기입니다.</p>
-  <p class="read-author">글: 이상협 (M.D., M.Div.)</p>
+  <p class="read-author">글: 이상협 · 가정의학과 전문의 (M.D., M.Div.)</p>
 </header>
 <article class="article"><h2 class="chapter-label">— 도우러 가는 길에서 함께 걷는 길로</h2>
 <p class="lead-p"><strong>이상협집사</strong> · 가정의학과 전문의 (M.D., M. Div.)</p>
