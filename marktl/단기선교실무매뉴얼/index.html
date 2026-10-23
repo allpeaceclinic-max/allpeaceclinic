@@ -14,16 +14,16 @@
 <title>단기선교 실무 매뉴얼</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap">
 <style>
 /* 레이아웃: 왼쪽에 단계 표식이 흐르는 한 칸짜리 읽는 기둥. 목록과 점검표는 그 안의 카드로 떨어져 나온다. */
 :root{
-  --paper:#f7f6f2; --card:#fffefb; --ink:#1b2430; --ink2:#5a6673; --line:#ddd9d0; --line2:#eceae4;
-  --accent:#2d6a5a; --accent-soft:#e6efeb; --flag:#9e3b32; --flag-soft:#f6eae8;
-  --mark:#9a7320; --mark-soft:#f6f0e2; --shade:#f1efe9;
+  --paper:#f2f2ee; --card:#fbfbf8; --ink:#23282b; --ink2:#596164; --line:#d8d3c6; --line2:#e6e3da;
+  --accent:#2e5b60; --accent-soft:#e3eae8; --flag:#9e3b32; --flag-soft:#f6eae8;
+  --mark:#9c6b2e; --mark-soft:#f3ece0; --shade:#ebeae4;
   --display:"Gowun Batang",Georgia,serif;
   --body:"Noto Sans KR",system-ui,-apple-system,sans-serif;
-  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --mono:"Noto Sans KR",system-ui,sans-serif;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --paper:#12171d; --card:#192027; --ink:#e7e4dd; --ink2:#9aa5b1; --line:#2e3740; --line2:#232b33;
@@ -190,17 +190,78 @@ footer p{margin:.6rem 0}
 .srcs span{display:block;font-size:.82rem;color:var(--ink2);margin-top:.2rem;line-height:1.6}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 @media print{nav{display:none}.check input{-webkit-appearance:checkbox;appearance:checkbox}}
+/* ── 2026-10-23 개편 ── */
+.kicker,.partno,.card .who,.note b.tag{font-family:var(--body);letter-spacing:.02em;text-transform:none}
+.card .who{font-size:.74rem;font-weight:500}
+.note b.tag{font-size:.74rem;font-weight:700}
+td.num,.check .no,ol.enum>li::before,.stat b,.check-head .meta{font-variant-numeric:tabular-nums}
+.stat b{font-family:var(--display)}
+
+/* 위쪽 차례: 지금 있는 부 + 읽은 만큼 차는 선 */
+nav{background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px)}
+nav a{transition:color .15s,background-color .15s}
+nav a[aria-current="true"],nav a[aria-current="true"]:hover{color:var(--paper);background:var(--accent);font-weight:700}
+nav .read{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:var(--mark);
+  transform-origin:0 50%;transform:scaleX(var(--p,0))}
+
+/* 머리: 여정 띠 */
+header{padding-block:3rem 2.4rem}
+.journey{margin:0 0 2rem}
+.journey .bar{display:flex;height:2.6rem;gap:3px}
+.journey .seg{position:relative;border-radius:2px}
+.journey .prep{flex:26;background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent)}
+.journey .field{flex:2;min-width:9px;background:var(--mark)}
+.journey .after{flex:48;background:var(--accent)}
+.journey .legend{display:flex;gap:3px;margin-top:.55rem;font-size:.8rem;line-height:1.45;color:var(--ink2)}
+.journey .legend span{display:block}
+.journey .legend b{display:block;color:var(--ink);font-size:.86rem}
+.journey .l-prep{flex:26}.journey .l-after{flex:48;text-align:right}
+.journey .l-field{flex:0 0 auto;position:relative;left:-.2rem;color:var(--mark)}
+.journey .l-field b{color:var(--mark)}
+.journey .say{margin:.9rem 0 0;font-family:var(--display);font-size:1.02rem;color:var(--ink)}
+h1{font-size:clamp(2.2rem,7vw,3.6rem)}
+
+/* 부 머리 */
+.partno{font-family:var(--display);font-size:1rem;font-weight:700;color:var(--mark);letter-spacing:0}
+section.part{padding-top:3.6rem}
+.plate{margin:1.4rem calc(50% - 50vw) 2.2rem;max-width:none;display:flex;justify-content:center}
+.plate img{display:block;width:min(64rem,100vw);height:auto;aspect-ratio:3/2;max-height:72vh;object-fit:cover;
+  -webkit-mask-image:radial-gradient(ellipse 72% 70% at 50% 50%,#000 58%,transparent 100%);
+  mask-image:radial-gradient(ellipse 72% 70% at 50% 50%,#000 58%,transparent 100%)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .plate img{opacity:.88}}
+:root[data-theme="dark"] .plate img{opacity:.88}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#1d2122;--card:#232829;--accent:#8fbcbf;--accent-soft:#263031;--mark:#d3a46a;--mark-soft:#2c2620;--line:#3a4142;--line2:#2c3233;--shade:#262b2c}}
+:root[data-theme="dark"]{--paper:#1d2122;--card:#232829;--accent:#8fbcbf;--accent-soft:#263031;--mark:#d3a46a;--mark-soft:#2c2620;--line:#3a4142;--line2:#2c3233;--shade:#262b2c}
+@media (max-width:640px){.journey .legend{font-size:.74rem}.journey .l-field{display:none}
+  .plate img{aspect-ratio:4/3}}
+
+@media print{
+  body{background:#fff;font-size:11pt}
+  nav,.check-foot button{display:none}
+  .plate img{width:60%;max-height:none;-webkit-mask-image:none;mask-image:none}
+  section.part{break-before:page}
+  .check,.tw,.note,figure{break-inside:avoid}
+  details{display:block}details .body{display:block}
+}
+
 </style>
 </head><body>
 <nav><div class="wrap">
   <a href="#start">시작하기 전에</a><a href="#p1">1 준비</a><a href="#p2">2 현지</a><a href="#p3">3 돌아온 뒤</a>
   <a href="#p4">4 재정</a><a href="#p5">5 문답</a><a href="#p6">6 2017년 이후</a><a href="#ap">부록</a>
-</div></nav>
+</div><div class="read" aria-hidden="true"></div></nav>
 
 <div class="wrap">
 
 <header>
-  <div class="kicker">Field Manual</div>
+  <div class="journey" role="img" aria-label="준비 약 여섯 달, 현지 한두 주, 돌아온 뒤 열한 달을 길이로 견준 띠">
+    <div class="bar"><div class="seg prep"></div><div class="seg field"></div><div class="seg after"></div></div>
+    <div class="legend" aria-hidden="true">
+      <span class="l-prep"><b>한국에서 준비</b>약 여섯 달</span>
+      <span class="l-field"><b>현지</b>1~2주</span>
+      <span class="l-after"><b>돌아온 뒤</b>나머지 열한 달</span>
+    </div>
+  </div>
   <h1>단기선교 실무 매뉴얼</h1>
   <p class="sub">팀을 꾸려 다녀오고, 돌아오기까지</p>
   <div class="byline"><b>이상협</b><span>가정의학과 전문의 (M.D., M.&thinsp;Div.)</span></div>
@@ -266,6 +327,7 @@ footer p{margin:.6rem 0}
   <div class="partno">1부</div>
   <h2>한국에서 준비하기</h2>
   <p class="parthint">여섯 달. 여기서 정해지는 것이 현지에서 할 수 있는 일의 범위를 이미 정합니다.</p>
+  <figure class="plate"><img src="img/p1.jpg" alt="저녁의 교회 친교실. 팀이 긴 탁자에 지도와 점검표를 펴 놓고, 바닥의 여행가방과 약 상자를 나눠 싼다" loading="lazy" width="1536" height="1024"></figure>
 
   <h3>누가 이끄는가 — 듀얼 리더십</h3>
   <p><strong>목회자와 평신도를 함께 세웁니다.</strong></p>
@@ -439,6 +501,7 @@ footer p{margin:.6rem 0}
   <div class="partno">2부</div>
   <h2>현지에서</h2>
   <p class="parthint">태도가 메시지입니다. 백 마디 말보다 태도가 강하게 전달됩니다.</p>
+  <figure class="plate"><img src="img/p2.jpg" alt="현지 목회자가 앞서 걸으며 이야기하고, 팀은 뒤따라 걸으며 듣는다" loading="lazy" width="1536" height="1024"></figure>
 
   <h3>사역 태도 14가지</h3>
   <ol class="enum tight">
@@ -540,6 +603,7 @@ footer p{margin:.6rem 0}
   <div class="partno">3부</div>
   <h2>돌아온 뒤</h2>
   <p class="parthint">단기선교의 진정한 열매는 귀국 후에 맺힙니다. 이 단계가 사실상 가장 중요합니다.</p>
+  <figure class="plate"><img src="img/p3.jpg" alt="돌아온 뒤 몇 주. 둘러앉은 팀 가운데 사진과 현지에서 온 편지가 놓여 있다" loading="lazy" width="1536" height="1024"></figure>
 
   <h3>해단식을 하지 마십시오</h3>
   <p>거기서 끝나는 것이 아니라 <strong>거기서 시작합니다.</strong> 포스트필드를 하지 않으면 <strong>비용 대비 효과가 가장 나쁜 행사</strong>가 됩니다.</p>
@@ -933,6 +997,30 @@ footer p{margin:.6rem 0}
     });
     tally();
   });
+})();
+</script>
+
+<script>
+(function(){
+  var nav=document.querySelector('nav'),bar=nav&&nav.querySelector('.read');
+  var links=[].slice.call(document.querySelectorAll('nav a[href^="#"]'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  var cur=-1,tick=false;
+  function upd(){
+    tick=false;
+    var y=window.scrollY+innerHeight*.3,i=-1;
+    secs.forEach(function(sec,k){if(sec&&sec.offsetTop<=y)i=k});
+    if(i!==cur){
+      links.forEach(function(a,k){if(k===i)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')});
+      var w=links[0]&&links[0].parentNode;
+      if(i>=0&&w&&w.scrollWidth>w.clientWidth)w.scrollLeft=Math.max(0,links[i].offsetLeft-w.offsetLeft-24);
+      cur=i;
+    }
+    var h=document.documentElement.scrollHeight-innerHeight;
+    if(bar)bar.style.setProperty('--p',h>0?Math.min(1,window.scrollY/h):0);
+  }
+  window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});
+  window.addEventListener('resize',upd);upd();
 })();
 </script>
 </body></html>
