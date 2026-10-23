@@ -191,6 +191,18 @@ footer p{margin:.6rem 0}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 @media print{nav{display:none}.check input{-webkit-appearance:checkbox;appearance:checkbox}}
 /* ── 2026-10-23 개편 ── */
+ol.enum.forms>li{display:grid;grid-template-columns:1fr auto;gap:.1rem 1rem;align-items:center}
+ol.enum.forms .fname{font-weight:700;color:var(--ink);text-decoration:none}
+ol.enum.forms .fname:hover{color:var(--accent);text-decoration:underline}
+ol.enum.forms>li>span.d{grid-column:1;margin-top:0}
+ol.enum.forms .fdl{grid-column:2;grid-row:1/span 2;display:flex;gap:.35rem}
+.fdl a,.fall a{font-size:.8rem;color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);
+  border-radius:999px;padding:.18rem .62rem;text-decoration:none;white-space:nowrap}
+.fdl a:hover,.fall a:hover{background:var(--accent);color:var(--paper)}
+.fall{display:flex;gap:.5rem;flex-wrap:wrap}
+.fall a:first-child{background:var(--accent);color:var(--paper)}
+@media (max-width:560px){ol.enum.forms>li{grid-template-columns:1fr}ol.enum.forms .fdl{grid-column:1;grid-row:auto}}
+
 .kicker,.partno,.card .who,.note b.tag{font-family:var(--body);letter-spacing:.02em;text-transform:none}
 .card .who{font-size:.74rem;font-weight:500}
 .note b.tag{font-size:.74rem;font-weight:700}
@@ -248,7 +260,7 @@ section.part{padding-top:3.6rem}
 </head><body>
 <nav><div class="wrap">
   <a href="#start">시작하기 전에</a><a href="#p1">1 준비</a><a href="#p2">2 현지</a><a href="#p3">3 돌아온 뒤</a>
-  <a href="#p4">4 재정</a><a href="#p5">5 문답</a><a href="#p6">6 2017년 이후</a><a href="#ap">부록</a>
+  <a href="#p4">4 재정</a><a href="#p5">5 문답</a><a href="#p6">6 2017년 이후</a><a href="#ap">부록</a><a href="#forms">서식 8종</a>
 </div><div class="read" aria-hidden="true"></div></nav>
 
 <div class="wrap">
@@ -935,17 +947,10 @@ section.part{padding-top:3.6rem}
     </tbody>
   </table></div>
 
-  <h3>만들어 둘 서식 8가지</h3>
-  <ol class="enum">
-    <li><strong>파송요청서</strong><span class="d">현지 선교사가 작성</span></li>
-    <li><strong>협력동의서</strong><span class="d">양쪽 서명</span></li>
-    <li><strong>참가 신청서</strong><span class="d">동기 점검 문항 포함</span></li>
-    <li><strong>선교사 확인 질문지</strong><span class="d">사역·시설·식사·교통·봉사·여가</span></li>
-    <li><strong>역할 배분표</strong><span class="d">13개 역할</span></li>
-    <li><strong>중보기도 편지 양식</strong><span class="d">7항목 + 후원자 서명란</span></li>
-    <li><strong>재정 결산 보고서 양식</strong></li>
-    <li><strong>사역 평가지</strong><span class="d">11개 고려 항목 + 핵심 두 질문</span></li>
-  </ol>
+  <h3 id="forms">만들어 둘 서식 8가지</h3>
+  <p>모두 만들어 두었습니다. <strong>보기</strong>로 열어 빈칸에 바로 적고 인쇄하거나, <strong>Word</strong>로 받아 「○○교회」를 우리 교회 이름으로 바꿔 쓰십시오.</p>
+  <ol class="enum forms"><li><a class="fname" href="forms/f01.html">파송요청서</a><span class="d">현지 선교사가 작성</span><span class="fdl"><a href="forms/f01.html">보기</a><a href="forms/dl/f01.docx" download="○○교회_단기선교서식_01_단기선교팀파송요청서.docx">Word</a><a href="forms/dl/f01.pdf" download="○○교회_단기선교서식_01_단기선교팀파송요청서.pdf">PDF</a></span></li><li><a class="fname" href="forms/f02.html">협력동의서</a><span class="d">양쪽 서명</span><span class="fdl"><a href="forms/f02.html">보기</a><a href="forms/dl/f02.docx" download="○○교회_단기선교서식_02_단기선교협력동의서.docx">Word</a><a href="forms/dl/f02.pdf" download="○○교회_단기선교서식_02_단기선교협력동의서.pdf">PDF</a></span></li><li><a class="fname" href="forms/f03.html">참가 신청서</a><span class="d">동기 점검 문항 포함</span><span class="fdl"><a href="forms/f03.html">보기</a><a href="forms/dl/f03.docx" download="○○교회_단기선교서식_03_단기팀참가신청서.docx">Word</a><a href="forms/dl/f03.pdf" download="○○교회_단기선교서식_03_단기팀참가신청서.pdf">PDF</a></span></li><li><a class="fname" href="forms/f04.html">선교사 확인 질문지</a><span class="d">사역·시설·식사·교통·봉사·여가</span><span class="fdl"><a href="forms/f04.html">보기</a><a href="forms/dl/f04.docx" download="○○교회_단기선교서식_04_현지선교사확인질문지.docx">Word</a><a href="forms/dl/f04.pdf" download="○○교회_단기선교서식_04_현지선교사확인질문지.pdf">PDF</a></span></li><li><a class="fname" href="forms/f05.html">역할 배분표</a><span class="d">13개 역할</span><span class="fdl"><a href="forms/f05.html">보기</a><a href="forms/dl/f05.docx" download="○○교회_단기선교서식_05_팀역할배분표.docx">Word</a><a href="forms/dl/f05.pdf" download="○○교회_단기선교서식_05_팀역할배분표.pdf">PDF</a></span></li><li><a class="fname" href="forms/f06.html">중보기도 편지 양식</a><span class="d">7항목 + 후원자 서명란</span><span class="fdl"><a href="forms/f06.html">보기</a><a href="forms/dl/f06.docx" download="○○교회_단기선교서식_06_중보기도편지.docx">Word</a><a href="forms/dl/f06.pdf" download="○○교회_단기선교서식_06_중보기도편지.pdf">PDF</a></span></li><li><a class="fname" href="forms/f07.html">재정 결산 보고서 양식</a><span class="d">수입·지출의 예정과 집행</span><span class="fdl"><a href="forms/f07.html">보기</a><a href="forms/dl/f07.docx" download="○○교회_단기선교서식_07_단기선교결산보고서.docx">Word</a><a href="forms/dl/f07.pdf" download="○○교회_단기선교서식_07_단기선교결산보고서.pdf">PDF</a></span></li><li><a class="fname" href="forms/f08.html">사역 평가지</a><span class="d">11개 고려 항목 + 핵심 두 질문</span><span class="fdl"><a href="forms/f08.html">보기</a><a href="forms/dl/f08.docx" download="○○교회_단기선교서식_08_단기선교사역평가지.docx">Word</a><a href="forms/dl/f08.pdf" download="○○교회_단기선교서식_08_단기선교사역평가지.pdf">PDF</a></span></li></ol>
+  <p class="fall"><a href="forms/">서식 모음 열기</a><a href="forms/dl/forms-8.zip" download="○○교회_단기선교서식_8종.zip">8종 한꺼번에 받기</a></p>
   <div class="note key"><p><b class="tag">핵심</b>서식을 만들어 두는 것이 <strong>가장 값싼 지속성</strong>입니다. 한 교회는 매뉴얼화의 이유를 이렇게 적었습니다 — <strong>「주도하는 사람이 바뀌어도 같은 품질의 사역을 유지할 수 있게 된다.」</strong></p></div>
 
   <h3>함께 읽을 것</h3>

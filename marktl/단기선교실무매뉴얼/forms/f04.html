@@ -1,0 +1,78 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>현지 선교사 확인 질문지 — 단기선교 서식</title><meta name="description" content="출발 전에 현지 선교사에게 묻고 답을 적어 둡니다. 「우리 팀에게 바라는 다른 영역은?」을 꼭 물으십시오 — 말하지 않은 필요가 거기서 나옵니다."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=Noto+Sans+KR:wght@400;500;700&display=swap"><style>
+:root{--paper:#f2f2ee;--sheet:#fff;--ink:#23282b;--ink2:#596164;--line:#8a8f8c;--line2:#c9c6bd;
+  --accent:#2e5b60;--accent-soft:#e3eae8;--mark:#9c6b2e;
+  --display:"Gowun Batang",serif;--body:"Noto Sans KR",system-ui,-apple-system,sans-serif}
+@media (prefers-color-scheme:dark){:root{--paper:#1d2122;--accent-soft:#263031}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:14px;line-height:1.6;word-break:keep-all}
+.bar{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(8px);
+  border-bottom:1px solid color-mix(in srgb,var(--ink2) 25%,transparent)}
+.bar .in{max-width:210mm;margin:0 auto;padding:.6rem 16px;display:flex;flex-wrap:wrap;gap:.5rem .8rem;align-items:center}
+.bar a,.bar button{font:inherit;font-size:.86rem;color:var(--accent);text-decoration:none;background:none;border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);
+  border-radius:999px;padding:.3rem .8rem;cursor:pointer}
+.bar a.primary,.bar button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.bar a:focus-visible,.bar button:focus-visible,.bar input:focus-visible{outline:2px solid var(--mark);outline-offset:2px}
+.bar label{font-size:.84rem;color:var(--ink2);display:flex;gap:.4rem;align-items:center;margin-left:auto}
+.bar input{font:inherit;font-size:.86rem;width:9rem;padding:.25rem .5rem;border:1px solid var(--line2);border-radius:4px;background:var(--sheet);color:#23282b}
+.bar .back{border:0;padding-left:0;color:var(--ink2)}
+.sheet{background:var(--sheet);color:#23282b;max-width:210mm;margin:18px auto 40px;padding:16mm 15mm 18mm;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.head{border-bottom:2px solid #23282b;padding-bottom:.6rem;margin-bottom:1rem}
+.head .org{font-size:.8rem;color:var(--mark);font-weight:700}
+.head h1{font-family:var(--display);font-size:1.7rem;margin:.1rem 0 .2rem;letter-spacing:-.01em}
+.head .who{font-size:.8rem;color:var(--ink2)}
+.lead{font-size:.82rem;color:var(--ink2);background:var(--accent-soft);padding:.55rem .75rem;border-radius:3px;margin:0 0 1rem}
+h2{font-size:.95rem;font-weight:700;margin:1.15rem 0 .4rem;color:var(--accent)}
+p.p{margin:.6rem 0}
+table{width:100%;border-collapse:collapse;margin:.35rem 0 .2rem;font-size:.86rem}
+th,td{border:1px solid var(--line);padding:.35rem .45rem;vertical-align:top;text-align:left}
+th{background:#f1f0ec;font-weight:700;font-size:.8rem}
+td.k{background:#f7f6f3;font-weight:500;width:1%;white-space:nowrap;font-size:.82rem}
+td.v{min-height:1.9em;height:2.1em}
+td.c{text-align:center;color:var(--ink2)}
+td[contenteditable]:focus,div[contenteditable]:focus{outline:2px solid var(--mark);outline-offset:-2px;background:#fffdf6}
+.area{margin:.45rem 0}
+.area .lab{font-size:.84rem;font-weight:500;margin-bottom:.2rem}
+.area .box{border:1px solid var(--line);min-height:calc(var(--n) * 1.9em);padding:.3rem .45rem;
+  background-image:repeating-linear-gradient(transparent 0 calc(1.9em - 1px),#e6e4dd calc(1.9em - 1px) 1.9em);background-position:0 .3rem}
+.checks{display:flex;flex-wrap:wrap;gap:.25rem 1.1rem;margin:.35rem 0;font-size:.86rem;align-items:baseline}
+.checks .lab{font-weight:500;min-width:6.5rem}
+.checks label{display:inline-flex;gap:.35rem;align-items:baseline;cursor:pointer}
+.checks input{width:.95rem;height:.95rem;margin:0;accent-color:var(--accent);transform:translateY(2px)}
+.sign{display:grid;grid-template-columns:repeat(var(--n),1fr);margin-top:1rem;border:1px solid var(--line)}
+.sign div{border-left:1px solid var(--line)}.sign div:first-child{border-left:0}
+.sign b{display:block;text-align:center;font-size:.78rem;padding:.25rem;border-bottom:1px solid var(--line);background:#f7f6f3}
+.sign span{display:block;height:3.4rem}
+.note{font-size:.74rem;color:var(--ink2);margin:.8rem 0 0;padding-left:1rem}
+.note li{margin:.1rem 0}
+.foot{font-size:.7rem;color:#9a9d99;margin-top:1.2rem;text-align:right}
+@media (max-width:640px){.sheet{padding:18px 14px;margin:0}.bar label{margin-left:0}
+  table{font-size:.8rem}td.k{white-space:normal;min-width:5.6em;width:auto}}
+@page{size:A4;margin:10mm 12mm}
+@media print{body{background:#fff;font-size:9pt;line-height:1.45}.bar{display:none}.sheet{box-shadow:none;margin:0;padding:0;max-width:none}
+  .head{padding-bottom:.35rem;margin-bottom:.55rem}.head h1{font-size:1.45rem}
+  .lead{background:none;border:1px solid #ccc;padding:.35rem .6rem;margin-bottom:.55rem;font-size:.78rem}
+  h2{break-after:avoid;margin:.65rem 0 .25rem}p.p{margin:.35rem 0}
+  th,td{padding:.18rem .35rem}td.v{height:1.75em}table{margin:.2rem 0}
+  .area{margin:.3rem 0}.area .box{min-height:calc(var(--n) * 1.65em);background-image:repeating-linear-gradient(transparent 0 calc(1.65em - 1px),#e6e4dd calc(1.65em - 1px) 1.65em)}
+  .checks{margin:.2rem 0}.sign{margin-top:.6rem}.sign span{height:2.8rem}.note{margin-top:.4rem}.foot{margin-top:.5rem}
+  .area,.sign,tr{break-inside:avoid}
+  td[contenteditable]{outline:none}}
+</style></head><body><div class="bar"><div class="in"><a class="back" href="./">← 서식 모음</a><button class="primary" id="print" type="button">인쇄 · PDF로 저장</button><a href="dl/f04.docx" download="○○교회_단기선교서식_04_현지선교사확인질문지.docx">Word 받기</a><a href="dl/f04.pdf" download="○○교회_단기선교서식_04_현지선교사확인질문지.pdf">PDF 받기</a><label>교회 이름 <input id="church" placeholder="○○교회" autocomplete="off"></label></div></div><main class="sheet"><div class="head"><div class="org"><span class="ch">○○교회</span> 단기선교 서식 4</div><h1>현지 선교사 확인 질문지</h1><div class="who">팀장이 선교사에게 묻고 적음</div></div><p class="lead">출발 전에 현지 선교사에게 묻고 답을 적어 둡니다. 「우리 팀에게 바라는 다른 영역은?」을 꼭 물으십시오 — 말하지 않은 필요가 거기서 나옵니다.</p><table class="kv"><tr><td class="k">선교지</td><td class="v" contenteditable colspan="1"></td><td class="k">현지 선교사</td><td class="v" contenteditable colspan="1"></td></tr><tr><td class="k">확인한 날</td><td class="v" contenteditable colspan="1"></td><td class="k">확인한 사람</td><td class="v" contenteditable colspan="1"></td></tr></table>
+<h2>1. 반드시 확인할 15가지</h2>
+<table><colgroup><col style="width:6%"><col style="width:40%"><col style="width:46%"><col style="width:8%"></colgroup><thead><tr><th></th><th>확인할 것</th><th>답</th><th>확인</th></tr></thead><tbody><tr><td>1</td><td>사역 일정</td><td class="v" contenteditable></td><td class="c">□</td></tr><tr><td>2</td><td>다른 단기팀과 일정이 겹치는지</td><td class="v" contenteditable></td><td class="c">□</td></tr><tr><td>3</td><td>사역 내용 확정</td><td class="v" contenteditable></td><td class="c">□</td></tr><tr><td>4</td><td>이 단기선교로 선교사가 구체적으로 기대하는 것</td><td class="v" contenteditable></td><td class="c">□</td></tr><tr><td>5</td><td>비자</td><td class="v" contenteditable></td><td class="c">□</td></tr><tr><td>6</td><td>예방접종 여부</td><td class="v" contenteditable></td><td class="c">□</td></tr><tr><td>7</td><td>사역 예산과 내역</td><td class="v" contenteditable></td><td class="c">□</td></tr><tr><td>8</td><td>숙소와 식사</td><td class="v" contenteditable></td><td class="c">□</td></tr><tr><td>9</td><td>사역 시 이동 차량</td><td class="v" contenteditable></td><td class="c">□</td></tr><tr><td>10</td><td>매일 사역 일정표</td><td class="v" contenteditable></td><td class="c">□</td></tr><tr><td>11</td><td>통역 제공 여부</td><td class="v" contenteditable></td><td class="c">□</td></tr><tr><td>12</td><td>선교사 가족과 사역에 꼭 필요한 물건</td><td class="v" contenteditable></td><td class="c">□</td></tr><tr><td>13</td><td>문화 이해를 위한 구체적 내용</td><td class="v" contenteditable></td><td class="c">□</td></tr><tr><td>14</td><td>현지에서 쓸 간단한 언어</td><td class="v" contenteditable></td><td class="c">□</td></tr><tr><td>15</td><td>현지어 찬양</td><td class="v" contenteditable></td><td class="c">□</td></tr></tbody></table>
+<h2>2. 영역별 질문</h2>
+<table><colgroup><col style="width:10%"><col style="width:48%"><col style="width:42%"></colgroup><thead><tr><th>영역</th><th>물을 것</th><th>답</th></tr></thead><tbody><tr><td>사역</td><td>현지에서 특별히 필요한 사역은? 어떤 전문 기술이 도움이 되나? 재정은 얼마나? 현지에서 조달할 도구·물자와 팀이 가져갈 물품은? 누가 감독하나? 인부·통역자의 임금은?</td><td class="v" contenteditable></td></tr><tr><td>시설</td><td>숙박시설과 침구는? 목욕시설과 전기는? 팀 모임 장소는? 세탁시설은?</td><td class="v" contenteditable></td></tr><tr><td>식사</td><td>주방시설은? 현지 식당과 메뉴는? 한 끼 비용은? 냉장고가 있나? 간식과 과일은?</td><td class="v" contenteditable></td></tr><tr><td>교통</td><td>공항을 오갈 때, 물품을 살 때, 사역지를 오갈 때, 관광할 때는? 예상 비용은?</td><td class="v" contenteditable></td></tr><tr><td>봉사</td><td>정해진 사역 외에 우리 팀에게 바라는 다른 영역은? 현지 교회 예배에 어떤 형태로 참여하기 원하나?</td><td class="v" contenteditable></td></tr><tr><td>여가</td><td>현지인과 함께할 수 있는 것은? 추천하는 곳은? 귀국할 때 살 만한 것은?</td><td class="v" contenteditable></td></tr><tr><td>그 밖</td><td>문화·종교적으로 지킬 것, 비상시 연락과 병원, 기타 특이사항</td><td class="v" contenteditable></td></tr></tbody></table>
+<h2>3. 의료팀이라면 더 확인할 것</h2>
+<table><colgroup><col style="width:6%"><col style="width:48%"><col style="width:38%"><col style="width:8%"></colgroup><thead><tr><th></th><th>확인할 것</th><th>답</th><th>확인</th></tr></thead><tbody><tr><td>1</td><td>그 나라의 외국인 진료 허가 제도 (임시 면허·진료 허가서)</td><td class="v" contenteditable></td><td class="c">□</td></tr><tr><td>2</td><td>신청 시한 (출발일에서 거꾸로 셈)</td><td class="v" contenteditable></td><td class="c">□</td></tr><tr><td>3</td><td>약품 통관 요건 (마약류 분류·포장 승인)</td><td class="v" contenteditable></td><td class="c">□</td></tr><tr><td>4</td><td>수용 기관과의 양해각서(MOU)</td><td class="v" contenteditable></td><td class="c">□</td></tr><tr><td>5</td><td>참가자의 보건 당국 등록</td><td class="v" contenteditable></td><td class="c">□</td></tr><tr><td>6</td><td>함께 진료할 현지 의료인</td><td class="v" contenteditable></td><td class="c">□</td></tr></tbody></table><div class="foot">단기선교 실무 매뉴얼 · 서식 4 / 8</div></main>
+<script>
+(function(){
+  var KEY='stm-forms-church';
+  function get(){try{return localStorage.getItem(KEY)||''}catch(e){return ''}}
+  function set(v){try{localStorage.setItem(KEY,v)}catch(e){}}
+  var inp=document.getElementById('church');
+  function apply(v){document.querySelectorAll('.ch').forEach(function(s){s.textContent=v.trim()||'○○교회'})}
+  if(inp){inp.value=get();apply(inp.value);inp.addEventListener('input',function(){set(inp.value);apply(inp.value)})}
+  var pr=document.getElementById('print');if(pr)pr.addEventListener('click',function(){window.print()});
+})();
+</script>
+</body></html>

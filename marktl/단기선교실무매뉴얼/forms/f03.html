@@ -1,0 +1,92 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>단기팀 참가 신청서 — 단기선교 서식</title><meta name="description" content="신앙과 은사와 동기를 봅니다. 팀장은 적힌 동기를 비판하지 말고 기도와 대화로 정리합니다."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=Noto+Sans+KR:wght@400;500;700&display=swap"><style>
+:root{--paper:#f2f2ee;--sheet:#fff;--ink:#23282b;--ink2:#596164;--line:#8a8f8c;--line2:#c9c6bd;
+  --accent:#2e5b60;--accent-soft:#e3eae8;--mark:#9c6b2e;
+  --display:"Gowun Batang",serif;--body:"Noto Sans KR",system-ui,-apple-system,sans-serif}
+@media (prefers-color-scheme:dark){:root{--paper:#1d2122;--accent-soft:#263031}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:14px;line-height:1.6;word-break:keep-all}
+.bar{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(8px);
+  border-bottom:1px solid color-mix(in srgb,var(--ink2) 25%,transparent)}
+.bar .in{max-width:210mm;margin:0 auto;padding:.6rem 16px;display:flex;flex-wrap:wrap;gap:.5rem .8rem;align-items:center}
+.bar a,.bar button{font:inherit;font-size:.86rem;color:var(--accent);text-decoration:none;background:none;border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);
+  border-radius:999px;padding:.3rem .8rem;cursor:pointer}
+.bar a.primary,.bar button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.bar a:focus-visible,.bar button:focus-visible,.bar input:focus-visible{outline:2px solid var(--mark);outline-offset:2px}
+.bar label{font-size:.84rem;color:var(--ink2);display:flex;gap:.4rem;align-items:center;margin-left:auto}
+.bar input{font:inherit;font-size:.86rem;width:9rem;padding:.25rem .5rem;border:1px solid var(--line2);border-radius:4px;background:var(--sheet);color:#23282b}
+.bar .back{border:0;padding-left:0;color:var(--ink2)}
+.sheet{background:var(--sheet);color:#23282b;max-width:210mm;margin:18px auto 40px;padding:16mm 15mm 18mm;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.head{border-bottom:2px solid #23282b;padding-bottom:.6rem;margin-bottom:1rem}
+.head .org{font-size:.8rem;color:var(--mark);font-weight:700}
+.head h1{font-family:var(--display);font-size:1.7rem;margin:.1rem 0 .2rem;letter-spacing:-.01em}
+.head .who{font-size:.8rem;color:var(--ink2)}
+.lead{font-size:.82rem;color:var(--ink2);background:var(--accent-soft);padding:.55rem .75rem;border-radius:3px;margin:0 0 1rem}
+h2{font-size:.95rem;font-weight:700;margin:1.15rem 0 .4rem;color:var(--accent)}
+p.p{margin:.6rem 0}
+table{width:100%;border-collapse:collapse;margin:.35rem 0 .2rem;font-size:.86rem}
+th,td{border:1px solid var(--line);padding:.35rem .45rem;vertical-align:top;text-align:left}
+th{background:#f1f0ec;font-weight:700;font-size:.8rem}
+td.k{background:#f7f6f3;font-weight:500;width:1%;white-space:nowrap;font-size:.82rem}
+td.v{min-height:1.9em;height:2.1em}
+td.c{text-align:center;color:var(--ink2)}
+td[contenteditable]:focus,div[contenteditable]:focus{outline:2px solid var(--mark);outline-offset:-2px;background:#fffdf6}
+.area{margin:.45rem 0}
+.area .lab{font-size:.84rem;font-weight:500;margin-bottom:.2rem}
+.area .box{border:1px solid var(--line);min-height:calc(var(--n) * 1.9em);padding:.3rem .45rem;
+  background-image:repeating-linear-gradient(transparent 0 calc(1.9em - 1px),#e6e4dd calc(1.9em - 1px) 1.9em);background-position:0 .3rem}
+.checks{display:flex;flex-wrap:wrap;gap:.25rem 1.1rem;margin:.35rem 0;font-size:.86rem;align-items:baseline}
+.checks .lab{font-weight:500;min-width:6.5rem}
+.checks label{display:inline-flex;gap:.35rem;align-items:baseline;cursor:pointer}
+.checks input{width:.95rem;height:.95rem;margin:0;accent-color:var(--accent);transform:translateY(2px)}
+.sign{display:grid;grid-template-columns:repeat(var(--n),1fr);margin-top:1rem;border:1px solid var(--line)}
+.sign div{border-left:1px solid var(--line)}.sign div:first-child{border-left:0}
+.sign b{display:block;text-align:center;font-size:.78rem;padding:.25rem;border-bottom:1px solid var(--line);background:#f7f6f3}
+.sign span{display:block;height:3.4rem}
+.note{font-size:.74rem;color:var(--ink2);margin:.8rem 0 0;padding-left:1rem}
+.note li{margin:.1rem 0}
+.foot{font-size:.7rem;color:#9a9d99;margin-top:1.2rem;text-align:right}
+@media (max-width:640px){.sheet{padding:18px 14px;margin:0}.bar label{margin-left:0}
+  table{font-size:.8rem}td.k{white-space:normal;min-width:5.6em;width:auto}}
+@page{size:A4;margin:10mm 12mm}
+@media print{body{background:#fff;font-size:9pt;line-height:1.45}.bar{display:none}.sheet{box-shadow:none;margin:0;padding:0;max-width:none}
+  .head{padding-bottom:.35rem;margin-bottom:.55rem}.head h1{font-size:1.45rem}
+  .lead{background:none;border:1px solid #ccc;padding:.35rem .6rem;margin-bottom:.55rem;font-size:.78rem}
+  h2{break-after:avoid;margin:.65rem 0 .25rem}p.p{margin:.35rem 0}
+  th,td{padding:.18rem .35rem}td.v{height:1.75em}table{margin:.2rem 0}
+  .area{margin:.3rem 0}.area .box{min-height:calc(var(--n) * 1.65em);background-image:repeating-linear-gradient(transparent 0 calc(1.65em - 1px),#e6e4dd calc(1.65em - 1px) 1.65em)}
+  .checks{margin:.2rem 0}.sign{margin-top:.6rem}.sign span{height:2.8rem}.note{margin-top:.4rem}.foot{margin-top:.5rem}
+  .area,.sign,tr{break-inside:avoid}
+  td[contenteditable]{outline:none}}
+</style></head><body><div class="bar"><div class="in"><a class="back" href="./">← 서식 모음</a><button class="primary" id="print" type="button">인쇄 · PDF로 저장</button><a href="dl/f03.docx" download="○○교회_단기선교서식_03_단기팀참가신청서.docx">Word 받기</a><a href="dl/f03.pdf" download="○○교회_단기선교서식_03_단기팀참가신청서.pdf">PDF 받기</a><label>교회 이름 <input id="church" placeholder="○○교회" autocomplete="off"></label></div></div><main class="sheet"><div class="head"><div class="org"><span class="ch">○○교회</span> 단기선교 서식 3</div><h1>단기팀 참가 신청서</h1><div class="who">참가자가 작성</div></div><p class="lead">신앙과 은사와 동기를 봅니다. 팀장은 적힌 동기를 비판하지 말고 기도와 대화로 정리합니다.</p><table class="kv"><tr><td class="k">목적지</td><td class="v" contenteditable colspan="1"></td><td class="k">기간</td><td class="v" contenteditable colspan="1"></td></tr></table>
+<h2>1. 인적 사항</h2>
+<table class="kv"><tr><td class="k">이름</td><td class="v" contenteditable colspan="1"></td><td class="k">전화</td><td class="v" contenteditable colspan="1"></td></tr><tr><td class="k">주소</td><td class="v" contenteditable colspan="3"></td></tr><tr><td class="k">직장·학교</td><td class="v" contenteditable colspan="1"></td><td class="k">직책·학년</td><td class="v" contenteditable colspan="1"></td></tr><tr><td class="k">생년월일</td><td class="v" contenteditable colspan="1"></td><td class="k">결혼 여부·자녀</td><td class="v" contenteditable colspan="1"></td></tr><tr><td class="k">여권번호</td><td class="v" contenteditable colspan="1"></td><td class="k">여권 만료일</td><td class="v" contenteditable colspan="1"></td></tr><tr><td class="k">비상 연락처 — 이름</td><td class="v" contenteditable colspan="1"></td><td class="k">관계</td><td class="v" contenteditable colspan="1"></td></tr><tr><td class="k">비상 연락처 — 전화 ①</td><td class="v" contenteditable colspan="1"></td><td class="k">전화 ②</td><td class="v" contenteditable colspan="1"></td></tr></table>
+<h2>2. 건강</h2>
+<div class="area"><div class="lab">팀이 알아야 할 장애나 건강상의 제한</div><div class="box" style="--n:2" contenteditable></div></div>
+<div class="area"><div class="lab">지금 복용하는 약 (약 이름·용량)</div><div class="box" style="--n:2" contenteditable></div></div>
+<table class="kv"><tr><td class="k">다니는 병원·주치의</td><td class="v" contenteditable colspan="3"></td></tr></table>
+<h2>3. 할 수 있는 것</h2>
+<table class="kv"><tr><td class="k">할 수 있는 외국어</td><td class="v" contenteditable colspan="3"></td></tr></table>
+<div class="checks"><span class="lab">의료</span><label><input type="checkbox">의사</label><label><input type="checkbox">한의사</label><label><input type="checkbox">치과의사</label><label><input type="checkbox">간호사</label><label><input type="checkbox">약사</label><label><input type="checkbox">영양사</label><label><input type="checkbox">기타</label></div>
+<div class="checks"><span class="lab">건축</span><label><input type="checkbox">목공</label><label><input type="checkbox">석공</label><label><input type="checkbox">배관</label><label><input type="checkbox">전기</label><label><input type="checkbox">기타</label></div>
+<div class="checks"><span class="lab">컴퓨터·사무</span><label><input type="checkbox">프로그래밍</label><label><input type="checkbox">자료 입력</label><label><input type="checkbox">문서 작성</label><label><input type="checkbox">회계</label><label><input type="checkbox">기타</label></div>
+<div class="checks"><span class="lab">사역</span><label><input type="checkbox">성경공부 인도</label><label><input type="checkbox">전도</label><label><input type="checkbox">찬양</label><label><input type="checkbox">악기 연주</label><label><input type="checkbox">어린이 사역</label><label><input type="checkbox">기타</label></div>
+<div class="checks"><span class="lab">그 밖</span><label><input type="checkbox">원예·농업</label><label><input type="checkbox">예술·공예</label><label><input type="checkbox">사진·영상</label><label><input type="checkbox">주방</label><label><input type="checkbox">기타</label></div>
+<h2>4. 나에 대하여 (모자라면 별지에)</h2>
+<div class="area"><div class="lab">① 나와 예수 그리스도와의 관계</div><div class="box" style="--n:3" contenteditable></div></div>
+<div class="area"><div class="lab">② 이번 단기선교에 참가하려는 이유(동기)와 기도제목</div><div class="box" style="--n:3" contenteditable></div></div>
+<div class="area"><div class="lab">③ 참가하는 데 있어 현실적인 어려움</div><div class="box" style="--n:2" contenteditable></div></div>
+<div class="area"><div class="lab">④ 이전의 단기선교·해외여행 경험</div><div class="box" style="--n:2" contenteditable></div></div>
+<div class="checks"><span class="lab">개인정보 동의</span><label><input type="checkbox">위 정보를 이번 단기선교의 준비·보험·비상 연락에만 쓰고, 사역이 끝나면 파기하는 데 동의합니다.</label></div>
+<p class="p">&ensp; &ensp; &ensp; 년&ensp; &ensp; &ensp; 월&ensp; &ensp; &ensp; 일&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; 신청인&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; (서명)</p><div class="foot">단기선교 실무 매뉴얼 · 서식 3 / 8</div></main>
+<script>
+(function(){
+  var KEY='stm-forms-church';
+  function get(){try{return localStorage.getItem(KEY)||''}catch(e){return ''}}
+  function set(v){try{localStorage.setItem(KEY,v)}catch(e){}}
+  var inp=document.getElementById('church');
+  function apply(v){document.querySelectorAll('.ch').forEach(function(s){s.textContent=v.trim()||'○○교회'})}
+  if(inp){inp.value=get();apply(inp.value);inp.addEventListener('input',function(){set(inp.value);apply(inp.value)})}
+  var pr=document.getElementById('print');if(pr)pr.addEventListener('click',function(){window.print()});
+})();
+</script>
+</body></html>

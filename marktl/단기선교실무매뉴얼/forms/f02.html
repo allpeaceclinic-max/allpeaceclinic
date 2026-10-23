@@ -1,0 +1,79 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>단기선교 협력동의서 — 단기선교 서식</title><meta name="description" content="서로의 책임을 글로 확인합니다. 적으면 책임감이 양쪽 모두 올라갑니다."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=Noto+Sans+KR:wght@400;500;700&display=swap"><style>
+:root{--paper:#f2f2ee;--sheet:#fff;--ink:#23282b;--ink2:#596164;--line:#8a8f8c;--line2:#c9c6bd;
+  --accent:#2e5b60;--accent-soft:#e3eae8;--mark:#9c6b2e;
+  --display:"Gowun Batang",serif;--body:"Noto Sans KR",system-ui,-apple-system,sans-serif}
+@media (prefers-color-scheme:dark){:root{--paper:#1d2122;--accent-soft:#263031}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:14px;line-height:1.6;word-break:keep-all}
+.bar{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(8px);
+  border-bottom:1px solid color-mix(in srgb,var(--ink2) 25%,transparent)}
+.bar .in{max-width:210mm;margin:0 auto;padding:.6rem 16px;display:flex;flex-wrap:wrap;gap:.5rem .8rem;align-items:center}
+.bar a,.bar button{font:inherit;font-size:.86rem;color:var(--accent);text-decoration:none;background:none;border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);
+  border-radius:999px;padding:.3rem .8rem;cursor:pointer}
+.bar a.primary,.bar button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.bar a:focus-visible,.bar button:focus-visible,.bar input:focus-visible{outline:2px solid var(--mark);outline-offset:2px}
+.bar label{font-size:.84rem;color:var(--ink2);display:flex;gap:.4rem;align-items:center;margin-left:auto}
+.bar input{font:inherit;font-size:.86rem;width:9rem;padding:.25rem .5rem;border:1px solid var(--line2);border-radius:4px;background:var(--sheet);color:#23282b}
+.bar .back{border:0;padding-left:0;color:var(--ink2)}
+.sheet{background:var(--sheet);color:#23282b;max-width:210mm;margin:18px auto 40px;padding:16mm 15mm 18mm;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.head{border-bottom:2px solid #23282b;padding-bottom:.6rem;margin-bottom:1rem}
+.head .org{font-size:.8rem;color:var(--mark);font-weight:700}
+.head h1{font-family:var(--display);font-size:1.7rem;margin:.1rem 0 .2rem;letter-spacing:-.01em}
+.head .who{font-size:.8rem;color:var(--ink2)}
+.lead{font-size:.82rem;color:var(--ink2);background:var(--accent-soft);padding:.55rem .75rem;border-radius:3px;margin:0 0 1rem}
+h2{font-size:.95rem;font-weight:700;margin:1.15rem 0 .4rem;color:var(--accent)}
+p.p{margin:.6rem 0}
+table{width:100%;border-collapse:collapse;margin:.35rem 0 .2rem;font-size:.86rem}
+th,td{border:1px solid var(--line);padding:.35rem .45rem;vertical-align:top;text-align:left}
+th{background:#f1f0ec;font-weight:700;font-size:.8rem}
+td.k{background:#f7f6f3;font-weight:500;width:1%;white-space:nowrap;font-size:.82rem}
+td.v{min-height:1.9em;height:2.1em}
+td.c{text-align:center;color:var(--ink2)}
+td[contenteditable]:focus,div[contenteditable]:focus{outline:2px solid var(--mark);outline-offset:-2px;background:#fffdf6}
+.area{margin:.45rem 0}
+.area .lab{font-size:.84rem;font-weight:500;margin-bottom:.2rem}
+.area .box{border:1px solid var(--line);min-height:calc(var(--n) * 1.9em);padding:.3rem .45rem;
+  background-image:repeating-linear-gradient(transparent 0 calc(1.9em - 1px),#e6e4dd calc(1.9em - 1px) 1.9em);background-position:0 .3rem}
+.checks{display:flex;flex-wrap:wrap;gap:.25rem 1.1rem;margin:.35rem 0;font-size:.86rem;align-items:baseline}
+.checks .lab{font-weight:500;min-width:6.5rem}
+.checks label{display:inline-flex;gap:.35rem;align-items:baseline;cursor:pointer}
+.checks input{width:.95rem;height:.95rem;margin:0;accent-color:var(--accent);transform:translateY(2px)}
+.sign{display:grid;grid-template-columns:repeat(var(--n),1fr);margin-top:1rem;border:1px solid var(--line)}
+.sign div{border-left:1px solid var(--line)}.sign div:first-child{border-left:0}
+.sign b{display:block;text-align:center;font-size:.78rem;padding:.25rem;border-bottom:1px solid var(--line);background:#f7f6f3}
+.sign span{display:block;height:3.4rem}
+.note{font-size:.74rem;color:var(--ink2);margin:.8rem 0 0;padding-left:1rem}
+.note li{margin:.1rem 0}
+.foot{font-size:.7rem;color:#9a9d99;margin-top:1.2rem;text-align:right}
+@media (max-width:640px){.sheet{padding:18px 14px;margin:0}.bar label{margin-left:0}
+  table{font-size:.8rem}td.k{white-space:normal;min-width:5.6em;width:auto}}
+@page{size:A4;margin:10mm 12mm}
+@media print{body{background:#fff;font-size:9pt;line-height:1.45}.bar{display:none}.sheet{box-shadow:none;margin:0;padding:0;max-width:none}
+  .head{padding-bottom:.35rem;margin-bottom:.55rem}.head h1{font-size:1.45rem}
+  .lead{background:none;border:1px solid #ccc;padding:.35rem .6rem;margin-bottom:.55rem;font-size:.78rem}
+  h2{break-after:avoid;margin:.65rem 0 .25rem}p.p{margin:.35rem 0}
+  th,td{padding:.18rem .35rem}td.v{height:1.75em}table{margin:.2rem 0}
+  .area{margin:.3rem 0}.area .box{min-height:calc(var(--n) * 1.65em);background-image:repeating-linear-gradient(transparent 0 calc(1.65em - 1px),#e6e4dd calc(1.65em - 1px) 1.65em)}
+  .checks{margin:.2rem 0}.sign{margin-top:.6rem}.sign span{height:2.8rem}.note{margin-top:.4rem}.foot{margin-top:.5rem}
+  .area,.sign,tr{break-inside:avoid}
+  td[contenteditable]{outline:none}}
+</style></head><body><div class="bar"><div class="in"><a class="back" href="./">← 서식 모음</a><button class="primary" id="print" type="button">인쇄 · PDF로 저장</button><a href="dl/f02.docx" download="○○교회_단기선교서식_02_단기선교협력동의서.docx">Word 받기</a><a href="dl/f02.pdf" download="○○교회_단기선교서식_02_단기선교협력동의서.pdf">PDF 받기</a><label>교회 이름 <input id="church" placeholder="○○교회" autocomplete="off"></label></div></div><main class="sheet"><div class="head"><div class="org"><span class="ch">○○교회</span> 단기선교 서식 2</div><h1>단기선교 협력동의서</h1><div class="who">현지 선교사와 팀이 함께 서명</div></div><p class="lead">서로의 책임을 글로 확인합니다. 적으면 책임감이 양쪽 모두 올라갑니다.</p><table class="kv"><tr><td class="k">선교지</td><td class="v" contenteditable colspan="3"></td></tr><tr><td class="k">사역 기간</td><td class="v" contenteditable colspan="3"></td></tr><tr><td class="k">파송 팀</td><td class="v" contenteditable colspan="1"></td><td class="k">팀장</td><td class="v" contenteditable colspan="1"></td></tr></table>
+<p class="p">본인은 <span class="ch">○○교회</span>에서 위의 기간 동안 실시하는 단기선교 사역을 위해 이 팀의 현지 선교사로서, 본인이 제출한 「단기선교팀 파송요청서」의 내용대로 팀의 사역에 적극적으로 협력하며 진행할 것에 동의합니다.</p>
+<h2>서로 맡을 일</h2>
+<table><colgroup><col style="width:50%"><col style="width:50%"></colgroup><thead><tr><th>현지 선교사가 맡을 일</th><th>파송 팀이 맡을 일</th></tr></thead><tbody><tr><td class="v" contenteditable></td><td class="v" contenteditable></td></tr><tr><td class="v" contenteditable></td><td class="v" contenteditable></td></tr><tr><td class="v" contenteditable></td><td class="v" contenteditable></td></tr><tr><td class="v" contenteditable></td><td class="v" contenteditable></td></tr></tbody></table>
+<div class="area"><div class="lab">비용 부담 (숙식·교통·통역 등 누가 무엇을 지는지)</div><div class="box" style="--n:2" contenteditable></div></div>
+<div class="area"><div class="lab">비상시 연락과 결정 (누가, 어떻게)</div><div class="box" style="--n:2" contenteditable></div></div>
+<p class="p">&ensp; &ensp; &ensp; 년&ensp; &ensp; &ensp; 월&ensp; &ensp; &ensp; 일</p>
+<div class="sign" style="--n:3"><div><b>현지 선교사</b><span></span></div><div><b>팀장</b><span></span></div><div><b>담당 교역자</b><span></span></div></div><div class="foot">단기선교 실무 매뉴얼 · 서식 2 / 8</div></main>
+<script>
+(function(){
+  var KEY='stm-forms-church';
+  function get(){try{return localStorage.getItem(KEY)||''}catch(e){return ''}}
+  function set(v){try{localStorage.setItem(KEY,v)}catch(e){}}
+  var inp=document.getElementById('church');
+  function apply(v){document.querySelectorAll('.ch').forEach(function(s){s.textContent=v.trim()||'○○교회'})}
+  if(inp){inp.value=get();apply(inp.value);inp.addEventListener('input',function(){set(inp.value);apply(inp.value)})}
+  var pr=document.getElementById('print');if(pr)pr.addEventListener('click',function(){window.print()});
+})();
+</script>
+</body></html>
