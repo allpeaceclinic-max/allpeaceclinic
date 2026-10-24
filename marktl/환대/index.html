@@ -167,39 +167,87 @@ tbody tr:hover td{background:var(--olive-soft)}
    <p class="excerpt">필록세니아(φιλοξενία)는 '낯선 자를 사랑하는 것'이다. 이미 아는 사람을 대접하는 접대와 근본이 다르다. 돌아올 것을 계산하지 않고 문을 여는 행위, 성경이 명령이라 부른 그것이다. 그런데 말 자체가 이미 그 갈림길을 기억하고 있다 — hospital과 hospitality는 한 뿌리에서 나왔고, 그 뿌리는 hostility(적대)와도 형제다. 아브라함의 장막과 고넬료의 집, 라브리의 식탁과 오만의 사흘 규칙, 그리고 오늘의 진료실을 같은 질문 위에 놓는다. 나와 다른 사람 앞에서 문을 열 것인가, 닫을 것인가.</p>
    <p class="by">정리 이상협 (M.D., M.Div.) &nbsp;/&nbsp; 설교와 북노트, 강의에 흩어져 있던 필록세니아를 한자리에</p>
   </div>
-  <div class="hero-art"><svg class="hero-svg" viewBox="0 0 640 470" role="img" aria-label="해 질 녘 상수리나무 아래 열린 장막에서 등불 빛이 땅으로 쏟아지고, 문 앞의 낮은 상 쪽으로 세 나그네가 다가오는 그림">
+  <div class="hero-art"><svg class="hero-svg" viewBox="0 0 640 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="해 질 녘 마므레 상수리나무 곁, 문을 활짝 연 검은 장막에서 등불 빛이 땅으로 쏟아지고, 빵과 물병을 차린 낮은 상 앞에서 아브라함이 두 팔을 벌려 길 위로 다가오는 키 큰 세 나그네를 맞는 그림">
 <defs>
- <linearGradient id="spill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F2B640" stop-opacity=".85"/><stop offset="1" stop-color="#F2B640" stop-opacity="0"/></linearGradient>
- <radialGradient id="glow" cx=".5" cy=".7" r=".6"><stop offset="0" stop-color="#FFD97A"/><stop offset="1" stop-color="#E29A22"/></radialGradient>
+ <filter id="hero-paint" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="3" seed="7"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter>
+ <filter id="hero-grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="3"/><feColorMatrix values="0 0 0 0 .9  0 0 0 0 .8  0 0 0 0 .6  0 0 0 .07 0"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+ <filter id="hero-soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="9"/></filter>
+ <filter id="hero-soft2"><feGaussianBlur stdDeviation="2.5"/></filter>
+ <linearGradient id="hero-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E3454" stop-opacity="0"/><stop offset=".4" stop-color="#2E3454" stop-opacity=".45"/><stop offset=".68" stop-color="#4E4570"/><stop offset=".82" stop-color="#8E5A72"/><stop offset=".95" stop-color="#CF8A62"/></linearGradient>
+ <linearGradient id="hero-gr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3C2F38"/><stop offset="1" stop-color="#1A1724"/></linearGradient>
+ <linearGradient id="hero-spill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFC765" stop-opacity=".85"/><stop offset=".6" stop-color="#E2A12A" stop-opacity=".35"/><stop offset="1" stop-color="#E2A12A" stop-opacity="0"/></linearGradient>
+ <radialGradient id="hero-in" cx=".5" cy=".62" r=".7"><stop offset="0" stop-color="#FFF0BE"/><stop offset=".4" stop-color="#F6B84E"/><stop offset="1" stop-color="#9A4E22"/></radialGradient>
+ <radialGradient id="hero-glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFD98A" stop-opacity=".9"/><stop offset="1" stop-color="#FFB547" stop-opacity="0"/></radialGradient>
+ <radialGradient id="hero-moon" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#F6EBC4" stop-opacity=".45"/><stop offset="1" stop-color="#F6EBC4" stop-opacity="0"/></radialGradient>
+ <linearGradient id="hero-trunk" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1E1820"/><stop offset=".6" stop-color="#3A2C2C"/><stop offset="1" stop-color="#7A5238"/></linearGradient>
+ <pattern id="hero-hair" width="7" height="10" patternUnits="userSpaceOnUse"><path d="M3.5 0 V10" stroke="#4A4250" stroke-width="1.2" opacity=".55"/></pattern>
+ <linearGradient id="hero-fx" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000"/><stop offset=".17" stop-color="#fff"/><stop offset=".88" stop-color="#fff"/><stop offset="1" stop-color="#000"/></linearGradient>
+ <linearGradient id="hero-fy" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000"/><stop offset=".2" stop-color="#fff"/></linearGradient>
+ <mask id="hero-mx" maskUnits="userSpaceOnUse" x="0" y="0" width="640" height="470"><rect width="640" height="470" fill="url(#hero-fx)"/></mask>
+ <mask id="hero-my" maskUnits="userSpaceOnUse" x="0" y="0" width="640" height="470"><rect width="640" height="470" fill="url(#hero-fy)"/></mask>
 </defs>
-<g fill="#F4EBC8" opacity=".75"><circle cx="410" cy="40" r="1.6"/><circle cx="470" cy="76" r="1.2"/><circle cx="540" cy="30" r="1.8"/><circle cx="600" cy="92" r="1.2"/><circle cx="350" cy="96" r="1.1"/><circle cx="300" cy="34" r="1.4"/><circle cx="580" cy="150" r="1"/></g>
-<path d="M520 70 a26 26 0 1 0 22 40 a20 20 0 1 1 -22 -40z" fill="#F4EBC8" opacity=".9"/>
-<path d="M0 368 C 140 352, 300 360, 640 346 V470 H0z" fill="#1A2033"/>
-<!-- 상수리나무 -->
-<path d="M96 368 c6 -40 4 -90 -2 -130 M98 300 c-20 -14 -34 -30 -40 -52 M100 270 c22 -16 40 -26 62 -30" stroke="#151A2A" stroke-width="12" fill="none" stroke-linecap="round"/>
-<g fill="#202A2A"><circle cx="70" cy="196" r="58"/><circle cx="140" cy="176" r="64"/><circle cx="34" cy="246" r="40"/><circle cx="178" cy="236" r="44"/><circle cx="104" cy="132" r="48"/></g>
-<g fill="#2B3A33"><circle cx="122" cy="150" r="22"/><circle cx="70" cy="200" r="18"/><circle cx="160" cy="214" r="16"/></g>
-<!-- 장막 -->
-<path d="M200 366 L268 220 L404 210 L470 360z" fill="#3A3550"/>
-<path d="M268 220 L404 210" stroke="#57507A" stroke-width="3"/>
-<path d="M236 290 L250 366 M436 300 L450 362" stroke="#2A2640" stroke-width="2"/>
-<path d="M318 228 L282 366 L384 366z" fill="url(#glow)"/>
-<path d="M318 228 L282 366 L298 366z" fill="#2A2640" opacity=".55"/>
-<!-- 쏟아지는 빛 -->
-<path d="M282 366 L384 366 L470 470 L170 470z" fill="url(#spill)"/>
-<!-- 상 -->
-<path d="M300 404 h96 M310 404 v20 M386 404 v20" stroke="#2A2214" stroke-width="5" stroke-linecap="round"/>
-<ellipse cx="330" cy="398" rx="16" ry="7" fill="#C98B3A"/><path d="M362 386 h14 l-2 14 h-10z" fill="#8E2B43"/>
-<!-- 주인 -->
-<path d="M262 366 c-2 -30 4 -52 14 -60 c10 8 14 30 12 60z" fill="#1D1A2C"/><circle cx="276" cy="296" r="9" fill="#1D1A2C"/>
-<path d="M286 324 l26 -10" stroke="#1D1A2C" stroke-width="6" stroke-linecap="round"/>
-<!-- 세 나그네 -->
-<g fill="#121626">
- <path d="M512 372 c-3 -44 4 -70 16 -80 c12 10 18 36 15 80z"/><circle cx="528" cy="280" r="11"/>
- <path d="M556 366 c-3 -44 4 -70 16 -80 c12 10 18 36 15 80z"/><circle cx="572" cy="274" r="11"/>
- <path d="M600 362 c-3 -44 4 -70 16 -80 c12 10 18 36 15 80z"/><circle cx="616" cy="270" r="11"/>
- <path d="M548 300 l-6 68 M594 296 l-6 68" stroke="#121626" stroke-width="3"/>
-</g>
+<g mask="url(#hero-mx)"><g mask="url(#hero-my)">
+ <rect width="640" height="380" fill="url(#hero-sky)"/>
+ <g fill="#F4EBC8"><circle cx="300" cy="70" r="1.3" opacity=".8"/><circle cx="360" cy="40" r="1.6"/><circle cx="420" cy="110" r="1.1" opacity=".7"/><circle cx="586" cy="54" r="1.5"/><circle cx="612" cy="140" r="1" opacity=".6"/><circle cx="250" cy="130" r="1" opacity=".6"/><circle cx="455" cy="62" r="1.2" opacity=".8"/><circle cx="560" cy="170" r=".9" opacity=".5"/><circle cx="210" cy="88" r="1.1" opacity=".7"/><circle cx="330" cy="150" r=".9" opacity=".5"/></g>
+ <circle cx="512" cy="88" r="62" fill="url(#hero-moon)"/>
+ <path d="M508 60 a29 29 0 1 0 26 45 a23 23 0 1 1 -26 -45z" fill="#F7EDCB"/>
+ <g filter="url(#hero-soft)" opacity=".5"><ellipse cx="420" cy="300" rx="150" ry="10" fill="#B9707A"/><ellipse cx="180" cy="318" rx="140" ry="8" fill="#C98068"/></g>
+ <path d="M0 348 C 60 330 120 322 190 334 C 260 346 300 318 380 316 C 460 314 520 334 640 324 V390 H0z" fill="#46395A"/>
+ <path d="M0 362 C 120 348 240 356 360 348 C 470 340 560 350 640 344 V400 H0z" fill="#33293F"/>
+ <path d="M0 370 C 150 358 330 364 640 354 V470 H0z" fill="url(#hero-gr)"/>
+ <path d="M640 404 C 590 398 540 396 500 400 C 470 404 448 412 424 420 L 452 432 C 490 422 550 418 640 426z" fill="#5E4A44" opacity=".75"/>
+ <path d="M296 374 L392 372 L540 470 L130 470z" fill="url(#hero-spill)" filter="url(#hero-soft2)"/>
+ <ellipse cx="344" cy="392" rx="120" ry="30" fill="url(#hero-glow)" opacity=".7"/>
+ <g filter="url(#hero-paint)">
+  <path d="M78 386 C 90 344 96 304 92 266 C 88 240 70 226 56 214 L 70 206 C 86 218 100 228 106 242 C 110 218 124 198 148 186 L 156 196 C 136 212 128 238 128 264 C 126 304 132 346 150 388z" fill="url(#hero-trunk)"/>
+  <path d="M70 388 c10 -6 20 -6 28 -2 M140 388 c-8 -6 -18 -4 -24 0" stroke="#2A2026" stroke-width="5" fill="none"/>
+  <g fill="#18211F" opacity="1"><circle cx="58" cy="196" r="28"/><circle cx="73" cy="199" r="39"/><circle cx="62" cy="213" r="26"/><circle cx="66" cy="229" r="37"/><circle cx="62" cy="204" r="33"/><circle cx="155" cy="128" r="25"/><circle cx="119" cy="139" r="27"/><circle cx="167" cy="183" r="43"/><circle cx="152" cy="146" r="43"/><circle cx="111" cy="159" r="37"/><circle cx="23" cy="252" r="28"/><circle cx="36" cy="250" r="20"/><circle cx="1" cy="270" r="18"/><circle cx="24" cy="263" r="20"/><circle cx="11" cy="260" r="29"/><circle cx="197" cy="219" r="30"/><circle cx="191" cy="227" r="20"/><circle cx="213" cy="222" r="32"/><circle cx="191" cy="216" r="22"/><circle cx="192" cy="202" r="33"/><circle cx="100" cy="109" r="21"/><circle cx="105" cy="128" r="34"/><circle cx="102" cy="120" r="31"/><circle cx="95" cy="121" r="35"/><circle cx="97" cy="120" r="18"/><circle cx="170" cy="106" r="14"/><circle cx="172" cy="137" r="15"/><circle cx="150" cy="124" r="20"/><circle cx="171" cy="111" r="19"/><circle cx="189" cy="96" r="20"/><circle cx="34" cy="145" r="17"/><circle cx="37" cy="135" r="15"/><circle cx="9" cy="127" r="20"/><circle cx="21" cy="120" r="24"/><circle cx="39" cy="141" r="26"/><circle cx="220" cy="167" r="17"/><circle cx="203" cy="157" r="16"/><circle cx="212" cy="165" r="20"/><circle cx="232" cy="179" r="21"/><circle cx="216" cy="168" r="21"/></g><g fill="#26352F" opacity="1"><circle cx="53" cy="189" r="18"/><circle cx="65" cy="189" r="24"/><circle cx="57" cy="207" r="16"/><circle cx="59" cy="219" r="23"/><circle cx="56" cy="196" r="20"/><circle cx="150" cy="122" r="16"/><circle cx="114" cy="133" r="17"/><circle cx="158" cy="172" r="27"/><circle cx="144" cy="135" r="27"/><circle cx="104" cy="150" r="23"/><circle cx="17" cy="245" r="17"/><circle cx="33" cy="245" r="12"/><circle cx="-3" cy="265" r="11"/><circle cx="20" cy="258" r="12"/><circle cx="5" cy="252" r="18"/><circle cx="191" cy="211" r="18"/><circle cx="187" cy="222" r="12"/><circle cx="206" cy="214" r="20"/><circle cx="186" cy="210" r="13"/><circle cx="186" cy="194" r="20"/><circle cx="96" cy="103" r="13"/><circle cx="98" cy="120" r="21"/><circle cx="95" cy="112" r="19"/><circle cx="88" cy="113" r="22"/><circle cx="93" cy="115" r="11"/><circle cx="167" cy="103" r="9"/><circle cx="169" cy="133" r="9"/><circle cx="146" cy="119" r="12"/><circle cx="167" cy="106" r="12"/><circle cx="185" cy="91" r="12"/><circle cx="30" cy="141" r="10"/><circle cx="34" cy="131" r="9"/><circle cx="5" cy="122" r="12"/><circle cx="17" cy="114" r="15"/><circle cx="34" cy="135" r="16"/><circle cx="217" cy="162" r="11"/><circle cx="200" cy="153" r="10"/><circle cx="208" cy="160" r="13"/><circle cx="228" cy="174" r="13"/><circle cx="212" cy="163" r="13"/></g><g fill="#3E4C3E" opacity="0.8"><circle cx="48" cy="183" r="9"/><circle cx="53" cy="202" r="8"/><circle cx="109" cy="127" r="8"/><circle cx="98" cy="142" r="11"/><circle cx="13" cy="239" r="8"/><circle cx="-5" cy="261" r="6"/><circle cx="17" cy="254" r="6"/><circle cx="0" cy="246" r="9"/><circle cx="184" cy="218" r="6"/><circle cx="93" cy="99" r="6"/><circle cx="93" cy="113" r="10"/><circle cx="91" cy="106" r="9"/><circle cx="83" cy="106" r="10"/><circle cx="90" cy="112" r="6"/><circle cx="165" cy="100" r="4"/><circle cx="143" cy="115" r="6"/><circle cx="165" cy="102" r="6"/><circle cx="182" cy="87" r="6"/><circle cx="28" cy="137" r="5"/><circle cx="13" cy="109" r="7"/></g><g fill="#5E5638" opacity="0.75"><circle cx="70" cy="221" r="9"/><circle cx="179" cy="196" r="14"/><circle cx="42" cy="255" r="7"/><circle cx="115" cy="138" r="11"/><circle cx="238" cy="185" r="7"/></g>
+ </g>
+ <g filter="url(#hero-paint)">
+  <path d="M206 304 L232 262 Q280 248 318 254 Q362 244 406 252 Q446 246 476 262 L500 304 L494 376 L212 378z" fill="#231F2A"/>
+  <path d="M206 304 L232 262 Q280 248 318 254 Q362 244 406 252 Q446 246 476 262 L500 304 L494 376 L212 378z" fill="url(#hero-hair)"/>
+  <path d="M232 262 Q280 248 318 254 Q362 244 406 252 Q446 246 476 262" stroke="#6A5E7A" stroke-width="3" fill="none"/>
+  <path d="M206 304 L232 262 L248 304 L240 378 L212 378z" fill="#141119" opacity=".7"/>
+  <path d="M292 376 L296 298 L390 294 L396 374z" fill="url(#hero-in)"/>
+  <path d="M300 340 c20 -8 30 -6 40 0 c14 -6 30 -8 50 -2 v36 h-90z" fill="#B0602E" opacity=".55"/>
+  <path d="M306 374 l84 -2 M310 362 l78 -2" stroke="#8A3E28" stroke-width="2" opacity=".6"/>
+  <path d="M344 298 v10" stroke="#5A3018" stroke-width="1"/><circle cx="344" cy="312" r="10" fill="#FFF0B0" opacity=".5"/><circle cx="344" cy="312" r="3.2" fill="#FFFBEA"/>
+  <path d="M290 298 L264 262 L402 252 L392 294z" fill="#2E2836"/>
+  <path d="M292 298 L392 294 L398 282 L284 288z" fill="#B0703A" opacity=".75"/>
+  <path d="M266 262 L258 380 M400 254 L424 382" stroke="#17131C" stroke-width="4" stroke-linecap="round"/>
+  <path d="M232 262 L190 386 M476 262 L536 384 M500 304 L560 380" stroke="#6E6276" stroke-width="1" opacity=".7"/>
+ </g>
+ <g filter="url(#hero-paint)">
+  <ellipse cx="344" cy="414" rx="62" ry="10" fill="#140F14" opacity=".45"/>
+  <path d="M296 404 v12 M392 404 v12" stroke="#3A2416" stroke-width="5" stroke-linecap="round"/>
+  <ellipse cx="344" cy="403" rx="58" ry="11" fill="#6A3E22"/><ellipse cx="344" cy="400" rx="56" ry="9" fill="#B07A44"/>
+  <ellipse cx="322" cy="397" rx="22" ry="6" fill="#C98B3A"/><ellipse cx="322" cy="394" rx="20" ry="5" fill="#EBC27A"/>
+  <g fill="#9A6028"><circle cx="314" cy="394" r="1.4"/><circle cx="326" cy="392" r="1.2"/><circle cx="332" cy="395" r="1.3"/></g>
+  <path d="M362 398 c-9 -4 -11 -18 -4 -26 c2 -3 2 -7 0 -10 h14 c-2 3 -2 7 0 10 c7 8 5 22 -4 26z" fill="#9A4A2A"/>
+  <path d="M361 372 c-4 6 -5 16 -1 22" stroke="#E29A60" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  <ellipse cx="379" cy="398" rx="9" ry="3" fill="#EFE6D0"/>
+ </g>
+ <g filter="url(#hero-paint)">
+  <ellipse cx="430" cy="404" rx="26" ry="5" fill="#120E14" opacity=".5"/>
+  <path d="M410 402 C 408 364 412 334 420 318 C 428 312 438 314 444 322 C 450 344 456 374 464 400z" fill="#D9CBB0"/>
+  <path d="M412 402 C 410 364 414 336 420 320 L 431 318 C 426 350 428 380 436 402z" fill="#6B4A30"/>
+  <path d="M446 324 C 452 346 456 376 462 400 L 452 401 C 448 378 444 350 440 324z" fill="#5A3E2A"/>
+  <path d="M424 326 C 414 328 402 328 390 322" stroke="#6B4A30" stroke-width="9" stroke-linecap="round" fill="none"/>
+  <path d="M440 328 C 452 330 464 328 476 320" stroke="#D2C2A4" stroke-width="9" stroke-linecap="round" fill="none"/>
+  <circle cx="387" cy="320" r="4.5" fill="#B07A52"/><circle cx="479" cy="318" r="4.5" fill="#B07A52"/>
+  <circle cx="432" cy="304" r="9.5" fill="#B07A52"/>
+  <path d="M426 306 q6 14 13 0 q1 11 -6 16 q-7 -4 -7 -16z" fill="#F1ECE0"/>
+  <path d="M420 308 q-2 -22 12 -22 q14 0 13 20 l3 16 q-5 -3 -8 -1 l-1 -12 q-7 -6 -13 0 l-1 12 q-4 -2 -7 1z" fill="#EDE4D0"/>
+  <path d="M412 400 C 410 364 413 336 420 320" stroke="#FFD28A" stroke-width="1.6" fill="none" opacity=".8"/>
+ </g>
+  <g filter="url(#hero-paint)">
+  <g transform="translate(604 398) scale(.86)"><ellipse cx="18" cy="2" rx="30" ry="4" fill="#120E14" opacity=".45"/><path d="M-26 0 C -28 -60 -18 -100 -8 -116 C -4 -124 4 -124 8 -116 C 18 -100 28 -60 26 0z" fill="#4A5A6A"/><path d="M-12 -102 C -14 -122 -6 -134 0 -134 C 6 -134 14 -122 12 -102z" fill="#3E5062"/><ellipse cx="-1" cy="-114" rx="6" ry="7" fill="#8A6248"/><path d="M-26 0 C -28 -60 -18 -100 -8 -116" stroke="#D9A672" stroke-width="1.5" fill="none" opacity=".7"/><path d="M-20 -60 L -30 2" stroke="#2A2420" stroke-width="2.4"/></g>
+  <g transform="translate(560 404) scale(.94)"><ellipse cx="18" cy="2" rx="30" ry="4" fill="#120E14" opacity=".45"/><path d="M-26 0 C -28 -60 -18 -100 -8 -116 C -4 -124 4 -124 8 -116 C 18 -100 28 -60 26 0z" fill="#6E5860"/><path d="M-12 -102 C -14 -122 -6 -134 0 -134 C 6 -134 14 -122 12 -102z" fill="#64494F"/><ellipse cx="-1" cy="-114" rx="6" ry="7" fill="#A07454"/><path d="M-26 0 C -28 -60 -18 -100 -8 -116" stroke="#E2AE78" stroke-width="1.5" fill="none" opacity=".75"/><path d="M-22 -62 L -32 2" stroke="#2A2420" stroke-width="2.4"/></g>
+  <g transform="translate(514 410)"><ellipse cx="18" cy="2" rx="30" ry="4" fill="#120E14" opacity=".45"/><path d="M-26 0 C -28 -60 -18 -100 -8 -116 C -4 -124 4 -124 8 -116 C 18 -100 28 -60 26 0z" fill="#5E5C7C"/><path d="M-12 -102 C -14 -122 -6 -134 0 -134 C 6 -134 14 -122 12 -102z" fill="#4A4868"/><ellipse cx="-1" cy="-114" rx="6" ry="7" fill="#9A6A4C"/><path d="M-26 0 C -28 -60 -18 -100 -8 -116" stroke="#F0BC80" stroke-width="1.8" fill="none" opacity=".85"/><path d="M-6 -70 c-10 2 -16 8 -20 16" stroke="#5E5C84" stroke-width="7" stroke-linecap="round" fill="none"/><path d="M-24 -62 L -34 2" stroke="#2A2420" stroke-width="2.6"/></g>
+ </g>
+ <g fill="#120F18"><path d="M0 470 C 20 440 40 430 70 436 C 90 420 120 430 130 450 L 140 470z"/><path d="M560 470 c10 -20 30 -30 50 -24 c14 -10 30 -6 30 0 V470z"/><path d="M200 470 l6 -16 l4 12 l5 -18 l4 18 l6 -10 l2 14z" opacity=".8"/></g>
+ <rect width="640" height="470" fill="#fff" filter="url(#hero-grain)"/>
+</g></g>
 </svg></div>
  </div>
 </header>
@@ -224,53 +272,214 @@ tbody tr:hover td{background:var(--olive-soft)}
 <p>문대원 목사는 벧전 4:9의 &quot;원망 없이&quot;에 주목한다 — 초대교회에서 건물 없이 가정에서 예배할 때, 대접하는 일은 결코 쉽지 않았다. &quot;큰 맘 먹고 하는데 원망하지 않고 하는 것은 어렵다. 성령의 은혜가 필요하다.&quot;<sup class="fnref"><a href="#fn-5">5</a></sup> 환대를 명령하면서 동시에 &quot;원망 없이&quot;라는 조건을 붙인 것은, 환대가 인간의 선의만으로는 지속될 수 없다는 현실주의적 고백이다.</p>
 <h2 class="stn" id="section-03"><span class="door" aria-hidden="true">3</span><span class="ht">환대의 힘<span class="hs">모든 것을 쏟는 것</span></span></h2>
 <div class="pullquote"><p>환대란 모든 것을 다 쏟는 것이다. 그럴 때 사람은 변화된다.</p></div>
-<p>서은철은 환대의 본질을 영화 &lt;바베트의 만찬&gt;에서 읽어낸다 — &quot;환대란 모든 것을 다 쏟는 것이다. 그럴 때 사람은 변화된다.&quot;<sup class="fnref"><a href="#fn-6">6</a></sup></p><figure class="ill "><svg viewBox="0 0 900 280" role="img" aria-label="기울인 기름병에서 마지막 한 방울까지 그릇으로 쏟아지고, 옆에 빵과 잔이 차려진 상">
- <path class="k" d="M120 236 H780"/>
- <path class="k2" d="M150 236 v26 M750 236 v26"/>
- <g transform="rotate(-38 330 120)">
-  <path class="w k2" d="M300 60 h40 v18 c28 10 40 34 40 70 c0 40 -26 66 -60 66 s-60 -26 -60 -66 c0 -36 12 -60 40 -70z"/>
-  <path class="k" d="M296 52 h48 v10 h-48z"/>
-  <path class="lamp o6" d="M276 170 c10 28 30 40 44 40 s34 -12 44 -40z"/>
+<p>서은철은 환대의 본질을 영화 &lt;바베트의 만찬&gt;에서 읽어낸다 — &quot;환대란 모든 것을 다 쏟는 것이다. 그럴 때 사람은 변화된다.&quot;<sup class="fnref"><a href="#fn-6">6</a></sup></p><figure class="ill "><svg viewBox="0 0 900 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="흙벽돌 부엌, 화덕 불빛 아래 사르밧 과부가 마지막 기름병을 기울여 한 줌 가루 위에 붓고, 어린 아들이 엄마 옷자락을 붙잡고 있으며, 지친 선지자 엘리야가 문간에 앉아 있는 그림">
+<defs>
+ <filter id="pour-paint" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="3" seed="5"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter>
+ <filter id="pour-grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="2"/><feColorMatrix values="0 0 0 0 .3  0 0 0 0 .25  0 0 0 0 .2  0 0 0 .09 0"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+ <filter id="pour-soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="7"/></filter>
+ <linearGradient id="pour-wall" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#D2925A"/><stop offset=".45" stop-color="#A47048"/><stop offset=".75" stop-color="#7E5536"/><stop offset="1" stop-color="#9A7050"/></linearGradient>
+ <linearGradient id="pour-floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8E6642"/><stop offset="1" stop-color="#5A3E28"/></linearGradient>
+ <linearGradient id="pour-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F4E6C0"/><stop offset="1" stop-color="#E6C68E"/></linearGradient>
+ <linearGradient id="pour-clay" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8A5434"/><stop offset=".55" stop-color="#C47E4A"/><stop offset="1" stop-color="#7A4A2C"/></linearGradient>
+ <radialGradient id="pour-glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFD98A" stop-opacity=".85"/><stop offset="1" stop-color="#FFB547" stop-opacity="0"/></radialGradient>
+ <radialGradient id="pour-fire" cx=".5" cy=".7" r=".6"><stop offset="0" stop-color="#FFF2B8"/><stop offset=".45" stop-color="#F5A23A"/><stop offset="1" stop-color="#8E2B1E"/></radialGradient>
+ <pattern id="pour-brick" width="34" height="16" patternUnits="userSpaceOnUse"><path d="M0 16 H34 M0 8 H34 M17 0 V8 M0 8 V16 M34 8 V16" stroke="#5A3820" stroke-width=".9" opacity=".35" fill="none"/></pattern>
+ <clipPath id="pour-c"><rect x="10" y="10" width="880" height="320" rx="10"/></clipPath>
+</defs>
+<g clip-path="url(#pour-c)">
+ <rect x="10" y="10" width="880" height="320" fill="url(#pour-wall)"/>
+ <rect x="10" y="10" width="880" height="270" fill="url(#pour-brick)"/>
+ <circle cx="130" cy="240" r="220" fill="url(#pour-glow)" opacity=".55"/>
+ <rect x="10" y="10" width="880" height="26" fill="#4A3020"/>
+ <g fill="#3A2416"><circle cx="90" cy="36" r="7"/><circle cx="250" cy="36" r="7"/><circle cx="410" cy="36" r="7"/><circle cx="570" cy="36" r="7"/></g>
+ <path d="M10 278 H890 V330 H10z" fill="url(#pour-floor)"/>
+ <path d="M10 278 H890" stroke="#4A3020" stroke-width="2" opacity=".6"/>
+ <!-- 문간 -->
+ <path d="M690 278 V86 H812 V278z" fill="url(#pour-sky)"/>
+ <path d="M690 220 C 720 206 750 214 780 202 C 796 196 806 200 812 198 V278 H690z" fill="#D2AE78"/>
+ <path d="M690 244 C 730 236 770 242 812 232 V278 H690z" fill="#BE9662"/>
+ <circle cx="770" cy="130" r="14" fill="#FFF6DC" opacity=".9"/>
+ <path d="M690 278 L812 278 L870 330 L600 330z" fill="#F6DCA0" opacity=".35"/>
+ <g filter="url(#pour-paint)">
+  <path d="M676 290 V74 H826 V290 H812 V86 H690 V290z" fill="#5A3A24"/>
+  <path d="M668 74 H834 V90 H668z" fill="#4A2E1C"/>
+  <!-- 엘리야 -->
+  <ellipse cx="752" cy="300" rx="56" ry="7" fill="#2E1E14" opacity=".4"/>
+  <path d="M708 300 C 704 272 710 246 728 232 C 744 226 758 236 762 256 C 766 270 782 276 796 284 L 798 300z" fill="#5E4430"/>
+  <path d="M724 252 C 740 262 760 272 784 278" stroke="#3E2A1C" stroke-width="4" fill="none" opacity=".6"/>
+  <path d="M708 300 C 704 272 710 246 728 232 C 744 226 758 236 762 256" stroke="#F4D9A0" stroke-width="2" fill="none" opacity=".7"/>
+  <path d="M742 262 c10 6 22 10 34 10" stroke="#5E4430" stroke-width="10" stroke-linecap="round" fill="none"/>
+  <circle cx="779" cy="271" r="5" fill="#8A5A3A"/>
+  <circle cx="744" cy="222" r="11" fill="#8A5A3A"/>
+  <path d="M734 216 q8 -14 20 -4 q4 6 2 14 q-4 -6 -10 -8 q-8 0 -12 -2z" fill="#6E6862"/>
+  <path d="M748 228 q8 4 10 -4 q2 14 -6 20 q-6 -4 -4 -16z" fill="#7A746C"/>
+  <path d="M770 300 L812 150" stroke="#3E2616" stroke-width="4" stroke-linecap="round"/>
  </g>
- <path class="lampS" d="M392 150 c8 16 8 34 5 50" stroke-width="5" fill="none" stroke-linecap="round"/>
- <circle class="lamp" cx="397" cy="206" r="4"/>
- <path class="w k2" d="M352 212 h90 a45 24 0 0 1 -90 0z"/>
- <path class="lamp" d="M360 214 h74 a37 8 0 0 1 -74 0z"/>
- <ellipse class="bread" cx="560" cy="222" rx="54" ry="16"/><path class="k o5" d="M528 216 l10 -6 M552 212 l10 -6 M576 212 l10 -6"/>
- <path class="pomF" d="M650 186 h30 l-4 36 h-22z"/><path class="k2" d="M660 222 v10 h12 v-10"/>
- <path class="olvS" d="M200 236 c10 -30 30 -40 40 -60 M220 206 c-14 -6 -20 -16 -22 -26 M232 190 c12 -4 22 -2 30 4" stroke-width="3" fill="none" stroke-linecap="round"/>
- <g class="olvF"><ellipse cx="196" cy="180" rx="9" ry="4" transform="rotate(-50 196 180)"/><ellipse cx="264" cy="196" rx="9" ry="4" transform="rotate(20 264 196)"/><ellipse cx="242" cy="172" rx="9" ry="4" transform="rotate(-20 242 172)"/></g>
-</svg><figcaption>남김 없이 차린 상. 바베트의 만찬과 사르밧 과부의 마지막 한 끼.</figcaption></figure>
+ <!-- 선반 -->
+ <g filter="url(#pour-paint)">
+  <path d="M230 128 H400 V136 H230z" fill="#5A3A24"/>
+  <path d="M250 128 c-6 -20 -2 -34 8 -40 h10 c10 6 14 20 8 40z" fill="url(#pour-clay)"/>
+  <path d="M296 128 c-4 -14 0 -26 8 -30 h8 c8 4 12 16 8 30z" fill="url(#pour-clay)" opacity=".85"/>
+  <path d="M342 126 l40 -10 c6 4 6 10 2 14 l-40 4z" fill="#9A5E36"/>
+  <ellipse cx="384" cy="122" rx="5" ry="7" fill="#3A2416"/>
+ </g>
+ <!-- 화덕 -->
+ <g filter="url(#pour-paint)">
+  <path d="M60 296 C 58 214 200 214 198 296z" fill="url(#pour-clay)"/>
+  <path d="M100 296 C 100 262 158 262 158 296z" fill="url(#pour-fire)"/>
+  <path d="M116 296 c-4 -14 6 -22 10 -32 c4 12 12 18 6 32z M132 296 c0 -10 8 -16 10 -24 c4 10 8 16 2 24z" fill="#FFE59A"/>
+  <path d="M84 300 l50 -10 M120 304 l56 -12" stroke="#3A2416" stroke-width="5" stroke-linecap="round"/>
+  <path d="M70 230 C 100 210 160 210 188 230" stroke="#E8A868" stroke-width="3" fill="none" opacity=".6"/>
+ </g>
+ <circle cx="128" cy="280" r="60" fill="url(#pour-glow)"/>
+ <path d="M126 214 C 116 190 140 170 128 140 C 120 120 136 100 130 80" stroke="#E8DCC8" stroke-width="8" fill="none" opacity=".18" filter="url(#pour-soft)"/>
+ <path d="M206 306 l40 -12 M212 312 l44 -8" stroke="#6A4428" stroke-width="3" stroke-linecap="round"/>
+ <!-- 과부와 아이 -->
+ <g filter="url(#pour-paint)">
+  <ellipse cx="440" cy="304" rx="80" ry="8" fill="#2E1E14" opacity=".4"/>
+  <path d="M384 302 C 380 252 388 206 410 180 C 420 170 434 170 442 180 C 452 196 458 222 462 248 C 466 272 470 290 476 302z" fill="#3C3650"/>
+  <path d="M384 302 C 380 252 388 206 410 180" stroke="#F0B070" stroke-width="2.4" fill="none" opacity=".75"/>
+  <path d="M440 240 C 446 262 450 284 456 302 L 476 302 C 470 288 466 270 462 248z" fill="#2C2840"/>
+  <path d="M422 172 C 420 146 438 134 454 142 C 464 150 466 166 462 178 C 456 202 450 230 450 262 L 430 246 C 424 222 422 198 422 172z" fill="#544A66"/>
+  <circle cx="449" cy="164" r="10.5" fill="#B57E54"/>
+  <path d="M436 158 C 436 140 456 136 462 152 C 458 148 448 148 440 160z" fill="#544A66"/>
+  <path d="M446 196 C 460 204 474 210 488 212" stroke="#4A4260" stroke-width="12" stroke-linecap="round" fill="none"/>
+  <path d="M448 216 C 462 224 476 226 490 222" stroke="#443C58" stroke-width="10" stroke-linecap="round" fill="none"/>
+  <g transform="translate(494 212) rotate(135) scale(.62)"><path d="M-9 -18 h18 v5 c8 4 12 12 12 22 c0 12 -8 20 -21 20 s-21 -8 -21 -20 c0 -10 4 -18 12 -22z" fill="#A65A32"/><path d="M-11 -22 h22 v5 h-22z" fill="#6A3A20"/><path d="M-14 4 c0 8 4 14 10 16" stroke="#E2925A" stroke-width="2.5" fill="none"/></g>
+  <circle cx="488" cy="212" r="4.5" fill="#B57E54"/><circle cx="490" cy="222" r="4.5" fill="#B57E54"/>
+  <path d="M503 225 c-1 10 -8 20 -18 32" stroke="#F2B640" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+  <path d="M456 262 h56 v6 h-56z M462 268 l-4 32 M506 268 l4 32" stroke="#4A3020" stroke-width="4" fill="#5A3A24" stroke-linecap="round"/>
+  <path d="M446 262 h76 a38 18 0 0 1 -76 0z" fill="#9A5E36"/>
+  <path d="M446 262 h76 a38 18 0 0 1 -76 0z" fill="none" stroke="#C8844E" stroke-width="1.5"/>
+  <ellipse cx="484" cy="262" rx="38" ry="6" fill="#5A3420"/>
+  <path d="M460 263 c8 -14 40 -14 48 0z" fill="#D8C8A6"/><path d="M468 261 c6 -10 26 -10 32 -1z" fill="#F4ECD6"/><g fill="#C8B48C"><circle cx="472" cy="261" r=".9"/><circle cx="494" cy="260" r=".9"/><circle cx="482" cy="262" r=".8"/></g>
+  <ellipse cx="485" cy="256" rx="2.6" ry="1.4" fill="#C8862A"/>
+  <!-- 아이 -->
+  <path d="M332 302 C 330 274 336 252 348 242 C 360 240 368 250 370 270 C 372 284 372 294 374 302z" fill="#A07A4E"/>
+  <path d="M332 302 C 330 274 336 252 348 242" stroke="#F4C080" stroke-width="2" fill="none" opacity=".8"/>
+  <path d="M362 256 C 372 254 382 252 392 250" stroke="#A07A4E" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <circle cx="394" cy="250" r="4.5" fill="#B57E54"/>
+  <circle cx="354" cy="228" r="11" fill="#B57E54"/>
+  <path d="M343 226 q2 -16 16 -12 q8 4 6 12 q-6 -6 -12 -4 q-6 2 -10 4z" fill="#2E2018"/>
+ </g>
+ <rect x="10" y="10" width="880" height="320" fill="#fff" filter="url(#pour-grain)"/>
+</g>
+<rect x="10" y="10" width="880" height="320" rx="10" fill="none" stroke="#24271C" stroke-opacity=".15"/>
+</svg><figcaption>사르밧 과부의 마지막 한 끼. 자기 것을 다 쏟았을 때 기적이 시작되었다 (왕상 17).</figcaption></figure>
 <div class="pullquote"><p>사람을 살리는 것은 생명을 바치는 것이다.</p></div>
 <p>이 &quot;모든 것을 다 쏟음&quot;의 원형을 그는 엘리야와 엘리사에서 찾는다. 엘리야는 사르밧 과부의 죽은 아들 위에 세 번, 엘리사는 수넴 여인의 죽은 아들 위에 두 번 몸을 엎드렸다(왕상 17:20–22; 왕하 4:32–37). 시체를 만지는 것은 율법상 부정한 행위였다. 그런데도 자기 몸을 죽은 아이 위에 포갰다 — &quot;자기가 죽고 아이를 살리겠다는 간절함을 표현한 것이다. 사람을 살리는 것은 생명을 바치는 것이다.&quot;<sup class="fnref"><a href="#fn-7">7</a></sup></p>
 <p>이것은 프란시스 쉐퍼가 스위스에 세운 라브리(L'Abri) 공동체의 원리이기도 하다. 라브리에서는 토론만이 아니라 일상의 삶 전체를 공유한다 — 상담, 설교, 성경공부, 기도, 노동, 토론, 그리고 식사. 서은철은 &quot;식사가 가장 중요한 시간&quot;이라고 강조한다 — &quot;몇 끼 얻어 먹는다고 자기 이야기를 하지는 않는다. 밥을 많이 먹으면 밥값을 하게 된다.&quot;<sup class="fnref"><a href="#fn-8">8</a></sup> 환대의 힘은 프로그램에 있지 않고 일상의 밀도에 있다.</p>
 <h2 class="stn" id="section-04"><span class="door" aria-hidden="true">4</span><span class="ht">베드로와 고넬료<span class="hs">예기치 못한 환대</span></span></h2>
-<p>환대의 가장 극적인 성경 내러티브는 행 10장이다. 문대원 목사는 이 사건에서 &quot;타자를 대하는 두 가지 태도&quot;를 추출한다.<sup class="fnref"><a href="#fn-9">9</a></sup></p><figure class="ill trio"><svg viewBox="0 0 900 270" role="img" aria-label="세 장면: 한 사람이 다른 이를 아래로 밀어내 거리가 생기고, 다른 이를 위로 떠받들어 거리가 생기며, 마지막에는 두 사람이 한 상에 마주 앉는다">
- <path class="k" d="M40 236 H860"/>
- <!-- 아래로 -->
- <g transform="translate(150 0)">
-  <rect class="w k" x="-70" y="176" width="60" height="60"/>
-  <path class="fig" d="M-52 176 c-2 -30 4 -48 12 -54 c8 6 12 24 10 54z"/><circle class="fig" cx="-40" cy="112" r="9"/>
-  <path class="fig2" d="M44 236 c-2 -22 3 -34 10 -40 c7 6 10 18 8 40z"/><circle class="fig2" cx="54" cy="188" r="7"/>
-  <path class="pomS" d="M0 140 c20 10 30 26 34 44" stroke-width="3" fill="none"/><path class="pomF" d="M38 186 l-12 -6 10 -8z"/>
-  <path class="k dash" d="M-6 236 v-60"/>
+<p>환대의 가장 극적인 성경 내러티브는 행 10장이다. 문대원 목사는 이 사건에서 &quot;타자를 대하는 두 가지 태도&quot;를 추출한다.<sup class="fnref"><a href="#fn-9">9</a></sup></p><figure class="ill trio"><svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="세 장면: 기도 숄을 걸친 유대인이 계단 위에서 손바닥을 내밀어 아래쪽 이방인을 멀리하고, 로마 백부장 고넬료가 베드로의 발 앞에 엎드리자 베드로가 그를 일으키며, 마지막에는 등불 아래 안뜰에서 두 사람이 한 상에 앉아 빵을 나눈다">
+<defs>
+ <filter id="two-paint" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".04" numOctaves="3" seed="9"/><feDisplacementMap in="SourceGraphic" scale="4"/></filter>
+ <filter id="two-grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="2"/><feColorMatrix values="0 0 0 0 .3  0 0 0 0 .25  0 0 0 0 .2  0 0 0 .08 0"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+ <linearGradient id="two-day" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#BFCFD8"/><stop offset="1" stop-color="#EEE6D2"/></linearGradient>
+ <linearGradient id="two-eve" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#262D4A"/><stop offset="1" stop-color="#5E4A68"/></linearGradient>
+ <linearGradient id="two-col" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8E7A62"/><stop offset=".5" stop-color="#E2D2B0"/><stop offset="1" stop-color="#A89070"/></linearGradient>
+ <radialGradient id="two-glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFE0A0" stop-opacity=".9"/><stop offset="1" stop-color="#FFB547" stop-opacity="0"/></radialGradient>
+ <linearGradient id="two-beam" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFF4D8" stop-opacity=".55"/><stop offset="1" stop-color="#FFF4D8" stop-opacity="0"/></linearGradient>
+ <pattern id="two-stone" width="40" height="20" patternUnits="userSpaceOnUse"><path d="M0 20 H40 M0 10 H40 M20 0 V10 M0 10 V20 M40 10 V20" stroke="#8A7A5C" stroke-width=".9" opacity=".4" fill="none"/></pattern>
+ <clipPath id="two-c1"><rect x="8" y="8" width="284" height="284" rx="10"/></clipPath>
+ <clipPath id="two-c2"><rect x="308" y="8" width="284" height="284" rx="10"/></clipPath>
+ <clipPath id="two-c3"><rect x="608" y="8" width="284" height="284" rx="10"/></clipPath>
+</defs>
+<!-- 1 아래로 밀어냄 -->
+<g clip-path="url(#two-c1)"><g transform="translate(8 8)">
+ <rect width="284" height="284" fill="url(#two-day)"/>
+ <path d="M0 70 H284 V206 H0z" fill="#D6C8AA"/><path d="M0 70 H284 V206 H0z" fill="url(#two-stone)"/>
+ <path d="M150 206 V120 a34 34 0 0 1 68 0 V206z" fill="#6E5E4A"/>
+ <path d="M0 206 H284 V284 H0z" fill="#B4A27E"/>
+ <path d="M0 230 H284 M0 258 H284 M60 206 L40 284 M150 206 L150 284 M240 206 L262 284" stroke="#8E7C5A" stroke-width="1" opacity=".45"/>
+ <g filter="url(#two-paint)">
+  <path d="M14 192 H128 V214 H14z" fill="#C6B490"/><path d="M14 192 H128 V197 H14z" fill="#E6D8B8"/>
+  <ellipse cx="80" cy="193" rx="30" ry="4" fill="#5A4A36" opacity=".35"/>
+  <path d="M54 192 C 52 152 56 118 68 102 C 76 96 86 98 92 106 C 100 126 102 162 104 192z" fill="#E4DCC6"/>
+  <path d="M92 106 C 100 126 102 162 104 192 L 94 192 C 92 160 90 130 86 108z" fill="#BEB49C"/>
+  <path d="M62 106 C 70 98 88 98 96 110 L 100 144 C 86 138 70 138 56 144z" fill="#F4F0E4"/>
+  <path d="M57 134 C 70 128 86 128 99 134 M58 140 C 70 134 86 134 100 140" stroke="#3E5C8A" stroke-width="2" fill="none"/>
+  <path d="M60 144 v10 M64 143 v9 M94 143 v10 M98 144 v9" stroke="#F4F0E4" stroke-width="1.2"/>
+  <path d="M94 114 C 106 112 116 108 126 102" stroke="#E4DCC6" stroke-width="9" stroke-linecap="round" fill="none"/>
+  <ellipse cx="130" cy="99" rx="3.6" ry="6.5" fill="#C08A60" transform="rotate(-15 130 99)"/>
+  <circle cx="80" cy="88" r="10" fill="#C08A60"/>
+  <path d="M68 92 q-2 -18 12 -18 q14 0 14 14 l4 18 q-6 -6 -10 -4 l-2 -10 q-10 -6 -16 2z" fill="#F4F0E4"/>
+  <path d="M70 80 h20" stroke="#3E5C8A" stroke-width="1.6"/>
+  <path d="M83 94 q8 2 12 -6 q2 10 -4 14 q-6 0 -8 -8z" fill="#3A2A22"/>
+  <ellipse cx="224" cy="263" rx="24" ry="4" fill="#5A4A36" opacity=".35"/>
+  <path d="M215 232 L213 262 M229 232 L231 262" stroke="#B07A52" stroke-width="5" stroke-linecap="round"/>
+  <path d="M208 236 C 206 212 212 192 222 184 C 232 184 240 196 240 216 L 242 236z" fill="#9A5A3A"/>
+  <path d="M209 214 H241" stroke="#4A2E1C" stroke-width="3"/>
+  <path d="M212 196 C 202 204 196 210 188 214" stroke="#9A5A3A" stroke-width="7" stroke-linecap="round" fill="none"/><circle cx="186" cy="215" r="3.5" fill="#B07A52"/>
+  <circle cx="221" cy="176" r="9" fill="#B07A52"/><path d="M212 174 q2 -12 12 -10 q6 2 6 8 q-8 -4 -18 2z" fill="#3A2418"/>
  </g>
- <!-- 위로 -->
- <g transform="translate(450 0)">
-  <rect class="w k" x="10" y="176" width="60" height="60"/>
-  <path class="fig2" d="M28 176 c-2 -30 4 -48 12 -54 c8 6 12 24 10 54z"/><circle class="fig2" cx="40" cy="112" r="9"/>
-  <path class="fig" d="M-62 236 c-2 -22 3 -34 10 -40 c7 6 10 18 8 40z"/><circle class="fig" cx="-52" cy="188" r="7"/>
-  <path class="pomS" d="M-34 180 c6 -24 16 -38 32 -46" stroke-width="3" fill="none"/><path class="pomF" d="M2 132 l-6 12 -8 -8z"/>
-  <path class="k dash" d="M-6 236 v-60"/>
+ <rect width="284" height="284" fill="#fff" filter="url(#two-grain)"/>
+</g></g>
+<!-- 2 위로 올려놓음 -->
+<g clip-path="url(#two-c2)"><g transform="translate(308 8)">
+ <rect width="284" height="284" fill="#D9B27A"/>
+ <path d="M0 150 H284 V222 H0z" fill="#A8483A"/><path d="M0 150 H284" stroke="#2E1E18" stroke-width="4"/>
+ <path d="M30 30 h70 v80 h-70z" fill="#E8D2A0" opacity=".6"/>
+ <path d="M30 30 L100 30 L210 222 L90 222z" fill="url(#two-beam)"/>
+ <path d="M0 222 H284 V284 H0z" fill="#C8B896"/>
+ <path d="M0 246 H284 M0 268 H284 M40 222 V284 M100 222 V284 M160 222 V284 M220 222 V284" stroke="#9A8A6A" stroke-width="1" opacity=".5"/>
+ <g filter="url(#two-paint)">
+  <path d="M240 0 H270 V222 H240z" fill="url(#two-col)"/><path d="M234 20 H276 V30 H234z" fill="#C8B490"/>
+  <path d="M128 208 H260 V226 H128z" fill="#B8A684"/><path d="M128 208 H260 V212 H128z" fill="#DCCCAA"/>
+  <ellipse cx="190" cy="209" rx="30" ry="4" fill="#4A3020" opacity=".35"/>
+  <path d="M168 208 C 166 172 168 142 176 124 C 184 116 196 116 202 124 C 210 144 212 176 214 208z" fill="#CDB892"/>
+  <path d="M176 124 C 184 116 196 116 204 126 C 196 150 196 180 200 208 L 180 208 C 178 176 176 150 176 124z" fill="#7A5A3A"/>
+  <path d="M180 140 C 166 158 152 186 142 206" stroke="#CDB892" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <path d="M190 146 C 178 166 164 192 152 210" stroke="#BCA67E" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <circle cx="141" cy="208" r="4" fill="#B07A52"/><circle cx="151" cy="212" r="4" fill="#B07A52"/>
+  <circle cx="182" cy="110" r="10" fill="#B07A52"/>
+  <path d="M172 106 q2 -14 14 -12 q8 2 8 10 q-4 -4 -10 -4 q-8 0 -12 6z" fill="#B8B2A8"/>
+  <path d="M174 114 q4 12 14 8 q2 6 -6 10 q-10 -2 -8 -18z" fill="#A8A29A"/>
+  <ellipse cx="80" cy="252" rx="56" ry="6" fill="#4A3020" opacity=".35"/>
+  <path d="M30 252 C 30 232 44 216 66 210 C 86 206 104 210 116 220 C 122 226 122 236 118 242 L 96 244 C 90 250 76 252 60 252z" fill="#8E2B2B"/>
+  <path d="M74 214 C 88 210 104 212 114 222 L 106 232 C 96 226 86 224 74 226z" fill="#B08A44"/>
+  <path d="M78 218 C 90 215 102 217 110 224" stroke="#E2C27A" stroke-width="1.5" fill="none"/>
+  <path d="M40 248 L24 252" stroke="#8A6A3A" stroke-width="5" stroke-linecap="round"/>
+  <path d="M110 228 C 120 226 128 220 136 214" stroke="#8E2B2B" stroke-width="7" stroke-linecap="round" fill="none"/><circle cx="138" cy="213" r="3.5" fill="#C89068"/>
+  <circle cx="126" cy="230" r="9" fill="#C89068"/><path d="M118 226 q4 -10 14 -6 q4 3 2 8 q-8 -4 -16 -2z" fill="#3A2418"/>
+  <path d="M20 268 c0 -14 22 -14 22 0z" fill="#9A7A3A"/><path d="M22 256 c4 -10 14 -10 18 0" stroke="#A8302A" stroke-width="5" fill="none" stroke-linecap="round"/>
  </g>
- <!-- 한 상 -->
- <g transform="translate(750 0)">
-  <path class="k2" d="M-50 200 h100 M-40 200 v36 M40 200 v36"/>
-  <ellipse class="bread" cx="-10" cy="194" rx="16" ry="6"/><path class="pomF" d="M14 182 h10 l-2 12 h-6z"/>
-  <path class="fig" d="M-96 236 c-2 -40 4 -60 14 -68 c10 8 14 28 12 68z"/><circle class="fig" cx="-82" cy="156" r="10"/>
-  <path class="fig2" d="M70 236 c-2 -40 4 -60 14 -68 c10 8 14 28 12 68z"/><circle class="fig2" cx="84" cy="156" r="10"/>
-  <circle class="lamp" cx="0" cy="120" r="10"/><circle class="lamp o3" cx="0" cy="120" r="24"/>
+ <rect width="284" height="284" fill="#fff" filter="url(#two-grain)"/>
+</g></g>
+<!-- 3 한 상에서 -->
+<g clip-path="url(#two-c3)"><g transform="translate(608 8)">
+ <rect width="284" height="284" fill="url(#two-eve)"/>
+ <path d="M0 96 H284 V222 H0z" fill="#6E5848"/>
+ <path d="M0 222 H284 V284 H0z" fill="#5E4836"/>
+ <circle cx="142" cy="150" r="150" fill="url(#two-glow)" opacity=".75"/>
+ <g filter="url(#two-paint)">
+  <path d="M0 84 H284 V98 H0z" fill="#B49A76"/>
+  <path d="M14 98 H34 V222 H14z M250 98 H270 V222 H250z" fill="url(#two-col)"/>
+  <path d="M142 0 V56 M142 56 L130 66 M142 56 L154 66" stroke="#2A2018" stroke-width="1.2" fill="none"/>
+  <path d="M126 66 c6 6 26 6 30 0z" fill="#9A6A34"/>
+  <path d="M154 66 c4 -2 8 -4 12 -4 c-2 4 -6 6 -12 6z" fill="#9A6A34"/><circle cx="166" cy="58" r="22" fill="url(#two-glow)"/><path d="M166 62 c-3 -4 -2 -8 0 -12 c2 4 3 8 0 12z" fill="#FFF4C8"/>
+  <ellipse cx="142" cy="246" rx="100" ry="8" fill="#2A1C14" opacity=".4"/>
+  <path d="M98 214 H186 V220 H98z" fill="#7A4E2C"/><path d="M104 220 V244 M180 220 V244" stroke="#4A2E1C" stroke-width="4"/>
+  <path d="M98 214 H186" stroke="#E8B070" stroke-width="1.5"/>
+  <ellipse cx="142" cy="210" rx="18" ry="6" fill="#C98B3A"/><ellipse cx="142" cy="207" rx="16" ry="4" fill="#E2B064"/>
+  <path d="M166 212 h10 l-2 -12 h-6z" fill="#8E2B43"/>
+  <ellipse cx="114" cy="211" rx="9" ry="3" fill="#4E6A2C"/>
+  <path d="M54 246 C 52 216 58 190 70 180 C 82 176 92 186 94 204 L 96 214 L 100 246z" fill="#CDB892"/>
+  <path d="M56 246 C 54 218 60 194 70 182 C 76 200 76 224 80 246z" fill="#7A5A3A"/>
+  <path d="M86 196 C 100 200 114 204 128 206" stroke="#CDB892" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <circle cx="130" cy="206" r="4" fill="#B07A52"/>
+  <circle cx="74" cy="166" r="10" fill="#B07A52"/>
+  <path d="M64 162 q2 -14 14 -12 q8 2 8 10 q-4 -4 -10 -4 q-8 0 -12 6z" fill="#B8B2A8"/><path d="M76 170 q8 4 12 -2 q0 10 -8 12 q-4 -4 -4 -10z" fill="#A8A29A"/>
+  <path d="M94 196 C 96 190 100 186 104 184" stroke="#FFD28A" stroke-width="1.4" fill="none" opacity=".7"/>
+  <path d="M230 246 C 232 216 226 190 214 180 C 202 176 192 186 190 204 L 188 214 L 184 246z" fill="#E6DCC6"/>
+  <path d="M232 246 C 234 214 226 190 214 180 C 208 196 206 222 210 246z" fill="#8E2B2B"/>
+  <path d="M198 196 C 184 200 170 204 156 206" stroke="#E6DCC6" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <circle cx="154" cy="206" r="4" fill="#C89068"/>
+  <circle cx="210" cy="166" r="10" fill="#C89068"/><path d="M200 162 q4 -12 14 -10 q8 2 6 10 q-8 -4 -20 0z" fill="#3A2418"/>
+  <path d="M60 246 h40 M184 246 h44" stroke="#3A2618" stroke-width="5"/>
  </g>
+ <rect width="284" height="284" fill="#fff" filter="url(#two-grain)"/>
+</g></g>
+<g fill="none" stroke="#24271C" stroke-opacity=".15"><rect x="8" y="8" width="284" height="284" rx="10"/><rect x="308" y="8" width="284" height="284" rx="10"/><rect x="608" y="8" width="284" height="284" rx="10"/></g>
 </svg><ol class="cap-row"><li><b>아래로 밀어냄</b>부정하게 여겨 멀리한다</li><li><b>위로 올려놓음</b>거룩하게 여겨 멀리한다</li><li><b>한 상에서</b>가장 세속적인 사람과 가장 거룩한 사람이 만났다</li></ol></figure>
 <div class="table-wrap"><table><thead><tr><th>태도</th><th>방향</th><th>공통점</th></tr></thead><tbody><tr><td>상대를 <strong>부정하게</strong> 여겨 멀리함 (베드로 → 이방인)</td><td>아래로 밀어냄</td><td><strong>나와 함께할 수 없다</strong>는 결론에 도달</td></tr><tr><td>상대를 <strong>거룩하게</strong> 여겨 멀리함 (고넬료 → 베드로)</td><td>위로 올려놓음</td><td>마찬가지로 거리가 생김</td></tr></tbody></table></div>
 <p>멸시하든 숭배하든, 결과는 같다 — 거리. 그런데 &quot;가장 세속적인 사람과 가장 거룩한 사람이 만나서 환대했다.&quot;<sup class="fnref"><a href="#fn-10">10</a></sup> 하나님이 베드로의 정결 규례를 깨뜨려 &quot;아무도 속되다 하거나 깨끗하지 않다 하지 말라&quot;(행 10:15)고 명하셨을 때, 환대의 전제조건 자체가 바뀌었다.</p>
@@ -329,35 +538,202 @@ tbody tr:hover td{background:var(--olive-soft)}
 <p>어원이 하는 일은 증명이 아니라 <strong>기억</strong>이다. 병원이 무엇이었는지, 그 말이 처음에 무엇을 가리켰는지를 그 단어가 아직 붙들고 있다. 다음 절에서 볼 반환대의 목록 — 환자를 태스크로 보는 시선, 컨베이어 벨트 같은 병원, 차트 번호로 부르는 호명 — 은 그러므로 새로운 타락이 아니라 <strong>오래된 망각</strong>이다. 잃어버린 것이 무엇인지는 간판에 그대로 적혀 있다.</p>
 <h2 class="stn" id="section-08"><span class="door" aria-hidden="true">8</span><span class="ht">의료 현장의 환대<span class="hs">진료실은 환대의 공간</span></span></h2>
 <p>환대는 교회와 선교지에만 머물지 않는다. 앞 절이 보여주듯 의료는 환대가 나중에 빌려 온 비유가 아니라 그 말이 원래 살던 집이다. 병원에서 환대를 말하는 것은 새 개념을 들여오는 일이 아니라 간판에 적힌 뜻을 되찾는 일에 가깝다. 의료 현장에서 환대는 &quot;환자를 고쳐야 할 대상이 아니라 존귀한 손님으로 맞이하는 것&quot;을 뜻한다.<sup class="fnref"><a href="#fn-16">16</a></sup></p>
-<div class="scripture"><p>&quot;진료실이나 병원은 길 잃고 두려움에 떠는 나그네를 따뜻하게 맞이하는 '환대의 공간(Hospitality)'이 되어야 합니다. 치유자는 단순히 병을 고치는 기술자가 아니라, 내 마음속에 환자가 편히 쉴 수 있는 '빈 공간'을 기꺼이 내어주는 사람입니다.&quot;</p><figure class="ill "><svg viewBox="0 0 900 290" role="img" aria-label="문이 열린 진료실, 등불 아래 손님을 위해 비워 둔 의자 하나와 벽에 걸린 청진기">
- <path class="k" d="M60 256 H840"/>
- <rect class="w k" x="120" y="40" width="660" height="216"/>
- <path class="w k2" d="M170 256 V120 a46 46 0 0 1 92 0 V256z"/>
- <path class="lamp o6" d="M178 256 V122 a38 38 0 0 1 76 0 V256z"/>
- <path class="w k2" d="M178 256 V122 l30 -14 V266z"/>
- <path class="k" d="M470 40 v40"/><path class="w k2" d="M446 80 h48 l-8 18 h-32z"/><circle class="lamp" cx="470" cy="104" r="7"/>
- <path class="lamp o3" d="M440 98 h60 l70 158 h-200z"/>
- <path class="k2" d="M446 256 V150 a6 6 0 0 1 12 0 V214 h54 M452 214 v42 M506 214 v42" fill="none"/>
- <rect class="olvF" x="458" y="206" width="50" height="10" rx="4"/>
- <path class="k2" d="M640 110 c0 30 30 30 30 60 c0 20 -16 30 -30 30" fill="none"/><circle class="olvF" cx="640" cy="202" r="8"/>
- <path class="k" d="M620 100 h40"/><circle class="kf" cx="640" cy="100" r="4"/>
- <rect class="p k" x="700" y="130" width="50" height="64"/><path class="k o5" d="M710 148 h30 M710 162 h30 M710 176 h20"/>
+<div class="scripture"><p>&quot;진료실이나 병원은 길 잃고 두려움에 떠는 나그네를 따뜻하게 맞이하는 '환대의 공간(Hospitality)'이 되어야 합니다. 치유자는 단순히 병을 고치는 기술자가 아니라, 내 마음속에 환자가 편히 쉴 수 있는 '빈 공간'을 기꺼이 내어주는 사람입니다.&quot;</p><figure class="ill "><svg viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="동네 의원 진료실, 흰 가운의 의사가 서서 문을 열어 붙잡고, 지팡이를 짚고 불안하게 들어서는 노인 환자에게 의자를 권한다. 책상 위 스탠드가 따뜻하게 빛나고 벽에는 청진기가, 창가에는 화분이 있다">
+<defs>
+ <filter id="room-paint" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="3" seed="11"/><feDisplacementMap in="SourceGraphic" scale="4"/></filter>
+ <filter id="room-grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="2"/><feColorMatrix values="0 0 0 0 .3  0 0 0 0 .25  0 0 0 0 .2  0 0 0 .07 0"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+ <filter id="room-soft"><feGaussianBlur stdDeviation="4"/></filter>
+ <linearGradient id="room-wall" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#E4DCCB"/><stop offset=".6" stop-color="#EFE7D4"/><stop offset="1" stop-color="#E6E2D6"/></linearGradient>
+ <linearGradient id="room-floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C49A6A"/><stop offset="1" stop-color="#9A7048"/></linearGradient>
+ <linearGradient id="room-hall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E4EAEC"/><stop offset="1" stop-color="#BFC9CC"/></linearGradient>
+ <linearGradient id="room-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A9C6DA"/><stop offset="1" stop-color="#E4EEF0"/></linearGradient>
+ <linearGradient id="room-coat" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#D2D8D6"/><stop offset=".45" stop-color="#FAFAF5"/><stop offset="1" stop-color="#DCE0DC"/></linearGradient>
+ <radialGradient id="room-glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFD98A" stop-opacity=".85"/><stop offset="1" stop-color="#FFB547" stop-opacity="0"/></radialGradient>
+ <pattern id="room-plank" width="90" height="16" patternUnits="userSpaceOnUse"><path d="M0 16 H90 M30 0 V16" stroke="#7A5434" stroke-width="1" opacity=".35"/></pattern>
+ <clipPath id="room-c"><rect x="10" y="10" width="880" height="300" rx="10"/></clipPath>
+</defs>
+<g clip-path="url(#room-c)">
+ <rect x="10" y="10" width="880" height="300" fill="url(#room-wall)"/>
+ <path d="M10 196 H890 V262 H10z" fill="#C6D3CC"/><path d="M10 196 H890" stroke="#A8B8B0" stroke-width="3"/>
+ <path d="M10 262 H890 V310 H10z" fill="url(#room-floor)"/><path d="M10 262 H890 V310 H10z" fill="url(#room-plank)"/>
+ <path d="M10 262 H890" stroke="#8A6444" stroke-width="2"/>
+ <circle cx="640" cy="170" r="190" fill="url(#room-glow)" opacity=".5"/>
+ <!-- 복도 -->
+ <path d="M62 262 V56 H200 V262z" fill="url(#room-hall)"/>
+ <path d="M62 222 H200 V262 H62z" fill="#A9B2B2"/>
+ <path d="M70 200 h70 v10 h-70z M76 210 v22 M134 210 v22" fill="#6E8A8E" stroke="#5E7478" stroke-width="3"/>
+ <g filter="url(#room-paint)">
+  <path d="M52 266 V48 H210 V266 H200 V56 H62 V266z" fill="#C8BCA8"/>
+  <path d="M200 56 L254 70 L254 276 L200 262z" fill="#F4F1EA"/><path d="M200 56 L210 59 L210 265 L200 262z" fill="#D8D2C6"/>
+  <path d="M216 86 L244 92 L244 160 L216 156z" fill="#D6E2E6" opacity=".9"/>
+  <path d="M244 168 h-12" stroke="#8A8E90" stroke-width="3" stroke-linecap="round"/>
+  <!-- 환자 -->
+  <ellipse cx="140" cy="264" rx="38" ry="5" fill="#4A3A2A" opacity=".3"/>
+  <path d="M120 262 C 118 236 120 212 124 200 L 156 200 C 160 214 162 238 160 262z" fill="#5A5664"/>
+  <path d="M112 206 C 110 180 118 158 134 148 C 150 146 162 156 166 172 C 170 186 168 198 166 208z" fill="#8A6A58"/>
+  <path d="M112 206 C 110 180 118 158 134 148" stroke="#6E5244" stroke-width="2" fill="none"/>
+  <path d="M140 170 C 146 180 150 186 158 188" stroke="#7A5C4C" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <path d="M152 178 h22 l-2 24 h-20z" fill="#4A3A3A"/><path d="M156 178 c2 -8 12 -8 14 0" stroke="#4A3A3A" stroke-width="2" fill="none"/>
+  <circle cx="160" cy="188" r="4" fill="#D4A47E"/>
+  <path d="M120 180 C 112 196 108 214 106 228" stroke="#7A5C4C" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <path d="M104 226 L98 264" stroke="#3A2A20" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="146" cy="136" r="12" fill="#D4A47E"/>
+  <path d="M134 136 q-2 -18 14 -18 q14 2 12 16 q-6 -8 -14 -6 q-8 2 -12 8z" fill="#C8C6C0"/>
+  <circle cx="137" cy="124" r="5" fill="#B8B6B0"/>
+  <path d="M152 140 q3 2 6 0" stroke="#7A5040" stroke-width="1.2" fill="none"/>
+  <!-- 의사 -->
+  <ellipse cx="314" cy="265" rx="40" ry="5" fill="#4A3A2A" opacity=".3"/>
+  <path d="M298 262 L300 216 M326 262 L324 216" stroke="#2E3440" stroke-width="10" stroke-linecap="round"/>
+  <path d="M290 230 C 286 190 290 150 302 130 C 310 124 322 124 330 130 C 340 150 344 190 340 230z" fill="url(#room-coat)"/>
+  <path d="M312 132 L314 200" stroke="#BFC6C4" stroke-width="1.5"/>
+  <path d="M306 130 l8 14 l8 -14" fill="#6E8AA0"/>
+  <path d="M302 144 C 288 150 272 158 258 166" stroke="#F2F2EC" stroke-width="11" stroke-linecap="round" fill="none"/>
+  <circle cx="255" cy="168" r="5" fill="#D8A57C"/>
+  <path d="M332 150 C 348 166 364 180 384 186" stroke="#ECEEE8" stroke-width="11" stroke-linecap="round" fill="none"/>
+  <path d="M384 182 c6 -2 10 0 12 4 c-4 2 -8 4 -12 2z" fill="#D8A57C"/>
+  <circle cx="316" cy="114" r="13" fill="#D8A57C"/>
+  <path d="M303 112 q0 -16 14 -16 q14 0 13 14 q-6 -6 -14 -6 q-6 0 -13 8z" fill="#1E1E22"/>
+  <path d="M306 118 q3 3 6 0" stroke="#8A5A40" stroke-width="1.2" fill="none"/>
+  <!-- 의자 -->
+  <ellipse cx="420" cy="266" rx="34" ry="5" fill="#4A3A2A" opacity=".3"/>
+  <path d="M396 222 h48 v10 h-48z" fill="#3E6E6A"/><path d="M396 222 h48 v3 h-48z" fill="#6A9A94"/>
+  <path d="M440 222 V168 c0 -6 6 -8 10 -6 v60z" fill="#3E6E6A"/>
+  <path d="M404 232 l-4 32 M436 232 l4 32 M420 232 v32" stroke="#4A4E52" stroke-width="3"/>
+  <!-- 책상 -->
+  <path d="M480 206 H700 V214 H480z" fill="#B88A58"/><path d="M480 206 H700 V208 H480z" fill="#D8AE78"/>
+  <path d="M600 214 H696 V262 H600z" fill="#A47A4C"/><path d="M606 238 h84" stroke="#7A5434" stroke-width="1.5"/>
+  <path d="M486 214 V262" stroke="#7A5434" stroke-width="5"/>
+  <path d="M520 150 h70 v48 h-70z" fill="#2A2E34"/><path d="M524 154 h62 v40 h-62z" fill="#9EB6C4"/><path d="M548 198 h14 v8 h-14z" fill="#2A2E34"/>
+  <path d="M520 202 h56" stroke="#C8CCCE" stroke-width="3"/>
+  <path d="M600 202 h28 l-2 -4 h-24z" fill="#F4F2EA"/>
+  <path d="M664 206 l-14 -46 l-22 -10" stroke="#3A3A3E" stroke-width="3" fill="none"/>
+  <path d="M614 156 l20 -16 l10 14 z" fill="#3A3A3E"/><ellipse cx="660" cy="206" rx="12" ry="3" fill="#3A3A3E"/>
+  <path d="M622 158 L604 204 L652 204 L640 150z" fill="#FFE29A" opacity=".35"/>
+  <path d="M676 194 h14 v12 h-14z" fill="#F0ECE0"/><path d="M690 198 c4 0 4 6 0 6" stroke="#F0ECE0" stroke-width="2" fill="none"/>
+  <!-- 벽 -->
+  <path d="M500 72 v6" stroke="#5A5A5E" stroke-width="3"/>
+  <path d="M500 78 C 488 92 486 120 492 140 M500 78 C 512 92 514 120 508 140" stroke="#2C3036" stroke-width="2.6" fill="none"/>
+  <path d="M492 140 C 496 156 500 162 500 172 M508 140 C 504 156 500 162 500 172" stroke="#2C3036" stroke-width="2.6" fill="none"/>
+  <circle cx="500" cy="180" r="7" fill="#B8BEC4"/><circle cx="500" cy="180" r="3.5" fill="#8A9298"/>
+  <path d="M560 64 h80 v56 h-80z" fill="#8A6A44"/><path d="M566 70 h68 v44 h-68z" fill="#CFE0D8"/>
+  <path d="M566 104 c14 -12 24 -6 34 -14 c12 -8 22 -2 34 -10 V114 H566z" fill="#6E8A5A"/>
+  <!-- 창 -->
+  <path d="M740 56 h126 v132 h-126z" fill="url(#room-sky)"/>
+  <path d="M760 188 v-70 h18 v70z M790 188 v-96 h22 v96z M826 188 v-56 h20 v56z" fill="#C8D2D6"/>
+  <path d="M742 60 h122 M742 68 h122 M742 76 h122 M742 84 h122" stroke="#F4F2EC" stroke-width="5"/>
+  <path d="M734 50 h138 v144 h-138z M803 50 v144" stroke="#F2F0EA" stroke-width="7" fill="none"/>
+  <path d="M736 196 h134" stroke="#D8D4CA" stroke-width="5"/>
+  <path d="M730 270 L860 270 L840 304 L690 304z" fill="#FFF8E4" opacity=".2"/>
+  <!-- 화분 -->
+  <path d="M808 262 l-6 -40 h44 l-6 40z" fill="#C46A44"/><path d="M802 222 h44" stroke="#E08A60" stroke-width="3"/>
+  <g fill="#3E6A34"><path d="M824 222 C 800 200 790 170 800 150 C 820 168 828 196 824 222z"/><path d="M824 222 C 846 196 862 176 868 150 C 846 160 830 190 824 222z"/><path d="M824 222 C 820 190 822 150 832 126 C 842 150 838 190 824 222z"/></g>
+  <g fill="#5E8A44"><path d="M824 222 C 806 206 800 184 806 166 C 818 182 824 204 824 222z"/><path d="M826 220 C 832 190 834 160 832 136 C 838 160 836 196 826 220z"/></g>
+ </g>
+ <rect x="10" y="10" width="880" height="300" fill="#fff" filter="url(#room-grain)"/>
+</g>
+<rect x="10" y="10" width="880" height="300" rx="10" fill="none" stroke="#24271C" stroke-opacity=".15"/>
 </svg><figcaption>환자가 편히 쉴 수 있도록 비워 둔 자리.</figcaption></figure></div>
 <p>Fred Lee의 디즈니 서비스 철학, 신치헌의 대긍휼, 의료인 강의의 &quot;환대의 공간&quot;은 서로 다른 맥락(디즈니/다문화교회/의료현장)에서 같은 원리에 도달한다.<sup class="fnref"><a href="#fn-17">17</a></sup></p>
 <div class="table-wrap"><table><thead><tr><th>반환대 (비인격화)</th><th>환대</th></tr></thead><tbody><tr><td>환자 = 태스크, 질병 덩어리</td><td>환자 = 존귀한 손님</td></tr><tr><td>컨베이어 벨트 같은 병원</td><td>환대의 공간</td></tr><tr><td>차트 번호로 부름</td><td>이름을 부르며 인사</td></tr><tr><td>&quot;내가 볼 환자가 아니다&quot;</td><td>기꺼이 다가가는 근접성</td></tr></tbody></table></div>
 <p>다니엘 설마시의 3단계 영성 구현은 환대의 깊이를 보여준다 — ①기술적 탁월성(환대의 전제조건), ②인격적 만남(환대의 실천), ③초월적 연결(환대의 완성). 경영학적 공감은 &quot;고객 충성도&quot;에서 멈추지만, 기독의료인의 환대는 진료실의 만남 자체가 성례적(Sacramental) 사건이 되는 초월적 차원으로 나아간다.<sup class="fnref"><a href="#fn-18">18</a></sup></p>
 <h2 class="stn" id="section-09"><span class="door" aria-hidden="true">9</span><span class="ht">손님 되기<span class="hs">환대의 역설</span></span></h2>
 <p>환대는 베푸는 것만이 아니다. 《선교적공동체세우기》는 마지막 전환점으로 &quot;손님 되기&quot;를 제시한다 — &quot;선교는 베푸는 자리만이 아니라 받는 자리이기도 하다.&quot;<sup class="fnref"><a href="#fn-19">19</a></sup></p>
-<p>바울은 멜리데 섬에서 원주민의 환대를 받았다(행 28). 그 전에도 &quot;너희 앞에 차려 놓은 것은 무엇이든지 양심을 위하여 묻지 말고 먹으라&quot;(고전 10:27)고 가르쳤다. 선교사가 현지인의 밥상에 앉는 것, 상대방이 차려준 것을 받는 것 — 이것은 환대의 다른 절반이다.</p><figure class="ill "><svg viewBox="0 0 900 290" role="img" aria-label="바닷가에 피운 모닥불 둘레에 섬사람들과 젖은 나그네들이 함께 앉아 있다">
- <path class="sea" d="M0 120 q30 -10 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0"/>
- <path class="sea o5" d="M0 150 q30 -10 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0"/>
- <path class="k" d="M40 250 H860"/>
- <circle class="lamp o3" cx="450" cy="226" r="70"/>
- <path class="k2" d="M410 250 l80 -16 M410 234 l80 16"/>
- <path class="lamp" d="M450 160 c-30 30 -34 56 -18 78 h36 c16 -22 12 -48 -18 -78z"/>
- <path class="pomF" d="M450 196 c-12 14 -14 28 -6 42 h12 c8 -14 6 -28 -6 -42z"/>
- <g class="fig"><path d="M300 250 c-4 -30 4 -50 16 -56 c12 6 18 26 14 56z"/><circle cx="316" cy="182" r="11"/><path d="M360 250 c-4 -24 4 -40 14 -46 c10 6 14 22 12 46z"/><circle cx="374" cy="194" r="9"/></g>
- <g class="fig2"><path d="M526 250 c-4 -24 4 -40 14 -46 c10 6 14 22 12 46z"/><circle cx="540" cy="194" r="9"/><path d="M584 250 c-4 -30 4 -50 16 -56 c12 6 18 26 14 56z"/><circle cx="600" cy="182" r="11"/><path d="M640 250 c-4 -26 4 -44 14 -50 c10 6 16 24 12 50z"/><circle cx="654" cy="190" r="10"/></g>
+<p>바울은 멜리데 섬에서 원주민의 환대를 받았다(행 28). 그 전에도 &quot;너희 앞에 차려 놓은 것은 무엇이든지 양심을 위하여 묻지 말고 먹으라&quot;(고전 10:27)고 가르쳤다. 선교사가 현지인의 밥상에 앉는 것, 상대방이 차려준 것을 받는 것 — 이것은 환대의 다른 절반이다.</p><figure class="ill "><svg viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="비 내리는 차가운 멜리데 바닷가, 거친 바다와 부서진 배를 뒤로하고 섬사람들이 큰 불을 피워 흠뻑 젖은 난파 나그네들을 녹이고, 대머리에 수염 난 바울이 나뭇단을 불에 얹는 그림">
+<defs>
+ <filter id="fire-paint" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="3" seed="13"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter>
+ <filter id="fire-grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="2"/><feColorMatrix values="0 0 0 0 .3  0 0 0 0 .3  0 0 0 0 .3  0 0 0 .08 0"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+ <filter id="fire-soft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="8"/></filter>
+ <linearGradient id="fire-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#46525E"/><stop offset=".7" stop-color="#7E8A92"/><stop offset="1" stop-color="#A2AAAC"/></linearGradient>
+ <linearGradient id="fire-sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3A525A"/><stop offset="1" stop-color="#24383E"/></linearGradient>
+ <linearGradient id="fire-sand" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5E564C"/><stop offset="1" stop-color="#3A332C"/></linearGradient>
+ <radialGradient id="fire-glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFC060" stop-opacity=".9"/><stop offset=".5" stop-color="#E2702A" stop-opacity=".3"/><stop offset="1" stop-color="#E2702A" stop-opacity="0"/></radialGradient>
+ <pattern id="fire-rain" width="26" height="30" patternUnits="userSpaceOnUse"><path d="M20 0 l-6 14 M8 16 l-6 14" stroke="#DDE4EA" stroke-width=".9" opacity=".28"/></pattern>
+ <clipPath id="fire-c"><rect x="10" y="10" width="880" height="300" rx="10"/></clipPath>
+</defs>
+<g clip-path="url(#fire-c)">
+ <rect x="10" y="10" width="880" height="140" fill="url(#fire-sky)"/>
+ <g fill="#5E6870" opacity=".55" filter="url(#fire-soft)"><ellipse cx="200" cy="50" rx="200" ry="26"/><ellipse cx="640" cy="70" rx="240" ry="30"/></g>
+ <path d="M10 140 C 60 116 120 108 170 122 C 200 130 220 136 240 140z" fill="#4E5A5E"/>
+ <rect x="10" y="138" width="880" height="80" fill="url(#fire-sea)"/>
+ <g fill="#E4ECEA" opacity=".5"><path d="M90 190 c10 -8 24 -8 34 2 c-12 -3 -24 -2 -34 -2z"/><path d="M300 170 c8 -6 18 -6 26 2 c-9 -2 -18 -2 -26 -2z"/><path d="M520 192 c12 -9 28 -9 40 2 c-14 -3 -28 -2 -40 -2z"/><path d="M846 172 c8 -6 18 -6 26 2 c-9 -2 -18 -2 -26 -2z"/></g>
+ <g fill="none" stroke-linecap="round">
+  <path d="M10 156 q25 -9 50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0" stroke="#5E7A80" stroke-width="2"/>
+  <path d="M0 176 q30 -12 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0" stroke="#C8D6D6" stroke-width="2.4" opacity=".6"/>
+  <path d="M20 198 q35 -14 70 0 t70 0 t70 0 t70 0 t70 0 t70 0 t70 0 t70 0 t70 0 t70 0 t70 0 t70 0 t70 0" stroke="#E4ECEA" stroke-width="3" opacity=".7"/>
+ </g>
+ <g filter="url(#fire-paint)">
+  <path d="M600 196 C 630 170 680 168 720 176 C 760 168 800 172 840 190 L 850 206 H590z" fill="#2E2A28"/>
+  <path d="M640 178 L 676 118 L 800 140 L 790 182z" fill="#4A3A2E"/>
+  <path d="M640 178 L 676 118 L 690 120 L 656 180z" fill="#2E241C"/>
+  <path d="M684 128 L 792 148 M666 150 L 790 166" stroke="#2A2018" stroke-width="2"/>
+  <path d="M716 126 L 700 52" stroke="#3A2A20" stroke-width="5" stroke-linecap="round"/>
+  <path d="M700 52 L 740 80 L 716 74 L 726 98z" fill="#8E8E86" opacity=".8"/>
+  <path d="M770 140 L 812 112" stroke="#3A2A20" stroke-width="4" stroke-linecap="round"/>
+  <path d="M590 200 c20 -16 44 -14 60 -4 M800 196 c14 -14 34 -12 46 2" stroke="#E8EEEC" stroke-width="3" fill="none" opacity=".7"/>
+ </g>
+ <path d="M10 214 C 200 206 400 210 890 204 V310 H10z" fill="url(#fire-sand)"/>
+ <path d="M10 214 C 200 206 400 210 890 204" stroke="#D8E0DE" stroke-width="2" opacity=".5"/>
+ <circle cx="432" cy="250" r="230" fill="url(#fire-glow)" opacity=".75"/>
+ <path d="M420 196 C 400 150 440 120 410 80 C 390 50 420 30 400 10" stroke="#9AA0A0" stroke-width="22" fill="none" opacity=".35" filter="url(#fire-soft)"/>
+ <g filter="url(#fire-paint)">
+  <ellipse cx="432" cy="286" rx="70" ry="10" fill="#E2702A" opacity=".35"/>
+  <path d="M380 290 l100 -22 M384 272 l96 22 M400 296 l70 -40" stroke="#3A2416" stroke-width="7" stroke-linecap="round"/>
+  <path d="M432 168 C 396 204 392 248 404 284 H460 C 474 248 468 204 432 168z" fill="#C8401E"/>
+  <path d="M432 190 C 408 220 406 252 414 284 H452 C 460 252 456 220 432 190z" fill="#F2902E"/>
+  <path d="M434 214 C 418 236 418 260 424 284 H444 C 450 260 448 236 434 214z" fill="#FFD36A"/>
+  <path d="M432 244 c-8 12 -8 26 -4 40 h10 c4 -14 4 -28 -6 -40z" fill="#FFF4C8"/>
+  <path d="M410 200 c-10 -10 -8 -20 0 -28 c-2 10 4 16 6 22z M458 196 c8 -10 6 -22 0 -30 c2 10 -4 18 -6 24z" fill="#F2902E"/>
+  <g fill="#FFD36A"><circle cx="420" cy="150" r="1.8"/><circle cx="446" cy="136" r="1.4"/><circle cx="430" cy="118" r="1.2"/><circle cx="456" cy="160" r="1.6"/></g>
+  <!-- 왼쪽: 섬사람 -->
+  <ellipse cx="180" cy="290" rx="40" ry="5" fill="#1E1A16" opacity=".4"/>
+  <path d="M150 290 C 148 268 156 252 172 248 C 190 246 204 256 208 274 L 210 290z" fill="#4E5868"/>
+  <path d="M164 250 C 164 230 172 220 182 220 C 194 222 198 236 194 252z" fill="#4E5868"/>
+  <circle cx="182" cy="226" r="10" fill="#B88A68"/><path d="M172 224 q4 -14 16 -8 q4 4 2 10 q-6 -6 -18 -2z" fill="#2E2A28"/>
+  <path d="M208 274 C 200 262 196 252 196 240" stroke="#FFB060" stroke-width="2" fill="none" opacity=".7"/>
+  <path d="M206 214 C 194 230 186 248 186 262 L 214 270 C 226 254 238 236 244 220z" fill="#8E6A3E"/>
+  <path d="M212 290 C 210 250 214 214 226 196 C 234 190 244 190 250 198 C 258 220 262 254 264 290z" fill="#6E4A34"/>
+  <path d="M226 196 C 228 186 236 180 246 184 C 252 190 252 200 248 206 C 240 200 232 198 226 196z" fill="#A87A44"/>
+  <circle cx="240" cy="188" r="9" fill="#9A6A4A"/>
+  <path d="M250 198 C 258 220 262 254 264 290" stroke="#FFB060" stroke-width="2" fill="none" opacity=".8"/>
+  <ellipse cx="320" cy="292" rx="34" ry="5" fill="#1E1A16" opacity=".4"/>
+  <path d="M296 292 C 294 262 300 236 314 224 C 326 220 336 228 338 244 C 342 258 352 268 360 274 L 356 292z" fill="#7A5A3A"/>
+  <path d="M340 248 C 354 252 366 252 378 246" stroke="#7A5A3A" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <path d="M368 238 l30 12 M366 246 l32 6 M370 252 l26 -2" stroke="#4A3020" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="324" cy="212" r="10" fill="#9A6A4A"/><path d="M314 210 q4 -14 16 -8 q4 4 2 10 q-6 -6 -18 -2z" fill="#2A2018"/>
+  <path d="M338 244 C 342 258 352 268 360 274" stroke="#FFC070" stroke-width="2.4" fill="none"/>
+  <!-- 바울 -->
+  <ellipse cx="510" cy="292" rx="36" ry="5" fill="#1E1A16" opacity=".4"/>
+  <path d="M490 292 C 486 262 490 236 500 222 C 506 214 518 212 526 218 C 534 232 538 260 540 292z" fill="#6A6458"/>
+  <path d="M500 222 C 492 230 488 246 490 262" stroke="#FFB868" stroke-width="2.4" fill="none"/>
+  <path d="M502 230 C 490 236 478 244 470 254" stroke="#6A6458" stroke-width="9" stroke-linecap="round" fill="none"/>
+  <path d="M508 236 C 496 244 484 252 476 262" stroke="#5A544A" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <path d="M452 246 l34 6 M450 254 l36 2 M454 260 l30 -4" stroke="#4A3020" stroke-width="3.4" stroke-linecap="round"/>
+  <circle cx="468" cy="254" r="4" fill="#C08A60"/><circle cx="474" cy="262" r="4" fill="#C08A60"/>
+  <circle cx="506" cy="204" r="11" fill="#C08A60"/>
+  <path d="M499 196 a6 4 -20 0 1 8 -4" stroke="#F4D8B0" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M514 206 q4 -4 6 2 l-2 6z M496 206 q-2 12 6 18 q10 0 12 -10 q-6 4 -10 0 q-4 -2 -8 -8z" fill="#3A2E28"/>
+  <path d="M494 200 q2 8 4 8" stroke="#FFC070" stroke-width="2" fill="none"/>
+  <!-- 오른쪽: 난파 나그네 -->
+  <ellipse cx="600" cy="292" rx="40" ry="5" fill="#1E1A16" opacity=".4"/>
+  <path d="M570 292 C 566 266 572 248 588 242 C 604 238 620 246 624 266 L 628 292z" fill="#4A5260"/>
+  <path d="M584 246 C 580 230 586 216 598 214 C 610 214 616 226 612 244z" fill="#55606E"/>
+  <circle cx="598" cy="222" r="10" fill="#B8886A"/><path d="M588 222 q2 -14 14 -12 q8 2 6 10 q-8 -6 -20 2z" fill="#2E2A2A"/>
+  <path d="M570 290 C 566 266 572 248 586 242" stroke="#FFB060" stroke-width="2" fill="none" opacity=".75"/>
+  <ellipse cx="660" cy="292" rx="36" ry="5" fill="#1E1A16" opacity=".4"/>
+  <path d="M640 292 C 636 252 640 216 652 198 C 660 190 672 190 678 198 C 688 220 690 256 692 292z" fill="#6E3434"/>
+  <path d="M646 292 C 644 260 648 230 656 212 L 668 206 C 664 236 664 266 668 292z" fill="#8A7A6A"/>
+  <path d="M640 292 C 636 252 640 216 652 198" stroke="#FFB868" stroke-width="2.2" fill="none" opacity=".8"/>
+  <circle cx="664" cy="184" r="10" fill="#B07A5A"/>
+  <path d="M652 184 q0 -16 12 -16 q12 0 12 16 h-4 q0 -10 -8 -10 q-8 0 -8 10z" fill="#8A7040"/><path d="M658 168 q8 -10 16 0" stroke="#7A2A2A" stroke-width="4" fill="none"/>
+  <ellipse cx="740" cy="294" rx="30" ry="5" fill="#1E1A16" opacity=".4"/>
+  <path d="M716 294 C 714 262 720 238 732 228 C 744 224 754 232 756 250 L 760 294z" fill="#5E5E66"/>
+  <path d="M728 236 C 728 220 734 210 744 210 C 754 212 756 224 752 238z" fill="#5E5E66"/>
+  <circle cx="742" cy="216" r="9" fill="#9A6A4A"/>
+ </g>
+ <rect x="10" y="10" width="880" height="300" fill="url(#fire-rain)"/>
+ <rect x="10" y="10" width="880" height="300" fill="#fff" filter="url(#fire-grain)"/>
+</g>
+<rect x="10" y="10" width="880" height="300" rx="10" fill="none" stroke="#24271C" stroke-opacity=".15"/>
 </svg><figcaption>멜리데 섬 사람들이 피운 불 곁에서, 바울은 환대를 받는 자리에 앉았다 (행 28).</figcaption></figure>
 <div class="scripture"><p>&quot;타인의 환대를 받아들이는 것이 어려운 이유에 대해서 생각해 보세요. 환대를 누리는 것이 하나님의 선교가 일어나는 하나의 과정이라는 사실이 나에게 어떻게 다가오나요?&quot;<sup class="fnref"><a href="#fn-20">20</a></sup></p></div>
 <p>이 역설은 베드로와 고넬료 사건과 정확히 같은 구조다. 베드로는 고넬료의 집에 &quot;손님&quot;으로 갔다. 복음을 전하러 갔지만, 정작 자신이 더 큰 변화를 경험했다. 환대를 받는 자리에서 환대하는 자가 변한다 — 이것이 환대의 역설이다.</p>
@@ -370,23 +746,104 @@ tbody tr:hover td{background:var(--olive-soft)}
 <p>현대 교회는 이 일체성을 잃었다. 예배당 입장 → 프로그램 시작 = 예배, 이런 공식 안에서 환대는 &quot;친교 시간&quot;이라는 부록으로 밀려났다. 문대원 목사가 선교적 교회 시리즈에서 히 13:1–3의 나그네 대접을 다루면서 &quot;이방인 환대의 선교적 의미&quot;를 설교한 것은, 이 잃어버린 일체성을 회복하려는 시도다.<sup class="fnref"><a href="#fn-24">24</a></sup></p>
 <p>황인권의 《5무교회가 온다》는 새로운 가능성을 제시한다 — 건물 없는 교회가 '팝업' 공간에서 실험하는 문법 안에 &quot;낯설고 새로운 공간, 높은 밀도, 스토리텔링, 환대, 미션과 참여&quot;가 핵심 요소로 들어 있다.<sup class="fnref"><a href="#fn-25">25</a></sup> 역설적으로, 건물을 잃은 교회가 초대교회의 환대를 회복할 수도 있다.</p>
 <h2 class="stn" id="section-12"><span class="door" aria-hidden="true">12</span><span class="ht">환대가 제도로 살아 있는 사회<span class="hs">오만의 '사흘 규칙'</span></span></h2>
-<p>앞의 논의가 대부분 환대를 회복해야 할 것으로 다뤘다면, 환대가 애초에 사회의 규칙으로 살아 있는 곳도 있다. 이선용이 아라비아 반도 동남단의 나라 오만(Oman)에서 10년 반을 살며 적은 기록이 그렇다.<sup class="fnref"><a href="#fn-26">26</a></sup> (책 제목 『오만과 환대』의 '오만'은 교만이 아니라 나라 이름이다. 원제가 <em>Oman and Hospitality</em>다.)</p><figure class="ill "><svg viewBox="0 0 900 280" role="img" aria-label="부리가 긴 아랍 커피 주전자, 손잡이 없는 작은 잔 세 개, 대추야자 접시, 그리고 사흘을 뜻하는 해 세 개">
- <path class="k" d="M120 240 H780"/>
- <g class="lamp"><circle cx="640" cy="60" r="12"/><circle cx="700" cy="44" r="12"/><circle cx="760" cy="60" r="12"/></g>
- <path class="k o5" d="M620 90 q80 -30 160 0"/>
- <!-- 주전자 -->
- <path class="w k2" d="M260 240 c-40 0 -54 -20 -46 -42 c8 -20 34 -26 38 -46 l-6 -30 h40 l-6 30 c4 20 30 26 38 46 c8 22 -6 42 -46 42z"/>
- <path class="k2" d="M246 122 c4 -16 24 -16 28 0 M260 100 v6"/><circle class="kf" cx="260" cy="98" r="4"/>
- <path class="w k2" d="M296 176 c30 -12 54 -40 70 -76 l8 4 c-12 40 -40 74 -72 86"/>
- <path class="k2" d="M222 160 c-26 4 -32 40 -8 50" fill="none"/>
- <path class="lampS o6" d="M236 196 h48" stroke-width="4"/>
- <!-- 잔 -->
- <g transform="translate(440 0)"><path class="w k2" d="M-16 214 h32 l-6 26 h-20z"/><path class="coffee" d="M-14 218 h28 l-1 4 h-26z"/></g>
- <g transform="translate(500 0)"><path class="w k2" d="M-16 214 h32 l-6 26 h-20z"/><path class="coffee" d="M-14 218 h28 l-1 4 h-26z"/></g>
- <g transform="translate(560 0)"><path class="w k2" d="M-16 214 h32 l-6 26 h-20z"/><path class="coffee" d="M-14 218 h28 l-1 4 h-26z"/></g>
- <!-- 대추야자 -->
- <ellipse class="w k2" cx="680" cy="236" rx="70" ry="10"/>
- <g class="date"><ellipse cx="650" cy="224" rx="13" ry="7"/><ellipse cx="676" cy="220" rx="13" ry="7" transform="rotate(14 676 220)"/><ellipse cx="704" cy="225" rx="13" ry="7"/><ellipse cx="664" cy="212" rx="12" ry="6" transform="rotate(-20 664 212)"/><ellipse cx="692" cy="210" rx="12" ry="6"/></g>
+<p>앞의 논의가 대부분 환대를 회복해야 할 것으로 다뤘다면, 환대가 애초에 사회의 규칙으로 살아 있는 곳도 있다. 이선용이 아라비아 반도 동남단의 나라 오만(Oman)에서 10년 반을 살며 적은 기록이 그렇다.<sup class="fnref"><a href="#fn-26">26</a></sup> (책 제목 『오만과 환대』의 '오만'은 교만이 아니라 나라 이름이다. 원제가 <em>Oman and Hospitality</em>다.)</p><figure class="ill "><svg viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="오늘의 오만 마즐리스, 흰 디슈다샤를 입은 주인이 부리가 긴 달라에서 손잡이 없는 작은 잔에 커피를 따라 바닥 방석에 앉은 외국인 손님 가족에게 건네고, 대추야자 접시와 피어오르는 유향 연기, 창밖으로 사막의 산이 보이는 그림">
+<defs>
+ <filter id="dallah-paint" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="3" seed="17"/><feDisplacementMap in="SourceGraphic" scale="4"/></filter>
+ <filter id="dallah-grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="2"/><feColorMatrix values="0 0 0 0 .3  0 0 0 0 .25  0 0 0 0 .2  0 0 0 .08 0"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+ <filter id="dallah-soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
+ <linearGradient id="dallah-wall" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#D8C6A2"/><stop offset=".7" stop-color="#EEE2C8"/><stop offset="1" stop-color="#E2D2B2"/></linearGradient>
+ <linearGradient id="dallah-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8EB6D2"/><stop offset="1" stop-color="#EAD8B4"/></linearGradient>
+ <linearGradient id="dallah-brass" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8A6420"/><stop offset=".45" stop-color="#F0CC6A"/><stop offset="1" stop-color="#9A7028"/></linearGradient>
+ <linearGradient id="dallah-robe" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#D6D2C6"/><stop offset=".5" stop-color="#FBFAF4"/><stop offset="1" stop-color="#E2DED2"/></linearGradient>
+ <radialGradient id="dallah-glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFE6B0" stop-opacity=".7"/><stop offset="1" stop-color="#FFE6B0" stop-opacity="0"/></radialGradient>
+ <pattern id="dallah-rug" width="36" height="20" patternUnits="userSpaceOnUse"><path d="M0 10 L18 0 L36 10 L18 20z" fill="none" stroke="#C8763A" stroke-width="1.2" opacity=".55"/><circle cx="18" cy="10" r="2" fill="#E2A12A" opacity=".6"/></pattern>
+ <pattern id="dallah-lat" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M0 0 L10 10 M10 0 L0 10" stroke="#5A3A24" stroke-width="1.6"/></pattern>
+ <clipPath id="dallah-c"><rect x="10" y="10" width="880" height="300" rx="10"/></clipPath>
+</defs>
+<g clip-path="url(#dallah-c)">
+ <rect x="10" y="10" width="880" height="300" fill="url(#dallah-wall)"/>
+ <path d="M10 10 H890 V30 H10z" fill="#7A5434"/><path d="M10 30 H890" stroke="#5A3A24" stroke-width="3"/>
+ <!-- 창 -->
+ <path d="M640 200 V96 a60 60 0 0 1 120 0 V200z" fill="url(#dallah-sky)"/>
+ <path d="M640 160 L670 120 L690 140 L716 96 L742 132 L760 116 V200 H640z" fill="#C08A5A"/>
+ <path d="M640 174 L680 146 L706 166 L736 140 L760 156 V200 H640z" fill="#9A6440"/>
+ <path d="M716 96 L742 132 L730 134z M670 120 L690 140 L680 138z" fill="#7A4A30" opacity=".6"/>
+ <path d="M640 192 C 680 186 720 190 760 186 V200 H640z" fill="#D8B888"/>
+ <path d="M700 200 L760 200 L860 310 L640 310z" fill="#FFF0C8" opacity=".22"/>
+ <circle cx="700" cy="150" r="170" fill="url(#dallah-glow)"/>
+ <g filter="url(#dallah-paint)">
+  <path d="M630 206 V96 a70 70 0 0 1 140 0 V206 H760 V96 a60 60 0 0 0 -120 0 V206z" fill="#6A4428"/>
+  <path d="M640 96 a60 60 0 0 1 120 0 V112 H640z" fill="url(#dallah-lat)" opacity=".7"/>
+  <path d="M624 206 h152 v8 h-152z" fill="#5A3A24"/>
+  <path d="M120 70 V150 h60 V70 a30 30 0 0 0 -60 0z" fill="#CDB892" opacity=".7"/>
+  <path d="M138 150 c0 -14 24 -14 24 0z" fill="#8A6A44"/><path d="M146 136 c-2 -10 10 -10 8 0z" fill="#4E6A2C"/>
+ </g>
+ <!-- 방석과 양탄자 -->
+ <path d="M10 250 H890 V310 H10z" fill="#8E2B43"/><path d="M10 250 H890 V310 H10z" fill="url(#dallah-rug)"/>
+ <path d="M10 258 H890 M10 302 H890" stroke="#E2A12A" stroke-width="3" opacity=".7"/>
+ <g filter="url(#dallah-paint)">
+  <path d="M330 206 H620 c8 0 12 6 12 14 v30 H318 v-30 c0 -8 4 -14 12 -14z" fill="#3E5A2C"/>
+  <path d="M318 236 H632" stroke="#E2A12A" stroke-width="2" opacity=".6"/>
+  <path d="M340 206 c-4 -30 10 -46 30 -46 h60 c20 0 26 20 22 46z M470 206 c-4 -30 10 -46 30 -46 h60 c20 0 26 20 22 46z" fill="#9A3A3A"/>
+  <path d="M356 186 h80 M486 186 h80" stroke="#E2A12A" stroke-width="2" opacity=".5"/>
+ </g>
+ <!-- 유향 -->
+ <path d="M196 230 C 186 206 206 188 196 164 C 188 144 204 126 196 100" stroke="#EDE8E0" stroke-width="6" fill="none" opacity=".45" filter="url(#dallah-soft)"/>
+ <path d="M200 228 C 214 210 202 192 214 172 C 222 158 212 140 220 124" stroke="#EDE8E0" stroke-width="3" fill="none" opacity=".4" filter="url(#dallah-soft)"/>
+ <g filter="url(#dallah-paint)">
+  <path d="M182 264 l4 -22 h24 l4 22z" fill="#B8865A"/><path d="M178 242 h40 l-6 -12 h-28z" fill="#D8A86E"/>
+  <path d="M190 232 c4 -4 12 -4 16 0" stroke="#E2702A" stroke-width="3" fill="none"/>
+  <!-- 주인 -->
+  <ellipse cx="282" cy="266" rx="46" ry="6" fill="#4A2020" opacity=".35"/>
+  <path d="M252 264 C 248 220 252 168 266 140 C 274 130 290 130 298 140 C 312 168 316 220 312 264z" fill="url(#dallah-robe)"/>
+  <path d="M282 146 V196" stroke="#B8A27A" stroke-width="1.6"/>
+  <path d="M282 196 c-2 6 -2 12 0 16 c2 -4 2 -10 0 -16z" fill="#C8A060"/>
+  <path d="M296 156 C 308 152 318 144 326 136" stroke="#F4F2EA" stroke-width="12" stroke-linecap="round" fill="none"/>
+  <path d="M268 160 C 258 176 260 192 270 200" stroke="#E6E2D6" stroke-width="11" stroke-linecap="round" fill="none"/>
+  <circle cx="273" cy="202" r="4.5" fill="#A06A44"/><circle cx="326" cy="135" r="4.5" fill="#A06A44"/>
+  <g fill="#F4EEDC"><path d="M268 200 h10 l-2 7 h-6z"/><path d="M268 194 h10 l-2 7 h-6z"/></g>
+  <circle cx="281" cy="122" r="12" fill="#A06A44"/>
+  <path d="M272 126 q2 12 10 12 q8 0 10 -10 q-4 4 -10 4 q-6 0 -10 -6z" fill="#2A2018"/>
+  <path d="M268 120 c-2 -16 8 -22 14 -22 c8 0 16 6 14 22 c-6 -6 -22 -6 -28 0z" fill="#B04A3A"/>
+  <path d="M269 112 c8 -4 20 -4 26 0 M268 106 c8 -4 20 -4 28 0" stroke="#E2A12A" stroke-width="1.6" fill="none"/>
+  <path d="M294 110 c6 2 8 8 4 12" stroke="#B04A3A" stroke-width="4" fill="none"/>
+  <!-- 달라 -->
+  <g transform="translate(346 128) rotate(40)">
+   <path d="M-14 40 c-14 -4 -18 -18 -10 -28 c6 -8 6 -14 4 -22 h20 c-2 8 -2 14 4 22 c8 10 4 24 -10 28z" fill="url(#dallah-brass)"/>
+   <path d="M-8 -10 c0 -10 16 -10 16 0z" fill="#C89A40"/><path d="M0 -12 v-8" stroke="#8A6420" stroke-width="2"/><circle cy="-22" r="3" fill="#E2B85A"/>
+   <path d="M10 20 c18 -2 30 -14 38 -32 l5 3 c-6 22 -22 36 -42 38z" fill="url(#dallah-brass)"/>
+   <path d="M-12 4 c-12 0 -16 18 -6 24" stroke="#9A7028" stroke-width="3" fill="none"/>
+  </g>
+  <path d="M392 156 c3 5 6 10 8 17" stroke="#6B4423" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  <!-- 손님 가족 -->
+  <ellipse cx="420" cy="252" rx="44" ry="6" fill="#4A2020" opacity=".35"/>
+  <path d="M384 250 c-2 -14 10 -22 36 -22 c26 0 40 8 38 22z" fill="#6A6A52"/>
+  <path d="M396 236 C 394 210 400 186 412 176 C 424 172 434 182 436 202 L 440 236z" fill="#7A9AB8"/>
+  <path d="M424 196 C 414 192 408 188 404 182" stroke="#7A9AB8" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <circle cx="403" cy="181" r="4" fill="#E2B898"/>
+  <path d="M396 171 h12 l-2 8 h-8z" fill="#F4EEDC"/>
+  <circle cx="418" cy="160" r="11" fill="#E2B898"/><path d="M407 158 q2 -14 14 -12 q8 2 8 10 q-10 -6 -22 2z" fill="#8A6040"/>
+  <ellipse cx="500" cy="252" rx="38" ry="6" fill="#4A2020" opacity=".35"/>
+  <path d="M468 250 c-2 -12 8 -20 32 -20 c22 0 34 8 32 20z" fill="#5A4A6A"/>
+  <path d="M478 236 C 476 210 482 188 494 178 C 506 174 516 184 518 204 L 522 236z" fill="#5A4A6A"/>
+  <path d="M486 168 C 484 150 494 142 502 142 C 512 142 520 152 516 168 C 518 180 514 190 510 196 L 488 196 C 484 188 484 178 486 168z" fill="#4E6A2C"/>
+  <circle cx="501" cy="163" r="9.5" fill="#E8C4A4"/>
+  <path d="M500 200 C 494 206 486 210 478 212" stroke="#5A4A6A" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <ellipse cx="566" cy="252" rx="22" ry="4" fill="#4A2020" opacity=".35"/>
+  <path d="M548 250 c-2 -8 6 -14 20 -14 c14 0 20 6 18 14z" fill="#4E6A8A"/>
+  <path d="M554 240 C 552 222 556 208 566 202 C 576 202 582 212 582 226 L 584 240z" fill="#E2B640"/>
+  <circle cx="568" cy="192" r="9" fill="#E8C4A4"/><path d="M559 190 q2 -12 12 -10 q8 2 6 10 q-8 -6 -18 0z" fill="#B88A50"/>
+  <!-- 쟁반 -->
+  <ellipse cx="462" cy="282" rx="76" ry="14" fill="#6A4A1E"/><ellipse cx="462" cy="279" rx="72" ry="12" fill="url(#dallah-brass)"/>
+  <ellipse cx="434" cy="276" rx="30" ry="7" fill="#F4EEDC"/>
+  <g fill="#5A2E14"><ellipse cx="420" cy="273" rx="8" ry="4"/><ellipse cx="434" cy="271" rx="8" ry="4" transform="rotate(14 434 271)"/><ellipse cx="448" cy="274" rx="8" ry="4"/><ellipse cx="428" cy="266" rx="7" ry="3.6"/><ellipse cx="442" cy="265" rx="7" ry="3.6" transform="rotate(-10 442 265)"/></g>
+  <g fill="#7A3E1E" opacity=".6"><ellipse cx="418" cy="271" rx="3" ry="1.4"/><ellipse cx="446" cy="272" rx="3" ry="1.4"/></g>
+  <g fill="#F4EEDC"><path d="M486 270 h12 l-2 9 h-8z"/><path d="M504 272 h12 l-2 9 h-8z"/></g>
+  <path d="M520 278 c-4 -10 2 -16 12 -16 h6 c4 6 2 14 -4 16z" fill="url(#dallah-brass)"/>
+ </g>
+ <rect x="10" y="10" width="880" height="300" fill="#fff" filter="url(#dallah-grain)"/>
+</g>
+<rect x="10" y="10" width="880" height="300" rx="10" fill="none" stroke="#24271C" stroke-opacity=".15"/>
 </svg><figcaption>손님이 먼저 말하기 전까지 사흘 동안은 왜 왔는지 묻지 않는다.</figcaption></figure>
 <p>그 사회의 규칙은 한 문장으로 요약된다 — 손님이 오면 <strong>최소한 사흘 동안은 그가 먼저 말하기 전까지 왜, 어디서 왔는지 묻지 않는다</strong>.<sup class="fnref"><a href="#fn-26">26</a></sup></p>
 <p>이 규칙이 중요한 것은 필록세니아의 최소 형식을 보여주기 때문이다. 낯선 자를 사랑한다는 말은 추상적이지만, 이유를 묻지 않는다는 규칙은 구체적이다. 왜 왔느냐고 묻는 순간 손님은 자격을 심사받는 자리에 놓이고, 대답의 내용에 따라 대접의 크기가 정해진다. 사흘의 침묵은 그 심사를 유예한다. 서은철이 환대와 접대를 &quot;돌아올 것을 기대하는가&quot;로 갈랐다면, 오만의 사흘 규칙은 그 기대 자체를 <strong>계산 불가능하게 만들어 두는 제도적 장치</strong>인 셈이다.</p>
