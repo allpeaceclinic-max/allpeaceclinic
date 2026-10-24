@@ -1,4 +1,4 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>주제·북노트 위키 탐색 — youngdoctorArchive</title></head><body>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>주제·북노트 찾아보기 — youngdoctorArchive</title></head><body>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
 :root{
@@ -59,103 +59,140 @@ a:hover{color:var(--accent)}
 .chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
 .chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
 
-main{max-width:1180px;margin:0 auto;padding:36px 22px 80px}
-header.top{margin-bottom:22px}
-.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
-  padding-bottom:14px;border-bottom:1px solid var(--line)}
-a.archive-link{font-size:13px;font-weight:700;white-space:nowrap}
+:root{
+  --bg:#f1f2ee; --surface:#fafbf8; --shelf:#e4e6df;
+  --ink:#1e2620; --muted:#555c55; --meta:#858b83;
+  --line:color-mix(in srgb,#1e2620 13%,transparent); --line-soft:color-mix(in srgb,#1e2620 7%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#dfe5d3; --accent-ink:#fafbf8;
+  --font-serif:"Gowun Batang",Georgia,"AppleMyungjo",Batang,serif;
+  --cat-s:38%; --cat-l:38%;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#1a1f1b; --surface:#212722; --shelf:#262d27;
+  --ink:#eef0ea; --muted:color-mix(in srgb,#eef0ea 74%,transparent); --meta:color-mix(in srgb,#eef0ea 50%,transparent);
+  --line:color-mix(in srgb,#eef0ea 13%,transparent); --line-soft:color-mix(in srgb,#eef0ea 7%,transparent);
+  --accent:#a7b98a; --accent-deep:#bccca2; --accent-tint:color-mix(in srgb,#5f7049 30%,transparent); --accent-ink:#1a1f1b;
+  --cat-s:40%; --cat-l:68%;
+}}
+body{word-break:keep-all;overflow-wrap:break-word}
+[hidden]{display:none!important}
+main{max-width:1180px;margin:0 auto;padding:0 28px 80px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
 .brand{font-family:var(--font-display);font-weight:400;font-size:19px;color:var(--ink)}
 .brand em{font-style:normal;color:var(--accent)}
-h1{font-family:var(--font-serif);
-  font-size:clamp(30px,5vw,48px);line-height:1.25;margin:22px 0 14px;text-wrap:balance;font-weight:700}
-.lede{color:var(--muted);max-width:62ch;margin:0 0 20px;font-size:15px;line-height:1.8;text-wrap:pretty}
-.stats{display:flex;flex-wrap:wrap;gap:2px 30px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 0;font-size:13px;color:var(--meta)}
-.stats b{color:var(--ink);font-family:var(--font-display);font-weight:400;font-size:21px;margin-right:6px;font-variant-numeric:tabular-nums}
-.modes{display:inline-flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;margin:6px 0 2px;background:var(--surface)}
-.modes button{border:0;background:none;color:var(--meta);font-size:14px;font-weight:600;
-  padding:9px 20px;cursor:pointer;font-family:inherit;border-radius:999px}
-.modes button.active{background:var(--ink);color:var(--bg);font-weight:700}
-.modes button .n{font-variant-numeric:tabular-nums;font-weight:500;opacity:.7;margin-left:5px;font-size:12.5px}
-.toolbar{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 93%,transparent);
-  backdrop-filter:blur(10px);padding:12px 0 12px;margin:6px 0;border-bottom:1px solid var(--line-soft)}
+.topbar a.back{font-size:14px;color:var(--muted)}
+.topbar a.back:hover{color:var(--ink)}
+.hero{padding:40px 0 8px}
+h1{font-family:var(--font-serif);font-size:clamp(30px,4.4vw,44px);line-height:1.25;margin:0 0 12px;font-weight:700;letter-spacing:-.01em}
+.lede{color:var(--muted);max-width:38em;margin:0;font-size:16px;line-height:1.75;text-wrap:pretty}
+.lede b{color:var(--ink);font-weight:700;font-variant-numeric:tabular-nums}
+
+.controls{margin-top:28px}
+.modes{display:inline-flex;gap:4px;padding:4px;border-radius:10px;background:var(--shelf)}
+.modes button{border:0;background:none;color:var(--muted);font:inherit;font-size:15px;font-weight:600;padding:8px 18px;border-radius:7px;cursor:pointer}
+.modes button.active{background:var(--surface);color:var(--ink);font-weight:700;box-shadow:0 1px 0 var(--line)}
+.modes button .n{font-variant-numeric:tabular-nums;font-weight:400;color:var(--meta);margin-left:6px;font-size:13px}
+.catbar{display:flex;flex-wrap:wrap;gap:2px 4px;margin:16px 0 0}
+.catbar button{display:inline-flex;align-items:center;gap:7px;border:1px solid transparent;background:none;color:var(--muted);
+  font:inherit;font-size:14px;padding:5px 10px;border-radius:8px;cursor:pointer}
+.catbar button::before{content:"";width:9px;height:9px;border-radius:2px;background:var(--c,linear-gradient(135deg,var(--meta),var(--line)))}
+.catbar button:hover{background:var(--surface);color:var(--ink)}
+.catbar button.active{border-color:var(--line);background:var(--surface);color:var(--ink);font-weight:700}
+.catbar .n{color:var(--meta);font-variant-numeric:tabular-nums;font-size:12.5px;font-weight:400}
+
+.toolbar{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(10px);
+  margin-top:18px;padding:12px 0;border-bottom:2px solid var(--ink)}
 .row1{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-.row1 input[type=search]{flex:1 1 260px;min-width:0;border:1.5px solid var(--line);border-radius:999px;
-  padding:10px 18px;font-size:15px;background:var(--surface);color:var(--ink);font-family:inherit}
+.row1 input[type=search]{flex:1 1 260px;min-width:0;border:1px solid var(--line);border-radius:8px;padding:10px 14px;font-size:15px;
+  background:var(--surface);color:var(--ink);font-family:inherit}
 .row1 input[type=search]::placeholder{color:var(--meta)}
-.row1 input[type=search]:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
-.row1 select{border:1.5px solid var(--line);border-radius:999px;padding:9px 14px;font-size:13.5px;background:var(--surface);color:var(--ink);cursor:pointer;font-family:inherit}
-button.pubtoggle{border:1.5px solid var(--line);background:var(--surface);color:var(--muted);border-radius:999px;
-  padding:9px 16px;font-size:13.5px;font-weight:600;cursor:pointer;white-space:nowrap;font-family:inherit}
-button.pubtoggle:hover{border-color:var(--accent)}
-button.pubtoggle[aria-pressed=true]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:700}
-.catbar{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-.catbar button{border:1.5px solid var(--line);background:var(--surface);color:var(--muted);border-radius:999px;
-  padding:6px 14px;font-size:12.5px;font-weight:600;cursor:pointer;font-family:inherit}
-.catbar button:hover{border-color:var(--acc2)}
-.catbar button .n{color:var(--meta);font-variant-numeric:tabular-nums;margin-left:4px;font-size:11.5px}
-.catbar button.active{background:var(--acc2-deep);color:var(--bg);border-color:var(--acc2-deep);font-weight:700}
-.catbar button.active .n{color:inherit;opacity:.75}
-.result{margin:14px 2px 12px;font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr));gap:14px}
-.card{display:flex;flex-direction:column;gap:9px;background:var(--surface);border:1.5px solid transparent;
-  border-radius:var(--r-md);padding:18px 20px 15px;box-shadow:var(--shadow);min-width:0}
-.card:hover{border-color:var(--acc2)}
-.card.is-pub{border-color:color-mix(in srgb,var(--accent) 35%,transparent)}
-.card-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
-.card .date{font-size:11.5px;color:var(--meta);font-variant-numeric:tabular-nums}
-.card h3{margin:2px 0 0;font-family:var(--font-serif);font-size:16.5px;line-height:1.5;font-weight:700;overflow-wrap:anywhere}
-.card h3 a{color:var(--ink)}
-.card h3 a:hover,.card h3 a:focus-visible{color:var(--accent-deep)}
-.card .author{font-size:12px;color:var(--meta);font-weight:600;margin-top:-4px}
-.card p{margin:0;font-size:13.5px;color:var(--muted);line-height:1.75;
-  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-wrap:pretty}
-.card-foot{margin-top:auto;padding-top:10px;border-top:1px solid var(--line-soft);
-  display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px}
-.deg{color:var(--meta);font-variant-numeric:tabular-nums}
-.card-foot .links{display:flex;gap:12px}
-a.read{font-weight:700;color:var(--accent-deep)}
-a.read:hover,a.read:focus-visible{color:var(--accent)}
-.empty{grid-column:1/-1;text-align:center;color:var(--meta);padding:56px 0;font-size:15px}
-footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
-footer a{font-weight:700}
-@media (prefers-reduced-motion:no-preference){.card{transition:transform .15s ease,border-color .15s ease}.card:hover{transform:translateY(-2px)}}
+.row1 select{border:1px solid var(--line);border-radius:8px;padding:9px 12px;font-size:14px;background:var(--surface);color:var(--ink);cursor:pointer;font-family:inherit}
+button.pubtoggle{border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:8px;padding:9px 14px;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;font-family:inherit}
+button.pubtoggle[aria-pressed=true]{background:var(--accent-deep);color:var(--accent-ink);border-color:var(--accent-deep)}
+.result{margin:0;font-size:13px;color:var(--meta);font-variant-numeric:tabular-nums;white-space:nowrap}
+
+.body{display:grid;grid-template-columns:minmax(0,1fr) 36px;gap:32px;margin-top:8px}
+.thumbs{position:sticky;top:84px;align-self:start;display:flex;flex-direction:column;gap:2px;padding-top:18px}
+.thumbs button{border:0;background:var(--shelf);color:var(--muted);font-family:"Apple SD Gothic Neo","Malgun Gothic",var(--font-sans);font-weight:800;font-size:19px;
+  height:28px;border-radius:6px;cursor:pointer;padding:0}
+.thumbs button:hover,.thumbs button.on{background:var(--accent-deep);color:var(--accent-ink)}
+.thumbs button:disabled{opacity:.35;cursor:default;background:none}
+.group{padding-top:22px;scroll-margin-top:84px}
+.group-head{display:flex;align-items:baseline;gap:12px;margin:0 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.group-head h2{font-family:"Apple SD Gothic Neo","Malgun Gothic",var(--font-sans);font-weight:800;font-size:40px;line-height:1;margin:0;color:var(--accent-deep)}
+.group-head span{font-size:13px;color:var(--meta);font-variant-numeric:tabular-nums}
+.entries{list-style:none;margin:0;padding:0;columns:2;column-gap:44px}
+.flat .entries{columns:2}
+.e{break-inside:avoid;padding:13px 0 14px;border-bottom:1px solid var(--line-soft)}
+.e-t{font-family:var(--font-serif);font-size:18px;font-weight:700;line-height:1.4;color:var(--ink)}
+.e-t:hover{color:var(--accent-deep);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+.e-a{display:block;font-size:13px;color:var(--meta);margin-top:1px}
+.e-s{margin:4px 0 7px;font-size:14px;line-height:1.7;color:var(--muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-wrap:pretty}
+.e-m{display:flex;flex-wrap:wrap;align-items:center;gap:4px 14px;font-size:12.5px;color:var(--meta)}
+.e-c{display:inline-flex;align-items:center;gap:6px;color:var(--c)}
+.e-c::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--c)}
+.e-w{display:inline-flex;align-items:center;gap:6px;font-variant-numeric:tabular-nums}
+.e-w i{display:block;width:36px;height:4px;border-radius:2px;background:var(--line);overflow:hidden}
+.e-w i b{display:block;height:100%;background:var(--accent)}
+.e-p{font-weight:700;color:var(--accent-deep)}
+.e-p:hover{text-decoration:underline}
+.empty{color:var(--muted);padding:56px 0;font-size:15px}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:600}
+@media(max-width:860px){
+  .entries,.flat .entries{columns:1}
+  .body{grid-template-columns:1fr;gap:0}
+  .toolbar{position:static}
+  .thumbs{position:sticky;top:0;z-index:5;order:-1;flex-direction:row;overflow-x:auto;scrollbar-width:none;gap:3px;
+    padding:10px 0;margin:0 -16px;padding-left:16px;padding-right:16px;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(10px)}
+  .group{scroll-margin-top:60px}
+  .thumbs button{flex:none;width:34px;height:32px;border-radius:6px;margin:0}
+  .thumbs button:disabled{display:none}
+}
+@media(max-width:560px){
+  main{padding:0 16px 56px}
+  .hero{padding-top:28px}
+  .lede{font-size:15px}
+  .row1 select,.row1 button.pubtoggle{flex:1 1 auto}
+  .group-head h2{font-size:28px}
+  .e-t{font-size:17px}
+}
 </style>
 <main>
-<header class="top">
-  <div class="head-row">
-    <a class="brand" href="https://wiki.youngdoctor.kr/marktl/">youngdoctor<em>Archive</em></a>
-    <span class="eyebrow">Topic &amp; Book Index</span>
+<div class="topbar">
+  <a class="brand" href="https://wiki.youngdoctor.kr/marktl/">youngdoctor<em>Archive</em></a>
+  <a class="back" href="https://wiki.youngdoctor.kr/marktl/">아카이브 목록으로</a>
+</div>
+<section class="hero">
+  <h1>주제·북노트 찾아보기</h1>
+  <p class="lede">설교·독서·강의·사역 기록에서 길어 올린 주제 노트 <b>451</b>개와 북노트 <b>284</b>권의 색인입니다. 표제어를 누르면 노트 원문이 열리고, 그중 <b>227</b>개는 다듬어 발행한 글도 함께 있습니다. 마지막 갱신은 10월 23일입니다.</p>
+</section>
+<div class="controls">
+  <div class="modes" role="tablist">
+    <button type="button" id="tab-t" class="active" role="tab" aria-selected="true">주제 <span class="n">451</span></button>
+    <button type="button" id="tab-b" role="tab" aria-selected="false">북노트 <span class="n">284</span></button>
   </div>
-  <h1>주제·북노트 위키 탐색</h1>
-  <p class="lede">설교·독서·강의·사역 기록에서 합성된 주제 노트와 책 요약 노트의 전체 색인입니다. 카드를 누르면 노트 원문을 바로 읽을 수 있고, ✦ 표시된 항목은 편집을 거친 아카이브 발행본도 있습니다.</p>
-  <div class="stats">
-    <span><b>451</b>주제</span>
-    <span><b>284</b>북노트</span>
-    <span><b>227</b>아카이브 발행</span>
-    <span><b>2026-10-23</b>마지막 갱신</span>
-  </div>
-</header>
-<div class="modes" role="tablist">
-  <button type="button" id="tab-t" class="active" role="tab" aria-selected="true">주제 <span class="n">451</span></button>
-  <button type="button" id="tab-b" role="tab" aria-selected="false">북노트 <span class="n">284</span></button>
+  <div class="catbar" id="cats" role="group" aria-label="분야로 거르기"></div>
 </div>
 <div class="toolbar">
   <div class="row1">
-    <input id="q" type="search" placeholder="검색 — 예: 선교, 삼위일체, 뉴비긴, 환대…" aria-label="검색">
+    <input id="q" type="search" placeholder="낱말로 찾기 — 선교, 삼위일체, 뉴비긴, 환대" aria-label="검색">
     <select id="sort" aria-label="정렬">
       <option value="name">가나다순</option>
       <option value="links">연결 많은 순</option>
       <option value="updated">최근 갱신순</option>
     </select>
-    <button class="pubtoggle" id="pubonly" aria-pressed="false">발행본 있는 항목만</button>
+    <button class="pubtoggle" id="pubonly" aria-pressed="false">발행본 있는 것만</button>
+    <p class="result" id="result" aria-live="polite"></p>
   </div>
-  <div class="catbar" id="cats"></div>
 </div>
-<div class="result" id="result"></div>
-<div class="grid" id="grid"></div>
+<div class="body">
+  <div id="list"></div>
+  <nav class="thumbs" id="thumbs" aria-label="첫소리로 건너뛰기"></nav>
+</div>
 <footer>
-  <span>이 색인은 Obsidian LLM 위키에서 자동 생성되었습니다.</span>
-  <a href="https://wiki.youngdoctor.kr/marktl/">youngdoctorArchive 전체 보기 →</a>
+  <span>Obsidian 위키에서 매일 다시 만듭니다.</span>
+  <a href="https://wiki.youngdoctor.kr/marktl/">youngdoctorArchive 목록 보기</a>
 </footer>
 </main>
 <script>
@@ -169,6 +206,18 @@ const state={mode:'t',q:'',cat:'',pub:false,sort:'name'};
 const norm=s=>(s||'').normalize('NFC').toLowerCase();
 const esc=t=>(t||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 const noteUrl=d=>BASE+(state.mode==='t'?'t/':'b/')+encodeURIComponent(d.n)+'/';
+const catColor=c=>'hsl('+(HUE[c]??220)+' var(--cat-s) var(--cat-l))';
+const CHO='ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ';
+const MERGE={'ㄲ':'ㄱ','ㄸ':'ㄷ','ㅃ':'ㅂ','ㅆ':'ㅅ','ㅉ':'ㅈ'};
+const GROUPS='ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎ'.split('').concat(['A–Z','기타']);
+function initial(s){
+  const ch=(s||'').normalize('NFC').replace(/^[\s"'“‘「『(\[]+/,'').charAt(0);
+  const code=ch.charCodeAt(0);
+  if(code>=0xAC00&&code<=0xD7A3){const c=CHO[Math.floor((code-0xAC00)/588)];return MERGE[c]||c;}
+  if(/[ㄱ-ㅎ]/.test(ch))return MERGE[ch]||ch;
+  if(/[a-z]/i.test(ch))return 'A–Z';
+  return '기타';
+}
 const catbar=$('cats');
 function buildCats(){
   const rows=DATA[state.mode];
@@ -179,9 +228,10 @@ function buildCats(){
   all.onclick=()=>{state.cat='';render()};
   catbar.appendChild(all);
   CATS[state.mode].forEach(c=>{
+    if(!counts[c])return;
     const b=document.createElement('button');b.type='button';
-    b.innerHTML=esc(c)+' <span class="n">'+(counts[c]||0)+'</span>';
-    b.dataset.cat=c;
+    b.innerHTML=esc(c)+' <span class="n">'+counts[c]+'</span>';
+    b.dataset.cat=c;b.style.setProperty('--c',catColor(c));
     b.onclick=()=>{state.cat=(state.cat===c?'':c);render()};
     catbar.appendChild(b);
   });
@@ -189,10 +239,7 @@ function buildCats(){
 function setMode(m){
   if(state.mode===m)return;
   state.mode=m;state.cat='';
-  $('tab-t').classList.toggle('active',m==='t');
-  $('tab-b').classList.toggle('active',m==='b');
-  $('tab-t').setAttribute('aria-selected',m==='t');
-  $('tab-b').setAttribute('aria-selected',m==='b');
+  ['t','b'].forEach(k=>{const t=$('tab-'+k);t.classList.toggle('active',m===k);t.setAttribute('aria-selected',m===k);});
   buildCats();render();
 }
 $('tab-t').onclick=()=>setMode('t');
@@ -200,27 +247,45 @@ $('tab-b').onclick=()=>setMode('b');
 $('q').addEventListener('input',e=>{state.q=norm(e.target.value);render()});
 $('sort').addEventListener('change',e=>{state.sort=e.target.value;render()});
 $('pubonly').addEventListener('click',e=>{state.pub=!state.pub;e.currentTarget.setAttribute('aria-pressed',state.pub);render()});
+function entry(d,maxL){
+  const nu=noteUrl(d);
+  const w=maxL?Math.round(Math.sqrt(d.l/maxL)*100):0;
+  const date=state.sort==='updated'&&d.u?'<span>'+esc(d.u)+' 갱신</span>':'';
+  return '<li class="e"><a class="e-t" href="'+nu+'">'+esc(d.t)+'</a>'+
+    (d.a?'<span class="e-a">'+esc(d.a)+'</span>':'')+
+    '<p class="e-s">'+esc(d.s)+'</p><div class="e-m">'+
+    '<span class="e-c" style="--c:'+catColor(d.c)+'">'+esc(d.c)+'</span>'+
+    '<span class="e-w" title="이 노트와 이어진 노트 수"><i><b style="width:'+w+'%"></b></i>연결 '+d.l+'</span>'+date+
+    (d.p?'<a class="e-p" href="'+d.p+'">발행본 읽기</a>':'')+'</div></li>';
+}
 function render(){
   catbar.querySelectorAll('button').forEach(b=>b.classList.toggle('active',(b.dataset.cat||'')===state.cat));
-  let rows=DATA[state.mode].filter(d=>
-    (!state.cat||d.c===state.cat)&&
-    (!state.pub||d.p)&&
+  const all=DATA[state.mode];
+  const maxL=Math.max(1,...all.map(d=>d.l||0));
+  let rows=all.filter(d=>
+    (!state.cat||d.c===state.cat)&&(!state.pub||d.p)&&
     (!state.q||norm(d.n+' '+d.t+' '+(d.a||'')+' '+d.s+' '+d.c).includes(state.q)));
-  if(state.sort==='name')rows.sort((a,b)=>a.n.localeCompare(b.n,'ko'));
+  if(state.sort==='name')rows.sort((a,b)=>a.t.localeCompare(b.t,'ko'));
   else if(state.sort==='links')rows.sort((a,b)=>b.l-a.l);
   else rows.sort((a,b)=>(b.u||'').localeCompare(a.u||''));
-  $('result').textContent=rows.length+' / '+DATA[state.mode].length+'개 '+LABEL[state.mode]+
-    (state.cat?' · '+state.cat:'')+(state.pub?' · 발행본 있음':'');
-  $('grid').innerHTML=rows.length?rows.map(d=>{
-    const nu=noteUrl(d);
-    const pubLink=d.p?'<a class="read" href="'+d.p+'">✦ 발행본</a>':'';
-    const author=d.a?'<div class="author">'+esc(d.a)+'</div>':'';
-    return '<article class="card'+(d.p?' is-pub':'')+'"><div class="card-top"><span class="chip '+(state.mode==='t'?'cat-t':'cat-b')+'">'+esc(d.c)+'</span>'+
-      '<span class="date">'+esc(d.u||'')+'</span></div>'+
-      '<h3><a href="'+nu+'">'+esc(d.t)+'</a></h3>'+author+'<p>'+esc(d.s)+'</p>'+
-      '<div class="card-foot"><span class="deg">연결 '+d.l+'</span>'+
-      '<span class="links">'+pubLink+'<a class="read" href="'+nu+'">노트 읽기 →</a></span></div></article>';
-  }).join(''):'<div class="empty">조건에 맞는 항목이 없습니다. 검색어나 필터를 조정해 보세요.</div>';
+  $('result').textContent=rows.length===all.length?all.length+'개 '+LABEL[state.mode]:rows.length+'개 찾음';
+  const list=$('list'),th=$('thumbs');
+  if(!rows.length){list.innerHTML='<p class="empty">조건에 맞는 '+LABEL[state.mode]+'가 없습니다. 검색어를 줄이거나 분야·발행본 선택을 풀어 보세요.</p>';th.hidden=true;return;}
+  if(state.sort!=='name'){
+    list.className='flat';th.hidden=true;
+    list.innerHTML='<ul class="entries">'+rows.map(d=>entry(d,maxL)).join('')+'</ul>';return;
+  }
+  list.className='';th.hidden=false;
+  const by={};rows.forEach(d=>{const g=initial(d.t);(by[g]=by[g]||[]).push(d);});
+  list.innerHTML=GROUPS.filter(g=>by[g]).map((g,i)=>'<section class="group" id="g-'+i+'" data-g="'+g+'"><div class="group-head"><h2>'+g+'</h2><span>'+by[g].length+'</span></div>'+
+    '<ul class="entries">'+by[g].map(d=>entry(d,maxL)).join('')+'</ul></section>').join('');
+  th.innerHTML=GROUPS.map(g=>'<button type="button" data-g="'+g+'"'+(by[g]?'':' disabled')+' aria-label="'+g+'로 건너뛰기">'+(g==='A–Z'?'A':g==='기타'?'#':g)+'</button>').join('');
+  th.querySelectorAll('button:not(:disabled)').forEach(b=>b.onclick=()=>{
+    const s=list.querySelector('.group[data-g="'+b.dataset.g+'"]'); if(s)s.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});});
 }
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const g=e.target.dataset.g;
+  $('thumbs').querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.g===g));}});},{rootMargin:'-90px 0px -70% 0px'});
+const watch=()=>document.querySelectorAll('.group').forEach(s=>io.observe(s));
+const _render=render; render=function(){io.disconnect();_render();watch();};
 buildCats();render();
 </script></body></html>
