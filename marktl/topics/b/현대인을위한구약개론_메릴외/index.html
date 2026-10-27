@@ -1,0 +1,374 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>현대인을 위한 구약개론 — 유진 H. 메릴 · 마크 F. 루커 · 마이클 A. 그리산티 (CLC, 유창걸 옮김) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">신학·사회</span><span class="author">메릴외</span><span class="date">2026-10-27</span></div>
+  <h1 class="note-title">현대인을 위한 구약개론 — 유진 H. 메릴 · 마크 F. 루커 · 마이클 A. 그리산티 (CLC, 유창걸 옮김)</h1>
+  
+</header>
+<article class="note">
+<blockquote>
+<p>원서 <em>The World and the Word: An Introduction to the Old Testament</em>. 구약의 세상(배경)과 말씀(각 권)을 함께 다루는 복음주의 개론서. 현재 제39장 「시편」(그리산티 집필)만 정리되어 있다.
+📷 표시 전사 기반 독서 노트.</p>
+</blockquote>
+<hr />
+<h2>시편 — 주제별 상세 정리</h2>
+<h3>1. 시편은 무엇을 보여 주는 책인가 (p.798)</h3>
+<p>그리산티는 시편을 이스라엘이 <strong>하나님을 경험한 역사</strong>와 <strong>인간 본성</strong>을 함께 비추는 책으로 연다. 라솔·후바드·부쉬의 비유가 이 장의 문을 연다. 시편은 성경이 없던 사람들에게 "중세 고성의 창문이나 조각물처럼 성경적 신앙을 생생하게 보여 준다"(p.798).</p>
+<p>제목의 내력도 같은 쪽에서 정리한다. 영어 제목 Psalms는 70인역의 <strong>프살모스</strong>(하프 반주에 맞춘 노래)에서 왔고, 이 말은 히브리어 <strong>미즈모르</strong>(악기 반주에 맞춘 노래)를 옮긴 것이다. 히브리어 성경은 이 책을 <strong>테힐림</strong>("찬양")이라 부른다. 단수형 테힐라는 145편에 한 번만 쓰이지만 복수형은 이스라엘의 찬양 전체를 가리킨다(p.798~799). 탄식이 가득한 책에 붙은 이름이 「찬양들」이라는 점이 이 장 결론과 맞물린다(§8).</p>
+<h3>2. 다섯 권의 구조와 영광송 (p.799~800)</h3>
+<table>
+<thead>
+<tr>
+<th>권</th>
+<th>범위</th>
+<th>끝맺는 영광송</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1권</td>
+<td>1–41편</td>
+<td>41:13</td>
+</tr>
+<tr>
+<td>2권</td>
+<td>42–72편</td>
+<td>72:18–19</td>
+</tr>
+<tr>
+<td>3권</td>
+<td>73–89편</td>
+<td>89:52</td>
+</tr>
+<tr>
+<td>4권</td>
+<td>90–106편</td>
+<td>106:48</td>
+</tr>
+<tr>
+<td>5권</td>
+<td>107–150편</td>
+<td>150편 전체 = 5권과 시편 전체의 영광송</td>
+</tr>
+</tbody>
+</table>
+<p>"첫 번째 세 영광송은 해당되는 시(각 권의 마지막 시)의 메시지와 무관한 것으로 보인다"(p.799). 영광송이 각 권의 마지막 시에서 자라난 것이 아니라 편집자가 붙인 경계라는 뜻이다. 5중 배열은 "현존하는 모든 히브리어 사본에서 확인할 수 있다"(p.799). 다만 쿰란 두루마리에서는 4·5권의 순서가 달라, 그리스도 시대까지 순서가 최종 확정되지 않았다고 본다.</p>
+<p>장 구분은 히브리어 성경(150편, 개신교 성경이 따름)과 70인역이 다르다. 9–10편과 114–115편은 70인역에서 한 편으로 묶이고, 116편과 147편은 두 편으로 나뉜다(p.799~800). 히브리어 본문은 표제를 첫 절로 세기 때문에 절 번호가 대개 한 절씩 많다.</p>
+<h3>3. 네 단계 편찬 과정 (p.800~801)</h3>
+<p>구성을 볼 때는 "개별 시의 저자와 시편 전체의 구성이라는 두 가지 사항을 고려해야 한다"(p.800). 편찬은 적어도 네 단계로 나뉘며, 저자는 이 재구성이 "어느 정도 추측에 의존할 수 밖에 없다"고 단서를 단다(p.801).</p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>내용</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>개별 시의 구성 — 일차 용례는 성전 예배</td>
+<td>일종의 기도문</td>
+</tr>
+<tr>
+<td>2</td>
+<td>예배용 소모음 수집</td>
+<td>72:20 "다윗의 기도가 끝나니라", 대하 29:30 다윗의 시·아삽의 시</td>
+</tr>
+<tr>
+<td>3</td>
+<td>작은 묶음들을 다섯 권으로 형성</td>
+<td>고라 자손의 시, 아삽의 시, 성전에 올라가는 노래, 호두 시 등</td>
+</tr>
+<tr>
+<td>4</td>
+<td>최종 편집</td>
+<td>1–2편 서론, 145–150편 피날레, 41·72·89·106편이 권을 잇는 역할</td>
+</tr>
+</tbody>
+</table>
+<p>결론은 두 가지다. 시편 전체는 포로기 이후 어느 시점에야 완성되었고, 편집자는 개별 시의 저자들과 구별된다(p.801).</p>
+<h3>4. 제목과 저자 — 라메드의 모호성 (p.802)</h3>
+<p>150편 가운데 <strong>34편을 제외한 나머지 시에는 제목이 붙어 있다</strong>(p.802). 그중 100개가 저자를 가리킨다.</p>
+<table>
+<thead>
+<tr>
+<th>저자</th>
+<th>편수</th>
+<th>시편</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>모세</td>
+<td>1</td>
+<td>90</td>
+</tr>
+<tr>
+<td>다윗</td>
+<td>73</td>
+<td>대부분 1·2권</td>
+</tr>
+<tr>
+<td>솔로몬</td>
+<td>2</td>
+<td>72, 127</td>
+</tr>
+<tr>
+<td>아삽</td>
+<td>12</td>
+<td>50, 73–83</td>
+</tr>
+<tr>
+<td>고라 자손</td>
+<td>10</td>
+<td>42, 44–49, 84–85, 87</td>
+</tr>
+<tr>
+<td>에스라인 헤만</td>
+<td>1</td>
+<td>88</td>
+</tr>
+<tr>
+<td>에스라인 에단</td>
+<td>1</td>
+<td>89</td>
+</tr>
+</tbody>
+</table>
+<p>전치사 <strong>라메드</strong>는 "~의", "~에게", "~를 위해"로 읽힐 수 있어 저자 표시인지 헌정인지 문집 표시인지 모호하다. 그래도 저자는 이 모호함이 저작 표시를 배제하지는 않는다고 본다. "신약은 많은 시편이 다윗의 저작임을 확인한다"(p.802).</p>
+<h3>5. 정경성과 장르 (p.803~805)</h3>
+<p>"시편은 히브리어 성경의 3대 분류 가운데 성문서에 해당하며 구약의 시나 지혜 문학의 일부에 해당한다. 시편은 구약 정경으로서의 확실한 지위를 점한다"(p.803). 쿰란 11QPsᵃ의 배열 차이를 두고 정경이 아직 열려 있었다는 주장도 있지만, 저자는 증거가 최종 판단에는 부족하다고 본다.</p>
+<p>장르는 형식에 따른 세 유형과 내용에 따른 네 유형으로 나눈다. "대부분의 시는 찬양, 애가 및 감사의 세 가지 유형으로 구분할 수 있다"(p.804).</p>
+<table>
+<thead>
+<tr>
+<th>유형</th>
+<th>초점</th>
+<th>대표 시편</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>찬양</td>
+<td>하나님이 누구시며 무엇을 하시는가 — 절대 주권</td>
+<td>8, 29, 33, 146–150</td>
+</tr>
+<tr>
+<td>애가</td>
+<td>위기에서 구원 간구. 부르짖음 → 고충 → 신뢰 고백 → 서원·찬양</td>
+<td>22, 74, 88, 130</td>
+</tr>
+<tr>
+<td>감사</td>
+<td>고난을 <strong>과거</strong>의 실재로 말하며 개입하신 하나님께 감사</td>
+<td>104, 107, 116, 136</td>
+</tr>
+</tbody>
+</table>
+<p>"다른 네 가지 유형은 형식이나 구조에 따른 분류가 아니라 내용에 의한 분류이다"(p.805). 제왕시가 그 첫째다. 짐멀리는 "이스라엘 왕은 여호와의 통치를 지상에서 가시적으로 보여 주는 존재"라고 말한다(p.805). 신약은 제왕시를 적어도 15회 인용하고, 대부분의 제왕시는 실제 왕들이 이상을 채우지 못한 데서 그리스도를 바라보게 하는 간접적 메시아시다(p.808).</p>
+<h3>6. 핵심 인사이트: 저주시는 복수가 아니라 하나님의 의를 구한다 (p.808~812)</h3>
+<p>이 장에서 표시가 가장 많은 대목이다. 저주란 "맹세나 탄원을 통해 다른 사람이나 자신에 대해 나쁜 일이나 재앙 또는 신적 보복을 촉구하는 행위"이며, 시인의 대적에 대한 신적 심판을 촉구한다. 그러나 이런 언어는 열여덟 편에 나타나는데도 "저주만 나타나는 시는 없다"(p.808). 그래서 이들을 「저주시」라 부르는 것부터 "개별 시 전체에 대한 정확한 묘사가 아니기 때문에 바람직하지 않다"(p.809).</p>
+<p>해석의 긴장은 마 5:44 "원수를 사랑하라"와의 관계에 있다. 저자는 신약에도 저주 언어가 있고(행 13:10–11, 갈 1:8–9 등) 행 1:20이 시 69:25·109:8을 직접 인용한다는 점을 함께 짚는다(p.809). 그리고 다섯 가지 고려 사항을 제시한다(p.811~812).</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>고려 사항</th>
+<th>핵심 문장</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>하나님의 의(신원)</td>
+<td>"문제가 되는 것은 복수가 아니라 하나님의 의(신원하심)" — 시인은 "자신의 안위보다 하나님의 명성에 더 마음이 가 있다"</td>
+</tr>
+<tr>
+<td>2</td>
+<td>하나님의 왕권</td>
+<td>"하나님은 절대적 왕이시며 그의 요구를 거부하는 것은 명백한 대적 행위이다"</td>
+</tr>
+<tr>
+<td>3</td>
+<td>언약적 근거</td>
+<td>베리트는 드물어도 택하다·알다·율법·법도 같은 언약 용어가 자주 나온다. 109편은 모세 언약의 복과 저주를 상기시킨다</td>
+</tr>
+<tr>
+<td>4</td>
+<td>대적 = 하나님의 대적</td>
+<td>저주의 언어는 "개인적 상처에서 나온 것이 아니라 하나님의 권위를 거부한 행위에 초점을 맞춘다"</td>
+</tr>
+<tr>
+<td>5</td>
+<td>구약 전체 메시지</td>
+<td>저주는 "언약적 충성의 중요한 부분인 저주라는 관점에서 보아야 한다"</td>
+</tr>
+</tbody>
+</table>
+<p>오늘의 신자가 저주의 기도를 할 수 있는가(p.812)에 대한 저자의 답은 조건부 긍정이다. 신자는 "시편 기자처럼 열정적으로 세상에 대한 하나님의 성품을 드러내어야" 하고, "하나님이 악인을 처벌하심으로 그의 의를 드러내시기를 바라는 것은 전적으로 옳은 생각이다." 레이니의 요약대로 시편의 저주는 의를 세우고, 하나님의 주권을 드러내고, 악인이 하나님을 찾게 하고, 의인에게 찬양할 기회를 준다. 단 그 저주는 언약 밖에서 하나님께 "주먹을 흔드는" 자들을 향했다는 점을 기억해야 한다(p.812). 같은 결론이 <a class="wl" href="../../t/%ED%83%84%EC%9B%90%EC%8B%9C/">탄원시</a>의 「분노를 하나님께 위탁 — 사적 복수의 포기」 항목과 만난다.</p>
+<h3>7. 시편 신학의 성격 — 교리문답이 아닌 관계의 확신 (p.813)</h3>
+<p>"시편은 '교리문답'이 아니다. 시편은 이론적이고 '조직 신학적인' 진술이 아니라 하나님에 대한 지식으로부터 나온, 관계에 바탕을 둔 확신을 제시한다"(p.813). 구약의 대부분이 메신저를 통한 하나님의 직접 계시라면, 시편은 인간의 생각을 매개로 하나님과의 수직 관계와 인간 사이의 수평 관계를 함께 다룬다. 그래서 시편에서 체계적인 신학 진술을 찾을 수는 없다. 대신 다음 세 축으로 종합한다.</p>
+<table>
+<thead>
+<tr>
+<th>축</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>전능하신 왕(종주)</td>
+<td>속성: 주권·거룩·불변·무소부재·인자(헤세드)·의와 공의. 사역: <strong>창조주 · 역사의 주 · 구원자 · 심판자</strong> (p.814)</td>
+</tr>
+<tr>
+<td>인간(봉신)</td>
+<td>순종하는 백성(가난한 자·의인·경건한 자·거룩한 자, 완전하지 않으나 돌아오는 자) ↔ 반역자(대적) (p.815)</td>
+</tr>
+<tr>
+<td>양자의 관계(통치)</td>
+<td>복·소망·믿음·구원·찬양이 "모두 하나님이 그들과 세우신 언약과 관련이 있다" (p.817)</td>
+</tr>
+</tbody>
+</table>
+<p>반역자는 박해자·거짓 증인·무례한 자·교만한 자·피 흘리기를 즐기는 자, 생명을 찾는 자·조롱하는 자·모함하는 자·선을 악으로 갚는 자로 불린다(p.815). 이 목록에 공들여 밑줄을 그은 것은 §6 저주시 논의와 이어 읽은 흔적으로 보인다. 저주시의 대적은 곧 이 「하나님의 대적」 목록이다.</p>
+<h3>8. 핵심 인사이트: 애가는 인간 쪽에서 올라온 응답이다 (p.818~819)</h3>
+<p>"시편은 하나님의 요구가 아니라 인간의 현실 경험으로부터 우러나온 하나님의 통치에 대한 인간의 반응, 즉 애가를 제시한다"(p.818). 율법이 위에서 내려온 말이라면 애가는 아래에서 올라간 말이다. 그런데 이 애가도 무익함의 전형이 아니다. 하나님이 구원하실 것이라는 확신이 있기에 선포된다.</p>
+<p>시편의 시선은 미래로도 열린다. "순종적인 백성에게 하나님의 약속의 성취는 그들의 미래적 삶에 대한 명확한 함축을 가지고 있다"(p.818). 스올에서의 구원을 구하는 기도(시 16:10)는 부활의 간구라기보다 이른 죽음에서의 구원을 구하는 호소이고, 온전한 부활 개념은 아직 나타나지 않는다(p.818). 이 대목은 어제(10-26) 묵상한 <span class="wl-dead" title="위키 내부 링크">시16</span>의 행 2:25–31 부활 인용과 나란히 놓고 읽을 만하다. 그래서 시편은 하나님이 자녀의 삶에 역사하시는 모습을 "어렴풋이" 보여 주고, "그의 백성은 순종하는 자이든 반역자이든 그의 통치를 받아야 한다"(p.818).</p>
+<p>결론부(p.819)는 이 책의 고유성을 계시의 방향에서 찾는다. 대부분의 시는 관습적인 신적 계시와 달리 "기자의 찬양, 감사, 애가 및 신앙에 대해 묘사한다." 하나님의 백성은 통치 앞에서 "감사와 복종으로부터 교만과 반역에 이르기까지" 다양하게 반응하고, 시편은 그 반응 전체를 정경 안에 품었다.</p>
+<hr />
+<h2>교차 연결</h2>
+<ul>
+<li><a class="wl" href="../../t/%ED%83%84%EC%9B%90%EC%8B%9C/">탄원시</a> — 애가의 구조(부르짖음 → 고충 → 신뢰 → 찬양)와 저주시의 「하나님께 위탁」이 이 장 §5·§6과 같은 결론이다.</li>
+<li><a class="wl" href="../../t/%EA%B0%90%EC%A0%95/">감정</a> — 「시편 = 감정의 학교」. 그리산티의 「인간 쪽에서 올라온 응답」이 그 신학적 근거가 된다.</li>
+<li><span class="wl-dead" title="위키 내부 링크">_94회_CMF학생수련회</span> — 시편 다섯 권 강해. 72편 영광송(2권)과 「여호와가 왕이시다」(4권)가 §2·§7과 겹친다.</li>
+<li><a class="wl" href="../../b/%EA%B5%AC%EC%95%BD%EC%84%B1%EC%84%9C%EA%B0%9C%EB%A1%A0_%EA%B0%95%EC%82%AC%EB%AC%B8%EC%99%B8/">구약성서개론_강사문외</a> — 같은 개론서 장르의 한국 저자판. 비교해서 읽을 수 있다.</li>
+</ul>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<ul>
+<li><strong>설교·강의</strong>: 저주시를 「복수의 허가」로도 「신약에서 폐기된 언어」로도 읽지 않는 다섯 기준(§6 표)은 청년·의료인 소그룹에서 시 109편이나 137편을 다룰 때 그대로 쓸 수 있다.</li>
+<li><strong>의료 현장</strong>: 부당함을 당한 환자·동료가 쏟는 분노를 「하나님의 의를 구하는 언어」로 받아 줄 수 있는가. 애가가 "인간의 현실 경험으로부터 우러나온" 응답이라면, 진료실의 탄식도 신앙의 언어로 정당하다.</li>
+<li><strong>미해결</strong>: ① 저자는 저주가 언약 밖 대적을 향했다고 말한다. 그렇다면 같은 공동체 안의 가해자를 향한 탄식은 어떻게 기도해야 하는가. ② 영광송이 각 권의 마지막 시와 무관하다면, 다섯 권 편집이 의도한 흐름(시편의 모양 읽기, 94회 강해의 관점)과 이 개론서의 신중론은 어디서 갈리는가. ③ 촬영하지 않은 p.806~807(제왕시·등극시·메시아시 세부)과 p.816을 보충하면 §5를 완성할 수 있다.</li>
+</ul>
+<hr />
+<blockquote>
+<p>📖 전사 원문(줄이지 않은 표시 구절 전체): <span class="wl-dead" title="위키 내부 링크">현대인을위한구약개론_메릴외_전사</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#discipline/구약학</span><span>#domain/신학</span><span>#topic/시편</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
