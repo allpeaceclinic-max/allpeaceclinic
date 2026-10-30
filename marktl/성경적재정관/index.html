@@ -1,427 +1,9 @@
+<!DOCTYPE html>
 <html lang="ko">
 <head>
-
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>성경적 재정관 — 하나님 나라의 눈으로 돈을 보다</title>
-
-
-
-
-
-
-
-<style>
-  :root {
-    --bg: #FAFAF7;
-    --surface: #FFFFFF;
-    --text: #1A1A1A;
-    --text-secondary: #4A4A4A;
-    --accent: #8B6914;
-    --accent-light: #C4A035;
-    --accent-bg: #F5F0E0;
-    --border: #E0DBD0;
-    --border-light: #EDE8DC;
-    --pullquote: #6B4F10;
-    --card-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
-    --card-shadow-hover: 0 2px 8px rgba(0,0,0,0.08), 0 8px 24px rgba(0,0,0,0.06);
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html { font-size: 17px; scroll-behavior: smooth; }
-
-  body {
-    font-family: 'Noto Serif KR', 'Nanum Myeongjo', Georgia, 'Times New Roman', serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.85;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  /* ── Hero ── */
-  .hero {
-    background: linear-gradient(165deg, #2C2410 0%, #4A3A1E 40%, #6B5228 100%);
-    color: #F5F0E0;
-    padding: 5rem 1.5rem 4.5rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      rgba(255,255,255,0.012) 2px,
-      rgba(255,255,255,0.012) 4px
-    );
-    pointer-events: none;
-  }
-  .hero-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 1; }
-  .hero-label {
-    display: inline-block;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--accent-light);
-    border: 1px solid rgba(196,160,53,0.4);
-    padding: 0.3em 1em;
-    border-radius: 2px;
-    margin-bottom: 2rem;
-  }
-  .hero h1 {
-    font-size: clamp(1.8rem, 5vw, 2.8rem);
-    font-weight: 700;
-    line-height: 1.3;
-    margin-bottom: 1.2rem;
-    letter-spacing: -0.02em;
-  }
-  .hero h1 em {
-    font-style: normal;
-    color: var(--accent-light);
-  }
-  .hero-subtitle {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: rgba(245,240,224,0.75);
-    max-width: 560px;
-    margin: 0 auto 2rem;
-  }
-  .hero-meta {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 0.75rem;
-    color: rgba(245,240,224,0.45);
-    letter-spacing: 0.05em;
-  }
-
-  /* ── Abstract ── */
-  .abstract-section {
-    max-width: 780px;
-    margin: -2rem auto 0;
-    padding: 0 1.5rem;
-    position: relative;
-    z-index: 2;
-  }
-  .abstract-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 2.2rem 2.5rem;
-    box-shadow: var(--card-shadow);
-  }
-  .abstract-card h2 {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1rem;
-  }
-  .abstract-card p {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    line-height: 1.85;
-  }
-
-  /* ── Key Findings ── */
-  .findings {
-    max-width: 780px;
-    margin: 3rem auto;
-    padding: 0 1.5rem;
-  }
-  .findings-title {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1.2rem;
-    text-align: center;
-  }
-  .findings-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1rem;
-  }
-  .finding-card {
-    background: var(--surface);
-    border: 1px solid var(--border-light);
-    border-radius: 6px;
-    padding: 1.4rem 1.5rem;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
-  }
-  .finding-num {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 0.65rem;
-    font-weight: 700;
-    color: var(--accent);
-    letter-spacing: 0.1em;
-    margin-bottom: 0.5rem;
-  }
-  .finding-card h3 {
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 0.4rem;
-    line-height: 1.4;
-  }
-  .finding-card p {
-    font-size: 0.82rem;
-    color: var(--text-secondary);
-    line-height: 1.65;
-  }
-
-  /* ── Article body ── */
-  .article-body {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem 4rem;
-  }
-
-  .article-body h2 {
-    font-size: 1.55rem;
-    font-weight: 700;
-    margin: 3.5rem 0 0.5rem;
-    padding-top: 2.5rem;
-    border-top: 1px solid var(--border);
-    line-height: 1.35;
-    letter-spacing: -0.01em;
-  }
-  .article-body h2:first-of-type { border-top: none; padding-top: 0; margin-top: 2rem; }
-
-  .article-body h3 {
-    font-size: 1.15rem;
-    font-weight: 700;
-    margin: 2.2rem 0 0.6rem;
-    color: var(--text);
-    line-height: 1.4;
-  }
-  .article-body h4 {
-    font-size: 1rem;
-    font-weight: 700;
-    margin: 1.8rem 0 0.5rem;
-    color: var(--text-secondary);
-  }
-
-  .article-body p {
-    margin-bottom: 1.2rem;
-    font-size: 1rem;
-    line-height: 1.9;
-  }
-
-  .article-body strong { font-weight: 700; color: var(--text); }
-
-  /* ── Pull quote ── */
-  .pullquote {
-    margin: 2.5rem -1rem;
-    padding: 1.8rem 2rem 1.8rem 2.2rem;
-    border-left: 3px solid var(--accent);
-    background: var(--accent-bg);
-    border-radius: 0 6px 6px 0;
-    font-size: 1.08rem;
-    line-height: 1.75;
-    color: var(--pullquote);
-    font-style: italic;
-  }
-  .pullquote cite {
-    display: block;
-    font-style: normal;
-    font-size: 0.8rem;
-    color: var(--accent);
-    margin-top: 0.7rem;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-weight: 600;
-  }
-
-  /* ── Inline blockquote ── */
-  .article-body blockquote {
-    margin: 1.5rem 0;
-    padding: 1rem 1.5rem;
-    border-left: 2px solid var(--border);
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    background: rgba(0,0,0,0.015);
-    border-radius: 0 4px 4px 0;
-  }
-
-  /* ── Tables ── */
-  .table-wrap {
-    margin: 1.8rem 0;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.88rem;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  }
-  thead { background: #F5F2EB; }
-  th {
-    font-weight: 700;
-    text-align: left;
-    padding: 0.7rem 1rem;
-    border-bottom: 2px solid var(--border);
-    color: var(--text);
-    font-size: 0.78rem;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
-  td {
-    padding: 0.65rem 1rem;
-    border-bottom: 1px solid var(--border-light);
-    vertical-align: top;
-    line-height: 1.55;
-  }
-  tr:last-child td { border-bottom: none; }
-  tbody tr:nth-child(even) { background: rgba(0,0,0,0.015); }
-  .highlight-row { background: var(--accent-bg) !important; font-weight: 600; }
-
-  /* ── Numbered list card ── */
-  .guideline-list {
-    list-style: none;
-    margin: 1.5rem 0;
-    padding: 0;
-    counter-reset: guideline;
-  }
-  .guideline-list li {
-    counter-increment: guideline;
-    padding: 0.9rem 1.2rem 0.9rem 3.2rem;
-    margin-bottom: 0.5rem;
-    background: var(--surface);
-    border: 1px solid var(--border-light);
-    border-radius: 5px;
-    position: relative;
-    font-size: 0.92rem;
-    line-height: 1.6;
-  }
-  .guideline-list li::before {
-    content: counter(guideline);
-    position: absolute;
-    left: 1rem;
-    top: 0.85rem;
-    width: 1.5rem;
-    height: 1.5rem;
-    background: var(--accent);
-    color: #fff;
-    border-radius: 50%;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 0.72rem;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-  }
-
-  /* ── Divider ── */
-  .section-divider {
-    text-align: center;
-    margin: 3rem 0;
-    color: var(--border);
-    font-size: 1.2rem;
-    letter-spacing: 0.5em;
-  }
-
-  /* ── Takeaway box ── */
-  .takeaway-box {
-    background: linear-gradient(135deg, #2C2410 0%, #4A3A1E 100%);
-    color: #F5F0E0;
-    border-radius: 8px;
-    padding: 2rem 2.2rem;
-    margin: 2.5rem 0;
-  }
-  .takeaway-box h3 {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--accent-light);
-    margin: 0 0 1rem 0;
-  }
-  .takeaway-box p {
-    font-size: 0.95rem;
-    line-height: 1.8;
-    color: rgba(245,240,224,0.88);
-    margin-bottom: 0.8rem;
-  }
-  .takeaway-box p:last-child { margin-bottom: 0; }
-  .takeaway-box strong { color: #F5F0E0; }
-
-  /* ── Sources ── */
-  .sources {
-    margin: 3rem 0 0;
-    padding-top: 2rem;
-    border-top: 1px solid var(--border);
-  }
-  .sources h2 {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1rem;
-    border: none;
-    padding: 0;
-  }
-  .sources ul {
-    list-style: none;
-    padding: 0;
-  }
-  .sources li {
-    padding: 0.4rem 0;
-    font-size: 0.84rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    padding-left: 1rem;
-    position: relative;
-  }
-  .sources li::before {
-    content: '·';
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-weight: 700;
-  }
-
-  /* ── Footer ── */
-  .article-footer {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem 3rem;
-    text-align: center;
-  }
-  .article-footer p {
-    font-size: 0.78rem;
-    color: rgba(0,0,0,0.3);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  }
-
-  /* ── Responsive ── */
-  @media (max-width: 640px) {
-    html { font-size: 16px; }
-    .hero { padding: 3.5rem 1.2rem 3rem; }
-    .abstract-card { padding: 1.5rem 1.3rem; }
-    .pullquote { margin: 2rem -0.5rem; padding: 1.3rem 1.2rem 1.3rem 1.5rem; font-size: 1rem; }
-    .article-body h2 { font-size: 1.35rem; }
-    .findings-grid { grid-template-columns: 1fr; }
-    .takeaway-box { padding: 1.5rem 1.3rem; }
-  }
-
-  @media print {
-    .hero { background: #333; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    body { font-size: 11pt; }
-  }
-</style>
 <meta property="og:type" content="article">
 <meta property="og:title" content="성경적 재정관 — 하나님 나라의 눈으로 돈을 보다">
 <meta property="og:description" content="멘토링 Q&amp;A 종합 정리. 후배 기독의료인·그리스도인의 재정 질문에 대한 성경적 답변. 출처: raw/lectures/my강의안/강의안/ &quot;돈은 중요하다&quot; 시리즈 + 조성표 교수 강의 + 윤명숙·문대원·권성수 설교 시리즈 ▶ 1부: 개요 주요 자료 위치 | 유형    | 경로                          ">
@@ -430,21 +12,195 @@
 <meta name="twitter:title" content="성경적 재정관 — 하나님 나라의 눈으로 돈을 보다">
 <meta name="twitter:description" content="멘토링 Q&amp;A 종합 정리. 후배 기독의료인·그리스도인의 재정 질문에 대한 성경적 답변. 출처: raw/lectures/my강의안/강의안/ &quot;돈은 중요하다&quot; 시리즈 + 조성표 교수 강의 + 윤명숙·문대원·권성수 설교 시리즈 ▶ 1부: 개요 주요 자료 위치 | 유형    | 경로                          ">
 <link rel="canonical" href="https://wiki.youngdoctor.kr/marktl/s/yevxv/">
+<meta name="theme-color" content="#ECEAE5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#17181C" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+<style>
+/* 성경적 재정관 — 멘토링 시리즈 판형 「후배에게 보내는 답장」 · 잉크 금빛 갈색 · 은유: 장부가 아니라 손바닥(소유가 아니라 맡김) */
+:root{
+  --bg:#ECEAE5;--surface:#F7F6F2;--ink:#22232A;--muted:#5E5F68;--rule:#D2CFC7;--line:#E2DFD7;
+  --accent:#7A5A12;--accent-tint:rgba(122,90,18,.08);--accent-tint2:rgba(122,90,18,.15);--on-accent:#F7F6F2;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#17181C;--surface:#1F2025;--ink:#E8E6E0;--muted:#A4A5AD;--rule:#34363E;--line:#2A2C33;
+  --accent:#DDB866;--accent-tint:rgba(221,184,102,.08);--accent-tint2:rgba(221,184,102,.15);--on-accent:#17181C;
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#17181C;--surface:#1F2025;--ink:#E8E6E0;--muted:#A4A5AD;--rule:#34363E;--line:#2A2C33;
+  --accent:#DDB866;--accent-tint:rgba(221,184,102,.08);--accent-tint2:rgba(221,184,102,.15);--on-accent:#17181C;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Gowun Batang','Times New Roman',serif;font-size:17.5px;line-height:1.9;word-break:keep-all;overflow-wrap:break-word}
+a{color:var(--accent);text-underline-offset:.22em}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+strong{font-weight:700}
+
+.skip{position:absolute;left:16px;top:-60px;z-index:20;background:var(--surface);color:var(--ink);padding:.5rem 1rem;border:1.5px solid var(--accent);border-radius:4px}
+.skip:focus{top:12px}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+
+/* ---------- 틀: 모바일 한 단 · 데스크톱 차례 + 본문 */
+.frame{padding:0 16px;max-width:calc(38em + 32px);margin:0 auto}
+@media (min-width:1080px){
+  .frame{display:grid;grid-template-columns:200px minmax(0,38em);column-gap:64px;justify-content:center;max-width:none;padding:0 24px}
+}
+
+/* ---------- 머리 */
+.hero-art{background:#B8976A;overflow:hidden}
+.hero-art svg{display:block;width:100%;height:clamp(220px,40vw,420px)}
+@media (prefers-reduced-motion:no-preference){
+  .hero-art svg{animation:bleed 1.8s cubic-bezier(.2,.6,.2,1) both}
+  @keyframes bleed{from{opacity:0;filter:blur(10px) saturate(.3);clip-path:circle(6% at 52% 66%)}to{opacity:1;filter:none;clip-path:circle(140% at 52% 66%)}}
+}
+.hero-text{grid-column:2;padding:2.2rem 0 1.6rem}
+.series{margin:0 0 .3rem;color:var(--accent);font-weight:700;font-size:.95rem}
+.hero-label{margin:0 0 1rem;color:var(--muted);font-size:.9rem}
+h1{margin:0 0 1rem;font-weight:700;font-size:clamp(1.9rem,4.6vw,2.6rem);line-height:1.3;letter-spacing:-.01em}
+h1 .t2{display:block;margin-top:.4em;font-weight:400;font-size:.6em;line-height:1.45;color:var(--muted)}
+.hero-subtitle{margin:0 0 1.2rem;font-size:1.08rem;line-height:1.85}
+.hero-meta{margin:0;display:flex;flex-wrap:wrap;gap:.1rem 1.6rem;color:var(--muted);font-size:.92rem}
+.by{margin:.3rem 0 0;color:var(--muted);font-size:.92rem}
+
+/* ---------- 차례 */
+.toc{grid-column:1;grid-row:1 / span 2;margin:0 0 1.6rem;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.toc-head{display:none}
+.toc-btn{all:unset;box-sizing:border-box;display:flex;justify-content:space-between;width:100%;padding:.7rem 0;cursor:pointer;color:var(--ink);font-weight:700}
+.toc-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.toc-btn span{color:var(--accent)}
+.toc ol{list-style:none;margin:0;padding:0 0 .8rem;display:none}
+.toc.open ol{display:block}
+.toc a{display:flex;align-items:flex-start;gap:.55rem;padding:.28rem 0;color:var(--muted);text-decoration:none;font-size:.9rem;line-height:1.5}
+.toc a small{flex:none;width:1.4rem;height:1.4rem;margin-top:.02rem;border:1px solid currentColor;border-radius:50%;display:grid;place-items:center;font-size:.72rem;line-height:1}
+.toc a small.key{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.toc a small.blank{border-color:transparent}
+.toc a:hover{color:var(--ink)}
+.toc a[aria-current] {color:var(--ink)}
+.toc a[aria-current] span{text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:.32em}
+@media (min-width:1080px){
+  .toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;margin:0;padding:2.6rem 0 2rem;border:0}
+  .toc-btn{display:none}
+  .toc-head{display:block;margin:0 0 .6rem;color:var(--accent);font-weight:700;font-size:.92rem}
+  .toc ol{display:block}
+}
+
+/* ---------- 본문 */
+.read{grid-column:2;min-width:0;padding-bottom:3rem}
+.read p{margin:0 0 1.15rem}
+.read h3{margin:2.3rem 0 .8rem;font-size:1.2rem;line-height:1.5;color:var(--accent)}
+.read h4{margin:1.7rem 0 .5rem;font-size:1.04rem;line-height:1.55}
+
+
+.abstract-card{margin:0 0 2.2rem}
+.abstract-card p{margin:0;font-size:1.06rem;line-height:1.95}
+
+.findings-grid{display:grid;margin:0 0 1rem}
+.finding-card{display:flex;gap:.8rem;padding:1rem 0 .6rem;border-top:1px solid var(--rule)}
+.finding-num{flex:none;width:1.9rem;height:1.9rem;margin-top:.12rem;border:1.5px solid var(--accent);border-radius:50%;display:grid;place-items:center;color:var(--accent);font-weight:700;font-size:.9rem;line-height:1}
+
+/* 장 머리 — 잉크로 그린 원 안의 번호 */
+.ch{display:flex;align-items:flex-start;gap:.85rem;margin:3.8rem 0 1.3rem;font-size:1.55rem;line-height:1.38;font-weight:700;scroll-margin-top:1.4rem}
+.ch .no{flex:none;width:2.2rem;height:2.2rem;margin-top:.05rem;border:1.5px solid var(--accent);border-radius:50%;display:grid;place-items:center;color:var(--accent);font-size:1rem;font-weight:700;line-height:1}
+.ch.key .no{background:var(--accent);color:var(--on-accent)}
+.ch .no svg{width:1.15rem;height:1.15rem;color:var(--on-accent)}
+.ch .ht{display:block}
+.ch .hs{display:block;margin-top:.25rem;font-size:.68em;font-weight:400;color:var(--muted)}
+.term{margin:3.6rem 0 1.1rem;padding-top:1.2rem;border-top:1px solid var(--rule);font-size:1.32rem;line-height:1.45;scroll-margin-top:1.4rem}
+.term .hs{display:block;font-size:.8em;font-weight:400;color:var(--muted)}
+
+/* ---------- 이 글의 구성 요소 */.table-wrap{margin:1.5rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.read table{width:100%;min-width:24em;border-collapse:collapse;font-size:.94rem;line-height:1.65}
+.read th{text-align:left;font-weight:700;padding:.6rem .8rem;background:var(--accent-tint);border-bottom:1.5px solid var(--accent)}
+.read td{padding:.6rem .8rem;border-bottom:1px solid var(--rule);vertical-align:top}
+
+/* 삽화 */
+figure.ill{margin:2.4rem 0}
+figure.ill svg{display:block;width:100%;height:auto}
+figure.ill figcaption{margin-top:.6rem;color:var(--muted);font-size:.86rem;line-height:1.6}
+@media (min-width:1080px){figure.ill{margin-left:-1.5rem;margin-right:-1.5rem}figure.ill figcaption{padding:0 1.5rem}}
+
+/* ---------- 바닥글 */
+.foot{border-top:1px solid var(--rule)}
+.foot .in{grid-column:2;padding:1.4rem 0 2.6rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.4rem 1.6rem;font-size:.9rem;color:var(--muted)}
+.foot .colophon{flex-basis:100%;margin:0 0 .4rem;font-size:.84rem}
+.foot a{color:var(--accent)}
+
+
+/* 이 글의 장 머리 — 서론·에필로그는 원 없이 작은 표지 */
+.ch.edge .hk{display:block;margin-bottom:.15rem;font-size:.62em;color:var(--accent)}
+
+.abstract-card h2{margin:0 0 .35rem;color:var(--accent);font-weight:700;font-size:.92rem;line-height:1.5}
+.read .findings-title{margin:0 0 .2rem;color:var(--accent);font-weight:700;font-size:.92rem}
+.finding-card{display:grid;grid-template-columns:2.3rem 1fr;gap:0 .9rem;padding:.9rem 0 .5rem}
+.read .finding-num{grid-row:span 2;margin:0}
+.finding-card h3{margin:0 0 .15rem;font-size:1.04rem;line-height:1.5;color:var(--ink)}
+.finding-card p:not(.finding-num){margin:0 0 .4rem;font-size:.96rem;line-height:1.8}
+
+/* 장 사이 — 펼친 손바닥 위 두 렙돈 */
+.orn{display:flex;justify-content:center;margin:3rem 0 0;color:var(--accent)}
+.orn svg{width:4.2rem;height:auto;opacity:.85}
+.orn + .ch{margin-top:1.6rem}
+
+/* 끌어온 문장 · 성경 인용 */
+.pullquote{margin:2.2rem 0;padding:.15rem 0 .15rem 1.3rem;border-left:3px solid var(--accent);font-size:1.2rem;line-height:1.72}
+.pullquote cite{display:block;margin-top:.45rem;font-style:normal;font-size:.86rem;color:var(--muted)}
+.read blockquote{margin:1.3rem 0;padding:1rem 1.3rem;background:var(--surface);border-radius:6px;font-size:.98rem;line-height:1.85}
+.read em{font-style:normal;color:var(--accent)}
+h1 em{font-style:normal}
+
+/* 점검 질문 쪽지(손글씨) — 3장 */
+.guideline-list{counter-reset:g;list-style:none;margin:1.2rem 0 1.6rem;padding:0}
+.guideline-list li{counter-increment:g;position:relative;margin:.55rem 0;padding-left:2.4rem}
+.guideline-list li::before{content:counter(g);position:absolute;left:0;top:.18em;width:1.6rem;height:1.6rem;border:1.5px solid var(--accent);border-radius:50%;display:grid;place-items:center;color:var(--accent);font-size:.8rem;font-weight:700;line-height:1}
+.qnote{max-width:31em;margin:1.4rem 0 2rem;padding:.35rem 1.2rem .9rem 2.4rem;border:1px solid var(--line);border-radius:3px;transform:rotate(-1deg);
+  background-color:var(--surface);
+  background-image:linear-gradient(to right,transparent 1.6rem,var(--accent-tint2) 1.6rem,var(--accent-tint2) calc(1.6rem + 1px),transparent calc(1.6rem + 1px)),
+    repeating-linear-gradient(to bottom,transparent 0,transparent calc(2.2rem - 1px),var(--line) calc(2.2rem - 1px),var(--line) 2.2rem);
+  background-position:0 0,0 .35rem}
+.qnote li{margin:0;padding-left:1.7rem;font-family:'Nanum Pen Script',cursive;font-size:1.7rem;line-height:2.2rem;color:var(--accent)}
+.qnote li::before{content:counter(g) ".";border:0;width:auto;height:auto;top:0;display:block;font-size:1.7rem;font-weight:400;line-height:2.2rem}
+.qnote strong{font-weight:400;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:.18em}
+
+.highlight-row td{background:var(--accent-tint2);font-weight:700}
+
+.takeaway-box{margin:2.6rem 0 2rem;padding:1.4rem 1.6rem .6rem;background:var(--surface);border:1.5px solid var(--accent);border-radius:8px}
+.takeaway-box h3{margin:0 0 .7rem!important;color:var(--accent)}
+.takeaway-box p{font-size:1.02rem}
+
+.sources ul{margin:0;padding:0 0 0 1.1rem;color:var(--muted);font-size:.92rem;line-height:1.75}
+.sources li{margin:.25rem 0}
+.sources li::marker{color:var(--accent)}
+
+</style>
 </head>
 <body>
-
-<!-- ════ HERO ════ -->
+<a class="skip" href="#main">본문으로 건너뛰기</a>
 <header class="hero">
-  <div class="hero-inner">
-    <span class="hero-label">Research Report · 신학 &amp; 재정</span>
-    <h1>성경적 재정관<br><em>하나님 나라의 눈으로 돈을 보다</em></h1>
-    <p class="hero-subtitle">청지기직, 십일조, 쯔다카, 자족 — 성경 700구절이 그리는 돈의 신학을 멘토링 Q&amp;A와 학자·목회자 강의를 종합하여 재구성하다.</p>
-    <p class="hero-meta">2026년 5월 21일 · 종합 정리</p>
-  <p class="hero-author">글쓴이: 이상협 (M.D., M.Div.)</p>
-</div>
+ <div class="hero-art"><svg class="art hero-svg" viewBox="0 0 1440 420" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="성전 뜰의 헌금함 앞. 기둥 사이로 드는 빛 속에서 가난한 과부가 두 렙돈을 넣고, 화려한 옷의 부자들이 주머니를 쏟거나 곁을 지나간다."><defs><filter id="wd-paint" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="3" seed="4"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter><filter id="wd-paint2" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".07" numOctaves="2" seed="9"/><feDisplacementMap in="SourceGraphic" scale="2.5"/></filter><filter id="wd-grain" filterUnits="userSpaceOnUse" x="0" y="0" width="1440" height="420"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="2"/><feColorMatrix values="0 0 0 0 .3 0 0 0 0 .25 0 0 0 0 .2 0 0 0 .1 0"/><feComposite in2="SourceGraphic" operator="in"/></filter><filter id="wd-soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="7"/></filter><filter id="wd-soft2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.2"/></filter><linearGradient id="wd-wall" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#E6CB98"/><stop offset="0.5" stop-color="#CDAE7E"/><stop offset="1" stop-color="#A88A62"/></linearGradient><linearGradient id="wd-floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#CFB386"/><stop offset="1" stop-color="#97795A"/></linearGradient><linearGradient id="wd-col" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F2E2BE"/><stop offset="0.45" stop-color="#E2CA9C"/><stop offset="1" stop-color="#A88A62"/></linearGradient><linearGradient id="wd-bronze" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F4CD76"/><stop offset="0.45" stop-color="#C9913E"/><stop offset="1" stop-color="#7A4E1E"/></linearGradient><linearGradient id="wd-shaft" x1="260" y1="0" x2="760" y2="360" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFF6D8" stop-opacity="0.7"/><stop offset="0.75" stop-color="#FFF6D8" stop-opacity="0.22"/><stop offset="1" stop-color="#FFF6D8" stop-opacity="0.08"/></linearGradient><linearGradient id="wd-shaft2" x1="470" y1="0" x2="920" y2="360" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFF6D8" stop-opacity="0.3"/><stop offset="1" stop-color="#FFF6D8" stop-opacity="0"/></linearGradient><radialGradient id="wd-door" cx="0.5" cy="0.7" r="0.8"><stop offset="0" stop-color="#FFF4D8"/><stop offset="0.6" stop-color="#F6DCA8"/><stop offset="1" stop-color="#E2BE84"/></radialGradient><pattern id="wd-dent" width="22" height="9" patternUnits="userSpaceOnUse"><rect x="4" width="10" height="9" fill="#7A5E40"/></pattern><pattern id="wd-flute" width="10" height="20" patternUnits="userSpaceOnUse"><path d="M5 0 V20" stroke="#8E7050" stroke-width="1.2" opacity=".3"/><path d="M7 0 V20" stroke="#FFF4D8" stroke-width="1" opacity=".25"/></pattern><pattern id="wd-ashlar" width="240" height="96" patternUnits="userSpaceOnUse"><g fill="#FFFFFF" fill-opacity=".05" stroke="#7E6244" stroke-opacity=".32" stroke-width="1.4"><rect x="1" y="1" width="118" height="46" rx="2"/><rect x="121" y="1" width="118" height="46" rx="2"/><rect x="-59" y="49" width="118" height="46" rx="2"/><rect x="61" y="49" width="118" height="46" rx="2"/><rect x="181" y="49" width="118" height="46" rx="2"/></g><g fill="none" stroke="#FFF2D6" stroke-opacity=".22"><rect x="8" y="8" width="104" height="32"/><rect x="128" y="8" width="104" height="32"/><rect x="68" y="56" width="104" height="32"/></g></pattern></defs><rect width="1440" height="340" fill="url(#wd-wall)"/><rect width="1440" height="340" fill="url(#wd-ashlar)"/><path d="M640 330 V150 C640 104 676 84 720 84 C764 84 800 104 800 150 V330Z" fill="url(#wd-door)"/><path d="M640 330 V150 C640 104 676 84 720 84 C764 84 800 104 800 150 V330" stroke="#B89A6E" stroke-width="10" fill="none"/><g opacity=".72"><rect x="505" y="56" width="30" height="276" fill="#D9C29A"/><rect x="523" y="56" width="12" height="276" fill="#B79C74"/><rect x="499" y="46" width="42" height="12" fill="#C9AE84"/><rect x="501" y="326" width="38" height="8" fill="#B39872"/></g><g opacity=".72"><rect x="575" y="56" width="30" height="276" fill="#D9C29A"/><rect x="593" y="56" width="12" height="276" fill="#B79C74"/><rect x="569" y="46" width="42" height="12" fill="#C9AE84"/><rect x="571" y="326" width="38" height="8" fill="#B39872"/></g><g opacity=".72"><rect x="835" y="56" width="30" height="276" fill="#D9C29A"/><rect x="853" y="56" width="12" height="276" fill="#B79C74"/><rect x="829" y="46" width="42" height="12" fill="#C9AE84"/><rect x="831" y="326" width="38" height="8" fill="#B39872"/></g><g opacity=".72"><rect x="905" y="56" width="30" height="276" fill="#D9C29A"/><rect x="923" y="56" width="12" height="276" fill="#B79C74"/><rect x="899" y="46" width="42" height="12" fill="#C9AE84"/><rect x="901" y="326" width="38" height="8" fill="#B39872"/></g><rect width="1440" height="36" fill="#8A6C4C"/><path d="M0 36 H1440" stroke="#5E4630" stroke-width="3"/><path d="M0 30 H1440" stroke="#C9A878" stroke-width="1.4" opacity=".7"/><rect y="37" width="1440" height="9" fill="url(#wd-dent)"/><rect y="330" width="1440" height="90" fill="url(#wd-floor)"/><path d="M0 330 L-792 420" stroke="#7A5E40" stroke-width="1" opacity=".35"/><path d="M96 330 L-590 420" stroke="#7A5E40" stroke-width="1" opacity=".35"/><path d="M192 330 L-389 420" stroke="#7A5E40" stroke-width="1" opacity=".35"/><path d="M288 330 L-187 420" stroke="#7A5E40" stroke-width="1" opacity=".35"/><path d="M384 330 L14 420" stroke="#7A5E40" stroke-width="1" opacity=".35"/><path d="M480 330 L216 420" stroke="#7A5E40" stroke-width="1" opacity=".35"/><path d="M576 330 L418 420" stroke="#7A5E40" stroke-width="1" opacity=".35"/><path d="M672 330 L619 420" stroke="#7A5E40" stroke-width="1" opacity=".35"/><path d="M768 330 L821 420" stroke="#7A5E40" stroke-width="1" opacity=".35"/><path d="M864 330 L1022 420" stroke="#7A5E40" stroke-width="1" opacity=".35"/><path d="M960 330 L1224 420" stroke="#7A5E40" stroke-width="1" opacity=".35"/><path d="M1056 330 L1426 420" stroke="#7A5E40" stroke-width="1" opacity=".35"/><path d="M1152 330 L1627 420" stroke="#7A5E40" stroke-width="1" opacity=".35"/><path d="M1248 330 L1829 420" stroke="#7A5E40" stroke-width="1" opacity=".35"/><path d="M1344 330 L2030 420" stroke="#7A5E40" stroke-width="1" opacity=".35"/><path d="M1440 330 L2232 420" stroke="#7A5E40" stroke-width="1" opacity=".35"/><path d="M0 346 H1440 M0 368 H1440 M0 396 H1440" stroke="#7A5E40" stroke-width="1" opacity=".3"/><g opacity=".55" filter="url(#wd-paint2)"><g transform="translate(236 334) scale(0.440)"><path d="M-6 -118C8 -122 18 -114 22 -100C27 -72 31 -36 35 0L-33 0C-31 -36 -26 -72 -20 -98C-17 -110 -12 -117 -6 -118Z" fill="#A0866A"/><path d="M-6 -118C-12 -117 -17 -110 -20 -98C-26 -72 -31 -36 -33 0L-12 0C-13 -40 -11 -80 -6 -118Z" fill="#000" opacity=".2"/><circle cx="2" cy="-131" r="11.5" fill="#8E6A4E"/><path d="M-10 -131C-11 -146 13 -148 14 -134C8 -139 -4 -139 -10 -131Z" fill="#D8C8A6"/><path d="M-10 -132C-12 -124 -12 -118 -8 -114L-4 -122Z" fill="#D8C8A6"/></g><g transform="translate(264 334) scale(0.400)"><path d="M-6 -118C8 -122 18 -114 22 -100C27 -72 31 -36 35 0L-33 0C-31 -36 -26 -72 -20 -98C-17 -110 -12 -117 -6 -118Z" fill="#8E7A6A"/><path d="M-6 -118C-12 -117 -17 -110 -20 -98C-26 -72 -31 -36 -33 0L-12 0C-13 -40 -11 -80 -6 -118Z" fill="#000" opacity=".2"/><circle cx="2" cy="-131" r="11.5" fill="#8E6A4E"/><path d="M-10 -131C-11 -146 13 -148 14 -134C8 -139 -4 -139 -10 -131Z" fill="#D8C8A6"/><path d="M-10 -132C-12 -124 -12 -118 -8 -114L-4 -122Z" fill="#D8C8A6"/></g><g transform="translate(1176 334) scale(0.427)"><path d="M-6 -118C8 -122 18 -114 22 -100C27 -72 31 -36 35 0L-33 0C-31 -36 -26 -72 -20 -98C-17 -110 -12 -117 -6 -118Z" fill="#9A7E62"/><path d="M-6 -118C-12 -117 -17 -110 -20 -98C-26 -72 -31 -36 -33 0L-12 0C-13 -40 -11 -80 -6 -118Z" fill="#000" opacity=".2"/><circle cx="2" cy="-131" r="11.5" fill="#8E6A4E"/><path d="M-10 -131C-11 -146 13 -148 14 -134C8 -139 -4 -139 -10 -131Z" fill="#D8C8A6"/><path d="M-10 -132C-12 -124 -12 -118 -8 -114L-4 -122Z" fill="#D8C8A6"/></g><g transform="translate(1204 334) scale(0.387)"><path d="M-6 -118C8 -122 18 -114 22 -100C27 -72 31 -36 35 0L-33 0C-31 -36 -26 -72 -20 -98C-17 -110 -12 -117 -6 -118Z" fill="#8A7A70"/><path d="M-6 -118C-12 -117 -17 -110 -20 -98C-26 -72 -31 -36 -33 0L-12 0C-13 -40 -11 -80 -6 -118Z" fill="#000" opacity=".2"/><circle cx="2" cy="-131" r="11.5" fill="#8E6A4E"/><path d="M-10 -131C-11 -146 13 -148 14 -134C8 -139 -4 -139 -10 -131Z" fill="#D8C8A6"/><path d="M-10 -132C-12 -124 -12 -118 -8 -114L-4 -122Z" fill="#D8C8A6"/></g></g><g filter="url(#wd-paint2)"><rect x="72" y="70" width="76" height="262" fill="url(#wd-col)"/><rect x="79" y="76" width="62" height="254" fill="url(#wd-flute)"/><path d="M60 40 H160 L154 58 H66Z" fill="#D8BE8E"/><path d="M66 58 H154 L148 72 H72Z" fill="#B89A6C"/><path d="M60 40 H160" stroke="#FFF0CC" stroke-width="2" opacity=".6"/><path d="M64 332 H156 L160 356 H60Z" fill="#C9AE84"/><path d="M120 332 H156 L160 356 H122Z" fill="#9C7E58"/><rect x="312" y="70" width="76" height="262" fill="url(#wd-col)"/><rect x="319" y="76" width="62" height="254" fill="url(#wd-flute)"/><path d="M300 40 H400 L394 58 H306Z" fill="#D8BE8E"/><path d="M306 58 H394 L388 72 H312Z" fill="#B89A6C"/><path d="M300 40 H400" stroke="#FFF0CC" stroke-width="2" opacity=".6"/><path d="M304 332 H396 L400 356 H300Z" fill="#C9AE84"/><path d="M360 332 H396 L400 356 H362Z" fill="#9C7E58"/><rect x="1052" y="70" width="76" height="262" fill="url(#wd-col)"/><rect x="1059" y="76" width="62" height="254" fill="url(#wd-flute)"/><path d="M1040 40 H1140 L1134 58 H1046Z" fill="#D8BE8E"/><path d="M1046 58 H1134 L1128 72 H1052Z" fill="#B89A6C"/><path d="M1040 40 H1140" stroke="#FFF0CC" stroke-width="2" opacity=".6"/><path d="M1044 332 H1136 L1140 356 H1040Z" fill="#C9AE84"/><path d="M1100 332 H1136 L1140 356 H1102Z" fill="#9C7E58"/><rect x="1292" y="70" width="76" height="262" fill="url(#wd-col)"/><rect x="1299" y="76" width="62" height="254" fill="url(#wd-flute)"/><path d="M1280 40 H1380 L1374 58 H1286Z" fill="#D8BE8E"/><path d="M1286 58 H1374 L1368 72 H1292Z" fill="#B89A6C"/><path d="M1280 40 H1380" stroke="#FFF0CC" stroke-width="2" opacity=".6"/><path d="M1284 332 H1376 L1380 356 H1280Z" fill="#C9AE84"/><path d="M1340 332 H1376 L1380 356 H1342Z" fill="#9C7E58"/></g><g filter="url(#wd-soft)"><path d="M200 0 L330 0 L846 360 L652 360Z" fill="url(#wd-shaft)"/><path d="M430 0 L500 0 L960 360 L872 360Z" fill="url(#wd-shaft2)"/><ellipse cx="748" cy="360" rx="120" ry="14" fill="#FFF6D8" opacity=".45"/></g><circle cx="409.5" cy="137.2" r="0.8" fill="#FFF8E0" opacity="0.8"/><circle cx="544.1" cy="208.1" r="1.2" fill="#FFF8E0" opacity="0.5"/><circle cx="601.9" cy="263.4" r="1.4" fill="#FFF8E0" opacity="0.6"/><circle cx="636.6" cy="302.1" r="0.8" fill="#FFF8E0" opacity="0.4"/><circle cx="557.2" cy="260.3" r="1.3" fill="#FFF8E0" opacity="0.6"/><circle cx="320.2" cy="21.4" r="0.7" fill="#FFF8E0" opacity="0.7"/><circle cx="615.1" cy="302.8" r="1.4" fill="#FFF8E0" opacity="0.7"/><circle cx="338.2" cy="45" r="0.8" fill="#FFF8E0" opacity="0.8"/><circle cx="623" cy="248" r="0.7" fill="#FFF8E0" opacity="0.5"/><circle cx="554.8" cy="223.2" r="0.9" fill="#FFF8E0" opacity="0.7"/><circle cx="626.1" cy="304.7" r="0.8" fill="#FFF8E0" opacity="0.7"/><circle cx="464.6" cy="146.6" r="1.1" fill="#FFF8E0" opacity="0.5"/><circle cx="238.2" cy="7.8" r="1.1" fill="#FFF8E0" opacity="0.7"/><circle cx="481" cy="153.2" r="1.2" fill="#FFF8E0" opacity="0.7"/><circle cx="542" cy="235.8" r="0.8" fill="#FFF8E0" opacity="0.4"/><circle cx="319.1" cy="14.3" r="1.5" fill="#FFF8E0" opacity="0.7"/><circle cx="330.2" cy="39.4" r="0.8" fill="#FFF8E0" opacity="0.8"/><circle cx="584.9" cy="236" r="1.2" fill="#FFF8E0" opacity="0.5"/><g filter="url(#wd-paint2)"><ellipse cx="600" cy="360" rx="44" ry="5" fill="#3A2818" opacity=".3"/><rect x="568" y="318" width="64" height="42" rx="2" fill="#6E4A2E"/><rect x="606" y="318" width="26" height="42" fill="#4E3220"/><path d="M568 326 H632 M568 350 H632" stroke="#B8863A" stroke-width="3"/><path d="M593 318 C593 300 589 288 574 274 L626 274 C611 288 607 300 607 318Z" fill="url(#wd-bronze)"/><ellipse cx="600" cy="274" rx="26" ry="6.5" fill="#3A2410" stroke="#F4CF7C" stroke-width="1.6"/><ellipse cx="770" cy="360" rx="44" ry="5" fill="#3A2818" opacity=".3"/><rect x="738" y="318" width="64" height="42" rx="2" fill="#6E4A2E"/><rect x="776" y="318" width="26" height="42" fill="#4E3220"/><path d="M738 326 H802 M738 350 H802" stroke="#B8863A" stroke-width="3"/><path d="M763 318 C763 300 759 288 744 274 L796 274 C781 288 777 300 777 318Z" fill="url(#wd-bronze)"/><ellipse cx="770" cy="274" rx="26" ry="6.5" fill="#3A2410" stroke="#F4CF7C" stroke-width="1.6"/><ellipse cx="940" cy="360" rx="44" ry="5" fill="#3A2818" opacity=".3"/><rect x="908" y="318" width="64" height="42" rx="2" fill="#6E4A2E"/><rect x="946" y="318" width="26" height="42" fill="#4E3220"/><path d="M908 326 H972 M908 350 H972" stroke="#B8863A" stroke-width="3"/><path d="M933 318 C933 300 929 288 914 274 L966 274 C951 288 947 300 947 318Z" fill="url(#wd-bronze)"/><ellipse cx="940" cy="274" rx="26" ry="6.5" fill="#3A2410" stroke="#F4CF7C" stroke-width="1.6"/></g><ellipse cx="530" cy="362" rx="44" ry="6" fill="#3A2818" opacity=".3"/><g filter="url(#wd-paint2)"><g transform="translate(528 360) scale(1.000)"><path d="M-6 -118C8 -122 18 -114 22 -100C27 -72 31 -36 35 0L-33 0C-31 -36 -26 -72 -20 -98C-17 -110 -12 -117 -6 -118Z" fill="#5B3D72"/><path d="M-6 -118C-12 -117 -17 -110 -20 -98C-26 -72 -31 -36 -33 0L-12 0C-13 -40 -11 -80 -6 -118Z" fill="#000" opacity=".2"/><path d="M-33.5 -9L34 -9L35 0L-33 0Z" fill="#D9B25A"/><path d="M-2 -118L-8 -60L-1 -60L4 -117Z" fill="#F2EBDA"/><path d="M-6.5 -78H-.5M-7 -70H-1" stroke="#3E5C86" stroke-width="2"/><path d="M-8 -60l-1 5M-5 -60v5M-2 -60l1 5" stroke="#F2EBDA" stroke-width="1"/><path d="M14 -110C24 -114 34 -124 40 -134" stroke="#5B3D72" stroke-width="11" stroke-linecap="round" fill="none"/><path d="M-6 -104C8 -112 24 -122 34 -132" stroke="#4A3060" stroke-width="10" stroke-linecap="round" fill="none"/><circle cx="2" cy="-131" r="11.5" fill="#B07A52"/><path d="M-10 -131C-11 -146 13 -148 14 -134C8 -139 -4 -139 -10 -131Z" fill="#EAD9B0"/><path d="M-10 -132C-12 -124 -12 -118 -8 -114L-4 -122Z" fill="#EAD9B0"/><path d="M7 -128C13 -126 14 -119 10 -115C5 -114 3 -118 3 -122Z" fill="#2E2219"/></g><g transform="translate(578 236) rotate(30)"><path d="M-12 -14C-16 -2 -14 12 0 14C14 12 16 -2 12 -14Z" fill="#8A6A3A"/><path d="M-6 -14C-8 -18 -4 -21 0 -19C4 -21 8 -18 6 -14Z" fill="#6E5028"/><path d="M-12 -14H12" stroke="#D9B25A" stroke-width="2"/></g><circle cx="575" cy="238" r="3" fill="#C9926A"/><circle cx="590.1" cy="244" r="3" fill="#E9C060" stroke="#A8782A" stroke-width=".6"/><circle cx="588.1" cy="247.4" r="2.4" fill="#E9C060" stroke="#A8782A" stroke-width=".6"/><circle cx="592.6" cy="250.8" r="2.7" fill="#E9C060" stroke="#A8782A" stroke-width=".6"/><circle cx="592.3" cy="254.2" r="2.5" fill="#E9C060" stroke="#A8782A" stroke-width=".6"/><circle cx="597.2" cy="257.6" r="2.3" fill="#E9C060" stroke="#A8782A" stroke-width=".6"/><circle cx="594.3" cy="261" r="2.7" fill="#E9C060" stroke="#A8782A" stroke-width=".6"/><circle cx="596.3" cy="264.4" r="2.9" fill="#E9C060" stroke="#A8782A" stroke-width=".6"/><circle cx="598.2" cy="267.8" r="2.9" fill="#E9C060" stroke="#A8782A" stroke-width=".6"/><circle cx="600.1" cy="271.2" r="2.9" fill="#E9C060" stroke="#A8782A" stroke-width=".6"/></g><ellipse cx="430" cy="364" rx="40" ry="5" fill="#3A2818" opacity=".25"/><g filter="url(#wd-paint2)"><g transform="translate(428 362) scale(0.947)"><path d="M-6 -118C8 -122 18 -114 22 -100C27 -72 31 -36 35 0L-33 0C-31 -36 -26 -72 -20 -98C-17 -110 -12 -117 -6 -118Z" fill="#8C2F38"/><path d="M-6 -118C-12 -117 -17 -110 -20 -98C-26 -72 -31 -36 -33 0L-12 0C-13 -40 -11 -80 -6 -118Z" fill="#000" opacity=".2"/><path d="M-33.5 -9L34 -9L35 0L-33 0Z" fill="#C99A3E"/><path d="M16 -106C30 -96 40 -84 48 -78" stroke="#8C2F38" stroke-width="10" stroke-linecap="round" fill="none"/><ellipse cx="51" cy="-77" rx="5" ry="3.5" fill="#9C6644"/><circle cx="2" cy="-131" r="11.5" fill="#9C6644"/><path d="M-10 -131C-11 -146 13 -148 14 -134C8 -139 -4 -139 -10 -131Z" fill="#F0E2C0"/><path d="M-10 -132C-12 -124 -12 -118 -8 -114L-4 -122Z" fill="#F0E2C0"/><path d="M7 -128C13 -126 14 -119 10 -115C5 -114 3 -118 3 -122Z" fill="#2E2219"/><path d="M-24 -66 L28 -70 L29 -60 L-25 -56Z" fill="#D9B25A"/></g></g><ellipse cx="1010" cy="364" rx="40" ry="5" fill="#3A2818" opacity=".25"/><ellipse cx="1088" cy="362" rx="38" ry="5" fill="#3A2818" opacity=".25"/><g filter="url(#wd-paint2)"><g transform="translate(1088 360) scale(-0.973 0.973)"><path d="M-6 -118C8 -122 18 -114 22 -100C27 -72 31 -36 35 0L-33 0C-31 -36 -26 -72 -20 -98C-17 -110 -12 -117 -6 -118Z" fill="#B8863A"/><path d="M-6 -118C-12 -117 -17 -110 -20 -98C-26 -72 -31 -36 -33 0L-12 0C-13 -40 -11 -80 -6 -118Z" fill="#000" opacity=".2"/><path d="M-33.5 -9L34 -9L35 0L-33 0Z" fill="#6E4A2E"/><path d="M14 -108C26 -100 30 -92 34 -84" stroke="#B8863A" stroke-width="10" stroke-linecap="round" fill="none"/><ellipse cx="36" cy="-82" rx="4.6" ry="3.2" fill="#8A5A3C"/><circle cx="2" cy="-131" r="11.5" fill="#8A5A3C"/><path d="M-10 -131C-11 -146 13 -148 14 -134C8 -139 -4 -139 -10 -131Z" fill="#E6D7B0"/><path d="M-10 -132C-12 -124 -12 -118 -8 -114L-4 -122Z" fill="#E6D7B0"/></g><g transform="translate(1010 362) scale(0.987)"><path d="M-6 -118C8 -122 18 -114 22 -100C27 -72 31 -36 35 0L-33 0C-31 -36 -26 -72 -20 -98C-17 -110 -12 -117 -6 -118Z" fill="#2E5B5C"/><path d="M-6 -118C-12 -117 -17 -110 -20 -98C-26 -72 -31 -36 -33 0L-12 0C-13 -40 -11 -80 -6 -118Z" fill="#000" opacity=".2"/><path d="M-33.5 -9L34 -9L35 0L-33 0Z" fill="#D9B25A"/><path d="M-2 -118L-8 -60L-1 -60L4 -117Z" fill="#EFE6D2"/><path d="M-6.5 -78H-.5M-7 -70H-1" stroke="#3E5C86" stroke-width="2"/><path d="M-8 -60l-1 5M-5 -60v5M-2 -60l1 5" stroke="#F2EBDA" stroke-width="1"/><path d="M-14 -104C-22 -88 -26 -74 -22 -62" stroke="#244A4C" stroke-width="10" stroke-linecap="round" fill="none"/><circle cx="2" cy="-131" r="11.5" fill="#A8704C"/><path d="M-10 -131C-11 -146 13 -148 14 -134C8 -139 -4 -139 -10 -131Z" fill="#F2E8D0"/><path d="M-10 -132C-12 -124 -12 -118 -8 -114L-4 -122Z" fill="#F2E8D0"/><path d="M7 -128C13 -126 14 -119 10 -115C5 -114 3 -118 3 -122Z" fill="#2E2219"/></g></g><g filter="url(#wd-paint2)"><ellipse cx="712" cy="360" rx="28" ry="4.5" fill="#3A2818" opacity=".35"/><path d="M701 280C693 296 689 318 689 338C689 348 690 354 691 359L729 359C729 344 726 322 721 304C718 292 713 284 707 280Z" fill="#35333B"/><path d="M712 284C719 294 723 312 726 330C728 344 729 352 729 359L716 359C717 334 715 304 712 284Z" fill="#26252B"/><path d="M700 262C701 252 712 248 720 254C724 258 724 266 721 272L716 277C712 291 706 311 700 331C695 341 691 347 688 351C686 331 688 301 694 285C696 277 698 269 700 262Z" fill="#6B625A"/><path d="M700 262C701 252 712 248 720 254" stroke="#8E857A" stroke-width="1.6" fill="none"/><ellipse cx="719" cy="266" rx="3.4" ry="5" fill="#8E5E40"/><path d="M712 286C724 282 736 276 746 270" stroke="#6B625A" stroke-width="6.4" stroke-linecap="round" fill="none"/><ellipse cx="749.5" cy="268.5" rx="3.8" ry="2.6" fill="#8E5E40" transform="rotate(-25 749.5 268.5)"/><path d="M694 359h8v2h-8zM714 359h8v2h-8z" fill="#2A2420"/></g><circle cx="754" cy="271" r="2.6" fill="#C47A3A"/><circle cx="753.4" cy="270.4" r="1" fill="#F6C08A"/><circle cx="761" cy="277" r="2.6" fill="#B86E34"/><circle cx="760.4" cy="276.4" r="1" fill="#F6C08A"/><circle cx="757" cy="273" r="9" fill="#FFF0C8" opacity=".35" filter="url(#wd-soft2)"/><rect width="1440" height="420" filter="url(#wd-grain)" fill="#fff"/></svg></div>
+ <div class="frame">
+  <div class="hero-text">
+   <p class="series">멘토링</p>
+   <p class="hero-label">Research Report · 신학 &amp; 재정</p>
+   <h1><span class="t1">성경적 재정관</span><span class="t2">— <em>하나님 나라의 눈으로 돈을 보다</em></span></h1>
+   <p class="hero-subtitle">청지기직, 십일조, 쯔다카, 자족 — 성경 700구절이 그리는 돈의 신학을 멘토링 Q&amp;A와 학자·목회자 강의를 종합하여 재구성하다.</p>
+   <p class="hero-meta">2026년 5월 21일 · 종합 정리</p>
+   <p class="by">글쓴이: 이상협 (M.D., M.Div.)</p>
+  </div>
+ </div>
 </header>
-
-<!-- ════ ABSTRACT ════ -->
+<div class="frame">
+<nav class="toc" aria-label="차례">
+ <p class="toc-head">차례</p>
+ <button class="toc-btn" id="tocBtn" aria-expanded="false" aria-controls="tocList">차례 <span aria-hidden="true">+</span></button>
+ <ol id="tocList"><li><a href="#intro"><small class="blank"></small><span>서론: 왜 지금 우리는 돈을 이야기해야 하는가</span></a></li><li><a href="#section-01"><small>1</small><span>돈의 신학</span></a></li><li><a href="#section-02"><small>2</small><span>동기 점검</span></a></li><li><a href="#section-03"><small>3</small><span>청지기직</span></a></li><li><a href="#section-04"><small>4</small><span>십일조와 헌금</span></a></li><li><a href="#section-05"><small>5</small><span>투자와 투기</span></a></li><li><a href="#section-06"><small>6</small><span>자본주의와 하나님 나라</span></a></li><li><a href="#section-07"><small>7</small><span>지공주의와 토지</span></a></li><li><a href="#section-08"><small>8</small><span>쯔다카(צְדָקָה)</span></a></li><li><a href="#section-09"><small>9</small><span>자족의 신학</span></a></li><li><a href="#section-10"><small>10</small><span>관대함의 신학</span></a></li><li><a href="#section-11"><small>11</small><span>실천적 지침</span></a></li><li><a href="#epilogue"><small class="blank"></small><span>에필로그: 인생의 십일조</span></a></li><li><a href="#sources"><small class="blank"></small><span>참고 자료 및 출처</span></a></li></ol>
+</nav>
+<main id="main" class="read">
 <section class="abstract-section">
   <div class="abstract-card">
     <h2>Abstract</h2>
@@ -452,7 +208,7 @@
   </div>
 </section>
 
-<!-- ════ KEY FINDINGS ════ -->
+
 <section class="findings">
   <p class="findings-title">핵심 발견 5가지</p>
   <div class="findings-grid">
@@ -484,10 +240,10 @@
   </div>
 </section>
 
-<!-- ════ ARTICLE BODY ════ -->
-<article class="article-body">
 
-  <h2>서론: 왜 지금 우리는 돈을 이야기해야 하는가</h2>
+
+
+  <h2 class="ch edge" id="intro"><span class="ht"><span class="hk">서론<span class="vh">:</span></span>왜 지금 우리는 돈을 이야기해야 하는가</span></h2>
 
   <p>성경에서 돈에 관한 구절은 무려 700개에 달한다. 예수님께서 말씀하신 비유의 3분의 2 이상이 돈과 재물, 물질적 삶에 관한 것이다. 그럼에도 불구하고 오늘날 많은 그리스도인들은 교회에서 돈에 관한 이야기를 꺼리거나, 영적 삶과는 무관한 세속적 영역으로 여기는 경향이 있다.</p>
 
@@ -502,9 +258,9 @@
 
   <p>리처드 포스터는 <em>『돈, 섹스, 권력』</em>에서 이 세 가지가 끝까지 인간을 유혹하는 핵심 욕망이라고 분석하면서도, 이것들을 단순히 악으로 규정하지 않는다. 오히려 본래 하나님의 선물이며, 문제는 성경적으로 해석하고 사용하는 데 있다고 말한다. 돈을 많이 번다고 해서 돈 문제가 해결되지 않는다. 복권 당첨자들이 오히려 더 비참해지는 경우가 많다는 사실은 이미 잘 알려져 있다. 재물에 대한 바른 태도, 즉 성경적 재정관을 갖출 때 비로소 이 문제는 근본적으로 해결된다.</p>
 
-  <div class="section-divider">· · ·</div>
+  <div class="orn" aria-hidden="true"><svg viewBox="0 0 96 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M14 22 C22 34 62 36 80 22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M80 22 C84 17 82 11 77 12 C74 13 74 17 76 20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M14 22 C10 19 9 15 12 13" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="41" cy="20" r="5" fill="currentColor"/><circle cx="53" cy="19" r="5" fill="currentColor" opacity=".7"/><circle cx="39.6" cy="18.6" r="1.4" fill="#F7F6F2" opacity=".6"/></svg></div>
 
-  <h2>1장. 돈의 신학 — 돈은 가치중립적이지 않다</h2>
+  <h2 class="ch" id="section-01"><span class="no" aria-hidden="true">1</span><span class="ht"><span class="vh">1장. </span>돈의 신학<span class="vh"> — </span><span class="hs">돈은 가치중립적이지 않다</span></span></h2>
 
   <h3>돈은 영적이다</h3>
 
@@ -522,9 +278,9 @@
 
   <p><strong>셋째, 부는 하나님의 은사이며 달란트다.</strong> 달란트 비유(마 25:14–30)에서처럼, 하나님께서는 어떤 사람에게 돈을 잘 버는 능력을 은사로 주신다. 신명기 8:18—"네 하나님 여호와를 기억하라 그가 재물 얻을 능력을 네게 주셨음이라." 돈을 버는 능력이 은사라면, 그 은사는 더 큰 하나님 나라의 목적을 향해 사용되어야 한다.</p>
 
-  <div class="section-divider">· · ·</div>
+  <div class="orn" aria-hidden="true"><svg viewBox="0 0 96 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M14 22 C22 34 62 36 80 22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M80 22 C84 17 82 11 77 12 C74 13 74 17 76 20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M14 22 C10 19 9 15 12 13" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="41" cy="20" r="5" fill="currentColor"/><circle cx="53" cy="19" r="5" fill="currentColor" opacity=".7"/><circle cx="39.6" cy="18.6" r="1.4" fill="#F7F6F2" opacity=".6"/></svg></div>
 
-  <h2>2장. 동기 점검 — 왜 성경적 재정관을 배우는가</h2>
+  <h2 class="ch" id="section-02"><span class="no" aria-hidden="true">2</span><span class="ht"><span class="vh">2장. </span>동기 점검<span class="vh"> — </span><span class="hs">왜 성경적 재정관을 배우는가</span></span></h2>
 
   <p>성경적 재정관을 배우는 목적이 더 효율적으로 돈을 관리하거나 더 많이 벌기 위한 것이라면, 출발점부터 잘못된 것이다. 디모데전서 6:9–10은 경고한다. <em>"부하려 하는 자들은 시험과 올무와 여러 가지 어리석고 해로운 욕심에 떨어지나니."</em> 주목할 것은, 경고의 대상이 <strong>'부자'가 아니라 '부하려 하는 자'</strong>라는 점이다. 부자가 되는 것 자체를 목표로 삼는 사람이 시험에 드는 것이다.</p>
 
@@ -535,9 +291,9 @@
 
   <p>성경적 재정관을 배우는 이유는 역설적으로 <strong>돈으로부터 자유로워지기 위해서</strong>다. 빌립보서 4:11–12에서 바울은 고백한다. "나는 자족하기를 배웠노니… 배부름과 배고픔과 풍부와 궁핍에도 처할 줄 아는 일체의 비결을 배웠노라." 바울에게 자족은 타고난 기질이 아니라 훈련을 통해 얻은 것이었다. 돈에 대한 집착을 내려놓기 위해 배우는 것—이 역설이 성경적 재정관의 출발점이다.</p>
 
-  <div class="section-divider">· · ·</div>
+  <div class="orn" aria-hidden="true"><svg viewBox="0 0 96 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M14 22 C22 34 62 36 80 22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M80 22 C84 17 82 11 77 12 C74 13 74 17 76 20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M14 22 C10 19 9 15 12 13" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="41" cy="20" r="5" fill="currentColor"/><circle cx="53" cy="19" r="5" fill="currentColor" opacity=".7"/><circle cx="39.6" cy="18.6" r="1.4" fill="#F7F6F2" opacity=".6"/></svg></div>
 
-  <h2>3장. 청지기직 — 소유권과 관리권의 근본적 차이</h2>
+  <h2 class="ch" id="section-03"><span class="no" aria-hidden="true">3</span><span class="ht"><span class="vh">3장. </span>청지기직<span class="vh"> — </span><span class="hs">소유권과 관리권의 근본적 차이</span></span></h2>
 
   <h3>오이코노모스 — 경제의 신학적 기원</h3>
 
@@ -547,7 +303,7 @@
 
   <h3>권성수 목사의 4가지 점검 질문</h3>
 
-  <ol class="guideline-list">
+  <ol class="guideline-list qnote">
     <li>지금 나는 <strong>주인 행세</strong>를 하고 있는가, <strong>청지기 행세</strong>를 하고 있는가?</li>
     <li>이 재정 결정에 <strong>성경적 근거</strong>가 있는가?</li>
     <li>이것이 주님께 드리는 <strong>제물</strong>이 되는가?</li>
@@ -558,9 +314,9 @@
 
   <p>누가복음 16장의 슬기로운 청지기 비유에서, 청지기는 주인이 언제든 계정을 청산하라고 부를 수 있는 시한부 관리자다. '불의의 재물로 친구를 사귀라'는 예수님 말씀에서 '불의의 재물'은 '돈이 더러워졌다'는 의미를 품고 있다. 자본주의 체제 안에서 유통되는 돈은 착취적 구조와 불평등한 교환을 통해 순환하기에 어떤 의미에서 모두 오염되어 있다. 그러나 이 더러워진 돈도 선하게 사용될 수 있다. <strong>돈도 구속(救贖)받을 수 있다.</strong> 이것이 폴 스티븐스가 말하는 '돈의 구속 가능성'이다.</p>
 
-  <div class="section-divider">· · ·</div>
+  <div class="orn" aria-hidden="true"><svg viewBox="0 0 96 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M14 22 C22 34 62 36 80 22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M80 22 C84 17 82 11 77 12 C74 13 74 17 76 20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M14 22 C10 19 9 15 12 13" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="41" cy="20" r="5" fill="currentColor"/><circle cx="53" cy="19" r="5" fill="currentColor" opacity=".7"/><circle cx="39.6" cy="18.6" r="1.4" fill="#F7F6F2" opacity=".6"/></svg></div>
 
-  <h2>4장. 십일조와 헌금 — 1/10의 신학과 9/10의 윤리</h2>
+  <h2 class="ch" id="section-04"><span class="no" aria-hidden="true">4</span><span class="ht"><span class="vh">4장. </span>십일조와 헌금<span class="vh"> — </span><span class="hs">1/10의 신학과 9/10의 윤리</span></span></h2>
 
   <h3>십일조 논쟁을 넘어서</h3>
 
@@ -574,9 +330,9 @@
 
   <p>더 중요한 문제는 나머지 9/10다. 교회는 오랫동안 1/10에 대해서만 가르쳤고, 그 결과 많은 그리스도인이 십일조 후에는 세상의 방식대로 돈을 사용한다. 삭개오는 직업을 바꾸지 않았지만 재정적 삶은 완전히 바뀌었다. "내 소유의 절반을 가난한 자들에게 주겠사오며"(눅 19:8)—이것이 돈 사용의 거듭남이다. 9/10을 사용하는 방식 전체가 하나님 나라의 가치를 반영하도록 변화되어야 한다.</p>
 
-  <div class="section-divider">· · ·</div>
+  <div class="orn" aria-hidden="true"><svg viewBox="0 0 96 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M14 22 C22 34 62 36 80 22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M80 22 C84 17 82 11 77 12 C74 13 74 17 76 20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M14 22 C10 19 9 15 12 13" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="41" cy="20" r="5" fill="currentColor"/><circle cx="53" cy="19" r="5" fill="currentColor" opacity=".7"/><circle cx="39.6" cy="18.6" r="1.4" fill="#F7F6F2" opacity=".6"/></svg></div>
 
-  <h2>5장. 투자와 투기 — 자본 활용의 윤리</h2>
+  <h2 class="ch" id="section-05"><span class="no" aria-hidden="true">5</span><span class="ht"><span class="vh">5장. </span>투자와 투기<span class="vh"> — </span><span class="hs">자본 활용의 윤리</span></span></h2>
 
   <p>명확한 기준 하나: <strong>투기는 내가 얻으면 남이 잃는 구조</strong>이고, <strong>투자는 나도 좋고 상대방도 좋은 구조</strong>다. 로또, 레버리지 선물 거래, 단기 투기적 매매는 전자에 속하고, 건전한 기업에 대한 장기 투자는 후자에 속한다.</p>
 
@@ -584,9 +340,9 @@
 
   <p>차입투자에 대해 조성표 교수는 단호하다. 잠언 22:7—<em>"빚진 자는 채주의 종이 되느니라."</em> 빚은 영적 굴레다. 빚이 많으면 하나님의 부르심에 자유롭게 응답할 수 없다. <strong>재정적 자유는 부자가 되는 것이 아니라 빚에서 자유로워지는 것으로부터 시작된다.</strong></p>
 
-  <div class="section-divider">· · ·</div>
+  <div class="orn" aria-hidden="true"><svg viewBox="0 0 96 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M14 22 C22 34 62 36 80 22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M80 22 C84 17 82 11 77 12 C74 13 74 17 76 20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M14 22 C10 19 9 15 12 13" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="41" cy="20" r="5" fill="currentColor"/><circle cx="53" cy="19" r="5" fill="currentColor" opacity=".7"/><circle cx="39.6" cy="18.6" r="1.4" fill="#F7F6F2" opacity=".6"/></svg></div>
 
-  <h2>6장. 자본주의와 하나님 나라</h2>
+  <h2 class="ch" id="section-06"><span class="no" aria-hidden="true">6</span><span class="ht"><span class="vh">6장. </span>자본주의와 하나님 나라</span></h2>
 
   <h3>생산력과 한계의 동시 인식</h3>
 
@@ -605,17 +361,17 @@
 
   <p>존재의 증명이 사유에서 소비로 이동했다. 어떤 브랜드를 입는가, 어떤 차를 모는가—이것이 정체성 증명 수단이 된다. 골로새서 3:5는 "탐심은 우상숭배니라"고 선언한다. 마이클 샌델은 돈으로 모든 것을 사려 할 때 두 가지 문제가 생긴다고 분석한다: ①<strong>불평등과 부패</strong>, ②<strong>가치의 훼손</strong>. 사랑, 우정, 신뢰는 돈으로 사려는 순간 본질이 파괴된다.</p>
 
-  <div class="section-divider">· · ·</div>
+  <div class="orn" aria-hidden="true"><svg viewBox="0 0 96 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M14 22 C22 34 62 36 80 22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M80 22 C84 17 82 11 77 12 C74 13 74 17 76 20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M14 22 C10 19 9 15 12 13" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="41" cy="20" r="5" fill="currentColor"/><circle cx="53" cy="19" r="5" fill="currentColor" opacity=".7"/><circle cx="39.6" cy="18.6" r="1.4" fill="#F7F6F2" opacity=".6"/></svg></div>
 
-  <h2>7장. 지공주의와 토지 — 경제적 정의의 성경적 토대</h2>
+  <h2 class="ch" id="section-07"><span class="no" aria-hidden="true">7</span><span class="ht"><span class="vh">7장. </span>지공주의와 토지<span class="vh"> — </span><span class="hs">경제적 정의의 성경적 토대</span></span></h2>
 
   <p>헨리 조지는 <em>『진보와 빈곤』</em>에서 토지 공개념을 주장했다. 토지는 아무도 만들지 않았으므로 사유재산이 될 수 없다는 것이다. 놀랍게도 레위기 25장이 그 성경적 토대를 제공한다. 50년마다 모든 토지가 원래 소유자에게 돌아가는 희년(Jubilee)—<em>"토지는 다 내 것임이니라 너희는 거류민이요 동거하는 자로서 나와 함께 있느니라"</em>(레 25:23).</p>
 
   <p>이사야 5:8은 강하게 경고한다. <em>"가옥에 가옥을 이으며 전토에 전토를 더하여 빈 틈이 없도록 하고 이 땅 가운데에서 홀로 거주하려 하는 자들은 화 있을진저."</em> 건강한 임대업—청년을 위한 셰어하우스, 주거취약계층을 위한 공간—은 가능하지만, 가격 상승만을 노리는 투기적 다주택 보유는 성경이 명백히 경계하는 영역이다.</p>
 
-  <div class="section-divider">· · ·</div>
+  <div class="orn" aria-hidden="true"><svg viewBox="0 0 96 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M14 22 C22 34 62 36 80 22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M80 22 C84 17 82 11 77 12 C74 13 74 17 76 20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M14 22 C10 19 9 15 12 13" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="41" cy="20" r="5" fill="currentColor"/><circle cx="53" cy="19" r="5" fill="currentColor" opacity=".7"/><circle cx="39.6" cy="18.6" r="1.4" fill="#F7F6F2" opacity=".6"/></svg></div>
 
-  <h2>8장. 쯔다카(צְדָקָה) — 구제를 넘어 정의로</h2>
+  <h2 class="ch" id="section-08"><span class="no" aria-hidden="true">8</span><span class="ht"><span class="vh">8장. </span>쯔다카(צְדָקָה)<span class="vh"> — </span><span class="hs">구제를 넘어 정의로</span></span></h2>
 
   <p>'쯔다카'는 일반적으로 '자선'이나 '구제'로 번역되지만, 깊은 의미는 <strong>'정의'(righteousness)</strong>다. 가진 자가 없는 자를 돕지 않는 것은 인색한 것이 아니라 <strong>불의한 것</strong>이다.</p>
 
@@ -643,11 +399,13 @@
 
   <p>최고 단계는 물질을 나누는 것을 넘어, 그 사람이 <strong>더 이상 도움이 필요 없는 상태</strong>가 되도록 돕는 것이다. 직업 기술을 가르치고, 자본을 제공하여 자영업을 시작하게 하고, 교육을 통해 가난에서 벗어나게 하는 것—이것이 쯔다카의 정점이다.</p>
 
-  <div class="section-divider">· · ·</div>
+  <div class="orn" aria-hidden="true"><svg viewBox="0 0 96 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M14 22 C22 34 62 36 80 22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M80 22 C84 17 82 11 77 12 C74 13 74 17 76 20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M14 22 C10 19 9 15 12 13" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="41" cy="20" r="5" fill="currentColor"/><circle cx="53" cy="19" r="5" fill="currentColor" opacity=".7"/><circle cx="39.6" cy="18.6" r="1.4" fill="#F7F6F2" opacity=".6"/></svg></div>
 
-  <h2>9장. 자족의 신학 — 훈련으로 얻는 평안</h2>
+  <h2 class="ch" id="section-09"><span class="no" aria-hidden="true">9</span><span class="ht"><span class="vh">9장. </span>자족의 신학<span class="vh"> — </span><span class="hs">훈련으로 얻는 평안</span></span></h2>
 
   <p>빌립보서 4:11에서 바울이 사용한 '배웠노니'(ἔμαθον)는 경험과 훈련을 통해 체득한 것을 의미한다. 자족은 타고난 기질이 아니라 가난과 풍요를 모두 겪으며 어떤 상황에서도 흔들리지 않는 평안을 찾는 훈련이다.</p>
+  <figure class="ill"><svg class="art" viewBox="0 0 900 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="돌 감옥의 작은 창으로 빛이 든다. 사슬에 매인 바울이 돌 걸상에 앉아 무릎 위 판에 편지를 쓴다."><defs><filter id="pr-paint" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="3" seed="4"/><feDisplacementMap in="SourceGraphic" scale="4"/></filter><filter id="pr-paint2" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".07" numOctaves="2" seed="9"/><feDisplacementMap in="SourceGraphic" scale="2.5"/></filter><filter id="pr-grain" filterUnits="userSpaceOnUse" x="0" y="0" width="900" height="440"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="2"/><feColorMatrix values="0 0 0 0 .3 0 0 0 0 .25 0 0 0 0 .2 0 0 0 .1 0"/><feComposite in2="SourceGraphic" operator="in"/></filter><filter id="pr-soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="7"/></filter><filter id="pr-soft2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.2"/></filter><pattern id="pr-stone" width="240" height="102" patternUnits="userSpaceOnUse"><rect width="240" height="102" fill="#2A2622"/><rect x="2" y="2" width="58" height="30" rx="6" fill="#4C463E"/><rect x="64" y="3" width="70" height="27" rx="6" fill="#544C42"/><rect x="138" y="2" width="46" height="31" rx="6" fill="#4A443B"/><rect x="188" y="4" width="50" height="28" rx="6" fill="#50493F"/><rect x="-20" y="36" width="48" height="30" rx="6" fill="#48423A"/><rect x="32" y="35" width="64" height="31" rx="6" fill="#50493F"/><rect x="100" y="37" width="40" height="28" rx="6" fill="#463F37"/><rect x="144" y="35" width="60" height="31" rx="6" fill="#524A40"/><rect x="208" y="36" width="50" height="30" rx="6" fill="#48423A"/><rect x="4" y="70" width="40" height="28" rx="6" fill="#4E473E"/><rect x="48" y="70" width="66" height="30" rx="6" fill="#463F37"/><rect x="118" y="71" width="54" height="28" rx="6" fill="#544C42"/><rect x="176" y="70" width="62" height="29" rx="6" fill="#4A443B"/><path d="M8 6 h20 M70 8 h18 M40 39 h14 M150 40 h22 M122 75 h18 M196 9 h14" stroke="#7A6E5E" stroke-width="1" opacity=".5"/></pattern><radialGradient id="pr-lit" cx="0.55" cy="0.62" r="0.55"><stop offset="0" stop-color="#E8CC98" stop-opacity="0.55"/><stop offset="0.5" stop-color="#C9A874" stop-opacity="0.22"/><stop offset="1" stop-color="#C9A874" stop-opacity="0"/></radialGradient><radialGradient id="pr-vig" cx="0.5" cy="0.5" r="0.75"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset="0.6" stop-color="#000" stop-opacity="0.1"/><stop offset="1" stop-color="#000" stop-opacity="0.6"/></radialGradient><linearGradient id="pr-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9DCE4"/><stop offset="1" stop-color="#F2F0E2"/></linearGradient><linearGradient id="pr-shaft" x1="336" y1="94" x2="600" y2="430" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFF4D6" stop-opacity="0.55"/><stop offset="1" stop-color="#FFF4D6" stop-opacity="0"/></linearGradient><radialGradient id="pr-glow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#FFE7A6" stop-opacity="0.9"/><stop offset="1" stop-color="#FFD070" stop-opacity="0"/></radialGradient><clipPath id="pr-f"><rect width="900" height="440" rx="10"/></clipPath></defs><g clip-path="url(#pr-f)"><rect width="900" height="440" fill="url(#pr-stone)"/><rect width="900" height="440" fill="url(#pr-lit)"/><path d="M286 54 H386 V136 H286Z" fill="#6E6452"/><path d="M300 64 H372 V124 H300Z" fill="url(#pr-sky)"/><path d="M300 64 L286 54 V136 L300 124Z" fill="#8E826C"/><path d="M300 124 L286 136 H386 L372 124Z" fill="#A8987A"/><path d="M318 64 V124 M336 64 V124 M354 64 V124 M300 94 H372" stroke="#1A1714" stroke-width="4"/><circle cx="336" cy="94" r="90" fill="url(#pr-glow)" opacity=".35"/><path d="M300 70 L372 66 L660 430 L470 440Z" fill="url(#pr-shaft)" filter="url(#pr-soft)"/><circle cx="498.6" cy="299.6" r="1.3" fill="#FFF6DA" opacity="0.8"/><circle cx="540" cy="338.2" r="0.6" fill="#FFF6DA" opacity="0.5"/><circle cx="564.9" cy="405.3" r="1.4" fill="#FFF6DA" opacity="0.4"/><circle cx="423.6" cy="248.8" r="1.1" fill="#FFF6DA" opacity="0.6"/><circle cx="316.4" cy="98.3" r="0.9" fill="#FFF6DA" opacity="0.8"/><circle cx="484.9" cy="346.7" r="1.3" fill="#FFF6DA" opacity="0.4"/><circle cx="448.2" cy="297.8" r="0.6" fill="#FFF6DA" opacity="0.7"/><circle cx="361.4" cy="163.1" r="1.5" fill="#FFF6DA" opacity="0.7"/><circle cx="439.5" cy="189.5" r="1.1" fill="#FFF6DA" opacity="0.6"/><circle cx="418.4" cy="161.6" r="1.2" fill="#FFF6DA" opacity="0.8"/><circle cx="525.5" cy="388.9" r="0.9" fill="#FFF6DA" opacity="0.4"/><circle cx="334.7" cy="142.1" r="0.9" fill="#FFF6DA" opacity="0.6"/><circle cx="351" cy="95.1" r="0.9" fill="#FFF6DA" opacity="0.5"/><circle cx="522.7" cy="364.1" r="0.9" fill="#FFF6DA" opacity="0.5"/><circle cx="462.6" cy="326.5" r="1.5" fill="#FFF6DA" opacity="0.3"/><circle cx="536" cy="341.4" r="0.6" fill="#FFF6DA" opacity="0.7"/><path d="M0 384 H900 V440 H0Z" fill="#2E2925"/><path d="M0 384 H900" stroke="#1A1714" stroke-width="2"/><path d="M541.1 417.5l-13.7 -2.7" stroke="#B8A06A" stroke-width="1.1" opacity=".55"/><path d="M459.6 434l-8.5 1.5" stroke="#B8A06A" stroke-width="1.1" opacity=".55"/><path d="M789 433.4l-4.4 -0.9" stroke="#B8A06A" stroke-width="1.1" opacity=".55"/><path d="M610.9 426.1l-11 1.5" stroke="#B8A06A" stroke-width="1.1" opacity=".55"/><path d="M730.8 429.8l-13 2.7" stroke="#B8A06A" stroke-width="1.1" opacity=".55"/><path d="M420.1 407l3.1 2.5" stroke="#B8A06A" stroke-width="1.1" opacity=".55"/><path d="M529.6 432.7l1.3 -1.1" stroke="#B8A06A" stroke-width="1.1" opacity=".55"/><path d="M519.4 399.8l-11.8 -2.1" stroke="#B8A06A" stroke-width="1.1" opacity=".55"/><path d="M683.2 435.9l-9.5 -2.7" stroke="#B8A06A" stroke-width="1.1" opacity=".55"/><path d="M814.1 415.5l-2.6 -1.6" stroke="#B8A06A" stroke-width="1.1" opacity=".55"/><path d="M641.3 428.4l-1.2 -0.5" stroke="#B8A06A" stroke-width="1.1" opacity=".55"/><path d="M404.5 432.3l-13.1 -0" stroke="#B8A06A" stroke-width="1.1" opacity=".55"/><path d="M748.9 397.7l6.5 2.7" stroke="#B8A06A" stroke-width="1.1" opacity=".55"/><path d="M657.4 426.7l-11 -0.4" stroke="#B8A06A" stroke-width="1.1" opacity=".55"/><path d="M445.7 429.2l-5.7 -0.3" stroke="#B8A06A" stroke-width="1.1" opacity=".55"/><path d="M819.7 429.5l13.3 -0.3" stroke="#B8A06A" stroke-width="1.1" opacity=".55"/><path d="M594.8 424.1l-0.6 -1.3" stroke="#B8A06A" stroke-width="1.1" opacity=".55"/><path d="M557.7 398.4l-3.4 2.9" stroke="#B8A06A" stroke-width="1.1" opacity=".55"/><path d="M802.3 419.6l-0 -1" stroke="#B8A06A" stroke-width="1.1" opacity=".55"/><path d="M419.2 404l7.9 2.2" stroke="#B8A06A" stroke-width="1.1" opacity=".55"/><path d="M539 426.6l7.7 1.2" stroke="#B8A06A" stroke-width="1.1" opacity=".55"/><path d="M672.2 425.4l-3.8 1.2" stroke="#B8A06A" stroke-width="1.1" opacity=".55"/><path d="M503.6 413.4l7.6 1.1" stroke="#B8A06A" stroke-width="1.1" opacity=".55"/><path d="M509.3 433.6l4.2 0.5" stroke="#B8A06A" stroke-width="1.1" opacity=".55"/><path d="M385.1 416.1l-7 1" stroke="#B8A06A" stroke-width="1.1" opacity=".55"/><path d="M583.7 427.9l4.1 1.8" stroke="#B8A06A" stroke-width="1.1" opacity=".55"/><path d="M533.1 420.3l6.7 2" stroke="#B8A06A" stroke-width="1.1" opacity=".55"/><path d="M534 429.1l10.4 1.1" stroke="#B8A06A" stroke-width="1.1" opacity=".55"/><path d="M809.5 434.1l0.5 0.2" stroke="#B8A06A" stroke-width="1.1" opacity=".55"/><path d="M453.1 428.8l12.2 -0.1" stroke="#B8A06A" stroke-width="1.1" opacity=".55"/><path d="M420 336 H770 V344 H420Z" fill="#9A866A"/><path d="M420 344 H770 V384 H420Z" fill="#5A5046"/><path d="M420 344 H770" stroke="#2A2420" stroke-width="1.4"/><rect x="706" y="300" width="14" height="12" rx="2" fill="#3A3A40"/><circle cx="713" cy="318" r="7" fill="none" stroke="#6A6A72" stroke-width="2.4"/><ellipse cx="522.8" cy="394.3" rx="5" ry="1.2" transform="rotate(17.9 522.8 394.3)" fill="none" stroke="#74747C" stroke-width="1.7"/><ellipse cx="536.3" cy="398.3" rx="5" ry="2.6" transform="rotate(14.6 536.3 398.3)" fill="none" stroke="#74747C" stroke-width="1.7"/><ellipse cx="549.5" cy="401.2" rx="5" ry="1.2" transform="rotate(10.9 549.5 401.2)" fill="none" stroke="#74747C" stroke-width="1.7"/><ellipse cx="562.3" cy="403.3" rx="5" ry="2.6" transform="rotate(6.9 562.3 403.3)" fill="none" stroke="#74747C" stroke-width="1.7"/><ellipse cx="574.8" cy="404.3" rx="5" ry="1.2" transform="rotate(2.7 574.8 404.3)" fill="none" stroke="#74747C" stroke-width="1.7"/><ellipse cx="587" cy="404.4" rx="5" ry="2.6" transform="rotate(-1.8 587 404.4)" fill="none" stroke="#74747C" stroke-width="1.7"/><ellipse cx="598.9" cy="403.6" rx="5" ry="1.2" transform="rotate(-6.5 598.9 403.6)" fill="none" stroke="#74747C" stroke-width="1.7"/><ellipse cx="610.5" cy="401.8" rx="5" ry="2.6" transform="rotate(-11.3 610.5 401.8)" fill="none" stroke="#74747C" stroke-width="1.7"/><ellipse cx="621.7" cy="399" rx="5" ry="1.2" transform="rotate(-16.3 621.7 399)" fill="none" stroke="#74747C" stroke-width="1.7"/><ellipse cx="632.7" cy="395.3" rx="5" ry="2.6" transform="rotate(-21.3 632.7 395.3)" fill="none" stroke="#74747C" stroke-width="1.7"/><ellipse cx="643.3" cy="390.6" rx="5" ry="1.2" transform="rotate(-26.2 643.3 390.6)" fill="none" stroke="#74747C" stroke-width="1.7"/><ellipse cx="653.6" cy="385" rx="5" ry="2.6" transform="rotate(-31 653.6 385)" fill="none" stroke="#74747C" stroke-width="1.7"/><ellipse cx="663.6" cy="378.4" rx="5" ry="1.2" transform="rotate(-35.7 663.6 378.4)" fill="none" stroke="#74747C" stroke-width="1.7"/><ellipse cx="673.3" cy="370.8" rx="5" ry="2.6" transform="rotate(-40.1 673.3 370.8)" fill="none" stroke="#74747C" stroke-width="1.7"/><ellipse cx="682.7" cy="362.3" rx="5" ry="1.2" transform="rotate(-44.3 682.7 362.3)" fill="none" stroke="#74747C" stroke-width="1.7"/><ellipse cx="691.7" cy="352.8" rx="5" ry="2.6" transform="rotate(-48.2 691.7 352.8)" fill="none" stroke="#74747C" stroke-width="1.7"/><ellipse cx="700.5" cy="342.4" rx="5" ry="1.2" transform="rotate(-51.8 700.5 342.4)" fill="none" stroke="#74747C" stroke-width="1.7"/><ellipse cx="708.9" cy="331" rx="5" ry="2.6" transform="rotate(-55.1 708.9 331)" fill="none" stroke="#74747C" stroke-width="1.7"/><path d="M744 410 C736 388 740 368 752 362 L750 354 H766 L764 362 C776 368 780 388 772 410Z" fill="#8E5E3A"/><path d="M758 364 C770 372 772 392 766 410 H772 C780 388 776 368 764 362Z" fill="#6A4026"/><ellipse cx="736" cy="333" rx="16" ry="6" fill="#B07A44"/><path d="M724 331 q12 -5 24 0" stroke="#7A4E28" stroke-width="1.4" fill="none"/><circle cx="452" cy="396" r="40" fill="url(#pr-glow)" opacity=".6"/><path d="M440 406 C440 398 466 398 466 406 C466 410 440 410 440 406Z" fill="#A86A40"/><path d="M464 402 l8 -3" stroke="#A86A40" stroke-width="3" stroke-linecap="round"/><path d="M472 398 c-3 -5 -2 -9 0 -12 c2 3 3 7 0 12z" fill="#FFB43C"/><path d="M650 336 L700 332 L704 337 L654 341Z" fill="#E6DCC0"/><path d="M654 333 L702 329 L705 333 L656 337Z" fill="#EFE6CC"/><path d="M620 336 C618 326 632 326 630 336Z" fill="#2A2420"/><path d="M626 326 l4 -10" stroke="#5A4A30" stroke-width="1.4"/><g transform="translate(560 400) scale(1.22) translate(-560 -400)"><g filter="url(#pr-paint2)"><ellipse cx="560" cy="400" rx="70" ry="7" fill="#000" opacity=".3"/><path d="M566 268C584 266 600 278 604 296C608 314 608 332 606 346L566 350C556 330 552 300 556 282C558 274 561 270 566 268Z" fill="#7A5A3E"/><path d="M606 346 L566 350 C550 350 532 348 516 344 C508 344 505 352 509 358 C526 363 560 363 607 360Z" fill="#7A5A3E"/><path d="M509 356 L505 396 L526 398 L529 360Z" fill="#6A4C34"/><ellipse cx="514" cy="398" rx="11" ry="3.4" fill="#4A3424"/><path d="M572 268C590 270 604 284 608 304C612 324 610 340 606 350L588 352C593 330 591 300 580 284C576 278 572 272 572 268Z" fill="#4E5A4C"/><path d="M560 346 C576 348 594 350 606 348 L606 360 C584 362 566 362 552 360Z" fill="#4E5A4C"/><path d="M503 342 L560 337 L566 346 L508 351Z" fill="#E9DFC2"/><path d="M500 345 L506 352 L568 347 L563 339" fill="none" stroke="#6A5236" stroke-width="2"/><path d="M512 343 q6 -1.5 12 0 t12 -1 t12 0 M514 346 q6 -1.5 12 0 t12 -1 M516 349 q6 -1.5 12 0 t10 -1" stroke="#5A4A34" stroke-width=".7" fill="none" opacity=".6"/><path d="M562 286C552 300 540 318 529 333" stroke="#7A5A3E" stroke-width="9" stroke-linecap="round" fill="none"/><ellipse cx="526" cy="335" rx="4.6" ry="3.4" fill="#A87A56"/><path d="M523 337 L512 320" stroke="#3A2A1A" stroke-width="1.6"/><circle cx="552" cy="258" r="14" fill="#A87A56"/><path d="M556 245 C566 248 570 260 566 272 C562 268 560 262 558 256 C557 252 556 248 556 245Z" fill="#B8B2A6"/><path d="M540 262 C537 272 543 281 552 281 C556 275 553 266 548 262Z" fill="#A8A296"/><path d="M509 392 h16 v6 h-16z" fill="#4A4A52"/><circle cx="520" cy="394" r="3.2" fill="none" stroke="#74747C" stroke-width="1.6"/></g></g><rect width="900" height="440" fill="url(#pr-vig)"/><rect width="900" height="440" filter="url(#pr-grain)" fill="#fff"/></g><rect x=".5" y=".5" width="899" height="439" rx="10" fill="none" stroke="#18232B" stroke-opacity=".18"/></svg><figcaption>감옥의 작은 창 아래, 사슬에 매인 채 편지를 쓰는 바울(빌 4:11).</figcaption></figure>
+
 
   <div class="pullquote">
     만족은 소유가 아니라 훈련에서 온다.
@@ -658,9 +416,9 @@
 
   <p>마태복음 6:22에서 '성한 눈'의 헬라어 'haplous'는 '단순한', '하나에 집중된'을 의미한다. 돈에 대한 집착이 사라진 눈은 오직 하나님 나라만을 바라본다. 그때 "먼저 그의 나라와 의를 구하라"는 명령이 비로소 실제로 가능해진다. <strong>자족은 절약이 아니라 더 큰 자유로 향하는 길이다.</strong></p>
 
-  <div class="section-divider">· · ·</div>
+  <div class="orn" aria-hidden="true"><svg viewBox="0 0 96 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M14 22 C22 34 62 36 80 22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M80 22 C84 17 82 11 77 12 C74 13 74 17 76 20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M14 22 C10 19 9 15 12 13" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="41" cy="20" r="5" fill="currentColor"/><circle cx="53" cy="19" r="5" fill="currentColor" opacity=".7"/><circle cx="39.6" cy="18.6" r="1.4" fill="#F7F6F2" opacity=".6"/></svg></div>
 
-  <h2>10장. 관대함의 신학 — 나눔의 기쁨</h2>
+  <h2 class="ch" id="section-10"><span class="no" aria-hidden="true">10</span><span class="ht"><span class="vh">10장. </span>관대함의 신학<span class="vh"> — </span><span class="hs">나눔의 기쁨</span></span></h2>
 
   <p>타인을 위해 돈을 쓸 때 자신을 위해 쓸 때보다 더 큰 행복감을 경험한다는 연구 결과는 예수님의 말씀과 공명한다. <em>"주는 것이 받는 것보다 복이 있다"</em>(행 20:35). 마게도니아 교회는 환난과 극심한 가난 가운데서도 넘치는 기쁨으로 풍성하게 연보했다. 비결은 <strong>"먼저 자신을 주께 드린 것"</strong>이었다(고후 8:5).</p>
 
@@ -673,9 +431,9 @@
 
   <p>웨슬리는 세 가지 원칙을 세웠다: <strong>"최대한 많이 벌라. 최대한 저축하라. 최대한 주라."</strong> 그 자신은 연 수입이 30파운드이든 120파운드이든 항상 28파운드만 생활비로 쓰고 나머지는 하나님 나라와 이웃을 위해 사용했다. 수입이 늘어도 생활 수준을 높이지 않은 것—이것이 삶으로 보여준 성경적 재정관이다.</p>
 
-  <div class="section-divider">· · ·</div>
+  <div class="orn" aria-hidden="true"><svg viewBox="0 0 96 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M14 22 C22 34 62 36 80 22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M80 22 C84 17 82 11 77 12 C74 13 74 17 76 20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M14 22 C10 19 9 15 12 13" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="41" cy="20" r="5" fill="currentColor"/><circle cx="53" cy="19" r="5" fill="currentColor" opacity=".7"/><circle cx="39.6" cy="18.6" r="1.4" fill="#F7F6F2" opacity=".6"/></svg></div>
 
-  <h2>11장. 실천적 지침 — 구체적 걸음</h2>
+  <h2 class="ch" id="section-11"><span class="no" aria-hidden="true">11</span><span class="ht"><span class="vh">11장. </span>실천적 지침<span class="vh"> — </span><span class="hs">구체적 걸음</span></span></h2>
 
   <ol class="guideline-list">
     <li><strong>필요(needs)와 욕망(desires)을 구분하라.</strong> 구매 전 "이것이 없으면 안 되는가? 한 달을 기다려도 괜찮은가?" 묻는 습관을 기르라. 단, 무조건 짜게 살자는 것도 또 다른 굴레다.</li>
@@ -686,9 +444,9 @@
     <li><strong>관리 + 자족 + 하나님 의존(Radical Dependence)</strong>—이 세 요소의 균형을 유지하라.</li>
   </ol>
 
-  <div class="section-divider">· · ·</div>
+  <div class="orn" aria-hidden="true"><svg viewBox="0 0 96 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M14 22 C22 34 62 36 80 22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M80 22 C84 17 82 11 77 12 C74 13 74 17 76 20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M14 22 C10 19 9 15 12 13" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="41" cy="20" r="5" fill="currentColor"/><circle cx="53" cy="19" r="5" fill="currentColor" opacity=".7"/><circle cx="39.6" cy="18.6" r="1.4" fill="#F7F6F2" opacity=".6"/></svg></div>
 
-  <h2>에필로그: 인생의 십일조</h2>
+  <h2 class="ch edge" id="epilogue"><span class="ht"><span class="hk">에필로그<span class="vh">:</span></span>인생의 십일조</span></h2>
 
   <p>십일조의 신학적 의미는 수입의 1/10을 드리는 것이 아니라 <strong>"이 모든 것이 주님이 주신 것이다"</strong>라는 고백이다. 이 고백이 삶 전체로 확장될 때, "내 인생이 주님의 것이다"라는 고백이 된다. 오병이어의 기적처럼—작은 것을 내어 놓았는데 희생보다 더 큰 풍성함을 얻는다. 이것이 인생의 십일조가 가져다주는 역설이다.</p>
 
@@ -706,9 +464,9 @@
     <p>케빈 드영의 말처럼, "온전히 인간다운 삶은 소유의 종살이에서 벗어난 자유로운 삶이다." 자유로운 삶은 많이 가지는 것이 아니라, 가진 것과 갖지 못한 것에 흔들리지 않는 것이다.</p>
   </div>
 
-  <!-- ── Sources ── -->
+  
   <div class="sources">
-    <h2>참고 자료 및 출처</h2>
+    <h2 class="term" id="sources">참고 자료 및 출처</h2>
     <ul>
       <li>조성표, 『알수록 행복해지는 돈의 비밀』 (CUP, 2008)</li>
       <li>폴 스티븐스·클라이브 림, 『돈은 중요하다』</li>
@@ -722,12 +480,17 @@
       <li>마이모니데스, 쯔다카 8단계 (Mishneh Torah, Hilkhot Matanot Aniyim)</li>
     </ul>
   </div>
-
-</article>
-
-<footer class="article-footer">
-  <p>성경적 재정관 종합 연구 보고서 · 멘토링 Q&amp;A 시리즈 정리 · 2026</p>
-</footer>
-
+</main>
+</div>
+<footer class="foot"><div class="frame"><div class="in"><p class="colophon">성경적 재정관 종합 연구 보고서 · 멘토링 Q&amp;A 시리즈 정리 · 2026</p><a href="https://wiki.youngdoctor.kr/marktl/">영닥터 아카이브로 돌아가기</a><span>youngdoctor.kr · 2026-10-30</span></div></div></footer>
+<script>
+(()=>{const b=document.getElementById('tocBtn'),l=document.getElementById('tocList'),nav=b.closest('.toc');
+b.addEventListener('click',()=>{const o=nav.classList.toggle('open');b.setAttribute('aria-expanded',String(o));b.querySelector('span').textContent=o?'−':'+'});
+l.addEventListener('click',e=>{if(e.target.closest('a')&&matchMedia('(max-width:1079px)').matches){nav.classList.remove('open');b.setAttribute('aria-expanded','false');b.querySelector('span').textContent='+'}});
+const links=[...l.querySelectorAll('a')],map=new Map(links.map(a=>[a.getAttribute('href').slice(1),a]));
+const hs=[...map.keys()].map(id=>document.getElementById(id)).filter(Boolean);
+if('IntersectionObserver'in window){const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.removeAttribute('aria-current'));const a=map.get(e.target.id);if(a)a.setAttribute('aria-current','location')}})},{rootMargin:'0px 0px -75% 0px'});hs.forEach(h=>io.observe(h))}
+})();
+</script>
 </body>
 </html>
