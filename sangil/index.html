@@ -1,0 +1,1065 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>산길잇기</title>
+<meta name="description" content="지도에 점을 찍으면 등산로를 따라 이어 GPX·TCX로 저장합니다. 도보 전용 경로 만들기.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+KR:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+<style>
+/* 레이아웃: 지도(위에 지도 막대·장소 카드)가 화면을 차지하고 오른쪽(폰에서는 아래)에 작업 패널 */
+:root {
+  --paper: #f4f6f1;      /* 지형도 종이 */
+  --card: #ffffff;
+  --ink: #1d2a21;        /* 숲 먹색 */
+  --muted: #5b6a5f;
+  --line: #d6dccf;
+  --route: #c8126f;      /* 코스선 */
+  --trail: #ff6a00;      /* 등산로 강조 */
+  --contour: #9a6a35;    /* 등고선 갈색 — 고도 그래프 */
+  --pine: #2e6a4d;       /* 주 버튼 */
+  --pine-ink: #ffffff;
+  --warn: #b3261e;
+  --font-display: "Black Han Sans", "Apple SD Gothic Neo", sans-serif;
+  --font-body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #131a15; --card: #1b241e; --ink: #e2eae2; --muted: #98a79b; --line: #2c372f;
+    --route: #ff4fa3; --contour: #cf975c; --pine: #6dbf93; --pine-ink: #0e1a12; --warn: #ff8a80;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #131a15; --card: #1b241e; --ink: #e2eae2; --muted: #98a79b; --line: #2c372f;
+  --route: #ff4fa3; --contour: #cf975c; --pine: #6dbf93; --pine-ink: #0e1a12; --warn: #ff8a80;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { height: 100%; margin: 0; }
+body {
+  background: var(--paper); color: var(--ink);
+  font: 14px/1.5 var(--font-body);
+  display: grid; grid-template-columns: minmax(0, 1fr) 360px;
+}
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--route); outline-offset: 2px; }
+
+/* 지도 */
+#mapWrap { position: relative; min-height: 320px; }
+#map { position: absolute; inset: 0; }
+.leaflet-container { font-family: var(--font-body); cursor: crosshair; }
+.mapbar {
+  position: absolute; z-index: 1000; top: 10px; left: 10px; right: 60px;
+  display: flex; flex-wrap: wrap; gap: 6px; pointer-events: none;
+}
+.mapbar > * { pointer-events: auto; flex: none; }
+.pillgroup { display: inline-flex; background: var(--card); border: 1px solid var(--line); border-radius: 999px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.18); }
+.pillgroup button, .chip {
+  border: 0; background: transparent; padding: 5px 11px; cursor: pointer; font-size: 13px; color: var(--muted); white-space: nowrap;
+}
+.pillgroup button[aria-pressed="true"] { background: var(--ink); color: var(--paper); font-weight: 600; }
+.chip { background: var(--card); border: 1px solid var(--line); border-radius: 999px; box-shadow: 0 1px 4px rgba(0,0,0,.18); }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); font-weight: 600; }
+.hint {
+  position: absolute; z-index: 1000; left: 10px; bottom: 26px; max-width: calc(100% - 20px);
+  background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 4px 9px; font-size: 12px; color: var(--muted);
+  box-shadow: 0 1px 4px rgba(0,0,0,.18);
+}
+.card {
+  position: absolute; z-index: 1001; left: 10px; right: 10px; bottom: 26px; max-width: 420px;
+  background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.25); display: grid; gap: 8px;
+}
+.card h3 { margin: 0; font-size: 15px; }
+.card p { margin: 0; font-size: 12px; color: var(--muted); }
+.card .row { display: flex; gap: 6px; flex-wrap: wrap; }
+
+/* 지도 위 표식 */
+.wp { width: 14px; height: 14px; border-radius: 50%; background: #fff; border: 3px solid var(--route); box-shadow: 0 0 0 1px rgba(0,0,0,.3); }
+.wp.start { background: var(--pine); border-color: #fff; }
+.pin {
+  min-width: 24px; height: 24px; padding: 0 5px; border-radius: 12px; display: grid; place-items: center;
+  font: 600 12px/1 var(--font-body); color: #fff; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.4); cursor: pointer;
+  white-space: nowrap;
+}
+.pin.parking { background: #1f5fbf; } .pin.conv { background: #6b3fa0; } .pin.food { background: #c2410c; }
+.pin.cafe { background: #7c5a2a; } .pin.station { background: #0f766e; } .pin.hit { background: var(--route); }
+.wpt {
+  height: 22px; min-width: 22px; padding: 0 6px; border-radius: 4px; display: grid; place-items: center;
+  background: #fff; color: #111; border: 2px solid #1d2a21; font: 600 12px/1 var(--font-body); box-shadow: 0 1px 4px rgba(0,0,0,.35);
+  white-space: nowrap;
+}
+.cursor { width: 14px; height: 14px; border-radius: 50%; background: var(--route); border: 2px solid #fff; box-shadow: 0 0 0 1px rgba(0,0,0,.3); }
+
+/* 패널 */
+aside {
+  border-left: 1px solid var(--line); overflow-y: auto;
+  padding-block: 18px 24px;
+  padding-left: max(18px, env(safe-area-inset-left, 0px));
+  padding-right: max(18px, env(safe-area-inset-right, 0px));
+  display: flex; flex-direction: column; gap: 18px;
+}
+h1 { font: 30px/1 var(--font-display); margin: 0; letter-spacing: .01em; }
+h1 span { color: var(--route); }
+.lede { margin: 6px 0 0; color: var(--muted); font-size: 13px; }
+.label { font-size: 11px; font-weight: 600; letter-spacing: .08em; color: var(--muted); margin: 0 0 6px; }
+input[type="text"], input[type="number"], select {
+  width: 100%; background: transparent; border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px;
+}
+.search { display: flex; gap: 6px; }
+.search .btn { flex: none; white-space: nowrap; }
+.results { list-style: none; margin: 6px 0 0; padding: 0; max-height: 260px; overflow-y: auto; }
+.results button {
+  width: 100%; text-align: left; font-size: 13px; background: none; border: 0; border-bottom: 1px solid var(--line);
+  padding: 7px 2px; cursor: pointer;
+}
+.results button:hover { color: var(--route); }
+.results small { color: var(--muted); display: block; }
+
+.seg { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.seg button { padding: 8px 6px; border: 0; background: transparent; color: var(--muted); cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--paper); font-weight: 600; }
+.hintline { font-size: 12px; color: var(--muted); margin: 6px 0 0; }
+.sub { margin-top: 10px; }
+
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 10px; margin: 0; }
+.stats div { min-width: 0; }
+.stats dt { font-size: 11px; color: var(--muted); }
+.stats dd { margin: 0; font: 500 19px/1.2 var(--font-data); font-variant-numeric: tabular-nums; }
+.stats dd small { font: 12px var(--font-body); color: var(--muted); margin-left: 2px; }
+.stats .big dd { color: var(--route); }
+.pace { display: flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 13px; color: var(--muted); }
+.pace input { width: 80px; padding: 5px 8px; font-family: var(--font-data); }
+
+.profile svg { width: 100%; height: auto; display: block; touch-action: none; }
+.profile .axis { fill: var(--muted); font: 10px var(--font-data); }
+.profile .grid { stroke: var(--line); stroke-width: 1; }
+.profile .area { fill: var(--contour); fill-opacity: .22; }
+.profile .ln { fill: none; stroke: var(--contour); stroke-width: 1.6; }
+.profile .cur { stroke: var(--route); stroke-width: 1; }
+.profile .wmark { stroke: var(--ink); stroke-width: 1; stroke-dasharray: 2 2; opacity: .5; }
+.profile .wtext { fill: var(--ink); font: 600 9px var(--font-body); }
+.profile .empty { fill: var(--muted); font: 12px var(--font-body); }
+.readout { font: 12px var(--font-data); color: var(--muted); min-height: 1.5em; margin: 2px 0 0; }
+
+.wlist { width: 100%; border-collapse: collapse; font-size: 13px; }
+.wlist td { border-bottom: 1px solid var(--line); padding: 5px 3px; vertical-align: middle; }
+.wlist td.num { font-family: var(--font-data); font-variant-numeric: tabular-nums; white-space: nowrap; text-align: right; color: var(--muted); }
+.wlist select { width: 66px; padding: 4px; font-size: 12px; }
+.wlist input { padding: 4px 6px; font-size: 13px; }
+.wlist .fixed td { color: var(--muted); }
+.x { border: 0; background: none; color: var(--warn); cursor: pointer; padding: 2px 6px; font-size: 15px; }
+.empty-note { font-size: 12px; color: var(--muted); margin: 0; }
+
+.actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.btn {
+  font-weight: 600; padding: 9px 14px; border-radius: 6px; cursor: pointer;
+  border: 1px solid var(--line); background: transparent;
+}
+.btn.small { padding: 5px 10px; font-size: 13px; }
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+.btn.primary { background: var(--pine); border-color: var(--pine); color: var(--pine-ink); }
+.btn.grow { flex: 1 1 0; }
+.btn.danger { color: var(--warn); }
+.filebtn { position: relative; overflow: hidden; }
+.filebtn input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+
+.status { font-size: 13px; min-height: 1.5em; margin: 0; }
+.status.err { color: var(--warn); }
+footer { margin-top: auto; font-size: 11px; color: var(--muted); }
+footer a { color: inherit; }
+
+@media (max-width: 760px) {
+  body { display: block; height: auto; }
+  #mapWrap { height: 62vh; }
+  aside { border-left: 0; border-top: 1px solid var(--line); overflow: visible; }
+  .mapbar { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div id="mapWrap">
+  <div id="map" aria-label="지도: 눌러서 지점 추가"></div>
+  <div class="mapbar">
+    <div class="pillgroup" role="group" aria-label="지도 종류">
+      <button type="button" id="baseMap" aria-pressed="true">지도</button>
+      <button type="button" id="baseSky" aria-pressed="false">스카이뷰</button>
+    </div>
+    <button type="button" class="chip" id="terrainChip" aria-pressed="false" hidden>지형</button>
+    <button type="button" class="chip" data-kind="parking" aria-pressed="false">주차장</button>
+    <button type="button" class="chip" data-kind="station" aria-pressed="false">지하철역</button>
+    <button type="button" class="chip" data-kind="conv" aria-pressed="false">편의점</button>
+    <button type="button" class="chip" data-kind="food" aria-pressed="false">음식점</button>
+    <button type="button" class="chip" data-kind="cafe" aria-pressed="false">카페</button>
+  </div>
+  <div class="hint" id="hint" hidden></div>
+  <div class="card" id="card" hidden>
+    <div><h3 id="cardName"></h3><p id="cardAddr"></p></div>
+    <div class="row">
+      <button type="button" class="btn small primary" id="cardGo">여기서 출발</button>
+      <button type="button" class="btn small" id="cardClose">닫기</button>
+    </div>
+  </div>
+</div>
+
+<aside>
+  <header>
+    <h1>산길<span>잇기</span></h1>
+    <p class="lede">출발할 주차장이나 역을 찾고, 지도에 점을 차례로 찍으면 등산로를 따라 이어 줍니다. 다 되면 GPX·TCX로 저장해 시계·앱에 넣으세요.</p>
+  </header>
+
+  <section>
+    <p class="label">장소 찾기</p>
+    <form class="search" id="searchForm">
+      <input type="text" id="q" placeholder="예: 북한산성 주차장, 청계산입구역" autocomplete="off">
+      <button class="btn" type="submit">찾기</button>
+    </form>
+    <ul class="results" id="results"></ul>
+  </section>
+
+  <section>
+    <p class="label">지도를 누르면</p>
+    <div class="seg" role="group" aria-label="지도를 누르면">
+      <button type="button" id="actRoute" aria-pressed="true">경로 잇기</button>
+      <button type="button" id="actWpt" aria-pressed="false">이정표 찍기</button>
+    </div>
+    <div class="sub" id="routeOpts">
+      <div class="seg" role="group" aria-label="잇는 방식">
+        <button type="button" id="modeTrail" aria-pressed="true">등산로 따라</button>
+        <button type="button" id="modeLine" aria-pressed="false">직선</button>
+      </div>
+    </div>
+    <p class="hintline" id="actHint"></p>
+  </section>
+
+  <section>
+    <p class="label">코스</p>
+    <dl class="stats">
+      <div class="big"><dt>거리</dt><dd id="sDist">0.00<small>km</small></dd></div>
+      <div><dt>오르막 D+</dt><dd id="sUp">0<small>m</small></dd></div>
+      <div><dt>내리막 D−</dt><dd id="sDown">0<small>m</small></dd></div>
+      <div><dt>최고점</dt><dd id="sMax">–<small>m</small></dd></div>
+      <div><dt>예상 시간</dt><dd id="sTime">0:00</dd></div>
+      <div><dt title="거리(km) + 오르막(m)/100 — 트레일 레이스 난이도에 쓰는 환산 거리">km-effort</dt><dd id="sEffort">0.0</dd></div>
+    </dl>
+    <label class="pace">평속 <input type="number" id="pace" min="0.5" max="20" step="0.5" value="4"> km/h</label>
+  </section>
+
+  <section class="profile">
+    <p class="label">고도 단면</p>
+    <svg id="profile" viewBox="0 0 320 130" role="img" aria-label="고도 단면 그래프"></svg>
+    <p class="readout" id="readout"></p>
+  </section>
+
+  <section>
+    <p class="label">이정표</p>
+    <table class="wlist" id="wlist"></table>
+    <p class="empty-note" id="wEmpty">「이정표 찍기」를 누르고 경로 위를 찍으면 정상·물·갈림길을 표시합니다. TCX로 저장하면 시계가 그 지점에서 알려 줍니다.</p>
+  </section>
+
+  <section>
+    <p class="label">코스 이름</p>
+    <input type="text" id="courseName" value="새 코스" autocomplete="off">
+  </section>
+
+  <section>
+    <div class="actions">
+      <button class="btn primary grow" type="button" id="saveGpx" disabled>GPX 저장</button>
+      <button class="btn primary grow" type="button" id="saveTcx" disabled>TCX 저장</button>
+    </div>
+    <div class="actions" style="margin-top:8px">
+      <button class="btn" type="button" id="undoBtn" disabled>되돌리기</button>
+      <button class="btn" type="button" id="reverseBtn" disabled>반대방향</button>
+      <label class="btn filebtn">파일 열기<input type="file" id="fileIn" accept=".gpx,.tcx"></label>
+      <button class="btn danger" type="button" id="clearBtn" disabled>모두 지우기</button>
+    </div>
+    <p class="status" id="status" role="status"></p>
+  </section>
+
+  <footer id="credit"></footer>
+</aside>
+
+<script>
+"use strict";
+
+// 카카오 개발자 콘솔의 JavaScript 키(등록한 웹 주소에서만 작동). 비어 있거나 카카오 지도를 못 불러오면 무료 지도(OpenTopoMap)로 동작한다.
+const KAKAO_JS_KEY = "";
+
+const BROUTER = "https://brouter.de/brouter";
+const PROFILE = "hiking-mountain";
+const ELEV_API = "https://api.open-meteo.com/v1/elevation";
+const STEP_M = 25;          // 직선 구간에서 고도를 재는 간격
+const HYST_M = 5;           // 오르막·내리막 누적 때 무시할 고도 흔들림
+const SNAP_M = 250;         // 이정표를 경로에 붙일 수 있는 거리
+const START = [37.6595, 126.968];
+const DRAFT_KEY = "sangil-draft-v2";
+
+const WTYPES = [
+  { id: "Summit", label: "정상", mark: "정상", sym: "Summit" },
+  { id: "Water", label: "물", mark: "물", sym: "Drinking Water" },
+  { id: "Food", label: "매점", mark: "매점", sym: "Restaurant" },
+  { id: "Danger", label: "위험", mark: "위험", sym: "Danger Area" },
+  { id: "Left", label: "좌회전", mark: "←", sym: "Flag, Blue" },
+  { id: "Right", label: "우회전", mark: "→", sym: "Flag, Blue" },
+  { id: "Straight", label: "직진", mark: "↑", sym: "Flag, Blue" },
+  { id: "Generic", label: "기타", mark: "•", sym: "Flag, Blue" },
+];
+const KINDS = {
+  parking: { label: "주차장", mark: "P", kakao: "PK6" },
+  station: { label: "지하철역", mark: "역", kakao: "SW8" },
+  conv: { label: "편의점", mark: "편", kakao: "CS2" },
+  food: { label: "음식점", mark: "식", kakao: "FD6" },
+  cafe: { label: "카페", mark: "카", kakao: "CE7" },
+};
+
+const $ = (id) => document.getElementById(id);
+const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+const el = (cls, text) => { const d = document.createElement("div"); d.className = cls; if (text != null) d.textContent = text; return d; };
+const esc = (s) => String(s).replace(/[<>&'"]/g, c => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", "'": "&apos;", '"': "&quot;" }[c]));
+const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+
+function loadScript(src) {
+  return new Promise((ok, no) => {
+    const s = document.createElement("script");
+    s.src = src; s.onload = ok; s.onerror = () => no(new Error("script " + src));
+    document.head.appendChild(s);
+  });
+}
+
+// ── 지도 어댑터 ① 카카오맵 (giljabi와 같은 지도: 등산로·스카이뷰·지형) ─────────
+async function makeKakao(node, c) {
+  await loadScript(`https://dapi.kakao.com/v2/maps/sdk.js?appkey=${encodeURIComponent(KAKAO_JS_KEY)}&libraries=services&autoload=false`);
+  await new Promise((ok, no) => {
+    const t = setTimeout(() => no(new Error("kakao load timeout")), 8000);
+    kakao.maps.load(() => { clearTimeout(t); ok(); });
+  });
+  const K = kakao.maps;
+  const LL = (a, b) => new K.LatLng(a, b);
+  const map = new K.Map(node, { center: LL(c[0], c[1]), level: 5 });
+  map.addControl(new K.ZoomControl(), K.ControlPosition.RIGHT);
+  const places = new K.services.Places();
+  const ask = (fn) => new Promise(ok => fn((data, status) => ok(status === K.services.Status.OK ? data : [])));
+  const toPlace = (d) => ({
+    name: d.place_name, addr: d.road_address_name || d.address_name,
+    cat: d.category_group_name || (d.category_name || "").split(" > ").pop(), lat: +d.y, lng: +d.x,
+  });
+  let terrain = false;
+  return {
+    kind: "kakao",
+    hasTerrain: true,
+    credit: '지도·장소 검색 © <a href="https://map.kakao.com" target="_blank" rel="noopener">Kakao</a>',
+    onClick(fn) { K.event.addListener(map, "click", (e) => fn(e.latLng.getLat(), e.latLng.getLng())); },
+    onIdle(fn) { K.event.addListener(map, "idle", fn); },
+    center(lat, lng, close) { if (close && map.getLevel() > 4) map.setLevel(4); map.setCenter(LL(lat, lng)); },
+    fit(pts) {
+      if (!pts.length) return;
+      const b = new K.LatLngBounds(); pts.forEach(p => b.extend(LL(p[0], p[1]))); map.setBounds(b);
+    },
+    detailed() { return map.getLevel() <= 6; },
+    bounds() { const b = map.getBounds(), s = b.getSouthWest(), n = b.getNorthEast(); return { s: s.getLat(), w: s.getLng(), n: n.getLat(), e: n.getLng() }; },
+    line(coords, o) {
+      const l = new K.Polyline({
+        map, path: coords.map(p => LL(p[0], p[1])), strokeWeight: o.weight || 5, strokeColor: o.color,
+        strokeOpacity: o.opacity ?? 0.9, strokeStyle: o.dashed ? "shortdash" : "solid",
+      });
+      return { remove: () => l.setMap(null) };
+    },
+    marker(lat, lng, n, o = {}) {
+      const ov = new K.CustomOverlay({ map, position: LL(lat, lng), content: n, xAnchor: 0.5, yAnchor: 0.5, clickable: !!o.onClick, zIndex: o.z || 3 });
+      if (o.onClick) n.addEventListener("click", (ev) => { ev.stopPropagation(); o.onClick(); });
+      return { remove: () => ov.setMap(null), move: (a, b) => ov.setPosition(LL(a, b)) };
+    },
+    setBase(b) { map.setMapTypeId(b === "sky" ? K.MapTypeId.HYBRID : K.MapTypeId.ROADMAP); },
+    setTerrain(on) {
+      if (on === terrain) return;
+      terrain = on;
+      on ? map.addOverlayMapTypeId(K.MapTypeId.TERRAIN) : map.removeOverlayMapTypeId(K.MapTypeId.TERRAIN);
+    },
+    async search(q) { return (await ask(cb => places.keywordSearch(q, cb, { location: map.getCenter() }))).map(toPlace); },
+    async nearby(kind) { return (await ask(cb => places.categorySearch(KINDS[kind].kakao, cb, { useMapBounds: true }))).map(toPlace); },
+  };
+}
+
+// ── 지도 어댑터 ② 무료 지도 (OpenTopoMap 등고선 + OpenFreeMap 벡터 타일로 등산로 강조) ──
+async function makeLeaflet(node, c) {
+  await loadScript("https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js");
+  await loadScript("https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js");
+  await loadScript("https://unpkg.com/@maplibre/maplibre-gl-leaflet@0.0.22/leaflet-maplibre-gl.js");
+  const map = L.map(node, { zoomControl: false, maxZoom: 18 }).setView(c, 14);
+  L.control.zoom({ position: "topright" }).addTo(map);
+  L.control.scale({ imperial: false, position: "bottomright" }).addTo(map);
+  const topo = L.tileLayer("https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png", {
+    maxZoom: 17, attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> 기여자, SRTM · <a href="https://opentopomap.org">OpenTopoMap</a> (CC-BY-SA)',
+  }).addTo(map);
+  // OSM 기본 타일은 리퍼러 없이 열면 차단되므로 위성은 Esri를 쓴다
+  const sat = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {
+    maxZoom: 18, attribution: "위성 © Esri, Maxar, Earthstar Geographics",
+  });
+
+  // 등산로 강조: 벡터 타일의 산길(path)·임도(track)만 골라 굵게 칠한 투명 층을 지도 위에 얹는다.
+  // 같은 타일의 장소(poi)는 보이지 않게 실어 두고 「주변 장소」 단추가 읽는다.
+  const trailColor = css("--trail");
+  const width = (a, b) => ["interpolate", ["linear"], ["zoom"], 12, a, 16, b];
+  const trailsOf = (cls) => ["==", ["get", "class"], cls];
+  map.createPane("trails");                       // 지도 타일(200) 위, 경로선(400) 아래
+  map.getPane("trails").style.zIndex = 350;
+  map.getPane("trails").style.pointerEvents = "none";
+  const gl = L.maplibreGL({
+    pane: "trails",
+    interactive: false,
+    attributionControl: false,
+    style: {
+      version: 8,
+      sources: { ofm: { type: "vector", url: "https://tiles.openfreemap.org/planet" } },
+      layers: [
+        { id: "halo", type: "line", source: "ofm", "source-layer": "transportation", minzoom: 12,
+          filter: ["in", ["get", "class"], ["literal", ["path", "track"]]],
+          layout: { "line-cap": "round", "line-join": "round" },
+          paint: { "line-color": "#ffffff", "line-opacity": 0.45, "line-width": width(3, 7) } },
+        { id: "path", type: "line", source: "ofm", "source-layer": "transportation", minzoom: 12, filter: trailsOf("path"),
+          layout: { "line-cap": "round", "line-join": "round" },
+          paint: { "line-color": trailColor, "line-opacity": 0.9, "line-width": width(1.6, 4) } },
+        { id: "track", type: "line", source: "ofm", "source-layer": "transportation", minzoom: 12, filter: trailsOf("track"),
+          paint: { "line-color": trailColor, "line-width": width(1.5, 3.5), "line-dasharray": [2, 1.5] } },
+        { id: "poi", type: "circle", source: "ofm", "source-layer": "poi", minzoom: 13, paint: { "circle-radius": 1, "circle-opacity": 0 } },
+      ],
+    },
+  }).addTo(map);
+  const glMap = gl.getMaplibreMap();
+  glMap.once("load", () => map.fire("moveend"));   // 등산로 층이 늦게 준비돼도 지금 지도 위치에 맞춘다
+  const POI = {
+    parking: ["==", ["get", "class"], "parking"],
+    station: ["all", ["==", ["get", "class"], "railway"], ["in", ["get", "subclass"], ["literal", ["station", "subway", "halt"]]]],
+    conv: ["==", ["get", "subclass"], "convenience"],
+    food: ["==", ["get", "class"], "restaurant"],
+    cafe: ["==", ["get", "class"], "cafe"],
+  };
+  map.on("zoomend", () => hint(map.getZoom() < 12 ? "가까이 확대하면 등산로가 주황색으로 보입니다." : ""));
+
+  return {
+    kind: "leaflet",
+    glMap,
+    hasTerrain: false,
+    credit: '지도 © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> 기여자 · <a href="https://opentopomap.org">OpenTopoMap</a> · 등산로 <a href="https://openfreemap.org">OpenFreeMap</a> © OpenMapTiles · 위성 Esri · 검색 <a href="https://nominatim.org">Nominatim</a>',
+    onClick(fn) { map.on("click", (e) => fn(e.latlng.lat, e.latlng.lng)); },
+    onIdle(fn) { glMap.on("idle", fn); },
+    center(lat, lng, close) { map.setView([lat, lng], close ? Math.max(map.getZoom(), 15) : map.getZoom()); },
+    fit(pts) { if (pts.length) map.fitBounds(pts.map(p => [p[0], p[1]]), { padding: [30, 30] }); },
+    // 벡터 층은 화면보다 한 단계 낮은 타일을 읽는데, 주차장 같은 작은 장소는 14단계 타일부터 들어 있다
+    detailed() { return map.getZoom() >= 15; },
+    bounds() { const b = map.getBounds(); return { s: b.getSouth(), w: b.getWest(), n: b.getNorth(), e: b.getEast() }; },
+    line(coords, o) {
+      const l = L.polyline(coords.map(p => [p[0], p[1]]), { color: o.color, weight: o.weight || 5, opacity: o.opacity ?? 0.9, dashArray: o.dashed ? "6 7" : null }).addTo(map);
+      return { remove: () => map.removeLayer(l) };
+    },
+    marker(lat, lng, n, o = {}) {
+      const m = L.marker([lat, lng], {
+        icon: L.divIcon({ html: n, className: "", iconSize: null }), interactive: !!o.onClick, keyboard: false, zIndexOffset: (o.z || 3) * 100,
+      }).addTo(map);
+      // divIcon 의 html 을 점 한가운데에 맞춘다
+      requestAnimationFrame(() => { const i = m.getElement(); if (i) { const r = n.getBoundingClientRect(); i.style.marginLeft = -r.width / 2 + "px"; i.style.marginTop = -r.height / 2 + "px"; } });
+      if (o.onClick) m.on("click", () => o.onClick());
+      return { remove: () => map.removeLayer(m), move: (a, b) => m.setLatLng([a, b]) };
+    },
+    setBase(b) {
+      if (b === "sky") { map.removeLayer(topo); sat.addTo(map); } else { map.removeLayer(sat); topo.addTo(map); }
+      sat.bringToBack(); topo.bringToBack();
+    },
+    setTerrain() {},
+    async search(q) {
+      const url = `https://nominatim.openstreetmap.org/search?format=json&limit=8&countrycodes=kr&accept-language=ko&q=${encodeURIComponent(q)}`;
+      const items = await (await fetch(url)).json();
+      return items.map(it => {
+        const [head, ...rest] = it.display_name.split(", ");
+        return { name: head, addr: rest.slice(0, 3).join(", "), cat: "", lat: +it.lat, lng: +it.lon };
+      });
+    },
+    async nearby(kind) {
+      const b = this.bounds(), seen = new Set(), out = [];
+      for (const f of glMap.querySourceFeatures("ofm", { sourceLayer: "poi", filter: POI[kind] })) {
+        const [lng, lat] = f.geometry.coordinates;
+        if (lat < b.s || lat > b.n || lng < b.w || lng > b.e) continue;
+        const name = f.properties["name:ko"] || f.properties.name || KINDS[kind].label;
+        const key = `${name}|${lat.toFixed(4)}|${lng.toFixed(4)}`;
+        if (seen.has(key)) continue;
+        seen.add(key);
+        out.push({ name, addr: "", cat: KINDS[kind].label, lat, lng });
+      }
+      return out;
+    },
+  };
+}
+
+// ── 상태 ──────────────────────────────────────────────
+// points[i]: 찍은 지점, segments[i]: points[i] → points[i+1] 구간, wpts: 경로 위 이정표(idx = 경로 점 번호)
+let M = null;
+const points = [];
+const segments = [];
+const wpts = [];
+let act = "route";
+let mode = "trail";
+let busy = false;
+let cursorMarker = null;
+let selPlace = null, selMarker = null;
+const nearbyOn = new Set();
+const nearbyMarkers = {};
+
+function setStatus(text, isErr = false) { $("status").textContent = text; $("status").classList.toggle("err", isErr); }
+function hint(text) { $("hint").textContent = text; $("hint").hidden = !text; }
+
+// ── 거리·고도 ─────────────────────────────────────────
+function haversine(a, b) {
+  const R = 6371008.8, rad = Math.PI / 180;
+  const dLat = (b[0] - a[0]) * rad, dLon = (b[1] - a[1]) * rad;
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(a[0] * rad) * Math.cos(b[0] * rad) * Math.sin(dLon / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(h));
+}
+function track() {
+  const out = [];
+  for (const s of segments) for (const p of s.coords) {
+    const last = out[out.length - 1];
+    if (last && last[0] === p[0] && last[1] === p[1]) continue;
+    out.push(p);
+  }
+  return out;
+}
+function summarize(tr) {
+  let dist = 0, up = 0, down = 0, max = -Infinity, min = Infinity, ref = null;
+  const cum = [0];
+  for (let i = 0; i < tr.length; i++) {
+    if (i > 0) { dist += haversine(tr[i - 1], tr[i]); cum.push(dist); }
+    const e = tr[i][2];
+    if (e == null) continue;
+    max = Math.max(max, e); min = Math.min(min, e);
+    if (ref == null) ref = e;
+    else if (e - ref >= HYST_M) { up += e - ref; ref = e; }
+    else if (ref - e >= HYST_M) { down += ref - e; ref = e; }
+  }
+  return { dist, up, down, max: isFinite(max) ? max : null, min: isFinite(min) ? min : null, cum };
+}
+function pace() { const v = parseFloat($("pace").value); return v > 0 ? v : 4; }
+function fmtTime(km) {
+  const mins = Math.round(km / pace() * 60);
+  return `${Math.floor(mins / 60)}:${String(mins % 60).padStart(2, "0")}`;
+}
+
+// ── 경로 구하기 ───────────────────────────────────────
+async function routeTrail(a, b) {
+  const url = `${BROUTER}?lonlats=${a[1].toFixed(6)},${a[0].toFixed(6)}%7C${b[1].toFixed(6)},${b[0].toFixed(6)}&profile=${PROFILE}&alternativeidx=0&format=geojson`;
+  const res = await fetch(url);
+  const body = await res.text();
+  if (!res.ok) throw new Error(body.trim() || `HTTP ${res.status}`);
+  return JSON.parse(body).features[0].geometry.coordinates.map(([lon, lat, ele]) => [lat, lon, ele ?? null]);
+}
+async function fillElevation(pts) {
+  const need = pts.filter(p => p[2] == null);
+  for (let i = 0; i < need.length; i += 100) {
+    const chunk = need.slice(i, i + 100);
+    const q = `latitude=${chunk.map(p => p[0].toFixed(6)).join(",")}&longitude=${chunk.map(p => p[1].toFixed(6)).join(",")}`;
+    const j = await (await fetch(`${ELEV_API}?${q}`)).json();
+    j.elevation.forEach((e, k) => { chunk[k][2] = e; });
+    if (i + 100 < need.length) await sleep(200);
+  }
+}
+async function routeLine(a, b) {
+  const n = Math.max(1, Math.ceil(haversine(a, b) / STEP_M));
+  const pts = [];
+  for (let i = 0; i <= n; i++) pts.push([a[0] + (b[0] - a[0]) * i / n, a[1] + (b[1] - a[1]) * i / n, null]);
+  try { await fillElevation(pts); }
+  catch (e) { setStatus("직선 구간의 고도를 받지 못했습니다. 경로는 저장되지만 이 구간에는 고도가 빠집니다.", true); }
+  return pts;
+}
+function trailError(msg) {
+  if (/not mapped|island|no route|operation killed/i.test(msg))
+    return "이 두 점 사이에서 등산로를 찾지 못했습니다. 점을 길 가까이 찍거나 「직선」으로 이어 보세요.";
+  return `경로 서버가 응답하지 않습니다(${msg.slice(0, 80)}). 잠시 뒤 다시 찍거나 「직선」으로 이어 보세요.`;
+}
+
+// ── 지점·구간 ─────────────────────────────────────────
+function pointNode(isStart) { return el(isStart ? "wp start" : "wp"); }
+function drawSegment(s) {
+  s.line = M.line(s.coords, { color: css("--route"), weight: 5, dashed: s.mode === "line" });
+  return s;
+}
+
+async function addPoint(lat, lng) {
+  if (busy) { setStatus("앞 구간을 계산하는 중입니다. 잠시 뒤 찍어 주세요."); return; }
+  const p = [lat, lng];
+  const marker = M.marker(lat, lng, pointNode(points.length === 0), { z: 4 });
+  points.push({ p, marker });
+  if (points.length === 1) {
+    setStatus("출발점을 찍었습니다. 다음 지점을 찍으세요.");
+    changed();
+    return;
+  }
+  const tr = track();
+  const from = tr.length ? tr[tr.length - 1] : points[points.length - 2].p;
+  busy = true; refresh();
+  setStatus(mode === "trail" ? "등산로를 찾는 중…" : "직선 구간 고도를 재는 중…");
+  try {
+    const coords = mode === "trail" ? await routeTrail(from, p) : await routeLine(from, p);
+    segments.push(drawSegment({ coords, mode }));
+    if (mode === "trail" || !$("status").classList.contains("err")) setStatus("");
+  } catch (e) {
+    marker.remove();
+    points.pop();
+    setStatus(trailError(String(e.message || e)), true);
+  } finally {
+    busy = false;
+    changed();
+  }
+}
+
+function undo() {
+  if (busy || !points.length) return;
+  points.pop().marker.remove();
+  if (segments.length && segments.length >= points.length) segments.pop().line.remove();
+  const n = track().length;
+  for (let i = wpts.length - 1; i >= 0; i--) if (wpts[i].idx >= n) { wpts[i].marker.remove(); wpts.splice(i, 1); }
+  setStatus("");
+  changed();
+}
+
+let clearArmed = false;
+function clearAll() {
+  if (busy) return;
+  if (!clearArmed) {
+    clearArmed = true;
+    $("clearBtn").textContent = "한 번 더 누르면 지웁니다";
+    setTimeout(() => { clearArmed = false; $("clearBtn").textContent = "모두 지우기"; }, 3000);
+    return;
+  }
+  clearArmed = false;
+  $("clearBtn").textContent = "모두 지우기";
+  resetRoute();
+  setStatus("지웠습니다.");
+  changed();
+}
+function resetRoute() {
+  points.splice(0).forEach(x => x.marker.remove());
+  segments.splice(0).forEach(s => s.line.remove());
+  wpts.splice(0).forEach(w => w.marker.remove());
+}
+
+function reverseRoute() {
+  if (busy || !segments.length) return;
+  const n = track().length;
+  const pts = points.map(x => x.p).reverse();
+  const segs = segments.map(s => ({ coords: s.coords.slice().reverse(), mode: s.mode })).reverse();
+  const ws = wpts.map(w => ({ idx: n - 1 - w.idx, name: w.name, type: w.type }));
+  resetRoute();
+  pts.forEach((p, i) => points.push({ p, marker: M.marker(p[0], p[1], pointNode(i === 0), { z: 4 }) }));
+  segs.forEach(s => segments.push(drawSegment(s)));
+  ws.forEach(w => addWpt(w.idx, w.name, w.type));
+  setStatus("방향을 뒤집었습니다. 출발점과 도착점이 바뀌었습니다.");
+  changed();
+}
+
+// ── 이정표 ────────────────────────────────────────────
+function wtype(id) { return WTYPES.find(t => t.id === id) || WTYPES[WTYPES.length - 1]; }
+function addWpt(idx, name, type) {
+  const tr = track(), p = tr[idx];
+  const node = el("wpt", wtype(type).mark);
+  const w = { idx, name, type, node, marker: M.marker(p[0], p[1], node, { z: 5 }) };
+  wpts.push(w);
+  wpts.sort((a, b) => a.idx - b.idx);
+  return w;
+}
+function placeWpt(lat, lng) {
+  const tr = track();
+  if (tr.length < 2) { setStatus("먼저 경로를 이어 주세요. 이정표는 경로 위에 찍습니다.", true); return; }
+  let best = 0, bd = Infinity;
+  for (let i = 0; i < tr.length; i++) { const d = haversine([lat, lng], tr[i]); if (d < bd) { bd = d; best = i; } }
+  if (bd > SNAP_M) { setStatus("경로에서 너무 멉니다. 분홍 선 가까이 찍어 주세요.", true); return; }
+  addWpt(best, `이정표 ${wpts.length + 1}`, "Generic");
+  setStatus("이정표를 넣었습니다. 아래 목록에서 종류와 이름을 고치세요.");
+  changed();
+}
+function renderWpts(s) {
+  const t = $("wlist");
+  t.innerHTML = "";
+  $("wEmpty").hidden = wpts.length > 0;
+  const tr = track();
+  if (tr.length < 2) return;
+  const row = (cells, cls) => { const r = t.insertRow(); if (cls) r.className = cls; cells.forEach(c => { const d = r.insertCell(); if (c instanceof Node) d.appendChild(c); else { d.textContent = c.text; if (c.num) d.className = "num"; } }); return r; };
+  row([{ text: "출발" }, { text: "" }, { text: "0.0km", num: 1 }, { text: "0:00", num: 1 }, { text: "" }], "fixed");
+  for (const w of wpts) {
+    const km = s.cum[w.idx] / 1000;
+    const sel = document.createElement("select");
+    sel.setAttribute("aria-label", "이정표 종류");
+    WTYPES.forEach(ty => { const o = new Option(ty.label, ty.id); o.selected = ty.id === w.type; sel.add(o); });
+    sel.addEventListener("change", () => { w.type = sel.value; w.node.textContent = wtype(w.type).mark; if (/^이정표 \d+$/.test(w.name)) { w.name = wtype(w.type).label; inp.value = w.name; } changed(); });
+    const inp = document.createElement("input");
+    inp.type = "text"; inp.value = w.name; inp.setAttribute("aria-label", "이정표 이름");
+    inp.addEventListener("change", () => { w.name = inp.value.trim() || wtype(w.type).label; changed(); });
+    const x = document.createElement("button");
+    x.className = "x"; x.type = "button"; x.textContent = "✕"; x.setAttribute("aria-label", "이정표 지우기");
+    x.addEventListener("click", () => { w.marker.remove(); wpts.splice(wpts.indexOf(w), 1); changed(); });
+    row([sel, inp, { text: `${km.toFixed(1)}km`, num: 1 }, { text: fmtTime(km), num: 1 }, x]);
+  }
+  const tot = s.dist / 1000;
+  row([{ text: "도착" }, { text: "" }, { text: `${tot.toFixed(1)}km`, num: 1 }, { text: fmtTime(tot), num: 1 }, { text: "" }], "fixed");
+}
+
+// ── 화면 갱신 ─────────────────────────────────────────
+function changed() { refresh(); saveDraft(); }
+function refresh() {
+  const tr = track();
+  const s = summarize(tr);
+  const km = s.dist / 1000;
+  $("sDist").innerHTML = `${km.toFixed(2)}<small>km</small>`;
+  $("sUp").innerHTML = `${Math.round(s.up)}<small>m</small>`;
+  $("sDown").innerHTML = `${Math.round(s.down)}<small>m</small>`;
+  $("sMax").innerHTML = `${s.max == null ? "–" : Math.round(s.max)}<small>m</small>`;
+  $("sTime").textContent = fmtTime(km);
+  $("sEffort").textContent = (km + s.up / 100).toFixed(1);
+  const has = tr.length >= 2;
+  $("saveGpx").disabled = $("saveTcx").disabled = busy || !has;
+  $("reverseBtn").disabled = busy || !has;
+  $("undoBtn").disabled = $("clearBtn").disabled = busy || !points.length;
+  $("cardGo").textContent = points.length ? "여기까지 잇기" : "여기서 출발";
+  drawProfile(tr, s);
+  renderWpts(s);
+}
+
+// ── 고도 단면 ─────────────────────────────────────────
+const W = 320, H = 130, PL = 36, PR = 8, PT = 14, PB = 20;
+let prof = null;
+function drawProfile(tr, s) {
+  const svg = $("profile");
+  const pts = tr.map((p, i) => [s.cum[i] / 1000, p[2]]).filter(p => p[1] != null);
+  if (pts.length < 2) {
+    svg.innerHTML = `<text class="empty" x="${W / 2}" y="${H / 2}" text-anchor="middle">두 지점 이상 이으면 고도가 그려집니다</text>`;
+    prof = null; $("readout").textContent = "";
+    return;
+  }
+  const xMax = s.cum[s.cum.length - 1] / 1000 || 0.001;
+  let yMin = Math.floor(s.min / 100) * 100, yMax = Math.ceil(s.max / 100) * 100;
+  if (yMax - yMin < 100) yMax = yMin + 100;
+  const x = (v) => PL + (v / xMax) * (W - PL - PR);
+  const y = (v) => PT + (1 - (v - yMin) / (yMax - yMin)) * (H - PT - PB);
+  const step = (yMax - yMin) <= 400 ? 100 : (yMax - yMin) <= 1000 ? 200 : 500;
+  let g = "";
+  for (let v = yMin; v <= yMax; v += step) {
+    g += `<line class="grid" x1="${PL}" x2="${W - PR}" y1="${y(v)}" y2="${y(v)}"/><text class="axis" x="${PL - 4}" y="${y(v) + 3}" text-anchor="end">${v}</text>`;
+  }
+  for (const t of [0, xMax / 2, xMax]) {
+    g += `<text class="axis" x="${x(t)}" y="${H - 5}" text-anchor="${t === 0 ? "start" : t === xMax ? "end" : "middle"}">${t.toFixed(1)}km</text>`;
+  }
+  for (const w of wpts) {
+    const wx = x(s.cum[w.idx] / 1000);
+    g += `<line class="wmark" x1="${wx}" x2="${wx}" y1="${PT}" y2="${H - PB}"/><text class="wtext" x="${wx}" y="${PT - 4}" text-anchor="middle">${esc(wtype(w.type).mark)}</text>`;
+  }
+  const line = pts.map((p, i) => `${i ? "L" : "M"}${x(p[0]).toFixed(1)},${y(p[1]).toFixed(1)}`).join("");
+  svg.innerHTML = `${g}<path class="area" d="${line}L${x(pts[pts.length - 1][0])},${H - PB}L${x(pts[0][0])},${H - PB}Z"/><path class="ln" d="${line}"/><line class="cur" id="curLine" y1="${PT}" y2="${H - PB}" x1="-10" x2="-10"/>`;
+  prof = { x, xMax, idx: tr.map((p, i) => i).filter(i => tr[i][2] != null), tr, cum: s.cum };
+}
+function onProfileMove(ev) {
+  if (!prof) return;
+  const r = $("profile").getBoundingClientRect();
+  const km = Math.min(prof.xMax, Math.max(0, ((ev.clientX - r.left) / r.width * W - PL) / (W - PL - PR) * prof.xMax));
+  let best = prof.idx[0];
+  for (const i of prof.idx) if (Math.abs(prof.cum[i] / 1000 - km) < Math.abs(prof.cum[best] / 1000 - km)) best = i;
+  const p = prof.tr[best], cx = prof.x(prof.cum[best] / 1000);
+  $("curLine").setAttribute("x1", cx); $("curLine").setAttribute("x2", cx);
+  $("readout").textContent = `${(prof.cum[best] / 1000).toFixed(2)} km · ${Math.round(p[2])} m · ${fmtTime(prof.cum[best] / 1000)}`;
+  if (!cursorMarker) cursorMarker = M.marker(p[0], p[1], el("cursor"), { z: 6 });
+  else cursorMarker.move(p[0], p[1]);
+}
+function onProfileLeave() {
+  if (cursorMarker) { cursorMarker.remove(); cursorMarker = null; }
+  $("readout").textContent = "";
+  const cl = $("curLine");
+  if (cl) { cl.setAttribute("x1", -10); cl.setAttribute("x2", -10); }
+}
+
+// ── 파일: GPX·TCX 저장과 열기 ────────────────────────
+function fileName(ext) { return `${($("courseName").value.trim() || "새 코스").replace(/[\\/:*?"<>|]+/g, "_")}.${ext}`; }
+function download(text, name, type) {
+  const blob = new Blob([text], { type });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob); a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+function toGPX(name, tr) {
+  const w = wpts.map(x => { const p = tr[x.idx]; return `  <wpt lat="${p[0].toFixed(6)}" lon="${p[1].toFixed(6)}">${p[2] == null ? "" : `<ele>${p[2].toFixed(1)}</ele>`}<name>${esc(x.name)}</name><sym>${esc(wtype(x.type).sym)}</sym><type>${x.type}</type></wpt>`; }).join("\n");
+  const pts = tr.map(p => `      <trkpt lat="${p[0].toFixed(6)}" lon="${p[1].toFixed(6)}">${p[2] == null ? "" : `<ele>${p[2].toFixed(1)}</ele>`}</trkpt>`).join("\n");
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="산길잇기" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata><name>${esc(name)}</name><time>${new Date().toISOString()}</time></metadata>
+${w ? w + "\n" : ""}  <trk>
+    <name>${esc(name)}</name>
+    <trkseg>
+${pts}
+    </trkseg>
+  </trk>
+</gpx>
+`;
+}
+function toTCX(name, tr, s) {
+  // 가민 코스: 트랙 점마다 시각(평속 기준)과 누적 거리, 이정표는 CoursePoint
+  const t0 = Date.now(), speed = pace() / 3.6;
+  const iso = (m) => new Date(t0 + m / speed * 1000).toISOString().replace(/\.\d+Z$/, "Z");
+  const pos = (p) => `<Position><LatitudeDegrees>${p[0].toFixed(6)}</LatitudeDegrees><LongitudeDegrees>${p[1].toFixed(6)}</LongitudeDegrees></Position>`;
+  const alt = (p) => p[2] == null ? "" : `<AltitudeMeters>${p[2].toFixed(1)}</AltitudeMeters>`;
+  const tps = tr.map((p, i) => `        <Trackpoint><Time>${iso(s.cum[i])}</Time>${pos(p)}${alt(p)}<DistanceMeters>${s.cum[i].toFixed(1)}</DistanceMeters></Trackpoint>`).join("\n");
+  const cps = wpts.map(w => { const p = tr[w.idx]; return `      <CoursePoint><Name>${esc(w.name.slice(0, 10))}</Name><Time>${iso(s.cum[w.idx])}</Time>${pos(p)}${alt(p)}<PointType>${w.type}</PointType></CoursePoint>`; }).join("\n");
+  const first = tr[0], last = tr[tr.length - 1];
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<TrainingCenterDatabase xmlns="http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2">
+  <Courses>
+    <Course>
+      <Name>${esc(name.slice(0, 15))}</Name>
+      <Lap>
+        <TotalTimeSeconds>${(s.dist / speed).toFixed(0)}</TotalTimeSeconds>
+        <DistanceMeters>${s.dist.toFixed(1)}</DistanceMeters>
+        <BeginPosition><LatitudeDegrees>${first[0].toFixed(6)}</LatitudeDegrees><LongitudeDegrees>${first[1].toFixed(6)}</LongitudeDegrees></BeginPosition>
+        <EndPosition><LatitudeDegrees>${last[0].toFixed(6)}</LatitudeDegrees><LongitudeDegrees>${last[1].toFixed(6)}</LongitudeDegrees></EndPosition>
+        <Intensity>Active</Intensity>
+      </Lap>
+      <Track>
+${tps}
+      </Track>
+${cps ? cps + "\n" : ""}    </Course>
+  </Courses>
+</TrainingCenterDatabase>
+`;
+}
+function save(kind) {
+  const tr = track();
+  if (tr.length < 2) return;
+  const name = $("courseName").value.trim() || "새 코스";
+  if (kind === "gpx") download(toGPX(name, tr), fileName("gpx"), "application/gpx+xml");
+  else download(toTCX(name, tr, summarize(tr)), fileName("tcx"), "application/vnd.garmin.tcx+xml");
+  setStatus(`저장했습니다: ${fileName(kind)} (경로 점 ${tr.length}개, 이정표 ${wpts.length}개)`);
+}
+
+function parseTrackFile(text) {
+  const doc = new DOMParser().parseFromString(text, "application/xml");
+  if (doc.querySelector("parsererror")) throw new Error("파일을 읽지 못했습니다");
+  const all = (n) => [...doc.getElementsByTagNameNS("*", n)];
+  const num = (node, n) => { const x = node.getElementsByTagNameNS("*", n)[0]; return x ? parseFloat(x.textContent) : null; };
+  const txt = (node, n) => { const x = node.getElementsByTagNameNS("*", n)[0]; return x ? x.textContent.trim() : ""; };
+  let coords = [], ws = [], name = "";
+  if (all("Trackpoint").length) {
+    coords = all("Trackpoint").filter(t => t.getElementsByTagNameNS("*", "Position").length)
+      .map(t => [num(t, "LatitudeDegrees"), num(t, "LongitudeDegrees"), num(t, "AltitudeMeters")]);
+    ws = all("CoursePoint").map(c => ({ lat: num(c, "LatitudeDegrees"), lng: num(c, "LongitudeDegrees"), name: txt(c, "Name"), type: txt(c, "PointType") }));
+    name = txt(doc, "Name");
+  } else {
+    const pts = all("trkpt").length ? all("trkpt") : all("rtept");
+    coords = pts.map(p => [parseFloat(p.getAttribute("lat")), parseFloat(p.getAttribute("lon")), num(p, "ele")]);
+    ws = all("wpt").map(p => ({ lat: parseFloat(p.getAttribute("lat")), lng: parseFloat(p.getAttribute("lon")), name: txt(p, "name"), type: txt(p, "type") }));
+    const trk = all("trk")[0];
+    name = trk ? txt(trk, "name") : txt(doc, "name");
+  }
+  coords = coords.filter(c => isFinite(c[0]) && isFinite(c[1]));
+  if (coords.length < 2) throw new Error("경로 점이 없습니다");
+  return { coords, ws, name };
+}
+async function openFile(file) {
+  try {
+    const f = parseTrackFile(await file.text());
+    resetRoute();
+    const a = f.coords[0], b = f.coords[f.coords.length - 1];
+    points.push({ p: [a[0], a[1]], marker: M.marker(a[0], a[1], pointNode(true), { z: 4 }) });
+    points.push({ p: [b[0], b[1]], marker: M.marker(b[0], b[1], pointNode(false), { z: 4 }) });
+    segments.push(drawSegment({ coords: f.coords, mode: "file" }));
+    const tr = track();
+    for (const w of f.ws) {
+      let best = 0, bd = Infinity;
+      tr.forEach((c, i) => { const d = haversine([w.lat, w.lng], c); if (d < bd) { bd = d; best = i; } });
+      if (bd <= SNAP_M) addWpt(best, w.name || "이정표", WTYPES.some(t => t.id === w.type) ? w.type : "Generic");
+    }
+    if (f.name) $("courseName").value = f.name;
+    M.fit(f.coords);
+    const missing = f.coords.filter(c => c[2] == null).length;
+    setStatus(`${file.name}을(를) 열었습니다. 끝에서 이어 그리거나 반대방향·이정표를 고칠 수 있습니다.${missing ? ` 고도가 없는 점 ${missing}개는 비워 둡니다.` : ""}`);
+    changed();
+  } catch (e) {
+    setStatus(`${file.name}: ${e.message}. GPX 또는 TCX 파일인지 확인하세요.`, true);
+  }
+}
+
+// ── 장소 검색·주변 장소 ───────────────────────────────
+function showCard(pl) {
+  selPlace = pl;
+  $("cardName").textContent = pl.name;
+  $("cardAddr").textContent = [pl.cat !== pl.name && pl.cat, pl.addr].filter(Boolean).join(" · ");
+  $("cardGo").textContent = points.length ? "여기까지 잇기" : "여기서 출발";
+  $("card").hidden = false;
+}
+function hideCard() {
+  $("card").hidden = true;
+  selPlace = null;
+  if (selMarker) { selMarker.remove(); selMarker = null; }
+}
+async function search(ev) {
+  ev.preventDefault();
+  const q = $("q").value.trim();
+  const list = $("results");
+  list.innerHTML = "";
+  if (!q) return;
+  setStatus("찾는 중…");
+  try {
+    const items = await M.search(q);
+    if (!items.length) {
+      setStatus(M.kind === "kakao" ? `「${q}」을(를) 찾지 못했습니다.` : `「${q}」을(를) 찾지 못했습니다. 무료 지도 검색은 주차장 이름을 잘 모릅니다 — 산이나 역 이름으로 찾은 뒤 지도 위 「주차장」 단추를 눌러 보세요.`, true);
+      return;
+    }
+    setStatus("");
+    for (const it of items) {
+      const li = document.createElement("li");
+      const b = document.createElement("button");
+      b.type = "button";
+      b.innerHTML = `${esc(it.name)}<small>${esc([it.cat, it.addr].filter(Boolean).join(" · "))}</small>`;
+      b.addEventListener("click", () => {
+        hideCard();
+        M.center(it.lat, it.lng, true);
+        selMarker = M.marker(it.lat, it.lng, el("pin hit", "●"), { z: 6, onClick: () => showCard(it) });
+        showCard(it);
+        if ($("courseName").value.trim() === "새 코스") $("courseName").value = `${it.name} 코스`;
+      });
+      li.appendChild(b); list.appendChild(li);
+    }
+  } catch (e) {
+    setStatus("검색 서버에 닿지 못했습니다. 지도를 직접 옮겨 주세요.", true);
+  }
+}
+async function refreshNearby() {
+  for (const kind of Object.keys(KINDS)) {
+    (nearbyMarkers[kind] || []).forEach(m => m.remove());
+    nearbyMarkers[kind] = [];
+  }
+  if (!nearbyOn.size) return;
+  if (!M.detailed()) { hint("가까이 확대하면 주변 장소가 보입니다."); return; }
+  for (const kind of nearbyOn) {
+    try {
+      const list = await M.nearby(kind);
+      if (!nearbyOn.has(kind)) continue;
+      nearbyMarkers[kind] = list.map(pl => M.marker(pl.lat, pl.lng, Object.assign(el(`pin ${kind}`, KINDS[kind].mark), { title: pl.name }), { z: 2, onClick: () => showCard(pl) }));
+      if (!list.length) hint(`이 화면 안에서 찾은 ${KINDS[kind].label} 자료가 없습니다.`);
+    } catch (e) {
+      hint("주변 장소를 불러오지 못했습니다. 지도를 조금 움직이면 다시 시도합니다.");
+    }
+  }
+}
+let idleTimer = null;
+function onIdle() { clearTimeout(idleTimer); idleTimer = setTimeout(refreshNearby, 500); }
+
+// ── 임시 저장(새로고침해도 이어서) ───────────────────
+function saveDraft() {
+  try {
+    localStorage.setItem(DRAFT_KEY, JSON.stringify({
+      name: $("courseName").value, pace: $("pace").value,
+      points: points.map(x => x.p), segments: segments.map(s => ({ coords: s.coords, mode: s.mode })),
+      wpts: wpts.map(w => ({ idx: w.idx, name: w.name, type: w.type })),
+    }));
+  } catch (e) { /* 저장 공간이 없어도 작업은 계속된다 */ }
+}
+function restoreDraft() {
+  let d = null;
+  try { d = JSON.parse(localStorage.getItem(DRAFT_KEY) || "null"); } catch (e) { return; }
+  if (!d) return;
+  if (d.pace) $("pace").value = d.pace;
+  if (!d.points?.length) return;
+  if (d.name) $("courseName").value = d.name;
+  d.points.forEach((p, i) => points.push({ p, marker: M.marker(p[0], p[1], pointNode(i === 0), { z: 4 }) }));
+  d.segments.forEach(s => segments.push(drawSegment(s)));
+  const n = track().length;
+  d.wpts.filter(w => w.idx < n).forEach(w => addWpt(w.idx, w.name, w.type));
+  const tr = track();
+  M.fit(tr.length ? tr : d.points);
+  setStatus("지난번 작업을 이어서 엽니다. 새로 시작하려면 「모두 지우기」를 누르세요.");
+}
+
+// ── 지도를 누르면 ─────────────────────────────────────
+function setAct(a) {
+  act = a;
+  $("actRoute").setAttribute("aria-pressed", String(a === "route"));
+  $("actWpt").setAttribute("aria-pressed", String(a === "wpt"));
+  $("routeOpts").hidden = a !== "route";
+  updateHint();
+}
+function setMode(m) {
+  mode = m;
+  $("modeTrail").setAttribute("aria-pressed", String(m === "trail"));
+  $("modeLine").setAttribute("aria-pressed", String(m === "line"));
+  updateHint();
+}
+function updateHint() {
+  $("actHint").textContent = act === "wpt"
+    ? "분홍 경로 위를 찍으면 그 자리에 이정표가 생깁니다."
+    : mode === "trail"
+      ? (M && M.kind === "leaflet" ? "주황 선이 등산로입니다. 그 위를 차례로 찍으면 길을 따라 잇습니다." : "지도에 보이는 등산로를 따라 가장 알맞은 길을 찾아 잇습니다.")
+      : "길이 없는 구간을 곧게 잇습니다(점선). 고도는 지형 자료로 채웁니다.";
+}
+
+// ── 시작 ──────────────────────────────────────────────
+async function boot() {
+  const node = $("map");
+  if (KAKAO_JS_KEY) {
+    try { M = await makeKakao(node, START); }
+    catch (e) { node.innerHTML = ""; M = null; console.warn("카카오 지도를 불러오지 못해 무료 지도로 엽니다.", e); }
+  }
+  if (!M) M = await makeLeaflet(node, START);
+  $("credit").innerHTML = `${M.credit} · 경로 <a href="https://brouter.de" target="_blank" rel="noopener">BRouter</a> · 직선 구간 고도 <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a>`;
+  $("terrainChip").hidden = !M.hasTerrain;
+
+  M.onClick((lat, lng) => {
+    if (!$("card").hidden) hideCard();
+    if (act === "wpt") placeWpt(lat, lng);
+    else addPoint(lat, lng);
+  });
+  M.onIdle(onIdle);
+
+  $("searchForm").addEventListener("submit", search);
+  $("cardGo").addEventListener("click", () => { const p = selPlace; hideCard(); if (p) { setAct("route"); addPoint(p.lat, p.lng); } });
+  $("cardClose").addEventListener("click", hideCard);
+  $("baseMap").addEventListener("click", () => { M.setBase("map"); $("baseMap").setAttribute("aria-pressed", "true"); $("baseSky").setAttribute("aria-pressed", "false"); });
+  $("baseSky").addEventListener("click", () => { M.setBase("sky"); $("baseSky").setAttribute("aria-pressed", "true"); $("baseMap").setAttribute("aria-pressed", "false"); });
+  $("terrainChip").addEventListener("click", (e) => { const on = e.currentTarget.getAttribute("aria-pressed") !== "true"; e.currentTarget.setAttribute("aria-pressed", String(on)); M.setTerrain(on); });
+  document.querySelectorAll(".chip[data-kind]").forEach(b => b.addEventListener("click", () => {
+    const k = b.dataset.kind, on = !nearbyOn.has(k);
+    on ? nearbyOn.add(k) : nearbyOn.delete(k);
+    b.setAttribute("aria-pressed", String(on));
+    hint("");
+    refreshNearby();
+  }));
+  $("actRoute").addEventListener("click", () => setAct("route"));
+  $("actWpt").addEventListener("click", () => setAct("wpt"));
+  $("modeTrail").addEventListener("click", () => setMode("trail"));
+  $("modeLine").addEventListener("click", () => setMode("line"));
+  $("pace").addEventListener("input", changed);
+  $("courseName").addEventListener("change", saveDraft);
+  $("undoBtn").addEventListener("click", undo);
+  $("reverseBtn").addEventListener("click", reverseRoute);
+  $("clearBtn").addEventListener("click", clearAll);
+  $("saveGpx").addEventListener("click", () => save("gpx"));
+  $("saveTcx").addEventListener("click", () => save("tcx"));
+  $("fileIn").addEventListener("change", (e) => { const f = e.target.files[0]; if (f) openFile(f); e.target.value = ""; });
+  $("profile").addEventListener("pointermove", onProfileMove);
+  $("profile").addEventListener("pointerleave", onProfileLeave);
+  document.addEventListener("keydown", (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "z" && !/input|select/i.test(document.activeElement.tagName)) { e.preventDefault(); undo(); }
+  });
+
+  setAct("route");
+  restoreDraft();
+  refresh();
+  if (!points.length) setStatus("출발할 주차장이나 역을 찾거나, 지도에서 출발점을 찍으세요.");
+}
+boot();
+</script>
+</body>
+</html>
