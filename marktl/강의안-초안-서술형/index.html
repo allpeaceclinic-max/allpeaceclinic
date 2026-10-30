@@ -1,367 +1,216 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>하나님의 선교와 나의 선교 — Mission &amp; missions</title>
-
-
-
-
-
-
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#ECEAE5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14161D" media="(prefers-color-scheme: dark)">
 <style>
-  :root {
-    --clr-bg: #faf9f6;
-    --clr-surface: #ffffff;
-    --clr-text: #1a1a2e;
-    --clr-text-secondary: #4a4a6a;
-    --clr-accent: #2c5f7c;
-    --clr-accent-light: #e8f1f5;
-    --clr-gold: #b8860b;
-    --clr-border: #e0ddd5;
-    --clr-pull: #f5f0e8;
-    --clr-highlight: #fff8e7;
-    --font-serif: 'Noto Serif KR', Georgia, 'Times New Roman', serif;
-    --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --max-w: 740px;
-    --space-xs: 0.5rem;
-    --space-sm: 1rem;
-    --space-md: 2rem;
-    --space-lg: 3.5rem;
-    --space-xl: 5rem;
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { font-size: 17px; scroll-behavior: smooth; }
-  body {
-    font-family: var(--font-sans);
-    background: var(--clr-bg);
-    color: var(--clr-text);
-    line-height: 1.85;
-    -webkit-font-smoothing: antialiased;
-  }
+/* 하나님의 선교와 나의 선교 — 대문자 Mission 하나, 소문자 missions 여럿 */
+:root{
+ --bg:#ECEAE5; --surface:#F7F6F2; --ink:#1B1F2A; --muted:#5B5F6B; --rule:#CECBC2;
+ --mustard:#9E7410; --slate:#3C4E6E; --mustard-soft:#E6DBBE; --slate-soft:#DCE1E8; --on-ink-accent:#DDB24E;
+ --latin:'Fraunces','Nanum Myeongjo',Georgia,serif;
+ --display:'Fraunces','Nanum Myeongjo','AppleMyungjo',serif;
+ --serif:'Noto Serif KR','AppleMyungjo','Batang',serif;
+ color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+ --bg:#14161D; --surface:#1C1F28; --ink:#E9E7E1; --muted:#A3A6B0; --rule:#323644;
+ --mustard:#DDB24E; --slate:#9DB0D3; --mustard-soft:#2E2818; --slate-soft:#212837; --on-ink-accent:#9E7410;
+ color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+ --bg:#14161D; --surface:#1C1F28; --ink:#E9E7E1; --muted:#A3A6B0; --rule:#323644;
+ --mustard:#DDB24E; --slate:#9DB0D3; --mustard-soft:#2E2818; --slate-soft:#212837; --on-ink-accent:#9E7410;
+ color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{font-size:18px;-webkit-font-smoothing:antialiased;scroll-padding-top:1.5rem;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);line-height:1.85;word-break:keep-all;overflow-wrap:break-word}
+a{color:var(--slate);text-underline-offset:.2em;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--slate);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;left:-999px;top:0;z-index:9;background:var(--ink);color:var(--bg);padding:.5rem 1rem}
+.skip:focus{left:1rem;top:1rem}
 
-  /* ── Hero ── */
-  .hero {
-    background: linear-gradient(165deg, #1a1a2e 0%, #2c5f7c 55%, #3a7ca5 100%);
-    color: #fff;
-    padding: var(--space-xl) var(--space-md) var(--space-lg);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 80px;
-    background: linear-gradient(to bottom, transparent, var(--clr-bg));
-  }
-  .hero-label {
-    display: inline-block;
-    font-size: 0.75rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.6);
-    border: 1px solid rgba(255,255,255,0.25);
-    padding: 0.3em 1.2em;
-    border-radius: 2px;
-    margin-bottom: var(--space-md);
-  }
-  .hero h1 {
-    font-family: var(--font-serif);
-    font-size: clamp(2rem, 5vw, 3.2rem);
-    font-weight: 700;
-    line-height: 1.25;
-    margin-bottom: 0.4em;
-    letter-spacing: -0.02em;
-  }
-  .hero h1 em {
-    font-style: italic;
-    color: rgba(255,255,255,0.75);
-    font-weight: 400;
-    font-size: 0.7em;
-    display: block;
-    margin-top: 0.3em;
-  }
-  .hero-meta {
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.55);
-    margin-top: var(--space-sm);
-  }
+/* ---------------- 머리: M 하나와 흩어진 m 들 ---------------- */
+.hero{border-bottom:1px solid var(--rule)}
+.hero-in{max-width:1180px;margin:0 auto;padding:3.2rem 24px 3.4rem;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,30rem);gap:2rem 4rem;align-items:center}
+.hero-text{grid-column:1;grid-row:1}
+.mfield{grid-column:2;grid-row:1;position:relative;width:100%;aspect-ratio:1/1;container-type:inline-size}
+.mfield .M{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);font-family:'Fraunces',Georgia,serif;font-optical-sizing:auto;
+ font-weight:600;font-size:62cqw;line-height:1;color:var(--mustard);font-variation-settings:"SOFT" 0,"WONK" 0;letter-spacing:0}
+.mfield .m{position:absolute;left:var(--x);top:var(--y);transform:translate(-50%,-50%) rotate(var(--r));font-family:'Fraunces',Georgia,serif;
+ font-style:normal;font-weight:var(--w);font-size:calc(var(--s) * 1cqw);line-height:1;color:var(--slate)}
+.mfield .m.it{font-style:italic}
+.mfield .m.ink{color:var(--ink)}
+@media (prefers-reduced-motion:no-preference){
+ .mfield .M{animation:M-in .9s ease-out both}
+ .mfield .m{animation:m-out 1.5s cubic-bezier(.2,.75,.25,1) var(--d) both}
+ @keyframes M-in{from{opacity:0}}
+ @keyframes m-out{from{left:50%;top:52%;opacity:0;transform:translate(-50%,-50%) rotate(0) scale(.3)}}
+}
+.hero .label{margin:0 0 1.1rem;font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:400;font-size:.95rem;color:var(--muted)}
+.hero h1{margin:0;font-weight:400}
+.hero h1 .t{display:block;font-family:'Nanum Myeongjo',var(--serif);font-weight:800;font-size:clamp(2.3rem,5.2vw,3.7rem);line-height:1.22;letter-spacing:-.02em}
+.hero h1 .en{display:block;margin-top:.7rem;font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:300;font-size:clamp(1.4rem,2.6vw,1.9rem);line-height:1.3;color:var(--slate)}
+.hero .meta{margin:2rem 0 0;font-size:.86rem;line-height:1.7;color:var(--muted)}
+.hero .meta span{display:block}
+.hero .by{margin:.9rem 0 0;padding-top:.9rem;border-top:1px solid var(--rule);font-size:.86rem;color:var(--ink);max-width:22rem}
+@media (max-width:899px){
+ .hero-in{grid-template-columns:1fr;padding:1.6rem 16px 2.4rem;gap:1.2rem}
+ .mfield{grid-column:1;grid-row:1;max-width:340px;justify-self:center}
+ .hero-text{grid-row:2}
+}
 
-  /* ── Article wrapper ── */
-  .article-wrap {
-    max-width: var(--max-w);
-    margin: 0 auto;
-    padding: 0 var(--space-md);
-  }
+/* ---------------- 배치 ---------------- */
+.layout{max-width:1180px;margin:0 auto;padding:3rem 24px 4rem;display:grid;grid-template-columns:220px minmax(0,1fr);gap:3.6rem}
+.read{max-width:38em;min-width:0}
+@media (max-width:1079px){.layout{grid-template-columns:1fr;gap:1.2rem;padding:1.4rem 16px 3rem}.read{margin:0 auto;width:100%}}
 
-  /* ── Abstract ── */
-  .abstract {
-    background: var(--clr-surface);
-    border: 1px solid var(--clr-border);
-    border-radius: 8px;
-    padding: var(--space-md);
-    margin: calc(-1 * var(--space-md)) auto var(--space-lg);
-    position: relative;
-    z-index: 1;
-    max-width: var(--max-w);
-  }
-  .abstract-title {
-    font-family: var(--font-serif);
-    font-size: 0.8rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--clr-accent);
-    margin-bottom: var(--space-xs);
-  }
-  .abstract p {
-    font-size: 1.05rem;
-    color: var(--clr-text-secondary);
-    line-height: 1.8;
-  }
+/* ---------------- 차례: 장마다 작은 m, 지금 장은 대문자 M ---------------- */
+.toc{position:sticky;top:1.5rem;align-self:start;max-height:calc(100vh - 3rem);overflow:auto;scrollbar-width:thin;font-size:.8rem;line-height:1.45}
+.toc-head{margin:0 0 .7rem;font-family:'Nanum Myeongjo',var(--serif);font-weight:800;font-size:.95rem}
+.toc-btn{display:none}
+.toc-list{list-style:none;margin:0;padding:0}
+.toc-list li{margin:0}
+.toc-list a{display:grid;grid-template-columns:1.6rem 1fr;align-items:baseline;padding:.32rem 0;color:var(--muted);text-decoration:none}
+.toc-list .edge a{grid-template-columns:1fr;padding-left:1.6rem;font-size:.76rem}
+.toc-list .edge:nth-child(2) a{margin-bottom:.4rem}
+.toc-list .edge:nth-last-child(2) a{margin-top:.4rem}
+.toc-list i{font-family:'Fraunces',Georgia,serif;font-style:normal;font-weight:500;font-size:1.05rem;line-height:1;color:var(--slate);opacity:.75}
+.toc-list i::before{content:"m"}
+.toc-list a:hover{color:var(--ink)}
+.toc-list a[aria-current]{color:var(--ink)}
+.toc-list a[aria-current] i{color:var(--mustard);opacity:1;font-weight:700;font-size:1.25rem}
+.toc-list a[aria-current] i::before{content:"M"}
+.toc-list .edge a[aria-current]{font-weight:600}
+@media (max-width:1079px){
+ .toc{position:static;max-height:none;overflow:visible;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+ .toc-head{display:none}
+ .toc-btn{display:flex;justify-content:space-between;width:100%;padding:.85rem 0;background:none;border:0;font:600 .9rem var(--serif);color:var(--ink);cursor:pointer}
+ .toc-list{display:none}
+ .toc.open .toc-list{display:block;padding-bottom:.8rem}
+ .toc.open .toc-btn span{transform:rotate(45deg)}
+ .toc-btn span{transition:transform .2s}
+}
 
-  /* ── Key Findings ── */
-  .key-findings {
-    background: var(--clr-accent-light);
-    border-left: 4px solid var(--clr-accent);
-    border-radius: 0 8px 8px 0;
-    padding: var(--space-md);
-    margin-bottom: var(--space-lg);
-  }
-  .key-findings h2 {
-    font-family: var(--font-serif);
-    font-size: 1.15rem;
-    color: var(--clr-accent);
-    margin-bottom: var(--space-sm);
-  }
-  .key-findings ol { padding-left: 1.4em; color: var(--clr-text); }
-  .key-findings li { margin-bottom: 0.6em; line-height: 1.7; }
-  .key-findings li strong { color: var(--clr-accent); }
+/* ---------------- 본문 ---------------- */
+.read p{margin:0 0 1.35rem}
+.read strong{font-weight:700}
+.read em{font-style:italic}
+.read h4{margin:0 0 .45rem}
 
-  /* ── Section headings ── */
-  .section-num {
-    display: inline-block;
-    font-family: var(--font-serif);
-    font-size: 0.75rem;
-    color: var(--clr-accent);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 0.3em;
-  }
-  h2.section-heading {
-    font-family: var(--font-serif);
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: var(--clr-text);
-    line-height: 1.35;
-    margin-bottom: var(--space-sm);
-    letter-spacing: -0.01em;
-  }
-  .section-divider {
-    width: 48px;
-    height: 3px;
-    background: var(--clr-gold);
-    border: none;
-    margin: var(--space-lg) 0 var(--space-md);
-    border-radius: 2px;
-  }
+/* 요약 */
+.read .abstract{margin:0 0 2.6rem;padding:0 0 2rem;border-bottom:1px solid var(--rule)}
+.read .abstract-title{margin:0 0 .6rem;font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--mustard)}
+.read .abstract p{margin:0;font-size:1.04rem;line-height:1.9}
+.read .abstract strong{font-family:var(--latin);font-weight:600;font-size:1.06em}
 
-  /* ── Body text ── */
-  .article-wrap p {
-    margin-bottom: 1.3em;
-    font-size: 1rem;
-    line-height: 1.85;
-  }
+/* 핵심 발견 */
+.read .key-findings{margin:0 0 1rem;padding:1.5rem 1.6rem 1.2rem;background:var(--surface);border-radius:6px}
+.read .key-findings h2{margin:0 0 1rem;font-family:'Nanum Myeongjo',var(--serif);font-weight:800;font-size:1.2rem;line-height:1.4}
+.read .key-findings ol{list-style:none;margin:0;padding:0;counter-reset:k}
+.read .key-findings li{position:relative;margin:0 0 .85rem;padding-left:2.1rem;font-size:.92rem;line-height:1.8;counter-increment:k}
+.read .key-findings li::before{content:counter(k);position:absolute;left:0;top:-.05rem;font-family:'Fraunces',Georgia,serif;font-weight:300;font-size:1.45rem;line-height:1.2;color:var(--mustard)}
+.read .key-findings li strong{font-family:var(--display);font-weight:800}
 
-  /* ── Pull quotes ── */
-  .pull-quote {
-    background: var(--clr-pull);
-    border-radius: 6px;
-    padding: var(--space-md) var(--space-md) var(--space-md) calc(var(--space-md) + 4px);
-    margin: var(--space-md) 0;
-    position: relative;
-    font-family: var(--font-serif);
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: var(--clr-text);
-  }
-  .pull-quote::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 4px;
-    background: var(--clr-gold);
-    border-radius: 2px 0 0 2px;
-  }
-  .pull-quote cite {
-    display: block;
-    margin-top: 0.7em;
-    font-size: 0.82rem;
-    font-style: normal;
-    color: var(--clr-text-secondary);
-    letter-spacing: 0.03em;
-  }
+/* 장 제목 */
+.read h2.part{margin:4.6rem 0 1.5rem;padding-top:1.1rem;border-top:1px solid var(--ink);font-weight:400}
+.read h2.part .pn{display:block;margin-bottom:.35rem;font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:400;font-size:1rem;color:var(--mustard)}
+.read h2.part .pt{display:block;font-family:var(--display);font-weight:800;font-size:1.72rem;line-height:1.32;letter-spacing:-.015em}
+.read h2.part .ps{display:block;margin-top:.4rem;font-family:'Fraunces','Noto Serif KR',serif;font-size:1.06rem;line-height:1.5;color:var(--muted)}
 
-  /* ── Highlight box ── */
-  .highlight-box {
-    background: var(--clr-highlight);
-    border: 1px solid #e8dfc0;
-    border-radius: 8px;
-    padding: var(--space-md);
-    margin: var(--space-md) 0;
-  }
-  .highlight-box p { margin-bottom: 0.8em; }
-  .highlight-box p:last-child { margin-bottom: 0; }
+/* 인용 */
+.read .pull-quote{position:relative;margin:2.4rem 0;padding:1.15rem 0 0 0;border-top:1px solid var(--rule);font-family:'Nanum Myeongjo',var(--serif);font-size:1.12rem;line-height:1.85}
+.read .pull-quote::before{content:"";position:absolute;left:0;top:-2px;width:3rem;height:3px;background:var(--mustard)}
+.read .pull-quote cite{display:block;margin-top:.7rem;font-family:var(--serif);font-style:normal;font-size:.82rem;color:var(--muted)}
 
-  /* ── Tables ── */
-  .concept-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: var(--space-md) 0;
-    font-size: 0.92rem;
-  }
-  .concept-table th {
-    background: var(--clr-accent);
-    color: #fff;
-    padding: 0.7em 1em;
-    text-align: left;
-    font-weight: 600;
-    font-size: 0.82rem;
-    letter-spacing: 0.05em;
-  }
-  .concept-table td {
-    padding: 0.65em 1em;
-    border-bottom: 1px solid var(--clr-border);
-    vertical-align: top;
-  }
-  .concept-table tr:nth-child(even) td { background: #f8f7f4; }
-  .concept-table tr:last-child td { border-bottom: 2px solid var(--clr-accent); }
+/* 강조 상자 */
+.read .highlight-box{margin:2rem 0;padding:1.25rem 1.45rem;background:var(--slate-soft);border-radius:4px}
+.read .highlight-box p{margin:0;font-size:.97rem}
+.read .highlight-box strong{color:var(--slate)}
 
-  /* ── Timeline ── */
-  .timeline {
-    position: relative;
-    padding-left: 2.2em;
-    margin: var(--space-md) 0;
-  }
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 0.6em;
-    top: 0.4em;
-    bottom: 0.4em;
-    width: 2px;
-    background: var(--clr-border);
-  }
-  .timeline-item {
-    position: relative;
-    margin-bottom: 1.2em;
-  }
-  .timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -1.85em;
-    top: 0.55em;
-    width: 10px;
-    height: 10px;
-    background: var(--clr-accent);
-    border-radius: 50%;
-    border: 2px solid var(--clr-bg);
-  }
-  .timeline-item strong { color: var(--clr-accent); font-size: 0.9rem; }
-  .timeline-item span { display: block; font-size: 0.92rem; color: var(--clr-text-secondary); line-height: 1.6; }
+/* 비교 — 이중 회심 / 세 단계 */
+.read .comparison{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:2rem 0 2.2rem;border-top:1px solid var(--ink)}
+.read .comparison-card{position:relative;padding:1rem 1.2rem 1.1rem}
+.read .comparison-card+.comparison-card{border-left:1px solid var(--rule)}
+.read .comparison-card h4{font-family:var(--display);font-weight:800;font-size:1.05rem;line-height:1.4}
+.read .comparison-card p{margin:0;font-size:.92rem;line-height:1.75}
+.read .comparison:not(.tri-grid) .comparison-card:first-child h4{color:var(--slate)}
+.read .comparison:not(.tri-grid) .comparison-card:last-child h4{color:var(--mustard)}
+.read .tri-grid{grid-template-columns:repeat(3,1fr);border-top:0;gap:.7rem}
+.read .tri-grid .comparison-card{border:1px solid var(--rule);border-radius:4px;padding:.95rem 1rem 1rem}
+.read .tri-grid .comparison-card+.comparison-card{border-left:1px solid var(--rule)}
+.read .tri-grid .comparison-card+.comparison-card::before{content:"";position:absolute;left:-.7rem;top:1.55rem;width:.7rem;height:1px;background:var(--muted)}
+.read .tri-grid h4{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:1.12rem;color:var(--muted)}
+.read .tri-grid .comparison-card:last-child{background:var(--mustard-soft);border-color:var(--mustard)}
+.read .tri-grid .comparison-card:last-child h4{color:var(--ink);font-weight:700}
+@media (max-width:640px){
+ .read .comparison,.read .tri-grid{grid-template-columns:1fr}
+ .read .comparison-card+.comparison-card{border-left:0;border-top:1px solid var(--rule)}
+ .read .tri-grid .comparison-card+.comparison-card{border:1px solid var(--rule)}
+ .read .tri-grid .comparison-card:last-child{border-color:var(--mustard)}
+ .read .tri-grid .comparison-card+.comparison-card::before{left:1.4rem;top:-.7rem;width:1px;height:.7rem}
+}
 
-  /* ── Comparison cards ── */
-  .comparison {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-sm);
-    margin: var(--space-md) 0;
-  }
-  .comparison-card {
-    background: var(--clr-surface);
-    border: 1px solid var(--clr-border);
-    border-radius: 8px;
-    padding: var(--space-sm) var(--space-md);
-  }
-  .comparison-card h4 {
-    font-family: var(--font-serif);
-    font-size: 0.95rem;
-    color: var(--clr-accent);
-    margin-bottom: 0.5em;
-  }
-  .comparison-card p { font-size: 0.9rem; line-height: 1.6; }
+/* 하나님의 선교 — 창조에서 새 창조까지 한 줄 */
+.read .timeline{position:relative;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0 .6rem;margin:2.4rem 0 2.6rem;padding-top:1.9rem}
+.read .timeline::before{content:"";position:absolute;left:.475rem;right:calc((100% - 3rem) / 6 - .475rem);top:.5rem;height:2px;background:var(--slate)}
+.read .timeline-item{position:relative;padding-right:.2rem}
+.read .timeline-item::before{content:"";position:absolute;left:0;top:-1.85rem;width:.95rem;height:.95rem;border-radius:50%;background:var(--bg);border:2px solid var(--slate)}
+.read .timeline-item strong{display:block;font-family:'Nanum Myeongjo',var(--serif);font-weight:800;font-size:.92rem;line-height:1.4;margin-bottom:.3rem}
+.read .timeline-item span{display:block;font-size:.76rem;line-height:1.6;color:var(--muted)}
+.read .timeline-item:nth-child(4)::before{left:-.25rem;top:-2.1rem;width:1.45rem;height:1.45rem;background:var(--mustard);border-color:var(--mustard)}
+.read .timeline-item:nth-child(4) strong{color:var(--mustard)}
+.read .timeline-item:last-child::before{background:var(--slate)}
+@media (min-width:1180px){.read .timeline{margin-right:-7rem}}
+@media (max-width:700px){
+ .read .timeline{grid-template-columns:1fr;gap:1rem;padding:0 0 0 2.1rem}
+ .read .timeline::before{left:.45rem;right:auto;top:.4rem;bottom:.6rem;width:2px;height:auto}
+ .read .timeline-item::before{left:-2.1rem;top:.3rem}
+ .read .timeline-item:nth-child(4)::before{left:-2.35rem;top:.05rem}
+}
 
-  /* ── Closing card ── */
-  .closing-card {
-    background: linear-gradient(135deg, #1a1a2e, #2c5f7c);
-    color: #fff;
-    border-radius: 12px;
-    padding: var(--space-lg) var(--space-md);
-    text-align: center;
-    margin: var(--space-xl) 0 var(--space-lg);
-  }
-  .closing-card h2 {
-    font-family: var(--font-serif);
-    font-size: 1.5rem;
-    margin-bottom: var(--space-sm);
-    color: #fff;
-  }
-  .closing-card p {
-    color: rgba(255,255,255,0.8);
-    font-size: 1rem;
-    line-height: 1.75;
-    max-width: 560px;
-    margin: 0 auto;
-  }
+/* 표 */
+.read .table-wrap{overflow-x:auto;margin:1.8rem 0 2.2rem;-webkit-overflow-scrolling:touch}
+.read table{width:100%;border-collapse:collapse;font-size:.84rem;line-height:1.6}
+.read th{text-align:left;font-family:'Nanum Myeongjo',var(--serif);font-weight:800;padding:.55rem .7rem;border-bottom:2px solid var(--ink);white-space:nowrap}
+.read td{padding:.55rem .7rem;border-bottom:1px solid var(--rule);vertical-align:top}
+.read td:first-child{font-weight:600;white-space:nowrap}
+.read .t-eras tbody tr:last-child td{background:var(--mustard-soft)}
+.read .t-paul td:nth-child(3){background:var(--slate-soft)}
 
-  /* ── Sources ── */
-  .sources {
-    border-top: 1px solid var(--clr-border);
-    padding-top: var(--space-md);
-    margin-top: var(--space-lg);
-    margin-bottom: var(--space-lg);
-  }
-  .sources h3 {
-    font-family: var(--font-serif);
-    font-size: 0.9rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--clr-text-secondary);
-    margin-bottom: var(--space-sm);
-  }
-  .sources ul { list-style: none; padding: 0; }
-  .sources li {
-    font-size: 0.85rem;
-    color: var(--clr-text-secondary);
-    line-height: 1.7;
-    margin-bottom: 0.5em;
-    padding-left: 1.2em;
-    position: relative;
-  }
-  .sources li::before { content: '\2014'; position: absolute; left: 0; color: var(--clr-gold); }
+/* 마무리 */
+.read .closing-card{position:relative;overflow:hidden;margin:4rem 0 3rem;padding:2.2rem 2rem 2.3rem;background:var(--ink);color:var(--bg);border-radius:6px}
+.read .closing-card::after{content:"M"/"";position:absolute;right:-.1em;bottom:-.26em;font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:9.5rem;line-height:1;color:var(--on-ink-accent);opacity:.13;pointer-events:none}
+@media (max-width:640px){.read .closing-card{padding:1.8rem 1.4rem 2rem}.read .closing-card::after{font-size:6.5rem;opacity:.1}}
+.read .closing-card h2{position:relative;margin:0 0 1.1rem;font-family:'Nanum Myeongjo',var(--serif);font-weight:800;font-size:1.55rem;line-height:1.4}
+.read .closing-card p{position:relative;margin:0;font-size:1rem;line-height:2}
+.read .closing-card strong{font-family:var(--latin);color:var(--on-ink-accent)}
 
-  /* ── Footer ── */
-  .site-footer {
-    text-align: center;
-    padding: var(--space-md);
-    font-size: 0.78rem;
-    color: var(--clr-text-secondary);
-    border-top: 1px solid var(--clr-border);
-  }
+/* 출처 */
+.read .sources h3{margin:0 0 .8rem;font-family:'Nanum Myeongjo',var(--serif);font-weight:800;font-size:1.02rem}
+.read .sources ul{margin:0;padding-left:1.1rem;font-size:.8rem;line-height:1.7;color:var(--muted)}
+.read .sources li{margin-bottom:.45rem}
+.read .sources em{color:var(--ink)}
 
-  /* ── Responsive ── */
-  @media (max-width: 600px) {
-    html { font-size: 15.5px; }
-    .hero { padding: var(--space-lg) var(--space-sm) var(--space-md); }
-    .article-wrap { padding: 0 var(--space-sm); }
-    .comparison { grid-template-columns: 1fr; }
-    .abstract { margin-left: var(--space-sm); margin-right: var(--space-sm); }
-    .pull-quote { padding: var(--space-sm) var(--space-sm) var(--space-sm) calc(var(--space-sm) + 4px); }
-    .tri-grid { grid-template-columns: 1fr !important; }
-  }
+/* 삽화 */
+.read .ill{margin:2.6rem 0 2.8rem}
+.read .ill svg{display:block;width:100%;height:auto}
+.read .ill figcaption{margin-top:.7rem;font-size:.78rem;line-height:1.65;color:var(--muted)}
+@media (min-width:1180px){.read .ill{margin-right:-7rem}}
+
+/* 바닥글 */
+.foot{max-width:1180px;margin:0 auto;padding:1.6rem 24px 2.6rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem 2rem;border-top:1px solid var(--rule);font-size:.8rem;color:var(--muted)}
+@media (max-width:1079px){.foot{padding:1.4rem 16px 2.4rem}}
+
 </style>
 <meta property="og:type" content="article">
 <meta property="og:title" content="하나님의 선교와 나의 선교">
@@ -373,19 +222,29 @@
 <link rel="canonical" href="https://wiki.youngdoctor.kr/marktl/s/1sv7txp/">
 </head>
 <body>
-
+<a class="skip" href="#main">본문으로 건너뛰기</a>
 <header class="hero">
-  <div class="hero-label">Research Report</div>
-  <h1>
-    하나님의 선교와 나의 선교
-    <em>Mission &amp; missions</em>
-  </h1>
-  <p class="hero-meta">대구의료선교 교육훈련원 2026 &middot; 선교신학 강의</p>
-<p class="hero-author">글쓴이: 이상협 (M.D., M.Div.)</p>
+ <div class="hero-in">
+  <div class="mfield" aria-hidden="true"><span class="M">M</span><i class="m it" style="--x:14%;--y:9%;--s:7;--r:-8deg;--w:400;--d:0.87s">m</i><i class="m" style="--x:31%;--y:5%;--s:4.5;--r:6deg;--w:600;--d:0.81s">m</i><i class="m it ink" style="--x:47%;--y:11%;--s:5.5;--r:-3deg;--w:300;--d:0.71s">m</i><i class="m" style="--x:64%;--y:5%;--s:4;--r:10deg;--w:500;--d:0.79s">m</i><i class="m" style="--x:81%;--y:10%;--s:8;--r:-5deg;--w:700;--d:0.83s">m</i><i class="m it" style="--x:94%;--y:23%;--s:4;--r:8deg;--w:400;--d:0.84s">m</i><i class="m ink" style="--x:6%;--y:30%;--s:5;--r:-10deg;--w:500;--d:0.80s">m</i><i class="m it" style="--x:9%;--y:49%;--s:9;--r:4deg;--w:300;--d:0.71s">m</i><i class="m" style="--x:4%;--y:67%;--s:4.5;--r:-6deg;--w:700;--d:0.79s">m</i><i class="m" style="--x:13%;--y:86%;--s:6.5;--r:8deg;--w:400;--d:0.81s">m</i><i class="m it" style="--x:91%;--y:41%;--s:6.5;--r:-4deg;--w:500;--d:0.72s">m</i><i class="m ink" style="--x:97%;--y:59%;--s:4;--r:6deg;--w:300;--d:0.78s">m</i><i class="m" style="--x:89%;--y:76%;--s:9;--r:-8deg;--w:600;--d:0.76s">m</i><i class="m it" style="--x:77%;--y:93%;--s:5;--r:4deg;--w:400;--d:0.80s">m</i><i class="m it" style="--x:29%;--y:95%;--s:4.5;--r:-6deg;--w:600;--d:0.78s">m</i><i class="m" style="--x:46%;--y:90%;--s:7;--r:5deg;--w:300;--d:0.67s">m</i><i class="m ink" style="--x:62%;--y:97%;--s:4;--r:-4deg;--w:500;--d:0.77s">m</i><i class="m" style="--x:22%;--y:21%;--s:3.5;--r:12deg;--w:600;--d:0.71s">m</i><i class="m it" style="--x:75%;--y:24%;--s:3.5;--r:-12deg;--w:400;--d:0.67s">m</i><i class="m it" style="--x:23%;--y:78%;--s:3.2;--r:8deg;--w:500;--d:0.67s">m</i></div>
+  <div class="hero-text">
+   <p class="label">Research Report</p>
+   <h1><span class="t">하나님의 선교와 나의 선교</span><span class="en">Mission &amp; missions</span></h1>
+   <p class="meta"><span>대구의료선교 교육훈련원 2026</span><span>선교신학 강의</span></p>
+   <p class="by">글쓴이: 이상협 (M.D., M.Div.)</p>
+  </div>
+ </div>
 </header>
+<div class="layout">
+<nav class="toc" aria-label="차례">
+ <p class="toc-head">차례</p>
+ <button class="toc-btn" id="tocBtn" type="button" aria-expanded="false" aria-controls="tocList">차례 <span aria-hidden="true">+</span></button>
+ <ol class="toc-list" id="tocList"><li class="edge"><a href="#abstract">Abstract</a></li><li class="edge"><a href="#findings">핵심 발견 5가지</a></li><li class="ch"><a href="#part-1"><i aria-hidden="true"></i><span>사랑은 변하지 않는다, 선교는 변한다</span></a></li><li class="ch"><a href="#part-2"><i aria-hidden="true"></i><span>산업혁명과 선교의 지형도</span></a></li><li class="ch"><a href="#part-3"><i aria-hidden="true"></i><span>이중 회심</span></a></li><li class="ch"><a href="#part-4"><i aria-hidden="true"></i><span>변하지 않는 것</span></a></li><li class="ch"><a href="#part-5"><i aria-hidden="true"></i><span>선교적 의도</span></a></li><li class="ch"><a href="#part-6"><i aria-hidden="true"></i><span>바울</span></a></li><li class="ch"><a href="#part-7"><i aria-hidden="true"></i><span>모두가 바울은 아니다</span></a></li><li class="ch"><a href="#part-8"><i aria-hidden="true"></i><span>Life As Mission</span></a></li><li class="edge"><a href="#closing">생존 모드가 아닌, 미션 모드로</a></li><li class="edge"><a href="#sources">참고 문헌 및 출처</a></li></ol>
+</nav>
+<main id="main" class="read">
+
 
 <div class="abstract article-wrap">
-  <div class="abstract-title">Abstract</div>
+  <div class="abstract-title" id="abstract">Abstract</div>
   <p>
     성경에 '선교'라는 단어는 없다. 그러나 성경 전체가 선교의 이야기다. 대문자 <strong>Mission</strong>(Missio Dei, 하나님의 선교)은 변하지 않는다 &mdash; 창조에서 새 창조까지 이어지는 하나님의 보내심이기 때문이다. 반면 소문자 <strong>missions</strong>(우리 각자의 선교)는 시대마다 변화해 왔고, 변화해야 한다. 본 강의는 데이비드 보쉬의 패러다임 이론, 베드로-고넬료 사건의 '이중 회심' 구조, 바울의 선교 전략 전환, 그리고 4차 산업혁명 시대의 선교적 생태계를 분석하며, 궁극적으로 <em>Life As Mission</em> &mdash; 삶 자체가 선교인 패러다임으로의 전환을 제안한다.
   </p>
@@ -393,7 +252,7 @@
 
 <div class="article-wrap">
   <div class="key-findings">
-    <h2>핵심 발견 5가지</h2>
+    <h2 id="findings">핵심 발견 5가지</h2>
     <ol>
       <li><strong>Mission &ne; missions</strong> &mdash; 하나님의 선교(Missio Dei)는 불변하지만, 우리의 선교 방식은 시대&middot;문화&middot;기술에 따라 반드시 변화해야 한다.</li>
       <li><strong>이중 회심의 원리</strong> &mdash; 베드로-고넬료 사건은 선교 대상만이 아니라 선교하는 교회 자체가 혁명적으로 변화함을 보여준다.</li>
@@ -403,10 +262,7 @@
     </ol>
   </div>
 
-  <!-- SECTION 1 -->
-  <hr class="section-divider">
-  <span class="section-num">Part I</span>
-  <h2 class="section-heading">사랑은 변하지 않는다, 선교는 변한다</h2>
+  <h2 class="part" id="part-1"><span class="pn">Part I</span><span class="pt">사랑은 변하지 않는다, 선교는 변한다</span></h2>
 
   <p>
     영화 <em>봄날은 간다</em>에서 유지태는 묻는다. "어떻게 사랑이 변하니?" 사랑은 변하지 않는다 &mdash; 하나님이 사랑이시기 때문이다. 그러나 선교는 어떤가? 선교신학자 데이비드 보쉬는 자신의 역작에 <em>Transforming Mission</em>이라는 제목을 붙였다. 놀랍게도 성경에 '선교'라는 단어 자체가 등장하지 않는다. 성경은 선교를 정의하지 않고, 여러 이미지로 보여줄 뿐이다.
@@ -424,10 +280,7 @@
     레슬리 뉴비긴은 이에 대해 균형 잡힌 시선을 제시한다. 콘스탄틴 대제가 기독교를 국교로 삼은 것 자체가 잘못은 아니었다. 기독교 문명을 세우고 법을 성경적 가르침에 일치시키려는 시도에는 치열한 고민이 있었다. 핵심은 이것이다 &mdash; <strong>선교는 시대적으로 다르게 해석될 필요가 있었고, 실제로 그렇게 해석되어 왔다.</strong>
   </p>
 
-  <!-- SECTION 2 -->
-  <hr class="section-divider">
-  <span class="section-num">Part II</span>
-  <h2 class="section-heading">산업혁명과 선교의 지형도</h2>
+  <h2 class="part" id="part-2"><span class="pn">Part II</span><span class="pt">산업혁명과 선교의 지형도</span></h2>
 
   <p>
     랄프 윈터 박사는 세계 선교의 지리적 확장을 400년 단위로 다섯 시대로 구분했다. 로마인, 야만인, 바이킹족, 무슬림, 그리고 땅끝까지의 선교. 개신교 선교만 놓고 보면, 윌리엄 캐리의 해안선 선교에서 허드슨 테일러의 내지 선교, 그리고 미전도 종족 선교로 이어져 왔다.
@@ -435,7 +288,7 @@
 
   <p>왜 선교가 변해야 하는가? 세상이 변하기 때문이다. 기술 혁명은 선교의 물리적 가능성 자체를 바꾸어 놓았다.</p>
 
-  <table class="concept-table">
+  <div class="table-wrap t-eras"><table class="concept-table">
     <thead>
       <tr><th>산업혁명</th><th>핵심 기술</th><th>선교 시대</th></tr>
     </thead>
@@ -445,7 +298,7 @@
       <tr><td>3차</td><td>비행기, 컴퓨터</td><td>미전도 종족 선교</td></tr>
       <tr><td>4차</td><td>AI, 플랫폼, 메타버스</td><td><strong>? &mdash; 새로운 패러다임 필요</strong></td></tr>
     </tbody>
-  </table>
+  </table></div>
 
   <p>
     현재 전 세계 81억 인구 중 52억 명이 스마트폰을 사용하고, 41억 명이 매일 평균 2시간 29분 동안 SNS에 접속한다. 초연결의 시대에 영역&middot;시간&middot;언어의 제한은 사라졌다. 동시에 전통적 선교는 이미 어려워지고 있다 &mdash; 중국에서 철수, 인도&middot;네팔에서 추방, 코로나 이후 선교사 귀국 비율 30% 이상, 향후 50% 전망.
@@ -455,10 +308,7 @@
     <p><strong>복음이 변하는 것이 아니다.</strong> 복음은 불변한다. 변해야 하는 것은 선교의 방식과 패러다임이다. 팬데믹 이후 4차 산업혁명이 급속화되면서 선교의 생태계 자체가 급변하고 있다. 세상은 이미 패러다임을 전환하고 정복하고 있다.</p>
   </div>
 
-  <!-- SECTION 3 -->
-  <hr class="section-divider">
-  <span class="section-num">Part III</span>
-  <h2 class="section-heading">이중 회심 &mdash; 베드로와 고넬료</h2>
+  <h2 class="part" id="part-3"><span class="pn">Part III</span><span class="pt">이중 회심</span><span class="ps">베드로와 고넬료</span></h2>
 
   <p>
     변화는 누구에게 일어나는가? 사도행전 10장, 베드로와 고넬료의 만남은 선교의 가장 본질적인 역학을 드러낸다.
@@ -467,6 +317,8 @@
   <p>
     고넬료는 환상 중에 베드로를 청하라는 지시를 받는다. 베드로도 환상을 받지만 세 번이나 거부한다. 이방인을 만나는 것이 위법이었기 때문이다. "내가 깨끗하다 한 것을 속되다 하지 말라" &mdash; 성령의 강권적 인도로 결국 만남이 성사된다. 베드로가 억지로 말씀을 전하자 성령이 임했고, 그들이 방언까지 했다. <strong>성령님이 하시는 것이다.</strong> 이것이 Missio Dei다.
   </p>
+  <figure class="ill"><svg class="art art-joppa" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="한낮 욥바 바닷가의 평평한 지붕 위에서 한 사람이 무릎을 꿇고 두 팔을 들어 기도한다. 구름이 갈라진 하늘에서 빛줄기를 따라 네 귀를 줄에 매단 큰 흰 보자기가 내려오고, 그 안에 돼지와 토끼와 들염소와 낙타, 가장자리에 뱀과 도마뱀과 새들이 보인다. 지붕 한쪽에는 무두질한 가죽이 널려 있고, 뒤로 흰 집들과 푸른 바다의 돛배가, 아래 거리 대문 앞에는 두 사람과 붉은 망토의 병사가 서 있다"><defs><filter id="joppa-paint" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="3" seed="4"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter><filter id="joppa-paint2" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".06" numOctaves="2" seed="9"/><feDisplacementMap in="SourceGraphic" scale="3"/></filter><filter id="joppa-grain" filterUnits="userSpaceOnUse" x="0" y="0" width="1000" height="600"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="2"/><feColorMatrix values="0 0 0 0 .3 0 0 0 0 .25 0 0 0 0 .2 0 0 0 .1 0"/><feComposite in2="SourceGraphic" operator="in"/></filter><filter id="joppa-soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter><filter id="joppa-blur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2.2"/></filter><clipPath id="joppa-c"><rect width="1000" height="600" rx="10"/></clipPath><g id="joppa-p"><path d="M-9 0C-9.5-16-8-34-6.5-42C-5-47.5 5-47.5 6.5-42C8-34 9.5-16 9 0z"/><path d="M1.5-46C6-40 8.5-22 9 0H3.5C4-16 3.5-34 1.5-46z" fill="#1B1F2A" opacity=".28"/><path d="M-6.5 0h5v1.6h-5zM1.5 0h5v1.6h-5z" fill="#2A2420"/><circle cy="-52" r="6" fill="currentColor"/></g><g id="joppa-pv"><path d="M-9 0C-9.5-16-8-34-6.5-42C-5-47.5 5-47.5 6.5-42C8-34 9.5-16 9 0z"/><path d="M-8-50a8 8 0 0 1 16 0c1.5 9 3 17 4 26h-3.5c-1-8-2.5-14-4.5-19h-8c-2 5-3.5 11-4.5 19h-3.5c1-9 2.5-17 4-26z"/><path d="M-8-50a8 8 0 0 1 16 0c1.5 9 3 17 4 26h-3.5c-1-8-2.5-14-4.5-19z" fill="#1B1F2A" opacity=".25"/><path d="M-6.5 0h5v1.6h-5zM1.5 0h5v1.6h-5z" fill="#2A2420"/><circle cy="-50" r="5.2" fill="currentColor"/></g><linearGradient id="joppa-sky" x1="0" y1="0" x2="0" y2="340" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2C4F86"/><stop offset="0.38" stop-color="#5C8BC0"/><stop offset="0.75" stop-color="#A9C9DC"/><stop offset="1" stop-color="#E6E8D8"/></linearGradient><radialGradient id="joppa-heaven" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#FFFDF2" stop-opacity="1"/><stop offset="0.22" stop-color="#FFF3C8" stop-opacity="0.95"/><stop offset="0.55" stop-color="#FFE6A6" stop-opacity="0.45"/><stop offset="1" stop-color="#FFD98A" stop-opacity="0"/></radialGradient><linearGradient id="joppa-ray" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF8DC" stop-opacity="0.8"/><stop offset="1" stop-color="#FFF3C8" stop-opacity="0"/></linearGradient><linearGradient id="joppa-cord" x1="0" y1="70" x2="0" y2="220" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFF6DA" stop-opacity="0"/><stop offset="0.5" stop-color="#F3E4B8" stop-opacity="0.8"/><stop offset="1" stop-color="#E2CFA0"/></linearGradient><linearGradient id="joppa-sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#86AEC2"/><stop offset="0.35" stop-color="#4C82A2"/><stop offset="1" stop-color="#2C5C78"/></linearGradient><linearGradient id="joppa-linen" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFFBF0"/><stop offset="0.5" stop-color="#EFE5CC"/><stop offset="1" stop-color="#C8B690"/></linearGradient><linearGradient id="joppa-linenin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A8987A"/><stop offset="1" stop-color="#D6C8A6"/></linearGradient><linearGradient id="joppa-roof" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D6BA90"/><stop offset="1" stop-color="#B39468"/></linearGradient><linearGradient id="joppa-para" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D6B68A"/><stop offset="1" stop-color="#B0906A"/></linearGradient><linearGradient id="joppa-hide" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A86E40"/><stop offset="1" stop-color="#704226"/></linearGradient><linearGradient id="joppa-robe" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#22304A"/><stop offset="0.55" stop-color="#3C4E6E"/><stop offset="1" stop-color="#6A82AA"/></linearGradient><linearGradient id="joppa-mantle" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5E3E18"/><stop offset="0.55" stop-color="#9A6A28"/><stop offset="1" stop-color="#D6A44C"/></linearGradient><linearGradient id="joppa-clay" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7A4630"/><stop offset="0.5" stop-color="#C27F52"/><stop offset="1" stop-color="#E6B07E"/></linearGradient><pattern id="joppa-stone" width="34" height="16" patternUnits="userSpaceOnUse"><path d="M0 .5H34M0 8.5H34M10 .5V8.5M26 8.5V16" stroke="#6E5236" stroke-width=".8" opacity=".3" fill="none"/></pattern><pattern id="joppa-wave" width="44" height="11" patternUnits="userSpaceOnUse"><path d="M0 7q11-5 22 0t22 0" stroke="#DCEEF2" stroke-width=".9" opacity=".35" fill="none"/></pattern><pattern id="joppa-mat" width="9" height="9" patternUnits="userSpaceOnUse"><path d="M0 4.5H9" stroke="#E2B65A" stroke-width="1.6" opacity=".55"/></pattern><pattern id="joppa-awn" width="24" height="10" patternUnits="userSpaceOnUse"><rect width="12" height="10" fill="#B5543A"/><rect x="12" width="12" height="10" fill="#EAD8B4"/></pattern><pattern id="joppa-clayx" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="3" cy="4" r=".9" fill="#7A5A3A" opacity=".35"/><circle cx="10" cy="10" r=".7" fill="#F4E2BE" opacity=".4"/></pattern></defs><g clip-path="url(#joppa-c)"><rect width="1000" height="600" fill="url(#joppa-sky)"/><ellipse cx="560" cy="34" rx="340" ry="220" fill="url(#joppa-heaven)"/><g fill="#F7F3E8" opacity=".9" filter="url(#joppa-soft)"><ellipse cx="150" cy="118" rx="120" ry="24"/><ellipse cx="262" cy="98" rx="104" ry="28"/><ellipse cx="370" cy="124" rx="86" ry="20"/><ellipse cx="80" cy="150" rx="76" ry="14"/><ellipse cx="770" cy="92" rx="104" ry="26"/><ellipse cx="880" cy="118" rx="122" ry="24"/><ellipse cx="700" cy="124" rx="66" ry="16"/><ellipse cx="960" cy="78" rx="70" ry="18"/></g><g fill="#FFE6A6" opacity=".75" filter="url(#joppa-soft)"><ellipse cx="420" cy="92" rx="54" ry="16"/><ellipse cx="700" cy="84" rx="50" ry="15"/><ellipse cx="455" cy="62" rx="34" ry="12"/><ellipse cx="668" cy="56" rx="30" ry="11"/></g><ellipse cx="560" cy="36" rx="120" ry="70" fill="url(#joppa-heaven)"/><path d="M560 40L380 380H430z" fill="url(#joppa-ray)" opacity=".42" filter="url(#joppa-blur)"/><path d="M560 40L460 380H500z" fill="url(#joppa-ray)" opacity=".42" filter="url(#joppa-blur)"/><path d="M560 40L540 380H580z" fill="url(#joppa-ray)" opacity=".42" filter="url(#joppa-blur)"/><path d="M560 40L620 380H660z" fill="url(#joppa-ray)" opacity=".42" filter="url(#joppa-blur)"/><path d="M560 40L700 380H760z" fill="url(#joppa-ray)" opacity=".42" filter="url(#joppa-blur)"/><path d="M560 40L300 380H330z" fill="url(#joppa-ray)" opacity=".42" filter="url(#joppa-blur)"/><rect y="328" width="1000" height="170" fill="url(#joppa-sea)"/><rect y="328" width="1000" height="170" fill="url(#joppa-wave)"/><path d="M0 328H1000" stroke="#EEF4F0" stroke-width="1.6" opacity=".6"/><g stroke="#FFF6D6" stroke-linecap="round" opacity=".8"><path d="M520 340h40" stroke-width="2"/><path d="M560 348h28" stroke-width="1.6"/><path d="M500 356h34" stroke-width="1.4"/><path d="M590 362h22" stroke-width="1.4"/><path d="M540 372h30" stroke-width="1.2"/><path d="M610 344h18" stroke-width="1.2"/></g><g fill="#46545A"><ellipse cx="70" cy="372" rx="26" ry="8"/><ellipse cx="104" cy="380" rx="14" ry="6"/><ellipse cx="40" cy="384" rx="12" ry="5"/></g><g fill="#8FA4A8" opacity=".6"><ellipse cx="66" cy="368" rx="16" ry="3"/></g><g transform="translate(830 372) scale(0.75)"><path d="M-34 0q34 12 68 0l-7 10h-54z" fill="#5A3E2A"/><path d="M0 0V-62" stroke="#4A3424" stroke-width="2"/><path d="M-20-56h40q4 22 0 44h-40q-4-22 0-44z" fill="#F2EADB"/><path d="M4-56h16q4 22 0 44h-16q3-22 0-44z" fill="#C9BCA2"/><path d="M-30 4q30 9 60 0" stroke="#2C5C78" stroke-width="2" fill="none" opacity=".6"/></g><g transform="translate(930 404) scale(0.58)"><path d="M-34 0q34 12 68 0l-7 10h-54z" fill="#5A3E2A"/><path d="M0 0V-62" stroke="#4A3424" stroke-width="2"/><path d="M-20-56h40q4 22 0 44h-40q-4-22 0-44z" fill="#F2EADB"/><path d="M4-56h16q4 22 0 44h-16q3-22 0-44z" fill="#C9BCA2"/><path d="M-30 4q30 9 60 0" stroke="#2C5C78" stroke-width="2" fill="none" opacity=".6"/></g><g transform="translate(170 352) scale(0.45)"><path d="M-34 0q34 12 68 0l-7 10h-54z" fill="#5A3E2A"/><path d="M0 0V-62" stroke="#4A3424" stroke-width="2"/><path d="M-20-56h40q4 22 0 44h-40q-4-22 0-44z" fill="#F2EADB"/><path d="M4-56h16q4 22 0 44h-16q3-22 0-44z" fill="#C9BCA2"/><path d="M-30 4q30 9 60 0" stroke="#2C5C78" stroke-width="2" fill="none" opacity=".6"/></g><g stroke-linecap="round"><path d="M520 70L450 178" stroke="url(#joppa-cord)" stroke-width="5" opacity=".3"/><path d="M520 70L450 178" stroke="url(#joppa-cord)" stroke-width="1.5"/><path d="M604 66L688 170" stroke="url(#joppa-cord)" stroke-width="5" opacity=".3"/><path d="M604 66L688 170" stroke="url(#joppa-cord)" stroke-width="1.5"/><path d="M496 84L410 228" stroke="url(#joppa-cord)" stroke-width="5" opacity=".3"/><path d="M496 84L410 228" stroke="url(#joppa-cord)" stroke-width="1.5"/><path d="M628 80L722 216" stroke="url(#joppa-cord)" stroke-width="5" opacity=".3"/><path d="M628 80L722 216" stroke="url(#joppa-cord)" stroke-width="1.5"/></g><g filter="url(#joppa-paint)"><path d="M450 178Q566 206 688 170L722 216Q566 270 410 228z" fill="url(#joppa-linenin)"/><path d="M450 178Q566 206 688 170" stroke="#EDE2C6" stroke-width="3" fill="none"/><path d="M474 246c0-20 18-30 36-30s34 10 34 30z" fill="#C38F78"/><path d="M478 240c4-10 16-16 30-16" stroke="#E6B8A0" stroke-width="2" fill="none" opacity=".7"/><path d="M480 232q-14 2-24 12q-3 6 4 8l9-1q6 6 15 2z" fill="#C38F78"/><path d="M482 228l7-11 4 13z" fill="#A87262"/><ellipse cx="457" cy="247" rx="3" ry="4" fill="#9E6A5A"/><path d="M544 248q-7-30 0-44q7 10 5 44z" fill="#9C8468"/><path d="M555 248q2-32 11-40q4 14-3 40z" fill="#9C8468"/><path d="M546 240q-3-18 1-28q3 8 2 28zM558 240q2-20 6-26q1 10-2 26z" fill="#D2B08E"/><ellipse cx="552" cy="246" rx="11" ry="8" fill="#9C8468"/><path d="M598 248q-5-18 5-27q11-3 14 8l7 16z" fill="#6E5640"/><path d="M603 223q-4-22-21-31M609 222q0-25-15-37" stroke="#4A3A2A" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M612 224l9-5-2 9z" fill="#5A4632"/><path d="M642 244q-2-34 10-50q8-8 18-4l6 6-8 6q-8 2-10 12q-2 14 0 30z" fill="#B8956A"/><path d="M668 190l3-6 3 7z" fill="#A07E56"/><path d="M410 228Q566 270 722 216C716 240 690 270 650 286C610 302 520 304 478 288C440 274 414 252 410 228z" fill="url(#joppa-linen)"/><path d="M410 228l-8-14 12 6zM722 216l10-13-3 13zM450 178l-9-12 13 5zM688 170l8-12-1 13z" fill="#E9DDBF"/><g fill="none" stroke-linecap="round"><path d="M420 240C450 270 510 292 566 296M712 228C680 262 630 288 586 296M566 252C568 270 567 286 566 298" stroke="#B9A57E" stroke-width="2.2" opacity=".75"/><path d="M434 240C470 266 520 282 560 286M610 260C640 270 664 262 690 248" stroke="#FFFFFF" stroke-width="3" opacity=".45"/></g><path d="M410 228Q566 270 722 216" stroke="#D8C8A2" stroke-width="3" fill="none"/><g fill="#CDB88E"><circle cx="450" cy="178" r="4"/><circle cx="688" cy="170" r="4"/><circle cx="410" cy="228" r="4"/><circle cx="722" cy="216" r="4"/></g><g transform="translate(652 270) rotate(-18)"><ellipse rx="12" ry="4.5" fill="#6E7A52"/><circle cx="12" cy="0" r="4" fill="#6E7A52"/><path d="M-11 0q-12 2-16 10" stroke="#6E7A52" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M-5-3l-4-6M5-3l4-6M-5 3l-4 6M5 3l4 6" stroke="#6E7A52" stroke-width="2"/></g><path d="M446 238q10-12 22-4q10 8 0 18q-8 8 4 18q8 6 4 14" stroke="#5E6B3A" stroke-width="4.5" fill="none" stroke-linecap="round"/><circle cx="445" cy="239" r="3.4" fill="#5E6B3A"/><path d="M712 211q8-10 22-6l-4 10z" fill="#ECEAE2"/><path d="M726 209q-6-14 4-26" stroke="#ECEAE2" stroke-width="3.4" fill="none"/><circle cx="731" cy="182" r="3.6" fill="#ECEAE2"/><path d="M734 182l14 4" stroke="#D9A441" stroke-width="2"/><path d="M714 213l-10 6 10-2z" fill="#1E1E24"/><ellipse cx="414" cy="219" rx="10" ry="6" fill="#1E1E24"/><circle cx="405" cy="212" r="4.2" fill="#1E1E24"/><path d="M401 212l-6 2 6 1z" fill="#3A3A40"/><path d="M422 219l9 3-9 1z" fill="#1E1E24"/></g><g stroke="#2E2E38" stroke-width="2" fill="none" stroke-linecap="round"><path d="M372 176q6-6 12 0q6-6 12 0"/><path d="M742 132q5-5 10 0q5-5 10 0"/><path d="M770 156q4-4 8 0q4-4 8 0"/><path d="M398 150q4-4 8 0q4-4 8 0"/></g><g filter="url(#joppa-paint2)"><path d="M-31 420.15V386.15L-20 390V424z" fill="#B4946E"/><rect x="-20" y="390" width="64" height="34" fill="#E7D0A6"/><path d="M-31 386.15L-20 390H44L33 386.15z" fill="#F3E2C2"/><rect x="-5" y="400" width="6" height="7" fill="#4A3424" opacity=".75"/><path d="M37 419.8V388.8L49 393V424z" fill="#B4946E"/><rect x="49" y="393" width="81" height="31" fill="#E7D0A6"/><path d="M37 388.8L49 393H130L118 388.8z" fill="#F3E2C2"/><rect x="68" y="410" width="15" height="14" fill="#4A3424" opacity=".8"/><path d="M122 420.15V373.15L133 377V424z" fill="#B4946E"/><rect x="133" y="377" width="49" height="47" fill="#E7D0A6"/><path d="M122 373.15L133 377H182L171 373.15z" fill="#F3E2C2"/><rect x="154" y="403" width="9" height="21" fill="#4A3424" opacity=".8"/><path d="M171 420.15V372.15L182 376V424z" fill="#B4946E"/><rect x="182" y="376" width="80" height="48" fill="#E7D0A6"/><path d="M171 372.15L182 376H262L251 372.15z" fill="#F3E2C2"/><rect x="205" y="402" width="14" height="22" fill="#4A3424" opacity=".8"/><path d="M255 420.85V377.85L264 381V424z" fill="#B4946E"/><rect x="264" y="381" width="62" height="43" fill="#E7D0A6"/><path d="M255 377.85L264 381H326L317 377.85z" fill="#F3E2C2"/><rect x="291" y="393" width="6" height="7" fill="#4A3424" opacity=".75"/><path d="M316 419.8V371.8L328 376V424z" fill="#B4946E"/><rect x="328" y="376" width="50" height="48" fill="#E7D0A6"/><path d="M316 371.8L328 376H378L366 371.8z" fill="#F3E2C2"/><rect x="345" y="389" width="6" height="7" fill="#4A3424" opacity=".75"/><path d="M367 419.8V388.8L379 393V424z" fill="#B4946E"/><rect x="379" y="393" width="80" height="31" fill="#E7D0A6"/><path d="M367 388.8L379 393H459L447 388.8z" fill="#F3E2C2"/><rect x="417" y="410" width="14" height="14" fill="#4A3424" opacity=".8"/><path d="M453 420.15V372.15L464 376V424z" fill="#B4946E"/><rect x="464" y="376" width="73" height="48" fill="#E7D0A6"/><path d="M453 372.15L464 376H537L526 372.15z" fill="#F3E2C2"/><rect x="486" y="402" width="13" height="22" fill="#4A3424" opacity=".8"/><path d="M464 376h73v-4h-73z" fill="#E7D0A6" opacity=".9"/><path d="M530 420.5V372.5L540 376V424z" fill="#B4946E"/><rect x="540" y="376" width="49" height="48" fill="#E7D0A6"/><path d="M530 372.5L540 376H589L579 372.5z" fill="#F3E2C2"/><rect x="567" y="389" width="6" height="7" fill="#4A3424" opacity=".75"/><path d="M585 421.2V389.2L593 392V424z" fill="#B4946E"/><rect x="593" y="392" width="82" height="32" fill="#E7D0A6"/><path d="M585 389.2L593 392H675L667 389.2z" fill="#F3E2C2"/><rect x="615" y="401" width="6" height="7" fill="#4A3424" opacity=".75"/><path d="M593 392h82v-4h-82z" fill="#E7D0A6" opacity=".9"/><path d="M669 419.45V388.45L682 393V424z" fill="#B4946E"/><rect x="682" y="393" width="70" height="31" fill="#E7D0A6"/><path d="M669 388.45L682 393H752L739 388.45z" fill="#F3E2C2"/><rect x="712" y="410" width="13" height="14" fill="#4A3424" opacity=".8"/><path d="M747 420.5V368.5L757 372V424z" fill="#B4946E"/><rect x="757" y="372" width="65" height="52" fill="#E7D0A6"/><path d="M747 368.5L757 372H822L812 368.5z" fill="#F3E2C2"/><rect x="785" y="387" width="6" height="7" fill="#4A3424" opacity=".75"/><path d="M810 419.45V374.45L823 379V424z" fill="#B4946E"/><rect x="823" y="379" width="61" height="45" fill="#E7D0A6"/><path d="M810 374.45L823 379H884L871 374.45z" fill="#F3E2C2"/><rect x="837" y="392" width="6" height="7" fill="#4A3424" opacity=".75"/><path d="M880 420.15V368.15L891 372V424z" fill="#B4946E"/><rect x="891" y="372" width="62" height="52" fill="#E7D0A6"/><path d="M880 368.15L891 372H953L942 368.15z" fill="#F3E2C2"/><path d="M891 372h62v-4h-62z" fill="#E7D0A6" opacity=".9"/><path d="M948 419.8V384.8L960 389V424z" fill="#B4946E"/><rect x="960" y="389" width="66" height="35" fill="#E7D0A6"/><path d="M948 384.8L960 389H1026L1014 384.8z" fill="#F3E2C2"/><rect x="975" y="408" width="12" height="16" fill="#4A3424" opacity=".8"/><path d="M-23 465.45V413.45L-10 418V470z" fill="#AE8D66"/><rect x="-10" y="418" width="65" height="52" fill="#EAD3AA"/><path d="M-23 413.45L-10 418H55L42 413.45z" fill="#F6E7C8"/><path d="M45 465.1V413.1L59 418V470z" fill="#AE8D66"/><rect x="59" y="418" width="78" height="52" fill="#EAD3AA"/><path d="M45 413.1L59 418H137L123 413.1z" fill="#F6E7C8"/><rect x="79" y="447" width="14" height="23" fill="#4A3424" opacity=".8"/><path d="M134 465.45V403.45L147 408V470z" fill="#AE8D66"/><rect x="147" y="408" width="67" height="62" fill="#EAD3AA"/><path d="M134 403.45L147 408H214L201 403.45z" fill="#F6E7C8"/><path d="M212 466.5V422.5L222 426V470z" fill="#AE8D66"/><rect x="222" y="426" width="64" height="44" fill="#EAD3AA"/><path d="M212 422.5L222 426H286L276 422.5z" fill="#F6E7C8"/><rect x="241" y="450" width="12" height="20" fill="#4A3424" opacity=".8"/><path d="M222 426h64v-4h-64z" fill="#EAD3AA" opacity=".9"/><path d="M283 465.8V420.8L295 425V470z" fill="#AE8D66"/><rect x="295" y="425" width="87" height="45" fill="#EAD3AA"/><path d="M283 420.8L295 425H382L370 420.8z" fill="#F6E7C8"/><rect x="317" y="450" width="16" height="20" fill="#4A3424" opacity=".8"/><path d="M373 464.4V402.4L389 408V470z" fill="#AE8D66"/><rect x="389" y="408" width="58" height="62" fill="#EAD3AA"/><path d="M373 402.4L389 408H447L431 402.4z" fill="#F6E7C8"/><rect x="415" y="425" width="6" height="7" fill="#4A3424" opacity=".75"/><path d="M433 464.4V400.4L449 406V470z" fill="#AE8D66"/><rect x="449" y="406" width="79" height="64" fill="#EAD3AA"/><path d="M433 400.4L449 406H528L512 400.4z" fill="#F6E7C8"/><rect x="482" y="424" width="6" height="7" fill="#4A3424" opacity=".75"/><path d="M521 464.75V409.75L536 415V470z" fill="#AE8D66"/><rect x="536" y="415" width="56" height="55" fill="#EAD3AA"/><path d="M521 409.75L536 415H592L577 409.75z" fill="#F6E7C8"/><rect x="551" y="445" width="10" height="25" fill="#4A3424" opacity=".8"/><path d="M589 465.8V422.8L601 427V470z" fill="#AE8D66"/><rect x="601" y="427" width="60" height="43" fill="#EAD3AA"/><path d="M589 422.8L601 427H661L649 422.8z" fill="#F6E7C8"/><rect x="615" y="439" width="6" height="7" fill="#4A3424" opacity=".75"/><path d="M657 465.1V414.1L671 419V470z" fill="#AE8D66"/><rect x="671" y="419" width="56" height="51" fill="#EAD3AA"/><path d="M657 414.1L671 419H727L713 414.1z" fill="#F6E7C8"/><rect x="702" y="447" width="10" height="23" fill="#4A3424" opacity=".8"/><path d="M719 465.8V417.8L731 422V470z" fill="#AE8D66"/><rect x="731" y="422" width="90" height="48" fill="#EAD3AA"/><path d="M719 417.8L731 422H821L809 417.8z" fill="#F6E7C8"/><rect x="766" y="435" width="6" height="7" fill="#4A3424" opacity=".75"/><path d="M731 422h90v-4h-90z" fill="#EAD3AA" opacity=".9"/><path d="M817 465.45V410.45L830 415V470z" fill="#AE8D66"/><rect x="830" y="415" width="79" height="55" fill="#EAD3AA"/><path d="M817 410.45L830 415H909L896 410.45z" fill="#F6E7C8"/><rect x="850" y="445" width="14" height="25" fill="#4A3424" opacity=".8"/><path d="M900 464.75V398.75L915 404V470z" fill="#AE8D66"/><rect x="915" y="404" width="80" height="66" fill="#EAD3AA"/><path d="M900 398.75L915 404H995L980 398.75z" fill="#F6E7C8"/><rect x="932" y="440" width="14" height="30" fill="#4A3424" opacity=".8"/><path d="M990 464.75V420.75L1005 426V470z" fill="#AE8D66"/><rect x="1005" y="426" width="73" height="44" fill="#EAD3AA"/><path d="M990 420.75L1005 426H1078L1063 420.75z" fill="#F6E7C8"/><rect x="1020" y="438" width="6" height="7" fill="#4A3424" opacity=".75"/><rect y="360" width="1000" height="112" fill="url(#joppa-stone)" opacity=".7"/></g><g transform="translate(240 430) scale(1)"><path d="M0 0C2-30 -4-60 6-92" stroke="#6E5236" stroke-width="6" fill="none" stroke-linecap="round"/><g fill="#4F6E3E"><path d="M6-92q-30-6-44 14q22-12 44-10z"/><path d="M6-92q28-8 44 10q-22-8-44-6z"/><path d="M6-92q-14-22-38-22q24 8 36 26z"/><path d="M6-92q12-22 36-20q-22 6-34 24z"/></g><path d="M6-92q-20 0-30 18" stroke="#7E9A5E" stroke-width="2" fill="none"/></g><g transform="translate(880 416) scale(0.85)"><path d="M0 0C2-30 -4-60 6-92" stroke="#6E5236" stroke-width="6" fill="none" stroke-linecap="round"/><g fill="#4F6E3E"><path d="M6-92q-30-6-44 14q22-12 44-10z"/><path d="M6-92q28-8 44 10q-22-8-44-6z"/><path d="M6-92q-14-22-38-22q24 8 36 26z"/><path d="M6-92q12-22 36-20q-22 6-34 24z"/></g><path d="M6-92q-20 0-30 18" stroke="#7E9A5E" stroke-width="2" fill="none"/></g><g transform="translate(120 452) scale(0.9)"><path d="M0 0C2-30 -4-60 6-92" stroke="#6E5236" stroke-width="6" fill="none" stroke-linecap="round"/><g fill="#4F6E3E"><path d="M6-92q-30-6-44 14q22-12 44-10z"/><path d="M6-92q28-8 44 10q-22-8-44-6z"/><path d="M6-92q-14-22-38-22q24 8 36 26z"/><path d="M6-92q12-22 36-20q-22 6-34 24z"/></g><path d="M6-92q-20 0-30 18" stroke="#7E9A5E" stroke-width="2" fill="none"/></g><rect x="0" y="488" width="260" height="112" fill="#CDB08A"/><path d="M0 484H236V560H0z" fill="#E4CCA2"/><path d="M0 484H236V560H0z" fill="url(#joppa-stone)"/><path d="M-4 478H240V488H-4z" fill="#F2E2C2"/><path d="M116 560V516a24 24 0 0 1 48 0V560z" fill="#4A3424"/><path d="M120 560V518a20 20 0 0 1 40 0V560" stroke="#7A5A3A" stroke-width="2" fill="none"/><path d="M140 498V560" stroke="#2E2018" stroke-width="1.4"/><path d="M0 560H260" stroke="#9C7E58" stroke-width="2" opacity=".6"/><g fill="#5A4230" opacity=".25"><ellipse cx="80" cy="592" rx="16" ry="3"/><ellipse cx="102" cy="593" rx="14" ry="3"/><ellipse cx="198" cy="592" rx="14" ry="3"/></g><use href="#joppa-p" transform="translate(74 588) scale(1.05)" fill="#6E5A3E" color="#9C6B4A"/><use href="#joppa-pv" transform="translate(98 590) scale(1.0)" fill="#4A5E7A" color="#B07E58"/><g transform="translate(196 590)"><path d="M-4 0l1-18h2l1 18zM2 0l1-18h2v18z" fill="#8C6A4A"/><path d="M-9-18C-10-30-8-40-6-44C-4-48 4-48 6-44C8-40 10-30 9-18z" fill="#C9A87A"/><path d="M-7-44C-13-36-14-20-13-8L-2-14L-1-44z" fill="#9E2F2A"/><path d="M-8-30h16v3h-16z" fill="#5A3E2A"/><circle cy="-51" r="6" fill="#B07E58"/><path d="M-6.5-51a6.5 6.5 0 0 1 13 0v2h-13z" fill="#B08A4A"/><path d="M-5-58q5-9 10 0" stroke="#9E2F2A" stroke-width="3" fill="none"/><path d="M10 2L15-84" stroke="#5A4630" stroke-width="1.8"/><path d="M15-84l-2.6 7h5z" fill="#C9C2B2"/></g><g filter="url(#joppa-paint2)"><path d="M300 486H1000V600H248z" fill="url(#joppa-roof)"/><path d="M300 486H1000V600H248z" fill="url(#joppa-clayx)"/><path d="M300 460H1000V488H300z" fill="url(#joppa-para)"/><path d="M300 460H1000V488H300z" fill="url(#joppa-stone)"/><path d="M286 452H1000V461H286z" fill="#F6E8CC"/><path d="M286 461H1000" stroke="#8C7050" stroke-width="2" opacity=".45"/><path d="M300 488H1000" stroke="#7A5E40" stroke-width="2.4" opacity=".55"/><path d="M286 452h16v148h-16z" fill="url(#joppa-para)"/><path d="M286 452h16v148h-16z" fill="url(#joppa-stone)"/><path d="M286 452v148" stroke="#F6E8CC" stroke-width="3"/><path d="M302 488V600" stroke="#7A5E40" stroke-width="2" opacity=".5"/><path d="M820 528L900 528L924 572L836 572z" fill="#3E2C1E"/><path d="M826 538h78M830 548h82M834 558h84" stroke="#6E5236" stroke-width="2.4"/><path d="M820 528L900 528" stroke="#F6E8CC" stroke-width="2"/><path d="M766 488V404M874 488V404" stroke="#5A3E2A" stroke-width="4"/><path d="M756 408H884" stroke="#6E4E32" stroke-width="5" stroke-linecap="round"/><path d="M772 410q-6 22 0 40q-2 16 8 24q14-6 26-2q4-18-2-34q6-16 2-28z" fill="url(#joppa-hide)"/><path d="M816 410q-4 20 4 36q-6 18 4 30q16-4 30 2q2-20-6-34q8-18 4-34z" fill="url(#joppa-hide)" opacity=".92"/><path d="M784 420q8 18 2 40M830 420q6 20-2 44" stroke="#C99064" stroke-width="1.6" fill="none" opacity=".5"/><path d="M330 452q20-8 44-4q14 2 30-2l2 10q-38 4-76 2z" fill="url(#joppa-hide)"/><path d="M934 486V400M996 494V406" stroke="#5A3E2A" stroke-width="3.5"/><path d="M904 400L1004 404V440L904 428z" fill="url(#joppa-awn)"/><path d="M904 428L1004 440" stroke="#8E3A28" stroke-width="2"/><path d="M904 400L1004 404V412L904 408z" fill="#000" opacity=".12"/><path d="M948 470h14l-2 6c10 4 14 12 14 22 0 12-8 18-12 20h-14c-4-2-12-8-12-20 0-10 4-18 14-22z" fill="url(#joppa-clay)"/><ellipse cx="955" cy="520" rx="22" ry="4" fill="#5A4230" opacity=".3"/></g><ellipse cx="590" cy="540" rx="300" ry="80" fill="url(#joppa-heaven)" opacity=".42"/><g filter="url(#joppa-paint2)" transform="translate(572 594) scale(1.18) translate(-572 -594)"><ellipse cx="572" cy="594" rx="84" ry="8" fill="#5A4230" opacity=".3"/><path d="M484 590L652 580L676 598L470 600z" fill="#8E3B32"/><path d="M484 590L652 580L676 598L470 600z" fill="url(#joppa-mat)"/><path d="M512 592C510 576 520 556 540 546C560 540 590 546 610 560C622 570 628 582 630 592z" fill="url(#joppa-robe)"/><path d="M500 592q4-10 18-8l1 8z" fill="#3A2818"/><path d="M530 556C526 526 530 496 542 478C552 466 582 464 594 478C602 498 600 528 594 556z" fill="url(#joppa-robe)"/><path d="M534 530q30 5 60-2v4q-30 7-60 2z" fill="#4A3018"/><path d="M560 546C584 546 606 556 622 572" stroke="#8EA2C6" stroke-width="2" fill="none" opacity=".6"/><path d="M546 474C556 469 566 467 574 470C564 490 554 520 550 548C546 568 534 584 512 592C506 580 512 566 520 552C528 524 534 494 546 474z" fill="url(#joppa-mantle)"/><path d="M570 472C560 494 552 522 548 550" stroke="#F2CC7A" stroke-width="1.6" fill="none" opacity=".6"/><ellipse cx="500" cy="590" rx="7" ry="3.4" fill="#2E2018"/><ellipse cx="512" cy="592" rx="7" ry="3.4" fill="#2E2018"/><path d="M548 482C544 462 546 440 552 418L563 421C559 442 560 462 562 484z" fill="#2E3E5C"/><path d="M548 470q-6-16 0-32l6 2q-4 14 0 30z" fill="#22304A"/><ellipse cx="557" cy="415" rx="4.6" ry="7" fill="#946240"/><circle cx="572" cy="452" r="12.5" fill="#A9744E"/><path d="M560 452a12.5 12.5 0 0 1 22-9q-8 2-12 8q-2 8-6 12q-4-4-4-11z" fill="#77706A"/><path d="M578 461q10 0 12-8q2 10-4 18q-8 2-9-6z" fill="#8E877E"/><path d="M584 484C594 466 610 446 626 428L638 436C626 456 612 478 600 496z" fill="#4A6088"/><path d="M600 496q10-4 18-24l-4-2q-8 18-14 22z" fill="#22304A"/><ellipse cx="634" cy="426" rx="5" ry="7.5" transform="rotate(34 634 426)" fill="#B88258"/><path d="M594 480C602 498 602 528 596 554M628 432L598 480M582 442a12.5 12.5 0 0 1 2 18" stroke="#FFE9B0" stroke-width="2" fill="none" opacity=".7"/></g><rect width="1000" height="600" filter="url(#joppa-grain)" fill="#fff"/></g><rect x=".5" y=".5" width="999" height="599" rx="10" fill="none" stroke="#1B1F2A" stroke-opacity=".18"/></svg><figcaption>욥바 바닷가, 무두장이 시몬의 집 지붕에서 기도하는 베드로. 하늘이 열리고 큰 보자기가 네 귀에 매여 내려온다. 대문 앞에는 고넬료가 보낸 사람들이 와 있다 (행 10:6–17).</figcaption></figure>
+
 
   <div class="comparison">
     <div class="comparison-card">
@@ -492,10 +344,7 @@
     퍼스펙티브스 성경적 관점 5장의 제목이 의미심장하다 &mdash; "복음을 자유롭게 함." 복음을 누가 가두어 놓았는가? 베드로가 보여주듯, 패러다임의 변화는 늘 우리에게 먼저 필요하다.
   </p>
 
-  <!-- SECTION 4 -->
-  <hr class="section-divider">
-  <span class="section-num">Part IV</span>
-  <h2 class="section-heading">변하지 않는 것 &mdash; Missio Dei</h2>
+  <h2 class="part" id="part-4"><span class="pn">Part IV</span><span class="pt">변하지 않는 것</span><span class="ps">Missio Dei</span></h2>
 
   <p>
     선교의 어원을 추적하면, 변하지 않는 본질이 드러난다. 히브리어 <em>실로아흐</em>(보내심), 헬라어 <em>아포스톨로스</em>(보냄받은 자), 라틴어 <em>미씨오</em>(보내심). 영어 mission의 원어적 의미는 '보낸다'는 것이다. 한자로 번역되면서 '베풀 선, 가르칠 교'를 써서 보내는 <em>목적</em>에 초점이 맞춰졌지만, 원래의 핵심은 <strong>보내심</strong> 그 자체다.
@@ -541,10 +390,7 @@
 
   <p>크리스토퍼 라이트는 이것을 "창조에서 새 창조로의 여정"이라 정리하고, 존 스토트는 선언한다: <strong>"살아계신 하나님은 선교하시는 하나님이다."</strong></p>
 
-  <!-- SECTION 5 -->
-  <hr class="section-divider">
-  <span class="section-num">Part V</span>
-  <h2 class="section-heading">선교적 의도 &mdash; 사마리아 여인과 삭개오</h2>
+  <h2 class="part" id="part-5"><span class="pn">Part V</span><span class="pt">선교적 의도</span><span class="ps">사마리아 여인과 삭개오</span></h2>
 
   <p>
     로잔의 모토를 기억하자: 모든 교회가 온전한 복음을 전 세계에. '온전한 복음'이란 영혼 구원만이 아닌 피조세계 전체의 회복이다. 선교적 <em>차원</em>(dimension)은 총체적이어야 한다. 그러나 차원만 있고 <em>의도</em>(intention)가 없다면?
@@ -553,8 +399,10 @@
   <p>
     예수님의 의도성은 사마리아 여인 이야기에서 선명하게 드러난다. 유대에서 갈릴리로 가는 길에 사마리아를 거치지 않아도 된다. 그러나 "사마리아를 통과하여야 하겠는지라"(요 4:4) &mdash; 이것은 지리적 필연이 아닌 <strong>신학적 필연</strong>이다. 정오 12시에 가신 것도 의도다. 다른 여인들이 오지 않는 시간, 그 한 사람이 혼자 올 시간에.
   </p>
+  <figure class="ill"><svg class="art art-well" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="한낮의 들판, 높이 뜬 해 아래 둥근 돌 우물이 있다. 왼쪽 돌 위에 푸른 겉옷의 나그네가 지팡이를 기대 놓고 지친 듯 앉아 있고, 오른쪽에는 남색 너울을 쓴 여인이 허리에 붉은 흙 물동이를 끼고 서 있다. 우물가에는 두레박과 줄이 놓였고, 뒤로 희어진 보리밭과 올리브 나무, 두 산 사이 비탈의 흰 마을과 그리로 걸어가는 작은 사람들이 보인다"><defs><filter id="well-paint" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="3" seed="4"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter><filter id="well-paint2" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".06" numOctaves="2" seed="9"/><feDisplacementMap in="SourceGraphic" scale="3"/></filter><filter id="well-grain" filterUnits="userSpaceOnUse" x="0" y="0" width="1000" height="600"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="2"/><feColorMatrix values="0 0 0 0 .3 0 0 0 0 .25 0 0 0 0 .2 0 0 0 .1 0"/><feComposite in2="SourceGraphic" operator="in"/></filter><filter id="well-soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter><filter id="well-blur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2.2"/></filter><clipPath id="well-c"><rect width="1000" height="600" rx="10"/></clipPath><g id="well-p"><path d="M-9 0C-9.5-16-8-34-6.5-42C-5-47.5 5-47.5 6.5-42C8-34 9.5-16 9 0z"/><path d="M1.5-46C6-40 8.5-22 9 0H3.5C4-16 3.5-34 1.5-46z" fill="#1B1F2A" opacity=".28"/><path d="M-6.5 0h5v1.6h-5zM1.5 0h5v1.6h-5z" fill="#2A2420"/><circle cy="-52" r="6" fill="currentColor"/></g><g id="well-pv"><path d="M-9 0C-9.5-16-8-34-6.5-42C-5-47.5 5-47.5 6.5-42C8-34 9.5-16 9 0z"/><path d="M-8-50a8 8 0 0 1 16 0c1.5 9 3 17 4 26h-3.5c-1-8-2.5-14-4.5-19h-8c-2 5-3.5 11-4.5 19h-3.5c1-9 2.5-17 4-26z"/><path d="M-8-50a8 8 0 0 1 16 0c1.5 9 3 17 4 26h-3.5c-1-8-2.5-14-4.5-19z" fill="#1B1F2A" opacity=".25"/><path d="M-6.5 0h5v1.6h-5zM1.5 0h5v1.6h-5z" fill="#2A2420"/><circle cy="-50" r="5.2" fill="currentColor"/></g><linearGradient id="well-sky" x1="0" y1="0" x2="0" y2="330" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3A6BA6"/><stop offset="0.4" stop-color="#7EA9CC"/><stop offset="0.78" stop-color="#D3DACB"/><stop offset="1" stop-color="#F3E3BA"/></linearGradient><radialGradient id="well-sun" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#FFFFF4" stop-opacity="1"/><stop offset="0.12" stop-color="#FFF6D0" stop-opacity="0.95"/><stop offset="0.4" stop-color="#FFE9A8" stop-opacity="0.4"/><stop offset="1" stop-color="#FFE3A0" stop-opacity="0"/></radialGradient><linearGradient id="well-haze" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6E8C4" stop-opacity="0"/><stop offset="1" stop-color="#F6E8C4" stop-opacity="0.7"/></linearGradient><linearGradient id="well-ger" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ABA476"/><stop offset="0.55" stop-color="#8C8A5C"/><stop offset="1" stop-color="#6E7050"/></linearGradient><linearGradient id="well-ebal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A59E74"/><stop offset="1" stop-color="#787650"/></linearGradient><linearGradient id="well-side" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3E4230" stop-opacity="0.35"/><stop offset="0.5" stop-color="#3E4230" stop-opacity="0"/><stop offset="1" stop-color="#FFF6D8" stop-opacity="0.18"/></linearGradient><linearGradient id="well-field" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F2E6B6"/><stop offset="1" stop-color="#D6BF82"/></linearGradient><linearGradient id="well-ground" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DEC394"/><stop offset="0.5" stop-color="#CDAE7A"/><stop offset="1" stop-color="#A68656"/></linearGradient><linearGradient id="well-stone" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#857560"/><stop offset="0.45" stop-color="#C4B192"/><stop offset="1" stop-color="#EADDC2"/></linearGradient><linearGradient id="well-jar" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7A4630"/><stop offset="0.5" stop-color="#C27F52"/><stop offset="1" stop-color="#E8B482"/></linearGradient><linearGradient id="well-mantle" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2A3A58"/><stop offset="0.6" stop-color="#465A7E"/><stop offset="1" stop-color="#7486A6"/></linearGradient><linearGradient id="well-tunic" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#AE9C76"/><stop offset="1" stop-color="#EFE3C8"/></linearGradient><linearGradient id="well-dress" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5A2030"/><stop offset="0.6" stop-color="#8E3B4A"/><stop offset="1" stop-color="#B85E68"/></linearGradient><linearGradient id="well-veil" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2A3452"/><stop offset="1" stop-color="#5A6E9C"/></linearGradient><linearGradient id="well-leaf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B9C29A"/><stop offset="1" stop-color="#6E7A52"/></linearGradient><pattern id="well-blocks" width="30" height="17" patternUnits="userSpaceOnUse"><path d="M0 .5H30M0 8.5H30M9 .5V8.5M23 8.5V17" stroke="#5A4A38" stroke-width="1" opacity=".38" fill="none"/><path d="M1 2.5H8M11 10.5H22" stroke="#FFF4DA" stroke-width=".9" opacity=".3"/></pattern><pattern id="well-stalk" width="10" height="9" patternUnits="userSpaceOnUse"><path d="M2 9V3M6 8V2M9 9V5" stroke="#B8A060" stroke-width=".8" opacity=".55"/></pattern><pattern id="well-peb" width="26" height="18" patternUnits="userSpaceOnUse"><ellipse cx="5" cy="5" rx="2" ry="1.2" fill="#8E7450" opacity=".45"/><ellipse cx="18" cy="13" rx="1.5" ry="1" fill="#F2E2BE" opacity=".5"/><circle cx="13" cy="3" r=".7" fill="#7A6040" opacity=".5"/></pattern></defs><g clip-path="url(#well-c)"><rect width="1000" height="600" fill="url(#well-sky)"/><circle cx="790" cy="62" r="250" fill="url(#well-sun)"/><circle cx="790" cy="62" r="24" fill="#FFFFF6"/><path d="M290 304Q420 252 520 262Q620 250 730 292L730 334L290 334z" fill="#A3AFB0" opacity=".8"/><path d="M0 334L0 196Q90 146 190 152Q300 160 360 226Q400 266 480 300L480 334z" fill="url(#well-ger)"/><path d="M560 334L600 282Q700 170 830 166Q930 168 1000 206L1000 334z" fill="url(#well-ebal)"/><path d="M0 334L0 196Q90 146 190 152Q300 160 360 226Q400 266 480 300L480 334z" fill="url(#well-side)"/><path d="M560 334L600 282Q700 170 830 166Q930 168 1000 206L1000 334z" fill="url(#well-side)"/><g filter="url(#well-paint2)"><path d="M120 186q7-11 22 0z" fill="#C9C098"/><path d="M131 186q7-9 11 0z" fill="#6E6A48" opacity=".6"/><path d="M210 176q5-8 16 0z" fill="#C9C098"/><path d="M218 176q5-6 8 0z" fill="#6E6A48" opacity=".6"/><path d="M300 206q5-9 18 0z" fill="#C9C098"/><path d="M309 206q5-7 9 0z" fill="#6E6A48" opacity=".6"/><path d="M70 214q4-7 14 0z" fill="#C9C098"/><path d="M77 214q4-6 7 0z" fill="#6E6A48" opacity=".6"/><path d="M760 186q6-10 20 0z" fill="#C9C098"/><path d="M770 186q6-8 10 0z" fill="#6E6A48" opacity=".6"/><path d="M880 182q7-12 24 0z" fill="#C9C098"/><path d="M892 182q7-10 12 0z" fill="#6E6A48" opacity=".6"/><path d="M940 204q5-8 16 0z" fill="#C9C098"/><path d="M948 204q5-6 8 0z" fill="#6E6A48" opacity=".6"/><path d="M700 220q4-7 14 0z" fill="#C9C098"/><path d="M707 220q4-6 7 0z" fill="#6E6A48" opacity=".6"/></g><path d="M10 230q120 -10 260 4" stroke="#55573C" stroke-width="1.2" fill="none" opacity=".28"/><path d="M20 262q160 -10 360 4" stroke="#55573C" stroke-width="1.2" fill="none" opacity=".28"/><path d="M60 290q180 -10 400 4" stroke="#55573C" stroke-width="1.2" fill="none" opacity=".28"/><path d="M620 262q160 -10 360 4" stroke="#55573C" stroke-width="1.2" fill="none" opacity=".28"/><path d="M600 296q200 -10 400 4" stroke="#55573C" stroke-width="1.2" fill="none" opacity=".28"/><path d="M700 226q120 -10 260 4" stroke="#55573C" stroke-width="1.2" fill="none" opacity=".28"/><g filter="url(#well-paint2)"><ellipse cx="373" cy="307" rx="5" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="130" cy="321" rx="5" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="290" cy="260" rx="3" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="319" cy="309" rx="3" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="404" cy="259" rx="3" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="823" cy="304" rx="5" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="188" cy="327" rx="5" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="30" cy="316" rx="3" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="775" cy="302" rx="4" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="439" cy="260" rx="3" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="706" cy="218" rx="3" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="886" cy="299" rx="3" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="94" cy="304" rx="4" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="251" cy="328" rx="4" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="268" cy="298" rx="4" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="67" cy="240" rx="5" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="853" cy="200" rx="4" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="326" cy="256" rx="5" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="884" cy="228" rx="3" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="920" cy="289" rx="4" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="325" cy="278" rx="3" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="53" cy="244" rx="4" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="936" cy="261" rx="4" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="683" cy="203" rx="4" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="212" cy="263" rx="3" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="55" cy="312" rx="4" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="847" cy="214" rx="4" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="152" cy="274" rx="3" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="107" cy="300" rx="3" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="930" cy="237" rx="3" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="845" cy="212" rx="4" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="352" cy="322" rx="3" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="787" cy="239" rx="4" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="818" cy="324" rx="5" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="844" cy="278" rx="3" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="741" cy="235" rx="5" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="370" cy="232" rx="5" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="323" cy="283" rx="5" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="319" cy="307" rx="4" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="984" cy="235" rx="3" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="223" cy="224" rx="3" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="248" cy="236" rx="3" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="935" cy="272" rx="3" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="186" cy="301" rx="4" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="918" cy="242" rx="3" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="213" cy="251" rx="5" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="987" cy="211" rx="5" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="981" cy="214" rx="3" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="52" cy="301" rx="5" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="384" cy="259" rx="4" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="909" cy="280" rx="5" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="219" cy="239" rx="4" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="751" cy="328" rx="5" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="630" cy="330" rx="5" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="864" cy="279" rx="4" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="869" cy="248" rx="3" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="766" cy="251" rx="4" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="356" cy="307" rx="3" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="933" cy="218" rx="5" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="989" cy="314" rx="5" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="610" cy="313" rx="4" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="799" cy="302" rx="3" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="44" cy="311" rx="3" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="380" cy="303" rx="5" ry="2.6" fill="#5A6640" opacity=".7"/><ellipse cx="428" cy="260" rx="4" ry="2.6" fill="#5A6640" opacity=".7"/></g><g filter="url(#well-paint2)"><path d="M654 309.9V291.9L660 294V312z" fill="#C4AA82"/><rect x="660" y="294" width="26" height="18" fill="#F4EAD2"/><path d="M654 291.9L660 294H686L680 291.9z" fill="#FBF4E2"/><rect x="670" y="304" width="6" height="8" fill="#4A3424" opacity=".8"/><path d="M684 303.9V281.9L690 284V306z" fill="#C4AA82"/><rect x="690" y="284" width="30" height="22" fill="#F4EAD2"/><path d="M684 281.9L690 284H720L714 281.9z" fill="#FBF4E2"/><path d="M690 284h30v-4h-30z" fill="#F4EAD2" opacity=".9"/><path d="M718 297.9V279.9L724 282V300z" fill="#C4AA82"/><rect x="724" y="282" width="24" height="18" fill="#F4EAD2"/><path d="M718 279.9L724 282H748L742 279.9z" fill="#FBF4E2"/><rect x="734" y="287" width="6" height="7" fill="#4A3424" opacity=".75"/><path d="M746 303.9V283.9L752 286V306z" fill="#C4AA82"/><rect x="752" y="286" width="32" height="20" fill="#F4EAD2"/><path d="M746 283.9L752 286H784L778 283.9z" fill="#FBF4E2"/><path d="M784 295.9V279.9L790 282V298z" fill="#C4AA82"/><rect x="790" y="282" width="22" height="16" fill="#F4EAD2"/><path d="M784 279.9L790 282H812L806 279.9z" fill="#FBF4E2"/><rect x="801" y="286" width="6" height="7" fill="#4A3424" opacity=".75"/><path d="M694 321.9V303.9L700 306V324z" fill="#C4AA82"/><rect x="700" y="306" width="28" height="18" fill="#F4EAD2"/><path d="M694 303.9L700 306H728L722 303.9z" fill="#FBF4E2"/><path d="M730 317.9V297.9L736 300V320z" fill="#C4AA82"/><rect x="736" y="300" width="34" height="20" fill="#F4EAD2"/><path d="M730 297.9L736 300H770L764 297.9z" fill="#FBF4E2"/><rect x="746" y="306" width="6" height="7" fill="#4A3424" opacity=".75"/><path d="M770 315.9V299.9L776 302V318z" fill="#C4AA82"/><rect x="776" y="302" width="26" height="16" fill="#F4EAD2"/><path d="M770 299.9L776 302H802L796 299.9z" fill="#FBF4E2"/><rect x="788" y="311" width="6" height="7" fill="#4A3424" opacity=".8"/></g><g fill="#4E5A3A"><path d="M650 312q4-26 8-30q4 6 6 30z"/><path d="M816 310q4-22 7-26q4 6 5 26z"/></g><rect y="226" width="1000" height="114" fill="url(#well-haze)"/><path d="M0 330H1000V444H0z" fill="url(#well-field)"/><path d="M0 330H1000V444H0z" fill="url(#well-stalk)"/><g opacity=".55"><path d="M0 362Q200 352 380 366L360 402Q160 392 0 404z" fill="#E6D396"/><path d="M420 344Q600 336 760 350L800 380Q620 372 440 384z" fill="#C9B97A"/><path d="M760 392Q880 380 1000 388V430Q880 424 760 430z" fill="#B9B47A"/></g><g stroke="#A88E5A" stroke-width="1.2" fill="none" opacity=".5"><path d="M0 382Q240 372 470 380"/><path d="M500 368Q720 360 1000 372"/><path d="M300 416Q600 404 1000 414"/></g><path d="M700 334C660 360 600 372 590 400C580 430 640 450 620 480C600 520 520 548 470 600L566 600C606 548 690 520 702 480C714 440 652 420 662 396C672 372 712 356 714 334z" fill="#EEDDB2" opacity=".8"/><use href="#well-p" transform="translate(686 352) scale(0.36)" fill="#6E5A3E" color="#9C6B4A"/><use href="#well-p" transform="translate(698 349) scale(0.34)" fill="#4A5E7A" color="#B07E58"/><use href="#well-p" transform="translate(676 355) scale(0.36)" fill="#8E6A3E" color="#8C5A3E"/><g transform="translate(150 440) scale(1.1)" filter="url(#well-paint)"><ellipse cx="0" cy="4" rx="70" ry="8" fill="#6E5236" opacity=".3"/><path d="M-6 4C-2-14-14-26-6-44C-2-50 6-48 4-40C0-28 12-16 8 4z" fill="#6E5A44"/><path d="M-4-40q-14-6-20-18M4-40q10-8 18-14" stroke="#6E5A44" stroke-width="5" fill="none"/><g fill="url(#well-leaf)"><ellipse cx="-30" cy="-62" rx="34" ry="20"/><ellipse cx="18" cy="-70" rx="38" ry="22"/><ellipse cx="-4" cy="-88" rx="30" ry="18"/><ellipse cx="40" cy="-52" rx="22" ry="14"/></g><g fill="#5A6640" opacity=".6"><ellipse cx="-24" cy="-52" rx="24" ry="8"/><ellipse cx="22" cy="-58" rx="26" ry="8"/></g><g fill="#DCE2C2" opacity=".55"><ellipse cx="-10" cy="-96" rx="12" ry="4"/><ellipse cx="30" cy="-80" rx="14" ry="4"/></g></g><g transform="translate(880 432) scale(1)" filter="url(#well-paint)"><ellipse cx="0" cy="4" rx="70" ry="8" fill="#6E5236" opacity=".3"/><path d="M-6 4C-2-14-14-26-6-44C-2-50 6-48 4-40C0-28 12-16 8 4z" fill="#6E5A44"/><path d="M-4-40q-14-6-20-18M4-40q10-8 18-14" stroke="#6E5A44" stroke-width="5" fill="none"/><g fill="url(#well-leaf)"><ellipse cx="-30" cy="-62" rx="34" ry="20"/><ellipse cx="18" cy="-70" rx="38" ry="22"/><ellipse cx="-4" cy="-88" rx="30" ry="18"/><ellipse cx="40" cy="-52" rx="22" ry="14"/></g><g fill="#5A6640" opacity=".6"><ellipse cx="-24" cy="-52" rx="24" ry="8"/><ellipse cx="22" cy="-58" rx="26" ry="8"/></g><g fill="#DCE2C2" opacity=".55"><ellipse cx="-10" cy="-96" rx="12" ry="4"/><ellipse cx="30" cy="-80" rx="14" ry="4"/></g></g><g transform="translate(300 404) scale(0.55)" filter="url(#well-paint)"><ellipse cx="0" cy="4" rx="70" ry="8" fill="#6E5236" opacity=".3"/><path d="M-6 4C-2-14-14-26-6-44C-2-50 6-48 4-40C0-28 12-16 8 4z" fill="#6E5A44"/><path d="M-4-40q-14-6-20-18M4-40q10-8 18-14" stroke="#6E5A44" stroke-width="5" fill="none"/><g fill="url(#well-leaf)"><ellipse cx="-30" cy="-62" rx="34" ry="20"/><ellipse cx="18" cy="-70" rx="38" ry="22"/><ellipse cx="-4" cy="-88" rx="30" ry="18"/><ellipse cx="40" cy="-52" rx="22" ry="14"/></g><g fill="#5A6640" opacity=".6"><ellipse cx="-24" cy="-52" rx="24" ry="8"/><ellipse cx="22" cy="-58" rx="26" ry="8"/></g><g fill="#DCE2C2" opacity=".55"><ellipse cx="-10" cy="-96" rx="12" ry="4"/><ellipse cx="30" cy="-80" rx="14" ry="4"/></g></g><path d="M0 436Q300 424 600 434T1000 428V600H0z" fill="url(#well-ground)"/><path d="M0 436Q300 424 600 434T1000 428V600H0z" fill="url(#well-peb)"/><g filter="url(#well-paint2)"><ellipse cx="4" cy="444" rx="9" ry="6" fill="#B8A88A"/><ellipse cx="19" cy="446" rx="11" ry="7" fill="#B8A88A"/><ellipse cx="34" cy="444" rx="12" ry="5" fill="#B8A88A"/><ellipse cx="49" cy="448" rx="10" ry="7" fill="#A8987A"/><ellipse cx="64" cy="447" rx="8" ry="5" fill="#C9B99A"/><ellipse cx="79" cy="447" rx="9" ry="7" fill="#A8987A"/><ellipse cx="94" cy="446" rx="13" ry="7" fill="#C9B99A"/><ellipse cx="109" cy="445" rx="10" ry="5" fill="#B8A88A"/><ellipse cx="124" cy="446" rx="12" ry="6" fill="#B8A88A"/><ellipse cx="139" cy="448" rx="9" ry="5" fill="#C9B99A"/><ellipse cx="154" cy="446" rx="13" ry="6" fill="#B8A88A"/><ellipse cx="169" cy="447" rx="11" ry="6" fill="#A8987A"/><ellipse cx="184" cy="447" rx="12" ry="7" fill="#A8987A"/><ellipse cx="199" cy="445" rx="13" ry="6" fill="#C9B99A"/><ellipse cx="214" cy="446" rx="8" ry="5" fill="#B8A88A"/><ellipse cx="229" cy="444" rx="10" ry="7" fill="#C9B99A"/><ellipse cx="244" cy="446" rx="8" ry="5" fill="#C9B99A"/><ellipse cx="259" cy="448" rx="8" ry="6" fill="#C9B99A"/><ellipse cx="274" cy="447" rx="13" ry="6" fill="#B8A88A"/><ellipse cx="289" cy="444" rx="12" ry="5" fill="#B8A88A"/></g><path d="M60 520l-3-9M60 520l1-11M60 520l5-8" stroke="#9C8650" stroke-width="1.3" fill="none"/><path d="M120 572l-3-9M120 572l1-11M120 572l5-8" stroke="#8E7A4E" stroke-width="1.3" fill="none"/><path d="M250 556l-3-9M250 556l1-11M250 556l5-8" stroke="#9C8650" stroke-width="1.3" fill="none"/><path d="M760 560l-3-9M760 560l1-11M760 560l5-8" stroke="#8E7A4E" stroke-width="1.3" fill="none"/><path d="M880 520l-3-9M880 520l1-11M880 520l5-8" stroke="#9C8650" stroke-width="1.3" fill="none"/><path d="M940 584l-3-9M940 584l1-11M940 584l5-8" stroke="#8E7A4E" stroke-width="1.3" fill="none"/><path d="M700 590l-3-9M700 590l1-11M700 590l5-8" stroke="#9C8650" stroke-width="1.3" fill="none"/><path d="M330 590l-3-9M330 590l1-11M330 590l5-8" stroke="#8E7A4E" stroke-width="1.3" fill="none"/><g filter="url(#well-paint2)"><ellipse cx="492" cy="530" rx="150" ry="28" fill="#6E5A40" opacity=".35"/><ellipse cx="490" cy="524" rx="142" ry="26" fill="#BCA682"/><path d="M350 524a140 24 0 0 0 280 0" stroke="#E6D8B8" stroke-width="2" fill="none" opacity=".6"/><path d="M380 516l40 14M470 506l6 30M560 510l-24 26M610 520l-40 10" stroke="#8E7A5A" stroke-width="1.2" opacity=".55"/><path d="M410 470L410 522Q490 546 570 522L570 470Q490 490 410 470z" fill="url(#well-stone)"/><path d="M410 470L410 522Q490 546 570 522L570 470Q490 490 410 470z" fill="url(#well-blocks)"/><path d="M410 470L410 522Q430 530 446 533V482Q426 478 410 470z" fill="#5A4A38" opacity=".25"/><ellipse cx="490" cy="470" rx="80" ry="18" fill="#E6D8B8"/><ellipse cx="490" cy="471" rx="60" ry="12" fill="#2A2420"/><path d="M432 473a60 12 0 0 0 116 0" stroke="#4A3A2C" stroke-width="3" fill="none"/><path d="M536 466q12-4 20 2l-2 12q-8 4-16 0z" fill="#6E4A2E"/><path d="M538 466q8-8 16 0" stroke="#4A3020" stroke-width="1.6" fill="none"/><g fill="none" stroke="#A8875A" stroke-width="2"><ellipse cx="575" cy="466" rx="14" ry="4"/><ellipse cx="575" cy="463" rx="11" ry="3.2"/><path d="M561 466q-6 0-6-4"/></g><path d="M600 506h70v24h-70z" fill="#B29C78"/><path d="M600 506l8-8h70l-8 8z" fill="#E2D2B0"/><path d="M670 506l8-8v24l-8 8z" fill="#8E7A5C"/><path d="M606 504l6-5h58l-5 5z" fill="#6E5A40"/></g><g filter="url(#well-paint2)"><ellipse cx="372" cy="546" rx="52" ry="6" fill="#5A4430" opacity=".4"/><path d="M318 532h62v-30h-62z" fill="#A89472"/><path d="M318 502l6-6h60l-4 6z" fill="#D8C8A6"/><path d="M318 502v30" stroke="#6E5E44" stroke-width="2"/><path d="M322 544L352 404" stroke="#6E5236" stroke-width="3.2" stroke-linecap="round"/><path d="M352 500L400 496C406 510 406 526 404 540H390C390 528 388 518 382 512L354 512z" fill="url(#well-tunic)"/><path d="M388 540h18q3 4 0 6h-18z" fill="#5A4028"/><path d="M392 538h11v3h-11z" fill="#A36E4A"/><path d="M336 504C332 476 336 448 348 432C354 424 372 424 380 432C390 448 394 474 392 504z" fill="url(#well-tunic)"/><path d="M332 510C326 474 334 442 350 428C356 424 364 424 368 428C356 446 352 476 358 500L400 500C402 508 400 516 394 520L336 522z" fill="url(#well-mantle)"/><path d="M374 440C388 454 396 472 398 494L390 496C386 478 380 462 368 450z" fill="#C9B894"/><ellipse cx="396" cy="497" rx="5.5" ry="4" fill="#A36E4A"/><circle cx="368" cy="416" r="12" fill="#A36E4A"/><path d="M356 412a13 13 0 0 1 22-9q-10 2-12 12q-2 10-6 20q-6-10-4-23z" fill="#3E2A20"/><path d="M374 422q6 4 4 12q-6 2-9-4z" fill="#3E2A20"/><path d="M378 434C390 450 396 470 398 492" stroke="#FFF2CC" stroke-width="1.8" fill="none" opacity=".55"/></g><g filter="url(#well-paint2)"><ellipse cx="660" cy="556" rx="38" ry="5" fill="#5A4430" opacity=".4"/><path d="M630 552C628 520 632 470 638 440C642 424 662 424 668 440C676 470 680 520 682 552z" fill="url(#well-dress)"/><path d="M640 552c2-30 2-70 4-100" stroke="#5A2030" stroke-width="2" fill="none" opacity=".45"/><path d="M670 552c-2-30-2-66-6-96" stroke="#D88A90" stroke-width="1.6" fill="none" opacity=".4"/><path d="M634 552h14v4h-14zM662 552h14v4h-14z" fill="#4A3020"/><circle cx="650" cy="406" r="11" fill="#B98458"/><path d="M641 406C640 386 666 382 672 400C682 422 692 470 694 522L682 524C678 488 672 462 662 446L644 448C638 434 638 420 641 406z" fill="url(#well-veil)"/><path d="M644 404q2-14 18-14" stroke="#8A9CC6" stroke-width="2" fill="none" opacity=".6"/><path d="M616 460q-15 9-15 26q0 16 15 23h19q12-6 12-23q0-17-15-26z" fill="url(#well-jar)"/><path d="M619 450h13v11h-13z" fill="#A86A44"/><ellipse cx="625.5" cy="450" rx="9" ry="2.8" fill="#C98A5A"/><path d="M606 482q12 5 26 0" stroke="#7A4630" stroke-width="1.4" fill="none" opacity=".6"/><path d="M650 444C642 456 636 468 632 480L640 484C644 472 650 462 658 452z" fill="#7A2E3C"/><ellipse cx="634" cy="483" rx="5" ry="4" fill="#B98458"/><path d="M668 444C674 466 678 492 680 520" stroke="#FFF2CC" stroke-width="1.6" fill="none" opacity=".5"/></g><circle cx="790" cy="62" r="420" fill="url(#well-sun)" opacity=".25"/><rect width="1000" height="600" filter="url(#well-grain)" fill="#fff"/></g><rect x=".5" y=".5" width="999" height="599" rx="10" fill="none" stroke="#1B1F2A" stroke-opacity=".18"/></svg><figcaption>한낮, 수가 동네의 야곱의 우물. 길에 지쳐 우물 곁에 앉은 나그네와 물을 길으러 온 사마리아 여인 (요 4:5–7).</figcaption></figure>
 
-  <table class="concept-table">
+
+  <div class="table-wrap t-borders"><table class="concept-table">
     <thead>
       <tr><th>경계</th><th>내용</th></tr>
     </thead>
@@ -563,7 +411,7 @@
       <tr><td>성별 경계</td><td>남성 랍비 &rarr; 여성</td></tr>
       <tr><td>도덕 경계</td><td>율법 준수자 &rarr; 남편 다섯의 여인</td></tr>
     </tbody>
-  </table>
+  </table></div>
 
   <p>
     철저하게 한 사람을 위한 단기선교. 결과는? 그 여인이 마을 전체에 복음을 전했다. 삭개오에게도 같은 패턴이 나타난다. "삭개오야 속히 내려오라 내가 오늘 네 집에 유하여야 하겠다" &mdash; 여기서도 신학적 필연의 언어 '하겠다'가 등장한다.
@@ -582,10 +430,7 @@
     의도 없이 산다면 미전도 종족이 생긴다. 숨겨진 영역이 보이지 않는다. 사마리아 우물가를 굳이 찾아가신 예수님처럼, 나무 위의 삭개오를 읽어내신 예수님처럼 &mdash; <strong>남들이 지나쳐 버리는 그 사람, 그 공간이 선교적 의도를 가진 사람의 눈에 보인다.</strong>
   </p>
 
-  <!-- SECTION 6 -->
-  <hr class="section-divider">
-  <span class="section-num">Part VI</span>
-  <h2 class="section-heading">바울 &mdash; 패러다임이 깨지는 사람</h2>
+  <h2 class="part" id="part-6"><span class="pn">Part VI</span><span class="pt">바울</span><span class="ps">패러다임이 깨지는 사람</span></h2>
 
   <p>
     바울의 선교는 한 사람 안에서 선교의 개념과 방식이 어떻게 변하는지를 보여주는 살아있는 사례다. 교포 출신 헬라파 유대인, 바리새인, 가말리엘의 제자. 다메섹 체험(28-29세) 이후 약 10년간 하나님이 쓰지 않으셨다. 그 침묵의 시간 동안 모세오경 5,852구절을 다시 외우며 "메시아가 정말 예수인가?"를 검증했을 것이다.
@@ -599,7 +444,7 @@
     그런데 <strong>2차 여행에서 모든 것이 바뀐다.</strong> 바나바와 갈라진 후 실라와 출발. 동아시아로 가려 했으나 성령이 마게도니아로 인도하신다. 첫 관문 빌립보 &mdash; 로마 은퇴 군인들의 도시, 회당이 없고, 헬라어보다 라틴어가 통용되는 완전히 다른 환경.
   </p>
 
-  <table class="concept-table">
+  <div class="table-wrap t-paul"><table class="concept-table">
     <thead>
       <tr><th>항목</th><th>1차 여행 (익숙한 선교)</th><th>2차 여행 이후 (깨진 패러다임)</th></tr>
     </thead>
@@ -609,14 +454,11 @@
       <tr><td>방법</td><td>논리적 변증 (구약 인용)</td><td>삶으로 드러나는 능력과 관계</td></tr>
       <tr><td>동력</td><td>개인의 역량과 배경</td><td>성령의 강권적 인도</td></tr>
     </tbody>
-  </table>
+  </table></div>
 
   <p>성령이 패러다임을 깨셨다. 선교적 생태계가 바뀌니, 선교하는 사람 자신도 깨졌다.</p>
 
-  <!-- SECTION 7 -->
-  <hr class="section-divider">
-  <span class="section-num">Part VII</span>
-  <h2 class="section-heading">모두가 바울은 아니다 &mdash; 동역자의 선교</h2>
+  <h2 class="part" id="part-7"><span class="pn">Part VII</span><span class="pt">모두가 바울은 아니다</span><span class="ps">동역자의 선교</span></h2>
 
   <p>
     로마서 16장에는 36명의 바울의 동역자 이름이 등장한다. 남자와 여자, 청년과 노인, 싱글과 부부, 귀족과 노예, 사업가와 공무원. 소수는 바울이 되겠지만, 대다수는 바울의 동역자가 될 것이다.
@@ -625,6 +467,8 @@
   <p>
     바울의 동역자는 곧 하나님의 동역자다. "우리는 하나님의 동역자들이요"(고전 3:9). 헬라어 <em>쉬네르고스</em>(&sigma;&upsilon;&nu;&epsilon;&rho;&gamma;&omicron;&sigmaf;)는 '짐을 같이 지는 사람, 멍에를 같이 매는 사람'이다. <strong>후원자가 아니라 동역자다.</strong> 이 구분이 결정적이다.
   </p>
+  <figure class="ill"><svg class="art art-tent" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="오후 햇빛이 열린 문으로 들어오는 흙벽 작업장. 선반에는 둘둘 만 천과 접은 천이 쌓여 있고 벽에는 밧줄과 가죽과 가위가 걸려 있다. 세 사람이 나란히 걸상에 앉아 줄무늬 검은 염소털 천막 천 한 장을 무릎에 함께 걸쳐 놓고 깁는다 — 왼쪽 올리브색 옷의 남자는 바늘을, 가운데 흰 너울을 쓴 여인도 바늘을, 문가의 대머리에 수염 난 남자는 송곳을 들었다. 문밖으로는 포장된 거리의 행인들과 기둥 신전, 바위 언덕이 보인다"><defs><filter id="tent-paint" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="3" seed="4"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter><filter id="tent-paint2" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".06" numOctaves="2" seed="9"/><feDisplacementMap in="SourceGraphic" scale="3"/></filter><filter id="tent-grain" filterUnits="userSpaceOnUse" x="0" y="0" width="1000" height="600"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="2"/><feColorMatrix values="0 0 0 0 .3 0 0 0 0 .25 0 0 0 0 .2 0 0 0 .1 0"/><feComposite in2="SourceGraphic" operator="in"/></filter><filter id="tent-soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter><filter id="tent-blur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2.2"/></filter><clipPath id="tent-c"><rect width="1000" height="600" rx="10"/></clipPath><g id="tent-p"><path d="M-9 0C-9.5-16-8-34-6.5-42C-5-47.5 5-47.5 6.5-42C8-34 9.5-16 9 0z"/><path d="M1.5-46C6-40 8.5-22 9 0H3.5C4-16 3.5-34 1.5-46z" fill="#1B1F2A" opacity=".28"/><path d="M-6.5 0h5v1.6h-5zM1.5 0h5v1.6h-5z" fill="#2A2420"/><circle cy="-52" r="6" fill="currentColor"/></g><g id="tent-pv"><path d="M-9 0C-9.5-16-8-34-6.5-42C-5-47.5 5-47.5 6.5-42C8-34 9.5-16 9 0z"/><path d="M-8-50a8 8 0 0 1 16 0c1.5 9 3 17 4 26h-3.5c-1-8-2.5-14-4.5-19h-8c-2 5-3.5 11-4.5 19h-3.5c1-9 2.5-17 4-26z"/><path d="M-8-50a8 8 0 0 1 16 0c1.5 9 3 17 4 26h-3.5c-1-8-2.5-14-4.5-19z" fill="#1B1F2A" opacity=".25"/><path d="M-6.5 0h5v1.6h-5zM1.5 0h5v1.6h-5z" fill="#2A2420"/><circle cy="-50" r="5.2" fill="currentColor"/></g><linearGradient id="tent-wall" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6E5038"/><stop offset="0.55" stop-color="#A27E58"/><stop offset="1" stop-color="#C8A27A"/></linearGradient><linearGradient id="tent-beam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5A3A26"/><stop offset="1" stop-color="#2E1E14"/></linearGradient><linearGradient id="tent-floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9A7A58"/><stop offset="1" stop-color="#5A4230"/></linearGradient><linearGradient id="tent-out" x1="0" y1="96" x2="0" y2="330" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7EA6CC"/><stop offset="0.6" stop-color="#CFE0E2"/><stop offset="1" stop-color="#F4E6C2"/></linearGradient><linearGradient id="tent-acro" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#C2AC86"/><stop offset="1" stop-color="#7E6E52"/></linearGradient><linearGradient id="tent-beam2" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE7B0" stop-opacity="0.55"/><stop offset="1" stop-color="#FFE7B0" stop-opacity="0"/></linearGradient><linearGradient id="tent-shade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.35"/></linearGradient><linearGradient id="tent-olive" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3E5232"/><stop offset="0.6" stop-color="#5E7A4A"/><stop offset="1" stop-color="#7E9A62"/></linearGradient><linearGradient id="tent-wine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5A2030"/><stop offset="0.6" stop-color="#8E3B4A"/><stop offset="1" stop-color="#B05A66"/></linearGradient><linearGradient id="tent-veil" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#B8A684"/><stop offset="0.6" stop-color="#E2D4B4"/><stop offset="1" stop-color="#F6ECD6"/></linearGradient><linearGradient id="tent-tunic" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9C8A66"/><stop offset="0.6" stop-color="#CDB896"/><stop offset="1" stop-color="#F2E4C4"/></linearGradient><linearGradient id="tent-mantle" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5E2E1E"/><stop offset="0.6" stop-color="#8E4A2E"/><stop offset="1" stop-color="#C27A50"/></linearGradient><linearGradient id="tent-wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7A5236"/><stop offset="1" stop-color="#4A3020"/></linearGradient><pattern id="tent-plaster" width="60" height="40" patternUnits="userSpaceOnUse"><path d="M6 10q8-3 16 0M30 28q10-3 20 1M40 8q6-2 12 1" stroke="#4A3020" stroke-width="1" opacity=".2" fill="none"/><path d="M10 30q6-2 12 0M44 18q5-2 10 0" stroke="#F2D9B0" stroke-width="1" opacity=".18" fill="none"/></pattern><pattern id="tent-grainw" width="30" height="8" patternUnits="userSpaceOnUse"><path d="M0 2Q8 1 15 2.6T30 2M0 6Q10 5 18 6.4T30 6" stroke="#1E1410" stroke-width=".7" opacity=".35" fill="none"/></pattern><pattern id="tent-goat" width="40" height="34" patternUnits="userSpaceOnUse" patternTransform="rotate(-3)"><rect width="40" height="34" fill="#2E2520"/><path d="M0 4H40M0 7H40M0 27H40" stroke="#433630" stroke-width="1.2"/><path d="M0 16H40" stroke="#B8A07A" stroke-width="3.4"/><path d="M0 21H40" stroke="#8E7656" stroke-width="1.2"/></pattern><pattern id="tent-wick" width="10" height="8" patternUnits="userSpaceOnUse"><path d="M0 4q5-4 10 0M0 8q5-4 10 0" stroke="#7A5A30" stroke-width="1.2" fill="none"/></pattern><pattern id="tent-pave" width="46" height="16" patternUnits="userSpaceOnUse"><path d="M0 .5H46M0 8.5H46M14 .5V8.5M36 8.5V16" stroke="#8E7656" stroke-width="1" opacity=".45" fill="none"/></pattern><clipPath id="tent-door"><rect x="704" y="98" width="232" height="384"/></clipPath></defs><g clip-path="url(#tent-c)"><rect width="1000" height="490" fill="url(#tent-wall)"/><rect width="1000" height="490" fill="url(#tent-plaster)"/><rect width="1000" height="36" fill="url(#tent-beam)"/><rect width="1000" height="36" fill="url(#tent-grainw)"/><rect x="30" y="36" width="22" height="12" fill="#3A2618"/><rect x="122" y="36" width="22" height="12" fill="#3A2618"/><rect x="214" y="36" width="22" height="12" fill="#3A2618"/><rect x="306" y="36" width="22" height="12" fill="#3A2618"/><rect x="398" y="36" width="22" height="12" fill="#3A2618"/><rect x="490" y="36" width="22" height="12" fill="#3A2618"/><rect x="582" y="36" width="22" height="12" fill="#3A2618"/><rect x="674" y="36" width="22" height="12" fill="#3A2618"/><rect x="766" y="36" width="22" height="12" fill="#3A2618"/><rect x="858" y="36" width="22" height="12" fill="#3A2618"/><rect x="950" y="36" width="22" height="12" fill="#3A2618"/><g clip-path="url(#tent-door)" filter="url(#tent-paint2)"><rect x="700" y="96" width="240" height="390" fill="url(#tent-out)"/><path d="M704 252Q760 172 820 152Q870 138 900 150Q930 170 940 200V336H704z" fill="url(#tent-acro)"/><path d="M760 210q20-10 40-6M850 180q16 8 30 24M790 250q30-6 60 4" stroke="#6E5E44" stroke-width="1.4" fill="none" opacity=".5"/><path d="M840 150h12v-8h8v8h12v-6h8v14h-40z" fill="#E6D6B4"/><path d="M704 300Q800 286 940 296V340H704z" fill="#9EA07A" opacity=".7"/><path d="M726 334h128v8h-128z" fill="#EAD8B2"/><path d="M724 280l66-16 66 16z" fill="#D8C49C"/><path d="M724 280h132v9h-132z" fill="#E6D2AA"/><rect x="730" y="289" width="8" height="45" fill="#EEDDB8"/><rect x="736" y="289" width="2.5" height="45" fill="#B59A72"/><rect x="749" y="289" width="8" height="45" fill="#EEDDB8"/><rect x="755" y="289" width="2.5" height="45" fill="#B59A72"/><rect x="768" y="289" width="8" height="45" fill="#EEDDB8"/><rect x="774" y="289" width="2.5" height="45" fill="#B59A72"/><rect x="787" y="289" width="8" height="45" fill="#EEDDB8"/><rect x="793" y="289" width="2.5" height="45" fill="#B59A72"/><rect x="806" y="289" width="8" height="45" fill="#EEDDB8"/><rect x="812" y="289" width="2.5" height="45" fill="#B59A72"/><rect x="825" y="289" width="8" height="45" fill="#EEDDB8"/><rect x="831" y="289" width="2.5" height="45" fill="#B59A72"/><rect x="844" y="289" width="8" height="45" fill="#EEDDB8"/><rect x="850" y="289" width="2.5" height="45" fill="#B59A72"/><path d="M704 356h236v14h-236z" fill="#A8543A"/><path d="M698 389.2V353.2L706 356V392z" fill="#BFA27C"/><rect x="706" y="356" width="44" height="36" fill="#EADAB8"/><path d="M698 353.2L706 356H750L742 353.2z" fill="#A8543A"/><rect x="728" y="366" width="6" height="7" fill="#4A3424" opacity=".75"/><path d="M748 389.2V361.2L756 364V392z" fill="#BFA27C"/><rect x="756" y="364" width="52" height="28" fill="#EADAB8"/><path d="M748 361.2L756 364H808L800 361.2z" fill="#A8543A"/><path d="M806 389.2V349.2L814 352V392z" fill="#BFA27C"/><rect x="814" y="352" width="40" height="40" fill="#EADAB8"/><path d="M806 349.2L814 352H854L846 349.2z" fill="#A8543A"/><path d="M814 352h40v-4h-40z" fill="#EADAB8" opacity=".9"/><path d="M852 389.2V359.2L860 362V392z" fill="#BFA27C"/><rect x="860" y="362" width="56" height="30" fill="#EADAB8"/><path d="M852 359.2L860 362H916L908 359.2z" fill="#A8543A"/><rect x="892" y="370" width="6" height="7" fill="#4A3424" opacity=".75"/><path d="M912 389.2V355.2L920 358V392z" fill="#BFA27C"/><rect x="920" y="358" width="30" height="34" fill="#EADAB8"/><path d="M912 355.2L920 358H950L942 355.2z" fill="#A8543A"/><path d="M920 358h30v-4h-30z" fill="#EADAB8" opacity=".9"/><path d="M704 392H940V486H704z" fill="#E6D2AC"/><path d="M704 392H940V486H704z" fill="url(#tent-pave)"/><use href="#tent-pv" transform="translate(770 452) scale(0.95)" fill="#4A6E7A" color="#C7926A"/><path d="M762 398h16l-2 -8h-12z" fill="#A86A44"/><use href="#tent-p" transform="translate(852 470) scale(-1.15 1.15)" fill="#E8E0CC" color="#8C5A3E"/><path d="M842 425l14 26" stroke="#B8A888" stroke-width="5" opacity=".7"/><use href="#tent-p" transform="translate(878 470) scale(0.62)" fill="#C98A4A" color="#A36E4A"/><g fill="#6E5A40" opacity=".3"><ellipse cx="762" cy="453" rx="12" ry="2.4"/><ellipse cx="842" cy="471" rx="14" ry="2.6"/><ellipse cx="872" cy="471" rx="8" ry="2"/></g><rect x="700" y="96" width="240" height="390" fill="#FFF4DC" opacity=".18"/></g><path d="M688 88h18v396h-18zM934 88h18v396h-18z" fill="url(#tent-wood)"/><path d="M680 76h280v20h-280z" fill="url(#tent-wood)"/><path d="M680 76h280v20h-280z" fill="url(#tent-grainw)"/><path d="M704 96v388l-16 0v-396z" fill="#2A1C12" opacity=".35"/><path d="M700 482h244v10h-244z" fill="#D8C29A"/><g filter="url(#tent-paint2)"><path d="M30 168h520v10h-520zM30 262h520v10h-520z" fill="url(#tent-wood)"/><path d="M60 178l10 14M520 178l-10 14M60 272l10 14M520 272l-10 14" stroke="#3A2618" stroke-width="4"/><rect x="44" y="136" width="47" height="32" rx="3" fill="#3A302A"/><ellipse cx="91" cy="152" rx="6" ry="16" fill="#3A302A"/><ellipse cx="91" cy="152" rx="3" ry="9" fill="#000" opacity=".25"/><path d="M44 141h47" stroke="#FFF" stroke-width="1.2" opacity=".18"/><rect x="99" y="136" width="53" height="32" rx="3" fill="#C2A06A"/><ellipse cx="152" cy="152" rx="6" ry="16" fill="#C2A06A"/><ellipse cx="152" cy="152" rx="3" ry="9" fill="#000" opacity=".25"/><path d="M99 141h53" stroke="#FFF" stroke-width="1.2" opacity=".18"/><rect x="160" y="136" width="43" height="32" rx="3" fill="#CBB896"/><ellipse cx="203" cy="152" rx="6" ry="16" fill="#CBB896"/><ellipse cx="203" cy="152" rx="3" ry="9" fill="#000" opacity=".25"/><path d="M160 141h43" stroke="#FFF" stroke-width="1.2" opacity=".18"/><rect x="211" y="136" width="46" height="32" rx="3" fill="#2E2520"/><ellipse cx="257" cy="152" rx="6" ry="16" fill="#2E2520"/><ellipse cx="257" cy="152" rx="3" ry="9" fill="#000" opacity=".25"/><path d="M211 141h46" stroke="#FFF" stroke-width="1.2" opacity=".18"/><rect x="265" y="136" width="48" height="32" rx="3" fill="#8E3B32"/><ellipse cx="313" cy="152" rx="6" ry="16" fill="#8E3B32"/><ellipse cx="313" cy="152" rx="3" ry="9" fill="#000" opacity=".25"/><path d="M265 141h48" stroke="#FFF" stroke-width="1.2" opacity=".18"/><rect x="321" y="136" width="41" height="32" rx="3" fill="#3A302A"/><ellipse cx="362" cy="152" rx="6" ry="16" fill="#3A302A"/><ellipse cx="362" cy="152" rx="3" ry="9" fill="#000" opacity=".25"/><path d="M321 141h41" stroke="#FFF" stroke-width="1.2" opacity=".18"/><rect x="370" y="136" width="49" height="32" rx="3" fill="#B59268"/><ellipse cx="419" cy="152" rx="6" ry="16" fill="#B59268"/><ellipse cx="419" cy="152" rx="3" ry="9" fill="#000" opacity=".25"/><path d="M370 141h49" stroke="#FFF" stroke-width="1.2" opacity=".18"/><rect x="427" y="136" width="43" height="32" rx="3" fill="#CBB896"/><ellipse cx="470" cy="152" rx="6" ry="16" fill="#CBB896"/><ellipse cx="470" cy="152" rx="3" ry="9" fill="#000" opacity=".25"/><path d="M427 141h43" stroke="#FFF" stroke-width="1.2" opacity=".18"/><rect x="478" y="136" width="40" height="32" rx="3" fill="#4A3C32"/><ellipse cx="518" cy="152" rx="6" ry="16" fill="#4A3C32"/><ellipse cx="518" cy="152" rx="3" ry="9" fill="#000" opacity=".25"/><path d="M478 141h40" stroke="#FFF" stroke-width="1.2" opacity=".18"/><rect x="60" y="242" width="66" height="20" fill="#2E2520"/><path d="M60 247h66" stroke="#000" opacity=".2"/><rect x="144" y="248" width="66" height="14" fill="#CBB896"/><path d="M144 253h66" stroke="#000" opacity=".2"/><rect x="228" y="244" width="66" height="18" fill="#B59268"/><path d="M228 249h66" stroke="#000" opacity=".2"/><rect x="312" y="250" width="66" height="12" fill="#3A302A"/><path d="M312 255h66" stroke="#000" opacity=".2"/><rect x="396" y="246" width="66" height="16" fill="#8E6A46"/><path d="M396 251h66" stroke="#000" opacity=".2"/><path d="M500 262c-14 0-18-24-6-34h20c12 10 8 34-6 34z" fill="#B87A50"/><path d="M500 228h20" stroke="#7A4630" stroke-width="2"/><path d="M590 200v-36a20 20 0 0 1 40 0v36z" fill="#3A2618"/><path d="M598 200q12 6 24 0l3-3h-30z" fill="#C98A5A"/><circle cx="608" cy="300" r="4" fill="#3A2618"/><g fill="none" stroke="#B8975E" stroke-width="3"><ellipse cx="608" cy="320" rx="16" ry="20"/><ellipse cx="608" cy="322" rx="11" ry="15"/></g><circle cx="650" cy="290" r="4" fill="#3A2618"/><path d="M634 292q-6 30 2 54q10 10 26 4q8-26 2-56q-16-6-30-2z" fill="#9A6A40"/><path d="M640 300q6 24 2 44" stroke="#C99064" stroke-width="1.4" fill="none" opacity=".6"/><path d="M560 300l-8 40M566 300l8 40" stroke="#9AA0A4" stroke-width="2.6" stroke-linecap="round"/><circle cx="563" cy="298" r="4" fill="none" stroke="#9AA0A4" stroke-width="2"/></g><rect y="482" width="1000" height="118" fill="url(#tent-floor)"/><path d="M704 486L940 486L790 600L430 600z" fill="#FFE3A8" opacity=".3"/><path d="M706 104L780 104L540 600L414 600z" fill="url(#tent-beam2)" opacity=".5"/><g fill="#FFF0C8" opacity=".55"><circle cx="590" cy="368" r="1"/><circle cx="573" cy="552" r="1"/><circle cx="561" cy="550" r="0.8"/><circle cx="551" cy="476" r="1.3"/><circle cx="707" cy="224" r="0.8"/><circle cx="480" cy="162" r="0.8"/><circle cx="590" cy="244" r="0.8"/><circle cx="628" cy="320" r="0.8"/><circle cx="584" cy="253" r="1.3"/><circle cx="580" cy="356" r="1"/><circle cx="491" cy="344" r="1"/><circle cx="564" cy="234" r="1"/><circle cx="513" cy="329" r="1"/><circle cx="481" cy="465" r="1.3"/><circle cx="653" cy="193" r="1"/><circle cx="661" cy="316" r="1"/><circle cx="641" cy="254" r="1"/><circle cx="721" cy="520" r="0.8"/><circle cx="509" cy="291" r="0.8"/><circle cx="663" cy="366" r="0.8"/><circle cx="694" cy="347" r="1"/><circle cx="484" cy="391" r="0.8"/><circle cx="572" cy="479" r="0.8"/><circle cx="540" cy="546" r="0.8"/><circle cx="716" cy="336" r="1.3"/><circle cx="661" cy="428" r="1"/></g><g transform="matrix(1.16 0 0 1.16 -72 -92)" filter="url(#tent-paint2)"><g fill="#3A2618" opacity=".35"><ellipse cx="250" cy="566" rx="70" ry="9"/><ellipse cx="462" cy="566" rx="70" ry="9"/><ellipse cx="664" cy="566" rx="70" ry="9"/></g><path d="M210 520h76v8h-76zM420 520h80v8h-80zM624 520h80v8h-80z" fill="#6E4A30"/><path d="M226 522C220 490 224 452 238 432C246 422 266 422 272 434C282 456 286 492 282 522z" fill="url(#tent-olive)"/><path d="M264 546L314 546L318 590L260 590z" fill="url(#tent-olive)"/><path d="M438 546L494 546L500 592L434 592z" fill="url(#tent-wine)"/><path d="M632 546L688 546L692 590L628 590z" fill="url(#tent-tunic)"/><path d="M262 590h24v6h-24zM292 590h24v6h-24zM436 592h26v5h-26zM470 592h26v5h-26zM630 590h26v6h-26zM664 590h26v6h-26z" fill="#4A3020"/><path d="M266 590h14v-3h-14zM296 590h14v-3h-14zM636 590h14v-3h-14zM668 590h14v-3h-14z" fill="#A87048"/><circle cx="256" cy="412" r="15" fill="#A87048"/><path d="M241 412a15 15 0 0 1 28-8q-8-4-16-2q-9 3-12 10z" fill="#2E2420"/><path d="M241 412q-2 10 4 16q2-8 2-14z" fill="#2E2420"/><path d="M262 420q11 2 10 13q-8 6-14 0z" fill="#2E2420"/><path d="M434 522C430 488 434 452 446 432C454 420 474 420 482 432C494 452 496 490 492 522z" fill="url(#tent-wine)"/><circle cx="460" cy="410" r="14" fill="#C7926A"/><path d="M446 410C445 390 472 384 479 400C488 422 498 460 502 512L490 514C486 476 480 452 470 440L450 442C445 432 445 420 446 410z" fill="url(#tent-veil)"/><path d="M450 404q4-16 22-14" stroke="#FFF8E8" stroke-width="2" fill="none" opacity=".6"/><path d="M632 522C628 488 632 452 644 432C652 420 672 420 680 432C692 452 696 490 692 522z" fill="url(#tent-tunic)"/><path d="M640 444L678 428L692 472L648 506z" fill="url(#tent-mantle)"/><path d="M672 428C688 440 698 476 700 522L686 522C684 486 678 458 666 440z" fill="url(#tent-mantle)"/><circle cx="658" cy="410" r="15" fill="#9C6B4A"/><path d="M666 400q10 4 8 18q-5-2-7-9z" fill="#6E655C"/><path d="M645 414q-5 13 6 22q9-2 9-11q-8-2-15-11z" fill="#4A4038"/><ellipse cx="660" cy="399" rx="6" ry="3" fill="#E8B98A" opacity=".6"/><path d="M684 434C694 456 698 490 696 520M668 398a15 15 0 0 1 4 22" stroke="#FFE3A8" stroke-width="2.4" fill="none" opacity=".7"/></g><g transform="matrix(1.16 0 0 1.16 -72 -92)" filter="url(#tent-paint)"><path d="M100 572C120 548 170 546 200 558C214 570 208 590 176 596C134 600 94 590 100 572z" fill="url(#tent-goat)"/><path d="M100 572C120 548 170 546 200 558C214 570 208 590 176 596C134 600 94 590 100 572z" fill="url(#tent-shade)"/><path d="M168 512C220 502 270 502 306 506C330 510 350 520 372 520C394 520 410 510 432 506C462 502 492 504 508 510C530 518 548 524 570 522C592 520 604 512 622 508C652 504 686 506 706 514C728 526 742 552 750 584L742 594C730 592 724 580 712 566C690 552 650 548 620 552C600 556 590 580 570 582C550 582 540 558 512 552C482 548 450 548 432 552C410 558 394 580 372 582C350 582 340 558 310 552C280 548 240 550 214 556C196 566 190 584 180 592C168 576 162 540 168 512z" fill="url(#tent-goat)"/><path d="M168 512C220 502 270 502 306 506C330 510 350 520 372 520C394 520 410 510 432 506C462 502 492 504 508 510C530 518 548 524 570 522C592 520 604 512 622 508C652 504 686 506 706 514C728 526 742 552 750 584L742 594C730 592 724 580 712 566C690 552 650 548 620 552C600 556 590 580 570 582C550 582 540 558 512 552C482 548 450 548 432 552C410 558 394 580 372 582C350 582 340 558 310 552C280 548 240 550 214 556C196 566 190 584 180 592C168 576 162 540 168 512z" fill="url(#tent-shade)"/><g fill="none" stroke-linecap="round"><path d="M372 522C368 544 376 566 372 580M570 524C566 546 574 568 570 580M200 514C196 540 200 566 186 588M724 532C730 556 738 576 744 590" stroke="#120E0C" stroke-width="3.2" opacity=".6"/><path d="M300 510C304 528 300 542 304 552M470 508C474 528 468 540 472 550M662 510C666 528 660 540 664 550" stroke="#8A7462" stroke-width="2.2" opacity=".55"/></g><path d="M168 512C220 502 270 502 306 506C330 510 350 520 372 520C394 520 410 510 432 506C462 502 492 504 508 510C530 518 548 524 570 522C592 520 604 512 622 508C652 504 686 506 706 514C728 526 742 552 750 584" stroke="#C9A06A" stroke-width="5" fill="none"/><path d="M168 512C220 502 270 502 306 506C330 510 350 520 372 520C394 520 410 510 432 506C462 502 492 504 508 510C530 518 548 524 570 522C592 520 604 512 622 508C652 504 686 506 706 514C728 526 742 552 750 584" stroke="#F2D4A0" stroke-width="1.4" fill="none" opacity=".7" stroke-dasharray="5 4"/></g><g transform="matrix(1.16 0 0 1.16 -72 -92)" filter="url(#tent-paint2)"><path d="M236 446C228 470 226 494 232 514L240 512C238 494 240 472 246 452z" fill="#3E5232"/><ellipse cx="236" cy="515" rx="6" ry="4.5" fill="#A87048"/><path d="M270 440C286 456 296 482 300 506L292 510C286 488 276 466 262 452z" fill="#5E7A4A"/><ellipse cx="298" cy="510" rx="6" ry="5" fill="#A87048"/><path d="M302 506l11-20" stroke="#E6E0D2" stroke-width="1.6"/><path d="M313 486q-34-44-70-12" stroke="#F6EEDC" stroke-width="1" fill="none" opacity=".9"/><path d="M448 446C438 466 430 486 428 502L436 506C440 488 448 470 458 456z" fill="#7A2E3C"/><ellipse cx="430" cy="506" rx="6" ry="4.5" fill="#C7926A"/><path d="M478 448C488 470 488 494 482 510L474 508C478 490 476 470 468 456z" fill="#9E4A58"/><ellipse cx="478" cy="512" rx="6" ry="4.5" fill="#C7926A"/><path d="M480 508l8-18" stroke="#E6E0D2" stroke-width="1.6"/><path d="M488 490q22-34 50-10" stroke="#F6EEDC" stroke-width="1" fill="none" opacity=".9"/><path d="M648 448C636 468 626 488 616 504L624 510C634 494 644 476 656 460z" fill="#C2AE8A"/><ellipse cx="617" cy="509" rx="6" ry="5" fill="#9C6B4A"/><path d="M614 512l-12 14" stroke="#C9C2B2" stroke-width="2.2" stroke-linecap="round"/><path d="M612 506l6-6" stroke="#6E4A2E" stroke-width="5" stroke-linecap="round"/><path d="M680 448C690 470 690 494 684 512L676 510C680 492 678 472 670 458z" fill="#8E4A2E"/><ellipse cx="680" cy="515" rx="6" ry="4.5" fill="#9C6B4A"/></g><g filter="url(#tent-paint2)"><path d="M856 556h64l-6 34h-52z" fill="#B58A50"/><path d="M856 556h64l-6 34h-52z" fill="url(#tent-wick)"/><ellipse cx="888" cy="556" rx="32" ry="6" fill="#7A5A30"/><circle cx="874" cy="552" r="7" fill="#F2E6C8"/><circle cx="890" cy="550" r="7" fill="#8E3B32"/><circle cx="906" cy="553" r="6" fill="#2E2520"/><path d="M20 588l40-14" stroke="#6E4A30" stroke-width="5" stroke-linecap="round"/><rect x="54" y="564" width="22" height="14" rx="3" transform="rotate(-18 65 571)" fill="#8E6A46"/><path d="M930 592q24-8 56 2" stroke="#9A6A40" stroke-width="4" fill="none" stroke-linecap="round"/></g><rect width="1000" height="600" filter="url(#tent-grain)" fill="#fff"/></g><rect x=".5" y=".5" width="999" height="599" rx="10" fill="none" stroke="#1B1F2A" stroke-opacity=".18"/></svg><figcaption>고린도의 천막 짓는 작업장. 브리스길라와 아굴라, 바울이 한 천을 함께 깁는다 (행 18:1–3).</figcaption></figure>
+
 
   <div class="pull-quote">
     세계복음화, 선교사만으로 가능한가? 절대 불가능하다. 비선교사의 선교 사명을 회복하고, 선교사와 비선교사의 동역을 이루어야 한다. 내가 동역자라고 생각하는데 선교사가 나를 후원자로만 본다면 &mdash; 시각이 바뀌지 않고서는 동역은 불가능하다.
@@ -634,10 +478,7 @@
     데이나 로버트의 통찰도 여기에 연결된다: "크리스텐돔의 확장은 실패했지만, 세계화된 기독교는 성공했다." 예루살렘 교회가 안디옥 교회를 개척한 것이 아니다. 박해로 흩어진 무명의 사람들이 개척했다. 선교사의 역할은 액터에서 퍼실리테이터로, 창시자에서 촉매자로, 영웅에서 조력자로 변해야 한다.
   </p>
 
-  <!-- SECTION 8 -->
-  <hr class="section-divider">
-  <span class="section-num">Part VIII</span>
-  <h2 class="section-heading">Life As Mission &mdash; 삶 자체가 선교다</h2>
+  <h2 class="part" id="part-8"><span class="pn">Part VIII</span><span class="pt">Life As Mission</span><span class="ps">삶 자체가 선교다</span></h2>
 
   <p>선교에 대한 우리의 인식은 세 단계로 진화해 왔다.</p>
 
@@ -672,9 +513,9 @@
     필록세니아(&phi;&iota;&lambda;&omicron;&xi;&epsilon;&nu;&iota;&alpha;) &mdash; 손님 대접, 나그네 사랑. "가난한 자들을 청하라"(눅 14:12-13). 부지중에 천사를 대접한 사람은 아브라함이었다.
   </div>
 
-  <!-- CLOSING -->
+  
   <div class="closing-card">
-    <h2>생존 모드가 아닌, 미션 모드로</h2>
+    <h2 id="closing">생존 모드가 아닌, 미션 모드로</h2>
     <p>
       여러분의 삶이 하나님의 선교에 동역하는 삶이 되기를.<br>
       후원자가 아닌 동역자, 관객이 아닌 참여자로.<br>
@@ -683,9 +524,9 @@
     </p>
   </div>
 
-  <!-- SOURCES -->
+  
   <div class="sources">
-    <h3>참고 문헌 및 출처</h3>
+    <h3 id="sources">참고 문헌 및 출처</h3>
     <ul>
       <li>David Bosch, <em>Transforming Mission: Paradigm Shifts in Theology of Mission</em> (Orbis Books, 1991)</li>
       <li>Lesslie Newbigin, <em>The Open Secret: An Introduction to the Theology of Mission</em> (Eerdmans, 1995)</li>
@@ -701,9 +542,19 @@
   </div>
 </div>
 
-<footer class="site-footer">
-  대구의료선교 교육훈련원 2026 &middot; 하나님의 선교와 나의 선교
-</footer>
 
+</main>
+</div>
+<footer class="foot"><a href="https://wiki.youngdoctor.kr/marktl/">영닥터 아카이브로 돌아가기</a><span>youngdoctor.kr · 2026-10-30</span></footer>
+<script>
+(()=>{const b=document.getElementById('tocBtn'),l=document.getElementById('tocList'),nav=b.closest('.toc');
+b.addEventListener('click',()=>{const o=nav.classList.toggle('open');b.setAttribute('aria-expanded',String(o))});
+l.addEventListener('click',e=>{if(e.target.closest('a')&&matchMedia('(max-width:1079px)').matches){nav.classList.remove('open');b.setAttribute('aria-expanded','false')}});
+const links=[...l.querySelectorAll('a')],heads=links.map(a=>document.getElementById(a.getAttribute('href').slice(1)));
+let t=0;const upd=()=>{t=0;let c=-1;const y=innerHeight*.3;heads.forEach((h,i)=>{if(h&&h.getBoundingClientRect().top<y)c=i});
+links.forEach((a,i)=>{if(i===c)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')})};
+addEventListener('scroll',()=>{if(!t)t=requestAnimationFrame(upd)},{passive:true});upd();
+})();
+</script>
 </body>
 </html>
