@@ -1,492 +1,9 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>상담자의 두 명령 — 자기 보호와 자기 희생의 역설</title>
-
-
-
-
-
-
-
-<style>
-  :root {
-    --color-bg: #faf8f5;
-    --color-surface: #ffffff;
-    --color-text: #2c2c2c;
-    --color-text-secondary: #5a5a5a;
-    --color-accent: #8b5e3c;
-    --color-accent-light: #c49a6c;
-    --color-accent-bg: #f5efe8;
-    --color-border: #e0d6ca;
-    --color-border-light: #ede7dd;
-    --color-highlight: #d4a574;
-    --color-scripture: #6b4226;
-    --color-tag: #7a6852;
-    --max-width: 760px;
-    --font-body: 'Noto Serif KR', 'Batang', Georgia, 'Times New Roman', serif;
-    --font-heading: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html {
-    font-size: 17px;
-    scroll-behavior: smooth;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  body {
-    background: var(--color-bg);
-    color: var(--color-text);
-    font-family: var(--font-body);
-    line-height: 1.85;
-    padding: 0;
-  }
-
-  .hero {
-    background: linear-gradient(165deg, #3a2a1a 0%, #5c3d24 40%, #7a5233 100%);
-    color: #f5efe8;
-    padding: 5rem 2rem 4rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: repeating-linear-gradient(
-      135deg, transparent, transparent 40px,
-      rgba(255,255,255,0.015) 40px, rgba(255,255,255,0.015) 80px
-    );
-  }
-  .hero-inner {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  .hero-label {
-    font-family: var(--font-heading);
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--color-accent-light);
-    margin-bottom: 1.5rem;
-    font-weight: 600;
-  }
-  .hero h1 {
-    font-family: var(--font-heading);
-    font-size: 2.4rem;
-    font-weight: 800;
-    line-height: 1.3;
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.02em;
-    word-break: keep-all;
-  }
-  .hero-subtitle {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: #d4c4b0;
-    max-width: 600px;
-    margin: 0 auto 2rem;
-    word-break: keep-all;
-  }
-  .hero-meta {
-    font-family: var(--font-heading);
-    font-size: 0.78rem;
-    color: #a08e7a;
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .tag-bar {
-    max-width: var(--max-width);
-    margin: -1.2rem auto 0;
-    padding: 0 2rem;
-    position: relative;
-    z-index: 2;
-  }
-  .tag-list {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    background: var(--color-surface);
-    border-radius: 12px;
-    padding: 1rem 1.5rem;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
-    border: 1px solid var(--color-border-light);
-  }
-  .tag {
-    font-family: var(--font-heading);
-    font-size: 0.72rem;
-    color: var(--color-tag);
-    background: var(--color-accent-bg);
-    padding: 0.25rem 0.7rem;
-    border-radius: 20px;
-    letter-spacing: 0.02em;
-    font-weight: 500;
-  }
-
-  .abstract {
-    max-width: var(--max-width);
-    margin: 3rem auto 0;
-    padding: 0 2rem;
-  }
-  .abstract-card {
-    background: var(--color-surface);
-    border-left: 4px solid var(--color-accent);
-    border-radius: 0 12px 12px 0;
-    padding: 2rem 2.5rem;
-    box-shadow: 0 1px 12px rgba(0,0,0,0.04);
-  }
-  .abstract-label {
-    font-family: var(--font-heading);
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--color-accent);
-    margin-bottom: 0.8rem;
-  }
-  .abstract-card p {
-    font-size: 1rem;
-    color: var(--color-text-secondary);
-    line-height: 1.9;
-    word-break: keep-all;
-  }
-
-  .findings {
-    max-width: var(--max-width);
-    margin: 3rem auto 0;
-    padding: 0 2rem;
-  }
-  .findings-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  .finding-card {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border-light);
-    border-radius: 12px;
-    padding: 1.5rem 1.8rem;
-    display: flex;
-    gap: 1.2rem;
-    align-items: flex-start;
-    box-shadow: 0 1px 8px rgba(0,0,0,0.03);
-  }
-  .finding-num {
-    font-family: var(--font-heading);
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: var(--color-accent-light);
-    line-height: 1;
-    flex-shrink: 0;
-    padding-top: 0.15rem;
-  }
-  .finding-text {
-    font-size: 0.95rem;
-    line-height: 1.7;
-    color: var(--color-text);
-    word-break: keep-all;
-  }
-  .finding-text strong { color: var(--color-accent); }
-
-  .article {
-    max-width: var(--max-width);
-    margin: 3.5rem auto 0;
-    padding: 0 2rem 4rem;
-  }
-
-  .section { margin-bottom: 3.5rem; }
-
-  .section-number {
-    font-family: var(--font-heading);
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--color-accent-light);
-    margin-bottom: 0.4rem;
-  }
-
-  h2 {
-    font-family: var(--font-heading);
-    font-size: 1.55rem;
-    font-weight: 800;
-    color: var(--color-text);
-    line-height: 1.35;
-    margin-bottom: 1.8rem;
-    letter-spacing: -0.01em;
-    word-break: keep-all;
-    padding-bottom: 0.8rem;
-    border-bottom: 2px solid var(--color-border-light);
-  }
-
-  h3 {
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--color-accent);
-    margin: 2rem 0 1rem;
-  }
-
-  h4 {
-    font-family: var(--font-heading);
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--color-text);
-    margin: 1.5rem 0 0.8rem;
-  }
-
-  p {
-    margin-bottom: 1.2rem;
-    word-break: keep-all;
-  }
-
-  strong { font-weight: 700; color: var(--color-text); }
-
-  blockquote {
-    background: var(--color-accent-bg);
-    border-left: 3px solid var(--color-highlight);
-    margin: 1.5rem 0;
-    padding: 1.2rem 1.5rem;
-    border-radius: 0 8px 8px 0;
-    font-size: 0.97rem;
-    color: var(--color-scripture);
-    line-height: 1.8;
-    word-break: keep-all;
-  }
-  blockquote p { margin-bottom: 0; }
-  blockquote p + p { margin-top: 0.6rem; }
-
-  .pull-quote {
-    background: linear-gradient(135deg, #3a2a1a, #5c3d24);
-    color: #f0e6d8;
-    border-radius: 14px;
-    padding: 2.2rem 2.5rem;
-    margin: 2.5rem 0;
-    position: relative;
-    text-align: center;
-    font-size: 1.05rem;
-    line-height: 1.8;
-    word-break: keep-all;
-  }
-  .pull-quote::before {
-    content: '\201C';
-    font-size: 4rem;
-    color: var(--color-accent-light);
-    position: absolute;
-    top: 0.3rem;
-    left: 1.2rem;
-    line-height: 1;
-    opacity: 0.4;
-  }
-  .pull-quote p { margin: 0; position: relative; }
-
-  .concept-card {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border-light);
-    border-radius: 12px;
-    padding: 1.5rem 1.8rem;
-    margin: 1.5rem 0;
-    box-shadow: 0 1px 8px rgba(0,0,0,0.03);
-  }
-  .concept-card h4 {
-    margin-top: 0;
-    color: var(--color-accent);
-    font-size: 0.95rem;
-  }
-  .concept-card p {
-    font-size: 0.93rem;
-    color: var(--color-text-secondary);
-    margin-bottom: 0;
-  }
-  .concept-card p + p { margin-top: 0.6rem; }
-
-  .dual-card {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border-light);
-    border-radius: 12px;
-    overflow: hidden;
-    margin: 1.8rem 0;
-    box-shadow: 0 1px 8px rgba(0,0,0,0.03);
-  }
-  .dual-card-left, .dual-card-right { padding: 1.5rem 1.6rem; }
-  .dual-card-left { border-right: 1px solid var(--color-border-light); }
-  .dual-card-label {
-    font-family: var(--font-heading);
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-  }
-  .dual-card-left .dual-card-label { color: var(--color-text-secondary); }
-  .dual-card-right .dual-card-label { color: var(--color-accent); }
-  .dual-card p {
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-    color: var(--color-text-secondary);
-    line-height: 1.7;
-  }
-  .dual-card p:last-child { margin-bottom: 0; }
-
-  .table-wrap {
-    margin: 1.8rem 0;
-    overflow-x: auto;
-    border-radius: 12px;
-    border: 1px solid var(--color-border-light);
-    box-shadow: 0 1px 8px rgba(0,0,0,0.03);
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.9rem;
-    font-family: var(--font-heading);
-    background: var(--color-surface);
-  }
-  thead { background: var(--color-accent-bg); }
-  th {
-    font-weight: 700;
-    color: var(--color-accent);
-    text-align: left;
-    padding: 0.9rem 1.2rem;
-    font-size: 0.8rem;
-    letter-spacing: 0.04em;
-    border-bottom: 2px solid var(--color-border);
-  }
-  td {
-    padding: 0.8rem 1.2rem;
-    border-bottom: 1px solid var(--color-border-light);
-    color: var(--color-text-secondary);
-    line-height: 1.6;
-    vertical-align: top;
-    word-break: keep-all;
-  }
-  tr:last-child td { border-bottom: none; }
-  td strong { color: var(--color-text); }
-
-  .section-divider {
-    max-width: 80px;
-    border: none;
-    border-top: 2px solid var(--color-border);
-    margin: 3rem auto;
-  }
-
-  .conclusion {
-    background: linear-gradient(165deg, #3a2a1a 0%, #5c3d24 50%, #6b4530 100%);
-    color: #f0e6d8;
-    border-radius: 16px;
-    padding: 2.5rem 2.5rem 2rem;
-    margin: 2.5rem 0;
-  }
-  .conclusion h2 {
-    color: #f0e6d8;
-    border-bottom-color: rgba(255,255,255,0.15);
-    font-size: 1.35rem;
-  }
-  .conclusion p { color: #d4c4b0; font-size: 0.97rem; }
-  .conclusion strong { color: #f0e6d8; }
-  .conclusion blockquote {
-    background: rgba(255,255,255,0.08);
-    border-left-color: var(--color-accent-light);
-    color: #e8ddd0;
-  }
-
-  .takeaway {
-    background: var(--color-surface);
-    border: 2px solid var(--color-accent);
-    border-radius: 14px;
-    padding: 2rem 2.2rem;
-    margin: 2.5rem 0;
-    text-align: center;
-  }
-  .takeaway p {
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--color-text);
-    line-height: 1.7;
-    margin-bottom: 0;
-    word-break: keep-all;
-  }
-
-  .ref-section {
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 2px solid var(--color-border-light);
-  }
-  .ref-section h2 {
-    font-size: 1.2rem;
-    border-bottom: none;
-    padding-bottom: 0;
-    margin-bottom: 1.2rem;
-  }
-
-  .footer {
-    text-align: center;
-    padding: 3rem 2rem;
-    color: var(--color-text-secondary);
-    font-family: var(--font-heading);
-    font-size: 0.78rem;
-    border-top: 1px solid var(--color-border-light);
-    max-width: var(--max-width);
-    margin: 0 auto;
-  }
-
-  ul.inline-list {
-    list-style: none;
-    padding: 0;
-    margin: 0.5rem 0 1.2rem;
-  }
-  ul.inline-list li {
-    font-size: 0.9rem;
-    color: var(--color-text-secondary);
-    padding: 0.3rem 0;
-    padding-left: 1.2rem;
-    position: relative;
-    line-height: 1.7;
-    word-break: keep-all;
-  }
-  ul.inline-list li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0.72rem;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: var(--color-accent-light);
-  }
-
-  @media (max-width: 640px) {
-    html { font-size: 15.5px; }
-    .hero { padding: 3.5rem 1.5rem 3rem; }
-    .hero h1 { font-size: 1.8rem; }
-    .hero-subtitle { font-size: 0.97rem; }
-    .article { padding: 0 1.5rem 3rem; }
-    .abstract { padding: 0 1.5rem; }
-    .findings { padding: 0 1.5rem; }
-    .tag-bar { padding: 0 1.5rem; }
-    blockquote { padding: 1rem 1.2rem; }
-    .pull-quote { padding: 1.8rem 1.5rem; }
-    .dual-card { grid-template-columns: 1fr; }
-    .dual-card-left { border-right: none; border-bottom: 1px solid var(--color-border-light); }
-    .conclusion { padding: 2rem 1.5rem; }
-    h2 { font-size: 1.35rem; }
-  }
-</style>
 <meta property="og:type" content="article">
 <meta property="og:title" content="상담자의 두 명령 — 자기 보호와 자기 희생의 역설">
 <meta property="og:description" content="핵심 긴장 상담자는 두 명령 사이에 서 있다. &quot;자신을 보호하라&quot; vs. &quot;내담자를 위해 헌신하라&quot; 이 긴장은 단순한 업무 스트레스가 아니다. 치유자라는 정체성의 핵심을 건드리는 실존적 질문이다. 현대 상담학은 이 긴장을 고유한 학술 언어로 정면 돌파하며, 놀랍게도 성경은 2천 년 전에 이미 이 질문을 하나의 장(章) 안">
@@ -495,22 +12,208 @@
 <meta name="twitter:title" content="상담자의 두 명령 — 자기 보호와 자기 희생의 역설">
 <meta name="twitter:description" content="핵심 긴장 상담자는 두 명령 사이에 서 있다. &quot;자신을 보호하라&quot; vs. &quot;내담자를 위해 헌신하라&quot; 이 긴장은 단순한 업무 스트레스가 아니다. 치유자라는 정체성의 핵심을 건드리는 실존적 질문이다. 현대 상담학은 이 긴장을 고유한 학술 언어로 정면 돌파하며, 놀랍게도 성경은 2천 년 전에 이미 이 질문을 하나의 장(章) 안">
 <link rel="canonical" href="https://wiki.youngdoctor.kr/marktl/s/fn4g42/">
+<meta name="theme-color" content="#ECEAE5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#17181C" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+<style>
+/* 상담자의 두 명령 — 멘토링 시리즈 판형 「후배에게 보내는 답장」 · 잉크 회청 · 은유: 등대지기의 기름 */
+:root{
+  --bg:#ECEAE5;--surface:#F7F6F2;--ink:#22232A;--muted:#5E5F68;--rule:#D2CFC7;--line:#E2DFD7;
+  --accent:#3E5560;--accent-tint:rgba(62,85,96,.08);--accent-tint2:rgba(62,85,96,.16);--on-accent:#F7F6F2;
+  --lamp:#A8701E;--lamp-tint:rgba(222,166,72,.22);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#17181C;--surface:#1F2025;--ink:#E8E6E0;--muted:#A4A5AD;--rule:#34363E;--line:#2A2C33;
+  --accent:#9DB8C4;--accent-tint:rgba(157,184,196,.09);--accent-tint2:rgba(157,184,196,.17);--on-accent:#17181C;
+  --lamp:#E2B35E;--lamp-tint:rgba(226,179,94,.14);
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#17181C;--surface:#1F2025;--ink:#E8E6E0;--muted:#A4A5AD;--rule:#34363E;--line:#2A2C33;
+  --accent:#9DB8C4;--accent-tint:rgba(157,184,196,.09);--accent-tint2:rgba(157,184,196,.17);--on-accent:#17181C;
+  --lamp:#E2B35E;--lamp-tint:rgba(226,179,94,.14);
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Gowun Batang','Times New Roman',serif;font-size:17.5px;line-height:1.9;word-break:keep-all;overflow-wrap:break-word}
+a{color:var(--accent);text-underline-offset:.22em}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+strong{font-weight:700}
+
+.skip{position:absolute;left:16px;top:-60px;z-index:20;background:var(--surface);color:var(--ink);padding:.5rem 1rem;border:1.5px solid var(--accent);border-radius:4px}
+.skip:focus{top:12px}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+
+/* ---------- 틀: 모바일 한 단 · 데스크톱 차례 + 본문 */
+.frame{padding:0 16px;max-width:calc(38em + 32px);margin:0 auto}
+@media (min-width:1080px){
+  .frame{display:grid;grid-template-columns:200px minmax(0,38em);column-gap:64px;justify-content:center;max-width:none;padding:0 24px}
+}
+
+/* ---------- 머리 */
+.hero-art{background:#1C2A3C;overflow:hidden}
+.hero-art svg{display:block;width:100%;height:clamp(220px,40vw,420px)}
+@media (prefers-reduced-motion:no-preference){
+  .hero-art svg{animation:bleed 1.8s cubic-bezier(.2,.6,.2,1) both}
+  @keyframes bleed{from{opacity:0;filter:blur(10px) saturate(.3);clip-path:circle(6% at 50% 26%)}to{opacity:1;filter:none;clip-path:circle(140% at 50% 26%)}}
+}
+.hero-text{grid-column:2;padding:2.2rem 0 1.6rem}
+.series{margin:0 0 .3rem;color:var(--accent);font-weight:700;font-size:.95rem}
+.hero-label{margin:0 0 1rem;color:var(--muted);font-size:.9rem}
+h1{margin:0 0 1rem;font-weight:700;font-size:clamp(1.9rem,4.6vw,2.6rem);line-height:1.3;letter-spacing:-.01em}
+h1 .t2{display:block;margin-top:.4em;font-weight:400;font-size:.6em;line-height:1.45;color:var(--muted)}
+.hero-subtitle{margin:0 0 1.2rem;font-size:1.08rem;line-height:1.85}
+.hero-meta{margin:0;display:flex;flex-wrap:wrap;gap:.1rem 1.6rem;color:var(--muted);font-size:.92rem}
+.hero-meta .ref{color:var(--accent)}
+.by{margin:.3rem 0 0;color:var(--muted);font-size:.92rem}
+
+/* ---------- 차례 */
+.toc{grid-column:1;grid-row:1 / span 2;margin:0 0 1.6rem;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.toc-head{display:none}
+.toc-btn{all:unset;box-sizing:border-box;display:flex;justify-content:space-between;width:100%;padding:.7rem 0;cursor:pointer;color:var(--ink);font-weight:700}
+.toc-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.toc-btn span{color:var(--accent)}
+.toc ol{list-style:none;margin:0;padding:0 0 .8rem;display:none}
+.toc.open ol{display:block}
+.toc a{display:flex;align-items:flex-start;gap:.55rem;padding:.28rem 0;color:var(--muted);text-decoration:none;font-size:.9rem;line-height:1.5}
+.toc a small{flex:none;width:1.4rem;height:1.4rem;margin-top:.02rem;border:1px solid currentColor;border-radius:50%;display:grid;place-items:center;font-size:.72rem;line-height:1}
+.toc a small.key{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.toc a small.blank{border-color:transparent}
+.toc a:hover{color:var(--ink)}
+.toc a[aria-current] {color:var(--ink)}
+.toc a[aria-current] span{text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:.32em}
+@media (min-width:1080px){
+  .toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;margin:0;padding:2.6rem 0 2rem;border:0}
+  .toc-btn{display:none}
+  .toc-head{display:block;margin:0 0 .6rem;color:var(--accent);font-weight:700;font-size:.92rem}
+  .toc ol{display:block}
+}
+
+/* ---------- 본문 */
+.read{grid-column:2;min-width:0;padding-bottom:3rem}
+.read p{margin:0 0 1.15rem}
+.read h3{margin:2.3rem 0 .8rem;font-size:1.2rem;line-height:1.5;color:var(--accent)}
+.read h4{margin:1.7rem 0 .5rem;font-size:1.04rem;line-height:1.55}
+
+.tag-list{display:flex;flex-wrap:wrap;gap:.2rem 1rem;margin:0 0 2rem;padding:.55rem 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.tag{font-size:.86rem;color:var(--muted)}
+
+.abstract-card{margin:0 0 2.2rem}
+.abstract-label{margin:0 0 .35rem;color:var(--accent);font-weight:700;font-size:.92rem}
+.abstract-card p{margin:0;font-size:1.06rem;line-height:1.95}
+
+.findings-grid{display:grid;gap:.4rem 2rem;margin:0 0 1rem}
+@media (min-width:640px){.findings-grid{grid-template-columns:1fr 1fr}}
+.finding-card{display:flex;gap:.8rem;padding:1rem 0 .6rem;border-top:1px solid var(--rule)}
+.finding-num{flex:none;width:1.9rem;height:1.9rem;margin-top:.12rem;border:1.5px solid var(--accent);border-radius:50%;display:grid;place-items:center;color:var(--accent);font-weight:700;font-size:.9rem;line-height:1}
+.finding-text{font-size:.97rem;line-height:1.8}
+
+/* 장 머리 — 잉크로 그린 원 안의 번호 */
+.ch{display:flex;align-items:flex-start;gap:.85rem;margin:3.8rem 0 1.3rem;font-size:1.55rem;line-height:1.38;font-weight:700;scroll-margin-top:1.4rem}
+.ch .no{flex:none;width:2.2rem;height:2.2rem;margin-top:.05rem;border:1.5px solid var(--accent);border-radius:50%;display:grid;place-items:center;color:var(--accent);font-size:1rem;font-weight:700;line-height:1}
+.ch.key .no{background:var(--accent);color:var(--on-accent)}
+.ch .no svg{width:1.15rem;height:1.15rem;color:var(--on-accent)}
+.ch .ht{display:block}
+.ch .hs{display:block;margin-top:.25rem;font-size:.68em;font-weight:400;color:var(--muted)}
+.term{margin:3.6rem 0 1.1rem;padding-top:1.2rem;border-top:1px solid var(--rule);font-size:1.32rem;line-height:1.45;scroll-margin-top:1.4rem}
+.term .hs{display:block;font-size:.8em;font-weight:400;color:var(--muted)}
+
+/* 개념 카드 — 등대지기의 일지 한 칸 */
+.concept-card{margin:1.5rem 0;padding:1rem 1.2rem .3rem;border:1px solid var(--rule);border-radius:4px}
+.concept-card h4{margin:0 0 .45rem;color:var(--accent);display:flex;gap:.55rem;align-items:baseline}
+.concept-card h4::before{content:"";flex:none;width:.5rem;height:.5rem;border-radius:50%;background:var(--lamp);transform:translateY(-.1rem)}
+.concept-card p{margin:0 0 .8rem;font-size:.98rem}
+
+/* 성경 인용 · 끌어온 문장 */
+.read blockquote{margin:1.3rem 0;padding:1rem 1.3rem;background:var(--surface);border-radius:6px}
+.read blockquote p{margin:0;font-size:.98rem;line-height:1.85}
+.pull-quote{margin:2.2rem 0;padding:.15rem 0 .15rem 1.3rem;border-left:3px solid var(--accent)}
+.pull-quote p{margin:0;font-size:1.22rem;line-height:1.72}
+
+.inline-list{list-style:none;margin:1rem 0 1.2rem;padding:0}
+.inline-list li{position:relative;margin:.35rem 0;padding-left:1.3rem}
+.inline-list li::before{content:"";position:absolute;left:.2rem;top:.8em;width:.42rem;height:.42rem;border-radius:50%;background:var(--accent)}
+
+.table-wrap{margin:1.5rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.read table{width:100%;min-width:24em;border-collapse:collapse;font-size:.94rem;line-height:1.65}
+.read th{text-align:left;font-weight:700;padding:.6rem .8rem;background:var(--accent-tint);border-bottom:1.5px solid var(--accent)}
+.read td{padding:.6rem .8rem;border-bottom:1px solid var(--rule);vertical-align:top}
+
+/* 짝 카드 공통 */
+.dual-card{display:grid;gap:1rem;margin:1.7rem 0}
+@media (min-width:640px){.dual-card{grid-template-columns:1fr 1fr}}
+.dual-card-left,.dual-card-right{padding:1rem 1.2rem;background:var(--surface);border-radius:8px}
+.dual-card-label{margin:0 0 .3rem;color:var(--accent);font-weight:700;font-size:.86rem}
+.dual-card p{margin:.15rem 0}
+
+/* 질문 쪽지 — 율법사의 질문(손글씨) / 예수님의 역질문 */
+.qnote{align-items:center}
+.qnote .dual-card-left{padding:.35rem 1.2rem .9rem 2.3rem;border-radius:3px;transform:rotate(-1deg);
+  background-color:var(--surface);
+  background-image:linear-gradient(to right,transparent 1.55rem,var(--accent-tint2) 1.55rem,var(--accent-tint2) calc(1.55rem + 1px),transparent calc(1.55rem + 1px)),
+    repeating-linear-gradient(to bottom,transparent 0,transparent calc(2.2rem - 1px),var(--line) calc(2.2rem - 1px),var(--line) 2.2rem);
+  background-position:0 0,0 .35rem;border:1px solid var(--line)}
+.qnote .dual-card-left .dual-card-label{margin:0;line-height:2.2rem}
+.qnote .dual-card-left p{margin:0;font-family:'Nanum Pen Script',cursive;font-size:1.7rem;line-height:2.2rem;color:var(--accent)}
+.qnote .dual-card-right{border-left:3px solid var(--accent);border-radius:0 8px 8px 0}
+.qnote .dual-card-right p:first-of-type{font-size:1.08rem}
+
+/* 등잔의 짝 — 빛을 내주는 쪽 / 기름을 채우는 쪽 */
+.lamp-pair{position:relative}
+@media (min-width:640px){.lamp-pair{grid-template-columns:1fr 3.4rem 1fr;gap:0 .6rem;align-items:stretch}}
+.pair-lamp{display:grid;place-items:center;color:var(--accent)}
+.pair-lamp svg{width:3.2rem;height:3.2rem}
+.lamp-pair .dual-card-left{background:radial-gradient(130% 120% at 100% 30%,var(--lamp-tint),transparent 65%),var(--surface)}
+.lamp-pair .dual-card-right{box-shadow:inset 0 -.5rem 0 var(--accent-tint2)}
+
+.takeaway{margin:2.6rem 0 2rem;padding:1.5rem 1.6rem;background:var(--accent);color:var(--on-accent);border-radius:8px}
+.takeaway p{margin:0;font-size:1.24rem;line-height:1.7;font-weight:700}
+
+/* 삽화 */
+figure.ill{margin:2.4rem 0}
+figure.ill svg{display:block;width:100%;height:auto}
+figure.ill figcaption{margin-top:.6rem;color:var(--muted);font-size:.86rem;line-height:1.6}
+@media (min-width:1080px){figure.ill{margin-left:-1.5rem;margin-right:-1.5rem}figure.ill figcaption{padding:0 1.5rem}}
+
+/* ---------- 바닥글 */
+.foot{border-top:1px solid var(--rule)}
+.foot .in{grid-column:2;padding:1.4rem 0 2.6rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.4rem 1.6rem;font-size:.9rem;color:var(--muted)}
+.foot .colophon{flex-basis:100%;margin:0 0 .4rem;font-size:.84rem}
+.foot a{color:var(--accent)}
+
+/* 두 명령의 순서 — 기름(비축) 칸과 빛(헌신) 칸 */
+#summary th:first-child{background:var(--accent-tint2)}
+#summary th:last-child{background:var(--lamp-tint)}
+
+</style>
 </head>
 <body>
-
+<a class="skip" href="#main">본문으로 건너뛰기</a>
 <header class="hero">
-  <div class="hero-inner">
-    <div class="hero-label">Research Report &middot; 상담학 &times; 신학</div>
-    <h1>상담자의 두 명령<br>자기 보호와 자기 희생의 역설</h1>
-    <p class="hero-subtitle">현대 상담학이 어렵게 언어화한 치유자의 핵심 긴장을, 성경은 2천 년 전에 이미 하나의 장(章) 안에 배치해 두었다.</p>
-    <div class="hero-meta">
-      <span>2026. 05. 24</span>
-      <span>눅 10 &middot; 롬 15 &middot; 빌 2</span>
-    </div>
-  <p class="hero-author">글쓴이: 이상협 (M.D., M.Div.)</p>
-</div>
+ <div class="hero-art"><svg class="art hero-svg" viewBox="0 0 1440 420" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="해 질 녘 바위 곶 위의 등대. 등실 안에서 등대지기가 등잔에 기름을 붓고, 빛줄기가 먼 바다의 작은 배를 향한다."><defs><filter id="lh-paint" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="3" seed="4"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter><filter id="lh-paint2" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".07" numOctaves="2" seed="9"/><feDisplacementMap in="SourceGraphic" scale="2.5"/></filter><filter id="lh-grain" filterUnits="userSpaceOnUse" x="0" y="0" width="1440" height="420"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="2"/><feColorMatrix values="0 0 0 0 .3 0 0 0 0 .25 0 0 0 0 .2 0 0 0 .1 0"/><feComposite in2="SourceGraphic" operator="in"/></filter><filter id="lh-soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter><filter id="lh-soft2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.2"/></filter><linearGradient id="lh-sky" x1="0" y1="0" x2="0" y2="300" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#152238"/><stop offset="0.3" stop-color="#253E58"/><stop offset="0.55" stop-color="#566480"/><stop offset="0.72" stop-color="#B4827A"/><stop offset="0.87" stop-color="#E4AC80"/><stop offset="1" stop-color="#F4D4A0"/></linearGradient><linearGradient id="lh-sea" x1="0" y1="296" x2="0" y2="420" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#71848C"/><stop offset="0.1" stop-color="#4E6573"/><stop offset="1" stop-color="#1C2E3B"/></linearGradient><radialGradient id="lh-sun" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#FFF2C8"/><stop offset="0.22" stop-color="#F9D99A" stop-opacity="0.85"/><stop offset="1" stop-color="#F0B070" stop-opacity="0"/></radialGradient><radialGradient id="lh-halo" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#FFF0BE" stop-opacity="0.95"/><stop offset="0.3" stop-color="#FFD780" stop-opacity="0.5"/><stop offset="1" stop-color="#FFC060" stop-opacity="0"/></radialGradient><linearGradient id="lh-beamL" x1="742" y1="0" x2="0" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFE9AE" stop-opacity="0.5"/><stop offset="0.6" stop-color="#FFE9AE" stop-opacity="0.12"/><stop offset="1" stop-color="#FFE9AE" stop-opacity="0"/></linearGradient><linearGradient id="lh-beamR" x1="742" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFE9AE" stop-opacity="0.32"/><stop offset="1" stop-color="#FFE9AE" stop-opacity="0"/></linearGradient><linearGradient id="lh-twL" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7F7C7C"/><stop offset="1" stop-color="#ABA59C"/></linearGradient><linearGradient id="lh-twR" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F4EDDE"/><stop offset="0.7" stop-color="#E2D3B8"/><stop offset="1" stop-color="#C9B596"/></linearGradient><linearGradient id="lh-rock" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4C4A52"/><stop offset="1" stop-color="#26252B"/></linearGradient><linearGradient id="lh-lit" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B39274"/><stop offset="1" stop-color="#7E6656"/></linearGradient><radialGradient id="lh-room" cx="0.74" cy="0.5" r="0.75"><stop offset="0" stop-color="#FFF6D4"/><stop offset="0.4" stop-color="#FFDC90"/><stop offset="1" stop-color="#E59A4C"/></radialGradient><linearGradient id="lh-brass" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F2CF7A"/><stop offset="0.5" stop-color="#C8963E"/><stop offset="1" stop-color="#7E5A22"/></linearGradient><clipPath id="lh-glass"><rect x="680" y="66" width="80" height="62"/></clipPath></defs><rect width="1440" height="300" fill="url(#lh-sky)"/><circle cx="341" cy="25" r="1" fill="#F3EBD0" opacity="0.3"/><circle cx="558" cy="18" r="0.9" fill="#F3EBD0" opacity="0.3"/><circle cx="529" cy="33" r="0.6" fill="#F3EBD0" opacity="0.5"/><circle cx="81" cy="36" r="0.7" fill="#F3EBD0" opacity="0.5"/><circle cx="589" cy="21" r="1.5" fill="#F3EBD0" opacity="0.6"/><circle cx="606" cy="13" r="1.1" fill="#F3EBD0" opacity="0.5"/><circle cx="236" cy="11" r="1.1" fill="#F3EBD0" opacity="0.3"/><circle cx="439" cy="24" r="1.1" fill="#F3EBD0" opacity="0.6"/><circle cx="583" cy="110" r="1.2" fill="#F3EBD0" opacity="0.3"/><circle cx="594" cy="87" r="0.8" fill="#F3EBD0" opacity="0.3"/><circle cx="739" cy="14" r="1.1" fill="#F3EBD0" opacity="0.6"/><circle cx="518" cy="93" r="1.1" fill="#F3EBD0" opacity="0.7"/><circle cx="486" cy="80" r="1.4" fill="#F3EBD0" opacity="0.4"/><circle cx="264" cy="107" r="0.8" fill="#F3EBD0" opacity="0.7"/><circle cx="93" cy="79" r="0.9" fill="#F3EBD0" opacity="0.5"/><circle cx="361" cy="99" r="1" fill="#F3EBD0" opacity="0.6"/><circle cx="1185" cy="294" r="230" fill="url(#lh-sun)" opacity=".6"/><circle cx="1185" cy="294" r="25" fill="#FCE8B8"/><g filter="url(#lh-soft)"><ellipse cx="1010" cy="232" rx="270" ry="9" fill="#F0BE92" opacity=".55"/><ellipse cx="1290" cy="252" rx="170" ry="6" fill="#F6CC9C" opacity=".6"/><ellipse cx="320" cy="205" rx="300" ry="11" fill="#9C8A94" opacity=".35"/><ellipse cx="560" cy="150" rx="250" ry="13" fill="#6C6A82" opacity=".3"/><ellipse cx="1180" cy="120" rx="330" ry="15" fill="#3C4660" opacity=".35"/></g><path d="M760 228 C860 222 980 224 1100 230" stroke="#FAD7A8" stroke-width="2" fill="none" opacity=".5"/><path d="M1140 248 C1220 244 1300 245 1400 250" stroke="#FCE0B0" stroke-width="1.6" fill="none" opacity=".55"/><path d="M0 300 V287 C60 281 120 275 190 283 C240 288 300 285 360 291 L430 300Z" fill="#4E5A6E" opacity=".9"/><path d="M1300 300 C1340 292 1390 289 1440 288 V300Z" fill="#6A6070" opacity=".8"/><rect y="296" width="1440" height="124" fill="url(#lh-sea)"/><path d="M0 296.5 H1440" stroke="#F2CFA0" stroke-width="1" opacity=".55"/><rect x="1162" y="299" width="13.4" height="1.2" fill="#F6D6A0" opacity="0.4"/><rect x="1198.6" y="302.8" width="13.2" height="2.2" fill="#F6D6A0" opacity="0.3"/><rect x="1178.5" y="306.6" width="19.3" height="2" fill="#F6D6A0" opacity="0.4"/><rect x="1167.5" y="310.4" width="16" height="2" fill="#F6D6A0" opacity="0.3"/><rect x="1149.4" y="314.2" width="12.9" height="1.8" fill="#F6D6A0" opacity="0.3"/><rect x="1196.4" y="318" width="14.2" height="1.7" fill="#F6D6A0" opacity="0.6"/><rect x="1168.3" y="321.8" width="23.7" height="2.1" fill="#F6D6A0" opacity="0.4"/><rect x="1219.4" y="325.6" width="16.5" height="1.7" fill="#F6D6A0" opacity="0.5"/><rect x="1147.7" y="329.4" width="15.4" height="1.9" fill="#F6D6A0" opacity="0.4"/><rect x="1221.4" y="333.2" width="21.7" height="1.2" fill="#F6D6A0" opacity="0.5"/><rect x="1151.9" y="337" width="12" height="1.5" fill="#F6D6A0" opacity="0.5"/><rect x="1192.4" y="340.8" width="39" height="1.8" fill="#F6D6A0" opacity="0.4"/><rect x="1142.3" y="344.6" width="10.8" height="1.2" fill="#F6D6A0" opacity="0.6"/><rect x="1094.7" y="348.4" width="37.3" height="1.2" fill="#F6D6A0" opacity="0.4"/><rect x="1116.1" y="352.2" width="27.8" height="1.7" fill="#F6D6A0" opacity="0.4"/><rect x="1103" y="356" width="41.5" height="2.1" fill="#F6D6A0" opacity="0.6"/><rect x="1212.9" y="359.8" width="26.7" height="2" fill="#F6D6A0" opacity="0.7"/><rect x="1201.6" y="363.6" width="31.9" height="1.5" fill="#F6D6A0" opacity="0.4"/><rect x="1168.6" y="367.4" width="25.9" height="1.2" fill="#F6D6A0" opacity="0.7"/><rect x="1166.7" y="371.2" width="13.1" height="1.7" fill="#F6D6A0" opacity="0.3"/><rect x="1181.7" y="375" width="34" height="2.1" fill="#F6D6A0" opacity="0.6"/><rect x="1083.9" y="378.8" width="18.5" height="1.5" fill="#F6D6A0" opacity="0.6"/><rect x="1266.4" y="382.6" width="39.5" height="1.6" fill="#F6D6A0" opacity="0.3"/><rect x="1151.8" y="386.4" width="61" height="1.6" fill="#F6D6A0" opacity="0.4"/><rect x="1075" y="390.2" width="50.1" height="1.9" fill="#F6D6A0" opacity="0.5"/><rect x="1213.5" y="394" width="37.9" height="1.2" fill="#F6D6A0" opacity="0.7"/><rect x="1125" y="397.8" width="49.3" height="2.1" fill="#F6D6A0" opacity="0.6"/><rect x="1107.8" y="401.6" width="47.7" height="1.1" fill="#F6D6A0" opacity="0.7"/><rect x="1157.1" y="405.4" width="65.9" height="1.4" fill="#F6D6A0" opacity="0.4"/><rect x="1176.2" y="409.2" width="41" height="1.8" fill="#F6D6A0" opacity="0.6"/><path d="M281 393.9q24.8 -5.5 49.6 0" stroke="#8299A5" stroke-width="1.5" fill="none" opacity=".45"/><path d="M745.4 388.3q17.1 -3.8 34.2 0" stroke="#8299A5" stroke-width="1.4" fill="none" opacity=".45"/><path d="M680 416.8q30.2 -6.7 60.4 0" stroke="#8299A5" stroke-width="1.4" fill="none" opacity=".45"/><path d="M1349.3 413q23.9 -5.3 47.9 0" stroke="#8299A5" stroke-width="1.6" fill="none" opacity=".45"/><path d="M326.7 345.6q11.2 -2.5 22.4 0" stroke="#8299A5" stroke-width="1.1" fill="none" opacity=".45"/><path d="M878.8 359q19.3 -4.3 38.7 0" stroke="#8299A5" stroke-width="1.2" fill="none" opacity=".45"/><path d="M122.1 378.4q22 -4.9 44 0" stroke="#16262F" stroke-width="0.9" fill="none" opacity=".45"/><path d="M287 348.3q14.9 -3.3 29.8 0" stroke="#8299A5" stroke-width="1.1" fill="none" opacity=".45"/><path d="M1362.5 376.5q14 -3.1 27.9 0" stroke="#16262F" stroke-width="1.1" fill="none" opacity=".45"/><path d="M1043.7 349.8q16.8 -3.7 33.6 0" stroke="#8299A5" stroke-width="1.6" fill="none" opacity=".45"/><path d="M670.1 307.1q6.3 -1.4 12.7 0" stroke="#16262F" stroke-width="0.9" fill="none" opacity=".45"/><path d="M946.5 398.2q28.8 -6.4 57.6 0" stroke="#8299A5" stroke-width="0.9" fill="none" opacity=".45"/><path d="M1151.1 366.5q12.2 -2.7 24.4 0" stroke="#16262F" stroke-width="1.3" fill="none" opacity=".45"/><path d="M624.7 364q20.1 -4.5 40.2 0" stroke="#8299A5" stroke-width="1.5" fill="none" opacity=".45"/><path d="M421.9 328.1q8.9 -2 17.9 0" stroke="#8299A5" stroke-width="1.4" fill="none" opacity=".45"/><path d="M1201.2 341.2q12.5 -2.8 24.9 0" stroke="#8299A5" stroke-width="1.5" fill="none" opacity=".45"/><path d="M840 344.3q12.5 -2.8 25 0" stroke="#16262F" stroke-width="1.1" fill="none" opacity=".45"/><path d="M765.8 408.6q24 -5.3 48.1 0" stroke="#16262F" stroke-width="1.2" fill="none" opacity=".45"/><path d="M876.3 403.5q27.1 -6 54.2 0" stroke="#8299A5" stroke-width="0.9" fill="none" opacity=".45"/><path d="M801.3 358q17 -3.8 33.9 0" stroke="#8299A5" stroke-width="1.3" fill="none" opacity=".45"/><path d="M1118.1 364.5q16.1 -3.6 32.3 0" stroke="#16262F" stroke-width="0.8" fill="none" opacity=".45"/><path d="M140.8 325.8q7.9 -1.7 15.7 0" stroke="#8299A5" stroke-width="1.2" fill="none" opacity=".45"/><path d="M638.3 390.6q26.1 -5.8 52.2 0" stroke="#16262F" stroke-width="1.6" fill="none" opacity=".45"/><path d="M399.1 373.1q14.7 -3.3 29.4 0" stroke="#16262F" stroke-width="1.2" fill="none" opacity=".45"/><path d="M1006.9 358.5q18.9 -4.2 37.7 0" stroke="#8299A5" stroke-width="1.5" fill="none" opacity=".45"/><path d="M644.4 405.8q19.1 -4.2 38.2 0" stroke="#8299A5" stroke-width="0.9" fill="none" opacity=".45"/><path d="M346.5 354.4q11.3 -2.5 22.5 0" stroke="#8299A5" stroke-width="1" fill="none" opacity=".45"/><path d="M1118.8 338.5q9.7 -2.2 19.4 0" stroke="#16262F" stroke-width="1.3" fill="none" opacity=".45"/><path d="M197.6 345.7q11.4 -2.5 22.8 0" stroke="#8299A5" stroke-width="1" fill="none" opacity=".45"/><path d="M701.7 412.6q23.1 -5.1 46.2 0" stroke="#16262F" stroke-width="1.5" fill="none" opacity=".45"/><path d="M742.5 322.4q8.7 -1.9 17.4 0" stroke="#8299A5" stroke-width="1.1" fill="none" opacity=".45"/><path d="M527 344.7q10.3 -2.3 20.5 0" stroke="#8299A5" stroke-width="1.2" fill="none" opacity=".45"/><path d="M477.4 354.2q10.8 -2.4 21.7 0" stroke="#16262F" stroke-width="1" fill="none" opacity=".45"/><path d="M1322.7 413.5q18.7 -4.2 37.4 0" stroke="#8299A5" stroke-width="1.6" fill="none" opacity=".45"/><path d="M57 315.9q7.3 -1.6 14.5 0" stroke="#8299A5" stroke-width="1" fill="none" opacity=".45"/><path d="M1312.4 318.8q8.1 -1.8 16.2 0" stroke="#8299A5" stroke-width="1.1" fill="none" opacity=".45"/><path d="M712.2 365.2q16.5 -3.7 33.1 0" stroke="#8299A5" stroke-width="0.9" fill="none" opacity=".45"/><path d="M612.5 310.6q7.1 -1.6 14.3 0" stroke="#8299A5" stroke-width="1" fill="none" opacity=".45"/><path d="M375.2 305.9q5.7 -1.3 11.4 0" stroke="#16262F" stroke-width="1.5" fill="none" opacity=".45"/><path d="M653.4 311.6q7.6 -1.7 15.2 0" stroke="#8299A5" stroke-width="1.6" fill="none" opacity=".45"/><path d="M742 90 L0 22 L0 190 L742 100Z" fill="url(#lh-beamL)"/><path d="M742 92 L1440 58 L1440 138 L742 100Z" fill="url(#lh-beamR)" opacity=".7"/><g transform="translate(300 323)"><path d="M-30 6 h60" stroke="#E6D7B5" stroke-width="1.4" opacity=".35"/><path d="M-22 10 h44" stroke="#E6D7B5" stroke-width="1" opacity=".25"/><path d="M-28 0 L28 0 L20 7 L-22 7Z" fill="#26272C"/><path d="M0 0 V-42" stroke="#26272C" stroke-width="1.6"/><path d="M2 -40 L2 -3 L26 -3Z" fill="#EADBB8"/><path d="M2 -40 L2 -3 L9 -3Z" fill="#C9B894"/><path d="M-2 -35 L-2 -4 L-21 -4Z" fill="#B3A48B"/><circle cx="-9" cy="-6" r="2.6" fill="#26272C"/><path d="M-12 -3 l2 -4 h3 l1 4z" fill="#26272C"/></g><g transform="translate(1010 304) scale(.42)"><path d="M-28 0 L28 0 L20 7 L-22 7Z" fill="#3A3640"/><path d="M0 0 V-42" stroke="#3A3640" stroke-width="2"/><path d="M2 -40 L2 -3 L26 -3Z" fill="#4A4450"/></g><g stroke="#26334A" stroke-width="1.5" fill="none" stroke-linecap="round"><path d="M548 168 q5 -5 10 0 q5 -5 10 0"/><path d="M584 156 q4 -4 8 0 q4 -4 8 0"/><path d="M1068 182 q4 -4 8 0 q4 -4 8 0"/></g><path d="M820 420 L860 362 L930 348 L1000 354 L1060 374 L1120 400 L1150 420Z" fill="#5A5360"/><g filter="url(#lh-paint)"><path d="M462 420 L520 388 L560 366 L600 350 L640 342 L700 338 L760 336 L820 340 L870 352 L920 370 L980 392 L1036 420Z" fill="url(#lh-rock)"/><path d="M760 336 L820 340 L870 352 L902 382 L862 402 L800 382Z" fill="url(#lh-lit)"/><path d="M870 352 L920 370 L980 392 L1036 420 L930 420 L902 382Z" fill="#8A7262"/><path d="M862 402 L902 382 L930 420 L850 420Z" fill="#6A5650"/><path d="M640 342 L700 338 L722 362 L682 374 L620 366Z" fill="#605A5C"/><path d="M560 366 L600 350 L640 342 L620 366 L580 390Z" fill="#46444C"/><path d="M520 388 L580 390 L560 420 L470 420Z" fill="#3A3940"/><path d="M600 351 C640 339 700 334 760 334 C800 335 840 341 870 353 C830 347 790 344 760 344 C720 344 660 346 600 353Z" fill="#5E6A48"/></g><path d="M724.7 409.1l2.4 3.3" stroke="#211F24" stroke-width="1.4" opacity=".5"/><path d="M979.7 412.2l-4.8 4.1" stroke="#211F24" stroke-width="1.5" opacity=".5"/><path d="M828 386.8l-5.9 5.7" stroke="#211F24" stroke-width="1.3" opacity=".5"/><path d="M652.6 402.6l9.9 3.2" stroke="#211F24" stroke-width="0.8" opacity=".5"/><path d="M767.8 412.7l0.3 4.5" stroke="#211F24" stroke-width="1.2" opacity=".5"/><path d="M842.6 393.7l3.1 6.3" stroke="#211F24" stroke-width="1.5" opacity=".5"/><path d="M995.5 373.9l-5.7 4.4" stroke="#211F24" stroke-width="1" opacity=".5"/><path d="M952.1 398.3l-7.2 8.9" stroke="#211F24" stroke-width="1.6" opacity=".5"/><path d="M930.1 356.8l2.5 8.3" stroke="#211F24" stroke-width="1.1" opacity=".5"/><path d="M547.1 394.6l-2.4 6" stroke="#211F24" stroke-width="1.6" opacity=".5"/><path d="M813.4 396.2l-9.1 4.1" stroke="#211F24" stroke-width="1" opacity=".5"/><path d="M521.8 377.1l-3.4 8.9" stroke="#211F24" stroke-width="1.1" opacity=".5"/><path d="M536.9 407.2l-5.6 4.1" stroke="#211F24" stroke-width="1.1" opacity=".5"/><path d="M561.1 372.2l3.1 4.5" stroke="#211F24" stroke-width="1.4" opacity=".5"/><path d="M564.5 403.4l-7.1 6.5" stroke="#211F24" stroke-width="1.1" opacity=".5"/><path d="M666.8 392.5l-8.3 8.7" stroke="#211F24" stroke-width="1.5" opacity=".5"/><path d="M596.1 407.8l5.7 6.6" stroke="#211F24" stroke-width="1.4" opacity=".5"/><path d="M873.1 384.7l-4.3 6.7" stroke="#211F24" stroke-width="0.9" opacity=".5"/><path d="M924.2 397.5l0.3 5.6" stroke="#211F24" stroke-width="1.4" opacity=".5"/><path d="M767.7 408.8l5.1 6.4" stroke="#211F24" stroke-width="1.5" opacity=".5"/><path d="M616 343.2l-1.5 -5M618 343.2l1 -6" stroke="#7E8C5E" stroke-width="1"/><path d="M809.9 349.2l-1.5 -5M811.9 349.2l1 -6" stroke="#7E8C5E" stroke-width="1"/><path d="M849.1 350l-1.5 -5M851.1 350l1 -6" stroke="#7E8C5E" stroke-width="1"/><path d="M633.1 339.9l-1.5 -5M635.1 339.9l1 -6" stroke="#7E8C5E" stroke-width="1"/><path d="M770 349.5l-1.5 -5M772 349.5l1 -6" stroke="#7E8C5E" stroke-width="1"/><path d="M705.4 344.5l-1.5 -5M707.4 344.5l1 -6" stroke="#7E8C5E" stroke-width="1"/><path d="M624.6 339.5l-1.5 -5M626.6 339.5l1 -6" stroke="#7E8C5E" stroke-width="1"/><path d="M743.8 344.4l-1.5 -5M745.8 344.4l1 -6" stroke="#7E8C5E" stroke-width="1"/><path d="M677.4 343.7l-1.5 -5M679.4 343.7l1 -6" stroke="#7E8C5E" stroke-width="1"/><path d="M629.4 345.1l-1.5 -5M631.4 345.1l1 -6" stroke="#7E8C5E" stroke-width="1"/><path d="M834.7 346.2l-1.5 -5M836.7 346.2l1 -6" stroke="#7E8C5E" stroke-width="1"/><path d="M742.4 347.4l-1.5 -5M744.4 347.4l1 -6" stroke="#7E8C5E" stroke-width="1"/><path d="M700 346h-12v4" stroke="#CDBBA2" stroke-width="1.3" fill="none" opacity=".75"/><path d="M682 353h-12v4" stroke="#CDBBA2" stroke-width="1.3" fill="none" opacity=".75"/><path d="M664 360h-12v4" stroke="#CDBBA2" stroke-width="1.3" fill="none" opacity=".75"/><path d="M646 367h-12v4" stroke="#CDBBA2" stroke-width="1.3" fill="none" opacity=".75"/><path d="M628 374h-12v4" stroke="#CDBBA2" stroke-width="1.3" fill="none" opacity=".75"/><path d="M610 381h-12v4" stroke="#CDBBA2" stroke-width="1.3" fill="none" opacity=".75"/><path d="M592 388h-12v4" stroke="#CDBBA2" stroke-width="1.3" fill="none" opacity=".75"/><path d="M574 395h-12v4" stroke="#CDBBA2" stroke-width="1.3" fill="none" opacity=".75"/><path d="M740.1 415.3q6 -3 12 0" stroke="#E6EEF0" stroke-width="2" fill="none" opacity="0.5"/><path d="M901.2 407.2q6 -3 12 0" stroke="#E6EEF0" stroke-width="1.8" fill="none" opacity="0.6"/><path d="M952 405.1q6 -3 12 0" stroke="#E6EEF0" stroke-width="2.1" fill="none" opacity="0.5"/><path d="M496.6 412.9q6 -3 12 0" stroke="#E6EEF0" stroke-width="1.2" fill="none" opacity="0.6"/><path d="M659.1 413.1q6 -3 12 0" stroke="#E6EEF0" stroke-width="1.8" fill="none" opacity="0.6"/><path d="M546.1 410.8q6 -3 12 0" stroke="#E6EEF0" stroke-width="1.6" fill="none" opacity="0.8"/><path d="M526.7 407q6 -3 12 0" stroke="#E6EEF0" stroke-width="1.6" fill="none" opacity="0.7"/><path d="M632.8 410.5q6 -3 12 0" stroke="#E6EEF0" stroke-width="1.9" fill="none" opacity="0.8"/><path d="M783 408.4q6 -3 12 0" stroke="#E6EEF0" stroke-width="1.1" fill="none" opacity="0.6"/><path d="M635.1 405.1q6 -3 12 0" stroke="#E6EEF0" stroke-width="1.6" fill="none" opacity="0.8"/><path d="M1036.6 409.4q6 -3 12 0" stroke="#E6EEF0" stroke-width="2.1" fill="none" opacity="0.8"/><path d="M512.5 405.3q6 -3 12 0" stroke="#E6EEF0" stroke-width="1.9" fill="none" opacity="0.5"/><path d="M674.9 412.4q6 -3 12 0" stroke="#E6EEF0" stroke-width="1.8" fill="none" opacity="0.5"/><path d="M534.2 409.1q6 -3 12 0" stroke="#E6EEF0" stroke-width="1.6" fill="none" opacity="0.8"/><path d="M694.6 406.2q6 -3 12 0" stroke="#E6EEF0" stroke-width="2.1" fill="none" opacity="0.7"/><path d="M701.1 414.2q6 -3 12 0" stroke="#E6EEF0" stroke-width="1.5" fill="none" opacity="0.6"/><path d="M538.9 408.6q6 -3 12 0" stroke="#E6EEF0" stroke-width="1.4" fill="none" opacity="0.5"/><path d="M697 417.2q6 -3 12 0" stroke="#E6EEF0" stroke-width="1.2" fill="none" opacity="0.4"/><g filter="url(#lh-paint)"><path d="M0 420 V372 C30 360 70 362 110 376 C150 388 176 404 192 420Z" fill="#202228"/><path d="M0 372 C30 360 70 362 110 376" stroke="#5E585C" stroke-width="2" fill="none"/><path d="M1286 420 C1318 396 1370 384 1440 386 V420Z" fill="#23252C"/><path d="M1318 400 C1350 390 1390 386 1440 387" stroke="#8E7466" stroke-width="2" fill="none"/></g><g filter="url(#lh-paint2)"><path d="M658 340 L708 340 L712 150 L674 150Z" fill="url(#lh-twL)"/><path d="M708 340 L782 340 L766 150 L712 150Z" fill="url(#lh-twR)"/><path d="M663.4 276 L709.3 276 L709.9 250 L665.6 250Z" fill="#6A3229"/><path d="M709.3 276 L776.6 276 L774.4 250 L709.9 250Z" fill="#A9533F"/><path d="M669.3 206 L710.8 206 L711.3 182 L671.3 182Z" fill="#6A3229"/><path d="M710.8 206 L770.7 206 L768.7 182 L711.3 182Z" fill="#A9533F"/><path d="M760 336 L770 190" stroke="#FFF6E2" stroke-width="3" opacity=".45"/><ellipse cx="698.5" cy="310" rx="14" ry="16" fill="url(#lh-halo)" opacity=".55"/><rect x="694" y="302" width="9" height="16" rx="4.5" fill="#FFD98A" stroke="#3A3530" stroke-width="1.4"/><ellipse cx="740.5" cy="240" rx="14" ry="16" fill="url(#lh-halo)" opacity=".55"/><rect x="736" y="232" width="9" height="16" rx="4.5" fill="#FFD98A" stroke="#3A3530" stroke-width="1.4"/><ellipse cx="702.5" cy="176" rx="14" ry="16" fill="url(#lh-halo)" opacity=".55"/><rect x="698" y="168" width="9" height="16" rx="4.5" fill="#FFD98A" stroke="#3A3530" stroke-width="1.4"/><path d="M712 340 V324 a8 8 0 0 1 16 0 V340Z" fill="#FFD27A" stroke="#3A3028" stroke-width="1.6"/><path d="M712 340 L700 352 L742 354 L728 340Z" fill="#FFD98A" opacity=".35"/></g><circle cx="742" cy="94" r="130" fill="url(#lh-halo)" opacity=".75"/><g clip-path="url(#lh-glass)"><rect x="680" y="66" width="80" height="62" fill="url(#lh-room)"/><circle cx="742" cy="92" r="34" fill="url(#lh-halo)"/><path d="M680 128 V122 H688 V118 H695 V114 H702 V128Z" fill="#5A3F2A"/><path d="M680 122 H688 M688 118 H695 M695 114 H702" stroke="#C99A5A" stroke-width="1"/><path d="M731 128 L753 128 L748 118 L736 118Z" fill="#6E4F22"/><path d="M697 127 L698 109 L704 109 L704 127Z M706 127 L706 109 L712 109 L713 127Z" fill="#1C232C"/><path d="M694 112 C693 100 695 91 699 88 L711 88 C715 91 717 100 716 112 L713 115 L697 115Z" fill="#2B3A4E"/><path d="M705 88 L711 88 C715 91 717 100 716 112 L713 115 L707 115Z" fill="#1F2B3A"/><path d="M712 92 C718 89 722 86 726 82" stroke="#2B3A4E" stroke-width="4.6" stroke-linecap="round" fill="none"/><path d="M698 92 C694 98 694 104 697 109" stroke="#2B3A4E" stroke-width="4.6" stroke-linecap="round" fill="none"/><circle cx="705" cy="81" r="6.2" fill="#3A2A22"/><path d="M698.4 80 a6.6 6.2 0 0 1 13.2 0Z" fill="#1E2833"/><path d="M697.5 80.4 h14.6" stroke="#1E2833" stroke-width="1.6"/><circle cx="727" cy="81.5" r="2.3" fill="#C9926A"/><g transform="translate(729 83) rotate(38)"><rect x="-4" y="-5" width="8" height="9" rx="1.2" fill="#8C6A3A"/><path d="M-4 -3 a4 4 0 0 1 -3 4" stroke="#6E5028" stroke-width="1.2" fill="none"/><path d="M4 -2 L11 1" stroke="#8C6A3A" stroke-width="1.7"/></g><path d="M736.6 90 C737.4 94 737.6 98 737.8 104" stroke="#F2C054" stroke-width="1.3" fill="none"/><ellipse cx="742" cy="112" rx="11" ry="7" fill="url(#lh-brass)"/><ellipse cx="739" cy="109" rx="4" ry="1.8" fill="#FBE3A0" opacity=".8"/><circle cx="737.8" cy="106" r="1.5" fill="#3A2810"/><rect x="738" y="100" width="8" height="6" fill="#A87A34"/><path d="M738 100 C737 95 737 91 739 87 L739 80 L745 80 L745 87 C747 91 747 95 746 100Z" fill="#FFF6D8" opacity=".5" stroke="#F7E3A8" stroke-width=".8"/><path d="M742 84 c-4 5 -4.5 9 0 12 c4.5 -3 4 -7 0 -12z" fill="#FFB43C"/><path d="M742 89 c-2 2.6 -2 4.6 0 6 c2 -1.4 2 -3.4 0 -6z" fill="#FFF3C4"/><path d="M680 66 V128 M720 66 V128 M760 66 V128" stroke="#23272C" stroke-width="2.4"/><path d="M684 120 L700 70 M724 122 L734 90" stroke="#FFFFFF" stroke-width="1.6" opacity=".22"/></g><rect x="680" y="128" width="80" height="18" fill="#353B42"/><rect x="726" y="128" width="34" height="18" fill="#4E555E"/><path d="M676 66 C690 49 750 49 764 66Z" fill="#2C3036"/><path d="M736 53 C750 56 759 60 764 66 H754 C750 61 744 57 736 53Z" fill="#6A707A"/><circle cx="720" cy="46" r="5" fill="#2C3036"/><path d="M720 41 V26" stroke="#2C3036" stroke-width="1.6"/><rect x="664" y="146" width="112" height="8" fill="#23272D"/><path d="M666 134 H774" stroke="#23272D" stroke-width="1.6"/><path d="M667 134 V146" stroke="#23272D" stroke-width="1.2"/><path d="M676 134 V146" stroke="#23272D" stroke-width="1.2"/><path d="M685 134 V146" stroke="#23272D" stroke-width="1.2"/><path d="M694 134 V146" stroke="#23272D" stroke-width="1.2"/><path d="M703 134 V146" stroke="#23272D" stroke-width="1.2"/><path d="M712 134 V146" stroke="#23272D" stroke-width="1.2"/><path d="M721 134 V146" stroke="#23272D" stroke-width="1.2"/><path d="M730 134 V146" stroke="#23272D" stroke-width="1.2"/><path d="M739 134 V146" stroke="#23272D" stroke-width="1.2"/><path d="M748 134 V146" stroke="#23272D" stroke-width="1.2"/><path d="M757 134 V146" stroke="#23272D" stroke-width="1.2"/><path d="M766 134 V146" stroke="#23272D" stroke-width="1.2"/><path d="M775 134 V146" stroke="#23272D" stroke-width="1.2"/><rect width="1440" height="420" filter="url(#lh-grain)" fill="#fff"/></svg></div>
+ <div class="frame">
+  <div class="hero-text">
+   <p class="series">멘토링</p>
+   <p class="hero-label">Research Report &middot; 상담학 &times; 신학</p>
+   <h1><span class="t1">상담자의 두 명령</span><span class="t2">— 자기 보호와 자기 희생의 역설</span></h1>
+   <p class="hero-subtitle">현대 상담학이 어렵게 언어화한 치유자의 핵심 긴장을, 성경은 2천 년 전에 이미 하나의 장(章) 안에 배치해 두었다.</p>
+   <p class="hero-meta"><span>2026. 05. 24</span><span class="ref">눅 10 &middot; 롬 15 &middot; 빌 2</span></p>
+   <p class="by">글쓴이: 이상협 (M.D., M.Div.)</p>
+  </div>
+ </div>
 </header>
-
+<div class="frame">
+<nav class="toc" aria-label="차례">
+ <p class="toc-head">차례</p>
+ <button class="toc-btn" id="tocBtn" aria-expanded="false" aria-controls="tocList">차례 <span aria-hidden="true">+</span></button>
+ <ol id="tocList"><li><a href="#section-01"><small>1</small><span>정신분석학</span></a></li><li><a href="#section-02"><small>2</small><span>위기상담학</span></a></li><li><a href="#section-03"><small>3</small><span>실존주의 상담학</span></a></li><li><a href="#section-04"><small>4</small><span>균형의 성경적 구조</span></a></li><li><a href="#conclusion"><small class="key"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M12 3 c-5 6 -6 11 0 17 c6 -6 5 -11 0 -17z" fill="currentColor"/><path d="M12 10 c-2.2 3 -2.4 5.4 0 7.6 c2.4 -2.2 2.2 -4.6 0 -7.6z" fill="#E9A23B"/></svg></small><span>핵심 역설</span></a></li><li><a href="#summary"><small class="blank"></small><span>두 명령의 순서</span></a></li><li><a href="#keywords"><small class="blank"></small><span>연결 키워드</span></a></li></ol>
+</nav>
+<main id="main" class="read">
 <div class="tag-bar">
   <div class="tag-list">
     <span class="tag">상담학</span>
@@ -549,14 +252,8 @@
     </div>
   </div>
 </div>
-
-<main class="article">
-
-  <hr class="section-divider">
-
-  <section class="section">
-    <div class="section-number">Section 01</div>
-    <h2>정신분석학 — "치료적 희생"</h2>
+<section class="section" id="section-01">
+    <h2 class="ch"><span class="no" aria-hidden="true">1</span><span class="ht">정신분석학<span class="vh"> — </span><span class="hs">"치료적 희생"</span></span></h2>
 
     <h3>현대 상담학의 시선</h3>
     <p>과거의 정신분석은 상담자의 감정적 동요(역전이, countertransference)를 감추어야 할 실수로 보았다. 그러나 현대 정신분석은 방향을 전환한다. 상담자가 <strong>기꺼이 상처받을 위험을 감수하는 과정</strong> 자체가 치료의 핵심이라는 것이다.</p>
@@ -595,12 +292,8 @@
       <p>치유자가 상처를 받는다는 것이 무능의 표시가 아니라 치유의 경로다.</p>
     </div>
   </section>
-
-  <hr class="section-divider">
-
-  <section class="section">
-    <div class="section-number">Section 02</div>
-    <h2>위기상담학 — "결정적 순간의 개입"</h2>
+<section class="section" id="section-02">
+    <h2 class="ch"><span class="no" aria-hidden="true">2</span><span class="ht">위기상담학<span class="vh"> — </span><span class="hs">"결정적 순간의 개입"</span></span></h2>
 
     <h3>현대 상담학의 시선</h3>
 
@@ -651,7 +344,7 @@
     </div>
 
     <h4>율법사의 질문 — 시점의 전환</h4>
-    <div class="dual-card">
+    <div class="dual-card qnote">
       <div class="dual-card-left">
         <div class="dual-card-label">율법사의 질문 (나 중심)</div>
         <p>"내 이웃이 누구입니까?"</p>
@@ -666,12 +359,8 @@
 
     <p>이 시점 전환이 위기상담학의 핵심이다. "어디까지 개입해야 하는가"를 묻는 한, 상담자는 여전히 자기 보호를 우선으로 하고 있다. 예수님은 질문 자체를 뒤집으신다.</p>
   </section>
-
-  <hr class="section-divider">
-
-  <section class="section">
-    <div class="section-number">Section 03</div>
-    <h2>실존주의 상담학 — "진정성 있는 만남"</h2>
+<section class="section" id="section-03">
+    <h2 class="ch"><span class="no" aria-hidden="true">3</span><span class="ht">실존주의 상담학<span class="vh"> — </span><span class="hs">"진정성 있는 만남"</span></span></h2>
 
     <h3>현대 상담학의 시선</h3>
 
@@ -697,21 +386,18 @@
 
     <p>이것이 I-Thou 만남이다. 예수님은 전문가의 탑에 앉아 처방을 내리지 않으셨다.</p>
   </section>
-
-  <hr class="section-divider">
-
-  <section class="section">
-    <div class="section-number">Section 04</div>
-    <h2>균형의 성경적 구조 — 눅 10장의 배치</h2>
+<section class="section" id="section-04">
+    <h2 class="ch"><span class="no" aria-hidden="true">4</span><span class="ht">균형의 성경적 구조<span class="vh"> — </span><span class="hs">눅 10장의 배치</span></span></h2>
 
     <p>현대 상담학이 어렵게 언어화한 "자기 보호와 자기 희생의 역설적 조화"를, 눅 10장은 두 이야기의 <strong>배치</strong>로 이미 말하고 있다.</p>
 
-    <div class="dual-card">
+    <div class="dual-card lamp-pair">
       <div class="dual-card-left">
         <div class="dual-card-label">눅 10:25–37</div>
         <p><strong>사마리아인 이야기</strong></p>
         <p>결정적 순간의 위험 감수, 생명 우선, splankhnon의 개입</p>
       </div>
+      <div class="pair-lamp"><svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><circle cx="32" cy="24" r="16" fill="#FFD27A" opacity=".35"/><path d="M32 13 c-5 6 -5.5 11 0 15 c5.5 -4 5 -9 0 -15z" fill="#E9A23B"/><path d="M32 19 c-2.4 3 -2.4 5.6 0 7.4 c2.4 -1.8 2.4 -4.4 0 -7.4z" fill="#FFF0BE"/><path d="M12 40 C12 34 20 31 32 31 C44 31 52 34 52 40 C52 46 44 50 32 50 C20 50 12 46 12 40Z" fill="currentColor"/><path d="M52 38 C57 37 60 40 58 44" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M24 50 L22 56 H42 L40 50Z" fill="currentColor"/><path d="M28 34 h8" stroke="#F7F6F2" stroke-width="2" stroke-linecap="round" opacity=".7"/></svg></div>
       <div class="dual-card-right">
         <div class="dual-card-label">눅 10:38–42</div>
         <p><strong>마리아·마르다 이야기</strong></p>
@@ -720,6 +406,8 @@
     </div>
 
     <p>예수님은 마리아를 칭찬하신다. 그러나 이것은 섬김을 거부하라는 말이 아니다. <strong>마리아의 자세(듣기, 임재, 비축)가 있어야 마르다의 섬김(행함)이 지속 가능</strong>하다는 것이다.</p>
+    <figure class="ill"><svg class="art" viewBox="0 0 900 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="베다니의 집. 창으로 든 빛 아래 예수의 발치에 마리아가 앉아 듣고, 아치 너머 부엌에서는 마르다가 그릇을 들고 화덕 쪽으로 분주하다."><defs><filter id="bt-paint" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="3" seed="4"/><feDisplacementMap in="SourceGraphic" scale="4"/></filter><filter id="bt-paint2" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".07" numOctaves="2" seed="9"/><feDisplacementMap in="SourceGraphic" scale="2.5"/></filter><filter id="bt-grain" filterUnits="userSpaceOnUse" x="0" y="0" width="900" height="440"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="2"/><feColorMatrix values="0 0 0 0 .3 0 0 0 0 .25 0 0 0 0 .2 0 0 0 .1 0"/><feComposite in2="SourceGraphic" operator="in"/></filter><filter id="bt-soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter><filter id="bt-soft2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.2"/></filter><linearGradient id="bt-wall" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#E6D1AA"/><stop offset="0.55" stop-color="#CDB28A"/><stop offset="1" stop-color="#A88A66"/></linearGradient><linearGradient id="bt-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A9C9DC"/><stop offset="1" stop-color="#EEF3EE"/></linearGradient><linearGradient id="bt-shaft" x1="120" y1="90" x2="420" y2="440" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFF7DE" stop-opacity="0.55"/><stop offset="1" stop-color="#FFF7DE" stop-opacity="0"/></linearGradient><linearGradient id="bt-floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B39066"/><stop offset="1" stop-color="#8E6E4C"/></linearGradient><linearGradient id="bt-kit" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4A3324"/><stop offset="1" stop-color="#6A4630"/></linearGradient><radialGradient id="bt-fire" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#FFC060" stop-opacity="0.85"/><stop offset="0.4" stop-color="#FF9A40" stop-opacity="0.4"/><stop offset="1" stop-color="#FF8030" stop-opacity="0"/></radialGradient><radialGradient id="bt-glow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#FFE7A6" stop-opacity="0.9"/><stop offset="1" stop-color="#FFD070" stop-opacity="0"/></radialGradient><linearGradient id="bt-oven" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#B0805A"/><stop offset="1" stop-color="#7A5236"/></linearGradient><pattern id="bt-plaster" width="190" height="150" patternUnits="userSpaceOnUse"><path d="M12 20 c18 -8 40 -4 46 6 c-10 10 -36 10 -46 -6z" fill="#8E7050" opacity=".07"/><path d="M96 70 c26 -10 60 -6 70 4 c-20 12 -52 10 -70 -4z" fill="#FFFFFF" opacity=".12"/><path d="M30 110 c14 -6 34 -2 38 8 c-14 6 -30 4 -38 -8z" fill="#7A5E40" opacity=".06"/><path d="M140 128 c10 -4 24 0 26 6 c-10 4 -20 2 -26 -6z" fill="#FFFFFF" opacity=".1"/><path d="M74 36 l7 5 M160 22 l-5 6 M110 140 l6 -3" stroke="#7A5E40" stroke-width=".8" opacity=".22"/></pattern><pattern id="bt-rugp" width="14" height="40" patternUnits="userSpaceOnUse"><rect width="14" height="40" fill="#8E3B32"/><rect y="6" width="14" height="4" fill="#D9B66A"/><rect y="16" width="14" height="7" fill="#3E4E6E"/><rect y="29" width="14" height="3" fill="#D9B66A"/></pattern><clipPath id="bt-f"><rect x="0" y="0" width="900" height="440" rx="10"/></clipPath><clipPath id="bt-arch"><path d="M596 440 V196 C596 146 646 116 732 116 C818 116 866 146 866 196 V440Z"/></clipPath></defs><g clip-path="url(#bt-f)"><rect width="900" height="440" fill="url(#bt-wall)"/><rect width="900" height="440" fill="url(#bt-plaster)"/><rect width="900" height="30" fill="#4A3324"/><rect y="30" width="900" height="12" fill="#5E412C"/><path d="M0 42 H900" stroke="#2E2018" stroke-width="2"/><ellipse cx="36" cy="30" rx="15" ry="8" fill="#6E4C32" stroke="#3A281C" stroke-width="1.4"/><ellipse cx="36" cy="30" rx="7" ry="3.5" fill="none" stroke="#3A281C" stroke-width=".8" opacity=".6"/><ellipse cx="128" cy="30" rx="15" ry="8" fill="#6E4C32" stroke="#3A281C" stroke-width="1.4"/><ellipse cx="128" cy="30" rx="7" ry="3.5" fill="none" stroke="#3A281C" stroke-width=".8" opacity=".6"/><ellipse cx="220" cy="30" rx="15" ry="8" fill="#6E4C32" stroke="#3A281C" stroke-width="1.4"/><ellipse cx="220" cy="30" rx="7" ry="3.5" fill="none" stroke="#3A281C" stroke-width=".8" opacity=".6"/><ellipse cx="312" cy="30" rx="15" ry="8" fill="#6E4C32" stroke="#3A281C" stroke-width="1.4"/><ellipse cx="312" cy="30" rx="7" ry="3.5" fill="none" stroke="#3A281C" stroke-width=".8" opacity=".6"/><ellipse cx="404" cy="30" rx="15" ry="8" fill="#6E4C32" stroke="#3A281C" stroke-width="1.4"/><ellipse cx="404" cy="30" rx="7" ry="3.5" fill="none" stroke="#3A281C" stroke-width=".8" opacity=".6"/><ellipse cx="496" cy="30" rx="15" ry="8" fill="#6E4C32" stroke="#3A281C" stroke-width="1.4"/><ellipse cx="496" cy="30" rx="7" ry="3.5" fill="none" stroke="#3A281C" stroke-width=".8" opacity=".6"/><ellipse cx="588" cy="30" rx="15" ry="8" fill="#6E4C32" stroke="#3A281C" stroke-width="1.4"/><ellipse cx="588" cy="30" rx="7" ry="3.5" fill="none" stroke="#3A281C" stroke-width=".8" opacity=".6"/><ellipse cx="680" cy="30" rx="15" ry="8" fill="#6E4C32" stroke="#3A281C" stroke-width="1.4"/><ellipse cx="680" cy="30" rx="7" ry="3.5" fill="none" stroke="#3A281C" stroke-width=".8" opacity=".6"/><ellipse cx="772" cy="30" rx="15" ry="8" fill="#6E4C32" stroke="#3A281C" stroke-width="1.4"/><ellipse cx="772" cy="30" rx="7" ry="3.5" fill="none" stroke="#3A281C" stroke-width=".8" opacity=".6"/><ellipse cx="864" cy="30" rx="15" ry="8" fill="#6E4C32" stroke="#3A281C" stroke-width="1.4"/><ellipse cx="864" cy="30" rx="7" ry="3.5" fill="none" stroke="#3A281C" stroke-width=".8" opacity=".6"/><path d="M70 92 H156 V196 H70Z" fill="url(#bt-sky)"/><path d="M70 150 C90 140 104 150 120 142 C134 136 146 146 156 140 V196 H70Z" fill="#7C8A56" opacity=".8"/><path d="M84 118 c8 -6 18 -4 22 4 M110 106 c6 -4 14 -2 16 4" stroke="#5C6A3A" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M62 86 H164 L156 92 H70Z" fill="#F2E3C4"/><path d="M62 86 L70 92 V196 L62 204Z" fill="#B39470"/><path d="M62 204 H164 L156 196 H70Z" fill="#C9B08A"/><path d="M110 96 L156 96 L520 440 L290 440Z" fill="url(#bt-shaft)" filter="url(#bt-soft)"/><path d="M458 186 V146 a22 22 0 0 1 44 0 V186Z" fill="#8E7050"/><path d="M464 186 V148 a16 16 0 0 1 32 0 V186Z" fill="#6E5238"/><circle cx="480" cy="166" r="22" fill="url(#bt-glow)" opacity=".8"/><path d="M468 184 C468 176 492 176 492 184Z" fill="#A86A40"/><path d="M490 180 l6 -3" stroke="#A86A40" stroke-width="3" stroke-linecap="round"/><path d="M496 177 c-3 -4 -2 -8 0 -11 c2 3 3 7 0 11z" fill="#FFB43C"/><g filter="url(#bt-paint2)"><path d="M28 440 C16 404 22 368 40 356 L36 346 H62 L58 356 C76 368 82 404 70 440Z" fill="#B0764A"/><path d="M52 358 C66 372 70 404 62 440 H70 C82 404 76 368 58 356Z" fill="#8A5634"/><path d="M34 346 H64" stroke="#7A4A2C" stroke-width="3"/></g><path d="M0 334 H900 V440 H0Z" fill="url(#bt-floor)"/><path d="M30 334 L-201 440" stroke="#6E5236" stroke-width="1" opacity=".35"/><path d="M105 334 L-85 440" stroke="#6E5236" stroke-width="1" opacity=".35"/><path d="M180 334 L32 440" stroke="#6E5236" stroke-width="1" opacity=".35"/><path d="M255 334 L148 440" stroke="#6E5236" stroke-width="1" opacity=".35"/><path d="M330 334 L264 440" stroke="#6E5236" stroke-width="1" opacity=".35"/><path d="M405 334 L380 440" stroke="#6E5236" stroke-width="1" opacity=".35"/><path d="M480 334 L496 440" stroke="#6E5236" stroke-width="1" opacity=".35"/><path d="M555 334 L613 440" stroke="#6E5236" stroke-width="1" opacity=".35"/><path d="M630 334 L729 440" stroke="#6E5236" stroke-width="1" opacity=".35"/><path d="M705 334 L845 440" stroke="#6E5236" stroke-width="1" opacity=".35"/><path d="M780 334 L962 440" stroke="#6E5236" stroke-width="1" opacity=".35"/><path d="M855 334 L1078 440" stroke="#6E5236" stroke-width="1" opacity=".35"/><path d="M0 372 H900 M0 408 H900" stroke="#6E5236" stroke-width="1" opacity=".3"/><g filter="url(#bt-paint2)"><path d="M196 364 L520 356 L556 432 L168 440Z" fill="url(#bt-rugp)"/><path d="M196 364 L520 356 L556 432 L168 440Z" fill="#000" opacity=".08"/></g><path d="M168 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M178 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M187 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M197 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M207 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M216 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M226 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M236 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M246 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M255 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M265 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M275 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M284 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M294 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M304 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M314 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M323 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M333 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M343 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M352 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M362 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M372 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M381 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M391 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M401 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M410 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M420 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M430 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M440 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M449 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M459 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M469 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M478 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M488 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M498 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M508 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M517 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M527 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M537 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><path d="M546 440 l-1 4" stroke="#D9B66A" stroke-width="1.4"/><ellipse cx="400" cy="402" rx="140" ry="22" fill="#FFF0C8" opacity=".28"/><g clip-path="url(#bt-arch)"><g filter="url(#bt-paint2)"><rect x="596" y="116" width="270" height="324" fill="url(#bt-kit)"/><circle cx="790" cy="378" r="190" fill="url(#bt-fire)"/><rect x="612" y="214" width="236" height="7" fill="#3A281C"/><path d="M630 214 C624 200 628 186 640 184 C652 186 656 200 650 214Z" fill="#A86A40"/><path d="M660 214 C656 204 658 196 668 194 C678 196 680 204 676 214Z" fill="#C9874A"/><path d="M800 214 C796 196 800 182 812 180 C824 182 828 196 824 214Z" fill="#9A5E3A"/><path d="M690 214 C690 206 712 206 712 214Z" fill="#D9C8A0"/><path d="M650 132 V156" stroke="#3A281C" stroke-width="1.2"/><path d="M642 156 C640 172 646 184 650 186 C654 184 660 172 658 156Z" fill="#7A8A4A"/><path d="M646 160 l-6 14 M654 160 l6 12" stroke="#5E6E36" stroke-width="2"/><path d="M736 440 C736 382 754 354 788 354 C822 354 840 382 840 440Z" fill="url(#bt-oven)"/><ellipse cx="788" cy="362" rx="20" ry="6" fill="#FFB04A"/><ellipse cx="788" cy="362" rx="11" ry="3" fill="#FFF0B8"/><path d="M770 352 C764 330 780 320 772 300 M796 350 C804 330 792 316 802 294" stroke="#EAD8C0" stroke-width="2.2" fill="none" opacity=".35"/><path d="M742 404 H836" stroke="#5E3A24" stroke-width="2" opacity=".5"/><path d="M616 440 C606 410 610 384 624 374 L622 366 H642 L640 374 C654 384 658 410 648 440Z" fill="#9A6440"/><path d="M634 376 C646 388 650 410 644 440 H648 C658 410 654 384 640 374Z" fill="#6E4428"/><path d="M682 302 C694 302 702 310 705 322 C709 344 711 368 715 394 C718 412 722 424 725 433 L660 435 C662 420 664 400 666 380 C668 356 668 330 671 316 C673 307 677 302 682 302Z" fill="#8E3B4A"/><path d="M692 304 C700 308 704 316 706 326 C710 348 712 372 716 396 C719 414 723 425 725 433 L706 434 C704 410 700 380 696 350 C694 330 692 314 692 304Z" fill="#6E2A38"/><path d="M670 352 C684 356 702 356 712 352 L713 362 C700 366 684 366 669 362Z" fill="#D9C08A"/><path d="M700 318 C708 324 714 330 720 336" stroke="#8E3B4A" stroke-width="8" stroke-linecap="round" fill="none"/><path d="M680 320 C690 330 700 336 712 340" stroke="#7A3040" stroke-width="7" stroke-linecap="round" fill="none"/><circle cx="686" cy="289" r="12.5" fill="#A8714E"/><path d="M672 290 C670 274 684 268 694 272 C702 276 702 286 698 292 C700 300 696 306 690 306 C684 300 676 298 672 290Z" fill="#D9C08A"/><path d="M700 334 C700 342 742 342 742 334Z" fill="#B07A4A"/><ellipse cx="721" cy="334" rx="21" ry="5" fill="#8A5A34"/><ellipse cx="721" cy="333" rx="16" ry="3" fill="#EADBB8"/><circle cx="719" cy="339" r="3" fill="#A8714E"/><path d="M704 306 C708 330 712 360 716 396 C719 414 722 425 725 433" stroke="#FFB05A" stroke-width="2" fill="none" opacity=".75"/></g></g><path d="M596 440 V196 C596 146 646 116 732 116 C818 116 866 146 866 196 V440" stroke="#CDB28A" stroke-width="14" fill="none"/><path d="M596 440 V196 C596 146 646 116 732 116 C818 116 866 146 866 196 V440" stroke="#8E7050" stroke-width="1.2" fill="none" opacity=".6"/><path d="M603 168 L589 164" stroke="#8E7050" stroke-width="1.2" opacity=".55"/><path d="M622 138 L612 128" stroke="#8E7050" stroke-width="1.2" opacity=".55"/><path d="M660 120 L656 108" stroke="#8E7050" stroke-width="1.2" opacity=".55"/><path d="M704 116 L703 103" stroke="#8E7050" stroke-width="1.2" opacity=".55"/><path d="M760 116 L761 103" stroke="#8E7050" stroke-width="1.2" opacity=".55"/><path d="M804 120 L808 108" stroke="#8E7050" stroke-width="1.2" opacity=".55"/><path d="M842 138 L852 128" stroke="#8E7050" stroke-width="1.2" opacity=".55"/><path d="M861 168 L875 164" stroke="#8E7050" stroke-width="1.2" opacity=".55"/><path d="M596 250 L589 250" stroke="#8E7050" stroke-width="1.2" opacity=".55"/><path d="M866 250 L875 250" stroke="#8E7050" stroke-width="1.2" opacity=".55"/><path d="M596 330 L589 330" stroke="#8E7050" stroke-width="1.2" opacity=".55"/><path d="M866 330 L875 330" stroke="#8E7050" stroke-width="1.2" opacity=".55"/><ellipse cx="300" cy="382" rx="62" ry="7" fill="#3A2416" opacity=".25" filter="url(#bt-soft2)"/><ellipse cx="398" cy="388" rx="40" ry="6" fill="#3A2416" opacity=".25" filter="url(#bt-soft2)"/><g filter="url(#bt-paint2)"><path d="M252 352 H336 V360 H252Z" fill="#6E4C32"/><path d="M258 360 V380 M330 360 V380" stroke="#5A3E28" stroke-width="5"/><path d="M292 250 C300 250 308 254 310 262 C314 286 312 304 310 318 C324 320 338 322 346 330 C350 344 350 360 350 374 L326 378 C324 364 322 352 318 348 L282 352 C270 346 266 330 266 310 C266 286 270 266 280 256Z" fill="#E8DFCB"/><path d="M330 330 C340 334 346 340 348 350 C350 360 350 368 350 374 L338 376 C338 360 336 346 330 336Z" fill="#CFC3AA"/><path d="M280 256 C268 270 264 300 266 330 C268 346 280 352 300 351 L322 347 C332 343 338 337 340 330 C328 326 314 324 302 326 C296 310 294 286 293 262Z" fill="#7A4434"/><path d="M284 262 C276 280 274 308 278 334" stroke="#5A2E22" stroke-width="2" fill="none" opacity=".6"/><path d="M305 264 C313 276 319 284 327 286 C333 286 339 282 343 278" stroke="#E8DFCB" stroke-width="9" stroke-linecap="round" fill="none"/><ellipse cx="346" cy="276" rx="5" ry="3.2" fill="#A8714E" transform="rotate(-20 346 276)"/><circle cx="295" cy="236" r="14" fill="#A8714E"/><path d="M281 238 C279 222 292 214 303 219 C308 223 306 229 301 231 C297 236 293 242 291 251 C285 249 282 244 281 238Z" fill="#3A2A20"/><path d="M300 244 C307 246 309 252 305 258 C299 260 293 256 293 251Z" fill="#3A2A20"/><ellipse cx="356" cy="377" rx="10" ry="3.4" fill="#5A3A22"/></g><g filter="url(#bt-paint2)"><path d="M392 296 C404 296 414 304 418 318 C422 336 424 354 428 372 C430 380 424 386 414 386 L372 386 C362 386 360 378 366 372 C372 364 382 360 392 358 C388 344 384 326 384 312 C384 302 386 297 392 296Z" fill="#C79B5E"/><path d="M404 300 C412 308 416 320 418 332 C420 348 424 362 428 374 C428 382 424 386 414 386 L404 386 C410 370 410 340 404 300Z" fill="#A87C44"/><path d="M378 286 C378 271 390 263 401 267 C411 271 415 284 415 296 C419 312 425 332 429 358 C421 347 413 331 407 317 C401 306 393 301 385 301 C381 297 378 292 378 286Z" fill="#3E5C76"/><path d="M405 280 C412 300 420 324 427 352" stroke="#2C4458" stroke-width="2" fill="none"/><ellipse cx="384" cy="285" rx="5" ry="7" fill="#C08A62"/><ellipse cx="379" cy="368" rx="7" ry="4" fill="#C08A62"/></g><rect width="900" height="440" filter="url(#bt-grain)" fill="#fff"/></g><rect x=".5" y=".5" width="899" height="439" rx="10" fill="none" stroke="#18232B" stroke-opacity=".18"/></svg><figcaption>베다니의 집(눅 10:38~42). 예수의 발치에 앉아 듣는 마리아, 부엌 쪽에서 그릇을 들고 분주한 마르다.</figcaption></figure>
+
 
     <blockquote>
       <p>"나는 포도나무요 너희는 가지라... 나를 떠나서는 너희가 아무것도 할 수 없음이라" (요 15:5)</p>
@@ -727,13 +415,9 @@
 
     <p>자기 보호(Self-Care)의 성경적 근거는 이기심이 아니라 <strong>연결(Abiding)</strong>이다. 포도나무에 붙어 있어야 열매를 맺는다.</p>
   </section>
-
-  <hr class="section-divider">
-
-  <section class="section">
+<section class="section" id="conclusion">
     <div class="conclusion">
-      <div class="section-number">Conclusion</div>
-      <h2>핵심 역설 — 교과서의 결론, 성경의 결론</h2>
+      <h2 class="ch key"><span class="no" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M12 3 c-5 6 -6 11 0 17 c6 -6 5 -11 0 -17z" fill="currentColor"/><path d="M12 10 c-2.2 3 -2.4 5.4 0 7.6 c2.4 -2.2 2.2 -4.6 0 -7.6z" fill="#E9A23B"/></svg></span><span class="ht">핵심 역설<span class="vh"> — </span><span class="hs">교과서의 결론, 성경의 결론</span></span></h2>
 
       <p>현대 상담학은 말한다:</p>
       <blockquote>
@@ -761,12 +445,8 @@
   </div>
 
   <p>제사장·레위인의 실패는 자기 보호 자체가 아니라, <strong>자기 보호를 목적으로 삼은 것</strong>이다. 그들은 비축하기 위해 피한 것이 아니라, 피하기 위해 피했다. 사마리아인의 탁월함은 자신을 소진시킨 것이 아니라, <strong>splankhnon이 위험 계산보다 앞섰던 것</strong>이다.</p>
-
-  <hr class="section-divider">
-
-  <section class="section">
-    <div class="section-number">Summary</div>
-    <h2>두 명령의 순서</h2>
+<section class="section" id="summary">
+    <h2 class="term"><span class="ht">두 명령의 순서</span></h2>
 
     <div class="table-wrap">
       <table>
@@ -783,8 +463,8 @@
     </div>
   </section>
 
-  <section class="ref-section">
-    <h2>연결 키워드 — 현대 상담학과 성경</h2>
+  <section class="ref-section" id="keywords">
+    <h2 class="term"><span class="ht">연결 키워드<span class="vh"> — </span><span class="hs">현대 상담학과 성경</span></span></h2>
     <div class="table-wrap">
       <table>
         <thead>
@@ -802,12 +482,17 @@
       </table>
     </div>
   </section>
-
 </main>
-
-<footer class="footer">
-  <p>상담학 &times; 신학 &middot; 눅 10 &middot; 롬 15 &middot; 빌 2 &middot; 2026</p>
-</footer>
-
+</div>
+<footer class="foot"><div class="frame"><div class="in"><p class="colophon">상담학 &times; 신학 &middot; 눅 10 &middot; 롬 15 &middot; 빌 2 &middot; 2026</p><a href="https://wiki.youngdoctor.kr/marktl/">영닥터 아카이브로 돌아가기</a><span>youngdoctor.kr · 2026-10-30</span></div></div></footer>
+<script>
+(()=>{const b=document.getElementById('tocBtn'),l=document.getElementById('tocList'),nav=b.closest('.toc');
+b.addEventListener('click',()=>{const o=nav.classList.toggle('open');b.setAttribute('aria-expanded',String(o));b.querySelector('span').textContent=o?'−':'+'});
+l.addEventListener('click',e=>{if(e.target.closest('a')&&matchMedia('(max-width:1079px)').matches){nav.classList.remove('open');b.setAttribute('aria-expanded','false');b.querySelector('span').textContent='+'}});
+const links=[...l.querySelectorAll('a')],map=new Map(links.map(a=>[a.getAttribute('href').slice(1),a]));
+const hs=[...map.keys()].map(id=>document.getElementById(id)).filter(Boolean);
+if('IntersectionObserver'in window){const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.removeAttribute('aria-current'));const a=map.get(e.target.id);if(a)a.setAttribute('aria-current','location')}})},{rootMargin:'0px 0px -75% 0px'});hs.forEach(h=>io.observe(h))}
+})();
+</script>
 </body>
 </html>
