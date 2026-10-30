@@ -1,236 +1,9 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>가장 친밀한 관계, 부부의 성 — 사전 읽기 자료</title>
-<style>
-  :root {
-    --clr-bg: #FDFBF7;
-    --clr-surface: #FFFFFF;
-    --clr-surface-alt: #F6F2EB;
-    --clr-border: #E4DDD2;
-    --clr-border-light: #EDE8E0;
-    --clr-text: #2C2824;
-    --clr-text-secondary: #6B6157;
-    --clr-text-muted: #9B9187;
-    --clr-accent: #7B6B4A;
-    --clr-accent-light: #A89878;
-    --clr-accent-bg: #F0EBE0;
-    --clr-highlight: #E8DCC8;
-    --clr-scripture: #5C7A5A;
-    --clr-scripture-bg: #F0F5EF;
-    --clr-scripture-border: #C4D5C2;
-    --clr-table-header: #F5F0E6;
-    --radius: 10px;
-    --shadow-sm: 0 1px 3px rgba(44,40,36,.06);
-    --shadow-md: 0 4px 16px rgba(44,40,36,.08);
-    --font-body: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Noto Sans KR', sans-serif;
-    --font-serif: 'Noto Serif KR', Georgia, 'Times New Roman', serif;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; font-size: 16px; }
-
-  body {
-    font-family: var(--font-body);
-    background: var(--clr-bg);
-    color: var(--clr-text);
-    line-height: 1.85;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ── NAV ── */
-  nav.toc {
-    position: fixed; top: 0; left: 0;
-    width: 260px; height: 100vh; overflow-y: auto;
-    background: var(--clr-surface);
-    border-right: 1px solid var(--clr-border-light);
-    padding: 2rem 1.25rem 2rem 1.5rem;
-    z-index: 100;
-    scrollbar-width: thin; scrollbar-color: var(--clr-border) transparent;
-  }
-  nav.toc::-webkit-scrollbar { width: 4px; }
-  nav.toc::-webkit-scrollbar-thumb { background: var(--clr-border); border-radius: 2px; }
-  nav.toc .nav-label {
-    font-size: .7rem; font-weight: 700; letter-spacing: .12em;
-    text-transform: uppercase; color: var(--clr-text-muted); margin-bottom: .75rem;
-  }
-  nav.toc ul { list-style: none; }
-  nav.toc li { margin-bottom: .15rem; }
-  nav.toc a {
-    display: block; padding: .35rem .6rem; font-size: .82rem;
-    color: var(--clr-text-secondary); text-decoration: none;
-    border-radius: 6px; line-height: 1.45; transition: background .15s, color .15s;
-  }
-  nav.toc a:hover { background: var(--clr-accent-bg); color: var(--clr-accent); }
-  nav.toc li.depth-2 a { padding-left: 1.4rem; font-size: .78rem; color: var(--clr-text-muted); }
-  .nav-meta {
-    margin-top: 1.5rem; padding-top: 1rem;
-    border-top: 1px solid var(--clr-border-light);
-    font-size: .72rem; color: var(--clr-text-muted); line-height: 1.7;
-  }
-  .nav-meta strong { color: var(--clr-text-secondary); font-weight: 600; }
-
-  /* ── MAIN ── */
-  main { margin-left: 260px; max-width: 760px; padding: 3rem 2.5rem 6rem; }
-
-  /* ── HERO ── */
-  .hero { margin-bottom: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--clr-border-light); }
-  .hero h1 {
-    font-family: var(--font-serif); font-size: 2rem; font-weight: 700;
-    line-height: 1.35; color: var(--clr-text); margin-bottom: .75rem;
-    letter-spacing: -.02em; word-break: keep-all;
-  }
-  .hero .subtitle {
-    font-size: 1.05rem; color: var(--clr-text-secondary); line-height: 1.7; margin-bottom: 1.25rem;
-  }
-  .hero .meta-chips { display: flex; flex-wrap: wrap; gap: .5rem; }
-  .chip {
-    display: inline-block; padding: .25rem .7rem; font-size: .72rem; font-weight: 500;
-    background: var(--clr-accent-bg); color: var(--clr-accent); border-radius: 20px;
-  }
-
-  /* ── HEADINGS ── */
-  h2 {
-    font-family: var(--font-serif); font-size: 1.45rem; font-weight: 700;
-    color: var(--clr-text); margin: 3rem 0 1rem; padding-bottom: .5rem;
-    border-bottom: 2px solid var(--clr-accent-bg); word-break: keep-all;
-  }
-  h3 { font-size: 1.12rem; font-weight: 700; color: var(--clr-accent); margin: 2rem 0 .6rem; word-break: keep-all; }
-
-  /* ── BODY TEXT ── */
-  p { margin-bottom: 1rem; word-break: keep-all; }
-  strong { font-weight: 700; color: var(--clr-text); }
-
-  /* ── SCRIPTURE BLOCKQUOTES ── */
-  blockquote {
-    margin: 1.25rem 0; padding: 1rem 1.25rem;
-    background: var(--clr-scripture-bg); border-left: 4px solid var(--clr-scripture-border);
-    border-radius: 0 var(--radius) var(--radius) 0;
-    color: var(--clr-scripture); font-family: var(--font-serif); font-size: .95rem; line-height: 1.8;
-  }
-  blockquote p { margin-bottom: .5rem; }
-  blockquote p:last-child { margin-bottom: 0; }
-
-  /* ── CALLOUT ── */
-  .callout {
-    margin: 1.25rem 0; padding: 1.15rem 1.3rem;
-    background: var(--clr-accent-bg); border-left: 4px solid var(--clr-accent-light);
-    border-radius: 0 var(--radius) var(--radius) 0;
-    font-size: .93rem; color: var(--clr-text); line-height: 1.75;
-  }
-  .callout strong { color: var(--clr-accent); }
-
-  /* ── INSIGHT CARD ── */
-  .insight-card {
-    margin: 2rem 0; padding: 1.75rem 1.5rem;
-    background: linear-gradient(135deg, #F7F3EB 0%, #FFFDF8 100%);
-    border: 1px solid var(--clr-border); border-radius: var(--radius); box-shadow: var(--shadow-md);
-  }
-  .insight-card .label {
-    font-size: .7rem; font-weight: 700; letter-spacing: .1em;
-    text-transform: uppercase; color: var(--clr-accent); margin-bottom: .6rem;
-  }
-
-  /* ── TABLE ── */
-  .table-wrap {
-    margin: 1.5rem 0; overflow-x: auto; border-radius: var(--radius);
-    border: 1px solid var(--clr-border); box-shadow: var(--shadow-sm);
-  }
-  table { width: 100%; border-collapse: collapse; font-size: .9rem; }
-  thead th {
-    background: var(--clr-table-header); font-weight: 700; text-align: left;
-    padding: .75rem 1rem; border-bottom: 2px solid var(--clr-border);
-    color: var(--clr-accent); font-size: .82rem;
-  }
-  tbody td { padding: .7rem 1rem; border-bottom: 1px solid var(--clr-border-light); vertical-align: top; }
-  tbody tr:last-child td { border-bottom: none; }
-  tbody tr:hover { background: var(--clr-surface-alt); }
-
-  /* ── BENEFITS GRID ── */
-  .benefits-grid { display: grid; grid-template-columns: 1fr; gap: .75rem; margin: 1.25rem 0; }
-  .benefit-item {
-    padding: .85rem 1rem; background: var(--clr-surface);
-    border: 1px solid var(--clr-border-light); border-radius: 8px; font-size: .9rem; line-height: 1.65;
-  }
-  .benefit-item .benefit-label { font-weight: 700; color: var(--clr-accent); margin-right: .25rem; }
-
-  /* ── MYTH CARDS ── */
-  .myth-card {
-    margin: 1rem 0; padding: 1.15rem 1.3rem; background: var(--clr-surface);
-    border: 1px solid var(--clr-border); border-radius: var(--radius); box-shadow: var(--shadow-sm);
-  }
-  .myth-card .myth-title { font-weight: 700; color: var(--clr-text); margin-bottom: .4rem; font-size: .95rem; }
-  .myth-card .myth-body { color: var(--clr-text-secondary); font-size: .9rem; line-height: 1.7; }
-
-  /* ── CTA ── */
-  .cta-section {
-    margin: 2rem 0; padding: 1.5rem; background: var(--clr-surface);
-    border: 1px solid var(--clr-border); border-radius: var(--radius); box-shadow: var(--shadow-md);
-  }
-  .cta-section h3 { margin-top: 0; }
-  .discussion-q {
-    margin: .75rem 0; padding: .75rem 1rem; background: var(--clr-surface-alt);
-    border-radius: 8px; font-size: .93rem; line-height: 1.7;
-  }
-
-  /* ── SURVEY ── */
-  .survey-section {
-    margin: 2rem 0; padding: 1.5rem;
-    background: linear-gradient(135deg, var(--clr-scripture-bg) 0%, #F8FAF7 100%);
-    border: 1px solid var(--clr-scripture-border); border-radius: var(--radius); text-align: center;
-  }
-  .survey-section a {
-    display: inline-block; padding: .65rem 1.6rem; background: var(--clr-scripture);
-    color: #fff; text-decoration: none; border-radius: 8px;
-    font-weight: 600; font-size: .9rem; margin: .75rem 0; transition: opacity .15s;
-  }
-  .survey-section a:hover { opacity: .85; }
-  .survey-section .qr-url { font-size: .78rem; color: var(--clr-text-muted); word-break: break-all; margin-top: .25rem; }
-  .survey-section img {
-    display: block; margin: 1rem auto 0; max-width: 180px; border-radius: 8px;
-    border: 1px solid var(--clr-border-light);
-  }
-
-  /* ── CLOSING ── */
-  .closing {
-    margin-top: 3rem; padding: 1.5rem; background: var(--clr-accent-bg);
-    border-radius: var(--radius); text-align: center; font-size: 1rem; line-height: 1.8;
-  }
-  .closing .contact { font-size: .82rem; color: var(--clr-text-muted); margin-top: .5rem; }
-
-  hr { border: none; border-top: 1px solid var(--clr-border-light); margin: 2.5rem 0; }
-  .back-top {
-    display: inline-block; margin-top: 2rem; font-size: .78rem;
-    color: var(--clr-text-muted); text-decoration: none;
-  }
-  .back-top:hover { color: var(--clr-accent); }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 900px) {
-    nav.toc {
-      position: static; width: 100%; height: auto;
-      border-right: none; border-bottom: 1px solid var(--clr-border-light); padding: 1.25rem 1.5rem;
-    }
-    nav.toc ul { columns: 2; column-gap: 1rem; }
-    .nav-meta { display: flex; flex-wrap: wrap; gap: .25rem .75rem; }
-    main { margin-left: 0; padding: 2rem 1.25rem 4rem; max-width: 100%; }
-    .hero h1 { font-size: 1.6rem; }
-    h2 { font-size: 1.25rem; }
-  }
-  @media (max-width: 520px) {
-    nav.toc ul { columns: 1; }
-    .hero h1 { font-size: 1.4rem; }
-    h2 { font-size: 1.15rem; margin-top: 2.25rem; }
-    blockquote, .callout, .insight-card, .cta-section, .survey-section, .myth-card { padding: 1rem; }
-  }
-  @media print {
-    nav.toc { display: none; }
-    main { margin-left: 0; max-width: 100%; padding: 1rem; }
-    body { font-size: 11pt; line-height: 1.6; }
-  }
-</style>
 <meta property="og:type" content="article">
 <meta property="og:title" content="가장 친밀한 관계, 부부의 성 — 사전 읽기 자료">
 <meta property="og:description" content="강의 전, 부부가 함께 읽어오세요. 본강의 시작 전 이 자료를 미리 읽으시면 훨씬 풍성한 나눔이 가능합니다. 대상: 에젤가정사역공동체 신혼부부 · 읽는 시간 약 1518분 들어가며 솔직히 말씀드리면, 우리 대부분은 결혼 전까지 성(性)에 대해 제대로 배운 적이 없습니다. 학교에서도, 교회에서도, 부모님께도요. 그래서 많은">
@@ -241,11 +14,312 @@
 <meta name="twitter:description" content="강의 전, 부부가 함께 읽어오세요. 본강의 시작 전 이 자료를 미리 읽으시면 훨씬 풍성한 나눔이 가능합니다. 대상: 에젤가정사역공동체 신혼부부 · 읽는 시간 약 1518분 들어가며 솔직히 말씀드리면, 우리 대부분은 결혼 전까지 성(性)에 대해 제대로 배운 적이 없습니다. 학교에서도, 교회에서도, 부모님께도요. 그래서 많은">
 <meta name="twitter:image" content="https://wiki.youngdoctor.kr/marktl/s/zpdfn5/assets/신혼부부성강의-사전설문-qr코드.png">
 <link rel="canonical" href="https://wiki.youngdoctor.kr/marktl/s/zpdfn5/">
+<meta name="theme-color" content="#E8E7E1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#18161B" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Yeon+Sung&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+/* 가장 친밀한 관계, 부부의 성 — 「담장 안 정원」
+   친밀함은 보호받는 자리에서 자란다. 아치 문으로 들어가(머리) 디딤돌 길을 따라 걷고(차례·구분선)
+   아치 모양 출구로 나온다(맺음). 석류=주 강조, 올리브=정원·말씀, 라일락=저녁·물. */
+
+:root {
+  --bg: #E8E7E1; --surface: #F5F4F0; --ink: #26222A; --muted: #5E5962; --rule: #CDC8C1;
+  --pome: #9A3540; --olive: #56683A; --lilac: #6E6187;
+  --pome-wash: #F0E2E0; --olive-wash: #E3E6D9; --lilac-wash: #E9E6EF;
+  --gut: clamp(1rem, 4vw, 2.5rem);
+  --display: 'Yeon Sung', 'Nanum Myeongjo', serif;
+  --serif: 'Nanum Myeongjo', 'Noto Serif KR', 'AppleMyungjo', serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #18161B; --surface: #211E25; --ink: #ECE7E3; --muted: #A9A2AB; --rule: #38333D;
+    --pome: #E48A92; --olive: #A9BE84; --lilac: #B7A9D6;
+    --pome-wash: #2C1E24; --olive-wash: #21261D; --lilac-wash: #25212E;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #18161B; --surface: #211E25; --ink: #ECE7E3; --muted: #A9A2AB; --rule: #38333D;
+  --pome: #E48A92; --olive: #A9BE84; --lilac: #B7A9D6;
+  --pome-wash: #2C1E24; --olive-wash: #21261D; --lilac-wash: #25212E;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--serif); font-size: 1.0625rem; line-height: 1.9;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+::selection { background: var(--pome-wash); color: var(--ink); }
+:focus-visible { outline: 2px solid var(--pome); outline-offset: 3px; border-radius: 3px; }
+a { color: var(--pome); text-underline-offset: .2em; }
+
+.skip {
+  position: absolute; left: 1rem; top: -4rem; z-index: 50;
+  background: var(--ink); color: var(--bg); padding: .55rem 1rem; border-radius: 4px; text-decoration: none;
+}
+.skip:focus { top: 1rem; }
+
+/* ── 머리: 아치 문 너머 정원 ───────────────────────── */
+.hero {
+  max-width: 1200px; margin: 0 auto;
+  padding: clamp(1.75rem, 5vw, 4.5rem) var(--gut) clamp(2.25rem, 5vw, 4rem);
+  display: grid; gap: 2.25rem; align-items: center;
+}
+@media (min-width: 880px) {
+  .hero { grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); gap: clamp(2.5rem, 6vw, 6rem); }
+}
+.hero-art { width: 100%; max-width: 30rem; justify-self: center; }
+.hero-art svg { display: block; width: 100%; height: auto; }
+.hero h1 {
+  font-family: var(--display); font-weight: 400; margin: 0 0 1.4rem;
+  font-size: clamp(2.7rem, 6.2vw, 4.75rem); line-height: 1.14; letter-spacing: -.01em; word-break: keep-all;
+}
+.hero h1 span { display: block; }
+.hero h1 .l3 { font-size: .4em; line-height: 1.4; color: var(--muted); margin-top: 1rem; letter-spacing: 0; }
+.hero .subtitle { margin: 0 0 1.7rem; max-width: 27em; font-size: 1.08rem; line-height: 1.85; color: var(--muted); word-break: keep-all; }
+.meta-chips { display: flex; flex-wrap: wrap; gap: .45rem 1.3rem; margin: 0 0 1.3rem; }
+.chip { display: inline-flex; align-items: center; gap: .5rem; font-size: .93rem; line-height: 1.5; }
+.chip::before {
+  content: ""; flex: none; width: .66rem; height: .66rem; border-radius: 0 72% 0 72%;
+  background: var(--olive); transform: rotate(-10deg);
+}
+.hero-author { margin: 0; padding-top: 1rem; max-width: 27em; border-top: 1px solid var(--rule); font-size: .9rem; color: var(--muted); }
+@media (prefers-reduced-motion: no-preference) {
+  .hero-dusk { animation: hero-dusk 3.6s cubic-bezier(.22, .6, .2, 1) .25s both; }
+  @keyframes hero-dusk { from { opacity: .35; transform: translateY(-22px); } to { opacity: 1; transform: none; } }
+}
+
+/* ── 틀: 차례(왼쪽) + 본문 ───────────────────────── */
+.layout { max-width: 1200px; margin: 0 auto; padding: 0 var(--gut) 3rem; display: grid; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 1080px) {
+  .layout { grid-template-columns: 14.5rem minmax(0, 38em); column-gap: clamp(3rem, 6vw, 6rem); justify-content: center; }
+}
+main { min-width: 0; word-break: keep-all; overflow-wrap: break-word; }
+
+/* ── 차례: 디딤돌 정원 길 ───────────────────────── */
+nav.toc { font-size: .95rem; line-height: 1.45; }
+.toc-bar { position: relative; display: flex; align-items: center; }
+.nav-label { font-family: var(--display); font-size: 1.45rem; line-height: 1.3; margin: 0 0 .8rem; }
+.toc-btn { display: none; }
+nav.toc ul { list-style: none; margin: 0; padding: 0 0 0 1.55rem; position: relative; }
+nav.toc ul::before { content: ""; position: absolute; left: .5rem; top: .95rem; bottom: .95rem; border-left: 2px dotted var(--rule); }
+nav.toc li { position: relative; margin: 0; }
+nav.toc li::before {
+  content: ""; position: absolute; left: -1.5rem; top: .78rem; width: .9rem; height: .58rem; border-radius: 50%;
+  background: var(--bg); border: 1.5px solid var(--muted); transition: background .2s, border-color .2s;
+}
+nav.toc li.depth-2 { padding-left: .85rem; }
+nav.toc li.depth-2::before { left: -1.33rem; top: .86rem; width: .56rem; height: .4rem; border-color: var(--rule); }
+nav.toc a { display: block; padding: .4rem .2rem; color: var(--muted); text-decoration: none; word-break: keep-all; }
+nav.toc li.depth-2 a { font-size: .9rem; padding: .28rem .2rem; }
+nav.toc a:hover { color: var(--ink); }
+nav.toc li.on > a { color: var(--ink); font-weight: 700; }
+nav.toc li.on::before { background: var(--pome); border-color: var(--pome); }
+.nav-meta {
+  margin-top: 1.6rem; padding: .95rem 1.05rem; background: var(--surface);
+  border-radius: 3px 16px 3px 16px; font-size: .84rem; line-height: 1.75; color: var(--muted);
+}
+.nav-meta strong { color: var(--ink); font-weight: 800; margin-right: .3rem; }
+@media (min-width: 1080px) {
+  nav.toc { position: sticky; top: 2rem; align-self: start; max-height: calc(100vh - 4rem); overflow-y: auto; padding: .2rem .4rem 1rem 0; scrollbar-width: thin; }
+}
+@media (max-width: 1079px) {
+  nav.toc {
+    position: sticky; top: 0; z-index: 20; background: var(--bg);
+    margin: 0 calc(var(--gut) * -1) 2.25rem; padding: .6rem var(--gut);
+    border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+  }
+  .nav-label { margin: 0; font-size: 1.25rem; }
+  .toc-btn {
+    display: block; position: absolute; inset: -.6rem calc(var(--gut) * -1); width: auto;
+    background: transparent; border: 0; padding: 0; color: var(--ink); cursor: pointer;
+  }
+  .toc-btn svg {
+    position: absolute; right: var(--gut); top: 50%; width: 1.4rem; height: 1.4rem; margin-top: -.7rem;
+    fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform .2s;
+  }
+  nav.toc.open .toc-btn svg { transform: rotate(180deg); }
+  nav.toc.open { box-shadow: 0 14px 22px -14px rgba(20, 16, 24, .35); }
+  .toc-btn:focus-visible { outline-offset: -3px; }
+  .toc-body { max-height: 72vh; overflow-y: auto; padding: .9rem 0 .4rem; }
+  .js nav.toc:not(.open) .toc-body { display: none; }
+  main [id] { scroll-margin-top: 4.5rem; }
+}
+@media (min-width: 1080px) { main [id] { scroll-margin-top: 1.5rem; } }
+
+/* ── 본문 ───────────────────────── */
+main section { margin: 0; }
+main p { margin: 0 0 1.15em; word-break: keep-all; overflow-wrap: break-word; }
+main strong { font-weight: 800; }
+main em { font-style: italic; }
+
+main hr {
+  border: 0; width: 6.2rem; height: .9rem; margin: 3.4rem auto;
+  background:
+    radial-gradient(closest-side, var(--rule) 92%, transparent) 0 50% / 1.45rem .72rem no-repeat,
+    radial-gradient(closest-side, var(--olive) 92%, transparent) 50% 50% / 1.8rem .9rem no-repeat,
+    radial-gradient(closest-side, var(--rule) 92%, transparent) 100% 50% / 1.45rem .72rem no-repeat;
+}
+
+main h2 {
+  font-family: var(--display); font-weight: 400; font-size: clamp(1.8rem, 3.6vw, 2.35rem); line-height: 1.3;
+  margin: 0 0 1.4rem; display: flex; flex-wrap: wrap; align-items: center; gap: .55rem .85rem; word-break: keep-all;
+}
+.part {
+  flex: none; display: inline-grid; place-items: center; min-width: 3.5rem; height: 2.35rem; padding: 0 .55rem;
+  border-radius: 50%; background: var(--surface); border: 1.5px solid var(--rule);
+  color: var(--pome); font-size: 1.08rem; line-height: 1;
+}
+.part.star { background: var(--pome); border-color: var(--pome); color: var(--surface); font-size: 1.15rem; }
+.ht { flex: 1 1 14rem; min-width: 0; }
+.ht .aside { font-size: .6em; color: var(--muted); white-space: nowrap; }
+main h2 .sub { display: block; font-size: .7em; line-height: 1.4; color: var(--muted); margin-top: .25rem; }
+.seasons { flex: none; margin-left: auto; line-height: 0; }
+.seasons svg { width: 5.5rem; height: 1.5rem; }
+.s-1 { fill: #9DB16A; } .s-2 { fill: var(--olive); } .s-3 { fill: var(--pome); }
+
+main h3 {
+  font-family: var(--display); font-weight: 400; font-size: 1.5rem; line-height: 1.35;
+  margin: 2.9rem 0 1.05rem; display: flex; align-items: center; gap: .8rem; word-break: keep-all;
+}
+main h3 .sub { display: block; font-family: var(--serif); font-weight: 700; font-size: .6em; line-height: 1.5; color: var(--muted); margin-top: .15rem; }
+main h3 .ht .aside { font-size: .74em; }
+.mark {
+  flex: none; display: grid; place-items: center; width: 3.15rem; height: 3.15rem;
+  border-radius: 46% 54% 50% 50% / 55% 48% 52% 45%; background: var(--surface); border: 1.5px solid var(--rule);
+}
+.mark svg { width: 2.25rem; height: 2.25rem; overflow: visible; }
+.mk-trunk { fill: none; stroke: var(--muted); stroke-width: 2.4; stroke-linecap: round; }
+.mk-leaf { fill: var(--olive); }
+.mk-leafline { fill: none; stroke: var(--olive); stroke-width: 2; stroke-linecap: round; }
+.mk-fruit { fill: var(--pome); }
+.mk-stone { fill: var(--bg); stroke: var(--muted); stroke-width: 1.6; }
+.mk-joint { fill: none; stroke: var(--muted); stroke-width: 1.2; }
+.mk-rock { fill: var(--rule); stroke: var(--muted); stroke-width: 1.2; }
+.mk-water { fill: var(--lilac); }
+.mk-flow { fill: none; stroke: var(--lilac); stroke-width: 2; stroke-linecap: round; }
+.mk-shade { fill: var(--lilac); opacity: .4; }
+
+/* 말씀 — 줄기와 잎 하나 */
+main blockquote {
+  position: relative; margin: 1.75rem 0; padding: 1.15rem 1.35rem 1.1rem 3rem;
+  background: var(--surface); border-radius: 2px 22px 2px 22px; font-size: 1rem; line-height: 1.85;
+}
+main blockquote::before { content: ""; position: absolute; left: 1.4rem; top: 1.45rem; bottom: 1.3rem; width: 2px; border-radius: 2px; background: var(--olive); opacity: .5; }
+main blockquote::after { content: ""; position: absolute; left: 1.02rem; top: 1.08rem; width: .85rem; height: .56rem; border-radius: 0 80% 0 80%; background: var(--olive); transform: rotate(-32deg); }
+main blockquote p { margin: 0; }
+main blockquote em { display: block; margin-top: .55rem; font-style: normal; font-size: .86rem; color: var(--olive); text-align: right; }
+main blockquote + blockquote { margin-top: -.85rem; }
+
+.callout {
+  margin: 1.6rem 0; padding: 1.1rem 1.3rem; background: var(--lilac-wash);
+  border-radius: 3px 3px 18px 3px; box-shadow: inset 3px 0 0 var(--lilac); line-height: 1.8;
+}
+.callout strong { font-weight: 800; }
+
+/* 표 */
+.table-wrap { margin: 1.9rem 0; overflow-x: auto; -webkit-overflow-scrolling: touch; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); }
+main table { width: 100%; border-collapse: collapse; font-size: .96rem; line-height: 1.75; }
+main th { font-family: var(--display); font-weight: 400; font-size: 1.14rem; text-align: left; padding: .75rem .9rem .5rem; border-bottom: 1px solid var(--rule); }
+main td { padding: .8rem .9rem; border-bottom: 1px solid var(--rule); vertical-align: top; word-break: keep-all; }
+main tr:last-child td { border-bottom: 0; }
+main td:first-child { white-space: nowrap; }
+main td span { display: inline-block; font-size: .86em; color: var(--muted); }
+#paradigm th:nth-child(3), #paradigm td:nth-child(3) { background: var(--pome-wash); }
+#paradigm th:nth-child(3) { color: var(--pome); }
+
+/* 핵심 역설 — 잎 모양 */
+.insight-card { margin: 2.2rem 0 1rem; padding: 1.6rem 1.6rem 1.15rem; background: var(--pome-wash); border-radius: 30px 4px 30px 4px; }
+.insight-card .label { display: flex; align-items: center; gap: .55rem; margin-bottom: .7rem; font-family: var(--display); font-size: 1.4rem; line-height: 1.3; color: var(--pome); }
+.insight-card .label::before { content: ""; flex: none; width: .95rem; height: .95rem; border-radius: 50%; background: var(--pome); box-shadow: inset -3px -3px 0 rgba(0, 0, 0, .18); }
+.insight-card p:last-child { margin-bottom: 0; }
+
+/* 의학 이야기 — 텃밭 이랑 */
+.benefits-grid { display: grid; column-gap: 2rem; margin: 1.6rem 0 1.8rem; }
+@media (min-width: 640px) { .benefits-grid { grid-template-columns: 1fr 1fr; } }
+.benefit-item { padding: .85rem 0 .95rem; border-top: 1px dashed var(--rule); font-size: .97rem; line-height: 1.8; word-break: keep-all; }
+.benefit-label { font-weight: 800; color: var(--olive); }
+
+/* 오해 셋 */
+.myth-card { margin: 1rem 0; padding: 1.1rem 1.3rem 1.15rem; background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; }
+.myth-title { font-weight: 800; line-height: 1.6; margin-bottom: .35rem; word-break: keep-all; }
+.myth-body { color: var(--muted); font-size: .98rem; line-height: 1.8; word-break: keep-all; }
+
+/* 강의 전 부탁 — 나눔(말풍선) · 설문 */
+.cta-section { margin: 1.4rem 0 2.2rem; }
+.cta-section h3 { margin-top: 1.6rem; }
+.discussion-q { margin: .9rem 0; padding: 1rem 1.2rem; background: var(--surface); border-radius: 18px 18px 18px 4px; line-height: 1.8; word-break: keep-all; }
+.discussion-q ~ .discussion-q { margin-left: clamp(1rem, 6vw, 2.5rem); border-radius: 18px 18px 4px 18px; background: var(--lilac-wash); }
+.discussion-q strong { color: var(--pome); }
+.survey-section { margin: 2.4rem 0; padding: 1.5rem 1.5rem 1.6rem; background: var(--olive-wash); border-radius: 4px 26px 4px 26px; display: grid; column-gap: 1.75rem; }
+.survey-section h3 { margin: 0 0 .9rem; }
+.survey-section p { margin-bottom: .9rem; }
+.survey-section a { font-family: var(--display); font-size: 1.3rem; line-height: 1.4; color: var(--ink); text-decoration: none; }
+.survey-section a[href] { justify-self: start; padding: .5rem 1.1rem; border-radius: 999px; background: var(--olive); color: var(--surface); }
+.qr-url { margin-top: .2rem; font-size: .9rem; color: var(--muted); overflow-wrap: anywhere; }
+.survey-section img {
+  display: block; width: 222px; height: 222px; max-width: 100%; margin: 1.3rem auto 0; padding: 8px;
+  background: #FFFFFF; border-radius: 8px; image-rendering: pixelated; box-shadow: 0 0 0 1px var(--rule);
+}
+@media (min-width: 640px) {
+  .survey-section { grid-template-columns: minmax(0, 1fr) auto; }
+  .survey-section > * { grid-column: 1; }
+  .survey-section img { grid-column: 2; grid-row: 1 / span 4; align-self: center; margin: 0; }
+}
+
+/* 삽화 */
+figure.ill { margin: 2.4rem 0; }
+figure.ill svg { display: block; width: 100%; height: auto; }
+figure.ill figcaption { margin-top: .7rem; font-size: .88rem; line-height: 1.6; color: var(--muted); word-break: keep-all; }
+
+/* 맺음 — 아치 모양 출구 */
+.closing {
+  margin: 3rem auto 1rem; max-width: 25rem; padding: 4.6rem 1.5rem 2.8rem; text-align: center;
+  background: var(--olive-wash); border: 2px solid var(--rule); border-bottom: 0;
+  border-radius: 50% 50% 4px 4px / 10rem 10rem 4px 4px; box-shadow: inset 0 0 0 8px var(--bg), inset 0 0 0 10px var(--rule);
+  font-family: var(--display); font-size: 1.5rem; line-height: 1.5; word-break: keep-all;
+}
+.closing .contact { margin-top: .8rem; font-family: var(--serif); font-size: .86rem; color: var(--muted); overflow-wrap: anywhere; }
+.back-top { display: inline-block; margin-top: 1.4rem; font-size: .88rem; color: var(--muted); text-decoration: none; }
+.back-top:hover { color: var(--ink); }
+
+.foot {
+  max-width: 1200px; margin: 0 auto; padding: 2rem var(--gut) 3rem; border-top: 1px solid var(--rule);
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 2rem; font-size: .88rem; color: var(--muted);
+}
+.foot a { color: var(--ink); }
+
+@media print {
+  nav.toc, .skip, .foot { display: none; }
+  .layout { display: block; }
+  body { font-size: 11pt; line-height: 1.6; }
+}
+
+</style>
 </head>
 <body>
-
-<nav class="toc" id="top">
-  <div class="nav-label">목차</div>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="hero" id="hero">
+ <div class="hero-text">
+  <h1><span class="l1">가장 친밀한 관계,</span> <span class="l2">부부의 성</span><span class="l3">— 사전 읽기 자료</span></h1>
+  <p class="subtitle">강의 전, 부부가 함께 읽어오세요.<br>본강의 시작 전 이 자료를 미리 읽으시면 훨씬 풍성한 나눔이 가능합니다.</p>
+  <div class="meta-chips"><span class="chip">에젤가정사역공동체</span><span class="chip">신혼부부 30~40대</span><span class="chip">2026-06-21 강의</span><span class="chip">15~18분 읽기</span></div>
+  <p class="hero-author">글쓴이: 이상협 (M.D., M.Div.)</p>
+ </div>
+ <div class="hero-art"><svg class="hero-svg" viewBox="0 0 600 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="돌로 쌓은 아치 문 너머로 보이는 저녁의 정원. 낮은 돌담이 둘러싼 풀밭 가운데로 오솔길이 나 있고, 그 길 끝 담장 틈으로 해가 지고 있다. 손을 잡은 부부가 뒷모습으로 해 쪽을 향해 걸어가고, 그림자가 이쪽으로 길게 늘어진다. 왼쪽 앞에는 붉은 열매가 달린 석류나무가, 오른쪽 앞에는 바위 틈에서 흘러내린 물이 고이는 작은 샘과 붓꽃이 있다"><defs><filter id="hero-paint" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="3" seed="4"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter><filter id="hero-paint2" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".06" numOctaves="2" seed="9"/><feDisplacementMap in="SourceGraphic" scale="3"/></filter><filter id="hero-grain" filterUnits="userSpaceOnUse" x="0" y="0" width="600" height="720"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="2"/><feColorMatrix values="0 0 0 0 .3 0 0 0 0 .25 0 0 0 0 .2 0 0 0 .11 0"/><feComposite in2="SourceGraphic" operator="in"/></filter><filter id="hero-soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter><filter id="hero-soft2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.2"/></filter><clipPath id="hero-out"><path d="M8 702V300A292 292 0 0 1 592 300V702Q592 712 582 712H18Q8 712 8 702Z"/></clipPath><clipPath id="hero-in"><path d="M40 712V300A260 260 0 0 1 560 300V712Z"/></clipPath><linearGradient id="hero-sky" x1="0" y1="40" x2="0" y2="440" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#36325A"/><stop offset="0.3" stop-color="#584C7E"/><stop offset="0.56" stop-color="#A2728C"/><stop offset="0.78" stop-color="#DE9A7E"/><stop offset="1" stop-color="#F6D49C"/></linearGradient><radialGradient id="hero-sun" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#FFF4D0"/><stop offset="0.16" stop-color="#FFE0A4" stop-opacity="0.9"/><stop offset="0.5" stop-color="#FFC27E" stop-opacity="0.35"/><stop offset="1" stop-color="#FFB070" stop-opacity="0"/></radialGradient><linearGradient id="hero-haze" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7D6A0" stop-opacity="0"/><stop offset="0.55" stop-color="#F7D6A0" stop-opacity="0.6"/><stop offset="1" stop-color="#F7D6A0" stop-opacity="0"/></linearGradient><linearGradient id="hero-lawn" x1="0" y1="450" x2="0" y2="712" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ABA46A"/><stop offset="0.16" stop-color="#8A9252"/><stop offset="0.55" stop-color="#5C6C3A"/><stop offset="1" stop-color="#34422A"/></linearGradient><linearGradient id="hero-path" x1="0" y1="462" x2="0" y2="712" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#F8DEAC"/><stop offset="0.35" stop-color="#DCC194"/><stop offset="1" stop-color="#97806A"/></linearGradient><linearGradient id="hero-arch" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8E827C"/><stop offset="0.45" stop-color="#B9AB9E"/><stop offset="0.75" stop-color="#CDBCA8"/><stop offset="1" stop-color="#A8968A"/></linearGradient><linearGradient id="hero-wallL" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9A8682"/><stop offset="1" stop-color="#C8AE98"/></linearGradient><linearGradient id="hero-wallR" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6A5E68"/><stop offset="1" stop-color="#7E6E70"/></linearGradient><linearGradient id="hero-trunk" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3A2C2C"/><stop offset="0.6" stop-color="#5C4840"/><stop offset="1" stop-color="#8E6E56"/></linearGradient><radialGradient id="hero-fruit" cx="0.36" cy="0.32" r="0.72"><stop offset="0" stop-color="#EC7A70"/><stop offset="0.5" stop-color="#B4374A"/><stop offset="1" stop-color="#681A28"/></radialGradient><linearGradient id="hero-water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F4C893"/><stop offset="0.45" stop-color="#C4909C"/><stop offset="1" stop-color="#5A5284"/></linearGradient><radialGradient id="hero-vg" cx="0.5" cy="0.55" r="0.72"><stop offset="0" stop-color="#1E1830" stop-opacity="0"/><stop offset="0.62" stop-color="#1E1830" stop-opacity="0"/><stop offset="1" stop-color="#1E1830" stop-opacity="0.5"/></radialGradient><pattern id="hero-blocks" width="30" height="14" patternUnits="userSpaceOnUse"><path d="M0 14H30M0 7H30M9 0V7M23 7V14" stroke="#4A3E46" stroke-width=".8" opacity=".38" fill="none"/></pattern><pattern id="hero-gravel" width="29" height="17" patternUnits="userSpaceOnUse"><g fill="#7E6A56" opacity=".3"><ellipse cx="4" cy="3" rx="1.7" ry=".9"/><ellipse cx="19" cy="11" rx="1.3" ry=".7"/><ellipse cx="25" cy="2" rx="1" ry=".6"/></g><g fill="#FFF2D4" opacity=".45"><ellipse cx="11" cy="8" rx="1.2" ry=".7"/><ellipse cx="27" cy="14" rx="1.5" ry=".8"/></g></pattern><g id="hero-pom"><g transform="translate(0 0)"><circle r="10" fill="url(#hero-fruit)"/><path d="M-2.8 -8.6l1.0 -4.2l1.4 2.2l1.2 -2.6l1.2 2.6l1.4 -2.2l1.0 4.2z" fill="#6E1E2A"/><ellipse cx="-3.4" cy="-3.0" rx="2.6" ry="1.6" fill="#FFD0C0" opacity=".5" transform="rotate(-30 -3.4 -3.0)"/></g></g><g id="hero-bloom"><path d="M0-6L2.4-1.4 6.6-2 3.4 1.6 4.8 6 0 3.6-4.8 6-3.4 1.6-6.6-2-2.4-1.4Z" fill="#E2583E"/><circle r="1.6" fill="#F6C46A"/></g></defs><g clip-path="url(#hero-in)"><rect x="40" y="0" width="520" height="712" fill="url(#hero-sky)"/><ellipse cx="150" cy="186" rx="120" ry="12" fill="#C98C98" opacity="0.5" filter="url(#hero-soft)"/><ellipse cx="424" cy="146" rx="140" ry="10" fill="#B48296" opacity="0.45" filter="url(#hero-soft)"/><ellipse cx="470" cy="252" rx="110" ry="9" fill="#F0B38A" opacity="0.55" filter="url(#hero-soft)"/><ellipse cx="196" cy="300" rx="150" ry="8" fill="#F3BE90" opacity="0.55" filter="url(#hero-soft)"/><ellipse cx="372" cy="344" rx="92" ry="6" fill="#FAD8A4" opacity="0.65" filter="url(#hero-soft)"/><g class="hero-dusk"><circle cx="301" cy="404" r="236" fill="url(#hero-sun)"/><circle cx="301" cy="404" r="17" fill="#FFF5D6"/></g><g fill="none" stroke="#3E3756" stroke-width="1.6" stroke-linecap="round" opacity=".7"><path d="M402 210q6-6 11 0q5-6 11 0"/><path d="M438 236q4-4 8 0q4-4 8 0"/><path d="M372 250q3-3 6 0q3-3 6 0"/></g><g filter="url(#hero-paint2)"><path d="M40 404C100 388 170 396 232 404C262 410 282 416 300 416C322 416 344 404 380 396C440 386 500 396 560 390V470H40Z" fill="#8E7DA0"/><path d="M40 432C100 422 170 428 246 438C320 430 400 422 470 432C512 428 540 432 560 430V470H40Z" fill="#76698C"/><path d="M96 386C101 404 102 423 100 434H92C90 423 91 404 96 386Z" fill="#524868"/><path d="M108 398C113 412 114 425 112 434H104C102 425 103 412 108 398Z" fill="#524868"/><path d="M474 390C479 407 480 424 478 434H470C468 424 469 407 474 390Z" fill="#524868"/><path d="M490 402C495 414 496 426 494 434H486C484 426 485 414 490 402Z" fill="#524868"/><path d="M226 410C231 419 232 428 230 434H222C220 428 221 419 226 410Z" fill="#524868"/></g><rect x="40" y="396" width="520" height="56" fill="url(#hero-haze)"/><rect x="40" y="448" width="520" height="264" fill="url(#hero-lawn)"/><path d="M40 448H188L40 520Z M560 448H412L560 520Z" fill="#B3A876" opacity=".55"/><g filter="url(#hero-soft)" opacity=".4"><ellipse cx="150" cy="620" rx="100" ry="18" fill="#2E3A24"/><ellipse cx="470" cy="566" rx="70" ry="10" fill="#2E3A24"/><ellipse cx="244" cy="520" rx="46" ry="6" fill="#D8CC8A"/><ellipse cx="372" cy="540" rx="50" ry="7" fill="#D8CC8A"/></g><g fill="#FFE8BC" opacity=".07"><path d="M301 404L110 712H200Z"/><path d="M301 404L258 712H346Z"/><path d="M301 404L426 712H520Z"/></g><path d="M172 712C232 640 270 560 291 466H311C330 560 370 640 434 712Z" fill="url(#hero-path)"/><path d="M172 712C232 640 270 560 291 466H311C330 560 370 640 434 712Z" fill="url(#hero-gravel)"/><path d="M172 712C232 640 270 560 291 466M434 712C370 640 330 560 311 466" stroke="#5C6A38" stroke-width="3" fill="none" opacity=".5"/><g filter="url(#hero-paint2)"><path d="M188 451H289V466H188Z M313 451H412V466H313Z" fill="#A48C88"/><path d="M188 451H289V466H188Z M313 451H412V466H313Z" fill="url(#hero-blocks)"/><path d="M186 448H290V452H186Z M312 448H414V452H312Z" fill="#F0D2A6"/><path d="M40 522L188 451V466L40 574Z" fill="url(#hero-wallL)"/><path d="M40 522L188 451V466L40 574Z" fill="url(#hero-blocks)"/><path d="M40 514L188 447V452L40 523Z" fill="#E6C8A2"/><path d="M560 522L412 451V466L560 574Z" fill="url(#hero-wallR)"/><path d="M560 522L412 451V466L560 574Z" fill="url(#hero-blocks)"/><path d="M560 514L412 447V452L560 523Z" fill="#C9A68C"/><path d="M560 574L412 466V471L560 590Z" fill="#26222E" opacity=".28"/></g><g transform="translate(301 532) scale(.66)"><path d="M-21 0C-26 34-32 70-42 104H-18C-15 70-12 34-9 0Z M9 0C12 34 15 70 18 104H42C32 70 26 34 21 0Z" fill="#2E2842" opacity=".2" filter="url(#hero-soft2)"/><g transform="translate(-15 0)"><path d="M-5 0L-4.5-22H-1.2L-1 0Z M1 0L1.4-22H4.6L5 0Z" fill="#C8936C"/><path d="M-6.5 0h5.5v2h-5.5zM1 0h5.5v2h-5.5z" fill="#2A2024"/><path d="M-11-20C-10-34-8.5-45-7.5-50H7.5C8.5-45 10-34 11-20Q0-16.5-11-20Z" fill="#E9D8BE"/><path d="M-11-20C-10-34-8.5-45-7.5-50H-2C-3-40-4-30-4-18Z" fill="#B8A48C" opacity=".45"/><path d="M-9-48C-10-60-9-70-6-76Q0-79 6-76C9-70 10-60 9-48Q0-45-9-48Z" fill="#B4666A"/><path d="M-7-73C-11-64-12-56-12-49" stroke="#A65A60" stroke-width="4.6" stroke-linecap="round" fill="none"/><path d="M7-73C11-64 13-55 15.5-48" stroke="#B4666A" stroke-width="4.6" stroke-linecap="round" fill="none"/><circle cx="-12" cy="-47.5" r="2.2" fill="#C8936C"/><rect x="-2" y="-82" width="4" height="6" fill="#C8936C"/><path d="M0-98a8.4 8.4 0 0 1 8.4 8.4c0 7 1.4 13 2.4 19q-10.8 4.4-21.6 0c1-6 2.4-12 2.4-19A8.4 8.4 0 0 1 0-98z" fill="#3E2C26"/><path d="M6-94c2.6 3 2.8 9 3.2 14 .3 3 .9 6 1.6 9.5" stroke="#FFD49A" stroke-width="1.3" fill="none" opacity=".75"/><path d="M-6-94c-2.6 3-2.8 9-3.2 14-.3 3-.9 6-1.6 9.5" stroke="#FFD49A" stroke-width="1" fill="none" opacity=".5"/></g><g transform="translate(15 0)"><path d="M-8.5 0L-7.5-40H7.5L8.5 0H3.2L1-31.5H-1L-3.2 0Z" fill="#2E3752"/><path d="M-9.5 0h6.5v2.2h-6.5zM3 0h6.5v2.2h-6.5z" fill="#1C181C"/><path d="M-12.5-38C-13.5-56-12.5-70-8.5-78Q0-82.5 8.5-78C12.5-70 13.5-56 12.5-38Q0-35-12.5-38Z" fill="#4C5D7C"/><path d="M3-80C9-70 11-54 10.5-37Q4-36 1-36.5C3-50 3-66 3-80Z" fill="#33405C" opacity=".55"/><path d="M-9.5-75C-14.5-66-16.5-57-16.5-48.5" stroke="#4C5D7C" stroke-width="5.6" stroke-linecap="round" fill="none"/><path d="M9.5-75C13.5-66 14.5-57 14.5-48.5" stroke="#44546F" stroke-width="5.6" stroke-linecap="round" fill="none"/><circle cx="14.5" cy="-46.5" r="2.5" fill="#B9845E"/><rect x="-2.4" y="-85" width="4.8" height="7" fill="#B9845E"/><circle cy="-91" r="8" fill="#2A211E"/><path d="M6.5-96c2.6 3 2.4 8 .4 11.5M12.2-74c1.6 8 1.8 22 .6 34" stroke="#FFD49A" stroke-width="1.3" fill="none" opacity=".75"/><path d="M-6.5-96c-2.6 3-2.4 8-.4 11.5M-12.2-74c-1.6 8-1.8 22-.6 34" stroke="#FFD49A" stroke-width="1" fill="none" opacity=".5"/></g><ellipse cx="0" cy="-46.5" rx="3.6" ry="2.6" fill="#C08C64"/></g><g filter="url(#hero-paint)"><path d="M64 712C74 650 88 596 100 548C110 508 108 470 118 440C126 414 144 396 158 380L172 390C158 404 146 424 140 446C134 474 140 512 132 552C124 604 120 652 128 712Z" fill="url(#hero-trunk)"/><path d="M158 386C164 402 150 420 142 446C136 470 142 506 134 548" stroke="#B48A66" stroke-width="2.4" fill="none" opacity=".55"/><g stroke="#4A3832" stroke-linecap="round" fill="none"><path d="M150 392C130 340 108 300 88 246" stroke-width="7"/><path d="M160 386C186 340 214 306 236 270" stroke-width="7"/><path d="M138 430C110 400 84 370 62 334" stroke-width="6"/><path d="M168 384C214 356 262 330 300 300" stroke-width="5"/><path d="M118 300C130 250 140 210 148 160" stroke-width="4.5"/></g><path d="M299 230Q301 246 289 269Q277 292 258 310Q240 327 215 335Q190 342 152 338Q115 334 92 316Q68 298 35 275Q2 252 24 234Q46 217 67 186Q89 154 131 157Q173 160 210 175Q248 189 272 202Q297 215 299 230Z" fill="#26321F"/><path d="M144 202Q148 217 153 241Q159 265 136 274Q113 283 85 276Q58 270 51 253Q43 237 39 224Q36 212 49 191Q63 171 82 165Q102 160 121 174Q140 187 144 202Z" fill="#33442A"/><path d="M157 193Q170 217 160 232Q151 246 128 260Q105 273 86 257Q68 241 65 224Q62 207 60 190Q58 173 79 169Q100 164 122 167Q144 169 157 193Z" fill="#4A5E32"/><path d="M157 224Q165 240 154 250Q144 260 131 264Q118 269 107 259Q97 250 93 233Q88 217 104 211Q119 205 134 206Q149 208 157 224Z" fill="#6A823E"/><path d="M264 183Q288 209 262 228Q236 247 221 262Q206 277 183 272Q160 266 146 247Q133 228 117 208Q101 189 125 174Q148 159 175 142Q202 125 221 141Q240 158 264 183Z" fill="#33442A"/><path d="M261 179Q281 195 266 221Q252 246 229 246Q206 247 178 245Q149 244 151 216Q152 188 156 177Q161 165 179 153Q197 140 220 151Q242 162 261 179Z" fill="#4A5E32"/><path d="M262 206Q263 218 259 234Q254 249 233 254Q211 258 200 248Q189 238 197 225Q205 212 213 197Q222 182 242 188Q261 193 262 206Z" fill="#6A823E"/><path d="M329 256Q337 267 336 282Q335 297 316 300Q297 304 281 304Q265 304 255 293Q246 283 243 272Q240 261 247 247Q253 233 270 222Q287 210 303 228Q320 245 329 256Z" fill="#33442A"/><path d="M333 239Q336 258 328 270Q321 282 304 297Q288 312 275 300Q263 289 261 277Q260 265 263 251Q265 238 282 234Q298 230 314 225Q329 221 333 239Z" fill="#4A5E32"/><path d="M333 270Q333 281 328 287Q323 293 313 303Q304 313 293 302Q282 290 286 282Q289 273 295 263Q302 253 318 256Q334 258 333 270Z" fill="#6A823E"/><path d="M110 324Q111 334 112 356Q113 377 92 383Q71 389 52 383Q33 378 26 366Q19 355 25 341Q30 326 34 316Q39 305 56 296Q73 287 91 300Q110 313 110 324Z" fill="#33442A"/><path d="M118 316Q131 335 115 345Q100 356 89 358Q79 360 66 356Q54 352 39 340Q23 327 36 314Q50 301 64 293Q78 286 92 291Q105 297 118 316Z" fill="#4A5E32"/><path d="M115 343Q124 351 116 358Q107 366 98 370Q89 375 77 368Q65 361 69 349Q73 336 78 327Q84 319 95 327Q106 335 115 343Z" fill="#6A823E"/><path d="M253 298Q250 314 250 336Q250 358 237 365Q224 371 197 365Q170 358 163 347Q155 337 162 324Q168 310 177 291Q185 272 202 267Q219 262 237 272Q256 282 253 298Z" fill="#33442A"/><path d="M254 295Q253 314 249 323Q246 333 233 342Q220 351 204 345Q189 338 175 327Q161 316 173 301Q184 286 201 275Q218 264 236 270Q255 276 254 295Z" fill="#4A5E32"/><path d="M255 321Q261 330 253 336Q244 342 237 345Q229 348 218 347Q206 346 207 334Q209 323 219 314Q229 306 239 309Q250 311 255 321Z" fill="#6A823E"/><path d="M188 131Q199 148 191 162Q182 175 164 182Q145 189 122 189Q99 188 84 177Q69 166 76 145Q82 125 94 114Q105 103 124 98Q144 93 160 103Q177 114 188 131Z" fill="#33442A"/><path d="M189 121Q203 138 192 157Q181 176 159 175Q137 174 118 174Q99 175 102 155Q106 136 106 125Q107 114 122 109Q138 105 156 104Q175 103 189 121Z" fill="#4A5E32"/><path d="M193 150Q199 162 192 171Q185 180 170 179Q156 177 140 174Q124 171 124 159Q125 148 139 142Q154 136 171 137Q188 138 193 150Z" fill="#6A823E"/><path d="M87 240Q85 254 78 269Q72 283 60 289Q49 295 33 290Q17 284 4 278Q-9 272 -8 261Q-7 250 3 235Q13 220 27 212Q40 203 64 215Q89 227 87 240Z" fill="#33442A"/><path d="M73 239Q81 247 83 262Q84 276 66 277Q48 278 29 281Q11 283 11 265Q11 248 9 236Q6 223 27 217Q47 212 56 221Q65 231 73 239Z" fill="#4A5E32"/><path d="M84 259Q86 270 86 280Q86 289 70 292Q54 295 45 289Q35 284 34 272Q32 260 44 256Q57 251 70 249Q83 247 84 259Z" fill="#6A823E"/><path d="M156 218q10 -1 13 -10q-10 1 -13 10M122 260q-8 6 -6 15q8 -6 6 -15M156 217q10 2 15 -7q-10 -2 -15 7M217 249q-3 9 5 15q3 -9 -5 -15M309 298q-1 10 8 14q1 -10 -8 -14M71 367q-4 9 3 16q4 -9 -3 -16M113 334q9 3 15 -5q-9 -3 -15 5M81 366q0 10 9 13q-0 -10 -9 -13M227 348q5 9 14 7q-5 -9 -14 -7M164 174q0 10 9 13q-0 -10 -9 -13M177 117q9 4 16 -3q-9 -4 -16 3M53 287q-6 7 -2 16q6 -7 2 -16M66 281q6 7 15 4q-6 -7 -15 -4" fill="#94A85C"/><path d="M155 223q7 7 16 4q-7 -7 -16 -4M258 197q10 -0 13 -9q-10 0 -13 9M204 252q-6 7 -2 16q6 -7 2 -16M241 235q-5 8 1 16q5 -8 -1 -16M328 240q10 -1 12 -10q-10 1 -12 10M330 244q7 7 16 2q-7 -7 -16 -2M311 297q-3 9 5 15q3 -9 -5 -15M106 309q8 -6 5 -15q-8 6 -5 15M228 348q-6 8 -1 16q6 -8 1 -16M228 348q3 9 13 10q-3 -9 -13 -10M216 351q-8 6 -5 15q8 -6 5 -15M179 120q6 7 16 4q-6 -7 -16 -4M182 154q5 8 15 7q-5 -8 -15 -7M31 287q-10 1 -12 11q10 -1 12 -11M79 238q8 6 16 0q-8 -6 -16 -0" fill="#B0BE6E"/><path d="M47 230q-9 -3 -15 5q9 3 15 -5M49 234q-8 -6 -16 -1q8 6 16 1M250 280q-8 6 -5 15q8 -6 5 -15M246 256q-1 -10 -10 -13q1 10 10 13M39 353q-10 -1 -14 8q10 1 14 -8M32 321q-8 -5 -16 1q8 5 16 -1M104 168q-8 5 -7 15q8 -5 7 -15M103 167q-8 5 -7 15q8 -5 7 -15M7 269q-9 -3 -15 4q9 3 15 -4M13 277q-8 -5 -16 0q8 5 16 -0" fill="#3E5230"/><path d="M125 169q3 -9 -5 -15q-3 9 5 15M134 197q-2 -9 -12 -11q2 9 12 11M134 191q-8 -5 -16 1q8 5 16 -1M134 190q-3 -9 -13 -10q3 9 13 10M256 236q-8 -5 -16 1q8 5 16 -1M32 339q-8 -6 -16 -0q8 6 16 0M209 273q9 -4 9 -13q-9 4 -9 13M201 274q7 -6 4 -15q-7 6 -4 15M182 284q-7 -7 -16 -2q7 7 16 2M99 118q-1 -10 -11 -12q1 10 11 12M25 219q-6 -8 -15 -6q6 8 15 6" fill="#2C3A24"/></g><use href="#hero-pom" transform="translate(126 268) scale(1.10)"/><use href="#hero-pom" transform="translate(180 292) scale(1.20)"/><use href="#hero-pom" transform="translate(238 250) scale(1.00)"/><use href="#hero-pom" transform="translate(288 306) scale(1.10)"/><use href="#hero-pom" transform="translate(84 318) scale(1.00)"/><use href="#hero-pom" transform="translate(206 220) scale(0.90)"/><use href="#hero-pom" transform="translate(150 332) scale(1.20)"/><use href="#hero-pom" transform="translate(304 236) scale(0.90)"/><use href="#hero-pom" transform="translate(60 262) scale(0.90)"/><use href="#hero-bloom" x="256" y="286"/><use href="#hero-bloom" x="110" y="196"/><use href="#hero-bloom" x="322" y="282"/><use href="#hero-bloom" x="168" y="250"/><use href="#hero-bloom" x="230" y="330"/><g filter="url(#hero-paint2)"><path d="M484 646C478 614 492 590 512 584C534 580 552 596 556 624C558 642 544 652 520 652Z" fill="#857A7E"/><path d="M512 584C534 580 552 596 556 624C548 610 534 600 516 598Z" fill="#B7A496"/><path d="M470 652C468 628 478 612 494 606C506 604 512 616 510 632C508 646 494 654 470 652Z" fill="#6E6470"/><ellipse cx="456" cy="660" rx="84" ry="27" fill="#8E8280"/><ellipse cx="456" cy="660" rx="84" ry="27" fill="url(#hero-blocks)"/><path d="M372 656A84 27 0 0 1 540 656A84 22 0 0 0 372 656Z" fill="#E4CFB0" opacity=".8"/><ellipse cx="456" cy="658" rx="70" ry="18" fill="url(#hero-water)"/><g fill="none" stroke="#FFE4BA" stroke-linecap="round"><ellipse cx="478" cy="652" rx="20" ry="5" stroke-width="1.2" opacity=".55"/><ellipse cx="478" cy="652" rx="36" ry="9" stroke-width="1" opacity=".35"/><path d="M420 660h22M430 666h14" stroke-width="1.6" opacity=".6"/></g><path d="M500 600C494 614 486 630 480 650" stroke="#EEF2F2" stroke-width="3" fill="none" stroke-linecap="round" opacity=".85"/><path d="M502 600C498 612 492 626 486 646" stroke="#FFFFFF" stroke-width="1" fill="none" opacity=".7"/><g fill="#F4F8F8" opacity=".8"><circle cx="474" cy="648" r="1.4"/><circle cx="486" cy="646" r="1.1"/><circle cx="470" cy="652" r="1"/></g></g><g stroke-linecap="round" fill="none"><path d="M392 676Q384 645 379 614" stroke="#56683A" stroke-width="2.6"/><path d="M400 676Q394 639 391 602" stroke="#6E8444" stroke-width="2.6"/><path d="M410 676Q410 649 410 622" stroke="#3E4E2C" stroke-width="2.6"/><path d="M530 676Q534 643 537 610" stroke="#56683A" stroke-width="2.6"/><path d="M540 676Q536 636 533 596" stroke="#7E9450" stroke-width="2.6"/><path d="M552 676Q551 647 551 618" stroke="#3E4E2C" stroke-width="2.6"/><path d="M382 676Q387 653 391 630" stroke="#7E9450" stroke-width="2.6"/></g><g transform="translate(398 612)"><path d="M0 0C-6-4-8-10-4-14C-2-8 0-6 0 0Z" fill="#8E78B4"/><path d="M0 0C6-4 8-10 4-14C2-8 0-6 0 0Z" fill="#7462A0"/><path d="M0 0C-2-6-1-12 0-16C1-12 2-6 0 0Z" fill="#B4A2D6"/><circle cy="-4" r="1.2" fill="#F6D06A"/></g><g transform="translate(536 604)"><path d="M0 0C-6-4-8-10-4-14C-2-8 0-6 0 0Z" fill="#8E78B4"/><path d="M0 0C6-4 8-10 4-14C2-8 0-6 0 0Z" fill="#7462A0"/><path d="M0 0C-2-6-1-12 0-16C1-12 2-6 0 0Z" fill="#B4A2D6"/><circle cy="-4" r="1.2" fill="#F6D06A"/></g><g transform="translate(546 622)"><path d="M0 0C-6-4-8-10-4-14C-2-8 0-6 0 0Z" fill="#8E78B4"/><path d="M0 0C6-4 8-10 4-14C2-8 0-6 0 0Z" fill="#7462A0"/><path d="M0 0C-2-6-1-12 0-16C1-12 2-6 0 0Z" fill="#B4A2D6"/><circle cy="-4" r="1.2" fill="#F6D06A"/></g><g stroke-linecap="round" fill="none" stroke-width="1.6"><path d="M553 661q3 -6 -6 -12M416 647q3 -6 -6 -13M192 642q-1 -6 -1 -13M503 653q-3 -8 5 -15M45 614q1 -7 -2 -15M110 628q-3 -8 -2 -16M527 621q-4 -6 -2 -11" stroke="#3E4E2C"/><path d="M540 650q3 -6 5 -11M428 694q2 -5 5 -9M59 685q2 -6 -5 -13M214 685q-2 -7 -4 -13M329 636q3 -6 3 -12M204 691q-4 -10 3 -20" stroke="#56683A"/><path d="M82 610q4 -8 -4 -17M464 657q-2 -9 5 -19M185 605q1 -5 -4 -9M541 649q2 -6 -1 -12M419 650q-0 -9 5 -17M326 619q-2 -6 3 -13M544 629q-0 -8 2 -16M217 607q-3 -6 0 -11" stroke="#7E9450"/><path d="M293 603q1 -4 -1 -8M105 672q0 -4 -1 -9M155 630q1 -5 -1 -11M519 659q-2 -7 -5 -14M123 659q-3 -8 3 -16M287 626q2 -5 -2 -11M55 656q-3 -8 -3 -16" stroke="#2E3A24"/></g><circle cx="277" cy="612" r="2.2" fill="#F6D06A"/><circle cx="365" cy="611" r="2.1" fill="#F4EEE2"/><circle cx="389" cy="663" r="2.2" fill="#E8D9F0"/><circle cx="299" cy="588" r="2.5" fill="#E8D9F0"/><circle cx="219" cy="591" r="2.5" fill="#F6D06A"/><circle cx="183" cy="647" r="2.3" fill="#E8D9F0"/><circle cx="296" cy="687" r="1.7" fill="#E8D9F0"/><circle cx="427" cy="568" r="1.6" fill="#E8D9F0"/><circle cx="275" cy="659" r="1.8" fill="#F4EEE2"/><circle cx="419" cy="684" r="2.5" fill="#F4EEE2"/><circle cx="429" cy="606" r="1.8" fill="#F4EEE2"/><circle cx="160" cy="653" r="2.1" fill="#F6D06A"/><circle cx="445" cy="622" r="1.7" fill="#F4EEE2"/><circle cx="234" cy="609" r="2.7" fill="#F4EEE2"/><circle cx="318" cy="666" r="2.1" fill="#F6D06A"/><circle cx="397" cy="621" r="1.7" fill="#F4EEE2"/><circle cx="209" cy="636" r="2.1" fill="#F6D06A"/><circle cx="259" cy="686" r="1.6" fill="#F4EEE2"/><rect x="40" y="0" width="520" height="712" fill="url(#hero-vg)"/><rect x="40" y="0" width="520" height="712" filter="url(#hero-grain)" fill="#fff"/></g><g clip-path="url(#hero-out)"><path d="M8 702V300A292 292 0 0 1 592 300V702Q592 712 582 712H18Q8 712 8 702ZM40 712V300A260 260 0 0 1 560 300V712Z" fill-rule="evenodd" fill="url(#hero-arch)"/><path d="M40 300L8 300M46 246L14 239M62 194L33 181M90 147L64 128M126 107L105 83M170 75L154 47M220 53L210 22M273 41L269 10M327 41L331 10M380 53L390 22M430 75L446 47M474 107L495 83M510 147L536 128M538 194L567 181M554 246L586 239M560 300L592 300M8 330H40M560 330H592M30 330V360M570 330V360M8 360H40M560 360H592M22 360V390M578 360V390M8 390H40M560 390H592M30 390V420M570 390V420M8 420H40M560 420H592M22 420V450M578 420V450M8 450H40M560 450H592M30 450V480M570 450V480M8 480H40M560 480H592M22 480V510M578 480V510M8 510H40M560 510H592M30 510V540M570 510V540M8 540H40M560 540H592M22 540V570M578 540V570M8 570H40M560 570H592M30 570V600M570 570V600M8 600H40M560 600H592M22 600V630M578 600V630M8 630H40M560 630H592M30 630V660M570 630V660M8 660H40M560 660H592M22 660V690M578 660V690M8 690H40M560 690H592M30 690V720M570 690V720" stroke="#5A4E54" stroke-width="1.4" opacity=".55" fill="none"/><path d="M44 300A256 256 0 0 1 556 300" stroke="#3E343C" stroke-width="5" fill="none" opacity=".35"/><path d="M12 300A288 288 0 0 1 588 300" stroke="#E8D8C4" stroke-width="2" fill="none" opacity=".6"/><path d="M286 10L290 42H310L314 10Z" fill="#CDBDAC" stroke="#5A4E54" stroke-width="1.4" stroke-opacity=".55"/><rect x="8" y="300" width="32" height="412" fill="#2E2836" opacity=".18"/><rect x="0" y="0" width="600" height="720" filter="url(#hero-grain)" fill="#fff"/><g filter="url(#hero-paint2)"><path d="M24 712C30 660 18 610 28 560C36 520 22 470 32 420C40 380 30 340 44 300C56 250 70 210 92 170" stroke="#3E4E2C" stroke-width="2.4" fill="none"/><path d="M24 712q10 3 12 -7q-10 -3 -12 7M32 611q-3 -10 -12 -7q3 10 12 7M26 510q10 3 12 -7q-10 -3 -12 7M28 408q-3 -10 -12 -7q3 10 12 7M55 307q10 3 12 -7q-10 -3 -12 7M85 206q-3 -10 -12 -7q3 10 12 7" fill="#56683A"/><path d="M28 678q-3 -10 -12 -7q3 10 12 7M31 577q10 3 12 -7q-10 -3 -12 7M24 476q-3 -10 -12 -7q3 10 12 7M35 374q10 3 12 -7q-10 -3 -12 7M66 273q-3 -10 -12 -7q3 10 12 7M93 172q10 3 12 -7q-10 -3 -12 7" fill="#7E9450"/><path d="M31 644q10 3 12 -7q-10 -3 -12 7M29 543q-3 -10 -12 -7q3 10 12 7M24 442q10 3 12 -7q-10 -3 -12 7M45 341q-3 -10 -12 -7q3 10 12 7M76 240q10 3 12 -7q-10 -3 -12 7" fill="#3E4E2C"/></g></g><path d="M8 702V300A292 292 0 0 1 592 300V702Q592 712 582 712H18Q8 712 8 702Z" fill="none" stroke="#26222A" stroke-opacity=".22"/></svg></div>
+</header>
+<div class="layout">
+<nav class="toc" id="top" aria-label="목차">
+  <div class="toc-bar"><div class="nav-label" id="toc-label">목차</div><button class="toc-btn" type="button" aria-expanded="false" aria-controls="toc-body" aria-labelledby="toc-label"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button></div>
+  <div class="toc-body" id="toc-body">
   <ul>
     <li><a href="#intro">들어가며</a></li>
     <li><a href="#part1">1부 — 신혼에는 '때'가 있습니다</a></li>
@@ -268,24 +342,12 @@
     <div><strong>읽는 시간</strong> 약 15~18분</div>
     <div><strong>강사</strong> 이상협</div>
   </div>
-</nav>
-
-<main>
-
-  <header class="hero" id="hero">
-    <h1>가장 친밀한 관계, 부부의 성<br><span>— 사전 읽기 자료</span></h1>
-    <p class="subtitle">강의 전, 부부가 함께 읽어오세요.<br>본강의 시작 전 이 자료를 미리 읽으시면 훨씬 풍성한 나눔이 가능합니다.</p>
-    <div class="meta-chips">
-      <span class="chip">에젤가정사역공동체</span>
-      <span class="chip">신혼부부 30~40대</span>
-      <span class="chip">2026-06-21 강의</span>
-      <span class="chip">15~18분 읽기</span>
-    <p class="hero-author">글쓴이: 이상협 (M.D., M.Div.)</p>
 </div>
-  </header>
+</nav>
+<main id="main">
 
   <section id="intro">
-    <h2>들어가며</h2>
+    <h2><span class="ht">들어가며</span></h2>
     <p>솔직히 말씀드리면, 우리 대부분은 결혼 전까지 성(性)에 대해 제대로 배운 적이 없습니다. 학교에서도, 교회에서도, 부모님께도요.</p>
     <p>그래서 많은 부부가 결혼 첫날밤을 "잘 모르는 채로" 맞이합니다. 기대와 불안이 섞인 채로요. 그리고 시간이 지나도 이 주제는 여전히 어렵습니다. 사랑하는 사람인데도, 막상 성에 대해 솔직하게 이야기하려면 입이 잘 떨어지지 않죠.</p>
     <p>그런데 성경은 이 주제를 생각보다 훨씬 솔직하게, 그리고 아름답게 말합니다. 성은 부끄러운 것이 아닙니다. 하나님이 직접 설계하셨고, 하나님이 기뻐하시는 <strong>선물</strong>입니다.</p>
@@ -295,7 +357,7 @@
   <hr>
 
   <section id="part1">
-    <h2>1부 — 신혼에는 '때'가 있습니다</h2>
+    <h2><span class="part">1부</span><span class="ht">신혼에는 '때'가 있습니다</span><span class="seasons" aria-hidden="true"><svg viewBox="0 0 88 24" aria-hidden="true" focusable="false"><path class="mk-trunk" d="M4 20C22 12 44 10 84 14"/><path class="s-1" d="M12 17c-1-5 1-8 5-9 1 4-1 7-5 9z"/><path class="s-2" d="M32 14c-2-7 2-11 8-12 1 6-2 10-8 12z"/><path class="s-3" d="M54 13c-1-7 3-11 9-11 0 6-3 10-9 11z"/><circle class="s-3" cx="57" cy="17" r="3"/><path class="mk-trunk" d="M76 14l3-6M79 8l3-2M79 8l-1-4"/></svg></span></h2>
     <p>전도서는 말합니다.</p>
     <blockquote>
       <p>"범사에 기한이 있고 천하만사가 다 때가 있나니 날 때가 있고 죽을 때가 있으며 심을 때가 있고 심은 것을 뽑을 때가 있으며" <em>(전도서 3:1-2)</em></p>
@@ -313,24 +375,24 @@
   <hr>
 
   <section id="part2">
-    <h2>2부 — 하나님이 성을 주신 4가지 목적</h2>
+    <h2><span class="part">2부</span><span class="ht">하나님이 성을 주신 4가지 목적</span></h2>
     <p>하나님은 왜 부부에게 성을 주셨을까요? 성경에서 찾은 네 가지 목적입니다.</p>
 
-    <h3 id="purpose1">① 생육과 번성 — 창조의 협력자</h3>
+    <h3 id="purpose1"><span class="mark" aria-hidden="true"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path class="mk-trunk" d="M20 37V23M20 28c-3-3-6-4-8-7M20 25c3-2 5-4 7-7"/><circle class="mk-leaf" cx="20" cy="15" r="11.5"/><circle class="mk-fruit" cx="14" cy="19" r="3.2"/><circle class="mk-fruit" cx="25" cy="12" r="2.8"/><circle class="mk-fruit" cx="23" cy="21" r="2.4"/></svg></span><span class="ht">① 생육과 번성<span class="sub">창조의 협력자</span></span></h3>
     <blockquote>
       <p>"하나님이 그들에게 복을 주시며 하나님이 그들에게 이르시되 생육하고 번성하여 땅에 충만하라" <em>(창세기 1:28)</em></p>
     </blockquote>
     <p>성은 새 생명을 만드는 창조 행위입니다. 자녀를 낳는 것은 하나님의 창조 사역에 부부가 함께 참여하는 일이에요.</p>
     <p>다만 성경은 숫자만 말하지 않습니다. 하나님은 단순한 번성이 아니라 <strong>경건한 백성</strong> — 의와 공도를 행하는 자녀를 원하십니다(말라기 2:15 참조). 그리고 성경은 자녀를 '여호와의 기업이요 상급'(시편 127:3)이라고 부릅니다. 우리는 자녀를 정말 그렇게 '상급'으로 여기고 있을까요? 이 질문은 신혼부부가 한 번쯤 함께 나눠볼 만한 주제입니다.</p>
 
-    <h3 id="purpose2">② 즐거움 — 선물 그 자체</h3>
+    <h3 id="purpose2"><span class="mark" aria-hidden="true"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path class="mk-rock" d="M21 25c-1-7 2-12 7-13 5-1 8 4 7 11z"/><path class="mk-flow" d="M27 14c-2 5-4 10-6 15"/><ellipse class="mk-stone" cx="18" cy="31" rx="14" ry="5.5"/><ellipse class="mk-water" cx="18" cy="30.6" rx="10.5" ry="3.4"/></svg></span><span class="ht">② 즐거움<span class="sub">선물 그 자체</span></span></h3>
     <blockquote>
       <p>"네 샘으로 복되게 하라 네가 젊어서 취한 아내를 즐거워하라 그는 사랑스러운 암사슴 같고 아름다운 암노루 같으니 너는 그의 품을 항상 족하게 여기며 그의 사랑을 항상 연모하라" <em>(잠언 5:18-19)</em></p>
     </blockquote>
     <p>성경은 성의 즐거움을 조금도 숨기지 않습니다. '네 샘'은 결혼한 아내를 가리킵니다. 물 부족 국가였던 이스라엘에서 '샘'은 풍요와 생명의 근원이었어요. "연모하라"는 원어로 <em>captivate</em> — 마음을 확 사로잡으라는 뜻입니다.</p>
     <p>부부의 성이 즐거우면 어떻게 될까요? 남편은 일찍 집에 가고 싶어지고, 부부는 더 깊은 교제와 강한 연대감을 누리게 됩니다. 즐거움을 위한 성은 결코 음란한 것이 아니라, <strong>하나님이 설계하신 거룩한 기쁨</strong>입니다. 아가서 한 권 전체가 부부의 뜨거운 사랑을 신학적으로 찬양하는 시라는 사실이, 이것을 증명합니다.</p>
 
-    <h3 id="purpose3">③ 음행 방지 — 보호막이자 '섬김'</h3>
+    <h3 id="purpose3"><span class="mark" aria-hidden="true"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path class="mk-leafline" d="M20 21V9"/><path class="mk-leaf" d="M20 14c-5 0-8-3-8-7 5 0 8 3 8 7zM20 17c5 0 8-3 8-7-5 0-8 3-8 7z"/><path class="mk-stone" d="M3 35V21h34v14z"/><path class="mk-joint" d="M3 28h34M11 21v7M24 21v7M17 28v7M30 28v7"/></svg></span><span class="ht">③ 음행 방지<span class="sub">보호막이자 '섬김'</span></span></h3>
     <blockquote>
       <p>"음행을 피하기 위하여 남자마다 자기 아내를 두고 여자마다 자기 남편을 두라 ... 서로 분방하지 말라 ... 사탄이 너희를 시험하지 못하게 하려 함이라" <em>(고린도전서 7:2,5)</em></p>
     </blockquote>
@@ -340,7 +402,7 @@
     <p>여기서 정말 중요한 단어가 나옵니다. "자기 몸을 <strong>주장하지 못한다</strong>." 내 몸이지만 내 마음대로 하지 않고, 배우자에게 내어준다는 뜻이에요. 곧 배우자의 필요를 <strong>섬긴다</strong>는 것입니다.</p>
     <p>성을 '내 욕구를 채우는 도구'로 보는 게 아니라, 상대를 신실하게 사랑하고 섬기는 구체적인 방식으로 보라는 것 — 이것이 성경이 말하는 성의 핵심입니다. 그래서 성경은 부부가 함부로 분방하지 말라고 해요. 사소한 이유로 생긴 작은 틈이 큰 균열이 되고, 사탄이 바로 그 틈을 노린다고 경고하죠. 특히 아이를 낳은 후 "애 때문에" 분방이 길어지는 경우가 많은데, 조심해야 할 일입니다.</p>
 
-    <h3 id="purpose4">④ 치유 — 아픔을 안는 곳</h3>
+    <h3 id="purpose4"><span class="mark" aria-hidden="true"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path class="mk-trunk" d="M20 19v14"/><ellipse class="mk-shade" cx="20" cy="34" rx="16" ry="3.6"/><path class="mk-leaf" d="M4 19c0-8 7-14 16-14s16 6 16 14c-5 3-27 3-32 0z"/></svg></span><span class="ht">④ 치유<span class="sub">아픔을 안는 곳</span></span></h3>
     <blockquote>
       <p>"다윗이 그의 아내 밧세바를 위로하고 그에게 들어가 그와 동침하였더니" <em>(사무엘하 12:24, 아들을 잃은 후)</em></p>
     </blockquote>
@@ -348,12 +410,13 @@
       <p>"이삭이 리브가를 ... 아내로 삼고 그를 사랑하였으니 이삭이 그의 어머니를 장례한 후에 위로를 얻었더라" <em>(창세기 24:67)</em></p>
     </blockquote>
     <p>성은 상실 후의 위로이고, 슬픔 중의 피난처입니다. 다윗도, 이삭도 인생의 가장 힘든 순간에 배우자와의 친밀함을 통해 위로를 얻었습니다. 기쁨의 날뿐 아니라 힘든 날에도 서로를 안아주는 것 — 그것이 성입니다.</p>
+    <figure class="ill"><svg class="comfort-svg" viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="해가 진 뒤의 거실. 큰 창밖으로 보랏빛과 주홍빛 저녁 하늘, 초승달, 먼 마을의 불빛이 보인다. 창 앞 소파에 부부가 등을 보이며 나란히 앉아 있고, 아내가 남편의 어깨에 머리를 기대고 남편의 팔이 아내의 어깨를 감싸고 있다. 왼쪽에는 따뜻한 스탠드 불빛과 머그잔 두 개가 놓인 협탁이, 소파 등받이에는 뜨개 담요가 걸쳐 있다"><defs><filter id="comfort-paint" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="3" seed="4"/><feDisplacementMap in="SourceGraphic" scale="4"/></filter><filter id="comfort-paint2" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".06" numOctaves="2" seed="9"/><feDisplacementMap in="SourceGraphic" scale="3"/></filter><filter id="comfort-grain" filterUnits="userSpaceOnUse" x="0" y="0" width="900" height="480"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="2"/><feColorMatrix values="0 0 0 0 .3 0 0 0 0 .25 0 0 0 0 .2 0 0 0 .11 0"/><feComposite in2="SourceGraphic" operator="in"/></filter><filter id="comfort-soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter><filter id="comfort-soft2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.2"/></filter><clipPath id="comfort-frame"><rect width="900" height="480" rx="10"/></clipPath><linearGradient id="comfort-wall" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5E4E5A"/><stop offset="0.45" stop-color="#463E52"/><stop offset="1" stop-color="#2E2A3C"/></linearGradient><radialGradient id="comfort-lamp" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#FFD99A" stop-opacity="0.75"/><stop offset="0.4" stop-color="#F0B470" stop-opacity="0.3"/><stop offset="1" stop-color="#E0A060" stop-opacity="0"/></radialGradient><linearGradient id="comfort-sky" x1="0" y1="52" x2="0" y2="318" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2C2A50"/><stop offset="0.32" stop-color="#54467A"/><stop offset="0.6" stop-color="#9E6C88"/><stop offset="0.84" stop-color="#E09A7C"/><stop offset="1" stop-color="#F3C78E"/></linearGradient><linearGradient id="comfort-curt" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8E7E82"/><stop offset="0.5" stop-color="#CDBDB2"/><stop offset="1" stop-color="#9C8C8C"/></linearGradient><linearGradient id="comfort-curtR" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#C8B8AE"/><stop offset="0.6" stop-color="#8C7C82"/><stop offset="1" stop-color="#5E5262"/></linearGradient><linearGradient id="comfort-sofa" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7E8A58"/><stop offset="0.12" stop-color="#5A6840"/><stop offset="0.5" stop-color="#3E4A2E"/><stop offset="1" stop-color="#262E1E"/></linearGradient><linearGradient id="comfort-arm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6A7848"/><stop offset="1" stop-color="#2A3220"/></linearGradient><linearGradient id="comfort-floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5A3E30"/><stop offset="1" stop-color="#3A2820"/></linearGradient><radialGradient id="comfort-vg" cx="0.5" cy="0.45" r="0.75"><stop offset="0" stop-color="#140F1E" stop-opacity="0"/><stop offset="0.6" stop-color="#140F1E" stop-opacity="0"/><stop offset="1" stop-color="#140F1E" stop-opacity="0.5"/></radialGradient><pattern id="comfort-knit" width="10" height="8" patternUnits="userSpaceOnUse"><path d="M0 0L5 5L10 0M0 4L5 9L10 4" stroke="#5E4E80" stroke-width="1" fill="none" opacity=".45"/></pattern><pattern id="comfort-velvet" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M0 6L6 0" stroke="#1E2416" stroke-width=".8" opacity=".25"/></pattern><pattern id="comfort-plank" width="120" height="16" patternUnits="userSpaceOnUse"><path d="M0 16H120M40 0V16" stroke="#22160F" stroke-width="1" opacity=".4"/></pattern></defs><g clip-path="url(#comfort-frame)"><rect width="900" height="480" fill="url(#comfort-wall)"/><circle cx="150" cy="150" r="300" fill="url(#comfort-lamp)"/><rect x="300" y="52" width="420" height="266" fill="url(#comfort-sky)"/><ellipse cx="420" cy="140" rx="110" ry="9" fill="#8E6A92" opacity=".55" filter="url(#comfort-soft)"/><ellipse cx="600" cy="232" rx="130" ry="8" fill="#F0AA84" opacity=".6" filter="url(#comfort-soft)"/><path d="M640 92a16 16 0 1 0 14 26a12 12 0 1 1-14-26z" fill="#F6EAC8"/><g fill="#F6EED6"><circle cx="372" cy="86" r="1.6"/><circle cx="470" cy="70" r="1.2"/><circle cx="560" cy="110" r="1.4"/><circle cx="690" cy="160" r="1"/></g><g filter="url(#comfort-paint2)"><path d="M300 282C360 270 420 276 480 266C540 258 610 268 720 262V318H300Z" fill="#4A3E62"/><path d="M300 300C380 292 460 298 540 290C610 286 670 294 720 290V318H300Z" fill="#352E4C"/><circle cx="332" cy="286" r="16" fill="#2C2640"/><circle cx="352" cy="280" r="20" fill="#2C2640"/><circle cx="626" cy="276" r="18" fill="#2C2640"/><circle cx="650" cy="282" r="14" fill="#2C2640"/><circle cx="700" cy="270" r="22" fill="#2C2640"/></g><g fill="#FFD98A"><rect x="420" y="296" width="4" height="3"/><rect x="436" y="298" width="4" height="3"/><rect x="512" y="292" width="4" height="3"/><rect x="560" y="296" width="4" height="3"/><rect x="574" y="294" width="4" height="3"/><rect x="590" y="300" width="4" height="3"/></g><g fill="none" stroke="#5E4A44"><rect x="300" y="52" width="420" height="266" stroke-width="12"/><path d="M510 52V318" stroke-width="8"/><path d="M300 182H720" stroke-width="6"/></g><path d="M306 58H504M516 58H714" stroke="#9A7C6C" stroke-width="2" opacity=".6"/><rect x="288" y="316" width="444" height="12" fill="#6E5850"/><rect x="288" y="316" width="444" height="3" fill="#C8A488" opacity=".7"/><g filter="url(#comfort-paint2)"><path d="M246 30H322C318 120 326 220 316 330C312 380 318 420 322 480H240C246 400 236 300 244 200C248 130 240 80 246 30Z" fill="url(#comfort-curt)"/><path d="M262 40C258 160 266 300 258 470M284 40C288 170 280 320 290 470M304 40C300 150 308 280 300 470" stroke="#6E5E66" stroke-width="2.2" fill="none" opacity=".5"/><path d="M316 40C312 140 320 240 312 340" stroke="#F4C894" stroke-width="2" fill="none" opacity=".55"/><path d="M700 30H778C782 100 772 200 780 300C786 380 778 430 784 480H702C698 420 708 360 702 300C696 220 706 120 700 30Z" fill="url(#comfort-curtR)"/><path d="M720 40C716 180 726 320 720 470M744 40C748 170 738 320 748 470M764 40C760 160 768 300 762 470" stroke="#4E4256" stroke-width="2.2" fill="none" opacity=".5"/><path d="M704 40C708 140 700 240 708 340" stroke="#F4C894" stroke-width="2" fill="none" opacity=".5"/><rect x="232" y="24" width="560" height="7" rx="3" fill="#3A2E2E"/></g><path d="M150 478V160" stroke="#2A2224" stroke-width="4"/><ellipse cx="150" cy="476" rx="26" ry="5" fill="#1E181C"/><path d="M114 106H186L200 160H100Z" fill="#F2D4A0"/><path d="M114 106H130L120 160H100Z" fill="#D9B07C" opacity=".7"/><path d="M100 160H200" stroke="#FFF2CE" stroke-width="2.4"/><path d="M104 162L60 300H240L196 162Z" fill="#FFE2A8" opacity=".09"/><g filter="url(#comfort-paint2)"><rect x="168" y="370" width="66" height="8" fill="#6E4E3A"/><path d="M172 378V480M230 378V480" stroke="#4A3428" stroke-width="5"/><rect x="176" y="356" width="38" height="7" fill="#56683A"/><rect x="179" y="350" width="34" height="6" fill="#9A3540"/><path d="M192 330h14v20h-14z" fill="#E8DCC8"/><path d="M206 334c6 0 6 10 0 10" stroke="#E8DCC8" stroke-width="2.4" fill="none"/><path d="M216 340h12v16h-12z" fill="#B7A6CC"/><path d="M228 344c5 0 5 8 0 8" stroke="#B7A6CC" stroke-width="2.2" fill="none"/></g><path d="M198 326c-4-6 4-10 0-16M222 334c-3-5 3-8 0-13" stroke="#F4EEE4" stroke-width="1.6" fill="none" opacity=".45" stroke-linecap="round"/><g filter="url(#comfort-paint2)"><path d="M808 480L816 430H866L874 480Z" fill="#8A5A44"/><rect x="812" y="424" width="58" height="10" rx="2" fill="#A06A50"/><path d="M842 426C840 400 842 340 842 300" stroke="#3E4E2C" stroke-width="2.4" fill="none"/><ellipse cx="842" cy="300" rx="30" ry="15" fill="#3E5230" transform="rotate(-30 842 300)"/><path d="M818 300H866" stroke="#2A3620" stroke-width="1.2" transform="rotate(-30 842 300)" opacity=".6"/><path d="M842 426C840 400 820 370 820 330" stroke="#3E4E2C" stroke-width="2.4" fill="none"/><ellipse cx="820" cy="330" rx="30" ry="15" fill="#56683A" transform="rotate(-60 820 330)"/><path d="M796 330H844" stroke="#2A3620" stroke-width="1.2" transform="rotate(-60 820 330)" opacity=".6"/><path d="M842 426C840 400 866 360 866 320" stroke="#3E4E2C" stroke-width="2.4" fill="none"/><ellipse cx="866" cy="320" rx="30" ry="15" fill="#4A5E34" transform="rotate(20 866 320)"/><path d="M842 320H890" stroke="#2A3620" stroke-width="1.2" transform="rotate(20 866 320)" opacity=".6"/><path d="M842 426C840 400 838 400 838 360" stroke="#3E4E2C" stroke-width="2.4" fill="none"/><ellipse cx="838" cy="360" rx="30" ry="15" fill="#6E8444" transform="rotate(-10 838 360)"/><path d="M814 360H862" stroke="#2A3620" stroke-width="1.2" transform="rotate(-10 838 360)" opacity=".6"/><path d="M842 426C840 400 880 400 880 360" stroke="#3E4E2C" stroke-width="2.4" fill="none"/><ellipse cx="880" cy="360" rx="30" ry="15" fill="#3E5230" transform="rotate(50 880 360)"/><path d="M856 360H904" stroke="#2A3620" stroke-width="1.2" transform="rotate(50 880 360)" opacity=".6"/><path d="M842 426C840 400 812 420 812 380" stroke="#3E4E2C" stroke-width="2.4" fill="none"/><ellipse cx="812" cy="380" rx="30" ry="15" fill="#4A5E34" transform="rotate(-70 812 380)"/><path d="M788 380H836" stroke="#2A3620" stroke-width="1.2" transform="rotate(-70 812 380)" opacity=".6"/></g><rect x="0" y="440" width="900" height="40" fill="url(#comfort-floor)"/><rect x="0" y="440" width="900" height="40" fill="url(#comfort-plank)"/><g filter="url(#comfort-paint)"><path d="M360 362C362 306 382 278 412 270L462 270C492 278 510 302 512 362Z" fill="#3E4A68"/><path d="M370 362C372 312 388 286 412 278C402 300 398 330 400 362Z" fill="#2C3650" opacity=".7"/><rect x="425" y="238" width="25" height="36" rx="6" fill="#A87658"/><path d="M413 270Q437 285 461 270" stroke="#2C3650" stroke-width="3" fill="none"/><g transform="rotate(9 437 224)"><ellipse cx="410" cy="228" rx="5" ry="8" fill="#A87658"/><ellipse cx="464" cy="228" rx="5" ry="8" fill="#A87658"/><path d="M437 190C459 190 465 206 464 226C463 242 453 252 437 252C421 252 411 242 410 226C409 206 415 190 437 190Z" fill="#2A211E"/><path d="M424 196C432 191 446 191 454 197" stroke="#F4C894" stroke-width="2.2" fill="none" opacity=".6"/></g><path d="M490 362C492 320 508 296 532 290L568 290C594 296 608 318 610 362Z" fill="#B06A6E"/><path d="M564 292C592 300 606 320 606 362H582C582 332 576 308 564 292Z" fill="#8E4E58" opacity=".6"/><path d="M530 294L510 262L526 254L548 292Z" fill="#B88462"/><g transform="rotate(-32 494 244)"><path d="M494 218C513 218 519 233 518 248C517 263 509 271 494 271C479 271 471 263 470 248C469 233 475 218 494 218Z" fill="#4A3026"/><ellipse cx="494" cy="274" rx="11.5" ry="8.5" fill="#3A241C"/><path d="M485 264Q494 268 503 264" stroke="#C8A06A" stroke-width="2.4" fill="none"/><path d="M501 222C511 227 515 238 515 250" stroke="#7A5442" stroke-width="2.6" fill="none" opacity=".8"/><path d="M480 222C488 218 500 218 506 221" stroke="#F4C894" stroke-width="2" fill="none" opacity=".6"/></g></g><g fill="none" stroke="#F4C894" stroke-linecap="round" opacity=".55"><path d="M418 276C406 284 394 298 388 316" stroke-width="2"/><path d="M536 290C552 290 570 292 584 298" stroke-width="2"/></g><g filter="url(#comfort-paint2)"><path d="M244 480V346C244 334 252 328 264 328C320 316 460 316 508 326C556 316 700 316 756 328C768 328 776 334 776 346V480Z" fill="url(#comfort-sofa)"/><path d="M244 480V346C244 334 252 328 264 328C320 316 460 316 508 326C556 316 700 316 756 328C768 328 776 334 776 346V480Z" fill="url(#comfort-velvet)"/><path d="M264 330C320 318 460 318 508 328C556 318 700 318 756 330" stroke="#A2AE76" stroke-width="3" fill="none" opacity=".6"/><path d="M509 328V480" stroke="#1E2416" stroke-width="2" opacity=".5"/><path d="M300 360C380 352 440 352 490 362M530 362C600 352 680 352 740 360" stroke="#1E2416" stroke-width="1.6" fill="none" opacity=".35"/><rect x="218" y="360" width="58" height="120" rx="22" fill="url(#comfort-arm)"/><rect x="744" y="360" width="58" height="120" rx="22" fill="url(#comfort-arm)"/><path d="M226 368C238 360 262 360 270 368M752 368C764 360 788 360 796 368" stroke="#9AA672" stroke-width="2.4" fill="none" opacity=".6"/><path d="M612 318C638 312 682 314 704 322C710 346 706 392 712 438C694 448 664 444 644 452C632 410 630 352 612 318Z" fill="#8C7BAA"/><path d="M612 318C638 312 682 314 704 322C710 346 706 392 712 438C694 448 664 444 644 452C632 410 630 352 612 318Z" fill="url(#comfort-knit)"/><path d="M618 320C646 314 678 316 702 324" stroke="#C8BCE0" stroke-width="2" fill="none" opacity=".7"/><path d="M644 452C654 458 666 460 676 458M684 454C694 460 704 460 712 454" stroke="#6E5E90" stroke-width="2" fill="none"/></g><rect width="900" height="480" fill="url(#comfort-vg)"/><rect width="900" height="480" filter="url(#comfort-grain)" fill="#fff"/></g><rect x=".5" y=".5" width="899" height="479" rx="10" fill="none" stroke="#18232B" stroke-opacity=".18"/></svg><figcaption>저녁 창가. 한 사람이 다른 사람의 어깨에 기대어 쉰다.</figcaption></figure>
   </section>
 
   <hr>
 
   <section id="paradigm">
-    <h2>★ 가장 중요한 전환: 세상의 성 vs 그리스도인의 성</h2>
+    <h2><span class="part star">★</span><span class="ht">가장 중요한 전환:<span class="sub">세상의 성 vs 그리스도인의 성</span></span></h2>
     <div class="callout">
       위의 네 가지 목적을 관통하는, <strong>오늘 강의에서 가장 기억해야 할 한 가지</strong>가 있습니다.
     </div>
@@ -385,7 +448,7 @@
   <hr>
 
   <section id="part3">
-    <h2>3부 — 결혼의 4대 원리</h2>
+    <h2><span class="part">3부</span><span class="ht">결혼의 4대 원리</span></h2>
     <p>창세기 한 구절에 결혼의 설계도가 통째로 담겨 있습니다.</p>
     <blockquote>
       <p>"이러므로 남자가 부모를 떠나 그의 아내와 합하여 둘이 한 몸을 이룰지로다 아담과 그의 아내 두 사람이 벌거벗었으나 부끄러워하지 아니하니라" <em>(창세기 2:24-25)</em></p>
@@ -422,7 +485,7 @@
   <hr>
 
   <section id="part4">
-    <h2>4부 — 성은 몸과 마음에도 좋습니다 <span>(의학 이야기)</span></h2>
+    <h2><span class="part">4부</span><span class="ht">성은 몸과 마음에도 좋습니다 <span class="aside">(의학 이야기)</span></span></h2>
     <p>그리스도인들은 예배·봉사는 거룩하게 느끼면서, 성은 왠지 덜 거룩하게 느끼는 경향이 있어요. 그런데 의사로서 말씀드리면, 부부의 규칙적인 성생활은 <strong>건강에 분명한 유익</strong>이 있습니다.</p>
 
     <div class="benefits-grid">
@@ -443,7 +506,7 @@
   <hr>
 
   <section id="part5">
-    <h2>5부 — 미리 깨고 가면 좋은 세 가지 오해</h2>
+    <h2><span class="part">5부</span><span class="ht">미리 깨고 가면 좋은 세 가지 오해</span></h2>
     <p>강의에 오시기 전에, 흔한 오해 세 가지만 짚어둘게요.</p>
 
     <div class="myth-card">
@@ -463,17 +526,18 @@
   <hr>
 
   <section id="action">
-    <h2>강의 전, 두 가지를 부탁드려요</h2>
+    <h2><span class="ht">강의 전, 두 가지를 부탁드려요</span></h2>
+    <figure class="ill"><svg class="tea-svg" viewBox="0 0 900 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="오후 햇살이 드는 작은 방. 둥근 식탁 위에 흰 찻주전자와 김이 오르는 찻잔 두 개, 작은 꽃병이 놓여 있다. 부부가 식탁을 사이에 두고 마주 앉아 옆모습으로 보이는데, 한 사람은 찻잔에 손을 얹고 다른 사람은 손을 들어 이야기하고 있다. 위에는 초록 갓의 펜던트 등이 켜져 있고, 왼쪽 창밖으로 나무가 보이며, 오른쪽 벽에는 책이 꽂힌 선반과 풍경 액자가 걸려 있다"><defs><filter id="tea-paint" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="3" seed="4"/><feDisplacementMap in="SourceGraphic" scale="4"/></filter><filter id="tea-paint2" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".06" numOctaves="2" seed="9"/><feDisplacementMap in="SourceGraphic" scale="3"/></filter><filter id="tea-grain" filterUnits="userSpaceOnUse" x="0" y="0" width="900" height="460"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="2"/><feColorMatrix values="0 0 0 0 .3 0 0 0 0 .25 0 0 0 0 .2 0 0 0 .11 0"/><feComposite in2="SourceGraphic" operator="in"/></filter><filter id="tea-soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter><filter id="tea-soft2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.2"/></filter><clipPath id="tea-frame"><rect width="900" height="460" rx="10"/></clipPath><linearGradient id="tea-wall" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ECE2CE"/><stop offset="0.45" stop-color="#D6CAB6"/><stop offset="1" stop-color="#B2A694"/></linearGradient><linearGradient id="tea-out" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C6D2DC"/><stop offset="0.6" stop-color="#E6E2D2"/><stop offset="1" stop-color="#F2E8D2"/></linearGradient><radialGradient id="tea-glow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#FFE6AE" stop-opacity="0.8"/><stop offset="0.45" stop-color="#FFD48C" stop-opacity="0.3"/><stop offset="1" stop-color="#FFD48C" stop-opacity="0"/></radialGradient><linearGradient id="tea-top" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#C8986A"/><stop offset="1" stop-color="#9A6A44"/></linearGradient><linearGradient id="tea-floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9A7454"/><stop offset="1" stop-color="#6E5038"/></linearGradient><linearGradient id="tea-shade" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6E8448"/><stop offset="0.5" stop-color="#56683A"/><stop offset="1" stop-color="#3A4828"/></linearGradient><radialGradient id="tea-pot" cx="0.4" cy="0.35" r="0.7"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.6" stop-color="#EDE4D6"/><stop offset="1" stop-color="#B8AC9C"/></radialGradient><radialGradient id="tea-vg" cx="0.5" cy="0.45" r="0.75"><stop offset="0" stop-color="#2A2018" stop-opacity="0"/><stop offset="0.65" stop-color="#2A2018" stop-opacity="0"/><stop offset="1" stop-color="#2A2018" stop-opacity="0.38"/></radialGradient><pattern id="tea-plank" width="140" height="14" patternUnits="userSpaceOnUse"><path d="M0 14H140M60 0V14" stroke="#3E2A1C" stroke-width="1" opacity=".35"/></pattern><pattern id="tea-rug" width="18" height="10" patternUnits="userSpaceOnUse"><path d="M0 5L4.5 0L9 5L4.5 10Z M9 5L13.5 0L18 5L13.5 10Z" fill="none" stroke="#5E4E7A" stroke-width="1" opacity=".5"/></pattern><clipPath id="tea-win"><rect x="60" y="40" width="190" height="252"/></clipPath></defs><g clip-path="url(#tea-frame)"><rect width="900" height="460" fill="url(#tea-wall)"/><rect x="60" y="40" width="190" height="252" fill="url(#tea-out)"/><g clip-path="url(#tea-win)" filter="url(#tea-paint2)"><path d="M147 198Q159 211 148 226Q137 241 126 255Q115 268 94 259Q74 250 59 245Q43 240 34 225Q24 210 36 195Q49 180 67 168Q85 156 97 160Q110 164 122 175Q135 186 147 198Z" fill="#7E9458"/><path d="M240 161Q253 182 248 200Q243 217 218 227Q192 237 176 231Q160 224 141 226Q122 227 122 205Q122 183 124 160Q126 137 141 135Q155 132 174 131Q194 130 211 135Q228 140 240 161Z" fill="#94A866"/><path d="M276 222Q281 233 275 244Q269 255 264 269Q259 283 235 281Q212 278 206 270Q200 262 192 251Q185 241 188 229Q191 217 203 209Q214 200 232 198Q250 195 261 203Q271 211 276 222Z" fill="#6E8450"/><path d="M173 250Q186 263 175 272Q164 281 155 291Q145 301 129 298Q114 295 105 287Q96 279 89 270Q81 261 81 248Q81 235 100 231Q119 227 133 223Q146 219 153 228Q159 238 173 250Z" fill="#A6B47A"/><path d="M255 269Q258 281 252 291Q245 301 233 307Q222 312 205 317Q188 321 185 310Q182 298 171 290Q160 281 170 272Q179 263 185 253Q191 242 207 245Q224 248 237 252Q251 256 255 269Z" fill="#5E7244"/><path d="M60 292C110 276 170 284 250 274V292Z" fill="#6A7E4C"/></g><g fill="none" stroke="#F4EEE4"><rect x="60" y="40" width="190" height="252" stroke-width="12"/><path d="M155 40V292" stroke-width="7"/><path d="M60 150H250" stroke-width="6"/></g><rect x="50" y="290" width="210" height="10" fill="#E6DCCC"/><rect x="50" y="298" width="210" height="4" fill="#A8987E" opacity=".6"/><path d="M36 26H106C100 110 108 210 98 310H30C38 210 30 110 36 26Z" fill="#FFFFFF" opacity=".55"/><path d="M52 30C48 120 56 220 48 306M74 30C78 120 70 220 80 306" stroke="#D8CCBC" stroke-width="2" fill="none" opacity=".7"/><g fill="#FFF6DE" opacity=".22"><path d="M250 60L560 300L520 330L250 290Z"/><path d="M250 150L640 440H420L250 292Z"/></g><g filter="url(#tea-paint2)"><rect x="724" y="168" width="104" height="76" fill="#F4EEE2" stroke="#7A5E48" stroke-width="5"/><path d="M732 236C752 210 770 214 786 200C798 192 808 206 820 196V236Z" fill="#8E9C6A"/><circle cx="804" cy="186" r="7" fill="#E8A87C"/><path d="M732 236C748 224 766 230 780 222C794 216 808 226 820 220V236Z" fill="#6E7E54"/><rect x="690" y="118" width="190" height="8" fill="#8A6448"/><rect x="690" y="124" width="190" height="3" fill="#5E4230" opacity=".6"/><rect x="700" y="64" width="12" height="54" fill="#9A3540"/><rect x="702" y="72" width="8" height="2" fill="#F4EEE2" opacity=".5"/><rect x="714" y="70" width="10" height="48" fill="#56683A"/><rect x="716" y="78" width="6" height="2" fill="#F4EEE2" opacity=".5"/><rect x="726" y="60" width="14" height="58" fill="#6E6187"/><rect x="728" y="68" width="10" height="2" fill="#F4EEE2" opacity=".5"/><rect x="742" y="74" width="9" height="44" fill="#C9A46A"/><rect x="744" y="82" width="5" height="2" fill="#F4EEE2" opacity=".5"/><rect x="753" y="66" width="12" height="52" fill="#3E4A5E"/><rect x="755" y="74" width="8" height="2" fill="#F4EEE2" opacity=".5"/><rect x="767" y="78" width="10" height="40" fill="#B48A6A"/><rect x="769" y="86" width="6" height="2" fill="#F4EEE2" opacity=".5"/><path d="M796 96h26l-4 22h-18z" fill="#B87452"/><path d="M809 96C800 80 790 74 784 60M809 96C816 82 826 76 834 66M809 96C806 110 800 130 804 150" stroke="#56683A" stroke-width="2.2" fill="none"/><g fill="#6E8444"><ellipse cx="786" cy="64" rx="7" ry="3.6" transform="rotate(-40 786 64)"/><ellipse cx="832" cy="68" rx="7" ry="3.6" transform="rotate(30 832 68)"/><ellipse cx="802" cy="134" rx="6" ry="3.2" transform="rotate(70 802 134)"/><ellipse cx="804" cy="150" rx="6" ry="3.2" transform="rotate(100 804 150)"/></g></g><path d="M450 0V92" stroke="#3A322C" stroke-width="2"/><circle cx="450" cy="250" r="230" fill="url(#tea-glow)"/><path d="M424 92H476C496 100 508 116 510 134H390C392 116 404 100 424 92Z" fill="url(#tea-shade)"/><path d="M390 134H510" stroke="#2A3420" stroke-width="2"/><ellipse cx="450" cy="136" rx="46" ry="5" fill="#FFF0C8"/><path d="M434 96C420 104 410 116 406 130" stroke="#A8BC78" stroke-width="2" fill="none" opacity=".6"/><rect x="0" y="398" width="900" height="62" fill="url(#tea-floor)"/><rect x="0" y="398" width="900" height="62" fill="url(#tea-plank)"/><ellipse cx="450" cy="432" rx="250" ry="26" fill="#8C7BA0"/><ellipse cx="450" cy="432" rx="250" ry="26" fill="url(#tea-rug)"/><ellipse cx="450" cy="432" rx="236" ry="21" fill="none" stroke="#C8BCDC" stroke-width="2" opacity=".7"/><g filter="url(#tea-paint2)"><g transform="translate(306 0) scale(1 1)" fill="none" stroke="#5A3C2C" stroke-linecap="round"><path d="M-24 336C-30 300-32 260-26 222" stroke-width="5"/><path d="M-26 222C-20 216-14 216-10 222" stroke-width="4"/><path d="M-22 340L-28 418M24 340L30 418M-14 344L-12 412M14 344L12 412" stroke-width="4"/><path d="M-26 380H26" stroke-width="2.4"/></g><ellipse cx="306" cy="338" rx="32" ry="7" fill="#7A5038"/><ellipse cx="306" cy="336" rx="30" ry="5" fill="#A06E4E"/><g transform="translate(594 0) scale(-1 1)" fill="none" stroke="#5A3C2C" stroke-linecap="round"><path d="M-24 336C-30 300-32 260-26 222" stroke-width="5"/><path d="M-26 222C-20 216-14 216-10 222" stroke-width="4"/><path d="M-22 340L-28 418M24 340L30 418M-14 344L-12 412M14 344L12 412" stroke-width="4"/><path d="M-26 380H26" stroke-width="2.4"/></g><ellipse cx="594" cy="338" rx="32" ry="7" fill="#7A5038"/><ellipse cx="594" cy="336" rx="30" ry="5" fill="#A06E4E"/></g><g filter="url(#tea-paint)"><path d="M318 340H382C388 340 392 344 392 350V352C392 356 388 360 382 360H318Z" fill="#3E4A5E"/><path d="M370 352L378 414" stroke="#3E4A5E" stroke-width="15" stroke-linecap="round"/><path d="M368 414h20c4 0 6 4 4 6h-24z" fill="#2A2228"/><path d="M292 342C286 300 292 252 310 224C318 212 338 212 346 224C356 244 358 296 352 342Z" fill="#A84452"/><path d="M296 340C290 300 296 254 312 228C306 260 306 300 314 340Z" fill="#7E2E3C" opacity=".55"/><path d="M338 232C348 258 352 274 360 286L392 290" stroke="#A84452" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M343 238C352 260 356 272 362 282" stroke="#C86070" stroke-width="2.4" fill="none" opacity=".7"/><ellipse cx="394" cy="289" rx="7" ry="5.4" fill="#D2A07A"/><rect x="320" y="200" width="16" height="22" rx="5" fill="#D2A07A"/><path d="M330 164C346 164 354 176 354 190C354 202 348 210 338 212C326 214 314 206 312 192C310 176 316 164 330 164Z" fill="#D2A07A"/><path d="M330 160C346 160 354 170 352 182C342 180 336 178 334 186C334 196 332 204 328 214H306C304 200 304 188 306 178C310 166 318 160 330 160Z" fill="#3A2820"/><path d="M340 162C348 166 352 172 352 180" stroke="#7A5440" stroke-width="2" fill="none" opacity=".7"/><path d="M582 338H520C514 338 510 342 510 348V350C510 354 514 358 520 358H582Z" fill="#4A4A52"/><path d="M524 350L518 414" stroke="#4A4A52" stroke-width="15" stroke-linecap="round"/><path d="M528 414h-20c-4 0-6 4-4 6h24z" fill="#2A2228"/><path d="M608 340C614 298 608 250 590 220C582 208 560 208 552 220C542 242 540 294 546 340Z" fill="#5E7046"/><path d="M604 338C610 298 604 252 588 226C594 258 594 300 586 338Z" fill="#3E4C2E" opacity=".6"/><path d="M560 230C550 254 544 270 530 272L512 246" stroke="#5E7046" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M556 236C548 254 542 264 532 266" stroke="#7E9060" stroke-width="2.4" fill="none" opacity=".7"/><path d="M506 248C500 242 498 232 502 228C506 226 510 232 512 236L514 230C516 226 520 228 520 234L518 248Z" fill="#B9845E"/><path d="M546 336C540 316 520 300 506 292" stroke="#5E7046" stroke-width="12" stroke-linecap="round" fill="none"/><ellipse cx="502" cy="290" rx="7" ry="5.4" fill="#B9845E"/><rect x="562" y="194" width="18" height="24" rx="5" fill="#B9845E"/><path d="M568 158C552 158 544 170 544 186C544 198 550 206 560 208C574 210 588 202 590 188C592 172 584 158 568 158Z" fill="#B9845E"/><path d="M570 154C556 154 546 162 546 174C556 172 566 172 570 178C574 184 576 190 580 196C586 196 590 192 592 186C594 168 586 154 570 154Z" fill="#2A211E"/></g><g fill="none" stroke="#FFE4A8" stroke-linecap="round" opacity=".65"><path d="M318 166C326 160 340 160 348 166" stroke-width="2"/><path d="M554 160C562 154 576 154 584 160" stroke-width="2"/><path d="M314 226C322 216 334 214 342 220" stroke-width="1.8"/><path d="M556 222C566 212 580 212 588 220" stroke-width="1.8"/></g><g filter="url(#tea-paint2)"><path d="M444 312L438 416H462L456 312Z" fill="#6E4A32"/><ellipse cx="450" cy="420" rx="48" ry="8" fill="#4A3020"/><path d="M332 300A118 15 0 0 0 568 300V308A118 15 0 0 1 332 308Z" fill="#7A5236"/><ellipse cx="450" cy="300" rx="118" ry="15" fill="url(#tea-top)"/><path d="M352 296A110 12 0 0 1 548 296" stroke="#E8C49A" stroke-width="2" fill="none" opacity=".6"/></g><g transform="translate(450 280)"><ellipse cy="18" rx="30" ry="4" fill="#5E3E28" opacity=".35"/><path d="M-22 4C-24-14-12-22 0-22C12-22 24-14 22 4C20 14 12 18 0 18C-12 18-20 14-22 4Z" fill="url(#tea-pot)"/><path d="M-20-2C-30-6-36-14-40-22L-34-22C-30-16-26-12-20-10Z" fill="#E6DCCC"/><path d="M20-8C32-10 34 6 22 10" stroke="#D8CCBA" stroke-width="4" fill="none"/><path d="M-12-22C-12-28-6-30 0-30C6-30 12-28 12-22Z" fill="#E6DCCC"/><circle cy="-32" r="3" fill="#56683A"/><path d="M-16 0C-10 4 10 4 16 0" stroke="#56683A" stroke-width="2.4" fill="none"/></g><g transform="translate(398 288)"><ellipse cy="10" rx="17" ry="4" fill="#E2D6C4"/><ellipse cy="9" rx="17" ry="3.4" fill="#F6F0E6"/><path d="M-10-4H10C10 4 6 9 0 9C-6 9-10 4-10-4Z" fill="#F4EEE4"/><ellipse cy="-4" rx="10" ry="2.4" fill="#B4724A"/><path d="M10-2c6 0 6 7 0 7" stroke="#F4EEE4" stroke-width="2.4" fill="none"/></g><g transform="translate(504 288)"><ellipse cy="10" rx="17" ry="4" fill="#E2D6C4"/><ellipse cy="9" rx="17" ry="3.4" fill="#F6F0E6"/><path d="M-10-4H10C10 4 6 9 0 9C-6 9-10 4-10-4Z" fill="#F4EEE4"/><ellipse cy="-4" rx="10" ry="2.4" fill="#B4724A"/><path d="M10-2c6 0 6 7 0 7" stroke="#F4EEE4" stroke-width="2.4" fill="none"/></g><g fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" opacity=".55"><path d="M396 276c-6-8 6-12 0-20s6-12 0-20"/><path d="M404 278c-4-6 4-9 0-15"/><path d="M502 276c6-8-6-12 0-20s-6-12 0-20"/><path d="M510 278c4-6-4-9 0-15"/></g><path d="M480 296h10l-1-12h-8z" fill="#6E6187"/><path d="M485 284C484 272 480 262 474 254M485 284C488 270 494 262 500 256" stroke="#56683A" stroke-width="1.6" fill="none"/><circle cx="474" cy="252" r="3.4" fill="#C44A50"/><circle cx="500" cy="254" r="3" fill="#E2783E"/><circle cx="486" cy="262" r="2.4" fill="#F4EEE4"/><rect width="900" height="460" fill="url(#tea-vg)"/><rect width="900" height="460" filter="url(#tea-grain)" fill="#fff"/></g><rect x=".5" y=".5" width="899" height="459" rx="10" fill="none" stroke="#18232B" stroke-opacity=".18"/></svg><figcaption>작은 식탁에 마주 앉아, 찻잔을 사이에 두고 나누는 이야기.</figcaption></figure>
 
     <div class="cta-section" id="discussion">
-      <h3>① 부부 나눔 <span>(5분)</span></h3>
+      <h3><span class="ht">① 부부 나눔 <span class="aside">(5분)</span></span></h3>
       <p>강의 오시기 전에 배우자와 단 둘이 이야기해 보세요. 정답이 없는 질문입니다. 판단 없이 들어주세요.</p>
       <div class="discussion-q"><strong>1.</strong> "우리 결혼에서 성(性)은 어떤 자리를 차지하고 있나요? 솔직하게 한 가지씩 말해볼까요?"</div>
       <div class="discussion-q"><strong>2.</strong> "오늘 읽은 4가지 목적(생육·즐거움·음행방지·치유) 중, 우리 부부에게 가장 와닿는 것과 가장 낯선 것은?"</div>
     </div>
 
     <div class="survey-section" id="survey">
-      <h3>② 사전 설문 <span>(익명, 2분)</span></h3>
+      <h3><span class="ht">② 사전 설문 <span class="aside">(익명, 2분)</span></span></h3>
       <p>아래 링크로 익명 설문에 답해주세요. 여러분의 솔직한 고민과 질문을 미리 보고, <strong>꼭 필요한 이야기에 시간을 더 쓰기 위한</strong> 것입니다. 누가 썼는지 전혀 알 수 없으니 편하게 답해주세요.</p>
       <a>사전 설문 참여하기</a>
       <div class="qr-url">https://forms.gle/deHyR3z46Efcpc9SA</div>
@@ -491,6 +555,19 @@
   <a href="#top" class="back-top">맨 위로 돌아가기 &uarr;</a>
 
 </main>
-
+</div>
+<footer class="foot"><a href="https://wiki.youngdoctor.kr/marktl/">영닥터 아카이브로 돌아가기</a><span>youngdoctor.kr · 2026-10-30</span></footer>
+<script>
+(()=>{const nav=document.querySelector('nav.toc'),btn=nav.querySelector('.toc-btn'),mq=matchMedia('(min-width:1080px)');
+const set=o=>{nav.classList.toggle('open',o);btn.setAttribute('aria-expanded',String(o))};
+btn.addEventListener('click',()=>set(!nav.classList.contains('open')));
+nav.addEventListener('click',e=>{if(e.target.closest('.toc-body a')&&!mq.matches)set(false)});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')&&!mq.matches){set(false);btn.focus()}});
+const links=[...nav.querySelectorAll('.toc-body ul a')],ts=links.map(a=>document.getElementById(decodeURIComponent(a.hash.slice(1))));
+let busy=false;const upd=()=>{busy=false;const y=innerHeight*.3;let cur=-1;ts.forEach((t,i)=>{if(t&&t.getBoundingClientRect().top<=y)cur=i});
+links.forEach((a,i)=>{const on=i===cur;a.parentElement.classList.toggle('on',on);on?a.setAttribute('aria-current','location'):a.removeAttribute('aria-current')})};
+addEventListener('scroll',()=>{if(!busy){busy=true;requestAnimationFrame(upd)}},{passive:true});upd();
+})();
+</script>
 </body>
 </html>
