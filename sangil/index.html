@@ -335,13 +335,22 @@ const HYST_M = 5;           // 오르막·내리막 누적 때 무시할 고도 
 const SNAP_M = 250;         // 이정표를 경로에 붙일 수 있는 거리
 const START = [37.6595, 126.968];
 const DRAFT_KEY = "sangil-draft-v2";
-// 구간의 다른 길: 같은 등산 프로필의 대안 1~3번 + 자전거 여행 프로필(계단·급한 산길을 피해 임도·넓은 길로 돈다)
+// 구간의 다른 길: 같은 등산 프로필의 대안 1번 + 자전거 여행 프로필(계단·급한 산길을 피해 임도·넓은 길로 돈다)
 const ALT_PROFILE = "trekking";
-const ALT_MAX = 3;          // 지금 길 말고 보여 줄 다른 길 수
+const ALT_MAX = 2;          // 지금 길 말고 보여 줄 다른 길 수
 const ALT_RATIO = 1.6;      // 가장 짧은 길보다 이 배수를 넘게 돌아가는 길은 뺀다(간월재 임도가 산길의 1.44배)
 const ALT_MIN_M = 300;      // 이보다 짧은 구간은 다른 길을 찾지 않는다
 const ALT_DIFF_M = 100;     // 다른 길과 갈라지는 부분이 이보다 짧으면 같은 길로 본다
 const ALT_COLORS = ["#2563eb", "#0d9488", "#7c3aed", "#b45309"];
+// brouter.de는 몰아 물으면 403 "Please, retry later!"로 막고 30~40초 뒤 푼다. 기준은 공개돼 있지 않고 실측도 한 규칙에
+// 맞지 않는다(2026-10-31: 61초에 40번째 · 20초에 21번째 · 48초에 24번째에서 막힘). 그래서 점 잇기는 언제나 묻되
+// (막히면 기다렸다 다시), 다른 길은 사용자가 잠깐 멈췄고 · 최근 요청이 적고 · 최근 2분 안에 막힌 적이 없을 때만 묻는다.
+const ALT_PAUSE_MS = 3000;  // 점을 찍고 이만큼 다음 점이 없을 때만 다른 길을 자동으로 찾는다
+const AUTO_30S = 10;        // 자동으로 다른 길을 물은 뒤에도 최근 30초 요청이 이 이하
+const AUTO_60S = 16;        // 〃 최근 60초
+const ASK_30S = 14;         // 「다른 길」을 눌렀을 때는 조금 넉넉하게
+const COOL_MS = 40000;      // 막힌 뒤 기다리는 시간
+const QUIET_MS = 120000;    // 막힌 뒤 다른 길 자동 찾기를 쉬는 시간
 
 const WTYPES = [
   { id: "Summit", label: "정상", mark: "정상", sym: "Summit" },
@@ -554,10 +563,22 @@ let cursorMarker = null;
 let selPlace = null, selMarker = null;
 let altJob = null;    // 진행 중인 다른 길 찾기(AbortController)
 let altView = null;   // 지도에 펼친 다른 길 선·글자
+const reqLog = [];    // 경로 서버에 물은 시각들
+let coolUntil = 0;    // 경로 서버가 막아서 기다려야 하는 때
+let quietUntil = 0;   // 이때까지는 다른 길을 자동으로 찾지 않는다
 const nearbyOn = new Set();
 const nearbyMarkers = {};
 
-function setStatus(text, isErr = false) { $("status").textContent = text; $("status").classList.toggle("err", isErr); }
+let noticeTimer = null;
+function setStatus(text, isErr = false) {
+  $("status").textContent = text; $("status").classList.toggle("err", isErr);
+  // 휴대폰에서는 상태줄이 패널 맨 아래라 안 보인다 — 오류는 지도 위에도 잠깐 띄운다
+  if (isErr && text) {
+    hint(text);
+    clearTimeout(noticeTimer);
+    noticeTimer = setTimeout(() => { if ($("hint").textContent === text) hint(""); }, 8000);
+  }
+}
 function hint(text) { $("hint").textContent = text; $("hint").hidden = !text; }
 
 // ── 거리·고도 ─────────────────────────────────────────
@@ -600,12 +621,34 @@ function fmtTime(km) {
 // ── 경로 구하기 ───────────────────────────────────────
 async function routeTrail(a, b, o = {}) {
   const url = `${BROUTER}?lonlats=${a[1].toFixed(6)},${a[0].toFixed(6)}%7C${b[1].toFixed(6)},${b[0].toFixed(6)}&profile=${o.profile || PROFILE}&alternativeidx=${o.alt || 0}&format=geojson`;
+  reqLog.push(Date.now());
+  while (Date.now() - reqLog[0] > 60000) reqLog.shift();
   const res = await fetch(url, { signal: o.signal });
   const body = await res.text();
-  if (!res.ok) throw new Error(body.trim() || `HTTP ${res.status}`);
+  if (!res.ok) {
+    const err = new Error(body.trim() || `HTTP ${res.status}`);
+    if (res.status === 403 || res.status === 429 || /retry later/i.test(body)) {
+      err.limited = true;
+      coolUntil = Date.now() + COOL_MS;
+      quietUntil = Date.now() + QUIET_MS;
+    }
+    throw err;
+  }
   const f = JSON.parse(body).features[0];
   return { coords: f.geometry.coordinates.map(([lon, lat, ele]) => [lat, lon, ele ?? null]), mix: mixOf(f.properties.messages) };
 }
+// 경로 서버가 막았으면 풀릴 때까지 초를 세며 기다렸다가 두 번까지 다시 묻는다
+async function routeTrailWait(a, b) {
+  for (let tries = 0; ; tries++) {
+    const wait = Math.ceil((coolUntil - Date.now()) / 1000);
+    for (let s = wait; s > 0; s--) { hint(`경로 서버가 요청이 많다고 잠시 막았습니다. ${s}초 뒤 이어서 잇습니다.`); await sleep(1000); }
+    if (wait > 0) hint("");
+    try { return await routeTrail(a, b); }
+    catch (e) { if (!e.limited || tries >= 2) throw e; }
+  }
+}
+// 최근 ms 동안 경로 서버에 물은 횟수
+function recent(ms) { const t = Date.now(); return reqLog.filter(x => t - x <= ms).length; }
 // BRouter messages: 첫 줄은 열 이름, 이후 줄마다 한 토막의 길이(Distance)와 길 속성(WayTags)
 function mixOf(msgs) {
   if (!msgs || msgs.length < 2) return null;
@@ -643,6 +686,8 @@ async function routeLine(a, b) {
   return pts;
 }
 function trailError(msg) {
+  if (/retry later/i.test(msg))
+    return "경로 서버가 요청이 많다고 막았습니다. 1분쯤 뒤 다시 찍거나 「직선」으로 이어 보세요.";
   if (/not mapped|island|no route|operation killed/i.test(msg))
     return "이 두 점 사이에서 등산로를 찾지 못했습니다. 점을 길 가까이 찍거나 「직선」으로 이어 보세요.";
   return `경로 서버가 응답하지 않습니다(${msg.slice(0, 80)}). 잠시 뒤 다시 찍거나 「직선」으로 이어 보세요.`;
@@ -672,7 +717,7 @@ async function addPoint(lat, lng) {
   setStatus(mode === "trail" ? "등산로를 찾는 중…" : "직선 구간 고도를 재는 중…");
   let found = false;
   try {
-    const r = mode === "trail" ? await routeTrail(from, p) : { coords: await routeLine(from, p) };
+    const r = mode === "trail" ? await routeTrailWait(from, p) : { coords: await routeLine(from, p) };
     segments.push(drawSegment({ coords: r.coords, mode, mix: r.mix }));
     if (mode === "trail" || !$("status").classList.contains("err")) setStatus("");
     found = mode === "trail";
@@ -772,18 +817,29 @@ function pickAlternatives(s, found) {
   }
   return keep;
 }
-// fresh: 방금 이은 구간(지금 길이 등산 프로필 0번이므로 1~3번만 묻는다, 없으면 조용히 넘어간다)
+// fresh: 방금 이은 구간(지금 길이 등산 프로필 0번이므로 1번만 묻는다, 없으면 조용히 넘어간다)
 async function openAlternatives(k, fresh) {
   closeAlternatives();
   const s = segments[k];
   if (!s || s.mode !== "trail") return;
   if (!s.alts) {
     if (summarize(s.coords).dist < ALT_MIN_M) { if (!fresh) setStatus("짧은 구간이라 다른 길을 찾지 않습니다."); return; }
-    const a = s.coords[0], b = s.coords[s.coords.length - 1];
+    const idxs = fresh ? [1] : [0, 1], n = idxs.length + 1;
     const ctrl = new AbortController();
     altJob = ctrl;
+    if (fresh) {
+      // 이어서 찍는 중이면 묻지 않는다 — 다음 점을 찍으면 closeAlternatives 가 이 기다림을 끊는다
+      await sleep(ALT_PAUSE_MS);
+      if (ctrl.signal.aborted) return;
+      if (Date.now() < quietUntil || recent(30000) + n > AUTO_30S || recent(60000) + n > AUTO_60S) { altJob = null; return; }
+    } else if (Date.now() < coolUntil || recent(30000) + n > ASK_30S) {
+      altJob = null;
+      setStatus("경로 서버에 방금 많이 물었습니다. 30초쯤 뒤 「다른 길」을 다시 눌러 주세요.");
+      return;
+    }
+    const a = s.coords[0], b = s.coords[s.coords.length - 1];
     hint("이 구간의 다른 길을 찾는 중…");
-    const asks = (fresh ? [1, 2, 3] : [0, 1, 2, 3]).map(i => routeTrail(a, b, { alt: i, signal: ctrl.signal }))
+    const asks = idxs.map(i => routeTrail(a, b, { alt: i, signal: ctrl.signal }))
       .concat(routeTrail(a, b, { profile: ALT_PROFILE, signal: ctrl.signal }));
     const got = await Promise.allSettled(asks);
     if (ctrl.signal.aborted || segments[k] !== s) return;
