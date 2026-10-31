@@ -83,6 +83,18 @@ button, input, select { font: inherit; color: inherit; }
 .card h3 { margin: 0; font-size: 15px; }
 .card p { margin: 0; font-size: 12px; color: var(--muted); }
 .card .row { display: flex; gap: 6px; flex-wrap: wrap; }
+/* 구간의 다른 길 고르기 */
+.card .head { display: flex; gap: 8px; align-items: flex-start; justify-content: space-between; }
+.card .head .btn { flex: none; }
+.alts { display: grid; gap: 4px; }
+.alts button {
+  display: grid; grid-template-columns: 24px 1fr; gap: 0 9px; align-items: center; text-align: left;
+  padding: 4px 8px; border: 1px solid var(--line); border-radius: 6px; background: transparent; cursor: pointer;
+}
+.alts button[aria-pressed="true"] { border-color: var(--route); box-shadow: inset 0 0 0 1px var(--route); }
+.alts .sw { grid-row: span 2; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; color: #fff; font: 600 12px/1 var(--font-body); }
+.alts b { font: 500 13px/1.3 var(--font-data); font-variant-numeric: tabular-nums; }
+.alts small { font-size: 12px; color: var(--muted); }
 
 /* 지도 위 표식 */
 .wp { width: 14px; height: 14px; border-radius: 50%; background: #fff; border: 3px solid var(--route); box-shadow: 0 0 0 1px rgba(0,0,0,.3); }
@@ -216,6 +228,13 @@ footer a { color: inherit; }
       <button type="button" class="btn small" id="cardClose">닫기</button>
     </div>
   </div>
+  <div class="card" id="altCard" hidden>
+    <div class="head">
+      <div><h3>이 구간의 길 고르기</h3><p>분홍이 지금 길. 글자나 목록에서 고르세요.</p></div>
+      <button type="button" class="btn small" id="altClose">이대로 두기</button>
+    </div>
+    <div class="alts" id="altList"></div>
+  </div>
 </div>
 
 <aside>
@@ -269,6 +288,12 @@ footer a { color: inherit; }
   </section>
 
   <section>
+    <p class="label">구간</p>
+    <table class="wlist" id="slist"></table>
+    <p class="empty-note" id="sEmpty">점을 이으면 구간마다 길 종류(산길·임도·도로)가 보이고, 「다른 길」로 바꿀 수 있습니다.</p>
+  </section>
+
+  <section>
     <p class="label">이정표</p>
     <table class="wlist" id="wlist"></table>
     <p class="empty-note" id="wEmpty">「이정표 찍기」를 누르고 경로 위를 찍으면 정상·물·갈림길을 표시합니다. TCX로 저장하면 시계가 그 지점에서 알려 줍니다.</p>
@@ -310,6 +335,13 @@ const HYST_M = 5;           // 오르막·내리막 누적 때 무시할 고도 
 const SNAP_M = 250;         // 이정표를 경로에 붙일 수 있는 거리
 const START = [37.6595, 126.968];
 const DRAFT_KEY = "sangil-draft-v2";
+// 구간의 다른 길: 같은 등산 프로필의 대안 1~3번 + 자전거 여행 프로필(계단·급한 산길을 피해 임도·넓은 길로 돈다)
+const ALT_PROFILE = "trekking";
+const ALT_MAX = 3;          // 지금 길 말고 보여 줄 다른 길 수
+const ALT_RATIO = 1.6;      // 가장 짧은 길보다 이 배수를 넘게 돌아가는 길은 뺀다(간월재 임도가 산길의 1.44배)
+const ALT_MIN_M = 300;      // 이보다 짧은 구간은 다른 길을 찾지 않는다
+const ALT_DIFF_M = 100;     // 다른 길과 갈라지는 부분이 이보다 짧으면 같은 길로 본다
+const ALT_COLORS = ["#2563eb", "#0d9488", "#7c3aed", "#b45309"];
 
 const WTYPES = [
   { id: "Summit", label: "정상", mark: "정상", sym: "Summit" },
@@ -370,9 +402,9 @@ async function makeKakao(node, c) {
     onClick(fn) { K.event.addListener(map, "click", (e) => fn(e.latLng.getLat(), e.latLng.getLng())); },
     onIdle(fn) { K.event.addListener(map, "idle", fn); },
     center(lat, lng, close) { if (close && map.getLevel() > 4) map.setLevel(4); map.setCenter(LL(lat, lng)); },
-    fit(pts) {
+    fit(pts, below = 0) {
       if (!pts.length) return;
-      const b = new K.LatLngBounds(); pts.forEach(p => b.extend(LL(p[0], p[1]))); map.setBounds(b);
+      const b = new K.LatLngBounds(); pts.forEach(p => b.extend(LL(p[0], p[1]))); map.setBounds(b, 32, 32, 32 + below, 32);
     },
     detailed() { return map.getLevel() <= 6; },
     bounds() { const b = map.getBounds(), s = b.getSouthWest(), n = b.getNorthEast(); return { s: s.getLat(), w: s.getLng(), n: n.getLat(), e: n.getLng() }; },
@@ -463,7 +495,7 @@ async function makeLeaflet(node, c) {
     onClick(fn) { map.on("click", (e) => fn(e.latlng.lat, e.latlng.lng)); },
     onIdle(fn) { glMap.on("idle", fn); },
     center(lat, lng, close) { map.setView([lat, lng], close ? Math.max(map.getZoom(), 15) : map.getZoom()); },
-    fit(pts) { if (pts.length) map.fitBounds(pts.map(p => [p[0], p[1]]), { padding: [30, 30] }); },
+    fit(pts, below = 0) { if (pts.length) map.fitBounds(pts.map(p => [p[0], p[1]]), { paddingTopLeft: [30, 30], paddingBottomRight: [30, 30 + below] }); },
     // 벡터 층은 화면보다 한 단계 낮은 타일을 읽는데, 주차장 같은 작은 장소는 14단계 타일부터 들어 있다
     detailed() { return map.getZoom() >= 15; },
     bounds() { const b = map.getBounds(); return { s: b.getSouth(), w: b.getWest(), n: b.getNorth(), e: b.getEast() }; },
@@ -520,6 +552,8 @@ let mode = "trail";
 let busy = false;
 let cursorMarker = null;
 let selPlace = null, selMarker = null;
+let altJob = null;    // 진행 중인 다른 길 찾기(AbortController)
+let altView = null;   // 지도에 펼친 다른 길 선·글자
 const nearbyOn = new Set();
 const nearbyMarkers = {};
 
@@ -533,9 +567,10 @@ function haversine(a, b) {
   const h = Math.sin(dLat / 2) ** 2 + Math.cos(a[0] * rad) * Math.cos(b[0] * rad) * Math.sin(dLon / 2) ** 2;
   return 2 * R * Math.asin(Math.sqrt(h));
 }
-function track() {
+function track() { return trackOf(segments); }
+function trackOf(segs) {
   const out = [];
-  for (const s of segments) for (const p of s.coords) {
+  for (const s of segs) for (const p of s.coords) {
     const last = out[out.length - 1];
     if (last && last[0] === p[0] && last[1] === p[1]) continue;
     out.push(p);
@@ -563,12 +598,31 @@ function fmtTime(km) {
 }
 
 // ── 경로 구하기 ───────────────────────────────────────
-async function routeTrail(a, b) {
-  const url = `${BROUTER}?lonlats=${a[1].toFixed(6)},${a[0].toFixed(6)}%7C${b[1].toFixed(6)},${b[0].toFixed(6)}&profile=${PROFILE}&alternativeidx=0&format=geojson`;
-  const res = await fetch(url);
+async function routeTrail(a, b, o = {}) {
+  const url = `${BROUTER}?lonlats=${a[1].toFixed(6)},${a[0].toFixed(6)}%7C${b[1].toFixed(6)},${b[0].toFixed(6)}&profile=${o.profile || PROFILE}&alternativeidx=${o.alt || 0}&format=geojson`;
+  const res = await fetch(url, { signal: o.signal });
   const body = await res.text();
   if (!res.ok) throw new Error(body.trim() || `HTTP ${res.status}`);
-  return JSON.parse(body).features[0].geometry.coordinates.map(([lon, lat, ele]) => [lat, lon, ele ?? null]);
+  const f = JSON.parse(body).features[0];
+  return { coords: f.geometry.coordinates.map(([lon, lat, ele]) => [lat, lon, ele ?? null]), mix: mixOf(f.properties.messages) };
+}
+// BRouter messages: 첫 줄은 열 이름, 이후 줄마다 한 토막의 길이(Distance)와 길 속성(WayTags)
+function mixOf(msgs) {
+  if (!msgs || msgs.length < 2) return null;
+  const di = msgs[0].indexOf("Distance"), wi = msgs[0].indexOf("WayTags");
+  const mix = { trail: 0, track: 0, road: 0 };
+  for (const row of msgs.slice(1)) {
+    const hw = (/(?:^| )highway=(\S+)/.exec(row[wi]) || [])[1];
+    mix[hw === "track" ? "track" : /^(path|footway|steps|bridleway)$/.test(hw) ? "trail" : "road"] += +row[di] || 0;
+  }
+  return mix;
+}
+function mixText(mix) {
+  const tot = mix ? mix.trail + mix.track + mix.road : 0;
+  if (!tot) return "";
+  return [["산길", mix.trail], ["임도", mix.track], ["도로", mix.road]]
+    .map(([k, v]) => [k, Math.round(v / tot * 100)]).filter(([, p]) => p >= 5)
+    .map(([k, p]) => `${k} ${p}%`).join(" · ");
 }
 async function fillElevation(pts) {
   const need = pts.filter(p => p[2] == null);
@@ -603,6 +657,7 @@ function drawSegment(s) {
 
 async function addPoint(lat, lng) {
   if (busy) { setStatus("앞 구간을 계산하는 중입니다. 잠시 뒤 찍어 주세요."); return; }
+  closeAlternatives();
   const p = [lat, lng];
   const marker = M.marker(lat, lng, pointNode(points.length === 0), { z: 4 });
   points.push({ p, marker });
@@ -615,10 +670,12 @@ async function addPoint(lat, lng) {
   const from = tr.length ? tr[tr.length - 1] : points[points.length - 2].p;
   busy = true; refresh();
   setStatus(mode === "trail" ? "등산로를 찾는 중…" : "직선 구간 고도를 재는 중…");
+  let found = false;
   try {
-    const coords = mode === "trail" ? await routeTrail(from, p) : await routeLine(from, p);
-    segments.push(drawSegment({ coords, mode }));
+    const r = mode === "trail" ? await routeTrail(from, p) : { coords: await routeLine(from, p) };
+    segments.push(drawSegment({ coords: r.coords, mode, mix: r.mix }));
     if (mode === "trail" || !$("status").classList.contains("err")) setStatus("");
+    found = mode === "trail";
   } catch (e) {
     marker.remove();
     points.pop();
@@ -627,10 +684,12 @@ async function addPoint(lat, lng) {
     busy = false;
     changed();
   }
+  if (found) openAlternatives(segments.length - 1, true);
 }
 
 function undo() {
   if (busy || !points.length) return;
+  closeAlternatives();
   points.pop().marker.remove();
   if (segments.length && segments.length >= points.length) segments.pop().line.remove();
   const n = track().length;
@@ -655,6 +714,7 @@ function clearAll() {
   changed();
 }
 function resetRoute() {
+  closeAlternatives();
   points.splice(0).forEach(x => x.marker.remove());
   segments.splice(0).forEach(s => s.line.remove());
   wpts.splice(0).forEach(w => w.marker.remove());
@@ -664,7 +724,7 @@ function reverseRoute() {
   if (busy || !segments.length) return;
   const n = track().length;
   const pts = points.map(x => x.p).reverse();
-  const segs = segments.map(s => ({ coords: s.coords.slice().reverse(), mode: s.mode })).reverse();
+  const segs = segments.map(s => ({ coords: s.coords.slice().reverse(), mode: s.mode, mix: s.mix })).reverse();
   const ws = wpts.map(w => ({ idx: n - 1 - w.idx, name: w.name, type: w.type }));
   resetRoute();
   pts.forEach((p, i) => points.push({ p, marker: M.marker(p[0], p[1], pointNode(i === 0), { z: 4 }) }));
@@ -672,6 +732,159 @@ function reverseRoute() {
   ws.forEach(w => addWpt(w.idx, w.name, w.type));
   setStatus("방향을 뒤집었습니다. 출발점과 도착점이 바뀌었습니다.");
   changed();
+}
+
+// ── 구간의 다른 길 ────────────────────────────────────
+// 점 p 에서 꺾은선 line 까지의 거리(m) — 좁은 범위라 평면으로 계산
+function distToLine(p, line) {
+  const kx = 111320 * Math.cos(p[0] * Math.PI / 180), ky = 110540;
+  let best = Infinity;
+  for (let i = 1; i < line.length; i++) {
+    const ax = (line[i - 1][1] - p[1]) * kx, ay = (line[i - 1][0] - p[0]) * ky;
+    const dx = (line[i][1] - line[i - 1][1]) * kx, dy = (line[i][0] - line[i - 1][0]) * ky;
+    const l2 = dx * dx + dy * dy, t = l2 ? Math.max(0, Math.min(1, -(ax * dx + ay * dy) / l2)) : 0;
+    best = Math.min(best, Math.hypot(ax + t * dx, ay + t * dy));
+  }
+  return best;
+}
+// 길 a 가운데 길 b 에서 25m 넘게 떨어진 부분의 길이
+function apartLength(a, b) {
+  let len = 0;
+  for (let i = 1; i < a.length; i++) {
+    if (distToLine([(a[i - 1][0] + a[i][0]) / 2, (a[i - 1][1] + a[i][1]) / 2], b) > 25) len += haversine(a[i - 1], a[i]);
+  }
+  return len;
+}
+// 지금 길을 맨 앞에 두고, 끝이 맞고 · 너무 돌지 않고 · 서로 겹치지 않는 길만 고른다
+function pickAlternatives(s, found) {
+  const a = s.coords[0], b = s.coords[s.coords.length - 1];
+  const stat = (c) => { const m = summarize(c.coords); return Object.assign(c, { dist: m.dist, up: m.up }); };
+  const now = stat({ coords: s.coords, mix: s.mix });
+  // 자전거 프로필은 걸어서만 가는 길을 피해 출발·도착점을 옆 길에 붙이기도 한다 — 끝이 어긋나면 이을 수 없다
+  const cand = found.filter(r => haversine(r.coords[0], a) <= 20 && haversine(r.coords[r.coords.length - 1], b) <= 20).map(stat);
+  const best = Math.min(now.dist, ...cand.map(c => c.dist));
+  const keep = [now];
+  for (const c of cand.sort((x, y) => x.dist - y.dist)) {
+    if (keep.length > ALT_MAX || c.dist > best * ALT_RATIO) continue;
+    const tol = Math.max(ALT_DIFF_M, c.dist * 0.1);
+    if (keep.some(k => apartLength(c.coords, k.coords) < tol && apartLength(k.coords, c.coords) < tol)) continue;
+    keep.push(c);
+  }
+  return keep;
+}
+// fresh: 방금 이은 구간(지금 길이 등산 프로필 0번이므로 1~3번만 묻는다, 없으면 조용히 넘어간다)
+async function openAlternatives(k, fresh) {
+  closeAlternatives();
+  const s = segments[k];
+  if (!s || s.mode !== "trail") return;
+  if (!s.alts) {
+    if (summarize(s.coords).dist < ALT_MIN_M) { if (!fresh) setStatus("짧은 구간이라 다른 길을 찾지 않습니다."); return; }
+    const a = s.coords[0], b = s.coords[s.coords.length - 1];
+    const ctrl = new AbortController();
+    altJob = ctrl;
+    hint("이 구간의 다른 길을 찾는 중…");
+    const asks = (fresh ? [1, 2, 3] : [0, 1, 2, 3]).map(i => routeTrail(a, b, { alt: i, signal: ctrl.signal }))
+      .concat(routeTrail(a, b, { profile: ALT_PROFILE, signal: ctrl.signal }));
+    const got = await Promise.allSettled(asks);
+    if (ctrl.signal.aborted || segments[k] !== s) return;
+    altJob = null;
+    hint("");
+    if (got.every(x => x.status === "rejected")) { if (!fresh) setStatus("경로 서버가 응답하지 않아 다른 길을 찾지 못했습니다. 잠시 뒤 다시 눌러 보세요.", true); return; }
+    s.alts = pickAlternatives(s, got.filter(x => x.status === "fulfilled").map(x => x.value));
+  }
+  if (s.alts.length < 2) { if (!fresh) setStatus("이 구간에는 고를 만한 다른 길이 없습니다."); return; }
+  showAlternatives(k);
+  // 다른 길이 화면 밖으로 나가면(또는 목록에서 눌렀으면) 고르기 상자 위로 다 보이게 맞춘다
+  const all = s.alts.flatMap(c => c.coords), v = M.bounds(), below = $("altCard").offsetHeight;
+  v.s += (v.n - v.s) * below / $("map").clientHeight;   // 상자에 가린 아래쪽은 안 보이는 셈 친다
+  if (!fresh || all.some(p => p[0] < v.s || p[0] > v.n || p[1] < v.w || p[1] > v.e)) M.fit(all, below);
+}
+function showAlternatives(k) {
+  const s = segments[k];
+  if (altView) altView.forEach(x => x.remove());
+  altView = [];
+  hideCard();
+  const list = $("altList");
+  list.innerHTML = "";
+  const now = s.alts.find(c => c.coords === s.coords);
+  s.alts.forEach((c, i) => {
+    const on = c === now, color = on ? css("--route") : ALT_COLORS[i % ALT_COLORS.length], letter = "ABCD"[i];
+    if (!on) {
+      altView.push(M.line(c.coords, { color, weight: 4, opacity: 0.85 }));
+      // 글자는 지금 길에서 가장 멀리 벌어진 자리에 둔다
+      let far = c.coords[0], fd = -1;
+      for (const p of c.coords) { const d = distToLine(p, s.coords); if (d > fd) { fd = d; far = p; } }
+      const pin = el("pin", letter);
+      pin.style.background = color;
+      altView.push(M.marker(far[0], far[1], pin, { z: 7, onClick: () => chooseAlternative(k, i) }));
+    }
+    const diff = (c.dist - now.dist) / 1000;
+    const b = document.createElement("button");
+    b.type = "button";
+    b.setAttribute("aria-pressed", String(on));
+    b.innerHTML = `<span class="sw" style="background:${color}">${letter}</span>`
+      + `<b>${(c.dist / 1000).toFixed(2)} km · D+ ${Math.round(c.up)} m${on ? "" : ` (${diff >= 0 ? "+" : "−"}${Math.abs(diff).toFixed(2)})`}</b>`
+      + `<small>${esc([on && "지금 길", mixText(c.mix)].filter(Boolean).join(" · ") || "길 종류 정보 없음")}</small>`;
+    b.addEventListener("click", () => chooseAlternative(k, i));
+    list.appendChild(b);
+  });
+  // 지금 길을 다른 길 선 위로 다시 그린다(겹치는 부분은 분홍으로 보이게)
+  s.line.remove();
+  drawSegment(s);
+  $("altCard").hidden = false;
+}
+function closeAlternatives() {
+  if (altJob) { altJob.abort(); altJob = null; hint(""); }
+  if (altView) { altView.forEach(x => x.remove()); altView = null; }
+  $("altCard").hidden = true;
+}
+function chooseAlternative(k, i) {
+  const s = segments[k], c = s.alts[i];
+  if (c.coords === s.coords) return;
+  const start = trackOf(segments.slice(0, k)).length;   // 이 구간이 시작하는 경로 점 번호
+  const oldTr = track(), oldEnd = trackOf(segments.slice(0, k + 1)).length;
+  s.coords = c.coords;
+  s.mix = c.mix;
+  const newTr = track(), newEnd = trackOf(segments.slice(0, k + 1)).length;
+  // 뒤쪽 이정표는 점 번호만 밀고, 바뀐 구간 위의 이정표는 새 길의 가장 가까운 점으로 옮긴다(너무 멀면 지운다)
+  let moved = 0, lost = 0;
+  for (let j = wpts.length - 1; j >= 0; j--) {
+    const w = wpts[j];
+    if (w.idx >= oldEnd) w.idx += newTr.length - oldTr.length;   // 구간 경계 점이 겹치는지가 바뀌어도 맞도록 전체 길이 차로 민다
+    else if (w.idx >= start) {
+      let best = start, bd = Infinity;
+      for (let q = start; q < newEnd; q++) { const d = haversine(oldTr[w.idx], newTr[q]); if (d < bd) { bd = d; best = q; } }
+      if (bd > SNAP_M) { w.marker.remove(); wpts.splice(j, 1); lost++; continue; }
+      w.idx = best;
+      if (bd > 1) moved++;
+    }
+    w.marker.move(newTr[w.idx][0], newTr[w.idx][1]);
+  }
+  wpts.sort((a, b) => a.idx - b.idx);
+  showAlternatives(k);
+  setStatus(`${k + 1}번 구간을 ${"ABCD"[i]} 길로 바꿨습니다.`
+    + (moved ? ` 이정표 ${moved}개를 새 길 위로 옮겼습니다 — 자리가 맞는지 확인하세요.` : "")
+    + (lost ? ` 새 길에서 먼 이정표 ${lost}개는 지웠습니다.` : ""));
+  changed();
+}
+function renderSegs() {
+  const t = $("slist");
+  t.innerHTML = "";
+  $("sEmpty").hidden = segments.length > 0;
+  segments.forEach((s, k) => {
+    const r = t.insertRow();
+    r.insertCell().textContent = k + 1;
+    r.insertCell().textContent = s.mode === "line" ? "직선" : s.mode === "file" ? "불러온 경로" : mixText(s.mix) || "등산로";
+    const km = r.insertCell();
+    km.className = "num";
+    km.textContent = `${(summarize(s.coords).dist / 1000).toFixed(2)}km`;
+    const cell = r.insertCell();
+    if (s.mode !== "trail") return;
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "btn small"; b.textContent = "다른 길"; b.disabled = busy;
+    b.addEventListener("click", () => openAlternatives(k, false));
+    cell.appendChild(b);
+  });
 }
 
 // ── 이정표 ────────────────────────────────────────────
@@ -738,6 +951,7 @@ function refresh() {
   $("undoBtn").disabled = $("clearBtn").disabled = busy || !points.length;
   $("cardGo").textContent = points.length ? "여기까지 잇기" : "여기서 출발";
   drawProfile(tr, s);
+  renderSegs();
   renderWpts(s);
 }
 
@@ -972,7 +1186,7 @@ function saveDraft() {
   try {
     localStorage.setItem(DRAFT_KEY, JSON.stringify({
       name: $("courseName").value, pace: $("pace").value,
-      points: points.map(x => x.p), segments: segments.map(s => ({ coords: s.coords, mode: s.mode })),
+      points: points.map(x => x.p), segments: segments.map(s => ({ coords: s.coords, mode: s.mode, mix: s.mix })),
       wpts: wpts.map(w => ({ idx: w.idx, name: w.name, type: w.type })),
     }));
   } catch (e) { /* 저장 공간이 없어도 작업은 계속된다 */ }
@@ -1028,6 +1242,7 @@ async function boot() {
 
   M.onClick((lat, lng) => {
     if (!$("card").hidden) hideCard();
+    closeAlternatives();
     if (act === "wpt") placeWpt(lat, lng);
     else addPoint(lat, lng);
   });
@@ -1036,6 +1251,7 @@ async function boot() {
   $("searchForm").addEventListener("submit", search);
   $("cardGo").addEventListener("click", () => { const p = selPlace; hideCard(); if (p) { setAct("route"); addPoint(p.lat, p.lng); } });
   $("cardClose").addEventListener("click", hideCard);
+  $("altClose").addEventListener("click", closeAlternatives);
   $("baseMap").addEventListener("click", () => { M.setBase("map"); $("baseMap").setAttribute("aria-pressed", "true"); $("baseSky").setAttribute("aria-pressed", "false"); });
   $("baseSky").addEventListener("click", () => { M.setBase("sky"); $("baseSky").setAttribute("aria-pressed", "true"); $("baseMap").setAttribute("aria-pressed", "false"); });
   $("terrainChip").addEventListener("click", (e) => { const on = e.currentTarget.getAttribute("aria-pressed") !== "true"; e.currentTarget.setAttribute("aria-pressed", String(on)); M.setTerrain(on); });
