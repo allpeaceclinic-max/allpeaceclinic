@@ -27,6 +27,8 @@
   --font-display: "Black Han Sans", "Apple SD Gothic Neo", sans-serif;
   --font-body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   --font-data: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  /* 지점 찍기 커서: 흰 테두리 십자 + 가운데 점(어느 바탕에서도 보이게), 끝점이 정확히 가운데 */
+  --pick: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25'%3E%3Cpath d='M12.5 1v8M12.5 16v8M1 12.5h8M16 12.5h8' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M12.5 1v8M12.5 16v8M1 12.5h8M16 12.5h8' stroke='black' stroke-width='1.6' stroke-linecap='round'/%3E%3Ccircle cx='12.5' cy='12.5' r='2' fill='%23c8126f' stroke='white' stroke-width='1'/%3E%3C/svg%3E") 12 12, crosshair;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -55,7 +57,7 @@ button, input, select { font: inherit; color: inherit; }
 /* 지도 */
 #mapWrap { position: relative; min-height: 320px; }
 #map { position: absolute; inset: 0; }
-.leaflet-container { font-family: var(--font-body); cursor: crosshair; }
+.leaflet-container { font-family: var(--font-body); cursor: var(--pick); }
 .mapbar {
   position: absolute; z-index: 1000; top: 10px; left: 10px; right: 60px;
   display: flex; flex-wrap: wrap; gap: 6px; pointer-events: none;
@@ -346,6 +348,7 @@ async function makeKakao(node, c) {
   const LL = (a, b) => new K.LatLng(a, b);
   const map = new K.Map(node, { center: LL(c[0], c[1]), level: 5 });
   map.addControl(new K.ZoomControl(), K.ControlPosition.RIGHT);
+  map.setCursor(css("--pick"));                // 손 모양 대신 정밀 십자 커서
   const places = new K.services.Places(map);   // 지도를 넘겨야 useMapBounds(화면 범위 검색)가 먹는다
   const ask = (fn) => new Promise(ok => fn((data, status) => ok(status === K.services.Status.OK ? data : [])));
   const toPlace = (d) => ({
