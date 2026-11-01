@@ -1,0 +1,292 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>신뢰 — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-t">영성·제자도</span><span class="date">2026-11-01</span></div>
+  <h1 class="note-title">신뢰</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>신뢰는 상대의 성품에 나를 맡기는 것이다. 문대원 목사는 시편 131편의 젖 뗀 아이를 풀며 이 낱말을 믿음과 구별한다 — "믿음은 존재를 믿는 것, 신뢰는 성품을 믿는 것." 세 살쯤 된 아이가 배고프고 졸려도 더 이상 울지 않는 것은 어머니가 있다는 사실을 알아서가 아니라, 그 어머니를 믿을 수 있다는 체험이 쌓였기 때문이다. 신뢰는 그래서 지식이면서 관계이고, 한순간의 결단이면서 오랜 학습이다.</p>
+<p>참조 설교 열세 편 가운데 아홉 편은 하나님을 향한 신뢰를, 네 편은 사람 사이의 신뢰를 다룬다. 주류는 하나님을 향한 신뢰지만, 이 글이 따로 서는 이유는 둘이 갈라지지 않는다는 데 있다. 하나님을 신뢰하는 법은 부모의 사랑 속에서 처음 배워지고, 사람을 의지하지 않고 하나님을 의지하는 사람이 오히려 사람을 섬길 수 있다. 믿음의 정의·기원·성장 같은 넓은 지평은 <a class="wl" href="../../t/%EB%AF%BF%EC%9D%8C/">믿음</a>이 맡고, 이 글은 '누구에게, 어떻게 나를 맡기는가'라는 신뢰 고유의 축을 따라간다.</p>
+<h2>1. 알고, 맡기고, 체험한다 — 신뢰의 문법</h2>
+<p>권성수 목사의 설교들은 신뢰가 어떻게 생기는지를 세 단계로 보여준다. 첫째는 앎이다. 2014년 시편 9편 강해 「환난 때의 요새」에서 그는 재판하시는 하나님, 방관하지 않으시는 하나님 — 하나님의 맷돌은 계속 돌고 있다 — 을 소개한 뒤 이렇게 잇는다. "이런 하나님을 알면 신뢰하게 된다." 신뢰는 막연한 낙관이 아니라 하나님이 어떤 분인지에 대한 지식의 열매다.</p>
+<p>둘째는 맡김이다. 신명기 강해 「턱 믿고 맡겨야」에서 그는 가데스 바네아의 불신앙(신 1:32)을 거울 삼아 믿음을 수술대에 비유한다. 수술하는 의사를 믿는다는 것은 그가 실수하지 않으리라 믿으면서 몸을 맡기는 것이고, 비행기를 믿는다는 것은 비행기에 타는 것이다. "턱 믿고 다 맡기는 것이 믿음이다." 지적 동의에서 멈추면 아직 신뢰가 아니다.</p>
+<p>셋째는 체험이다. 2020년 코로나 국면의 시편 91편 설교 「재난의 백신·치료제」에서 그는 "나의 피난처요 나의 요새요 내가 의뢰하는 하나님"(시 91:2)이라는 1인칭 고백을 붙든다. 하나님을 일반적인 보호자가 아니라 나의 하나님으로 받아들여야 힘이 있다. 그렇지 않으면 이렇게 된다. "막연하면 여전히 두렵다. 내가 체험하는 하나님이 있어야 한다." 그는 주권과 신뢰가 만날 때 재난의 백신과 치료제가 된다는 공식으로 맺는다.</p>
+<p>앎 → 맡김 → 체험. 문대원 목사의 구분대로라면, 존재를 아는 것과 성품을 믿는 것 사이의 거리를 메우는 것이 맡김과 체험이다. 믿음의 효력이 믿는 자의 강도가 아니라 신뢰받는 대상의 신실하심에서 나온다는 허드슨 테일러의 명제와 종교개혁의 fiducia 전통은 <a class="wl" href="../../t/%EB%AF%BF%EC%9D%8C/">믿음</a> 5절이 다뤘다.</p>
+<h2>2. 산이냐 여호와냐 — 무엇을 의지할 것인가</h2>
+<p>맡긴다면 누구에게 맡기는가. 윤명숙 전도사는 시편 121편의 성전 순례자가 눈을 들어 산을 보는 장면에서 시작한다. 산은 세상에서 가장 의지할 만해 보이는 것이다. 그러나 시인은 도움이 산이 아니라 천지를 지으신 여호와에게서 온다고 고백한다. 그녀는 이 대비를 가정과 상담실로 끌고 내려온다. 인간의 사랑은 제한적이어서 배우자의 사랑 때문에 산다는 사람은 어리석고, 상담자를 의지하는 내담자는 실패한다.</p>
+<p>이 설교의 날카로운 점은 사람을 의지하지 말라는 명령이 사람을 멀리하라는 말이 아니라는 데 있다.</p>
+<blockquote>
+<p>"남편도, 아내도 의지할 존재는 아니다. 다만, 수없이 얘기 했듯이, 내가 섬겨야 할 존재이다." — 윤명숙, 「누구를 의지할 것인가」</p>
+</blockquote>
+<p>의지의 대상과 섬김의 대상을 바로 놓으면 관계가 산다. 그녀의 진단은 짧다. "섬긴다고 생각하면 서운한 것이 없다. 의지하면 섭섭병이 생긴다." 그리고 하나님이 의지할 만한 이유는 의지하는 자의 간절함이 아니라 그분의 성품에 있다 — 그분은 졸지도 주무시지도 아니하시고(시 121:3-4) 피곤하지도 않으시다. 사람은 존다.</p>
+<p>같은 질문이 국가의 차원에서도 던져진다. 권성수 목사는 2017년 아사 왕의 전쟁(대하 14장)을 강해하며 애치슨 라인 선언 여섯 달 뒤의 전쟁을 상기시킨다. 인간 동맹은 궁극적 신뢰의 대상이 될 수 없고, "우리가 주를 의지하오며"(대하 14:11)가 남는다. 문대원 목사는 이 의지의 오배치를 개인의 판단력으로 옮긴다. 다윗과 사울을 대조한 「질문할 수 있는 겸손」에서 사울은 하나님께 묻지 않고 자신의 정보력과 판단에 의지한 사람이며, 다윗은 "너는 마음을 다하여 여호와를 신뢰하고 네 명철을 의지하지 말라"(잠 3:5)를 산 사람이다.</p>
+<h2>3. 응답이 없을 때 — 숨겨진 하나님과 지체하시는 주님</h2>
+<p>신뢰가 가장 깊이 시험받는 곳은 하나님이 침묵하실 때다. 권성수 목사는 풀무정금 연작의 「하나님을 신뢰하라」에서 요셉의 생애를 이 질문으로 읽는다. 형들의 배신, 노예살이, 억울한 감옥 — 그 긴 시간 동안 요셉의 기도에 하나님은 응답하지 않으신 것처럼 보였다. 그러나 하나님은 숨겨져 계셨을 뿐 완전히 통제하며 일하고 계셨고, 마침내 그 악까지 많은 생명을 구원하는 선으로 이끄셨다(창 45:4-8). 그래서 그의 결론은 응답 여부에 매이지 않는다. "아무 응답이 없어도 하나님 신뢰." 하나님은 요셉이 원하는 방식이 아니라 다른 방식으로 응답하셨다.</p>
+<p>김다위 목사는 2024년 요한복음 11장 설교 「예수님의 사랑이 의심될 때」에서 같은 긴장을 더 날카롭게 세운다. "이 병은 죽을 병이 아니라"(요 11:4)고 하셨는데 나사로는 죽었고, 예수님은 소식을 듣고도 이틀을 더 머무셨다. 말씀과 현실이 어긋날 때 사람은 속았다고 느끼고, 소망 없는 기다림을 낭비로 여긴다. 그는 래리 크랩의 『하나님을 신뢰한다는 것』을 빌려 하나님의 방법이 이해되지 않을 때의 세 반응을 정리한다.</p>
+<table>
+<thead>
+<tr>
+<th>반응</th>
+<th>인물</th>
+<th>모습</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>거부</td>
+<td>요나</td>
+<td>상황으로부터 도망한다</td>
+</tr>
+<tr>
+<td>부정</td>
+<td>회심 전 사울</td>
+<td>왜곡하고 부정하고 도전한다</td>
+</tr>
+<tr>
+<td>전율하며 신뢰</td>
+<td>하박국</td>
+<td>두렵고 떨림으로 자신을 낮추고 주권적 권위를 신뢰한다</td>
+</tr>
+</tbody>
+</table>
+<p>세 번째 길의 핵심을 그는 이렇게 말한다. "하나님의 선하심을 나의 잣대로 맞추어서 조정해서는 안된다." 하박국은 무화과나무가 무성하지 못하고 외양간에 소가 없을지라도 "나는 여호와로 말미암아 즐거워하며"(합 3:18)라고 고백했다. 예수님의 이틀은 낭비가 아니라 마르다와 마리아의 믿음을 부활 신앙으로 끌어올리는 시간이었다. 그래서 설교의 결론은 통념을 뒤집는다. "신뢰가운데 기다리는 것은 낭비가 아니다." 그리고 "신뢰할 때 의구심이 사라진다." 의심을 신앙의 실패로만 보지 않는 관점은 <a class="wl" href="../../t/%EC%9D%98%EC%8B%AC/">의심</a>이, 헤아리지 못할 주권 앞의 겸손과 신뢰는 <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%A3%BC%EA%B6%8C/">하나님의주권</a> 9절이 다룬다.</p>
+<p>윤명숙 전도사는 이 신뢰의 부재가 마음에 무엇을 남기는지를 짚는다. 「하나님 신뢰」에서 그녀는 요한일서 4:18을 풀며 말한다. "두려움, 주님의 사랑을 신뢰하지 못할때 온다." 하나님이 나를 향한 계획을 갖고 계심을 믿을 때 사람의 평가에 무너지지 않는다.</p>
+<h2>4. 신뢰는 어디서 배우는가 — 애착과 신앙 전수</h2>
+<p>그렇다면 하나님을 신뢰하는 능력은 어디서 오는가. 윤명숙 전도사의 가정 설교들은 이 질문에 일관된 답을 준다 — 집에서 배운다. 2016년 「어릴 때부터 신뢰할 만한 분」에서 그녀는 "내가 어릴 때부터 신뢰한 이시라"(시 71:5)는 다윗의 고백에 주목한다. 다윗은 어떻게 어릴 때부터 하나님이 신뢰할 만한 분임을 알았는가. 아버지 이새를 통해서였을 것이고, 아버지가 믿는 하나님을 모태에서부터 신뢰하게 되었을 것이다. 그녀의 문제의식은 이 반대편에 있다. 말씀으로는 하나님을 소망이라 고백하지만 실제 소망과 신뢰는 다른 곳에 두는 경우가 많다.</p>
+<p>2019년 「부모를 통한 신앙형성」은 이를 발달심리학의 언어로 정식화한다. 그녀는 애착 형성을 "이 세상이 안전하고 의지할만하다는 것을 만들어주는 것"으로 정의하고, 그 첫 역할을 어머니에게 둔다. 그리고 수평의 신뢰와 수직의 신뢰를 한 문장으로 잇는다.</p>
+<blockquote>
+<p>"건강한 가정의 한가지 기준, 부모를 통한 사랑으로 신뢰를 잘 배우는 것이다. 그래야 하나님을 신뢰하고 기다린다." — 윤명숙, 「부모를 통한 신앙형성」</p>
+</blockquote>
+<p>문대원 목사의 젖 뗀 아이도 같은 구조로, 그 신뢰는 "저절로 얻는 것이 아니라 오랜 기간 학습된 것이다." 사람에게서 배운 신뢰가 하나님을 신뢰하는 그릇이 된다는 통찰은 목회적으로 무겁다 — 그것을 배우지 못한 사람의 자리는 미해결로 남긴다. 애착의 심리학적 지형은 <a class="wl" href="../../t/%EC%95%A0%EC%B0%A9/">애착</a>이, 가정에서의 신앙 전달은 <a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EC%A0%84%EC%88%98/">신앙전수</a>가 다룬다.</p>
+<h2>5. 사람 사이의 신뢰 — 정직, 행동, 그리고 질문</h2>
+<p>마지막으로 신뢰는 사람 사이에서 쌓이고 깨진다. 윤명숙 전도사의 부부 설교들은 그 기제를 현실적으로 보여준다. 2018년 「정직한 대화」에서 그녀는 대화 기술보다 정직이 먼저라고 말한다. 옷 한 벌 값 같은 작은 거짓이 신뢰를 갉아먹고, 갉아먹힌 신뢰는 대화를 표면에 가둔다. "신뢰가 되어야 말을 주고 받을 수 있다. 숨기면서 하는 말은 피상적인 대화에 머물게 한다." 집은 적어도 무장을 해제할 수 있는 곳, 솔직하게 말할 수 있는 곳이어야 한다.</p>
+<p>2019년 「갈등을 파고드는 사단의 공격」은 신뢰의 비가역성을 경고한다. "신뢰를 깨버리는 갈등은 회복하기가 어렵다." 아픈 보자기 하나를 싸매고 살아야 한다는 것이다. 그래서 예방이 우선이고, 예방의 수단은 말이 아니라 행동이다. "신뢰를 얻는 확실한 방법은 행동이다." 돈을 합치고 카드를 하나로 쓰는 것처럼, 상대가 안심할 수 있는 투명성이 신뢰를 지킨다. 같은 설교가 베드로전서 5:7의 "너희 염려를 다 주께 맡기라"를 부부 생활에 적용하면서 붙인 단서도 의미 있다 — "하나님께 염려를 맡기지만 내가 할일은 내가 해야 한다." 하나님을 신뢰하는 것이 사람 사이에서 책임 있게 행동하는 것을 면제하지 않는다.</p>
+<p>문대원 목사는 사람 사이의 신뢰를 대화의 형식에서 찾는다. 「질문할 수 있는 겸손」에서 그는 하나님과 사람에게 묻는 것이 "인격적으로 존중하고 신뢰한다는 표현이다"라고 말하고, 담임목사와 당회가 서로 질문하는 관계여야 한다고 덧붙인다. 내가 모르는 것이 있다는 <a class="wl" href="../../t/%EA%B2%B8%EC%86%90/">겸손</a>이 묻게 하고, 묻는 행위가 신뢰를 표현한다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>하나님을 향한 신뢰</th>
+<th>사람 사이의 신뢰</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>근거</td>
+<td>졸지도 주무시지도 않으시는 성품</td>
+<td>정직과 검증 가능한 행동</td>
+</tr>
+<tr>
+<td>위협</td>
+<td>응답의 지체, 이해되지 않는 섭리</td>
+<td>작은 거짓, 방심, 숨김</td>
+</tr>
+<tr>
+<td>표현</td>
+<td>맡김, 기도, 묻기</td>
+<td>대화, 투명성, 질문</td>
+</tr>
+<tr>
+<td>관계</td>
+<td>사람을 의지하지 않게 하여 사람을 섬기게 한다</td>
+<td>부모를 통해 배운 신뢰가 하나님 신뢰의 그릇이 된다</td>
+</tr>
+</tbody>
+</table>
+<p>표의 마지막 줄이 이 글의 결론이다. 두 신뢰는 서로를 대체하지 않고 서로를 지탱한다. 사람에게서 신뢰를 배워 하나님을 신뢰하게 되고, 하나님을 의지하기에 사람에게 섭섭해하지 않고 섬길 수 있다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>신뢰는 성품을 믿는 것이며, 앎에서 맡김으로, 맡김에서 체험으로 자란다.</li>
+<li>의지의 대상과 섬김의 대상을 바로 놓아야 관계가 산다. 사람을 의지하면 섭섭병이 생기고, 하나님을 의지하면 사람을 섬길 수 있다.</li>
+<li>신뢰는 응답이 없을 때 드러난다. 숨겨진 하나님(요셉)과 지체하시는 주님(나사로) 앞에서 신뢰 가운데 기다리는 것은 낭비가 아니다.</li>
+<li>하나님을 신뢰하는 능력은 부모의 사랑 속에서 처음 배워진다. 수평의 신뢰가 수직의 신뢰를 위한 그릇이 된다.</li>
+<li>사람 사이의 신뢰는 정직과 행동으로 쌓이고 한 번 깨지면 회복이 어렵다. 하나님을 신뢰한다고 그 책임이 면제되지는 않는다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>부모에게서 신뢰를 배우지 못하고 자란 사람에게, 하나님을 신뢰하라는 권면은 어떤 경로로 회복을 열어 주는가. 애착 결핍과 하나님 이미지의 관계는 <a class="wl" href="../../t/%EC%95%A0%EC%B0%A9/">애착</a>과 함께 더 탐구할 과제다.</li>
+<li>공동체와 리더십 안의 신뢰 — 교회 지도자들 사이, 조직 안의 신뢰가 어떻게 형성되고 무너지는가 — 는 질문하는 관계에 대한 한 설교 외에는 자료가 거의 없다.</li>
+<li>'응답이 없어도 신뢰하라'는 권면과 하박국·시편 기자의 탄원(어느 때까지리이까)은 어떻게 함께 설 수 있는가. 신뢰와 탄식의 관계는 <a class="wl" href="../../t/%ED%83%84%EC%9B%90%EC%8B%9C/">탄원시</a>와 이어서 볼 문제다.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EB%AF%BF%EC%9D%8C/">믿음</a> — 믿음의 정의·기원·성장, 허드슨 테일러와 fiducia. 신뢰는 그 인격적 핵심.</li>
+<li><a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EC%9D%98%EC%A3%BC%EA%B6%8C/">하나님의주권</a> — 헤아리지 못할 판단 앞의 겸손과 신뢰(9절), 요셉 서사의 주권.</li>
+<li><a class="wl" href="../../t/%EC%88%9C%EC%A2%85/">순종</a> · <a class="wl" href="../../t/%EC%9D%98%EC%8B%AC/">의심</a> — 신뢰가 행동으로 나타나는 자리, 사랑이 의심될 때의 신앙.</li>
+<li><a class="wl" href="../../t/%EC%95%A0%EC%B0%A9/">애착</a> · <a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EC%A0%84%EC%88%98/">신앙전수</a> — 신뢰를 배우는 가정의 자리.</li>
+<li><a class="wl" href="../../t/%EC%A0%95%EC%A7%81/">정직</a> · <a class="wl" href="../../t/%EB%8C%80%ED%99%94/">대화</a> · <a class="wl" href="../../t/%EA%B2%B8%EC%86%90/">겸손</a> · <a class="wl" href="../../t/%EC%84%AC%EA%B9%80/">섬김</a> — 사람 사이 신뢰의 토대와 통로, 의지 대신 섬김.</li>
+<li><a class="wl" href="../../t/%ED%83%84%EC%9B%90%EC%8B%9C/">탄원시</a> — 탄식에서 신뢰로 건너가는 시편의 문법.</li>
+<li><span class="wl-dead" title="위키 내부 링크">시121</span> · <span class="wl-dead" title="위키 내부 링크">시71</span> · <span class="wl-dead" title="위키 내부 링크">시91</span> · <span class="wl-dead" title="위키 내부 링크">요11</span> · <span class="wl-dead" title="위키 내부 링크">합3</span> — 신뢰 설교의 축 본문.</li>
+<li><a class="wl" href="../../t/%ED%8F%89%EC%95%88/">평안</a> — 신뢰가 낳는 마음의 평안</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2014_환난때의요새</span> · <span class="wl-dead" title="위키 내부 링크">신명기_10_턱믿고맡겨야</span> · <span class="wl-dead" title="위키 내부 링크">2020_재난의백신치료제</span></td>
+<td>설교(권성수)</td>
+<td>앎·맡김·체험 — 맷돌, 수술대와 비행기, 막연하면 여전히 두렵다</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2017_여호와여우리를도우소서</span> · <span class="wl-dead" title="위키 내부 링크">풀무정금_15_하나님을신뢰하라</span></td>
+<td>설교(권성수)</td>
+<td>인간 동맹의 한계, 숨겨진 하나님과 응답 없는 신뢰</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2024_김다위_예수님의_사랑이_의심될_때</span></td>
+<td>설교(김다위, 2024)</td>
+<td>지체의 의미, 래리 크랩의 세 반응, 신뢰 가운데 기다림은 낭비가 아니다</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2021_소란한마음다스리기</span> · <span class="wl-dead" title="위키 내부 링크">2023_말의힘4_질문할수있는겸손</span></td>
+<td>설교(문대원)</td>
+<td>믿음과 신뢰의 구분, 학습된 신뢰, 질문은 신뢰의 표현</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2016_누구를의지할것인가</span></td>
+<td>설교(윤명숙, 2016)</td>
+<td>산이냐 여호와냐, 의지 대신 섬김, 섭섭병</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2016_어릴때부터신뢰할만한분</span> · <span class="wl-dead" title="위키 내부 링크">2019_부모를통한신앙형성</span></td>
+<td>설교(윤명숙)</td>
+<td>이새를 통한 다윗의 신뢰, 애착 형성과 하나님 신뢰</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2019_하나님신뢰</span></td>
+<td>설교(윤명숙, 2019)</td>
+<td>두려움은 사랑을 신뢰하지 못할 때 온다</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2018_정직한대화</span> · <span class="wl-dead" title="위키 내부 링크">2019_갈등을파고드는사단의공격</span></td>
+<td>설교(윤명숙)</td>
+<td>정직이 대화의 토대, 신뢰의 비가역성, 행동으로 얻는 신뢰</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/영성</span><span>#topic/신뢰</span><span>#topic/믿음</span><span>#topic/관계</span><span>#topic/가정사역</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

@@ -1,0 +1,326 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>비전 — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-t">목회·실천</span><span class="date">2026-11-01</span></div>
+  <h1 class="note-title">비전</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>비전은 아직 오지 않은 미래를 지금 보는 일이다. 강재명 선교사는 사전들을 펼쳐 놓고 그 뜻을 모은다. 내다보이는 장래의 상황, 앞날을 향해 품는 꿈, 아직 성취되지 않은 것을 마음속에 그리는 상상력과 통찰력. 그리고 마지막에 교회의 정의를 덧붙인다. "하나님이 주신 이상". 이 글이 따라가는 질문은 이 마지막 한 줄에서 나온다. 비전이 하나님이 보여 주신 그림이라면, 그 그림은 얼마나 구체적이어야 하며, 그것을 이루는 일과 그것을 주신 분 가운데 무엇이 먼저인가.</p>
+<p>자료는 이 질문에 두 목소리로 답한다. 한쪽은 비전을 <strong>측정 가능한 미래의 목표</strong>로 구체화하라고 말한다. 다른 쪽은 비전이 성취와 성과로 바뀌는 순간을 <strong>경계하라</strong>고 말한다. 그리고 이 두 목소리는 두 진영이 아니라 같은 설교자들 안에 함께 있다. 비전의 어원(히브리어 라아, '보다'와 '보여지다')과 '보여 줄 땅으로 가라'는 소명의 비전은 <a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a> 8절이, 팀의 문제는 <a class="wl" href="../../t/%EB%A6%AC%EB%8D%94%EC%8B%AD/">리더십</a>이 맡는다. 여기서는 비전이 어떻게 세워지고, 지켜지고, 어디서 멈추어야 하는가를 본다.</p>
+<h2>1. 미션은 나침반, 비전은 여행 안내문 — 비전의 구체화</h2>
+<p>권성수 목사는 리더십 설교 「비전, 열정, 끈기」에서 먼저 두 말을 갈라놓는다. "미션과 비전을 혼돈하면 안된다." 미션은 무엇을 하느냐이고, 비전은 언제, 어디까지 가느냐다. 그가 윌 만치니를 인용해 정리한 대조표는 이렇다.</p>
+<table>
+<thead>
+<tr>
+<th>미션</th>
+<th>비전</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>나침반</td>
+<td>여행 안내문</td>
+</tr>
+<tr>
+<td>방향을 규정한다</td>
+<td>미래를 규정한다</td>
+</tr>
+<tr>
+<td>알려 준다</td>
+<td>감동을 준다</td>
+</tr>
+<tr>
+<td>하는 것</td>
+<td>보는 것</td>
+</tr>
+<tr>
+<td>에너지의 방향</td>
+<td>에너지의 방출</td>
+</tr>
+</tbody>
+</table>
+<p>같은 설교자는 「거인을 깨우세요(2)」에서 사도행전 26장의 바울을 본문으로 이 구별을 시간축에 놓는다. 다메섹에서 받은 '하늘의 비전'은 현재적으로는 복음을 전하는 미션이고, 미래적으로는 무엇을 얼마만큼 하겠다는 비전이다. 그래서 그는 말한다. "구체적인 미래의 목표로 나타나면 비전이 되는 것이다." 비전은 산 정상과 이정표(mountaintop + milestones)를 함께 가져야 하고, 누가·무엇을·언제·어디로·왜·어떻게를 묻는 '비전 경로'를 통과해야 한다. 측정과 전략이 비전의 일부가 되는 셈이다.</p>
+<p>이 원리가 한 교회에서 실제로 쓰인 모습이 2014년 「CS123 비전」이다. 권성수 목사는 '천국 복음으로 사람을 살리고 키우고 고친다'를 미션으로 두고, 그 위에 7년 단위의 구체적 목표를 비전으로 세웠다. 교회가 학교처럼 가르치는 교육과 훈련을 통해 선교사 100명을 파송하고, 2만 명이 출석하고, 지역 복음화 30퍼센트를 이룬다는 것이다. 구체성의 장점은 분명하다. 공동체가 같은 그림을 보고, 중간에 자기 위치를 확인할 수 있다.</p>
+<p>그러나 권성수 목사가 구체화만 말하는 것은 아니다. 같은 설교에서 그는 조건을 단다. "과대망상증이 아닌 하나님의 주신 하늘의 비전이어야 한다." 그리고 잠언 29:18의 '비전'(묵시)을 율법과 짝지으며 하나님이 보여 주신 법이 비전이 된다고 읽고, 이렇게 묻는다. "자기 허영을 위한 비전이 아니고, 하나님의 아젠다를 위한 비전이 있는가?" 구체화를 가장 강하게 말하는 목소리 안에 이미 경계가 들어 있다. 이 긴장은 4절에서 다시 만난다.</p>
+<h2>2. 하늘의 비전은 사람을 바꾼다 — 십자가로 가는 비전과 바다를 꿈꾸는 교회</h2>
+<p>권성수 목사는 바울의 회심을 비전의 사건으로 읽는다. "바울은 비전 때문에 완전히 바뀌었다." 비전을 정확하게 보면 사람이 바뀐다는 것이다. 그런데 그 비전의 원형은 놀랍도록 역설적이다. 「비전, 열정, 끈기」는 누가복음 9:51, 예수께서 예루살렘을 향하여 올라가기로 굳게 결심하신 장면에서 시작한다. 예수의 최종 비전은 완성된 하나님 나라지만, 이 땅의 길 위에서 그분의 비전은 <a class="wl" href="../../t/%EC%8B%AD%EC%9E%90%EA%B0%80/">십자가</a>였다.</p>
+<blockquote>
+<p>죽는 것이 비전이었다. 참 특이한 비전이다.</p>
+</blockquote>
+<p>바로 그 앞의 46절에서 제자들은 누가 크냐를 두고 다툰다. 같은 길을 걸으면서 한 사람은 죽으러 올라가고, 다른 사람들은 자리를 다툰다. 권성수 목사가 리더에게 '하나님과의 관계에서 수직비전'이 필요하다고 말한 것이 이 대조에서 나온다. 수평의 성취를 바라보는 비전은 제자들의 다툼이 되고, 수직의 순종을 바라보는 비전은 십자가가 된다. 송구영신 설교 「한 손엔 대망, 다른 손엔 야성」의 '대망'도 하나님이 나를 통해 새 일을 하신다고 믿는, 말씀에 근거한 큰 비전이다(<span class="wl-dead" title="위키 내부 링크">사 43:18-21</span>).</p>
+<p>문대원 목사는 같은 힘을 교회의 크기로 말한다. 「영원을 품고 오늘을 산다」 시리즈의 교회 설교에서 그는 초대교회가 이스라엘 밖으로 나가 본 적 없는 사람들이었는데도 땅끝까지 간 이유를 강력한 비전에서 찾고, 생텍쥐페리의 말을 인용한다. "큰 배를 만들게 하고 싶다면, 배 만드는 법을 가르치지 말고 바다를 꿈꾸게 하라." 그는 내 능력에 맞는 작은 비전과 내 힘으로 할 수 없는 큰 비전을 견주며, 큰 비전이어야 그것을 위해 기도한다고 말한다. 그리고 비전의 부재가 낳는 결과를 진단한다. "그러한 비전이 없는 교회는 내부적인 문제를 가지고 싸우기 쉽다."</p>
+<p>2025년 <a class="wl" href="../../t/%EC%83%9D%EB%AA%85%EC%82%AC%EC%97%AD/">생명사역</a>을 다시 짚는 설교는 이 진단을 한 쌍의 대조로 정리한다. "명확한 비전이 있는 교회는 비전을 향해 나아간다." "비전이 없는 교회는 눈에 보이는 취향을 따라간다." 비전은 교회가 안으로 말려 들어가지 않게 하는 힘이다. 그러나 비전을 보는 것과 끝까지 걸어가는 것은 다른 일이다.</p>
+<h2>3. 비전가와 몽상가 — 용기, 계획, 그리고 기억</h2>
+<p>문대원 목사의 2022년 느헤미야 연속 설교는 비전이 실제로 걸어가는 길을 단계별로 보여 준다. 첫째는 용기다. 「성공에 도취되지 않으려면」에서 그는 아닥사스다 왕 앞에 선 느헤미야(<span class="wl-dead" title="위키 내부 링크">느 2장</span>)를 두고 두 유형을 가른다.</p>
+<table>
+<thead>
+<tr>
+<th>몽상가</th>
+<th>비전가</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>행동을 적게 하고 말을 많이 한다</td>
+<td>말을 적게 하고 행동을 많이 한다</td>
+</tr>
+<tr>
+<td>외부의 조건에서 힘을 얻는다</td>
+<td>내면의 믿음에서 힘을 얻는다</td>
+</tr>
+<tr>
+<td>문제가 있으면 용기를 잃고 포기한다</td>
+<td>두려워하는 일을 시도한다</td>
+</tr>
+</tbody>
+</table>
+<p>오스 기니스도 『소명』에서 같은 경계선을 긋는다. 그는 T. E. 로렌스의 '한낮에 꿈꾸는 자'라는 말을 빌려, 진짜 비전가는 공상가와 달리 "두 눈을 크게 뜬 채 그 꿈이 이루어지도록 행동한다"고 쓴다.</p>
+<p>둘째는 계획이다. 무계획이 영적이라는 오해에 맞서 문대원 목사는 망대를 세우기 전에 비용을 계산하라는 예수의 비유를 든다. "하나님께서 주신 비전은 실행 가능한 계획을 통해서 이루어진다." 셋째는 수정이다. 성벽 공사가 절반쯤에서 위협을 받자 느헤미야는 한 손으로 일하고 한 손에 병기를 잡게 했다(<span class="wl-dead" title="위키 내부 링크">느 4장</span>). 설교자는 여기서 비전과 계획을 구별한다. "계획을 수정하는 것이 비전을 포기하는 것이 아니다." 비전은 고정되고 계획은 상황에 따라 움직인다.</p>
+<p>넷째, 가장 깊은 것은 기억이다. 반대와 비판이 쏟아질 때 느헤미야가 붙든 것은 비전 자체가 아니라 그것을 주신 분이었다. 문대원 목사는 동부 아프리카 부흥을 다룬 학위논문이 절반에서 막혔을 때의 경험으로 이것을 증언한다. "비전을 주시고 여기까지 인도하신 하나님을 기억할 때 힘을 얻었다." 권성수 목사가 경고한 '비전 파괴자'(vision vandals) 앞에서 끌려다니지 않는 길도 비판자가 아니라 하나님께 초점을 두는 데 있다. 그런데 비전을 끝까지 걸어간 사람에게는 또 하나의 시험이 기다린다. 비전이 이루어진 뒤다.</p>
+<h2>4. 비전의 종착지에서 — 성취와 성과를 경계하는 목소리</h2>
+<p>성벽은 52일 만에 완성되었는데 느헤미야서는 13장까지 이어진다. 문대원 목사는 「비전보다 중요한 것」에서 그 까닭을 책의 구조에서 찾는다. 1-7장은 성벽의 회복이고, 8-13장은 사람을 세우는 일이다(<span class="wl-dead" title="위키 내부 링크">느 8장</span>). 비전이 성취된 뒤 백성은 에스라에게 율법책을 읽어 달라고 청했다.</p>
+<blockquote>
+<p>인생의 의미는 비전이 아니라 하나님과의 관계로 설명된다.</p>
+</blockquote>
+<p>그는 동양인 최다승 기록을 마침내 깬 한 야구 선수에게 찾아온 것이 기쁨이 아니라 허탈이었다는 이야기로 이 문장을 뒷받침한다. 반대로 그는 권성수 목사가 사역을 마무리하며 "아쉬운 점 하나도 없다. 감사밖에 없다"고 말하는 것을 보았다고 전한다. 같은 비전의 종착지에서 한 사람은 허탈하고 다른 사람은 감사한다. 차이는 비전이 무엇이었느냐에 있다. 문대원 목사는 예수의 비전을 요한복음 6:38, 보내신 이의 뜻을 행하려 함에서 찾고 이렇게 맺는다. "비전은 어떤 일, 프로젝트가 아니다. 하나님이 우리의 비전이다."</p>
+<p>이 경계는 다른 저자들에게서 더 날카로워진다. 크리스토퍼 라이트는 『회복하시는 하나님』에서 예레미야의 서기관 바룩이 품은 출세의 야망을 다루며 묻는다. 경건한 야망과 비전을 품는 것은 좋은 일이지만 "그것들이 참으로 하나님과 그분의 나라를 위한 것인가요, 아니면 우리 자신의 출세나 신분 상승이나 타인들의 눈에 인식되는 가치를 위한 것인가요?" 래리 크랩은 『내 영혼은 이런 대화를 원한다』에서 회복된 결혼생활처럼 좋은 것조차 최우선의 비전이 되면 "종교적인 비전"이라 부른다. 종교는 하나님을 아는 것 자체가 아니라 하나님을 앎으로써 생기는 열매에 몰두하게 하기 때문이다. 오스 기니스는 가짜 비전을 경계하라며 마르크스와 히틀러와 마오쩌둥도 모두 몽상가였다고 상기시킨다.</p>
+<p>강재명 선교사의 2016년 강의는 이 경계를 예수 시대의 인물들로 보여 준다. 그는 헤롯 대왕을 '세상적 성공모델'로, 기득권을 지키는 대제사장을 종교적 수단과 방법의 대가로 그리고, 예수가 그들이 아니라 어부와 세리를 택하셨다고 짚는다. 그의 결론은 비전의 내용이 아니라 비전의 동반자를 향한다. "당신의 비전, 답은 주님과 함께 하는것이다." 비전은 무엇을 이룰 것인가의 그림이기 전에 누구와 함께 갈 것인가의 그림이다. 사람과 함께 가는 비전의 문제는 <a class="wl" href="../../t/%EB%8F%99%EC%97%AD/">동역</a>으로 이어진다.</p>
+<h2>5. 두 목소리를 함께 듣기 — 구체적인 비전과 관계로서의 비전</h2>
+<p>이제 두 목소리를 나란히 놓을 수 있다. 각자를 가장 강한 형태로 정리하면 이렇다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>구체화하는 목소리</th>
+<th>경계하는 목소리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>비전이란</td>
+<td>미션이 구체적인 미래의 목표로 나타난 것</td>
+<td>일이나 프로젝트가 아니라 하나님 자신</td>
+</tr>
+<tr>
+<td>강점</td>
+<td>공동체가 같은 그림을 보고, 측정하며, 끝까지 간다</td>
+<td>성취 뒤의 허탈과 야망의 변질을 막는다</td>
+</tr>
+<tr>
+<td>대표 대목</td>
+<td>산 정상과 이정표, CS123의 7년 목표</td>
+<td>느헤미야 8-13장, 바룩의 야망, 종교적인 비전</td>
+</tr>
+<tr>
+<td>이것 없이는</td>
+<td>비전이 막연한 소망이나 취향에 머문다</td>
+<td>비전이 성과표가 되고 사람이 도구가 된다</td>
+</tr>
+<tr>
+<td>스스로 둔 단서</td>
+<td>"과대망상증이 아닌" 하늘의 비전, 수직비전</td>
+<td>강력한 비전, 큰 비전, 실행 가능한 계획</td>
+</tr>
+</tbody>
+</table>
+<p>마지막 줄이 이 글의 요점이다. 구체화를 가장 강하게 말한 권성수 목사가 수직비전과 십자가 비전, 허영을 위한 비전에 대한 경계를 함께 말했고, 경계를 가장 분명히 말한 문대원 목사가 강력한 비전과 실행 가능한 계획을 함께 말했다. 두 설교자 사이의 이음새도 있다. 4절에서 문대원 목사가 전한 대로, 측정 가능한 비전을 세웠던 권성수 목사는 사역의 끝에서 성과가 아니라 감사를 말했다.</p>
+<p>그러므로 둘은 양자택일이 아니다. 비전은 구체적이어야 걸어갈 수 있고, 하나님께 매여 있어야 끝에서 무너지지 않는다. 문대원 목사가 리더십 교육에서 '비전을 실행으로 옮기는 용기'의 근원을 하나님을 향한 신뢰와 '항상 함께 하시겠다는 약속'(수 1:5, 마 28:20)에 둔 것이 그 접점이다. 목표는 바뀌고 수정될 수 있지만, 비전을 주신 분과의 관계는 비전보다 먼저 있고 비전보다 오래 남는다. 각자 부르심을 받은 자리에서 이 그림을 어떻게 분별하는가는 <a class="wl" href="../../t/%EB%B6%80%EB%A5%B4%EC%8B%AC/">부르심</a>과 <a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a>이 이어받는다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>미션은 무엇을 하느냐(나침반)이고 비전은 언제, 어디까지 가느냐(여행 안내문)다. 비전은 미션이 구체적인 미래의 목표로 나타난 것이다.</li>
+<li>비전의 원형은 역설적이다. 예수의 길 위의 비전은 십자가였고, 같은 길에서 제자들은 누가 크냐를 다퉜다. 수직의 순종 없는 수평의 비전은 자리다툼이 된다.</li>
+<li>비전가는 몽상가와 달리 용기 있게 행동하고 실행 가능한 계획을 세우며, 계획은 수정해도 비전은 포기하지 않는다. 막힐 때 붙드는 것은 비전이 아니라 그것을 주신 분에 대한 기억이다.</li>
+<li>성취는 만족을 주지 못한다. 인생의 의미는 비전이 아니라 하나님과의 관계로 설명되며, 비전은 출세·인정·종교적 열매를 향하는 순간 변질된다.</li>
+<li>구체화와 경계는 두 진영이 아니라 같은 설교자 안의 두 목소리다. 비전은 구체적이어야 걸을 수 있고, 하나님께 매여 있어야 끝에서 무너지지 않는다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>공동체의 비전을 숫자(파송 인원, 출석 인원, 비율)로 세울 때, 그 숫자가 목표에서 성과 평가표로 바뀌는 지점은 어디인가. 기한이 끝났을 때 이루지 못한 숫자는 어떻게 읽어야 하는가?</li>
+<li>하나님이 주신 비전과 사람이 세운 목표를 무엇으로 분별하는가. '과대망상증이 아닌 하늘의 비전'을 가르는 실제 표지는 무엇인가?</li>
+<li>비전이 없는 교회는 취향을 따라간다면, 비전이 너무 강한 교회는 무엇을 잃는가. 비전에 반대하는 사람이 비전 파괴자인지 정당한 분별자인지는 어떻게 구별하는가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%86%8C%EB%AA%85/">소명</a> — 8절 '인생의 십일조와 비전 — 라아'. 비전의 어원.</li>
+<li><a class="wl" href="../../t/%EB%A6%AC%EB%8D%94%EC%8B%AD/">리더십</a> · <a class="wl" href="../../t/%EB%B6%80%EB%A5%B4%EC%8B%AC/">부르심</a> — 팀의 리더십, 부르심의 분별.</li>
+<li><a class="wl" href="../../t/%EC%83%9D%EB%AA%85%EC%82%AC%EC%97%AD/">생명사역</a> — 미션과 그 위에 세운 비전.</li>
+<li><a class="wl" href="../../t/%EB%8F%99%EC%97%AD/">동역</a> — 비전을 함께 지는 사람들.</li>
+<li><a class="wl" href="../../t/%EC%8B%AD%EC%9E%90%EA%B0%80/">십자가</a> — 예수의 길 위의 비전.</li>
+<li><span class="wl-dead" title="위키 내부 링크">느2</span> · <span class="wl-dead" title="위키 내부 링크">느4</span> · <span class="wl-dead" title="위키 내부 링크">느8</span> · <span class="wl-dead" title="위키 내부 링크">눅9</span> · <span class="wl-dead" title="위키 내부 링크">행26</span> — 중심 본문.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">비전, 열정, 끈기</span></td>
+<td>설교(권성수, 눅 9:51-56)</td>
+<td>미션과 비전, 십자가 비전, 수직비전, 비전 파괴자</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">거인을 깨우세요(2)</span></td>
+<td>설교(권성수, 행 26)</td>
+<td>하늘의 비전, 구체적 미래 목표, 허영 경계</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">CS123 비전</span> · <span class="wl-dead" title="위키 내부 링크">대망과 야성</span></td>
+<td>설교(권성수)</td>
+<td>측정 가능한 7년 비전, 말씀에 근거한 큰 비전</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">비전보다 중요한 것</span></td>
+<td>설교(문대원, 느 8장)</td>
+<td>비전의 종착지, 하나님이 우리의 비전</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">성공에 도취되지 않으려면</span> · <span class="wl-dead" title="위키 내부 링크">사방에 적이 있을 때</span></td>
+<td>설교(문대원, 느 2·4장)</td>
+<td>비전가와 몽상가, 계획과 수정, 기억</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">리더십(피택자 교육)</span></td>
+<td>강의(문대원)</td>
+<td>비전을 실행으로 옮기는 용기의 근원</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">교회</span> · <span class="wl-dead" title="위키 내부 링크">다시 생명사역(1)</span></td>
+<td>설교(문대원)</td>
+<td>바다를 꿈꾸게 하라, 비전과 취향</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">당신의 비전 누가 함께하는가</span> · <span class="wl-dead" title="위키 내부 링크">두 번째</span></td>
+<td>강의(강재명)</td>
+<td>비전의 정의, 주님과 함께하는 비전, 헤롯의 성공모델</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%86%8C%EB%AA%85_%EC%98%A4%EC%8A%A4%EA%B8%B0%EB%8B%88%EC%8A%A4/">소명_오스기니스</a> · <a class="wl" href="../../b/%ED%9A%8C%EB%B3%B5%ED%95%98%EC%8B%9C%EB%8A%94%ED%95%98%EB%82%98%EB%8B%98_%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%86%A0%ED%8D%BC%EB%9D%BC%EC%9D%B4%ED%8A%B8/">회복하시는하나님_크리스토퍼라이트</a> · <a class="wl" href="../../b/%EB%82%B4%EC%98%81%ED%98%BC%EC%9D%80%EC%9D%B4%EB%9F%B0%EB%8C%80%ED%99%94%EB%A5%BC%EC%9B%90%ED%95%9C%EB%8B%A4_%EB%9E%98%EB%A6%AC%ED%81%AC%EB%9E%A9/">내영혼은이런대화를원한다_래리크랩</a></td>
+<td>책</td>
+<td>가짜 비전, 바룩의 야망, 종교적인 비전</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#discipline/목회학</span><span>#domain/리더십</span><span>#domain/교회</span><span>#topic/비전</span><span>#topic/소명</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

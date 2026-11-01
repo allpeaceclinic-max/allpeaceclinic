@@ -1,0 +1,337 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>성령강림 — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-t">조직신학·교리</span><span class="date">2026-11-01</span></div>
+  <h1 class="note-title">성령강림</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>성령강림은 예수의 승천 뒤 유대의 절기 오순절에 예루살렘에 모인 120명 위에 약속된 성령이 임한 사건이다(<span class="wl-dead" title="위키 내부 링크">행 2:1-41</span>). 급하고 강한 바람 같은 소리, 갈라지는 불의 혀, 각 나라 언어로 하나님의 큰 일을 말함, 그리고 베드로의 설교와 3천 명의 회심이 한 날에 일어났다. 권성수 목사의 「성능체험」 시리즈와 문대원 목사의 사도행전 2장 설교가 이 사건을 가장 길게 다루고, 여러 선교학 저자들이 다시 읽는다.</p>
+<p>이 글은 성령강림을 성령의 인격이나 충만의 교리가 아니라 <strong>사건</strong>으로 읽는다. 성령이 누구신지는 <a class="wl" href="../../t/%EC%84%B1%EB%A0%B9/">성령</a>이, 충만이 어떻게 반복되고 성령세례를 어떻게 이해할지는 <a class="wl" href="../../t/%EC%84%B1%EB%A0%B9%EC%B6%A9%EB%A7%8C/">성령충만</a>이 다룬다. 여기서 묻는 것은 그 사이에 걸린 질문이다 — 오순절은 십자가와 부활처럼 구속사에서 단 한 번 일어난 일인가, 아니면 교회가 거듭 구하고 거듭 경험하는 원형인가. 설교자들은 둘 중 하나를 고르지 않는다. 20세기의 오순절 운동은 5절에서 따로 다룬다.</p>
+<h2>1. 칠칠절에서 성령절로 — 절기의 뿌리</h2>
+<p>오순절은 교회가 만든 날이 아니라 이스라엘의 절기였다. 손창남은 『사도행전을 선교적으로 읽으면』에서 "유대인들은 대대로 유월절 후 50일이 되는 날을 오순절로 지켰다."고 짚는다. 권성수 목사는 2020년 맥추감사주일 설교 「맥추절 DNA 뿌리 찾기」에서 이 절기의 족보를 거슬러 올라간다. 유월절 이튿날 보리 추수를 시작해 일곱 주를 세고, 마흔아홉째 날 밀 추수를 끝낸 다음 날 지키는 칠칠절이 곧 맥추절이다(<span class="wl-dead" title="위키 내부 링크">신 16:9-12</span>, <span class="wl-dead" title="위키 내부 링크">레23</span>).</p>
+<p>그의 설교는 이 곡식의 절기가 어떻게 영혼의 절기가 되는지를 보여 준다. 유월절 밤의 피가 그리스도의 피를 가리키듯, 출애굽에서 시내산 도착까지 약 50일이 흘러 토라를 받은 날이 있고(<span class="wl-dead" title="위키 내부 링크">출 19:1</span>), 십자가(유월절)·무덤(무교절)·부활(초실절) 이후 50일째에 성령이 강림했다. 설교 노트는 이 대응을 한 줄로 요약한다 — "토라절=성령절". 율법이 돌판에 새겨진 날과 성령이 사람 위에 임한 날이 같은 절기에 겹친다는 것이다. 그래서 그는 맥추절의 DNA를 곡물 추수와 영혼 추수로 읽고, 감사의 내용을 말씀이라는 기준과 성령이라는 지킬 힘으로 정리한다.</p>
+<table>
+<thead>
+<tr>
+<th>절기</th>
+<th>구약의 의미</th>
+<th>성취</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>유월절</td>
+<td>피 바른 집을 넘어감</td>
+<td>십자가</td>
+</tr>
+<tr>
+<td>무교절</td>
+<td>누룩 없는 떡</td>
+<td>무덤</td>
+</tr>
+<tr>
+<td>초실절</td>
+<td>첫 열매</td>
+<td>부활</td>
+</tr>
+<tr>
+<td>칠칠절(오순절·맥추절)</td>
+<td>밀 추수, 토라 받은 날</td>
+<td>성령강림 — 영혼의 추수</td>
+</tr>
+</tbody>
+</table>
+<p>임태순 선교사도 『선교적 성경 읽기란 무엇인가』에서 같은 연속성을 공동체의 언어로 말한다. "시내산 언약을 통해 표현된 하나님의 백성의 정체성은 오순절날 형성된 교회를 통해 그대로 이어진다." 3천 명이 회심한 그 날은 첫 추수의 날이었다.</p>
+<h2>2. 바람과 불과 언어 — 바벨의 역전</h2>
+<p>권성수 목사는 「오순절의 성령 능력」에서 본문의 표징을 하나씩 짚는다. 바람은 불지 않았고 소리가 들렸으며, 그는 그것을 창조와 부활의 생기인 루아흐로 읽는다. 불이 하필 '혀'로 임한 것은 증인이 되려면 말을 해야 하기 때문이다. 그리고 그 일은 한 사람도 빠짐없이 동시에 일어났다. 문대원 목사의 「The Church on Fire」도 바람을 통제할 수 없는 하나님의 호흡으로, 불을 시내산에서 이어지는 현현의 표지로 읽는다. 바람과 불의 성령론적 의미는 <a class="wl" href="../../t/%EC%84%B1%EB%A0%B9/">성령</a> 2절이 다룬다.</p>
+<p>이 글이 주목하는 것은 셋째 표징, 언어다. 두 설교자 모두 오순절의 방언을 고린도전서의 알아듣지 못하는 방언과 구별해 실제로 존재하는 외국어로 읽고, 거기서 창세기 11장을 본다. 권성수 목사는 열다섯 나라 명단을 셈과 함과 야벳의 후손으로 나누어 보이며 하나님이 흩으신 언어를 통합하신 사건이라 하고, 문대원 목사는 언어를 혼잡하게 해 흩으셨던 하나님이 이제 모든 지방의 언어로 말씀하셨다고 한다. 손창남은 이를 정식화한다 — "오순절 사건은 창세기 11장 바벨탑에서 하나의 언어가 수많은 언어로 나뉘는 사건과 정반대의 의미를 갖는다."(<span class="wl-dead" title="위키 내부 링크">창11</span>)</p>
+<p>미로슬라브 볼프는 『배제와 포용』에서 이 역전을 더 정밀하게 읽는다. 오순절은 바벨 이전의 단일 언어로 돌아간 것이 아니다.</p>
+<blockquote>
+<p>"모든 언어를 아우르는 메타-언어가 고안되어서가 아니라, 각 사람에게 다른 사람의 말이 자신의 언어로 말하는 것으로 들리기 때문에 모두가 서로를 이해한다는 의미를 갖는다." — 미로슬라브 볼프, 『배제와 포용』</p>
+</blockquote>
+<p>중심에 선 탑이 모든 것을 통제하려 했다면, 오순절에는 성령이 각 사람 위에 내려와 모두를 충만하게 한다. 차이는 지워지지 않고 서로 들린다. 문대원 목사가 한 문장으로 같은 결론에 닿는다 — "기독교는 유일하게 공식언어가 없다." 이슬람의 아랍어, 힌두교와 불교의 산스크리트어와 달리 복음은 처음부터 모든 언어로 말해졌다. 볼프가 오순절 공동체의 재산 공유를 포용과 구별되지 않는 정의로 읽는 것도 이 연장선에 있다.</p>
+<h2>3. 현상을 해석하는 말씀 — 베드로의 설교</h2>
+<p>오순절의 표징은 저절로 해석되지 않았다. 군중의 반응은 둘로 갈렸다. 놀라며 "이 어찌 된 일이냐" 묻는 이들과, 새 술에 취했다고 조롱하는 이들이다. 권성수 목사는 부흥이 나타날 때마다 이 두 반응이 나온다고 말한다. 이때 베드로가 일어선다.</p>
+<p>권성수 목사가 「베드로의 설교(1)」에서 강조하는 것은 방향이다. 큰 소리와 불의 혀와 외국어라는 기적의 현장에서 베드로는 기적이 아니라 요엘서로 돌아갔다. "기적만 쫓아가면 안된다. 말씀으로 돌아가야 한다." 문대원 목사도 「불붙은 논리로 선포된 복음」에서 같은 지점을 짚는다. "베드로는 각국 언어에 놀라지 않았다. 성취에 대해 놀랐다." 현상보다 그 현상에 대한 성경적 해석이 더 중요하다는 것이다(고전 14:19).</p>
+<p>베드로가 인용한 요엘의 예언은 오순절을 시간 위에 놓는다.</p>
+<blockquote>
+<p>하나님이 말씀하시기를 말세에 내가 내 영을 모든 육체에 부어 주리니 너희의 자녀들은 예언할 것이요 너희의 젊은이들은 환상을 보고 너희의 늙은이들은 꿈을 꾸리라 (행 2:17)</p>
+</blockquote>
+<p>권성수 목사는 '말세'를 성령강림부터 재림까지의 구간으로 읽고, 요엘의 피와 불과 연기는 재림 직전의 징조라고 설명한다. 오순절과 재림이 한 예언의 연속선 위에 있다는 것이다(<span class="wl-dead" title="위키 내부 링크">욜2</span>, <a class="wl" href="../../t/%EC%A2%85%EB%A7%90%EB%A1%A0/">종말론</a>). 모든 백성이 예언자가 되기를 바란 모세의 소원(민 11장)이 그렇게 성취되었다. 문대원 목사가 강조하는 것도 '모든 육체'다. 선지자, 사사, 특별한 사람에게만 특별한 상황에만 임했던 성령이 성별과 신분과 상관없이 모두에게 임했다.</p>
+<p>설교의 내용은 예수였다. 존 스토트는 『선교란 무엇인가』에서 베드로가 요엘을 인용한 뒤 "이스라엘 사람들아 이 말을 들으라…예수로…"(행 2:22)로 시작했다고 짚으며 "그가 쓴 첫 단어는 예수였다."고 쓴다. 권성수 목사는 「베드로의 설교(2)」에서 그 구조를 예수의 삶·죽음·부활·승천·성령 부으심으로 정리하고, 다윗의 시편이 부활(<span class="wl-dead" title="위키 내부 링크">시 16:8-11</span>)과 승귀(<span class="wl-dead" title="위키 내부 링크">시 110:1</span>)의 증거로 쓰였다고 설명한다. 확실한 증거와 불같은 확신이 함께 갔다는 것이다 — "불은 빛도 열도 있다." 문대원 목사는 이 설교를 '불붙은 논리(logic on fire)'라 부르며 성령의 능력과 신학적 논증이 경쟁하지 않았다고 말한다. 오순절의 첫 열매인 3천 명의 회심은 표징이 아니라 해석된 말씀에서 나왔다.</p>
+<h2>4. 한 번인가, 거듭인가 — 단회성과 반복성</h2>
+<p>이제 중심 질문이다. 오순절은 반복되는가. 답은 두 극으로 나뉜다. 하나는 오순절을 십자가·부활·승천과 같은 줄에 세우는 읽기다. 권성수 목사가 소개하듯, 사도와 교회 창설과 성경 완성의 시기에 단회적으로 일어났다고 보는 이들은 죽음·부활·승천·성령강림을 모두 한 번의 사건으로 본다. 다른 하나는 오순절을 교회가 거듭 구하는 원형으로 보는 읽기다. 같은 설교자가 「오순절의 성령 능력」에서 "이것이 최초의 성령강림이다. 이것을 부흥이라고 한다."라고 말하며 1907년 평양대부흥, 1727년 모라비안 공동체, 에드워즈의 대각성을 같은 계보에 놓는다.</p>
+<p>가장 강한 형태로 세우면, 앞의 것은 구원의 충족성을 지킨다 — 신자는 무언가를 더 얻어야 구원받는 것이 아니다. 뒤의 것은 체험의 실재를 지킨다 — 교회사의 부흥은 오순절이 박물관에 갇힌 사건이 아님을 증언한다. 설교자들은 이 둘 사이에서 고르지 않고 층위를 나눈다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>구속사의 층위</th>
+<th>실존의 층위</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>성격</td>
+<td>단회적 — 다시 일어나지 않는다</td>
+<td>반복적 — 거듭 구하고 경험한다</td>
+</tr>
+<tr>
+<td>무엇이</td>
+<td>약속된 성령이 교회에 부어짐, 새 시대의 개시</td>
+<td>충만, 부흥, 의식적 체험</td>
+</tr>
+<tr>
+<td>비유</td>
+<td>수원지와 파이프가 처음 개통되는 순간</td>
+<td>집집마다 물이 흘러나옴</td>
+</tr>
+<tr>
+<td>근거 설교</td>
+<td>권성수 「베드로의 설교(1)」, 문대원 「The Church on Fire」</td>
+<td>권성수 「오순절의 성령 능력」·「어떻게 하면 부흥」</td>
+</tr>
+</tbody>
+</table>
+<p>권성수 목사는 「베드로의 설교(1)」에 '단회성과 반복성의 균형'이라는 소제목을 달고, 구원의 역사 면에서는 단 한 번 일어난 일이지만 "그러나 성령의 역사는 지금도 있다."고 정리한다. 그는 아브라함 카이퍼의 비유를 빌린다. 구약 시대에는 각자가 웅덩이에 물을 가두어 퍼 썼다면, 신약 시대에는 수원지에서 파이프로 집집마다 물이 들어가고, 개통되는 순간 물탱크가 동시에 쏟아진다. 개통은 한 번이지만 물은 계속 흐른다. 2021년 설교 「어떻게 하면 부흥」은 같은 구분을 '구원 역사'와 '구원 실존'이라는 말로 한다. 성령이 오심은 역사의 코스로 정해져 있었지만 제자들은 기도에 전력투구했다. 설교 노트는 "구원의 역사, 실존을 이해해야 해석 가능하다."고 적는다. 같은 해의 「믿음의 근육(6) 불 뿜는 믿음」은 아예 소제목을 '오순절: 단회 + 반복'으로 단다.</p>
+<p>문대원 목사도 같은 구조를 따른다. 「The Church on Fire」에서 그는 120명 모두가 받은 성령강림을 '단회적인 사건'으로, 새로운 시대의 시작을 알리는 일로 규정한 뒤 곧바로 "구하는 모든 사람은 성령 충만을 받을 수 있다."고 말하고, 회개·기대·간구·믿음·순종의 다섯 기도를 공식이 아니라 성령과 관계를 맺어 가는 단계로 제시한다. 뉴비긴은 『오픈 시크릿』에서 그 반복을 사도행전 안에서 보여 준다. 고넬료의 집에 성령이 임했을 때 그들은 베드로와 제자들이 오순절 이래 알고 있었던 것과 똑같은 자유와 기쁨을 경험했고, 그 일은 고넬료만이 아니라 베드로와 교회의 회심이 되었다. 오순절은 경계 너머에서 반복된다. 성령세례를 후속 체험으로 볼지 중생의 세례로 볼지는 <a class="wl" href="../../t/%EC%84%B1%EB%A0%B9%EC%B6%A9%EB%A7%8C/">성령충만</a> 2·3절이, 교회사의 부흥은 <a class="wl" href="../../t/%EB%B6%80%ED%9D%A5/">부흥</a>이 맡는다.</p>
+<h2>5. 오순절 운동과 분별 — 마음을 열되 따라가지 않기</h2>
+<p>20세기에 '오순절'은 사건의 이름에서 운동의 이름이 되었다. 마크 놀은 『나는 왜 세계 기독교인이 되었는가』에서 지난 주일 브라질의 하나님의 성회 교인이 미국의 두 거대 오순절 교단 교인을 합친 수보다 많았다고 적으며, 세계 기독교의 중심 이동을 오순절적 개신교의 빠른 확장과 함께 읽는다. 자료들은 이 운동에 대해 양쪽을 다 말한다.</p>
+<p>헨리 나우웬은 『친밀감』에서 가톨릭 캠퍼스의 오순절 운동을 다루며 양가감정을 숨기지 않는다. 그는 실패한 예배 의식과 경쟁에 지친 대학의 상황에서 "우리는 오순절 운동을 하나의 부흥, 즉 헌신적 교회의 부활로 볼 수 있다."고 쓰면서도, 곧이어 "오순절 체험의 기적적 효과가 어떤 면에서 충격 요법과 같지 않은지 한번쯤 생각해 볼 필요가 있다."고 묻는다. 진짜 시험은 기댈 감정과 체험이 사라졌을 때 온다는 것이다. 그러나 그는 이 운동을 더 깊은 추구를 향한 초청으로 읽기를 그치지 않는다.</p>
+<p>한국 강단의 설교자들도 같은 이중성을 품는다. 권성수 목사는 「베드로의 설교(1)」에서 은사주의를 '다른 불'로 비판한 존 맥아더의 2013년 컨퍼런스를 소개하며, 분명히 따라가서는 안 될 이상한 불이 있지만 성령이 일으키시는 방언과 신유도 있으므로 너무 마음을 닫아서는 안 된다고 말한다. 그 근거로 이슬람권의 환상과 한 선교사의 암 치유를 들되, 판별의 기준은 사도행전 1장 8절에 둔다 — 성령이 임하시면 반드시 예수를 증언한다. 문대원 목사는 신학적 차이를 더 직접적으로 짚는다. 오순절 신학은 방언을 성령세례의 첫 증거로 보지만 장로교 신학은 이에 동의하지 않으며, 성령세례라는 말 자체도 논쟁의 여지가 있다는 것이다. 방언을 무시하는 것은 아니라는 단서와 함께다.</p>
+<p>두 쪽은 같은 시금석에서 만난다. 오순절의 표징이 베드로의 설교로 해석되었듯 오늘의 체험도 말씀 앞에서 해석되어야 하고, 그 끝은 예수를 높이는 증언이어야 한다. 은사의 지속과 중지를 둘러싼 신학적 지형은 <a class="wl" href="../../t/%EC%98%81%EC%A0%81%EC%9D%80%EC%82%AC/">영적은사</a> 6절이 다룬다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>오순절은 토라를 받은 칠칠절 위에 겹쳐진 사건이다. 곡식 추수의 날이 영혼 추수의 날이 되었다.</li>
+<li>각 나라 언어는 바벨의 역전이되 단일 언어로의 회귀가 아니다. 차이가 서로 들리게 된 것이며, 그래서 복음에는 공식 언어가 없다.</li>
+<li>오순절의 능력은 표징이 아니라 해석된 말씀에서 열매를 맺었다.</li>
+<li>단회성과 반복성은 양자택일이 아니라 층위의 문제다. 구속사에서는 한 번 개통되었고, 실존에서는 계속 흐른다.</li>
+<li>오순절 운동에 대한 평가는 부흥과 위험을 함께 말하며, '예수를 증언하는가'라는 시금석에서 만난다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>오순절을 '최초의 부흥'이라 부를 때, 평양대부흥 같은 사건은 오순절의 반복인가 그 효과의 재현인가. 그 차이는 신자에게 무엇을 바꾸는가.</li>
+<li>볼프가 읽은 오순절의 정의(필요에 따른 나눔, 서로 들리는 다양성)는 한국 교회의 성령강림 설교에서 왜 거의 들리지 않는가.</li>
+<li>사도행전 2·8·10장의 성령 임하심은 단회적 개시의 확장인가, 반복인가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%84%B1%EB%A0%B9/">성령</a> — 성령의 인격과 사역(2절)</li>
+<li><a class="wl" href="../../t/%EC%84%B1%EB%A0%B9%EC%B6%A9%EB%A7%8C/">성령충만</a> — 반복되는 충만, 성령세례 논쟁(2·3절)</li>
+<li><a class="wl" href="../../t/%EC%98%81%EC%A0%81%EC%9D%80%EC%82%AC/">영적은사</a> — 은사의 지속과 중지(6절)</li>
+<li><a class="wl" href="../../t/%EB%B6%80%ED%9D%A5/">부흥</a> — 교회사의 부흥</li>
+<li><a class="wl" href="../../t/%EA%B5%AC%EC%86%8D%EC%82%AC/">구속사</a> · <a class="wl" href="../../t/%EC%A2%85%EB%A7%90%EB%A1%A0/">종말론</a> — 단회적 사건, 말세의 시작</li>
+<li><span class="wl-dead" title="위키 내부 링크">행2</span> · <span class="wl-dead" title="위키 내부 링크">행1</span> · <span class="wl-dead" title="위키 내부 링크">욜2</span> · <span class="wl-dead" title="위키 내부 링크">창11</span> · <span class="wl-dead" title="위키 내부 링크">신16</span> — 본문 허브</li>
+<li><span class="wl-dead" title="위키 내부 링크">권성수_성능체험시리즈</span> — 12편 연속 설교</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수, 「오순절의 성령 능력」</span></td>
+<td>설교</td>
+<td>네 표징, 최초의 부흥</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수, 「이 어찌 된 일인가」</span></td>
+<td>설교</td>
+<td>외국어 방언과 바벨</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수, 「베드로의 설교(1)」</span></td>
+<td>설교</td>
+<td>단회성과 반복성</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수, 「베드로의 설교(2)」</span></td>
+<td>설교</td>
+<td>케리그마, 빛과 열</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수, 「맥추절 DNA 뿌리 찾기」</span></td>
+<td>설교</td>
+<td>토라절=성령절</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수, 「어떻게 하면 부흥」</span></td>
+<td>설교</td>
+<td>역사와 실존</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">권성수, 「불 뿜는 믿음」</span></td>
+<td>설교</td>
+<td>오순절: 단회 + 반복</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">문대원, 「The Church on Fire」</span></td>
+<td>설교</td>
+<td>모든 신자, 공식 언어 없음</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">문대원, 「불붙은 논리로 선포된 복음」</span></td>
+<td>설교</td>
+<td>불붙은 논리, 방언 논쟁</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">손창남, 『사도행전을 선교적으로 읽으면』</span></td>
+<td>책</td>
+<td>바벨의 반대</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">임태순, 『선교적 성경 읽기란 무엇인가』</span></td>
+<td>책</td>
+<td>시내산과 오순절</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">미로슬라브 볼프, 『배제와 포용』</span></td>
+<td>책</td>
+<td>서로 들리는 다양성</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">레슬리 뉴비긴, 『오픈 시크릿』</span></td>
+<td>책</td>
+<td>고넬료의 오순절</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">스토트·라이트, 『선교란 무엇인가』</span></td>
+<td>책</td>
+<td>첫 단어는 예수</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">헨리 나우웬, 『친밀감』</span></td>
+<td>책</td>
+<td>부흥과 충격 요법</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">마크 놀, 『나는 왜 세계 기독교인이 되었는가』</span></td>
+<td>책</td>
+<td>오순절 운동의 확장</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/성령론</span><span>#topic/오순절</span><span>#topic/구속사</span><span>#topic/부흥</span><span>#topic/사도행전</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

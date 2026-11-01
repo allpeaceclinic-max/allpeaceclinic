@@ -1,0 +1,324 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>영생 — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-t">영성·제자도</span><span class="date">2026-11-01</span></div>
+  <h1 class="note-title">영생</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>영생(ζωὴ αἰώνιος, 조에 아이오니오스)은 흔히 '죽지 않고 끝없이 사는 것'으로 들린다. 그러나 이 주제를 다룬 설교들은 거의 한목소리로 그 통념을 뒤집는다. 영생은 시간의 <strong>길이</strong>이기 전에 생명의 <strong>질</strong>이며, 하나님의 생명 자체에 참여하는 관계라는 것이다. 그 정의의 본문은 예수께서 대제사장 기도에서 친히 내리신 한 문장이다 — "영생은 곧 유일하신 참 하나님과 그가 보내신 자 예수 그리스도를 아는 것이니이다"(요 17:3).</p>
+<p>자료는 대부분 <span class="wl-dead" title="위키 내부 링크">권성수</span> 목사의 요한복음 17장·요한일서 강해와 <span class="wl-dead" title="위키 내부 링크">문대원</span> 목사의 「예수님의 I AM 선포」 시리즈다. 이 글의 축은 하나다 — 영생은 <strong>지금 시작되어 죽음 너머에서 완성되는 하나의 생명</strong>이다. 재림의 지형은 <a class="wl" href="../../t/%EC%A2%85%EB%A7%90%EB%A1%A0/">종말론</a>, 부활체는 <a class="wl" href="../../t/%EB%B6%80%ED%99%9C/">부활</a>, 구원의 시제와 범위는 <a class="wl" href="../../t/%EA%B5%AC%EC%9B%90/">구원</a>, 통치로서의 나라는 <a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EB%82%98%EB%9D%BC/">하나님나라</a>가 맡고, 이 글은 '생명'이라는 낱말 하나를 따라간다.</p>
+<h2>1. 영생은 앎이다 — 정보가 아니라 관계</h2>
+<p>요 17:3이 영생을 '아는 것'으로 정의할 때, 그 앎은 지식 습득이 아니다. 권성수는 「영광」에서 이 앎의 깊이를 부부 관계에 견준다.</p>
+<blockquote>
+<p>"머리와 가슴, 생활로 아는 것이다. 부부가 사는 것 이상으로 아는 것이다. 삶전체로 아는 것이다. 안다는 말속에 믿는것, 경배가 포함된다."</p>
+</blockquote>
+<p>결론은 이렇다 — "하나님의 생명과 연결되는 것이 영생이다." 같은 장의 「계시」 설교가 덧붙이듯, 이 앎은 사람의 탐구가 아니라 계시로 열린다.</p>
+<p><a class="wl" href="../../b/%EC%9E%8A%ED%98%80%EC%A7%84%EC%A0%9C%EC%9E%90%EB%8F%84_%EB%8B%AC%EB%9D%BC%EC%8A%A4%EC%9C%8C%EB%9D%BC%EB%93%9C/">달라스 윌라드</a>는 같은 본문을 제자도의 언어로 옮긴다. 그에게 영생은 "성령께서 거하시는 환경 속에서 하나님과 그 특별한 아들 예수와 더불어 누리는 상호 작용의 관계다." 권성수의 '삶 전체로 아는 것'과 같은 자리다.</p>
+<p>이 정의는 영생을 '무엇을 해서 얻는 것'으로 묻는 질문과 부딪친다. 문대원은 율법교사의 질문(눅 10:25)에 대해 "영생은 무언가를 해야 하는 것이 아니다"라고 잘라 말하고, 부자 청년의 질문(마 19:16)에 대해서는 예수께서 '선한 일'의 물음을 '선하신 분'으로 돌려세우셨다고 읽는다 — "영생은 선한 일이 아니라 하나님을 가장 사랑해야 한다고 말씀하신 것이다." 그리고 한 문장으로 정리한다. "종교적 행동이 아니라 올바른 관계로 얻는 것이다." 영생의 정의가 관계라면, 그것을 얻는 길도 관계일 수밖에 없다.</p>
+<h2>2. 이미 옮겨졌다 — 맛봄과 만끽</h2>
+<p>영생은 언제 시작되는가. 문대원은 「I AM 5 — 죽음 앞에 무력한 세상을 향해」에서 나사로의 무덤 앞 대화(요 11:21-27)의 시제를 짚는다. 마르다는 마지막 날의 부활을 안다고 답했다 — 다니엘 12:2에 근거한, 틀리지 않은 구약적 이해다. 그러나 예수는 미래의 사건을 약속하지 않고 자신을 선포하신다.</p>
+<blockquote>
+<p>"부활을 줄 것이다가 아니다. 내 자신이 곧 부활과 생명이라고 말씀하신다. 현재형으로 말씀하신다."</p>
+</blockquote>
+<p>이어서 그는 <span class="wl-dead" title="위키 내부 링크">요 5:24</span>의 "영생을 얻었고 … 사망에서 생명으로 옮겼느니라"를 붙들고 문법을 짚는다 — "완료형으로 되어 있다. 옮겨졌다. 부활해야 생명을 얻는 것이 아니다." 다만 영원히 죽지 않는다는 말이 "육체의 죽음이 없을 것이라는 것은 아니다."</p>
+<p>권성수는 같은 긴장을 두 동사로 압축한다. 「영광」에서 "지금은 영생을 맛보고 죽고나면 영생을 만끽하는 것이다"라고 했고, 요한일서 강해 「신자의 확신」에서도 같은 짝을 되풀이한다 — "영생을 맛보고 있고, 죽으면 만끽하게 된다." 그 사이의 삶을 그는 "병동과 왕궁사이에서 사는 것"이라 부른다.</p>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>지금(이미)</th>
+<th>그때(아직)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>권성수 「영광」(요 17)</td>
+<td>영생을 맛봄 · 교회는 영생 받은 이들의 공동체</td>
+<td>죽은 뒤 만끽 · 창세 전 영광의 회복</td>
+</tr>
+<tr>
+<td>권성수 「신자의 확신」(요일 5)</td>
+<td>확신과 기도의 응답 — "영생의 일부"</td>
+<td>죽을 때 영혼은 천국으로</td>
+</tr>
+<tr>
+<td>권성수 「영생의 선물」(요 4)</td>
+<td>속에서 솟아나는 샘물(현재분사)</td>
+<td>영원히 목마르지 않음</td>
+</tr>
+<tr>
+<td>문대원 「I AM 5」(요 11)</td>
+<td>완료형 — 이미 옮겨짐</td>
+<td>마지막 날의 부활, 얼굴과 얼굴을 대함</td>
+</tr>
+</tbody>
+</table>
+<p>이 이중 시제는 <a class="wl" href="../../t/%EB%B6%80%ED%99%9C/">부활</a>의 '살아서 부활/죽어서 부활', <a class="wl" href="../../t/%EA%B5%AC%EC%9B%90/">구원</a>의 세 시제와 같은 구조다. 영생 본문이 더하는 것은, 두 시제가 두 개의 생명이 아니라 <strong>한 생명의 두 국면</strong>으로 서술된다는 점이다. 맛보는 것과 만끽하는 것은 같은 음식이다.</p>
+<h2>3. 선물이지 성취가 아니다 — 솟아나는 샘물과 생명의 떡</h2>
+<p>권성수의 「영생의 선물」은 사마리아 여인의 우물가에서 시작한다. 야곱의 우물은 다시 목마르지만 예수께서 주시는 물은 "그 속에서 영생하도록 솟아나는 샘물"(요 4:14)이 된다. 그는 영생을 붙잡으려는 두 길 — 시신을 영하 196도에 냉동 보존하는 과학과, 고승조차 임종에 "나는 죄를 처리 못했다. 지옥간다"고 고백한 수행 — 을 세운 뒤 결론을 짧게 맺는다. "영생은 하나님의 선물이다."</p>
+<p>요한복음 6장은 같은 진리를 떡의 언어로 말한다. 권성수는 오병이어 표적을 '빵을 주시는 분'에서 '빵이 되시는 분'으로 시선을 끌어올리는 사건으로 읽고, 문대원은 「I AM 1」에서 광야의 만나와 생명의 떡을 표로 대조한다.</p>
+<table>
+<thead>
+<tr>
+<th>광야의 만나</th>
+<th>생명의 떡 예수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>일시적인 육신의 필요를 채움</td>
+<td>영원한 영적인 필요를 채움</td>
+</tr>
+<tr>
+<td>육신의 생명을 유지함</td>
+<td>영원한 생명을 줌</td>
+</tr>
+<tr>
+<td>이스라엘 한 나라만을 위해서</td>
+<td>모든 세상을 위해서</td>
+</tr>
+<tr>
+<td>40년 광야 생활 동안</td>
+<td>세상 끝날까지</td>
+</tr>
+</tbody>
+</table>
+<p>문대원은 같은 본문을 다시 설교하며 <span class="wl-dead" title="위키 내부 링크">C.S. 루이스</span>를 인용한다 — "이 세상의 어느 것으로도 만족할 수 없는 갈망을 가진 자신을 발견했다면 가장 가능성 있는 설명은 우리가 이 세상이 아닌 다른 세상을 위해 만들어졌다는 것이다."</p>
+<p>선물에는 유일성이 따라온다. 권성수는 「예수님은 생명의 길」에서 요 14:6의 유일성을 편협이 아니라 정답의 문제로 변증하고, 「참참참」에서는 더 단호하다 — "참된 하나님의 아들 예수 그리스도, 그분이 참 하나님이요 영생이다. 그분외에는 영생의 길이 없다." 요한에게 영생은 그리스도가 나누어 주시는 물건이 아니라 그리스도 자신이며(요일 5:20), 그래서 아들이 있는 자에게 생명이 있다(요일 5:12).</p>
+<h2>4. 생명나무에서 생명나무로 — 단절과 회복의 이야기</h2>
+<p>성경 전체로 보면 영생은 잃어버렸다가 되찾는 생명이다. 권성수의 「생명의 나무」는 <span class="wl-dead" title="위키 내부 링크">창 2:9</span>에서 계 22:2까지를 한 모티프로 꿴다. 동산 중앙에 생명나무와 선악과를 두신 것은 억압이 아니라 기억의 장치였다 — "너의 창조자 하나님이 계시다는 것을 기억하고 마음대로 하라 하신 것이다."</p>
+<p>날카로운 대목은 창 3:22의 추방이다. 하나님은 타락한 사람이 "생명 나무 열매도 따먹고 영생할까" 하여 동산에서 내보내셨다. 권성수는 이것을 형벌이자 자비로 읽는다 — 죄 가운데 고착된 끝없는 존속은 영생이 아니라 "지옥생활"이며, "그렇게 살지 못하도록 쫓아 내신 것이다." 하나님과 단절된 끝없는 시간은 생명이 아니다. 영생의 반대말은 짧은 생이 아니라 단절된 생이다.</p>
+<table>
+<thead>
+<tr>
+<th>장면</th>
+<th>본문</th>
+<th>생명의 상태</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>동산 중앙의 두 나무</td>
+<td>창 2:9</td>
+<td>창조주를 기억하는 자리의 생명</td>
+</tr>
+<tr>
+<td>추방</td>
+<td>창 3:22</td>
+<td>타락한 채 영속하는 것을 막으심</td>
+</tr>
+<tr>
+<td>두 갈래의 깨어남</td>
+<td>단 12:2</td>
+<td>영생을 받는 자 / 영원히 부끄러움을 당할 자</td>
+</tr>
+<tr>
+<td>강 좌우의 생명나무</td>
+<td>계 22:2</td>
+<td>만국을 치료하는 회복된 생명</td>
+</tr>
+</tbody>
+</table>
+<p>두 갈래 끝(단 12:2)의 심판론은 <a class="wl" href="../../t/%EC%8B%AC%ED%8C%90/">심판</a>이, 새 창조와 복낙원의 전체 지형은 <a class="wl" href="../../t/%EC%A2%85%EB%A7%90%EB%A1%A0/">종말론</a>의 6절이 맡는다.</p>
+<p>이야기의 이음매에는 창조가 있다. 문대원은 「I AM 5」의 결론에서 "부활과 영생을 믿는다. 왜냐하면 창조를 믿기 때문이다"라고 말하고, 「창조의 말씀, 부활의 말씀」에서는 전 3:11의 '영원을 사모하는 마음'을 사람이 영원을 위해 지음 받았다는 증거로 읽는다. 영생은 창조의 목적이 이루어지는 것이다. 신자가 그 생명에 들어오는 문은 <a class="wl" href="../../t/%EC%A4%91%EC%83%9D/">중생</a>이다 — 「참참참」의 표현대로 "신자는 두번 태어나고 한번만 죽는다."</p>
+<h2>5. 영생을 받은 사람은 어떻게 사는가</h2>
+<p>지금 시작된 생명은 오늘의 삶에 네 가지 모양을 남긴다.</p>
+<p>첫째는 <strong>거룩</strong>이다. 권성수는 요 17:16-19를 강해하며 영생과 거룩을 한 줄로 잇는다 — "영생을 받은 사람은 거룩이 특징이다." 거룩은 세상과의 단절이 아니라 말씀으로 구별되어 세상 속으로 보내지는 것이다(<a class="wl" href="../../t/%EA%B1%B0%EB%A3%A9/">거룩</a>).</p>
+<p>둘째는 <strong>무엇이 남는가를 묻는 셈법</strong>이다. 문대원의 「베푼 것만 남는다」는 요 12:25("자기의 생명을 미워하는 자는 영생하도록 보전하리라")를 사즉생의 처세로 읽지 않는다. 그 말씀은 용기 있게 죽으라는 요구가 아니라 "무엇을 영원히 가질 수 있고, 없는지 생각해 보라는 것"이다. "하나님과 이웃을 위해서 나누고 베푼 것만 영원히 남는다." 오병이어 설교의 결론(요 6:27, 썩을 양식이 아니라 영생의 양식)도 같은 셈법이다.</p>
+<p>셋째는 <strong>추수</strong>다. 권성수의 생명사역 연속 설교 「영생의 추수」는 요 4:35-38을 본문으로 "안믿는 사람을 믿게 하는 것을 영생추수라고 한다"고 정의한다. 느긋함을 깨우는 근거는 영생의 실재다 — "예수님은 지옥을 아신다. 천국도 아신다." 이 축이 교회의 사역 철학이 된 모습은 <a class="wl" href="../../t/%EC%83%9D%EB%AA%85%EC%82%AC%EC%97%AD/">생명사역</a>이 다룬다.</p>
+<p>넷째는 <strong>확신과 공동체</strong>다. 요한일서는 "너희로 하여금 영생이 있음을 알게 하려" 쓰였다(요일 5:13). 확신은 감정이 아니라 앎이며, 그 생명을 나누는 자리가 교회다 — "영생을 받은 사람들의 공동체가 교회이다."</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>영생(ζωὴ αἰώνιος)은 시간의 연장이 아니라 하나님 생명에 참여하는 관계다. 요 17:3의 '아는 것'은 삶 전체로 아는 관계적 앎이다.</li>
+<li>영생은 이미 시작되었다 — 요 5:24의 완료형("옮겼느니라")과 요 11:25의 현재형("나는 부활이요 생명이니"). 지금 맛보고 죽은 뒤 만끽하는 것은 두 생명이 아니라 한 생명의 두 국면이다.</li>
+<li>영생은 선물이며 그리스도 자신이다 — 생명의 떡은 떡을 주시는 분이 아니라 떡이 되시는 분이다.</li>
+<li>영생의 반대는 짧은 생이 아니라 단절된 생이다. 창 3:22의 추방은 죄 가운데 영속하는 '지옥생활'을 막으신 자비였고, 생명나무는 계 22장에서 되돌아온다.</li>
+<li>영생은 오늘의 삶에 모양을 남긴다 — 거룩, 베푼 것만 남는다는 셈법, 영생의 추수, 확신 위에 선 공동체.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>요 12:25의 "영생하도록 보전하리라"와 마 19장의 '하늘의 보화'는 내세의 보상인가, 현재의 생명의 질인가. 베풂이 '영원히 남는다'는 명제는 행위 공로와 어떻게 구별되는가.</li>
+<li>요 4:14의 '솟아나는 샘물'과 요 7:38-39에서 성령으로 풀이된 '생수의 강'은 어떤 관계인가 — 영생과 성령의 내주는 같은 실재의 두 이름인가.</li>
+<li>영생의 확신(요일 5:13)과 최후 심판대에서의 확인을 어떻게 함께 붙드는가. 「신자의 확신」은 확신을 최후 심판까지 유보하는 가르침을 위험하다고 보지만, 그 입장을 가장 강한 형태로 다룬 자료는 아직 없다.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%A2%85%EB%A7%90%EB%A1%A0/">종말론</a> — <a class="wl" href="../../t/%EC%9E%AC%EB%A6%BC/">재림</a>·심판·새 창조의 지형. 영생의 '그때'.</li>
+<li><a class="wl" href="../../t/%EB%B6%80%ED%99%9C/">부활</a> — 부활체와 '살아서/죽어서 부활'.</li>
+<li><a class="wl" href="../../t/%EA%B5%AC%EC%9B%90/">구원</a> — 구원의 세 시제와 범위 논쟁.</li>
+<li><a class="wl" href="../../t/%ED%95%98%EB%82%98%EB%8B%98%EB%82%98%EB%9D%BC/">하나님나라</a> — 이미-아직의 통치.</li>
+<li><a class="wl" href="../../t/%EC%83%9D%EB%AA%85%EC%82%AC%EC%97%AD/">생명사역</a> — 영생의 추수가 교회의 사역 철학이 된 자리.</li>
+<li><a class="wl" href="../../t/%EA%B1%B0%EB%A3%A9/">거룩</a> · <a class="wl" href="../../t/%EC%A4%91%EC%83%9D/">중생</a> · <a class="wl" href="../../t/%EC%8B%AC%ED%8C%90/">심판</a> — 영생 받은 자의 특징, 그 생명에 들어가는 문, 두 갈래 끝의 심판론.</li>
+<li><span class="wl-dead" title="위키 내부 링크">요17</span> · <span class="wl-dead" title="위키 내부 링크">요5</span> · <span class="wl-dead" title="위키 내부 링크">요11</span> · <span class="wl-dead" title="위키 내부 링크">요4</span> · <span class="wl-dead" title="위키 내부 링크">요6</span> · <span class="wl-dead" title="위키 내부 링크">요일5</span> · <span class="wl-dead" title="위키 내부 링크">창2</span> — 정의·시제·선물·확신·생명나무의 본문.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2016_영광</span> · <span class="wl-dead" title="위키 내부 링크">2016_계시</span> · <span class="wl-dead" title="위키 내부 링크">2016_거룩</span></td>
+<td>설교(권성수, 요 17)</td>
+<td>관계적 앎, "맛보고 만끽", 영생 받은 이들의 공동체, 거룩이 특징</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2016_영생의선물</span> · <span class="wl-dead" title="위키 내부 링크">2015_예수님은생명의길</span> · <span class="wl-dead" title="위키 내부 링크">2019_하나님의이처럼사랑</span></td>
+<td>설교(권성수, 요 4 · 14 · 3)</td>
+<td>솟아나는 샘물, 선물로서의 영생, 유일한 생명의 길</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">교제_11_세상을이기는믿음</span> · <span class="wl-dead" title="위키 내부 링크">교제_12_신자의확신</span> · <span class="wl-dead" title="위키 내부 링크">교제_13_참참참</span></td>
+<td>설교(권성수, 요일 5)</td>
+<td>병동과 왕궁 사이, 확신, 그리스도 외에 영생의 길 없음</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2017_생명의나무</span></td>
+<td>설교(권성수, 창 2:9)</td>
+<td>기억의 표지, 추방의 자비와 "지옥생활"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2018_제4표적오병이어</span> · <span class="wl-dead" title="위키 내부 링크">생명사역_09_영생의추수</span> · <span class="wl-dead" title="위키 내부 링크">2019_영광스러운부활체로변화</span></td>
+<td>설교(권성수)</td>
+<td>떡이 되시는 분, 영생 추수, 부활과 영생의 직결</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2022_IAM5_죽음앞에무력한세상을향해</span> · <span class="wl-dead" title="위키 내부 링크">2022_IAM1_생명을모르는세상을향해서</span> · <span class="wl-dead" title="위키 내부 링크">2026_기적과사랑에빠지다</span> · <span class="wl-dead" title="위키 내부 링크">2026_창조의말씀부활의말씀</span></td>
+<td>설교(문대원, 요 11 · 6)</td>
+<td>현재형·완료형의 영생, 만나와 생명의 떡, 갈망 논증, 창조와 부활</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2023_쓸데없는질문쓸데있는질문</span> · <span class="wl-dead" title="위키 내부 링크">2026-05-18_AI시대멘토링</span> · <span class="wl-dead" title="위키 내부 링크">2021_베푼것만남는다</span></td>
+<td>설교(문대원)</td>
+<td>행위가 아니라 관계, 베푼 것만 남는다</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%9E%8A%ED%98%80%EC%A7%84%EC%A0%9C%EC%9E%90%EB%8F%84_%EB%8B%AC%EB%9D%BC%EC%8A%A4%EC%9C%8C%EB%9D%BC%EB%93%9C/">잊혀진제자도_달라스윌라드</a></td>
+<td>책(윌라드)</td>
+<td>영생 = 성령 안에서 하나님과 누리는 상호 작용의 관계</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/요한신학</span><span>#topic/영생</span><span>#topic/이미와아직</span><span>#topic/구원</span><span>#topic/생명나무</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

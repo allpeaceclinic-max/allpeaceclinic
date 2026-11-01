@@ -1,0 +1,289 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>역기능가정 — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-t">상담·가정</span><span class="date">2026-11-01</span></div>
+  <h1 class="note-title">역기능가정</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>역기능 가정은 가정이 본래 해야 할 일 — 자녀에게 하나님과 이웃과의 관계를 보여 주는 통로, 사랑이 흘러가는 통로 — 을 하지 못하고, 그 대신 편애·방임·폭력·외도·회피 같은 왜곡된 패턴이 자리 잡아 다음 세대로 넘어가는 상태를 말한다. 윤명숙 전도사님은 2016~2018년 부모교육과 가정 설교에서 이 주제를 반복해서 다뤘는데, 그 출발점은 놀랍게도 성경의 가장 존경받는 가정이다. 아브라함의 가정을 두고 그는 이렇게 말한다. "그러나 자세히 그려보면, 이보다 역기능 가정도 없다."</p>
+<p>이 글은 상담학의 개념 체계를 재구성하지 않고, 설교가 말하는 범위 안에서 역기능의 보편성·형성·전수·인식·단절·상처의 자리를 따라간다. 역기능 가정에서 자란 사람이 어른이 되어 보이는 모습은 <a class="wl" href="../../t/%EC%84%B1%EC%9D%B8%EC%95%84%EC%9D%B4/">성인아이</a>가, 양육 태도의 유형과 내면의 회복은 <a class="wl" href="../../t/%EB%82%B4%EB%A9%B4%EC%B9%98%EC%9C%A0/">내면치유</a>가, 양육의 실제는 <a class="wl" href="../../t/%EC%9E%90%EB%85%80%EC%96%91%EC%9C%A1/">자녀양육</a>과 <a class="wl" href="../../t/%EB%B6%80%EB%AA%A8%EA%B5%90%EC%9C%A1/">부모교육</a>이 맡는다.</p>
+<h2>1. 믿음의 조상의 가정조차 — 역기능은 보편적이다</h2>
+<p>역기능 가정을 이야기할 때 가장 먼저 무너뜨려야 할 착각은, 신앙이 좋은 집은 순기능적일 것이라는 생각이다. 「역기능을 알자!」는 <span class="wl-dead" title="위키 내부 링크">창세기 21장</span>의 하갈과 이스마엘 이야기에서 시작한다. 믿음의 조상 <span class="wl-dead" title="위키 내부 링크">아브라함</span>은 첩을 들여 갈등을 초래했고, 이스마엘은 큰어머니의 불편함 때문에 집을 나가야 했다. 그 패턴은 내려간다. 이삭의 쌍둥이 중 한 아들이 집을 떠나고, 야곱의 열두 아들 중 가장 사랑받던 요셉이 집을 떠난다. 윤 전도사님은 이것을 '3~4대로 내려오는 죄'라 부른다. 「패러다임 시프트」는 같은 계보를 더 촘촘하게 정리한다.</p>
+<table>
+<thead>
+<tr>
+<th>세대</th>
+<th>집을 떠난 아들</th>
+<th>반복된 거짓말</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>아브라함</td>
+<td>이스마엘</td>
+<td>사라를 누이라 함</td>
+</tr>
+<tr>
+<td>이삭</td>
+<td>야곱</td>
+<td>리브가를 두고 한 거짓말</td>
+</tr>
+<tr>
+<td>야곱</td>
+<td>요셉</td>
+<td>시므온과 레위의 거짓말</td>
+</tr>
+</tbody>
+</table>
+<p>뿌리는 더 깊다. 「역기능을 끊는 결단」은 역기능을 인류의 첫 가정에서 찾는다. "역기능은 아담과 하와 가정부터 시작했다. 인간의 죄성으로 인해 우리의 모든 가정에 역기능이 존재한다." 가인이 동생의 예배를 질투해 아벨을 죽인 <span class="wl-dead" title="위키 내부 링크">창세기 4장</span>은 「역기능을 체크하라」의 본문이기도 하다. 하나님이 만드신 최초의 가정에서 최초의 살인이 일어났다. 성경이 이것을 남긴 까닭은 분명하다. "역기능 가정에 대해 적나라 하게 기술 하신 이유는 본받지 말라는 것이다." 역기능은 예외적인 가정의 불운이 아니라 죄성을 가진 모든 가정의 기본값이며, 그래서 그는 이렇게 덧붙인다. "우리는 100% 순기능으로 자랄 수 없다. 부모도 우리도 연약하다." 나만 이상한 집에서 자란 것이 아니며, 누구도 손을 놓고 있을 수 없다.</p>
+<h2>2. 어떻게 만들어지는가 — 잘못된 확신, 기울어진 애정, 정리되지 않은 미련함</h2>
+<p>역기능은 대개 악의가 아니라 부모의 잘못된 인식에서 만들어진다. 「잘못된 인식의 결과」는 <span class="wl-dead" title="위키 내부 링크">창세기 25장</span>의 리브가를 사례로 든다. 태 속의 싸움을 두고 하나님께 물어 응답을 받은 것까지는 잘한 일이었지만, 리브가는 그 응답을 하나님 앞에 두지 않고 자기 확신으로 삼았다. "리브가가 자기가 잘못된 인식을 가졌다는 인식이 절대 없다." 하나님이 주신 것이라는 확신이 오히려 성찰을 막았고, 그녀는 야곱을 편애하기 시작해 장자권을 사고 축복을 가로채는 데까지 함께 간다. 형제 사이도 부부 사이도 깨진다. 그는 이 가정의 핵심 왜곡을 이렇게 요약한다. "부부간에 진정으로 쏟아야 될 애정이 자녀에게 간다."</p>
+<p>반대 방향의 실패도 있다. 「부모의 유한 책임」은 <span class="wl-dead" title="위키 내부 링크">열왕기상 1장</span>의 아도니야를 다룬다. 성경은 그의 아버지 다윗이 '네가 어찌하여 그리하였느냐'는 말로 한 번도 그를 섭섭하게 한 일이 없었다고 적는다. 좋은 아버지처럼 보이지만 아도니야는 스스로 왕이 되려다 패륜아가 된다. "미련한 것을 부모가 한번도 정리해 주지 않았기 때문에 그렇게 되었다." 「역기능을 체크하라」는 같은 다윗의 집에서 더 끔찍한 장면을 짚는다. 아들이 딸을 범했는데 다윗은 이를 처리하지 못했다. 밧세바 일로 우리아를 죽인 자신의 죄 때문이었을 것이다. "한가지를 해결하지 않고 넘어가면 계속해서 다른 문제들이 이어진다. 징계할줄 모르는 아버지였다." 그가 처방하는 것은 분명한 징계와 사랑, 그리고 말씀의 기준이다. "분명하지 않는 기준, 그 틈을 아이들이 들어온다." 훈육의 실제는 <a class="wl" href="../../t/%ED%9B%88%EC%9C%A1/">훈육</a>으로 넘긴다.</p>
+<p><span class="wl-dead" title="위키 내부 링크">사무엘하 11장</span> 설교는 하나를 더한다. 일부다처는 당시 권력의 상징이었지만 다윗의 가정에서 역기능이 시작된 자리였다. 역기능은 시대가 당연하게 여긴 관행에서도 만들어진다.</p>
+<h2>3. 어떻게 전수되는가 — 유전이 아니라 학습</h2>
+<p>역기능이 대를 잇는 경로를 윤 전도사님은 한 문장으로 정리한다. "가르쳐 주지 않아도 보고 배운다. 학습이다. 유전이 아니다." 「역기능 가정의 유산」은 이를 더 구체적으로 말한다. "어린아이에게 부모의 모든 행위는 교과서이다." 아버지의 폭력을 보고 자란 사람은 손이 아니라도 말과 행동으로 폭력을 행하고, 갈등 상황에서 주먹이 쉽게 나간다. 「창 46장」 설교도 같은 관찰을 한다. "부부 폭력의 문제를 다룰때 거의다 부모의 폭력을 보고 배운것이다." 그래서 그는 경고한다. "아이들이 우리를 카피하고 있다는 것을 기억해야 한다."</p>
+<p>학습되는 것은 행동만이 아니다. 「자녀 마음의 돌」은 <span class="wl-dead" title="위키 내부 링크">고후 5:16</span>을 본문으로 더 깊은 층을 다룬다. 뿌리가 내릴 자리에 돌이 있으면 뿌리는 그 돌을 느끼지 못한 채 피해서 자란다.</p>
+<blockquote>
+<p>돌은 부모의 양육태도이다. 부모의 기대에 부응하지 못한 경우 자신을 깎아 내리게 된다. — 윤명숙, 「자녀 마음의 돌」</p>
+</blockquote>
+<p>사랑이 공급되지 않은 채 공부를 시키면 강압만 전달되는데, 부모는 사랑하지 않은 적이 없다고 억울해한다. "끊임없이 부모들은 패턴을 반복한다." 이 돌은 하나님 이미지에까지 닿는다. 「하나님의 대리자」에서 그는 "자녀에게는 부모가 절대자 처럼 보인다"고 말하고, 작은 요청을 들어주지 않는 부모 밑에서 자란 사람은 하나님도 그렇게 생각하게 된다고 진단한다. "끊임없이 의심이 날때 하나님의 문제가 아니라 나의 문제이다. 내가 부모에게 그렇게 배운 것 때문이다." 부모가 하나님의 대리자로서 이 이미지를 훼손하지 말아야 하는 이유가 여기 있다.</p>
+<p>전수되는 마지막 층은 사랑의 통로 자체다. 「역기능을 끊는 결단」의 진단으로, 아내에게는 사랑인 음식 단속이 남편에게는 간섭이 된다. "역기능이 있을 때 사랑을 전달해도 반대로 해석한다." 그래서 그의 결론은 냉정하다. "우리의 통로는 오염되어 있다."</p>
+<h2>4. 알지 못한다는 것이 문제다 — 역기능의 자기인식</h2>
+<p>역기능 가정의 가장 큰 어려움은 그 안에 사는 사람이 그것을 모른다는 데 있다. 「역기능을 체크하라」의 진단이다. "지금 내가 역기능 가정에서 살고 있지만, 역기능인지를 알지 못한다는 것이 문제이다." 스스로 눈치채기까지는 오래 걸리고 너무 빨리 알려 주면 원수가 되기에, 하나님은 사건과 설교와 소그룹으로 알려 주신다. 그런데 알려 주어도 고치지 않는 사람이 있다. 죄가 문에 엎드려 있으니 다스리라는 말을 듣고도 동생을 죽인 가인이 그 모델이다. "알려 주는 부분을 알면서도 고치지 않는 사람이 가인이다."</p>
+<p>모르는 대가는 가장 가까운 사람이 치른다. 「역기능을 알자!」의 경고가 그렇다. "나의 역기능적 요소를 알지 못하면 상대방은 깊은 시름의 시간을 보낼 것이다." 폭력의 가정에서 자란 사람이 주먹 대신 게임이나 술로 회피하면, 어머니가 겪은 어려움을 이제 아내가 겪는다. 회피도 답이 아니다. 「잘못된 인식의 결과」는 이렇게 말한다. "회피 하면 자기 안의 문제가 없어지는 것이 아니다." 내면이 어떻게 돌아가는지 보려면 가정 안의 이야기를 끌어내어 놓아야 한다.</p>
+<p>동시에 그는 본인이 자초한 역기능과 부모의 부재·사망·이혼처럼 어쩔 수 없는 상황을 구분한다. 후자에 책임을 묻는 것이 아니라 그 영향이 지금 어떻게 작동하는지 보게 하려는 것이며, 안 보면 된다는 생각은 통하지 않는다. "괜찮다 우리둘이 잘 살면 된다고 하면 안된다." 역기능을 보는 이 눈은 자기인식의 한 갈래이며, 그 일반론은 같은 묶음의 자기인식 페이지가 다룬다.</p>
+<h2>5. 끊는 결단 — 내 대에서 새 전통을</h2>
+<p>역기능이 학습이라면 끊을 수도 있다. 윤 전도사님이 가장 자주 드는 증거는 같은 집에서 자랐지만 다르게 사는 사람이다. 폭력적인 아버지 밑에서 자랐는데 폭력을 쓰지 않는 사람이 있다. 아버지보다 어머니를 더 닮아서가 아니라, 「역기능 가정의 유산」의 표현으로 피나는 노력을 하고 있기 때문이며, 「역기능을 알자!」의 표현으로는 하나님 안에서 눈물겨운 수정을 거쳤기 때문이다.</p>
+<p>성경의 모델은 <span class="wl-dead" title="위키 내부 링크">창세기 48장</span>이다. 형의 축복을 빼앗아 평생 고달프게 살았던 야곱이, 손자 에브라임과 므낫세를 축복할 때는 손을 엇갈려 얹으면서도 두 형제를 함께 축복한다. 윤 전도사님은 이 장면이 "아버지가 행했던 일 때문에 그렇게 꼭 해야 하는 것은 아니라는 것을 알려준다"고 읽는다. 그 두 형제는 이후 형제 우애의 모델이 된다. 그리고 그 뒤에는 형들의 배신을 하나님 앞에서 정리한 <span class="wl-dead" title="위키 내부 링크">요셉</span>이 있다.</p>
+<p>끊는 일은 구체적인 과목으로 이루어진다. 아내를 사랑하는 과목을 아버지에게서 배우지 못했다면 지금 배워야 한다. "다정하게 대하는 과목, 공손하게 대답하는 과목을 우리는 이수해야 한다." 손잡고 걷기, 현관 앞에서 웃고 들어가기 같은 일이 좋은 유산의 지름길이다.</p>
+<blockquote>
+<p>내 대에서 계발해서 새로운 전통으로 만들어 가야 한다. — 윤명숙, 「역기능 가정의 유산」</p>
+</blockquote>
+<p>이 결단에는 비용이 든다. "역기능을 순기능으로 바꾸는 세대는 힘들다. 그러나 순기능으로 바꿔놓지 않으면 계속 반복된다." 여기서 하나의 긴장이 생긴다. 인간의 노력은 소용없고 은혜만이 답이라는 입장과, 노력해야 끊어진다는 입장이다. 윤 전도사님은 「역기능을 끊는 결단」에서 이 긴장을 직접 언급한다. 그가 읽은 한 책은 인간의 노력이 소용없다고 말했지만, 그는 균형을 택한다. "죄와 피나는 몸부림을 쳐야 한다." 동시에 그 몸부림은 혼자 하는 것이 아니다. 아이들이 우리를 카피하고 있다는 경고 뒤에 그는 곧바로 덧붙인다. 성령님이 계시기 때문에 가능하다. 「역기능을 체크하라」도 역기능을 알려 주시는 하나님이 그것을 감당할 은혜도 함께 주신다는 말로 끝난다. 은혜를 강조하는 쪽은 노력이 또 하나의 율법이 될 위험을, 노력을 강조하는 쪽은 은혜가 핑계가 될 위험을 각각 정확히 본다 — 이 설교들은 둘 중 하나를 버리지 않는다.</p>
+<p>부모에게도 한계가 있다. 「부모의 유한 책임」은 자녀에게 모든 것을 걸었다가 무너진 사례를 들며 말한다. "그러나 부모는 무한 책임이 아니다." 사람은 한 영혼을 책임질 수 없으므로 "할 수 있는 것은 하고 나머지는 하나님과 연결해야 한다." 「하나님의 대리자」의 표현으로 부모는 "하나님의 대리자이지 주권자가 아니다." 완벽한 부모가 되려는 강박도 또 하나의 역기능이다.</p>
+<h2>6. 상처 입은 자녀의 자리 — 하나님께 올려 드리는 기도</h2>
+<p>마지막으로, 이미 역기능 가정에서 상처를 받고 자란 사람은 어디에 서야 하는가. 윤 전도사님은 해마다 5월이 없었으면 좋겠다는 사람들, 곧 부모에게서 받은 상처로 한이 맺혀 효도 설교가 무거운 사람들을 떠올린다.</p>
+<p>그가 제시하는 모델은 <span class="wl-dead" title="위키 내부 링크">창세기 46장</span>의 요셉이다. 형들에게 팔려 종살이와 옥살이를 한 요셉은, 총리가 된 뒤 7년 동안 원수를 갚거나 아버지를 찾아갈 기회가 있었지만 하지 않았다. 애굽이 좋아서 단절하고 산 것이 아니라 하나님의 때를 기다린 것이다. 그 기다림의 내용을 그는 기도로 본다.</p>
+<blockquote>
+<p>요셉이 형들을 용서했다고 쉽게 생각하면 안된다. 하나님께 올려 드리는 기도가 있었기 때문에 가능한 것이다. — 윤명숙, 「하나님께 올려 드리는 기도」</p>
+</blockquote>
+<p>상처를 끌어안지도 덮지도 말고 "하나님의 손에 양도, 넘기는 기도를 분명히 해야 한다." 배우자의 외도로 오래 고통받은 사례에서도 출발점은 같다. 내 안에 사랑할 마음이 없다는 진실을 인정하고 주님의 사랑을 구하는 데서 용서가 시작되며, 그 과정을 지켜본 자녀에게 그것이 유산이 된다. 용서와 화해의 신학 일반은 <a class="wl" href="../../t/%EC%9A%A9%EC%84%9C/">용서</a>로 넘긴다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>역기능은 예외가 아니라 기본값이다 — 아담과 하와, 아브라함·이삭·야곱의 가정이 모두 역기능적이었고, 성경은 본받지 말라고 그것을 적나라하게 기록했다.</li>
+<li>역기능은 악의보다 잘못된 확신(리브가), 정리되지 않은 미련함(아도니야), 처리되지 않은 죄(다윗)에서 만들어진다.</li>
+<li>전수의 경로는 유전이 아니라 학습이다. 행동만이 아니라 자기를 보는 눈, 하나님 이미지, 사랑의 통로까지 학습된다.</li>
+<li>가장 큰 문제는 역기능 안에 살면서 그것을 모른다는 것이며, 그 대가는 가장 가까운 사람이 치른다.</li>
+<li>끊는 길은 '내 대에서 새 전통'을 세우는 구체적 과목의 이수이며, 노력과 은혜는 둘 중 하나가 아니라 함께 간다. 상처받은 자녀의 자리는 상처를 하나님께 양도하는 기도다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>역기능이 학습이라면, 같은 집에서 자란 형제가 다르게 자라는 차이는 무엇이 만드는가. 설교는 '피나는 노력'이라 답하지만, 그 노력을 가능하게 하는 조건(만난 사람, 공동체, 회심의 시점)은 아직 다루지 못했다.</li>
+<li>「역기능을 끊는 결단」이 언급한 '노력은 소용없다'는 책의 입장과 '피나는 몸부림'의 입장을 각자의 가장 강한 형태로 나란히 놓으면 어디서 만나고 어디서 갈라지는가. 원 책의 논지는 여기서 확인하지 못했다.</li>
+<li>역기능을 알려 주는 일은 언제, 누가, 어떻게 해야 상처가 아니라 도움이 되는가. 설교는 빨리 알려 주면 원수가 된다고 경고하지만 그 대안의 방법론은 남겨 둔다.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%84%B1%EC%9D%B8%EC%95%84%EC%9D%B4/">성인아이</a> — 역기능 가정에서 자란 사람이 어른이 되어 보이는 표지와 그 성장의 길.</li>
+<li><a class="wl" href="../../t/%EB%82%B4%EB%A9%B4%EC%B9%98%EC%9C%A0/">내면치유</a> — 양육 태도의 유형과 '실패 시스템', 부모가 먼저 자기 가계의 역기능을 직면하는 회복의 축.</li>
+<li><a class="wl" href="../../t/%EC%84%B8%EB%8C%80%EC%A0%84%EC%88%98/">세대전수</a> — 신앙과 패턴이 세대를 건너가는 구조 일반.</li>
+<li><a class="wl" href="../../t/%EA%B0%80%EC%A0%95/">가정</a> · <a class="wl" href="../../t/%EA%B0%80%EC%A0%95%EC%82%AC%EC%97%AD/">가정사역</a> · <a class="wl" href="../../t/%EC%9E%90%EB%85%80%EC%96%91%EC%9C%A1/">자녀양육</a> · <a class="wl" href="../../t/%EB%B6%80%EB%AA%A8%EA%B5%90%EC%9C%A1/">부모교육</a> · <a class="wl" href="../../t/%ED%9B%88%EC%9C%A1/">훈육</a> — 집이 사람을 빚는 방식, 가정 회복 사역, 양육과 징계의 실제.</li>
+<li><a class="wl" href="../../t/%EC%A4%91%EB%8F%85/">중독</a> · <a class="wl" href="../../t/%EC%9A%A9%EC%84%9C/">용서</a> · <a class="wl" href="../../t/%EC%A3%84%EC%84%B1/">죄성</a> — 회피 습관이 이어지는 자리, 상처 입은 자녀의 용서, 모든 가정에 역기능이 있는 이유.</li>
+<li><a class="wl" href="../../t/%EC%9E%90%EA%B8%B0%EC%9D%B8%EC%8B%9D/">자기인식</a> · <a class="wl" href="../../t/%EC%9E%90%EA%B8%B0%EC%A4%91%EC%8B%AC%EC%84%B1/">자기중심성</a> — 역기능을 보는 눈, 그리고 그 안에서 작동하는 마음의 기본 방향.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2016_역기능을알자</span></td>
+<td>설교(2016)</td>
+<td>아브라함 가정, 3~4대의 죄, 모름의 대가</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2016_역기능가정의유산</span></td>
+<td>설교(2016)</td>
+<td>폭력의 유산, 에브라임·므낫세, 새 전통</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2016_잘못된인식의결과</span></td>
+<td>설교(2016)</td>
+<td>리브가의 확신과 편애, 애정의 전이</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2016_부모의유한책임</span></td>
+<td>설교(2016)</td>
+<td>아도니야와 정리되지 않은 미련함, 부모의 유한 책임</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2016_하나님의대리자</span></td>
+<td>설교(2016)</td>
+<td>부모는 대리자, 양육 태도가 만드는 하나님 이미지</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2016_사랑을체크해보라</span></td>
+<td>설교(2016)</td>
+<td>가정의 사랑에 든 계산의 점검(배경)</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2017_역기능을끊는결단</span></td>
+<td>설교(2017)</td>
+<td>아담부터의 역기능, 오염된 통로, 노력과 은혜</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2017_창46장26-34</span></td>
+<td>설교(2017)</td>
+<td>부부 폭력의 학습, 다정함이라는 과목, 요셉의 기다림</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2018_역기능을체크하라</span></td>
+<td>설교(2018)</td>
+<td>가인, 모름, 징계할 줄 모르는 아버지</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2018_자녀마음의돌</span></td>
+<td>설교(2018)</td>
+<td>양육 태도라는 돌, 반복되는 패턴</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2018_하나님께올려드리는기도</span></td>
+<td>설교(2018)</td>
+<td>요셉의 양도하는 기도, 상처받은 자녀</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2015_패러다임시프트</span></td>
+<td>설교(2015)</td>
+<td>3대에 걸친 가출과 거짓말, 학습이지 유전이 아니다</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">윤명숙_부모교육시리즈</span></td>
+<td>시리즈</td>
+<td>역기능 설교의 묶음</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/가정</span><span>#topic/역기능가정</span><span>#topic/세대전수</span><span>#topic/부모교육</span><span>#topic/가정사역</span><span>#topic/용서</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

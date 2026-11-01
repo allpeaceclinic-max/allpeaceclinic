@@ -1,0 +1,273 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>자기중심성 — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-t">상담·가정</span><span class="date">2026-11-01</span></div>
+  <h1 class="note-title">자기중심성</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>자기중심성은 세상의 중심에 자기를 두는 마음의 기본 방향이다. 내 필요가 먼저 보이고, 내 해석이 기준이 되며, 상대는 나를 채워 주거나 내 뜻대로 바뀌어야 할 대상이 된다. <span class="wl-dead" title="위키 내부 링크">문대원</span> 목사님은 「내 마음의 그늘 (1) 교만」에서 이것을 교만의 세 증상 가운데 하나로 세우며 <span class="wl-dead" title="위키 내부 링크">라이홀드니버</span>의 문장을 인용한다. "첫 인간이 저지를 범죄의 핵심이 교만이고, 그것의 본질은 자기중심성이다." 윤명숙 전도사님은 같은 것을 더 짧게 말한다. "자기 중심성, 죄의 속성이다."</p>
+<p>이 글은 자기중심성이 가장 가까운 관계, 특히 가정에서 어떻게 작동하는지 — 냉전이 된 주말, 사랑이라 불린 집착의 모양으로 — 따라간다. 교만이라는 큰 범주는 <a class="wl" href="../../t/%EA%B5%90%EB%A7%8C/">교만</a>이, 죄의 본성론은 <a class="wl" href="../../t/%EC%A3%84%EC%84%B1/">죄성</a>이, 그것을 보는 눈은 자기인식이, 내려놓는 길의 신학은 <a class="wl" href="../../t/%EC%9E%90%EA%B8%B0%EB%B6%80%EC%9D%B8/">자기부인</a>이 맡는다. 여기서는 '무엇이 보이는가'를 다룬다.</p>
+<h2>1. 뿌리 — 가르치지 않아도 하는 말, "싫어"</h2>
+<p>자기중심성이 교육의 결과가 아니라 본성이라는 증거로 두 설교자는 같은 장면을 든다. 아이다. 문 목사님은 두세 살에 자의식이 생기면 아이가 자동으로 하는 말이 '싫어'라고 지적한다. 단 한 번도 불순종을 가르친 적이 없는데 그렇게 한다. 그는 이것을 에덴의 유혹과 잇는다. 뱀의 말(<span class="wl-dead" title="위키 내부 링크">창 3:5</span>)의 핵심은 열매가 아니라 하나님처럼 높아지려는 욕망이며, 그 욕망이 세상의 중심을 자기에게로 옮긴다. "세상의 중심에 자기가 있다고 생각한다. 어디를 가든지 중심, 주목받기를 원한다."</p>
+<p>윤명숙 전도사님은 같은 관찰을 영아부 교실에서 가져온다. 「죄의 본성」에서 그는 맛있는 것을 주고 잘 놀라고 해도 결과는 항상 싸움으로 끝난다고 말하고, 다윗의 고백(시 51:5)을 이렇게 풀이한다. "어릴때 부터 자기 중심적으로 초점 잡혀 있다는 것을 알아야 한다." 그 초점은 자라면서 모양만 바뀌어, 어른은 돈과 상황으로 상대를 통제하고 다른 사람의 요구를 적당히 무시한다. 그는 이기심을 죄악으로 이끄는 '경사로'라 부른다.</p>
+<p>교만의 다른 증상과 겸손으로 가는 세 길은 <a class="wl" href="../../t/%EA%B5%90%EB%A7%8C/">교만</a>이 <span class="wl-dead" title="위키 내부 링크">벧전 5:5-7</span> 강해와 함께 다룬다.</p>
+<h2>2. 결혼이 드러내는 것 — 상대 중심이 자기 중심으로 돌아올 때</h2>
+<p>자기중심성이 가장 선명하게 드러나는 자리는 결혼이다. 윤 전도사님은 반복해서 말한다. "결혼해 보면 자기 중심성이 많이 들어난다." 연애할 때는 그렇지 않았던 것 같지만, 「남녀의 차이」의 진단으로는 그것도 잠시였다. "연애감정으로 인한 상대중심이 자기중심으로 돌아온다." 그래서 결혼은 자기중심성을 만들어 내는 것이 아니라 원래 있던 것을 드러내는 자리다. "배우자를 만나보면 내가 고상한 사람이 아니라는 것을 알게 된다."</p>
+<p>그 구체적인 모양은 기대다. 「스트레스 상황에서 대화」는 흔한 주말 하나를 해부한다. 회사 일에 지친 남편은 토요일에 축구 중계를 보며 쉬려 하고, 6주 동안 혼자 집과 아이를 돌본 아내는 남편이 주말에 도와줄 거라 생각한다. 축구 중계가 켜지는 순간 거친 말이 오가고 냉전이 3일 간다. 누가 잘못했는가를 따지기 전에 그는 이렇게 진단한다.</p>
+<blockquote>
+<p>왜 이런 일이 일어나나? 사람은 본성적으로 자기 중심성을 가지고 있다. 이것을 인정해야 한다. — 윤명숙, 「스트레스 상황에서 대화」</p>
+</blockquote>
+<p>두 사람 모두 자기 피곤만 보았고, 각자 배우자가 내 요구를 채워 줄 것이라 기대했다. 「자기중심에서 벗어나 섬김으로」는 그 기대의 기원을 더 깊이 판다. 유아기에 채워지지 못한 욕구가 공허하게 남아 있다가 배우자에게서 채우려 하고, 배우자는 다 채워 주겠다고 약속한다. 거짓말은 아니지만 어리석은 약속이다. "그것을 해줄만한 것이 내속에 없다.는 것을 모른다." 그래서 그는 이혼 사유 통계 맨 위의 성격 차이도 겉의 이유일 뿐, 본질은 상대를 끊임없이 바꾸고 싶은 욕망이라고 본다. 이 대목, 그리고 상대의 변화를 구하는 기도를 하나님이 듣지 않으신다는 단언은 <a class="wl" href="../../t/%EC%9E%90%EA%B8%B0%EB%B6%80%EC%9D%B8/">자기부인</a>이 이미 자세히 다룬다.</p>
+<p>「남녀의 차이」의 결론은 짧다. "자기중심으로 눈이 이동되면 상대방이 보이지 않는다." 부부 관계의 구체적인 기술과 역할은 <a class="wl" href="../../t/%EB%B6%80%EB%B6%80%EA%B4%80%EA%B3%84/">부부관계</a>로 넘긴다.</p>
+<h2>3. 사랑이라는 이름의 자기중심성</h2>
+<p>자기중심성이 가장 알아보기 어려운 때는 사랑의 옷을 입었을 때다. 윤 전도사님은 요한일서 4장 강해에서 이 점을 정면으로 다룬다. "사랑하는 자들아 우리가 서로 사랑하자 사랑은 하나님께 속한 것이니"(요일 4:7)를 읽고, 그는 청중에게 묻는다. 나는 사랑이 없다, 이것이 맞나? 그의 대답은 단호하다. "우리 속에는 우리의 이기심을 포장하기 위해 사랑을 위장하는 것 뿐이다."</p>
+<p>첫눈에 반하는 것도 예외가 아니다. 상대를 알지 못하고는 사랑할 수 없는데, 첫눈에 반한 마음은 눈에 보이는 것에 끌린 것일 뿐이다. 「우리 속에 사랑이 없다」는 이것을 이렇게 요약한다. "자신에게 일어난 일에 대해 철저히 자기 중심적으로 판단한 것이지, 하나님께 속한 사람을 상대에게 준 것이 아니다." 그 반대편에 그는 '앎으로서의 사랑'을 세운다. 사무실에서는 결정을 잘하면서 집을 사거나 전세를 얻을 때는 아무것도 고르지 못하는 남편이 있었다. 그 사실을 알았을 때 아내가 할 일은 비난이 아니라 내가 고르는 것이다. 그 사람에 대한 깊은 지식과 이해가 그리스도의 사랑이다.</p>
+<p>부모의 사랑도 마찬가지다. 「사마리아인 필요한 시대」에서 그는 부모가 자식을 사랑한다고 할 때 이기적인 사랑이 많이 섞여 있다고 말한다. 자신의 불안을 해소하려고, 자신의 한을 풀려고, 노후 대책 때문에. 「자기편에서의 해석」에 나오는 고등학생 자녀를 둔 어머니도 자기 집착을 사랑으로 여기고 있었다. 반면 사마리아인은 쓰러진 유대인을 보고 고소하다고 여길 수도 있었지만 계산하지 않고 다가갔다. 이 대비가 <a class="wl" href="../../t/%EC%82%AC%EB%9E%91/">사랑</a>의 기준이다.</p>
+<p>출발점은 역설적이다. 내 안에 참된 사랑이 없다는 것을 자각해야 하나님의 사랑을 빌려 와 상대를 사랑할 수 있다.</p>
+<h2>4. 해석과 반응 — 은혜조차 내 쪽으로 기울 때</h2>
+<p>자기중심성은 관계만이 아니라 신앙의 해석까지 기울게 한다. 「자기중심성과 은혜」의 본문은 "하나님의 은혜를 헛되이 받지 말라"(고후 6:1)이다. 은혜를 헛되이 받는다는 것은 무엇인가. 윤 전도사님은 은혜에는 방향이 있다고 말한다. 하나님이 우리가 어디로 가기를 바라시는지 방향이 있고, 그 방향으로 나갈 힘을 공급받은 것이 은혜다. 그런데 많은 사람이 그 방향으로 가지 않는다. 은혜를 받고 그 다음의 방향을 놓쳐 이혼까지 가는 것을 그는 「자기편에서의 해석」에서 자기 중심 해석이라 불렀다. 그래서 "정말로 은혜를 아는 것은 자기를 부인하는 것이다."</p>
+<p>예배도 자기중심성을 피해 가지 못한다. 예배 시간에 아이가 소란스럽자 애니메이션을 틀어 준 부모의 사례에서 그는 묻는다. 누구 중심인가. 부모는 말씀을 듣기 위해서였으니 하나님 중심이라고 하지만, "다 자기 중심이다." 갈등 상황의 반응도 같다. 「사소한 일에 나의 반응」은 하나님을 전적으로 신뢰하지 않으면 방어벽을 치게 되고, 그러면 모든 것을 자기 중심에 맞추라고 요구하게 된다고 말한다. 불합리한 상황에서 하나님이 실수하셨다고 생각하는 것은 "하나님 보다 내가 위에 가는 것이다."</p>
+<p>이 해석의 기울기가 부부 갈등에서 취하는 모양이 상대를 바꾸려는 태도다. 「갈등 — 내 중심으로 바꾸려는 태도」는 최초의 부부에게서 그것을 읽는다. 아담이 아내 때문에 먹었다고 말한 것은 사실이지만 책임을 떠넘기는 말이었고, 그 갈등의 고리는 계속 내려왔다. 상대를 내 중심에 맞추려는 기도는 하나님 중심이 아니기에 받아 주시지 않으며, 상대를 도저히 못 견디겠다면 그만큼 내 안에 큰 변화가 있어야 한다는 뜻이다. 그러면서도 그는 한 줄을 덧붙인다. 상대방이 잘못이 없다는 것이 아니다. 자기중심성의 처방은 상대의 잘못을 지우는 것이 아니라 내가 하나님 중심으로 바뀌는 것이다.</p>
+<h2>5. 공동체와 시대 — 나만 행복하고 싶은 마음</h2>
+<p>자기중심성은 개인의 문제를 넘어 공동체와 시대의 문제가 된다. 두 설교자 모두 이것을 결혼을 둘러싼 오늘의 풍경에서 읽는다. 문대원 목사님은 포스트모던 사회를 나르시시즘이 강력한 시대, 나만 특별한 존재라는 시대로 규정하고, 결혼은 원하지 않지만 연애는 원하는 청년들의 모습에서 자기를 포기하고 싶지 않은 마음을 본다. 그런데 그는 그 책임을 청년들에게만 돌리지 않는다. 청년들은 부모를 보고 그런 결론을 내렸을 것이고, 기성세대가 보여 주지 못했기 때문이라는 것이다. 그리고 결론은 모두에게 해당된다. "나만 행복하고 싶은 마음, 사실은 환상이다."</p>
+<p>윤 전도사님의 「가정의 질서」는 같은 현상을 <span class="wl-dead" title="위키 내부 링크">시편 133편</span>의 연합과 대비한다. 결혼 조건으로 아파트 평수와 생활비를 내건 예비부부, 그 조건을 맞추겠다며 투잡을 약속한 형제의 사례를 들며, 그는 세속적인 사고가 교회 안의 결혼에도 들어와 있다고 말한다. 그리고 공동체 차원으로 확장한다. "인본주의, 자기 중심성은 공동체의 유익이 아니다." 아론의 수염을 타고 흘러내리는 기름처럼 성령의 역사는 연합할 때 경험되는데, 자기중심성은 그 연합을 깨뜨린다. 문 목사님이 교만의 세 번째 증상으로 공동체의 분열을 든 것과 같은 결론이다.</p>
+<p>다만 이 진단을 읽을 때는 균형이 필요하다. 한쪽에서 보면 결혼을 미루는 세대는 자기중심적이지만, 다른 쪽에서 보면 그들은 앞 세대의 결혼이 보여 준 자기중심성 — 통제하고 무시하고 바꾸려 하는 — 을 보고 물러선 것일 수 있다. 문 목사님이 기성세대의 책임을 함께 짚은 것은 이 양면을 보았기 때문이다. 자기중심성은 어느 세대의 전유물이 아니라 모든 세대가 서로에게 물려주는 것이다. 그것이 어떻게 대물림되는지는 역기능가정이 다룬다.</p>
+<h2>6. 벗어나는 길 — 상대 중심으로의 이동</h2>
+<p>자기중심성이 본성이라면 어떻게 벗어나는가. 두 설교자의 처방은 의지의 결단보다 먼저 하나님 앞에 서는 일이다. 「믿음의 결정」에서 윤 전도사님은 <span class="wl-dead" title="위키 내부 링크">야곱</span>의 선택이 항상 자기 중심적이었다고 말한다. 신앙의 명문가에서 태어났지만 자기중심적 사고를 가졌던 그가 얍복 강가에서 '깍쟁이, 형의 뒤꿈치를 잡은 자'라고 고백한 것은, 예수 중심의 삶으로 돌아서기 위해 자기중심적 사고를 인정한 것이다(<span class="wl-dead" title="위키 내부 링크">창 32:27</span>). "하나님을 마주 하지 않으면 우리의 틀이 바뀌지 않는다." 그 반대편 모델은 <span class="wl-dead" title="위키 내부 링크">아브라함</span>이다. 갈등 관계에 있던 조카 롯에게 선택권을 먼저 준 것은 상당히 성숙하지 않으면 불가능한 일이다.</p>
+<p>그 다음은 방향의 이동이다. 「자기중심성과 은혜」의 결론이 가장 압축적이다.</p>
+<blockquote>
+<p>상대 중심으로 이동해야 한다. 주님 때문에 이동해야 한다. 그것이 영성이다. — 윤명숙, 「자기중심성과 은혜」</p>
+</blockquote>
+<p>성도의 가장 아름다운 모습은 상대를 깨뜨리는 것이 아니라 자기를 깨뜨리는 것이며, 원수 갚는 일은 하나님의 일이니 애쓸 이유가 없다. 일상에서는 계획을 세울 때 배우자의 정신적·육체적 상황을 고려하고, 피곤할 때 더 낮아지는 것이다(「스트레스 상황에서 대화」). 「자기중심에서 벗어나 섬김으로」의 말로는 "섬김다고 손해 보는 것 없다" — 섬김을 통해 주님과 가까워진다.</p>
+<p>맥클랑은 『제자도의 본질』에서 이 이동의 출발점을 시선에 둔다. "제자로서 예수님을 사랑하고자 원한다면, 그의 시각으로 죄와 자기중심성을 바라보아야 한다." 그리고 교만의 전형적인 태도가 자기 중심적이라면 겸손의 전형적인 태도는 기도라고 말한다. 내 시각에서 그의 시각으로, 내 필요에서 상대의 필요로, 통제에서 기도로 — 자기중심성에서 벗어나는 길은 결국 중심을 옮기는 일이다. 그 길의 신학은 <a class="wl" href="../../t/%EC%9E%90%EA%B8%B0%EB%B6%80%EC%9D%B8/">자기부인</a>과 <a class="wl" href="../../t/%EC%84%AC%EA%B9%80/">섬김</a>, 그리고 <a class="wl" href="../../t/%EA%B2%B8%EC%86%90/">겸손</a>이 이어받는다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>자기중심성은 교만의 본질이며(니버), 가르치지 않아도 두세 살에 '싫어'로 나타나는 본성이다. 어른이 되면 통제와 무시로 모양을 바꿀 뿐이다.</li>
+<li>결혼은 자기중심성을 만들지 않고 드러낸다 — 연애 때의 상대 중심이 자기 중심으로 돌아오고, 배우자가 내 공허를 채워 줄 것이라는 기대가 갈등의 원천이 된다.</li>
+<li>가장 위험한 자기중심성은 사랑의 옷을 입은 것이다. 첫눈에 반함, 자녀를 향한 헌신, 집착이 모두 이기심의 포장일 수 있다. 참 사랑은 상대에 대한 앎에서 시작된다.</li>
+<li>자기중심성은 은혜와 예배의 해석까지 기울게 한다. 은혜에는 방향이 있고, 은혜를 안다는 것은 자기를 부인하는 것이다.</li>
+<li>벗어나는 길은 중심의 이동이다 — 하나님을 마주해 자기중심적 사고를 인정하고, 상대 중심으로 옮겨 가는 것이 영성이다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>결혼 기피를 자기중심성으로 읽는 진단과, 그것을 앞 세대 결혼의 자기중심성에 대한 반응으로 읽는 진단은 어떻게 함께 설 수 있는가. 두 설교 모두 교회 안 청년 세대의 목소리를 직접 담고 있지는 않다.</li>
+<li>자기를 돌보는 일(쉼, 경계)과 자기중심성의 경계는 어디인가. 「스트레스 상황에서 대화」의 남편의 쉼도 정당한 필요였다 — 자기중심성의 처방이 자기 필요의 부정으로 읽히지 않으려면 무엇이 더 필요한가.</li>
+<li>유아기에 채워지지 못한 욕구가 결혼에서 자기중심성으로 나타난다면, 그 욕구의 치유와 자기중심성의 회개는 어떤 순서로 가는가.</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EA%B5%90%EB%A7%8C/">교만</a> — 자기중심성을 증상으로 품는 상위 범주. 높아지려는 갈망과 공동체의 분열, 겸손으로 가는 길은 이쪽에 위임.</li>
+<li><a class="wl" href="../../t/%EC%A3%84%EC%84%B1/">죄성</a> — 전적 부패와 남은 죄성의 신학. 자기중심성의 교리적 자리.</li>
+<li><a class="wl" href="../../t/%EC%9E%90%EA%B8%B0%EC%9D%B8%EC%8B%9D/">자기인식</a> — 자기중심성을 보는 눈, 자기 편의 조명과 성령의 조명.</li>
+<li><a class="wl" href="../../t/%EC%9E%90%EA%B8%B0%EB%B6%80%EC%9D%B8/">자기부인</a> — 자기중심에서 섬김으로 돌아서는 길의 신학. 상대를 바꾸려는 기도에 대한 단언은 이쪽에서 다룬다.</li>
+<li><a class="wl" href="../../t/%EC%84%AC%EA%B9%80/">섬김</a> — 자기중심성의 반대편 실천.</li>
+<li><a class="wl" href="../../t/%EC%82%AC%EB%9E%91/">사랑</a> — 사랑으로 위장한 이기심과 하나님께 속한 사랑.</li>
+<li><a class="wl" href="../../t/%EB%B6%80%EB%B6%80%EA%B4%80%EA%B3%84/">부부관계</a> — 결혼 안에서의 구체적 기술과 역할.</li>
+<li><a class="wl" href="../../t/%EA%B2%B8%EC%86%90/">겸손</a> · <a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a> — 기도라는 겸손의 태도, 방향이 있는 은혜.</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2023_내마음의그늘1_교만</span></td>
+<td>설교(2023)</td>
+<td>니버 인용, 두세 살의 '싫어', 나르시시즘과 결혼 기피, 기성세대의 책임</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2016_자기중심성과은혜</span></td>
+<td>설교(2016)</td>
+<td>자기 중심성은 죄의 속성, 은혜의 방향성, 상대 중심으로의 이동</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2013_자기편에서의해석</span></td>
+<td>설교(2013)</td>
+<td>자기 중심 해석, 사랑으로 착각한 집착</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2014_남녀의차이</span></td>
+<td>설교(2014)</td>
+<td>상대중심이 자기중심으로 돌아옴, 수치를 준 사례</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2014_자기중심에서벗어나섬김으로</span></td>
+<td>설교(2014)</td>
+<td>유아기 결핍과 배우자 기대, 섬김</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2014_갈등내중심으로바꾸려는태도</span></td>
+<td>설교(2014)</td>
+<td>아담의 책임 전가, 상대를 바꾸려는 태도</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2016_사마리아인필요한시대</span></td>
+<td>설교(2016)</td>
+<td>부모 사랑 속의 이기심, 계산하지 않는 사마리아인</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2017_믿음의결정</span></td>
+<td>설교(2017)</td>
+<td>야곱의 자기 중심적 선택과 고백, 아브라함의 양보</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2017_사랑하는자</span> · <span class="wl-dead" title="위키 내부 링크">2017_우리속에사랑이없다</span></td>
+<td>설교(2017)</td>
+<td>위장된 사랑, 첫눈에 반함, 앎으로서의 사랑</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2017_의사소통의걸림돌</span></td>
+<td>설교(2017)</td>
+<td>어려운 상황에서 닫히는 대화</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2017_죄의본성</span></td>
+<td>설교(2017)</td>
+<td>어릴 때부터의 자기 중심 초점, 이기심의 경사로</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2018_가정의질서</span></td>
+<td>설교(2018)</td>
+<td>결혼 조건과 세속적 사고, 공동체의 유익과 자기 중심성</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2018_스트레스상황에서대화</span></td>
+<td>설교(2018)</td>
+<td>축구 중계 사례, "본성적으로 자기 중심성"</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">2019_사소한일에나의반응</span></td>
+<td>설교(2019)</td>
+<td>사소한 일의 방어벽, 하나님보다 위에 서는 마음</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%A0%9C%EC%9E%90%EB%8F%84%EC%9D%98%EB%B3%B8%EC%A7%88_%EB%A7%A5%ED%81%B4%EB%9E%91/">제자도의본질_맥클랑</a></td>
+<td>책</td>
+<td>그의 시각으로 보는 자기중심성, 교만-자기중심 / 겸손-기도</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신앙과삶</span><span>#topic/자기중심성</span><span>#topic/죄성</span><span>#topic/부부관계</span><span>#topic/사랑</span><span>#topic/섬김</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>

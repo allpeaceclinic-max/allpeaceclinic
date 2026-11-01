@@ -1,0 +1,308 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>구원의 확신 — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-t">조직신학·교리</span><span class="date">2026-11-01</span></div>
+  <h1 class="note-title">구원의 확신</h1>
+  
+</header>
+<article class="note">
+<h2>정의</h2>
+<p>구원의 확신은 내가 참으로 구원받은 하나님의 자녀임을 아는 앎이다. 요한일서는 이 앎을 위해 쓰였다고 스스로 밝힌다 — "너희로 하여금 영생이 있음을 알게 하려"(요일 5:13). <span class="wl-dead" title="위키 내부 링크">권성수</span> 목사는 요한일서 강해의 마지막 설교에서 서신 전체를 '확신의 책'이라 부르며, 18-20절에 거듭 나오는 '오이다멘', 곧 "우리가 안다"가 그 확신의 언어라고 짚는다.</p>
+<p>확신은 구원 그 자체가 아니라 구원에 대한 앎이다. 그래서 구원받은 사람이 확신을 잃을 수도 있고, 구원받지 못한 사람이 확신을 가질 수도 있다. 이 글은 이 두 어긋남 사이에서 확신의 근거와 점검을 다룬다. 끝까지 지켜 주시는 은혜 자체와 그 교리 논쟁은 <a class="wl" href="../../t/%EC%84%B1%EB%8F%84%EC%9D%98%EA%B2%AC%EC%9D%B8/">성도의견인</a>이, 칭의의 법정적 무정죄와 '확신의 시제' 논쟁은 <a class="wl" href="../../t/%EC%B9%AD%EC%9D%98%EB%A1%A0/">칭의론</a>·<a class="wl" href="../../t/%EA%B5%AC%EC%9B%90%EB%A1%A0/">구원론</a>이 맡는다.</p>
+<h2>1. 미혹 속에서 쓰인 확신 — 출생·소속·인식</h2>
+<p>요한은 왜 명백한 진리를 굳이 다시 확인시켰는가. 권성수 목사의 답은 역사적이다. 「신자의 확신」(요일 5:13-17)에서 그는 영생이 명백한 진리임에도 강조가 필요했던 까닭을 이단의 미혹에서 찾는다 — "이 당시 이단의 미혹이 있었기 때문에 확신이 흔들렸다." 육체로 오신 예수를 부인한 영지주의는 성도의 믿음과 윤리를 함께 흔들었다. 확신은 평온한 교리가 아니라 미혹 속에서 붙드는 앎으로 처음 주어졌다.</p>
+<p>「참참참」(요일 5:18-21)은 그 앎의 내용을 세 겹으로 정리한다.</p>
+<table>
+<thead>
+<tr>
+<th>세 '참'</th>
+<th>본문</th>
+<th>확신의 내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>참 출생</td>
+<td>18절</td>
+<td>하나님께로부터 태어났다 — 새 본성과 보호</td>
+</tr>
+<tr>
+<td>참 소속</td>
+<td>19절</td>
+<td>하나님께 속했다 — 지금은 잘 안 보여도 재림 때 드러남</td>
+</tr>
+<tr>
+<td>참 인식</td>
+<td>20절</td>
+<td>참된 자를 안다 — 예수 그리스도가 참 하나님이요 영생</td>
+</tr>
+</tbody>
+</table>
+<p>출생의 대목에서 그는 보호의 확신을 소유권의 언어로 설명한다. 악한 자가 '만지지도 못한다'는 것은 괴롭힐 수는 있어도 붙잡고 늘어져 자기 것으로 만들지 못한다는 뜻이다. "소유권이 이미 바뀌었다." 그리고 확신의 목적을 이렇게 밝힌다 — "이것을 확실히 알아야 흔들리지 않는다."</p>
+<h2>2. 확신의 객관적 근거 — 하나님의 맹세와 영원한 대제사장</h2>
+<p>히브리서 강해 「완벽한 구원 보장」(히 7:20-28)은 확신의 근거를 신자 바깥에, 하나님의 맹세에 둔다. 아론 계열 제사장들은 맹세 없이 세워졌지만 예수는 맹세로 세워지셨다. 말씀만으로 빛을 지으시는 하나님께 맹세가 왜 필요한가. 우리의 믿음을 돕기 위해서다. 설교자의 비유는 간명하다.</p>
+<blockquote>
+<p>"맹세는 인감도장이다." — 권성수, 「완벽한 구원 보장」</p>
+</blockquote>
+<p>같은 날 설교 노트는 이 확신을 한 문장으로 적는다 — "한번 시작하신 구원은 꼭 지키시는 예수 그리스도". 근거는 대제사장의 두 속성이다. 그는 영원하시므로 직분이 갈리지 않고, 그래서 "자기를 힘입어 하나님께 나아가는 자들을 온전히 구원하실 수 있으니 이는 그가 항상 살아 계셔서 그들을 위하여 간구하심이라"(히 7:25). 또 완벽하시므로 단 한 번의 제사로 영속하는 효과를 이루셨다.</p>
+<p>설교는 이 확신을 미래에만 걸어 두지 않는다. "문제는 현재의 구원이다." 확신은 고통에서의 구원뿐 아니라 고통 중의 구원(롬 5:3-4)으로 확장된다. 같은 시리즈의 「멜기세덱계 대제사장」은 확신을 이렇게 그린다. 확신이란 "지극히 작은 우리가 예수님께 접속되는 것이다." </p>
+<h2>3. 너희 자신을 시험하라 — 믿음과 생활의 두 테스트</h2>
+<p>객관적 근거가 확고하다고 해서 자기 점검이 불필요해지지는 않는다. 바울은 오히려 명령한다 — "너희는 믿음 안에 있는가 너희 자신을 시험하고 너희 자신을 확증하라"(고후 13:5). 권성수 목사는 「나는 그리스도인인가」에서 '무늬만 그리스도인'을 경계하며 이 시험을 두 갈래로 나눈다.</p>
+<table>
+<thead>
+<tr>
+<th>테스트</th>
+<th>묻는 것</th>
+<th>핵심 기준</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>믿음</td>
+<td>무엇을, 어떻게 믿는가</td>
+<td>예수의 죽음이 나의 죄 때문이고 부활이 나에게 의를 주기 위함임을 믿는가 — 귀신도 믿고 떨지만 자기와 상관없이 믿는다</td>
+</tr>
+<tr>
+<td>생활</td>
+<td>무엇이 맺히는가</td>
+<td>사랑의 열매가 크든 작든 있는가 — 30·60·100배의 차이는 있으나 전혀 없다면 아직 아니다</td>
+</tr>
+</tbody>
+</table>
+<p>두 테스트는 한 뿌리에서 나온다. 예수와의 연합이 믿음으로, 또 열매로 드러난다. 그래서 설교자는 열매를 강조하면서도 곧바로 경고한다. "자꾸 열매만 강조하면 나무를 놓친다." 열매는 구원의 원인이 아니라 결과이며, "좋은나무가 먼저이지 열매가 먼저는 아니다." 확신이 흔들리는 이유에 대한 진단도 같은 자리에서 나온다. "열매가 없으면 불안하고 확신이 없다. 순종을 하지 않기 때문이다." 그리고 확신을 두 겹으로 정리한다 — "성령의 열매를 맺다 보면 객관적 확신이 든다." 그 위에 성령께서 마음속에 하나님의 자녀라는 내면적 증거, 곧 주관적 확신을 주신다.</p>
+<p><span class="wl-dead" title="위키 내부 링크">윤명숙</span> 전도사의 「기도 응답」(요일 3:19-24)은 같은 점검을 기도의 자리에서 한다. 형제를 행함과 진실함으로 사랑하는 것을 볼 때 자녀임이 확실해지고, 순서는 분명하다. 계명을 지켜서 구원받는 것이 아니라, 구원받았으므로 기뻐서 계명을 지키는 사람의 기도에 응답하신다. 그 흐름은 이렇다 — "말씀을 묵상, 행함과 진실함으로, 구원을 확신, 기도에 대한 응답, 더 깊은 관계". 「신자의 확신」이 영생과 기도의 확신을 한 묶음으로 다루는 것도 같은 이유다.</p>
+<h2>4. 바람은 보이지 않아도 — 중생의 시점이 아니라 방향</h2>
+<p>자기 점검이 낳는 가장 흔한 불안은 '나는 언제 거듭났는지 모른다'는 것이다. 권성수 목사는 「중생했나요 어떻게 아나요」(요 3:1-8)에서 이 불안에 요 3:8의 바람으로 답한다. 바람이 어디서 와서 어디로 가는지는 몰라도 부는 것은 안다. "중생의 시작은 모를 수 있다." 「참참참」도 같은 말을 한다 — 언제 중생했는지는 몰라도 예수를 믿는 것을 보면 중생했다는 것을 안다.</p>
+<p>설교는 극적인 회심 이야기를 들려주되 기준으로 삼지 않는다. 고행하던 윗필드는 용서받았다는 "지속적인 느낌과 완전한 확신이 나의 황량한 영혼에 밀고 들어왔습니다"라고 고백했다. 웨슬리는 루터의 로마서 서문을 들으며 "내 마음이 이상하게 따뜻해지는 것을 느꼈습니다"라고 했고, <span class="wl-dead" title="위키 내부 링크">어거스틴</span>에게는 확신의 빛이 밀물처럼 들어왔다. 그러나 이 경험들의 공통분모는 감정의 세기가 아니라 방향의 전환이다. 중생은 마음의 주도적 성향을 하나님께로 돌린다. "변화가 없다면 중생 안했을 수 있다." 반대로 변화가 크든 작든 있다면, 시작을 기억하지 못해도 바람은 불고 있다.</p>
+<p>로마서 8장 강해 「종의 영」(롬 8:15)은 이 점을 회심 경험에 적용한다. 성령께서 율법으로 일하시면 사람은 종의 영으로 두려워한 뒤 양자의 영으로 아버지를 부른다. <span class="wl-dead" title="위키 내부 링크">존 번연</span>은 18개월을 그 공포 속에 살았다. 그러나 설교자는 정도의 차이를 강조한다. 모든 신자가 번연 같지는 않으며, 모태 신자에게 반드시 극적인 경험이 필요한 것도 아니다. 물어야 할 것은 언제가 아니라 누구를 바라보는가다 — "보세요! 보세요! 보세요! 예수 그리스도만 보세요!"</p>
+<h2>5. 두 방향의 오진 — 거짓 확신과 불안한 신자</h2>
+<p>확신의 목회는 양쪽 낭떠러지 사이를 걷는다. 한쪽은 근거 없는 확신이다. 니고데모는 종교·도덕·리더십을 다 갖춘 산헤드린 의원이었지만 예수는 그에게 거듭나야 한다고 하셨다. 설교자는 거듭났다는 이들의 삶이 불신자와 다를 바 없다는 통계로 설교를 연다. 「신자의 확신」은 반대쪽 극단도 경계한다. 이미 구원받았으니 회개할 필요가 없다고 가르치는 이단의 확신은 확신이 아니라 위험한 사상이다. 신자는 자녀가 되기 위해 바로 사는 것이 아니라, 자녀로서 바로 산다.</p>
+<p>다른 쪽은 근거 있는 불안이다. 「종의 영」은 신자를 흔드는 경험 다섯을 하나씩 짚으며, 그것들이 중생 이전의 종의 영과 다르다고 말한다.</p>
+<table>
+<thead>
+<tr>
+<th>신자를 흔드는 경험</th>
+<th>권성수 목사의 진단</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>하나님의 거룩 앞의 두려움</td>
+<td>이사야 6장처럼 이미 신자가 거룩을 보아 죄가 더 깊이 보이는 것</td>
+</tr>
+<tr>
+<td>우울</td>
+<td>신자도 우울을 느낄 수 있다 — 그래도 말씀을 전하면 반응한다</td>
+</tr>
+<tr>
+<td>범죄 후의 자책</td>
+<td>자신을 용서하기 힘들어도 하나님이 용서하심을 알고 나아간다(시 51편)</td>
+</tr>
+<tr>
+<td>사탄의 공격</td>
+<td>성경에 반응을 보일 수 있으면 그것은 사탄의 공격이다</td>
+</tr>
+<tr>
+<td>버림받은 느낌</td>
+<td>징계의 일종, 돌아오라는 사인</td>
+</tr>
+</tbody>
+</table>
+<p>"종의 영과 타락의 차이 : 말씀에 대한 반응." 말씀 앞에서 여전히 찔린다면 그 불안은 오히려 생명의 증거다. 이는 <a class="wl" href="../../t/%EC%84%B1%EB%8F%84%EC%9D%98%EA%B2%AC%EC%9D%B8/">성도의견인</a> 5절의 목회적 함의와 맞닿는다.</p>
+<p>배교의 경고도 이 틀 안에서 읽힌다. 「신자의 확신」은 요일 5:16의 '사망에 이르는 죄'를 문맥상 배교 — 교인으로 있다가 나가 예수를 부인하고 돌아오지 않는 것(요일 2:19) — 로 본다. 그리고 이렇게 정리한다 — "진짜 예수 믿는 사람은 배교할 수 없다. 그러나 가짜로 믿은 사람은 배교 할 수 있다." 이 말은 불안한 신자를 정죄하려는 것이 아니라 거짓 확신을 깨우려는 것이다.</p>
+<h2>6. 확신과 경고 사이 — 확신의 시제와 견인</h2>
+<p>확신의 가장 큰 신학적 질문은 시제다 — 지금 아는가, 끝까지 가 봐야 아는가. 권성수 목사는 칭의를 과거·현재·미래로 나누어 최후 심판대에서 확인되기 전에는 확신할 수 없다고 가르치는 입장을 소개하고 "상당히 위험하다"고 평가한다. 믿는 순간 칭의를 받았다면 반드시 영생에 이른다는 것이다. 반대편이 붙드는 관심도 분명하다 — 성경이 실제로 말하는 최후 심판과 견딤의 경고가 현재의 확신을 열매 없는 안심으로 굳지 않게 한다는 것이다. 논쟁 지형은 <a class="wl" href="../../t/%EA%B5%AC%EC%9B%90%EB%A1%A0/">구원론</a> 8절과 <a class="wl" href="../../t/%EC%B9%AD%EC%9D%98%EB%A1%A0/">칭의론</a>이 다룬다.</p>
+<p>권성수 목사 자신도 「나는 그리스도인인가」에서 두 축을 함께 세워 견인을 다섯 문장으로 정리한다 — 오직 믿음으로 의롭다 함을 받고(엡 2:8-9), 의롭다 함을 받으면 반드시 영광에 들어가며(롬 8:30), 그러나 계속 믿음 안에 있어야 최종적으로 구원을 받고(고전 15:1-2), 하나님은 자녀들이 떨어져 나가지 않도록 보호하시며(빌 1:6), 그 보호의 수단이 공동체다 — "하나님은 자기 자녀들을 통해서 자기 자녀들을 보호하십니다." 칼뱅주의와 알미니우스주의가 히 6장 같은 배교 본문을 어떻게 다르게 읽는지는 <a class="wl" href="../../t/%EC%84%B1%EB%8F%84%EC%9D%98%EA%B2%AC%EC%9D%B8/">성도의견인</a> 3절이 양쪽을 대칭으로 다룬다.</p>
+<p>경고는 혼자 불안해하라는 말이 아니라 서로 권면하라는 말이고(히 3:13-14), 확신은 혼자 안심하라는 말이 아니라 하나님과 성도와의 <a class="wl" href="../../t/%EA%B5%90%EC%A0%9C/">교제</a>를 풍성하게 하라는 말이다.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li><strong>확신은 구원이 아니라 구원에 대한 앎이다.</strong> 그래서 불안한 참 신자와 거짓 확신의 명목 신자라는 두 어긋남이 생기고, 확신의 목회는 그 둘 사이를 걷는다.</li>
+<li><strong>확신의 토대는 바깥에 있다.</strong> 하나님의 맹세(인감도장)와 항상 살아 간구하시는 대제사장이 근거이고, 열매와 내적 증거는 그 근거를 확인하는 표지다.</li>
+<li><strong>열매는 나무를 가리킨다.</strong> 열매가 없으면 불안하지만, 열매만 보면 율법주의가 된다 — 좋은 나무가 먼저다.</li>
+<li><strong>중생의 증거는 시점이 아니라 방향이다.</strong> 바람의 시작은 몰라도 부는 것은 알며, 극적인 경험은 필수가 아니다.</li>
+<li><strong>말씀에 대한 반응이 판별의 열쇠다.</strong> 우울·자책·버림받은 느낌 속에서도 말씀에 찔린다면 그것은 생명의 증거다.</li>
+</ul>
+<h2>미해결 질문</h2>
+<ul>
+<li>오래 신앙생활을 하다 떠난 사람을 '처음부터 진짜가 아니었다'고 사후에 판정하는 일은 남은 공동체에 어떤 목회적 부담을 남기는가?</li>
+<li>객관적 확신(열매)과 주관적 확신(성령의 내적 증거)이 엇갈릴 때 — 열매는 보이는데 확신이 없거나, 확신은 강한데 열매가 희미할 때 — 어느 쪽을 먼저 다루어야 하는가?</li>
+<li>현재의 확신과 끝까지 견디라는 경고를 함께 설교할 때, 청중이 하나만 듣지 않게 하는 균형은 무엇인가?</li>
+</ul>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EC%84%B1%EB%8F%84%EC%9D%98%EA%B2%AC%EC%9D%B8/">성도의견인</a> — 끝까지 지키시는 은혜, 배교 본문의 칼뱅주의·알미니우스주의 대칭 읽기, 확신을 잃은 이를 위한 목회</li>
+<li><a class="wl" href="../../t/%EC%B9%AD%EC%9D%98%EB%A1%A0/">칭의론</a> · <a class="wl" href="../../t/%EA%B5%AC%EC%9B%90%EB%A1%A0/">구원론</a> — 법정적 무정죄, 법정적·관계적 죄책 구분, 확신의 시제와 삼중 칭의 논쟁</li>
+<li><a class="wl" href="../../t/%EA%B5%AC%EC%9B%90/">구원</a> · <a class="wl" href="../../t/%EB%AF%BF%EC%9D%8C/">믿음</a> — 구원의 세 시제, 믿음의 본질</li>
+<li><a class="wl" href="../../t/%EC%A4%91%EC%83%9D/">중생</a> · <a class="wl" href="../../t/%ED%9A%8C%EC%8B%AC/">회심</a> · <a class="wl" href="../../t/%EC%96%91%EC%9E%90%EB%90%A8/">양자됨</a> — 바람 같은 중생, 종의 영에서 양자의 영으로</li>
+<li><a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a> — 열매로 드러나는 성화</li>
+<li><a class="wl" href="../../t/%EA%B5%90%EC%A0%9C/">교제</a> — 확신이 토대가 되는 요한일서의 교제</li>
+</ul>
+<h2>출처 자료</h2>
+<table>
+<thead>
+<tr>
+<th>자료</th>
+<th>유형</th>
+<th>주요 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">요한일서 강해</span> · <span class="wl-dead" title="위키 내부 링크">신자의 확신</span></td>
+<td>설교 (요일 5:13-17)</td>
+<td>미혹 속의 확신, 영생과 기도의 확신, 삼중 칭의 비판, 배교 해석</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">참참참</span></td>
+<td>설교 (요일 5:18-21)</td>
+<td>출생·소속·인식의 세 참, '소유권이 이미 바뀌었다'</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">완벽한 구원 보장</span> · <span class="wl-dead" title="위키 내부 링크">권성수_히브리서강해시리즈</span></td>
+<td>설교 (히 7:20-28)</td>
+<td>맹세는 인감도장, 영원·완벽한 대제사장, 현재적 구원</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">멜기세덱계 대제사장</span></td>
+<td>설교 (히 7:1-10)</td>
+<td>확신 = 예수께 접속됨, 확신·견인·전파</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">나는 그리스도인인가</span></td>
+<td>설교 (고후 13:5)</td>
+<td>믿음·생활의 두 테스트, 열매와 나무, 객관적·주관적 확신, 견인 다섯 명제</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">중생했나요 어떻게 아나요</span></td>
+<td>설교 (요 3:1-8)</td>
+<td>바람의 비유, 윗필드·웨슬리·어거스틴, 변화의 방향</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">종의 영</span> · <span class="wl-dead" title="위키 내부 링크">권성수_로마서8장강해</span></td>
+<td>설교 (롬 8:15)</td>
+<td>종의 영과 양자의 영, 존 번연, 신자를 흔드는 다섯 경험의 구별</td>
+</tr>
+<tr>
+<td><span class="wl-dead" title="위키 내부 링크">기도 응답</span></td>
+<td>설교 (요일 3:19-24)</td>
+<td>자녀 됨의 확신 위의 기도, 확신과 관계의 순환</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="tagrow"><span>#domain/신학</span><span>#discipline/조직신학</span><span>#topic/구원의확신</span><span>#topic/요한일서</span><span>#topic/목회상담</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
