@@ -197,11 +197,26 @@ input[type="text"], input[type="number"], select {
   display: grid; gap: 8px; border-bottom: 1px solid var(--line);
   padding: max(10px, env(safe-area-inset-top, 0px)) max(14px, env(safe-area-inset-right, 0px)) 10px max(14px, env(safe-area-inset-left, 0px));
 }
+.photo-bar { background: var(--card); border-bottom: 3px solid var(--pine); }
+.photo-bar h2 { margin: 0 0 3px; font-size: 17px; color: var(--pine); }
 .photo-bar p { margin: 0; font-size: 14px; }
 .photo-bar .row { display: flex; gap: 6px; flex-wrap: wrap; }
 .photo-view { flex: 1; overflow: auto; background: #151a16; }
 .photo-view canvas { display: block; margin: 0 auto; cursor: crosshair; }
-#photoLoupe { flex: none; width: 96px; height: 96px; border-radius: 6px; border: 1px solid var(--line); }
+#card { z-index: 1002; }   /* 사진 단계 상자와 같은 자리에 뜬다 — 장소 결과의 단추가 가려지지 않게 위로 */
+/* 패널의 사진 작업 칸: 사진 전체 · 지금 지점 둘레 확대 · 지점 이름 목록 · 이름 찾기 */
+#photoPanel { border: 2px solid var(--pine); border-radius: 8px; padding: 12px; display: grid; gap: 8px; }
+#photoPanel h2 { margin: 0; font-size: 16px; color: var(--pine); }
+#photoPanel .hintline { margin: 0; color: var(--ink); font-size: 13px; }
+#ppMini, #ppZoom { display: block; width: 100%; height: auto; border-radius: 6px; background: #151a16; }
+#ppMini { cursor: crosshair; }
+.slots { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.slots li { display: grid; grid-template-columns: 38px 1fr auto; align-items: center; gap: 8px; padding: 5px 8px; border: 1px solid var(--line); border-radius: 6px; cursor: pointer; }
+.slots li.on { border-color: var(--pine); box-shadow: inset 0 0 0 1px var(--pine); }
+.slots .tag { font: 600 12px/1.6 var(--font-body); color: #fff; background: #f97316; border-radius: 999px; text-align: center; }
+.slots .nm { font-size: 13px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.slots .nm.empty { color: var(--muted); }
+#altStep { margin: 0; font-size: 12.5px; color: var(--ink); }
 
 .status { font-size: 13px; min-height: 1.5em; margin: 0; }
 .status.err { color: var(--warn); }
@@ -245,21 +260,27 @@ footer a { color: inherit; }
       <div><h3>이 구간의 길 고르기</h3><p>분홍이 지금 길. 글자나 목록에서 고르세요.</p></div>
       <button type="button" class="btn small" id="altClose">이대로 두기</button>
     </div>
+    <p id="altStep" hidden></p>
     <div class="alts" id="altList"></div>
+    <div class="row" id="altNav" hidden>
+      <button type="button" class="btn small" id="altPrev">◀ 이전 구간</button>
+      <button type="button" class="btn small primary" id="altNext">이 길로 · 다음 구간 ▶</button>
+    </div>
   </div>
   <div class="card" id="photoCard" hidden>
-    <div class="head"><div><h3 id="photoTitle"></h3><p id="photoText"></p></div><canvas id="photoLoupe" width="96" height="96" hidden></canvas></div>
+    <div><h3 id="photoTitle"></h3><p id="photoText"></p></div>
     <div class="row" id="photoBtns"></div>
   </div>
 </div>
 
 <div class="photo" id="photoBox" hidden>
   <div class="photo-bar">
-    <p id="photoMsg"></p>
+    <div><h2 id="photoStepTitle"></h2><p id="photoMsg"></p></div>
     <div class="row">
       <button type="button" class="btn small" id="photoZoom">확대 ×2</button>
       <button type="button" class="btn small" id="photoFlip" hidden>출발·도착 바꾸기</button>
-      <button type="button" class="btn small primary" id="photoNext" hidden>위치 맞추기</button>
+      <button type="button" class="btn small primary" id="photoNext" hidden>다음: 지점 이름 넣기</button>
+      <button type="button" class="btn small" id="photoSkip">선 없이 이름만 넣기</button>
       <button type="button" class="btn small" id="photoQuit">그만두기</button>
     </div>
   </div>
@@ -272,6 +293,24 @@ footer a { color: inherit; }
     <h1>산길<span>잇기</span></h1>
     <p class="lede">등산로·트레일러닝 코스를 만듭니다. 출발할 주차장이나 역을 찾고, 지도에 점을 차례로 찍으면 등산로를 따라 이어 줍니다. 다 되면 GPX·TCX로 저장해 시계·앱에 넣으세요.</p>
   </header>
+
+  <section id="photoPanel" hidden>
+    <h2 id="ppTitle"></h2>
+    <p class="hintline" id="ppText"></p>
+    <canvas id="ppMini" aria-label="사진 전체 — 누르면 지금 지점의 자리를 옮깁니다"></canvas>
+    <canvas id="ppZoom" width="648" height="300" aria-label="지금 지점 둘레 확대"></canvas>
+    <ol class="slots" id="ppSlots"></ol>
+    <form class="search" id="ppSearch">
+      <input type="text" id="ppQ" placeholder="사진에서 읽은 이름 (예: 사패산)" autocomplete="off">
+      <button class="btn" type="submit">찾기</button>
+    </form>
+    <ul class="results" id="ppResults"></ul>
+    <div class="actions">
+      <button class="btn primary grow" type="button" id="ppRoute" disabled>경로 잇기</button>
+      <button class="btn" type="button" id="ppAdd">＋ 지점</button>
+      <button class="btn" type="button" id="ppQuit">그만두기</button>
+    </div>
+  </section>
 
   <section>
     <p class="label">장소 찾기</p>
@@ -465,7 +504,11 @@ async function makeKakao(node, c) {
       terrain = on;
       on ? map.addOverlayMapTypeId(K.MapTypeId.TERRAIN) : map.removeOverlayMapTypeId(K.MapTypeId.TERRAIN);
     },
-    async search(q) { return (await ask(cb => places.keywordSearch(q, cb, { location: map.getCenter() }))).map(toPlace); },
+    // near({lat,lng,r}): 그 둘레 r 미터 안에서만(사진 지점 이름 찾기)
+    async search(q, near) {
+      const o = near ? { location: LL(near.lat, near.lng), radius: Math.min(20000, near.r) } : { location: map.getCenter() };
+      return (await ask(cb => places.keywordSearch(q, cb, o))).map(toPlace);
+    },
     async nearby(kind) { return (await ask(cb => places.categorySearch(KINDS[kind].kakao, cb, { useMapBounds: true }))).map(toPlace); },
   };
 }
@@ -556,8 +599,9 @@ async function makeLeaflet(node, c) {
       sat.bringToBack(); topo.bringToBack();
     },
     setTerrain() {},
-    async search(q) {
-      const url = `https://nominatim.openstreetmap.org/search?format=json&limit=8&countrycodes=kr&accept-language=ko&q=${encodeURIComponent(q)}`;
+    async search(q, near) {
+      const d = near ? near.r / 111000 : 0, box = near ? `&viewbox=${near.lng - d},${near.lat + d},${near.lng + d},${near.lat - d}&bounded=1` : "";
+      const url = `https://nominatim.openstreetmap.org/search?format=json&limit=8&countrycodes=kr&accept-language=ko&q=${encodeURIComponent(q)}${box}`;
       const items = await (await fetch(url)).json();
       return items.map(it => {
         const [head, ...rest] = it.display_name.split(", ");
@@ -923,6 +967,16 @@ function showAlternatives(k) {
   // 지금 길을 다른 길 선 위로 다시 그린다(겹치는 부분은 분홍으로 보이게)
   s.line.remove();
   drawSegment(s);
+  // 사진 코스의 4단계: 구간마다 차례로 고르고 넘어간다
+  const review = !!ph && ph.step === "review";
+  $("altNav").hidden = $("altStep").hidden = !review;
+  $("altClose").hidden = review;
+  $("altCard").querySelector("h3").textContent = review ? `4단계 · 구간 ${k + 1}/${segments.length} 길 고르기` : "이 구간의 길 고르기";
+  if (review) {
+    $("altStep").textContent = (s.label || "") + (s.alts.length < 2 ? " — 이 구간에는 고를 만한 다른 길이 없습니다." : "");
+    $("altPrev").disabled = k === 0;
+    $("altNext").textContent = k === segments.length - 1 ? "이 길로 · 다 골랐습니다 ✓" : "이 길로 · 다음 구간 ▶";
+  }
   $("altCard").hidden = false;
 }
 function closeAlternatives() {
@@ -966,7 +1020,7 @@ function renderSegs() {
   segments.forEach((s, k) => {
     const r = t.insertRow();
     r.insertCell().textContent = k + 1;
-    r.insertCell().textContent = s.mode === "line" ? "직선" : s.mode === "file" ? "불러온 경로" : mixText(s.mix) || "등산로";
+    r.insertCell().textContent = (s.label ? `${s.label} · ` : "") + (s.mode === "line" ? "직선" : s.mode === "file" ? "불러온 경로" : mixText(s.mix) || "등산로");
     const km = r.insertCell();
     km.className = "num";
     km.textContent = `${(summarize(s.coords).dist / 1000).toFixed(2)}km`;
@@ -1217,7 +1271,7 @@ function showCard(pl) {
   $("card").hidden = false;
 }
 function goLabel() {
-  if (ph && ph.step === "map") return `이곳을 ${ph.pairs.length + 1}번 곳으로`;
+  if (ph && ph.step === "names") return "이곳을 지금 지점으로";
   return points.length ? "여기까지 잇기" : "여기서 출발";
 }
 function hideCard() {
@@ -1279,13 +1333,14 @@ let idleTimer = null;
 function onIdle() { clearTimeout(idleTimer); idleTimer = setTimeout(refreshNearby, 500); }
 
 // ── 사진으로 그리기 ───────────────────────────────────
-// 코스가 그려진 지도 사진 → ①코스선 색을 눌러 선을 뽑고 → ②사진과 지도에서 같은 곳을 2~3번 짝지어 위치를 맞추고
-// → ③선을 LEG_M 마다 점으로 찍은 것처럼 등산로에 붙여 잇는다. 사진은 브라우저 밖으로 나가지 않는다.
+// 코스가 그려진 지도 사진 → ①코스선 색을 눌러 선을 뽑고 → ②사진을 보며 출발·중요 지점·도착의 이름을 쳐서 고르고
+// → ③그 장소들을 차례로 등산로로 이은 뒤 → ④구간마다 다른 길을 보여 주고 골라 저장한다. 사진은 브라우저 밖으로 나가지 않는다.
+// (사진 선의 위치를 지도에 맞춰 붙이던 첫 판은 사진 지도와 우리 지도가 달라 수백 m씩 어긋났다 — 이름은 지도와 상관없이 같은 곳을 가리킨다)
 const PHOTO_MAX = 1600;     // 사진의 긴 변을 이만큼으로 줄여 다룬다
-const LEG_M = 1000;         // 사진 선을 이만큼마다 끊어 구간 하나로 잇는다(5km 미만 코스는 절반)
 const LEGS_PER_ASK = 8;     // 경로 서버에 한 번에 넘기는 구간 수
-const PAIR_COLOR = "#f97316";
-let ph = null;              // 사진 작업 상태 — step: pick·found·photo·map·check·snap·done
+const VIA_KM = 6;           // 중요 지점은 코스 길이로 이만큼마다 하나(1~8곳)
+const SLOT_COLOR = "#f97316";
+let ph = null;              // 사진 작업 상태 — step: pick·found(사진 창) → names(패널) → route → review → done
 
 function rgb2hsv(r, g, b) {
   r /= 255; g /= 255; b /= 255;
@@ -1473,61 +1528,16 @@ function simplify(pts, eps) {
   }
   return pts.filter((_, q) => keep[q]);
 }
-// 짝지은 곳들로 사진 화소 → 위경도 변환을 푼다. 둘이면 닮음(이동·회전·같은 비율), 셋부터는 1차 변환(가로세로 비율이 달라도 맞춘다).
-// 받은 지도 캡처가 한쪽으로 늘어나 있었다(불수사도북 사진: 닮음 오차 609m → 1차 변환 159m, 2026-11-02 실측).
-function fitPhoto(pairs) {
-  const o = pairs[0].ll, kx = 111320 * Math.cos(o[0] * Math.PI / 180), ky = 110540;
-  const P = pairs.map(q => ({ u: q.uv[0], v: q.uv[1], x: (q.ll[1] - o[1]) * kx, y: (q.ll[0] - o[0]) * ky }));
-  const n = P.length;
-  let f = null;
-  if (n >= 3) {
-    const A = [[0, 0, 0], [0, 0, 0], [0, 0, 0]], bx = [0, 0, 0], by = [0, 0, 0];
-    for (const p of P) {
-      const r = [1, p.u, p.v];
-      for (let i = 0; i < 3; i++) { bx[i] += r[i] * p.x; by[i] += r[i] * p.y; for (let j = 0; j < 3; j++) A[i][j] += r[i] * r[j]; }
-    }
-    const cx = solve3(A, bx), cy = solve3(A, by);
-    if (cx && cy) f = (u, v) => [cx[0] + cx[1] * u + cx[2] * v, cy[0] + cy[1] * u + cy[2] * v];
-  }
-  if (!f) {   // 둘이거나, 셋이 한 줄에 놓여 1차 변환이 안 풀릴 때
-    const [p, q] = [P[0], P[n - 1]];
-    const a = q.u - p.u, b = -(q.v - p.v), c = q.x - p.x, d = q.y - p.y, den = a * a + b * b || 1;   // 사진은 아래로, 지도는 위로 커진다
-    const ar = (c * a + d * b) / den, ai = (d * a - c * b) / den;
-    f = (u, v) => { const du = u - p.u, dv = -(v - p.v); return [ar * du - ai * dv + p.x, ar * dv + ai * du + p.y]; };
-  }
-  const res = P.map(p => { const [x, y] = f(p.u, p.v); return [p.x - x, p.y - y]; });
-  const rms = Math.sqrt(res.reduce((s, r) => s + r[0] ** 2 + r[1] ** 2, 0) / n);
-  if (n >= 4) {
-    // 맞춘 곳마다 남은 어긋남을 둘레에 거리 제곱에 반비례해 나눠 준다 — 맞춘 곳은 정확히 맞고, 점선이 어긋난 자리에 한 곳 더 맞추면 그 둘레가 고쳐진다
-    const g = f;
-    f = (u, v) => {
-      const [x, y] = g(u, v);
-      let sw = 0, sx = 0, sy = 0;
-      for (let k = 0; k < n; k++) {
-        const d2 = (u - P[k].u) ** 2 + (v - P[k].v) ** 2;
-        if (d2 < 1e-6) return [x + res[k][0], y + res[k][1]];
-        sw += 1 / d2; sx += res[k][0] / d2; sy += res[k][1] / d2;
-      }
-      return [x + sx / sw, y + sy / sw];
-    };
-  }
-  return { toLL: (u, v) => { const [x, y] = f(u, v); return [o[0] + y / ky, o[1] + x / kx]; }, err: n >= 4 ? rms : null };
-}
-function solve3(A, b) {
-  const det = (m) => m[0][0] * (m[1][1] * m[2][2] - m[1][2] * m[2][1]) - m[0][1] * (m[1][0] * m[2][2] - m[1][2] * m[2][0]) + m[0][2] * (m[1][0] * m[2][1] - m[1][1] * m[2][0]);
-  const D = det(A);
-  if (Math.abs(D) < 1e-9) return null;
-  return [0, 1, 2].map(k => det(A.map((row, r) => row.map((v, c) => c === k ? b[r] : v))) / D);
-}
 // 여러 경유점을 지나는 길 하나를 경유점마다 구간으로 자르고, 길 종류도 구간별로 나눈다
 function splitLegs(r, vias) {
   const c = r.coords, cum = [0];
   for (let i = 1; i < c.length; i++) cum.push(cum[i - 1] + haversine(c[i - 1], c[i]));
   const cut = [0];
   for (let j = 1; j < vias.length - 1; j++) {
-    const from = cut[cut.length - 1];
+    // 같은 자리를 두 번 지나는 코스(되돌아오기)에서 앞질러 자르지 않게, 앞 경유점에서 이만큼 안에서만 찾는다
+    const from = cut[cut.length - 1], reach = 3 * haversine(vias[j - 1], vias[j]) + 1500;
     let best = Math.min(from + 1, c.length - 1), bd = Infinity;
-    for (let i = from + 1; i < c.length - 1 && cum[i] - cum[from] < 3 * LEG_M + 500; i++) {
+    for (let i = from + 1; i < c.length - 1 && cum[i] - cum[from] < reach; i++) {
       const d = haversine(c[i], vias[j]);
       if (d < bd) { bd = d; best = i; }
     }
@@ -1549,6 +1559,16 @@ function splitLegs(r, vias) {
   }
   return cut.slice(1).map((e, k) => ({ coords: c.slice(cut[k], e + 1), mode: "trail", mix: mixes[k] }));
 }
+// 사진 선 위, 전체 길이의 f(0~1) 되는 자리
+function pointAlong(path, f) {
+  const cum = [0];
+  for (let i = 1; i < path.length; i++) cum.push(cum[i - 1] + Math.hypot(path[i][0] - path[i - 1][0], path[i][1] - path[i - 1][1]));
+  const t = cum[cum.length - 1] * f;
+  let i = 1;
+  while (i < path.length - 1 && cum[i] < t) i++;
+  const g = Math.min(1, Math.max(0, (t - cum[i - 1]) / ((cum[i] - cum[i - 1]) || 1)));
+  return [path[i - 1][0] + (path[i][0] - path[i - 1][0]) * g, path[i - 1][1] + (path[i][1] - path[i - 1][1]) * g];
+}
 
 async function openPhoto(file) {
   if (busy) return;
@@ -1564,7 +1584,10 @@ async function openPhoto(file) {
   cv.width = W; cv.height = H;
   const x = cv.getContext("2d", { willReadFrequently: true });
   x.drawImage(img, 0, 0, W, H);
-  ph = { name: file.name.replace(/\.[^.]+$/, ""), W, H, img: x.getImageData(0, 0, W, H), step: "pick", zoom: 1, path: null, simple: null, pairs: [], marks: [], preview: null, uv: null, T: null };
+  const base = document.createElement("canvas");
+  base.width = W; base.height = H;
+  base.getContext("2d").drawImage(img, 0, 0, W, H);
+  ph = { name: file.name.replace(/\.[^.]+$/, ""), W, H, img: x.getImageData(0, 0, W, H), base, step: "pick", zoom: 1, path: null, simple: null, slots: [], active: 0, vias: false, k: 0 };
   $("photoBox").hidden = false;
   photoZoom(1);
   photoStep("pick");
@@ -1575,208 +1598,339 @@ function photoZoom(z) {
   $("photoCv").style.width = `${Math.round(fit * z)}px`;
   $("photoZoom").textContent = z >= 4 ? "맞춰 보기" : `확대 ×${z * 2}`;
 }
-function drawPhoto() {
-  const cv = $("photoCv"), x = cv.getContext("2d"), lw = Math.max(2, ph.W / 320);
-  x.putImageData(ph.img, 0, 0);
-  if (ph.path) {
-    x.lineJoin = x.lineCap = "round";
-    for (const [color, w] of [["rgba(0,0,0,.75)", lw * 2.2], ["#00e5ff", lw]]) {
-      x.strokeStyle = color; x.lineWidth = w; x.beginPath();
-      ph.simple.forEach((p, i) => i ? x.lineTo(p[0], p[1]) : x.moveTo(p[0], p[1]));
-      x.stroke();
-    }
-    const dot = (p, color, text) => {
-      x.fillStyle = color; x.strokeStyle = "#fff"; x.lineWidth = lw; x.beginPath(); x.arc(p[0], p[1], lw * 3.5, 0, 7); x.fill(); x.stroke();
-      x.font = `600 ${Math.round(lw * 6)}px sans-serif`; x.lineWidth = lw * 1.5; x.strokeStyle = "#000"; x.strokeText(text, p[0] + lw * 5, p[1] - lw * 3); x.fillStyle = "#fff"; x.fillText(text, p[0] + lw * 5, p[1] - lw * 3);
-    };
-    dot(ph.simple[0], "#16a34a", "출발");
-    dot(ph.simple[ph.simple.length - 1], "#dc2626", "도착");
+// 사진 위에 코스선(하늘색)과 출발·도착을 그린다 — 사진 창과 패널이 함께 쓴다
+function drawCourse(x, scale) {
+  const lw = Math.max(2, ph.W / 320) * scale;
+  x.lineJoin = x.lineCap = "round";
+  for (const [color, w] of [["rgba(0,0,0,.75)", lw * 2.2], ["#00e5ff", lw]]) {
+    x.strokeStyle = color; x.lineWidth = w; x.beginPath();
+    ph.simple.forEach((p, i) => i ? x.lineTo(p[0] * scale, p[1] * scale) : x.moveTo(p[0] * scale, p[1] * scale));
+    x.stroke();
   }
-  const marks = ph.pairs.map(q => q.uv).concat(ph.uv ? [ph.uv] : []);
-  marks.forEach((p, i) => {
-    x.fillStyle = PAIR_COLOR; x.strokeStyle = "#fff"; x.lineWidth = lw; x.beginPath(); x.arc(p[0], p[1], lw * 4.5, 0, 7); x.fill(); x.stroke();
-    x.fillStyle = "#fff"; x.font = `700 ${Math.round(lw * 5.5)}px sans-serif`; x.textAlign = "center"; x.textBaseline = "middle";
-    x.fillText(String(i + 1), p[0], p[1] + 0.5); x.textAlign = "start"; x.textBaseline = "alphabetic";
-  });
+  return lw;
 }
-const PHOTO_MSG = {
-  pick: "사진에서 코스선 위를 한 번 누르세요. 그 색의 선을 따라 코스를 찾습니다. 선이 가늘면 「확대」 뒤 누르세요.",
-  found: "코스선을 찾았습니다(하늘색 선, 초록 ● 출발 → 빨강 ● 도착). 방향이 반대면 「출발·도착 바꾸기」, 다른 선이 잡혔으면 코스선을 다시 누르세요.",
-};
+function drawPhoto() {
+  const x = $("photoCv").getContext("2d");
+  x.putImageData(ph.img, 0, 0);
+  if (!ph.path) return;
+  const lw = drawCourse(x, 1);
+  const dot = (p, color, text) => {
+    x.fillStyle = color; x.strokeStyle = "#fff"; x.lineWidth = lw; x.beginPath(); x.arc(p[0], p[1], lw * 3.5, 0, 7); x.fill(); x.stroke();
+    x.font = `600 ${Math.round(lw * 6)}px sans-serif`; x.lineWidth = lw * 1.5; x.strokeStyle = "#000"; x.strokeText(text, p[0] + lw * 5, p[1] - lw * 3); x.fillStyle = "#fff"; x.fillText(text, p[0] + lw * 5, p[1] - lw * 3);
+  };
+  dot(ph.simple[0], "#16a34a", "출발");
+  dot(ph.simple[ph.simple.length - 1], "#dc2626", "도착");
+}
+// 사진 창(1단계) 맨 위 안내 — 지금 몇 단계인지와 누른 다음 무슨 일이 일어나는지를 함께 말한다
 function photoStep(step, msg) {
   ph.step = step;
-  if (step === "pick" || step === "found" || step === "photo") {
-    $("photoBox").hidden = false;
-    $("photoCard").hidden = true;
-    $("photoMsg").textContent = msg || (step === "photo"
-      ? `지도와 맞출 곳(${ph.pairs.length + 1})을 사진에서 누르세요 — 봉우리·역·갈림길처럼 지도에서도 찾기 쉬운 곳${ph.pairs.length ? ", 앞의 곳과 멀리" : ""}.`
-      : PHOTO_MSG[step]);
-    $("photoFlip").hidden = $("photoNext").hidden = step !== "found";
-    drawPhoto();
-  } else {
-    $("photoBox").hidden = true;
-  }
+  $("photoBox").hidden = false;
+  $("photoCard").hidden = true;
+  $("photoStepTitle").textContent = step === "found" ? "1단계 · 코스선 확인" : "1단계 · 코스선 고르기";
+  $("photoMsg").textContent = msg || (step === "found"
+    ? "하늘색으로 덧그린 선(초록 ● 출발 → 빨강 ● 도착)이 코스와 맞으면 「다음: 지점 이름 넣기」를 누르세요. 방향이 반대면 「출발·도착 바꾸기」, 다른 선이 잡혔으면 코스선을 다시 누르세요."
+    : "사진에서 코스선(빨간 선 같은 코스 표시) 위를 한 번 누르세요. 그 색의 선을 따라 코스를 찾습니다. 선이 가늘면 「확대」 뒤 누르세요.");
+  $("photoFlip").hidden = $("photoNext").hidden = step !== "found";
+  $("photoSkip").hidden = step === "found";
+  drawPhoto();
 }
 function photoTap(ev) {
-  if (!ph) return;
+  if (!ph || (ph.step !== "pick" && ph.step !== "found")) return;
   const cv = $("photoCv"), r = cv.getBoundingClientRect();
   const u = Math.round((ev.clientX - r.left) / r.width * ph.W), v = Math.round((ev.clientY - r.top) / r.height * ph.H);
-  if (ph.step === "pick" || ph.step === "found") {
-    const target = pickLineColor(ph.img, u, v);
-    $("photoMsg").textContent = "코스선을 찾는 중…";
-    setTimeout(() => {
-      const path = target && tracePhotoLine(ph.img, target);
-      if (!path) { ph.path = null; photoStep("pick", "그 색으로 이어진 선을 찾지 못했습니다. 코스선 한가운데를 다시 눌러 주세요(「확대」하면 쉽습니다)."); return; }
-      ph.path = path;
-      ph.simple = simplify(path, 1.2);
-      photoStep("found");
-    }, 30);
-  } else if (ph.step === "photo") {
-    ph.uv = [u, v];
-    drawPhoto();
-    photoStep("map");
-    photoCard(`지도에서 같은 곳(${ph.pairs.length + 1})을 누르세요`, "장소 찾기로 이름을 찾아가도 됩니다. 크게 확대해서 누를수록 정확합니다.",
-      [["사진 다시 보기", () => photoStep("photo")], ["그만두기", closePhoto]], true);
-  }
+  const target = pickLineColor(ph.img, u, v);
+  $("photoMsg").textContent = "코스선을 찾는 중…";
+  setTimeout(() => {
+    const path = target && tracePhotoLine(ph.img, target);
+    if (!path) { ph.path = null; photoStep("pick", "그 색으로 이어진 선을 찾지 못했습니다. 코스선 한가운데를 다시 눌러 주세요(「확대」하면 쉽습니다). 선을 못 찾아도 「선 없이 이름만 넣기」로 이어 갈 수 있습니다."); return; }
+    ph.path = path;
+    ph.simple = simplify(path, 1.2);
+    photoStep("found");
+  }, 30);
 }
-function photoCard(title, text, btns, loupe = false) {
+function photoCard(title, text, btns) {
   $("photoTitle").textContent = title;
   $("photoText").textContent = text;
   const box = $("photoBtns");
   box.innerHTML = "";
-  btns.forEach(([label, fn, primary], i) => {
+  btns.forEach(([label, fn, primary]) => {
     const b = document.createElement("button");
     b.type = "button"; b.className = `btn small${primary ? " primary" : ""}`; b.textContent = label;
     b.addEventListener("click", fn);
     box.appendChild(b);
   });
-  const lp = $("photoLoupe");
-  lp.hidden = !loupe;
-  if (loupe) {
-    // 사진에서 누른 자리 둘레를 확대해 보여 준다 — 지도에서 같은 곳을 찾을 때 기억을 돕는다
-    const x = lp.getContext("2d"), half = Math.max(24, Math.round(Math.max(ph.W, ph.H) * 0.04));
-    const cv = document.createElement("canvas"); cv.width = ph.W; cv.height = ph.H; cv.getContext("2d").putImageData(ph.img, 0, 0);
-    x.fillStyle = "#151a16"; x.fillRect(0, 0, 96, 96);
-    x.drawImage(cv, ph.uv[0] - half, ph.uv[1] - half, half * 2, half * 2, 0, 0, 96, 96);
-    x.strokeStyle = PAIR_COLOR; x.lineWidth = 2; x.beginPath(); x.arc(48, 48, 7, 0, 7); x.moveTo(48, 30); x.lineTo(48, 41); x.moveTo(48, 55); x.lineTo(48, 66); x.moveTo(30, 48); x.lineTo(41, 48); x.moveTo(55, 48); x.lineTo(66, 48); x.stroke();
-  }
   $("photoCard").hidden = false;
 }
-function photoMapPoint(lat, lng) {
-  const n = ph.pairs.length + 1, pin = el("pin", String(n));
-  pin.style.background = PAIR_COLOR;
-  ph.marks.push(M.marker(lat, lng, pin, { z: 7 }));
-  ph.pairs.push({ uv: ph.uv, ll: [lat, lng] });
-  ph.uv = null;
-  if (ph.pairs.length < 2) { photoStep("photo"); return; }
-  photoCheck();
+
+// ── 2단계: 지점 이름 넣기(패널) ──
+function startNames() {
+  $("photoBox").hidden = true;
+  ph.step = "names";
+  const f = (t) => ph.simple ? pointAlong(ph.simple, t) : null;
+  ph.slots = [{ role: "start", name: "", ll: null, f: 0, uv: f(0) }, { role: "end", name: "", ll: null, f: 1, uv: f(1) }];
+  ph.active = 0;
+  $("photoPanel").hidden = false;
+  renderPanel();
+  $("photoPanel").scrollIntoView({ behavior: "smooth", block: "start" });
 }
-function photoCheck() {
-  ph.T = fitPhoto(ph.pairs);
-  const ll = ph.simple.map(p => ph.T.toLL(p[0], p[1]));
-  if (ph.preview) ph.preview.remove();
-  ph.preview = M.line(ll, { color: "#2563eb", weight: 3, opacity: 0.9, dashed: true });
-  let km = 0;
-  for (let i = 1; i < ll.length; i++) km += haversine(ll[i - 1], ll[i]) / 1000;
-  photoStep("check");
-  const err = ph.T.err;
-  photoCard("사진 코스를 지도에 올렸습니다", `파란 점선이 사진 코스(${km.toFixed(1)}km)입니다. 길과 맞으면 등산로에 붙여 잇습니다${points.length ? " — 지금 코스는 지워집니다" : ""}.`
-    + (ph.pairs.length === 2 ? " 사진이 한쪽으로 늘어나 있으면 두 곳으로는 어긋납니다 — 서로 먼 곳을 한두 곳 더 맞추세요."
-      : err == null ? " 한 곳 더 맞추면 맞춘 곳끼리 얼마나 어긋나는지 잴 수 있습니다."
-      : ` 맞춘 곳 사이 어긋남 평균 ${Math.round(err)}m${err > 300 ? " — 잘못 찍은 곳이 있으면 「처음부터 맞추기」" : ""}.`),
-    [["등산로에 붙여 잇기", snapPhoto, true], ["한 곳 더 맞추기", () => photoStep("photo")], ["처음부터 맞추기", photoRealign], ["그만두기", closePhoto]]);
-  M.fit(ll, $("photoCard").offsetHeight);
+function slotTag(i) {
+  const s = ph.slots[i];
+  if (s.role !== "via") return s.role === "start" ? "출발" : "도착";
+  return "①②③④⑤⑥⑦⑧⑨⑩"[ph.slots.slice(0, i).filter(x => x.role === "via").length] || "•";
 }
-function photoRealign() {
-  ph.marks.forEach(m => m.remove());
-  ph.marks = []; ph.pairs = []; ph.uv = null; ph.T = null;
-  if (ph.preview) { ph.preview.remove(); ph.preview = null; }
-  photoStep("photo");
-}
-async function snapPhoto() {
-  const ll = ph.simple.map(p => ph.T.toLL(p[0], p[1]));
-  const cum = [0];
-  for (let i = 1; i < ll.length; i++) cum.push(cum[i - 1] + haversine(ll[i - 1], ll[i]));
-  const L = cum[cum.length - 1], n = Math.max(1, Math.round(L / (L < 5000 ? LEG_M / 2 : LEG_M)));
-  // 사진 선을 같은 간격의 점으로 찍는다
-  const vias = [];
-  for (let k = 0, j = 0; k <= n; k++) {
-    const t = L * k / n;
-    while (j < ll.length - 2 && cum[j + 1] < t) j++;
-    const f = Math.min(1, (t - cum[j]) / ((cum[j + 1] - cum[j]) || 1));
-    vias.push([ll[j][0] + (ll[j + 1][0] - ll[j][0]) * f, ll[j][1] + (ll[j + 1][1] - ll[j][1]) * f]);
+// 출발·도착이 정해지면 사진 선 길이를 실제 거리로 어림해 중요 지점 수를 정한다(VIA_KM 마다 하나)
+function addVias() {
+  ph.vias = true;
+  const s = ph.slots[0], e = ph.slots[ph.slots.length - 1];
+  let n = 3;
+  if (ph.simple && s.uv && e.uv) {
+    const px = Math.hypot(e.uv[0] - s.uv[0], e.uv[1] - s.uv[1]), m = haversine(s.ll, e.ll);
+    let len = 0;
+    for (let i = 1; i < ph.simple.length; i++) len += Math.hypot(ph.simple[i][0] - ph.simple[i - 1][0], ph.simple[i][1] - ph.simple[i - 1][1]);
+    if (px > 30 && m > 500) { ph.km = len * m / px / 1000; n = Math.max(1, Math.min(8, Math.round(ph.km / VIA_KM) - 1)); }
   }
-  ph.step = "snap";
-  busy = true; refresh();
-  const asks = Math.ceil(n / LEGS_PER_ASK), legs = [], legLen = L / n;
+  const vias = [];
+  for (let k = 1; k <= n; k++) vias.push({ role: "via", name: "", ll: null, f: k / (n + 1), uv: ph.simple ? pointAlong(ph.simple, k / (n + 1)) : null });
+  ph.slots.splice(1, 0, ...vias);
+  ph.active = 1;
+}
+function assignSlot(name, lat, lng) {
+  if (!ph || ph.step !== "names") return;
+  const s = ph.slots[ph.active];
+  s.name = name; s.ll = [lat, lng];
+  if (s.marker) s.marker.remove();
+  s.pin = el("pin", slotTag(ph.active));
+  s.pin.style.background = SLOT_COLOR;
+  s.pin.title = name;
+  s.marker = M.marker(lat, lng, s.pin, { z: 7 });
+  $("ppQ").value = "";
+  $("ppResults").innerHTML = "";
+  if (!ph.vias && ph.slots[0].ll && ph.slots[ph.slots.length - 1].ll) addVias();
+  else { const next = ph.slots.findIndex(x => !x.ll); if (next >= 0) ph.active = next; }
+  renderPanel();
+  const done = ph.slots.filter(x => x.ll).map(x => x.ll);
+  done.length >= 2 ? M.fit(done) : M.center(lat, lng, false);
+}
+function removeSlot(i) {
+  const s = ph.slots[i];
+  if (s.role !== "via") return;
+  if (s.marker) s.marker.remove();
+  ph.slots.splice(i, 1);
+  ph.active = Math.min(ph.active >= i ? Math.max(0, ph.active - 1) : ph.active, ph.slots.length - 1);
+  renderPanel();
+}
+// 지금 지점 뒤에 지점 하나를 더한다(사진 선에서는 앞뒤 지점의 가운데)
+function addSlot() {
+  if (!ph.vias) return;
+  const at = Math.min(Math.max(1, ph.active + 1), ph.slots.length - 1);
+  const a = ph.slots[at - 1], b = ph.slots[at], f = a.f != null && b.f != null ? (a.f + b.f) / 2 : null;
+  ph.slots.splice(at, 0, { role: "via", name: "", ll: null, f, uv: ph.simple && f != null ? pointAlong(ph.simple, f) : null });
+  ph.active = at;
+  renderPanel();
+}
+// 이름 찾기 기준 자리: 이름이 정해진 두 곳으로 사진 → 지도를 어림해 지금 지점의 자리를 짐작한다
+function guessLL(slot) {
+  const known = ph.slots.filter(x => x.ll && x.uv);
+  if (slot.uv && known.length >= 2) {
+    let p = known[0], q = known[1], best = -1;
+    for (const a of known) for (const b of known) { const d = Math.hypot(a.uv[0] - b.uv[0], a.uv[1] - b.uv[1]); if (d > best) { best = d; p = a; q = b; } }
+    if (best > 20) {
+      const kx = 111320 * Math.cos(p.ll[0] * Math.PI / 180), ky = 110540;
+      const wa = q.uv[0] - p.uv[0], wb = -(q.uv[1] - p.uv[1]), za = (q.ll[1] - p.ll[1]) * kx, zb = (q.ll[0] - p.ll[0]) * ky, den = wa * wa + wb * wb;
+      const ar = (za * wa + zb * wb) / den, ai = (zb * wa - za * wb) / den;   // 사진은 아래로, 지도는 위로 커진다
+      const du = slot.uv[0] - p.uv[0], dv = -(slot.uv[1] - p.uv[1]);
+      return { lat: p.ll[0] + (ar * dv + ai * du) / ky, lng: p.ll[1] + (ar * du - ai * dv) / kx, r: 8000 };
+    }
+  }
+  const near = ph.slots.find(x => x.ll);
+  return near ? { lat: near.ll[0], lng: near.ll[1], r: 20000 } : null;
+}
+let ppTimer = null;
+async function slotSearch() {
+  const q = $("ppQ").value.trim(), list = $("ppResults");
+  if (q.length < 2 || !ph || ph.step !== "names") { list.innerHTML = ""; return; }
+  const near = guessLL(ph.slots[ph.active]);
+  let items = [];
   try {
-    for (let s = 0, q = 1; s < n; s += LEGS_PER_ASK, q++) {
-      photoCard("등산로에 붙이는 중…", `${q} / ${asks} — 사진 선을 ${n}개 구간으로 나눠 잇습니다.`, []);
-      const part = vias.slice(s, Math.min(n, s + LEGS_PER_ASK) + 1);
+    items = await M.search(q, near);
+    if (!items.length && near) items = await M.search(q);   // 짐작한 둘레에 없으면 전국에서
+  } catch (e) { list.innerHTML = `<li class="empty-note">검색 서버에 닿지 못했습니다.</li>`; return; }
+  if ($("ppQ").value.trim() !== q) return;   // 그사이 더 쳤으면 버린다
+  list.innerHTML = "";
+  if (!items.length) { list.innerHTML = `<li class="empty-note">「${esc(q)}」을(를) 찾지 못했습니다. 다른 이름이나, 지도에서 그 자리를 눌러 보세요.</li>`; return; }
+  for (const it of items.slice(0, 7)) {
+    const li = document.createElement("li"), b = document.createElement("button");
+    const far = near ? haversine([near.lat, near.lng], [it.lat, it.lng]) : null;
+    b.type = "button";
+    b.innerHTML = `${esc(it.name)}<small>${esc([it.cat, it.addr, far != null && `짐작한 자리에서 ${(far / 1000).toFixed(1)}km`].filter(Boolean).join(" · "))}</small>`;
+    b.addEventListener("click", () => assignSlot(it.name, it.lat, it.lng));
+    li.appendChild(b); list.appendChild(li);
+  }
+}
+function renderPanel() {
+  const S = ph.slots, i = ph.active, s = S[i], tag = slotTag(i);
+  const filled = S.filter(x => x.ll).length, ready = S[0].ll && S[S.length - 1].ll;
+  let title, text;
+  if (!S[0].ll) {
+    title = "2단계 · 출발지 이름";
+    text = "사진에서 출발(초록 ●) 근처에 적힌 이름 — 역·주차장·입구·마을 — 을 아래 칸에 몇 글자 쳐서 목록에서 고르세요. 아래 확대 그림이 그 둘레입니다.";
+  } else if (!S[S.length - 1].ll) {
+    title = "2단계 · 도착지 이름";
+    text = "이번에는 도착(빨강 ●) 근처의 이름입니다. 도착을 넣으면 코스 길이를 어림해 중요 지점 수를 정해 드립니다.";
+  } else if (filled < S.length) {
+    title = `2단계 · 중요 지점 ${tag} 이름 (${filled}/${S.length})`;
+    text = `${ph.km ? `코스가 약 ${Math.round(ph.km)}km로 보여 ${VIA_KM}km쯤마다 지점을 하나씩 넣습니다. ` : ""}사진의 ${tag} 표시 근처에서 봉우리·고개·갈림길·역 이름을 하나 골라 쳐 주세요. 이름이 안 나오면 지도에서 그 자리를 눌러도 되고, 필요 없는 지점은 ✕로 뺍니다.`;
+  } else {
+    title = "3단계 · 경로 잇기";
+    text = `${S.length}곳을 다 넣었습니다. 「경로 잇기」를 누르면 출발 → ${S.length > 2 ? "중요 지점 → " : ""}도착을 차례로 등산로로 잇고, 구간마다 다른 길을 보여 드립니다.`;
+  }
+  $("ppTitle").textContent = title;
+  $("ppText").textContent = text;
+  $("ppQ").placeholder = `${tag} — 사진에서 읽은 이름 (예: 사패산)`;
+  $("ppRoute").disabled = !ready || busy;
+  $("ppRoute").textContent = filled < S.length && ready ? `경로 잇기 (빈 지점 ${S.length - filled}곳은 빼고)` : "경로 잇기";
+  $("ppAdd").hidden = !ph.vias;
+  const ol = $("ppSlots");
+  ol.innerHTML = "";
+  S.forEach((x, k) => {
+    if (x.pin) x.pin.textContent = slotTag(k);
+    const li = document.createElement("li");
+    li.className = k === i ? "on" : "";
+    li.innerHTML = `<span class="tag">${slotTag(k)}</span><span class="nm${x.ll ? "" : " empty"}">${esc(x.name || "— 이름을 넣어 주세요")}</span>`;
+    if (x.role === "via") {
+      const del = document.createElement("button");
+      del.type = "button"; del.className = "x"; del.textContent = "✕"; del.setAttribute("aria-label", `${slotTag(k)} 빼기`);
+      del.addEventListener("click", (ev) => { ev.stopPropagation(); removeSlot(k); });
+      li.appendChild(del);
+    }
+    li.addEventListener("click", () => { ph.active = k; renderPanel(); });
+    ol.appendChild(li);
+  });
+  drawPanelPhoto();
+}
+// 패널의 사진: 위는 전체(선·지점 번호), 아래는 지금 지점 둘레를 크게
+function drawPanelPhoto() {
+  const mini = $("ppMini"), wMini = 640, sc = wMini / ph.W;
+  mini.width = wMini; mini.height = Math.round(ph.H * sc);
+  const x = mini.getContext("2d");
+  x.drawImage(ph.base, 0, 0, mini.width, mini.height);
+  if (ph.simple) drawCourse(x, sc);
+  const r = Math.max(9, wMini / 45);
+  ph.slots.forEach((s, k) => {
+    if (!s.uv) return;
+    const px = s.uv[0] * sc, py = s.uv[1] * sc, on = k === ph.active;
+    if (on) { x.strokeStyle = "#fff"; x.lineWidth = 3; x.beginPath(); x.arc(px, py, r * 1.9, 0, 7); x.stroke(); x.strokeStyle = SLOT_COLOR; x.lineWidth = 2; x.stroke(); }
+    x.fillStyle = s.ll ? "#16a34a" : SLOT_COLOR; x.strokeStyle = "#fff"; x.lineWidth = 2;
+    x.beginPath(); x.arc(px, py, r, 0, 7); x.fill(); x.stroke();
+    x.fillStyle = "#fff"; x.font = `700 ${Math.round(r * (s.role === "via" ? 1.2 : 0.8))}px sans-serif`; x.textAlign = "center"; x.textBaseline = "middle";
+    x.fillText(slotTag(k), px, py + 1);
+  });
+  x.textAlign = "start"; x.textBaseline = "alphabetic";
+  const z = $("ppZoom"), zx = z.getContext("2d"), s = ph.slots[ph.active];
+  zx.fillStyle = "#151a16"; zx.fillRect(0, 0, z.width, z.height);
+  if (!s.uv) {
+    zx.fillStyle = "#fff"; zx.font = "26px sans-serif"; zx.textAlign = "center";
+    zx.fillText("위 사진에서 이 지점의 자리를 누르면 크게 보여 줍니다", z.width / 2, z.height / 2); zx.textAlign = "start";
+    return;
+  }
+  // 원본 화소로 가로 160px 둘레를 4배쯤 키운다(사진이 크면 그만큼 넓게)
+  const span = Math.max(120, Math.round(Math.max(ph.W, ph.H) * 0.27)), sw = span, sh = span * z.height / z.width;
+  zx.imageSmoothingQuality = "high";
+  zx.drawImage(ph.base, s.uv[0] - sw / 2, s.uv[1] - sh / 2, sw, sh, 0, 0, z.width, z.height);
+  zx.strokeStyle = SLOT_COLOR; zx.lineWidth = 3;
+  zx.beginPath(); zx.arc(z.width / 2, z.height / 2, 22, 0, 7); zx.stroke();
+}
+function panelTap(ev) {
+  if (!ph || ph.step !== "names") return;
+  const r = $("ppMini").getBoundingClientRect();
+  ph.slots[ph.active].uv = [(ev.clientX - r.left) / r.width * ph.W, (ev.clientY - r.top) / r.height * ph.H];
+  drawPanelPhoto();
+}
+
+// ── 3단계: 이름 붙인 곳들을 차례로 잇기 ──
+async function routePlaces() {
+  const list = ph.slots.filter(s => s.ll);
+  if (list.length < 2 || busy) return;
+  ph.step = "route";
+  $("ppTitle").textContent = "3단계 · 경로 잇는 중…";
+  $("ppText").textContent = `${list.length}곳을 등산로로 잇고 있습니다.`;
+  busy = true; refresh();
+  const P = list.map(s => s.ll), legs = [];
+  try {
+    for (let s = 0; s < P.length - 1; s += LEGS_PER_ASK) {
+      const part = P.slice(s, Math.min(P.length - 1, s + LEGS_PER_ASK) + 1);
       try { legs.push(...splitLegs(await routeViaWait(part), part)); }
       catch (e) {
-        // 한꺼번에 안 되면(경유점 하나가 길에서 너무 멀면 통째로 실패한다) 구간마다 따로, 그래도 안 되면 직선
+        // 한꺼번에 안 되면 구간마다 따로, 그래도 안 되면 직선
         for (let i = 1; i < part.length; i++) {
           try { const r = await routeTrailWait(part[i - 1], part[i]); legs.push({ coords: r.coords, mode: "trail", mix: r.mix }); }
           catch (e2) { legs.push({ coords: await routeLine(part[i - 1], part[i]), mode: "line" }); }
         }
       }
     }
-    legs.forEach((g, k) => { g.a = k; g.b = k + 1; });   // 구간이 잇는 경유점 번호
-    await repairLegs(legs, vias, legLen);
   } finally { busy = false; }
   resetRoute();
   const a = legs[0].coords[0];
   points.push({ p: [a[0], a[1]], marker: M.marker(a[0], a[1], pointNode(true), { z: 4 }) });
-  const odd = [];
   legs.forEach((g, k) => {
     const e = g.coords[g.coords.length - 1];
     points.push({ p: [e[0], e[1]], marker: M.marker(e[0], e[1], pointNode(false), { z: 4 }) });
-    segments.push(drawSegment({ coords: g.coords, mode: g.mode, mix: g.mix }));
-    if (detoured(g, legLen)) odd.push(k + 1);
+    segments.push(drawSegment({ coords: g.coords, mode: g.mode, mix: g.mix, label: `${list[k].name} → ${list[k + 1].name}` }));
   });
-  if ($("courseName").value.trim() === "새 코스") $("courseName").value = ph.name;
-  const tr = track(), km = summarize(tr).dist / 1000, lines = legs.filter(g => g.mode === "line").length;
-  ph.step = "done";
-  photoCard("사진 코스를 이었습니다", `사진 선 ${(L / 1000).toFixed(1)}km → 이은 길 ${km.toFixed(1)}km · 구간 ${legs.length}개.`
-    + (km * 1000 > 1.25 * L ? " 사진 선보다 꽤 깁니다 — 위치가 어긋나 옆길로 돌아간 곳이 있을 수 있습니다. 파란 점선과 분홍 선을 견주어 보고, 어긋남이 크면 처음부터 다시 하며 코스 둘레에 고르게 4~6곳을 맞추세요." : "")
-    + (odd.length ? ` 크게 돌아간 구간: ${odd.slice(0, 8).join("·")}번 — 「구간」 목록의 「다른 길」이나 되돌리기로 고치세요.` : "")
-    + (lines ? ` 등산로를 못 찾아 직선(점선)으로 이은 구간 ${lines}개.` : ""), [["사진 선 지우기", closePhoto]]);
-  M.fit(tr, $("photoCard").offsetHeight);
-  setStatus(`사진에서 코스를 그렸습니다: ${km.toFixed(1)}km, 구간 ${legs.length}개.`);
+  if ($("courseName").value.trim() === "새 코스") $("courseName").value = `${list[0].name}–${list[list.length - 1].name}`;
   changed();
+  ph.step = "review";
+  $("ppTitle").textContent = "4단계 · 구간마다 길 고르기";
+  $("ppText").textContent = "지도 아래 상자에서 구간마다 다른 길을 견주어 고르고 「이 길로 · 다음 구간」을 누르세요. 마지막 구간까지 고르면 저장합니다.";
+  reviewSegment(0);
 }
-// 사진 선보다 크게 돌아간 구간: 사진 위 거리(경유점 간격 × 칸 수)의 2배 + 300m 넘게
-function detoured(g, legLen) { return g.mode === "trail" && summarize(g.coords).dist > 2 * legLen * (g.b - g.a) + 300; }
-// 크게 돌아간 구간은 대개 양 끝 경유점 하나가 옆길에 붙은 탓이다 — 그 점을 빼고 이웃 구간과 합쳐 다시 잇는다(최대 12번 묻는다)
-async function repairLegs(legs, vias, legLen) {
-  let tries = 0;
-  for (let k = legs.length - 1; k >= 0 && tries < 12; k--) {
-    if (!detoured(legs[k], legLen)) continue;
-    for (const i of [k, k - 1]) {   // 뒤 경유점을 빼 보고, 안 되면 앞 경유점을 빼 본다
-      const j = i + 1;
-      if (i < 0 || j >= legs.length || legs[i].mode !== "trail" || legs[j].mode !== "trail" || tries >= 12) continue;
-      tries++;
-      photoCard("구간 다듬는 중…", `사진 선보다 크게 돌아간 구간을 다시 잇습니다(${tries}).`, []);
-      try {
-        const a = legs[i].a, b = legs[j].b, r = await routeTrailWait(vias[a], vias[b]);
-        if (summarize(r.coords).dist <= 1.5 * legLen * (b - a) + 300) {
-          legs.splice(i, 2, { coords: r.coords, mode: "trail", mix: r.mix, a, b });
-          k = i + 1;
-          break;
-        }
-      } catch (e) { /* 그대로 두고 사용자가 「다른 길」로 고친다 */ }
-      await sleep(400);
+
+// ── 4단계: 구간마다 다른 길을 보여 주고 고르게 한다 ──
+async function reviewSegment(k) {
+  if (!ph || ph.step !== "review") return;
+  if (k >= segments.length) { finishReview(); return; }
+  ph.k = k = Math.max(0, k);
+  closeAlternatives();
+  if (innerWidth <= 760) $("mapWrap").scrollIntoView({ behavior: "smooth", block: "start" });   // 휴대폰: 패널에서 지도 쪽으로
+  const s = segments[k], d = summarize(s.coords);
+  if (s.mode === "trail" && d.dist >= ALT_MIN_M && !s.alts) {
+    // 경로 서버 요청이 몰리지 않게 여유가 생길 때까지 기다린다(구간마다 3번 묻는다)
+    for (let t = 0; Date.now() < coolUntil || recent(30000) + 3 > ASK_30S; t++) {
+      hint(`경로 서버가 쉬는 중입니다. 곧 ${k + 1}번 구간의 다른 길을 찾습니다…`);
+      await sleep(1000);
+      if (!ph || ph.step !== "review" || ph.k !== k) return;
     }
+    hint("");
+    await openAlternatives(k, false);
+    if (!ph || ph.step !== "review" || ph.k !== k) return;
   }
+  if (!s.alts || s.alts.length < 2) {
+    s.alts = s.alts && s.alts.length ? s.alts : [{ coords: s.coords, mix: s.mix, dist: d.dist, up: d.up }];
+    setStatus("");
+    showAlternatives(k);
+  }
+  M.fit(s.alts.flatMap(c => c.coords), $("altCard").offsetHeight);
+}
+function finishReview() {
+  ph.step = "done";
+  closeAlternatives();
+  const km = summarize(track()).dist / 1000;
+  $("ppTitle").textContent = "다 됐습니다";
+  $("ppText").textContent = `구간 ${segments.length}개 · ${km.toFixed(1)}km. GPX·TCX로 저장하세요. 다시 고칠 구간은 「구간」 목록의 「다른 길」로 바꿀 수 있습니다.`;
+  M.fit(track(), 200);
+  if (innerWidth <= 760) $("mapWrap").scrollIntoView({ behavior: "smooth", block: "start" });
+  photoCard("다 됐습니다 — 코스를 만들었습니다", `구간 ${segments.length}개 · ${km.toFixed(1)}km. 저장해서 시계·앱에 넣으세요.`,
+    [["GPX 저장", () => save("gpx"), true], ["TCX 저장", () => save("tcx")], ["사진 닫기", closePhoto]]);
 }
 function closePhoto() {
   if (!ph) return;
-  ph.marks.forEach(m => m.remove());
-  if (ph.preview) ph.preview.remove();
+  ph.slots.forEach(s => s.marker && s.marker.remove());
+  const reviewing = ph.step === "review";
   ph = null;
+  if (reviewing) closeAlternatives();
   $("photoBox").hidden = true;
   $("photoCard").hidden = true;
+  $("photoPanel").hidden = true;
 }
 
 // ── 임시 저장(새로고침해도 이어서) ───────────────────
@@ -1840,12 +1994,9 @@ async function boot() {
 
   M.onClick((lat, lng) => {
     if (!$("card").hidden) hideCard();
+    if (ph && ph.step === "names") { assignSlot("지도에서 고른 곳", lat, lng); return; }   // 이름이 안 나올 때 지도로 지점을 정한다
+    if (ph && (ph.step === "review" || ph.step === "route")) { hint("구간마다 길을 고르는 중입니다. 지도 아래 상자에서 「이 길로 · 다음 구간」을 누르세요."); return; }
     closeAlternatives();
-    if (ph && ph.step !== "done") {
-      if (ph.step === "map") photoMapPoint(lat, lng);
-      else hint("사진 코스를 맞추는 중입니다. 지도 아래 상자에서 고르세요.");
-      return;
-    }
     if (act === "wpt") placeWpt(lat, lng);
     else addPoint(lat, lng);
   });
@@ -1856,7 +2007,7 @@ async function boot() {
     const p = selPlace;
     hideCard();
     if (!p) return;
-    if (ph && ph.step === "map") photoMapPoint(p.lat, p.lng);
+    if (ph && ph.step === "names") assignSlot(p.name, p.lat, p.lng);
     else { setAct("route"); addPoint(p.lat, p.lng); }
   });
   $("cardClose").addEventListener("click", hideCard);
@@ -1887,8 +2038,17 @@ async function boot() {
   $("photoCv").addEventListener("click", photoTap);
   $("photoZoom").addEventListener("click", () => photoZoom(ph.zoom >= 4 ? 1 : ph.zoom * 2));
   $("photoFlip").addEventListener("click", () => { ph.path.reverse(); ph.simple.reverse(); drawPhoto(); });
-  $("photoNext").addEventListener("click", () => photoStep("photo"));
+  $("photoNext").addEventListener("click", startNames);
+  $("photoSkip").addEventListener("click", () => { ph.path = ph.simple = null; startNames(); });
   $("photoQuit").addEventListener("click", closePhoto);
+  $("ppSearch").addEventListener("submit", (e) => { e.preventDefault(); clearTimeout(ppTimer); slotSearch(); });
+  $("ppQ").addEventListener("input", () => { clearTimeout(ppTimer); ppTimer = setTimeout(slotSearch, 400); });   // 치는 대로 찾아 보인다
+  $("ppMini").addEventListener("click", panelTap);
+  $("ppRoute").addEventListener("click", routePlaces);
+  $("ppAdd").addEventListener("click", addSlot);
+  $("ppQuit").addEventListener("click", closePhoto);
+  $("altPrev").addEventListener("click", () => reviewSegment(ph.k - 1));
+  $("altNext").addEventListener("click", () => reviewSegment(ph.k + 1));
   $("profile").addEventListener("pointermove", onProfileMove);
   $("profile").addEventListener("pointerleave", onProfileLeave);
   document.addEventListener("keydown", (e) => {
