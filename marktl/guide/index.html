@@ -84,6 +84,17 @@ h2{font-size:22px; line-height:1.4; margin:56px 0 6px; letter-spacing:-.01em}
 .note{
   background:var(--accent-tint); border-radius:12px; padding:14px 16px; font-size:15.5px; margin:14px 0;
 }
+.share{
+  margin:0 0 16px; white-space:pre-wrap; word-break:keep-all; overflow-wrap:anywhere;
+  font-family:inherit; font-size:15px; line-height:1.7; color:var(--ink);
+  padding:14px 16px; background:var(--bg);
+  border:1px solid var(--line); border-radius:12px;
+}
+.copy{
+  display:block; width:100%; border:0; border-radius:999px; padding:13px 16px; cursor:pointer;
+  background:var(--accent); color:#fff; font:inherit; font-weight:700; font-size:16px;
+}
+@media (prefers-color-scheme: dark){ .copy{color:#1e2019} }
 footer{margin-top:64px; padding-top:20px; border-top:1px solid var(--line); color:var(--meta); font-size:14px}
 </style>
 </head>
@@ -214,6 +225,32 @@ footer{margin-top:64px; padding-top:20px; border-top:1px solid var(--line); colo
 
 <p class="sub" style="margin-top:22px">설교 리뷰 가이드만 따로 올려 두고 싶으시면, 가이드 화면을 연 상태에서 같은 순서를 한 번 더 하시면 됩니다.</p>
 
+<h2 class="serif">다른 분께 소개할 때</h2>
+<p class="sub">아래 버튼을 누르면 소개 메시지가 복사됩니다. 카카오톡 대화창에 그대로 붙여 넣으시면 됩니다.</p>
+
+<section class="card">
+<pre class="share" id="shareMsg">📖 영닥터 아카이브 사용 안내
+https://wiki.youngdoctor.kr/marktl/guide/
+
+안녕하세요, 이상협입니다.
+그동안 정리한 자료를 한곳에 모아 둔 「영닥터 아카이브」를 소개해 드립니다. 회원 가입이나 로그인 없이 바로 열립니다.
+
+✔ 설교 리뷰 가이드: 매주 카드뉴스, 큐티, 팟캐스트, 쇼츠, 함께 기도하기가 올라옵니다. 지난 설교도 날짜별로 다시 보실 수 있습니다.
+✔ 주제 노트 · 북노트: 궁금한 낱말을 검색하면 여러 설교와 책을 엮은 글이 나옵니다.
+✔ 강의 · 멘토링 · 행사 기록도 계속 올라옵니다.
+
+🤖 AI 공부도 여기서 하실 수 있습니다
+「영닥터 아틀라스」에서 이 노트들을 만드는 AI 작업실을 지도로 보여 드립니다. 층과 계단을 따라가며 AI를 실제로 어떻게 쓰는지 차례로 배우실 수 있습니다.
+
+⛰ 산길잇기
+등산로나 트레일러닝 코스를 지도에 점을 찍어 미리 만들고, GPX 파일로 저장해 시계나 등산 앱에 넣을 수 있는 도구입니다.
+
+💡 휴대폰 홈 화면에 올려 두시면 앱처럼 쓰실 수 있습니다. 카톡 안에서는 홈 화면에 추가가 안 되니, 「다른 브라우저로 열기」를 먼저 누르신 뒤 안내 페이지의 순서대로 해 주세요.
+
+편하게 둘러보시고 필요하실 때 꺼내 쓰세요 🙂</pre>
+  <button type="button" class="copy" id="copyBtn">메시지 복사하기</button>
+</section>
+
 <a class="addr" style="margin-top:28px" href="https://wiki.youngdoctor.kr/marktl/">
   <small>지금 열어 보기</small>
   <strong>wiki.youngdoctor.kr/marktl</strong>
@@ -222,5 +259,28 @@ footer{margin-top:64px; padding-top:20px; border-top:1px solid var(--line); colo
 <footer>영닥터 아카이브 · 이상협</footer>
 
 </div>
+<script>
+(function(){
+  var btn=document.getElementById('copyBtn'), msg=document.getElementById('shareMsg');
+  if(!btn||!msg) return;
+  function done(ok){
+    btn.textContent = ok ? '복사했습니다 ✓' : '길게 눌러 직접 복사해 주세요';
+    setTimeout(function(){ btn.textContent='메시지 복사하기'; }, 2500);
+  }
+  function fallback(text){
+    var ta=document.createElement('textarea');
+    ta.value=text; ta.setAttribute('readonly',''); ta.style.position='fixed'; ta.style.top='-1000px';
+    document.body.appendChild(ta); ta.select(); ta.setSelectionRange(0, text.length);
+    var ok=false; try{ ok=document.execCommand('copy'); }catch(e){}
+    document.body.removeChild(ta); done(ok);
+  }
+  btn.addEventListener('click', function(){
+    var text=msg.textContent;
+    if(navigator.clipboard && window.isSecureContext){
+      navigator.clipboard.writeText(text).then(function(){ done(true); }, function(){ fallback(text); });
+    } else { fallback(text); }
+  });
+})();
+</script>
 </body>
 </html>
