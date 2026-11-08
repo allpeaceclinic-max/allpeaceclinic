@@ -1,0 +1,354 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>부모코칭 프로그램 적극적인 부모역할 Now! — 마이클 팝킨 (학지사) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">상담·치유·가정</span><span class="date">2026-11-08</span></div>
+  <h1 class="note-title">부모코칭 프로그램 적극적인 부모역할 Now! — 마이클 팝킨 (학지사)</h1>
+  
+</header>
+<article class="note">
+<blockquote>
+<p><em>Active Parenting Now: Parent's Guide</em>의 한국어판. 아들러·드라이커스의 개인심리학 위에 고든·로저스의 의사소통 기술을 얹은 <strong>6장 부모코칭 프로그램</strong>이다. 한국에는 <span class="wl-dead" title="위키 내부 링크">홍경자</span> 교수가 들여왔고, 본인과 <span class="wl-dead" title="위키 내부 링크">윤명숙</span> 전도사님의 부모교육 강의(AP Now)가 이 책을 교재로 쓴다.
+이 페이지는 <strong>허브</strong>다 — 장별 노트(§1), 책 전체를 꿰는 축(§2), 본인 강의 대응(§3), 윤명숙 전도사님 강의·설교(§4), 다른 양육서(§5)를 잇는다. 강의 내용의 합본은 <a class="wl" href="../../t/APNow/">APNow</a>에 있다.</p>
+</blockquote>
+<hr />
+<h2>1. 시리즈 목차 — 장별 노트</h2>
+<table>
+<thead>
+<tr>
+<th>장</th>
+<th>노트</th>
+<th>한 줄</th>
+<th>쪽</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1장</td>
+<td><span class="wl-dead" title="위키 내부 링크">적극적인 부모</span></td>
+<td>이론의 계보(아들러·드라이커스→고든·로저스)·<strong>반응적 부모 vs 적극적 부모</strong>·부모역할의 목적(생존·번영)·위험요소를 막는 네 길·<strong>다섯 자질</strong>(용기·자기존중감·책임감·협동심·존경심)·<strong>독재자·심부름꾼·적극적 부모</strong>·선택의 방법·상호존경</td>
+<td>p.5~43</td>
+</tr>
+<tr>
+<td>2장</td>
+<td><span class="wl-dead" title="위키 내부 링크">협동심을 구하기</span></td>
+<td><strong>문제는 최상의 교육적 기회</strong>·문제 다루기 모형(2~6장의 설계도)·<strong>누가 문제를 소유하는가</strong>·혼합 메시지·의사소통의 걸림돌·<strong>적극적 의사소통 5단계</strong>·정서적 거울·손바닥 펼쳐 보이기·취침 전 일과</td>
+<td>p.44~69</td>
+</tr>
+<tr>
+<td>3장</td>
+<td><span class="wl-dead" title="위키 내부 링크">책임감과 훈육</span></td>
+<td><strong>책임감 = 선택 + 결과</strong>·책임 회피·확장되는 한계 안의 자유·보상·처벌 vs 인센티브·<strong>생각하기-느끼기-행동하기 회로</strong>·훈육의 사다리(정중한 요청→<strong>나-전달법</strong>→단호한 지시)·<strong>논리적 결과 vs 처벌</strong>·8요령·문제예방 대화</td>
+<td>p.71~109</td>
+</tr>
+<tr>
+<td>4장</td>
+<td><span class="wl-dead" title="위키 내부 링크">자녀의 그릇된 행동을 이해하고 교정해 주기</span></td>
+<td>적극적 이론(자기결정적 존재)·출생순위·<strong>원인이 아니라 목적 — 네 가지 행동목적</strong>·부모-자녀 회로·목적을 알아내는 두 단서·관심 끌기·반항·앙갚음·과도한 회피·<strong>FLAC</strong>·분노의 실상·적극적 문제해결 5단계</td>
+<td>p.111~157</td>
+</tr>
+<tr>
+<td>5장</td>
+<td><span class="wl-dead" title="위키 내부 링크">용기, 품성, 자기존중감을 길러 주기</span></td>
+<td>용기는 가슴·자기존중감은 머리·<strong>성공 회로/실패 회로</strong>·품성의 두 견해·40가지 발달적 장점·<strong>격려는 비료</strong>·기를 꺾는 네 가지 vs 살리는 네 가지·<strong>아가 BANK</strong>·신뢰·과잉기대(완벽주의)</td>
+<td>p.158~197</td>
+</tr>
+<tr>
+<td>6장</td>
+<td><span class="wl-dead" title="위키 내부 링크">적극적인 가정 Now!</span></td>
+<td>민주주의의 원리와 가정·<strong>말할 수 있는 권리</strong>·가족모임 다섯 유형(책 전체를 꿰는 실)·<strong>가족회의</strong>(사회자·서기·의사일정)·예방적 요소·<strong>여과기로서의 부모</strong>·인류라는 큰 가족</td>
+<td>p.199~220</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>2. 책 전체를 꿰는 다섯 축</h2>
+<ol>
+<li><strong>목표는 민주사회를 살아갈 다섯 자질이다.</strong> 용기·자기존중감·책임감·협동심·존경심(1장 p.24~26). 2장은 협동심, 3장은 책임감, 5장은 용기·자기존중감, 1·6장은 존경심을 맡는다 — 장의 순서가 곧 자질의 목록이다.</li>
+<li><strong>한계 안에서의 자유 — 그리고 그 한계는 자란다.</strong> 독재자(제약만)와 심부름꾼(자유만) 사이의 적극적 부모(1장). 「확장되어 가는 한계 안의 자유」(3장 p.79)와 「책임감 = 선택 + 결과」가 같은 원리의 두 얼굴이다.</li>
+<li><strong>문제 다루기 모형 — 누가 소유하는가부터 묻는다.</strong> 문제예방(3장·6장) → 소유 판별(2장) → 부모 소유면 훈육(3장), 자녀 소유면 지지(2장), 공유면 둘 다 → 언제나 격려(5장). 2장 p.47의 표가 책 전체의 설계도다.</li>
+<li><strong>행동은 원인이 아니라 목적으로 읽는다.</strong> 생각하기-느끼기-행동하기 회로(3장)가 부모-자녀 회로(4장)로, 다시 성공 회로/실패 회로(5장)로 확장된다. 부모의 행동이 자녀 회로의 「사건」이 되므로, 부모가 다르게 행동하면 회로가 바뀐다.</li>
+<li><strong>가족모임이 모든 기술을 한자리에 모은다.</strong> 각 장 끝의 가족모임·가족화목활동이 6장에서 다섯 유형(비형식·문제예방·문제해결·품성 대화·가족회의)으로 묶인다(p.202).</li>
+</ol>
+<hr />
+<h2>3. 본인 강의와의 연결 — AP Now 6강</h2>
+<p>강의 내용의 합본은 <a class="wl" href="../../t/APNow/">APNow</a>, 강의 목록은 <span class="wl-dead" title="위키 내부 링크">부모교육시리즈</span>.</p>
+<table>
+<thead>
+<tr>
+<th>강</th>
+<th>본인 강의 노트</th>
+<th>책</th>
+<th>강의가 덧붙인 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1강 적극적인 부모역할</td>
+<td><span class="wl-dead" title="위키 내부 링크">적극적인_부모역할_4강</span> (1강)</td>
+<td>1장</td>
+<td>창조명령(아바드·샤마르)·순종교육 두 단계(0~13세/청소년기)·예수님의 성장 4영역(눅 2:52)·신념과 지혜(폴 트립)</td>
+</tr>
+<tr>
+<td>2강 적극적인 의사소통</td>
+<td><span class="wl-dead" title="위키 내부 링크">적극적인_의사소통</span></td>
+<td>2장</td>
+<td>공익 vs 공동선·서바이벌 vs 컴피티션(아브라함과 롯)·엡 4:26·게임중독 아이 사례</td>
+</tr>
+<tr>
+<td>3강 효과적인 훈육과 문제 다루기</td>
+<td><span class="wl-dead" title="위키 내부 링크">적극적인_부모역할_4강</span> (3강)</td>
+<td>3장</td>
+<td>아담과 하와의 책임 전가·잠언의 부모 훈계(2강)·「화가 나면 멈춤」</td>
+</tr>
+<tr>
+<td>4강 그릇된 행동 이해와 교정</td>
+<td><span class="wl-dead" title="위키 내부 링크">적극적인_부모역할_4강</span> (4강)</td>
+<td>4장</td>
+<td>요 8:6·8 예수님의 「딴청」·기질론·다중지능</td>
+</tr>
+<tr>
+<td>5강 용기, 품성, 자기존중감</td>
+<td><span class="wl-dead" title="위키 내부 링크">용기_품성_자기존중감</span></td>
+<td>5장</td>
+<td>잠 4:23 「레브」·골 3:21 「낙심할까 함이라」·허드렛일과 위임의 신학</td>
+</tr>
+<tr>
+<td>6강 적극적인 가정 NOW</td>
+<td><span class="wl-dead" title="위키 내부 링크">적극적인_가정</span> · <span class="wl-dead" title="위키 내부 링크">적극적인-가정-NOW</span> · <span class="wl-dead" title="위키 내부 링크">적극적인-가정-APT6-1</span></td>
+<td>6장</td>
+<td><strong>가정예배 개혁</strong>(나눔의 시간)·하브루타·쯔다카·떠나보내기·선교 단체 거버넌스 적용</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>장별 노트의 「강의·설교와의 연결」 절이 대목 단위로 대조한다. 여백 손글씨(창조명령·딤후 3:16·골 3:21·「(+) 예배」 등)는 강의에 실제로 들어간 성경적 틀의 초고다.</p>
+</blockquote>
+<hr />
+<h2>4. 윤명숙 전도사님의 강의·설교</h2>
+<table>
+<thead>
+<tr>
+<th>주제</th>
+<th>노트</th>
+<th>짝이 되는 장</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>부모역할의 유형</td>
+<td><span class="wl-dead" title="위키 내부 링크">2019_윤명숙_부모역할_유형</span> · <span class="wl-dead" title="위키 내부 링크">2016_청소년부모의역할유형</span> · <span class="wl-dead" title="위키 내부 링크">2016_독수리와타조부모</span></td>
+<td>1장</td>
+</tr>
+<tr>
+<td>권위와 유한책임</td>
+<td><span class="wl-dead" title="위키 내부 링크">2016_부모에게주신권위</span> · <span class="wl-dead" title="위키 내부 링크">2016_부모의유한책임</span></td>
+<td>1·6장</td>
+</tr>
+<tr>
+<td>의사소통·감정</td>
+<td><span class="wl-dead" title="위키 내부 링크">2017_의사소통의걸림돌</span> · <span class="wl-dead" title="위키 내부 링크">2016_청소년이해와의사소통</span> · <span class="wl-dead" title="위키 내부 링크">2019_감정에대한나의반응</span></td>
+<td>2장</td>
+</tr>
+<tr>
+<td>훈육·징계</td>
+<td><span class="wl-dead" title="위키 내부 링크">2026-07_매는언제사용해야할까요</span> · <span class="wl-dead" title="위키 내부 링크">2015_자녀를노엽게하지말라</span></td>
+<td>3장</td>
+</tr>
+<tr>
+<td>분노</td>
+<td><span class="wl-dead" title="위키 내부 링크">2017_관계를깨뜨리는분노</span></td>
+<td>4장</td>
+</tr>
+<tr>
+<td>자아상</td>
+<td><span class="wl-dead" title="위키 내부 링크">2018_건강한자아상</span> · <span class="wl-dead" title="위키 내부 링크">2014_가정과자아상</span></td>
+<td>5장</td>
+</tr>
+<tr>
+<td>가정의 질서·신앙 형성</td>
+<td><span class="wl-dead" title="위키 내부 링크">2018_가정의질서</span> · <span class="wl-dead" title="위키 내부 링크">2019_부모를통한신앙형성</span></td>
+<td>6장</td>
+</tr>
+<tr>
+<td>부모교육 시리즈 전체</td>
+<td><span class="wl-dead" title="위키 내부 링크">윤명숙_부모교육시리즈</span></td>
+<td>전체</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>5. 다른 양육서와의 교차</h2>
+<table>
+<thead>
+<tr>
+<th>책</th>
+<th>만나는 자리</th>
+<th>갈라지는 자리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="wl" href="../../b/%EC%84%B1%EA%B3%B5%ED%95%98%EB%8A%94%EC%9E%90%EB%85%80%EC%96%91%EC%9C%A1%EC%9D%98%EB%B9%84%EB%B0%80_%EC%B0%B0%EC%8A%A4%EC%8A%A4%EC%9C%88%EB%8F%8C/">성공하는자녀양육의비밀_찰스스윈돌</a></td>
+<td>「정신을 꺾지 말고」 ↔ 기를 꺾지 말라(5장)</td>
+<td>스윈돌은 반항에 처벌을 허용 — 책은 처벌을 배제(3장)</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%84%B1%EA%B3%B5%EC%A0%81%EC%9D%B8%EC%9E%90%EB%85%80%EC%96%91%EC%9C%A1%EC%A7%80%EC%B9%A8%EC%84%9C_%EB%A0%99%EB%B8%8C%EB%9E%98%EB%93%A4%EB%A6%AC/">성공적인자녀양육지침서_렙브래들리</a></td>
+<td>뇌물 vs 보상, 책임 회피 목록(3장)</td>
+<td>「먼저 순종 나중 질문」 ↔ 선택권과 협상</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%A0%9C%EB%A9%8B%EB%8C%80%EB%A1%9C%EC%9D%B8%EC%9A%94%EC%A6%98%EC%95%84%EC%9D%B4%EB%A7%90%EC%94%80%EC%9C%BC%EB%A1%9C%EC%96%91%EC%9C%A1%ED%95%98%EB%9D%BC_%ED%9C%B4%EA%B2%8C%EC%9D%B4%ED%8A%B8/">제멋대로인요즘아이말씀으로양육하라_휴게이트</a></td>
+<td>외적 통제를 점진적으로 넘겨 자립에 이르게 한다 ↔ 확장되는 한계 안의 자유(3장)</td>
+<td>휴게이트는 체벌을 성경적 필수로 논증 — 책은 처벌을 배제</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EC%9C%84%EA%B8%B0%EC%9D%98%EC%8B%AD%EB%8C%80%EA%B8%B0%ED%9A%8C%EC%9D%98%EC%8B%AD%EB%8C%80_%ED%8F%B4%ED%8A%B8%EB%A6%BD/">위기의십대기회의십대_폴트립</a></td>
+<td>관계가 가치관 전수의 통로(1장 유대관계)</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EB%AA%B8%EC%97%90%EB%B0%B4%EC%96%B4%EB%A6%B0%EC%8B%9C%EC%A0%88_%EB%AF%B8%EC%8B%A4%EB%8B%A4%EC%9D%B8/">몸에밴어린시절_미실다인</a></td>
+<td>강압·징벌·완벽주의·유약 — 4장 여백 손글씨와 같은 낱말</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EA%B2%A9%EB%A0%A4%EB%A5%BC%ED%86%B5%ED%95%9C%EC%98%81%EC%A0%81%EC%84%B1%EC%9E%A5_%EB%9E%98%EB%A6%AC%ED%81%AC%EB%9E%A9/">격려를통한영적성장_래리크랩</a></td>
+<td>격려 = 두려움을 다루는 사랑 ↔ 격려 = 용기를 불어넣기(5장)</td>
+<td>크랩은 성도 사이의 격려(히 10:24-25), 책은 부모-자녀의 격려</td>
+</tr>
+<tr>
+<td><a class="wl" href="../../b/%EB%B6%80%EB%AA%A8%ED%95%99%EA%B5%90_%EA%B2%8C%EB%A6%AC%ED%86%A0%EB%A7%88%EC%8A%A4/">부모학교_게리토마스</a></td>
+<td>양육은 부모 자신의 영성 훈련 ↔ 자신을 보살피기·실수를 관용하기(1장)</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>6. 읽으며 따져 볼 것</h2>
+<ul>
+<li><strong>평등한 관계라는 전제와 위임된 권위.</strong> 책은 지도자의 권위가 「추종자에게서」 온다(p.27)고 하고, 보상과 처벌은 「평등한 관계에서는 설 자리가 없다」(p.81)고 한다. 강의와 윤명숙 전도사님은 부모의 권위를 하나님의 위임으로 본다. 두 쪽은 「분노로 다스리지 않는다」(엡 6:4·골 3:21)에서 만나지만, 권위의 근거는 다르다.</li>
+<li><strong>처벌과 징계.</strong> 책은 처벌을 「임의적인 보복」으로 배제한다(3장 p.96). 윤명숙 전도사님의 기고와 스윈돌·브래들리는 제한된 징계를 허용하고, 4장 여백에는 「엄벌해야 하는 경우도 있다」는 메모가 있다. 논리적 결과로 충분한 범위와 그 바깥이 어디인지는 열린 질문이다.</li>
+<li><strong>판본 차이.</strong> 본인 강의 노트가 짚는 교재 쪽수(56·60·87)는 이 판의 쪽수와 맞지 않는다 — 강의가 다른 판(또는 지도자용)을 썼을 수 있다.</li>
+</ul>
+<hr />
+<blockquote>
+<p>🔗 이론가: <span class="wl-dead" title="위키 내부 링크">마이클팝킨</span> · <span class="wl-dead" title="위키 내부 링크">알프레드아들러</span> · <span class="wl-dead" title="위키 내부 링크">루돌프드라이커스</span> · <span class="wl-dead" title="위키 내부 링크">토마스고든</span> · <span class="wl-dead" title="위키 내부 링크">하임기노트</span> · 역자 <span class="wl-dead" title="위키 내부 링크">홍경자</span></p>
+</blockquote>
+</article>
+<div class="tagrow"><span>#discipline/부모교육</span><span>#domain/자녀양육</span><span>#domain/가정사역</span><span>#discipline/개인심리학</span><span>#AP Now</span><span>#교재</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
