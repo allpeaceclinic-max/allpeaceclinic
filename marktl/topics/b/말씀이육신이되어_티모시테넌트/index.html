@@ -1,0 +1,411 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>말씀이 육신이 되어 — 티모시 테넌트 (도서출판 세복, 최낙철 옮김) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">선교</span><span class="author">티모시테넌트</span><span class="date">2026-11-09</span></div>
+  <h1 class="note-title">말씀이 육신이 되어 — 티모시 테넌트 (도서출판 세복, 최낙철 옮김)</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/%EB%A7%90%EC%94%80%EC%9D%B4%EC%9C%A1%EC%8B%A0%EC%9D%B4%EB%90%98%EC%96%B4_%ED%8B%B0%EB%AA%A8%EC%8B%9C%ED%85%8C%EB%84%8C%ED%8A%B8/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<blockquote>
+<p>마가복음 1~9장의 열다섯 장면을 따라 「하나님이 사람이 되셨다」는 고백을 묵상하게 하는 설교집이다. 저자 티모시 테넌트(Timothy Tennent)는 애즈베리신학교 총장을 지낸 복음주의 선교학자다. 선교학에서는 랄프 윈터와 벌인 「교회 없는 기독교」 논쟁으로도 알려져 있다(<span class="wl-dead" title="위키 내부 링크">07주_번역과회심</span>). 📷 표시 전사 기반 독서 노트.</p>
+</blockquote>
+<hr />
+<h2>요약 — 주제별 상세 정리</h2>
+<h3>1. 마가의 방법: 신성을 정의하지 않고 행동으로 입증한다</h3>
+<p>책 전체를 붙드는 질문은 「마가는 예수가 하나님이심을 어떻게 보여 주는가」이다. 저자는 마가가 탄생 이야기도 요한식 선재 신학도 건너뛴다는 데서 시작한다. 마가는 <em>정의</em>하지 않고 <em>보여 준다</em>.</p>
+<blockquote>
+<p>마태나 누가와는 달리 마가는 예수님의 베들레헴에서의 기적적인 탄생에 대해서 언급하지 않습니다. 그는 요한과 달리 "말씀이 육신이되어"(요 1:14)라는 선재성에 대해 신학적으로 사고하지도 않습니다. 대신 마가는 예수님이 진실로 하나님의 아들이라는 점을 예수님의 행동과 업적을 통해 입증하고 곧바로 예수님의 공생애에 관해 쓰기 시작합니다. (p.15)</p>
+<p>오직 하나님만이 하실 수 있는 방법으로 <strong>말씀하시고</strong>, <strong>보시고</strong>, <strong>만지시는</strong>, 즉 하나님이자 동시에 인간이신 이 분의 신분을 마가는 차근 차근 보여 주고 있습니다. (p.35)</p>
+</blockquote>
+<p>장 제목들이 그 「입증」의 목록이다. 열다섯 장을 묶어 보면 다음과 같다.</p>
+<table>
+<thead>
+<tr>
+<th>묶음</th>
+<th>장 (마가복음)</th>
+<th>예수님 = 하나님이 하시는 일을 하심</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>하나님처럼</td>
+<td>2장 말씀하신다(1:14-28) · 3장 보신다(1:29-45)</td>
+<td>창조의 권세로 말씀하심, 긍휼로 보고 만지심</td>
+</tr>
+<tr>
+<td>제도를 대신하는 분</td>
+<td>4장 성전(2:1-12) · 5장 안식일(2:23-3:6)</td>
+<td>성전·안식일의 실체가 「여기에」</td>
+</tr>
+<tr>
+<td>하나님 나라의 방식</td>
+<td>6장 씨뿌리는 자(4:1-20) · 7장 불멸성(4:35-41) · 8장 더 강한 자(5:1-20)</td>
+<td>아낌없는 파종, 폭풍 속 잠, 결박된 강자를 이김</td>
+</tr>
+<tr>
+<td>하나님의 속도와 손</td>
+<td>9장 시속 3마일(5:21-43) · 13장 더러워지신 손(7:31-37) · 14장 두 번째 만지심(8:1-30)</td>
+<td>걷는 속도로, 손을 담가, 두 번 만지심</td>
+</tr>
+<tr>
+<td>광야와 만나</td>
+<td>10장 만나(6:30-44) · 11장 지나가시는 하나님(6:45-56)</td>
+<td>광야 모티프의 성취, 혼돈 위를 걸으심</td>
+</tr>
+<tr>
+<td>경계를 넘는 은혜</td>
+<td>12장 상으로의 초대(7:24-30)</td>
+<td>이방인이 「상 아래」에서 「상」으로</td>
+</tr>
+<tr>
+<td>영광</td>
+<td>1장 메시야(1:1-13) · 15장 변화산(9:1-7)</td>
+<td>처음과 끝을 감싸는 영광의 계시</td>
+</tr>
+</tbody>
+</table>
+<p>저자는 성육신을 이렇게 짧게 정의하고 시작한다. 「성육신이란 하나님 자신이 사람이 되신 것을 말합니다」(p.13). 그리고 그것이 역사 한가운데 일어난 사건임을 강조한다. 「예수님이 인류 역사 속으로 들어오신 사건은 온 세상의 역사에서 중심적이고 가장 핵심적인 요소가 되었습니다」(p.15). 셰익스피어가 자기 극에 배우로 직접 섰다는 일화(p.14)로 작가가 자기 무대에 들어온 장면을 그린다. 「예수님은 이 세상에 주시는 하나님의 <strong>설교</strong>」(p.15)라는 표현이 책 제목을 풀어 준다. 이 주제는 <a class="wl" href="../../t/%EC%84%B1%EC%9C%A1%EC%8B%A0/">성육신</a>·<a class="wl" href="../../t/%EA%B8%B0%EB%8F%85%EB%A1%A0/">기독론</a>에서 더 넓게 다룬다.</p>
+<h3>2. 하나님처럼 말씀하시고, 보시고, 만지신다</h3>
+<p><strong>말씀.</strong> 선지자들은 「여호와께서 이르시되」로 말했지 자기 권세로 말하지 않았다. 예수님의 말은 창세기 1장의 말과 같은 종류다.</p>
+<blockquote>
+<p>누군가 이 같은 권세를 가지고 말하는 것을 인간이 마지막으로 들었던 때는 바로 창세기에서 하나님이 세상을 창조하신 때입니다. "빛이 있으라 하시매 빛이 있었고." 바로 이것이 권세입니다! (p.25)</p>
+</blockquote>
+<p>그래서 제자를 부르는 말도 창조의 말이다. 「내가 너희로 사람을 낚는 어부가 되게 하리라」를 저자는 「내가 너희를 사람을 낚는 어부로 창조해 내겠다」로 직역하고(p.24) 고후 5:17과 잇는다. 「예수님은 그의 부르심으로 남자와 여자를 새롭게 창조하십니다」(p.27).</p>
+<p><strong>봄.</strong> 문둥병자를 보신 눈은 병이 아니라 필요를 본다. 「예수님은 혐오감이 아니라 긍휼을 느끼셨습니다」(p.33). 긍휼(σπλαγχνίζομαι, 스플랑크니조마이)은 「비장(내장)」에서 온 말이라는 설명이 붙는다(p.33). 부정이 옮는 방향도 뒤집힌다. 「예수님이 문둥병자를 피하신 것이 아니라 문둥병이 예수님으로부터 달아나게 됩니다」(p.35). → <a class="wl" href="../../t/%EA%B8%8D%ED%9C%BC/">긍휼</a></p>
+<p><strong>우선순위.</strong> 3장의 한 장면이 날카롭다. 온 동네가 문 앞에 모였는데(33절) 예수님은 새벽에 사라져 기도하신다(35절). 제자들은 예수님의 인기를 극대화할 일정을 짰다.</p>
+<blockquote>
+<p>실상은 우리가 하나님을 우리의 형상대로 만들려고 한다는 것입니다. 우리는 우리가 세운 계획을 하나님이 따라 주시기를 원합니다. (p.30)</p>
+</blockquote>
+<p>「나를 따라 오너라」라고 부르신 분 앞에서 제자들이 「우리를 따라 오십시오」라고 말하는 역전이다(p.30-31).</p>
+<h3>3. 핵심 인사이트: 성전은 바로 여기에 — 장소에서 인격으로</h3>
+<p>중풍병자 이야기(2:1-12)에서 저자가 주목하는 것은 「네 죄 사함을 받았느니라」가 왜 신성모독이었느냐이다. 첫째 논리는 용서의 문법이다.</p>
+<blockquote>
+<p>제삼자를 대신해서라면 용서라는 단어는 쓸 수가 없습니다. 즉, 해를 직접 당한 사람만이 용서할 수 있는 자격이 있습니다. (p.38)</p>
+</blockquote>
+<p>예수님은 처음 본 사람에게 마치 자신이 그 죄의 피해자인 것처럼 말씀하신다. 그래서 서기관들의 판단은 「일면 맞는 생각이었습니다. 물론, 예수님이 실로 하나님이 아니셨다면 말입니다」(p.39).</p>
+<p>둘째 논리가 이 장의 핵심이다. 당시 죄 사함은 성전에서만 가능했다. 문둥병자에게는 「제사장에게 보이라」고 하셨으면서 중풍병자에게는 성전에 가라고 하지 않으신다.</p>
+<blockquote>
+<p>"성전에 갈 필요가 없다. 너는 이미 성전에 와 있다! 대제사장에게 갈 필요가 없다. 너는 이미 대제사장에게 와 있다. 제단의 속죄소에 갈 필요가 없다. 너는 이미 제단에 와 있다" (p.41-42)</p>
+<p>예수님 안에서, 성전은 어디에나 있습니다! … 두 사람 이상이 모이는 곳이라면 이 세상 어디에서나 이용할 수 있게 되었습니다. (p.43)</p>
+</blockquote>
+<p>같은 논리가 9장 혈루증 여인에게서 반복된다. 성전 출입이 영영 막힌 여인에게 「예수 그리스도 안에서 이제는 성전이 직접 그녀에게 다가오고 있었습니다!」(p.83). 정결법은 부정이 정결을 더럽힐 뿐 거꾸로는 없다고 가르쳤는데(p.84), 그 여인이 손을 대자 반대 방향의 전염이 일어난다.</p>
+<p>이 논리는 교회론으로 이어진다. 교회는 스스로 죄를 사할 「본질적인 능력」은 없지만, 대리인으로서 죄 사함을 <strong>선포할</strong> 권위를 받았다(p.39-40). 회개를 거부하는 이에게 「당신의 죄는 용서 받지 못했다」고 말할 권위까지 함께 받았다(p.40). → <a class="wl" href="../../t/%EC%9A%A9%EC%84%9C/">용서</a> · <a class="wl" href="../../t/%EA%B5%90%ED%9A%8C%EB%A1%A0/">교회론</a></p>
+<h3>4. 안식일: 쉼이 아니라 중단, 날이 아니라 상태</h3>
+<p>5장은 안식일을 세 겹으로 다시 읽는다. 출발점은 어원과 창조 기사다.</p>
+<blockquote>
+<p>안식은 쉰다는 것이 아니라 중단한다는 의미입니다. 하나님은 "심히 좋았더라"고 하셨던 그의 창조물을 즐기시기 위해서 일을 중단하셨습니다. (p.46-47)</p>
+<p>창조의 일곱째 날은 끝이 없었습니다. … 원래 안식일은 "날"이라는 시간 개념보다는 하던 일을 중지하고 하나님의 통치를 축하하는 상태를 의미하는 것이었습니다. (p.47)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>안식일의 의미</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>첫째</td>
+<td>아무것도 하지 않는 날이 아니다. 하나님이 일하심을 기억하는 날</td>
+<td>바리새인은 「일하지 않는 날」로 법률화, 모세는 「기억하여 거룩히」(p.47-48)</td>
+</tr>
+<tr>
+<td>둘째</td>
+<td>일에 대한 책임을 멈추는 매주의 기회</td>
+<td>일로 얻으려던 자존감·생계·독립심을 하나님께 돌려드림(p.48-49)</td>
+</tr>
+<tr>
+<td>셋째</td>
+<td>부활과 미래의 안식 재정립을 미리 축하하는 날</td>
+<td>신약 교회가 초점을 첫째 날로 옮김(p.50)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>안식일의 핵심은 우리가 일을 하지 않는다는 데 있는 것이 아니라, 오히려 우리의 삶에서 하나님이 지속적으로 일하신다는 데 있습니다. (p.49)</p>
+</blockquote>
+<p>손 마른 사람을 고치신 장면의 결론은 이렇다. 주님은 안식일을 범하신 것이 아니다. 「오히려 그 안식일이 <strong>그 병자의 삶에 들어왔습니다</strong>」(p.51). 3장의 「성전이 여기에」와 같은 구조로, 제도의 실체가 인격으로 걸어 들어온다. → <a class="wl" href="../../t/%EC%95%88%EC%8B%9D/">안식</a></p>
+<h3>5. 핵심 인사이트: 토양의 비유가 아니라 씨뿌리는 자의 비유다 ☆</h3>
+<p>이 책에서 가장 강하게 반응한 장이다. 두 쪽에 걸쳐 여백에 별표(☆)가 두 개 있다.</p>
+<blockquote>
+<p>이 비유는 교회의 전 역사에 걸쳐 한 번도 토양에 관한 비유라고 불린 적이 없었습니다. 이 비유는 언제나 씨뿌리는 자의 비유라고 불렸습니다. 우리는 우리 자신이 언제나 모든 비유의 주어가 되기를 열망한 나머지 이 같은 비유의 핵심을 종종 잊어버립니다. (p.55)</p>
+</blockquote>
+<p>설교는 보통 「나는 어떤 밭인가」를 묻는다. 저자는 주어를 바꾼다. 놀라운 것은 밭의 상태가 아니라, 길가·돌밭·가시밭인 줄 알면서도 뿌리는 농부의 <strong>낭비</strong>다. ☆ 표시가 이 대목에 있다. 「씨뿌리는 자가 낭비할 정도로 풍성히 씨를 뿌린다」(p.55), 「돌밭이나 잡초밭에도 씨앗을 듬뿍 뿌리는 농부」(p.56). 모세의 40년, 사울의 다메섹이 그 인내의 사례다. 웨슬리 전통은 이것을 <strong>선행은총</strong>이라 부른다(p.56 — <span class="wl-dead" title="위키 내부 링크">웨슬리</span>).</p>
+<p>이 해석은 곧장 선교 평가로 간다.</p>
+<blockquote>
+<p>만일 교회가 "효율성" 혹은 "투자 수익율"에 기준을 두고 그러한 선교사들을 비판한다면, 그것은 하나님의 종들을 잘못 활용하는 것이고, 힘들게 얻은 자원을 낭비하는 처사일 것입니다. (p.57)</p>
+<p>그 선교사들은 진실로 거룩한 농부의 풍성함대로 행하고 있는 것입니다. … 중요한 것은 충실히 씨뿌리는 자가 되는 일입니다. 추수는 하나님의 몫입니다. (p.58)</p>
+<p><strong>핵심 인사이트:</strong> 열매 없는 땅에서 오래 일한 선교사를 「비효율」로 평가하는 것은, 씨뿌리는 자의 비유를 토양의 비유로 잘못 읽은 결과다. 교회 성장을 부정하지 않으면서도(「물론 교회의 성장은 훌륭한 일입니다」 p.58) 평가의 기준을 수확에서 충실함으로 옮긴다.</p>
+</blockquote>
+<h3>6. 하나님의 속도와 인내 — 시속 3마일, 지나가심, 두 번 만지심</h3>
+<p>세 장이 한 주제를 변주한다. 하나님은 우리가 원하는 속도로 일하지 않으신다.</p>
+<p><strong>시속 3마일.</strong> 야이로의 집으로 서둘러 가는 길에 예수님은 멈춰 이름 없는 여인을 찾으신다. 저자는 『시속 3마일의 하나님』(Three Mile an Hour God)을 인용한다(p.86 — 일본 신학자 고야마 고스케의 책이다. 표시 구절에는 제목만 있다). 「예수님이 시간당 3마일의 속도로 온 세상의 구원을 완성하셨다는 것은 놀라운 일입니다」(p.86). 3마일은 사람이 걷는 속도다. 「동행하여 걸으라」는 명령과 짝을 이룬다.</p>
+<p><strong>지나가시는 하나님.</strong> 물 위를 걸으신 기사에서 마가만 「그들에게 오사 <strong>지나가려고</strong> 하시매」(6:48)라고 쓴다. 이 기적이 제자를 위험에서 건지는 것이 일차 목적이 아니었다는 뜻이다(p.102). 저자는 여기서 하나님의 <strong>자존성</strong>을 본다. 「우리는 우리와 동떨어진 예수님의 속 생활을 엿봅니다」(p.104). 욥의 표현을 빌린 「바다 파도 위를 걷는 것」(욥 9:8)처럼, 물 위를 걸으심은 「예수님의 권위가 인류 존재의 혼돈을 이기는 것」을 알리는 표지다(p.105).</p>
+<blockquote>
+<p>때로는 하나님이 우리를 그냥 지나쳐 가시는 것처럼 보입니다. 그러나 우리가 그렇게 느낄지라도, 하나님은 우리의 상상을 초월하는 위대한 계획을 펼치고 계시다는 것을 기억해야 합니다. (p.105) … 기다리는 법을 배우십시오. 인내하십시오. (p.106)</p>
+</blockquote>
+<p><strong>두 번째 만지심.</strong> 벳새다 소경(8:22-26)은 성경에서 유일하게 두 단계로 치유된다. 저자는 이 기적을 앞뒤 문맥으로 읽는다. 제자들은 떡을 두 번 보고도 이해하지 못했고(6:52, 8:17-21), 바로 뒤에 베드로가 「주는 그리스도시요」라고 고백하고는 곧장 십자가를 막아선다(p.137-138). 반쯤 본 것이다.</p>
+<blockquote>
+<p>이 사건은 하나님이 우리의 삶에 손을 대시고 계심에도 불구하고 우리는 늘 그것을 보지 못하는 소경과 같은 상황에서 산다는 것을 알려 주고 있습니다. (p.141)</p>
+<p>예수님은 두 번 치유해 주시는 하나님이십니다. (p.144)</p>
+</blockquote>
+<p>오병이어 뒤에 칠병이어가 다시 오는 반복도 같은 인내의 표현이다. 「예수님은 왜 같은 일을 반복하셨습니까?」(p.136). → <a class="wl" href="../../t/%EC%9D%B8%EB%82%B4/">인내</a> · <a class="wl" href="../../b/%EC%B4%88%EA%B8%B0%EA%B5%90%ED%9A%8C%EC%9D%98%EC%9D%B8%EB%82%B4%EC%99%80%EB%B0%9C%ED%9A%A8_%ED%81%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/">초기교회의인내와발효_크라이더</a></p>
+<h3>7. 광야와 만나 — 마가가 깔아 둔 출애굽의 지도</h3>
+<p>마가는 광야를 반복 무대로 쓴다. 세례 요한의 사막, 예수님의 40일, 「한적한 곳」으로 부르심, 두 번의 먹이심이 모두 이스라엘의 광야 40년과 포로 70년을 불러낸다(p.18, p.92, p.134). 「유대인이 광야에서 방황하던 40년간의 세월을 예수님이 상징적으로 재연하신 것입니다」(p.18). 오천 명이 「50 또는 100명씩 무리지어」 앉은 장면은 광야 진영의 배치이고, 마가의 의도가 거기 심겨 있다(p.94). → <a class="wl" href="../../t/%EA%B4%91%EC%95%BC/">광야</a></p>
+<p>이 장에서 저자는 실천 쪽으로 방향을 튼다.</p>
+<blockquote>
+<ol>
+<li>구해야 할 때 당신은 어디를 바라보는가? … 예수님은 하늘을 우러러 보십니다 (41절). 제자들은 그들의 주머니를 쳐다봅니다 (37절). 그들은 마을의 가게들을 생각합니다 (35, 36절). (p.96)</li>
+</ol>
+</blockquote>
+<p>📝 이 쪽 여백에 손글씨 도식이 있다.</p>
+<blockquote>
+<p>📝 펀드레이징 – 사람에게 달라(?) / but. θ(?)을 바라봐야 / ↓ / 프렌드레이징 – 동역(?)하는 관계(?)
+(θ는 Θεός, 하나님의 약기로 보인다)</p>
+</blockquote>
+<p>선교 후원을 「사람에게 달라는 일(fundraising)」에서 하나님을 바라보는 일로, 다시 「동역하는 관계(friendraising)」로 옮겨 읽은 것이다. 저자의 다음 문장과 이어진다. 「교회는 사업이 아닙니다. 이것은 이득을 보려고 운영되는 것이 아니기 때문에 계산적이고 방어적일 필요가 전혀 없습니다」(p.99). 5절의 「투자 수익율」 비판과 같은 축이다. → <a class="wl" href="../../t/%EB%8F%99%EC%97%AD/">동역</a></p>
+<h3>8. 은혜의 경계선 — 수로보니게 여인과 「상으로의 초대」</h3>
+<p>가장 불편한 본문(7:24-30)을 정면으로 다룬다. 저자는 세 가지 쉬운 해석을 차례로 묻는다. 예수님이 인종차별주의자인가, 은혜가 한정되어 있다는 말인가, 재치 있는 농담인가(p.110-112). 「우리나라에도 길 잃은 자들이 많은데, 왜 굳이 먼 타국으로 나가야 합니까?」라는 선교 반대 논리가 바로 은혜의 희소성 논리라고 짚는다(p.112).</p>
+<p>답은 대화의 층위를 바꾸는 데 있다.</p>
+<blockquote>
+<p>이것은 예수님, 즉 유대의 메시야와 이방인 여자가 나누는 신학적인 대화입니다. (p.114)</p>
+<p>여기에서 핵심은 예수님이 유대인만을 위한 구원자인가, 아니면 그의 사명이 그보다 더 커서 여러분과 저를 포함한 이방인까지도 그 구원에 포함되는 것인가 하는 점입니다. (p.115)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>쟁점</th>
+<th>저자의 읽기</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「개」라는 말</td>
+<td>유대인이 이방인을 부르던 멸칭이 아니라 집 안의 애완 강아지(κυνάριον, 퀴나리온). 모욕이 아니라 순서의 논리(p.117)</td>
+</tr>
+<tr>
+<td>「자녀가 먼저」</td>
+<td>언약을 통한 유대인의 우선권. 12(지파) 파송 → 72(민족) 파송의 순서(p.116)</td>
+</tr>
+<tr>
+<td>부스러기</td>
+<td>이방인은 이미 부스러기를 먹고 있었다 — 니느웨의 요나, 나훔(p.118-119)</td>
+</tr>
+<tr>
+<td>여인의 소망</td>
+<td>부스러기의 권리가 아니라 그보다 큰 것. 「더 이상 "상 아래" 있지 않습니다. 우리는 이제 상에 앉아 있습니다. 아브라함, 이삭, 야곱과 함께 말입니다」(p.119)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>은혜는 권리가 아닙니다. 그것은 하나님께 요청하여 얻어내는 것이 아닙니다. (p.120)</p>
+</blockquote>
+<p>저자는 마가의 주요 주제 하나를 「이방인들이 내부인으로 들어왔다는 것」(p.114)으로 요약한다. 이 「외부인→내부인」의 언어는 <a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EC%99%80%EB%82%B4%EB%B6%80%EC%9D%B8_%EA%B6%8C%EC%84%B1%EC%B0%AC%EC%99%B8/">선교와내부인_권성찬외</a>의 내부자 논의와 겹친다. 선교학자 테넌트가 「교회 없는 기독교」 논쟁에서 보인 입장(→ <a class="wl" href="../../t/%EC%83%81%ED%99%A9%ED%99%94/">상황화</a>)을 묵상의 언어로 다시 듣게 되는 대목이기도 하다.</p>
+<h3>9. 핵심 인사이트: 하나님은 원격 조종을 하지 않으신다 — 「더러워지신」 손</h3>
+<p>책 제목이 가장 구체적으로 구현되는 장이다. 귀먹고 말 더듬는 사람(7:31-37)에게 예수님은 손가락을 귀에 넣고 침을 뱉어 혀에 대신다. 말 한마디로 고치실 수 있었는데 왜 그렇게 하셨는가(p.124). 저자는 이 질문을 성육신 전체의 질문으로 넓힌다.</p>
+<blockquote>
+<p>"왜 하나님은 마구간에서 태어나셨는가? 왜 하나님은 문둥병자에게 손을 대셨는가? 왜 하나님은 우물가에서 그 여자와 이야기를 하셨는가? 왜 하나님은 귀먹은 남자의 귀에 손가락을 넣으시고 침을 뱉어 그의 혀에 손을 대셨는가?" (p.125)</p>
+</blockquote>
+<p>요 1:14의 「거하시매」는 문자적으로 「장막을 치셨다」이다(p.127 → <span class="wl-dead" title="위키 내부 링크">요1</span>). 그래서 이 기적은 「특별한 질병을 가진 자들에 대한 하나님의 동정심만으로 보아서는 안 됩니다」(p.127). 이 기적 안에 「기독교 복음은 씨앗의 형태로 존재합니다」(p.128).</p>
+<blockquote>
+<p>남의 문제 때문에 자기들의 손이 더러워지기를 원하지 않습니다. 그런 우리가 우리를 치유하기 위해 이 타락한 세상에 자기의 손을 깊이 담그시는 하나님을 섬기고 있습니다. (p.128)</p>
+<p>하나님은 원격 조종을 하지 않으십니다. 그분은 언제나 우리 가까이 오셔서, 소매를 걷어 올리시고, 이 세상을 위하여 손을 더럽히시며, 상처 받은 우리를 치료하십니다. (p.129)</p>
+<p>직접 왕진을 오십니다! 우리의 상태는 <strong>왕진이 필요</strong>합니다. (p.130)</p>
+</blockquote>
+<p>「왕진이 필요」에 동그라미가 쳐져 있다. 그리고 결론은 교회로 간다. 「궁극적으로 교회의 사역은 이러한 문맥에서 이루어져야 합니다」(p.129), 「진정한 그리스도인의 행위를 통해 성육신이 다시 증명되기 때문입니다」(p.131). 성육신은 교리이면서 교회 사역의 문법이다. 이 대목은 선교학자 테넌트가 「교회 없는 기독교」를 반박할 때 쓴 논거와 같은 뿌리다. 그는 「성육신이 그의 몸인 교회에서 나타나므로 유형의 공동체가 필요하다」고 보았다(<a class="wl" href="../../t/%EC%83%81%ED%99%A9%ED%99%94/">상황화</a>). 묵상집의 「성육신이 다시 증명된다」와 논쟁의 「유형의 공동체」가 한 사람의 같은 신학에서 나온다. → <a class="wl" href="../../t/%EC%84%B1%EC%9C%A1%EC%8B%A0/">성육신</a> · <a class="wl" href="../../t/%ED%86%B5%EC%A0%84%EC%A0%81%EC%84%A0%EA%B5%90/">통전적선교</a></p>
+<h3>10. 대적하는 힘들 — 세상·육체·마귀, 폭풍, 세 가지 누룩</h3>
+<p>예수님의 주권에 맞서는 힘을 저자는 교회의 전통적 분류로 정리한다. 「세상, 육체, 마귀로 일종의 사악한 삼위일체」(p.69). 「세상」은 외적 권력이고, 「육체」는 「정욕, 악한 욕망, 사악한 의도, 사기, 용서 못함, 냉소적인 태도」 같은 내적 성향이다(p.72). 마귀에 대해서는 균형을 잡는다. 「하나님과 달리 마귀는 편재자가 아닙니다」(p.74). 거라사 군대 귀신 이야기의 결론은 한 줄이다. 「강한 자에 대한 단 한 가지 해결책은 "더 강한 자"입니다」(p.78, 막 3:27). → <a class="wl" href="../../t/%EC%98%81%EC%A0%81%EC%A0%84%EC%9F%81/">영적전쟁</a></p>
+<p>7장 「그리스도의 불멸성」은 1~4장의 반대 세력이 쌓여 절정에 이르는 구도를 그린다. 마귀, 바리새인, 율법 선생, 헤롯당, 마지막으로 자연까지 예수님을 무너뜨리려는 듯한데 「예수님은 배 안에서 잠들어 계셨습니다」(p.63). 저자는 여기서 교회의 불안을 겨눈다.</p>
+<blockquote>
+<p>교회의 많은 활동은 교회 자체의 보존을 위해 세심하게 구성되어 있습니다. (p.64) … 교회는 소멸될 우려가 없습니다. 하나님은 교회를 위해 영원한 계획을 가지고 계시며, 교회는 종말까지 보존될 것입니다. (p.65)</p>
+</blockquote>
+<p>14장의 「바리새인의 누룩과 헤롯의 누룩」(8:15, 사두개인은 마 16:6)은 세 유형의 영적 시력 장애로 정리된다.</p>
+<table>
+<thead>
+<tr>
+<th>누룩</th>
+<th>의미</th>
+<th>저자의 진단</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>바리새인</td>
+<td>외면적 종교, 형식</td>
+<td>「외형주의와 율법주의의 위선」(p.145) → <a class="wl" href="../../t/%EC%9C%A8%EB%B2%95%EC%A3%BC%EC%9D%98/">율법주의</a></td>
+</tr>
+<tr>
+<td>헤롯</td>
+<td>세상적인 것과 야망</td>
+<td>「돈과 권력을 가지게 되면 … 자신의 죄를 눈물로 회개하기에는 자신이 스스로 너무 중요한 사람처럼 생각되기 마련입니다」(p.148). 능력으로서의 권위 vs 청지기로서의 권위 → <a class="wl" href="../../t/%EC%B2%AD%EC%A7%80%EA%B8%B0/">청지기</a></td>
+</tr>
+<tr>
+<td>사두개인</td>
+<td>회의주의</td>
+<td>이성으로 초자연을 닫음. 다만 「기독교의 복음은 비합리적인 믿음이 아닙니다 … 논쟁에 대해 변호할 수 있습니다」(p.149) → <a class="wl" href="../../t/%ED%9A%8C%EC%9D%98%EC%A3%BC%EC%9D%98/">회의주의</a></td>
+</tr>
+</tbody>
+</table>
+<p>결론은 다시 인내다. 「우리는 두 번 만지시는 하나님을 섬기고 있습니다. … 여러분이 눈을 떴을 때 가장 처음 보는 것이 또렷한 예수님의 얼굴이 될 수 있도록 말입니다」(p.150).</p>
+<h3>11. 변화산 — 모든 진주가 한 진주로</h3>
+<p>마지막 장은 교회력의 주현절로 문을 연다. 동방박사는 구유에 오지 않았고(마 2:11 「집」), 그래서 초대교회는 성탄(12/25)과 주현절(1/6)을 나누었다(p.153). 그리고 마가복음의 뼈대를 세 번의 수난 예고로 보여 준다(p.157-158).</p>
+<table>
+<thead>
+<tr>
+<th>영광의 계시</th>
+<th>이어지는 수난 예고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✤ 메시야적 영광 — 베드로의 고백 (복음서의 정확한 중간)</td>
+<td>첫 번째 (8:31)</td>
+</tr>
+<tr>
+<td>✤ 신성한 위엄 — 변화 사건</td>
+<td>두 번째 (9:31)</td>
+</tr>
+<tr>
+<td>✤ 주님의 능력과 지혜 — 기적과 가르침</td>
+<td>세 번째 (10:33)</td>
+</tr>
+</tbody>
+</table>
+<p>변화산은 시내산의 재연이지만 결정적 차이가 있다. 모세의 얼굴은 빛을 <em>반사</em>했다(출 34:30 → <span class="wl-dead" title="위키 내부 링크">출34</span>, 고후 3장).</p>
+<blockquote>
+<p>그러나 예수님은 그 자신이 빛과 생명의 근원이십니다. 예수님은 거울이 아니십니다. 그는 영광의 근원이십니다. (p.159)</p>
+</blockquote>
+<p>변화에는 세 부분이 있다. 쉐키나의 출현, 모세와 엘리야의 나타남, 하늘의 음성이다(p.160-164). 모세는 율법을, 엘리야는 선지자를 대표한다. 엘리야가 나온 이유는 구약이 말 4:5-6 「선지자 엘리야를 너희에게 보내리니」로 끝나기 때문이다(p.162-163). 하늘의 음성은 「너희는 그의 말을 들으라!」이다(p.164). 그래서 결론은 책 전체의 결론이 된다.</p>
+<blockquote>
+<p>그들이 의지하고 있던 "값비싼 진주들," 즉 율법, 성전, 선지자들, 메시야, 왕위, 예루살렘, 예언, 언약, 이 모든 것들이 단 하나의 진주이신 예수님으로 바뀌어야만 합니다. … 예수님이 계시기에 우리는 더 이상 성전도, 왕도, 불타는 구름도 필요하지 않습니다. (p.165-166)</p>
+</blockquote>
+<p>3장의 「성전이 여기에」, 4장의 「안식일이 여기에」가 마지막 장에서 「모든 표적이 여기에」로 모인다.</p>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<p><strong>적용 — 의료 현장.</strong> 「하나님은 원격 조종을 하지 않으신다」(p.129)와 동그라미 친 「왕진이 필요」(p.130)는 의사에게 가장 직접적인 문장이다. 원격·비대면이 효율의 기준이 된 진료 환경에서, 성육신의 문법은 손을 대는 것, 곧 「손을 더럽히는」 쪽에 있다. 문둥병자를 「혐오감이 아니라 긍휼」로 보신 눈(p.33)은 질병보다 「갈급한 필요」를 보라는 진료의 자세이기도 하다.</p>
+<p><strong>적용 — 선교 평가와 후원.</strong> ☆ 두 개와 p.96의 손글씨가 같은 방향을 가리킨다. 선교 단체가 사역을 평가할 때 「효율성」「투자 수익율」(p.57)이 기준이 되는 순간을 경계한다. 열매가 더딘 현장의 선교사를 「거룩한 농부의 풍성함대로」(p.58) 읽어 낼 언어가 필요하다. 후원도 「달라는 일」이 아니라 하늘을 우러러보는 데서 시작해 동역의 관계로 가는 일로 다시 설계할 수 있다(📝 펀드레이징→프렌드레이징).</p>
+<p><strong>적용 — 묵상·설교.</strong> 「토양이 아니라 씨뿌리는 자」처럼 비유의 주어를 바꿔 읽는 방법, 「성전·안식일·모든 표적이 여기에」라는 마가의 구조는 마가복음 연속 묵상이나 설교의 뼈대로 그대로 쓸 수 있다.</p>
+<p><strong>미해결 질문.</strong>
+- 테넌트는 은혜의 「아낌없음」(씨뿌리는 자)과 「순서」(자녀가 먼저)를 함께 말한다. 선교 자원 배분에서 이 둘은 어떻게 같이 서는가? 미전도 종족 우선 전략은 「순서」의 논리인가, 「효율」의 논리인가?
+- 교회가 「죄 사함을 선포할」 뿐 아니라 「용서받지 못했다」고 말할 권위도 받았다면(p.40), 그 권위는 오늘 한국 교회에서 어떤 형태로 남아 있고 어떻게 남용되는가?
+- 「교회는 소멸될 우려가 없다」(p.65)는 확신과, 교회 보존을 위해 짜인 활동을 줄이라는 요청은 쇠퇴하는 지역 교회 현장에서 어떤 결정으로 번역되는가?
+- 테넌트는 「교회 없는 기독교」를 반박한 쪽이다. 그런데 이 책은 「성전은 어디에나 있다」(p.43)고 말한다. 다만 같은 문장이 「두 사람 이상이 모이는 곳」이라는 조건을 단다. 장소에서 인격으로 옮겨진 성전은 모임을 덜 필요로 하는가, 오히려 더 필요로 하는가? 내부자 운동 논쟁(<a class="wl" href="../../b/%EC%84%A0%EA%B5%90%EC%99%80%EB%82%B4%EB%B6%80%EC%9D%B8_%EA%B6%8C%EC%84%B1%EC%B0%AC%EC%99%B8/">선교와내부인_권성찬외</a>)을 이 묵상의 언어로 다시 읽으면 무엇이 보이는가?</p>
+<hr />
+</article>
+<div class="tagrow"><span>#discipline/기독론</span><span>#domain/신학</span><span>#마가복음</span><span>#성육신</span><span>#묵상</span><span>#선교</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
