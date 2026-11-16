@@ -1,0 +1,187 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>기억 — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-t">영성·제자도</span><span class="date">2026-11-15</span></div>
+  <h1 class="note-title">기억</h1>
+  
+</header>
+<article class="note">
+<blockquote>
+<p>🌱 <strong>시드 허브</strong> — 2026-11-15 생성. 아직 에세이가 아니라 <strong>연결 목록</strong> 단계다. 관련 자료가 더 쌓이면 <code>topics/</code> 에세이 규약(정의 → 번호 섹션 → 핵심 인사이트 → 미해결 질문 → 교차 참조 → 출처)에 따라 확장한다.
+⚠️ <strong>생성 근거의 한계</strong>: 설교 네 편에서 나온 연결이다. 책·강의 자료는 아직 붙지 않았다.</p>
+</blockquote>
+<h2>정의</h2>
+<p>성경에서 기억은 지난 일을 떠올리는 심리 작용에 그치지 않는다. 하나님이 행하신 구원을 오늘의 삶의 기준으로 다시 세우는 일이며, 그래서 명령의 형태로 주어진다("너는 기억하라", 신 5:15). 아래 네 편의 설교는 서로 다른 본문에서 같은 전제를 나눈다. 사람은 받은 은혜를 쉽게 잊고, 기억은 저절로 바르게 되지 않는다는 것이다.</p>
+<h2>확보된 사례</h2>
+<h3>① 기억은 재구성이다 — 그래서 틀이 필요하다</h3>
+<p>기억은 사실을 그대로 불러내는 것이 아니라 지금 가진 틀로 다시 짜는 이야기이고, 사람의 마음은 부정적인 것을 더 오래 붙든다. 그리스도의 평강과 말씀과 감사가 그 틀이 될 때 아픔에 매몰되지 않고 전체를 본다(골 3:15-17). "맘대로 기억하지 말고" 하나님이 행하신 구원과 사랑을 기억하라는 것이 신 5:15의 뜻이다.
+→ <span class="wl-dead" title="위키 내부 링크">2026-11-15_긍정적인관점을잃지않는비결</span></p>
+<h3>② 망각은 불평을 낳고 기억은 감사를 낳는다</h3>
+<p>초막절(추수감사절)은 거두기를 마친 자리에서 하나님의 보호와 인도와 공급을 기억하게 하는 절기다. 은혜를 잊으면 불평으로, 기억하면 감사로 간다. 감사는 형편이 만드는 기분이 아니라 은혜를 기억하기로 하는 선택이다.
+→ <span class="wl-dead" title="위키 내부 링크">2020_망각불평기억감사</span></p>
+<h3>③ 절기는 몸으로 새기는 기억의 훈련이다</h3>
+<p>구약이 절기를 한 주간이나 지키게 한 것은 사람이 은혜를 너무 쉽게 잊기 때문이다. 먹고 보는 것은 잊히지 않는다. 절기는 온 가족이 몸과 눈과 입으로 구원의 역사를 되풀이해 기억하는 자리이고, 다음 세대에 넘겨줄 유산이다.
+→ <span class="wl-dead" title="위키 내부 링크">2018_절기교육</span></p>
+<h3>④ 눈앞의 기회보다 기억이 앞선다</h3>
+<p>엔게디 굴에서 다윗이 칼의 방향을 꺾은 이유를 기억에서 찾는다. 인생은 눈앞의 기회가 아니라 말씀의 기억으로 정해진다.
+→ <span class="wl-dead" title="위키 내부 링크">2024-06-26_기억을살아내는사람</span></p>
+<h3>이웃 본문 — "잊어버릴까 염려하노라"</h3>
+<p>풍요는 교만의 자리이고 교만은 망각의 자리다. 신명기 8장은 배부를 때 하나님을 잊지 않도록 광야 길을 기억하라고 거듭 말한다.
+→ <span class="wl-dead" title="위키 내부 링크">신명기_07_낮추시고시험하사마침내복</span></p>
+<h2>네 사례가 겹치는 자리</h2>
+<table>
+<thead>
+<tr>
+<th>물음</th>
+<th>문대원 (골 3장)</th>
+<th>권성수 (레 23장)</th>
+<th>윤명숙 (출 23장)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>왜 기억이 어려운가</td>
+<td>부정 편향, 기억은 재구성</td>
+<td>영적 기억상실, 망각</td>
+<td>은혜를 쉽게 잊는 본성</td>
+</tr>
+<tr>
+<td>무엇으로 기억하는가</td>
+<td>평강, 말씀, 감사 제목 적기</td>
+<td>절기, 감사의 선택</td>
+<td>절기의 음식과 몸의 반복</td>
+</tr>
+<tr>
+<td>기억의 열매</td>
+<td>전체를 보는 관점</td>
+<td>감사의 습관</td>
+<td>신앙 전수</td>
+</tr>
+</tbody>
+</table>
+<h2>교차 참조</h2>
+<ul>
+<li><a class="wl" href="../../t/%EA%B0%90%EC%82%AC/">감사</a> — 기억의 열매. 감사는 기억하기로 하는 선택이라는 점에서 세 설교가 만난다</li>
+<li><a class="wl" href="../../t/%EC%9D%80%ED%98%9C/">은혜</a> — 기억의 내용</li>
+<li><a class="wl" href="../../t/%EC%98%88%EB%B0%B0/">예배</a> — 절기와 예배는 공동체가 함께 기억하는 형식</li>
+<li><a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EC%A0%84%EC%88%98/">신앙전수</a> — 기억을 다음 세대에 넘기는 일</li>
+<li><span class="wl-dead" title="위키 내부 링크">신5</span> — "너는 기억하라"</li>
+<li><span class="wl-dead" title="위키 내부 링크">골3</span> — 평강, 말씀, 감사</li>
+</ul>
+</article>
+<div class="tagrow"><span>#기억</span><span>#망각</span><span>#감사</span><span>#절기</span><span>#시드허브</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
