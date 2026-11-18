@@ -139,6 +139,16 @@ figure.ill figcaption{font-size:.84rem;color:var(--ink2);margin:10px 2.5em 0;lin
 /* 바닥 */
 .foot{max-width:38em;margin:0 auto;padding:30px 20px 60px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;border-top:1px solid var(--line);font-size:.86rem;color:var(--ink2)}
 @media (min-width:1080px){.foot{max-width:1240px;padding-left:336px}}
+/* 바닥 — 짝 책 안내 */
+.pair{max-width:38em;margin:0 auto 26px;padding:0 20px}
+.pair a{display:flex;gap:14px;align-items:center;padding:14px 16px;border:1px solid var(--line);border-radius:10px;text-decoration:none;color:var(--ink);background:var(--panel)}
+.pair a:hover{border-color:var(--gold)}
+.pair svg{flex:0 0 40px;width:40px;height:30px}
+.pair svg .t{fill:var(--wood)}
+.pair svg .c{fill:var(--gold)}
+.pair span{font-size:.92rem;line-height:1.55;word-break:keep-all}
+@media (min-width:1080px){.pair{max-width:1240px;padding-left:336px}}
+@media (max-width:600px){.pair{padding:0 16px}}
 
 @media (max-width:640px){
   html{font-size:16px}
@@ -325,6 +335,7 @@ figure.ill figcaption{font-size:.84rem;color:var(--ink2);margin:10px 2.5em 0;lin
   <span class="tag">#안식일</span></div>
 </main>
 </div>
+<aside class="pair"><a href="https://wiki.youngdoctor.kr/marktl/s/bzylt8c/"><svg viewBox="0 0 40 30" aria-hidden="true"><path class="t" d="M3 8V28H6V24H34V28H37V18H6V8Z"/><path class="t" d="M8 13H17V18H8Z"/><path class="c" d="M27 2A6 6 0 1 0 33 11A4.5 4.5 0 0 1 27 2Z"/></svg><span>짝이 되는 책: 『침대머리 자녀교육』 — 누워 있을 때와 일어날 때</span></a></aside>
 <footer class="foot"><a href="https://wiki.youngdoctor.kr/marktl/">영닥터 아카이브로 돌아가기</a><span>youngdoctor.kr · 2026-11-18</span></footer>
 <script>
 (()=>{const b=document.getElementById('menuBtn'),l=document.getElementById('menuList'),nav=b.closest('.menu');
