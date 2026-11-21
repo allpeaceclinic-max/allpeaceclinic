@@ -1,0 +1,508 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>테필린 — 김형종 (솔로몬) — 주제·북노트 위키</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&family=Gowun+Batang:wght@400;700&display=swap');
+:root{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2:#c67139; --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --font-display:"Caprasimo",system-ui,sans-serif;
+  --font-serif:"Gowun Batang","AppleMyungjo",Batang,Georgia,serif;
+  --font-sans:"Figtree",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Malgun Gothic",sans-serif;
+  --r-sm:8px; --r-md:16px; --r-lg:28px;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#232420; --surface:#2a2c26; --surface2:#30322b;
+  --ink:#f0f0e8; --muted:color-mix(in srgb,#f0f0e8 75%,transparent);
+  --meta:color-mix(in srgb,#f0f0e8 48%,transparent);
+  --line:color-mix(in srgb,#f0f0e8 14%,transparent);
+  --line-soft:color-mix(in srgb,#f0f0e8 8%,transparent);
+  --accent:#a7b98a; --accent-deep:#a7b98a;
+  --accent-tint:color-mix(in srgb,#5f7049 26%,transparent); --accent-ink:#232420;
+  --acc2:#e0a375; --acc2-deep:#e0a375; --acc2-tint:color-mix(in srgb,#c67139 22%,transparent);
+  --shadow:none; --shadow-md:none;
+}
+:root[data-theme="light"]{
+  --bg:#f7f6f1; --surface:#fdfdfa; --surface2:#e9eadf;
+  --ink:#232520; --muted:#62625a; --meta:#a0a093;
+  --line:color-mix(in srgb,#232520 14%,transparent);
+  --line-soft:color-mix(in srgb,#232520 8%,transparent);
+  --accent:#5f7049; --accent-deep:#3d4a2e; --accent-tint:#e2e6d5; --accent-ink:#fdfdfa;
+  --acc2-deep:#8f4e22; --acc2-tint:#f3ded0;
+  --shadow:0 1px 2px color-mix(in srgb,#2b2c27 12%,transparent);
+  --shadow-md:0 3px 10px color-mix(in srgb,#2b2c27 14%,transparent);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--accent-tint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent-deep);text-transform:uppercase}
+.chip{font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.cat-t{color:var(--acc2-deep);background:var(--acc2-tint)}
+.chip.cat-b{color:var(--accent-deep);background:var(--accent-tint)}
+
+main{max-width:720px;margin:0 auto;padding:34px 22px 80px}
+header.top{margin-bottom:10px}
+.head-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.head-row a{font-size:13px;font-weight:700;white-space:nowrap}
+.meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meta-row .date,.meta-row .author{font-size:12.5px;color:var(--meta);font-variant-numeric:tabular-nums}
+h1.note-title{font-family:var(--font-serif);
+  font-size:clamp(26px,4.4vw,34px);line-height:1.4;margin:14px 0 6px;text-wrap:balance;font-weight:700}
+.pubnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;
+  border-radius:var(--r-md);background:var(--surface2);font-size:12.5px;color:var(--muted)}
+.pubnote a{margin-left:auto;font-weight:700;white-space:nowrap}
+article.note{font-family:var(--font-serif);font-size:15px;line-height:1.95}
+article.note h1{display:none}
+article.note h2{font-family:var(--font-serif);font-size:20px;line-height:1.5;margin:34px 0 12px}
+article.note h3{font-family:var(--font-serif);font-size:16.5px;margin:26px 0 8px}
+article.note p{margin:0 0 16px;text-wrap:pretty}
+article.note ul,article.note ol{padding-left:24px;margin:0 0 16px}
+article.note li{margin:4px 0}
+article.note blockquote{margin:0 0 16px;padding:14px 20px;border-left:4px solid var(--acc2);
+  border-radius:0 var(--r-md) var(--r-md) 0;background:var(--acc2-tint);
+  font-size:14.5px;line-height:1.85;color:var(--acc2-deep)}
+article.note blockquote p{margin:0 0 8px} article.note blockquote p:last-child{margin:0}
+article.note table{border-collapse:collapse;margin:18px 0;display:block;overflow-x:auto;max-width:100%;
+  font-family:var(--font-sans);font-size:13.5px;line-height:1.6}
+article.note th,article.note td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+article.note th{background:var(--surface2);font-weight:700;white-space:nowrap}
+article.note code{font-family:ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+article.note pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px;overflow-x:auto}
+article.note pre code{border:0;padding:0}
+article.note hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+article.note img{max-width:100%;border-radius:var(--r-sm)}
+a.wl{color:var(--accent-deep);border-bottom:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);padding-bottom:1px}
+a.wl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+span.wl-dead{color:var(--acc2-deep);border-bottom:1.5px dotted var(--acc2);padding-bottom:1px;cursor:default}
+.footnote{margin-top:36px;border-top:1px solid var(--line);padding-top:10px;
+  font-family:var(--font-sans);font-size:12px;line-height:1.7;color:var(--muted)}
+.footnote hr{display:none}
+.footnote ol{padding-left:20px}
+.tagrow{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px}
+.tagrow span{font-size:11.5px;color:var(--meta);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px;color:var(--meta)}
+footer a{font-weight:700}
+</style></head><body><main>
+<header class="top">
+  <div class="head-row">
+    <a href="../../">← 주제·북노트 탐색</a>
+    <a href="https://wiki.youngdoctor.kr/marktl/">아카이브 홈</a>
+  </div>
+  <div class="meta-row"><span class="chip cat-b">상담·치유·가정</span><span class="author">김형종</span><span class="date">2026-11-20</span></div>
+  <h1 class="note-title">테필린 — 김형종 (솔로몬)</h1>
+  <p class="pubnote">✦ 이 노트는 편집된 발행본이 있습니다 — <a href="https://wiki.youngdoctor.kr/marktl/%ED%85%8C%ED%95%84%EB%A6%B0_%EA%B9%80%ED%98%95%EC%A2%85/">아카이브 발행본 읽기 →</a></p>
+</header>
+<article class="note">
+<blockquote>
+<p>표지 부제 「유대인 생존비밀 이야기 3500년의 성경암송 비결」. 테필린(경문갑) 네 칸에 들어 있는 네 본문(출 13:1-10 · 13:11-16 · 신 6:4-9 · 11:13-21)을 하나의 신앙교육 과정으로 읽고, 유대인이 나라 없이 2500년을 버틴 비결을 <strong>가정에서 부모가 말씀을 반복해 자녀에게 새긴 것</strong>에서 찾는 책이다. 앞부분은 유대 민족의 생존사, 가운데는 네 본문 강해와 암송 방법, 뒷부분은 율법과 성화의 신학, 유대 문화와 가정 이야기다. 맺는 말에서 저자는 「본받으라」(고전 11:1)의 미메테스로 한국 교회의 다음세대 신앙교육 모델을 제안한다. 📷 표시 전사 기반 독서 노트(p.6~329, 표시한 178쪽).</p>
+</blockquote>
+<hr />
+<h2>요약 — 주제별 상세 정리</h2>
+<h3>1. 문제 제기 — 나라 없이 2500년을 버틴 민족</h3>
+<p>책은 유대인이 어떻게 살아남았는가에서 시작한다. 바벨론에 나라가 망한 뒤(BC 586) "2500년 만에"(p.15) 나라를 되찾기까지, 그들이 끝까지 붙든 것은 <strong>언어</strong>였다.</p>
+<blockquote>
+<p>"그들이 주후 70년 예루살렘과 성전이 무너지고 각 나라에 흩어져 살았으나 종교적 전통을 지키기 위하여 가족별로 안식일을 지키고 절기를 지키면서 한 가지 포기할 수 없었던 것은 자신들의 종교의 기본이 되는 모든 것들이 히브리어로 기록되었기 때문에 히브리어를 계속해서 사용할 수밖에 없었다." (p.17)</p>
+</blockquote>
+<p>흩어진 유대인은 이디쉬(아쉬케나짐)·스파라딤으로 갈렸고, 리투아니아 유대인 엘리에젤 벤 예후다가 현대 히브리어를 되살렸다(p.18–19). 저자는 토인비의 문명사를 끌어와 대조한다 — 28개 문명 가운데 18개는 사라졌고 나머지도 "사실상 죽어 있는 상태"인데, 붕괴는 "지도급의 소수가 창조적인 힘을 잃고 단순히 민중 위에 군림하게 되었을 때" 왔다(p.44). 유대인만이 "2500년간 나라가 없이도"(p.46) 살아남았고, 저자는 그 "비밀이 테필린의 말씀에 담겨있다"고 말한다(p.46).</p>
+<p>생존의 결정적 장면으로 요한 벤 자카이 이야기가 나온다. 그는 제자들에게 자신이 죽었다는 소문을 내게 하고 관에 실려 성을 빠져나가 로마 사령관 베스파시아누스를 만나, 야브네를 파괴하지 말아 달라고 청했다(p.47–49).</p>
+<blockquote>
+<p>"예루살렘은 멸망하더라도 유대인의 성경교육만은 계속되어야 한다" (p.50)</p>
+</blockquote>
+<p>나라와 성전을 잃은 자리에 <strong>학교</strong>를 남긴 셈이다. 회당 공동체는 새로 들어온 유대인을 "반드시 그 사람에 대한 책임이 자신들에게 있다고 여긴다"(p.53, 「하베림 고르 이스라엘」 p.52).</p>
+<h3>2. 테필린이란 무엇인가 — 구약 말씀의 엑기스</h3>
+<blockquote>
+<p>"이 테필린은 가로 세로 높이가 5cm 정도의 크기로 네 개의 방으로 구성되어 있다." (p.28)
+"테필린을 머리와 손에 부착하는 것은 하나님과 더불어 말씀과 함께 산다는 영적 의미가 있다." (p.28)
+"<strong>테필린은</strong> 하나님이 주신 구약의 말씀의 엑기스에 해당한다." (p.29)</p>
+</blockquote>
+<p>한글 성경은 마태복음 23:5에서 이것을 <strong>경문</strong>으로 옮겼다(p.104). 부속물의 이름도 정리해 둔다(p.139–140).</p>
+<table>
+<thead>
+<tr>
+<th>히브리어</th>
+<th>뜻</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Shel Rose(쉘 로세)</td>
+<td>미간에 붙이는 네 칸 상자</td>
+</tr>
+<tr>
+<td>Shel Yad(쉘 야드)</td>
+<td>손목에 붙이는 한 칸 상자</td>
+</tr>
+<tr>
+<td>Bayit(바이트)</td>
+<td>쉐마 말씀을 넣어 두는 소가죽 상자</td>
+</tr>
+<tr>
+<td>R'tzua(르쭈아)</td>
+<td>상자를 묶는 끈</td>
+</tr>
+<tr>
+<td>Ma'abarta(마아바르타)</td>
+<td>끈을 꿰는 구멍</td>
+</tr>
+</tbody>
+</table>
+<p>같은 계열로 옷단 술 찌찌트(민 15:37–41, 「탈리트 카탄」 p.237)와 문설주의 메주자(p.167)가 있다.</p>
+<p><strong>쉐마 교육과의 관계.</strong> 저자는 <span class="wl-dead" title="위키 내부 링크">현용수</span>가 한국에 소개한 쉐마 교육을 테필린 안에 놓는다.</p>
+<blockquote>
+<p>"쉐마 교육은 테필린 안에 있는 내용의 하나로 알고 배워야 한다. 하지만 테필린의 네 개의 말씀 본문 중에 그 핵심을 말하라면 쉐마 교육이라고 해도 틀린 것은 아니다. 하지만 쉐마 교육이 전부는 아니라는 말이다." (p.57)</p>
+</blockquote>
+<h3>3. 핵심 인사이트: 네 칸은 하나의 과정이다 — SOSB</h3>
+<p>이 책의 뼈대다. 저자는 네 본문을 따로 떨어진 구절 묶음이 아니라 <strong>구속에서 축복까지 이어지는 순서</strong>로 읽는다(p.105).</p>
+<table>
+<thead>
+<tr>
+<th>칸</th>
+<th>본문</th>
+<th>주제</th>
+<th>머리글자</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>출 13:1-10</td>
+<td>이스라엘의 구속</td>
+<td><strong>S</strong>alvation</td>
+</tr>
+<tr>
+<td>2</td>
+<td>출 13:11-16</td>
+<td>구속에서 봉헌</td>
+<td><strong>O</strong>ffering</td>
+</tr>
+<tr>
+<td>3</td>
+<td>신 6:4-9</td>
+<td>봉헌에서 교육과 섬김</td>
+<td><strong>S</strong>erving</td>
+</tr>
+<tr>
+<td>4</td>
+<td>신 11:13-21</td>
+<td>섬김에서 축복</td>
+<td><strong>B</strong>lessing</td>
+</tr>
+</tbody>
+</table>
+<p>머리글자 'SOSB'는 "SOS(비상연락)"와 "Bless(복)"를 함께 품도록 지은 말이다(p.105). 칸마다 하나씩 메주자 해설에서도 같은 순서가 되풀이된다 — "첫째 방에 구속", "구속 받은 장자의 헌신", "셋째 방에 하나님만을 섬기는", "넷째 방의 축복의 주인공이 된다는"(p.169–170).</p>
+<h3>4. 첫째 칸 — 구속: 일곱 동사와 유월절 세더</h3>
+<p><strong>구속동사.</strong> 저자는 출애굽기 6장을 히브리인들이 "<strong>여호와의 장</strong>"이라 부른다고 소개한다(p.121). 모세의 질문에 하나님은 답 대신 "하나님의 목적사"를 선포하고 "자신의 인감도장을 찍어서 또 한 번 확인하는 자기 서명"을 하셨다(p.122).</p>
+<blockquote>
+<p>"성경의 모든 구속의 사건을 일곱 개의 동사로 처리하면서 말씀하셨다" (p.109)
+"구속동사들은 피가 흘러가는 동사에 해당한다. 즉 피 흘림이 없은즉 구속함도 없다는 말씀이다." (p.125)</p>
+</blockquote>
+<p>내려(야라드)·건져내고·고엘이 나오는데, 고엘은 룻기의 "기업 무르는" 사람이다(p.110–111). 목적은 관계다 — "나는 너의 하나님, 너는 나의 백성"(p.126). 구약은 제사로, 신약은 예배로 그 교제의 방법을 기록했고(p.128), 땅은 가나안에서 하나님 나라(천국)로 이어진다.</p>
+<blockquote>
+<p>"<strong>결국</strong> 하나님은 그의 백성을 구속하고 하나님의 백성을 삼고 이 땅에서 자신과 교제하면서 살다가 마지막 때에 천국까지 가도록 이끄는 이야기를 구약과 신약에 소개하고 있다. 이 모든 내용을 포함하는 것이 하나님의 목적사이다." (p.130)</p>
+</blockquote>
+<p><strong>기념하라 — 재현의 교육.</strong> "기념하다"는 자카르다. 📝 여백에 "남자. 기억하는 자."(p.112)라고 적었다.</p>
+<blockquote>
+<p>"유월절의 의미를 절대 잊어버리지 말고 매년 그날이 되면 그때의 현장을 재현하여 오늘에도 똑같이 경험하라는 뜻이다." (p.112)</p>
+</blockquote>
+<p>유월절 세더 상의 열 가지와 그 기원(p.113–114).</p>
+<table>
+<thead>
+<tr>
+<th>요소</th>
+<th>기원</th>
+<th>저자의 설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>① 두 개의 촛대</td>
+<td>출애굽 이후</td>
+<td></td>
+</tr>
+<tr>
+<td>② 세 잔의 포도주</td>
+<td>포로시대</td>
+<td></td>
+</tr>
+<tr>
+<td>③ 양고기 · ④ 쓴 나물 · ⑤ 무교병</td>
+<td>출애굽 이후</td>
+<td></td>
+</tr>
+<tr>
+<td>⑥ 계란</td>
+<td>포로시대</td>
+<td>오래 구워 단단하게 — 고난이 클수록 더 강해지고 단결함</td>
+</tr>
+<tr>
+<td>⑦ 카로세(잼)</td>
+<td>포로시대</td>
+<td></td>
+</tr>
+<tr>
+<td>⑧ 소금물</td>
+<td>포로시대</td>
+<td>애굽에서 나올 때 흘린 눈물을 기억</td>
+</tr>
+<tr>
+<td>⑨ 네 개의 포도주잔</td>
+<td>출애굽 이후</td>
+<td>넷째 잔 = 메시아의 잔</td>
+</tr>
+<tr>
+<td>⑩ 엘리야의 잔</td>
+<td>포로시대</td>
+<td>비어 있는 가장 큰 잔</td>
+</tr>
+</tbody>
+</table>
+<p>소금물을 눈에 발라 "억지로라도 눈물을 흘리게 하면서 그때의 상황과 경험을 실제적으로 체험시키게"(p.117) 한다. 무교병(마쵸) 셋 가운데 하나를 세마포에 싸서 숨기고 아이들이 찾게 하며, 그 구멍과 줄무늬를 "몸의 상처와 옆구리의 창 자국"으로 읽는다(p.138). 엘리야가 오지 않았기에 넷째 잔은 마시지 못하고 "내년에는 예루살렘에서"를 부른다(p.118). 저자는 이것을 그리스도론으로 잇는다.</p>
+<blockquote>
+<p>"세 개의 잔은 마시고 네 번째 잔은 마시지 않았다. 그 이유는 마지막 잔은 십자가로 피를 흘리며 인류의 죄를 위해 죽으시는 잔이기 때문이다." (p.114)</p>
+</blockquote>
+<p>이 예식서가 <strong>학가다</strong>다. 저자는 이것을 "계속되는 이야기", "반복의 책"이라 부르고, 미쉬나도 "그 말 자체가 반복이라는 뜻"이라고 짚는다(p.114–115).</p>
+<h3>5. 둘째 칸 — 봉헌: 장자와 대속</h3>
+<p>장자 봉헌 본문에서는 "거룩하게 하다"(카도시) 대신 <strong>아바르</strong>("넘겨 드리다")가 쓰였다(p.131). 대속은 <strong>파다</strong> — "'값을 주고 속량하다'와 '피를 대신하여 구해내다'"(p.132)다. 나중에 하나님은 장자 대신 레위 지파를 구별해 받으셨다(p.132). 「보여(나가드)」는 "잘 보이도록 가까이 가져오다", 곧 <strong>재현하라</strong>는 뜻이고(p.136), 샤바는 "일곱 번씩 거듭하여 말씀하신다"는 단어로 소개된다(p.135).</p>
+<h3>6. 셋째 칸 — 쉐마: 새기고, 가르치고, 강론하라</h3>
+<p>셋째 칸이 책의 중심이다. "이 테필린의 말씀 중 쉐마 본문에 가장 큰 비중을 두고 있다."(p.145) 저자는 613계명(하라 248 = 사람 뼈 수, 하지 마라 365 = 1년의 날 수, p.142)과 쉐마 본문의 큰 글자 아인·달렛(합쳐 「에드」 = 증인, p.146)을 짚은 뒤, 신 6:4-9를 동사 하나씩 푼다.</p>
+<p><strong>① 추상에서 구체로 — 키아즘.</strong> 신 6장은 "키아즘의 형식을 가지고 점층적으로"(p.148), "단순 반복이 아닌 말하고자 하는 의미를 더 강하게 강조하고자" 쓰였다. 📝 여백: "chiastic parallelism / 대칭병행문체구조"(p.153).</p>
+<blockquote>
+<p>"5절의 추상적인 개념이 6절의 구체적인 하나님의 말씀을 사랑하는 개념으로 전환되는 것은 신앙의 혁명적 사건에 해당하는 일이다." (p.153)
+"지금까지는 우리가 하나님을 사랑한다고 추상적으로 말했을 때에는 구체적인 방법이 없기 때문에, 과연 사랑한다고 고백한 그가 그 사랑의 질을 확인할 방법이 전혀 없었다." (p.154)</p>
+</blockquote>
+<p><strong>② 새기라 — 하야 동사.</strong> "새기고"는 <strong>하야</strong> 동사로 "비Be동사와 같이 존재적 의미"를 가진다(p.155). 말씀으로 가득 찬 <strong>존재가 되라</strong>는 명령이다.</p>
+<blockquote>
+<p>"어린 아이가 한 단어를 말하게 되기까지 3,000번 정도 반복해서 들으면 머리에 새겨지고 그 단어를 입으로 흉내 내어 말하게 된다는 것이다." (p.155)
+"그 말씀을 반복하여 암기하고 암송하는 방법 밖에는 다른 지름길이 없다." (p.155)</p>
+</blockquote>
+<p>📝 독자는 p.224 여백에 이 대목을 다시 끌어와 "마음에 새기는 / 레브(?) / 하야동사 → be동사 / 존재자체(?)"라고 적었다 — 책 전체에서 가장 오래 붙든 개념이다.</p>
+<p><strong>③ 부지런히 가르치라 — 솨난.</strong></p>
+<blockquote>
+<p>"'송곳으로 네 자녀의 마음에 콕 콕 찔러 새겨질 때까지 계속하라'" (p.158)
+"가르치라는 말씀은 교육을 통하여 자녀로 하여금 하나님이 기뻐하시는 사람으로 만들어 가라는 뜻이다." (p.162)</p>
+</blockquote>
+<p>솨난은 "날카롭게 선 칼날처럼 만들라는"(p.162) 말이기도 하고, 가르침은 "자녀가 삶으로 실천하는 것이 자동으로 될 때까지 계속 만들어 가라는"(p.163) 뜻이다.</p>
+<p><strong>④ 손목·미간·문설주 — 학가다의 삶에 적용하기</strong>(p.164).</p>
+<table>
+<thead>
+<tr>
+<th>자리</th>
+<th>저자의 해석</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>손목에 매어</td>
+<td>행위와 실천의 지침</td>
+</tr>
+<tr>
+<td>미간에 붙여</td>
+<td>사고와 판단의 중심 — "원래 이마에 무엇을 표시하는 것은 히브리인들에게는 소유의 개념"(p.164)</td>
+</tr>
+<tr>
+<td>문설주와 바깥문에</td>
+<td>가정생활과 사회생활의 중심 — 메주자를 잡고 "여호와께서 나의 출입을 지금부터 영원까지 지키리로다"(p.168)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>"그러므로 사람이 무엇을 생각하느냐에 따라 그 행동이 결정된다" (p.165)
+"너는 자신의 생각을 그치고 하나님의 말씀에 고정하라는 강력한 하나님의 메시지이다" (p.165)</p>
+</blockquote>
+<h3>7. 넷째 칸 — 축복: 청종과 이른 비·늦은 비</h3>
+<p>청종의 원형은 "쉐마 쉐마"다(p.171). 저자는 축복(bless)이 피(blood)에서 나왔다는 설명을 들어 "복을 주는 자의 입장에서는 피를 주어야 하는 어려움"이 있다고 말한다(p.172). 이른 비는 가을(9–10월), 늦은 비는 봄(3–4월) 비이고(p.173), 「빼잇토」는 "꼭 필요한 그때 그때마다 내가 줄 것이다"라는 뜻이다(p.174).</p>
+<blockquote>
+<p>"하나님 말씀의 새로운 것만 추구하는 행위는 극히 비정상적인 태도이다. 하나님의 말씀은 아주 단순하고 명쾌하기 때문에 쉬운 것이 특징이다." (p.176)</p>
+</blockquote>
+<p>「그 도에 부종하면」은 떼레크 다바크 — 길에 달라붙으라는 말이다(p.177). 이어 「맥스 쥬크」와 「존 에드워드」(조나단 에드워즈로 보인다) 가문의 대조(p.179)가 나온다.</p>
+<h3>8. 핵심 인사이트: 암송은 뇌의 구조를 바꾼다 — 4~13세 「테필린의 나이」</h3>
+<p>책에서 가장 실천적인 부분이다. 출발점은 "엄마"라는 첫 단어다.</p>
+<blockquote>
+<p>"왜 아이들은 제일 먼저 엄마라고 말하는 것인가를 아는 것은 우리가 성경을 암송하는 원리와 같기 때문에 대단히 중요하다." (p.185)</p>
+<p>"4살부터 13세까지 10년 동안 테필린의 나이로 정하고 그 나이까지는 무조건 집에서 엄마와 아버지로부터 암송의 훈련을 받는다." (p.192)</p>
+</blockquote>
+<p><strong>과정 — 처음이 가장 느리고, 고비를 넘으면 빨라진다.</strong></p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>내용</th>
+<th>쪽</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>첫 절</td>
+<td>4살 아이가 창 1:1 여섯 단어("베레쉬트 바라 엘로힘…")를 외우는 데 <strong>몇 개월</strong>, '베레쉬트' 천 번 이상</td>
+<td>p.193–194</td>
+</tr>
+<tr>
+<td>첫 장</td>
+<td>창세기 한 장에 빠른 아이 3개월, 늦은 아이 6개월</td>
+<td>p.194</td>
+</tr>
+<tr>
+<td>10장</td>
+<td>약 1년이 지나 창세기 10장까지 오면 "그 아이의 머리는 천재적인 암기구조로 바뀐다"</td>
+<td>p.194</td>
+</tr>
+<tr>
+<td>그 뒤</td>
+<td>부모가 읽어 주면 "빠른 아이는 세 번만 들으면 암기가 되고 다시 세 번만 암송하면 그의 뇌에 새겨진다"</td>
+<td>p.195</td>
+</tr>
+<tr>
+<td>13세까지</td>
+<td>구약 대부분, 토라 5,843절</td>
+<td>p.195–196</td>
+</tr>
+</tbody>
+</table>
+<p>대제사장 아론의 147대손이라는 사람의 증언도 같은 곡선을 그린다 — 창 1:1에 며칠, 10장을 넘자 속도가 붙고 출애굽기 즈음엔 "자신의 뇌가 암기할 수 있는 구조로 바뀌는 것을 느꼈고", 부모가 <strong>3번</strong> 읽어 주면 외워졌다(p.187–188).</p>
+<p><strong>복습법.</strong> 2장을 다 외우면 3장으로 가지 말고 1·2장을 이어서 다시 외워 확인한다(p.196). 어른은 아이보다 "<strong>10배의</strong> 노력이 필요하다"(p.197).</p>
+<p><strong>한국 사례.</strong> 초등 6학년이 노트북을 약속받고 누가복음을 영어로 외우기 시작했는데, 3장까지 한 달 동안 "수백 번을 반복"하는 고비를 넘기자 다음 한 달에 13장까지 10장을 외웠다(p.198). 두 자녀가 한국어로 창세기 50장을 외운 가정은 "처음 3개월이 최고의 고비"였다고 말한다(p.200).</p>
+<p><strong>핵심 인사이트: 중요 구절 뽑기는 유대식이 아니다.</strong></p>
+<blockquote>
+<p>"유대인들은 아무도 중요구절을 뽑아 암송하는 일은 하지 않는다. 이런 방법은 한국 교회와 이방인 교회에 생긴 권장할 수 없는 암송 방법이라고 생각한다." (p.203)</p>
+</blockquote>
+<p>60구절 암송 같은 방식은 "100퍼센트 잊어버리는 결정적인 약점"이 있다(p.203). 그리고 13세 이후는 부모가 아니라 <strong>자기 의지</strong>로 테필린을 하는 나이다(p.204) — 바 미쯔바(「말씀의 아들 선포식」, p.183·268)가 그 경계다.</p>
+<h3>9. 신학적 틀 — 율법은 구원의 방편이 아니라 성화의 길</h3>
+<p>저자가 이 책을 쓴 신학적 이유다. 한국 교회는 화란 신학의 영향으로 구약을 "구속사적 중심으로 해석"해 왔고(p.97), 그 결과가 성화의 공백이라는 진단이다.</p>
+<blockquote>
+<p>"하지만 기독교인에게 부족한 것은 예수님으로 구원을 받고 난후, 기독교인의 삶인 성화 과정을 너무 소홀하게 취급하는 점이다." (p.98)
+"하지만 복음을 받고 구원의 문제가 해결된 하나님의 자녀가 어떻게 하나님을 닮아 성숙한 그리스도인이 되는가 하는 문제는 신약보다는 구약에 더 잘 나타나 있다." (p.59)
+"율법은 구원을 위한 방편이 아니라 구원 받은 성도들이 어떻게 살아가는지에 대한 목적으로 기록되었다는 사실을 아는 것은 중요하다." (p.212)</p>
+</blockquote>
+<p>"율법이 악한 것이 아니라 율법주의가 악하다"(p.211, 롬 7:12·14, 8:4). 저자는 예정을 신약에서 이방인을 향해 부각된 신학으로, 구약은 구원이 이미 해결된 백성이 "자유의지로 율법을 지키므로 거룩하게 성화되어가는 문제"를 강조한다고 본다(p.213–215). 구원받은 사람이 확신 없이 들락날락하는 상태를 "구원 출퇴근 증세"라고 부른다(p.210).</p>
+<p><strong>오순절 — 말씀과 성령이 만나는 날.</strong> 모세가 시내산에서 말씀을 받은 날이 구약의 오순절이고(p.219), 신약의 오순절에 성령이 오셨다. 요 4:23의 「신령과 진정」은 원어로 성령과 진리다(p.222). 📝 여백 "성령과 진리(말씀)".</p>
+<blockquote>
+<p>"구약의 성막은 신약 시대의 교회로 대체된다. 구약의 제사는 신약 시대의 예배로 대체된다. 구약의 말씀은 신약 시대의 성령께서 역사하는 것으로 대체된다. 결국 오순절 날에 말씀과 성령으로 진정한 예배가 시작되었다." (p.223)</p>
+</blockquote>
+<p>결론은 하나의 낱말로 모인다 — <strong>체질화</strong>.</p>
+<blockquote>
+<p>"그것은 하나님의 말씀을 최우선으로 반복교육을 통해 삶으로 <strong>체질화</strong>되었기 때문이다." (p.224)</p>
+</blockquote>
+<p>유대인 성공의 네 요인도 같은 틀이다 — 1) 교육 2) 신앙 3) 반복(학가다 교육) 4) 체질화(부모, 학교, 랍비, 선민교육)(p.102).</p>
+<h3>10. 유대 가정 — 부모가 곧 교사다</h3>
+<p><strong>말씀의 아버지.</strong> 자녀는 하나님이 주신 기업, 곧 <strong>나할라</strong>(재산·소유·유산)다(p.295). "진정한 유대인은 혈통적 유대인이 기본적인 요소이고, 그 다음은 하나님의 말씀을" 담은 사람이다(p.297). 자녀교육의 일차 책임은 아버지에게 있고, 아버지는 공급자·보호자·인도자·교육자다(p.299–300).</p>
+<p><strong>호림과 모림 — 가르치는 것과 배우는 것은 하나.</strong> 📝 독자가 가장 공들여 표시한 대목이다(p.300·326·327 세 번, 여백 "성경적 부모란 Holim", "라마드").</p>
+<blockquote>
+<p>"히브리어로 '교사들'이 <strong>'모림'Molim</strong>이고, '부모들'은 <strong>'호림'Holim</strong>이라고 한다. 이 두 단어는 모두 '가르치다'라는 의미의 어원을 가지고 있다." (p.326)
+"히브리어의 '가르치다'와 '배우다'는 단어가 <strong>라마드Ramad</strong>로 같은 단어를 쓴다. 결국 성경적 입장으로 보면 가르치는 일과 배우는 일이 하나이다." (p.327)</p>
+</blockquote>
+<p><strong>식탁과 절기.</strong> "음식이 없는 곳에는 토라도 없고, 토라가 없는 곳에는 음식도 없다", 세 사람이 둘러앉아 말씀 한마디 없이 먹으면 "죽은 우상 제물을 먹는 것과 같다"(p.301). 부모는 "호렙산에서 율법(성경)을 직접 받은 것 같은 감동으로" 가르친다(p.302). 교육(히누크)은 "하나님께 가르치고 배워서 봉헌한다"는 뜻이다(p.313).</p>
+<p><strong>핵심 인사이트: 다섯째 계명이 두 돌판을 잇는다.</strong> 📝 ☆ 표시.</p>
+<blockquote>
+<p>"다섯째 계명을 잘 지킨 것으로 하나님에 관한 돌판과 인간에 관한 돌판이 연결되어 두 돌판이 하나가 된다는 뜻으로 가르친다. 즉 부모공경이 없으면 하나님과 인간은 상관없는 존재가 되어버린다는 뜻이다. 그러므로 제 오 계명의 부모공경은 십계명의 두 돌판을 잇는 연결 고리가 된다." (p.315)</p>
+</blockquote>
+<p><strong>어머니.</strong> 엠(어머니)·에메트(진리)·아멘을 같은 뿌리로 묶고(p.316–317), 하와는 "생명을 주는 자"다 — "어머니는 자녀에게 육신적인 생명만 주는 것이 아니고, 영적 생명인 신앙을 전수하는 사명도 갖고 있다"(p.317).</p>
+<p><strong>그 밖의 생활 교육.</strong> 체다카(의 = 선행, 자선 8등급, p.318) · 코셔(p.319) · 「다른 사람을 이기기보다는 다른 사람과는 다른 사람이 되라」(p.310) · 포로 된 동족을 사 오는 「피드온 쉐부임」 기금(p.311) · 헌책방이 없는 민족(p.308) · 학교에서 「많이 질문하고 오라」(p.252) · 알파벳 과자에 꿀을 발라 글자를 익힘(p.262) · 노동의 신성(p.312). 일생 교육 단계는 두 번 나온다(p.89, p.308) — 5세 성경, 10세 미쉬나, 13세 계명, 15세 탈무드.</p>
+<hr />
+<h2>맺는 말 — 미메테스: 본받아 넘어서기</h2>
+<p>탈무드의 말로 맺는다 — "역사를 바꾸는 하나님의 사람은 그냥 태어나는 것이 아니라, 철저한 교육과 훈련에 의하여 만들어 진다."(p.329) 고전 11:1의 「본」은 헬라어 <strong>미메테스</strong>이고, 저자는 그 뜻을 네 단계로 푼다.</p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>뜻</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>무작정 따라하기</td>
+</tr>
+<tr>
+<td>2</td>
+<td>똑같아질 때까지 흉내내기</td>
+</tr>
+<tr>
+<td>3</td>
+<td>비슷하거나 같아질 때까지 행하기</td>
+</tr>
+<tr>
+<td>4</td>
+<td>결국은 유대인 뛰어넘기 — 그리스도처럼 되어라</td>
+</tr>
+</tbody>
+</table>
+<p>📝 독자는 이 쪽 머리에 책 전체를 두 줄로 줄였다 — <strong>"미메테스 암송훈련. / 라마드 제자양육."</strong>(p.329) 본받아 따라 하는 단계는 암송으로, 가르치며 함께 배우는 관계는 제자양육으로 옮겨 읽은 것이다.</p>
+<hr />
+<h2>읽으며 따져 볼 것</h2>
+<p>책의 뼈대(테필린 네 본문의 순서, 쉐마 동사 해설, 4~13세 반복 암송, 성화 강조)와 별개로, 곁가지 설명 가운데 확인이 필요한 것이 있다. 강의·설교에 옮길 때는 걸러 쓴다.</p>
+<ul>
+<li><strong>어원 설명 몇 가지는 민간어원이다.</strong> 할리우드는 「거룩한 나무(Holy Wood)」가 아니라 holly(호랑가시나무류)에서 온 이름이고(p.283), jewelry는 Jew가 아니라 고대 프랑스어 jouel에서 왔다(p.259). bless–blood 연결(p.172)은 영어 낱말의 옛 어원 이야기라 히브리어 본문 해석의 근거가 되지 못한다.</li>
+<li><strong>유대인 인물 목록에 사실 오류가 섞여 있다.</strong> 록펠러는 침례교인이었고(p.279), 뉴턴은 유대인이 아니며(p.86), 마이크로소프트 창업자는 빌 게이츠와 폴 앨런이다(스티브 발머는 이후 CEO, p.282).</li>
+<li><strong>「미국을 지배하는 것은 유대인」</strong>(p.103)은 출처 없는 일반화이고, 반유대주의 담론에서 쓰이는 표현과 겹친다. 공개 강의에서는 쓰지 않는다.</li>
+<li><strong>학가다의 뜻.</strong> 히브리어 학가다는 「이야기함·들려줌」이다. 저자의 「계속되는 이야기」(p.114)는 교육적 확장으로 읽는다.</li>
+<li><strong>노벨상 비율.</strong> 저자도 30%(p.86)와 22.3%(p.102)를 함께 적는다. 인용할 때는 한 출처의 최신 수치로 통일한다.</li>
+<li><strong>신학적 구도.</strong> 「예정 = 신약·이방인용, 자유의지·성화 = 구약」(p.213–215)과 화란 신학 비판(p.97)은 저자의 해석이다. 구원과 성화를 시대별로 나누는 도식이 개혁주의 성화론과 어디서 만나고 어디서 갈리는지는 따로 따져 볼 일이다.</li>
+</ul>
+<hr />
+<h2>다른 자료와의 연결</h2>
+<ul>
+<li><strong><a class="wl" href="../../b/%EB%A7%90%EC%94%80%EC%9A%B0%EC%84%A0%EC%9E%90%EB%85%80%EA%B5%90%EC%9C%A1_%EC%9D%B4%EC%98%81%ED%9D%AC/">말씀우선자녀교육_이영희</a></strong> — 같은 주제(가정의 말씀 암송)를 다룬 쌍둥이 책. 이영희는 「기억해야 행한다」로, 김형종은 「새겨서 체질화한다」(하야 동사)로 같은 결론에 닿는다. 이영희가 암송 다음 단계로 헤브루타 토론을 세우는 데 비해, 이 책은 <strong>통권 암송</strong>(중요 구절 뽑기 반대, p.203)과 <strong>나이 경계</strong>(4~13세)를 더 강하게 밀어붙인다. 두 책을 함께 읽으면 「무엇을 얼마나 외우나」의 두 입장이 선명해진다.</li>
+<li>
+<p><strong><a class="wl" href="../../b/%EC%9C%A0%EB%8C%80%EC%9D%B8%EC%9D%98%EB%B0%A5%EC%83%81%EB%A8%B8%EB%A6%AC%EC%9E%90%EB%85%80%EA%B5%90%EC%9C%A1_%EC%9D%B4%EC%98%81%ED%9D%AC/">유대인의밥상머리자녀교육_이영희</a></strong> · <strong><a class="wl" href="../../b/%EC%B9%A8%EB%8C%80%EB%A8%B8%EB%A6%AC%EC%9E%90%EB%85%80%EA%B5%90%EC%9C%A1_%EC%9D%B4%EC%98%81%ED%9D%AC/">침대머리자녀교육_이영희</a></strong> — 신 6:7의 네 때(앉았을 때·길 갈 때·누웠을 때·일어날 때). 이 책의 식탁 대목(p.301)과 체다카(p.318)가 『밥상머리』의 식탁·푸슈케 장과 겹친다.</p>
+</li>
+<li>
+<p><strong><span class="wl-dead" title="위키 내부 링크">현용수</span></strong> — 쉐마 교육. 저자는 쉐마를 테필린 넷째 칸이 아닌 셋째 칸, 곧 전체의 일부로 자리매김한다(p.57). 현용수의 『부모여 자녀를 제자 삼아라』를 참고 문헌으로 든다(p.95).</p>
+</li>
+<li><strong><a class="wl" href="../../t/%EC%84%B1%ED%99%94/">성화</a> · <a class="wl" href="../../t/%EC%9C%A8%EB%B2%95/">율법</a></strong> — 율법을 성화의 길로 읽는 관점(p.211–212). 로마서 7–8장과 함께 본다.</li>
+<li><strong><a class="wl" href="../../t/%EA%B8%B0%EC%96%B5/">기억</a></strong> — 자카르(기념하다)와 유월절 재현 교육(p.112). 이영희 책의 「하나님의 세 감각 기억」과 짝을 이룬다.</li>
+<li><strong><a class="wl" href="../../t/%EC%84%B1%EB%A0%B9%EA%B0%95%EB%A6%BC/">성령강림</a></strong> — 구약 오순절(말씀)과 신약 오순절(성령)의 대응(p.219–223).</li>
+<li><strong><a class="wl" href="../../t/%EC%84%A0%EA%B5%90/">선교</a></strong> — 「유대인의 가장 큰 실수는 … 축복을 주신 하나님의 목적을 잊어버리는 결과」, 축복의 이유는 「이방인을 구원하는 선교의 사명」(p.74). 그리고 「자기와 후손들에게 복음을 전수하는 것을 실패한 나라들」이 복음의 흔적만 남긴다는 경고(p.79) — 선교와 <a class="wl" href="../../t/%EC%8B%A0%EC%95%99%EC%A0%84%EC%88%98/">신앙전수</a>를 한 축으로 묶는 문장이다.</li>
+</ul>
+<hr />
+<h2>목회적·실천적 적용</h2>
+<ul>
+<li><strong>가정 암송의 설계 원칙</strong>: 나이(4~13세 집중), 분량(장 단위·통권), 복습(새 장 전에 앞 장 이어 외우기), 고비(처음 3개월·첫 장)를 미리 알려 주면 부모가 중도에 꺾이지 않는다. 「처음이 가장 느리고 10장 즈음에 빨라진다」는 곡선 자체가 부모에게 주는 격려다.</li>
+<li>
+<p><strong>아버지 모임</strong>: 아버지가 먼저 읽고 가정예배 형식으로 짧게 함께 예배한 뒤 1주 분량을 자녀에게 읽어 주는 구조는 이 책의 「호림 = 부모가 교사」를 그대로 옮긴 것이다.</p>
+</li>
+<li>
+<p><strong>유월절식 재현 교육</strong>: 성찬·고난주간에 세더의 상징(쓴 나물·소금물·숨긴 무교병 찾기)을 가정에서 재현하면, 「기념하라 = 오늘 똑같이 경험하라」(p.112)를 아이 눈높이에서 할 수 있다.</p>
+</li>
+<li><strong>청년·제자훈련</strong>: 「구원 이후의 삶」에 대한 공백(p.98)을 짚는 대목은 구원 확신 중심 양육 과정의 보완점으로 쓸 수 있다.</li>
+<li><strong>강의 활용</strong>: 다섯째 계명이 두 돌판을 잇는다는 해석(p.315)과 호림/모림·라마드(p.326–327)는 부모교육 강의에서 한 장으로 보여 주기 좋은 그림이다.</li>
+</ul>
+<hr />
+<h2>개인 적용 · 미해결 질문</h2>
+<ul>
+<li>📝 맺는 말의 두 줄 — <strong>미메테스 → 암송훈련, 라마드 → 제자양육</strong> — 을 가정과 사역의 두 축으로 삼을 수 있는가. 암송(따라 하기)과 제자양육(함께 배우기)을 한 과정의 앞뒤로 놓는다면, 그 사이의 다리(헤브루타·질문)는 무엇인가.</li>
+<li>📝 p.76 여백의 물음 — 「하나님은 왜 복음이 들어간 나라마다 축복을 하시는가?」 옆에 「유대인과 비교 없이 / 한국은 복음」이라고 적었다. 축복의 원인을 유대인 비교가 아니라 복음 자체에서 찾는 것이 맞는가, 그리고 그 축복이 다음 세대로 전수되지 않을 때(p.79) 한국 교회는 어디에 서 있는가.</li>
+<li>4~13세 「테필린의 나이」를 지난 자녀·청년에게는 어떤 길이 있는가. 저자는 어른에게 「10배의 노력」(p.197)을 말하지만 방법은 말하지 않는다.</li>
+<li>통권 암송(유대식)과 이영희의 이해 중심 암송·헤브루타, 그리고 한국 교회의 요절 암송 — 각 가정의 형편(맞벌이, 다자녀, 나이 차)에서 실제로 지속 가능한 조합은 무엇인가.</li>
+<li>「율법 = 성화의 길」을 강조할 때 율법주의로 미끄러지지 않게 하는 안전장치는 무엇인가. 저자의 「율법은 선하나 율법주의는 악하다」(p.211)를 가정 교육의 언어로 어떻게 옮길까.</li>
+</ul>
+<hr />
+</article>
+<div class="tagrow"><span>#자녀양육</span><span>#신앙교육</span><span>#말씀암송</span><span>#유대교육</span><span>#테필린</span><span>#쉐마</span><span>#학가다</span><span>#성화</span></div>
+<footer>
+  <span>Obsidian LLM 위키 노트 원문 (자동 변환)</span>
+  <a href="../../">주제·북노트 탐색 →</a>
+</footer>
+</main></body></html>
